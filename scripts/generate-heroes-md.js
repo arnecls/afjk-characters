@@ -611,7 +611,11 @@ function heroToMarkdown(hero) {
   for (const skill of hero.skills) {
     lines.push(skillToMarkdown(skill));
   }
-  lines.push(buildSummary(hero));
+  // Summaries are agent-maintained in Heroes.md per AGENTS.md.
+  // Do not emit buildSummary() here — a full regen would drop hand-written
+  // summaries. Use scripts/rewrite-summaries.py to refresh summaries instead.
+  // WARNING: this script still overwrites the entire Heroes.md on run;
+  // merge skill text manually or extend the script before regenerating.
   lines.push("");
   return lines.join("\n");
 }

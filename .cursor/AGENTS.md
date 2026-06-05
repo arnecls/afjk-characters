@@ -30,6 +30,11 @@
   - HP loss
   - HP max
   - HP based
+- Damage over time (DoT)
+
+Damage over time needs to derived from text by look for indicators like "deals
+damage for 2s". This needs to be done by the Agent, as text are too
+fuzzy to define clear rules.
 
 ## Targeting
 
@@ -39,6 +44,10 @@
 - Arc
 - Area
 - All units
+
+To detect these targeting types, the text needs to be searched for wordings like
+"In an arc", "all", etc. This needs to be done by the Agent, as text are too
+fuzzy to define clear rules.
 
 ## Crowd Control
 
@@ -50,8 +59,30 @@
 - Sleep
 - Move (force new position)
 - Pin (cannot move but still act)
+- Interrupt
+
+These types need to be derived from the text.
+For example:
+
+- "knocking them back" -> Knock down
+- "hypnotizing all enemies" -> Sleep
+- "stunning them" -> Stun
+- "unable to move" -> Pin
+- "pulling in enemies" -> Move
+
+This needs to be done by the Agent, as text are too
+fuzzy to define clear rules.
+
+## Healing
+
+Some units can _heal_ other units and/or provide shields.
+Healing is not to be mistaking with the "healing" stat, but can rather be detected
+from texts like "restoring 45% HP" or "restoring HP". If the text includes an
+over time" (HoT) phrasing like "over 2s" it counts as "Healing over time".
 
 ## Stats
+
+Stats can be buffed (increased) or debuffed (decreased).
 
 - Attack (ATK)
 - Attack Speed (ATK Spd)
@@ -73,6 +104,31 @@
 - Execution
 - Energy on hit
 - Healing
+
+When looking for stat effects on skills, the text has to be analyzed as they
+are somtimes not easy to spot. For example "reducing their Magic DEF" inidicates
+a Magic Defense debuff.
+
+
+
+## Anti Crowd-control
+
+- Unaffected
+- Steadfast
+- Immune
+- Resillience / Cleanse
+- Dispell (need to be derived from text)
+
+Summary lines use `{type} immunity ({tier}) — {targeting} — {timing}`.
+Timing labels:
+
+- Start of battle
+- Permanent
+- Once (e.g. once per battle, first time only)
+- Form (while in a named form or mode)
+- On ultimate
+- On skill
+- Conditional
 
 ## Ascension
 

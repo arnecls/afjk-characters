@@ -1,7 +1,7 @@
 # AFK Journey Heroes
 
 Skill data sourced from [Yaphalla Heroes](https://www.yaphalla.com/heroes).
-Summaries are derived from skill text.
+Summaries are agent-maintained per `.cursor/AGENTS.md` (see `scripts/rewrite-summaries.py`).
 
 ## Aliceth - Radiant Wings
 
@@ -37,10 +37,10 @@ Passive. Aliceth grants an ally Brightfeather, prioritizing the nearest ally in 
 
 ### Skill2
 
-**atk3每点技能强度增量(不用翻译)**
+**Sealed Fate**
 *Unlocks at Level 1*
 
-（不用翻译）
+When a battle starts, Aliceth places her Mark of Judgment on the farthest enemy. She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 Penetration. Passive. After Aliceth locks on the same enemy for 6 s or casts her Ultimate, the Mark of Judgment is enhanced. The enhanced mark allows her to instantly defeat the marked enemy if her attack reduces the enemy's HP below 300% (ATK-based) + 30% . If the marked enemy is defeated or becomes untargetable, Aliceth shifts the mark to a new enemy, resetting the mark's duration counter.
 
 - Level 2 — Unlocks at Level 91: Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by 40 + 5 .
 - Level 3 — Unlocks at Level 151: Increases the extra Penetration applied to Aliceth and her ally's attacks against the marked enemy by (scaled).
@@ -76,28 +76,36 @@ For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **Mythic / Mythic+**: Unlocks **Aegis Wings** (Ex-weapon). Stats/effects: ATK, HP; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, HP; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, HP; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Adjacent
+- Attack range buff (base) — Single target — `high`
+- Brightfeather ally buff (base) — Single target — `high`
+- DEF Penetration buff (base) — Single target — `medium`
+- Invincible (base) — Self — `high`
+- ATK buff (Legendary+) — Multiple targets — `medium`
+- Fatal blow immunity (Mythic+) — Area — `high`
+- Healing (Mythic+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Execution debuff (base) — Multiple targets — `medium`
+- Blind HP loss debuff (EX+15) — Area — `low`
 
-- **Base (Mythic+) — Aegis Wings**: Stats/effects: None noted; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, Adjacent
+#### Crowd Control
+
+- Move (base) — Single target — `high`
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Lost HP
-- Caps or stack limits mentioned in skills
+- DEF Penetration
+- Max HP
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Alna - Frozen Mother
@@ -178,27 +186,30 @@ Alna and her Winter Warrior gain a 15% increase to their basic stats until one o
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Chilling Presence** (Ex-weapon). Stats/effects: ATK, Haste, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Multiple targets, All units
+- Healing (base) — Self — `low`
+- Max HP buff (base) — Multiple targets — `low`
+- Damage taken reduction (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Arc — `high`
+- Vitality debuff (Supreme+) — Area — `medium`
 
-- **Base (Mythic+) — Chilling Presence**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Self
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Freeze (Supreme+) — Area — `medium`
+
+#### Damage
+
+- Physical — All units, Arc, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Alsa - Desert Flare
@@ -272,34 +283,38 @@ Alsa increases the damage of Vigorous Slam by 50% (ATK-based) after dealing dama
 **Enhance Force**
 *Unlocks at Supreme+*
 
-Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects. Level 2 4 名 (ATK-based)
+Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects.
 
-- Level 2 — Unlocks at EX. +5: 每累计对(scaled)名敌人释放“落石术”后，该技能将生成一颗巨型落岩，对最密集的(scaled)格范围内敌人造成(scaled)伤害，并使命中的目标在(scaled)秒内魔抗降低(scaled)。
+- Level 2 — Unlocks at EX. +5: After Rolling Boulder has been cast on a cumulative total of (scaled) enemies, the skill generates a giant boulder that deals (scaled) damage to enemies within the densest (scaled)-tile area and reduces Magic DEF of hit targets by (scaled) for (scaled) s.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Energy, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, Energy, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Don of Terra** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Energy, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Energy, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Energy, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
+- Shield (base) — Self — `medium`
+- Haste buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Movement speed debuff (base) — Area — `medium`
+- Energy drain (EX+5) — Single target — `low`
+- Magic DEF debuff (EX+5) — Area — `low`
 
-- **Base (Mythic+) — Don of Terra**: Stats/effects: ATK, Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: None noted
-- **EX. +5**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Immune immunity (base) — Area — Once
+- Move (base) — Single target — `high`
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Magic — All units, Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Energy
+- Haste
 - Primary damage type (unit): **Magic**
 
 ## Antandra - Desert Fury
@@ -379,29 +394,31 @@ Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 s
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Multiple targets, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Multiple targets, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Gale Barrier** (Ex-weapon). Stats/effects: ATK, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Energy, Shield, Healing, Physical DEF; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Energy, Shield, Healing, Physical DEF; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Multiple targets, Adjacent, Area / path
+- Damage taken reduction (base) — Area — `high`
+- Healing (base) — Area — `medium`
+- Shield (base) — Self — `low`
+- Max HP buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Area — On skill
+- Knock down (base) — Area — `high`
+- Stun (base) — Area — `high`
+- Taunt (base) — Area — `low`
 
-- **Base (Mythic+) — Gale Barrier**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Arc, Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Physical DEF
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Arden - Oak Sage
@@ -478,22 +495,17 @@ Arden reduces the lightning strike interval of Force of Nature for the same enem
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Spring Thunderstorm** (Ex-weapon). Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units
+- ATK buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Pin (base) — Multiple targets — `high`
 
-- **Base (Mythic+) — Spring Thunderstorm**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
@@ -578,27 +590,32 @@ Atalanta recovers 10% of max HP every time an enemy is directly hit by Wild Snip
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Sleight of Hand** (Ex-weapon). Stats/effects: ATK, Haste, Physical DEF; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
+- Haste buff (Legendary+) — Self — `high`
+- Healing (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Phys DEF debuff (Supreme+) — Single target — `medium`
 
-- **Base (Mythic+) — Sleight of Hand**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Physical DEF; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Move (base) — Single target — `high`
+- Pin (base) — Single target — `medium`
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
+- Physical DEF
 - Max HP
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Athalia - Harbinger of Justice
@@ -677,27 +694,35 @@ Vengeance Charge and Sacred Slash can reduce the target's shield value, up to 80
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: Uncontrol immunity; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Crit; Debuffs/CC: Uncontrol immunity; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Divine Verdict** (Ex-weapon). Stats/effects: ATK, Crit; Debuffs/CC: Uncontrol immunity; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Crit, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Crit, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
+- Damage taken reduction (base) — Area — `medium`
+- Healing (base) — Area — `low`
+- Invincible (base) — Self — `high`
+- Crit buff (Legendary+) — Self — `low`
+- Execution buff (EX+15) — Self — `low`
+- Shield (Supreme+) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (base) — All units — `medium`
 
-- **Base (Mythic+) — Divine Verdict**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Area / path
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
+#### Crowd Control
+
+- Unaffected immunity (base) — Area — On skill
+- Knock down (base) — All units — `low`
+
+#### Damage
+
+- Physical — All units, Area, Single target
+- True damage — All units, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Caps or stack limits mentioned in skills
+- Crit
+- Execution
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Aurora - Celestial of Dreams
@@ -772,27 +797,29 @@ If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, e
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste; Debuffs/CC: Sleep, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste; Debuffs/CC: Sleep, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Dream Veil** (Ex-weapon). Stats/effects: ATK, Haste, Magic DEF, Damage reduction; Debuffs/CC: Sleep, Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Energy, Magic DEF, Damage reduction; Debuffs/CC: Sleep, Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Energy, Magic DEF, Damage reduction; Debuffs/CC: Sleep, Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent, Area / path
+- ATK buff (base) — Multiple targets — `high`
+- Haste buff (base) — Multiple targets — `high`
+- Invincible (base) — Multiple targets — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Multiple targets — `low`
 
-- **Base (Mythic+) — Dream Veil**: Stats/effects: ATK, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — On skill
+- Sleep (base) — Multiple targets — `high`
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
+- Haste
 - Primary damage type (unit): **Magic**
 
 ## Baelran - Dawnblade
@@ -868,28 +895,35 @@ The extra damage caused by the Divine Light can also reduce the max HP of non-bo
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, HP, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, HP, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Divine Dominance** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, HP, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, HP, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, HP, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- Healing (base) — Arc — `medium`
+- Healing over time (base) — Single target — `low`
+- Shield (base) — Self — `low`
+- Haste buff (Legendary+) — Self — `low`
+- ATK buff (EX+15) — Area — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Max HP debuff (Supreme+) — Single target — `medium`
 
-- **Base (Mythic+) — Divine Dominance**: Stats/effects: Max HP; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Area / path
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: True damage; Targeting: Self, Multiple targets
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — Start of battle
+- Knock down (base) — Area — `medium`
+
+#### Damage
+
+- Physical — Area, Single target
+- True damage — Area, Single target
+- True damage (HP-based) — Arc, Area
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- Haste
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Berial - Sinister Jester
@@ -965,32 +999,34 @@ If non-summoned enemies remain isolated for over 3 s, they lose 180 Energy and g
 
 Increases the hiding duration after being defeated by 10 s.
 
-- Level 2 — Unlocks at EX. +5: “二重身”对每名角色的触发时间降低至(scaled)秒。首次召唤残影后，自身和残影对敌人造成的能量损失效果提升(scaled)。累计召唤(scaled)次残影后，残影将不再自动损失生命值。
+- Level 2 — Unlocks at EX. +5: Shadow Reflection's trigger cooldown per character is reduced to (scaled) s. After the first Silhouette is summoned, the Energy loss effect that Berial and the Silhouette inflict on enemies is increased by (scaled). After summoning Silhouettes a cumulative (scaled) times, Silhouettes will no longer automatically lose HP.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Shadow Reflection** (Ex-weapon). Stats/effects: ATK, Max HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, Adjacent
+- Healing (base) — Single target — `high`
+- Invincible (base) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Damage taken debuff (Legendary+) — Single target — `low`
+- Energy drain (Mythic+) — Single target — `low`
 
-- **Base (Mythic+) — Shadow Reflection**: Stats/effects: ATK, Max HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Frighten (base) — Area — `medium`
+
+#### Damage
+
+- DoT — Area
+- Magic — Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Energy
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Bonnie - Obsidian Claws
@@ -1066,22 +1102,24 @@ When the Aging effect reaches its maximum stack on an enemy, their magic damage 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste; Debuffs/CC: Stun; Damage: Magic; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste; Debuffs/CC: Stun; Damage: Magic; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Blight Surge** (Ex-weapon). Stats/effects: ATK, Haste; Debuffs/CC: Stun; Damage: Magic; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste; Debuffs/CC: Stun; Damage: Magic; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Haste; Debuffs/CC: Stun; Damage: Magic; Targeting: Single target, Multiple targets
+- Invincible (base) — Self — `high`
+- ATK buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (base) — Single target — `medium`
+- Haste debuff (base) — Single target — `low`
+- Damage taken debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Blight Surge**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
@@ -1162,28 +1200,29 @@ Brutus increases the duration of damage immunity and unaffected status from Indo
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Cleaving Strike** (Ex-weapon). Stats/effects: ATK, Max HP, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: Physical, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: Physical, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: Physical, HP-based; Targeting: Single target, Multiple targets, Adjacent
+- Lifedrain buff (base) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Phys DEF debuff (base) — Area — `low`
 
-- **Base (Mythic+) — Cleaving Strike**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: Physical, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **EX. +5**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Physical; Targeting: Multiple targets, Adjacent
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — On skill
+- Taunt (base) — Area — `high`
+
+#### Damage
+
+- DoT — Area
+- Physical — Arc, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Life Drain
 - Max HP
-- Caps or stack limits mentioned in skills
 - Primary damage type (unit): **Physical**
 
 ## Bryon - Evergreen Sentinel
@@ -1262,29 +1301,33 @@ Bryon generates two leaves beside Elona if the falcon is on the battlefield when
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Energy; Debuffs/CC: Interrupt; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Energy; Debuffs/CC: Interrupt; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Tacit Strike** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, HP, Energy; Debuffs/CC: Stun, Interrupt; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, HP, Energy; Debuffs/CC: Stun, Interrupt; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, HP, Energy; Debuffs/CC: Stun, Interrupt; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, Adjacent
+- Haste buff (Legendary+) — Self — `low`
+- Healing (EX+5) — Single target — `high`
+- Healing over time (EX+5) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Area — `low`
 
-- **Base (Mythic+) — Tacit Strike**: Stats/effects: ATK, Max HP; Debuffs/CC: Stun; Damage: HP-based; Targeting: Single target
-- **EX. +5**: Stats/effects: ATK, HP, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Interrupt (base) — Single target — `low`
+- Stun (Mythic+) — Single target — `medium`
+
+#### Damage
+
+- DoT — Area
+- Magic — Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Haste
+- Max HP
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Callan - Grim Soulkeeper
@@ -1364,26 +1407,28 @@ When gaining a shield, Callan recovers HP equal to 15% of the shield's max value
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Shield; Debuffs/CC: Uncontrol immunity; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Vitality, Shield; Debuffs/CC: Uncontrol immunity; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Hollowed Wrath** (Ex-weapon). Stats/effects: ATK, Vitality, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Vitality, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Vitality, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Area / path
+- Shield (base) — Self — `medium`
+- Healing (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — Start of battle
+- Knock down (base) — All units — `high`
+- Pin (base) — Multiple targets — `high`
+- Stun (Mythic+) — All units — `low`
 
-- **Base (Mythic+) — Hollowed Wrath**: Stats/effects: ATK; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Multiple targets, All units
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: Stun; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — Multiple targets
+- Physical — All units, Area, Self, Single target
 
 #### Stats the unit benefits from
 
+- Max HP
 - ATK
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Carolina - Candlelight Specter
@@ -1459,27 +1504,27 @@ Carolina inflicts Frostbite when dealing damage with Snowball Witchery.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Ice Vortex** (Ex-weapon). Stats/effects: ATK, Haste, Crit, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Crit, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Crit, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, Adjacent
+- Crit buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Area — `low`
+- Magic DEF debuff (Mythic+) — Area — `low`
 
-- **Base (Mythic+) — Ice Vortex**: Stats/effects: Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Multiple targets, Adjacent
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Multiple targets
+#### Crowd Control
+
+- Freeze (base) — Area — `high`
+
+#### Damage
+
+- Magic — Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Caps or stack limits mentioned in skills
+- Crit
 - Primary damage type (unit): **Magic**
 
 ## Cassadee - Azure Prodigy
@@ -1561,26 +1606,28 @@ Cassadee reduces the Magic DEF of enemies hit by Running Tide by 20% for 10 s.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Tidal Blessing** (Ex-weapon). Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- Haste buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Magic DEF debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Tidal Blessing**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: All units, Area / path
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Move (base) — All units — `low`
+- Stun (base) — Single target — `low`
+
+#### Damage
+
+- Magic — All units, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
+- DEF Penetration
 - Primary damage type (unit): **Magic**
 
 ## Cecia - Requiem of Thorns
@@ -1655,31 +1702,41 @@ Cecia entangles an enemy with reinforced Thorns, dealing 60% (ATK-based) damage 
 
 Reduces the required normal attacks to trigger Agonizing Puncture by -1 .
 
-- Level 2 — Unlocks at EX. +5: 获得(scaled)点初始能量。释放终极技能时，将会每秒永久吸取被缠绕敌人(scaled)的基础属性，至多偷取相当于自身对应初始属性的(scaled)，并与卡莱尔先生共享吸取到的属性值。
+- Level 2 — Unlocks at EX. +5: Gains (scaled) Initial Energy. When casting her Ultimate, permanently absorbs (scaled) base stats from entangled enemies every second, up to (scaled) of her corresponding initial stats, and shares the absorbed stats with Mr. Carlyle.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, DEF Penetration, Max HP, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, DEF Penetration, Max HP, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Multiple targets
-- **Mythic / Mythic+**: Unlocks **Trial of Thorns** (Ex-weapon). Stats/effects: ATK, ATK SPD, DEF Penetration, Vitality, Max HP, HP, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, DEF Penetration, Vitality, Max HP, HP, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, DEF Penetration, Vitality, Max HP, HP, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target, Multiple targets
+- ATK SPD buff (base) — Multiple targets — `high`
+- Healing (base) — Arc — `high`
+- Lifedrain buff (base) — Area — `low`
+- Max HP buff (base) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Damage taken debuff (EX+10) — Single target — `medium`
 
-- **Base (Mythic+) — Trial of Thorns**: Stats/effects: ATK, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets
-- **EX. +5**: Stats/effects: Vitality; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Pin (base) — Single target — `high`
+
+#### Damage
+
+- DoT — Arc, Single target
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
+- ATK SPD
+- Life Drain
+- DEF Penetration
+- Physical DEF
+- Magic DEF
+- Energy
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Chippy - Sidekick
@@ -1730,19 +1787,9 @@ Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage. These
 
 ### Summary
 
-#### Per Ascension
+#### Damage
 
-- **Epic / Epic+**: Stats/effects: ATK, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Legendary / Legendary+**: Stats/effects: ATK, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Mythic / Mythic+**: Stats/effects: ATK, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Supreme / Supreme+**: Stats/effects: ATK, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Paragon 1–4**: Stats/effects: ATK, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
-
-#### Per ex-level
-
-- No Ex-weapon skill on this unit.
+- Physical — Single target
 
 #### Stats the unit benefits from
 
@@ -1825,30 +1872,33 @@ In regular battles, Contess stuns enemies who violate Code of Conduct - Be Civil
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Expulsion Notice** (Ex-weapon). Stats/effects: ATK, Max HP, HP, Energy, Shield, Healing; Debuffs/CC: Silence, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, HP, Energy, Shield, Healing; Debuffs/CC: Stun, Silence, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, HP, Energy, Shield, Healing; Debuffs/CC: Stun, Silence, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
+- Energy recovery (base) — Self — `high`
+- Healing (base) — Self — `high`
+- Shield (base) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (base) — Multiple targets — `low`
+- Max HP debuff (base) — Multiple targets — `low`
+- ATK debuff (Legendary+) — Single target — `low`
 
-- **Base (Mythic+) — Expulsion Notice**: Stats/effects: None noted; Debuffs/CC: Silence, Uncontrol immunity; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
+#### Crowd Control
+
+- Silence (Mythic+) — Single target — `medium`
+- Stun (Supreme+) — Single target — `medium`
+
+#### Damage
+
+- Magic — All units, Multiple targets
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Cryonaia - Arctic Revenant
@@ -1929,27 +1979,29 @@ While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Frozen in Time** (Ex-weapon). Stats/effects: ATK, Haste, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Shield; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Shield; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- Shield (base) — Self — `high`
+- ATK buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Damage taken debuff (EX+5) — Single target — `medium`
 
-- **Base (Mythic+) — Frozen in Time**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Self
+#### Crowd Control
+
+- Immune immunity (base) — Self — Conditional
+- Freeze (EX+15) — Self — `low`
+
+#### Damage
+
+- DoT — Area
+- Magic — All units, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Caps or stack limits mentioned in skills
+- Haste
 - Primary damage type (unit): **Magic**
 
 ## Cyran - Umbral Weaver
@@ -2028,26 +2080,32 @@ Gains extra 200 Initial Energy.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Crit; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Mystic Recollection** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Crit; Debuffs/CC: Silence, Uncontrol immunity; Damage: Magic, True damage; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Crit, Energy; Debuffs/CC: Silence, Uncontrol immunity; Damage: Magic, True damage; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Crit, Energy; Debuffs/CC: Silence, Uncontrol immunity; Damage: Magic, True damage; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
+- Crit buff (Legendary+) — Self — `low`
+- ATK buff (EX+10) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (Mythic+) — All units — `low`
 
-- **Base (Mythic+) — Mystic Recollection**: Stats/effects: ATK, ATK SPD, Haste; Debuffs/CC: Uncontrol immunity; Damage: True damage; Targeting: Self, Multiple targets, All units
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: Silence; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Steadfast immunity (base) — Area — Conditional
+- Unaffected immunity (base) — Self — Start of battle
+- Pin (base) — Area — `low`
+- Silence (EX+10) — Single target — `low`
+
+#### Damage
+
+- Magic — All units, Area, Single target
+- True damage — All units
 
 #### Stats the unit benefits from
 
 - ATK
+- Crit
+- ATK SPD
 - Energy
 - Primary damage type (unit): **Magic**
 
@@ -2105,10 +2163,10 @@ Daimon reduces damage taken by 10% during the battle. While shielded, he further
 
 ### Ex. Skill
 
-**守护震慑子技能（不用翻译）**
+**Guardian Growl**
 *Unlocks at Mythic+*
 
-（不用翻译）
+Whenever Daimon's cumulative damage taken and shield value loss combined exceed 70% of his max HP, Stitchy returns to him and lets out a terrifying roar, frightening enemies within 3 tiles. The enemy who dealt the most damage to Daimon will also be frightened. The effect lasts for 2 s and triggers once every 10 s.
 
 - Level 2 — Unlocks at EX.: +5 Stitchy returns whenever Daimon's cumulative damage taken and shield value loss combined exceed 50% of his max HP.
 - Level 3 — Unlocks at EX.: +10 Stitchy's roar unleashes deafening shockwaves, affecting enemies within 3 tiles and the enemy who dealt the most damage to Daimon. The roar deals damage equal to 5% of each enemy's max HP every 0.5 s for 2 s. This damage cannot exceed 100% . (ATK-based) Stitchy then converts 100% of the damage dealt into a shield for Daimon, which lasts for 8 s.
@@ -2123,28 +2181,26 @@ When an allied hero's shield expires, converts 50% of the remaining shield value
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Shield; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Shield; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **守护震慑子技能（不用翻译）** (Ex-weapon). Stats/effects: ATK, Max HP, Shield; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
+- Lifedrain buff (base) — Single target — `medium`
+- Shield (base) — Area — `low`
+- Damage taken reduction (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Frighten (Mythic+) — Area — `medium`
 
-- **Base (Mythic+) — 守护震慑子技能（不用翻译）**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: None noted
+#### Damage
+
+- Magic — Area, Self, Single target
+- True damage (HP-based) — Area
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- Life Drain
 - Primary damage type (unit): **Magic**
 
 ## Damian - Woody Wonder
@@ -2223,27 +2279,27 @@ When casting Explode, my chariot!, the blind duration is increased to 7 s when t
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Farthest enemy
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Energy, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Farthest enemy
-- **Mythic / Mythic+**: Unlocks **Inventor's Will** (Ex-weapon). Stats/effects: ATK, Haste, Energy, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Farthest enemy
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, HP, Energy, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Farthest enemy
-- **Paragon 1–4**: Stats/effects: ATK, Haste, HP, Energy, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Farthest enemy
+- Energy recovery (base) — Area — `medium`
+- Healing (base) — Self — `medium`
+- ATK buff (Legendary+) — Self — `medium`
+- Haste buff (Mythic+) — Multiple targets — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Stun (base) — Single target — `medium`
 
-- **Base (Mythic+) — Inventor's Will**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — All units, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Energy
+- Haste
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Dionel - Venus of Dawn
@@ -2322,27 +2378,28 @@ Dionel increases Execution by 20 within the duration of Nectar Feast if it's bee
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Celestial Spear** (Ex-weapon). Stats/effects: ATK, ATK SPD, Vitality; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Vitality, Shield; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Vitality, Shield; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
+- ATK SPD buff (Legendary+) — Self — `low`
+- Execution buff (Supreme+) — Self — `low`
+- Shield (Supreme+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Vitality debuff (EX+10) — Single target — `low`
 
-- **Base (Mythic+) — Celestial Spear**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: True damage; Targeting: Multiple targets, All units
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Vitality; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — All units, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Caps or stack limits mentioned in skills
+- DEF Penetration
+- ATK SPD
+- Execution
+- Max HP
 - Primary damage type (unit): **Physical**
 
 ## Dunlingr - Eternal Voice
@@ -2420,29 +2477,36 @@ Upon casting Echo of Silence, Dunlingr grants all allies 50 ATK SPD for 6 s if t
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Max HP, HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Max HP, HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Clemency Chime** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Max HP, HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Vitality, Max HP, HP, Energy, Shield; Debuffs/CC: Silence; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Vitality, Max HP, HP, Energy, Shield; Debuffs/CC: Silence; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
+- Healing (base) — Single target — `high`
+- Shield (base) — Self — `medium`
+- Damage taken reduction (Legendary+) — Self — `low`
+- ATK buff (EX+5) — Single target — `low`
+- Haste buff (EX+15) — Single target — `low`
+- Lifedrain buff (Supreme+) — All units — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (base) — Area — `medium`
+- Energy drain (Supreme+) — All units — `low`
 
-- **Base (Mythic+) — Clemency Chime**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Silence (Supreme+) — All units — `high`
+
+#### Damage
+
+- Magic — All units, Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Max HP
-- Lost HP
-- Energy
+- Haste
+- Life Drain
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Eironn - Stormsword
@@ -2523,27 +2587,27 @@ Eironn reduces an extra 15% Magic DEF on an immobilized target if they are immob
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Howling Hurricane** (Ex-weapon). Stats/effects: ATK, Haste, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets
+- Shield (base) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Arc — `medium`
+- Magic DEF debuff (base) — Arc — `medium`
 
-- **Base (Mythic+) — Howling Hurricane**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Move (base) — Area — `medium`
+- Pin (base) — Single target — `high`
+
+#### Damage
+
+- Magic — Arc, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
 - Primary damage type (unit): **Magic**
 
 ## Elijah & Lailah - Celestial Twins
@@ -2613,29 +2677,35 @@ Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Max HP, Energy, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, Energy, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Starbound Harmony** (Ex-weapon). Stats/effects: ATK, Haste, Vitality, Max HP, Energy, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, Max HP, Energy, Shield, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, Max HP, Energy, Shield, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
+- Haste buff (base) — All units — `high`
+- Healing (base) — Multiple targets — `low`
+- Max HP buff (base) — Multiple targets — `high`
+- Shield (base) — Single target — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (base) — Multiple targets — `low`
 
-- **Base (Mythic+) — Starbound Harmony**: Stats/effects: Vitality, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **EX. +5**: Stats/effects: Vitality, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Vitality, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Area — On skill
+- Move (base) — Area — `high`
+
+#### Damage
+
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
-- ATK
+- Haste
 - Max HP
+- ATK
 - Energy
-- Caps or stack limits mentioned in skills
+- Physical DEF
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Evie - Royal Envoy
@@ -2710,27 +2780,28 @@ After gathering intel on all surviving enemy heroes while concealed, Evie summon
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy, Healing, Magic DEF; Debuffs/CC: Silence; Damage: Magic; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Energy, Healing, Magic DEF; Debuffs/CC: Silence; Damage: Magic; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Tactical Briefing** (Ex-weapon). Stats/effects: ATK, Energy, Healing, Magic DEF, Damage reduction; Debuffs/CC: Silence; Damage: Magic; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Energy, Healing, Magic DEF, Damage reduction; Debuffs/CC: Silence; Damage: Magic; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Energy, Healing, Magic DEF, Damage reduction; Debuffs/CC: Silence; Damage: Magic; Targeting: Single target, Multiple targets, All units
+- ATK buff (base) — Multiple targets — `high`
+- Healing (base) — Single target — `medium`
+- Invincible (base) — Self — `high`
+- Healing stat buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Move (base) — All units — `high`
+- Pin (base) — All units — `high`
+- Silence (base) — All units — `high`
 
-- **Base (Mythic+) — Tactical Briefing**: Stats/effects: Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Magic; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — All units, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Energy
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Faramor - Silverfang Mantle
@@ -2805,29 +2876,30 @@ If an enemy revives within Faramor's magic circle after their HP drops to 0, Far
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Bitter Requiem** (Ex-weapon). Stats/effects: ATK, Haste, HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, Adjacent
+- ATK buff (base) — Area — `low`
+- Shield (base) — Self — `high`
+- Haste buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Vitality debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Bitter Requiem**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: Magic, True damage; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: True damage; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: True damage; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Area — `low`
+
+#### Damage
+
+- Physical — Area, Single target
+- True damage — Multiple targets
+- True damage (HP-based) — Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Lost HP
-- Energy
-- Caps or stack limits mentioned in skills
+- Haste
 - Primary damage type (unit): **Physical**
 
 ## Fay - Colorful Dancer
@@ -2904,26 +2976,28 @@ When an ally's HP ratio drops below 50% for the first time during Healing Gemsto
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Vitality, Healing, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Vitality, Healing, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Grand Entrance** (Ex-weapon). Stats/effects: ATK, ATK SPD, Vitality, Healing, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Vitality, Healing, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Vitality, Healing, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Physical, Magic; Targeting: Single target, Multiple targets, All units, Adjacent
+- ATK buff (base) — Arc — `high`
+- DEF buff (base) — Multiple targets — `low`
+- Healing (base) — Arc — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Magic DEF debuff (base) — Multiple targets — `low`
+- Phys DEF debuff (base) — Multiple targets — `low`
 
-- **Base (Mythic+) — Grand Entrance**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Vitality; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Vitality; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Vitality; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
+- Physical DEF
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Florabelle - Blooming Maiden
@@ -3003,27 +3077,29 @@ Allied Bulbsprite in their giant form are immune to control effects.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Max HP, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Protective Blessing** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
+- Healing (base) — Area — `medium`
+- Lifedrain buff (base) — Single target — `medium`
+- ATK buff (Legendary+) — Self — `medium`
+- Shield (Mythic+) — Single target — `medium`
+- Haste buff (EX+10) — Multiple targets — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Immune immunity (Supreme+) — Self — Form
 
-- **Base (Mythic+) — Protective Blessing**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
+- Haste
+- Life Drain
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Frieren - The Legendary Mage
@@ -3099,27 +3175,31 @@ When a battle starts, Frieren casts defensive magic on herself and the frontmost
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Vitality; Debuffs/CC: Stun; Damage: Magic, True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Vitality; Debuffs/CC: Stun; Damage: Magic, True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Defensive Magic** (Ex-weapon). Stats/effects: ATK, Haste, Vitality, Max HP; Debuffs/CC: Stun; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, Max HP; Debuffs/CC: Stun; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, Max HP; Debuffs/CC: Stun; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
+- ATK buff (Legendary+) — Self — `low`
+- Haste buff (EX+10) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Vitality debuff (base) — Single target — `low`
 
-- **Base (Mythic+) — Defensive Magic**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Self
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Single target — `low`
+- Knock down (Supreme+) — Single target — `medium`
+
+#### Damage
+
+- DoT — All units, Single target
+- Magic — Area, Self, Single target
+- True damage — All units, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
+- Haste
 - Primary damage type (unit): **Magic**
 
 ## Gala - Daughter of Dawn
@@ -3198,28 +3278,27 @@ While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second a
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Time Recast** (Ex-weapon). Stats/effects: ATK, Haste, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Adjacent
+- Haste buff (base) — Self — `high`
+- Shield (base) — Single target — `high`
+- ATK buff (Legendary+) — Self — `medium`
+- Energy recovery (Supreme+) — Single target — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Steadfast immunity (Supreme+) — Self — On skill
+- Pin (base) — Single target — `medium`
 
-- **Base (Mythic+) — Time Recast**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: Magic; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — All units, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Energy
-- Caps or stack limits mentioned in skills
 - Primary damage type (unit): **Magic**
 
 ## Gerda - Soothing Siren
@@ -3297,28 +3376,29 @@ When Gerda stomps the ground during Spring Therapy, she stuns enemies for 2 s in
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: Sleep, Interrupt, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: Sleep, Interrupt, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Spring of Life** (Ex-weapon). Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: Sleep, Interrupt, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: Stun, Sleep, Interrupt, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: Stun, Sleep, Interrupt, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
+- Healing (base) — Multiple targets — `medium`
+- Healing over time (base) — Area — `high`
+- Shield (base) — Self — `medium`
+- Damage taken reduction (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — Start of battle
+- Interrupt (base) — Single target — `medium`
+- Pin (base) — Multiple targets — `low`
+- Stun (base) — Single target — `medium`
 
-- **Base (Mythic+) — Spring of Life**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Granny Dahnie - Forest Guardian
@@ -3396,29 +3476,36 @@ Granny Dahnie recovers 120% (ATK-based) HP when shooting seeds using Seed Cannon
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Max HP, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Glimmerbloom Blessings** (Ex-weapon). Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy, Shield, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic, HP-based; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy, Shield, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic, HP-based; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy, Shield, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic, HP-based; Targeting: Single target, Multiple targets
+- Healing (base) — Single target — `high`
+- DEF buff (Mythic+) — Self — `high`
+- Healing over time (Mythic+) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Single target — `low`
+- ATK debuff (Supreme+) — Single target — `high`
 
-- **Base (Mythic+) — Glimmerbloom Blessings**: Stats/effects: ATK, Shield, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — On skill
+- Pin (base) — Area — `medium`
+- Taunt (base) — Single target — `high`
+
+#### Damage
+
+- Physical — Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
+- Physical DEF
+- Magic DEF
+- Haste
 - Energy
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Gunnar - Iron Doom
@@ -3496,28 +3583,27 @@ If an area set on fire is struck again by Doomsday Meteor, the area becomes perm
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Vitality, Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Vitality, Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Fire Suppression** (Ex-weapon). Stats/effects: ATK, ATK SPD, Vitality, Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Vitality, Max HP, Shield, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Vitality, Max HP, Shield, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Adjacent, Area / path
+- Shield (base) — Self — `high`
+- Healing (Mythic+) — Single target — `high`
+- Invincible (EX+15) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Stun (base) — All units — `low`
 
-- **Base (Mythic+) — Fire Suppression**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- DoT — Area
+- Physical — All units, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- ATK SPD
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Gwyneth - Dragonslayer Knight
@@ -3578,7 +3664,7 @@ Gwyneth increases her ATK SPD by 15 during battle. If there are no enemies withi
 Gwyneth's normal attack damage is increased by 20% . The 1st attack in her normal attack cycle is imbued with the power of both lightning and fire, and it burns enemies hit by the lightning splash.
 
 - Level 2 — Unlocks at EX.: +5 Increases Gwyneth's normal attack damage by 25% .
-- Level 3 — Unlocks at EX. +10: 为箭矢同时附加雷属性和火属性时，还会对主目标额外附加其(scaled)最大生命值的伤害，额外伤害不超过自身(scaled)攻击力。且由本次箭矢造成的所有伤害无视敌人护甲带来的减伤效果的(scaled)和受到伤害降低效果的(scaled)，在非首领模式下，无视受到伤害降低效果的幅度提升至(scaled)。
+- Level 3 — Unlocks at EX. +10: When an arrow is imbued with both lightning and fire, it also deals extra damage equal to (scaled) of the primary target's max HP; the extra damage cannot exceed (scaled) of Gwyneth's ATK. All damage dealt by this arrow ignores (scaled) of damage reduction from the enemy's armor and (scaled) of damage-reduction effects. In non-boss modes, the amount of damage-reduction ignored is increased to (scaled).
 - Level 4 — Unlocks at EX. +15: Increases Gwyneth's normal attack damage by (scaled). 
 
 ### Unlocks at Supreme+
@@ -3590,27 +3676,31 @@ If there are no enemies within 1 tiles for 3 s, Gwyneth focuses her aim, reducin
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Haste, Vitality, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Haste, Vitality, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Fulgur Flare** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Vitality, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Vitality, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Vitality, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
+- ATK SPD buff (Legendary+) — Area — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Burn debuff (base) — Single target — `medium`
 
-- **Base (Mythic+) — Fulgur Flare**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Pin (base) — Area — `medium`
+- Silence (base) — Area — `low`
+- Stun (base) — Area — `low`
+
+#### Damage
+
+- DoT — Single target
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
-- ATK SPD and Haste
 - ATK
+- ATK SPD
+- Haste
+- Max HP
 - Primary damage type (unit): **Physical**
 
 ## Hammie - Magician
@@ -3664,23 +3754,19 @@ Hammie recovers 220% (ATK-based) HP when her HP ratio falls below 70% .
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Legendary / Legendary+**: Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Mythic / Mythic+**: Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Supreme / Supreme+**: Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Paragon 1–4**: Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
+- ATK buff (base) — Single target — `high`
+- Healing (base) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- No Ex-weapon skill on this unit.
+- Magic — Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Harak - Deepsea Ravager
@@ -3756,29 +3842,37 @@ Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vici
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Crit, HP; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Crit, HP; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target
-- **Mythic / Mythic+**: Unlocks **Ravenous Digestion** (Ex-weapon). Stats/effects: ATK, Haste, Crit, Max HP, HP; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Crit, Max HP, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Crit, Max HP, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target
+- Crit buff (base) — Single target — `medium`
+- Haste buff (base) — Single target — `high`
+- Healing over time (base) — Single target — `medium`
+- Invincible (base) — Self — `high`
+- Lifedrain buff (Legendary+) — Self — `low`
+- Healing (EX+15) — Single target — `low`
+- Energy recovery (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Execution debuff (base) — Single target — `medium`
 
-- **Base (Mythic+) — Ravenous Digestion**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — Start of battle
+
+#### Damage
+
+- Physical — Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
+- Crit
+- Life Drain
 - Max HP
-- Lost HP
 - Energy
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Hepler - Master of Forms
@@ -3855,28 +3949,34 @@ Whenever Hepler spends Spark stacks, he and the protected ally permanently incre
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Shield, Healing; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Shield, Healing; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Fur-ious Rescue** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Shield, Healing; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Shield, Healing, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Shield, Healing, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units, Adjacent
+- Haste buff (base) — Single target — `low`
+- Healing (base) — Multiple targets — `medium`
+- Shield (base) — Multiple targets — `low`
+- Damage taken reduction (Legendary+) — Self — `low`
+- Invincible (Mythic+) — Area — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Area — `high`
 
-- **Base (Mythic+) — Fur-ious Rescue**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Adjacent
-- **EX. +5**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Area — `medium`
+- Taunt (base) — Area — `high`
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Max HP
-- Caps or stack limits mentioned in skills
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Hewynn - Tender Leaf
@@ -3951,27 +4051,24 @@ Hewynn also grants the healed ally 30 Haste for 6 s when Revitalize is in effect
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **Mythic / Mythic+**: Unlocks **Tranquil** (Ex-weapon). Stats/effects: ATK, Energy, Healing, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Energy, Healing, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: All units
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Energy, Healing, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: All units
+- Healing (base) — Single target — `high`
+- ATK buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (Mythic+) — Self — On skill
 
-- **Base (Mythic+) — Tranquil**: Stats/effects: Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: All units
-- **EX. +5**: Stats/effects: Energy, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **EX. +15**: Stats/effects: Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
+#### Damage
+
+- Magic — All units
 
 #### Stats the unit benefits from
 
 - ATK
 - Energy
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Himmel - The Legendary Hero
@@ -4050,28 +4147,28 @@ Himmel has the same fighting spirit that once drove him to challenge the Demon K
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Blue-Moon Blessings** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- Shield (base) — Area — `low`
+- Haste buff (Legendary+) — Self — `medium`
+- ATK buff (Mythic+) — Self — `high`
+- Max HP buff (Mythic+) — Multiple targets — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Multiple targets — On skill
 
-- **Base (Mythic+) — Blue-Moon Blessings**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Max HP, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
+- True damage (HP-based) — All units
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- Haste
+- DEF Penetration
 - Primary damage type (unit): **Physical**
 
 ## Hodgkin - Reviled Captain
@@ -4152,29 +4249,27 @@ Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15% , up to 2 stack
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: Physical; Targeting: Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: Physical; Targeting: Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Ardent Believers** (Ex-weapon). Stats/effects: ATK, Max HP, Energy; Debuffs/CC: None noted; Damage: Physical, Magic, HP-based; Targeting: Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Vitality, Max HP, Energy, Physical DEF; Debuffs/CC: None noted; Damage: Physical, Magic, HP-based; Targeting: Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Vitality, Max HP, Energy, Physical DEF; Debuffs/CC: None noted; Damage: Physical, Magic, HP-based; Targeting: Multiple targets, Adjacent
+- Healing over time (base) — Single target — `high`
+- ATK buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (Mythic+) — Area — `medium`
+- Vitality debuff (EX+5) — Single target — `low`
+- Phys DEF debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Ardent Believers**: Stats/effects: ATK, Max HP, Energy; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Multiple targets, Adjacent
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Arc, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Hugin - Maverick Smith
@@ -4253,26 +4348,20 @@ While the cogshield or enhanced cogshield is active, the protected ally also tak
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Energy, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Energy, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **Mythic / Mythic+**: Unlocks **Steelbound Kinship** (Ex-weapon). Stats/effects: ATK, Haste, Energy, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Energy, Shield, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Energy, Shield, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+- ATK buff (base) — Single target — `high`
+- Haste buff (base) — Multiple targets — `high`
+- Shield (base) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Steelbound Kinship**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+- Physical — Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Energy
 - Primary damage type (unit): **Physical**
 
@@ -4348,26 +4437,21 @@ Igor summons an extra tombstone with Funereal Ring on the tile with the most sur
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Horror Strike** (Ex-weapon). Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
+- Healing (base) — Single target — `low`
+- Lifedrain buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Horror Strike**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+- Physical — All units, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Max HP
+- Life Drain
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Indris - Chain Breaker
@@ -4445,28 +4529,33 @@ After hitting a target with Arcane Binding, Indris' normal attacks can trigger t
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Magic DEF, Damage reduction; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Magic DEF, Damage reduction; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Windpiercer** (Ex-weapon). Stats/effects: ATK, ATK SPD, Max HP, Physical DEF, Magic DEF, Damage reduction; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Max HP, Physical DEF, Magic DEF, Damage reduction; Debuffs/CC: None noted; Damage: Physical, Magic, True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Max HP, Physical DEF, Magic DEF, Damage reduction; Debuffs/CC: None noted; Damage: Physical, Magic, True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
+- ATK buff (Legendary+) — Self — `low`
+- ATK SPD buff (Mythic+) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Magic DEF debuff (base) — Single target — `high`
+- Phys DEF debuff (EX+10) — Single target — `low`
 
-- **Base (Mythic+) — Windpiercer**: Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Physical DEF; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Move (base) — Area — `high`
+- Pin (base) — Area — `high`
+- Silence (base) — Single target — `high`
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — Multiple targets
+- True damage (HP-based) — Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- ATK SPD
 - Primary damage type (unit): **Physical**
 
 ## Isabella - The Taken Soul
@@ -4542,27 +4631,34 @@ Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Haste, Vitality, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Haste, Vitality, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Retributive Echo** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Vitality, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Vitality, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Vitality, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
+- Haste buff (base) — Multiple targets — `low`
+- Healing (base) — Area — `high`
+- Energy recovery (EX+10) — Single target — `low`
+- ATK SPD buff (Supreme+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (base) — Single target — `low`
 
-- **Base (Mythic+) — Retributive Echo**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Single target — Once
+
+#### Damage
+
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Energy
+- Haste
+- Physical DEF
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Kafra - Gale Rider
@@ -4640,26 +4736,32 @@ The damage of Relentless Chase's first casting in battle is increased to 520% . 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Physical DEF; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Physical DEF; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Mythic / Mythic+**: Unlocks **Sylvan Banishment** (Ex-weapon). Stats/effects: ATK, Haste, Shield, Healing, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Shield, Healing, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Shield, Healing, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
+- Healing over time (base) — Area — `low`
+- ATK buff (Legendary+) — Self — `medium`
+- Shield (EX+5) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Phys DEF debuff (base) — Area — `low`
+- ATK debuff (Mythic+) — Single target — `medium`
+- Haste debuff (Mythic+) — Single target — `low`
 
-- **Base (Mythic+) — Sylvan Banishment**: Stats/effects: ATK, Haste, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (Mythic+) — Self — Conditional
+- Move (base) — Single target — `medium`
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Physical — Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Koko - Wild Child
@@ -4737,27 +4839,34 @@ Increases the target's Vitality by 25 for 6 s after Koko feeds them using Fulfil
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy, Healing; Debuffs/CC: None noted; Damage: True damage; Targeting: Self, Single target, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Energy, Healing; Debuffs/CC: None noted; Damage: True damage; Targeting: Self, Single target, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Fluffy Shield** (Ex-weapon). Stats/effects: ATK, Haste, Resilience, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: True damage; Targeting: Self, Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Resilience, Vitality, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: True damage; Targeting: Self, Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Resilience, Vitality, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: True damage; Targeting: Self, Single target, Multiple targets, All units, Adjacent
+- Healing (base) — Single target — `high`
+- Healing over time (base) — Single target — `high`
+- Lifedrain buff (base) — Multiple targets — `medium`
+- Haste buff (Legendary+) — Self — `medium`
+- Shield (Mythic+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Damage taken debuff (base) — Area — `high`
 
-- **Base (Mythic+) — Fluffy Shield**: Stats/effects: Energy, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **EX. +5**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Resilience, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Resilience; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Area — `medium`
+
+#### Damage
+
+- Physical — All units, Area, Single target
+- True damage — All units
 
 #### Stats the unit benefits from
 
 - ATK
 - Energy
+- Life Drain
+- Haste
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Kordan - Ironblood Chieftain
@@ -4836,29 +4945,31 @@ Whenever Kordan assists or defeats an enemy inside the hunting circle, he leaps 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy, Shield, Healing, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Energy, Shield, Healing, Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Rage Unleashed** (Ex-weapon). Stats/effects: ATK, Max HP, HP, Energy, Shield, Healing, Magic DEF, Damage reduction; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, HP, Energy, Shield, Healing, Magic DEF, Damage reduction; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, HP, Energy, Shield, Healing, Magic DEF, Damage reduction; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units
+- Lifedrain buff (base) — Area — `high`
+- Shield (base) — Self — `medium`
+- ATK buff (Legendary+) — Self — `medium`
+- Healing over time (EX+10) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Knock down (base) — Single target — `high`
+- Move (base) — Area — `high`
+- Pin (base) — Area — `high`
 
-- **Base (Mythic+) — Rage Unleashed**: Stats/effects: ATK, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **EX. +5**: Stats/effects: ATK, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **EX. +10**: Stats/effects: Max HP, HP, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +15**: Stats/effects: HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Life Drain
 - Max HP
-- Lost HP
-- Energy
+- Magic DEF
+- DEF Penetration
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Korin - Wood Warden
@@ -4934,28 +5045,29 @@ Korin reduces damage taken from enemy beyond 1 tile by 25% .
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Crit, Shield; Debuffs/CC: None noted; Damage: True damage; Targeting: Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Crit, Shield; Debuffs/CC: None noted; Damage: True damage; Targeting: Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Vine Arms** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Crit, Max HP, Shield; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Crit, Max HP, Shield; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Crit, Max HP, Shield; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Multiple targets, Adjacent
+- Shield (base) — Single target — `medium`
+- Haste buff (Legendary+) — Self — `medium`
+- ATK SPD buff (EX+5) — Self — `high`
+- Damage taken reduction (Supreme+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Pin (base) — Single target — `medium`
 
-- **Base (Mythic+) — Vine Arms**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: None noted
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — Single target
+- True damage (HP-based) — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Max HP
-- Caps or stack limits mentioned in skills
+- ATK SPD
 - Primary damage type (unit): **Physical**
 
 ## Kruger - Dauntless Warrior
@@ -5032,27 +5144,24 @@ Kruger gains a 40% ATK boost until the battle ends when a Vulnerable enemy is de
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Physical DEF; Debuffs/CC: Knock down; Damage: Physical; Targeting: Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Physical DEF; Debuffs/CC: Knock down; Damage: Physical; Targeting: Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Ruthless Vanguard** (Ex-weapon). Stats/effects: ATK, Shield, Physical DEF; Debuffs/CC: Knock down; Damage: Physical; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Shield, Physical DEF; Debuffs/CC: Knock down; Damage: Physical; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Shield, Physical DEF; Debuffs/CC: Knock down; Damage: Physical; Targeting: Single target, Multiple targets, Adjacent
+- Lifedrain buff (Mythic+) — Area — `medium`
+- Shield (Mythic+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Phys DEF debuff (base) — Single target — `high`
 
-- **Base (Mythic+) — Ruthless Vanguard**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Caps or stack limits mentioned in skills
+- Max HP
+- Life Drain
 - Primary damage type (unit): **Physical**
 
 ## Kulu - Blast Master
@@ -5131,27 +5240,30 @@ Kulu gains extra ATK SPD and Ranged DEF during battle. If there are no enemies o
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Bombs Away!** (Ex-weapon). Stats/effects: ATK, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Damage reduction; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
+- Invincible (base) — Self — `high`
+- ATK buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Movement speed debuff (base) — Area — `medium`
+- Damage taken debuff (Mythic+) — All units — `low`
 
-- **Base (Mythic+) — Bombs Away!**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Area — On ultimate
+- Move (base) — Single target — `high`
+
+#### Damage
+
+- Physical — All units, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Caps or stack limits mentioned in skills
+- DEF Penetration
+- ATK SPD
 - Primary damage type (unit): **Physical**
 
 ## Laios - Dungeon Adventurer
@@ -5230,28 +5342,34 @@ Laios permanently increases his max HP by each time he collects a different ingr
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Haste, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Haste, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Ingredient Analysis** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, Adjacent
+- ATK buff (base) — Area — `high`
+- DEF buff (base) — Area — `medium`
+- Energy recovery (base) — Area — `medium`
+- Haste buff (base) — Area — `high`
+- Healing (base) — Area — `low`
+- Healing over time (base) — Area — `medium`
+- Max HP buff (Supreme+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Pin (base) — Area — `medium`
 
-- **Base (Mythic+) — Ingredient Analysis**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
+- ATK SPD
 - Energy
+- Physical DEF
+- Magic DEF
+- Haste
+- Max HP
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Lenya - Wild Cyclone
@@ -5329,26 +5447,27 @@ Lenya reduces damage taken from enemies other than her target by 35% .
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Crit; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Crit; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Winning Resolve** (Ex-weapon). Stats/effects: ATK, Haste, Crit; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Crit, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Crit, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
+- Crit buff (base) — Self — `high`
+- Haste buff (Legendary+) — Self — `medium`
+- Shield (EX+5) — Self — `medium`
+- Damage taken reduction (Supreme+) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — Once
+- Stun (base) — Area — `high`
 
-- **Base (Mythic+) — Winning Resolve**: Stats/effects: ATK, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +5**: Stats/effects: ATK, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: ATK, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Crit
+- Haste
 - Energy
 - Primary damage type (unit): **Physical**
 
@@ -5424,28 +5543,30 @@ When Lily May first uses Tempest Shot to interrupt an enemy's Ultimate, the enem
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Energy; Debuffs/CC: Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Energy; Debuffs/CC: Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Rainfall Bliss** (Ex-weapon). Stats/effects: ATK, Max HP, Energy; Debuffs/CC: Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Energy; Debuffs/CC: Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Energy; Debuffs/CC: Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units
+- ATK buff (base) — Self — `low`
+- Invincible (base) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (base) — All units — `high`
 
-- **Base (Mythic+) — Rainfall Bliss**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — Start of battle
+- Interrupt (base) — All units — `medium`
+
+#### Damage
+
+- Magic — All units, Single target
+- True damage (HP-based) — Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Energy
+- DEF Penetration
 - Primary damage type (unit): **Magic**
 
 ## Lorsan - Windweaver Protector
@@ -5526,28 +5647,26 @@ While Zephyr's Embrace is active, the protected target becomes unaffected
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Farthest enemy
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Farthest enemy
-- **Mythic / Mythic+**: Unlocks **Turbulent Resurgence** (Ex-weapon). Stats/effects: ATK, Haste; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets, All units, Farthest enemy
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Farthest enemy
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Farthest enemy
+- Healing over time (base) — Single target — `medium`
+- ATK buff (Legendary+) — Self — `low`
+- Healing (Mythic+) — Multiple targets — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (Supreme+) — Self — On skill
+- Stun (EX+10) — Multiple targets — `high`
 
-- **Base (Mythic+) — Turbulent Resurgence**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: Stun; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Lucca - Stalwart Fighter
@@ -5628,28 +5747,30 @@ Lucca recovers 15% (HP-based) HP when casting Courageous Call.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Shield, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Shield, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Unshakeable Ties** (Ex-weapon). Stats/effects: ATK, Max HP, Shield, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Energy, Shield, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Energy, Shield, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
+- Damage taken reduction (base) — Self — `high`
+- Shield (base) — Self — `medium`
+- Max HP buff (Legendary+) — Self — `medium`
+- Healing (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Immune immunity (base) — Self — On skill
+- Interrupt (base) — Single target — `medium`
+- Stun (base) — Area — `medium`
 
-- **Base (Mythic+) — Unshakeable Ties**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: Adjacent
-- **EX. +5**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Area / path
-- **EX. +15**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Physical DEF
 - Max HP
-- Energy
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Lucius - The Lightbringer
@@ -5730,26 +5851,29 @@ Lucius heals 1 more ally with Divine Light Blessing.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Shield, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Shield, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Adjacent
-- **Mythic / Mythic+**: Unlocks **Sacred Beam** (Ex-weapon). Stats/effects: ATK, Shield, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Shield, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Shield, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path
+- Healing (base) — Single target — `medium`
+- Shield (base) — Area — `high`
+- Healing stat buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (Mythic+) — Area — `high`
 
-- **Base (Mythic+) — Sacred Beam**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Area / path
-- **EX. +5**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
+#### Crowd Control
+
+- Move (base) — Single target — `high`
+- Stun (base) — Single target — `low`
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Lucy - Celestial Spirit Mage
@@ -5828,27 +5952,30 @@ When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' AT
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Water Barrier** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
+- Haste buff (Legendary+) — Self — `medium`
+- Shield (Mythic+) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Damage taken debuff (base) — Single target — `high`
 
-- **Base (Mythic+) — Water Barrier**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — On skill
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Magic — All units, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
+- Haste
+- ATK SPD
 - Energy
 - Primary damage type (unit): **Magic**
 
@@ -5934,28 +6061,26 @@ Whenever an enemy steps into the everbloom field, they will instantly take 120% 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, HP, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, HP, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Ephemeral Berries** (Ex-weapon). Stats/effects: ATK, Max HP, HP, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, HP, Healing; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, HP, Healing; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
+- Healing (base) — Area — `high`
+- Healing over time (base) — Area — `high`
+- Healing stat buff (Legendary+) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — On skill
+- Stun (Supreme+) — Single target — `medium`
 
-- **Base (Mythic+) — Ephemeral Berries**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — All units, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Lumont - Benign Horn
@@ -6030,33 +6155,40 @@ Initial Cooldown: 0.25s Lumont slams the ground with totem 3 times after receivi
 **Enhance Force**
 *Unlocks at Supreme+*
 
-Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward. Level 2 500% “ (ATK-based)
+Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.
 
-- Level 2 — Unlocks at EX. +5: 首次释放“撼地怒击”时，自身获得(scaled)“图腾护佑”的护盾，并使“战争践踏”获得永久强化，造成的眩晕时间增加(scaled)秒。
+- Level 2 — Unlocks at EX. +5: The first time Totem Slam is cast, Lumont gains a Totem Ward shield equal to (scaled) and War Stomp gains a permanent enhancement, increasing its stun duration by (scaled) s.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Shield, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Multiple targets, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Shield, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Multiple targets, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Totem Slam** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Shield, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Shield, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Shield, Physical DEF; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Multiple targets, Adjacent, Area / path
+- DEF buff (base) — Area — `high`
+- Shield (base) — Self — `high`
+- Haste buff (Legendary+) — Self — `low`
+- Healing over time (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (Mythic+) — Single target — `medium`
 
-- **Base (Mythic+) — Totem Slam**: Stats/effects: ATK, Max HP; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — On skill
+- Stun (base) — Area — `low`
+- Taunt (base) — Area — `medium`
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Physical DEF
+- Haste
 - Max HP
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Lyca - Keeper of Glades
@@ -6139,26 +6271,27 @@ Lyca reduces the target's Phys DEF by 25% for 6 s if they are hit by Comet Arche
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Energy, Physical DEF; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Energy, Physical DEF; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Meteor Catastrophe** (Ex-weapon). Stats/effects: ATK, ATK SPD, Energy, Shield, Physical DEF; Debuffs/CC: Stun; Damage: Physical; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Energy, Shield, Physical DEF; Debuffs/CC: Stun; Damage: Physical; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Energy, Shield, Physical DEF; Debuffs/CC: Stun; Damage: Physical; Targeting: Single target, Multiple targets, All units, Area / path
+- ATK SPD buff (base) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (base) — All units — `high`
+- Phys DEF debuff (base) — All units — `high`
 
-- **Base (Mythic+) — Meteor Catastrophe**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: Physical; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Shield; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (EX+10) — Single target — `low`
+
+#### Damage
+
+- Physical — All units, Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Energy
 - Primary damage type (unit): **Physical**
 
@@ -6240,28 +6373,27 @@ During battle, Marcille recovers 10 additional Energy per second for each ally w
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Haste, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Haste, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Ancient Magic** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Energy; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Energy; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Energy; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units, Area / path
+- Haste buff (base) — Self — `low`
+- Healing (base) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (Supreme+) — Self — On skill
+- Interrupt (Mythic+) — Single target — `high`
 
-- **Base (Mythic+) — Ancient Magic**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Magic; Targeting: Multiple targets, All units
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — All units, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
+- Haste
 - Energy
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Marilee - Forest's Arrow
@@ -6337,27 +6469,25 @@ Marilee reduces the required no-enemy range for triggering Hyperfocus by -1 tile
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Battlefield Learning** (Ex-weapon). Stats/effects: ATK, ATK SPD, Crit; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Crit; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Crit; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target, Multiple targets
+- ATK buff (base) — Area — `high`
+- Crit buff (Legendary+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Stun (base) — Single target — `low`
 
-- **Base (Mythic+) — Battlefield Learning**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: True damage; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Multiple targets, Single target
+- True damage — Multiple targets
 
 #### Stats the unit benefits from
 
 - ATK
-- Caps or stack limits mentioned in skills
+- ATK SPD
+- Crit
 - Primary damage type (unit): **Physical**
 
 ## Mehira - Mind Cager
@@ -6438,27 +6568,32 @@ Increases the damage taken by enemies charmed with Mehira's Euphoric Rush or bew
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste; Debuffs/CC: Charm; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, Healing; Debuffs/CC: Charm; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Total Devotion** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Healing; Debuffs/CC: Charm; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Healing; Debuffs/CC: Charm; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Healing; Debuffs/CC: Charm; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- Haste buff (base) — Single target — `medium`
+- Lifedrain buff (Legendary+) — Self — `medium`
+- Max HP buff (Legendary+) — Self — `high`
+- Healing (Mythic+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Damage taken debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Total Devotion**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Charm (base) — Area — `medium`
+
+#### Damage
+
+- Magic — Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Max HP
+- Life Drain
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Mikola - Warbeat Compere
@@ -6534,26 +6669,27 @@ Mikola's Courage Sphere remains unaffected in duration if her side gains control
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, HP, Healing, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, HP, Healing, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, All units
-- **Mythic / Mythic+**: Unlocks **Passionate Opening** (Ex-weapon). Stats/effects: ATK, Haste, Vitality, HP, Healing, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, HP, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Self, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, HP, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Self, Multiple targets, All units, Adjacent
+- ATK buff (base) — Self — `medium`
+- Haste buff (base) — Multiple targets — `high`
+- Healing (base) — Multiple targets — `medium`
+- Healing over time (base) — All units — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (Supreme+) — Self — Conditional
 
-- **Base (Mythic+) — Passionate Opening**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Multiple targets, Adjacent
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, Adjacent
-- **EX. +10**: Stats/effects: Vitality; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, Adjacent
+#### Damage
+
+- Physical — Area, Multiple targets
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Mirael - Scarlet Sorceress
@@ -6632,26 +6768,19 @@ Mirael increases the burning duration of Bone Sear by 4 s.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Dance of Flames** (Ex-weapon). Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
+- ATK SPD buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Dance of Flames**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent
+- DoT — Single target
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Primary damage type (unit): **Magic**
 
 ## Nara - Wrathful Wraith
@@ -6730,29 +6859,31 @@ After defeating an enemy with Crimson Vengeance, Nara instantly recovers 250 Ene
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target
-- **Mythic / Mythic+**: Unlocks **Eerie Execution** (Ex-weapon). Stats/effects: ATK, Max HP, Energy, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Vitality, Max HP, Energy, Healing; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Vitality, Max HP, Energy, Healing; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units, Area / path
+- ATK buff (Legendary+) — Self — `low`
+- Healing (Mythic+) — Single target — `low`
+- Energy recovery (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Vitality debuff (Supreme+) — Single target — `medium`
 
-- **Base (Mythic+) — Eerie Execution**: Stats/effects: ATK, Max HP, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units, Area / path
-- **EX. +5**: Stats/effects: Max HP, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **EX. +10**: Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: Max HP, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
+#### Crowd Control
+
+- Unaffected immunity (Supreme+) — Self — Permanent
+
+#### Damage
+
+- Physical — Area, Single target
+- True damage — Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Max HP
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Natsu - Fire Dragon Slayer Mage
@@ -6827,27 +6958,33 @@ When Natsu causes an enemy to lose HP through any means other than his normal at
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Crit, Max HP, Physical DEF, Magic DEF; Debuffs/CC: Stun; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Crit, Max HP, Physical DEF, Magic DEF; Debuffs/CC: Stun; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **"Salamander" Natsu** (Ex-weapon). Stats/effects: ATK, Haste, Crit, Max HP, Physical DEF, Magic DEF; Debuffs/CC: Stun; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Crit, Max HP, Physical DEF, Magic DEF; Debuffs/CC: Stun; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Crit, Max HP, Physical DEF, Magic DEF; Debuffs/CC: Stun; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units, Adjacent
+- Crit buff (base) — Self — `medium`
+- ATK buff (Legendary+) — Self — `low`
+- Haste buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Area — `high`
+- Max HP debuff (Mythic+) — Single target — `medium`
 
-- **Base (Mythic+) — "Salamander" Natsu**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **EX. +5**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target
-- **EX. +10**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
+#### Crowd Control
+
+- Knock down (base) — Area — `low`
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- DoT — Single target
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- Crit
+- Haste
 - Primary damage type (unit): **Magic**
 
 ## Nazrik - Soulstalker
@@ -6923,28 +7060,31 @@ Each time Nazrik lands a critical hit on an enemy, the Crit DMG Boost of that hi
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Crit, Max HP, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Crit, Max HP, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Pack Tactics** (Ex-weapon). Stats/effects: ATK, Crit, Vitality, Max HP, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Crit, Vitality, Max HP, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Crit, Vitality, Max HP, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Multiple targets
+- Crit buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Max HP debuff (base) — Single target — `low`
+- Damage taken debuff (EX+10) — Self — `low`
+- Vitality debuff (EX+10) — Self — `low`
 
-- **Base (Mythic+) — Pack Tactics**: Stats/effects: Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Vitality; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Physical — Self, Single target
+- True damage — Single target
+- True damage (HP-based) — Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- Crit
 - Primary damage type (unit): **Physical**
 
 ## Nerion - Bereaved Tide
@@ -7020,27 +7160,29 @@ When all non-summoned enemies on the battlefield are under the drowning effect, 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Abyssal Embrace** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Shield, Damage reduction; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Energy, Shield, Damage reduction; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Energy, Shield, Damage reduction; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- ATK SPD buff (Legendary+) — Self — `medium`
+- Shield (EX+10) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (Mythic+) — Single target — `low`
 
-- **Base (Mythic+) — Abyssal Embrace**: Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +10**: Stats/effects: Shield, Damage reduction; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
+#### Crowd Control
+
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Magic — Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Energy
+- DEF Penetration
 - Primary damage type (unit): **Magic**
 
 ## Niru - Soul Collector
@@ -7123,30 +7265,22 @@ Niru's Soul Reaping prevents the enemy from recovering HP for 8 s.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Ethereal Form** (Ex-weapon). Stats/effects: ATK, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, HP, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Self, Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, HP, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Self, Single target, Multiple targets, All units
+- Healing (base) — Single target — `high`
+- DEF buff (EX+5) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Ethereal Form**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: All units
+- Magic — All units, Self, Single target
 
 #### Stats the unit benefits from
 
-- ATK
 - Max HP
-- Lost HP
-- Energy
-- Caps or stack limits mentioned in skills
+- ATK
+- Physical DEF
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Odie - Desert Defender
@@ -7224,27 +7358,20 @@ Odie increases Triple Tap's damage against poisoned target by 1.5 times the Dart
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Mythic / Mythic+**: Unlocks **Heart Crusher** (Ex-weapon). Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
+- ATK SPD buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Heart Crusher**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+- DoT — Single target
+- Magic — Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Energy
+- ATK SPD
 - Primary damage type (unit): **Magic**
 
 ## Pandora - Hope Unleashed
@@ -7320,28 +7447,35 @@ The ally pulled into Pandora's box is permanently protected by hope, making them
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Vitality, HP, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Eternal Legacy** (Ex-weapon). Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units
+- Healing (base) — Single target — `low`
+- Invincible (base) — Single target — `high`
+- Max HP buff (Legendary+) — Single target — `low`
+- Energy recovery (Mythic+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (base) — All units — `medium`
+- Damage taken debuff (base) — Single target — `medium`
+- Energy drain (base) — Single target — `low`
+- Haste debuff (base) — Single target — `medium`
+- Vitality debuff (base) — Single target — `high`
 
-- **Base (Mythic+) — Eternal Legacy**: Stats/effects: Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target
-- **EX. +5**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Move (base) — Single target — `medium`
+
+#### Damage
+
+- Magic — Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
 - Energy
+- Max HP
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Pang - Bamboo Guardian
@@ -7420,28 +7554,27 @@ Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance. 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Spirit Sync** (Ex-weapon). Stats/effects: ATK, Haste, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, DEF Penetration, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Haste, DEF Penetration, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
+- Haste buff (base) — Self — `high`
+- Shield (base) — Single target — `high`
+- ATK buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — On skill
+- Stun (base) — Area — `low`
 
-- **Base (Mythic+) — Spirit Sync**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Energy, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Energy
-- Caps or stack limits mentioned in skills
+- DEF Penetration
 - Primary damage type (unit): **Physical**
 
 ## Parisa - Ode to Flowers
@@ -7519,27 +7652,20 @@ Reduces the required normal attacks to trigger Flower Power by -1 .
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Falling Blossom** (Ex-weapon). Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- ATK SPD buff (base) — Self — `low`
+- ATK buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Falling Blossom**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
+- Magic — Area, Multiple targets, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Energy
+- ATK SPD
 - Primary damage type (unit): **Magic**
 
 ## Perseus - Chosen Champion
@@ -7614,27 +7740,29 @@ Expands the range of fertile ground by 1 tile.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Max HP, Shield, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic, HP-based; Targeting: Self, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Max HP, Shield, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic, HP-based; Targeting: Self, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Divine Grace** (Ex-weapon). Stats/effects: ATK, ATK SPD, Max HP, Shield, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic, True damage, HP-based; Targeting: Self, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Max HP, Shield, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic, True damage, HP-based; Targeting: Self, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Max HP, Shield, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic, True damage, HP-based; Targeting: Self, Multiple targets, All units, Adjacent
+- Max HP buff (base) — Area — `low`
+- Shield (base) — Self — `medium`
+- ATK buff (Legendary+) — Multiple targets — `medium`
+- Damage taken reduction (Mythic+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Multiple targets — On skill
+- Stun (base) — Area — `medium`
 
-- **Base (Mythic+) — Divine Grace**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: Uncontrol immunity; Damage: True damage; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — Multiple targets
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Max HP
+- Magic DEF
 - Primary damage type (unit): **Physical**
 
 ## Phraesto - Misty Scorpion
@@ -7712,29 +7840,28 @@ When both Phraesto and his Illusion are positioned in the same row, they each re
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Self, Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Foggy Whisper** (Ex-weapon). Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Self, Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Self, Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, Max HP, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Self, Single target, Multiple targets
+- Healing (base) — Single target — `low`
+- Max HP buff (base) — Single target — `low`
+- Shield (base) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Stun (Mythic+) — Single target — `medium`
+- Taunt (Mythic+) — Single target — `medium`
 
-- **Base (Mythic+) — Foggy Whisper**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Self
+#### Damage
+
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
 - Energy
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Pippa - The Muddled Magician
@@ -7745,7 +7872,7 @@ A scatterbrained young Mage who constantly bungles things, yet somehow walks awa
 
 ### Ultimate
 
-**混沌随现<key:function>**
+**Chaos Manifest**
 *Unlocks at Level 1*
 
 Pippa immobilizes 2 rearmost enemies, then teleports them onto a target tile and drops them, dealing 200% (ATK-based) + 50% damage to the enemy on that tile and knocking them down. When auto-cast is on, Pippa prioritizes targeting the tile of the frontmost enemy. Passive. Whenever Pippa casts a skill, the skill has a 20% chance to go out of control. When this happens, the skill target is teleported to a random location on the enemy side of the battlefield, sometimes ending up in very unexpected places! Pippa remains unaffected while casting the skill.
@@ -7812,29 +7939,31 @@ When Pippa's Wild Shift triggers a mutation, the enemy on the target tile become
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Energy; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Mage's Bloom** (Ex-weapon). Stats/effects: ATK, Haste, Energy; Debuffs/CC: Uncontrol immunity; Damage: Magic, True damage; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: Magic, True damage, HP-based; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: Magic, True damage, HP-based; Targeting: Single target, Multiple targets, Adjacent, Area / path
+- Haste buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (base) — Area — `medium`
 
-- **Base (Mythic+) — Mage's Bloom**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: True damage; Targeting: Single target, Multiple targets, Adjacent
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — On skill
+- Knock down (base) — Single target — `low`
+- Move (base) — Single target — `low`
+- Pin (base) — Single target — `medium`
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
+- True damage — Area
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Max HP
-- Energy
-- Caps or stack limits mentioned in skills
 - Primary damage type (unit): **Magic**
 
 ## Ravion - Twilight's Burden
@@ -7912,29 +8041,35 @@ When an ally accepts the Objective from Ravion, they increase their ATK by 15% a
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, HP, Energy, Physical DEF; Debuffs/CC: Move (forced), Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, HP, Energy, Physical DEF; Debuffs/CC: Move (forced), Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Shadow Patron** (Ex-weapon). Stats/effects: ATK, Haste, HP, Energy, Shield, Physical DEF; Debuffs/CC: Move (forced), Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, HP, Energy, Shield, Physical DEF; Debuffs/CC: Move (forced), Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Haste, HP, Energy, Shield, Physical DEF; Debuffs/CC: Move (forced), Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units
+- ATK buff (base) — Multiple targets — `high`
+- Energy recovery (base) — Multiple targets — `high`
+- Haste buff (Mythic+) — Multiple targets — `medium`
+- Lifedrain buff (EX+10) — Multiple targets — `high`
+- Shield (EX+10) — Multiple targets — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (base) — Multiple targets — `high`
+- Phys DEF debuff (base) — Multiple targets — `high`
 
-- **Base (Mythic+) — Shadow Patron**: Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Self
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — Start of battle
+- Knock down (base) — Multiple targets — `high`
+- Move (base) — Multiple targets — `high`
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Lost HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Haste
+- Life Drain
 - Primary damage type (unit): **Physical**
 
 ## Reinier - Symmetric Sin
@@ -8009,28 +8144,32 @@ Reinier increases the allied hero's ATK by 4% till the battle ends if they're in
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Tuned Art** (Ex-weapon). Stats/effects: ATK, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
+- Healing (base) — Single target — `medium`
+- ATK buff (Legendary+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (Legendary+) — Single target — `low`
+- Damage taken debuff (Mythic+) — Single target — `high`
 
-- **Base (Mythic+) — Tuned Art**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
+#### Crowd Control
+
+- Steadfast immunity (base) — Single target — Conditional
+- Unaffected immunity (base) — Single target — Conditional
+- Interrupt (base) — Single target — `high`
+- Move (base) — Multiple targets — `high`
+- Knock down (Mythic+) — Single target — `low`
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Target ATK
-- Energy
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Rhys - Fiery Cavalier
@@ -8109,27 +8248,25 @@ Reduces the cooldown of Defensive Stance to 3 s.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Haste, Crit, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Haste, Crit, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Fury Rush** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Crit, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Crit, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Crit, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, Area / path
+- Healing (base) — Single target — `medium`
+- Crit buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Move (base) — Single target — `high`
 
-- **Base (Mythic+) — Fury Rush**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
+#### Damage
+
+- Physical — Arc, Single target
 
 #### Stats the unit benefits from
 
-- ATK SPD and Haste
 - ATK
+- ATK SPD
+- Crit
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Rowan - The Roamer
@@ -8205,34 +8342,37 @@ After selling 3 health potions, Rowan places a super health potion that recovers
 **Enhance Force**
 *Unlocks at Supreme+*
 
-Rowan places 1 more health potion when a battle starts using Smart Stall. Level 2 30% ，
+Rowan places 1 more health potion when a battle starts using Smart Stall.
 
-- Level 2 — Unlocks at EX. +5: 罗万将“能量药剂”升级为超级的“能量药剂”，与原“能量药剂”使用方式相同，但补充能量后还会使目标攻击力提升(scaled)，持续(scaled)秒。佩吉在场时，额外为她提供一瓶超级的“生命药剂”。
+- Level 2 — Unlocks at EX. +5: Rowan upgrades Energy Potions into Super Energy Potions. They work the same way as regular Energy Potions, but after restoring Energy they also increase the target's ATK by (scaled) for (scaled) s. When Peggy is on the field, Rowan also provides her with an extra Super Health Potion.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **Mythic / Mythic+**: Unlocks **Great Bargain** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target
+- Healing (base) — Single target — `medium`
+- Haste buff (Legendary+) — Self — `low`
+- DEF buff (Mythic+) — Single target — `high`
+- Max HP buff (Mythic+) — Single target — `high`
+- ATK buff (EX+5) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (base) — Single target — `medium`
 
-- **Base (Mythic+) — Great Bargain**: Stats/effects: Max HP, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +5**: Stats/effects: Max HP, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
+#### Damage
+
+- Magic — Single target
 
 #### Stats the unit benefits from
 
+- Energy
 - ATK
 - Max HP
-- Energy
+- Haste
+- Physical DEF
+- Magic DEF
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Saida - Vampiric Vine
@@ -8307,28 +8447,31 @@ When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes. These 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, HP, Energy, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, HP, Energy, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Deepening Roots** (Ex-weapon). Stats/effects: ATK, HP, Energy, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, HP, Energy, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, HP, Energy, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
+- Healing (base) — Area — `medium`
+- Shield (base) — Multiple targets — `high`
+- Damage taken reduction (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (base) — Single target — `high`
 
-- **Base (Mythic+) — Deepening Roots**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — Conditional
+- Interrupt (base) — Area — `high`
+- Move (base) — Single target — `medium`
+
+#### Damage
+
+- Magic — All units, Area, Multiple targets, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
-- Caps or stack limits mentioned in skills
+- Max HP
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Salazer - Lash of Bantus
@@ -8405,28 +8548,27 @@ Salazer recovers 150% (ATK-based) HP for every imprisoned enemy.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Soul Drench** (Ex-weapon). Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets
+- Lifedrain buff (base) — Single target — `low`
+- Damage taken reduction (Legendary+) — Self — `medium`
+- Healing (Supreme+) — Single target — `high`
+- Shield (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Pin (base) — Single target — `high`
 
-- **Base (Mythic+) — Soul Drench**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Single target
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
+#### Damage
+
+- Physical — Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Life Drain
 - Max HP
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Satrana - Ember Enchantress
@@ -8503,29 +8645,29 @@ Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a tot
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Vitality, Max HP; Debuffs/CC: Charm; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Vitality, Max HP; Debuffs/CC: Charm; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Radiant Vigor** (Ex-weapon). Stats/effects: ATK, Vitality, Max HP, Energy; Debuffs/CC: Charm; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Vitality, Max HP, Energy; Debuffs/CC: Charm; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Vitality, Max HP, Energy; Debuffs/CC: Charm; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units
+- Invincible (base) — Self — `high`
+- Lifedrain buff (base) — Arc — `high`
+- Damage taken reduction (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Vitality debuff (base) — Area — `low`
 
-- **Base (Mythic+) — Radiant Vigor**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target
-- **EX. +5**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
+#### Crowd Control
+
+- Charm (base) — Single target — `medium`
+
+#### Damage
+
+- Magic — Arc, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Energy
-- Caps or stack limits mentioned in skills
+- Life Drain
 - Primary damage type (unit): **Magic**
 
 ## Scarlita - Herald of Compassion
@@ -8603,28 +8745,33 @@ Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie S
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Divine Wrath** (Ex-weapon). Stats/effects: ATK, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Energy, Shield, Physical DEF, Magic DEF; Debuffs/CC: Stun, Uncontrol immunity; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Energy, Shield, Physical DEF, Magic DEF; Debuffs/CC: Stun, Uncontrol immunity; Damage: Magic, True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units
+- Energy recovery (base) — Area — `low`
+- Invincible (base) — Self — `high`
+- Shield (base) — Single target — `low`
+- Execution buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — Conditional
+- Knock down (base) — Arc — `medium`
+- Move (base) — All units — `low`
+- Stun (base) — Area — `medium`
 
-- **Base (Mythic+) — Divine Wrath**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: True damage; Targeting: Self
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: True damage; Targeting: Self
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
+#### Damage
+
+- Physical — All units, Arc, Area, Single target
+- True damage — Multiple targets
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
 - Energy
+- Max HP
+- Execution
+- Physical DEF
+- Magic DEF
 - Primary damage type (unit): **Physical**
 
 ## Seth - Swift Shadow
@@ -8700,29 +8847,36 @@ Seth reduces the target's Phys DEF by an extra 15% for 6 s per stack of Bloodlus
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Crit, HP, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Crit, HP, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target
-- **Mythic / Mythic+**: Unlocks **Hunting Spree** (Ex-weapon). Stats/effects: ATK, Haste, Crit, HP, Energy, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Crit, HP, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Crit, HP, Energy, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target
+- Haste buff (base) — Self — `low`
+- Healing (base) — Single target — `medium`
+- Invincible (base) — Self — `high`
+- Lifedrain buff (base) — Self — `low`
+- ATK buff (Legendary+) — Self — `medium`
+- Energy recovery (Mythic+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Phys DEF debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Hunting Spree**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Freeze (base) — Single target — `low`
+
+#### Damage
+
+- Physical — Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Lost HP
+- Haste
+- Life Drain
+- Magic DEF
+- Crit
 - Energy
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Shadewing - Undying Vow
@@ -8798,30 +8952,30 @@ When a battle starts, Shadewing targets the ally 1 tile in front of him and drai
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, HP, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, HP, Magic DEF; Debuffs/CC: None noted; Damage: Magic, HP-based; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Curse Feast** (Ex-weapon). Stats/effects: ATK, Max HP, HP, Energy, Magic DEF; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic, True damage, HP-based; Targeting: Single target, Multiple targets, All units
+- Invincible (base) — Self — `high`
+- ATK buff (Legendary+) — Self — `medium`
+- Energy recovery (Mythic+) — Single target — `low`
+- Lifedrain buff (Supreme+) — Self — `low`
+- Shield (Supreme+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Magic DEF debuff (base) — All units — `low`
 
-- **Base (Mythic+) — Curse Feast**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: True damage; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- DoT — Single target
+- Magic — All units, Single target
+- True damage — Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Life Drain
 - Primary damage type (unit): **Magic**
 
 ## Shakir - Furious Howl
@@ -8896,27 +9050,29 @@ Shakir reduces the target's Vitality by 60 within 4 s using the 3rd hit of Savag
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **All-Conquering** (Ex-weapon). Stats/effects: ATK, Haste, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, All units
+- Damage taken reduction (base) — Multiple targets — `low`
+- Haste buff (base) — Multiple targets — `low`
+- Lifedrain buff (base) — Single target — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Vitality debuff (Supreme+) — Single target — `medium`
 
-- **Base (Mythic+) — All-Conquering**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — Form
+
+#### Damage
+
+- Physical — Arc, Area, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
+- Haste
+- Life Drain
 - Primary damage type (unit): **Physical**
 
 ## Shemira - Corpsemaker
@@ -8995,29 +9151,22 @@ Each time a hero is defeated, Shemira summons 1 ghost.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Shield, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Spectral Barrier** (Ex-weapon). Stats/effects: ATK, Max HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Energy, Shield, Healing; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- Healing (base) — Self — `medium`
+- Shield (base) — Single target — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Spectral Barrier**: Stats/effects: ATK, Max HP, Shield; Debuffs/CC: None noted; Damage: HP-based; Targeting: Multiple targets, All units
-- **EX. +5**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target
-- **EX. +15**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+- Magic — All units, Area, Self, Single target
+- True damage (HP-based) — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Silven - Heir of Glory
@@ -9090,28 +9239,23 @@ When up against powerful foes, Silven's knightly spirit kicks in, allowing him t
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Max HP; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Oath of Fealty** (Ex-weapon). Stats/effects: ATK, ATK SPD, Max HP, Energy; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Max HP, Energy; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Max HP, Energy; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Self, Single target, Multiple targets
+- ATK SPD buff (Legendary+) — Self — `medium`
+- Energy recovery (Mythic+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Oath of Fealty**: Stats/effects: ATK, ATK SPD, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: Self
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+- Magic — Single target
+- True damage (HP-based) — Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
+- ATK SPD
 - Energy
+- DEF Penetration
 - Primary damage type (unit): **Magic**
 
 ## Silvina - The Taken Breath
@@ -9187,27 +9331,29 @@ Silvina also reduces the target's Vitality by 60 for 3 s with each Whirl Assault
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Energy; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Crit, Energy; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target
-- **Mythic / Mythic+**: Unlocks **Shield of Light** (Ex-weapon). Stats/effects: ATK, Crit, Energy, Shield; Debuffs/CC: Stun, Frighten; Damage: None noted; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Crit, Vitality, Energy, Shield; Debuffs/CC: Stun, Frighten; Damage: None noted; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Crit, Vitality, Energy, Shield; Debuffs/CC: Stun, Frighten; Damage: None noted; Targeting: Single target, Multiple targets
+- Crit buff (Legendary+) — Self — `low`
+- Shield (Mythic+) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (base) — Single target — `high`
+- Vitality debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Shield of Light**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: Frighten; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Single target — `low`
+- Frighten (EX+10) — Area — `low`
+
+#### Damage
+
+- Physical — Single target
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
+- Crit
 - Primary damage type (unit): **Physical**
 
 ## Sinbad - Seaside Savant
@@ -9285,26 +9431,31 @@ Duo Cut deals 140% (ATK-based) more damage to enemies marked as "hitter" or "gua
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Haste; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Haste; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Adaptive Prowess** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Vitality, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Vitality, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Vitality, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets
+- ATK SPD buff (Legendary+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Damage taken debuff (base) — Multiple targets — `medium`
+- ATK debuff (Mythic+) — Multiple targets — `high`
+- Energy drain (Mythic+) — Multiple targets — `medium`
+- Magic DEF debuff (Mythic+) — Multiple targets — `medium`
+- Phys DEF debuff (Mythic+) — Multiple targets — `medium`
+- Vitality debuff (Mythic+) — Multiple targets — `high`
 
-- **Base (Mythic+) — Adaptive Prowess**: Stats/effects: ATK, ATK SPD, Vitality, Energy, Healing, Physical DEF, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Multiple targets — Conditional
+
+#### Damage
+
+- Physical — Multiple targets, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Energy
 - Primary damage type (unit): **Physical**
 
@@ -9374,30 +9525,24 @@ Smokey & Meerky increase the HP recovery amount by 30% (ATK-based) when using Sp
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Energy, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Energy, Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **Mythic / Mythic+**: Unlocks **Withering Potion** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, HP, Energy, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, HP, Energy, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, HP, Energy, Healing; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets
+- Energy recovery (base) — Area — `medium`
+- Healing (base) — Multiple targets — `medium`
+- Healing over time (base) — Area — `medium`
+- ATK buff (Legendary+) — Multiple targets — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
-
-- **Base (Mythic+) — Withering Potion**: Stats/effects: ATK, Max HP, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +5**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
+- Interrupt (base) — Area — `medium`
+- Stun (EX+10) — Single target — `low`
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- Lost HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Max HP
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Solise - Floral Wonder
@@ -9473,28 +9618,26 @@ While Solise is casting Life's Embrace, damage dealt by Bulbsprite triggers extr
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, HP, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, HP, Shield, Healing; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Resonant Bloom** (Ex-weapon). Stats/effects: ATK, Max HP, HP, Shield, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, HP, Shield, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, HP, Shield, Healing, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Multiple targets, All units
+- Healing (base) — Multiple targets — `high`
+- Shield (base) — Multiple targets — `medium`
+- ATK buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — Start of battle
 
-- **Base (Mythic+) — Resonant Bloom**: Stats/effects: ATK, Healing, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
+#### Damage
+
+- Magic — All units, Multiple targets, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Magic DEF
 - Max HP
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Sonja - Crimson Queenpin
@@ -9570,26 +9713,25 @@ Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Magic DEF; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Magic DEF; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Unbreakable Bond** (Ex-weapon). Stats/effects: ATK, Haste, Energy, Magic DEF, Damage reduction; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Energy, Healing, Magic DEF, Damage reduction; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Energy, Healing, Magic DEF, Damage reduction; Debuffs/CC: Stun; Damage: Magic; Targeting: Self, Single target, Multiple targets, Area / path
+- ATK buff (base) — Multiple targets — `low`
+- Haste buff (Legendary+) — Self — `low`
+- Damage taken reduction (EX+10) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Stun (base) — Area — `low`
 
-- **Base (Mythic+) — Unbreakable Bond**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Damage reduction; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Magic DEF
+- Haste
 - Energy
 - Primary damage type (unit): **Physical**
 
@@ -9667,28 +9809,30 @@ After Deflecting Swing is triggered, the next Repel Sweep knocks enemies back 2 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP; Debuffs/CC: Stun; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP; Debuffs/CC: Stun; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Dusk Rejuvenation** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Stun; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Energy, Shield; Debuffs/CC: Stun; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Energy, Shield; Debuffs/CC: Stun; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Adjacent, Area / path
+- Damage taken reduction (base) — Self — `low`
+- Haste buff (Legendary+) — Self — `medium`
+- Healing over time (Mythic+) — Single target — `low`
+- Energy recovery (Supreme+) — Single target — `high`
+- Shield (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Move (base) — Multiple targets — `high`
+- Stun (base) — Area — `medium`
 
-- **Base (Mythic+) — Dusk Rejuvenation**: Stats/effects: Haste, Max HP, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Multiple targets, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
+- Haste
 - Energy
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Sylphira - Sovereign of Song
@@ -9767,29 +9911,39 @@ Once her score is activated, Sylphira performs Tremolo to enhance her normal att
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Silence, Interrupt, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Silence, Interrupt, Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Harmonic Refrain** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, HP, Energy; Debuffs/CC: Silence, Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, HP, Energy; Debuffs/CC: Silence, Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, HP, Energy; Debuffs/CC: Silence, Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Area / path
+- ATK buff (base) — Area — `high`
+- Haste buff (base) — Area — `medium`
+- Healing (Mythic+) — Self — `low`
+- Lifedrain buff (Supreme+) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (base) — Single target — `medium`
+- Max HP debuff (base) — Area — `medium`
 
-- **Base (Mythic+) — Harmonic Refrain**: Stats/effects: Haste, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Multiple targets
+#### Crowd Control
+
+- Immune immunity (base) — Self — On skill
+- Unaffected immunity (base) — Area — Conditional
+- Cleanse immunity (Mythic+) — Self — On skill
+- Interrupt (base) — Area — `low`
+- Knock down (base) — Area — `medium`
+- Silence (base) — Area — `low`
+
+#### Damage
+
+- Magic — Area, Single target
+- True damage (HP-based) — Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Max HP
-- Energy
-- Caps or stack limits mentioned in skills
+- Life Drain
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Talene - Resurging Flame
@@ -9864,30 +10018,23 @@ Talene increases her HP recovered per second to 15% while in the flame state whe
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Vitality, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Multiple targets, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Vitality, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Multiple targets, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Pyre of Renewal** (Ex-weapon). Stats/effects: ATK, Vitality, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Vitality, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Vitality, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Multiple targets, Adjacent, Area / path
+- Healing (base) — Area — `low`
+- Healing over time (base) — Area — `medium`
+- Lifedrain buff (base) — Area — `low`
+- ATK buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Damage
 
-#### Per ex-level
-
-- **Base (Mythic+) — Pyre of Renewal**: Stats/effects: ATK, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Multiple targets, Adjacent
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, Adjacent
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, Adjacent
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
-- Energy
-- Caps or stack limits mentioned in skills
+- Life Drain
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Tasi - Fairy of Dreams
@@ -9963,26 +10110,32 @@ Tasi gains an extra attempt to cast Fluttering Dream each time she assists or de
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Adjacent, Farthest enemy
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Adjacent, Farthest enemy
-- **Mythic / Mythic+**: Unlocks **Shimmering Dust** (Ex-weapon). Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Adjacent, Farthest enemy
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Adjacent, Farthest enemy
-- **Paragon 1–4**: Stats/effects: ATK, Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets, All units, Adjacent, Farthest enemy
+- Healing over time (base) — Area — `medium`
+- Invincible (base) — Area — `high`
+- ATK buff (Legendary+) — Self — `medium`
+- Damage taken reduction (Mythic+) — Self — `high`
+- Haste buff (Mythic+) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Pin (base) — All units — `low`
+- Sleep (base) — Single target — `high`
+- Stun (base) — Area — `low`
 
-- **Base (Mythic+) — Shimmering Dust**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +15**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- DoT — All units, Single target
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Max HP
+- Haste
+- DEF Penetration
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Temesia - Lightsavior
@@ -10059,31 +10212,37 @@ Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Haste, HP, Energy; Debuffs/CC: Interrupt; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path, Farthest enemy
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Haste, HP, Energy; Debuffs/CC: Interrupt; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path, Farthest enemy
-- **Mythic / Mythic+**: Unlocks **Invincible Fury** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Max HP, HP, Energy; Debuffs/CC: Interrupt, Uncontrol immunity; Damage: True damage; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path, Farthest enemy
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Max HP, HP, Energy, Shield, Physical DEF, Damage reduction; Debuffs/CC: Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path, Farthest enemy
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Max HP, HP, Energy, Shield, Physical DEF, Damage reduction; Debuffs/CC: Interrupt, Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, All units, Adjacent, Area / path, Farthest enemy
+- Energy recovery (base) — Area — `high`
+- Healing (base) — Self — `low`
+- ATK buff (Legendary+) — Self — `medium`
+- Healing over time (EX+5) — Self — `low`
+- Shield (Supreme+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Phys DEF debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Invincible Fury**: Stats/effects: None noted; Debuffs/CC: Uncontrol immunity; Damage: True damage; Targeting: None noted
-- **EX. +5**: Stats/effects: Max HP, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Max HP, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP, HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (Mythic+) — Self — Permanent
+- Interrupt (base) — Single target — `high`
+- Knock down (base) — All units — `low`
+
+#### Damage
+
+- Physical — All units, Area, Single target
+- True damage — Single target
 
 #### Stats the unit benefits from
 
-- ATK SPD and Haste
 - ATK
-- Max HP
-- Lost HP
+- ATK SPD
+- Haste
 - Energy
-- Caps or stack limits mentioned in skills
+- Max HP
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Thador - Ironsworn General
@@ -10162,28 +10321,31 @@ Thador restores 5% of his max HP every second as long as his lieutenant is alive
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Crit, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Crit, Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Umbral Descent** (Ex-weapon). Stats/effects: ATK, Crit, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Crit, Max HP, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, Crit, Max HP, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Self, Multiple targets
+- Shield (base) — Self — `medium`
+- Damage taken reduction (Legendary+) — Self — `medium`
+- Healing (Supreme+) — Self — `low`
+- Healing over time (Supreme+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Magic DEF debuff (Mythic+) — Single target — `high`
 
-- **Base (Mythic+) — Umbral Descent**: Stats/effects: ATK, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Knock down (base) — Single target — `low`
+
+#### Damage
+
+- Physical — Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Crit
 - Max HP
-- Energy
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Thoran - Fallen King
@@ -10262,29 +10424,28 @@ Thoran drains another 20% of the current HP from all enemies affected by Soul Pl
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Soul Pact** (Ex-weapon). Stats/effects: ATK, Max HP, Energy, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, Energy, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, Energy, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
+- Healing (base) — Single target — `low`
+- Lifedrain buff (base) — Single target — `high`
+- Max HP buff (base) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — On skill
+- Interrupt (base) — Single target — `low`
 
-- **Base (Mythic+) — Soul Pact**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Healing; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Life Drain
 - Max HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Tilaya - Wild Blade
@@ -10362,28 +10523,27 @@ Increases Vine Ward's shield value recovery to 15% (HP-based) per second while T
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, Shield; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Vitality, Shield; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Verdant Growth** (Ex-weapon). Stats/effects: ATK, Haste, Vitality, Max HP, Shield, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Vitality, Max HP, Shield, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Vitality, Max HP, Shield, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units
+- Damage taken reduction (base) — Arc — `high`
+- Healing over time (base) — Arc — `high`
+- Shield (base) — Self — `medium`
+- Healing (Mythic+) — Single target — `medium`
+- Max HP buff (EX+10) — Area — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Arc — Start of battle
 
-- **Base (Mythic+) — Verdant Growth**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Max HP, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: All units
-- **EX. +15**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Arc, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Ulmus - Grove Keeper
@@ -10459,29 +10619,31 @@ Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Mythic / Mythic+**: Unlocks **Prowling Roots** (Ex-weapon). Stats/effects: ATK, Max HP, HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Max HP, HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Max HP, HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target, Multiple targets, Adjacent, Area / path
+- Healing (base) — Area — `low`
+- Healing over time (base) — Single target — `low`
+- Shield (base) — Self — `low`
+- Max HP buff (Legendary+) — Self — `medium`
+- Lifedrain buff (EX+10) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — On skill
+- Knock down (Mythic+) — Single target — `high`
+- Move (Supreme+) — Area — `low`
 
-- **Base (Mythic+) — Prowling Roots**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
 - Energy
+- Life Drain
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Vala - Phantom of Oakenfell
@@ -10558,29 +10720,32 @@ Vala increases her damage dealt to the marked enemy by 10% .
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, HP, Energy; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Farthest enemy
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, HP, Energy; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Farthest enemy
-- **Mythic / Mythic+**: Unlocks **Night Maneuver** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, HP, Energy; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Farthest enemy
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, HP, Energy, Damage reduction; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Farthest enemy
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, HP, Energy, Damage reduction; Debuffs/CC: None noted; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Farthest enemy
+- ATK buff (Legendary+) — Self — `medium`
+- Haste buff (Mythic+) — Multiple targets — `high`
+- Healing (EX+10) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Single target — `high`
 
-- **Base (Mythic+) — Night Maneuver**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Single target — `medium`
+
+#### Damage
+
+- Physical — Single target
+- True damage — Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Max HP
-- Lost HP
 - Energy
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Valen - Roving Swordsman
@@ -10663,28 +10828,27 @@ Valen inflicts a 3 s stun with his Fury Thunder Strike.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Mythic / Mythic+**: Unlocks **Eternal Thunder** (Ex-weapon). Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Energy; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Energy; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets, All units, Adjacent
+- ATK buff (base) — Area — `high`
+- Invincible (base) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (Supreme+) — Single target — `low`
 
-- **Base (Mythic+) — Eternal Thunder**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: Single target
-- **EX. +15**: Stats/effects: ATK; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (Supreme+) — Single target — `medium`
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Energy
-- Caps or stack limits mentioned in skills
 - Primary damage type (unit): **Physical**
 
 ## Valka - Forsaken Blade
@@ -10763,28 +10927,34 @@ While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Ener
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Mythic / Mythic+**: Unlocks **Soulshock Riposte** (Ex-weapon). Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Adjacent
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Haste, Max HP, Energy, Shield; Debuffs/CC: Uncontrol immunity; Damage: True damage, HP-based; Targeting: Single target, Multiple targets, Adjacent
+- Healing (base) — Area — `low`
+- Shield (base) — Self — `low`
+- ATK SPD buff (Legendary+) — Self — `medium`
+- Energy recovery (Mythic+) — Single target — `medium`
+- Lifedrain buff (EX+10) — Single target — `low`
+- Haste buff (Supreme+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Unaffected immunity (base) — Self — On skill
+- Knock down (base) — Area — `high`
+- Stun (base) — Area — `high`
 
-- **Base (Mythic+) — Soulshock Riposte**: Stats/effects: ATK, Energy; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Single target
-- **EX. +5**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, ATK SPD; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Energy; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage (HP-based) — Area
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
+- ATK SPD
 - Energy
+- Life Drain
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Velara - Pale Votary
@@ -10860,28 +11030,30 @@ After all magic circles are awakened, casting Ruthless Rite expands their area o
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Haste, HP, Energy, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, HP, Energy, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Graceful Edict** (Ex-weapon). Stats/effects: ATK, Haste, HP, Energy, Shield, Magic DEF; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, HP, Energy, Shield, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, HP, Energy, Shield, Magic DEF; Debuffs/CC: Uncontrol immunity; Damage: Magic; Targeting: Single target, Multiple targets, All units, Area / path
+- Haste buff (base) — Self — `low`
+- Healing (base) — Multiple targets — `low`
+- Shield (Mythic+) — Self — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Haste debuff (base) — Single target — `medium`
 
-- **Base (Mythic+) — Graceful Edict**: Stats/effects: ATK, Shield; Debuffs/CC: None noted; Damage: Magic; Targeting: Single target
-- **EX. +5**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: Magic; Targeting: None noted
-- **EX. +15**: Stats/effects: Shield; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Pin (base) — Single target — `high`
+
+#### Damage
+
+- Magic — Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Energy
-- Caps or stack limits mentioned in skills
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Viperian - Shadow Serpent
@@ -10959,34 +11131,37 @@ Viperian burns 30% (HP-based) HP 10 s into a battle if his HP ratio is above 90%
 **Enhance Force**
 *Unlocks at Supreme+*
 
-Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian. Level 2 10 点
+Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.
 
-- Level 2 — Unlocks at EX. +5: “冥蛇”造成的伤害将附带(scaled)点生命汲取。每有一名敌人生命值百分比首次低于(scaled)时，可额外派出一条“冥蛇”，优先选择未被“冥蛇”附身或当前造成伤害最高的敌人，每名敌人至多被(scaled)条“冥蛇”附身。
+- Level 2 — Unlocks at EX. +5: Darkviper damage gains (scaled) Life Drain. Whenever an enemy's HP ratio drops below (scaled) for the first time, an additional Darkviper is deployed, prioritizing enemies not possessed by a Darkviper or dealing the highest damage; each enemy can be possessed by up to (scaled) Darkvipers.
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Mythic / Mythic+**: Unlocks **Crimson Waltz** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Energy; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Single target, Multiple targets, All units
+- Healing (base) — Single target — `high`
+- Haste buff (Legendary+) — Self — `medium`
+- Lifedrain buff (EX+5) — Single target — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- Energy drain (base) — Single target — `medium`
 
-- **Base (Mythic+) — Crimson Waltz**: Stats/effects: ATK; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: Multiple targets, All units
-- **EX. +5**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Unaffected immunity (base) — Self — Start of battle
+
+#### Damage
+
+- Magic — All units, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Energy
+- Haste
+- Life Drain
+- Healing
 - Primary damage type (unit): **Magic**
 
 ## Walker - Wildland Outlaw
@@ -11061,28 +11236,27 @@ Walker gains a shield equal to 20% of max HP when dealing damage to the targeted
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Crit, Max HP, HP; Debuffs/CC: Stun; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Crit, Max HP, HP; Debuffs/CC: Stun; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Aerial Thunder** (Ex-weapon). Stats/effects: ATK, Crit, Max HP, HP, Physical DEF; Debuffs/CC: Stun; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Crit, Max HP, HP, Shield, Physical DEF; Debuffs/CC: Stun; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Crit, Max HP, HP, Shield, Physical DEF; Debuffs/CC: Stun; Damage: HP-based; Targeting: Single target, Multiple targets, Area / path
+- Damage taken reduction (base) — Self — `medium`
+- Crit buff (Legendary+) — Self — `high`
+- Lifedrain buff (Supreme+) — Self — `medium`
+- Shield (Supreme+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Stun (base) — Single target — `medium`
 
-- **Base (Mythic+) — Aerial Thunder**: Stats/effects: ATK, Physical DEF; Debuffs/CC: Stun; Damage: None noted; Targeting: Single target, Multiple targets
-- **EX. +5**: Stats/effects: Crit; Debuffs/CC: None noted; Damage: None noted; Targeting: Multiple targets
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Physical — Arc, Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
+- Crit
+- Life Drain
 - Primary damage type (unit): **Physical**
 
 ## Zandrok - Watchful Edge
@@ -11158,27 +11332,25 @@ Any excess healing Zandrok receives is converted into extra max HP. The total ma
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: Haste, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: Haste, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Area / path
-- **Mythic / Mythic+**: Unlocks **Hunter's Fury** (Ex-weapon). Stats/effects: ATK, Haste, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, Area / path
+- Haste buff (base) — Area — `medium`
+- Lifedrain buff (base) — Area — `low`
+- Max HP buff (Legendary+) — Self — `low`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Stun (base) — Area — `low`
 
-- **Base (Mythic+) — Hunter's Fury**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: None noted
-- **EX. +5**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: None noted
-- **EX. +10**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: None noted
-- **EX. +15**: Stats/effects: Max HP; Debuffs/CC: None noted; Damage: HP-based; Targeting: None noted
+#### Damage
+
+- Physical — Area, Multiple targets, Self, Single target
 
 #### Stats the unit benefits from
 
 - Max HP
-- Caps or stack limits mentioned in skills
+- Haste
+- Life Drain
 - Primary damage type (unit): **Physical**
 
 ## Zanie - Timeless Tinkerer
@@ -11257,28 +11429,33 @@ When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and 
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, ATK SPD, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, ATK SPD, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets
-- **Mythic / Mythic+**: Unlocks **Precision Overload** (Ex-weapon). Stats/effects: ATK, ATK SPD, Max HP, Energy, Shield; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, ATK SPD, Max HP, Energy, Shield, Physical DEF; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets
-- **Paragon 1–4**: Stats/effects: ATK, ATK SPD, Max HP, Energy, Shield, Physical DEF; Debuffs/CC: Stun, Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets
+- ATK SPD buff (base) — Self — `low`
+- Healing (base) — Single target — `high`
+- Shield (base) — Single target — `high`
+- Max HP buff (Mythic+) — Single target — `high`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Debuffs
 
-#### Per ex-level
+- ATK debuff (Supreme+) — Single target — `low`
+- Phys DEF debuff (Supreme+) — Single target — `medium`
 
-- **Base (Mythic+) — Precision Overload**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +5**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: ATK, Max HP; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Crowd Control
+
+- Stun (base) — Single target — `low`
+
+#### Damage
+
+- Physical — Area, Self, Single target
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Max HP
-- Energy
+- DEF Penetration
+- Healing
 - Primary damage type (unit): **Physical**
 
 ## Zorya - Watcher in Stone
@@ -11356,28 +11533,33 @@ When Zorya would take a fatal blow she channels all her Energy to survive and im
 
 ### Summary
 
-#### Per Ascension
+#### Buffs
 
-- **Epic / Epic+**: Stats/effects: ATK, Max HP, HP, Energy, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Legendary / Legendary+**: Unlocks **Hero Focus**. Stats/effects: ATK, Max HP, HP, Energy, Healing; Debuffs/CC: None noted; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Mythic / Mythic+**: Unlocks **Intimidating Field** (Ex-weapon). Stats/effects: ATK, Haste, Max HP, HP, Energy, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Supreme / Supreme+**: Unlocks **Enhance Force**. Stats/effects: ATK, Haste, Max HP, HP, Energy, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
-- **Paragon 1–4**: Stats/effects: ATK, Haste, Max HP, HP, Energy, Healing; Debuffs/CC: Uncontrol immunity; Damage: HP-based; Targeting: Self, Single target, Multiple targets, All units, Area / path
+- Damage taken reduction (base) — Arc — `high`
+- Energy recovery (base) — Area — `low`
+- Healing (base) — Area — `low`
+- Healing over time (base) — Area — `low`
+- Invincible (base) — Self — `high`
+- Lifedrain buff (base) — Area — `medium`
+- Haste buff (Mythic+) — Self — `medium`
 
-*Standard ascension stat bonuses (e.g. flat % ATK/HP per tier) are not listed on Yaphalla hero pages.*
+#### Crowd Control
 
-#### Per ex-level
+- Steadfast immunity (base) — Self — Start of battle
+- Unaffected immunity (EX+10) — Single target — On skill
+- Knock down (base) — Arc — `medium`
+- Stun (base) — Area — `medium`
 
-- **Base (Mythic+) — Intimidating Field**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: Self, Multiple targets, All units
-- **EX. +5**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
-- **EX. +10**: Stats/effects: None noted; Debuffs/CC: Uncontrol immunity; Damage: None noted; Targeting: None noted
-- **EX. +15**: Stats/effects: Haste; Debuffs/CC: None noted; Damage: None noted; Targeting: None noted
+#### Damage
+
+- Magic — Arc, Area, Single target
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Lost HP
 - Energy
-- Caps or stack limits mentioned in skills
+- Life Drain
+- Haste
+- Healing
 - Primary damage type (unit): **Magic**
