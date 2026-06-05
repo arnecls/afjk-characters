@@ -109,9 +109,11 @@ Matchers and skip lists live in `scripts/generate-heroes-overview.py`.
 
 ## Special effects (summary lines)
 
-Notable mechanics outside buff/debuff/CC stat lines. Format:
+Notable mechanics outside buff/debuff/CC stat lines. Under `#### Special
+effects`, use separate `##### Provides` and `##### Requires` subsections.
+Line format (no Provides/Requires prefix on each bullet):
 
-`{Provides|Requires}: {label} ({tier}) — {targeting}`
+`{label} ({tier}) — {targeting}`
 
 - **Provides** — e.g. instant defeat, invincibility, summoning, revive,
   start-of-battle cast (casts Ultimate at battle start, or the Ultimate's

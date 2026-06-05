@@ -35,17 +35,22 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Brightfeather empower (base) — Single target
-- Provides: HP threshold strike (base) — Multiple targets
-- Provides: Instant defeat (base) — Multiple targets
-- Provides: Invincibility (base) — Single target
-- Provides: Mark (base) — Multiple targets
-- Provides: Reposition enemies (base) — Single target
-- Provides: Untargetable (base) — Multiple targets
-- Provides: Fatal blow save (Mythic+) — Area
-- Requires: Cooldown-gated proc (base) — Allies
-- Requires: Ranged damage from allies (base) — Allies
-- Requires: Debuff on target (Legendary+) — Enemies
+##### Provides
+
+- Brightfeather empower (base) — Single target
+- HP threshold strike (base) — Multiple targets
+- Instant defeat (base) — Multiple targets
+- Invincibility (base) — Single target
+- Mark (base) — Multiple targets
+- Reposition enemies (base) — Single target
+- Untargetable (base) — Multiple targets
+- Fatal blow save (Mythic+) — Area
+
+##### Requires
+
+- Cooldown-gated proc (base) — Allies
+- Ranged damage from allies (base) — Allies
+- Debuff on target (Legendary+) — Enemies
 
 #### Damage
 
@@ -88,10 +93,12 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Named companion unit (base) — Self
-- Provides: Start-of-battle cast (base) — All units
-- Provides: Summoning (base) — All units
-- Provides: Damage and control immunity (Mythic+) — Self
+##### Provides
+
+- Named companion unit (base) — Self
+- Start-of-battle cast (base) — All units
+- Summoning (base) — All units
+- Damage and control immunity (Mythic+) — Self
 
 #### Damage
 
@@ -135,8 +142,10 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Requires: Combat Stance active (base) — Enemies
-- Requires: Cooldown-gated proc (base) — Enemies
+##### Requires
+
+- Combat Stance active (base) — Enemies
+- Cooldown-gated proc (base) — Enemies
 
 #### Damage
 
@@ -177,7 +186,9 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Requires: Once per battle (Mythic+) — Allies
+##### Requires
+
+- Once per battle (Mythic+) — Allies
 
 #### Damage
 
@@ -214,7 +225,9 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Summoning (base) — Multiple targets
+##### Provides
+
+- Summoning (base) — Multiple targets
 
 #### Damage
 
@@ -255,8 +268,10 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Reposition enemies (base) — Single target
-- Provides: Stat steal (EX+10) — Single target
+##### Provides
+
+- Reposition enemies (base) — Single target
+- Stat steal (EX+10) — Single target
 
 #### Damage
 
@@ -303,8 +318,10 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Invincibility (base) — Area
-- Provides: Transform (base) — Area
+##### Provides
+
+- Invincibility (base) — Area
+- Transform (base) — Area
 
 #### Damage
 
@@ -348,9 +365,11 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Invincibility (base) — Multiple targets
-- Provides: Start-of-battle cast (base) — Multiple targets
-- Provides: Summoning (base) — Self
+##### Provides
+
+- Invincibility (base) — Multiple targets
+- Start-of-battle cast (base) — Multiple targets
+- Summoning (base) — Self
 
 #### Damage
 
@@ -393,10 +412,15 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Start-of-battle cast (base) — Arc
-- Provides: Dispel debuffs (EX+15) — Area
-- Requires: Specific form active (base) — Enemies
-- Requires: Boss encounter (Supreme+) — Enemies
+##### Provides
+
+- Start-of-battle cast (base) — Arc
+- Dispel debuffs (EX+15) — Area
+
+##### Requires
+
+- Specific form active (base) — Enemies
+- Boss encounter (Supreme+) — Enemies
 
 #### Damage
 
@@ -440,10 +464,12 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Invincibility (base) — Single target
-- Provides: Revive ally (base) — Single target
-- Provides: Named companion unit (Mythic+) — Single target
-- Provides: Summoning (EX+5) — Single target
+##### Provides
+
+- Invincibility (base) — Single target
+- Revive ally (base) — Single target
+- Named companion unit (Mythic+) — Single target
+- Summoning (EX+5) — Single target
 
 #### Damage
 
@@ -486,13 +512,18 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Invincibility (base) — Area
-- Provides: Transform (base) — Area
-- Provides: Magic damage amplification (Supreme+) — Single target
-- Requires: Aging on target (base) — Enemies
-- Requires: Debuff on target (base) — Enemies
-- Requires: Magic damage from allies (base) — Allies
-- Requires: Specific form active (base) — Enemies
+##### Provides
+
+- Invincibility (base) — Area
+- Transform (base) — Area
+- Magic damage amplification (Supreme+) — Single target
+
+##### Requires
+
+- Aging on target (base) — Enemies
+- Debuff on target (base) — Enemies
+- Magic damage from allies (base) — Allies
+- Specific form active (base) — Enemies
 
 #### Damage
 
@@ -569,11 +600,13 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Energy steal (base) — Single target
-- Provides: Named companion unit (base) — Self
-- Provides: Start-of-battle cast (base) — Single target
-- Provides: Summoning (base) — Single target
-- Provides: Untargetable (EX+5) — Single target
+##### Provides
+
+- Energy steal (base) — Single target
+- Named companion unit (base) — Self
+- Start-of-battle cast (base) — Single target
+- Summoning (base) — Single target
+- Untargetable (EX+5) — Single target
 
 #### Damage
 
@@ -615,9 +648,14 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Damage absorption (allies) (base) — Multiple targets
-- Provides: Stored damage release (base) — Self
-- Requires: Stored resource threshold (base) — Enemies
+##### Provides
+
+- Damage absorption (allies) (base) — Multiple targets
+- Stored damage release (base) — Self
+
+##### Requires
+
+- Stored resource threshold (base) — Enemies
 
 #### Damage
 
@@ -690,8 +728,13 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Ally blessing (base) — Single target
-- Requires: Blessed ally active (base) — Allies
+##### Provides
+
+- Ally blessing (base) — Single target
+
+##### Requires
+
+- Blessed ally active (base) — Allies
 
 #### Damage
 
@@ -733,11 +776,16 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 #### Special effects
 
-- Provides: Named companion unit (base) — Self
-- Provides: Summoning (base) — Arc
-- Provides: Stat absorb (Mythic+) — Single target
-- Provides: Permanent stat absorb (EX+5) — Single target
-- Requires: Target not CC-immune (Mythic+) — Enemies
+##### Provides
+
+- Named companion unit (base) — Self
+- Summoning (base) — Arc
+- Stat absorb (Mythic+) — Single target
+- Permanent stat absorb (EX+5) — Single target
+
+##### Requires
+
+- Target not CC-immune (Mythic+) — Enemies
 
 #### Damage
 
@@ -805,7 +853,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Start-of-battle cast (base) — All units
+##### Provides
+
+- Start-of-battle cast (base) — All units
 
 #### Damage
 
@@ -847,9 +897,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Isolate enemies (domain) (base) — All units
-- Provides: Summoning (base) — Area
-- Requires: Boss encounter (base) — Enemies
+##### Provides
+
+- Isolate enemies (domain) (base) — All units
+- Summoning (base) — Area
+
+##### Requires
+
+- Boss encounter (base) — Enemies
 
 #### Damage
 
@@ -892,7 +947,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — All units
+##### Provides
+
+- Summoning (base) — All units
 
 #### Damage
 
@@ -1000,9 +1057,11 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Untargetable (base) — Area
-- Provides: Summoning (Mythic+) — All units
-- Provides: Execution scaling (Supreme+) — Self
+##### Provides
+
+- Untargetable (base) — Area
+- Summoning (Mythic+) — All units
+- Execution scaling (Supreme+) — Self
 
 #### Damage
 
@@ -1050,11 +1109,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Battlefield order (base) — All units
-- Provides: Heal lock (Curelock) (base) — All units
-- Provides: Named companion unit (base) — Self
-- Provides: Summoning (base) — All units
-- Provides: Ultimate lock (Spellbind) (base) — All units
+##### Provides
+
+- Battlefield order (base) — All units
+- Heal lock (Curelock) (base) — All units
+- Named companion unit (base) — Self
+- Summoning (base) — All units
+- Ultimate lock (Spellbind) (base) — All units
 
 #### Damage
 
@@ -1131,9 +1192,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Ally link (Stellar Bond) (base) — Single target
-- Provides: Shared HP and Energy (base) — All units
-- Requires: Ally on bond line (base) — —
+##### Provides
+
+- Ally link (Stellar Bond) (base) — Single target
+- Shared HP and Energy (base) — All units
+
+##### Requires
+
+- Ally on bond line (base) — —
 
 #### Damage
 
@@ -1177,10 +1243,15 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — All units
-- Provides: Start-of-battle cast (base) — All units
-- Provides: Summoning (base) — Single target
-- Requires: Cooldown-gated proc (base) — Allies
+##### Provides
+
+- Invincibility (base) — All units
+- Start-of-battle cast (base) — All units
+- Summoning (base) — Single target
+
+##### Requires
+
+- Cooldown-gated proc (base) — Allies
 
 #### Damage
 
@@ -1221,9 +1292,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Single target
-- Provides: Revive ally (Supreme+) — Single target
-- Requires: Once per battle (EX+10) — Enemies
+##### Provides
+
+- Summoning (base) — Single target
+- Revive ally (Supreme+) — Single target
+
+##### Requires
+
+- Once per battle (EX+10) — Enemies
 
 #### Damage
 
@@ -1299,9 +1375,11 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Named companion unit (base) — Self
-- Provides: Summoning (base) — Self
-- Provides: Ally blessing (Mythic+) — Single target
+##### Provides
+
+- Named companion unit (base) — Self
+- Summoning (base) — Self
+- Ally blessing (Mythic+) — Single target
 
 #### Damage
 
@@ -1381,8 +1459,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (Mythic+) — Single target
-- Requires: Boss encounter (base) — Enemies
+##### Provides
+
+- Summoning (Mythic+) — Single target
+
+##### Requires
+
+- Boss encounter (base) — Enemies
 
 #### Damage
 
@@ -1463,7 +1546,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Area
+##### Provides
+
+- Summoning (base) — Area
 
 #### Damage
 
@@ -1504,8 +1589,10 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Area
-- Provides: Invincibility (EX+15) — Single target
+##### Provides
+
+- Summoning (base) — Area
+- Invincibility (EX+15) — Single target
 
 #### Damage
 
@@ -1618,9 +1705,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Instant defeat (base) — Single target
-- Provides: Invincibility (base) — Single target
-- Requires: Boss encounter (base) — Allies
+##### Provides
+
+- Instant defeat (base) — Single target
+- Invincibility (base) — Single target
+
+##### Requires
+
+- Boss encounter (base) — Allies
 
 #### Damage
 
@@ -1668,8 +1760,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (Mythic+) — Area
-- Requires: Specific form active (base) — Enemies
+##### Provides
+
+- Invincibility (Mythic+) — Area
+
+##### Requires
+
+- Specific form active (base) — Enemies
 
 #### Damage
 
@@ -1707,7 +1804,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Requires: Cooldown-gated proc (base) — Allies
+##### Requires
+
+- Cooldown-gated proc (base) — Allies
 
 #### Damage
 
@@ -1745,8 +1844,10 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Requires: Party composition (base) — Allies
-- Requires: Boss encounter (Supreme+) — —
+##### Requires
+
+- Party composition (base) — Allies
+- Boss encounter (Supreme+) — —
 
 #### Damage
 
@@ -1786,7 +1887,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (Mythic+) — Area
+##### Provides
+
+- Summoning (Mythic+) — Area
 
 #### Damage
 
@@ -1848,8 +1951,10 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Single target
-- Provides: Untargetable (base) — Area
+##### Provides
+
+- Summoning (base) — Single target
+- Untargetable (base) — Area
 
 #### Damage
 
@@ -1893,9 +1998,11 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Requires: Cooldown-gated proc (base) — Enemies
-- Requires: Debuff on target (base) — Enemies
-- Requires: Multiple debuffs on target (base) — Enemies
+##### Requires
+
+- Cooldown-gated proc (base) — Enemies
+- Debuff on target (base) — Enemies
+- Multiple debuffs on target (base) — Enemies
 
 #### Damage
 
@@ -1939,7 +2046,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Requires: Once per battle (base) — Allies
+##### Requires
+
+- Once per battle (base) — Allies
 
 #### Damage
 
@@ -2065,7 +2174,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Area
+##### Provides
+
+- Summoning (base) — Area
 
 #### Damage
 
@@ -2179,8 +2290,10 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Single target
-- Provides: Summoning (base) — Area
+##### Provides
+
+- Invincibility (base) — Single target
+- Summoning (base) — Area
 
 #### Damage
 
@@ -2219,11 +2332,16 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Named companion unit (base) — Single target
-- Provides: Summoning (base) — Single target
-- Requires: Monster ingredients (base) — Enemies
-- Requires: Stacked resource (base) — Enemies
-- Requires: Enemy monsters present (Mythic+) — Enemies
+##### Provides
+
+- Named companion unit (base) — Single target
+- Summoning (base) — Single target
+
+##### Requires
+
+- Monster ingredients (base) — Enemies
+- Stacked resource (base) — Enemies
+- Enemy monsters present (Mythic+) — Enemies
 
 #### Damage
 
@@ -2305,8 +2423,10 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Single target
-- Provides: Untargetable (base) — All units
+##### Provides
+
+- Invincibility (base) — Single target
+- Untargetable (base) — All units
 
 #### Damage
 
@@ -2345,7 +2465,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Area
+##### Provides
+
+- Summoning (base) — Area
 
 #### Damage
 
@@ -2425,7 +2547,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Reposition enemies (base) — Single target
+##### Provides
+
+- Reposition enemies (base) — Single target
 
 #### Damage
 
@@ -2501,7 +2625,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Revive ally (base) — Area
+##### Provides
+
+- Revive ally (base) — Area
 
 #### Damage
 
@@ -2583,7 +2709,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Single target
+##### Provides
+
+- Summoning (base) — Single target
 
 #### Damage
 
@@ -2620,9 +2748,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Area
-- Provides: Revive ally (Mythic+) — Single target
-- Requires: Once per battle (Mythic+) — Allies
+##### Provides
+
+- Summoning (base) — Area
+- Revive ally (Mythic+) — Single target
+
+##### Requires
+
+- Once per battle (Mythic+) — Allies
 
 #### Damage
 
@@ -2697,9 +2830,11 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Self
-- Provides: HP threshold strike (Mythic+) — Self
-- Provides: Untargetable (Mythic+) — Self
+##### Provides
+
+- Summoning (base) — Self
+- HP threshold strike (Mythic+) — Self
+- Untargetable (Mythic+) — Self
 
 #### Damage
 
@@ -2767,7 +2902,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Single target
+##### Provides
+
+- Summoning (base) — Single target
 
 #### Damage
 
@@ -2952,10 +3089,15 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Spirit form ally (base) — Single target
-- Provides: Start-of-battle cast (Mythic+) — Self
-- Requires: Blessed ally active (base) — Allies
-- Requires: Enemy defeat (base) — Allies
+##### Provides
+
+- Spirit form ally (base) — Single target
+- Start-of-battle cast (Mythic+) — Self
+
+##### Requires
+
+- Blessed ally active (base) — Allies
+- Enemy defeat (base) — Allies
 
 #### Damage
 
@@ -3031,7 +3173,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Single target
+##### Provides
+
+- Invincibility (base) — Single target
 
 #### Damage
 
@@ -3070,7 +3214,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Transform (base) — Single target
+##### Provides
+
+- Transform (base) — Single target
 
 #### Damage
 
@@ -3174,7 +3320,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Self
+##### Provides
+
+- Summoning (base) — Self
 
 #### Damage
 
@@ -3218,7 +3366,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Area
+##### Provides
+
+- Summoning (base) — Area
 
 #### Damage
 
@@ -3265,8 +3415,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Position swap (EX+10) — Multiple targets
-- Requires: Boss encounter (base) — Allies
+##### Provides
+
+- Position swap (EX+10) — Multiple targets
+
+##### Requires
+
+- Boss encounter (base) — Allies
 
 #### Damage
 
@@ -3379,8 +3534,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Energy steal (base) — Single target
-- Requires: Once per battle (Mythic+) — Allies
+##### Provides
+
+- Energy steal (base) — Single target
+
+##### Requires
+
+- Once per battle (Mythic+) — Allies
 
 #### Damage
 
@@ -3427,8 +3587,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Revive ally (base) — Single target
-- Requires: Boss encounter (base) — Enemies
+##### Provides
+
+- Revive ally (base) — Single target
+
+##### Requires
+
+- Boss encounter (base) — Enemies
 
 #### Damage
 
@@ -3466,7 +3631,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Single target
+##### Provides
+
+- Summoning (base) — Single target
 
 #### Damage
 
@@ -3508,7 +3675,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Area
+##### Provides
+
+- Invincibility (base) — Area
 
 #### Damage
 
@@ -3549,7 +3718,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Area
+##### Provides
+
+- Invincibility (base) — Area
 
 #### Damage
 
@@ -3597,7 +3768,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Single target
+##### Provides
+
+- Invincibility (base) — Single target
 
 #### Damage
 
@@ -3640,12 +3813,17 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Debuff application (base) — Single target
-- Provides: DoT conversion (base) — All units
-- Provides: Invincibility (base) — All units
-- Provides: Ally HP drain (self-buff) (Supreme+) — Self
-- Requires: Continuous damage on enemies (base) — Enemies
-- Requires: Debuff on target (base) — Enemies
+##### Provides
+
+- Debuff application (base) — Single target
+- DoT conversion (base) — All units
+- Invincibility (base) — All units
+- Ally HP drain (self-buff) (Supreme+) — Self
+
+##### Requires
+
+- Continuous damage on enemies (base) — Enemies
+- Debuff on target (base) — Enemies
 
 #### Damage
 
@@ -3689,8 +3867,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Transform (base) — Area
-- Requires: Specific form active (base) — Enemies
+##### Provides
+
+- Transform (base) — Area
+
+##### Requires
+
+- Specific form active (base) — Enemies
 
 #### Damage
 
@@ -3722,7 +3905,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Self
+##### Provides
+
+- Summoning (base) — Self
 
 #### Damage
 
@@ -3756,7 +3941,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Single target
+##### Provides
+
+- Summoning (base) — Single target
 
 #### Damage
 
@@ -3902,8 +4089,10 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Named companion unit (base) — Single target
-- Provides: Ally blessing (Mythic+) — Single target
+##### Provides
+
+- Named companion unit (base) — Single target
+- Ally blessing (Mythic+) — Single target
 
 #### Damage
 
@@ -4024,7 +4213,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Dispel debuffs (Mythic+) — Self
+##### Provides
+
+- Dispel debuffs (Mythic+) — Self
 
 #### Damage
 
@@ -4061,8 +4252,10 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Area
-- Provides: Transform (base) — Area
+##### Provides
+
+- Summoning (base) — Area
+- Transform (base) — Area
 
 #### Damage
 
@@ -4104,10 +4297,12 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Area
-- Provides: Mass sleep (base) — Single target
-- Provides: Summoning (base) — All units
-- Provides: Transform (base) — Area
+##### Provides
+
+- Invincibility (base) — Area
+- Mass sleep (base) — Single target
+- Summoning (base) — All units
+- Transform (base) — Area
 
 #### Damage
 
@@ -4155,7 +4350,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — All units
+##### Provides
+
+- Summoning (base) — All units
 
 #### Damage
 
@@ -4201,7 +4398,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (Mythic+) — Single target
+##### Provides
+
+- Summoning (Mythic+) — Single target
 
 #### Damage
 
@@ -4277,7 +4476,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Start-of-battle cast (base) — Arc
+##### Provides
+
+- Start-of-battle cast (base) — Arc
 
 #### Damage
 
@@ -4357,8 +4558,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Untargetable (Mythic+) — Multiple targets
-- Requires: Enemy defeat (Legendary+) — Enemies
+##### Provides
+
+- Untargetable (Mythic+) — Multiple targets
+
+##### Requires
+
+- Enemy defeat (Legendary+) — Enemies
 
 #### Damage
 
@@ -4401,7 +4607,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Area
+##### Provides
+
+- Invincibility (base) — Area
 
 #### Damage
 
@@ -4442,7 +4650,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Requires: Adjacent allies (base) — Allies
+##### Requires
+
+- Adjacent allies (base) — Allies
 
 #### Damage
 
@@ -4487,9 +4697,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Start-of-battle cast (base) — All units
-- Provides: Summoning (base) — All units
-- Requires: Boss encounter (base) — Allies
+##### Provides
+
+- Start-of-battle cast (base) — All units
+- Summoning (base) — All units
+
+##### Requires
+
+- Boss encounter (base) — Allies
 
 #### Damage
 
@@ -4601,7 +4816,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Summoning (base) — Area
+##### Provides
+
+- Summoning (base) — Area
 
 #### Damage
 
@@ -4686,9 +4903,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Special effects
 
-- Provides: Invincibility (base) — Area
-- Provides: Summoning (base) — Arc
-- Requires: Ally Ultimate casts (Mythic+) — Allies
+##### Provides
+
+- Invincibility (base) — Area
+- Summoning (base) — Arc
+
+##### Requires
+
+- Ally Ultimate casts (Mythic+) — Allies
 
 #### Damage
 

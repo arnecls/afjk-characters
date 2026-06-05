@@ -1298,15 +1298,18 @@ def format_summary(hero: Hero) -> str:
     if hero.special_effects:
         out.append("#### Special effects")
         out.append("")
-        for se in sorted(
-            hero.special_effects,
-            key=lambda x: (0 if x.kind == "provides" else 1, TIER_ORDER.get(x.tier, 9), x.label),
-        ):
-            kind_label = "Provides" if se.kind == "provides" else "Requires"
-            out.append(
-                f"- {kind_label}: {se.label} ({se.tier}) — {se.targeting}"
+        for kind, heading in (("provides", "Provides"), ("requires", "Requires")):
+            items = sorted(
+                [se for se in hero.special_effects if se.kind == kind],
+                key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
             )
-        out.append("")
+            if not items:
+                continue
+            out.append(f"##### {heading}")
+            out.append("")
+            for se in items:
+                out.append(f"- {se.label} ({se.tier}) — {se.targeting}")
+            out.append("")
     if hero.damage_entries:
         out.append("#### Damage")
         out.append("")
