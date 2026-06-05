@@ -115,7 +115,28 @@ def _direct_buff_labels_for_stat(stat: str) -> list[str]:
         return ["ATK SPD buff"]
     if stat == "Max HP":
         return ["Max HP buff"]
-    return list(STAT_TO_BUFF_LABELS.get(stat, []))
+    labels = list(STAT_TO_BUFF_LABELS.get(stat, []))
+    if stat == "ATK" and "Summon damage buff" not in labels:
+        labels.append("Summon damage buff")
+    return labels
+
+
+def summon_buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
+    """Buff labels on allied summons that satisfy a benefit stat."""
+    prefs = list(buff_labels_for_stat(stat))
+    if stat == "ATK":
+        prefs.append(("Summon damage buff", 1.0))
+    return prefs
+
+
+def receiver_summons(hero: _rs.Hero) -> bool:
+    return any(
+        se.kind == "provides" and se.label == "Summoning"
+        for se in hero.special_effects
+    )
+
+
+SUMMON_TARGETING_WEIGHT = 3.0
 
 
 def format_reason_for_display(reason: str) -> str:
@@ -555,16 +576,72 @@ def score_synergy(
     return total, reasons
 
 
+def score_summon_synergy(
+    provider: _rs.Hero, receiver: _rs.Hero
+) -> tuple[float, list[str]]:
+    """Match summon-only buffs to heroes who field summons."""
+    if provider.title == receiver.title or not receiver_summons(receiver):
+        return 0.0, []
+
+    if not provider.summon_effects:
+        return 0.0, []
+
+    reasons: list[str] = []
+    total = 0.0
+    seen_stats: set[str] = set()
+    credited_buffs: set[str] = set()
+
+    for stat in receiver_stats(receiver):
+        if stat == "Haste" and "Haste buff" in credited_buffs:
+            continue
+        label_prefs = summon_buff_labels_for_stat(stat)
+        allowed = {label for label, _ in label_prefs}
+        mult_by_label = dict(label_prefs)
+        best_for_stat: tuple[float, str] | None = None
+
+        for effect in provider.summon_effects:
+            if effect.category != "buff" or effect.label not in allowed:
+                continue
+            if effect.conditional == "rare":
+                continue
+            mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
+            pts = SUMMON_TARGETING_WEIGHT * mw * mult_by_label[effect.label]
+            if effect.conditional == "frequent":
+                pts *= FREQUENT_CONDITIONAL_SCORE
+            cond = (
+                f", conditional ({effect.conditional})"
+                if effect.conditional
+                else ""
+            )
+            detail = f"{effect.label} (summons only, {effect.magnitude}{cond})"
+            if best_for_stat is None or pts > best_for_stat[0]:
+                best_for_stat = (pts, detail, effect.label)
+
+        if best_for_stat:
+            total += best_for_stat[0]
+            if stat not in seen_stats:
+                seen_stats.add(stat)
+                reasons.append(f"{stat} via {best_for_stat[1]}")
+            if stat == "ATK SPD" and best_for_stat[2] == "Haste buff":
+                credited_buffs.add("Haste buff")
+
+    return total, reasons
+
+
 def score_combined_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
     enabler_matchers: dict[str, callable],
 ) -> tuple[float, list[str]]:
     buff_score, buff_reasons = score_synergy(provider, receiver)
+    summon_score, summon_reasons = score_summon_synergy(provider, receiver)
     en_score, en_reasons = score_enabler_synergy(
         provider, receiver, enabler_matchers
     )
-    return buff_score + en_score, buff_reasons + en_reasons
+    return (
+        buff_score + summon_score + en_score,
+        buff_reasons + summon_reasons + en_reasons,
+    )
 
 
 def rank_synergies(

@@ -94,12 +94,15 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
         return True
     if re.search(r"\bfor (?:herself|himself) and all allies\b", t):
         return True
-    if re.search(r"\bbless(?:es)? (?:an )?(?:adjacent )?allied\b", t):
+    if re.search(
+        r"\bbless(?:es)? (?:an )?(?:adjacent )?allied\b(?! summons?\b)", t
+    ):
         return True
     if re.search(r"\bgrants? .{0,40}(?:to |for )(?:allies|an ally)\b", t):
         return True
     if re.search(
-        r"\bgrants? .{0,50}to (?:the )?(?:frontmost |weakest |rearmost )?allied\b",
+        r"\bgrants? .{0,50}to (?:the )?(?:frontmost |weakest |rearmost )?"
+        r"allied\b(?! summons?\b)",
         t,
     ):
         return True
@@ -130,6 +133,132 @@ def _resolve_buff_targeting(text: str, label: str) -> str:
     if effect_targets_self_only(t, label, "buff"):
         return "Self"
     return detect_targeting(text, label, "buff")
+
+
+def _clause_around(t: str, pos: int) -> str:
+    """Sentence-like span around a regex match for ally vs enemy checks."""
+    start = t.rfind(".", 0, pos) + 1
+    end = t.find(".", pos)
+    if end == -1:
+        end = len(t)
+    return t[start:end]
+
+
+def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool:
+    """Buff applies to summons only, not general allies."""
+    clause = _clause_around(t, match.start())
+    window = t[max(0, match.start() - 40) : min(len(t), match.end() + 40)]
+    if re.search(r"\bnon-summoned allies\b", clause):
+        return False
+    if re.search(
+        r"\b(?:allied |all )?summons? (?:gain|gains|receive|get |inherit)\b",
+        clause,
+    ):
+        return True
+    if re.search(r"\ballied summons?\b", clause) and not _has_explicit_ally_buff(
+        clause, label
+    ):
+        return True
+    if re.search(r"\bboosting the damage of all allied summons\b", clause):
+        return True
+    if re.search(
+        r"\bshield granted by this skill\b", window
+    ) or re.search(r"\bshield granted by this skill\b", clause):
+        return True
+    return False
+
+
+def _buff_match_is_enemy_stat(t: str, label: str, match: re.Match[str]) -> bool:
+    """Stat gain on enemies misread as an ally buff (e.g. Nightmare mark)."""
+    if label not in ("ATK buff", "Haste buff", "ATK SPD buff"):
+        return False
+    clause = _clause_around(t, match.start())
+    if re.search(
+        r"\b(?:an ally|allies|that ally|the ally|allied units|allied heroes|"
+        r"non-summoned allies|frontal allies|party members|weakest ally|"
+        r"rearmost ally|linked through)\b",
+        clause,
+    ) and not re.search(r"\benemy hero\b", clause):
+        return False
+    if re.search(
+        r"\b(?:enemy hero|marked as|nightmare|the enemy with|"
+        r"frontmost enemy|rearmost enemy|isolated enemy)\b",
+        clause,
+    ):
+        return True
+    if re.search(r"\bthe mark\b", clause) and re.search(
+        r"\breduc\w+ their (?:atk|haste)\b", clause
+    ):
+        return True
+    return False
+
+
+def _should_add_buff(text: str, label: str, pattern: str) -> bool:
+    t = text.lower()
+    for m in re.finditer(pattern, t):
+        if _buff_match_is_summon_only(t, label, m):
+            continue
+        if _buff_match_is_enemy_stat(t, label, m):
+            continue
+        return True
+    return False
+
+
+SUMMON_ONLY_BUFF_LABELS = frozenset({"Summon damage buff"})
+SUMMON_BUFF_TARGETING = "Summons only"
+
+
+def _matching_summon_buff_match(text: str, label: str, pattern: str) -> bool:
+    """True when a buff pattern matches but only for allied summons."""
+    t = text.lower()
+    if not re.search(pattern, t):
+        return False
+    if label in SUMMON_ONLY_BUFF_LABELS:
+        return bool(
+            re.search(
+                r"\b(?:allied |all )?summons?|summons? in their\b", t
+            )
+        )
+    for m in re.finditer(pattern, t):
+        if _buff_match_is_summon_only(t, label, m) and not _buff_match_is_enemy_stat(
+            t, label, m
+        ):
+            return True
+    return False
+
+
+def add_summon_buff_effect(
+    effects: list[Effect], label: str, tier: str, text: str
+) -> None:
+    """Record a buff that applies to allied summons, not the whole team."""
+    key = ("buff", label)
+    existing = [e for e in effects if (e.category, e.label) == key]
+    n = extract_number(text, label)
+    cond = _buff_condition("buff", text)
+    if existing:
+        cur = existing[0]
+        order = TIER_ORDER.get(tier, 99)
+        cur_order = TIER_ORDER.get(cur.tier, 99)
+        if order < cur_order:
+            cur.tier = tier
+        cur.conditional = _merge_conditional(cur.conditional, cond)
+        if n is not None and (cur.numeric is None or n > cur.numeric):
+            cur.numeric = n
+            cur.qualitative = text
+        elif cond and not cur.qualitative:
+            cur.qualitative = text
+        return
+    effects.append(
+        Effect(
+            category="buff",
+            label=label,
+            tier=tier,
+            targeting=SUMMON_BUFF_TARGETING,
+            numeric=n,
+            qualitative=text,
+            conditional=cond,
+        )
+    )
 
 EX_TIER_RE = re.compile(r"Unlocks at EX\.?\s*:?\s*\+(\d+)", re.I)
 LEVEL_RE = re.compile(r"^- Level (\d+)")
@@ -173,6 +302,7 @@ class Hero:
   # (tier, text, section name e.g. "Ultimate", "Skill1")
     skill_chunks: list[tuple[str, str, str]] = field(default_factory=list)
     effects: list[Effect] = field(default_factory=list)
+    summon_effects: list[Effect] = field(default_factory=list)
     cc_immunities: list[CcImmunity] = field(default_factory=list)
     special_effects: list[SpecialEffect] = field(default_factory=list)
     damage_entries: list[tuple[str, str]] = field(default_factory=list)
@@ -815,6 +945,13 @@ BUFF_RULES = [
     # Haste buff: must be gaining Haste, not reducing it
     (r"increas(?:e|es|ing) .{0,60}?haste\b", "Haste buff"),
     (r"gains? \d+ haste|gain(?:s|ing)? extra \d+ haste", "Haste buff"),
+    (
+        r"boosting the damage of all allied summons|"
+        r"increase all allied summons'? damage|"
+        r"allied summons'? damage dealt by|"
+        r"allied summons in their .{0,20}gain extra atk",
+        "Summon damage buff",
+    ),
     # Max HP buff: handle both "increases max HP" and passive "max HP is increased"
     (r"increas(?:e|es|ing) (?:the )?(?:\w+ ){0,4}max hp", "Max HP buff"),
     (r"max hp.{0,30}(?:is |permanently )?increas", "Max HP buff"),
@@ -1524,12 +1661,20 @@ def _hero_needs_external_healing(hero: Hero) -> bool:
 
 
 def analyze_text(
-    effects, damage_map, benefits, tier: str, text: str, primary_dmg: str = "Physical"
+    effects,
+    summon_effects,
+    damage_map,
+    benefits,
+    tier: str,
+    text: str,
+    primary_dmg: str = "Physical",
 ):
     t = text.lower()
     for pat, label in BUFF_RULES:
-        if re.search(pat, t):
+        if _should_add_buff(text, label, pat):
             add_effect(effects, "buff", label, tier, text)
+        elif _matching_summon_buff_match(text, label, pat):
+            add_summon_buff_effect(summon_effects, label, tier, text)
     for pat, label in DEBUFF_RULES:
         if re.search(pat, t):
             add_effect(effects, "debuff", label, tier, text)
@@ -1782,6 +1927,7 @@ def refine_benefit_stats(hero: Hero) -> None:
 
 def analyze_hero(hero: Hero):
     hero.effects.clear()
+    hero.summon_effects.clear()
     hero.cc_immunities.clear()
     hero.special_effects.clear()
     hero.damage_entries.clear()
@@ -1792,7 +1938,15 @@ def analyze_hero(hero: Hero):
     # Use the hero's own damage type so (ATK-based) doesn't always emit "Physical"
     primary_dmg = hero.damage_type if hero.damage_type else "Physical"
     for tier, text, section in hero.skill_chunks:
-        analyze_text(hero.effects, damage_map, hero.benefit_stats, tier, text, primary_dmg)
+        analyze_text(
+            hero.effects,
+            hero.summon_effects,
+            damage_map,
+            hero.benefit_stats,
+            tier,
+            text,
+            primary_dmg,
+        )
         detect_special_effects(hero.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
             add_cc_immunity(hero, imm_type, tier, text)
@@ -1880,6 +2034,13 @@ def apply_conditional_magnitude(effect: Effect) -> None:
         effect.magnitude = downgrade_magnitude(effect.magnitude, 2)
 
 
+def format_tier_suffix(tier: str) -> str:
+    """Omit unlock tier for base skills; keep Legendary+, Mythic+, EX+n, etc."""
+    if tier == "base":
+        return ""
+    return f" ({tier})"
+
+
 def format_effect_magnitude(effect: Effect) -> str:
     if effect.conditional:
         return f"`{effect.magnitude}` — conditional ({effect.conditional})"
@@ -1916,7 +2077,7 @@ def assign_damage_magnitudes(heroes: list[Hero]) -> None:
 def assign_magnitudes(heroes: list[Hero]):
     by_key: dict[str, list[Effect]] = defaultdict(list)
     for hero in heroes:
-        for eff in hero.effects:
+        for eff in hero.effects + hero.summon_effects:
             by_key[f"{eff.category}:{eff.label}"].append(eff)
     for group in by_key.values():
         # CC magnitudes are duration-based, not damage-% quantiles.
@@ -1942,7 +2103,7 @@ def assign_magnitudes(heroes: list[Hero]):
             for e in group:
                 e.magnitude = qualitative_magnitude(e)
     for hero in heroes:
-        for eff in hero.effects:
+        for eff in hero.effects + hero.summon_effects:
             apply_conditional_magnitude(eff)
     assign_damage_magnitudes(heroes)
 
@@ -1973,13 +2134,15 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
 
     for cat, heading in [("buff", "Buffs"), ("debuff", "Debuffs")]:
         items = [e for e in hero.effects if e.category == cat]
+        if cat == "buff":
+            items.extend(e for e in hero.summon_effects if e.category == cat)
         if not items:
             continue
         out.append(f"#### {heading} provided by {name}")
         out.append("")
         for e in sorted(items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)):
             out.append(
-                f"- {e.label} ({e.tier}) — {e.targeting} — "
+                f"- {e.label}{format_tier_suffix(e.tier)} — {e.targeting} — "
                 f"{format_effect_magnitude(e)}"
             )
         out.append("")
@@ -1993,12 +2156,12 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
             key=lambda x: (TIER_ORDER.get(x.tier, 9), x.immunity_type),
         ):
             out.append(
-                f"- {imm.immunity_type} immunity ({imm.tier}) — "
+                f"- {imm.immunity_type} immunity{format_tier_suffix(imm.tier)} — "
                 f"{imm.targeting} — {imm.timing}"
             )
         for e in sorted(cc_items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)):
             out.append(
-                f"- {e.label} ({e.tier}) — {e.targeting} — "
+                f"- {e.label}{format_tier_suffix(e.tier)} — {e.targeting} — "
                 f"{format_effect_magnitude(e)}"
             )
         out.append("")
@@ -2018,13 +2181,17 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
             out.append(f"#### {name} Provides")
             out.append("")
             for se in provides:
-                out.append(f"- {se.label} ({se.tier}) — {se.targeting}")
+                out.append(
+                    f"- {se.label}{format_tier_suffix(se.tier)} — {se.targeting}"
+                )
             out.append("")
         if requires:
             out.append(f"#### {name} Requires")
             out.append("")
             for se in requires:
-                out.append(f"- {se.label} ({se.tier}) — {se.targeting}")
+                out.append(
+                    f"- {se.label}{format_tier_suffix(se.tier)} — {se.targeting}"
+                )
             out.append("")
 
     return "\n".join(out).rstrip() + "\n"
