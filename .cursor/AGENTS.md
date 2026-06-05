@@ -152,6 +152,9 @@ reviewing or fixing matches, work through both heroes in this order.
    **rare conditional** ally buffs; sum stat + summon + enabler scores; keep
    the top five partners per receiver. Drop weak-only picks (generic ATK,
    Max HP / Shield when the receiver does not value those stats).
+   **Defining-tier enablers:** requirements from Ex-Skills (`Mythic+`,
+   `EX+n`) and `Supreme+` skills are unit-defining and score higher via
+   `DEFINING_TIER_SCORE_MULT` in `generate-heroes-overview.py`.
 
 **Units benefited** at the end of each Synergies block is the reverse index:
 heroes who list this unit in their top five.
@@ -185,10 +188,11 @@ include this unit in their top five.
    enabler.
 2. **Enablers** — provider satisfies the hero's **Requires** special effects
    (e.g. magic damage from allies for Bonnie, DoT on enemies for Shadewing,
-   Mage/Tank/Support for Himmel's party composition). Self-setup labels
-   (Debuff on target (Aging), form/stance, boss gates, etc.) are skipped.
-   Synergy text
-   uses `Enables {label} via {detail}`.
+   Mage/Tank/Support for Himmel's party composition, ally stat buffs for
+   Perseus/Silven). Self-setup labels (Debuff on target (Aging), form/stance,
+   boss gates, etc.) are skipped. Requirements on Ex/Supreme+ tiers get a
+   defining-tier multiplier (`DEFINING_TIER_SCORE_MULT`). Synergy text uses
+   `Enables {label} via {detail}`.
 
 Matchers and skip lists live in `scripts/generate-heroes-overview.py`.
 `main()` prints an enabler pattern scan for skill phrases not yet in
@@ -215,7 +219,10 @@ Line format (no Provides/Requires prefix on each bullet):
   `detect_ally_grant_effects` in `rewrite-summaries.py`).
 - **Requires** — e.g. continuous damage on enemies, magic damage from allies,
   debuff on target (Aging), form or stance active, ally blessing active,
-  cooldown-gated trigger, enemy not CC-immune, party composition.
+  cooldown-gated trigger, enemy not CC-immune, party composition,
+  **Ally stat buffs** (needs temporary stat buffs from allies; matched by
+  providers granting many/wide ally buffs, start-of-battle preferred; see
+  `match_ally_stat_buffs` in `generate-heroes-overview.py`).
 
 Patterns live in `scripts/rewrite-summaries.py` (`SPECIAL_PROVIDES_RULES`,
 `SPECIAL_REQUIRES_RULES`, `BUFF_RULES` including ally ATK SPD phrasing like

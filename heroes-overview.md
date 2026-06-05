@@ -823,7 +823,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Cassadee Requires
 
-- Ally blessing active — Allies
+- Ally blessing active (EX+5) — Allies
 
 ## Cecia
 
@@ -917,6 +917,10 @@ _No synergy partners matched stat buffs or enablers._
   - Healing over time (all units, medium)
 - **Antandra**
   - Healing (multiple targets, high)
+
+### Units benefitting from Contess
+
+- Zorya
 
 ### Summary for Contess
 
@@ -1133,7 +1137,6 @@ _No synergy partners matched stat buffs or enablers._
 - Rhys
 - Rowan
 - Shakir
-- Silven
 - Sinbad
 - Sonja
 - Soren
@@ -1449,7 +1452,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Twins Requires
 
-- Ally on positioning link — —
+- Ally on positioning link (Mythic+) — —
 
 ## Evie
 
@@ -1471,11 +1474,14 @@ _No synergy partners matched stat buffs or enablers._
 - Himmel
 - Kordan
 - Laios
+- Perseus
+- Silven
 - Smokey & Meerky
 - Sylphira
 - Talene
 - Temesia
 - Vala
+- Zorya
 
 ### Summary for Evie
 
@@ -2107,7 +2113,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Hepler Requires
 
-- Form or stance active — Enemies
+- Form or stance active (Legendary+) — Enemies
 
 ## Hewynn
 
@@ -2129,7 +2135,6 @@ _No synergy partners matched stat buffs or enablers._
 - Smokey & Meerky
 - Sylphira
 - Talene
-- Zorya
 
 ### Summary for Hewynn
 
@@ -2499,7 +2504,6 @@ _No synergy partners matched stat buffs or enablers._
 - Smokey & Meerky
 - Talene
 - Temesia
-- Zorya
 
 ### Summary for Isabella
 
@@ -2621,6 +2625,7 @@ _No synergy partners matched stat buffs or enablers._
 - Kruger
 - Mehira
 - Shemira
+- Silven
 - Silvina
 - Thador
 - Tilaya
@@ -2883,9 +2888,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Laios Requires
 
-- Monster ingredients — Enemies
-- Stacked resource — Enemies
 - Enemy monsters present (Mythic+) — Enemies
+- Monster ingredients (EX+10) — Enemies
+- Stacked resource (EX+10) — Enemies
 
 ## Lenya
 
@@ -3081,7 +3086,6 @@ _No synergy partners matched stat buffs or enablers._
 - Lucca
 - Lumont
 - Nerion
-- Perseus
 - Shadewing
 - Shemira
 - Silvina
@@ -3296,7 +3300,6 @@ _No synergy partners matched stat buffs or enablers._
 - Parisa
 - Rhys
 - Shadewing
-- Silven
 - Sinbad
 
 ### Summary for Lyca
@@ -3992,21 +3995,26 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Perseus benefits from
 
+- **Evie**
+  - ATK buff (multiple targets, high)
+  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high)
+  - Max HP buff (multiple targets, high)
+  - Enables Ally stat buffs via 4 ally stat buffs
 - **Hugin**
   - ATK buff (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high)
   - Max HP via Shield (multiple targets, high)
-- **Twins**
-  - ATK SPD via Haste buff (all units, high)
-  - Max HP buff (multiple targets, high)
+  - Enables Ally stat buffs via 3 ally stat buffs
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high)
+  - Enables Ally stat buffs via 4 ally stat buffs
 - **Himmel**
   - ATK buff (multiple targets, low)
   - Max HP buff (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
+  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 
 ### Summary for Perseus
 
@@ -4032,6 +4040,12 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity — Multiple targets — On skill
 - Stun — Area — `medium`
+
+#### Perseus's Special Effects
+
+#### Perseus Requires
+
+- Ally stat buffs (EX+10) — —
 
 ## Phraesto
 
@@ -4667,14 +4681,17 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - Enables Ally stat buffs via 4 ally stat buffs
+- **Evie**
+  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high)
-- **Lyca**
-  - ATK SPD buff (all units, medium)
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - Enables Ally stat buffs via 4 ally stat buffs
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high)
+  - Enables Ally stat buffs via 3 ally stat buffs
+- **Koko**
+  - Enables Ally stat buffs via 4 ally stat buffs
 
 ### Units benefitting from Silven
 
@@ -4702,6 +4719,12 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK SPD buff (Legendary+) — Self — `medium`
 - Energy recovery (Mythic+) — Single target — `high`
+
+#### Silven's Special Effects
+
+#### Silven Requires
+
+- Ally stat buffs (Mythic+) — Allies
 
 ## Silvina
 
@@ -5773,15 +5796,16 @@ _No synergy partners matched stat buffs or enablers._
 - **Twins**
   - Haste buff (all units, high)
   - Healing (single target, medium)
-- **Hewynn**
-  - Healing (all units, high)
 - **Smokey & Meerky**
   - Healing over time (multiple targets, medium)
   - Energy recovery (multiple targets, low)
   - Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
-- **Isabella**
-  - Haste buff (multiple targets, low, conditional (frequent))
-  - Healing (area, high)
+- **Contess**
+  - Healing (multiple targets, high)
+  - Enables Ally Ultimate casts via Start-of-battle Ultimate
+- **Evie**
+  - Healing (multiple targets, high)
+  - Enables Ally Ultimate casts via Start-of-battle Ultimate
 
 ### Summary for Zorya
 

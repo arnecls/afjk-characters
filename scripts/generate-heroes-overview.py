@@ -59,6 +59,15 @@ MAX_SYNERGIES = 5
 
 FREQUENT_CONDITIONAL_SCORE = 0.85
 
+# Ex-Skill / Supreme+ requirements are unit-defining; boost enabler score.
+DEFINING_TIER_SCORE_MULT = {
+    "Mythic+": 1.5,
+    "EX+5": 1.5,
+    "EX+10": 1.6,
+    "EX+15": 1.7,
+    "Supreme+": 1.8,
+}
+
 # Receiver Requires labels that are self-setup, not partner-enabled.
 SKIP_ENABLER_REQUIRES = frozenset(
     {
@@ -90,6 +99,7 @@ ENABLER_REQUIRE_HANDLERS = (
     "Enemy defeat",
     "Adjacent allies",
     "Party composition",
+    "Ally stat buffs",
 )
 
 PARTY_COMPOSITION_CLASSES = frozenset({"Mage", "Tank", "Support"})
@@ -211,6 +221,20 @@ def provider_has_start_of_battle_output(hero: _rs.Hero) -> bool:
         if _rs.text_has_start_of_battle_ultimate(text, section):
             return True
     return False
+
+
+def provider_buffs_at_battle_start(provider: _rs.Hero) -> bool:
+    """True when the provider applies ally buffs at battle start."""
+    for effect in provider.effects:
+        if effect.category != "buff" or effect.targeting not in ALLY_TARGETINGS:
+            continue
+        t = effect.qualitative.lower()
+        if re.search(
+            r"when a battle starts|start of (?:a )?battle|battle preparation",
+            t,
+        ):
+            return True
+    return provider_has_start_of_battle_output(provider)
 
 
 def provider_has_special(hero: _rs.Hero, label: str) -> bool:
@@ -418,6 +442,34 @@ def match_party_composition(
     return 5.0, f"{hero_class} (party slot)"
 
 
+def match_ally_stat_buffs(provider: _rs.Hero) -> tuple[float, str] | None:
+    """Providers that grant many/wide ally stat buffs (Perseus, Silven enabler)."""
+    ally_buffs = [
+        e
+        for e in provider.effects
+        if e.category == "buff"
+        and e.targeting in ALLY_TARGETINGS
+        and e.conditional != "rare"
+    ]
+    if not ally_buffs:
+        return None
+    best_by_label: dict[str, float] = {}
+    for effect in ally_buffs:
+        score = (
+            TARGETING_WEIGHT.get(effect.targeting, 1.0)
+            * MAG_WEIGHT.get(effect.magnitude, 1.0)
+        )
+        if effect.label not in best_by_label or score > best_by_label[effect.label]:
+            best_by_label[effect.label] = score
+    pts = sum(best_by_label.values())
+    n = len(best_by_label)
+    detail = f"{n} ally stat buff" + ("s" if n != 1 else "")
+    if provider_buffs_at_battle_start(provider):
+        pts *= 1.4
+        detail += " (start of battle)"
+    return pts, detail
+
+
 def match_adjacent_allies(provider: _rs.Hero) -> tuple[float, str] | None:
     ally_buffs = [
         e
@@ -470,6 +522,7 @@ def _make_enabler_matchers(
         "Enemy defeat": match_enemy_defeat,
         "Adjacent allies": match_adjacent_allies,
         "Party composition": party,
+        "Ally stat buffs": match_ally_stat_buffs,
     }
 
 
@@ -501,6 +554,7 @@ def score_enabler_synergy(
         if not result:
             continue
         pts, detail = result
+        pts *= DEFINING_TIER_SCORE_MULT.get(req.tier, 1.0)
         seen.add(req.label)
         total += pts
         reasons.append(f"Enables {req.label} via {detail}")

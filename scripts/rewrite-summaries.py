@@ -1400,6 +1400,12 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
     ),
     (r"linked through stellar bond", "Ally on positioning link"),
     (r"blessed ally|first ally blessed", "Ally blessing active"),
+    (
+        r"temporary (?:stat )?buffs? from (?:a |an )?(?:different )?all(?:y|ies)|"
+        r"temporary stat buffs? from allies|"
+        r"receives? a temporary stat buff from an ally",
+        "Ally stat buffs",
+    ),
     # Resources / thresholds
     (r"for each ingredient|each time .{0,35}collect", "Stacked resource"),
     (r"when .{0,30}energy exceeds", "Energy threshold"),
@@ -1653,7 +1659,13 @@ def add_special_effect(
     targeting = detect_special_targeting(text, kind, label)
     if existing:
         cur = existing[0]
-        if TIER_ORDER.get(tier, 99) < TIER_ORDER.get(cur.tier, 99):
+        order = TIER_ORDER.get(tier, 99)
+        cur_order = TIER_ORDER.get(cur.tier, 99)
+        # Requires: keep highest tier (Ex/Supreme+ defining skills).
+        if kind == "requires":
+            if order > cur_order:
+                cur.tier = tier
+        elif order < cur_order:
             cur.tier = tier
         cur.targeting = _prefer_targeting(targeting, cur.targeting)
         return
