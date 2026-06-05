@@ -53,6 +53,12 @@ DOT_INTERVAL_RE = re.compile(
     re.I,
 )
 
+_DOT_EXCLUDE_MIDDLE = re.compile(
+    r"trigger|triggered|struck|once every|cooldown|the battle lasts|"
+    r"damage taken|damage reduction|can only be",
+    re.I,
+)
+
 
 def _prefer_targeting(candidate: str, current: str) -> str:
     cp = _TARGETING_PRIORITY.get(candidate, 99)
@@ -170,6 +176,38 @@ def _clause_around(t: str, pos: int) -> str:
     if end == -1:
         end = len(t)
     return t[start:end]
+
+
+def _effect_match_scopes(text: str, pattern: str) -> list[str]:
+    """Clause scopes for each regex match (debuff / CC targeting)."""
+    t = text.lower()
+    return [_clause_around(t, m.start()) for m in re.finditer(pattern, t)]
+
+
+def _text_has_dot_damage(text: str) -> bool:
+    """True when skill text describes damage-over-time, not proc cooldowns."""
+    t = text.lower()
+    if re.search(r"damage per second", t):
+        return True
+    for m in re.finditer(r"damage (?:every|per) (?:second|\d+\.?\d* s)", t, re.I):
+        before = t[max(0, m.start() - 30) : m.start()]
+        if _DOT_EXCLUDE_MIDDLE.search(before):
+            continue
+        return True
+    for m in re.finditer(r"damage.{0,120}?every \d+\.?\d* s", t, re.I):
+        span = t[m.start() : m.end()]
+        if _DOT_EXCLUDE_MIDDLE.search(span):
+            continue
+        before = t[max(0, m.start() - 20) : m.start()]
+        if re.search(r"once every|trigger", before):
+            continue
+        return True
+    return False
+
+
+_RESTORE_BUFF_LABELS = frozenset(
+    {"Healing", "Healing over time", "Shield", "Energy recovery"}
+)
 
 
 def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool:
@@ -730,6 +768,21 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
             t,
         ) and not re.search(r"\b(?:to|for) all allies\b", t):
             return "Single target"
+    # Self/ally HP restore must not inherit enemy adjacent/area reach.
+    if category == "buff" and label in _RESTORE_BUFF_LABELS:
+        if re.search(
+            r"\b(?:recover(?:ing|s)?|restore|restoring|heal(?:s|ing)?)\b", t
+        ) and not re.search(r"\b(?:to|for) (?:all )?(?:enemies|an enemy)\b", t):
+            if re.search(r"\bguarded ally\b", t) or re.search(
+                r"\b(?:herself|himself) and\b", t
+            ):
+                return "Multiple targets"
+            if re.search(r"\b(?:herself|himself|itself)\b", t):
+                return "Self"
+            if re.search(r",\s*recover(?:ing|s)? \d+%", t):
+                return "Self"
+            if effect_targets_self_only(t, label, category):
+                return "Self"
     # "all units" / "all allies" — global buffs only when the buff applies to all
     if re.search(r"\ball (?:units|allies)\b", t) and not re.search(
         r"\ball (?:units|allies) (?:within |along |around |in (?:a |\d+-tile )?arc)", t
@@ -759,7 +812,15 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     if re.search(r"\bin an arc\b|\b1-tile arc\b|\btile arc\b", t):
         return "Arc"
     if re.search(r"\badjacent\b", t):
-        return "Area"
+        if (
+            category == "buff"
+            and label in _RESTORE_BUFF_LABELS
+            and re.search(r"\b(?:recover(?:ing|s)?|restore|restoring|heal)\b", t)
+            and not re.search(r"\badjacent (?:allies|ally)\b", t)
+        ):
+            pass
+        else:
+            return "Area"
     if re.search(
         r"center of the battlefield|across the battlefield|whole battlefield",
         t,
@@ -1043,6 +1104,11 @@ BUFF_RULES = [
     (r"grants? an ally brightfeather", "Ally empower buff"),
     # ATK buff: match increase/increases/increasing + optional pronoun + "atk by"
     (r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s )?atk by", "ATK buff"),
+    (
+        r"(?:and )?allies with \w+ gain(?:s|ing)? (?:an )?extra \d+% atk",
+        "ATK buff",
+    ),
+    (r"allies with \w+.{0,30}gain(?:s|ing)? (?:an )?extra \d+% atk", "ATK buff"),
     # Ally ATK SPD (before generic self Hero Focus lines)
     (r"grants? all allies \d+ atk spd", "ATK SPD buff"),
     (r"increas(?:e|es|ing) all allies'? atk spd", "ATK SPD buff"),
@@ -1526,7 +1592,7 @@ def _ally_enabled_enemy_effect_labels(text: str) -> list[str]:
     if not _allies_affect_enemies_in_text(t):
         return []
     labels: list[str] = []
-    if DOT_INTERVAL_RE.search(text) or re.search(r"\bignit", t):
+    if _text_has_dot_damage(text) or re.search(r"\bignit", t):
         labels.append("Ally DoT on enemies")
     if re.search(r"reducing their vitality|reduces? their vitality", t):
         labels.append("Ally Vitality debuff on enemies")
@@ -1552,6 +1618,20 @@ def detect_ally_grant_effects(
         add_special_effect(effects, "provides", "Ally combat grant", tier, text)
     for label in enemy_labels:
         add_special_effect(effects, "provides", label, tier, text)
+
+
+def _is_enemy_untargetable_clause(clause: str) -> bool:
+    """True when untargetable refers to an enemy, not the caster."""
+    t = clause.lower()
+    if re.search(
+        r"\b(?:enemy|enemies|marked enemy|that enemy|the target)\b"
+        r".{0,50}becomes?\s+untargetable",
+        t,
+    ):
+        return True
+    if re.search(r"becomes?\s+untargetable.{0,30}\b(?:enemy|marked)\b", t):
+        return True
+    return False
 
 
 def detect_special_targeting(text: str, kind: str, label: str) -> str:
@@ -1593,9 +1673,16 @@ def detect_special_effects(
     if text_has_start_of_battle_ultimate(t, section):
         add_special_effect(effects, "provides", "Start-of-battle cast", tier, text)
     for pat, label in SPECIAL_PROVIDES_RULES:
-        if not re.search(pat, t):
+        m = re.search(pat, t)
+        if not m:
             continue
         if label == "Ally blessing" and _blessing_is_summon_only(t):
+            continue
+        if label == "Untargetable" and _is_enemy_untargetable_clause(
+            _clause_around(t, m.start())
+        ):
+            continue
+        if label == "HP threshold strike" and re.search(r"instantly defeat", t):
             continue
         add_special_effect(effects, "provides", label, tier, text)
     for pat, label in SPECIAL_REQUIRES_RULES:
@@ -1604,12 +1691,35 @@ def detect_special_effects(
     detect_ally_grant_effects(effects, tier, text)
 
 
-_MAX_HP_DAMAGE_RE = re.compile(
-    r"(?:extra )?damage.{0,60}(?:equal to|of|deals?).{0,25}"
-    r"(?:\d+%[^.]{0,25})?(?:the |their |target's |enemy's |his |her )?"
-    r"(?:max )?hp\b",
+_MAX_HP_DAMAGE_CANDIDATE_RE = re.compile(
+    r"(?:extra )?(?:true )?damage.{0,80}(?:equal to|of|plus|deals?).{0,40}"
+    r"(?:\d+%[^.]{0,25})?(?:the |their |target's|enemy's|each target's|"
+    r"an enemy's )?max hp\b|"
+    r"damage.{0,40}(?:equal to|of|plus).{0,30}\d+%[^.]{0,20}of max hp\b",
     re.I,
 )
+_MAX_HP_DAMAGE_EXCLUDE_RE = re.compile(
+    r"lost hp|recover|restore|restoring|heal(?:ing|s)?|"
+    r"shield.{0,40}equal to|exceeding|below \d+%|drops below|initial max hp",
+    re.I,
+)
+
+
+def _text_has_max_hp_damage(text: str) -> bool:
+    """True when damage scales on an enemy's max HP (not heal/shield/lost HP)."""
+    t = text.lower()
+    if re.search(r"\(\s*hp-based\s*\).{0,25}(?:true )?damage", t, re.I):
+        if not re.search(r"recover|restore|shield", t):
+            return True
+    if re.search(r"(?:true )?damage.{0,30}\(\s*hp-based\s*\)", t, re.I):
+        if not re.search(r"recover|restore|shield", t):
+            return True
+    for m in _MAX_HP_DAMAGE_CANDIDATE_RE.finditer(text):
+        clause = _clause_around(t, m.start())
+        if _MAX_HP_DAMAGE_EXCLUDE_RE.search(clause):
+            continue
+        return True
+    return False
 _LOST_HP_DAMAGE_RE = re.compile(
     r"(?:extra )?damage.{0,60}(?:equal to|of|deals?).{0,30}"
     r"(?:\d+%[^.]{0,25})?(?:lost hp|of (?:her|his|their|the target's) lost hp)",
@@ -1821,13 +1931,13 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
             types.append("True damage")
     if _LOST_HP_DAMAGE_RE.search(text) and "HP loss" not in types:
         types.append("HP loss")
-    if _MAX_HP_DAMAGE_RE.search(text) and "Max HP-based damage" not in types:
+    if _text_has_max_hp_damage(text) and "Max HP-based damage" not in types:
         types.append("Max HP-based damage")
     if re.search(r"\(atk-based\)", text, re.I):
         types.append(primary_dmg)
     if re.search(r"\bmagic damage\b", t):
         types.append("Magic")
-    if DOT_INTERVAL_RE.search(text):
+    if _text_has_dot_damage(text):
         types.append("DoT")
     if not types and "damage" in t:
         types.append(primary_dmg)
@@ -1866,11 +1976,11 @@ def analyze_text(
         if _matching_summon_buff_match(text, label, pat):
             add_summon_buff_effect(summon_effects, label, tier, text)
     for pat, label in DEBUFF_RULES:
-        if re.search(pat, t):
-            add_effect(effects, "debuff", label, tier, text)
+        for scope in _effect_match_scopes(text, pat):
+            add_effect(effects, "debuff", label, tier, text, scope=scope)
     for pat, label in CC_RULES:
-        if re.search(pat, t):
-            add_effect(effects, "cc", label, tier, text)
+        for scope in _effect_match_scopes(text, pat):
+            add_effect(effects, "cc", label, tier, text, scope=scope)
 
     tgt = detect_targeting(text)
     for d in detect_damage_types(text, primary_dmg):

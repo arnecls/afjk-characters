@@ -279,7 +279,7 @@ def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
     has_dot = "DoT" in provider_damage_types(provider)
     has_burn = any(e.label == "Burn debuff" for e in provider_enemy_debuffs(provider))
     has_tick = bool(
-        _rs.DOT_INTERVAL_RE.search(text)
+        _rs._text_has_dot_damage(text)
         or re.search(
             r"(?:burn|poison|bleed|ignit)|per second for \d+",
             text,

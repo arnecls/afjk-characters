@@ -16,14 +16,15 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Lyca**
   - Enables Ranged damage from allies via ranged attacks
   - Enables Debuff on target via ATK debuff (all units)
-- **Lily May**
-  - Enables Debuff on target via Energy drain (all units)
-- **Hepler**
+- **Alna**
   - Enables Debuff on target via Haste debuff (area)
-- **Koko**
-  - Enables Debuff on target via Damage taken debuff (area)
 - **Lucius**
   - Enables Debuff on target via ATK debuff (area)
+- **Kulu**
+  - Enables Ranged damage from allies via ranged attacks
+  - Enables Debuff on target via Movement speed debuff (area)
+- **Cyran**
+  - Enables Debuff on target via ATK debuff (all units)
 
 ### Units benefitting from Aliceth
 
@@ -42,9 +43,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
-- DoT — Single target
 - HP loss — Single target — `high`
-- Max HP-based damage — Single target — `high`
 
 #### Buffs provided by Aliceth
 
@@ -52,32 +51,29 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - Attack range buff — Single target — `low`
 - DEF Penetration buff — Multiple targets — `medium`
 - Invincible — Self — `high`
-- ATK buff (Legendary+) — Self — `medium`
+- ATK buff (Legendary+) — Multiple targets — `low`
 - Fatal blow immunity (Mythic+) — Single target — `high` — conditional (rare)
 - Healing (Mythic+) — Single target — `low`
 
 #### Debuffs provided by Aliceth
 
-- Execution debuff — Multiple targets — `medium`
-- Blind HP loss debuff (EX+15) — Area — `low`
+- Execution debuff — Single target — `medium`
+- Blind HP loss debuff (EX+15) — Single target — `low`
 
 #### Crowd Control provided by Aliceth
 
-- Move — Single target — `high`
-- Stun — Single target — `medium`
+- Move — Single target — `low`
+- Stun — Single target — `low`
 
 #### Aliceth's Special Effects
 
 #### Aliceth Provides
 
-- Ally DoT on enemies — Single target
 - Ally grant (Brightfeather) — Single target
-- HP threshold strike — Multiple targets
 - Instant defeat — Multiple targets
 - Invincibility — Single target
 - Marked target (focus fire) — Single target
 - Reposition enemies — Single target
-- Untargetable — Multiple targets
 - Fatal blow save (Mythic+) — Area
 
 #### Aliceth Requires
@@ -97,14 +93,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
 
+### Units benefitting from Alna
+
+- Aliceth
+- Bonnie
+- Shadewing
+
 ### Summary for Alna
 
 #### Damage types dealt by Alna
 
 - Primary damage type (unit): **Physical**
 - Physical — All units, Arc, Self, Single target
-- DoT — All units, Single target
-- Max HP-based damage — All units — `high`
+- DoT — All units
 
 #### Buffs provided by Alna
 
@@ -114,7 +115,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Debuffs provided by Alna
 
-- Haste debuff — Arc — `high`
+- Haste debuff — Area — `high`
 
 #### Alna's Special Effects
 
@@ -142,6 +143,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Mikola**
   - Haste buff (multiple targets, high)
 
+### Units benefitting from Alsa
+
+- Bonnie
+- Indris
+
 ### Summary for Alsa
 
 #### Stats Alsa benefits from
@@ -153,6 +159,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Self, Single target
+- Max HP-based damage — Self
 
 #### Buffs provided by Alsa
 
@@ -168,8 +175,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Crowd Control provided by Alsa
 
 - Immune immunity — Area — Once
-- Move — Single target — `high`
-- Stun — Single target — `medium`
+- Move — Single target — `low`
+- Stun — Single target — `high`
 
 #### Alsa's Special Effects
 
@@ -197,13 +204,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Contess
 - Evie
-- Igor
 - Lucius
 - Ludovic
-- Phraesto
-- Shemira
-- Smokey & Meerky
-- Talene
 
 ### Summary for Antandra
 
@@ -215,21 +217,20 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Damage types dealt by Antandra
 
 - Primary damage type (unit): **Physical**
-- Physical — Arc, Area, Single target
-- Max HP-based damage — Self
+- Physical — Arc, Area, Self, Single target
 
 #### Buffs provided by Antandra
 
 - Damage taken reduction — Self — `high` — conditional (frequent)
-- Healing — Area — `high`
+- Healing — Multiple targets — `high`
 - Max HP buff (Legendary+) — Self — `medium`
 
 #### Crowd Control provided by Antandra
 
 - Unaffected immunity — Area — On skill
-- Knock down — Area — `high`
-- Stun — Area — `high`
-- Taunt — Area — `low`
+- Knock down — Area — `medium`
+- Stun — Area — `medium`
+- Taunt — Area — `high`
 
 #### Antandra's Special Effects
 
@@ -261,7 +262,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
-- DoT — Area, Multiple targets
+- DoT — Multiple targets
 
 #### Buffs provided by Arden
 
@@ -269,7 +270,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Crowd Control provided by Arden
 
-- Pin — Multiple targets — `high`
+- Pin — Single target — `high`
 
 ## Atalanta
 
@@ -305,7 +306,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Debuffs provided by Atalanta
 
-- Phys DEF debuff (Supreme+) — Single target — `medium`
+- Phys DEF debuff (Supreme+) — Single target — `high`
 
 #### Crowd Control provided by Atalanta
 
@@ -340,7 +341,6 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
-- Max HP-based damage — All units — `medium`
 - True damage — All units, Single target — `high`
 
 #### Buffs provided by Athalia
@@ -353,12 +353,12 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Debuffs provided by Athalia
 
-- ATK debuff — All units — `medium`
+- ATK debuff — Single target — `medium`
 
 #### Crowd Control provided by Athalia
 
 - Unaffected immunity — Area — On skill
-- Knock down — All units — `low`
+- Knock down — Single target — `low`
 
 #### Athalia's Special Effects
 
@@ -395,7 +395,6 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - Florabelle
 - Gala
 - Hodgkin
-- Laios
 - Phraesto
 - Zanie
 
@@ -420,12 +419,12 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Debuffs provided by Aurora
 
-- Haste debuff — Multiple targets — `low`
+- Haste debuff — Self — `low`
 
 #### Crowd Control provided by Aurora
 
 - Unaffected immunity — Self — On skill
-- Sleep — Multiple targets — `high`
+- Sleep — Single target — `high`
 
 #### Aurora's Special Effects
 
@@ -521,7 +520,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Debuffs provided by Berial
 
 - Damage taken debuff (Legendary+) — Single target — `low`
-- Energy drain (Mythic+) — Single target — `low`
+- Energy drain (Mythic+) — Single target — `medium`
 
 #### Crowd Control provided by Berial
 
@@ -539,21 +538,18 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Bonnie benefits from
 
-- **Lily May**
-  - Enables Debuff on target via Energy drain (all units)
-  - Enables Magic damage from allies via Magic damage + all enemies (all units)
-- **Natsu**
-  - Enables Debuff on target via Haste debuff (area)
-  - Enables Magic damage from allies via Magic damage + wide area (area)
+- **Cyran**
+  - Enables Debuff on target via ATK debuff (all units)
+  - Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)
 - **Lyca**
   - Enables Debuff on target via ATK debuff (all units)
-- **Pandora**
-  - Enables Debuff on target via ATK debuff (all units)
+- **Alna**
+  - Enables Debuff on target via Haste debuff (area)
+- **Alsa**
+  - Enables Debuff on target via Movement speed debuff (area)
   - Enables Magic damage from allies via Magic damage + all enemies (all units)
-- **Dunlingr**
-  - ATK buff (single target, low)
+- **Lucius**
   - Enables Debuff on target via ATK debuff (area)
-  - Enables Magic damage from allies via Magic damage + all enemies (all units)
 
 ### Summary for Bonnie
 
@@ -579,7 +575,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Crowd Control provided by Bonnie
 
-- Stun — Single target — `medium`
+- Stun — Single target — `low`
 
 #### Bonnie's Special Effects
 
@@ -620,7 +616,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
-- DoT — Arc, Area
+- DoT — Area
 - Max HP-based damage — Arc, Single target — `high`
 
 #### Buffs provided by Brutus
@@ -629,7 +625,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Debuffs provided by Brutus
 
-- Phys DEF debuff — Area — `low`
+- Phys DEF debuff — Self — `medium`
 
 #### Crowd Control provided by Brutus
 
@@ -663,8 +659,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Primary damage type (unit): **Magic**
 - Magic — Area, Single target
-- DoT — Area, Single target
-- Max HP-based damage — Single target — `low`
+- DoT — Area
 
 #### Buffs provided by Bryon
 
@@ -728,8 +723,8 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Callan
 
 - Unaffected immunity — Self — Start of battle
-- Knock down — All units — `high`
-- Pin — Multiple targets — `high`
+- Knock down — All units — `low`
+- Pin — Single target — `low`
 - Stun (Mythic+) — All units — `low`
 
 #### Callan's Special Effects
@@ -775,7 +770,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Carolina
 
-- Freeze — Area — `high`
+- Freeze — Single target — `high`
 
 ## Cassadee
 
@@ -818,7 +813,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Cassadee
 
 - Move — All units — `low`
-- Stun — Single target — `low`
+- Stun — Single target — `high`
 
 #### Cassadee's Special Effects
 
@@ -867,6 +862,7 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 - DoT — Arc, Single target
+- Max HP-based damage — Arc — `high`
 
 #### Buffs provided by Cecia
 
@@ -913,14 +909,14 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Hewynn**
   - Healing (all units, high)
-- **Antandra**
-  - Healing (area, high)
-- **Fay**
-  - Healing (area, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
+- **Mikola**
+  - Healing over time (all units, medium)
+- **Antandra**
+  - Healing (multiple targets, high)
 
 ### Summary for Contess
 
@@ -943,12 +939,12 @@ _No synergy partners matched stat buffs or enablers._
 #### Debuffs provided by Contess
 
 - Energy drain — Multiple targets — `low`
-- Max HP debuff — Multiple targets — `low`
+- Max HP debuff — Self — `low`
 - ATK debuff (Legendary+) — Single target — `low`
 
 #### Crowd Control provided by Contess
 
-- Silence (Mythic+) — Multiple targets — `low`
+- Silence (Mythic+) — Single target — `low`
 
 #### Contess's Special Effects
 
@@ -985,7 +981,6 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - DoT — All units
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Cryonaia
 
@@ -1028,6 +1023,12 @@ _No synergy partners matched stat buffs or enablers._
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
 
+### Units benefitting from Cyran
+
+- Aliceth
+- Bonnie
+- Shadewing
+
 ### Summary for Cyran
 
 #### Stats Cyran benefits from
@@ -1049,13 +1050,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Cyran
 
-- ATK debuff (Mythic+) — All units — `low`
+- ATK debuff (Mythic+) — All units — `medium`
 
 #### Crowd Control provided by Cyran
 
 - Steadfast immunity — Area — Conditional
 - Unaffected immunity — Self — Start of battle
-- Pin — Area — `low`
+- Pin — Self — `high`
 - Silence (EX+10) — Single target — `low`
 
 ## Daimon
@@ -1081,7 +1082,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Daimon
 
-- Frighten (Mythic+) — Area — `medium`
+- Frighten (Mythic+) — Area — `low`
 
 ## Damian
 
@@ -1201,7 +1202,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Self, Single target
-- Max HP-based damage — Single target — `low`
 - True damage — All units, Single target — `high`
 
 #### Buffs provided by Dionel
@@ -1245,7 +1245,6 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Dunlingr
 
-- Bonnie
 - Brutus
 - Indris
 
@@ -1263,7 +1262,7 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Self, Single target
 - HP loss — Area — `medium`
-- Max HP-based damage — Area, Self — `high`
+- Max HP-based damage — Self
 
 #### Buffs provided by Dunlingr
 
@@ -1277,7 +1276,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Dunlingr
 
-- ATK debuff — Area — `medium`
+- ATK debuff — Single target — `low`
 - Energy drain (Supreme+) — All units — `low`
 
 #### Crowd Control provided by Dunlingr
@@ -1325,7 +1324,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Debuffs provided by Eironn
 
 - Haste debuff — Arc — `medium`
-- Magic DEF debuff — Arc — `medium`
+- Magic DEF debuff — Single target — `high`
 
 #### Crowd Control provided by Eironn
 
@@ -1371,6 +1370,7 @@ _No synergy partners matched stat buffs or enablers._
 - Hepler
 - Himmel
 - Hugin
+- Indris
 - Isabella
 - Koko
 - Korin
@@ -1396,6 +1396,7 @@ _No synergy partners matched stat buffs or enablers._
 - Rowan
 - Seth
 - Shakir
+- Shemira
 - Silven
 - Sinbad
 - Sonja
@@ -1432,12 +1433,12 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Twins
 
-- ATK debuff — Multiple targets — `low`
+- ATK debuff — Single target — `low`
 
 #### Crowd Control provided by Twins
 
 - Unaffected immunity — Area — On skill
-- Move — Area — `high`
+- Move — Area — `low`
 
 #### Twins's Special Effects
 
@@ -1456,19 +1457,20 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Hewynn**
   - Healing (all units, high)
-- **Antandra**
-  - Healing (area, high)
-- **Fay**
-  - Healing (area, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
+- **Mikola**
+  - Healing over time (all units, medium)
+- **Antandra**
+  - Healing (multiple targets, high)
 
 ### Units benefitting from Evie
 
 - Himmel
 - Kordan
+- Laios
 - Smokey & Meerky
 - Sylphira
 - Talene
@@ -1486,7 +1488,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Multiple targets, Single target
-- Max HP-based damage — Multiple targets — `high`
 
 #### Buffs provided by Evie
 
@@ -1497,9 +1498,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Evie
 
-- Move — All units — `high`
-- Pin — All units — `high`
-- Silence — All units — `high`
+- Move — Single target — `low`
+- Pin — Single target — `low`
+- Silence — Single target — `low`
 
 #### Evie's Special Effects
 
@@ -1544,9 +1545,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
-- DoT — Multiple targets
 - HP loss — Single target — `high`
-- Max HP-based damage — Single target — `high`
 - True damage — Multiple targets — `medium`
 
 #### Buffs provided by Faramor
@@ -1557,7 +1556,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Faramor
 
-- Stun — Area — `low`
+- Stun — Area — `medium`
 
 #### Faramor's Special Effects
 
@@ -1582,17 +1581,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Fay
 
-- Contess
-- Evie
-- Igor
-- Kordan
-- Lucius
-- Ludovic
-- Phraesto
+- Shadewing
 - Smokey & Meerky
-- Sylphira
 - Talene
-- Temesia
 
 ### Summary for Fay
 
@@ -1610,7 +1601,7 @@ _No synergy partners matched stat buffs or enablers._
 - ATK SPD buff — Multiple targets — `low`
 - ATK buff — Multiple targets — `low`
 - DEF buff — Multiple targets — `low`
-- Healing — Area — `high`
+- Healing — Arc — `high`
 
 #### Debuffs provided by Fay
 
@@ -1646,7 +1637,6 @@ _No synergy partners matched stat buffs or enablers._
 - Dunlingr
 - Gala
 - Hodgkin
-- Laios
 - Mehira
 - Phraesto
 - Zanie
@@ -1662,6 +1652,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Single target
+- Max HP-based damage — Area — `medium`
 
 #### Buffs provided by Florabelle
 
@@ -1708,9 +1699,8 @@ _No synergy partners matched stat buffs or enablers._
 #### Damage types dealt by Frieren
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Single target
+- Magic — All units, Area, Self, Single target
 - DoT — All units, Area, Single target
-- Max HP-based damage — Self
 - True damage — All units, Single target — `high`
 
 #### Buffs provided by Frieren
@@ -1827,8 +1817,8 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity — Self — Start of battle
 - Interrupt — Single target — `medium`
-- Pin — Multiple targets — `low`
-- Stun — Single target — `medium`
+- Pin — Single target — `low`
+- Stun — Single target — `high`
 
 ## Granny Dahnie
 
@@ -1867,7 +1857,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Granny Dahnie
 
 - Unaffected immunity — Self — On skill
-- Pin — Area — `medium`
+- Pin — Single target — `low`
 - Taunt — Single target — `high`
 
 ## Gunnar
@@ -1900,7 +1890,7 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Self, Single target
 - DoT — Area
-- Max HP-based damage — All units — `medium`
+- Max HP-based damage — All units — `high`
 
 #### Buffs provided by Gunnar
 
@@ -1911,7 +1901,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Gunnar
 
-- Stun — All units — `low`
+- Stun — Single target — `low`
 
 #### Gunnar's Special Effects
 
@@ -1957,7 +1947,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Gwyneth
 
-- Pin — Area — `medium`
+- Pin — Single target — `medium`
 - Silence — Area — `low`
 - Stun — Area — `low`
 
@@ -2020,7 +2010,6 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Physical**
 - Physical — Single target
 - HP loss — Single target — `low`
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Harak
 
@@ -2033,7 +2022,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Harak
 
-- Execution debuff — Single target — `medium`
+- Execution debuff — Single target — `low`
 
 #### Crowd Control provided by Harak
 
@@ -2069,14 +2058,12 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Hepler
 
-- Aliceth
 - Antandra
 - Cryonaia
 - Eironn
 - Gerda
 - Kafra
 - Kruger
-- Shadewing
 - Silvina
 - Thador
 - Thoran
@@ -2105,11 +2092,11 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Hepler
 
-- Haste debuff — Area — `high`
+- Haste debuff — Single target — `high`
 
 #### Crowd Control provided by Hepler
 
-- Stun — Area — `medium`
+- Stun — Area — `low`
 - Taunt — Area — `high`
 
 #### Hepler's Special Effects
@@ -2133,12 +2120,14 @@ _No synergy partners matched stat buffs or enablers._
 - Contess
 - Evie
 - Igor
+- Kordan
 - Lucius
 - Ludovic
 - Lumont
 - Phraesto
 - Shemira
 - Smokey & Meerky
+- Sylphira
 - Talene
 - Zorya
 
@@ -2261,9 +2250,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Hodgkin
 
-- Energy drain (Mythic+) — Area — `medium`
+- Energy drain (Mythic+) — Single target — `low`
 - Vitality debuff (EX+5) — Single target — `low`
-- Phys DEF debuff (Supreme+) — Single target — `low`
+- Phys DEF debuff (Supreme+) — Single target — `medium`
 
 #### Hodgkin's Special Effects
 
@@ -2387,14 +2376,15 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Hewynn**
   - Healing (all units, high)
-- **Antandra**
-  - Healing (area, high)
-- **Fay**
-  - Healing (area, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
+- **Koko**
+  - Healing (multiple targets, high)
+  - Lifedrain buff (multiple targets, low)
+- **Mikola**
+  - Healing over time (all units, medium)
 
 ### Summary for Igor
 
@@ -2423,24 +2413,25 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Indris benefits from
 
-- **Pandora**
-  - Enables Multiple debuffs on target via 5 debuff types
-  - Enables Debuff on target via ATK debuff (all units)
 - **Lyca**
   - ATK SPD buff (all units, medium)
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via ATK debuff (all units)
-- **Sinbad**
-  - Enables Multiple debuffs on target via 6 debuff types
-  - Enables Debuff on target via ATK debuff (multiple targets)
+- **Alsa**
+  - Enables Multiple debuffs on target via 3 debuff types
+  - Enables Debuff on target via Movement speed debuff (area)
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD buff (all units, low)
   - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via ATK debuff (area)
-- **Natsu**
-  - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via Haste debuff (area)
+  - Enables Debuff on target via Energy drain (all units)
+- **Sinbad**
+  - Enables Multiple debuffs on target via 4 debuff types
+  - Enables Debuff on target via Magic DEF debuff (multiple targets)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high)
+  - Enables Multiple debuffs on target via ATK debuff
+  - Enables Debuff on target via ATK debuff (single target)
 
 ### Summary for Indris
 
@@ -2453,7 +2444,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Self, Single target
-- DoT — Multiple targets
 - Max HP-based damage — Single target — `medium`
 - True damage — Multiple targets — `high`
 
@@ -2464,14 +2454,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Indris
 
-- Magic DEF debuff — Single target — `high`
+- Magic DEF debuff — Single target — `low`
 - Phys DEF debuff (EX+10) — Single target — `low`
 
 #### Crowd Control provided by Indris
 
 - Move — Area — `high`
-- Pin — Area — `high`
-- Silence — Single target — `high`
+- Pin — Single target — `high`
+- Silence — Single target — `low`
 
 #### Indris's Special Effects
 
@@ -2502,8 +2492,13 @@ _No synergy partners matched stat buffs or enablers._
 - Dunlingr
 - Evie
 - Igor
+- Laios
 - Lucius
 - Ludovic
+- Phraesto
+- Smokey & Meerky
+- Talene
+- Temesia
 - Zorya
 
 ### Summary for Isabella
@@ -2518,7 +2513,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Magic**
 - Magic — Area, Single target
-- DoT — Single target
 
 #### Buffs provided by Isabella
 
@@ -2564,6 +2558,7 @@ _No synergy partners matched stat buffs or enablers._
 - Igor
 - Lucius
 - Ludovic
+- Phraesto
 - Vala
 
 ### Summary for Kafra
@@ -2586,15 +2581,15 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Kafra
 
-- Phys DEF debuff — Area — `low`
+- Phys DEF debuff — Single target — `low`
 - ATK debuff (Mythic+) — Single target — `medium`
 - Haste debuff (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Kafra
 
 - Unaffected immunity (Mythic+) — Self — Conditional
-- Move — Single target — `medium`
-- Stun — Single target — `medium`
+- Move — Single target — `low`
+- Stun — Single target — `high`
 
 #### Kafra's Special Effects
 
@@ -2619,13 +2614,12 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Koko
 
-- Aliceth
 - Eironn
 - Gerda
+- Igor
 - Kordan
 - Kruger
 - Mehira
-- Shadewing
 - Shemira
 - Silvina
 - Thador
@@ -2643,7 +2637,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
-- DoT — Area
 - True damage — All units — `medium`
 
 #### Buffs provided by Koko
@@ -2656,7 +2649,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Koko
 
-- Damage taken debuff — Area — `high`
+- Damage taken debuff — Single target — `high`
 
 #### Crowd Control provided by Koko
 
@@ -2679,9 +2672,8 @@ _No synergy partners matched stat buffs or enablers._
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - Healing over time (all units, medium)
-- **Fay**
-  - ATK buff (multiple targets, low)
-  - Healing (area, high)
+- **Hewynn**
+  - Healing (all units, high)
 
 ### Units benefitting from Kordan
 
@@ -2701,7 +2693,6 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 - HP loss — Single target — `low`
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Kordan
 
@@ -2713,7 +2704,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Kordan
 
 - Knock down — Single target — `high`
-- Move — Area — `high`
+- Move — Single target — `low`
 - Pin — Area — `high`
 
 ## Korin
@@ -2780,7 +2771,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Single target
-- Max HP-based damage — Area — `high`
 
 #### Buffs provided by Kruger
 
@@ -2789,14 +2779,19 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Kruger
 
-- Phys DEF debuff — Single target — `high`
+- Phys DEF debuff — Single target — `low`
 
 ## Kulu
 
 ### Units Kulu benefits from
 
 - **Aliceth**
+  - ATK buff (multiple targets, low)
   - DEF Penetration buff (multiple targets, medium)
+
+### Units benefitting from Kulu
+
+- Aliceth
 
 ### Summary for Kulu
 
@@ -2823,7 +2818,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Kulu
 
 - Unaffected immunity — Area — On ultimate
-- Move — Single target — `high`
+- Move — Single target — `low`
 
 #### Kulu's Special Effects
 
@@ -2835,20 +2830,22 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Laios benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Twins**
-  - ATK SPD via Haste buff (all units, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - ATK SPD via Haste buff (summons only, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Healing over time (all units, medium)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high)
+  - Healing (single target, medium)
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high)
+- **Evie**
+  - ATK buff (multiple targets, high)
+  - Healing (multiple targets, high)
+- **Isabella**
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent))
+  - Healing (area, high)
 
 ### Summary for Laios
 
@@ -2857,6 +2854,7 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - ATK SPD
 - Haste
+- Healing
 - Energy
 
 #### Damage types dealt by Laios
@@ -2870,7 +2868,7 @@ _No synergy partners matched stat buffs or enablers._
 - DEF buff — Single target — `low` — conditional (rare)
 - Energy recovery — Self — `low` — conditional (rare)
 - Haste buff — Self — `low` — conditional (rare)
-- Healing — Area — `low` — conditional (rare)
+- Healing — Self — `low` — conditional (rare)
 - Healing over time — Single target — `low` — conditional (rare)
 
 #### Crowd Control provided by Laios
@@ -2920,7 +2918,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
-- DoT — Area
 
 #### Buffs provided by Lenya
 
@@ -2932,20 +2929,15 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Lenya
 
 - Unaffected immunity — Self — Once
-- Stun — Area — `high`
+- Stun — Single target — `medium`
 
 ## Lily May
 
 ### Units Lily May benefits from
 
 - **Aliceth**
+  - ATK buff (multiple targets, low)
   - DEF Penetration buff (multiple targets, medium)
-
-### Units benefitting from Lily May
-
-- Aliceth
-- Bonnie
-- Shadewing
 
 ### Summary for Lily May
 
@@ -2967,19 +2959,18 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Lily May
 
-- Energy drain — All units — `high`
+- Energy drain — Single target — `high`
 
 #### Crowd Control provided by Lily May
 
 - Unaffected immunity — Self — Start of battle
-- Interrupt — All units — `medium`
+- Interrupt — Single target — `low`
 
 #### Lily May's Special Effects
 
 #### Lily May Provides
 
 - Invincibility — Single target
-- Untargetable — All units
 
 ## Lorsan
 
@@ -3060,14 +3051,14 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Hewynn**
   - Healing (all units, high)
-- **Antandra**
-  - Healing (area, high)
-- **Fay**
-  - Healing (area, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
+- **Mikola**
+  - Healing over time (all units, medium)
+- **Antandra**
+  - Healing (multiple targets, high)
 
 ### Units benefitting from Lucius
 
@@ -3075,6 +3066,7 @@ _No synergy partners matched stat buffs or enablers._
 - Alsa
 - Antandra
 - Baelran
+- Bonnie
 - Cryonaia
 - Dionel
 - Eironn
@@ -3090,6 +3082,7 @@ _No synergy partners matched stat buffs or enablers._
 - Lumont
 - Nerion
 - Perseus
+- Shadewing
 - Shemira
 - Silvina
 - Thador
@@ -3171,7 +3164,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Lucy
 
 - Unaffected immunity — Self — On skill
-- Stun — Single target — `medium`
+- Stun — Single target — `high`
 
 ## Ludovic
 
@@ -3179,14 +3172,14 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Hewynn**
   - Healing (all units, high)
-- **Antandra**
-  - Healing (area, high)
-- **Fay**
-  - Healing (area, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
+- **Mikola**
+  - Healing over time (all units, medium)
+- **Antandra**
+  - Healing (multiple targets, high)
 
 ### Summary for Ludovic
 
@@ -3198,7 +3191,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
-- Max HP-based damage — Single target — `high`
 
 #### Buffs provided by Ludovic
 
@@ -3269,7 +3261,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Lumont
 
 - Unaffected immunity — Self — On skill
-- Stun — Area — `low`
+- Stun — Area — `high`
 - Taunt — Area — `medium`
 
 ## Lyca
@@ -3358,8 +3350,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
-- DoT — All units
-- Max HP-based damage — All units — `medium`
 
 #### Buffs provided by Marcille
 
@@ -3477,7 +3467,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Mehira
 
-- Charm — Area — `medium`
+- Charm — Single target — `medium`
 
 #### Mehira's Special Effects
 
@@ -3511,10 +3501,12 @@ _No synergy partners matched stat buffs or enablers._
 - Baelran
 - Bryon
 - Cassadee
+- Contess
 - Cyran
 - Damian
 - Dionel
 - Dunlingr
+- Evie
 - Faramor
 - Fay
 - Florabelle
@@ -3525,13 +3517,16 @@ _No synergy partners matched stat buffs or enablers._
 - Hepler
 - Himmel
 - Hugin
+- Igor
 - Isabella
 - Koko
 - Kordan
 - Korin
 - Laios
 - Lenya
+- Lucius
 - Lucy
+- Ludovic
 - Lumont
 - Lyca
 - Marcille
@@ -3642,7 +3637,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Single target
-- Max HP-based damage — Area, Single target — `medium`
+- Max HP-based damage — Area — `medium`
 - True damage — Single target — `high`
 
 #### Buffs provided by Nara
@@ -3653,7 +3648,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Nara
 
-- Vitality debuff (Supreme+) — Single target — `medium`
+- Vitality debuff (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Nara
 
@@ -3675,12 +3670,6 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (multiple targets, high, conditional (frequent))
 - **Zandrok**
   - Haste buff (area, medium, conditional (frequent))
-
-### Units benefitting from Natsu
-
-- Bonnie
-- Indris
-- Shadewing
 
 ### Summary for Natsu
 
@@ -3704,7 +3693,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Natsu
 
-- Haste debuff — Area — `high`
+- Haste debuff — Single target — `high`
 - Max HP debuff (Mythic+) — Single target — `medium`
 
 #### Crowd Control provided by Natsu
@@ -3740,7 +3729,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Nazrik
 
-- Max HP debuff — Single target — `low`
+- Max HP debuff — Single target — `medium`
 - Damage taken debuff (EX+10) — Self — `low`
 - Vitality debuff (EX+10) — Self — `low`
 
@@ -3785,7 +3774,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Nerion
 
-- ATK debuff (Mythic+) — Single target — `low`
+- ATK debuff (Mythic+) — Single target — `medium`
 
 #### Crowd Control provided by Nerion
 
@@ -3874,11 +3863,6 @@ _No synergy partners matched stat buffs or enablers._
 - **Smokey & Meerky**
   - Energy recovery (multiple targets, low)
 
-### Units benefitting from Pandora
-
-- Bonnie
-- Indris
-
 ### Summary for Pandora
 
 #### Stats Pandora benefits from
@@ -3899,7 +3883,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Pandora
 
-- ATK debuff — All units — `medium`
+- ATK debuff — Self — `low`
 - Damage taken debuff — Single target — `low`
 - Energy drain — Single target — `low`
 - Haste debuff — Single target — `medium`
@@ -3907,7 +3891,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Pandora
 
-- Move — Single target — `medium`
+- Move — Single target — `low`
 
 #### Pandora's Special Effects
 
@@ -3945,7 +3929,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Single target
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Pang
 
@@ -3956,7 +3939,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Pang
 
 - Unaffected immunity — Self — On skill
-- Stun — Area — `low`
+- Stun — Single target — `low`
 
 #### Pang's Special Effects
 
@@ -4062,10 +4045,10 @@ _No synergy partners matched stat buffs or enablers._
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-- **Antandra**
+- **Isabella**
   - Healing (area, high)
-- **Fay**
-  - Healing (area, high)
+- **Kafra**
+  - Healing over time (area, high)
 
 ### Summary for Phraesto
 
@@ -4087,8 +4070,8 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Phraesto
 
-- Stun (Mythic+) — Single target — `medium`
-- Taunt (Mythic+) — Single target — `medium`
+- Stun (Mythic+) — Single target — `low`
+- Taunt (Mythic+) — Single target — `low`
 
 #### Phraesto's Special Effects
 
@@ -4129,7 +4112,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Pippa
 
-- Energy drain — Area — `medium`
+- Energy drain — Single target — `medium`
 
 #### Crowd Control provided by Pippa
 
@@ -4183,7 +4166,6 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 - HP loss — Single target — `low`
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Ravion
 
@@ -4195,14 +4177,14 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Ravion
 
-- ATK debuff — Multiple targets — `high`
-- Phys DEF debuff — Multiple targets — `high`
+- ATK debuff — Single target — `medium`
+- Phys DEF debuff — Single target — `medium`
 
 #### Crowd Control provided by Ravion
 
 - Unaffected immunity — Self — Start of battle
-- Knock down — Multiple targets — `high`
-- Move — Multiple targets — `high`
+- Knock down — Single target — `high`
+- Move — Single target — `high`
 
 #### Ravion's Special Effects
 
@@ -4226,11 +4208,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Multiple targets, Single target
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Reinier
 
-- Healing — Single target — `medium` — conditional (frequent)
+- Healing — Single target — `low` — conditional (frequent)
 - ATK buff (Legendary+) — Single target — `low`
 
 #### Debuffs provided by Reinier
@@ -4357,13 +4338,13 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Saida
 
-- Energy drain — Single target — `high`
+- Energy drain — Self — `high`
 
 #### Crowd Control provided by Saida
 
 - Unaffected immunity — Self — Conditional
-- Interrupt — Area — `high`
-- Move — Single target — `medium`
+- Interrupt — Single target — `low`
+- Move — Single target — `low`
 
 #### Saida's Special Effects
 
@@ -4387,7 +4368,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Single target
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Salazer
 
@@ -4398,7 +4378,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Salazer
 
-- Pin — Single target — `high`
+- Pin — Single target — `low`
 
 ## Satrana
 
@@ -4413,7 +4393,7 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Magic**
 - Magic — Arc, Area, Single target
 - DoT — Area
-- Max HP-based damage — Area, Single target — `high`
+- Max HP-based damage — Arc, Area, Single target — `high`
 
 #### Buffs provided by Satrana
 
@@ -4423,11 +4403,11 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Satrana
 
-- Vitality debuff — Area — `low`
+- Vitality debuff — Multiple targets — `low`
 
 #### Crowd Control provided by Satrana
 
-- Charm — Single target — `medium`
+- Charm — Single target — `high`
 
 #### Satrana's Special Effects
 
@@ -4472,9 +4452,9 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Scarlita
 
 - Unaffected immunity — Self — Conditional
-- Knock down — Arc — `medium`
+- Knock down — Arc — `low`
 - Move — All units — `low`
-- Stun — Area — `medium`
+- Stun — Arc — `medium`
 
 #### Scarlita's Special Effects
 
@@ -4516,7 +4496,6 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Physical**
 - Physical — Self, Single target
 - HP loss — Self
-- Max HP-based damage — Self
 
 #### Buffs provided by Seth
 
@@ -4541,19 +4520,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Shadewing benefits from
 
-- **Hepler**
+- **Alna**
   - Enables Debuff on target via Haste debuff (area)
-  - Enables Continuous damage on enemies via tick damage
-- **Koko**
-  - Enables Debuff on target via Damage taken debuff (area)
   - Enables Continuous damage on enemies via DoT
-- **Natsu**
-  - Enables Debuff on target via Haste debuff (area)
-  - Enables Continuous damage on enemies via tick damage
-- **Lily May**
-  - Enables Debuff on target via Energy drain (all units)
 - **Lyca**
   - Enables Debuff on target via ATK debuff (all units)
+- **Lucius**
+  - Enables Debuff on target via ATK debuff (area)
+- **Cyran**
+  - Enables Debuff on target via ATK debuff (all units)
+- **Fay**
+  - ATK buff (multiple targets, low)
+  - Enables Debuff on target via Magic DEF debuff (multiple targets)
+  - Enables Continuous damage on enemies via tick damage
 
 ### Summary for Shadewing
 
@@ -4566,7 +4545,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Single target
-- DoT — All units, Single target
+- DoT — Single target
 - HP loss — Single target — `low`
 - Max HP-based damage — All units, Single target — `high`
 - True damage — Single target — `low`
@@ -4579,7 +4558,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Shadewing
 
-- Magic DEF debuff — All units — `low`
+- Magic DEF debuff — Single target — `low`
 
 #### Shadewing's Special Effects
 
@@ -4659,8 +4638,9 @@ _No synergy partners matched stat buffs or enablers._
 - **Rowan**
   - Max HP buff (single target, high)
   - Healing (area, medium)
-- **Antandra**
-  - Healing (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - Healing (single target, medium)
 
 ### Summary for Shemira
 
@@ -4807,9 +4787,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Sinbad
 
-- Damage taken debuff — Multiple targets — `medium`
-- ATK debuff (Mythic+) — Multiple targets — `high`
-- Energy drain (Mythic+) — Multiple targets — `medium`
+- Damage taken debuff — Single target — `medium`
+- ATK debuff (Mythic+) — Self — `high`
+- Energy drain (Mythic+) — Self — `medium`
 - Magic DEF debuff (Mythic+) — Multiple targets — `medium`
 - Phys DEF debuff (Mythic+) — Multiple targets — `medium`
 - Vitality debuff (Mythic+) — Multiple targets — `medium`
@@ -4834,12 +4814,12 @@ _No synergy partners matched stat buffs or enablers._
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - Healing over time (all units, medium)
-- **Fay**
-  - ATK buff (multiple targets, low)
-  - Healing (area, high)
 - **Hewynn**
   - Healing (all units, high)
-- **Antandra**
+- **Fay**
+  - ATK buff (multiple targets, low)
+  - Healing (arc, high)
+- **Isabella**
   - Healing (area, high)
 
 ### Units benefitting from Smokey & Meerky
@@ -4873,7 +4853,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Smokey & Meerky
 
-- Interrupt — Area — `medium`
+- Interrupt — Single target — `medium`
 - Stun (EX+10) — Single target — `low`
 
 ## Solise
@@ -4938,7 +4918,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Single target
-- Max HP-based damage — Area — `medium`
 
 #### Buffs provided by Sonja
 
@@ -4948,7 +4927,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Sonja
 
-- Stun — Area — `low`
+- Stun — Single target — `low`
 
 ## Soren
 
@@ -4988,8 +4967,8 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Soren
 
-- Move — Multiple targets — `high`
-- Stun — Area — `medium`
+- Move — Single target — `high`
+- Stun — Multiple targets — `low`
 
 ## Sylphira
 
@@ -5008,9 +4987,8 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - ATK buff (multiple targets, high)
   - Haste buff (multiple targets, high)
-- **Fay**
-  - ATK buff (multiple targets, low)
-  - Healing (area, high)
+- **Hewynn**
+  - Healing (all units, high)
 
 ### Summary for Sylphira
 
@@ -5035,16 +5013,16 @@ _No synergy partners matched stat buffs or enablers._
 #### Debuffs provided by Sylphira
 
 - Energy drain — Single target — `medium`
-- Max HP debuff — Area — `medium`
+- Max HP debuff — Self — `medium`
 
 #### Crowd Control provided by Sylphira
 
 - Immune immunity — Self — On skill
 - Unaffected immunity — Area — Conditional
 - Cleanse immunity (Mythic+) — Self — On skill
-- Interrupt — Area — `low`
+- Interrupt — Single target — `low`
 - Knock down — Area — `medium`
-- Silence — Area — `low`
+- Silence — Single target — `low`
 
 #### Sylphira's Special Effects
 
@@ -5062,12 +5040,12 @@ _No synergy partners matched stat buffs or enablers._
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - Healing over time (all units, medium)
-- **Fay**
-  - ATK buff (multiple targets, low)
-  - Healing (area, high)
 - **Hewynn**
   - Healing (all units, high)
-- **Antandra**
+- **Fay**
+  - ATK buff (multiple targets, low)
+  - Healing (arc, high)
+- **Isabella**
   - Healing (area, high)
 
 ### Summary for Talene
@@ -5083,11 +5061,10 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - HP loss — All units, Single target — `high`
-- Max HP-based damage — All units, Area, Single target — `medium`
 
 #### Buffs provided by Talene
 
-- Healing — Area — `low`
+- Healing — Single target — `low`
 - Healing over time — Self — `low`
 - Lifedrain buff — Self — `low`
 - ATK buff (Legendary+) — Self — `low`
@@ -5127,11 +5104,10 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - DoT — All units, Single target
-- Max HP-based damage — Area, Single target — `medium`
 
 #### Buffs provided by Tasi
 
-- Healing over time — Area — `high`
+- Healing over time — Single target — `high`
 - Invincible — Self — `high`
 - ATK buff (Legendary+) — Self — `medium`
 - Damage taken reduction (Mythic+) — Self — `high`
@@ -5139,9 +5115,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Tasi
 
-- Pin — All units — `low`
-- Sleep — Single target — `high`
-- Stun — Area — `low`
+- Pin — Single target — `low`
+- Sleep — All units — `high`
+- Stun — Area — `high`
 
 #### Tasi's Special Effects
 
@@ -5170,9 +5146,8 @@ _No synergy partners matched stat buffs or enablers._
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
-- **Fay**
-  - ATK buff (multiple targets, low)
-  - ATK SPD buff (multiple targets, low)
+- **Isabella**
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent))
   - Healing (area, high)
 
 ### Summary for Temesia
@@ -5208,7 +5183,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (Mythic+) — Self — Permanent
 - Interrupt — Single target — `high`
-- Knock down — All units — `low`
+- Knock down — Area — `low`
 
 ## Thador
 
@@ -5249,7 +5224,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Thador
 
-- Knock down — Single target — `low`
+- Knock down — Single target — `high`
 
 ## Thoran
 
@@ -5276,8 +5251,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Damage types dealt by Thoran
 
 - Primary damage type (unit): **Physical**
-- Physical — Single target
-- Max HP-based damage — Self
+- Physical — Self, Single target
 
 #### Buffs provided by Thoran
 
@@ -5360,7 +5334,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Single target
-- DoT — Single target
 
 #### Buffs provided by Ulmus
 
@@ -5373,7 +5346,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Ulmus
 
 - Unaffected immunity — Self — On skill
-- Knock down (Mythic+) — Single target — `high`
+- Knock down (Mythic+) — Single target — `medium`
 
 ## Vala
 
@@ -5410,7 +5383,6 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Physical**
 - Physical — Single target
 - HP loss — Single target — `low`
-- Max HP-based damage — Single target — `low`
 - True damage — Single target — `medium`
 
 #### Buffs provided by Vala
@@ -5527,8 +5499,8 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Valka
 
 - Unaffected immunity — Self — On skill
-- Knock down — Area — `high`
-- Stun — Area — `high`
+- Knock down — Single target — `low`
+- Stun — Single target — `low`
 
 #### Valka's Special Effects
 
@@ -5616,7 +5588,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Single target
-- DoT — All units
 
 #### Buffs provided by Viperian
 
@@ -5626,7 +5597,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Viperian
 
-- Energy drain — Single target — `medium`
+- Energy drain — Single target — `low`
 
 #### Crowd Control provided by Viperian
 
@@ -5733,8 +5704,8 @@ _No synergy partners matched stat buffs or enablers._
 #### Damage types dealt by Zandrok
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Single target
-- Max HP-based damage — Area, Multiple targets, Self, Single target — `medium`
+- Physical — Self, Single target
+- Max HP-based damage — Area, Multiple targets, Single target — `high`
 
 #### Buffs provided by Zandrok
 
@@ -5744,7 +5715,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Zandrok
 
-- Stun — Area — `low`
+- Stun — Area — `high`
 
 ## Zanie
 
@@ -5774,7 +5745,6 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Physical**
 - Physical — Self, Single target
 - DoT — Area
-- Max HP-based damage — Area — `high`
 
 #### Buffs provided by Zanie
 
@@ -5827,7 +5797,6 @@ _No synergy partners matched stat buffs or enablers._
 - Primary damage type (unit): **Magic**
 - Magic — Arc, Area, Single target
 - HP loss — Area — `high`
-- Max HP-based damage — Area — `medium`
 
 #### Buffs provided by Zorya
 

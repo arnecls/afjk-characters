@@ -268,8 +268,6 @@ When looking for stat effects on skills, the text has to be analyzed as they
 are somtimes not easy to spot. For example "reducing their Magic DEF" inidicates
 a Magic Defense debuff.
 
-
-
 ## Anti Crowd-control
 
 - Unaffected
