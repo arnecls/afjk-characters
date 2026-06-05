@@ -100,7 +100,8 @@ combined score.
 2. **Enablers** — provider satisfies the hero's **Requires** special effects
    (e.g. magic damage from allies for Bonnie, DoT on enemies for Shadewing,
    Mage/Tank/Support for Himmel's party composition). Self-setup labels
-   (Aging on target, form/stance, boss gates, etc.) are skipped. Synergy text
+   (Debuff on target (Aging), form/stance, boss gates, etc.) are skipped.
+   Synergy text
    uses `Enables {label} via {detail}`.
 
 Matchers and skip lists live in `scripts/generate-heroes-overview.py`.
@@ -109,23 +110,21 @@ Matchers and skip lists live in `scripts/generate-heroes-overview.py`.
 
 ## Special effects (summary lines)
 
-Notable mechanics outside buff/debuff/CC stat lines. Under `#### Special
-effects`, use separate `##### Provides` and `##### Requires` subsections.
+Notable mechanics outside buff/debuff/CC stat lines. Summary section order:
+Stats the unit benefits from → Damage → Buffs → Debuffs → Crowd Control →
+Special Effects. Under `#### Special Effects`, use separate `##### Provides`
+and `##### Requires` subsections.
 Line format (no Provides/Requires prefix on each bullet):
 
 `{label} ({tier}) — {targeting}`
 
-- **Provides** — e.g. instant defeat, invincibility, summoning, revive,
-  start-of-battle cast (casts Ultimate at battle start, or the Ultimate's
-  passive opener at battle start such as Bryon's falcon summon; not Skill1/2),
-  transforms, marks, DoT conversion, dispel, fatal-blow save, stat steal,
-  ally damage absorption, domain isolation, Stellar Bond, blessings, energy
-  steal, named companions (falcon, silhouette, etc.).
-- **Requires** — conditions to trigger or enhance effects (e.g. continuous
-  damage on enemies, magic damage from allies, ranged damage from allies,
-  multiple debuffs on target, ally Ultimate casts, enemy defeat, adjacent
-  allies, enemy monsters, Aging on target, party composition, form/stance,
-  energy or stored-resource thresholds).
+- **Provides** — use descriptive labels (not skill names): e.g. instant defeat,
+  invincibility, summoning (includes named companions), marked target (focus
+  fire), ally empower, DoT conversion, dispel, fatal-blow save, stat steal,
+  ally positioning link, ally blessing, sleep (area), spirit form protection.
+- **Requires** — e.g. continuous damage on enemies, magic damage from allies,
+  debuff on target (Aging), form or stance active, ally blessing active,
+  cooldown-gated trigger, enemy not CC-immune, party composition.
 
 Patterns live in `scripts/rewrite-summaries.py` (`SPECIAL_PROVIDES_RULES`,
 `SPECIAL_REQUIRES_RULES`, and companion/summon helpers). Regenerate summaries
@@ -137,6 +136,14 @@ Some units can _heal_ other units and/or provide shields.
 Healing is not to be mistaking with the "healing" stat, but can rather be detected
 from texts like "restoring 45% HP" or "restoring HP". If the text includes an
 over time" (HoT) phrasing like "over 2s" it counts as "Healing over time".
+
+## Stats the unit benefits from
+
+Listed in each hero summary for synergy matching. Derived from self-buffs
+and explicit self-scaling in skill text (`refine_benefit_stats` in
+`rewrite-summaries.py`). Omitted as noise: **ATK** from `(ATK-based)` damage
+only, companion-only **Max HP** / **Life Drain**, **Healing** that only
+restores a summon, and one-off **Initial Energy** lines.
 
 ## Stats
 

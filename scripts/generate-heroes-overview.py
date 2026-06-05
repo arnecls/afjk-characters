@@ -58,18 +58,17 @@ FREQUENT_CONDITIONAL_SCORE = 0.85
 # Receiver Requires labels that are self-setup, not partner-enabled.
 SKIP_ENABLER_REQUIRES = frozenset(
     {
-        "Aging on target",
-        "Specific form active",
-        "Combat Stance active",
+        "Debuff on target (Aging)",
+        "Form or stance active",
         "Boss encounter",
         "Once per battle",
-        "Cooldown-gated proc",
+        "Cooldown-gated trigger",
         "Enemy monsters present",
         "Monster ingredients",
         "Stacked resource",
         "Energy threshold",
         "Stored resource threshold",
-        "Target not CC-immune",
+        "Enemy not CC-immune",
     }
 )
 
@@ -81,8 +80,8 @@ ENABLER_REQUIRE_HANDLERS = (
     "Ranged damage from allies",
     "Debuff on target",
     "Multiple debuffs on target",
-    "Blessed ally active",
-    "Ally on bond line",
+    "Ally blessing active",
+    "Ally on positioning link",
     "Ally Ultimate casts",
     "Enemy defeat",
     "Adjacent allies",
@@ -235,8 +234,8 @@ def match_blessed_ally(provider: _rs.Hero) -> tuple[float, str] | None:
 
 
 def match_stellar_bond(provider: _rs.Hero) -> tuple[float, str] | None:
-    if provider_has_special(provider, "Ally link (Stellar Bond)"):
-        return 4.5, "Stellar Bond link"
+    if provider_has_special(provider, "Ally positioning link"):
+        return 4.5, "Ally positioning link"
     return None
 
 
@@ -286,8 +285,8 @@ def match_enemy_defeat(provider: _rs.Hero) -> tuple[float, str] | None:
         return 5.0, "Instant defeat"
     if provider_has_special(provider, "HP threshold strike"):
         return 4.0, "HP threshold strike"
-    if provider_has_special(provider, "Mark"):
-        return 3.5, "Mark (focus fire)"
+    if provider_has_special(provider, "Marked target (focus fire)"):
+        return 3.5, "Marked target (focus fire)"
     dmg_type = "Magic" if "Magic" in provider_damage_types(provider) else "Physical"
     if dmg_type not in provider_damage_types(provider):
         return None
@@ -351,8 +350,8 @@ def _make_enabler_matchers(
         "Ranged damage from allies": ranged,
         "Debuff on target": match_debuff_on_target,
         "Multiple debuffs on target": match_multiple_debuffs,
-        "Blessed ally active": match_blessed_ally,
-        "Ally on bond line": match_stellar_bond,
+        "Ally blessing active": match_blessed_ally,
+        "Ally on positioning link": match_stellar_bond,
         "Ally Ultimate casts": match_ally_ultimate_casts,
         "Enemy defeat": match_enemy_defeat,
         "Adjacent allies": match_adjacent_allies,
@@ -622,9 +621,9 @@ def build_overview() -> str:
     parts = [
         "# Heroes Overview",
         "",
-        "Per-hero summaries from [Heroes.md](Heroes.md), plus synergy picks:",
-        "stat buffs matching **Stats the unit benefits from**, and **enabler**",
-        "partners matching **Requires** special effects.",
+        "Per-hero synergy picks first, then summaries from [Heroes.md](Heroes.md).",
+        "Synergy: stat buffs matching **Stats the unit benefits from**, and",
+        "enabler partners matching **Requires** special effects.",
         "Up to five partners by combined score. Omitted: ATK-only, Max HP",
         "buff-only, and Shield-only (unless the hero benefits from Max HP/",
         "shields). Rare conditional buffs score lower.",
@@ -640,16 +639,16 @@ def build_overview() -> str:
 
         parts.append(f"## {hero.title}")
         parts.append("")
-        parts.append("### Summary")
-        parts.append("")
-        parts.append(summary)
-        parts.append("")
         parts.append("### Synergies")
         parts.append("")
         if syn_lines:
             parts.extend(syn_lines)
         else:
             parts.append("_No synergy partners matched stat buffs or enablers._")
+        parts.append("")
+        parts.append("### Summary")
+        parts.append("")
+        parts.append(summary)
         parts.append("")
 
     return "\n".join(parts).rstrip() + "\n"

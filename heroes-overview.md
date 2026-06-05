@@ -1,8 +1,8 @@
 # Heroes Overview
 
-Per-hero summaries from [Heroes.md](Heroes.md), plus synergy picks:
-stat buffs matching **Stats the unit benefits from**, and **enabler**
-partners matching **Requires** special effects.
+Per-hero synergy picks first, then summaries from [Heroes.md](Heroes.md).
+Synergy: stat buffs matching **Stats the unit benefits from**, and
+enabler partners matching **Requires** special effects.
 Up to five partners by combined score. Omitted: ATK-only, Max HP
 buff-only, and Shield-only (unless the hero benefits from Max HP/
 shields). Rare conditional buffs score lower.
@@ -11,12 +11,30 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 ## Aliceth - Radiant Wings
 
+### Synergies
+
+1. **Lyca - Keeper of Glades** — Enables Ranged damage from allies via ranged attacks; Enables Debuff on target via ATK debuff (all units)
+2. **Lily May - Twilight Tracker** — Enables Debuff on target via Energy drain (all units)
+3. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Enables Debuff on target via ATK debuff (multiple targets)
+4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Enables Debuff on target via Max HP debuff (area)
+5. **Hepler - Master of Forms** — Enables Debuff on target via Haste debuff (area)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK
+- DEF Penetration
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Buffs
 
+- Ally empower buff (base) — Single target — `high`
 - Attack range buff (base) — Single target — `high`
-- Brightfeather ally buff (base) — Single target — `high`
 - DEF Penetration buff (base) — Single target — `medium`
 - Invincible (base) — Self — `high` — conditional (rare)
 - ATK buff (Legendary+) — Multiple targets — `medium`
@@ -33,48 +51,45 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Brightfeather empower (base) — Single target
 - HP threshold strike (base) — Multiple targets
 - Instant defeat (base) — Multiple targets
 - Invincibility (base) — Single target
-- Mark (base) — Multiple targets
+- Marked target (focus fire) (base) — Single target
 - Reposition enemies (base) — Single target
 - Untargetable (base) — Multiple targets
 - Fatal blow save (Mythic+) — Area
 
 ##### Requires
 
-- Cooldown-gated proc (base) — Allies
+- Cooldown-gated trigger (base) — Allies
 - Ranged damage from allies (base) — Allies
 - Debuff on target (Legendary+) — Enemies
 
-#### Damage
+## Alna - Frozen Mother
 
-- Physical — Area, Single target
+### Synergies
+
+1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
+3. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
+4. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
+5. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
-- ATK
-- DEF Penetration
 - Max HP
 - Healing
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium); Enables Debuff on target via ATK debuff (area)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Enables Debuff on target via ATK debuff (multiple targets)
-3. **Hepler - Master of Forms** — Max HP via Shield (multiple targets, low); Healing via Healing (multiple targets, medium); Enables Debuff on target via Haste debuff (area)
-4. **Lyca - Keeper of Glades** — Enables Ranged damage from allies via ranged attacks; Enables Debuff on target via ATK debuff (all units)
-5. **Koko - Wild Child** — Max HP via Shield (single target, low); Healing via Healing over time (single target, high); Enables Debuff on target via Damage taken debuff (area)
-
-## Alna - Frozen Mother
-
-### Summary
+- Physical — All units, Arc, Self, Single target
 
 #### Buffs
 
@@ -91,37 +106,35 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Freeze (Supreme+) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Self
 - Start-of-battle cast (base) — All units
-- Summoning (base) — All units
+- Summoning (base) — Self
 - Damage and control immunity (Mythic+) — Self
-
-#### Damage
-
-- Physical — All units, Arc, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
 
 ## Alsa - Desert Flare
 
+### Synergies
+
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
+2. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
+3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+4. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
+5. **Florabelle - Blooming Maiden** — Haste via Haste buff (multiple targets, high, conditional (frequent)); Max HP via Shield (single target, medium)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Self, Single target
 
 #### Buffs
 
@@ -140,35 +153,34 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
-- Combat Stance active (base) — Enemies
-- Cooldown-gated proc (base) — Enemies
-
-#### Damage
-
-- Magic — All units, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium)
-3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high); Haste via Haste buff (multiple targets, high)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+- Cooldown-gated trigger (base) — Enemies
+- Form or stance active (base) — Enemies
 
 ## Antandra - Desert Fury
 
+### Synergies
+
+1. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Self, Single target
 
 #### Buffs
 
@@ -184,60 +196,13 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Stun (base) — Area — `high`
 - Taunt (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
 - Once per battle (Mythic+) — Allies
 
-#### Damage
-
-- Physical — Arc, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Physical DEF
-- Healing
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
 ## Arden - Oak Sage
-
-### Summary
-
-#### Buffs
-
-- ATK buff (Legendary+) — Self — `medium`
-
-#### Crowd Control
-
-- Pin (base) — Multiple targets — `high`
-
-#### Special effects
-
-##### Provides
-
-- Summoning (base) — Multiple targets
-
-#### Damage
-
-- Magic — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Primary damage type (unit): **Magic**
 
 ### Synergies
 
@@ -247,9 +212,53 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 4. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
 5. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
 
+### Summary
+
+#### Stats the unit benefits from
+
+- ATK
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
+
+#### Buffs
+
+- ATK buff (Legendary+) — Self — `medium`
+
+#### Crowd Control
+
+- Pin (base) — Multiple targets — `high`
+
+#### Special Effects
+
+##### Provides
+
+- Summoning (base) — Multiple targets
+
 ## Atalanta - Fortune Finder
 
+### Synergies
+
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+2. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high)
+3. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+4. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+5. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Physical DEF
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
 
 #### Buffs
 
@@ -266,37 +275,32 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Pin (base) — Single target — `medium`
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Reposition enemies (base) — Single target
 - Stat steal (EX+10) — Single target
 
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Physical DEF
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+## Athalia - Harbinger of Justice
 
 ### Synergies
 
-1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-
-## Athalia - Harbinger of Justice
+1. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
+2. **Marilee - Forest's Arrow** — Crit via Crit buff (single target, low)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Crit
+- Execution
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Single target
+- True damage — All units, Single target
 
 #### Buffs
 
@@ -316,37 +320,34 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Unaffected immunity (base) — Area — On skill
 - Knock down (base) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
 - Transform (base) — Area
 
-#### Damage
+## Aurora - Celestial of Dreams
 
-- Physical — All units, Area, Single target
-- True damage — All units, Single target
+### Synergies
+
+1. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+3. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
+4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+5. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Crit
-- Execution
-- Healing
-- Primary damage type (unit): **Physical**
+- Haste
+- Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-2. **Evie - Royal Envoy** — ATK via ATK buff (multiple targets, high); Healing via Healing (single target, medium)
-3. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
-4. **Isabella - The Taken Soul** — Healing via Healing (area, high)
-5. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
-
-## Aurora - Celestial of Dreams
-
-### Summary
+- Magic — Area, Multiple targets, Single target
 
 #### Buffs
 
@@ -363,7 +364,7 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Unaffected immunity (base) — Self — On skill
 - Sleep (base) — Multiple targets — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -371,27 +372,30 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Start-of-battle cast (base) — Multiple targets
 - Summoning (base) — Self
 
-#### Damage
+## Baelran - Dawnblade
 
-- Magic — Area, Multiple targets, Single target
+### Synergies
+
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
+2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
+3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
+5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Haste
-- Primary damage type (unit): **Magic**
+- Max HP
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-3. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
-4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
-5. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
-
-## Baelran - Dawnblade
-
-### Summary
+- Physical — Area, Single target
+- True damage — Area, Single target
+- True damage (HP-based) — Arc, Area
 
 #### Buffs
 
@@ -410,7 +414,7 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Unaffected immunity (base) — Self — Start of battle
 - Knock down (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -419,34 +423,25 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 ##### Requires
 
-- Specific form active (base) — Enemies
+- Form or stance active (base) — Enemies
 - Boss encounter (Supreme+) — Enemies
-
-#### Damage
-
-- Physical — Area, Single target
-- True damage — Area, Single target
-- True damage (HP-based) — Arc, Area
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Healing
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium)
-3. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-4. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high); Haste via Haste buff (multiple targets, high)
 
 ## Berial - Sinister Jester
 
+### Synergies
+
+_No synergy partners matched stat buffs or enablers._
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — Area
+- Magic — Multiple targets, Single target
 
 #### Buffs
 
@@ -462,38 +457,34 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Frighten (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
 - Revive ally (base) — Single target
-- Named companion unit (Mythic+) — Single target
-- Summoning (EX+5) — Single target
+- Summoning (Mythic+) — Single target
 
-#### Damage
+## Bonnie - Obsidian Claws
 
-- DoT — Area
-- Magic — Multiple targets, Single target
+### Synergies
+
+1. **Lily May - Twilight Tracker** — Enables Debuff on target via Energy drain (all units); Enables Magic damage from allies via Magic damage (all units)
+2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Enables Debuff on target via Max HP debuff (area); Enables Magic damage from allies via Magic damage (area)
+3. **Natsu - Fire Dragon Slayer Mage** — Enables Debuff on target via Haste debuff (area); Enables Magic damage from allies via Magic damage (area)
+4. **Lyca - Keeper of Glades** — Enables Debuff on target via ATK debuff (all units)
+5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Enables Debuff on target via ATK debuff (multiple targets)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- Healing
 - Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-
-## Bonnie - Obsidian Claws
-
-### Summary
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -510,7 +501,7 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -520,31 +511,32 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 ##### Requires
 
-- Aging on target (base) — Enemies
 - Debuff on target (base) — Enemies
+- Debuff on target (Aging) (base) — Enemies
+- Form or stance active (base) — Enemies
 - Magic damage from allies (base) — Allies
-- Specific form active (base) — Enemies
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Lily May - Twilight Tracker** — Enables Debuff on target via Energy drain (all units); Enables Magic damage from allies via Magic damage (all units)
-2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Enables Debuff on target via Max HP debuff (area); Enables Magic damage from allies via Magic damage (area)
-3. **Natsu - Fire Dragon Slayer Mage** — Enables Debuff on target via Haste debuff (area); Enables Magic damage from allies via Magic damage (area)
-4. **Lyca - Keeper of Glades** — Enables Debuff on target via ATK debuff (all units)
-5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Enables Debuff on target via ATK debuff (multiple targets)
 
 ## Brutus - Blood Claw
 
+### Synergies
+
+1. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
+2. **Ravion - Twilight's Burden** — Life Drain via Lifedrain buff (multiple targets, high)
+3. **Satrana - Ember Enchantress** — Life Drain via Lifedrain buff (arc, high)
+4. **Kruger - Dauntless Warrior** — Life Drain via Lifedrain buff (area, medium)
+5. **Zorya - Watcher in Stone** — Life Drain via Lifedrain buff (area, medium, conditional (frequent))
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- DoT — Area
+- Physical — Arc, Area, Single target
 
 #### Buffs
 
@@ -559,29 +551,27 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Unaffected immunity (base) — Self — On skill
 - Taunt (base) — Area — `high`
 
-#### Damage
-
-- DoT — Area
-- Physical — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Life Drain
-- Max HP
-- Primary damage type (unit): **Physical**
+## Bryon - Evergreen Sentinel
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-5. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
-
-## Bryon - Evergreen Sentinel
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+2. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+4. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
+5. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — Area
+- Magic — Single target
 
 #### Buffs
 
@@ -598,41 +588,36 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Interrupt (base) — Single target — `low`
 - Stun (Mythic+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Energy steal (base) — Single target
-- Named companion unit (base) — Self
 - Start-of-battle cast (base) — Single target
-- Summoning (base) — Single target
+- Summoning (base) — Self
 - Untargetable (EX+5) — Single target
-
-#### Damage
-
-- DoT — Area
-- Magic — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Haste
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
-2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-3. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-4. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
 
 ## Callan - Grim Soulkeeper
 
+### Synergies
+
+1. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+3. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium)
+4. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium)
+5. **Athalia - Harbinger of Justice** — Max HP via Shield (single target, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Magic — Multiple targets
+- Physical — All units, Area, Self, Single target
 
 #### Buffs
 
@@ -646,7 +631,7 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Pin (base) — Multiple targets — `high`
 - Stun (Mythic+) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -657,29 +642,23 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Stored resource threshold (base) — Enemies
 
-#### Damage
-
-- Magic — Multiple targets
-- Physical — All units, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- Max HP
-- ATK
-- Healing
-- Primary damage type (unit): **Physical**
+## Carolina - Candlelight Specter
 
 ### Synergies
 
-1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); ATK via ATK buff (multiple targets, high)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-
-## Carolina - Candlelight Specter
+1. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
+2. **Marilee - Forest's Arrow** — Crit via Crit buff (single target, low)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Crit
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Self, Single target
 
 #### Buffs
 
@@ -694,24 +673,26 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Freeze (base) — Area — `high`
 
-#### Damage
-
-- Magic — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- Primary damage type (unit): **Magic**
+## Cassadee - Azure Prodigy
 
 ### Synergies
 
-1. **Marilee - Forest's Arrow** — ATK via ATK buff (area, high, conditional (frequent)); Crit via Crit buff (single target, low)
-2. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
-
-## Cassadee - Azure Prodigy
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+2. **Florabelle - Blooming Maiden** — Haste via Haste buff (multiple targets, high, conditional (frequent)); Enables Ally blessing active via Ally blessing
+3. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+4. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+5. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
 
 #### Buffs
 
@@ -726,7 +707,7 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - Move (base) — All units — `low`
 - Stun (base) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -734,35 +715,35 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 ##### Requires
 
-- Blessed ally active (base) — Allies
-
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- DEF Penetration
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+- Ally blessing active (base) — Allies
 
 ## Cecia - Requiem of Thorns
 
+### Synergies
+
+1. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high)
+2. **Fay - Colorful Dancer** — Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low)
+3. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
+4. **Aliceth - Radiant Wings** — DEF Penetration via DEF Penetration buff (single target, medium)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- DEF Penetration
+- Physical DEF
+- Magic DEF
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- DoT — Arc, Single target
+- Physical — Area, Single target
 
 #### Buffs
 
 - ATK SPD buff (base) — Multiple targets — `high`
-- Healing (base) — Arc — `high`
 - Lifedrain buff (base) — Area — `low`
 - Max HP buff (base) — Single target — `high`
 
@@ -774,65 +755,56 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Pin (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Self
-- Summoning (base) — Arc
+- Summoning (base) — Self
 - Stat absorb (Mythic+) — Single target
 - Permanent stat absorb (EX+5) — Single target
 
 ##### Requires
 
-- Target not CC-immune (Mythic+) — Enemies
-
-#### Damage
-
-- DoT — Arc, Single target
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- ATK SPD
-- Life Drain
-- DEF Penetration
-- Physical DEF
-- Magic DEF
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-2. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-4. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-5. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
+- Enemy not CC-immune (Mythic+) — Enemies
 
 ## Chippy - Sidekick
-
-### Summary
-
-#### Damage
-
-- Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Primary damage type (unit): **Physical**
 
 ### Synergies
 
 _No synergy partners matched stat buffs or enablers._
 
+### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
+
 ## Contess - Abyssal Rulekeeper
 
+### Synergies
+
+1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
+2. **Smokey & Meerky - Wasteland Apothecary** — Healing via Healing over time (area, medium); Energy via Energy recovery (area, medium)
+3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
+4. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Healing
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Multiple targets
 
 #### Buffs
 
@@ -851,35 +823,34 @@ _No synergy partners matched stat buffs or enablers._
 - Silence (Mythic+) — Single target — `medium`
 - Stun (Supreme+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Start-of-battle cast (base) — All units
 
-#### Damage
+## Cryonaia - Arctic Revenant
 
-- Magic — All units, Multiple targets
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
+4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high)
+5. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Max HP
-- Energy
-- Healing
 - Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Cryonaia - Arctic Revenant
-
-### Summary
+- DoT — Area
+- Magic — All units, Area, Single target
 
 #### Buffs
 
@@ -895,39 +866,39 @@ _No synergy partners matched stat buffs or enablers._
 - Immune immunity (base) — Self — Conditional
 - Freeze (EX+15) — Self — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Isolate enemies (domain) (base) — All units
+- Enemy isolation (domain) (base) — All units
 - Summoning (base) — Area
 
 ##### Requires
 
 - Boss encounter (base) — Enemies
 
-#### Damage
+## Cyran - Umbral Weaver
 
-- DoT — Area
-- Magic — All units, Area, Single target
+### Synergies
+
+1. **Marilee - Forest's Arrow** — ATK via ATK buff (area, high, conditional (frequent)); Crit via Crit buff (single target, low)
+2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+3. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
+4. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Haste
+- ATK SPD
+- Crit
 - Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
-
-## Cyran - Umbral Weaver
-
-### Summary
+- Magic — All units, Area, Single target
+- True damage — All units
 
 #### Buffs
 
@@ -945,36 +916,28 @@ _No synergy partners matched stat buffs or enablers._
 - Pin (base) — Area — `low`
 - Silence (EX+10) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — All units
 
-#### Damage
-
-- Magic — All units, Area, Single target
-- True damage — All units
-
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- ATK SPD
-- Energy
-- Primary damage type (unit): **Magic**
+## Daimon - Forsaken Child
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-2. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
-3. **Marilee - Forest's Arrow** — ATK via ATK buff (area, high, conditional (frequent)); Crit via Crit buff (single target, low)
-4. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium)
-5. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
-
-## Daimon - Forsaken Child
+_No synergy partners matched stat buffs or enablers._
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Self, Single target
+- True damage (HP-based) — Area
 
 #### Buffs
 
@@ -986,29 +949,29 @@ _No synergy partners matched stat buffs or enablers._
 
 - Frighten (Mythic+) — Area — `medium`
 
-#### Damage
+## Damian - Woody Wonder
 
-- Magic — Area, Self, Single target
-- True damage (HP-based) — Area
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
+3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Healing via Healing over time (area, medium); Energy via Energy recovery (area, medium)
+4. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- Life Drain
+- Haste
+- Healing
+- Energy
 - Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-5. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
-
-## Damian - Woody Wonder
-
-### Summary
+- Magic — All units, Single target
 
 #### Buffs
 
@@ -1021,29 +984,29 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Single target — `medium`
 
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Haste
-- Healing
-- Primary damage type (unit): **Magic**
+## Dionel - Venus of Dawn
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Haste via Haste buff (multiple targets, medium)
-2. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-4. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-
-## Dionel - Venus of Dawn
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+4. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium)
+5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Max HP
+- Execution
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — All units, Single target
 
 #### Buffs
 
@@ -1055,7 +1018,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Vitality debuff (EX+10) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1063,31 +1026,28 @@ _No synergy partners matched stat buffs or enablers._
 - Summoning (Mythic+) — All units
 - Execution scaling (Supreme+) — Self
 
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- DEF Penetration
-- ATK SPD
-- Execution
-- Max HP
-- Primary damage type (unit): **Physical**
+## Dunlingr - Eternal Voice
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
 2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high)
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-4. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
-5. **Aliceth - Radiant Wings** — ATK via ATK buff (multiple targets, medium); DEF Penetration via DEF Penetration buff (single target, medium)
-
-## Dunlingr - Eternal Voice
+3. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
+4. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+5. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Max HP
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Self, Single target
 
 #### Buffs
 
@@ -1107,41 +1067,34 @@ _No synergy partners matched stat buffs or enablers._
 
 - Silence (Supreme+) — All units — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Battlefield order (base) — All units
 - Heal lock (Curelock) (base) — All units
-- Named companion unit (base) — Self
-- Summoning (base) — All units
+- Summoning (base) — Self
 - Ultimate lock (Spellbind) (base) — All units
-
-#### Damage
-
-- Magic — All units, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Max HP
-- Haste
-- Life Drain
-- Healing
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-3. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high); Life Drain via Lifedrain buff (area, low); Healing via Healing (arc, high)
-4. **Florabelle - Blooming Maiden** — Max HP via Shield (single target, medium); Haste via Haste buff (multiple targets, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, medium, conditional (frequent)); Healing via Healing (area, medium, conditional (frequent))
-5. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
 
 ## Eironn - Stormsword
 
+### Synergies
+
+1. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+3. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium)
+4. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium)
+5. **Athalia - Harbinger of Justice** — Max HP via Shield (single target, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Arc, Area, Single target
 
 #### Buffs
 
@@ -1157,22 +1110,27 @@ _No synergy partners matched stat buffs or enablers._
 - Move (base) — Area — `medium`
 - Pin (base) — Single target — `high`
 
-#### Damage
-
-- Magic — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Primary damage type (unit): **Magic**
+## Elijah & Lailah - Celestial Twins
 
 ### Synergies
 
-_No synergy partners matched stat buffs or enablers._
-
-## Elijah & Lailah - Celestial Twins
+1. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+2. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+3. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+4. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+5. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -1190,43 +1148,38 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Area — On skill
 - Move (base) — Area — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Ally link (Stellar Bond) (base) — Single target
+- Ally positioning link (base) — Single target
 - Shared HP and Energy (base) — All units
 
 ##### Requires
 
-- Ally on bond line (base) — —
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- Haste
-- Max HP
-- ATK
-- Energy
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-2. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
+- Ally on positioning link (base) — —
 
 ## Evie - Royal Envoy
 
+### Synergies
+
+1. **Smokey & Meerky - Wasteland Apothecary** — Healing via Healing over time (area, medium); Energy via Energy recovery (area, medium)
+2. **Isabella - The Taken Soul** — Healing via Healing (area, high); Energy via Energy recovery (single target, low, conditional (frequent))
+3. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
+4. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
+5. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Healing
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Multiple targets, Single target
 
 #### Buffs
 
@@ -1241,7 +1194,7 @@ _No synergy partners matched stat buffs or enablers._
 - Pin (base) — All units — `high`
 - Silence (base) — All units — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1251,30 +1204,32 @@ _No synergy partners matched stat buffs or enablers._
 
 ##### Requires
 
-- Cooldown-gated proc (base) — Allies
+- Cooldown-gated trigger (base) — Allies
 
-#### Damage
+## Faramor - Silverfang Mantle
 
-- Magic — All units, Multiple targets, Single target
+### Synergies
+
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
+2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
+3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
+5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-4. **Isabella - The Taken Soul** — Energy via Energy recovery (single target, low, conditional (frequent)); Healing via Healing (area, high)
-5. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
-
-## Faramor - Silverfang Mantle
-
-### Summary
+- Physical — Area, Single target
+- True damage — Multiple targets
+- True damage (HP-based) — Single target
 
 #### Buffs
 
@@ -1290,7 +1245,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1301,29 +1256,23 @@ _No synergy partners matched stat buffs or enablers._
 
 - Once per battle (EX+10) — Enemies
 
-#### Damage
-
-- Physical — Area, Single target
-- True damage — Multiple targets
-- True damage (HP-based) — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Primary damage type (unit): **Physical**
+## Fay - Colorful Dancer
 
 ### Synergies
 
-1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
-
-## Fay - Colorful Dancer
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
 
 #### Buffs
 
@@ -1336,34 +1285,30 @@ _No synergy partners matched stat buffs or enablers._
 - Magic DEF debuff (base) — Multiple targets — `low`
 - Phys DEF debuff (base) — Multiple targets — `low`
 
-#### Damage
+## Florabelle - Blooming Maiden
 
-- Magic — Area, Multiple targets, Single target
+### Synergies
+
+1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
+5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- ATK SPD
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
+- Haste
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Healing via Healing (arc, high)
-3. **Evie - Royal Envoy** — ATK via ATK buff (multiple targets, high); Healing via Healing (single target, medium)
-4. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
-5. **Isabella - The Taken Soul** — Healing via Healing (area, high)
-
-## Florabelle - Blooming Maiden
-
-### Summary
+- Physical — Area, Single target
 
 #### Buffs
 
-- Healing (base) — Area — `medium` — conditional (frequent)
 - Lifedrain buff (base) — Single target — `medium` — conditional (frequent)
 - ATK buff (Legendary+) — Self — `medium`
 - Shield (Mythic+) — Single target — `medium`
@@ -1373,38 +1318,36 @@ _No synergy partners matched stat buffs or enablers._
 
 - Immune immunity (Supreme+) — Self — Form
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Self
 - Summoning (base) — Self
 - Ally blessing (Mythic+) — Single target
 
-#### Damage
+## Frieren - The Legendary Mage
 
-- Physical — Area, Single target
+### Synergies
+
+1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
+5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
 - Haste
-- Life Drain
-- Healing
-- Primary damage type (unit): **Physical**
+- Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-3. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-
-## Frieren - The Legendary Mage
-
-### Summary
+- DoT — All units, Single target
+- Magic — Area, Self, Single target
+- True damage — All units, Single target
 
 #### Buffs
 
@@ -1420,30 +1363,28 @@ _No synergy partners matched stat buffs or enablers._
 - Stun (base) — Single target — `low`
 - Knock down (Supreme+) — Single target — `medium`
 
-#### Damage
+## Gala - Daughter of Dawn
 
-- DoT — All units, Single target
-- Magic — Area, Self, Single target
-- True damage — All units, Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
 - Haste
+- Energy
 - Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium)
-3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high); Haste via Haste buff (multiple targets, high)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-
-## Gala - Daughter of Dawn
-
-### Summary
+- Magic — All units, Area, Single target
 
 #### Buffs
 
@@ -1457,7 +1398,7 @@ _No synergy partners matched stat buffs or enablers._
 - Steadfast immunity (Supreme+) — Self — On skill
 - Pin (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1467,28 +1408,26 @@ _No synergy partners matched stat buffs or enablers._
 
 - Boss encounter (base) — Enemies
 
-#### Damage
-
-- Magic — All units, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Energy
-- Primary damage type (unit): **Magic**
+## Gerda - Soothing Siren
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-
-## Gerda - Soothing Siren
+1. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+3. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium)
+4. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium)
+5. **Athalia - Harbinger of Justice** — Max HP via Shield (single target, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
 
 #### Buffs
 
@@ -1504,28 +1443,27 @@ _No synergy partners matched stat buffs or enablers._
 - Pin (base) — Multiple targets — `low`
 - Stun (base) — Single target — `medium`
 
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+## Granny Dahnie - Forest Guardian
 
 ### Synergies
 
-1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-
-## Granny Dahnie - Forest Guardian
+1. **Smokey & Meerky - Wasteland Apothecary** — Healing via Healing over time (area, medium); Energy via Energy recovery (area, medium)
+2. **Isabella - The Taken Soul** — Healing via Healing (area, high); Energy via Energy recovery (single target, low, conditional (frequent))
+3. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
+4. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
+5. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Healing
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
 
 #### Buffs
 
@@ -1544,38 +1482,34 @@ _No synergy partners matched stat buffs or enablers._
 - Pin (base) — Area — `medium`
 - Taunt (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 
-#### Damage
-
-- Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Physical DEF
-- Magic DEF
-- Haste
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
+## Gunnar - Iron Doom
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-3. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-5. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-
-## Gunnar - Iron Doom
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+4. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium)
+5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- DoT — Area
+- Physical — All units, Self, Single target
 
 #### Buffs
 
@@ -1587,37 +1521,30 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 - Invincibility (EX+15) — Single target
 
-#### Damage
-
-- DoT — Area
-- Physical — All units, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- ATK SPD
-- Healing
-- Primary damage type (unit): **Physical**
+## Gwyneth - Dragonslayer Knight
 
 ### Synergies
 
-1. **Cecia - Requiem of Thorns** — Max HP via Max HP buff (single target, high); ATK SPD via ATK SPD buff (multiple targets, high); Healing via Healing (arc, high)
-2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-4. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-
-## Gwyneth - Dragonslayer Knight
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- DoT — Single target
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -1633,57 +1560,51 @@ _No synergy partners matched stat buffs or enablers._
 - Silence (base) — Area — `low`
 - Stun (base) — Area — `low`
 
-#### Damage
+## Hammie - Magician
 
-- DoT — Single target
-- Physical — Area, Single target
+### Synergies
+
+_No synergy partners matched stat buffs or enablers._
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- ATK SPD
-- Haste
-- Max HP
-- Primary damage type (unit): **Physical**
+- Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
-3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-
-## Hammie - Magician
-
-### Summary
+- Magic — Single target
 
 #### Buffs
 
 - ATK buff (base) — Single target — `high`
 - Healing (base) — Single target — `high`
 
-#### Damage
-
-- Magic — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Healing
-- Primary damage type (unit): **Magic**
+## Harak - Deepsea Ravager
 
 ### Synergies
 
-1. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-2. **Evie - Royal Envoy** — ATK via ATK buff (multiple targets, high); Healing via Healing (single target, medium)
-3. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
-4. **Isabella - The Taken Soul** — Healing via Healing (area, high)
-5. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
-
-## Harak - Deepsea Ravager
+1. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high)
+2. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
+3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+5. **Zorya - Watcher in Stone** — Energy via Energy recovery (area, low); Life Drain via Lifedrain buff (area, medium, conditional (frequent))
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Crit
+- Energy
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
 
 #### Buffs
 
@@ -1703,7 +1624,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (base) — Self — Start of battle
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1714,32 +1635,27 @@ _No synergy partners matched stat buffs or enablers._
 
 - Boss encounter (base) — Allies
 
-#### Damage
+## Hepler - Master of Forms
 
-- Physical — Single target
+### Synergies
+
+1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
+5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Haste
-- Crit
-- Life Drain
-- Max HP
-- Energy
-- Healing
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-3. **Florabelle - Blooming Maiden** — Haste via Haste buff (multiple targets, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, medium, conditional (frequent)); Max HP via Shield (single target, medium); Healing via Healing (area, medium, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-
-## Hepler - Master of Forms
-
-### Summary
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -1758,7 +1674,7 @@ _No synergy partners matched stat buffs or enablers._
 - Stun (base) — Area — `medium`
 - Taunt (base) — Area — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1766,32 +1682,24 @@ _No synergy partners matched stat buffs or enablers._
 
 ##### Requires
 
-- Specific form active (base) — Enemies
+- Form or stance active (base) — Enemies
 
-#### Damage
+## Hewynn - Tender Leaf
 
-- Physical — Area, Single target
+### Synergies
+
+_No synergy partners matched stat buffs or enablers._
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Haste
-- Max HP
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Physical**
+- Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-
-## Hewynn - Tender Leaf
-
-### Summary
+- Magic — All units
 
 #### Buffs
 
@@ -1802,34 +1710,35 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (Mythic+) — Self — On skill
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
-- Cooldown-gated proc (base) — Allies
+- Cooldown-gated trigger (base) — Allies
 
-#### Damage
+## Himmel - The Legendary Hero
 
-- Magic — All units
+### Synergies
+
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Enables Party composition via Support (party slot)
+2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high); Enables Party composition via Mage (party slot)
+3. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high); Enables Party composition via Support (party slot)
+4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
+5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Enables Party composition via Tank (party slot)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-4. **Isabella - The Taken Soul** — Energy via Energy recovery (single target, low, conditional (frequent)); Healing via Healing (area, high)
-5. **Evie - Royal Envoy** — ATK via ATK buff (multiple targets, high); Healing via Healing (single target, medium)
-
-## Himmel - The Legendary Hero
-
-### Summary
+- Physical — Area, Multiple targets, Single target
+- True damage (HP-based) — All units
 
 #### Buffs
 
@@ -1842,37 +1751,29 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (base) — Multiple targets — On skill
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
 - Party composition (base) — Allies
 - Boss encounter (Supreme+) — —
 
-#### Damage
+## Hodgkin - Reviled Captain
 
-- Physical — Area, Multiple targets, Single target
-- True damage (HP-based) — All units
+### Synergies
+
+_No synergy partners matched stat buffs or enablers._
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- Haste
-- DEF Penetration
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Enables Party composition via Support (party slot)
-2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high); Enables Party composition via Mage (party slot)
-3. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high); Haste via Haste buff (multiple targets, high); Enables Party composition via Support (party slot)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium)
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Enables Party composition via Tank (party slot)
-
-## Hodgkin - Reviled Captain
-
-### Summary
+- Physical — Arc, Area, Single target
 
 #### Buffs
 
@@ -1885,35 +1786,33 @@ _No synergy partners matched stat buffs or enablers._
 - Vitality debuff (EX+5) — Single target — `low`
 - Phys DEF debuff (Supreme+) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (Mythic+) — Area
 
-#### Damage
-
-- Physical — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
+## Hugin - Maverick Smith
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Hugin - Maverick Smith
+1. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+3. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+5. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Multiple targets, Single target
 
 #### Buffs
 
@@ -1921,64 +1820,62 @@ _No synergy partners matched stat buffs or enablers._
 - Haste buff (base) — Multiple targets — `high`
 - Shield (base) — Single target — `high`
 
-#### Damage
-
-- Physical — Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Energy
-- Primary damage type (unit): **Physical**
+## Igor - Mad Dagger
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-
-## Igor - Mad Dagger
+1. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
+2. **Ravion - Twilight's Burden** — Life Drain via Lifedrain buff (multiple targets, high)
+3. **Satrana - Ember Enchantress** — Life Drain via Lifedrain buff (arc, high)
+4. **Kruger - Dauntless Warrior** — Life Drain via Lifedrain buff (area, medium)
+5. **Zorya - Watcher in Stone** — Life Drain via Lifedrain buff (area, medium, conditional (frequent))
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Single target
 
 #### Buffs
 
 - Healing (base) — Single target — `low`
 - Lifedrain buff (Legendary+) — Self — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Single target
 - Untargetable (base) — Area
 
-#### Damage
+## Indris - Chain Breaker
 
-- Physical — All units, Area, Single target
+### Synergies
+
+1. **Pandora - Hope Unleashed** — Enables Multiple debuffs on target via 5 debuff types; Enables Debuff on target via ATK debuff (all units)
+2. **Sinbad - Seaside Savant** — Enables Multiple debuffs on target via 6 debuff types; Enables Debuff on target via ATK debuff (multiple targets)
+3. **Lyca - Keeper of Glades** — Enables Multiple debuffs on target via 2 debuff types; Enables Debuff on target via ATK debuff (all units)
+4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Enables Multiple debuffs on target via 2 debuff types; Enables Debuff on target via Max HP debuff (area)
+5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Enables Multiple debuffs on target via 2 debuff types; Enables Debuff on target via ATK debuff (multiple targets)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- Life Drain
-- Healing
+- ATK SPD
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Cecia - Requiem of Thorns** — Max HP via Max HP buff (single target, high); Life Drain via Lifedrain buff (area, low); Healing via Healing (arc, high)
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Indris - Chain Breaker
-
-### Summary
+- Physical — Area, Self, Single target
+- True damage — Multiple targets
+- True damage (HP-based) — Single target
 
 #### Buffs
 
@@ -1996,38 +1893,37 @@ _No synergy partners matched stat buffs or enablers._
 - Pin (base) — Area — `high`
 - Silence (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
-- Cooldown-gated proc (base) — Enemies
+- Cooldown-gated trigger (base) — Enemies
 - Debuff on target (base) — Enemies
 - Multiple debuffs on target (base) — Enemies
 
-#### Damage
+## Isabella - The Taken Soul
 
-- Physical — Area, Self, Single target
-- True damage — Multiple targets
-- True damage (HP-based) — Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
 - ATK SPD
-- Primary damage type (unit): **Physical**
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Pandora - Hope Unleashed** — Max HP via Max HP buff (single target, low); Enables Multiple debuffs on target via 5 debuff types; Enables Debuff on target via ATK debuff (all units)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Enables Multiple debuffs on target via 2 debuff types; Enables Debuff on target via ATK debuff (multiple targets)
-3. **Sinbad - Seaside Savant** — Enables Multiple debuffs on target via 6 debuff types; Enables Debuff on target via ATK debuff (multiple targets)
-4. **Lyca - Keeper of Glades** — Enables Multiple debuffs on target via 2 debuff types; Enables Debuff on target via ATK debuff (all units)
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Enables Multiple debuffs on target via ATK debuff; Enables Debuff on target via ATK debuff (area)
-
-## Isabella - The Taken Soul
-
-### Summary
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -2044,38 +1940,33 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (base) — Single target — Once
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
 - Once per battle (base) — Allies
 
-#### Damage
+## Kafra - Gale Rider
 
-- Magic — Area, Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
+4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high)
+5. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- ATK SPD
-- Energy
-- Haste
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
+- Max HP
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Haste via Haste buff (multiple targets, medium)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-
-## Kafra - Gale Rider
-
-### Summary
+- Physical — Single target
 
 #### Buffs
 
@@ -2095,27 +1986,35 @@ _No synergy partners matched stat buffs or enablers._
 - Move (base) — Single target — `medium`
 - Stun (base) — Single target — `medium`
 
-#### Damage
+#### Special Effects
 
-- Physical — Single target
+##### Provides
 
-#### Stats the unit benefits from
-
-- ATK
-- Healing
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-2. **Evie - Royal Envoy** — ATK via ATK buff (multiple targets, high); Healing via Healing (single target, medium)
-3. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
-4. **Isabella - The Taken Soul** — Healing via Healing (area, high)
-5. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
+- Marked target (focus fire) (base) — Single target
 
 ## Koko - Wild Child
 
+### Synergies
+
+1. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high)
+2. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+4. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
+5. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Single target
+- True damage — All units
 
 #### Buffs
 
@@ -2133,31 +2032,30 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Area — `medium`
 
-#### Damage
+## Kordan - Ironblood Chieftain
 
-- Physical — All units, Area, Single target
-- True damage — All units
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
+2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
+3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
+4. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
+5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
-- Life Drain
-- Haste
+- Max HP
 - Healing
+- DEF Penetration
+- Life Drain
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
-2. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, low); Haste via Haste buff (area, medium, conditional (frequent))
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-
-## Kordan - Ironblood Chieftain
-
-### Summary
+- Physical — Area, Multiple targets, Single target
 
 #### Buffs
 
@@ -2172,37 +2070,35 @@ _No synergy partners matched stat buffs or enablers._
 - Move (base) — Area — `high`
 - Pin (base) — Area — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Life Drain
-- Max HP
-- Magic DEF
-- DEF Penetration
-- Healing
-- Primary damage type (unit): **Physical**
+## Korin - Wood Warden
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-3. **Cecia - Requiem of Thorns** — Life Drain via Lifedrain buff (area, low); Max HP via Max HP buff (single target, high); Healing via Healing (arc, high)
-4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Korin - Wood Warden
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+2. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+3. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+4. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+5. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — Single target
+- True damage (HP-based) — Area, Single target
 
 #### Buffs
 
@@ -2215,31 +2111,21 @@ _No synergy partners matched stat buffs or enablers._
 
 - Pin (base) — Single target — `medium`
 
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage — Single target
-- True damage (HP-based) — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Max HP
-- ATK SPD
-- Primary damage type (unit): **Physical**
+## Kruger - Dauntless Warrior
 
 ### Synergies
 
-1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
-3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-
-## Kruger - Dauntless Warrior
+_No synergy partners matched stat buffs or enablers._
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -2250,28 +2136,26 @@ _No synergy partners matched stat buffs or enablers._
 
 - Phys DEF debuff (base) — Single target — `high`
 
-#### Damage
+## Kulu - Blast Master
 
-- Physical — Area, Single target
+### Synergies
+
+1. **Aliceth - Radiant Wings** — ATK via ATK buff (multiple targets, medium); DEF Penetration via DEF Penetration buff (single target, medium)
+2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+3. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- Life Drain
+- ATK SPD
+- DEF Penetration
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-5. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
-
-## Kulu - Blast Master
-
-### Summary
+- Physical — All units, Area, Single target
 
 #### Buffs
 
@@ -2288,33 +2172,37 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Area — On ultimate
 - Move (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
 - Summoning (base) — Area
 
-#### Damage
+## Laios - Dungeon Adventurer
 
-- Physical — All units, Area, Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
+3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
+5. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- DEF Penetration
 - ATK SPD
+- Haste
+- Max HP
+- Energy
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Aliceth - Radiant Wings** — ATK via ATK buff (multiple targets, medium); DEF Penetration via DEF Penetration buff (single target, medium)
-2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
-3. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
-
-## Laios - Dungeon Adventurer
-
-### Summary
+- Physical — Single target
 
 #### Buffs
 
@@ -2330,11 +2218,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Pin (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Single target
 - Summoning (base) — Single target
 
 ##### Requires
@@ -2343,33 +2230,29 @@ _No synergy partners matched stat buffs or enablers._
 - Stacked resource (base) — Enemies
 - Enemy monsters present (Mythic+) — Enemies
 
-#### Damage
-
-- Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Energy
-- Physical DEF
-- Magic DEF
-- Haste
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+## Lenya - Wild Cyclone
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
-2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-3. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-5. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high); Healing via Healing (arc, high)
-
-## Lenya - Wild Cyclone
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
+2. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+4. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
+5. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Crit
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
 
 #### Buffs
 
@@ -2383,29 +2266,24 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Self — Once
 - Stun (base) — Area — `high`
 
-#### Damage
+## Lily May - Twilight Tracker
 
-- Physical — Area, Self, Single target
+### Synergies
+
+1. **Aliceth - Radiant Wings** — ATK via ATK buff (multiple targets, medium); DEF Penetration via DEF Penetration buff (single target, medium)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Crit
-- Haste
-- Energy
-- Primary damage type (unit): **Physical**
+- DEF Penetration
+- Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-
-## Lily May - Twilight Tracker
-
-### Summary
+- Magic — All units, Single target
+- True damage (HP-based) — Self, Single target
 
 #### Buffs
 
@@ -2421,36 +2299,29 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Self — Start of battle
 - Interrupt (base) — All units — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
 - Untargetable (base) — All units
 
-#### Damage
+## Lorsan - Windweaver Protector
 
-- Magic — All units, Single target
-- True damage (HP-based) — Self, Single target
+### Synergies
+
+_No synergy partners matched stat buffs or enablers._
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- DEF Penetration
 - Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-3. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
-4. **Aliceth - Radiant Wings** — ATK via ATK buff (multiple targets, medium); DEF Penetration via DEF Penetration buff (single target, medium)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high)
-
-## Lorsan - Windweaver Protector
-
-### Summary
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -2463,34 +2334,34 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (Supreme+) — Self — On skill
 - Stun (EX+10) — Multiple targets — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
+## Lucca - Stalwart Fighter
 
 ### Synergies
 
-1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-
-## Lucca - Stalwart Fighter
+1. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+4. **Fay - Colorful Dancer** — Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low)
+5. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Physical DEF
+- Magic DEF
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
 
 #### Buffs
 
@@ -2505,30 +2376,26 @@ _No synergy partners matched stat buffs or enablers._
 - Interrupt (base) — Single target — `medium`
 - Stun (base) — Area — `medium`
 
-#### Damage
-
-- Physical — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Physical DEF
-- Max HP
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Physical**
+## Lucius - The Lightbringer
 
 ### Synergies
 
-1. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-
-## Lucius - The Lightbringer
+1. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
+2. **Isabella - The Taken Soul** — Healing via Healing (area, high)
+3. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
+4. **Mikola - Warbeat Compere** — Healing via Healing over time (all units, medium)
+5. **Lorsan - Windweaver Protector** — Healing via Healing (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Healing
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -2545,33 +2412,33 @@ _No synergy partners matched stat buffs or enablers._
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Reposition enemies (base) — Single target
 
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Healing
-- Primary damage type (unit): **Physical**
+## Lucy - Celestial Spirit Mage
 
 ### Synergies
 
-1. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-2. **Evie - Royal Envoy** — ATK via ATK buff (multiple targets, high); Healing via Healing (single target, medium)
-3. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
-4. **Isabella - The Taken Soul** — Healing via Healing (area, high)
-5. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
-
-## Lucy - Celestial Spirit Mage
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+2. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+3. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+4. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+5. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
 
 #### Buffs
 
@@ -2587,30 +2454,26 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Self — On skill
 - Stun (base) — Single target — `medium`
 
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- ATK SPD
-- Energy
-- Primary damage type (unit): **Magic**
+## Ludovic - Wreathed Eternalist
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high)
-3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high); Haste via Haste buff (multiple targets, high)
-5. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
-
-## Ludovic - Wreathed Eternalist
+1. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
+2. **Isabella - The Taken Soul** — Healing via Healing (area, high)
+3. **Mikola - Warbeat Compere** — Healing via Healing over time (all units, medium)
+4. **Lorsan - Windweaver Protector** — Healing via Healing (multiple targets, high)
+5. **Antandra - Desert Fury** — Healing via Healing (area, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Healing
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
 
 #### Buffs
 
@@ -2623,34 +2486,33 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Self — On skill
 - Stun (Supreme+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Revive ally (base) — Area
 
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
+## Lumont - Benign Horn
 
 ### Synergies
 
-1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-
-## Lumont - Benign Horn
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
+2. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
+3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+4. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
+5. **Florabelle - Blooming Maiden** — Haste via Haste buff (multiple targets, high, conditional (frequent)); Max HP via Shield (single target, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -2669,30 +2531,23 @@ _No synergy partners matched stat buffs or enablers._
 - Stun (base) — Area — `low`
 - Taunt (base) — Area — `medium`
 
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Physical DEF
-- Haste
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+## Lyca - Keeper of Glades
 
 ### Synergies
 
-1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-
-## Lyca - Keeper of Glades
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Self, Single target
 
 #### Buffs
 
@@ -2707,34 +2562,34 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (EX+10) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Single target
 
-#### Damage
-
-- Physical — All units, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Energy
-- Primary damage type (unit): **Physical**
+## Marcille - Elven Mage
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-2. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium)
-4. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
-5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
-
-## Marcille - Elven Mage
+1. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+3. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+5. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Single target
 
 #### Buffs
 
@@ -2746,7 +2601,7 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (Supreme+) — Self — On skill
 - Interrupt (Mythic+) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -2757,30 +2612,27 @@ _No synergy partners matched stat buffs or enablers._
 
 - Once per battle (Mythic+) — Allies
 
-#### Damage
+## Marilee - Forest's Arrow
 
-- Magic — All units, Area, Single target
+### Synergies
+
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
+3. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - ATK SPD
-- Haste
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
+- Crit
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-4. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-5. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Healing via Healing (arc, high)
-
-## Marilee - Forest's Arrow
-
-### Summary
+- Physical — Multiple targets, Single target
+- True damage — Multiple targets
 
 #### Buffs
 
@@ -2791,27 +2643,29 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Single target — `low`
 
-#### Damage
-
-- Physical — Multiple targets, Single target
-- True damage — Multiple targets
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Crit
-- Primary damage type (unit): **Physical**
+## Mehira - Mind Cager
 
 ### Synergies
 
-1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
-2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
-3. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
-
-## Mehira - Mind Cager
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
+2. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
+3. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
+4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
+5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Healing
+- Life Drain
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Self, Single target
 
 #### Buffs
 
@@ -2828,7 +2682,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Charm (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -2836,30 +2690,28 @@ _No synergy partners matched stat buffs or enablers._
 - HP threshold strike (Mythic+) — Self
 - Untargetable (Mythic+) — Self
 
-#### Damage
+## Mikola - Warbeat Compere
 
-- Magic — Area, Self, Single target
+### Synergies
+
+1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
+3. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
+5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Haste
-- Max HP
-- Life Drain
 - Healing
-- Primary damage type (unit): **Magic**
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-3. **Florabelle - Blooming Maiden** — Haste via Haste buff (multiple targets, high, conditional (frequent)); Max HP via Shield (single target, medium); Life Drain via Lifedrain buff (single target, medium, conditional (frequent)); Healing via Healing (area, medium, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-
-## Mikola - Warbeat Compere
-
-### Summary
+- Physical — Area, Multiple targets
 
 #### Buffs
 
@@ -2872,59 +2724,57 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (Supreme+) — Self — Conditional
 
-#### Damage
-
-- Physical — Area, Multiple targets
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
-
 ## Mirael - Scarlet Sorceress
-
-### Summary
-
-#### Buffs
-
-- ATK SPD buff (Legendary+) — Self — `medium`
-
-#### Special effects
-
-##### Provides
-
-- Summoning (base) — Single target
-
-#### Damage
-
-- DoT — Single target
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Primary damage type (unit): **Magic**
 
 ### Synergies
 
 1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
 2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
 
+### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — Single target
+- Magic — Area, Single target
+
+#### Buffs
+
+- ATK SPD buff (Legendary+) — Self — `medium`
+
+#### Special Effects
+
+##### Provides
+
+- Summoning (base) — Single target
+
 ## Nara - Wrathful Wraith
 
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
+2. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium)
+4. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
+5. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+- True damage — Single target
 
 #### Buffs
 
@@ -2940,30 +2790,29 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (Supreme+) — Self — Permanent
 
-#### Damage
+## Natsu - Fire Dragon Slayer Mage
 
-- Physical — Area, Single target
-- True damage — Single target
+### Synergies
+
+1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
+5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Energy
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+- Haste
+- Crit
+- Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Natsu - Fire Dragon Slayer Mage
-
-### Summary
+- DoT — Single target
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -2981,30 +2830,25 @@ _No synergy partners matched stat buffs or enablers._
 - Knock down (base) — Area — `low`
 - Stun (base) — Single target — `medium`
 
-#### Damage
-
-- DoT — Single target
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Crit
-- Haste
-- Primary damage type (unit): **Magic**
+## Nazrik - Soulstalker
 
 ### Synergies
 
-1. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium)
-3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high); Haste via Haste buff (multiple targets, high)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-
-## Nazrik - Soulstalker
+1. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
+2. **Marilee - Forest's Arrow** — Crit via Crit buff (single target, low)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Crit
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Self, Single target
+- True damage — Single target
+- True damage (HP-based) — Single target
 
 #### Buffs
 
@@ -3020,30 +2864,29 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Single target — `medium`
 
-#### Damage
-
-- Physical — Self, Single target
-- True damage — Single target
-- True damage (HP-based) — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Crit
-- Primary damage type (unit): **Physical**
+## Nerion - Bereaved Tide
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-3. **Marilee - Forest's Arrow** — ATK via ATK buff (area, high, conditional (frequent)); Crit via Crit buff (single target, low)
-4. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high)
-
-## Nerion - Bereaved Tide
+1. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high)
+3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+5. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Max HP
+- Energy
+- DEF Penetration
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Self, Single target
 
 #### Buffs
 
@@ -3058,99 +2901,86 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Single target — `medium`
 
-#### Damage
-
-- Magic — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Energy
-- DEF Penetration
-- Primary damage type (unit): **Magic**
+## Niru - Soul Collector
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-2. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium)
-4. **Aliceth - Radiant Wings** — ATK via ATK buff (multiple targets, medium); DEF Penetration via DEF Penetration buff (single target, medium)
-5. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
-
-## Niru - Soul Collector
+1. **Aliceth - Radiant Wings** — Enables Enemy defeat via Instant defeat
+2. **Harak - Deepsea Ravager** — Enables Enemy defeat via Instant defeat
+3. **Cassadee - Azure Prodigy** — Enables Ally blessing active via Ally blessing
+4. **Florabelle - Blooming Maiden** — Enables Ally blessing active via Ally blessing
+5. **Mehira - Mind Cager** — Enables Enemy defeat via HP threshold strike
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Self, Single target
 
 #### Buffs
 
 - Healing (base) — Single target — `low` — conditional (rare)
 - DEF buff (EX+5) — Self — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Spirit form ally (base) — Single target
+- Spirit form protection (base) — Single target
 - Start-of-battle cast (Mythic+) — Self
 
 ##### Requires
 
-- Blessed ally active (base) — Allies
+- Ally blessing active (base) — Allies
 - Enemy defeat (base) — Allies
-
-#### Damage
-
-- Magic — All units, Self, Single target
-
-#### Stats the unit benefits from
-
-- Max HP
-- ATK
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-3. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent)); Enables Blessed ally active via Ally blessing
-4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
 
 ## Odie - Desert Defender
 
+### Synergies
+
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
+
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- ATK SPD buff (Legendary+) — Self — `medium`
+- ATK SPD
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - DoT — Single target
 - Magic — Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Energy
-- ATK SPD
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-2. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium)
-4. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
-5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
+- ATK SPD buff (Legendary+) — Self — `medium`
 
 ## Pandora - Hope Unleashed
 
+### Synergies
+
+1. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+2. **Ravion - Twilight's Burden** — Energy via Energy recovery (multiple targets, high)
+3. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
+4. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium)
+5. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Single target
 
 #### Buffs
 
@@ -3171,35 +3001,35 @@ _No synergy partners matched stat buffs or enablers._
 
 - Move (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
 
-#### Damage
+## Pang - Bamboo Guardian
 
-- Magic — Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
 - Energy
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
+- DEF Penetration
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Pang - Bamboo Guardian
-
-### Summary
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -3212,51 +3042,13 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Self — On skill
 - Stun (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Transform (base) — Single target
 
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Energy
-- DEF Penetration
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-
 ## Parisa - Ode to Flowers
-
-### Summary
-
-#### Buffs
-
-- ATK SPD buff (base) — Self — `low`
-- ATK buff (Legendary+) — Self — `medium`
-
-#### Damage
-
-- Magic — Area, Multiple targets, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- ATK SPD
-- Primary damage type (unit): **Magic**
 
 ### Synergies
 
@@ -3266,9 +3058,53 @@ _No synergy partners matched stat buffs or enablers._
 4. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
 5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
 
+### Summary
+
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Self, Single target
+
+#### Buffs
+
+- ATK SPD buff (base) — Self — `low`
+- ATK buff (Legendary+) — Self — `medium`
+
+#### Special Effects
+
+##### Provides
+
+- Marked target (focus fire) (base) — Area
+
 ## Perseus - Chosen Champion
 
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
+2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high)
+3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high)
+5. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — Multiple targets
 
 #### Buffs
 
@@ -3282,30 +3118,27 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Multiple targets — On skill
 - Stun (base) — Area — `medium`
 
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage — Multiple targets
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Max HP
-- Magic DEF
-- Primary damage type (unit): **Physical**
+## Phraesto - Misty Scorpion
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Magic DEF via DEF buff (multiple targets, low)
-4. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-5. **Lumont - Benign Horn** — Magic DEF via DEF buff (area, high)
-
-## Phraesto - Misty Scorpion
+1. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -3318,36 +3151,33 @@ _No synergy partners matched stat buffs or enablers._
 - Stun (Mythic+) — Single target — `medium`
 - Taunt (Mythic+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Self
 
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
+## Pippa - The Muddled Magician
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Pippa - The Muddled Magician
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+2. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+4. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
+5. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
+- True damage — Area
 
 #### Buffs
 
@@ -3364,35 +3194,34 @@ _No synergy partners matched stat buffs or enablers._
 - Move (base) — Single target — `low`
 - Pin (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 
-#### Damage
+## Ravion - Twilight's Burden
 
-- Magic — Area, Multiple targets, Single target
-- True damage — Area
+### Synergies
+
+1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+2. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+3. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+4. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Haste
-- Max HP
-- Primary damage type (unit): **Magic**
+- Energy
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
-3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-
-## Ravion - Twilight's Burden
-
-### Summary
+- Physical — Area, Multiple targets, Single target
 
 #### Buffs
 
@@ -3413,7 +3242,7 @@ _No synergy partners matched stat buffs or enablers._
 - Knock down (base) — Multiple targets — `high`
 - Move (base) — Multiple targets — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -3423,29 +3252,21 @@ _No synergy partners matched stat buffs or enablers._
 
 - Boss encounter (base) — Allies
 
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Haste
-- Life Drain
-- Primary damage type (unit): **Physical**
+## Reinier - Symmetric Sin
 
 ### Synergies
 
-1. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-3. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium); Haste via Haste buff (multiple targets, high)
-4. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
-
-## Reinier - Symmetric Sin
+_No synergy partners matched stat buffs or enablers._
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
 
 #### Buffs
 
@@ -3465,27 +3286,26 @@ _No synergy partners matched stat buffs or enablers._
 - Move (base) — Multiple targets — `high`
 - Knock down (Mythic+) — Single target — `low`
 
-#### Damage
-
-- Magic — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Healing
-- Primary damage type (unit): **Magic**
+## Rhys - Fiery Cavalier
 
 ### Synergies
 
-1. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-2. **Evie - Royal Envoy** — ATK via ATK buff (multiple targets, high); Healing via Healing (single target, medium)
-3. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
-4. **Isabella - The Taken Soul** — Healing via Healing (area, high)
-5. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
-
-## Rhys - Fiery Cavalier
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
+3. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
+4. **Marilee - Forest's Arrow** — Crit via Crit buff (single target, low)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Crit
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Single target
 
 #### Buffs
 
@@ -3496,29 +3316,27 @@ _No synergy partners matched stat buffs or enablers._
 
 - Move (base) — Single target — `high`
 
-#### Damage
-
-- Physical — Arc, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Crit
-- Healing
-- Primary damage type (unit): **Physical**
+## Rowan - The Roamer
 
 ### Synergies
 
-1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Healing via Healing (arc, high)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Evie - Royal Envoy** — ATK via ATK buff (multiple targets, high); Healing via Healing (single target, medium)
-4. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
-5. **Isabella - The Taken Soul** — Healing via Healing (area, high)
-
-## Rowan - The Roamer
+1. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+3. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+5. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Single target
 
 #### Buffs
 
@@ -3532,7 +3350,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Energy drain (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -3542,32 +3360,21 @@ _No synergy partners matched stat buffs or enablers._
 
 - Once per battle (Mythic+) — Allies
 
-#### Damage
-
-- Magic — Single target
-
-#### Stats the unit benefits from
-
-- Energy
-- ATK
-- Max HP
-- Haste
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
+## Saida - Vampiric Vine
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — Energy via Energy recovery (multiple targets, high); ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium)
-2. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-3. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high); Healing via Healing over time (single target, low)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-5. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-
-## Saida - Vampiric Vine
+_No synergy partners matched stat buffs or enablers._
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Multiple targets, Self, Single target
 
 #### Buffs
 
@@ -3585,7 +3392,7 @@ _No synergy partners matched stat buffs or enablers._
 - Interrupt (base) — Area — `high`
 - Move (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -3595,28 +3402,21 @@ _No synergy partners matched stat buffs or enablers._
 
 - Boss encounter (base) — Enemies
 
-#### Damage
-
-- Magic — All units, Area, Multiple targets, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
+## Salazer - Lash of Bantus
 
 ### Synergies
 
-1. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-2. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-3. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-4. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-5. **Cecia - Requiem of Thorns** — Max HP via Max HP buff (single target, high); Healing via Healing (arc, high)
-
-## Salazer - Lash of Bantus
+_No synergy partners matched stat buffs or enablers._
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
 
 #### Buffs
 
@@ -3629,35 +3429,27 @@ _No synergy partners matched stat buffs or enablers._
 
 - Pin (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Single target
 
-#### Damage
-
-- Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Life Drain
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+## Satrana - Ember Enchantress
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Cecia - Requiem of Thorns** — Life Drain via Lifedrain buff (area, low); Max HP via Max HP buff (single target, high); Healing via Healing (arc, high)
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Satrana - Ember Enchantress
+_No synergy partners matched stat buffs or enablers._
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Arc, Area, Single target
 
 #### Buffs
 
@@ -3673,34 +3465,34 @@ _No synergy partners matched stat buffs or enablers._
 
 - Charm (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
 
-#### Damage
-
-- Magic — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Life Drain
-- Primary damage type (unit): **Magic**
+## Scarlita - Herald of Compassion
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-5. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
-
-## Scarlita - Herald of Compassion
+1. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+2. **Ravion - Twilight's Burden** — Energy via Energy recovery (multiple targets, high)
+3. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
+4. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium)
+5. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Execution
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Arc, Area, Single target
+- True damage — Multiple targets
 
 #### Buffs
 
@@ -3716,38 +3508,36 @@ _No synergy partners matched stat buffs or enablers._
 - Move (base) — All units — `low`
 - Stun (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
 
-#### Damage
+## Seth - Swift Shadow
 
-- Physical — All units, Arc, Area, Single target
-- True damage — Multiple targets
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high)
+2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
+3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+4. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
+- Haste
+- Crit
 - Energy
-- Max HP
-- Execution
-- Physical DEF
-- Magic DEF
+- Life Drain
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Lumont - Benign Horn** — Physical DEF via DEF buff (area, high); Magic DEF via DEF buff (area, high)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Max HP via Shield (multiple targets, medium)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Physical DEF via DEF buff (multiple targets, low); Magic DEF via DEF buff (multiple targets, low)
-4. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-5. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
-
-## Seth - Swift Shadow
-
-### Summary
+- Physical — Self, Single target
 
 #### Buffs
 
@@ -3766,38 +3556,37 @@ _No synergy partners matched stat buffs or enablers._
 
 - Freeze (base) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
 
-#### Damage
+## Shadewing - Undying Vow
 
-- Physical — Self, Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Enables Debuff on target via ATK debuff (multiple targets)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Enables Debuff on target via ATK debuff (area)
+3. **Hepler - Master of Forms** — Max HP via Shield (multiple targets, low); Enables Debuff on target via Haste debuff (area); Enables Continuous damage on enemies via tick damage
+4. **Koko - Wild Child** — Max HP via Shield (single target, low); Life Drain via Lifedrain buff (multiple targets, medium); Enables Debuff on target via Damage taken debuff (area)
+5. **Natsu - Fire Dragon Slayer Mage** — Enables Debuff on target via Haste debuff (area); Enables Continuous damage on enemies via DoT
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Haste
-- Life Drain
-- Magic DEF
-- Crit
+- Max HP
 - Energy
-- Healing
-- Primary damage type (unit): **Physical**
+- Life Drain
+- Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-3. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-4. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-
-## Shadewing - Undying Vow
-
-### Summary
+- DoT — Single target
+- Magic — All units, Single target
+- True damage — Single target
 
 #### Buffs
 
@@ -3811,45 +3600,40 @@ _No synergy partners matched stat buffs or enablers._
 
 - Magic DEF debuff (base) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Debuff application (base) — Single target
 - DoT conversion (base) — All units
 - Invincibility (base) — All units
-- Ally HP drain (self-buff) (Supreme+) — Self
+- Damage leech from allies (Supreme+) — Self
 
 ##### Requires
 
 - Continuous damage on enemies (base) — Enemies
 - Debuff on target (base) — Enemies
 
-#### Damage
-
-- DoT — Single target
-- Magic — All units, Single target
-- True damage — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Life Drain
-- Primary damage type (unit): **Magic**
+## Shakir - Furious Howl
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Enables Debuff on target via ATK debuff (multiple targets)
-2. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Enables Debuff on target via ATK debuff (area)
-3. **Hepler - Master of Forms** — Max HP via Shield (multiple targets, low); Enables Debuff on target via Haste debuff (area); Enables Continuous damage on enemies via tick damage
-4. **Koko - Wild Child** — Max HP via Shield (single target, low); Life Drain via Lifedrain buff (multiple targets, medium); Enables Debuff on target via Damage taken debuff (area)
-5. **Natsu - Fire Dragon Slayer Mage** — Enables Debuff on target via Haste debuff (area); Enables Continuous damage on enemies via DoT
-
-## Shakir - Furious Howl
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+2. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+4. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
+5. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Multiple targets, Single target
 
 #### Buffs
 
@@ -3865,7 +3649,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (base) — Self — Form
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -3873,103 +3657,98 @@ _No synergy partners matched stat buffs or enablers._
 
 ##### Requires
 
-- Specific form active (base) — Enemies
-
-#### Damage
-
-- Physical — Arc, Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Life Drain
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-3. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-4. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+- Form or stance active (base) — Enemies
 
 ## Shemira - Corpsemaker
 
+### Synergies
+
+1. **Smokey & Meerky - Wasteland Apothecary** — Healing via Healing over time (area, medium); Energy via Energy recovery (area, medium)
+2. **Isabella - The Taken Soul** — Healing via Healing (area, high); Energy via Energy recovery (single target, low, conditional (frequent))
+3. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
+4. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
+5. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- Healing (base) — Self — `medium` — conditional (frequent)
-- Shield (base) — Single target — `medium`
-
-#### Special effects
-
-##### Provides
-
-- Summoning (base) — Self
+- Healing
+- Energy
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - Magic — All units, Area, Self, Single target
 - True damage (HP-based) — Area, Single target
 
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Silven - Heir of Glory
-
-### Summary
-
 #### Buffs
 
-- ATK SPD buff (Legendary+) — Self — `medium`
-- Energy recovery (Mythic+) — Self — `low`
+- Healing (base) — Self — `medium` — conditional (frequent)
+- Shield (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Summoning (base) — Single target
+- Summoning (base) — Self
+
+## Silven - Heir of Glory
+
+### Synergies
+
+1. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+3. **Ravion - Twilight's Burden** — Energy via Energy recovery (multiple targets, high)
+4. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
+5. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium)
+
+### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Energy
+- DEF Penetration
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - Magic — Single target
 - True damage (HP-based) — Self, Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Max HP
-- ATK SPD
-- Energy
-- DEF Penetration
-- Primary damage type (unit): **Magic**
+- ATK SPD buff (Legendary+) — Self — `medium`
+- Energy recovery (Mythic+) — Self — `low`
 
-### Synergies
+#### Special Effects
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Cecia - Requiem of Thorns** — Max HP via Max HP buff (single target, high); ATK SPD via ATK SPD buff (multiple targets, high)
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
-5. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium)
+##### Provides
+
+- Summoning (base) — Single target
 
 ## Silvina - The Taken Breath
 
+### Synergies
+
+1. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+3. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium)
+4. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium)
+5. **Athalia - Harbinger of Justice** — Max HP via Shield (single target, high)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Crit
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
 
 #### Buffs
 
@@ -3986,24 +3765,33 @@ _No synergy partners matched stat buffs or enablers._
 - Stun (base) — Single target — `low`
 - Frighten (EX+10) — Area — `low`
 
-#### Damage
+#### Special Effects
 
-- Physical — Single target
+##### Provides
 
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- Primary damage type (unit): **Physical**
-
-### Synergies
-
-1. **Marilee - Forest's Arrow** — ATK via ATK buff (area, high, conditional (frequent)); Crit via Crit buff (single target, low)
-2. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
+- Marked target (focus fire) (base) — Single target
 
 ## Sinbad - Seaside Savant
 
+### Synergies
+
+1. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+2. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+3. **Ravion - Twilight's Burden** — Energy via Energy recovery (multiple targets, high)
+4. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
+5. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium)
+
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Multiple targets, Self, Single target
 
 #### Buffs
 
@@ -4022,28 +3810,29 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (base) — Multiple targets — Conditional
 
-#### Damage
+#### Special Effects
 
-- Physical — Multiple targets, Self, Single target
+##### Provides
 
-#### Stats the unit benefits from
+- Marked target (focus fire) (base) — Multiple targets
 
-- ATK
-- ATK SPD
-- Energy
-- Primary damage type (unit): **Physical**
+## Smokey & Meerky - Wasteland Apothecary
 
 ### Synergies
 
 1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
 2. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium)
-4. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
-5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
-
-## Smokey & Meerky - Wasteland Apothecary
+3. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
+4. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
+5. **Scarlita - Herald of Compassion** — Energy via Energy recovery (area, low)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK
+- Energy
+- Primary damage type (unit): **Magic**
 
 #### Buffs
 
@@ -4057,25 +3846,22 @@ _No synergy partners matched stat buffs or enablers._
 - Interrupt (base) — Area — `medium`
 - Stun (EX+10) — Single target — `low`
 
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
+## Solise - Floral Wonder
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-4. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-
-## Solise - Floral Wonder
+_No synergy partners matched stat buffs or enablers._
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Multiple targets, Single target
 
 #### Buffs
 
@@ -4087,36 +3873,34 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (base) — Self — Start of battle
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Single target
+- Summoning (base) — Single target
 - Ally blessing (Mythic+) — Single target
 
-#### Damage
+## Sonja - Crimson Queenpin
 
-- Magic — All units, Multiple targets, Single target
+### Synergies
+
+1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
+5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Magic DEF
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
+- Haste
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Magic DEF via DEF buff (multiple targets, low); Healing via Healing (arc, high, conditional (frequent))
-2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-5. **Cecia - Requiem of Thorns** — Max HP via Max HP buff (single target, high); Healing via Healing (arc, high)
-
-## Sonja - Crimson Queenpin
-
-### Summary
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -4128,29 +3912,27 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Area — `low`
 
-#### Damage
+## Soren - Silent Fury
 
-- Physical — Area, Single target
+### Synergies
+
+1. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+3. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+5. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
-- ATK
-- Magic DEF
 - Haste
 - Energy
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
-4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
-5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
-
-## Soren - Silent Fury
-
-### Summary
+- Physical — Area, Multiple targets, Self, Single target
 
 #### Buffs
 
@@ -4165,30 +3947,28 @@ _No synergy partners matched stat buffs or enablers._
 - Move (base) — Multiple targets — `high`
 - Stun (base) — Area — `medium`
 
-#### Damage
-
-- Physical — Area, Multiple targets, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
+## Sylphira - Sovereign of Song
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-3. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-4. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-
-## Sylphira - Sovereign of Song
+1. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
+2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
+3. **Isabella - The Taken Soul** — Haste via Haste buff (multiple targets, low, conditional (frequent)); Healing via Healing (area, high)
+4. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
+5. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Healing
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+- True damage (HP-based) — Single target
 
 #### Buffs
 
@@ -4211,37 +3991,33 @@ _No synergy partners matched stat buffs or enablers._
 - Knock down (base) — Area — `medium`
 - Silence (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Dispel debuffs (Mythic+) — Self
 
-#### Damage
+## Talene - Resurging Flame
 
-- Magic — Area, Single target
-- True damage (HP-based) — Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Perseus - Chosen Champion** — ATK via ATK buff (multiple targets, medium); Max HP via Max HP buff (area, low)
+4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high)
+5. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Haste
 - Max HP
-- Life Drain
-- Healing
 - Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-3. **Florabelle - Blooming Maiden** — Haste via Haste buff (multiple targets, high, conditional (frequent)); Max HP via Shield (single target, medium); Life Drain via Lifedrain buff (single target, medium, conditional (frequent)); Healing via Healing (area, medium, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-
-## Talene - Resurging Flame
-
-### Summary
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -4250,36 +4026,35 @@ _No synergy partners matched stat buffs or enablers._
 - Lifedrain buff (base) — Area — `low`
 - ATK buff (Legendary+) — Self — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 - Transform (base) — Area
 
-#### Damage
+## Tasi - Fairy of Dreams
 
-- Magic — Area, Single target
+### Synergies
+
+1. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+2. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
+3. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
+5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- Life Drain
-- Healing
+- Haste
 - Primary damage type (unit): **Magic**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Cecia - Requiem of Thorns** — Max HP via Max HP buff (single target, high); Life Drain via Lifedrain buff (area, low); Healing via Healing (arc, high)
-3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-
-## Tasi - Fairy of Dreams
-
-### Summary
+- DoT — All units, Single target
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -4295,40 +4070,40 @@ _No synergy partners matched stat buffs or enablers._
 - Sleep (base) — Single target — `high`
 - Stun (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
-- Mass sleep (base) — Single target
+- Sleep (area) (base) — Single target
 - Summoning (base) — All units
 - Transform (base) — Area
 
-#### Damage
+## Temesia - Lightsavior
 
-- DoT — All units, Single target
-- Magic — Area, Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Healing via Healing over time (area, medium); Energy via Energy recovery (area, medium)
+3. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
+4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
+5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
+- ATK SPD
 - Max HP
-- Haste
-- DEF Penetration
 - Healing
-- Primary damage type (unit): **Magic**
+- Energy
+- Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-2. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium)
-3. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-4. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high); Haste via Haste buff (multiple targets, high)
-
-## Temesia - Lightsavior
-
-### Summary
+- Physical — All units, Area, Single target
+- True damage — Single target
 
 #### Buffs
 
@@ -4348,38 +4123,34 @@ _No synergy partners matched stat buffs or enablers._
 - Interrupt (base) — Single target — `high`
 - Knock down (base) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — All units
 
-#### Damage
-
-- Physical — All units, Area, Single target
-- True damage — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Haste
-- Energy
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+## Thador - Ironsworn General
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Max HP via Shield (multiple targets, medium)
-2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-3. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high); Healing via Healing (arc, high)
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-
-## Thador - Ironsworn General
+1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
+3. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
+4. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
+5. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Crit
+- Healing
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
 
 #### Buffs
 
@@ -4396,35 +4167,33 @@ _No synergy partners matched stat buffs or enablers._
 
 - Knock down (base) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (Mythic+) — Single target
 
-#### Damage
-
-- Physical — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+## Thoran - Fallen King
 
 ### Synergies
 
-1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-
-## Thoran - Fallen King
+1. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Self, Single target
 
 #### Buffs
 
@@ -4437,30 +4206,26 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (base) — Self — On skill
 - Interrupt (base) — Single target — `low`
 
-#### Damage
-
-- Physical — Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Life Drain
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
+## Tilaya - Wild Blade
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-3. **Cecia - Requiem of Thorns** — Life Drain via Lifedrain buff (area, low); Max HP via Max HP buff (single target, high); Healing via Healing (arc, high)
-4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-5. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-
-## Tilaya - Wild Blade
+1. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+3. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium)
+4. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium)
+5. **Athalia - Harbinger of Justice** — Max HP via Shield (single target, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Single target
 
 #### Buffs
 
@@ -4474,34 +4239,33 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (base) — Arc — Start of battle
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Start-of-battle cast (base) — Arc
 
-#### Damage
-
-- Physical — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
+## Ulmus - Grove Keeper
 
 ### Synergies
 
-1. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-2. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-3. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
-
-## Ulmus - Grove Keeper
+1. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+3. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
+4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
+5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -4517,30 +4281,30 @@ _No synergy partners matched stat buffs or enablers._
 - Knock down (Mythic+) — Single target — `high`
 - Move (Supreme+) — Area — `low`
 
-#### Damage
+## Vala - Phantom of Oakenfell
 
-- Physical — Area, Single target
+### Synergies
+
+1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+2. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
+3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Healing via Healing over time (area, medium); Energy via Energy recovery (area, medium)
+4. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
+5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Max HP
-- Energy
-- Life Drain
+- Haste
 - Healing
+- Energy
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-3. **Cecia - Requiem of Thorns** — Max HP via Max HP buff (single target, high); Life Drain via Lifedrain buff (area, low); Healing via Healing (arc, high)
-4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-5. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-
-## Vala - Phantom of Oakenfell
-
-### Summary
+- Physical — Single target
+- True damage — Single target
 
 #### Buffs
 
@@ -4556,41 +4320,33 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
+- Marked target (focus fire) (base) — Self
 - Untargetable (Mythic+) — Multiple targets
 
 ##### Requires
 
 - Enemy defeat (Legendary+) — Enemies
 
-#### Damage
+## Valen - Roving Swordsman
 
-- Physical — Single target
-- True damage — Single target
+### Synergies
+
+_No synergy partners matched stat buffs or enablers._
+
+### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Haste
-- Max HP
-- Energy
-- Healing
 - Primary damage type (unit): **Physical**
 
-### Synergies
+#### Damage
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low)
-3. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-4. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-
-## Valen - Roving Swordsman
-
-### Summary
+- Physical — Area, Single target
 
 #### Buffs
 
@@ -4605,33 +4361,36 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (Supreme+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
 
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Primary damage type (unit): **Physical**
+## Valka - Forsaken Blade
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Energy via Energy recovery (multiple targets, high)
-2. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium)
-4. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
-5. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
-
-## Valka - Forsaken Blade
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high); Enables Adjacent allies via Multiple ally buffs
+2. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Enables Adjacent allies via Multiple ally buffs
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium); Enables Adjacent allies via Multiple ally buffs
+4. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Enables Adjacent allies via Multiple ally buffs
+5. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high); Enables Adjacent allies via Multiple ally buffs
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage (HP-based) — Area
 
 #### Buffs
 
@@ -4648,38 +4407,34 @@ _No synergy partners matched stat buffs or enablers._
 - Knock down (base) — Area — `high`
 - Stun (base) — Area — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
 - Adjacent allies (base) — Allies
 
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage (HP-based) — Area
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- ATK SPD
-- Energy
-- Life Drain
-- Healing
-- Primary damage type (unit): **Physical**
+## Velara - Pale Votary
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Enables Adjacent allies via Multiple ally buffs
-2. **Cecia - Requiem of Thorns** — Max HP via Max HP buff (single target, high); ATK SPD via ATK SPD buff (multiple targets, high); Life Drain via Lifedrain buff (area, low); Healing via Healing (arc, high); Enables Adjacent allies via Multiple ally buffs
-3. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Healing via Healing (multiple targets, low); Enables Adjacent allies via Multiple ally buffs
-4. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium); Enables Adjacent allies via Multiple ally buffs
-5. **Isabella - The Taken Soul** — Energy via Energy recovery (single target, low, conditional (frequent)); Healing via Healing (area, high); Enables Adjacent allies via Multiple ally buffs
-
-## Velara - Pale Votary
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
+2. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium)
+4. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
+5. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
 
 #### Buffs
 
@@ -4695,7 +4450,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Pin (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -4706,29 +4461,26 @@ _No synergy partners matched stat buffs or enablers._
 
 - Boss encounter (base) — Allies
 
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
+## Viperian - Shadow Serpent
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high)
-2. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium)
-4. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
-5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-
-## Viperian - Shadow Serpent
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
+2. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
+3. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
+4. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
+5. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
 
 #### Buffs
 
@@ -4744,30 +4496,28 @@ _No synergy partners matched stat buffs or enablers._
 
 - Unaffected immunity (base) — Self — Start of battle
 
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Life Drain
-- Healing
-- Primary damage type (unit): **Magic**
+## Walker - Wildland Outlaw
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-3. **Florabelle - Blooming Maiden** — Max HP via Shield (single target, medium); Haste via Haste buff (multiple targets, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, medium, conditional (frequent)); Healing via Healing (area, medium, conditional (frequent))
-4. **Mikola - Warbeat Compere** — Haste via Haste buff (multiple targets, high); Healing via Healing over time (all units, medium)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-
-## Walker - Wildland Outlaw
+1. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
+2. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
+3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
+4. **Kruger - Dauntless Warrior** — Max HP via Shield (single target, low); Life Drain via Lifedrain buff (area, medium)
+5. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Max HP
+- Crit
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Self, Single target
 
 #### Buffs
 
@@ -4780,29 +4530,27 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Single target — `medium`
 
-#### Damage
-
-- Physical — Arc, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Crit
-- Life Drain
-- Primary damage type (unit): **Physical**
+## Zandrok - Watchful Edge
 
 ### Synergies
 
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-2. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
+1. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Max HP via Max HP buff (multiple targets, high)
+2. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high); Max HP via Shield (single target, high)
 3. **Lucius - The Lightbringer** — Max HP via Shield (area, high)
-4. **Marilee - Forest's Arrow** — ATK via ATK buff (area, high, conditional (frequent)); Crit via Crit buff (single target, low)
-5. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, low)
-
-## Zandrok - Watchful Edge
+4. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
+5. **Florabelle - Blooming Maiden** — Haste via Haste buff (multiple targets, high, conditional (frequent)); Max HP via Shield (single target, medium)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Self, Single target
 
 #### Buffs
 
@@ -4814,34 +4562,29 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 
-#### Damage
-
-- Physical — Area, Multiple targets, Self, Single target
-
-#### Stats the unit benefits from
-
-- Max HP
-- Haste
-- Life Drain
-- Primary damage type (unit): **Physical**
+## Zanie - Timeless Tinkerer
 
 ### Synergies
 
-1. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high)
-2. **Ravion - Twilight's Burden** — Max HP via Shield (multiple targets, medium); Haste via Haste buff (multiple targets, medium); Life Drain via Lifedrain buff (multiple targets, high)
-3. **Hugin - Maverick Smith** — Max HP via Shield (single target, high); Haste via Haste buff (multiple targets, high)
-4. **Florabelle - Blooming Maiden** — Max HP via Shield (single target, medium); Haste via Haste buff (multiple targets, high, conditional (frequent)); Life Drain via Lifedrain buff (single target, medium, conditional (frequent))
-5. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
-
-## Zanie - Timeless Tinkerer
+1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
+2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
 
 #### Buffs
 
@@ -4859,30 +4602,27 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (base) — Single target — `low`
 
-#### Damage
-
-- Physical — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Max HP
-- DEF Penetration
-- Healing
-- Primary damage type (unit): **Physical**
+## Zorya - Watcher in Stone
 
 ### Synergies
 
-1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high); Max HP via Max HP buff (single target, high); Healing via Healing (arc, high)
-2. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
-3. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
-4. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
-5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium)
-
-## Zorya - Watcher in Stone
+1. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high); Energy via Energy recovery (area, medium); Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
+2. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
+3. **Temesia - Lightsavior** — Energy via Energy recovery (area, high); Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
+4. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium); Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
+5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
 
 ### Summary
+
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Arc, Area, Single target
 
 #### Buffs
 
@@ -4901,7 +4641,7 @@ _No synergy partners matched stat buffs or enablers._
 - Knock down (base) — Arc — `medium`
 - Stun (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -4911,25 +4651,3 @@ _No synergy partners matched stat buffs or enablers._
 ##### Requires
 
 - Ally Ultimate casts (Mythic+) — Allies
-
-#### Damage
-
-- Magic — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Life Drain
-- Haste
-- Healing
-- Primary damage type (unit): **Magic**
-
-### Synergies
-
-1. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Max HP via Shield (multiple targets, medium); Energy via Energy recovery (multiple targets, high); Life Drain via Lifedrain buff (multiple targets, high); Haste via Haste buff (multiple targets, medium); Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
-2. **Elijah & Lailah - Celestial Twins** — Max HP via Max HP buff (multiple targets, high); Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
-3. **Smokey & Meerky - Wasteland Apothecary** — ATK via ATK buff (multiple targets, low); Energy via Energy recovery (area, medium); Healing via Healing over time (area, medium); Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
-4. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium); Haste via Haste buff (multiple targets, high); Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
-5. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high); Enables Ally Ultimate casts via Start-of-battle Ultimate

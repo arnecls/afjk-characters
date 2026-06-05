@@ -76,10 +76,20 @@ For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- DEF Penetration
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
+- Ally empower buff (base) — Single target — `high`
 - Attack range buff (base) — Single target — `high`
-- Brightfeather ally buff (base) — Single target — `high`
 - DEF Penetration buff (base) — Single target — `medium`
 - Invincible (base) — Self — `high` — conditional (rare)
 - ATK buff (Legendary+) — Multiple targets — `medium`
@@ -96,36 +106,23 @@ For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant 
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Brightfeather empower (base) — Single target
 - HP threshold strike (base) — Multiple targets
 - Instant defeat (base) — Multiple targets
 - Invincibility (base) — Single target
-- Mark (base) — Multiple targets
+- Marked target (focus fire) (base) — Single target
 - Reposition enemies (base) — Single target
 - Untargetable (base) — Multiple targets
 - Fatal blow save (Mythic+) — Area
 
 ##### Requires
 
-- Cooldown-gated proc (base) — Allies
+- Cooldown-gated trigger (base) — Allies
 - Ranged damage from allies (base) — Allies
 - Debuff on target (Legendary+) — Enemies
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- DEF Penetration
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Alna - Frozen Mother
 
@@ -205,6 +202,16 @@ Alna and her Winter Warrior gain a 15% increase to their basic stats until one o
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Healing
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Arc, Self, Single target
+
 #### Buffs
 
 - Healing (base) — Self — `low`
@@ -220,25 +227,13 @@ Alna and her Winter Warrior gain a 15% increase to their basic stats until one o
 
 - Freeze (Supreme+) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Self
 - Start-of-battle cast (base) — All units
-- Summoning (base) — All units
+- Summoning (base) — Self
 - Damage and control immunity (Mythic+) — Self
-
-#### Damage
-
-- Physical — All units, Arc, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Alsa - Desert Flare
 
@@ -317,6 +312,16 @@ Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affec
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Self, Single target
+
 #### Buffs
 
 - Shield (base) — Self — `medium`
@@ -334,23 +339,12 @@ Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affec
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
-- Combat Stance active (base) — Enemies
-- Cooldown-gated proc (base) — Enemies
-
-#### Damage
-
-- Magic — All units, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Primary damage type (unit): **Magic**
+- Cooldown-gated trigger (base) — Enemies
+- Form or stance active (base) — Enemies
 
 ## Antandra - Desert Fury
 
@@ -429,6 +423,16 @@ Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 s
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Self, Single target
+
 #### Buffs
 
 - Damage taken reduction (base) — Area — `low` — conditional (rare)
@@ -443,24 +447,11 @@ Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 s
 - Stun (base) — Area — `high`
 - Taunt (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
 - Once per battle (Mythic+) — Allies
-
-#### Damage
-
-- Physical — Arc, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Physical DEF
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Arden - Oak Sage
 
@@ -536,6 +527,16 @@ Arden reduces the lightning strike interval of Force of Nature for the same enem
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
+
 #### Buffs
 
 - ATK buff (Legendary+) — Self — `medium`
@@ -544,21 +545,11 @@ Arden reduces the lightning strike interval of Force of Nature for the same enem
 
 - Pin (base) — Multiple targets — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Multiple targets
-
-#### Damage
-
-- Magic — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Primary damage type (unit): **Magic**
 
 ## Atalanta - Fortune Finder
 
@@ -637,6 +628,16 @@ Atalanta recovers 10% of max HP every time an enemy is directly hit by Wild Snip
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Physical DEF
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
+
 #### Buffs
 
 - Haste buff (Legendary+) — Self — `high` — conditional (frequent)
@@ -652,25 +653,12 @@ Atalanta recovers 10% of max HP every time an enemy is directly hit by Wild Snip
 - Pin (base) — Single target — `medium`
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Reposition enemies (base) — Single target
 - Stat steal (EX+10) — Single target
-
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Physical DEF
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Athalia - Harbinger of Justice
 
@@ -748,6 +736,17 @@ Vengeance Charge and Sacred Slash can reduce the target's shield value, up to 80
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Crit
+- Execution
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Single target
+- True damage — All units, Single target
+
 #### Buffs
 
 - Damage taken reduction (base) — Area — `medium` — conditional (frequent)
@@ -766,25 +765,12 @@ Vengeance Charge and Sacred Slash can reduce the target's shield value, up to 80
 - Unaffected immunity (base) — Area — On skill
 - Knock down (base) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
 - Transform (base) — Area
-
-#### Damage
-
-- Physical — All units, Area, Single target
-- True damage — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- Execution
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Aurora - Celestial of Dreams
 
@@ -858,6 +844,16 @@ If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, e
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
+
 #### Buffs
 
 - ATK buff (base) — Multiple targets — `high`
@@ -873,23 +869,13 @@ If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, e
 - Unaffected immunity (base) — Self — On skill
 - Sleep (base) — Multiple targets — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Multiple targets
 - Start-of-battle cast (base) — Multiple targets
 - Summoning (base) — Self
-
-#### Damage
-
-- Magic — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Primary damage type (unit): **Magic**
 
 ## Baelran - Dawnblade
 
@@ -964,6 +950,19 @@ The extra damage caused by the Divine Light can also reduce the max HP of non-bo
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+- True damage — Area, Single target
+- True damage (HP-based) — Arc, Area
+
 #### Buffs
 
 - Healing (base) — Arc — `medium`
@@ -981,7 +980,7 @@ The extra damage caused by the Divine Light can also reduce the max HP of non-bo
 - Unaffected immunity (base) — Self — Start of battle
 - Knock down (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -990,22 +989,8 @@ The extra damage caused by the Divine Light can also reduce the max HP of non-bo
 
 ##### Requires
 
-- Specific form active (base) — Enemies
+- Form or stance active (base) — Enemies
 - Boss encounter (Supreme+) — Enemies
-
-#### Damage
-
-- Physical — Area, Single target
-- True damage — Area, Single target
-- True damage (HP-based) — Arc, Area
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Berial - Sinister Jester
 
@@ -1084,6 +1069,15 @@ Increases the hiding duration after being defeated by 10 s.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — Area
+- Magic — Multiple targets, Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `high`
@@ -1098,26 +1092,13 @@ Increases the hiding duration after being defeated by 10 s.
 
 - Frighten (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
 - Revive ally (base) — Single target
-- Named companion unit (Mythic+) — Single target
-- Summoning (EX+5) — Single target
-
-#### Damage
-
-- DoT — Area
-- Magic — Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
+- Summoning (Mythic+) — Single target
 
 ## Bonnie - Obsidian Claws
 
@@ -1192,6 +1173,15 @@ When the Aging effect reaches its maximum stack on an enemy, their magic damage 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+
 #### Buffs
 
 - Invincible (base) — Self — `high`
@@ -1207,7 +1197,7 @@ When the Aging effect reaches its maximum stack on an enemy, their magic damage 
 
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1217,19 +1207,10 @@ When the Aging effect reaches its maximum stack on an enemy, their magic damage 
 
 ##### Requires
 
-- Aging on target (base) — Enemies
 - Debuff on target (base) — Enemies
+- Debuff on target (Aging) (base) — Enemies
+- Form or stance active (base) — Enemies
 - Magic damage from allies (base) — Allies
-- Specific form active (base) — Enemies
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Primary damage type (unit): **Magic**
 
 ## Brutus - Blood Claw
 
@@ -1305,6 +1286,16 @@ Brutus increases the duration of damage immunity and unaffected status from Indo
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- DoT — Area
+- Physical — Arc, Area, Single target
+
 #### Buffs
 
 - Lifedrain buff (base) — Single target — `high`
@@ -1317,18 +1308,6 @@ Brutus increases the duration of damage immunity and unaffected status from Indo
 
 - Unaffected immunity (base) — Self — On skill
 - Taunt (base) — Area — `high`
-
-#### Damage
-
-- DoT — Area
-- Physical — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Life Drain
-- Max HP
-- Primary damage type (unit): **Physical**
 
 ## Bryon - Evergreen Sentinel
 
@@ -1406,6 +1385,16 @@ Bryon generates two leaves beside Elona if the falcon is on the battlefield when
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — Area
+- Magic — Single target
+
 #### Buffs
 
 - Haste buff (Legendary+) — Self — `low`
@@ -1421,29 +1410,14 @@ Bryon generates two leaves beside Elona if the falcon is on the battlefield when
 - Interrupt (base) — Single target — `low`
 - Stun (Mythic+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Energy steal (base) — Single target
-- Named companion unit (base) — Self
 - Start-of-battle cast (base) — Single target
-- Summoning (base) — Single target
+- Summoning (base) — Self
 - Untargetable (EX+5) — Single target
-
-#### Damage
-
-- DoT — Area
-- Magic — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Haste
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Callan - Grim Soulkeeper
 
@@ -1522,6 +1496,16 @@ When gaining a shield, Callan recovers HP equal to 15% of the shield's max value
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Magic — Multiple targets
+- Physical — All units, Area, Self, Single target
+
 #### Buffs
 
 - Shield (base) — Self — `low` — conditional (rare)
@@ -1534,7 +1518,7 @@ When gaining a shield, Callan recovers HP equal to 15% of the shield's max value
 - Pin (base) — Multiple targets — `high`
 - Stun (Mythic+) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1544,18 +1528,6 @@ When gaining a shield, Callan recovers HP equal to 15% of the shield's max value
 ##### Requires
 
 - Stored resource threshold (base) — Enemies
-
-#### Damage
-
-- Magic — Multiple targets
-- Physical — All units, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- Max HP
-- ATK
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Carolina - Candlelight Specter
 
@@ -1630,6 +1602,15 @@ Carolina inflicts Frostbite when dealing damage with Snowball Witchery.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Crit
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Self, Single target
+
 #### Buffs
 
 - Crit buff (Legendary+) — Self — `low`
@@ -1642,16 +1623,6 @@ Carolina inflicts Frostbite when dealing damage with Snowball Witchery.
 #### Crowd Control
 
 - Freeze (base) — Area — `high`
-
-#### Damage
-
-- Magic — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- Primary damage type (unit): **Magic**
 
 ## Cassadee - Azure Prodigy
 
@@ -1732,6 +1703,15 @@ Cassadee reduces the Magic DEF of enemies hit by Running Tide by 20% for 10 s.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
+
 #### Buffs
 
 - Haste buff (Legendary+) — Self — `low`
@@ -1745,7 +1725,7 @@ Cassadee reduces the Magic DEF of enemies hit by Running Tide by 20% for 10 s.
 - Move (base) — All units — `low`
 - Stun (base) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -1753,18 +1733,7 @@ Cassadee reduces the Magic DEF of enemies hit by Running Tide by 20% for 10 s.
 
 ##### Requires
 
-- Blessed ally active (base) — Allies
-
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- DEF Penetration
-- Primary damage type (unit): **Magic**
+- Ally blessing active (base) — Allies
 
 ## Cecia - Requiem of Thorns
 
@@ -1842,10 +1811,22 @@ Reduces the required normal attacks to trigger Agonizing Puncture by -1 .
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- DEF Penetration
+- Physical DEF
+- Magic DEF
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- DoT — Arc, Single target
+- Physical — Area, Single target
+
 #### Buffs
 
 - ATK SPD buff (base) — Multiple targets — `high`
-- Healing (base) — Arc — `high`
 - Lifedrain buff (base) — Area — `low`
 - Max HP buff (base) — Single target — `high`
 
@@ -1857,36 +1838,17 @@ Reduces the required normal attacks to trigger Agonizing Puncture by -1 .
 
 - Pin (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Self
-- Summoning (base) — Arc
+- Summoning (base) — Self
 - Stat absorb (Mythic+) — Single target
 - Permanent stat absorb (EX+5) — Single target
 
 ##### Requires
 
-- Target not CC-immune (Mythic+) — Enemies
-
-#### Damage
-
-- DoT — Arc, Single target
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- ATK SPD
-- Life Drain
-- DEF Penetration
-- Physical DEF
-- Magic DEF
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
+- Enemy not CC-immune (Mythic+) — Enemies
 
 ## Chippy - Sidekick
 
@@ -1936,14 +1898,13 @@ Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage. These
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Physical**
+
 #### Damage
 
 - Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Primary damage type (unit): **Physical**
 
 ## Contess - Abyssal Rulekeeper
 
@@ -2021,6 +1982,17 @@ In regular battles, Contess stuns enemies who violate Code of Conduct - Be Civil
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Healing
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Multiple targets
+
 #### Buffs
 
 - Energy recovery (base) — Self — `high`
@@ -2038,23 +2010,11 @@ In regular battles, Contess stuns enemies who violate Code of Conduct - Be Civil
 - Silence (Mythic+) — Single target — `medium`
 - Stun (Supreme+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Start-of-battle cast (base) — All units
-
-#### Damage
-
-- Magic — All units, Multiple targets
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Cryonaia - Arctic Revenant
 
@@ -2134,6 +2094,17 @@ While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Max HP
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — Area
+- Magic — All units, Area, Single target
+
 #### Buffs
 
 - Shield (base) — Self — `high` — conditional (frequent)
@@ -2148,27 +2119,16 @@ While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies
 - Immune immunity (base) — Self — Conditional
 - Freeze (EX+15) — Self — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Isolate enemies (domain) (base) — All units
+- Enemy isolation (domain) (base) — All units
 - Summoning (base) — Area
 
 ##### Requires
 
 - Boss encounter (base) — Enemies
-
-#### Damage
-
-- DoT — Area
-- Magic — All units, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Primary damage type (unit): **Magic**
 
 ## Cyran - Umbral Weaver
 
@@ -2246,6 +2206,18 @@ Gains extra 200 Initial Energy.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Crit
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Single target
+- True damage — All units
+
 #### Buffs
 
 - Crit buff (Legendary+) — Self — `low`
@@ -2262,24 +2234,11 @@ Gains extra 200 Initial Energy.
 - Pin (base) — Area — `low`
 - Silence (EX+10) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — All units
-
-#### Damage
-
-- Magic — All units, Area, Single target
-- True damage — All units
-
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- ATK SPD
-- Energy
-- Primary damage type (unit): **Magic**
 
 ## Daimon - Forsaken Child
 
@@ -2353,6 +2312,15 @@ When an allied hero's shield expires, converts 50% of the remaining shield value
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Self, Single target
+- True damage (HP-based) — Area
+
 #### Buffs
 
 - Lifedrain buff (base) — Single target — `medium`
@@ -2362,18 +2330,6 @@ When an allied hero's shield expires, converts 50% of the remaining shield value
 #### Crowd Control
 
 - Frighten (Mythic+) — Area — `medium`
-
-#### Damage
-
-- Magic — Area, Self, Single target
-- True damage (HP-based) — Area
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Life Drain
-- Primary damage type (unit): **Magic**
 
 ## Damian - Woody Wonder
 
@@ -2451,6 +2407,18 @@ When casting Explode, my chariot!, the blind duration is increased to 7 s when t
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Healing
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
+
 #### Buffs
 
 - Energy recovery (base) — Area — `medium`
@@ -2461,18 +2429,6 @@ When casting Explode, my chariot!, the blind duration is increased to 7 s when t
 #### Crowd Control
 
 - Stun (base) — Single target — `medium`
-
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Haste
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Dionel - Venus of Dawn
 
@@ -2550,6 +2506,18 @@ Dionel increases Execution by 20 within the duration of Nectar Feast if it's bee
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Max HP
+- Execution
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — All units, Single target
+
 #### Buffs
 
 - ATK SPD buff (Legendary+) — Self — `low`
@@ -2560,27 +2528,13 @@ Dionel increases Execution by 20 within the duration of Nectar Feast if it's bee
 
 - Vitality debuff (EX+10) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Untargetable (base) — Area
 - Summoning (Mythic+) — All units
 - Execution scaling (Supreme+) — Self
-
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- DEF Penetration
-- ATK SPD
-- Execution
-- Max HP
-- Primary damage type (unit): **Physical**
 
 ## Dunlingr - Eternal Voice
 
@@ -2657,6 +2611,17 @@ Upon casting Echo of Silence, Dunlingr grants all allies 50 ATK SPD for 6 s if t
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Max HP
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Self, Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `high` — conditional (frequent)
@@ -2675,29 +2640,13 @@ Upon casting Echo of Silence, Dunlingr grants all allies 50 ATK SPD for 6 s if t
 
 - Silence (Supreme+) — All units — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Battlefield order (base) — All units
 - Heal lock (Curelock) (base) — All units
-- Named companion unit (base) — Self
-- Summoning (base) — All units
+- Summoning (base) — Self
 - Ultimate lock (Spellbind) (base) — All units
-
-#### Damage
-
-- Magic — All units, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Max HP
-- Haste
-- Life Drain
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Eironn - Stormsword
 
@@ -2777,6 +2726,15 @@ Eironn reduces an extra 15% Magic DEF on an immobilized target if they are immob
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Arc, Area, Single target
+
 #### Buffs
 
 - Shield (base) — Self — `medium`
@@ -2790,15 +2748,6 @@ Eironn reduces an extra 15% Magic DEF on an immobilized target if they are immob
 
 - Move (base) — Area — `medium`
 - Pin (base) — Single target — `high`
-
-#### Damage
-
-- Magic — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Primary damage type (unit): **Magic**
 
 ## Elijah & Lailah - Celestial Twins
 
@@ -2867,6 +2816,16 @@ Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+
 #### Buffs
 
 - Haste buff (base) — All units — `high`
@@ -2883,31 +2842,16 @@ Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked 
 - Unaffected immunity (base) — Area — On skill
 - Move (base) — Area — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Ally link (Stellar Bond) (base) — Single target
+- Ally positioning link (base) — Single target
 - Shared HP and Energy (base) — All units
 
 ##### Requires
 
-- Ally on bond line (base) — —
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- Haste
-- Max HP
-- ATK
-- Energy
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
+- Ally on positioning link (base) — —
 
 ## Evie - Royal Envoy
 
@@ -2981,6 +2925,16 @@ After gathering intel on all surviving enemy heroes while concealed, Evie summon
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Healing
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Multiple targets, Single target
+
 #### Buffs
 
 - ATK buff (base) — Multiple targets — `high`
@@ -2994,7 +2948,7 @@ After gathering intel on all surviving enemy heroes while concealed, Evie summon
 - Pin (base) — All units — `high`
 - Silence (base) — All units — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -3004,18 +2958,7 @@ After gathering intel on all surviving enemy heroes while concealed, Evie summon
 
 ##### Requires
 
-- Cooldown-gated proc (base) — Allies
-
-#### Damage
-
-- Magic — All units, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
+- Cooldown-gated trigger (base) — Allies
 
 ## Faramor - Silverfang Mantle
 
@@ -3089,6 +3032,19 @@ If an enemy revives within Faramor's magic circle after their HP drops to 0, Far
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+- True damage — Multiple targets
+- True damage (HP-based) — Single target
+
 #### Buffs
 
 - ATK buff (base) — Area — `low`
@@ -3103,7 +3059,7 @@ If an enemy revives within Faramor's magic circle after their HP drops to 0, Far
 
 - Stun (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -3113,18 +3069,6 @@ If an enemy revives within Faramor's magic circle after their HP drops to 0, Far
 ##### Requires
 
 - Once per battle (EX+10) — Enemies
-
-#### Damage
-
-- Physical — Area, Single target
-- True damage — Multiple targets
-- True damage (HP-based) — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Primary damage type (unit): **Physical**
 
 ## Fay - Colorful Dancer
 
@@ -3200,6 +3144,15 @@ When an ally's HP ratio drops below 50% for the first time during Healing Gemsto
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
+
 #### Buffs
 
 - ATK buff (base) — Arc — `high`
@@ -3210,19 +3163,6 @@ When an ally's HP ratio drops below 50% for the first time during Healing Gemsto
 
 - Magic DEF debuff (base) — Multiple targets — `low`
 - Phys DEF debuff (base) — Multiple targets — `low`
-
-#### Damage
-
-- Magic — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Florabelle - Blooming Maiden
 
@@ -3301,9 +3241,18 @@ Allied Bulbsprite in their giant form are immune to control effects.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
-- Healing (base) — Area — `medium` — conditional (frequent)
 - Lifedrain buff (base) — Single target — `medium` — conditional (frequent)
 - ATK buff (Legendary+) — Self — `medium`
 - Shield (Mythic+) — Single target — `medium`
@@ -3313,26 +3262,12 @@ Allied Bulbsprite in their giant form are immune to control effects.
 
 - Immune immunity (Supreme+) — Self — Form
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Self
 - Summoning (base) — Self
 - Ally blessing (Mythic+) — Single target
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Life Drain
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Frieren - The Legendary Mage
 
@@ -3407,6 +3342,18 @@ When a battle starts, Frieren casts defensive magic on herself and the frontmost
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — All units, Single target
+- Magic — Area, Self, Single target
+- True damage — All units, Single target
+
 #### Buffs
 
 - ATK buff (Legendary+) — Self — `low`
@@ -3420,19 +3367,6 @@ When a battle starts, Frieren casts defensive magic on herself and the frontmost
 
 - Stun (base) — Single target — `low`
 - Knock down (Supreme+) — Single target — `medium`
-
-#### Damage
-
-- DoT — All units, Single target
-- Magic — Area, Self, Single target
-- True damage — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Primary damage type (unit): **Magic**
 
 ## Gala - Daughter of Dawn
 
@@ -3510,6 +3444,17 @@ While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second a
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Single target
+
 #### Buffs
 
 - Haste buff (base) — Self — `high` — conditional (frequent)
@@ -3522,7 +3467,7 @@ While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second a
 - Steadfast immunity (Supreme+) — Self — On skill
 - Pin (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -3531,17 +3476,6 @@ While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second a
 ##### Requires
 
 - Boss encounter (base) — Enemies
-
-#### Damage
-
-- Magic — All units, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Energy
-- Primary damage type (unit): **Magic**
 
 ## Gerda - Soothing Siren
 
@@ -3618,6 +3552,15 @@ When Gerda stomps the ground during Spring Therapy, she stuns enemies for 2 s in
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
+
 #### Buffs
 
 - Healing (base) — Multiple targets — `medium`
@@ -3631,17 +3574,6 @@ When Gerda stomps the ground during Spring Therapy, she stuns enemies for 2 s in
 - Interrupt (base) — Single target — `medium`
 - Pin (base) — Multiple targets — `low`
 - Stun (base) — Single target — `medium`
-
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Granny Dahnie - Forest Guardian
 
@@ -3718,6 +3650,16 @@ Granny Dahnie recovers 120% (ATK-based) HP when shooting seeds using Seed Cannon
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Healing
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `high`
@@ -3735,26 +3677,11 @@ Granny Dahnie recovers 120% (ATK-based) HP when shooting seeds using Seed Cannon
 - Pin (base) — Area — `medium`
 - Taunt (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
-
-#### Damage
-
-- Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Physical DEF
-- Magic DEF
-- Haste
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Gunnar - Iron Doom
 
@@ -3831,6 +3758,17 @@ If an area set on fire is struck again by Doomsday Meteor, the area becomes perm
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- DoT — Area
+- Physical — All units, Self, Single target
+
 #### Buffs
 
 - Shield (base) — Self — `high`
@@ -3841,25 +3779,12 @@ If an area set on fire is struck again by Doomsday Meteor, the area becomes perm
 
 - Stun (base) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 - Invincibility (EX+15) — Single target
-
-#### Damage
-
-- DoT — Area
-- Physical — All units, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- ATK SPD
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Gwyneth - Dragonslayer Knight
 
@@ -3931,6 +3856,16 @@ If there are no enemies within 1 tiles for 3 s, Gwyneth focuses her aim, reducin
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- DoT — Single target
+- Physical — Area, Single target
+
 #### Buffs
 
 - ATK SPD buff (Legendary+) — Area — `low`
@@ -3944,19 +3879,6 @@ If there are no enemies within 1 tiles for 3 s, Gwyneth focuses her aim, reducin
 - Pin (base) — Area — `medium`
 - Silence (base) — Area — `low`
 - Stun (base) — Area — `low`
-
-#### Damage
-
-- DoT — Single target
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Haste
-- Max HP
-- Primary damage type (unit): **Physical**
 
 ## Hammie - Magician
 
@@ -4009,20 +3931,19 @@ Hammie recovers 220% (ATK-based) HP when her HP ratio falls below 70% .
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- ATK buff (base) — Single target — `high`
-- Healing (base) — Single target — `high`
+- ATK
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - Magic — Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Healing
-- Primary damage type (unit): **Magic**
+- ATK buff (base) — Single target — `high`
+- Healing (base) — Single target — `high`
 
 ## Harak - Deepsea Ravager
 
@@ -4097,6 +4018,18 @@ Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vici
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Crit
+- Energy
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
+
 #### Buffs
 
 - Crit buff (base) — Single target — `medium`
@@ -4115,7 +4048,7 @@ Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vici
 
 - Unaffected immunity (base) — Self — Start of battle
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -4125,21 +4058,6 @@ Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vici
 ##### Requires
 
 - Boss encounter (base) — Allies
-
-#### Damage
-
-- Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Crit
-- Life Drain
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Hepler - Master of Forms
 
@@ -4215,6 +4133,16 @@ Whenever Hepler spends Spark stacks, he and the protected ally permanently incre
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
 - Haste buff (base) — Single target — `low`
@@ -4232,7 +4160,7 @@ Whenever Hepler spends Spark stacks, he and the protected ally permanently incre
 - Stun (base) — Area — `medium`
 - Taunt (base) — Area — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -4240,20 +4168,7 @@ Whenever Hepler spends Spark stacks, he and the protected ally permanently incre
 
 ##### Requires
 
-- Specific form active (base) — Enemies
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Max HP
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Physical**
+- Form or stance active (base) — Enemies
 
 ## Hewynn - Tender Leaf
 
@@ -4327,6 +4242,15 @@ Hewynn also grants the healed ally 30 Haste for 6 s when Revitalize is in effect
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units
+
 #### Buffs
 
 - Healing (base) — Single target — `high`
@@ -4336,22 +4260,11 @@ Hewynn also grants the healed ally 30 Haste for 6 s when Revitalize is in effect
 
 - Unaffected immunity (Mythic+) — Self — On skill
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
-- Cooldown-gated proc (base) — Allies
-
-#### Damage
-
-- Magic — All units
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
+- Cooldown-gated trigger (base) — Allies
 
 ## Himmel - The Legendary Hero
 
@@ -4429,6 +4342,18 @@ Himmel has the same fighting spirit that once drove him to challenge the Demon K
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
+- True damage (HP-based) — All units
+
 #### Buffs
 
 - Shield (base) — Area — `low` — conditional (frequent)
@@ -4440,25 +4365,12 @@ Himmel has the same fighting spirit that once drove him to challenge the Demon K
 
 - Unaffected immunity (base) — Multiple targets — On skill
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
 - Party composition (base) — Allies
 - Boss encounter (Supreme+) — —
-
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-- True damage (HP-based) — All units
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- DEF Penetration
-- Primary damage type (unit): **Physical**
 
 ## Hodgkin - Reviled Captain
 
@@ -4538,6 +4450,15 @@ Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15% , up to 2 stack
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Single target
+
 #### Buffs
 
 - Healing over time (base) — Single target — `high` — conditional (frequent)
@@ -4549,23 +4470,11 @@ Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15% , up to 2 stack
 - Vitality debuff (EX+5) — Single target — `low`
 - Phys DEF debuff (Supreme+) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (Mythic+) — Area
-
-#### Damage
-
-- Physical — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Hugin - Maverick Smith
 
@@ -4643,22 +4552,21 @@ While the cogshield or enhanced cogshield is active, the protected ally also tak
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- ATK buff (base) — Single target — `high`
-- Haste buff (base) — Multiple targets — `high`
-- Shield (base) — Single target — `high`
+- Haste
+- Energy
+- Primary damage type (unit): **Physical**
 
 #### Damage
 
 - Physical — Multiple targets, Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Haste
-- Energy
-- Primary damage type (unit): **Physical**
+- ATK buff (base) — Single target — `high`
+- Haste buff (base) — Multiple targets — `high`
+- Shield (base) — Single target — `high`
 
 ## Igor - Mad Dagger
 
@@ -4732,29 +4640,26 @@ Igor summons an extra tombstone with Funereal Ring on the tile with the most sur
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- Healing (base) — Single target — `low`
-- Lifedrain buff (Legendary+) — Self — `low`
-
-#### Special effects
-
-##### Provides
-
-- Summoning (base) — Single target
-- Untargetable (base) — Area
+- Life Drain
+- Primary damage type (unit): **Physical**
 
 #### Damage
 
 - Physical — All units, Area, Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Max HP
-- Life Drain
-- Healing
-- Primary damage type (unit): **Physical**
+- Healing (base) — Single target — `low`
+- Lifedrain buff (Legendary+) — Self — `low`
+
+#### Special Effects
+
+##### Provides
+
+- Summoning (base) — Single target
+- Untargetable (base) — Area
 
 ## Indris - Chain Breaker
 
@@ -4831,6 +4736,18 @@ After hitting a target with Arcane Binding, Indris' normal attacks can trigger t
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — Multiple targets
+- True damage (HP-based) — Single target
+
 #### Buffs
 
 - ATK buff (Legendary+) — Self — `low`
@@ -4847,26 +4764,13 @@ After hitting a target with Arcane Binding, Indris' normal attacks can trigger t
 - Pin (base) — Area — `high`
 - Silence (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
-- Cooldown-gated proc (base) — Enemies
+- Cooldown-gated trigger (base) — Enemies
 - Debuff on target (base) — Enemies
 - Multiple debuffs on target (base) — Enemies
-
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage — Multiple targets
-- True damage (HP-based) — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- ATK SPD
-- Primary damage type (unit): **Physical**
 
 ## Isabella - The Taken Soul
 
@@ -4941,6 +4845,18 @@ Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+
 #### Buffs
 
 - Haste buff (base) — Multiple targets — `low` — conditional (frequent)
@@ -4956,26 +4872,11 @@ Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF
 
 - Unaffected immunity (base) — Single target — Once
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
 - Once per battle (base) — Allies
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Energy
-- Haste
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Kafra - Gale Rider
 
@@ -5052,6 +4953,16 @@ The damage of Relentless Chase's first casting in battle is increased to 520% . 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
+
 #### Buffs
 
 - Healing over time (base) — Area — `low`
@@ -5070,15 +4981,11 @@ The damage of Relentless Chase's first casting in battle is increased to 520% . 
 - Move (base) — Single target — `medium`
 - Stun (base) — Single target — `medium`
 
-#### Damage
+#### Special Effects
 
-- Physical — Single target
+##### Provides
 
-#### Stats the unit benefits from
-
-- ATK
-- Healing
-- Primary damage type (unit): **Physical**
+- Marked target (focus fire) (base) — Single target
 
 ## Koko - Wild Child
 
@@ -5155,6 +5062,18 @@ Increases the target's Vitality by 25 for 6 s after Koko feeds them using Fulfil
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Single target
+- True damage — All units
+
 #### Buffs
 
 - Healing (base) — Single target — `high`
@@ -5170,20 +5089,6 @@ Increases the target's Vitality by 25 for 6 s after Koko feeds them using Fulfil
 #### Crowd Control
 
 - Stun (base) — Area — `medium`
-
-#### Damage
-
-- Physical — All units, Area, Single target
-- True damage — All units
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Life Drain
-- Haste
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Kordan - Ironblood Chieftain
 
@@ -5261,6 +5166,19 @@ Whenever Kordan assists or defeats an enemy inside the hunting circle, he leaps 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Max HP
+- Healing
+- DEF Penetration
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
+
 #### Buffs
 
 - Lifedrain buff (base) — Area — `high`
@@ -5274,25 +5192,11 @@ Whenever Kordan assists or defeats an enemy inside the hunting circle, he leaps 
 - Move (base) — Area — `high`
 - Pin (base) — Area — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
-
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Life Drain
-- Max HP
-- Magic DEF
-- DEF Penetration
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Korin - Wood Warden
 
@@ -5367,6 +5271,18 @@ Korin reduces damage taken from enemy beyond 1 tile by 25% .
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — Single target
+- True damage (HP-based) — Area, Single target
+
 #### Buffs
 
 - Shield (base) — Single target — `medium`
@@ -5377,20 +5293,6 @@ Korin reduces damage taken from enemy beyond 1 tile by 25% .
 #### Crowd Control
 
 - Pin (base) — Single target — `medium`
-
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage — Single target
-- True damage (HP-based) — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Max HP
-- ATK SPD
-- Primary damage type (unit): **Physical**
 
 ## Kruger - Dauntless Warrior
 
@@ -5466,6 +5368,14 @@ Kruger gains a 40% ATK boost until the battle ends when a Vulnerable enemy is de
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
 - Lifedrain buff (Mythic+) — Area — `medium`
@@ -5474,17 +5384,6 @@ Kruger gains a 40% ATK boost until the battle ends when a Vulnerable enemy is de
 #### Debuffs
 
 - Phys DEF debuff (base) — Single target — `high`
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Life Drain
-- Primary damage type (unit): **Physical**
 
 ## Kulu - Blast Master
 
@@ -5562,6 +5461,17 @@ Kulu gains extra ATK SPD and Ranged DEF during battle. If there are no enemies o
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- DEF Penetration
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Single target
+
 #### Buffs
 
 - Invincible (base) — Self — `high` — conditional (frequent)
@@ -5577,23 +5487,12 @@ Kulu gains extra ATK SPD and Ranged DEF during battle. If there are no enemies o
 - Unaffected immunity (base) — Area — On ultimate
 - Move (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
 - Summoning (base) — Area
-
-#### Damage
-
-- Physical — All units, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- DEF Penetration
-- ATK SPD
-- Primary damage type (unit): **Physical**
 
 ## Laios - Dungeon Adventurer
 
@@ -5671,6 +5570,19 @@ Laios permanently increases his max HP by each time he collects a different ingr
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Haste
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
+
 #### Buffs
 
 - ATK buff (base) — Area — `low` — conditional (rare)
@@ -5685,11 +5597,10 @@ Laios permanently increases his max HP by each time he collects a different ingr
 
 - Pin (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Single target
 - Summoning (base) — Single target
 
 ##### Requires
@@ -5697,22 +5608,6 @@ Laios permanently increases his max HP by each time he collects a different ingr
 - Monster ingredients (base) — Enemies
 - Stacked resource (base) — Enemies
 - Enemy monsters present (Mythic+) — Enemies
-
-#### Damage
-
-- Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Energy
-- Physical DEF
-- Magic DEF
-- Haste
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Lenya - Wild Cyclone
 
@@ -5789,6 +5684,18 @@ Lenya reduces damage taken from enemies other than her target by 35% .
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Crit
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+
 #### Buffs
 
 - Crit buff (base) — Self — `high`
@@ -5800,18 +5707,6 @@ Lenya reduces damage taken from enemies other than her target by 35% .
 
 - Unaffected immunity (base) — Self — Once
 - Stun (base) — Area — `high`
-
-#### Damage
-
-- Physical — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- Haste
-- Energy
-- Primary damage type (unit): **Physical**
 
 ## Lily May - Twilight Tracker
 
@@ -5885,6 +5780,17 @@ When Lily May first uses Tempest Shot to interrupt an enemy's Ultimate, the enem
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- DEF Penetration
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
+- True damage (HP-based) — Self, Single target
+
 #### Buffs
 
 - ATK buff (base) — Self — `low`
@@ -5899,24 +5805,12 @@ When Lily May first uses Tempest Shot to interrupt an enemy's Ultimate, the enem
 - Unaffected immunity (base) — Self — Start of battle
 - Interrupt (base) — All units — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
 - Untargetable (base) — All units
-
-#### Damage
-
-- Magic — All units, Single target
-- True damage (HP-based) — Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- DEF Penetration
-- Primary damage type (unit): **Magic**
 
 ## Lorsan - Windweaver Protector
 
@@ -5996,6 +5890,15 @@ While Zephyr's Embrace is active, the protected target becomes unaffected
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+
 #### Buffs
 
 - Healing over time (base) — Single target — `medium`
@@ -6007,22 +5910,11 @@ While Zephyr's Embrace is active, the protected target becomes unaffected
 - Unaffected immunity (Supreme+) — Self — On skill
 - Stun (EX+10) — Multiple targets — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Lucca - Stalwart Fighter
 
@@ -6102,6 +5994,17 @@ Lucca recovers 15% (HP-based) HP when casting Courageous Call.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Physical DEF
+- Magic DEF
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+
 #### Buffs
 
 - Damage taken reduction (base) — Self — `high`
@@ -6114,19 +6017,6 @@ Lucca recovers 15% (HP-based) HP when casting Courageous Call.
 - Immune immunity (base) — Self — On skill
 - Interrupt (base) — Single target — `medium`
 - Stun (base) — Area — `medium`
-
-#### Damage
-
-- Physical — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Physical DEF
-- Max HP
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Lucius - The Lightbringer
 
@@ -6206,6 +6096,15 @@ Lucius heals 1 more ally with Divine Light Blessing.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Healing
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `medium`
@@ -6221,21 +6120,11 @@ Lucius heals 1 more ally with Divine Light Blessing.
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Reposition enemies (base) — Single target
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Lucy - Celestial Spirit Mage
 
@@ -6313,6 +6202,16 @@ When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' AT
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
+
 #### Buffs
 
 - Haste buff (Legendary+) — Self — `medium`
@@ -6326,19 +6225,6 @@ When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' AT
 
 - Unaffected immunity (base) — Self — On skill
 - Stun (base) — Single target — `medium`
-
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- ATK SPD
-- Energy
-- Primary damage type (unit): **Magic**
 
 ## Ludovic - Wreathed Eternalist
 
@@ -6422,6 +6308,15 @@ Whenever an enemy steps into the everbloom field, they will instantly take 120% 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Healing
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
+
 #### Buffs
 
 - Healing (base) — Area — `high`
@@ -6433,22 +6328,11 @@ Whenever an enemy steps into the everbloom field, they will instantly take 120% 
 - Unaffected immunity (base) — Self — On skill
 - Stun (Supreme+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Revive ally (base) — Area
-
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Lumont - Benign Horn
 
@@ -6528,6 +6412,16 @@ Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
 - DEF buff (base) — Area — `high`
@@ -6544,19 +6438,6 @@ Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.
 - Unaffected immunity (base) — Self — On skill
 - Stun (base) — Area — `low`
 - Taunt (base) — Area — `medium`
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Physical DEF
-- Haste
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Lyca - Keeper of Glades
 
@@ -6638,6 +6519,15 @@ Lyca reduces the target's Phys DEF by 25% for 6 s if they are hit by Comet Arche
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Self, Single target
+
 #### Buffs
 
 - ATK SPD buff (base) — Self — `medium`
@@ -6651,22 +6541,11 @@ Lyca reduces the target's Phys DEF by 25% for 6 s if they are hit by Comet Arche
 
 - Stun (EX+10) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Single target
-
-#### Damage
-
-- Physical — All units, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Energy
-- Primary damage type (unit): **Physical**
 
 ## Marcille - Elven Mage
 
@@ -6746,6 +6625,17 @@ During battle, Marcille recovers 10 additional Energy per second for each ally w
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Single target
+
 #### Buffs
 
 - Haste buff (base) — Self — `low`
@@ -6756,7 +6646,7 @@ During battle, Marcille recovers 10 additional Energy per second for each ally w
 - Unaffected immunity (Supreme+) — Self — On skill
 - Interrupt (Mythic+) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -6766,19 +6656,6 @@ During battle, Marcille recovers 10 additional Energy per second for each ally w
 ##### Requires
 
 - Once per battle (Mythic+) — Allies
-
-#### Damage
-
-- Magic — All units, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Haste
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Marilee - Forest's Arrow
 
@@ -6853,6 +6730,18 @@ Marilee reduces the required no-enemy range for triggering Hyperfocus by -1 tile
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Crit
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Multiple targets, Single target
+- True damage — Multiple targets
+
 #### Buffs
 
 - ATK buff (base) — Area — `high` — conditional (frequent)
@@ -6861,18 +6750,6 @@ Marilee reduces the required no-enemy range for triggering Hyperfocus by -1 tile
 #### Crowd Control
 
 - Stun (base) — Single target — `low`
-
-#### Damage
-
-- Physical — Multiple targets, Single target
-- True damage — Multiple targets
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Crit
-- Primary damage type (unit): **Physical**
 
 ## Mehira - Mind Cager
 
@@ -6952,6 +6829,18 @@ Increases the damage taken by enemies charmed with Mehira's Euphoric Rush or bew
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Healing
+- Life Drain
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Self, Single target
+
 #### Buffs
 
 - Haste buff (base) — Single target — `medium`
@@ -6967,26 +6856,13 @@ Increases the damage taken by enemies charmed with Mehira's Euphoric Rush or bew
 
 - Charm (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Self
 - HP threshold strike (Mythic+) — Self
 - Untargetable (Mythic+) — Self
-
-#### Damage
-
-- Magic — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Max HP
-- Life Drain
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Mikola - Warbeat Compere
 
@@ -7061,6 +6937,17 @@ Mikola's Courage Sphere remains unaffected in duration if her side gains control
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Healing
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets
+
 #### Buffs
 
 - ATK buff (base) — Self — `medium`
@@ -7071,18 +6958,6 @@ Mikola's Courage Sphere remains unaffected in duration if her side gains control
 #### Crowd Control
 
 - Unaffected immunity (Supreme+) — Self — Conditional
-
-#### Damage
-
-- Physical — Area, Multiple targets
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Mirael - Scarlet Sorceress
 
@@ -7160,26 +7035,25 @@ Mirael increases the burning duration of Bone Sear by 4 s.
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- ATK SPD buff (Legendary+) — Self — `medium`
-
-#### Special effects
-
-##### Provides
-
-- Summoning (base) — Single target
+- ATK SPD
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - DoT — Single target
 - Magic — Area, Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- ATK SPD
-- Primary damage type (unit): **Magic**
+- ATK SPD buff (Legendary+) — Self — `medium`
+
+#### Special Effects
+
+##### Provides
+
+- Summoning (base) — Single target
 
 ## Nara - Wrathful Wraith
 
@@ -7257,6 +7131,17 @@ After defeating an enemy with Crimson Vengeance, Nara instantly recovers 250 Ene
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+- True damage — Single target
+
 #### Buffs
 
 - ATK buff (Legendary+) — Self — `low`
@@ -7270,19 +7155,6 @@ After defeating an enemy with Crimson Vengeance, Nara instantly recovers 250 Ene
 #### Crowd Control
 
 - Unaffected immunity (Supreme+) — Self — Permanent
-
-#### Damage
-
-- Physical — Area, Single target
-- True damage — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Natsu - Fire Dragon Slayer Mage
 
@@ -7356,6 +7228,18 @@ When Natsu causes an enemy to lose HP through any means other than his normal at
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Crit
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — Single target
+- Magic — Area, Single target
+
 #### Buffs
 
 - Crit buff (base) — Self — `low` — conditional (rare)
@@ -7371,19 +7255,6 @@ When Natsu causes an enemy to lose HP through any means other than his normal at
 
 - Knock down (base) — Area — `low`
 - Stun (base) — Single target — `medium`
-
-#### Damage
-
-- DoT — Single target
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Crit
-- Haste
-- Primary damage type (unit): **Magic**
 
 ## Nazrik - Soulstalker
 
@@ -7458,6 +7329,17 @@ Each time Nazrik lands a critical hit on an enemy, the Crit DMG Boost of that hi
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Crit
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Self, Single target
+- True damage — Single target
+- True damage (HP-based) — Single target
+
 #### Buffs
 
 - Crit buff (Legendary+) — Self — `low`
@@ -7471,19 +7353,6 @@ Each time Nazrik lands a critical hit on an enemy, the Crit DMG Boost of that hi
 #### Crowd Control
 
 - Stun (base) — Single target — `medium`
-
-#### Damage
-
-- Physical — Self, Single target
-- True damage — Single target
-- True damage (HP-based) — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Crit
-- Primary damage type (unit): **Physical**
 
 ## Nerion - Bereaved Tide
 
@@ -7558,6 +7427,18 @@ When all non-summoned enemies on the battlefield are under the drowning effect, 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Max HP
+- Energy
+- DEF Penetration
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Self, Single target
+
 #### Buffs
 
 - ATK SPD buff (Legendary+) — Self — `medium`
@@ -7570,18 +7451,6 @@ When all non-summoned enemies on the battlefield are under the drowning effect, 
 #### Crowd Control
 
 - Stun (base) — Single target — `medium`
-
-#### Damage
-
-- Magic — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Energy
-- DEF Penetration
-- Primary damage type (unit): **Magic**
 
 ## Niru - Soul Collector
 
@@ -7663,35 +7532,30 @@ Niru's Soul Reaping prevents the enemy from recovering HP for 8 s.
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- Healing (base) — Single target — `low` — conditional (rare)
-- DEF buff (EX+5) — Self — `low`
-
-#### Special effects
-
-##### Provides
-
-- Spirit form ally (base) — Single target
-- Start-of-battle cast (Mythic+) — Self
-
-##### Requires
-
-- Blessed ally active (base) — Allies
-- Enemy defeat (base) — Allies
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - Magic — All units, Self, Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- Max HP
-- ATK
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
+- Healing (base) — Single target — `low` — conditional (rare)
+- DEF buff (EX+5) — Self — `low`
+
+#### Special Effects
+
+##### Provides
+
+- Spirit form protection (base) — Single target
+- Start-of-battle cast (Mythic+) — Self
+
+##### Requires
+
+- Ally blessing active (base) — Allies
+- Enemy defeat (base) — Allies
 
 ## Odie - Desert Defender
 
@@ -7768,21 +7632,19 @@ Odie increases Triple Tap's damage against poisoned target by 1.5 times the Dart
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- ATK SPD buff (Legendary+) — Self — `medium`
+- ATK SPD
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - DoT — Single target
 - Magic — Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Energy
-- ATK SPD
-- Primary damage type (unit): **Magic**
+- ATK SPD buff (Legendary+) — Self — `medium`
 
 ## Pandora - Hope Unleashed
 
@@ -7857,6 +7719,15 @@ The ally pulled into Pandora's box is permanently protected by hope, making them
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `low`
@@ -7876,23 +7747,11 @@ The ally pulled into Pandora's box is permanently protected by hope, making them
 
 - Move (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
-
-#### Damage
-
-- Magic — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Pang - Bamboo Guardian
 
@@ -7970,6 +7829,18 @@ Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance. 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Energy
+- DEF Penetration
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
 - Haste buff (base) — Self — `high` — conditional (frequent)
@@ -7981,23 +7852,11 @@ Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance. 
 - Unaffected immunity (base) — Self — On skill
 - Stun (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Transform (base) — Single target
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Energy
-- DEF Penetration
-- Primary damage type (unit): **Physical**
 
 ## Parisa - Ode to Flowers
 
@@ -8074,21 +7933,27 @@ Reduces the required normal attacks to trigger Flower Power by -1 .
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- ATK SPD buff (base) — Self — `low`
-- ATK buff (Legendary+) — Self — `medium`
+- ATK
+- ATK SPD
+- Energy
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - Magic — Area, Multiple targets, Self, Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Energy
-- ATK SPD
-- Primary damage type (unit): **Magic**
+- ATK SPD buff (base) — Self — `low`
+- ATK buff (Legendary+) — Self — `medium`
+
+#### Special Effects
+
+##### Provides
+
+- Marked target (focus fire) (base) — Area
 
 ## Perseus - Chosen Champion
 
@@ -8162,6 +8027,18 @@ Expands the range of fertile ground by 1 tile.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage — Multiple targets
+
 #### Buffs
 
 - Max HP buff (base) — Area — `low`
@@ -8173,19 +8050,6 @@ Expands the range of fertile ground by 1 tile.
 
 - Unaffected immunity (base) — Multiple targets — On skill
 - Stun (base) — Area — `medium`
-
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage — Multiple targets
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Max HP
-- Magic DEF
-- Primary damage type (unit): **Physical**
 
 ## Phraesto - Misty Scorpion
 
@@ -8262,6 +8126,16 @@ When both Phraesto and his Illusion are positioned in the same row, they each re
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `low`
@@ -8273,24 +8147,11 @@ When both Phraesto and his Illusion are positioned in the same row, they each re
 - Stun (Mythic+) — Single target — `medium`
 - Taunt (Mythic+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Self
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Pippa - The Muddled Magician
 
@@ -8367,6 +8228,16 @@ When Pippa's Wild Shift triggers a mutation, the enemy on the target tile become
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
+- True damage — Area
+
 #### Buffs
 
 - Haste buff (Legendary+) — Self — `low`
@@ -8382,23 +8253,11 @@ When Pippa's Wild Shift triggers a mutation, the enemy on the target tile become
 - Move (base) — Single target — `low`
 - Pin (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
-
-#### Damage
-
-- Magic — Area, Multiple targets, Single target
-- True damage — Area
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Max HP
-- Primary damage type (unit): **Magic**
 
 ## Ravion - Twilight's Burden
 
@@ -8475,6 +8334,17 @@ When an ally accepts the Objective from Ravion, they increase their ATK by 15% a
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Single target
+
 #### Buffs
 
 - ATK buff (base) — Multiple targets — `high`
@@ -8494,7 +8364,7 @@ When an ally accepts the Objective from Ravion, they increase their ATK by 15% a
 - Knock down (base) — Multiple targets — `high`
 - Move (base) — Multiple targets — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -8503,18 +8373,6 @@ When an ally accepts the Objective from Ravion, they increase their ATK by 15% a
 ##### Requires
 
 - Boss encounter (base) — Allies
-
-#### Damage
-
-- Physical — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Haste
-- Life Drain
-- Primary damage type (unit): **Physical**
 
 ## Reinier - Symmetric Sin
 
@@ -8588,6 +8446,14 @@ Reinier increases the allied hero's ATK by 4% till the battle ends if they're in
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Multiple targets, Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `medium`
@@ -8605,16 +8471,6 @@ Reinier increases the allied hero's ATK by 4% till the battle ends if they're in
 - Interrupt (base) — Single target — `high`
 - Move (base) — Multiple targets — `high`
 - Knock down (Mythic+) — Single target — `low`
-
-#### Damage
-
-- Magic — Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Rhys - Fiery Cavalier
 
@@ -8692,6 +8548,16 @@ Reduces the cooldown of Defensive Stance to 3 s.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Crit
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `medium`
@@ -8700,18 +8566,6 @@ Reduces the cooldown of Defensive Stance to 3 s.
 #### Crowd Control
 
 - Move (base) — Single target — `high`
-
-#### Damage
-
-- Physical — Arc, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Crit
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Rowan - The Roamer
 
@@ -8792,6 +8646,16 @@ Rowan places 1 more health potion when a battle starts using Smart Stall.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `low` — conditional (rare)
@@ -8804,7 +8668,7 @@ Rowan places 1 more health potion when a battle starts using Smart Stall.
 
 - Energy drain (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -8813,21 +8677,6 @@ Rowan places 1 more health potion when a battle starts using Smart Stall.
 ##### Requires
 
 - Once per battle (Mythic+) — Allies
-
-#### Damage
-
-- Magic — Single target
-
-#### Stats the unit benefits from
-
-- Energy
-- ATK
-- Max HP
-- Haste
-- Physical DEF
-- Magic DEF
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Saida - Vampiric Vine
 
@@ -8901,6 +8750,14 @@ When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes. These 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Area, Multiple targets, Self, Single target
+
 #### Buffs
 
 - Healing (base) — Area — `medium`
@@ -8917,7 +8774,7 @@ When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes. These 
 - Interrupt (base) — Area — `high`
 - Move (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -8926,17 +8783,6 @@ When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes. These 
 ##### Requires
 
 - Boss encounter (base) — Enemies
-
-#### Damage
-
-- Magic — All units, Area, Multiple targets, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Salazer - Lash of Bantus
 
@@ -9012,6 +8858,14 @@ Salazer recovers 150% (ATK-based) HP for every imprisoned enemy.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
+
 #### Buffs
 
 - Lifedrain buff (base) — Single target — `low`
@@ -9023,23 +8877,11 @@ Salazer recovers 150% (ATK-based) HP for every imprisoned enemy.
 
 - Pin (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Single target
-
-#### Damage
-
-- Physical — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Life Drain
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Satrana - Ember Enchantress
 
@@ -9115,6 +8957,14 @@ Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a tot
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Arc, Area, Single target
+
 #### Buffs
 
 - Invincible (base) — Self — `high`
@@ -9129,22 +8979,11 @@ Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a tot
 
 - Charm (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
-
-#### Damage
-
-- Magic — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Life Drain
-- Primary damage type (unit): **Magic**
 
 ## Scarlita - Herald of Compassion
 
@@ -9221,6 +9060,17 @@ Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie S
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Execution
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Arc, Area, Single target
+- True damage — Multiple targets
+
 #### Buffs
 
 - Energy recovery (base) — Area — `low`
@@ -9235,26 +9085,11 @@ Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie S
 - Move (base) — All units — `low`
 - Stun (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
-
-#### Damage
-
-- Physical — All units, Arc, Area, Single target
-- True damage — Multiple targets
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Max HP
-- Execution
-- Physical DEF
-- Magic DEF
-- Primary damage type (unit): **Physical**
 
 ## Seth - Swift Shadow
 
@@ -9329,6 +9164,19 @@ Seth reduces the target's Phys DEF by an extra 15% for 6 s per stack of Bloodlus
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Crit
+- Energy
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Self, Single target
+
 #### Buffs
 
 - Haste buff (base) — Self — `low`
@@ -9346,26 +9194,11 @@ Seth reduces the target's Phys DEF by an extra 15% for 6 s per stack of Bloodlus
 
 - Freeze (base) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Single target
-
-#### Damage
-
-- Physical — Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Life Drain
-- Magic DEF
-- Crit
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Shadewing - Undying Vow
 
@@ -9440,6 +9273,20 @@ When a battle starts, Shadewing targets the ally 1 tile in front of him and drai
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Max HP
+- Energy
+- Life Drain
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — Single target
+- Magic — All units, Single target
+- True damage — Single target
+
 #### Buffs
 
 - Invincible (base) — Self — `high`
@@ -9452,33 +9299,19 @@ When a battle starts, Shadewing targets the ally 1 tile in front of him and drai
 
 - Magic DEF debuff (base) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Debuff application (base) — Single target
 - DoT conversion (base) — All units
 - Invincibility (base) — All units
-- Ally HP drain (self-buff) (Supreme+) — Self
+- Damage leech from allies (Supreme+) — Self
 
 ##### Requires
 
 - Continuous damage on enemies (base) — Enemies
 - Debuff on target (base) — Enemies
-
-#### Damage
-
-- DoT — Single target
-- Magic — All units, Single target
-- True damage — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Life Drain
-- Primary damage type (unit): **Magic**
 
 ## Shakir - Furious Howl
 
@@ -9552,6 +9385,15 @@ Shakir reduces the target's Vitality by 60 within 4 s using the 3rd hit of Savag
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Multiple targets, Single target
+
 #### Buffs
 
 - Damage taken reduction (base) — Multiple targets — `low` — conditional (frequent)
@@ -9566,7 +9408,7 @@ Shakir reduces the target's Vitality by 60 within 4 s using the 3rd hit of Savag
 
 - Unaffected immunity (base) — Self — Form
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -9574,18 +9416,7 @@ Shakir reduces the target's Vitality by 60 within 4 s using the 3rd hit of Savag
 
 ##### Requires
 
-- Specific form active (base) — Enemies
-
-#### Damage
-
-- Physical — Arc, Area, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Life Drain
-- Primary damage type (unit): **Physical**
+- Form or stance active (base) — Enemies
 
 ## Shemira - Corpsemaker
 
@@ -9663,29 +9494,27 @@ Each time a hero is defeated, Shemira summons 1 ghost.
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- Healing (base) — Self — `medium` — conditional (frequent)
-- Shield (base) — Single target — `medium`
-
-#### Special effects
-
-##### Provides
-
-- Summoning (base) — Self
+- Healing
+- Energy
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - Magic — All units, Area, Self, Single target
 - True damage (HP-based) — Area, Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
+- Healing (base) — Self — `medium` — conditional (frequent)
+- Shield (base) — Single target — `medium`
+
+#### Special Effects
+
+##### Provides
+
+- Summoning (base) — Self
 
 ## Silven - Heir of Glory
 
@@ -9757,30 +9586,28 @@ When up against powerful foes, Silven's knightly spirit kicks in, allowing him t
 
 ### Summary
 
-#### Buffs
+#### Stats the unit benefits from
 
-- ATK SPD buff (Legendary+) — Self — `medium`
-- Energy recovery (Mythic+) — Self — `low`
-
-#### Special effects
-
-##### Provides
-
-- Summoning (base) — Single target
+- ATK SPD
+- Energy
+- DEF Penetration
+- Primary damage type (unit): **Magic**
 
 #### Damage
 
 - Magic — Single target
 - True damage (HP-based) — Self, Single target
 
-#### Stats the unit benefits from
+#### Buffs
 
-- ATK
-- Max HP
-- ATK SPD
-- Energy
-- DEF Penetration
-- Primary damage type (unit): **Magic**
+- ATK SPD buff (Legendary+) — Self — `medium`
+- Energy recovery (Mythic+) — Self — `low`
+
+#### Special Effects
+
+##### Provides
+
+- Summoning (base) — Single target
 
 ## Silvina - The Taken Breath
 
@@ -9855,6 +9682,16 @@ Silvina also reduces the target's Vitality by 60 for 3 s with each Whirl Assault
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Crit
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
+
 #### Buffs
 
 - Crit buff (Legendary+) — Self — `low`
@@ -9870,15 +9707,11 @@ Silvina also reduces the target's Vitality by 60 for 3 s with each Whirl Assault
 - Stun (base) — Single target — `low`
 - Frighten (EX+10) — Area — `low`
 
-#### Damage
+#### Special Effects
 
-- Physical — Single target
+##### Provides
 
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- Primary damage type (unit): **Physical**
+- Marked target (focus fire) (base) — Single target
 
 ## Sinbad - Seaside Savant
 
@@ -9955,6 +9788,16 @@ Duo Cut deals 140% (ATK-based) more damage to enemies marked as "hitter" or "gua
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Multiple targets, Self, Single target
+
 #### Buffs
 
 - ATK SPD buff (Legendary+) — Self — `medium`
@@ -9972,16 +9815,11 @@ Duo Cut deals 140% (ATK-based) more damage to enemies marked as "hitter" or "gua
 
 - Unaffected immunity (base) — Multiple targets — Conditional
 
-#### Damage
+#### Special Effects
 
-- Physical — Multiple targets, Self, Single target
+##### Provides
 
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Energy
-- Primary damage type (unit): **Physical**
+- Marked target (focus fire) (base) — Multiple targets
 
 ## Smokey & Meerky - Wasteland Apothecary
 
@@ -10049,6 +9887,12 @@ Smokey & Meerky increase the HP recovery amount by 30% (ATK-based) when using Sp
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Energy
+- Primary damage type (unit): **Magic**
+
 #### Buffs
 
 - Energy recovery (base) — Area — `medium`
@@ -10060,14 +9904,6 @@ Smokey & Meerky increase the HP recovery amount by 30% (ATK-based) when using Sp
 
 - Interrupt (base) — Area — `medium`
 - Stun (EX+10) — Single target — `low`
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Solise - Floral Wonder
 
@@ -10142,6 +9978,15 @@ While Solise is casting Life's Embrace, damage dealt by Bulbsprite triggers extr
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Multiple targets, Single target
+
 #### Buffs
 
 - Healing (base) — Multiple targets — `high` — conditional (frequent)
@@ -10152,24 +9997,12 @@ While Solise is casting Life's Embrace, damage dealt by Bulbsprite triggers extr
 
 - Unaffected immunity (base) — Self — Start of battle
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
-- Named companion unit (base) — Single target
+- Summoning (base) — Single target
 - Ally blessing (Mythic+) — Single target
-
-#### Damage
-
-- Magic — All units, Multiple targets, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Magic DEF
-- Max HP
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Sonja - Crimson Queenpin
 
@@ -10244,6 +10077,16 @@ Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
 - ATK buff (base) — Multiple targets — `low` — conditional (frequent)
@@ -10253,18 +10096,6 @@ Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing.
 #### Crowd Control
 
 - Stun (base) — Area — `low`
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Magic DEF
-- Haste
-- Energy
-- Primary damage type (unit): **Physical**
 
 ## Soren - Silent Fury
 
@@ -10340,6 +10171,16 @@ After Deflecting Swing is triggered, the next Repel Sweep knocks enemies back 2 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Self, Single target
+
 #### Buffs
 
 - Damage taken reduction (base) — Self — `low`
@@ -10352,19 +10193,6 @@ After Deflecting Swing is triggered, the next Repel Sweep knocks enemies back 2 
 
 - Move (base) — Multiple targets — `high`
 - Stun (base) — Area — `medium`
-
-#### Damage
-
-- Physical — Area, Multiple targets, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Sylphira - Sovereign of Song
 
@@ -10442,6 +10270,17 @@ Once her score is activated, Sylphira performs Tremolo to enhance her normal att
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Healing
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+- True damage (HP-based) — Single target
+
 #### Buffs
 
 - ATK buff (base) — Area — `high` — conditional (frequent)
@@ -10463,25 +10302,11 @@ Once her score is activated, Sylphira performs Tremolo to enhance her normal att
 - Knock down (base) — Area — `medium`
 - Silence (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Dispel debuffs (Mythic+) — Self
-
-#### Damage
-
-- Magic — Area, Single target
-- True damage (HP-based) — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Max HP
-- Life Drain
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Talene - Resurging Flame
 
@@ -10555,6 +10380,16 @@ Talene increases her HP recovered per second to 15% while in the flame state whe
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Max HP
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+
 #### Buffs
 
 - Healing (base) — Area — `low` — conditional (frequent)
@@ -10562,24 +10397,12 @@ Talene increases her HP recovered per second to 15% while in the flame state whe
 - Lifedrain buff (base) — Area — `low`
 - ATK buff (Legendary+) — Self — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
 - Transform (base) — Area
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Life Drain
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Tasi - Fairy of Dreams
 
@@ -10654,6 +10477,17 @@ Tasi gains an extra attempt to cast Fluttering Dream each time she assists or de
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- DoT — All units, Single target
+- Magic — Area, Single target
+
 #### Buffs
 
 - Healing over time (base) — Area — `medium`
@@ -10668,28 +10502,14 @@ Tasi gains an extra attempt to cast Fluttering Dream each time she assists or de
 - Sleep (base) — Single target — `high`
 - Stun (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
-- Mass sleep (base) — Single target
+- Sleep (area) (base) — Single target
 - Summoning (base) — All units
 - Transform (base) — Area
-
-#### Damage
-
-- DoT — All units, Single target
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- DEF Penetration
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Temesia - Lightsavior
 
@@ -10765,6 +10585,20 @@ Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- ATK SPD
+- Max HP
+- Healing
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — All units, Area, Single target
+- True damage — Single target
+
 #### Buffs
 
 - Energy recovery (base) — Area — `high`
@@ -10783,26 +10617,11 @@ Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks.
 - Interrupt (base) — Single target — `high`
 - Knock down (base) — All units — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — All units
-
-#### Damage
-
-- Physical — All units, Area, Single target
-- True damage — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Haste
-- Energy
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Thador - Ironsworn General
 
@@ -10880,6 +10699,17 @@ Thador restores 5% of his max HP every second as long as his lieutenant is alive
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Crit
+- Healing
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+
 #### Buffs
 
 - Shield (base) — Self — `medium`
@@ -10895,23 +10725,11 @@ Thador restores 5% of his max HP every second as long as his lieutenant is alive
 
 - Knock down (base) — Single target — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (Mythic+) — Single target
-
-#### Damage
-
-- Physical — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Crit
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Thoran - Fallen King
 
@@ -10989,6 +10807,16 @@ Thoran drains another 20% of the current HP from all enemies affected by Soul Pl
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Self, Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `low` — conditional (rare)
@@ -10999,19 +10827,6 @@ Thoran drains another 20% of the current HP from all enemies affected by Soul Pl
 
 - Unaffected immunity (base) — Self — On skill
 - Interrupt (base) — Single target — `low`
-
-#### Damage
-
-- Physical — Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Life Drain
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Tilaya - Wild Blade
 
@@ -11088,6 +10903,15 @@ Increases Vine Ward's shield value recovery to 15% (HP-based) per second while T
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Single target
+
 #### Buffs
 
 - Damage taken reduction (base) — Arc — `high` — conditional (frequent)
@@ -11100,22 +10924,11 @@ Increases Vine Ward's shield value recovery to 15% (HP-based) per second while T
 
 - Unaffected immunity (base) — Arc — Start of battle
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Start-of-battle cast (base) — Arc
-
-#### Damage
-
-- Physical — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Ulmus - Grove Keeper
 
@@ -11190,6 +11003,16 @@ Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
 - Healing (base) — Area — `low`
@@ -11203,19 +11026,6 @@ Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant 
 - Unaffected immunity (base) — Self — On skill
 - Knock down (Mythic+) — Single target — `high`
 - Move (Supreme+) — Area — `low`
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Life Drain
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Vala - Phantom of Oakenfell
 
@@ -11291,6 +11101,19 @@ Vala increases her damage dealt to the marked enemy by 10% .
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Haste
+- Healing
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Single target
+- True damage — Single target
+
 #### Buffs
 
 - ATK buff (Legendary+) — Self — `medium`
@@ -11305,29 +11128,16 @@ Vala increases her damage dealt to the marked enemy by 10% .
 
 - Stun (base) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
+- Marked target (focus fire) (base) — Self
 - Untargetable (Mythic+) — Multiple targets
 
 ##### Requires
 
 - Enemy defeat (Legendary+) — Enemies
-
-#### Damage
-
-- Physical — Single target
-- True damage — Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Max HP
-- Energy
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Valen - Roving Swordsman
 
@@ -11409,6 +11219,15 @@ Valen inflicts a 3 s stun with his Fury Thunder Strike.
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Single target
+
 #### Buffs
 
 - ATK buff (base) — Area — `high`
@@ -11422,21 +11241,11 @@ Valen inflicts a 3 s stun with his Fury Thunder Strike.
 
 - Stun (Supreme+) — Single target — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Invincibility (base) — Area
-
-#### Damage
-
-- Physical — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Energy
-- Primary damage type (unit): **Physical**
 
 ## Valka - Forsaken Blade
 
@@ -11514,6 +11323,19 @@ While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Ener
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Haste
+- Max HP
+- Energy
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+- True damage (HP-based) — Area
+
 #### Buffs
 
 - Healing (base) — Area — `low` — conditional (frequent)
@@ -11529,26 +11351,11 @@ While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Ener
 - Knock down (base) — Area — `high`
 - Stun (base) — Area — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Requires
 
 - Adjacent allies (base) — Allies
-
-#### Damage
-
-- Physical — Area, Self, Single target
-- True damage (HP-based) — Area
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- ATK SPD
-- Energy
-- Life Drain
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Velara - Pale Votary
 
@@ -11623,6 +11430,17 @@ After all magic circles are awakened, casting Ruthless Rite expands their area o
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Area, Single target
+
 #### Buffs
 
 - Haste buff (base) — Self — `low`
@@ -11637,7 +11455,7 @@ After all magic circles are awakened, casting Ruthless Rite expands their area o
 
 - Pin (base) — Single target — `high`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -11647,18 +11465,6 @@ After all magic circles are awakened, casting Ruthless Rite expands their area o
 ##### Requires
 
 - Boss encounter (base) — Allies
-
-#### Damage
-
-- Magic — Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Haste
-- Energy
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Viperian - Shadow Serpent
 
@@ -11741,6 +11547,15 @@ Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-ba
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — All units, Single target
+
 #### Buffs
 
 - Healing (base) — Single target — `high`
@@ -11754,19 +11569,6 @@ Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-ba
 #### Crowd Control
 
 - Unaffected immunity (base) — Self — Start of battle
-
-#### Damage
-
-- Magic — All units, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Haste
-- Life Drain
-- Healing
-- Primary damage type (unit): **Magic**
 
 ## Walker - Wildland Outlaw
 
@@ -11840,6 +11642,17 @@ Walker gains a shield equal to 20% of max HP when dealing damage to the targeted
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Max HP
+- Crit
+- Life Drain
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Arc, Area, Self, Single target
+
 #### Buffs
 
 - Damage taken reduction (base) — Self — `medium`
@@ -11850,18 +11663,6 @@ Walker gains a shield equal to 20% of max HP when dealing damage to the targeted
 #### Crowd Control
 
 - Stun (base) — Single target — `medium`
-
-#### Damage
-
-- Physical — Arc, Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Crit
-- Life Drain
-- Primary damage type (unit): **Physical**
 
 ## Zandrok - Watchful Edge
 
@@ -11936,6 +11737,16 @@ Any excess healing Zandrok receives is converted into extra max HP. The total ma
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Max HP
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Multiple targets, Self, Single target
+
 #### Buffs
 
 - Haste buff (base) — Area — `medium` — conditional (frequent)
@@ -11946,22 +11757,11 @@ Any excess healing Zandrok receives is converted into extra max HP. The total ma
 
 - Stun (base) — Area — `low`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
 - Summoning (base) — Area
-
-#### Damage
-
-- Physical — Area, Multiple targets, Self, Single target
-
-#### Stats the unit benefits from
-
-- Max HP
-- Haste
-- Life Drain
-- Primary damage type (unit): **Physical**
 
 ## Zanie - Timeless Tinkerer
 
@@ -12039,6 +11839,15 @@ When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and 
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- ATK SPD
+- Primary damage type (unit): **Physical**
+
+#### Damage
+
+- Physical — Area, Self, Single target
+
 #### Buffs
 
 - ATK SPD buff (base) — Self — `low` — conditional (rare)
@@ -12054,19 +11863,6 @@ When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and 
 #### Crowd Control
 
 - Stun (base) — Single target — `low`
-
-#### Damage
-
-- Physical — Area, Self, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- ATK SPD
-- Max HP
-- DEF Penetration
-- Healing
-- Primary damage type (unit): **Physical**
 
 ## Zorya - Watcher in Stone
 
@@ -12143,6 +11939,16 @@ When Zorya would take a fatal blow she channels all her Energy to survive and im
 
 ### Summary
 
+#### Stats the unit benefits from
+
+- Haste
+- Energy
+- Primary damage type (unit): **Magic**
+
+#### Damage
+
+- Magic — Arc, Area, Single target
+
 #### Buffs
 
 - Damage taken reduction (base) — Arc — `high`
@@ -12160,7 +11966,7 @@ When Zorya would take a fatal blow she channels all her Energy to survive and im
 - Knock down (base) — Arc — `medium`
 - Stun (base) — Area — `medium`
 
-#### Special effects
+#### Special Effects
 
 ##### Provides
 
@@ -12170,17 +11976,3 @@ When Zorya would take a fatal blow she channels all her Energy to survive and im
 ##### Requires
 
 - Ally Ultimate casts (Mythic+) — Allies
-
-#### Damage
-
-- Magic — Arc, Area, Single target
-
-#### Stats the unit benefits from
-
-- ATK
-- Max HP
-- Energy
-- Life Drain
-- Haste
-- Healing
-- Primary damage type (unit): **Magic**
