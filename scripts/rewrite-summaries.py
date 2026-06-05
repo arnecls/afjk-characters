@@ -61,7 +61,11 @@ def _prefer_targeting(candidate: str, current: str) -> str:
 
 
 def _prefer_buff_targeting(candidate: str, current: str) -> str:
-    """When merging buffs, keep the broadest ally reach (not self-only)."""
+    """When merging buffs, keep the broadest ally reach (never widen Self)."""
+    if candidate == "Self" or current == "Self":
+        if candidate == current:
+            return candidate
+        return candidate if candidate != "Self" else current
     cp = _TARGETING_PRIORITY.get(candidate, 99)
     cu = _TARGETING_PRIORITY.get(current, 99)
     return candidate if cp > cu else current
@@ -125,14 +129,38 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
     return False
 
 
-def _resolve_buff_targeting(text: str, label: str) -> str:
+def _energy_recovery_targets_self(t: str) -> bool:
+    """True when Energy recovery applies to the caster, not an ally."""
+    if _has_explicit_ally_buff(t, "Energy recovery"):
+        return False
+    if re.search(r"\bthe ally\b", t) and re.search(
+        r"(?:recover|restore)\w* \d+ energy", t
+    ):
+        return False
+    if re.search(
+        r"(?:recover|restore)\w* (?:himself|herself|itself) \d+ energy", t
+    ):
+        return True
+    if re.search(r"\b(?:she|he|it)\b", t) and re.search(
+        r"(?:recover|restore)\w* \d+ energy", t
+    ):
+        return not re.search(r"\b(?:allies?|ally)\b", t)
+    if re.search(r"(?:recover|restore)\w* \d+ energy", t):
+        return not re.search(r"\b(?:allies?|ally|the ally)\b", t)
+    return False
+
+
+def _resolve_buff_targeting(
+    text: str, label: str, *, scope: str | None = None
+) -> str:
     """Resolve buff targeting; self-only stats must not inherit enemy area text."""
-    t = text.lower()
+    snippet = scope if scope is not None else text
+    t = snippet.lower()
     if _has_explicit_ally_buff(t, label):
-        return detect_targeting(text, label, "buff")
+        return detect_targeting(snippet, label, "buff")
     if effect_targets_self_only(t, label, "buff"):
         return "Self"
-    return detect_targeting(text, label, "buff")
+    return detect_targeting(snippet, label, "buff")
 
 
 def _clause_around(t: str, pos: int) -> str:
@@ -159,6 +187,18 @@ def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool
         clause, label
     ):
         return True
+    if re.search(r"\b(?:giant )?bulbsprites?\b", clause):
+        return True
+    if re.search(r"\bfeeds? the allied summon\b", clause):
+        return True
+    if re.search(
+        r"\ballied summons? in their giant form\b", clause
+    ) or re.search(r"\ballied summons? in their giant form\b", window):
+        return True
+    if re.search(r"\btransforms? (?:the |that )?summon\b", clause):
+        return True
+    if re.search(r"\b(?:life drain|haste) in giant form\b", clause):
+        return True
     if re.search(r"\bboosting the damage of all allied summons\b", clause):
         return True
     if re.search(
@@ -166,6 +206,27 @@ def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool
     ) or re.search(r"\bshield granted by this skill\b", clause):
         return True
     return False
+
+
+def _buff_match_is_shield_modifier(t: str, label: str, match: re.Match[str]) -> bool:
+    """Shield value tweaks on self, not a new ally shield grant."""
+    if label != "Shield":
+        return False
+    clause = _clause_around(t, match.start())
+    return bool(
+        re.search(r"\bshield value\b", clause)
+        or re.search(r"\bincreas(?:e|es|ing) the shield value\b", clause)
+    )
+
+
+def _blessing_is_summon_only(t: str) -> bool:
+    """Blessing applies to allied summons, not general allies."""
+    return bool(
+        re.search(
+            r"grants?.{0,45}blessing.{0,45}(?:to |for )(?:allied )?summons?\b", t
+        )
+        or re.search(r"natural blessing.{0,40}allied summons", t)
+    )
 
 
 def _buff_match_is_enemy_stat(t: str, label: str, match: re.Match[str]) -> bool:
@@ -193,15 +254,23 @@ def _buff_match_is_enemy_stat(t: str, label: str, match: re.Match[str]) -> bool:
     return False
 
 
-def _should_add_buff(text: str, label: str, pattern: str) -> bool:
+def _buff_match_scopes(text: str, label: str, pattern: str) -> list[str]:
+    """Clause scopes for each valid buff pattern match (not summon/enemy misreads)."""
     t = text.lower()
+    scopes: list[str] = []
     for m in re.finditer(pattern, t):
         if _buff_match_is_summon_only(t, label, m):
             continue
+        if _buff_match_is_shield_modifier(t, label, m):
+            continue
         if _buff_match_is_enemy_stat(t, label, m):
             continue
-        return True
-    return False
+        scopes.append(_clause_around(t, m.start()))
+    return scopes
+
+
+def _should_add_buff(text: str, label: str, pattern: str) -> bool:
+    return bool(_buff_match_scopes(text, label, pattern))
 
 
 SUMMON_ONLY_BUFF_LABELS = frozenset({"Summon damage buff"})
@@ -460,8 +529,14 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             t,
         ) and not _has_explicit_ally_buff(t, label):
             return True
+        if label == "Energy recovery" and _energy_recovery_targets_self(t):
+            return True
 
     if label in ("Shield", "Healing", "Healing over time"):
+        if re.search(r"\bwhile shielded\b", t) and not re.search(
+            r"\b(?:allies?|ally)\b", t
+        ):
+            return True
         if re.search(
             r"\b(?:gains?|granted|grant(?:ing)?|recovering|restoring) (?:a )?"
             r"(?:\d+%[^.]{0,30})?(?:shield|hp)",
@@ -636,6 +711,14 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     ) and not re.search(r"\ball allies'? haste\b", t):
         return "Self" if re.search(r"\b(?:his|her) haste\b", t) else "Multiple targets"
     # Single-ally heal / shield / energy before global "all allies" heuristics
+    if category == "buff" and label in ("ATK buff", "Energy recovery") and re.search(
+        r"\bincreas(?:e|es|ing) their (?:atk|haste)\b", t
+    ):
+        return "Multiple targets"
+    if category == "buff" and label == "Energy recovery" and re.search(
+        r"\bthe ally recovers? \d+ energy\b", t
+    ):
+        return "Multiple targets"
     if category == "buff" and label in (
         "Healing",
         "Healing over time",
@@ -730,6 +813,18 @@ def extract_number(text: str, label: str = "") -> float | None:
     if "(scaled)" in text.lower() or "<hp>" in text.lower():
         return None
     t = text.lower()
+    if label == "Energy recovery":
+        m = re.search(r"(?:recover|restore)\w* (\d+(?:\.\d+)?) energy", t, re.I)
+        if m:
+            return float(m.group(1))
+    if label == "ATK buff":
+        m = re.search(
+            r"increas(?:e|es|ing) (?:their|allies?) atk by (\d+(?:\.\d+)?)",
+            t,
+            re.I,
+        )
+        if m:
+            return float(m.group(1))
     # Flat stat values (Haste 60+4, ATK SPD 45+5) before generic patterns
     stat_pats = [
         r"haste by (\d+(?:\.\d+)?)",
@@ -821,6 +916,8 @@ RARE_CONDITIONAL_PATTERNS: tuple[str, ...] = (
     r"drop an extra ingredient",
     r"if there are any monsters",
     r"once per (?:battle|hero)",
+    r"\d+ times? per (?:battle|hero)",
+    r"takes a fatal blow",
     r"can only (?:cast|trigger|be used) once",
     r"randomly grants",
     r"(?:triggered|used|cast) up to \d+ times",
@@ -837,6 +934,7 @@ FREQUENT_CONDITIONAL_PATTERNS: tuple[str, ...] = (
     r"while channeling",
     r"when .{0,30}energy exceeds",
     r"the first time .{0,50}(?:would|takes|receives)",
+    r"for the first time",
     r"if at least \d+",
     r"when .{0,30}(?:ultimate|casts? (?:her|his|their))",
 )
@@ -866,11 +964,29 @@ def _buff_condition(category: str, text: str) -> str | None:
     return classify_buff_condition(text) if category == "buff" else None
 
 
-def add_effect(effects: list[Effect], category: str, label: str, tier: str, text: str):
+def add_effect(
+    effects: list[Effect],
+    category: str,
+    label: str,
+    tier: str,
+    text: str,
+    *,
+    scope: str | None = None,
+):
     key = (category, label)
     existing = [e for e in effects if (e.category, e.label) == key]
-    n = extract_cc_duration(text, label) if category == "cc" else extract_number(text, label)
-    cond = _buff_condition(category, text)
+    cond_text = scope if scope is not None else text
+    n = (
+        extract_cc_duration(cond_text, label)
+        if category == "cc"
+        else extract_number(cond_text, label)
+    )
+    cond = _buff_condition(category, cond_text)
+    new_buff_tgt = (
+        _resolve_buff_targeting(text, label, scope=scope)
+        if category == "buff"
+        else None
+    )
     if existing:
         cur = existing[0]
         order = TIER_ORDER.get(tier, 99)
@@ -879,29 +995,36 @@ def add_effect(effects: list[Effect], category: str, label: str, tier: str, text
         if order < cur_order:
             cur.tier = tier
         cur.conditional = _merge_conditional(cur.conditional, cond)
-        if category == "buff":
-            cur.targeting = _prefer_buff_targeting(
-                _resolve_buff_targeting(text, label), cur.targeting
-            )
+        if category == "buff" and new_buff_tgt is not None:
+            cur.targeting = _prefer_buff_targeting(new_buff_tgt, cur.targeting)
         # Strongest value for cross-hero magnitude comparison
-        if n is not None and (cur.numeric is None or n > cur.numeric):
+        ally_keeps_primary = (
+            category == "buff"
+            and new_buff_tgt == "Self"
+            and cur.targeting != "Self"
+        )
+        if (
+            n is not None
+            and (cur.numeric is None or n > cur.numeric)
+            and not ally_keeps_primary
+        ):
             cur.numeric = n
-            cur.qualitative = text
-            if category == "buff":
+            cur.qualitative = cond_text
+            if category == "buff" and new_buff_tgt is not None:
                 cur.targeting = _prefer_buff_targeting(
-                    _resolve_buff_targeting(text, label), cur.targeting
+                    new_buff_tgt, cur.targeting
                 )
-            elif text_applies_effect(text, label):
+            elif text_applies_effect(cond_text, label):
                 cur.targeting = _prefer_targeting(
-                    detect_targeting(text, label, category), cur.targeting
+                    detect_targeting(cond_text, label, category), cur.targeting
                 )
         elif cond and not cur.qualitative:
-            cur.qualitative = text
+            cur.qualitative = cond_text
         return
     buff_tgt = (
-        _resolve_buff_targeting(text, label)
+        _resolve_buff_targeting(text, label, scope=scope)
         if category == "buff"
-        else detect_targeting(text, label, category)
+        else detect_targeting(cond_text, label, category)
     )
     effects.append(
         Effect(
@@ -910,7 +1033,7 @@ def add_effect(effects: list[Effect], category: str, label: str, tier: str, text
             tier=tier,
             targeting=buff_tgt,
             numeric=n,
-            qualitative=text,
+            qualitative=cond_text,
             conditional=cond,
         )
     )
@@ -1470,8 +1593,11 @@ def detect_special_effects(
     if text_has_start_of_battle_ultimate(t, section):
         add_special_effect(effects, "provides", "Start-of-battle cast", tier, text)
     for pat, label in SPECIAL_PROVIDES_RULES:
-        if re.search(pat, t):
-            add_special_effect(effects, "provides", label, tier, text)
+        if not re.search(pat, t):
+            continue
+        if label == "Ally blessing" and _blessing_is_summon_only(t):
+            continue
+        add_special_effect(effects, "provides", label, tier, text)
     for pat, label in SPECIAL_REQUIRES_RULES:
         if re.search(pat, t):
             add_special_effect(effects, "requires", label, tier, text)
@@ -1735,9 +1861,9 @@ def analyze_text(
 ):
     t = text.lower()
     for pat, label in BUFF_RULES:
-        if _should_add_buff(text, label, pat):
-            add_effect(effects, "buff", label, tier, text)
-        elif _matching_summon_buff_match(text, label, pat):
+        for scope in _buff_match_scopes(text, label, pat):
+            add_effect(effects, "buff", label, tier, text, scope=scope)
+        if _matching_summon_buff_match(text, label, pat):
             add_summon_buff_effect(summon_effects, label, tier, text)
     for pat, label in DEBUFF_RULES:
         if re.search(pat, t):

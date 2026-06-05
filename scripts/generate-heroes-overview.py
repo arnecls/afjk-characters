@@ -685,20 +685,11 @@ def build_beneficiaries_index(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
 ) -> dict[str, list[str]]:
-    """Provider title -> heroes who synergize via top picks or summon buffs."""
+    """Provider title -> short names of heroes who list them as a top synergy."""
     index: dict[str, set[str]] = defaultdict(set)
     for receiver in heroes:
         for provider_title, _ in rank_synergies(receiver, heroes, enabler_matchers):
             index[provider_title].add(short_name(receiver.title))
-    for provider in heroes:
-        if not provider.summon_effects:
-            continue
-        for receiver in heroes:
-            if provider.title == receiver.title:
-                continue
-            score, _ = score_summon_synergy(provider, receiver)
-            if score > 0:
-                index[provider.title].add(short_name(receiver.title))
     return {k: sorted(v) for k, v in index.items()}
 
 
