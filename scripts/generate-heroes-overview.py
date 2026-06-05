@@ -133,6 +133,23 @@ def receiver_summons(hero: _rs.Hero) -> bool:
     return _rs.hero_fields_summon_units(hero)
 
 
+# Summon buffs apply to the receiver's summons, not the hero's own stat line.
+SUMMON_RECEIVER_STATS: tuple[str, ...] = ("ATK", "ATK SPD", "Haste")
+
+
+def receiver_summon_synergy_stats(hero: _rs.Hero) -> list[str]:
+    """Stats a summoner's field units benefit from, plus any receiver stats."""
+    if not receiver_summons(hero):
+        return receiver_stats(hero)
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for stat in SUMMON_RECEIVER_STATS + tuple(receiver_stats(hero)):
+        if stat not in seen:
+            seen.add(stat)
+            ordered.append(stat)
+    return ordered
+
+
 SUMMON_TARGETING_WEIGHT = 3.0
 
 
@@ -588,7 +605,7 @@ def score_summon_synergy(
     seen_stats: set[str] = set()
     credited_buffs: set[str] = set()
 
-    for stat in receiver_stats(receiver):
+    for stat in receiver_summon_synergy_stats(receiver):
         if stat == "Haste" and "Haste buff" in credited_buffs:
             continue
         label_prefs = summon_buff_labels_for_stat(stat)
@@ -668,11 +685,20 @@ def build_beneficiaries_index(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
 ) -> dict[str, list[str]]:
-    """Provider title -> short names of heroes who list them as a top synergy."""
+    """Provider title -> heroes who synergize via top picks or summon buffs."""
     index: dict[str, set[str]] = defaultdict(set)
     for receiver in heroes:
         for provider_title, _ in rank_synergies(receiver, heroes, enabler_matchers):
             index[provider_title].add(short_name(receiver.title))
+    for provider in heroes:
+        if not provider.summon_effects:
+            continue
+        for receiver in heroes:
+            if provider.title == receiver.title:
+                continue
+            score, _ = score_summon_synergy(provider, receiver)
+            if score > 0:
+                index[provider.title].add(short_name(receiver.title))
     return {k: sorted(v) for k, v in index.items()}
 
 

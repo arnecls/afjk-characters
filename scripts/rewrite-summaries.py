@@ -1241,6 +1241,8 @@ _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
     r"\bsonny\b",
     r"magical bunny",
     r"dead tide warriors?",
+    r"voidlings?",
+    r"identical illusion",
 )
 
 _SUMMON_EFFECT_OBJECT = re.compile(

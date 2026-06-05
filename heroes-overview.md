@@ -396,9 +396,18 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units benefitting from Aurora
 
+- Alna
+- Berial
 - Bryon
 - Cecia
+- Damian
+- Dunlingr
 - Florabelle
+- Gala
+- Hodgkin
+- Laios
+- Mehira
+- Phraesto
 - Zanie
 
 ### Summary for Aurora
@@ -501,7 +510,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Berial benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Aurora**
+  - Summon damage buff (summons only, low)
+  - ATK SPD via Haste buff (summons only, high)
 
 ### Summary for Berial
 
@@ -640,12 +651,14 @@ _No synergy partners matched stat buffs or enablers._
 - **Twins**
   - Haste buff (all units, high)
 - **Aurora**
-  - Haste buff (summons only, high)
+  - Summon damage buff (summons only, low)
+  - ATK SPD via Haste buff (summons only, high)
+- **Florabelle**
+  - Haste buff (multiple targets, high, conditional (frequent))
+  - Summon damage buff (summons only, medium)
 - **Damian**
   - Haste buff (multiple targets, high)
 - **Hugin**
-  - Haste buff (multiple targets, high)
-- **Mikola**
   - Haste buff (multiple targets, high)
 
 ### Summary for Bryon
@@ -817,11 +830,13 @@ _No synergy partners matched stat buffs or enablers._
   - DEF buff (area, high)
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
+- **Florabelle**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - Summon damage buff (summons only, medium)
 - **Aurora**
+  - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Hugin**
   - ATK SPD via Haste buff (multiple targets, high)
 
 ### Units benefitting from Cecia
@@ -909,7 +924,6 @@ _No synergy partners matched stat buffs or enablers._
 - Alna
 - Antandra
 - Lucca
-- Mehira
 - Thador
 
 ### Summary for Contess
@@ -1243,14 +1257,15 @@ _No synergy partners matched stat buffs or enablers._
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high)
   - Healing over time (all units, medium)
+- **Florabelle**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - Summon damage buff (summons only, medium)
 - **Isabella**
   - ATK SPD via Haste buff (multiple targets, low, conditional (frequent))
   - Healing (area, high)
 - **Fay**
   - ATK SPD buff (multiple targets, low)
   - Healing (area, high)
-- **Hewynn**
-  - Healing (all units, high)
 
 ### Units benefitting from Dunlingr
 
@@ -1582,7 +1597,6 @@ _No synergy partners matched stat buffs or enablers._
 - Ludovic
 - Marilee
 - Mikola
-- Phraesto
 - Shemira
 - Smokey & Meerky
 - Sylphira
@@ -1623,21 +1637,32 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
+- **Aurora**
+  - Summon damage buff (summons only, low)
+  - ATK SPD via Haste buff (summons only, high)
 - **Hugin**
   - ATK buff (single target, high)
   - Haste buff (multiple targets, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - Haste buff (summons only, high)
 - **Damian**
   - Haste buff (multiple targets, high)
 
 ### Units benefitting from Florabelle
 
+- Alna
 - Aurora
+- Berial
+- Bryon
 - Cassadee
+- Cecia
+- Damian
+- Dunlingr
 - Gala
+- Hodgkin
+- Laios
+- Mehira
 - Niru
+- Phraesto
+- Zanie
 
 ### Summary for Florabelle
 
@@ -1730,9 +1755,9 @@ _No synergy partners matched stat buffs or enablers._
   - Energy recovery (area, medium)
 - **Twins**
   - Haste buff (all units, high)
-- **Florabelle**
-  - Haste buff (multiple targets, high, conditional (frequent))
-  - Summon damage buff (summons only, medium)
+- **Aurora**
+  - Summon damage buff (summons only, low)
+  - ATK SPD via Haste buff (summons only, high)
 
 ### Units benefitting from Gala
 
@@ -2123,7 +2148,6 @@ _No synergy partners matched stat buffs or enablers._
 - Alna
 - Antandra
 - Contess
-- Dunlingr
 - Evie
 - Igor
 - Lucius
@@ -2221,7 +2245,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Hodgkin benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Aurora**
+  - Summon damage buff (summons only, low)
+  - ATK SPD via Haste buff (summons only, high)
 
 ### Summary for Hodgkin
 
@@ -2276,7 +2302,6 @@ _No synergy partners matched stat buffs or enablers._
 - Baelran
 - Bryon
 - Cassadee
-- Cecia
 - Cryonaia
 - Cyran
 - Dionel
@@ -3364,6 +3389,11 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (all units, high)
   - Max HP buff (multiple targets, high)
   - Healing (multiple targets, low)
+- **Florabelle**
+  - Haste buff (multiple targets, high, conditional (frequent))
+  - Lifedrain buff (single target, medium, conditional (frequent))
+  - Summon damage buff (summons only, medium)
+  - Max HP via Shield (summons only, medium)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (multiple targets, high)
@@ -3374,9 +3404,6 @@ _No synergy partners matched stat buffs or enablers._
 - **Solise**
   - Max HP via Shield (multiple targets, medium)
   - Healing (all units, high, conditional (frequent))
-- **Contess**
-  - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, high)
 
 ### Units benefitting from Mehira
 
@@ -3412,6 +3439,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Mehira Provides
 
 - HP threshold strike (Mythic+) — Self
+- Summoning (Mythic+) — Self
 - Untargetable (Mythic+) — Self
 
 ## Mikola
@@ -3438,7 +3466,6 @@ _No synergy partners matched stat buffs or enablers._
 - Atalanta
 - Aurora
 - Baelran
-- Bryon
 - Cassadee
 - Cyran
 - Damian
@@ -3488,7 +3515,6 @@ _No synergy partners matched stat buffs or enablers._
 - Valka
 - Velara
 - Viperian
-- Zanie
 - Zorya
 
 ### Summary for Mikola
@@ -3993,13 +4019,14 @@ _No synergy partners matched stat buffs or enablers._
   - Energy recovery (area, medium)
 - **Hewynn**
   - Healing (all units, high)
+- **Aurora**
+  - Summon damage buff (summons only, low)
+  - ATK SPD via Haste buff (summons only, high)
 - **Isabella**
   - Healing (area, high)
   - Energy recovery (single target, low, conditional (frequent))
 - **Solise**
   - Healing (all units, high, conditional (frequent))
-- **Fay**
-  - Healing (area, high)
 
 ### Summary for Phraesto
 
@@ -5731,13 +5758,15 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
+- **Florabelle**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - Summon damage buff (summons only, medium)
 - **Aurora**
+  - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high)
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Mikola**
   - ATK SPD via Haste buff (multiple targets, high)
 
 ### Summary for Zanie
