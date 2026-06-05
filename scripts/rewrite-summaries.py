@@ -886,6 +886,13 @@ def extract_number(text: str, label: str = "") -> float | None:
         )
         if m:
             return float(m.group(1))
+        m = re.search(r"atk (?:is |are )?increased by (\d+(?:\.\d+)?)", t, re.I)
+        if m:
+            return float(m.group(1))
+    if label == "Shield":
+        m = re.search(r"converting\s+(\d+(?:\.\d+)?)\s*%", text, re.I)
+        if m:
+            return float(m.group(1))
     # Flat stat values (Haste 60+4, ATK SPD 45+5) before generic patterns
     stat_pats = [
         r"haste by (\d+(?:\.\d+)?)",
@@ -1104,6 +1111,16 @@ BUFF_RULES = [
     (r"grants? an ally brightfeather", "Ally empower buff"),
     # ATK buff: match increase/increases/increasing + optional pronoun + "atk by"
     (r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s )?atk by", "ATK buff"),
+    # Passive ally ATK: "the ally's ATK is increased by N%" (Contess Exemption)
+    (
+        r"(?:the |an |that )?ally'?s? atk is increased by",
+        "ATK buff",
+    ),
+    # Passive plural ally ATK: "Allies … have their ATK increased by N%"
+    (
+        r"allies.{0,50}atk (?:is |are )?increased by",
+        "ATK buff",
+    ),
     (
         r"(?:and )?allies with \w+ gain(?:s|ing)? (?:an )?extra \d+% atk",
         "ATK buff",

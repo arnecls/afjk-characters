@@ -920,6 +920,15 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Contess
 
+- Cryonaia
+- Kafra
+- Kordan
+- Perseus
+- Shemira
+- Silven
+- Smokey & Meerky
+- Talene
+- Temesia
 - Zorya
 
 ### Summary for Contess
@@ -936,9 +945,10 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Buffs provided by Contess
 
+- ATK buff — Single target — `high`
 - Energy recovery — Self — `low`
 - Healing — Multiple targets — `high`
-- Shield — Single target — `low`
+- Shield — Single target — `medium`
 
 #### Debuffs provided by Contess
 
@@ -968,9 +978,10 @@ _No synergy partners matched stat buffs or enablers._
   - Max HP buff (multiple targets, high)
 - **Lucius**
   - Max HP via Shield (area, high)
+- **Contess**
+  - ATK buff (single target, high)
+  - Max HP via Shield (single target, medium)
 - **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
   - Max HP via Shield (multiple targets, medium)
 
 ### Summary for Cryonaia
@@ -1399,7 +1410,6 @@ _No synergy partners matched stat buffs or enablers._
 - Rowan
 - Seth
 - Shakir
-- Shemira
 - Silven
 - Sinbad
 - Sonja
@@ -2065,10 +2075,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Units benefitting from Hepler
 
 - Antandra
-- Cryonaia
 - Eironn
 - Gerda
-- Kafra
 - Kruger
 - Silvina
 - Thador
@@ -2126,7 +2134,6 @@ _No synergy partners matched stat buffs or enablers._
 - Contess
 - Evie
 - Igor
-- Kordan
 - Lucius
 - Ludovic
 - Lumont
@@ -2192,7 +2199,6 @@ _No synergy partners matched stat buffs or enablers._
 - Cryonaia
 - Faramor
 - Kafra
-- Perseus
 
 ### Summary for Himmel
 
@@ -2501,9 +2507,6 @@ _No synergy partners matched stat buffs or enablers._
 - Lucius
 - Ludovic
 - Phraesto
-- Smokey & Meerky
-- Talene
-- Temesia
 
 ### Summary for Isabella
 
@@ -2550,9 +2553,10 @@ _No synergy partners matched stat buffs or enablers._
   - Max HP buff (multiple targets, high)
 - **Lucius**
   - Max HP via Shield (area, high)
+- **Contess**
+  - ATK buff (single target, high)
+  - Max HP via Shield (single target, medium)
 - **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
   - Max HP via Shield (multiple targets, medium)
 
 ### Units benefitting from Kafra
@@ -2625,7 +2629,6 @@ _No synergy partners matched stat buffs or enablers._
 - Kruger
 - Mehira
 - Shemira
-- Silven
 - Silvina
 - Thador
 - Tilaya
@@ -2674,11 +2677,13 @@ _No synergy partners matched stat buffs or enablers._
   - Max HP via Shield (all units, low)
   - Healing (multiple targets, high)
   - Lifedrain buff (multiple targets, low)
+- **Contess**
+  - ATK buff (single target, high)
+  - Max HP via Shield (single target, medium)
+  - Healing (multiple targets, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - Healing over time (all units, medium)
-- **Hewynn**
-  - Healing (all units, high)
 
 ### Units benefitting from Kordan
 
@@ -4011,9 +4016,9 @@ _No synergy partners matched stat buffs or enablers._
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high)
   - Enables Ally stat buffs via 4 ally stat buffs
-- **Himmel**
-  - ATK buff (multiple targets, low)
-  - Max HP buff (multiple targets, high)
+- **Contess**
+  - ATK buff (single target, high)
+  - Max HP via Shield (single target, medium)
   - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 
 ### Summary for Perseus
@@ -4032,8 +4037,8 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Buffs provided by Perseus
 
+- ATK buff — Multiple targets — `medium`
 - Max HP buff — Self — `medium` — conditional (frequent)
-- ATK buff (Legendary+) — Self — `medium`
 - Damage taken reduction (Mythic+) — Self — `low`
 
 #### Crowd Control provided by Perseus
@@ -4652,9 +4657,9 @@ _No synergy partners matched stat buffs or enablers._
 - **Rowan**
   - Max HP buff (single target, high)
   - Healing (area, medium)
-- **Twins**
-  - Max HP buff (multiple targets, high)
-  - Healing (single target, medium)
+- **Contess**
+  - Max HP via Shield (single target, medium)
+  - Healing (multiple targets, high)
 
 ### Summary for Shemira
 
@@ -4690,8 +4695,8 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high)
   - Enables Ally stat buffs via 3 ally stat buffs
-- **Koko**
-  - Enables Ally stat buffs via 4 ally stat buffs
+- **Contess**
+  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 
 ### Units benefitting from Silven
 
@@ -4839,11 +4844,12 @@ _No synergy partners matched stat buffs or enablers._
   - Healing over time (all units, medium)
 - **Hewynn**
   - Healing (all units, high)
+- **Contess**
+  - ATK buff (single target, high)
+  - Healing (multiple targets, high)
 - **Fay**
   - ATK buff (multiple targets, low)
   - Healing (arc, high)
-- **Isabella**
-  - Healing (area, high)
 
 ### Units benefitting from Smokey & Meerky
 
@@ -5065,11 +5071,12 @@ _No synergy partners matched stat buffs or enablers._
   - Healing over time (all units, medium)
 - **Hewynn**
   - Healing (all units, high)
+- **Contess**
+  - ATK buff (single target, high)
+  - Healing (multiple targets, high)
 - **Fay**
   - ATK buff (multiple targets, low)
   - Healing (arc, high)
-- **Isabella**
-  - Healing (area, high)
 
 ### Summary for Talene
 
@@ -5169,9 +5176,10 @@ _No synergy partners matched stat buffs or enablers._
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
-- **Isabella**
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent))
-  - Healing (area, high)
+- **Contess**
+  - ATK buff (single target, high)
+  - Max HP via Shield (single target, medium)
+  - Healing (multiple targets, high)
 
 ### Summary for Temesia
 
