@@ -1947,18 +1947,19 @@ def assign_magnitudes(heroes: list[Hero]):
     assign_damage_magnitudes(heroes)
 
 
-def format_summary(hero: Hero) -> str:
-    out = ["### Summary", ""]
+def format_summary(hero: Hero, display_name: str | None = None) -> str:
+    name = display_name or hero.title.split(" - ", 1)[0].strip()
+    out = [f"### Summary for {name}", ""]
 
     if hero.benefit_stats:
-        out.append("#### Stats the unit benefits from")
+        out.append(f"#### Stats {name} benefits from")
         out.append("")
         for b in hero.benefit_stats:
             out.append(f"- {b}")
         out.append("")
 
     if hero.damage_entries or hero.damage_type:
-        out.append("#### Damage")
+        out.append(f"#### Damage types dealt by {name}")
         out.append("")
         if hero.damage_type:
             out.append(f"- Primary damage type (unit): **{hero.damage_type}**")
@@ -1974,7 +1975,7 @@ def format_summary(hero: Hero) -> str:
         items = [e for e in hero.effects if e.category == cat]
         if not items:
             continue
-        out.append(f"#### {heading}")
+        out.append(f"#### {heading} provided by {name}")
         out.append("")
         for e in sorted(items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)):
             out.append(
@@ -1985,7 +1986,7 @@ def format_summary(hero: Hero) -> str:
 
     cc_items = [e for e in hero.effects if e.category == "cc"]
     if cc_items or hero.cc_immunities:
-        out.append("#### Crowd Control")
+        out.append(f"#### Crowd Control provided by {name}")
         out.append("")
         for imm in sorted(
             hero.cc_immunities,
@@ -2003,18 +2004,26 @@ def format_summary(hero: Hero) -> str:
         out.append("")
 
     if hero.special_effects:
-        out.append("#### Special Effects")
+        provides = sorted(
+            [se for se in hero.special_effects if se.kind == "provides"],
+            key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
+        )
+        requires = sorted(
+            [se for se in hero.special_effects if se.kind == "requires"],
+            key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
+        )
+        out.append(f"#### {name}'s Special Effects")
         out.append("")
-        for kind, heading in (("provides", "Provides"), ("requires", "Requires")):
-            items = sorted(
-                [se for se in hero.special_effects if se.kind == kind],
-                key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
-            )
-            if not items:
-                continue
-            out.append(f"##### {heading}")
+        if provides:
+            out.append(f"#### {name} Provides")
             out.append("")
-            for se in items:
+            for se in provides:
+                out.append(f"- {se.label} ({se.tier}) — {se.targeting}")
+            out.append("")
+        if requires:
+            out.append(f"#### {name} Requires")
+            out.append("")
+            for se in requires:
                 out.append(f"- {se.label} ({se.tier}) — {se.targeting}")
             out.append("")
 

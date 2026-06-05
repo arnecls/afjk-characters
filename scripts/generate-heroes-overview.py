@@ -609,6 +609,7 @@ def format_synergies(
     beneficiaries_index: dict[str, list[str]],
 ) -> list[str]:
     lines: list[str] = []
+    receiver_name = short_name(receiver.title)
     picks = rank_synergies(receiver, heroes, enabler_matchers)
     if picks:
         for title, reasons in picks:
@@ -621,7 +622,7 @@ def format_synergies(
     benefited = beneficiaries_index.get(receiver.title, [])
     if benefited:
         lines.append("")
-        lines.append("##### Units benefited")
+        lines.append(f"### Units benefitting from {receiver_name}")
         lines.append("")
         for name in benefited:
             lines.append(f"- {name}")
@@ -758,11 +759,12 @@ def build_overview() -> str:
         syn_lines = format_synergies(
             hero, heroes, enabler_matchers, beneficiaries_index
         )
-        summary = _rs.format_summary(hero).rstrip()
+        summary = _rs.format_summary(hero, short_name(hero.title)).rstrip()
 
         parts.append(f"## {short_name(hero.title)}")
         parts.append("")
-        parts.append("### Synergies")
+        hero_name = short_name(hero.title)
+        parts.append(f"### Units {hero_name} benefits from")
         parts.append("")
         parts.extend(syn_lines)
         parts.append("")
