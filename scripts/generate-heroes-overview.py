@@ -481,11 +481,11 @@ def score_combined_synergy(
     return buff_score + en_score, buff_reasons + en_reasons
 
 
-def format_synergies(
+def rank_synergies(
     receiver: _rs.Hero,
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
-) -> list[str]:
+) -> list[tuple[str, list[str]]]:
     ranked: list[tuple[float, list[str], str]] = []
     for provider in heroes:
         score, reasons = score_combined_synergy(
@@ -501,10 +501,44 @@ def format_synergies(
         for entry in ranked
         if not should_exclude_synergy(entry[1], receiver)
     ]
+    return [(title, reasons) for _, reasons, title in filtered[:MAX_SYNERGIES]]
+
+
+def build_beneficiaries_index(
+    heroes: list[_rs.Hero],
+    enabler_matchers: dict[str, callable],
+) -> dict[str, list[str]]:
+    """Provider title -> short names of heroes who list them as a top synergy."""
+    index: dict[str, set[str]] = defaultdict(set)
+    for receiver in heroes:
+        for provider_title, _ in rank_synergies(receiver, heroes, enabler_matchers):
+            index[provider_title].add(short_name(receiver.title))
+    return {k: sorted(v) for k, v in index.items()}
+
+
+def format_synergies(
+    receiver: _rs.Hero,
+    heroes: list[_rs.Hero],
+    enabler_matchers: dict[str, callable],
+    beneficiaries_index: dict[str, list[str]],
+) -> list[str]:
     lines: list[str] = []
-    for i, (_, reasons, title) in enumerate(filtered[:MAX_SYNERGIES], 1):
-        why = "; ".join(reasons)
-        lines.append(f"{i}. **{title}** — {why}")
+    picks = rank_synergies(receiver, heroes, enabler_matchers)
+    if picks:
+        for i, (title, reasons) in enumerate(picks, 1):
+            why = "; ".join(reasons)
+            lines.append(f"{i}. **{title}** — {why}")
+    else:
+        lines.append("_No synergy partners matched stat buffs or enablers._")
+
+    benefited = beneficiaries_index.get(receiver.title, [])
+    if benefited:
+        lines.append("")
+        lines.append("##### Units benefited")
+        lines.append("")
+        for name in benefited:
+            lines.append(f"- {name}")
+
     return lines
 
 
@@ -617,6 +651,7 @@ def build_overview() -> str:
 
     _rs.assign_magnitudes(heroes)
     enabler_matchers = _make_enabler_matchers(hero_class_by_title)
+    beneficiaries_index = build_beneficiaries_index(heroes, enabler_matchers)
 
     parts = [
         "# Heroes Overview",
@@ -635,16 +670,15 @@ def build_overview() -> str:
     for hero in heroes:
         block = block_by_title[hero.title]
         summary = extract_summary(block)
-        syn_lines = format_synergies(hero, heroes, enabler_matchers)
+        syn_lines = format_synergies(
+            hero, heroes, enabler_matchers, beneficiaries_index
+        )
 
         parts.append(f"## {hero.title}")
         parts.append("")
         parts.append("### Synergies")
         parts.append("")
-        if syn_lines:
-            parts.extend(syn_lines)
-        else:
-            parts.append("_No synergy partners matched stat buffs or enablers._")
+        parts.extend(syn_lines)
         parts.append("")
         parts.append("### Summary")
         parts.append("")

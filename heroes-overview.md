@@ -19,16 +19,23 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Enables Debuff on target via Max HP debuff (area)
 5. **Hepler - Master of Forms** — Enables Debuff on target via Haste debuff (area)
 
+##### Units benefited
+
+- Cecia
+- Kulu
+- Lily May
+- Niru
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - DEF Penetration
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -85,10 +92,10 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Max HP
 - Healing
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — All units, Arc, Self, Single target
 
 #### Buffs
@@ -130,10 +137,10 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Haste
 - Max HP
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Self, Single target
 
 #### Buffs
@@ -170,16 +177,20 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
 5. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
 
+##### Units benefited
+
+- Ludovic
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Max HP
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Self, Single target
 
 #### Buffs
@@ -218,10 +229,10 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - ATK
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
 
 #### Buffs
@@ -254,10 +265,10 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 
 - Haste
 - Physical DEF
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 
 #### Buffs
@@ -289,16 +300,24 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 1. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
 2. **Marilee - Forest's Arrow** — Crit via Crit buff (single target, low)
 
+##### Units benefited
+
+- Callan
+- Eironn
+- Gerda
+- Silvina
+- Tilaya
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Crit
 - Execution
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 - True damage — All units, Single target
 
@@ -337,16 +356,50 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
 5. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Atalanta
+- Baelran
+- Bryon
+- Cassadee
+- Damian
+- Elijah & Lailah
+- Faramor
+- Florabelle
+- Frieren
+- Gala
+- Hepler
+- Himmel
+- Hugin
+- Isabella
+- Korin
+- Laios
+- Lucy
+- Marcille
+- Mikola
+- Natsu
+- Pang
+- Pippa
+- Ravion
+- Rowan
+- Seth
+- Shakir
+- Sonja
+- Soren
+- Tasi
+- Vala
+- Viperian
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Haste
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
 
 #### Buffs
@@ -389,10 +442,10 @@ Regenerate with `scripts/generate-heroes-overview.py` after
 - ATK
 - Haste
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 - True damage — Area, Single target
 - True damage (HP-based) — Arc, Area
@@ -434,12 +487,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Summary
 
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Magic**
-
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — Area
 - Magic — Multiple targets, Single target
 
@@ -480,10 +530,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - ATK
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Buffs
@@ -531,10 +581,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Life Drain
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - DoT — Area
 - Physical — Arc, Area, Single target
 
@@ -566,10 +616,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Haste
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — Area
 - Magic — Single target
 
@@ -612,10 +662,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Magic — Multiple targets
 - Physical — All units, Area, Self, Single target
 
@@ -654,10 +704,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Crit
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Self, Single target
 
 #### Buffs
@@ -683,15 +733,19 @@ _No synergy partners matched stat buffs or enablers._
 4. **Damian - Woody Wonder** — Haste via Haste buff (multiple targets, high)
 5. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Niru
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Haste
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 
 #### Buffs
@@ -726,6 +780,30 @@ _No synergy partners matched stat buffs or enablers._
 3. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
 4. **Aliceth - Radiant Wings** — DEF Penetration via DEF Penetration buff (single target, medium)
 
+##### Units benefited
+
+- Cyran
+- Dionel
+- Dunlingr
+- Fay
+- Gunnar
+- Gwyneth
+- Korin
+- Kulu
+- Lucy
+- Lyca
+- Marilee
+- Mirael
+- Nerion
+- Odie
+- Parisa
+- Perseus
+- Rhys
+- Silven
+- Sinbad
+- Valka
+- Zanie
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -734,10 +812,10 @@ _No synergy partners matched stat buffs or enablers._
 - DEF Penetration
 - Physical DEF
 - Magic DEF
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - DoT — Arc, Single target
 - Physical — Area, Single target
 
@@ -775,12 +853,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Summary
 
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Physical**
-
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 ## Contess - Abyssal Rulekeeper
@@ -800,10 +875,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Healing
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Multiple targets
 
 #### Buffs
@@ -845,10 +920,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK
 - Max HP
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — Area
 - Magic — All units, Area, Single target
 
@@ -893,10 +968,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - ATK SPD
 - Crit
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - True damage — All units
 
@@ -930,12 +1005,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Summary
 
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Magic**
-
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Self, Single target
 - True damage (HP-based) — Area
 
@@ -959,6 +1031,46 @@ _No synergy partners matched stat buffs or enablers._
 4. **Aurora - Celestial of Dreams** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, high)
 5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high); Healing via Healing (multiple targets, low)
 
+##### Units benefited
+
+- Antandra
+- Arden
+- Atalanta
+- Aurora
+- Bryon
+- Cassadee
+- Elijah & Lailah
+- Gala
+- Hugin
+- Isabella
+- Koko
+- Korin
+- Laios
+- Lenya
+- Lucy
+- Marcille
+- Nara
+- Pandora
+- Pang
+- Parisa
+- Phraesto
+- Pippa
+- Ravion
+- Rowan
+- Scarlita
+- Seth
+- Shakir
+- Silven
+- Sinbad
+- Smokey & Meerky
+- Soren
+- Thoran
+- Ulmus
+- Valka
+- Velara
+- Viperian
+- Zorya
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -967,10 +1079,10 @@ _No synergy partners matched stat buffs or enablers._
 - Haste
 - Healing
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 
 #### Buffs
@@ -1001,10 +1113,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK SPD
 - Max HP
 - Execution
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 - True damage — All units, Single target
 
@@ -1043,10 +1155,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK SPD
 - Haste
 - Max HP
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Self, Single target
 
 #### Buffs
@@ -1090,10 +1202,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Max HP
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Arc, Area, Single target
 
 #### Buffs
@@ -1120,16 +1232,63 @@ _No synergy partners matched stat buffs or enablers._
 4. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
 5. **Hugin - Maverick Smith** — Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Alna
+- Alsa
+- Atalanta
+- Aurora
+- Baelran
+- Bryon
+- Cassadee
+- Damian
+- Dunlingr
+- Faramor
+- Florabelle
+- Frieren
+- Gala
+- Hepler
+- Himmel
+- Hugin
+- Isabella
+- Koko
+- Korin
+- Laios
+- Lenya
+- Lucy
+- Lumont
+- Marcille
+- Mehira
+- Mikola
+- Natsu
+- Pang
+- Pippa
+- Ravion
+- Rowan
+- Seth
+- Shakir
+- Sonja
+- Soren
+- Sylphira
+- Tasi
+- Thador
+- Vala
+- Valka
+- Velara
+- Viperian
+- Zandrok
+- Zorya
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Haste
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Buffs
@@ -1175,10 +1334,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Healing
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Multiple targets, Single target
 
 #### Buffs
@@ -1223,10 +1382,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - Haste
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 - True damage — Multiple targets
 - True damage (HP-based) — Single target
@@ -1263,15 +1422,23 @@ _No synergy partners matched stat buffs or enablers._
 1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
 2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
 
+##### Units benefited
+
+- Cecia
+- Kordan
+- Lucca
+- Mikola
+- Temesia
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK SPD
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
 
 #### Buffs
@@ -1295,16 +1462,24 @@ _No synergy partners matched stat buffs or enablers._
 4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
 5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Alsa
+- Cassadee
+- Lumont
+- Niru
+- Zandrok
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Haste
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -1341,10 +1516,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK
 - Haste
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — All units, Single target
 - Magic — Area, Self, Single target
 - True damage — All units, Single target
@@ -1380,10 +1555,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - Haste
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Buffs
@@ -1418,15 +1593,26 @@ _No synergy partners matched stat buffs or enablers._
 4. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium)
 5. **Athalia - Harbinger of Justice** — Max HP via Shield (single target, high)
 
+##### Units benefited
+
+- Alna
+- Evie
+- Granny Dahnie
+- Lucius
+- Ludovic
+- Shemira
+- Sylphira
+- Thador
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 
 #### Buffs
@@ -1459,10 +1645,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Healing
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 #### Buffs
@@ -1504,10 +1690,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK SPD
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - DoT — Area
 - Physical — All units, Self, Single target
 
@@ -1534,15 +1720,28 @@ _No synergy partners matched stat buffs or enablers._
 
 1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
 
+##### Units benefited
+
+- Cecia
+- Cyran
+- Fay
+- Kulu
+- Lyca
+- Marilee
+- Mirael
+- Odie
+- Rhys
+- Zanie
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK SPD
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - DoT — Single target
 - Physical — Area, Single target
 
@@ -1571,10 +1770,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - ATK
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Single target
 
 #### Buffs
@@ -1592,6 +1791,16 @@ _No synergy partners matched stat buffs or enablers._
 4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
 5. **Zorya - Watcher in Stone** — Energy via Energy recovery (area, low); Life Drain via Lifedrain buff (area, medium, conditional (frequent))
 
+##### Units benefited
+
+- Athalia
+- Carolina
+- Cyran
+- Marilee
+- Nazrik
+- Niru
+- Rhys
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -1600,10 +1809,10 @@ _No synergy partners matched stat buffs or enablers._
 - Crit
 - Energy
 - Life Drain
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 #### Buffs
@@ -1645,16 +1854,21 @@ _No synergy partners matched stat buffs or enablers._
 4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
 5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Aliceth
+- Shadewing
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Haste
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -1695,10 +1909,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - ATK
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units
 
 #### Buffs
@@ -1733,10 +1947,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - Haste
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 - True damage (HP-based) — All units
 
@@ -1769,10 +1983,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - ATK
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 
 #### Buffs
@@ -1802,16 +2016,50 @@ _No synergy partners matched stat buffs or enablers._
 4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
 5. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Alsa
+- Atalanta
+- Aurora
+- Baelran
+- Bryon
+- Cassadee
+- Cryonaia
+- Dunlingr
+- Elijah & Lailah
+- Faramor
+- Florabelle
+- Frieren
+- Hepler
+- Himmel
+- Kafra
+- Korin
+- Laios
+- Lenya
+- Lucy
+- Lumont
+- Natsu
+- Perseus
+- Pippa
+- Ravion
+- Shakir
+- Sonja
+- Talene
+- Tasi
+- Velara
+- Viperian
+- Zandrok
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Haste
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Multiple targets, Single target
 
 #### Buffs
@@ -1835,10 +2083,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Life Drain
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 
 #### Buffs
@@ -1869,10 +2117,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK
 - ATK SPD
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 - True damage — Multiple targets
 - True damage (HP-based) — Single target
@@ -1911,6 +2159,15 @@ _No synergy partners matched stat buffs or enablers._
 4. **Sylphira - Sovereign of Song** — ATK via ATK buff (area, high, conditional (frequent)); Haste via Haste buff (area, medium, conditional (frequent))
 5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
 
+##### Units benefited
+
+- Evie
+- Granny Dahnie
+- Lucius
+- Ludovic
+- Shemira
+- Sylphira
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -1919,10 +2176,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK SPD
 - Haste
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Buffs
@@ -1962,10 +2219,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 #### Buffs
@@ -2002,6 +2259,10 @@ _No synergy partners matched stat buffs or enablers._
 4. **Kordan - Ironblood Chieftain** — Life Drain via Lifedrain buff (area, high)
 5. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
 
+##### Units benefited
+
+- Shadewing
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -2009,10 +2270,10 @@ _No synergy partners matched stat buffs or enablers._
 - Haste
 - Energy
 - Life Drain
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 - True damage — All units
 
@@ -2042,6 +2303,14 @@ _No synergy partners matched stat buffs or enablers._
 4. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
 5. **Solise - Floral Wonder** — Max HP via Shield (multiple targets, medium); Healing via Healing (multiple targets, high, conditional (frequent))
 
+##### Units benefited
+
+- Brutus
+- Harak
+- Igor
+- Koko
+- Walker
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -2051,10 +2320,10 @@ _No synergy partners matched stat buffs or enablers._
 - Healing
 - DEF Penetration
 - Life Drain
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 
 #### Buffs
@@ -2092,10 +2361,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK SPD
 - Haste
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 - True damage — Single target
 - True damage (HP-based) — Area, Single target
@@ -2117,14 +2386,17 @@ _No synergy partners matched stat buffs or enablers._
 
 _No synergy partners matched stat buffs or enablers._
 
+##### Units benefited
+
+- Brutus
+- Igor
+- Walker
+
 ### Summary
-
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -2151,10 +2423,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - ATK SPD
 - DEF Penetration
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 
 #### Buffs
@@ -2198,10 +2470,10 @@ _No synergy partners matched stat buffs or enablers._
 - Haste
 - Max HP
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 #### Buffs
@@ -2248,10 +2520,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Crit
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 
 #### Buffs
@@ -2272,16 +2544,21 @@ _No synergy partners matched stat buffs or enablers._
 
 1. **Aliceth - Radiant Wings** — ATK via ATK buff (multiple targets, medium); DEF Penetration via DEF Penetration buff (single target, medium)
 
+##### Units benefited
+
+- Aliceth
+- Bonnie
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - DEF Penetration
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 - True damage (HP-based) — Self, Single target
 
@@ -2312,15 +2589,20 @@ _No synergy partners matched stat buffs or enablers._
 
 _No synergy partners matched stat buffs or enablers._
 
+##### Units benefited
+
+- Lucius
+- Ludovic
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Buffs
@@ -2357,10 +2639,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Physical DEF
 - Magic DEF
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 
 #### Buffs
@@ -2386,15 +2668,52 @@ _No synergy partners matched stat buffs or enablers._
 4. **Mikola - Warbeat Compere** — Healing via Healing over time (all units, medium)
 5. **Lorsan - Windweaver Protector** — Healing via Healing (multiple targets, high)
 
+##### Units benefited
+
+- Alna
+- Alsa
+- Antandra
+- Callan
+- Contess
+- Cryonaia
+- Dionel
+- Dunlingr
+- Eironn
+- Gerda
+- Gunnar
+- Harak
+- Himmel
+- Kafra
+- Kordan
+- Lenya
+- Lucca
+- Lumont
+- Mehira
+- Nerion
+- Perseus
+- Phraesto
+- Shadewing
+- Silvina
+- Talene
+- Temesia
+- Thador
+- Thoran
+- Tilaya
+- Ulmus
+- Valka
+- Velara
+- Walker
+- Zandrok
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Healing
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -2434,10 +2753,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK SPD
 - Haste
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 
 #### Buffs
@@ -2464,15 +2783,23 @@ _No synergy partners matched stat buffs or enablers._
 4. **Lorsan - Windweaver Protector** — Healing via Healing (multiple targets, high)
 5. **Antandra - Desert Fury** — Healing via Healing (area, medium)
 
+##### Units benefited
+
+- Evie
+- Granny Dahnie
+- Lucius
+- Shemira
+- Sylphira
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Healing
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 
 #### Buffs
@@ -2502,16 +2829,22 @@ _No synergy partners matched stat buffs or enablers._
 4. **Ravion - Twilight's Burden** — Haste via Haste buff (multiple targets, medium); Max HP via Shield (multiple targets, medium)
 5. **Florabelle - Blooming Maiden** — Haste via Haste buff (multiple targets, high, conditional (frequent)); Max HP via Shield (single target, medium)
 
+##### Units benefited
+
+- Atalanta
+- Cecia
+- Lucca
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Haste
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -2538,15 +2871,21 @@ _No synergy partners matched stat buffs or enablers._
 1. **Cecia - Requiem of Thorns** — ATK SPD via ATK SPD buff (multiple targets, high)
 2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
 
+##### Units benefited
+
+- Aliceth
+- Bonnie
+- Indris
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK SPD
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Self, Single target
 
 #### Buffs
@@ -2585,10 +2924,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK SPD
 - Haste
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Buffs
@@ -2620,6 +2959,14 @@ _No synergy partners matched stat buffs or enablers._
 2. **Gwyneth - Dragonslayer Knight** — ATK SPD via ATK SPD buff (area, low)
 3. **Harak - Deepsea Ravager** — Crit via Crit buff (single target, medium)
 
+##### Units benefited
+
+- Athalia
+- Carolina
+- Cyran
+- Nazrik
+- Rhys
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -2627,10 +2974,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - ATK SPD
 - Crit
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Multiple targets, Single target
 - True damage — Multiple targets
 
@@ -2653,6 +3000,10 @@ _No synergy partners matched stat buffs or enablers._
 4. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high); Healing via Healing (area, medium)
 5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
 
+##### Units benefited
+
+- Niru
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -2661,10 +3012,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Healing
 - Life Drain
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Self, Single target
 
 #### Buffs
@@ -2700,6 +3051,19 @@ _No synergy partners matched stat buffs or enablers._
 4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
 5. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
 
+##### Units benefited
+
+- Bryon
+- Damian
+- Lucius
+- Ludovic
+- Mehira
+- Pippa
+- Shakir
+- Sylphira
+- Vala
+- Viperian
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -2707,10 +3071,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - Haste
 - Healing
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets
 
 #### Buffs
@@ -2736,10 +3100,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - ATK SPD
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — Single target
 - Magic — Area, Single target
 
@@ -2769,10 +3133,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 - True damage — Single target
 
@@ -2800,6 +3164,11 @@ _No synergy partners matched stat buffs or enablers._
 4. **Ravion - Twilight's Burden** — ATK via ATK buff (multiple targets, high); Haste via Haste buff (multiple targets, medium)
 5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Bonnie
+- Shadewing
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -2807,10 +3176,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - Haste
 - Crit
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — Single target
 - Magic — Area, Single target
 
@@ -2842,10 +3211,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Crit
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Self, Single target
 - True damage — Single target
 - True damage (HP-based) — Single target
@@ -2882,10 +3251,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Energy
 - DEF Penetration
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Self, Single target
 
 #### Buffs
@@ -2913,12 +3282,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Summary
 
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Magic**
-
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Self, Single target
 
 #### Buffs
@@ -2950,10 +3316,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - ATK SPD
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — Single target
 - Magic — Single target
 
@@ -2971,15 +3337,19 @@ _No synergy partners matched stat buffs or enablers._
 4. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium)
 5. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
 
+##### Units benefited
+
+- Indris
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Single target
 
 #### Buffs
@@ -3025,10 +3395,10 @@ _No synergy partners matched stat buffs or enablers._
 - Haste
 - Energy
 - DEF Penetration
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -3065,10 +3435,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - ATK SPD
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Self, Single target
 
 #### Buffs
@@ -3092,6 +3462,12 @@ _No synergy partners matched stat buffs or enablers._
 4. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Max HP via Shield (single target, high)
 5. **Saida - Vampiric Vine** — Max HP via Shield (multiple targets, high)
 
+##### Units benefited
+
+- Cryonaia
+- Kafra
+- Talene
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -3099,10 +3475,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - ATK SPD
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 - True damage — Multiple targets
 
@@ -3134,10 +3510,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Max HP
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Buffs
@@ -3172,10 +3548,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Haste
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
 - True damage — Area
 
@@ -3210,6 +3586,78 @@ _No synergy partners matched stat buffs or enablers._
 4. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
 5. **Hugin - Maverick Smith** — ATK via ATK buff (single target, high); Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Aliceth
+- Alsa
+- Antandra
+- Arden
+- Aurora
+- Baelran
+- Bonnie
+- Brutus
+- Callan
+- Contess
+- Cryonaia
+- Damian
+- Dionel
+- Dunlingr
+- Eironn
+- Elijah & Lailah
+- Faramor
+- Florabelle
+- Frieren
+- Gala
+- Gerda
+- Gunnar
+- Harak
+- Hepler
+- Himmel
+- Hugin
+- Igor
+- Indris
+- Isabella
+- Kafra
+- Koko
+- Kordan
+- Laios
+- Lenya
+- Lucca
+- Lumont
+- Marcille
+- Mehira
+- Mikola
+- Nara
+- Natsu
+- Nerion
+- Pandora
+- Pang
+- Parisa
+- Perseus
+- Phraesto
+- Rowan
+- Scarlita
+- Seth
+- Shadewing
+- Silven
+- Silvina
+- Sinbad
+- Smokey & Meerky
+- Sonja
+- Soren
+- Talene
+- Tasi
+- Temesia
+- Thoran
+- Tilaya
+- Ulmus
+- Vala
+- Valka
+- Velara
+- Walker
+- Zandrok
+- Zorya
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -3217,10 +3665,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK
 - Haste
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 
 #### Buffs
@@ -3260,12 +3708,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Summary
 
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Magic**
-
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
 
 #### Buffs
@@ -3301,10 +3746,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK SPD
 - Crit
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Arc, Single target
 
 #### Buffs
@@ -3332,10 +3777,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Haste
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Single target
 
 #### Buffs
@@ -3366,14 +3811,38 @@ _No synergy partners matched stat buffs or enablers._
 
 _No synergy partners matched stat buffs or enablers._
 
+##### Units benefited
+
+- Alna
+- Antandra
+- Callan
+- Contess
+- Cryonaia
+- Dionel
+- Eironn
+- Gerda
+- Gunnar
+- Kafra
+- Kordan
+- Lucca
+- Mehira
+- Nerion
+- Perseus
+- Phraesto
+- Silvina
+- Talene
+- Temesia
+- Thador
+- Thoran
+- Tilaya
+- Ulmus
+- Walker
+
 ### Summary
-
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Multiple targets, Self, Single target
 
 #### Buffs
@@ -3410,12 +3879,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Summary
 
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Physical**
-
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 #### Buffs
@@ -3441,14 +3907,16 @@ _No synergy partners matched stat buffs or enablers._
 
 _No synergy partners matched stat buffs or enablers._
 
+##### Units benefited
+
+- Brutus
+- Igor
+
 ### Summary
-
-#### Stats the unit benefits from
-
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Arc, Area, Single target
 
 #### Buffs
@@ -3481,16 +3949,20 @@ _No synergy partners matched stat buffs or enablers._
 4. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium)
 5. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
 
+##### Units benefited
+
+- Smokey & Meerky
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Execution
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — All units, Arc, Area, Single target
 - True damage — Multiple targets
 
@@ -3533,10 +4005,10 @@ _No synergy partners matched stat buffs or enablers._
 - Crit
 - Energy
 - Life Drain
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Self, Single target
 
 #### Buffs
@@ -3580,10 +4052,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Energy
 - Life Drain
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — Single target
 - Magic — All units, Single target
 - True damage — Single target
@@ -3629,10 +4101,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Haste
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Multiple targets, Single target
 
 #### Buffs
@@ -3675,10 +4147,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Healing
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Self, Single target
 - True damage (HP-based) — Area, Single target
 
@@ -3710,10 +4182,10 @@ _No synergy partners matched stat buffs or enablers._
 - ATK SPD
 - Energy
 - DEF Penetration
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Single target
 - True damage (HP-based) — Self, Single target
 
@@ -3744,10 +4216,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Max HP
 - Crit
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 #### Buffs
@@ -3781,16 +4253,20 @@ _No synergy partners matched stat buffs or enablers._
 4. **Damian - Woody Wonder** — Energy via Energy recovery (area, medium)
 5. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium)
 
+##### Units benefited
+
+- Indris
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK SPD
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Multiple targets, Self, Single target
 
 #### Buffs
@@ -3826,12 +4302,33 @@ _No synergy partners matched stat buffs or enablers._
 4. **Soren - Silent Fury** — Energy via Energy recovery (single target, high)
 5. **Scarlita - Herald of Compassion** — Energy via Energy recovery (area, low)
 
+##### Units benefited
+
+- Arden
+- Contess
+- Damian
+- Evie
+- Granny Dahnie
+- Nara
+- Pandora
+- Parisa
+- Scarlita
+- Shemira
+- Silven
+- Sinbad
+- Temesia
+- Vala
+- Zorya
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK
 - Energy
+
+#### Damage
+
 - Primary damage type (unit): **Magic**
 
 #### Buffs
@@ -3852,15 +4349,29 @@ _No synergy partners matched stat buffs or enablers._
 
 _No synergy partners matched stat buffs or enablers._
 
+##### Units benefited
+
+- Alna
+- Callan
+- Contess
+- Dionel
+- Eironn
+- Gerda
+- Gunnar
+- Kordan
+- Silvina
+- Thador
+- Tilaya
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - ATK
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Multiple targets, Single target
 
 #### Buffs
@@ -3896,10 +4407,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK
 - Haste
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -3922,16 +4433,24 @@ _No synergy partners matched stat buffs or enablers._
 4. **Temesia - Lightsavior** — Energy via Energy recovery (area, high)
 5. **Aurora - Celestial of Dreams** — Haste via Haste buff (multiple targets, high)
 
+##### Units benefited
+
+- Arden
+- Nara
+- Pandora
+- Scarlita
+- Smokey & Meerky
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Haste
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Self, Single target
 
 #### Buffs
@@ -3957,16 +4476,37 @@ _No synergy partners matched stat buffs or enablers._
 4. **Gerda - Soothing Siren** — Healing via Healing over time (area, high)
 5. **Ludovic - Wreathed Eternalist** — Healing via Healing over time (area, high)
 
+##### Units benefited
+
+- Aliceth
+- Aurora
+- Baelran
+- Bonnie
+- Faramor
+- Florabelle
+- Frieren
+- Gala
+- Hepler
+- Indris
+- Isabella
+- Mikola
+- Natsu
+- Pang
+- Ravion
+- Seth
+- Sonja
+- Tasi
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Haste
 - Healing
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 - True damage (HP-based) — Single target
 
@@ -4013,10 +4553,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK
 - Max HP
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Buffs
@@ -4049,10 +4589,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK
 - Haste
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - DoT — All units, Single target
 - Magic — Area, Single target
 
@@ -4089,6 +4629,33 @@ _No synergy partners matched stat buffs or enablers._
 4. **Fay - Colorful Dancer** — ATK via ATK buff (arc, high); Healing via Healing (arc, high, conditional (frequent))
 5. **Lucius - The Lightbringer** — Max HP via Shield (area, high); Healing via Healing (single target, medium)
 
+##### Units benefited
+
+- Antandra
+- Arden
+- Elijah & Lailah
+- Evie
+- Granny Dahnie
+- Harak
+- Hugin
+- Koko
+- Marcille
+- Nara
+- Nerion
+- Pandora
+- Parisa
+- Phraesto
+- Rowan
+- Scarlita
+- Shemira
+- Silven
+- Sinbad
+- Smokey & Meerky
+- Soren
+- Thoran
+- Ulmus
+- Zorya
+
 ### Summary
 
 #### Stats the unit benefits from
@@ -4098,10 +4665,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Healing
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 - True damage — Single target
 
@@ -4146,10 +4713,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Crit
 - Healing
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 
 #### Buffs
@@ -4189,10 +4756,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Max HP
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Self, Single target
 
 #### Buffs
@@ -4221,10 +4788,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 
 #### Buffs
@@ -4261,10 +4828,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Max HP
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -4299,10 +4866,10 @@ _No synergy partners matched stat buffs or enablers._
 - Haste
 - Healing
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Single target
 - True damage — Single target
 
@@ -4342,10 +4909,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - ATK
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Buffs
@@ -4385,10 +4952,10 @@ _No synergy partners matched stat buffs or enablers._
 - Haste
 - Max HP
 - Energy
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 - True damage (HP-based) — Area
 
@@ -4430,10 +4997,10 @@ _No synergy partners matched stat buffs or enablers._
 - Haste
 - Max HP
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Buffs
@@ -4476,10 +5043,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - Haste
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 
 #### Buffs
@@ -4513,10 +5080,10 @@ _No synergy partners matched stat buffs or enablers._
 - Max HP
 - Crit
 - Life Drain
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Self, Single target
 
 #### Buffs
@@ -4546,10 +5113,10 @@ _No synergy partners matched stat buffs or enablers._
 
 - Haste
 - Max HP
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Self, Single target
 
 #### Buffs
@@ -4580,10 +5147,10 @@ _No synergy partners matched stat buffs or enablers._
 #### Stats the unit benefits from
 
 - ATK SPD
-- Primary damage type (unit): **Physical**
 
 #### Damage
 
+- Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
 
 #### Buffs
@@ -4612,16 +5179,22 @@ _No synergy partners matched stat buffs or enablers._
 4. **Smokey & Meerky - Wasteland Apothecary** — Energy via Energy recovery (area, medium); Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
 5. **Elijah & Lailah - Celestial Twins** — Haste via Haste buff (all units, high)
 
+##### Units benefited
+
+- Brutus
+- Harak
+- Igor
+
 ### Summary
 
 #### Stats the unit benefits from
 
 - Haste
 - Energy
-- Primary damage type (unit): **Magic**
 
 #### Damage
 
+- Primary damage type (unit): **Magic**
 - Magic — Arc, Area, Single target
 
 #### Buffs

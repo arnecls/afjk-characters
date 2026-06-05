@@ -1470,18 +1470,18 @@ def assign_magnitudes(heroes: list[Hero]):
 def format_summary(hero: Hero) -> str:
     out = ["### Summary", ""]
 
-    if hero.benefit_stats or hero.damage_type:
+    if hero.benefit_stats:
         out.append("#### Stats the unit benefits from")
         out.append("")
         for b in hero.benefit_stats:
             out.append(f"- {b}")
-        if hero.damage_type:
-            out.append(f"- Primary damage type (unit): **{hero.damage_type}**")
         out.append("")
 
-    if hero.damage_entries:
+    if hero.damage_entries or hero.damage_type:
         out.append("#### Damage")
         out.append("")
+        if hero.damage_type:
+            out.append(f"- Primary damage type (unit): **{hero.damage_type}**")
         for dt, tgt in hero.damage_entries:
             out.append(f"- {dt} — {tgt}")
         out.append("")
