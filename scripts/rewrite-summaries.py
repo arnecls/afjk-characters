@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Rewrite ### Summary sections in Heroes.md per AGENTS.md rules.
-Summaries are agent-maintained; this script applies taxonomy extraction.
+Parse hero skill text and build ### Summary content (AGENTS.md rules).
+
+Summaries are emitted only by scripts/generate-heroes-overview.py.
+strip_summaries_from_heroes_md() removes legacy summaries from Heroes.md.
 """
 
 from __future__ import annotations
@@ -34,7 +36,7 @@ TIER_ORDER = {
     "Supreme+": 6,
 }
 
-# Narrower targeting wins when merging effects from multiple skill chunks.
+# Narrower targeting wins when merging CC / immunities from multiple chunks.
 _TARGETING_PRIORITY = {
     "Self": 0,
     "Single target": 1,
@@ -44,11 +46,90 @@ _TARGETING_PRIORITY = {
     "All units": 5,
 }
 
+# Tick / DoT phrasing in skill text (shared with synergy scoring).
+DOT_INTERVAL_RE = re.compile(
+    r"damage (?:every|per) (?:second|\d+\.?\d* s|0\.\d+ s)|"
+    r"damage.{0,120}?every \d+\.?\d* s",
+    re.I,
+)
+
 
 def _prefer_targeting(candidate: str, current: str) -> str:
     cp = _TARGETING_PRIORITY.get(candidate, 99)
     cu = _TARGETING_PRIORITY.get(current, 99)
     return candidate if cp < cu else current
+
+
+def _prefer_buff_targeting(candidate: str, current: str) -> str:
+    """When merging buffs, keep the broadest ally reach (not self-only)."""
+    cp = _TARGETING_PRIORITY.get(candidate, 99)
+    cu = _TARGETING_PRIORITY.get(current, 99)
+    return candidate if cp > cu else current
+
+
+_SELF_STAT_VERB = (
+    r"\b(?:increas\w+|gain\w+|reduc\w+|recover\w+|restor\w+)"
+)
+_SELF_STAT_NOUN = (
+    r"(?:atk(?: spd)?|haste|crit|max hp|damage taken|energy|shield|"
+    r"life drain|vitality|execution|resilience|healing)"
+)
+
+
+def _has_explicit_ally_buff(t: str, label: str) -> bool:
+    """True when skill text clearly grants this buff to allies, not only self."""
+    if re.search(
+        r"\b(?:grant|grants|granting|makes?) (?:all )?(?:allies|an ally)\b", t
+    ):
+        return True
+    if re.search(r"\b(?:to|for) all allies\b", t):
+        return True
+    if re.search(r"\bincreas\w+ all allies", t):
+        return True
+    if re.search(
+        r"\ball allies'? (?:gain|receive|recover|get |haste|atk|max hp|shield|"
+        r"become unaffected|become steadfast)",
+        t,
+    ):
+        return True
+    if re.search(r"\bfor (?:herself|himself) and all allies\b", t):
+        return True
+    if re.search(r"\bbless(?:es)? (?:an )?(?:adjacent )?allied\b", t):
+        return True
+    if re.search(r"\bgrants? .{0,40}(?:to |for )(?:allies|an ally)\b", t):
+        return True
+    if re.search(
+        r"\bgrants? .{0,50}to (?:the )?(?:frontmost |weakest |rearmost )?allied\b",
+        t,
+    ):
+        return True
+    if re.search(r"\bincreas\w+ allies'", t):
+        return True
+    if re.search(r"\binspir(?:e|es) .{0,20}(?:herself and )?all allies\b", t):
+        return True
+    if re.search(r"\binspir\w+ allies\b", t):
+        return True
+    if re.search(r"\bfor all allies within\b", t):
+        return True
+    if re.search(r"\ballies they pass through\b", t):
+        return True
+    if re.search(r"\breduces? the allies'", t):
+        return True
+    if re.search(r"\bincreas\w+ their .{0,60}(?:atk|haste|crit|life drain)\b", t):
+        return True
+    if re.search(r"\bincreas(?:e|es|ing) their (?:atk|haste|crit)\b", t):
+        return True
+    return False
+
+
+def _resolve_buff_targeting(text: str, label: str) -> str:
+    """Resolve buff targeting; self-only stats must not inherit enemy area text."""
+    t = text.lower()
+    if _has_explicit_ally_buff(t, label):
+        return detect_targeting(text, label, "buff")
+    if effect_targets_self_only(t, label, "buff"):
+        return "Self"
+    return detect_targeting(text, label, "buff")
 
 EX_TIER_RE = re.compile(r"Unlocks at EX\.?\s*:?\s*\+(\d+)", re.I)
 LEVEL_RE = re.compile(r"^- Level (\d+)")
@@ -95,6 +176,8 @@ class Hero:
     cc_immunities: list[CcImmunity] = field(default_factory=list)
     special_effects: list[SpecialEffect] = field(default_factory=list)
     damage_entries: list[tuple[str, str]] = field(default_factory=list)
+    damage_scores: dict[str, float] = field(default_factory=dict)
+    damage_magnitudes: dict[str, str] = field(default_factory=dict)
     benefit_stats: list[str] = field(default_factory=list)
 
 
@@ -213,14 +296,12 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             return True
 
     stat_self = (
-        r"\b(?:increases?|gains?|reducing|reduces?|recovers?|restores?) "
-        r"(?:her|his) (?:atk(?: spd)?|haste|crit|max hp|damage taken|energy|shield|"
-        r"life drain|vitality|execution|resilience|healing)\b"
+        rf"{_SELF_STAT_VERB} (?:her|his|(?!(?:enemy|target|ally)')"
+        rf"\w+'s) {_SELF_STAT_NOUN}\b"
     )
     # Hero Focus: "Increases ATK by 12% during battle" (implicit self)
     stat_self_impersonal = (
-        r"\b(?:increases?|reduces?) (?:atk(?: spd)?|haste|crit|max hp|damage taken|"
-        r"healing|execution|life drain) by \d"
+        rf"{_SELF_STAT_VERB} {_SELF_STAT_NOUN} by \d"
     )
     buff_labels = (
         "ATK buff",
@@ -238,9 +319,16 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         "Attack range buff",
     )
     if label in buff_labels:
-        if re.search(r"\b(?:increases?|reduces?) all allies", t):
+        if _has_explicit_ally_buff(t, label):
+            return False
+        if re.search(r"\bincreas\w+ all allies", t):
             return False
         if re.search(stat_self, t) or re.search(stat_self_impersonal, t):
+            return True
+        if re.search(
+            rf"{_SELF_STAT_VERB} (?:her|his) {_SELF_STAT_NOUN}\b",
+            t,
+        ) and not _has_explicit_ally_buff(t, label):
             return True
 
     if label in ("Shield", "Healing", "Healing over time"):
@@ -254,8 +342,7 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             return True
 
     if re.search(
-        r"\b(?:to|for) (?:all )?(?:allies|an ally|the ally|enemies|an enemy|the enemy|"
-        r"the target)\b",
+        r"\b(?:to|for) (?:all )?(?:allies|an ally|the ally|enemies|an enemy|the enemy)\b",
         t,
     ) and not re.search(r"\b(?:to|for) (?:herself|himself|itself)\b", t):
         return False
@@ -460,7 +547,14 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         return "Arc"
     if re.search(r"\badjacent\b", t):
         return "Area"
+    if re.search(
+        r"center of the battlefield|across the battlefield|whole battlefield",
+        t,
+    ) and re.search(r"\benemies?\b", t):
+        return "All units"
     if re.search(r"\b(?:area|within \d+ tiles?|surrounding|in (?:its|the) path)\b", t):
+        if category == "buff" and effect_targets_self_only(t, label, category):
+            return "Self"
         return "Area"
     # Multiple discrete enemies (e.g. "2 closest enemies", "3 enemies")
     if re.search(r"\b\d+ (?:closest|nearest|random|different)? ?enemies\b", t):
@@ -655,23 +749,36 @@ def add_effect(effects: list[Effect], category: str, label: str, tier: str, text
         if order < cur_order:
             cur.tier = tier
         cur.conditional = _merge_conditional(cur.conditional, cond)
+        if category == "buff":
+            cur.targeting = _prefer_buff_targeting(
+                _resolve_buff_targeting(text, label), cur.targeting
+            )
         # Strongest value for cross-hero magnitude comparison
         if n is not None and (cur.numeric is None or n > cur.numeric):
             cur.numeric = n
             cur.qualitative = text
-            if text_applies_effect(text, label):
+            if category == "buff":
+                cur.targeting = _prefer_buff_targeting(
+                    _resolve_buff_targeting(text, label), cur.targeting
+                )
+            elif text_applies_effect(text, label):
                 cur.targeting = _prefer_targeting(
                     detect_targeting(text, label, category), cur.targeting
                 )
         elif cond and not cur.qualitative:
             cur.qualitative = text
         return
+    buff_tgt = (
+        _resolve_buff_targeting(text, label)
+        if category == "buff"
+        else detect_targeting(text, label, category)
+    )
     effects.append(
         Effect(
             category=category,
             label=label,
             tier=tier,
-            targeting=detect_targeting(text, label, category),
+            targeting=buff_tgt,
             numeric=n,
             qualitative=text,
             conditional=cond,
@@ -683,6 +790,21 @@ BUFF_RULES = [
     (r"grants? an ally brightfeather", "Ally empower buff"),
     # ATK buff: match increase/increases/increasing + optional pronoun + "atk by"
     (r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s )?atk by", "ATK buff"),
+    # Ally ATK SPD (before generic self Hero Focus lines)
+    (r"grants? all allies \d+ atk spd", "ATK SPD buff"),
+    (r"increas(?:e|es|ing) all allies'? atk spd", "ATK SPD buff"),
+    (
+        r"increas(?:e|es|ing) the atk spd of (?:these |all )?allies",
+        "ATK SPD buff",
+    ),
+    (
+        r"increas(?:e|es|ing) the atk spd of (?:the )?ally",
+        "ATK SPD buff",
+    ),
+    (
+        r"increas(?:e|es|ing) the atk spd of both .{0,40} and (?:that )?ally",
+        "ATK SPD buff",
+    ),
     # ATK SPD buff — also match "increase her and X's ATK SPD" (conjunctive)
     (
         r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s |"
@@ -1019,6 +1141,93 @@ def text_has_companion_unit(t: str) -> bool:
     return any(re.search(p, t) for p in _COMPANION_UNIT_PATTERNS)
 
 
+def _is_ally_grant_phrase(t: str) -> bool:
+    """Skill text grants a token, buff, or effect to one or more allies."""
+    return bool(
+        re.search(r"grants?\s+[\w][\w\s'-]{0,48}?\s+to\s+allies\b", t)
+        or re.search(r"grants?\s+an ally\s+\w+", t)
+        or re.search(r"grants?\s+allies\s+(?:on|within|in|with|protected)\b", t)
+    )
+
+
+_GRANT_NAME_SKIP = re.compile(
+    r"\b(?:immunity|shield|control|damage reduction|haste|atk|def|"
+    r"extra|temporary|blessing)\b",
+    re.I,
+)
+
+
+def _extract_ally_grant_name(text: str) -> str | None:
+    m = re.search(
+        r"grants?\s+([\w][\w\s'-]{0,48}?)\s+to\s+allies\b",
+        text,
+        re.I,
+    )
+    if m:
+        name = m.group(1).strip()
+        # Named tokens (Sparks, Brightfeather), not stat/immunity phrases.
+        if _GRANT_NAME_SKIP.search(name) or len(name.split()) > 4:
+            return None
+        return name
+    m = re.search(
+        r"grants?\s+an ally\s+([\w][\w\s'-]+?)(?:,|\s+priorit|\s+when|\s+after|\.)",
+        text,
+        re.I,
+    )
+    if m:
+        return m.group(1).strip()
+    return None
+
+
+def _allies_affect_enemies_in_text(t: str) -> bool:
+    return bool(
+        re.search(
+            r"(?:satrana or )?allies?\s+with\s+\w+.{0,120}"
+            r"(?:deal|inflict|ignit|reduc\w+ their)",
+            t,
+        )
+        or re.search(r"that ally deals", t)
+        or re.search(
+            r"an ally with\s+\w+.{0,80}(?:deal|unleash|inflict)",
+            t,
+        )
+    )
+
+
+def _ally_enabled_enemy_effect_labels(text: str) -> list[str]:
+    """Enemy-facing effects allies can apply via a grant in this skill chunk."""
+    t = text.lower()
+    if not _allies_affect_enemies_in_text(t):
+        return []
+    labels: list[str] = []
+    if DOT_INTERVAL_RE.search(text) or re.search(r"\bignit", t):
+        labels.append("Ally DoT on enemies")
+    if re.search(r"reducing their vitality|reduces? their vitality", t):
+        labels.append("Ally Vitality debuff on enemies")
+    elif re.search(
+        r"allies?\s+with\s+\w+.{0,80}deal.{0,80}(?:inflict|appl|reduc)",
+        t,
+    ):
+        labels.append("Ally debuff on enemies")
+    return labels
+
+
+def detect_ally_grant_effects(
+    effects: list[SpecialEffect], tier: str, text: str
+) -> None:
+    t = text.lower()
+    if not _is_ally_grant_phrase(t):
+        return
+    name = _extract_ally_grant_name(text)
+    enemy_labels = _ally_enabled_enemy_effect_labels(text)
+    if name:
+        add_special_effect(effects, "provides", f"Ally grant ({name})", tier, text)
+    elif enemy_labels:
+        add_special_effect(effects, "provides", "Ally combat grant", tier, text)
+    for label in enemy_labels:
+        add_special_effect(effects, "provides", label, tier, text)
+
+
 def detect_special_targeting(text: str, kind: str, label: str) -> str:
     t = text.lower()
     if kind == "requires":
@@ -1065,6 +1274,253 @@ def detect_special_effects(
     for pat, label in SPECIAL_REQUIRES_RULES:
         if re.search(pat, t):
             add_special_effect(effects, "requires", label, tier, text)
+    detect_ally_grant_effects(effects, tier, text)
+
+
+_MAX_HP_DAMAGE_RE = re.compile(
+    r"(?:extra )?damage.{0,60}(?:equal to|of|deals?).{0,25}"
+    r"(?:\d+%[^.]{0,25})?(?:the |their |target's |enemy's |his |her )?"
+    r"(?:max )?hp\b",
+    re.I,
+)
+_LOST_HP_DAMAGE_RE = re.compile(
+    r"(?:extra )?damage.{0,60}(?:equal to|of|deals?).{0,30}"
+    r"(?:\d+%[^.]{0,25})?(?:lost hp|of (?:her|his|their|the target's) lost hp)",
+    re.I,
+)
+_SELF_HP_COST_RE = re.compile(
+    r"(?:consumes?|loses?|sacrifices?)\s+(?:\d+%|an amount).{0,30}"
+    r"(?:of\s+)?(?:her|his|their)\s+(?:max\s+)?hp|"
+    r"whenever\s+\w+\s+loses?\s+\d+%\s+of\s+(?:her|his|their)\s+max\s+hp|"
+    r"lose\s+\d+%\s+of\s+(?:her|his|their)\s+max\s+hp\s+every",
+    re.I,
+)
+
+DAMAGE_TYPE_SORT_KEY = {
+    "Physical": 0,
+    "Magic": 1,
+    "Melee": 2,
+    "Ranged": 3,
+    "DoT": 4,
+    "HP loss": 5,
+    "Max HP-based damage": 6,
+    "True damage": 7,
+}
+
+TRUE_DAMAGE_TYPES = frozenset({"HP loss", "Max HP-based damage", "True damage"})
+
+DAMAGE_TARGETING_WEIGHT = {
+    "All units": 5.0,
+    "Area": 4.0,
+    "Arc": 3.0,
+    "Multiple targets": 3.0,
+    "Single target": 1.5,
+    "Self": 0.25,
+}
+
+
+def _chunk_targets_enemies(text: str) -> bool:
+    t = text.lower()
+    return bool(
+        re.search(
+            r"\b(?:enemies?|enemy heroes?|adjacent enemies?|all enemies?|"
+            r"rearmost enemy|frontmost enemy|area with the most enemies|"
+            r"within \d+ tiles?)\b",
+            t,
+        )
+    )
+
+
+def _pair_sum_amount(m: re.Match) -> float:
+    if m.lastindex and m.lastindex >= 2 and m.group(2) is not None:
+        return float(m.group(1)) + float(m.group(2))
+    return float(m.group(1))
+
+
+def _all_amounts(text: str, patterns: list[str]) -> list[float]:
+    t = text.lower()
+    found: list[float] = []
+    for pat in patterns:
+        for m in re.finditer(pat, t):
+            found.append(_pair_sum_amount(m))
+    return found
+
+
+def _extract_damage_amount(text: str, dmg_type: str) -> float:
+    if dmg_type == "Max HP-based damage":
+        patterns = [
+            r"true damage equal to\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s+of\s+each\s+target's\s+max\s+hp",
+            r"equal to\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of\s+"
+            r"each\s+(?:target's|enemy's)\s+max\s+hp",
+            r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of\s+"
+            r"(?:each\s+)?(?:target's|enemy's|their)\s+max\s+hp",
+            r"(\d+(?:\.\d+)?)\s*%\s+of\s+(?:each\s+)?"
+            r"(?:target's|enemy's|the\s+target's)\s+max\s+hp",
+            r"(\d+(?:\.\d+)?)\s*%\s+of\s+the\s+target's\s+max\s+hp",
+            r"drains?\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of\s+"
+            r"an\s+enemy's\s+max\s+hp",
+            r"reducing their max hp by\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%",
+            r"(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)\s+(?:true\s+)?damage",
+            r"deals?\s+(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)",
+        ]
+    elif dmg_type == "HP loss":
+        patterns = [
+            r"extra true damage equal to\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s+of\s+all enemies' total hp lost",
+            r"extra damage equal to\s+(\d+(?:\.\d+)?)\s*%\s+of\s+the\s+"
+            r"enemy's\s+lost\s+hp",
+            r"extra damage equal to\s+(\d+(?:\.\d+)?)\s*%\s+of\s+the\s+"
+            r"enemies'\s+lost\s+hp",
+            r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of\s+"
+            r"(?:all enemies'|the enemies'|the enemy's|their)\s+"
+            r"(?:total\s+)?lost\s+hp",
+            r"(\d+(?:\.\d+)?)\s*%\s+of\s+(?:the\s+)?(?:enemy's|enemies'|their)\s+"
+            r"lost\s+hp",
+        ]
+    elif dmg_type == "True damage":
+        patterns = [
+            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+"
+            r"true\s+damage",
+            r"increases the true damage dealt to\s+(\d+(?:\.\d+)?)\s*%\s*"
+            r"\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+"
+            r"damage",
+            r"(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*"
+            r"true\s+damage",
+            r"(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)\s*true\s+damage",
+            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*true\s+damage",
+            r"dealing\s+(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*true\s+damage",
+            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+true",
+            r"(\d+(?:\.\d+)?)\s*%\s+true\s+damage",
+        ]
+    else:
+        return 10.0
+
+    amounts = _all_amounts(text, patterns)
+    if amounts:
+        return max(amounts)
+
+    if dmg_type == "True damage":
+        if m := re.search(r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)", text, re.I):
+            return float(m.group(1))
+    if dmg_type == "Max HP-based damage":
+        if m := re.search(r"(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)", text, re.I):
+            return float(m.group(1))
+    return 10.0
+
+
+def _damage_frequency_multiplier(text: str) -> float:
+    t = text.lower()
+
+    if m := re.search(r"(\d+)\s+hits?\s+of", t):
+        return float(m.group(1))
+    if m := re.search(r"(\d+)\s+volleys?\s+of\s+(\d+)", t):
+        return float(m.group(1)) * float(m.group(2))
+    if m := re.search(r"\s(\d+)\s+times,\s+with each hit", t):
+        return float(m.group(1))
+
+    if m := re.search(
+        r"every\s+(\d+(?:\.\d+)?)\s*s(?:ec(?:ond)?s?)?\s+for\s+(\d+(?:\.\d+)?)\s*s",
+        t,
+    ):
+        interval, duration = float(m.group(1)), float(m.group(2))
+        if interval > 0:
+            return max(1.0, duration / interval)
+
+    if "damage per second" in t or re.search(
+        r"deals?\s+\d+%[^.]{0,30}per second", t
+    ):
+        dur = 1.0
+        if m := re.search(r"for\s+(\d+(?:\.\d+)?)\s*s", t):
+            dur = float(m.group(1))
+        return max(1.0, dur)
+
+    if "with each hit" in t or "per strike" in t:
+        return 3.0
+
+    if m := re.search(r"up to\s+(\d+)\s+casting per battle", t):
+        return max(0.35, float(m.group(1)) * 0.35)
+
+    for pat in (
+        r"(?:trigger|can be triggered) once every\s+(\d+(?:\.\d+)?)\s*s",
+        r"once every\s+(\d+(?:\.\d+)?)\s*s at most",
+        r"this effect can trigger once every\s+(\d+(?:\.\d+)?)\s*s",
+    ):
+        if m := re.search(pat, t):
+            return max(0.2, 10.0 / float(m.group(1)))
+
+    if m := re.search(r"every\s+(\d+(?:\.\d+)?)\s*s(?:ec(?:ond)?s?)?", t):
+        interval = float(m.group(1))
+        if interval > 0:
+            return max(0.25, 8.0 / interval)
+
+    return 1.0
+
+
+def _score_true_damage_chunk(text: str, dmg_type: str, targeting: str) -> float:
+    if targeting == "Self" and not _chunk_targets_enemies(text):
+        return 0.0
+    amount = _extract_damage_amount(text, dmg_type)
+    freq = _damage_frequency_multiplier(text)
+    weight = DAMAGE_TARGETING_WEIGHT.get(targeting, 1.5)
+    return weight * amount * freq
+
+
+def _accumulate_true_damage_scores(hero: Hero, primary_dmg: str) -> None:
+    for _tier, text, _section in hero.skill_chunks:
+        if _chunk_is_companion_focused(text):
+            continue
+        tgt = detect_targeting(text)
+        for d in detect_damage_types(text, primary_dmg):
+            if d not in TRUE_DAMAGE_TYPES:
+                continue
+            score = _score_true_damage_chunk(text, d, tgt)
+            if score > 0:
+                hero.damage_scores[d] = max(hero.damage_scores.get(d, 0.0), score)
+
+
+def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
+    """All damage types dealt in a skill chunk (may be multiple)."""
+    t = text.lower()
+    types: list[str] = []
+    if re.search(r"\btrue damage\b", t):
+        if re.search(r"\blost hp\b", t):
+            types.append("HP loss")
+        elif re.search(r"\bmax hp\b", t):
+            types.append("Max HP-based damage")
+        else:
+            types.append("True damage")
+    if _LOST_HP_DAMAGE_RE.search(text) and "HP loss" not in types:
+        types.append("HP loss")
+    if _MAX_HP_DAMAGE_RE.search(text) and "Max HP-based damage" not in types:
+        types.append("Max HP-based damage")
+    if re.search(r"\(atk-based\)", text, re.I):
+        types.append(primary_dmg)
+    if re.search(r"\bmagic damage\b", t):
+        types.append("Magic")
+    if DOT_INTERVAL_RE.search(text):
+        types.append("DoT")
+    if not types and "damage" in t:
+        types.append(primary_dmg)
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for dt in types:
+        if dt not in seen:
+            seen.add(dt)
+            ordered.append(dt)
+    return ordered
+
+
+def _hero_needs_external_healing(hero: Hero) -> bool:
+    """Self HP drain / sacrifice during skills → benefits from ally healing."""
+    for _tier, text, _section in hero.skill_chunks:
+        if _chunk_is_companion_focused(text):
+            continue
+        if _SELF_HP_COST_RE.search(text):
+            return True
+    return False
 
 
 def analyze_text(
@@ -1081,22 +1537,8 @@ def analyze_text(
         if re.search(pat, t):
             add_effect(effects, "cc", label, tier, text)
 
-    dmg: list[str] = []
-    if "true damage" in t:
-        dmg.append(
-            "True damage (HP-based)" if re.search(r"max hp|lost hp", t) else "True damage"
-        )
-    # ATK-based damage uses the hero's own primary damage type, not always Physical
-    if re.search(r"\(atk-based\)", text):
-        dmg.append(primary_dmg)
-    if re.search(r"magic damage", t):
-        dmg.append("Magic")
-    if re.search(r"damage (?:every|per) (?:second|0\.\d+ s)", t):
-        dmg.append("DoT")
-    if not dmg and "damage" in t:
-        dmg.append(primary_dmg)
     tgt = detect_targeting(text)
-    for d in set(dmg):
+    for d in detect_damage_types(text, primary_dmg):
         damage_map.setdefault(d, set()).add(tgt)
 
     for stat, pat in [
@@ -1319,6 +1761,8 @@ def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
                 t,
             ):
                 return True
+            if _SELF_HP_COST_RE.search(text):
+                return True
     return False
 
 
@@ -1331,6 +1775,8 @@ def refine_benefit_stats(hero: Hero) -> None:
         if _text_supports_benefit_stat(hero, s)
     }
     merged = from_buffs | from_text
+    if _hero_needs_external_healing(hero):
+        merged.add("Healing")
     hero.benefit_stats = [s for s in BENEFIT_STAT_ORDER if s in merged]
 
 
@@ -1339,6 +1785,8 @@ def analyze_hero(hero: Hero):
     hero.cc_immunities.clear()
     hero.special_effects.clear()
     hero.damage_entries.clear()
+    hero.damage_scores.clear()
+    hero.damage_magnitudes.clear()
     hero.benefit_stats.clear()
     damage_map: dict[str, set[str]] = {}
     # Use the hero's own damage type so (ATK-based) doesn't always emit "Physical"
@@ -1348,8 +1796,12 @@ def analyze_hero(hero: Hero):
         detect_special_effects(hero.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
             add_cc_immunity(hero, imm_type, tier, text)
-    for dt, tgts in sorted(damage_map.items()):
+    for dt, tgts in sorted(
+        damage_map.items(),
+        key=lambda x: (DAMAGE_TYPE_SORT_KEY.get(x[0], 99), x[0]),
+    ):
         hero.damage_entries.append((dt, ", ".join(sorted(tgts))))
+    _accumulate_true_damage_scores(hero, primary_dmg)
     # Healing stat matters only when the hero heals or scales their own Healing.
     healing_labels = {"Healing", "Healing over time", "Healing stat buff"}
     if (
@@ -1434,6 +1886,33 @@ def format_effect_magnitude(effect: Effect) -> str:
     return f"`{effect.magnitude}`"
 
 
+def assign_damage_magnitudes(heroes: list[Hero]) -> None:
+    by_type: dict[str, list[float]] = defaultdict(list)
+    for hero in heroes:
+        for dt, score in hero.damage_scores.items():
+            if dt in TRUE_DAMAGE_TYPES:
+                by_type[dt].append(score)
+
+    thresholds: dict[str, tuple[float, float]] = {}
+    for dt, scores in by_type.items():
+        ordered = sorted(scores)
+        if len(ordered) >= 4:
+            t1, t2 = statistics.quantiles(ordered, n=3)
+            thresholds[dt] = (t1, t2)
+        else:
+            thresholds[dt] = (40.0, 120.0)
+
+    for hero in heroes:
+        for dt in hero.damage_scores:
+            if dt not in TRUE_DAMAGE_TYPES:
+                continue
+            score = hero.damage_scores[dt]
+            t1, t2 = thresholds.get(dt, (40.0, 120.0))
+            hero.damage_magnitudes[dt] = (
+                "low" if score <= t1 else "medium" if score <= t2 else "high"
+            )
+
+
 def assign_magnitudes(heroes: list[Hero]):
     by_key: dict[str, list[Effect]] = defaultdict(list)
     for hero in heroes:
@@ -1465,6 +1944,7 @@ def assign_magnitudes(heroes: list[Hero]):
     for hero in heroes:
         for eff in hero.effects:
             apply_conditional_magnitude(eff)
+    assign_damage_magnitudes(heroes)
 
 
 def format_summary(hero: Hero) -> str:
@@ -1483,7 +1963,11 @@ def format_summary(hero: Hero) -> str:
         if hero.damage_type:
             out.append(f"- Primary damage type (unit): **{hero.damage_type}**")
         for dt, tgt in hero.damage_entries:
-            out.append(f"- {dt} — {tgt}")
+            mag = hero.damage_magnitudes.get(dt, "")
+            if mag and dt in TRUE_DAMAGE_TYPES:
+                out.append(f"- {dt} — {tgt} — `{mag}`")
+            else:
+                out.append(f"- {dt} — {tgt}")
         out.append("")
 
     for cat, heading in [("buff", "Buffs"), ("debuff", "Debuffs")]:
@@ -1537,23 +2021,34 @@ def format_summary(hero: Hero) -> str:
     return "\n".join(out).rstrip() + "\n"
 
 
+_SUMMARY_SECTION_RE = re.compile(
+    r"\n### Summary\n[\s\S]*?(?=\n## |\Z)",
+    re.MULTILINE,
+)
+
+
+def strip_summaries_from_heroes_md(text: str) -> str:
+    """Remove all per-hero ### Summary sections from Heroes.md body."""
+    stripped = _SUMMARY_SECTION_RE.sub("", text)
+    stripped = re.sub(
+        r"\nSummaries are agent-maintained[^\n]*\n",
+        "\nSummaries live in [heroes-overview.md](heroes-overview.md) "
+        "(see `scripts/generate-heroes-overview.py`).\n",
+        stripped,
+        count=1,
+    )
+    return stripped.rstrip() + "\n"
+
+
 def main():
     text = HEROES_MD.read_text(encoding="utf-8")
-    blocks = re.split(r"\n(?=## )", text)
-    heroes: list[Hero] = []
-    for block in blocks:
-        if block.startswith("## "):
-            heroes.append(parse_hero_block(block))
-    for h in heroes:
-        analyze_hero(h)
-    assign_magnitudes(heroes)
-    for hero in heroes:
-        pat = re.compile(
-            rf"(## {re.escape(hero.title)}[\s\S]*?)### Summary[\s\S]*?(?=\n## |\Z)"
-        )
-        text = pat.sub(rf"\1{format_summary(hero)}", text, count=1)
-    HEROES_MD.write_text(text, encoding="utf-8")
-    print(f"Updated summaries for {len(heroes)} heroes")
+    stripped = strip_summaries_from_heroes_md(text)
+    if stripped == text:
+        print("No ### Summary sections found in Heroes.md")
+        return
+    HEROES_MD.write_text(stripped, encoding="utf-8")
+    removed = len(_SUMMARY_SECTION_RE.findall(text))
+    print(f"Removed {removed} summary section(s) from Heroes.md")
 
 
 if __name__ == "__main__":

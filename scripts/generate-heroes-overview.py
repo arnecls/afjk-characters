@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build heroes-overview.md from Heroes.md summaries and stat synergies."""
+"""Build heroes-overview.md (synergies + summaries) from Heroes.md skill data."""
 
 from __future__ import annotations
 
@@ -51,6 +51,10 @@ TARGETING_WEIGHT = {
 
 MAG_WEIGHT = {"high": 3.0, "medium": 2.0, "low": 1.0}
 
+# Haste increases attack speed; prefer Haste buff over ATK SPD buff for ATK SPD
+# beneficiaries (multiplier breaks ties at equal targeting/magnitude).
+HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
+
 MAX_SYNERGIES = 5
 
 FREQUENT_CONDITIONAL_SCORE = 0.85
@@ -91,17 +95,48 @@ ENABLER_REQUIRE_HANDLERS = (
 PARTY_COMPOSITION_CLASSES = frozenset({"Mage", "Tank", "Support"})
 
 
+_TWINS_FULL_TITLE = "Elijah & Lailah - Celestial Twins"
+
+
 def short_name(title: str) -> str:
+    """Display name for heroes in heroes-overview.md."""
+    if title == _TWINS_FULL_TITLE:
+        return "Twins"
     return title.split(" - ", 1)[0].strip()
-
-
-def extract_summary(block: str) -> str:
-    m = re.search(r"### Summary\n([\s\S]*?)(?=\n## |\Z)", block)
-    return m.group(1).strip() if m else ""
 
 
 def receiver_stats(hero: _rs.Hero) -> list[str]:
     return [s for s in hero.benefit_stats if s != "Primary damage type (unit)"]
+
+
+def _direct_buff_labels_for_stat(stat: str) -> list[str]:
+    """Buff labels that duplicate the stat name in synergy text (omit 'Stat via')."""
+    if stat == "ATK SPD":
+        return ["ATK SPD buff"]
+    if stat == "Max HP":
+        return ["Max HP buff"]
+    return list(STAT_TO_BUFF_LABELS.get(stat, []))
+
+
+def format_reason_for_display(reason: str) -> str:
+    """Drop redundant 'ATK via ATK buff'; keep 'ATK SPD via Haste buff'."""
+    if reason.startswith("Enables ") or " via " not in reason:
+        return reason
+    stat, detail = reason.split(" via ", 1)
+    effect_label = detail.split(" (", 1)[0]
+    if effect_label in _direct_buff_labels_for_stat(stat):
+        return detail
+    return reason
+
+
+def buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
+    """Buff labels that satisfy a benefit stat, (label, score multiplier), best first."""
+    if stat == "ATK SPD":
+        return [
+            ("Haste buff", HASTE_FOR_ATK_SPD_SCORE_MULT),
+            ("ATK SPD buff", 1.0),
+        ]
+    return [(label, 1.0) for label in STAT_TO_BUFF_LABELS.get(stat, [])]
 
 
 def provider_skill_text(hero: _rs.Hero) -> str:
@@ -160,30 +195,63 @@ def provider_enemy_debuffs(hero: _rs.Hero) -> list[_rs.Effect]:
 def match_magic_damage_allies(provider: _rs.Hero) -> tuple[float, str] | None:
     if "Magic" not in provider_damage_types(provider):
         return None
+    text = provider_skill_text(provider)
     tw = TARGETING_WEIGHT.get(provider_best_enemy_targeting(provider, "Magic"), 2.0)
     pts = tw * 2.5
     tags = ["Magic damage"]
     if provider_has_start_of_battle_output(provider):
         pts *= 1.35
         tags.append("early battle")
+    if re.search(
+        r"center of the battlefield|across the battlefield|"
+        r"all enemy heroes|all enemies within|whole battlefield|"
+        r"most enemies|area with the most enemies|enemies within range",
+        text,
+    ):
+        pts *= 1.45
+        tags.append("wide area")
     tgt = provider_best_enemy_targeting(provider, "Magic")
+    if tgt == "all units":
+        pts *= 1.2
+        tags.append("all enemies")
     return pts, f"{' + '.join(tags)} ({tgt})"
 
 
+def _ally_grant_detail(provider: _rs.Hero, fallback: str) -> str:
+    for se in provider.special_effects:
+        if se.kind == "provides" and se.label.startswith("Ally grant ("):
+            return se.label
+    return fallback
+
+
+def match_ally_dot_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
+    if not provider_has_special(provider, "Ally DoT on enemies"):
+        return None
+    return 4.0, _ally_grant_detail(provider, "Ally-granted DoT")
+
+
+def match_ally_debuff_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
+    if provider_has_special(provider, "Ally Vitality debuff on enemies"):
+        return 3.5, _ally_grant_detail(provider, "Ally-granted Vitality debuff")
+    if provider_has_special(provider, "Ally debuff on enemies"):
+        return 3.0, _ally_grant_detail(provider, "Ally-granted debuff")
+    return None
+
+
 def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
+    ally_dot = match_ally_dot_on_enemies(provider)
     text = provider_skill_text(provider)
     has_dot = "DoT" in provider_damage_types(provider)
     has_burn = any(e.label == "Burn debuff" for e in provider_enemy_debuffs(provider))
     has_tick = bool(
-        re.search(
-            r"damage (?:every|per) (?:second|0\.\d+ s)|"
-            r"(?:burn|poison|bleed)|"
-            r"per second for \d+",
+        _rs.DOT_INTERVAL_RE.search(text)
+        or re.search(
+            r"(?:burn|poison|bleed|ignit)|per second for \d+",
             text,
         )
     )
     if not (has_dot or has_burn or has_tick):
-        return None
+        return ally_dot
     tw = 3.0
     if "DoT" in provider_damage_types(provider):
         tw = TARGETING_WEIGHT.get(provider_best_enemy_targeting(provider, "DoT"), 3.0)
@@ -214,17 +282,25 @@ def match_ranged_damage_allies(
 
 
 def match_debuff_on_target(provider: _rs.Hero) -> tuple[float, str] | None:
+    candidates: list[tuple[float, str]] = []
+    ally_debuff = match_ally_debuff_on_enemies(provider)
+    if ally_debuff:
+        candidates.append(ally_debuff)
     debuffs = provider_enemy_debuffs(provider)
-    if not debuffs:
+    if debuffs:
+        best = max(
+            debuffs,
+            key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1)
+            * MAG_WEIGHT.get(e.magnitude, 1),
+        )
+        tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
+        mw = MAG_WEIGHT.get(best.magnitude, 1.0)
+        candidates.append(
+            (tw * mw * 1.5, f"{best.label} ({best.targeting.lower()})")
+        )
+    if not candidates:
         return None
-    best = max(
-        debuffs,
-        key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1)
-        * MAG_WEIGHT.get(e.magnitude, 1),
-    )
-    tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
-    mw = MAG_WEIGHT.get(best.magnitude, 1.0)
-    return tw * mw * 1.5, f"{best.label} ({best.targeting.lower()})"
+    return max(candidates, key=lambda x: x[0])
 
 
 def match_blessed_ally(provider: _rs.Hero) -> tuple[float, str] | None:
@@ -240,8 +316,11 @@ def match_stellar_bond(provider: _rs.Hero) -> tuple[float, str] | None:
 
 
 def match_multiple_debuffs(provider: _rs.Hero) -> tuple[float, str] | None:
+    ally_debuff = match_ally_debuff_on_enemies(provider)
     debuffs = provider_enemy_debuffs(provider)
     labels = {e.label for e in debuffs}
+    if provider_has_special(provider, "Ally Vitality debuff on enemies"):
+        labels.add("Ally Vitality debuff on enemies")
     if len(labels) >= 2:
         best = max(
             debuffs,
@@ -431,13 +510,18 @@ def score_synergy(
     reasons: list[str] = []
     total = 0.0
     seen_stats: set[str] = set()
+    credited_buffs: set[str] = set()
 
     for stat in receiver_stats(receiver):
-        labels = STAT_TO_BUFF_LABELS.get(stat, [])
+        if stat == "Haste" and "Haste buff" in credited_buffs:
+            continue
+        label_prefs = buff_labels_for_stat(stat)
+        allowed = {label for label, _ in label_prefs}
+        mult_by_label = dict(label_prefs)
         best_for_stat: tuple[float, str] | None = None
 
         for effect in provider.effects:
-            if effect.category != "buff" or effect.label not in labels:
+            if effect.category != "buff" or effect.label not in allowed:
                 continue
             if effect.targeting not in ALLY_TARGETINGS:
                 continue
@@ -445,7 +529,7 @@ def score_synergy(
                 continue
             tw = TARGETING_WEIGHT.get(effect.targeting, 1.0)
             mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
-            pts = tw * mw
+            pts = tw * mw * mult_by_label[effect.label]
             if effect.conditional == "frequent":
                 pts *= FREQUENT_CONDITIONAL_SCORE
             cond = (
@@ -458,13 +542,15 @@ def score_synergy(
                 f"{effect.magnitude}{cond})"
             )
             if best_for_stat is None or pts > best_for_stat[0]:
-                best_for_stat = (pts, detail)
+                best_for_stat = (pts, detail, effect.label)
 
         if best_for_stat:
             total += best_for_stat[0]
             if stat not in seen_stats:
                 seen_stats.add(stat)
                 reasons.append(f"{stat} via {best_for_stat[1]}")
+            if stat == "ATK SPD" and best_for_stat[2] == "Haste buff":
+                credited_buffs.add("Haste buff")
 
     return total, reasons
 
@@ -525,9 +611,10 @@ def format_synergies(
     lines: list[str] = []
     picks = rank_synergies(receiver, heroes, enabler_matchers)
     if picks:
-        for i, (title, reasons) in enumerate(picks, 1):
-            why = "; ".join(reasons)
-            lines.append(f"{i}. **{title}** — {why}")
+        for title, reasons in picks:
+            lines.append(f"- **{short_name(title)}**")
+            for reason in reasons:
+                lines.append(f"  - {format_reason_for_display(reason)}")
     else:
         lines.append("_No synergy partners matched stat buffs or enablers._")
 
@@ -656,31 +743,28 @@ def build_overview() -> str:
     parts = [
         "# Heroes Overview",
         "",
-        "Per-hero synergy picks first, then summaries from [Heroes.md](Heroes.md).",
+        "Per-hero synergy picks and summaries derived from skill text in",
+        "[Heroes.md](Heroes.md). [Heroes.md](Heroes.md) has skills only.",
         "Synergy: stat buffs matching **Stats the unit benefits from**, and",
         "enabler partners matching **Requires** special effects.",
         "Up to five partners by combined score. Omitted: ATK-only, Max HP",
         "buff-only, and Shield-only (unless the hero benefits from Max HP/",
         "shields). Rare conditional buffs score lower.",
-        "Regenerate with `scripts/generate-heroes-overview.py` after",
-        "`scripts/rewrite-summaries.py`.",
+        "Regenerate: `python3 scripts/generate-heroes-overview.py`.",
         "",
     ]
 
     for hero in heroes:
-        block = block_by_title[hero.title]
-        summary = extract_summary(block)
         syn_lines = format_synergies(
             hero, heroes, enabler_matchers, beneficiaries_index
         )
+        summary = _rs.format_summary(hero).rstrip()
 
-        parts.append(f"## {hero.title}")
+        parts.append(f"## {short_name(hero.title)}")
         parts.append("")
         parts.append("### Synergies")
         parts.append("")
         parts.extend(syn_lines)
-        parts.append("")
-        parts.append("### Summary")
         parts.append("")
         parts.append(summary)
         parts.append("")
@@ -690,15 +774,20 @@ def build_overview() -> str:
 
 def main() -> None:
     text = HEROES_MD.read_text(encoding="utf-8")
-    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-    heroes = [_rs.parse_hero_block(b) for b in blocks]
-    for h in heroes:
-        _rs.analyze_hero(h)
+    stripped = _rs.strip_summaries_from_heroes_md(text)
+    if stripped != text:
+        HEROES_MD.write_text(stripped, encoding="utf-8")
+        print(f"Stripped summaries from {HEROES_MD.relative_to(ROOT)}")
 
     content = build_overview()
     OVERVIEW_MD.write_text(content, encoding="utf-8")
     print(f"Wrote {OVERVIEW_MD.relative_to(ROOT)} ({len(content.splitlines())} lines)")
 
+    text = HEROES_MD.read_text(encoding="utf-8")
+    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+    heroes = [_rs.parse_hero_block(b) for b in blocks]
+    for h in heroes:
+        _rs.analyze_hero(h)
     candidates = scan_enabler_patterns_in_heroes(heroes)
     print("\n--- Enabler pattern scan (skill text) ---")
     for tag, examples in sorted(candidates.items()):
