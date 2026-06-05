@@ -94,6 +94,27 @@ Optional suffix: `— conditional (frequent)` or `— conditional (rare)`.
 
 Synergy picks in `heroes-overview.md` skip rare conditional ally buffs.
 
+## Quality indicators
+
+Summary lines mark relative strength with **`high`**, **`medium`**, or
+**`low`** (backticks in output). These rank an effect against the roster, not
+in isolation.
+
+- **Buffs / debuffs** — parsed % compared within the same label across heroes
+  (quantiles when enough data); debuffs also reward `all enemies` reach.
+  `assign_magnitudes()` in `rewrite-summaries.py`.
+- **Crowd control** — duration-based (≥5s → high, ≥2s → medium).
+- **HP loss / max-HP / true damage** — composite score from %, targeting, and
+  frequency; roster quantiles in `assign_damage_magnitudes()`.
+
+**Tier** in parentheses (`Mythic+`, `Level 3`, …) is unlock level, not
+strength. **Conditional (rare)** lowers magnitude by two steps; some labels
+(Invincible, Fatal blow immunity) are always high.
+
+Synergy scoring weights magnitude (high > medium > low). When auditing,
+compare heroes with the same buff/debuff label — wrong targeting or clause
+parsing often yields wrong indicators.
+
 ## Hero docs
 
 - **Heroes.md** — skill text from Yaphalla (and manual edits). No `### Summary`
@@ -105,6 +126,42 @@ Regenerate overview (and strip stray summaries from Heroes.md if present):
 `python3 scripts/generate-heroes-overview.py`
 
 Summary/synergy rules live in `scripts/rewrite-summaries.py` (library).
+
+## Detecting synergies between units
+
+Synergy is **provider → receiver**: one hero supplies what another needs.
+Automated ranking lives in `scripts/generate-heroes-overview.py`; when
+reviewing or fixing matches, work through both heroes in this order.
+
+1. **Summarize each hero** from `Heroes.md` skill text (see `### Summary` in
+   `heroes-overview.md` or run `rewrite-summaries.py`). Extract:
+   - **Stats the unit benefits from** — stats they self-buff or scale on
+   - **Ally buffs** — buffs that hit allies (`Single target` through
+     `All units`; not `Self`)
+   - **Summon buffs** — buffs on allied summons only
+   - **Requires** — partner-enabled special effects (not self-setup)
+
+2. **Match provider → receiver** on three paths:
+   - **Stat buffs** — ally buff label maps to a receiver benefit stat
+     (e.g. `Haste buff` → Haste or ATK SPD; `Shield` → Max HP)
+   - **Summon buffs** — summon buffs for heroes who field summons
+   - **Enablers** — provider satisfies a receiver **Requires** label
+     (DoT on enemies, magic damage from allies, party composition, etc.)
+
+3. **Score and rank** — broader targeting and higher magnitude win; skip
+   **rare conditional** ally buffs; sum stat + summon + enabler scores; keep
+   the top five partners per receiver. Drop weak-only picks (generic ATK,
+   Max HP / Shield when the receiver does not value those stats).
+
+**Units benefited** at the end of each Synergies block is the reverse index:
+heroes who list this unit in their top five.
+
+**Parsing pitfalls** (bad summaries → false synergies): resolve targeting from
+the **same sentence/clause** as the buff; do not treat self energy or self
+stats as ally buffs; enemy debuffs are not benefit stats; situational ally
+buffs (monster fights, ingredients, once per battle) should not rank.
+
+Regenerate: `python3 scripts/generate-heroes-overview.py`
 
 ## Synergies (`heroes-overview.md`)
 
