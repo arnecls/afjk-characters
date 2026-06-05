@@ -130,10 +130,7 @@ def summon_buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
 
 
 def receiver_summons(hero: _rs.Hero) -> bool:
-    return any(
-        se.kind == "provides" and se.label == "Summoning"
-        for se in hero.special_effects
-    )
+    return _rs.hero_fields_summon_units(hero)
 
 
 SUMMON_TARGETING_WEIGHT = 3.0

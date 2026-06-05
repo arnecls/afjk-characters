@@ -282,12 +282,6 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Pin — Multiple targets — `high`
 
-#### Arden's Special Effects
-
-#### Arden Provides
-
-- Summoning — Multiple targets
-
 ## Atalanta
 
 ### Units Atalanta benefits from
@@ -404,16 +398,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Bryon
 - Cecia
-- Cyran
-- Faramor
 - Florabelle
-- Lyca
-- Marcille
-- Mirael
-- Pippa
-- Silven
-- Tasi
-- Velara
+- Zanie
 
 ### Summary for Aurora
 
@@ -449,7 +435,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Invincibility — Multiple targets
 - Start-of-battle cast — Multiple targets
-- Summoning — Self
+- Summoning — Single target
 
 ## Baelran
 
@@ -974,10 +960,9 @@ _No synergy partners matched stat buffs or enablers._
 - **Faramor**
   - ATK buff (area, low)
   - Max HP via Shield (multiple targets, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - Max HP via Shield (summons only, medium)
 - **Gala**
+  - Max HP via Shield (area, high)
+- **Lucius**
   - Max HP via Shield (area, high)
 
 ### Summary for Cryonaia
@@ -1013,7 +998,6 @@ _No synergy partners matched stat buffs or enablers._
 #### Cryonaia Provides
 
 - Enemy isolation (domain) — All units
-- Summoning — All units
 
 #### Cryonaia Requires
 
@@ -1031,12 +1015,11 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - ATK buff (single target, high)
   - ATK SPD via Haste buff (multiple targets, high)
-- **Florabelle**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
-  - Summon damage buff (summons only, medium)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - ATK SPD via Haste buff (summons only, high)
+- **Fay**
+  - ATK buff (arc, high)
+  - ATK SPD buff (multiple targets, low)
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high)
 
 ### Summary for Cyran
 
@@ -1067,12 +1050,6 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity — Self — Start of battle
 - Pin — Area — `low`
 - Silence (EX+10) — Single target — `low`
-
-#### Cyran's Special Effects
-
-#### Cyran Provides
-
-- Summoning — All units
 
 ## Daimon
 
@@ -1129,6 +1106,8 @@ _No synergy partners matched stat buffs or enablers._
 - Bryon
 - Cassadee
 - Cecia
+- Cyran
+- Faramor
 - Fay
 - Florabelle
 - Frieren
@@ -1165,6 +1144,7 @@ _No synergy partners matched stat buffs or enablers._
 - Sinbad
 - Sonja
 - Soren
+- Tasi
 - Twins
 - Valka
 - Velara
@@ -1197,6 +1177,12 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun — Single target — `medium`
 
+#### Damian's Special Effects
+
+#### Damian Provides
+
+- Summoning — All units
+
 ## Dionel
 
 ### Units Dionel benefits from
@@ -1207,13 +1193,12 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high)
   - Max HP via Shield (multiple targets, high)
-- **Florabelle**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
-  - Max HP via Shield (summons only, medium)
 - **Cecia**
   - ATK SPD buff (multiple targets, high)
   - Max HP buff (single target, high)
 - **Gala**
+  - Max HP via Shield (area, high)
+- **Lucius**
   - Max HP via Shield (area, high)
 
 ### Summary for Dionel
@@ -1246,7 +1231,6 @@ _No synergy partners matched stat buffs or enablers._
 #### Dionel Provides
 
 - Untargetable — Area
-- Summoning (Mythic+) — All units
 - Execution scaling (Supreme+) — Self
 
 ## Dunlingr
@@ -1508,7 +1492,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Invincibility — All units
 - Start-of-battle cast — All units
-- Summoning — Multiple targets
 
 #### Evie Requires
 
@@ -1523,15 +1506,13 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
-- **Florabelle**
-  - Haste buff (multiple targets, high, conditional (frequent))
-  - Summon damage buff (summons only, medium)
 - **Hugin**
   - ATK buff (single target, high)
   - Haste buff (multiple targets, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - Haste buff (summons only, high)
+- **Damian**
+  - Haste buff (multiple targets, high)
+- **Vala**
+  - Haste buff (multiple targets, high)
 
 ### Units benefitting from Faramor
 
@@ -1569,10 +1550,6 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Faramor's Special Effects
 
-#### Faramor Provides
-
-- Summoning — Single target
-
 #### Faramor Requires
 
 - Once per battle (EX+10) — Enemies
@@ -1594,6 +1571,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Fay
 
+- Cyran
 - Damian
 - Dunlingr
 - Evie
@@ -1658,15 +1636,8 @@ _No synergy partners matched stat buffs or enablers._
 
 - Aurora
 - Cassadee
-- Cryonaia
-- Cyran
-- Dionel
-- Faramor
 - Gala
-- Gunnar
 - Niru
-- Tasi
-- Zandrok
 
 ### Summary for Florabelle
 
@@ -1901,12 +1872,6 @@ _No synergy partners matched stat buffs or enablers._
 - Pin — Area — `medium`
 - Taunt — Single target — `high`
 
-#### Granny Dahnie's Special Effects
-
-#### Granny Dahnie Provides
-
-- Summoning — Area
-
 ## Gunnar
 
 ### Units Gunnar benefits from
@@ -1917,13 +1882,12 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high)
   - Max HP via Shield (multiple targets, high)
-- **Florabelle**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
-  - Max HP via Shield (summons only, medium)
 - **Cecia**
   - ATK SPD buff (multiple targets, high)
   - Max HP buff (single target, high)
 - **Gala**
+  - Max HP via Shield (area, high)
+- **Lucius**
   - Max HP via Shield (area, high)
 
 ### Summary for Gunnar
@@ -1955,7 +1919,6 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Gunnar Provides
 
-- Summoning — Area
 - Invincibility (EX+15) — Single target
 
 ## Gwyneth
@@ -2417,7 +2380,6 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Igor Provides
 
-- Summoning — Single target
 - Untargetable — Area
 
 ## Indris
@@ -2713,12 +2675,6 @@ _No synergy partners matched stat buffs or enablers._
 - Move — Area — `high`
 - Pin — Area — `high`
 
-#### Kordan's Special Effects
-
-#### Kordan Provides
-
-- Summoning — Area
-
 ## Korin
 
 ### Units Korin benefits from
@@ -2825,7 +2781,6 @@ _No synergy partners matched stat buffs or enablers._
 #### Kulu Provides
 
 - Invincibility — Single target
-- Summoning — Area
 
 ## Laios
 
@@ -3012,12 +2967,6 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected immunity (Supreme+) — Self — On skill
 - Stun (EX+10) — Multiple targets — `high`
 
-#### Lorsan's Special Effects
-
-#### Lorsan Provides
-
-- Summoning — Area
-
 ## Lucca
 
 ### Units Lucca benefits from
@@ -3081,6 +3030,9 @@ _No synergy partners matched stat buffs or enablers._
 - Alna
 - Alsa
 - Contess
+- Cryonaia
+- Dionel
+- Gunnar
 - Himmel
 - Kafra
 - Lucca
@@ -3230,6 +3182,7 @@ _No synergy partners matched stat buffs or enablers._
 - Thador
 - Thoran
 - Ulmus
+- Zandrok
 
 ### Summary for Lumont
 
@@ -3266,13 +3219,13 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
-- **Aurora**
-  - ATK SPD via Haste buff (summons only, high)
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high)
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high)
 - **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high)
+- **Vala**
   - ATK SPD via Haste buff (multiple targets, high)
 
 ### Units benefitting from Lyca
@@ -3305,12 +3258,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun (EX+10) — Single target — `low`
 
-#### Lyca's Special Effects
-
-#### Lyca Provides
-
-- Summoning — Single target
-
 ## Marcille
 
 ### Units Marcille benefits from
@@ -3322,9 +3269,9 @@ _No synergy partners matched stat buffs or enablers._
   - ATK SPD via Haste buff (all units, high)
 - **Temesia**
   - Energy recovery (area, high)
-- **Aurora**
-  - ATK SPD via Haste buff (summons only, high)
 - **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high)
+- **Mikola**
   - ATK SPD via Haste buff (multiple targets, high)
 
 ### Summary for Marcille
@@ -3355,7 +3302,6 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Marcille Provides
 
-- Summoning — All units
 - Revive ally (Mythic+) — Single target
 
 #### Marcille Requires
@@ -3465,7 +3411,6 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Mehira Provides
 
-- Summoning — Self
 - HP threshold strike (Mythic+) — Self
 - Untargetable (Mythic+) — Self
 
@@ -3514,6 +3459,7 @@ _No synergy partners matched stat buffs or enablers._
 - Lucy
 - Lumont
 - Lyca
+- Marcille
 - Marilee
 - Mehira
 - Mirael
@@ -3528,6 +3474,7 @@ _No synergy partners matched stat buffs or enablers._
 - Rowan
 - Seth
 - Shakir
+- Silven
 - Sinbad
 - Smokey & Meerky
 - Sonja
@@ -3539,6 +3486,7 @@ _No synergy partners matched stat buffs or enablers._
 - Twins
 - Vala
 - Valka
+- Velara
 - Viperian
 - Zanie
 - Zorya
@@ -3569,13 +3517,13 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
-- **Aurora**
-  - ATK SPD via Haste buff (summons only, high)
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high)
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high)
 - **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high)
+- **Vala**
   - ATK SPD via Haste buff (multiple targets, high)
 
 ### Summary for Mirael
@@ -3593,12 +3541,6 @@ _No synergy partners matched stat buffs or enablers._
 #### Buffs provided by Mirael
 
 - ATK SPD buff (Legendary+) — Self — `medium`
-
-#### Mirael's Special Effects
-
-#### Mirael Provides
-
-- Summoning — Single target
 
 ## Nara
 
@@ -4086,7 +4028,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Phraesto Provides
 
-- Summoning — Self
+- Summoning — Area
 
 ## Pippa
 
@@ -4094,13 +4036,13 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Twins**
   - Haste buff (all units, high)
-- **Aurora**
-  - Haste buff (summons only, high)
 - **Damian**
   - Haste buff (multiple targets, high)
 - **Hugin**
   - Haste buff (multiple targets, high)
 - **Mikola**
+  - Haste buff (multiple targets, high)
+- **Vala**
   - Haste buff (multiple targets, high)
 
 ### Summary for Pippa
@@ -4129,12 +4071,6 @@ _No synergy partners matched stat buffs or enablers._
 - Knock down — Single target — `low`
 - Move — Single target — `low`
 - Pin — Single target — `medium`
-
-#### Pippa's Special Effects
-
-#### Pippa Provides
-
-- Summoning — Area
 
 ## Ravion
 
@@ -4415,12 +4351,6 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Salazer
 
 - Pin — Single target — `high`
-
-#### Salazer's Special Effects
-
-#### Salazer Provides
-
-- Summoning — Single target
 
 ## Satrana
 
@@ -4708,12 +4638,6 @@ _No synergy partners matched stat buffs or enablers._
 - Healing — Self — `medium` — conditional (frequent)
 - Shield — Area — `medium`
 
-#### Shemira's Special Effects
-
-#### Shemira Provides
-
-- Summoning — Self
-
 ## Silven
 
 ### Units Silven benefits from
@@ -4725,9 +4649,9 @@ _No synergy partners matched stat buffs or enablers._
   - ATK SPD via Haste buff (all units, high)
 - **Temesia**
   - Energy recovery (area, high)
-- **Aurora**
-  - ATK SPD via Haste buff (summons only, high)
 - **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high)
+- **Mikola**
   - ATK SPD via Haste buff (multiple targets, high)
 
 ### Summary for Silven
@@ -4748,12 +4672,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - ATK SPD buff (Legendary+) — Self — `medium`
 - Energy recovery (Mythic+) — Self — `low`
-
-#### Silven's Special Effects
-
-#### Silven Provides
-
-- Summoning — Single target
 
 ## Silvina
 
@@ -4955,7 +4873,6 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Solise Provides
 
-- Summoning — Single target
 - Ally blessing (Mythic+) — Single target
 
 ## Sonja
@@ -5150,7 +5067,6 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Talene Provides
 
-- Summoning — Area
 - Transform — Area
 
 ## Tasi
@@ -5162,15 +5078,13 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
-- **Florabelle**
-  - Haste buff (multiple targets, high, conditional (frequent))
-  - Summon damage buff (summons only, medium)
 - **Hugin**
   - ATK buff (single target, high)
   - Haste buff (multiple targets, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - Haste buff (summons only, high)
+- **Damian**
+  - Haste buff (multiple targets, high)
+- **Vala**
+  - Haste buff (multiple targets, high)
 
 ### Summary for Tasi
 
@@ -5206,7 +5120,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Invincibility — Area
 - Sleep (area) — Single target
-- Summoning — All units
 - Transform — Area
 
 ## Temesia
@@ -5292,12 +5205,6 @@ _No synergy partners matched stat buffs or enablers._
 - Interrupt — Single target — `high`
 - Knock down — All units — `low`
 
-#### Temesia's Special Effects
-
-#### Temesia Provides
-
-- Summoning — All units
-
 ## Thador
 
 ### Units Thador benefits from
@@ -5338,12 +5245,6 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Thador
 
 - Knock down — Single target — `low`
-
-#### Thador's Special Effects
-
-#### Thador Provides
-
-- Summoning (Mythic+) — Single target
 
 ## Thoran
 
@@ -5495,6 +5396,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Vala
 
+- Faramor
 - Fay
 - Frieren
 - Gwyneth
@@ -5502,13 +5404,16 @@ _No synergy partners matched stat buffs or enablers._
 - Korin
 - Lucy
 - Lumont
+- Lyca
+- Mirael
 - Natsu
 - Odie
+- Pippa
 - Rhys
 - Shakir
 - Sonja
+- Tasi
 - Viperian
-- Zanie
 
 ### Summary for Vala
 
@@ -5655,9 +5560,9 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (all units, high)
 - **Temesia**
   - Energy recovery (area, high)
-- **Aurora**
-  - Haste buff (summons only, high)
 - **Hugin**
+  - Haste buff (multiple targets, high)
+- **Mikola**
   - Haste buff (multiple targets, high)
 
 ### Summary for Velara
@@ -5691,7 +5596,6 @@ _No synergy partners matched stat buffs or enablers._
 #### Velara Provides
 
 - Start-of-battle cast — All units
-- Summoning — All units
 
 #### Velara Requires
 
@@ -5791,12 +5695,11 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - Haste buff (multiple targets, high)
   - Max HP via Shield (multiple targets, high)
-- **Florabelle**
-  - Haste buff (multiple targets, high, conditional (frequent))
-  - Max HP via Shield (summons only, medium)
 - **Gala**
   - Max HP via Shield (area, high)
 - **Lucius**
+  - Max HP via Shield (area, high)
+- **Lumont**
   - Max HP via Shield (area, high)
 
 ### Summary for Zandrok
@@ -5822,25 +5725,19 @@ _No synergy partners matched stat buffs or enablers._
 
 - Stun — Area — `low`
 
-#### Zandrok's Special Effects
-
-#### Zandrok Provides
-
-- Summoning — Area
-
 ## Zanie
 
 ### Units Zanie benefits from
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
+- **Aurora**
+  - ATK SPD via Haste buff (summons only, high)
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high)
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high)
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Vala**
   - ATK SPD via Haste buff (multiple targets, high)
 
 ### Summary for Zanie
@@ -5866,6 +5763,12 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Zanie
 
 - Stun — Single target — `low`
+
+#### Zanie's Special Effects
+
+#### Zanie Provides
+
+- Summoning — Self
 
 ## Zorya
 
@@ -5928,7 +5831,6 @@ _No synergy partners matched stat buffs or enablers._
 #### Zorya Provides
 
 - Invincibility — Area
-- Summoning — Arc
 
 #### Zorya Requires
 

@@ -1236,9 +1236,21 @@ _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
     r"living armor",
     r"mr\. carlyle",
     r"bell of order",
-    r"bulbsprite",
     r"smashy|swifty|spiny",
     r"winter warrior",
+    r"\bsonny\b",
+    r"magical bunny",
+    r"dead tide warriors?",
+)
+
+_SUMMON_EFFECT_OBJECT = re.compile(
+    r"(?:a |an |the |\d+ )?"
+    r"(?:black hole|magic circles?|dormant magic circles?|meteors?|dream|"
+    r"flying blades?|walls? of |light spear|ice storms?|blizzards?|vines?|"
+    r"domains? of|quills?|sky fish|parasitic grass|doomfields?|"
+    r"swirling snowstorms?|magical plants?|mount dawn|tombstones?|"
+    r"lightning|leaves to attack|doomfield at)",
+    re.I,
 )
 
 
@@ -1275,7 +1287,59 @@ def text_has_start_of_battle_ultimate(t: str, section: str = "") -> bool:
 
 
 def text_has_companion_unit(t: str) -> bool:
-    return any(re.search(p, t) for p in _COMPANION_UNIT_PATTERNS)
+    tl = t.lower()
+    return any(re.search(p, tl) for p in _COMPANION_UNIT_PATTERNS)
+
+
+def text_has_summon_unit(t: str) -> bool:
+    """True when the hero fields allied summon units, not skill-created effects."""
+    tl = t.lower()
+    if text_has_companion_unit(tl):
+        return True
+    if re.search(r"\bat least \d+ of (?:her|his|their) summons\b", tl):
+        return True
+    if re.search(
+        r"\b(?:her|his|their) summons (?:are|is) on the battlefield\b", tl
+    ):
+        return True
+    if re.search(
+        r"\b(?:builds?|summons?) (?:a |an |the |\d+ )?.{0,50}"
+        r"\b(?:that )?inherits?\s+\d+%",
+        tl,
+    ):
+        return True
+    if re.search(
+        r"\b(?:generates?|summoning) (?:a |an |the )?"
+        r"(?:silhouette|shadow|illusion).{0,100}\binherit(?:s|ing)?\s+\d+%",
+        tl,
+    ):
+        return True
+    for m in re.finditer(r"\bsummon(?:s|ing)?\b", tl):
+        start = m.start()
+        if start >= 4 and tl[start - 4 : start] == "non-":
+            continue
+        after = tl[m.end() : m.end() + 80]
+        if _SUMMON_EFFECT_OBJECT.search(after):
+            continue
+        span = tl[max(0, m.start()) : min(len(tl), m.end() + 320)]
+        if re.search(r"\binherit(?:s|ing)?\s+\d+%", span):
+            return True
+        if re.search(r"\bappears? at (?:her|his|their) side\b", span):
+            return True
+        if re.search(r"\bcannot be summoned again\b", span):
+            return True
+        if re.search(r"\beach inheriting \d+%", span):
+            return True
+        if re.search(r"\bremains? on the battlefield\b", span) and re.search(
+            r"\bnormal attack\b", span
+        ):
+            return True
+    return False
+
+
+def hero_fields_summon_units(hero: Hero) -> bool:
+    text = " ".join(chunk for _, chunk, _ in hero.skill_chunks)
+    return text_has_summon_unit(text)
 
 
 def _is_ally_grant_phrase(t: str) -> bool:
@@ -1399,9 +1463,7 @@ def detect_special_effects(
     effects: list[SpecialEffect], tier: str, text: str, section: str = ""
 ):
     t = text.lower()
-    if text_has_summoning(t):
-        add_special_effect(effects, "provides", "Summoning", tier, text)
-    if text_has_companion_unit(t):
+    if text_has_summon_unit(t):
         add_special_effect(effects, "provides", "Summoning", tier, text)
     if text_has_start_of_battle_ultimate(t, section):
         add_special_effect(effects, "provides", "Start-of-battle cast", tier, text)
