@@ -174,7 +174,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Crowd Control provided by Alsa
 
-- Immune immunity — Area — Once
+- Immune — Area — Once
 - Move — Single target — `low`
 - Stun — Single target — `high`
 
@@ -227,7 +227,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Crowd Control provided by Antandra
 
-- Unaffected immunity — Area — On skill
+- Unaffected — Area — On skill
 - Knock down — Area — `medium`
 - Stun — Area — `medium`
 - Taunt — Area — `high`
@@ -357,7 +357,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Crowd Control provided by Athalia
 
-- Unaffected immunity — Area — On skill
+- Unaffected — Area — On skill
 - Knock down — Single target — `low`
 
 #### Athalia's Special Effects
@@ -423,7 +423,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Crowd Control provided by Aurora
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Sleep — Single target — `high`
 
 #### Aurora's Special Effects
@@ -479,7 +479,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Crowd Control provided by Baelran
 
-- Unaffected immunity — Self — Start of battle
+- Unaffected — Self — Start of battle
 - Knock down — Area — `medium`
 
 #### Baelran's Special Effects
@@ -629,7 +629,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Crowd Control provided by Brutus
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Taunt — Area — `high`
 
 ## Bryon
@@ -722,7 +722,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Callan
 
-- Unaffected immunity — Self — Start of battle
+- Unaffected — Self — Start of battle
 - Knock down — All units — `low`
 - Pin — Single target — `low`
 - Stun (Mythic+) — All units — `low`
@@ -1008,7 +1008,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Cryonaia
 
-- Immune immunity — Self — Conditional
+- Immune — Self — Conditional
 - Freeze (EX+15) — Self — `low`
 
 #### Cryonaia's Special Effects
@@ -1069,8 +1069,8 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Cyran
 
-- Steadfast immunity — Area — Conditional
-- Unaffected immunity — Self — Start of battle
+- Steadfast — Area — Conditional
+- Unaffected — Self — Start of battle
 - Pin — Self — `high`
 - Silence (EX+10) — Single target — `low`
 
@@ -1450,7 +1450,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Twins
 
-- Unaffected immunity — Area — On skill
+- Unaffected — Area — On skill
 - Move — Area — `low`
 
 #### Twins's Special Effects
@@ -1680,7 +1680,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Florabelle
 
-- Immune immunity (Supreme+) — Self — Form
+- Immune (Supreme+) — Self — Form
 
 #### Florabelle's Special Effects
 
@@ -1831,7 +1831,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Gerda
 
-- Unaffected immunity — Self — Start of battle
+- Unaffected — Self — Start of battle
 - Interrupt — Single target — `medium`
 - Pin — Single target — `low`
 - Stun — Single target — `high`
@@ -1872,7 +1872,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Granny Dahnie
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Pin — Single target — `low`
 - Taunt — Single target — `high`
 
@@ -2042,7 +2042,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Harak
 
-- Unaffected immunity — Self — Start of battle
+- Unaffected — Self — Start of battle
 
 #### Harak's Special Effects
 
@@ -2161,7 +2161,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Hewynn
 
-- Unaffected immunity (Mythic+) — Self — On skill
+- Unaffected (Mythic+) — Self — On skill
 
 #### Hewynn's Special Effects
 
@@ -2223,7 +2223,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Himmel
 
-- Unaffected immunity — Multiple targets — On skill
+- Unaffected — Multiple targets — On skill
 
 #### Himmel's Special Effects
 
@@ -2533,7 +2533,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Isabella
 
-- Unaffected immunity — Single target — Once
+- Unaffected — Single target — Once
 
 #### Isabella's Special Effects
 
@@ -2595,7 +2595,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Kafra
 
-- Unaffected immunity (Mythic+) — Self — Conditional
+- Unaffected (Mythic+) — Self — Conditional
 - Move — Single target — `low`
 - Stun — Single target — `high`
 
@@ -2827,7 +2827,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Kulu
 
-- Unaffected immunity — Area — On ultimate
+- Unaffected — Area — On ultimate
 - Move — Single target — `low`
 
 #### Kulu's Special Effects
@@ -2938,7 +2938,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Lenya
 
-- Unaffected immunity — Self — Once
+- Unaffected — Self — Once
 - Stun — Single target — `medium`
 
 ## Lily May
@@ -2973,7 +2973,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Lily May
 
-- Unaffected immunity — Self — Start of battle
+- Unaffected — Self — Start of battle
 - Interrupt — Single target — `low`
 
 #### Lily May's Special Effects
@@ -3008,7 +3008,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Lorsan
 
-- Unaffected immunity (Supreme+) — Self — On skill
+- Unaffected (Supreme+) — Self — On skill
 - Stun (EX+10) — Multiple targets — `high`
 
 ## Lucca
@@ -3051,7 +3051,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Lucca
 
-- Immune immunity — Self — On skill
+- Immune — Self — On skill
 - Interrupt — Single target — `medium`
 - Stun — Area — `medium`
 
@@ -3172,7 +3172,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Lucy
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Stun — Single target — `high`
 
 ## Ludovic
@@ -3209,7 +3209,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Ludovic
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 
 #### Ludovic's Special Effects
 
@@ -3269,7 +3269,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Lumont
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Stun — Area — `high`
 - Taunt — Area — `medium`
 
@@ -3660,7 +3660,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Nara
 
-- Unaffected immunity (Supreme+) — Self — Permanent
+- Unaffected (Supreme+) — Self — Permanent
 
 ## Natsu
 
@@ -3946,7 +3946,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Pang
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Stun — Single target — `low`
 
 #### Pang's Special Effects
@@ -4043,7 +4043,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Perseus
 
-- Unaffected immunity — Multiple targets — On skill
+- Unaffected — Multiple targets — On skill
 - Stun — Area — `medium`
 
 #### Perseus's Special Effects
@@ -4135,7 +4135,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Pippa
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Knock down — Single target — `low`
 - Move — Single target — `low`
 - Pin — Single target — `medium`
@@ -4201,7 +4201,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Ravion
 
-- Unaffected immunity — Self — Start of battle
+- Unaffected — Self — Start of battle
 - Knock down — Single target — `high`
 - Move — Single target — `high`
 
@@ -4240,8 +4240,8 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Reinier
 
-- Steadfast immunity — Single target — Conditional
-- Unaffected immunity — Single target — Conditional
+- Steadfast — Single target — Conditional
+- Unaffected — Single target — Conditional
 - Interrupt — Single target — `high`
 - Move — Multiple targets — `high`
 - Knock down (Mythic+) — Single target — `low`
@@ -4361,7 +4361,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Saida
 
-- Unaffected immunity — Self — Conditional
+- Unaffected — Self — Conditional
 - Interrupt — Single target — `low`
 - Move — Single target — `low`
 
@@ -4470,7 +4470,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Scarlita
 
-- Unaffected immunity — Self — Conditional
+- Unaffected — Self — Conditional
 - Knock down — Arc — `low`
 - Move — All units — `low`
 - Stun — Arc — `medium`
@@ -4630,7 +4630,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Shakir
 
-- Unaffected immunity — Self — Form
+- Unaffected — Self — Form
 
 #### Shakir's Special Effects
 
@@ -4824,7 +4824,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Sinbad
 
-- Unaffected immunity — Multiple targets — Conditional
+- Unaffected — Multiple targets — Conditional
 
 #### Sinbad's Special Effects
 
@@ -4914,7 +4914,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Solise
 
-- Unaffected immunity — Self — Start of battle
+- Unaffected — Self — Start of battle
 
 #### Solise's Special Effects
 
@@ -5046,9 +5046,9 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Sylphira
 
-- Immune immunity — Self — On skill
-- Unaffected immunity — Area — Conditional
-- Cleanse immunity (Mythic+) — Self — On skill
+- Immune — Self — On skill
+- Unaffected — Area — Conditional
+- Cleanse (Mythic+) — Self — On skill
 - Interrupt — Single target — `low`
 - Knock down — Area — `medium`
 - Silence — Single target — `low`
@@ -5212,7 +5212,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Temesia
 
-- Unaffected immunity (Mythic+) — Self — Permanent
+- Unaffected (Mythic+) — Self — Permanent
 - Interrupt — Single target — `high`
 - Knock down — Area — `low`
 
@@ -5292,7 +5292,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Thoran
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Interrupt — Single target — `low`
 
 ## Tilaya
@@ -5331,7 +5331,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Tilaya
 
-- Unaffected immunity — Arc — Start of battle
+- Unaffected — Arc — Start of battle
 
 #### Tilaya's Special Effects
 
@@ -5376,7 +5376,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Ulmus
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Knock down (Mythic+) — Single target — `medium`
 
 ## Vala
@@ -5529,7 +5529,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Valka
 
-- Unaffected immunity — Self — On skill
+- Unaffected — Self — On skill
 - Knock down — Single target — `low`
 - Stun — Single target — `low`
 
@@ -5632,7 +5632,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Viperian
 
-- Unaffected immunity — Self — Start of battle
+- Unaffected — Self — Start of battle
 
 ## Walker
 
@@ -5842,8 +5842,8 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Crowd Control provided by Zorya
 
-- Steadfast immunity — Self — Start of battle
-- Unaffected immunity (EX+10) — Single target — On skill
+- Steadfast — Self — Start of battle
+- Unaffected (EX+10) — Single target — On skill
 - Knock down — Arc — `medium`
 - Stun — Area — `medium`
 

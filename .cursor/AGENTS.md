@@ -283,7 +283,8 @@ a Magic Defense debuff.
 - Resillience / Cleanse
 - Dispell (need to be derived from text)
 
-Summary lines use `{type} immunity ({tier}) — {targeting} — {timing}`.
+Summary lines use `{type} ({tier}) — {targeting} — {timing}` (e.g. Unaffected,
+Immune, Steadfast, Cleanse — no extra "immunity" suffix).
 Timing labels:
 
 - Start of battle

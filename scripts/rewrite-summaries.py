@@ -2485,7 +2485,7 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
             key=lambda x: (TIER_ORDER.get(x.tier, 9), x.immunity_type),
         ):
             out.append(
-                f"- {imm.immunity_type} immunity{format_tier_suffix(imm.tier)} — "
+                f"- {imm.immunity_type}{format_tier_suffix(imm.tier)} — "
                 f"{imm.targeting} — {imm.timing}"
             )
         for e in sorted(cc_items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)):
