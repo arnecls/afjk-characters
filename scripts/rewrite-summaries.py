@@ -63,6 +63,9 @@ class Effect:
     numeric: float | None = None
     qualitative: str = ""
     magnitude: str = "medium"
+    # Buffs only: None = always relevant; frequent = often (>~50% of fights);
+    # rare = situational (not every battle / kill-gated / limited procs).
+    conditional: str | None = None
 
 
 @dataclass
@@ -74,12 +77,23 @@ class CcImmunity:
 
 
 @dataclass
+class SpecialEffect:
+    kind: str  # "provides" | "requires"
+    label: str
+    tier: str
+    targeting: str = "—"
+    qualitative: str = ""
+
+
+@dataclass
 class Hero:
     title: str
     damage_type: str
-    skill_chunks: list[tuple[str, str]] = field(default_factory=list)
+  # (tier, text, section name e.g. "Ultimate", "Skill1")
+    skill_chunks: list[tuple[str, str, str]] = field(default_factory=list)
     effects: list[Effect] = field(default_factory=list)
     cc_immunities: list[CcImmunity] = field(default_factory=list)
+    special_effects: list[SpecialEffect] = field(default_factory=list)
     damage_entries: list[tuple[str, str]] = field(default_factory=list)
     benefit_stats: list[str] = field(default_factory=list)
 
@@ -111,7 +125,9 @@ def parse_hero_block(block: str) -> Hero:
         if current_section and buffer:
             text = " ".join(buffer).strip()
             if text:
-                hero.skill_chunks.append((SECTION_TIERS.get(current_section, "base"), text))
+                hero.skill_chunks.append(
+                    (SECTION_TIERS.get(current_section, "base"), text, current_section)
+                )
         buffer = []
 
     for ln in lines[1:]:
@@ -136,7 +152,7 @@ def parse_hero_block(block: str) -> Hero:
             flush_buffer()
             tier = parse_level_tier(ln, current_section)
             text = ln.split(":", 1)[-1].strip() if ":" in ln else ln
-            hero.skill_chunks.append((tier, text))
+            hero.skill_chunks.append((tier, text, current_section or ""))
             continue
         if ln.strip():
             buffer.append(ln.strip())
@@ -571,10 +587,66 @@ def cc_magnitude_from_duration(duration: float | None) -> str:
     return "low"
 
 
+# Rare: unlikely every battle (monster-only, ingredients, hard caps).
+RARE_CONDITIONAL_PATTERNS: tuple[str, ...] = (
+    r"enemy monster",
+    r"monsters among the enemies",
+    r"\bingredient",
+    r"collected ingredients",
+    r"for each ingredient",
+    r"drop an extra ingredient",
+    r"if there are any monsters",
+    r"once per (?:battle|hero)",
+    r"can only (?:cast|trigger|be used) once",
+    r"randomly grants",
+    r"(?:triggered|used|cast) up to \d+ times",
+    r"up to \d+ times (?:for each|per battle|per hero)",
+    r"when actively used",
+)
+
+# Frequent: gated but usually applies many times per fight (>~50% relevance).
+FREQUENT_CONDITIONAL_PATTERNS: tuple[str, ...] = (
+    r"whenever .{0,60}(?:defeated|killed|slain)",
+    r"each time .{0,50}(?:defeated|killed|slain)",
+    r"when(?:ever)? .{0,40}casts",
+    r"while casting",
+    r"while channeling",
+    r"when .{0,30}energy exceeds",
+    r"the first time .{0,50}(?:would|takes|receives)",
+    r"if at least \d+",
+    r"when .{0,30}(?:ultimate|casts? (?:her|his|their))",
+)
+
+
+def classify_buff_condition(text: str) -> str | None:
+    t = text.lower()
+    for pat in RARE_CONDITIONAL_PATTERNS:
+        if re.search(pat, t):
+            return "rare"
+    for pat in FREQUENT_CONDITIONAL_PATTERNS:
+        if re.search(pat, t):
+            return "frequent"
+    return None
+
+
+def _merge_conditional(current: str | None, new: str | None) -> str | None:
+    rank = {"rare": 0, "frequent": 1}
+    if current is None:
+        return new
+    if new is None:
+        return current
+    return current if rank[current] <= rank[new] else new
+
+
+def _buff_condition(category: str, text: str) -> str | None:
+    return classify_buff_condition(text) if category == "buff" else None
+
+
 def add_effect(effects: list[Effect], category: str, label: str, tier: str, text: str):
     key = (category, label)
     existing = [e for e in effects if (e.category, e.label) == key]
     n = extract_cc_duration(text, label) if category == "cc" else extract_number(text, label)
+    cond = _buff_condition(category, text)
     if existing:
         cur = existing[0]
         order = TIER_ORDER.get(tier, 99)
@@ -582,6 +654,7 @@ def add_effect(effects: list[Effect], category: str, label: str, tier: str, text
         # Earliest unlock tier for display
         if order < cur_order:
             cur.tier = tier
+        cur.conditional = _merge_conditional(cur.conditional, cond)
         # Strongest value for cross-hero magnitude comparison
         if n is not None and (cur.numeric is None or n > cur.numeric):
             cur.numeric = n
@@ -590,6 +663,8 @@ def add_effect(effects: list[Effect], category: str, label: str, tier: str, text
                 cur.targeting = _prefer_targeting(
                     detect_targeting(text, label, category), cur.targeting
                 )
+        elif cond and not cur.qualitative:
+            cur.qualitative = text
         return
     effects.append(
         Effect(
@@ -599,6 +674,7 @@ def add_effect(effects: list[Effect], category: str, label: str, tier: str, text
             targeting=detect_targeting(text, label, category),
             numeric=n,
             qualitative=text,
+            conditional=cond,
         )
     )
 
@@ -730,6 +806,263 @@ CC_RULES = [
     (r"interrupt", "Interrupt"),
 ]
 
+SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
+    # Core mechanics
+    (r"instantly defeat", "Instant defeat"),
+    (r"\breviv(?:e|es|ing)\b", "Revive ally"),
+    (r"(?:transform|morph)s? into", "Transform"),
+    (r"mark of |places .{0,40} mark on", "Mark"),
+    (r"brightfeather", "Brightfeather empower"),
+    (r"converts? any continuous damage", "DoT conversion"),
+    (
+        r"dispels? all debuffs|"
+        r"removes? all dispellable debuffs|"
+        r"dispels? .{0,25}debuffs on",
+        "Dispel debuffs",
+    ),
+    (r"prevents their defeat", "Fatal blow save"),
+    (r"\binvincible\b", "Invincibility"),
+    (r"immune to damage and control", "Damage and control immunity"),
+    (
+        r"drains? \d+% of .{0,30}current hp",
+        "Ally HP drain (self-buff)",
+    ),
+    (r"spirit form", "Spirit form ally"),
+    (r"inflicts? .{0,40}(?:venom|curse|aging)", "Debuff application"),
+    (
+        r"magic damage taken is increased|"
+        r"increased? .{0,30}magic damage taken",
+        "Magic damage amplification",
+    ),
+    (r"declar(?:e|ing) an order", "Battlefield order"),
+    (r"hypnotiz", "Mass sleep"),
+    # Damage absorption / release
+    (
+        r"absorb(?:s|ing)? \d+% .{0,40}(?:physical|magic) damage taken by allies|"
+        r"shield.{0,60}absorb(?:s|ing)? \d+% .{0,40}damage taken by allies",
+        "Damage absorption (allies)",
+    ),
+    (
+        r"converts? \d+% .{0,30}damage absorbed|"
+        r"stored golem's might|unleashes? the stored",
+        "Stored damage release",
+    ),
+    # Stat steal / absorb
+    (
+        r"steals? .{0,45}(?:atk|phys(?:ical)?|magic) def",
+        "Stat steal",
+    ),
+    (
+        r"absorb(?:s|ing)? \d+% of (?:phys|magic) def",
+        "Stat absorb",
+    ),
+    (r"permanently absorbs? .{0,35}base stats", "Permanent stat absorb"),
+    # Energy
+    (
+        r"absorb(?:s|ing)? \d+ energy|"
+        r"absorb(?:s|ing)? targets'? \d+ energy",
+        "Energy steal",
+    ),
+    # Ally link / blessing
+    (r"stellar bond|linked through stellar bond", "Ally link (Stellar Bond)"),
+    (r"share the same hp and energy", "Shared HP and Energy"),
+    (
+        r"blessing of tidal|blesses the nearest ally|tidal blessing|"
+        r"grants? .{0,35}blessing",
+        "Ally blessing",
+    ),
+    # Battlefield control
+    (
+        r"trapping .{0,50}domain|"
+        r"cutting them off from the rest of the battlefield",
+        "Isolate enemies (domain)",
+    ),
+    (r"unable to cast ultimate", "Ultimate lock (Spellbind)"),
+    (r"unable to restore hp for others", "Heal lock (Curelock)"),
+    (r"\buntargetable\b", "Untargetable"),
+    # Execute / threshold
+    (
+        r"reduces? .{0,30}hp below \d+%(?!.*instantly defeat)",
+        "HP threshold strike",
+    ),
+    (r"execution increases", "Execution scaling"),
+    # Position
+    (r"knock(?:ing|s)? (?:them )?back \d+ tiles", "Reposition enemies"),
+    (r"swap(?:s|ping)? (?:places|position)", "Position swap"),
+)
+
+SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
+    (
+        r"whenever an allied hero deals magic damage|"
+        r"allied hero deals magic damage",
+        "Magic damage from allies",
+    ),
+    (
+        r"converts? any continuous damage|"
+        r"continuous damage they take",
+        "Continuous damage on enemies",
+    ),
+    (
+        r"requires?.{0,40}damage over time|"
+        r"damage over time.{0,40}required",
+        "Damage over time",
+    ),
+    (r"if there are any monsters", "Enemy monsters present"),
+    (r"ingredient", "Monster ingredients"),
+    (
+        r"(?:that ally|allied hero|ally with .{0,40}) deals ranged damage|"
+        r"after (?:the |that )?ally deals ranged damage",
+        "Ranged damage from allies",
+    ),
+    (
+        r"at least \d+ different stat reduction debuffs",
+        "Multiple debuffs on target",
+    ),
+    (
+        r"whenever an allied hero casts their ultimate.{0,80}"
+        r"(?:increases|gains|grants|permanently)",
+        "Ally Ultimate casts",
+    ),
+    (
+        r"every time a non-summoned enemy is defeated|"
+        r"for every non-summoned enemy defeated",
+        "Enemy defeat",
+    ),
+    (
+        r"if an ally is within \d+ tile|"
+        r"for each additional ally in this range",
+        "Adjacent allies",
+    ),
+    (r"afflicted by aging", "Aging on target"),
+    # Target state
+    (
+        r"afflicted by|affected by .{0,35}(?:venom|curse|burn|mark)",
+        "Debuff on target",
+    ),
+    (r"control immunity status", "Target not CC-immune"),
+    (r"in boss fights|against boss enemies", "Boss encounter"),
+    # Party / link
+    (
+        r"if at least \d+ (?:mage|tank|support)",
+        "Party composition",
+    ),
+    (r"linked through stellar bond", "Ally on bond line"),
+    (r"blessed ally|first ally blessed", "Blessed ally active"),
+    # Resources / thresholds
+    (r"for each ingredient|each time .{0,35}collect", "Stacked resource"),
+    (r"when .{0,30}energy exceeds", "Energy threshold"),
+    (
+        r"stored .{0,25}might exceeds|golem's might exceeds|"
+        r"only be used when the amount of stored",
+        "Stored resource threshold",
+    ),
+    # Form / stance
+    (
+        r"while in .{0,35}(?:wolf form|black mist|aquarius|celestial form|"
+        r"altered form|true form|combat stance)",
+        "Specific form active",
+    ),
+    (r"in combat stance", "Combat Stance active"),
+    # Proc limits
+    (r"can only (?:cast|trigger|be used) once", "Once per battle"),
+    (r"can trigger once every", "Cooldown-gated proc"),
+)
+
+_COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
+    r"\bsilhouette",
+    r"falcon elona|\belona\b",
+    r"living armor",
+    r"mr\. carlyle",
+    r"bell of order",
+    r"bulbsprite",
+    r"smashy|swifty|spiny",
+    r"winter warrior",
+)
+
+
+def text_has_summoning(t: str) -> bool:
+    for m in re.finditer(r"\bsummon(?:s|ing)?\b", t):
+        start = m.start()
+        if start >= 4 and t[start - 4 : start] == "non-":
+            continue
+        return True
+    return False
+
+
+_START_OF_BATTLE_ULTIMATE_CAST = (
+    r"casts? (?:her |his |their |this )?ultimate\b.{0,80}when a battle starts",
+    r"casts? ultimate\b.{0,80}when a battle starts",
+    r"when a battle starts.{0,80}casts? (?:her |his |their |this )?ultimate\b",
+    r"when a battle starts.{0,80}casts? ultimate\b",
+)
+
+
+def text_has_start_of_battle_ultimate(t: str, section: str = "") -> bool:
+    """Ultimate effect at battle start: explicit cast or Ultimate passive opener."""
+    tl = t.lower()
+    if any(re.search(p, tl) for p in _START_OF_BATTLE_ULTIMATE_CAST):
+        return True
+    # Ultimate passive at battle start (e.g. Bryon summons Elona on Falcon Raid).
+    if section == "Ultimate" and re.search(
+        r"passive\.\s*when a battle starts", tl
+    ):
+        return True
+    return False
+
+
+
+
+def text_has_companion_unit(t: str) -> bool:
+    return any(re.search(p, t) for p in _COMPANION_UNIT_PATTERNS)
+
+
+def detect_special_targeting(text: str, kind: str, label: str) -> str:
+    t = text.lower()
+    if kind == "requires":
+        if "allied" in t or "ally" in t:
+            return "Allies"
+        if re.search(r"\benem(?:y|ies)\b", t):
+            return "Enemies"
+        return "—"
+    return detect_targeting(text, label, "special")
+
+
+def add_special_effect(
+    effects: list[SpecialEffect], kind: str, label: str, tier: str, text: str
+):
+    key = (kind, label)
+    existing = [e for e in effects if (e.kind, e.label) == key]
+    targeting = detect_special_targeting(text, kind, label)
+    if existing:
+        cur = existing[0]
+        if TIER_ORDER.get(tier, 99) < TIER_ORDER.get(cur.tier, 99):
+            cur.tier = tier
+        cur.targeting = _prefer_targeting(targeting, cur.targeting)
+        return
+    effects.append(
+        SpecialEffect(
+            kind=kind, label=label, tier=tier, targeting=targeting, qualitative=text
+        )
+    )
+
+
+def detect_special_effects(
+    effects: list[SpecialEffect], tier: str, text: str, section: str = ""
+):
+    t = text.lower()
+    if text_has_summoning(t):
+        add_special_effect(effects, "provides", "Summoning", tier, text)
+    if text_has_companion_unit(t):
+        add_special_effect(effects, "provides", "Named companion unit", tier, text)
+    if text_has_start_of_battle_ultimate(t, section):
+        add_special_effect(effects, "provides", "Start-of-battle cast", tier, text)
+    for pat, label in SPECIAL_PROVIDES_RULES:
+        if re.search(pat, t):
+            add_special_effect(effects, "provides", label, tier, text)
+    for pat, label in SPECIAL_REQUIRES_RULES:
+        if re.search(pat, t):
+            add_special_effect(effects, "requires", label, tier, text)
+
 
 def analyze_text(
     effects, damage_map, benefits, tier: str, text: str, primary_dmg: str = "Physical"
@@ -811,13 +1144,15 @@ def analyze_text(
 def analyze_hero(hero: Hero):
     hero.effects.clear()
     hero.cc_immunities.clear()
+    hero.special_effects.clear()
     hero.damage_entries.clear()
     hero.benefit_stats.clear()
     damage_map: dict[str, set[str]] = {}
     # Use the hero's own damage type so (ATK-based) doesn't always emit "Physical"
     primary_dmg = hero.damage_type if hero.damage_type else "Physical"
-    for tier, text in hero.skill_chunks:
+    for tier, text, section in hero.skill_chunks:
         analyze_text(hero.effects, damage_map, hero.benefit_stats, tier, text, primary_dmg)
+        detect_special_effects(hero.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
             add_cc_immunity(hero, imm_type, tier, text)
     for dt, tgts in sorted(damage_map.items()):
@@ -870,6 +1205,31 @@ def qualitative_magnitude(e: Effect) -> str:
     return "medium"
 
 
+_MAG_ORDER = ("low", "medium", "high")
+
+
+def downgrade_magnitude(mag: str, steps: int) -> str:
+    if mag not in _MAG_ORDER:
+        return "low"
+    idx = max(0, _MAG_ORDER.index(mag) - steps)
+    return _MAG_ORDER[idx]
+
+
+def apply_conditional_magnitude(effect: Effect) -> None:
+    if effect.category != "buff" or not effect.conditional:
+        return
+    if effect.label in _ALWAYS_HIGH_BUFFS:
+        return
+    if effect.conditional == "rare":
+        effect.magnitude = downgrade_magnitude(effect.magnitude, 2)
+
+
+def format_effect_magnitude(effect: Effect) -> str:
+    if effect.conditional:
+        return f"`{effect.magnitude}` — conditional ({effect.conditional})"
+    return f"`{effect.magnitude}`"
+
+
 def assign_magnitudes(heroes: list[Hero]):
     by_key: dict[str, list[Effect]] = defaultdict(list)
     for hero in heroes:
@@ -898,6 +1258,9 @@ def assign_magnitudes(heroes: list[Hero]):
         else:
             for e in group:
                 e.magnitude = qualitative_magnitude(e)
+    for hero in heroes:
+        for eff in hero.effects:
+            apply_conditional_magnitude(eff)
 
 
 def format_summary(hero: Hero) -> str:
@@ -909,7 +1272,10 @@ def format_summary(hero: Hero) -> str:
         out.append(f"#### {heading}")
         out.append("")
         for e in sorted(items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)):
-            out.append(f"- {e.label} ({e.tier}) — {e.targeting} — `{e.magnitude}`")
+            out.append(
+                f"- {e.label} ({e.tier}) — {e.targeting} — "
+                f"{format_effect_magnitude(e)}"
+            )
         out.append("")
     cc_items = [e for e in hero.effects if e.category == "cc"]
     if cc_items or hero.cc_immunities:
@@ -924,7 +1290,22 @@ def format_summary(hero: Hero) -> str:
                 f"{imm.targeting} — {imm.timing}"
             )
         for e in sorted(cc_items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)):
-            out.append(f"- {e.label} ({e.tier}) — {e.targeting} — `{e.magnitude}`")
+            out.append(
+                f"- {e.label} ({e.tier}) — {e.targeting} — "
+                f"{format_effect_magnitude(e)}"
+            )
+        out.append("")
+    if hero.special_effects:
+        out.append("#### Special effects")
+        out.append("")
+        for se in sorted(
+            hero.special_effects,
+            key=lambda x: (0 if x.kind == "provides" else 1, TIER_ORDER.get(x.tier, 9), x.label),
+        ):
+            kind_label = "Provides" if se.kind == "provides" else "Requires"
+            out.append(
+                f"- {kind_label}: {se.label} ({se.tier}) — {se.targeting}"
+            )
         out.append("")
     if hero.damage_entries:
         out.append("#### Damage")

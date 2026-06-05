@@ -81,10 +81,10 @@ For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant 
 - Attack range buff (base) — Single target — `high`
 - Brightfeather ally buff (base) — Single target — `high`
 - DEF Penetration buff (base) — Single target — `medium`
-- Invincible (base) — Self — `high`
+- Invincible (base) — Self — `high` — conditional (rare)
 - ATK buff (Legendary+) — Multiple targets — `medium`
-- Fatal blow immunity (Mythic+) — Area — `high`
-- Healing (Mythic+) — Single target — `low`
+- Fatal blow immunity (Mythic+) — Area — `high` — conditional (rare)
+- Healing (Mythic+) — Single target — `low` — conditional (rare)
 
 #### Debuffs
 
@@ -95,6 +95,20 @@ For every 4 feathers unleashed by an ally with Brightfeather, Aliceth's Radiant 
 
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `medium`
+
+#### Special effects
+
+- Provides: Brightfeather empower (base) — Single target
+- Provides: HP threshold strike (base) — Multiple targets
+- Provides: Instant defeat (base) — Multiple targets
+- Provides: Invincibility (base) — Single target
+- Provides: Mark (base) — Multiple targets
+- Provides: Reposition enemies (base) — Single target
+- Provides: Untargetable (base) — Multiple targets
+- Provides: Fatal blow save (Mythic+) — Area
+- Requires: Cooldown-gated proc (base) — Allies
+- Requires: Ranged damage from allies (base) — Allies
+- Requires: Debuff on target (Legendary+) — Enemies
 
 #### Damage
 
@@ -201,6 +215,13 @@ Alna and her Winter Warrior gain a 15% increase to their basic stats until one o
 
 - Freeze (Supreme+) — Area — `medium`
 
+#### Special effects
+
+- Provides: Named companion unit (base) — Self
+- Provides: Start-of-battle cast (base) — All units
+- Provides: Summoning (base) — All units
+- Provides: Damage and control immunity (Mythic+) — Self
+
 #### Damage
 
 - Physical — All units, Arc, Self, Single target
@@ -306,6 +327,11 @@ Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affec
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `medium`
 
+#### Special effects
+
+- Requires: Combat Stance active (base) — Enemies
+- Requires: Cooldown-gated proc (base) — Enemies
+
 #### Damage
 
 - Magic — All units, Area, Self, Single target
@@ -396,7 +422,7 @@ Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 s
 
 #### Buffs
 
-- Damage taken reduction (base) — Area — `high`
+- Damage taken reduction (base) — Area — `low` — conditional (rare)
 - Healing (base) — Area — `medium`
 - Shield (base) — Self — `low`
 - Max HP buff (Legendary+) — Self — `medium`
@@ -407,6 +433,10 @@ Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 s
 - Knock down (base) — Area — `high`
 - Stun (base) — Area — `high`
 - Taunt (base) — Area — `low`
+
+#### Special effects
+
+- Requires: Once per battle (Mythic+) — Allies
 
 #### Damage
 
@@ -503,6 +533,10 @@ Arden reduces the lightning strike interval of Force of Nature for the same enem
 
 - Pin (base) — Multiple targets — `high`
 
+#### Special effects
+
+- Provides: Summoning (base) — Multiple targets
+
 #### Damage
 
 - Magic — Area, Multiple targets, Single target
@@ -592,7 +626,7 @@ Atalanta recovers 10% of max HP every time an enemy is directly hit by Wild Snip
 
 #### Buffs
 
-- Haste buff (Legendary+) — Self — `high`
+- Haste buff (Legendary+) — Self — `high` — conditional (frequent)
 - Healing (Supreme+) — Single target — `low`
 
 #### Debuffs
@@ -604,6 +638,11 @@ Atalanta recovers 10% of max HP every time an enemy is directly hit by Wild Snip
 - Move (base) — Single target — `high`
 - Pin (base) — Single target — `medium`
 - Stun (base) — Single target — `medium`
+
+#### Special effects
+
+- Provides: Reposition enemies (base) — Single target
+- Provides: Stat steal (EX+10) — Single target
 
 #### Damage
 
@@ -696,11 +735,11 @@ Vengeance Charge and Sacred Slash can reduce the target's shield value, up to 80
 
 #### Buffs
 
-- Damage taken reduction (base) — Area — `medium`
-- Healing (base) — Area — `low`
-- Invincible (base) — Self — `high`
+- Damage taken reduction (base) — Area — `medium` — conditional (frequent)
+- Healing (base) — Area — `low` — conditional (frequent)
+- Invincible (base) — Self — `high` — conditional (frequent)
 - Crit buff (Legendary+) — Self — `low`
-- Execution buff (EX+15) — Self — `low`
+- Execution buff (EX+15) — Self — `low` — conditional (frequent)
 - Shield (Supreme+) — Single target — `high`
 
 #### Debuffs
@@ -711,6 +750,11 @@ Vengeance Charge and Sacred Slash can reduce the target's shield value, up to 80
 
 - Unaffected immunity (base) — Area — On skill
 - Knock down (base) — All units — `low`
+
+#### Special effects
+
+- Provides: Invincibility (base) — Area
+- Provides: Transform (base) — Area
 
 #### Damage
 
@@ -812,6 +856,12 @@ If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, e
 - Unaffected immunity (base) — Self — On skill
 - Sleep (base) — Multiple targets — `high`
 
+#### Special effects
+
+- Provides: Invincibility (base) — Multiple targets
+- Provides: Start-of-battle cast (base) — Multiple targets
+- Provides: Summoning (base) — Self
+
 #### Damage
 
 - Magic — Area, Multiple targets, Single target
@@ -911,6 +961,13 @@ The extra damage caused by the Divine Light can also reduce the max HP of non-bo
 
 - Unaffected immunity (base) — Self — Start of battle
 - Knock down (base) — Area — `medium`
+
+#### Special effects
+
+- Provides: Start-of-battle cast (base) — Arc
+- Provides: Dispel debuffs (EX+15) — Area
+- Requires: Specific form active (base) — Enemies
+- Requires: Boss encounter (Supreme+) — Enemies
 
 #### Damage
 
@@ -1017,6 +1074,13 @@ Increases the hiding duration after being defeated by 10 s.
 
 - Frighten (base) — Area — `medium`
 
+#### Special effects
+
+- Provides: Invincibility (base) — Single target
+- Provides: Revive ally (base) — Single target
+- Provides: Named companion unit (Mythic+) — Single target
+- Provides: Summoning (EX+5) — Single target
+
 #### Damage
 
 - DoT — Area
@@ -1116,6 +1180,16 @@ When the Aging effect reaches its maximum stack on an enemy, their magic damage 
 #### Crowd Control
 
 - Stun (base) — Single target — `medium`
+
+#### Special effects
+
+- Provides: Invincibility (base) — Area
+- Provides: Transform (base) — Area
+- Provides: Magic damage amplification (Supreme+) — Single target
+- Requires: Aging on target (base) — Enemies
+- Requires: Debuff on target (base) — Enemies
+- Requires: Magic damage from allies (base) — Allies
+- Requires: Specific form active (base) — Enemies
 
 #### Damage
 
@@ -1316,6 +1390,14 @@ Bryon generates two leaves beside Elona if the falcon is on the battlefield when
 - Interrupt (base) — Single target — `low`
 - Stun (Mythic+) — Single target — `medium`
 
+#### Special effects
+
+- Provides: Energy steal (base) — Single target
+- Provides: Named companion unit (base) — Self
+- Provides: Start-of-battle cast (base) — Single target
+- Provides: Summoning (base) — Single target
+- Provides: Untargetable (EX+5) — Single target
+
 #### Damage
 
 - DoT — Area
@@ -1409,7 +1491,7 @@ When gaining a shield, Callan recovers HP equal to 15% of the shield's max value
 
 #### Buffs
 
-- Shield (base) — Self — `medium`
+- Shield (base) — Self — `low` — conditional (rare)
 - Healing (Supreme+) — Single target — `low`
 
 #### Crowd Control
@@ -1418,6 +1500,12 @@ When gaining a shield, Callan recovers HP equal to 15% of the shield's max value
 - Knock down (base) — All units — `high`
 - Pin (base) — Multiple targets — `high`
 - Stun (Mythic+) — All units — `low`
+
+#### Special effects
+
+- Provides: Damage absorption (allies) (base) — Multiple targets
+- Provides: Stored damage release (base) — Self
+- Requires: Stored resource threshold (base) — Enemies
 
 #### Damage
 
@@ -1619,6 +1707,11 @@ Cassadee reduces the Magic DEF of enemies hit by Running Tide by 20% for 10 s.
 - Move (base) — All units — `low`
 - Stun (base) — Single target — `low`
 
+#### Special effects
+
+- Provides: Ally blessing (base) — Single target
+- Requires: Blessed ally active (base) — Allies
+
 #### Damage
 
 - Magic — All units, Single target
@@ -1720,6 +1813,14 @@ Reduces the required normal attacks to trigger Agonizing Puncture by -1 .
 #### Crowd Control
 
 - Pin (base) — Single target — `high`
+
+#### Special effects
+
+- Provides: Named companion unit (base) — Self
+- Provides: Summoning (base) — Arc
+- Provides: Stat absorb (Mythic+) — Single target
+- Provides: Permanent stat absorb (EX+5) — Single target
+- Requires: Target not CC-immune (Mythic+) — Enemies
 
 #### Damage
 
@@ -1889,6 +1990,10 @@ In regular battles, Contess stuns enemies who violate Code of Conduct - Be Civil
 - Silence (Mythic+) — Single target — `medium`
 - Stun (Supreme+) — Single target — `medium`
 
+#### Special effects
+
+- Provides: Start-of-battle cast (base) — All units
+
 #### Damage
 
 - Magic — All units, Multiple targets
@@ -1981,7 +2086,7 @@ While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies
 
 #### Buffs
 
-- Shield (base) — Self — `high`
+- Shield (base) — Self — `high` — conditional (frequent)
 - ATK buff (Legendary+) — Self — `low`
 
 #### Debuffs
@@ -1992,6 +2097,12 @@ While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies
 
 - Immune immunity (base) — Self — Conditional
 - Freeze (EX+15) — Self — `low`
+
+#### Special effects
+
+- Provides: Isolate enemies (domain) (base) — All units
+- Provides: Summoning (base) — Area
+- Requires: Boss encounter (base) — Enemies
 
 #### Damage
 
@@ -2095,6 +2206,10 @@ Gains extra 200 Initial Energy.
 - Unaffected immunity (base) — Self — Start of battle
 - Pin (base) — Area — `low`
 - Silence (EX+10) — Single target — `low`
+
+#### Special effects
+
+- Provides: Summoning (base) — All units
 
 #### Damage
 
@@ -2282,7 +2397,7 @@ When casting Explode, my chariot!, the blind duration is increased to 7 s when t
 #### Buffs
 
 - Energy recovery (base) — Area — `medium`
-- Healing (base) — Self — `medium`
+- Healing (base) — Self — `medium` — conditional (frequent)
 - ATK buff (Legendary+) — Self — `medium`
 - Haste buff (Mythic+) — Multiple targets — `high`
 
@@ -2382,11 +2497,17 @@ Dionel increases Execution by 20 within the duration of Nectar Feast if it's bee
 
 - ATK SPD buff (Legendary+) — Self — `low`
 - Execution buff (Supreme+) — Self — `low`
-- Shield (Supreme+) — Self — `low`
+- Shield (Supreme+) — Self — `low` — conditional (frequent)
 
 #### Debuffs
 
 - Vitality debuff (EX+10) — Single target — `low`
+
+#### Special effects
+
+- Provides: Untargetable (base) — Area
+- Provides: Summoning (Mythic+) — All units
+- Provides: Execution scaling (Supreme+) — Self
 
 #### Damage
 
@@ -2479,8 +2600,8 @@ Upon casting Echo of Silence, Dunlingr grants all allies 50 ATK SPD for 6 s if t
 
 #### Buffs
 
-- Healing (base) — Single target — `high`
-- Shield (base) — Self — `medium`
+- Healing (base) — Single target — `high` — conditional (frequent)
+- Shield (base) — Self — `medium` — conditional (frequent)
 - Damage taken reduction (Legendary+) — Self — `low`
 - ATK buff (EX+5) — Single target — `low`
 - Haste buff (EX+15) — Single target — `low`
@@ -2494,6 +2615,14 @@ Upon casting Echo of Silence, Dunlingr grants all allies 50 ATK SPD for 6 s if t
 #### Crowd Control
 
 - Silence (Supreme+) — All units — `high`
+
+#### Special effects
+
+- Provides: Battlefield order (base) — All units
+- Provides: Heal lock (Curelock) (base) — All units
+- Provides: Named companion unit (base) — Self
+- Provides: Summoning (base) — All units
+- Provides: Ultimate lock (Spellbind) (base) — All units
 
 #### Damage
 
@@ -2693,6 +2822,12 @@ Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked 
 - Unaffected immunity (base) — Area — On skill
 - Move (base) — Area — `high`
 
+#### Special effects
+
+- Provides: Ally link (Stellar Bond) (base) — Single target
+- Provides: Shared HP and Energy (base) — All units
+- Requires: Ally on bond line (base) — —
+
 #### Damage
 
 - Magic — Area, Single target
@@ -2793,6 +2928,13 @@ After gathering intel on all surviving enemy heroes while concealed, Evie summon
 - Pin (base) — All units — `high`
 - Silence (base) — All units — `high`
 
+#### Special effects
+
+- Provides: Invincibility (base) — All units
+- Provides: Start-of-battle cast (base) — All units
+- Provides: Summoning (base) — Single target
+- Requires: Cooldown-gated proc (base) — Allies
+
 #### Damage
 
 - Magic — All units, Multiple targets, Single target
@@ -2890,6 +3032,12 @@ If an enemy revives within Faramor's magic circle after their HP drops to 0, Far
 
 - Stun (base) — Area — `low`
 
+#### Special effects
+
+- Provides: Summoning (base) — Single target
+- Provides: Revive ally (Supreme+) — Single target
+- Requires: Once per battle (EX+10) — Enemies
+
 #### Damage
 
 - Physical — Area, Single target
@@ -2980,7 +3128,7 @@ When an ally's HP ratio drops below 50% for the first time during Healing Gemsto
 
 - ATK buff (base) — Arc — `high`
 - DEF buff (base) — Multiple targets — `low`
-- Healing (base) — Arc — `high`
+- Healing (base) — Arc — `high` — conditional (frequent)
 
 #### Debuffs
 
@@ -3079,15 +3227,21 @@ Allied Bulbsprite in their giant form are immune to control effects.
 
 #### Buffs
 
-- Healing (base) — Area — `medium`
-- Lifedrain buff (base) — Single target — `medium`
+- Healing (base) — Area — `medium` — conditional (frequent)
+- Lifedrain buff (base) — Single target — `medium` — conditional (frequent)
 - ATK buff (Legendary+) — Self — `medium`
 - Shield (Mythic+) — Single target — `medium`
-- Haste buff (EX+10) — Multiple targets — `high`
+- Haste buff (EX+10) — Multiple targets — `high` — conditional (frequent)
 
 #### Crowd Control
 
 - Immune immunity (Supreme+) — Self — Form
+
+#### Special effects
+
+- Provides: Named companion unit (base) — Self
+- Provides: Summoning (base) — Self
+- Provides: Ally blessing (Mythic+) — Single target
 
 #### Damage
 
@@ -3280,7 +3434,7 @@ While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second a
 
 #### Buffs
 
-- Haste buff (base) — Self — `high`
+- Haste buff (base) — Self — `high` — conditional (frequent)
 - Shield (base) — Single target — `high`
 - ATK buff (Legendary+) — Self — `medium`
 - Energy recovery (Supreme+) — Single target — `medium`
@@ -3289,6 +3443,11 @@ While Galahad is affected by Merlin's buffs, she recovers 40 Energy per second a
 
 - Steadfast immunity (Supreme+) — Self — On skill
 - Pin (base) — Single target — `medium`
+
+#### Special effects
+
+- Provides: Summoning (Mythic+) — Single target
+- Requires: Boss encounter (base) — Enemies
 
 #### Damage
 
@@ -3493,6 +3652,10 @@ Granny Dahnie recovers 120% (ATK-based) HP when shooting seeds using Seed Cannon
 - Pin (base) — Area — `medium`
 - Taunt (base) — Single target — `high`
 
+#### Special effects
+
+- Provides: Summoning (base) — Area
+
 #### Damage
 
 - Physical — Single target
@@ -3592,6 +3755,11 @@ If an area set on fire is struck again by Doomsday Meteor, the area becomes perm
 #### Crowd Control
 
 - Stun (base) — All units — `low`
+
+#### Special effects
+
+- Provides: Summoning (base) — Area
+- Provides: Invincibility (EX+15) — Single target
 
 #### Damage
 
@@ -3846,7 +4014,7 @@ Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vici
 
 - Crit buff (base) — Single target — `medium`
 - Haste buff (base) — Single target — `high`
-- Healing over time (base) — Single target — `medium`
+- Healing over time (base) — Single target — `medium` — conditional (frequent)
 - Invincible (base) — Self — `high`
 - Lifedrain buff (Legendary+) — Self — `low`
 - Healing (EX+15) — Single target — `low`
@@ -3859,6 +4027,12 @@ Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vici
 #### Crowd Control
 
 - Unaffected immunity (base) — Self — Start of battle
+
+#### Special effects
+
+- Provides: Instant defeat (base) — Single target
+- Provides: Invincibility (base) — Single target
+- Requires: Boss encounter (base) — Allies
 
 #### Damage
 
@@ -3955,7 +4129,7 @@ Whenever Hepler spends Spark stacks, he and the protected ally permanently incre
 - Healing (base) — Multiple targets — `medium`
 - Shield (base) — Multiple targets — `low`
 - Damage taken reduction (Legendary+) — Self — `low`
-- Invincible (Mythic+) — Area — `high`
+- Invincible (Mythic+) — Area — `high` — conditional (frequent)
 
 #### Debuffs
 
@@ -3965,6 +4139,11 @@ Whenever Hepler spends Spark stacks, he and the protected ally permanently incre
 
 - Stun (base) — Area — `medium`
 - Taunt (base) — Area — `high`
+
+#### Special effects
+
+- Provides: Invincibility (Mythic+) — Area
+- Requires: Specific form active (base) — Enemies
 
 #### Damage
 
@@ -4060,6 +4239,10 @@ Hewynn also grants the healed ally 30 Haste for 6 s when Revitalize is in effect
 
 - Unaffected immunity (Mythic+) — Self — On skill
 
+#### Special effects
+
+- Requires: Cooldown-gated proc (base) — Allies
+
 #### Damage
 
 - Magic — All units
@@ -4149,7 +4332,7 @@ Himmel has the same fighting spirit that once drove him to challenge the Demon K
 
 #### Buffs
 
-- Shield (base) — Area — `low`
+- Shield (base) — Area — `low` — conditional (frequent)
 - Haste buff (Legendary+) — Self — `medium`
 - ATK buff (Mythic+) — Self — `high`
 - Max HP buff (Mythic+) — Multiple targets — `medium`
@@ -4157,6 +4340,11 @@ Himmel has the same fighting spirit that once drove him to challenge the Demon K
 #### Crowd Control
 
 - Unaffected immunity (base) — Multiple targets — On skill
+
+#### Special effects
+
+- Requires: Party composition (base) — Allies
+- Requires: Boss encounter (Supreme+) — —
 
 #### Damage
 
@@ -4251,7 +4439,7 @@ Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15% , up to 2 stack
 
 #### Buffs
 
-- Healing over time (base) — Single target — `high`
+- Healing over time (base) — Single target — `high` — conditional (frequent)
 - ATK buff (Legendary+) — Self — `medium`
 
 #### Debuffs
@@ -4259,6 +4447,10 @@ Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15% , up to 2 stack
 - Energy drain (Mythic+) — Area — `medium`
 - Vitality debuff (EX+5) — Single target — `low`
 - Phys DEF debuff (Supreme+) — Single target — `low`
+
+#### Special effects
+
+- Provides: Summoning (Mythic+) — Area
 
 #### Damage
 
@@ -4442,6 +4634,11 @@ Igor summons an extra tombstone with Funereal Ring on the tile with the most sur
 - Healing (base) — Single target — `low`
 - Lifedrain buff (Legendary+) — Self — `low`
 
+#### Special effects
+
+- Provides: Summoning (base) — Single target
+- Provides: Untargetable (base) — Area
+
 #### Damage
 
 - Physical — All units, Area, Single target
@@ -4545,6 +4742,12 @@ After hitting a target with Arcane Binding, Indris' normal attacks can trigger t
 - Pin (base) — Area — `high`
 - Silence (base) — Single target — `high`
 
+#### Special effects
+
+- Requires: Cooldown-gated proc (base) — Enemies
+- Requires: Debuff on target (base) — Enemies
+- Requires: Multiple debuffs on target (base) — Enemies
+
 #### Damage
 
 - Physical — Area, Self, Single target
@@ -4633,9 +4836,9 @@ Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF
 
 #### Buffs
 
-- Haste buff (base) — Multiple targets — `low`
+- Haste buff (base) — Multiple targets — `low` — conditional (frequent)
 - Healing (base) — Area — `high`
-- Energy recovery (EX+10) — Single target — `low`
+- Energy recovery (EX+10) — Single target — `low` — conditional (frequent)
 - ATK SPD buff (Supreme+) — Self — `low`
 
 #### Debuffs
@@ -4645,6 +4848,10 @@ Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF
 #### Crowd Control
 
 - Unaffected immunity (base) — Single target — Once
+
+#### Special effects
+
+- Requires: Once per battle (base) — Allies
 
 #### Damage
 
@@ -4740,7 +4947,7 @@ The damage of Relentless Chase's first casting in battle is increased to 520% . 
 
 - Healing over time (base) — Area — `low`
 - ATK buff (Legendary+) — Self — `medium`
-- Shield (EX+5) — Self — `medium`
+- Shield (EX+5) — Self — `medium` — conditional (frequent)
 
 #### Debuffs
 
@@ -4957,6 +5164,10 @@ Whenever Kordan assists or defeats an enemy inside the hunting circle, he leaps 
 - Knock down (base) — Single target — `high`
 - Move (base) — Area — `high`
 - Pin (base) — Area — `high`
+
+#### Special effects
+
+- Provides: Summoning (base) — Area
 
 #### Damage
 
@@ -5242,7 +5453,7 @@ Kulu gains extra ATK SPD and Ranged DEF during battle. If there are no enemies o
 
 #### Buffs
 
-- Invincible (base) — Self — `high`
+- Invincible (base) — Self — `high` — conditional (frequent)
 - ATK buff (Legendary+) — Self — `low`
 
 #### Debuffs
@@ -5254,6 +5465,11 @@ Kulu gains extra ATK SPD and Ranged DEF during battle. If there are no enemies o
 
 - Unaffected immunity (base) — Area — On ultimate
 - Move (base) — Single target — `high`
+
+#### Special effects
+
+- Provides: Invincibility (base) — Single target
+- Provides: Summoning (base) — Area
 
 #### Damage
 
@@ -5344,17 +5560,25 @@ Laios permanently increases his max HP by each time he collects a different ingr
 
 #### Buffs
 
-- ATK buff (base) — Area — `high`
-- DEF buff (base) — Area — `medium`
-- Energy recovery (base) — Area — `medium`
-- Haste buff (base) — Area — `high`
-- Healing (base) — Area — `low`
-- Healing over time (base) — Area — `medium`
-- Max HP buff (Supreme+) — Self — `low`
+- ATK buff (base) — Area — `low` — conditional (rare)
+- DEF buff (base) — Area — `low` — conditional (rare)
+- Energy recovery (base) — Area — `low` — conditional (rare)
+- Haste buff (base) — Area — `low` — conditional (rare)
+- Healing (base) — Area — `low` — conditional (rare)
+- Healing over time (base) — Area — `low` — conditional (rare)
+- Max HP buff (Supreme+) — Self — `low` — conditional (rare)
 
 #### Crowd Control
 
 - Pin (base) — Area — `medium`
+
+#### Special effects
+
+- Provides: Named companion unit (base) — Single target
+- Provides: Summoning (base) — Single target
+- Requires: Monster ingredients (base) — Enemies
+- Requires: Stacked resource (base) — Enemies
+- Requires: Enemy monsters present (Mythic+) — Enemies
 
 #### Damage
 
@@ -5451,7 +5675,7 @@ Lenya reduces damage taken from enemies other than her target by 35% .
 
 - Crit buff (base) — Self — `high`
 - Haste buff (Legendary+) — Self — `medium`
-- Shield (EX+5) — Self — `medium`
+- Shield (EX+5) — Self — `medium` — conditional (frequent)
 - Damage taken reduction (Supreme+) — Self — `high`
 
 #### Crowd Control
@@ -5557,6 +5781,11 @@ When Lily May first uses Tempest Shot to interrupt an enemy's Ultimate, the enem
 - Unaffected immunity (base) — Self — Start of battle
 - Interrupt (base) — All units — `medium`
 
+#### Special effects
+
+- Provides: Invincibility (base) — Single target
+- Provides: Untargetable (base) — All units
+
 #### Damage
 
 - Magic — All units, Single target
@@ -5657,6 +5886,10 @@ While Zephyr's Embrace is active, the protected target becomes unaffected
 
 - Unaffected immunity (Supreme+) — Self — On skill
 - Stun (EX+10) — Multiple targets — `high`
+
+#### Special effects
+
+- Provides: Summoning (base) — Area
 
 #### Damage
 
@@ -5866,6 +6099,10 @@ Lucius heals 1 more ally with Divine Light Blessing.
 - Move (base) — Single target — `high`
 - Stun (base) — Single target — `low`
 
+#### Special effects
+
+- Provides: Reposition enemies (base) — Single target
+
 #### Damage
 
 - Physical — Area, Single target
@@ -6071,6 +6308,10 @@ Whenever an enemy steps into the everbloom field, they will instantly take 120% 
 
 - Unaffected immunity (base) — Self — On skill
 - Stun (Supreme+) — Single target — `medium`
+
+#### Special effects
+
+- Provides: Revive ally (base) — Area
 
 #### Damage
 
@@ -6284,6 +6525,10 @@ Lyca reduces the target's Phys DEF by 25% for 6 s if they are hit by Comet Arche
 
 - Stun (EX+10) — Single target — `low`
 
+#### Special effects
+
+- Provides: Summoning (base) — Single target
+
 #### Damage
 
 - Physical — All units, Area, Self, Single target
@@ -6376,12 +6621,18 @@ During battle, Marcille recovers 10 additional Energy per second for each ally w
 #### Buffs
 
 - Haste buff (base) — Self — `low`
-- Healing (base) — Single target — `high`
+- Healing (base) — Single target — `low` — conditional (rare)
 
 #### Crowd Control
 
 - Unaffected immunity (Supreme+) — Self — On skill
 - Interrupt (Mythic+) — Single target — `high`
+
+#### Special effects
+
+- Provides: Summoning (base) — Area
+- Provides: Revive ally (Mythic+) — Single target
+- Requires: Once per battle (Mythic+) — Allies
 
 #### Damage
 
@@ -6471,7 +6722,7 @@ Marilee reduces the required no-enemy range for triggering Hyperfocus by -1 tile
 
 #### Buffs
 
-- ATK buff (base) — Area — `high`
+- ATK buff (base) — Area — `high` — conditional (frequent)
 - Crit buff (Legendary+) — Single target — `low`
 
 #### Crowd Control
@@ -6582,6 +6833,12 @@ Increases the damage taken by enemies charmed with Mehira's Euphoric Rush or bew
 #### Crowd Control
 
 - Charm (base) — Area — `medium`
+
+#### Special effects
+
+- Provides: Summoning (base) — Self
+- Provides: HP threshold strike (Mythic+) — Self
+- Provides: Untargetable (Mythic+) — Self
 
 #### Damage
 
@@ -6772,6 +7029,10 @@ Mirael increases the burning duration of Bone Sear by 4 s.
 
 - ATK SPD buff (Legendary+) — Self — `medium`
 
+#### Special effects
+
+- Provides: Summoning (base) — Single target
+
 #### Damage
 
 - DoT — Single target
@@ -6960,7 +7221,7 @@ When Natsu causes an enemy to lose HP through any means other than his normal at
 
 #### Buffs
 
-- Crit buff (base) — Self — `medium`
+- Crit buff (base) — Self — `low` — conditional (rare)
 - ATK buff (Legendary+) — Self — `low`
 - Haste buff (Legendary+) — Self — `low`
 
@@ -7267,8 +7528,15 @@ Niru's Soul Reaping prevents the enemy from recovering HP for 8 s.
 
 #### Buffs
 
-- Healing (base) — Single target — `high`
+- Healing (base) — Single target — `low` — conditional (rare)
 - DEF buff (EX+5) — Self — `low`
+
+#### Special effects
+
+- Provides: Spirit form ally (base) — Single target
+- Provides: Start-of-battle cast (Mythic+) — Self
+- Requires: Blessed ally active (base) — Allies
+- Requires: Enemy defeat (base) — Allies
 
 #### Damage
 
@@ -7466,6 +7734,10 @@ The ally pulled into Pandora's box is permanently protected by hope, making them
 
 - Move (base) — Single target — `medium`
 
+#### Special effects
+
+- Provides: Invincibility (base) — Single target
+
 #### Damage
 
 - Magic — Single target
@@ -7556,7 +7828,7 @@ Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance. 
 
 #### Buffs
 
-- Haste buff (base) — Self — `high`
+- Haste buff (base) — Self — `high` — conditional (frequent)
 - Shield (base) — Single target — `high`
 - ATK buff (Legendary+) — Self — `medium`
 
@@ -7564,6 +7836,10 @@ Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance. 
 
 - Unaffected immunity (base) — Self — On skill
 - Stun (base) — Area — `low`
+
+#### Special effects
+
+- Provides: Transform (base) — Single target
 
 #### Damage
 
@@ -7851,6 +8127,10 @@ When both Phraesto and his Illusion are positioned in the same row, they each re
 - Stun (Mythic+) — Single target — `medium`
 - Taunt (Mythic+) — Single target — `medium`
 
+#### Special effects
+
+- Provides: Summoning (base) — Self
+
 #### Damage
 
 - Magic — Area, Single target
@@ -7953,6 +8233,10 @@ When Pippa's Wild Shift triggers a mutation, the enemy on the target tile become
 - Knock down (base) — Single target — `low`
 - Move (base) — Single target — `low`
 - Pin (base) — Single target — `medium`
+
+#### Special effects
+
+- Provides: Summoning (base) — Area
 
 #### Damage
 
@@ -8059,6 +8343,11 @@ When an ally accepts the Objective from Ravion, they increase their ATK by 15% a
 - Unaffected immunity (base) — Self — Start of battle
 - Knock down (base) — Multiple targets — `high`
 - Move (base) — Multiple targets — `high`
+
+#### Special effects
+
+- Provides: Position swap (EX+10) — Multiple targets
+- Requires: Boss encounter (base) — Allies
 
 #### Damage
 
@@ -8350,15 +8639,20 @@ Rowan places 1 more health potion when a battle starts using Smart Stall.
 
 #### Buffs
 
-- Healing (base) — Single target — `medium`
+- Healing (base) — Single target — `low` — conditional (rare)
 - Haste buff (Legendary+) — Self — `low`
-- DEF buff (Mythic+) — Single target — `high`
-- Max HP buff (Mythic+) — Single target — `high`
+- DEF buff (Mythic+) — Single target — `low` — conditional (rare)
+- Max HP buff (Mythic+) — Single target — `low` — conditional (rare)
 - ATK buff (EX+5) — Single target — `low`
 
 #### Debuffs
 
 - Energy drain (base) — Single target — `medium`
+
+#### Special effects
+
+- Provides: Energy steal (base) — Single target
+- Requires: Once per battle (Mythic+) — Allies
 
 #### Damage
 
@@ -8463,6 +8757,11 @@ When a battle starts, Saida plants Drain Seeds in 2 nearby allied heroes. These 
 - Interrupt (base) — Area — `high`
 - Move (base) — Single target — `medium`
 
+#### Special effects
+
+- Provides: Revive ally (base) — Single target
+- Requires: Boss encounter (base) — Enemies
+
 #### Damage
 
 - Magic — All units, Area, Multiple targets, Self, Single target
@@ -8553,11 +8852,15 @@ Salazer recovers 150% (ATK-based) HP for every imprisoned enemy.
 - Lifedrain buff (base) — Single target — `low`
 - Damage taken reduction (Legendary+) — Self — `medium`
 - Healing (Supreme+) — Single target — `high`
-- Shield (Supreme+) — Single target — `low`
+- Shield (Supreme+) — Single target — `low` — conditional (frequent)
 
 #### Crowd Control
 
 - Pin (base) — Single target — `high`
+
+#### Special effects
+
+- Provides: Summoning (base) — Single target
 
 #### Damage
 
@@ -8659,6 +8962,10 @@ Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a tot
 
 - Charm (base) — Single target — `medium`
 
+#### Special effects
+
+- Provides: Invincibility (base) — Area
+
 #### Damage
 
 - Magic — Arc, Area, Single target
@@ -8749,7 +9056,7 @@ Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie S
 
 - Energy recovery (base) — Area — `low`
 - Invincible (base) — Self — `high`
-- Shield (base) — Single target — `low`
+- Shield (base) — Single target — `low` — conditional (rare)
 - Execution buff (Legendary+) — Self — `low`
 
 #### Crowd Control
@@ -8758,6 +9065,10 @@ Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie S
 - Knock down (base) — Arc — `medium`
 - Move (base) — All units — `low`
 - Stun (base) — Area — `medium`
+
+#### Special effects
+
+- Provides: Invincibility (base) — Area
 
 #### Damage
 
@@ -8864,6 +9175,10 @@ Seth reduces the target's Phys DEF by an extra 15% for 6 s per stack of Bloodlus
 
 - Freeze (base) — Single target — `low`
 
+#### Special effects
+
+- Provides: Invincibility (base) — Single target
+
 #### Damage
 
 - Physical — Self, Single target
@@ -8964,6 +9279,15 @@ When a battle starts, Shadewing targets the ally 1 tile in front of him and drai
 
 - Magic DEF debuff (base) — All units — `low`
 
+#### Special effects
+
+- Provides: Debuff application (base) — Single target
+- Provides: DoT conversion (base) — All units
+- Provides: Invincibility (base) — All units
+- Provides: Ally HP drain (self-buff) (Supreme+) — Self
+- Requires: Continuous damage on enemies (base) — Enemies
+- Requires: Debuff on target (base) — Enemies
+
 #### Damage
 
 - DoT — Single target
@@ -9052,7 +9376,7 @@ Shakir reduces the target's Vitality by 60 within 4 s using the 3rd hit of Savag
 
 #### Buffs
 
-- Damage taken reduction (base) — Multiple targets — `low`
+- Damage taken reduction (base) — Multiple targets — `low` — conditional (frequent)
 - Haste buff (base) — Multiple targets — `low`
 - Lifedrain buff (base) — Single target — `medium`
 
@@ -9063,6 +9387,11 @@ Shakir reduces the target's Vitality by 60 within 4 s using the 3rd hit of Savag
 #### Crowd Control
 
 - Unaffected immunity (base) — Self — Form
+
+#### Special effects
+
+- Provides: Transform (base) — Area
+- Requires: Specific form active (base) — Enemies
 
 #### Damage
 
@@ -9153,8 +9482,12 @@ Each time a hero is defeated, Shemira summons 1 ghost.
 
 #### Buffs
 
-- Healing (base) — Self — `medium`
+- Healing (base) — Self — `medium` — conditional (frequent)
 - Shield (base) — Single target — `medium`
+
+#### Special effects
+
+- Provides: Summoning (base) — Self
 
 #### Damage
 
@@ -9243,6 +9576,10 @@ When up against powerful foes, Silven's knightly spirit kicks in, allowing him t
 
 - ATK SPD buff (Legendary+) — Self — `medium`
 - Energy recovery (Mythic+) — Self — `low`
+
+#### Special effects
+
+- Provides: Summoning (base) — Single target
 
 #### Damage
 
@@ -9620,13 +9957,18 @@ While Solise is casting Life's Embrace, damage dealt by Bulbsprite triggers extr
 
 #### Buffs
 
-- Healing (base) — Multiple targets — `high`
+- Healing (base) — Multiple targets — `high` — conditional (frequent)
 - Shield (base) — Multiple targets — `medium`
 - ATK buff (Legendary+) — Self — `low`
 
 #### Crowd Control
 
 - Unaffected immunity (base) — Self — Start of battle
+
+#### Special effects
+
+- Provides: Named companion unit (base) — Single target
+- Provides: Ally blessing (Mythic+) — Single target
 
 #### Damage
 
@@ -9715,7 +10057,7 @@ Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing.
 
 #### Buffs
 
-- ATK buff (base) — Multiple targets — `low`
+- ATK buff (base) — Multiple targets — `low` — conditional (frequent)
 - Haste buff (Legendary+) — Self — `low`
 - Damage taken reduction (EX+10) — Self — `low`
 
@@ -9812,8 +10154,8 @@ After Deflecting Swing is triggered, the next Repel Sweep knocks enemies back 2 
 #### Buffs
 
 - Damage taken reduction (base) — Self — `low`
-- Haste buff (Legendary+) — Self — `medium`
-- Healing over time (Mythic+) — Single target — `low`
+- Haste buff (Legendary+) — Self — `low` — conditional (rare)
+- Healing over time (Mythic+) — Single target — `low` — conditional (rare)
 - Energy recovery (Supreme+) — Single target — `high`
 - Shield (Supreme+) — Single target — `low`
 
@@ -9913,8 +10255,8 @@ Once her score is activated, Sylphira performs Tremolo to enhance her normal att
 
 #### Buffs
 
-- ATK buff (base) — Area — `high`
-- Haste buff (base) — Area — `medium`
+- ATK buff (base) — Area — `high` — conditional (frequent)
+- Haste buff (base) — Area — `medium` — conditional (frequent)
 - Healing (Mythic+) — Self — `low`
 - Lifedrain buff (Supreme+) — Single target — `low`
 
@@ -9931,6 +10273,10 @@ Once her score is activated, Sylphira performs Tremolo to enhance her normal att
 - Interrupt (base) — Area — `low`
 - Knock down (base) — Area — `medium`
 - Silence (base) — Area — `low`
+
+#### Special effects
+
+- Provides: Dispel debuffs (Mythic+) — Self
 
 #### Damage
 
@@ -10020,10 +10366,15 @@ Talene increases her HP recovered per second to 15% while in the flame state whe
 
 #### Buffs
 
-- Healing (base) — Area — `low`
-- Healing over time (base) — Area — `medium`
+- Healing (base) — Area — `low` — conditional (frequent)
+- Healing over time (base) — Area — `medium` — conditional (frequent)
 - Lifedrain buff (base) — Area — `low`
 - ATK buff (Legendary+) — Self — `low`
+
+#### Special effects
+
+- Provides: Summoning (base) — Area
+- Provides: Transform (base) — Area
 
 #### Damage
 
@@ -10123,6 +10474,13 @@ Tasi gains an extra attempt to cast Fluttering Dream each time she assists or de
 - Pin (base) — All units — `low`
 - Sleep (base) — Single target — `high`
 - Stun (base) — Area — `low`
+
+#### Special effects
+
+- Provides: Invincibility (base) — Area
+- Provides: Mass sleep (base) — Single target
+- Provides: Summoning (base) — All units
+- Provides: Transform (base) — Area
 
 #### Damage
 
@@ -10230,6 +10588,10 @@ Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks.
 - Interrupt (base) — Single target — `high`
 - Knock down (base) — All units — `low`
 
+#### Special effects
+
+- Provides: Summoning (base) — All units
+
 #### Damage
 
 - Physical — All units, Area, Single target
@@ -10336,6 +10698,10 @@ Thador restores 5% of his max HP every second as long as his lieutenant is alive
 
 - Knock down (base) — Single target — `low`
 
+#### Special effects
+
+- Provides: Summoning (Mythic+) — Single target
+
 #### Damage
 
 - Physical — Area, Self, Single target
@@ -10426,8 +10792,8 @@ Thoran drains another 20% of the current HP from all enemies affected by Soul Pl
 
 #### Buffs
 
-- Healing (base) — Single target — `low`
-- Lifedrain buff (base) — Single target — `high`
+- Healing (base) — Single target — `low` — conditional (rare)
+- Lifedrain buff (base) — Single target — `high` — conditional (frequent)
 - Max HP buff (base) — Self — `low`
 
 #### Crowd Control
@@ -10525,15 +10891,19 @@ Increases Vine Ward's shield value recovery to 15% (HP-based) per second while T
 
 #### Buffs
 
-- Damage taken reduction (base) — Arc — `high`
-- Healing over time (base) — Arc — `high`
-- Shield (base) — Self — `medium`
+- Damage taken reduction (base) — Arc — `high` — conditional (frequent)
+- Healing over time (base) — Arc — `high` — conditional (frequent)
+- Shield (base) — Self — `medium` — conditional (frequent)
 - Healing (Mythic+) — Single target — `medium`
 - Max HP buff (EX+10) — Area — `low`
 
 #### Crowd Control
 
 - Unaffected immunity (base) — Arc — Start of battle
+
+#### Special effects
+
+- Provides: Start-of-battle cast (base) — Arc
 
 #### Damage
 
@@ -10734,6 +11104,11 @@ Vala increases her damage dealt to the marked enemy by 10% .
 
 - Stun (base) — Single target — `medium`
 
+#### Special effects
+
+- Provides: Untargetable (Mythic+) — Multiple targets
+- Requires: Enemy defeat (Legendary+) — Enemies
+
 #### Damage
 
 - Physical — Single target
@@ -10841,6 +11216,10 @@ Valen inflicts a 3 s stun with his Fury Thunder Strike.
 
 - Stun (Supreme+) — Single target — `medium`
 
+#### Special effects
+
+- Provides: Invincibility (base) — Area
+
 #### Damage
 
 - Physical — Area, Single target
@@ -10929,18 +11308,22 @@ While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Ener
 
 #### Buffs
 
-- Healing (base) — Area — `low`
-- Shield (base) — Self — `low`
+- Healing (base) — Area — `low` — conditional (frequent)
+- Shield (base) — Self — `low` — conditional (frequent)
 - ATK SPD buff (Legendary+) — Self — `medium`
-- Energy recovery (Mythic+) — Single target — `medium`
+- Energy recovery (Mythic+) — Single target — `medium` — conditional (frequent)
 - Lifedrain buff (EX+10) — Single target — `low`
-- Haste buff (Supreme+) — Self — `low`
+- Haste buff (Supreme+) — Self — `low` — conditional (frequent)
 
 #### Crowd Control
 
 - Unaffected immunity (base) — Self — On skill
 - Knock down (base) — Area — `high`
 - Stun (base) — Area — `high`
+
+#### Special effects
+
+- Requires: Adjacent allies (base) — Allies
 
 #### Damage
 
@@ -11043,6 +11426,12 @@ After all magic circles are awakened, casting Ruthless Rite expands their area o
 #### Crowd Control
 
 - Pin (base) — Single target — `high`
+
+#### Special effects
+
+- Provides: Start-of-battle cast (base) — All units
+- Provides: Summoning (base) — All units
+- Requires: Boss encounter (base) — Allies
 
 #### Damage
 
@@ -11334,13 +11723,17 @@ Any excess healing Zandrok receives is converted into extra max HP. The total ma
 
 #### Buffs
 
-- Haste buff (base) — Area — `medium`
-- Lifedrain buff (base) — Area — `low`
+- Haste buff (base) — Area — `medium` — conditional (frequent)
+- Lifedrain buff (base) — Area — `low` — conditional (frequent)
 - Max HP buff (Legendary+) — Self — `low`
 
 #### Crowd Control
 
 - Stun (base) — Area — `low`
+
+#### Special effects
+
+- Provides: Summoning (base) — Area
 
 #### Damage
 
@@ -11431,10 +11824,10 @@ When a laser turret hits an enemy, it burns them, reducing their ATK by 20% and 
 
 #### Buffs
 
-- ATK SPD buff (base) — Self — `low`
-- Healing (base) — Single target — `high`
-- Shield (base) — Single target — `high`
-- Max HP buff (Mythic+) — Single target — `high`
+- ATK SPD buff (base) — Self — `low` — conditional (rare)
+- Healing (base) — Single target — `low` — conditional (rare)
+- Shield (base) — Single target — `low` — conditional (rare)
+- Max HP buff (Mythic+) — Single target — `low` — conditional (rare)
 
 #### Debuffs
 
@@ -11537,11 +11930,11 @@ When Zorya would take a fatal blow she channels all her Energy to survive and im
 
 - Damage taken reduction (base) — Arc — `high`
 - Energy recovery (base) — Area — `low`
-- Healing (base) — Area — `low`
+- Healing (base) — Area — `low` — conditional (frequent)
 - Healing over time (base) — Area — `low`
 - Invincible (base) — Self — `high`
-- Lifedrain buff (base) — Area — `medium`
-- Haste buff (Mythic+) — Self — `medium`
+- Lifedrain buff (base) — Area — `medium` — conditional (frequent)
+- Haste buff (Mythic+) — Self — `medium` — conditional (frequent)
 
 #### Crowd Control
 
@@ -11549,6 +11942,12 @@ When Zorya would take a fatal blow she channels all her Energy to survive and im
 - Unaffected immunity (EX+10) — Single target — On skill
 - Knock down (base) — Arc — `medium`
 - Stun (base) — Area — `medium`
+
+#### Special effects
+
+- Provides: Invincibility (base) — Area
+- Provides: Summoning (base) — Arc
+- Requires: Ally Ultimate casts (Mythic+) — Allies
 
 #### Damage
 
