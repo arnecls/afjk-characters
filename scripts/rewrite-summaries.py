@@ -1409,6 +1409,13 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
         "Debuff on target",
     ),
     (r"control immunity status", "Enemy not CC-immune"),
+    (
+        r"(?:an |the )?enemy.{0,60}under control effects|"
+        r"has been under control effects for|"
+        r"targets? under control effects|"
+        r"while (?:they are |enemies are )?under control effects",
+        "CC on enemies",
+    ),
     (r"in boss fights|against boss enemies", "Boss encounter"),
     # Party / link
     (

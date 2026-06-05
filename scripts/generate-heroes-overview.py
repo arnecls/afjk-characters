@@ -100,6 +100,7 @@ ENABLER_REQUIRE_HANDLERS = (
     "Adjacent allies",
     "Party composition",
     "Ally stat buffs",
+    "CC on enemies",
 )
 
 PARTY_COMPOSITION_CLASSES = frozenset({"Mage", "Tank", "Support"})
@@ -325,6 +326,32 @@ def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
     return tw * 2.5, detail
 
 
+_CC_SUSTAINED_LABELS = frozenset(
+    {"Stun", "Pin", "Freeze", "Sleep", "Silence", "Charm", "Frighten"}
+)
+
+
+def match_cc_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
+    cc_effects = [
+        e
+        for e in provider.effects
+        if e.category == "cc"
+        and e.targeting in ALLY_TARGETINGS
+        and e.label in _CC_SUSTAINED_LABELS
+    ]
+    if not cc_effects:
+        return None
+    best = max(
+        cc_effects,
+        key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1.0)
+        * MAG_WEIGHT.get(e.magnitude, 1.0),
+    )
+    tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
+    mw = MAG_WEIGHT.get(best.magnitude, 1.0)
+    detail = f"{best.label} ({best.targeting.lower()}, {best.magnitude})"
+    return tw * mw * 2.0, detail
+
+
 def match_ranged_damage_allies(
     provider: _rs.Hero, hero_class: str = ""
 ) -> tuple[float, str] | None:
@@ -523,6 +550,7 @@ def _make_enabler_matchers(
         "Adjacent allies": match_adjacent_allies,
         "Party composition": party,
         "Ally stat buffs": match_ally_stat_buffs,
+        "CC on enemies": match_cc_on_enemies,
     }
 
 

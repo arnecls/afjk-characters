@@ -742,10 +742,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Carolina benefits from
 
-- **Marilee**
-  - Crit buff (single target, low)
-- **Walker**
-  - Crit buff (single target, low)
+- **Dunlingr**
+  - Enables CC on enemies via Silence (all units, high)
+- **Tasi**
+  - Enables CC on enemies via Sleep (all units, high)
+- **Kordan**
+  - Enables CC on enemies via Pin (area, high)
+- **Lumont**
+  - Enables CC on enemies via Stun (area, high)
+- **Zandrok**
+  - Enables CC on enemies via Stun (area, high)
 
 ### Summary for Carolina
 
@@ -771,6 +777,12 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Carolina
 
 - Freeze — Single target — `high`
+
+#### Carolina's Special Effects
+
+#### Carolina Requires
+
+- CC on enemies — Allies
 
 ## Cassadee
 
@@ -1260,7 +1272,9 @@ _No synergy partners matched stat buffs or enablers._
 ### Units benefitting from Dunlingr
 
 - Brutus
+- Carolina
 - Indris
+- Nerion
 
 ### Summary for Dunlingr
 
@@ -1399,7 +1413,6 @@ _No synergy partners matched stat buffs or enablers._
 - Mikola
 - Mirael
 - Natsu
-- Nerion
 - Odie
 - Pang
 - Parisa
@@ -1759,7 +1772,6 @@ _No synergy partners matched stat buffs or enablers._
 - Harak
 - Lenya
 - Mikola
-- Nerion
 - Velara
 - Zandrok
 
@@ -2331,7 +2343,6 @@ _No synergy partners matched stat buffs or enablers._
 - Mikola
 - Mirael
 - Natsu
-- Nerion
 - Odie
 - Pang
 - Parisa
@@ -2688,6 +2699,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Units benefitting from Kordan
 
 - Brutus
+- Carolina
+- Nerion
 
 ### Summary for Kordan
 
@@ -3090,7 +3103,6 @@ _No synergy partners matched stat buffs or enablers._
 - Lenya
 - Lucca
 - Lumont
-- Nerion
 - Shadewing
 - Shemira
 - Silvina
@@ -3239,8 +3251,10 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Lumont
 
+- Carolina
 - Cecia
 - Lucca
+- Nerion
 
 ### Summary for Lumont
 
@@ -3398,7 +3412,6 @@ _No synergy partners matched stat buffs or enablers._
 ### Units benefitting from Marilee
 
 - Athalia
-- Carolina
 - Nazrik
 
 ### Summary for Marilee
@@ -3542,7 +3555,6 @@ _No synergy partners matched stat buffs or enablers._
 - Mehira
 - Mirael
 - Natsu
-- Nerion
 - Odie
 - Pang
 - Parisa
@@ -3749,19 +3761,18 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Nerion benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high)
-  - Max HP buff (multiple targets, high)
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Gala**
-  - ATK SPD via Haste buff (single target, high)
-  - Max HP via Shield (single target, high)
+- **Dunlingr**
+  - ATK SPD buff (all units, low)
+  - Enables CC on enemies via Silence (all units, high)
+- **Tasi**
+  - Enables CC on enemies via Sleep (all units, high)
+- **Zandrok**
+  - ATK SPD via Haste buff (area, medium, conditional (frequent))
+  - Enables CC on enemies via Stun (area, high)
+- **Kordan**
+  - Enables CC on enemies via Pin (area, high)
+- **Lumont**
+  - Enables CC on enemies via Stun (area, high)
 
 ### Summary for Nerion
 
@@ -3787,6 +3798,12 @@ _No synergy partners matched stat buffs or enablers._
 #### Crowd Control provided by Nerion
 
 - Stun — Single target — `medium`
+
+#### Nerion's Special Effects
+
+#### Nerion Requires
+
+- CC on enemies (EX+15) — Enemies
 
 ## Niru
 
@@ -5122,6 +5139,11 @@ _No synergy partners matched stat buffs or enablers._
 - **Zandrok**
   - Haste buff (area, medium, conditional (frequent))
 
+### Units benefitting from Tasi
+
+- Carolina
+- Nerion
+
 ### Summary for Tasi
 
 #### Stats Tasi benefits from
@@ -5655,7 +5677,6 @@ _No synergy partners matched stat buffs or enablers._
 
 - Athalia
 - Brutus
-- Carolina
 - Nazrik
 
 ### Summary for Walker
@@ -5705,6 +5726,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Units benefitting from Zandrok
 
 - Atalanta
+- Carolina
 - Cassadee
 - Frieren
 - Harak
@@ -5714,6 +5736,7 @@ _No synergy partners matched stat buffs or enablers._
 - Lucy
 - Mikola
 - Natsu
+- Nerion
 - Pippa
 - Ravion
 - Rowan
