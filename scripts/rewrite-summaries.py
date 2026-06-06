@@ -1375,7 +1375,7 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     (r"\breviv(?:e|es|ing)\b", "Revive ally"),
     # Ally empower: hero designates one specific ally with a named role/bond
     (r"selects? an ally.{0,80}to become", "Ally empower"),
-    (r"(?:transform|morph)s? into", "Transform"),
+    (r"(?:transform|morph)s? into", "Transformation"),
     (
         r"mark of |places .{0,40} mark on|forest mark|"
         r"notice to mark|marked enemy|noticed enemy|"
@@ -1806,6 +1806,8 @@ def detect_special_targeting(text: str, kind: str, label: str) -> str:
         return "—"
     if label == "Enemy artifact block":
         return "Single target"
+    if label == "Transformation":
+        return "Self"
     return detect_targeting(text, label, "special")
 
 

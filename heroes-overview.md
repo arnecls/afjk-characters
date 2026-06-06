@@ -453,7 +453,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Athalia Provides
 
 - Invincibility — Area
-- Transform — Area
+- Transformation — Self
 
 ## Aurora
 
@@ -717,7 +717,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Bonnie Provides
 
 - Invincibility — Area
-- Transform — Area
+- Transformation — Self
 - Magic damage amplification (Supreme+) — Single target
 
 #### Bonnie Requires
@@ -4615,7 +4615,7 @@ _**80** units include this provider among their top 5 synergy partners. Only the
 
 #### Pang Provides
 
-- Transform — Single target
+- Transformation — Self
 
 ## Parisa
 
@@ -5511,7 +5511,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Shakir Provides
 
-- Transform — Area
+- Transformation — Self
 
 #### Shakir Requires
 
@@ -6085,7 +6085,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Talene Provides
 
-- Transform — Area
+- Transformation — Self
 
 ## Tasi
 
@@ -6155,7 +6155,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Invincibility — Area
 - Sleep (area) — Single target
-- Transform — Area
+- Transformation — Self
 
 ## Temesia
 
