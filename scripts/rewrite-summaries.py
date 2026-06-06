@@ -16,6 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 HEROES_MD = ROOT / "Heroes.md"
+HEROES2_MD = ROOT / "heroes2.md"
 
 SECTION_TIERS = {
     "Ultimate": "base",
@@ -416,6 +417,8 @@ class Hero:
     damage_scores: dict[str, float] = field(default_factory=dict)
     damage_magnitudes: dict[str, str] = field(default_factory=dict)
     benefit_stats: list[str] = field(default_factory=list)
+    # Buff labels tied to a specific tile; lost if the ally moves off it.
+    positional_tile_buff_labels: frozenset[str] = field(default_factory=frozenset)
 
 
 def parse_level_tier(line: str, section: str) -> str:
@@ -1007,6 +1010,25 @@ FREQUENT_CONDITIONAL_PATTERNS: tuple[str, ...] = (
     r"when .{0,30}(?:ultimate|casts? (?:her|his|their))",
 )
 
+# Buffs revoked when the ally leaves a specific tile.
+POSITIONAL_TILE_PATTERNS: tuple[str, ...] = (
+    r"this buff disappears when (?:the )?ally leaves",
+    r"ally leaves the (?:doomfield|sigil|field|zone|formation)",
+    r"until \d+\s*s? after the ally leaves",
+)
+
+# Ally buff labels inferable from positional chunks when BUFF_RULES miss
+# (e.g. "ATK bonus" vs "increases ATK by").
+POSITIONAL_CHUNK_BUFF_HINTS: tuple[tuple[str, str], ...] = (
+    (r"\batk bonus\b", "ATK buff"),
+    (r"\batk by\b", "ATK buff"),
+    (r"increas(?:e|es|ing).{0,50}\batk\b", "ATK buff"),
+    (r"\batk spd\b", "ATK SPD buff"),
+    (r"\bhaste\b", "Haste buff"),
+    (r"extra \d+ energy", "Energy recovery"),
+    (r"\bshield\b", "Shield"),
+)
+
 
 def classify_buff_condition(text: str) -> str | None:
     t = text.lower()
@@ -1221,6 +1243,27 @@ BUFF_RULES = [
     # Resilience buff
     (r"increas(?:e|es|ing) (?:her |his |their )?resilience\b", "Resilience buff"),
 ]
+
+
+def _chunk_has_positional_tile_buff(text: str) -> bool:
+    t = text.lower()
+    return any(re.search(pat, t) for pat in POSITIONAL_TILE_PATTERNS)
+
+
+def detect_positional_tile_buff_labels(hero: Hero) -> frozenset[str]:
+    labels: set[str] = set()
+    for _tier, text, _section in hero.skill_chunks:
+        if not _chunk_has_positional_tile_buff(text):
+            continue
+        for pat, label in BUFF_RULES:
+            for _scope in _buff_match_scopes(text, label, pat):
+                labels.add(label)
+        t = text.lower()
+        for hint_pat, label in POSITIONAL_CHUNK_BUFF_HINTS:
+            if re.search(hint_pat, t):
+                labels.add(label)
+    return frozenset(labels)
+
 
 DEBUFF_RULES = [
     # ATK debuff (verb form: "reduces their ATK" / noun form: "reduction in their ATK")
@@ -2315,6 +2358,7 @@ def analyze_hero(hero: Hero):
             e.qualitative.lower(), e.label, e.category
         ):
             e.targeting = "Self"
+    hero.positional_tile_buff_labels = detect_positional_tile_buff_labels(hero)
 
 
 # Buff labels where the effect is inherently high-value, regardless of any
@@ -2550,6 +2594,383 @@ def strip_summaries_from_heroes_md(text: str) -> str:
         count=1,
     )
     return stripped.rstrip() + "\n"
+
+
+# ---------------------------------------------------------------------------
+# Hero behavior (movement & casting speed) — sourced from heroes2.md
+# ---------------------------------------------------------------------------
+
+BEHAVIOR_NAME_ALIASES: dict[str, str] = {
+    "Twins": "Elijah & Lailah",
+    "Gala": "Galahad",
+}
+
+BEHAVIOR_ATTACK_SECTIONS = frozenset(
+    {"Ultimate", "Skill1", "Skill2", "Ex. Skill"}
+)
+
+# Repositioning phrases -> high movement (avoid "charged arrow", etc.).
+HIGH_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bjump(?:s|ed|ing)?\b", re.I),
+    re.compile(r"\bleap(?:s|ped|ping)?\b", re.I),
+    re.compile(r"\bdash(?:es|ed|ing)?\b", re.I),
+    re.compile(r"\bdives?\b", re.I),
+    re.compile(r"\blunge(?:s|d)?\b", re.I),
+    re.compile(r"\bpounce(?:s|d)?\b", re.I),
+    re.compile(r"\bblink(?:s|ed|ing)?\b", re.I),
+    re.compile(r"\bteleport(?:s|ed|ing)?\b", re.I),
+    re.compile(r"\bswoop(?:s|ed|ing)?\b", re.I),
+    re.compile(r"\bcharg(?:e|es|ed|ing)\s+(?:at|to|toward|into)\b", re.I),
+    re.compile(r"\brush(?:es|ed|ing)?\s+(?:to|toward|next to)\b", re.I),
+    re.compile(r"\bmoving to a safe spot\b", re.I),
+    re.compile(r"\bmoves? to a\b", re.I),
+)
+
+CASTING_WEIGHTS: dict[str, float] = {
+    "ult": 0.5,
+    "skill1": 0.25,
+    "skill2": 0.15,
+    "ex": 0.10,
+}
+
+# No listed cooldown => highest usage frequency for range weighting.
+_NO_CD_FREQUENCY_WEIGHT = 2.0
+
+
+@dataclass
+class SkillMeta:
+    section: str
+    range_tiles: float | None
+    range_global: bool
+    cooldown: float | None
+    initial_cd: float | None
+    initial_energy: float | None
+    text: str
+
+
+@dataclass
+class HeroBehavior:
+    movement: str
+    movement_note: str
+    casting_speed: str
+
+
+def _parse_meta_number(value: str) -> float | None:
+    m = re.match(r"([\d.]+)", value.strip())
+    return float(m.group(1)) if m else None
+
+
+def hero_block_first_name(block: str) -> str:
+    title = block.splitlines()[0].replace("## ", "").strip()
+    return title.split(" - ", 1)[0].strip()
+
+
+def index_hero_blocks(text: str) -> dict[str, str]:
+    blocks: dict[str, str] = {}
+    for block in re.split(r"\n(?=## )", text):
+        if block.startswith("## "):
+            blocks[hero_block_first_name(block)] = block
+    return blocks
+
+
+def resolve_behavior_block(
+    display_name: str,
+    full_title: str,
+    heroes2_index: dict[str, str],
+    heroes_index: dict[str, str],
+) -> str:
+    """Return hero markdown block from heroes2.md, else Heroes.md."""
+    candidates: list[str] = []
+    seen: set[str] = set()
+
+    def add(name: str) -> None:
+        if name and name not in seen:
+            seen.add(name)
+            candidates.append(name)
+
+    add(display_name)
+    if display_name in BEHAVIOR_NAME_ALIASES:
+        add(BEHAVIOR_NAME_ALIASES[display_name])
+    add(full_title.split(" - ", 1)[0].strip())
+
+    for name in candidates:
+        if name in heroes2_index:
+            return heroes2_index[name]
+    for name in candidates:
+        if name in heroes_index:
+            return heroes_index[name]
+    return ""
+
+
+def load_skill_meta(block: str) -> list[SkillMeta]:
+    """Parse per-skill range, cooldown, energy, and description text."""
+    skills: list[SkillMeta] = []
+    if not block:
+        return skills
+
+    for part in re.split(r"(?=^### )", block, flags=re.MULTILINE):
+        sec_m = re.match(r"### (.+)", part)
+        if not sec_m:
+            continue
+        section = sec_m.group(1).strip()
+        if section not in SECTION_TIERS:
+            continue
+
+        cooldown = initial_cd = initial_energy = None
+        range_tiles: float | None = None
+        range_global = False
+
+        cd_m = re.search(r"^- Cooldown: (.+)$", part, re.MULTILINE)
+        if cd_m:
+            cooldown = _parse_meta_number(cd_m.group(1))
+        icd_m = re.search(r"^- Initial Cooldown: (.+)$", part, re.MULTILINE)
+        if icd_m:
+            initial_cd = _parse_meta_number(icd_m.group(1))
+        en_m = re.search(r"^- Initial Energy: (.+)$", part, re.MULTILINE)
+        if en_m:
+            initial_energy = _parse_meta_number(en_m.group(1))
+        rng_m = re.search(r"^- Skill Range: (.+)$", part, re.MULTILINE)
+        if rng_m:
+            rng = rng_m.group(1).strip()
+            if "global" in rng.lower():
+                range_global = True
+            else:
+                range_tiles = _parse_meta_number(rng)
+
+        text_lines: list[str] = []
+        for ln in part.splitlines():
+            if ln.startswith("### "):
+                continue
+            if ln.startswith("**") or ln.startswith("*Unlocks"):
+                continue
+            if re.match(
+                r"^- (?:Cooldown|Initial Cooldown|Skill Range|Initial Energy):",
+                ln,
+            ):
+                continue
+            if ln.startswith("- Level"):
+                continue
+            if ln.strip():
+                text_lines.append(ln.strip())
+        text = " ".join(text_lines)
+
+        skills.append(
+            SkillMeta(
+                section=section,
+                range_tiles=range_tiles,
+                range_global=range_global,
+                cooldown=cooldown,
+                initial_cd=initial_cd,
+                initial_energy=initial_energy,
+                text=text,
+            )
+        )
+    return skills
+
+
+def _has_high_movement_text(text: str) -> bool:
+    return any(p.search(text) for p in HIGH_MOVEMENT_RES)
+
+
+def _skill_deals_damage(text: str) -> bool:
+    t = text.lower()
+    return bool(
+        re.search(
+            r"\bdeal(?:s|ing|t)?\b.*\bdamage\b|\bdamage\b.*\bdeal|\b"
+            r"strik(?:e|es|ing)\b|\bhit(?:s|ting)?\b.*\bdamage\b|\bfire(?:s|d)?\b"
+            r".*\b(?:arrow|bolt|shot|volley)\b|\bshoot(?:s|ing)?\b|\bswing(?:s|ing)?\b"
+            r".*\bdamage\b|\bthrust(?:s|ing)?\b.*\bdamage\b|\bslam\b.*\bdamage\b",
+            t,
+        )
+    )
+
+
+def _movement_from_range(avg_range: float) -> str:
+    if avg_range < 4:
+        return "moving"
+    if avg_range <= 6:
+        return "mostly stationary"
+    return "stationary"
+
+
+def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
+    """Return (movement label, short rationale)."""
+    all_text = " ".join(s.text for s in skills)
+    if _has_high_movement_text(all_text):
+        return "high movement", "repositioning skills"
+
+    weighted_sum = 0.0
+    weight_total = 0.0
+    max_freq = _NO_CD_FREQUENCY_WEIGHT
+
+    for skill in skills:
+        if skill.section not in BEHAVIOR_ATTACK_SECTIONS:
+            continue
+        if skill.range_global or skill.range_tiles is None:
+            continue
+        if not _skill_deals_damage(skill.text):
+            continue
+        if skill.cooldown and skill.cooldown > 0:
+            max_freq = max(max_freq, 1.0 / skill.cooldown)
+
+    for skill in skills:
+        if skill.section not in BEHAVIOR_ATTACK_SECTIONS:
+            continue
+        if skill.range_global or skill.range_tiles is None:
+            continue
+        if not _skill_deals_damage(skill.text):
+            continue
+        if skill.cooldown and skill.cooldown > 0:
+            w = 1.0 / skill.cooldown
+        else:
+            w = max_freq
+        weighted_sum += skill.range_tiles * w
+        weight_total += w
+
+    if weight_total <= 0:
+        return "stationary", "no finite attack range"
+
+    avg = weighted_sum / weight_total
+    label = _movement_from_range(avg)
+    return label, f"avg attack range {avg:.1f} tiles"
+
+
+def _skill_by_section(
+    skills: list[SkillMeta], section: str
+) -> SkillMeta | None:
+    for skill in skills:
+        if skill.section == section:
+            return skill
+    return None
+
+
+def _normalize_minmax(values: list[float | None]) -> dict[int, float]:
+    present = [(i, v) for i, v in enumerate(values) if v is not None]
+    if not present:
+        return {}
+    nums = [v for _, v in present]
+    lo, hi = min(nums), max(nums)
+    if hi == lo:
+        return {i: 0.5 for i, _ in present}
+    return {i: (v - lo) / (hi - lo) for i, v in present}
+
+
+def compute_casting_scores(
+    skills_by_title: dict[str, list[SkillMeta]],
+) -> dict[str, float]:
+    """Higher score = faster casting (global min-max per component)."""
+    titles = list(skills_by_title.keys())
+    ult_raw: list[float | None] = []
+    s1_raw: list[float | None] = []
+    s2_raw: list[float | None] = []
+    ex_raw: list[float | None] = []
+
+    for title in titles:
+        skills = skills_by_title[title]
+        ult = _skill_by_section(skills, "Ultimate")
+        s1 = _skill_by_section(skills, "Skill1")
+        s2 = _skill_by_section(skills, "Skill2")
+        ex = _skill_by_section(skills, "Ex. Skill")
+
+        u_val: float | None = None
+        if ult:
+            if ult.initial_energy is not None:
+                u_val = ult.initial_energy
+            elif ult.cooldown is not None:
+                u_val = -ult.cooldown
+        ult_raw.append(u_val)
+
+        s1_raw.append(-s1.cooldown if s1 and s1.cooldown is not None else None)
+        s2_raw.append(-s2.cooldown if s2 and s2.cooldown is not None else None)
+        ex_raw.append(-ex.cooldown if ex and ex.cooldown is not None else None)
+
+    ult_norm = _normalize_minmax(ult_raw)
+    s1_norm = _normalize_minmax(s1_raw)
+    s2_norm = _normalize_minmax(s2_raw)
+    ex_norm = _normalize_minmax(ex_raw)
+
+    scores: dict[str, float] = {}
+    components = (
+        ("ult", ult_norm, CASTING_WEIGHTS["ult"]),
+        ("skill1", s1_norm, CASTING_WEIGHTS["skill1"]),
+        ("skill2", s2_norm, CASTING_WEIGHTS["skill2"]),
+        ("ex", ex_norm, CASTING_WEIGHTS["ex"]),
+    )
+
+    for idx, title in enumerate(titles):
+        total = 0.0
+        weight_sum = 0.0
+        for _name, norm_map, weight in components:
+            if idx in norm_map:
+                total += norm_map[idx] * weight
+                weight_sum += weight
+        scores[title] = total / weight_sum if weight_sum else 0.5
+    return scores
+
+
+def casting_terciles(scores: dict[str, float]) -> dict[str, str]:
+    """Split roster into fast / normal / slow thirds by casting score."""
+    ranked = sorted(scores.items(), key=lambda x: (-x[1], x[0]))
+    n = len(ranked)
+    if n == 0:
+        return {}
+    third = n / 3.0
+    labels: dict[str, str] = {}
+    for i, (title, _) in enumerate(ranked):
+        if i < third:
+            labels[title] = "fast"
+        elif i < 2 * third:
+            labels[title] = "normal"
+        else:
+            labels[title] = "slow"
+    return labels
+
+
+def build_behavior_for_heroes(
+    heroes: list[Hero],
+    display_names: dict[str, str],
+    heroes2_text: str | None = None,
+    heroes_text: str | None = None,
+) -> dict[str, HeroBehavior]:
+    """Compute movement and casting speed for each hero title."""
+    h2_text = heroes2_text if heroes2_text is not None else (
+        HEROES2_MD.read_text(encoding="utf-8") if HEROES2_MD.exists() else ""
+    )
+    h1_text = heroes_text if heroes_text is not None else HEROES_MD.read_text(
+        encoding="utf-8"
+    )
+    heroes2_index = index_hero_blocks(h2_text)
+    heroes_index = index_hero_blocks(h1_text)
+
+    skills_by_title: dict[str, list[SkillMeta]] = {}
+    for hero in heroes:
+        display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
+        block = resolve_behavior_block(
+            display, hero.title, heroes2_index, heroes_index
+        )
+        skills_by_title[hero.title] = load_skill_meta(block)
+
+    casting_scores = compute_casting_scores(skills_by_title)
+    casting_labels = casting_terciles(casting_scores)
+
+    result: dict[str, HeroBehavior] = {}
+    for hero in heroes:
+        skills = skills_by_title[hero.title]
+        movement, note = compute_movement(skills)
+        result[hero.title] = HeroBehavior(
+            movement=movement,
+            movement_note=note,
+            casting_speed=casting_labels.get(hero.title, "normal"),
+        )
+    return result
+
+
+def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[str]:
+    lines = [f"### {display_name}'s behavior", ""]
+    lines.append(f"- Movement: {behavior.movement} ({behavior.movement_note})")
+    lines.append(f"- Casting speed: {behavior.casting_speed}")
+    lines.append("")
+    return lines
 
 
 def main():

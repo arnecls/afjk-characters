@@ -127,6 +127,27 @@ Regenerate overview (and strip stray summaries from Heroes.md if present):
 
 Summary/synergy rules live in `scripts/rewrite-summaries.py` (library).
 
+## Behavior (movement & casting speed)
+
+Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
+
+- **Movement** — `stationary`, `mostly stationary`, `moving`, or
+  `high movement`. Derived from per-skill `Skill Range`, cooldown-weighted
+  attack ranges, and repositioning phrases in skill text (`jump`, `leap`,
+  `dash`, `moving to a safe spot`, etc.). Data from
+  [heroes2.md](heroes2.md) via `scripts/generate-heroes2-md.js`; falls back
+  to [Heroes.md](Heroes.md) when a hero is missing (aliases: Twins →
+  Elijah & Lailah, Gala → Galahad). Rules in `compute_movement()` in
+  `rewrite-summaries.py`.
+- **Casting speed** — `slow`, `normal`, or `fast`. Global terciles from a
+  weighted score: Ultimate `Initial Energy` (higher = faster ult) or
+  Ultimate cooldown when listed; Skill1/Skill2/Ex cooldowns (lower =
+  faster). Weights: ult 50%, skill1 25%, skill2 15%, ex 10%.
+  `compute_casting_scores()` / `casting_terciles()` in
+  `rewrite-summaries.py`.
+
+Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).
+
 ## Detecting synergies between units
 
 Synergy is **provider → receiver**: one hero supplies what another needs.

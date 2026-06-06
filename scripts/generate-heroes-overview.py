@@ -619,7 +619,9 @@ def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
 
 
 def score_synergy(
-    provider: _rs.Hero, receiver: _rs.Hero
+    provider: _rs.Hero,
+    receiver: _rs.Hero,
+    receiver_movement: str = "",
 ) -> tuple[float, list[str]]:
     if provider.title == receiver.title:
         return 0.0, []
@@ -643,6 +645,11 @@ def score_synergy(
             if effect.targeting not in ALLY_TARGETINGS:
                 continue
             if effect.conditional == "rare":
+                continue
+            if (
+                effect.label in provider.positional_tile_buff_labels
+                and receiver_movement in ("moving", "high movement")
+            ):
                 continue
             tw = TARGETING_WEIGHT.get(effect.targeting, 1.0)
             mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
@@ -728,8 +735,11 @@ def score_combined_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
     enabler_matchers: dict[str, callable],
+    receiver_movement: str = "",
 ) -> tuple[float, list[str]]:
-    buff_score, buff_reasons = score_synergy(provider, receiver)
+    buff_score, buff_reasons = score_synergy(
+        provider, receiver, receiver_movement
+    )
     summon_score, summon_reasons = score_summon_synergy(provider, receiver)
     en_score, en_reasons = score_enabler_synergy(
         provider, receiver, enabler_matchers
@@ -744,11 +754,13 @@ def rank_synergies(
     receiver: _rs.Hero,
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
+    behavior_by_title: dict[str, _rs.HeroBehavior],
 ) -> list[tuple[str, list[str]]]:
+    receiver_movement = behavior_by_title[receiver.title].movement
     ranked: list[tuple[float, list[str], str]] = []
     for provider in heroes:
         score, reasons = score_combined_synergy(
-            provider, receiver, enabler_matchers
+            provider, receiver, enabler_matchers, receiver_movement
         )
         if score <= 0 or not reasons:
             continue
@@ -766,11 +778,14 @@ def rank_synergies(
 def build_beneficiaries_index(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
+    behavior_by_title: dict[str, _rs.HeroBehavior],
 ) -> dict[str, list[str]]:
     """Provider title -> short names of heroes who list them as a top synergy."""
     index: dict[str, set[str]] = defaultdict(set)
     for receiver in heroes:
-        for provider_title, _ in rank_synergies(receiver, heroes, enabler_matchers):
+        for provider_title, _ in rank_synergies(
+            receiver, heroes, enabler_matchers, behavior_by_title
+        ):
             index[provider_title].add(short_name(receiver.title))
     return {k: sorted(v) for k, v in index.items()}
 
@@ -780,10 +795,13 @@ def format_synergies(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
     beneficiaries_index: dict[str, list[str]],
+    behavior_by_title: dict[str, _rs.HeroBehavior],
 ) -> list[str]:
     lines: list[str] = []
     receiver_name = short_name(receiver.title)
-    picks = rank_synergies(receiver, heroes, enabler_matchers)
+    picks = rank_synergies(
+        receiver, heroes, enabler_matchers, behavior_by_title
+    )
     if picks:
         for title, reasons in picks:
             lines.append(f"- **{short_name(title)}**")
@@ -912,7 +930,12 @@ def build_overview() -> str:
 
     _rs.assign_magnitudes(heroes)
     enabler_matchers = _make_enabler_matchers(hero_class_by_title)
-    beneficiaries_index = build_beneficiaries_index(heroes, enabler_matchers)
+
+    display_by_title = {h.title: short_name(h.title) for h in heroes}
+    behavior_by_title = _rs.build_behavior_for_heroes(heroes, display_by_title)
+    beneficiaries_index = build_beneficiaries_index(
+        heroes, enabler_matchers, behavior_by_title
+    )
 
     parts = [
         "# Heroes Overview",
@@ -930,13 +953,15 @@ def build_overview() -> str:
 
     for hero in heroes:
         syn_lines = format_synergies(
-            hero, heroes, enabler_matchers, beneficiaries_index
+            hero, heroes, enabler_matchers, beneficiaries_index, behavior_by_title
         )
         summary = _rs.format_summary(hero, short_name(hero.title)).rstrip()
 
         parts.append(f"## {short_name(hero.title)}")
         parts.append("")
         hero_name = short_name(hero.title)
+        behavior = behavior_by_title[hero.title]
+        parts.extend(_rs.format_behavior_section(hero_name, behavior))
         parts.append(f"### Units {hero_name} benefits from")
         parts.append("")
         parts.extend(syn_lines)

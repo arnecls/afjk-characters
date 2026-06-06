@@ -11,6 +11,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Aliceth
 
+### Aliceth's behavior
+
+- Movement: stationary (avg attack range 8.0 tiles)
+- Casting speed: normal
+
 ### Units Aliceth benefits from
 
 - **Lyca**
@@ -84,6 +89,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Alna
 
+### Alna's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Alna benefits from
 
 - **Aurora**
@@ -126,6 +136,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - Damage and control immunity (Mythic+) — Self
 
 ## Alsa
+
+### Alsa's behavior
+
+- Movement: moving (avg attack range 3.6 tiles)
+- Casting speed: fast
 
 ### Units Alsa benefits from
 
@@ -187,6 +202,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Antandra
 
+### Antandra's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
+
 ### Units Antandra benefits from
 
 - **Lucius**
@@ -240,6 +260,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Arden
 
+### Arden's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: normal
+
 ### Units Arden benefits from
 
 - **Ravion**
@@ -273,6 +298,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - Pin — Single target — `high`
 
 ## Atalanta
+
+### Atalanta's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
 
 ### Units Atalanta benefits from
 
@@ -323,6 +353,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Athalia
 
+### Athalia's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
+
 ### Units Athalia benefits from
 
 - **Marilee**
@@ -369,11 +404,13 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Aurora
 
+### Aurora's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
+
 ### Units Aurora benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
 - **Mikola**
@@ -382,6 +419,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+- **Hugin**
+  - Haste buff (multiple targets, high)
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent))
 
@@ -436,15 +475,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Baelran
 
+### Baelran's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: slow
+
 ### Units Baelran benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
   - Max HP buff (multiple targets, high)
+- **Hugin**
+  - Haste buff (multiple targets, high)
+  - Max HP via Shield (multiple targets, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - Haste buff (multiple targets, high)
@@ -495,6 +538,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Berial
 
+### Berial's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Berial benefits from
 
 - **Aurora**
@@ -535,6 +583,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - Summoning (Mythic+) — Single target
 
 ## Bonnie
+
+### Bonnie's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
 
 ### Units Bonnie benefits from
 
@@ -593,6 +646,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Brutus
 
+### Brutus's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: slow
+
 ### Units Brutus benefits from
 
 - **Kordan**
@@ -633,6 +691,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - Taunt — Area — `high`
 
 ## Bryon
+
+### Bryon's behavior
+
+- Movement: moving (avg attack range 3.1 tiles)
+- Casting speed: fast
 
 ### Units Bryon benefits from
 
@@ -687,6 +750,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Callan
 
+### Callan's behavior
+
+- Movement: moving (avg attack range 1.7 tiles)
+- Casting speed: normal
+
 ### Units Callan benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -740,6 +808,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Carolina
 
+### Carolina's behavior
+
+- Movement: mostly stationary (avg attack range 4.0 tiles)
+- Casting speed: slow
+
 ### Units Carolina benefits from
 
 - **Dunlingr**
@@ -785,6 +858,11 @@ _No synergy partners matched stat buffs or enablers._
 - CC on enemies — Allies
 
 ## Cassadee
+
+### Cassadee's behavior
+
+- Movement: mostly stationary (avg attack range 5.2 tiles)
+- Casting speed: normal
 
 ### Units Cassadee benefits from
 
@@ -838,6 +916,11 @@ _No synergy partners matched stat buffs or enablers._
 - Ally blessing active (EX+5) — Allies
 
 ## Cecia
+
+### Cecia's behavior
+
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+- Casting speed: slow
 
 ### Units Cecia benefits from
 
@@ -904,6 +987,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Chippy
 
+### Chippy's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
+
 ### Units Chippy benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -916,6 +1004,11 @@ _No synergy partners matched stat buffs or enablers._
 - Physical — Single target
 
 ## Contess
+
+### Contess's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: fast
 
 ### Units Contess benefits from
 
@@ -980,16 +1073,20 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Cryonaia
 
+### Cryonaia's behavior
+
+- Movement: moving (avg attack range 3.1 tiles)
+- Casting speed: normal
+
 ### Units Cryonaia benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
 - **Himmel**
   - ATK buff (multiple targets, low)
   - Max HP buff (multiple targets, high)
 - **Lucius**
   - Max HP via Shield (area, high)
+- **Hugin**
+  - Max HP via Shield (multiple targets, high)
 - **Contess**
   - ATK buff (single target, high)
   - Max HP via Shield (single target, medium)
@@ -1034,6 +1131,11 @@ _No synergy partners matched stat buffs or enablers._
 - Boss encounter — Enemies
 
 ## Cyran
+
+### Cyran's behavior
+
+- Movement: mostly stationary (avg attack range 6.0 tiles)
+- Casting speed: fast
 
 ### Units Cyran benefits from
 
@@ -1088,6 +1190,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Daimon
 
+### Daimon's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: fast
+
 ### Units Daimon benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -1113,11 +1220,13 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Damian
 
+### Damian's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
+
 ### Units Damian benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
 - **Mikola**
@@ -1129,6 +1238,8 @@ _No synergy partners matched stat buffs or enablers._
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+- **Hugin**
+  - Haste buff (multiple targets, high)
 
 ### Units benefitting from Damian
 
@@ -1200,6 +1311,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Dionel
 
+### Dionel's behavior
+
+- Movement: moving (avg attack range 0.0 tiles)
+- Casting speed: slow
+
 ### Units Dionel benefits from
 
 - **Twins**
@@ -1248,6 +1364,11 @@ _No synergy partners matched stat buffs or enablers._
 - Execution scaling (Supreme+) — Self
 
 ## Dunlingr
+
+### Dunlingr's behavior
+
+- Movement: stationary (avg attack range 9.6 tiles)
+- Casting speed: slow
 
 ### Units Dunlingr benefits from
 
@@ -1321,6 +1442,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Eironn
 
+### Eironn's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Eironn benefits from
 
 - **Lucius**
@@ -1360,6 +1486,11 @@ _No synergy partners matched stat buffs or enablers._
 - Pin — Single target — `high`
 
 ## Twins
+
+### Twins's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: normal
 
 ### Units Twins benefits from
 
@@ -1479,6 +1610,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Evie
 
+### Evie's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
+
 ### Units Evie benefits from
 
 - **Hewynn**
@@ -1544,15 +1680,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Faramor
 
+### Faramor's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: normal
+
 ### Units Faramor benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
   - Max HP buff (multiple targets, high)
+- **Hugin**
+  - Haste buff (multiple targets, high)
+  - Max HP via Shield (multiple targets, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - Haste buff (multiple targets, high)
@@ -1595,6 +1735,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Fay
 
+### Fay's behavior
+
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+- Casting speed: normal
+
 ### Units Fay benefits from
 
 - **Twins**
@@ -1610,6 +1755,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Fay
 
+- Laios
 - Shadewing
 - Smokey & Meerky
 - Talene
@@ -1638,6 +1784,11 @@ _No synergy partners matched stat buffs or enablers._
 - Phys DEF debuff — Multiple targets — `low`
 
 ## Florabelle
+
+### Florabelle's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: normal
 
 ### Units Florabelle benefits from
 
@@ -1703,6 +1854,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Frieren
 
+### Frieren's behavior
+
+- Movement: stationary (avg attack range 7.0 tiles)
+- Casting speed: fast
+
 ### Units Frieren benefits from
 
 - **Hugin**
@@ -1746,6 +1902,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stun — Single target — `low`
 
 ## Gala
+
+### Gala's behavior
+
+- Movement: stationary (avg attack range 10.0 tiles)
+- Casting speed: fast
 
 ### Units Gala benefits from
 
@@ -1810,6 +1971,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Gerda
 
+### Gerda's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Gerda benefits from
 
 - **Lucius**
@@ -1850,6 +2016,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Granny Dahnie
 
+### Granny Dahnie's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: normal
+
 ### Units Granny Dahnie benefits from
 
 - **Ravion**
@@ -1889,6 +2060,11 @@ _No synergy partners matched stat buffs or enablers._
 - Taunt — Single target — `high`
 
 ## Gunnar
+
+### Gunnar's behavior
+
+- Movement: moving (avg attack range 3.0 tiles)
+- Casting speed: normal
 
 ### Units Gunnar benefits from
 
@@ -1939,6 +2115,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Gwyneth
 
+### Gwyneth's behavior
+
+- Movement: stationary (avg attack range 8.0 tiles)
+- Casting speed: slow
+
 ### Units Gwyneth benefits from
 
 - **Twins**
@@ -1981,6 +2162,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Hammie
 
+### Hammie's behavior
+
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+- Casting speed: normal
+
 ### Units Hammie benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -2002,6 +2188,11 @@ _No synergy partners matched stat buffs or enablers._
 - Healing — Single target — `high`
 
 ## Harak
+
+### Harak's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
 
 ### Units Harak benefits from
 
@@ -2069,15 +2260,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Hepler
 
+### Hepler's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Hepler benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
+  - Haste buff (multiple targets, high)
+- **Hugin**
   - Haste buff (multiple targets, high)
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent))
@@ -2137,6 +2332,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Hewynn
 
+### Hewynn's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: fast
+
 ### Units Hewynn benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -2146,6 +2346,7 @@ _No synergy partners matched stat buffs or enablers._
 - Contess
 - Evie
 - Igor
+- Kordan
 - Lucius
 - Ludovic
 - Lumont
@@ -2154,6 +2355,7 @@ _No synergy partners matched stat buffs or enablers._
 - Smokey & Meerky
 - Sylphira
 - Talene
+- Vala
 
 ### Summary for Hewynn
 
@@ -2183,16 +2385,20 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Himmel
 
+### Himmel's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
+
 ### Units Himmel benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
-  - Enables Party composition via Support (party slot)
 - **Twins**
   - Haste buff (all units, high)
   - Max HP buff (multiple targets, high)
+  - Enables Party composition via Support (party slot)
+- **Hugin**
+  - Haste buff (multiple targets, high)
+  - Max HP via Shield (multiple targets, high)
   - Enables Party composition via Support (party slot)
 - **Mikola**
   - ATK buff (multiple targets, medium)
@@ -2245,6 +2451,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Hodgkin
 
+### Hodgkin's behavior
+
+- Movement: moving (avg attack range 3.0 tiles)
+- Casting speed: slow
+
 ### Units Hodgkin benefits from
 
 - **Aurora**
@@ -2284,6 +2495,11 @@ _No synergy partners matched stat buffs or enablers._
 - Summoning (Mythic+) — Area
 
 ## Hugin
+
+### Hugin's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: fast
 
 ### Units Hugin benefits from
 
@@ -2328,10 +2544,8 @@ _No synergy partners matched stat buffs or enablers._
 - Isabella
 - Kafra
 - Koko
-- Kordan
 - Korin
 - Kruger
-- Laios
 - Lenya
 - Lucca
 - Lucy
@@ -2358,7 +2572,6 @@ _No synergy partners matched stat buffs or enablers._
 - Sinbad
 - Sonja
 - Soren
-- Sylphira
 - Tasi
 - Temesia
 - Thador
@@ -2366,7 +2579,6 @@ _No synergy partners matched stat buffs or enablers._
 - Tilaya
 - Twins
 - Ulmus
-- Vala
 - Valka
 - Velara
 - Viperian
@@ -2393,6 +2605,11 @@ _No synergy partners matched stat buffs or enablers._
 - Shield (Mythic+) — Multiple targets — `high`
 
 ## Igor
+
+### Igor's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
 
 ### Units Igor benefits from
 
@@ -2432,6 +2649,11 @@ _No synergy partners matched stat buffs or enablers._
 - Untargetable — Area
 
 ## Indris
+
+### Indris's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: normal
 
 ### Units Indris benefits from
 
@@ -2495,6 +2717,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Isabella
 
+### Isabella's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: normal
+
 ### Units Isabella benefits from
 
 - **Twins**
@@ -2518,6 +2745,7 @@ _No synergy partners matched stat buffs or enablers._
 - Lucius
 - Ludovic
 - Phraesto
+- Sylphira
 
 ### Summary for Isabella
 
@@ -2554,16 +2782,20 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Kafra
 
+### Kafra's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
+
 ### Units Kafra benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
 - **Himmel**
   - ATK buff (multiple targets, low)
   - Max HP buff (multiple targets, high)
 - **Lucius**
   - Max HP via Shield (area, high)
+- **Hugin**
+  - Max HP via Shield (multiple targets, high)
 - **Contess**
   - ATK buff (single target, high)
   - Max HP via Shield (single target, medium)
@@ -2617,6 +2849,11 @@ _No synergy partners matched stat buffs or enablers._
 - Marked target (focus fire) — Single target
 
 ## Koko
+
+### Koko's behavior
+
+- Movement: mostly stationary (avg attack range 4.0 tiles)
+- Casting speed: slow
 
 ### Units Koko benefits from
 
@@ -2676,14 +2913,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Kordan
 
+### Kordan's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
+
 ### Units Kordan benefits from
 
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (multiple targets, high)
@@ -2695,6 +2934,8 @@ _No synergy partners matched stat buffs or enablers._
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - Healing over time (all units, medium)
+- **Hewynn**
+  - Healing (all units, high)
 
 ### Units benefitting from Kordan
 
@@ -2731,6 +2972,11 @@ _No synergy partners matched stat buffs or enablers._
 - Pin — Area — `high`
 
 ## Korin
+
+### Korin's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
 
 ### Units Korin benefits from
 
@@ -2771,6 +3017,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Kruger
 
+### Kruger's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Kruger benefits from
 
 - **Lucius**
@@ -2805,6 +3056,11 @@ _No synergy partners matched stat buffs or enablers._
 - Phys DEF debuff — Single target — `low`
 
 ## Kulu
+
+### Kulu's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
 
 ### Units Kulu benefits from
 
@@ -2851,6 +3107,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Laios
 
+### Laios's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Laios benefits from
 
 - **Mikola**
@@ -2860,15 +3121,16 @@ _No synergy partners matched stat buffs or enablers._
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
   - Healing (single target, medium)
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high)
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
 - **Isabella**
   - ATK SPD via Haste buff (multiple targets, low, conditional (frequent))
   - Healing (area, high)
+- **Fay**
+  - ATK buff (multiple targets, low)
+  - ATK SPD buff (multiple targets, low)
+  - Healing (arc, high)
 
 ### Summary for Laios
 
@@ -2911,6 +3173,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stacked resource (EX+10) — Enemies
 
 ## Lenya
+
+### Lenya's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
 
 ### Units Lenya benefits from
 
@@ -2956,6 +3223,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Lily May
 
+### Lily May's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Lily May benefits from
 
 - **Aliceth**
@@ -2997,6 +3269,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Lorsan
 
+### Lorsan's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: slow
+
 ### Units Lorsan benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -3025,6 +3302,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stun (EX+10) — Multiple targets — `high`
 
 ## Lucca
+
+### Lucca's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
 
 ### Units Lucca benefits from
 
@@ -3069,6 +3351,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stun — Area — `medium`
 
 ## Lucius
+
+### Lucius's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: normal
 
 ### Units Lucius benefits from
 
@@ -3149,6 +3436,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Lucy
 
+### Lucy's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Lucy benefits from
 
 - **Twins**
@@ -3188,6 +3480,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stun — Single target — `high`
 
 ## Ludovic
+
+### Ludovic's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: normal
 
 ### Units Ludovic benefits from
 
@@ -3230,6 +3527,11 @@ _No synergy partners matched stat buffs or enablers._
 - Revive ally — Area
 
 ## Lumont
+
+### Lumont's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
 
 ### Units Lumont benefits from
 
@@ -3289,6 +3591,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Lyca
 
+### Lyca's behavior
+
+- Movement: stationary (avg attack range 11.0 tiles)
+- Casting speed: normal
+
 ### Units Lyca benefits from
 
 - **Twins**
@@ -3347,6 +3654,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Marcille
 
+### Marcille's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
+
 ### Units Marcille benefits from
 
 - **Twins**
@@ -3394,15 +3706,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Marilee
 
+### Marilee's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Marilee benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high)
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high)
+- **Hugin**
   - ATK SPD via Haste buff (multiple targets, high)
 - **Lyca**
   - ATK SPD buff (all units, medium)
@@ -3438,6 +3754,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stun — Single target — `low`
 
 ## Mehira
+
+### Mehira's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: slow
 
 ### Units Mehira benefits from
 
@@ -3500,13 +3821,17 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Mikola
 
+### Mikola's behavior
+
+- Movement: moving (avg attack range 2.0 tiles)
+- Casting speed: slow
+
 ### Units Mikola benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
+- **Hugin**
+  - Haste buff (multiple targets, high)
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent))
 - **Zandrok**
@@ -3604,6 +3929,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Mirael
 
+### Mirael's behavior
+
+- Movement: mostly stationary (avg attack range 4.2 tiles)
+- Casting speed: normal
+
 ### Units Mirael benefits from
 
 - **Twins**
@@ -3634,6 +3964,11 @@ _No synergy partners matched stat buffs or enablers._
 - ATK SPD buff (Legendary+) — Self — `medium`
 
 ## Nara
+
+### Nara's behavior
+
+- Movement: moving (avg attack range 2.0 tiles)
+- Casting speed: fast
 
 ### Units Nara benefits from
 
@@ -3675,6 +4010,11 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected (Supreme+) — Self — Permanent
 
 ## Natsu
+
+### Natsu's behavior
+
+- Movement: stationary (avg attack range 7.0 tiles)
+- Casting speed: fast
 
 ### Units Natsu benefits from
 
@@ -3723,6 +4063,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Nazrik
 
+### Nazrik's behavior
+
+- Movement: stationary (avg attack range 10.0 tiles)
+- Casting speed: normal
+
 ### Units Nazrik benefits from
 
 - **Marilee**
@@ -3758,6 +4103,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stun — Single target — `medium`
 
 ## Nerion
+
+### Nerion's behavior
+
+- Movement: mostly stationary (avg attack range 4.1 tiles)
+- Casting speed: fast
 
 ### Units Nerion benefits from
 
@@ -3807,6 +4157,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Niru
 
+### Niru's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: normal
+
 ### Units Niru benefits from
 
 - **Aliceth**
@@ -3848,6 +4203,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Odie
 
+### Odie's behavior
+
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+- Casting speed: slow
+
 ### Units Odie benefits from
 
 - **Twins**
@@ -3878,6 +4238,11 @@ _No synergy partners matched stat buffs or enablers._
 - ATK SPD buff (Legendary+) — Self — `medium`
 
 ## Pandora
+
+### Pandora's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: slow
 
 ### Units Pandora benefits from
 
@@ -3926,15 +4291,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Pang
 
+### Pang's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Pang benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
+  - Haste buff (multiple targets, high)
+- **Hugin**
   - Haste buff (multiple targets, high)
 - **Ravion**
   - ATK buff (multiple targets, low)
@@ -3973,6 +4342,11 @@ _No synergy partners matched stat buffs or enablers._
 - Transform — Single target
 
 ## Parisa
+
+### Parisa's behavior
+
+- Movement: stationary (avg attack range 7.5 tiles)
+- Casting speed: slow
 
 ### Units Parisa benefits from
 
@@ -4015,6 +4389,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Perseus
 
+### Perseus's behavior
+
+- Movement: moving (avg attack range 2.9 tiles)
+- Casting speed: normal
+
 ### Units Perseus benefits from
 
 - **Evie**
@@ -4024,15 +4403,14 @@ _No synergy partners matched stat buffs or enablers._
   - ATK SPD via Haste buff (all units, high)
   - Max HP buff (multiple targets, high)
   - Enables Ally stat buffs via 4 ally stat buffs
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
-  - Enables Ally stat buffs via 3 ally stat buffs
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high)
   - Enables Ally stat buffs via 4 ally stat buffs
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high)
+  - Max HP via Shield (multiple targets, high)
+  - Enables Ally stat buffs via 3 ally stat buffs
 - **Contess**
   - ATK buff (single target, high)
   - Max HP via Shield (single target, medium)
@@ -4070,6 +4448,11 @@ _No synergy partners matched stat buffs or enablers._
 - Ally stat buffs (EX+10) — —
 
 ## Phraesto
+
+### Phraesto's behavior
+
+- Movement: moving (avg attack range 1.8 tiles)
+- Casting speed: slow
 
 ### Units Phraesto benefits from
 
@@ -4117,6 +4500,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Pippa
 
+### Pippa's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
+
 ### Units Pippa benefits from
 
 - **Twins**
@@ -4159,15 +4547,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Ravion
 
+### Ravion's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Ravion benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
+  - Haste buff (multiple targets, high)
+- **Hugin**
   - Haste buff (multiple targets, high)
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent))
@@ -4234,6 +4626,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Reinier
 
+### Reinier's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Reinier benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -4264,6 +4661,11 @@ _No synergy partners matched stat buffs or enablers._
 - Knock down (Mythic+) — Single target — `low`
 
 ## Rhys
+
+### Rhys's behavior
+
+- Movement: stationary (avg attack range 9.6 tiles)
+- Casting speed: normal
 
 ### Units Rhys benefits from
 
@@ -4300,6 +4702,11 @@ _No synergy partners matched stat buffs or enablers._
 - Move — Single target — `high`
 
 ## Rowan
+
+### Rowan's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: fast
 
 ### Units Rowan benefits from
 
@@ -4355,6 +4762,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Saida
 
+### Saida's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
+
 ### Units Saida benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -4394,6 +4806,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Salazer
 
+### Salazer's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: slow
+
 ### Units Salazer benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -4417,6 +4834,11 @@ _No synergy partners matched stat buffs or enablers._
 - Pin — Single target — `low`
 
 ## Satrana
+
+### Satrana's behavior
+
+- Movement: moving (avg attack range 1.5 tiles)
+- Casting speed: normal
 
 ### Units Satrana benefits from
 
@@ -4455,6 +4877,11 @@ _No synergy partners matched stat buffs or enablers._
 - Invincibility — Area
 
 ## Scarlita
+
+### Scarlita's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
 
 ### Units Scarlita benefits from
 
@@ -4500,11 +4927,13 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Seth
 
+### Seth's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
+
 ### Units Seth benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
 - **Mikola**
@@ -4513,6 +4942,8 @@ _No synergy partners matched stat buffs or enablers._
 - **Zandrok**
   - Haste buff (area, medium, conditional (frequent))
   - Lifedrain buff (area, low, conditional (frequent))
+- **Hugin**
+  - Haste buff (multiple targets, high)
 - **Ravion**
   - ATK buff (multiple targets, low)
   - Energy recovery (multiple targets, medium)
@@ -4553,6 +4984,11 @@ _No synergy partners matched stat buffs or enablers._
 - Invincibility — Single target
 
 ## Shadewing
+
+### Shadewing's behavior
+
+- Movement: moving (avg attack range 2.0 tiles)
+- Casting speed: slow
 
 ### Units Shadewing benefits from
 
@@ -4611,6 +5047,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Shakir
 
+### Shakir's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Shakir benefits from
 
 - **Twins**
@@ -4661,6 +5102,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Shemira
 
+### Shemira's behavior
+
+- Movement: mostly stationary (avg attack range 4.0 tiles)
+- Casting speed: fast
+
 ### Units Shemira benefits from
 
 - **Hewynn**
@@ -4698,6 +5144,11 @@ _No synergy partners matched stat buffs or enablers._
 - Shield (Mythic+) — Self — `low`
 
 ## Silven
+
+### Silven's behavior
+
+- Movement: stationary (avg attack range 11.0 tiles)
+- Casting speed: fast
 
 ### Units Silven benefits from
 
@@ -4750,6 +5201,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Silvina
 
+### Silvina's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Silvina benefits from
 
 - **Lucius**
@@ -4796,6 +5252,11 @@ _No synergy partners matched stat buffs or enablers._
 - Marked target (focus fire) — Single target
 
 ## Sinbad
+
+### Sinbad's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: fast
 
 ### Units Sinbad benefits from
 
@@ -4851,6 +5312,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Smokey & Meerky
 
+### Smokey & Meerky's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: slow
+
 ### Units Smokey & Meerky benefits from
 
 - **Evie**
@@ -4904,6 +5370,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Solise
 
+### Solise's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: fast
+
 ### Units Solise benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -4941,6 +5412,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Sonja
 
+### Sonja's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Sonja benefits from
 
 - **Twins**
@@ -4976,6 +5452,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stun — Single target — `low`
 
 ## Soren
+
+### Soren's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: slow
 
 ### Units Soren benefits from
 
@@ -5018,6 +5499,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Sylphira
 
+### Sylphira's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
+
 ### Units Sylphira benefits from
 
 - **Mikola**
@@ -5030,11 +5516,11 @@ _No synergy partners matched stat buffs or enablers._
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Hewynn**
   - Healing (all units, high)
+- **Isabella**
+  - Haste buff (multiple targets, low, conditional (frequent))
+  - Healing (area, high)
 
 ### Summary for Sylphira
 
@@ -5077,6 +5563,11 @@ _No synergy partners matched stat buffs or enablers._
 - Dispel debuffs (Mythic+) — Self
 
 ## Talene
+
+### Talene's behavior
+
+- Movement: moving (avg attack range 3.0 tiles)
+- Casting speed: slow
 
 ### Units Talene benefits from
 
@@ -5123,6 +5614,11 @@ _No synergy partners matched stat buffs or enablers._
 - Transform — Area
 
 ## Tasi
+
+### Tasi's behavior
+
+- Movement: stationary (avg attack range 10.0 tiles)
+- Casting speed: normal
 
 ### Units Tasi benefits from
 
@@ -5181,20 +5677,24 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Temesia
 
+### Temesia's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Temesia benefits from
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high)
   - Max HP buff (multiple targets, high)
   - Healing (single target, medium)
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high)
   - Healing over time (all units, medium)
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high)
+  - Max HP via Shield (multiple targets, high)
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
@@ -5240,6 +5740,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Thador
 
+### Thador's behavior
+
+- Movement: moving (avg attack range 0.2 tiles)
+- Casting speed: fast
+
 ### Units Thador benefits from
 
 - **Lucius**
@@ -5281,6 +5786,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Thoran
 
+### Thoran's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: normal
+
 ### Units Thoran benefits from
 
 - **Lucius**
@@ -5318,6 +5828,11 @@ _No synergy partners matched stat buffs or enablers._
 - Interrupt — Single target — `low`
 
 ## Tilaya
+
+### Tilaya's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
 
 ### Units Tilaya benefits from
 
@@ -5363,6 +5878,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Ulmus
 
+### Ulmus's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: slow
+
 ### Units Ulmus benefits from
 
 - **Lucius**
@@ -5403,6 +5923,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Vala
 
+### Vala's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: slow
+
 ### Units Vala benefits from
 
 - **Mikola**
@@ -5415,12 +5940,11 @@ _No synergy partners matched stat buffs or enablers._
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
 - **Kafra**
   - Healing over time (area, high)
   - Enables Enemy defeat via Marked target (focus fire)
+- **Hewynn**
+  - Healing (all units, high)
 
 ### Summary for Vala
 
@@ -5465,6 +5989,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Valen
 
+### Valen's behavior
+
+- Movement: moving (avg attack range 1.4 tiles)
+- Casting speed: normal
+
 ### Units Valen benefits from
 
 _No synergy partners matched stat buffs or enablers._
@@ -5500,6 +6029,11 @@ _No synergy partners matched stat buffs or enablers._
 - Invincibility — Area
 
 ## Valka
+
+### Valka's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: fast
 
 ### Units Valka benefits from
 
@@ -5563,6 +6097,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Velara
 
+### Velara's behavior
+
+- Movement: stationary (no finite attack range)
+- Casting speed: fast
+
 ### Units Velara benefits from
 
 - **Twins**
@@ -5618,6 +6157,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Viperian
 
+### Viperian's behavior
+
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+- Casting speed: normal
+
 ### Units Viperian benefits from
 
 - **Twins**
@@ -5657,6 +6201,11 @@ _No synergy partners matched stat buffs or enablers._
 - Unaffected — Self — Start of battle
 
 ## Walker
+
+### Walker's behavior
+
+- Movement: mostly stationary (avg attack range 6.0 tiles)
+- Casting speed: slow
 
 ### Units Walker benefits from
 
@@ -5706,6 +6255,11 @@ _No synergy partners matched stat buffs or enablers._
 - Stun — Single target — `medium`
 
 ## Zandrok
+
+### Zandrok's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: slow
 
 ### Units Zandrok benefits from
 
@@ -5773,6 +6327,11 @@ _No synergy partners matched stat buffs or enablers._
 
 ## Zanie
 
+### Zanie's behavior
+
+- Movement: moving (avg attack range 1.0 tiles)
+- Casting speed: slow
+
 ### Units Zanie benefits from
 
 - **Twins**
@@ -5818,6 +6377,11 @@ _No synergy partners matched stat buffs or enablers._
 - Summoning — Self
 
 ## Zorya
+
+### Zorya's behavior
+
+- Movement: high movement (repositioning skills)
+- Casting speed: normal
 
 ### Units Zorya benefits from
 
