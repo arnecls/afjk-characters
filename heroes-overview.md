@@ -92,7 +92,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Alna's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Alna benefits from
 
@@ -140,7 +140,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Alsa's behavior
 
 - Movement: moving (avg attack range 3.6 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Alsa benefits from
 
@@ -205,7 +205,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Antandra's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Antandra benefits from
 
@@ -263,7 +263,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Arden's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Arden benefits from
 
@@ -302,7 +302,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Atalanta's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Atalanta benefits from
 
@@ -356,7 +356,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Athalia's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Athalia benefits from
 
@@ -407,7 +407,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Aurora's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Aurora benefits from
 
@@ -587,7 +587,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Bonnie's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Bonnie benefits from
 
@@ -695,7 +695,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Bryon's behavior
 
 - Movement: moving (avg attack range 3.1 tiles)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Bryon benefits from
 
@@ -753,7 +753,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Callan's behavior
 
 - Movement: moving (avg attack range 1.7 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Callan benefits from
 
@@ -862,7 +862,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Cassadee's behavior
 
 - Movement: mostly stationary (avg attack range 5.2 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Cassadee benefits from
 
@@ -990,7 +990,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Chippy's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Chippy benefits from
 
@@ -1008,7 +1008,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Contess's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Contess benefits from
 
@@ -1076,7 +1076,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Cryonaia's behavior
 
 - Movement: moving (avg attack range 3.1 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Cryonaia benefits from
 
@@ -1135,7 +1135,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Cyran's behavior
 
 - Movement: mostly stationary (avg attack range 6.0 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Cyran benefits from
 
@@ -1193,7 +1193,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Daimon's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Daimon benefits from
 
@@ -1223,7 +1223,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Damian's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Damian benefits from
 
@@ -1445,7 +1445,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Eironn's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Eironn benefits from
 
@@ -1490,7 +1490,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Twins's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Twins benefits from
 
@@ -1613,7 +1613,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Evie's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Evie benefits from
 
@@ -1738,7 +1738,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Fay's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Fay benefits from
 
@@ -1788,7 +1788,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Florabelle's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Florabelle benefits from
 
@@ -1857,7 +1857,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Frieren's behavior
 
 - Movement: stationary (avg attack range 7.0 tiles)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Frieren benefits from
 
@@ -1906,7 +1906,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Gala's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Gala benefits from
 
@@ -1974,7 +1974,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Gerda's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Gerda benefits from
 
@@ -2064,7 +2064,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Gunnar's behavior
 
 - Movement: moving (avg attack range 3.0 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Gunnar benefits from
 
@@ -2118,7 +2118,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Gwyneth's behavior
 
 - Movement: stationary (avg attack range 8.0 tiles)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Gwyneth benefits from
 
@@ -2165,7 +2165,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Hammie's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Hammie benefits from
 
@@ -2263,7 +2263,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Hepler's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Hepler benefits from
 
@@ -2335,7 +2335,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Hewynn's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Hewynn benefits from
 
@@ -2388,7 +2388,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Himmel's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Himmel benefits from
 
@@ -2499,7 +2499,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Hugin's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Hugin benefits from
 
@@ -2653,7 +2653,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Indris's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Indris benefits from
 
@@ -2720,7 +2720,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Isabella's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Isabella benefits from
 
@@ -2785,7 +2785,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Kafra's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Kafra benefits from
 
@@ -2916,7 +2916,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Kordan's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Kordan benefits from
 
@@ -3020,7 +3020,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Kruger's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Kruger benefits from
 
@@ -3060,7 +3060,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Kulu's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Kulu benefits from
 
@@ -3110,7 +3110,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Laios's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Laios benefits from
 
@@ -3177,7 +3177,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Lenya's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Lenya benefits from
 
@@ -3306,7 +3306,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucca's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Lucca benefits from
 
@@ -3355,7 +3355,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucius's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Lucius benefits from
 
@@ -3439,7 +3439,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucy's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Lucy benefits from
 
@@ -3484,7 +3484,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Ludovic's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Ludovic benefits from
 
@@ -3594,7 +3594,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Lyca's behavior
 
 - Movement: stationary (avg attack range 11.0 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Lyca benefits from
 
@@ -3709,7 +3709,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Marilee's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Marilee benefits from
 
@@ -4014,7 +4014,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Natsu's behavior
 
 - Movement: stationary (avg attack range 7.0 tiles)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Natsu benefits from
 
@@ -4107,7 +4107,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Nerion's behavior
 
 - Movement: mostly stationary (avg attack range 4.1 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Nerion benefits from
 
@@ -4160,7 +4160,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Niru's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Niru benefits from
 
@@ -4206,7 +4206,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Odie's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Odie benefits from
 
@@ -4294,7 +4294,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Pang's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Pang benefits from
 
@@ -4346,7 +4346,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Parisa's behavior
 
 - Movement: stationary (avg attack range 7.5 tiles)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Parisa benefits from
 
@@ -4503,7 +4503,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Pippa's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: fast
+- Casting speed: normal
 
 ### Units Pippa benefits from
 
@@ -4550,7 +4550,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Ravion's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Ravion benefits from
 
@@ -4665,7 +4665,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Rhys's behavior
 
 - Movement: stationary (avg attack range 9.6 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Rhys benefits from
 
@@ -4809,7 +4809,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Salazer's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Salazer benefits from
 
@@ -5105,7 +5105,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Shemira's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Shemira benefits from
 
@@ -5315,7 +5315,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Smokey & Meerky's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Smokey & Meerky benefits from
 
@@ -5415,7 +5415,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Sonja's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Sonja benefits from
 
@@ -5502,7 +5502,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Sylphira's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Sylphira benefits from
 
@@ -5567,7 +5567,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Talene's behavior
 
 - Movement: moving (avg attack range 3.0 tiles)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Talene benefits from
 
@@ -5618,7 +5618,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Tasi's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Tasi benefits from
 
@@ -5680,7 +5680,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Temesia's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Temesia benefits from
 
@@ -5743,7 +5743,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Thador's behavior
 
 - Movement: moving (avg attack range 0.2 tiles)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Thador benefits from
 
@@ -5789,7 +5789,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Thoran's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Thoran benefits from
 
@@ -5832,7 +5832,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Tilaya's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Tilaya benefits from
 
@@ -5992,7 +5992,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Valen's behavior
 
 - Movement: moving (avg attack range 1.4 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Valen benefits from
 
@@ -6100,7 +6100,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Velara's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: fast
+- Casting speed: slow
 
 ### Units Velara benefits from
 
@@ -6160,7 +6160,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Viperian's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Viperian benefits from
 
@@ -6205,7 +6205,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Walker's behavior
 
 - Movement: mostly stationary (avg attack range 6.0 tiles)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Walker benefits from
 
@@ -6259,7 +6259,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Zandrok's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Casting speed: normal
 
 ### Units Zandrok benefits from
 
@@ -6381,7 +6381,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Zorya's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Casting speed: slow
 
 ### Units Zorya benefits from
 

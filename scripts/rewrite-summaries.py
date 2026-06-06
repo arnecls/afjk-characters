@@ -2626,12 +2626,34 @@ HIGH_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"\bmoves? to a\b", re.I),
 )
 
+# Energy assumed to fill at this rate (energy/second).
+ENERGY_FILL_RATE: float = 100.0
+ULT_ENERGY_CAPACITY: float = 1000.0
+
+# Weight applied to initial_cd of non-ult skills (first-use delay
+# matters less than sustained cooldown).
+INITIAL_CD_SKILL_WEIGHT: float = 0.5
+
+# Cap absurdly large initial_cd values (e.g. Baelran Skill1 = 9999s).
+INITIAL_CD_CAP: float = 60.0
+
+# Absolute thresholds for the weighted composite (seconds).
+# Lower values = faster.
+CASTING_SPEED_FAST_THRESHOLD: float = 5.0
+CASTING_SPEED_SLOW_THRESHOLD: float = 8.5
+
 CASTING_WEIGHTS: dict[str, float] = {
     "ult": 0.5,
     "skill1": 0.25,
     "skill2": 0.15,
     "ex": 0.10,
 }
+
+_CHANNEL_DURATION_RE = re.compile(
+    r"\bfor\s+(\d+(?:\.\d+)?)\s*(?:\+\s*[\d.]+\s*)?s\b",
+    re.I,
+)
+_CHANNEL_DURATION_CAP = 30.0
 
 # No listed cooldown => highest usage frequency for range weighting.
 _NO_CD_FREQUENCY_WEIGHT = 2.0
@@ -2645,6 +2667,7 @@ class SkillMeta:
     cooldown: float | None
     initial_cd: float | None
     initial_energy: float | None
+    channel_duration: float | None
     text: str
 
 
@@ -2738,6 +2761,7 @@ def load_skill_meta(block: str) -> list[SkillMeta]:
                 range_tiles = _parse_meta_number(rng)
 
         text_lines: list[str] = []
+        channel_duration: float | None = None
         for ln in part.splitlines():
             if ln.startswith("### "):
                 continue
@@ -2749,10 +2773,20 @@ def load_skill_meta(block: str) -> list[SkillMeta]:
             ):
                 continue
             if ln.startswith("- Level"):
-                continue
+                break
             if ln.strip():
                 text_lines.append(ln.strip())
         text = " ".join(text_lines)
+
+        if section == "Ultimate" and text:
+            durations = [
+                float(m.group(1))
+                for m in _CHANNEL_DURATION_RE.finditer(text)
+            ]
+            if durations:
+                channel_duration = min(
+                    max(durations), _CHANNEL_DURATION_CAP
+                )
 
         skills.append(
             SkillMeta(
@@ -2762,6 +2796,7 @@ def load_skill_meta(block: str) -> list[SkillMeta]:
                 cooldown=cooldown,
                 initial_cd=initial_cd,
                 initial_energy=initial_energy,
+                channel_duration=channel_duration,
                 text=text,
             )
         )
@@ -2844,85 +2879,59 @@ def _skill_by_section(
     return None
 
 
-def _normalize_minmax(values: list[float | None]) -> dict[int, float]:
-    present = [(i, v) for i, v in enumerate(values) if v is not None]
-    if not present:
-        return {}
-    nums = [v for _, v in present]
-    lo, hi = min(nums), max(nums)
-    if hi == lo:
-        return {i: 0.5 for i, _ in present}
-    return {i: (v - lo) / (hi - lo) for i, v in present}
+def _skill_casting_time(skill: SkillMeta | None) -> float:
+    """Cooldown plus weighted initial delay for a non-ult skill."""
+    if skill is None:
+        return 0.0
+    cd = skill.cooldown or 0.0
+    icd = min(skill.initial_cd or 0.0, INITIAL_CD_CAP)
+    return cd + icd * INITIAL_CD_SKILL_WEIGHT
 
 
 def compute_casting_scores(
     skills_by_title: dict[str, list[SkillMeta]],
 ) -> dict[str, float]:
-    """Higher score = faster casting (global min-max per component)."""
-    titles = list(skills_by_title.keys())
-    ult_raw: list[float | None] = []
-    s1_raw: list[float | None] = []
-    s2_raw: list[float | None] = []
-    ex_raw: list[float | None] = []
-
-    for title in titles:
-        skills = skills_by_title[title]
+    """Higher value = slower (raw weighted seconds)."""
+    scores: dict[str, float] = {}
+    for title, skills in skills_by_title.items():
         ult = _skill_by_section(skills, "Ultimate")
         s1 = _skill_by_section(skills, "Skill1")
         s2 = _skill_by_section(skills, "Skill2")
         ex = _skill_by_section(skills, "Ex. Skill")
 
-        u_val: float | None = None
-        if ult:
-            if ult.initial_energy is not None:
-                u_val = ult.initial_energy
-            elif ult.cooldown is not None:
-                u_val = -ult.cooldown
-        ult_raw.append(u_val)
+        ie = (
+            ult.initial_energy
+            if ult and ult.initial_energy is not None
+            else 0.0
+        )
+        icd_ult = (ult.initial_cd or 0.0) if ult else 0.0
+        ch = (ult.channel_duration or 0.0) if ult else 0.0
+        ult_t = (
+            icd_ult
+            + (ULT_ENERGY_CAPACITY - ie) / ENERGY_FILL_RATE
+            + ch
+        )
 
-        s1_raw.append(-s1.cooldown if s1 and s1.cooldown is not None else None)
-        s2_raw.append(-s2.cooldown if s2 and s2.cooldown is not None else None)
-        ex_raw.append(-ex.cooldown if ex and ex.cooldown is not None else None)
-
-    ult_norm = _normalize_minmax(ult_raw)
-    s1_norm = _normalize_minmax(s1_raw)
-    s2_norm = _normalize_minmax(s2_raw)
-    ex_norm = _normalize_minmax(ex_raw)
-
-    scores: dict[str, float] = {}
-    components = (
-        ("ult", ult_norm, CASTING_WEIGHTS["ult"]),
-        ("skill1", s1_norm, CASTING_WEIGHTS["skill1"]),
-        ("skill2", s2_norm, CASTING_WEIGHTS["skill2"]),
-        ("ex", ex_norm, CASTING_WEIGHTS["ex"]),
-    )
-
-    for idx, title in enumerate(titles):
-        total = 0.0
-        weight_sum = 0.0
-        for _name, norm_map, weight in components:
-            if idx in norm_map:
-                total += norm_map[idx] * weight
-                weight_sum += weight
-        scores[title] = total / weight_sum if weight_sum else 0.5
+        composite = (
+            CASTING_WEIGHTS["ult"] * ult_t
+            + CASTING_WEIGHTS["skill1"] * _skill_casting_time(s1)
+            + CASTING_WEIGHTS["skill2"] * _skill_casting_time(s2)
+            + CASTING_WEIGHTS["ex"] * _skill_casting_time(ex)
+        )
+        scores[title] = composite
     return scores
 
 
-def casting_terciles(scores: dict[str, float]) -> dict[str, str]:
-    """Split roster into fast / normal / slow thirds by casting score."""
-    ranked = sorted(scores.items(), key=lambda x: (-x[1], x[0]))
-    n = len(ranked)
-    if n == 0:
-        return {}
-    third = n / 3.0
+def casting_speed_labels(scores: dict[str, float]) -> dict[str, str]:
+    """Classify heroes by absolute composite-time thresholds."""
     labels: dict[str, str] = {}
-    for i, (title, _) in enumerate(ranked):
-        if i < third:
+    for title, score in scores.items():
+        if score <= CASTING_SPEED_FAST_THRESHOLD:
             labels[title] = "fast"
-        elif i < 2 * third:
-            labels[title] = "normal"
-        else:
+        elif score >= CASTING_SPEED_SLOW_THRESHOLD:
             labels[title] = "slow"
+        else:
+            labels[title] = "normal"
     return labels
 
 
@@ -2951,7 +2960,7 @@ def build_behavior_for_heroes(
         skills_by_title[hero.title] = load_skill_meta(block)
 
     casting_scores = compute_casting_scores(skills_by_title)
-    casting_labels = casting_terciles(casting_scores)
+    casting_labels = casting_speed_labels(casting_scores)
 
     result: dict[str, HeroBehavior] = {}
     for hero in heroes:

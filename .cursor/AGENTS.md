@@ -139,11 +139,17 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   to [Heroes.md](Heroes.md) when a hero is missing (aliases: Twins →
   Elijah & Lailah, Gala → Galahad). Rules in `compute_movement()` in
   `rewrite-summaries.py`.
-- **Casting speed** — `slow`, `normal`, or `fast`. Global terciles from a
-  weighted score: Ultimate `Initial Energy` (higher = faster ult) or
-  Ultimate cooldown when listed; Skill1/Skill2/Ex cooldowns (lower =
-  faster). Weights: ult 50%, skill1 25%, skill2 15%, ex 10%.
-  `compute_casting_scores()` / `casting_terciles()` in
+- **Casting speed** — `slow`, `normal`, or `fast`. Weighted composite
+  time in seconds (higher = slower), then absolute thresholds (not
+  roster terciles). Ultimate component (50%): `initial_cd` +
+  `(ULT_ENERGY_CAPACITY - Initial Energy) / ENERGY_FILL_RATE` +
+  channel duration parsed from ult text (`for Xs`). Skill1/Skill2/Ex
+  (25% / 15% / 10%): cooldown + `initial_cd * INITIAL_CD_SKILL_WEIGHT`.
+  Tunables in `rewrite-summaries.py`: `ENERGY_FILL_RATE` (100),
+  `ULT_ENERGY_CAPACITY` (1000), `INITIAL_CD_SKILL_WEIGHT` (0.5),
+  `INITIAL_CD_CAP` (60), `CASTING_SPEED_FAST_THRESHOLD` (5.0 s),
+  `CASTING_SPEED_SLOW_THRESHOLD` (8.5 s).
+  `compute_casting_scores()` / `casting_speed_labels()` in
   `rewrite-summaries.py`.
 
 Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).
