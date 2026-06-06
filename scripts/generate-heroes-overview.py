@@ -351,6 +351,19 @@ def provider_early_battle_ally_energy(
     return best
 
 
+def is_energy_provider(provider: _rs.Hero) -> bool:
+    """True when the hero grants ally Energy (ongoing or at battle start)."""
+    if provider_early_battle_ally_energy(provider):
+        return True
+    return any(
+        e.category == "buff"
+        and e.label == "Energy recovery"
+        and e.targeting in ALLY_TARGETINGS
+        and e.conditional != "rare"
+        for e in provider.effects
+    )
+
+
 def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
     """Early Energy helps when the curated signature Ultimate is slow."""
     return (

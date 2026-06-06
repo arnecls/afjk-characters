@@ -5,12 +5,15 @@ from __future__ import annotations
 
 import argparse
 import csv
+import importlib.util
 import re
+import sys
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SCRIPTS = Path(__file__).resolve().parent
 DEFAULT_INPUT = ROOT / "heroes-overview.md"
 DEFAULT_OUTPUT = ROOT / "heroes-overview.csv"
 
@@ -89,7 +92,16 @@ BUFF_COLUMN_SET = frozenset(BUFF_TYPES)
 DEBUFF_COLUMN_SET = frozenset(DEBUFF_TYPES)
 
 COLUMNS: list[str] = (
-    ["Name", "Movement", "Signature skill speed", "Non-ultimate speed", "DoT", "HoT", "Summons"]
+    [
+        "Name",
+        "Movement",
+        "Signature skill speed",
+        "Non-ultimate speed",
+        "DoT",
+        "HoT",
+        "Summons",
+        "Energy provider",
+    ]
     + [col for _, col in DAMAGE_TYPES]
     + ["Healing", "Shields"]
     + CC_TYPES
@@ -117,6 +129,7 @@ class HeroRow:
     movement: str = ""
     signature_skill_speed: str = ""
     non_ult_speed: str = ""
+    energy_provider: bool = False
     flags: dict[str, bool] = field(default_factory=dict)
     cells: dict[str, list[str]] = field(default_factory=lambda: defaultdict(list))
 
@@ -195,7 +208,43 @@ def parse_behavior(block: str) -> tuple[str, str, str]:
     return movement, defining_skill_speed, non_ult_speed
 
 
-def parse_hero_block(name: str, block: str) -> HeroRow | None:
+def _load_energy_provider_names() -> frozenset[str]:
+    """Short names of heroes that grant ally Energy (shared synergy logic)."""
+    spec = importlib.util.spec_from_file_location(
+        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
+    )
+    rs = importlib.util.module_from_spec(spec)
+    sys.modules["rewrite_summaries"] = rs
+    assert spec.loader is not None
+    spec.loader.exec_module(rs)
+
+    spec = importlib.util.spec_from_file_location(
+        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
+    )
+    gen = importlib.util.module_from_spec(spec)
+    sys.modules["gen_overview"] = gen
+    assert spec.loader is not None
+    spec.loader.exec_module(gen)
+
+    text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
+    blocks = [
+        b if b.startswith("## ") else "## " + b
+        for b in text.split("\n## ")
+        if b.strip()
+    ]
+    names: set[str] = set()
+    for block in blocks:
+        if not block.startswith("## "):
+            continue
+        hero = rs.parse_hero_block(block)
+        if gen.is_energy_provider(hero):
+            names.add(gen.short_name(hero.title))
+    return frozenset(names)
+
+
+def parse_hero_block(
+    name: str, block: str, energy_providers: frozenset[str]
+) -> HeroRow | None:
     summary_match = SUMMARY_RE.search(block)
     if not summary_match:
         return None
@@ -206,6 +255,7 @@ def parse_hero_block(name: str, block: str) -> HeroRow | None:
         movement=movement,
         signature_skill_speed=signature_skill_speed,
         non_ult_speed=non_ult_speed,
+        energy_provider=name in energy_providers,
     )
     summary = block[summary_match.start() :]
 
@@ -260,7 +310,9 @@ def parse_hero_block(name: str, block: str) -> HeroRow | None:
     return row
 
 
-def parse_overview(text: str) -> list[HeroRow]:
+def parse_overview(
+    text: str, energy_providers: frozenset[str]
+) -> list[HeroRow]:
     heroes: list[HeroRow] = []
     hero_matches = list(HERO_RE.finditer(text))
     for idx, match in enumerate(hero_matches):
@@ -268,7 +320,7 @@ def parse_overview(text: str) -> list[HeroRow]:
         start = match.end()
         end = hero_matches[idx + 1].start() if idx + 1 < len(hero_matches) else len(text)
         block = text[start:end]
-        row = parse_hero_block(name, block)
+        row = parse_hero_block(name, block, energy_providers)
         if row is not None:
             heroes.append(row)
     return heroes
@@ -286,6 +338,7 @@ def row_to_csv(row: HeroRow) -> list[str]:
     out = [row.name, row.movement, row.signature_skill_speed, row.non_ult_speed]
     for flag in ("DoT", "HoT", "Summons"):
         out.append(format_flag(row.flags.get(flag, False)))
+    out.append(format_flag(row.energy_provider))
     for _, col in DAMAGE_TYPES:
         out.append(join_cell(row.cells.get(col, [])))
     out.append(join_cell(row.cells.get("Healing", [])))
@@ -295,8 +348,8 @@ def row_to_csv(row: HeroRow) -> list[str]:
     return out
 
 
-def convert(text: str) -> list[list[str]]:
-    rows = parse_overview(text)
+def convert(text: str, energy_providers: frozenset[str]) -> list[list[str]]:
+    rows = parse_overview(text, energy_providers)
     return [row_to_csv(row) for row in rows]
 
 
@@ -321,7 +374,8 @@ def main() -> None:
     args = parser.parse_args()
 
     text = args.input.read_text(encoding="utf-8")
-    data = convert(text)
+    energy_providers = _load_energy_provider_names()
+    data = convert(text, energy_providers)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", encoding="utf-8", newline="") as fh:
