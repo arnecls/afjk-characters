@@ -89,7 +89,7 @@ BUFF_COLUMN_SET = frozenset(BUFF_TYPES)
 DEBUFF_COLUMN_SET = frozenset(DEBUFF_TYPES)
 
 COLUMNS: list[str] = (
-    ["Name", "Movement", "Defining skill speed", "Non-ultimate speed", "DoT", "HoT", "Summons"]
+    ["Name", "Movement", "Signature skill speed", "Non-ultimate speed", "DoT", "HoT", "Summons"]
     + [col for _, col in DAMAGE_TYPES]
     + ["Healing", "Shields"]
     + CC_TYPES
@@ -102,7 +102,7 @@ SUMMARY_RE = re.compile(r"^### Summary for ", re.M)
 HERO_RE = re.compile(r"^## ([^\n]+)$", re.M)
 MOVEMENT_RE = re.compile(r"^- Movement: ([^\n]+)$", re.M)
 CASTING_SPEED_RE = re.compile(r"^- Casting speed: (\w+)$", re.M)
-DEFINING_SKILL_SPEED_RE = re.compile(r"^- Defining skill speed: (\w+)$", re.M)
+DEFINING_SKILL_SPEED_RE = re.compile(r"^- Signature skill speed: (\w+)$", re.M)
 NON_ULT_SPEED_RE = re.compile(r"^- Non-ultimate speed: (\w+)$", re.M)
 SECTION_RE = re.compile(r"^#### (.+)$", re.M)
 BULLET_RE = re.compile(r"^- (.+)$", re.M)
@@ -115,7 +115,7 @@ TIER_SUFFIX_RE = re.compile(r" \([^)]+\)$")
 class HeroRow:
     name: str
     movement: str = ""
-    defining_skill_speed: str = ""
+    signature_skill_speed: str = ""
     non_ult_speed: str = ""
     flags: dict[str, bool] = field(default_factory=dict)
     cells: dict[str, list[str]] = field(default_factory=lambda: defaultdict(list))
@@ -178,9 +178,9 @@ def section_kind(heading: str, hero_name: str) -> str | None:
 
 
 def parse_behavior(block: str) -> tuple[str, str, str]:
-    """Return movement, defining skill speed, non-ultimate speed."""
+    """Return movement, signature skill speed, non-ultimate speed."""
     movement = ""
-    defining_skill_speed = ""
+    defining_skill_speed = ""  # local name kept for legacy fallback logic
     non_ult_speed = ""
     if m := MOVEMENT_RE.search(block):
         # "stationary (no finite attack range)" -> "stationary"
@@ -189,7 +189,7 @@ def parse_behavior(block: str) -> tuple[str, str, str]:
         defining_skill_speed = m.group(1).strip()
     if m := NON_ULT_SPEED_RE.search(block):
         non_ult_speed = m.group(1).strip()
-    # Legacy single casting-speed line (pre-defining-skill overview).
+    # Legacy single casting-speed line (pre-signature-skill overview).
     if not defining_skill_speed and (m := CASTING_SPEED_RE.search(block)):
         defining_skill_speed = m.group(1).strip()
     return movement, defining_skill_speed, non_ult_speed
@@ -200,11 +200,11 @@ def parse_hero_block(name: str, block: str) -> HeroRow | None:
     if not summary_match:
         return None
 
-    movement, defining_skill_speed, non_ult_speed = parse_behavior(block)
+    movement, signature_skill_speed, non_ult_speed = parse_behavior(block)
     row = HeroRow(
         name=name,
         movement=movement,
-        defining_skill_speed=defining_skill_speed,
+        signature_skill_speed=signature_skill_speed,
         non_ult_speed=non_ult_speed,
     )
     summary = block[summary_match.start() :]
@@ -283,7 +283,7 @@ def join_cell(values: list[str]) -> str:
 
 
 def row_to_csv(row: HeroRow) -> list[str]:
-    out = [row.name, row.movement, row.defining_skill_speed, row.non_ult_speed]
+    out = [row.name, row.movement, row.signature_skill_speed, row.non_ult_speed]
     for flag in ("DoT", "HoT", "Summons"):
         out.append(format_flag(row.flags.get(flag, False)))
     for _, col in DAMAGE_TYPES:

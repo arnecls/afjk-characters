@@ -2740,10 +2740,10 @@ class HeroBehavior:
     movement: str
     movement_note: str
     casting_speed: str
-    defining_skill_name: str = ""
-    defining_skill_is_ult: bool = False
-    defining_skill_description: str = ""
-    defining_skill_speed: str = ""
+    signature_skill_name: str = ""
+    signature_skill_is_ult: bool = False
+    signature_skill_description: str = ""
+    signature_skill_speed: str = ""
     ult_speed: str = ""
     non_ult_speed: str = ""
 
@@ -3125,7 +3125,7 @@ NON_ULT_CASTING_WEIGHTS: dict[str, float] = {
     "ex": 0.20,
 }
 
-DEFINING_SKILL_SECTION_KEYS: dict[str, str] = {
+SIGNATURE_SKILL_SECTION_KEYS: dict[str, str] = {
     "Ultimate": "ult",
     "Skill1": "skill1",
     "Skill2": "skill2",
@@ -3173,13 +3173,13 @@ def compute_per_skill_speeds(
     return result
 
 
-def _load_defining_skills() -> dict[str, dict]:
+def _load_signature_skills() -> dict[str, dict]:
     if not DEFINING_SKILLS_FILE.exists():
         return {}
     return json.loads(DEFINING_SKILLS_FILE.read_text(encoding="utf-8"))
 
 
-def _defining_skill_speed_label(
+def _signature_skill_speed_label(
     defining: dict | None,
     per_skill: dict[str, str],
 ) -> str:
@@ -3189,7 +3189,7 @@ def _defining_skill_speed_label(
     if override := defining.get("speed_override"):
         return override
     section = defining.get("section", "Ultimate")
-    key = DEFINING_SKILL_SECTION_KEYS.get(section, "ult")
+    key = SIGNATURE_SKILL_SECTION_KEYS.get(section, "ult")
     return per_skill.get(key, "normal")
 
 
@@ -3220,7 +3220,7 @@ def build_behavior_for_heroes(
     casting_scores = compute_casting_scores(skills_by_title)
     casting_labels = casting_speed_labels(casting_scores)
     per_skill_speeds = compute_per_skill_speeds(skills_by_title)
-    defining_by_display = _load_defining_skills()
+    defining_by_display = _load_signature_skills()
 
     result: dict[str, HeroBehavior] = {}
     for hero in heroes:
@@ -3235,10 +3235,10 @@ def build_behavior_for_heroes(
                 movement=movement,
                 movement_note=note,
                 casting_speed=casting_labels.get(hero.title, "normal"),
-                defining_skill_name=defining.get("name", ""),
-                defining_skill_is_ult=bool(defining.get("is_ultimate")),
-                defining_skill_description=defining.get("description", ""),
-                defining_skill_speed=_defining_skill_speed_label(
+                signature_skill_name=defining.get("name", ""),
+                signature_skill_is_ult=bool(defining.get("is_ultimate")),
+                signature_skill_description=defining.get("description", ""),
+                signature_skill_speed=_signature_skill_speed_label(
                     defining, speeds
                 ),
                 ult_speed=speeds.get("ult", "normal"),
@@ -3258,16 +3258,16 @@ def build_behavior_for_heroes(
 def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
     lines.append(f"- Movement: {behavior.movement} ({behavior.movement_note})")
-    if behavior.defining_skill_name:
+    if behavior.signature_skill_name:
         ult_suffix = (
-            " (ultimate)" if behavior.defining_skill_is_ult else ""
+            " (ultimate)" if behavior.signature_skill_is_ult else ""
         )
         lines.append(
-            f"- Defining skill: {behavior.defining_skill_name}{ult_suffix}"
-            f" — {behavior.defining_skill_description}"
+            f"- Signature skill: {behavior.signature_skill_name}{ult_suffix}"
+            f" — {behavior.signature_skill_description}"
         )
         lines.append(
-            f"- Defining skill speed: {behavior.defining_skill_speed}"
+            f"- Signature skill speed: {behavior.signature_skill_speed}"
         )
         lines.append(f"- Ultimate speed: {behavior.ult_speed}")
         lines.append(f"- Non-ultimate speed: {behavior.non_ult_speed}")

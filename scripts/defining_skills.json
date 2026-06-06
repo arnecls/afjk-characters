@@ -447,16 +447,17 @@
     "description": "AoE damage + ally heal"
   },
   "Odie": {
-    "section": "Ultimate",
-    "name": "Corrosive Dart",
-    "is_ultimate": true,
-    "description": "undispellable poison DoT"
+    "section": "Ex. Skill",
+    "name": "Heart Crusher",
+    "is_ultimate": false,
+    "description": "instantly defeat below poison threshold"
   },
   "Pandora": {
-    "section": "Ultimate",
-    "name": "Panic Projection",
-    "is_ultimate": true,
-    "description": "frighten all units"
+    "section": "Skill1",
+    "name": "Boxed Blessing",
+    "is_ultimate": false,
+    "description": "pull ally into box at start",
+    "speed_override": "fast"
   },
   "Pang": {
     "section": "Ultimate",
@@ -477,10 +478,11 @@
     "description": "march + continuous knockback"
   },
   "Phraesto": {
-    "section": "Ultimate",
-    "name": "Futile Echo",
-    "is_ultimate": true,
-    "description": "deploy illusion clone"
+    "section": "Skill1",
+    "name": "Crimson Contract",
+    "is_ultimate": false,
+    "description": "buff two allies at battle start",
+    "speed_override": "fast"
   },
   "Pippa": {
     "section": "Ultimate",
@@ -531,10 +533,10 @@
     "description": "area fire burn damage"
   },
   "Scarlita": {
-    "section": "Ultimate",
-    "name": "Divine Quake",
-    "is_ultimate": true,
-    "description": "aerial dive + area damage"
+    "section": "Ex. Skill",
+    "name": "Divine Wrath",
+    "is_ultimate": false,
+    "description": "instantly defeat low-HP enemies"
   },
   "Seth": {
     "section": "Ultimate",
@@ -592,10 +594,11 @@
     "description": "AoE healing waves"
   },
   "Sonja": {
-    "section": "Ultimate",
-    "name": "Tempest Thrusts",
-    "is_ultimate": true,
-    "description": "area multi-hit + current HP damage"
+    "section": "Skill1",
+    "name": "Crimson Covenant",
+    "is_ultimate": false,
+    "description": "ATK + DEF buff two flanking allies",
+    "speed_override": "fast"
   },
   "Soren": {
     "section": "Ultimate",
@@ -698,10 +701,11 @@
     "description": "multi-target burst shots"
   },
   "Zandrok": {
-    "section": "Ultimate",
-    "name": "Savage Slash",
-    "is_ultimate": true,
-    "description": "high single-target melee"
+    "section": "Skill1",
+    "name": "Rallying Roar",
+    "is_ultimate": false,
+    "description": "destroy obstacles + inspire allies",
+    "speed_override": "fast"
   },
   "Zanie": {
     "section": "Ultimate",

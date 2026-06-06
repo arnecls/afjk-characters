@@ -14,8 +14,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Aliceth's behavior
 
 - Movement: stationary (avg attack range 8.0 tiles)
-- Defining skill: Radiant Rain (ultimate) — aerial area arrow rain
-- Defining skill speed: slow
+- Signature skill: Radiant Rain (ultimate) — aerial area arrow rain
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -95,8 +95,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Alna's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Winter Anthem (ultimate) — battle-start area blizzard
-- Defining skill speed: fast
+- Signature skill: Winter Anthem (ultimate) — battle-start area blizzard
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -146,8 +146,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Alsa's behavior
 
 - Movement: mostly stationary (avg attack range 6.0 tiles)
-- Defining skill: Twirling Rocks (ultimate) — area physical rock damage
-- Defining skill speed: slow
+- Signature skill: Twirling Rocks (ultimate) — area physical rock damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -214,8 +214,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Antandra's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Shield Assault (ultimate) — charge + area knockback
-- Defining skill speed: slow
+- Signature skill: Shield Assault (ultimate) — charge + area knockback
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -275,8 +275,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Arden's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Force of Nature (ultimate) — area nature damage burst
-- Defining skill speed: slow
+- Signature skill: Force of Nature (ultimate) — area nature damage burst
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -317,8 +317,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Atalanta's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Wild Sniper (ultimate) — dash + line stun shot
-- Defining skill speed: slow
+- Signature skill: Wild Sniper (ultimate) — dash + line stun shot
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -374,8 +374,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Athalia's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Unbroken Retribution (ultimate) — post-death attacking lance
-- Defining skill speed: normal
+- Signature skill: Unbroken Retribution (ultimate) — post-death attacking lance
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: normal
 
@@ -428,8 +428,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Aurora's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Starlit Slumber (ultimate) — sleep all enemies
-- Defining skill speed: slow
+- Signature skill: Starlit Slumber (ultimate) — sleep all enemies
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -502,8 +502,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Baelran's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Celestial Rise (ultimate) — HP-based shield + transform
-- Defining skill speed: fast
+- Signature skill: Celestial Rise (ultimate) — HP-based shield + transform
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -568,8 +568,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Berial's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Scared Swamp (ultimate) — shadow dive + area frighten
-- Defining skill speed: slow
+- Signature skill: Scared Swamp (ultimate) — shadow dive + area frighten
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -617,8 +617,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Bonnie's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Decay's Reach — battle-start aging debuff
-- Defining skill speed: fast
+- Signature skill: Decay's Reach — battle-start aging debuff
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -682,8 +682,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Brutus's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Whirlwind Wrath (ultimate) — area spin damage
-- Defining skill speed: slow
+- Signature skill: Whirlwind Wrath (ultimate) — area spin damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -731,8 +731,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Bryon's behavior
 
 - Movement: stationary (summon moves)
-- Defining skill: Falcon Raid (ultimate) — falcon area dive damage
-- Defining skill speed: fast
+- Signature skill: Falcon Raid (ultimate) — falcon area dive damage
+- Signature skill speed: fast
 - Ultimate speed: fast
 - Non-ultimate speed: slow
 
@@ -792,8 +792,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Callan's behavior
 
 - Movement: moving (avg attack range 1.7 tiles)
-- Defining skill: Restless Guardian (ultimate) — absorb ally damage shield
-- Defining skill speed: fast
+- Signature skill: Restless Guardian (ultimate) — absorb ally damage shield
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -853,8 +853,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Carolina's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Defining skill: Frozen Grave (ultimate) — freeze + bury area
-- Defining skill speed: slow
+- Signature skill: Frozen Grave (ultimate) — freeze + bury area
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -907,8 +907,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Cassadee's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Defining skill: Running Tide (ultimate) — tidal wave knockback
-- Defining skill speed: slow
+- Signature skill: Running Tide (ultimate) — tidal wave knockback
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -968,8 +968,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Cecia's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Defining skill: Queen's Summons (ultimate) — summon AoE damage unit
-- Defining skill speed: slow
+- Signature skill: Queen's Summons (ultimate) — summon AoE damage unit
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -1041,8 +1041,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Chippy's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Brothers-in-arms (ultimate) — summon support ally
-- Defining skill speed: slow
+- Signature skill: Brothers-in-arms (ultimate) — summon support ally
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -1062,8 +1062,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Contess's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Detention Pass (ultimate) — stealth start + punish
-- Defining skill speed: fast
+- Signature skill: Detention Pass (ultimate) — stealth start + punish
+- Signature skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -1133,8 +1133,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Cryonaia's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Defining skill: Frostveil Domain (ultimate) — area frost slow field
-- Defining skill speed: slow
+- Signature skill: Frostveil Domain (ultimate) — area frost slow field
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -1196,8 +1196,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Cyran's behavior
 
 - Movement: mostly stationary (avg attack range 6.0 tiles)
-- Defining skill: Gravitic Requiem (ultimate) — pull all + execute low HP
-- Defining skill speed: slow
+- Signature skill: Gravitic Requiem (ultimate) — pull all + execute low HP
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -1257,8 +1257,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Daimon's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Buddy Barrier — shield + ATK buff ally behind
-- Defining skill speed: fast
+- Signature skill: Buddy Barrier — shield + ATK buff ally behind
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -1290,8 +1290,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Damian's behavior
 
 - Movement: stationary (off battlefield)
-- Defining skill: It's a Plane! — plane dive + stun target
-- Defining skill speed: slow
+- Signature skill: It's a Plane! — plane dive + stun target
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -1385,8 +1385,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Dionel's behavior
 
 - Movement: moving (avg attack range 0.0 tiles)
-- Defining skill: Dawn Light (ultimate) — airborne multi-hit AoE
-- Defining skill speed: slow
+- Signature skill: Dawn Light (ultimate) — airborne multi-hit AoE
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -1442,8 +1442,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Dunlingr's behavior
 
 - Movement: stationary (avg attack range 6.4 tiles)
-- Defining skill: Echo of Silence (ultimate) — forbid heals or ultimates
-- Defining skill speed: fast
+- Signature skill: Echo of Silence (ultimate) — forbid heals or ultimates
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -1522,8 +1522,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Eironn's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Howling Hurricane — free area pull at start
-- Defining skill speed: fast
+- Signature skill: Howling Hurricane — free area pull at start
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -1570,8 +1570,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Twins's behavior
 
 - Movement: moving / stationary (two units)
-- Defining skill: Starlight Waltz (ultimate) — high haste buff all allies
-- Defining skill speed: slow
+- Signature skill: Starlight Waltz (ultimate) — high haste buff all allies
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -1696,8 +1696,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Evie's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Intel Chase (ultimate) — stealth + trigger burst
-- Defining skill speed: fast
+- Signature skill: Intel Chase (ultimate) — stealth + trigger burst
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -1769,8 +1769,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Faramor's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Sanctified Circle (ultimate) — no-heal zone + true DoT
-- Defining skill speed: normal
+- Signature skill: Sanctified Circle (ultimate) — no-heal zone + true DoT
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -1827,8 +1827,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Fay's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Defining skill: Vibrant Dance (ultimate) — arc heal + ATK buff
-- Defining skill speed: slow
+- Signature skill: Vibrant Dance (ultimate) — arc heal + ATK buff
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -1880,8 +1880,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Florabelle's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Pounding Blow (ultimate) — summon stomper ally
-- Defining skill speed: fast
+- Signature skill: Pounding Blow (ultimate) — summon stomper ally
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -1952,8 +1952,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Frieren's behavior
 
 - Movement: stationary (avg attack range 7.0 tiles)
-- Defining skill: Zoltraak (ultimate) — high-damage magic beam
-- Defining skill speed: slow
+- Signature skill: Zoltraak (ultimate) — high-damage magic beam
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2004,8 +2004,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Gala's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Defining skill: Temporal Field (ultimate) — area time slow field
-- Defining skill speed: normal
+- Signature skill: Temporal Field (ultimate) — area time slow field
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -2075,8 +2075,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Gerda's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Spring Therapy — battle-start heal zone
-- Defining skill speed: fast
+- Signature skill: Spring Therapy — battle-start heal zone
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2123,8 +2123,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Granny Dahnie's behavior
 
 - Movement: moving (avg attack range 2.0 tiles)
-- Defining skill: Threshold of Jade (ultimate) — root zone + HP drain
-- Defining skill speed: slow
+- Signature skill: Threshold of Jade (ultimate) — root zone + HP drain
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2171,8 +2171,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Gunnar's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Annihilation Directive (ultimate) — long-range area bombing
-- Defining skill speed: fast
+- Signature skill: Annihilation Directive (ultimate) — long-range area bombing
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -2228,8 +2228,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Gwyneth's behavior
 
 - Movement: stationary (avg attack range 8.0 tiles)
-- Defining skill: Hailing Arrows (ultimate) — area arrow rain
-- Defining skill speed: slow
+- Signature skill: Hailing Arrows (ultimate) — area arrow rain
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2278,8 +2278,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Hammie's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Defining skill: Pretty Fireball (ultimate) — AoE magic fireball
-- Defining skill speed: slow
+- Signature skill: Pretty Fireball (ultimate) — AoE magic fireball
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -2308,8 +2308,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Harak's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Flesh Feast — instantly defeat weakest unit
-- Defining skill speed: fast
+- Signature skill: Flesh Feast — instantly defeat weakest unit
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -2382,8 +2382,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Hepler's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Form Shift (ultimate) — toggle attack/support form
-- Defining skill speed: slow
+- Signature skill: Form Shift (ultimate) — toggle attack/support form
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -2457,8 +2457,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Hewynn's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Rain Prayer (ultimate) — AoE team healing
-- Defining skill speed: slow
+- Signature skill: Rain Prayer (ultimate) — AoE team healing
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2513,8 +2513,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Himmel's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Hero Party — buff needing Mage+Tank+Support
-- Defining skill speed: fast
+- Signature skill: Hero Party — buff needing Mage+Tank+Support
+- Signature skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -2582,8 +2582,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Hodgkin's behavior
 
 - Movement: moving (avg attack range 3.0 tiles)
-- Defining skill: Cannon Fire (ultimate) — AoE cannon salvo
-- Defining skill speed: slow
+- Signature skill: Cannon Fire (ultimate) — AoE cannon salvo
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -2630,8 +2630,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Hugin's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Unstoppable! (ultimate) — charge + shield assault
-- Defining skill speed: slow
+- Signature skill: Unstoppable! (ultimate) — charge + shield assault
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2743,8 +2743,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Igor's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Funereal Ring (ultimate) — tombstone zone damage
-- Defining skill speed: fast
+- Signature skill: Funereal Ring (ultimate) — tombstone zone damage
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2790,8 +2790,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Indris's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Spellbane Shot (ultimate) — silence + multi-debuff shot
-- Defining skill speed: slow
+- Signature skill: Spellbane Shot (ultimate) — silence + multi-debuff shot
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2860,8 +2860,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Isabella's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Grimoire Pact (ultimate) — absorb enemy stat buffs
-- Defining skill speed: fast
+- Signature skill: Grimoire Pact (ultimate) — absorb enemy stat buffs
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2928,8 +2928,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Kafra's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Gale Thrust (ultimate) — mark + high single-target hit
-- Defining skill speed: slow
+- Signature skill: Gale Thrust (ultimate) — mark + high single-target hit
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2999,8 +2999,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Koko's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Defining skill: Full Energy (ultimate) — DMG reduction + true damage return
-- Defining skill speed: slow
+- Signature skill: Full Energy (ultimate) — DMG reduction + true damage return
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -3065,8 +3065,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Kordan's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Dominance Ring (ultimate) — immobilize + zone damage
-- Defining skill speed: slow
+- Signature skill: Dominance Ring (ultimate) — immobilize + zone damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -3128,8 +3128,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Korin's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Demonseal Spear (ultimate) — pierce-through spear strike
-- Defining skill speed: slow
+- Signature skill: Demonseal Spear (ultimate) — pierce-through spear strike
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -3175,8 +3175,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Kruger's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Devastating Axe (ultimate) — high single-target damage
-- Defining skill speed: normal
+- Signature skill: Devastating Axe (ultimate) — high single-target damage
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -3218,8 +3218,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Kulu's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Demolition Zone — battle-start movement-blocking wall
-- Defining skill speed: fast
+- Signature skill: Demolition Zone — battle-start movement-blocking wall
+- Signature skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -3271,8 +3271,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Laios's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Living Armor - Kensuke (ultimate) — summon infinite-HP ally
-- Defining skill speed: fast
+- Signature skill: Living Armor - Kensuke (ultimate) — summon infinite-HP ally
+- Signature skill speed: fast
 - Ultimate speed: fast
 - Non-ultimate speed: slow
 
@@ -3341,8 +3341,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Lenya's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Wild Duel (ultimate) — dash + duel multi-hit
-- Defining skill speed: slow
+- Signature skill: Wild Duel (ultimate) — dash + duel multi-hit
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -3393,8 +3393,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Lily May's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Tempest Shot (ultimate) — interrupt enemy ultimate
-- Defining skill speed: slow
+- Signature skill: Tempest Shot (ultimate) — interrupt enemy ultimate
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -3442,8 +3442,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Lorsan's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Whispering Tempest (ultimate) — storm zone + haste debuff
-- Defining skill speed: slow
+- Signature skill: Whispering Tempest (ultimate) — storm zone + haste debuff
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -3479,8 +3479,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucca's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Quake Slam (ultimate) — area knockdown slam
-- Defining skill speed: normal
+- Signature skill: Quake Slam (ultimate) — area knockdown slam
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -3531,8 +3531,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucius's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Divine Light Aegis (ultimate) — area shield + light damage
-- Defining skill speed: slow
+- Signature skill: Divine Light Aegis (ultimate) — area shield + light damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -3618,8 +3618,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucy's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Star Dress: Aquarius Form — permanent AoE water form
-- Defining skill speed: fast
+- Signature skill: Star Dress: Aquarius Form — permanent AoE water form
+- Signature skill speed: fast
 - Ultimate speed: fast
 - Non-ultimate speed: slow
 
@@ -3666,8 +3666,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Ludovic's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Eternal Serenity (ultimate) — area sustained healing
-- Defining skill speed: slow
+- Signature skill: Eternal Serenity (ultimate) — area sustained healing
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -3716,8 +3716,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Lumont's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Lumont's Charge (ultimate) — charge + stomp knockdown
-- Defining skill speed: slow
+- Signature skill: Lumont's Charge (ultimate) — charge + stomp knockdown
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -3782,8 +3782,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Lyca's behavior
 
 - Movement: stationary (avg attack range 11.0 tiles)
-- Defining skill: Comet Archery (ultimate) — area ranged volley
-- Defining skill speed: slow
+- Signature skill: Comet Archery (ultimate) — area ranged volley
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -3848,8 +3848,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Marcille's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Silver-White Wings that Streak Across the Skies (ultimate) — large AoE magic damage
-- Defining skill speed: normal
+- Signature skill: Silver-White Wings that Streak Across the Skies (ultimate) — large AoE magic damage
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -3903,8 +3903,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Marilee's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Mid-Air Shot (ultimate) — high-damage precision shot
-- Defining skill speed: slow
+- Signature skill: Mid-Air Shot (ultimate) — high-damage precision shot
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -3955,8 +3955,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Mehira's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Euphoric Rush (ultimate) — AoE damage + charm
-- Defining skill speed: slow
+- Signature skill: Euphoric Rush (ultimate) — AoE damage + charm
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -4024,8 +4024,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Mikola's behavior
 
 - Movement: moving (avg attack range 2.0 tiles)
-- Defining skill: Dauntless Hymn (ultimate) — haste + DEF aura zone
-- Defining skill speed: slow
+- Signature skill: Dauntless Hymn (ultimate) — haste + DEF aura zone
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -4135,8 +4135,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Mirael's behavior
 
 - Movement: stationary (avg attack range 10.1 tiles)
-- Defining skill: Winged Flame (ultimate) — area fire barrage
-- Defining skill speed: slow
+- Signature skill: Winged Flame (ultimate) — area fire barrage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -4174,8 +4174,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Nara's behavior
 
 - Movement: mostly stationary (pulls enemies)
-- Defining skill: Phantom Chains — pull enemy to self
-- Defining skill speed: fast
+- Signature skill: Phantom Chains — pull enemy to self
+- Signature skill speed: fast
 - Ultimate speed: fast
 - Non-ultimate speed: fast
 
@@ -4223,8 +4223,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Natsu's behavior
 
 - Movement: stationary (avg attack range 11.0 tiles)
-- Defining skill: Lightning Fire Dragon's Roar/Fire Dragon King's Roar (ultimate) — high-damage elemental beam
-- Defining skill speed: normal
+- Signature skill: Lightning Fire Dragon's Roar/Fire Dragon King's Roar (ultimate) — high-damage elemental beam
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: normal
 
@@ -4278,8 +4278,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Nazrik's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Defining skill: Rend Rupture (ultimate) — HP-drain bleed DoT
-- Defining skill speed: normal
+- Signature skill: Rend Rupture (ultimate) — HP-drain bleed DoT
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -4322,8 +4322,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Nerion's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Defining skill: Drowning Doom (ultimate) — pull + submerge enemies
-- Defining skill speed: slow
+- Signature skill: Drowning Doom (ultimate) — pull + submerge enemies
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -4378,8 +4378,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Niru's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Spirit Devour — AoE damage + ally heal
-- Defining skill speed: slow
+- Signature skill: Spirit Devour — AoE damage + ally heal
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -4427,8 +4427,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Odie's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Defining skill: Corrosive Dart (ultimate) — undispellable poison DoT
-- Defining skill speed: slow
+- Signature skill: Heart Crusher — instantly defeat below poison threshold
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -4466,8 +4466,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Pandora's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Panic Projection (ultimate) — frighten all units
-- Defining skill speed: slow
+- Signature skill: Boxed Blessing — pull ally into box at start
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -4521,8 +4521,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Pang's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Sky Splitter (ultimate) — area knockdown burst
-- Defining skill speed: slow
+- Signature skill: Sky Splitter (ultimate) — area knockdown burst
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -4576,8 +4576,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Parisa's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Defining skill: Floral Splendor (ultimate) — mark + AoE burst damage
-- Defining skill speed: slow
+- Signature skill: Floral Splendor (ultimate) — mark + AoE burst damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -4625,8 +4625,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Perseus's behavior
 
 - Movement: moving (avg attack range 2.9 tiles)
-- Defining skill: Divine Rend (ultimate) — march + continuous knockback
-- Defining skill speed: slow
+- Signature skill: Divine Rend (ultimate) — march + continuous knockback
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -4688,8 +4688,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Phraesto's behavior
 
 - Movement: moving (avg attack range 1.8 tiles)
-- Defining skill: Futile Echo (ultimate) — deploy illusion clone
-- Defining skill speed: slow
+- Signature skill: Crimson Contract — buff two allies at battle start
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -4742,8 +4742,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Pippa's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Chaos Manifest (ultimate) — reposition + random chaos
-- Defining skill speed: normal
+- Signature skill: Chaos Manifest (ultimate) — reposition + random chaos
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: normal
 
@@ -4792,8 +4792,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Ravion's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Killer Flush (ultimate) — multi-hit lost-HP scaling
-- Defining skill speed: slow
+- Signature skill: Killer Flush (ultimate) — multi-hit lost-HP scaling
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -4874,8 +4874,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Reinier's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Mutual Reflection (ultimate) — isolate enemy in dimension
-- Defining skill speed: slow
+- Signature skill: Mutual Reflection (ultimate) — isolate enemy in dimension
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -4913,8 +4913,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Rhys's behavior
 
 - Movement: high movement (moves while attacking)
-- Defining skill: Flame Barrage (ultimate) — ranged fire barrage
-- Defining skill speed: slow
+- Signature skill: Flame Barrage (ultimate) — ranged fire barrage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -4957,8 +4957,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Rowan's behavior
 
 - Movement: moving (repositions on cast)
-- Defining skill: Fatal Greed (ultimate) — AoE energy recovery burst
-- Defining skill speed: normal
+- Signature skill: Fatal Greed (ultimate) — AoE energy recovery burst
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -5019,8 +5019,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Saida's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Seed Siphon (ultimate) — pin + energy drain + seed
-- Defining skill speed: fast
+- Signature skill: Seed Siphon (ultimate) — pin + energy drain + seed
+- Signature skill speed: fast
 - Ultimate speed: fast
 - Non-ultimate speed: fast
 
@@ -5066,8 +5066,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Salazer's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Rain of Blades (ultimate) — area blade storm
-- Defining skill speed: slow
+- Signature skill: Rain of Blades (ultimate) — area blade storm
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5098,8 +5098,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Satrana's behavior
 
 - Movement: moving (avg attack range 1.5 tiles)
-- Defining skill: Fiery Dance (ultimate) — area fire burn damage
-- Defining skill speed: slow
+- Signature skill: Fiery Dance (ultimate) — area fire burn damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5144,8 +5144,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Scarlita's behavior
 
 - Movement: moving (brief reposition)
-- Defining skill: Divine Quake (ultimate) — aerial dive + area damage
-- Defining skill speed: slow
+- Signature skill: Divine Wrath — instantly defeat low-HP enemies
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5196,8 +5196,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Seth's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Shadow Strike (ultimate) — multi-hit shadow burst
-- Defining skill speed: slow
+- Signature skill: Shadow Strike (ultimate) — multi-hit shadow burst
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5257,8 +5257,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Shadewing's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Crimson Venom (ultimate) — apply DoT to all enemies
-- Defining skill speed: fast
+- Signature skill: Crimson Venom (ultimate) — apply DoT to all enemies
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5322,8 +5322,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Shakir's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Ravaging Claws (ultimate) — single-target charge damage
-- Defining skill speed: normal
+- Signature skill: Ravaging Claws (ultimate) — single-target charge damage
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -5380,8 +5380,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Shemira's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Defining skill: Phantom Procession (ultimate) — sustained area ghost damage
-- Defining skill speed: slow
+- Signature skill: Phantom Procession (ultimate) — sustained area ghost damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -5426,8 +5426,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Silven's behavior
 
 - Movement: stationary (avg attack range 12.0 tiles)
-- Defining skill: Gravity Collapse — stack marks + detonate stun
-- Defining skill speed: fast
+- Signature skill: Gravity Collapse — stack marks + detonate stun
+- Signature skill speed: fast
 - Ultimate speed: fast
 - Non-ultimate speed: fast
 
@@ -5485,8 +5485,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Silvina's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Shadow Slayer (ultimate) — stealth + execute burst
-- Defining skill speed: normal
+- Signature skill: Shadow Slayer (ultimate) — stealth + execute burst
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -5540,8 +5540,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Sinbad's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Whizzing Edge (ultimate) — multi-hit physical slashes
-- Defining skill speed: normal
+- Signature skill: Whizzing Edge (ultimate) — multi-hit physical slashes
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -5602,8 +5602,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Smokey & Meerky's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Energizing Formula — ATK buff + energy aura
-- Defining skill speed: fast
+- Signature skill: Energizing Formula — ATK buff + energy aura
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5663,8 +5663,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Solise's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Life's Embrace (ultimate) — AoE healing waves
-- Defining skill speed: normal
+- Signature skill: Life's Embrace (ultimate) — AoE healing waves
+- Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
 
@@ -5708,8 +5708,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Sonja's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Tempest Thrusts (ultimate) — area multi-hit + current HP damage
-- Defining skill speed: slow
+- Signature skill: Crimson Covenant — ATK + DEF buff two flanking allies
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5752,8 +5752,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Soren's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Whirlwind Swing (ultimate) — area spin damage
-- Defining skill speed: slow
+- Signature skill: Whirlwind Swing (ultimate) — area spin damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -5801,8 +5801,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Sylphira's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Grand Finale (ultimate) — beat stacking + song DoT
-- Defining skill speed: slow
+- Signature skill: Grand Finale (ultimate) — beat stacking + song DoT
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -5869,8 +5869,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Talene's behavior
 
 - Movement: moving (avg attack range 3.0 tiles)
-- Defining skill: Divine Conflagration (ultimate) — sustained channelled flame beam
-- Defining skill speed: fast
+- Signature skill: Divine Conflagration (ultimate) — sustained channelled flame beam
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5923,8 +5923,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Tasi's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Defining skill: Eternal Dreamscape (ultimate) — sleep all enemies
-- Defining skill speed: slow
+- Signature skill: Eternal Dreamscape (ultimate) — sleep all enemies
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5988,8 +5988,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Temesia's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Knight's Heart (ultimate) — HP absorb shield formation
-- Defining skill speed: slow
+- Signature skill: Knight's Heart (ultimate) — HP absorb shield formation
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -6054,8 +6054,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Thador's behavior
 
 - Movement: moving (avg attack range 0.2 tiles)
-- Defining skill: Darkmoon Pact — crit + shield for ally behind
-- Defining skill speed: slow
+- Signature skill: Darkmoon Pact — crit + shield for ally behind
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6103,8 +6103,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Thoran's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Resurrection — self-revive on defeat
-- Defining skill speed: fast
+- Signature skill: Resurrection — self-revive on defeat
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6149,8 +6149,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Tilaya's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Wrath of the Wilds (ultimate) — battle-start HP vine shield
-- Defining skill speed: fast
+- Signature skill: Wrath of the Wilds (ultimate) — battle-start HP vine shield
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6201,8 +6201,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Ulmus's behavior
 
 - Movement: moving (stationary when rooted)
-- Defining skill: Way of the Forest — HP regen + energy when rooted
-- Defining skill speed: fast
+- Signature skill: Way of the Forest — HP regen + energy when rooted
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6249,8 +6249,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Vala's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Swift Shift (ultimate) — mode shift + stun/true damage
-- Defining skill speed: slow
+- Signature skill: Swift Shift (ultimate) — mode shift + stun/true damage
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -6318,8 +6318,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Valen's behavior
 
 - Movement: moving (avg attack range 1.4 tiles)
-- Defining skill: Thunder Swordwork (ultimate) — multi-hit area + ATK buff
-- Defining skill speed: slow
+- Signature skill: Thunder Swordwork (ultimate) — multi-hit area + ATK buff
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6362,8 +6362,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Valka's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Blooming Terror (ultimate) — stack fear + consume enemy
-- Defining skill speed: fast
+- Signature skill: Blooming Terror (ultimate) — stack fear + consume enemy
+- Signature skill speed: fast
 - Ultimate speed: fast
 - Non-ultimate speed: fast
 
@@ -6432,8 +6432,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Velara's behavior
 
 - Movement: stationary (no finite attack range)
-- Defining skill: Ruthless Rite (ultimate) — transfer enemy stats to allies
-- Defining skill speed: fast
+- Signature skill: Ruthless Rite (ultimate) — transfer enemy stats to allies
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6495,8 +6495,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Viperian's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Defining skill: Spiritual Viper (ultimate) — poison drones on all enemies
-- Defining skill speed: fast
+- Signature skill: Spiritual Viper (ultimate) — poison drones on all enemies
+- Signature skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -6543,8 +6543,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Walker's behavior
 
 - Movement: moving (avg attack range 2.0 tiles)
-- Defining skill: Six-Shot (ultimate) — multi-target burst shots
-- Defining skill speed: slow
+- Signature skill: Six-Shot (ultimate) — multi-target burst shots
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -6600,8 +6600,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Zandrok's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Savage Slash (ultimate) — high single-target melee
-- Defining skill speed: slow
+- Signature skill: Rallying Roar — destroy obstacles + inspire allies
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -6674,8 +6674,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Zanie's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Defining skill: Vein Pulse (ultimate) — deploy turrets at battle start
-- Defining skill speed: fast
+- Signature skill: Vein Pulse (ultimate) — deploy turrets at battle start
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6728,8 +6728,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Zorya's behavior
 
 - Movement: moving (inactive while dormant)
-- Defining skill: Circle of Vigil (ultimate) — dormant cycle + AoE jump
-- Defining skill speed: slow
+- Signature skill: Circle of Vigil (ultimate) — dormant cycle + AoE jump
+- Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
