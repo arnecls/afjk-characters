@@ -1290,8 +1290,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Damian's behavior
 
 - Movement: stationary (off battlefield)
-- Signature skill: It's a Plane! — plane dive + stun target
-- Signature skill speed: slow
+- Signature skill: Inventor's Will — chariot haste aura for allies
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -2004,8 +2004,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Gala's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Signature skill: Temporal Field (ultimate) — area time slow field
-- Signature skill speed: normal
+- Signature skill: Time Recast — summon shadow copy of ally
+- Signature skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -2860,7 +2860,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Isabella's behavior
 
 - Movement: stationary (no finite attack range)
-- Signature skill: Grimoire Pact (ultimate) — absorb enemy stat buffs
+- Signature skill: Grimoire Pact (ultimate) — permanent stat buff to companion
 - Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
@@ -3175,7 +3175,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Kruger's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Signature skill: Devastating Axe (ultimate) — high single-target damage
+- Signature skill: Devastating Axe (ultimate) — stack Phys DEF debuff
 - Signature skill speed: normal
 - Ultimate speed: normal
 - Non-ultimate speed: fast
@@ -3271,8 +3271,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Laios's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Signature skill: Living Armor - Kensuke (ultimate) — summon infinite-HP ally
-- Signature skill speed: fast
+- Signature skill: Dungeon Gourmet — cook ingredients for random ally buffs
+- Signature skill speed: slow
 - Ultimate speed: fast
 - Non-ultimate speed: slow
 
@@ -4378,7 +4378,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Niru's behavior
 
 - Movement: stationary (no finite attack range)
-- Signature skill: Spirit Devour — AoE damage + ally heal
+- Signature skill: Soul Shepherd (ultimate) — save ally from fatal blow
 - Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: slow
@@ -4874,8 +4874,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Reinier's behavior
 
 - Movement: high movement (repositioning skills)
-- Signature skill: Mutual Reflection (ultimate) — isolate enemy in dimension
-- Signature skill speed: slow
+- Signature skill: Dynamic Balance — swap ally+enemy positions at start
+- Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5257,7 +5257,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Shadewing's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Signature skill: Crimson Venom (ultimate) — apply DoT to all enemies
+- Signature skill: Withering Curse — convert DoT to burst damage
 - Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
@@ -5602,7 +5602,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Smokey & Meerky's behavior
 
 - Movement: stationary (no finite attack range)
-- Signature skill: Energizing Formula — ATK buff + energy aura
+- Signature skill: Special Aroma (ultimate) — heal aura + upgradeable zone
 - Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast

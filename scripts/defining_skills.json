@@ -138,10 +138,10 @@
     "description": "shield + ATK buff ally behind"
   },
   "Damian": {
-    "section": "Skill2",
-    "name": "It's a Plane!",
+    "section": "Ex. Skill",
+    "name": "Inventor's Will",
     "is_ultimate": false,
-    "description": "plane dive + stun target"
+    "description": "chariot haste aura for allies"
   },
   "Dionel": {
     "section": "Ultimate",
@@ -195,10 +195,10 @@
     "description": "high-damage magic beam"
   },
   "Gala": {
-    "section": "Ultimate",
-    "name": "Temporal Field",
-    "is_ultimate": true,
-    "description": "area time slow field"
+    "section": "Ex. Skill",
+    "name": "Time Recast",
+    "is_ultimate": false,
+    "description": "summon shadow copy of ally"
   },
   "Gerda": {
     "section": "Skill1",
@@ -286,7 +286,7 @@
     "section": "Ultimate",
     "name": "Grimoire Pact",
     "is_ultimate": true,
-    "description": "absorb enemy stat buffs",
+    "description": "permanent stat buff to companion",
     "speed_override": "fast"
   },
   "Kafra": {
@@ -317,7 +317,7 @@
     "section": "Ultimate",
     "name": "Devastating Axe",
     "is_ultimate": true,
-    "description": "high single-target damage"
+    "description": "stack Phys DEF debuff"
   },
   "Kulu": {
     "section": "Skill1",
@@ -327,10 +327,10 @@
     "speed_override": "fast"
   },
   "Laios": {
-    "section": "Ultimate",
-    "name": "Living Armor - Kensuke",
-    "is_ultimate": true,
-    "description": "summon infinite-HP ally"
+    "section": "Skill2",
+    "name": "Dungeon Gourmet",
+    "is_ultimate": false,
+    "description": "cook ingredients for random ally buffs"
   },
   "Lenya": {
     "section": "Ultimate",
@@ -441,10 +441,10 @@
     "description": "pull + submerge enemies"
   },
   "Niru": {
-    "section": "Skill2",
-    "name": "Spirit Devour",
-    "is_ultimate": false,
-    "description": "AoE damage + ally heal"
+    "section": "Ultimate",
+    "name": "Soul Shepherd",
+    "is_ultimate": true,
+    "description": "save ally from fatal blow"
   },
   "Odie": {
     "section": "Ex. Skill",
@@ -497,10 +497,11 @@
     "description": "multi-hit lost-HP scaling"
   },
   "Reinier": {
-    "section": "Ultimate",
-    "name": "Mutual Reflection",
-    "is_ultimate": true,
-    "description": "isolate enemy in dimension"
+    "section": "Skill1",
+    "name": "Dynamic Balance",
+    "is_ultimate": false,
+    "description": "swap ally+enemy positions at start",
+    "speed_override": "fast"
   },
   "Rhys": {
     "section": "Ultimate",
@@ -545,10 +546,10 @@
     "description": "multi-hit shadow burst"
   },
   "Shadewing": {
-    "section": "Ultimate",
-    "name": "Crimson Venom",
-    "is_ultimate": true,
-    "description": "apply DoT to all enemies",
+    "section": "Skill2",
+    "name": "Withering Curse",
+    "is_ultimate": false,
+    "description": "convert DoT to burst damage",
     "speed_override": "fast"
   },
   "Shakir": {
@@ -582,10 +583,11 @@
     "description": "multi-hit physical slashes"
   },
   "Smokey & Meerky": {
-    "section": "Skill1",
-    "name": "Energizing Formula",
-    "is_ultimate": false,
-    "description": "ATK buff + energy aura"
+    "section": "Ultimate",
+    "name": "Special Aroma",
+    "is_ultimate": true,
+    "description": "heal aura + upgradeable zone",
+    "speed_override": "fast"
   },
   "Solise": {
     "section": "Ultimate",
