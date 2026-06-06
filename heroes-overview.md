@@ -96,7 +96,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Movement: moving (avg attack range 1.0 tiles)
 - Defining skill: Winter Anthem (ultimate) — battle-start area blizzard
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -503,7 +503,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Movement: moving (avg attack range 1.0 tiles)
 - Defining skill: Celestial Rise (ultimate) — HP-based shield + transform
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -617,8 +617,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Bonnie's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Deathmark Arrow (ultimate) — AoE arrows + stun marked
-- Defining skill speed: slow
+- Defining skill: Decay's Reach — battle-start aging debuff
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -793,7 +793,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Movement: moving (avg attack range 1.7 tiles)
 - Defining skill: Restless Guardian (ultimate) — absorb ally damage shield
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -1063,7 +1063,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: stationary (no finite attack range)
 - Defining skill: Detention Pass (ultimate) — stealth start + punish
-- Defining skill speed: normal
+- Defining skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -1443,7 +1443,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: stationary (avg attack range 6.4 tiles)
 - Defining skill: Echo of Silence (ultimate) — forbid heals or ultimates
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -1697,7 +1697,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: high movement (repositioning skills)
 - Defining skill: Intel Chase (ultimate) — stealth + trigger burst
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -1881,7 +1881,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: stationary (no finite attack range)
 - Defining skill: Pounding Blow (ultimate) — summon stomper ally
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -2075,8 +2075,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Gerda's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Splashing Fun (ultimate) — AoE heal + sleep
-- Defining skill speed: slow
+- Defining skill: Spring Therapy — battle-start heal zone
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2172,7 +2172,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: stationary (no finite attack range)
 - Defining skill: Annihilation Directive (ultimate) — long-range area bombing
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: slow
 
@@ -2514,7 +2514,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: high movement (repositioning skills)
 - Defining skill: Hero Party — buff needing Mage+Tank+Support
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -2744,7 +2744,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: high movement (repositioning skills)
 - Defining skill: Funereal Ring (ultimate) — tombstone zone damage
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -2861,7 +2861,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: stationary (no finite attack range)
 - Defining skill: Grimoire Pact (ultimate) — absorb enemy stat buffs
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -3218,8 +3218,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Kulu's behavior
 
 - Movement: high movement (repositioning skills)
-- Defining skill: Blast Mayhem (ultimate) — bomb cluster AoE
-- Defining skill speed: normal
+- Defining skill: Demolition Zone — battle-start movement-blocking wall
+- Defining skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -5258,7 +5258,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: moving (avg attack range 1.0 tiles)
 - Defining skill: Crimson Venom (ultimate) — apply DoT to all enemies
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -5870,7 +5870,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: moving (avg attack range 3.0 tiles)
 - Defining skill: Divine Conflagration (ultimate) — sustained channelled flame beam
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: fast
 
@@ -6150,7 +6150,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: high movement (repositioning skills)
 - Defining skill: Wrath of the Wilds (ultimate) — battle-start HP vine shield
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6433,7 +6433,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: stationary (no finite attack range)
 - Defining skill: Ruthless Rite (ultimate) — transfer enemy stats to allies
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 
@@ -6496,7 +6496,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
 - Defining skill: Spiritual Viper (ultimate) — poison drones on all enemies
-- Defining skill speed: normal
+- Defining skill speed: fast
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
@@ -6675,7 +6675,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Movement: moving (avg attack range 1.0 tiles)
 - Defining skill: Vein Pulse (ultimate) — deploy turrets at battle start
-- Defining skill speed: slow
+- Defining skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
 

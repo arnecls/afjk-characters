@@ -9,7 +9,8 @@
     "section": "Ultimate",
     "name": "Winter Anthem",
     "is_ultimate": true,
-    "description": "battle-start area blizzard"
+    "description": "battle-start area blizzard",
+    "speed_override": "fast"
   },
   "Alsa": {
     "section": "Ultimate",
@@ -51,7 +52,8 @@
     "section": "Ultimate",
     "name": "Celestial Rise",
     "is_ultimate": true,
-    "description": "HP-based shield + transform"
+    "description": "HP-based shield + transform",
+    "speed_override": "fast"
   },
   "Berial": {
     "section": "Ultimate",
@@ -60,10 +62,11 @@
     "description": "shadow dive + area frighten"
   },
   "Bonnie": {
-    "section": "Ultimate",
-    "name": "Deathmark Arrow",
-    "is_ultimate": true,
-    "description": "AoE arrows + stun marked"
+    "section": "Skill1",
+    "name": "Decay's Reach",
+    "is_ultimate": false,
+    "description": "battle-start aging debuff",
+    "speed_override": "fast"
   },
   "Brutus": {
     "section": "Ultimate",
@@ -75,13 +78,15 @@
     "section": "Ultimate",
     "name": "Falcon Raid",
     "is_ultimate": true,
-    "description": "falcon area dive damage"
+    "description": "falcon area dive damage",
+    "speed_override": "fast"
   },
   "Callan": {
     "section": "Ultimate",
     "name": "Restless Guardian",
     "is_ultimate": true,
-    "description": "absorb ally damage shield"
+    "description": "absorb ally damage shield",
+    "speed_override": "fast"
   },
   "Carolina": {
     "section": "Ultimate",
@@ -111,7 +116,8 @@
     "section": "Ultimate",
     "name": "Detention Pass",
     "is_ultimate": true,
-    "description": "stealth start + punish"
+    "description": "stealth start + punish",
+    "speed_override": "fast"
   },
   "Cryonaia": {
     "section": "Ultimate",
@@ -147,7 +153,8 @@
     "section": "Ultimate",
     "name": "Echo of Silence",
     "is_ultimate": true,
-    "description": "forbid heals or ultimates"
+    "description": "forbid heals or ultimates",
+    "speed_override": "fast"
   },
   "Eironn": {
     "section": "Ex. Skill",
@@ -159,7 +166,8 @@
     "section": "Ultimate",
     "name": "Intel Chase",
     "is_ultimate": true,
-    "description": "stealth + trigger burst"
+    "description": "stealth + trigger burst",
+    "speed_override": "fast"
   },
   "Faramor": {
     "section": "Ultimate",
@@ -177,7 +185,8 @@
     "section": "Ultimate",
     "name": "Pounding Blow",
     "is_ultimate": true,
-    "description": "summon stomper ally"
+    "description": "summon stomper ally",
+    "speed_override": "fast"
   },
   "Frieren": {
     "section": "Ultimate",
@@ -192,10 +201,11 @@
     "description": "area time slow field"
   },
   "Gerda": {
-    "section": "Ultimate",
-    "name": "Splashing Fun",
-    "is_ultimate": true,
-    "description": "AoE heal + sleep"
+    "section": "Skill1",
+    "name": "Spring Therapy",
+    "is_ultimate": false,
+    "description": "battle-start heal zone",
+    "speed_override": "fast"
   },
   "Granny Dahnie": {
     "section": "Ultimate",
@@ -207,7 +217,8 @@
     "section": "Ultimate",
     "name": "Annihilation Directive",
     "is_ultimate": true,
-    "description": "long-range area bombing"
+    "description": "long-range area bombing",
+    "speed_override": "fast"
   },
   "Gwyneth": {
     "section": "Ultimate",
@@ -243,7 +254,8 @@
     "section": "Skill2",
     "name": "Hero Party",
     "is_ultimate": false,
-    "description": "buff needing Mage+Tank+Support"
+    "description": "buff needing Mage+Tank+Support",
+    "speed_override": "fast"
   },
   "Hodgkin": {
     "section": "Ultimate",
@@ -261,7 +273,8 @@
     "section": "Ultimate",
     "name": "Funereal Ring",
     "is_ultimate": true,
-    "description": "tombstone zone damage"
+    "description": "tombstone zone damage",
+    "speed_override": "fast"
   },
   "Indris": {
     "section": "Ultimate",
@@ -273,7 +286,8 @@
     "section": "Ultimate",
     "name": "Grimoire Pact",
     "is_ultimate": true,
-    "description": "absorb enemy stat buffs"
+    "description": "absorb enemy stat buffs",
+    "speed_override": "fast"
   },
   "Kafra": {
     "section": "Ultimate",
@@ -306,10 +320,11 @@
     "description": "high single-target damage"
   },
   "Kulu": {
-    "section": "Ultimate",
-    "name": "Blast Mayhem",
-    "is_ultimate": true,
-    "description": "bomb cluster AoE"
+    "section": "Skill1",
+    "name": "Demolition Zone",
+    "is_ultimate": false,
+    "description": "battle-start movement-blocking wall",
+    "speed_override": "fast"
   },
   "Laios": {
     "section": "Ultimate",
@@ -531,7 +546,8 @@
     "section": "Ultimate",
     "name": "Crimson Venom",
     "is_ultimate": true,
-    "description": "apply DoT to all enemies"
+    "description": "apply DoT to all enemies",
+    "speed_override": "fast"
   },
   "Shakir": {
     "section": "Ultimate",
@@ -597,7 +613,8 @@
     "section": "Ultimate",
     "name": "Divine Conflagration",
     "is_ultimate": true,
-    "description": "sustained channelled flame beam"
+    "description": "sustained channelled flame beam",
+    "speed_override": "fast"
   },
   "Tasi": {
     "section": "Ultimate",
@@ -627,7 +644,8 @@
     "section": "Ultimate",
     "name": "Wrath of the Wilds",
     "is_ultimate": true,
-    "description": "battle-start HP vine shield"
+    "description": "battle-start HP vine shield",
+    "speed_override": "fast"
   },
   "Twins": {
     "section": "Ultimate",
@@ -663,13 +681,15 @@
     "section": "Ultimate",
     "name": "Ruthless Rite",
     "is_ultimate": true,
-    "description": "transfer enemy stats to allies"
+    "description": "transfer enemy stats to allies",
+    "speed_override": "fast"
   },
   "Viperian": {
     "section": "Ultimate",
     "name": "Spiritual Viper",
     "is_ultimate": true,
-    "description": "poison drones on all enemies"
+    "description": "poison drones on all enemies",
+    "speed_override": "fast"
   },
   "Walker": {
     "section": "Ultimate",
@@ -687,7 +707,8 @@
     "section": "Ultimate",
     "name": "Vein Pulse",
     "is_ultimate": true,
-    "description": "deploy turrets at battle start"
+    "description": "deploy turrets at battle start",
+    "speed_override": "fast"
   },
   "Zorya": {
     "section": "Ultimate",

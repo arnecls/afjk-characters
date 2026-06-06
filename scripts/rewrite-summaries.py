@@ -3185,6 +3185,9 @@ def _defining_skill_speed_label(
 ) -> str:
     if not defining:
         return "normal"
+    # Manual override wins (e.g. battle-start or channeled quick-recast).
+    if override := defining.get("speed_override"):
+        return override
     section = defining.get("section", "Ultimate")
     key = DEFINING_SKILL_SECTION_KEYS.get(section, "ult")
     return per_skill.get(key, "normal")
