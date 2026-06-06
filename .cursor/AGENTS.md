@@ -281,6 +281,11 @@ Line format (no Provides/Requires prefix on each bullet):
   invincibility, summoning (includes named companions), marked target (focus
   fire), ally empower, DoT conversion, dispel, fatal-blow save, stat steal,
   ally positioning link, ally blessing, sleep (area), spirit form protection.
+  **Ally empower:** when the empowered ally receives conditional immunity
+  (e.g. Alna grants the Winter Warrior the same immunity effects), also list
+  `Damage and control immunity` in the **Buffs** section (always `high`).
+  **Marked target (focus fire):** also list in the **Debuffs** section so
+  synergy matching can see which heroes debuff via marking (always `medium`).
   **Ally grants:** phrasing like `grants Sparks to allies` or `grants an ally
   Brightfeather` adds `Ally grant (name)`; when allies with that grant can
   inflict DoT or debuffs on enemies in the same skill text, also list

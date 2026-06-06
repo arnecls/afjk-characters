@@ -1151,6 +1151,12 @@ BUFF_RULES = [
     (r"grants? an ally brightfeather", "Ally empower buff"),
     # Winter Warrior style: hero designates one ally for a named role
     (r"selects? an ally.{0,80}to become", "Ally empower buff"),
+    # Immunity granted to the empowered ally
+    (
+        r"grants?.{0,40}(?:the )?winter warrior.{0,40}same immunity|"
+        r"grants?.{0,50}same (?:damage and control |immunity )?immunity effects",
+        "Damage and control immunity",
+    ),
     # ATK buff: match increase/increases/increasing + optional pronoun + "atk by"
     (r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s )?atk by", "ATK buff"),
     # Enhance Force style: "gain a N% increase to their basic stats"
@@ -1333,6 +1339,14 @@ DEBUFF_RULES = [
     (r"blinded enemies lose", "Blind HP loss debuff"),
     (r"burns? the target", "Burn debuff"),
     (r"reduc(?:e|es|ing) .{0,20}max hp\b", "Max HP debuff"),
+    # Marked target: mark placed on an enemy is a debuff from the
+    # enemy's perspective (focus fire, reduced effective defence, etc.)
+    (
+        r"mark of |places .{0,40} mark on|forest mark|"
+        r"notice to mark|noticed enemy|"
+        r"prioritizes attacking the .{0,30}marked",
+        "Marked target (focus fire)",
+    ),
 ]
 
 CC_RULES = [
@@ -2440,7 +2454,10 @@ def analyze_hero(hero: Hero):
 
 # Buff labels where the effect is inherently high-value, regardless of any
 # incidental number extracted from the surrounding text.
-_ALWAYS_HIGH_BUFFS = frozenset({"Invincible", "Fatal blow immunity"})
+_ALWAYS_HIGH_BUFFS = frozenset(
+    {"Invincible", "Fatal blow immunity", "Damage and control immunity"}
+)
+_ALWAYS_MEDIUM_DEBUFFS = frozenset({"Marked target (focus fire)"})
 
 IMMUNITY_TYPES = ("Unaffected", "Steadfast", "Immune", "Cleanse")
 
@@ -2464,6 +2481,8 @@ def qualitative_magnitude(e: Effect) -> str:
             return "medium"
         return "low"
     if e.category == "debuff":
+        if e.label in _ALWAYS_MEDIUM_DEBUFFS:
+            return "medium"
         if "all enemies" in t:
             return "high"
         if e.numeric and e.numeric >= 20:
@@ -2544,6 +2563,13 @@ def assign_magnitudes(heroes: list[Hero]):
             continue
         # For always-high labels, skip quantile – just apply the heuristic.
         if group[0].label in _ALWAYS_HIGH_BUFFS:
+            for e in group:
+                e.magnitude = qualitative_magnitude(e)
+            continue
+        if (
+            group[0].category == "debuff"
+            and group[0].label in _ALWAYS_MEDIUM_DEBUFFS
+        ):
             for e in group:
                 e.magnitude = qualitative_magnitude(e)
             continue

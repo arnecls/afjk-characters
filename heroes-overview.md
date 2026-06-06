@@ -66,6 +66,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Debuffs provided by Aliceth
 
 - Execution debuff — Single target — `medium`
+- Marked target (focus fire) — Single target — `medium`
 - Blind HP loss debuff (EX+15) — Single target — `low`
 
 #### Crowd Control provided by Aliceth
@@ -126,6 +127,7 @@ _No synergy partners matched stat buffs or enablers._
 - Healing over time — Single target — `high`
 - Max HP buff — Single target — `low`
 - Damage taken reduction (Legendary+) — Self — `medium`
+- Damage and control immunity (EX+15) — Single target — `high`
 - ATK buff (Supreme+) — Single target — `medium`
 
 #### Debuffs provided by Alna
@@ -2976,6 +2978,7 @@ _**83** units include this provider among their top 5 synergy partners. Only the
 
 #### Debuffs provided by Kafra
 
+- Marked target (focus fire) — Single target — `medium`
 - Phys DEF debuff — Single target — `low`
 - ATK debuff (Mythic+) — Single target — `medium`
 - Haste debuff (Mythic+) — Single target — `low`
@@ -6488,6 +6491,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Debuffs provided by Vala
 
 - Haste debuff — Single target — `high`
+- Marked target (focus fire) — Single target — `medium`
 
 #### Crowd Control provided by Vala
 
