@@ -157,9 +157,10 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
 - **Alternative signature skill** — parallel set in
   `scripts/defining_skills_alternative.json` (same shape as
   `signature_skills.json`). Holds each hero's best **repeatable, buffable**
-  skill per the indicators above. Used for synergy fuel weighting when
-  the primary signature skill cannot be buffed (start-of-battle /
-  once-per-battle phrasing in skill text).
+  skill per the indicators above. Used as a synergy fuel fallback only when
+  the primary signature is a non-buffable **Ultimate** that is still slow
+  (not fast/battle-start). Non-ultimate signatures (e.g. Bonnie's Skill1)
+  keep primary speed so fuel targets identity, not a side ult.
 - **Casting speed** — split into three lines: **signature skill speed**,
   **ultimate speed**, and **non-ultimate speed** (`slow`, `normal`, or
   `fast`). Each uses absolute time thresholds on the relevant skill(s).
@@ -207,10 +208,11 @@ reviewing or fixing matches, work through both heroes in this order.
    `EX+n`) and `Supreme+` skills are unit-defining and score higher via
    `DEFINING_TIER_SCORE_MULT` in `generate-heroes-overview.py`.
    **Early-battle energy:** providers that grant ally Energy at or right
-   after battle start (Pandora box, Lyca, Thador lieutenant, Rowan potion,
-   etc.) score extra for receivers with a **slow ultimate**
-   (`EARLY_BATTLE_ENERGY_ULT_MULT` in `generate-heroes-overview.py`), with
-   an additional boost when the synergy signature skill is a slow ultimate.
+   after battle start score extra only when the hero's **curated signature
+   skill is a slow Ultimate** (`receiver_wants_early_battle_energy` in
+   `generate-heroes-overview.py`). Units whose identity is a battle-start
+   Skill1/Skill2 (Bonnie, Kulu, etc.) are excluded even if their side
+   ultimate is slow.
    **Signature-skill fuel:** Haste/ATK SPD ally buffs are boosted by the
    receiver's effective synergy signature speed (`SIGNATURE_FUEL_SPEED_MULT`:
    slow 1.6×, normal 1.2×, fast 1.0×). Energy recovery uses a lighter

@@ -3237,11 +3237,18 @@ def _effective_synergy_signature(
     if _signature_is_buffable(primary_text):
         return primary_speed, bool(primary.get("is_ultimate"))
 
+    is_ult = bool(primary.get("is_ultimate"))
+    # Non-buffable battle-start / once skills define identity; do not shift
+    # fuel weighting to a fallback ult or cooldown skill the player does not
+    # build around (e.g. Bonnie's Decay's Reach vs Deathmark Arrow).
+    if not is_ult or primary_speed == "fast":
+        return primary_speed, is_ult
+
     if alternative:
         alt_speed = _signature_skill_speed_label(alternative, speeds)
         return alt_speed, bool(alternative.get("is_ultimate"))
 
-    return primary_speed, bool(primary.get("is_ultimate"))
+    return primary_speed, is_ult
 
 
 def _signature_skill_speed_label(

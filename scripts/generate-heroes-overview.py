@@ -352,8 +352,12 @@ def provider_early_battle_ally_energy(
 
 
 def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
-    """Units with slow ultimates benefit most from early ally energy."""
-    return behavior.ult_speed == "slow"
+    """Early Energy helps when the curated signature Ultimate is slow."""
+    return (
+        behavior.signature_skill_is_ult
+        and behavior.synergy_signature_is_ult
+        and behavior.synergy_signature_speed == "slow"
+    )
 
 
 def _effect_is_battle_start_ally_energy(effect: _rs.Effect) -> bool:
