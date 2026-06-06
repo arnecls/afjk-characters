@@ -1305,6 +1305,13 @@ _No synergy partners matched stat buffs or enablers._
 - Pin — Self — `high`
 - Silence (EX+10) — Single target — `low`
 
+#### Cyran's Special Effects
+
+#### Cyran Provides
+
+- Artifact mimic (Mythic+) — All units
+- Enemy artifact block (EX+10) — Single target
+
 ## Daimon
 
 ### Daimon's behavior
@@ -2058,10 +2065,13 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 #### Gala Provides
 
 - Summoning (Mythic+) — Single target
+- Artifact amplification (EX+10) — Single target
+- Artifact echo (EX+10) — Single target
 
 #### Gala Requires
 
 - Boss encounter — Enemies
+- Artifact buffs active (Supreme+) — Self
 
 ## Gerda
 

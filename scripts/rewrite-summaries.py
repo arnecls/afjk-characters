@@ -1450,6 +1450,28 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     # Position
     (r"knock(?:ing|s)? (?:them )?back \d+ tiles", "Reposition enemies"),
     (r"swap(?:s|ping)? (?:places|position)", "Position swap"),
+    # Artifact interactions
+    # Gala EX+10: amplifies artifact stat buffs (20% stronger, 100% longer)
+    (
+        r"magister merlin'?s? skills? grant stat buffs|"
+        r"merlin'?s? skills? grant.{0,30}stat buffs?.{0,30}stronger",
+        "Artifact amplification",
+    ),
+    # Gala EX+10: artifact shadow echoes each artifact skill
+    (
+        r"shadow of merlin appears?.{0,60}casts? the same skill",
+        "Artifact echo",
+    ),
+    # Cyran Ex. Skill base: mimics artifact spell sequence at battle start
+    (
+        r"mimics? some of merlin'?s? (?:impressive )?spells?",
+        "Artifact mimic",
+    ),
+    # Cyran EX+10: silences enemy artifact at battle start
+    (
+        r"present on the enemy side.{0,80}silenced.{0,60}when a battle starts",
+        "Enemy artifact block",
+    ),
 )
 
 SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
@@ -1539,6 +1561,9 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
     # Proc limits
     (r"can only (?:cast|trigger|be used) once", "Once per battle"),
     (r"can trigger once every", "Passive with internal cooldown"),
+    # Gala Supreme+: Energy recovery and Steadfast only trigger while under
+    # artifact buffs
+    (r"affected by merlin'?s? buffs", "Artifact buffs active"),
 )
 
 _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
@@ -1758,11 +1783,15 @@ def _is_enemy_untargetable_clause(clause: str) -> bool:
 def detect_special_targeting(text: str, kind: str, label: str) -> str:
     t = text.lower()
     if kind == "requires":
+        if label == "Artifact buffs active":
+            return "Self"
         if "allied" in t or "ally" in t:
             return "Allies"
         if re.search(r"\benem(?:y|ies)\b", t):
             return "Enemies"
         return "—"
+    if label == "Enemy artifact block":
+        return "Single target"
     return detect_targeting(text, label, "special")
 
 
