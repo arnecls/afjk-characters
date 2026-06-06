@@ -56,12 +56,17 @@ MAG_WEIGHT = {"high": 3.0, "medium": 2.0, "low": 1.0}
 HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
 
 MAX_SYNERGIES = 5
+MAX_BENEFICIARIES_DISPLAY = 10
 
 FREQUENT_CONDITIONAL_SCORE = 0.85
 
-# Signature skill "casting fuel": boost Energy/Haste synergies so a unit's
+# Signature skill "casting fuel": boost Haste/ATK SPD synergies so a unit's
 # signature skill comes online faster. Scaled by effective synergy speed.
 SIGNATURE_FUEL_SPEED_MULT = {"slow": 1.6, "normal": 1.2, "fast": 1.0}
+
+# Energy recovery is weighted lower than Haste so batteries do not dominate.
+SIGNATURE_FUEL_ENERGY_MULT = {"slow": 1.3, "normal": 1.05, "fast": 1.0}
+ENERGY_SYNERGY_SCORE_MULT = 0.72
 
 # Fuel buff labels that accelerate skill casting / energy gain.
 SIGNATURE_FUEL_LABELS = frozenset(
@@ -71,9 +76,19 @@ SIGNATURE_FUEL_LABELS = frozenset(
 # For non-fast signature skills, consider Energy/Haste even when the receiver
 # does not explicitly scale on them; reduced base so batteries do not eclipse
 # real enablers.
-IMPLICIT_FUEL_BASE = 0.6
+IMPLICIT_FUEL_BASE = 0.45
 
 IMPLICIT_FUEL_STATS = ("Energy", "ATK SPD")
+
+# Ally energy granted at or right after battle start (Pandora box, Lyca, Thador).
+EARLY_BATTLE_ENERGY_ULT_MULT = {"slow": 1.25, "normal": 1.0, "fast": 0.85}
+
+_BATTLE_START_RE = re.compile(
+    r"when a battle starts|at (?:the )?start of (?:a )?battle|"
+    r"during battle preparation|"
+    r"triggered immediately when a battle starts",
+    re.I,
+)
 
 # Ex-Skill / Supreme+ requirements are unit-defining; boost enabler score.
 DEFINING_TIER_SCORE_MULT = {
@@ -238,6 +253,152 @@ def provider_has_start_of_battle_output(hero: _rs.Hero) -> bool:
         if _rs.text_has_start_of_battle_ultimate(text, section):
             return True
     return False
+
+
+def _is_self_battle_start_energy(text: str) -> bool:
+    """Skip Bryon/Nara-style self Initial Energy, not ally batteries."""
+    t = text.lower()
+    if not _BATTLE_START_RE.search(t):
+        return False
+    if re.search(
+        r"\b(?:he|she|they|[\w]+) gains? \d+ (?:initial )?energy\b",
+        t,
+    ) and not re.search(r"\b(?:ally|allies|lieutenant|all allied)\b", t):
+        return True
+    return False
+
+
+def provider_early_battle_ally_energy(
+    provider: _rs.Hero,
+) -> tuple[float, str] | None:
+    """Score ally-facing energy granted at or immediately after battle start."""
+    best: tuple[float, str] | None = None
+
+    for _tier, text, _section in provider.skill_chunks:
+        t = text.lower()
+        if not _BATTLE_START_RE.search(t):
+            continue
+        if _is_self_battle_start_energy(text):
+            continue
+
+        m = re.search(r"(?:the )?ally gains? (\d+) energy", text, re.I)
+        if m:
+            energy = int(m.group(1))
+            tw = TARGETING_WEIGHT["Single target"]
+            pts = tw * (2.0 + energy / 280)
+            detail = (
+                f"Energy recovery ({energy} at battle start, single target)"
+            )
+            cand = (pts, detail)
+            if best is None or cand[0] > best[0]:
+                best = cand
+
+        m = re.search(r"grants? all allies (\d+) energy", text, re.I)
+        if m:
+            energy = int(m.group(1))
+            tw = TARGETING_WEIGHT["All units"]
+            pts = tw * (1.5 + energy / 140)
+            detail = (
+                f"Energy recovery ({energy} at battle start, all units)"
+            )
+            cand = (pts, detail)
+            if best is None or cand[0] > best[0]:
+                best = cand
+
+        if re.search(
+            r"grants? .{0,60}lieutenant.{0,60}energy when a battle starts",
+            t,
+        ):
+            tw = TARGETING_WEIGHT["Single target"]
+            pts = tw * 3.5
+            detail = "Energy recovery (lieutenant, start of battle)"
+            cand = (pts, detail)
+            if best is None or cand[0] > best[0]:
+                best = cand
+
+        if re.search(r"energy potion when a battle starts", t):
+            tw = TARGETING_WEIGHT["Area"]
+            pts = tw * 3.0
+            detail = "Energy recovery (energy potion, start of battle)"
+            cand = (pts, detail)
+            if best is None or cand[0] > best[0]:
+                best = cand
+
+        m = re.search(r"ally recovers? (\d+) energy", text, re.I)
+        if m and "when a battle starts" in t:
+            energy = int(m.group(1))
+            tw = TARGETING_WEIGHT["Multiple targets"]
+            pts = tw * (1.5 + energy / 140)
+            detail = (
+                f"Energy recovery ({energy} early objective, multiple targets)"
+            )
+            cand = (pts, detail)
+            if best is None or cand[0] > best[0]:
+                best = cand
+
+        if re.search(
+            r"increases? the recipient'?s? energy recovery speed", t
+        ):
+            tw = TARGETING_WEIGHT["Single target"]
+            pts = tw * 2.5
+            detail = (
+                "Energy recovery speed (contract ally, start of battle)"
+            )
+            cand = (pts, detail)
+            if best is None or cand[0] > best[0]:
+                best = cand
+
+    return best
+
+
+def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
+    """Units with slow ultimates benefit most from early ally energy."""
+    return behavior.ult_speed == "slow"
+
+
+def _effect_is_battle_start_ally_energy(effect: _rs.Effect) -> bool:
+    """True when Energy recovery is already scored via early-battle path."""
+    if effect.label != "Energy recovery":
+        return False
+    text = effect.qualitative
+    t = text.lower()
+    if not _BATTLE_START_RE.search(t):
+        return False
+    if _is_self_battle_start_energy(text):
+        return False
+    return bool(
+        re.search(
+            r"(?:the )?ally gains? \d+ energy|"
+            r"grants? all allies \d+ energy|"
+            r"grants? .{0,60}lieutenant.{0,60}energy|"
+            r"ally recovers? \d+ energy|"
+            r"energy potion when a battle starts|"
+            r"energy recovery speed",
+            t,
+        )
+    )
+
+
+def score_early_battle_energy_synergy(
+    provider: _rs.Hero,
+    receiver_behavior: _rs.HeroBehavior,
+) -> tuple[float, list[str]]:
+    if not receiver_wants_early_battle_energy(receiver_behavior):
+        return 0.0, []
+
+    match = provider_early_battle_ally_energy(provider)
+    if not match:
+        return 0.0, []
+
+    pts, detail = match
+    pts *= EARLY_BATTLE_ENERGY_ULT_MULT.get(receiver_behavior.ult_speed, 1.0)
+    pts *= ENERGY_SYNERGY_SCORE_MULT
+    fuel_tag = (
+        " [signature fuel]"
+        if receiver_behavior.synergy_signature_is_ult
+        else ""
+    )
+    return pts, [f"Energy via {detail}{fuel_tag}"]
 
 
 def provider_buffs_at_battle_start(provider: _rs.Hero) -> bool:
@@ -656,6 +817,7 @@ def score_synergy(
     receiver: _rs.Hero,
     receiver_movement: str = "",
     signature_speed: str = "normal",
+    receiver_behavior: _rs.HeroBehavior | None = None,
 ) -> tuple[float, list[str]]:
     if provider.title == receiver.title:
         return 0.0, []
@@ -691,7 +853,18 @@ def score_synergy(
             pts = tw * mw * mult_by_label[effect.label]
             if effect.conditional == "frequent":
                 pts *= FREQUENT_CONDITIONAL_SCORE
-            if effect.label in SIGNATURE_FUEL_LABELS:
+            if effect.label == "Energy recovery":
+                if (
+                    receiver_behavior
+                    and receiver_wants_early_battle_energy(receiver_behavior)
+                    and _effect_is_battle_start_ally_energy(effect)
+                ):
+                    continue
+                pts *= ENERGY_SYNERGY_SCORE_MULT
+                pts *= SIGNATURE_FUEL_ENERGY_MULT.get(signature_speed, 1.0)
+                if is_implicit:
+                    pts *= IMPLICIT_FUEL_BASE
+            elif effect.label in SIGNATURE_FUEL_LABELS:
                 pts *= fuel_mult
                 if is_implicit:
                     pts *= IMPLICIT_FUEL_BASE
@@ -779,19 +952,27 @@ def score_combined_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
     enabler_matchers: dict[str, callable],
+    receiver_behavior: _rs.HeroBehavior,
     receiver_movement: str = "",
     signature_speed: str = "normal",
 ) -> tuple[float, list[str]]:
     buff_score, buff_reasons = score_synergy(
-        provider, receiver, receiver_movement, signature_speed
+        provider,
+        receiver,
+        receiver_movement,
+        signature_speed,
+        receiver_behavior,
+    )
+    early_score, early_reasons = score_early_battle_energy_synergy(
+        provider, receiver_behavior
     )
     summon_score, summon_reasons = score_summon_synergy(provider, receiver)
     en_score, en_reasons = score_enabler_synergy(
         provider, receiver, enabler_matchers
     )
     return (
-        buff_score + summon_score + en_score,
-        buff_reasons + summon_reasons + en_reasons,
+        buff_score + early_score + summon_score + en_score,
+        buff_reasons + early_reasons + summon_reasons + en_reasons,
     )
 
 
@@ -810,6 +991,7 @@ def rank_synergies(
             provider,
             receiver,
             enabler_matchers,
+            receiver_behavior,
             receiver_movement,
             signature_speed,
         )
@@ -823,29 +1005,75 @@ def rank_synergies(
         for entry in ranked
         if not should_exclude_synergy(entry[1], receiver)
     ]
-    return [(title, reasons) for _, reasons, title in filtered[:MAX_SYNERGIES]]
+    return [
+        (title, reasons, score)
+        for score, reasons, title in filtered[:MAX_SYNERGIES]
+    ]
+
+
+def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
+    """Why a provider lands on many receivers' top-five synergy lists."""
+    reasons: list[str] = []
+    ally_buffs = [
+        e
+        for e in provider.effects
+        if e.category == "buff"
+        and e.targeting in ALLY_TARGETINGS
+        and e.conditional != "rare"
+    ]
+    labels = {e.label for e in ally_buffs}
+    targetings = {e.targeting for e in ally_buffs}
+
+    if "Haste buff" in labels or "ATK SPD buff" in labels:
+        scope = (
+            "all allies"
+            if "All units" in targetings
+            else "multiple allies"
+        )
+        reasons.append(
+            f"**Haste** / **ATK SPD** buffs on {scope} fuel slow signature "
+            "skills via the signature-fuel weight"
+        )
+    if "Energy recovery" in labels:
+        reasons.append(
+            "**Energy recovery** helps slow-ultimate units reach their first "
+            "Ultimate sooner"
+        )
+    if provider_early_battle_ally_energy(provider):
+        reasons.append(
+            "**Energy at battle start** (or right after) accelerates early "
+            "Ultimate access for slow-ultimate units"
+        )
+    if not reasons:
+        reasons.append(
+            "ally buffs or enablers that match many receivers' benefit stats "
+            "or Requires labels"
+        )
+    return reasons
 
 
 def build_beneficiaries_index(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
     behavior_by_title: dict[str, _rs.HeroBehavior],
-) -> dict[str, list[str]]:
-    """Provider title -> short names of heroes who list them as a top synergy."""
-    index: dict[str, set[str]] = defaultdict(set)
+) -> dict[str, list[tuple[float, str]]]:
+    """Provider title -> (score, receiver short name), strongest matches first."""
+    index: dict[str, list[tuple[float, str]]] = defaultdict(list)
     for receiver in heroes:
-        for provider_title, _ in rank_synergies(
+        for provider_title, _, score in rank_synergies(
             receiver, heroes, enabler_matchers, behavior_by_title
         ):
-            index[provider_title].add(short_name(receiver.title))
-    return {k: sorted(v) for k, v in index.items()}
+            index[provider_title].append((score, short_name(receiver.title)))
+    return {
+        k: sorted(v, key=lambda x: (-x[0], x[1])) for k, v in index.items()
+    }
 
 
 def format_synergies(
     receiver: _rs.Hero,
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
-    beneficiaries_index: dict[str, list[str]],
+    beneficiaries_index: dict[str, list[tuple[float, str]]],
     behavior_by_title: dict[str, _rs.HeroBehavior],
 ) -> list[str]:
     lines: list[str] = []
@@ -854,7 +1082,7 @@ def format_synergies(
         receiver, heroes, enabler_matchers, behavior_by_title
     )
     if picks:
-        for title, reasons in picks:
+        for title, reasons, _score in picks:
             lines.append(f"- **{short_name(title)}**")
             for reason in reasons:
                 lines.append(f"  - {format_reason_for_display(reason)}")
@@ -866,7 +1094,21 @@ def format_synergies(
         lines.append("")
         lines.append(f"### Units benefitting from {receiver_name}")
         lines.append("")
-        for name in benefited:
+        total = len(benefited)
+        if total > MAX_BENEFICIARIES_DISPLAY:
+            lines.append(
+                f"_**{total}** units include this provider among their "
+                f"top {MAX_SYNERGIES} synergy partners. Only the "
+                f"**{MAX_BENEFICIARIES_DISPLAY}** strongest pairings "
+                f"are listed below. Why the match is common:_"
+            )
+            for reason in _beneficiary_overflow_reasons(receiver):
+                lines.append(f"- {reason}")
+            lines.append("")
+            display = benefited[:MAX_BENEFICIARIES_DISPLAY]
+        else:
+            display = benefited
+        for _score, name in display:
             lines.append(f"- {name}")
 
     return lines

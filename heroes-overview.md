@@ -23,18 +23,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
   - Enables Ranged damage from allies via ranged attacks
   - Enables Debuff on target via ATK debuff (all units)
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-  - Enables Debuff on target via ATK debuff (single target)
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Alna**
   - Enables Debuff on target via Haste debuff (area)
 - **Lucius**
   - Enables Debuff on target via ATK debuff (area)
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+  - Enables Debuff on target via ATK debuff (single target)
 
 ### Units benefitting from Aliceth
 
@@ -102,24 +105,24 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Alna benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle)
 
 ### Units benefitting from Alna
 
-- Aliceth
-- Bonnie
 - Shadewing
+- Aliceth
 
 ### Summary for Alna
 
@@ -173,9 +176,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Units benefitting from Alsa
 
@@ -233,16 +236,18 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lucius**
-  - Max HP via Shield (area, high)
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Gala**
-  - Max HP via Shield (single target, high)
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Summary for Antandra
 
@@ -287,19 +292,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Arden benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Mikola**
-  - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Ravion**
   - ATK buff (multiple targets, low)
   - Energy recovery (multiple targets, medium) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 
 ### Summary for Arden
 
@@ -346,9 +353,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Atalanta
 
@@ -398,12 +405,13 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - Energy recovery (all units, low) [signature fuel]
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -469,17 +477,16 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
 
 ### Units benefitting from Aurora
 
 - Alna
 - Berial
-- Damian
+- Gala
 - Hodgkin
-- Phraesto
 - Zanie
 
 ### Summary for Aurora
@@ -545,9 +552,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
 
 ### Summary for Baelran
 
@@ -600,18 +607,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Berial benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 
 ### Summary for Berial
 
@@ -657,21 +665,25 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
   - Enables Debuff on target via ATK debuff (all units)
+- **Cyran**
+  - Enables Debuff on target via ATK debuff (all units)
+  - Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)
+- **Rowan**
+  - ATK buff (single target, low)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+  - Enables Debuff on target via Energy drain (single target)
+  - Enables Magic damage from allies via Magic damage (single target)
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Enables Debuff on target via ATK debuff (single target)
   - Enables Magic damage from allies via Magic damage (area)
-- **Cyran**
-  - Enables Debuff on target via ATK debuff (all units)
-  - Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)
-- **Dunlingr**
-  - ATK buff (single target, low)
-  - ATK SPD buff (all units, low) [signature fuel]
-  - Enables Debuff on target via Energy drain (all units)
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
+  - Enables Debuff on target via Vitality debuff (single target)
   - Enables Magic damage from allies via Magic damage + all enemies (all units)
-- **Alna**
-  - Enables Debuff on target via Haste debuff (area)
 
 ### Summary for Bonnie
 
@@ -725,18 +737,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Brutus benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Zandrok**
   - Lifedrain buff (area, low, conditional (frequent))
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Valka**
-  - Lifedrain buff (single target, low)
-  - ATK SPD buff (multiple targets, high) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Summary for Brutus
 
@@ -840,20 +853,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Callan benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-
-### Units benefitting from Callan
-
-- Ulmus
+  - Energy recovery (120 at battle start, all units)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle)
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets)
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target)
 
 ### Summary for Callan
 
@@ -966,9 +978,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Cassadee
 
@@ -1018,14 +1030,17 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Rowan**
+  - DEF buff (single target, high)
+  - DEF buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Cecia
 
@@ -1081,16 +1096,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Chippy benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
 
 ### Summary for Chippy
 
@@ -1111,26 +1129,22 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Contess benefits from
 
-- **Twins**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hewynn**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
   - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
-- **Hewynn**
-  - Healing (all units, high)
-- **Damian**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Kafra**
+  - Healing over time (area, high)
 
 ### Units benefitting from Contess
 
-- Perseus
-- Silven
-- Smokey & Meerky
 - Talene
 
 ### Summary for Contess
@@ -1187,14 +1201,16 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Rowan**
+  - ATK buff (single target, low)
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Himmel**
-  - ATK buff (multiple targets, low)
-  - Max HP buff (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
 
 ### Summary for Cryonaia
 
@@ -1250,11 +1266,12 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Hugin**
   - ATK buff (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -1304,16 +1321,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Daimon benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
 
 ### Summary for Daimon
 
@@ -1357,89 +1377,29 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - ATK buff (multiple targets, medium)
   - Haste buff (multiple targets, high) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - ATK SPD via Haste buff (summons only, high)
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets)
 
 ### Units benefitting from Damian
 
+_**52** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
+
+- Lumont
+- Sylphira
+- Vala
+- Zorya
+- Himmel
 - Alsa
 - Atalanta
-- Athalia
 - Aurora
 - Baelran
 - Bryon
-- Callan
-- Cassadee
-- Cecia
-- Chippy
-- Contess
-- Cyran
-- Daimon
-- Dionel
-- Dunlingr
-- Evie
-- Faramor
-- Fay
-- Florabelle
-- Frieren
-- Gala
-- Gunnar
-- Gwyneth
-- Hammie
-- Harak
-- Hepler
-- Hewynn
-- Himmel
-- Hugin
-- Isabella
-- Koko
-- Korin
-- Laios
-- Lenya
-- Lily May
-- Lorsan
-- Lucius
-- Lucy
-- Ludovic
-- Lumont
-- Lyca
-- Marcille
-- Marilee
-- Mehira
-- Mikola
-- Mirael
-- Natsu
-- Nazrik
-- Odie
-- Pang
-- Parisa
-- Pippa
-- Ravion
-- Reinier
-- Rhys
-- Rowan
-- Salazer
-- Satrana
-- Seth
-- Shakir
-- Sinbad
-- Sonja
-- Soren
-- Sylphira
-- Tasi
-- Temesia
-- Twins
-- Vala
-- Valen
-- Valka
-- Velara
-- Viperian
-- Zandrok
-- Zorya
 
 ### Summary for Damian
 
@@ -1489,10 +1449,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -1549,20 +1510,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-  - Max HP via Shield (summons only, medium)
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-  - Healing (single target, medium)
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle)
 
 ### Units benefitting from Dunlingr
 
-- Bonnie
+- Nerion
 - Carolina
 - Indris
-- Nerion
 
 ### Summary for Dunlingr
 
@@ -1622,16 +1582,17 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Gala**
-  - Max HP via Shield (single target, high)
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Eironn
 
@@ -1679,121 +1640,28 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Zandrok**
   - Haste buff (area, medium, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-- **Gala**
-  - Haste buff (single target, high) [signature fuel]
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Units benefitting from Twins
 
-- Aliceth
-- Alna
-- Alsa
-- Antandra
-- Arden
-- Atalanta
-- Athalia
-- Aurora
-- Baelran
-- Berial
-- Bonnie
-- Brutus
-- Bryon
-- Callan
-- Cassadee
-- Cecia
-- Chippy
-- Contess
-- Cryonaia
-- Cyran
-- Daimon
-- Damian
-- Dionel
-- Dunlingr
-- Eironn
-- Evie
-- Faramor
-- Fay
-- Florabelle
-- Frieren
-- Gala
-- Gerda
-- Granny Dahnie
-- Gunnar
-- Gwyneth
-- Hammie
-- Harak
-- Hepler
-- Hewynn
-- Himmel
-- Hodgkin
-- Hugin
-- Indris
-- Isabella
-- Kafra
-- Koko
-- Kordan
-- Korin
-- Kruger
-- Kulu
-- Laios
-- Lenya
-- Lily May
-- Lorsan
-- Lucca
-- Lucius
-- Lucy
-- Ludovic
-- Lumont
-- Lyca
-- Marcille
-- Marilee
-- Mehira
-- Mikola
-- Mirael
-- Natsu
-- Nazrik
-- Niru
-- Odie
-- Pandora
-- Pang
-- Parisa
+_**104** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
+
 - Perseus
-- Phraesto
-- Pippa
-- Ravion
-- Reinier
-- Rhys
-- Rowan
-- Salazer
-- Satrana
-- Seth
-- Shadewing
-- Shakir
-- Shemira
 - Silven
-- Silvina
-- Sinbad
-- Solise
-- Sonja
-- Soren
-- Sylphira
-- Tasi
-- Temesia
-- Thador
-- Thoran
-- Tilaya
-- Vala
-- Valen
 - Valka
+- Lumont
+- Mehira
+- Alsa
+- Baelran
+- Harak
+- Lenya
 - Velara
-- Viperian
-- Walker
-- Zandrok
-- Zanie
-- Zorya
 
 ### Summary for Twins
 
@@ -1846,30 +1714,29 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Evie benefits from
 
-- **Twins**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle)
 - **Mikola**
   - Healing over time (all units, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Isabella**
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hewynn**
   - Healing (all units, high)
-- **Damian**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Evie
 
-- Kordan
-- Laios
 - Perseus
 - Silven
+- Kordan
+- Laios
 - Smokey & Meerky
 - Talene
-- Temesia
 
 ### Summary for Evie
 
@@ -1934,9 +1801,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Gala**
+  - Haste buff (single target, high) [signature fuel]
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Faramor
 
@@ -1983,20 +1851,15 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-
-### Units benefitting from Fay
-
-- Shadewing
-- Smokey & Meerky
-- Talene
 
 ### Summary for Fay
 
@@ -2047,17 +1910,15 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
 
 ### Units benefitting from Florabelle
 
+- Mehira
 - Alna
 - Berial
-- Dunlingr
-- Hodgkin
-- Mehira
 - Zanie
 
 ### Summary for Florabelle
@@ -2117,9 +1978,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Frieren
 
@@ -2174,25 +2035,16 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Aurora**
+  - Summon damage buff (summons only, low)
+  - ATK SPD via Haste buff (summons only, high)
 
 ### Units benefitting from Gala
 
-- Antandra
-- Eironn
-- Gerda
 - Himmel
-- Hugin
+- Faramor
 - Kruger
-- Mikola
 - Silvina
-- Thador
-- Thoran
-- Tilaya
-- Twins
-- Zandrok
 
 ### Summary for Gala
 
@@ -2242,16 +2094,17 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Gala**
-  - Max HP via Shield (single target, high)
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Gerda
 
@@ -2290,16 +2143,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Granny Dahnie benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Ravion**
-  - Energy recovery (multiple targets, medium) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
 
 ### Summary for Granny Dahnie
 
@@ -2348,10 +2204,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -2400,12 +2257,13 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -2448,18 +2306,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Hammie benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Summary for Hammie
 
@@ -2576,13 +2437,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-
-### Units benefitting from Hepler
-
-- Ulmus
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Hepler
 
@@ -2635,18 +2492,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Hewynn benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Units benefitting from Hewynn
 
@@ -2656,7 +2516,6 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - Lucius
 - Ludovic
 - Phraesto
-- Shemira
 - Smokey & Meerky
 - Talene
 
@@ -2723,11 +2582,6 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
   - Enables Party composition via Mage (party slot)
 
-### Units benefitting from Himmel
-
-- Cryonaia
-- Kafra
-
 ### Summary for Himmel
 
 #### Stats Himmel benefits from
@@ -2771,19 +2625,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Hodgkin benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Mikola**
-  - ATK buff (multiple targets, medium)
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-- **Hugin**
+- **Mikola**
+  - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Summary for Hodgkin
 
@@ -2832,118 +2688,31 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Mikola**
   - Haste buff (multiple targets, high) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
   - Haste buff (area, medium, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-- **Gala**
-  - Haste buff (single target, high) [signature fuel]
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Units benefitting from Hugin
 
-- Aliceth
-- Alna
+_**83** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
+
+- Perseus
+- Silven
+- Valka
 - Alsa
-- Antandra
-- Arden
-- Atalanta
-- Athalia
-- Aurora
 - Baelran
-- Berial
-- Brutus
-- Bryon
-- Callan
-- Cassadee
-- Cecia
-- Chippy
-- Cryonaia
-- Cyran
-- Daimon
-- Damian
-- Dionel
-- Dunlingr
-- Eironn
-- Faramor
-- Fay
 - Florabelle
 - Frieren
-- Gala
-- Gerda
-- Granny Dahnie
-- Gunnar
-- Gwyneth
-- Hammie
 - Harak
-- Hepler
-- Hewynn
-- Himmel
-- Hodgkin
-- Indris
-- Isabella
-- Kafra
-- Koko
-- Kordan
-- Korin
-- Kruger
-- Kulu
-- Laios
 - Lenya
-- Lily May
-- Lorsan
-- Lucca
-- Lucy
 - Lumont
-- Lyca
-- Marcille
-- Marilee
-- Mehira
-- Mikola
-- Mirael
-- Natsu
-- Nazrik
-- Niru
-- Odie
-- Pandora
-- Pang
-- Parisa
-- Perseus
-- Pippa
-- Ravion
-- Reinier
-- Rhys
-- Rowan
-- Salazer
-- Satrana
-- Seth
-- Shakir
-- Shemira
-- Silven
-- Silvina
-- Sinbad
-- Solise
-- Sonja
-- Soren
-- Sylphira
-- Tasi
-- Temesia
-- Thador
-- Thoran
-- Tilaya
-- Twins
-- Ulmus
-- Vala
-- Valen
-- Valka
-- Velara
-- Viperian
-- Walker
-- Zandrok
-- Zanie
-- Zorya
 
 ### Summary for Hugin
 
@@ -2975,17 +2744,18 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Igor benefits from
 
+- **Rowan**
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle)
 - **Hewynn**
   - Healing (all units, high)
+- **Pandora**
+  - Healing (single target, high)
+  - Energy recovery (1000 at battle start, single target)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
-- **Koko**
-  - Healing (multiple targets, high)
-  - Lifedrain buff (multiple targets, low)
-- **Mikola**
-  - Healing over time (all units, medium)
 
 ### Summary for Igor
 
@@ -3024,6 +2794,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via ATK debuff (all units)
 - **Twins**
@@ -3092,29 +2863,23 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Isabella benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets)
 
 ### Units benefitting from Isabella
 
 - Contess
-- Evie
 - Igor
-- Lucius
-- Ludovic
-- Lumont
-- Phraesto
-- Shemira
-- Sylphira
-- Vala
 
 ### Summary for Isabella
 
@@ -3164,20 +2929,23 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Rowan**
+  - ATK buff (single target, low)
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Himmel**
-  - ATK buff (multiple targets, low)
-  - Max HP buff (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
 
 ### Units benefitting from Kafra
 
+- Contess
 - Igor
 
 ### Summary for Kafra
@@ -3240,14 +3008,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-
-### Units benefitting from Koko
-
-- Igor
-- Kordan
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Koko
 
@@ -3294,25 +3057,26 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - Max HP buff (multiple targets, high)
   - Healing (single target, medium)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - ATK buff (single target, low)
+  - Max HP buff (single target, high)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - Healing over time (all units, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Hugin**
-  - Max HP via Shield (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
-- **Koko**
-  - Max HP via Shield (all units, low)
-  - Healing (multiple targets, high)
-  - Lifedrain buff (multiple targets, low)
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Units benefitting from Kordan
 
-- Carolina
 - Nerion
+- Carolina
 
 ### Summary for Kordan
 
@@ -3356,12 +3120,13 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -3412,8 +3177,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Gala**
   - Max HP via Shield (single target, high)
   - ATK SPD via Haste buff (single target, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - Energy recovery (all units, low) [signature fuel]
+  - ATK SPD buff (all units, medium) [signature fuel]
 
 ### Summary for Kruger
 
@@ -3455,11 +3221,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Aliceth**
   - ATK buff (multiple targets, low)
   - DEF Penetration buff (multiple targets, medium)
+- **Lyca**
+  - Energy recovery (all units, low) [signature fuel]
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Ravion**
-  - ATK buff (multiple targets, low)
-  - Energy recovery (multiple targets, medium) [signature fuel]
 
 ### Summary for Kulu
 
@@ -3513,14 +3279,15 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Healing (single target, medium)
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (all units, low) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Laios
 
@@ -3588,9 +3355,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Lenya
 
@@ -3630,17 +3397,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Lily May benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Rowan**
+  - ATK buff (single target, low)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 
 ### Summary for Lily May
 
@@ -3687,18 +3458,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Lorsan benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Summary for Lorsan
 
@@ -3789,39 +3563,36 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Lucius benefits from
 
-- **Twins**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Isabella**
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hewynn**
   - Healing (all units, high)
-- **Damian**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Lucius
 
+_**12** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+- Valka
 - Aliceth
-- Antandra
-- Cryonaia
+- Shadewing
 - Eironn
 - Gerda
-- Kafra
 - Kruger
 - Lucca
-- Shadewing
 - Silvina
 - Thador
-- Thoran
 - Tilaya
-- Ulmus
-- Valka
-- Walker
 
 ### Summary for Lucius
 
@@ -3915,20 +3686,20 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Ludovic benefits from
 
-- **Twins**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Isabella**
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hewynn**
   - Healing (all units, high)
-- **Damian**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Ludovic
 
@@ -3982,20 +3753,20 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Isabella**
-  - Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Lumont
 
+- Nerion
 - Carolina
 - Lucca
-- Nerion
 
 ### Summary for Lumont
 
@@ -4053,43 +3824,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units benefitting from Lyca
 
-- Aliceth
-- Arden
-- Athalia
-- Bonnie
-- Callan
-- Cecia
-- Chippy
-- Cyran
-- Daimon
-- Dionel
-- Fay
-- Granny Dahnie
-- Gunnar
-- Gwyneth
-- Hammie
-- Hewynn
+_**91** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
+- **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
+- **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
+
 - Indris
-- Isabella
-- Korin
-- Lily May
-- Lorsan
-- Marcille
-- Marilee
-- Mirael
-- Nazrik
-- Niru
-- Odie
-- Pandora
-- Parisa
-- Reinier
-- Rhys
-- Salazer
-- Satrana
+- Perseus
+- Silven
+- Aliceth
+- Bonnie
 - Shadewing
-- Sinbad
-- Solise
-- Valen
+- Zorya
+- Valka
+- Cecia
+- Cyran
 
 ### Summary for Lyca
 
@@ -4105,6 +3854,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Buffs provided by Lyca
 
 - ATK SPD buff — All units — `medium`
+- Energy recovery — All units — `low`
 
 #### Debuffs provided by Lyca
 
@@ -4129,12 +3879,13 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (all units, low) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -4184,13 +3935,14 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -4247,14 +3999,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
   - Max HP via Shield (summons only, medium)
   - Lifedrain buff (summons only, high, conditional (frequent))
-- **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-
-### Units benefitting from Mehira
-
-- Niru
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 
 ### Summary for Mehira
 
@@ -4310,119 +4058,28 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Zandrok**
   - Haste buff (area, medium, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-- **Gala**
-  - Haste buff (single target, high) [signature fuel]
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Units benefitting from Mikola
 
-- Alna
-- Alsa
-- Antandra
-- Arden
-- Atalanta
-- Athalia
-- Aurora
-- Baelran
-- Berial
-- Brutus
-- Bryon
-- Callan
-- Cassadee
-- Cecia
-- Chippy
-- Contess
-- Cryonaia
-- Cyran
-- Daimon
-- Damian
-- Dionel
-- Dunlingr
-- Eironn
-- Evie
-- Faramor
-- Fay
-- Florabelle
-- Frieren
-- Gala
-- Gerda
-- Granny Dahnie
-- Gunnar
-- Gwyneth
-- Hammie
-- Harak
-- Hepler
-- Hewynn
-- Himmel
-- Hodgkin
-- Hugin
-- Igor
-- Isabella
-- Kafra
-- Koko
-- Kordan
-- Korin
-- Kruger
-- Kulu
-- Laios
-- Lenya
-- Lily May
-- Lorsan
-- Lucius
-- Lucy
-- Ludovic
-- Lumont
-- Lyca
-- Marcille
-- Marilee
-- Mehira
-- Mirael
-- Natsu
-- Nazrik
-- Niru
-- Odie
-- Pandora
-- Pang
-- Parisa
+_**81** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
+
 - Perseus
-- Phraesto
-- Pippa
-- Ravion
-- Reinier
-- Rhys
-- Rowan
-- Salazer
-- Satrana
-- Seth
-- Shakir
-- Shemira
 - Silven
-- Silvina
-- Sinbad
-- Smokey & Meerky
-- Solise
-- Sonja
-- Soren
 - Sylphira
-- Talene
-- Tasi
-- Temesia
-- Thador
-- Thoran
-- Tilaya
-- Twins
 - Vala
-- Valen
-- Valka
-- Velara
-- Viperian
-- Walker
-- Zandrok
-- Zanie
+- Laios
+- Temesia
+- Lumont
+- Mehira
 - Zorya
+- Aurora
 
 ### Summary for Mikola
 
@@ -4457,12 +4114,13 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -4500,8 +4158,12 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
   - Energy recovery (multiple targets, low) [signature fuel]
+- **Lyca**
+  - Energy recovery (all units, low) [signature fuel]
 - **Silven**
   - Energy recovery (single target, high) [signature fuel]
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
 
 ### Summary for Nara
 
@@ -4605,12 +4267,13 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - Energy recovery (all units, low) [signature fuel]
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -4709,17 +4372,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Niru benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
-- **Mehira**
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
-  - Enables Enemy defeat via HP threshold strike
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
 
 ### Summary for Niru
 
@@ -4759,16 +4424,17 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Odie benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle)
 
 ### Summary for Odie
 
@@ -4798,16 +4464,35 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Pandora benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Ravion**
-  - Energy recovery (multiple targets, medium) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+
+### Units benefitting from Pandora
+
+_**13** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
+- **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
+
+- Bonnie
+- Igor
+- Ulmus
+- Granny Dahnie
+- Scarlita
+- Callan
+- Chippy
+- Daimon
+- Niru
+- Reinier
 
 ### Summary for Pandora
 
@@ -4822,10 +4507,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Buffs provided by Pandora
 
+- Energy recovery — Single target — `low`
 - Healing — Single target — `high`
 - Invincible — Single target — `high`
 - Max HP buff (Legendary+) — Single target — `low`
-- Energy recovery (Mythic+) — Self — `low`
 
 #### Debuffs provided by Pandora
 
@@ -4870,9 +4555,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Pang
 
@@ -4921,13 +4606,16 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Hugin**
   - ATK buff (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Summary for Parisa
 
@@ -4980,10 +4668,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
   - Enables Ally stat buffs via 3 ally stat buffs
-- **Contess**
-  - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
-  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+  - Enables Ally stat buffs via 2 ally stat buffs (start of battle)
 
 ### Summary for Perseus
 
@@ -5028,20 +4716,20 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Phraesto benefits from
 
-- **Twins**
-  - Healing (single target, medium)
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Isabella**
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hewynn**
   - Healing (all units, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - ATK SPD via Haste buff (summons only, high)
 
 ### Summary for Phraesto
 
@@ -5152,20 +4840,26 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Units benefitting from Ravion
 
+_**28** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
+- **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
+
+- Shadewing
+- Aliceth
 - Arden
+- Parisa
+- Damian
+- Smokey & Meerky
+- Antandra
 - Granny Dahnie
-- Kulu
-- Nara
 - Pandora
-- Scarlita
-- Solise
-- Ulmus
+- Thoran
 
 ### Summary for Ravion
 
@@ -5222,16 +4916,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Reinier benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
 
 ### Summary for Reinier
 
@@ -5272,12 +4969,13 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -5332,7 +5030,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units benefitting from Rowan
 
-- Lucca
+_**44** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
+
+- Kordan
+- Temesia
+- Dunlingr
+- Lumont
+- Mehira
+- Shemira
+- Bonnie
+- Smokey & Meerky
+- Sylphira
+- Talene
 
 ### Summary for Rowan
 
@@ -5427,16 +5137,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Salazer benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
 
 ### Summary for Salazer
 
@@ -5468,16 +5181,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Satrana benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
 
 ### Summary for Satrana
 
@@ -5525,10 +5241,16 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Ravion**
   - Energy recovery (multiple targets, medium) [signature fuel]
-- **Silven**
-  - Energy recovery (single target, high) [signature fuel]
-- **Smokey & Meerky**
-  - Energy recovery (multiple targets, low) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets)
+- **Rowan**
+  - Energy recovery (energy potion, start of battle)
+- **Lyca**
+  - Energy recovery (120 at battle start, all units)
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target)
+- **Thador**
+  - Energy recovery (lieutenant, start of battle)
 
 ### Summary for Scarlita
 
@@ -5642,20 +5364,22 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
   - Enables Debuff on target via ATK debuff (all units)
 - **Alna**
   - Enables Debuff on target via Haste debuff (area)
   - Enables Continuous damage on enemies via DoT
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
   - Enables Debuff on target via ATK debuff (single target)
+- **Thador**
+  - Energy recovery (lieutenant, start of battle) [signature fuel]
+  - Enables Debuff on target via Magic DEF debuff (single target)
+  - Enables Continuous damage on enemies via DoT
 - **Lucius**
   - Enables Debuff on target via ATK debuff (area)
-- **Fay**
-  - ATK buff (multiple targets, low)
-  - ATK SPD buff (multiple targets, low) [signature fuel]
-  - Enables Debuff on target via Magic DEF debuff (multiple targets)
-  - Enables Continuous damage on enemies via tick damage
 
 ### Summary for Shadewing
 
@@ -5771,17 +5495,19 @@ _No synergy partners matched stat buffs or enablers._
   - Max HP buff (multiple targets, high)
   - Healing (single target, medium)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Isabella**
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
-- **Hewynn**
-  - Healing (all units, high)
 
 ### Summary for Shemira
 
@@ -5825,13 +5551,14 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Enables Ally stat buffs via 3 ally stat buffs
-- **Contess**
-  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (all units, low) [signature fuel]
+  - Enables Ally stat buffs via 2 ally stat buffs (start of battle)
 
 ### Units benefitting from Silven
 
 - Nara
-- Scarlita
 
 ### Summary for Silven
 
@@ -5881,8 +5608,9 @@ _No synergy partners matched stat buffs or enablers._
 - **Gala**
   - Max HP via Shield (single target, high)
   - ATK SPD via Haste buff (single target, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - Energy recovery (all units, low) [signature fuel]
+  - ATK SPD buff (all units, medium) [signature fuel]
 
 ### Summary for Silvina
 
@@ -5930,12 +5658,13 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (all units, low) [signature fuel]
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
@@ -5986,6 +5715,10 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Smokey & Meerky benefits from
 
+- **Rowan**
+  - ATK buff (single target, low)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
@@ -5994,17 +5727,14 @@ _No synergy partners matched stat buffs or enablers._
   - Healing over time (all units, medium)
 - **Hewynn**
   - Healing (all units, high)
-- **Contess**
-  - ATK buff (single target, high)
-  - Healing (multiple targets, high)
-- **Fay**
+- **Ravion**
   - ATK buff (multiple targets, low)
-  - Healing (arc, high)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Units benefitting from Smokey & Meerky
 
 - Nara
-- Scarlita
 
 ### Summary for Smokey & Meerky
 
@@ -6051,11 +5781,11 @@ _No synergy partners matched stat buffs or enablers._
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Ravion**
-  - ATK buff (multiple targets, low)
-  - Energy recovery (multiple targets, medium) [signature fuel]
 - **Lyca**
+  - Energy recovery (all units, low) [signature fuel]
   - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Solise
 
@@ -6108,9 +5838,9 @@ _No synergy partners matched stat buffs or enablers._
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Sonja
 
@@ -6157,9 +5887,9 @@ _No synergy partners matched stat buffs or enablers._
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Summary for Soren
 
@@ -6215,10 +5945,10 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Isabella**
-  - Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Rowan**
+  - ATK buff (single target, low)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 
 ### Summary for Sylphira
 
@@ -6272,6 +6002,10 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Talene benefits from
 
+- **Rowan**
+  - ATK buff (single target, low)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
@@ -6283,9 +6017,6 @@ _No synergy partners matched stat buffs or enablers._
 - **Contess**
   - ATK buff (single target, high)
   - Healing (multiple targets, high)
-- **Fay**
-  - ATK buff (multiple targets, low)
-  - Healing (arc, high)
 
 ### Summary for Talene
 
@@ -6340,14 +6071,14 @@ _No synergy partners matched stat buffs or enablers._
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Units benefitting from Tasi
 
-- Carolina
 - Nerion
+- Carolina
 
 ### Summary for Tasi
 
@@ -6407,12 +6138,14 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-  - Healing (single target, medium)
-- **Evie**
-  - ATK buff (multiple targets, high)
-  - Healing (multiple targets, high)
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
+- **Rowan**
+  - ATK buff (single target, low)
+  - Max HP buff (single target, high)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 
 ### Summary for Temesia
 
@@ -6464,16 +6197,22 @@ _No synergy partners matched stat buffs or enablers._
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Gala**
-  - Max HP via Shield (single target, high)
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units benefitting from Thador
+
+- Shadewing
+- Scarlita
 
 ### Summary for Thador
 
@@ -6492,6 +6231,7 @@ _No synergy partners matched stat buffs or enablers._
 
 - Shield — Self — `high`
 - Damage taken reduction (Legendary+) — Self — `medium`
+- Energy recovery (EX+10) — Single target — `low`
 
 #### Debuffs provided by Thador
 
@@ -6516,16 +6256,18 @@ _No synergy partners matched stat buffs or enablers._
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lucius**
-  - Max HP via Shield (area, high)
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Gala**
-  - Max HP via Shield (single target, high)
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Ravion**
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
 ### Summary for Thoran
 
@@ -6565,16 +6307,17 @@ _No synergy partners matched stat buffs or enablers._
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle)
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Gala**
-  - Max HP via Shield (single target, high)
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Tilaya
 
@@ -6617,16 +6360,20 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Ulmus benefits from
 
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle)
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Hugin**
-  - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
 - **Ravion**
   - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets)
+- **Lyca**
+  - Energy recovery (120 at battle start, all units)
+- **Pandora**
+  - Max HP buff (single target, low)
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target)
 
 ### Summary for Ulmus
 
@@ -6681,10 +6428,10 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Isabella**
-  - Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Rowan**
+  - ATK buff (single target, low)
+  - Healing (area, medium)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 
 ### Summary for Vala
 
@@ -6739,17 +6486,21 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Valen benefits from
 
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Energy recovery (150 early objective, multiple targets) [signature fuel]
+- **Rowan**
+  - ATK buff (single target, low)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 
 ### Summary for Valen
 
@@ -6804,16 +6555,16 @@ _No synergy partners matched stat buffs or enablers._
 - **Lucius**
   - Max HP via Shield (area, high)
   - Enables Adjacent allies via Multiple ally buffs
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (all units, low) [signature fuel]
+  - Enables Adjacent allies via Multiple ally buffs
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-  - Enables Adjacent allies via Multiple ally buffs
-- **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Enables Adjacent allies via Multiple ally buffs
 
 ### Units benefitting from Valka
 
-- Brutus
 - Lyca
 
 ### Summary for Valka
@@ -6878,9 +6629,9 @@ _No synergy partners matched stat buffs or enablers._
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
 
 ### Summary for Velara
 
@@ -6987,16 +6738,17 @@ _No synergy partners matched stat buffs or enablers._
 - **Twins**
   - Max HP buff (multiple targets, high)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Energy recovery (energy potion, start of battle) [signature fuel]
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Zandrok**
-  - Lifedrain buff (area, low, conditional (frequent))
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-- **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Walker
 
@@ -7050,49 +6802,25 @@ _No synergy partners matched stat buffs or enablers._
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Gala**
-  - Haste buff (single target, high) [signature fuel]
-  - Max HP via Shield (single target, high)
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 
 ### Units benefitting from Zandrok
 
-- Alsa
-- Atalanta
-- Aurora
-- Baelran
-- Brutus
-- Bryon
+_**15** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
+
+- Nerion
 - Carolina
-- Cassadee
-- Damian
-- Faramor
-- Florabelle
-- Frieren
-- Gala
 - Harak
-- Hepler
-- Hugin
-- Koko
-- Lenya
-- Lucy
+- Seth
+- Bryon
 - Mikola
 - Natsu
-- Nerion
-- Pang
-- Pippa
-- Ravion
-- Rowan
-- Seth
-- Shakir
-- Sonja
-- Soren
-- Tasi
 - Twins
-- Velara
 - Viperian
-- Walker
-- Zorya
+- Hugin
 
 ### Summary for Zandrok
 
@@ -7129,6 +6857,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Zanie benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Aurora**
@@ -7138,8 +6869,6 @@ _No synergy partners matched stat buffs or enablers._
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Zanie
@@ -7187,6 +6916,10 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (all units, high) [signature fuel]
   - Healing (single target, medium)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Energy recovery (120 at battle start, all units)
+  - Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
 - **Mikola**
   - Haste buff (multiple targets, high) [signature fuel]
   - Healing over time (all units, medium)
@@ -7198,10 +6931,6 @@ _No synergy partners matched stat buffs or enablers._
   - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - Lifedrain buff (area, low, conditional (frequent))
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Zorya
 

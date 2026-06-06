@@ -206,19 +206,25 @@ reviewing or fixing matches, work through both heroes in this order.
    **Defining-tier enablers:** requirements from Ex-Skills (`Mythic+`,
    `EX+n`) and `Supreme+` skills are unit-defining and score higher via
    `DEFINING_TIER_SCORE_MULT` in `generate-heroes-overview.py`.
-   **Signature-skill fuel:** Energy recovery and Haste/ATK SPD ally buffs
-   are boosted by the receiver's effective synergy signature speed
-   (`synergy_signature_speed` on `HeroBehavior`: primary speed if the
-   primary signature skill is buffable, else the alternative skill's
-   speed). Multipliers: `SIGNATURE_FUEL_SPEED_MULT` in
-   `generate-heroes-overview.py` (slow 1.6×, normal 1.2×, fast 1.0×).
-   Slow/normal effective speeds also implicitly value Energy and ATK SPD
-   at `IMPLICIT_FUEL_BASE` (0.6×) when not in benefit stats. Buffability
+   **Early-battle energy:** providers that grant ally Energy at or right
+   after battle start (Pandora box, Lyca, Thador lieutenant, Rowan potion,
+   etc.) score extra for receivers with a **slow ultimate**
+   (`EARLY_BATTLE_ENERGY_ULT_MULT` in `generate-heroes-overview.py`), with
+   an additional boost when the synergy signature skill is a slow ultimate.
+   **Signature-skill fuel:** Haste/ATK SPD ally buffs are boosted by the
+   receiver's effective synergy signature speed (`SIGNATURE_FUEL_SPEED_MULT`:
+   slow 1.6×, normal 1.2×, fast 1.0×). Energy recovery uses a lighter
+   `SIGNATURE_FUEL_ENERGY_MULT` (slow 1.3×) plus `ENERGY_SYNERGY_SCORE_MULT`
+   (0.72×) so batteries do not dominate lists. Slow/normal effective speeds
+   also implicitly value Energy and ATK SPD at `IMPLICIT_FUEL_BASE` (0.45×)
+   when not in benefit stats. Buffability
    is detected from skill text (`NON_BUFFABLE_SIGNATURE_RES` in
    `rewrite-summaries.py`).
 
 **Units benefited** at the end of each Synergies block is the reverse index:
-heroes who list this unit in their top five.
+heroes who list this unit among their top five synergy partners. When
+more than ten such heroes exist, only the ten strongest pairings (by
+score) are listed, with a short note on why the provider matches widely.
 
 **Parsing pitfalls** (bad summaries → false synergies): resolve targeting from
 the **same sentence/clause** as the buff; do not treat self energy or self

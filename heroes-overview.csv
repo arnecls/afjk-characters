@@ -61,7 +61,7 @@ Lucius,moving,slow,normal,,,,,,,,"Area, Single target",,,,Single target — medi
 Lucy,moving,fast,slow,,,,,,"All units, Single target",,,,,,,Single target — high,Single target — high,,,,,,,,,,,,,,,,,,Self — medium,,,,,,,,,,,,,,,,,,Single target — high,,,,,,,,
 Ludovic,stationary,slow,normal,,yes,,,,"All units, Area, Single target",,,,,,Area — medium,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Self — low,,,,,,,,,,,,
 Lumont,high movement,slow,slow,,yes,,,,,,"Area, Single target",,,Single target — low,,Self — high,Area — high,,,,,,,,,,Area — medium,,,,,,,,Self — low,,,Multiple targets — medium,,,,,,,,,,,,Single target — medium,,,,,,,,,,,
-Lyca,stationary,slow,slow,,,,,,,,"All units, Area, Self, Single target",,,,,,Single target — low,,,,,,,,,,,,,,,,,All units — medium,,,,,,,,,,,,,,,,All units — high,,,,,,,,,,All units — high,
+Lyca,stationary,slow,slow,,,,,,,,"All units, Area, Self, Single target",,,,,,Single target — low,,,,,,,,,,,,,,,,,All units — medium,,,,,,All units — low,,,,,,,,,,All units — high,,,,,,,,,,All units — high,
 Marcille,stationary,normal,fast,,,,,,"All units, Area, Single target",,,,,,Multiple targets — high,,,,,,,,,,Single target — high,,,,,,,,,,Self — low,,,,,,,,,,,,,,,,,,,,,,,,,,
 Marilee,high movement,slow,fast,,,,,,,,"Multiple targets, Single target",Multiple targets — low,,,,,Single target — low,,,,,,,,,,,,,,,,Self — high — conditional (frequent),,,Single target — low,,,,,,,,,,,,,,,,,,,,,,,,,
 Mehira,moving,slow,slow,,,yes,,,"All units, Area, Self, Single target",,,,,,Self — low,,,,,,Single target — medium,,,,,,,,,,,,,,Single target — high,,,,,,,,,Self — low,Self — medium,,,,,,,,,,,,,,,,
@@ -73,7 +73,7 @@ Nazrik,stationary,normal,fast,,,,,,,,"Self, Single target",Single target — hig
 Nerion,mostly stationary,slow,fast,,,,,,"Area, Self, Single target",,,,,,,Self — medium,Single target — medium,,,,,,,,,,,,,,,,,Self — medium,,,,,,,,,,,,,,,,Single target — medium,,,,,,,,,,,
 Niru,stationary,slow,slow,,,,,,"All units, Self, Single target",,,,Single target — low,"All units, Single target — low",Single target — low — conditional (rare),,,,,,,,,,,,,,,,,,,,,,,Self — low,,,,,,,,,,,,,,,,,,,,,,,
 Odie,mostly stationary,fast,fast,yes,,,,,Single target,,,,,,,,,,,,,,,,,,,,,,,,,Self — medium,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Pandora,stationary,fast,fast,,,,,,"All units, Single target",,,,,,Single target — high,,,,,,,,Single target — low,,,,,,,,,,,,,,,,,Self — low,,,Single target — high,,Single target — low,,,,,Self — low,,,Single target — low,Single target — low,,Single target — medium,,,,,Single target — medium
+Pandora,stationary,fast,fast,,,,,,"All units, Single target",,,,,,Single target — high,,,,,,,,Single target — low,,,,,,,,,,,,,,,,,Single target — low,,,Single target — high,,Single target — low,,,,,Self — low,,,Single target — low,Single target — low,,Single target — medium,,,,,Single target — medium
 Pang,moving,slow,normal,,,,,,,,"Area, Single target",,,,,Single target — low,Single target — low,,,,,,,,,,,,,,,,Self — medium,,Self — high,,,,,,,,,,,,,,,,,,,,,,,,,,
 Parisa,mostly stationary,slow,normal,,,,,,"Area, Multiple targets, Self, Single target",,,,,,,,,,,,,,,,,,,,,,,,Self — high,Self — medium,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Perseus,moving,slow,fast,,,,,,,,"Area, Self, Single target",Multiple targets — low,,,,,Area — medium,,,,,,,,,,,,,,,,Multiple targets — medium,,,,,,Self — low,,,,,,Self — medium — conditional (frequent),,,,,,,,,,,,,,,,
@@ -102,7 +102,7 @@ Sylphira,moving,slow,slow,,,,,,"Area, Single target",,,,,Single target — low,S
 Talene,moving,fast,fast,,yes,,,,"All units, Area, Single target",,,,"All units, Single target — high",,Single target — low,,,,,,,,,,,,,,,,,,Self — low,,,,,,,,,,,Self — low,,,,,,,,,,,,,,,,,
 Tasi,stationary,slow,fast,yes,yes,,,,"All units, Area, Single target",,,,,,,,Area — high,,,,,All units — high,,Single target — low,,,,,,,,,Self — medium,,Self — high,,,,Self — high,,,,Self — high,,,,,,,,,,,,,,,,,,
 Temesia,high movement,slow,fast,,yes,,,,,,"All units, Area, Single target",Single target — low,,Single target — medium,Single target — low,Self — low,,Area — low,,,,,,,Single target — high,,,,,,,,Self — medium,,,,,,,Self — medium,,,,,,,,,,,,,,,,,,,,Single target — low,
-Thador,moving,slow,normal,yes,,,,,,,"Area, Self, Single target",,,,,Self — high,,Single target — high,,,,,,,,,,,,,,,,,,,,,Self — medium,,,,,,,,,,,,,,,,,,Single target — high,,,,
+Thador,moving,slow,normal,yes,,,,,,,"Area, Self, Single target",,,,,Self — high,,Single target — high,,,,,,,,,,,,,,,,,,,,,Self — medium,Single target — low,,,,,,,,,,,,,,,,,Single target — high,,,,
 Thoran,moving,fast,normal,,,,,,,,"Self, Single target",,,,Single target — medium,,,,,,,,,,Single target — low,,,,,,,,,,,,,,,,,,,Single target — low — conditional (frequent),Self — low,,,,,,,,,,,,,,,,
 Tilaya,high movement,fast,normal,,yes,,,,,,"Arc, Area, Single target",,,,Single target — medium,Self — low,,,,,,,,,,,,,,,,,,,,,,,Self — high — conditional (frequent),,,,,,Area — low,,,,,,,,,,,,,,,,
 Ulmus,moving,fast,normal,,yes,,,,,,"Area, Single target",,,,Single target — low — conditional (frequent),Single target — low,,Single target — medium,,,,,,,,,,,,,,,,,,,,,,,,,,Single target — low,Self — medium,,,,,,,,,,,,,,,,

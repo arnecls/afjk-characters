@@ -1237,6 +1237,12 @@ BUFF_RULES = [
     (r"reduc(?:e|es|ing) (?:her |his |their |the .{0,20})?damage taken", "Damage taken reduction"),
     (r"invincible", "Invincible"),
     (r"extra \d+ \+ \d+ penetration|penetration applied to", "DEF Penetration buff"),
+    (r"(?:the )?ally gains? \d+ energy", "Energy recovery"),
+    (r"grants? all allies \d+ energy", "Energy recovery"),
+    (
+        r"grants? .{0,60}lieutenant.{0,60}energy when a battle starts",
+        "Energy recovery",
+    ),
     (r"(?:recover|restore)(?:s|ing)? \d+ energy", "Energy recovery"),
     (r"normal attack range is increased", "Attack range buff"),
     (r"prevents their defeat", "Fatal blow immunity"),
