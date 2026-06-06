@@ -1500,7 +1500,7 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
     ),
     # Proc limits
     (r"can only (?:cast|trigger|be used) once", "Once per battle"),
-    (r"can trigger once every", "Cooldown-gated trigger"),
+    (r"can trigger once every", "Passive with internal cooldown"),
 )
 
 _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (

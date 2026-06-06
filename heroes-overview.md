@@ -89,7 +89,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Aliceth Requires
 
-- Cooldown-gated trigger — Allies
+- Passive with internal cooldown — Allies
 - Ranged damage from allies — Allies
 - Debuff on target (Legendary+) — Enemies
 
@@ -129,20 +129,12 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Buffs provided by Alna
 
 - Healing — Single target — `low`
-- Healing over time — Single target — `high` — conditional (frequent)
-- Max HP buff — Single target — `low`
-- Ally empower buff — Single target — `medium`
-- ATK buff (Supreme+) — Single target — `medium`
+- Max HP buff — Multiple targets — `low`
 - Damage taken reduction (Legendary+) — Self — `medium`
 
 #### Debuffs provided by Alna
 
 - Haste debuff — Area — `high`
-- Vitality debuff (Supreme+) — Area — `low` — conditional (frequent)
-
-#### Crowd Control provided by Alna
-
-- Freeze (Supreme+) — Area — `medium` — conditional (frequent)
 
 #### Alna's Special Effects
 
@@ -150,9 +142,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Start-of-battle cast — All units
 - Summoning — Self
-- Ally empower (Level 11) — Single target
 - Damage and control immunity (Mythic+) — Self
-- Damage and control immunity (EX+15) — Single target
 
 ## Alsa
 
@@ -223,8 +213,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Alsa Requires
 
-- Cooldown-gated trigger — Enemies
 - Form or stance active — Enemies
+- Passive with internal cooldown — Enemies
 
 ## Antandra
 
@@ -1742,7 +1732,7 @@ _**90** units include this provider among their top 5 synergy partners. Only the
 
 #### Evie Requires
 
-- Cooldown-gated trigger — Allies
+- Passive with internal cooldown — Allies
 
 ## Faramor
 
@@ -2520,7 +2510,7 @@ _**90** units include this provider among their top 5 synergy partners. Only the
 
 #### Hewynn Requires
 
-- Cooldown-gated trigger — Allies
+- Passive with internal cooldown — Allies
 
 ## Himmel
 
@@ -2821,9 +2811,9 @@ _**82** units include this provider among their top 5 synergy partners. Only the
 
 #### Indris Requires
 
-- Cooldown-gated trigger — Enemies
 - Debuff on target — Enemies
 - Multiple debuffs on target — Enemies
+- Passive with internal cooldown — Enemies
 
 ## Isabella
 

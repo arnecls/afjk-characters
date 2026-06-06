@@ -106,7 +106,7 @@ SKIP_ENABLER_REQUIRES = frozenset(
         "Form or stance active",
         "Boss encounter",
         "Once per battle",
-        "Cooldown-gated trigger",
+        "Passive with internal cooldown",
         "Enemy monsters present",
         "Monster ingredients",
         "Stacked resource",

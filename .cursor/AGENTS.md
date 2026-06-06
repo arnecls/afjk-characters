@@ -288,7 +288,7 @@ Line format (no Provides/Requires prefix on each bullet):
   `detect_ally_grant_effects` in `rewrite-summaries.py`).
 - **Requires** — e.g. continuous damage on enemies, magic damage from allies,
   debuff on target (Aging), form or stance active, ally blessing active,
-  cooldown-gated trigger, enemy not CC-immune, party composition,
+  passive with internal cooldown, enemy not CC-immune, party composition,
   **Ally stat buffs** (needs temporary stat buffs from allies; matched by
   providers granting many/wide ally buffs, start-of-battle preferred; see
   `match_ally_stat_buffs` in `generate-heroes-overview.py`).
