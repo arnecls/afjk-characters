@@ -98,6 +98,9 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
         r"\b(?:grant|grants|granting|makes?) (?:all )?(?:allies|an ally)\b", t
     ):
         return True
+    # Ally selection / designation: "selects an ally ... to become"
+    if re.search(r"\bselects? an ally\b", t):
+        return True
     if re.search(r"\b(?:to|for) all allies\b", t):
         return True
     if re.search(r"\bincreas\w+ all allies", t):
@@ -484,6 +487,7 @@ def parse_hero_block(block: str) -> Hero:
             continue
         if ln.strip():
             buffer.append(ln.strip())
+    flush_buffer()
     return hero
 
 
@@ -600,6 +604,10 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
     if re.search(
         r"\b(?:grant|grants|granting|makes?) (?:all )?(?:allies|an ally)\b", t
     ) or re.search(r"\ballies? (?:linked )?become unaffected", t):
+        return False
+    # Ally-designation pattern: "selects an ally … to become" — the buff
+    # clearly targets a single ally, not the caster.
+    if re.search(r"\bselects? an ally\b", t):
         return False
     if re.search(r"\b(?:herself|himself|itself)\b", t):
         return True
@@ -751,6 +759,11 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     if category == "buff" and label == "Max HP buff" and re.search(
         r"\btheir max hp\b", t
     ):
+        # "their" refers to a single designated ally, not multiple heroes
+        if re.search(r"\b(?:that|an|the) ally\b", t) and not re.search(
+            r"\ball allies\b", t
+        ):
+            return "Single target"
         return "Multiple targets"
     if category == "buff" and label == "Haste buff" and re.search(
         r"\b(?:their|his|her) haste\b", t
@@ -1136,8 +1149,15 @@ def add_effect(
 
 BUFF_RULES = [
     (r"grants? an ally brightfeather", "Ally empower buff"),
+    # Winter Warrior style: hero designates one ally for a named role
+    (r"selects? an ally.{0,80}to become", "Ally empower buff"),
     # ATK buff: match increase/increases/increasing + optional pronoun + "atk by"
     (r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s )?atk by", "ATK buff"),
+    # Enhance Force style: "gain a N% increase to their basic stats"
+    (
+        r"gain.{0,20}\d+% increase to (?:their|his|her) (?:basic|base) stats",
+        "ATK buff",
+    ),
     # Passive ally ATK: "the ally's ATK is increased by N%" (Contess Exemption)
     (
         r"(?:the |an |that )?ally'?s? atk is increased by",
@@ -1211,11 +1231,20 @@ BUFF_RULES = [
         r"(?:per second|per 0\.\d|every second|every \d+\.?\d* s)",
         "Healing over time",
     ),
-    # Instant Healing: exclude texts where "per second" follows within 60 chars
-    # of the HP or percentage reference (those are HoT, handled above).
+    # HoT: gradual recovery "over the next Xs" / "over Xs" phrasing.
+    (
+        r"(?:recover|restore)(?:s|ing)? .{0,80}hp.{0,60}over the next \d+\.?\d* s",
+        "Healing over time",
+    ),
+    (
+        r"(?:recover|restore)(?:s|ing)? \d+%.{0,80}over the next \d+\.?\d* s",
+        "Healing over time",
+    ),
+    # Instant Healing: exclude texts where "per second" or "over the next Xs"
+    # follows within 60 chars of the HP or percentage reference (those are HoT).
     (
         r"(?:recover|restore)(?:s|ing)? \d+%"
-        r"(?!.{0,60}(?:per second|per 0\.\d|every second|every \d))",
+        r"(?!.{0,60}(?:per second|per 0\.\d|every second|every \d|over the next \d))",
         "Healing",
     ),
     (
@@ -1330,6 +1359,8 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     # Core mechanics
     (r"instantly defeat", "Instant defeat"),
     (r"\breviv(?:e|es|ing)\b", "Revive ally"),
+    # Ally empower: hero designates one specific ally with a named role/bond
+    (r"selects? an ally.{0,80}to become", "Ally empower"),
     (r"(?:transform|morph)s? into", "Transform"),
     (
         r"mark of |places .{0,40} mark on|forest mark|"
@@ -1347,6 +1378,13 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     (r"prevents their defeat", "Fatal blow save"),
     (r"\binvincible\b", "Invincibility"),
     (r"immune to damage and control", "Damage and control immunity"),
+    # Ally granted same immunity: distinct label so it doesn't collapse into
+    # the self-immunity entry and loses its Single-target targeting.
+    (
+        r"grants?.{0,40}(?:the )?winter warrior.{0,40}same immunity|"
+        r"grants?.{0,50}same (?:damage and control |immunity )?immunity effects",
+        "Damage and control immunity (ally)",
+    ),
     (
         r"drains? \d+% of .{0,30}current hp",
         "Damage leech from allies",
@@ -1510,7 +1548,6 @@ _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
     r"mr\. carlyle",
     r"bell of order",
     r"smashy|swifty|spiny",
-    r"winter warrior",
     r"\bsonny\b",
     r"magical bunny",
     r"dead tide warriors?",
