@@ -89,7 +89,7 @@ BUFF_COLUMN_SET = frozenset(BUFF_TYPES)
 DEBUFF_COLUMN_SET = frozenset(DEBUFF_TYPES)
 
 COLUMNS: list[str] = (
-    ["Name", "DoT", "HoT", "Summons"]
+    ["Name", "Movement", "Casting speed", "DoT", "HoT", "Summons"]
     + [col for _, col in DAMAGE_TYPES]
     + ["Healing", "Shields"]
     + CC_TYPES
@@ -100,6 +100,8 @@ COLUMNS: list[str] = (
 
 SUMMARY_RE = re.compile(r"^### Summary for ", re.M)
 HERO_RE = re.compile(r"^## ([^\n]+)$", re.M)
+MOVEMENT_RE = re.compile(r"^- Movement: ([^\n]+)$", re.M)
+CASTING_SPEED_RE = re.compile(r"^- Casting speed: (\w+)$", re.M)
 SECTION_RE = re.compile(r"^#### (.+)$", re.M)
 BULLET_RE = re.compile(r"^- (.+)$", re.M)
 MAGNITUDE_RE = re.compile(r"`(high|medium|low)`")
@@ -110,6 +112,8 @@ TIER_SUFFIX_RE = re.compile(r" \([^)]+\)$")
 @dataclass
 class HeroRow:
     name: str
+    movement: str = ""
+    casting_speed: str = ""
     flags: dict[str, bool] = field(default_factory=dict)
     cells: dict[str, list[str]] = field(default_factory=lambda: defaultdict(list))
 
@@ -170,12 +174,29 @@ def section_kind(heading: str, hero_name: str) -> str | None:
     return None
 
 
+def parse_behavior(block: str) -> tuple[str, str]:
+    """Return (movement label, casting speed) from the behavior section."""
+    movement = ""
+    casting_speed = ""
+    if m := MOVEMENT_RE.search(block):
+        # "stationary (no finite attack range)" -> "stationary"
+        movement = m.group(1).split(" (", 1)[0].strip()
+    if m := CASTING_SPEED_RE.search(block):
+        casting_speed = m.group(1).strip()
+    return movement, casting_speed
+
+
 def parse_hero_block(name: str, block: str) -> HeroRow | None:
     summary_match = SUMMARY_RE.search(block)
     if not summary_match:
         return None
 
-    row = HeroRow(name=name)
+    movement, casting_speed = parse_behavior(block)
+    row = HeroRow(
+        name=name,
+        movement=movement,
+        casting_speed=casting_speed,
+    )
     summary = block[summary_match.start() :]
 
     section_iter = list(SECTION_RE.finditer(summary))
@@ -252,7 +273,7 @@ def join_cell(values: list[str]) -> str:
 
 
 def row_to_csv(row: HeroRow) -> list[str]:
-    out = [row.name]
+    out = [row.name, row.movement, row.casting_speed]
     for flag in ("DoT", "HoT", "Summons"):
         out.append(format_flag(row.flags.get(flag, False)))
     for _, col in DAMAGE_TYPES:
