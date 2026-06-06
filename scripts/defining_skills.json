@@ -1,0 +1,698 @@
+{
+  "Aliceth": {
+    "section": "Ultimate",
+    "name": "Radiant Rain",
+    "is_ultimate": true,
+    "description": "aerial area arrow rain"
+  },
+  "Alna": {
+    "section": "Ultimate",
+    "name": "Winter Anthem",
+    "is_ultimate": true,
+    "description": "battle-start area blizzard"
+  },
+  "Alsa": {
+    "section": "Ultimate",
+    "name": "Twirling Rocks",
+    "is_ultimate": true,
+    "description": "area physical rock damage"
+  },
+  "Antandra": {
+    "section": "Ultimate",
+    "name": "Shield Assault",
+    "is_ultimate": true,
+    "description": "charge + area knockback"
+  },
+  "Arden": {
+    "section": "Ultimate",
+    "name": "Force of Nature",
+    "is_ultimate": true,
+    "description": "area nature damage burst"
+  },
+  "Atalanta": {
+    "section": "Ultimate",
+    "name": "Wild Sniper",
+    "is_ultimate": true,
+    "description": "dash + line stun shot"
+  },
+  "Athalia": {
+    "section": "Ultimate",
+    "name": "Unbroken Retribution",
+    "is_ultimate": true,
+    "description": "post-death attacking lance"
+  },
+  "Aurora": {
+    "section": "Ultimate",
+    "name": "Starlit Slumber",
+    "is_ultimate": true,
+    "description": "sleep all enemies"
+  },
+  "Baelran": {
+    "section": "Ultimate",
+    "name": "Celestial Rise",
+    "is_ultimate": true,
+    "description": "HP-based shield + transform"
+  },
+  "Berial": {
+    "section": "Ultimate",
+    "name": "Scared Swamp",
+    "is_ultimate": true,
+    "description": "shadow dive + area frighten"
+  },
+  "Bonnie": {
+    "section": "Ultimate",
+    "name": "Deathmark Arrow",
+    "is_ultimate": true,
+    "description": "AoE arrows + stun marked"
+  },
+  "Brutus": {
+    "section": "Ultimate",
+    "name": "Whirlwind Wrath",
+    "is_ultimate": true,
+    "description": "area spin damage"
+  },
+  "Bryon": {
+    "section": "Ultimate",
+    "name": "Falcon Raid",
+    "is_ultimate": true,
+    "description": "falcon area dive damage"
+  },
+  "Callan": {
+    "section": "Ultimate",
+    "name": "Restless Guardian",
+    "is_ultimate": true,
+    "description": "absorb ally damage shield"
+  },
+  "Carolina": {
+    "section": "Ultimate",
+    "name": "Frozen Grave",
+    "is_ultimate": true,
+    "description": "freeze + bury area"
+  },
+  "Cassadee": {
+    "section": "Ultimate",
+    "name": "Running Tide",
+    "is_ultimate": true,
+    "description": "tidal wave knockback"
+  },
+  "Cecia": {
+    "section": "Ultimate",
+    "name": "Queen's Summons",
+    "is_ultimate": true,
+    "description": "summon AoE damage unit"
+  },
+  "Chippy": {
+    "section": "Ultimate",
+    "name": "Brothers-in-arms",
+    "is_ultimate": true,
+    "description": "summon support ally"
+  },
+  "Contess": {
+    "section": "Ultimate",
+    "name": "Detention Pass",
+    "is_ultimate": true,
+    "description": "stealth start + punish"
+  },
+  "Cryonaia": {
+    "section": "Ultimate",
+    "name": "Frostveil Domain",
+    "is_ultimate": true,
+    "description": "area frost slow field"
+  },
+  "Cyran": {
+    "section": "Ultimate",
+    "name": "Gravitic Requiem",
+    "is_ultimate": true,
+    "description": "pull all + execute low HP"
+  },
+  "Daimon": {
+    "section": "Skill2",
+    "name": "Buddy Barrier",
+    "is_ultimate": false,
+    "description": "shield + ATK buff ally behind"
+  },
+  "Damian": {
+    "section": "Skill2",
+    "name": "It's a Plane!",
+    "is_ultimate": false,
+    "description": "plane dive + stun target"
+  },
+  "Dionel": {
+    "section": "Ultimate",
+    "name": "Dawn Light",
+    "is_ultimate": true,
+    "description": "airborne multi-hit AoE"
+  },
+  "Dunlingr": {
+    "section": "Ultimate",
+    "name": "Echo of Silence",
+    "is_ultimate": true,
+    "description": "forbid heals or ultimates"
+  },
+  "Eironn": {
+    "section": "Ex. Skill",
+    "name": "Howling Hurricane",
+    "is_ultimate": false,
+    "description": "free area pull at start"
+  },
+  "Evie": {
+    "section": "Ultimate",
+    "name": "Intel Chase",
+    "is_ultimate": true,
+    "description": "stealth + trigger burst"
+  },
+  "Faramor": {
+    "section": "Ultimate",
+    "name": "Sanctified Circle",
+    "is_ultimate": true,
+    "description": "no-heal zone + true DoT"
+  },
+  "Fay": {
+    "section": "Ultimate",
+    "name": "Vibrant Dance",
+    "is_ultimate": true,
+    "description": "arc heal + ATK buff"
+  },
+  "Florabelle": {
+    "section": "Ultimate",
+    "name": "Pounding Blow",
+    "is_ultimate": true,
+    "description": "summon stomper ally"
+  },
+  "Frieren": {
+    "section": "Ultimate",
+    "name": "Zoltraak",
+    "is_ultimate": true,
+    "description": "high-damage magic beam"
+  },
+  "Gala": {
+    "section": "Ultimate",
+    "name": "Temporal Field",
+    "is_ultimate": true,
+    "description": "area time slow field"
+  },
+  "Gerda": {
+    "section": "Ultimate",
+    "name": "Splashing Fun",
+    "is_ultimate": true,
+    "description": "AoE heal + sleep"
+  },
+  "Granny Dahnie": {
+    "section": "Ultimate",
+    "name": "Threshold of Jade",
+    "is_ultimate": true,
+    "description": "root zone + HP drain"
+  },
+  "Gunnar": {
+    "section": "Ultimate",
+    "name": "Annihilation Directive",
+    "is_ultimate": true,
+    "description": "long-range area bombing"
+  },
+  "Gwyneth": {
+    "section": "Ultimate",
+    "name": "Hailing Arrows",
+    "is_ultimate": true,
+    "description": "area arrow rain"
+  },
+  "Hammie": {
+    "section": "Ultimate",
+    "name": "Pretty Fireball",
+    "is_ultimate": true,
+    "description": "AoE magic fireball"
+  },
+  "Harak": {
+    "section": "Skill2",
+    "name": "Flesh Feast",
+    "is_ultimate": false,
+    "description": "instantly defeat weakest unit"
+  },
+  "Hepler": {
+    "section": "Ultimate",
+    "name": "Form Shift",
+    "is_ultimate": true,
+    "description": "toggle attack/support form"
+  },
+  "Hewynn": {
+    "section": "Ultimate",
+    "name": "Rain Prayer",
+    "is_ultimate": true,
+    "description": "AoE team healing"
+  },
+  "Himmel": {
+    "section": "Skill2",
+    "name": "Hero Party",
+    "is_ultimate": false,
+    "description": "buff needing Mage+Tank+Support"
+  },
+  "Hodgkin": {
+    "section": "Ultimate",
+    "name": "Cannon Fire",
+    "is_ultimate": true,
+    "description": "AoE cannon salvo"
+  },
+  "Hugin": {
+    "section": "Ultimate",
+    "name": "Unstoppable!",
+    "is_ultimate": true,
+    "description": "charge + shield assault"
+  },
+  "Igor": {
+    "section": "Ultimate",
+    "name": "Funereal Ring",
+    "is_ultimate": true,
+    "description": "tombstone zone damage"
+  },
+  "Indris": {
+    "section": "Ultimate",
+    "name": "Spellbane Shot",
+    "is_ultimate": true,
+    "description": "silence + multi-debuff shot"
+  },
+  "Isabella": {
+    "section": "Ultimate",
+    "name": "Grimoire Pact",
+    "is_ultimate": true,
+    "description": "absorb enemy stat buffs"
+  },
+  "Kafra": {
+    "section": "Ultimate",
+    "name": "Gale Thrust",
+    "is_ultimate": true,
+    "description": "mark + high single-target hit"
+  },
+  "Koko": {
+    "section": "Ultimate",
+    "name": "Full Energy",
+    "is_ultimate": true,
+    "description": "DMG reduction + true damage return"
+  },
+  "Kordan": {
+    "section": "Ultimate",
+    "name": "Dominance Ring",
+    "is_ultimate": true,
+    "description": "immobilize + zone damage"
+  },
+  "Korin": {
+    "section": "Ultimate",
+    "name": "Demonseal Spear",
+    "is_ultimate": true,
+    "description": "pierce-through spear strike"
+  },
+  "Kruger": {
+    "section": "Ultimate",
+    "name": "Devastating Axe",
+    "is_ultimate": true,
+    "description": "high single-target damage"
+  },
+  "Kulu": {
+    "section": "Ultimate",
+    "name": "Blast Mayhem",
+    "is_ultimate": true,
+    "description": "bomb cluster AoE"
+  },
+  "Laios": {
+    "section": "Ultimate",
+    "name": "Living Armor - Kensuke",
+    "is_ultimate": true,
+    "description": "summon infinite-HP ally"
+  },
+  "Lenya": {
+    "section": "Ultimate",
+    "name": "Wild Duel",
+    "is_ultimate": true,
+    "description": "dash + duel multi-hit"
+  },
+  "Lily May": {
+    "section": "Ultimate",
+    "name": "Tempest Shot",
+    "is_ultimate": true,
+    "description": "interrupt enemy ultimate"
+  },
+  "Lorsan": {
+    "section": "Ultimate",
+    "name": "Whispering Tempest",
+    "is_ultimate": true,
+    "description": "storm zone + haste debuff"
+  },
+  "Lucca": {
+    "section": "Ultimate",
+    "name": "Quake Slam",
+    "is_ultimate": true,
+    "description": "area knockdown slam"
+  },
+  "Lucius": {
+    "section": "Ultimate",
+    "name": "Divine Light Aegis",
+    "is_ultimate": true,
+    "description": "area shield + light damage"
+  },
+  "Lucy": {
+    "section": "Skill2",
+    "name": "Star Dress: Aquarius Form",
+    "is_ultimate": false,
+    "description": "permanent AoE water form"
+  },
+  "Ludovic": {
+    "section": "Ultimate",
+    "name": "Eternal Serenity",
+    "is_ultimate": true,
+    "description": "area sustained healing"
+  },
+  "Lumont": {
+    "section": "Ultimate",
+    "name": "Lumont's Charge",
+    "is_ultimate": true,
+    "description": "charge + stomp knockdown"
+  },
+  "Lyca": {
+    "section": "Ultimate",
+    "name": "Comet Archery",
+    "is_ultimate": true,
+    "description": "area ranged volley"
+  },
+  "Marcille": {
+    "section": "Ultimate",
+    "name": "Silver-White Wings that Streak Across the Skies",
+    "is_ultimate": true,
+    "description": "large AoE magic damage"
+  },
+  "Marilee": {
+    "section": "Ultimate",
+    "name": "Mid-Air Shot",
+    "is_ultimate": true,
+    "description": "high-damage precision shot"
+  },
+  "Mehira": {
+    "section": "Ultimate",
+    "name": "Euphoric Rush",
+    "is_ultimate": true,
+    "description": "AoE damage + charm"
+  },
+  "Mikola": {
+    "section": "Ultimate",
+    "name": "Dauntless Hymn",
+    "is_ultimate": true,
+    "description": "haste + DEF aura zone"
+  },
+  "Mirael": {
+    "section": "Ultimate",
+    "name": "Winged Flame",
+    "is_ultimate": true,
+    "description": "area fire barrage"
+  },
+  "Nara": {
+    "section": "Skill1",
+    "name": "Phantom Chains",
+    "is_ultimate": false,
+    "description": "pull enemy to self"
+  },
+  "Natsu": {
+    "section": "Ultimate",
+    "name": "Lightning Fire Dragon's Roar/Fire Dragon King's Roar",
+    "is_ultimate": true,
+    "description": "high-damage elemental beam"
+  },
+  "Nazrik": {
+    "section": "Ultimate",
+    "name": "Rend Rupture",
+    "is_ultimate": true,
+    "description": "HP-drain bleed DoT"
+  },
+  "Nerion": {
+    "section": "Ultimate",
+    "name": "Drowning Doom",
+    "is_ultimate": true,
+    "description": "pull + submerge enemies"
+  },
+  "Niru": {
+    "section": "Skill2",
+    "name": "Spirit Devour",
+    "is_ultimate": false,
+    "description": "AoE damage + ally heal"
+  },
+  "Odie": {
+    "section": "Ultimate",
+    "name": "Corrosive Dart",
+    "is_ultimate": true,
+    "description": "undispellable poison DoT"
+  },
+  "Pandora": {
+    "section": "Ultimate",
+    "name": "Panic Projection",
+    "is_ultimate": true,
+    "description": "frighten all units"
+  },
+  "Pang": {
+    "section": "Ultimate",
+    "name": "Sky Splitter",
+    "is_ultimate": true,
+    "description": "area knockdown burst"
+  },
+  "Parisa": {
+    "section": "Ultimate",
+    "name": "Floral Splendor",
+    "is_ultimate": true,
+    "description": "mark + AoE burst damage"
+  },
+  "Perseus": {
+    "section": "Ultimate",
+    "name": "Divine Rend",
+    "is_ultimate": true,
+    "description": "march + continuous knockback"
+  },
+  "Phraesto": {
+    "section": "Ultimate",
+    "name": "Futile Echo",
+    "is_ultimate": true,
+    "description": "deploy illusion clone"
+  },
+  "Pippa": {
+    "section": "Ultimate",
+    "name": "Chaos Manifest",
+    "is_ultimate": true,
+    "description": "reposition + random chaos"
+  },
+  "Ravion": {
+    "section": "Ultimate",
+    "name": "Killer Flush",
+    "is_ultimate": true,
+    "description": "multi-hit lost-HP scaling"
+  },
+  "Reinier": {
+    "section": "Ultimate",
+    "name": "Mutual Reflection",
+    "is_ultimate": true,
+    "description": "isolate enemy in dimension"
+  },
+  "Rhys": {
+    "section": "Ultimate",
+    "name": "Flame Barrage",
+    "is_ultimate": true,
+    "description": "ranged fire barrage"
+  },
+  "Rowan": {
+    "section": "Ultimate",
+    "name": "Fatal Greed",
+    "is_ultimate": true,
+    "description": "AoE energy recovery burst"
+  },
+  "Saida": {
+    "section": "Ultimate",
+    "name": "Seed Siphon",
+    "is_ultimate": true,
+    "description": "pin + energy drain + seed"
+  },
+  "Salazer": {
+    "section": "Ultimate",
+    "name": "Rain of Blades",
+    "is_ultimate": true,
+    "description": "area blade storm"
+  },
+  "Satrana": {
+    "section": "Ultimate",
+    "name": "Fiery Dance",
+    "is_ultimate": true,
+    "description": "area fire burn damage"
+  },
+  "Scarlita": {
+    "section": "Ultimate",
+    "name": "Divine Quake",
+    "is_ultimate": true,
+    "description": "aerial dive + area damage"
+  },
+  "Seth": {
+    "section": "Ultimate",
+    "name": "Shadow Strike",
+    "is_ultimate": true,
+    "description": "multi-hit shadow burst"
+  },
+  "Shadewing": {
+    "section": "Ultimate",
+    "name": "Crimson Venom",
+    "is_ultimate": true,
+    "description": "apply DoT to all enemies"
+  },
+  "Shakir": {
+    "section": "Ultimate",
+    "name": "Ravaging Claws",
+    "is_ultimate": true,
+    "description": "single-target charge damage"
+  },
+  "Shemira": {
+    "section": "Ultimate",
+    "name": "Phantom Procession",
+    "is_ultimate": true,
+    "description": "sustained area ghost damage"
+  },
+  "Silven": {
+    "section": "Skill1",
+    "name": "Gravity Collapse",
+    "is_ultimate": false,
+    "description": "stack marks + detonate stun"
+  },
+  "Silvina": {
+    "section": "Ultimate",
+    "name": "Shadow Slayer",
+    "is_ultimate": true,
+    "description": "stealth + execute burst"
+  },
+  "Sinbad": {
+    "section": "Ultimate",
+    "name": "Whizzing Edge",
+    "is_ultimate": true,
+    "description": "multi-hit physical slashes"
+  },
+  "Smokey & Meerky": {
+    "section": "Skill1",
+    "name": "Energizing Formula",
+    "is_ultimate": false,
+    "description": "ATK buff + energy aura"
+  },
+  "Solise": {
+    "section": "Ultimate",
+    "name": "Life's Embrace",
+    "is_ultimate": true,
+    "description": "AoE healing waves"
+  },
+  "Sonja": {
+    "section": "Ultimate",
+    "name": "Tempest Thrusts",
+    "is_ultimate": true,
+    "description": "area multi-hit + current HP damage"
+  },
+  "Soren": {
+    "section": "Ultimate",
+    "name": "Whirlwind Swing",
+    "is_ultimate": true,
+    "description": "area spin damage"
+  },
+  "Sylphira": {
+    "section": "Ultimate",
+    "name": "Grand Finale",
+    "is_ultimate": true,
+    "description": "beat stacking + song DoT"
+  },
+  "Talene": {
+    "section": "Ultimate",
+    "name": "Divine Conflagration",
+    "is_ultimate": true,
+    "description": "sustained channelled flame beam"
+  },
+  "Tasi": {
+    "section": "Ultimate",
+    "name": "Eternal Dreamscape",
+    "is_ultimate": true,
+    "description": "sleep all enemies"
+  },
+  "Temesia": {
+    "section": "Ultimate",
+    "name": "Knight's Heart",
+    "is_ultimate": true,
+    "description": "HP absorb shield formation"
+  },
+  "Thador": {
+    "section": "Skill1",
+    "name": "Darkmoon Pact",
+    "is_ultimate": false,
+    "description": "crit + shield for ally behind"
+  },
+  "Thoran": {
+    "section": "Skill2",
+    "name": "Resurrection",
+    "is_ultimate": false,
+    "description": "self-revive on defeat"
+  },
+  "Tilaya": {
+    "section": "Ultimate",
+    "name": "Wrath of the Wilds",
+    "is_ultimate": true,
+    "description": "battle-start HP vine shield"
+  },
+  "Twins": {
+    "section": "Ultimate",
+    "name": "Starlight Waltz",
+    "is_ultimate": true,
+    "description": "high haste buff all allies"
+  },
+  "Ulmus": {
+    "section": "Skill2",
+    "name": "Way of the Forest",
+    "is_ultimate": false,
+    "description": "HP regen + energy when rooted"
+  },
+  "Vala": {
+    "section": "Ultimate",
+    "name": "Swift Shift",
+    "is_ultimate": true,
+    "description": "mode shift + stun/true damage"
+  },
+  "Valen": {
+    "section": "Ultimate",
+    "name": "Thunder Swordwork",
+    "is_ultimate": true,
+    "description": "multi-hit area + ATK buff"
+  },
+  "Valka": {
+    "section": "Ultimate",
+    "name": "Blooming Terror",
+    "is_ultimate": true,
+    "description": "stack fear + consume enemy"
+  },
+  "Velara": {
+    "section": "Ultimate",
+    "name": "Ruthless Rite",
+    "is_ultimate": true,
+    "description": "transfer enemy stats to allies"
+  },
+  "Viperian": {
+    "section": "Ultimate",
+    "name": "Spiritual Viper",
+    "is_ultimate": true,
+    "description": "poison drones on all enemies"
+  },
+  "Walker": {
+    "section": "Ultimate",
+    "name": "Six-Shot",
+    "is_ultimate": true,
+    "description": "multi-target burst shots"
+  },
+  "Zandrok": {
+    "section": "Ultimate",
+    "name": "Savage Slash",
+    "is_ultimate": true,
+    "description": "high single-target melee"
+  },
+  "Zanie": {
+    "section": "Ultimate",
+    "name": "Vein Pulse",
+    "is_ultimate": true,
+    "description": "deploy turrets at battle start"
+  },
+  "Zorya": {
+    "section": "Ultimate",
+    "name": "Circle of Vigil",
+    "is_ultimate": true,
+    "description": "dormant cycle + AoE jump"
+  }
+}

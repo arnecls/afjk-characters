@@ -8,6 +8,7 @@ strip_summaries_from_heroes_md() removes legacy summaries from Heroes.md.
 
 from __future__ import annotations
 
+import json
 import re
 import statistics
 from collections import defaultdict
@@ -17,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HEROES_MD = ROOT / "Heroes.md"
 HEROES2_MD = ROOT / "heroes2.md"
+DEFINING_SKILLS_FILE = Path(__file__).resolve().parent / "defining_skills.json"
 
 SECTION_TIERS = {
     "Ultimate": "base",
@@ -2738,6 +2740,12 @@ class HeroBehavior:
     movement: str
     movement_note: str
     casting_speed: str
+    defining_skill_name: str = ""
+    defining_skill_is_ult: bool = False
+    defining_skill_description: str = ""
+    defining_skill_speed: str = ""
+    ult_speed: str = ""
+    non_ult_speed: str = ""
 
 
 def _parse_meta_number(value: str) -> float | None:
@@ -3095,17 +3103,91 @@ def compute_casting_scores(
     return scores
 
 
+def _casting_speed_label(score: float) -> str:
+    """Classify a raw time score as slow / normal / fast."""
+    if score <= CASTING_SPEED_FAST_THRESHOLD:
+        return "fast"
+    if score >= CASTING_SPEED_SLOW_THRESHOLD:
+        return "slow"
+    return "normal"
+
+
 def casting_speed_labels(scores: dict[str, float]) -> dict[str, str]:
     """Classify heroes by absolute composite-time thresholds."""
-    labels: dict[str, str] = {}
-    for title, score in scores.items():
-        if score <= CASTING_SPEED_FAST_THRESHOLD:
-            labels[title] = "fast"
-        elif score >= CASTING_SPEED_SLOW_THRESHOLD:
-            labels[title] = "slow"
-        else:
-            labels[title] = "normal"
-    return labels
+    return {
+        title: _casting_speed_label(score) for title, score in scores.items()
+    }
+
+
+NON_ULT_CASTING_WEIGHTS: dict[str, float] = {
+    "skill1": 0.50,
+    "skill2": 0.30,
+    "ex": 0.20,
+}
+
+DEFINING_SKILL_SECTION_KEYS: dict[str, str] = {
+    "Ultimate": "ult",
+    "Skill1": "skill1",
+    "Skill2": "skill2",
+    "Ex. Skill": "ex",
+}
+
+
+def _ult_casting_time(skills: list[SkillMeta]) -> float:
+    ult = _skill_by_section(skills, "Ultimate")
+    if ult is None:
+        return 0.0
+    ie = ult.initial_energy if ult.initial_energy is not None else 0.0
+    icd_ult = ult.initial_cd or 0.0
+    ch = ult.channel_duration or 0.0
+    return icd_ult + (ULT_ENERGY_CAPACITY - ie) / ENERGY_FILL_RATE + ch
+
+
+def compute_per_skill_speeds(
+    skills_by_title: dict[str, list[SkillMeta]],
+) -> dict[str, dict[str, str]]:
+    """Per-hero speed labels for ult, non-ult composite, and each skill."""
+    result: dict[str, dict[str, str]] = {}
+    for title, skills in skills_by_title.items():
+        ult_t = _ult_casting_time(skills)
+        s1 = _skill_by_section(skills, "Skill1")
+        s2 = _skill_by_section(skills, "Skill2")
+        ex = _skill_by_section(skills, "Ex. Skill")
+
+        s1_t = _skill_casting_time(s1)
+        s2_t = _skill_casting_time(s2)
+        ex_t = _skill_casting_time(ex)
+        non_ult_t = (
+            NON_ULT_CASTING_WEIGHTS["skill1"] * s1_t
+            + NON_ULT_CASTING_WEIGHTS["skill2"] * s2_t
+            + NON_ULT_CASTING_WEIGHTS["ex"] * ex_t
+        )
+
+        result[title] = {
+            "ult": _casting_speed_label(ult_t),
+            "non_ult": _casting_speed_label(non_ult_t),
+            "skill1": _casting_speed_label(s1_t),
+            "skill2": _casting_speed_label(s2_t),
+            "ex": _casting_speed_label(ex_t),
+        }
+    return result
+
+
+def _load_defining_skills() -> dict[str, dict]:
+    if not DEFINING_SKILLS_FILE.exists():
+        return {}
+    return json.loads(DEFINING_SKILLS_FILE.read_text(encoding="utf-8"))
+
+
+def _defining_skill_speed_label(
+    defining: dict | None,
+    per_skill: dict[str, str],
+) -> str:
+    if not defining:
+        return "normal"
+    section = defining.get("section", "Ultimate")
+    key = DEFINING_SKILL_SECTION_KEYS.get(section, "ult")
+    return per_skill.get(key, "normal")
 
 
 def build_behavior_for_heroes(
@@ -3134,23 +3216,60 @@ def build_behavior_for_heroes(
 
     casting_scores = compute_casting_scores(skills_by_title)
     casting_labels = casting_speed_labels(casting_scores)
+    per_skill_speeds = compute_per_skill_speeds(skills_by_title)
+    defining_by_display = _load_defining_skills()
 
     result: dict[str, HeroBehavior] = {}
     for hero in heroes:
         skills = skills_by_title[hero.title]
         movement, note = compute_movement(skills)
-        result[hero.title] = HeroBehavior(
-            movement=movement,
-            movement_note=note,
-            casting_speed=casting_labels.get(hero.title, "normal"),
-        )
+        display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
+        speeds = per_skill_speeds.get(hero.title, {})
+        defining = defining_by_display.get(display)
+
+        if defining:
+            result[hero.title] = HeroBehavior(
+                movement=movement,
+                movement_note=note,
+                casting_speed=casting_labels.get(hero.title, "normal"),
+                defining_skill_name=defining.get("name", ""),
+                defining_skill_is_ult=bool(defining.get("is_ultimate")),
+                defining_skill_description=defining.get("description", ""),
+                defining_skill_speed=_defining_skill_speed_label(
+                    defining, speeds
+                ),
+                ult_speed=speeds.get("ult", "normal"),
+                non_ult_speed=speeds.get("non_ult", "normal"),
+            )
+        else:
+            result[hero.title] = HeroBehavior(
+                movement=movement,
+                movement_note=note,
+                casting_speed=casting_labels.get(hero.title, "normal"),
+                ult_speed=speeds.get("ult", "normal"),
+                non_ult_speed=speeds.get("non_ult", "normal"),
+            )
     return result
 
 
 def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
     lines.append(f"- Movement: {behavior.movement} ({behavior.movement_note})")
-    lines.append(f"- Casting speed: {behavior.casting_speed}")
+    if behavior.defining_skill_name:
+        ult_suffix = (
+            " (ultimate)" if behavior.defining_skill_is_ult else ""
+        )
+        lines.append(
+            f"- Defining skill: {behavior.defining_skill_name}{ult_suffix}"
+            f" — {behavior.defining_skill_description}"
+        )
+        lines.append(
+            f"- Defining skill speed: {behavior.defining_skill_speed}"
+        )
+        lines.append(f"- Ultimate speed: {behavior.ult_speed}")
+        lines.append(f"- Non-ultimate speed: {behavior.non_ult_speed}")
+    else:
+        lines.append(f"- Casting speed: {behavior.casting_speed}")
     lines.append("")
     return lines
 

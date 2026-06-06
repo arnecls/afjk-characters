@@ -145,17 +145,32 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   Data from
   [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
   Twins → Elijah & Lailah, Gala → Galahad).
-- **Casting speed** — `slow`, `normal`, or `fast`. Weighted composite
-  time in seconds (higher = slower), then absolute thresholds (not
-  roster terciles). Ultimate component (50%): `initial_cd` +
-  `(ULT_ENERGY_CAPACITY - Initial Energy) / ENERGY_FILL_RATE` +
-  channel duration parsed from ult text (`for Xs`). Skill1/Skill2/Ex
-  (25% / 15% / 10%): cooldown + `initial_cd * INITIAL_CD_SKILL_WEIGHT`.
-  Tunables in `rewrite-summaries.py`: `ENERGY_FILL_RATE` (100),
-  `ULT_ENERGY_CAPACITY` (1000), `INITIAL_CD_SKILL_WEIGHT` (0.5),
-  `INITIAL_CD_CAP` (60), `CASTING_SPEED_FAST_THRESHOLD` (5.0 s),
+- **Defining skill** — the one skill that most characterises how the
+  hero is played. Stored in `scripts/defining_skills.json` (key =
+  display name from `heroes-overview.md`). Shown in the behavior block
+  as `Defining skill: {name} [(ultimate)] — {2–5 word description}`.
+  Often the Ultimate, but not always. Pick the skill that defines the
+  unit's identity in combat.
+  **Indicators:** enhanced by Ex / Supreme+ (`Enhance Force`); unique
+  mechanic few others share; exceptional damage or buff; battle-start or
+  formation setup. **Examples:** Shemira → Phantom Procession (ultimate,
+  high damage); Lily May → Tempest Shot (cancel enemy ultimate); Dunlingr
+  → Echo of Silence (block heals/ultimates); Eironn → Howling Hurricane
+  (free pull at battle start); Thador → Darkmoon Pact (buff unit behind).
+- **Casting speed** — split into three lines: **defining skill speed**,
+  **ultimate speed**, and **non-ultimate speed** (`slow`, `normal`, or
+  `fast`). Each uses absolute time thresholds on the relevant skill(s).
+  Ultimate time: `initial_cd` + `(ULT_ENERGY_CAPACITY - Initial Energy) /
+  ENERGY_FILL_RATE` + channel duration (`for Xs`). Non-ultimate skills:
+  `cooldown + initial_cd * INITIAL_CD_SKILL_WEIGHT` (Skill1/Skill2/Ex
+  weighted 50% / 30% / 20% for the composite non-ult line). Defining
+  skill speed uses the defining skill's own time (ult formula if
+  Ultimate, else skill formula). Tunables in `rewrite-summaries.py`:
+  `ENERGY_FILL_RATE` (100), `ULT_ENERGY_CAPACITY` (1000),
+  `INITIAL_CD_SKILL_WEIGHT` (0.5), `INITIAL_CD_CAP` (60),
+  `CASTING_SPEED_FAST_THRESHOLD` (5.0 s),
   `CASTING_SPEED_SLOW_THRESHOLD` (8.5 s).
-  `compute_casting_scores()` / `casting_speed_labels()` in
+  `compute_per_skill_speeds()` / `format_behavior_section()` in
   `rewrite-summaries.py`.
 
 Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).

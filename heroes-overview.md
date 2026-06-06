@@ -14,7 +14,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Aliceth's behavior
 
 - Movement: stationary (avg attack range 8.0 tiles)
-- Casting speed: normal
+- Defining skill: Radiant Rain (ultimate) — aerial area arrow rain
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Aliceth benefits from
 
@@ -92,7 +95,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Alna's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Winter Anthem (ultimate) — battle-start area blizzard
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Alna benefits from
 
@@ -140,7 +146,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Alsa's behavior
 
 - Movement: mostly stationary (avg attack range 6.0 tiles)
-- Casting speed: slow
+- Defining skill: Twirling Rocks (ultimate) — area physical rock damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Alsa benefits from
 
@@ -205,7 +214,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Antandra's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Shield Assault (ultimate) — charge + area knockback
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Antandra benefits from
 
@@ -263,7 +275,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Arden's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Force of Nature (ultimate) — area nature damage burst
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Arden benefits from
 
@@ -302,7 +317,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Atalanta's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Wild Sniper (ultimate) — dash + line stun shot
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Atalanta benefits from
 
@@ -356,7 +374,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Athalia's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Unbroken Retribution (ultimate) — post-death attacking lance
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: normal
 
 ### Units Athalia benefits from
 
@@ -407,7 +428,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Aurora's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Starlit Slumber (ultimate) — sleep all enemies
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Aurora benefits from
 
@@ -478,7 +502,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Baelran's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Celestial Rise (ultimate) — HP-based shield + transform
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Baelran benefits from
 
@@ -541,7 +568,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Berial's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Scared Swamp (ultimate) — shadow dive + area frighten
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Berial benefits from
 
@@ -587,7 +617,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Bonnie's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Deathmark Arrow (ultimate) — AoE arrows + stun marked
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Bonnie benefits from
 
@@ -649,7 +682,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Brutus's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Whirlwind Wrath (ultimate) — area spin damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Brutus benefits from
 
@@ -695,7 +731,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Bryon's behavior
 
 - Movement: stationary (summon moves)
-- Casting speed: normal
+- Defining skill: Falcon Raid (ultimate) — falcon area dive damage
+- Defining skill speed: fast
+- Ultimate speed: fast
+- Non-ultimate speed: slow
 
 ### Units Bryon benefits from
 
@@ -753,7 +792,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Callan's behavior
 
 - Movement: moving (avg attack range 1.7 tiles)
-- Casting speed: slow
+- Defining skill: Restless Guardian (ultimate) — absorb ally damage shield
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Callan benefits from
 
@@ -811,7 +853,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Carolina's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Casting speed: slow
+- Defining skill: Frozen Grave (ultimate) — freeze + bury area
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Carolina benefits from
 
@@ -862,7 +907,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Cassadee's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Casting speed: slow
+- Defining skill: Running Tide (ultimate) — tidal wave knockback
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Cassadee benefits from
 
@@ -920,7 +968,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Cecia's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: slow
+- Defining skill: Queen's Summons (ultimate) — summon AoE damage unit
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Cecia benefits from
 
@@ -990,7 +1041,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Chippy's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Brothers-in-arms (ultimate) — summon support ally
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Chippy benefits from
 
@@ -1008,7 +1062,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Contess's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Detention Pass (ultimate) — stealth start + punish
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: slow
 
 ### Units Contess benefits from
 
@@ -1076,7 +1133,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Cryonaia's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: slow
+- Defining skill: Frostveil Domain (ultimate) — area frost slow field
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Cryonaia benefits from
 
@@ -1136,7 +1196,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Cyran's behavior
 
 - Movement: mostly stationary (avg attack range 6.0 tiles)
-- Casting speed: slow
+- Defining skill: Gravitic Requiem (ultimate) — pull all + execute low HP
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Cyran benefits from
 
@@ -1194,7 +1257,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Daimon's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Buddy Barrier — shield + ATK buff ally behind
+- Defining skill speed: fast
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Daimon benefits from
 
@@ -1224,7 +1290,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Damian's behavior
 
 - Movement: stationary (off battlefield)
-- Casting speed: slow
+- Defining skill: It's a Plane! — plane dive + stun target
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Damian benefits from
 
@@ -1316,7 +1385,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Dionel's behavior
 
 - Movement: moving (avg attack range 0.0 tiles)
-- Casting speed: slow
+- Defining skill: Dawn Light (ultimate) — airborne multi-hit AoE
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Dionel benefits from
 
@@ -1370,7 +1442,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Dunlingr's behavior
 
 - Movement: stationary (avg attack range 6.4 tiles)
-- Casting speed: slow
+- Defining skill: Echo of Silence (ultimate) — forbid heals or ultimates
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Dunlingr benefits from
 
@@ -1447,7 +1522,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Eironn's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Howling Hurricane — free area pull at start
+- Defining skill speed: fast
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Eironn benefits from
 
@@ -1492,7 +1570,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Twins's behavior
 
 - Movement: moving / stationary (two units)
-- Casting speed: slow
+- Defining skill: Starlight Waltz (ultimate) — high haste buff all allies
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Twins benefits from
 
@@ -1615,7 +1696,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Evie's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Intel Chase (ultimate) — stealth + trigger burst
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Evie benefits from
 
@@ -1685,7 +1769,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Faramor's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Defining skill: Sanctified Circle (ultimate) — no-heal zone + true DoT
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Faramor benefits from
 
@@ -1740,7 +1827,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Fay's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: slow
+- Defining skill: Vibrant Dance (ultimate) — arc heal + ATK buff
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Fay benefits from
 
@@ -1790,7 +1880,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Florabelle's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Pounding Blow (ultimate) — summon stomper ally
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Florabelle benefits from
 
@@ -1859,7 +1952,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Frieren's behavior
 
 - Movement: stationary (avg attack range 7.0 tiles)
-- Casting speed: normal
+- Defining skill: Zoltraak (ultimate) — high-damage magic beam
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Frieren benefits from
 
@@ -1908,7 +2004,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Gala's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Casting speed: normal
+- Defining skill: Temporal Field (ultimate) — area time slow field
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: slow
 
 ### Units Gala benefits from
 
@@ -1976,7 +2075,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Gerda's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Splashing Fun (ultimate) — AoE heal + sleep
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Gerda benefits from
 
@@ -2021,7 +2123,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Granny Dahnie's behavior
 
 - Movement: moving (avg attack range 2.0 tiles)
-- Casting speed: normal
+- Defining skill: Threshold of Jade (ultimate) — root zone + HP drain
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Granny Dahnie benefits from
 
@@ -2066,7 +2171,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Gunnar's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Annihilation Directive (ultimate) — long-range area bombing
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Gunnar benefits from
 
@@ -2120,7 +2228,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Gwyneth's behavior
 
 - Movement: stationary (avg attack range 8.0 tiles)
-- Casting speed: normal
+- Defining skill: Hailing Arrows (ultimate) — area arrow rain
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Gwyneth benefits from
 
@@ -2167,7 +2278,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Hammie's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: slow
+- Defining skill: Pretty Fireball (ultimate) — AoE magic fireball
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Hammie benefits from
 
@@ -2194,7 +2308,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Harak's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Flesh Feast — instantly defeat weakest unit
+- Defining skill speed: fast
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Harak benefits from
 
@@ -2265,7 +2382,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Hepler's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Form Shift (ultimate) — toggle attack/support form
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Hepler benefits from
 
@@ -2337,7 +2457,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Hewynn's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Rain Prayer (ultimate) — AoE team healing
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Hewynn benefits from
 
@@ -2390,7 +2513,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Himmel's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Hero Party — buff needing Mage+Tank+Support
+- Defining skill speed: slow
+- Ultimate speed: normal
+- Non-ultimate speed: slow
 
 ### Units Himmel benefits from
 
@@ -2456,7 +2582,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Hodgkin's behavior
 
 - Movement: moving (avg attack range 3.0 tiles)
-- Casting speed: slow
+- Defining skill: Cannon Fire (ultimate) — AoE cannon salvo
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Hodgkin benefits from
 
@@ -2501,7 +2630,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Hugin's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Unstoppable! (ultimate) — charge + shield assault
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Hugin benefits from
 
@@ -2611,7 +2743,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Igor's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Funereal Ring (ultimate) — tombstone zone damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Igor benefits from
 
@@ -2655,7 +2790,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Indris's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Spellbane Shot (ultimate) — silence + multi-debuff shot
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Indris benefits from
 
@@ -2722,7 +2860,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Isabella's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Grimoire Pact (ultimate) — absorb enemy stat buffs
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Isabella benefits from
 
@@ -2787,7 +2928,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Kafra's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Gale Thrust (ultimate) — mark + high single-target hit
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Kafra benefits from
 
@@ -2855,7 +2999,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Koko's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Casting speed: slow
+- Defining skill: Full Energy (ultimate) — DMG reduction + true damage return
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Koko benefits from
 
@@ -2918,7 +3065,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Kordan's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Dominance Ring (ultimate) — immobilize + zone damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Kordan benefits from
 
@@ -2978,7 +3128,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Korin's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Demonseal Spear (ultimate) — pierce-through spear strike
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Korin benefits from
 
@@ -3022,7 +3175,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Kruger's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Defining skill: Devastating Axe (ultimate) — high single-target damage
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Kruger benefits from
 
@@ -3062,7 +3218,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Kulu's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Blast Mayhem (ultimate) — bomb cluster AoE
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: slow
 
 ### Units Kulu benefits from
 
@@ -3112,7 +3271,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Laios's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Defining skill: Living Armor - Kensuke (ultimate) — summon infinite-HP ally
+- Defining skill speed: fast
+- Ultimate speed: fast
+- Non-ultimate speed: slow
 
 ### Units Laios benefits from
 
@@ -3179,7 +3341,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Lenya's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Wild Duel (ultimate) — dash + duel multi-hit
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Lenya benefits from
 
@@ -3228,7 +3393,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Lily May's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Tempest Shot (ultimate) — interrupt enemy ultimate
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Lily May benefits from
 
@@ -3274,7 +3442,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Lorsan's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Whispering Tempest (ultimate) — storm zone + haste debuff
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Lorsan benefits from
 
@@ -3308,7 +3479,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucca's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Defining skill: Quake Slam (ultimate) — area knockdown slam
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: slow
 
 ### Units Lucca benefits from
 
@@ -3357,7 +3531,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucius's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Divine Light Aegis (ultimate) — area shield + light damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Lucius benefits from
 
@@ -3441,7 +3618,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Lucy's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Defining skill: Star Dress: Aquarius Form — permanent AoE water form
+- Defining skill speed: fast
+- Ultimate speed: fast
+- Non-ultimate speed: slow
 
 ### Units Lucy benefits from
 
@@ -3486,7 +3666,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Ludovic's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Eternal Serenity (ultimate) — area sustained healing
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Ludovic benefits from
 
@@ -3533,7 +3716,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Lumont's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Lumont's Charge (ultimate) — charge + stomp knockdown
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Lumont benefits from
 
@@ -3596,7 +3782,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Lyca's behavior
 
 - Movement: stationary (avg attack range 11.0 tiles)
-- Casting speed: slow
+- Defining skill: Comet Archery (ultimate) — area ranged volley
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Lyca benefits from
 
@@ -3659,7 +3848,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Marcille's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: fast
+- Defining skill: Silver-White Wings that Streak Across the Skies (ultimate) — large AoE magic damage
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Marcille benefits from
 
@@ -3711,7 +3903,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Marilee's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Mid-Air Shot (ultimate) — high-damage precision shot
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Marilee benefits from
 
@@ -3760,7 +3955,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Mehira's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Euphoric Rush (ultimate) — AoE damage + charm
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Mehira benefits from
 
@@ -3826,7 +4024,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Mikola's behavior
 
 - Movement: moving (avg attack range 2.0 tiles)
-- Casting speed: slow
+- Defining skill: Dauntless Hymn (ultimate) — haste + DEF aura zone
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Mikola benefits from
 
@@ -3934,7 +4135,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Mirael's behavior
 
 - Movement: stationary (avg attack range 10.1 tiles)
-- Casting speed: normal
+- Defining skill: Winged Flame (ultimate) — area fire barrage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Mirael benefits from
 
@@ -3970,7 +4174,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Nara's behavior
 
 - Movement: mostly stationary (pulls enemies)
-- Casting speed: fast
+- Defining skill: Phantom Chains — pull enemy to self
+- Defining skill speed: fast
+- Ultimate speed: fast
+- Non-ultimate speed: fast
 
 ### Units Nara benefits from
 
@@ -4016,7 +4223,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Natsu's behavior
 
 - Movement: stationary (avg attack range 11.0 tiles)
-- Casting speed: normal
+- Defining skill: Lightning Fire Dragon's Roar/Fire Dragon King's Roar (ultimate) — high-damage elemental beam
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: normal
 
 ### Units Natsu benefits from
 
@@ -4068,7 +4278,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Nazrik's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Casting speed: normal
+- Defining skill: Rend Rupture (ultimate) — HP-drain bleed DoT
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Nazrik benefits from
 
@@ -4109,7 +4322,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Nerion's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Casting speed: slow
+- Defining skill: Drowning Doom (ultimate) — pull + submerge enemies
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Nerion benefits from
 
@@ -4162,7 +4378,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Niru's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Spirit Devour — AoE damage + ally heal
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Niru benefits from
 
@@ -4208,7 +4427,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Odie's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: normal
+- Defining skill: Corrosive Dart (ultimate) — undispellable poison DoT
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Odie benefits from
 
@@ -4244,7 +4466,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Pandora's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Panic Projection (ultimate) — frighten all units
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Pandora benefits from
 
@@ -4296,7 +4521,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Pang's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Sky Splitter (ultimate) — area knockdown burst
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Pang benefits from
 
@@ -4348,7 +4576,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Parisa's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: normal
+- Defining skill: Floral Splendor (ultimate) — mark + AoE burst damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Parisa benefits from
 
@@ -4394,7 +4625,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Perseus's behavior
 
 - Movement: moving (avg attack range 2.9 tiles)
-- Casting speed: normal
+- Defining skill: Divine Rend (ultimate) — march + continuous knockback
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Perseus benefits from
 
@@ -4454,7 +4688,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Phraesto's behavior
 
 - Movement: moving (avg attack range 1.8 tiles)
-- Casting speed: slow
+- Defining skill: Futile Echo (ultimate) — deploy illusion clone
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Phraesto benefits from
 
@@ -4505,7 +4742,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Pippa's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Chaos Manifest (ultimate) — reposition + random chaos
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: normal
 
 ### Units Pippa benefits from
 
@@ -4552,7 +4792,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Ravion's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Killer Flush (ultimate) — multi-hit lost-HP scaling
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Ravion benefits from
 
@@ -4631,7 +4874,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Reinier's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Mutual Reflection (ultimate) — isolate enemy in dimension
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Reinier benefits from
 
@@ -4667,7 +4913,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Rhys's behavior
 
 - Movement: high movement (moves while attacking)
-- Casting speed: slow
+- Defining skill: Flame Barrage (ultimate) — ranged fire barrage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Rhys benefits from
 
@@ -4708,7 +4957,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Rowan's behavior
 
 - Movement: moving (repositions on cast)
-- Casting speed: fast
+- Defining skill: Fatal Greed (ultimate) — AoE energy recovery burst
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Rowan benefits from
 
@@ -4767,7 +5019,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Saida's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: fast
+- Defining skill: Seed Siphon (ultimate) — pin + energy drain + seed
+- Defining skill speed: fast
+- Ultimate speed: fast
+- Non-ultimate speed: fast
 
 ### Units Saida benefits from
 
@@ -4811,7 +5066,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Salazer's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Defining skill: Rain of Blades (ultimate) — area blade storm
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Salazer benefits from
 
@@ -4840,7 +5098,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Satrana's behavior
 
 - Movement: moving (avg attack range 1.5 tiles)
-- Casting speed: normal
+- Defining skill: Fiery Dance (ultimate) — area fire burn damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Satrana benefits from
 
@@ -4883,7 +5144,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Scarlita's behavior
 
 - Movement: moving (brief reposition)
-- Casting speed: normal
+- Defining skill: Divine Quake (ultimate) — aerial dive + area damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Scarlita benefits from
 
@@ -4932,7 +5196,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Seth's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Shadow Strike (ultimate) — multi-hit shadow burst
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Seth benefits from
 
@@ -4990,7 +5257,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Shadewing's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Crimson Venom (ultimate) — apply DoT to all enemies
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Shadewing benefits from
 
@@ -5052,7 +5322,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Shakir's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Defining skill: Ravaging Claws (ultimate) — single-target charge damage
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Shakir benefits from
 
@@ -5107,7 +5380,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Shemira's behavior
 
 - Movement: mostly stationary (avg attack range 4.0 tiles)
-- Casting speed: slow
+- Defining skill: Phantom Procession (ultimate) — sustained area ghost damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Shemira benefits from
 
@@ -5150,7 +5426,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Silven's behavior
 
 - Movement: stationary (avg attack range 12.0 tiles)
-- Casting speed: fast
+- Defining skill: Gravity Collapse — stack marks + detonate stun
+- Defining skill speed: fast
+- Ultimate speed: fast
+- Non-ultimate speed: fast
 
 ### Units Silven benefits from
 
@@ -5206,7 +5485,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Silvina's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Defining skill: Shadow Slayer (ultimate) — stealth + execute burst
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Silvina benefits from
 
@@ -5258,7 +5540,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Sinbad's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: fast
+- Defining skill: Whizzing Edge (ultimate) — multi-hit physical slashes
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Sinbad benefits from
 
@@ -5317,7 +5602,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Smokey & Meerky's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: normal
+- Defining skill: Energizing Formula — ATK buff + energy aura
+- Defining skill speed: fast
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Smokey & Meerky benefits from
 
@@ -5375,7 +5663,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Solise's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: fast
+- Defining skill: Life's Embrace (ultimate) — AoE healing waves
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: fast
 
 ### Units Solise benefits from
 
@@ -5417,7 +5708,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Sonja's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Tempest Thrusts (ultimate) — area multi-hit + current HP damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Sonja benefits from
 
@@ -5458,7 +5752,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Soren's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Whirlwind Swing (ultimate) — area spin damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Soren benefits from
 
@@ -5504,7 +5801,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Sylphira's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Grand Finale (ultimate) — beat stacking + song DoT
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: slow
 
 ### Units Sylphira benefits from
 
@@ -5569,7 +5869,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Talene's behavior
 
 - Movement: moving (avg attack range 3.0 tiles)
-- Casting speed: normal
+- Defining skill: Divine Conflagration (ultimate) — sustained channelled flame beam
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Talene benefits from
 
@@ -5620,7 +5923,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Tasi's behavior
 
 - Movement: stationary (avg attack range 10.0 tiles)
-- Casting speed: slow
+- Defining skill: Eternal Dreamscape (ultimate) — sleep all enemies
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Tasi benefits from
 
@@ -5682,7 +5988,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Temesia's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: normal
+- Defining skill: Knight's Heart (ultimate) — HP absorb shield formation
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Temesia benefits from
 
@@ -5745,7 +6054,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Thador's behavior
 
 - Movement: moving (avg attack range 0.2 tiles)
-- Casting speed: slow
+- Defining skill: Darkmoon Pact — crit + shield for ally behind
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Thador benefits from
 
@@ -5791,7 +6103,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Thoran's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Resurrection — self-revive on defeat
+- Defining skill speed: fast
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Thoran benefits from
 
@@ -5834,7 +6149,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Tilaya's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Wrath of the Wilds (ultimate) — battle-start HP vine shield
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Tilaya benefits from
 
@@ -5883,7 +6201,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Ulmus's behavior
 
 - Movement: moving (stationary when rooted)
-- Casting speed: slow
+- Defining skill: Way of the Forest — HP regen + energy when rooted
+- Defining skill speed: fast
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Ulmus benefits from
 
@@ -5928,7 +6249,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Vala's behavior
 
 - Movement: high movement (repositioning skills)
-- Casting speed: slow
+- Defining skill: Swift Shift (ultimate) — mode shift + stun/true damage
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Vala benefits from
 
@@ -5994,7 +6318,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Valen's behavior
 
 - Movement: moving (avg attack range 1.4 tiles)
-- Casting speed: slow
+- Defining skill: Thunder Swordwork (ultimate) — multi-hit area + ATK buff
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Valen benefits from
 
@@ -6035,7 +6362,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Valka's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: fast
+- Defining skill: Blooming Terror (ultimate) — stack fear + consume enemy
+- Defining skill speed: fast
+- Ultimate speed: fast
+- Non-ultimate speed: fast
 
 ### Units Valka benefits from
 
@@ -6102,7 +6432,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Velara's behavior
 
 - Movement: stationary (no finite attack range)
-- Casting speed: slow
+- Defining skill: Ruthless Rite (ultimate) — transfer enemy stats to allies
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Velara benefits from
 
@@ -6162,7 +6495,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Viperian's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Casting speed: slow
+- Defining skill: Spiritual Viper (ultimate) — poison drones on all enemies
+- Defining skill speed: normal
+- Ultimate speed: normal
+- Non-ultimate speed: slow
 
 ### Units Viperian benefits from
 
@@ -6207,7 +6543,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Walker's behavior
 
 - Movement: moving (avg attack range 2.0 tiles)
-- Casting speed: normal
+- Defining skill: Six-Shot (ultimate) — multi-target burst shots
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Walker benefits from
 
@@ -6261,7 +6600,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Zandrok's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: normal
+- Defining skill: Savage Slash (ultimate) — high single-target melee
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: fast
 
 ### Units Zandrok benefits from
 
@@ -6332,7 +6674,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Zanie's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Casting speed: slow
+- Defining skill: Vein Pulse (ultimate) — deploy turrets at battle start
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Zanie benefits from
 
@@ -6383,7 +6728,10 @@ _No synergy partners matched stat buffs or enablers._
 ### Zorya's behavior
 
 - Movement: moving (inactive while dormant)
-- Casting speed: slow
+- Defining skill: Circle of Vigil (ultimate) — dormant cycle + AoE jump
+- Defining skill speed: slow
+- Ultimate speed: slow
+- Non-ultimate speed: normal
 
 ### Units Zorya benefits from
 
