@@ -604,7 +604,7 @@
     "section": "Ultimate",
     "name": "Whirlwind Swing",
     "is_ultimate": true,
-    "description": "area spin damage"
+    "description": "knockback + collision stun"
   },
   "Sylphira": {
     "section": "Ultimate",
@@ -629,7 +629,7 @@
     "section": "Ultimate",
     "name": "Knight's Heart",
     "is_ultimate": true,
-    "description": "HP absorb shield formation"
+    "description": "constant charge + knockdown through enemies"
   },
   "Thador": {
     "section": "Skill1",
@@ -647,7 +647,7 @@
     "section": "Ultimate",
     "name": "Wrath of the Wilds",
     "is_ultimate": true,
-    "description": "battle-start HP vine shield",
+    "description": "8-hit greatsword arc slashes",
     "speed_override": "fast"
   },
   "Twins": {
@@ -688,11 +688,10 @@
     "speed_override": "fast"
   },
   "Viperian": {
-    "section": "Ultimate",
-    "name": "Spiritual Viper",
-    "is_ultimate": true,
-    "description": "poison drones on all enemies",
-    "speed_override": "fast"
+    "section": "Ex. Skill",
+    "name": "Crimson Waltz",
+    "is_ultimate": false,
+    "description": "AoE burst damage to all enemies"
   },
   "Walker": {
     "section": "Ultimate",

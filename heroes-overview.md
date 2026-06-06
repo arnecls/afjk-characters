@@ -5752,7 +5752,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Soren's behavior
 
 - Movement: moving (avg attack range 1.0 tiles)
-- Signature skill: Whirlwind Swing (ultimate) — area spin damage
+- Signature skill: Whirlwind Swing (ultimate) — knockback + collision stun
 - Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: normal
@@ -5988,7 +5988,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Temesia's behavior
 
 - Movement: high movement (repositioning skills)
-- Signature skill: Knight's Heart (ultimate) — HP absorb shield formation
+- Signature skill: Knight's Heart (ultimate) — constant charge + knockdown through enemies
 - Signature skill speed: slow
 - Ultimate speed: slow
 - Non-ultimate speed: fast
@@ -6149,7 +6149,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Tilaya's behavior
 
 - Movement: high movement (repositioning skills)
-- Signature skill: Wrath of the Wilds (ultimate) — battle-start HP vine shield
+- Signature skill: Wrath of the Wilds (ultimate) — 8-hit greatsword arc slashes
 - Signature skill speed: fast
 - Ultimate speed: slow
 - Non-ultimate speed: normal
@@ -6495,8 +6495,8 @@ _No synergy partners matched stat buffs or enablers._
 ### Viperian's behavior
 
 - Movement: mostly stationary (avg attack range 5.0 tiles)
-- Signature skill: Spiritual Viper (ultimate) — poison drones on all enemies
-- Signature skill speed: fast
+- Signature skill: Crimson Waltz — AoE burst damage to all enemies
+- Signature skill speed: slow
 - Ultimate speed: normal
 - Non-ultimate speed: slow
 
