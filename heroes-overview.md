@@ -22,23 +22,23 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Units Aliceth benefits from
 
 - **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
   - Enables Ranged damage from allies via ranged attacks
   - Enables Debuff on target via ATK debuff (all units)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+  - Enables Debuff on target via ATK debuff (single target)
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Alna**
   - Enables Debuff on target via Haste debuff (area)
 - **Lucius**
   - Enables Debuff on target via ATK debuff (area)
-- **Kulu**
-  - Enables Ranged damage from allies via ranged attacks
-  - Enables Debuff on target via Movement speed debuff (area)
-- **Cyran**
-  - Enables Debuff on target via ATK debuff (all units)
 
 ### Units benefitting from Aliceth
 
 - Kulu
-- Lily May
-- Niru
 
 ### Summary for Aliceth
 
@@ -102,12 +102,18 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Alna benefits from
 
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Units benefitting from Alna
 
@@ -154,22 +160,25 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Units Alsa benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
-- **Gala**
-  - Haste buff (single target, high)
-  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Alsa
 
-- Bonnie
 - Indris
 
 ### Summary for Alsa
@@ -221,23 +230,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Antandra benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-- **Ravion**
-  - Energy recovery (multiple targets, medium)
-
-### Units benefitting from Antandra
-
-- Contess
-- Evie
-- Lucius
-- Ludovic
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Gala**
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Antandra
 
@@ -282,14 +287,19 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Arden benefits from
 
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Ravion**
   - ATK buff (multiple targets, low)
-  - Energy recovery (multiple targets, medium)
-- **Smokey & Meerky**
-  - ATK buff (multiple targets, low)
-  - Energy recovery (multiple targets, low)
-- **Silven**
-  - Energy recovery (single target, high)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
 
 ### Summary for Arden
 
@@ -325,15 +335,20 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Units Atalanta benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Atalanta
 
@@ -381,10 +396,16 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Athalia benefits from
 
-- **Marilee**
-  - Crit buff (single target, low)
-- **Walker**
-  - Crit buff (single target, low)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Athalia
 
@@ -436,27 +457,27 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Units Aurora benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Aurora
 
 - Alna
 - Berial
-- Bryon
-- Cecia
 - Damian
-- Florabelle
-- Gala
 - Hodgkin
 - Phraesto
 - Zanie
@@ -510,19 +531,23 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Units Baelran benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
-- **Himmel**
-  - ATK buff (multiple targets, low)
-  - Max HP buff (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Baelran
 
@@ -575,12 +600,18 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Berial benefits from
 
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Berial
 
@@ -624,18 +655,23 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Bonnie benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Enables Debuff on target via ATK debuff (all units)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+  - Enables Debuff on target via ATK debuff (single target)
+  - Enables Magic damage from allies via Magic damage (area)
 - **Cyran**
   - Enables Debuff on target via ATK debuff (all units)
   - Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)
-- **Lyca**
-  - Enables Debuff on target via ATK debuff (all units)
+- **Dunlingr**
+  - ATK buff (single target, low)
+  - ATK SPD buff (all units, low) [signature fuel]
+  - Enables Debuff on target via Energy drain (all units)
+  - Enables Magic damage from allies via Magic damage + all enemies (all units)
 - **Alna**
   - Enables Debuff on target via Haste debuff (area)
-- **Alsa**
-  - Enables Debuff on target via Movement speed debuff (area)
-  - Enables Magic damage from allies via Magic damage + all enemies (all units)
-- **Lucius**
-  - Enables Debuff on target via ATK debuff (area)
 
 ### Summary for Bonnie
 
@@ -689,16 +725,18 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Brutus benefits from
 
-- **Kordan**
-  - Lifedrain buff (multiple targets, medium)
-- **Dunlingr**
-  - Lifedrain buff (all units, low)
-- **Shakir**
-  - Lifedrain buff (single target, high)
-- **Walker**
-  - Lifedrain buff (single target, high)
-- **Cecia**
-  - Lifedrain buff (area, low)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Zandrok**
+  - Lifedrain buff (area, low, conditional (frequent))
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Valka**
+  - Lifedrain buff (single target, low)
+  - ATK SPD buff (multiple targets, high) [signature fuel]
 
 ### Summary for Brutus
 
@@ -739,17 +777,20 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 ### Units Bryon benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - ATK SPD via Haste buff (summons only, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Bryon
 
@@ -799,23 +840,20 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Callan benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Callan
 
-- Antandra
-- Cryonaia
-- Eironn
-- Gerda
-- Kafra
-- Kruger
-- Lucca
-- Silvina
-- Thador
-- Thoran
-- Tilaya
 - Ulmus
-- Walker
 
 ### Summary for Callan
 
@@ -861,14 +899,16 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Carolina benefits from
 
 - **Dunlingr**
+  - ATK SPD buff (all units, low) [signature fuel]
   - Enables CC on enemies via Silence (all units, high)
+- **Zandrok**
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - Enables CC on enemies via Stun (area, high)
 - **Tasi**
   - Enables CC on enemies via Sleep (all units, high)
 - **Kordan**
   - Enables CC on enemies via Pin (area, high)
 - **Lumont**
-  - Enables CC on enemies via Stun (area, high)
-- **Zandrok**
   - Enables CC on enemies via Stun (area, high)
 
 ### Summary for Carolina
@@ -915,19 +955,20 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Cassadee benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
-
-### Units benefitting from Cassadee
-
-- Niru
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Cassadee
 
@@ -976,23 +1017,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Cecia benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - ATK SPD via Haste buff (summons only, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-- **Lumont**
-  - DEF buff (multiple targets, medium)
-  - DEF buff (multiple targets, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
-
-### Units benefitting from Cecia
-
-- Brutus
-- Walker
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Cecia
 
@@ -1048,7 +1081,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Chippy benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Chippy
 
@@ -1069,29 +1111,27 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Contess benefits from
 
-- **Hewynn**
-  - Healing (all units, high)
-- **Isabella**
-  - Healing (area, high)
-- **Kafra**
-  - Healing over time (area, high)
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
-- **Antandra**
-  - Healing (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Isabella**
+  - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Hewynn**
+  - Healing (all units, high)
+- **Damian**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Contess
 
-- Cryonaia
-- Kafra
-- Kordan
 - Perseus
-- Shemira
 - Silven
 - Smokey & Meerky
 - Talene
-- Temesia
-- Zorya
 
 ### Summary for Contess
 
@@ -1143,16 +1183,18 @@ _No synergy partners matched stat buffs or enablers._
 - **Hugin**
   - ATK buff (multiple targets, high)
   - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Himmel**
   - ATK buff (multiple targets, low)
   - Max HP buff (multiple targets, high)
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Contess**
-  - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
 
 ### Summary for Cryonaia
 
@@ -1203,24 +1245,22 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Cyran benefits from
 
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Cyran
 
-- Aliceth
 - Bonnie
-- Shadewing
 
 ### Summary for Cyran
 
@@ -1264,7 +1304,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Daimon benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Daimon
 
@@ -1297,58 +1346,100 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Damian benefits from
 
+- **Twins**
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-- **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
 
 ### Units benefitting from Damian
 
+- Alsa
 - Atalanta
+- Athalia
 - Aurora
+- Baelran
+- Bryon
+- Callan
 - Cassadee
+- Cecia
+- Chippy
+- Contess
 - Cyran
+- Daimon
+- Dionel
+- Dunlingr
+- Evie
+- Faramor
 - Fay
 - Florabelle
 - Frieren
+- Gala
+- Gunnar
 - Gwyneth
+- Hammie
+- Harak
 - Hepler
+- Hewynn
+- Himmel
 - Hugin
 - Isabella
 - Koko
 - Korin
+- Laios
+- Lenya
+- Lily May
+- Lorsan
+- Lucius
 - Lucy
+- Ludovic
+- Lumont
 - Lyca
 - Marcille
 - Marilee
+- Mehira
 - Mikola
 - Mirael
 - Natsu
+- Nazrik
 - Odie
 - Pang
 - Parisa
 - Pippa
 - Ravion
+- Reinier
 - Rhys
 - Rowan
+- Salazer
+- Satrana
+- Seth
 - Shakir
 - Sinbad
 - Sonja
 - Soren
+- Sylphira
 - Tasi
+- Temesia
 - Twins
+- Vala
+- Valen
 - Valka
+- Velara
 - Viperian
+- Zandrok
+- Zorya
 
 ### Summary for Damian
 
@@ -1393,18 +1484,17 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Dionel benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Gala**
-  - ATK SPD via Haste buff (single target, high)
-  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Dionel
 
@@ -1450,26 +1540,26 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Dunlingr benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
   - Healing (single target, medium)
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Healing over time (all units, medium)
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
   - Max HP via Shield (summons only, medium)
-- **Isabella**
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent))
-  - Healing (area, high)
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Healing (single target, medium)
 
 ### Units benefitting from Dunlingr
 
-- Brutus
+- Bonnie
 - Carolina
 - Indris
 - Nerion
@@ -1529,16 +1619,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Eironn benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-- **Koko**
-  - Max HP via Shield (all units, low)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Gala**
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Eironn
 
@@ -1578,47 +1671,81 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Twins benefits from
 
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
-- **Ravion**
-  - Energy recovery (multiple targets, medium)
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Gala**
+  - Haste buff (single target, high) [signature fuel]
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Units benefitting from Twins
 
+- Aliceth
+- Alna
 - Alsa
+- Antandra
+- Arden
 - Atalanta
+- Athalia
 - Aurora
 - Baelran
+- Berial
+- Bonnie
+- Brutus
 - Bryon
+- Callan
 - Cassadee
 - Cecia
+- Chippy
+- Contess
+- Cryonaia
 - Cyran
+- Daimon
 - Damian
 - Dionel
 - Dunlingr
+- Eironn
+- Evie
 - Faramor
 - Fay
 - Florabelle
 - Frieren
 - Gala
+- Gerda
+- Granny Dahnie
 - Gunnar
 - Gwyneth
+- Hammie
 - Harak
 - Hepler
+- Hewynn
 - Himmel
+- Hodgkin
 - Hugin
 - Indris
 - Isabella
+- Kafra
 - Koko
+- Kordan
 - Korin
+- Kruger
+- Kulu
 - Laios
 - Lenya
+- Lily May
+- Lorsan
+- Lucca
+- Lucius
 - Lucy
+- Ludovic
 - Lumont
 - Lyca
 - Marcille
@@ -1627,27 +1754,43 @@ _No synergy partners matched stat buffs or enablers._
 - Mikola
 - Mirael
 - Natsu
+- Nazrik
+- Niru
 - Odie
+- Pandora
 - Pang
 - Parisa
 - Perseus
+- Phraesto
 - Pippa
 - Ravion
+- Reinier
 - Rhys
 - Rowan
+- Salazer
+- Satrana
 - Seth
+- Shadewing
 - Shakir
+- Shemira
 - Silven
+- Silvina
 - Sinbad
+- Solise
 - Sonja
 - Soren
 - Sylphira
 - Tasi
 - Temesia
+- Thador
+- Thoran
+- Tilaya
 - Vala
+- Valen
 - Valka
 - Velara
 - Viperian
+- Walker
 - Zandrok
 - Zanie
 - Zorya
@@ -1703,30 +1846,30 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Evie benefits from
 
-- **Hewynn**
-  - Healing (all units, high)
-- **Isabella**
-  - Healing (area, high)
-- **Kafra**
-  - Healing over time (area, high)
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
-- **Antandra**
-  - Healing (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Isabella**
+  - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Hewynn**
+  - Healing (all units, high)
+- **Damian**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Evie
 
-- Himmel
 - Kordan
 - Laios
 - Perseus
 - Silven
 - Smokey & Meerky
-- Sylphira
 - Talene
 - Temesia
-- Vala
-- Zorya
 
 ### Summary for Evie
 
@@ -1777,19 +1920,23 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Faramor benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
-- **Himmel**
-  - ATK buff (multiple targets, low)
-  - Max HP buff (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Faramor
 
@@ -1835,19 +1982,18 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Fay benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Fay
 
-- Laios
 - Shadewing
 - Smokey & Meerky
 - Talene
@@ -1887,33 +2033,31 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Florabelle benefits from
 
+- **Twins**
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-- **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - ATK SPD via Haste buff (summons only, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Florabelle
 
 - Alna
-- Aurora
 - Berial
-- Bryon
-- Cecia
-- Damian
 - Dunlingr
-- Gala
 - Hodgkin
 - Mehira
-- Phraesto
 - Zanie
 
 ### Summary for Florabelle
@@ -1959,18 +2103,23 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Frieren benefits from
 
+- **Twins**
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-- **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Frieren
 
@@ -2011,30 +2160,38 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Gala benefits from
 
+- **Twins**
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-- **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
-- **Aurora**
-  - Summon damage buff (summons only, low)
-  - ATK SPD via Haste buff (summons only, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Gala
 
-- Alsa
-- Dionel
-- Gunnar
-- Harak
-- Lenya
+- Antandra
+- Eironn
+- Gerda
+- Himmel
+- Hugin
+- Kruger
 - Mikola
-- Velara
+- Silvina
+- Thador
+- Thoran
+- Tilaya
+- Twins
 - Zandrok
 
 ### Summary for Gala
@@ -2082,16 +2239,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Gerda benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-- **Koko**
-  - Max HP via Shield (all units, low)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Gala**
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Gerda
 
@@ -2130,12 +2290,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Granny Dahnie benefits from
 
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Ravion**
-  - Energy recovery (multiple targets, medium)
-- **Silven**
-  - Energy recovery (single target, high)
-- **Smokey & Meerky**
-  - Energy recovery (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
 
 ### Summary for Granny Dahnie
 
@@ -2179,18 +2343,17 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Gunnar benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Gala**
-  - ATK SPD via Haste buff (single target, high)
-  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Gunnar
 
@@ -2236,15 +2399,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Gwyneth benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Gwyneth
 
@@ -2285,7 +2448,18 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Hammie benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Hammie
 
@@ -2316,23 +2490,23 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Harak benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
   - Lifedrain buff (area, low, conditional (frequent))
-- **Gala**
-  - Haste buff (single target, high)
-  - Max HP via Shield (single target, high)
-
-### Units benefitting from Harak
-
-- Niru
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Harak
 
@@ -2390,27 +2564,24 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Hepler benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Hepler
 
-- Antandra
-- Eironn
-- Gerda
-- Kruger
-- Silvina
-- Thador
-- Thoran
-- Tilaya
 - Ulmus
 
 ### Summary for Hepler
@@ -2464,23 +2635,30 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Hewynn benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Hewynn
 
 - Contess
 - Evie
 - Igor
-- Kordan
 - Lucius
 - Ludovic
-- Lumont
 - Phraesto
 - Shemira
 - Smokey & Meerky
-- Sylphira
 - Talene
-- Vala
 
 ### Summary for Hewynn
 
@@ -2521,29 +2699,33 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Himmel benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Enables Party composition via Support (party slot)
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Enables Party composition via Support (party slot)
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Enables Party composition via Support (party slot)
-- **Lucius**
-  - Max HP via Shield (area, high)
-  - Enables Party composition via Tank (party slot)
-- **Evie**
-  - ATK buff (multiple targets, high)
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Enables Party composition via Support (party slot)
+- **Gala**
+  - Haste buff (single target, high) [signature fuel]
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
+  - Enables Party composition via Mage (party slot)
 
 ### Units benefitting from Himmel
 
-- Baelran
 - Cryonaia
-- Faramor
 - Kafra
 
 ### Summary for Himmel
@@ -2589,12 +2771,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Hodgkin benefits from
 
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Hodgkin
 
@@ -2638,28 +2827,42 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Hugin benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
-- **Ravion**
-  - Energy recovery (multiple targets, medium)
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Gala**
+  - Haste buff (single target, high) [signature fuel]
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Units benefitting from Hugin
 
+- Aliceth
+- Alna
 - Alsa
 - Antandra
+- Arden
 - Atalanta
+- Athalia
 - Aurora
 - Baelran
+- Berial
+- Brutus
 - Bryon
+- Callan
 - Cassadee
 - Cecia
+- Chippy
 - Cryonaia
 - Cyran
+- Daimon
 - Damian
 - Dionel
 - Dunlingr
@@ -2670,17 +2873,27 @@ _No synergy partners matched stat buffs or enablers._
 - Frieren
 - Gala
 - Gerda
+- Granny Dahnie
 - Gunnar
 - Gwyneth
+- Hammie
 - Harak
 - Hepler
+- Hewynn
 - Himmel
+- Hodgkin
+- Indris
 - Isabella
 - Kafra
 - Koko
+- Kordan
 - Korin
 - Kruger
+- Kulu
+- Laios
 - Lenya
+- Lily May
+- Lorsan
 - Lucca
 - Lucy
 - Lumont
@@ -2691,21 +2904,30 @@ _No synergy partners matched stat buffs or enablers._
 - Mikola
 - Mirael
 - Natsu
+- Nazrik
+- Niru
 - Odie
+- Pandora
 - Pang
 - Parisa
 - Perseus
 - Pippa
 - Ravion
+- Reinier
 - Rhys
 - Rowan
+- Salazer
+- Satrana
 - Seth
 - Shakir
+- Shemira
 - Silven
 - Silvina
 - Sinbad
+- Solise
 - Sonja
 - Soren
+- Sylphira
 - Tasi
 - Temesia
 - Thador
@@ -2713,12 +2935,15 @@ _No synergy partners matched stat buffs or enablers._
 - Tilaya
 - Twins
 - Ulmus
+- Vala
+- Valen
 - Valka
 - Velara
 - Viperian
 - Walker
 - Zandrok
 - Zanie
+- Zorya
 
 ### Summary for Hugin
 
@@ -2798,24 +3023,24 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Indris benefits from
 
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via ATK debuff (all units)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+  - Enables Multiple debuffs on target via ATK debuff
+  - Enables Debuff on target via ATK debuff (single target)
+- **Dunlingr**
+  - ATK buff (single target, low)
+  - ATK SPD buff (all units, low) [signature fuel]
+  - Enables Multiple debuffs on target via 2 debuff types
+  - Enables Debuff on target via Energy drain (all units)
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Alsa**
   - Enables Multiple debuffs on target via 3 debuff types
   - Enables Debuff on target via Movement speed debuff (area)
-- **Dunlingr**
-  - ATK buff (single target, low)
-  - ATK SPD buff (all units, low)
-  - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via Energy drain (all units)
-- **Sinbad**
-  - Enables Multiple debuffs on target via 4 debuff types
-  - Enables Debuff on target via Magic DEF debuff (multiple targets)
-- **Twins**
-  - ATK SPD via Haste buff (all units, high)
-  - Enables Multiple debuffs on target via ATK debuff
-  - Enables Debuff on target via ATK debuff (single target)
 
 ### Summary for Indris
 
@@ -2868,27 +3093,28 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Isabella benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Isabella
 
 - Contess
-- Dunlingr
 - Evie
 - Igor
-- Laios
 - Lucius
 - Ludovic
+- Lumont
 - Phraesto
+- Shemira
 - Sylphira
+- Vala
 
 ### Summary for Isabella
 
@@ -2935,28 +3161,24 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Kafra benefits from
 
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Himmel**
   - ATK buff (multiple targets, low)
   - Max HP buff (multiple targets, high)
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Hugin**
-  - Max HP via Shield (multiple targets, high)
-- **Contess**
-  - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
 
 ### Units benefitting from Kafra
 
-- Contess
-- Evie
 - Igor
-- Lucius
-- Ludovic
-- Phraesto
-- Vala
 
 ### Summary for Kafra
 
@@ -3007,29 +3229,25 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Koko benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Koko
 
-- Eironn
-- Gerda
 - Igor
 - Kordan
-- Kruger
-- Mehira
-- Shemira
-- Silvina
-- Thador
-- Tilaya
-- Walker
 
 ### Summary for Koko
 
@@ -3072,6 +3290,17 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Kordan benefits from
 
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - Healing over time (all units, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Hugin**
+  - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
@@ -3079,19 +3308,9 @@ _No synergy partners matched stat buffs or enablers._
   - Max HP via Shield (all units, low)
   - Healing (multiple targets, high)
   - Lifedrain buff (multiple targets, low)
-- **Contess**
-  - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
-  - Healing (multiple targets, high)
-- **Mikola**
-  - ATK buff (multiple targets, medium)
-  - Healing over time (all units, medium)
-- **Hewynn**
-  - Healing (all units, high)
 
 ### Units benefitting from Kordan
 
-- Brutus
 - Carolina
 - Nerion
 
@@ -3136,15 +3355,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Korin benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Korin
 
@@ -3182,16 +3401,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Kruger benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-- **Koko**
-  - Max HP via Shield (all units, low)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Gala**
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Kruger
 
@@ -3225,13 +3447,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Kulu benefits from
 
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Aliceth**
   - ATK buff (multiple targets, low)
   - DEF Penetration buff (multiple targets, medium)
-
-### Units benefitting from Kulu
-
-- Aliceth
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
 
 ### Summary for Kulu
 
@@ -3280,21 +3508,19 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Healing over time (all units, medium)
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+  - Healing (single target, medium)
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (multiple targets, high)
-- **Isabella**
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent))
-  - Healing (area, high)
-- **Fay**
-  - ATK buff (multiple targets, low)
-  - ATK SPD buff (multiple targets, low)
-  - Healing (arc, high)
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Laios
 
@@ -3349,18 +3575,22 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Lenya benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
-- **Gala**
-  - Haste buff (single target, high)
-  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Lenya
 
@@ -3400,9 +3630,17 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Lily May benefits from
 
-- **Aliceth**
-  - ATK buff (multiple targets, low)
-  - DEF Penetration buff (multiple targets, medium)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Lily May
 
@@ -3449,7 +3687,18 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Lorsan benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Lorsan
 
@@ -3486,6 +3735,12 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Lucca benefits from
 
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Rowan**
   - Max HP buff (single target, high)
   - DEF buff (single target, high)
@@ -3495,10 +3750,6 @@ _No synergy partners matched stat buffs or enablers._
 - **Lumont**
   - DEF buff (multiple targets, medium)
   - DEF buff (multiple targets, medium)
-- **Hugin**
-  - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
 
 ### Summary for Lucca
 
@@ -3538,48 +3789,39 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Lucius benefits from
 
-- **Hewynn**
-  - Healing (all units, high)
-- **Isabella**
-  - Healing (area, high)
-- **Kafra**
-  - Healing over time (area, high)
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
-- **Antandra**
-  - Healing (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Isabella**
+  - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Hewynn**
+  - Healing (all units, high)
+- **Damian**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Lucius
 
 - Aliceth
-- Alsa
 - Antandra
-- Baelran
-- Bonnie
 - Cryonaia
-- Dionel
 - Eironn
-- Faramor
 - Gerda
-- Gunnar
-- Harak
-- Himmel
 - Kafra
 - Kruger
-- Lenya
 - Lucca
-- Lumont
 - Shadewing
-- Shemira
 - Silvina
 - Thador
 - Thoran
 - Tilaya
 - Ulmus
 - Valka
-- Velara
 - Walker
-- Zandrok
 
 ### Summary for Lucius
 
@@ -3626,15 +3868,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Lucy benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Lucy
 
@@ -3673,16 +3915,20 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Ludovic benefits from
 
-- **Hewynn**
-  - Healing (all units, high)
-- **Isabella**
-  - Healing (area, high)
-- **Kafra**
-  - Healing over time (area, high)
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - Healing over time (all units, medium)
-- **Antandra**
-  - Healing (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Isabella**
+  - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Hewynn**
+  - Healing (all units, high)
+- **Damian**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Ludovic
 
@@ -3724,25 +3970,30 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Lumont benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
   - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Healing over time (all units, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Hewynn**
-  - Healing (all units, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Isabella**
+  - Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+  - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Lumont
 
 - Carolina
-- Cecia
 - Lucca
 - Nerion
 
@@ -3790,34 +4041,55 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Lyca benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Valka**
-  - ATK SPD buff (multiple targets, high)
+  - ATK SPD buff (multiple targets, high) [signature fuel]
 
 ### Units benefitting from Lyca
 
 - Aliceth
+- Arden
+- Athalia
 - Bonnie
+- Callan
+- Cecia
+- Chippy
 - Cyran
+- Daimon
+- Dionel
 - Fay
+- Granny Dahnie
+- Gunnar
 - Gwyneth
+- Hammie
+- Hewynn
 - Indris
 - Isabella
 - Korin
+- Lily May
+- Lorsan
 - Marcille
 - Marilee
 - Mirael
+- Nazrik
+- Niru
 - Odie
+- Pandora
 - Parisa
+- Reinier
 - Rhys
+- Salazer
+- Satrana
 - Shadewing
 - Sinbad
+- Solise
+- Valen
 
 ### Summary for Lyca
 
@@ -3856,15 +4128,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Marcille benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Marcille
 
@@ -3911,21 +4183,16 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Marilee benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
-
-### Units benefitting from Marilee
-
-- Athalia
-- Nazrik
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Marilee
 
@@ -3963,24 +4230,27 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Mehira benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
   - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - Haste buff (multiple targets, high) [signature fuel]
+  - Healing over time (all units, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Hugin**
+  - Haste buff (multiple targets, high) [signature fuel]
+  - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
   - Max HP via Shield (summons only, medium)
   - Lifedrain buff (summons only, high, conditional (frequent))
-- **Mikola**
-  - Haste buff (multiple targets, high)
-  - Healing over time (all units, medium)
-- **Hugin**
-  - Haste buff (multiple targets, high)
-  - Max HP via Shield (multiple targets, high)
-- **Koko**
-  - Max HP via Shield (all units, low)
-  - Healing (multiple targets, high)
-  - Lifedrain buff (multiple targets, low)
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Mehira
 
@@ -4032,47 +4302,75 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Mikola benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 - **Gala**
-  - Haste buff (single target, high)
+  - Haste buff (single target, high) [signature fuel]
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Units benefitting from Mikola
 
+- Alna
 - Alsa
+- Antandra
+- Arden
 - Atalanta
+- Athalia
 - Aurora
 - Baelran
+- Berial
+- Brutus
 - Bryon
+- Callan
 - Cassadee
+- Cecia
+- Chippy
 - Contess
+- Cryonaia
 - Cyran
+- Daimon
 - Damian
 - Dionel
 - Dunlingr
+- Eironn
 - Evie
 - Faramor
 - Fay
 - Florabelle
 - Frieren
 - Gala
+- Gerda
+- Granny Dahnie
 - Gunnar
 - Gwyneth
+- Hammie
+- Harak
 - Hepler
+- Hewynn
 - Himmel
+- Hodgkin
 - Hugin
 - Igor
 - Isabella
+- Kafra
 - Koko
 - Kordan
 - Korin
+- Kruger
+- Kulu
 - Laios
 - Lenya
+- Lily May
+- Lorsan
 - Lucius
 - Lucy
 - Ludovic
@@ -4083,30 +4381,45 @@ _No synergy partners matched stat buffs or enablers._
 - Mehira
 - Mirael
 - Natsu
+- Nazrik
+- Niru
 - Odie
+- Pandora
 - Pang
 - Parisa
 - Perseus
+- Phraesto
 - Pippa
 - Ravion
+- Reinier
 - Rhys
 - Rowan
+- Salazer
+- Satrana
 - Seth
 - Shakir
+- Shemira
 - Silven
+- Silvina
 - Sinbad
 - Smokey & Meerky
+- Solise
 - Sonja
 - Soren
 - Sylphira
 - Talene
 - Tasi
 - Temesia
+- Thador
+- Thoran
+- Tilaya
 - Twins
 - Vala
+- Valen
 - Valka
 - Velara
 - Viperian
+- Walker
 - Zandrok
 - Zanie
 - Zorya
@@ -4143,15 +4456,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Mirael benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Mirael
 
@@ -4183,12 +4496,12 @@ _No synergy partners matched stat buffs or enablers._
 
 - **Ravion**
   - ATK buff (multiple targets, low)
-  - Energy recovery (multiple targets, medium)
+  - Energy recovery (multiple targets, medium) [signature fuel]
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (multiple targets, low)
+  - Energy recovery (multiple targets, low) [signature fuel]
 - **Silven**
-  - Energy recovery (single target, high)
+  - Energy recovery (single target, high) [signature fuel]
 
 ### Summary for Nara
 
@@ -4230,18 +4543,23 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Natsu benefits from
 
+- **Twins**
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-- **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Natsu
 
@@ -4285,10 +4603,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Nazrik benefits from
 
-- **Marilee**
-  - Crit buff (single target, low)
-- **Walker**
-  - Crit buff (single target, low)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Nazrik
 
@@ -4330,13 +4654,13 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Nerion benefits from
 
 - **Dunlingr**
-  - ATK SPD buff (all units, low)
+  - ATK SPD buff (all units, low) [signature fuel]
   - Enables CC on enemies via Silence (all units, high)
+- **Zandrok**
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - Enables CC on enemies via Stun (area, high)
 - **Tasi**
   - Enables CC on enemies via Sleep (all units, high)
-- **Zandrok**
-  - ATK SPD via Haste buff (area, medium, conditional (frequent))
-  - Enables CC on enemies via Stun (area, high)
 - **Kordan**
   - Enables CC on enemies via Pin (area, high)
 - **Lumont**
@@ -4385,16 +4709,17 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Niru benefits from
 
-- **Aliceth**
-  - Enables Enemy defeat via Instant defeat
-- **Harak**
-  - Enables Enemy defeat via Instant defeat
-- **Cassadee**
-  - Enables Ally blessing active via Ally blessing
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Mehira**
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
   - Enables Enemy defeat via HP threshold strike
-- **Solise**
-  - Enables Ally blessing active via Ally blessing
 
 ### Summary for Niru
 
@@ -4435,15 +4760,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Odie benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Odie
 
@@ -4473,12 +4798,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Pandora benefits from
 
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Ravion**
-  - Energy recovery (multiple targets, medium)
-- **Silven**
-  - Energy recovery (single target, high)
-- **Smokey & Meerky**
-  - Energy recovery (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
 
 ### Summary for Pandora
 
@@ -4529,17 +4858,21 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Pang benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
-- **Ravion**
-  - ATK buff (multiple targets, low)
-  - Energy recovery (multiple targets, medium)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Pang
 
@@ -4583,18 +4916,18 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Parisa benefits from
 
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high)
-- **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Parisa
 
@@ -4632,19 +4965,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Perseus benefits from
 
-- **Evie**
-  - ATK buff (multiple targets, high)
-  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
   - Enables Ally stat buffs via 4 ally stat buffs
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Enables Ally stat buffs via 4 ally stat buffs
+- **Evie**
+  - ATK buff (multiple targets, high)
+  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
   - Enables Ally stat buffs via 3 ally stat buffs
 - **Contess**
@@ -4695,18 +5028,20 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Phraesto benefits from
 
+- **Twins**
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - Healing over time (all units, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Isabella**
+  - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
 - **Hewynn**
   - Healing (all units, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
-- **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-- **Isabella**
-  - Healing (area, high)
-- **Kafra**
-  - Healing over time (area, high)
 
 ### Summary for Phraesto
 
@@ -4750,15 +5085,20 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Pippa benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Pippa
 
@@ -4800,30 +5140,31 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Ravion benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Ravion
 
-- Antandra
 - Arden
 - Granny Dahnie
-- Hugin
+- Kulu
 - Nara
 - Pandora
-- Pang
 - Scarlita
-- Seth
-- Thoran
-- Twins
+- Solise
 - Ulmus
 
 ### Summary for Ravion
@@ -4881,7 +5222,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Reinier benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Reinier
 
@@ -4921,15 +5271,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Rhys benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Rhys
 
@@ -4965,20 +5315,24 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Rowan benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Rowan
 
 - Lucca
-- Shemira
 
 ### Summary for Rowan
 
@@ -5073,7 +5427,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Salazer benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Salazer
 
@@ -5105,7 +5468,16 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Satrana benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Satrana
 
@@ -5152,11 +5524,11 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Scarlita benefits from
 
 - **Ravion**
-  - Energy recovery (multiple targets, medium)
+  - Energy recovery (multiple targets, medium) [signature fuel]
 - **Silven**
-  - Energy recovery (single target, high)
+  - Energy recovery (single target, high) [signature fuel]
 - **Smokey & Meerky**
-  - Energy recovery (multiple targets, low)
+  - Energy recovery (multiple targets, low) [signature fuel]
 
 ### Summary for Scarlita
 
@@ -5204,18 +5576,22 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Seth benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
-- **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
-  - Lifedrain buff (area, low, conditional (frequent))
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
-- **Ravion**
-  - ATK buff (multiple targets, low)
-  - Energy recovery (multiple targets, medium)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - Lifedrain buff (area, low, conditional (frequent))
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Seth
 
@@ -5264,17 +5640,20 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Shadewing benefits from
 
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+  - Enables Debuff on target via ATK debuff (all units)
 - **Alna**
   - Enables Debuff on target via Haste debuff (area)
   - Enables Continuous damage on enemies via DoT
-- **Lyca**
-  - Enables Debuff on target via ATK debuff (all units)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+  - Enables Debuff on target via ATK debuff (single target)
 - **Lucius**
   - Enables Debuff on target via ATK debuff (area)
-- **Cyran**
-  - Enables Debuff on target via ATK debuff (all units)
 - **Fay**
   - ATK buff (multiple targets, low)
+  - ATK SPD buff (multiple targets, low) [signature fuel]
   - Enables Debuff on target via Magic DEF debuff (multiple targets)
   - Enables Continuous damage on enemies via tick damage
 
@@ -5330,19 +5709,20 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Shakir benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
-
-### Units benefitting from Shakir
-
-- Brutus
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Shakir
 
@@ -5387,20 +5767,21 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Shemira benefits from
 
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - Healing over time (all units, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Hugin**
+  - Max HP via Shield (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Isabella**
+  - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
 - **Hewynn**
   - Healing (all units, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
-  - Healing (single target, medium)
-- **Koko**
-  - Max HP via Shield (all units, low)
-  - Healing (multiple targets, high)
-- **Rowan**
-  - Max HP buff (single target, high)
-  - Healing (area, medium)
-- **Contess**
-  - Max HP via Shield (single target, medium)
-  - Healing (multiple targets, high)
 
 ### Summary for Shemira
 
@@ -5434,25 +5815,22 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Silven benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Enables Ally stat buffs via 4 ally stat buffs
 - **Evie**
   - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Enables Ally stat buffs via 4 ally stat buffs
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Enables Ally stat buffs via 3 ally stat buffs
 - **Contess**
   - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 
 ### Units benefitting from Silven
 
-- Arden
-- Granny Dahnie
 - Nara
-- Pandora
 - Scarlita
 
 ### Summary for Silven
@@ -5492,16 +5870,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Silvina benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-- **Koko**
-  - Max HP via Shield (all units, low)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Gala**
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Silvina
 
@@ -5548,19 +5929,15 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Sinbad benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
-  - ATK SPD buff (all units, medium)
+  - ATK SPD buff (all units, medium) [signature fuel]
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
-
-### Units benefitting from Sinbad
-
-- Indris
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Sinbad
 
@@ -5626,12 +6003,8 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Smokey & Meerky
 
-- Arden
-- Granny Dahnie
 - Nara
-- Pandora
 - Scarlita
-- Zorya
 
 ### Summary for Smokey & Meerky
 
@@ -5670,11 +6043,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Solise benefits from
 
-_No synergy partners matched stat buffs or enablers._
-
-### Units benefitting from Solise
-
-- Niru
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Ravion**
+  - ATK buff (multiple targets, low)
+  - Energy recovery (multiple targets, medium) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
 
 ### Summary for Solise
 
@@ -5716,15 +6097,20 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Sonja benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Sonja
 
@@ -5760,15 +6146,20 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Soren benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Soren
 
@@ -5808,21 +6199,26 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Sylphira benefits from
 
+- **Twins**
+  - Haste buff (all units, high) [signature fuel]
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Healing over time (all units, medium)
-- **Twins**
-  - Haste buff (all units, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Hugin**
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
-- **Evie**
-  - ATK buff (multiple targets, high)
-  - Healing (multiple targets, high)
-- **Hewynn**
-  - Healing (all units, high)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Isabella**
-  - Haste buff (multiple targets, low, conditional (frequent))
+  - Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
   - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
 
 ### Summary for Sylphira
 
@@ -5930,18 +6326,23 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Tasi benefits from
 
+- **Twins**
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - ATK buff (multiple targets, high)
-  - Haste buff (multiple targets, high)
-- **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Units benefitting from Tasi
 
@@ -5996,22 +6397,21 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Temesia benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
   - Healing (single target, medium)
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Healing over time (all units, medium)
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Healing (single target, medium)
 - **Evie**
   - ATK buff (multiple targets, high)
-  - Healing (multiple targets, high)
-- **Contess**
-  - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
   - Healing (multiple targets, high)
 
 ### Summary for Temesia
@@ -6061,16 +6461,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Thador benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-- **Koko**
-  - Max HP via Shield (all units, low)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Gala**
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Thador
 
@@ -6110,16 +6513,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Thoran benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-- **Ravion**
-  - Energy recovery (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Gala**
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Thoran
 
@@ -6156,16 +6562,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Tilaya benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-- **Koko**
-  - Max HP via Shield (all units, low)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Gala**
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Tilaya
 
@@ -6217,7 +6626,7 @@ _No synergy partners matched stat buffs or enablers._
 - **Hepler**
   - Max HP via Shield (multiple targets, medium)
 - **Ravion**
-  - Energy recovery (multiple targets, medium)
+  - Energy recovery (multiple targets, medium) [signature fuel]
 
 ### Summary for Ulmus
 
@@ -6256,21 +6665,26 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Vala benefits from
 
+- **Twins**
+  - Haste buff (all units, high) [signature fuel]
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Healing over time (all units, medium)
-- **Twins**
-  - Haste buff (all units, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Hugin**
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Healing (single target, medium)
-- **Evie**
-  - ATK buff (multiple targets, high)
-  - Healing (multiple targets, high)
-- **Kafra**
-  - Healing over time (area, high)
-  - Enables Enemy defeat via Marked target (focus fire)
-- **Hewynn**
-  - Healing (all units, high)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Isabella**
+  - Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+  - Healing (area, high)
+  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
 
 ### Summary for Vala
 
@@ -6325,7 +6739,17 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Valen benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - ATK buff (multiple targets, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Hugin**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lyca**
+  - ATK SPD buff (all units, medium) [signature fuel]
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
 ### Summary for Valen
 
@@ -6370,25 +6794,26 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Valka benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
   - Enables Adjacent allies via Multiple ally buffs
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
   - Enables Adjacent allies via Multiple ally buffs
 - **Lucius**
   - Max HP via Shield (area, high)
   - Enables Adjacent allies via Multiple ally buffs
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Enables Adjacent allies via Multiple ally buffs
 - **Damian**
-  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent))
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
   - Enables Adjacent allies via Multiple ally buffs
 
 ### Units benefitting from Valka
 
+- Brutus
 - Lyca
 
 ### Summary for Valka
@@ -6440,18 +6865,22 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Velara benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
-- **Gala**
-  - Haste buff (single target, high)
-  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Velara
 
@@ -6503,15 +6932,20 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Viperian benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Damian**
-  - Haste buff (multiple targets, high, conditional (frequent))
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 - **Zandrok**
-  - Haste buff (area, medium, conditional (frequent))
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Viperian
 
@@ -6550,24 +6984,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Walker benefits from
 
-- **Lucius**
-  - Max HP via Shield (area, high)
+- **Twins**
+  - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
-- **Cecia**
-  - Max HP buff (single target, high)
-  - Lifedrain buff (area, low)
-- **Koko**
-  - Max HP via Shield (all units, low)
-  - Lifedrain buff (multiple targets, low)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-
-### Units benefitting from Walker
-
-- Athalia
-- Brutus
-- Nazrik
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Lucius**
+  - Max HP via Shield (area, high)
+- **Zandrok**
+  - Lifedrain buff (area, low, conditional (frequent))
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+- **Mikola**
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Walker
 
@@ -6608,33 +7037,49 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Zandrok benefits from
 
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Hugin**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
   - Max HP via Shield (multiple targets, high)
-- **Lucius**
-  - Max HP via Shield (area, high)
-- **Gala**
-  - Haste buff (single target, high)
-  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - Haste buff (multiple targets, high)
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Gala**
+  - Haste buff (single target, high) [signature fuel]
+  - Max HP via Shield (single target, high)
+  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Units benefitting from Zandrok
 
+- Alsa
 - Atalanta
+- Aurora
+- Baelran
+- Brutus
+- Bryon
 - Carolina
 - Cassadee
+- Damian
+- Faramor
+- Florabelle
 - Frieren
+- Gala
 - Harak
 - Hepler
 - Hugin
 - Koko
+- Lenya
 - Lucy
 - Mikola
 - Natsu
 - Nerion
+- Pang
 - Pippa
 - Ravion
 - Rowan
@@ -6644,7 +7089,10 @@ _No synergy partners matched stat buffs or enablers._
 - Soren
 - Tasi
 - Twins
+- Velara
 - Viperian
+- Walker
+- Zorya
 
 ### Summary for Zandrok
 
@@ -6682,7 +7130,7 @@ _No synergy partners matched stat buffs or enablers._
 ### Units Zanie benefits from
 
 - **Twins**
-  - ATK SPD via Haste buff (all units, high)
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -6690,9 +7138,9 @@ _No synergy partners matched stat buffs or enablers._
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
 - **Hugin**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Mikola**
-  - ATK SPD via Haste buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Zanie
 
@@ -6735,22 +7183,25 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Zorya benefits from
 
-- **Mikola**
-  - Haste buff (multiple targets, high)
-  - Healing over time (all units, medium)
 - **Twins**
-  - Haste buff (all units, high)
+  - Haste buff (all units, high) [signature fuel]
   - Healing (single target, medium)
-- **Smokey & Meerky**
-  - Healing over time (multiple targets, medium)
-  - Energy recovery (multiple targets, low)
-  - Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
-- **Contess**
-  - Healing (multiple targets, high)
-  - Enables Ally Ultimate casts via Start-of-battle Ultimate
-- **Evie**
-  - Healing (multiple targets, high)
-  - Enables Ally Ultimate casts via Start-of-battle Ultimate
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+- **Mikola**
+  - Haste buff (multiple targets, high) [signature fuel]
+  - Healing over time (all units, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Hugin**
+  - Haste buff (multiple targets, high) [signature fuel]
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+  - Healing (single target, medium)
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
+- **Zandrok**
+  - Haste buff (area, medium, conditional (frequent)) [signature fuel]
+  - Lifedrain buff (area, low, conditional (frequent))
+  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 
 ### Summary for Zorya
 

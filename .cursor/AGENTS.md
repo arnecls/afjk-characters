@@ -146,17 +146,20 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
   Twins → Elijah & Lailah, Gala → Galahad).
 - **Signature skill** — the one skill that most characterises how the
-  hero is played. Stored in `scripts/defining_skills.json` (key =
+  hero is played. Stored in `scripts/signature_skills.json` (key =
   display name from `heroes-overview.md`). Shown in the behavior block
   as `Signature skill: {name} [(ultimate)] — {2–5 word description}`.
   Often the Ultimate, but not always. Pick the skill that defines the
   unit's identity in combat.
   **Indicators:** enhanced by Ex / Supreme+ (`Enhance Force`); unique
   mechanic few others share; exceptional damage or buff; battle-start or
-  formation setup. **Examples:** Shemira → Phantom Procession (ultimate,
-  high damage); Lily May → Tempest Shot (cancel enemy ultimate); Dunlingr
-  → Echo of Silence (block heals/ultimates); Eironn → Howling Hurricane
-  (free pull at battle start); Thador → Darkmoon Pact (buff unit behind).
+  formation setup.
+- **Alternative signature skill** — parallel set in
+  `scripts/defining_skills_alternative.json` (same shape as
+  `signature_skills.json`). Holds each hero's best **repeatable, buffable**
+  skill per the indicators above. Used for synergy fuel weighting when
+  the primary signature skill cannot be buffed (start-of-battle /
+  once-per-battle phrasing in skill text).
 - **Casting speed** — split into three lines: **signature skill speed**,
   **ultimate speed**, and **non-ultimate speed** (`slow`, `normal`, or
   `fast`). Each uses absolute time thresholds on the relevant skill(s).
@@ -203,6 +206,16 @@ reviewing or fixing matches, work through both heroes in this order.
    **Defining-tier enablers:** requirements from Ex-Skills (`Mythic+`,
    `EX+n`) and `Supreme+` skills are unit-defining and score higher via
    `DEFINING_TIER_SCORE_MULT` in `generate-heroes-overview.py`.
+   **Signature-skill fuel:** Energy recovery and Haste/ATK SPD ally buffs
+   are boosted by the receiver's effective synergy signature speed
+   (`synergy_signature_speed` on `HeroBehavior`: primary speed if the
+   primary signature skill is buffable, else the alternative skill's
+   speed). Multipliers: `SIGNATURE_FUEL_SPEED_MULT` in
+   `generate-heroes-overview.py` (slow 1.6×, normal 1.2×, fast 1.0×).
+   Slow/normal effective speeds also implicitly value Energy and ATK SPD
+   at `IMPLICIT_FUEL_BASE` (0.6×) when not in benefit stats. Buffability
+   is detected from skill text (`NON_BUFFABLE_SIGNATURE_RES` in
+   `rewrite-summaries.py`).
 
 **Units benefited** at the end of each Synergies block is the reverse index:
 heroes who list this unit in their top five.

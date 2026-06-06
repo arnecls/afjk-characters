@@ -59,6 +59,22 @@ MAX_SYNERGIES = 5
 
 FREQUENT_CONDITIONAL_SCORE = 0.85
 
+# Signature skill "casting fuel": boost Energy/Haste synergies so a unit's
+# signature skill comes online faster. Scaled by effective synergy speed.
+SIGNATURE_FUEL_SPEED_MULT = {"slow": 1.6, "normal": 1.2, "fast": 1.0}
+
+# Fuel buff labels that accelerate skill casting / energy gain.
+SIGNATURE_FUEL_LABELS = frozenset(
+    {"Energy recovery", "Haste buff", "ATK SPD buff"}
+)
+
+# For non-fast signature skills, consider Energy/Haste even when the receiver
+# does not explicitly scale on them; reduced base so batteries do not eclipse
+# real enablers.
+IMPLICIT_FUEL_BASE = 0.6
+
+IMPLICIT_FUEL_STATS = ("Energy", "ATK SPD")
+
 # Ex-Skill / Supreme+ requirements are unit-defining; boost enabler score.
 DEFINING_TIER_SCORE_MULT = {
     "Mythic+": 1.5,
@@ -618,10 +634,28 @@ def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
     return False
 
 
+def _stats_for_synergy_scoring(
+    receiver: _rs.Hero, signature_speed: str
+) -> list[tuple[str, bool]]:
+    """Return (stat, implicit) pairs to score for stat-buff synergies."""
+    benefit = receiver_stats(receiver)
+    implicit = set()
+    if signature_speed != "fast":
+        for stat in IMPLICIT_FUEL_STATS:
+            if stat not in benefit:
+                implicit.add(stat)
+    stats: list[tuple[str, bool]] = [(s, False) for s in benefit]
+    for stat in IMPLICIT_FUEL_STATS:
+        if stat in implicit:
+            stats.append((stat, True))
+    return stats
+
+
 def score_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
     receiver_movement: str = "",
+    signature_speed: str = "normal",
 ) -> tuple[float, list[str]]:
     if provider.title == receiver.title:
         return 0.0, []
@@ -630,14 +664,15 @@ def score_synergy(
     total = 0.0
     seen_stats: set[str] = set()
     credited_buffs: set[str] = set()
+    fuel_mult = SIGNATURE_FUEL_SPEED_MULT.get(signature_speed, 1.0)
 
-    for stat in receiver_stats(receiver):
+    for stat, is_implicit in _stats_for_synergy_scoring(receiver, signature_speed):
         if stat == "Haste" and "Haste buff" in credited_buffs:
             continue
         label_prefs = buff_labels_for_stat(stat)
         allowed = {label for label, _ in label_prefs}
         mult_by_label = dict(label_prefs)
-        best_for_stat: tuple[float, str] | None = None
+        best_for_stat: tuple[float, str, str] | None = None
 
         for effect in provider.effects:
             if effect.category != "buff" or effect.label not in allowed:
@@ -656,14 +691,23 @@ def score_synergy(
             pts = tw * mw * mult_by_label[effect.label]
             if effect.conditional == "frequent":
                 pts *= FREQUENT_CONDITIONAL_SCORE
+            if effect.label in SIGNATURE_FUEL_LABELS:
+                pts *= fuel_mult
+                if is_implicit:
+                    pts *= IMPLICIT_FUEL_BASE
             cond = (
                 f", conditional ({effect.conditional})"
                 if effect.conditional
                 else ""
             )
+            fuel_tag = (
+                " [signature fuel]"
+                if effect.label in SIGNATURE_FUEL_LABELS
+                else ""
+            )
             detail = (
                 f"{effect.label} ({effect.targeting.lower()}, "
-                f"{effect.magnitude}{cond})"
+                f"{effect.magnitude}{cond}){fuel_tag}"
             )
             if best_for_stat is None or pts > best_for_stat[0]:
                 best_for_stat = (pts, detail, effect.label)
@@ -736,9 +780,10 @@ def score_combined_synergy(
     receiver: _rs.Hero,
     enabler_matchers: dict[str, callable],
     receiver_movement: str = "",
+    signature_speed: str = "normal",
 ) -> tuple[float, list[str]]:
     buff_score, buff_reasons = score_synergy(
-        provider, receiver, receiver_movement
+        provider, receiver, receiver_movement, signature_speed
     )
     summon_score, summon_reasons = score_summon_synergy(provider, receiver)
     en_score, en_reasons = score_enabler_synergy(
@@ -756,11 +801,17 @@ def rank_synergies(
     enabler_matchers: dict[str, callable],
     behavior_by_title: dict[str, _rs.HeroBehavior],
 ) -> list[tuple[str, list[str]]]:
-    receiver_movement = behavior_by_title[receiver.title].movement
+    receiver_behavior = behavior_by_title[receiver.title]
+    receiver_movement = receiver_behavior.movement
+    signature_speed = receiver_behavior.synergy_signature_speed or "normal"
     ranked: list[tuple[float, list[str], str]] = []
     for provider in heroes:
         score, reasons = score_combined_synergy(
-            provider, receiver, enabler_matchers, receiver_movement
+            provider,
+            receiver,
+            enabler_matchers,
+            receiver_movement,
+            signature_speed,
         )
         if score <= 0 or not reasons:
             continue

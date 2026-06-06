@@ -18,7 +18,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HEROES_MD = ROOT / "Heroes.md"
 HEROES2_MD = ROOT / "heroes2.md"
-DEFINING_SKILLS_FILE = Path(__file__).resolve().parent / "defining_skills.json"
+DEFINING_SKILLS_FILE = Path(__file__).resolve().parent / "signature_skills.json"
+DEFINING_SKILLS_ALTERNATIVE_FILE = (
+    Path(__file__).resolve().parent / "defining_skills_alternative.json"
+)
 
 SECTION_TIERS = {
     "Ultimate": "base",
@@ -2744,6 +2747,8 @@ class HeroBehavior:
     signature_skill_is_ult: bool = False
     signature_skill_description: str = ""
     signature_skill_speed: str = ""
+    synergy_signature_speed: str = ""
+    synergy_signature_is_ult: bool = False
     ult_speed: str = ""
     non_ult_speed: str = ""
 
@@ -3179,6 +3184,60 @@ def _load_signature_skills() -> dict[str, dict]:
     return json.loads(DEFINING_SKILLS_FILE.read_text(encoding="utf-8"))
 
 
+def _load_signature_skills_alternative() -> dict[str, dict]:
+    if not DEFINING_SKILLS_ALTERNATIVE_FILE.exists():
+        return {}
+    return json.loads(
+        DEFINING_SKILLS_ALTERNATIVE_FILE.read_text(encoding="utf-8")
+    )
+
+
+NON_BUFFABLE_SIGNATURE_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"when a battle starts", re.I),
+    re.compile(r"at battle start", re.I),
+    re.compile(r"during battle preparation", re.I),
+    re.compile(r"once per battle", re.I),
+    re.compile(r"the first time", re.I),
+)
+
+
+def _signature_is_buffable(section_text: str) -> bool:
+    if not section_text.strip():
+        return True
+    return not any(p.search(section_text) for p in NON_BUFFABLE_SIGNATURE_RES)
+
+
+def _signature_section_text(
+    skills: list[SkillMeta], section: str
+) -> str:
+    skill = _skill_by_section(skills, section)
+    return skill.text if skill else ""
+
+
+def _effective_synergy_signature(
+    primary: dict | None,
+    alternative: dict | None,
+    skills: list[SkillMeta],
+    speeds: dict[str, str],
+) -> tuple[str, bool]:
+    """Return (speed label, is_ultimate) for synergy fuel weighting."""
+    if not primary:
+        return "normal", False
+
+    primary_speed = _signature_skill_speed_label(primary, speeds)
+    primary_section = primary.get("section", "Ultimate")
+    primary_text = _signature_section_text(skills, primary_section)
+
+    if _signature_is_buffable(primary_text):
+        return primary_speed, bool(primary.get("is_ultimate"))
+
+    if alternative:
+        alt_speed = _signature_skill_speed_label(alternative, speeds)
+        return alt_speed, bool(alternative.get("is_ultimate"))
+
+    return primary_speed, bool(primary.get("is_ultimate"))
+
+
 def _signature_skill_speed_label(
     defining: dict | None,
     per_skill: dict[str, str],
@@ -3221,6 +3280,7 @@ def build_behavior_for_heroes(
     casting_labels = casting_speed_labels(casting_scores)
     per_skill_speeds = compute_per_skill_speeds(skills_by_title)
     defining_by_display = _load_signature_skills()
+    alternative_by_display = _load_signature_skills_alternative()
 
     result: dict[str, HeroBehavior] = {}
     for hero in heroes:
@@ -3229,8 +3289,12 @@ def build_behavior_for_heroes(
         display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
         speeds = per_skill_speeds.get(hero.title, {})
         defining = defining_by_display.get(display)
+        alternative = alternative_by_display.get(display)
 
         if defining:
+            synergy_speed, synergy_is_ult = _effective_synergy_signature(
+                defining, alternative, skills, speeds
+            )
             result[hero.title] = HeroBehavior(
                 movement=movement,
                 movement_note=note,
@@ -3241,6 +3305,8 @@ def build_behavior_for_heroes(
                 signature_skill_speed=_signature_skill_speed_label(
                     defining, speeds
                 ),
+                synergy_signature_speed=synergy_speed,
+                synergy_signature_is_ult=synergy_is_ult,
                 ult_speed=speeds.get("ult", "normal"),
                 non_ult_speed=speeds.get("non_ult", "normal"),
             )
@@ -3249,6 +3315,7 @@ def build_behavior_for_heroes(
                 movement=movement,
                 movement_note=note,
                 casting_speed=casting_labels.get(hero.title, "normal"),
+                synergy_signature_speed="normal",
                 ult_speed=speeds.get("ult", "normal"),
                 non_ult_speed=speeds.get("non_ult", "normal"),
             )
