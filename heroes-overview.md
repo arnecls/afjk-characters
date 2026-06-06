@@ -129,12 +129,20 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Buffs provided by Alna
 
 - Healing — Single target — `low`
-- Max HP buff — Multiple targets — `low`
+- Healing over time — Single target — `high` — conditional (frequent)
+- Max HP buff — Single target — `low`
+- Ally empower buff — Single target — `medium`
+- ATK buff (Supreme+) — Single target — `medium`
 - Damage taken reduction (Legendary+) — Self — `medium`
 
 #### Debuffs provided by Alna
 
 - Haste debuff — Area — `high`
+- Vitality debuff (Supreme+) — Area — `low` — conditional (frequent)
+
+#### Crowd Control provided by Alna
+
+- Freeze (Supreme+) — Area — `medium` — conditional (frequent)
 
 #### Alna's Special Effects
 
@@ -142,7 +150,9 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - Start-of-battle cast — All units
 - Summoning — Self
+- Ally empower (Level 11) — Single target
 - Damage and control immunity (Mythic+) — Self
+- Damage and control immunity (EX+15) — Single target
 
 ## Alsa
 
