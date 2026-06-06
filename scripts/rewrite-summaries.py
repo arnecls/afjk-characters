@@ -2609,6 +2609,11 @@ BEHAVIOR_ATTACK_SECTIONS = frozenset(
     {"Ultimate", "Skill1", "Skill2", "Ex. Skill"}
 )
 
+# Ex. Skill range is situational; Skill1/2/Ult reflect positioning.
+BEHAVIOR_RANGE_SECTIONS = frozenset(
+    {"Ultimate", "Skill1", "Skill2"}
+)
+
 # Repositioning phrases -> high movement (avoid "charged arrow", etc.).
 HIGH_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"\bjump(?:s|ed|ing)?\b", re.I),
@@ -2667,6 +2672,21 @@ SUMMON_CONTROLLER_RE = re.compile(
     r"\belona\b.+\b(?:remains on the battlefield|cannot be attacked)\b",
     re.I,
 )
+
+PULL_ENEMY_RE = re.compile(
+    r"\bpull(?:s|ed|ing)? (?:a |an |the )?.{0,40}(?:enemy|target).{0,25}toward",
+    re.I,
+)
+
+BRIEF_REPOSITION_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bblink(?:s|ed|ing)? to the backline\b", re.I),
+    re.compile(r"\bascends? to the sky\b", re.I),
+    re.compile(r"\bhovers? over the battlefield\b", re.I),
+    re.compile(r"\bdescends? near\b", re.I),
+    re.compile(r"\bwhile in the air\b", re.I),
+)
+
+NORMAL_ATTACK_RE = re.compile(r"\bnormal attack", re.I)
 
 # Energy assumed to fill at this rate (energy/second).
 ENERGY_FILL_RATE: float = 100.0
@@ -2903,6 +2923,14 @@ def _has_explicit_hero_movement(text: str) -> bool:
     return bool(EXPLICIT_HERO_MOVE_RE.search(text))
 
 
+def _pulls_enemies_to_self(text: str) -> bool:
+    return bool(PULL_ENEMY_RE.search(text))
+
+
+def _has_brief_reposition(text: str) -> bool:
+    return any(p.search(text) for p in BRIEF_REPOSITION_RES)
+
+
 def _skill_deals_damage(text: str) -> bool:
     t = text.lower()
     return bool(
@@ -2910,10 +2938,52 @@ def _skill_deals_damage(text: str) -> bool:
             r"\bdeal(?:s|ing|t)?\b.*\bdamage\b|\bdamage\b.*\bdeal|\b"
             r"strik(?:e|es|ing)\b|\bhit(?:s|ting)?\b.*\bdamage\b|\bfire(?:s|d)?\b"
             r".*\b(?:arrow|bolt|shot|volley)\b|\bshoot(?:s|ing)?\b|\bswing(?:s|ing)?\b"
-            r".*\bdamage\b|\bthrust(?:s|ing)?\b.*\bdamage\b|\bslam\b.*\bdamage\b",
+            r".*\bdamage\b|\bthrust(?:s|ing)?\b.*\bdamage\b|\bslam\b.*\bdamage\b|"
+            r"\blose[s]? .{0,50}\bhp\b|\blosing .{0,50}\bhp\b",
             t,
         )
     )
+
+
+def _movement_range_candidates(
+    skills: list[SkillMeta],
+) -> list[SkillMeta]:
+    """Skills whose range reflects how far the hero moves to fight."""
+    ranged = [
+        s
+        for s in skills
+        if s.section in BEHAVIOR_RANGE_SECTIONS
+        and not s.range_global
+        and s.range_tiles is not None
+        and _skill_deals_damage(_hero_movement_text(s.text))
+    ]
+    normal_attack = [
+        s for s in ranged if NORMAL_ATTACK_RE.search(s.text)
+    ]
+    return normal_attack if normal_attack else ranged
+
+
+def _weighted_attack_range(skills: list[SkillMeta]) -> float | None:
+    candidates = _movement_range_candidates(skills)
+    if not candidates:
+        return None
+
+    max_freq = _NO_CD_FREQUENCY_WEIGHT
+    for skill in candidates:
+        if skill.cooldown and skill.cooldown > 0:
+            max_freq = max(max_freq, 1.0 / skill.cooldown)
+
+    weighted_sum = 0.0
+    weight_total = 0.0
+    for skill in candidates:
+        if skill.cooldown and skill.cooldown > 0:
+            w = 1.0 / skill.cooldown
+        else:
+            w = max_freq
+        weighted_sum += skill.range_tiles * w
+        weight_total += w
+
+    return weighted_sum / weight_total if weight_total else None
 
 
 def _movement_from_range(avg_range: float) -> str:
@@ -2942,6 +3012,12 @@ def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
     if _is_summon_controller(all_text):
         return "stationary", "summon moves"
 
+    if _has_brief_reposition(hero_text) and not _has_constant_movement(all_text):
+        return "moving", "brief reposition"
+
+    if _pulls_enemies_to_self(all_text):
+        return "mostly stationary", "pulls enemies"
+
     if _has_high_movement_text(hero_text):
         note = _conditional_stationary_note(all_text)
         if note:
@@ -2952,43 +3028,14 @@ def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
         note = _conditional_stationary_note(all_text)
         return "moving", note or "repositions on cast"
 
-    weighted_sum = 0.0
-    weight_total = 0.0
-    max_freq = _NO_CD_FREQUENCY_WEIGHT
+    avg = _weighted_attack_range(skills)
 
-    for skill in skills:
-        if skill.section not in BEHAVIOR_ATTACK_SECTIONS:
-            continue
-        if skill.range_global or skill.range_tiles is None:
-            continue
-        skill_text = _hero_movement_text(skill.text)
-        if not _skill_deals_damage(skill_text):
-            continue
-        if skill.cooldown and skill.cooldown > 0:
-            max_freq = max(max_freq, 1.0 / skill.cooldown)
-
-    for skill in skills:
-        if skill.section not in BEHAVIOR_ATTACK_SECTIONS:
-            continue
-        if skill.range_global or skill.range_tiles is None:
-            continue
-        skill_text = _hero_movement_text(skill.text)
-        if not _skill_deals_damage(skill_text):
-            continue
-        if skill.cooldown and skill.cooldown > 0:
-            w = 1.0 / skill.cooldown
-        else:
-            w = max_freq
-        weighted_sum += skill.range_tiles * w
-        weight_total += w
-
-    if weight_total <= 0:
+    if avg is None:
         note = _conditional_stationary_note(all_text)
         if note:
             return "stationary", note
         return "stationary", "no finite attack range"
 
-    avg = weighted_sum / weight_total
     label = _movement_from_range(avg)
     note = _conditional_stationary_note(all_text)
     if note:

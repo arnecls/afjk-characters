@@ -139,7 +139,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Alsa's behavior
 
-- Movement: moving (avg attack range 3.6 tiles)
+- Movement: mostly stationary (avg attack range 6.0 tiles)
 - Casting speed: slow
 
 ### Units Alsa benefits from
@@ -861,7 +861,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Cassadee's behavior
 
-- Movement: mostly stationary (avg attack range 5.2 tiles)
+- Movement: stationary (avg attack range 10.0 tiles)
 - Casting speed: slow
 
 ### Units Cassadee benefits from
@@ -1075,18 +1075,19 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Cryonaia's behavior
 
-- Movement: moving (avg attack range 3.1 tiles)
+- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Casting speed: slow
 
 ### Units Cryonaia benefits from
 
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - Max HP via Shield (multiple targets, high)
 - **Himmel**
   - ATK buff (multiple targets, low)
   - Max HP buff (multiple targets, high)
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Hugin**
-  - Max HP via Shield (multiple targets, high)
 - **Contess**
   - ATK buff (single target, high)
   - Max HP via Shield (single target, medium)
@@ -1368,7 +1369,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Dunlingr's behavior
 
-- Movement: stationary (avg attack range 9.6 tiles)
+- Movement: stationary (avg attack range 6.4 tiles)
 - Casting speed: slow
 
 ### Units Dunlingr benefits from
@@ -2019,7 +2020,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Granny Dahnie's behavior
 
-- Movement: stationary (no finite attack range)
+- Movement: moving (avg attack range 2.0 tiles)
 - Casting speed: normal
 
 ### Units Granny Dahnie benefits from
@@ -2064,7 +2065,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Gunnar's behavior
 
-- Movement: moving (avg attack range 3.0 tiles)
+- Movement: stationary (no finite attack range)
 - Casting speed: slow
 
 ### Units Gunnar benefits from
@@ -3932,7 +3933,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Mirael's behavior
 
-- Movement: mostly stationary (avg attack range 4.2 tiles)
+- Movement: stationary (avg attack range 10.1 tiles)
 - Casting speed: normal
 
 ### Units Mirael benefits from
@@ -3968,7 +3969,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Nara's behavior
 
-- Movement: moving (avg attack range 2.0 tiles)
+- Movement: mostly stationary (pulls enemies)
 - Casting speed: fast
 
 ### Units Nara benefits from
@@ -4014,7 +4015,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Natsu's behavior
 
-- Movement: stationary (avg attack range 7.0 tiles)
+- Movement: stationary (avg attack range 11.0 tiles)
 - Casting speed: normal
 
 ### Units Natsu benefits from
@@ -4107,7 +4108,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Nerion's behavior
 
-- Movement: mostly stationary (avg attack range 4.1 tiles)
+- Movement: mostly stationary (avg attack range 4.0 tiles)
 - Casting speed: slow
 
 ### Units Nerion benefits from
@@ -4346,7 +4347,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Parisa's behavior
 
-- Movement: stationary (avg attack range 7.5 tiles)
+- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Casting speed: normal
 
 ### Units Parisa benefits from
@@ -4881,7 +4882,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Scarlita's behavior
 
-- Movement: high movement (repositioning skills)
+- Movement: moving (brief reposition)
 - Casting speed: normal
 
 ### Units Scarlita benefits from
@@ -4988,7 +4989,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Shadewing's behavior
 
-- Movement: moving (avg attack range 2.0 tiles)
+- Movement: moving (avg attack range 1.0 tiles)
 - Casting speed: slow
 
 ### Units Shadewing benefits from
@@ -5148,7 +5149,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Silven's behavior
 
-- Movement: stationary (avg attack range 11.0 tiles)
+- Movement: stationary (avg attack range 12.0 tiles)
 - Casting speed: fast
 
 ### Units Silven benefits from
@@ -6205,7 +6206,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Walker's behavior
 
-- Movement: mostly stationary (avg attack range 6.0 tiles)
+- Movement: moving (avg attack range 2.0 tiles)
 - Casting speed: normal
 
 ### Units Walker benefits from

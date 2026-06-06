@@ -138,8 +138,11 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   `compute_movement()` in `rewrite-summaries.py`: off-battlefield heroes
   (Damian), summon controllers (Bryon), dual units (Twins), constant
   movers (Rhys), dormant/rooted cycles (Zorya, Ulmus), explicit hero
-  repositioning (Rowan). Summon/companion movement and dormant sentences
-  are excluded before range and repositioning analysis. Data from
+  repositioning (Rowan), brief aerial reposition (Scarlita), pull-to-self
+  (Nara), normal-attack range priority (Walker). Range uses
+  Ultimate/Skill1/Skill2 only (not Ex). Summon/companion movement and
+  dormant sentences are excluded before range and repositioning analysis.
+  Data from
   [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
   Twins → Elijah & Lailah, Gala → Galahad).
 - **Casting speed** — `slow`, `normal`, or `fast`. Weighted composite
