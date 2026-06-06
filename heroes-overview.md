@@ -694,7 +694,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Bryon's behavior
 
-- Movement: moving (avg attack range 3.1 tiles)
+- Movement: stationary (summon moves)
 - Casting speed: normal
 
 ### Units Bryon benefits from
@@ -1222,11 +1222,14 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Damian's behavior
 
-- Movement: high movement (repositioning skills)
+- Movement: stationary (off battlefield)
 - Casting speed: slow
 
 ### Units Damian benefits from
 
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - Haste buff (multiple targets, high)
 - **Twins**
   - Haste buff (all units, high)
 - **Mikola**
@@ -1238,8 +1241,6 @@ _No synergy partners matched stat buffs or enablers._
 - **Florabelle**
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-- **Hugin**
-  - Haste buff (multiple targets, high)
 
 ### Units benefitting from Damian
 
@@ -1489,7 +1490,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Twins's behavior
 
-- Movement: stationary (no finite attack range)
+- Movement: moving / stationary (two units)
 - Casting speed: slow
 
 ### Units Twins benefits from
@@ -3656,7 +3657,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Marcille's behavior
 
-- Movement: high movement (repositioning skills)
+- Movement: stationary (no finite attack range)
 - Casting speed: fast
 
 ### Units Marcille benefits from
@@ -4664,7 +4665,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Rhys's behavior
 
-- Movement: stationary (avg attack range 9.6 tiles)
+- Movement: high movement (moves while attacking)
 - Casting speed: slow
 
 ### Units Rhys benefits from
@@ -4705,7 +4706,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Rowan's behavior
 
-- Movement: stationary (no finite attack range)
+- Movement: moving (repositions on cast)
 - Casting speed: fast
 
 ### Units Rowan benefits from
@@ -5880,7 +5881,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Ulmus's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
+- Movement: moving (stationary when rooted)
 - Casting speed: slow
 
 ### Units Ulmus benefits from
@@ -6380,7 +6381,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Zorya's behavior
 
-- Movement: high movement (repositioning skills)
+- Movement: moving (inactive while dormant)
 - Casting speed: slow
 
 ### Units Zorya benefits from

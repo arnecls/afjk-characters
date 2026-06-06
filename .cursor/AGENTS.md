@@ -131,14 +131,17 @@ Summary/synergy rules live in `scripts/rewrite-summaries.py` (library).
 
 Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
 
-- **Movement** — `stationary`, `mostly stationary`, `moving`, or
-  `high movement`. Derived from per-skill `Skill Range`, cooldown-weighted
-  attack ranges, and repositioning phrases in skill text (`jump`, `leap`,
-  `dash`, `moving to a safe spot`, etc.). Data from
-  [heroes2.md](heroes2.md) via `scripts/generate-heroes2-md.js`; falls back
-  to [Heroes.md](Heroes.md) when a hero is missing (aliases: Twins →
-  Elijah & Lailah, Gala → Galahad). Rules in `compute_movement()` in
-  `rewrite-summaries.py`.
+- **Movement** — `stationary`, `mostly stationary`, `moving`,
+  `high movement`, or `moving / stationary` (dual units). Derived from
+  per-skill `Skill Range`, cooldown-weighted attack ranges, and
+  repositioning phrases in skill text. Special cases in
+  `compute_movement()` in `rewrite-summaries.py`: off-battlefield heroes
+  (Damian), summon controllers (Bryon), dual units (Twins), constant
+  movers (Rhys), dormant/rooted cycles (Zorya, Ulmus), explicit hero
+  repositioning (Rowan). Summon/companion movement and dormant sentences
+  are excluded before range and repositioning analysis. Data from
+  [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
+  Twins → Elijah & Lailah, Gala → Galahad).
 - **Casting speed** — `slow`, `normal`, or `fast`. Weighted composite
   time in seconds (higher = slower), then absolute thresholds (not
   roster terciles). Ultimate component (50%): `initial_cd` +

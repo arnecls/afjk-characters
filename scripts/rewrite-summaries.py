@@ -2626,6 +2626,48 @@ HIGH_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"\bmoves? to a\b", re.I),
 )
 
+OFF_BATTLEFIELD_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"cannot be attacked during the battle", re.I),
+    re.compile(r"stays out of (?:the )?battlefield", re.I),
+)
+
+DUAL_UNIT_RE = re.compile(r"\bfight separately in battle\b", re.I)
+
+CONSTANT_MOVEMENT_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bcan move while attacking\b", re.I),
+    re.compile(r"\bbonus movement speed when moving\b", re.I),
+    re.compile(r"\bincreases? .{0,30}movement speed\b", re.I),
+)
+
+ROOTED_STATIONARY_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\btakes root\b", re.I),
+    re.compile(r"\bwhen rooted\b", re.I),
+    re.compile(r"\bwhile rooted\b", re.I),
+)
+
+DORMANT_INACTIVE_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"\bwhile dormant\b", re.I),
+    re.compile(r"\benter a dormant state\b", re.I),
+    re.compile(r"\breturns? to (?:her |his |their )?dormant state\b", re.I),
+)
+
+EXPLICIT_HERO_MOVE_RE = re.compile(
+    r"\b(?:moves?|walks?|steps?) up to \d+ tile", re.I
+)
+
+# Summon/companion is the agent of movement, not the hero.
+SUMMON_MOVEMENT_SENTENCE_RE = re.compile(
+    r"(?:toy (?:chariot|plane)|chariot|elona|bradduck|falcon|companion|"
+    r"summon(?:ed|s)?|plane).{0,50}"
+    r"(?:charg|jump|leap|dash|fly|mov|swoop|rush)",
+    re.I,
+)
+
+SUMMON_CONTROLLER_RE = re.compile(
+    r"\belona\b.+\b(?:remains on the battlefield|cannot be attacked)\b",
+    re.I,
+)
+
 # Energy assumed to fill at this rate (energy/second).
 ENERGY_FILL_RATE: float = 100.0
 ULT_ENERGY_CAPACITY: float = 1000.0
@@ -2803,8 +2845,62 @@ def load_skill_meta(block: str) -> list[SkillMeta]:
     return skills
 
 
+def _split_sentences(text: str) -> list[str]:
+    return [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
+
+
+def _filter_sentences(
+    text: str,
+    skip: tuple[re.Pattern[str], ...] = (),
+    skip_sentence: re.Pattern[str] | None = None,
+) -> str:
+    kept: list[str] = []
+    for sent in _split_sentences(text):
+        if skip_sentence and skip_sentence.search(sent):
+            continue
+        if any(p.search(sent) for p in skip):
+            continue
+        kept.append(sent)
+    return " ".join(kept)
+
+
+def _hero_movement_text(text: str) -> str:
+    """Drop dormant/inactive and summon-only movement sentences."""
+    return _filter_sentences(
+        text,
+        skip=DORMANT_INACTIVE_RES,
+        skip_sentence=SUMMON_MOVEMENT_SENTENCE_RE,
+    )
+
+
+def _is_off_battlefield(text: str) -> bool:
+    return any(p.search(text) for p in OFF_BATTLEFIELD_RES)
+
+
+def _is_summon_controller(text: str) -> bool:
+    if EXPLICIT_HERO_MOVE_RE.search(text):
+        return False
+    return bool(SUMMON_CONTROLLER_RE.search(text))
+
+
+def _has_constant_movement(text: str) -> bool:
+    return any(p.search(text) for p in CONSTANT_MOVEMENT_RES)
+
+
+def _conditional_stationary_note(text: str) -> str | None:
+    if any(p.search(text) for p in ROOTED_STATIONARY_RES):
+        return "stationary when rooted"
+    if any(p.search(text) for p in DORMANT_INACTIVE_RES):
+        return "inactive while dormant"
+    return None
+
+
 def _has_high_movement_text(text: str) -> bool:
     return any(p.search(text) for p in HIGH_MOVEMENT_RES)
+
+
+def _has_explicit_hero_movement(text: str) -> bool:
+    return bool(EXPLICIT_HERO_MOVE_RE.search(text))
 
 
 def _skill_deals_damage(text: str) -> bool:
@@ -2831,8 +2927,30 @@ def _movement_from_range(avg_range: float) -> str:
 def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
     """Return (movement label, short rationale)."""
     all_text = " ".join(s.text for s in skills)
-    if _has_high_movement_text(all_text):
+    hero_text = _hero_movement_text(all_text)
+
+    if _is_off_battlefield(all_text):
+        return "stationary", "off battlefield"
+
+    if DUAL_UNIT_RE.search(all_text):
+        return "moving / stationary", "two units"
+
+    if _has_constant_movement(all_text):
+        note = _conditional_stationary_note(all_text)
+        return "high movement", note or "moves while attacking"
+
+    if _is_summon_controller(all_text):
+        return "stationary", "summon moves"
+
+    if _has_high_movement_text(hero_text):
+        note = _conditional_stationary_note(all_text)
+        if note:
+            return "moving", note
         return "high movement", "repositioning skills"
+
+    if _has_explicit_hero_movement(hero_text):
+        note = _conditional_stationary_note(all_text)
+        return "moving", note or "repositions on cast"
 
     weighted_sum = 0.0
     weight_total = 0.0
@@ -2843,7 +2961,8 @@ def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
             continue
         if skill.range_global or skill.range_tiles is None:
             continue
-        if not _skill_deals_damage(skill.text):
+        skill_text = _hero_movement_text(skill.text)
+        if not _skill_deals_damage(skill_text):
             continue
         if skill.cooldown and skill.cooldown > 0:
             max_freq = max(max_freq, 1.0 / skill.cooldown)
@@ -2853,7 +2972,8 @@ def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
             continue
         if skill.range_global or skill.range_tiles is None:
             continue
-        if not _skill_deals_damage(skill.text):
+        skill_text = _hero_movement_text(skill.text)
+        if not _skill_deals_damage(skill_text):
             continue
         if skill.cooldown and skill.cooldown > 0:
             w = 1.0 / skill.cooldown
@@ -2863,10 +2983,16 @@ def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
         weight_total += w
 
     if weight_total <= 0:
+        note = _conditional_stationary_note(all_text)
+        if note:
+            return "stationary", note
         return "stationary", "no finite attack range"
 
     avg = weighted_sum / weight_total
     label = _movement_from_range(avg)
+    note = _conditional_stationary_note(all_text)
+    if note:
+        return label, note
     return label, f"avg attack range {avg:.1f} tiles"
 
 
