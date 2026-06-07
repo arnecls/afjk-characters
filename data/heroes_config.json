@@ -42,7 +42,8 @@
   },
   "display_limits": {
     "max_synergies": 5,
-    "max_beneficiaries_display": 10
+    "max_beneficiaries_display": 10,
+    "obvious_provider_threshold": 20
   },
   "behavior_thresholds": {
     "energy_fill_rate": 100.0,

@@ -63,9 +63,60 @@ def _rebuild_hero(title: str, damage_type: str, p: dict):
     return hero
 
 
-def _format_synergies(short: str, p: dict, max_syn: int, max_ben: int) -> list[str]:
+def _format_benefit_stat_tags(benefit_stats: list[str]) -> list[str]:
+    stats = benefit_stats[:5]
+    has_atk_spd = "ATK SPD" in stats
+    tags: list[str] = []
+    for stat in stats:
+        if stat == "Haste" and has_atk_spd:
+            continue
+        if stat == "ATK SPD":
+            tags.append("ATK SPD / Haste")
+        else:
+            tags.append(stat)
+    return tags
+
+
+def _join_names(names: list[str]) -> str:
+    if len(names) == 1:
+        return names[0]
+    if len(names) == 2:
+        return f"{names[0]} or {names[1]}"
+    return f"{names[0]}, {names[1]}, or {names[2]}"
+
+
+def _format_synergies(
+    short: str,
+    p: dict,
+    max_syn: int,
+    max_ben: int,
+    provider_beneficiary_count: dict[str, int],
+    obvious_threshold: int,
+) -> list[str]:
     lines: list[str] = []
-    picks = p["synergies"][:max_syn]
+    benefit_stats = p.get("benefit_stats", [])
+    if benefit_stats:
+        stat_tags = " ".join(
+            f"`{tag}`" for tag in _format_benefit_stat_tags(benefit_stats)
+        )
+        lines.append(f"Look for units providing: {stat_tags}")
+
+        excluded = [
+            gen.short_name(pick["provider"])
+            for pick in p["synergies"]
+            if provider_beneficiary_count.get(pick["provider"], 0)
+            > obvious_threshold
+        ][:3]
+        if excluded:
+            lines.append(f"Common buffers are {_join_names(excluded)}.")
+        lines.append("")
+
+    filtered = [
+        pick
+        for pick in p["synergies"]
+        if provider_beneficiary_count.get(pick["provider"], 0) <= obvious_threshold
+    ]
+    picks = filtered[:max_syn]
     if picks:
         for pick in picks:
             lines.append(f"- **{gen.short_name(pick['provider'])}**")
@@ -102,6 +153,11 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
     limits = config.get("display_limits", {})
     max_syn = limits.get("max_synergies", 5)
     max_ben = limits.get("max_beneficiaries_display", 10)
+    obvious_threshold = limits.get("obvious_provider_threshold", 20)
+    provider_beneficiary_count = {
+        title: len(p["beneficiaries"])
+        for title, p in processed["heroes"].items()
+    }
 
     data_by_title = {h["title"]: h for h in data["heroes"]}
     parts = list(OVERVIEW_HEADER)
@@ -113,7 +169,14 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
         hero = _rebuild_hero(title, damage_type, p)
         behavior = rs.HeroBehavior(**p["behavior"])
 
-        syn_lines = _format_synergies(short, p, max_syn, max_ben)
+        syn_lines = _format_synergies(
+            short,
+            p,
+            max_syn,
+            max_ben,
+            provider_beneficiary_count,
+            obvious_threshold,
+        )
         summary = rs.format_summary(hero, short).rstrip()
 
         parts.append(f"## {short}")
