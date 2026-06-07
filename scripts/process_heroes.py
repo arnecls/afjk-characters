@@ -86,6 +86,8 @@ def apply_config(config: dict) -> None:
         ("damage_weight", "REPLACEMENT_DAMAGE_W"),
         ("true_damage_blend", "REPLACEMENT_TRUE_DAMAGE_BLEND"),
         ("true_damage_profile_boost", "REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST"),
+        ("signature_cc_boost", "REPLACEMENT_SIGNATURE_CC_BOOST"),
+        ("signature_cc_weight", "REPLACEMENT_SIGNATURE_CC_WEIGHT"),
     ]:
         if key in rs_cfg:
             setattr(gen, attr, rs_cfg[key])
@@ -102,6 +104,7 @@ def apply_config(config: dict) -> None:
             "provides": profile.get("provides_weight", 0.0),
             "signature": profile.get("signature_weight", 0.0),
             "damage": profile.get("damage_weight", 0.0),
+            "cc": profile.get("cc_weight", 0.0),
         }
         setattr(gen, attr, weights)
 

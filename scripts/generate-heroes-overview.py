@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import re
 import sys
 from collections import defaultdict
@@ -114,20 +115,26 @@ REPLACEMENT_SIG_W = 0.15
 REPLACEMENT_DAMAGE_W = 0.30
 REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
 REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST = 1.5
+REPLACEMENT_SIGNATURE_CC_BOOST = 1.5
+REPLACEMENT_SIGNATURE_CC_WEIGHT = 0.25
 MIN_SUPPORT_SCORE = 11.0
 
 SUPPORT_REPLACEMENT_WEIGHTS = {
-    "buff": 0.50,
-    "provides": 0.20,
-    "signature": 0.10,
-    "damage": 0.20,
+    "buff": 0.40,
+    "provides": 0.15,
+    "signature": 0.15,
+    "damage": 0.10,
+    "cc": 0.20,
 }
 DAMAGE_REPLACEMENT_WEIGHTS = {
-    "buff": 0.25,
+    "buff": 0.20,
     "provides": 0.10,
     "signature": 0.10,
-    "damage": 0.55,
+    "damage": 0.45,
+    "cc": 0.15,
 }
+
+_SIGNATURE_SECTIONS: dict[str, str] | None = None
 
 _SIG_STOPWORDS = frozenset(
     {
@@ -1248,6 +1255,81 @@ def _hero_damage_profile(hero: _rs.Hero) -> dict[str, float]:
     return profile
 
 
+def _signature_sections() -> dict[str, str]:
+    global _SIGNATURE_SECTIONS
+    if _SIGNATURE_SECTIONS is None:
+        path = ROOT / "data" / "signature_skills.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        _SIGNATURE_SECTIONS = {
+            display: entry.get("section", "")
+            for display, entry in data.items()
+        }
+    return _SIGNATURE_SECTIONS
+
+
+def _cc_effect_in_signature(
+    effect: _rs.Effect,
+    hero: _rs.Hero,
+    sig_section: str,
+    sig_name: str,
+) -> bool:
+    if not sig_section and not sig_name:
+        return False
+    snippet = effect.qualitative.lower()[:80]
+    label = effect.label.lower()
+    for _tier, text, section in hero.skill_chunks:
+        if sig_section and section != sig_section:
+            continue
+        tl = text.lower()
+        if sig_name and sig_name.lower() not in tl:
+            if snippet not in tl and label not in tl:
+                continue
+        elif snippet not in tl and label not in tl:
+            continue
+        return True
+    return False
+
+
+def _hero_cc_profile(
+    hero: _rs.Hero,
+    sig_section: str = "",
+    sig_name: str = "",
+) -> tuple[dict[str, float], bool]:
+    """Weighted enemy CC profile; signature-skill CC is boosted."""
+    profile: dict[str, float] = {}
+    has_signature_cc = False
+    for effect in hero.effects:
+        if effect.category != "cc":
+            continue
+        if effect.targeting == "Self":
+            continue
+        weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
+            effect.magnitude, 1.0
+        )
+        if _cc_effect_in_signature(effect, hero, sig_section, sig_name):
+            weight *= REPLACEMENT_SIGNATURE_CC_BOOST
+            has_signature_cc = True
+        profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
+    return profile, has_signature_cc
+
+
+def _replacement_weights_for_hero(
+    hero: _rs.Hero,
+    hero_class: str,
+    has_signature_cc: bool,
+) -> dict[str, float]:
+    if is_supporting_unit(hero, hero_class):
+        weights = dict(SUPPORT_REPLACEMENT_WEIGHTS)
+    else:
+        weights = dict(DAMAGE_REPLACEMENT_WEIGHTS)
+    if has_signature_cc:
+        weights["cc"] = max(weights.get("cc", 0.0), REPLACEMENT_SIGNATURE_CC_WEIGHT)
+    total = sum(weights.values())
+    if total > 0:
+        weights = {key: value / total for key, value in weights.items()}
+    return weights
+
+
 def _damage_similarity(
     types_a: set[str],
     types_b: set[str],
@@ -1269,9 +1351,11 @@ def _top_replacement_matches(
     buff_b: dict[str, float],
     damage_a: dict[str, float],
     damage_b: dict[str, float],
+    cc_a: dict[str, float],
+    cc_b: dict[str, float],
     limit: int = 5,
 ) -> list[str]:
-    """Strongest overlapping benefit stats and damage types (up to limit)."""
+    """Strongest overlapping stats, damage types, and CC (up to limit)."""
     ranked: list[tuple[float, str]] = []
     for label in set(buff_a) & set(buff_b):
         weight = min(buff_a[label], buff_b[label])
@@ -1279,6 +1363,8 @@ def _top_replacement_matches(
             ranked.append((weight, stat))
     for dt in set(damage_a) & set(damage_b):
         ranked.append((min(damage_a[dt], damage_b[dt]), dt))
+    for label in set(cc_a) & set(cc_b):
+        ranked.append((min(cc_a[label], cc_b[label]), label))
     ranked.sort(key=lambda x: (-x[0], x[1]))
     seen: set[str] = set()
     matches: list[str] = []
@@ -1303,15 +1389,24 @@ def compute_replacement_scores(
     sig_words: dict[str, frozenset[str]] = {}
     damage_profiles: dict[str, dict[str, float]] = {}
     damage_types: dict[str, set[str]] = {}
+    cc_profiles: dict[str, dict[str, float]] = {}
+    signature_cc: dict[str, bool] = {}
+    sig_sections = _signature_sections()
 
     for hero in heroes:
         profiles[hero.title] = _hero_provider_profile(hero)
         provides[hero.title] = _hero_provides_labels(hero)
         behavior = behavior_by_title.get(hero.title)
         desc = behavior.signature_skill_description if behavior else ""
+        sig_name = behavior.signature_skill_name if behavior else ""
+        display = short_name(hero.title)
+        sig_section = sig_sections.get(display, "")
         sig_words[hero.title] = _sig_words(desc)
         damage_profiles[hero.title] = _hero_damage_profile(hero)
         damage_types[hero.title] = provider_damage_types(hero)
+        cc_profile, has_sig_cc = _hero_cc_profile(hero, sig_section, sig_name)
+        cc_profiles[hero.title] = cc_profile
+        signature_cc[hero.title] = has_sig_cc
 
     classes = hero_class_by_title or {}
     result: dict[str, list[dict]] = {}
@@ -1321,16 +1416,19 @@ def compute_replacement_scores(
         sx = sig_words[hero_x.title]
         dpx = damage_profiles[hero_x.title]
         dtx = damage_types[hero_x.title]
-        if is_supporting_unit(hero_x, classes.get(hero_x.title, "")):
-            w = SUPPORT_REPLACEMENT_WEIGHTS
-        else:
-            w = DAMAGE_REPLACEMENT_WEIGHTS
+        cpx = cc_profiles[hero_x.title]
+        w = _replacement_weights_for_hero(
+            hero_x,
+            classes.get(hero_x.title, ""),
+            signature_cc.get(hero_x.title, False),
+        )
         scores: list[tuple[float, list[str], str]] = []
         for hero_y in heroes:
             if hero_y.title == hero_x.title:
                 continue
             py = profiles[hero_y.title]
             dpy = damage_profiles[hero_y.title]
+            cpy = cc_profiles[hero_y.title]
             buff_sim = _weighted_jaccard(px, py)
             provides_sim = _set_jaccard(prx, provides[hero_y.title])
             sig_sim = _set_jaccard(sx, sig_words[hero_y.title])
@@ -1340,6 +1438,7 @@ def compute_replacement_scores(
                 dpx,
                 dpy,
             )
+            cc_sim = _weighted_jaccard(cpx, cpy)
             score = min(
                 1.0,
                 max(
@@ -1347,11 +1446,12 @@ def compute_replacement_scores(
                     w["buff"] * buff_sim
                     + w["provides"] * provides_sim
                     + w["signature"] * sig_sim
-                    + w["damage"] * damage_sim,
+                    + w["damage"] * damage_sim
+                    + w["cc"] * cc_sim,
                 ),
             )
             if score >= REPLACEMENT_MIN_SCORE:
-                matches = _top_replacement_matches(px, py, dpx, dpy)
+                matches = _top_replacement_matches(px, py, dpx, dpy, cpx, cpy)
                 scores.append((score, matches, hero_y.title))
         scores.sort(key=lambda x: (-x[0], short_name(x[2])))
         result[hero_x.title] = [

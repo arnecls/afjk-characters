@@ -63,17 +63,21 @@
     "damage_weight": 0.30,
     "true_damage_blend": 0.65,
     "true_damage_profile_boost": 1.5,
+    "signature_cc_boost": 1.5,
+    "signature_cc_weight": 0.25,
     "support_weights": {
-      "buff_weight": 0.50,
-      "provides_weight": 0.20,
-      "signature_weight": 0.20,
-      "damage_weight": 0.10
+      "buff_weight": 0.40,
+      "provides_weight": 0.15,
+      "signature_weight": 0.15,
+      "damage_weight": 0.10,
+      "cc_weight": 0.20
     },
     "damage_weights": {
-      "buff_weight": 0.25,
+      "buff_weight": 0.20,
       "provides_weight": 0.10,
       "signature_weight": 0.10,
-      "damage_weight": 0.55
+      "damage_weight": 0.40,
+      "cc_weight": 0.20
     }
   }
 }
