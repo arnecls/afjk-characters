@@ -68,12 +68,17 @@ BUFF_TYPES: list[str] = [
     "Ally empower buff",
     "Attack range buff",
     "Healing stat buff",
+    "Ranged DEF buff",
+    "Crit DMG boost",
+    "Vitality buff",
+    "Dodge chance buff",
+    "Movement speed buff",
 ]
 
 DEBUFF_TYPES: list[str] = [
     "ATK debuff",
     "Blind HP loss debuff",
-    "Burn debuff",
+    "DoT debuff",
     "Damage taken debuff",
     "Energy drain",
     "Execution debuff",
@@ -83,6 +88,8 @@ DEBUFF_TYPES: list[str] = [
     "Movement speed debuff",
     "Phys DEF debuff",
     "Vitality debuff",
+    "Crit Resist debuff",
+    "Vulnerable debuff",
 ]
 
 DAMAGE_LABEL_TO_COLUMN = {label: col for label, col in DAMAGE_TYPES}
@@ -298,8 +305,11 @@ def parse_hero_block(
                     add_cell(row, buff_label, value)
             elif kind == "debuffs":
                 debuff_label = base_label(label)
-                if debuff_label in DEBUFF_COLUMN_SET:
-                    add_cell(row, debuff_label, value)
+                column = (
+                    "DoT debuff" if debuff_label == "DoT" else debuff_label
+                )
+                if column in DEBUFF_COLUMN_SET:
+                    add_cell(row, column, value)
             elif kind == "cc":
                 column = cc_column_name(label)
                 if column:

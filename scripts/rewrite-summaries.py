@@ -85,8 +85,9 @@ _SELF_STAT_VERB = (
     r"\b(?:increas\w+|gain\w+|reduc\w+|recover\w+|restor\w+)"
 )
 _SELF_STAT_NOUN = (
-    r"(?:atk(?: spd)?|haste|crit|max hp|damage taken|energy|shield|"
-    r"life drain|vitality|execution|resilience|healing)"
+    r"(?:atk(?: spd)?|haste|crit(?:\s+dmg\s+boost)?|max hp|damage taken|"
+    r"energy|shield|life drain|vitality|execution|resilience|healing|"
+    r"ranged def|dodge chance|movement speed)"
 )
 
 
@@ -202,6 +203,14 @@ def _text_has_dot_damage(text: str) -> bool:
             continue
         return True
     for m in re.finditer(r"damage.{0,120}?every \d+\.?\d* s", t, re.I):
+        span = t[m.start() : m.end()]
+        if _DOT_EXCLUDE_MIDDLE.search(span):
+            continue
+        before = t[max(0, m.start() - 20) : m.start()]
+        if re.search(r"once every|trigger", before):
+            continue
+        return True
+    for m in re.finditer(r"(?:lose|loses).{0,30}hp.{0,30}every \d+\.?\d* s", t, re.I):
         span = t[m.start() : m.end()]
         if _DOT_EXCLUDE_MIDDLE.search(span):
             continue
@@ -555,6 +564,7 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         "ATK SPD buff",
         "Haste buff",
         "Crit buff",
+        "Crit DMG boost",
         "Max HP buff",
         "Damage taken reduction",
         "Energy recovery",
@@ -564,6 +574,10 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         "DEF Penetration buff",
         "Lifedrain buff",
         "Attack range buff",
+        "Ranged DEF buff",
+        "Vitality buff",
+        "Dodge chance buff",
+        "Movement speed buff",
     )
     if label in buff_labels:
         if _has_explicit_ally_buff(t, label):
@@ -1269,7 +1283,12 @@ BUFF_RULES = [
     (r"life drain", "Lifedrain buff"),
     (r"reduc(?:e|es|ing) (?:her |his |their |the .{0,20})?damage taken", "Damage taken reduction"),
     (r"invincible", "Invincible"),
-    (r"extra \d+ \+ \d+ penetration|penetration applied to", "DEF Penetration buff"),
+    (
+        r"extra \d+ \+ \d+ penetration|penetration applied to|"
+        r"gain(?:s|ing)? \d+(?:\s*\+\s*\d+)? (?:def )?penetration\b|"
+        r"increas(?:e|es|ing) .{0,25}penetration\b",
+        "DEF Penetration buff",
+    ),
     (r"(?:the )?ally gains? \d+ energy", "Energy recovery"),
     (r"grants? all allies \d+ energy", "Energy recovery"),
     (
@@ -1286,6 +1305,25 @@ BUFF_RULES = [
     (r"increas(?:e|es|ing) (?:her |his |their )?execution\b", "Execution buff"),
     # Resilience buff
     (r"increas(?:e|es|ing) (?:her |his |their )?resilience\b", "Resilience buff"),
+    # Ranged DEF buff
+    (
+        r"increas(?:e|es|ing) (?:her |his |their |allies'? )?ranged def",
+        "Ranged DEF buff",
+    ),
+    # Crit DMG boost
+    (r"increas(?:e|es|ing) .{0,30}crit dmg boost", "Crit DMG boost"),
+    # Vitality buff
+    (r"increas(?:e|es|ing) .{0,30}vitality\b", "Vitality buff"),
+    # Dodge chance buff
+    (
+        r"gains? \d+%? dodge chance|dodge chance .{0,20}\d+",
+        "Dodge chance buff",
+    ),
+    # Movement speed buff
+    (
+        r"(?:gain\w*|increas\w+) .{0,30}movement speed",
+        "Movement speed buff",
+    ),
 ]
 
 
@@ -1328,15 +1366,34 @@ DEBUFF_RULES = [
     # Vitality debuff
     (r"reduc(?:e|es|ing) .{0,20}vitality", "Vitality debuff"),
     # Damage taken debuff (enemies take more damage)
-    (r"increas(?:e|es|ing) .{0,30}damage taken", "Damage taken debuff"),
+    (
+        r"increas(?:e|es|ing|ed) .{0,30}damage taken|"
+        r"damage taken.{0,20}(?:is |are )?increas\w+",
+        "Damage taken debuff",
+    ),
     # Movement / Haste debuff
     (r"reduc(?:e|es|ing) .{0,20}movement speed", "Movement speed debuff"),
     (r"reduc(?:e|es|ing) .{0,30}haste\b", "Haste debuff"),
     # Misc
     (r"instantly defeat", "Execution debuff"),
     (r"blinded enemies lose", "Blind HP loss debuff"),
-    (r"burns? the target", "Burn debuff"),
+    (
+        r"burn(?:s|ing|ed)?.{0,80}(?:damage|hp).{0,60}(?:every|per second)|"
+        r"burning.{0,50}(?:for \d|area)|burns? the (?:target|enemy|area)|"
+        r"dart poison|poison\w*(?:ed)? .{0,50}(?:damage|every|per second)|"
+        r"deals? .{0,30}(?:atk-based\)|atk\b).{0,30}(?:damage|hp).{0,30}every second",
+        "DoT",
+    ),
     (r"reduc(?:e|es|ing) .{0,20}max hp\b", "Max HP debuff"),
+    # Crit Resist debuff
+    (r"reduc(?:e|es|ing) .{0,20}crit resist", "Crit Resist debuff"),
+    # Vulnerable debuff – only the application, not "not affected by Vulnerable"
+    (r"inflict(?:s|ing)? (?:a )?vulnerable\b", "Vulnerable debuff"),
+    # Exposed Weakness: enemies with weakness exposed take extra damage
+    (
+        r"weakness is exposed|enemies? with exposed weakness",
+        "Damage taken debuff",
+    ),
     # Marked target: mark placed on an enemy is a debuff from the
     # enemy's perspective (focus fire, reduced effective defence, etc.)
     (
@@ -1484,6 +1541,16 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
         r"present on the enemy side.{0,80}silenced.{0,60}when a battle starts",
         "Enemy artifact block",
     ),
+    # Enhanced / empowered combat form (Baelran, Nerion, …)
+    (
+        r"enters? (?:an )?enhanced .{0,20}(?:form|celestial)|"
+        r"permanently empowered|enters? (?:blast mania|combat stance)\b",
+        "Enhanced form",
+    ),
+    # Counterattack (Elona, Lorsan, …)
+    (r"counterattack", "Counterattack"),
+    # Stacking buff – note that this hero has a mechanic that stacks up to N
+    (r"up to \d+ stacks?", "Stacking buff"),
 )
 
 SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
@@ -1576,6 +1643,7 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
     # Gala Supreme+: Energy recovery and Steadfast only trigger while under
     # artifact buffs
     (r"affected by merlin'?s? buffs", "Artifact buffs active"),
+    (r"(?:on |target\w* )?vulnerable enemies|rush to vulnerable", "Vulnerable enemy"),
 )
 
 _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
@@ -2245,6 +2313,9 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     "DEF buff": ("Physical DEF", "Magic DEF"),
     # Tanks that self-stack damage reduction want sustain (Max HP / shields).
     "Damage taken reduction": ("Max HP",),
+    "Ranged DEF buff": ("Physical DEF",),
+    "Crit DMG boost": ("Crit",),
+    "Vitality buff": ("Healing",),
 }
 
 

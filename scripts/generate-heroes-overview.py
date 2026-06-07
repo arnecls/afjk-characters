@@ -496,7 +496,9 @@ def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
     ally_dot = match_ally_dot_on_enemies(provider)
     text = provider_skill_text(provider)
     has_dot = "DoT" in provider_damage_types(provider)
-    has_burn = any(e.label == "Burn debuff" for e in provider_enemy_debuffs(provider))
+    has_burn = any(
+        e.label in ("Burn debuff", "DoT") for e in provider_enemy_debuffs(provider)
+    )
     has_tick = bool(
         _rs._text_has_dot_damage(text)
         or re.search(

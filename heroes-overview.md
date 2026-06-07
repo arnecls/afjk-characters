@@ -34,11 +34,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - Energy recovery (multiple targets, medium) [signature fuel]
   - Energy recovery (150 early objective, multiple targets) [signature fuel]
   - Enables Debuff on target via ATK debuff (single target)
+- **Frieren**
+  - Enables Debuff on target via DoT (area)
 - **Lucius**
   - Enables Debuff on target via ATK debuff (area)
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
 ### Summary for Aliceth
 
@@ -220,6 +219,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Alsa's Special Effects
 
+#### Alsa Provides
+
+- Enhanced form — Area
+
 #### Alsa Requires
 
 - Form or stance active — Enemies
@@ -255,6 +258,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units benefitting from Antandra
 
+- Callan
 - Contess
 - Evie
 
@@ -282,6 +286,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - Taunt — Area — `high`
 
 #### Antandra's Special Effects
+
+#### Antandra Provides
+
+- Stacking buff (Supreme+) — Single target
 
 #### Antandra Requires
 
@@ -585,6 +593,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Baelran Provides
 
 - Start-of-battle cast — Arc
+- Enhanced form (Mythic+) — Area
 - Dispel debuffs (EX+15) — Area
 
 #### Baelran Requires
@@ -659,20 +668,21 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Bonnie benefits from
 
+- **Frieren**
+  - Enables Debuff on target via DoT (area)
+  - Enables Magic damage from allies via Magic damage + all enemies (all units)
 - **Lyca**
   - Enables Debuff on target via ATK debuff (all units)
+- **Evie**
+  - ATK buff (multiple targets, high)
+  - Enables Debuff on target via DoT (single target)
+  - Enables Magic damage from allies via Magic damage + early battle + all enemies (all units)
 - **Alna**
   - ATK buff (single target, medium)
   - Enables Debuff on target via Haste debuff (area)
 - **Alsa**
   - Enables Debuff on target via Movement speed debuff (area)
   - Enables Magic damage from allies via Magic damage + all enemies (all units)
-- **Lucius**
-  - Enables Debuff on target via ATK debuff (area)
-- **Contess**
-  - ATK buff (single target, high)
-  - Enables Debuff on target via Energy drain (multiple targets)
-  - Enables Magic damage from allies via Magic damage + early battle + all enemies (all units)
 
 ### Summary for Bonnie
 
@@ -737,6 +747,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
   - Energy recovery (multiple targets, medium) [signature fuel]
   - Energy recovery (150 early objective, multiple targets) [signature fuel]
 
+### Units benefitting from Brutus
+
+- Shadewing
+
 ### Summary for Brutus
 
 #### Stats Brutus benefits from
@@ -753,6 +767,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Buffs provided by Brutus
 
 - Lifedrain buff — Single target — `medium`
+
+#### Debuffs provided by Brutus
+
+- DoT — Area — `medium`
 
 #### Crowd Control provided by Brutus
 
@@ -815,9 +833,11 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 #### Bryon Provides
 
 - Energy steal — Single target
+- Stacking buff — Single target
 - Start-of-battle cast — Single target
 - Summoning — Self
 - Untargetable (EX+5) — Single target
+- Counterattack (EX+10) — Single target
 
 ## Callan
 
@@ -831,7 +851,16 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Callan benefits from
 
-_No synergy partners matched stat buffs or enablers._
+- **Hewynn**
+  - Healing (all units, high)
+- **Isabella**
+  - Healing (area, high)
+- **Kafra**
+  - Healing over time (area, high)
+- **Mikola**
+  - Healing over time (all units, medium)
+- **Antandra**
+  - Healing (multiple targets, high)
 
 ### Units benefitting from Callan
 
@@ -841,10 +870,13 @@ _No synergy partners matched stat buffs or enablers._
 - Gerda
 - Saida
 - Thoran
-- Tilaya
 - Ulmus
 
 ### Summary for Callan
+
+#### Stats Callan benefits from
+
+- Healing
 
 #### Damage types dealt by Callan
 
@@ -922,6 +954,10 @@ _No synergy partners matched stat buffs or enablers._
 - Freeze — Single target — `high`
 
 #### Carolina's Special Effects
+
+#### Carolina Provides
+
+- Stacking buff — Area
 
 #### Carolina Requires
 
@@ -1011,10 +1047,6 @@ _No synergy partners matched stat buffs or enablers._
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 
-### Units benefitting from Cecia
-
-- Shadewing
-
 ### Summary for Cecia
 
 #### Stats Cecia benefits from
@@ -1034,6 +1066,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Buffs provided by Cecia
 
 - ATK SPD buff — Single target — `low`
+- DEF Penetration buff — Single target — `medium`
 - Lifedrain buff — Area — `low`
 - Max HP buff — Single target — `high`
 
@@ -1115,9 +1148,9 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Contess
 
-- Bonnie
 - Talene
 - Smokey & Meerky
+- Tilaya
 
 ### Summary for Contess
 
@@ -1199,7 +1232,7 @@ _No synergy partners matched stat buffs or enablers._
 
 #### Debuffs provided by Cryonaia
 
-- Damage taken debuff (EX+5) — Single target — `medium`
+- Damage taken debuff (EX+5) — Single target — `high`
 
 #### Crowd Control provided by Cryonaia
 
@@ -1432,6 +1465,10 @@ _**39** units include this provider among their top 5 synergy partners. Only the
 - Physical — All units, Area, Self, Single target
 - True damage — All units, Single target — `high`
 
+#### Buffs provided by Dionel
+
+- DEF Penetration buff — Single target — `high`
+
 #### Debuffs provided by Dionel
 
 - Vitality debuff (EX+10) — Single target — `low`
@@ -1440,6 +1477,7 @@ _**39** units include this provider among their top 5 synergy partners. Only the
 
 #### Dionel Provides
 
+- Stacking buff — Single target
 - Untargetable — Area
 - Execution scaling (Supreme+) — Self
 
@@ -1536,11 +1574,12 @@ _**39** units include this provider among their top 5 synergy partners. Only the
   - Max HP via Shield (area, high)
 - **Hugin**
   - Max HP via Shield (multiple targets, high)
+- **Rowan**
+  - Max HP buff (single target, high)
+  - DEF buff (single target, high)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
 - **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
   - Max HP via Shield (multiple targets, medium)
 
 ### Summary for Eironn
@@ -1548,11 +1587,16 @@ _**39** units include this provider among their top 5 synergy partners. Only the
 #### Stats Eironn benefits from
 
 - Max HP
+- Physical DEF
 
 #### Damage types dealt by Eironn
 
 - Primary damage type (unit): **Magic**
 - Magic — Arc, Area, Single target
+
+#### Buffs provided by Eironn
+
+- Dodge chance buff — Single target — `high`
 
 #### Debuffs provided by Eironn
 
@@ -1626,6 +1670,7 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 - Healing — Single target — `medium`
 - Max HP buff — Multiple targets — `high`
 - Shield — Single target — `medium`
+- Vitality buff (Mythic+) — Multiple targets — `low`
 
 #### Debuffs provided by Twins
 
@@ -1674,6 +1719,8 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 
 - Perseus
 - Silven
+- Bonnie
+- Isabella
 - Kordan
 - Smokey & Meerky
 - Talene
@@ -1696,6 +1743,10 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 - ATK buff — Multiple targets — `high`
 - Healing — Multiple targets — `high`
 - Invincible — Area — `high`
+
+#### Debuffs provided by Evie
+
+- DoT — Single target — `medium`
 
 #### Crowd Control provided by Evie
 
@@ -1803,6 +1854,10 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]
 
+### Units benefitting from Fay
+
+- Granny Dahnie
+
 ### Summary for Fay
 
 #### Stats Fay benefits from
@@ -1820,6 +1875,7 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 - ATK buff — Multiple targets — `low`
 - DEF buff — Multiple targets — `low`
 - Healing — Arc — `high` — conditional (frequent)
+- Vitality buff (EX+5) — Single target — `low`
 
 #### Debuffs provided by Fay
 
@@ -1924,6 +1980,12 @@ _**91** units include this provider among their top 5 synergy partners. Only the
   - ATK SPD buff (all units, medium) [signature fuel]
   - Energy recovery (120 at battle start, all units) [signature fuel]
 
+### Units benefitting from Frieren
+
+- Shadewing
+- Bonnie
+- Aliceth
+
 ### Summary for Frieren
 
 #### Stats Frieren benefits from
@@ -1940,6 +2002,7 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 
 #### Debuffs provided by Frieren
 
+- DoT — Area — `high`
 - Vitality debuff — Single target — `low`
 
 #### Crowd Control provided by Frieren
@@ -1983,7 +2046,6 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 - Velara
 - Zandrok
 - Athalia
-- Kruger
 - Silvina
 
 ### Summary for Gala
@@ -2081,25 +2143,30 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 ### Units Granny Dahnie benefits from
 
 - **Rowan**
+  - Healing (area, medium)
   - DEF buff (single target, high)
   - DEF buff (single target, high)
   - Energy recovery (energy potion, start of battle) [signature fuel]
+- **Mikola**
+  - Healing over time (all units, medium)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lyca**
   - ATK SPD buff (all units, medium) [signature fuel]
   - Energy recovery (120 at battle start, all units) [signature fuel]
 - **Twins**
+  - Healing (single target, medium)
   - ATK SPD via Haste buff (all units, high) [signature fuel]
-- **Ravion**
-  - Energy recovery (multiple targets, medium) [signature fuel]
-  - Energy recovery (150 early objective, multiple targets) [signature fuel]
-- **Lumont**
-  - DEF buff (multiple targets, medium)
-  - DEF buff (multiple targets, medium)
+- **Fay**
+  - Healing (arc, high, conditional (frequent))
+  - DEF buff (multiple targets, low)
+  - DEF buff (multiple targets, low)
+  - ATK SPD buff (multiple targets, low) [signature fuel]
 
 ### Summary for Granny Dahnie
 
 #### Stats Granny Dahnie benefits from
 
+- Healing
 - Energy
 - Physical DEF
 - Magic DEF
@@ -2169,6 +2236,8 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 #### Buffs provided by Gunnar
 
 - ATK SPD buff — Single target — `low`
+- Ranged DEF buff (Legendary+) — Single target — `low`
+- Vitality buff (Legendary+) — Single target — `low`
 - Healing (Mythic+) — Single target — `high`
 - Invincible (EX+15) — Single target — `high`
 
@@ -2221,7 +2290,7 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 
 #### Debuffs provided by Gwyneth
 
-- Burn debuff — Single target — `medium`
+- DoT — Single target — `high`
 
 #### Crowd Control provided by Gwyneth
 
@@ -2373,14 +2442,11 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 
 ### Units benefitting from Hepler
 
-- Shadewing
 - Alna
 - Daimon
-- Eironn
 - Gerda
 - Saida
 - Thoran
-- Tilaya
 - Ulmus
 
 ### Summary for Hepler
@@ -2451,15 +2517,19 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 
 ### Units benefitting from Hewynn
 
+_**12** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+- ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+- Callan
 - Contess
 - Evie
 - Igor
+- Isabella
 - Lucius
 - Ludovic
 - Phraesto
 - Smokey & Meerky
 - Talene
-- Thador
 
 ### Summary for Hewynn
 
@@ -2607,6 +2677,7 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 #### Hodgkin Provides
 
 - Summoning (Mythic+) — Area
+- Stacking buff (Supreme+) — Single target
 
 ## Hugin
 
@@ -2638,7 +2709,7 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 
 ### Units benefitting from Hugin
 
-_**88** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+_**86** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 - Perseus
@@ -2766,6 +2837,7 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 
 #### Debuffs provided by Indris
 
+- Damage taken debuff — Single target — `medium`
 - Magic DEF debuff — Single target — `low`
 - Phys DEF debuff (EX+10) — Single target — `low`
 
@@ -2795,24 +2867,26 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Isabella benefits from
 
-- **Hugin**
-  - ATK buff (multiple targets, high)
-  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Twins**
-  - ATK SPD via Haste buff (all units, high) [signature fuel]
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-- **Lyca**
-  - ATK SPD buff (all units, medium) [signature fuel]
-  - Energy recovery (all units, low) [signature fuel]
-- **Ravion**
-  - ATK buff (multiple targets, medium)
-  - Energy recovery (multiple targets, medium) [signature fuel]
+  - Healing over time (all units, medium)
+- **Twins**
+  - ATK SPD via Haste buff (all units, high) [signature fuel]
+  - Healing (single target, medium)
+- **Hugin**
+  - ATK buff (multiple targets, high)
+  - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
+- **Evie**
+  - ATK buff (multiple targets, high)
+  - Healing (multiple targets, high)
+- **Hewynn**
+  - Healing (all units, high)
 
 ### Units benefitting from Isabella
 
 - Dunlingr
+- Callan
 - Contess
 - Evie
 - Igor
@@ -2826,6 +2900,7 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 - ATK
 - ATK SPD
 - Haste
+- Healing
 - Energy
 
 #### Damage types dealt by Isabella
@@ -2884,6 +2959,7 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 
 ### Units benefitting from Kafra
 
+- Callan
 - Contess
 - Evie
 - Igor
@@ -2955,6 +3031,7 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 ### Units benefitting from Koko
 
 - Talene
+- Tilaya
 - Igor
 - Saida
 
@@ -2977,6 +3054,7 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 - Healing over time — Single target — `high`
 - Lifedrain buff — Multiple targets — `low`
 - Shield (Mythic+) — All units — `low`
+- Vitality buff (Supreme+) — Single target — `low`
 
 #### Debuffs provided by Koko
 
@@ -3042,6 +3120,7 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 #### Buffs provided by Kordan
 
 - Lifedrain buff — Multiple targets — `high`
+- DEF Penetration buff (Supreme+) — Multiple targets — `low`
 
 #### Crowd Control provided by Kordan
 
@@ -3118,17 +3197,18 @@ _**88** units include this provider among their top 5 synergy partners. Only the
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
 - **Lucius**
   - Max HP via Shield (area, high)
+- **Rowan**
+  - Max HP buff (single target, high)
+  - DEF buff (single target, high)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
-- **Gala**
-  - Max HP via Shield (single target, high)
-  - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Summary for Kruger
 
 #### Stats Kruger benefits from
 
 - Max HP
+- Physical DEF
 
 #### Damage types dealt by Kruger
 
@@ -3141,7 +3221,19 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 
 #### Debuffs provided by Kruger
 
+- Damage taken debuff — Single target — `medium`
 - Phys DEF debuff — Single target — `low`
+- Vulnerable debuff — Area — `medium`
+
+#### Kruger's Special Effects
+
+#### Kruger Provides
+
+- Stacking buff — Single target
+
+#### Kruger Requires
+
+- Vulnerable enemy (EX+10) — Enemies
 
 ## Kulu
 
@@ -3180,6 +3272,10 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 
+#### Buffs provided by Kulu
+
+- DEF Penetration buff (EX+15) — Single target — `low`
+
 #### Debuffs provided by Kulu
 
 - Movement speed debuff — Area — `medium`
@@ -3195,6 +3291,7 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 #### Kulu Provides
 
 - Invincibility — Single target
+- Enhanced form (EX+15) — Single target
 
 ## Laios
 
@@ -3355,6 +3452,10 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 - Magic — All units, Single target
 - Max HP-based damage — Self, Single target — `low`
 
+#### Buffs provided by Lily May
+
+- DEF Penetration buff (Legendary+) — Single target — `low`
+
 #### Debuffs provided by Lily May
 
 - Energy drain — Single target — `high`
@@ -3412,6 +3513,7 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 
 #### Buffs provided by Lorsan
 
+- Dodge chance buff — Single target — `medium`
 - Healing over time — Single target — `medium`
 - Healing (Mythic+) — Multiple targets — `high`
 
@@ -3500,15 +3602,15 @@ _**88** units include this provider among their top 5 synergy partners. Only the
 
 ### Units benefitting from Lucius
 
-_**26** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+_**25** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 - Shadewing
 - Valka
 - Aliceth
-- Bonnie
 - Himmel
 - Thador
+- Tilaya
 - Alna
 - Athalia
 - Baelran
@@ -3685,7 +3787,6 @@ _**26** units include this provider among their top 5 synergy partners. Only the
 
 - Nerion
 - Carolina
-- Granny Dahnie
 - Lucca
 - Niru
 
@@ -3742,7 +3843,7 @@ _**26** units include this provider among their top 5 synergy partners. Only the
 
 ### Units benefitting from Lyca
 
-_**66** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+_**65** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -3834,6 +3935,7 @@ _**66** units include this provider among their top 5 synergy partners. Only the
 #### Marcille Provides
 
 - Revive ally (Mythic+) — Single target
+- Stacking buff (Supreme+) — Single target
 
 #### Marcille Requires
 
@@ -3880,13 +3982,15 @@ _**66** units include this provider among their top 5 synergy partners. Only the
 - Physical — Multiple targets, Single target
 - True damage — Multiple targets — `low`
 
-#### Buffs provided by Marilee
-
-- Crit buff (Legendary+) — Single target — `low`
-
 #### Crowd Control provided by Marilee
 
 - Stun — Single target — `low`
+
+#### Marilee's Special Effects
+
+#### Marilee Provides
+
+- Stacking buff (Mythic+) — Multiple targets
 
 ## Mehira
 
@@ -3987,7 +4091,7 @@ _**66** units include this provider among their top 5 synergy partners. Only the
 
 ### Units benefitting from Mikola
 
-_**79** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+_**81** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
 - Perseus
@@ -4019,6 +4123,7 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 - Haste buff — Multiple targets — `high`
 - Healing — Multiple targets — `high`
 - Healing over time — All units — `medium`
+- Vitality buff (EX+10) — Multiple targets — `low`
 
 #### Crowd Control provided by Mikola
 
@@ -4059,6 +4164,10 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 - Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 - DoT — Single target
+
+#### Debuffs provided by Mirael
+
+- DoT — Single target — `low`
 
 ## Nara
 
@@ -4160,6 +4269,7 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 
 - Haste debuff — Single target — `high`
 - Max HP debuff (Mythic+) — Single target — `medium`
+- DoT (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Natsu
 
@@ -4206,10 +4316,17 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 #### Debuffs provided by Nazrik
 
 - Max HP debuff — Single target — `medium`
+- Crit Resist debuff (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Nazrik
 
 - Stun — Single target — `medium`
+
+#### Nazrik's Special Effects
+
+#### Nazrik Provides
+
+- Stacking buff — Single target
 
 ## Nerion
 
@@ -4232,6 +4349,7 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 - **Tasi**
   - Enables CC on enemies via Sleep (all units, high)
 - **Kordan**
+  - DEF Penetration buff (multiple targets, low)
   - Enables CC on enemies via Pin (area, high)
 - **Lumont**
   - Enables CC on enemies via Stun (area, high)
@@ -4259,6 +4377,10 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 - Stun — Single target — `medium`
 
 #### Nerion's Special Effects
+
+#### Nerion Provides
+
+- Enhanced form (Supreme+) — Single target
 
 #### Nerion Requires
 
@@ -4356,6 +4478,10 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 - Primary damage type (unit): **Magic**
 - Magic — Single target
 - DoT — Single target
+
+#### Debuffs provided by Odie
+
+- DoT — Single target — `medium`
 
 ## Pandora
 
@@ -4468,6 +4594,7 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 #### Buffs provided by Pang
 
 - Shield (EX+10) — Single target — `low`
+- DEF Penetration buff (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Pang
 
@@ -4542,11 +4669,11 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
   - Max HP buff (multiple targets, high)
-  - Enables Ally stat buffs via 4 ally stat buffs
+  - Enables Ally stat buffs via 5 ally stat buffs
 - **Mikola**
   - ATK buff (multiple targets, medium)
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-  - Enables Ally stat buffs via 4 ally stat buffs
+  - Enables Ally stat buffs via 5 ally stat buffs
 - **Evie**
   - ATK buff (multiple targets, high)
   - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
@@ -4724,7 +4851,7 @@ _**79** units include this provider among their top 5 synergy partners. Only the
 
 ### Units benefitting from Ravion
 
-_**24** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+_**22** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
 
@@ -4859,6 +4986,7 @@ _No synergy partners matched stat buffs or enablers._
 #### Buffs provided by Rhys
 
 - Healing — Single target — `medium`
+- Movement speed buff (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Rhys
 
@@ -4894,9 +5022,10 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting from Rowan
 
-_**23** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+_**26** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
 
+- Granny Dahnie
 - Kordan
 - Temesia
 - Lumont
@@ -4904,7 +5033,6 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 - Sylphira
 - Vala
 - Cecia
-- Granny Dahnie
 - Niru
 - Lucius
 
@@ -4974,7 +5102,6 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 - Kruger
 - Silvina
 - Thoran
-- Tilaya
 - Ulmus
 
 ### Summary for Saida
@@ -5235,6 +5362,7 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 #### Seth Provides
 
 - Invincibility — Single target
+- Stacking buff — Self
 
 ## Shadewing
 
@@ -5259,15 +5387,13 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 - **Lyca**
   - Energy recovery (all units, low) [signature fuel]
   - Enables Debuff on target via ATK debuff (all units)
-- **Cecia**
-  - Max HP buff (single target, high)
-  - Lifedrain buff (area, low)
-  - Enables Debuff on target via Damage taken debuff (single target)
-  - Enables Continuous damage on enemies via DoT
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-  - Enables Debuff on target via Haste debuff (single target)
-  - Enables Continuous damage on enemies via tick damage
+- **Frieren**
+  - Enables Debuff on target via DoT (area)
+  - Enables Continuous damage on enemies via DoT + Burn
+- **Brutus**
+  - Lifedrain buff (single target, medium)
+  - Enables Debuff on target via DoT (area)
+  - Enables Continuous damage on enemies via DoT + Burn
 
 ### Summary for Shadewing
 
@@ -5426,12 +5552,12 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 
 - **Twins**
   - ATK SPD via Haste buff (all units, high) [signature fuel]
-  - Enables Ally stat buffs via 4 ally stat buffs
-- **Evie**
-  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
+  - Enables Ally stat buffs via 5 ally stat buffs
 - **Mikola**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
-  - Enables Ally stat buffs via 4 ally stat buffs
+  - Enables Ally stat buffs via 5 ally stat buffs
+- **Evie**
+  - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
 - **Hugin**
   - ATK SPD via Haste buff (multiple targets, high) [signature fuel]
   - Enables Ally stat buffs via 3 ally stat buffs
@@ -5453,6 +5579,7 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 - ATK SPD
 - Energy
 - DEF Penetration
+- Physical DEF
 
 #### Damage types dealt by Silven
 
@@ -5462,6 +5589,7 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 
 #### Buffs provided by Silven
 
+- DEF Penetration buff (Mythic+) — Single target — `low`
 - Energy recovery (Mythic+) — Single target — `high`
 
 #### Silven's Special Effects
@@ -5860,6 +5988,7 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 #### Sylphira Provides
 
 - Dispel debuffs (Mythic+) — Self
+- Stacking buff (Mythic+) — Self
 
 ## Talene
 
@@ -5914,6 +6043,7 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 #### Talene Provides
 
 - Transformation — Self
+- Stacking buff (Mythic+) — Area
 
 ## Tasi
 
@@ -6047,6 +6177,12 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 - Interrupt — Single target — `high`
 - Knock down — Area — `low`
 
+#### Temesia's Special Effects
+
+#### Temesia Provides
+
+- Stacking buff — Single target
+
 ## Thador
 
 ### Thador's behavior
@@ -6162,22 +6298,27 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Tilaya benefits from
 
+- **Hewynn**
+  - Healing (all units, high)
 - **Lucius**
   - Max HP via Shield (area, high)
-- **Hugin**
-  - Max HP via Shield (multiple targets, high)
-- **Saida**
-  - Max HP via Shield (multiple targets, high)
-- **Callan**
-  - Max HP via Shield (multiple targets, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
+  - Healing (single target, medium)
+- **Koko**
+  - Max HP via Shield (all units, low)
+  - Healing (multiple targets, high)
+- **Rowan**
+  - Max HP buff (single target, high)
+  - Healing (area, medium)
+- **Contess**
+  - Max HP via Shield (single target, medium)
+  - Healing (multiple targets, high)
 
 ### Summary for Tilaya
 
 #### Stats Tilaya benefits from
 
 - Max HP
+- Healing
 
 #### Damage types dealt by Tilaya
 
@@ -6247,6 +6388,12 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 - Unaffected — Self — On skill
 - Knock down (Mythic+) — Single target — `medium`
 - Move (Supreme+) — Area — `low`
+
+#### Ulmus's Special Effects
+
+#### Ulmus Requires
+
+- Vulnerable enemy (Mythic+) — Enemies
 
 ## Vala
 
@@ -6373,6 +6520,7 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 #### Valen Provides
 
 - Invincibility — Area
+- Stacking buff (Mythic+) — Single target
 
 ## Valka
 
@@ -6601,8 +6749,11 @@ _**23** units include this provider among their top 5 synergy partners. Only the
 
 #### Buffs provided by Walker
 
-- Crit buff (Legendary+) — Single target — `low`
 - Lifedrain buff (Supreme+) — Single target — `high`
+
+#### Debuffs provided by Walker
+
+- Crit Resist debuff (EX+5) — Single target — `low`
 
 #### Crowd Control provided by Walker
 
@@ -6713,11 +6864,13 @@ _**17** units include this provider among their top 5 synergy partners. Only the
 
 - Healing — Single target — `high`
 - Shield — Single target — `high`
+- DEF Penetration buff (Legendary+) — Single target — `medium`
 - Max HP buff (Mythic+) — Single target — `medium`
 
 #### Debuffs provided by Zanie
 
 - ATK debuff (Supreme+) — Single target — `low`
+- DoT (Supreme+) — Single target — `low`
 - Phys DEF debuff (Supreme+) — Single target — `medium`
 
 #### Crowd Control provided by Zanie

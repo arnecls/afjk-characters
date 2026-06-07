@@ -322,32 +322,78 @@ restores a summon, and one-off **Initial Energy** lines.
 
 ## Stats
 
-Stats can be buffed (increased) or debuffed (decreased).
+Hero stats can be buffed (increased) or debuffed (decreased). Grouping follows
+[Hero Stats](https://afk-journey.fandom.com/wiki/Hero_Stats) on the Fandom wiki.
 
-- Attack (ATK)
-- Attack Speed (ATK Spd)
-- Haste
-- Critical damage (Crit)
-- Defense Penetration (DEF Penetration)
-- Resilience (Res)
-- Vitality (Vit)
-- Max HP
-- HP
-- Lifedrain
-- Ranged Defense (Ranged DEF)
-- Magic Defense (Magic DEF)
-- Physical Defense (Phys DEF)
-- Critical Damage Defense (Crit DEF)
-- Critical Resistance (Crit Resist)
-- Assistance
-- Damage taken
-- Execution
-- Energy on hit
-- Healing
+### Basic
 
-When looking for stat effects on skills, the text has to be analyzed as they
-are somtimes not easy to spot. For example "reducing their Magic DEF" inidicates
-a Magic Defense debuff.
+- **HP** — health pool; a unit is defeated at zero.
+- **ATK** — increases damage dealt.
+- **Phys DEF** — reduces physical damage received.
+- **Magic DEF** — reduces magic damage received.
+
+### Offensive
+
+- **ATK SPD** — +1% normal attack frequency and attack animation speed per point.
+- **Crit** — crit *rate* when dealing damage; each point above the target's
+  Crit Resist adds 1% crit rate (not crit damage — see Crit DMG Boost).
+- **Haste** — +1% normal attack and skill frequency, and attack animation
+  speed, per point. Also affects ATK SPD
+- **DEF Penetration** — ignores 1% of the target's Phys DEF and Magic DEF per
+  point when dealing damage.
+- **Execution** — +1% damage vs targets below 50% HP per point.
+- **Crit DMG Boost** — crit damage multiplier when dealing crits; default 150%,
+  adjusted ±1% per point vs target Crit DMG DEF (range 120%–300%).
+
+### Defensive
+
+- **Vitality** — +1% effectiveness of received shields and healing (including
+  self-heals) per point.
+- **Life Drain** — restores HP equal to 1% of actual damage dealt per point.
+- **Crit Resist** — reduces incoming crit rate; each point above the attacker's
+  Crit subtracts 1% from their crit rate.
+- **Ranged DEF** — reduces damage from non-adjacent enemies by 1% per point.
+- **Crit DMG DEF** — reduces incoming crit damage multiplier; each point above
+  the attacker's Crit DMG Boost lowers the multiplier by 1%.
+
+### Other
+
+- **Healing** — +1% effectiveness of shields and healing *provided by* the unit
+  per point (distinct from heal/shield skill effects; see **Healing** above).
+- **Assistance** — +1% duration of most buffs the unit provides per point.
+- **Energy Regen on Hit** — +1% Energy recovered when the unit takes damage per
+  point.
+- **Debuff Focus** — +1% duration of most debuffs the unit inflicts per point.
+- **Resilience** — −1% duration of most debuffs inflicted on the unit per point.
+- **Proficiency** — when lower than enemy level, some skill effects are weakened.
+
+### Rivalry-only stats
+
+These appear on rivalry builds and in rivalry-mode tooltips; omit from normal
+hero summaries unless skill text names them explicitly.
+
+- **DMG Boost** / **DMG Reduction** — damage dealt/taken multiplier (100%
+  base; ±1% per point of difference).
+- **Energy Regen Reduction** — reduces Energy recovered by targets when they
+  take damage from the unit.
+
+### Not roster stats (skill effects)
+
+Do not list these as hero stat types; detect them as buffs, debuffs, or special
+effects instead.
+
+- **Damage taken** — combat modifier (e.g. damage taken reduction, damage taken
+  debuff), not a character-sheet stat.
+- **Max HP** — scaling phrase in skills (`max HP`, `% of max HP`); not a
+  separate wiki stat column (use **HP** for the health pool).
+- **Dodge chance** — skill-granted avoidance (e.g. Eironn's shield), not a base
+  stat.
+- **Movement speed** — repositioning / slow effects in skill text, not a base
+  stat.
+
+When looking for stat effects in skill text, wording is often indirect. For
+example, "reducing their Magic DEF" is a **Magic DEF** debuff; "increasing her
+Crit DMG Boost" is an offensive buff; "Crit" alone refers to crit rate.
 
 ## Anti Crowd-control
 
