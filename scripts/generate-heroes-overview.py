@@ -1117,13 +1117,17 @@ def format_synergies(
         total = len(benefited)
         if total > MAX_BENEFICIARIES_DISPLAY:
             lines.append(
-                f"_**{total}** units include this provider among their "
-                f"top {MAX_SYNERGIES} synergy partners. Only the "
-                f"**{MAX_BENEFICIARIES_DISPLAY}** strongest pairings "
-                f"are listed below. Why the match is common:_"
+                f"**{total}** units include this provider among their "
+                f"top {MAX_SYNERGIES} synergy partners. Why the match is common:"
             )
+            lines.append("")
             for reason in _beneficiary_overflow_reasons(receiver):
                 lines.append(f"- {reason}")
+            lines.append("")
+            lines.append(
+                f"These are the **{MAX_BENEFICIARIES_DISPLAY}** strongest "
+                f"pairings: "
+            )
             lines.append("")
             display = benefited[:MAX_BENEFICIARIES_DISPLAY]
         else:

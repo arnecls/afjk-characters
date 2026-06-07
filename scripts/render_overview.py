@@ -99,14 +99,16 @@ def _format_synergies(
         stat_tags = " ".join(
             f"`{tag}`" for tag in _format_benefit_stat_tags(benefit_stats)
         )
-        lines.append(f"Look for units providing: {stat_tags}")
-
         excluded = [
             gen.short_name(pick["provider"])
             for pick in p["synergies"]
             if provider_beneficiary_count.get(pick["provider"], 0)
             > obvious_threshold
         ][:3]
+        look_line = f"Look for units providing: {stat_tags}"
+        if excluded:
+            look_line += "  "
+        lines.append(look_line)
         if excluded:
             lines.append(f"Common buffers are {_join_names(excluded)}.")
         lines.append("")
@@ -133,13 +135,14 @@ def _format_synergies(
         total = len(benefited)
         if total > max_ben:
             lines.append(
-                f"_**{total}** units include this provider among their "
-                f"top {max_syn} synergy partners. Only the "
-                f"**{max_ben}** strongest pairings "
-                f"are listed below. Why the match is common:_"
+                f"**{total}** units include this provider among their "
+                f"top {max_syn} synergy partners. Why the match is common:"
             )
+            lines.append("")
             for reason in p["beneficiary_overflow_reasons"]:
                 lines.append(f"- {reason}")
+            lines.append("")
+            lines.append(f"These are the **{max_ben}** strongest pairings: ")
             lines.append("")
             display = benefited[:max_ben]
         else:

@@ -21,7 +21,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Units Aliceth benefits from
 
-Look for units providing: `ATK` `DEF Penetration`
+Look for units providing: `ATK` `DEF Penetration`  
 Common buffers are Lyca, Ravion, or Lucius.
 
 - **Alna**
@@ -103,7 +103,7 @@ Common buffers are Lyca, Ravion, or Lucius.
 
 ### Units Alna benefits from
 
-Look for units providing: `Max HP`
+Look for units providing: `Max HP`  
 Common buffers are Lucius or Hugin.
 
 - **Saida**
@@ -175,7 +175,7 @@ Common buffers are Lucius or Hugin.
 
 ### Units Alsa benefits from
 
-Look for units providing: `Haste` `Max HP`
+Look for units providing: `Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -248,7 +248,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Antandra benefits from
 
-Look for units providing: `Max HP` `Energy`
+Look for units providing: `Max HP` `Energy`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Pandora**
@@ -317,7 +317,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Arden benefits from
 
-Look for units providing: `ATK` `Energy`
+Look for units providing: `ATK` `Energy`  
 Common buffers are Ravion, Lyca, or Hugin.
 
 - **Pandora**
@@ -363,7 +363,7 @@ Common buffers are Ravion, Lyca, or Hugin.
 
 ### Units Atalanta benefits from
 
-Look for units providing: `Haste` `Physical DEF`
+Look for units providing: `Haste` `Physical DEF`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -427,7 +427,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Athalia benefits from
 
-Look for units providing: `Max HP` `Crit` `Execution`
+Look for units providing: `Max HP` `Crit` `Execution`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Saida**
@@ -490,7 +490,7 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units Aurora benefits from
 
-Look for units providing: `ATK` `Haste`
+Look for units providing: `ATK` `Haste`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Zandrok**
@@ -563,7 +563,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Baelran benefits from
 
-Look for units providing: `ATK` `Haste` `Max HP`
+Look for units providing: `ATK` `Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Himmel**
@@ -690,7 +690,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Bonnie benefits from
 
-Look for units providing: `ATK`
+Look for units providing: `ATK`  
 Common buffers are Lyca, Lucius, or Rowan.
 
 - **Frieren**
@@ -760,7 +760,7 @@ Common buffers are Lyca, Lucius, or Rowan.
 
 ### Units Brutus benefits from
 
-Look for units providing: `Life Drain`
+Look for units providing: `Life Drain`  
 Common buffers are Lyca, Twins, or Rowan.
 
 - **Zandrok**
@@ -820,7 +820,7 @@ Common buffers are Lyca, Twins, or Rowan.
 
 ### Units Bryon benefits from
 
-Look for units providing: `Haste`
+Look for units providing: `Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Aurora**
@@ -885,7 +885,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Callan benefits from
 
-Look for units providing: `Healing`
+Look for units providing: `Healing`  
 Common buffers are Mikola, Rowan, or Damian.
 
 - **Hewynn**
@@ -956,7 +956,7 @@ Common buffers are Mikola, Rowan, or Damian.
 
 ### Units Carolina benefits from
 
-Look for units providing: `Crit`
+Look for units providing: `Crit`  
 Common buffers are Lyca, Twins, or Damian.
 
 - **Dunlingr**
@@ -1015,7 +1015,7 @@ Common buffers are Lyca, Twins, or Damian.
 
 ### Units Cassadee benefits from
 
-Look for units providing: `Haste`
+Look for units providing: `Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -1076,7 +1076,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Cecia benefits from
 
-Look for units providing: `ATK SPD / Haste` `DEF Penetration` `Physical DEF` `Magic DEF`
+Look for units providing: `ATK SPD / Haste` `DEF Penetration` `Physical DEF` `Magic DEF`  
 Common buffers are Twins, Lyca, or Rowan.
 
 - **Valka**
@@ -1179,7 +1179,7 @@ Common buffers are Twins, Lyca, or Rowan.
 
 ### Units Contess benefits from
 
-Look for units providing: `Healing` `Energy`
+Look for units providing: `Healing` `Energy`  
 Common buffers are Mikola, Rowan, or Ravion.
 
 - **Hewynn**
@@ -1245,7 +1245,7 @@ Common buffers are Mikola, Rowan, or Ravion.
 
 ### Units Cryonaia benefits from
 
-Look for units providing: `ATK` `Max HP`
+Look for units providing: `ATK` `Max HP`  
 Common buffers are Hugin, Twins, or Lyca.
 
 - **Himmel**
@@ -1308,7 +1308,7 @@ Common buffers are Hugin, Twins, or Lyca.
 
 ### Units Cyran benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Crit`
+Look for units providing: `ATK` `ATK SPD / Haste` `Crit`  
 Common buffers are Twins, Hugin, or Lyca.
 
 - **Valka**
@@ -1367,7 +1367,7 @@ Common buffers are Twins, Hugin, or Lyca.
 
 ### Units Daimon benefits from
 
-Look for units providing: `Max HP`
+Look for units providing: `Max HP`  
 Common buffers are Lucius or Hugin.
 
 - **Saida**
@@ -1415,7 +1415,7 @@ Common buffers are Lucius or Hugin.
 
 ### Units Damian benefits from
 
-Look for units providing: `ATK` `Haste` `Energy`
+Look for units providing: `ATK` `Haste` `Energy`  
 Common buffers are Hugin, Twins, or Mikola.
 
 - **Aurora**
@@ -1434,8 +1434,11 @@ Common buffers are Hugin, Twins, or Mikola.
 
 ### Units benefitting from Damian
 
-_**39** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**39** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
+
+These are the **10** strongest pairings: 
 
 - Lumont
 - Sylphira
@@ -1488,7 +1491,7 @@ _**39** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Dionel benefits from
 
-Look for units providing: `ATK SPD / Haste` `Max HP` `Execution`
+Look for units providing: `ATK SPD / Haste` `Max HP` `Execution`  
 Common buffers are Twins, Hugin, or Lyca.
 
 - **Valka**
@@ -1548,7 +1551,7 @@ Common buffers are Twins, Hugin, or Lyca.
 
 ### Units Dunlingr benefits from
 
-Look for units providing: `ATK SPD / Haste` `Max HP` `Healing`
+Look for units providing: `ATK SPD / Haste` `Max HP` `Healing`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Florabelle**
@@ -1626,7 +1629,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Eironn benefits from
 
-Look for units providing: `Max HP` `Physical DEF`
+Look for units providing: `Max HP` `Physical DEF`  
 Common buffers are Lucius, Hugin, or Rowan.
 
 - **Saida**
@@ -1678,7 +1681,7 @@ Common buffers are Lucius, Hugin, or Rowan.
 
 ### Units Twins benefits from
 
-Look for units providing: `Haste` `Energy`
+Look for units providing: `Haste` `Energy`  
 Common buffers are Hugin, Mikola, or Damian.
 
 - **Zandrok**
@@ -1699,8 +1702,11 @@ Common buffers are Hugin, Mikola, or Damian.
 
 ### Units benefitting from Twins
 
-_**91** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**91** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
+
+These are the **10** strongest pairings: 
 
 - Perseus
 - Silven
@@ -1765,7 +1771,7 @@ _**91** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Evie benefits from
 
-Look for units providing: `Healing` `Energy`
+Look for units providing: `Healing` `Energy`  
 Common buffers are Mikola, Rowan, or Ravion.
 
 - **Hewynn**
@@ -1841,7 +1847,7 @@ Common buffers are Mikola, Rowan, or Ravion.
 
 ### Units Faramor benefits from
 
-Look for units providing: `ATK` `Haste` `Max HP`
+Look for units providing: `ATK` `Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Gala**
@@ -1906,7 +1912,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Fay benefits from
 
-Look for units providing: `ATK SPD / Haste`
+Look for units providing: `ATK SPD / Haste`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Valka**
@@ -1960,7 +1966,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Florabelle benefits from
 
-Look for units providing: `ATK` `Haste`
+Look for units providing: `ATK` `Haste`  
 Common buffers are Hugin, Twins, or Mikola.
 
 - **Aurora**
@@ -2029,7 +2035,7 @@ Common buffers are Hugin, Twins, or Mikola.
 
 ### Units Frieren benefits from
 
-Look for units providing: `ATK` `Haste`
+Look for units providing: `ATK` `Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -2090,7 +2096,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Gala benefits from
 
-Look for units providing: `ATK` `Haste` `Energy`
+Look for units providing: `ATK` `Haste` `Energy`  
 Common buffers are Hugin, Twins, or Mikola.
 
 - **Aurora**
@@ -2166,7 +2172,7 @@ Common buffers are Hugin, Twins, or Mikola.
 
 ### Units Gerda benefits from
 
-Look for units providing: `Max HP`
+Look for units providing: `Max HP`  
 Common buffers are Lucius or Hugin.
 
 - **Saida**
@@ -2215,7 +2221,7 @@ Common buffers are Lucius or Hugin.
 
 ### Units Granny Dahnie benefits from
 
-Look for units providing: `Healing` `Energy` `Physical DEF` `Magic DEF`
+Look for units providing: `Healing` `Energy` `Physical DEF` `Magic DEF`  
 Common buffers are Rowan, Mikola, or Lyca.
 
 - **Fay**
@@ -2278,7 +2284,7 @@ Common buffers are Rowan, Mikola, or Lyca.
 
 ### Units Gunnar benefits from
 
-Look for units providing: `ATK SPD / Haste` `Max HP`
+Look for units providing: `ATK SPD / Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Gala**
@@ -2338,7 +2344,7 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units Gwyneth benefits from
 
-Look for units providing: `ATK SPD / Haste`
+Look for units providing: `ATK SPD / Haste`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Valka**
@@ -2387,7 +2393,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Hammie benefits from
 
-Look for units providing: `ATK`
+Look for units providing: `ATK`  
 Common buffers are Lyca, Hugin, or Ravion.
 
 - **Pandora**
@@ -2432,7 +2438,7 @@ Common buffers are Lyca, Hugin, or Ravion.
 
 ### Units Harak benefits from
 
-Look for units providing: `Haste` `Max HP` `Crit` `Energy` `Life Drain`
+Look for units providing: `Haste` `Max HP` `Crit` `Energy` `Life Drain`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Zandrok**
@@ -2501,7 +2507,7 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units Hepler benefits from
 
-Look for units providing: `ATK` `Haste` `Max HP`
+Look for units providing: `ATK` `Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -2580,7 +2586,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Hewynn benefits from
 
-Look for units providing: `ATK`
+Look for units providing: `ATK`  
 Common buffers are Lyca, Hugin, or Ravion.
 
 - **Pandora**
@@ -2599,8 +2605,11 @@ Common buffers are Lyca, Hugin, or Ravion.
 
 ### Units benefitting from Hewynn
 
-_**12** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**12** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+These are the **10** strongest pairings: 
 
 - Callan
 - Contess
@@ -2650,7 +2659,7 @@ _**12** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Himmel benefits from
 
-Look for units providing: `ATK` `Haste` `Max HP`
+Look for units providing: `ATK` `Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Evie**
@@ -2719,7 +2728,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Hodgkin benefits from
 
-Look for units providing: `ATK`
+Look for units providing: `ATK`  
 Common buffers are Lyca, Ravion, or Mikola.
 
 - **Aurora**
@@ -2777,7 +2786,7 @@ Common buffers are Lyca, Ravion, or Mikola.
 
 ### Units Hugin benefits from
 
-Look for units providing: `Haste` `Energy`
+Look for units providing: `Haste` `Energy`  
 Common buffers are Twins, Mikola, or Damian.
 
 - **Zandrok**
@@ -2798,8 +2807,11 @@ Common buffers are Twins, Mikola, or Damian.
 
 ### Units benefitting from Hugin
 
-_**86** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**86** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
+
+These are the **10** strongest pairings: 
 
 - Perseus
 - Silven
@@ -2842,7 +2854,7 @@ _**86** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Igor benefits from
 
-Look for units providing: `Healing` `Life Drain`
+Look for units providing: `Healing` `Life Drain`  
 Common buffers are Mikola, Rowan, or Damian.
 
 - **Hewynn**
@@ -2891,7 +2903,7 @@ Common buffers are Mikola, Rowan, or Damian.
 
 ### Units Indris benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste`
+Look for units providing: `ATK` `ATK SPD / Haste`  
 Common buffers are Lyca, Twins, or Hugin.
 
 - **Alna**
@@ -2959,7 +2971,7 @@ Common buffers are Lyca, Twins, or Hugin.
 
 ### Units Isabella benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Healing` `Energy`
+Look for units providing: `ATK` `ATK SPD / Haste` `Healing` `Energy`  
 Common buffers are Mikola, Twins, or Hugin.
 
 - **Evie**
@@ -3033,7 +3045,7 @@ Common buffers are Mikola, Twins, or Hugin.
 
 ### Units Kafra benefits from
 
-Look for units providing: `ATK` `Max HP`
+Look for units providing: `ATK` `Max HP`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Himmel**
@@ -3107,7 +3119,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Koko benefits from
 
-Look for units providing: `Haste` `Energy`
+Look for units providing: `Haste` `Energy`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -3174,7 +3186,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Kordan benefits from
 
-Look for units providing: `ATK` `Max HP` `Healing` `DEF Penetration` `Life Drain`
+Look for units providing: `ATK` `Max HP` `Healing` `DEF Penetration` `Life Drain`  
 Common buffers are Twins, Rowan, or Mikola.
 
 - **Evie**
@@ -3238,7 +3250,7 @@ Common buffers are Twins, Rowan, or Mikola.
 
 ### Units Korin benefits from
 
-Look for units providing: `ATK SPD / Haste` `Max HP`
+Look for units providing: `ATK SPD / Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Lyca.
 
 - **Valka**
@@ -3291,7 +3303,7 @@ Common buffers are Twins, Hugin, or Lyca.
 
 ### Units Kruger benefits from
 
-Look for units providing: `Max HP` `Physical DEF`
+Look for units providing: `Max HP` `Physical DEF`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Saida**
@@ -3351,7 +3363,7 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units Kulu benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `DEF Penetration`
+Look for units providing: `ATK` `ATK SPD / Haste` `DEF Penetration`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Aliceth**
@@ -3414,7 +3426,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Laios benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Healing`
+Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Healing`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Florabelle**
@@ -3485,7 +3497,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Lenya benefits from
 
-Look for units providing: `Haste` `Max HP` `Crit` `Energy`
+Look for units providing: `Haste` `Max HP` `Crit` `Energy`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -3537,7 +3549,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Lily May benefits from
 
-Look for units providing: `ATK` `DEF Penetration`
+Look for units providing: `ATK` `DEF Penetration`  
 Common buffers are Lyca, Ravion, or Mikola.
 
 - **Aliceth**
@@ -3598,7 +3610,7 @@ Common buffers are Lyca, Ravion, or Mikola.
 
 ### Units Lorsan benefits from
 
-Look for units providing: `ATK`
+Look for units providing: `ATK`  
 Common buffers are Lyca, Hugin, or Ravion.
 
 - **Pandora**
@@ -3650,7 +3662,7 @@ Common buffers are Lyca, Hugin, or Ravion.
 
 ### Units Lucca benefits from
 
-Look for units providing: `Max HP` `Physical DEF` `Magic DEF`
+Look for units providing: `Max HP` `Physical DEF` `Magic DEF`  
 Common buffers are Twins, Hugin, or Rowan.
 
 - **Lumont**
@@ -3704,7 +3716,7 @@ Common buffers are Twins, Hugin, or Rowan.
 
 ### Units Lucius benefits from
 
-Look for units providing: `Healing`
+Look for units providing: `Healing`  
 Common buffers are Rowan, Mikola, or Lyca.
 
 - **Hewynn**
@@ -3724,8 +3736,11 @@ Common buffers are Rowan, Mikola, or Lyca.
 
 ### Units benefitting from Lucius
 
-_**25** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**25** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
+
+These are the **10** strongest pairings: 
 
 - Shadewing
 - Valka
@@ -3781,7 +3796,7 @@ _**25** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Lucy benefits from
 
-Look for units providing: `ATK SPD / Haste`
+Look for units providing: `ATK SPD / Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Valka**
@@ -3833,7 +3848,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Ludovic benefits from
 
-Look for units providing: `Healing`
+Look for units providing: `Healing`  
 Common buffers are Rowan, Mikola, or Lyca.
 
 - **Hewynn**
@@ -3890,7 +3905,7 @@ Common buffers are Rowan, Mikola, or Lyca.
 
 ### Units Lumont benefits from
 
-Look for units providing: `Haste` `Max HP` `Healing`
+Look for units providing: `Haste` `Max HP` `Healing`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Isabella**
@@ -3959,7 +3974,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Lyca benefits from
 
-Look for units providing: `ATK SPD / Haste`
+Look for units providing: `ATK SPD / Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Valka**
@@ -3975,10 +3990,13 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units benefitting from Lyca
 
-_**65** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**65** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
+
+These are the **10** strongest pairings: 
 
 - Indris
 - Perseus
@@ -4028,7 +4046,7 @@ _**65** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Marcille benefits from
 
-Look for units providing: `ATK SPD / Haste` `Energy`
+Look for units providing: `ATK SPD / Haste` `Energy`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Valka**
@@ -4088,7 +4106,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Marilee benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Crit`
+Look for units providing: `ATK` `ATK SPD / Haste` `Crit`  
 Common buffers are Twins, Lyca, or Mikola.
 
 - **Valka**
@@ -4139,7 +4157,7 @@ Common buffers are Twins, Lyca, or Mikola.
 
 ### Units Mehira benefits from
 
-Look for units providing: `Haste` `Max HP` `Healing` `Life Drain`
+Look for units providing: `Haste` `Max HP` `Healing` `Life Drain`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Florabelle**
@@ -4210,7 +4228,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Mikola benefits from
 
-Look for units providing: `ATK` `Haste`
+Look for units providing: `ATK` `Haste`  
 Common buffers are Twins, Hugin, or Damian.
 
 - **Zandrok**
@@ -4231,8 +4249,11 @@ Common buffers are Twins, Hugin, or Damian.
 
 ### Units benefitting from Mikola
 
-_**81** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**81** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
+
+These are the **10** strongest pairings: 
 
 - Perseus
 - Silven
@@ -4281,7 +4302,7 @@ _**81** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Mirael benefits from
 
-Look for units providing: `ATK SPD / Haste`
+Look for units providing: `ATK SPD / Haste`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Valka**
@@ -4323,7 +4344,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Nara benefits from
 
-Look for units providing: `ATK` `Energy`
+Look for units providing: `ATK` `Energy`  
 Common buffers are Ravion or Lyca.
 
 - **Smokey & Meerky**
@@ -4374,7 +4395,7 @@ Common buffers are Ravion or Lyca.
 
 ### Units Natsu benefits from
 
-Look for units providing: `ATK` `Haste` `Crit`
+Look for units providing: `ATK` `Haste` `Crit`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -4431,7 +4452,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Nazrik benefits from
 
-Look for units providing: `Crit`
+Look for units providing: `Crit`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Valka**
@@ -4485,7 +4506,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Nerion benefits from
 
-Look for units providing: `ATK SPD / Haste` `Max HP` `Energy` `DEF Penetration`
+Look for units providing: `ATK SPD / Haste` `Max HP` `Energy` `DEF Penetration`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Dunlingr**
@@ -4546,7 +4567,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Niru benefits from
 
-Look for units providing: `Physical DEF` `Magic DEF`
+Look for units providing: `Physical DEF` `Magic DEF`  
 Common buffers are Rowan, Lyca, or Twins.
 
 - **Lumont**
@@ -4608,7 +4629,7 @@ Common buffers are Rowan, Lyca, or Twins.
 
 ### Units Odie benefits from
 
-Look for units providing: `ATK SPD / Haste`
+Look for units providing: `ATK SPD / Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Valka**
@@ -4650,7 +4671,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Pandora benefits from
 
-Look for units providing: `Energy`
+Look for units providing: `Energy`  
 Common buffers are Ravion or Lyca.
 
 - **Silven**
@@ -4713,7 +4734,7 @@ Common buffers are Ravion or Lyca.
 
 ### Units Pang benefits from
 
-Look for units providing: `ATK` `Haste` `Energy` `DEF Penetration`
+Look for units providing: `ATK` `Haste` `Energy` `DEF Penetration`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Zandrok**
@@ -4774,7 +4795,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Parisa benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Energy`
+Look for units providing: `ATK` `ATK SPD / Haste` `Energy`  
 Common buffers are Twins, Hugin, or Lyca.
 
 - **Valka**
@@ -4820,7 +4841,7 @@ Common buffers are Twins, Hugin, or Lyca.
 
 ### Units Perseus benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Max HP`
+Look for units providing: `ATK` `ATK SPD / Haste` `Max HP`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Evie**
@@ -4883,7 +4904,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Phraesto benefits from
 
-Look for units providing: `Healing` `Energy`
+Look for units providing: `Healing` `Energy`  
 Common buffers are Mikola, Rowan, or Ravion.
 
 - **Hewynn**
@@ -4939,7 +4960,7 @@ Common buffers are Mikola, Rowan, or Ravion.
 
 ### Units Pippa benefits from
 
-Look for units providing: `Haste`
+Look for units providing: `Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -4994,7 +5015,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Ravion benefits from
 
-Look for units providing: `ATK` `Haste` `Energy`
+Look for units providing: `ATK` `Haste` `Energy`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Zandrok**
@@ -5015,9 +5036,12 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units benefitting from Ravion
 
-_**22** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**22** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
+
+These are the **10** strongest pairings: 
 
 - Aliceth
 - Arden
@@ -5123,7 +5147,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units Rhys benefits from
 
-Look for units providing: `ATK SPD / Haste` `Crit`
+Look for units providing: `ATK SPD / Haste` `Crit`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Valka**
@@ -5170,7 +5194,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Rowan benefits from
 
-Look for units providing: `Haste` `Energy`
+Look for units providing: `Haste` `Energy`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -5191,8 +5215,11 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units benefitting from Rowan
 
-_**26** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**26** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
+
+These are the **10** strongest pairings: 
 
 - Granny Dahnie
 - Kordan
@@ -5250,7 +5277,7 @@ _**26** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Saida benefits from
 
-Look for units providing: `Max HP`
+Look for units providing: `Max HP`  
 Common buffers are Lucius or Hugin.
 
 - **Callan**
@@ -5320,7 +5347,7 @@ Common buffers are Lucius or Hugin.
 
 ### Units Salazer benefits from
 
-Look for units providing: `Max HP`
+Look for units providing: `Max HP`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Pandora**
@@ -5371,7 +5398,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Satrana benefits from
 
-Look for units providing: `Max HP`
+Look for units providing: `Max HP`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Pandora**
@@ -5435,7 +5462,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Scarlita benefits from
 
-Look for units providing: `Execution` `Energy`
+Look for units providing: `Execution` `Energy`  
 Common buffers are Ravion or Lyca.
 
 - **Silven**
@@ -5489,7 +5516,7 @@ Common buffers are Ravion or Lyca.
 
 ### Units Seth benefits from
 
-Look for units providing: `ATK` `Haste` `Crit` `Energy` `Life Drain`
+Look for units providing: `ATK` `Haste` `Crit` `Energy` `Life Drain`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Zandrok**
@@ -5560,7 +5587,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Shadewing benefits from
 
-Look for units providing: `ATK` `Max HP` `Energy` `Life Drain`
+Look for units providing: `ATK` `Max HP` `Energy` `Life Drain`  
 Common buffers are Lucius, Lyca, or Ravion.
 
 - **Alna**
@@ -5633,7 +5660,7 @@ Common buffers are Lucius, Lyca, or Ravion.
 
 ### Units Shakir benefits from
 
-Look for units providing: `Haste`
+Look for units providing: `Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -5698,7 +5725,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Shemira benefits from
 
-Look for units providing: `Max HP` `Healing` `Energy`
+Look for units providing: `Max HP` `Healing` `Energy`  
 Common buffers are Twins, Rowan, or Mikola.
 
 - **Hewynn**
@@ -5745,7 +5772,7 @@ Common buffers are Twins, Rowan, or Mikola.
 
 ### Units Silven benefits from
 
-Look for units providing: `ATK SPD / Haste` `Energy` `DEF Penetration` `Physical DEF`
+Look for units providing: `ATK SPD / Haste` `Energy` `DEF Penetration` `Physical DEF`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Evie**
@@ -5805,7 +5832,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Silvina benefits from
 
-Look for units providing: `Max HP` `Crit`
+Look for units providing: `Max HP` `Crit`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Saida**
@@ -5862,7 +5889,7 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units Sinbad benefits from
 
-Look for units providing: `ATK SPD / Haste` `Energy`
+Look for units providing: `ATK SPD / Haste` `Energy`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Valka**
@@ -5921,7 +5948,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Smokey & Meerky benefits from
 
-Look for units providing: `ATK` `Healing` `Energy`
+Look for units providing: `ATK` `Healing` `Energy`  
 Common buffers are Mikola, Ravion, or Rowan.
 
 - **Evie**
@@ -5980,7 +6007,7 @@ Common buffers are Mikola, Ravion, or Rowan.
 
 ### Units Solise benefits from
 
-Look for units providing: `ATK`
+Look for units providing: `ATK`  
 Common buffers are Hugin, Mikola, or Twins.
 
 - **Valka**
@@ -6035,7 +6062,7 @@ Common buffers are Hugin, Mikola, or Twins.
 
 ### Units Sonja benefits from
 
-Look for units providing: `Haste` `Max HP`
+Look for units providing: `Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Gala**
@@ -6083,7 +6110,7 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units Soren benefits from
 
-Look for units providing: `Haste` `Max HP` `Energy`
+Look for units providing: `Haste` `Max HP` `Energy`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -6140,7 +6167,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Sylphira benefits from
 
-Look for units providing: `ATK` `Haste` `Healing`
+Look for units providing: `ATK` `Haste` `Healing`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Isabella**
@@ -6209,7 +6236,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Talene benefits from
 
-Look for units providing: `ATK` `Max HP` `Healing` `Life Drain`
+Look for units providing: `ATK` `Max HP` `Healing` `Life Drain`  
 Common buffers are Mikola, Lucius, or Rowan.
 
 - **Evie**
@@ -6267,7 +6294,7 @@ Common buffers are Mikola, Lucius, or Rowan.
 
 ### Units Tasi benefits from
 
-Look for units providing: `ATK` `Haste` `Max HP`
+Look for units providing: `ATK` `Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -6336,7 +6363,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Temesia benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Healing` `Energy`
+Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Healing` `Energy`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Evie**
@@ -6406,7 +6433,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Thador benefits from
 
-Look for units providing: `Max HP` `Crit` `Healing`
+Look for units providing: `Max HP` `Crit` `Healing`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Hewynn**
@@ -6467,7 +6494,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Thoran benefits from
 
-Look for units providing: `Max HP` `Energy`
+Look for units providing: `Max HP` `Energy`  
 Common buffers are Lucius, Hugin, or Ravion.
 
 - **Saida**
@@ -6515,7 +6542,7 @@ Common buffers are Lucius, Hugin, or Ravion.
 
 ### Units Tilaya benefits from
 
-Look for units providing: `Max HP` `Healing`
+Look for units providing: `Max HP` `Healing`  
 Common buffers are Lucius, Rowan, or Twins.
 
 - **Hewynn**
@@ -6572,7 +6599,7 @@ Common buffers are Lucius, Rowan, or Twins.
 
 ### Units Ulmus benefits from
 
-Look for units providing: `Max HP` `Energy`
+Look for units providing: `Max HP` `Energy`  
 Common buffers are Lucius, Hugin, or Ravion.
 
 - **Saida**
@@ -6629,7 +6656,7 @@ Common buffers are Lucius, Hugin, or Ravion.
 
 ### Units Vala benefits from
 
-Look for units providing: `ATK` `Haste` `Healing` `Energy`
+Look for units providing: `ATK` `Haste` `Healing` `Energy`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Isabella**
@@ -6702,7 +6729,7 @@ Common buffers are Twins, Mikola, or Hugin.
 
 ### Units Valen benefits from
 
-Look for units providing: `ATK`
+Look for units providing: `ATK`  
 Common buffers are Lyca, Ravion, or Mikola.
 
 - **Pandora**
@@ -6757,7 +6784,7 @@ Common buffers are Lyca, Ravion, or Mikola.
 
 ### Units Valka benefits from
 
-Look for units providing: `ATK SPD / Haste` `Max HP` `Energy`
+Look for units providing: `ATK SPD / Haste` `Max HP` `Energy`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Himmel**
@@ -6825,7 +6852,7 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units Velara benefits from
 
-Look for units providing: `Haste` `Max HP` `Energy`
+Look for units providing: `Haste` `Max HP` `Energy`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Gala**
@@ -6889,7 +6916,7 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units Viperian benefits from
 
-Look for units providing: `Haste`
+Look for units providing: `Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Zandrok**
@@ -6944,7 +6971,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Walker benefits from
 
-Look for units providing: `Max HP` `Crit` `Life Drain`
+Look for units providing: `Max HP` `Crit` `Life Drain`  
 Common buffers are Twins, Lyca, or Hugin.
 
 - **Zandrok**
@@ -7002,7 +7029,7 @@ Common buffers are Twins, Lyca, or Hugin.
 
 ### Units Zandrok benefits from
 
-Look for units providing: `Haste` `Max HP`
+Look for units providing: `Haste` `Max HP`  
 Common buffers are Twins, Hugin, or Lucius.
 
 - **Gala**
@@ -7020,8 +7047,11 @@ Common buffers are Twins, Hugin, or Lucius.
 
 ### Units benefitting from Zandrok
 
-_**17** units include this provider among their top 5 synergy partners. Only the **10** strongest pairings are listed below. Why the match is common:_
+**17** units include this provider among their top 5 synergy partners. Why the match is common:
+
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
+
+These are the **10** strongest pairings: 
 
 - Nerion
 - Carolina
@@ -7068,7 +7098,7 @@ _**17** units include this provider among their top 5 synergy partners. Only the
 
 ### Units Zanie benefits from
 
-Look for units providing: `ATK SPD / Haste`
+Look for units providing: `ATK SPD / Haste`  
 Common buffers are Twins, Hugin, or Mikola.
 
 - **Aurora**
@@ -7131,7 +7161,7 @@ Common buffers are Twins, Hugin, or Mikola.
 
 ### Units Zorya benefits from
 
-Look for units providing: `Haste` `Max HP` `Healing` `Energy` `Life Drain`
+Look for units providing: `Haste` `Max HP` `Healing` `Energy` `Life Drain`  
 Common buffers are Twins, Mikola, or Hugin.
 
 - **Zandrok**
