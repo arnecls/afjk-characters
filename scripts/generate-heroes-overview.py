@@ -119,6 +119,7 @@ REPLACEMENT_CATEGORIES = (
     "energy",
     "similar_skills",
     "damage",
+    "debuff",
     "cc",
 )
 
@@ -1271,10 +1272,32 @@ def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
     return best
 
 
-def _energy_provided_similarity(amount_a: float, amount_b: float) -> float:
-    if amount_a <= 0 or amount_b <= 0:
+def _replacement_coverage(
+    source: dict[str, float],
+    candidate: dict[str, float],
+) -> float:
+    """How much of the source profile the candidate meets or exceeds.
+
+    Per label, meeting or beating the source scores 1.0; falling short
+    scores candidate/source. Source weights reflect effect magnitude.
+    """
+    if not source:
         return 0.0
-    return min(amount_a, amount_b) / max(amount_a, amount_b)
+    total = 0.0
+    covered = 0.0
+    for label, src in source.items():
+        if src <= 0:
+            continue
+        total += src
+        cand = candidate.get(label, 0.0)
+        covered += min(cand / src, 1.0) * src
+    return covered / total if total > 0 else 0.0
+
+
+def _energy_replacement_coverage(source: float, candidate: float) -> float:
+    if source <= 0 or candidate <= 0:
+        return 0.0
+    return min(candidate / source, 1.0)
 
 
 def _load_behavior_tags() -> dict[str, frozenset[str]]:
@@ -1289,15 +1312,6 @@ def _load_behavior_tags() -> dict[str, frozenset[str]]:
                 name: frozenset(tags) for name, tags in data.items()
             }
     return _BEHAVIOR_TAGS
-
-
-def _weighted_jaccard(a: dict[str, float], b: dict[str, float]) -> float:
-    if not a and not b:
-        return 0.0
-    labels = set(a) | set(b)
-    numer = sum(min(a.get(label, 0.0), b.get(label, 0.0)) for label in labels)
-    denom = sum(max(a.get(label, 0.0), b.get(label, 0.0)) for label in labels)
-    return numer / denom if denom > 0 else 0.0
 
 
 def _set_jaccard(a: frozenset[str], b: frozenset[str]) -> float:
@@ -1364,6 +1378,21 @@ def _cc_effect_in_signature(
     return False
 
 
+def _hero_debuff_profile(hero: _rs.Hero) -> dict[str, float]:
+    """Weighted enemy debuff profile."""
+    profile: dict[str, float] = {}
+    for effect in hero.effects:
+        if effect.category != "debuff":
+            continue
+        if effect.targeting == "Self":
+            continue
+        weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
+            effect.magnitude, 1.0
+        )
+        profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
+    return profile
+
+
 def _hero_cc_profile(
     hero: _rs.Hero,
     sig_section: str = "",
@@ -1387,20 +1416,19 @@ def _hero_cc_profile(
     return profile, has_signature_cc
 
 
-def _damage_similarity(
-    types_a: set[str],
-    types_b: set[str],
-    profile_a: dict[str, float],
-    profile_b: dict[str, float],
+def _damage_replacement_coverage(
+    types_source: set[str],
+    types_candidate: set[str],
+    profile_source: dict[str, float],
+    profile_candidate: dict[str, float],
 ) -> float:
-    general = _weighted_jaccard(profile_a, profile_b)
-    ta = types_a & _rs.TRUE_DAMAGE_TYPES
-    tb = types_b & _rs.TRUE_DAMAGE_TYPES
-    if ta or tb:
-        true_sim = _set_jaccard(frozenset(ta), frozenset(tb)) if ta and tb else 0.0
-        blend = REPLACEMENT_TRUE_DAMAGE_BLEND
-        return blend * true_sim + (1.0 - blend) * general
-    return general
+    general = _replacement_coverage(profile_source, profile_candidate)
+    true_source = types_source & _rs.TRUE_DAMAGE_TYPES
+    if not true_source:
+        return general
+    type_cov = len(true_source & types_candidate) / len(true_source)
+    blend = REPLACEMENT_TRUE_DAMAGE_BLEND
+    return blend * type_cov + (1.0 - blend) * general
 
 
 def _dedupe_ranked_tags(
@@ -1419,15 +1447,34 @@ def _dedupe_ranked_tags(
     return matches
 
 
+def _profile_overlap_tags(
+    source: dict[str, float],
+    candidate: dict[str, float],
+    limit: int = 5,
+    *,
+    expand_label=None,
+) -> list[str]:
+    ranked: list[tuple[float, str]] = []
+    for label in set(source) & set(candidate):
+        src = source[label]
+        if src <= 0:
+            continue
+        weight = min(candidate[label] / src, 1.0) * src
+        names = expand_label(label) if expand_label else [label]
+        for name in names:
+            ranked.append((weight, name))
+    return _dedupe_ranked_tags(ranked, limit)
+
+
 def _buff_overlap_tags(
     buff_a: dict[str, float], buff_b: dict[str, float], limit: int = 5
 ) -> list[str]:
-    ranked: list[tuple[float, str]] = []
-    for label in set(buff_a) & set(buff_b):
-        weight = min(buff_a[label], buff_b[label])
-        for stat in _BUFF_LABEL_TO_STATS.get(label, [label]):
-            ranked.append((weight, stat))
-    return _dedupe_ranked_tags(ranked, limit)
+    return _profile_overlap_tags(
+        buff_a,
+        buff_b,
+        limit,
+        expand_label=lambda label: _BUFF_LABEL_TO_STATS.get(label, [label]),
+    )
 
 
 def _similar_skills_overlap_tags(
@@ -1439,21 +1486,19 @@ def _similar_skills_overlap_tags(
 def _damage_overlap_tags(
     damage_a: dict[str, float], damage_b: dict[str, float], limit: int = 5
 ) -> list[str]:
-    ranked = [
-        (min(damage_a[key], damage_b[key]), key)
-        for key in set(damage_a) & set(damage_b)
-    ]
-    return _dedupe_ranked_tags(ranked, limit)
+    return _profile_overlap_tags(damage_a, damage_b, limit)
+
+
+def _debuff_overlap_tags(
+    debuff_a: dict[str, float], debuff_b: dict[str, float], limit: int = 5
+) -> list[str]:
+    return _profile_overlap_tags(debuff_a, debuff_b, limit)
 
 
 def _cc_overlap_tags(
     cc_a: dict[str, float], cc_b: dict[str, float], limit: int = 5
 ) -> list[str]:
-    ranked = [
-        (min(cc_a[label], cc_b[label]), label)
-        for label in set(cc_a) & set(cc_b)
-    ]
-    return _dedupe_ranked_tags(ranked, limit)
+    return _profile_overlap_tags(cc_a, cc_b, limit)
 
 
 def _rank_replacement_category(
@@ -1489,6 +1534,7 @@ def compute_replacement_scores(
     energy_provided: dict[str, float] = {}
     damage_profiles: dict[str, dict[str, float]] = {}
     damage_types: dict[str, set[str]] = {}
+    debuff_profiles: dict[str, dict[str, float]] = {}
     cc_profiles: dict[str, dict[str, float]] = {}
     behavior_tags_map = _load_behavior_tags()
     sig_sections = _signature_sections()
@@ -1502,6 +1548,7 @@ def compute_replacement_scores(
         sig_section = sig_sections.get(display, "")
         damage_profiles[hero.title] = _hero_damage_profile(hero)
         damage_types[hero.title] = provider_damage_types(hero)
+        debuff_profiles[hero.title] = _hero_debuff_profile(hero)
         cc_profiles[hero.title], _ = _hero_cc_profile(
             hero, sig_section, sig_name
         )
@@ -1512,6 +1559,7 @@ def compute_replacement_scores(
         ex = energy_provided[hero_x.title]
         dpx = damage_profiles[hero_x.title]
         dtx = damage_types[hero_x.title]
+        dbpx = debuff_profiles[hero_x.title]
         cpx = cc_profiles[hero_x.title]
         display_x = short_name(hero_x.title)
         tags_x = behavior_tags_map.get(display_x, frozenset())
@@ -1525,6 +1573,7 @@ def compute_replacement_scores(
                 continue
             py = profiles[hero_y.title]
             dpy = damage_profiles[hero_y.title]
+            dbpy = debuff_profiles[hero_y.title]
             cpy = cc_profiles[hero_y.title]
             display_y = short_name(hero_y.title)
             tags_y = behavior_tags_map.get(display_y, frozenset())
@@ -1532,14 +1581,14 @@ def compute_replacement_scores(
 
             category_scores["buff"].append(
                 (
-                    _weighted_jaccard(px, py),
+                    _replacement_coverage(px, py),
                     hero_y.title,
                     _buff_overlap_tags(px, py),
                 )
             )
             if energy_eligible and is_energy_provider(hero_y):
                 category_scores["energy"].append(
-                    (_energy_provided_similarity(ex, ey), hero_y.title, [])
+                    (_energy_replacement_coverage(ex, ey), hero_y.title, [])
                 )
             category_scores["similar_skills"].append(
                 (
@@ -1550,7 +1599,7 @@ def compute_replacement_scores(
             )
             category_scores["damage"].append(
                 (
-                    _damage_similarity(
+                    _damage_replacement_coverage(
                         dtx,
                         damage_types[hero_y.title],
                         dpx,
@@ -1560,9 +1609,16 @@ def compute_replacement_scores(
                     _damage_overlap_tags(dpx, dpy),
                 )
             )
+            category_scores["debuff"].append(
+                (
+                    _replacement_coverage(dbpx, dbpy),
+                    hero_y.title,
+                    _debuff_overlap_tags(dbpx, dbpy),
+                )
+            )
             category_scores["cc"].append(
                 (
-                    _weighted_jaccard(cpx, cpy),
+                    _replacement_coverage(cpx, cpy),
                     hero_y.title,
                     _cc_overlap_tags(cpx, cpy),
                 )

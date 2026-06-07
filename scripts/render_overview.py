@@ -27,6 +27,7 @@ REPLACEMENT_CATEGORY_LABELS = {
     "energy": "Energy provider",
     "similar_skills": "Similar Skills",
     "damage": "Damage",
+    "debuff": "Debuffs on enemies",
     "cc": "Crowd Control",
 }
 
