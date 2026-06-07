@@ -18,10 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HEROES_MD = ROOT / "Heroes.md"
 HEROES2_MD = ROOT / "heroes2.md"
-DEFINING_SKILLS_FILE = Path(__file__).resolve().parent / "signature_skills.json"
-DEFINING_SKILLS_ALTERNATIVE_FILE = (
-    Path(__file__).resolve().parent / "defining_skills_alternative.json"
-)
+DEFINING_SKILLS_FILE = ROOT / "data" / "signature_skills.json"
+DEFINING_SKILLS_ALTERNATIVE_FILE = ROOT / "data" / "defining_skills_alternative.json"
 
 SECTION_TIERS = {
     "Ultimate": "base",
