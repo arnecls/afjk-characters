@@ -2768,13 +2768,6 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
     name = display_name or hero.title.split(" - ", 1)[0].strip()
     out = [f"### Summary for {name}", ""]
 
-    if hero.benefit_stats:
-        out.append(f"#### Stats {name} benefits from")
-        out.append("")
-        for b in hero.benefit_stats:
-            out.append(f"- {b}")
-        out.append("")
-
     if hero.damage_entries or hero.damage_type:
         out.append(f"#### Damage types dealt by {name}")
         out.append("")

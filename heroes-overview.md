@@ -2,7 +2,7 @@
 
 Per-hero synergy picks and summaries derived from skill text in
 [Heroes.md](Heroes.md). [Heroes.md](Heroes.md) has skills only.
-Synergy: stat buffs matching **Stats the unit benefits from**, and
+Synergy: stat buff tags under **Units X benefits from**, and
 enabler partners matching **Requires** special effects.
 Up to five partners by combined score. Omitted: ATK-only, Max HP
 buff-only, and Shield-only (unless the hero benefits from Max HP/
@@ -58,11 +58,6 @@ Common buffers are **Lyca**, **Ravion**, or **Lucius**.
 - Lyca (50% `Stun`)
 
 ### Summary for Aliceth
-
-#### Stats Aliceth benefits from
-
-- ATK
-- DEF Penetration
 
 #### Damage types dealt by Aliceth
 
@@ -152,10 +147,6 @@ Common buffers are **Lucius** or **Hugin**.
 
 ### Summary for Alna
 
-#### Stats Alna benefits from
-
-- Max HP
-
 #### Damage types dealt by Alna
 
 - Primary damage type (unit): **Physical**
@@ -243,11 +234,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Alsa
 
-#### Stats Alsa benefits from
-
-- Haste
-- Max HP
-
 #### Damage types dealt by Alsa
 
 - Primary damage type (unit): **Magic**
@@ -332,11 +318,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Antandra
 
-#### Stats Antandra benefits from
-
-- Max HP
-- Energy
-
 #### Damage types dealt by Antandra
 
 - Primary damage type (unit): **Physical**
@@ -414,11 +395,6 @@ Common buffers are **Ravion**, **Lyca**, or **Hugin**.
 
 ### Summary for Arden
 
-#### Stats Arden benefits from
-
-- ATK
-- Energy
-
 #### Damage types dealt by Arden
 
 - Primary damage type (unit): **Magic**
@@ -486,11 +462,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Kafra (56% `Stun` `Move`)
 
 ### Summary for Atalanta
-
-#### Stats Atalanta benefits from
-
-- Haste
-- Physical DEF
 
 #### Damage types dealt by Atalanta
 
@@ -575,12 +546,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 ### Summary for Athalia
 
-#### Stats Athalia benefits from
-
-- Max HP
-- Crit
-- Execution
-
 #### Damage types dealt by Athalia
 
 - Primary damage type (unit): **Physical**
@@ -658,11 +623,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Fay (100% `Magic`)
 
 ### Summary for Aurora
-
-#### Stats Aurora benefits from
-
-- ATK
-- Haste
 
 #### Damage types dealt by Aurora
 
@@ -749,12 +709,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Thador (56% `Knock down`)
 
 ### Summary for Baelran
-
-#### Stats Baelran benefits from
-
-- ATK
-- Haste
-- Max HP
 
 #### Damage types dealt by Baelran
 
@@ -907,10 +861,6 @@ Common buffers are **Lyca**, **Lucius**, or **Ravion**.
 
 ### Summary for Bonnie
 
-#### Stats Bonnie benefits from
-
-- ATK
-
 #### Damage types dealt by Bonnie
 
 - Primary damage type (unit): **Magic**
@@ -999,10 +949,6 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
 
 ### Summary for Brutus
 
-#### Stats Brutus benefits from
-
-- Life Drain
-
 #### Damage types dealt by Brutus
 
 - Primary damage type (unit): **Physical**
@@ -1077,10 +1023,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Nazrik (66% `Stun`)
 
 ### Summary for Bryon
-
-#### Stats Bryon benefits from
-
-- Haste
 
 #### Damage types dealt by Bryon
 
@@ -1170,10 +1112,6 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 
 ### Summary for Callan
 
-#### Stats Callan benefits from
-
-- Healing
-
 #### Damage types dealt by Callan
 
 - Primary damage type (unit): **Physical**
@@ -1247,10 +1185,6 @@ Common buffers are **Lyca**, **Twins**, or **Damian**.
 - Fay (100% `Magic`)
 
 ### Summary for Carolina
-
-#### Stats Carolina benefits from
-
-- Crit
 
 #### Damage types dealt by Carolina
 
@@ -1329,10 +1263,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Cassadee
 
-#### Stats Cassadee benefits from
-
-- Haste
-
 #### Damage types dealt by Cassadee
 
 - Primary damage type (unit): **Magic**
@@ -1405,13 +1335,6 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 - Gala (66% `Pin`)
 
 ### Summary for Cecia
-
-#### Stats Cecia benefits from
-
-- ATK SPD
-- DEF Penetration
-- Physical DEF
-- Magic DEF
 
 #### Damage types dealt by Cecia
 
@@ -1549,11 +1472,6 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 ### Summary for Contess
 
-#### Stats Contess benefits from
-
-- Healing
-- Energy
-
 #### Damage types dealt by Contess
 
 - Primary damage type (unit): **Magic**
@@ -1627,11 +1545,6 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Summary for Cryonaia
 
-#### Stats Cryonaia benefits from
-
-- ATK
-- Max HP
-
 #### Damage types dealt by Cryonaia
 
 - Primary damage type (unit): **Magic**
@@ -1693,12 +1606,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - Dionel (77% `True damage`)
 
 ### Summary for Cyran
-
-#### Stats Cyran benefits from
-
-- ATK
-- ATK SPD
-- Crit
 
 #### Damage types dealt by Cyran
 
@@ -1775,10 +1682,6 @@ Common buffers are **Lucius** or **Hugin**.
 - Silvina (72% `Frighten`)
 
 ### Summary for Daimon
-
-#### Stats Daimon benefits from
-
-- Max HP
 
 #### Damage types dealt by Daimon
 
@@ -1866,12 +1769,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Damian
 
-#### Stats Damian benefits from
-
-- ATK
-- Haste
-- Energy
-
 #### Damage types dealt by Damian
 
 - Primary damage type (unit): **Magic**
@@ -1937,12 +1834,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - Frieren (80% `True damage`)
 
 ### Summary for Dionel
-
-#### Stats Dionel benefits from
-
-- ATK SPD
-- Max HP
-- Execution
 
 #### Damage types dealt by Dionel
 
@@ -2011,13 +1902,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Zorya (57% `HP loss` `Magic`)
 
 ### Summary for Dunlingr
-
-#### Stats Dunlingr benefits from
-
-- ATK SPD
-- Haste
-- Max HP
-- Healing
 
 #### Damage types dealt by Dunlingr
 
@@ -2091,11 +1975,6 @@ Common buffers are **Lucius**, **Hugin**, or **Rowan**.
 - Indris (56% `Move` `Pin`)
 
 ### Summary for Eironn
-
-#### Stats Eironn benefits from
-
-- Max HP
-- Physical DEF
 
 #### Damage types dealt by Eironn
 
@@ -2188,11 +2067,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Twins
 
-#### Stats Twins benefits from
-
-- Haste
-- Energy
-
 #### Damage types dealt by Twins
 
 - Primary damage type (unit): **Magic**
@@ -2281,11 +2155,6 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 ### Summary for Evie
 
-#### Stats Evie benefits from
-
-- Healing
-- Energy
-
 #### Damage types dealt by Evie
 
 - Primary damage type (unit): **Magic**
@@ -2372,12 +2241,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Faramor
 
-#### Stats Faramor benefits from
-
-- ATK
-- Haste
-- Max HP
-
 #### Damage types dealt by Faramor
 
 - Primary damage type (unit): **Physical**
@@ -2453,10 +2316,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Fay
 
-#### Stats Fay benefits from
-
-- ATK SPD
-
 #### Damage types dealt by Fay
 
 - Primary damage type (unit): **Magic**
@@ -2529,11 +2388,6 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 - Himmel (89% `Physical` `Max HP-based damage`)
 
 ### Summary for Florabelle
-
-#### Stats Florabelle benefits from
-
-- ATK
-- Haste
 
 #### Damage types dealt by Florabelle
 
@@ -2612,11 +2466,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Thador (50% `Knock down`)
 
 ### Summary for Frieren
-
-#### Stats Frieren benefits from
-
-- ATK
-- Haste
 
 #### Damage types dealt by Frieren
 
@@ -2702,12 +2551,6 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Summary for Gala
 
-#### Stats Gala benefits from
-
-- ATK
-- Haste
-- Energy
-
 #### Damage types dealt by Gala
 
 - Primary damage type (unit): **Magic**
@@ -2782,10 +2625,6 @@ Common buffers are **Lucius** or **Hugin**.
 
 ### Summary for Gerda
 
-#### Stats Gerda benefits from
-
-- Max HP
-
 #### Damage types dealt by Gerda
 
 - Primary damage type (unit): **Physical**
@@ -2856,13 +2695,6 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 - Gwyneth (92% `Physical` `Max HP-based damage`)
 
 ### Summary for Granny Dahnie
-
-#### Stats Granny Dahnie benefits from
-
-- Healing
-- Energy
-- Physical DEF
-- Magic DEF
 
 #### Damage types dealt by Granny Dahnie
 
@@ -2938,11 +2770,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 ### Summary for Gunnar
 
-#### Stats Gunnar benefits from
-
-- ATK SPD
-- Max HP
-
 #### Damage types dealt by Gunnar
 
 - Primary damage type (unit): **Physical**
@@ -3009,10 +2836,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Soren (86% `Physical`)
 
 ### Summary for Gwyneth
-
-#### Stats Gwyneth benefits from
-
-- ATK SPD
 
 #### Damage types dealt by Gwyneth
 
@@ -3081,10 +2904,6 @@ Common buffers are **Lyca**, **Hugin**, or **Ravion**.
 
 ### Summary for Hammie
 
-#### Stats Hammie benefits from
-
-- ATK
-
 #### Damage types dealt by Hammie
 
 - Primary damage type (unit): **Magic**
@@ -3144,14 +2963,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - Ravion (82% `Physical` `HP loss`)
 
 ### Summary for Harak
-
-#### Stats Harak benefits from
-
-- Haste
-- Max HP
-- Crit
-- Energy
-- Life Drain
 
 #### Damage types dealt by Harak
 
@@ -3251,12 +3062,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Antandra (52% `Taunt` `Stun`)
 
 ### Summary for Hepler
-
-#### Stats Hepler benefits from
-
-- ATK
-- Haste
-- Max HP
 
 #### Damage types dealt by Hepler
 
@@ -3358,10 +3163,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Hewynn
 
-#### Stats Hewynn benefits from
-
-- ATK
-
 #### Damage types dealt by Hewynn
 
 - Primary damage type (unit): **Magic**
@@ -3434,12 +3235,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Himmel
 
-#### Stats Himmel benefits from
-
-- ATK
-- Haste
-- Max HP
-
 #### Damage types dealt by Himmel
 
 - Primary damage type (unit): **Physical**
@@ -3507,10 +3302,6 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 - Himmel (89% `Physical` `Max HP-based damage`)
 
 ### Summary for Hodgkin
-
-#### Stats Hodgkin benefits from
-
-- ATK
 
 #### Damage types dealt by Hodgkin
 
@@ -3601,11 +3392,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Hugin
 
-#### Stats Hugin benefits from
-
-- Haste
-- Energy
-
 #### Damage types dealt by Hugin
 
 - Primary damage type (unit): **Physical**
@@ -3664,11 +3450,6 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 - Lyca (100% `Physical`)
 
 ### Summary for Igor
-
-#### Stats Igor benefits from
-
-- Healing
-- Life Drain
 
 #### Damage types dealt by Igor
 
@@ -3744,11 +3525,6 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 - Evie (54% `Move` `Pin` `Silence`)
 
 ### Summary for Indris
-
-#### Stats Indris benefits from
-
-- ATK
-- ATK SPD
 
 #### Damage types dealt by Indris
 
@@ -3837,14 +3613,6 @@ Common buffers are **Mikola**, **Twins**, or **Hugin**.
 
 ### Summary for Isabella
 
-#### Stats Isabella benefits from
-
-- ATK
-- ATK SPD
-- Haste
-- Healing
-- Energy
-
 #### Damage types dealt by Isabella
 
 - Primary damage type (unit): **Magic**
@@ -3927,11 +3695,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Vala (66% `Stun`)
 
 ### Summary for Kafra
-
-#### Stats Kafra benefits from
-
-- ATK
-- Max HP
 
 #### Damage types dealt by Kafra
 
@@ -4024,11 +3787,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Koko
 
-#### Stats Koko benefits from
-
-- Haste
-- Energy
-
 #### Damage types dealt by Koko
 
 - Primary damage type (unit): **Physical**
@@ -4102,14 +3860,6 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 - Harak (82% `Physical` `HP loss`)
 
 ### Summary for Kordan
-
-#### Stats Kordan benefits from
-
-- ATK
-- Max HP
-- Healing
-- DEF Penetration
-- Life Drain
 
 #### Damage types dealt by Kordan
 
@@ -4186,12 +3936,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Summary for Korin
 
-#### Stats Korin benefits from
-
-- ATK SPD
-- Haste
-- Max HP
-
 #### Damage types dealt by Korin
 
 - Primary damage type (unit): **Physical**
@@ -4255,11 +3999,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - Gerda (100% `Physical`)
 
 ### Summary for Kruger
-
-#### Stats Kruger benefits from
-
-- Max HP
-- Physical DEF
 
 #### Damage types dealt by Kruger
 
@@ -4338,12 +4077,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Twins (56% `Move`)
 
 ### Summary for Kulu
-
-#### Stats Kulu benefits from
-
-- ATK
-- ATK SPD
-- DEF Penetration
 
 #### Damage types dealt by Kulu
 
@@ -4426,15 +4159,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Laios
 
-#### Stats Laios benefits from
-
-- ATK
-- ATK SPD
-- Haste
-- Max HP
-- Healing
-- Energy
-
 #### Damage types dealt by Laios
 
 - Primary damage type (unit): **Physical**
@@ -4515,14 +4239,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Lenya
 
-#### Stats Lenya benefits from
-
-- Haste
-- Max HP
-- Crit
-- Crit DMG Boost
-- Energy
-
 #### Damage types dealt by Lenya
 
 - Primary damage type (unit): **Physical**
@@ -4593,11 +4309,6 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 - Smokey & Meerky (55% `Interrupt`)
 
 ### Summary for Lily May
-
-#### Stats Lily May benefits from
-
-- ATK
-- DEF Penetration
 
 #### Damage types dealt by Lily May
 
@@ -4691,10 +4402,6 @@ Common buffers are **Lyca**, **Hugin**, or **Ravion**.
 
 ### Summary for Lorsan
 
-#### Stats Lorsan benefits from
-
-- ATK
-
 #### Damage types dealt by Lorsan
 
 - Primary damage type (unit): **Magic**
@@ -4770,12 +4477,6 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - Lorsan (60% `Stun`)
 
 ### Summary for Lucca
-
-#### Stats Lucca benefits from
-
-- Max HP
-- Physical DEF
-- Magic DEF
 
 #### Damage types dealt by Lucca
 
@@ -4867,10 +4568,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Lucius
 
-#### Stats Lucius benefits from
-
-- Healing
-
 #### Damage types dealt by Lucius
 
 - Primary damage type (unit): **Physical**
@@ -4949,11 +4646,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Lucy
 
-#### Stats Lucy benefits from
-
-- ATK SPD
-- Haste
-
 #### Damage types dealt by Lucy
 
 - Primary damage type (unit): **Magic**
@@ -5028,10 +4720,6 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 - Nerion (100% `Stun`)
 
 ### Summary for Ludovic
-
-#### Stats Ludovic benefits from
-
-- Healing
 
 #### Damage types dealt by Ludovic
 
@@ -5113,12 +4801,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Brutus (50% `Taunt`)
 
 ### Summary for Lumont
-
-#### Stats Lumont benefits from
-
-- Haste
-- Max HP
-- Healing
 
 #### Damage types dealt by Lumont
 
@@ -5213,10 +4895,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Lyca
 
-#### Stats Lyca benefits from
-
-- ATK SPD
-
 #### Damage types dealt by Lyca
 
 - Primary damage type (unit): **Physical**
@@ -5283,12 +4961,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Saida (59% `Interrupt`)
 
 ### Summary for Marcille
-
-#### Stats Marcille benefits from
-
-- ATK SPD
-- Haste
-- Energy
 
 #### Damage types dealt by Marcille
 
@@ -5357,13 +5029,6 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 - Zanie (100% `Stun`)
 
 ### Summary for Marilee
-
-#### Stats Marilee benefits from
-
-- ATK
-- ATK SPD
-- Crit
-- Crit DMG Boost
 
 #### Damage types dealt by Marilee
 
@@ -5436,13 +5101,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Satrana (56% `Charm`)
 
 ### Summary for Mehira
-
-#### Stats Mehira benefits from
-
-- Haste
-- Max HP
-- Healing
-- Life Drain
 
 #### Damage types dealt by Mehira
 
@@ -5529,11 +5187,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Mikola
 
-#### Stats Mikola benefits from
-
-- ATK
-- Haste
-
 #### Damage types dealt by Mikola
 
 - Primary damage type (unit): **Physical**
@@ -5592,10 +5245,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Mirael
 
-#### Stats Mirael benefits from
-
-- ATK SPD
-
 #### Damage types dealt by Mirael
 
 - Primary damage type (unit): **Magic**
@@ -5648,11 +5297,6 @@ Common buffers are **Ravion** or **Lyca**.
 - Nazrik (84% `True damage` `Physical` `Max HP-based damage`)
 
 ### Summary for Nara
-
-#### Stats Nara benefits from
-
-- ATK
-- Energy
 
 #### Damage types dealt by Nara
 
@@ -5729,13 +5373,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Natsu
 
-#### Stats Natsu benefits from
-
-- ATK
-- Haste
-- Crit
-- Crit DMG Boost
-
 #### Damage types dealt by Natsu
 
 - Primary damage type (unit): **Magic**
@@ -5801,10 +5438,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Nerion (100% `Stun`)
 
 ### Summary for Nazrik
-
-#### Stats Nazrik benefits from
-
-- Crit
 
 #### Damage types dealt by Nazrik
 
@@ -5877,13 +5510,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Nerion
 
-#### Stats Nerion benefits from
-
-- ATK SPD
-- Max HP
-- Energy
-- DEF Penetration
-
 #### Damage types dealt by Nerion
 
 - Primary damage type (unit): **Magic**
@@ -5949,11 +5575,6 @@ Common buffers are **Rowan**, **Lyca**, or **Twins**.
 
 ### Summary for Niru
 
-#### Stats Niru benefits from
-
-- Physical DEF
-- Magic DEF
-
 #### Damage types dealt by Niru
 
 - Primary damage type (unit): **Magic**
@@ -6013,10 +5634,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Odie
 
-#### Stats Odie benefits from
-
-- ATK SPD
-
 #### Damage types dealt by Odie
 
 - Primary damage type (unit): **Magic**
@@ -6071,10 +5688,6 @@ Common buffers are **Ravion** or **Lyca**.
 - Damian (100% `Magic`)
 
 ### Summary for Pandora
-
-#### Stats Pandora benefits from
-
-- Energy
 
 #### Damage types dealt by Pandora
 
@@ -6161,13 +5774,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Pang
 
-#### Stats Pang benefits from
-
-- ATK
-- Haste
-- Energy
-- DEF Penetration
-
 #### Damage types dealt by Pang
 
 - Primary damage type (unit): **Physical**
@@ -6229,12 +5835,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - Eironn (100% `Magic`)
 
 ### Summary for Parisa
-
-#### Stats Parisa benefits from
-
-- ATK
-- ATK SPD
-- Energy
 
 #### Damage types dealt by Parisa
 
@@ -6306,12 +5906,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Lorsan (75% `Stun`)
 
 ### Summary for Perseus
-
-#### Stats Perseus benefits from
-
-- ATK
-- ATK SPD
-- Max HP
 
 #### Damage types dealt by Perseus
 
@@ -6393,11 +5987,6 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 ### Summary for Phraesto
 
-#### Stats Phraesto benefits from
-
-- Healing
-- Energy
-
 #### Damage types dealt by Phraesto
 
 - Primary damage type (unit): **Magic**
@@ -6466,10 +6055,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Indris (73% `True damage` `Max HP-based damage`)
 
 ### Summary for Pippa
-
-#### Stats Pippa benefits from
-
-- Haste
 
 #### Damage types dealt by Pippa
 
@@ -6564,12 +6149,6 @@ These are the **10** strongest pairings:
 - Harak (82% `Physical` `HP loss`)
 
 ### Summary for Ravion
-
-#### Stats Ravion benefits from
-
-- ATK
-- Haste
-- Energy
 
 #### Damage types dealt by Ravion
 
@@ -6710,12 +6289,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Rhys
 
-#### Stats Rhys benefits from
-
-- ATK SPD
-- Crit
-- Crit DMG Boost
-
 #### Damage types dealt by Rhys
 
 - Primary damage type (unit): **Physical**
@@ -6797,11 +6370,6 @@ These are the **10** strongest pairings:
 - Odie (50% `Magic`)
 
 ### Summary for Rowan
-
-#### Stats Rowan benefits from
-
-- Haste
-- Energy
 
 #### Damage types dealt by Rowan
 
@@ -6892,10 +6460,6 @@ Common buffers are **Lucius** or **Hugin**.
 
 ### Summary for Saida
 
-#### Stats Saida benefits from
-
-- Max HP
-
 #### Damage types dealt by Saida
 
 - Primary damage type (unit): **Magic**
@@ -6981,10 +6545,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Salazer
 
-#### Stats Salazer benefits from
-
-- Max HP
-
 #### Damage types dealt by Salazer
 
 - Primary damage type (unit): **Physical**
@@ -7055,10 +6615,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Mehira (56% `Charm`)
 
 ### Summary for Satrana
-
-#### Stats Satrana benefits from
-
-- Max HP
 
 #### Damage types dealt by Satrana
 
@@ -7138,11 +6694,6 @@ Common buffers are **Ravion** or **Lyca**.
 
 ### Summary for Scarlita
 
-#### Stats Scarlita benefits from
-
-- Execution
-- Energy
-
 #### Damage types dealt by Scarlita
 
 - Primary damage type (unit): **Physical**
@@ -7221,14 +6772,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Seth
 
-#### Stats Seth benefits from
-
-- ATK
-- Haste
-- Crit
-- Energy
-- Life Drain
-
 #### Damage types dealt by Seth
 
 - Primary damage type (unit): **Physical**
@@ -7306,13 +6849,6 @@ Common buffers are **Lucius**, **Lyca**, or **Ravion**.
 
 ### Summary for Shadewing
 
-#### Stats Shadewing benefits from
-
-- ATK
-- Max HP
-- Energy
-- Life Drain
-
 #### Damage types dealt by Shadewing
 
 - Primary damage type (unit): **Magic**
@@ -7379,10 +6915,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Gerda (100% `Physical`)
 
 ### Summary for Shakir
-
-#### Stats Shakir benefits from
-
-- Haste
 
 #### Damage types dealt by Shakir
 
@@ -7459,12 +6991,6 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 ### Summary for Shemira
 
-#### Stats Shemira benefits from
-
-- Max HP
-- Healing
-- Energy
-
 #### Damage types dealt by Shemira
 
 - Primary damage type (unit): **Magic**
@@ -7520,13 +7046,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Alsa (73% `Magic`)
 
 ### Summary for Silven
-
-#### Stats Silven benefits from
-
-- ATK SPD
-- Energy
-- DEF Penetration
-- Physical DEF
 
 #### Damage types dealt by Silven
 
@@ -7590,11 +7109,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - Daimon (72% `Frighten`)
 
 ### Summary for Silvina
-
-#### Stats Silvina benefits from
-
-- Max HP
-- Crit
 
 #### Damage types dealt by Silvina
 
@@ -7661,11 +7175,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Antandra (75% `Physical`)
 
 ### Summary for Sinbad
-
-#### Stats Sinbad benefits from
-
-- ATK SPD
-- Energy
 
 #### Damage types dealt by Sinbad
 
@@ -7755,12 +7264,6 @@ Common buffers are **Mikola**, **Ravion**, or **Rowan**.
 
 ### Summary for Smokey & Meerky
 
-#### Stats Smokey & Meerky benefits from
-
-- ATK
-- Healing
-- Energy
-
 #### Damage types dealt by Smokey & Meerky
 
 - Primary damage type (unit): **Magic**
@@ -7828,10 +7331,6 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 - Damian (100% `Magic`)
 
 ### Summary for Solise
-
-#### Stats Solise benefits from
-
-- ATK
 
 #### Damage types dealt by Solise
 
@@ -7907,11 +7406,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 ### Summary for Sonja
 
-#### Stats Sonja benefits from
-
-- Haste
-- Max HP
-
 #### Damage types dealt by Sonja
 
 - Primary damage type (unit): **Physical**
@@ -7983,12 +7477,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Soren
 
-#### Stats Soren benefits from
-
-- Haste
-- Max HP
-- Energy
-
 #### Damage types dealt by Soren
 
 - Primary damage type (unit): **Physical**
@@ -8054,12 +7542,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Temesia (60% `Knock down` `Interrupt`)
 
 ### Summary for Sylphira
-
-#### Stats Sylphira benefits from
-
-- ATK
-- Haste
-- Healing
 
 #### Damage types dealt by Sylphira
 
@@ -8139,13 +7621,6 @@ Common buffers are **Mikola**, **Lucius**, or **Rowan**.
 
 ### Summary for Talene
 
-#### Stats Talene benefits from
-
-- ATK
-- Max HP
-- Healing
-- Life Drain
-
 #### Damage types dealt by Talene
 
 - Primary damage type (unit): **Magic**
@@ -8215,12 +7690,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Berial (80% `DoT` `Magic`)
 
 ### Summary for Tasi
-
-#### Stats Tasi benefits from
-
-- ATK
-- Haste
-- Max HP
 
 #### Damage types dealt by Tasi
 
@@ -8304,14 +7773,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Sylphira (60% `Knock down` `Interrupt`)
 
 ### Summary for Temesia
-
-#### Stats Temesia benefits from
-
-- ATK
-- ATK SPD
-- Max HP
-- Healing
-- Energy
 
 #### Damage types dealt by Temesia
 
@@ -8402,12 +7863,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Thador
 
-#### Stats Thador benefits from
-
-- Max HP
-- Crit
-- Healing
-
 #### Damage types dealt by Thador
 
 - Primary damage type (unit): **Physical**
@@ -8472,11 +7927,6 @@ Common buffers are **Lucius**, **Hugin**, or **Ravion**.
 
 ### Summary for Thoran
 
-#### Stats Thoran benefits from
-
-- Max HP
-- Energy
-
 #### Damage types dealt by Thoran
 
 - Primary damage type (unit): **Physical**
@@ -8540,11 +7990,6 @@ Common buffers are **Lucius**, **Rowan**, or **Twins**.
 - Gerda (100% `Physical`)
 
 ### Summary for Tilaya
-
-#### Stats Tilaya benefits from
-
-- Max HP
-- Healing
 
 #### Damage types dealt by Tilaya
 
@@ -8618,11 +8063,6 @@ Common buffers are **Lucius**, **Hugin**, or **Ravion**.
 - Twins (57% `Move`)
 
 ### Summary for Ulmus
-
-#### Stats Ulmus benefits from
-
-- Max HP
-- Energy
 
 #### Damage types dealt by Ulmus
 
@@ -8708,13 +8148,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Vala
 
-#### Stats Vala benefits from
-
-- ATK
-- Haste
-- Healing
-- Energy
-
 #### Damage types dealt by Vala
 
 - Primary damage type (unit): **Physical**
@@ -8790,10 +8223,6 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 - Nazrik (100% `Stun`)
 
 ### Summary for Valen
-
-#### Stats Valen benefits from
-
-- ATK
 
 #### Damage types dealt by Valen
 
@@ -8872,13 +8301,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - Callan (60% `Knock down` `Stun`)
 
 ### Summary for Valka
-
-#### Stats Valka benefits from
-
-- ATK SPD
-- Haste
-- Max HP
-- Energy
 
 #### Damage types dealt by Valka
 
@@ -8959,12 +8381,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - Gala (66% `Pin`)
 
 ### Summary for Velara
-
-#### Stats Velara benefits from
-
-- Haste
-- Max HP
-- Energy
 
 #### Damage types dealt by Velara
 
@@ -9047,10 +8463,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Viperian
 
-#### Stats Viperian benefits from
-
-- Haste
-
 #### Damage types dealt by Viperian
 
 - Primary damage type (unit): **Magic**
@@ -9120,13 +8532,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Gunnar (90% `Stun`)
 
 ### Summary for Walker
-
-#### Stats Walker benefits from
-
-- Max HP
-- Crit
-- Crit DMG Boost
-- Life Drain
 
 #### Damage types dealt by Walker
 
@@ -9216,11 +8621,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Zandrok
 
-#### Stats Zandrok benefits from
-
-- Haste
-- Max HP
-
 #### Damage types dealt by Zandrok
 
 - Primary damage type (unit): **Physical**
@@ -9283,10 +8683,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Marilee (100% `Stun`)
 
 ### Summary for Zanie
-
-#### Stats Zanie benefits from
-
-- ATK SPD
 
 #### Damage types dealt by Zanie
 
@@ -9380,14 +8776,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Zandrok (66% `Stun`)
 
 ### Summary for Zorya
-
-#### Stats Zorya benefits from
-
-- Haste
-- Max HP
-- Healing
-- Energy
-- Life Drain
 
 #### Damage types dealt by Zorya
 

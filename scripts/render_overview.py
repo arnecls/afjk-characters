@@ -52,7 +52,7 @@ OVERVIEW_HEADER = [
     "",
     "Per-hero synergy picks and summaries derived from skill text in",
     "[Heroes.md](Heroes.md). [Heroes.md](Heroes.md) has skills only.",
-    "Synergy: stat buffs matching **Stats the unit benefits from**, and",
+    "Synergy: stat buff tags under **Units X benefits from**, and",
     "enabler partners matching **Requires** special effects.",
     "Up to five partners by combined score. Omitted: ATK-only, Max HP",
     "buff-only, and Shield-only (unless the hero benefits from Max HP/",
