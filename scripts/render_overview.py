@@ -22,6 +22,31 @@ import heroes_io as io
 OVERVIEW_MD = io.ROOT / "heroes-overview.md"
 OVERVIEW_CSV = io.ROOT / "heroes-overview.csv"
 
+REPLACEMENT_CATEGORY_LABELS = {
+    "buff": "Buffs on allies",
+    "energy": "Energy provider",
+    "similar_skills": "Similar Skills",
+    "damage": "Damage",
+    "cc": "Crowd Control",
+}
+
+
+def _format_replacement_line(
+    entry: dict,
+    *,
+    show_tags: bool = True,
+    show_score: bool = True,
+) -> str:
+    if not show_score:
+        return f"- {entry['name']}"
+    pct = int(entry["score"] * 100)
+    match_list = entry.get("matches", [])[:5] if show_tags else []
+    tags = " ".join(f"`{tag}`" for tag in match_list)
+    if tags:
+        return f"- {entry['name']} ({pct}% {tags})"
+    return f"- {entry['name']} ({pct}%)"
+
+
 OVERVIEW_HEADER = [
     "# Heroes Overview",
     "",
@@ -191,23 +216,26 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
         parts.append(f"### Units {short} benefits from")
         parts.append("")
         parts.extend(syn_lines)
-        replacements = p.get("replacements", [])
-        if replacements:
+        replacements = p.get("replacements", {})
+        if isinstance(replacements, dict) and any(replacements.values()):
             parts.append("")
             parts.append(f"### Units that can act as a replacement for {short}")
             parts.append("")
-            for r in replacements[:max_rep]:
-                pct = int(r["score"] * 100)
-                match_tags = " ".join(
-                    f"`{m}`" for m in r.get("matches", [])[:5]
-                )
-                if match_tags:
+            for key, label in REPLACEMENT_CATEGORY_LABELS.items():
+                entries = replacements.get(key, [])
+                if not entries:
+                    continue
+                parts.append(f"**{label}**")
+                parts.append("")
+                for entry in entries[:max_rep]:
                     parts.append(
-                        f"- **{r['name']}** ({pct}% match {match_tags})"
+                        _format_replacement_line(
+                            entry,
+                            show_tags=(key != "energy"),
+                            show_score=(key != "energy"),
+                        )
                     )
-                else:
-                    parts.append(f"- **{r['name']}** ({pct}% match)")
-            parts.append("")
+                parts.append("")
         parts.append(summary)
         parts.append("")
 

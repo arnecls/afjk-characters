@@ -106,60 +106,29 @@ DEFINING_TIER_SCORE_MULT = {
     "Supreme+": 1.8,
 }
 
-# Replacement scoring: similarity between heroes as substitutes.
+# Replacement scoring: per-category similarity between heroes as substitutes.
 REPLACEMENT_MIN_SCORE = 0.6
 REPLACEMENT_MAX = 3
-REPLACEMENT_BUFF_W = 0.45
-REPLACEMENT_PROVIDES_W = 0.10
-REPLACEMENT_SIG_W = 0.15
-REPLACEMENT_DAMAGE_W = 0.30
 REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
 REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST = 1.5
 REPLACEMENT_SIGNATURE_CC_BOOST = 1.5
-REPLACEMENT_SIGNATURE_CC_WEIGHT = 0.25
 MIN_SUPPORT_SCORE = 11.0
 
-SUPPORT_REPLACEMENT_WEIGHTS = {
-    "buff": 0.40,
-    "provides": 0.15,
-    "signature": 0.15,
-    "damage": 0.10,
-    "cc": 0.20,
-}
-DAMAGE_REPLACEMENT_WEIGHTS = {
-    "buff": 0.20,
-    "provides": 0.10,
-    "signature": 0.10,
-    "damage": 0.45,
-    "cc": 0.15,
-}
+REPLACEMENT_CATEGORIES = (
+    "buff",
+    "energy",
+    "similar_skills",
+    "damage",
+    "cc",
+)
+
+_DEFAULT_LIEUTENANT_ENERGY = 200.0
+_DEFAULT_ENERGY_POTION = 200.0
+# Flat-energy equivalent per 1% ally energy recovery speed boost.
+_ENERGY_RECOVERY_SPEED_FACTOR = 10.0
 
 _SIGNATURE_SECTIONS: dict[str, str] | None = None
-
-_SIG_STOPWORDS = frozenset(
-    {
-        "a",
-        "an",
-        "the",
-        "of",
-        "at",
-        "in",
-        "on",
-        "to",
-        "for",
-        "and",
-        "or",
-        "with",
-        "per",
-        "from",
-        "by",
-        "area",
-        "ally",
-        "allies",
-        "enemy",
-        "enemies",
-    }
-)
+_BEHAVIOR_TAGS: dict[str, frozenset[str]] | None = None
 
 # Receiver Requires labels that are self-setup, not partner-enabled.
 SKIP_ENABLER_REQUIRES = frozenset(
@@ -422,6 +391,7 @@ def is_energy_provider(provider: _rs.Hero) -> bool:
         and e.label == "Energy recovery"
         and e.targeting in ALLY_TARGETINGS
         and e.conditional != "rare"
+        and not _rs._energy_recovery_targets_self(e.qualitative)
         for e in provider.effects
     )
 
@@ -1202,19 +1172,123 @@ def _hero_provider_profile(hero: _rs.Hero) -> dict[str, float]:
     return profile
 
 
-def _hero_provides_labels(hero: _rs.Hero) -> frozenset[str]:
-    return frozenset(
-        s.label for s in hero.special_effects if s.kind == "provides"
+def _flat_ally_energy_from_text(text: str) -> float | None:
+    """Parse a flat ally energy grant from skill or effect text."""
+    patterns = (
+        r"grants? all allies (\d+) energy",
+        r"(?:the )?ally gains? (\d+) energy",
+        r"grants? (?:his |her )?(?:recipient|lieutenant).{0,40}(\d+) energy",
+        r"ally recovers? (\d+) energy",
+        r"recover(?:s|ing) (\d+)(?:\s*\+\s*\d+)? energy",
+        r"restores? .{0,40}(\d+)(?:\s*\+\s*\d+)? energy",
     )
+    for pattern in patterns:
+        match = re.search(pattern, text, re.I)
+        if match:
+            return float(match.group(1))
+    return None
 
 
-def _sig_words(description: str) -> frozenset[str]:
-    if not description:
-        return frozenset()
-    words = re.findall(r"[a-z]+", description.lower())
-    return frozenset(
-        w for w in words if w not in _SIG_STOPWORDS and len(w) > 1
-    )
+def _targeting_for_ally_energy_text(
+    text: str,
+    default: str = "Single target",
+) -> str:
+    lowered = text.lower()
+    if "all allies" in lowered or "all units" in lowered:
+        return "All units"
+    if "surrounding allies" in lowered or "within 2 tiles" in lowered:
+        return "Area"
+    if "multiple" in lowered:
+        return "Multiple targets"
+    return default
+
+
+def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
+    """Weighted ally energy provision; higher means more energy to allies."""
+    if not is_energy_provider(hero):
+        return 0.0
+
+    best = 0.0
+
+    def consider(amount: float, targeting: str) -> None:
+        nonlocal best
+        if amount <= 0:
+            return
+        weight = TARGETING_WEIGHT.get(targeting, 1.0)
+        best = max(best, amount * weight)
+
+    for _tier, text, _section in hero.skill_chunks:
+        lowered = text.lower()
+        if _rs._energy_recovery_targets_self(text):
+            continue
+        if _is_self_battle_start_energy(text):
+            if not re.search(
+                r"\b(?:ally|allies|all allied|surrounding allies)\b", lowered
+            ):
+                continue
+
+        energy = _flat_ally_energy_from_text(text)
+        if energy is not None and re.search(
+            r"\b(?:ally|allies|all allied|surrounding allies)\b", lowered
+        ):
+            consider(energy, _targeting_for_ally_energy_text(text))
+
+        if re.search(
+            r"grants? .{0,60}lieutenant.{0,60}energy when a battle starts",
+            lowered,
+        ):
+            consider(_DEFAULT_LIEUTENANT_ENERGY, "Single target")
+
+        if re.search(r"energy potion when a battle starts", lowered):
+            consider(_DEFAULT_ENERGY_POTION, "Area")
+
+        speed_match = re.search(
+            r"increases? the recipient'?s? energy recovery speed by (\d+)",
+            lowered,
+        )
+        if speed_match and _BATTLE_START_RE.search(lowered):
+            consider(
+                float(speed_match.group(1)) * _ENERGY_RECOVERY_SPEED_FACTOR,
+                "Single target",
+            )
+
+    for effect in hero.effects:
+        if effect.category != "buff" or effect.label != "Energy recovery":
+            continue
+        if effect.targeting not in ALLY_TARGETINGS:
+            continue
+        if effect.conditional == "rare":
+            continue
+        if _rs._energy_recovery_targets_self(effect.qualitative):
+            continue
+        energy = _flat_ally_energy_from_text(effect.qualitative)
+        if energy is None and effect.numeric is not None:
+            if "energy" in effect.qualitative.lower():
+                energy = effect.numeric
+        if energy is not None:
+            consider(energy, effect.targeting)
+
+    return best
+
+
+def _energy_provided_similarity(amount_a: float, amount_b: float) -> float:
+    if amount_a <= 0 or amount_b <= 0:
+        return 0.0
+    return min(amount_a, amount_b) / max(amount_a, amount_b)
+
+
+def _load_behavior_tags() -> dict[str, frozenset[str]]:
+    global _BEHAVIOR_TAGS
+    if _BEHAVIOR_TAGS is None:
+        path = ROOT / "data" / "hero_behavior_tags.json"
+        if not path.exists():
+            _BEHAVIOR_TAGS = {}
+        else:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            _BEHAVIOR_TAGS = {
+                name: frozenset(tags) for name, tags in data.items()
+            }
+    return _BEHAVIOR_TAGS
 
 
 def _weighted_jaccard(a: dict[str, float], b: dict[str, float]) -> float:
@@ -1313,23 +1387,6 @@ def _hero_cc_profile(
     return profile, has_signature_cc
 
 
-def _replacement_weights_for_hero(
-    hero: _rs.Hero,
-    hero_class: str,
-    has_signature_cc: bool,
-) -> dict[str, float]:
-    if is_supporting_unit(hero, hero_class):
-        weights = dict(SUPPORT_REPLACEMENT_WEIGHTS)
-    else:
-        weights = dict(DAMAGE_REPLACEMENT_WEIGHTS)
-    if has_signature_cc:
-        weights["cc"] = max(weights.get("cc", 0.0), REPLACEMENT_SIGNATURE_CC_WEIGHT)
-    total = sum(weights.values())
-    if total > 0:
-        weights = {key: value / total for key, value in weights.items()}
-    return weights
-
-
 def _damage_similarity(
     types_a: set[str],
     types_b: set[str],
@@ -1346,26 +1403,10 @@ def _damage_similarity(
     return general
 
 
-def _top_replacement_matches(
-    buff_a: dict[str, float],
-    buff_b: dict[str, float],
-    damage_a: dict[str, float],
-    damage_b: dict[str, float],
-    cc_a: dict[str, float],
-    cc_b: dict[str, float],
-    limit: int = 5,
+def _dedupe_ranked_tags(
+    ranked: list[tuple[float, str]], limit: int = 5
 ) -> list[str]:
-    """Strongest overlapping stats, damage types, and CC (up to limit)."""
-    ranked: list[tuple[float, str]] = []
-    for label in set(buff_a) & set(buff_b):
-        weight = min(buff_a[label], buff_b[label])
-        for stat in _BUFF_LABEL_TO_STATS.get(label, []):
-            ranked.append((weight, stat))
-    for dt in set(damage_a) & set(damage_b):
-        ranked.append((min(damage_a[dt], damage_b[dt]), dt))
-    for label in set(cc_a) & set(cc_b):
-        ranked.append((min(cc_a[label], cc_b[label]), label))
-    ranked.sort(key=lambda x: (-x[0], x[1]))
+    ranked.sort(key=lambda item: (-item[0], item[1]))
     seen: set[str] = set()
     matches: list[str] = []
     for _weight, name in ranked:
@@ -1378,90 +1419,159 @@ def _top_replacement_matches(
     return matches
 
 
+def _buff_overlap_tags(
+    buff_a: dict[str, float], buff_b: dict[str, float], limit: int = 5
+) -> list[str]:
+    ranked: list[tuple[float, str]] = []
+    for label in set(buff_a) & set(buff_b):
+        weight = min(buff_a[label], buff_b[label])
+        for stat in _BUFF_LABEL_TO_STATS.get(label, [label]):
+            ranked.append((weight, stat))
+    return _dedupe_ranked_tags(ranked, limit)
+
+
+def _similar_skills_overlap_tags(
+    tags_a: frozenset[str], tags_b: frozenset[str], limit: int = 5
+) -> list[str]:
+    return sorted(tags_a & tags_b)[:limit]
+
+
+def _damage_overlap_tags(
+    damage_a: dict[str, float], damage_b: dict[str, float], limit: int = 5
+) -> list[str]:
+    ranked = [
+        (min(damage_a[key], damage_b[key]), key)
+        for key in set(damage_a) & set(damage_b)
+    ]
+    return _dedupe_ranked_tags(ranked, limit)
+
+
+def _cc_overlap_tags(
+    cc_a: dict[str, float], cc_b: dict[str, float], limit: int = 5
+) -> list[str]:
+    ranked = [
+        (min(cc_a[label], cc_b[label]), label)
+        for label in set(cc_a) & set(cc_b)
+    ]
+    return _dedupe_ranked_tags(ranked, limit)
+
+
+def _rank_replacement_category(
+    scores: list[tuple[float, str, list[str]]],
+) -> list[dict]:
+    """Top replacement picks for one category above min_score."""
+    scores.sort(key=lambda item: (-item[0], short_name(item[1])))
+    ranked: list[dict] = []
+    for score, title, matches in scores:
+        if score < REPLACEMENT_MIN_SCORE:
+            break
+        ranked.append(
+            {
+                "name": short_name(title),
+                "score": round(score, 4),
+                "matches": matches,
+            }
+        )
+        if len(ranked) >= REPLACEMENT_MAX:
+            break
+    return ranked
+
+
 def compute_replacement_scores(
     heroes: list[_rs.Hero],
     behavior_by_title: dict[str, _rs.HeroBehavior],
     hero_class_by_title: dict[str, str] | None = None,
-) -> dict[str, list[dict]]:
-    """Score how well each hero can substitute for every other hero (0–1)."""
+) -> dict[str, dict[str, list[dict]]]:
+    """Per-category replacement lists for each hero (0–1 similarity per category)."""
+    del hero_class_by_title  # kept for call-site compatibility
+
     profiles: dict[str, dict[str, float]] = {}
-    provides: dict[str, frozenset[str]] = {}
-    sig_words: dict[str, frozenset[str]] = {}
+    energy_provided: dict[str, float] = {}
     damage_profiles: dict[str, dict[str, float]] = {}
     damage_types: dict[str, set[str]] = {}
     cc_profiles: dict[str, dict[str, float]] = {}
-    signature_cc: dict[str, bool] = {}
+    behavior_tags_map = _load_behavior_tags()
     sig_sections = _signature_sections()
 
     for hero in heroes:
         profiles[hero.title] = _hero_provider_profile(hero)
-        provides[hero.title] = _hero_provides_labels(hero)
+        energy_provided[hero.title] = _hero_effective_ally_energy_provided(hero)
         behavior = behavior_by_title.get(hero.title)
-        desc = behavior.signature_skill_description if behavior else ""
         sig_name = behavior.signature_skill_name if behavior else ""
         display = short_name(hero.title)
         sig_section = sig_sections.get(display, "")
-        sig_words[hero.title] = _sig_words(desc)
         damage_profiles[hero.title] = _hero_damage_profile(hero)
         damage_types[hero.title] = provider_damage_types(hero)
-        cc_profile, has_sig_cc = _hero_cc_profile(hero, sig_section, sig_name)
-        cc_profiles[hero.title] = cc_profile
-        signature_cc[hero.title] = has_sig_cc
+        cc_profiles[hero.title], _ = _hero_cc_profile(
+            hero, sig_section, sig_name
+        )
 
-    classes = hero_class_by_title or {}
-    result: dict[str, list[dict]] = {}
+    result: dict[str, dict[str, list[dict]]] = {}
     for hero_x in heroes:
         px = profiles[hero_x.title]
-        prx = provides[hero_x.title]
-        sx = sig_words[hero_x.title]
+        ex = energy_provided[hero_x.title]
         dpx = damage_profiles[hero_x.title]
         dtx = damage_types[hero_x.title]
         cpx = cc_profiles[hero_x.title]
-        w = _replacement_weights_for_hero(
-            hero_x,
-            classes.get(hero_x.title, ""),
-            signature_cc.get(hero_x.title, False),
-        )
-        scores: list[tuple[float, list[str], str]] = []
+        display_x = short_name(hero_x.title)
+        tags_x = behavior_tags_map.get(display_x, frozenset())
+        energy_eligible = is_energy_provider(hero_x)
+
+        category_scores: dict[str, list[tuple[float, str, list[str]]]] = {
+            key: [] for key in REPLACEMENT_CATEGORIES
+        }
         for hero_y in heroes:
             if hero_y.title == hero_x.title:
                 continue
             py = profiles[hero_y.title]
             dpy = damage_profiles[hero_y.title]
             cpy = cc_profiles[hero_y.title]
-            buff_sim = _weighted_jaccard(px, py)
-            provides_sim = _set_jaccard(prx, provides[hero_y.title])
-            sig_sim = _set_jaccard(sx, sig_words[hero_y.title])
-            damage_sim = _damage_similarity(
-                dtx,
-                damage_types[hero_y.title],
-                dpx,
-                dpy,
+            display_y = short_name(hero_y.title)
+            tags_y = behavior_tags_map.get(display_y, frozenset())
+            ey = energy_provided[hero_y.title]
+
+            category_scores["buff"].append(
+                (
+                    _weighted_jaccard(px, py),
+                    hero_y.title,
+                    _buff_overlap_tags(px, py),
+                )
             )
-            cc_sim = _weighted_jaccard(cpx, cpy)
-            score = min(
-                1.0,
-                max(
-                    0.0,
-                    w["buff"] * buff_sim
-                    + w["provides"] * provides_sim
-                    + w["signature"] * sig_sim
-                    + w["damage"] * damage_sim
-                    + w["cc"] * cc_sim,
-                ),
+            if energy_eligible and is_energy_provider(hero_y):
+                category_scores["energy"].append(
+                    (_energy_provided_similarity(ex, ey), hero_y.title, [])
+                )
+            category_scores["similar_skills"].append(
+                (
+                    _set_jaccard(tags_x, tags_y),
+                    hero_y.title,
+                    _similar_skills_overlap_tags(tags_x, tags_y),
+                )
             )
-            if score >= REPLACEMENT_MIN_SCORE:
-                matches = _top_replacement_matches(px, py, dpx, dpy, cpx, cpy)
-                scores.append((score, matches, hero_y.title))
-        scores.sort(key=lambda x: (-x[0], short_name(x[2])))
-        result[hero_x.title] = [
-            {
-                "name": short_name(title),
-                "score": round(score, 4),
-                "matches": matches,
-            }
-            for score, matches, title in scores[:REPLACEMENT_MAX]
-        ]
+            category_scores["damage"].append(
+                (
+                    _damage_similarity(
+                        dtx,
+                        damage_types[hero_y.title],
+                        dpx,
+                        dpy,
+                    ),
+                    hero_y.title,
+                    _damage_overlap_tags(dpx, dpy),
+                )
+            )
+            category_scores["cc"].append(
+                (
+                    _weighted_jaccard(cpx, cpy),
+                    hero_y.title,
+                    _cc_overlap_tags(cpx, cpy),
+                )
+            )
+
+        result[hero_x.title] = {
+            key: _rank_replacement_category(category_scores[key])
+            for key in REPLACEMENT_CATEGORIES
+        }
     return result
 
 

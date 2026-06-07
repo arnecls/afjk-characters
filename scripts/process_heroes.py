@@ -76,37 +76,10 @@ def apply_config(config: dict) -> None:
             setattr(rs, attr, bt[key])
 
     rs_cfg = config.get("replacement_scoring", {})
-    for key, attr in [
-        ("min_score", "REPLACEMENT_MIN_SCORE"),
-        ("max_replacements", "REPLACEMENT_MAX"),
-        ("min_support_score", "MIN_SUPPORT_SCORE"),
-        ("buff_weight", "REPLACEMENT_BUFF_W"),
-        ("provides_weight", "REPLACEMENT_PROVIDES_W"),
-        ("signature_weight", "REPLACEMENT_SIG_W"),
-        ("damage_weight", "REPLACEMENT_DAMAGE_W"),
-        ("true_damage_blend", "REPLACEMENT_TRUE_DAMAGE_BLEND"),
-        ("true_damage_profile_boost", "REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST"),
-        ("signature_cc_boost", "REPLACEMENT_SIGNATURE_CC_BOOST"),
-        ("signature_cc_weight", "REPLACEMENT_SIGNATURE_CC_WEIGHT"),
-    ]:
-        if key in rs_cfg:
-            setattr(gen, attr, rs_cfg[key])
-
-    for profile_key, attr in [
-        ("support_weights", "SUPPORT_REPLACEMENT_WEIGHTS"),
-        ("damage_weights", "DAMAGE_REPLACEMENT_WEIGHTS"),
-    ]:
-        profile = rs_cfg.get(profile_key)
-        if not profile:
-            continue
-        weights = {
-            "buff": profile.get("buff_weight", 0.0),
-            "provides": profile.get("provides_weight", 0.0),
-            "signature": profile.get("signature_weight", 0.0),
-            "damage": profile.get("damage_weight", 0.0),
-            "cc": profile.get("cc_weight", 0.0),
-        }
-        setattr(gen, attr, weights)
+    if "min_score" in rs_cfg:
+        gen.REPLACEMENT_MIN_SCORE = rs_cfg["min_score"]
+    if "max_replacements" in rs_cfg:
+        gen.REPLACEMENT_MAX = rs_cfg["max_replacements"]
 
 
 def rank_synergies_full(receiver, heroes, enabler_matchers, behavior_by_title):
@@ -211,7 +184,7 @@ def build_processed(data: dict) -> dict:
                 {"score": score, "name": name} for score, name in benefited
             ],
             "beneficiary_overflow_reasons": gen._beneficiary_overflow_reasons(hero),
-            "replacements": replacements_index.get(hero.title, []),
+            "replacements": replacements_index.get(hero.title, {}),
         }
 
     return {

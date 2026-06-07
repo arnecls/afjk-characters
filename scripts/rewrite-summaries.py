@@ -155,6 +155,13 @@ def _energy_recovery_targets_self(t: str) -> bool:
         r"(?:recover|restore)\w* (?:himself|herself|itself) \d+ energy", t
     ):
         return True
+    if re.search(
+        r"\b(?:he|she|it)\b.{0,40}(?:immediately )?(?:recover|restore)\w* "
+        r"\d+ energy",
+        t,
+        re.I,
+    ):
+        return True
     if re.search(r"\b(?:she|he|it)\b", t) and re.search(
         r"(?:recover|restore)\w* \d+ energy", t
     ):
@@ -816,6 +823,10 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
                 return "Self"
             if effect_targets_self_only(t, label, category):
                 return "Self"
+    # "all non-boss units" — field-wide orders (e.g. Dunlingr Spellbind) that
+    # apply to both sides of the battlefield.
+    if re.search(r"\ball non-boss (?:units|heroes)\b", t):
+        return "All units"
     # "all units" / "all allies" — global buffs only when the buff applies to all
     if re.search(r"\ball (?:units|allies)\b", t) and not re.search(
         r"\ball (?:units|allies) (?:within |along |around |in (?:a |\d+-tile )?arc)", t
@@ -830,7 +841,10 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
                 r"\ball allies'? (?:gain|receive|recover|get |haste|atk|max hp|shield|"
                 r"become unaffected|become steadfast)",
                 t,
-            ):
+            # "inspires herself and all allies, granting them …" — the verb
+            # applies to the caster AND all allies together, so the effect is
+            # field-wide even though the exact verb isn't directly before "all".
+            ) or _has_explicit_ally_buff(t, label):
                 return "All units"
         elif category not in ("buff", "cc_immunity"):
             return "All units"
@@ -1144,7 +1158,10 @@ def add_effect(
     buff_tgt = (
         _resolve_buff_targeting(text, label, scope=scope)
         if category == "buff"
-        else detect_targeting(cond_text, label, category)
+        # For CC/debuff effects use the full skill-chunk text so that
+        # field-wide context (e.g. "all non-boss units") is visible even
+        # when the matched clause is a short colon-terminated fragment.
+        else detect_targeting(text, label, category)
     )
     effects.append(
         Effect(
@@ -1282,6 +1299,8 @@ BUFF_RULES = [
     ),
     (r"life drain", "Lifedrain buff"),
     (r"reduc(?:e|es|ing) (?:her |his |their |the .{0,20})?damage taken", "Damage taken reduction"),
+    # Abbreviated form used in some skill descriptions (e.g. Koko, Phraesto).
+    (r"\bdmg reduction\b", "Damage taken reduction"),
     (r"invincible", "Invincible"),
     (
         r"extra \d+ \+ \d+ penetration|penetration applied to|"
@@ -1409,7 +1428,11 @@ CC_RULES = [
     (r"knock(?:ing|s)? them down|knocked down", "Knock down"),
     (r"knocking them back|knock(?:ing|s)? back", "Move"),
     (r"frighten(?:ing|ed|s)?", "Frighten"),
-    (r"silenc(?:e|ed|ing)", "Silence"),
+    # "(?<! of )" prevents skill-name references like "Echo of Silence" from
+    # being falsely flagged as a Silence CC applied to a target.
+    (r"(?<! of )silenc(?:e|es|ed|ing)", "Silence"),
+    # Dunlingr Spellbind order: all non-boss units unable to cast ultimates.
+    (r"spellbind.{0,60}unable to cast", "Silence"),
     (r"charm(?:ed|s|ing)?", "Charm"),
     (r"\basleep\b|hypnotiz", "Sleep"),
     (r"freez(?:e|es|ing|ed)", "Freeze"),
@@ -2227,6 +2250,42 @@ def _skill_chunk_has_ally_only_damage(text: str) -> bool:
     return ally_damage and not _skill_chunk_has_enemy_damage(text)
 
 
+def _debuff_match_is_ally_atk_penalty(clause: str) -> bool:
+    """True when an ATK-debuff regex match reduces an ally's own ATK bonus.
+
+    The Elijah & Lailah Stellar Bond text ("this atk bonus is reduced by 5%
+    for everyone linked by the bond") contains the generic pattern
+    ``atk … reduc…`` but targets allies in the bond, not enemies.
+    """
+    t = clause.lower()
+    has_ally_context = bool(re.search(
+        r"\b(?:ally|allies|everyone linked|linked|bond|bonded"
+        r"|for everyone|for each.*ally)\b",
+        t,
+    ))
+    has_enemy_context = bool(re.search(
+        r"\b(?:enemy|enemies|target|the target|foe|foes)\b", t
+    ))
+    return has_ally_context and not has_enemy_context
+
+
+def _cc_match_is_ally_targeted(clause: str, label: str) -> bool:
+    """True when a CC effect is applied to an ally rather than an enemy.
+
+    Pandora pulls the rearmost ally into her box — a protective mechanic
+    that must not be classified as an enemy-facing Move CC.
+    """
+    if label != "Move":
+        return False
+    t = clause.lower()
+    if re.search(
+        r"pull(?:s|ing)? (?:the |a )?(?:rearmost|weakest|nearest|frontmost)? ?ally\b",
+        t,
+    ):
+        return not bool(re.search(r"\b(?:enemy|enemies|the target|foe)\b", t))
+    return False
+
+
 def analyze_text(
     effects,
     summon_effects,
@@ -2244,9 +2303,17 @@ def analyze_text(
             add_summon_buff_effect(summon_effects, label, tier, text)
     for pat, label in DEBUFF_RULES:
         for scope in _effect_match_scopes(text, pat):
+            # Skip ATK debuff matches that reduce an ally's own bonus stat
+            # rather than debuffing an enemy (e.g. Elijah & Lailah bond penalty).
+            if label == "ATK debuff" and _debuff_match_is_ally_atk_penalty(scope):
+                continue
             add_effect(effects, "debuff", label, tier, text, scope=scope)
     for pat, label in CC_RULES:
         for scope in _effect_match_scopes(text, pat):
+            # Skip CC matches that target an ally rather than an enemy
+            # (e.g. Pandora pulling an ally into her box).
+            if _cc_match_is_ally_targeted(scope, label):
+                continue
             add_effect(effects, "cc", label, tier, text, scope=scope)
 
     if not _skill_chunk_has_ally_only_damage(text):

@@ -1,0 +1,13 @@
+{
+  "Talene": ["fire-attack"],
+  "Natsu": ["fire-attack"],
+  "Mehira": ["enemy-grouping"],
+  "Cyran": ["enemy-grouping"],
+  "Eironn": ["enemy-grouping"],
+  "Frieren": ["high-damage-ult"],
+  "Shemira": ["high-damage-ult"],
+  "Bryon": ["battle-start-ult"],
+  "Niru": ["battle-start-ult"],
+  "Alsa": ["battlefield-modification"],
+  "Kulu": ["battlefield-modification"]
+}

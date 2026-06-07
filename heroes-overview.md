@@ -24,22 +24,35 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 Look for units providing: `ATK` `DEF Penetration`  
 Common buffers are **Lyca**, **Ravion**, or **Lucius**.
 
+- **Evie**
+  - ATK buff (multiple targets, high)
+  - Enables Debuff on target via DoT (all units)
+- **Lily May**
+  - DEF Penetration buff (single target, low)
+  - Enables Debuff on target via Energy drain (all units)
 - **Alna**
   - ATK buff (single target, medium)
   - Enables Debuff on target via Haste debuff (area)
+- **Hepler**
+  - ATK SPD via Haste buff (single target, low) [signature fuel]
+  - Enables Debuff on target via Haste debuff (area)
 - **Frieren**
   - Enables Debuff on target via DoT (area)
-- **Kulu**
-  - DEF Penetration buff (single target, low)
-  - Enables Ranged damage from allies via ranged attacks
-  - Enables Debuff on target via Movement speed debuff (area)
-- **Pandora**
-  - Energy recovery (single target, low) [signature fuel]
-  - Energy recovery (1000 at battle start, single target) [signature fuel]
-  - Enables Debuff on target via Vitality debuff (single target)
-- **Evie**
-  - ATK buff (multiple targets, high)
-  - Enables Debuff on target via DoT (single target)
+
+### Units that can act as a replacement for Aliceth
+
+**Damage**
+
+- Kordan (89% `Physical` `HP loss`)
+- Ravion (89% `Physical` `HP loss`)
+- Harak (77% `Physical` `HP loss`)
+
+**Crowd Control**
+
+- Bonnie (50% `Stun`)
+- Lucius (50% `Move` `Stun`)
+- Lyca (50% `Stun`)
+
 ### Summary for Aliceth
 
 #### Stats Aliceth benefits from
@@ -64,9 +77,9 @@ Common buffers are **Lyca**, **Ravion**, or **Lucius**.
 
 #### Debuffs provided by Aliceth
 
-- Execution debuff — Single target — `medium`
+- Execution debuff — Multiple targets — `medium`
 - Marked target (focus fire) — Single target — `medium`
-- Blind HP loss debuff (EX+15) — Single target — `low`
+- Blind HP loss debuff (EX+15) — Area — `low`
 
 #### Crowd Control provided by Aliceth
 
@@ -118,10 +131,17 @@ Common buffers are **Lucius** or **Hugin**.
 
 ### Units benefitting from Alna
 
-- Indris
 - Shadewing
 - Aliceth
-- Bonnie
+
+### Units that can act as a replacement for Alna
+
+**Damage**
+
+- Thador (55% `Physical` `DoT`)
+- Zanie (55% `DoT` `Physical`)
+- Igor (50% `Physical`)
+
 ### Summary for Alna
 
 #### Stats Alna benefits from
@@ -194,9 +214,24 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Max HP via Shield (multiple targets, medium)
   - ATK SPD via Haste buff (single target, low) [signature fuel]
 
-### Units benefitting from Alsa
+### Units that can act as a replacement for Alsa
 
-- Bonnie
+**Similar Skills**
+
+- Kulu (100% `battlefield-modification`)
+
+**Damage**
+
+- Lily May (93% `Magic`)
+- Sylphira (84% `Magic`)
+- Shemira (77% `Magic`)
+
+**Crowd Control**
+
+- Kafra (75% `Stun` `Move`)
+- Lucy (75% `Stun`)
+- Soren (73% `Stun` `Move`)
+
 ### Summary for Alsa
 
 #### Stats Alsa benefits from
@@ -263,15 +298,24 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - **Valka**
   - ATK SPD buff (multiple targets, high) [signature fuel]
 
-### Units benefitting from Antandra
-
-- Callan
-- Contess
-- Evie
-
 ### Units that can act as a replacement for Antandra
 
-- **Hepler** (57% match `Taunt` `Physical` `Healing` `Stun`)
+**Buffs on allies**
+
+- Marcille (100% `Healing`)
+- Solise (66% `Healing`)
+- Hewynn (60% `Healing`)
+
+**Damage**
+
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+- Hepler (100% `Physical`)
+
+**Crowd Control**
+
+- Lumont (57% `Stun` `Taunt`)
+- Hepler (52% `Taunt` `Stun`)
 
 ### Summary for Antandra
 
@@ -334,6 +378,21 @@ Common buffers are **Ravion**, **Lyca**, or **Hugin**.
 - **Fay**
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Arden
+
+**Damage**
+
+- Berial (87% `Magic` `DoT`)
+- Bryon (87% `Magic` `DoT`)
+- Bonnie (78% `Magic` `DoT`)
+
+**Crowd Control**
+
+- Laios (88% `Pin`)
+- Cecia (50% `Pin`)
+- Korin (50% `Pin`)
+
 ### Summary for Arden
 
 #### Stats Arden benefits from
@@ -349,7 +408,7 @@ Common buffers are **Ravion**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Arden
 
-- Pin — Single target — `high`
+- Pin — Multiple targets — `high`
 
 ## Atalanta
 
@@ -384,9 +443,23 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Atalanta
 
-- **Lucca** (61% match `Physical` `Stun` `Healing`)
-- **Lucius** (56% match `Physical` `Move` `Healing` `Stun`)
-- **Kafra** (51% match `Physical` `Stun` `Move`)
+**Buffs on allies**
+
+- Igor (100% `Healing`)
+- Lucca (100% `Healing`)
+- Talene (100% `Healing`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Gerda (100% `Physical`)
+- Hepler (100% `Physical`)
+
+**Crowd Control**
+
+- Soren (66% `Move` `Stun`)
+- Cassadee (60% `Move` `Stun`)
+- Kafra (56% `Stun` `Move`)
 
 ### Summary for Atalanta
 
@@ -449,6 +522,27 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Cecia**
   - Max HP buff (single target, high)
   - ATK SPD buff (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Athalia
+
+**Buffs on allies**
+
+- Nara (75% `Healing`)
+- Berial (66% `Healing`)
+- Rhys (66% `Healing`)
+
+**Damage**
+
+- Dionel (91% `True damage` `Physical`)
+- Scarlita (85% `Physical` `True damage`)
+- Perseus (82% `Physical` `True damage`)
+
+**Crowd Control**
+
+- Baelran (93% `Knock down`)
+- Temesia (62% `Knock down`)
+- Thador (60% `Knock down`)
+
 ### Summary for Athalia
 
 #### Stats Athalia benefits from
@@ -469,12 +563,12 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 #### Debuffs provided by Athalia
 
-- ATK debuff — Single target — `medium`
+- ATK debuff — All units — `medium`
 
 #### Crowd Control provided by Athalia
 
 - Unaffected — Area — On skill
-- Knock down — Single target — `low`
+- Knock down — All units — `low`
 
 #### Athalia's Special Effects
 
@@ -524,6 +618,15 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Hodgkin
 - Phraesto
 - Zanie
+
+### Units that can act as a replacement for Aurora
+
+**Damage**
+
+- Carolina (100% `Magic`)
+- Eironn (100% `Magic`)
+- Fay (100% `Magic`)
+
 ### Summary for Aurora
 
 #### Stats Aurora benefits from
@@ -541,6 +644,10 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Haste buff — Summons only — `high`
 - Invincible — Single target — `high`
 - Summon damage buff (Mythic+) — Summons only — `low`
+
+#### Debuffs provided by Aurora
+
+- Haste debuff — Multiple targets — `low`
 
 #### Crowd Control provided by Aurora
 
@@ -587,7 +694,23 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Baelran
 
-- **Temesia** (50% match `Physical` `Knock down` `Max HP-based damage` `True damage` `Healing`)
+**Buffs on allies**
+
+- Harak (66% `Healing`)
+- Atalanta (50% `Healing`)
+- Igor (50% `Healing`)
+
+**Damage**
+
+- Korin (87% `Max HP-based damage` `Physical` `True damage`)
+- Indris (86% `True damage` `Physical` `Max HP-based damage`)
+- Nara (85% `Max HP-based damage` `True damage` `Physical`)
+
+**Crowd Control**
+
+- Athalia (93% `Knock down`)
+- Temesia (60% `Knock down`)
+- Thador (56% `Knock down`)
 
 ### Summary for Baelran
 
@@ -656,6 +779,21 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - ATK SPD buff (multiple targets, high) [signature fuel]
 - **Zandrok**
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+
+### Units that can act as a replacement for Berial
+
+**Buffs on allies**
+
+- Nara (88% `Healing`)
+- Solise (75% `Healing`)
+- Viperian (75% `Healing`)
+
+**Damage**
+
+- Bryon (100% `DoT` `Magic`)
+- Lorsan (88% `DoT` `Magic`)
+- Arden (87% `Magic` `DoT`)
+
 ### Summary for Berial
 
 #### Damage types dealt by Berial
@@ -698,25 +836,39 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 ### Units Bonnie benefits from
 
 Look for units providing: `ATK`  
-Common buffers are **Lyca**, **Lucius**, or **Rowan**.
+Common buffers are **Lyca**, **Lucius**, or **Ravion**.
 
+- **Evie**
+  - ATK buff (multiple targets, high)
+  - Enables Debuff on target via DoT (all units)
+  - Enables Magic damage from allies via Magic damage + early battle + all enemies (all units)
+- **Lily May**
+  - Enables Debuff on target via Energy drain (all units)
+  - Enables Magic damage from allies via Magic damage + all enemies (all units)
+- **Natsu**
+  - Enables Debuff on target via Haste debuff (area)
+  - Enables Magic damage from allies via Magic damage + wide area (area)
 - **Frieren**
   - Enables Debuff on target via DoT (area)
   - Enables Magic damage from allies via Magic damage + all enemies (all units)
-- **Evie**
-  - ATK buff (multiple targets, high)
-  - Enables Debuff on target via DoT (single target)
-  - Enables Magic damage from allies via Magic damage + early battle + all enemies (all units)
 - **Alna**
   - ATK buff (single target, medium)
   - Enables Debuff on target via Haste debuff (area)
-- **Alsa**
-  - Enables Debuff on target via Movement speed debuff (area)
-  - Enables Magic damage from allies via Magic damage + all enemies (all units)
-- **Contess**
-  - ATK buff (single target, high)
-  - Enables Debuff on target via Energy drain (multiple targets)
-  - Enables Magic damage from allies via Magic damage + early battle + all enemies (all units)
+
+### Units that can act as a replacement for Bonnie
+
+**Damage**
+
+- Mirael (100% `Magic` `DoT`)
+- Arden (78% `Magic` `DoT`)
+- Aurora (72% `Magic`)
+
+**Crowd Control**
+
+- Lyca (100% `Stun`)
+- Marilee (100% `Stun`)
+- Zanie (100% `Stun`)
+
 ### Summary for Bonnie
 
 #### Stats Bonnie benefits from
@@ -784,9 +936,25 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
   - Lifedrain buff (single target, low)
   - ATK SPD buff (multiple targets, high) [signature fuel]
 
-### Units benefitting from Brutus
+### Units that can act as a replacement for Brutus
 
-- Shadewing
+**Buffs on allies**
+
+- Kruger (75% `Life Drain`)
+- Walker (66% `Life Drain`)
+- Daimon (50% `Life Drain`)
+
+**Damage**
+
+- Cecia (97% `Max HP-based damage` `Physical` `DoT`)
+- Gunnar (90% `Max HP-based damage` `DoT` `Physical`)
+- Florabelle (88% `Max HP-based damage` `Physical`)
+
+**Crowd Control**
+
+- Hepler (54% `Taunt`)
+- Lumont (50% `Taunt`)
+
 ### Summary for Brutus
 
 #### Stats Brutus benefits from
@@ -807,6 +975,7 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
 #### Debuffs provided by Brutus
 
 - DoT — Area — `medium`
+- Phys DEF debuff — Area — `low`
 
 #### Crowd Control provided by Brutus
 
@@ -840,6 +1009,31 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Bryon
+
+**Buffs on allies**
+
+- Harak (66% `Healing`)
+- Hodgkin (66% `Healing`)
+- Tasi (66% `Healing`)
+
+**Similar Skills**
+
+- Niru (100% `battle-start-ult`)
+
+**Damage**
+
+- Berial (100% `DoT` `Magic`)
+- Lorsan (88% `DoT` `Magic`)
+- Arden (87% `Magic` `DoT`)
+
+**Crowd Control**
+
+- Damian (66% `Stun`)
+- Ludovic (66% `Stun`)
+- Nazrik (66% `Stun`)
+
 ### Summary for Bryon
 
 #### Stats Bryon benefits from
@@ -894,13 +1088,13 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
 - **Antandra**
-  - Healing (multiple targets, high)
-- **Contess**
   - Healing (multiple targets, high)
 
 ### Units benefitting from Callan
@@ -912,6 +1106,26 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 - Saida
 - Thoran
 - Ulmus
+
+### Units that can act as a replacement for Callan
+
+**Buffs on allies**
+
+- Saida (62% `Max HP` `Healing`)
+- Lucy (60% `Max HP`)
+- Hepler (55% `Max HP` `Healing`)
+
+**Damage**
+
+- Igor (62% `Physical`)
+- Koko (62% `Physical`)
+- Kulu (62% `Physical`)
+
+**Crowd Control**
+
+- Valka (60% `Knock down` `Stun`)
+- Natsu (58% `Stun` `Knock down`)
+
 ### Summary for Callan
 
 #### Stats Callan benefits from
@@ -933,7 +1147,7 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 
 - Unaffected — Self — Start of battle
 - Knock down — All units — `low`
-- Pin — Single target — `low`
+- Pin — Multiple targets — `low`
 - Stun (Mythic+) — All units — `low`
 
 #### Callan's Special Effects
@@ -962,18 +1176,30 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 Look for units providing: `Crit`  
 Common buffers are **Lyca**, **Twins**, or **Damian**.
 
-- **Dunlingr**
-  - ATK SPD buff (all units, low) [signature fuel]
-  - Enables CC on enemies via Silence (all units, high)
 - **Zandrok**
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
   - Enables CC on enemies via Stun (area, high)
 - **Tasi**
   - Enables CC on enemies via Sleep (all units, high)
+- **Indris**
+  - Enables CC on enemies via Pin (area, high)
 - **Kordan**
   - Enables CC on enemies via Pin (area, high)
 - **Lumont**
   - Enables CC on enemies via Stun (area, high)
+
+### Units benefitting from Carolina
+
+- Nerion
+
+### Units that can act as a replacement for Carolina
+
+**Damage**
+
+- Aurora (100% `Magic`)
+- Eironn (100% `Magic`)
+- Fay (100% `Magic`)
+
 ### Summary for Carolina
 
 #### Stats Carolina benefits from
@@ -993,7 +1219,7 @@ Common buffers are **Lyca**, **Twins**, or **Damian**.
 
 #### Crowd Control provided by Carolina
 
-- Freeze — Single target — `high`
+- Freeze — Area — `high`
 
 #### Carolina's Special Effects
 
@@ -1035,6 +1261,21 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Pandora**
   - Energy recovery (single target, low) [signature fuel]
   - Energy recovery (1000 at battle start, single target) [signature fuel]
+
+### Units that can act as a replacement for Cassadee
+
+**Damage**
+
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+- Evie (100% `Magic`)
+
+**Crowd Control**
+
+- Soren (66% `Move` `Stun`)
+- Atalanta (60% `Move` `Stun`)
+- Kafra (56% `Stun` `Move`)
+
 ### Summary for Cassadee
 
 #### Stats Cassadee benefits from
@@ -1093,6 +1334,21 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 - **Lumont**
   - DEF buff (multiple targets, medium)
   - DEF buff (multiple targets, medium)
+
+### Units that can act as a replacement for Cecia
+
+**Damage**
+
+- Brutus (97% `Max HP-based damage` `Physical` `DoT`)
+- Florabelle (90% `Max HP-based damage` `Physical`)
+- Hodgkin (90% `Max HP-based damage` `Physical`)
+
+**Crowd Control**
+
+- Korin (100% `Pin`)
+- Velara (100% `Pin`)
+- Gala (66% `Pin`)
+
 ### Summary for Cecia
 
 #### Stats Cecia benefits from
@@ -1159,6 +1415,15 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
   - Energy recovery (lieutenant, start of battle) [signature fuel]
 - **Gala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Chippy
+
+**Damage**
+
+- Salazer (100% `Physical`)
+- Silvina (100% `Physical`)
+- Thoran (100% `Physical`)
+
 ### Summary for Chippy
 
 #### Damage types dealt by Chippy
@@ -1183,20 +1448,40 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
 - **Antandra**
   - Healing (multiple targets, high)
-- **Evie**
-  - Healing (multiple targets, high)
 
 ### Units benefitting from Contess
 
 - Talene
 - Smokey & Meerky
-- Tilaya
+
+### Units that can act as a replacement for Contess
+
+**Buffs on allies**
+
+- Antandra (54% `Healing`)
+- Marcille (54% `Healing`)
+- Fay (50% `Healing` `ATK`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Damian (100% `Magic`)
+- Evie (100% `Magic`)
+
+**Crowd Control**
+
+- Damian (50% `Stun`)
+- Ludovic (50% `Stun`)
+- Nazrik (50% `Stun`)
+
 ### Summary for Contess
 
 #### Stats Contess benefits from
@@ -1218,6 +1503,7 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 #### Debuffs provided by Contess
 
 - Energy drain — Multiple targets — `low`
+- Max HP debuff — Multiple targets — `low`
 - ATK debuff (Legendary+) — Single target — `low`
 
 #### Crowd Control provided by Contess
@@ -1261,6 +1547,15 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 - **Contess**
   - ATK buff (single target, high)
   - Max HP via Shield (single target, medium)
+
+### Units that can act as a replacement for Cryonaia
+
+**Damage**
+
+- Tasi (100% `DoT` `Magic`)
+- Lorsan (90% `Magic` `DoT`)
+- Berial (80% `DoT` `Magic`)
+
 ### Summary for Cryonaia
 
 #### Stats Cryonaia benefits from
@@ -1319,6 +1614,20 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Cyran
+
+**Similar Skills**
+
+- Eironn (100% `enemy-grouping`)
+- Mehira (100% `enemy-grouping`)
+
+**Damage**
+
+- Frieren (85% `True damage` `Magic`)
+- Athalia (80% `True damage`)
+- Dionel (77% `True damage`)
+
 ### Summary for Cyran
 
 #### Stats Cyran benefits from
@@ -1376,6 +1685,25 @@ Common buffers are **Lucius** or **Hugin**.
   - Max HP via Shield (all units, low)
 - **Gala**
   - Max HP via Shield (single target, high)
+
+### Units that can act as a replacement for Daimon
+
+**Buffs on allies**
+
+- Brutus (50% `Life Drain`)
+- Korin (50% `Max HP`)
+- Scarlita (50% `Max HP`)
+
+**Damage**
+
+- Satrana (100% `Max HP-based damage` `DoT` `Magic`)
+- Shemira (90% `Max HP-based damage` `Magic`)
+- Natsu (88% `Max HP-based damage` `Magic` `DoT`)
+
+**Crowd Control**
+
+- Silvina (72% `Frighten`)
+
 ### Summary for Daimon
 
 #### Stats Daimon benefits from
@@ -1445,6 +1773,21 @@ These are the **10** strongest pairings:
 - Frieren
 - Hepler
 - Koko
+
+### Units that can act as a replacement for Damian
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Evie (100% `Magic`)
+
+**Crowd Control**
+
+- Ludovic (100% `Stun`)
+- Nazrik (100% `Stun`)
+- Nerion (100% `Stun`)
+
 ### Summary for Damian
 
 #### Stats Damian benefits from
@@ -1502,6 +1845,15 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) [signature fuel]
   - Max HP via Shield (multiple targets, medium)
+
+### Units that can act as a replacement for Dionel
+
+**Damage**
+
+- Athalia (91% `True damage` `Physical`)
+- Scarlita (80% `Physical` `True damage`)
+- Frieren (80% `True damage`)
+
 ### Summary for Dionel
 
 #### Stats Dionel benefits from
@@ -1556,18 +1908,20 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Healing (area, high)
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
-- **Koko**
-  - Max HP via Shield (all units, low)
-  - Healing (multiple targets, high)
 
-### Units benefitting from Dunlingr
+### Units that can act as a replacement for Dunlingr
 
-- Nerion
-- Carolina
-- Indris
+**Damage**
+
+- Niru (79% `Magic` `HP loss`)
+- Walker (67% `HP loss`)
+- Zorya (57% `HP loss` `Magic`)
+
 ### Summary for Dunlingr
 
 #### Stats Dunlingr benefits from
@@ -1594,12 +1948,12 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Debuffs provided by Dunlingr
 
-- ATK debuff — Single target — `low`
+- ATK debuff — Area — `low`
 - Energy drain (Supreme+) — All units — `low`
 
 #### Crowd Control provided by Dunlingr
 
-- Silence (Supreme+) — All units — `high`
+- Silence — All units — `low`
 
 #### Dunlingr's Special Effects
 
@@ -1634,6 +1988,25 @@ Common buffers are **Lucius**, **Hugin**, or **Rowan**.
   - DEF buff (multiple targets, medium)
 - **Koko**
   - Max HP via Shield (all units, low)
+
+### Units that can act as a replacement for Eironn
+
+**Similar Skills**
+
+- Cyran (100% `enemy-grouping`)
+- Mehira (100% `enemy-grouping`)
+
+**Damage**
+
+- Aurora (100% `Magic`)
+- Carolina (100% `Magic`)
+- Fay (100% `Magic`)
+
+**Crowd Control**
+
+- Evie (61% `Move` `Pin`)
+- Indris (56% `Move` `Pin`)
+
 ### Summary for Eironn
 
 #### Stats Eironn benefits from
@@ -1653,7 +2026,7 @@ Common buffers are **Lucius**, **Hugin**, or **Rowan**.
 #### Debuffs provided by Eironn
 
 - Haste debuff — Arc — `medium`
-- Magic DEF debuff — Single target — `high`
+- Magic DEF debuff — Arc — `high`
 
 #### Crowd Control provided by Eironn
 
@@ -1693,7 +2066,7 @@ Common buffers are **Hugin**, **Mikola**, or **Damian**.
 
 ### Units benefitting from Twins
 
-**91** units include this provider among their top 5 synergy partners. Why the match is common:
+**90** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -1709,6 +2082,21 @@ These are the **10** strongest pairings:
 - Hepler
 - Lenya
 - Soren
+
+### Units that can act as a replacement for Twins
+
+**Damage**
+
+- Aurora (100% `Magic`)
+- Carolina (100% `Magic`)
+- Eironn (100% `Magic`)
+
+**Crowd Control**
+
+- Lucius (66% `Move`)
+- Rhys (59% `Move`)
+- Ulmus (57% `Move`)
+
 ### Summary for Twins
 
 #### Stats Twins benefits from
@@ -1728,10 +2116,6 @@ These are the **10** strongest pairings:
 - Max HP buff — Multiple targets — `high`
 - Shield — Single target — `medium`
 - Vitality buff (Mythic+) — Multiple targets — `low`
-
-#### Debuffs provided by Twins
-
-- ATK debuff — Single target — `low`
 
 #### Crowd Control provided by Twins
 
@@ -1766,13 +2150,13 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
 - **Antandra**
-  - Healing (multiple targets, high)
-- **Contess**
   - Healing (multiple targets, high)
 
 ### Units benefitting from Evie
@@ -1780,11 +2164,27 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 - Perseus
 - Silven
 - Bonnie
+- Shadewing
+- Aliceth
 - Isabella
 - Kordan
 - Smokey & Meerky
 - Talene
 - Himmel
+
+### Units that can act as a replacement for Evie
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
+**Crowd Control**
+
+- Eironn (61% `Move` `Pin`)
+- Indris (54% `Move` `Pin` `Silence`)
+
 ### Summary for Evie
 
 #### Stats Evie benefits from
@@ -1805,13 +2205,13 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 #### Debuffs provided by Evie
 
-- DoT — Single target — `medium`
+- DoT — All units — `medium`
 
 #### Crowd Control provided by Evie
 
-- Move — Single target — `low`
-- Pin — Single target — `low`
-- Silence — Single target — `low`
+- Move — All units — `low`
+- Pin — All units — `low`
+- Silence — All units — `low`
 
 #### Evie's Special Effects
 
@@ -1855,6 +2255,21 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (single target, low) [signature fuel]
   - Max HP via Shield (multiple targets, medium)
   - ATK SPD via Haste buff (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Faramor
+
+**Damage**
+
+- Vala (79% `True damage` `Physical` `HP loss`)
+- Aliceth (54% `Physical` `HP loss`)
+- Athalia (51% `True damage` `Physical`)
+
+**Crowd Control**
+
+- Koko (100% `Stun`)
+- Lorsan (88% `Stun`)
+- Lucy (84% `Stun`)
+
 ### Summary for Faramor
 
 #### Stats Faramor benefits from
@@ -1917,6 +2332,19 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 ### Units benefitting from Fay
 
 - Granny Dahnie
+
+### Units that can act as a replacement for Fay
+
+**Buffs on allies**
+
+- Contess (50% `Healing` `ATK`)
+
+**Damage**
+
+- Aurora (100% `Magic`)
+- Carolina (100% `Magic`)
+- Eironn (100% `Magic`)
+
 ### Summary for Fay
 
 #### Stats Fay benefits from
@@ -1979,6 +2407,15 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 - Gala
 - Phraesto
 - Zanie
+
+### Units that can act as a replacement for Florabelle
+
+**Damage**
+
+- Hodgkin (100% `Max HP-based damage` `Physical`)
+- Cecia (90% `Max HP-based damage` `Physical`)
+- Himmel (89% `Physical` `Max HP-based damage`)
+
 ### Summary for Florabelle
 
 #### Stats Florabelle benefits from
@@ -2042,9 +2479,25 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting from Frieren
 
-- Shadewing
 - Bonnie
-- Aliceth
+
+### Units that can act as a replacement for Frieren
+
+**Similar Skills**
+
+- Shemira (100% `high-damage-ult`)
+
+**Damage**
+
+- Cyran (85% `True damage` `Magic`)
+- Dionel (80% `True damage`)
+- Athalia (75% `True damage`)
+
+**Crowd Control**
+
+- Natsu (52% `Knock down` `Stun`)
+- Thador (50% `Knock down`)
+
 ### Summary for Frieren
 
 #### Stats Frieren benefits from
@@ -2111,9 +2564,23 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Units that can act as a replacement for Gala
 
-- **Velara** (55% match `Magic` `Pin` `Haste`)
-- **Mehira** (52% match `Magic` `Haste`)
-- **Lucy** (50% match `Magic` `Max HP`)
+**Buffs on allies**
+
+- Lucy (50% `Max HP`)
+- Mehira (50% `Haste`)
+- Vala (50% `Haste`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
+**Crowd Control**
+
+- Cecia (66% `Pin`)
+- Korin (66% `Pin`)
+- Velara (66% `Pin`)
 
 ### Summary for Gala
 
@@ -2176,6 +2643,21 @@ Common buffers are **Lucius** or **Hugin**.
   - Max HP via Shield (all units, low)
 - **Gala**
   - Max HP via Shield (single target, high)
+
+### Units that can act as a replacement for Gerda
+
+**Buffs on allies**
+
+- Ludovic (65% `Healing`)
+- Smokey & Meerky (60% `Healing`)
+- Granny Dahnie (53% `Healing`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Hepler (100% `Physical`)
+
 ### Summary for Gerda
 
 #### Stats Gerda benefits from
@@ -2196,7 +2678,7 @@ Common buffers are **Lucius** or **Hugin**.
 
 - Unaffected — Self — Start of battle
 - Interrupt — Single target — `medium`
-- Pin — Single target — `low`
+- Pin — Multiple targets — `low`
 - Stun — Single target — `high`
 
 ## Granny Dahnie
@@ -2221,6 +2703,8 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
   - ATK SPD buff (multiple targets, low) [signature fuel]
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
   - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
@@ -2228,8 +2712,21 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
   - Healing (single target, high)
   - Energy recovery (single target, low) [signature fuel]
   - Energy recovery (1000 at battle start, single target) [signature fuel]
-- **Kafra**
-  - Healing over time (area, high)
+
+### Units that can act as a replacement for Granny Dahnie
+
+**Buffs on allies**
+
+- Harak (60% `Healing`)
+- Hodgkin (60% `Healing`)
+- Ludovic (60% `Healing`)
+
+**Damage**
+
+- Lumont (100% `Physical` `Max HP-based damage`)
+- Soren (92% `Physical`)
+- Gwyneth (92% `Physical` `Max HP-based damage`)
+
 ### Summary for Granny Dahnie
 
 #### Stats Granny Dahnie benefits from
@@ -2258,7 +2755,7 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 #### Crowd Control provided by Granny Dahnie
 
 - Unaffected — Self — On skill
-- Pin — Single target — `low`
+- Pin — Area — `low`
 - Taunt — Single target — `high`
 
 ## Gunnar
@@ -2288,6 +2785,25 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) [signature fuel]
   - Max HP via Shield (multiple targets, medium)
+
+### Units that can act as a replacement for Gunnar
+
+**Buffs on allies**
+
+- Pandora (54% `Healing` `Invincible`)
+
+**Damage**
+
+- Brutus (90% `Max HP-based damage` `DoT` `Physical`)
+- Cecia (88% `Max HP-based damage` `Physical` `DoT`)
+- Daimon (83% `Max HP-based damage` `DoT`)
+
+**Crowd Control**
+
+- Lenya (90% `Stun`)
+- Vala (90% `Stun`)
+- Walker (90% `Stun`)
+
 ### Summary for Gunnar
 
 #### Stats Gunnar benefits from
@@ -2312,7 +2828,7 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 #### Crowd Control provided by Gunnar
 
-- Stun — Single target — `low`
+- Stun — All units — `low`
 
 #### Gunnar's Special Effects
 
@@ -2345,6 +2861,15 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Gwyneth
+
+**Damage**
+
+- Granny Dahnie (92% `Physical` `Max HP-based damage`)
+- Lumont (92% `Physical` `Max HP-based damage`)
+- Soren (86% `Physical`)
+
 ### Summary for Gwyneth
 
 #### Stats Gwyneth benefits from
@@ -2364,7 +2889,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Gwyneth
 
-- Pin — Single target — `medium`
+- Pin — Area — `medium`
 - Silence — Area — `low`
 - Stun — Area — `low`
 
@@ -2396,6 +2921,20 @@ Common buffers are **Lyca**, **Hugin**, or **Ravion**.
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD buff (all units, low) [signature fuel]
+
+### Units that can act as a replacement for Hammie
+
+**Buffs on allies**
+
+- Berial (60% `Healing`)
+- Nara (53% `Healing`)
+- Solise (50% `Healing`)
+
+**Damage**
+
+- Rowan (100% `Magic`)
+- Odie (50% `Magic`)
+
 ### Summary for Hammie
 
 #### Stats Hammie benefits from
@@ -2440,6 +2979,21 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Cecia**
   - Max HP buff (single target, high)
   - Lifedrain buff (area, low)
+
+### Units that can act as a replacement for Harak
+
+**Buffs on allies**
+
+- Baelran (66% `Healing`)
+- Bryon (66% `Healing`)
+- Granny Dahnie (60% `Healing`)
+
+**Damage**
+
+- Seth (85% `Physical`)
+- Kordan (82% `Physical` `HP loss`)
+- Ravion (82% `Physical` `HP loss`)
+
 ### Summary for Harak
 
 #### Stats Harak benefits from
@@ -2514,6 +3068,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting from Hepler
 
+- Shadewing
 - Alna
 - Daimon
 - Gerda
@@ -2523,7 +3078,22 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Hepler
 
-- **Antandra** (57% match `Taunt` `Physical` `Healing` `Stun`)
+**Buffs on allies**
+
+- Callan (55% `Max HP` `Healing`)
+- Saida (54% `Max HP` `Healing`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Brutus (54% `Taunt`)
+- Lumont (53% `Taunt` `Stun`)
+- Antandra (52% `Taunt` `Stun`)
 
 ### Summary for Hepler
 
@@ -2546,7 +3116,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Debuffs provided by Hepler
 
-- Haste debuff — Single target — `high`
+- Haste debuff — Area — `high`
 
 #### Crowd Control provided by Hepler
 
@@ -2610,6 +3180,21 @@ These are the **10** strongest pairings:
 - Phraesto
 - Smokey & Meerky
 - Talene
+
+### Units that can act as a replacement for Hewynn
+
+**Buffs on allies**
+
+- Lorsan (71% `Healing`)
+- Isabella (66% `Healing`)
+- Antandra (60% `Healing`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
 ### Summary for Hewynn
 
 #### Stats Hewynn benefits from
@@ -2672,6 +3257,15 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 ### Units benefitting from Himmel
 
 - Baelran
+
+### Units that can act as a replacement for Himmel
+
+**Damage**
+
+- Valka (93% `Physical` `Max HP-based damage`)
+- Florabelle (89% `Physical` `Max HP-based damage`)
+- Hodgkin (89% `Physical` `Max HP-based damage`)
+
 ### Summary for Himmel
 
 #### Stats Himmel benefits from
@@ -2731,6 +3325,21 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
   - ATK SPD buff (multiple targets, high) [signature fuel]
 - **Zandrok**
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+
+### Units that can act as a replacement for Hodgkin
+
+**Buffs on allies**
+
+- Tasi (100% `Healing`)
+- Bryon (66% `Healing`)
+- Granny Dahnie (60% `Healing`)
+
+**Damage**
+
+- Florabelle (100% `Max HP-based damage` `Physical`)
+- Cecia (90% `Max HP-based damage` `Physical`)
+- Himmel (89% `Physical` `Max HP-based damage`)
+
 ### Summary for Hodgkin
 
 #### Stats Hodgkin benefits from
@@ -2749,7 +3358,7 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 #### Debuffs provided by Hodgkin
 
-- Energy drain (Mythic+) — Single target — `low`
+- Energy drain (Mythic+) — Area — `low`
 - Vitality debuff (EX+5) — Single target — `low`
 - Phys DEF debuff (Supreme+) — Single target — `low`
 
@@ -2809,6 +3418,15 @@ These are the **10** strongest pairings:
 - Lenya
 - Lumont
 - Mehira
+
+### Units that can act as a replacement for Hugin
+
+**Damage**
+
+- Rhys (100% `Physical`)
+- Sinbad (100% `Physical`)
+- Antandra (75% `Physical`)
+
 ### Summary for Hugin
 
 #### Stats Hugin benefits from
@@ -2844,6 +3462,8 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
 - **Kafra**
@@ -2851,13 +3471,20 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 - **Koko**
   - Healing (multiple targets, high)
   - Lifedrain buff (multiple targets, low)
-- **Antandra**
-  - Healing (multiple targets, high)
 
 ### Units that can act as a replacement for Igor
 
-- **Atalanta** (52% match `Physical` `Healing`)
-- **Lucca** (52% match `Physical` `Healing`)
+**Buffs on allies**
+
+- Atalanta (100% `Healing`)
+- Lucca (100% `Healing`)
+- Talene (100% `Healing`)
+
+**Damage**
+
+- Koko (100% `Physical`)
+- Kulu (100% `Physical`)
+- Lyca (100% `Physical`)
 
 ### Summary for Igor
 
@@ -2894,8 +3521,19 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 ### Units Indris benefits from
 
 Look for units providing: `ATK` `ATK SPD / Haste`  
-Common buffers are **Lyca**, **Twins**, or **Hugin**.
+Common buffers are **Lyca**, **Ravion**, or **Twins**.
 
+- **Pandora**
+  - Energy recovery (single target, low) [signature fuel]
+  - Energy recovery (1000 at battle start, single target) [signature fuel]
+  - Enables Multiple debuffs on target via 5 debuff types
+  - Enables Debuff on target via ATK debuff (all units)
+- **Sinbad**
+  - Enables Multiple debuffs on target via 6 debuff types
+  - Enables Debuff on target via ATK debuff (multiple targets)
+- **Natsu**
+  - Enables Multiple debuffs on target via 3 debuff types
+  - Enables Debuff on target via Haste debuff (area)
 - **Alna**
   - ATK buff (single target, medium)
   - Enables Multiple debuffs on target via 2 debuff types
@@ -2905,15 +3543,25 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
   - ATK SPD buff (all units, low) [signature fuel]
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via Energy drain (all units)
-- **Sinbad**
-  - Enables Multiple debuffs on target via 4 debuff types
-  - Enables Debuff on target via Vitality debuff (multiple targets)
-- **Frieren**
-  - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via DoT (area)
-- **Alsa**
-  - Enables Multiple debuffs on target via 3 debuff types
-  - Enables Debuff on target via Movement speed debuff (area)
+
+### Units benefitting from Indris
+
+- Nerion
+- Carolina
+
+### Units that can act as a replacement for Indris
+
+**Damage**
+
+- Baelran (86% `True damage` `Physical` `Max HP-based damage`)
+- Temesia (83% `Physical` `Max HP-based damage` `True damage`)
+- Korin (82% `Physical` `Max HP-based damage` `True damage`)
+
+**Crowd Control**
+
+- Eironn (56% `Move` `Pin`)
+- Evie (54% `Move` `Pin` `Silence`)
+
 ### Summary for Indris
 
 #### Stats Indris benefits from
@@ -2937,7 +3585,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 #### Crowd Control provided by Indris
 
 - Move — Area — `high`
-- Pin — Single target — `high`
+- Pin — Area — `high`
 - Silence — Single target — `low`
 
 #### Indris's Special Effects
@@ -2968,6 +3616,8 @@ Common buffers are **Mikola**, **Twins**, or **Hugin**.
   - Healing (multiple targets, high)
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Fay**
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
@@ -2975,8 +3625,6 @@ Common buffers are **Mikola**, **Twins**, or **Hugin**.
 - **Contess**
   - ATK buff (single target, high)
   - Healing (multiple targets, high)
-- **Kafra**
-  - Healing over time (area, high)
 
 ### Units benefitting from Isabella
 
@@ -2986,7 +3634,21 @@ Common buffers are **Mikola**, **Twins**, or **Hugin**.
 - Evie
 - Igor
 - Phraesto
-- Smokey & Meerky
+
+### Units that can act as a replacement for Isabella
+
+**Buffs on allies**
+
+- Hewynn (66% `Healing`)
+- Antandra (60% `Healing`)
+- Marcille (60% `Healing`)
+
+**Damage**
+
+- Aurora (100% `Magic`)
+- Carolina (100% `Magic`)
+- Eironn (100% `Magic`)
+
 ### Summary for Isabella
 
 #### Stats Isabella benefits from
@@ -3058,13 +3720,20 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Contess
 - Evie
 - Igor
-- Phraesto
 
 ### Units that can act as a replacement for Kafra
 
-- **Lenya** (55% match `Physical` `Stun`)
-- **Gerda** (54% match `Healing` `Physical` `Stun`)
-- **Atalanta** (51% match `Physical` `Stun` `Move`)
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Alsa (75% `Stun` `Move`)
+- Lenya (66% `Stun`)
+- Vala (66% `Stun`)
 
 ### Summary for Kafra
 
@@ -3085,7 +3754,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 #### Debuffs provided by Kafra
 
 - Marked target (focus fire) — Single target — `medium`
-- Phys DEF debuff — Single target — `low`
+- Phys DEF debuff — Area — `low`
 - ATK debuff (Mythic+) — Single target — `medium`
 - Haste debuff (Mythic+) — Single target — `low`
 
@@ -3134,10 +3803,28 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting from Koko
 
+- Perseus
+- Silven
+- Valka
 - Talene
 - Tilaya
 - Igor
 - Saida
+
+### Units that can act as a replacement for Koko
+
+**Damage**
+
+- Igor (100% `Physical`)
+- Kulu (100% `Physical`)
+- Lyca (100% `Physical`)
+
+**Crowd Control**
+
+- Faramor (100% `Stun`)
+- Lorsan (88% `Stun`)
+- Lucy (84% `Stun`)
+
 ### Summary for Koko
 
 #### Stats Koko benefits from
@@ -3152,6 +3839,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Buffs provided by Koko
 
+- Damage taken reduction — All units — `high`
 - Healing — Multiple targets — `high`
 - Healing over time — Single target — `high`
 - Lifedrain buff — Multiple targets — `low`
@@ -3160,7 +3848,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Debuffs provided by Koko
 
-- Damage taken debuff — Single target — `high`
+- Damage taken debuff — Area — `high`
 
 #### Crowd Control provided by Koko
 
@@ -3194,14 +3882,22 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
   - Healing (multiple targets, high)
 - **Hewynn**
   - Healing (all units, high)
-- **Isabella**
-  - Healing (area, high)
-  - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
+- **Lorsan**
+  - Healing (all units, high)
 
 ### Units benefitting from Kordan
 
 - Nerion
 - Carolina
+
+### Units that can act as a replacement for Kordan
+
+**Damage**
+
+- Ravion (100% `Physical` `HP loss`)
+- Aliceth (89% `Physical` `HP loss`)
+- Harak (82% `Physical` `HP loss`)
+
 ### Summary for Kordan
 
 #### Stats Kordan benefits from
@@ -3226,7 +3922,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 #### Crowd Control provided by Kordan
 
 - Knock down — Single target — `high`
-- Move — Single target — `low`
+- Move — Area — `low`
 - Pin — Area — `high`
 
 ## Korin
@@ -3258,6 +3954,27 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - Max HP buff (single target, low)
   - Energy recovery (single target, low) [signature fuel]
   - Energy recovery (1000 at battle start, single target) [signature fuel]
+
+### Units that can act as a replacement for Korin
+
+**Buffs on allies**
+
+- Scarlita (100% `Max HP`)
+- Lucy (66% `Max HP`)
+- Daimon (50% `Max HP`)
+
+**Damage**
+
+- Nara (90% `Max HP-based damage` `True damage` `Physical`)
+- Baelran (87% `Max HP-based damage` `Physical` `True damage`)
+- Temesia (84% `Physical` `Max HP-based damage` `True damage`)
+
+**Crowd Control**
+
+- Cecia (100% `Pin`)
+- Velara (100% `Pin`)
+- Gala (66% `Pin`)
+
 ### Summary for Korin
 
 #### Stats Korin benefits from
@@ -3311,7 +4028,16 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 ### Units that can act as a replacement for Kruger
 
-- **Antandra** (50% match `Physical`)
+**Buffs on allies**
+
+- Walker (88% `Life Drain`)
+- Brutus (75% `Life Drain`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
 
 ### Summary for Kruger
 
@@ -3331,7 +4057,7 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 #### Debuffs provided by Kruger
 
-- Damage taken debuff — Single target — `medium`
+- Damage taken debuff — Area — `medium`
 - Phys DEF debuff — Single target — `low`
 - Vulnerable debuff — Area — `medium`
 
@@ -3373,6 +4099,29 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Fay**
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Kulu
+
+**Buffs on allies**
+
+- Lily May (100% `DEF Penetration`)
+- Silven (100% `DEF Penetration`)
+- Pang (50% `DEF Penetration`)
+
+**Similar Skills**
+
+- Alsa (100% `battlefield-modification`)
+
+**Damage**
+
+- Igor (100% `Physical`)
+- Koko (100% `Physical`)
+- Lyca (100% `Physical`)
+
+**Crowd Control**
+
+- Twins (56% `Move`)
+
 ### Summary for Kulu
 
 #### Stats Kulu benefits from
@@ -3439,6 +4188,21 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Valka**
   - ATK SPD buff (multiple targets, high) [signature fuel]
   - Healing (single target, low)
+
+### Units that can act as a replacement for Laios
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Arden (88% `Pin`)
+- Cecia (56% `Pin`)
+- Korin (56% `Pin`)
+
 ### Summary for Laios
 
 #### Stats Laios benefits from
@@ -3512,9 +4276,17 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Lenya
 
-- **Valen** (57% match `Physical` `Stun`)
-- **Kafra** (55% match `Physical` `Stun`)
-- **Pang** (50% match `Physical` `Stun`)
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Vala (100% `Stun`)
+- Walker (100% `Stun`)
+- Gunnar (90% `Stun`)
 
 ### Summary for Lenya
 
@@ -3564,6 +4336,31 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 - **Fay**
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
+
+### Units benefitting from Lily May
+
+- Bonnie
+- Aliceth
+
+### Units that can act as a replacement for Lily May
+
+**Buffs on allies**
+
+- Kulu (100% `DEF Penetration`)
+- Silven (100% `DEF Penetration`)
+- Pang (50% `DEF Penetration`)
+
+**Damage**
+
+- Alsa (93% `Magic`)
+- Sylphira (89% `Magic` `Max HP-based damage`)
+- Shemira (80% `Magic` `Max HP-based damage`)
+
+**Crowd Control**
+
+- Marcille (60% `Interrupt`)
+- Smokey & Meerky (55% `Interrupt`)
+
 ### Summary for Lily May
 
 #### Stats Lily May benefits from
@@ -3583,12 +4380,12 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 #### Debuffs provided by Lily May
 
-- Energy drain — Single target — `high`
+- Energy drain — All units — `high`
 
 #### Crowd Control provided by Lily May
 
 - Unaffected — Self — Start of battle
-- Interrupt — Single target — `low`
+- Interrupt — All units — `low`
 
 #### Lily May's Special Effects
 
@@ -3624,6 +4421,37 @@ Common buffers are **Lyca**, **Hugin**, or **Ravion**.
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD buff (all units, low) [signature fuel]
+
+### Units benefitting from Lorsan
+
+- Callan
+- Contess
+- Evie
+- Igor
+- Phraesto
+- Smokey & Meerky
+- Thador
+- Tilaya
+
+### Units that can act as a replacement for Lorsan
+
+**Buffs on allies**
+
+- Hewynn (71% `Healing`)
+- Isabella (50% `Healing`)
+
+**Damage**
+
+- Cryonaia (90% `Magic` `DoT`)
+- Tasi (90% `Magic` `DoT`)
+- Berial (88% `DoT` `Magic`)
+
+**Crowd Control**
+
+- Faramor (88% `Stun`)
+- Koko (88% `Stun`)
+- Lucy (75% `Stun`)
+
 ### Summary for Lorsan
 
 #### Stats Lorsan benefits from
@@ -3640,7 +4468,7 @@ Common buffers are **Lyca**, **Hugin**, or **Ravion**.
 
 - Dodge chance buff — Single target — `medium`
 - Healing over time — Single target — `medium`
-- Healing (Mythic+) — Multiple targets — `high`
+- Healing (Mythic+) — All units — `high`
 
 #### Crowd Control provided by Lorsan
 
@@ -3680,8 +4508,23 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units that can act as a replacement for Lucca
 
-- **Atalanta** (61% match `Physical` `Stun` `Healing`)
-- **Gerda** (50% match `Physical` `Stun` `Interrupt` `Healing`)
+**Buffs on allies**
+
+- Atalanta (100% `Healing`)
+- Igor (100% `Healing`)
+- Talene (100% `Healing`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Perseus (80% `Stun`)
+- Zandrok (80% `Stun`)
+- Lorsan (60% `Stun`)
 
 ### Summary for Lucca
 
@@ -3723,6 +4566,8 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
   - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
@@ -3732,13 +4577,10 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
   - Energy recovery (1000 at battle start, single target) [signature fuel]
 - **Kafra**
   - Healing over time (area, high)
-- **Fay**
-  - Healing (arc, high, conditional (frequent))
-  - ATK SPD buff (multiple targets, low) [signature fuel]
 
 ### Units benefitting from Lucius
 
-**25** units include this provider among their top 5 synergy partners. Why the match is common:
+**23** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -3746,20 +4588,33 @@ These are the **10** strongest pairings:
 
 - Shadewing
 - Valka
-- Aliceth
 - Himmel
-- Thador
 - Tilaya
 - Alna
 - Athalia
 - Baelran
 - Daimon
+- Eironn
+- Gerda
 
 ### Units that can act as a replacement for Lucius
 
-- **Atalanta** (56% match `Physical` `Move` `Healing` `Stun`)
-- **Ulmus** (52% match `Physical` `Move` `Healing` `Max HP`)
-- **Hepler** (50% match `Physical` `Max HP` `Healing` `Stun`)
+**Buffs on allies**
+
+- Saida (80% `Max HP` `Healing`)
+- Callan (50% `Max HP` `Healing`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Twins (66% `Move`)
+- Soren (57% `Move` `Stun`)
+- Rhys (54% `Move`)
 
 ### Summary for Lucius
 
@@ -3818,6 +4673,27 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Lucy
+
+**Buffs on allies**
+
+- Korin (66% `Max HP`)
+- Scarlita (66% `Max HP`)
+- Callan (60% `Max HP`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
+**Crowd Control**
+
+- Pang (88% `Stun`)
+- Faramor (84% `Stun`)
+- Koko (84% `Stun`)
+
 ### Summary for Lucy
 
 #### Stats Lucy benefits from
@@ -3860,6 +4736,8 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
   - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
@@ -3869,9 +4747,27 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
   - Energy recovery (1000 at battle start, single target) [signature fuel]
 - **Kafra**
   - Healing over time (area, high)
-- **Fay**
-  - Healing (arc, high, conditional (frequent))
-  - ATK SPD buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Ludovic
+
+**Buffs on allies**
+
+- Gerda (65% `Healing`)
+- Granny Dahnie (60% `Healing`)
+- Antandra (59% `Healing`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
+**Crowd Control**
+
+- Damian (100% `Stun`)
+- Nazrik (100% `Stun`)
+- Nerion (100% `Stun`)
+
 ### Summary for Ludovic
 
 #### Stats Ludovic benefits from
@@ -3935,10 +4831,24 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting from Lumont
 
-- Nerion
 - Carolina
 - Lucca
 - Niru
+
+### Units that can act as a replacement for Lumont
+
+**Damage**
+
+- Granny Dahnie (100% `Physical` `Max HP-based damage`)
+- Soren (92% `Physical`)
+- Gwyneth (92% `Physical` `Max HP-based damage`)
+
+**Crowd Control**
+
+- Antandra (57% `Stun` `Taunt`)
+- Hepler (53% `Taunt` `Stun`)
+- Brutus (50% `Taunt`)
+
 ### Summary for Lumont
 
 #### Stats Lumont benefits from
@@ -3995,7 +4905,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting from Lyca
 
-**65** units include this provider among their top 5 synergy partners. Why the match is common:
+**63** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -4004,8 +4914,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 These are the **10** strongest pairings: 
 
 - Indris
-- Perseus
-- Silven
 - Aliceth
 - Valka
 - Zorya
@@ -4013,10 +4921,32 @@ These are the **10** strongest pairings:
 - Cyran
 - Dionel
 - Fay
+- Gwyneth
+- Korin
 
 ### Units that can act as a replacement for Lyca
 
-- **Sonja** (52% match `Physical` `Stun`)
+**Buffs on allies**
+
+- Valka (50% `ATK SPD`)
+
+**Energy provider**
+
+- Ravion
+- Rowan
+- Thador
+
+**Damage**
+
+- Igor (100% `Physical`)
+- Koko (100% `Physical`)
+- Kulu (100% `Physical`)
+
+**Crowd Control**
+
+- Bonnie (100% `Stun`)
+- Marilee (100% `Stun`)
+- Zanie (100% `Stun`)
 
 ### Summary for Lyca
 
@@ -4072,9 +5002,22 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Units that can act as a replacement for Marcille
 
-- **Ludovic** (56% match `Magic` `Healing`)
-- **Solise** (55% match `Magic` `Healing`)
-- **Hewynn** (53% match `Magic` `Healing`)
+**Buffs on allies**
+
+- Antandra (100% `Healing`)
+- Solise (66% `Healing`)
+- Hewynn (60% `Healing`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
+**Crowd Control**
+
+- Lily May (60% `Interrupt`)
+- Saida (59% `Interrupt`)
 
 ### Summary for Marcille
 
@@ -4135,6 +5078,21 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Marilee
+
+**Damage**
+
+- Perseus (94% `Physical` `True damage`)
+- Scarlita (90% `Physical` `True damage`)
+- Athalia (79% `Physical` `True damage`)
+
+**Crowd Control**
+
+- Bonnie (100% `Stun`)
+- Lyca (100% `Stun`)
+- Zanie (100% `Stun`)
+
 ### Summary for Marilee
 
 #### Stats Marilee benefits from
@@ -4196,6 +5154,29 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (single target, high) [signature fuel]
   - Max HP via Shield (single target, high)
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Mehira
+
+**Buffs on allies**
+
+- Vala (100% `Haste`)
+- Gala (50% `Haste`)
+
+**Similar Skills**
+
+- Cyran (100% `enemy-grouping`)
+- Eironn (100% `enemy-grouping`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
+**Crowd Control**
+
+- Satrana (56% `Charm`)
+
 ### Summary for Mehira
 
 #### Stats Mehira benefits from
@@ -4220,7 +5201,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Mehira
 
-- Charm — Single target — `medium`
+- Charm — Area — `medium`
 
 #### Mehira's Special Effects
 
@@ -4263,7 +5244,7 @@ Common buffers are **Twins**, **Hugin**, or **Damian**.
 
 ### Units benefitting from Mikola
 
-**81** units include this provider among their top 5 synergy partners. Why the match is common:
+**79** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -4279,6 +5260,15 @@ These are the **10** strongest pairings:
 - Mehira
 - Zorya
 - Aurora
+
+### Units that can act as a replacement for Mikola
+
+**Damage**
+
+- Igor (100% `Physical`)
+- Koko (100% `Physical`)
+- Kulu (100% `Physical`)
+
 ### Summary for Mikola
 
 #### Stats Mikola benefits from
@@ -4328,6 +5318,15 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Mirael
+
+**Damage**
+
+- Bonnie (100% `Magic` `DoT`)
+- Arden (78% `Magic` `DoT`)
+- Aurora (72% `Magic`)
+
 ### Summary for Mirael
 
 #### Stats Mirael benefits from
@@ -4362,12 +5361,25 @@ Common buffers are **Ravion** or **Lyca**.
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
   - Energy recovery (multiple targets, low) [signature fuel]
-- **Silven**
-  - Energy recovery (single target, high) [signature fuel]
 - **Pandora**
   - Energy recovery (single target, low) [signature fuel]
 - **Thador**
   - Energy recovery (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Nara
+
+**Buffs on allies**
+
+- Berial (88% `Healing`)
+- Athalia (75% `Healing`)
+- Velara (72% `Healing`)
+
+**Damage**
+
+- Korin (90% `Max HP-based damage` `True damage` `Physical`)
+- Baelran (85% `Max HP-based damage` `True damage` `Physical`)
+- Nazrik (84% `True damage` `Physical` `Max HP-based damage`)
+
 ### Summary for Nara
 
 #### Stats Nara benefits from
@@ -4424,6 +5436,30 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Shakir**
   - Haste buff (multiple targets, low) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, low) [signature fuel]
+
+### Units benefitting from Natsu
+
+- Indris
+- Bonnie
+
+### Units that can act as a replacement for Natsu
+
+**Similar Skills**
+
+- Talene (100% `fire-attack`)
+
+**Damage**
+
+- Daimon (88% `Max HP-based damage` `Magic` `DoT`)
+- Satrana (88% `Max HP-based damage` `Magic` `DoT`)
+- Shemira (87% `Max HP-based damage` `Magic`)
+
+**Crowd Control**
+
+- Valka (70% `Stun` `Knock down`)
+- Callan (58% `Stun` `Knock down`)
+- Frieren (52% `Knock down` `Stun`)
+
 ### Summary for Natsu
 
 #### Stats Natsu benefits from
@@ -4442,7 +5478,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Debuffs provided by Natsu
 
-- Haste debuff — Single target — `high`
+- Haste debuff — Area — `high`
 - Max HP debuff (Mythic+) — Single target — `medium`
 - DoT (Supreme+) — Single target — `low`
 
@@ -4476,6 +5512,21 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Nazrik
+
+**Damage**
+
+- Nara (84% `True damage` `Physical` `Max HP-based damage`)
+- Indris (81% `True damage` `Physical` `Max HP-based damage`)
+- Pippa (79% `True damage` `Max HP-based damage`)
+
+**Crowd Control**
+
+- Damian (100% `Stun`)
+- Ludovic (100% `Stun`)
+- Nerion (100% `Stun`)
+
 ### Summary for Nazrik
 
 #### Stats Nazrik benefits from
@@ -4519,9 +5570,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 Look for units providing: `ATK SPD / Haste` `Max HP` `Energy` `DEF Penetration`  
 Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
-- **Dunlingr**
-  - ATK SPD buff (all units, low) [signature fuel]
-  - Enables CC on enemies via Silence (all units, high)
 - **Zandrok**
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
   - Enables CC on enemies via Stun (area, high)
@@ -4530,13 +5578,24 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - **Kordan**
   - DEF Penetration buff (multiple targets, low)
   - Enables CC on enemies via Pin (area, high)
-- **Lumont**
-  - Enables CC on enemies via Stun (area, high)
+- **Carolina**
+  - Enables CC on enemies via Freeze (area, high)
+- **Indris**
+  - Enables CC on enemies via Pin (area, high)
 
 ### Units that can act as a replacement for Nerion
 
-- **Damian** (52% match `Magic` `Stun`)
-- **Ludovic** (52% match `Magic` `Stun`)
+**Damage**
+
+- Aurora (100% `Magic`)
+- Carolina (100% `Magic`)
+- Eironn (100% `Magic`)
+
+**Crowd Control**
+
+- Damian (100% `Stun`)
+- Ludovic (100% `Stun`)
+- Nazrik (100% `Stun`)
 
 ### Summary for Nerion
 
@@ -4601,6 +5660,19 @@ Common buffers are **Rowan**, **Lyca**, or **Twins**.
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
   - Enables Enemy defeat via Marked target (focus fire)
+
+### Units that can act as a replacement for Niru
+
+**Similar Skills**
+
+- Bryon (100% `battle-start-ult`)
+
+**Damage**
+
+- Dunlingr (79% `Magic` `HP loss`)
+- Walker (70% `HP loss` `Max HP-based damage`)
+- Shadewing (60% `Magic` `Max HP-based damage` `HP loss`)
+
 ### Summary for Niru
 
 #### Stats Niru benefits from
@@ -4656,6 +5728,15 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Odie
+
+**Damage**
+
+- Bonnie (54% `DoT` `Magic`)
+- Mirael (54% `DoT` `Magic`)
+- Hammie (50% `Magic`)
+
 ### Summary for Odie
 
 #### Stats Odie benefits from
@@ -4687,8 +5768,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 Look for units providing: `Energy`  
 Common buffers are **Ravion** or **Lyca**.
 
-- **Silven**
-  - Energy recovery (single target, high) [signature fuel]
 - **Smokey & Meerky**
   - Energy recovery (multiple targets, low) [signature fuel]
 - **Thador**
@@ -4696,9 +5775,27 @@ Common buffers are **Ravion** or **Lyca**.
 
 ### Units benefitting from Pandora
 
+- Indris
 - Chippy
 - Nara
 - Scarlita
+
+### Units that can act as a replacement for Pandora
+
+**Buffs on allies**
+
+- Gunnar (54% `Healing` `Invincible`)
+
+**Energy provider**
+
+- Rowan
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
 ### Summary for Pandora
 
 #### Stats Pandora benefits from
@@ -4719,14 +5816,11 @@ Common buffers are **Ravion** or **Lyca**.
 
 #### Debuffs provided by Pandora
 
+- ATK debuff — All units — `low`
 - Damage taken debuff — Single target — `low`
 - Energy drain — Single target — `low`
 - Haste debuff — Single target — `medium`
 - Vitality debuff — Single target — `high`
-
-#### Crowd Control provided by Pandora
-
-- Move — Single target — `low`
 
 #### Pandora's Special Effects
 
@@ -4767,9 +5861,23 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units that can act as a replacement for Pang
 
-- **Valen** (55% match `Physical` `Stun`)
-- **Sonja** (53% match `Physical` `Stun`)
-- **Lenya** (50% match `Physical` `Stun`)
+**Buffs on allies**
+
+- Kulu (50% `DEF Penetration`)
+- Lily May (50% `DEF Penetration`)
+- Silven (50% `DEF Penetration`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Lucy (88% `Stun`)
+- Gunnar (83% `Stun`)
+- Faramor (75% `Stun`)
 
 ### Summary for Pang
 
@@ -4793,7 +5901,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 #### Crowd Control provided by Pang
 
 - Unaffected — Self — On skill
-- Stun — Single target — `low`
+- Stun — Area — `low`
 
 #### Pang's Special Effects
 
@@ -4827,6 +5935,15 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Parisa
+
+**Damage**
+
+- Aurora (100% `Magic`)
+- Carolina (100% `Magic`)
+- Eironn (100% `Magic`)
+
 ### Summary for Parisa
 
 #### Stats Parisa benefits from
@@ -4864,6 +5981,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Evie**
   - ATK buff (multiple targets, high)
   - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
+- **Koko**
+  - Max HP via Shield (all units, low)
+  - Enables Ally stat buffs via 6 ally stat buffs
 - **Contess**
   - ATK buff (single target, high)
   - Max HP via Shield (single target, medium)
@@ -4872,13 +5992,30 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - ATK buff (multiple targets, low)
   - Max HP buff (multiple targets, high)
   - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
-- **Koko**
-  - Max HP via Shield (all units, low)
-  - Enables Ally stat buffs via 5 ally stat buffs
 - **Alna**
   - ATK buff (single target, medium)
   - Max HP buff (single target, low)
   - Enables Ally stat buffs via 6 ally stat buffs (start of battle)
+
+### Units that can act as a replacement for Perseus
+
+**Buffs on allies**
+
+- Ravion (50% `ATK`)
+- Sonja (50% `ATK`)
+
+**Damage**
+
+- Scarlita (95% `Physical` `True damage`)
+- Marilee (94% `Physical` `True damage`)
+- Athalia (82% `Physical` `True damage`)
+
+**Crowd Control**
+
+- Zandrok (100% `Stun`)
+- Lucca (80% `Stun`)
+- Lorsan (75% `Stun`)
+
 ### Summary for Perseus
 
 #### Stats Perseus benefits from
@@ -4925,6 +6062,8 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -4933,8 +6072,31 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
 - **Isabella**
   - Healing (area, high)
-- **Kafra**
-  - Healing over time (area, high)
+
+### Units that can act as a replacement for Phraesto
+
+**Buffs on allies**
+
+- Korin (50% `Max HP`)
+- Scarlita (50% `Max HP`)
+
+**Energy provider**
+
+- Smokey & Meerky
+- Thador
+
+**Damage**
+
+- Aurora (100% `Magic`)
+- Carolina (100% `Magic`)
+- Eironn (100% `Magic`)
+
+**Crowd Control**
+
+- Bonnie (50% `Stun`)
+- Lyca (50% `Stun`)
+- Marilee (50% `Stun`)
+
 ### Summary for Phraesto
 
 #### Stats Phraesto benefits from
@@ -4949,6 +6111,7 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 #### Buffs provided by Phraesto
 
+- Damage taken reduction — Single target — `low`
 - Max HP buff — Single target — `low`
 - Shield — Single target — `medium`
 
@@ -4993,6 +6156,15 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Shakir**
   - Haste buff (multiple targets, low) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Pippa
+
+**Damage**
+
+- Nazrik (79% `True damage` `Max HP-based damage`)
+- Nara (74% `True damage` `Max HP-based damage`)
+- Indris (73% `True damage` `Max HP-based damage`)
+
 ### Summary for Pippa
 
 #### Stats Pippa benefits from
@@ -5008,7 +6180,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Debuffs provided by Pippa
 
-- Energy drain — Single target — `medium`
+- Energy drain — Area — `medium`
 
 #### Crowd Control provided by Pippa
 
@@ -5050,13 +6222,14 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting from Ravion
 
-**22** units include this provider among their top 5 synergy partners. Why the match is common:
+**23** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
 
 These are the **10** strongest pairings: 
 
+- Indris
 - Aliceth
 - Arden
 - Pang
@@ -5066,7 +6239,24 @@ These are the **10** strongest pairings:
 - Hammie
 - Hewynn
 - Hodgkin
-- Kafra
+
+### Units that can act as a replacement for Ravion
+
+**Buffs on allies**
+
+- Perseus (50% `ATK`)
+
+**Energy provider**
+
+- Lyca
+- Thador
+
+**Damage**
+
+- Kordan (100% `Physical` `HP loss`)
+- Aliceth (89% `Physical` `HP loss`)
+- Harak (82% `Physical` `HP loss`)
+
 ### Summary for Ravion
 
 #### Stats Ravion benefits from
@@ -5090,14 +6280,14 @@ These are the **10** strongest pairings:
 
 #### Debuffs provided by Ravion
 
-- ATK debuff — Single target — `medium`
-- Phys DEF debuff — Single target — `medium`
+- ATK debuff — Multiple targets — `medium`
+- Phys DEF debuff — Multiple targets — `medium`
 
 #### Crowd Control provided by Ravion
 
 - Unaffected — Self — Start of battle
-- Knock down — Single target — `high`
-- Move — Single target — `high`
+- Knock down — Multiple targets — `high`
+- Move — Multiple targets — `high`
 
 #### Ravion's Special Effects
 
@@ -5122,6 +6312,21 @@ These are the **10** strongest pairings:
 ### Units Reinier benefits from
 
 _No synergy partners matched stat buffs or enablers._
+
+### Units that can act as a replacement for Reinier
+
+**Buffs on allies**
+
+- Atalanta (50% `Healing`)
+- Igor (50% `Healing`)
+- Lucca (50% `Healing`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
 ### Summary for Reinier
 
 #### Damage types dealt by Reinier
@@ -5172,6 +6377,27 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Rhys
+
+**Buffs on allies**
+
+- Athalia (66% `Healing`)
+- Nara (54% `Healing`)
+- Berial (50% `Healing`)
+
+**Damage**
+
+- Hugin (100% `Physical`)
+- Sinbad (100% `Physical`)
+- Antandra (75% `Physical`)
+
+**Crowd Control**
+
+- Twins (59% `Move`)
+- Cassadee (56% `Move`)
+- Lucius (54% `Move`)
+
 ### Summary for Rhys
 
 #### Stats Rhys benefits from
@@ -5243,6 +6469,19 @@ These are the **10** strongest pairings:
 - Cecia
 - Niru
 - Lucius
+
+### Units that can act as a replacement for Rowan
+
+**Energy provider**
+
+- Pandora
+- Lyca
+
+**Damage**
+
+- Hammie (100% `Magic`)
+- Odie (50% `Magic`)
+
 ### Summary for Rowan
 
 #### Stats Rowan benefits from
@@ -5313,6 +6552,25 @@ Common buffers are **Lucius** or **Hugin**.
 - Silvina
 - Thoran
 - Ulmus
+
+### Units that can act as a replacement for Saida
+
+**Buffs on allies**
+
+- Lucius (80% `Max HP` `Healing`)
+- Callan (62% `Max HP` `Healing`)
+- Hepler (54% `Max HP` `Healing`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
+**Crowd Control**
+
+- Marcille (59% `Interrupt`)
+
 ### Summary for Saida
 
 #### Stats Saida benefits from
@@ -5329,10 +6587,14 @@ Common buffers are **Lucius** or **Hugin**.
 - Healing — Single target — `medium`
 - Shield — Multiple targets — `high`
 
+#### Debuffs provided by Saida
+
+- Energy drain — Single target — `high`
+
 #### Crowd Control provided by Saida
 
 - Unaffected — Self — Conditional
-- Interrupt — Single target — `low`
+- Interrupt — Area — `low`
 - Move — Single target — `low`
 
 #### Saida's Special Effects
@@ -5377,7 +6639,21 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Units that can act as a replacement for Salazer
 
-- **Thoran** (52% match `Healing` `Physical` `Life Drain`)
+**Buffs on allies**
+
+- Thoran (60% `Healing` `Life Drain`)
+- Ulmus (60% `Healing` `Life Drain` `Max HP`)
+- Viperian (60% `Healing` `Life Drain`)
+
+**Damage**
+
+- Chippy (100% `Physical`)
+- Silvina (100% `Physical`)
+- Thoran (100% `Physical`)
+
+**Crowd Control**
+
+- Gala (50% `Pin`)
 
 ### Summary for Salazer
 
@@ -5429,6 +6705,25 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, low) [signature fuel]
 - **Valka**
   - ATK SPD buff (multiple targets, high) [signature fuel]
+
+### Units that can act as a replacement for Satrana
+
+**Buffs on allies**
+
+- Sylphira (100% `Life Drain`)
+- Brutus (50% `Life Drain`)
+- Seth (50% `Life Drain`)
+
+**Damage**
+
+- Daimon (100% `Max HP-based damage` `DoT` `Magic`)
+- Shemira (90% `Max HP-based damage` `Magic`)
+- Natsu (88% `Max HP-based damage` `Magic` `DoT`)
+
+**Crowd Control**
+
+- Mehira (56% `Charm`)
+
 ### Summary for Satrana
 
 #### Stats Satrana benefits from
@@ -5448,7 +6743,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Debuffs provided by Satrana
 
-- Vitality debuff — Multiple targets — `low`
+- Vitality debuff — Area — `low`
 
 #### Crowd Control provided by Satrana
 
@@ -5478,14 +6773,33 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 Look for units providing: `Execution` `Energy`  
 Common buffers are **Ravion** or **Lyca**.
 
-- **Silven**
-  - Energy recovery (single target, high) [signature fuel]
 - **Smokey & Meerky**
   - Energy recovery (multiple targets, low) [signature fuel]
 - **Pandora**
   - Energy recovery (single target, low) [signature fuel]
 - **Thador**
   - Energy recovery (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Scarlita
+
+**Buffs on allies**
+
+- Korin (100% `Max HP`)
+- Lucy (66% `Max HP`)
+- Daimon (50% `Max HP`)
+
+**Damage**
+
+- Perseus (95% `Physical` `True damage`)
+- Marilee (90% `Physical` `True damage`)
+- Athalia (85% `Physical` `True damage`)
+
+**Crowd Control**
+
+- Soren (65% `Stun` `Move`)
+- Alsa (56% `Stun` `Move`)
+- Cassadee (51% `Move` `Stun`)
+
 ### Summary for Scarlita
 
 #### Stats Scarlita benefits from
@@ -5508,7 +6822,7 @@ Common buffers are **Ravion** or **Lyca**.
 - Unaffected — Self — Conditional
 - Knock down — Arc — `low`
 - Move — All units — `low`
-- Stun — Arc — `medium`
+- Stun — Area — `medium`
 
 #### Scarlita's Special Effects
 
@@ -5550,6 +6864,21 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Mehira**
   - Haste buff (single target, high) [signature fuel]
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Seth
+
+**Buffs on allies**
+
+- Atalanta (50% `Healing`)
+- Igor (50% `Healing`)
+- Lucca (50% `Healing`)
+
+**Damage**
+
+- Harak (85% `Physical`)
+- Kordan (75% `Physical`)
+- Ravion (75% `Physical`)
+
 ### Summary for Seth
 
 #### Stats Seth benefits from
@@ -5601,27 +6930,35 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 Look for units providing: `ATK` `Max HP` `Energy` `Life Drain`  
 Common buffers are **Lucius**, **Lyca**, or **Ravion**.
 
+- **Evie**
+  - ATK buff (multiple targets, high)
+  - Enables Debuff on target via DoT (all units)
+  - Enables Continuous damage on enemies via Burn
+- **Hepler**
+  - Max HP via Shield (multiple targets, medium)
+  - Enables Debuff on target via Haste debuff (area)
+  - Enables Continuous damage on enemies via tick damage
 - **Alna**
   - ATK buff (single target, medium)
   - Max HP buff (single target, low)
   - Enables Debuff on target via Haste debuff (area)
   - Enables Continuous damage on enemies via DoT
+- **Koko**
+  - Max HP via Shield (all units, low)
+  - Lifedrain buff (multiple targets, low)
+  - Enables Debuff on target via Damage taken debuff (area)
 - **Frieren**
   - Enables Debuff on target via DoT (area)
   - Enables Continuous damage on enemies via DoT + Burn
-- **Brutus**
-  - Lifedrain buff (single target, medium)
-  - Enables Debuff on target via DoT (area)
-  - Enables Continuous damage on enemies via DoT + Burn
-- **Evie**
-  - ATK buff (multiple targets, high)
-  - Enables Debuff on target via DoT (single target)
-  - Enables Continuous damage on enemies via Burn
-- **Cecia**
-  - Max HP buff (single target, high)
-  - Lifedrain buff (area, low)
-  - Enables Debuff on target via Damage taken debuff (single target)
-  - Enables Continuous damage on enemies via DoT
+
+### Units that can act as a replacement for Shadewing
+
+**Damage**
+
+- Niru (60% `Magic` `Max HP-based damage` `HP loss`)
+- Baelran (55% `Max HP-based damage` `True damage`)
+- Nara (53% `Max HP-based damage` `True damage`)
+
 ### Summary for Shadewing
 
 #### Stats Shadewing benefits from
@@ -5642,7 +6979,7 @@ Common buffers are **Lucius**, **Lyca**, or **Ravion**.
 
 #### Debuffs provided by Shadewing
 
-- Magic DEF debuff — Single target — `low`
+- Magic DEF debuff — All units — `low`
 
 #### Shadewing's Special Effects
 
@@ -5690,7 +7027,11 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Shakir
 
-- **Pang** (50% match `Physical`)
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
 
 ### Summary for Shakir
 
@@ -5744,6 +7085,8 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Pandora**
   - Max HP buff (single target, low)
   - Healing (single target, high)
@@ -5755,10 +7098,19 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (multiple targets, high)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-  - Healing (multiple targets, medium)
-  - ATK SPD via Haste buff (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Shemira
+
+**Similar Skills**
+
+- Frieren (100% `high-damage-ult`)
+
+**Damage**
+
+- Daimon (90% `Max HP-based damage` `Magic`)
+- Satrana (90% `Max HP-based damage` `Magic`)
+- Natsu (87% `Max HP-based damage` `Magic`)
+
 ### Summary for Shemira
 
 #### Stats Shemira benefits from
@@ -5790,6 +7142,8 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - **Evie**
   - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
+- **Koko**
+  - Enables Ally stat buffs via 6 ally stat buffs
 - **Fay**
   - ATK SPD buff (multiple targets, low) [signature fuel]
   - DEF buff (multiple targets, low)
@@ -5798,14 +7152,21 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Enables Ally stat buffs via 6 ally stat buffs (start of battle)
 - **Contess**
   - Enables Ally stat buffs via 3 ally stat buffs (start of battle)
-- **Koko**
-  - Enables Ally stat buffs via 5 ally stat buffs
 
-### Units benefitting from Silven
+### Units that can act as a replacement for Silven
 
-- Nara
-- Pandora
-- Scarlita
+**Buffs on allies**
+
+- Kulu (100% `DEF Penetration`)
+- Lily May (100% `DEF Penetration`)
+- Pang (50% `DEF Penetration`)
+
+**Damage**
+
+- Lily May (80% `Magic` `Max HP-based damage`)
+- Sylphira (79% `Magic` `Max HP-based damage`)
+- Alsa (73% `Magic`)
+
 ### Summary for Silven
 
 #### Stats Silven benefits from
@@ -5824,7 +7185,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 #### Buffs provided by Silven
 
 - DEF Penetration buff (Mythic+) — Single target — `low`
-- Energy recovery (Mythic+) — Single target — `high`
 
 #### Silven's Special Effects
 
@@ -5860,6 +7220,19 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Cecia**
   - Max HP buff (single target, high)
   - ATK SPD buff (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Silvina
+
+**Damage**
+
+- Chippy (100% `Physical`)
+- Salazer (100% `Physical`)
+- Thoran (100% `Physical`)
+
+**Crowd Control**
+
+- Daimon (72% `Frighten`)
+
 ### Summary for Silvina
 
 #### Stats Silvina benefits from
@@ -5917,6 +7290,15 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 ### Units benefitting from Sinbad
 
 - Indris
+
+### Units that can act as a replacement for Sinbad
+
+**Damage**
+
+- Hugin (100% `Physical`)
+- Rhys (100% `Physical`)
+- Antandra (75% `Physical`)
+
 ### Summary for Sinbad
 
 #### Stats Sinbad benefits from
@@ -5932,6 +7314,8 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 #### Debuffs provided by Sinbad
 
 - Damage taken debuff — Single target — `medium`
+- ATK debuff (Mythic+) — Multiple targets — `high`
+- Energy drain (Mythic+) — Multiple targets — `medium`
 - Magic DEF debuff (Mythic+) — Multiple targets — `medium`
 - Phys DEF debuff (Mythic+) — Multiple targets — `medium`
 - Vitality debuff (Mythic+) — Multiple targets — `high`
@@ -5966,19 +7350,42 @@ Common buffers are **Mikola**, **Ravion**, or **Rowan**.
   - Healing (multiple targets, high)
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Contess**
   - ATK buff (single target, high)
   - Healing (multiple targets, high)
 - **Isabella**
   - Healing (area, high)
-- **Kafra**
-  - Healing over time (area, high)
 
 ### Units benefitting from Smokey & Meerky
 
 - Nara
 - Pandora
 - Scarlita
+
+### Units that can act as a replacement for Smokey & Meerky
+
+**Buffs on allies**
+
+- Gerda (60% `Healing`)
+- Ludovic (52% `Healing`)
+
+**Energy provider**
+
+- Phraesto
+- Thador
+
+**Damage**
+
+- Aurora (100% `Magic`)
+- Carolina (100% `Magic`)
+- Eironn (100% `Magic`)
+
+**Crowd Control**
+
+- Lily May (55% `Interrupt`)
+
 ### Summary for Smokey & Meerky
 
 #### Stats Smokey & Meerky benefits from
@@ -6001,7 +7408,7 @@ Common buffers are **Mikola**, **Ravion**, or **Rowan**.
 
 #### Crowd Control provided by Smokey & Meerky
 
-- Interrupt — Single target — `medium`
+- Interrupt — Area — `medium`
 - Stun (EX+10) — Single target — `low`
 
 ## Solise
@@ -6032,6 +7439,21 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
   - Energy recovery (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Solise
+
+**Buffs on allies**
+
+- Berial (75% `Healing`)
+- Antandra (66% `Healing`)
+- Marcille (66% `Healing`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
 ### Summary for Solise
 
 #### Stats Solise benefits from
@@ -6088,9 +7510,21 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 ### Units that can act as a replacement for Sonja
 
-- **Pang** (53% match `Physical` `Stun`)
-- **Valen** (52% match `Physical` `Stun`)
-- **Lyca** (52% match `Physical` `Stun`)
+**Buffs on allies**
+
+- Perseus (50% `ATK`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Lenya (88% `Stun`)
+- Vala (88% `Stun`)
+- Walker (88% `Stun`)
 
 ### Summary for Sonja
 
@@ -6110,7 +7544,7 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 #### Crowd Control provided by Sonja
 
-- Stun — Single target — `low`
+- Stun — Area — `low`
 
 ## Soren
 
@@ -6144,6 +7578,26 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Max HP buff (single target, low)
   - Energy recovery (single target, low) [signature fuel]
   - Energy recovery (1000 at battle start, single target) [signature fuel]
+
+### Units that can act as a replacement for Soren
+
+**Buffs on allies**
+
+- Ulmus (50% `Healing` `Max HP`)
+- Zorya (50% `Healing`)
+
+**Damage**
+
+- Granny Dahnie (92% `Physical`)
+- Lumont (92% `Physical`)
+- Gwyneth (86% `Physical`)
+
+**Crowd Control**
+
+- Alsa (73% `Stun` `Move`)
+- Atalanta (66% `Move` `Stun`)
+- Cassadee (66% `Move` `Stun`)
+
 ### Summary for Soren
 
 #### Stats Soren benefits from
@@ -6166,7 +7620,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Soren
 
 - Move — Single target — `high`
-- Stun — Multiple targets — `low`
+- Stun — Area — `low`
 
 ## Sylphira
 
@@ -6195,9 +7649,27 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 - **Hewynn**
   - Healing (all units, high)
-- **Contess**
-  - ATK buff (single target, high)
-  - Healing (multiple targets, high)
+- **Lorsan**
+  - Healing (all units, high)
+
+### Units that can act as a replacement for Sylphira
+
+**Buffs on allies**
+
+- Satrana (100% `Life Drain`)
+- Brutus (50% `Life Drain`)
+- Seth (50% `Life Drain`)
+
+**Damage**
+
+- Lily May (89% `Magic` `Max HP-based damage`)
+- Alsa (84% `Magic`)
+- Natsu (84% `Magic` `Max HP-based damage`)
+
+**Crowd Control**
+
+- Temesia (60% `Knock down` `Interrupt`)
+
 ### Summary for Sylphira
 
 #### Stats Sylphira benefits from
@@ -6219,15 +7691,16 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 #### Debuffs provided by Sylphira
 
 - Energy drain — Single target — `medium`
+- Max HP debuff — Area — `medium`
 
 #### Crowd Control provided by Sylphira
 
 - Immune — Self — On skill
 - Unaffected — Area — Conditional
 - Cleanse (Mythic+) — Self — On skill
-- Interrupt — Single target — `low`
+- Interrupt — Area — `low`
 - Knock down — Area — `medium`
-- Silence — Single target — `low`
+- Silence — Area — `low`
 
 #### Sylphira's Special Effects
 
@@ -6264,9 +7737,27 @@ Common buffers are **Mikola**, **Lucius**, or **Rowan**.
   - Healing (multiple targets, high)
 - **Hewynn**
   - Healing (all units, high)
-- **Hepler**
-  - Max HP via Shield (multiple targets, medium)
-  - Healing (multiple targets, medium)
+- **Lorsan**
+  - Healing (all units, high)
+
+### Units that can act as a replacement for Talene
+
+**Buffs on allies**
+
+- Atalanta (100% `Healing`)
+- Igor (100% `Healing`)
+- Lucca (100% `Healing`)
+
+**Similar Skills**
+
+- Natsu (100% `fire-attack`)
+
+**Damage**
+
+- Zorya (93% `HP loss` `Magic`)
+- Aliceth (70% `HP loss`)
+- Harak (67% `HP loss`)
+
 ### Summary for Talene
 
 #### Stats Talene benefits from
@@ -6329,6 +7820,21 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Nerion
 - Carolina
+
+### Units that can act as a replacement for Tasi
+
+**Buffs on allies**
+
+- Hodgkin (100% `Healing`)
+- Bryon (66% `Healing`)
+- Granny Dahnie (60% `Healing`)
+
+**Damage**
+
+- Cryonaia (100% `DoT` `Magic`)
+- Lorsan (90% `Magic` `DoT`)
+- Berial (80% `DoT` `Magic`)
+
 ### Summary for Tasi
 
 #### Stats Tasi benefits from
@@ -6349,7 +7855,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Tasi
 
-- Pin — Single target — `low`
+- Pin — All units — `low`
 - Sleep — All units — `high`
 - Stun — Area — `high`
 
@@ -6396,7 +7902,23 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units that can act as a replacement for Temesia
 
-- **Baelran** (50% match `Physical` `Knock down` `Max HP-based damage` `True damage` `Healing`)
+**Buffs on allies**
+
+- Atalanta (100% `Healing`)
+- Igor (100% `Healing`)
+- Lucca (100% `Healing`)
+
+**Damage**
+
+- Korin (84% `Physical` `Max HP-based damage` `True damage`)
+- Indris (83% `Physical` `Max HP-based damage` `True damage`)
+- Baelran (77% `Physical` `Max HP-based damage` `True damage`)
+
+**Crowd Control**
+
+- Athalia (62% `Knock down`)
+- Baelran (60% `Knock down`)
+- Sylphira (60% `Knock down` `Interrupt`)
 
 ### Summary for Temesia
 
@@ -6427,7 +7949,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Unaffected (Mythic+) — Self — Permanent
 - Interrupt — Single target — `high`
-- Knock down — Area — `low`
+- Knock down — All units — `low`
 
 #### Temesia's Special Effects
 
@@ -6452,6 +7974,8 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Isabella**
   - Healing (area, high)
   - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
@@ -6462,13 +7986,33 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Max HP via Shield (multiple targets, medium)
   - Healing (multiple targets, medium)
   - ATK SPD via Haste buff (single target, low) [signature fuel]
-- **Contess**
-  - Max HP via Shield (single target, medium)
-  - Healing (multiple targets, high)
 
 ### Units benefitting from Thador
 
+- Nara
 - Pandora
+- Scarlita
+
+### Units that can act as a replacement for Thador
+
+**Energy provider**
+
+- Phraesto
+- Ravion
+- Lyca
+
+**Damage**
+
+- Antandra (72% `Physical`)
+- Atalanta (72% `Physical`)
+- Gerda (72% `Physical`)
+
+**Crowd Control**
+
+- Athalia (60% `Knock down`)
+- Baelran (56% `Knock down`)
+- Frieren (50% `Knock down`)
+
 ### Summary for Thador
 
 #### Stats Thador benefits from
@@ -6523,7 +8067,17 @@ Common buffers are **Lucius**, **Hugin**, or **Ravion**.
 
 ### Units that can act as a replacement for Thoran
 
-- **Salazer** (52% match `Healing` `Physical` `Life Drain`)
+**Buffs on allies**
+
+- Salazer (60% `Healing` `Life Drain`)
+- Viperian (60% `Healing` `Life Drain`)
+- Athalia (50% `Healing`)
+
+**Damage**
+
+- Chippy (100% `Physical`)
+- Salazer (100% `Physical`)
+- Silvina (100% `Physical`)
 
 ### Summary for Thoran
 
@@ -6564,6 +8118,8 @@ Common buffers are **Lucius**, **Rowan**, or **Twins**.
 
 - **Hewynn**
   - Healing (all units, high)
+- **Lorsan**
+  - Healing (all units, high)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (multiple targets, high)
@@ -6573,8 +8129,19 @@ Common buffers are **Lucius**, **Rowan**, or **Twins**.
 - **Hepler**
   - Max HP via Shield (multiple targets, medium)
   - Healing (multiple targets, medium)
-- **Isabella**
-  - Healing (area, high)
+
+### Units that can act as a replacement for Tilaya
+
+**Buffs on allies**
+
+- Granny Dahnie (52% `Healing`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
 ### Summary for Tilaya
 
 #### Stats Tilaya benefits from
@@ -6631,8 +8198,21 @@ Common buffers are **Lucius**, **Hugin**, or **Ravion**.
 
 ### Units that can act as a replacement for Ulmus
 
-- **Lucius** (52% match `Physical` `Move` `Healing` `Max HP`)
-- **Atalanta** (50% match `Physical` `Move` `Healing`)
+**Buffs on allies**
+
+- Salazer (60% `Healing` `Life Drain` `Max HP`)
+- Baelran (50% `Healing`)
+- Seth (50% `Healing` `Life Drain`)
+
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Twins (57% `Move`)
 
 ### Summary for Ulmus
 
@@ -6697,6 +8277,26 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (single target, high) [signature fuel]
   - ATK SPD via Haste buff (single target, high) [signature fuel]
   - Enables Enemy defeat via HP threshold strike
+
+### Units that can act as a replacement for Vala
+
+**Buffs on allies**
+
+- Mehira (100% `Haste`)
+- Gala (50% `Haste`)
+
+**Damage**
+
+- Faramor (79% `True damage` `Physical` `HP loss`)
+- Marilee (53% `True damage` `Physical`)
+- Harak (51% `Physical` `HP loss`)
+
+**Crowd Control**
+
+- Lenya (100% `Stun`)
+- Walker (100% `Stun`)
+- Gunnar (90% `Stun`)
+
 ### Summary for Vala
 
 #### Stats Vala benefits from
@@ -6768,9 +8368,17 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 ### Units that can act as a replacement for Valen
 
-- **Lenya** (56% match `Physical` `Stun`)
-- **Pang** (55% match `Physical` `Stun`)
-- **Sonja** (52% match `Physical` `Stun`)
+**Damage**
+
+- Antandra (100% `Physical`)
+- Atalanta (100% `Physical`)
+- Gerda (100% `Physical`)
+
+**Crowd Control**
+
+- Damian (100% `Stun`)
+- Ludovic (100% `Stun`)
+- Nazrik (100% `Stun`)
 
 ### Summary for Valen
 
@@ -6813,8 +8421,13 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 Look for units providing: `ATK SPD / Haste` `Max HP` `Energy`  
 Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
+- **Koko**
+  - Max HP via Shield (all units, low)
+  - Enables Adjacent allies via Multiple ally buffs
 - **Himmel**
   - Max HP buff (multiple targets, high)
+  - Enables Adjacent allies via Multiple ally buffs
+- **Lorsan**
   - Enables Adjacent allies via Multiple ally buffs
 - **Saida**
   - Max HP via Shield (multiple targets, high)
@@ -6822,16 +8435,29 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Isabella**
   - ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) [signature fuel]
   - Enables Adjacent allies via Multiple ally buffs
-- **Zandrok**
-  - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
-  - Enables Adjacent allies via Multiple ally buffs
-- **Koko**
-  - Max HP via Shield (all units, low)
-  - Enables Adjacent allies via Multiple ally buffs
 
 ### Units benefitting from Valka
 
 - Lyca
+
+### Units that can act as a replacement for Valka
+
+**Buffs on allies**
+
+- Lyca (50% `ATK SPD`)
+
+**Damage**
+
+- Himmel (93% `Physical` `Max HP-based damage`)
+- Granny Dahnie (90% `Physical` `Max HP-based damage`)
+- Lumont (90% `Physical` `Max HP-based damage`)
+
+**Crowd Control**
+
+- Natsu (70% `Stun` `Knock down`)
+- Zorya (66% `Knock down` `Stun`)
+- Callan (60% `Knock down` `Stun`)
+
 ### Summary for Valka
 
 #### Stats Valka benefits from
@@ -6856,8 +8482,8 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 #### Crowd Control provided by Valka
 
 - Unaffected — Self — On skill
-- Knock down — Single target — `low`
-- Stun — Single target — `low`
+- Knock down — Area — `low`
+- Stun — Area — `low`
 
 #### Valka's Special Effects
 
@@ -6892,6 +8518,27 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
   - Haste buff (area, medium, conditional (frequent)) [signature fuel]
 - **Callan**
   - Max HP via Shield (multiple targets, medium)
+
+### Units that can act as a replacement for Velara
+
+**Buffs on allies**
+
+- Nara (72% `Healing`)
+- Berial (66% `Healing`)
+- Athalia (54% `Healing`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
+
+**Crowd Control**
+
+- Cecia (100% `Pin`)
+- Korin (100% `Pin`)
+- Gala (66% `Pin`)
+
 ### Summary for Velara
 
 #### Stats Velara benefits from
@@ -6961,9 +8608,17 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Viperian
 
-- **Solise** (53% match `Magic` `Healing`)
-- **Marcille** (51% match `Magic` `Healing`)
-- **Velara** (50% match `Magic` `Healing`)
+**Buffs on allies**
+
+- Berial (75% `Healing`)
+- Nara (66% `Healing`)
+- Salazer (60% `Healing` `Life Drain`)
+
+**Damage**
+
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Damian (100% `Magic`)
 
 ### Summary for Viperian
 
@@ -7019,6 +8674,26 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - Lifedrain buff (multiple targets, high)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
+
+### Units that can act as a replacement for Walker
+
+**Buffs on allies**
+
+- Kruger (88% `Life Drain`)
+- Brutus (66% `Life Drain`)
+
+**Damage**
+
+- Niru (70% `HP loss` `Max HP-based damage`)
+- Dunlingr (67% `HP loss`)
+- Granny Dahnie (61% `Physical` `Max HP-based damage`)
+
+**Crowd Control**
+
+- Lenya (100% `Stun`)
+- Vala (100% `Stun`)
+- Gunnar (90% `Stun`)
+
 ### Summary for Walker
 
 #### Stats Walker benefits from
@@ -7093,6 +8768,21 @@ These are the **10** strongest pairings:
 - Natsu
 - Twins
 - Viperian
+
+### Units that can act as a replacement for Zandrok
+
+**Damage**
+
+- Shemira (85% `Max HP-based damage`)
+- Florabelle (85% `Max HP-based damage` `Physical`)
+- Hodgkin (85% `Max HP-based damage` `Physical`)
+
+**Crowd Control**
+
+- Perseus (100% `Stun`)
+- Lucca (80% `Stun`)
+- Lorsan (75% `Stun`)
+
 ### Summary for Zandrok
 
 #### Stats Zandrok benefits from
@@ -7142,6 +8832,19 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
 - **Gala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Zanie
+
+**Damage**
+
+- Alna (55% `DoT` `Physical`)
+
+**Crowd Control**
+
+- Bonnie (100% `Stun`)
+- Lyca (100% `Stun`)
+- Marilee (100% `Stun`)
+
 ### Summary for Zanie
 
 #### Stats Zanie benefits from
@@ -7212,6 +8915,27 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Max HP via Shield (all units, low)
   - Healing (multiple targets, high)
   - Lifedrain buff (multiple targets, low)
+
+### Units that can act as a replacement for Zorya
+
+**Buffs on allies**
+
+- Baelran (50% `Healing`)
+- Bryon (50% `Healing`)
+- Soren (50% `Healing`)
+
+**Damage**
+
+- Talene (93% `HP loss` `Magic`)
+- Aliceth (71% `HP loss`)
+- Harak (67% `HP loss`)
+
+**Crowd Control**
+
+- Perseus (66% `Stun`)
+- Valka (66% `Knock down` `Stun`)
+- Zandrok (66% `Stun`)
+
 ### Summary for Zorya
 
 #### Stats Zorya benefits from
