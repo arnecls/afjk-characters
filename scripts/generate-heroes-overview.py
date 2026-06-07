@@ -38,6 +38,11 @@ STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "Magic DEF": ["DEF buff"],
 }
 
+_BUFF_LABEL_TO_STATS: dict[str, list[str]] = {}
+for _stat, _labels in STAT_TO_BUFF_LABELS.items():
+    for _label in _labels:
+        _BUFF_LABEL_TO_STATS.setdefault(_label, []).append(_stat)
+
 ALLY_TARGETINGS = frozenset(
     {"Single target", "Multiple targets", "Arc", "Area", "All units"}
 )
@@ -109,6 +114,20 @@ REPLACEMENT_SIG_W = 0.15
 REPLACEMENT_DAMAGE_W = 0.30
 REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
 REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST = 1.5
+MIN_SUPPORT_SCORE = 11.0
+
+SUPPORT_REPLACEMENT_WEIGHTS = {
+    "buff": 0.50,
+    "provides": 0.20,
+    "signature": 0.10,
+    "damage": 0.20,
+}
+DAMAGE_REPLACEMENT_WEIGHTS = {
+    "buff": 0.25,
+    "provides": 0.10,
+    "signature": 0.10,
+    "damage": 0.55,
+}
 
 _SIG_STOPWORDS = frozenset(
     {
@@ -1107,6 +1126,58 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
     return reasons
 
 
+def _hero_support_score(hero: _rs.Hero) -> float:
+    """Weighted ally + summon buff output (non-rare)."""
+    total = 0.0
+    for effect in list(hero.effects) + list(hero.summon_effects):
+        if effect.category != "buff":
+            continue
+        if effect.targeting not in ALLY_TARGETINGS:
+            continue
+        if effect.conditional == "rare":
+            continue
+        total += TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
+            effect.magnitude, 1.0
+        )
+    return total
+
+
+def _hero_attack_score(hero: _rs.Hero) -> float:
+    """Weighted outgoing damage + half-weight enemy debuff/CC."""
+    total = 0.0
+    mags = hero.damage_magnitudes or {}
+    for dt, tgt in hero.damage_entries:
+        if tgt == "Self":
+            continue
+        tw = max(
+            (TARGETING_WEIGHT.get(part, 1.0) for part in tgt.split(", ")),
+            default=1.0,
+        )
+        total += tw * MAG_WEIGHT.get(mags.get(dt, "medium"), 1.0)
+    for effect in hero.effects:
+        if effect.category not in ("debuff", "cc"):
+            continue
+        if effect.targeting == "Self":
+            continue
+        total += (
+            0.5
+            * TARGETING_WEIGHT.get(effect.targeting, 1.0)
+            * MAG_WEIGHT.get(effect.magnitude, 1.0)
+        )
+    return total
+
+
+def is_supporting_unit(
+    hero: _rs.Hero,
+    hero_class: str,
+    min_support_score: float = MIN_SUPPORT_SCORE,
+) -> bool:
+    if hero_class == "Support":
+        return True
+    support = _hero_support_score(hero)
+    return support > _hero_attack_score(hero) and support >= min_support_score
+
+
 def _hero_provider_profile(hero: _rs.Hero) -> dict[str, float]:
     """Weighted ally-buff profile for what a hero provides to allies."""
     profile: dict[str, float] = {}
@@ -1193,9 +1264,38 @@ def _damage_similarity(
     return general
 
 
+def _top_replacement_matches(
+    buff_a: dict[str, float],
+    buff_b: dict[str, float],
+    damage_a: dict[str, float],
+    damage_b: dict[str, float],
+    limit: int = 5,
+) -> list[str]:
+    """Strongest overlapping benefit stats and damage types (up to limit)."""
+    ranked: list[tuple[float, str]] = []
+    for label in set(buff_a) & set(buff_b):
+        weight = min(buff_a[label], buff_b[label])
+        for stat in _BUFF_LABEL_TO_STATS.get(label, []):
+            ranked.append((weight, stat))
+    for dt in set(damage_a) & set(damage_b):
+        ranked.append((min(damage_a[dt], damage_b[dt]), dt))
+    ranked.sort(key=lambda x: (-x[0], x[1]))
+    seen: set[str] = set()
+    matches: list[str] = []
+    for _weight, name in ranked:
+        if name in seen:
+            continue
+        seen.add(name)
+        matches.append(name)
+        if len(matches) >= limit:
+            break
+    return matches
+
+
 def compute_replacement_scores(
     heroes: list[_rs.Hero],
     behavior_by_title: dict[str, _rs.HeroBehavior],
+    hero_class_by_title: dict[str, str] | None = None,
 ) -> dict[str, list[dict]]:
     """Score how well each hero can substitute for every other hero (0–1)."""
     profiles: dict[str, dict[str, float]] = {}
@@ -1213,6 +1313,7 @@ def compute_replacement_scores(
         damage_profiles[hero.title] = _hero_damage_profile(hero)
         damage_types[hero.title] = provider_damage_types(hero)
 
+    classes = hero_class_by_title or {}
     result: dict[str, list[dict]] = {}
     for hero_x in heroes:
         px = profiles[hero_x.title]
@@ -1220,35 +1321,46 @@ def compute_replacement_scores(
         sx = sig_words[hero_x.title]
         dpx = damage_profiles[hero_x.title]
         dtx = damage_types[hero_x.title]
-        scores: list[tuple[float, str]] = []
+        if is_supporting_unit(hero_x, classes.get(hero_x.title, "")):
+            w = SUPPORT_REPLACEMENT_WEIGHTS
+        else:
+            w = DAMAGE_REPLACEMENT_WEIGHTS
+        scores: list[tuple[float, list[str], str]] = []
         for hero_y in heroes:
             if hero_y.title == hero_x.title:
                 continue
-            buff_sim = _weighted_jaccard(px, profiles[hero_y.title])
+            py = profiles[hero_y.title]
+            dpy = damage_profiles[hero_y.title]
+            buff_sim = _weighted_jaccard(px, py)
             provides_sim = _set_jaccard(prx, provides[hero_y.title])
             sig_sim = _set_jaccard(sx, sig_words[hero_y.title])
             damage_sim = _damage_similarity(
                 dtx,
                 damage_types[hero_y.title],
                 dpx,
-                damage_profiles[hero_y.title],
+                dpy,
             )
             score = min(
                 1.0,
                 max(
                     0.0,
-                    REPLACEMENT_BUFF_W * buff_sim
-                    + REPLACEMENT_PROVIDES_W * provides_sim
-                    + REPLACEMENT_SIG_W * sig_sim
-                    + REPLACEMENT_DAMAGE_W * damage_sim,
+                    w["buff"] * buff_sim
+                    + w["provides"] * provides_sim
+                    + w["signature"] * sig_sim
+                    + w["damage"] * damage_sim,
                 ),
             )
             if score >= REPLACEMENT_MIN_SCORE:
-                scores.append((score, hero_y.title))
-        scores.sort(key=lambda x: (-x[0], short_name(x[1])))
+                matches = _top_replacement_matches(px, py, dpx, dpy)
+                scores.append((score, matches, hero_y.title))
+        scores.sort(key=lambda x: (-x[0], short_name(x[2])))
         result[hero_x.title] = [
-            {"name": short_name(title), "score": round(score, 4)}
-            for score, title in scores[:REPLACEMENT_MAX]
+            {
+                "name": short_name(title),
+                "score": round(score, 4),
+                "matches": matches,
+            }
+            for score, matches, title in scores[:REPLACEMENT_MAX]
         ]
     return result
 

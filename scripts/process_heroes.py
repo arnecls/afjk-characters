@@ -79,6 +79,7 @@ def apply_config(config: dict) -> None:
     for key, attr in [
         ("min_score", "REPLACEMENT_MIN_SCORE"),
         ("max_replacements", "REPLACEMENT_MAX"),
+        ("min_support_score", "MIN_SUPPORT_SCORE"),
         ("buff_weight", "REPLACEMENT_BUFF_W"),
         ("provides_weight", "REPLACEMENT_PROVIDES_W"),
         ("signature_weight", "REPLACEMENT_SIG_W"),
@@ -88,6 +89,21 @@ def apply_config(config: dict) -> None:
     ]:
         if key in rs_cfg:
             setattr(gen, attr, rs_cfg[key])
+
+    for profile_key, attr in [
+        ("support_weights", "SUPPORT_REPLACEMENT_WEIGHTS"),
+        ("damage_weights", "DAMAGE_REPLACEMENT_WEIGHTS"),
+    ]:
+        profile = rs_cfg.get(profile_key)
+        if not profile:
+            continue
+        weights = {
+            "buff": profile.get("buff_weight", 0.0),
+            "provides": profile.get("provides_weight", 0.0),
+            "signature": profile.get("signature_weight", 0.0),
+            "damage": profile.get("damage_weight", 0.0),
+        }
+        setattr(gen, attr, weights)
 
 
 def rank_synergies_full(receiver, heroes, enabler_matchers, behavior_by_title):
@@ -155,7 +171,9 @@ def build_processed(data: dict) -> dict:
     beneficiaries_index = gen.build_beneficiaries_index(
         heroes, enabler_matchers, behavior_by_title
     )
-    replacements_index = gen.compute_replacement_scores(heroes, behavior_by_title)
+    replacements_index = gen.compute_replacement_scores(
+        heroes, behavior_by_title, hero_class_by_title
+    )
 
     # Match overview-to-csv: energy providers are detected from freshly parsed
     # (un-analyzed) hero blocks, so only the battle-start text path counts.
@@ -173,6 +191,9 @@ def build_processed(data: dict) -> dict:
         )
         benefited = beneficiaries_index.get(hero.title, [])
         processed_heroes[hero.title] = {
+            "is_supporting_unit": gen.is_supporting_unit(
+                hero, hero_class_by_title.get(hero.title, "")
+            ),
             "is_energy_provider": hero.title in energy_provider_titles,
             "effects": [asdict(e) for e in hero.effects],
             "summon_effects": [asdict(e) for e in hero.summon_effects],

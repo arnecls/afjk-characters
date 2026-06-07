@@ -54,13 +54,26 @@
     "casting_speed_slow_threshold": 8.5
   },
   "replacement_scoring": {
-    "min_score": 0.6,
+    "min_score": 0.5,
     "max_replacements": 3,
+    "min_support_score": 11.0,
     "buff_weight": 0.45,
-    "provides_weight": 0.10,
-    "signature_weight": 0.15,
+    "provides_weight": 0.15,
+    "signature_weight": 0.10,
     "damage_weight": 0.30,
     "true_damage_blend": 0.65,
-    "true_damage_profile_boost": 1.5
+    "true_damage_profile_boost": 1.5,
+    "support_weights": {
+      "buff_weight": 0.50,
+      "provides_weight": 0.20,
+      "signature_weight": 0.20,
+      "damage_weight": 0.10
+    },
+    "damage_weights": {
+      "buff_weight": 0.25,
+      "provides_weight": 0.10,
+      "signature_weight": 0.10,
+      "damage_weight": 0.55
+    }
   }
 }

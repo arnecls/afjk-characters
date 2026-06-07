@@ -198,7 +198,15 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
             parts.append("")
             for r in replacements[:max_rep]:
                 pct = int(r["score"] * 100)
-                parts.append(f"- **{r['name']}** ({pct}% match)")
+                match_tags = " ".join(
+                    f"`{m}`" for m in r.get("matches", [])[:5]
+                )
+                if match_tags:
+                    parts.append(
+                        f"- **{r['name']}** ({pct}% match {match_tags})"
+                    )
+                else:
+                    parts.append(f"- **{r['name']}** ({pct}% match)")
             parts.append("")
         parts.append(summary)
         parts.append("")

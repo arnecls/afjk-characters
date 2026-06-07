@@ -1,6 +1,7 @@
 {
   "heroes": {
     "Aliceth - Radiant Wings": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -836,9 +837,29 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Kordan",
+          "score": 0.5246,
+          "matches": [
+            "Physical",
+            "DEF Penetration",
+            "HP loss"
+          ]
+        },
+        {
+          "name": "Ravion",
+          "score": 0.5246,
+          "matches": [
+            "Physical",
+            "ATK",
+            "HP loss"
+          ]
+        }
+      ]
     },
     "Alna - Frozen Mother": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -1153,6 +1174,7 @@
       "replacements": []
     },
     "Alsa - Desert Flare": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -1594,9 +1616,18 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Lily May",
+          "score": 0.5146,
+          "matches": [
+            "Magic"
+          ]
+        }
+      ]
     },
     "Antandra - Desert Fury": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -2012,9 +2043,34 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Kruger",
+          "score": 0.65,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Hepler",
+          "score": 0.6409,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Gerda",
+          "score": 0.6382,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Arden - Oak Sage": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -2260,9 +2316,19 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Bryon",
+          "score": 0.5013,
+          "matches": [
+            "Magic",
+            "DoT"
+          ]
+        }
+      ]
     },
     "Atalanta - Fortune Finder": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -2577,15 +2643,32 @@
       "replacements": [
         {
           "name": "Lucca",
-          "score": 0.75
+          "score": 0.8,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
         },
         {
           "name": "Igor",
-          "score": 0.69
+          "score": 0.69,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Lucius",
+          "score": 0.625,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
         }
       ]
     },
     "Athalia - Harbinger of Justice": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -2994,9 +3077,28 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Dionel",
+          "score": 0.55,
+          "matches": [
+            "True damage",
+            "Physical"
+          ]
+        },
+        {
+          "name": "Koko",
+          "score": 0.5382,
+          "matches": [
+            "True damage",
+            "Physical",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Aurora - Celestial of Dreams": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -3344,9 +3446,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Phraesto",
+          "score": 0.5833,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Twins",
+          "score": 0.57,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Pandora",
+          "score": 0.5671,
+          "matches": [
+            "Magic"
+          ]
+        }
+      ]
     },
     "Baelran - Dawnblade": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -3735,9 +3860,31 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Temesia",
+          "score": 0.5535,
+          "matches": [
+            "Physical",
+            "Max HP-based damage",
+            "True damage",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Nara",
+          "score": 0.5359,
+          "matches": [
+            "Max HP-based damage",
+            "True damage",
+            "Physical",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Berial - Sinister Jester": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -4041,9 +4188,28 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Bryon",
+          "score": 0.5825,
+          "matches": [
+            "DoT",
+            "Magic"
+          ]
+        },
+        {
+          "name": "Lorsan",
+          "score": 0.5639,
+          "matches": [
+            "DoT",
+            "Magic",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Bonnie - Obsidian Claws": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -4851,9 +5017,19 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Mirael",
+          "score": 0.55,
+          "matches": [
+            "Magic",
+            "DoT"
+          ]
+        }
+      ]
     },
     "Brutus - Blood Claw": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -5218,9 +5394,39 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Cecia",
+          "score": 0.6146,
+          "matches": [
+            "Max HP-based damage",
+            "Physical",
+            "DoT",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Satrana",
+          "score": 0.606,
+          "matches": [
+            "Max HP-based damage",
+            "DoT",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Daimon",
+          "score": 0.581,
+          "matches": [
+            "Max HP-based damage",
+            "DoT",
+            "Life Drain"
+          ]
+        }
+      ]
     },
     "Bryon - Evergreen Sentinel": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -5470,9 +5676,37 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Tasi",
+          "score": 0.6067,
+          "matches": [
+            "DoT",
+            "Magic",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Berial",
+          "score": 0.5825,
+          "matches": [
+            "DoT",
+            "Magic"
+          ]
+        },
+        {
+          "name": "Lorsan",
+          "score": 0.5389,
+          "matches": [
+            "DoT",
+            "Magic",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Callan - Grim Soulkeeper": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -6011,6 +6245,7 @@
       "replacements": []
     },
     "Carolina - Candlelight Specter": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -6682,9 +6917,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Aurora",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Eironn",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Fay",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        }
+      ]
     },
     "Cassadee - Azure Prodigy": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -6973,9 +7231,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Solise",
+          "score": 0.65,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Contess",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Damian",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        }
+      ]
     },
     "Cecia - Requiem of Thorns": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -7362,9 +7643,37 @@
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Brutus",
+          "score": 0.6146,
+          "matches": [
+            "Max HP-based damage",
+            "Physical",
+            "DoT",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Florabelle",
+          "score": 0.5508,
+          "matches": [
+            "Max HP-based damage",
+            "Physical"
+          ]
+        },
+        {
+          "name": "Hodgkin",
+          "score": 0.5392,
+          "matches": [
+            "Max HP-based damage",
+            "Physical"
+          ]
+        }
+      ]
     },
     "Chippy - Sidekick": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [],
       "summon_effects": [],
@@ -7575,9 +7884,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Salazer",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Silvina",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Thoran",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Contess - Abyssal Rulekeeper": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -8136,6 +8468,7 @@
       "replacements": []
     },
     "Cryonaia - Arctic Revenant": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -8546,9 +8879,19 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Tasi",
+          "score": 0.55,
+          "matches": [
+            "DoT",
+            "Magic"
+          ]
+        }
+      ]
     },
     "Cyran - Umbral Weaver": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -8858,6 +9201,7 @@
       "replacements": []
     },
     "Daimon - Forsaken Child": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -9062,9 +9406,30 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Satrana",
+          "score": 0.6125,
+          "matches": [
+            "Max HP-based damage",
+            "DoT",
+            "Magic",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Brutus",
+          "score": 0.581,
+          "matches": [
+            "Max HP-based damage",
+            "DoT",
+            "Life Drain"
+          ]
+        }
+      ]
     },
     "Damian - Woody Wonder": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -9467,6 +9832,7 @@
       "replacements": []
     },
     "Dionel - Venus of Dawn": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -9866,9 +10232,27 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Athalia",
+          "score": 0.55,
+          "matches": [
+            "True damage",
+            "Physical"
+          ]
+        },
+        {
+          "name": "Koko",
+          "score": 0.5056,
+          "matches": [
+            "True damage",
+            "Physical"
+          ]
+        }
+      ]
     },
     "Dunlingr - Eternal Voice": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -10576,6 +10960,7 @@
       "replacements": []
     },
     "Eironn - Stormsword": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -10830,9 +11215,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Nerion",
+          "score": 0.575,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Phraesto",
+          "score": 0.5667,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Aurora",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        }
+      ]
     },
     "Elijah & Lailah - Celestial Twins": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -11519,6 +11927,7 @@
       "replacements": []
     },
     "Evie - Royal Envoy": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -12101,6 +12510,7 @@
       "replacements": []
     },
     "Faramor - Silverfang Mantle": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -12533,6 +12943,7 @@
       "replacements": []
     },
     "Fay - Colorful Dancer": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -12817,6 +13228,7 @@
       "replacements": []
     },
     "Florabelle - Blooming Maiden": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -13064,9 +13476,27 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Hodgkin",
+          "score": 0.6,
+          "matches": [
+            "Max HP-based damage",
+            "Physical"
+          ]
+        },
+        {
+          "name": "Cecia",
+          "score": 0.5508,
+          "matches": [
+            "Max HP-based damage",
+            "Physical"
+          ]
+        }
+      ]
     },
     "Frieren - The Legendary Mage": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -13387,6 +13817,7 @@
       "replacements": []
     },
     "Gala - Daughter of Dawn": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -13697,9 +14128,35 @@
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Mehira",
+          "score": 0.695,
+          "matches": [
+            "Magic",
+            "Haste"
+          ]
+        },
+        {
+          "name": "Lucy",
+          "score": 0.675,
+          "matches": [
+            "Magic",
+            "Max HP"
+          ]
+        },
+        {
+          "name": "Damian",
+          "score": 0.6515,
+          "matches": [
+            "Magic",
+            "Haste"
+          ]
+        }
+      ]
     },
     "Gerda - Soothing Siren": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -13941,6 +14398,7 @@
       "replacements": []
     },
     "Granny Dahnie - Forest Guardian": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -14562,9 +15020,36 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Hodgkin",
+          "score": 0.6062,
+          "matches": [
+            "Physical",
+            "Healing",
+            "Max HP-based damage"
+          ]
+        },
+        {
+          "name": "Lumont",
+          "score": 0.55,
+          "matches": [
+            "Physical",
+            "Max HP-based damage"
+          ]
+        },
+        {
+          "name": "Soren",
+          "score": 0.5494,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Gunnar - Iron Doom": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -14918,9 +15403,21 @@
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Cecia",
+          "score": 0.5032,
+          "matches": [
+            "Max HP-based damage",
+            "Physical",
+            "DoT",
+            "ATK SPD"
+          ]
+        }
+      ]
     },
     "Gwyneth - Dragonslayer Knight": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -15194,9 +15691,27 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Granny Dahnie",
+          "score": 0.5064,
+          "matches": [
+            "Physical",
+            "Max HP-based damage"
+          ]
+        },
+        {
+          "name": "Lumont",
+          "score": 0.5064,
+          "matches": [
+            "Physical",
+            "Max HP-based damage"
+          ]
+        }
+      ]
     },
     "Hammie - Magician": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -15437,9 +15952,20 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Rowan",
+          "score": 0.6417,
+          "matches": [
+            "Healing",
+            "Magic",
+            "ATK"
+          ]
+        }
+      ]
     },
     "Harak - Deepsea Ravager": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -15922,9 +16448,27 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Seth",
+          "score": 0.5633,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Zorya",
+          "score": 0.5058,
+          "matches": [
+            "HP loss",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Hepler - Master of Forms": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -16393,9 +16937,36 @@
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Lucius",
+          "score": 0.6654,
+          "matches": [
+            "Physical",
+            "Max HP",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Antandra",
+          "score": 0.6409,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Gerda",
+          "score": 0.6198,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Hewynn - Tender Leaf": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -16703,6 +17274,7 @@
       "replacements": []
     },
     "Himmel - The Legendary Hero": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -17324,9 +17896,28 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Valka",
+          "score": 0.5115,
+          "matches": [
+            "Physical",
+            "Max HP-based damage"
+          ]
+        },
+        {
+          "name": "Cecia",
+          "score": 0.5098,
+          "matches": [
+            "Physical",
+            "Max HP-based damage",
+            "Max HP"
+          ]
+        }
+      ]
     },
     "Hodgkin - Reviled Captain": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -17633,9 +18224,36 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Granny Dahnie",
+          "score": 0.6062,
+          "matches": [
+            "Physical",
+            "Healing",
+            "Max HP-based damage"
+          ]
+        },
+        {
+          "name": "Florabelle",
+          "score": 0.6,
+          "matches": [
+            "Max HP-based damage",
+            "Physical"
+          ]
+        },
+        {
+          "name": "Cecia",
+          "score": 0.5392,
+          "matches": [
+            "Max HP-based damage",
+            "Physical"
+          ]
+        }
+      ]
     },
     "Hugin - Maverick Smith": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -18217,6 +18835,7 @@
       "replacements": []
     },
     "Igor - Mad Dagger": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -18740,15 +19359,32 @@
       "replacements": [
         {
           "name": "Atalanta",
-          "score": 0.69
+          "score": 0.69,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
         },
         {
           "name": "Lucca",
-          "score": 0.69
+          "score": 0.69,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Mikola",
+          "score": 0.5768,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
         }
       ]
     },
     "Indris - Chain Breaker": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -19529,6 +20165,7 @@
       "replacements": []
     },
     "Isabella - The Taken Soul": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -20156,6 +20793,7 @@
       "replacements": []
     },
     "Kafra - Gale Rider": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -20625,9 +21263,34 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Gerda",
+          "score": 0.6611,
+          "matches": [
+            "Healing",
+            "Physical"
+          ]
+        },
+        {
+          "name": "Tilaya",
+          "score": 0.602,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Shakir",
+          "score": 0.5786,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Koko - Wild Child": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -20961,6 +21624,7 @@
       "replacements": []
     },
     "Kordan - Ironblood Chieftain": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -21727,9 +22391,28 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Ravion",
+          "score": 0.55,
+          "matches": [
+            "Physical",
+            "HP loss"
+          ]
+        },
+        {
+          "name": "Aliceth",
+          "score": 0.5246,
+          "matches": [
+            "Physical",
+            "DEF Penetration",
+            "HP loss"
+          ]
+        }
+      ]
     },
     "Korin - Wood Warden": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -22106,9 +22789,20 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Scarlita",
+          "score": 0.5196,
+          "matches": [
+            "Physical",
+            "True damage",
+            "Max HP"
+          ]
+        }
+      ]
     },
     "Kruger - Dauntless Warrior": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -22509,9 +23203,33 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Antandra",
+          "score": 0.65,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Shakir",
+          "score": 0.6452,
+          "matches": [
+            "Physical",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Valen",
+          "score": 0.6,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Kulu - Blast Master": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -22811,9 +23529,33 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Pang",
+          "score": 0.565,
+          "matches": [
+            "Physical",
+            "DEF Penetration"
+          ]
+        },
+        {
+          "name": "Igor",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Lyca",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Laios - Dungeon Adventurer": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -23537,9 +24279,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Antandra",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Atalanta",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Gerda",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Lenya - Wild Cyclone": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -23943,9 +24708,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Valen",
+          "score": 0.5833,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Atalanta",
+          "score": 0.5643,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Tilaya",
+          "score": 0.5643,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Lily May - Twilight Tracker": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -24282,9 +25070,27 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Alsa",
+          "score": 0.5146,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Silven",
+          "score": 0.5025,
+          "matches": [
+            "Magic",
+            "Max HP-based damage",
+            "DEF Penetration"
+          ]
+        }
+      ]
     },
     "Lorsan - Windweaver Protector": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -24569,6 +25375,7 @@
       "replacements": []
     },
     "Lucca - Stalwart Fighter": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -24968,15 +25775,32 @@
       "replacements": [
         {
           "name": "Atalanta",
-          "score": 0.75
+          "score": 0.8,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
         },
         {
           "name": "Igor",
-          "score": 0.69
+          "score": 0.69,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Ulmus",
+          "score": 0.6125,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
         }
       ]
     },
     "Lucius - The Lightbringer": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -25659,9 +26483,37 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Hepler",
+          "score": 0.6654,
+          "matches": [
+            "Physical",
+            "Max HP",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Atalanta",
+          "score": 0.625,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Ulmus",
+          "score": 0.5917,
+          "matches": [
+            "Physical",
+            "Healing",
+            "Max HP"
+          ]
+        }
+      ]
     },
     "Lucy - Celestial Spirit Mage": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -25872,9 +26724,35 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Gala",
+          "score": 0.675,
+          "matches": [
+            "Magic",
+            "Max HP"
+          ]
+        },
+        {
+          "name": "Saida",
+          "score": 0.6438,
+          "matches": [
+            "Magic",
+            "Max HP"
+          ]
+        },
+        {
+          "name": "Contess",
+          "score": 0.5917,
+          "matches": [
+            "Magic",
+            "Max HP"
+          ]
+        }
+      ]
     },
     "Ludovic - Wreathed Eternalist": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -26443,14 +27321,10 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": [
-        {
-          "name": "Marcille",
-          "score": 0.6167
-        }
-      ]
+      "replacements": []
     },
     "Lumont - Benign Horn": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -27140,9 +28014,34 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Granny Dahnie",
+          "score": 0.55,
+          "matches": [
+            "Physical",
+            "Max HP-based damage"
+          ]
+        },
+        {
+          "name": "Soren",
+          "score": 0.5077,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Gwyneth",
+          "score": 0.5064,
+          "matches": [
+            "Physical",
+            "Max HP-based damage"
+          ]
+        }
+      ]
     },
     "Lyca - Keeper of Glades": {
+      "is_supporting_unit": false,
       "is_energy_provider": true,
       "effects": [
         {
@@ -27668,9 +28567,32 @@
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner",
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Igor",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Kulu",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Mikola",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Marcille - Elven Mage": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -27932,16 +28854,33 @@
       ],
       "replacements": [
         {
-          "name": "Solise",
-          "score": 0.625
+          "name": "Ludovic",
+          "score": 0.7481,
+          "matches": [
+            "Magic",
+            "Healing"
+          ]
         },
         {
-          "name": "Ludovic",
-          "score": 0.6167
+          "name": "Solise",
+          "score": 0.7333,
+          "matches": [
+            "Magic",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Hewynn",
+          "score": 0.7167,
+          "matches": [
+            "Magic",
+            "Healing"
+          ]
         }
       ]
     },
     "Marilee - Forest's Arrow": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -28218,9 +29157,19 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Perseus",
+          "score": 0.5192,
+          "matches": [
+            "Physical",
+            "True damage"
+          ]
+        }
+      ]
     },
     "Mehira - Mind Cager": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -28958,9 +29907,35 @@
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Gala",
+          "score": 0.695,
+          "matches": [
+            "Magic",
+            "Haste"
+          ]
+        },
+        {
+          "name": "Damian",
+          "score": 0.6771,
+          "matches": [
+            "Magic",
+            "Haste"
+          ]
+        },
+        {
+          "name": "Velara",
+          "score": 0.5941,
+          "matches": [
+            "Magic",
+            "Haste"
+          ]
+        }
+      ]
     },
     "Mikola - Warbeat Compere": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -29570,6 +30545,7 @@
       "replacements": []
     },
     "Mirael - Scarlet Sorceress": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -29807,9 +30783,19 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Bonnie",
+          "score": 0.55,
+          "matches": [
+            "Magic",
+            "DoT"
+          ]
+        }
+      ]
     },
     "Nara - Wrathful Wraith": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -29948,9 +30934,31 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Baelran",
+          "score": 0.5359,
+          "matches": [
+            "Max HP-based damage",
+            "True damage",
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Temesia",
+          "score": 0.5165,
+          "matches": [
+            "Max HP-based damage",
+            "Physical",
+            "True damage",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Natsu - Fire Dragon Slayer Mage": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -30270,9 +31278,20 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Satrana",
+          "score": 0.5044,
+          "matches": [
+            "Max HP-based damage",
+            "Magic",
+            "DoT"
+          ]
+        }
+      ]
     },
     "Nazrik - Soulstalker": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -30549,9 +31568,20 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Temesia",
+          "score": 0.5254,
+          "matches": [
+            "Physical",
+            "Max HP-based damage",
+            "True damage"
+          ]
+        }
+      ]
     },
     "Nerion - Bereaved Tide": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -31284,9 +32314,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Eironn",
+          "score": 0.575,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Aurora",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Carolina",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        }
+      ]
     },
     "Niru - Soul Collector": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -31634,6 +32687,7 @@
       "replacements": []
     },
     "Odie - Desert Defender": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -31822,6 +32876,7 @@
       "replacements": []
     },
     "Pandora - Hope Unleashed": {
+      "is_supporting_unit": true,
       "is_energy_provider": true,
       "effects": [
         {
@@ -32017,6 +33072,7 @@
       "replacements": []
     },
     "Pang - Bamboo Guardian": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -32362,9 +33418,33 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Shakir",
+          "score": 0.65,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Ulmus",
+          "score": 0.6,
+          "matches": [
+            "Physical",
+            "Max HP"
+          ]
+        },
+        {
+          "name": "Lucca",
+          "score": 0.5833,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Parisa - Ode to Flowers": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -32615,9 +33695,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Aurora",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Carolina",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Eironn",
+          "score": 0.55,
+          "matches": [
+            "Magic"
+          ]
+        }
+      ]
     },
     "Perseus - Chosen Champion": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -33385,9 +34488,27 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Scarlita",
+          "score": 0.5234,
+          "matches": [
+            "Physical",
+            "True damage"
+          ]
+        },
+        {
+          "name": "Marilee",
+          "score": 0.5192,
+          "matches": [
+            "Physical",
+            "True damage"
+          ]
+        }
+      ]
     },
     "Phraesto - Misty Scorpion": {
+      "is_supporting_unit": false,
       "is_energy_provider": true,
       "effects": [
         {
@@ -33913,9 +35034,33 @@
       "beneficiary_overflow_reasons": [
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Twins",
+          "score": 0.5984,
+          "matches": [
+            "Magic",
+            "Max HP"
+          ]
+        },
+        {
+          "name": "Aurora",
+          "score": 0.5833,
+          "matches": [
+            "Magic"
+          ]
+        },
+        {
+          "name": "Eironn",
+          "score": 0.5667,
+          "matches": [
+            "Magic"
+          ]
+        }
+      ]
     },
     "Pippa - The Muddled Magician": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -34197,6 +35342,7 @@
       "replacements": []
     },
     "Ravion - Twilight's Burden": {
+      "is_supporting_unit": false,
       "is_energy_provider": true,
       "effects": [
         {
@@ -34637,9 +35783,28 @@
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner",
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Kordan",
+          "score": 0.55,
+          "matches": [
+            "Physical",
+            "HP loss"
+          ]
+        },
+        {
+          "name": "Aliceth",
+          "score": 0.5246,
+          "matches": [
+            "Physical",
+            "ATK",
+            "HP loss"
+          ]
+        }
+      ]
     },
     "Reinier - Symmetric Sin": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -34758,6 +35923,7 @@
       "replacements": []
     },
     "Rhys - Fiery Cavalier": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -35023,9 +36189,25 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Hugin",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Sinbad",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Rowan - The Roamer": {
+      "is_supporting_unit": true,
       "is_energy_provider": true,
       "effects": [
         {
@@ -35420,6 +36602,7 @@
       "replacements": []
     },
     "Saida - Vampiric Vine": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -35696,6 +36879,7 @@
       "replacements": []
     },
     "Salazer - Lash of Bantus": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -36058,9 +37242,34 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Thoran",
+          "score": 0.7,
+          "matches": [
+            "Healing",
+            "Physical",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Chippy",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Silvina",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Satrana - Ember Enchantress": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -36472,11 +37681,36 @@
       "replacements": [
         {
           "name": "Sylphira",
-          "score": 0.6836
+          "score": 0.6783,
+          "matches": [
+            "Magic",
+            "Max HP-based damage",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Daimon",
+          "score": 0.6125,
+          "matches": [
+            "Max HP-based damage",
+            "DoT",
+            "Magic",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Brutus",
+          "score": 0.606,
+          "matches": [
+            "Max HP-based damage",
+            "DoT",
+            "Life Drain"
+          ]
         }
       ]
     },
     "Scarlita - Herald of Compassion": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -36646,9 +37880,37 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Perseus",
+          "score": 0.5234,
+          "matches": [
+            "Physical",
+            "True damage"
+          ]
+        },
+        {
+          "name": "Korin",
+          "score": 0.5196,
+          "matches": [
+            "Physical",
+            "True damage",
+            "Max HP"
+          ]
+        },
+        {
+          "name": "Koko",
+          "score": 0.5018,
+          "matches": [
+            "Physical",
+            "True damage",
+            "Max HP"
+          ]
+        }
+      ]
     },
     "Seth - Swift Shadow": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -37073,9 +38335,26 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Harak",
+          "score": 0.5633,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Talene",
+          "score": 0.5158,
+          "matches": [
+            "Healing"
+          ]
+        }
+      ]
     },
     "Shadewing - Undying Vow": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -37953,6 +39232,7 @@
       "replacements": []
     },
     "Shakir - Furious Howl": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -38217,9 +39497,33 @@
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Pang",
+          "score": 0.65,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Kruger",
+          "score": 0.6452,
+          "matches": [
+            "Physical",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Kafra",
+          "score": 0.5786,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Shemira - Corpsemaker": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -38822,9 +40126,19 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Satrana",
+          "score": 0.5165,
+          "matches": [
+            "Max HP-based damage",
+            "Magic"
+          ]
+        }
+      ]
     },
     "Silven - Heir of Glory": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -39566,9 +40880,20 @@
       "beneficiary_overflow_reasons": [
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Lily May",
+          "score": 0.5025,
+          "matches": [
+            "Magic",
+            "Max HP-based damage",
+            "DEF Penetration"
+          ]
+        }
+      ]
     },
     "Silvina - The Taken Breath": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -39946,9 +41271,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Chippy",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Salazer",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Thoran",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Sinbad - Seaside Savant": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -40237,9 +41585,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Hugin",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Rhys",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Kafra",
+          "score": 0.525,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Smokey & Meerky - Wasteland Apothecary": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -40771,6 +42142,7 @@
       "replacements": []
     },
     "Solise - Floral Wonder": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -41020,14 +42392,10 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": [
-        {
-          "name": "Marcille",
-          "score": 0.625
-        }
-      ]
+      "replacements": []
     },
     "Sonja - Crimson Queenpin": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -41304,9 +42672,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Valen",
+          "score": 0.5786,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Kruger",
+          "score": 0.5625,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Antandra",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Soren - Silent Fury": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -41708,9 +43099,26 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Granny Dahnie",
+          "score": 0.5494,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Lumont",
+          "score": 0.5077,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Sylphira - Sovereign of Song": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -42391,11 +43799,25 @@
       "replacements": [
         {
           "name": "Satrana",
-          "score": 0.6836
+          "score": 0.6783,
+          "matches": [
+            "Magic",
+            "Max HP-based damage",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Brutus",
+          "score": 0.5056,
+          "matches": [
+            "Max HP-based damage",
+            "Life Drain"
+          ]
         }
       ]
     },
     "Talene - Resurging Flame": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -43036,9 +44458,26 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Seth",
+          "score": 0.5158,
+          "matches": [
+            "Healing"
+          ]
+        },
+        {
+          "name": "Zorya",
+          "score": 0.5115,
+          "matches": [
+            "HP loss",
+            "Magic"
+          ]
+        }
+      ]
     },
     "Tasi - Fairy of Dreams": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -43512,9 +44951,37 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Bryon",
+          "score": 0.6067,
+          "matches": [
+            "DoT",
+            "Magic",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Cryonaia",
+          "score": 0.55,
+          "matches": [
+            "DoT",
+            "Magic"
+          ]
+        },
+        {
+          "name": "Lorsan",
+          "score": 0.5405,
+          "matches": [
+            "Magic",
+            "DoT",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Temesia - Lightsavior": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -44212,9 +45679,40 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Baelran",
+          "score": 0.5535,
+          "matches": [
+            "Physical",
+            "Max HP-based damage",
+            "True damage",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Nazrik",
+          "score": 0.5254,
+          "matches": [
+            "Physical",
+            "Max HP-based damage",
+            "True damage"
+          ]
+        },
+        {
+          "name": "Nara",
+          "score": 0.5165,
+          "matches": [
+            "Max HP-based damage",
+            "Physical",
+            "True damage",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Thador - Ironsworn General": {
+      "is_supporting_unit": false,
       "is_energy_provider": true,
       "effects": [
         {
@@ -44863,6 +46361,7 @@
       "replacements": []
     },
     "Thoran - Fallen King": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -45115,9 +46614,34 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Salazer",
+          "score": 0.7,
+          "matches": [
+            "Healing",
+            "Physical",
+            "Life Drain"
+          ]
+        },
+        {
+          "name": "Chippy",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Silvina",
+          "score": 0.55,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Tilaya - Wild Blade": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -45677,9 +47201,35 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Gerda",
+          "score": 0.6333,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Ulmus",
+          "score": 0.6077,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Kafra",
+          "score": 0.602,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Ulmus - Grove Keeper": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -45963,9 +47513,35 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Atalanta",
+          "score": 0.6125,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Lucca",
+          "score": 0.6125,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Tilaya",
+          "score": 0.6077,
+          "matches": [
+            "Physical",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Vala - Phantom of Oakenfell": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -46637,6 +48213,7 @@
       "replacements": []
     },
     "Valen - Roving Swordsman": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -46911,9 +48488,32 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Antandra",
+          "score": 0.6,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Hepler",
+          "score": 0.6,
+          "matches": [
+            "Physical"
+          ]
+        },
+        {
+          "name": "Kruger",
+          "score": 0.6,
+          "matches": [
+            "Physical"
+          ]
+        }
+      ]
     },
     "Valka - Forsaken Blade": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -47723,9 +49323,28 @@
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Granny Dahnie",
+          "score": 0.5193,
+          "matches": [
+            "Physical",
+            "Max HP-based damage",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Himmel",
+          "score": 0.5115,
+          "matches": [
+            "Physical",
+            "Max HP-based damage"
+          ]
+        }
+      ]
     },
     "Velara - Pale Votary": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -48067,6 +49686,7 @@
       "replacements": []
     },
     "Viperian - Shadow Serpent": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -48324,9 +49944,35 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Solise",
+          "score": 0.7167,
+          "matches": [
+            "Magic",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Marcille",
+          "score": 0.6905,
+          "matches": [
+            "Magic",
+            "Healing"
+          ]
+        },
+        {
+          "name": "Velara",
+          "score": 0.6833,
+          "matches": [
+            "Magic",
+            "Healing"
+          ]
+        }
+      ]
     },
     "Walker - Wildland Outlaw": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -48798,6 +50444,7 @@
       "replacements": []
     },
     "Zandrok - Watchful Edge": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -49145,6 +50792,7 @@
       "replacements": []
     },
     "Zanie - Timeless Tinkerer": {
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -49427,6 +51075,7 @@
       "replacements": []
     },
     "Zorya - Watcher in Stone": {
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "effects": [
         {
@@ -50212,7 +51861,24 @@
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
-      "replacements": []
+      "replacements": [
+        {
+          "name": "Talene",
+          "score": 0.5115,
+          "matches": [
+            "HP loss",
+            "Magic"
+          ]
+        },
+        {
+          "name": "Harak",
+          "score": 0.5058,
+          "matches": [
+            "HP loss",
+            "Healing"
+          ]
+        }
+      ]
     }
   }
 }

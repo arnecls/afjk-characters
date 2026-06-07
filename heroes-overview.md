@@ -40,6 +40,12 @@ Common buffers are **Lyca**, **Ravion**, or **Lucius**.
 - **Evie**
   - ATK buff (multiple targets, high)
   - Enables Debuff on target via DoT (single target)
+
+### Units that can act as a replacement for Aliceth
+
+- **Kordan** (52% match `Physical` `DEF Penetration` `HP loss`)
+- **Ravion** (52% match `Physical` `ATK` `HP loss`)
+
 ### Summary for Aliceth
 
 #### Stats Aliceth benefits from
@@ -197,6 +203,11 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 ### Units benefitting from Alsa
 
 - Bonnie
+
+### Units that can act as a replacement for Alsa
+
+- **Lily May** (51% match `Magic`)
+
 ### Summary for Alsa
 
 #### Stats Alsa benefits from
@@ -268,6 +279,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Callan
 - Contess
 - Evie
+
+### Units that can act as a replacement for Antandra
+
+- **Kruger** (65% match `Physical`)
+- **Hepler** (64% match `Physical` `Healing`)
+- **Gerda** (63% match `Physical` `Healing`)
+
 ### Summary for Antandra
 
 #### Stats Antandra benefits from
@@ -329,6 +347,11 @@ Common buffers are **Ravion**, **Lyca**, or **Hugin**.
 - **Fay**
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Arden
+
+- **Bryon** (50% match `Magic` `DoT`)
+
 ### Summary for Arden
 
 #### Stats Arden benefits from
@@ -379,8 +402,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Atalanta
 
-- **Lucca** (75% match)
-- **Igor** (69% match)
+- **Lucca** (80% match `Physical` `Healing`)
+- **Igor** (69% match `Physical` `Healing`)
+- **Lucius** (62% match `Physical` `Healing`)
 
 ### Summary for Atalanta
 
@@ -443,6 +467,12 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Cecia**
   - Max HP buff (single target, high)
   - ATK SPD buff (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Athalia
+
+- **Dionel** (55% match `True damage` `Physical`)
+- **Koko** (53% match `True damage` `Physical` `Healing`)
+
 ### Summary for Athalia
 
 #### Stats Athalia benefits from
@@ -518,6 +548,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Hodgkin
 - Phraesto
 - Zanie
+
+### Units that can act as a replacement for Aurora
+
+- **Phraesto** (58% match `Magic`)
+- **Twins** (56% match `Magic`)
+- **Pandora** (56% match `Magic`)
+
 ### Summary for Aurora
 
 #### Stats Aurora benefits from
@@ -578,6 +615,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Hepler**
   - Haste buff (single target, low) [signature fuel]
   - Max HP via Shield (multiple targets, medium)
+
+### Units that can act as a replacement for Baelran
+
+- **Temesia** (55% match `Physical` `Max HP-based damage` `True damage` `Healing`)
+- **Nara** (53% match `Max HP-based damage` `True damage` `Physical` `Healing`)
+
 ### Summary for Baelran
 
 #### Stats Baelran benefits from
@@ -645,6 +688,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - ATK SPD buff (multiple targets, high) [signature fuel]
 - **Zandrok**
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+
+### Units that can act as a replacement for Berial
+
+- **Bryon** (58% match `DoT` `Magic`)
+- **Lorsan** (56% match `DoT` `Magic` `Healing`)
+
 ### Summary for Berial
 
 #### Damage types dealt by Berial
@@ -706,6 +755,11 @@ Common buffers are **Lyca**, **Lucius**, or **Rowan**.
   - ATK buff (single target, high)
   - Enables Debuff on target via Energy drain (multiple targets)
   - Enables Magic damage from allies via Magic damage + early battle + all enemies (all units)
+
+### Units that can act as a replacement for Bonnie
+
+- **Mirael** (55% match `Magic` `DoT`)
+
 ### Summary for Bonnie
 
 #### Stats Bonnie benefits from
@@ -776,6 +830,13 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
 ### Units benefitting from Brutus
 
 - Shadewing
+
+### Units that can act as a replacement for Brutus
+
+- **Cecia** (61% match `Max HP-based damage` `Physical` `DoT` `Life Drain`)
+- **Satrana** (60% match `Max HP-based damage` `DoT` `Life Drain`)
+- **Daimon** (58% match `Max HP-based damage` `DoT` `Life Drain`)
+
 ### Summary for Brutus
 
 #### Stats Brutus benefits from
@@ -829,6 +890,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Bryon
+
+- **Tasi** (60% match `DoT` `Magic` `Healing`)
+- **Berial** (58% match `DoT` `Magic`)
+- **Lorsan** (53% match `DoT` `Magic` `Healing`)
+
 ### Summary for Bryon
 
 #### Stats Bryon benefits from
@@ -963,6 +1031,13 @@ Common buffers are **Lyca**, **Twins**, or **Damian**.
   - Enables CC on enemies via Pin (area, high)
 - **Lumont**
   - Enables CC on enemies via Stun (area, high)
+
+### Units that can act as a replacement for Carolina
+
+- **Aurora** (55% match `Magic`)
+- **Eironn** (55% match `Magic`)
+- **Fay** (55% match `Magic`)
+
 ### Summary for Carolina
 
 #### Stats Carolina benefits from
@@ -1024,6 +1099,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Pandora**
   - Energy recovery (single target, low) [signature fuel]
   - Energy recovery (1000 at battle start, single target) [signature fuel]
+
+### Units that can act as a replacement for Cassadee
+
+- **Solise** (65% match `Magic`)
+- **Contess** (55% match `Magic`)
+- **Damian** (55% match `Magic`)
+
 ### Summary for Cassadee
 
 #### Stats Cassadee benefits from
@@ -1082,6 +1164,13 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 - **Lumont**
   - DEF buff (multiple targets, medium)
   - DEF buff (multiple targets, medium)
+
+### Units that can act as a replacement for Cecia
+
+- **Brutus** (61% match `Max HP-based damage` `Physical` `DoT` `Life Drain`)
+- **Florabelle** (55% match `Max HP-based damage` `Physical`)
+- **Hodgkin** (53% match `Max HP-based damage` `Physical`)
+
 ### Summary for Cecia
 
 #### Stats Cecia benefits from
@@ -1148,6 +1237,13 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
   - Energy recovery (lieutenant, start of battle) [signature fuel]
 - **Gala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Chippy
+
+- **Salazer** (55% match `Physical`)
+- **Silvina** (55% match `Physical`)
+- **Thoran** (55% match `Physical`)
+
 ### Summary for Chippy
 
 #### Damage types dealt by Chippy
@@ -1250,6 +1346,11 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 - **Contess**
   - ATK buff (single target, high)
   - Max HP via Shield (single target, medium)
+
+### Units that can act as a replacement for Cryonaia
+
+- **Tasi** (55% match `DoT` `Magic`)
+
 ### Summary for Cryonaia
 
 #### Stats Cryonaia benefits from
@@ -1365,6 +1466,12 @@ Common buffers are **Lucius** or **Hugin**.
   - Max HP via Shield (all units, low)
 - **Gala**
   - Max HP via Shield (single target, high)
+
+### Units that can act as a replacement for Daimon
+
+- **Satrana** (61% match `Max HP-based damage` `DoT` `Magic` `Life Drain`)
+- **Brutus** (58% match `Max HP-based damage` `DoT` `Life Drain`)
+
 ### Summary for Daimon
 
 #### Stats Daimon benefits from
@@ -1491,6 +1598,12 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) [signature fuel]
   - Max HP via Shield (multiple targets, medium)
+
+### Units that can act as a replacement for Dionel
+
+- **Athalia** (55% match `True damage` `Physical`)
+- **Koko** (50% match `True damage` `Physical`)
+
 ### Summary for Dionel
 
 #### Stats Dionel benefits from
@@ -1623,6 +1736,13 @@ Common buffers are **Lucius**, **Hugin**, or **Rowan**.
   - DEF buff (multiple targets, medium)
 - **Koko**
   - Max HP via Shield (all units, low)
+
+### Units that can act as a replacement for Eironn
+
+- **Nerion** (57% match `Magic`)
+- **Phraesto** (56% match `Magic`)
+- **Aurora** (55% match `Magic`)
+
 ### Summary for Eironn
 
 #### Stats Eironn benefits from
@@ -1968,6 +2088,12 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 - Gala
 - Phraesto
 - Zanie
+
+### Units that can act as a replacement for Florabelle
+
+- **Hodgkin** (60% match `Max HP-based damage` `Physical`)
+- **Cecia** (55% match `Max HP-based damage` `Physical`)
+
 ### Summary for Florabelle
 
 #### Stats Florabelle benefits from
@@ -2097,6 +2223,13 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 - Zandrok
 - Athalia
 - Silvina
+
+### Units that can act as a replacement for Gala
+
+- **Mehira** (69% match `Magic` `Haste`)
+- **Lucy** (67% match `Magic` `Max HP`)
+- **Damian** (65% match `Magic` `Haste`)
+
 ### Summary for Gala
 
 #### Stats Gala benefits from
@@ -2212,6 +2345,13 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
   - Energy recovery (1000 at battle start, single target) [signature fuel]
 - **Kafra**
   - Healing over time (area, high)
+
+### Units that can act as a replacement for Granny Dahnie
+
+- **Hodgkin** (60% match `Physical` `Healing` `Max HP-based damage`)
+- **Lumont** (55% match `Physical` `Max HP-based damage`)
+- **Soren** (54% match `Physical` `Healing`)
+
 ### Summary for Granny Dahnie
 
 #### Stats Granny Dahnie benefits from
@@ -2270,6 +2410,11 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) [signature fuel]
   - Max HP via Shield (multiple targets, medium)
+
+### Units that can act as a replacement for Gunnar
+
+- **Cecia** (50% match `Max HP-based damage` `Physical` `DoT` `ATK SPD`)
+
 ### Summary for Gunnar
 
 #### Stats Gunnar benefits from
@@ -2327,6 +2472,12 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Gwyneth
+
+- **Granny Dahnie** (50% match `Physical` `Max HP-based damage`)
+- **Lumont** (50% match `Physical` `Max HP-based damage`)
+
 ### Summary for Gwyneth
 
 #### Stats Gwyneth benefits from
@@ -2378,6 +2529,11 @@ Common buffers are **Lyca**, **Hugin**, or **Ravion**.
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD buff (all units, low) [signature fuel]
+
+### Units that can act as a replacement for Hammie
+
+- **Rowan** (64% match `Healing` `Magic` `ATK`)
+
 ### Summary for Hammie
 
 #### Stats Hammie benefits from
@@ -2422,6 +2578,12 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Cecia**
   - Max HP buff (single target, high)
   - Lifedrain buff (area, low)
+
+### Units that can act as a replacement for Harak
+
+- **Seth** (56% match `Physical` `Healing`)
+- **Zorya** (50% match `HP loss` `Healing`)
+
 ### Summary for Harak
 
 #### Stats Harak benefits from
@@ -2502,6 +2664,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Saida
 - Thoran
 - Ulmus
+
+### Units that can act as a replacement for Hepler
+
+- **Lucius** (66% match `Physical` `Max HP` `Healing`)
+- **Antandra** (64% match `Physical` `Healing`)
+- **Gerda** (61% match `Physical` `Healing`)
+
 ### Summary for Hepler
 
 #### Stats Hepler benefits from
@@ -2649,6 +2818,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 ### Units benefitting from Himmel
 
 - Baelran
+
+### Units that can act as a replacement for Himmel
+
+- **Valka** (51% match `Physical` `Max HP-based damage`)
+- **Cecia** (50% match `Physical` `Max HP-based damage` `Max HP`)
+
 ### Summary for Himmel
 
 #### Stats Himmel benefits from
@@ -2708,6 +2883,13 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
   - ATK SPD buff (multiple targets, high) [signature fuel]
 - **Zandrok**
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
+
+### Units that can act as a replacement for Hodgkin
+
+- **Granny Dahnie** (60% match `Physical` `Healing` `Max HP-based damage`)
+- **Florabelle** (60% match `Max HP-based damage` `Physical`)
+- **Cecia** (53% match `Max HP-based damage` `Physical`)
+
 ### Summary for Hodgkin
 
 #### Stats Hodgkin benefits from
@@ -2833,8 +3015,9 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 
 ### Units that can act as a replacement for Igor
 
-- **Atalanta** (69% match)
-- **Lucca** (69% match)
+- **Atalanta** (69% match `Physical` `Healing`)
+- **Lucca** (69% match `Physical` `Healing`)
+- **Mikola** (57% match `Physical` `Healing`)
 
 ### Summary for Igor
 
@@ -3036,6 +3219,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Evie
 - Igor
 - Phraesto
+
+### Units that can act as a replacement for Kafra
+
+- **Gerda** (66% match `Healing` `Physical`)
+- **Tilaya** (60% match `Physical` `Healing`)
+- **Shakir** (57% match `Physical`)
+
 ### Summary for Kafra
 
 #### Stats Kafra benefits from
@@ -3173,6 +3363,12 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 - Nerion
 - Carolina
+
+### Units that can act as a replacement for Kordan
+
+- **Ravion** (55% match `Physical` `HP loss`)
+- **Aliceth** (52% match `Physical` `DEF Penetration` `HP loss`)
+
 ### Summary for Kordan
 
 #### Stats Kordan benefits from
@@ -3229,6 +3425,11 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - Max HP buff (single target, low)
   - Energy recovery (single target, low) [signature fuel]
   - Energy recovery (1000 at battle start, single target) [signature fuel]
+
+### Units that can act as a replacement for Korin
+
+- **Scarlita** (51% match `Physical` `True damage` `Max HP`)
+
 ### Summary for Korin
 
 #### Stats Korin benefits from
@@ -3279,6 +3480,13 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
   - Max HP via Shield (multiple targets, medium)
 - **Lumont**
   - DEF buff (multiple targets, medium)
+
+### Units that can act as a replacement for Kruger
+
+- **Antandra** (65% match `Physical`)
+- **Shakir** (64% match `Physical` `Life Drain`)
+- **Valen** (60% match `Physical`)
+
 ### Summary for Kruger
 
 #### Stats Kruger benefits from
@@ -3339,6 +3547,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Fay**
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Kulu
+
+- **Pang** (56% match `Physical` `DEF Penetration`)
+- **Igor** (55% match `Physical`)
+- **Lyca** (55% match `Physical`)
+
 ### Summary for Kulu
 
 #### Stats Kulu benefits from
@@ -3405,6 +3620,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Valka**
   - ATK SPD buff (multiple targets, high) [signature fuel]
   - Healing (single target, low)
+
+### Units that can act as a replacement for Laios
+
+- **Antandra** (55% match `Physical`)
+- **Atalanta** (55% match `Physical`)
+- **Gerda** (55% match `Physical`)
+
 ### Summary for Laios
 
 #### Stats Laios benefits from
@@ -3475,6 +3697,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Max HP buff (single target, low)
   - Energy recovery (single target, low) [signature fuel]
   - Energy recovery (1000 at battle start, single target) [signature fuel]
+
+### Units that can act as a replacement for Lenya
+
+- **Valen** (58% match `Physical`)
+- **Atalanta** (56% match `Physical`)
+- **Tilaya** (56% match `Physical`)
+
 ### Summary for Lenya
 
 #### Stats Lenya benefits from
@@ -3523,6 +3752,12 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 - **Fay**
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Lily May
+
+- **Alsa** (51% match `Magic`)
+- **Silven** (50% match `Magic` `Max HP-based damage` `DEF Penetration`)
+
 ### Summary for Lily May
 
 #### Stats Lily May benefits from
@@ -3639,8 +3874,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units that can act as a replacement for Lucca
 
-- **Atalanta** (75% match)
-- **Igor** (69% match)
+- **Atalanta** (80% match `Physical` `Healing`)
+- **Igor** (69% match `Physical` `Healing`)
+- **Ulmus** (61% match `Physical` `Healing`)
 
 ### Summary for Lucca
 
@@ -3713,6 +3949,13 @@ These are the **10** strongest pairings:
 - Athalia
 - Baelran
 - Daimon
+
+### Units that can act as a replacement for Lucius
+
+- **Hepler** (66% match `Physical` `Max HP` `Healing`)
+- **Atalanta** (62% match `Physical` `Healing`)
+- **Ulmus** (59% match `Physical` `Healing` `Max HP`)
+
 ### Summary for Lucius
 
 #### Stats Lucius benefits from
@@ -3770,6 +4013,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Lucy
+
+- **Gala** (67% match `Magic` `Max HP`)
+- **Saida** (64% match `Magic` `Max HP`)
+- **Contess** (59% match `Magic` `Max HP`)
+
 ### Summary for Lucy
 
 #### Stats Lucy benefits from
@@ -3824,11 +4074,6 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 - **Fay**
   - Healing (arc, high, conditional (frequent))
   - ATK SPD buff (multiple targets, low) [signature fuel]
-
-### Units that can act as a replacement for Ludovic
-
-- **Marcille** (61% match)
-
 ### Summary for Ludovic
 
 #### Stats Ludovic benefits from
@@ -3896,6 +4141,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Carolina
 - Lucca
 - Niru
+
+### Units that can act as a replacement for Lumont
+
+- **Granny Dahnie** (55% match `Physical` `Max HP-based damage`)
+- **Soren** (50% match `Physical`)
+- **Gwyneth** (50% match `Physical` `Max HP-based damage`)
+
 ### Summary for Lumont
 
 #### Stats Lumont benefits from
@@ -3970,6 +4222,13 @@ These are the **10** strongest pairings:
 - Cyran
 - Dionel
 - Fay
+
+### Units that can act as a replacement for Lyca
+
+- **Igor** (55% match `Physical`)
+- **Kulu** (55% match `Physical`)
+- **Mikola** (55% match `Physical`)
+
 ### Summary for Lyca
 
 #### Stats Lyca benefits from
@@ -4024,8 +4283,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Units that can act as a replacement for Marcille
 
-- **Solise** (62% match)
-- **Ludovic** (61% match)
+- **Ludovic** (74% match `Magic` `Healing`)
+- **Solise** (73% match `Magic` `Healing`)
+- **Hewynn** (71% match `Magic` `Healing`)
 
 ### Summary for Marcille
 
@@ -4086,6 +4346,11 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Marilee
+
+- **Perseus** (51% match `Physical` `True damage`)
+
 ### Summary for Marilee
 
 #### Stats Marilee benefits from
@@ -4147,6 +4412,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (single target, high) [signature fuel]
   - Max HP via Shield (single target, high)
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Mehira
+
+- **Gala** (69% match `Magic` `Haste`)
+- **Damian** (67% match `Magic` `Haste`)
+- **Velara** (59% match `Magic` `Haste`)
+
 ### Summary for Mehira
 
 #### Stats Mehira benefits from
@@ -4279,6 +4551,11 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Mirael
+
+- **Bonnie** (55% match `Magic` `DoT`)
+
 ### Summary for Mirael
 
 #### Stats Mirael benefits from
@@ -4319,6 +4596,12 @@ Common buffers are **Ravion** or **Lyca**.
   - Energy recovery (single target, low) [signature fuel]
 - **Thador**
   - Energy recovery (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Nara
+
+- **Baelran** (53% match `Max HP-based damage` `True damage` `Physical` `Healing`)
+- **Temesia** (51% match `Max HP-based damage` `Physical` `True damage` `Healing`)
+
 ### Summary for Nara
 
 #### Stats Nara benefits from
@@ -4375,6 +4658,11 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Shakir**
   - Haste buff (multiple targets, low) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Natsu
+
+- **Satrana** (50% match `Max HP-based damage` `Magic` `DoT`)
+
 ### Summary for Natsu
 
 #### Stats Natsu benefits from
@@ -4427,6 +4715,11 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Nazrik
+
+- **Temesia** (52% match `Physical` `Max HP-based damage` `True damage`)
+
 ### Summary for Nazrik
 
 #### Stats Nazrik benefits from
@@ -4483,6 +4776,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - Enables CC on enemies via Pin (area, high)
 - **Lumont**
   - Enables CC on enemies via Stun (area, high)
+
+### Units that can act as a replacement for Nerion
+
+- **Eironn** (57% match `Magic`)
+- **Aurora** (55% match `Magic`)
+- **Carolina** (55% match `Magic`)
+
 ### Summary for Nerion
 
 #### Stats Nerion benefits from
@@ -4709,6 +5009,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Aliceth**
   - ATK buff (multiple targets, low)
   - DEF Penetration buff (multiple targets, medium)
+
+### Units that can act as a replacement for Pang
+
+- **Shakir** (65% match `Physical`)
+- **Ulmus** (60% match `Physical` `Max HP`)
+- **Lucca** (58% match `Physical`)
+
 ### Summary for Pang
 
 #### Stats Pang benefits from
@@ -4765,6 +5072,13 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Parisa
+
+- **Aurora** (55% match `Magic`)
+- **Carolina** (55% match `Magic`)
+- **Eironn** (55% match `Magic`)
+
 ### Summary for Parisa
 
 #### Stats Parisa benefits from
@@ -4817,6 +5131,12 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - ATK buff (single target, medium)
   - Max HP buff (single target, low)
   - Enables Ally stat buffs via 6 ally stat buffs (start of battle)
+
+### Units that can act as a replacement for Perseus
+
+- **Scarlita** (52% match `Physical` `True damage`)
+- **Marilee** (51% match `Physical` `True damage`)
+
 ### Summary for Perseus
 
 #### Stats Perseus benefits from
@@ -4873,6 +5193,13 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
   - Healing (area, high)
 - **Kafra**
   - Healing over time (area, high)
+
+### Units that can act as a replacement for Phraesto
+
+- **Twins** (59% match `Magic` `Max HP`)
+- **Aurora** (58% match `Magic`)
+- **Eironn** (56% match `Magic`)
+
 ### Summary for Phraesto
 
 #### Stats Phraesto benefits from
@@ -5005,6 +5332,12 @@ These are the **10** strongest pairings:
 - Hewynn
 - Hodgkin
 - Kafra
+
+### Units that can act as a replacement for Ravion
+
+- **Kordan** (55% match `Physical` `HP loss`)
+- **Aliceth** (52% match `Physical` `ATK` `HP loss`)
+
 ### Summary for Ravion
 
 #### Stats Ravion benefits from
@@ -5110,6 +5443,12 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Vala**
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Rhys
+
+- **Hugin** (55% match `Physical`)
+- **Sinbad** (55% match `Physical`)
+
 ### Summary for Rhys
 
 #### Stats Rhys benefits from
@@ -5312,6 +5651,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
   - ATK SPD via Haste buff (single target, low) [signature fuel]
 - **Valka**
   - ATK SPD buff (multiple targets, high) [signature fuel]
+
+### Units that can act as a replacement for Salazer
+
+- **Thoran** (70% match `Healing` `Physical` `Life Drain`)
+- **Chippy** (55% match `Physical`)
+- **Silvina** (55% match `Physical`)
+
 ### Summary for Salazer
 
 #### Stats Salazer benefits from
@@ -5365,7 +5711,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Units that can act as a replacement for Satrana
 
-- **Sylphira** (68% match)
+- **Sylphira** (67% match `Magic` `Max HP-based damage` `Life Drain`)
+- **Daimon** (61% match `Max HP-based damage` `DoT` `Magic` `Life Drain`)
+- **Brutus** (60% match `Max HP-based damage` `DoT` `Life Drain`)
 
 ### Summary for Satrana
 
@@ -5424,6 +5772,13 @@ Common buffers are **Ravion** or **Lyca**.
   - Energy recovery (single target, low) [signature fuel]
 - **Thador**
   - Energy recovery (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Scarlita
+
+- **Perseus** (52% match `Physical` `True damage`)
+- **Korin** (51% match `Physical` `True damage` `Max HP`)
+- **Koko** (50% match `Physical` `True damage` `Max HP`)
+
 ### Summary for Scarlita
 
 #### Stats Scarlita benefits from
@@ -5488,6 +5843,12 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Mehira**
   - Haste buff (single target, high) [signature fuel]
   - ATK SPD via Haste buff (single target, high) [signature fuel]
+
+### Units that can act as a replacement for Seth
+
+- **Harak** (56% match `Physical` `Healing`)
+- **Talene** (51% match `Healing`)
+
 ### Summary for Seth
 
 #### Stats Seth benefits from
@@ -5625,6 +5986,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 - **Valka**
   - ATK SPD buff (multiple targets, high) [signature fuel]
+
+### Units that can act as a replacement for Shakir
+
+- **Pang** (65% match `Physical`)
+- **Kruger** (64% match `Physical` `Life Drain`)
+- **Kafra** (57% match `Physical`)
+
 ### Summary for Shakir
 
 #### Stats Shakir benefits from
@@ -5692,6 +6060,11 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
   - Max HP via Shield (multiple targets, medium)
   - Healing (multiple targets, medium)
   - ATK SPD via Haste buff (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Shemira
+
+- **Satrana** (51% match `Max HP-based damage` `Magic`)
+
 ### Summary for Shemira
 
 #### Stats Shemira benefits from
@@ -5739,6 +6112,11 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Nara
 - Pandora
 - Scarlita
+
+### Units that can act as a replacement for Silven
+
+- **Lily May** (50% match `Magic` `Max HP-based damage` `DEF Penetration`)
+
 ### Summary for Silven
 
 #### Stats Silven benefits from
@@ -5793,6 +6171,13 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - **Cecia**
   - Max HP buff (single target, high)
   - ATK SPD buff (single target, low) [signature fuel]
+
+### Units that can act as a replacement for Silvina
+
+- **Chippy** (55% match `Physical`)
+- **Salazer** (55% match `Physical`)
+- **Thoran** (55% match `Physical`)
+
 ### Summary for Silvina
 
 #### Stats Silvina benefits from
@@ -5850,6 +6235,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 ### Units benefitting from Sinbad
 
 - Indris
+
+### Units that can act as a replacement for Sinbad
+
+- **Hugin** (55% match `Physical`)
+- **Rhys** (55% match `Physical`)
+- **Kafra** (52% match `Physical`)
+
 ### Summary for Sinbad
 
 #### Stats Sinbad benefits from
@@ -5965,11 +6357,6 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
   - Energy recovery (multiple targets, low) [signature fuel]
-
-### Units that can act as a replacement for Solise
-
-- **Marcille** (62% match)
-
 ### Summary for Solise
 
 #### Stats Solise benefits from
@@ -6023,6 +6410,13 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
   - Haste buff (area, medium, conditional (frequent)) [signature fuel]
 - **Callan**
   - Max HP via Shield (multiple targets, medium)
+
+### Units that can act as a replacement for Sonja
+
+- **Valen** (57% match `Physical`)
+- **Kruger** (56% match `Physical`)
+- **Antandra** (55% match `Physical`)
+
 ### Summary for Sonja
 
 #### Stats Sonja benefits from
@@ -6075,6 +6469,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Max HP buff (single target, low)
   - Energy recovery (single target, low) [signature fuel]
   - Energy recovery (1000 at battle start, single target) [signature fuel]
+
+### Units that can act as a replacement for Soren
+
+- **Granny Dahnie** (54% match `Physical` `Healing`)
+- **Lumont** (50% match `Physical`)
+
 ### Summary for Soren
 
 #### Stats Soren benefits from
@@ -6132,7 +6532,8 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units that can act as a replacement for Sylphira
 
-- **Satrana** (68% match)
+- **Satrana** (67% match `Magic` `Max HP-based damage` `Life Drain`)
+- **Brutus** (50% match `Max HP-based damage` `Life Drain`)
 
 ### Summary for Sylphira
 
@@ -6203,6 +6604,12 @@ Common buffers are **Mikola**, **Lucius**, or **Rowan**.
 - **Hepler**
   - Max HP via Shield (multiple targets, medium)
   - Healing (multiple targets, medium)
+
+### Units that can act as a replacement for Talene
+
+- **Seth** (51% match `Healing`)
+- **Zorya** (51% match `HP loss` `Magic`)
+
 ### Summary for Talene
 
 #### Stats Talene benefits from
@@ -6265,6 +6672,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Nerion
 - Carolina
+
+### Units that can act as a replacement for Tasi
+
+- **Bryon** (60% match `DoT` `Magic` `Healing`)
+- **Cryonaia** (55% match `DoT` `Magic`)
+- **Lorsan** (54% match `Magic` `DoT` `Healing`)
+
 ### Summary for Tasi
 
 #### Stats Tasi benefits from
@@ -6329,6 +6743,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
   - Healing (arc, high, conditional (frequent))
+
+### Units that can act as a replacement for Temesia
+
+- **Baelran** (55% match `Physical` `Max HP-based damage` `True damage` `Healing`)
+- **Nazrik** (52% match `Physical` `Max HP-based damage` `True damage`)
+- **Nara** (51% match `Max HP-based damage` `Physical` `True damage` `Healing`)
+
 ### Summary for Temesia
 
 #### Stats Temesia benefits from
@@ -6451,6 +6872,13 @@ Common buffers are **Lucius**, **Hugin**, or **Ravion**.
   - Max HP via Shield (all units, low)
 - **Gala**
   - Max HP via Shield (single target, high)
+
+### Units that can act as a replacement for Thoran
+
+- **Salazer** (70% match `Healing` `Physical` `Life Drain`)
+- **Chippy** (55% match `Physical`)
+- **Silvina** (55% match `Physical`)
+
 ### Summary for Thoran
 
 #### Stats Thoran benefits from
@@ -6501,6 +6929,13 @@ Common buffers are **Lucius**, **Rowan**, or **Twins**.
   - Healing (multiple targets, medium)
 - **Isabella**
   - Healing (area, high)
+
+### Units that can act as a replacement for Tilaya
+
+- **Gerda** (63% match `Physical` `Healing`)
+- **Ulmus** (60% match `Physical` `Healing`)
+- **Kafra** (60% match `Physical` `Healing`)
+
 ### Summary for Tilaya
 
 #### Stats Tilaya benefits from
@@ -6554,6 +6989,13 @@ Common buffers are **Lucius**, **Hugin**, or **Ravion**.
   - Max HP via Shield (all units, low)
 - **Gala**
   - Max HP via Shield (single target, high)
+
+### Units that can act as a replacement for Ulmus
+
+- **Atalanta** (61% match `Physical` `Healing`)
+- **Lucca** (61% match `Physical` `Healing`)
+- **Tilaya** (60% match `Physical` `Healing`)
+
 ### Summary for Ulmus
 
 #### Stats Ulmus benefits from
@@ -6685,6 +7127,13 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD buff (all units, low) [signature fuel]
+
+### Units that can act as a replacement for Valen
+
+- **Antandra** (60% match `Physical`)
+- **Hepler** (60% match `Physical`)
+- **Kruger** (60% match `Physical`)
+
 ### Summary for Valen
 
 #### Stats Valen benefits from
@@ -6745,6 +7194,12 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 ### Units benefitting from Valka
 
 - Lyca
+
+### Units that can act as a replacement for Valka
+
+- **Granny Dahnie** (51% match `Physical` `Max HP-based damage` `Healing`)
+- **Himmel** (51% match `Physical` `Max HP-based damage`)
+
 ### Summary for Valka
 
 #### Stats Valka benefits from
@@ -6871,6 +7326,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Shakir**
   - Haste buff (multiple targets, low) [signature fuel]
   - ATK SPD via Haste buff (multiple targets, low) [signature fuel]
+
+### Units that can act as a replacement for Viperian
+
+- **Solise** (71% match `Magic` `Healing`)
+- **Marcille** (69% match `Magic` `Healing`)
+- **Velara** (68% match `Magic` `Healing`)
+
 ### Summary for Viperian
 
 #### Stats Viperian benefits from
@@ -7118,6 +7580,12 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Max HP via Shield (all units, low)
   - Healing (multiple targets, high)
   - Lifedrain buff (multiple targets, low)
+
+### Units that can act as a replacement for Zorya
+
+- **Talene** (51% match `HP loss` `Magic`)
+- **Harak** (50% match `HP loss` `Healing`)
+
 ### Summary for Zorya
 
 #### Stats Zorya benefits from
