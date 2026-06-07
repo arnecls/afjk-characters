@@ -2778,7 +2778,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "True damage": "high"
+        "True damage": "medium"
       },
       "benefit_stats": [
         "Max HP",
@@ -3079,20 +3079,19 @@
       ],
       "replacements": [
         {
-          "name": "Dionel",
-          "score": 0.55,
+          "name": "Scarlita",
+          "score": 0.5192,
           "matches": [
-            "True damage",
-            "Physical"
+            "Physical",
+            "True damage"
           ]
         },
         {
-          "name": "Koko",
-          "score": 0.5382,
+          "name": "Dionel",
+          "score": 0.5056,
           "matches": [
             "True damage",
-            "Physical",
-            "Healing"
+            "Physical"
           ]
         }
       ]
@@ -10235,14 +10234,6 @@
       "replacements": [
         {
           "name": "Athalia",
-          "score": 0.55,
-          "matches": [
-            "True damage",
-            "Physical"
-          ]
-        },
-        {
-          "name": "Koko",
           "score": 0.5056,
           "matches": [
             "True damage",
@@ -19374,8 +19365,8 @@
           ]
         },
         {
-          "name": "Mikola",
-          "score": 0.5768,
+          "name": "Koko",
+          "score": 0.5806,
           "matches": [
             "Physical",
             "Healing"
@@ -21381,15 +21372,9 @@
         [
           "Physical",
           "All units, Area, Single target"
-        ],
-        [
-          "True damage",
-          "All units"
         ]
       ],
-      "damage_magnitudes": {
-        "True damage": "medium"
-      },
+      "damage_magnitudes": {},
       "benefit_stats": [
         "Haste",
         "Energy"
@@ -21714,7 +21699,7 @@
       "damage_entries": [
         [
           "Physical",
-          "Area, Multiple targets, Single target"
+          "Area, Single target"
         ],
         [
           "HP loss",
@@ -23546,7 +23531,7 @@
           ]
         },
         {
-          "name": "Lyca",
+          "name": "Koko",
           "score": 0.55,
           "matches": [
             "Physical"
@@ -28576,14 +28561,14 @@
           ]
         },
         {
-          "name": "Kulu",
+          "name": "Koko",
           "score": 0.55,
           "matches": [
             "Physical"
           ]
         },
         {
-          "name": "Mikola",
+          "name": "Kulu",
           "score": 0.55,
           "matches": [
             "Physical"
@@ -37899,12 +37884,11 @@
           ]
         },
         {
-          "name": "Koko",
-          "score": 0.5018,
+          "name": "Athalia",
+          "score": 0.5192,
           "matches": [
             "Physical",
-            "True damage",
-            "Max HP"
+            "True damage"
           ]
         }
       ]

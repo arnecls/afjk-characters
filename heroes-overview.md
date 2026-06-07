@@ -470,8 +470,8 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 ### Units that can act as a replacement for Athalia
 
-- **Dionel** (55% match `True damage` `Physical`)
-- **Koko** (53% match `True damage` `Physical` `Healing`)
+- **Scarlita** (51% match `Physical` `True damage`)
+- **Dionel** (50% match `True damage` `Physical`)
 
 ### Summary for Athalia
 
@@ -485,7 +485,7 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
-- True damage — All units, Single target — `high`
+- True damage — All units, Single target — `medium`
 
 #### Buffs provided by Athalia
 
@@ -1601,8 +1601,7 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Units that can act as a replacement for Dionel
 
-- **Athalia** (55% match `True damage` `Physical`)
-- **Koko** (50% match `True damage` `Physical`)
+- **Athalia** (50% match `True damage` `Physical`)
 
 ### Summary for Dionel
 
@@ -3017,7 +3016,7 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 
 - **Atalanta** (69% match `Physical` `Healing`)
 - **Lucca** (69% match `Physical` `Healing`)
-- **Mikola** (57% match `Physical` `Healing`)
+- **Koko** (58% match `Physical` `Healing`)
 
 ### Summary for Igor
 
@@ -3309,7 +3308,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
-- True damage — All units — `medium`
 
 #### Buffs provided by Koko
 
@@ -3382,7 +3380,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 #### Damage types dealt by Kordan
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Multiple targets, Single target
+- Physical — Area, Single target
 - HP loss — Single target — `low`
 
 #### Buffs provided by Kordan
@@ -3552,7 +3550,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - **Pang** (56% match `Physical` `DEF Penetration`)
 - **Igor** (55% match `Physical`)
-- **Lyca** (55% match `Physical`)
+- **Koko** (55% match `Physical`)
 
 ### Summary for Kulu
 
@@ -4226,8 +4224,8 @@ These are the **10** strongest pairings:
 ### Units that can act as a replacement for Lyca
 
 - **Igor** (55% match `Physical`)
+- **Koko** (55% match `Physical`)
 - **Kulu** (55% match `Physical`)
-- **Mikola** (55% match `Physical`)
 
 ### Summary for Lyca
 
@@ -5777,7 +5775,7 @@ Common buffers are **Ravion** or **Lyca**.
 
 - **Perseus** (52% match `Physical` `True damage`)
 - **Korin** (51% match `Physical` `True damage` `Max HP`)
-- **Koko** (50% match `Physical` `True damage` `Max HP`)
+- **Athalia** (51% match `Physical` `True damage`)
 
 ### Summary for Scarlita
 

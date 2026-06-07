@@ -2147,6 +2147,8 @@ def _accumulate_true_damage_scores(hero: Hero, primary_dmg: str) -> None:
     for _tier, text, _section in hero.skill_chunks:
         if _chunk_is_companion_focused(text):
             continue
+        if _skill_chunk_has_ally_only_damage(text):
+            continue
         tgt = detect_targeting(text)
         for d in detect_damage_types(text, primary_dmg):
             if d not in TRUE_DAMAGE_TYPES:
@@ -2198,6 +2200,33 @@ def _hero_needs_external_healing(hero: Hero) -> bool:
     return False
 
 
+def _skill_chunk_has_enemy_damage(text: str) -> bool:
+    """True when a skill chunk deals damage to enemies."""
+    if _chunk_targets_enemies(text):
+        return True
+    if re.search(r"\(atk-based\).{0,60}\bdamage\b", text, re.I) and re.search(
+        r"\b(?:the target|an enemy|enemies?)\b", text, re.I
+    ):
+        return True
+    return False
+
+
+def _skill_chunk_has_ally_only_damage(text: str) -> bool:
+    """True when damage in the chunk targets allies only (e.g. Koko Full Energy)."""
+    t = text.lower()
+    if not re.search(r"\b(?:true )?damage\b", t):
+        return False
+    ally_damage = bool(
+        re.search(
+            r"\b(?:dealt|deal(?:t|s|ing)?)\b.{0,80}\b(?:as )?(?:true )?damage\b"
+            r".{0,50}\bto (?:all )?allies\b",
+            t,
+        )
+        or re.search(r"\b(?:true )?damage\b.{0,50}\bto (?:all )?allies\b", t)
+    )
+    return ally_damage and not _skill_chunk_has_enemy_damage(text)
+
+
 def analyze_text(
     effects,
     summon_effects,
@@ -2220,9 +2249,10 @@ def analyze_text(
         for scope in _effect_match_scopes(text, pat):
             add_effect(effects, "cc", label, tier, text, scope=scope)
 
-    tgt = detect_targeting(text)
-    for d in detect_damage_types(text, primary_dmg):
-        damage_map.setdefault(d, set()).add(tgt)
+    if not _skill_chunk_has_ally_only_damage(text):
+        tgt = detect_targeting(text)
+        for d in detect_damage_types(text, primary_dmg):
+            damage_map.setdefault(d, set()).add(tgt)
 
     for stat, pat in [
         # ATK: scaling gains only — not every (ATK-based) damage line.
