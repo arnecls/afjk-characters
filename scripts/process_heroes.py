@@ -142,6 +142,14 @@ def build_processed(data: dict) -> dict:
         heroes, enabler_matchers, behavior_by_title
     )
 
+    # Match overview-to-csv: energy providers are detected from freshly parsed
+    # (un-analyzed) hero blocks, so only the battle-start text path counts.
+    energy_provider_titles = {
+        hero.title
+        for hero in (rs.parse_hero_block(b) for b in blocks)
+        if gen.is_energy_provider(hero)
+    }
+
     processed_heroes: dict[str, dict] = {}
     for hero in heroes:
         behavior = behavior_by_title[hero.title]
@@ -150,6 +158,7 @@ def build_processed(data: dict) -> dict:
         )
         benefited = beneficiaries_index.get(hero.title, [])
         processed_heroes[hero.title] = {
+            "is_energy_provider": hero.title in energy_provider_titles,
             "effects": [asdict(e) for e in hero.effects],
             "summon_effects": [asdict(e) for e in hero.summon_effects],
             "cc_immunities": [asdict(c) for c in hero.cc_immunities],
@@ -165,17 +174,7 @@ def build_processed(data: dict) -> dict:
             "beneficiary_overflow_reasons": gen._beneficiary_overflow_reasons(hero),
         }
 
-    # Match overview-to-csv: energy providers are detected from freshly parsed
-    # (un-analyzed) hero blocks, so only the battle-start text path counts.
-    energy_providers = sorted(
-        gen.short_name(hero.title)
-        for hero in (rs.parse_hero_block(b) for b in blocks)
-        if gen.is_energy_provider(hero)
-    )
-
     return {
-        "order": [h.title for h in heroes],
-        "energy_providers": energy_providers,
         "heroes": processed_heroes,
     }
 
@@ -189,7 +188,7 @@ def main() -> None:
     print(
         f"Wrote {io.HEROES_DATA_PROCESSED.relative_to(io.ROOT)} "
         f"({len(processed['heroes'])} heroes, "
-        f"{len(processed['energy_providers'])} energy providers)"
+        f"{sum(1 for p in processed['heroes'].values() if p['is_energy_provider'])} energy providers)"
     )
 
 

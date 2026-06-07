@@ -106,7 +106,7 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
     data_by_title = {h["title"]: h for h in data["heroes"]}
     parts = list(OVERVIEW_HEADER)
 
-    for title in processed["order"]:
+    for title in sorted(processed["heroes"]):
         p = processed["heroes"][title]
         short = gen.short_name(title)
         damage_type = data_by_title.get(title, {}).get("damage_type")
@@ -149,7 +149,11 @@ def main() -> None:
         f"Wrote {OVERVIEW_MD.relative_to(io.ROOT)} ({len(content.splitlines())} lines)"
     )
 
-    energy_providers = frozenset(processed.get("energy_providers", []))
+    energy_providers = frozenset(
+        gen.short_name(title)
+        for title, p in processed["heroes"].items()
+        if p.get("is_energy_provider")
+    )
     n = write_csv(content, energy_providers)
     print(
         f"Wrote {OVERVIEW_CSV.relative_to(io.ROOT)} "

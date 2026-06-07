@@ -1,132 +1,7 @@
 {
-  "order": [
-    "Aliceth - Radiant Wings",
-    "Alna - Frozen Mother",
-    "Alsa - Desert Flare",
-    "Antandra - Desert Fury",
-    "Arden - Oak Sage",
-    "Atalanta - Fortune Finder",
-    "Athalia - Harbinger of Justice",
-    "Aurora - Celestial of Dreams",
-    "Baelran - Dawnblade",
-    "Berial - Sinister Jester",
-    "Bonnie - Obsidian Claws",
-    "Brutus - Blood Claw",
-    "Bryon - Evergreen Sentinel",
-    "Callan - Grim Soulkeeper",
-    "Carolina - Candlelight Specter",
-    "Cassadee - Azure Prodigy",
-    "Cecia - Requiem of Thorns",
-    "Chippy - Sidekick",
-    "Contess - Abyssal Rulekeeper",
-    "Cryonaia - Arctic Revenant",
-    "Cyran - Umbral Weaver",
-    "Daimon - Forsaken Child",
-    "Damian - Woody Wonder",
-    "Dionel - Venus of Dawn",
-    "Dunlingr - Eternal Voice",
-    "Eironn - Stormsword",
-    "Elijah & Lailah - Celestial Twins",
-    "Evie - Royal Envoy",
-    "Faramor - Silverfang Mantle",
-    "Fay - Colorful Dancer",
-    "Florabelle - Blooming Maiden",
-    "Frieren - The Legendary Mage",
-    "Gala - Daughter of Dawn",
-    "Gerda - Soothing Siren",
-    "Granny Dahnie - Forest Guardian",
-    "Gunnar - Iron Doom",
-    "Gwyneth - Dragonslayer Knight",
-    "Hammie - Magician",
-    "Harak - Deepsea Ravager",
-    "Hepler - Master of Forms",
-    "Hewynn - Tender Leaf",
-    "Himmel - The Legendary Hero",
-    "Hodgkin - Reviled Captain",
-    "Hugin - Maverick Smith",
-    "Igor - Mad Dagger",
-    "Indris - Chain Breaker",
-    "Isabella - The Taken Soul",
-    "Kafra - Gale Rider",
-    "Koko - Wild Child",
-    "Kordan - Ironblood Chieftain",
-    "Korin - Wood Warden",
-    "Kruger - Dauntless Warrior",
-    "Kulu - Blast Master",
-    "Laios - Dungeon Adventurer",
-    "Lenya - Wild Cyclone",
-    "Lily May - Twilight Tracker",
-    "Lorsan - Windweaver Protector",
-    "Lucca - Stalwart Fighter",
-    "Lucius - The Lightbringer",
-    "Lucy - Celestial Spirit Mage",
-    "Ludovic - Wreathed Eternalist",
-    "Lumont - Benign Horn",
-    "Lyca - Keeper of Glades",
-    "Marcille - Elven Mage",
-    "Marilee - Forest's Arrow",
-    "Mehira - Mind Cager",
-    "Mikola - Warbeat Compere",
-    "Mirael - Scarlet Sorceress",
-    "Nara - Wrathful Wraith",
-    "Natsu - Fire Dragon Slayer Mage",
-    "Nazrik - Soulstalker",
-    "Nerion - Bereaved Tide",
-    "Niru - Soul Collector",
-    "Odie - Desert Defender",
-    "Pandora - Hope Unleashed",
-    "Pang - Bamboo Guardian",
-    "Parisa - Ode to Flowers",
-    "Perseus - Chosen Champion",
-    "Phraesto - Misty Scorpion",
-    "Pippa - The Muddled Magician",
-    "Ravion - Twilight's Burden",
-    "Reinier - Symmetric Sin",
-    "Rhys - Fiery Cavalier",
-    "Rowan - The Roamer",
-    "Saida - Vampiric Vine",
-    "Salazer - Lash of Bantus",
-    "Satrana - Ember Enchantress",
-    "Scarlita - Herald of Compassion",
-    "Seth - Swift Shadow",
-    "Shadewing - Undying Vow",
-    "Shakir - Furious Howl",
-    "Shemira - Corpsemaker",
-    "Silven - Heir of Glory",
-    "Silvina - The Taken Breath",
-    "Sinbad - Seaside Savant",
-    "Smokey & Meerky - Wasteland Apothecary",
-    "Solise - Floral Wonder",
-    "Sonja - Crimson Queenpin",
-    "Soren - Silent Fury",
-    "Sylphira - Sovereign of Song",
-    "Talene - Resurging Flame",
-    "Tasi - Fairy of Dreams",
-    "Temesia - Lightsavior",
-    "Thador - Ironsworn General",
-    "Thoran - Fallen King",
-    "Tilaya - Wild Blade",
-    "Ulmus - Grove Keeper",
-    "Vala - Phantom of Oakenfell",
-    "Valen - Roving Swordsman",
-    "Valka - Forsaken Blade",
-    "Velara - Pale Votary",
-    "Viperian - Shadow Serpent",
-    "Walker - Wildland Outlaw",
-    "Zandrok - Watchful Edge",
-    "Zanie - Timeless Tinkerer",
-    "Zorya - Watcher in Stone"
-  ],
-  "energy_providers": [
-    "Lyca",
-    "Pandora",
-    "Phraesto",
-    "Ravion",
-    "Rowan",
-    "Thador"
-  ],
   "heroes": {
     "Aliceth - Radiant Wings": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -913,6 +788,7 @@
       ]
     },
     "Alna - Frozen Mother": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -1096,6 +972,7 @@
       ]
     },
     "Alsa - Desert Flare": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -1531,6 +1408,7 @@
       ]
     },
     "Antandra - Desert Fury": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -1936,6 +1814,7 @@
       ]
     },
     "Arden - Oak Sage": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -2182,6 +2061,7 @@
       ]
     },
     "Atalanta - Fortune Finder": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -2494,6 +2374,7 @@
       ]
     },
     "Athalia - Harbinger of Justice": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -2805,6 +2686,7 @@
       ]
     },
     "Aurora - Celestial of Dreams": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -3153,6 +3035,7 @@
       ]
     },
     "Baelran - Dawnblade": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -3535,6 +3418,7 @@
       ]
     },
     "Berial - Sinister Jester": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -3839,6 +3723,7 @@
       ]
     },
     "Bonnie - Obsidian Claws": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -4630,6 +4515,7 @@
       ]
     },
     "Brutus - Blood Claw": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -4980,6 +4866,7 @@
       ]
     },
     "Bryon - Evergreen Sentinel": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -5216,6 +5103,7 @@
       ]
     },
     "Callan - Grim Soulkeeper": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -5353,6 +5241,7 @@
       ]
     },
     "Carolina - Candlelight Specter": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -6020,6 +5909,7 @@
       ]
     },
     "Cassadee - Azure Prodigy": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -6309,6 +6199,7 @@
       ]
     },
     "Cecia - Requiem of Thorns": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -6648,6 +6539,7 @@
       ]
     },
     "Chippy - Sidekick": {
+      "is_energy_provider": false,
       "effects": [],
       "summon_effects": [],
       "cc_immunities": [],
@@ -6859,6 +6751,7 @@
       ]
     },
     "Contess - Abyssal Rulekeeper": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -7415,6 +7308,7 @@
       ]
     },
     "Cryonaia - Arctic Revenant": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -7826,6 +7720,7 @@
       ]
     },
     "Cyran - Umbral Weaver": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -8147,6 +8042,7 @@
       ]
     },
     "Daimon - Forsaken Child": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -8230,6 +8126,7 @@
       ]
     },
     "Damian - Woody Wonder": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -8638,6 +8535,7 @@
       ]
     },
     "Dionel - Venus of Dawn": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -9021,6 +8919,7 @@
       ]
     },
     "Dunlingr - Eternal Voice": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -9726,6 +9625,7 @@
       ]
     },
     "Eironn - Stormsword": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -9938,6 +9838,7 @@
       ]
     },
     "Elijah & Lailah - Celestial Twins": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -10612,6 +10513,7 @@
       ]
     },
     "Evie - Royal Envoy": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -11174,6 +11076,7 @@
       ]
     },
     "Faramor - Silverfang Mantle": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -11604,6 +11507,7 @@
       ]
     },
     "Fay - Colorful Dancer": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -11871,6 +11775,7 @@
       ]
     },
     "Florabelle - Blooming Maiden": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -12119,6 +12024,7 @@
       ]
     },
     "Frieren - The Legendary Mage": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -12414,6 +12320,7 @@
       ]
     },
     "Gala - Daughter of Dawn": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -12721,6 +12628,7 @@
       ]
     },
     "Gerda - Soothing Siren": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -12960,6 +12868,7 @@
       ]
     },
     "Granny Dahnie - Forest Guardian": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -13257,6 +13166,7 @@
       ]
     },
     "Gunnar - Iron Doom": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -13591,6 +13501,7 @@
       ]
     },
     "Gwyneth - Dragonslayer Knight": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -13865,6 +13776,7 @@
       ]
     },
     "Hammie - Magician": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -14106,6 +14018,7 @@
       ]
     },
     "Harak - Deepsea Ravager": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -14597,6 +14510,7 @@
       ]
     },
     "Hepler - Master of Forms": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -14943,6 +14857,7 @@
       ]
     },
     "Hewynn - Tender Leaf": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -15236,6 +15151,7 @@
       ]
     },
     "Himmel - The Legendary Hero": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -15858,6 +15774,7 @@
       ]
     },
     "Hodgkin - Reviled Captain": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -16158,6 +16075,7 @@
       ]
     },
     "Hugin - Maverick Smith": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -16725,6 +16643,7 @@
       ]
     },
     "Igor - Mad Dagger": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -17246,6 +17165,7 @@
       ]
     },
     "Indris - Chain Breaker": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -17973,6 +17893,7 @@
       ]
     },
     "Isabella - The Taken Soul": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -18264,6 +18185,7 @@
       ]
     },
     "Kafra - Gale Rider": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -18730,6 +18652,7 @@
       ]
     },
     "Koko - Wild Child": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -19043,6 +18966,7 @@
       ]
     },
     "Kordan - Ironblood Chieftain": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -19775,6 +19699,7 @@
       ]
     },
     "Korin - Wood Warden": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -20052,6 +19977,7 @@
       ]
     },
     "Kruger - Dauntless Warrior": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -20391,6 +20317,7 @@
       ]
     },
     "Kulu - Blast Master": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -20631,6 +20558,7 @@
       ]
     },
     "Laios - Dungeon Adventurer": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -21355,6 +21283,7 @@
       ]
     },
     "Lenya - Wild Cyclone": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -21762,6 +21691,7 @@
       ]
     },
     "Lily May - Twilight Tracker": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -22052,6 +21982,7 @@
       ]
     },
     "Lorsan - Windweaver Protector": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -22324,6 +22255,7 @@
       ]
     },
     "Lucca - Stalwart Fighter": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -22721,6 +22653,7 @@
       ]
     },
     "Lucius - The Lightbringer": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -23380,6 +23313,7 @@
       ]
     },
     "Lucy - Celestial Spirit Mage": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -23591,6 +23525,7 @@
       ]
     },
     "Ludovic - Wreathed Eternalist": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -24160,6 +24095,7 @@
       ]
     },
     "Lumont - Benign Horn": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -24846,6 +24782,7 @@
       ]
     },
     "Lyca - Keeper of Glades": {
+      "is_energy_provider": true,
       "effects": [
         {
           "category": "buff",
@@ -25380,6 +25317,7 @@
       ]
     },
     "Marcille - Elven Mage": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -25633,6 +25571,7 @@
       ]
     },
     "Marilee - Forest's Arrow": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -25898,6 +25837,7 @@
       ]
     },
     "Mehira - Mind Cager": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -26636,6 +26576,7 @@
       ]
     },
     "Mikola - Warbeat Compere": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -27229,6 +27170,7 @@
       ]
     },
     "Mirael - Scarlet Sorceress": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -27457,6 +27399,7 @@
       ]
     },
     "Nara - Wrathful Wraith": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -27596,6 +27539,7 @@
       ]
     },
     "Natsu - Fire Dragon Slayer Mage": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -27909,6 +27853,7 @@
       ]
     },
     "Nazrik - Soulstalker": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -28182,6 +28127,7 @@
       ]
     },
     "Nerion - Bereaved Tide": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -28882,6 +28828,7 @@
       ]
     },
     "Niru - Soul Collector": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -29212,6 +29159,7 @@
       ]
     },
     "Odie - Desert Defender": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -29388,6 +29336,7 @@
       ]
     },
     "Pandora - Hope Unleashed": {
+      "is_energy_provider": true,
       "effects": [
         {
           "category": "debuff",
@@ -29597,6 +29546,7 @@
       ]
     },
     "Pang - Bamboo Guardian": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -29896,6 +29846,7 @@
       ]
     },
     "Parisa - Ode to Flowers": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -30147,6 +30098,7 @@
       ]
     },
     "Perseus - Chosen Champion": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -30894,6 +30846,7 @@
       ]
     },
     "Phraesto - Misty Scorpion": {
+      "is_energy_provider": true,
       "effects": [
         {
           "category": "buff",
@@ -31420,6 +31373,7 @@
       ]
     },
     "Pippa - The Muddled Magician": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -31699,6 +31653,7 @@
       ]
     },
     "Ravion - Twilight's Burden": {
+      "is_energy_provider": true,
       "effects": [
         {
           "category": "buff",
@@ -32156,6 +32111,7 @@
       ]
     },
     "Reinier - Symmetric Sin": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -32272,6 +32228,7 @@
       ]
     },
     "Rhys - Fiery Cavalier": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -32531,6 +32488,7 @@
       ]
     },
     "Rowan - The Roamer": {
+      "is_energy_provider": true,
       "effects": [
         {
           "category": "buff",
@@ -32911,6 +32869,7 @@
       ]
     },
     "Saida - Vampiric Vine": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -33055,6 +33014,7 @@
       ]
     },
     "Salazer - Lash of Bantus": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -33317,6 +33277,7 @@
       ]
     },
     "Satrana - Ember Enchantress": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -33618,6 +33579,7 @@
       ]
     },
     "Scarlita - Herald of Compassion": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -33788,6 +33750,7 @@
       ]
     },
     "Seth - Swift Shadow": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -34214,6 +34177,7 @@
       ]
     },
     "Shadewing - Undying Vow": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -35076,6 +35040,7 @@
       ]
     },
     "Shakir - Furious Howl": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -35341,6 +35306,7 @@
       ]
     },
     "Shemira - Corpsemaker": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -35944,6 +35910,7 @@
       ]
     },
     "Silven - Heir of Glory": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -36634,6 +36601,7 @@
       ]
     },
     "Silvina - The Taken Breath": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -37026,6 +36994,7 @@
       ]
     },
     "Sinbad - Seaside Savant": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "debuff",
@@ -37315,6 +37284,7 @@
       ]
     },
     "Smokey & Meerky - Wasteland Apothecary": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -37844,6 +37814,7 @@
       ]
     },
     "Solise - Floral Wonder": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -38094,6 +38065,7 @@
       ]
     },
     "Sonja - Crimson Queenpin": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -38261,6 +38233,7 @@
       ]
     },
     "Soren - Silent Fury": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -38563,6 +38536,7 @@
       ]
     },
     "Sylphira - Sovereign of Song": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -39234,6 +39208,7 @@
       ]
     },
     "Talene - Resurging Flame": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -39868,6 +39843,7 @@
       ]
     },
     "Tasi - Fairy of Dreams": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -40218,6 +40194,7 @@
       ]
     },
     "Temesia - Lightsavior": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -40908,6 +40885,7 @@
       ]
     },
     "Thador - Ironsworn General": {
+      "is_energy_provider": true,
       "effects": [
         {
           "category": "buff",
@@ -41568,6 +41546,7 @@
       ]
     },
     "Thoran - Fallen King": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -41821,6 +41800,7 @@
       ]
     },
     "Tilaya - Wild Blade": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -42048,6 +42028,7 @@
       ]
     },
     "Ulmus - Grove Keeper": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -42324,6 +42305,7 @@
       ]
     },
     "Vala - Phantom of Oakenfell": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -42983,6 +42965,7 @@
       ]
     },
     "Valen - Roving Swordsman": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -43251,6 +43234,7 @@
       ]
     },
     "Valka - Forsaken Blade": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -44040,6 +44024,7 @@
       ]
     },
     "Velara - Pale Votary": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -44379,6 +44364,7 @@
       ]
     },
     "Viperian - Shadow Serpent": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -44637,6 +44623,7 @@
       ]
     },
     "Walker - Wildland Outlaw": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "cc",
@@ -45092,6 +45079,7 @@
       ]
     },
     "Zandrok - Watchful Edge": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -45441,6 +45429,7 @@
       ]
     },
     "Zanie - Timeless Tinkerer": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
@@ -45701,6 +45690,7 @@
       ]
     },
     "Zorya - Watcher in Stone": {
+      "is_energy_provider": false,
       "effects": [
         {
           "category": "buff",
