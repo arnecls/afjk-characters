@@ -2830,8 +2830,6 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
             [se for se in hero.special_effects if se.kind == "requires"],
             key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
         )
-        out.append(f"#### {name}'s Special Effects")
-        out.append("")
         if provides:
             out.append(f"#### {name} Provides")
             out.append("")

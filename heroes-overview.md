@@ -85,8 +85,6 @@ Common buffers are **Lyca**, **Ravion**, or **Lucius**.
 - Move — Single target — `low`
 - Stun — Single target — `low`
 
-#### Aliceth's Special Effects
-
 #### Aliceth Provides
 
 - Ally grant (Brightfeather) — Single target
@@ -185,8 +183,6 @@ Common buffers are **Lucius** or **Hugin**.
 
 - Freeze (Supreme+) — Area — `medium`
 
-#### Alna's Special Effects
-
 #### Alna Provides
 
 - Ally empower — Single target
@@ -270,8 +266,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Move — Single target — `low`
 - Stun — Single target — `high`
 
-#### Alsa's Special Effects
-
 #### Alsa Provides
 
 - Enhanced form — Area
@@ -351,8 +345,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Knock down — Area — `medium`
 - Stun — Area — `medium`
 - Taunt — Area — `high`
-
-#### Antandra's Special Effects
 
 #### Antandra Provides
 
@@ -506,8 +498,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Pin — Single target — `medium`
 - Stun — Single target — `medium`
 
-#### Atalanta's Special Effects
-
 #### Atalanta Provides
 
 - Reposition enemies — Single target
@@ -594,8 +584,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 - Unaffected — Area — On skill
 - Knock down — All units — `low`
-
-#### Athalia's Special Effects
 
 #### Athalia Provides
 
@@ -690,8 +678,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Unaffected — Self — On skill
 - Sleep — Single target — `high`
 
-#### Aurora's Special Effects
-
 #### Aurora Provides
 
 - Invincibility — Multiple targets
@@ -783,8 +769,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Unaffected — Self — Start of battle
 - Knock down — Area — `medium`
 
-#### Baelran's Special Effects
-
 #### Baelran Provides
 
 - Start-of-battle cast — Arc
@@ -863,8 +847,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Frighten — Area — `medium`
 
-#### Berial's Special Effects
-
 #### Berial Provides
 
 - Invincibility — Single target
@@ -940,8 +922,6 @@ Common buffers are **Lyca**, **Lucius**, or **Ravion**.
 #### Crowd Control provided by Bonnie
 
 - Stun — Single target — `low`
-
-#### Bonnie's Special Effects
 
 #### Bonnie Provides
 
@@ -1120,8 +1100,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Interrupt — Single target — `low`
 - Stun (Mythic+) — Single target — `medium`
 
-#### Bryon's Special Effects
-
 #### Bryon Provides
 
 - Energy steal — Single target
@@ -1207,8 +1185,6 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 - Pin — Multiple targets — `low`
 - Stun (Mythic+) — All units — `low`
 
-#### Callan's Special Effects
-
 #### Callan Provides
 
 - Damage absorption (allies) — Multiple targets
@@ -1283,8 +1259,6 @@ Common buffers are **Lyca**, **Twins**, or **Damian**.
 #### Crowd Control provided by Carolina
 
 - Freeze — Area — `high`
-
-#### Carolina's Special Effects
 
 #### Carolina Provides
 
@@ -1365,8 +1339,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Move — All units — `low`
 - Stun — Single target — `high`
-
-#### Cassadee's Special Effects
 
 #### Cassadee Provides
 
@@ -1456,8 +1428,6 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 #### Crowd Control provided by Cecia
 
 - Pin — Single target — `high`
-
-#### Cecia's Special Effects
 
 #### Cecia Provides
 
@@ -1599,8 +1569,6 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 - Silence (Mythic+) — Single target — `medium`
 - Stun (Supreme+) — Single target — `medium`
 
-#### Contess's Special Effects
-
 #### Contess Provides
 
 - Start-of-battle cast — All units
@@ -1670,8 +1638,6 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 - Immune — Self — Conditional
 - Freeze (EX+15) — Self — `low`
-
-#### Cryonaia's Special Effects
 
 #### Cryonaia Provides
 
@@ -1746,8 +1712,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - Unaffected — Self — Start of battle
 - Pin — Self — `high`
 - Silence (EX+10) — Single target — `low`
-
-#### Cyran's Special Effects
 
 #### Cyran Provides
 
@@ -1913,8 +1877,6 @@ These are the **10** strongest pairings:
 
 - Stun — Single target — `medium`
 
-#### Damian's Special Effects
-
 #### Damian Provides
 
 - Summoning — All units
@@ -1990,8 +1952,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 #### Debuffs provided by Dionel
 
 - Vitality debuff (EX+10) — Single target — `low`
-
-#### Dionel's Special Effects
 
 #### Dionel Provides
 
@@ -2084,8 +2044,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 #### Crowd Control provided by Dunlingr
 
 - Silence — All units — `low`
-
-#### Dunlingr's Special Effects
 
 #### Dunlingr Provides
 
@@ -2252,8 +2210,6 @@ These are the **10** strongest pairings:
 - Unaffected — Area — On skill
 - Move — Area — `low`
 
-#### Twins's Special Effects
-
 #### Twins Provides
 
 - Ally positioning link — Single target
@@ -2353,8 +2309,6 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 - Pin — All units — `low`
 - Silence — All units — `low`
 
-#### Evie's Special Effects
-
 #### Evie Provides
 
 - Invincibility — All units
@@ -2438,8 +2392,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Faramor
 
 - Stun — Area — `medium`
-
-#### Faramor's Special Effects
 
 #### Faramor Provides
 
@@ -2596,8 +2548,6 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 #### Crowd Control provided by Florabelle
 
 - Immune (Supreme+) — Self — Form
-
-#### Florabelle's Special Effects
 
 #### Florabelle Provides
 
@@ -2762,8 +2712,6 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 - Steadfast (Supreme+) — Self — On skill
 - Pin — Single target — `medium`
-
-#### Gala's Special Effects
 
 #### Gala Provides
 
@@ -3006,8 +2954,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 - Stun — All units — `low`
 
-#### Gunnar's Special Effects
-
 #### Gunnar Provides
 
 - Invincibility (EX+15) — Single target
@@ -3217,8 +3163,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 - Unaffected — Self — Start of battle
 
-#### Harak's Special Effects
-
 #### Harak Provides
 
 - Instant defeat — Single target
@@ -3324,8 +3268,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Stun — Area — `low`
 - Taunt — Area — `high`
 
-#### Hepler's Special Effects
-
 #### Hepler Provides
 
 - Invincibility (Mythic+) — Area
@@ -3417,8 +3359,6 @@ These are the **10** strongest pairings:
 
 - Unaffected (Mythic+) — Self — On skill
 
-#### Hewynn's Special Effects
-
 #### Hewynn Requires
 
 - Passive with internal cooldown — Allies
@@ -3496,8 +3436,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Unaffected — Multiple targets — On skill
 
-#### Himmel's Special Effects
-
 #### Himmel Requires
 
 - Party composition — Allies
@@ -3569,8 +3507,6 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 - Energy drain (Mythic+) — Area — `low`
 - Vitality debuff (EX+5) — Single target — `low`
 - Phys DEF debuff (Supreme+) — Single target — `low`
-
-#### Hodgkin's Special Effects
 
 #### Hodgkin Provides
 
@@ -3715,8 +3651,6 @@ Common buffers are **Mikola**, **Rowan**, or **Damian**.
 
 - Healing — Single target — `low`
 
-#### Igor's Special Effects
-
 #### Igor Provides
 
 - Untargetable — Area
@@ -3807,8 +3741,6 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 - Pin — Area — `high`
 - Silence — Single target — `low`
 
-#### Indris's Special Effects
-
 #### Indris Requires
 
 - Debuff on target — Enemies
@@ -3898,8 +3830,6 @@ Common buffers are **Mikola**, **Twins**, or **Hugin**.
 #### Crowd Control provided by Isabella
 
 - Unaffected — Single target — Once
-
-#### Isabella's Special Effects
 
 #### Isabella Requires
 
@@ -3997,8 +3927,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Unaffected (Mythic+) — Self — Conditional
 - Move — Single target — `low`
 - Stun — Single target — `high`
-
-#### Kafra's Special Effects
 
 #### Kafra Provides
 
@@ -4309,8 +4237,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - Phys DEF debuff — Single target — `low`
 - Vulnerable debuff — Area — `medium`
 
-#### Kruger's Special Effects
-
 #### Kruger Provides
 
 - Stacking buff — Single target
@@ -4397,8 +4323,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Unaffected — Area — On ultimate
 - Move — Single target — `low`
 
-#### Kulu's Special Effects
-
 #### Kulu Provides
 
 - Invincibility — Single target
@@ -4473,8 +4397,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 #### Crowd Control provided by Laios
 
 - Pin — Area — `medium`
-
-#### Laios's Special Effects
 
 #### Laios Provides
 
@@ -4633,8 +4555,6 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 - Unaffected — Self — Start of battle
 - Interrupt — All units — `low`
-
-#### Lily May's Special Effects
 
 #### Lily May Provides
 
@@ -4900,8 +4820,6 @@ These are the **10** strongest pairings:
 - Move — Single target — `high`
 - Stun — Single target — `low`
 
-#### Lucius's Special Effects
-
 #### Lucius Provides
 
 - Reposition enemies — Single target
@@ -5054,8 +4972,6 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 - Unaffected — Self — On skill
 - Stun (Supreme+) — Single target — `medium`
-
-#### Ludovic's Special Effects
 
 #### Ludovic Provides
 
@@ -5311,8 +5227,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Unaffected (Supreme+) — Self — On skill
 - Interrupt (Mythic+) — Single target — `high`
 
-#### Marcille's Special Effects
-
 #### Marcille Provides
 
 - Revive ally (Mythic+) — Single target
@@ -5374,8 +5288,6 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 #### Crowd Control provided by Marilee
 
 - Stun — Single target — `low`
-
-#### Marilee's Special Effects
 
 #### Marilee Provides
 
@@ -5460,8 +5372,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 #### Crowd Control provided by Mehira
 
 - Charm — Area — `medium`
-
-#### Mehira's Special Effects
 
 #### Mehira Provides
 
@@ -5820,8 +5730,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Stun — Single target — `medium`
 
-#### Nazrik's Special Effects
-
 #### Nazrik Provides
 
 - Stacking buff — Single target
@@ -5894,8 +5802,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Stun — Single target — `medium`
 
-#### Nerion's Special Effects
-
 #### Nerion Provides
 
 - Enhanced form (Supreme+) — Single target
@@ -5956,8 +5862,6 @@ Common buffers are **Rowan**, **Lyca**, or **Twins**.
 #### Buffs provided by Niru
 
 - Healing — Single target — `low` — conditional (rare)
-
-#### Niru's Special Effects
 
 #### Niru Provides
 
@@ -6092,8 +5996,6 @@ Common buffers are **Ravion** or **Lyca**.
 - Haste debuff — Single target — `medium`
 - Vitality debuff — Single target — `high`
 
-#### Pandora's Special Effects
-
 #### Pandora Provides
 
 - Invincibility — Single target
@@ -6172,8 +6074,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Unaffected — Self — On skill
 - Stun — Area — `low`
 
-#### Pang's Special Effects
-
 #### Pang Provides
 
 - Transformation — Self
@@ -6223,8 +6123,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Self, Single target
-
-#### Parisa's Special Effects
 
 #### Parisa Provides
 
@@ -6306,8 +6204,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Unaffected — Multiple targets — On skill
 - Stun — Area — `medium`
 
-#### Perseus's Special Effects
-
 #### Perseus Requires
 
 - Ally stat buffs (EX+10) — —
@@ -6388,8 +6284,6 @@ Common buffers are **Mikola**, **Rowan**, or **Ravion**.
 
 - Stun (Mythic+) — Single target — `low`
 - Taunt (Mythic+) — Single target — `low`
-
-#### Phraesto's Special Effects
 
 #### Phraesto Provides
 
@@ -6586,8 +6480,6 @@ These are the **10** strongest pairings:
 - Unaffected — Self — Start of battle
 - Knock down — Multiple targets — `high`
 - Move — Multiple targets — `high`
-
-#### Ravion's Special Effects
 
 #### Ravion Provides
 
@@ -6825,8 +6717,6 @@ These are the **10** strongest pairings:
 
 - Energy drain — Single target — `medium`
 
-#### Rowan's Special Effects
-
 #### Rowan Provides
 
 - Energy steal — Single target
@@ -6925,8 +6815,6 @@ Common buffers are **Lucius** or **Hugin**.
 - Unaffected — Self — Conditional
 - Interrupt — Area — `low`
 - Move — Single target — `low`
-
-#### Saida's Special Effects
 
 #### Saida Provides
 
@@ -7089,8 +6977,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Charm — Single target — `high`
 
-#### Satrana's Special Effects
-
 #### Satrana Provides
 
 - Ally DoT on enemies — Area
@@ -7164,8 +7050,6 @@ Common buffers are **Ravion** or **Lyca**.
 - Knock down — Arc — `low`
 - Move — All units — `low`
 - Stun — Area — `medium`
-
-#### Scarlita's Special Effects
 
 #### Scarlita Provides
 
@@ -7256,8 +7140,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Freeze — Single target — `low`
 
-#### Seth's Special Effects
-
 #### Seth Provides
 
 - Invincibility — Single target
@@ -7332,8 +7214,6 @@ Common buffers are **Lucius**, **Lyca**, or **Ravion**.
 #### Debuffs provided by Shadewing
 
 - Magic DEF debuff — All units — `low`
-
-#### Shadewing's Special Effects
 
 #### Shadewing Provides
 
@@ -7417,8 +7297,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Shakir
 
 - Unaffected — Self — Form
-
-#### Shakir's Special Effects
 
 #### Shakir Provides
 
@@ -7540,8 +7418,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - DEF Penetration buff (Mythic+) — Single target — `low`
 
-#### Silven's Special Effects
-
 #### Silven Requires
 
 - Ally stat buffs (Mythic+) — Allies
@@ -7615,8 +7491,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - Stun — Single target — `low`
 - Frighten (EX+10) — Area — `low`
 
-#### Silvina's Special Effects
-
 #### Silvina Provides
 
 - Marked target (focus fire) — Single target
@@ -7683,8 +7557,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 #### Crowd Control provided by Sinbad
 
 - Unaffected — Multiple targets — Conditional
-
-#### Sinbad's Special Effects
 
 #### Sinbad Provides
 
@@ -7837,8 +7709,6 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 #### Crowd Control provided by Solise
 
 - Unaffected — Self — Start of battle
-
-#### Solise's Special Effects
 
 #### Solise Provides
 
@@ -8066,8 +7936,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Knock down — Area — `medium`
 - Silence — Area — `low`
 
-#### Sylphira's Special Effects
-
 #### Sylphira Provides
 
 - Dispel debuffs (Mythic+) — Self
@@ -8129,8 +7997,6 @@ Common buffers are **Mikola**, **Lucius**, or **Rowan**.
 #### Buffs provided by Talene
 
 - Healing — Single target — `low`
-
-#### Talene's Special Effects
 
 #### Talene Provides
 
@@ -8205,8 +8071,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Pin — All units — `low`
 - Sleep — All units — `high`
 - Stun — Area — `high`
-
-#### Tasi's Special Effects
 
 #### Tasi Provides
 
@@ -8299,8 +8163,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Unaffected (Mythic+) — Self — Permanent
 - Interrupt — Single target — `high`
 - Knock down — All units — `low`
-
-#### Temesia's Special Effects
 
 #### Temesia Provides
 
@@ -8531,8 +8393,6 @@ Common buffers are **Lucius**, **Rowan**, or **Twins**.
 
 - Unaffected — Arc — Start of battle
 
-#### Tilaya's Special Effects
-
 #### Tilaya Provides
 
 - Start-of-battle cast — Arc
@@ -8608,8 +8468,6 @@ Common buffers are **Lucius**, **Hugin**, or **Ravion**.
 - Unaffected — Self — On skill
 - Knock down (Mythic+) — Single target — `medium`
 - Move (Supreme+) — Area — `low`
-
-#### Ulmus's Special Effects
 
 #### Ulmus Requires
 
@@ -8702,8 +8560,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Stun — Single target — `medium`
 
-#### Vala's Special Effects
-
 #### Vala Provides
 
 - Marked target (focus fire) — Self
@@ -8776,8 +8632,6 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 #### Crowd Control provided by Valen
 
 - Stun (Supreme+) — Single target — `medium`
-
-#### Valen's Special Effects
 
 #### Valen Provides
 
@@ -8860,8 +8714,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 - Unaffected — Self — On skill
 - Knock down — Area — `low`
 - Stun — Area — `low`
-
-#### Valka's Special Effects
 
 #### Valka Requires
 
@@ -8946,8 +8798,6 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 #### Crowd Control provided by Velara
 
 - Pin — Single target — `high`
-
-#### Velara's Special Effects
 
 #### Velara Provides
 
@@ -9285,8 +9135,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Stun — Single target — `low`
 
-#### Zanie's Special Effects
-
 #### Zanie Provides
 
 - Summoning — Self
@@ -9371,8 +9219,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Unaffected (EX+10) — Single target — On skill
 - Knock down — Arc — `medium`
 - Stun — Area — `medium`
-
-#### Zorya's Special Effects
 
 #### Zorya Provides
 
