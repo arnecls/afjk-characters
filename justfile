@@ -1,24 +1,35 @@
 # AFK Journey hero data pipeline.
 # Run `just` (or `just -l`) to list recipes.
+#
+# Pipeline: download -> process -> render
+#   download : data/heroes_data.json          (merge fandom + Yaphalla)
+#   process  : data/heroes_data_processed.json (synergy/summary/behaviour analysis)
+#   render   : Heroes.md, heroes-overview.md, heroes-overview.csv
 
 default:
     @just --list
 
-# Fetch skill text from Yaphalla → Heroes.md
+# Refresh data/heroes_data.json from live sources (fandom + Yaphalla; needs network).
 download:
-    node scripts/generate-heroes-md.js
+    python3 scripts/download_heroes.py
 
-# Fetch skill text from fandom wiki → heroes2.md
-download2:
-    node scripts/generate-heroes2-md.js
+# Analyse data/heroes_data.json -> data/heroes_data_processed.json.
+process:
+    python3 scripts/process_heroes.py
 
-# Synergies + summaries → heroes-overview.md (strips stray summaries from Heroes.md)
-overview:
-    python3 scripts/generate-heroes-overview.py
+# Render Heroes.md from data/heroes_data.json.
+render-heroes:
+    python3 scripts/render_heroes.py
 
-# heroes-overview.md → heroes-overview.csv
-csv:
-    python3 scripts/overview-to-csv.py
+# Render heroes-overview.md + heroes-overview.csv.
+render-overview:
+    python3 scripts/render_overview.py
 
-# Download hero data, then regenerate overview and CSV
-all: download download2 overview csv
+# Render all view files.
+render: render-heroes render-overview
+
+# Regenerate views from the committed data/heroes_data.json (no network).
+views: process render
+
+# Full pipeline: refresh data from the web, then regenerate views.
+all: download process render

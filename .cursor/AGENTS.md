@@ -146,7 +146,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
   Twins → Elijah & Lailah, Gala → Galahad).
 - **Signature skill** — the one skill that most characterises how the
-  hero is played. Stored in `scripts/signature_skills.json` (key =
+  hero is played. Stored in `data/signature_skills.json` (key =
   display name from `heroes-overview.md`). Shown in the behavior block
   as `Signature skill: {name} [(ultimate)] — {2–5 word description}`.
   Often the Ultimate, but not always. Pick the skill that defines the
@@ -155,8 +155,8 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   mechanic few others share; exceptional damage or buff; battle-start or
   formation setup.
 - **Alternative signature skill** — parallel set in
-  `scripts/defining_skills_alternative.json` (same shape as
-  `signature_skills.json`). Holds each hero's best **repeatable, buffable**
+  `data/defining_skills_alternative.json` (same shape as
+  `data/signature_skills.json`). Holds each hero's best **repeatable, buffable**
   skill per the indicators above. Used as a synergy fuel fallback only when
   the primary signature is a non-buffable **Ultimate** that is still slow
   (not fast/battle-start). Non-ultimate signatures (e.g. Bonnie's Skill1)
