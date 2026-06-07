@@ -14,7 +14,7 @@ download:
     python3 scripts/download_heroes.py
 
 # Analyse data/heroes_data.json -> data/heroes_data_processed.json.
-process:
+analyze:
     python3 scripts/process_heroes.py
 
 # Render Heroes.md from data/heroes_data.json.
@@ -29,7 +29,7 @@ render-overview:
 render: render-heroes render-overview
 
 # Regenerate views from the committed data/heroes_data.json (no network).
-views: process render
+views: analyze render
 
 # Full pipeline: refresh data from the web, then regenerate views.
-all: download process render
+all: download analyze render

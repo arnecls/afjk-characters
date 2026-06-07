@@ -1,13 +1,538 @@
 {
-  "Talene": ["fire-attack"],
-  "Natsu": ["fire-attack"],
-  "Mehira": ["enemy-grouping"],
-  "Cyran": ["enemy-grouping"],
-  "Eironn": ["enemy-grouping"],
-  "Frieren": ["high-damage-ult"],
-  "Shemira": ["high-damage-ult"],
-  "Bryon": ["battle-start-ult"],
-  "Niru": ["battle-start-ult"],
-  "Alsa": ["battlefield-modification"],
-  "Kulu": ["battlefield-modification"]
+  "Aliceth": [
+    "execute",
+    "hp-scaling",
+    "invincibility",
+    "mark-target"
+  ],
+  "Alna": [
+    "aoe-damage",
+    "battlefield-modification",
+    "invincibility"
+  ],
+  "Alsa": [
+    "battlefield-modification",
+    "self-repositioner",
+    "transformation"
+  ],
+  "Antandra": [
+    "ally-shielder",
+    "taunt"
+  ],
+  "Arden": [
+    "aoe-damage",
+    "dot-specialist"
+  ],
+  "Atalanta": [
+    "aoe-damage",
+    "battle-start-burst"
+  ],
+  "Athalia": [
+    "hp-scaling",
+    "self-repositioner",
+    "transformation"
+  ],
+  "Aurora": [
+    "invincibility",
+    "mark-target",
+    "summoner"
+  ],
+  "Baelran": [
+    "hp-scaling",
+    "transformation"
+  ],
+  "Berial": [
+    "clone",
+    "revive",
+    "stealth"
+  ],
+  "Bonnie": [
+    "battle-start-burst",
+    "dot-specialist",
+    "invincibility",
+    "transformation"
+  ],
+  "Brutus": [
+    "hp-scaling",
+    "life-drain",
+    "taunt"
+  ],
+  "Bryon": [
+    "battle-start-burst",
+    "battle-start-ult",
+    "invincibility",
+    "summoner"
+  ],
+  "Callan": [
+    "ally-shielder",
+    "battle-start-burst",
+    "invincibility"
+  ],
+  "Carolina": [
+    "enemy-debuffer",
+    "mass-cc"
+  ],
+  "Cassadee": [
+    "ally-buffer",
+    "aoe-damage",
+    "enemy-debuffer"
+  ],
+  "Cecia": [
+    "dot-specialist",
+    "life-drain",
+    "summoner"
+  ],
+  "Chippy": [
+    "summoner"
+  ],
+  "Contess": [
+    "ally-healer",
+    "ally-shielder",
+    "invincibility",
+    "stealth"
+  ],
+  "Cryonaia": [
+    "battlefield-modification",
+    "invincibility"
+  ],
+  "Cyran": [
+    "battle-start-burst",
+    "enemy-grouping",
+    "execute"
+  ],
+  "Daimon": [
+    "ally-shielder",
+    "hp-scaling",
+    "life-drain",
+    "summoner"
+  ],
+  "Damian": [
+    "ally-healer",
+    "summoner"
+  ],
+  "Dionel": [
+    "invincibility",
+    "self-repositioner"
+  ],
+  "Dunlingr": [
+    "battle-start-burst",
+    "summoner"
+  ],
+  "Eironn": [
+    "enemy-grouping",
+    "mass-cc"
+  ],
+  "Evie": [
+    "invincibility",
+    "self-repositioner",
+    "stealth"
+  ],
+  "Faramor": [
+    "aoe-damage",
+    "dot-specialist",
+    "hp-scaling"
+  ],
+  "Fay": [
+    "ally-healer",
+    "aoe-healing"
+  ],
+  "Florabelle": [
+    "summoner"
+  ],
+  "Frieren": [
+    "aoe-damage",
+    "dot-specialist",
+    "high-damage-ult",
+    "self-repositioner"
+  ],
+  "Gala": [
+    "ally-shielder",
+    "clone"
+  ],
+  "Gerda": [
+    "ally-healer",
+    "ally-shielder",
+    "aoe-healing",
+    "battle-start-burst",
+    "mass-cc",
+    "self-repositioner"
+  ],
+  "Granny Dahnie": [
+    "hp-scaling",
+    "taunt"
+  ],
+  "Gunnar": [
+    "ally-shielder",
+    "aoe-damage",
+    "battlefield-modification",
+    "fire-attack"
+  ],
+  "Gwyneth": [
+    "dot-specialist",
+    "fire-attack",
+    "mass-cc"
+  ],
+  "Hammie": [
+    "ally-buffer",
+    "ally-healer"
+  ],
+  "Harak": [
+    "assassin",
+    "execute",
+    "life-drain"
+  ],
+  "Hepler": [
+    "ally-healer",
+    "ally-shielder",
+    "transformation"
+  ],
+  "Hewynn": [
+    "ally-healer",
+    "aoe-healing"
+  ],
+  "Himmel": [
+    "ally-buffer",
+    "ally-shielder",
+    "self-repositioner"
+  ],
+  "Hodgkin": [
+    "battle-start-burst",
+    "fire-attack"
+  ],
+  "Hugin": [
+    "ally-shielder",
+    "energy-provider"
+  ],
+  "Igor": [
+    "aoe-damage",
+    "battle-start-burst",
+    "invincibility",
+    "self-repositioner"
+  ],
+  "Indris": [
+    "disabler",
+    "enemy-debuffer"
+  ],
+  "Isabella": [
+    "ally-buffer",
+    "ally-healer",
+    "life-drain"
+  ],
+  "Kafra": [
+    "assassin",
+    "enemy-debuffer",
+    "mark-target"
+  ],
+  "Koko": [
+    "ally-shielder",
+    "life-drain"
+  ],
+  "Kordan": [
+    "hp-scaling",
+    "self-repositioner"
+  ],
+  "Korin": [
+    "ally-shielder",
+    "hp-scaling"
+  ],
+  "Kruger": [
+    "enemy-debuffer"
+  ],
+  "Kulu": [
+    "battle-start-burst",
+    "battlefield-modification",
+    "self-repositioner"
+  ],
+  "Laios": [
+    "ally-buffer",
+    "ally-healer",
+    "summoner"
+  ],
+  "Lenya": [
+    "assassin",
+    "counterattack",
+    "self-repositioner"
+  ],
+  "Lily May": [
+    "hp-scaling",
+    "invincibility",
+    "self-repositioner",
+    "transformation"
+  ],
+  "Lorsan": [
+    "aoe-damage",
+    "dot-specialist"
+  ],
+  "Lucca": [
+    "ally-shielder"
+  ],
+  "Lucius": [
+    "ally-healer",
+    "ally-shielder"
+  ],
+  "Lucy": [
+    "ally-shielder",
+    "mass-cc"
+  ],
+  "Ludovic": [
+    "ally-healer",
+    "aoe-healing"
+  ],
+  "Lumont": [
+    "enemy-debuffer",
+    "taunt"
+  ],
+  "Lyca": [
+    "ally-buffer",
+    "battle-start-burst",
+    "energy-provider"
+  ],
+  "Marcille": [
+    "ally-healer",
+    "revive"
+  ],
+  "Mehira": [
+    "aoe-damage",
+    "enemy-grouping",
+    "invincibility",
+    "life-drain",
+    "mass-cc",
+    "summoner"
+  ],
+  "Mikola": [
+    "ally-buffer",
+    "aoe-healing",
+    "battlefield-modification"
+  ],
+  "Mirael": [
+    "dot-specialist",
+    "fire-attack"
+  ],
+  "Nara": [
+    "ally-healer",
+    "assassin",
+    "execute"
+  ],
+  "Natsu": [
+    "aoe-damage",
+    "dot-specialist",
+    "fire-attack",
+    "high-damage-ult",
+    "mass-cc",
+    "transformation"
+  ],
+  "Nazrik": [
+    "hp-scaling",
+    "mark-target"
+  ],
+  "Nerion": [
+    "dot-specialist",
+    "enemy-debuffer"
+  ],
+  "Niru": [
+    "ally-healer",
+    "battle-start-ult",
+    "hp-scaling"
+  ],
+  "Odie": [
+    "dot-specialist",
+    "execute"
+  ],
+  "Pandora": [
+    "energy-provider",
+    "mass-cc"
+  ],
+  "Pang": [
+    "ally-shielder",
+    "transformation"
+  ],
+  "Parisa": [
+    "ally-buffer",
+    "aoe-damage",
+    "mark-target"
+  ],
+  "Perseus": [
+    "ally-buffer"
+  ],
+  "Phraesto": [
+    "ally-shielder",
+    "clone",
+    "energy-provider",
+    "summoner"
+  ],
+  "Pippa": [
+    "hp-scaling",
+    "self-repositioner"
+  ],
+  "Ravion": [
+    "ally-shielder",
+    "energy-provider",
+    "self-repositioner"
+  ],
+  "Reinier": [
+    "battle-start-burst",
+    "disabler"
+  ],
+  "Rhys": [
+    "aoe-damage",
+    "fire-attack"
+  ],
+  "Rowan": [
+    "ally-healer",
+    "energy-provider"
+  ],
+  "Saida": [
+    "ally-shielder",
+    "life-drain",
+    "revive"
+  ],
+  "Salazer": [
+    "disabler",
+    "hp-scaling",
+    "life-drain"
+  ],
+  "Satrana": [
+    "dot-specialist",
+    "fire-attack",
+    "hp-scaling"
+  ],
+  "Scarlita": [
+    "ally-shielder",
+    "aoe-damage",
+    "hp-scaling"
+  ],
+  "Seth": [
+    "assassin",
+    "life-drain"
+  ],
+  "Shadewing": [
+    "dot-specialist",
+    "enemy-debuffer"
+  ],
+  "Shakir": [
+    "life-drain",
+    "transformation"
+  ],
+  "Shemira": [
+    "high-damage-ult",
+    "hp-scaling",
+    "life-drain",
+    "summoner"
+  ],
+  "Silven": [
+    "hp-scaling"
+  ],
+  "Silvina": [
+    "assassin",
+    "disabler",
+    "mark-target"
+  ],
+  "Sinbad": [
+    "enemy-debuffer",
+    "mark-target"
+  ],
+  "Smokey & Meerky": [
+    "ally-healer",
+    "aoe-healing"
+  ],
+  "Solise": [
+    "ally-healer",
+    "ally-shielder",
+    "aoe-healing"
+  ],
+  "Sonja": [
+    "ally-buffer",
+    "hp-scaling"
+  ],
+  "Soren": [
+    "counterattack",
+    "self-repositioner"
+  ],
+  "Sylphira": [
+    "disabler",
+    "transformation"
+  ],
+  "Talene": [
+    "ally-healer",
+    "aoe-damage",
+    "fire-attack",
+    "revive",
+    "transformation"
+  ],
+  "Tasi": [
+    "mass-cc",
+    "self-repositioner"
+  ],
+  "Temesia": [
+    "aoe-damage",
+    "enemy-debuffer",
+    "self-repositioner"
+  ],
+  "Thador": [
+    "ally-shielder",
+    "battlefield-modification",
+    "enemy-debuffer",
+    "energy-provider"
+  ],
+  "Thoran": [
+    "counterattack",
+    "life-drain",
+    "revive"
+  ],
+  "Tilaya": [
+    "hp-scaling"
+  ],
+  "Twins": [
+    "ally-healer",
+    "ally-shielder",
+    "energy-provider"
+  ],
+  "Ulmus": [
+    "ally-shielder",
+    "transformation"
+  ],
+  "Vala": [
+    "hp-scaling",
+    "invincibility",
+    "mark-target",
+    "self-repositioner",
+    "stealth",
+    "transformation"
+  ],
+  "Valen": [
+    "aoe-damage",
+    "transformation"
+  ],
+  "Valka": [
+    "ally-buffer",
+    "ally-shielder",
+    "counterattack"
+  ],
+  "Velara": [
+    "ally-healer",
+    "ally-shielder",
+    "aoe-healing",
+    "battlefield-modification"
+  ],
+  "Viperian": [
+    "aoe-damage",
+    "dot-specialist",
+    "life-drain"
+  ],
+  "Walker": [
+    "life-drain",
+    "mark-target"
+  ],
+  "Zandrok": [
+    "aoe-damage",
+    "battle-start-burst",
+    "hp-scaling"
+  ],
+  "Zanie": [
+    "summoner"
+  ],
+  "Zorya": [
+    "hp-scaling",
+    "life-drain"
+  ]
 }
