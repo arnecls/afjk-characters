@@ -2225,21 +2225,26 @@ BENEFIT_STAT_ORDER = (
     "Magic DEF",
 )
 
-BUFF_LABEL_TO_BENEFIT_STAT: dict[str, str] = {
-    "ATK buff": "ATK",
-    "ATK SPD buff": "ATK SPD",
-    "Haste buff": "Haste",
-    "Max HP buff": "Max HP",
-    "Crit buff": "Crit",
-    "Execution buff": "Execution",
-    "Resilience buff": "Resilience",
-    "Healing stat buff": "Healing",
-    "Healing": "Healing",
-    "Healing over time": "Healing",
-    "Energy recovery": "Energy",
-    "DEF Penetration buff": "DEF Penetration",
-    "Lifedrain buff": "Life Drain",
-    "Shield": "Max HP",
+# Buff labels on the caster → benefit stats for synergy matching.
+# Self-buffs are strong indicators of which ally buffs a hero wants.
+BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
+    "ATK buff": ("ATK",),
+    "ATK SPD buff": ("ATK SPD",),
+    "Haste buff": ("Haste",),
+    "Max HP buff": ("Max HP",),
+    "Crit buff": ("Crit",),
+    "Execution buff": ("Execution",),
+    "Resilience buff": ("Resilience",),
+    "Healing stat buff": ("Healing",),
+    "Healing": ("Healing",),
+    "Healing over time": ("Healing",),
+    "Energy recovery": ("Energy",),
+    "DEF Penetration buff": ("DEF Penetration",),
+    "Lifedrain buff": ("Life Drain",),
+    "Shield": ("Max HP",),
+    "DEF buff": ("Physical DEF", "Magic DEF"),
+    # Tanks that self-stack damage reduction want sustain (Max HP / shields).
+    "Damage taken reduction": ("Max HP",),
 }
 
 
@@ -2295,8 +2300,7 @@ def _stats_from_self_buffs(hero: Hero) -> set[str]:
             continue
         if not _effect_buffs_caster(effect):
             continue
-        stat = BUFF_LABEL_TO_BENEFIT_STAT.get(effect.label)
-        if stat:
+        for stat in BUFF_LABEL_TO_BENEFIT_STATS.get(effect.label, ()):
             stats.add(stat)
     return stats
 
@@ -2616,9 +2620,15 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
         out.append("")
 
     for cat, heading in [("buff", "Buffs"), ("debuff", "Debuffs")]:
-        items = [e for e in hero.effects if e.category == cat]
+        items = [
+            e for e in hero.effects
+            if e.category == cat and e.targeting != "Self"
+        ]
         if cat == "buff":
-            items.extend(e for e in hero.summon_effects if e.category == cat)
+            items.extend(
+                e for e in hero.summon_effects
+                if e.category == cat and e.targeting != "Self"
+            )
         if not items:
             continue
         out.append(f"#### {heading} provided by {name}")
