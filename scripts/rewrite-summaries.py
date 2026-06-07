@@ -2283,6 +2283,7 @@ BENEFIT_STAT_ORDER = (
     "Haste",
     "Max HP",
     "Crit",
+    "Crit DMG Boost",
     "Execution",
     "Resilience",
     "Healing",
@@ -2314,7 +2315,7 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     # Tanks that self-stack damage reduction want sustain (Max HP / shields).
     "Damage taken reduction": ("Max HP",),
     "Ranged DEF buff": ("Physical DEF",),
-    "Crit DMG boost": ("Crit",),
+    "Crit DMG boost": ("Crit DMG Boost",),
     "Vitality buff": ("Healing",),
 }
 

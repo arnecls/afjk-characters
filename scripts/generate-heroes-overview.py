@@ -27,6 +27,7 @@ STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "Haste": ["Haste buff"],
     "Max HP": ["Max HP buff", "Shield"],
     "Crit": ["Crit buff"],
+    "Crit DMG Boost": ["Crit DMG boost"],
     "Execution": ["Execution buff"],
     "Resilience": ["Resilience buff"],
     "Healing": ["Healing", "Healing over time", "Healing stat buff"],
