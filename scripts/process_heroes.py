@@ -75,6 +75,20 @@ def apply_config(config: dict) -> None:
         if key in bt:
             setattr(rs, attr, bt[key])
 
+    rs_cfg = config.get("replacement_scoring", {})
+    for key, attr in [
+        ("min_score", "REPLACEMENT_MIN_SCORE"),
+        ("max_replacements", "REPLACEMENT_MAX"),
+        ("buff_weight", "REPLACEMENT_BUFF_W"),
+        ("provides_weight", "REPLACEMENT_PROVIDES_W"),
+        ("signature_weight", "REPLACEMENT_SIG_W"),
+        ("damage_weight", "REPLACEMENT_DAMAGE_W"),
+        ("true_damage_blend", "REPLACEMENT_TRUE_DAMAGE_BLEND"),
+        ("true_damage_profile_boost", "REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST"),
+    ]:
+        if key in rs_cfg:
+            setattr(gen, attr, rs_cfg[key])
+
 
 def rank_synergies_full(receiver, heroes, enabler_matchers, behavior_by_title):
     """Like gen.rank_synergies but without the top-N display cap."""
@@ -141,6 +155,7 @@ def build_processed(data: dict) -> dict:
     beneficiaries_index = gen.build_beneficiaries_index(
         heroes, enabler_matchers, behavior_by_title
     )
+    replacements_index = gen.compute_replacement_scores(heroes, behavior_by_title)
 
     # Match overview-to-csv: energy providers are detected from freshly parsed
     # (un-analyzed) hero blocks, so only the battle-start text path counts.
@@ -172,6 +187,7 @@ def build_processed(data: dict) -> dict:
                 {"score": score, "name": name} for score, name in benefited
             ],
             "beneficiary_overflow_reasons": gen._beneficiary_overflow_reasons(hero),
+            "replacements": replacements_index.get(hero.title, []),
         }
 
     return {

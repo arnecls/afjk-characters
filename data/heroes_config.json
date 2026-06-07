@@ -52,5 +52,15 @@
     "initial_cd_cap": 60.0,
     "casting_speed_fast_threshold": 5.0,
     "casting_speed_slow_threshold": 8.5
+  },
+  "replacement_scoring": {
+    "min_score": 0.6,
+    "max_replacements": 3,
+    "buff_weight": 0.45,
+    "provides_weight": 0.10,
+    "signature_weight": 0.15,
+    "damage_weight": 0.30,
+    "true_damage_blend": 0.65,
+    "true_damage_profile_boost": 1.5
   }
 }

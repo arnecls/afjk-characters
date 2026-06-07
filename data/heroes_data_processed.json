@@ -835,7 +835,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Alna - Frozen Mother": {
       "is_energy_provider": false,
@@ -1148,7 +1149,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Alsa - Desert Flare": {
       "is_energy_provider": false,
@@ -1591,7 +1593,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Antandra - Desert Fury": {
       "is_energy_provider": false,
@@ -2008,7 +2011,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Arden - Oak Sage": {
       "is_energy_provider": false,
@@ -2255,7 +2259,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Atalanta - Fortune Finder": {
       "is_energy_provider": false,
@@ -2568,6 +2573,16 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": [
+        {
+          "name": "Lucca",
+          "score": 0.75
+        },
+        {
+          "name": "Igor",
+          "score": 0.69
+        }
       ]
     },
     "Athalia - Harbinger of Justice": {
@@ -2978,7 +2993,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Aurora - Celestial of Dreams": {
       "is_energy_provider": false,
@@ -3327,7 +3343,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Baelran - Dawnblade": {
       "is_energy_provider": false,
@@ -3717,7 +3734,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Berial - Sinister Jester": {
       "is_energy_provider": false,
@@ -4022,7 +4040,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Bonnie - Obsidian Claws": {
       "is_energy_provider": false,
@@ -4831,7 +4850,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Brutus - Blood Claw": {
       "is_energy_provider": false,
@@ -5197,7 +5217,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Bryon - Evergreen Sentinel": {
       "is_energy_provider": false,
@@ -5448,7 +5469,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Callan - Grim Soulkeeper": {
       "is_energy_provider": false,
@@ -5985,7 +6007,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Carolina - Candlelight Specter": {
       "is_energy_provider": false,
@@ -6658,7 +6681,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Cassadee - Azure Prodigy": {
       "is_energy_provider": false,
@@ -6948,7 +6972,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Cecia - Requiem of Thorns": {
       "is_energy_provider": false,
@@ -7336,7 +7361,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Chippy - Sidekick": {
       "is_energy_provider": false,
@@ -7548,7 +7574,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Contess - Abyssal Rulekeeper": {
       "is_energy_provider": false,
@@ -8105,7 +8132,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Cryonaia - Arctic Revenant": {
       "is_energy_provider": false,
@@ -8517,7 +8545,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Cyran - Umbral Weaver": {
       "is_energy_provider": false,
@@ -8825,7 +8854,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Daimon - Forsaken Child": {
       "is_energy_provider": false,
@@ -9031,7 +9061,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Damian - Woody Wonder": {
       "is_energy_provider": false,
@@ -9432,7 +9463,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Dionel - Venus of Dawn": {
       "is_energy_provider": false,
@@ -9833,7 +9865,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Dunlingr - Eternal Voice": {
       "is_energy_provider": false,
@@ -10539,7 +10572,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Eironn - Stormsword": {
       "is_energy_provider": false,
@@ -10795,7 +10829,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Elijah & Lailah - Celestial Twins": {
       "is_energy_provider": false,
@@ -11480,7 +11515,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Evie - Royal Envoy": {
       "is_energy_provider": false,
@@ -12061,7 +12097,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Faramor - Silverfang Mantle": {
       "is_energy_provider": false,
@@ -12492,7 +12529,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Fay - Colorful Dancer": {
       "is_energy_provider": false,
@@ -12775,7 +12813,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Florabelle - Blooming Maiden": {
       "is_energy_provider": false,
@@ -13024,7 +13063,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Frieren - The Legendary Mage": {
       "is_energy_provider": false,
@@ -13343,7 +13383,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Gala - Daughter of Dawn": {
       "is_energy_provider": false,
@@ -13655,7 +13696,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Gerda - Soothing Siren": {
       "is_energy_provider": false,
@@ -13895,7 +13937,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Granny Dahnie - Forest Guardian": {
       "is_energy_provider": false,
@@ -14518,7 +14561,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Gunnar - Iron Doom": {
       "is_energy_provider": false,
@@ -14873,7 +14917,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Gwyneth - Dragonslayer Knight": {
       "is_energy_provider": false,
@@ -15148,7 +15193,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Hammie - Magician": {
       "is_energy_provider": false,
@@ -15390,7 +15436,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Harak - Deepsea Ravager": {
       "is_energy_provider": false,
@@ -15874,7 +15921,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Hepler - Master of Forms": {
       "is_energy_provider": false,
@@ -16344,7 +16392,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Hewynn - Tender Leaf": {
       "is_energy_provider": false,
@@ -16650,7 +16699,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Himmel - The Legendary Hero": {
       "is_energy_provider": false,
@@ -17273,7 +17323,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Hodgkin - Reviled Captain": {
       "is_energy_provider": false,
@@ -17581,7 +17632,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Hugin - Maverick Smith": {
       "is_energy_provider": false,
@@ -18161,7 +18213,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Igor - Mad Dagger": {
       "is_energy_provider": false,
@@ -18683,6 +18736,16 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": [
+        {
+          "name": "Atalanta",
+          "score": 0.69
+        },
+        {
+          "name": "Lucca",
+          "score": 0.69
+        }
       ]
     },
     "Indris - Chain Breaker": {
@@ -19462,7 +19525,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Isabella - The Taken Soul": {
       "is_energy_provider": false,
@@ -20088,7 +20152,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Kafra - Gale Rider": {
       "is_energy_provider": false,
@@ -20559,7 +20624,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Koko - Wild Child": {
       "is_energy_provider": false,
@@ -20891,7 +20957,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Kordan - Ironblood Chieftain": {
       "is_energy_provider": false,
@@ -21659,7 +21726,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Korin - Wood Warden": {
       "is_energy_provider": false,
@@ -22037,7 +22105,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Kruger - Dauntless Warrior": {
       "is_energy_provider": false,
@@ -22439,7 +22508,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Kulu - Blast Master": {
       "is_energy_provider": false,
@@ -22740,7 +22810,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Laios - Dungeon Adventurer": {
       "is_energy_provider": false,
@@ -23465,7 +23536,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Lenya - Wild Cyclone": {
       "is_energy_provider": false,
@@ -23552,6 +23624,7 @@
         "Haste",
         "Max HP",
         "Crit",
+        "Crit DMG Boost",
         "Energy"
       ],
       "behavior": {
@@ -23869,7 +23942,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Lily May - Twilight Tracker": {
       "is_energy_provider": false,
@@ -24207,7 +24281,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Lorsan - Windweaver Protector": {
       "is_energy_provider": false,
@@ -24490,7 +24565,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Lucca - Stalwart Fighter": {
       "is_energy_provider": false,
@@ -24888,6 +24964,16 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": [
+        {
+          "name": "Atalanta",
+          "score": 0.75
+        },
+        {
+          "name": "Igor",
+          "score": 0.69
+        }
       ]
     },
     "Lucius - The Lightbringer": {
@@ -25572,7 +25658,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Lucy - Celestial Spirit Mage": {
       "is_energy_provider": false,
@@ -25784,7 +25871,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Ludovic - Wreathed Eternalist": {
       "is_energy_provider": false,
@@ -26354,6 +26442,12 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": [
+        {
+          "name": "Marcille",
+          "score": 0.6167
+        }
       ]
     },
     "Lumont - Benign Horn": {
@@ -27045,7 +27139,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Lyca - Keeper of Glades": {
       "is_energy_provider": true,
@@ -27572,7 +27667,8 @@
         "**Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight",
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner",
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
-      ]
+      ],
+      "replacements": []
     },
     "Marcille - Elven Mage": {
       "is_energy_provider": false,
@@ -27833,6 +27929,16 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": [
+        {
+          "name": "Solise",
+          "score": 0.625
+        },
+        {
+          "name": "Ludovic",
+          "score": 0.6167
+        }
       ]
     },
     "Marilee - Forest's Arrow": {
@@ -27906,7 +28012,8 @@
       "benefit_stats": [
         "ATK",
         "ATK SPD",
-        "Crit"
+        "Crit",
+        "Crit DMG Boost"
       ],
       "behavior": {
         "movement": "high movement",
@@ -28110,7 +28217,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Mehira - Mind Cager": {
       "is_energy_provider": false,
@@ -28849,7 +28957,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Mikola - Warbeat Compere": {
       "is_energy_provider": false,
@@ -29457,7 +29566,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Mirael - Scarlet Sorceress": {
       "is_energy_provider": false,
@@ -29696,7 +29806,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Nara - Wrathful Wraith": {
       "is_energy_provider": false,
@@ -29836,7 +29947,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Natsu - Fire Dragon Slayer Mage": {
       "is_energy_provider": false,
@@ -29955,7 +30067,8 @@
       "benefit_stats": [
         "ATK",
         "Haste",
-        "Crit"
+        "Crit",
+        "Crit DMG Boost"
       ],
       "behavior": {
         "movement": "stationary",
@@ -30156,7 +30269,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Nazrik - Soulstalker": {
       "is_energy_provider": false,
@@ -30434,7 +30548,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Nerion - Bereaved Tide": {
       "is_energy_provider": false,
@@ -31168,7 +31283,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Niru - Soul Collector": {
       "is_energy_provider": false,
@@ -31514,7 +31630,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Odie - Desert Defender": {
       "is_energy_provider": false,
@@ -31701,7 +31818,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Pandora - Hope Unleashed": {
       "is_energy_provider": true,
@@ -31895,7 +32013,8 @@
       "beneficiary_overflow_reasons": [
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner",
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
-      ]
+      ],
+      "replacements": []
     },
     "Pang - Bamboo Guardian": {
       "is_energy_provider": false,
@@ -32242,7 +32361,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Parisa - Ode to Flowers": {
       "is_energy_provider": false,
@@ -32494,7 +32614,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Perseus - Chosen Champion": {
       "is_energy_provider": false,
@@ -33263,7 +33384,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Phraesto - Misty Scorpion": {
       "is_energy_provider": true,
@@ -33790,7 +33912,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
-      ]
+      ],
+      "replacements": []
     },
     "Pippa - The Muddled Magician": {
       "is_energy_provider": false,
@@ -34070,7 +34193,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Ravion - Twilight's Burden": {
       "is_energy_provider": true,
@@ -34512,7 +34636,8 @@
       "beneficiary_overflow_reasons": [
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner",
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
-      ]
+      ],
+      "replacements": []
     },
     "Reinier - Symmetric Sin": {
       "is_energy_provider": false,
@@ -34629,7 +34754,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Rhys - Fiery Cavalier": {
       "is_energy_provider": false,
@@ -34697,7 +34823,8 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "ATK SPD",
-        "Crit"
+        "Crit",
+        "Crit DMG Boost"
       ],
       "behavior": {
         "movement": "high movement",
@@ -34895,7 +35022,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Rowan - The Roamer": {
       "is_energy_provider": true,
@@ -35288,7 +35416,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
-      ]
+      ],
+      "replacements": []
     },
     "Saida - Vampiric Vine": {
       "is_energy_provider": false,
@@ -35563,7 +35692,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Salazer - Lash of Bantus": {
       "is_energy_provider": false,
@@ -35927,7 +36057,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Satrana - Ember Enchantress": {
       "is_energy_provider": false,
@@ -36337,6 +36468,12 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": [
+        {
+          "name": "Sylphira",
+          "score": 0.6836
+        }
       ]
     },
     "Scarlita - Herald of Compassion": {
@@ -36508,7 +36645,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Seth - Swift Shadow": {
       "is_energy_provider": false,
@@ -36934,7 +37072,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Shadewing - Undying Vow": {
       "is_energy_provider": false,
@@ -37810,7 +37949,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Shakir - Furious Howl": {
       "is_energy_provider": false,
@@ -38076,7 +38216,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Shemira - Corpsemaker": {
       "is_energy_provider": false,
@@ -38680,7 +38821,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Silven - Heir of Glory": {
       "is_energy_provider": false,
@@ -39423,7 +39565,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner"
-      ]
+      ],
+      "replacements": []
     },
     "Silvina - The Taken Breath": {
       "is_energy_provider": false,
@@ -39802,7 +39945,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Sinbad - Seaside Savant": {
       "is_energy_provider": false,
@@ -40092,7 +40236,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Smokey & Meerky - Wasteland Apothecary": {
       "is_energy_provider": false,
@@ -40622,7 +40767,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner"
-      ]
+      ],
+      "replacements": []
     },
     "Solise - Floral Wonder": {
       "is_energy_provider": false,
@@ -40873,6 +41019,12 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": [
+        {
+          "name": "Marcille",
+          "score": 0.625
+        }
       ]
     },
     "Sonja - Crimson Queenpin": {
@@ -41151,7 +41303,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Soren - Silent Fury": {
       "is_energy_provider": false,
@@ -41554,7 +41707,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Sylphira - Sovereign of Song": {
       "is_energy_provider": false,
@@ -42233,6 +42387,12 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
+      ],
+      "replacements": [
+        {
+          "name": "Satrana",
+          "score": 0.6836
+        }
       ]
     },
     "Talene - Resurging Flame": {
@@ -42875,7 +43035,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Tasi - Fairy of Dreams": {
       "is_energy_provider": false,
@@ -43350,7 +43511,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Temesia - Lightsavior": {
       "is_energy_provider": false,
@@ -44049,7 +44211,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Thador - Ironsworn General": {
       "is_energy_provider": true,
@@ -44696,7 +44859,8 @@
       "beneficiary_overflow_reasons": [
         "**Energy recovery** helps slow-ultimate units reach their first Ultimate sooner",
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
-      ]
+      ],
+      "replacements": []
     },
     "Thoran - Fallen King": {
       "is_energy_provider": false,
@@ -44950,7 +45114,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Tilaya - Wild Blade": {
       "is_energy_provider": false,
@@ -45511,7 +45676,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Ulmus - Grove Keeper": {
       "is_energy_provider": false,
@@ -45796,7 +45962,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Vala - Phantom of Oakenfell": {
       "is_energy_provider": false,
@@ -46466,7 +46633,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Valen - Roving Swordsman": {
       "is_energy_provider": false,
@@ -46742,7 +46910,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Valka - Forsaken Blade": {
       "is_energy_provider": false,
@@ -47553,7 +47722,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Velara - Pale Votary": {
       "is_energy_provider": false,
@@ -47893,7 +48063,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Viperian - Shadow Serpent": {
       "is_energy_provider": false,
@@ -48152,7 +48323,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Walker - Wildland Outlaw": {
       "is_energy_provider": false,
@@ -48252,6 +48424,7 @@
       "benefit_stats": [
         "Max HP",
         "Crit",
+        "Crit DMG Boost",
         "Life Drain"
       ],
       "behavior": {
@@ -48621,7 +48794,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Zandrok - Watchful Edge": {
       "is_energy_provider": false,
@@ -48967,7 +49141,8 @@
       ],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
-      ]
+      ],
+      "replacements": []
     },
     "Zanie - Timeless Tinkerer": {
       "is_energy_provider": false,
@@ -49248,7 +49423,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     },
     "Zorya - Watcher in Stone": {
       "is_energy_provider": false,
@@ -50035,7 +50211,8 @@
       "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
-      ]
+      ],
+      "replacements": []
     }
   }
 }

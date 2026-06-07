@@ -78,11 +78,12 @@ def _format_benefit_stat_tags(benefit_stats: list[str]) -> list[str]:
 
 
 def _join_names(names: list[str]) -> str:
-    if len(names) == 1:
-        return names[0]
-    if len(names) == 2:
-        return f"{names[0]} or {names[1]}"
-    return f"{names[0]}, {names[1]}, or {names[2]}"
+    bold = [f"**{name}**" for name in names]
+    if len(bold) == 1:
+        return bold[0]
+    if len(bold) == 2:
+        return f"{bold[0]} or {bold[1]}"
+    return f"{bold[0]}, {bold[1]}, or {bold[2]}"
 
 
 def _format_synergies(
@@ -157,6 +158,8 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
     max_syn = limits.get("max_synergies", 5)
     max_ben = limits.get("max_beneficiaries_display", 10)
     obvious_threshold = limits.get("obvious_provider_threshold", 20)
+    rep_scoring = config.get("replacement_scoring", {})
+    max_rep = rep_scoring.get("max_replacements", 3)
     provider_beneficiary_count = {
         title: len(p["beneficiaries"])
         for title, p in processed["heroes"].items()
@@ -188,7 +191,15 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
         parts.append(f"### Units {short} benefits from")
         parts.append("")
         parts.extend(syn_lines)
-        parts.append("")
+        replacements = p.get("replacements", [])
+        if replacements:
+            parts.append("")
+            parts.append(f"### Units that can act as a replacement for {short}")
+            parts.append("")
+            for r in replacements[:max_rep]:
+                pct = int(r["score"] * 100)
+                parts.append(f"- **{r['name']}** ({pct}% match)")
+            parts.append("")
         parts.append(summary)
         parts.append("")
 

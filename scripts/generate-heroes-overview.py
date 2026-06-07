@@ -100,6 +100,41 @@ DEFINING_TIER_SCORE_MULT = {
     "Supreme+": 1.8,
 }
 
+# Replacement scoring: similarity between heroes as substitutes.
+REPLACEMENT_MIN_SCORE = 0.6
+REPLACEMENT_MAX = 3
+REPLACEMENT_BUFF_W = 0.45
+REPLACEMENT_PROVIDES_W = 0.10
+REPLACEMENT_SIG_W = 0.15
+REPLACEMENT_DAMAGE_W = 0.30
+REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
+REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST = 1.5
+
+_SIG_STOPWORDS = frozenset(
+    {
+        "a",
+        "an",
+        "the",
+        "of",
+        "at",
+        "in",
+        "on",
+        "to",
+        "for",
+        "and",
+        "or",
+        "with",
+        "per",
+        "from",
+        "by",
+        "area",
+        "ally",
+        "allies",
+        "enemy",
+        "enemies",
+    }
+)
+
 # Receiver Requires labels that are self-setup, not partner-enabled.
 SKIP_ENABLER_REQUIRES = frozenset(
     {
@@ -1070,6 +1105,152 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
             "or Requires labels"
         )
     return reasons
+
+
+def _hero_provider_profile(hero: _rs.Hero) -> dict[str, float]:
+    """Weighted ally-buff profile for what a hero provides to allies."""
+    profile: dict[str, float] = {}
+    for effect in hero.effects:
+        if effect.category != "buff":
+            continue
+        if effect.targeting not in ALLY_TARGETINGS:
+            continue
+        if effect.conditional == "rare":
+            continue
+        weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
+            effect.magnitude, 1.0
+        )
+        profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
+    return profile
+
+
+def _hero_provides_labels(hero: _rs.Hero) -> frozenset[str]:
+    return frozenset(
+        s.label for s in hero.special_effects if s.kind == "provides"
+    )
+
+
+def _sig_words(description: str) -> frozenset[str]:
+    if not description:
+        return frozenset()
+    words = re.findall(r"[a-z]+", description.lower())
+    return frozenset(
+        w for w in words if w not in _SIG_STOPWORDS and len(w) > 1
+    )
+
+
+def _weighted_jaccard(a: dict[str, float], b: dict[str, float]) -> float:
+    if not a and not b:
+        return 0.0
+    labels = set(a) | set(b)
+    numer = sum(min(a.get(label, 0.0), b.get(label, 0.0)) for label in labels)
+    denom = sum(max(a.get(label, 0.0), b.get(label, 0.0)) for label in labels)
+    return numer / denom if denom > 0 else 0.0
+
+
+def _set_jaccard(a: frozenset[str], b: frozenset[str]) -> float:
+    if not a and not b:
+        return 0.0
+    union = a | b
+    if not union:
+        return 0.0
+    return len(a & b) / len(union)
+
+
+def _hero_damage_profile(hero: _rs.Hero) -> dict[str, float]:
+    """Weighted outgoing-damage profile per damage type."""
+    profile: dict[str, float] = {}
+    mags = hero.damage_magnitudes or {}
+    for dt, tgt in hero.damage_entries:
+        if tgt == "Self":
+            continue
+        tw = 0.0
+        for part in tgt.split(", "):
+            tw = max(tw, TARGETING_WEIGHT.get(part, 1.0))
+        mw = MAG_WEIGHT.get(mags.get(dt, "medium"), 1.0)
+        weight = tw * mw
+        if dt in _rs.TRUE_DAMAGE_TYPES:
+            weight *= REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST
+        profile[dt] = max(profile.get(dt, 0.0), weight)
+    if hero.damage_type and hero.damage_type not in profile:
+        profile[hero.damage_type] = MAG_WEIGHT.get("low", 1.0)
+    return profile
+
+
+def _damage_similarity(
+    types_a: set[str],
+    types_b: set[str],
+    profile_a: dict[str, float],
+    profile_b: dict[str, float],
+) -> float:
+    general = _weighted_jaccard(profile_a, profile_b)
+    ta = types_a & _rs.TRUE_DAMAGE_TYPES
+    tb = types_b & _rs.TRUE_DAMAGE_TYPES
+    if ta or tb:
+        true_sim = _set_jaccard(frozenset(ta), frozenset(tb)) if ta and tb else 0.0
+        blend = REPLACEMENT_TRUE_DAMAGE_BLEND
+        return blend * true_sim + (1.0 - blend) * general
+    return general
+
+
+def compute_replacement_scores(
+    heroes: list[_rs.Hero],
+    behavior_by_title: dict[str, _rs.HeroBehavior],
+) -> dict[str, list[dict]]:
+    """Score how well each hero can substitute for every other hero (0–1)."""
+    profiles: dict[str, dict[str, float]] = {}
+    provides: dict[str, frozenset[str]] = {}
+    sig_words: dict[str, frozenset[str]] = {}
+    damage_profiles: dict[str, dict[str, float]] = {}
+    damage_types: dict[str, set[str]] = {}
+
+    for hero in heroes:
+        profiles[hero.title] = _hero_provider_profile(hero)
+        provides[hero.title] = _hero_provides_labels(hero)
+        behavior = behavior_by_title.get(hero.title)
+        desc = behavior.signature_skill_description if behavior else ""
+        sig_words[hero.title] = _sig_words(desc)
+        damage_profiles[hero.title] = _hero_damage_profile(hero)
+        damage_types[hero.title] = provider_damage_types(hero)
+
+    result: dict[str, list[dict]] = {}
+    for hero_x in heroes:
+        px = profiles[hero_x.title]
+        prx = provides[hero_x.title]
+        sx = sig_words[hero_x.title]
+        dpx = damage_profiles[hero_x.title]
+        dtx = damage_types[hero_x.title]
+        scores: list[tuple[float, str]] = []
+        for hero_y in heroes:
+            if hero_y.title == hero_x.title:
+                continue
+            buff_sim = _weighted_jaccard(px, profiles[hero_y.title])
+            provides_sim = _set_jaccard(prx, provides[hero_y.title])
+            sig_sim = _set_jaccard(sx, sig_words[hero_y.title])
+            damage_sim = _damage_similarity(
+                dtx,
+                damage_types[hero_y.title],
+                dpx,
+                damage_profiles[hero_y.title],
+            )
+            score = min(
+                1.0,
+                max(
+                    0.0,
+                    REPLACEMENT_BUFF_W * buff_sim
+                    + REPLACEMENT_PROVIDES_W * provides_sim
+                    + REPLACEMENT_SIG_W * sig_sim
+                    + REPLACEMENT_DAMAGE_W * damage_sim,
+                ),
+            )
+            if score >= REPLACEMENT_MIN_SCORE:
+                scores.append((score, hero_y.title))
+        scores.sort(key=lambda x: (-x[0], short_name(x[1])))
+        result[hero_x.title] = [
+            {"name": short_name(title), "score": round(score, 4)}
+            for score, title in scores[:REPLACEMENT_MAX]
+        ]
+    return result
 
 
 def build_beneficiaries_index(
