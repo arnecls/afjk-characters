@@ -8,6 +8,7 @@
   "Alna": [
     "aoe-damage",
     "battlefield-modification",
+    "cc-immunity",
     "invincibility"
   ],
   "Alsa": [
@@ -60,13 +61,13 @@
   "Bryon": [
     "battle-start-burst",
     "battle-start-ult",
-    "invincibility",
-    "summoner"
+    "summoner",
+    "untargetable"
   ],
   "Callan": [
     "ally-shielder",
     "battle-start-burst",
-    "invincibility"
+    "cc-immunity"
   ],
   "Carolina": [
     "enemy-debuffer",
@@ -88,11 +89,12 @@
   "Contess": [
     "ally-healer",
     "ally-shielder",
-    "invincibility",
-    "stealth"
+    "stealth",
+    "untargetable"
   ],
   "Cryonaia": [
     "battlefield-modification",
+    "cc-immunity",
     "invincibility"
   ],
   "Cyran": [
@@ -111,8 +113,8 @@
     "summoner"
   ],
   "Dionel": [
-    "invincibility",
-    "self-repositioner"
+    "self-repositioner",
+    "untargetable"
   ],
   "Dunlingr": [
     "battle-start-burst",
@@ -207,7 +209,8 @@
     "aoe-damage",
     "battle-start-burst",
     "invincibility",
-    "self-repositioner"
+    "self-repositioner",
+    "untargetable"
   ],
   "Indris": [
     "disabler",
@@ -254,6 +257,7 @@
     "self-repositioner"
   ],
   "Lily May": [
+    "cc-immunity",
     "hp-scaling",
     "invincibility",
     "self-repositioner",
@@ -291,13 +295,18 @@
     "ally-healer",
     "revive"
   ],
+  "Marilee": [
+    "hp-scaling",
+    "mass-cc",
+    "self-repositioner"
+  ],
   "Mehira": [
     "aoe-damage",
     "enemy-grouping",
-    "invincibility",
     "life-drain",
     "mass-cc",
-    "summoner"
+    "summoner",
+    "untargetable"
   ],
   "Mikola": [
     "ally-buffer",
@@ -493,11 +502,11 @@
   ],
   "Vala": [
     "hp-scaling",
-    "invincibility",
     "mark-target",
     "self-repositioner",
     "stealth",
-    "transformation"
+    "transformation",
+    "untargetable"
   ],
   "Valen": [
     "aoe-damage",
