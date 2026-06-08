@@ -1,0 +1,129 @@
+#!/usr/bin/env python3
+"""Regression tests for hero summary parsing (rewrite-summaries.py)."""
+
+from __future__ import annotations
+
+import importlib.util
+import re
+import sys
+import unittest
+from pathlib import Path
+
+SCRIPTS = Path(__file__).resolve().parent
+ROOT = SCRIPTS.parent
+
+
+def _load_rs():
+    spec = importlib.util.spec_from_file_location(
+        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    sys.modules["rewrite_summaries"] = module
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+rs = _load_rs()
+
+
+def _hero_by_short_name(name: str):
+    text = rs.HEROES_MD.read_text(encoding="utf-8")
+    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+    for block in blocks:
+        if block.startswith(f"## {name} "):
+            hero = rs.parse_hero_block(block)
+            rs.analyze_hero(hero)
+            return hero
+    raise KeyError(name)
+
+
+def _effects(hero, category: str, label: str | None = None):
+    for e in hero.effects:
+        if e.category != category:
+            continue
+        if label is not None and e.label != label:
+            continue
+        yield e
+
+
+class SummaryParsingTests(unittest.TestCase):
+    def test_nazrik_prey_debuffs(self):
+        hero = _hero_by_short_name("Nazrik")
+        labels = {e.label for e in _effects(hero, "debuff")}
+        self.assertIn("Vitality debuff", labels)
+        self.assertIn("Damage taken debuff", labels)
+        self.assertIn("Healing debuff", labels)
+        for e in _effects(hero, "debuff"):
+            if e.label in (
+                "Vitality debuff",
+                "Damage taken debuff",
+                "Healing debuff",
+            ):
+                self.assertNotEqual(e.targeting, "Self", e.label)
+
+    def test_kruger_knock_down_no_ally_lifedrain(self):
+        hero = _hero_by_short_name("Kruger")
+        cc = {e.label for e in _effects(hero, "cc")}
+        self.assertIn("Knock down", cc)
+        ally_life = [
+            e
+            for e in _effects(hero, "buff", "Lifedrain buff")
+            if e.targeting != "Self"
+        ]
+        self.assertEqual(ally_life, [])
+
+    def test_harak_knock_down(self):
+        hero = _hero_by_short_name("Harak")
+        cc = {e.label for e in _effects(hero, "cc")}
+        self.assertIn("Knock down", cc)
+
+    def test_silven_knock_down(self):
+        hero = _hero_by_short_name("Silven")
+        cc = {e.label for e in _effects(hero, "cc")}
+        self.assertIn("Knock down", cc)
+
+    def test_cassadee_knock_up(self):
+        hero = _hero_by_short_name("Cassadee")
+        cc = {e.label for e in _effects(hero, "cc")}
+        self.assertIn("Knock up", cc)
+
+    def test_nara_knock_up_and_down(self):
+        hero = _hero_by_short_name("Nara")
+        cc = {e.label for e in _effects(hero, "cc")}
+        self.assertIn("Knock up", cc)
+        self.assertIn("Knock down", cc)
+
+    def test_atalanta_no_ally_healing_buff(self):
+        hero = _hero_by_short_name("Atalanta")
+        ally_heal = [
+            e
+            for e in _effects(hero, "buff")
+            if e.label in ("Healing", "Healing over time")
+            and e.targeting != "Self"
+        ]
+        self.assertEqual(ally_heal, [])
+
+    def test_evie_invincible_self(self):
+        hero = _hero_by_short_name("Evie")
+        inv = list(_effects(hero, "buff", "Invincible"))
+        self.assertTrue(inv)
+        self.assertEqual(inv[0].targeting, "Self")
+        provides = [
+            s for s in hero.special_effects if s.label == "Invincibility"
+        ]
+        self.assertTrue(provides)
+        self.assertEqual(provides[0].targeting, "Self")
+
+    def test_salazer_no_ally_lifedrain(self):
+        hero = _hero_by_short_name("Salazer")
+        ally_life = [
+            e
+            for e in _effects(hero, "buff", "Lifedrain buff")
+            if e.targeting != "Self"
+        ]
+        self.assertEqual(ally_life, [])
+
+
+if __name__ == "__main__":
+    unittest.main()

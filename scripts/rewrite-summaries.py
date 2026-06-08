@@ -171,12 +171,74 @@ def _energy_recovery_targets_self(t: str) -> bool:
     return False
 
 
+def _healing_targets_self(clause: str) -> bool:
+    """True when HP restore applies to the caster, not an ally."""
+    t = clause.lower()
+    if re.search(
+        r"\b(?:to|for) (?:all )?(?:allies|an ally|the ally|weakest ally|"
+        r"frontal allies|target ally|guarded ally|2 weakest allies)\b",
+        t,
+    ):
+        return False
+    if re.search(r"\bheals? all allies\b", t):
+        return False
+    if re.search(r",\s*recovering \d+%", t):
+        return True
+    if re.search(r"\b(?:recovers?|restores?|heals?).{0,80}\bhp\b", t):
+        return True
+    return False
+
+
+def _lifedrain_buff_is_self_only(clause: str) -> bool:
+    """True when life drain is a self stat grant, not an ally buff."""
+    t = clause.lower()
+    if _has_explicit_ally_buff(t, "Lifedrain buff"):
+        return False
+    if re.search(r"\ball allies\b.{0,60}life drain\b", t):
+        return False
+    if re.search(r"\bprovide.{0,40}life drain\b", t) and re.search(
+        r"\ball allies\b", t
+    ):
+        return False
+    if re.search(r"\bgains? \d+ life drain\b", t):
+        return True
+    if re.search(r"\bgrants? \w+ \d+ life drain\b", t):
+        return True
+    if re.search(r"\bgranting \d+ life drain to\b", t):
+        return True
+    if re.search(r"\bincreas(?:e|es|ing) (?:her |his )?life drain\b", t):
+        return True
+    return False
+
+
+def _invincibility_targets_self(clause: str) -> bool:
+    """True when invincibility applies only to the caster in this clause."""
+    t = clause.lower()
+    if re.search(r"\bwhile concealed,?\s+\w+ is invincible\b", t):
+        return True
+    for m in re.finditer(r"\b\w+ is invincible\b", t):
+        c = _clause_around(t, m.start())
+        if re.search(r"\ballies?\b", c):
+            continue
+        if re.search(r"\bwhile concealed\b", c):
+            return True
+        if not re.search(r"\ball (?:units|allies|enemies)\b", c):
+            return True
+    return False
+
+
 def _resolve_buff_targeting(
     text: str, label: str, *, scope: str | None = None
 ) -> str:
     """Resolve buff targeting; self-only stats must not inherit enemy area text."""
     snippet = scope if scope is not None else text
     t = snippet.lower()
+    if label in ("Healing", "Healing over time") and _healing_targets_self(t):
+        return "Self"
+    if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
+        return "Self"
+    if label == "Invincible" and _invincibility_targets_self(t):
+        return "Self"
     if _has_explicit_ally_buff(t, label):
         return detect_targeting(snippet, label, "buff")
     if effect_targets_self_only(t, label, "buff"):
@@ -325,6 +387,10 @@ def _buff_match_scopes(text: str, label: str, pattern: str) -> list[str]:
         if _buff_match_is_shield_modifier(t, label, m):
             continue
         if _buff_match_is_enemy_stat(t, label, m):
+            continue
+        if label == "Invincible" and re.search(
+            r"no longer |not \w+ invincible", t[max(0, m.start() - 12) : m.start()]
+        ):
             continue
         scopes.append(_clause_around(t, m.start()))
     return scopes
@@ -529,6 +595,9 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
 
     imm = label.replace(" immunity", "") if label.endswith(" immunity") else label
 
+    if label == "Invincible" and _invincibility_targets_self(t):
+        return True
+
     # Label-specific: match the effect phrase even if the chunk also mentions allies
     if imm in ("Unaffected", "Immune", "Steadfast") or label in (
         "Unaffected",
@@ -542,6 +611,10 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         ):
             window = t[max(0, m.start() - 50) : m.start()]
             after = t[m.end() : m.end() + 40]
+            if label == "Invincible" and _invincibility_targets_self(
+                _clause_around(t, m.start())
+            ):
+                return True
             if re.search(r"\ballies?\b", window) or re.search(
                 r"\ballies?\b", after
             ):
@@ -600,8 +673,12 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             return True
         if label == "Energy recovery" and _energy_recovery_targets_self(t):
             return True
+        if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
+            return True
 
     if label in ("Shield", "Healing", "Healing over time"):
+        if label in ("Healing", "Healing over time") and _healing_targets_self(t):
+            return True
         if re.search(r"\bwhile shielded\b", t) and not re.search(
             r"\b(?:allies?|ally)\b", t
         ):
@@ -752,6 +829,8 @@ def add_cc_immunity(hero: Hero, imm_type: str, tier: str, text: str):
 
 def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     t = text.lower()
+    if label in ("Invincible",) and _invincibility_targets_self(t):
+        return "Self"
     if label == "Shield":
         # Self-cast shield before generic ally checks
         if re.search(
@@ -895,7 +974,11 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         r"\b(?:her|his|their)\s+(?:atk|haste|crit|max\s*hp|phys\s*def|magic\s*def|atk\s*spd"
         r"|vitality|energy|life\s*drain|execution|resilience)\b",
         t,
-    ) and not re.search(r"\b(?:allies?|ally|allied|enemies?|enemy|the\s+target)\b", t):
+    ) and not re.search(
+        r"\b(?:allies?|ally|allied|enemies?|enemy|the\s+target|prey|foes?|"
+        r"marked enemy)\b",
+        t,
+    ):
         if re.search(r"\btheir\b", t) and label in ("Max HP buff", "Haste buff"):
             return "Multiple targets"
         return "Self"
@@ -965,7 +1048,11 @@ def extract_number(text: str, label: str = "") -> float | None:
 
 _CC_LABEL_KEYWORDS: dict[str, str] = {
     "Stun": r"stun",
-    "Knock down": r"knock(?:ing|ed|s)?\s+(?:them\s+)?down|knocked\s+down",
+    "Knock up": r"into the air",
+    "Knock down": (
+        r"knock(?:ing|ed|s)?\s+(?:the enemy|an enemy|them\s+)?down|"
+        r"knocked\s+down|slam(?:ming|s)?\s+them\s+down"
+    ),
     "Move": r"knock(?:ing|s)?\s+back|pull(?:ing|s)?|teleport",
     "Frighten": r"frighten",
     "Silence": r"silenc",
@@ -1384,6 +1471,11 @@ DEBUFF_RULES = [
     (r"reduc(?:e|es|ing) .{0,20}energy\b", "Energy drain"),
     # Vitality debuff
     (r"reduc(?:e|es|ing) .{0,20}vitality", "Vitality debuff"),
+    # Healing debuff (enemy Healing stat reduction)
+    (
+        r"reduc(?:e|es|ing) (?:their|the target'?s?) healing\b",
+        "Healing debuff",
+    ),
     # Damage taken debuff (enemies take more damage)
     (
         r"increas(?:e|es|ing|ed) .{0,30}damage taken|"
@@ -1425,8 +1517,22 @@ DEBUFF_RULES = [
 
 CC_RULES = [
     (r"\bstun(?:s|ned|ning)?\b|\bstunn(?:ed|ing|s)?\b", "Stun"),
-    (r"knock(?:ing|s)? them down|knocked down", "Knock down"),
-    (r"knocking them back|knock(?:ing|s)? back", "Move"),
+    (
+        r"knock(?:s|ing)? (?:them |the enemy |an enemy |the target )?"
+        r"into the air",
+        "Knock up",
+    ),
+    (
+        r"knock(?:s|ing)? (?:the enemy|an enemy|them) down|"
+        r"knock down an enemy|knocked down|slam(?:s|ming)? them down|"
+        r"into the air and down|and down for",
+        "Knock down",
+    ),
+    (
+        r"knocking them (?:\d+ tiles? )?back|"
+        r"knock(?:ing|s)? (?:them )?(?:\d+ tiles? )?back",
+        "Move",
+    ),
     (r"frighten(?:ing|ed|s)?", "Frighten"),
     # "(?<! of )" prevents skill-name references like "Echo of Silence" from
     # being falsely flagged as a Silence CC applied to a target.
@@ -1885,6 +1991,8 @@ def _is_enemy_untargetable_clause(clause: str) -> bool:
 
 def detect_special_targeting(text: str, kind: str, label: str) -> str:
     t = text.lower()
+    if label == "Invincibility" and _invincibility_targets_self(t):
+        return "Self"
     if kind == "requires":
         if label == "Artifact buffs active":
             return "Self"
@@ -2315,6 +2423,8 @@ def analyze_text(
     t = text.lower()
     for pat, label in BUFF_RULES:
         for scope in _buff_match_scopes(text, label, pat):
+            if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(scope):
+                continue
             add_effect(effects, "buff", label, tier, text, scope=scope)
         if _matching_summon_buff_match(text, label, pat):
             add_summon_buff_effect(summon_effects, label, tier, text)

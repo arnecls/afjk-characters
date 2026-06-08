@@ -60,6 +60,7 @@ fuzzy to define clear rules.
 
 - Stun
 - Knock down
+- Knock up
 - Frighten
 - Silence
 - Charm
@@ -71,7 +72,9 @@ fuzzy to define clear rules.
 These types need to be derived from the text.
 For example:
 
-- "knocking them back" -> Knock down
+- "knocking them back" -> Move
+- "knocking them into the air" -> Knock up
+- "knocking them down" / "knocks the enemy down" -> Knock down
 - "hypnotizing all enemies" -> Sleep
 - "stunning them" -> Stun
 - "unable to move" -> Pin

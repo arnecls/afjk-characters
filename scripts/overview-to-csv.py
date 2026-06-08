@@ -31,6 +31,7 @@ DAMAGE_TYPES: list[tuple[str, str]] = [
 CC_TYPES: list[str] = [
     "Stun",
     "Knock down",
+    "Knock up",
     "Frighten",
     "Silence",
     "Charm",
@@ -88,6 +89,7 @@ DEBUFF_TYPES: list[str] = [
     "Movement speed debuff",
     "Phys DEF debuff",
     "Vitality debuff",
+    "Healing debuff",
     "Crit Resist debuff",
     "Vulnerable debuff",
 ]
