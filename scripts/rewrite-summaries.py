@@ -1952,34 +1952,56 @@ def detect_special_effects(
     detect_ally_grant_effects(effects, tier, text)
 
 
-_MAX_HP_DAMAGE_CANDIDATE_RE = re.compile(
-    r"(?:extra )?(?:true )?damage.{0,80}(?:equal to|of|plus|deals?).{0,40}"
-    r"(?:\d+%[^.]{0,25})?(?:the |their |target's|enemy's|each target's|"
-    r"an enemy's )?max hp\b|"
-    r"damage.{0,40}(?:equal to|of|plus).{0,30}\d+%[^.]{0,20}of max hp\b",
-    re.I,
-)
+# Damage that scales on a target's max HP (not self (HP-based) scaling or
+# max-HP buff/heal/shield/reduction text in the same clause).
+_TARGET_MAX_HP_DAMAGE_RES = [
+    re.compile(p, re.I)
+    for p in (
+        r"(?:extra )?(?:true )?damage.{0,100}equal to.{0,100}"
+        r"(?:target'?s?|targets'|enemy'?s?|enemies'|each target'?s?|"
+        r"each enemy'?s?|defeated target'?s?|an enemy'?s?|the target'?s?|"
+        r"primary target'?s?|their)\s+max\s+hp",
+        r"damage plus \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?"
+        r"(?:\s*%\s*)? of (?:the )?target'?s? max\s+hp",
+        r"plus \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?"
+        r"(?:\s*%\s*)? target'?s? max\s+hp",
+        r"(?:deal(?:s|ing|t)?|taking) damage equal to \d+(?:\.\d+)?"
+        r"(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?(?:\s*%\s*)? of max hp\b",
+        r"deal(?:s|ing|t)? damage.{0,80}equal to \d+(?:\.\d+)?"
+        r"(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?(?:\s*%\s*)? (?:their|his|her) max hp",
+        r"drains? \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?"
+        r"(?:\s*%\s*)? of an enemy'?s max hp",
+        r"damage equal to \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?"
+        r"(?:\s*%\s*)? of each (?:target'?s?|enemy'?s?) max hp",
+        r"equal to \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?"
+        r"(?:\s*%\s*)? of (?:the )?(?:target'?s?|enemy'?s?|"
+        r"defeated target'?s?) max hp",
+        r"extra damage equal to \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?"
+        r"(?:\s*%\s*)? of the enemy'?s (?:initial )?max hp",
+        r"deals? damage equal to \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?"
+        r"(?:\s*%\s*)? of each enemy'?s max hp",
+    )
+]
 _MAX_HP_DAMAGE_EXCLUDE_RE = re.compile(
     r"lost hp|recover|restore|restoring|heal(?:ing|s)?|"
-    r"shield.{0,40}equal to|exceeding|below \d+%|drops below|initial max hp",
+    r"shield.{0,40}equal to|exceeding|below \d+%|drops below|initial max hp|"
+    r"max\s+hp\s+reduc|reduc(?:e|es|ing|tion).{0,40}max\s+hp|"
+    r"bonus max hp|cannot exceed.{0,30}max\s+hp|"
+    r"(?:gain|gains|grants?|receives?|regains?).{0,30}max\s+hp|"
+    r"loses? \d+(?:\.\d+)?(?:\s*%\s*)? of max\s+hp per",
     re.I,
 )
 
 
 def _text_has_max_hp_damage(text: str) -> bool:
-    """True when damage scales on an enemy's max HP (not heal/shield/lost HP)."""
+    """True when damage scales on a target's max HP (not self HP-based scaling)."""
     t = text.lower()
-    if re.search(r"\(\s*hp-based\s*\).{0,25}(?:true )?damage", t, re.I):
-        if not re.search(r"recover|restore|shield", t):
+    for pat in _TARGET_MAX_HP_DAMAGE_RES:
+        for m in pat.finditer(text):
+            clause = _clause_around(t, m.start())
+            if _MAX_HP_DAMAGE_EXCLUDE_RE.search(clause):
+                continue
             return True
-    if re.search(r"(?:true )?damage.{0,30}\(\s*hp-based\s*\)", t, re.I):
-        if not re.search(r"recover|restore|shield", t):
-            return True
-    for m in _MAX_HP_DAMAGE_CANDIDATE_RE.finditer(text):
-        clause = _clause_around(t, m.start())
-        if _MAX_HP_DAMAGE_EXCLUDE_RE.search(clause):
-            continue
-        return True
     return False
 _LOST_HP_DAMAGE_RE = re.compile(
     r"(?:extra )?damage.{0,60}(?:equal to|of|deals?).{0,30}"
@@ -2058,10 +2080,8 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float:
             r"(\d+(?:\.\d+)?)\s*%\s+of\s+the\s+target's\s+max\s+hp",
             r"drains?\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of\s+"
             r"an\s+enemy's\s+max\s+hp",
-            r"reducing their max hp by\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
-            r"(\d+(?:\.\d+)?)\s*%",
-            r"(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)\s+(?:true\s+)?damage",
-            r"deals?\s+(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)",
+            r"damage plus (\d+(?:\.\d+)?)\s*%\s+of\s+the\s+target's\s+max\s+hp",
+            r"plus (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+target's\s+max\s+hp",
         ]
     elif dmg_type == "HP loss":
         patterns = [
@@ -2102,9 +2122,6 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float:
 
     if dmg_type == "True damage":
         if m := re.search(r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)", text, re.I):
-            return float(m.group(1))
-    if dmg_type == "Max HP-based damage":
-        if m := re.search(r"(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)", text, re.I):
             return float(m.group(1))
     return 10.0
 
@@ -2188,7 +2205,7 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
     if re.search(r"\btrue damage\b", t):
         if re.search(r"\blost hp\b", t):
             types.append("HP loss")
-        elif re.search(r"\bmax hp\b", t):
+        elif _text_has_max_hp_damage(text):
             types.append("Max HP-based damage")
         else:
             types.append("True damage")

@@ -232,9 +232,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Damage**
 
-- Dunlingr (100% `Magic`)
-- Lily May (100% `Magic`)
-- Niru (100% `Magic`)
+- Cassadee (100% `Magic`)
+- Contess (100% `Magic`)
+- Cryonaia (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -252,7 +252,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Self, Single target
-- Max HP-based damage — Self
 
 #### Debuffs provided by Alsa
 
@@ -549,8 +548,8 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 **Damage**
 
 - Dionel (100% `True damage` `Physical`)
+- Baelran (97% `True damage` `Physical`)
 - Indris (95% `True damage` `Physical`)
-- Baelran (93% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -730,9 +729,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Damage**
 
-- Indris (87% `True damage` `Physical` `Max HP-based damage`)
-- Korin (87% `Max HP-based damage` `Physical` `True damage`)
-- Nara (85% `Max HP-based damage` `True damage` `Physical`)
+- Dionel (100% `True damage` `Physical`)
+- Athalia (95% `True damage` `Physical`)
+- Indris (93% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -752,8 +751,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
-- Max HP-based damage — Arc, Area, Single target — `high`
-- True damage — Area, Single target — `medium`
+- True damage — Arc, Area, Single target — `high`
 
 #### Buffs provided by Baelran
 
@@ -983,8 +981,8 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
 **Damage**
 
 - Gunnar (100% `Max HP-based damage` `DoT` `Physical`)
-- Cecia (97% `Max HP-based damage` `Physical` `DoT`)
-- Baelran (90% `Max HP-based damage` `Physical`)
+- Daimon (90% `Max HP-based damage` `DoT`)
+- Satrana (90% `Max HP-based damage` `DoT`)
 
 **Debuffs on enemies**
 
@@ -1004,7 +1002,7 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
 - Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 - DoT — Area
-- Max HP-based damage — Arc, Single target — `high`
+- Max HP-based damage — Arc — `high`
 
 #### Buffs provided by Brutus
 
@@ -1389,9 +1387,9 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 
 **Damage**
 
-- Brutus (100% `Max HP-based damage` `Physical` `DoT`)
-- Gunnar (100% `Max HP-based damage` `Physical` `DoT`)
-- Baelran (92% `Max HP-based damage` `Physical`)
+- Alna (100% `Physical` `DoT`)
+- Brutus (100% `Physical` `DoT`)
+- Gunnar (100% `Physical` `DoT`)
 
 **Debuffs on enemies**
 
@@ -1412,7 +1410,6 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 - Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 - DoT — Arc, Single target
-- Max HP-based damage — Arc — `high`
 
 #### Buffs provided by Cecia
 
@@ -1679,8 +1676,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 **Damage**
 
 - Frieren (100% `True damage` `Magic`)
+- Pippa (93% `True damage` `Magic`)
 - Athalia (86% `True damage`)
-- Dionel (86% `True damage`)
 
 **Debuffs on enemies**
 
@@ -1774,9 +1771,9 @@ Common buffers are **Lucius** or **Hugin**.
 #### Damage types dealt by Daimon
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Single target
+- Magic — Area, Self, Single target
 - DoT — Area
-- Max HP-based damage — Area, Self, Single target — `high`
+- Max HP-based damage — Area — `high`
 
 #### Buffs provided by Daimon
 
@@ -1927,9 +1924,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 **Damage**
 
+- Baelran (93% `True damage` `Physical`)
 - Athalia (91% `True damage` `Physical`)
 - Frieren (89% `True damage`)
-- Indris (88% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -2003,9 +2000,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Damage**
 
+- Talene (100% `HP loss` `Magic`)
+- Zorya (96% `HP loss` `Magic`)
 - Niru (84% `Magic` `HP loss`)
-- Shadewing (84% `Magic` `HP loss`)
-- Walker (68% `HP loss`)
 
 **Debuffs on enemies**
 
@@ -2026,7 +2023,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Self, Single target
 - HP loss — Area — `medium`
-- Max HP-based damage — Self
 
 #### Buffs provided by Dunlingr
 
@@ -2526,9 +2522,9 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 **Damage**
 
-- Baelran (100% `Max HP-based damage` `Physical`)
-- Brutus (100% `Max HP-based damage` `Physical`)
-- Cecia (100% `Max HP-based damage` `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
+- Antandra (100% `Physical`)
 
 ### Summary for Florabelle
 
@@ -2536,7 +2532,6 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Single target
-- Max HP-based damage — Area — `medium`
 
 #### Buffs provided by Florabelle
 
@@ -2599,7 +2594,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Cyran (85% `True damage` `Magic`)
 - Dionel (83% `True damage`)
-- Shadewing (77% `Magic` `DoT` `True damage`)
+- Pippa (81% `True damage` `Magic`)
 
 **Debuffs on enemies**
 
@@ -2841,9 +2836,9 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 **Damage**
 
-- Baelran (100% `Physical` `Max HP-based damage`)
-- Brutus (100% `Physical` `Max HP-based damage`)
-- Cecia (100% `Physical` `Max HP-based damage`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
+- Antandra (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -2863,7 +2858,6 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Granny Dahnie
 
@@ -2924,8 +2918,8 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 **Damage**
 
 - Brutus (90% `Max HP-based damage` `DoT` `Physical`)
-- Cecia (88% `Max HP-based damage` `Physical` `DoT`)
-- Baelran (87% `Max HP-based damage` `Physical`)
+- Daimon (87% `Max HP-based damage` `DoT`)
+- Satrana (87% `Max HP-based damage` `DoT`)
 
 **Crowd Control**
 
@@ -2995,8 +2989,8 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 **Damage**
 
 - Brutus (100% `Physical` `DoT` `Max HP-based damage`)
-- Cecia (100% `Physical` `DoT` `Max HP-based damage`)
 - Gunnar (100% `Physical` `DoT` `Max HP-based damage`)
+- Himmel (92% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -3415,8 +3409,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 **Damage**
 
 - Gunnar (100% `Physical` `Max HP-based damage`)
-- Baelran (96% `Physical` `Max HP-based damage`)
 - Brutus (96% `Physical` `Max HP-based damage`)
+- Korin (96% `Physical` `Max HP-based damage`)
 
 ### Summary for Himmel
 
@@ -3480,9 +3474,9 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 **Damage**
 
-- Baelran (100% `Max HP-based damage` `Physical`)
-- Brutus (100% `Max HP-based damage` `Physical`)
-- Cecia (100% `Max HP-based damage` `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
+- Antandra (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -3496,7 +3490,6 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
-- Max HP-based damage — Area — `medium`
 
 #### Buffs provided by Hodgkin
 
@@ -3704,9 +3697,9 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 
 **Damage**
 
-- Baelran (97% `True damage` `Physical` `Max HP-based damage`)
 - Korin (87% `Physical` `Max HP-based damage` `True damage`)
 - Temesia (84% `Physical` `Max HP-based damage` `True damage`)
+- Nara (84% `True damage` `Max HP-based damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -4145,9 +4138,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 **Damage**
 
-- Baelran (100% `Max HP-based damage` `Physical` `True damage`)
 - Nara (92% `Max HP-based damage` `True damage` `Physical`)
 - Indris (89% `Physical` `Max HP-based damage` `True damage`)
+- Temesia (86% `Physical` `Max HP-based damage` `True damage`)
 
 **Crowd Control**
 
@@ -4161,7 +4154,7 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
-- Max HP-based damage — Area, Single target — `medium`
+- Max HP-based damage — Area — `medium`
 - True damage — Single target — `medium`
 
 #### Buffs provided by Korin
@@ -4521,9 +4514,9 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 **Damage**
 
-- Niru (100% `Magic` `Max HP-based damage`)
 - Shadewing (100% `Magic` `Max HP-based damage`)
 - Shemira (100% `Magic` `Max HP-based damage`)
+- Daimon (94% `Magic` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -5030,9 +5023,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Damage**
 
-- Baelran (100% `Physical` `Max HP-based damage`)
-- Brutus (100% `Physical` `Max HP-based damage`)
-- Cecia (100% `Physical` `Max HP-based damage`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
+- Antandra (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -5052,7 +5045,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Single target
-- Max HP-based damage — Single target — `low`
 
 #### Buffs provided by Lumont
 
@@ -5550,9 +5542,9 @@ Common buffers are **Ravion** or **Lyca**.
 
 **Damage**
 
-- Baelran (100% `Max HP-based damage` `True damage` `Physical`)
 - Korin (96% `Max HP-based damage` `True damage` `Physical`)
 - Indris (87% `True damage` `Max HP-based damage` `Physical`)
+- Shadewing (87% `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -5696,9 +5688,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Damage**
 
-- Baelran (100% `True damage` `Physical` `Max HP-based damage`)
-- Indris (100% `True damage` `Physical` `Max HP-based damage`)
-- Nara (100% `True damage` `Physical` `Max HP-based damage`)
+- Athalia (100% `True damage` `Physical`)
+- Baelran (100% `True damage` `Physical`)
+- Dionel (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -5718,7 +5710,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Self, Single target
-- Max HP-based damage — Single target — `low`
 - True damage — Single target — `high`
 
 #### Debuffs provided by Nazrik
@@ -5846,9 +5837,9 @@ Common buffers are **Rowan**, **Lyca**, or **Twins**.
 
 **Damage**
 
-- Shadewing (100% `Magic` `Max HP-based damage` `HP loss`)
-- Dunlingr (86% `Magic` `HP loss`)
-- Walker (72% `HP loss` `Max HP-based damage`)
+- Dunlingr (100% `Magic` `HP loss`)
+- Shadewing (100% `Magic` `HP loss`)
+- Talene (100% `Magic` `HP loss`)
 
 ### Summary for Niru
 
@@ -5857,7 +5848,6 @@ Common buffers are **Rowan**, **Lyca**, or **Twins**.
 - Primary damage type (unit): **Magic**
 - Magic — All units, Self, Single target
 - HP loss — Single target — `low`
-- Max HP-based damage — All units, Single target — `low`
 
 #### Buffs provided by Niru
 
@@ -6330,9 +6320,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Damage**
 
-- Shadewing (91% `Magic` `Max HP-based damage` `True damage`)
-- Baelran (82% `True damage` `Max HP-based damage`)
-- Indris (82% `True damage` `Max HP-based damage`)
+- Indris (87% `True damage` `Max HP-based damage`)
+- Shadewing (84% `Magic` `Max HP-based damage` `True damage`)
+- Sylphira (84% `Magic` `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -6353,7 +6343,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
 - Max HP-based damage — Single target — `low`
-- True damage — Area — `low`
+- True damage — Area — `medium`
 
 #### Debuffs provided by Pippa
 
@@ -6963,7 +6953,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Primary damage type (unit): **Magic**
 - Magic — Arc, Area, Single target
 - DoT — Area
-- Max HP-based damage — Arc, Area, Single target — `high`
+- Max HP-based damage — Arc, Area — `high`
 
 #### Buffs provided by Satrana
 
@@ -7190,9 +7180,9 @@ Common buffers are **Lucius**, **Lyca**, or **Ravion**.
 
 **Damage**
 
-- Baelran (61% `Max HP-based damage` `True damage`)
-- Niru (60% `Magic` `Max HP-based damage` `HP loss`)
+- Sylphira (56% `Magic` `Max HP-based damage` `True damage`)
 - Korin (55% `Max HP-based damage` `True damage`)
+- Nara (55% `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -7208,7 +7198,7 @@ Common buffers are **Lucius**, **Lyca**, or **Ravion**.
 - Magic — All units, Single target
 - DoT — Single target
 - HP loss — Single target — `low`
-- Max HP-based damage — All units, Single target — `high`
+- Max HP-based damage — All units — `high`
 - True damage — Single target — `low`
 
 #### Debuffs provided by Shadewing
@@ -7402,9 +7392,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Damage**
 
-- Daimon (100% `Magic` `Max HP-based damage`)
-- Lily May (100% `Magic` `Max HP-based damage`)
-- Natsu (100% `Magic` `Max HP-based damage`)
+- Pippa (100% `Magic` `True damage`)
+- Shadewing (100% `Magic` `True damage`)
+- Sylphira (100% `Magic` `True damage`)
 
 ### Summary for Silven
 
@@ -7412,7 +7402,8 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Primary damage type (unit): **Magic**
 - Magic — Self, Single target
-- Max HP-based damage — Self, Single target — `low`
+- Max HP-based damage — Self
+- True damage — Single target — `low`
 
 #### Buffs provided by Silven
 
@@ -7830,9 +7821,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Damage**
 
-- Baelran (100% `Physical`)
-- Brutus (100% `Physical`)
-- Cecia (100% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
+- Antandra (100% `Physical`)
 
 **Crowd Control**
 
@@ -7845,8 +7836,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Damage types dealt by Soren
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Multiple targets, Single target
-- Max HP-based damage — Self
+- Physical — Area, Multiple targets, Self, Single target
 
 #### Buffs provided by Soren
 
@@ -7898,9 +7888,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Damage**
 
-- Daimon (100% `Magic` `Max HP-based damage`)
-- Natsu (100% `Magic` `Max HP-based damage`)
-- Niru (100% `Magic` `Max HP-based damage`)
+- Shadewing (100% `Magic` `Max HP-based damage` `True damage`)
+- Pippa (94% `Magic` `Max HP-based damage` `True damage`)
+- Indris (81% `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -7917,6 +7907,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 - Max HP-based damage — Single target — `medium`
+- True damage — Single target — `low`
 
 #### Buffs provided by Sylphira
 
@@ -8125,9 +8116,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Damage**
 
-- Baelran (95% `Physical` `Max HP-based damage` `True damage`)
 - Indris (95% `Physical` `Max HP-based damage` `True damage`)
 - Korin (95% `Physical` `Max HP-based damage` `True damage`)
+- Nara (85% `Max HP-based damage` `Physical` `True damage`)
 
 **Debuffs on enemies**
 
@@ -8685,9 +8676,9 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 **Damage**
 
-- Baelran (100% `Physical` `Max HP-based damage`)
 - Brutus (100% `Physical` `Max HP-based damage`)
-- Cecia (100% `Physical` `Max HP-based damage`)
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Himmel (100% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -8701,7 +8692,7 @@ Common buffers are **Twins**, **Hugin**, or **Lucius**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
-- Max HP-based damage — Area, Single target — `low`
+- Max HP-based damage — Area — `low`
 
 #### Buffs provided by Valka
 
@@ -8925,9 +8916,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Damage**
 
-- Niru (77% `HP loss` `Max HP-based damage`)
 - Shadewing (77% `HP loss` `Max HP-based damage`)
-- Dunlingr (71% `HP loss`)
+- Aliceth (61% `Physical` `HP loss`)
+- Brutus (61% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -9023,9 +9014,9 @@ These are the **10** strongest pairings:
 
 **Damage**
 
-- Baelran (100% `Max HP-based damage` `Physical`)
-- Gunnar (100% `Max HP-based damage` `Physical`)
-- Daimon (95% `Max HP-based damage`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
+- Antandra (100% `Physical`)
 
 **Crowd Control**
 
@@ -9038,8 +9029,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Zandrok
 
 - Primary damage type (unit): **Physical**
-- Physical — Self, Single target
-- Max HP-based damage — Area, Multiple targets, Single target — `high`
+- Physical — Area, Multiple targets, Self, Single target
 
 #### Buffs provided by Zandrok
 

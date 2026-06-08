@@ -1416,10 +1416,6 @@
         [
           "Magic",
           "All units, Area, Self, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Self"
         ]
       ],
       "damage_magnitudes": {},
@@ -1759,21 +1755,21 @@
         ],
         "damage": [
           {
-            "name": "Dunlingr",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Lily May",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Niru",
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -3500,16 +3496,16 @@
             ]
           },
           {
-            "name": "Indris",
-            "score": 0.951,
+            "name": "Baelran",
+            "score": 0.972,
             "matches": [
               "True damage",
               "Physical"
             ]
           },
           {
-            "name": "Baelran",
-            "score": 0.93,
+            "name": "Indris",
+            "score": 0.951,
             "matches": [
               "True damage",
               "Physical"
@@ -4116,17 +4112,12 @@
           "Arc, Area, Single target"
         ],
         [
-          "Max HP-based damage",
-          "Arc, Area, Single target"
-        ],
-        [
           "True damage",
-          "Area, Single target"
+          "Arc, Area, Single target"
         ]
       ],
       "damage_magnitudes": {
-        "Max HP-based damage": "high",
-        "True damage": "medium"
+        "True damage": "high"
       },
       "benefit_stats": [
         "ATK",
@@ -4431,28 +4422,25 @@
         ],
         "damage": [
           {
-            "name": "Indris",
-            "score": 0.8757,
+            "name": "Dionel",
+            "score": 1.0,
             "matches": [
               "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Korin",
-            "score": 0.8757,
+            "name": "Athalia",
+            "score": 0.9596,
             "matches": [
-              "Max HP-based damage",
-              "Physical",
-              "True damage"
+              "True damage",
+              "Physical"
             ]
           },
           {
-            "name": "Nara",
-            "score": 0.8503,
+            "name": "Indris",
+            "score": 0.9394,
             "matches": [
-              "Max HP-based damage",
               "True damage",
               "Physical"
             ]
@@ -5841,7 +5829,7 @@
         ],
         [
           "Max HP-based damage",
-          "Arc, Single target"
+          "Arc"
         ]
       ],
       "damage_magnitudes": {
@@ -6191,20 +6179,19 @@
             ]
           },
           {
-            "name": "Cecia",
-            "score": 0.9763,
+            "name": "Daimon",
+            "score": 0.9051,
             "matches": [
               "Max HP-based damage",
-              "Physical",
               "DoT"
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Satrana",
             "score": 0.9051,
             "matches": [
               "Max HP-based damage",
-              "Physical"
+              "DoT"
             ]
           }
         ],
@@ -8445,15 +8432,9 @@
         [
           "DoT",
           "Arc, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Arc"
         ]
       ],
-      "damage_magnitudes": {
-        "Max HP-based damage": "high"
-      },
+      "damage_magnitudes": {},
       "benefit_stats": [
         "ATK SPD",
         "DEF Penetration",
@@ -8751,10 +8732,17 @@
         ],
         "damage": [
           {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "DoT"
+            ]
+          },
+          {
             "name": "Brutus",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical",
               "DoT"
             ]
@@ -8763,17 +8751,8 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical",
               "DoT"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 0.9236,
-            "matches": [
-              "Max HP-based damage",
-              "Physical"
             ]
           }
         ],
@@ -10527,14 +10506,15 @@
             ]
           },
           {
-            "name": "Athalia",
-            "score": 0.86,
+            "name": "Pippa",
+            "score": 0.93,
             "matches": [
-              "True damage"
+              "True damage",
+              "Magic"
             ]
           },
           {
-            "name": "Dionel",
+            "name": "Athalia",
             "score": 0.86,
             "matches": [
               "True damage"
@@ -10640,7 +10620,7 @@
       "damage_entries": [
         [
           "Magic",
-          "Area, Single target"
+          "Area, Self, Single target"
         ],
         [
           "DoT",
@@ -10648,7 +10628,7 @@
         ],
         [
           "Max HP-based damage",
-          "Area, Self, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {
@@ -11836,6 +11816,14 @@
         ],
         "damage": [
           {
+            "name": "Baelran",
+            "score": 0.93,
+            "matches": [
+              "True damage",
+              "Physical"
+            ]
+          },
+          {
             "name": "Athalia",
             "score": 0.9192,
             "matches": [
@@ -11848,14 +11836,6 @@
             "score": 0.8923,
             "matches": [
               "True damage"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 0.8815,
-            "matches": [
-              "True damage",
-              "Physical"
             ]
           }
         ],
@@ -12023,10 +12003,6 @@
         [
           "HP loss",
           "Area"
-        ],
-        [
-          "Max HP-based damage",
-          "Self"
         ]
       ],
       "damage_magnitudes": {
@@ -12617,25 +12593,26 @@
         ],
         "damage": [
           {
+            "name": "Talene",
+            "score": 1.0,
+            "matches": [
+              "HP loss",
+              "Magic"
+            ]
+          },
+          {
+            "name": "Zorya",
+            "score": 0.9682,
+            "matches": [
+              "HP loss",
+              "Magic"
+            ]
+          },
+          {
             "name": "Niru",
             "score": 0.8449,
             "matches": [
               "Magic",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Shadewing",
-            "score": 0.8449,
-            "matches": [
-              "Magic",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Walker",
-            "score": 0.6858,
-            "matches": [
               "HP loss"
             ]
           }
@@ -15431,15 +15408,9 @@
         [
           "Physical",
           "Area, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Area"
         ]
       ],
-      "damage_magnitudes": {
-        "Max HP-based damage": "medium"
-      },
+      "damage_magnitudes": {},
       "benefit_stats": [
         "ATK",
         "Haste"
@@ -15630,26 +15601,23 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
+            "name": "Aliceth",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical"
             ]
           },
           {
-            "name": "Brutus",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical"
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Antandra",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical"
             ]
           }
@@ -16000,12 +15968,11 @@
             ]
           },
           {
-            "name": "Shadewing",
-            "score": 0.7756,
+            "name": "Pippa",
+            "score": 0.8147,
             "matches": [
-              "Magic",
-              "DoT",
-              "True damage"
+              "True damage",
+              "Magic"
             ]
           }
         ],
@@ -16879,15 +16846,9 @@
         [
           "Physical",
           "Area, Self, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Single target"
         ]
       ],
-      "damage_magnitudes": {
-        "Max HP-based damage": "low"
-      },
+      "damage_magnitudes": {},
       "benefit_stats": [
         "Healing",
         "Energy",
@@ -17447,27 +17408,24 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
+            "name": "Aliceth",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Brutus",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Antandra",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -17926,20 +17884,19 @@
             ]
           },
           {
-            "name": "Cecia",
-            "score": 0.8877,
+            "name": "Daimon",
+            "score": 0.8747,
             "matches": [
               "Max HP-based damage",
-              "Physical",
               "DoT"
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Satrana",
             "score": 0.8747,
             "matches": [
               "Max HP-based damage",
-              "Physical"
+              "DoT"
             ]
           }
         ],
@@ -18278,7 +18235,7 @@
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -18287,11 +18244,10 @@
             ]
           },
           {
-            "name": "Gunnar",
-            "score": 1.0,
+            "name": "Himmel",
+            "score": 0.9208,
             "matches": [
               "Physical",
-              "DoT",
               "Max HP-based damage"
             ]
           }
@@ -20852,7 +20808,7 @@
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Brutus",
             "score": 0.96,
             "matches": [
               "Physical",
@@ -20860,7 +20816,7 @@
             ]
           },
           {
-            "name": "Brutus",
+            "name": "Korin",
             "score": 0.96,
             "matches": [
               "Physical",
@@ -20949,15 +20905,9 @@
         [
           "Physical",
           "Arc, Area, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Area"
         ]
       ],
-      "damage_magnitudes": {
-        "Max HP-based damage": "medium"
-      },
+      "damage_magnitudes": {},
       "benefit_stats": [
         "ATK"
       ],
@@ -21201,26 +21151,23 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Baelran",
+            "name": "Aliceth",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical"
             ]
           },
           {
-            "name": "Brutus",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical"
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Antandra",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical"
             ]
           }
@@ -23292,15 +23239,6 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 0.9798,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Korin",
             "score": 0.8788,
             "matches": [
@@ -23316,6 +23254,15 @@
               "Physical",
               "Max HP-based damage",
               "True damage"
+            ]
+          },
+          {
+            "name": "Nara",
+            "score": 0.8418,
+            "matches": [
+              "True damage",
+              "Max HP-based damage",
+              "Physical"
             ]
           }
         ],
@@ -26004,7 +25951,7 @@
         ],
         [
           "Max HP-based damage",
-          "Area, Single target"
+          "Area"
         ],
         [
           "True damage",
@@ -26362,15 +26309,6 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "Physical",
-              "True damage"
-            ]
-          },
-          {
             "name": "Nara",
             "score": 0.9286,
             "matches": [
@@ -26382,6 +26320,15 @@
           {
             "name": "Indris",
             "score": 0.8929,
+            "matches": [
+              "Physical",
+              "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Temesia",
+            "score": 0.8607,
             "matches": [
               "Physical",
               "Max HP-based damage",
@@ -28936,14 +28883,6 @@
         ],
         "damage": [
           {
-            "name": "Niru",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Shadewing",
             "score": 1.0,
             "matches": [
@@ -28954,6 +28893,14 @@
           {
             "name": "Shemira",
             "score": 1.0,
+            "matches": [
+              "Magic",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Daimon",
+            "score": 0.9429,
             "matches": [
               "Magic",
               "Max HP-based damage"
@@ -31759,15 +31706,9 @@
         [
           "Physical",
           "Area, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Single target"
         ]
       ],
-      "damage_magnitudes": {
-        "Max HP-based damage": "low"
-      },
+      "damage_magnitudes": {},
       "benefit_stats": [
         "Haste",
         "Max HP",
@@ -32381,27 +32322,24 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
+            "name": "Aliceth",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Brutus",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Antandra",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -35623,15 +35561,6 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
             "name": "Korin",
             "score": 0.9638,
             "matches": [
@@ -35647,6 +35576,14 @@
               "True damage",
               "Max HP-based damage",
               "Physical"
+            ]
+          },
+          {
+            "name": "Shadewing",
+            "score": 0.8793,
+            "matches": [
+              "Max HP-based damage",
+              "True damage"
             ]
           }
         ],
@@ -36168,17 +36105,12 @@
           "Self, Single target"
         ],
         [
-          "Max HP-based damage",
-          "Single target"
-        ],
-        [
           "True damage",
           "Single target"
         ]
       ],
       "damage_magnitudes": {
-        "True damage": "high",
-        "Max HP-based damage": "low"
+        "True damage": "high"
       },
       "benefit_stats": [
         "Crit"
@@ -36386,30 +36318,27 @@
         ],
         "damage": [
           {
+            "name": "Athalia",
+            "score": 1.0,
+            "matches": [
+              "True damage",
+              "Physical"
+            ]
+          },
+          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
               "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Indris",
+            "name": "Dionel",
             "score": 1.0,
             "matches": [
               "True damage",
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Nara",
-            "score": 1.0,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -37350,15 +37279,10 @@
         [
           "HP loss",
           "Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "All units, Single target"
         ]
       ],
       "damage_magnitudes": {
-        "HP loss": "low",
-        "Max HP-based damage": "low"
+        "HP loss": "low"
       },
       "benefit_stats": [
         "Physical DEF",
@@ -37630,28 +37554,27 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Dunlingr",
+            "score": 1.0,
+            "matches": [
+              "Magic",
+              "HP loss"
+            ]
+          },
+          {
             "name": "Shadewing",
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
               "HP loss"
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.8671,
+            "name": "Talene",
+            "score": 1.0,
             "matches": [
               "Magic",
               "HP loss"
-            ]
-          },
-          {
-            "name": "Walker",
-            "score": 0.7297,
-            "matches": [
-              "HP loss",
-              "Max HP-based damage"
             ]
           }
         ],
@@ -40470,7 +40393,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "True damage": "low",
+        "True damage": "medium",
         "Max HP-based damage": "low"
       },
       "benefit_stats": [
@@ -40694,8 +40617,16 @@
         ],
         "damage": [
           {
+            "name": "Indris",
+            "score": 0.8742,
+            "matches": [
+              "True damage",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Shadewing",
-            "score": 0.9192,
+            "score": 0.8466,
             "matches": [
               "Magic",
               "Max HP-based damage",
@@ -40703,19 +40634,12 @@
             ]
           },
           {
-            "name": "Baelran",
-            "score": 0.8277,
+            "name": "Sylphira",
+            "score": 0.8466,
             "matches": [
-              "True damage",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 0.8277,
-            "matches": [
-              "True damage",
-              "Max HP-based damage"
+              "Magic",
+              "Max HP-based damage",
+              "True damage"
             ]
           }
         ],
@@ -43347,7 +43271,7 @@
         ],
         [
           "Max HP-based damage",
-          "Arc, Area, Single target"
+          "Arc, Area"
         ]
       ],
       "damage_magnitudes": {
@@ -44682,7 +44606,7 @@
         ],
         [
           "Max HP-based damage",
-          "All units, Single target"
+          "All units"
         ],
         [
           "True damage",
@@ -45447,24 +45371,24 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 0.6105,
+            "name": "Sylphira",
+            "score": 0.5624,
+            "matches": [
+              "Magic",
+              "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Korin",
+            "score": 0.558,
             "matches": [
               "Max HP-based damage",
               "True damage"
             ]
           },
           {
-            "name": "Niru",
-            "score": 0.6061,
-            "matches": [
-              "Magic",
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Korin",
+            "name": "Nara",
             "score": 0.558,
             "matches": [
               "Max HP-based damage",
@@ -46547,11 +46471,15 @@
         ],
         [
           "Max HP-based damage",
-          "Self, Single target"
+          "Self"
+        ],
+        [
+          "True damage",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {
-        "Max HP-based damage": "low"
+        "True damage": "low"
       },
       "benefit_stats": [
         "ATK SPD",
@@ -47264,27 +47192,27 @@
         ],
         "damage": [
           {
-            "name": "Daimon",
+            "name": "Pippa",
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage"
+              "True damage"
             ]
           },
           {
-            "name": "Lily May",
+            "name": "Shadewing",
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage"
+              "True damage"
             ]
           },
           {
-            "name": "Natsu",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage"
+              "True damage"
             ]
           }
         ],
@@ -49478,11 +49406,7 @@
       "damage_entries": [
         [
           "Physical",
-          "Area, Multiple targets, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Self"
+          "Area, Multiple targets, Self, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -49832,21 +49756,21 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
+            "name": "Aliceth",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Brutus",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Antandra",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -50022,9 +49946,14 @@
         [
           "Max HP-based damage",
           "Single target"
+        ],
+        [
+          "True damage",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {
+        "True damage": "low",
         "Max HP-based damage": "medium"
       },
       "benefit_stats": [
@@ -50582,27 +50511,29 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Daimon",
+            "name": "Shadewing",
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "True damage"
             ]
           },
           {
-            "name": "Natsu",
-            "score": 1.0,
+            "name": "Pippa",
+            "score": 0.9466,
             "matches": [
               "Magic",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "True damage"
             ]
           },
           {
-            "name": "Niru",
-            "score": 1.0,
+            "name": "Indris",
+            "score": 0.8102,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "True damage"
             ]
           }
         ],
@@ -52579,15 +52510,6 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 0.9582,
-            "matches": [
-              "Physical",
-              "Max HP-based damage",
-              "True damage"
-            ]
-          },
-          {
             "name": "Indris",
             "score": 0.9582,
             "matches": [
@@ -52602,6 +52524,15 @@
             "matches": [
               "Physical",
               "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Nara",
+            "score": 0.8537,
+            "matches": [
+              "Max HP-based damage",
+              "Physical",
               "True damage"
             ]
           }
@@ -56032,7 +55963,7 @@
         ],
         [
           "Max HP-based damage",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {
@@ -56764,14 +56695,6 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Brutus",
             "score": 1.0,
             "matches": [
@@ -56780,7 +56703,15 @@
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -58120,14 +58051,6 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Niru",
-            "score": 0.776,
-            "matches": [
-              "HP loss",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Shadewing",
             "score": 0.776,
             "matches": [
@@ -58136,10 +58059,19 @@
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.713,
+            "name": "Aliceth",
+            "score": 0.612,
             "matches": [
+              "Physical",
               "HP loss"
+            ]
+          },
+          {
+            "name": "Brutus",
+            "score": 0.612,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
             ]
           }
         ],
@@ -58178,7 +58110,7 @@
       }
     },
     "Zandrok - Watchful Edge": {
-      "is_supporting_unit": false,
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "effects": [
         {
@@ -58228,16 +58160,10 @@
       "damage_entries": [
         [
           "Physical",
-          "Self, Single target"
-        ],
-        [
-          "Max HP-based damage",
-          "Area, Multiple targets, Single target"
+          "Area, Multiple targets, Self, Single target"
         ]
       ],
-      "damage_magnitudes": {
-        "Max HP-based damage": "high"
-      },
+      "damage_magnitudes": {},
       "benefit_stats": [
         "Haste",
         "Max HP"
@@ -58576,26 +58502,24 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
+            "name": "Aliceth",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical"
             ]
           },
           {
-            "name": "Gunnar",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical"
             ]
           },
           {
-            "name": "Daimon",
-            "score": 0.95,
+            "name": "Antandra",
+            "score": 1.0,
             "matches": [
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
