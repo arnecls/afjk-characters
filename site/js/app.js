@@ -243,6 +243,18 @@
     "on skill": { emoji: "⏱️", cls: "chip-target" },
   };
 
+  const MOVEMENT_DEFINITIONS = {
+    stationary: { emoji: "📍", cls: "chip-movement" },
+    moving: { emoji: "🏃", cls: "chip-movement" },
+    "mostly stationary": { emoji: "🚶", cls: "chip-movement" },
+    "high movement": { emoji: "💨", cls: "chip-movement" },
+    "moving / stationary": { emoji: "↔️", cls: "chip-movement" },
+  };
+
+  const MOVEMENT_KEYS = Object.keys(MOVEMENT_DEFINITIONS).sort(function (a, b) {
+    return b.length - a.length;
+  });
+
   const TARGETING_PHRASES = [
     { re: /\bMultiple targets\b/gi, key: "multiple targets" },
     { re: /\bSingle target\b/gi, key: "single target" },
@@ -769,6 +781,39 @@
     return "<strong>True damage</strong>: " + rendered.join(", ");
   }
 
+  function formatMovementChip(text) {
+    const trimmed = text.trim();
+    if (!trimmed) {
+      return null;
+    }
+    const lower = trimmed.toLowerCase();
+    for (let i = 0; i < MOVEMENT_KEYS.length; i++) {
+      const key = MOVEMENT_KEYS[i];
+      if (lower === key.toLowerCase()) {
+        const def = MOVEMENT_DEFINITIONS[key];
+        return chipSpan(def.emoji, trimmed, def.cls);
+      }
+    }
+    return null;
+  }
+
+  function renderMovementLine(text) {
+    const match = text.match(/^\*\*Movement\*\*:\s*(.+)$/i);
+    if (!match) {
+      return null;
+    }
+    const rest = match[1].trim();
+    const paren = rest.match(/^(.+?)\s*(\([^)]+\))\s*$/);
+    const base = paren ? paren[1].trim() : rest;
+    const suffix = paren ? " " + escapeHtml(paren[2]) : "";
+    const chip = formatMovementChip(base);
+    return (
+      "<strong>Movement</strong>: " +
+      (chip !== null ? chip : escapeHtml(base)) +
+      suffix
+    );
+  }
+
   function renderSkillOverviewItem(text) {
     const trueDamage = renderTrueDamageOverviewLine(text);
     if (trueDamage !== null) {
@@ -777,10 +822,20 @@
     return renderInline(text);
   }
 
+  function renderBehaviorItem(text) {
+    const movement = renderMovementLine(text);
+    if (movement !== null) {
+      return movement;
+    }
+    return renderInline(text);
+  }
+
   function renderMarkdown(md, options) {
     if (!md) return "";
     const skillOverview = options && options.skillOverview;
-    const renderItem = skillOverview ? renderSkillOverviewItem : renderInline;
+    const renderItem = skillOverview
+      ? renderSkillOverviewItem
+      : renderBehaviorItem;
     const lines = md.split("\n");
     const parts = [];
     let inList = false;
@@ -943,10 +998,29 @@
       return "";
     }
     if (kind === "faction") {
+      const icon = iconPath("factions", label);
       return (
         '<span class="badge ' +
         factionClass(label) +
         '">' +
+        (icon
+          ? '<img src="' +
+            assetUrl(icon) +
+            '" alt="" loading="lazy">'
+          : "") +
+        escapeHtml(label) +
+        "</span>"
+      );
+    }
+    if (kind === "class") {
+      const icon = iconPath("class", label);
+      return (
+        '<span class="badge">' +
+        (icon
+          ? '<img src="' +
+            assetUrl(icon) +
+            '" alt="" loading="lazy">'
+          : "") +
         escapeHtml(label) +
         "</span>"
       );
@@ -984,8 +1058,12 @@
       return escapeHtml(value);
     }
     if (column === "Movement") {
+      const chip = formatMovementChip(value);
+      if (chip !== null) {
+        return chip;
+      }
       return (
-        '<span class="chip chip-generic">🚶 ' +
+        '<span class="chip chip-movement">🚶 ' +
         escapeHtml(value.trim()) +
         "</span>"
       );
@@ -1077,15 +1155,24 @@
       row.forEach(function (cell, idx) {
         const col = csvHeaders[idx];
         let inner;
-        if (col === "Name" && hero) {
-          inner =
-            '<a href="' +
-            escapeHtml(heroUrl(hero.slug)) +
-            '" class="hero-link" data-slug="' +
-            escapeHtml(hero.slug) +
-            '">' +
-            escapeHtml(name) +
-            "</a>";
+        if (col === "Name") {
+          if (hero) {
+            inner =
+              '<a href="' +
+              escapeHtml(heroUrl(hero.slug)) +
+              '" class="hero-link col-name-link" data-slug="' +
+              escapeHtml(hero.slug) +
+              '">' +
+              '<span class="col-name-text">' +
+              escapeHtml(name) +
+              "</span>" +
+              '<img class="col-name-portrait" src="' +
+              assetUrl(hero.portrait) +
+              '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
+              "</a>";
+          } else {
+            inner = escapeHtml(name);
+          }
         } else {
           inner = renderTableCell(col, cell);
         }
