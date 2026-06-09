@@ -802,6 +802,24 @@ def detect_immunity_timing(text: str) -> str:
     return "On skill"
 
 
+def _is_enemy_untargetable_context(text: str) -> bool:
+    """True when untargetable describes an enemy state, not self anti-CC."""
+    t = text.lower()
+    if _is_enemy_untargetable_clause(t):
+        return True
+    if re.search(
+        r"defeated or becomes? untargetable|"
+        r"if (?:the |that )?enemy becomes? untargetable|"
+        r"first enemy affected.{0,60}becomes? untargetable|"
+        r"marked enemy is defeated or becomes? untargetable",
+        t,
+    ):
+        return True
+    if re.search(r"(?:stitchy|shadow).{0,40}cannot be targeted", t):
+        return True
+    return False
+
+
 def grants_cc_immunity(text: str, imm_type: str) -> bool:
     t = text.lower()
     if imm_type == "Unaffected":
@@ -824,6 +842,16 @@ def grants_cc_immunity(text: str, imm_type: str) -> bool:
         return bool(re.search(r"\bimmune to (?:damage and )?control\b", t))
     if imm_type == "Cleanse":
         return bool(re.search(r"removes? all dispellable debuffs", t))
+    if imm_type == "Untargetable":
+        if _is_enemy_untargetable_context(t):
+            return False
+        return bool(
+            re.search(
+                r"(?:becomes?|is|making|grants?|granted).{0,60}untargetable|"
+                r"cannot be targeted by enemies",
+                t,
+            )
+        )
     return False
 
 
@@ -2094,8 +2122,9 @@ def detect_special_effects(
             continue
         if label == "Ally blessing" and _blessing_is_summon_only(t):
             continue
-        if label == "Untargetable" and _is_enemy_untargetable_clause(
-            _clause_around(t, m.start())
+        if label == "Untargetable" and (
+            _is_enemy_untargetable_clause(_clause_around(t, m.start()))
+            or grants_cc_immunity(text, "Untargetable")
         ):
             continue
         if label == "HP threshold strike" and re.search(r"instantly defeat", t):
@@ -2859,7 +2888,13 @@ _ALWAYS_HIGH_BUFFS = frozenset(
 )
 _ALWAYS_MEDIUM_DEBUFFS = frozenset({"Marked target (focus fire)"})
 
-IMMUNITY_TYPES = ("Unaffected", "Steadfast", "Immune", "Cleanse")
+IMMUNITY_TYPES = (
+    "Unaffected",
+    "Steadfast",
+    "Immune",
+    "Untargetable",
+    "Cleanse",
+)
 
 
 def qualitative_magnitude(e: Effect) -> str:

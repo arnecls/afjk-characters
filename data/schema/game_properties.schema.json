@@ -75,6 +75,7 @@
         "unaffected",
         "steadfast",
         "immune",
+        "untargetable",
         "cleanse"
       ],
       "description": "Anti crowd-control category (Dispell stored as cleanse)."

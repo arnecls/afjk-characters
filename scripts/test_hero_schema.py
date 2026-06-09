@@ -60,6 +60,8 @@ class EnumMappingTests(unittest.TestCase):
         self.assertEqual(hs.to_display_cc("knock_back"), "Knock back")
         self.assertEqual(hs.to_schema_cc("Freeze"), "bind")
         self.assertEqual(hs.to_display_cc("freeze"), "Bind")
+        self.assertEqual(hs.to_schema_immunity("Untargetable"), "untargetable")
+        self.assertEqual(hs.to_display_immunity("untargetable"), "Untargetable")
 
     def test_faction_round_trip(self):
         self.assertEqual(hs.to_schema_faction("Wilder"), "wilder")
@@ -145,6 +147,18 @@ class RoundTripTests(unittest.TestCase):
                         eff.targeting,
                         f"{prefix} / {_section} / {eff.label}",
                     )
+
+    def test_dionel_untargetable_immunity(self):
+        processed = io.load_processed()
+        skill = processed["heroes"]["Dionel - Venus of Dawn"]["skills"][
+            "Dawn Light"
+        ]
+        imm_types = {
+            e.get("immunity_type")
+            for e in skill.get("effects", [])
+            if e.get("type") == "immunity"
+        }
+        self.assertIn("untargetable", imm_types)
 
     def test_aliceth_aegis_wings_blind_cc(self):
         processed = io.load_processed()

@@ -63,8 +63,20 @@ _ANTI_CC_KEYWORDS: dict[str, str] = {
     ),
     "steadfast": r"(?:becomes?|is|grants?|granted).{0,40}steadfast",
     "immune": r"\bimmune to (?:damage and )?control\b",
+    "untargetable": (
+        r"(?:becomes?|is|making|grants?|granted).{0,60}untargetable|"
+        r"cannot be targeted by enemies"
+    ),
     "cleanse": r"removes? all dispellable debuffs",
 }
+
+_UNTARGETABLE_SKIP_RE = re.compile(
+    r"defeated or becomes? untargetable|"
+    r"if (?:the |that )?enemy becomes? untargetable|"
+    r"first enemy affected.{0,60}becomes? untargetable|"
+    r"marked enemy is defeated or becomes? untargetable|"
+    r"(?:stitchy|shadow).{0,40}cannot be targeted"
+)
 
 _FREEZE_SKIP_RE = re.compile(
     r"freez(?:e|es|ing|ed) (?:time itself|and defeats)"
@@ -194,6 +206,8 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                     r"ineffective against) unaffected",
                     text,
                 ):
+                    continue
+                if imm == "untargetable" and _UNTARGETABLE_SKIP_RE.search(text):
                     continue
                 if re.search(pat, text) and imm not in imm_found:
                     issues["anti_cc_missing"].append(

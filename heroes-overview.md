@@ -1033,6 +1033,7 @@ Common buffers are **Mikola**, **Twins**, or **Lorsan**.
 
 #### Crowd Control provided by Bryon
 
+- Untargetable (EX+5) — Single target — Conditional
 - Interrupt — Single target — `low`
 - Stun (Mythic+) — Single target — `medium`
 
@@ -1042,7 +1043,6 @@ Common buffers are **Mikola**, **Twins**, or **Lorsan**.
 - Stacking buff — Single target
 - Start-of-battle cast — Single target
 - Summoning — Self
-- Untargetable (EX+5) — Single target
 - Counterattack (EX+10) — Single target
 
 ## Callan
@@ -1468,6 +1468,7 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 #### Crowd Control provided by Contess
 
+- Untargetable — Multiple targets — Start of Battle
 - Silence (Mythic+) — Single target — `medium`
 - Stun (Supreme+) — Single target — `medium`
 
@@ -1852,12 +1853,12 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 #### Crowd Control provided by Dionel
 
+- Untargetable — Area — On Skill
 - Knock up — Area — `low`
 
 #### Dionel Provides
 
 - Stacking buff — Single target
-- Untargetable — Area
 - Execution scaling (Supreme+) — Self
 
 ## Dunlingr
@@ -3456,9 +3457,9 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 
-#### Igor Provides
+#### Crowd Control provided by Igor
 
-- Untargetable — Area
+- Untargetable — Area — On Skill
 
 ## Indris
 
@@ -5093,13 +5094,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Mehira
 
+- Untargetable (Mythic+) — Self — Start of Battle
 - Charm — Single target — `medium`
 
 #### Mehira Provides
 
 - HP threshold strike (Mythic+) — Self
 - Summoning (Mythic+) — Self
-- Untargetable (Mythic+) — Self
 
 ## Mikola
 
@@ -8127,12 +8128,12 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Vala
 
+- Untargetable (Mythic+) — Multiple targets — Conditional
 - Stun — Single target — `medium`
 
 #### Vala Provides
 
 - Marked target (focus fire) — Self
-- Untargetable (Mythic+) — Multiple targets
 
 #### Vala Requires
 

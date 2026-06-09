@@ -48,6 +48,7 @@ ANTI_CC_TYPES: list[str] = [
     "Unaffected",
     "Steadfast",
     "Immune",
+    "Untargetable",
     "Cleanse",
 ]
 
