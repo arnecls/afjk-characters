@@ -69,7 +69,7 @@ Common buffers are **Lyca**, **Ravion**, or **Evie**.
 - Ally empower buff — Single target — `low`
 - Attack range buff — Single target — `low`
 - DEF Penetration buff — Multiple targets — `medium`
-- ATK buff (Legendary+) — Multiple targets — `low`
+- ATK buff (Legendary+) — Multiple targets — `medium`
 - Fatal blow immunity (Mythic+) — Single target — `high` — conditional (rare)
 - Healing (Mythic+) — Single target — `low`
 
@@ -135,7 +135,7 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 **Similar Skills**
 
-- Cryonaia (66% `battlefield-modification` `invincibility`)
+- Cryonaia (75% `battlefield-modification` `cc-immunity` `invincibility`)
 
 **Damage**
 
@@ -169,7 +169,7 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 #### Debuffs provided by Alna
 
-- Haste debuff — Area — `high`
+- Haste debuff — Arc — `high`
 - Vitality debuff (Supreme+) — Area — `low`
 
 #### Crowd Control provided by Alna
@@ -351,7 +351,7 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Antandra
 
-- Unaffected — Area — On skill
+- Unaffected — Area — On Skill
 - Knock down — Area — `medium`
 - Stun — Area — `medium`
 - Taunt — Area — `high`
@@ -423,7 +423,7 @@ Common buffers are **Ravion**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Arden
 
-- Pin — Multiple targets — `high`
+- Pin — Single target — `high`
 
 ## Atalanta
 
@@ -463,7 +463,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 **Similar Skills**
 
 - Zandrok (66% `aoe-damage` `battle-start-burst`)
-- Igor (50% `aoe-damage` `battle-start-burst`)
 
 **Damage**
 
@@ -517,7 +516,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units Athalia benefits from
 
-Look for units providing: `Max HP` `Crit` `Execution` `Healing`  
+Look for units providing: `Max HP` `CRIT` `Execution` `Healing`  
 Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - **Koko**
@@ -537,9 +536,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Similar Skills**
 
-- Lily May (75% `hp-scaling` `self-repositioner` `transformation`)
 - Baelran (66% `hp-scaling` `transformation`)
 - Kordan (66% `hp-scaling` `self-repositioner`)
+- Pippa (66% `hp-scaling` `self-repositioner`)
 
 **Damage**
 
@@ -567,13 +566,17 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Physical — All units, Area, Single target
 - True damage — All units, Single target — `medium`
 
+#### Buffs provided by Athalia
+
+- Crit buff (Legendary+) — Single target — `low`
+
 #### Debuffs provided by Athalia
 
 - ATK debuff — All units — `medium`
 
 #### Crowd Control provided by Athalia
 
-- Unaffected — Area — On skill
+- Unaffected — Area — On Skill
 - Knock down — All units — `low`
 
 #### Athalia Provides
@@ -663,7 +666,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Aurora
 
-- Unaffected — Self — On skill
+- Unaffected — Self — Conditional
 - Sleep — Single target — `high`
 
 #### Aurora Provides
@@ -706,8 +709,8 @@ Common buffers are **Twins**, **Mikola**, or **Evie**.
 **Similar Skills**
 
 - Athalia (66% `hp-scaling` `transformation`)
-- Lily May (50% `hp-scaling` `transformation`)
 - Silven (50% `hp-scaling`)
+- Tilaya (50% `hp-scaling`)
 
 **Damage**
 
@@ -741,7 +744,7 @@ Common buffers are **Twins**, **Mikola**, or **Evie**.
 
 #### Crowd Control provided by Baelran
 
-- Unaffected — Self — Start of battle
+- Unaffected — Self — Start of Battle
 - Knock down — Area — `medium`
 
 #### Baelran Provides
@@ -984,7 +987,7 @@ Common buffers are **Lyca**, **Twins**, or **Ravion**.
 
 #### Crowd Control provided by Brutus
 
-- Unaffected — Self — On skill
+- Unaffected — Self — On Skill
 - Taunt — Area — `high`
 
 ## Bryon
@@ -1131,10 +1134,10 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 #### Crowd Control provided by Callan
 
-- Unaffected — Self — Start of battle
+- Unaffected — Self — Once
 - Knock down — All units — `low`
 - Pin — Multiple targets — `low`
-- Stun (Mythic+) — All units — `low`
+- Stun (Mythic+) — Single target — `low`
 
 #### Callan Provides
 
@@ -1157,7 +1160,7 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 ### Units Carolina benefits from
 
-Look for units providing: `Crit`  
+Look for units providing: `CRIT`  
 Common buffers are **Ravion**, **Lyca**, or **Lorsan**.
 
 - **Zandrok**
@@ -1205,11 +1208,11 @@ Common buffers are **Ravion**, **Lyca**, or **Lorsan**.
 #### Debuffs provided by Carolina
 
 - Haste debuff — Area — `low`
-- Magic DEF debuff (Mythic+) — Area — `low`
+- Magic DEF debuff (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Carolina
 
-- Freeze — Area — `high`
+- Freeze — Single target — `high`
 
 #### Carolina Provides
 
@@ -1367,7 +1370,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Buffs provided by Cecia
 
-- ATK SPD buff — Single target — `low`
+- ATK SPD buff — Single target — `medium`
 - DEF Penetration buff — Single target — `medium`
 - Lifedrain buff — Area — `low`
 - Max HP buff — Single target — `high`
@@ -1506,7 +1509,7 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 #### Debuffs provided by Contess
 
-- Energy drain — Multiple targets — `low`
+- Energy drain — Single target — `low`
 - Max HP debuff — Multiple targets — `low`
 - ATK debuff (Legendary+) — Single target — `low`
 
@@ -1554,7 +1557,7 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 **Similar Skills**
 
-- Alna (66% `battlefield-modification` `invincibility`)
+- Alna (75% `battlefield-modification` `cc-immunity` `invincibility`)
 
 **Damage**
 
@@ -1605,7 +1608,7 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Units Cyran benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Crit`  
+Look for units providing: `ATK` `ATK SPD / Haste` `CRIT`  
 Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - **Valka**
@@ -1656,8 +1659,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 #### Crowd Control provided by Cyran
 
 - Steadfast — Area — Conditional
-- Unaffected — Self — Start of battle
-- Pin — Self — `high`
+- Unaffected — Self — Conditional
+- Pin — Area — `high`
 - Silence (EX+10) — Single target — `low`
 
 #### Cyran Provides
@@ -1865,12 +1868,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - Cecia (66% `DEF Penetration`)
 - Kordan (66% `DEF Penetration`)
 
-**Similar Skills**
-
-- Evie (66% `invincibility` `self-repositioner`)
-- Igor (50% `invincibility` `self-repositioner`)
-- Lily May (50% `invincibility` `self-repositioner`)
-
 **Damage**
 
 - Baelran (93% `True damage` `Physical`)
@@ -2069,7 +2066,7 @@ Common buffers are **Hugin**.
 #### Debuffs provided by Eironn
 
 - Haste debuff — Arc — `medium`
-- Magic DEF debuff — Arc — `high`
+- Magic DEF debuff — Single target — `high`
 
 #### Crowd Control provided by Eironn
 
@@ -2163,7 +2160,7 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Twins
 
-- Unaffected — Area — On skill
+- Unaffected — Area — On Skill
 - Move — Area — `low`
 
 #### Twins Provides
@@ -2228,11 +2225,6 @@ These are the **10** strongest pairings:
 - Mikola (83% `Healing` `ATK`)
 - Fay (66% `Healing` `ATK`)
 - Antandra (50% `Healing`)
-
-**Similar Skills**
-
-- Dionel (66% `invincibility` `self-repositioner`)
-- Vala (50% `invincibility` `self-repositioner` `stealth`)
 
 **Damage**
 
@@ -2677,7 +2669,7 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 #### Crowd Control provided by Gala
 
-- Steadfast (Supreme+) — Self — On skill
+- Steadfast (Supreme+) — Self — On Skill
 - Pin — Single target — `medium`
 
 #### Gala Provides
@@ -2743,9 +2735,13 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 - Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 
+#### Buffs provided by Gerda
+
+- Healing — Single target — `medium`
+
 #### Crowd Control provided by Gerda
 
-- Unaffected — Self — Start of battle
+- Unaffected — Self — Conditional
 - Interrupt — Single target — `medium`
 - Pin — Multiple targets — `low`
 - Stun — Single target — `high`
@@ -2824,7 +2820,7 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 
 #### Crowd Control provided by Granny Dahnie
 
-- Unaffected — Self — On skill
+- Unaffected — Self — Conditional
 - Pin — Area — `low`
 - Taunt — Single target — `high`
 
@@ -2892,6 +2888,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Buffs provided by Gunnar
 
 - ATK SPD buff — Single target — `low`
+- Shield — Single target — `high`
 - Ranged DEF buff (Legendary+) — Single target — `low`
 - Vitality buff (Legendary+) — Single target — `low`
 - Invincible (EX+15) — Single target — `high`
@@ -3051,7 +3048,7 @@ Common buffers are **Mikola**, **Evie**, or **Lyca**.
 
 ### Units Harak benefits from
 
-Look for units providing: `Haste` `Max HP` `Crit` `Healing` `Energy`  
+Look for units providing: `Haste` `Max HP` `CRIT` `Healing` `Energy`  
 Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - **Koko**
@@ -3106,6 +3103,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Buffs provided by Harak
 
+- Crit buff — Single target — `high`
 - Lifedrain buff (Legendary+) — Single target — `low`
 
 #### Debuffs provided by Harak
@@ -3114,7 +3112,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Harak
 
-- Unaffected — Self — Start of battle
+- Unaffected — Self — On Skill
 - Knock down — Single target — `low`
 - Move — Single target — `high`
 
@@ -3306,11 +3304,11 @@ These are the **10** strongest pairings:
 
 #### Buffs provided by Hewynn
 
-- Healing — All units — `medium`
+- Healing — All units — `high`
 
 #### Crowd Control provided by Hewynn
 
-- Unaffected (Mythic+) — Self — On skill
+- Unaffected (Mythic+) — Self — On Skill
 
 #### Hewynn Requires
 
@@ -3387,7 +3385,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Himmel
 
-- Unaffected — Multiple targets — On skill
+- Unaffected — Multiple targets — On Skill
 
 #### Himmel Requires
 
@@ -3568,11 +3566,6 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
   - Healing (area, medium)
 
 ### Units that can act as a replacement for Igor
-
-**Similar Skills**
-
-- Atalanta (50% `aoe-damage` `battle-start-burst`)
-- Dionel (50% `invincibility` `self-repositioner`)
 
 **Damage**
 
@@ -3830,7 +3823,7 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 #### Debuffs provided by Kafra
 
 - Marked target (focus fire) — Single target — `medium`
-- Phys DEF debuff — Area — `low`
+- Phys DEF debuff — Single target — `low`
 - ATK debuff (Mythic+) — Single target — `medium`
 - Haste debuff (Mythic+) — Single target — `low`
 
@@ -3995,7 +3988,7 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 
 - Pippa (100% `hp-scaling` `self-repositioner`)
 - Athalia (66% `hp-scaling` `self-repositioner`)
-- Lily May (50% `hp-scaling` `self-repositioner`)
+- Marilee (66% `hp-scaling` `self-repositioner`)
 
 **Damage**
 
@@ -4238,6 +4231,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Buffs provided by Kulu
 
+- ATK buff (Legendary+) — Single target — `low`
 - DEF Penetration buff (EX+15) — Single target — `low`
 
 #### Debuffs provided by Kulu
@@ -4247,7 +4241,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Kulu
 
-- Unaffected — Area — On ultimate
+- Unaffected — Area — On Ultimate
 - Knock up — Single target — `low`
 - Move — Single target — `low`
 
@@ -4346,7 +4340,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units Lenya benefits from
 
-Look for units providing: `Haste` `Max HP` `Crit` `Crit DMG Boost` `Energy`  
+Look for units providing: `Haste` `Max HP` `CRIT` `CRIT DMG Boost` `Energy`  
 Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - **Zandrok**
@@ -4389,6 +4383,11 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Area, Self, Single target
+
+#### Buffs provided by Lenya
+
+- Crit buff — Single target — `low`
+- Crit DMG boost (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Lenya
 
@@ -4440,9 +4439,7 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 **Similar Skills**
 
-- Athalia (75% `hp-scaling` `self-repositioner` `transformation`)
-- Vala (66% `hp-scaling` `invincibility` `self-repositioner` `transformation`)
-- Baelran (50% `hp-scaling` `transformation`)
+- Athalia (60% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -4474,12 +4471,12 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 #### Debuffs provided by Lily May
 
-- Energy drain — All units — `high`
+- Energy drain — Single target — `high`
 
 #### Crowd Control provided by Lily May
 
-- Unaffected — Self — Start of battle
-- Interrupt — All units — `low`
+- Unaffected — Self — Start of Battle
+- Interrupt — Single target — `low`
 
 #### Lily May Provides
 
@@ -4578,7 +4575,7 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Lorsan
 
-- Unaffected (Supreme+) — Self — On skill
+- Unaffected (Supreme+) — Self — On Skill
 - Stun (EX+10) — Multiple targets — `high`
 
 ## Lucca
@@ -4643,7 +4640,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Lucca
 
-- Immune — Self — On skill
+- Immune — Self — On Skill
 - Interrupt — Single target — `medium`
 - Knock down — Area — `low`
 - Knock up — Area — `low`
@@ -4742,7 +4739,7 @@ These are the **10** strongest pairings:
 
 #### Debuffs provided by Lucius
 
-- ATK debuff (Mythic+) — Area — `high`
+- ATK debuff (Mythic+) — Single target — `high`
 
 #### Crowd Control provided by Lucius
 
@@ -4827,7 +4824,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Lucy
 
-- Unaffected — Self — On skill
+- Unaffected — Self — On Skill
 - Stun — Single target — `high`
 
 ## Ludovic
@@ -4899,7 +4896,7 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 
 #### Crowd Control provided by Ludovic
 
-- Unaffected — Self — On skill
+- Unaffected — Self — On Skill
 - Stun (Supreme+) — Single target — `medium`
 
 #### Ludovic Provides
@@ -4986,9 +4983,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Lumont
 
-- Unaffected — Self — On skill
-- Stun — Area — `high`
-- Taunt — Area — `medium`
+- Unaffected — Self — On Skill
+- Stun — Single target — `high`
+- Taunt — Single target — `medium`
 
 ## Lyca
 
@@ -5080,7 +5077,6 @@ These are the **10** strongest pairings:
 #### Debuffs provided by Lyca
 
 - ATK debuff — All units — `high`
-- Phys DEF debuff — All units — `high`
 
 #### Crowd Control provided by Lyca
 
@@ -5134,9 +5130,13 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
+#### Buffs provided by Marcille
+
+- Haste buff — Single target — `low`
+
 #### Crowd Control provided by Marcille
 
-- Unaffected (Supreme+) — Self — On skill
+- Unaffected (Supreme+) — Self — On Skill
 - Interrupt (Mythic+) — Single target — `high`
 
 #### Marcille Provides
@@ -5160,7 +5160,7 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 ### Units Marilee benefits from
 
-Look for units providing: `ATK` `ATK SPD / Haste` `Crit` `Crit DMG Boost`  
+Look for units providing: `ATK` `ATK SPD / Haste` `CRIT` `CRIT DMG Boost`  
 Common buffers are **Twins**, **Lyca**, or **Mikola**.
 
 - **Valka**
@@ -5177,6 +5177,12 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) [signature fuel]
 
 ### Units that can act as a replacement for Marilee
+
+**Similar Skills**
+
+- Kordan (66% `hp-scaling` `self-repositioner`)
+- Pippa (66% `hp-scaling` `self-repositioner`)
+- Tasi (66% `mass-cc` `self-repositioner`)
 
 **Damage**
 
@@ -5197,6 +5203,10 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 - Primary damage type (unit): **Physical**
 - Physical — Multiple targets, Single target
 - True damage — Multiple targets — `low`
+
+#### Buffs provided by Marilee
+
+- ATK buff — Single target — `high` — conditional (frequent)
 
 #### Crowd Control provided by Marilee
 
@@ -5280,7 +5290,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Mehira
 
-- Charm — Area — `medium`
+- Charm — Single target — `medium`
 
 #### Mehira Provides
 
@@ -5517,7 +5527,7 @@ Common buffers are **Ravion** or **Lyca**.
 
 ### Units Natsu benefits from
 
-Look for units providing: `ATK` `Haste` `Crit` `Crit DMG Boost`  
+Look for units providing: `ATK` `Haste` `CRIT` `CRIT DMG Boost`  
 Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - **Zandrok**
@@ -5596,7 +5606,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units Nazrik benefits from
 
-Look for units providing: `Crit`  
+Look for units providing: `CRIT`  
 Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - **Valka**
@@ -5908,7 +5918,7 @@ Common buffers are **Ravion** or **Lyca**.
 
 #### Debuffs provided by Pandora
 
-- ATK debuff — All units — `low`
+- ATK debuff — Single target — `low`
 - Damage taken debuff — Single target — `low`
 - Energy drain — Single target — `low`
 - Haste debuff — Single target — `medium`
@@ -5989,7 +5999,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Pang
 
-- Unaffected — Self — On skill
+- Unaffected — Self — On Skill
 - Stun — Area — `low`
 
 #### Pang Provides
@@ -6042,6 +6052,10 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Self, Single target
+
+#### Buffs provided by Parisa
+
+- ATK SPD buff — Single target — `medium`
 
 #### Parisa Provides
 
@@ -6123,7 +6137,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Perseus
 
-- Unaffected — Multiple targets — On skill
+- Unaffected — Multiple targets — Conditional
 - Move — Area — `low`
 - Stun — Area — `medium`
 
@@ -6201,7 +6215,7 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 - Damage taken reduction — Single target — `low`
 - Max HP buff — Single target — `low`
-- Shield — Single target — `medium`
+- Shield — Single target — `high`
 
 #### Crowd Control provided by Phraesto
 
@@ -6249,7 +6263,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Kordan (100% `hp-scaling` `self-repositioner`)
 - Athalia (66% `hp-scaling` `self-repositioner`)
-- Lily May (50% `hp-scaling` `self-repositioner`)
+- Marilee (66% `hp-scaling` `self-repositioner`)
 
 **Damage**
 
@@ -6278,13 +6292,17 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Max HP-based damage — Single target — `low`
 - True damage — Area — `medium`
 
+#### Buffs provided by Pippa
+
+- Haste buff (Legendary+) — Single target — `low`
+
 #### Debuffs provided by Pippa
 
 - Energy drain — Area — `medium`
 
 #### Crowd Control provided by Pippa
 
-- Unaffected — Self — On skill
+- Unaffected — Self — On Skill
 - Knock down — Single target — `low`
 - Move — Single target — `low`
 - Pin — Single target — `medium`
@@ -6400,7 +6418,7 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Ravion
 
-- Unaffected — Self — Start of battle
+- Unaffected — Self — Conditional
 - Knock down — Multiple targets — `high`
 - Move — Multiple targets — `high`
 
@@ -6501,7 +6519,7 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 ### Units Rhys benefits from
 
-Look for units providing: `ATK SPD / Haste` `Crit` `Crit DMG Boost` `Healing`  
+Look for units providing: `ATK SPD / Haste` `CRIT` `CRIT DMG Boost` `Healing`  
 Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 - **Valka**
@@ -6726,6 +6744,7 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 #### Buffs provided by Saida
 
+- Healing — Single target — `medium`
 - Shield — Multiple targets — `high`
 
 #### Debuffs provided by Saida
@@ -6815,7 +6834,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Salazer
 
-- Pin — Single target — `low`
+- Pin — Self — `low`
 
 ## Satrana
 
@@ -6879,6 +6898,10 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - Magic — Arc, Area, Single target
 - DoT — Area
 - Max HP-based damage — Arc, Area — `high`
+
+#### Buffs provided by Satrana
+
+- Damage taken reduction (Legendary+) — Single target — `medium`
 
 #### Debuffs provided by Satrana
 
@@ -6961,7 +6984,7 @@ Common buffers are **Ravion** or **Lyca**.
 - Knock down — Arc — `low`
 - Knock up — Area — `medium`
 - Move — All units — `low`
-- Stun — Area — `medium`
+- Stun — Single target — `medium`
 
 #### Scarlita Provides
 
@@ -6979,7 +7002,7 @@ Common buffers are **Ravion** or **Lyca**.
 
 ### Units Seth benefits from
 
-Look for units providing: `ATK` `Haste` `Crit` `Healing` `Energy`  
+Look for units providing: `ATK` `Haste` `CRIT` `Healing` `Energy`  
 Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - **Zandrok**
@@ -7042,6 +7065,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Buffs provided by Seth
 
+- Haste buff — Single target — `low`
 - Lifedrain buff — Single target — `low`
 
 #### Debuffs provided by Seth
@@ -7358,7 +7382,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units Silvina benefits from
 
-Look for units providing: `Max HP` `Crit`  
+Look for units providing: `Max HP` `CRIT`  
 Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - **Lucius**
@@ -7623,7 +7647,7 @@ Common buffers are **Mikola**, **Evie**, or **Hugin**.
 
 #### Crowd Control provided by Solise
 
-- Unaffected — Self — Start of battle
+- Unaffected — Self — On Skill
 
 #### Solise Provides
 
@@ -7696,7 +7720,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Sonja
 
-- Stun — Area — `low`
+- Stun — Single target — `low`
 
 ## Soren
 
@@ -7765,12 +7789,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Buffs provided by Soren
 
+- Damage taken reduction — Single target — `low`
+- Haste buff (Legendary+) — Single target — `medium`
 - Shield (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Soren
 
-- Move — Single target — `high`
-- Stun — Area — `low`
+- Move — Multiple targets — `high`
+- Stun — Single target — `low`
 
 ## Sylphira
 
@@ -7837,9 +7863,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Sylphira
 
-- Immune — Self — On skill
+- Immune — Self — On Skill
 - Unaffected — Area — Conditional
-- Cleanse (Mythic+) — Self — On skill
+- Cleanse (Mythic+) — Self — On Skill
 - Interrupt — Area — `low`
 - Knock down — Area — `medium`
 - Silence — Area — `low`
@@ -7952,6 +7978,10 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Tasi
 
+**Similar Skills**
+
+- Marilee (66% `mass-cc` `self-repositioner`)
+
 **Damage**
 
 - Cryonaia (100% `DoT` `Magic`)
@@ -7966,10 +7996,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Magic — All units, Area, Single target
 - DoT — All units, Single target
 
+#### Buffs provided by Tasi
+
+- Haste buff (Mythic+) — Single target — `high`
+
 #### Crowd Control provided by Tasi
 
 - Pin — All units — `low`
-- Sleep — All units — `high`
+- Sleep — Single target — `high`
 - Stun — Area — `high`
 
 #### Tasi Provides
@@ -8071,7 +8105,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units Thador benefits from
 
-Look for units providing: `Max HP` `Crit` `Healing`  
+Look for units providing: `Max HP` `CRIT` `Healing`  
 Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - **Koko**
@@ -8213,7 +8247,7 @@ Common buffers are **Hugin**, **Ravion**, or **Lyca**.
 
 #### Crowd Control provided by Thoran
 
-- Unaffected — Self — On skill
+- Unaffected — Self — On Skill
 - Interrupt — Single target — `low`
 
 ## Tilaya
@@ -8276,7 +8310,7 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 #### Crowd Control provided by Tilaya
 
-- Unaffected — Arc — Start of battle
+- Unaffected — Arc — Start of Battle
 
 #### Tilaya Provides
 
@@ -8349,7 +8383,7 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 #### Crowd Control provided by Ulmus
 
-- Unaffected — Self — On skill
+- Unaffected — Self — On Skill
 - Knock down (Mythic+) — Single target — `medium`
 - Move (Supreme+) — Area — `low`
 
@@ -8401,9 +8435,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Similar Skills**
 
-- Lily May (66% `hp-scaling` `invincibility` `self-repositioner` `transformation`)
 - Athalia (50% `hp-scaling` `self-repositioner` `transformation`)
-- Evie (50% `invincibility` `self-repositioner` `stealth`)
 
 **Damage**
 
@@ -8598,8 +8630,8 @@ Common buffers are **Twins**, **Lorsan**, or **Hugin**.
 
 #### Crowd Control provided by Valka
 
-- Unaffected — Self — On skill
-- Knock down — Single target — `low`
+- Unaffected — Self — On Skill
+- Knock down — Area — `low`
 - Stun — Area — `low`
 
 #### Valka Requires
@@ -8767,7 +8799,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Viperian
 
-- Unaffected — Self — Start of battle
+- Unaffected — Self — Once
 
 ## Walker
 
@@ -8781,7 +8813,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units Walker benefits from
 
-Look for units providing: `Max HP` `Crit` `Crit DMG Boost` `Life Drain`  
+Look for units providing: `Max HP` `CRIT` `CRIT DMG Boost` `Life Drain`  
 Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - **Rowan**
@@ -8993,6 +9025,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Buffs provided by Zanie
 
+- ATK SPD buff — Single target — `low` — conditional (rare)
 - Healing — Single target — `high`
 - Shield — Single target — `high`
 - DEF Penetration buff (Legendary+) — Single target — `medium`
@@ -9076,10 +9109,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Magic — Arc, Area, Single target
 - HP loss — Area — `high`
 
+#### Buffs provided by Zorya
+
+- Haste buff (Mythic+) — Single target — `medium`
+
 #### Crowd Control provided by Zorya
 
-- Steadfast — Self — Start of battle
-- Unaffected (EX+10) — Single target — On skill
+- Steadfast — Self — Start of Battle
+- Unaffected (EX+10) — Single target — On Skill
 - Knock down — Arc — `medium`
 - Stun — Area — `medium`
 

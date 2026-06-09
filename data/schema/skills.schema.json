@@ -74,10 +74,13 @@
         "ultimate",
         "skill1",
         "skill2",
+        "skill3",
+        "skill4",
+        "skill5",
         "ex_skill",
         "passive"
       ],
-      "description": "Which skill slot this entry belongs to."
+      "description": "Which skill slot this entry belongs to. skill3 unlocks at Legendary+, skill4 is the Ex-weapon skill (Mythic+), skill5 unlocks at Supreme+."
     },
     "tier": {
       "$ref": "game_properties.schema.json#/$defs/tier"

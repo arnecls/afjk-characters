@@ -23,6 +23,7 @@ SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
 import heroes_io as io
+import hero_schema as hs
 
 
 def _load_module(name: str, filename: str):
@@ -159,6 +160,7 @@ def build_processed(data: dict) -> dict:
         if gen.is_energy_provider(hero)
     }
 
+    data_by_title = {h["title"]: h for h in data["heroes"]}
     processed_heroes: dict[str, dict] = {}
     for hero in heroes:
         behavior = behavior_by_title[hero.title]
@@ -166,37 +168,41 @@ def build_processed(data: dict) -> dict:
             hero, heroes, enabler_matchers, behavior_by_title
         )
         benefited = beneficiaries_index.get(hero.title, [])
-        processed_heroes[hero.title] = {
-            "is_supporting_unit": gen.is_supporting_unit(
+        hero_record = data_by_title[hero.title]
+        processed_heroes[hero.title] = hs.serialize_processed_hero(
+            hero,
+            hero_record,
+            is_supporting_unit=gen.is_supporting_unit(
                 hero, hero_class_by_title.get(hero.title, "")
             ),
-            "is_energy_provider": hero.title in energy_provider_titles,
-            "effects": [asdict(e) for e in hero.effects],
-            "summon_effects": [asdict(e) for e in hero.summon_effects],
-            "cc_immunities": [asdict(c) for c in hero.cc_immunities],
-            "special_effects": [asdict(s) for s in hero.special_effects],
-            "damage_entries": [list(d) for d in hero.damage_entries],
-            "damage_magnitudes": hero.damage_magnitudes,
-            "benefit_stats": hero.benefit_stats,
-            "behavior": asdict(behavior),
-            "synergies": synergies,
-            "beneficiaries": [
+            is_energy_provider=hero.title in energy_provider_titles,
+            behavior=asdict(behavior),
+            synergies=synergies,
+            beneficiaries=[
                 {"score": score, "name": name} for score, name in benefited
             ],
-            "beneficiary_overflow_reasons": gen._beneficiary_overflow_reasons(hero),
-            "replacements": replacements_index.get(hero.title, {}),
-        }
+            beneficiary_overflow_reasons=gen._beneficiary_overflow_reasons(hero),
+            replacements=replacements_index.get(hero.title, {}),
+        )
 
-    return {
-        "heroes": processed_heroes,
-    }
+    result = {"heroes": processed_heroes}
+    try:
+        hs.validate_processed(result)
+    except RuntimeError as exc:
+        print(f"Warning: {exc}", file=sys.stderr)
+    except Exception as exc:
+        if type(exc).__name__ == "ValidationError":
+            print(f"Warning: schema validation failed: {exc}", file=sys.stderr)
+        else:
+            raise
+    return result
 
 
 def main() -> None:
     config = io.load_config()
     apply_config(config)
-    data = io.load_heroes_data()
-    processed = build_processed(data)
+    raw = io.load_heroes_data()
+    processed = build_processed(raw)
     io.save_json(io.HEROES_DATA_PROCESSED, processed)
     print(
         f"Wrote {io.HEROES_DATA_PROCESSED.relative_to(io.ROOT)} "

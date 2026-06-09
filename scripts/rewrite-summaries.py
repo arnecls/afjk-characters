@@ -492,11 +492,24 @@ class SpecialEffect:
 
 
 @dataclass
+class SkillSlice:
+    """Per-skill analysis bucket for schema serialization."""
+
+    section: str
+    tier: str
+    effects: list[Effect] = field(default_factory=list)
+    summon_effects: list[Effect] = field(default_factory=list)
+    cc_immunities: list[CcImmunity] = field(default_factory=list)
+    special_effects: list[SpecialEffect] = field(default_factory=list)
+
+
+@dataclass
 class Hero:
     title: str
     damage_type: str
   # (tier, text, section name e.g. "Ultimate", "Skill1")
     skill_chunks: list[tuple[str, str, str]] = field(default_factory=list)
+    skill_slices: dict[str, SkillSlice] = field(default_factory=dict)
     effects: list[Effect] = field(default_factory=list)
     summon_effects: list[Effect] = field(default_factory=list)
     cc_immunities: list[CcImmunity] = field(default_factory=list)
@@ -2700,6 +2713,7 @@ def analyze_hero(hero: Hero):
     hero.summon_effects.clear()
     hero.cc_immunities.clear()
     hero.special_effects.clear()
+    hero.skill_slices.clear()
     hero.damage_entries.clear()
     hero.damage_scores.clear()
     hero.damage_magnitudes.clear()
@@ -2720,6 +2734,38 @@ def analyze_hero(hero: Hero):
         detect_special_effects(hero.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
             add_cc_immunity(hero, imm_type, tier, text)
+
+        chunk = Hero(title=hero.title, damage_type=primary_dmg)
+        slice_damage: dict[str, set[str]] = {}
+        analyze_text(
+            chunk.effects,
+            chunk.summon_effects,
+            slice_damage,
+            [],
+            tier,
+            text,
+            primary_dmg,
+        )
+        detect_special_effects(chunk.special_effects, tier, text, section)
+        for imm_type in IMMUNITY_TYPES:
+            add_cc_immunity(chunk, imm_type, tier, text)
+        if section in hero.skill_slices:
+            sl = hero.skill_slices[section]
+            sl.effects.extend(chunk.effects)
+            sl.summon_effects.extend(chunk.summon_effects)
+            sl.cc_immunities.extend(chunk.cc_immunities)
+            sl.special_effects.extend(chunk.special_effects)
+            if TIER_ORDER.get(tier, 99) < TIER_ORDER.get(sl.tier, 99):
+                sl.tier = tier
+        else:
+            hero.skill_slices[section] = SkillSlice(
+                section=section,
+                tier=tier,
+                effects=list(chunk.effects),
+                summon_effects=list(chunk.summon_effects),
+                cc_immunities=list(chunk.cc_immunities),
+                special_effects=list(chunk.special_effects),
+            )
     for dt, tgts in sorted(
         damage_map.items(),
         key=lambda x: (DAMAGE_TYPE_SORT_KEY.get(x[0], 99), x[0]),

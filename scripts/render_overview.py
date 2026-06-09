@@ -18,6 +18,7 @@ SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
 import heroes_io as io
+import hero_schema as hs
 
 OVERVIEW_MD = io.ROOT / "heroes-overview.md"
 OVERVIEW_CSV = io.ROOT / "heroes-overview.csv"
@@ -77,18 +78,6 @@ gen = _load_module("gen_overview", "generate-heroes-overview.py")
 csv_mod = _load_module("overview_to_csv", "overview-to-csv.py")
 
 
-def _rebuild_hero(title: str, damage_type: str, p: dict):
-    hero = rs.Hero(title=title, damage_type=damage_type or "")
-    hero.effects = [rs.Effect(**e) for e in p["effects"]]
-    hero.summon_effects = [rs.Effect(**e) for e in p["summon_effects"]]
-    hero.cc_immunities = [rs.CcImmunity(**c) for c in p["cc_immunities"]]
-    hero.special_effects = [rs.SpecialEffect(**s) for s in p["special_effects"]]
-    hero.damage_entries = [tuple(d) for d in p["damage_entries"]]
-    hero.damage_magnitudes = p["damage_magnitudes"]
-    hero.benefit_stats = p["benefit_stats"]
-    return hero
-
-
 def _format_benefit_stat_tags(benefit_stats: list[str]) -> list[str]:
     stats = benefit_stats[:5]
     has_atk_spd = "ATK SPD" in stats
@@ -121,7 +110,9 @@ def _format_synergies(
     obvious_threshold: int,
 ) -> list[str]:
     lines: list[str] = []
-    benefit_stats = p.get("benefit_stats", [])
+    benefit_stats = [
+        hs.to_display_stat(s) for s in p.get("benefit_stats", [])
+    ]
     if benefit_stats:
         stat_tags = " ".join(
             f"`{tag}`" for tag in _format_benefit_stat_tags(benefit_stats)
@@ -194,11 +185,18 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
     data_by_title = {h["title"]: h for h in data["heroes"]}
     parts = list(OVERVIEW_HEADER)
 
+    heroes_by_title: dict[str, rs.Hero] = {}
+    for title in sorted(processed["heroes"]):
+        damage_type = data_by_title.get(title, {}).get("damage_type")
+        heroes_by_title[title] = hs.deserialize_hero(
+            title, processed["heroes"][title], damage_type or ""
+        )
+    rs.assign_magnitudes(list(heroes_by_title.values()))
+
     for title in sorted(processed["heroes"]):
         p = processed["heroes"][title]
         short = gen.short_name(title)
-        damage_type = data_by_title.get(title, {}).get("damage_type")
-        hero = _rebuild_hero(title, damage_type, p)
+        hero = heroes_by_title[title]
         behavior = rs.HeroBehavior(**p["behavior"])
 
         syn_lines = _format_synergies(
