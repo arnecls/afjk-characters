@@ -2183,6 +2183,44 @@ def detect_ally_grant_effects(
         add_special_effect(effects, "provides", label, tier, text)
 
 
+_FORM_OR_STANCE_REQUIRE_RE = re.compile(
+    r"while in .{0,35}(?:wolf form|black mist|aquarius|celestial form|"
+    r"altered form|true form|combat stance)|in combat stance",
+    re.I,
+)
+
+
+def _form_or_stance_is_caster_owned(text: str) -> bool:
+    """True when a form/stance require match belongs to the skill owner."""
+    t = text.lower()
+    m = _FORM_OR_STANCE_REQUIRE_RE.search(t)
+    if not m:
+        return False
+    clause = _clause_around(t, m.start())
+    if re.search(
+        r"while (?:[\w'-]+ ){0,4}in "
+        r"(?:wolf form|black mist|celestial form|altered form|true form|"
+        r"combat stance)",
+        clause,
+    ):
+        return True
+    after = t[m.end() :]
+    sent = re.split(r"[.;]", after, maxsplit=1)[0]
+    if re.search(
+        r"\b(?:she|he|they|himself|herself|themselves|this skill|"
+        r"his |her |their )\b",
+        sent[:100],
+    ):
+        return True
+    if re.search(
+        r"^\s*,?\s*[\w'-]+(?:'s)?\s+"
+        r"(?:is|are|unleash|consum|strikes?|deals?|gains?|prioritiz)",
+        sent,
+    ):
+        return True
+    return False
+
+
 def _is_enemy_untargetable_clause(clause: str) -> bool:
     """True when untargetable refers to an enemy, not the caster."""
     t = clause.lower()
@@ -2264,8 +2302,11 @@ def detect_special_effects(
             continue
         add_special_effect(effects, "provides", label, tier, text)
     for pat, label in SPECIAL_REQUIRES_RULES:
-        if re.search(pat, t):
-            add_special_effect(effects, "requires", label, tier, text)
+        if not re.search(pat, t):
+            continue
+        if label == "Form or stance active" and _form_or_stance_is_caster_owned(text):
+            continue
+        add_special_effect(effects, "requires", label, tier, text)
     detect_ally_grant_effects(effects, tier, text)
 
 
@@ -2602,6 +2643,24 @@ def _accumulate_true_damage_scores(hero: Hero, primary_dmg: str) -> None:
                 hero.damage_scores[d] = max(hero.damage_scores.get(d, 0.0), score)
 
 
+def _is_non_dealt_damage_context(text: str) -> bool:
+    """True when 'damage' appears only in immunity or mitigation phrasing."""
+    if _skill_chunk_has_enemy_damage(text):
+        return False
+    t = text.lower()
+    return bool(
+        re.search(
+            r"immune to damage|damage and control immunity|"
+            r"becoming immune to damage|damage and control effects|"
+            r"(?:reduc\w+|reduced) (?:the )?damage taken|"
+            r"damage reduction|"
+            r"extends? this skill'?s? damage and control|"
+            r"damage taken (?:by|is increased|during battle)",
+            t,
+        )
+    )
+
+
 def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
     """All damage types dealt in a skill chunk (may be multiple)."""
     t = text.lower()
@@ -2617,13 +2676,14 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
         types.append("HP loss")
     if _text_has_max_hp_damage(text) and "Max HP-based damage" not in types:
         types.append("Max HP-based damage")
-    if re.search(r"\(atk-based\)", text, re.I):
+    non_dealt = _is_non_dealt_damage_context(text)
+    if re.search(r"\(atk-based\)", text, re.I) and not non_dealt:
         types.append(primary_dmg)
-    if re.search(r"\bmagic damage\b", t):
+    if re.search(r"\bmagic damage\b", t) and not non_dealt:
         types.append("Magic")
     if _text_has_dot_damage(text):
         types.append("DoT")
-    if not types and "damage" in t:
+    if not types and "damage" in t and not non_dealt:
         types.append(primary_dmg)
     seen: set[str] = set()
     ordered: list[str] = []

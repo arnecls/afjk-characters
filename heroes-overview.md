@@ -176,7 +176,7 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 #### Damage types dealt by Alna
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Arc, Self, Single target
+- Physical — All units, Arc, Single target
 
 #### Buffs provided by Alna
 
@@ -259,10 +259,6 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 #### Alsa Provides
 
 - Enhanced form — Area
-
-#### Alsa Requires
-
-- Form or stance active — Enemies
 
 #### Damage types dealt by Alsa
 
@@ -766,7 +762,6 @@ Common buffers are **Mikola**, **Hepler**, or **Hugin**.
 
 #### Baelran Requires
 
-- Form or stance active — Enemies
 - Boss encounter (Supreme+) — Enemies
 
 #### Damage types dealt by Baelran
@@ -934,7 +929,6 @@ Common buffers are **Lyca**, **Ravion**, or **Rowan**.
 
 - Debuff on target — Enemies
 - Debuff on target (Aging) — Enemies
-- Form or stance active — Enemies
 - Magic damage from allies — Allies
 
 #### Damage types dealt by Bonnie
@@ -1191,7 +1185,7 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 #### Damage types dealt by Callan
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Multiple targets, Self, Single target
+- Magic — All units, Area, Self, Single target
 
 #### Buffs provided by Callan
 
@@ -2833,7 +2827,7 @@ Common buffers are **Hepler** or **Hugin**.
 #### Damage types dealt by Gerda
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Multiple targets, Self, Single target
+- Physical — Area, Multiple targets, Single target
 
 #### Buffs provided by Gerda
 
@@ -3338,10 +3332,6 @@ These are the **10** strongest pairings:
 #### Hepler Provides
 
 - Invincibility (Mythic+) — Area
-
-#### Hepler Requires
-
-- Form or stance active (Legendary+) — Enemies
 
 #### Damage types dealt by Hepler
 
@@ -4833,7 +4823,7 @@ Common buffers are **Rowan**, **Hepler**, or **Hugin**.
 #### Damage types dealt by Lucca
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Self, Single target
+- Physical — Area, Single target
 
 #### Crowd Control provided by Lucca
 
@@ -6988,7 +6978,7 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 #### Damage types dealt by Saida
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Multiple targets, Self, Single target
+- Magic — All units, Area, Multiple targets, Single target
 
 #### Buffs provided by Saida
 
@@ -7504,10 +7494,6 @@ These are the **10** strongest pairings:
 #### Shakir Provides
 
 - Transformation — Self
-
-#### Shakir Requires
-
-- Form or stance active — Enemies
 
 #### Damage types dealt by Shakir
 
@@ -8147,7 +8133,7 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 #### Damage types dealt by Soren
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Multiple targets, Self, Single target
+- Physical — Area, Multiple targets, Single target
 
 #### Buffs provided by Soren
 
@@ -9293,7 +9279,7 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 #### Damage types dealt by Walker
 
 - Primary damage type (unit): **Physical**
-- Physical — Arc, Area, Self, Single target
+- Physical — Arc, Area, Single target
 - HP loss — Single target — `medium`
 - Max HP-based damage — Single target — `low`
 

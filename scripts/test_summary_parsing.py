@@ -211,6 +211,26 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertEqual(ally_max_hp[0].targeting, "Multiple targets")
         self.assertGreaterEqual(ally_max_hp[0].numeric or 0, 20.0)
 
+    def test_bonnie_self_form_not_enemy_require(self):
+        hero = _hero_by_short_name("Bonnie")
+        form_requires = [
+            s
+            for s in hero.special_effects
+            if s.kind == "requires" and s.label == "Form or stance active"
+        ]
+        self.assertEqual(form_requires, [])
+        provides = {
+            s.label for s in hero.special_effects if s.kind == "provides"
+        }
+        self.assertIn("Transformation", provides)
+        self.assertIn("Invincibility", provides)
+
+    def test_alna_damage_excludes_immunity_and_mitigation(self):
+        hero = _hero_by_short_name("Alna")
+        physical = next(e for e in hero.damage_entries if e[0] == "Physical")
+        self.assertNotIn("Self", physical[1])
+        self.assertIn("All units", physical[1])
+
     def test_healing_throughput_favors_faster_cadence(self):
         fast = _hero_with_magnitudes("Fay")
         slow = _hero_with_magnitudes("Hewynn")

@@ -641,7 +641,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Arc, Self, Single target"
+          "All units, Arc, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -867,14 +867,7 @@
             "description": "- Skill Range: 6 tiles - Initial Energy: 300 Alsa curls into a ball and moves to the target tile, dealing 300% (ATK-based) + 20% damage to adjacent enemies. Afterward, she enters Combat Stance until the battle ends. In Combat Stance, she consumes 500 Energy to cast Vigorous Slam, hitting the targets and dealing 260% (ATK-based) + 20% damage, stunning them for 2s. Alsa prioritizes Swift Evasion to deal 150% (ATK-based) + 5% damage to adjacent enemies when attacked, reducing their movement speed by 60% for 2s. Alsa rolls away from attackers afterward, gaining a shield equal to 25% of max HP for 7s. This effect occurs once every 7s at most. Alsa becomes immune to control effects when curling into a ball."
           }
         ],
-        "requires": [
-          {
-            "label": "Form or stance active",
-            "tier": "base",
-            "targeting": "Enemies",
-            "description": "- Skill Range: 6 tiles - Initial Energy: 300 Alsa curls into a ball and moves to the target tile, dealing 300% (ATK-based) + 20% damage to adjacent enemies. Afterward, she enters Combat Stance until the battle ends. In Combat Stance, she consumes 500 Energy to cast Vigorous Slam, hitting the targets and dealing 260% (ATK-based) + 20% damage, stunning them for 2s. Alsa prioritizes Swift Evasion to deal 150% (ATK-based) + 5% damage to adjacent enemies when attacked, reducing their movement speed by 60% for 2s. Alsa rolls away from attackers afterward, gaining a shield equal to 25% of max HP for 7s. This effect occurs once every 7s at most. Alsa becomes immune to control effects when curling into a ball."
-          }
-        ]
+        "requires": []
       },
       "damage_entries": [
         [
@@ -2367,12 +2360,6 @@
         ],
         "requires": [
           {
-            "label": "Form or stance active",
-            "tier": "base",
-            "targeting": "Enemies",
-            "description": "- Skill Range: 1 tile - Initial Energy: 0 Passive. When a battle starts, Baelran gains a shield equal to 80% + 5% of his initial HP and receives 300% (HP-based) bonus max HP. This bonus max HP does not raise Baelran's current HP and decreases by 2% every second. When Baelran is restored to his max HP, he spreads his wings, deals 10% (HP-based) damage to enemies within 2 tiles, and enters Celestial Form. While in Celestial Form, the bonus max HP no longer decreases, and his normal attacks all strike enemies within a 1-tile arc in front of him. Baelran is unaffected while receiving bonus max HP and while transitioning into Celestial Form. Active. Baelran channels divine power into his blade, dealing 280% (ATK-based) + 40% true damage to all enemies within a 3-tile arc in front of him. He then restores HP equal to 40% of the damage dealt by the active strike."
-          },
-          {
             "label": "Boss encounter",
             "tier": "supreme+",
             "targeting": "Enemies",
@@ -2837,12 +2824,6 @@
             "tier": "base",
             "targeting": "Allies",
             "description": "- Skill Range: 10 Tiles When a battle starts, Bonnie casts the Aging magic on the rearmost enemy, dealing 150% (ATK-based) + 10% damage and reducing their Haste by 30 until the battle ends. Bonnie prioritizes attacking this target afflicted by Aging. Whenever an allied hero deals magic damage to the enemy afflicted by aging, the effect is further enhanced, reducing their Haste by an extra 10. Each ally can only trigger the enhancement once, and the Aging magic can be enhanced up to 2 times. Once the Aging effect reaches its maximum stack, the afflicted enemy suffers a 30% + 3% reduction in their ATK and takes 100% damage every 1s."
-          },
-          {
-            "label": "Form or stance active",
-            "tier": "base",
-            "targeting": "Enemies",
-            "description": "10s 3s - Skill Range: Global Bonnie transforms into a black mist, moving to a safe spot within 4 tiles and firing 6 arrows, each daling 35% (ATK-based) + 5% damage to an enemy. While in black mist form, Bonnie is invincible."
           }
         ]
       },
@@ -3550,7 +3531,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Multiple targets, Self, Single target"
+          "All units, Area, Self, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -8278,7 +8259,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Self, Single target"
+          "Area, Multiple targets, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -9699,14 +9680,7 @@
             "description": "- Skill Range: 1 tile When a battle starts, Hepler protects the frontmost adjacent allied hero. The first time that ally would take a fatal blow, they instead ignore the damage. At the same time, Hepler heals the ally and grants them toughened skin for 5s, and transforms them into a small animal that runs toward the back of the battlefield. While in animal form, the ally becomes invincible for 3s."
           }
         ],
-        "requires": [
-          {
-            "label": "Form or stance active",
-            "tier": "legendary+",
-            "targeting": "Enemies",
-            "description": "12s - Skill Range: 1 tile While in True Form, Hepler unleashes destructive magic at an enemy, dealing 300% (ATK-based) + 30% damage and reducing the target's Haste by 60 for 3 + 0.3s. While in Altered Form, Hepler strikes the target with powerful blows, dealing 360% (ATK-based) + 45% damage to the target and enemies within 1 tile around them, and stunning them for 3 + 0.3s."
-          }
-        ]
+        "requires": []
       },
       "damage_entries": [
         [
@@ -13941,7 +13915,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Self, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -20112,7 +20086,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Multiple targets, Self, Single target"
+          "All units, Area, Multiple targets, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -21556,14 +21530,7 @@
             "description": "- Skill Range: Global - Initial Energy: 400 Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected. Shakir consumes 60 Energy per second to maintain his wolf shape. Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks. Allies within the range of Lupine Aura reduce 20% &plus; 2% taken damage and increase 10 &plus; 3 Haste."
           }
         ],
-        "requires": [
-          {
-            "label": "Form or stance active",
-            "tier": "base",
-            "targeting": "Enemies",
-            "description": "6s - Skill Range: 1 tile Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) &plus; 10% damage with his first 2 attacks and 160% &plus; 20% damage with his 3rd attack. While in Wolf Form, this skill damages enemies within a frontal 1-tile arc."
-          }
-        ]
+        "requires": []
       },
       "damage_entries": [
         [
@@ -23271,7 +23238,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Self, Single target"
+          "Area, Multiple targets, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -26777,7 +26744,7 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area, Self, Single target"
+          "Arc, Area, Single target"
         ],
         [
           "hp_loss",
