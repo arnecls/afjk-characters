@@ -94,6 +94,11 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertIn("Knock up", cc)
         self.assertIn("Knock down", cc)
 
+    def test_zandrok_knock_up(self):
+        hero = _hero_by_short_name("Zandrok")
+        cc = {e.label for e in _effects(hero, "cc")}
+        self.assertIn("Knock up", cc)
+
     def test_atalanta_no_ally_healing_buff(self):
         hero = _hero_by_short_name("Atalanta")
         ally_heal = [

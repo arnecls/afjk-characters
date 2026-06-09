@@ -39,7 +39,7 @@ _CC_KEYWORDS: dict[str, str] = {
         r"\bknock(?:s|ing)? (?:them |the enemy |enemies )?(?:\d+ tiles? )?back\b"
     ),
     "knock_down": r"\bknock(?:s|ing)? (?:the enemy|an enemy|them) down\b",
-    "knock_up": r"\bknock(?:s|ing)? .{0,25}?into the air\b",
+    "knock_up": r"\bknock(?:s|ing)? .{0,25}?(?:in(?:to)?) the air\b",
     "frighten": r"\bfrighten(?:ing|ed|s)?\b",
     "silence": r"(?<! of )silenc(?:e|es|ed|ing)",
     "charm": r"\bcharm(?:ed|s|ing)?\b",

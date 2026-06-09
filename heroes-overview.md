@@ -8919,9 +8919,9 @@ Common buffers are **Koko**, **Twins**, or **Hugin**.
 
 **Crowd Control**
 
-- Alsa (100% `Stun`)
-- Antandra (100% `Stun`)
-- Arden (100% `Stun`)
+- Cassadee (100% `Knock up` `Stun`)
+- Lucca (100% `Knock up` `Stun`)
+- Lucy (100% `Knock up` `Stun`)
 
 ### Summary for Zandrok
 
@@ -8937,6 +8937,7 @@ Common buffers are **Koko**, **Twins**, or **Hugin**.
 
 #### Crowd Control provided by Zandrok
 
+- Knock up — Area — `low`
 - Stun — Area — `low`
 
 ## Zanie

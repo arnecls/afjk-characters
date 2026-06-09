@@ -1119,7 +1119,7 @@ def extract_number(text: str, label: str = "") -> float | None:
 
 _CC_LABEL_KEYWORDS: dict[str, str] = {
     "Stun": r"stun",
-    "Knock up": r"into the air",
+    "Knock up": r"knock(?:s|ing)? .{0,25}?(?:in(?:to)?) the air",
     "Knock down": (
         r"knock(?:ing|ed|s)?\s+(?:the enemy|an enemy|them\s+)?down|"
         r"knocked\s+down|slam(?:ming|s)?\s+them\s+down"
@@ -1655,7 +1655,7 @@ DEBUFF_RULES = [
 CC_RULES = [
     (r"\bstun(?:s|ned|ning)?\b|\bstunn(?:ed|ing|s)?\b", "Stun"),
     (
-        r"knock(?:s|ing)? .{0,25}?into the air",
+        r"knock(?:s|ing)? .{0,25}?(?:in(?:to)?) the air\b",
         "Knock up",
     ),
     (

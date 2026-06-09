@@ -26836,10 +26836,22 @@
         "Savage Slash": {
           "category": "ultimate",
           "description": "Zandrok raises his axe and slams down on the enemy, destroying all obstacles within 2 tiles of their position. The impact deals 12% (HP-based) + 2% damage to enemies in the area nd knocks them in the air for 1s. Increases the damage to 14% (HP-based) + 2%. Increases the damage to 16% (HP-based) + 2%. Increases the damage to 18% (HP-based) + 2%. Increases the damage to 20% (HP-based) + 2%.",
-          "effects": [],
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "knock_up",
+              "duration": 1.0
+            }
+          ],
           "skill_range": 1,
-          "initial_energy": 0.0,
-          "passive_only": true
+          "initial_energy": 0.0
         },
         "Rallying Roar": {
           "category": "skill1",

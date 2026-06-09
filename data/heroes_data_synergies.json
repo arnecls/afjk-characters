@@ -5801,7 +5801,7 @@
           "provider": "Zandrok - Watchful Edge",
           "reasons": [
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "Enables CC on enemies via Stun (area, low)"
+            "Enables CC on enemies via Knock up (area, low)"
           ],
           "score": 11.06
         },
@@ -27044,7 +27044,7 @@
           "provider": "Zandrok - Watchful Edge",
           "reasons": [
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "Enables CC on enemies via Stun (area, low)"
+            "Enables CC on enemies via Knock up (area, low)"
           ],
           "score": 20.4
         },
@@ -42457,23 +42457,26 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
+              "Knock up",
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Lucca",
             "score": 1.0,
             "matches": [
+              "Knock up",
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Lucy",
             "score": 1.0,
             "matches": [
+              "Knock up",
               "Stun"
             ]
           }
