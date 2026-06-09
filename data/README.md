@@ -14,7 +14,7 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 | [defining_skills_alternative.json](defining_skills_alternative.json) | **AI-generated** | Alternate signature skill used for synergy fuel when the primary signature is a slow, non-buffable Ultimate. |
 | [hero_behavior_tags.json](hero_behavior_tags.json) | **AI-generated** | Combat-role tags per hero for replacement scoring. |
 | [placement_constraint_overrides.json](placement_constraint_overrides.json) | **Manual configuration** | Optional overrides when placement/composition rules cannot be parsed from skill text. |
-| [heroes_config.json](heroes_config.json) | **Manual configuration** | Tunables: synergy weights, display limits, casting-speed thresholds, replacement scoring. |
+| [heroes_config.json](heroes_config.json) | **Manual configuration** | Tunables: synergy weights, display limits, casting-speed thresholds, replacement scoring, proximity-aura reach (`proximity_synergy`). |
 | [schema/](schema/) | **Manual configuration** | JSON Schema definitions used to validate processed data and tag enums. |
 
 ## Script-generated files
@@ -47,7 +47,9 @@ Keys use the hero **display name** from [heroes-overview.md](../heroes-overview.
 Edit these when tuning scoring, fixing edge cases, or extending validation:
 
 - **`heroes_config.json`** — synergy/display/behavior/replacement parameters
-  loaded by `process_config.py`.
+  loaded by `process_config.py`. The `proximity_synergy` block sets
+  `melee_max_range`, default aura radius, range slack, and optional
+  receiver/provider overrides for local aura buff matching.
 - **`placement_constraint_overrides.json`** — map display name → list of
   `{kind, text}` placement constraints; bypasses text detection for that hero.
 - **`schema/`** — contract for processed JSON and allowed behavior-tag values.

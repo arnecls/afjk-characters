@@ -260,14 +260,6 @@
           "score": 10.0
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`",
-            "Enables Debuff on target via Vitality debuff (single target)"
-          ],
-          "score": 9.9
-        },
-        {
           "provider": "Isabella - The Taken Soul",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`",
@@ -490,6 +482,13 @@
           "score": 4.5
         },
         {
+          "provider": "Shakir - Furious Howl",
+          "reasons": [
+            "Enables Debuff on target via Vitality debuff (single target)"
+          ],
+          "score": 4.5
+        },
+        {
           "provider": "Viperian - Shadow Serpent",
           "reasons": [
             "Enables Debuff on target via Energy drain (single target)"
@@ -532,13 +531,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 3.0600000000000005
-        },
-        {
-          "provider": "Kordan - Ironblood Chieftain",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Rhys - Fiery Cavalier",
@@ -1085,14 +1077,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 15.75
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -1920,13 +1904,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 6.48
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Fay - Colorful Dancer",
@@ -2983,14 +2960,6 @@
           "score": 19.125
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
-        },
-        {
           "provider": "Lyca - Keeper of Glades",
           "reasons": [
             "Energy via Energy recovery (all units, low) `signature fuel`",
@@ -3802,13 +3771,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 6.48
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Thador - Ironsworn General",
@@ -5180,13 +5142,6 @@
           "score": 7.6499999999999995
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Galahad - Daughter of Dawn",
           "reasons": [
             "Haste via Haste buff (single target, high) `signature fuel`"
@@ -6172,13 +6127,6 @@
           "score": 6.0
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
-        },
-        {
           "provider": "Smokey & Meerky - Wasteland Apothecary",
           "reasons": [
             "Energy via Energy recovery (area, low) `signature fuel`",
@@ -6387,14 +6335,6 @@
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
           ],
           "score": 15.854399999999998
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Galahad - Daughter of Dawn",
@@ -6680,13 +6620,6 @@
           "score": 12.375
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Fay - Colorful Dancer",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
@@ -6800,13 +6733,6 @@
           "provider": "Hepler - Master of Forms",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kordan - Ironblood Chieftain",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -7028,13 +6954,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 6.48
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Thador - Ironsworn General",
@@ -7667,13 +7586,6 @@
           "score": 5.58
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
-        },
-        {
           "provider": "Fay - Colorful Dancer",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -7970,13 +7882,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 14.4
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Dunlingr - Eternal Voice",
@@ -8527,13 +8432,6 @@
             "Healing via Healing (area, medium)"
           ],
           "score": 8.0
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Pandora - Hope Unleashed",
@@ -9367,13 +9265,6 @@
           "score": 7.875
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 7.5
-        },
-        {
           "provider": "Cecia - Requiem of Thorns",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
@@ -9878,14 +9769,6 @@
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 19.125
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Koko - Wild Child",
@@ -11194,13 +11077,6 @@
           "score": 14.4
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
@@ -11467,13 +11343,6 @@
           "score": 7.6499999999999995
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Galahad - Daughter of Dawn",
           "reasons": [
             "Haste via Haste buff (single target, high) `signature fuel`"
@@ -11697,14 +11566,6 @@
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 15.470057142857144
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Galahad - Daughter of Dawn",
@@ -11965,13 +11826,6 @@
             "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 7.6499999999999995
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Smokey & Meerky - Wasteland Apothecary",
@@ -12981,13 +12835,6 @@
           "score": 7.875
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 7.5
-        },
-        {
           "provider": "Cecia - Requiem of Thorns",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
@@ -13268,13 +13115,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 14.4
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -13634,13 +13474,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 6.48
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Dunlingr - Eternal Voice",
@@ -14833,13 +14666,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 6.48
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Fay - Colorful Dancer",
@@ -16040,14 +15866,6 @@
           "score": 11.879999999999999
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 11.25
-        },
-        {
           "provider": "Rowan - The Roamer",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`"
@@ -16630,13 +16448,6 @@
           "score": 7.6499999999999995
         },
         {
-          "provider": "Kordan - Ironblood Chieftain",
-          "reasons": [
-            "Life Drain via Lifedrain buff (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Dunlingr - Eternal Voice",
           "reasons": [
             "Life Drain via Lifedrain buff (all units, low)"
@@ -16710,13 +16521,6 @@
           "provider": "Rhys - Fiery Cavalier",
           "reasons": [
             "Healing via Healing (single target, medium)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Life Drain via Lifedrain buff (single target, medium)"
           ],
           "score": 3.0
         },
@@ -17044,15 +16848,6 @@
           "score": 19.35
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`",
-            "Enables Multiple debuffs on target via Vitality debuff",
-            "Enables Debuff on target via Vitality debuff (single target)"
-          ],
-          "score": 18.5
-        },
-        {
           "provider": "Athalia - Harbinger of Justice",
           "reasons": [
             "Enables Multiple debuffs on target via ATK debuff",
@@ -17298,6 +17093,14 @@
           "reasons": [
             "Enables Multiple debuffs on target via DoT",
             "Enables Debuff on target via DoT (single target)"
+          ],
+          "score": 6.5
+        },
+        {
+          "provider": "Shakir - Furious Howl",
+          "reasons": [
+            "Enables Multiple debuffs on target via Vitality debuff",
+            "Enables Debuff on target via Vitality debuff (single target)"
           ],
           "score": 6.5
         },
@@ -17657,13 +17460,6 @@
             "Healing via Healing (area, medium)"
           ],
           "score": 8.0
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 7.5
         },
         {
           "provider": "Galahad - Daughter of Dawn",
@@ -18306,14 +18102,6 @@
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 19.125
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -19162,12 +18950,7 @@
           "score": 1.0800000000000003
         }
       ],
-      "beneficiaries": [
-        {
-          "score": 43.8,
-          "name": "Nerion"
-        }
-      ],
+      "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
@@ -20040,13 +19823,6 @@
           "score": 9.0
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 7.5
-        },
-        {
           "provider": "Dunlingr - Eternal Voice",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -20118,13 +19894,6 @@
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
           "score": 3.75
-        },
-        {
-          "provider": "Kordan - Ironblood Chieftain",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Zanie - Timeless Tinkerer",
@@ -21540,14 +21309,6 @@
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 15.470057142857144
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Koko - Wild Child",
@@ -23152,13 +22913,6 @@
           "score": 6.48
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
-        },
-        {
           "provider": "Thador - Ironsworn General",
           "reasons": [
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
@@ -23468,14 +23222,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 15.75
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Lorsan - Windweaver Protector",
@@ -23902,13 +23648,6 @@
           "score": 14.4
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Lyca - Keeper of Glades",
           "reasons": [
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
@@ -24311,6 +24050,14 @@
           "name": "Zanie"
         },
         {
+          "score": 12.906,
+          "name": "Aurora"
+        },
+        {
+          "score": 12.906,
+          "name": "Natsu"
+        },
+        {
           "score": 11.879999999999999,
           "name": "Hugin"
         },
@@ -24321,6 +24068,10 @@
         {
           "score": 9.801,
           "name": "Nazrik"
+        },
+        {
+          "score": 9.801,
+          "name": "Pippa"
         },
         {
           "score": 9.801,
@@ -24504,13 +24255,6 @@
           "provider": "Antandra - Desert Fury",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
           ],
           "score": 9.0
         },
@@ -24776,13 +24520,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 14.4
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Dunlingr - Eternal Voice",
@@ -26138,13 +25875,6 @@
           "score": 14.4
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
@@ -26536,14 +26266,6 @@
           "score": 19.125
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
-        },
-        {
           "provider": "Lyca - Keeper of Glades",
           "reasons": [
             "Energy via Energy recovery (all units, low) `signature fuel`",
@@ -26832,13 +26554,6 @@
           "score": 4.082400000000001
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 4.05
-        },
-        {
           "provider": "Galahad - Daughter of Dawn",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
@@ -27058,14 +26773,6 @@
           "score": 44.807142857142864
         },
         {
-          "provider": "Kordan - Ironblood Chieftain",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)",
-            "Enables CC on enemies via Bind (area, high)"
-          ],
-          "score": 43.8
-        },
-        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
@@ -27092,6 +26799,13 @@
           "provider": "Indris - Chain Breaker",
           "reasons": [
             "Enables CC on enemies via Knock back (area, high)"
+          ],
+          "score": 40.8
+        },
+        {
+          "provider": "Kordan - Ironblood Chieftain",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, high)"
           ],
           "score": 40.8
         },
@@ -27565,13 +27279,6 @@
           "score": 13.6
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Silven - Heir of Glory",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
@@ -27995,13 +27702,6 @@
           "score": 6.0
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
-        },
-        {
           "provider": "Aliceth - Radiant Wings",
           "reasons": [
             "Enables Enemy defeat via Instant defeat"
@@ -28258,13 +27958,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 7.5
         },
         {
           "provider": "Galahad - Daughter of Dawn",
@@ -28930,13 +28623,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 14.4
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Dunlingr - Eternal Voice",
@@ -29999,14 +29685,6 @@
           "score": 14.34375
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 11.25
-        },
-        {
           "provider": "Lyca - Keeper of Glades",
           "reasons": [
             "Energy via Energy recovery (all units, low) `signature fuel`",
@@ -30465,6 +30143,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 43.158857142857144,
+          "name": "Nerion"
+        },
+        {
           "score": 27.470057142857144,
           "name": "Carolina"
         },
@@ -30853,13 +30535,6 @@
           "score": 14.4
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
@@ -31132,14 +30807,6 @@
             "ATK SPD via ATK SPD buff (all units, high) `signature fuel`"
           ],
           "score": 11.879999999999999
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 11.25
         },
         {
           "provider": "Smokey & Meerky - Wasteland Apothecary",
@@ -31537,6 +31204,10 @@
         {
           "score": 13.0824,
           "name": "Kruger"
+        },
+        {
+          "score": 9.072000000000001,
+          "name": "Hugin"
         },
         {
           "score": 9.0,
@@ -32890,15 +32561,6 @@
           "score": 18.558857142857143
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "Life Drain via Lifedrain buff (single target, medium)",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 18.0
-        },
-        {
           "provider": "Lorsan - Windweaver Protector",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -33028,13 +32690,6 @@
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
           "score": 7.500000000000001
-        },
-        {
-          "provider": "Kordan - Ironblood Chieftain",
-          "reasons": [
-            "Life Drain via Lifedrain buff (multiple targets, medium)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Thador - Ironsworn General",
@@ -34166,24 +33821,7 @@
           "score": 0.5103000000000001
         }
       ],
-      "beneficiaries": [
-        {
-          "score": 15.000000000000002,
-          "name": "Aurora"
-        },
-        {
-          "score": 15.000000000000002,
-          "name": "Natsu"
-        },
-        {
-          "score": 11.25,
-          "name": "Hugin"
-        },
-        {
-          "score": 11.25,
-          "name": "Pippa"
-        }
-      ],
+      "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
@@ -34437,13 +34075,6 @@
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
           "score": 5.58
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Thador - Ironsworn General",
@@ -34745,14 +34376,6 @@
           "score": 31.5
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
-          ],
-          "score": 30.0
-        },
-        {
           "provider": "Pandora - Hope Unleashed",
           "reasons": [
             "Energy via Energy recovery (single target, low) `signature fuel`",
@@ -34807,6 +34430,13 @@
           "score": 22.5
         },
         {
+          "provider": "Shakir - Furious Howl",
+          "reasons": [
+            "Enables Ally stat buffs via 3 ally stat buffs"
+          ],
+          "score": 22.5
+        },
+        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
@@ -34851,14 +34481,6 @@
           "score": 16.799999999999997
         },
         {
-          "provider": "Kordan - Ironblood Chieftain",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)",
-            "Enables Ally stat buffs via 2 ally stat buffs"
-          ],
-          "score": 16.5
-        },
-        {
           "provider": "Zandrok - Watchful Edge",
           "reasons": [
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
@@ -34877,6 +34499,13 @@
           "provider": "Antandra - Desert Fury",
           "reasons": [
             "Enables Ally stat buffs via 1 ally stat buff"
+          ],
+          "score": 13.5
+        },
+        {
+          "provider": "Kordan - Ironblood Chieftain",
+          "reasons": [
+            "Enables Ally stat buffs via 2 ally stat buffs"
           ],
           "score": 13.5
         },
@@ -36271,13 +35900,6 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 4.082400000000001
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 4.05
         },
         {
           "provider": "Nara - Wrathful Wraith",
@@ -37968,14 +37590,6 @@
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 15.470057142857144
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Lorsan - Windweaver Protector",
@@ -40281,14 +39895,6 @@
           "score": 15.25
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
-        },
-        {
           "provider": "Koko - Wild Child",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -41395,13 +41001,6 @@
           "score": 7.5
         },
         {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Koko - Wild Child",
           "reasons": [
             "Max HP via Shield (all units, low)"
@@ -41760,14 +41359,6 @@
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 19.125
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, medium) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, medium) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Koko - Wild Child",

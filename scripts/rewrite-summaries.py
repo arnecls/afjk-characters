@@ -529,6 +529,9 @@ class Hero:
     benefit_stats: list[str] = field(default_factory=list)
     # Buff labels tied to a specific tile; lost if the ally moves off it.
     positional_tile_buff_labels: frozenset[str] = field(default_factory=frozenset)
+    # Buff labels from a provider-attached aura/circle; melee reach only.
+    proximity_aura_buff_labels: frozenset[str] = field(default_factory=frozenset)
+    proximity_aura_radius: float | None = None
 
 
 def parse_level_tier(line: str, section: str) -> str:
@@ -1222,6 +1225,26 @@ POSITIONAL_TILE_PATTERNS: tuple[str, ...] = (
     r"until \d+\s*s? after the ally leaves",
 )
 
+# Ally buffs tied to a mobile aura/circle around the provider (not global).
+PROVIDER_PROXIMITY_AURA_PATTERNS: tuple[str, ...] = (
+    r"allies within the range of",
+    r"all(?:ies|ied units) within the hunting circle",
+    r"all(?:ies|ied units) within the circle",
+    r"within lupine aura",
+    r"within .{0,30} aura",
+    r"non-summoned all(?:y|ies) within (?:lupine aura|.{0,20}aura)",
+    r"damage taken within lupine aura",
+    r"buffed by (?:his|her|their) lupine aura",
+)
+
+PROXIMITY_AURA_EXCLUDE_PATTERNS: tuple[str, ...] = (
+    r"hot spring",
+    r"doomfield",
+    r"within this area",
+    r"within the doomfield",
+    r"rainbow aura",
+)
+
 # Ally buff labels inferable from positional chunks when BUFF_RULES miss
 # (e.g. "ATK bonus" vs "increases ATK by").
 POSITIONAL_CHUNK_BUFF_HINTS: tuple[tuple[str, str], ...] = (
@@ -1526,6 +1549,45 @@ def detect_positional_tile_buff_labels(hero: Hero) -> frozenset[str]:
             if re.search(hint_pat, t):
                 labels.add(label)
     return frozenset(labels)
+
+
+def _chunk_has_proximity_aura_buff(text: str) -> bool:
+    t = text.lower()
+    if any(re.search(pat, t) for pat in PROXIMITY_AURA_EXCLUDE_PATTERNS):
+        return False
+    return any(re.search(pat, t) for pat in PROVIDER_PROXIMITY_AURA_PATTERNS)
+
+
+def parse_proximity_aura_radius(text: str, *, default: float = 2.0) -> float:
+    """Extract tile radius from aura/circle wording; else default."""
+    t = text.lower()
+    for pat in (
+        r"range of (\d+(?:\.\d+)?)[-\s]*tile",
+        r"within a (\d+(?:\.\d+)?)[-\s]*tile radius",
+        r"within (\d+(?:\.\d+)?) tiles",
+    ):
+        m = re.search(pat, t)
+        if m:
+            return float(m.group(1))
+    return default
+
+
+def detect_proximity_aura_buff_labels(hero: Hero) -> tuple[frozenset[str], float | None]:
+    labels: set[str] = set()
+    max_radius: float | None = None
+    for _tier, text, _section in hero.skill_chunks:
+        if not _chunk_has_proximity_aura_buff(text):
+            continue
+        radius = parse_proximity_aura_radius(text)
+        max_radius = radius if max_radius is None else max(max_radius, radius)
+        for pat, label in BUFF_RULES:
+            for _scope in _buff_match_scopes(text, label, pat):
+                labels.add(label)
+        t = text.lower()
+        for hint_pat, label in POSITIONAL_CHUNK_BUFF_HINTS:
+            if re.search(hint_pat, t):
+                labels.add(label)
+    return frozenset(labels), max_radius
 
 
 DEBUFF_RULES = [
@@ -2888,6 +2950,9 @@ def analyze_hero(hero: Hero):
         ):
             e.targeting = "Self"
     hero.positional_tile_buff_labels = detect_positional_tile_buff_labels(hero)
+    prox_labels, prox_radius = detect_proximity_aura_buff_labels(hero)
+    hero.proximity_aura_buff_labels = prox_labels
+    hero.proximity_aura_radius = prox_radius
 
 
 # Buff labels where the effect is inherently high-value, regardless of any
@@ -3333,6 +3398,7 @@ class HeroBehavior:
     synergy_signature_is_ult: bool = False
     ult_speed: str = ""
     non_ult_speed: str = ""
+    avg_attack_range: float | None = None
     placement_constraints: list[PlacementConstraint] = field(default_factory=list)
     skill_overview: dict[str, SkillOverviewMetrics] = field(default_factory=dict)
 
@@ -4519,6 +4585,7 @@ def build_behavior_for_heroes(
     for hero in heroes:
         skills = skills_by_title[hero.title]
         movement, note = compute_movement(skills)
+        avg_range = _weighted_attack_range(skills)
         display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
         curated = curated_display_name(display)
         speeds = per_skill_speeds.get(hero.title, {})
@@ -4557,6 +4624,7 @@ def build_behavior_for_heroes(
                 synergy_signature_is_ult=synergy_is_ult,
                 ult_speed=speeds.get("ult", "normal"),
                 non_ult_speed=speeds.get("non_ult", "normal"),
+                avg_attack_range=avg_range,
                 placement_constraints=placement_constraints,
                 skill_overview=skill_overview,
             )
@@ -4568,6 +4636,7 @@ def build_behavior_for_heroes(
                 synergy_signature_speed="normal",
                 ult_speed=speeds.get("ult", "normal"),
                 non_ult_speed=speeds.get("non_ult", "normal"),
+                avg_attack_range=avg_range,
                 placement_constraints=placement_constraints,
                 skill_overview=skill_overview,
             )

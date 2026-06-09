@@ -249,9 +249,18 @@ reviewing or fixing matches, work through both heroes in this order.
    `SIGNATURE_FUEL_ENERGY_MULT` (slow 1.3×) plus `ENERGY_SYNERGY_SCORE_MULT`
    (0.72×) so batteries do not dominate lists. Slow/normal effective speeds
    also implicitly value Energy and ATK SPD at `IMPLICIT_FUEL_BASE` (0.45×)
-   when not in benefit stats. Buffability
+   when not in benefit stats.    Buffability
    is detected from skill text (`NON_BUFFABLE_SIGNATURE_RES` in
    `rewrite-summaries.py`).
+   **Proximity aura buffs:** provider-attached auras/circles (e.g. Shakir's
+   Lupine Aura) are detected in `rewrite-summaries.py`
+   (`PROVIDER_PROXIMITY_AURA_PATTERNS`). Ally buffs tied to those zones only
+   score for receivers whose **weighted attack range** is melee-close enough
+   to stand in the aura (`receiver_can_reach_proximity_aura` in
+   `generate-heroes-overview.py`; tunables in `heroes_config.json` →
+   `proximity_synergy`). Global buffs (Twins dance, etc.) are unaffected.
+   Complements the existing rule that skips **positional tile** buffs for
+   **moving/high-movement** receivers.
 
 **Units benefited** at the end of each Synergies block is the reverse index:
 heroes who list this unit among their top five synergy partners. When

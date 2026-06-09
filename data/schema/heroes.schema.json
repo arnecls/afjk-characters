@@ -299,6 +299,9 @@
         "non_ult_speed": {
           "$ref": "#/$defs/castingSpeed"
         },
+        "avg_attack_range": {
+          "type": ["number", "null"]
+        },
         "placement_constraints": {
           "type": "array",
           "items": {

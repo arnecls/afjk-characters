@@ -68,3 +68,15 @@ def apply_config(config: dict) -> None:
         _gen.REPLACEMENT_MAX = rs_cfg["max_replacements"]
     if "same_faction_mult" in rs_cfg:
         _gen.REPLACEMENT_SAME_FACTION_MULT = rs_cfg["same_faction_mult"]
+
+    ps = config.get("proximity_synergy", {})
+    if "melee_max_range" in ps:
+        _gen.PROXIMITY_MELEE_MAX_RANGE = ps["melee_max_range"]
+    if "default_aura_radius" in ps:
+        _gen.PROXIMITY_DEFAULT_AURA_RADIUS = ps["default_aura_radius"]
+    if "range_slack" in ps:
+        _gen.PROXIMITY_RANGE_SLACK = ps["range_slack"]
+    if "receiver_whitelist" in ps:
+        _gen.PROXIMITY_RECEIVER_WHITELIST = frozenset(ps["receiver_whitelist"])
+    if "provider_blacklist" in ps:
+        _gen.PROXIMITY_PROVIDER_BLACKLIST = frozenset(ps["provider_blacklist"])

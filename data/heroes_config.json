@@ -57,5 +57,12 @@
     "min_score": 0.5,
     "max_replacements": 3,
     "same_faction_mult": 1.2
+  },
+  "proximity_synergy": {
+    "melee_max_range": 3.5,
+    "default_aura_radius": 2.0,
+    "range_slack": 0.5,
+    "receiver_whitelist": [],
+    "provider_blacklist": []
   }
 }

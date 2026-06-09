@@ -65,6 +65,13 @@ HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
 MAX_SYNERGIES = 5
 MAX_BENEFICIARIES_DISPLAY = 10
 
+# Proximity aura buffs (provider-attached) only match melee-close receivers.
+PROXIMITY_MELEE_MAX_RANGE = 3.5
+PROXIMITY_DEFAULT_AURA_RADIUS = 2.0
+PROXIMITY_RANGE_SLACK = 0.5
+PROXIMITY_RECEIVER_WHITELIST: frozenset[str] = frozenset()
+PROXIMITY_PROVIDER_BLACKLIST: frozenset[str] = frozenset()
+
 FREQUENT_CONDITIONAL_SCORE = 0.85
 
 # Signature skill "casting fuel": boost Haste/ATK SPD synergies so a unit's
@@ -879,6 +886,20 @@ def _stats_for_synergy_scoring(
     return stats
 
 
+def receiver_can_reach_proximity_aura(
+    receiver_range: float | None,
+    aura_radius: float,
+    *,
+    melee_max_range: float = PROXIMITY_MELEE_MAX_RANGE,
+    range_slack: float = PROXIMITY_RANGE_SLACK,
+) -> bool:
+    """True when a receiver's attack range is melee-close enough for a local aura."""
+    if receiver_range is None:
+        return False
+    effective_max = max(aura_radius + range_slack, melee_max_range)
+    return receiver_range <= effective_max
+
+
 def score_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
@@ -913,6 +934,19 @@ def score_synergy(
             if (
                 effect.label in provider.positional_tile_buff_labels
                 and receiver_movement in ("moving", "high movement")
+            ):
+                continue
+            if (
+                effect.label in provider.proximity_aura_buff_labels
+                and short_name(provider.title) not in PROXIMITY_PROVIDER_BLACKLIST
+                and short_name(receiver.title) not in PROXIMITY_RECEIVER_WHITELIST
+                and not receiver_can_reach_proximity_aura(
+                    receiver_behavior.avg_attack_range
+                    if receiver_behavior
+                    else None,
+                    provider.proximity_aura_radius
+                    or PROXIMITY_DEFAULT_AURA_RADIUS,
+                )
             ):
                 continue
             tw = TARGETING_WEIGHT.get(effect.targeting, 1.0)

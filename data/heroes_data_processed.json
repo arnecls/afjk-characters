@@ -327,6 +327,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 8.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -660,6 +661,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -897,6 +899,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -1159,6 +1162,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -1323,6 +1327,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -1556,6 +1561,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 3.094339622641509,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -1828,6 +1834,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -2101,6 +2108,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -2403,6 +2411,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -2622,6 +2631,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -2858,6 +2868,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -3102,6 +3113,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -3327,6 +3339,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "slow",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -3556,6 +3569,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.7058823529411766,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -3735,6 +3749,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 4.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -3929,6 +3944,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 10.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -4176,6 +4192,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -4264,6 +4281,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -4575,6 +4593,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "slow",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -4772,6 +4791,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -5014,6 +5034,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -5235,6 +5256,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -5501,6 +5523,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -5731,6 +5754,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 0.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -6039,6 +6063,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 6.365853658536587,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -6278,6 +6303,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -6555,6 +6581,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -6791,6 +6818,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -7005,6 +7033,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -7285,6 +7314,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 5.000000000000001,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -7536,6 +7566,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -7746,6 +7777,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 7.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -7972,6 +8004,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
         "non_ult_speed": "slow",
+        "avg_attack_range": 10.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -8264,6 +8297,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -8544,6 +8578,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -8787,6 +8822,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": null,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -8978,6 +9014,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 8.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -9121,6 +9158,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -9420,6 +9458,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -9694,6 +9733,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -9874,6 +9914,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -10091,6 +10132,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
         "non_ult_speed": "slow",
+        "avg_attack_range": 2.894736842105263,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -10316,6 +10358,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 3.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -10494,6 +10537,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [
           {
             "kind": "self_placement",
@@ -10678,6 +10722,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -10939,6 +10984,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -11181,6 +11227,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -11449,6 +11496,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -11686,6 +11734,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 4.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -11948,6 +11997,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -12160,6 +12210,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -12364,6 +12415,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -12602,6 +12654,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
         "non_ult_speed": "slow",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -12937,6 +12990,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -13251,6 +13305,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -13472,6 +13527,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 3.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -13657,6 +13713,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -13906,6 +13963,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -14145,6 +14203,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -14345,6 +14404,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -14526,6 +14586,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -14778,6 +14839,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 7.461538461538463,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -14999,6 +15061,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 11.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -15230,6 +15293,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -15434,6 +15498,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -15657,6 +15722,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -15891,6 +15957,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -16042,6 +16109,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 10.093750000000002,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -16263,6 +16331,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -16516,6 +16585,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
         "non_ult_speed": "normal",
+        "avg_attack_range": 11.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -16739,6 +16809,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "fast",
+        "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -16933,6 +17004,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 4.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -17147,6 +17219,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": null,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -17340,6 +17413,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -17623,6 +17697,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -17842,6 +17917,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -17996,6 +18072,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -18239,6 +18316,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 2.8823529411764706,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -18456,6 +18534,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.8313090418353575,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -18692,6 +18771,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "normal",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -19060,6 +19140,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.1428571428571428,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -19321,6 +19402,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -19544,6 +19626,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -19789,6 +19872,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -20049,6 +20133,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -20252,6 +20337,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -20468,6 +20554,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.4800000000000002,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -20733,6 +20820,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -21005,6 +21093,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -21272,6 +21361,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -21498,6 +21588,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -21646,6 +21737,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 4.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -21854,6 +21946,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
         "non_ult_speed": "fast",
+        "avg_attack_range": 12.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -22056,6 +22149,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -22308,6 +22402,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -22544,6 +22639,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -22744,6 +22840,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
         "non_ult_speed": "fast",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -22916,6 +23013,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 2.9199999999999995,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -23178,6 +23276,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -23502,6 +23601,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -23743,6 +23843,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 3.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -24017,6 +24118,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -24296,6 +24398,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -24516,6 +24619,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 0.15384615384615385,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -24728,6 +24832,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -24983,6 +25088,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.8955223880597014,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -25213,6 +25319,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -25482,6 +25589,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 6.999999999999999,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -25686,6 +25794,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.45,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -25986,6 +26095,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -26225,6 +26335,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -26439,6 +26550,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
         "non_ult_speed": "slow",
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -26679,6 +26791,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -26890,6 +27003,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -27169,6 +27283,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -27454,6 +27569,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
+        "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
