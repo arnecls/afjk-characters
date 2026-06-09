@@ -63,6 +63,20 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Summary for Aliceth
 
+#### Aliceth Provides
+
+- Ally grant (Brightfeather) — Single target
+- Invincibility — Single target
+- Marked target (focus fire) — Single target
+- Reposition enemies — Single target
+- Fatal blow save (Mythic+) — Area
+
+#### Aliceth Requires
+
+- Passive with internal cooldown — Allies
+- Ranged damage from allies — Allies
+- Debuff on target (Legendary+) — Enemies
+
 #### Damage types dealt by Aliceth
 
 - Primary damage type (unit): **Physical**
@@ -88,20 +102,6 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 - Knock back — Single target — `low`
 - Stun — Single target — `low`
 - Blind (EX+15) — Area — `medium`
-
-#### Aliceth Provides
-
-- Ally grant (Brightfeather) — Single target
-- Invincibility — Single target
-- Marked target (focus fire) — Single target
-- Reposition enemies — Single target
-- Fatal blow save (Mythic+) — Area
-
-#### Aliceth Requires
-
-- Passive with internal cooldown — Allies
-- Ranged damage from allies — Allies
-- Debuff on target (Legendary+) — Enemies
 
 ## Alna
 
@@ -160,6 +160,13 @@ Common buffers are **Koko**, **Lorsan**, or **Hugin**.
 
 ### Summary for Alna
 
+#### Alna Provides
+
+- Ally empower — Single target
+- Start-of-battle cast — All units
+- Damage and control immunity (Mythic+) — Self
+- Damage and control immunity (ally) (EX+15) — Single target
+
 #### Damage types dealt by Alna
 
 - Primary damage type (unit): **Physical**
@@ -182,13 +189,6 @@ Common buffers are **Koko**, **Lorsan**, or **Hugin**.
 
 - Immune (Mythic+) — Self — Start of Battle
 - Bind (Supreme+) — Area — `medium`
-
-#### Alna Provides
-
-- Ally empower — Single target
-- Start-of-battle cast — All units
-- Damage and control immunity (Mythic+) — Self
-- Damage and control immunity (ally) (EX+15) — Single target
 
 ## Alsa
 
@@ -243,6 +243,15 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Alsa
 
+#### Alsa Provides
+
+- Enhanced form — Area
+
+#### Alsa Requires
+
+- Form or stance active — Enemies
+- Passive with internal cooldown — Enemies
+
 #### Damage types dealt by Alsa
 
 - Primary damage type (unit): **Magic**
@@ -257,15 +266,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Immune — Area — Once
 - Knock back — Single target — `low`
 - Stun — Single target — `high`
-
-#### Alsa Provides
-
-- Enhanced form — Area
-
-#### Alsa Requires
-
-- Form or stance active — Enemies
-- Passive with internal cooldown — Enemies
 
 ## Antandra
 
@@ -333,6 +333,14 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 
 ### Summary for Antandra
 
+#### Antandra Provides
+
+- Stacking buff (Supreme+) — Single target
+
+#### Antandra Requires
+
+- Once per battle (Mythic+) — Allies
+
 #### Damage types dealt by Antandra
 
 - Primary damage type (unit): **Physical**
@@ -348,14 +356,6 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 - Knock down — Area — `medium`
 - Stun — Area — `medium`
 - Taunt — Area — `high`
-
-#### Antandra Provides
-
-- Stacking buff (Supreme+) — Single target
-
-#### Antandra Requires
-
-- Once per battle (Mythic+) — Allies
 
 ## Arden
 
@@ -484,6 +484,11 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Atalanta
 
+#### Atalanta Provides
+
+- Reposition enemies — Single target
+- Stat steal (EX+10) — Single target
+
 #### Damage types dealt by Atalanta
 
 - Primary damage type (unit): **Physical**
@@ -498,11 +503,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Bind — Single target — `medium`
 - Knock back — Single target — `high`
 - Stun — Single target — `medium`
-
-#### Atalanta Provides
-
-- Reposition enemies — Single target
-- Stat steal (EX+10) — Single target
 
 ## Athalia
 
@@ -563,6 +563,11 @@ Common buffers are **Koko**, **Twins**, or **Hugin**.
 
 ### Summary for Athalia
 
+#### Athalia Provides
+
+- Invincibility — Self
+- Transformation — Self
+
 #### Damage types dealt by Athalia
 
 - Primary damage type (unit): **Physical**
@@ -577,11 +582,6 @@ Common buffers are **Koko**, **Twins**, or **Hugin**.
 
 - Unaffected — Area — On Skill
 - Knock down — All units — `low`
-
-#### Athalia Provides
-
-- Invincibility — Self
-- Transformation — Self
 
 ## Aurora
 
@@ -648,6 +648,12 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Aurora
 
+#### Aurora Provides
+
+- Invincibility — Multiple targets
+- Start-of-battle cast — Multiple targets
+- Summoning — Single target
+
 #### Damage types dealt by Aurora
 
 - Primary damage type (unit): **Magic**
@@ -667,12 +673,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Unaffected — Self — Conditional
 - Sleep — Single target — `high`
-
-#### Aurora Provides
-
-- Invincibility — Multiple targets
-- Start-of-battle cast — Multiple targets
-- Summoning — Single target
 
 ## Baelran
 
@@ -733,6 +733,17 @@ Common buffers are **Twins**, **Mikola**, or **Koko**.
 
 ### Summary for Baelran
 
+#### Baelran Provides
+
+- Start-of-battle cast — Arc
+- Enhanced form (Mythic+) — Area
+- Dispel debuffs (EX+15) — Area
+
+#### Baelran Requires
+
+- Form or stance active — Enemies
+- Boss encounter (Supreme+) — Enemies
+
 #### Damage types dealt by Baelran
 
 - Primary damage type (unit): **Physical**
@@ -748,17 +759,6 @@ Common buffers are **Twins**, **Mikola**, or **Koko**.
 - Unaffected — Self — Start of Battle
 - Knock down — Area — `medium`
 - Knock up — Area — `high`
-
-#### Baelran Provides
-
-- Start-of-battle cast — Arc
-- Enhanced form (Mythic+) — Area
-- Dispel debuffs (EX+15) — Area
-
-#### Baelran Requires
-
-- Form or stance active — Enemies
-- Boss encounter (Supreme+) — Enemies
 
 ## Berial
 
@@ -813,6 +813,12 @@ Common buffers are **Lyca**, **Mikola**, or **Rowan**.
 
 ### Summary for Berial
 
+#### Berial Provides
+
+- Invincibility — Self
+- Revive ally — Single target
+- Summoning (Mythic+) — Single target
+
 #### Damage types dealt by Berial
 
 - Primary damage type (unit): **Magic**
@@ -827,12 +833,6 @@ Common buffers are **Lyca**, **Mikola**, or **Rowan**.
 #### Crowd Control provided by Berial
 
 - Frighten — Area — `medium`
-
-#### Berial Provides
-
-- Invincibility — Self
-- Revive ally — Single target
-- Summoning (Mythic+) — Single target
 
 ## Bonnie
 
@@ -890,6 +890,19 @@ Common buffers are **Lyca**, **Rowan**, or **Koko**.
 
 ### Summary for Bonnie
 
+#### Bonnie Provides
+
+- Invincibility — Self
+- Transformation — Self
+- Magic damage amplification (Supreme+) — Single target
+
+#### Bonnie Requires
+
+- Debuff on target — Enemies
+- Debuff on target (Aging) — Enemies
+- Form or stance active — Enemies
+- Magic damage from allies — Allies
+
 #### Damage types dealt by Bonnie
 
 - Primary damage type (unit): **Magic**
@@ -905,19 +918,6 @@ Common buffers are **Lyca**, **Rowan**, or **Koko**.
 #### Crowd Control provided by Bonnie
 
 - Stun — Single target — `low`
-
-#### Bonnie Provides
-
-- Invincibility — Self
-- Transformation — Self
-- Magic damage amplification (Supreme+) — Single target
-
-#### Bonnie Requires
-
-- Debuff on target — Enemies
-- Debuff on target (Aging) — Enemies
-- Form or stance active — Enemies
-- Magic damage from allies — Allies
 
 ## Brutus
 
@@ -1054,6 +1054,14 @@ Common buffers are **Mikola**, **Twins**, or **Koko**.
 
 ### Summary for Bryon
 
+#### Bryon Provides
+
+- Energy steal — Single target
+- Stacking buff — Single target
+- Start-of-battle cast — Area
+- Summoning — Self
+- Counterattack (EX+10) — Single target
+
 #### Damage types dealt by Bryon
 
 - Primary damage type (unit): **Magic**
@@ -1069,14 +1077,6 @@ Common buffers are **Mikola**, **Twins**, or **Koko**.
 - Untargetable (Mythic+) — Single target — Conditional
 - Interrupt — Single target — `low`
 - Stun (Mythic+) — Single target — `medium`
-
-#### Bryon Provides
-
-- Energy steal — Single target
-- Stacking buff — Single target
-- Start-of-battle cast — Area
-- Summoning — Self
-- Counterattack (EX+10) — Single target
 
 ## Callan
 
@@ -1134,6 +1134,15 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 
 ### Summary for Callan
 
+#### Callan Provides
+
+- Damage absorption (allies) — Multiple targets
+- Stored damage release — Self
+
+#### Callan Requires
+
+- Stored resource threshold — Enemies
+
 #### Damage types dealt by Callan
 
 - Primary damage type (unit): **Magic**
@@ -1148,15 +1157,6 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 - Unaffected — Self — Once
 - Knock down — All units — `low`
 - Stun (Mythic+) — Single target — `medium`
-
-#### Callan Provides
-
-- Damage absorption (allies) — Multiple targets
-- Stored damage release — Self
-
-#### Callan Requires
-
-- Stored resource threshold — Enemies
 
 ## Carolina
 
@@ -1211,6 +1211,14 @@ Common buffers are **Lorsan**, **Lyca**, or **Twins**.
 
 ### Summary for Carolina
 
+#### Carolina Provides
+
+- Stacking buff — Area
+
+#### Carolina Requires
+
+- CC on enemies — Allies
+
 #### Damage types dealt by Carolina
 
 - Primary damage type (unit): **Magic**
@@ -1225,14 +1233,6 @@ Common buffers are **Lorsan**, **Lyca**, or **Twins**.
 #### Crowd Control provided by Carolina
 
 - Bind — Area — `high`
-
-#### Carolina Provides
-
-- Stacking buff — Area
-
-#### Carolina Requires
-
-- CC on enemies — Allies
 
 ## Cassadee
 
@@ -1294,6 +1294,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Cassadee
 
+#### Cassadee Provides
+
+- Ally blessing — Single target
+
+#### Cassadee Requires
+
+- Ally blessing active (Supreme+) — Allies
+
 #### Damage types dealt by Cassadee
 
 - Primary damage type (unit): **Magic**
@@ -1308,14 +1316,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Knock back — All units — `low`
 - Knock up — Single target — `high`
 - Stun — Single target — `high`
-
-#### Cassadee Provides
-
-- Ally blessing — Single target
-
-#### Cassadee Requires
-
-- Ally blessing active (Supreme+) — Allies
 
 ## Cecia
 
@@ -1383,6 +1383,15 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
 
 ### Summary for Cecia
 
+#### Cecia Provides
+
+- Summoning — Self
+- Stat absorb (Mythic+) — Single target
+
+#### Cecia Requires
+
+- Enemy not CC-immune (Mythic+) — Enemies
+
 #### Damage types dealt by Cecia
 
 - Primary damage type (unit): **Physical**
@@ -1403,15 +1412,6 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
 #### Crowd Control provided by Cecia
 
 - Bind — Single target — `medium`
-
-#### Cecia Provides
-
-- Summoning — Self
-- Stat absorb (Mythic+) — Single target
-
-#### Cecia Requires
-
-- Enemy not CC-immune (Mythic+) — Enemies
 
 ## Chippy
 
@@ -1514,6 +1514,10 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 
 ### Summary for Contess
 
+#### Contess Provides
+
+- Start-of-battle cast — All units
+
 #### Damage types dealt by Contess
 
 - Primary damage type (unit): **Magic**
@@ -1535,10 +1539,6 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 - Untargetable — Multiple targets — Start of Battle
 - Silence (Mythic+) — Single target — `medium`
 - Stun (Supreme+) — Single target — `medium`
-
-#### Contess Provides
-
-- Start-of-battle cast — All units
 
 ## Cryonaia
 
@@ -1593,6 +1593,16 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Summary for Cryonaia
 
+#### Cryonaia Provides
+
+- Enemy isolation (domain) — All units
+- Battle time pause (EX+15) — Self
+- Instant defeat (Supreme+) — Self
+
+#### Cryonaia Requires
+
+- Boss encounter — Enemies
+
 #### Damage types dealt by Cryonaia
 
 - Primary damage type (unit): **Magic**
@@ -1606,16 +1616,6 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 #### Crowd Control provided by Cryonaia
 
 - Immune — Self — Conditional
-
-#### Cryonaia Provides
-
-- Enemy isolation (domain) — All units
-- Battle time pause (EX+15) — Self
-- Instant defeat (Supreme+) — Self
-
-#### Cryonaia Requires
-
-- Boss encounter — Enemies
 
 ## Cyran
 
@@ -1671,6 +1671,11 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Summary for Cyran
 
+#### Cyran Provides
+
+- Artifact mimic (Mythic+) — All units
+- Enemy artifact block (EX+10) — Single target
+
 #### Damage types dealt by Cyran
 
 - Primary damage type (unit): **Magic**
@@ -1687,11 +1692,6 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - Unaffected — Self — Conditional
 - Bind — Area — `high`
 - Silence (EX+10) — Single target — `high`
-
-#### Cyran Provides
-
-- Artifact mimic (Mythic+) — All units
-- Enemy artifact block (EX+10) — Single target
 
 ## Daimon
 
@@ -1838,6 +1838,10 @@ These are the **10** strongest pairings:
 
 ### Summary for Damian
 
+#### Damian Provides
+
+- Summoning — All units
+
 #### Damage types dealt by Damian
 
 - Primary damage type (unit): **Magic**
@@ -1851,10 +1855,6 @@ These are the **10** strongest pairings:
 
 - Blind — Single target — `high`
 - Stun — Single target — `high`
-
-#### Damian Provides
-
-- Summoning — All units
 
 ## Dionel
 
@@ -1914,6 +1914,11 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Dionel
 
+#### Dionel Provides
+
+- Stacking buff — Single target
+- Execution scaling (Supreme+) — Self
+
 #### Damage types dealt by Dionel
 
 - Primary damage type (unit): **Physical**
@@ -1932,11 +1937,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Untargetable — Area — On Skill
 - Knock up — Area — `low`
-
-#### Dionel Provides
-
-- Stacking buff — Single target
-- Execution scaling (Supreme+) — Self
 
 ## Dunlingr
 
@@ -1997,6 +1997,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Dunlingr
 
+#### Dunlingr Provides
+
+- Heal lock (Curelock) — All units
+- Summoning — Self
+- Ultimate lock (Spellbind) — All units
+
 #### Damage types dealt by Dunlingr
 
 - Primary damage type (unit): **Magic**
@@ -2018,12 +2024,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Dunlingr
 
 - Silence — All units — `low`
-
-#### Dunlingr Provides
-
-- Heal lock (Curelock) — All units
-- Summoning — Self
-- Ultimate lock (Spellbind) — All units
 
 ## Eironn
 
@@ -2168,6 +2168,15 @@ These are the **10** strongest pairings:
 
 ### Summary for Twins
 
+#### Twins Provides
+
+- Ally positioning link — Single target
+- Shared HP and Energy — All units
+
+#### Twins Requires
+
+- Ally on positioning link (Supreme+) — —
+
 #### Damage types dealt by Twins
 
 - Primary damage type (unit): **Magic**
@@ -2185,15 +2194,6 @@ These are the **10** strongest pairings:
 - Unaffected — Area — Conditional
 - Blind — Area — `low`
 - Knock back — Area — `low`
-
-#### Twins Provides
-
-- Ally positioning link — Single target
-- Shared HP and Energy — All units
-
-#### Twins Requires
-
-- Ally on positioning link (Supreme+) — —
 
 ## Evie
 
@@ -2270,6 +2270,15 @@ These are the **10** strongest pairings:
 
 ### Summary for Evie
 
+#### Evie Provides
+
+- Invincibility — Self
+- Start-of-battle cast — All units
+
+#### Evie Requires
+
+- Passive with internal cooldown — Allies
+
 #### Damage types dealt by Evie
 
 - Primary damage type (unit): **Magic**
@@ -2289,15 +2298,6 @@ These are the **10** strongest pairings:
 - Bind — All units — `low`
 - Displace — All units — `low`
 - Silence — All units — `low`
-
-#### Evie Provides
-
-- Invincibility — Self
-- Start-of-battle cast — All units
-
-#### Evie Requires
-
-- Passive with internal cooldown — Allies
 
 ## Faramor
 
@@ -2361,6 +2361,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Faramor
 
+#### Faramor Provides
+
+- Revive ally (Supreme+) — Single target
+
+#### Faramor Requires
+
+- Once per battle (EX+10) — Enemies
+
 #### Damage types dealt by Faramor
 
 - Primary damage type (unit): **Physical**
@@ -2375,14 +2383,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Faramor
 
 - Stun — Area — `medium`
-
-#### Faramor Provides
-
-- Revive ally (Supreme+) — Single target
-
-#### Faramor Requires
-
-- Once per battle (EX+10) — Enemies
 
 ## Fay
 
@@ -2522,6 +2522,10 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Summary for Florabelle
 
+#### Florabelle Provides
+
+- Summoning — Self
+
 #### Damage types dealt by Florabelle
 
 - Primary damage type (unit): **Physical**
@@ -2538,10 +2542,6 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 - Immune (Supreme+) — Self — Form
 - Knock up — Area — `low`
-
-#### Florabelle Provides
-
-- Summoning — Self
 
 ## Frieren
 
@@ -2680,6 +2680,17 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Summary for Gala
 
+#### Gala Provides
+
+- Artifact amplification (Mythic+) — Single target
+- Artifact echo (Mythic+) — Single target
+- Summoning (Mythic+) — Single target
+
+#### Gala Requires
+
+- Boss encounter — Enemies
+- Artifact buffs active (Supreme+) — Self
+
 #### Damage types dealt by Gala
 
 - Primary damage type (unit): **Magic**
@@ -2694,17 +2705,6 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 - Steadfast (Supreme+) — Self — On Skill
 - Bind — Single target — `medium`
-
-#### Gala Provides
-
-- Artifact amplification (Mythic+) — Single target
-- Artifact echo (Mythic+) — Single target
-- Summoning (Mythic+) — Single target
-
-#### Gala Requires
-
-- Boss encounter — Enemies
-- Artifact buffs active (Supreme+) — Self
 
 ## Gerda
 
@@ -2902,6 +2902,10 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Gunnar
 
+#### Gunnar Provides
+
+- Invincibility (EX+15) — Single target
+
 #### Damage types dealt by Gunnar
 
 - Primary damage type (unit): **Physical**
@@ -2919,10 +2923,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Gunnar
 
 - Stun — All units — `low`
-
-#### Gunnar Provides
-
-- Invincibility (EX+15) — Single target
 
 ## Gwyneth
 
@@ -3121,6 +3121,15 @@ Common buffers are **Twins**, **Koko**, or **Hugin**.
 
 ### Summary for Harak
 
+#### Harak Provides
+
+- Instant defeat — Single target
+- Invincibility — Self
+
+#### Harak Requires
+
+- Boss encounter — Allies
+
 #### Damage types dealt by Harak
 
 - Primary damage type (unit): **Physical**
@@ -3141,15 +3150,6 @@ Common buffers are **Twins**, **Koko**, or **Hugin**.
 - Unaffected — Self — On Skill
 - Knock back — Single target — `high`
 - Knock down — Single target — `low`
-
-#### Harak Provides
-
-- Instant defeat — Single target
-- Invincibility — Self
-
-#### Harak Requires
-
-- Boss encounter — Allies
 
 ## Hepler
 
@@ -3225,6 +3225,14 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Hepler
 
+#### Hepler Provides
+
+- Invincibility (Mythic+) — Area
+
+#### Hepler Requires
+
+- Form or stance active (Legendary+) — Enemies
+
 #### Damage types dealt by Hepler
 
 - Primary damage type (unit): **Physical**
@@ -3244,14 +3252,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Blind — Area — `high`
 - Stun — Area — `low`
 - Taunt — Area — `high`
-
-#### Hepler Provides
-
-- Invincibility (Mythic+) — Area
-
-#### Hepler Requires
-
-- Form or stance active (Legendary+) — Enemies
 
 ## Hewynn
 
@@ -3325,6 +3325,10 @@ These are the **10** strongest pairings:
 
 ### Summary for Hewynn
 
+#### Hewynn Requires
+
+- Passive with internal cooldown — Allies
+
 #### Damage types dealt by Hewynn
 
 - Primary damage type (unit): **Magic**
@@ -3337,10 +3341,6 @@ These are the **10** strongest pairings:
 #### Crowd Control provided by Hewynn
 
 - Unaffected (Mythic+) — Self — On Skill
-
-#### Hewynn Requires
-
-- Passive with internal cooldown — Allies
 
 ## Himmel
 
@@ -3398,6 +3398,11 @@ Common buffers are **Twins**, **Mikola**, or **Koko**.
 
 ### Summary for Himmel
 
+#### Himmel Requires
+
+- Party composition — Allies
+- Boss encounter (Supreme+) — —
+
 #### Damage types dealt by Himmel
 
 - Primary damage type (unit): **Physical**
@@ -3413,11 +3418,6 @@ Common buffers are **Twins**, **Mikola**, or **Koko**.
 #### Crowd Control provided by Himmel
 
 - Unaffected — Multiple targets — On Skill
-
-#### Himmel Requires
-
-- Party composition — Allies
-- Boss encounter (Supreme+) — —
 
 ## Hodgkin
 
@@ -3470,6 +3470,11 @@ Common buffers are **Rowan**, **Lyca**, or **Mikola**.
 
 ### Summary for Hodgkin
 
+#### Hodgkin Provides
+
+- Summoning (Mythic+) — Area
+- Stacking buff (Supreme+) — Single target
+
 #### Damage types dealt by Hodgkin
 
 - Primary damage type (unit): **Physical**
@@ -3480,11 +3485,6 @@ Common buffers are **Rowan**, **Lyca**, or **Mikola**.
 - Energy drain (Mythic+) — Area — `low`
 - Phys DEF debuff (Supreme+) — Single target — `low`
 - Vitality debuff (Supreme+) — Single target — `medium`
-
-#### Hodgkin Provides
-
-- Summoning (Mythic+) — Area
-- Stacking buff (Supreme+) — Single target
 
 ## Hugin
 
@@ -3681,6 +3681,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Summary for Indris
 
+#### Indris Requires
+
+- Debuff on target — Enemies
+- Multiple debuffs on target — Enemies
+- Passive with internal cooldown — Enemies
+
 #### Damage types dealt by Indris
 
 - Primary damage type (unit): **Physical**
@@ -3699,12 +3705,6 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - Bind — Single target — `high`
 - Knock back — Area — `high`
 - Silence — Single target — `low`
-
-#### Indris Requires
-
-- Debuff on target — Enemies
-- Multiple debuffs on target — Enemies
-- Passive with internal cooldown — Enemies
 
 ## Isabella
 
@@ -3768,6 +3768,10 @@ Common buffers are **Mikola**, **Hugin**, or **Twins**.
 
 ### Summary for Isabella
 
+#### Isabella Requires
+
+- Once per battle — Allies
+
 #### Damage types dealt by Isabella
 
 - Primary damage type (unit): **Magic**
@@ -3784,10 +3788,6 @@ Common buffers are **Mikola**, **Hugin**, or **Twins**.
 #### Crowd Control provided by Isabella
 
 - Unaffected — Single target — Once
-
-#### Isabella Requires
-
-- Once per battle — Allies
 
 ## Kafra
 
@@ -3852,6 +3852,10 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 
 ### Summary for Kafra
 
+#### Kafra Provides
+
+- Marked target (focus fire) — Single target
+
 #### Damage types dealt by Kafra
 
 - Primary damage type (unit): **Physical**
@@ -3869,10 +3873,6 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 - Unaffected (Mythic+) — Self — On Skill
 - Knock back — Single target — `low`
 - Stun — Single target — `high`
-
-#### Kafra Provides
-
-- Marked target (focus fire) — Single target
 
 ## Koko
 
@@ -4178,6 +4178,14 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Summary for Kruger
 
+#### Kruger Provides
+
+- Stacking buff — Single target
+
+#### Kruger Requires
+
+- Vulnerable enemy (Mythic+) — Enemies
+
 #### Damage types dealt by Kruger
 
 - Primary damage type (unit): **Physical**
@@ -4192,14 +4200,6 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 #### Crowd Control provided by Kruger
 
 - Knock down — Single target — `low`
-
-#### Kruger Provides
-
-- Stacking buff — Single target
-
-#### Kruger Requires
-
-- Vulnerable enemy (Mythic+) — Enemies
 
 ## Kulu
 
@@ -4260,6 +4260,11 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 
 ### Summary for Kulu
 
+#### Kulu Provides
+
+- Invincibility — Self
+- Enhanced form (Mythic+) — Single target
+
 #### Damage types dealt by Kulu
 
 - Primary damage type (unit): **Physical**
@@ -4281,11 +4286,6 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 - Displace — Single target — `low`
 - Knock back — Single target — `low`
 - Knock up — Single target — `low`
-
-#### Kulu Provides
-
-- Invincibility — Self
-- Enhanced form (Mythic+) — Single target
 
 ## Laios
 
@@ -4343,6 +4343,17 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 ### Summary for Laios
 
+#### Laios Provides
+
+- Summoning — Single target
+- Stacking buff (EX+10) — Single target
+
+#### Laios Requires
+
+- Enemy monsters present (Mythic+) — Enemies
+- Monster ingredients (Supreme+) — Enemies
+- Stacked resource (Supreme+) — Enemies
+
 #### Damage types dealt by Laios
 
 - Primary damage type (unit): **Physical**
@@ -4356,17 +4367,6 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 #### Crowd Control provided by Laios
 
 - Stun — Area — `medium`
-
-#### Laios Provides
-
-- Summoning — Single target
-- Stacking buff (EX+10) — Single target
-
-#### Laios Requires
-
-- Enemy monsters present (Mythic+) — Enemies
-- Monster ingredients (Supreme+) — Enemies
-- Stacked resource (Supreme+) — Enemies
 
 ## Lenya
 
@@ -4511,6 +4511,10 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 
 ### Summary for Lily May
 
+#### Lily May Provides
+
+- Invincibility — Single target
+
 #### Damage types dealt by Lily May
 
 - Primary damage type (unit): **Magic**
@@ -4529,10 +4533,6 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 
 - Unaffected — Self — Start of Battle
 - Interrupt — Single target — `low`
-
-#### Lily May Provides
-
-- Invincibility — Single target
 
 ## Lorsan
 
@@ -4785,6 +4785,10 @@ These are the **10** strongest pairings:
 
 ### Summary for Lucius
 
+#### Lucius Provides
+
+- Reposition enemies — Single target
+
 #### Damage types dealt by Lucius
 
 - Primary damage type (unit): **Physical**
@@ -4802,10 +4806,6 @@ These are the **10** strongest pairings:
 
 - Knock back — Single target — `high`
 - Stun — Single target — `low`
-
-#### Lucius Provides
-
-- Reposition enemies — Single target
 
 ## Lucy
 
@@ -4939,6 +4939,10 @@ Common buffers are **Lyca**, **Mikola**, or **Rowan**.
 
 ### Summary for Ludovic
 
+#### Ludovic Provides
+
+- Revive ally — Area
+
 #### Damage types dealt by Ludovic
 
 - Primary damage type (unit): **Magic**
@@ -4953,10 +4957,6 @@ Common buffers are **Lyca**, **Mikola**, or **Rowan**.
 
 - Unaffected — Self — On Skill
 - Stun (Supreme+) — Single target — `medium`
-
-#### Ludovic Provides
-
-- Revive ally — Area
 
 ## Lumont
 
@@ -5177,6 +5177,15 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 ### Summary for Marcille
 
+#### Marcille Provides
+
+- Revive ally (Mythic+) — Single target
+- Stacking buff (Supreme+) — Single target
+
+#### Marcille Requires
+
+- Once per battle (Mythic+) — Allies
+
 #### Damage types dealt by Marcille
 
 - Primary damage type (unit): **Magic**
@@ -5191,15 +5200,6 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 - Unaffected (Supreme+) — Self — On Skill
 - Blind — Single target — `medium`
 - Interrupt (Mythic+) — Single target — `high`
-
-#### Marcille Provides
-
-- Revive ally (Mythic+) — Single target
-- Stacking buff (Supreme+) — Single target
-
-#### Marcille Requires
-
-- Once per battle (Mythic+) — Allies
 
 ## Marilee
 
@@ -5255,6 +5255,10 @@ Common buffers are **Lyca**, **Twins**, or **Mikola**.
 
 ### Summary for Marilee
 
+#### Marilee Provides
+
+- Stacking buff (Mythic+) — Multiple targets
+
 #### Damage types dealt by Marilee
 
 - Primary damage type (unit): **Physical**
@@ -5264,10 +5268,6 @@ Common buffers are **Lyca**, **Twins**, or **Mikola**.
 #### Crowd Control provided by Marilee
 
 - Stun — Single target — `low`
-
-#### Marilee Provides
-
-- Stacking buff (Mythic+) — Multiple targets
 
 ## Mehira
 
@@ -5327,6 +5327,11 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Mehira
 
+#### Mehira Provides
+
+- HP threshold strike (Mythic+) — Self
+- Summoning (Mythic+) — Self
+
 #### Damage types dealt by Mehira
 
 - Primary damage type (unit): **Magic**
@@ -5344,11 +5349,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Untargetable (Mythic+) — Self — Start of Battle
 - Charm — Single target — `medium`
-
-#### Mehira Provides
-
-- HP threshold strike (Mythic+) — Self
-- Summoning (Mythic+) — Self
 
 ## Mikola
 
@@ -5691,6 +5691,10 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Nazrik
 
+#### Nazrik Provides
+
+- Stacking buff — Single target
+
 #### Damage types dealt by Nazrik
 
 - Primary damage type (unit): **Physical**
@@ -5708,10 +5712,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 #### Crowd Control provided by Nazrik
 
 - Stun — Single target — `medium`
-
-#### Nazrik Provides
-
-- Stacking buff — Single target
 
 ## Nerion
 
@@ -5773,6 +5773,14 @@ Common buffers are **Twins**, **Lorsan**, or **Lyca**.
 
 ### Summary for Nerion
 
+#### Nerion Provides
+
+- Enhanced form (Supreme+) — Single target
+
+#### Nerion Requires
+
+- CC on enemies (EX+15) — Enemies
+
 #### Damage types dealt by Nerion
 
 - Primary damage type (unit): **Magic**
@@ -5785,14 +5793,6 @@ Common buffers are **Twins**, **Lorsan**, or **Lyca**.
 #### Crowd Control provided by Nerion
 
 - Stun — Single target — `medium`
-
-#### Nerion Provides
-
-- Enhanced form (Supreme+) — Single target
-
-#### Nerion Requires
-
-- CC on enemies (EX+15) — Enemies
 
 ## Niru
 
@@ -5840,12 +5840,6 @@ Common buffers are **Rowan**, **Lyca**, or **Mikola**.
 
 ### Summary for Niru
 
-#### Damage types dealt by Niru
-
-- Primary damage type (unit): **Magic**
-- Magic — All units, Self, Single target
-- HP loss — Single target — `low`
-
 #### Niru Provides
 
 - Spirit form protection — Single target
@@ -5855,6 +5849,12 @@ Common buffers are **Rowan**, **Lyca**, or **Mikola**.
 
 - Ally blessing active — Allies
 - Enemy defeat — Allies
+
+#### Damage types dealt by Niru
+
+- Primary damage type (unit): **Magic**
+- Magic — All units, Self, Single target
+- HP loss — Single target — `low`
 
 ## Odie
 
@@ -5959,6 +5959,10 @@ Common buffers are **Rowan** or **Lyca**.
 
 ### Summary for Pandora
 
+#### Pandora Provides
+
+- Invincibility — Single target
+
 #### Damage types dealt by Pandora
 
 - Primary damage type (unit): **Magic**
@@ -5978,10 +5982,6 @@ Common buffers are **Rowan** or **Lyca**.
 - Energy drain — Single target — `low`
 - Haste debuff — Single target — `medium`
 - Vitality debuff — Single target — `high`
-
-#### Pandora Provides
-
-- Invincibility — Single target
 
 ## Pang
 
@@ -6044,6 +6044,10 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Pang
 
+#### Pang Provides
+
+- Transformation — Self
+
 #### Damage types dealt by Pang
 
 - Primary damage type (unit): **Physical**
@@ -6058,10 +6062,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Unaffected — Self — On Skill
 - Stun — Area — `low`
-
-#### Pang Provides
-
-- Transformation — Self
 
 ## Parisa
 
@@ -6104,14 +6104,14 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Summary for Parisa
 
+#### Parisa Provides
+
+- Marked target (focus fire) — Area
+
 #### Damage types dealt by Parisa
 
 - Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Self, Single target
-
-#### Parisa Provides
-
-- Marked target (focus fire) — Area
 
 ## Perseus
 
@@ -6178,6 +6178,10 @@ Common buffers are **Twins**, **Lyca**, or **Koko**.
 
 ### Summary for Perseus
 
+#### Perseus Requires
+
+- Ally stat buffs (EX+10) — —
+
 #### Damage types dealt by Perseus
 
 - Primary damage type (unit): **Physical**
@@ -6193,10 +6197,6 @@ Common buffers are **Twins**, **Lyca**, or **Koko**.
 - Unaffected — Multiple targets — Conditional
 - Knock back — Area — `low`
 - Stun — Area — `medium`
-
-#### Perseus Requires
-
-- Ally stat buffs (EX+10) — —
 
 ## Phraesto
 
@@ -6253,6 +6253,10 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 
 ### Summary for Phraesto
 
+#### Phraesto Provides
+
+- Summoning — Area
+
 #### Damage types dealt by Phraesto
 
 - Primary damage type (unit): **Magic**
@@ -6268,10 +6272,6 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 
 - Stun (Mythic+) — Single target — `low`
 - Taunt (Mythic+) — Single target — `low`
-
-#### Phraesto Provides
-
-- Summoning — Area
 
 ## Pippa
 
@@ -6427,6 +6427,14 @@ These are the **10** strongest pairings:
 
 ### Summary for Ravion
 
+#### Ravion Provides
+
+- Position swap (Mythic+) — Multiple targets
+
+#### Ravion Requires
+
+- Boss encounter — Allies
+
 #### Damage types dealt by Ravion
 
 - Primary damage type (unit): **Physical**
@@ -6450,14 +6458,6 @@ These are the **10** strongest pairings:
 - Unaffected — Self — Conditional
 - Displace — Multiple targets — `high`
 - Knock down — Multiple targets — `high`
-
-#### Ravion Provides
-
-- Position swap (Mythic+) — Multiple targets
-
-#### Ravion Requires
-
-- Boss encounter — Allies
 
 ## Reinier
 
@@ -6668,6 +6668,14 @@ These are the **10** strongest pairings:
 
 ### Summary for Rowan
 
+#### Rowan Provides
+
+- Energy steal — Single target
+
+#### Rowan Requires
+
+- Once per battle (Mythic+) — Allies
+
 #### Damage types dealt by Rowan
 
 - Primary damage type (unit): **Magic**
@@ -6682,14 +6690,6 @@ These are the **10** strongest pairings:
 #### Debuffs provided by Rowan
 
 - Energy drain — Single target — `medium`
-
-#### Rowan Provides
-
-- Energy steal — Single target
-
-#### Rowan Requires
-
-- Once per battle (Mythic+) — Allies
 
 ## Saida
 
@@ -6759,6 +6759,14 @@ Common buffers are **Koko**, **Lorsan**, or **Hugin**.
 
 ### Summary for Saida
 
+#### Saida Provides
+
+- Revive ally — Single target
+
+#### Saida Requires
+
+- Boss encounter — Enemies
+
 #### Damage types dealt by Saida
 
 - Primary damage type (unit): **Magic**
@@ -6778,14 +6786,6 @@ Common buffers are **Koko**, **Lorsan**, or **Hugin**.
 - Unaffected — Self — Conditional
 - Displace — Single target — `low`
 - Interrupt — Area — `low`
-
-#### Saida Provides
-
-- Revive ally — Single target
-
-#### Saida Requires
-
-- Boss encounter — Enemies
 
 ## Salazer
 
@@ -6918,6 +6918,13 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 
 ### Summary for Satrana
 
+#### Satrana Provides
+
+- Ally DoT on enemies — All units
+- Ally Vitality debuff on enemies — All units
+- Ally grant (Sparks) — All units
+- Invincibility — Self
+
 #### Damage types dealt by Satrana
 
 - Primary damage type (unit): **Magic**
@@ -6936,13 +6943,6 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
 #### Crowd Control provided by Satrana
 
 - Charm — Single target — `high`
-
-#### Satrana Provides
-
-- Ally DoT on enemies — All units
-- Ally Vitality debuff on enemies — All units
-- Ally grant (Sparks) — All units
-- Invincibility — Self
 
 ## Scarlita
 
@@ -6998,6 +6998,10 @@ Common buffers are **Rowan** or **Lyca**.
 
 ### Summary for Scarlita
 
+#### Scarlita Provides
+
+- Invincibility — Self
+
 #### Damage types dealt by Scarlita
 
 - Primary damage type (unit): **Physical**
@@ -7015,10 +7019,6 @@ Common buffers are **Rowan** or **Lyca**.
 - Knock down — Arc — `low`
 - Knock up — Area — `medium`
 - Stun — Single target — `medium`
-
-#### Scarlita Provides
-
-- Invincibility — Self
 
 ## Seth
 
@@ -7088,6 +7088,11 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Seth
 
+#### Seth Provides
+
+- Invincibility — Single target
+- Stacking buff — Self
+
 #### Damage types dealt by Seth
 
 - Primary damage type (unit): **Physical**
@@ -7106,11 +7111,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 #### Crowd Control provided by Seth
 
 - Bind — Single target — `low`
-
-#### Seth Provides
-
-- Invincibility — Single target
-- Stacking buff — Self
 
 ## Shadewing
 
@@ -7170,6 +7170,18 @@ Common buffers are **Lyca**, **Rowan**, or **Koko**.
 
 ### Summary for Shadewing
 
+#### Shadewing Provides
+
+- Debuff application — Single target
+- DoT conversion — All units
+- Invincibility — Self
+- Damage leech from allies (Supreme+) — Self
+
+#### Shadewing Requires
+
+- Continuous damage on enemies — Enemies
+- Debuff on target — Enemies
+
 #### Damage types dealt by Shadewing
 
 - Primary damage type (unit): **Magic**
@@ -7182,18 +7194,6 @@ Common buffers are **Lyca**, **Rowan**, or **Koko**.
 #### Debuffs provided by Shadewing
 
 - Magic DEF debuff — All units — `low`
-
-#### Shadewing Provides
-
-- Debuff application — Single target
-- DoT conversion — All units
-- Invincibility — Self
-- Damage leech from allies (Supreme+) — Self
-
-#### Shadewing Requires
-
-- Continuous damage on enemies — Enemies
-- Debuff on target — Enemies
 
 ## Shakir
 
@@ -7261,6 +7261,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Shakir
 
+#### Shakir Provides
+
+- Transformation — Self
+
+#### Shakir Requires
+
+- Form or stance active — Enemies
+
 #### Damage types dealt by Shakir
 
 - Primary damage type (unit): **Physical**
@@ -7280,14 +7288,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Unaffected — Self — Form
 - Knock up — Area — `low`
-
-#### Shakir Provides
-
-- Transformation — Self
-
-#### Shakir Requires
-
-- Form or stance active — Enemies
 
 ## Shemira
 
@@ -7408,6 +7408,10 @@ Common buffers are **Twins**, **Koko**, or **Lyca**.
 
 ### Summary for Silven
 
+#### Silven Requires
+
+- Ally stat buffs (Mythic+) — Allies
+
 #### Damage types dealt by Silven
 
 - Primary damage type (unit): **Magic**
@@ -7422,10 +7426,6 @@ Common buffers are **Twins**, **Koko**, or **Lyca**.
 #### Crowd Control provided by Silven
 
 - Knock down — Single target — `medium`
-
-#### Silven Requires
-
-- Ally stat buffs (Mythic+) — Allies
 
 ## Silvina
 
@@ -7477,6 +7477,10 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Summary for Silvina
 
+#### Silvina Provides
+
+- Marked target (focus fire) — Single target
+
 #### Damage types dealt by Silvina
 
 - Primary damage type (unit): **Physical**
@@ -7491,10 +7495,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - Stun — Single target — `high`
 - Frighten (EX+10) — Area — `medium`
-
-#### Silvina Provides
-
-- Marked target (focus fire) — Single target
 
 ## Sinbad
 
@@ -7542,6 +7542,10 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Sinbad
 
+#### Sinbad Provides
+
+- Marked target (focus fire) — Multiple targets
+
 #### Damage types dealt by Sinbad
 
 - Primary damage type (unit): **Physical**
@@ -7559,10 +7563,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 #### Crowd Control provided by Sinbad
 
 - Unaffected — Multiple targets — Conditional
-
-#### Sinbad Provides
-
-- Marked target (focus fire) — Multiple targets
 
 ## Smokey & Meerky
 
@@ -7693,6 +7693,10 @@ Common buffers are **Mikola**, **Hugin**, or **Koko**.
 
 ### Summary for Solise
 
+#### Solise Provides
+
+- Ally blessing (Mythic+) — Single target
+
 #### Damage types dealt by Solise
 
 - Primary damage type (unit): **Magic**
@@ -7705,10 +7709,6 @@ Common buffers are **Mikola**, **Hugin**, or **Koko**.
 #### Crowd Control provided by Solise
 
 - Unaffected — Self — On Skill
-
-#### Solise Provides
-
-- Ally blessing (Mythic+) — Single target
 
 ## Sonja
 
@@ -7908,6 +7908,11 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Sylphira
 
+#### Sylphira Provides
+
+- Dispel debuffs (Mythic+) — Self
+- Stacking buff (Mythic+) — Self
+
 #### Damage types dealt by Sylphira
 
 - Primary damage type (unit): **Magic**
@@ -7928,11 +7933,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Interrupt — Area — `low`
 - Knock down — Area — `medium`
 - Silence — Area — `low`
-
-#### Sylphira Provides
-
-- Dispel debuffs (Mythic+) — Self
-- Stacking buff (Mythic+) — Self
 
 ## Talene
 
@@ -7984,6 +7984,11 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 
 ### Summary for Talene
 
+#### Talene Provides
+
+- Transformation — Self
+- Stacking buff (Mythic+) — Area
+
 #### Damage types dealt by Talene
 
 - Primary damage type (unit): **Magic**
@@ -7993,11 +7998,6 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 #### Crowd Control provided by Talene
 
 - Knock back — Area — `low`
-
-#### Talene Provides
-
-- Transformation — Self
-- Stacking buff (Mythic+) — Area
 
 ## Tasi
 
@@ -8054,6 +8054,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Tasi
 
+#### Tasi Provides
+
+- Invincibility — Area
+- Sleep (area) — Single target
+- Transformation — Self
+
 #### Damage types dealt by Tasi
 
 - Primary damage type (unit): **Magic**
@@ -8068,12 +8074,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Sleep — Single target — `high`
 - Stun — Area — `high`
-
-#### Tasi Provides
-
-- Invincibility — Area
-- Sleep (area) — Single target
-- Transformation — Self
 
 ## Temesia
 
@@ -8135,6 +8135,11 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 
 ### Summary for Temesia
 
+#### Temesia Provides
+
+- Stacking buff — Single target
+- Invincibility (Mythic+) — Self
+
 #### Damage types dealt by Temesia
 
 - Primary damage type (unit): **Physical**
@@ -8155,11 +8160,6 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 - Unaffected (Mythic+) — Self — Permanent
 - Interrupt — Single target — `high`
 - Knock down — All units — `low`
-
-#### Temesia Provides
-
-- Stacking buff — Single target
-- Invincibility (Mythic+) — Self
 
 ## Thador
 
@@ -8294,6 +8294,10 @@ Common buffers are **Rowan**, **Hugin**, or **Koko**.
 
 ### Summary for Thoran
 
+#### Thoran Provides
+
+- Revive ally — Self
+
 #### Damage types dealt by Thoran
 
 - Primary damage type (unit): **Physical**
@@ -8308,10 +8312,6 @@ Common buffers are **Rowan**, **Hugin**, or **Koko**.
 
 - Unaffected — Self — On Skill
 - Interrupt — Single target — `low`
-
-#### Thoran Provides
-
-- Revive ally — Self
 
 ## Tilaya
 
@@ -8362,6 +8362,10 @@ Common buffers are **Koko**, **Lorsan**, or **Hugin**.
 
 ### Summary for Tilaya
 
+#### Tilaya Provides
+
+- Start-of-battle cast — Arc
+
 #### Damage types dealt by Tilaya
 
 - Primary damage type (unit): **Physical**
@@ -8374,10 +8378,6 @@ Common buffers are **Koko**, **Lorsan**, or **Hugin**.
 #### Crowd Control provided by Tilaya
 
 - Unaffected — Arc — Start of Battle
-
-#### Tilaya Provides
-
-- Start-of-battle cast — Arc
 
 ## Ulmus
 
@@ -8436,6 +8436,10 @@ Common buffers are **Koko**, **Lorsan**, or **Rowan**.
 
 ### Summary for Ulmus
 
+#### Ulmus Requires
+
+- Vulnerable enemy (Mythic+) — Enemies
+
 #### Damage types dealt by Ulmus
 
 - Primary damage type (unit): **Physical**
@@ -8451,10 +8455,6 @@ Common buffers are **Koko**, **Lorsan**, or **Rowan**.
 - Bind (Mythic+) — Single target — `medium`
 - Knock down (Mythic+) — Single target — `medium`
 - Knock back (Supreme+) — Area — `low`
-
-#### Ulmus Requires
-
-- Vulnerable enemy (Mythic+) — Enemies
 
 ## Vala
 
@@ -8519,6 +8519,14 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Summary for Vala
 
+#### Vala Provides
+
+- Marked target (focus fire) — Self
+
+#### Vala Requires
+
+- Enemy defeat (Legendary+) — Enemies
+
 #### Damage types dealt by Vala
 
 - Primary damage type (unit): **Physical**
@@ -8539,14 +8547,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Untargetable (Mythic+) — Multiple targets — Conditional
 - Stun — Single target — `medium`
-
-#### Vala Provides
-
-- Marked target (focus fire) — Self
-
-#### Vala Requires
-
-- Enemy defeat (Legendary+) — Enemies
 
 ## Valen
 
@@ -8601,6 +8601,11 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 
 ### Summary for Valen
 
+#### Valen Provides
+
+- Invincibility — Self
+- Stacking buff (Mythic+) — Single target
+
 #### Damage types dealt by Valen
 
 - Primary damage type (unit): **Physical**
@@ -8613,11 +8618,6 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 #### Crowd Control provided by Valen
 
 - Stun (Supreme+) — Single target — `medium`
-
-#### Valen Provides
-
-- Invincibility — Self
-- Stacking buff (Mythic+) — Single target
 
 ## Valka
 
@@ -8681,6 +8681,10 @@ Common buffers are **Twins**, **Koko**, or **Lyca**.
 
 ### Summary for Valka
 
+#### Valka Requires
+
+- Adjacent allies — Allies
+
 #### Damage types dealt by Valka
 
 - Primary damage type (unit): **Physical**
@@ -8698,10 +8702,6 @@ Common buffers are **Twins**, **Koko**, or **Lyca**.
 - Unaffected — Self — On Skill
 - Knock down — Area — `low`
 - Stun — Area — `low`
-
-#### Valka Requires
-
-- Adjacent allies — Allies
 
 ## Velara
 
@@ -8775,6 +8775,14 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Summary for Velara
 
+#### Velara Provides
+
+- Start-of-battle cast — All units
+
+#### Velara Requires
+
+- Boss encounter — Allies
+
 #### Damage types dealt by Velara
 
 - Primary damage type (unit): **Magic**
@@ -8792,14 +8800,6 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 #### Crowd Control provided by Velara
 
 - Bind — Single target — `high`
-
-#### Velara Provides
-
-- Start-of-battle cast — All units
-
-#### Velara Requires
-
-- Boss encounter — Allies
 
 ## Viperian
 
@@ -9075,6 +9075,10 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Summary for Zanie
 
+#### Zanie Provides
+
+- Summoning — Self
+
 #### Damage types dealt by Zanie
 
 - Primary damage type (unit): **Physical**
@@ -9098,10 +9102,6 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Knock back — Single target — `high`
 - Stun — Single target — `low`
-
-#### Zanie Provides
-
-- Summoning — Self
 
 ## Zorya
 
@@ -9163,6 +9163,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Summary for Zorya
 
+#### Zorya Provides
+
+- Invincibility — Area
+
+#### Zorya Requires
+
+- Ally Ultimate casts (Mythic+) — Allies
+
 #### Damage types dealt by Zorya
 
 - Primary damage type (unit): **Magic**
@@ -9179,11 +9187,3 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Unaffected (EX+10) — Single target — On Skill
 - Knock down — Arc — `medium`
 - Stun — Area — `medium`
-
-#### Zorya Provides
-
-- Invincibility — Area
-
-#### Zorya Requires
-
-- Ally Ultimate casts (Mythic+) — Allies

@@ -3039,6 +3039,32 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
     name = display_name or hero.title.split(" - ", 1)[0].strip()
     out = [f"### Summary for {name}", ""]
 
+    if hero.special_effects:
+        provides = sorted(
+            [se for se in hero.special_effects if se.kind == "provides"],
+            key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
+        )
+        requires = sorted(
+            [se for se in hero.special_effects if se.kind == "requires"],
+            key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
+        )
+        if provides:
+            out.append(f"#### {name} Provides")
+            out.append("")
+            for se in provides:
+                out.append(
+                    f"- {se.label}{format_tier_suffix(se.tier)} — {se.targeting}"
+                )
+            out.append("")
+        if requires:
+            out.append(f"#### {name} Requires")
+            out.append("")
+            for se in requires:
+                out.append(
+                    f"- {se.label}{format_tier_suffix(se.tier)} — {se.targeting}"
+                )
+            out.append("")
+
     if hero.damage_entries or hero.damage_type:
         out.append(f"#### Damage types dealt by {name}")
         out.append("")
@@ -3091,32 +3117,6 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
                 f"{format_effect_magnitude(e)}"
             )
         out.append("")
-
-    if hero.special_effects:
-        provides = sorted(
-            [se for se in hero.special_effects if se.kind == "provides"],
-            key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
-        )
-        requires = sorted(
-            [se for se in hero.special_effects if se.kind == "requires"],
-            key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
-        )
-        if provides:
-            out.append(f"#### {name} Provides")
-            out.append("")
-            for se in provides:
-                out.append(
-                    f"- {se.label}{format_tier_suffix(se.tier)} — {se.targeting}"
-                )
-            out.append("")
-        if requires:
-            out.append(f"#### {name} Requires")
-            out.append("")
-            for se in requires:
-                out.append(
-                    f"- {se.label}{format_tier_suffix(se.tier)} — {se.targeting}"
-                )
-            out.append("")
 
     return "\n".join(out).rstrip() + "\n"
 
