@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://afkj.local/schema/heroes-data-processed.schema.json",
   "title": "Processed hero data",
-  "description": "Per-hero summaries, synergies, and structured skill definitions. Replaces parsed effect lists with a skills section.",
+  "description": "Per-hero skill analysis, synergy profile, and behavior. Roster-wide synergy rankings live in heroes_synergies.schema.json.",
   "type": "object",
   "required": ["heroes"],
   "additionalProperties": false,
@@ -28,11 +28,7 @@
         "damage_entries",
         "damage_magnitudes",
         "benefit_stats",
-        "behavior",
-        "synergies",
-        "beneficiaries",
-        "beneficiary_overflow_reasons",
-        "replacements"
+        "behavior"
       ],
       "additionalProperties": false,
       "properties": {
@@ -80,30 +76,6 @@
         },
         "behavior": {
           "$ref": "#/$defs/behavior"
-        },
-        "synergies": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/synergy"
-          },
-          "description": "Top synergy partners for this hero as provider-to-receiver matches."
-        },
-        "beneficiaries": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/beneficiary"
-          },
-          "description": "Reverse index: heroes who list this unit among their top partners."
-        },
-        "beneficiary_overflow_reasons": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "Why additional beneficiaries were omitted from the list."
-        },
-        "replacements": {
-          "$ref": "#/$defs/replacements"
         }
       }
     },
@@ -331,132 +303,6 @@
     "castingSpeed": {
       "type": "string",
       "enum": ["slow", "normal", "fast"]
-    },
-    "synergy": {
-      "type": "object",
-      "required": ["provider", "reasons", "score"],
-      "additionalProperties": false,
-      "properties": {
-        "provider": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Display name of the synergy provider hero."
-        },
-        "reasons": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1
-          },
-          "minItems": 1
-        },
-        "score": {
-          "type": "number"
-        }
-      }
-    },
-    "beneficiary": {
-      "type": "object",
-      "required": ["name", "score"],
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "type": "string",
-          "minLength": 1
-        },
-        "score": {
-          "type": "number"
-        }
-      }
-    },
-    "replacements": {
-      "type": "object",
-      "required": [
-        "buff",
-        "energy",
-        "similar_skills",
-        "damage",
-        "debuff",
-        "cc"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "buff": {
-          "$ref": "#/$defs/replacementList"
-        },
-        "energy": {
-          "$ref": "#/$defs/replacementList"
-        },
-        "similar_skills": {
-          "$ref": "#/$defs/similarSkillList"
-        },
-        "damage": {
-          "$ref": "#/$defs/replacementList"
-        },
-        "debuff": {
-          "$ref": "#/$defs/replacementList"
-        },
-        "cc": {
-          "$ref": "#/$defs/replacementList"
-        }
-      }
-    },
-    "replacementList": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/replacementMatch"
-      }
-    },
-    "similarSkillList": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/similarSkillMatch"
-      }
-    },
-    "replacementMatch": {
-      "type": "object",
-      "required": ["name", "score", "matches"],
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "type": "string",
-          "minLength": 1
-        },
-        "score": {
-          "type": "number"
-        },
-        "matches": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1
-          },
-          "minItems": 1
-        }
-      }
-    },
-    "similarSkillMatch": {
-      "type": "object",
-      "required": ["name", "score", "matches"],
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "type": "string",
-          "minLength": 1
-        },
-        "score": {
-          "type": "number"
-        },
-        "matches": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1
-          },
-          "minItems": 1,
-          "description": "Behavior tags shared with the replacement candidate."
-        }
-      }
     }
   }
 }

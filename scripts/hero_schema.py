@@ -738,10 +738,6 @@ def serialize_processed_hero(
     is_supporting_unit: bool,
     is_energy_provider: bool,
     behavior: dict[str, Any],
-    synergies: list[dict[str, Any]],
-    beneficiaries: list[dict[str, Any]],
-    beneficiary_overflow_reasons: list[str],
-    replacements: dict[str, Any],
 ) -> dict[str, Any]:
     provides = [
         special_to_synergy_mechanic(se)
@@ -783,10 +779,6 @@ def serialize_processed_hero(
         "damage_magnitudes": damage_magnitudes,
         "benefit_stats": benefit_stats,
         "behavior": behavior,
-        "synergies": synergies,
-        "beneficiaries": beneficiaries,
-        "beneficiary_overflow_reasons": beneficiary_overflow_reasons,
-        "replacements": replacements,
     }
 
 
@@ -840,6 +832,7 @@ def deserialize_hero(title: str, processed: dict[str, Any], damage_type: str) ->
 
 
 _SCHEMA: dict[str, Any] | None = None
+_SYNERGIES_SCHEMA: dict[str, Any] | None = None
 
 
 def _load_schema() -> dict[str, Any]:
@@ -852,7 +845,17 @@ def _load_schema() -> dict[str, Any]:
     return _SCHEMA
 
 
-def validate_processed(data: dict[str, Any]) -> None:
+def _load_synergies_schema() -> dict[str, Any]:
+    global _SYNERGIES_SCHEMA
+    if _SYNERGIES_SCHEMA is None:
+        import json
+
+        path = SCHEMA_DIR / "heroes_synergies.schema.json"
+        _SYNERGIES_SCHEMA = json.loads(path.read_text(encoding="utf-8"))
+    return _SYNERGIES_SCHEMA
+
+
+def _validate_with_schema(data: dict[str, Any], schema: dict[str, Any]) -> None:
     if jsonschema is None:
         raise RuntimeError(
             "jsonschema is required for validation; install with: "
@@ -860,7 +863,6 @@ def validate_processed(data: dict[str, Any]) -> None:
         )
     import json
 
-    schema = _load_schema()
     store: dict[str, Any] = {
         schema["$id"]: schema,
     }
@@ -869,3 +871,11 @@ def validate_processed(data: dict[str, Any]) -> None:
         store[doc["$id"]] = doc
     resolver = jsonschema.RefResolver.from_schema(schema, store=store)
     jsonschema.validate(data, schema, resolver=resolver)
+
+
+def validate_processed(data: dict[str, Any]) -> None:
+    _validate_with_schema(data, _load_schema())
+
+
+def validate_synergies(data: dict[str, Any]) -> None:
+    _validate_with_schema(data, _load_synergies_schema())

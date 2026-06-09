@@ -88,10 +88,6 @@ class RoundTripTests(unittest.TestCase):
                 "ult_speed": "slow",
                 "non_ult_speed": "fast",
             },
-            synergies=[],
-            beneficiaries=[],
-            beneficiary_overflow_reasons=[],
-            replacements={},
         )
         restored = hs.deserialize_hero(
             hero.title, serialized, hero.damage_type or "Physical"
@@ -118,12 +114,24 @@ class RoundTripTests(unittest.TestCase):
         for token in forbidden:
             self.assertNotIn(token, overview, f"raw schema token in overview: {token}")
 
+    def test_processed_and_synergies_title_sets_match(self):
+        processed = io.load_processed()
+        synergies = io.load_synergies()
+        self.assertEqual(
+            set(processed["heroes"]),
+            set(synergies["heroes"]),
+        )
+
 
 @unittest.skipUnless(hs.jsonschema is not None, "jsonschema not installed")
 class SchemaValidationTests(unittest.TestCase):
     def test_processed_json_validates(self):
         processed = io.load_processed()
         hs.validate_processed(processed)
+
+    def test_synergies_json_validates(self):
+        synergies = io.load_synergies()
+        hs.validate_synergies(synergies)
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@
 #
 # Pipeline: download -> process -> render
 #   download : data/heroes_data.json          (merge fandom + Yaphalla)
-#   process  : data/heroes_data_processed.json (synergy/summary/behaviour analysis)
+#   process  : data/heroes_data_processed.json + heroes_data_synergies.json
 #   render   : Heroes.md, heroes-overview.md, heroes-overview.csv
 
 default:
@@ -13,9 +13,14 @@ default:
 download:
     python3 scripts/download_heroes.py
 
-# Analyse data/heroes_data.json -> data/heroes_data_processed.json.
+# Analyse data/heroes_data.json -> processed + synergies JSON.
 analyze:
     python3 scripts/process_heroes.py
+    python3 scripts/process_synergies.py
+
+# Recompute roster-wide synergies from existing processed data.
+analyze-synergies:
+    python3 scripts/process_synergies.py
 
 # Render Heroes.md from data/heroes_data.json.
 render-heroes:

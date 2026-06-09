@@ -34,6 +34,7 @@ DATA = ROOT / "data"
 
 HEROES_DATA = DATA / "heroes_data.json"
 HEROES_DATA_PROCESSED = DATA / "heroes_data_processed.json"
+HEROES_DATA_SYNERGIES = DATA / "heroes_data_synergies.json"
 HEROES_CONFIG = DATA / "heroes_config.json"
 
 # Section headings, in the order they appear in a hero block.
@@ -81,6 +82,10 @@ def load_heroes_data() -> list[dict]:
 
 def load_processed() -> dict:
     return load_json(HEROES_DATA_PROCESSED)
+
+
+def load_synergies() -> dict:
+    return load_json(HEROES_DATA_SYNERGIES)
 
 
 def load_config() -> dict:

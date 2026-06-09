@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/heroes-data-synergies.schema.json",
+  "title": "Hero synergy rankings",
+  "description": "Roster-wide synergy pairings, beneficiary index, and replacement scores. Generated after all heroes are processed.",
+  "type": "object",
+  "required": ["heroes"],
+  "additionalProperties": false,
+  "properties": {
+    "heroes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/heroSynergies"
+      }
+    }
+  },
+  "$defs": {
+    "heroSynergies": {
+      "type": "object",
+      "required": [
+        "synergies",
+        "beneficiaries",
+        "beneficiary_overflow_reasons",
+        "replacements"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "synergies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/synergy"
+          },
+          "description": "Full synergy partner rankings for this hero as receiver."
+        },
+        "beneficiaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/beneficiary"
+          },
+          "description": "Reverse index: heroes who list this unit among their top partners."
+        },
+        "beneficiary_overflow_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Why additional beneficiaries were omitted from the list."
+        },
+        "replacements": {
+          "$ref": "#/$defs/replacements"
+        }
+      }
+    },
+    "synergy": {
+      "type": "object",
+      "required": ["provider", "reasons", "score"],
+      "additionalProperties": false,
+      "properties": {
+        "provider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display name of the synergy provider hero."
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "score": {
+          "type": "number"
+        }
+      }
+    },
+    "beneficiary": {
+      "type": "object",
+      "required": ["name", "score"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "score": {
+          "type": "number"
+        }
+      }
+    },
+    "replacements": {
+      "type": "object",
+      "required": [
+        "buff",
+        "energy",
+        "similar_skills",
+        "damage",
+        "debuff",
+        "cc"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "buff": {
+          "$ref": "#/$defs/replacementList"
+        },
+        "energy": {
+          "$ref": "#/$defs/replacementList"
+        },
+        "similar_skills": {
+          "$ref": "#/$defs/similarSkillList"
+        },
+        "damage": {
+          "$ref": "#/$defs/replacementList"
+        },
+        "debuff": {
+          "$ref": "#/$defs/replacementList"
+        },
+        "cc": {
+          "$ref": "#/$defs/replacementList"
+        }
+      }
+    },
+    "replacementList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/replacementMatch"
+      }
+    },
+    "similarSkillList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/similarSkillMatch"
+      }
+    },
+    "replacementMatch": {
+      "type": "object",
+      "required": ["name", "score", "matches"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "score": {
+          "type": "number"
+        },
+        "matches": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "similarSkillMatch": {
+      "type": "object",
+      "required": ["name", "score", "matches"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "score": {
+          "type": "number"
+        },
+        "matches": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "description": "Behavior tags shared with the replacement candidate."
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Render heroes-overview.md and heroes-overview.csv.
 
-Pure view over ``heroes_data.json`` (identity / damage type) and
-``heroes_data_processed.json`` (derived effects, behaviour, synergies,
-beneficiaries). No analysis is performed here; display thresholds (top-N
-synergies / beneficiaries) come from ``heroes_config.json``.
+Pure view over ``heroes_data.json`` (identity / damage type),
+``heroes_data_processed.json`` (derived effects, behaviour), and
+``heroes_data_synergies.json`` (synergies, beneficiaries, replacements).
+No analysis is performed here; display thresholds (top-N synergies /
+beneficiaries) come from ``heroes_config.json``.
 """
 
 from __future__ import annotations
@@ -170,7 +171,9 @@ def _format_synergies(
     return lines
 
 
-def build_overview(data: dict, processed: dict, config: dict) -> str:
+def build_overview(
+    data: dict, processed: dict, synergies: dict, config: dict
+) -> str:
     limits = config.get("display_limits", {})
     max_syn = limits.get("max_synergies", 5)
     max_ben = limits.get("max_beneficiaries_display", 10)
@@ -178,8 +181,8 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
     rep_scoring = config.get("replacement_scoring", {})
     max_rep = rep_scoring.get("max_replacements", 3)
     provider_beneficiary_count = {
-        title: len(p["beneficiaries"])
-        for title, p in processed["heroes"].items()
+        title: len(s["beneficiaries"])
+        for title, s in synergies["heroes"].items()
     }
 
     data_by_title = {h["title"]: h for h in data["heroes"]}
@@ -194,7 +197,10 @@ def build_overview(data: dict, processed: dict, config: dict) -> str:
     rs.assign_magnitudes(list(heroes_by_title.values()))
 
     for title in sorted(processed["heroes"]):
-        p = processed["heroes"][title]
+        p = {
+            **processed["heroes"][title],
+            **synergies["heroes"][title],
+        }
         short = gen.short_name(title)
         hero = heroes_by_title[title]
         behavior = rs.HeroBehavior(**p["behavior"])
@@ -253,9 +259,10 @@ def write_csv(overview_text: str, energy_providers: frozenset[str]) -> int:
 def main() -> None:
     data = io.load_heroes_data()
     processed = io.load_processed()
+    synergies = io.load_synergies()
     config = io.load_config()
 
-    content = build_overview(data, processed, config)
+    content = build_overview(data, processed, synergies, config)
     OVERVIEW_MD.write_text(content, encoding="utf-8")
     print(
         f"Wrote {OVERVIEW_MD.relative_to(io.ROOT)} ({len(content.splitlines())} lines)"
