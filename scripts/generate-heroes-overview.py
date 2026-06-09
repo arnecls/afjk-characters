@@ -80,6 +80,9 @@ SIGNATURE_FUEL_LABELS = frozenset(
     {"Energy recovery", "Haste buff", "ATK SPD buff"}
 )
 
+# Shown on synergy lines boosted for the receiver's signature skill speed.
+SIGNATURE_FUEL_MARKER = " `signature fuel`"
+
 # For non-fast signature skills, consider Energy/Haste even when the receiver
 # does not explicitly scale on them; reduced base so batteries do not eclipse
 # real enablers.
@@ -445,7 +448,7 @@ def score_early_battle_energy_synergy(
     pts *= EARLY_BATTLE_ENERGY_ULT_MULT.get(receiver_behavior.ult_speed, 1.0)
     pts *= ENERGY_SYNERGY_SCORE_MULT
     fuel_tag = (
-        " [signature fuel]"
+        SIGNATURE_FUEL_MARKER
         if receiver_behavior.synergy_signature_is_ult
         else ""
     )
@@ -938,7 +941,7 @@ def score_synergy(
                 else ""
             )
             fuel_tag = (
-                " [signature fuel]"
+                SIGNATURE_FUEL_MARKER
                 if effect.label in SIGNATURE_FUEL_LABELS
                 else ""
             )
