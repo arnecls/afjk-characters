@@ -109,6 +109,7 @@ DEFINING_TIER_SCORE_MULT = {
 # Replacement scoring: per-category similarity between heroes as substitutes.
 REPLACEMENT_MIN_SCORE = 0.6
 REPLACEMENT_MAX = 3
+REPLACEMENT_SAME_FACTION_MULT = 1.20
 REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
 REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST = 1.5
 REPLACEMENT_SIGNATURE_CC_BOOST = 1.5
@@ -1512,19 +1513,45 @@ def _cc_overlap_tags(
     return _profile_overlap_tags(cc_a, cc_b, limit)
 
 
+def _replacement_rank_score(
+    raw: float,
+    candidate_title: str,
+    source_faction: str | None,
+    faction_by_title: dict[str, str],
+) -> float:
+    """Similarity score used for ranking; same-faction candidates get a boost."""
+    if not source_faction:
+        return raw
+    candidate_faction = faction_by_title.get(candidate_title)
+    if not candidate_faction or candidate_faction != source_faction:
+        return raw
+    return min(raw * REPLACEMENT_SAME_FACTION_MULT, 1.0)
+
+
 def _rank_replacement_category(
     scores: list[tuple[float, str, list[str]]],
+    source_faction: str | None = None,
+    faction_by_title: dict[str, str] | None = None,
 ) -> list[dict]:
     """Top replacement picks for one category above min_score."""
-    scores.sort(key=lambda item: (-item[0], short_name(item[1])))
+    factions = faction_by_title or {}
+    ranked_items = [
+        (
+            _replacement_rank_score(score, title, source_faction, factions),
+            title,
+            matches,
+        )
+        for score, title, matches in scores
+    ]
+    ranked_items.sort(key=lambda item: (-item[0], short_name(item[1])))
     ranked: list[dict] = []
-    for score, title, matches in scores:
-        if score < REPLACEMENT_MIN_SCORE:
+    for effective, title, matches in ranked_items:
+        if effective < REPLACEMENT_MIN_SCORE:
             break
         ranked.append(
             {
                 "name": short_name(title),
-                "score": round(score, 4),
+                "score": round(effective, 4),
                 "matches": matches,
             }
         )
@@ -1536,10 +1563,10 @@ def _rank_replacement_category(
 def compute_replacement_scores(
     heroes: list[_rs.Hero],
     behavior_by_title: dict[str, _rs.HeroBehavior],
-    hero_class_by_title: dict[str, str] | None = None,
+    faction_by_title: dict[str, str] | None = None,
 ) -> dict[str, dict[str, list[dict]]]:
     """Per-category replacement lists for each hero (0–1 similarity per category)."""
-    del hero_class_by_title  # kept for call-site compatibility
+    factions = faction_by_title or {}
 
     profiles: dict[str, dict[str, float]] = {}
     energy_provided: dict[str, float] = {}
@@ -1635,8 +1662,11 @@ def compute_replacement_scores(
                 )
             )
 
+        source_faction = factions.get(hero_x.title)
         result[hero_x.title] = {
-            key: _rank_replacement_category(category_scores[key])
+            key: _rank_replacement_category(
+                category_scores[key], source_faction, factions
+            )
             for key in REPLACEMENT_CATEGORIES
         }
     return result

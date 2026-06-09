@@ -141,8 +141,12 @@ def build_synergies(raw: dict, processed: dict) -> dict:
     beneficiaries_index = gen.build_beneficiaries_index(
         heroes, enabler_matchers, behavior_by_title
     )
+    faction_by_title = {
+        title: record["faction"]
+        for title, record in processed["heroes"].items()
+    }
     replacements_index = gen.compute_replacement_scores(
-        heroes, behavior_by_title, hero_class_by_title
+        heroes, behavior_by_title, faction_by_title
     )
 
     synergy_heroes: dict[str, dict] = {}

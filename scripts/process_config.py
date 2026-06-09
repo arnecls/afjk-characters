@@ -66,3 +66,5 @@ def apply_config(config: dict) -> None:
         _gen.REPLACEMENT_MIN_SCORE = rs_cfg["min_score"]
     if "max_replacements" in rs_cfg:
         _gen.REPLACEMENT_MAX = rs_cfg["max_replacements"]
+    if "same_faction_mult" in rs_cfg:
+        _gen.REPLACEMENT_SAME_FACTION_MULT = rs_cfg["same_faction_mult"]
