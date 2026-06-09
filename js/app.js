@@ -25,7 +25,27 @@
   const heroesTableBody = document.getElementById("heroes-table-body");
   const searchInput = document.getElementById("search");
   const filtersEl = document.getElementById("filters");
+  const headerBack = document.getElementById("header-back");
   const viewToggle = document.querySelector(".view-toggle");
+  const siteHeader = document.querySelector(".site-header");
+
+  function updateHeaderNav(inDetail) {
+    filtersEl.classList.toggle("hidden", inDetail);
+    if (headerBack) {
+      headerBack.classList.toggle("hidden", !inDetail);
+    }
+    updateListStickyOffset();
+  }
+
+  function updateListStickyOffset() {
+    if (!siteHeader) {
+      return;
+    }
+    document.documentElement.style.setProperty(
+      "--list-sticky-top",
+      siteHeader.offsetHeight + "px"
+    );
+  }
 
   function inferBase() {
     const path = location.pathname;
@@ -1224,6 +1244,7 @@
     detailView.classList.add("hidden");
     gridView.classList.toggle("hidden", viewMode !== "grid");
     listView.classList.toggle("hidden", viewMode !== "list");
+    updateHeaderNav(false);
     renderCurrentView();
   }
 
@@ -1366,6 +1387,7 @@
 
     heroDetail.innerHTML = html;
     document.title = hero.name + " — AFK Journey Heroes";
+    updateHeaderNav(true);
     window.scrollTo(0, 0);
   }
 
@@ -1469,6 +1491,7 @@
     });
     filtersEl.innerHTML = html;
     updateFilterActiveStates();
+    updateListStickyOffset();
   }
 
   function updateFilterActiveStates() {
@@ -1646,6 +1669,12 @@
       .catch(function () {
         /* list view shows missing-data message */
       });
+  }
+
+  updateListStickyOffset();
+  window.addEventListener("resize", updateListStickyOffset);
+  if (siteHeader && typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(updateListStickyOffset).observe(siteHeader);
   }
 
   loadHeroData();
