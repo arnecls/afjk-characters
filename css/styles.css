@@ -210,9 +210,8 @@ a:hover {
   position: sticky;
   left: 0;
   z-index: 2;
-  min-width: 6.5rem;
-  max-width: 9rem;
-  white-space: nowrap;
+  min-width: 8.5rem;
+  max-width: 12rem;
   background: var(--surface);
   box-shadow: 2px 0 6px rgba(30, 50, 90, 0.08);
 }
@@ -220,6 +219,37 @@ a:hover {
 .heroes-table thead th.col-name {
   z-index: 3;
   background: var(--bg);
+  white-space: nowrap;
+}
+
+.heroes-table .col-name-link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: inherit;
+  min-width: 100%;
+}
+
+.heroes-table .col-name-link:hover .col-name-text {
+  color: var(--accent);
+}
+
+.heroes-table .col-name-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.heroes-table .col-name-portrait {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #e8efff, #f0e8ff);
 }
 
 .heroes-table th.sortable {
@@ -523,6 +553,7 @@ a:hover {
 
 .chip-debuff { background: #f8e0e0; color: #702020; }
 .chip-role { background: #e8f0e8; color: #305030; }
+.chip-movement { background: #eef2f8; color: #405070; }
 .chip-generic { background: #eef2f8; color: #405070; }
 
 /* Horizontal hero row cards */
