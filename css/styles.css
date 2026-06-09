@@ -314,8 +314,8 @@ a:hover {
 
 .hero-card img {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  aspect-ratio: 180 / 199;
+  object-fit: contain;
   background: linear-gradient(135deg, #e8efff, #f0e8ff);
 }
 
