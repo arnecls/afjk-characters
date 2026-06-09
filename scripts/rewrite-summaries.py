@@ -139,6 +139,8 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
         return True
     if re.search(r"\binspir\w+ allies\b", t):
         return True
+    if re.search(r"\band allies gain\b", t):
+        return True
     if re.search(r"\bfor all allies within\b", t):
         return True
     if re.search(r"\ballies they pass through\b", t):
@@ -1122,6 +1124,26 @@ def extract_number(text: str, label: str = "") -> float | None:
         m = re.search(r"converting\s+(\d+(?:\.\d+)?)\s*%", text, re.I)
         if m:
             return float(m.group(1))
+    if label == "Max HP buff":
+        # Split grants: "gain 50% + 5% and 20% + 2% extra max HP respectively"
+        m = re.search(
+            r"and (\d+(?:\.\d+)?)\s*%\s*\+\s*\d+(?:\.\d+)?\s*%\s*"
+            r"extra max hp respectively",
+            t,
+            re.I,
+        )
+        if m:
+            return float(m.group(1))
+        m = re.search(
+            r"extra max hp(?: respectively)?",
+            t,
+            re.I,
+        )
+        if m:
+            before = t[max(0, m.start() - 80) : m.start()]
+            nums = re.findall(r"(\d+(?:\.\d+)?)\s*%", before)
+            if nums:
+                return float(nums[-1])
     # Flat stat values (Haste 60+4, ATK SPD 45+5) before generic patterns
     stat_pats = [
         r"haste by (\d+(?:\.\d+)?)",
@@ -1462,6 +1484,7 @@ BUFF_RULES = [
     # Max HP buff: handle both "increases max HP" and passive "max HP is increased"
     (r"increas(?:e|es|ing) (?:the )?(?:\w+ ){0,4}max hp", "Max HP buff"),
     (r"max hp.{0,30}(?:is |permanently )?increas", "Max HP buff"),
+    (r"extra max hp", "Max HP buff"),
     # DEF buff: only when the unit or allies gain DEF (not when enemies lose it)
     (r"increas(?:e|es|ing) (?:her |his |their |allies'? |allied .{0,20})?(?:phys(?:ical)?|magic) def", "DEF buff"),
     # Shield: gains/granting/providing/converting into a shield

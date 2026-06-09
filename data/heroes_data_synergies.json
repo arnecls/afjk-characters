@@ -879,17 +879,17 @@
           "score": 8.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)"
           ],
           "score": 6.0
         },
@@ -1146,6 +1146,15 @@
           "score": 12.75
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 11.500000000000002
+        },
+        {
           "provider": "Mehira - Mind Cager",
           "reasons": [
             "Haste via Haste buff (single target, high) `signature fuel`",
@@ -1172,11 +1181,11 @@
         {
           "provider": "Pandora - Hope Unleashed",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
+            "Max HP via Max HP buff (single target, medium)",
             "Energy via Energy recovery (single target, low) `signature fuel`",
             "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
           ],
-          "score": 9.653228571428572
+          "score": 11.153228571428572
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -1200,14 +1209,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.88
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.5
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -1483,6 +1484,16 @@
           "score": 17.1
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 16.425428571428572
+        },
+        {
           "provider": "Elijah & Lailah - Celestial Twins",
           "reasons": [
             "Max HP via Max HP buff (multiple targets, medium)",
@@ -1518,16 +1529,6 @@
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 14.925428571428572
         },
         {
           "provider": "Mikola - Warbeat Compere",
@@ -1650,6 +1651,14 @@
           "score": 6.375
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 6.0600000000000005
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
@@ -1726,13 +1735,6 @@
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
           "score": 3.6
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.0600000000000005
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -2712,6 +2714,15 @@
           "score": 9.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.0103
+        },
+        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)"
@@ -2732,15 +2743,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
           ],
           "score": 6.72
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 6.5103
         },
         {
           "provider": "Shakir - Furious Howl",
@@ -2771,6 +2773,14 @@
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
           "score": 5.31
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 5.295
         },
         {
           "provider": "Valka - Forsaken Blade",
@@ -2878,13 +2888,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 2.5125
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 2.295
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -3526,17 +3529,25 @@
           "score": 7.5
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
+          ],
+          "score": 6.4
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)"
           ],
           "score": 6.0
         },
@@ -3589,13 +3600,6 @@
             "Healing via Healing (area, low)"
           ],
           "score": 4.0
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.4
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -7516,6 +7520,15 @@
           "score": 9.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.58
+        },
+        {
           "provider": "Damian - Woody Wonder",
           "reasons": [
             "Healing via Healing (area, medium)"
@@ -7542,15 +7555,6 @@
             "Healing via Healing (area, medium)"
           ],
           "score": 8.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 7.08
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -7847,21 +7851,21 @@
           "score": 11.7
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 11.153228571428572
+        },
+        {
           "provider": "Hepler - Master of Forms",
           "reasons": [
             "Max HP via Shield (multiple targets, high)",
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 10.35
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 9.653228571428572
         },
         {
           "provider": "Saida - Vampiric Vine",
@@ -7907,6 +7911,14 @@
             "Energy via Energy recovery (area, medium) `signature fuel`"
           ],
           "score": 6.3696
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 6.0600000000000005
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -8009,13 +8021,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.05
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.0600000000000005
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -9017,6 +9022,15 @@
           "score": 12.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 11.153228571428572
+        },
+        {
           "provider": "Damian - Woody Wonder",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`"
@@ -9024,13 +9038,12 @@
           "score": 10.200000000000001
         },
         {
-          "provider": "Pandora - Hope Unleashed",
+          "provider": "Zandrok - Watchful Edge",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
           ],
-          "score": 9.653228571428572
+          "score": 9.8
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -9089,13 +9102,6 @@
             "Max HP via Max HP buff (single target, high)"
           ],
           "score": 6.9
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.800000000000001
         },
         {
           "provider": "Phraesto - Misty Scorpion",
@@ -9539,6 +9545,22 @@
           "score": 8.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
+          ],
+          "score": 7.25
+        },
+        {
           "provider": "Cecia - Requiem of Thorns",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
@@ -9550,14 +9572,6 @@
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)"
           ],
           "score": 6.0
         },
@@ -9595,13 +9609,6 @@
             "Max HP via Shield (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 4.25
         },
         {
           "provider": "Nara - Wrathful Wraith",
@@ -10981,6 +10988,15 @@
           "score": 9.5625
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 9.375
+        },
+        {
           "provider": "Saida - Vampiric Vine",
           "reasons": [
             "Max HP via Shield (multiple targets, high)"
@@ -11041,14 +11057,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 6.659999999999999
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.375
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -11144,6 +11152,14 @@
           "score": 4.3125
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 3.5103
+        },
+        {
           "provider": "Callan - Grim Soulkeeper",
           "reasons": [
             "Max HP via Shield (single target, medium)"
@@ -11163,14 +11179,6 @@
             "Max HP via Shield (single target, medium)"
           ],
           "score": 3.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 2.0103
         },
         {
           "provider": "Pang - Bamboo Guardian",
@@ -13110,6 +13118,22 @@
           "score": 8.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
+          ],
+          "score": 7.25
+        },
+        {
           "provider": "Cecia - Requiem of Thorns",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
@@ -13121,14 +13145,6 @@
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)"
           ],
           "score": 6.0
         },
@@ -13173,13 +13189,6 @@
             "Max HP via Shield (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 4.25
         },
         {
           "provider": "Nara - Wrathful Wraith",
@@ -14132,6 +14141,15 @@
           "score": 9.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.58
+        },
+        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)"
@@ -14154,13 +14172,12 @@
           "score": 7.5
         },
         {
-          "provider": "Pandora - Hope Unleashed",
+          "provider": "Zandrok - Watchful Edge",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
           ],
-          "score": 7.08
+          "score": 6.4
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -14238,13 +14255,6 @@
             "Energy via Energy recovery (all units, low) `signature fuel`"
           ],
           "score": 3.5999999999999996
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.4
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -14523,6 +14533,16 @@
           "score": 18.3696
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 15.653228571428572
+        },
+        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "ATK via ATK buff (multiple targets, medium)",
@@ -14570,16 +14590,6 @@
           "score": 14.25
         },
         {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 14.153228571428572
-        },
-        {
           "provider": "Contess - Abyssal Rulekeeper",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -14602,6 +14612,15 @@
             "Max HP via Max HP buff (multiple targets, high)"
           ],
           "score": 12.0
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 11.500000000000002
         },
         {
           "provider": "Mehira - Mind Cager",
@@ -14671,14 +14690,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.88
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.5
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -15618,19 +15629,19 @@
           "score": 12.5
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Enables Party composition via Support (party slot)"
+          ],
+          "score": 12.5
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)",
             "Enables Party composition via Tank (party slot)"
-          ],
-          "score": 11.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Enables Party composition via Support (party slot)"
           ],
           "score": 11.0
         },
@@ -15746,6 +15757,14 @@
             "Enables Party composition via Support (party slot)"
           ],
           "score": 6.5
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
+          ],
+          "score": 6.4
         },
         {
           "provider": "Alsa - Desert Flare",
@@ -15935,13 +15954,6 @@
             "Healing via Healing (area, low)"
           ],
           "score": 4.0
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.4
         },
         {
           "provider": "Korin - Wood Warden",
@@ -18383,21 +18395,21 @@
           "score": 11.7
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 11.153228571428572
+        },
+        {
           "provider": "Hepler - Master of Forms",
           "reasons": [
             "Max HP via Shield (multiple targets, high)",
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 10.35
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 9.653228571428572
         },
         {
           "provider": "Saida - Vampiric Vine",
@@ -18450,6 +18462,14 @@
             "Energy via Energy recovery (area, medium) `signature fuel`"
           ],
           "score": 6.3696
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 6.0600000000000005
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -18552,13 +18572,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.05
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.0600000000000005
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -19132,6 +19145,16 @@
           "score": 17.1
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 15.653228571428572
+        },
+        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "ATK via ATK buff (multiple targets, medium)",
@@ -19168,16 +19191,6 @@
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 14.153228571428572
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -19271,6 +19284,15 @@
           "score": 10.1
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "Life Drain via Lifedrain buff (area, low, conditional (frequent))",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 9.46
+        },
+        {
           "provider": "Antandra - Desert Fury",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -19327,14 +19349,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 7.05
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Life Drain via Lifedrain buff (area, low, conditional (frequent))",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.460000000000001
         },
         {
           "provider": "Phraesto - Misty Scorpion",
@@ -19671,6 +19685,15 @@
           "score": 12.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 11.153228571428572
+        },
+        {
           "provider": "Dunlingr - Eternal Voice",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
@@ -19686,13 +19709,12 @@
           "score": 10.200000000000001
         },
         {
-          "provider": "Pandora - Hope Unleashed",
+          "provider": "Zandrok - Watchful Edge",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
           ],
-          "score": 9.653228571428572
+          "score": 9.8
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -19744,13 +19766,6 @@
             "Max HP via Max HP buff (single target, high)"
           ],
           "score": 6.9
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.800000000000001
         },
         {
           "provider": "Phraesto - Misty Scorpion",
@@ -20080,6 +20095,14 @@
           "score": 5.31
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 5.295
+        },
+        {
           "provider": "Koko - Wild Child",
           "reasons": [
             "Max HP via Shield (all units, low)"
@@ -20121,6 +20144,14 @@
             "Max HP via Shield (single target, high)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 3.5103
         },
         {
           "provider": "Damian - Woody Wonder",
@@ -20201,13 +20232,6 @@
           "score": 2.5125
         },
         {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 2.295
-        },
-        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`"
@@ -20227,14 +20251,6 @@
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
           "score": 2.025
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 2.0103
         },
         {
           "provider": "Pang - Bamboo Guardian",
@@ -20814,6 +20830,14 @@
           "score": 10.5
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
+          ],
+          "score": 9.8
+        },
+        {
           "provider": "Antandra - Desert Fury",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -20864,6 +20888,15 @@
           "score": 9.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.904
+        },
+        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)"
@@ -20878,28 +20911,12 @@
           "score": 8.0
         },
         {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 7.404
-        },
-        {
           "provider": "Cecia - Requiem of Thorns",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
             "Max HP via Max HP buff (single target, high)"
           ],
           "score": 6.9
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.800000000000001
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -21185,6 +21202,24 @@
           "score": 12.558857142857143
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 11.925428571428572
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 11.500000000000002
+        },
+        {
           "provider": "Mehira - Mind Cager",
           "reasons": [
             "Haste via Haste buff (single target, high) `signature fuel`",
@@ -21209,15 +21244,6 @@
           "score": 11.25
         },
         {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 10.425428571428572
-        },
-        {
           "provider": "Saida - Vampiric Vine",
           "reasons": [
             "Max HP via Shield (multiple targets, high)"
@@ -21231,14 +21257,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.88
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.5
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -22461,6 +22479,15 @@
           "score": 9.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.0103
+        },
+        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)"
@@ -22473,15 +22500,6 @@
             "Healing via Healing (area, medium)"
           ],
           "score": 8.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 6.5103
         },
         {
           "provider": "Shakir - Furious Howl",
@@ -22520,6 +22538,14 @@
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
           "score": 5.31
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 5.295
         },
         {
           "provider": "Valka - Forsaken Blade",
@@ -22627,13 +22653,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 2.5125
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 2.295
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -23852,6 +23871,16 @@
           "score": 17.5
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 15.653228571428572
+        },
+        {
           "provider": "Smokey & Meerky - Wasteland Apothecary",
           "reasons": [
             "Healing via Healing (area, high)",
@@ -23898,14 +23927,13 @@
           "score": 14.25
         },
         {
-          "provider": "Pandora - Hope Unleashed",
+          "provider": "Zandrok - Watchful Edge",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
-          "score": 14.153228571428572
+          "score": 11.500000000000002
         },
         {
           "provider": "Mehira - Mind Cager",
@@ -23981,14 +24009,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.88
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.5
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -25419,6 +25439,16 @@
           "score": 17.5
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 15.653228571428572
+        },
+        {
           "provider": "Smokey & Meerky - Wasteland Apothecary",
           "reasons": [
             "Healing via Healing (area, high)",
@@ -25458,14 +25488,13 @@
           "score": 14.25
         },
         {
-          "provider": "Pandora - Hope Unleashed",
+          "provider": "Zandrok - Watchful Edge",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
-          "score": 14.153228571428572
+          "score": 11.500000000000002
         },
         {
           "provider": "Vala - Phantom of Oakenfell",
@@ -25541,14 +25570,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.88
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.5
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -27341,6 +27362,15 @@
           "score": 24.299999999999997
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "Enables CC on enemies via Knock up (area, low)"
+          ],
+          "score": 23.4
+        },
+        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)",
@@ -27365,14 +27395,6 @@
             "Enables CC on enemies via Bind (single target, medium)"
           ],
           "score": 22.2
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "Enables CC on enemies via Knock up (area, low)"
-          ],
-          "score": 20.4
         },
         {
           "provider": "Thador - Ironsworn General",
@@ -27606,6 +27628,15 @@
           "score": 12.588
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 11.925428571428572
+        },
+        {
           "provider": "Silven - Heir of Glory",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
@@ -27621,15 +27652,6 @@
             "Enables CC on enemies via Stun (single target, low)"
           ],
           "score": 11.475
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 10.425428571428572
         },
         {
           "provider": "Frieren - The Legendary Mage",
@@ -28499,6 +28521,10 @@
           "name": "Indris"
         },
         {
+          "score": 15.653228571428572,
+          "name": "Salazer"
+        },
+        {
           "score": 8.153228571428572,
           "name": "Chippy"
         },
@@ -28523,11 +28549,11 @@
         "buff": [
           {
             "name": "Rowan",
-            "score": 0.625,
+            "score": 0.6667,
             "matches": [
               "Healing",
-              "Energy",
-              "Max HP"
+              "Max HP",
+              "Energy"
             ]
           }
         ],
@@ -29220,6 +29246,16 @@
           "score": 43.1696
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
+            "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
+          ],
+          "score": 41.39322857142857
+        },
+        {
           "provider": "Cecia - Requiem of Thorns",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
@@ -29251,16 +29287,6 @@
             "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
           ],
           "score": 37.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
-            "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
-          ],
-          "score": 36.533228571428566
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -29330,6 +29356,15 @@
             "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
           ],
           "score": 28.02
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "Enables Ally stat buffs via 3 ally stat buffs"
+          ],
+          "score": 27.400000000000002
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -29408,14 +29443,6 @@
             "Enables Ally stat buffs via 2 ally stat buffs"
           ],
           "score": 20.4
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs"
-          ],
-          "score": 19.6
         },
         {
           "provider": "Soren - Silent Fury",
@@ -31930,17 +31957,17 @@
           "score": 8.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)"
           ],
           "score": 6.0
         },
@@ -32232,6 +32259,16 @@
           "score": 17.1
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 15.653228571428572
+        },
+        {
           "provider": "Smokey & Meerky - Wasteland Apothecary",
           "reasons": [
             "Healing via Healing (area, high)",
@@ -32275,16 +32312,6 @@
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 14.153228571428572
         },
         {
           "provider": "Mikola - Warbeat Compere",
@@ -32414,6 +32441,14 @@
           "score": 6.375
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 6.0600000000000005
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
@@ -32490,13 +32525,6 @@
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
           "score": 3.6
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.0600000000000005
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -33785,11 +33813,11 @@
         {
           "provider": "Pandora - Hope Unleashed",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
+            "Max HP via Max HP buff (single target, medium)",
             "Energy via Energy recovery (single target, low) `signature fuel`",
             "Enables Debuff on target via ATK debuff (all units)"
           ],
-          "score": 10.08
+          "score": 11.58
         },
         {
           "provider": "Mirael - Scarlet Sorceress",
@@ -33922,6 +33950,14 @@
             "Enables Debuff on target via Energy drain (single target)"
           ],
           "score": 6.75
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "Life Drain via Lifedrain buff (area, low, conditional (frequent))"
+          ],
+          "score": 6.4
         },
         {
           "provider": "Carolina - Candlelight Specter",
@@ -34066,13 +34102,6 @@
             "Enables Debuff on target via Phys DEF debuff (single target)"
           ],
           "score": 3.75
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Life Drain via Lifedrain buff (area, low, conditional (frequent))"
-          ],
-          "score": 3.4
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -34615,6 +34644,16 @@
           "score": 17.1
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 16.425428571428572
+        },
+        {
           "provider": "Elijah & Lailah - Celestial Twins",
           "reasons": [
             "Max HP via Max HP buff (multiple targets, medium)",
@@ -34650,16 +34689,6 @@
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 14.925428571428572
         },
         {
           "provider": "Mikola - Warbeat Compere",
@@ -34782,6 +34811,14 @@
           "score": 6.375
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 6.0600000000000005
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
@@ -34858,13 +34895,6 @@
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
           "score": 3.6
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.0600000000000005
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -35112,6 +35142,14 @@
           "score": 30.75
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
+          ],
+          "score": 29.43
+        },
+        {
           "provider": "Solise - Floral Wonder",
           "reasons": [
             "Enables Ally stat buffs via 2 ally stat buffs"
@@ -35139,14 +35177,6 @@
             "Enables Ally stat buffs via 2 ally stat buffs"
           ],
           "score": 27.375
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
-          ],
-          "score": 26.279999999999994
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -35201,6 +35231,14 @@
           "score": 22.049999999999997
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Enables Ally stat buffs via 3 ally stat buffs"
+          ],
+          "score": 20.75
+        },
+        {
           "provider": "Himmel - The Legendary Hero",
           "reasons": [
             "Enables Ally stat buffs via 3 ally stat buffs"
@@ -35221,14 +35259,6 @@
             "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
           ],
           "score": 16.799999999999997
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs"
-          ],
-          "score": 16.25
         },
         {
           "provider": "Antandra - Desert Fury",
@@ -35706,6 +35736,14 @@
           "score": 5.31
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 5.295
+        },
+        {
           "provider": "Koko - Wild Child",
           "reasons": [
             "Max HP via Shield (all units, low)"
@@ -35739,6 +35777,14 @@
             "Max HP via Shield (single target, high)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 3.5103
         },
         {
           "provider": "Damian - Woody Wonder",
@@ -35812,13 +35858,6 @@
           "score": 2.5125
         },
         {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 2.295
-        },
-        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`"
@@ -35838,14 +35877,6 @@
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
           "score": 2.025
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 2.0103
         },
         {
           "provider": "Fay - Colorful Dancer",
@@ -36456,10 +36487,6 @@
         },
         {
           "score": 15.3696,
-          "name": "Salazer"
-        },
-        {
-          "score": 15.3696,
           "name": "Thador"
         },
         {
@@ -36941,6 +36968,14 @@
           "score": 7.5
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
+          ],
+          "score": 6.4
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
@@ -37002,13 +37037,6 @@
             "Max HP via Shield (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.4
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -37282,6 +37310,16 @@
           "score": 17.5
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 16.425428571428572
+        },
+        {
           "provider": "Hewynn - Tender Leaf",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -37311,16 +37349,6 @@
           "score": 15.0
         },
         {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 14.925428571428572
-        },
-        {
           "provider": "Galahad - Daughter of Dawn",
           "reasons": [
             "Haste via Haste buff (single target, high) `signature fuel`",
@@ -37336,6 +37364,15 @@
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 12.558857142857143
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 11.500000000000002
         },
         {
           "provider": "Mehira - Mind Cager",
@@ -37403,14 +37440,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.88
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.5
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -38200,6 +38229,14 @@
           "score": 8.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Dunlingr - Eternal Voice",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -38208,17 +38245,17 @@
           "score": 6.5
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "Life Drain via Lifedrain buff (area, low, conditional (frequent))"
+          ],
+          "score": 6.4
+        },
+        {
           "provider": "Kordan - Ironblood Chieftain",
           "reasons": [
             "Life Drain via Lifedrain buff (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)"
           ],
           "score": 6.0
         },
@@ -38257,13 +38294,6 @@
             "Healing via Healing (area, low)"
           ],
           "score": 4.0
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Life Drain via Lifedrain buff (area, low, conditional (frequent))"
-          ],
-          "score": 3.4
         },
         {
           "provider": "Brutus - Blood Claw",
@@ -38541,6 +38571,16 @@
           "score": 18.3696
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 15.653228571428572
+        },
+        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "ATK via ATK buff (multiple targets, medium)",
@@ -38588,16 +38628,6 @@
           "score": 14.25
         },
         {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 14.153228571428572
-        },
-        {
           "provider": "Contess - Abyssal Rulekeeper",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -38620,6 +38650,15 @@
             "Max HP via Max HP buff (multiple targets, high)"
           ],
           "score": 12.0
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 11.500000000000002
         },
         {
           "provider": "Mehira - Mind Cager",
@@ -38689,14 +38728,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.88
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.5
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -39014,6 +39045,16 @@
           "score": 17.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 16.425428571428572
+        },
+        {
           "provider": "Hewynn - Tender Leaf",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -39041,16 +39082,6 @@
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 14.925428571428572
         },
         {
           "provider": "Valka - Forsaken Blade",
@@ -39099,6 +39130,14 @@
             "Max HP via Max HP buff (multiple targets, high)"
           ],
           "score": 12.0
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
+          ],
+          "score": 9.8
         },
         {
           "provider": "Dunlingr - Eternal Voice",
@@ -39179,13 +39218,6 @@
             "Max HP via Max HP buff (single target, high)"
           ],
           "score": 6.9
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.800000000000001
         },
         {
           "provider": "Phraesto - Misty Scorpion",
@@ -39563,6 +39595,15 @@
           "score": 9.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.1318
+        },
+        {
           "provider": "Shakir - Furious Howl",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
@@ -39600,20 +39641,19 @@
           "score": 7.05
         },
         {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 6.6318
-        },
-        {
           "provider": "Valka - Forsaken Blade",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 6.48
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 6.0600000000000005
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -39685,13 +39725,6 @@
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
           "score": 3.6
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.0600000000000005
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -40008,6 +40041,15 @@
           "score": 9.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.58
+        },
+        {
           "provider": "Damian - Woody Wonder",
           "reasons": [
             "Healing via Healing (area, medium)"
@@ -40034,15 +40076,6 @@
             "Healing via Healing (area, medium)"
           ],
           "score": 8.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 7.08
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -40405,17 +40438,17 @@
           "score": 8.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)"
           ],
           "score": 6.0
         },
@@ -40719,6 +40752,15 @@
           "score": 9.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.58
+        },
+        {
           "provider": "Damian - Woody Wonder",
           "reasons": [
             "Healing via Healing (area, medium)"
@@ -40745,15 +40787,6 @@
             "Healing via Healing (area, medium)"
           ],
           "score": 8.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 7.08
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -41870,6 +41903,15 @@
           "score": 8.625
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 8.58
+        },
+        {
           "provider": "Fay - Colorful Dancer",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
@@ -41892,13 +41934,12 @@
           "score": 8.0
         },
         {
-          "provider": "Pandora - Hope Unleashed",
+          "provider": "Zandrok - Watchful Edge",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
           ],
-          "score": 7.08
+          "score": 7.25
         },
         {
           "provider": "Cecia - Requiem of Thorns",
@@ -41963,13 +42004,6 @@
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`"
           ],
           "score": 4.32
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 4.25
         },
         {
           "provider": "Nara - Wrathful Wraith",
@@ -42257,6 +42291,14 @@
           "score": 7.5
         },
         {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)"
+          ],
+          "score": 6.4
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)"
@@ -42327,18 +42369,19 @@
           "score": 4.32
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 4.08
+        },
+        {
           "provider": "Lyca - Keeper of Glades",
           "reasons": [
             "Energy via Energy recovery (all units, low) `signature fuel`"
           ],
           "score": 3.5999999999999996
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.4
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -42382,14 +42425,6 @@
             "Max HP via Shield (single target, low)"
           ],
           "score": 3.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 2.58
         },
         {
           "provider": "Dunlingr - Eternal Voice",
@@ -42985,6 +43020,15 @@
           "score": 15.0
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
+          ],
+          "score": 11.153228571428572
+        },
+        {
           "provider": "Shakir - Furious Howl",
           "reasons": [
             "Life Drain via Lifedrain buff (single target, medium)",
@@ -43009,21 +43053,21 @@
           "score": 10.35
         },
         {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 9.653228571428572
-        },
-        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 9.470057142857142
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "Life Drain via Lifedrain buff (area, low, conditional (frequent))",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 9.46
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -43070,14 +43114,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 7.05
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Life Drain via Lifedrain buff (area, low, conditional (frequent))",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.460000000000001
         },
         {
           "provider": "Phraesto - Misty Scorpion",
@@ -43520,6 +43556,14 @@
           "score": 7.5
         },
         {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Dunlingr - Eternal Voice",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -43531,14 +43575,6 @@
           "provider": "Kordan - Ironblood Chieftain",
           "reasons": [
             "Life Drain via Lifedrain buff (multiple targets, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Max HP via Max HP buff (single target, low)",
-            "Healing via Healing (single target, high)"
           ],
           "score": 6.0
         },
@@ -43716,26 +43752,26 @@
         "buff": [
           {
             "name": "Shakir",
-            "score": 1.0,
+            "score": 0.7636,
             "matches": [
               "Haste",
               "Life Drain"
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.6875,
+            "name": "Cecia",
+            "score": 0.6364,
             "matches": [
               "Life Drain",
-              "Haste"
+              "Max HP"
             ]
           },
           {
-            "name": "Valka",
-            "score": 0.6875,
+            "name": "Twins",
+            "score": 0.6364,
             "matches": [
-              "Life Drain",
-              "Haste"
+              "Haste",
+              "Max HP"
             ]
           }
         ],
@@ -44230,12 +44266,21 @@
         {
           "provider": "Pandora - Hope Unleashed",
           "reasons": [
-            "Max HP via Max HP buff (single target, low)",
+            "Max HP via Max HP buff (single target, medium)",
             "Healing via Healing (single target, high)",
             "Energy via Energy recovery (single target, low) `signature fuel`",
             "Enables Ally Ultimate casts via Energy recovery (Ultimate pace)"
           ],
-          "score": 11.904
+          "score": 13.404
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 11.500000000000002
         },
         {
           "provider": "Evie - Royal Envoy",
@@ -44304,14 +44349,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.88
-        },
-        {
-          "provider": "Zandrok - Watchful Edge",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.5
         },
         {
           "provider": "Alna - Frozen Mother",

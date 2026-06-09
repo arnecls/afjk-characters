@@ -200,6 +200,17 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertNotEqual(healing.targeting, "Self")
         self.assertGreaterEqual(healing.numeric or 0, 220.0)
 
+    def test_zandrok_ally_max_hp_from_inspire(self):
+        hero = _hero_by_short_name("Zandrok")
+        ally_max_hp = [
+            e
+            for e in _effects(hero, "buff", "Max HP buff")
+            if e.targeting != "Self"
+        ]
+        self.assertEqual(len(ally_max_hp), 1)
+        self.assertEqual(ally_max_hp[0].targeting, "Multiple targets")
+        self.assertGreaterEqual(ally_max_hp[0].numeric or 0, 20.0)
+
     def test_healing_throughput_favors_faster_cadence(self):
         fast = _hero_with_magnitudes("Fay")
         slow = _hero_with_magnitudes("Hewynn")

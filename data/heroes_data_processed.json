@@ -26903,6 +26903,24 @@
             },
             {
               "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "stat_mod",
+              "stat": "max_hp",
+              "name": "Max HP buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ],
+              "label": "buff_stat"
+            },
+            {
+              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "ally",
