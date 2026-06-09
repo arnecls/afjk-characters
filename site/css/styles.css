@@ -123,6 +123,106 @@ a:hover {
   color: #fff;
 }
 
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-right: 0.15rem;
+  align-self: center;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.view-btn {
+  padding: 0.45rem 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  color: var(--accent);
+}
+
+.view-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.list-view {
+  margin-top: 0.25rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.heroes-table {
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  width: max-content;
+  min-width: 100%;
+}
+
+.heroes-table th,
+.heroes-table td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.5rem;
+  vertical-align: top;
+  text-align: left;
+  max-width: 220px;
+}
+
+.heroes-table thead th {
+  background: var(--bg);
+  font-weight: 600;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.heroes-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.heroes-table th.sortable:hover {
+  color: var(--accent);
+}
+
+.heroes-table th.sort-asc::after {
+  content: " ▲";
+  font-size: 0.65rem;
+}
+
+.heroes-table th.sort-desc::after {
+  content: " ▼";
+  font-size: 0.65rem;
+}
+
+.heroes-table td .chip {
+  font-size: 0.72rem;
+  margin: 0.05rem 0.1rem;
+}
+
+.heroes-table td .badge {
+  font-size: 0.72rem;
+}
+
 #app {
   max-width: 1200px;
   margin: 0 auto;

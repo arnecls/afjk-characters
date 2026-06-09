@@ -11,7 +11,11 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="#" class="logo" data-nav-home>AFK Journey Heroes</a>
-      <input type="search" id="search" class="search" placeholder="Search heroes…" autocomplete="off">
+      <input type="search" id="search" class="search" placeholder="Search name, faction, class…" autocomplete="off">
+      <div class="view-toggle" role="group" aria-label="View mode">
+        <button type="button" class="view-btn active" data-view="grid" aria-pressed="true">Grid</button>
+        <button type="button" class="view-btn" data-view="list" aria-pressed="false">List</button>
+      </div>
     </div>
     <div class="filters" id="filters"></div>
   </header>
@@ -20,6 +24,16 @@
     <section id="grid-view" class="grid-view">
       <div id="hero-grid" class="hero-grid"></div>
       <p id="empty-state" class="empty-state hidden">No heroes match your filters.</p>
+    </section>
+
+    <section id="list-view" class="list-view hidden">
+      <div class="table-scroll">
+        <table id="heroes-table" class="heroes-table">
+          <thead id="heroes-table-head"></thead>
+          <tbody id="heroes-table-body"></tbody>
+        </table>
+      </div>
+      <p id="list-empty-state" class="empty-state hidden">No heroes match your filters.</p>
     </section>
 
     <section id="detail-view" class="detail-view hidden">
@@ -35,6 +49,7 @@
   </footer>
 
   <script src="js/heroes-data.js"></script>
+  <script src="js/heroes-csv.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

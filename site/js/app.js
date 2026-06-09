@@ -5,16 +5,27 @@
 
   let heroes = [];
   let heroBySlug = {};
+  let heroByName = {};
   let activeFaction = "";
   let activeClass = "";
+  let viewMode = "grid";
+  let csvHeaders = [];
+  let csvRows = [];
+  let sortColumn = 0;
+  let sortDir = 1;
 
   const gridView = document.getElementById("grid-view");
+  const listView = document.getElementById("list-view");
   const detailView = document.getElementById("detail-view");
   const heroGrid = document.getElementById("hero-grid");
   const heroDetail = document.getElementById("hero-detail");
   const emptyState = document.getElementById("empty-state");
+  const listEmptyState = document.getElementById("list-empty-state");
+  const heroesTableHead = document.getElementById("heroes-table-head");
+  const heroesTableBody = document.getElementById("heroes-table-body");
   const searchInput = document.getElementById("search");
   const filtersEl = document.getElementById("filters");
+  const viewToggle = document.querySelector(".view-toggle");
 
   function inferBase() {
     const path = location.pathname;
@@ -843,14 +854,244 @@
     return badges.join("");
   }
 
+  function heroMatchesSearch(h, q) {
+    if (!q) {
+      return true;
+    }
+    const tokens = q.split(/\s+/).filter(Boolean);
+    return tokens.every(function (token) {
+      return (
+        h.name.toLowerCase().indexOf(token) !== -1 ||
+        (h.faction || "").toLowerCase().indexOf(token) !== -1 ||
+        (h.class || "").toLowerCase().indexOf(token) !== -1
+      );
+    });
+  }
+
   function filteredHeroes() {
     const q = (searchInput.value || "").trim().toLowerCase();
     return heroes.filter(function (h) {
-      if (activeFaction && h.faction !== activeFaction) return false;
-      if (activeClass && h.class !== activeClass) return false;
-      if (q && h.name.toLowerCase().indexOf(q) === -1) return false;
+      if (activeFaction && h.faction !== activeFaction) {
+        return false;
+      }
+      if (activeClass && h.class !== activeClass) {
+        return false;
+      }
+      if (!heroMatchesSearch(h, q)) {
+        return false;
+      }
       return true;
     });
+  }
+
+  function filteredHeroNames() {
+    const names = {};
+    filteredHeroes().forEach(function (h) {
+      names[h.name] = true;
+    });
+    return names;
+  }
+
+  function parseCsv(text) {
+    const rows = [];
+    let row = [];
+    let field = "";
+    let inQuotes = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (inQuotes) {
+        if (c === '"') {
+          if (text[i + 1] === '"') {
+            field += '"';
+            i++;
+          } else {
+            inQuotes = false;
+          }
+        } else {
+          field += c;
+        }
+      } else if (c === '"') {
+        inQuotes = true;
+      } else if (c === ",") {
+        row.push(field);
+        field = "";
+      } else if (c === "\n" || (c === "\r" && text[i + 1] === "\n")) {
+        row.push(field);
+        if (row.some(function (cell) {
+          return cell.length > 0;
+        })) {
+          rows.push(row);
+        }
+        row = [];
+        field = "";
+        if (c === "\r") {
+          i++;
+        }
+      } else if (c !== "\r") {
+        field += c;
+      }
+    }
+    if (field.length || row.length) {
+      row.push(field);
+      rows.push(row);
+    }
+    return rows;
+  }
+
+  function renderBadgeChip(label, kind) {
+    if (!label) {
+      return "";
+    }
+    if (kind === "faction") {
+      return (
+        '<span class="badge ' +
+        factionClass(label) +
+        '">' +
+        escapeHtml(label) +
+        "</span>"
+      );
+    }
+    return (
+      '<span class="badge">' + escapeHtml(label) + "</span>"
+    );
+  }
+
+  function renderTableCell(column, value) {
+    if (!value || !value.trim()) {
+      return "";
+    }
+    if (column === "Faction") {
+      return renderBadgeChip(value, "faction");
+    }
+    if (column === "Class") {
+      return renderBadgeChip(value, "class");
+    }
+    if (
+      column === "Signature skill speed" ||
+      column === "Non-ultimate speed"
+    ) {
+      return formatTag(value.trim());
+    }
+    if (
+      column === "DoT" ||
+      column === "HoT" ||
+      column === "Summons" ||
+      column === "Energy provider"
+    ) {
+      if (value.trim().toLowerCase() === "yes") {
+        return '<span class="chip chip-generic">✓ yes</span>';
+      }
+      return escapeHtml(value);
+    }
+    if (column === "Movement") {
+      return (
+        '<span class="chip chip-generic">🚶 ' +
+        escapeHtml(value.trim()) +
+        "</span>"
+      );
+    }
+    return value
+      .split(/\s*;\s*/)
+      .map(function (part) {
+        return renderTableEntry(part.trim());
+      })
+      .join(" ");
+  }
+
+  function renderTableEntry(text) {
+    if (/\s*(?:—|–)\s*/.test(text)) {
+      return renderRichLine(text);
+    }
+    return text
+      .split(/\s*,\s*/)
+      .map(function (part) {
+        const chip = tryChipify(part.trim());
+        return chip !== null ? chip : escapeHtml(part.trim());
+      })
+      .join(" ");
+  }
+
+  function compareCsvRows(a, b) {
+    const av = (a[sortColumn] || "").trim().toLowerCase();
+    const bv = (b[sortColumn] || "").trim().toLowerCase();
+    if (!av && !bv) {
+      return 0;
+    }
+    if (!av) {
+      return 1;
+    }
+    if (!bv) {
+      return -1;
+    }
+    if (av < bv) {
+      return -sortDir;
+    }
+    if (av > bv) {
+      return sortDir;
+    }
+    return 0;
+  }
+
+  function renderList() {
+    if (!csvHeaders.length) {
+      heroesTableHead.innerHTML = "";
+      heroesTableBody.innerHTML =
+        "<tr><td class=\"empty-state\">Table data missing. Run " +
+        "<code>just render-site</code>.</td></tr>";
+      listEmptyState.classList.add("hidden");
+      return;
+    }
+
+    const allowed = filteredHeroNames();
+    let rows = csvRows.filter(function (row) {
+      return allowed[row[0]];
+    });
+    rows = rows.slice().sort(compareCsvRows);
+
+    let headHtml = "<tr>";
+    csvHeaders.forEach(function (col, idx) {
+      let cls = "sortable";
+      if (idx === sortColumn) {
+        cls += sortDir === 1 ? " sort-asc" : " sort-desc";
+      }
+      headHtml +=
+        '<th class="' +
+        cls +
+        '" data-col="' +
+        idx +
+        '">' +
+        escapeHtml(col) +
+        "</th>";
+    });
+    headHtml += "</tr>";
+    heroesTableHead.innerHTML = headHtml;
+
+    let bodyHtml = "";
+    rows.forEach(function (row) {
+      const name = row[0] || "";
+      const hero = heroByName[name];
+      bodyHtml += "<tr>";
+      row.forEach(function (cell, idx) {
+        const col = csvHeaders[idx];
+        let inner;
+        if (col === "Name" && hero) {
+          inner =
+            '<a href="' +
+            escapeHtml(heroUrl(hero.slug)) +
+            '" class="hero-link" data-slug="' +
+            escapeHtml(hero.slug) +
+            '">' +
+            escapeHtml(name) +
+            "</a>";
+        } else {
+          inner = renderTableCell(col, cell);
+        }
+        bodyHtml += "<td>" + inner + "</td>";
+      });
+      bodyHtml += "</tr>";
+    });
+    heroesTableBody.innerHTML = bodyHtml;
+    listEmptyState.classList.toggle("hidden", rows.length > 0);
   }
 
   function renderGrid() {
@@ -878,6 +1119,21 @@
       .join("");
 
     emptyState.classList.toggle("hidden", list.length > 0);
+  }
+
+  function renderCurrentView() {
+    if (viewMode === "list") {
+      renderList();
+    } else {
+      renderGrid();
+    }
+  }
+
+  function showIndexView() {
+    detailView.classList.add("hidden");
+    gridView.classList.toggle("hidden", viewMode !== "grid");
+    listView.classList.toggle("hidden", viewMode !== "list");
+    renderCurrentView();
   }
 
   function renderSynergies(sections, heroName) {
@@ -975,6 +1231,7 @@
 
   function showDetail(hero) {
     gridView.classList.add("hidden");
+    listView.classList.add("hidden");
     detailView.classList.remove("hidden");
 
     let html = '<div class="detail-header">';
@@ -1022,10 +1279,8 @@
   }
 
   function showGrid() {
-    detailView.classList.add("hidden");
-    gridView.classList.remove("hidden");
     document.title = "AFK Journey Heroes";
-    renderGrid();
+    showIndexView();
   }
 
   function navigateHome(replace) {
@@ -1100,7 +1355,10 @@
     factions.sort();
     classes.sort();
 
-    let html = '<button type="button" class="filter-btn active" data-filter="all">All</button>';
+    let html =
+      '<span class="filter-label">Faction</span>';
+    html +=
+      '<button type="button" class="filter-btn filter-btn-all" data-filter="all">All</button>';
     factions.forEach(function (f) {
       html +=
         '<button type="button" class="filter-btn" data-filter="faction" data-value="' +
@@ -1109,6 +1367,7 @@
         escapeHtml(f) +
         "</button>";
     });
+    html += '<span class="filter-label">Class</span>';
     classes.forEach(function (c) {
       html +=
         '<button type="button" class="filter-btn" data-filter="class" data-value="' +
@@ -1118,32 +1377,78 @@
         "</button>";
     });
     filtersEl.innerHTML = html;
+    updateFilterActiveStates();
   }
 
-  function setActiveFilter(btn) {
+  function updateFilterActiveStates() {
     filtersEl.querySelectorAll(".filter-btn").forEach(function (b) {
-      b.classList.toggle("active", b === btn);
+      const f = b.dataset.filter;
+      if (f === "all") {
+        b.classList.toggle("active", !activeFaction && !activeClass);
+      } else if (f === "faction") {
+        b.classList.toggle("active", b.dataset.value === activeFaction);
+      } else if (f === "class") {
+        b.classList.toggle("active", b.dataset.value === activeClass);
+      }
     });
   }
 
   filtersEl.addEventListener("click", function (e) {
     const btn = e.target.closest(".filter-btn");
-    if (!btn) return;
-    setActiveFilter(btn);
+    if (!btn) {
+      return;
+    }
     if (btn.dataset.filter === "all") {
       activeFaction = "";
       activeClass = "";
     } else if (btn.dataset.filter === "faction") {
-      activeFaction = btn.dataset.value;
-      activeClass = "";
+      const v = btn.dataset.value;
+      activeFaction = activeFaction === v ? "" : v;
     } else if (btn.dataset.filter === "class") {
-      activeClass = btn.dataset.value;
-      activeFaction = "";
+      const v = btn.dataset.value;
+      activeClass = activeClass === v ? "" : v;
     }
-    renderGrid();
+    updateFilterActiveStates();
+    renderCurrentView();
   });
 
-  searchInput.addEventListener("input", renderGrid);
+  searchInput.addEventListener("input", renderCurrentView);
+
+  if (viewToggle) {
+    viewToggle.addEventListener("click", function (e) {
+      const btn = e.target.closest(".view-btn");
+      if (!btn) {
+        return;
+      }
+      viewMode = btn.dataset.view;
+      viewToggle.querySelectorAll(".view-btn").forEach(function (b) {
+        const active = b === btn;
+        b.classList.toggle("active", active);
+        b.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+      if (!detailView.classList.contains("hidden")) {
+        return;
+      }
+      showIndexView();
+    });
+  }
+
+  if (heroesTableHead) {
+    heroesTableHead.addEventListener("click", function (e) {
+      const th = e.target.closest("th[data-col]");
+      if (!th) {
+        return;
+      }
+      const col = parseInt(th.dataset.col, 10);
+      if (col === sortColumn) {
+        sortDir = -sortDir;
+      } else {
+        sortColumn = col;
+        sortDir = 1;
+      }
+      renderList();
+    });
+  }
 
   document.addEventListener("click", function (e) {
     const home = e.target.closest("[data-nav-home]");
@@ -1178,11 +1483,28 @@
   window.addEventListener("popstate", route);
   window.addEventListener("hashchange", route);
 
+  function initCsv(text) {
+    const parsed = parseCsv(text);
+    if (!parsed.length) {
+      csvHeaders = [];
+      csvRows = [];
+      return;
+    }
+    csvHeaders = parsed[0];
+    csvRows = parsed.slice(1);
+    if (!detailView.classList.contains("hidden")) {
+      return;
+    }
+    renderCurrentView();
+  }
+
   function initHeroes(data) {
     heroes = data.heroes || [];
     heroBySlug = {};
+    heroByName = {};
     heroes.forEach(function (h) {
       heroBySlug[h.slug] = h;
+      heroByName[h.name] = h;
     });
     buildFilters();
     route();
@@ -1213,5 +1535,27 @@
       });
   }
 
+  function loadCsvData() {
+    if (window.HEROES_CSV) {
+      initCsv(window.HEROES_CSV);
+      return;
+    }
+    if (location.protocol === "file:") {
+      return;
+    }
+    fetch(assetUrl("data/heroes-overview.csv"))
+      .then(function (r) {
+        if (!r.ok) {
+          throw new Error("Failed to load table data");
+        }
+        return r.text();
+      })
+      .then(initCsv)
+      .catch(function () {
+        /* list view shows missing-data message */
+      });
+  }
+
   loadHeroData();
+  loadCsvData();
 })();
