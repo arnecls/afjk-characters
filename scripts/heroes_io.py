@@ -272,7 +272,6 @@ YAPHALLA_NAME_ALIASES: dict[str, str] = {
 # Legacy: Yaphalla display name -> Fandom name (old merge direction).
 NAME_ALIASES: dict[str, str] = {
     "Twins": "Elijah & Lailah",
-    "Gala": "Galahad",
 }
 
 
@@ -288,11 +287,6 @@ def is_usable_yaphalla_text(text: str | None) -> bool:
     if "不用翻译" in s:
         return False
     return _CJK_RE.search(s) is None
-
-
-def curated_display_name(display: str) -> str:
-    """Map wiki roster display name to curated JSON keys (signature skills, etc.)."""
-    return YAPHALLA_NAME_ALIASES.get(display, display)
 
 
 def _lookup_yaphalla(name: str, yaphalla_by_name: dict[str, dict]) -> dict | None:

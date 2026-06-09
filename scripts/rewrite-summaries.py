@@ -3146,7 +3146,6 @@ def strip_summaries_from_heroes_md(text: str) -> str:
 
 BEHAVIOR_NAME_ALIASES: dict[str, str] = {
     "Twins": "Elijah & Lailah",
-    "Gala": "Galahad",
 }
 
 _CURATED_DISPLAY_ALIASES = {v: k for k, v in BEHAVIOR_NAME_ALIASES.items()}

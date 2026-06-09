@@ -165,7 +165,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   dormant sentences are excluded before range and repositioning analysis.
   Data from
   [heroes2.md](heroes2.md); falls back to [Heroes.md](Heroes.md) (aliases:
-  Twins → Elijah & Lailah, Gala → Galahad).
+  Twins → Elijah & Lailah).
 - **Signature skill** — the one skill that most characterises how the
   hero is played. Stored in `data/signature_skills.json` (key =
   display name from `heroes-overview.md`). Shown in the behavior block

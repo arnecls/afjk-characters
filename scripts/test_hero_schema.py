@@ -296,16 +296,16 @@ class PlacementConstraintTests(unittest.TestCase):
         )
         self.assertEqual(constraints, [])
 
-    def test_gala_ally_composition(self):
+    def test_galahad_ally_composition(self):
         constraints = rs.detect_placement_constraints(
-            self._hero_skills("Gala"), "Gala"
+            self._hero_skills("Galahad"), "Galahad"
         )
         kinds = {c.kind for c in constraints}
         self.assertIn("ally_composition", kinds)
         texts = [c.text for c in constraints if c.kind == "ally_composition"]
         self.assertTrue(any("prioritizes ally behind" in t for t in texts), texts)
 
-    def test_gala_heroes2_typo_still_detected(self):
+    def test_galahad_heroes2_typo_still_detected(self):
         """heroes2/fandom text misspells prioritizing as priortizing."""
         text = (
             "When a battle starts, Galahad marks the nearest allied hero, "
@@ -313,7 +313,7 @@ class PlacementConstraintTests(unittest.TestCase):
         )
         constraints = rs.detect_placement_constraints(
             [rs.SkillMeta("Ex. Skill", None, False, None, None, None, None, text)],
-            "Gala",
+            "Galahad",
         )
         self.assertTrue(constraints)
 

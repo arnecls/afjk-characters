@@ -152,8 +152,8 @@ class MergeSourcesTests(unittest.TestCase):
         self.assertEqual(hero["faction"], "Wilder")
         self.assertEqual(hero["description"], "Dual mages.")
 
-    def test_curated_display_name_maps_galahad_to_gala(self) -> None:
-        self.assertEqual(_rs.curated_display_name("Galahad"), "Gala")
+    def test_curated_display_name_keeps_galahad(self) -> None:
+        self.assertEqual(_rs.curated_display_name("Galahad"), "Galahad")
         self.assertEqual(_rs.curated_display_name("Aliceth"), "Aliceth")
 
 

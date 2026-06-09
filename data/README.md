@@ -1,0 +1,70 @@
+# Data directory
+
+JSON inputs and outputs for the hero pipeline (`just download` → `just analyze` →
+`just render`). See the root [README.md](../README.md) for the full workflow.
+
+## File overview
+
+| File | Category | Notes |
+| --- | --- | --- |
+| [heroes_data.json](heroes_data.json) | **Script-generated** | Merged roster from the Fandom wiki (baseline) and Yaphalla (gap-fill). Regenerate with `just download`. Committed as the canonical skill source when offline. |
+| [heroes_data_processed.json](heroes_data_processed.json) | **Script-generated** | Per-hero analysis: effects, behavior, synergy profile, magnitudes. Regenerate with `just analyze` (or `just views`). Do not edit by hand. |
+| [heroes_data_synergies.json](heroes_data_synergies.json) | **Script-generated** | Roster-wide synergy rankings, beneficiaries, and replacements. Regenerate with `just analyze` or `just analyze-synergies`. Do not edit by hand. |
+| [signature_skills.json](signature_skills.json) | **AI-generated** | Curated signature skill per hero (section, name, speed overrides). Read by analysis; edit when a hero’s identity skill is wrong. |
+| [defining_skills_alternative.json](defining_skills_alternative.json) | **AI-generated** | Alternate signature skill used for synergy fuel when the primary signature is a slow, non-buffable Ultimate. |
+| [hero_behavior_tags.json](hero_behavior_tags.json) | **AI-generated** | Combat-role tags per hero for replacement scoring. |
+| [placement_constraint_overrides.json](placement_constraint_overrides.json) | **Manual configuration** | Optional overrides when placement/composition rules cannot be parsed from skill text. |
+| [heroes_config.json](heroes_config.json) | **Manual configuration** | Tunables: synergy weights, display limits, casting-speed thresholds, replacement scoring. |
+| [schema/](schema/) | **Manual configuration** | JSON Schema definitions used to validate processed data and tag enums. |
+
+## Script-generated files
+
+These are overwritten by the pipeline. Changes made directly in the files will
+be lost on the next run.
+
+```
+just download          →  heroes_data.json
+just analyze           →  heroes_data_processed.json
+                         heroes_data_synergies.json
+```
+
+`heroes_data.json` is the only script-generated file that is normally committed
+and reused without re-downloading (`just views` skips the download step).
+
+## AI-generated files
+
+These are **source data**, not pipeline outputs. They were produced with AI
+assistance and are kept in git so behavior, signature skills, and replacement
+tags stay stable across regenerations. Update them when roster logic changes or
+a hero’s curated metadata is wrong — the analyze step reads them but never
+rewrites them.
+
+Keys use the hero **display name** from [heroes-overview.md](../heroes-overview.md)
+(e.g. `Galahad`, `Twins`).
+
+## Manual configuration
+
+Edit these when tuning scoring, fixing edge cases, or extending validation:
+
+- **`heroes_config.json`** — synergy/display/behavior/replacement parameters
+  loaded by `process_config.py`.
+- **`placement_constraint_overrides.json`** — map display name → list of
+  `{kind, text}` placement constraints; bypasses text detection for that hero.
+- **`schema/`** — contract for processed JSON and allowed behavior-tag values.
+  Update when adding new effect labels, tags, or processed fields.
+
+## Pipeline flow
+
+```
+heroes_data.json
+    + heroes_config.json
+    + signature_skills.json
+    + defining_skills_alternative.json
+    + hero_behavior_tags.json
+    + placement_constraint_overrides.json
+        ↓  just analyze
+heroes_data_processed.json
+heroes_data_synergies.json
+        ↓  just render
+Heroes.md · heroes-overview.md · heroes-overview.csv
+```
