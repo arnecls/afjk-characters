@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/tags.schema.json",
+  "title": "Hero behavior tags",
+  "description": "Combat-role tags keyed by hero display name. Used for synergy similarity scoring.",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": {
+    "type": "string",
+    "minLength": 1,
+    "description": "Hero display name as shown in heroes-overview.md."
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/heroTagList"
+  },
+  "$defs": {
+    "behaviorTag": {
+      "type": "string",
+      "enum": [
+        "ally-buffer",
+        "ally-healer",
+        "ally-shielder",
+        "aoe-damage",
+        "aoe-healing",
+        "assassin",
+        "battle-start-burst",
+        "battle-start-ult",
+        "battlefield-modification",
+        "cc-immunity",
+        "clone",
+        "counterattack",
+        "disabler",
+        "dot-specialist",
+        "enemy-debuffer",
+        "enemy-grouping",
+        "energy-provider",
+        "execute",
+        "fire-attack",
+        "high-damage-ult",
+        "hp-scaling",
+        "invincibility",
+        "life-drain",
+        "mark-target",
+        "mass-cc",
+        "revive",
+        "self-repositioner",
+        "stealth",
+        "summoner",
+        "taunt",
+        "transformation",
+        "untargetable"
+      ],
+      "description": "High-level combat role or mechanic tag for a hero."
+    },
+    "heroTagList": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/behaviorTag"
+      },
+      "description": "Distinct behavior tags assigned to one hero."
+    }
+  }
+}

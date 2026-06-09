@@ -1,0 +1,850 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/skills.schema.json",
+  "title": "Hero skills",
+  "description": "Structured skill definitions keyed by hero name, then skill name.",
+  "type": "object",
+  "minProperties": 1,
+  "additionalProperties": {
+    "$ref": "#/$defs/heroSkills"
+  },
+  "$defs": {
+    "heroSkills": {
+      "title": "Skill collection",
+      "description": "Skills keyed by skill name. Reused as the skills section on each hero in heroes-data-processed.schema.json.",
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/skill"
+      }
+    },
+    "skill": {
+      "type": "object",
+      "required": [
+        "category",
+        "description",
+        "effects"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/skillCategory"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Full skill text or summary."
+        },
+        "cooldown": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Skill cooldown in seconds."
+        },
+        "initial_cooldown": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Initial cooldown before first cast, in seconds."
+        },
+        "skill_range": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Casting range in tiles."
+        },
+        "initial_energy": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Energy available at battle start for ultimates."
+        },
+        "tier": {
+          "$ref": "#/$defs/tier",
+          "description": "Ascension tier when this skill unlocks or upgrades."
+        },
+        "effects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/effect"
+          }
+        }
+      }
+    },
+    "skillCategory": {
+      "type": "string",
+      "enum": [
+        "ultimate",
+        "skill1",
+        "skill2",
+        "ex_skill",
+        "passive"
+      ],
+      "description": "Which skill slot this entry belongs to."
+    },
+    "tier": {
+      "$ref": "game_properties.schema.json#/$defs/tier"
+    },
+    "timing": {
+      "$ref": "game_properties.schema.json#/$defs/timing"
+    },
+    "ccType": {
+      "$ref": "game_properties.schema.json#/$defs/ccType"
+    },
+    "immunityType": {
+      "$ref": "game_properties.schema.json#/$defs/immunityType"
+    },
+    "battlePhase": {
+      "$ref": "game_properties.schema.json#/$defs/battlePhase"
+    },
+    "allyType": {
+      "$ref": "game_properties.schema.json#/$defs/allyType"
+    },
+    "effectLabel": {
+      "type": "string",
+      "enum": [
+        "buff_offensive",
+        "buff_defensive",
+        "buff_healing",
+        "buff_stat",
+        "buff_summon_offensive",
+        "buff_summon_defensive",
+        "buff_summon_stat",
+        "buff_summon_stat",
+        "debuff_offensive",
+        "debuff_defensive",
+        "debuff_healing",
+        "debuff_stat",
+        "dot",
+        "hot",
+        "healing",
+        "shield",
+        "damage_hp_loss",
+        "damage_max_hp",
+        "damage_normal",
+        "damage_true",
+        "cc",
+        "cc_immunity",
+        "interrupt",
+        "move_single",
+        "move_group",
+        "taunt"
+      ],
+      "description": "Semantic tag for synergy matching. Buffs and debuffs use generalized categories; CC and damage types stay specific."
+    },
+    "duration": {
+      "type": "number",
+      "description": "Duration in seconds. 0 means instant. -1 means for the whole battle."
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "self",
+        "ally",
+        "enemy",
+        "summon",
+        "anchor"
+      ],
+      "description": "Which faction receives the effect, or anchor when the effect is tied to a battlefield point rather than a unit selection. Mixed-faction zones use separate effects per faction. Use target_count for how many units."
+    },
+    "targetCount": {
+      "type": "integer",
+      "description": "How many units of the given target faction are selected. 1 means exactly one unit. -1 means all matching units within the area (or battlefield-wide when area is zone and area_count is -1)."
+    },
+    "anchor": {
+      "type": "string",
+      "enum": [
+        "tile",
+        "caster",
+        "target_unit"
+      ],
+      "description": "Reference point for area spread. tile is a selected tile; caster is the casting unit's tile; target_unit is the tile of the unit matched by target and target_count. Required when target is anchor."
+    },
+    "area": {
+      "type": "string",
+      "enum": [
+        "single",
+        "radius",
+        "line",
+        "rectangle",
+        "arc",
+        "zone"
+      ],
+      "description": "Spatial spread from the anchor. single hits only the selected unit(s). radius covers hex tiles within area_count steps of the anchor (1 equals adjacent). line is a directed path. arc is a directed wedge (use area_direction). zone is a placed field; area_count -1 covers the whole map."
+    },
+    "areaDirection": {
+      "type": "string",
+      "enum": [
+        "front",
+        "back",
+        "left",
+        "right",
+        "row",
+        "column",
+        "center"
+      ],
+      "description": "Facing of a directed area shape (arc, line, rectangle) relative to the anchor. Omit for symmetric shapes such as radius and zone. Distinct from conditions.position, which selects which unit is picked."
+    },
+    "areaCount": {
+      "type": "integer",
+      "description": "Size of the area in tiles: hex radius, line length, arc span, rectangle depth, or zone radius. -1 means the whole map."
+    },
+    "damageType": {
+      "$ref": "game_properties.schema.json#/$defs/damageType"
+    },
+    "statModifier": {
+      "$ref": "game_properties.schema.json#/$defs/stat",
+      "description": "Stat used to scale a percentage value."
+    },
+    "valueComponent": {
+      "type": "object",
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "percentage",
+            "absolute",
+            "flat"
+          ],
+          "description": "How the numeric value is interpreted."
+        },
+        "value": {
+          "type": "number",
+          "description": "Magnitude of the component."
+        },
+        "modifier": {
+          "$ref": "#/$defs/statModifier"
+        }
+      }
+    },
+    "valueList": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/valueComponent"
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/condition"
+      }
+    },
+    "condition": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "affects",
+            "trigger_condition",
+            "count",
+            "battle_phase"
+          ]
+        },
+        "ally": {
+          "type": "boolean"
+        },
+        "enemy": {
+          "type": "boolean"
+        },
+        "self": {
+          "type": "boolean"
+        },
+        "ally_type": {
+          "$ref": "#/$defs/allyType"
+        },
+        "position": {
+          "type": "string",
+          "enum": [
+            "nearest",
+            "farthest",
+            "frontmost",
+            "rearmost",
+            "front",
+            "back",
+            "left",
+            "right",
+            "row",
+            "adjacent",
+            "same_row",
+            "center"
+          ],
+          "description": "Which unit is selected among candidates. Positional preference, not the facing of an area shape (see area_direction)."
+        },
+        "trigger": {
+          "type": "string",
+          "enum": [
+            "damage",
+            "heal",
+            "kill",
+            "defeat",
+            "cast",
+            "battle_start",
+            "normal_attack",
+            "skill_cast",
+            "crowd_control",
+            "debuff",
+            "buff",
+            "fatal_blow",
+            "energy_full"
+          ],
+          "description": "Event that must occur before the effect fires."
+        },
+        "damage_type": {
+          "$ref": "#/$defs/damageType"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "How many times an event must occur."
+        },
+        "within": {
+          "$ref": "#/$defs/duration"
+        },
+        "phase": {
+          "$ref": "#/$defs/battlePhase"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "trigger_condition"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "trigger"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "count"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "count"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "battle_phase"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "phase"
+            ]
+          }
+        }
+      ]
+    },
+    "effect": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "buff",
+            "debuff",
+            "damage",
+            "heal",
+            "shield",
+            "stat_mod",
+            "range_increase",
+            "crowd_control",
+            "dot",
+            "summon",
+            "energy",
+            "immunity",
+            "mark",
+            "execute",
+            "dispel",
+            "revive",
+            "transform_unit",
+            "transform_map",
+            "stat_steal",
+            "counter"
+          ],
+          "description": "Effect kind. Nested child effects use the same schema."
+        },
+        "tier": {
+          "$ref": "#/$defs/tier",
+          "description": "Ascension tier when this effect unlocks."
+        },
+        "label": {
+          "$ref": "#/$defs/effectLabel"
+        },
+        "target": {
+          "$ref": "#/$defs/target"
+        },
+        "target_count": {
+          "$ref": "#/$defs/targetCount"
+        },
+        "anchor": {
+          "$ref": "#/$defs/anchor"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Named buff, debuff, mark, or summon identifier."
+        },
+        "stat": {
+          "$ref": "#/$defs/statModifier"
+        },
+        "damage_type": {
+          "$ref": "#/$defs/damageType"
+        },
+        "area": {
+          "$ref": "#/$defs/area"
+        },
+        "area_direction": {
+          "$ref": "#/$defs/areaDirection"
+        },
+        "area_count": {
+          "$ref": "#/$defs/areaCount"
+        },
+        "cc-type": {
+          "$ref": "#/$defs/ccType"
+        },
+        "immunity_type": {
+          "$ref": "#/$defs/immunityType"
+        },
+        "timing": {
+          "$ref": "#/$defs/timing"
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/valueList"
+            }
+          ],
+          "description": "Magnitude as a number or structured value list."
+        },
+        "duration": {
+          "$ref": "#/$defs/duration"
+        },
+        "tick": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Interval between repeated applications, in seconds."
+        },
+        "knockback": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Tiles to knock the target back."
+        },
+        "stun": {
+          "$ref": "#/$defs/duration",
+          "description": "Shorthand stun duration in seconds."
+        },
+        "conditions": {
+          "$ref": "#/$defs/conditions"
+        },
+        "effects": {
+          "type": "array",
+          "description": "Nested child effects (recursive).",
+          "items": {
+            "$ref": "#/$defs/effect"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "buff"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "name"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "debuff"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "name"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "damage"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "heal"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "shield"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "stat_mod"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "stat",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "range_increase"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "crowd_control"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "cc-type"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "dot"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value",
+              "duration",
+              "tick"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "summon"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "name"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "energy"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "immunity"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "timing"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "execute"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "dispel"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "revive"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "transform"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "name"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "stat_steal"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "stat",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "counter"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "mark"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "target",
+              "name"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "target": {
+                "const": "anchor"
+              }
+            },
+            "required": [
+              "target"
+            ]
+          },
+          "then": {
+            "required": [
+              "anchor"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

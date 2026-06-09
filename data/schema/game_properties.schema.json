@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/game_properties.schema.json",
+  "title": "Game properties",
+  "description": "Shared game enums: stats, damage, crowd control, ascension tiers, roster.",
+  "$defs": {
+    "stat": {
+      "type": "string",
+      "enum": [
+        "atk",
+        "atk_spd",
+        "assistance",
+        "crit",
+        "crit_dmg_boost",
+        "crit_dmg_def",
+        "crit_resist",
+        "def_penetration",
+        "damage_taken",
+        "debuff_focus",
+        "energy",
+        "energy_regen_on_hit",
+        "execution",
+        "hp",
+        "haste",
+        "healing",
+        "life_drain",
+        "magic_def",
+        "max_hp",
+        "movement_speed",
+        "physical_def",
+        "proficiency",
+        "ranged_def",
+        "resilience",
+        "vitality"
+      ],
+      "description": "Hero stat or skill scaling attribute from the roster stat list."
+    },
+    "damageType": {
+      "type": "string",
+      "enum": [
+        "physical",
+        "magic",
+        "melee",
+        "ranged",
+        "true",
+        "hp_loss",
+        "max_hp",
+        "dot",
+        "normal"
+      ],
+      "description": "Damage classification."
+    },
+    "ccType": {
+      "type": "string",
+      "enum": [
+        "stun",
+        "knock_down",
+        "knock_up",
+        "frighten",
+        "silence",
+        "charm",
+        "sleep",
+        "move",
+        "pin",
+        "interrupt",
+        "freeze",
+        "taunt"
+      ],
+      "description": "Crowd-control category."
+    },
+    "immunityType": {
+      "type": "string",
+      "enum": [
+        "damage",
+        "crowd_control",
+        "debuff",
+        "all",
+        "unaffected",
+        "steadfast",
+        "immune",
+        "cleanse"
+      ],
+      "description": "What the unit becomes immune or resistant to."
+    },
+    "battlePhase": {
+      "type": "string",
+      "enum": [
+        "start_of_battle",
+        "on_ultimate",
+        "on_skill",
+        "on_defeat",
+        "once_per_battle",
+        "once_per_hero",
+        "permanent",
+        "once",
+        "form",
+        "conditional"
+      ],
+      "description": "When a conditional effect or immunity is active."
+    },
+    "timing": {
+      "$ref": "#/$defs/battlePhase",
+      "description": "When an immunity or passive effect is active."
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "base",
+        "epic",
+        "epic+",
+        "legendary",
+        "legendary+",
+        "mythic",
+        "mythic+",
+        "supreme",
+        "supreme+",
+        "paragon_1",
+        "paragon_2",
+        "paragon_3",
+        "paragon_4",
+        "ex+5",
+        "ex+10",
+        "ex+15",
+        "ex+20",
+        "ex+25",
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "description": "Ascension or Ex-weapon tier when a skill or effect unlocks."
+    },
+    "faction": {
+      "type": "string",
+      "enum": [
+        "celestial",
+        "dimensional",
+        "graveborn",
+        "hypogean",
+        "lightbearer",
+        "mauler",
+        "wilder"
+      ],
+      "description": "Hero faction."
+    },
+    "class": {
+      "type": "string",
+      "enum": [
+        "mage",
+        "marksman",
+        "rogue",
+        "support",
+        "tank",
+        "warrior"
+      ],
+      "description": "Hero class."
+    },
+    "unitFilter": {
+      "type": "string",
+      "enum": [
+        "ranged",
+        "melee",
+        "magic",
+        "physical",
+        "summon"
+      ],
+      "description": "Attack style or unit type filter for skill conditions."
+    },
+    "allyType": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/class"
+        },
+        {
+          "$ref": "#/$defs/unitFilter"
+        }
+      ],
+      "description": "Class or attack/unit filter required for an effect."
+    }
+  }
+}
