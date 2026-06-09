@@ -48,6 +48,8 @@ def apply_config(config: dict) -> None:
         _gen.MAX_SYNERGIES = dl["max_synergies"]
     if "max_beneficiaries_display" in dl:
         _gen.MAX_BENEFICIARIES_DISPLAY = dl["max_beneficiaries_display"]
+    if "fallback_beneficiaries_display" in dl:
+        _gen.FALLBACK_BENEFICIARIES_DISPLAY = dl["fallback_beneficiaries_display"]
 
     bt = config.get("behavior_thresholds", {})
     for key, attr in [

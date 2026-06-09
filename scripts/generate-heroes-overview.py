@@ -64,6 +64,7 @@ HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
 
 MAX_SYNERGIES = 5
 MAX_BENEFICIARIES_DISPLAY = 10
+FALLBACK_BENEFICIARIES_DISPLAY = 3
 
 # Proximity aura buffs (provider-attached) only match melee-close receivers.
 PROXIMITY_MELEE_MAX_RANGE = 3.5
@@ -1077,12 +1078,12 @@ def score_combined_synergy(
     )
 
 
-def rank_synergies(
+def rank_synergy_entries(
     receiver: _rs.Hero,
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
     behavior_by_title: dict[str, _rs.HeroBehavior],
-) -> list[tuple[str, list[str]]]:
+) -> list[tuple[float, list[str], str]]:
     receiver_behavior = behavior_by_title[receiver.title]
     receiver_movement = receiver_behavior.movement
     signature_speed = receiver_behavior.synergy_signature_speed or "normal"
@@ -1101,14 +1102,24 @@ def rank_synergies(
         ranked.append((score, reasons, provider.title))
 
     ranked.sort(key=lambda x: (-x[0], x[2]))
-    filtered = [
+    return [
         entry
         for entry in ranked
         if not should_exclude_synergy(entry[1], receiver)
     ]
+
+
+def rank_synergies(
+    receiver: _rs.Hero,
+    heroes: list[_rs.Hero],
+    enabler_matchers: dict[str, callable],
+    behavior_by_title: dict[str, _rs.HeroBehavior],
+) -> list[tuple[str, list[str], float]]:
     return [
         (title, reasons, score)
-        for score, reasons, title in filtered[:MAX_SYNERGIES]
+        for score, reasons, title in rank_synergy_entries(
+            receiver, heroes, enabler_matchers, behavior_by_title
+        )[:MAX_SYNERGIES]
     ]
 
 
@@ -1718,15 +1729,30 @@ def build_beneficiaries_index(
     behavior_by_title: dict[str, _rs.HeroBehavior],
 ) -> dict[str, list[tuple[float, str]]]:
     """Provider title -> (score, receiver short name), strongest matches first."""
-    index: dict[str, list[tuple[float, str]]] = defaultdict(list)
+    primary: dict[str, list[tuple[float, str]]] = defaultdict(list)
+    full: dict[str, list[tuple[float, str]]] = defaultdict(list)
     for receiver in heroes:
-        for provider_title, _, score in rank_synergies(
+        entries = rank_synergy_entries(
             receiver, heroes, enabler_matchers, behavior_by_title
-        ):
-            index[provider_title].append((score, short_name(receiver.title)))
-    return {
-        k: sorted(v, key=lambda x: (-x[0], x[1])) for k, v in index.items()
-    }
+        )
+        receiver_name = short_name(receiver.title)
+        for score, _reasons, provider_title in entries[:MAX_SYNERGIES]:
+            primary[provider_title].append((score, receiver_name))
+        for score, _reasons, provider_title in entries:
+            full[provider_title].append((score, receiver_name))
+
+    result: dict[str, list[tuple[float, str]]] = {}
+    for hero in heroes:
+        title = hero.title
+        if primary[title]:
+            result[title] = sorted(
+                primary[title], key=lambda x: (-x[0], x[1])
+            )
+        else:
+            result[title] = sorted(
+                full[title], key=lambda x: (-x[0], x[1])
+            )[:FALLBACK_BENEFICIARIES_DISPLAY]
+    return result
 
 
 def format_synergies(

@@ -136,6 +136,12 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 - **Contess**
   - Healing (multiple targets, high)
 
+### Units benefitting most from Alna
+
+- Indris
+- Nerion
+- Perseus
+
 ### Units that can act as a replacement for Alna
 
 **Similar Skills**
@@ -224,6 +230,12 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Alsa
+
+- Indris
+- Bonnie
+- Nerion
+
 ### Units that can act as a replacement for Alsa
 
 **Damage**
@@ -302,6 +314,12 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
   - Healing (area, medium)
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
 
+### Units benefitting most from Antandra
+
+- Nerion
+- Carolina
+- Perseus
+
 ### Units that can act as a replacement for Antandra
 
 **Buffs on allies**
@@ -379,6 +397,12 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 - **Thador**
   - Energy recovery (lieutenant, start of battle) `signature fuel`
 
+### Units benefitting most from Arden
+
+- Nerion
+- Carolina
+- Bonnie
+
 ### Units that can act as a replacement for Arden
 
 **Similar Skills**
@@ -443,6 +467,12 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
   - Healing (all units, high)
 - **Solise**
   - Healing (all units, high)
+
+### Units benefitting most from Atalanta
+
+- Nerion
+- Carolina
+- Indris
 
 ### Units that can act as a replacement for Atalanta
 
@@ -521,6 +551,12 @@ Common buffers are **Hepler**, **Rowan**, or **Hugin**.
 - **Velara**
   - Healing (area, medium)
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Athalia
+
+- Indris
+- Nerion
+- Aliceth
 
 ### Units that can act as a replacement for Athalia
 
@@ -781,6 +817,12 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
 
+### Units benefitting most from Berial
+
+- Nerion
+- Carolina
+- Bonnie
+
 ### Units that can act as a replacement for Berial
 
 **Damage**
@@ -854,6 +896,12 @@ Common buffers are **Lyca**, **Ravion**, or **Rowan**.
   - Enables Magic damage from allies via Magic damage + all enemies (all units)
 - **Kulu**
   - Enables Debuff on target via Damage taken debuff (all units)
+
+### Units benefitting most from Bonnie
+
+- Indris
+- Aliceth
+- Shadewing
 
 ### Units that can act as a replacement for Bonnie
 
@@ -937,6 +985,12 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 - **Pandora**
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
+
+### Units benefitting most from Brutus
+
+- Shadewing
+- Indris
+- Aliceth
 
 ### Units that can act as a replacement for Brutus
 
@@ -1097,6 +1151,12 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 - **Contess**
   - Healing (multiple targets, high)
 
+### Units benefitting most from Callan
+
+- Nerion
+- Carolina
+- Perseus
+
 ### Units that can act as a replacement for Callan
 
 **Buffs on allies**
@@ -1170,6 +1230,12 @@ Common buffers are **Ravion**, **Lyca**, or **Hepler**.
   - Enables CC on enemies via Bind (area, high)
 - **Lumont**
   - Enables CC on enemies via Stun (area, high)
+
+### Units benefitting most from Carolina
+
+- Nerion
+- Indris
+- Bonnie
 
 ### Units that can act as a replacement for Carolina
 
@@ -1248,6 +1314,12 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - **Velara**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Cassadee
+
+- Nerion
+- Carolina
+- Bonnie
 
 ### Units that can act as a replacement for Cassadee
 
@@ -1405,6 +1477,10 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 - **Galahad**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Chippy
+
+- Himmel
+
 ### Units that can act as a replacement for Chippy
 
 **Similar Skills**
@@ -1453,6 +1529,12 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
   - Healing (multiple targets, high)
 - **Gerda**
   - Healing (multiple targets, high)
+
+### Units benefitting most from Contess
+
+- Perseus
+- Silven
+- Indris
 
 ### Units that can act as a replacement for Contess
 
@@ -1538,6 +1620,12 @@ Common buffers are **Hugin**, **Lyca**, or **Rowan**.
   - Max HP via Shield (single target, medium)
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Cryonaia
+
+- Bonnie
+- Himmel
+- Niru
+
 ### Units that can act as a replacement for Cryonaia
 
 **Similar Skills**
@@ -1610,6 +1698,12 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Cyran
+
+- Bonnie
+- Nerion
+- Indris
 
 ### Units that can act as a replacement for Cyran
 
@@ -1859,6 +1953,12 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
 
+### Units benefitting most from Dionel
+
+- Nerion
+- Silven
+- Aliceth
+
 ### Units that can act as a replacement for Dionel
 
 **Buffs on allies**
@@ -1945,6 +2045,12 @@ Common buffers are **Hugin**, **Hepler**, or **Twins**.
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
   - Healing (area, medium)
 
+### Units benefitting most from Dunlingr
+
+- Perseus
+- Indris
+- Nerion
+
 ### Units that can act as a replacement for Dunlingr
 
 **Buffs on allies**
@@ -2025,6 +2131,12 @@ Common buffers are **Hepler**, **Hugin**, or **Rowan**.
   - Max HP via Shield (all units, low)
 - **Lenya**
   - Max HP via Shield (single target, high)
+
+### Units benefitting most from Eironn
+
+- Indris
+- Bonnie
+- Nerion
 
 ### Units that can act as a replacement for Eironn
 
@@ -2288,6 +2400,12 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
   - Max HP buff (multiple targets, low)
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
 
+### Units benefitting most from Faramor
+
+- Nerion
+- Carolina
+- Indris
+
 ### Units that can act as a replacement for Faramor
 
 **Similar Skills**
@@ -2365,6 +2483,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Vala**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Fay
+
+- Perseus
+- Silven
+- Indris
 
 ### Units that can act as a replacement for Fay
 
@@ -2678,6 +2802,12 @@ Common buffers are **Hepler** or **Hugin**.
 - **Lenya**
   - Max HP via Shield (single target, high)
 
+### Units benefitting most from Gerda
+
+- Perseus
+- Silven
+- Nerion
+
 ### Units that can act as a replacement for Gerda
 
 **Buffs on allies**
@@ -2749,6 +2879,12 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 - **Damian**
   - Healing (area, medium)
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
+
+### Units benefitting most from Granny Dahnie
+
+- Nerion
+- Indris
+- Carolina
 
 ### Units that can act as a replacement for Granny Dahnie
 
@@ -2826,6 +2962,12 @@ Common buffers are **Hugin**, **Hepler**, or **Twins**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
   - Healing (area, medium)
 
+### Units benefitting most from Gunnar
+
+- Nerion
+- Carolina
+- Perseus
+
 ### Units that can act as a replacement for Gunnar
 
 **Buffs on allies**
@@ -2895,6 +3037,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Vala**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Gwyneth
+
+- Nerion
+- Carolina
+- Shadewing
 
 ### Units that can act as a replacement for Gwyneth
 
@@ -2970,6 +3118,12 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 
+### Units benefitting most from Hammie
+
+- Bonnie
+- Himmel
+- Perseus
+
 ### Units that can act as a replacement for Hammie
 
 **Buffs on allies**
@@ -3033,6 +3187,12 @@ Common buffers are **Rowan**, **Hepler**, or **Hugin**.
 - **Velara**
   - Haste buff (single target, high) `signature fuel`
   - Healing (area, medium)
+
+### Units benefitting most from Harak
+
+- Perseus
+- Silven
+- Nerion
 
 ### Units that can act as a replacement for Harak
 
@@ -3394,6 +3554,12 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 
+### Units benefitting most from Hodgkin
+
+- Indris
+- Aliceth
+- Bonnie
+
 ### Units that can act as a replacement for Hodgkin
 
 **Damage**
@@ -3535,6 +3701,12 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 - **Antandra**
   - Healing (multiple targets, high)
 
+### Units benefitting most from Igor
+
+- Indris
+- Aliceth
+- Bonnie
+
 ### Units that can act as a replacement for Igor
 
 **Damage**
@@ -3596,6 +3768,12 @@ Common buffers are **Lyca**, **Ravion**, or **Hugin**.
   - ATK SPD buff (all units, low) `signature fuel`
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via Energy drain (all units)
+
+### Units benefitting most from Indris
+
+- Nerion
+- Carolina
+- Aliceth
 
 ### Units that can act as a replacement for Indris
 
@@ -3674,6 +3852,12 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Hugin**.
   - ATK buff (single target, high)
   - Healing (multiple targets, high)
 
+### Units benefitting most from Isabella
+
+- Indris
+- Bonnie
+- Perseus
+
 ### Units that can act as a replacement for Isabella
 
 **Buffs on allies**
@@ -3751,6 +3935,12 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Lucius**
   - Max HP via Shield (area, medium)
+
+### Units benefitting most from Kafra
+
+- Nerion
+- Indris
+- Carolina
 
 ### Units that can act as a replacement for Kafra
 
@@ -3935,6 +4125,12 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 - **Solise**
   - Healing (all units, high)
 
+### Units benefitting most from Kordan
+
+- Nerion
+- Carolina
+- Perseus
+
 ### Units that can act as a replacement for Kordan
 
 **Buffs on allies**
@@ -4006,6 +4202,12 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 - **Dunlingr**
   - ATK SPD buff (all units, low) `signature fuel`
   - Haste buff (single target, low) `signature fuel`
+
+### Units benefitting most from Korin
+
+- Nerion
+- Carolina
+- Perseus
 
 ### Units that can act as a replacement for Korin
 
@@ -4079,6 +4281,12 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Daimon**
   - Max HP via Shield (multiple targets, medium)
+
+### Units benefitting most from Kruger
+
+- Indris
+- Aliceth
+- Bonnie
 
 ### Units that can act as a replacement for Kruger
 
@@ -4243,6 +4451,11 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
   - Healing (area, medium)
 
+### Units benefitting most from Laios
+
+- Nerion
+- Carolina
+
 ### Units that can act as a replacement for Laios
 
 **Similar Skills**
@@ -4323,6 +4536,12 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
   - Haste buff (area, low, conditional (frequent)) `signature fuel`
   - Max HP buff (multiple targets, low)
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
+
+### Units benefitting most from Lenya
+
+- Nerion
+- Perseus
+- Silven
 
 ### Units that can act as a replacement for Lenya
 
@@ -4584,6 +4803,12 @@ Common buffers are **Rowan**, **Hepler**, or **Hugin**.
   - Healing (area, medium)
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
 
+### Units benefitting most from Lucca
+
+- Nerion
+- Carolina
+- Himmel
+
 ### Units that can act as a replacement for Lucca
 
 **Similar Skills**
@@ -4739,6 +4964,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - **Galahad**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Lucy
+
+- Nerion
+- Carolina
+- Perseus
+
 ### Units that can act as a replacement for Lucy
 
 **Buffs on allies**
@@ -4801,6 +5032,12 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 - **Velara**
   - Healing (area, medium)
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Ludovic
+
+- Himmel
+- Perseus
+- Silven
 
 ### Units that can act as a replacement for Ludovic
 
@@ -4879,6 +5116,12 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
   - Healing (all units, medium)
 - **Lorsan**
   - Healing (all units, high)
+
+### Units benefitting most from Lumont
+
+- Nerion
+- Carolina
+- Indris
 
 ### Units that can act as a replacement for Lumont
 
@@ -5046,6 +5289,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Marcille
+
+- Perseus
+- Himmel
+- Silven
+
 ### Units that can act as a replacement for Marcille
 
 **Buffs on allies**
@@ -5122,6 +5371,11 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Marilee
+
+- Nerion
+- Carolina
+
 ### Units that can act as a replacement for Marilee
 
 **Similar Skills**
@@ -5193,6 +5447,12 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
   - Summon damage buff (summons only, medium)
   - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
   - Max HP via Shield (summons only, medium)
+
+### Units benefitting most from Mehira
+
+- Nerion
+- Carolina
+- Perseus
 
 ### Units that can act as a replacement for Mehira
 
@@ -5346,6 +5606,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - **Vala**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Mirael
+
+- Shadewing
+- Bonnie
+- Himmel
+
 ### Units that can act as a replacement for Mirael
 
 **Similar Skills**
@@ -5400,6 +5666,12 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
   - Energy recovery (single target, low) `signature fuel`
 - **Thador**
   - Energy recovery (single target, low) `signature fuel`
+
+### Units benefitting most from Nara
+
+- Nerion
+- Carolina
+- Perseus
 
 ### Units that can act as a replacement for Nara
 
@@ -5484,6 +5756,12 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Natsu
+
+- Indris
+- Shadewing
+- Bonnie
+
 ### Units that can act as a replacement for Natsu
 
 **Damage**
@@ -5545,6 +5823,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Vala**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Nazrik
+
+- Indris
+- Nerion
+- Carolina
 
 ### Units that can act as a replacement for Nazrik
 
@@ -5612,6 +5896,12 @@ Common buffers are **Hepler**, **Lyca**, or **Ravion**.
   - Enables CC on enemies via Knock back (area, high)
 - **Kordan**
   - Enables CC on enemies via Bind (area, high)
+
+### Units benefitting most from Nerion
+
+- Bonnie
+- Carolina
+- Indris
 
 ### Units that can act as a replacement for Nerion
 
@@ -5697,6 +5987,12 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
   - Healing (area, medium)
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
 
+### Units benefitting most from Niru
+
+- Bonnie
+- Zorya
+- Himmel
+
 ### Units that can act as a replacement for Niru
 
 **Damage**
@@ -5751,6 +6047,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Vala**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Odie
+
+- Shadewing
+- Bonnie
+- Indris
 
 ### Units that can act as a replacement for Odie
 
@@ -5884,6 +6186,12 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Pang
+
+- Nerion
+- Carolina
+- Perseus
+
 ### Units that can act as a replacement for Pang
 
 **Buffs on allies**
@@ -5959,6 +6267,12 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Parisa
+
+- Bonnie
+- Himmel
+- Niru
+
 ### Units that can act as a replacement for Parisa
 
 **Damage**
@@ -6014,6 +6328,12 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 - **Evie**
   - ATK buff (multiple targets, high)
   - Enables Ally stat buffs via 2 ally stat buffs (start of battle)
+
+### Units benefitting most from Perseus
+
+- Nerion
+- Carolina
+- Silven
 
 ### Units that can act as a replacement for Perseus
 
@@ -6095,6 +6415,12 @@ Common buffers are **Smokey & Meerky**, **Rowan**, or **Hewynn**.
 - **Koko**
   - Healing (all units, medium)
 
+### Units benefitting most from Phraesto
+
+- Perseus
+- Nerion
+- Silven
+
 ### Units that can act as a replacement for Phraesto
 
 **Buffs on allies**
@@ -6170,6 +6496,12 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - **Velara**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Pippa
+
+- Bonnie
+- Indris
+- Aliceth
 
 ### Units that can act as a replacement for Pippa
 
@@ -6353,6 +6685,12 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 - **Contess**
   - Healing (multiple targets, high)
 
+### Units benefitting most from Reinier
+
+- Bonnie
+- Indris
+- Himmel
+
 ### Units that can act as a replacement for Reinier
 
 **Buffs on allies**
@@ -6429,6 +6767,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Vala**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+
+### Units benefitting most from Rhys
+
+- Nerion
+- Carolina
+- Perseus
 
 ### Units that can act as a replacement for Rhys
 
@@ -6693,6 +7037,12 @@ Common buffers are **Rowan**, **Lyca**, or **Hepler**.
   - Healing (area, medium)
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
 
+### Units benefitting most from Salazer
+
+- Nerion
+- Perseus
+- Silven
+
 ### Units that can act as a replacement for Salazer
 
 **Buffs on allies**
@@ -6759,6 +7109,12 @@ Common buffers are **Rowan**, **Lyca**, or **Hepler**.
   - Energy recovery (lieutenant, start of battle) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
+
+### Units benefitting most from Satrana
+
+- Indris
+- Shadewing
+- Bonnie
 
 ### Units that can act as a replacement for Satrana
 
@@ -6837,6 +7193,12 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
   - Energy recovery (single target, low) `signature fuel`
 - **Thador**
   - Energy recovery (single target, low) `signature fuel`
+
+### Units benefitting most from Scarlita
+
+- Nerion
+- Carolina
+- Perseus
 
 ### Units that can act as a replacement for Scarlita
 
@@ -6918,6 +7280,12 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 - **Contess**
   - ATK buff (single target, high)
   - Healing (multiple targets, high)
+
+### Units benefitting most from Seth
+
+- Nerion
+- Perseus
+- Carolina
 
 ### Units that can act as a replacement for Seth
 
@@ -7012,6 +7380,12 @@ Common buffers are **Lyca**, **Hepler**, or **Rowan**.
   - ATK buff (single target, medium)
   - Max HP buff (single target, low)
   - Enables Debuff on target via Haste debuff (area)
+
+### Units benefitting most from Shadewing
+
+- Bonnie
+- Indris
+- Aliceth
 
 ### Units that can act as a replacement for Shadewing
 
@@ -7188,6 +7562,11 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
   - Healing (area, medium)
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
 
+### Units benefitting most from Shemira
+
+- Bonnie
+- Himmel
+
 ### Units that can act as a replacement for Shemira
 
 **Similar Skills**
@@ -7242,6 +7621,12 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
   - Enables Ally stat buffs via 4 ally stat buffs
 - **Shakir**
   - Enables Ally stat buffs via 3 ally stat buffs
+
+### Units benefitting most from Silven
+
+- Nerion
+- Carolina
+- Bonnie
 
 ### Units that can act as a replacement for Silven
 
@@ -7318,6 +7703,12 @@ Common buffers are **Hugin**, **Twins**, or **Hepler**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Daimon**
   - Max HP via Shield (multiple targets, medium)
+
+### Units benefitting most from Silvina
+
+- Nerion
+- Carolina
+- Indris
 
 ### Units that can act as a replacement for Silvina
 
@@ -7639,6 +8030,12 @@ Common buffers are **Hugin**, **Twins**, or **Hepler**.
   - Haste buff (area, low, conditional (frequent)) `signature fuel`
   - Max HP buff (multiple targets, low)
 
+### Units benefitting most from Sonja
+
+- Nerion
+- Perseus
+- Carolina
+
 ### Units that can act as a replacement for Sonja
 
 **Buffs on allies**
@@ -7716,6 +8113,12 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
   - Max HP via Shield (all units, low)
   - Healing (all units, medium)
 
+### Units benefitting most from Soren
+
+- Nerion
+- Perseus
+- Silven
+
 ### Units that can act as a replacement for Soren
 
 **Buffs on allies**
@@ -7791,6 +8194,12 @@ Common buffers are **Mikola**, **Twins**, or **Rowan**.
 - **Solise**
   - Healing (all units, high)
 
+### Units benefitting most from Sylphira
+
+- Nerion
+- Indris
+- Bonnie
+
 ### Units that can act as a replacement for Sylphira
 
 **Damage**
@@ -7860,6 +8269,12 @@ Common buffers are **Mikola**, **Hepler**, or **Hewynn**.
 - **Contess**
   - ATK buff (single target, high)
   - Healing (multiple targets, high)
+
+### Units benefitting most from Talene
+
+- Nerion
+- Perseus
+- Silven
 
 ### Units that can act as a replacement for Talene
 
@@ -8009,6 +8424,12 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, medium)
+
+### Units benefitting most from Temesia
+
+- Nerion
+- Carolina
+- Himmel
 
 ### Units that can act as a replacement for Temesia
 
@@ -8170,6 +8591,12 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
 - **Contess**
   - Healing (multiple targets, high)
 
+### Units benefitting most from Thoran
+
+- Himmel
+- Perseus
+- Silven
+
 ### Units that can act as a replacement for Thoran
 
 **Buffs on allies**
@@ -8239,6 +8666,12 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 - **Contess**
   - Healing (multiple targets, high)
 
+### Units benefitting most from Tilaya
+
+- Perseus
+- Silven
+- Zorya
+
 ### Units that can act as a replacement for Tilaya
 
 **Buffs on allies**
@@ -8307,6 +8740,12 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
   - Healing (multiple targets, high)
 - **Contess**
   - Healing (multiple targets, high)
+
+### Units benefitting most from Ulmus
+
+- Nerion
+- Carolina
+- Himmel
 
 ### Units that can act as a replacement for Ulmus
 
@@ -8390,6 +8829,12 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
   - Healing (all units, high)
 - **Solise**
   - Healing (all units, high)
+
+### Units benefitting most from Vala
+
+- Nerion
+- Indris
+- Perseus
 
 ### Units that can act as a replacement for Vala
 
@@ -8477,6 +8922,12 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD buff (all units, low) `signature fuel`
+
+### Units benefitting most from Valen
+
+- Nerion
+- Carolina
+- Indris
 
 ### Units that can act as a replacement for Valen
 
@@ -8735,6 +9186,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
+### Units benefitting most from Viperian
+
+- Shadewing
+- Bonnie
+- Indris
+
 ### Units that can act as a replacement for Viperian
 
 **Similar Skills**
@@ -8807,6 +9264,12 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
   - Lifedrain buff (area, low, conditional (frequent))
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
 
+### Units benefitting most from Walker
+
+- Nerion
+- Carolina
+- Indris
+
 ### Units that can act as a replacement for Walker
 
 **Damage**
@@ -8874,6 +9337,12 @@ Common buffers are **Hepler**, **Hugin**, or **Twins**.
 - **Damian**
   - Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
   - Healing (area, medium)
+
+### Units benefitting most from Zandrok
+
+- Perseus
+- Nerion
+- Silven
 
 ### Units that can act as a replacement for Zandrok
 
@@ -8946,6 +9415,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
   - ATK SPD buff (multiple targets, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`
+
+### Units benefitting most from Zanie
+
+- Perseus
+- Silven
+- Nerion
 
 ### Units that can act as a replacement for Zanie
 
@@ -9042,6 +9517,12 @@ Common buffers are **Rowan**, **Hugin**, or **Smokey & Meerky**.
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, medium)
+
+### Units benefitting most from Zorya
+
+- Nerion
+- Carolina
+- Bonnie
 
 ### Units that can act as a replacement for Zorya
 

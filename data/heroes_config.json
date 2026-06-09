@@ -43,6 +43,7 @@
   "display_limits": {
     "max_synergies": 5,
     "max_beneficiaries_display": 10,
+    "fallback_beneficiaries_display": 3,
     "obvious_provider_threshold": 20
   },
   "behavior_thresholds": {
