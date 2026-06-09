@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="github-pages-base" content="/afjk-characters/">
+  <title>AFK Journey Heroes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" data-nav-home>AFK Journey Heroes</a>
+      <input type="search" id="search" class="search" placeholder="Search heroes…" autocomplete="off">
+    </div>
+    <div class="filters" id="filters"></div>
+  </header>
+
+  <main id="app">
+    <section id="grid-view" class="grid-view">
+      <div id="hero-grid" class="hero-grid"></div>
+      <p id="empty-state" class="empty-state hidden">No heroes match your filters.</p>
+    </section>
+
+    <section id="detail-view" class="detail-view hidden">
+      <nav class="detail-nav">
+        <a href="#" data-nav-home>&larr; All heroes</a>
+      </nav>
+      <article id="hero-detail" class="hero-detail"></article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hero data derived from skill analysis. Not affiliated with Lilith Games or Yaphalla.</p>
+  </footer>
+
+  <script src="js/heroes-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

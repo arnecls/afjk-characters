@@ -15,6 +15,7 @@ This repository collects and analyzes hero skill data for [AFK Journey](https://
 | **[Heroes.md](Heroes.md)** | Raw skill descriptions only — no summaries |
 | **`data/`** | Canonical JSON (`heroes_data.json`) plus processed analysis and JSON schemas |
 | **`scripts/`** | Python pipeline: download, analyze, validate, and render views |
+| **[`site/`](site/)** | Static web viewer (GitHub Pages) — hero grid with synergy details |
 | **[`.cursor/AGENTS.md`](.cursor/AGENTS.md)** | Detailed rules for parsing skills, scoring synergies, and editing summaries |
 
 ### What each hero entry contains
@@ -39,6 +40,22 @@ For filtering or pivot tables, open [heroes-overview.csv](heroes-overview.csv) i
 
 For verbatim skill wording (levels, cooldowns, unlock tiers), see [Heroes.md](Heroes.md).
 
+### Web viewer
+
+Browse the roster in a browser at **[https://arnecls.github.io/afjk-characters/](https://arnecls.github.io/afjk-characters/)** (deployed from the [`site/`](site/) directory via GitHub Pages).
+
+Each hero has a shareable URL, e.g. `/hero/aliceth`. Synergy partners link to their own pages.
+
+Rebuild site data locally:
+
+```bash
+just render-site
+```
+
+This writes `site/data/heroes.json` and downloads any missing portrait images from Yaphalla into `site/assets/`. Running `just views` also refreshes the site JSON.
+
+Enable GitHub Pages once in the repository settings: source **Deploy from a branch**, branch **`gh-pages`**, folder **`/` (root)**. Pushes to `main` or `webview` trigger [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
+
 ### Regenerate the views
 
 The committed JSON in `data/heroes_data.json` is the source of truth. Views are rebuilt from it with [just](https://github.com/casey/just) (or the equivalent Python commands).
@@ -55,7 +72,7 @@ just setup
 just views
 ```
 
-This runs analysis (`data/heroes_data_processed.json`, `data/heroes_data_synergies.json`) and renders `Heroes.md`, `heroes-overview.md`, and `heroes-overview.csv`.
+This runs analysis (`data/heroes_data_processed.json`, `data/heroes_data_synergies.json`) and renders `Heroes.md`, `heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json`.
 
 **Full refresh from live sources (requires network):**
 
@@ -82,6 +99,7 @@ analyze   →  data/heroes_data_processed.json
 render    →  Heroes.md
              heroes-overview.md
              heroes-overview.csv
+             site/data/heroes.json
 ```
 
 Configuration for synergy scoring and display limits lives in `data/heroes_config.json`. Curated metadata (signature skills, behavior tags, placement overrides) is in other files under `data/`.
