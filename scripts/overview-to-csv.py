@@ -126,6 +126,13 @@ MOVEMENT_RE = re.compile(r"^- Movement: ([^\n]+)$", re.M)
 CASTING_SPEED_RE = re.compile(r"^- Casting speed: (\w+)$", re.M)
 DEFINING_SKILL_SPEED_RE = re.compile(r"^- Signature skill speed: (\w+)$", re.M)
 NON_ULT_SPEED_RE = re.compile(r"^- Non-ultimate speed: (\w+)$", re.M)
+SKILL_OVERVIEW_SIG_SPEED_RE = re.compile(
+    r"^- Signature skill(?: \(ultimate\))?:.*?\bspeed `(slow|normal|fast)`",
+    re.M,
+)
+SKILL_OVERVIEW_NON_ULT_SPEED_RE = re.compile(
+    r"^- Non-ultimate:.*?\bspeed `(slow|normal|fast)`", re.M
+)
 SECTION_RE = re.compile(r"^#### (.+)$", re.M)
 BULLET_RE = re.compile(r"^- (.+)$", re.M)
 MAGNITUDE_RE = re.compile(r"`(high|medium|low)`")
@@ -210,6 +217,10 @@ def parse_behavior(block: str) -> tuple[str, str, str]:
     if m := MOVEMENT_RE.search(block):
         # "stationary (no finite attack range)" -> "stationary"
         movement = m.group(1).split(" (", 1)[0].strip()
+    if m := SKILL_OVERVIEW_SIG_SPEED_RE.search(block):
+        defining_skill_speed = m.group(1).strip()
+    if m := SKILL_OVERVIEW_NON_ULT_SPEED_RE.search(block):
+        non_ult_speed = m.group(1).strip()
     if m := DEFINING_SKILL_SPEED_RE.search(block):
         defining_skill_speed = m.group(1).strip()
     if m := NON_ULT_SPEED_RE.search(block):

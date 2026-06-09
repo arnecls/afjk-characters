@@ -205,6 +205,98 @@ class RoundTripTests(unittest.TestCase):
         )
 
 
+class SkillOverviewTests(unittest.TestCase):
+    def _hero_by_display(self, display_name: str):
+        text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+        heroes = [rs.parse_hero_block(b) for b in blocks]
+        for hero in heroes:
+            rs.analyze_hero(hero)
+        rs.assign_magnitudes(heroes)
+        display_by_title = {
+            h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
+        }
+        behavior_by_title = rs.build_behavior_for_heroes(heroes, display_by_title)
+        for hero in heroes:
+            if display_by_title[hero.title] == display_name:
+                return hero, behavior_by_title[hero.title]
+        self.fail(f"hero not found: {display_name}")
+
+    def test_hugin_skill_overview_speeds(self):
+        _, behavior = self._hero_by_display("Hugin")
+        overview = behavior.skill_overview
+        self.assertEqual(overview["signature"].speed, "slow")
+        self.assertEqual(overview["ultimate"].speed, "slow")
+        self.assertEqual(overview["non_ultimate"].speed, "fast")
+
+    def test_format_behavior_has_skill_overview(self):
+        _, behavior = self._hero_by_display("Hugin")
+        lines = rs.format_behavior_section("Hugin", behavior)
+        text = "\n".join(lines)
+        self.assertIn("#### Skill overview", text)
+        self.assertIn("speed `slow`", text)
+        self.assertNotIn("Signature skill speed:", text)
+        self.assertNotIn("damage `none`", text)
+        self.assertNotIn("- Ultimate:", text)
+        self.assertIn("- Signature skill (ultimate):", text)
+        self.assertIn("- Ally composition:", text)
+        self.assertIn("- Self placement:", text)
+
+    def test_non_ult_signature_keeps_ultimate_row(self):
+        _, behavior = self._hero_by_display("Daimon")
+        text = "\n".join(rs.format_behavior_section("Daimon", behavior))
+        self.assertIn("- Ultimate:", text)
+
+    def test_ravion_true_damage_line_in_skill_overview(self):
+        _, behavior = self._hero_by_display("Ravion")
+        text = "\n".join(rs.format_behavior_section("Ravion", behavior))
+        self.assertIn("- True damage:", text)
+        self.assertIn("HP loss", text)
+        self.assertTrue(behavior.skill_overview["signature"].true_damage)
+
+
+class PlacementConstraintTests(unittest.TestCase):
+    def _hero_skills(self, display_name: str):
+        text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
+        for block in re.split(r"\n(?=## )", text):
+            if not block.startswith("## "):
+                continue
+            title = block.splitlines()[0].replace("## ", "").strip()
+            if title.split(" - ", 1)[0].strip() == display_name:
+                return rs.load_skill_meta(block)
+        self.fail(f"hero block not found: {display_name}")
+
+    def test_hugin_placement_constraints(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Hugin"), "Hugin"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        self.assertIn("self_placement", kinds)
+
+    def test_phraesto_placement_constraints(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Phraesto"), "Phraesto"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        self.assertIn("self_placement", kinds)
+
+    def test_ravion_composition_not_grid_placement(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Ravion"), "Ravion"
+        )
+        self.assertTrue(constraints)
+        self.assertTrue(all(c.kind == "ally_composition" for c in constraints))
+        self.assertNotIn("ally_placement", {c.kind for c in constraints})
+
+    def test_bonnie_has_no_placement_constraints(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Bonnie"), "Bonnie"
+        )
+        self.assertEqual(constraints, [])
+
+
 @unittest.skipUnless(hs.jsonschema is not None, "jsonschema not installed")
 class SchemaValidationTests(unittest.TestCase):
     def test_processed_json_validates(self):

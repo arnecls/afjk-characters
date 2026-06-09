@@ -298,8 +298,81 @@
         },
         "non_ult_speed": {
           "$ref": "#/$defs/castingSpeed"
+        },
+        "placement_constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["kind", "text"],
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "ally_placement",
+                  "ally_composition",
+                  "self_placement"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "skill_overview": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "signature": {
+              "$ref": "#/$defs/skillOverviewMetrics"
+            },
+            "ultimate": {
+              "$ref": "#/$defs/skillOverviewMetrics"
+            },
+            "non_ultimate": {
+              "$ref": "#/$defs/skillOverviewMetrics"
+            }
+          }
         }
       }
+    },
+    "skillOverviewMetrics": {
+      "type": "object",
+      "required": ["speed", "damage", "heal", "buffs", "debuffs"],
+      "additionalProperties": false,
+      "properties": {
+        "speed": {
+          "$ref": "#/$defs/skillOverviewSpeed"
+        },
+        "damage": {
+          "$ref": "#/$defs/skillOverviewMagnitude"
+        },
+        "heal": {
+          "$ref": "#/$defs/skillOverviewMagnitude"
+        },
+        "buffs": {
+          "$ref": "#/$defs/skillOverviewMagnitude"
+        },
+        "debuffs": {
+          "$ref": "#/$defs/skillOverviewMagnitude"
+        },
+        "true_damage": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/skillOverviewMagnitude"
+          }
+        }
+      }
+    },
+    "skillOverviewSpeed": {
+      "type": "string",
+      "enum": ["slow", "normal", "fast", "none"]
+    },
+    "skillOverviewMagnitude": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "none"]
     },
     "castingSpeed": {
       "type": "string",

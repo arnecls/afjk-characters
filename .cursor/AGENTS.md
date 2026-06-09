@@ -182,21 +182,30 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   the primary signature is a non-buffable **Ultimate** that is still slow
   (not fast/battle-start). Non-ultimate signatures (e.g. Bonnie's Skill1)
   keep primary speed so fuel targets identity, not a side ult.
-- **Casting speed** — split into three lines: **signature skill speed**,
-  **ultimate speed**, and **non-ultimate speed** (`slow`, `normal`, or
-  `fast`). Each uses absolute time thresholds on the relevant skill(s).
-  Ultimate time: `initial_cd` + `(ULT_ENERGY_CAPACITY - Initial Energy) /
-  ENERGY_FILL_RATE` + channel duration (`for Xs`). Non-ultimate skills:
-  `cooldown + initial_cd * INITIAL_CD_SKILL_WEIGHT` (Skill1/Skill2/Ex
-  weighted 50% / 30% / 20% for the composite non-ult line). Signature
-  skill speed uses the signature skill's own time (ult formula if
-  Ultimate, else skill formula). Tunables in `rewrite-summaries.py`:
-  `ENERGY_FILL_RATE` (100), `ULT_ENERGY_CAPACITY` (1000),
-  `INITIAL_CD_SKILL_WEIGHT` (0.5), `INITIAL_CD_CAP` (60),
-  `CASTING_SPEED_FAST_THRESHOLD` (5.0 s),
-  `CASTING_SPEED_SLOW_THRESHOLD` (8.5 s).
-  `compute_per_skill_speeds()` / `format_behavior_section()` in
-  `rewrite-summaries.py`.
+- **Placement constraints** — optional top-block bullets when skill text
+  ties ally buffs to grid placement or auto-selected allies:
+  **Ally composition** (`ally_placement` + `ally_composition` kinds) and
+  **Self placement** (`self_placement`). Detected in
+  `detect_placement_constraints()`; stored in
+  `behavior.placement_constraints`. Overrides in
+  `data/placement_constraint_overrides.json`.
+- **Skill overview** — `#### Skill overview` subsection with rows for
+  **Signature skill** (labeled **Signature skill (ultimate)** when the
+  ultimate row is omitted), **Ultimate** (only when signature is not the
+  ultimate), and **Non-ultimate**. Each row lists only non-`none`
+  indicators among `speed`, `heal`, `buffs`, `debuffs`, `damage` (damage
+  last; `high` / `medium` / `low`; speed `slow` / `normal` / `fast`).
+  When any tier deals **HP loss**, **Max HP-based damage**, or **True
+  damage**, a final `- True damage: {type} \`{mag}\`, …` line lists types
+  (peak per type across tiers; p75 for non-ultimate).
+  Computed in `compute_skill_overview()` in
+  `rewrite-summaries.py`; stored in `behavior.skill_overview`. Speed uses
+  `compute_per_skill_speeds()` thresholds. Damage scores per skill
+  section from chunk text (roster quantiles). Heal/buffs/debuffs peak
+  magnitudes from `skill_slices` effects. Non-ultimate row aggregates
+  Skill1/Skill2/Ex with **p75** per metric type. Synergy fuel still uses
+  `signature_skill_speed` / `synergy_signature_speed` in processed JSON
+  (not shown in the markdown block).
 
 Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).
 

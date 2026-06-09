@@ -20,6 +20,15 @@ HEROES_MD = ROOT / "Heroes.md"
 HEROES2_MD = ROOT / "heroes2.md"
 DEFINING_SKILLS_FILE = ROOT / "data" / "signature_skills.json"
 DEFINING_SKILLS_ALTERNATIVE_FILE = ROOT / "data" / "defining_skills_alternative.json"
+PLACEMENT_CONSTRAINT_OVERRIDES_FILE = (
+    ROOT / "data" / "placement_constraint_overrides.json"
+)
+
+PLACEMENT_KIND_LABELS = {
+    "ally_placement": "Ally placement",
+    "ally_composition": "Ally composition",
+    "self_placement": "Self placement",
+}
 
 SECTION_TIERS = {
     "Ultimate": "base",
@@ -3269,6 +3278,43 @@ class SkillMeta:
 
 
 @dataclass
+class PlacementConstraint:
+    kind: str
+    text: str
+
+
+@dataclass
+class SkillOverviewMetrics:
+    speed: str = "none"
+    damage: str = "none"
+    heal: str = "none"
+    buffs: str = "none"
+    debuffs: str = "none"
+    true_damage: dict[str, str] = field(default_factory=dict)
+
+
+SKILL_OVERVIEW_KEYS = ("signature", "ultimate", "non_ultimate")
+TRUE_DAMAGE_TYPE_ORDER = ("HP loss", "Max HP-based damage", "True damage")
+NON_ULT_SKILL_SECTIONS = ("Skill1", "Skill2", "Ex. Skill")
+SECTION_TO_SPEED_KEY: dict[str, str] = {
+    "Ultimate": "ult",
+    "Skill1": "skill1",
+    "Skill2": "skill2",
+    "Ex. Skill": "ex",
+}
+_SKILL_HEAL_LABELS = frozenset({"Healing", "Healing over time"})
+_MAG_SCORE = {"none": 0, "low": 1, "medium": 2, "high": 3}
+_SPEED_SCORE = {"none": 0, "slow": 1, "normal": 2, "fast": 3}
+_SCORE_TO_MAG = {0: "none", 1: "low", 2: "medium", 3: "high"}
+_SCORE_TO_SPEED = {0: "none", 1: "slow", 2: "normal", 3: "fast"}
+_ATK_DAMAGE_PATTERNS = [
+    r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+    r"deals?\s+(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+    r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+]
+
+
+@dataclass
 class HeroBehavior:
     movement: str
     movement_note: str
@@ -3281,6 +3327,8 @@ class HeroBehavior:
     synergy_signature_is_ult: bool = False
     ult_speed: str = ""
     non_ult_speed: str = ""
+    placement_constraints: list[PlacementConstraint] = field(default_factory=list)
+    skill_overview: dict[str, SkillOverviewMetrics] = field(default_factory=dict)
 
 
 def _parse_meta_number(value: str) -> float | None:
@@ -3722,6 +3770,317 @@ def _load_signature_skills_alternative() -> dict[str, dict]:
     )
 
 
+def _load_placement_constraint_overrides() -> dict[str, list[PlacementConstraint]]:
+    if not PLACEMENT_CONSTRAINT_OVERRIDES_FILE.exists():
+        return {}
+    raw = json.loads(
+        PLACEMENT_CONSTRAINT_OVERRIDES_FILE.read_text(encoding="utf-8")
+    )
+    result: dict[str, list[PlacementConstraint]] = {}
+    for name, entries in raw.items():
+        result[name] = [
+            PlacementConstraint(kind=e["kind"], text=e["text"])
+            for e in entries
+        ]
+    return result
+
+
+_ALLY_WORD_RE = re.compile(
+    r"\b(?:all(?:ied)?(?: hero(?:es)?)?|ally|allies|guarded ally|lieutenant|"
+    r"companion|blessed hero|winter warrior|recipient)\b",
+    re.I,
+)
+_ENEMY_WORD_RE = re.compile(r"\b(?:enem(?:y|ies)|foe|foes)\b", re.I)
+
+
+def _clause_has_ally_not_enemy(clause: str) -> bool:
+    return bool(_ALLY_WORD_RE.search(clause)) and not (
+        _ENEMY_WORD_RE.search(clause)
+        and not _ALLY_WORD_RE.search(clause)
+    )
+
+
+def _add_constraint(
+    found: list[PlacementConstraint],
+    seen: set[tuple[str, str]],
+    kind: str,
+    text: str,
+) -> None:
+    key = (kind, text)
+    if key in seen:
+        return
+    seen.add(key)
+    found.append(PlacementConstraint(kind=kind, text=text))
+
+
+def detect_placement_constraints(
+    skills: list[SkillMeta],
+    display_name: str = "",
+    overrides: dict[str, list[PlacementConstraint]] | None = None,
+    block_text: str = "",
+) -> list[PlacementConstraint]:
+    """Detect ally/self placement and composition constraints from skill text."""
+    override_map = overrides if overrides is not None else (
+        _load_placement_constraint_overrides()
+    )
+    if display_name and display_name in override_map:
+        return list(override_map[display_name])
+
+    combined = " ".join(skill.text for skill in skills if skill.text)
+    if block_text:
+        combined = f"{combined} {block_text}"
+    if not combined.strip():
+        return []
+
+    found: list[PlacementConstraint] = []
+    seen: set[tuple[str, str]] = set()
+
+    rules: list[tuple[re.Pattern[str], str, str]] = [
+        (
+            re.compile(
+                r"sets (?:his|her) \w+ on the tile where (?:he|she) is placed "
+                r"during battle preparation",
+                re.I,
+            ),
+            "self_placement",
+            "stays anchored to battle-prep tile; returns after displacement",
+        ),
+        (
+            re.compile(
+                r"etches .{0,80}one tile behind (?:him|her).{0,120}"
+                r"granting ally on this tile",
+                re.I,
+            ),
+            "ally_placement",
+            "put one ally on the tile 1 tile behind "
+            "(ATK bonus; buff ends if they leave the sigil)",
+        ),
+        (
+            re.compile(
+                r"forms a bond with the ally placed behind (?:him|her) "
+                r"during battle preparation",
+                re.I,
+            ),
+            "ally_placement",
+            "place ally directly behind at battle prep "
+            "(shield share, Life Drain, and ATK bond)",
+        ),
+        (
+            re.compile(
+                r"designates the ally placed 1 tile behind (?:him|her) as",
+                re.I,
+            ),
+            "ally_placement",
+            "place lieutenant 1 tile behind at battle prep "
+            "(Crit + shared shields)",
+        ),
+        (
+            re.compile(
+                r"during battle preparation.{0,120}bless an adjacent allied hero"
+                r".{0,80}behind (?:him|her)",
+                re.I,
+            ),
+            "ally_placement",
+            "bless adjacent ally at battle prep; prioritizes tile behind",
+        ),
+        (
+            re.compile(
+                r"adjacent allies placed behind (?:him|her) during "
+                r"battle preparation",
+                re.I,
+            ),
+            "ally_placement",
+            "place adjacent allies behind at battle prep (DEF buff)",
+        ),
+        (
+            re.compile(
+                r"for each ally placed in an adjacent tile behind (?:him|her) "
+                r"when a battle starts",
+                re.I,
+            ),
+            "ally_placement",
+            "place allies on adjacent tiles behind at battle start "
+            "(shields and ATK boost)",
+        ),
+        (
+            re.compile(
+                r"during battle preparation.{0,120}ally placed 1 tile in front",
+                re.I,
+            ),
+            "ally_placement",
+            "place ally 1 tile in front at battle prep (revive target)",
+        ),
+        (
+            re.compile(
+                r"during battle preparation.{0,120}ally placed in the same row",
+                re.I,
+            ),
+            "ally_placement",
+            "place ally in same row at battle prep (Winter Warrior buffs)",
+        ),
+        (
+            re.compile(
+                r"allied heroes placed 1 tile behind them when a battle starts",
+                re.I,
+            ),
+            "ally_placement",
+            "place allies 1 tile behind this hero and the Illusion "
+            "for contract buffs",
+        ),
+        (
+            re.compile(
+                r"both .{0,40} and (?:his|her) Illusion are positioned "
+                r"in the same row",
+                re.I,
+            ),
+            "self_placement",
+            "keep this hero and Illusion in the same row "
+            "(damage reduction and battle-start shields)",
+        ),
+        (
+            re.compile(
+                r"assigns an Objective to each of the 2 rearmost allies",
+                re.I,
+            ),
+            "ally_composition",
+            "Objectives go to the 2 rearmost allies; backline heroes "
+            "receive ATK and Energy on completion",
+        ),
+        (
+            re.compile(
+                r"selects the frontmost ally \(except (?:herself|himself)\) "
+                r"as the guarded ally",
+                re.I,
+            ),
+            "ally_composition",
+            "frontmost ally becomes guarded ally (shared shields)",
+        ),
+        (
+            re.compile(
+                r"selects the frontmost allied hero as (?:her|his) companion",
+                re.I,
+            ),
+            "ally_composition",
+            "frontmost ally becomes companion (stat stacks and ult buffs)",
+        ),
+        (
+            re.compile(
+                r"grants .{0,40} to the frontmost allied hero other than "
+                r"(?:herself|himself)",
+                re.I,
+            ),
+            "ally_composition",
+            "frontmost ally carries Pyre of Renewal (AoE damage and healing)",
+        ),
+        (
+            re.compile(
+                r"summons a quill to follow the rearmost ally",
+                re.I,
+            ),
+            "ally_composition",
+            "rearmost ally starts with healing quill; tracks highest "
+            "damage dealer",
+        ),
+        (
+            re.compile(
+                r"casts defensive magic on (?:herself|himself) and the "
+                r"frontmost ally",
+                re.I,
+            ),
+            "ally_composition",
+            "frontmost ally shares damage reduction with this hero",
+        ),
+        (
+            re.compile(
+                r"protects the frontmost adjacent allied hero",
+                re.I,
+            ),
+            "ally_composition",
+            "frontmost adjacent ally gets fatal-blow protection",
+        ),
+        (
+            re.compile(
+                r"pulls the rearmost ally into (?:her|his) box",
+                re.I,
+            ),
+            "ally_composition",
+            "rearmost ally enters invincible box, then gains Energy and ATK",
+        ),
+        (
+            re.compile(
+                r"grant the shield to the frontmost ally instead",
+                re.I,
+            ),
+            "ally_composition",
+            "when rooted, shields frontmost ally instead of self",
+        ),
+        (
+            re.compile(
+                r"selects the nearest ally.{0,80}prioritizing the ally "
+                r"behind (?:herself|himself)",
+                re.I,
+            ),
+            "ally_composition",
+            "nearest ally blessed at battle start; prioritizes ally behind",
+        ),
+        (
+            re.compile(
+                r"selects an ally placed in the same row as (?:herself|himself) "
+                r"to become",
+                re.I,
+            ),
+            "ally_placement",
+            "place ally in same row at battle prep (Winter Warrior buffs)",
+        ),
+    ]
+
+    for pattern, kind, text in rules:
+        if pattern.search(combined):
+            _add_constraint(found, seen, kind, text)
+
+    for clause in re.split(r"(?<=[.!?])\s+", combined):
+        clause = clause.strip()
+        if not clause:
+            continue
+        if not _clause_has_ally_not_enemy(clause):
+            continue
+        if re.search(
+            r"\b(?:rearmost|frontmost|weakest) (?:all(?:ied)?(?: hero)?|allies?)\b",
+            clause,
+            re.I,
+        ) and not re.search(r"\b(?:rearmost|frontmost) enem", clause, re.I):
+            if re.search(
+                r"\b(?:selects?|grants?|assigns?|blesses?|protects?|pulls?|"
+                r"follows?|designates?)\b",
+                clause,
+                re.I,
+            ):
+                if any(
+                    c.text.startswith("frontmost") or c.text.startswith("rearmost")
+                    or "Objectives" in c.text
+                    for c in found
+                ):
+                    continue
+                if re.search(r"\brearmost all", clause, re.I):
+                    _add_constraint(
+                        found,
+                        seen,
+                        "ally_composition",
+                        "rearmost allies are auto-selected for ally buffs "
+                        "or effects at battle start",
+                    )
+                elif re.search(r"\bfrontmost all", clause, re.I):
+                    _add_constraint(
+                        found,
+                        seen,
+                        "ally_composition",
+                        "frontmost allies are auto-selected for ally buffs "
+                        "or effects at battle start",
+                    )
+
+    return found[:4]
+
+
 NON_BUFFABLE_SIGNATURE_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"when a battle starts", re.I),
     re.compile(r"at battle start", re.I),
@@ -3789,6 +4148,285 @@ def _signature_skill_speed_label(
     return per_skill.get(key, "normal")
 
 
+def _hero_has_section(hero: Hero, skills: list[SkillMeta], section: str) -> bool:
+    if section in hero.skill_slices:
+        return True
+    return any(skill.section == section for skill in skills)
+
+
+def _peak_magnitude(mags: list[str]) -> str:
+    if not mags:
+        return "none"
+    return max(mags, key=lambda m: _MAG_SCORE.get(m, 0))
+
+
+def _p75_label(values: list[str], score_map: dict[str, int], to_label: dict[int, str]) -> str:
+    scores = [score_map[v] for v in values if v in score_map and v != "none"]
+    if not scores:
+        return "none"
+    if len(scores) == 1:
+        return to_label[scores[0]]
+    p75 = statistics.quantiles(scores, n=4)[2]
+    nearest = min((1, 2, 3), key=lambda s: abs(s - p75))
+    return to_label[nearest]
+
+
+def _score_damage_chunk(text: str, dmg_type: str, targeting: str) -> float:
+    if targeting == "Self" and not _chunk_targets_enemies(text):
+        return 0.0
+    if dmg_type in TRUE_DAMAGE_TYPES:
+        return _score_true_damage_chunk(text, dmg_type, targeting)
+    amounts = _all_amounts(text, _ATK_DAMAGE_PATTERNS)
+    if not amounts:
+        return 0.0
+    amount = max(amounts)
+    freq = _damage_frequency_multiplier(text)
+    weight = DAMAGE_TARGETING_WEIGHT.get(targeting, 1.5)
+    return weight * amount * freq
+
+
+def _section_damage_score(hero: Hero, section: str, primary_dmg: str) -> float:
+    max_score = 0.0
+    for _tier, text, sec in hero.skill_chunks:
+        if sec != section:
+            continue
+        if _chunk_is_companion_focused(text):
+            continue
+        if _skill_chunk_has_ally_only_damage(text):
+            continue
+        tgt = detect_targeting(text)
+        for dmg_type in detect_damage_types(text, primary_dmg):
+            score = _score_damage_chunk(text, dmg_type, tgt)
+            max_score = max(max_score, score)
+    return max_score
+
+
+def _section_true_damage_scores(
+    hero: Hero, section: str, primary_dmg: str
+) -> dict[str, float]:
+    scores: dict[str, float] = {}
+    for _tier, text, sec in hero.skill_chunks:
+        if sec != section:
+            continue
+        if _chunk_is_companion_focused(text):
+            continue
+        if _skill_chunk_has_ally_only_damage(text):
+            continue
+        tgt = detect_targeting(text)
+        for dmg_type in detect_damage_types(text, primary_dmg):
+            if dmg_type not in TRUE_DAMAGE_TYPES:
+                continue
+            score = _score_damage_chunk(text, dmg_type, tgt)
+            if score > 0:
+                scores[dmg_type] = max(scores.get(dmg_type, 0.0), score)
+    return scores
+
+
+def build_true_damage_thresholds(
+    heroes: list[Hero],
+) -> dict[str, tuple[float, float]]:
+    by_type: dict[str, list[float]] = defaultdict(list)
+    for hero in heroes:
+        primary = hero.damage_type or "Physical"
+        for section in ("Ultimate", *NON_ULT_SKILL_SECTIONS):
+            for dmg_type, score in _section_true_damage_scores(
+                hero, section, primary
+            ).items():
+                by_type[dmg_type].append(score)
+    thresholds: dict[str, tuple[float, float]] = {}
+    for dmg_type, scores in by_type.items():
+        ordered = sorted(scores)
+        if len(ordered) >= 4:
+            t1, t2 = statistics.quantiles(ordered, n=3)
+            thresholds[dmg_type] = (t1, t2)
+        else:
+            thresholds[dmg_type] = (40.0, 120.0)
+    return thresholds
+
+
+def _true_damage_scores_to_magnitudes(
+    scores: dict[str, float],
+    thresholds: dict[str, tuple[float, float]],
+) -> dict[str, str]:
+    mags: dict[str, str] = {}
+    for dmg_type, score in scores.items():
+        t1, t2 = thresholds.get(dmg_type, (40.0, 120.0))
+        mags[dmg_type] = _damage_score_to_magnitude(score, (t1, t2))
+    return mags
+
+
+def _aggregate_true_damage_p75(
+    section_mags: list[dict[str, str]],
+) -> dict[str, str]:
+    by_type: dict[str, list[str]] = defaultdict(list)
+    for mags in section_mags:
+        for dmg_type, mag in mags.items():
+            if mag != "none":
+                by_type[dmg_type].append(mag)
+    return {
+        dmg_type: _p75_label(mags, _MAG_SCORE, _SCORE_TO_MAG)
+        for dmg_type, mags in by_type.items()
+    }
+
+
+def _damage_score_to_magnitude(score: float, thresholds: tuple[float, float]) -> str:
+    if score <= 0:
+        return "none"
+    t1, t2 = thresholds
+    if score <= t1:
+        return "low"
+    if score <= t2:
+        return "medium"
+    return "high"
+
+
+def build_section_damage_thresholds(heroes: list[Hero]) -> tuple[float, float]:
+    scores: list[float] = []
+    for hero in heroes:
+        primary = hero.damage_type or "Physical"
+        for section in ("Ultimate", *NON_ULT_SKILL_SECTIONS):
+            score = _section_damage_score(hero, section, primary)
+            if score > 0:
+                scores.append(score)
+    if len(scores) >= 4:
+        t1, t2 = statistics.quantiles(sorted(scores), n=3)
+        return t1, t2
+    return 40.0, 120.0
+
+
+def _section_speed_label(
+    speeds: dict[str, str], section: str, has_section: bool
+) -> str:
+    if not has_section:
+        return "none"
+    key = SECTION_TO_SPEED_KEY.get(section)
+    if not key:
+        return "none"
+    return speeds.get(key, "normal")
+
+
+def _section_effect_metrics(
+    hero: Hero, section: str
+) -> tuple[str, str, str]:
+    sl = hero.skill_slices.get(section)
+    if not sl:
+        return "none", "none", "none"
+    effects = sl.effects + sl.summon_effects
+    heal_mags = [
+        e.magnitude for e in effects
+        if e.category == "buff" and e.label in _SKILL_HEAL_LABELS
+    ]
+    buff_mags = [
+        e.magnitude for e in effects
+        if e.category == "buff" and e.label not in _SKILL_HEAL_LABELS
+    ]
+    debuff_mags = [e.magnitude for e in effects if e.category == "debuff"]
+    return (
+        _peak_magnitude(heal_mags),
+        _peak_magnitude(buff_mags),
+        _peak_magnitude(debuff_mags),
+    )
+
+
+def _empty_skill_overview_metrics() -> SkillOverviewMetrics:
+    return SkillOverviewMetrics()
+
+
+def compute_section_skill_metrics(
+    hero: Hero,
+    skills: list[SkillMeta],
+    section: str,
+    speeds: dict[str, str],
+    damage_thresholds: tuple[float, float],
+    true_damage_thresholds: dict[str, tuple[float, float]],
+) -> SkillOverviewMetrics:
+    if not _hero_has_section(hero, skills, section):
+        return _empty_skill_overview_metrics()
+    primary = hero.damage_type or "Physical"
+    heal, buffs, debuffs = _section_effect_metrics(hero, section)
+    return SkillOverviewMetrics(
+        speed=_section_speed_label(speeds, section, True),
+        damage=_damage_score_to_magnitude(
+            _section_damage_score(hero, section, primary),
+            damage_thresholds,
+        ),
+        heal=heal,
+        buffs=buffs,
+        debuffs=debuffs,
+        true_damage=_true_damage_scores_to_magnitudes(
+            _section_true_damage_scores(hero, section, primary),
+            true_damage_thresholds,
+        ),
+    )
+
+
+def compute_skill_overview(
+    hero: Hero,
+    skills: list[SkillMeta],
+    speeds: dict[str, str],
+    defining: dict | None,
+    damage_thresholds: tuple[float, float],
+    true_damage_thresholds: dict[str, tuple[float, float]],
+) -> dict[str, SkillOverviewMetrics]:
+    sig_section = defining.get("section", "Ultimate") if defining else None
+    signature = (
+        compute_section_skill_metrics(
+            hero,
+            skills,
+            sig_section,
+            speeds,
+            damage_thresholds,
+            true_damage_thresholds,
+        )
+        if sig_section
+        else _empty_skill_overview_metrics()
+    )
+    ultimate = compute_section_skill_metrics(
+        hero,
+        skills,
+        "Ultimate",
+        speeds,
+        damage_thresholds,
+        true_damage_thresholds,
+    )
+    non_ult_metrics = [
+        compute_section_skill_metrics(
+            hero,
+            skills,
+            section,
+            speeds,
+            damage_thresholds,
+            true_damage_thresholds,
+        )
+        for section in NON_ULT_SKILL_SECTIONS
+    ]
+    non_ultimate = SkillOverviewMetrics(
+        speed=_p75_label(
+            [m.speed for m in non_ult_metrics], _SPEED_SCORE, _SCORE_TO_SPEED
+        ),
+        damage=_p75_label(
+            [m.damage for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
+        ),
+        heal=_p75_label(
+            [m.heal for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
+        ),
+        buffs=_p75_label(
+            [m.buffs for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
+        ),
+        debuffs=_p75_label(
+            [m.debuffs for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
+        ),
+        true_damage=_aggregate_true_damage_p75(
+            [m.true_damage for m in non_ult_metrics]
+        ),
+    )
+    return {
+        "signature": signature,
+        "ultimate": ultimate,
+        "non_ultimate": non_ultimate,
+    }
+
+
 def build_behavior_for_heroes(
     heroes: list[Hero],
     display_names: dict[str, str],
@@ -3806,11 +4444,13 @@ def build_behavior_for_heroes(
     heroes_index = index_hero_blocks(h1_text)
 
     skills_by_title: dict[str, list[SkillMeta]] = {}
+    block_by_title: dict[str, str] = {}
     for hero in heroes:
         display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
         block = resolve_behavior_block(
             display, hero.title, heroes2_index, heroes_index
         )
+        block_by_title[hero.title] = block
         skills_by_title[hero.title] = load_skill_meta(block)
 
     casting_scores = compute_casting_scores(skills_by_title)
@@ -3818,6 +4458,9 @@ def build_behavior_for_heroes(
     per_skill_speeds = compute_per_skill_speeds(skills_by_title)
     defining_by_display = _load_signature_skills()
     alternative_by_display = _load_signature_skills_alternative()
+    placement_overrides = _load_placement_constraint_overrides()
+    damage_thresholds = build_section_damage_thresholds(heroes)
+    true_damage_thresholds = build_true_damage_thresholds(heroes)
 
     result: dict[str, HeroBehavior] = {}
     for hero in heroes:
@@ -3827,6 +4470,20 @@ def build_behavior_for_heroes(
         speeds = per_skill_speeds.get(hero.title, {})
         defining = defining_by_display.get(display)
         alternative = alternative_by_display.get(display)
+        placement_constraints = detect_placement_constraints(
+            skills,
+            display,
+            placement_overrides,
+            block_text=block_by_title[hero.title],
+        )
+        skill_overview = compute_skill_overview(
+            hero,
+            skills,
+            speeds,
+            defining,
+            damage_thresholds,
+            true_damage_thresholds,
+        )
 
         if defining:
             synergy_speed, synergy_is_ult = _effective_synergy_signature(
@@ -3846,6 +4503,8 @@ def build_behavior_for_heroes(
                 synergy_signature_is_ult=synergy_is_ult,
                 ult_speed=speeds.get("ult", "normal"),
                 non_ult_speed=speeds.get("non_ult", "normal"),
+                placement_constraints=placement_constraints,
+                skill_overview=skill_overview,
             )
         else:
             result[hero.title] = HeroBehavior(
@@ -3855,13 +4514,76 @@ def build_behavior_for_heroes(
                 synergy_signature_speed="normal",
                 ult_speed=speeds.get("ult", "normal"),
                 non_ult_speed=speeds.get("non_ult", "normal"),
+                placement_constraints=placement_constraints,
+                skill_overview=skill_overview,
             )
     return result
 
 
+def _skill_overview_metrics(
+    overview: dict[str, SkillOverviewMetrics] | dict[str, dict[str, str]],
+    key: str,
+) -> SkillOverviewMetrics:
+    raw = overview.get(key, {})
+    if isinstance(raw, SkillOverviewMetrics):
+        return raw
+    if isinstance(raw, dict) and raw:
+        return SkillOverviewMetrics(
+            speed=raw.get("speed", "none"),
+            damage=raw.get("damage", "none"),
+            heal=raw.get("heal", "none"),
+            buffs=raw.get("buffs", "none"),
+            debuffs=raw.get("debuffs", "none"),
+            true_damage=dict(raw.get("true_damage", {})),
+        )
+    return _empty_skill_overview_metrics()
+
+
+_SKILL_OVERVIEW_FIELD_ORDER = (
+    ("speed", "speed"),
+    ("heal", "heal"),
+    ("buffs", "buffs"),
+    ("debuffs", "debuffs"),
+    ("damage", "damage"),
+)
+
+
+def _format_skill_overview_line(label: str, metrics: SkillOverviewMetrics) -> str:
+    parts = [
+        f"{name} `{getattr(metrics, attr)}`"
+        for attr, name in _SKILL_OVERVIEW_FIELD_ORDER
+        if getattr(metrics, attr) != "none"
+    ]
+    if not parts:
+        return f"- {label}: —"
+    return f"- {label}: {', '.join(parts)}"
+
+
+def _format_true_damage_line(true_damage: dict[str, str]) -> str | None:
+    parts = [
+        f"{dmg_type} `{true_damage[dmg_type]}`"
+        for dmg_type in TRUE_DAMAGE_TYPE_ORDER
+        if dmg_type in true_damage
+    ]
+    if not parts:
+        return None
+    return f"- True damage: {', '.join(parts)}"
+
+
+def _merge_true_damage(*tier_damage: dict[str, str]) -> dict[str, str]:
+    merged: dict[str, str] = {}
+    for td in tier_damage:
+        for dmg_type, mag in td.items():
+            if (
+                dmg_type not in merged
+                or _MAG_SCORE.get(mag, 0) > _MAG_SCORE.get(merged[dmg_type], 0)
+            ):
+                merged[dmg_type] = mag
+    return merged
+
+
 def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
-    lines.append(f"- Movement: {behavior.movement} ({behavior.movement_note})")
     if behavior.signature_skill_name:
         ult_suffix = (
             " (ultimate)" if behavior.signature_skill_is_ult else ""
@@ -3870,13 +4592,39 @@ def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[s
             f"- Signature skill: {behavior.signature_skill_name}{ult_suffix}"
             f" — {behavior.signature_skill_description}"
         )
-        lines.append(
-            f"- Signature skill speed: {behavior.signature_skill_speed}"
-        )
-        lines.append(f"- Ultimate speed: {behavior.ult_speed}")
-        lines.append(f"- Non-ultimate speed: {behavior.non_ult_speed}")
-    else:
-        lines.append(f"- Casting speed: {behavior.casting_speed}")
+    lines.append(f"- Movement: {behavior.movement} ({behavior.movement_note})")
+    for constraint in behavior.placement_constraints:
+        if isinstance(constraint, PlacementConstraint):
+            kind = constraint.kind
+            text = constraint.text
+        else:
+            kind = constraint["kind"]
+            text = constraint["text"]
+        if kind in ("ally_placement", "ally_composition"):
+            lines.append(f"- Ally composition: {text}")
+        elif kind == "self_placement":
+            lines.append(f"- Self placement: {text}")
+    overview = behavior.skill_overview or {}
+    lines.append("")
+    lines.append("#### Skill overview")
+    lines.append("")
+    sig_overview_label = (
+        "Signature skill (ultimate)"
+        if behavior.signature_skill_is_ult
+        else "Signature skill"
+    )
+    sig_metrics = _skill_overview_metrics(overview, "signature")
+    ult_metrics = _skill_overview_metrics(overview, "ultimate")
+    non_ult_metrics = _skill_overview_metrics(overview, "non_ultimate")
+    lines.append(_format_skill_overview_line(sig_overview_label, sig_metrics))
+    if not behavior.signature_skill_is_ult:
+        lines.append(_format_skill_overview_line("Ultimate", ult_metrics))
+    lines.append(_format_skill_overview_line("Non-ultimate", non_ult_metrics))
+    true_damage_tiers = [sig_metrics.true_damage, non_ult_metrics.true_damage]
+    if not behavior.signature_skill_is_ult:
+        true_damage_tiers.insert(1, ult_metrics.true_damage)
+    if td_line := _format_true_damage_line(_merge_true_damage(*true_damage_tiers)):
+        lines.append(td_line)
     lines.append("")
     return lines
 

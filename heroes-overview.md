@@ -13,11 +13,14 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ### Aliceth's behavior
 
-- Movement: stationary (avg attack range 8.0 tiles)
 - Signature skill: Radiant Rain (ultimate) — aerial area arrow rain
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (avg attack range 8.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
+- True damage: HP loss `high`
 
 ### Units Aliceth benefits from
 
@@ -102,11 +105,14 @@ Common buffers are **Lyca**, **Ravion**, or **Evie**.
 
 ### Alna's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Winter Anthem (ultimate) — battle-start area blizzard
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+- Ally composition: place ally in same row at battle prep (Winter Warrior buffs)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `slow`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Alna benefits from
 
@@ -188,11 +194,13 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 ### Alsa's behavior
 
-- Movement: mostly stationary (avg attack range 6.0 tiles)
 - Signature skill: Twirling Rocks (ultimate) — area physical rock damage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: mostly stationary (avg attack range 6.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `high`
 
 ### Units Alsa benefits from
 
@@ -261,11 +269,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Antandra's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Shield Assault (ultimate) — charge + area knockback
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: high movement (repositioning skills)
+- Ally composition: frontmost ally becomes guarded ally (shared shields)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
 
 ### Units Antandra benefits from
 
@@ -351,11 +362,13 @@ These are the **10** strongest pairings:
 
 ### Arden's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Force of Nature (ultimate) — area nature damage burst
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, damage `high`
 
 ### Units Arden benefits from
 
@@ -411,11 +424,13 @@ Common buffers are **Ravion**, **Lyca**, or **Hugin**.
 
 ### Atalanta's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Wild Sniper (ultimate) — dash + line stun shot
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, damage `medium`
 
 ### Units Atalanta benefits from
 
@@ -490,11 +505,14 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Athalia's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Unbroken Retribution (ultimate) — post-death attacking lance
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: normal
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, buffs `medium`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- True damage: True damage `high`
 
 ### Units Athalia benefits from
 
@@ -570,11 +588,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Aurora's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Starlit Slumber (ultimate) — sleep all enemies
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `high`
 
 ### Units Aurora benefits from
 
@@ -660,11 +680,14 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Baelran's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Celestial Rise (ultimate) — HP-based shield + transform
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- True damage: True damage `high`
 
 ### Units Baelran benefits from
 
@@ -745,11 +768,13 @@ Common buffers are **Twins**, **Mikola**, or **Evie**.
 
 ### Berial's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Scared Swamp (ultimate) — shadow dive + area frighten
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ### Units Berial benefits from
 
@@ -812,11 +837,14 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 
 ### Bonnie's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Decay's Reach — battle-start aging debuff
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, debuffs `medium`, damage `high`
+- Ultimate: speed `slow`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Bonnie benefits from
 
@@ -893,11 +921,14 @@ Common buffers are **Evie**, **Lyca**, or **Ravion**.
 
 ### Brutus's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Whirlwind Wrath (ultimate) — area spin damage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, debuffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- True damage: Max HP-based damage `medium`
 
 ### Units Brutus benefits from
 
@@ -975,11 +1006,13 @@ Common buffers are **Lyca**, **Twins**, or **Ravion**.
 
 ### Bryon's behavior
 
-- Movement: stationary (summon moves)
 - Signature skill: Falcon Raid (ultimate) — falcon area dive damage
-- Signature skill speed: fast
-- Ultimate speed: fast
-- Non-ultimate speed: slow
+- Movement: stationary (summon moves)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `fast`, debuffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, damage `low`
 
 ### Units Bryon benefits from
 
@@ -1049,11 +1082,13 @@ Common buffers are **Mikola**, **Twins**, or **Lorsan**.
 
 ### Callan's behavior
 
-- Movement: moving (avg attack range 1.7 tiles)
 - Signature skill: Restless Guardian (ultimate) — absorb ally damage shield
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 1.7 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`
+- Non-ultimate: speed `fast`, damage `high`
 
 ### Units Callan benefits from
 
@@ -1128,11 +1163,13 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 ### Carolina's behavior
 
-- Movement: mostly stationary (avg attack range 4.0 tiles)
 - Signature skill: Frozen Grave (ultimate) — freeze + bury area
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: mostly stationary (avg attack range 4.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `medium`
 
 ### Units Carolina benefits from
 
@@ -1199,11 +1236,14 @@ Common buffers are **Ravion**, **Twins**, or **Lyca**.
 
 ### Cassadee's behavior
 
-- Movement: stationary (avg attack range 10.0 tiles)
 - Signature skill: Running Tide (ultimate) — tidal wave knockback
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: stationary (avg attack range 10.0 tiles)
+- Ally composition: nearest ally blessed at battle start; prioritizes ally behind
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, damage `low`
 
 ### Units Cassadee benefits from
 
@@ -1274,11 +1314,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Cecia's behavior
 
-- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Signature skill: Queen's Summons (ultimate) — summon AoE damage unit
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `low`
 
 ### Units Cecia benefits from
 
@@ -1357,11 +1399,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Chippy's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Brothers-in-arms (ultimate) — summon support ally
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `normal`, damage `high`
 
 ### Units Chippy benefits from
 
@@ -1401,11 +1445,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Contess's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Detention Pass (ultimate) — stealth start + punish
-- Signature skill speed: fast
-- Ultimate speed: normal
-- Non-ultimate speed: slow
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, heal `medium`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, debuffs `medium`, damage `medium`
 
 ### Units Contess benefits from
 
@@ -1480,11 +1526,13 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 ### Cryonaia's behavior
 
-- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Signature skill: Frostveil Domain (ultimate) — area frost slow field
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `high`
 
 ### Units Cryonaia benefits from
 
@@ -1555,11 +1603,14 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Cyran's behavior
 
-- Movement: mostly stationary (avg attack range 6.0 tiles)
 - Signature skill: Gravitic Requiem (ultimate) — pull all + execute low HP
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: mostly stationary (avg attack range 6.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- True damage: True damage `medium`
 
 ### Units Cyran benefits from
 
@@ -1627,11 +1678,16 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Daimon's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Buddy Barrier — shield + ATK buff ally behind
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+- Ally composition: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, buffs `medium`
+- Ultimate: speed `slow`, buffs `medium`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
+- True damage: Max HP-based damage `high`
 
 ### Units Daimon benefits from
 
@@ -1692,11 +1748,14 @@ Common buffers are **Hugin**.
 
 ### Damian's behavior
 
-- Movement: stationary (off battlefield)
 - Signature skill: Inventor's Will — chariot haste aura for allies
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: stationary (off battlefield)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, buffs `medium`
+- Ultimate: speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Damian benefits from
 
@@ -1785,11 +1844,14 @@ These are the **10** strongest pairings:
 
 ### Dionel's behavior
 
-- Movement: moving (avg attack range 0.0 tiles)
 - Signature skill: Dawn Light (ultimate) — airborne multi-hit AoE
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 0.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- True damage: True damage `high`
 
 ### Units Dionel benefits from
 
@@ -1865,11 +1927,14 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Dunlingr's behavior
 
-- Movement: stationary (avg attack range 6.4 tiles)
 - Signature skill: Echo of Silence (ultimate) — forbid heals or ultimates
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: stationary (avg attack range 6.4 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- True damage: HP loss `medium`
 
 ### Units Dunlingr benefits from
 
@@ -1944,11 +2009,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Eironn's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Howling Hurricane — free area pull at start
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `fast`
+- Ultimate: speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ### Units Eironn benefits from
 
@@ -2008,11 +2076,13 @@ Common buffers are **Hugin**.
 
 ### Twins's behavior
 
-- Movement: moving / stationary (two units)
 - Signature skill: Starlight Waltz (ultimate) — high haste buff all allies
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving / stationary (two units)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Twins benefits from
 
@@ -2106,11 +2176,14 @@ These are the **10** strongest pairings:
 
 ### Evie's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Intel Chase (ultimate) — stealth + trigger burst
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+- Ally composition: rearmost ally starts with healing quill; tracks highest damage dealer
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 
 ### Units Evie benefits from
 
@@ -2205,11 +2278,15 @@ These are the **10** strongest pairings:
 
 ### Faramor's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Sanctified Circle (ultimate) — no-heal zone + true DoT
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.0 tiles)
+- Ally composition: bless adjacent ally at battle prep; prioritizes tile behind
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `high`
+- True damage: HP loss `high`, True damage `high`
 
 ### Units Faramor benefits from
 
@@ -2284,11 +2361,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Fay's behavior
 
-- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Signature skill: Vibrant Dance (ultimate) — arc heal + ATK buff
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ### Units Fay benefits from
 
@@ -2361,11 +2440,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Florabelle's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Pounding Blow (ultimate) — summon stomper ally
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
 
 ### Units Florabelle benefits from
 
@@ -2440,11 +2521,15 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Frieren's behavior
 
-- Movement: stationary (avg attack range 7.0 tiles)
 - Signature skill: Zoltraak (ultimate) — high-damage magic beam
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (avg attack range 7.0 tiles)
+- Ally composition: frontmost ally shares damage reduction with this hero
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- True damage: True damage `high`
 
 ### Units Frieren benefits from
 
@@ -2512,11 +2597,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Gala's behavior
 
-- Movement: stationary (avg attack range 10.0 tiles)
 - Signature skill: Time Recast — summon shadow copy of ally
-- Signature skill speed: fast
-- Ultimate speed: normal
-- Non-ultimate speed: slow
+- Movement: stationary (avg attack range 10.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `fast`
+- Ultimate: speed `normal`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `high`
 
 ### Units Gala benefits from
 
@@ -2597,11 +2685,14 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Gerda's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Spring Therapy — battle-start heal zone
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, heal `medium`, damage `medium`
+- Ultimate: speed `slow`, heal `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Gerda benefits from
 
@@ -2654,11 +2745,13 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 ### Granny Dahnie's behavior
 
-- Movement: moving (avg attack range 2.0 tiles)
 - Signature skill: Threshold of Jade (ultimate) — root zone + HP drain
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 2.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, damage `low`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
 
 ### Units Granny Dahnie benefits from
 
@@ -2730,11 +2823,14 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 
 ### Gunnar's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Annihilation Directive (ultimate) — long-range area bombing
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- True damage: Max HP-based damage `medium`
 
 ### Units Gunnar benefits from
 
@@ -2801,11 +2897,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Gwyneth's behavior
 
-- Movement: stationary (avg attack range 8.0 tiles)
 - Signature skill: Hailing Arrows (ultimate) — area arrow rain
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (avg attack range 8.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `high`
+- True damage: Max HP-based damage `low`
 
 ### Units Gwyneth benefits from
 
@@ -2870,11 +2969,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Hammie's behavior
 
-- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Signature skill: Pretty Fireball (ultimate) — AoE magic fireball
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `normal`, heal `medium`, buffs `medium`, damage `low`
 
 ### Units Hammie benefits from
 
@@ -2933,11 +3034,15 @@ Common buffers are **Mikola**, **Evie**, or **Lyca**.
 
 ### Harak's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Flesh Feast — instantly defeat weakest unit
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, buffs `medium`, debuffs `medium`
+- Ultimate: speed `slow`, heal `medium`, damage `low`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
+- True damage: HP loss `low`
 
 ### Units Harak benefits from
 
@@ -3021,11 +3126,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Hepler's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Form Shift (ultimate) — toggle attack/support form
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+- Ally composition: frontmost adjacent ally gets fatal-blow protection
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Hepler benefits from
 
@@ -3119,11 +3227,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Hewynn's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Rain Prayer (ultimate) — AoE team healing
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, damage `medium`
 
 ### Units Hewynn benefits from
 
@@ -3206,11 +3316,15 @@ These are the **10** strongest pairings:
 
 ### Himmel's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Hero Party — buff needing Mage+Tank+Support
-- Signature skill speed: fast
-- Ultimate speed: normal
-- Non-ultimate speed: slow
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill: speed `slow`, buffs `medium`, damage `high`
+- Ultimate: speed `normal`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `high`
+- True damage: Max HP-based damage `low`
 
 ### Units Himmel benefits from
 
@@ -3279,11 +3393,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Hodgkin's behavior
 
-- Movement: moving (avg attack range 3.0 tiles)
 - Signature skill: Cannon Fire (ultimate) — AoE cannon salvo
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 3.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, debuffs `medium`, damage `medium`
 
 ### Units Hodgkin benefits from
 
@@ -3343,11 +3459,15 @@ Common buffers are **Mikola**, **Evie**, or **Lyca**.
 
 ### Hugin's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Unstoppable! (ultimate) — charge + shield assault
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+- Self placement: stays anchored to battle-prep tile; returns after displacement
+- Ally composition: put one ally on the tile 1 tile behind (ATK bonus; buff ends if they leave the sigil)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `high`
 
 ### Units Hugin benefits from
 
@@ -3419,11 +3539,13 @@ These are the **10** strongest pairings:
 
 ### Igor's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Funereal Ring (ultimate) — tombstone zone damage
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, damage `medium`
 
 ### Units Igor benefits from
 
@@ -3465,11 +3587,14 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 ### Indris's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Spellbane Shot (ultimate) — silence + multi-debuff shot
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, debuffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- True damage: Max HP-based damage `medium`, True damage `high`
 
 ### Units Indris benefits from
 
@@ -3543,11 +3668,14 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 
 ### Isabella's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Grimoire Pact (ultimate) — permanent stat buff to companion
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+- Ally composition: frontmost ally becomes companion (stat stacks and ult buffs)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ### Units Isabella benefits from
 
@@ -3620,11 +3748,13 @@ Common buffers are **Mikola**, **Hugin**, or **Twins**.
 
 ### Kafra's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Gale Thrust (ultimate) — mark + high single-target hit
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, debuffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Kafra benefits from
 
@@ -3703,11 +3833,13 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 
 ### Koko's behavior
 
-- Movement: mostly stationary (avg attack range 4.0 tiles)
 - Signature skill: Full Energy (ultimate) — DMG reduction + true damage return
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: mostly stationary (avg attack range 4.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Koko benefits from
 
@@ -3801,11 +3933,14 @@ These are the **10** strongest pairings:
 
 ### Kordan's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Dominance Ring (ultimate) — immobilize + zone damage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- True damage: HP loss `low`
 
 ### Units Kordan benefits from
 
@@ -3877,11 +4012,14 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 
 ### Korin's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Demonseal Spear (ultimate) — pierce-through spear strike
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `medium`
+- True damage: Max HP-based damage `medium`, True damage `medium`
 
 ### Units Korin benefits from
 
@@ -3947,11 +4085,13 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Kruger's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Devastating Axe (ultimate) — stack Phys DEF debuff
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, debuffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Kruger benefits from
 
@@ -4015,11 +4155,14 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Kulu's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Demolition Zone — battle-start movement-blocking wall
-- Signature skill speed: fast
-- Ultimate speed: normal
-- Non-ultimate speed: slow
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill: speed `slow`, buffs `medium`, damage `low`
+- Ultimate: speed `normal`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Kulu benefits from
 
@@ -4099,11 +4242,14 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Laios's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Dungeon Gourmet — cook ingredients for random ally buffs
-- Signature skill speed: slow
-- Ultimate speed: fast
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `slow`, heal `medium`, buffs `medium`, damage `high`
+- Ultimate: speed `fast`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 
 ### Units Laios benefits from
 
@@ -4176,11 +4322,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Lenya's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Wild Duel (ultimate) — dash + duel multi-hit
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `high`
 
 ### Units Lenya benefits from
 
@@ -4243,11 +4391,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Lily May's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Tempest Shot (ultimate) — interrupt enemy ultimate
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
+- True damage: Max HP-based damage `low`
 
 ### Units Lily May benefits from
 
@@ -4326,11 +4477,13 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 ### Lorsan's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Whispering Tempest (ultimate) — storm zone + haste debuff
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 
 ### Units Lorsan benefits from
 
@@ -4416,11 +4569,15 @@ These are the **10** strongest pairings:
 
 ### Lucca's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Quake Slam (ultimate) — area knockdown slam
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+- Ally composition: place adjacent allies behind at battle prep (DEF buff)
+- Ally composition: place allies on adjacent tiles behind at battle start (shields and ATK boost)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
 
 ### Units Lucca benefits from
 
@@ -4478,11 +4635,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Lucius's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Divine Light Aegis (ultimate) — area shield + light damage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ### Units Lucius benefits from
 
@@ -4581,11 +4740,14 @@ These are the **10** strongest pairings:
 
 ### Lucy's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Star Dress: Aquarius Form — permanent AoE water form
-- Signature skill speed: fast
-- Ultimate speed: fast
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, debuffs `medium`, damage `high`
+- Ultimate: speed `fast`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Lucy benefits from
 
@@ -4653,11 +4815,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Ludovic's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Eternal Serenity (ultimate) — area sustained healing
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, damage `medium`
 
 ### Units Ludovic benefits from
 
@@ -4729,11 +4893,13 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 
 ### Lumont's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Lumont's Charge (ultimate) — charge + stomp knockdown
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Lumont benefits from
 
@@ -4808,11 +4974,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Lyca's behavior
 
-- Movement: stationary (avg attack range 11.0 tiles)
 - Signature skill: Comet Archery (ultimate) — area ranged volley
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: stationary (avg attack range 11.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ### Units Lyca benefits from
 
@@ -4893,11 +5061,14 @@ These are the **10** strongest pairings:
 
 ### Marcille's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Silver-White Wings that Streak Across the Skies (ultimate) — large AoE magic damage
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+- Ally composition: place ally 1 tile in front at battle prep (revive target)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, damage `high`
 
 ### Units Marcille benefits from
 
@@ -4960,11 +5131,14 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 ### Marilee's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Mid-Air Shot (ultimate) — high-damage precision shot
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
+- True damage: True damage `low`
 
 ### Units Marilee benefits from
 
@@ -5028,11 +5202,13 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 
 ### Mehira's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Euphoric Rush (ultimate) — AoE damage + charm
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `low`
 
 ### Units Mehira benefits from
 
@@ -5106,11 +5282,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Mikola's behavior
 
-- Movement: moving (avg attack range 2.0 tiles)
 - Signature skill: Dauntless Hymn (ultimate) — haste + DEF aura zone
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 2.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, buffs `medium`, damage `low`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Mikola benefits from
 
@@ -5184,11 +5362,13 @@ These are the **10** strongest pairings:
 
 ### Mirael's behavior
 
-- Movement: stationary (avg attack range 10.1 tiles)
 - Signature skill: Winged Flame (ultimate) — area fire barrage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: stationary (avg attack range 10.1 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `high`
 
 ### Units Mirael benefits from
 
@@ -5241,11 +5421,15 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Nara's behavior
 
-- Movement: mostly stationary (pulls enemies)
 - Signature skill: Phantom Chains — pull enemy to self
-- Signature skill speed: fast
-- Ultimate speed: fast
-- Non-ultimate speed: fast
+- Movement: mostly stationary (pulls enemies)
+
+#### Skill overview
+
+- Signature skill: speed `fast`
+- Ultimate: speed `fast`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, damage `low`
+- True damage: Max HP-based damage `medium`, True damage `high`
 
 ### Units Nara benefits from
 
@@ -5313,11 +5497,14 @@ Common buffers are **Ravion** or **Lyca**.
 
 ### Natsu's behavior
 
-- Movement: stationary (avg attack range 11.0 tiles)
 - Signature skill: Lightning Fire Dragon's Roar/Fire Dragon King's Roar (ultimate) — high-damage elemental beam
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: normal
+- Movement: stationary (avg attack range 11.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- True damage: Max HP-based damage `medium`
 
 ### Units Natsu benefits from
 
@@ -5388,11 +5575,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Nazrik's behavior
 
-- Movement: stationary (avg attack range 10.0 tiles)
 - Signature skill: Rend Rupture (ultimate) — HP-drain bleed DoT
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: stationary (avg attack range 10.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, damage `high`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `medium`
+- True damage: True damage `high`
 
 ### Units Nazrik benefits from
 
@@ -5452,11 +5642,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Nerion's behavior
 
-- Movement: mostly stationary (avg attack range 4.0 tiles)
 - Signature skill: Drowning Doom (ultimate) — pull + submerge enemies
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: mostly stationary (avg attack range 4.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Nerion benefits from
 
@@ -5529,11 +5721,14 @@ Common buffers are **Twins**, **Ravion**, or **Lyca**.
 
 ### Niru's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Soul Shepherd (ultimate) — save ally from fatal blow
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`
+- Non-ultimate: speed `fast`, heal `medium`, damage `medium`
+- True damage: HP loss `low`
 
 ### Units Niru benefits from
 
@@ -5589,11 +5784,14 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 
 ### Odie's behavior
 
-- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Signature skill: Heart Crusher — instantly defeat below poison threshold
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, debuffs `medium`
+- Ultimate: speed `slow`, debuffs `medium`, damage `low`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `low`
 
 ### Units Odie benefits from
 
@@ -5641,11 +5839,15 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Pandora's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Boxed Blessing — pull ally into box at start
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+- Ally composition: rearmost ally enters invincible box, then gains Energy and ATK
+
+#### Skill overview
+
+- Signature skill: speed `fast`, buffs `medium`
+- Ultimate: speed `slow`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ### Units Pandora benefits from
 
@@ -5708,11 +5910,13 @@ Common buffers are **Ravion** or **Lyca**.
 
 ### Pang's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Sky Splitter (ultimate) — area knockdown burst
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `medium`
 
 ### Units Pang benefits from
 
@@ -5783,11 +5987,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Parisa's behavior
 
-- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Signature skill: Floral Splendor (ultimate) — mark + AoE burst damage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
 
 ### Units Parisa benefits from
 
@@ -5834,11 +6040,14 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Perseus's behavior
 
-- Movement: moving (avg attack range 2.9 tiles)
 - Signature skill: Divine Rend (ultimate) — march + continuous knockback
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 2.9 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `high`
+- True damage: True damage `low`
 
 ### Units Perseus benefits from
 
@@ -5913,11 +6122,16 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Phraesto's behavior
 
-- Movement: moving (avg attack range 1.8 tiles)
 - Signature skill: Crimson Contract — buff two allies at battle start
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.8 tiles)
+- Ally composition: place allies 1 tile behind this hero and the Illusion for contract buffs
+- Self placement: keep this hero and Illusion in the same row (damage reduction and battle-start shields)
+
+#### Skill overview
+
+- Signature skill: speed `slow`, buffs `medium`, damage `low`
+- Ultimate: speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Phraesto benefits from
 
@@ -5983,11 +6197,14 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 ### Pippa's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Chaos Manifest (ultimate) — reposition + random chaos
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: normal
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, damage `medium`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `medium`
+- True damage: True damage `medium`
 
 ### Units Pippa benefits from
 
@@ -6064,11 +6281,15 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Ravion's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Killer Flush (ultimate) — multi-hit lost-HP scaling
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+- Ally composition: Objectives go to the 2 rearmost allies; backline heroes receive ATK and Energy on completion
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- True damage: HP loss `low`
 
 ### Units Ravion benefits from
 
@@ -6166,11 +6387,14 @@ These are the **10** strongest pairings:
 
 ### Reinier's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Dynamic Balance — swap ally+enemy positions at start
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, heal `medium`, damage `high`
+- Ultimate: speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, debuffs `medium`, damage `high`
 
 ### Units Reinier benefits from
 
@@ -6241,11 +6465,13 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 ### Rhys's behavior
 
-- Movement: high movement (moves while attacking)
 - Signature skill: Flame Barrage (ultimate) — ranged fire barrage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: high movement (moves while attacking)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Rhys benefits from
 
@@ -6299,11 +6525,13 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 ### Rowan's behavior
 
-- Movement: moving (repositions on cast)
 - Signature skill: Fatal Greed (ultimate) — AoE energy recovery burst
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: moving (repositions on cast)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
 
 ### Units Rowan benefits from
 
@@ -6389,11 +6617,13 @@ These are the **10** strongest pairings:
 
 ### Saida's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Seed Siphon (ultimate) — pin + energy drain + seed
-- Signature skill speed: fast
-- Ultimate speed: fast
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `fast`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 
 ### Units Saida benefits from
 
@@ -6485,11 +6715,13 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 ### Salazer's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Rain of Blades (ultimate) — area blade storm
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `low`
+- Non-ultimate: speed `fast`, damage `medium`
 
 ### Units Salazer benefits from
 
@@ -6555,11 +6787,14 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Satrana's behavior
 
-- Movement: moving (avg attack range 1.5 tiles)
 - Signature skill: Fiery Dance (ultimate) — area fire burn damage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.5 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `low`
+- True damage: Max HP-based damage `high`
 
 ### Units Satrana benefits from
 
@@ -6635,11 +6870,15 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Scarlita's behavior
 
-- Movement: moving (brief reposition)
 - Signature skill: Divine Wrath — instantly defeat low-HP enemies
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (brief reposition)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, damage `low`
+- Ultimate: speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `medium`
+- True damage: True damage `low`
 
 ### Units Scarlita benefits from
 
@@ -6704,11 +6943,13 @@ Common buffers are **Ravion** or **Lyca**.
 
 ### Seth's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Shadow Strike (ultimate) — multi-hit shadow burst
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, buffs `medium`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
 
 ### Units Seth benefits from
 
@@ -6796,11 +7037,15 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Shadewing's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Withering Curse — convert DoT to burst damage
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- Ultimate: speed `slow`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- True damage: HP loss `low`, Max HP-based damage `high`, True damage `low`
 
 ### Units Shadewing benefits from
 
@@ -6869,11 +7114,13 @@ Common buffers are **Evie**, **Lyca**, or **Ravion**.
 
 ### Shakir's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Ravaging Claws (ultimate) — single-target charge damage
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, buffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
 
 ### Units Shakir benefits from
 
@@ -6953,11 +7200,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Shemira's behavior
 
-- Movement: mostly stationary (avg attack range 4.0 tiles)
 - Signature skill: Phantom Procession (ultimate) — sustained area ghost damage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: mostly stationary (avg attack range 4.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `high`
+- True damage: Max HP-based damage `high`
 
 ### Units Shemira benefits from
 
@@ -7004,11 +7254,15 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Silven's behavior
 
-- Movement: stationary (avg attack range 12.0 tiles)
 - Signature skill: Gravity Collapse — stack marks + detonate stun
-- Signature skill speed: fast
-- Ultimate speed: fast
-- Non-ultimate speed: fast
+- Movement: stationary (avg attack range 12.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, damage `low`
+- Ultimate: speed `fast`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `low`
+- True damage: True damage `low`
 
 ### Units Silven benefits from
 
@@ -7079,11 +7333,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Silvina's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Shadow Slayer (ultimate) — stealth + execute burst
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, debuffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `medium`
 
 ### Units Silvina benefits from
 
@@ -7147,11 +7403,13 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Sinbad's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Whizzing Edge (ultimate) — multi-hit physical slashes
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, damage `low`
+- Non-ultimate: speed `fast`, debuffs `medium`, damage `medium`
 
 ### Units Sinbad benefits from
 
@@ -7213,11 +7471,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Smokey & Meerky's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Special Aroma (ultimate) — heal aura + upgradeable zone
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, buffs `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, damage `low`
 
 ### Units Smokey & Meerky benefits from
 
@@ -7284,11 +7544,13 @@ Common buffers are **Evie**, **Lorsan**, or **Mikola**.
 
 ### Solise's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Life's Embrace (ultimate) — AoE healing waves
-- Signature skill speed: normal
-- Ultimate speed: normal
-- Non-ultimate speed: fast
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `normal`, heal `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Solise benefits from
 
@@ -7347,11 +7609,14 @@ Common buffers are **Mikola**, **Evie**, or **Hugin**.
 
 ### Sonja's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Crimson Covenant — ATK + DEF buff two flanking allies
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, buffs `medium`
+- Ultimate: speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `medium`
 
 ### Units Sonja benefits from
 
@@ -7410,11 +7675,13 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Soren's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Whirlwind Swing (ultimate) — knockback + collision stun
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Soren benefits from
 
@@ -7486,11 +7753,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Sylphira's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Grand Finale (ultimate) — beat stacking + song DoT
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: slow
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
+- True damage: True damage `low`
 
 ### Units Sylphira benefits from
 
@@ -7559,11 +7829,15 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Talene's behavior
 
-- Movement: moving (avg attack range 3.0 tiles)
 - Signature skill: Divine Conflagration (ultimate) — sustained channelled flame beam
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 3.0 tiles)
+- Ally composition: frontmost ally carries Pyre of Renewal (AoE damage and healing)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- True damage: HP loss `high`
 
 ### Units Talene benefits from
 
@@ -7620,11 +7894,13 @@ Common buffers are **Evie**, **Lorsan**, or **Mikola**.
 
 ### Tasi's behavior
 
-- Movement: stationary (avg attack range 10.0 tiles)
 - Signature skill: Eternal Dreamscape (ultimate) — sleep all enemies
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: stationary (avg attack range 10.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Tasi benefits from
 
@@ -7695,11 +7971,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Temesia's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Knight's Heart (ultimate) — constant charge + knockdown through enemies
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, damage `low`
+- True damage: True damage `low`
 
 ### Units Temesia benefits from
 
@@ -7772,11 +8051,15 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Thador's behavior
 
-- Movement: moving (avg attack range 0.2 tiles)
 - Signature skill: Darkmoon Pact — crit + shield for ally behind
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 0.2 tiles)
+- Ally composition: place lieutenant 1 tile behind at battle prep (Crit + shared shields)
+
+#### Skill overview
+
+- Signature skill: speed `slow`, buffs `medium`
+- Ultimate: speed `slow`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Thador benefits from
 
@@ -7852,11 +8135,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Thoran's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Resurrection — self-revive on defeat
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, heal `medium`
+- Ultimate: speed `slow`, buffs `medium`, damage `low`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`
 
 ### Units Thoran benefits from
 
@@ -7915,11 +8201,13 @@ Common buffers are **Hugin**, **Ravion**, or **Lyca**.
 
 ### Tilaya's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Wrath of the Wilds (ultimate) — 8-hit greatsword arc slashes
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, buffs `medium`, damage `low`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `low`
 
 ### Units Tilaya benefits from
 
@@ -7979,11 +8267,15 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 ### Ulmus's behavior
 
-- Movement: moving (stationary when rooted)
 - Signature skill: Way of the Forest — HP regen + energy when rooted
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (stationary when rooted)
+- Ally composition: when rooted, shields frontmost ally instead of self
+
+#### Skill overview
+
+- Signature skill: speed `fast`, heal `medium`
+- Ultimate: speed `slow`, heal `medium`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Ulmus benefits from
 
@@ -8053,11 +8345,14 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 ### Vala's behavior
 
-- Movement: high movement (repositioning skills)
 - Signature skill: Swift Shift (ultimate) — mode shift + stun/true damage
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: high movement (repositioning skills)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
+- True damage: HP loss `low`, True damage `medium`
 
 ### Units Vala benefits from
 
@@ -8143,11 +8438,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Valen's behavior
 
-- Movement: moving (avg attack range 1.4 tiles)
 - Signature skill: Thunder Swordwork (ultimate) — multi-hit area + ATK buff
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 1.4 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`, damage `low`
+- Non-ultimate: speed `fast`, damage `medium`
 
 ### Units Valen benefits from
 
@@ -8212,11 +8509,14 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 ### Valka's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Blooming Terror (ultimate) — stack fear + consume enemy
-- Signature skill speed: fast
-- Ultimate speed: fast
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `fast`, heal `medium`, damage `high`
+- Non-ultimate: speed `fast`, buffs `medium`, damage `medium`
+- True damage: Max HP-based damage `low`
 
 ### Units Valka benefits from
 
@@ -8291,11 +8591,13 @@ Common buffers are **Twins**, **Lorsan**, or **Hugin**.
 
 ### Velara's behavior
 
-- Movement: stationary (no finite attack range)
 - Signature skill: Ruthless Rite (ultimate) — transfer enemy stats to allies
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: stationary (no finite attack range)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, debuffs `medium`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ### Units Velara benefits from
 
@@ -8377,11 +8679,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Viperian's behavior
 
-- Movement: mostly stationary (avg attack range 5.0 tiles)
 - Signature skill: Crimson Waltz — AoE burst damage to all enemies
-- Signature skill speed: slow
-- Ultimate speed: normal
-- Non-ultimate speed: slow
+- Movement: mostly stationary (avg attack range 5.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `slow`, damage `medium`
+- Ultimate: speed `normal`, heal `medium`, damage `high`
+- Non-ultimate: speed `slow`, heal `medium`, debuffs `medium`, damage `medium`
 
 ### Units Viperian benefits from
 
@@ -8451,11 +8756,14 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Walker's behavior
 
-- Movement: moving (avg attack range 2.0 tiles)
 - Signature skill: Six-Shot (ultimate) — multi-target burst shots
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 2.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, damage `low`
+- Non-ultimate: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- True damage: HP loss `low`, Max HP-based damage `low`
 
 ### Units Walker benefits from
 
@@ -8518,11 +8826,14 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Zandrok's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Rallying Roar — destroy obstacles + inspire allies
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: fast
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill: speed `fast`, buffs `medium`
+- Ultimate: speed `slow`
+- Non-ultimate: speed `fast`, buffs `medium`
 
 ### Units Zandrok benefits from
 
@@ -8605,11 +8916,13 @@ These are the **10** strongest pairings:
 
 ### Zanie's behavior
 
-- Movement: moving (avg attack range 1.0 tiles)
 - Signature skill: Vein Pulse (ultimate) — deploy turrets at battle start
-- Signature skill speed: fast
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (avg attack range 1.0 tiles)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, buffs `medium`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ### Units Zanie benefits from
 
@@ -8693,11 +9006,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Zorya's behavior
 
-- Movement: moving (inactive while dormant)
 - Signature skill: Circle of Vigil (ultimate) — dormant cycle + AoE jump
-- Signature skill speed: slow
-- Ultimate speed: slow
-- Non-ultimate speed: normal
+- Movement: moving (inactive while dormant)
+
+#### Skill overview
+
+- Signature skill (ultimate): speed `slow`, heal `medium`, buffs `medium`, damage `high`
+- Non-ultimate: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- True damage: HP loss `high`
 
 ### Units Zorya benefits from
 

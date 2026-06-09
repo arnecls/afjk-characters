@@ -331,7 +331,38 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Alna - Frozen Mother": {
@@ -647,7 +678,39 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place ally in same row at battle prep (Winter Warrior buffs)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Alsa - Desert Flare": {
@@ -864,7 +927,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Antandra - Desert Fury": {
@@ -1094,7 +1184,39 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "frontmost ally becomes guarded ally (shared shields)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Arden - Oak Sage": {
@@ -1226,7 +1348,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Atalanta - Fortune Finder": {
@@ -1426,7 +1575,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Athalia - Harbinger of Justice": {
@@ -1673,7 +1849,38 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Aurora - Celestial of Dreams": {
@@ -1918,7 +2125,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Baelran - Dawnblade": {
@@ -2181,7 +2415,40 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "medium"
+            }
+          }
+        }
       }
     },
     "Berial - Sinister Jester": {
@@ -2365,7 +2632,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Bonnie - Obsidian Claws": {
@@ -2573,7 +2867,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Brutus - Blood Claw": {
@@ -2766,7 +3087,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "Max HP-based damage": "medium"
+            }
+          }
+        }
       }
     },
     "Bryon - Evergreen Sentinel": {
@@ -2985,7 +3335,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Callan - Grim Soulkeeper": {
@@ -3186,7 +3563,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Carolina - Candlelight Specter": {
@@ -3338,7 +3742,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Cassadee - Azure Prodigy": {
@@ -3499,7 +3930,39 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "nearest ally blessed at battle start; prioritizes ally behind"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Cecia - Requiem of Thorns": {
@@ -3736,7 +4199,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Chippy - Sidekick": {
@@ -3791,7 +4281,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Contess - Abyssal Rulekeeper": {
@@ -4070,7 +4587,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Cryonaia - Arctic Revenant": {
@@ -4240,7 +4784,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Cyran - Umbral Weaver": {
@@ -4445,7 +5016,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "True damage": "medium"
+            }
+          }
+        }
       }
     },
     "Daimon - Forsaken Child": {
@@ -4639,7 +5239,43 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "high"
+            }
+          }
+        }
       }
     },
     "Damian - Woody Wonder": {
@@ -4850,7 +5486,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Dionel - Venus of Dawn": {
@@ -5043,7 +5706,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "True damage": "high"
+            }
+          }
+        }
       }
     },
     "Dunlingr - Eternal Voice": {
@@ -5315,7 +6007,36 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "HP loss": "medium"
+            }
+          }
+        }
       }
     },
     "Eironn - Stormsword": {
@@ -5537,7 +6258,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Elijah & Lailah - Celestial Twins": {
@@ -5785,7 +6533,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Evie - Royal Envoy": {
@@ -5993,7 +6768,39 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "rearmost ally starts with healing quill; tracks highest damage dealer"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Faramor - Silverfang Mantle": {
@@ -6170,7 +6977,45 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "bless adjacent ally at battle prep; prioritizes tile behind"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "high"
+            }
+          }
+        }
       }
     },
     "Fay - Colorful Dancer": {
@@ -6390,7 +7235,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Florabelle - Blooming Maiden": {
@@ -6611,7 +7483,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Frieren - The Legendary Mage": {
@@ -6777,7 +7676,43 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "frontmost ally shares damage reduction with this hero"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Gala - Daughter of Dawn": {
@@ -6979,7 +7914,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Gerda - Soothing Siren": {
@@ -7236,7 +8198,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Granny Dahnie - Forest Guardian": {
@@ -7485,7 +8474,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Gunnar - Iron Doom": {
@@ -7691,7 +8707,36 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "medium"
+            }
+          }
+        }
       }
     },
     "Gwyneth - Dragonslayer Knight": {
@@ -7846,7 +8891,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {
+              "Max HP-based damage": "low"
+            }
+          }
+        }
       }
     },
     "Hammie - Magician": {
@@ -7956,7 +9030,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "normal",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Harak - Deepsea Ravager": {
@@ -8229,7 +9330,36 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Hepler - Master of Forms": {
@@ -8469,7 +9599,39 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "frontmost adjacent ally gets fatal-blow protection"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Hewynn - Tender Leaf": {
@@ -8612,7 +9774,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Himmel - The Legendary Hero": {
@@ -8790,7 +9979,36 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Hodgkin - Reviled Captain": {
@@ -8958,7 +10176,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Hugin - Maverick Smith": {
@@ -9107,7 +10352,43 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "self_placement",
+            "text": "stays anchored to battle-prep tile; returns after displacement"
+          },
+          {
+            "kind": "ally_placement",
+            "text": "put one ally on the tile 1 tile behind (ATK bonus; buff ends if they leave the sigil)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Igor - Mad Dagger": {
@@ -9243,7 +10524,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Indris - Chain Breaker": {
@@ -9469,7 +10777,40 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {
+              "Max HP-based damage": "medium"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {
+              "Max HP-based damage": "medium"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "True damage": "high"
+            }
+          }
+        }
       }
     },
     "Isabella - The Taken Soul": {
@@ -9694,7 +11035,39 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "frontmost ally becomes companion (stat stacks and ult buffs)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Kafra - Gale Rider": {
@@ -9943,7 +11316,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Koko - Wild Child": {
@@ -10168,7 +11568,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Kordan - Ironblood Chieftain": {
@@ -10381,7 +11808,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "low"
+            }
+          }
+        }
       }
     },
     "Korin - Wood Warden": {
@@ -10561,7 +12017,37 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "medium",
+              "Max HP-based damage": "medium"
+            }
+          }
+        }
       }
     },
     "Kruger - Dauntless Warrior": {
@@ -10730,7 +12216,34 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Kulu - Blast Master": {
@@ -10940,7 +12453,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Laios - Dungeon Adventurer": {
@@ -11236,7 +12776,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Lenya - Wild Cyclone": {
@@ -11490,7 +13057,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Lily May - Twilight Tracker": {
@@ -11679,7 +13273,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "low"
+            }
+          }
+        }
       }
     },
     "Lorsan - Windweaver Protector": {
@@ -11853,7 +13476,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Lucca - Stalwart Fighter": {
@@ -12072,7 +13722,43 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place adjacent allies behind at battle prep (DEF buff)"
+          },
+          {
+            "kind": "ally_placement",
+            "text": "place allies on adjacent tiles behind at battle start (shields and ATK boost)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Lucius - The Lightbringer": {
@@ -12278,7 +13964,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Lucy - Celestial Spirit Mage": {
@@ -12459,7 +14172,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Ludovic - Wreathed Eternalist": {
@@ -12636,7 +14376,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Lumont - Benign Horn": {
@@ -12881,7 +14648,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Lyca - Keeper of Glades": {
@@ -13071,7 +14865,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Marcille - Elven Mage": {
@@ -13273,7 +15094,39 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place ally 1 tile in front at battle prep (revive target)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Marilee - Forest's Arrow": {
@@ -13439,7 +15292,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "low"
+            }
+          }
+        }
       }
     },
     "Mehira - Mind Cager": {
@@ -13628,7 +15510,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Mikola - Warbeat Compere": {
@@ -13831,7 +15740,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Mirael - Scarlet Sorceress": {
@@ -13946,7 +15882,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Nara - Wrathful Wraith": {
@@ -14135,7 +16098,38 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "medium"
+            }
+          }
+        }
       }
     },
     "Natsu - Fire Dragon Slayer Mage": {
@@ -14356,7 +16350,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "Max HP-based damage": "medium"
+            }
+          }
+        }
       }
     },
     "Nazrik - Soulstalker": {
@@ -14534,7 +16557,40 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {
+              "True damage": "medium"
+            }
+          }
+        }
       }
     },
     "Nerion - Bereaved Tide": {
@@ -14689,7 +16745,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Niru - Soul Collector": {
@@ -14867,7 +16950,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "low"
+            }
+          }
+        }
       }
     },
     "Odie - Desert Defender": {
@@ -15022,7 +17134,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Pandora - Hope Unleashed": {
@@ -15275,7 +17414,39 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "rearmost ally enters invincible box, then gains Energy and ATK"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Pang - Bamboo Guardian": {
@@ -15457,7 +17628,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Parisa - Ode to Flowers": {
@@ -15578,7 +17776,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Perseus - Chosen Champion": {
@@ -15788,7 +18013,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "low"
+            }
+          }
+        }
       }
     },
     "Phraesto - Misty Scorpion": {
@@ -15976,7 +18230,43 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place allies 1 tile behind this hero and the Illusion for contract buffs"
+          },
+          {
+            "kind": "self_placement",
+            "text": "keep this hero and Illusion in the same row (damage reduction and battle-start shields)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Pippa - The Muddled Magician": {
@@ -16172,7 +18462,36 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {
+              "True damage": "medium"
+            }
+          }
+        }
       }
     },
     "Ravion - Twilight's Burden": {
@@ -16513,7 +18832,43 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "Objectives go to the 2 rearmost allies; backline heroes receive ATK and Energy on completion"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Reinier - Symmetric Sin": {
@@ -16734,7 +19089,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Rhys - Fiery Cavalier": {
@@ -16895,7 +19277,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Rowan - The Roamer": {
@@ -17102,7 +19511,34 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Saida - Vampiric Vine": {
@@ -17331,7 +19767,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Salazer - Lash of Bantus": {
@@ -17492,7 +19955,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Satrana - Ember Enchantress": {
@@ -17676,7 +20166,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "Max HP-based damage": "high"
+            }
+          }
+        }
       }
     },
     "Scarlita - Herald of Compassion": {
@@ -17910,7 +20429,38 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "low"
+            }
+          }
+        }
       }
     },
     "Seth - Swift Shadow": {
@@ -18138,7 +20688,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Shadewing - Undying Vow": {
@@ -18378,7 +20955,41 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "Max HP-based damage": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "Max HP-based damage": "high",
+              "True damage": "low"
+            }
+          }
+        }
       }
     },
     "Shakir - Furious Howl": {
@@ -18584,7 +21195,34 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Shemira - Corpsemaker": {
@@ -18702,7 +21340,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "high"
+            }
+          }
+        }
       }
     },
     "Silven - Heir of Glory": {
@@ -18875,7 +21542,36 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "low"
+            }
+          }
+        }
       }
     },
     "Silvina - The Taken Breath": {
@@ -19041,7 +21737,34 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Sinbad - Seaside Savant": {
@@ -19250,7 +21973,34 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Smokey & Meerky - Wasteland Apothecary": {
@@ -19437,7 +22187,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Solise - Floral Wonder": {
@@ -19608,7 +22385,34 @@
         "synergy_signature_speed": "normal",
         "synergy_signature_is_ult": true,
         "ult_speed": "normal",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Sonja - Crimson Queenpin": {
@@ -19742,7 +22546,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Soren - Silent Fury": {
@@ -19976,7 +22807,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Sylphira - Sovereign of Song": {
@@ -20268,7 +23126,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "True damage": "low"
+            }
+          }
+        }
       }
     },
     "Talene - Resurging Flame": {
@@ -20477,7 +23364,43 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "frontmost ally carries Pyre of Renewal (AoE damage and healing)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Tasi - Fairy of Dreams": {
@@ -20712,7 +23635,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Temesia - Lightsavior": {
@@ -20959,7 +23909,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "low"
+            }
+          }
+        }
       }
     },
     "Thador - Ironsworn General": {
@@ -21149,7 +24128,39 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place lieutenant 1 tile behind at battle prep (Crit + shared shields)"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Thoran - Fallen King": {
@@ -21339,7 +24350,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Tilaya - Wild Blade": {
@@ -21531,7 +24569,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Ulmus - Grove Keeper": {
@@ -21744,7 +24809,39 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "when rooted, shields frontmost ally instead of self"
+          }
+        ],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Vala - Phantom of Oakenfell": {
@@ -21970,7 +25067,40 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "medium",
+              "HP loss": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "True damage": "medium",
+              "HP loss": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Valen - Roving Swordsman": {
@@ -22137,7 +25267,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Valka - Forsaken Blade": {
@@ -22397,7 +25554,38 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Velara - Pale Votary": {
@@ -22596,7 +25784,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Viperian - Shadow Serpent": {
@@ -22791,7 +26006,34 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
-        "non_ult_speed": "slow"
+        "non_ult_speed": "slow",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "normal",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "slow",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "none",
+            "debuffs": "medium",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Walker - Wildland Outlaw": {
@@ -23000,7 +26242,40 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "low"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "low",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {
+              "Max HP-based damage": "low"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "medium",
+            "true_damage": {
+              "HP loss": "low"
+            }
+          }
+        }
       }
     },
     "Zandrok - Watchful Edge": {
@@ -23156,7 +26431,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "fast"
+        "non_ult_speed": "fast",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Zanie - Timeless Tinkerer": {
@@ -23409,7 +26711,34 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "none",
+            "heal": "none",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "medium",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          }
+        }
       }
     },
     "Zorya - Watcher in Stone": {
@@ -23662,7 +26991,36 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "normal"
+        "non_ult_speed": "normal",
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "damage": "high",
+            "heal": "medium",
+            "buffs": "medium",
+            "debuffs": "none",
+            "true_damage": {
+              "HP loss": "high"
+            }
+          }
+        }
       }
     }
   }

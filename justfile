@@ -9,22 +9,36 @@
 default:
     @just --list
 
+# Create .venv and install requirements.txt (jsonschema for schema validation).
+setup:
+    python3 -m venv .venv
+    .venv/bin/pip install -r requirements.txt
+
+# Ensure .venv exists before recipes that validate JSON schemas.
+ensure-venv:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if [[ ! -x .venv/bin/python ]]; then
+      python3 -m venv .venv
+      .venv/bin/pip install -q -r requirements.txt
+    fi
+
 # Refresh data/heroes_data.json from live sources (fandom + Yaphalla; needs network).
 download:
     python3 scripts/download_heroes.py
 
 # Validate processed JSON vs Heroes.md and pipeline parity.
-validate:
-    python3 scripts/validate_processed.py
+validate: ensure-venv
+    .venv/bin/python scripts/validate_processed.py
 
 # Analyse data/heroes_data.json -> processed + synergies JSON.
-analyze:
-    python3 scripts/process_heroes.py
-    python3 scripts/process_synergies.py
+analyze: ensure-venv
+    .venv/bin/python scripts/process_heroes.py
+    .venv/bin/python scripts/process_synergies.py
 
 # Recompute roster-wide synergies from existing processed data.
-analyze-synergies:
-    python3 scripts/process_synergies.py
+analyze-synergies: ensure-venv
+    .venv/bin/python scripts/process_synergies.py
 
 # Render Heroes.md from data/heroes_data.json.
 render-heroes:
