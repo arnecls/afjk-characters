@@ -67,6 +67,8 @@ fuzzy to define clear rules.
 - Sleep
 - Move (force new position)
 - Pin (cannot move but still act)
+- Blind
+- Bind
 - Interrupt
 
 These types need to be derived from the text.
@@ -96,6 +98,16 @@ Optional suffix: `— conditional (frequent)` or `— conditional (rare)`.
   (`high`→`low`, `medium`→`low`).
 
 Synergy picks in `heroes-overview.md` skip rare conditional ally buffs.
+
+## Fully ascended comparison
+
+Synergy ranking and cross-hero magnitude bands assume every hero is **fully
+ascended**: all skill slots unlock (Ultimate through Supreme+ / EX tiers), and
+numeric comparison uses the **strongest parseable value** per effect label
+across skill level lines — not the base unlock value. This is implemented in
+`add_effect()` / `_merge_effects()` in `rewrite-summaries.py` (max numeric
+wins). Processed JSON may set `is_max_known: false` when higher tiers still
+use `(scaled)` placeholders in source text.
 
 ## Quality indicators
 

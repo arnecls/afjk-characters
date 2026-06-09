@@ -549,6 +549,9 @@ def parse_hero_block(block: str) -> Hero:
         if current_section and buffer:
             text = " ".join(buffer).strip()
             if text:
+                from heroes_io import normalize_skill_text
+
+                text = normalize_skill_text(text)
                 hero.skill_chunks.append(
                     (SECTION_TIERS.get(current_section, "base"), text, current_section)
                 )
@@ -576,6 +579,9 @@ def parse_hero_block(block: str) -> Hero:
             flush_buffer()
             tier = parse_level_tier(ln, current_section)
             text = ln.split(":", 1)[-1].strip() if ":" in ln else ln
+            from heroes_io import normalize_skill_text
+
+            text = normalize_skill_text(text)
             hero.skill_chunks.append((tier, text, current_section or ""))
             continue
         if ln.strip():
@@ -1013,10 +1019,22 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     return "Single target"
 
 
+_NON_PERCENT_DEBUFF_LABELS = frozenset(
+    {
+        "Marked target (focus fire)",
+        "Vulnerable debuff",
+        "Damage taken debuff",
+        "Blind HP loss debuff",
+    }
+)
+
+
 def extract_number(text: str, label: str = "") -> float | None:
     if "(scaled)" in text.lower() or "<hp>" in text.lower():
         return None
     t = text.lower()
+    if label in _NON_PERCENT_DEBUFF_LABELS:
+        return None
     if label == "Energy recovery":
         m = re.search(r"(?:recover|restore)\w* (\d+(?:\.\d+)?) energy", t, re.I)
         if m:
@@ -1073,6 +1091,8 @@ _CC_LABEL_KEYWORDS: dict[str, str] = {
     "Sleep": r"asleep|hypnotiz",
     "Freeze": r"freez",
     "Pin": r"immobiliz|entangl|imprison|cannot move or act|unable to move",
+    "Blind": r"blind(?:ing|s|ed)?",
+    "Bind": r"bind(?:ing|s)?",
     "Taunt": r"taunt",
     "Interrupt": r"interrupt",
 }
@@ -1231,7 +1251,8 @@ def add_effect(
         cur.conditional = _merge_conditional(cur.conditional, cond)
         if category == "buff" and new_buff_tgt is not None:
             cur.targeting = _prefer_buff_targeting(new_buff_tgt, cur.targeting)
-        # Strongest value for cross-hero magnitude comparison
+        # Strongest value for cross-hero magnitude comparison.
+        # Synergy assumes a fully ascended roster (all skills / levels).
         ally_keeps_primary = (
             category == "buff"
             and new_buff_tgt == "Self"
@@ -1560,6 +1581,8 @@ CC_RULES = [
     # Python lookbehind must be fixed-width, so list each pronoun separately.
     (r"(?<!she )(?<!he )(?<!it )cannot move or act|unable to move or act", "Pin"),
     (r"entangl|imprison", "Pin"),
+    (r"\bblind(?:ing|s|ed)?\b", "Blind"),
+    (r"\bbind(?:ing|s)?\b", "Bind"),
     (r"teleport", "Move"),
     (r"pull(?:ing|s)? (?:in |them|the)", "Move"),
     (r"taunt", "Taunt"),

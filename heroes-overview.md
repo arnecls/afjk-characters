@@ -24,6 +24,10 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 Look for units providing: `ATK` `DEF Penetration`  
 Common buffers are **Lyca**, **Ravion**, or **Evie**.
 
+- **Kulu**
+  - DEF Penetration buff (single target, low)
+  - Enables Ranged damage from allies via ranged attacks
+  - Enables Debuff on target via Damage taken debuff (all units)
 - **Lily May**
   - DEF Penetration buff (single target, low)
   - Enables Debuff on target via Energy drain (all units)
@@ -35,8 +39,6 @@ Common buffers are **Lyca**, **Ravion**, or **Evie**.
   - Enables Debuff on target via Haste debuff (area)
 - **Frieren**
   - Enables Debuff on target via DoT (area)
-- **Koko**
-  - Enables Debuff on target via Damage taken debuff (area)
 
 ### Units that can act as a replacement for Aliceth
 
@@ -48,9 +50,9 @@ Common buffers are **Lyca**, **Ravion**, or **Evie**.
 
 **Crowd Control**
 
-- Alsa (100% `Move` `Stun`)
-- Atalanta (100% `Move` `Stun`)
-- Cassadee (100% `Move` `Stun`)
+- Damian (78% `Blind` `Stun`)
+- Hepler (78% `Blind` `Stun`)
+- Twins (78% `Blind` `Move`)
 
 ### Summary for Aliceth
 
@@ -72,13 +74,14 @@ Common buffers are **Lyca**, **Ravion**, or **Evie**.
 #### Debuffs provided by Aliceth
 
 - Execution debuff — Multiple targets — `medium`
-- Marked target (focus fire) — Single target — `medium`
+- Marked target (focus fire) — Multiple targets — `medium`
 - Blind HP loss debuff (EX+15) — Area — `low`
 
 #### Crowd Control provided by Aliceth
 
 - Move — Single target — `low`
 - Stun — Single target — `low`
+- Blind (EX+15) — Area — `low`
 
 #### Aliceth Provides
 
@@ -125,7 +128,6 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 ### Units benefitting from Alna
 
 - Shadewing
-- Aliceth
 
 ### Units that can act as a replacement for Alna
 
@@ -606,7 +608,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Buffs on allies**
 
-- Gunnar (100% `Invincible`)
 - Pandora (100% `Invincible`)
 
 **Damage**
@@ -825,12 +826,11 @@ Common buffers are **Evie**, **Lyca**, or **Ravion**.
 - **Frieren**
   - Enables Debuff on target via DoT (area)
   - Enables Magic damage from allies via Magic damage + all enemies (all units)
+- **Kulu**
+  - Enables Debuff on target via Damage taken debuff (all units)
 - **Alna**
   - ATK buff (single target, medium)
   - Enables Debuff on target via Haste debuff (area)
-- **Pippa**
-  - Enables Debuff on target via Energy drain (area)
-  - Enables Magic damage from allies via Magic damage + wide area (area)
 
 ### Units that can act as a replacement for Bonnie
 
@@ -1177,7 +1177,7 @@ Common buffers are **Ravion**, **Lyca**, or **Lorsan**.
 
 #### Crowd Control provided by Carolina
 
-- Freeze — Single target — `high`
+- Freeze — Area — `high`
 
 #### Carolina Provides
 
@@ -1302,9 +1302,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Debuffs on enemies**
 
+- Berial (100% `Damage taken debuff`)
+- Bonnie (100% `Damage taken debuff`)
 - Cryonaia (100% `Damage taken debuff`)
-- Indris (100% `Damage taken debuff`)
-- Koko (100% `Damage taken debuff`)
 
 **Crowd Control**
 
@@ -1329,7 +1329,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Debuffs provided by Cecia
 
-- Damage taken debuff (EX+10) — Single target — `medium`
+- Damage taken debuff (EX+10) — Single target — `low`
 
 #### Crowd Control provided by Cecia
 
@@ -1512,9 +1512,9 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 **Debuffs on enemies**
 
-- Koko (100% `Damage taken debuff`)
-- Kruger (100% `Damage taken debuff`)
-- Kulu (100% `Damage taken debuff`)
+- Berial (100% `Damage taken debuff`)
+- Bonnie (100% `Damage taken debuff`)
+- Cecia (100% `Damage taken debuff`)
 
 ### Summary for Cryonaia
 
@@ -1526,7 +1526,7 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 #### Debuffs provided by Cryonaia
 
-- Damage taken debuff (EX+5) — Single target — `high`
+- Damage taken debuff (EX+5) — Single target — `low`
 
 #### Crowd Control provided by Cryonaia
 
@@ -1748,9 +1748,8 @@ These are the **10** strongest pairings:
 
 **Crowd Control**
 
-- Alsa (100% `Stun`)
-- Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
+- Hepler (100% `Blind` `Stun`)
+- Aliceth (73% `Blind` `Stun`)
 
 ### Summary for Damian
 
@@ -1765,6 +1764,7 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Damian
 
+- Blind — Single target — `high`
 - Stun — Single target — `medium`
 
 #### Damian Provides
@@ -2063,9 +2063,7 @@ These are the **10** strongest pairings:
 
 **Crowd Control**
 
-- Atalanta (100% `Move`)
-- Cassadee (100% `Move`)
-- Eironn (100% `Move`)
+- Aliceth (68% `Blind` `Move`)
 
 ### Summary for Twins
 
@@ -2084,6 +2082,7 @@ These are the **10** strongest pairings:
 #### Crowd Control provided by Twins
 
 - Unaffected — Area — On Skill
+- Blind — Area — `low`
 - Move — Area — `low`
 
 #### Twins Provides
@@ -2748,6 +2747,10 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units that can act as a replacement for Gunnar
 
+**Buffs on allies**
+
+- Fay (66% `ATK SPD` `Vitality buff`)
+
 **Damage**
 
 - Brutus (90% `Max HP-based damage` `DoT` `Physical`)
@@ -2775,7 +2778,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Shield — Single target — `high`
 - Ranged DEF buff (Legendary+) — Single target — `low`
 - Vitality buff (Legendary+) — Single target — `low`
-- Invincible (EX+15) — Single target — `high`
 
 #### Crowd Control provided by Gunnar
 
@@ -3070,11 +3072,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Alna (100% `Haste debuff`)
 - Natsu (100% `Haste debuff`)
 
-**Crowd Control**
-
-- Antandra (100% `Taunt` `Stun`)
-- Lumont (72% `Taunt` `Stun`)
-
 ### Summary for Hepler
 
 #### Damage types dealt by Hepler
@@ -3093,6 +3090,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Hepler
 
+- Blind — Area — `high`
 - Stun — Area — `low`
 - Taunt — Area — `high`
 
@@ -3473,6 +3471,9 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 - **Sinbad**
   - Enables Multiple debuffs on target via 6 debuff types
   - Enables Debuff on target via ATK debuff (multiple targets)
+- **Kulu**
+  - Enables Multiple debuffs on target via 2 debuff types
+  - Enables Debuff on target via Damage taken debuff (all units)
 - **Natsu**
   - Enables Multiple debuffs on target via 3 debuff types
   - Enables Debuff on target via Haste debuff (area)
@@ -3480,11 +3481,6 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
   - ATK buff (single target, medium)
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via Haste debuff (area)
-- **Dunlingr**
-  - ATK buff (single target, low)
-  - ATK SPD buff (all units, low) [signature fuel]
-  - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via Energy drain (all units)
 
 ### Units benefitting from Indris
 
@@ -3503,11 +3499,6 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 - Sinbad (100% `Damage taken debuff` `Magic DEF debuff` `Phys DEF debuff`)
 - Kruger (75% `Damage taken debuff` `Phys DEF debuff`)
 
-**Crowd Control**
-
-- Kordan (68% `Pin` `Move`)
-- Evie (65% `Move` `Pin` `Silence`)
-
 ### Summary for Indris
 
 #### Damage types dealt by Indris
@@ -3519,12 +3510,13 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 
 #### Debuffs provided by Indris
 
-- Damage taken debuff — Single target — `medium`
+- Damage taken debuff — Multiple targets — `low`
 - Magic DEF debuff — Single target — `low`
 - Phys DEF debuff (EX+10) — Single target — `low`
 
 #### Crowd Control provided by Indris
 
+- Bind — Single target — `high`
 - Move — Area — `high`
 - Pin — Area — `high`
 - Silence — Single target — `low`
@@ -3760,7 +3752,9 @@ These are the **10** strongest pairings:
 
 **Debuffs on enemies**
 
-- Kruger (66% `Damage taken debuff`)
+- Kruger (100% `Damage taken debuff`)
+- Kulu (100% `Damage taken debuff`)
+- Indris (75% `Damage taken debuff`)
 
 **Crowd Control**
 
@@ -3785,7 +3779,7 @@ These are the **10** strongest pairings:
 
 #### Debuffs provided by Koko
 
-- Damage taken debuff — Area — `high`
+- Damage taken debuff — Area — `low`
 
 #### Crowd Control provided by Koko
 
@@ -3993,9 +3987,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 #### Debuffs provided by Kruger
 
-- Damage taken debuff — Area — `medium`
+- Damage taken debuff — Area — `low`
 - Phys DEF debuff — Single target — `low`
-- Vulnerable debuff — Area — `medium`
+- Vulnerable debuff — Area — `low`
 
 #### Crowd Control provided by Kruger
 
@@ -4038,6 +4032,12 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) [signature fuel]
 
+### Units benefitting from Kulu
+
+- Indris
+- Aliceth
+- Bonnie
+
 ### Units that can act as a replacement for Kulu
 
 **Buffs on allies**
@@ -4051,10 +4051,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Alna (100% `Physical`)
 - Athalia (100% `Physical`)
 - Callan (100% `Physical`)
-
-**Debuffs on enemies**
-
-- Alsa (61% `Movement speed debuff`)
 
 **Crowd Control**
 
@@ -4615,9 +4611,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Debuffs on enemies**
 
-- Cryonaia (100% `Damage taken debuff`)
-- Koko (100% `Damage taken debuff`)
-- Kruger (100% `Damage taken debuff`)
+- Berial (100% `Damage taken debuff`)
+- Bonnie (100% `Damage taken debuff`)
+- Cecia (100% `Damage taken debuff`)
 
 **Crowd Control**
 
@@ -4638,7 +4634,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Debuffs provided by Lucy
 
-- Damage taken debuff — Single target — `high`
+- Damage taken debuff — Single target — `low`
 
 #### Crowd Control provided by Lucy
 
@@ -4827,7 +4823,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting from Lyca
 
-**62** units include this provider among their top 5 synergy partners. Why the match is common:
+**61** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -4851,12 +4847,6 @@ These are the **10** strongest pairings:
 **Buffs on allies**
 
 - Valka (60% `ATK SPD`)
-
-**Energy provider**
-
-- Pandora
-- Rowan
-- Ravion
 
 **Damage**
 
@@ -4927,9 +4917,9 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 **Crowd Control**
 
-- Gerda (100% `Interrupt`)
-- Lily May (100% `Interrupt`)
-- Reinier (100% `Interrupt`)
+- Gerda (60% `Interrupt`)
+- Lily May (60% `Interrupt`)
+- Reinier (60% `Interrupt`)
 
 ### Summary for Marcille
 
@@ -4945,6 +4935,7 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 #### Crowd Control provided by Marcille
 
 - Unaffected (Supreme+) — Self — On Skill
+- Blind — Single target — `medium`
 - Interrupt (Mythic+) — Single target — `high`
 
 #### Marcille Provides
@@ -5073,9 +5064,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Debuffs on enemies**
 
+- Berial (100% `Damage taken debuff`)
+- Bonnie (100% `Damage taken debuff`)
 - Cecia (100% `Damage taken debuff`)
-- Cryonaia (100% `Damage taken debuff`)
-- Indris (100% `Damage taken debuff`)
 
 ### Summary for Mehira
 
@@ -5090,7 +5081,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Debuffs provided by Mehira
 
-- Damage taken debuff (Supreme+) — Single target — `medium`
+- Damage taken debuff (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Mehira
 
@@ -5666,10 +5657,6 @@ Common buffers are **Ravion** or **Lyca**.
 
 ### Units that can act as a replacement for Pandora
 
-**Energy provider**
-
-- Rowan
-
 **Damage**
 
 - Alsa (100% `Magic`)
@@ -5947,12 +5934,6 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 - Twins (75% `Max HP`)
 - Zanie (75% `Max HP`)
 
-**Energy provider**
-
-- Lyca
-- Pandora
-- Ravion
-
 **Damage**
 
 - Alsa (100% `Magic`)
@@ -6101,7 +6082,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting from Ravion
 
-**24** units include this provider among their top 5 synergy partners. Why the match is common:
+**23** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -6109,7 +6090,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 These are the **10** strongest pairings: 
 
 - Nerion
-- Indris
 - Carolina
 - Aliceth
 - Arden
@@ -6118,14 +6098,9 @@ These are the **10** strongest pairings:
 - Temesia
 - Vala
 - Cryonaia
+- Cyran
 
 ### Units that can act as a replacement for Ravion
-
-**Energy provider**
-
-- Lyca
-- Pandora
-- Rowan
 
 **Similar Skills**
 
@@ -6218,9 +6193,9 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 **Debuffs on enemies**
 
-- Cryonaia (75% `Damage taken debuff`)
-- Koko (75% `Damage taken debuff`)
-- Kruger (75% `Damage taken debuff`)
+- Bonnie (100% `ATK debuff` `Damage taken debuff`)
+- Pandora (100% `ATK debuff` `Damage taken debuff`)
+- Sinbad (100% `ATK debuff` `Damage taken debuff`)
 
 **Crowd Control**
 
@@ -6240,12 +6215,12 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 #### Debuffs provided by Reinier
 
 - ATK debuff (Legendary+) — Single target — `low`
-- Damage taken debuff (Mythic+) — Single target — `high`
+- Damage taken debuff (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Reinier
 
-- Steadfast — Single target — Conditional
-- Unaffected — Single target — Conditional
+- Steadfast — Self — Conditional
+- Unaffected — Self — Conditional
 - Interrupt — Single target — `high`
 - Knock up — Single target — `low`
 - Move — Multiple targets — `high`
@@ -6357,11 +6332,6 @@ These are the **10** strongest pairings:
 - Lily May
 
 ### Units that can act as a replacement for Rowan
-
-**Energy provider**
-
-- Pandora
-- Lyca
 
 **Similar Skills**
 
@@ -6836,12 +6806,11 @@ Common buffers are **Evie**, **Lyca**, or **Ravion**.
 - **Lucius**
   - Max HP via Shield (area, high)
   - Enables Debuff on target via ATK debuff (area)
-- **Koko**
-  - Max HP via Shield (all units, low)
-  - Lifedrain buff (multiple targets, low)
-  - Enables Debuff on target via Damage taken debuff (area)
 - **Frieren**
   - Enables Debuff on target via DoT (area)
+  - Enables Continuous damage on enemies via DoT + Burn
+- **Natsu**
+  - Enables Debuff on target via Haste debuff (area)
   - Enables Continuous damage on enemies via DoT + Burn
 
 ### Units that can act as a replacement for Shadewing
@@ -7205,7 +7174,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Debuffs provided by Sinbad
 
-- Damage taken debuff — Single target — `medium`
+- Damage taken debuff — Single target — `low`
 - ATK debuff (Mythic+) — Multiple targets — `high`
 - Energy drain (Mythic+) — Multiple targets — `medium`
 - Magic DEF debuff (Mythic+) — Multiple targets — `medium`
@@ -7260,12 +7229,6 @@ Common buffers are **Evie**, **Lorsan**, or **Mikola**.
 - Evie (75% `Healing` `ATK`)
 - Fay (75% `Healing` `ATK`)
 - Mikola (75% `Healing` `ATK`)
-
-**Energy provider**
-
-- Lyca
-- Pandora
-- Phraesto
 
 **Similar Skills**
 
@@ -7828,12 +7791,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Pandora (100% `Energy`)
 - Ravion (100% `Energy`)
 
-**Energy provider**
-
-- Lyca
-- Pandora
-- Ravion
-
 **Damage**
 
 - Alna (100% `Physical` `DoT`)
@@ -8046,9 +8003,9 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 **Crowd Control**
 
-- Kordan (100% `Move` `Knock down`)
-- Ravion (100% `Move` `Knock down`)
-- Scarlita (100% `Move` `Knock down`)
+- Indris (70% `Move` `Bind`)
+- Kordan (70% `Move` `Knock down`)
+- Ravion (70% `Move` `Knock down`)
 
 ### Summary for Ulmus
 
@@ -8065,6 +8022,7 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 #### Crowd Control provided by Ulmus
 
 - Unaffected — Self — On Skill
+- Bind (Mythic+) — Single target — `medium`
 - Knock down (Mythic+) — Single target — `medium`
 - Move (Supreme+) — Area — `low`
 

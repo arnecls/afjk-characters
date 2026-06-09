@@ -84,6 +84,27 @@ def _assert_title_sets_match(processed: dict, analyzed_titles: set[str]) -> None
         )
 
 
+_REPLACEMENT_CATEGORIES = (
+    "buff",
+    "energy",
+    "similar_skills",
+    "damage",
+    "debuff",
+    "cc",
+)
+
+
+def _sanitize_replacements(replacements: dict) -> dict:
+    """Drop rows with empty matches; keep all required replacement keys."""
+    out: dict = {}
+    for key in _REPLACEMENT_CATEGORIES:
+        rows = replacements.get(key, [])
+        if not isinstance(rows, list):
+            rows = []
+        out[key] = [row for row in rows if row.get("matches")]
+    return out
+
+
 def build_synergies(raw: dict, processed: dict) -> dict:
     yaphalla_text = io.reconstruct_heroes_md(raw)
     fandom_text = io.reconstruct_heroes2_md(raw)
@@ -135,19 +156,13 @@ def build_synergies(raw: dict, processed: dict) -> dict:
                 {"score": score, "name": name} for score, name in benefited
             ],
             "beneficiary_overflow_reasons": gen._beneficiary_overflow_reasons(hero),
-            "replacements": replacements_index.get(hero.title, {}),
+            "replacements": _sanitize_replacements(
+                replacements_index.get(hero.title, {})
+            ),
         }
 
     result = {"heroes": synergy_heroes}
-    try:
-        hs.validate_synergies(result)
-    except RuntimeError as exc:
-        print(f"Warning: {exc}", file=sys.stderr)
-    except Exception as exc:
-        if type(exc).__name__ == "ValidationError":
-            print(f"Warning: schema validation failed: {exc}", file=sys.stderr)
-        else:
-            raise
+    hs.validate_synergies(result)
     return result
 
 

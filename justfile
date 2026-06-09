@@ -13,6 +13,10 @@ default:
 download:
     python3 scripts/download_heroes.py
 
+# Validate processed JSON vs Heroes.md and pipeline parity.
+validate:
+    python3 scripts/validate_processed.py
+
 # Analyse data/heroes_data.json -> processed + synergies JSON.
 analyze:
     python3 scripts/process_heroes.py

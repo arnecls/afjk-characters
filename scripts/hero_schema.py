@@ -314,6 +314,9 @@ def _targeting_to_schema(
 def _schema_to_targeting(
     effect: dict[str, Any], category: str
 ) -> str:
+    label = effect.get("targeting_label")
+    if label:
+        return label
     rs = _rs()
     target = effect.get("target", "enemy")
     area = effect.get("area", "single")
@@ -375,7 +378,10 @@ def _numeric_from_value(value: Any) -> float | None:
 
 
 def _merge_effects(effects: list[Any]) -> list[Any]:
-    """Merge legacy effects by (category, label), matching add_effect()."""
+    """Merge legacy effects by (category, label), matching add_effect().
+
+    Keeps the strongest numeric per label for fully-ascended synergy comparison.
+    """
     rs = _rs()
 
     merged: list[Any] = []
@@ -479,11 +485,18 @@ def _is_placeholder_schema_effect(effect: dict[str, Any]) -> bool:
     return False
 
 
-def effect_to_schema(effect: Any, *, summon: bool = False) -> dict[str, Any]:
+def effect_to_schema(
+    effect: Any,
+    *,
+    summon: bool = False,
+    is_max_known: bool = True,
+) -> dict[str, Any]:
     """Convert legacy Effect to skills.schema.json effect."""
     category = effect.category
     out: dict[str, Any] = {
         "tier": to_schema_tier(effect.tier),
+        "targeting_label": effect.targeting,
+        "is_max_known": is_max_known,
     }
     out.update(_targeting_to_schema(effect.targeting, category, summon=summon))
     conditions = _conditional_to_conditions(effect.conditional)
@@ -545,6 +558,7 @@ def cc_immunity_to_schema(imm: Any) -> dict[str, Any]:
         "tier": to_schema_tier(imm.tier),
         "immunity_type": to_schema_immunity(imm.immunity_type),
         "timing": to_schema_timing(imm.timing),
+        "targeting_label": imm.targeting,
     }
     out.update(_targeting_to_schema(imm.targeting, "buff"))
     return out
@@ -656,9 +670,11 @@ def synergy_mechanic_to_special(se: dict[str, Any], kind: str) -> Any:
 
 
 def _skill_description(skill: dict[str, Any]) -> str:
-    parts = [skill.get("description") or ""]
+    from heroes_io import normalize_skill_text
+
+    parts = [normalize_skill_text(skill.get("description") or "")]
     for level in skill.get("levels", []):
-        text = level.get("text") or ""
+        text = normalize_skill_text(level.get("text") or "")
         if text:
             parts.append(text)
     return " ".join(p for p in parts if p).strip() or "_No description._"
@@ -707,26 +723,24 @@ def _build_skill_record(
     if ie is not None:
         record["initial_energy"] = ie
 
+    description = record["description"]
+    has_scaled = "(scaled)" in description.lower() or "<hp>" in description.lower()
+
     effects: list[dict[str, Any]] = []
     if slice_:
         for eff in _merge_effects(slice_.effects):
-            effects.append(effect_to_schema(eff))
+            effects.append(
+                effect_to_schema(eff, is_max_known=not has_scaled)
+            )
         for eff in _merge_effects(slice_.summon_effects):
-            effects.append(effect_to_schema(eff, summon=True))
+            effects.append(
+                effect_to_schema(eff, summon=True, is_max_known=not has_scaled)
+            )
         for imm in _merge_immunities(slice_.cc_immunities):
             effects.append(cc_immunity_to_schema(imm))
 
     if not effects:
-        effects.append(
-            {
-                "type": "damage",
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "damage_type": to_schema_damage_type(primary_dmg or "Physical"),
-                "value": [{"type": "percentage", "value": 100}],
-            }
-        )
+        record["passive_only"] = True
     record["effects"] = effects
     return name, record
 

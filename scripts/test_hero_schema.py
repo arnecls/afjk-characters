@@ -50,6 +50,8 @@ class EnumMappingTests(unittest.TestCase):
     def test_cc_round_trip(self):
         self.assertEqual(hs.to_schema_cc("Knock up"), "knock_up")
         self.assertEqual(hs.to_display_cc("knock_up"), "Knock up")
+        self.assertEqual(hs.to_schema_cc("Blind"), "blind")
+        self.assertEqual(hs.to_schema_cc("Bind"), "bind")
 
     def test_faction_round_trip(self):
         self.assertEqual(hs.to_schema_faction("Wilder"), "wilder")
@@ -101,6 +103,64 @@ class RoundTripTests(unittest.TestCase):
         after_keys = {(e.category, e.label, e.targeting) for e in after.effects}
         self.assertEqual(before_keys, after_keys)
 
+    def test_aliceth_full_ascension_numerics(self):
+        processed = io.load_processed()
+        hero = processed["heroes"]["Aliceth - Radiant Wings"]
+        sealed = hero["skills"]["Sealed Fate"]
+        pen = next(
+            e
+            for e in sealed["effects"]
+            if e.get("name") == "DEF Penetration buff"
+        )
+        self.assertEqual(pen["value"][0]["value"], 40.0)
+        marked = [
+            e
+            for e in sealed["effects"]
+            if e.get("name") == "Marked target (focus fire)"
+        ]
+        self.assertTrue(
+            not marked or hs._numeric_from_value(marked[0].get("value")) is None
+        )
+        focus = hero["skills"]["Hero Focus"]
+        atk = next(e for e in focus["effects"] if e.get("name") == "ATK buff")
+        self.assertEqual(atk["value"][0]["value"], 16.0)
+
+    def test_targeting_label_round_trip(self):
+        for prefix in ("Alna", "Athalia", "Carolina", "Gerda", "Gunnar"):
+            hero, _data = self._hero_by_title_prefix(prefix)
+            for _section, slice_ in hero.skill_slices.items():
+                for eff in slice_.effects:
+                    schema_eff = hs.effect_to_schema(eff)
+                    restored = hs.schema_effect_to_effect(schema_eff)
+                    self.assertEqual(
+                        restored.targeting,
+                        eff.targeting,
+                        f"{prefix} / {_section} / {eff.label}",
+                    )
+
+    def test_aliceth_aegis_wings_blind_cc(self):
+        processed = io.load_processed()
+        wings = processed["heroes"]["Aliceth - Radiant Wings"]["skills"][
+            "Aegis Wings"
+        ]
+        cc_types = {
+            e.get("cc-type")
+            for e in wings["effects"]
+            if e.get("type") == "crowd_control"
+        }
+        self.assertIn("blind", cc_types)
+
+    def test_passive_only_skills_have_no_effects(self):
+        processed = io.load_processed()
+        for title, hero in processed["heroes"].items():
+            for skill_name, skill in hero["skills"].items():
+                if skill.get("passive_only"):
+                    self.assertEqual(
+                        skill.get("effects", []),
+                        [],
+                        f"{title} / {skill_name}",
+                    )
+
     def test_no_schema_enum_tokens_in_overview(self):
         overview = (ROOT / "heroes-overview.md").read_text(encoding="utf-8")
         forbidden = [
@@ -132,6 +192,21 @@ class SchemaValidationTests(unittest.TestCase):
     def test_synergies_json_validates(self):
         synergies = io.load_synergies()
         hs.validate_synergies(synergies)
+
+
+class ValidateScriptTests(unittest.TestCase):
+    def test_validate_processed_exits_zero(self):
+        result = subprocess.run(
+            [sys.executable, str(SCRIPTS / "validate_processed.py")],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(
+            result.returncode,
+            0,
+            msg=result.stderr or result.stdout,
+        )
 
 
 if __name__ == "__main__":

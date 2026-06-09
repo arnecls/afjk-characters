@@ -59,6 +59,24 @@ _HEROES_MD_HEADER = (
 )
 
 _LEVEL_RE = re.compile(r"^Level (\d+)(?: — (.+))?$")
+_WIKI_TAG_RE = re.compile(r"\[([^\]]+)\]([^\[]+)\[/\]")
+
+
+def normalize_skill_text(text: str) -> str:
+    """Strip fandom/wiki highlight tags so analysis sees plain words."""
+    if not text:
+        return text
+    return _WIKI_TAG_RE.sub(lambda m: m.group(2), text)
+
+
+def normalize_hero_skills(hero: dict) -> None:
+    """Normalize skill description and level text in a hero record (in place)."""
+    for skill in hero.get("skills", []):
+        if skill.get("description"):
+            skill["description"] = normalize_skill_text(skill["description"])
+        for level in skill.get("levels", []):
+            if level.get("text"):
+                level["text"] = normalize_skill_text(level["text"])
 
 
 # ---------------------------------------------------------------------------
@@ -311,6 +329,7 @@ def merge_sources(
         record = dict(hero)
         if gapfill and fandom_hero:
             _gapfill_identity(record, fandom_hero)
+        normalize_hero_skills(record)
         record["fandom"] = fandom_hero
         heroes.append(record)
 

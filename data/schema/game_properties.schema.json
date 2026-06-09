@@ -64,7 +64,9 @@
         "pin",
         "interrupt",
         "freeze",
-        "taunt"
+        "taunt",
+        "blind",
+        "bind"
       ],
       "description": "Crowd-control category."
     },

@@ -13,6 +13,15 @@
           "score": 43.80714285714286
         },
         {
+          "provider": "Kulu - Blast Master",
+          "reasons": [
+            "DEF Penetration via DEF Penetration buff (single target, low)",
+            "Enables Ranged damage from allies via ranged attacks",
+            "Enables Debuff on target via Damage taken debuff (all units)"
+          ],
+          "score": 27.5
+        },
+        {
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "ATK via ATK buff (multiple targets, medium)",
@@ -62,13 +71,6 @@
           "score": 18.0
         },
         {
-          "provider": "Koko - Wild Child",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (area)"
-          ],
-          "score": 18.0
-        },
-        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Enables Debuff on target via ATK debuff (area)"
@@ -89,15 +91,6 @@
             "ATK SPD via Haste buff (multiple targets, high) [signature fuel]"
           ],
           "score": 17.1
-        },
-        {
-          "provider": "Kulu - Blast Master",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables Ranged damage from allies via ranged attacks",
-            "Enables Debuff on target via Movement speed debuff (area)"
-          ],
-          "score": 17.0
         },
         {
           "provider": "Rowan - The Roamer",
@@ -163,16 +156,6 @@
           "score": 12.6
         },
         {
-          "provider": "Cecia - Requiem of Thorns",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, medium)",
-            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
-            "Enables Ranged damage from allies via ranged attacks",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 12.08
-        },
-        {
           "provider": "Alsa - Desert Flare",
           "reasons": [
             "Enables Debuff on target via Movement speed debuff (area)"
@@ -183,13 +166,6 @@
           "provider": "Brutus - Blood Claw",
           "reasons": [
             "Enables Debuff on target via DoT (area)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Kruger - Dauntless Warrior",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (area)"
           ],
           "score": 12.0
         },
@@ -266,6 +242,16 @@
           "score": 10.2
         },
         {
+          "provider": "Cecia - Requiem of Thorns",
+          "reasons": [
+            "DEF Penetration via DEF Penetration buff (single target, medium)",
+            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
+            "Enables Ranged damage from allies via ranged attacks",
+            "Enables Debuff on target via Damage taken debuff (single target)"
+          ],
+          "score": 9.83
+        },
+        {
           "provider": "Fay - Colorful Dancer",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -283,22 +269,6 @@
           "score": 9.0
         },
         {
-          "provider": "Mehira - Mind Cager",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, high) [signature fuel]",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 8.55
-        },
-        {
-          "provider": "Reinier - Symmetric Sin",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 8.25
-        },
-        {
           "provider": "Bonnie - Obsidian Claws",
           "reasons": [
             "Enables Ranged damage from allies via ranged attacks",
@@ -310,7 +280,7 @@
           "provider": "Indris - Chain Breaker",
           "reasons": [
             "Enables Ranged damage from allies via ranged attacks",
-            "Enables Debuff on target via Damage taken debuff (single target)"
+            "Enables Debuff on target via Damage taken debuff (multiple targets)"
           ],
           "score": 8.0
         },
@@ -360,23 +330,9 @@
           "score": 6.885000000000001
         },
         {
-          "provider": "Cryonaia - Arctic Revenant",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 6.75
-        },
-        {
           "provider": "Granny Dahnie - Forest Guardian",
           "reasons": [
             "Enables Debuff on target via ATK debuff (single target)"
-          ],
-          "score": 6.75
-        },
-        {
-          "provider": "Lucy - Celestial Spirit Mage",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)"
           ],
           "score": 6.75
         },
@@ -400,6 +356,14 @@
             "ATK SPD via ATK SPD buff (multiple targets, high) [signature fuel]"
           ],
           "score": 6.48
+        },
+        {
+          "provider": "Mehira - Mind Cager",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, high) [signature fuel]",
+            "Enables Debuff on target via Damage taken debuff (single target)"
+          ],
+          "score": 6.3
         },
         {
           "provider": "Zandrok - Watchful Edge",
@@ -426,6 +390,20 @@
           "provider": "Kafra - Gale Rider",
           "reasons": [
             "Enables Debuff on target via Phys DEF debuff (area)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Koko - Wild Child",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (area)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Kruger - Dauntless Warrior",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (area)"
           ],
           "score": 6.0
         },
@@ -519,6 +497,14 @@
           "score": 4.05
         },
         {
+          "provider": "Reinier - Symmetric Sin",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables Debuff on target via ATK debuff (single target)"
+          ],
+          "score": 3.75
+        },
+        {
           "provider": "Marilee - Forest's Arrow",
           "reasons": [
             "Enables Ranged damage from allies via ranged attacks"
@@ -554,6 +540,13 @@
           "score": 2.25
         },
         {
+          "provider": "Cryonaia - Arctic Revenant",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (single target)"
+          ],
+          "score": 2.25
+        },
+        {
           "provider": "Faramor - Silverfang Mantle",
           "reasons": [
             "Enables Debuff on target via Vitality debuff (single target)"
@@ -564,6 +557,13 @@
           "provider": "Harak - Deepsea Ravager",
           "reasons": [
             "Enables Debuff on target via Execution debuff (single target)"
+          ],
+          "score": 2.25
+        },
+        {
+          "provider": "Lucy - Celestial Spirit Mage",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (single target)"
           ],
           "score": 2.25
         },
@@ -661,27 +661,27 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Alsa",
-            "score": 1.0,
+            "name": "Damian",
+            "score": 0.7857,
             "matches": [
-              "Move",
+              "Blind",
               "Stun"
             ]
           },
           {
-            "name": "Atalanta",
-            "score": 1.0,
+            "name": "Hepler",
+            "score": 0.7857,
             "matches": [
-              "Move",
+              "Blind",
               "Stun"
             ]
           },
           {
-            "name": "Cassadee",
-            "score": 1.0,
+            "name": "Twins",
+            "score": 0.7857,
             "matches": [
-              "Move",
-              "Stun"
+              "Blind",
+              "Move"
             ]
           }
         ]
@@ -914,10 +914,6 @@
         {
           "score": 30.0,
           "name": "Shadewing"
-        },
-        {
-          "score": 21.0,
-          "name": "Aliceth"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -3064,13 +3060,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Invincible"
-            ]
-          },
-          {
             "name": "Pandora",
             "score": 1.0,
             "matches": [
@@ -3906,6 +3895,13 @@
           "score": 24.0
         },
         {
+          "provider": "Kulu - Blast Master",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (all units)"
+          ],
+          "score": 22.5
+        },
+        {
           "provider": "Lyca - Keeper of Glades",
           "reasons": [
             "Enables Debuff on target via ATK debuff (all units)"
@@ -3960,13 +3956,6 @@
           "score": 18.0
         },
         {
-          "provider": "Koko - Wild Child",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (area)"
-          ],
-          "score": 18.0
-        },
-        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Enables Debuff on target via ATK debuff (area)"
@@ -3991,22 +3980,6 @@
           "score": 16.2
         },
         {
-          "provider": "Cryonaia - Arctic Revenant",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)",
-            "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
-          ],
-          "score": 15.45
-        },
-        {
-          "provider": "Lucy - Celestial Spirit Mage",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)",
-            "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
-          ],
-          "score": 15.45
-        },
-        {
           "provider": "Athalia - Harbinger of Justice",
           "reasons": [
             "Enables Debuff on target via ATK debuff (all units)"
@@ -4029,15 +4002,6 @@
             "Enables Debuff on target via ATK debuff (multiple targets)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Reinier - Symmetric Sin",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via Damage taken debuff (single target)",
-            "Enables Magic damage from allies via Magic damage + all enemies (all units)"
-          ],
-          "score": 14.25
         },
         {
           "provider": "Pandora - Hope Unleashed",
@@ -4077,14 +4041,6 @@
             "Enables Magic damage from allies via Magic damage + wide area (area)"
           ],
           "score": 13.25
-        },
-        {
-          "provider": "Mehira - Mind Cager",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)",
-            "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
-          ],
-          "score": 13.2
         },
         {
           "provider": "Bryon - Evergreen Sentinel",
@@ -4135,20 +4091,6 @@
           "score": 12.0
         },
         {
-          "provider": "Kruger - Dauntless Warrior",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (area)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Kulu - Blast Master",
-          "reasons": [
-            "Enables Debuff on target via Movement speed debuff (area)"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Aurora - Celestial of Dreams",
           "reasons": [
             "Enables Debuff on target via Haste debuff (multiple targets)",
@@ -4164,6 +4106,39 @@
             "Enables Magic damage from allies via Magic damage (single target)"
           ],
           "score": 11.0
+        },
+        {
+          "provider": "Cryonaia - Arctic Revenant",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (single target)",
+            "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
+          ],
+          "score": 10.95
+        },
+        {
+          "provider": "Lucy - Celestial Spirit Mage",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (single target)",
+            "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
+          ],
+          "score": 10.95
+        },
+        {
+          "provider": "Mehira - Mind Cager",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (single target)",
+            "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
+          ],
+          "score": 10.95
+        },
+        {
+          "provider": "Reinier - Symmetric Sin",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables Debuff on target via ATK debuff (single target)",
+            "Enables Magic damage from allies via Magic damage + all enemies (all units)"
+          ],
+          "score": 9.75
         },
         {
           "provider": "Berial - Sinister Jester",
@@ -4357,6 +4332,20 @@
           "score": 6.0
         },
         {
+          "provider": "Koko - Wild Child",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (area)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Kruger - Dauntless Warrior",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (area)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Lorsan - Windweaver Protector",
           "reasons": [
             "Enables Magic damage from allies via Magic damage + all enemies (all units)"
@@ -4434,16 +4423,9 @@
           "score": 4.5
         },
         {
-          "provider": "Cecia - Requiem of Thorns",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Indris - Chain Breaker",
           "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)"
+            "Enables Debuff on target via Damage taken debuff (multiple targets)"
           ],
           "score": 4.5
         },
@@ -4481,6 +4463,13 @@
             "Enables Debuff on target via Phys DEF debuff (single target)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Cecia - Requiem of Thorns",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (single target)"
+          ],
+          "score": 2.25
         },
         {
           "provider": "Dionel - Venus of Dawn",
@@ -6730,21 +6719,21 @@
         ],
         "debuff": [
           {
+            "name": "Berial",
+            "score": 1.0,
+            "matches": [
+              "Damage taken debuff"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Damage taken debuff"
+            ]
+          },
+          {
             "name": "Cryonaia",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff"
-            ]
-          },
-          {
-            "name": "Koko",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
@@ -7574,21 +7563,21 @@
         ],
         "debuff": [
           {
-            "name": "Koko",
+            "name": "Berial",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
             ]
           },
           {
-            "name": "Kruger",
+            "name": "Bonnie",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
             ]
           },
           {
-            "name": "Kulu",
+            "name": "Cecia",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
@@ -8509,23 +8498,18 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Hepler",
             "score": 1.0,
             "matches": [
+              "Blind",
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
-            "score": 1.0,
+            "name": "Aliceth",
+            "score": 0.7333,
             "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Atalanta",
-            "score": 1.0,
-            "matches": [
+              "Blind",
               "Stun"
             ]
           }
@@ -10186,23 +10170,10 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Atalanta",
-            "score": 1.0,
+            "name": "Aliceth",
+            "score": 0.6875,
             "matches": [
-              "Move"
-            ]
-          },
-          {
-            "name": "Cassadee",
-            "score": 1.0,
-            "matches": [
-              "Move"
-            ]
-          },
-          {
-            "name": "Eironn",
-            "score": 1.0,
-            "matches": [
+              "Blind",
               "Move"
             ]
           }
@@ -12844,7 +12815,16 @@
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
       "replacements": {
-        "buff": [],
+        "buff": [
+          {
+            "name": "Fay",
+            "score": 0.6667,
+            "matches": [
+              "ATK SPD",
+              "Vitality buff"
+            ]
+          }
+        ],
         "energy": [],
         "similar_skills": [],
         "damage": [
@@ -14384,24 +14364,7 @@
             ]
           }
         ],
-        "cc": [
-          {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Taunt",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Lumont",
-            "score": 0.7273,
-            "matches": [
-              "Taunt",
-              "Stun"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Hewynn - Tender Leaf": {
@@ -16407,6 +16370,14 @@
           "score": 35.099999999999994
         },
         {
+          "provider": "Kulu - Blast Master",
+          "reasons": [
+            "Enables Multiple debuffs on target via 2 debuff types",
+            "Enables Debuff on target via Damage taken debuff (all units)"
+          ],
+          "score": 34.5
+        },
+        {
           "provider": "Natsu - Fire Dragon Slayer Mage",
           "reasons": [
             "Enables Multiple debuffs on target via 3 debuff types",
@@ -16476,14 +16447,6 @@
           "score": 26.4
         },
         {
-          "provider": "Kruger - Dauntless Warrior",
-          "reasons": [
-            "Enables Multiple debuffs on target via 3 debuff types",
-            "Enables Debuff on target via Damage taken debuff (area)"
-          ],
-          "score": 26.4
-        },
-        {
           "provider": "Evie - Royal Envoy",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -16543,14 +16506,6 @@
           "score": 21.6
         },
         {
-          "provider": "Kulu - Blast Master",
-          "reasons": [
-            "Enables Multiple debuffs on target via 2 debuff types",
-            "Enables Debuff on target via Movement speed debuff (area)"
-          ],
-          "score": 21.6
-        },
-        {
           "provider": "Sylphira - Sovereign of Song",
           "reasons": [
             "Enables Multiple debuffs on target via 2 debuff types",
@@ -16575,12 +16530,12 @@
           "score": 20.4
         },
         {
-          "provider": "Koko - Wild Child",
+          "provider": "Kruger - Dauntless Warrior",
           "reasons": [
-            "Enables Multiple debuffs on target via Damage taken debuff",
+            "Enables Multiple debuffs on target via 3 debuff types",
             "Enables Debuff on target via Damage taken debuff (area)"
           ],
-          "score": 20.0
+          "score": 20.4
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -16653,15 +16608,6 @@
           "score": 15.6
         },
         {
-          "provider": "Mehira - Mind Cager",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, high) [signature fuel]",
-            "Enables Multiple debuffs on target via Damage taken debuff",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 15.5
-        },
-        {
           "provider": "Damian - Woody Wonder",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]"
@@ -16708,6 +16654,15 @@
           "score": 13.475
         },
         {
+          "provider": "Mehira - Mind Cager",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, high) [signature fuel]",
+            "Enables Multiple debuffs on target via Damage taken debuff",
+            "Enables Debuff on target via Damage taken debuff (single target)"
+          ],
+          "score": 13.25
+        },
+        {
           "provider": "Shakir - Furious Howl",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, low) [signature fuel]",
@@ -16715,15 +16670,6 @@
             "Enables Debuff on target via Vitality debuff (single target)"
           ],
           "score": 12.5
-        },
-        {
-          "provider": "Reinier - Symmetric Sin",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Multiple debuffs on target via 2 debuff types",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 11.85
         },
         {
           "provider": "Shadewing - Undying Vow",
@@ -16799,15 +16745,6 @@
           "score": 9.0
         },
         {
-          "provider": "Cecia - Requiem of Thorns",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
-            "Enables Multiple debuffs on target via Damage taken debuff",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 8.9
-        },
-        {
           "provider": "Atalanta - Fortune Finder",
           "reasons": [
             "Enables Multiple debuffs on target via Phys DEF debuff",
@@ -16816,26 +16753,10 @@
           "score": 8.75
         },
         {
-          "provider": "Cryonaia - Arctic Revenant",
-          "reasons": [
-            "Enables Multiple debuffs on target via Damage taken debuff",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 8.75
-        },
-        {
           "provider": "Gwyneth - Dragonslayer Knight",
           "reasons": [
             "Enables Multiple debuffs on target via DoT",
             "Enables Debuff on target via DoT (single target)"
-          ],
-          "score": 8.75
-        },
-        {
-          "provider": "Lucy - Celestial Spirit Mage",
-          "reasons": [
-            "Enables Multiple debuffs on target via Damage taken debuff",
-            "Enables Debuff on target via Damage taken debuff (single target)"
           ],
           "score": 8.75
         },
@@ -16862,6 +16783,32 @@
             "Enables Debuff on target via Haste debuff (area)"
           ],
           "score": 8.0
+        },
+        {
+          "provider": "Koko - Wild Child",
+          "reasons": [
+            "Enables Multiple debuffs on target via Damage taken debuff",
+            "Enables Debuff on target via Damage taken debuff (area)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Reinier - Symmetric Sin",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables Multiple debuffs on target via 2 debuff types",
+            "Enables Debuff on target via ATK debuff (single target)"
+          ],
+          "score": 7.35
+        },
+        {
+          "provider": "Cecia - Requiem of Thorns",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
+            "Enables Multiple debuffs on target via Damage taken debuff",
+            "Enables Debuff on target via Damage taken debuff (single target)"
+          ],
+          "score": 6.65
         },
         {
           "provider": "Aurora - Celestial of Dreams",
@@ -16920,6 +16867,14 @@
           "score": 4.25
         },
         {
+          "provider": "Cryonaia - Arctic Revenant",
+          "reasons": [
+            "Enables Multiple debuffs on target via Damage taken debuff",
+            "Enables Debuff on target via Damage taken debuff (single target)"
+          ],
+          "score": 4.25
+        },
+        {
           "provider": "Dionel - Venus of Dawn",
           "reasons": [
             "Enables Multiple debuffs on target via Vitality debuff",
@@ -16940,6 +16895,14 @@
           "reasons": [
             "Enables Multiple debuffs on target via Execution debuff",
             "Enables Debuff on target via Execution debuff (single target)"
+          ],
+          "score": 4.25
+        },
+        {
+          "provider": "Lucy - Celestial Spirit Mage",
+          "reasons": [
+            "Enables Multiple debuffs on target via Damage taken debuff",
+            "Enables Debuff on target via Damage taken debuff (single target)"
           ],
           "score": 4.25
         },
@@ -17075,25 +17038,7 @@
             ]
           }
         ],
-        "cc": [
-          {
-            "name": "Kordan",
-            "score": 0.6857,
-            "matches": [
-              "Pin",
-              "Move"
-            ]
-          },
-          {
-            "name": "Evie",
-            "score": 0.6571,
-            "matches": [
-              "Move",
-              "Pin",
-              "Silence"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Isabella - The Taken Soul": {
@@ -18252,7 +18197,21 @@
         "debuff": [
           {
             "name": "Kruger",
-            "score": 0.6667,
+            "score": 1.0,
+            "matches": [
+              "Damage taken debuff"
+            ]
+          },
+          {
+            "name": "Kulu",
+            "score": 1.0,
+            "matches": [
+              "Damage taken debuff"
+            ]
+          },
+          {
+            "name": "Indris",
+            "score": 0.75,
             "matches": [
               "Damage taken debuff"
             ]
@@ -19697,7 +19656,20 @@
           "score": 1.5
         }
       ],
-      "beneficiaries": [],
+      "beneficiaries": [
+        {
+          "score": 34.5,
+          "name": "Indris"
+        },
+        {
+          "score": 27.5,
+          "name": "Aliceth"
+        },
+        {
+          "score": 22.5,
+          "name": "Bonnie"
+        }
+      ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
@@ -19750,15 +19722,7 @@
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Alsa",
-            "score": 0.6154,
-            "matches": [
-              "Movement speed debuff"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": [
           {
             "name": "Cassadee",
@@ -22450,21 +22414,21 @@
         ],
         "debuff": [
           {
-            "name": "Cryonaia",
+            "name": "Berial",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
             ]
           },
           {
-            "name": "Koko",
+            "name": "Bonnie",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
             ]
           },
           {
-            "name": "Kruger",
+            "name": "Cecia",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
@@ -23524,10 +23488,6 @@
           "name": "Shadewing"
         },
         {
-          "score": 22.5,
-          "name": "Bonnie"
-        },
-        {
           "score": 20.68,
           "name": "Laios"
         },
@@ -23719,23 +23679,7 @@
             ]
           }
         ],
-        "energy": [
-          {
-            "name": "Pandora",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Rowan",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Ravion",
-            "score": 0.75,
-            "matches": []
-          }
-        ],
+        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -24055,21 +23999,21 @@
         "cc": [
           {
             "name": "Gerda",
-            "score": 1.0,
+            "score": 0.6,
             "matches": [
               "Interrupt"
             ]
           },
           {
             "name": "Lily May",
-            "score": 1.0,
+            "score": 0.6,
             "matches": [
               "Interrupt"
             ]
           },
           {
             "name": "Reinier",
-            "score": 1.0,
+            "score": 0.6,
             "matches": [
               "Interrupt"
             ]
@@ -24769,21 +24713,21 @@
         ],
         "debuff": [
           {
+            "name": "Berial",
+            "score": 1.0,
+            "matches": [
+              "Damage taken debuff"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Damage taken debuff"
+            ]
+          },
+          {
             "name": "Cecia",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff"
-            ]
-          },
-          {
-            "name": "Cryonaia",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff"
-            ]
-          },
-          {
-            "name": "Indris",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
@@ -27711,13 +27655,7 @@
       ],
       "replacements": {
         "buff": [],
-        "energy": [
-          {
-            "name": "Rowan",
-            "score": 0.6667,
-            "matches": []
-          }
-        ],
+        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -28559,14 +28497,6 @@
           "score": 19.200000000000003
         },
         {
-          "provider": "Gunnar - Iron Doom",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
-            "Enables Ally stat buffs via 4 ally stat buffs"
-          ],
-          "score": 16.8
-        },
-        {
           "provider": "Mehira - Mind Cager",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) [signature fuel]",
@@ -28659,6 +28589,14 @@
             "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
           ],
           "score": 9.719999999999999
+        },
+        {
+          "provider": "Gunnar - Iron Doom",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
+            "Enables Ally stat buffs via 3 ally stat buffs"
+          ],
+          "score": 9.600000000000001
         },
         {
           "provider": "Lumont - Benign Horn",
@@ -29083,23 +29021,7 @@
             ]
           }
         ],
-        "energy": [
-          {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Pandora",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Ravion",
-            "score": 1.0,
-            "matches": []
-          }
-        ],
+        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -29634,10 +29556,6 @@
           "name": "Nerion"
         },
         {
-          "score": 31.670057142857143,
-          "name": "Indris"
-        },
-        {
           "score": 27.470057142857144,
           "name": "Carolina"
         },
@@ -29732,23 +29650,7 @@
       ],
       "replacements": {
         "buff": [],
-        "energy": [
-          {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Pandora",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Rowan",
-            "score": 1.0,
-            "matches": []
-          }
-        ],
+        "energy": [],
         "similar_skills": [
           {
             "name": "Hugin",
@@ -29969,23 +29871,26 @@
         ],
         "debuff": [
           {
-            "name": "Cryonaia",
-            "score": 0.75,
+            "name": "Bonnie",
+            "score": 1.0,
             "matches": [
+              "ATK debuff",
               "Damage taken debuff"
             ]
           },
           {
-            "name": "Koko",
-            "score": 0.75,
+            "name": "Pandora",
+            "score": 1.0,
             "matches": [
+              "ATK debuff",
               "Damage taken debuff"
             ]
           },
           {
-            "name": "Kruger",
-            "score": 0.75,
+            "name": "Sinbad",
+            "score": 1.0,
             "matches": [
+              "ATK debuff",
               "Damage taken debuff"
             ]
           }
@@ -30621,18 +30526,7 @@
       ],
       "replacements": {
         "buff": [],
-        "energy": [
-          {
-            "name": "Pandora",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Lyca",
-            "score": 0.6,
-            "matches": []
-          }
-        ],
+        "energy": [],
         "similar_skills": [
           {
             "name": "Twins",
@@ -32409,15 +32303,6 @@
           "score": 26.1
         },
         {
-          "provider": "Koko - Wild Child",
-          "reasons": [
-            "Max HP via Shield (all units, low)",
-            "Life Drain via Lifedrain buff (multiple targets, low)",
-            "Enables Debuff on target via Damage taken debuff (area)"
-          ],
-          "score": 26.0
-        },
-        {
           "provider": "Frieren - The Legendary Mage",
           "reasons": [
             "Enables Debuff on target via DoT (area)",
@@ -32443,21 +32328,18 @@
           "score": 22.5
         },
         {
+          "provider": "Kulu - Blast Master",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (all units)"
+          ],
+          "score": 22.5
+        },
+        {
           "provider": "Lily May - Twilight Tracker",
           "reasons": [
             "Enables Debuff on target via Energy drain (all units)"
           ],
           "score": 22.5
-        },
-        {
-          "provider": "Cecia - Requiem of Thorns",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Life Drain via Lifedrain buff (area, low)",
-            "Enables Debuff on target via Damage taken debuff (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 20.5
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -32467,6 +32349,16 @@
             "Enables Debuff on target via ATK debuff (multiple targets)"
           ],
           "score": 19.32
+        },
+        {
+          "provider": "Cecia - Requiem of Thorns",
+          "reasons": [
+            "Max HP via Max HP buff (single target, high)",
+            "Life Drain via Lifedrain buff (area, low)",
+            "Enables Debuff on target via Damage taken debuff (single target)",
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 18.25
         },
         {
           "provider": "Zanie - Timeless Tinkerer",
@@ -32511,14 +32403,6 @@
           "score": 15.0
         },
         {
-          "provider": "Cryonaia - Arctic Revenant",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 14.25
-        },
-        {
           "provider": "Gwyneth - Dragonslayer Knight",
           "reasons": [
             "Enables Debuff on target via DoT (single target)",
@@ -32532,6 +32416,15 @@
             "ATK via ATK buff (single target, low)",
             "Life Drain via Lifedrain buff (all units, low)",
             "Enables Debuff on target via Energy drain (all units)"
+          ],
+          "score": 14.0
+        },
+        {
+          "provider": "Koko - Wild Child",
+          "reasons": [
+            "Max HP via Shield (all units, low)",
+            "Life Drain via Lifedrain buff (multiple targets, low)",
+            "Enables Debuff on target via Damage taken debuff (area)"
           ],
           "score": 14.0
         },
@@ -32631,20 +32524,6 @@
           "score": 12.0
         },
         {
-          "provider": "Kruger - Dauntless Warrior",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (area)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Kulu - Blast Master",
-          "reasons": [
-            "Enables Debuff on target via Movement speed debuff (area)"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Odie - Desert Defender",
           "reasons": [
             "Enables Debuff on target via DoT (single target)",
@@ -32665,14 +32544,6 @@
             "Enables Debuff on target via Max HP debuff (area)"
           ],
           "score": 12.0
-        },
-        {
-          "provider": "Lucy - Celestial Spirit Mage",
-          "reasons": [
-            "Max HP via Shield (single target, high)",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 11.25
         },
         {
           "provider": "Viperian - Shadow Serpent",
@@ -32700,6 +32571,14 @@
             "Enables Debuff on target via ATK debuff (all units)"
           ],
           "score": 10.08
+        },
+        {
+          "provider": "Cryonaia - Arctic Revenant",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (single target)",
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 9.75
         },
         {
           "provider": "Mirael - Scarlet Sorceress",
@@ -32738,14 +32617,6 @@
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Reinier - Symmetric Sin",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 8.25
         },
         {
           "provider": "Antandra - Desert Fury",
@@ -32825,6 +32696,14 @@
           "score": 6.75
         },
         {
+          "provider": "Lucy - Celestial Spirit Mage",
+          "reasons": [
+            "Max HP via Shield (single target, high)",
+            "Enables Debuff on target via Damage taken debuff (single target)"
+          ],
+          "score": 6.75
+        },
+        {
           "provider": "Silvina - The Taken Breath",
           "reasons": [
             "Enables Debuff on target via Energy drain (single target)"
@@ -32860,6 +32739,13 @@
           "score": 6.0
         },
         {
+          "provider": "Kruger - Dauntless Warrior",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (area)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Smokey & Meerky - Wasteland Apothecary",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -32891,7 +32777,7 @@
         {
           "provider": "Indris - Chain Breaker",
           "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)"
+            "Enables Debuff on target via Damage taken debuff (multiple targets)"
           ],
           "score": 4.5
         },
@@ -32899,13 +32785,6 @@
           "provider": "Lumont - Benign Horn",
           "reasons": [
             "Enables Debuff on target via ATK debuff (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Mehira - Mind Cager",
-          "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)"
           ],
           "score": 4.5
         },
@@ -32935,6 +32814,14 @@
           "reasons": [
             "Life Drain via Lifedrain buff (single target, low)",
             "Enables Debuff on target via Execution debuff (single target)"
+          ],
+          "score": 3.75
+        },
+        {
+          "provider": "Reinier - Symmetric Sin",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables Debuff on target via ATK debuff (single target)"
           ],
           "score": 3.75
         },
@@ -33007,6 +32894,13 @@
           "provider": "Isabella - The Taken Soul",
           "reasons": [
             "Enables Debuff on target via ATK debuff (single target)"
+          ],
+          "score": 2.25
+        },
+        {
+          "provider": "Mehira - Mind Cager",
+          "reasons": [
+            "Enables Debuff on target via Damage taken debuff (single target)"
           ],
           "score": 2.25
         },
@@ -33945,14 +33839,6 @@
           "score": 15.75
         },
         {
-          "provider": "Gunnar - Iron Doom",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
-            "Enables Ally stat buffs via 4 ally stat buffs"
-          ],
-          "score": 15.0
-        },
-        {
           "provider": "Hewynn - Tender Leaf",
           "reasons": [
             "Enables Ally stat buffs via 1 ally stat buff"
@@ -34062,6 +33948,14 @@
             "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
           ],
           "score": 8.399999999999999
+        },
+        {
+          "provider": "Gunnar - Iron Doom",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
+            "Enables Ally stat buffs via 3 ally stat buffs"
+          ],
+          "score": 8.25
         },
         {
           "provider": "Isabella - The Taken Soul",
@@ -35035,23 +34929,7 @@
             ]
           }
         ],
-        "energy": [
-          {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Pandora",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Phraesto",
-            "score": 1.0,
-            "matches": []
-          }
-        ],
+        "energy": [],
         "similar_skills": [
           {
             "name": "Fay",
@@ -38097,23 +37975,7 @@
             ]
           }
         ],
-        "energy": [
-          {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Pandora",
-            "score": 1.0,
-            "matches": []
-          },
-          {
-            "name": "Ravion",
-            "score": 1.0,
-            "matches": []
-          }
-        ],
+        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -39029,8 +38891,16 @@
         "debuff": [],
         "cc": [
           {
+            "name": "Indris",
+            "score": 0.7,
+            "matches": [
+              "Move",
+              "Bind"
+            ]
+          },
+          {
             "name": "Kordan",
-            "score": 1.0,
+            "score": 0.7,
             "matches": [
               "Move",
               "Knock down"
@@ -39038,15 +38908,7 @@
           },
           {
             "name": "Ravion",
-            "score": 1.0,
-            "matches": [
-              "Move",
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Scarlita",
-            "score": 1.0,
+            "score": 0.7,
             "matches": [
               "Move",
               "Knock down"
@@ -40007,14 +39869,6 @@
           "score": 8.25
         },
         {
-          "provider": "Gunnar - Iron Doom",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
-            "Enables Adjacent allies via Multiple ally buffs"
-          ],
-          "score": 8.25
-        },
-        {
           "provider": "Nara - Wrathful Wraith",
           "reasons": [
             "Healing via Healing (area, low)",
@@ -40119,6 +39973,14 @@
             "Enables Adjacent allies via Multiple ally buffs"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Gunnar - Iron Doom",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
+            "Enables Adjacent allies via Multiple ally buffs"
+          ],
+          "score": 3.75
         },
         {
           "provider": "Pang - Bamboo Guardian",

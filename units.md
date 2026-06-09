@@ -1,2 +1,0 @@
-# AFK Journey units
-

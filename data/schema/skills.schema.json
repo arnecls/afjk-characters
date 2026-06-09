@@ -61,12 +61,57 @@
         },
         "effects": {
           "type": "array",
-          "minItems": 1,
           "items": {
             "$ref": "#/$defs/effect"
           }
+        },
+        "passive_only": {
+          "type": "boolean",
+          "description": "True when the skill has no extractable combat effects."
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "passive_only": {
+                "const": true
+              }
+            },
+            "required": [
+              "passive_only"
+            ]
+          },
+          "then": {
+            "properties": {
+              "effects": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "not": {
+              "properties": {
+                "passive_only": {
+                  "const": true
+                }
+              },
+              "required": [
+                "passive_only"
+              ]
+            }
+          },
+          "then": {
+            "properties": {
+              "effects": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
     },
     "skillCategory": {
       "type": "string",
@@ -477,6 +522,23 @@
         },
         "conditions": {
           "$ref": "#/$defs/conditions"
+        },
+        "targeting_label": {
+          "type": "string",
+          "enum": [
+            "Self",
+            "Single target",
+            "Multiple targets",
+            "Arc",
+            "Area",
+            "All units",
+            "Summons only"
+          ],
+          "description": "Legacy targeting label preserved for round-trip parity."
+        },
+        "is_max_known": {
+          "type": "boolean",
+          "description": "False when higher-tier source text uses (scaled) placeholders."
         },
         "effects": {
           "type": "array",

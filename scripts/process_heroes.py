@@ -93,15 +93,7 @@ def build_processed(data: dict) -> dict:
         )
 
     result = {"heroes": processed_heroes}
-    try:
-        hs.validate_processed(result)
-    except RuntimeError as exc:
-        print(f"Warning: {exc}", file=sys.stderr)
-    except Exception as exc:
-        if type(exc).__name__ == "ValidationError":
-            print(f"Warning: schema validation failed: {exc}", file=sys.stderr)
-        else:
-            raise
+    hs.validate_processed(result)
     return result
 
 
