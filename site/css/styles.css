@@ -171,7 +171,8 @@ a:hover {
 }
 
 .heroes-table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 0.78rem;
   width: max-content;
   min-width: 100%;
@@ -179,11 +180,21 @@ a:hover {
 
 .heroes-table th,
 .heroes-table td {
-  border: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
   padding: 0.4rem 0.5rem;
   vertical-align: top;
   text-align: left;
   max-width: 220px;
+}
+
+.heroes-table th:first-child,
+.heroes-table td:first-child {
+  border-left: 1px solid var(--border);
+}
+
+.heroes-table tr:first-child th {
+  border-top: 1px solid var(--border);
 }
 
 .heroes-table thead th {
@@ -193,6 +204,22 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.heroes-table .col-name {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 6.5rem;
+  max-width: 9rem;
+  white-space: nowrap;
+  background: var(--surface);
+  box-shadow: 2px 0 6px rgba(30, 50, 90, 0.08);
+}
+
+.heroes-table thead th.col-name {
+  z-index: 3;
+  background: var(--bg);
 }
 
 .heroes-table th.sortable {
