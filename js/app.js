@@ -1054,6 +1054,9 @@
       if (idx === sortColumn) {
         cls += sortDir === 1 ? " sort-asc" : " sort-desc";
       }
+      if (col === "Name") {
+        cls += " col-name";
+      }
       headHtml +=
         '<th class="' +
         cls +
@@ -1086,7 +1089,8 @@
         } else {
           inner = renderTableCell(col, cell);
         }
-        bodyHtml += "<td>" + inner + "</td>";
+        const tdCls = col === "Name" ? " class=\"col-name\"" : "";
+        bodyHtml += "<td" + tdCls + ">" + inner + "</td>";
       });
       bodyHtml += "</tr>";
     });
