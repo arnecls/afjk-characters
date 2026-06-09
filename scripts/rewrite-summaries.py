@@ -2524,6 +2524,19 @@ def _effect_throughput_score(
     return burst / cycle
 
 
+def _chunk_throughput_score(
+    burst: float,
+    section: str,
+    skills: list[SkillMeta] | None,
+) -> float:
+    if burst <= 0 or not skills:
+        return burst
+    cycle = _effect_cycle_time(
+        section, _skill_by_section(skills, section), skills
+    )
+    return burst / cycle
+
+
 def load_skills_by_title_from_blocks(
     blocks: list[str],
 ) -> dict[str, list[SkillMeta]]:
@@ -2534,13 +2547,21 @@ def load_skills_by_title_from_blocks(
     return skills_by_title
 
 
-def _score_true_damage_chunk(text: str, dmg_type: str, targeting: str) -> float:
+def _score_true_damage_chunk(
+    text: str,
+    dmg_type: str,
+    targeting: str,
+    *,
+    section: str = "",
+    skills: list[SkillMeta] | None = None,
+) -> float:
     if targeting == "Self" and not _chunk_targets_enemies(text):
         return 0.0
     amount = _extract_damage_amount(text, dmg_type)
     freq = _damage_frequency_multiplier(text)
     weight = DAMAGE_TARGETING_WEIGHT.get(targeting, 1.5)
-    return weight * amount * freq
+    burst = weight * amount * freq
+    return _chunk_throughput_score(burst, section, skills)
 
 
 def _accumulate_true_damage_scores(hero: Hero, primary_dmg: str) -> None:
@@ -3094,6 +3115,16 @@ _ALWAYS_HIGH_BUFFS = frozenset(
 )
 _ALWAYS_MEDIUM_DEBUFFS = frozenset({"Marked target (focus fire)"})
 
+
+def _effect_uses_throughput(category: str, label: str) -> bool:
+    if category == "cc":
+        return False
+    if category == "buff" and label in _ALWAYS_HIGH_BUFFS:
+        return False
+    if category == "debuff" and label in _ALWAYS_MEDIUM_DEBUFFS:
+        return False
+    return category in ("buff", "debuff")
+
 IMMUNITY_TYPES = (
     "Unaffected",
     "Steadfast",
@@ -3164,6 +3195,34 @@ def format_effect_magnitude(effect: Effect) -> str:
     return f"`{effect.magnitude}`"
 
 
+def _recompute_damage_scores(
+    heroes: list[Hero],
+    skills_by_title: dict[str, list[SkillMeta]],
+) -> None:
+    for hero in heroes:
+        skills = skills_by_title.get(hero.title, [])
+        if not skills:
+            continue
+        primary = hero.damage_type or "Physical"
+        hero.damage_scores.clear()
+        for _tier, text, section in hero.skill_chunks:
+            if _chunk_is_companion_focused(text):
+                continue
+            if _skill_chunk_has_ally_only_damage(text):
+                continue
+            tgt = detect_targeting(text)
+            for d in detect_damage_types(text, primary):
+                if d not in TRUE_DAMAGE_TYPES:
+                    continue
+                score = _score_true_damage_chunk(
+                    text, d, tgt, section=section, skills=skills
+                )
+                if score > 0:
+                    hero.damage_scores[d] = max(
+                        hero.damage_scores.get(d, 0.0), score
+                    )
+
+
 def assign_damage_magnitudes(heroes: list[Hero]) -> None:
     by_type: dict[str, list[float]] = defaultdict(list)
     for hero in heroes:
@@ -3196,6 +3255,8 @@ def assign_magnitudes(
     skills_by_title: dict[str, list[SkillMeta]] | None = None,
 ):
     skills_map = skills_by_title or {}
+    if skills_map:
+        _recompute_damage_scores(heroes, skills_map)
     by_key: dict[str, list[tuple[Hero, Effect]]] = defaultdict(list)
     for hero in heroes:
         for eff in hero.effects + hero.summon_effects:
@@ -3217,10 +3278,8 @@ def assign_magnitudes(
             for _hero, e in group:
                 e.magnitude = qualitative_magnitude(e)
             continue
-        use_throughput = (
-            category == "buff"
-            and label in _THROUGHPUT_HEAL_LABELS
-            and bool(skills_map)
+        use_throughput = _effect_uses_throughput(category, label) and bool(
+            skills_map
         )
         scored: list[tuple[float | None, Hero, Effect]] = []
         for hero, e in group:
@@ -3496,10 +3555,9 @@ _CHANNEL_DURATION_CAP = 30.0
 # No listed cooldown => highest usage frequency for range weighting.
 _NO_CD_FREQUENCY_WEIGHT = 2.0
 
-# Throughput bucketing for heal effects (overridden via heroes_config.json).
+# Throughput bucketing (overridden via heroes_config.json).
 MIN_CYCLE_SECONDS: float = 3.0
 PASSIVE_REFERENCE_CYCLE_SECONDS: float = 10.0
-_THROUGHPUT_HEAL_LABELS = frozenset({"Healing", "Healing over time"})
 
 
 @dataclass
@@ -4456,21 +4514,36 @@ def _p75_label(values: list[str], score_map: dict[str, int], to_label: dict[int,
     return to_label[nearest]
 
 
-def _score_damage_chunk(text: str, dmg_type: str, targeting: str) -> float:
+def _score_damage_chunk(
+    text: str,
+    dmg_type: str,
+    targeting: str,
+    *,
+    section: str = "",
+    skills: list[SkillMeta] | None = None,
+) -> float:
     if targeting == "Self" and not _chunk_targets_enemies(text):
         return 0.0
     if dmg_type in TRUE_DAMAGE_TYPES:
-        return _score_true_damage_chunk(text, dmg_type, targeting)
+        return _score_true_damage_chunk(
+            text, dmg_type, targeting, section=section, skills=skills
+        )
     amounts = _all_amounts(text, _ATK_DAMAGE_PATTERNS)
     if not amounts:
         return 0.0
     amount = max(amounts)
     freq = _damage_frequency_multiplier(text)
     weight = DAMAGE_TARGETING_WEIGHT.get(targeting, 1.5)
-    return weight * amount * freq
+    burst = weight * amount * freq
+    return _chunk_throughput_score(burst, section, skills)
 
 
-def _section_damage_score(hero: Hero, section: str, primary_dmg: str) -> float:
+def _section_damage_score(
+    hero: Hero,
+    section: str,
+    primary_dmg: str,
+    skills: list[SkillMeta] | None = None,
+) -> float:
     max_score = 0.0
     for _tier, text, sec in hero.skill_chunks:
         if sec != section:
@@ -4481,13 +4554,18 @@ def _section_damage_score(hero: Hero, section: str, primary_dmg: str) -> float:
             continue
         tgt = detect_targeting(text)
         for dmg_type in detect_damage_types(text, primary_dmg):
-            score = _score_damage_chunk(text, dmg_type, tgt)
+            score = _score_damage_chunk(
+                text, dmg_type, tgt, section=section, skills=skills
+            )
             max_score = max(max_score, score)
     return max_score
 
 
 def _section_true_damage_scores(
-    hero: Hero, section: str, primary_dmg: str
+    hero: Hero,
+    section: str,
+    primary_dmg: str,
+    skills: list[SkillMeta] | None = None,
 ) -> dict[str, float]:
     scores: dict[str, float] = {}
     for _tier, text, sec in hero.skill_chunks:
@@ -4501,7 +4579,9 @@ def _section_true_damage_scores(
         for dmg_type in detect_damage_types(text, primary_dmg):
             if dmg_type not in TRUE_DAMAGE_TYPES:
                 continue
-            score = _score_damage_chunk(text, dmg_type, tgt)
+            score = _score_damage_chunk(
+                text, dmg_type, tgt, section=section, skills=skills
+            )
             if score > 0:
                 scores[dmg_type] = max(scores.get(dmg_type, 0.0), score)
     return scores
@@ -4509,13 +4589,16 @@ def _section_true_damage_scores(
 
 def build_true_damage_thresholds(
     heroes: list[Hero],
+    skills_by_title: dict[str, list[SkillMeta]] | None = None,
 ) -> dict[str, tuple[float, float]]:
+    skills_map = skills_by_title or {}
     by_type: dict[str, list[float]] = defaultdict(list)
     for hero in heroes:
         primary = hero.damage_type or "Physical"
+        skills = skills_map.get(hero.title, [])
         for section in ("Ultimate", *NON_ULT_SKILL_SECTIONS):
             for dmg_type, score in _section_true_damage_scores(
-                hero, section, primary
+                hero, section, primary, skills or None
             ).items():
                 by_type[dmg_type].append(score)
     thresholds: dict[str, tuple[float, float]] = {}
@@ -4565,12 +4648,19 @@ def _damage_score_to_magnitude(score: float, thresholds: tuple[float, float]) ->
     return "high"
 
 
-def build_section_damage_thresholds(heroes: list[Hero]) -> tuple[float, float]:
+def build_section_damage_thresholds(
+    heroes: list[Hero],
+    skills_by_title: dict[str, list[SkillMeta]] | None = None,
+) -> tuple[float, float]:
+    skills_map = skills_by_title or {}
     scores: list[float] = []
     for hero in heroes:
         primary = hero.damage_type or "Physical"
+        skills = skills_map.get(hero.title, [])
         for section in ("Ultimate", *NON_ULT_SKILL_SECTIONS):
-            score = _section_damage_score(hero, section, primary)
+            score = _section_damage_score(
+                hero, section, primary, skills or None
+            )
             if score > 0:
                 scores.append(score)
     if len(scores) >= 4:
@@ -4632,14 +4722,14 @@ def compute_section_skill_metrics(
     return SkillOverviewMetrics(
         speed=_section_speed_label(speeds, section, True),
         damage=_damage_score_to_magnitude(
-            _section_damage_score(hero, section, primary),
+            _section_damage_score(hero, section, primary, skills),
             damage_thresholds,
         ),
         heal=heal,
         buffs=buffs,
         debuffs=debuffs,
         true_damage=_true_damage_scores_to_magnitudes(
-            _section_true_damage_scores(hero, section, primary),
+            _section_true_damage_scores(hero, section, primary, skills),
             true_damage_thresholds,
         ),
     )
@@ -4744,8 +4834,10 @@ def build_behavior_for_heroes(
     defining_by_display = _load_signature_skills()
     alternative_by_display = _load_signature_skills_alternative()
     placement_overrides = _load_placement_constraint_overrides()
-    damage_thresholds = build_section_damage_thresholds(heroes)
-    true_damage_thresholds = build_true_damage_thresholds(heroes)
+    damage_thresholds = build_section_damage_thresholds(heroes, skills_by_title)
+    true_damage_thresholds = build_true_damage_thresholds(
+        heroes, skills_by_title
+    )
 
     result: dict[str, HeroBehavior] = {}
     for hero in heroes:

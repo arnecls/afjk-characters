@@ -60,6 +60,43 @@ def _effects(hero, category: str, label: str | None = None):
         yield e
 
 
+def _throughput_test_hero(
+    title: str,
+    cooldown: float,
+    pct: float,
+    label: str,
+    category: str,
+):
+    if category == "buff":
+        text = f"Increases ATK of all allies by {pct:.0f}% for 8s."
+        targeting = "All units"
+    else:
+        text = f"Reduces targets' ATK by {pct:.0f}% for 6s."
+        targeting = "Multiple targets"
+    section = "Skill1"
+    hero = rs.Hero(title, "Physical")
+    hero.skill_chunks = [("base", text, section)]
+    hero.effects = [
+        rs.Effect(
+            category,
+            label,
+            "base",
+            targeting,
+            pct,
+            source_section=section,
+        )
+    ]
+    skill = rs.SkillMeta(
+        section, None, False, cooldown, 0.0, None, None, text
+    )
+    return hero, [skill]
+
+
+def _assign_magnitudes_for_heroes(heroes, skills_by_title):
+    rs.assign_magnitudes(heroes, skills_by_title)
+    return heroes
+
+
 class SummaryParsingTests(unittest.TestCase):
     def test_nazrik_prey_debuffs(self):
         hero = _hero_by_short_name("Nazrik")
@@ -177,6 +214,72 @@ class SummaryParsingTests(unittest.TestCase):
             if e.label == "Healing" and e.targeting == "All units"
         )
         self.assertGreaterEqual(fast_heal, slow_heal)
+
+    def test_buff_throughput_favors_faster_cadence(self):
+        heroes = []
+        skills_by_title = {}
+        for i, cd in enumerate([5, 6, 7, 8, 12, 15, 18, 22]):
+            title = f"BuffTest{i} - Hero"
+            hero, skills = _throughput_test_hero(
+                title, cd, 25, "ATK buff", "buff"
+            )
+            heroes.append(hero)
+            skills_by_title[title] = skills
+        _assign_magnitudes_for_heroes(heroes, skills_by_title)
+        fast_mag = rs._MAG_ORDER.index(heroes[0].effects[0].magnitude)
+        slow_mag = rs._MAG_ORDER.index(heroes[-1].effects[0].magnitude)
+        self.assertGreaterEqual(fast_mag, slow_mag)
+
+    def test_debuff_throughput_favors_faster_cadence(self):
+        heroes = []
+        skills_by_title = {}
+        for i, cd in enumerate([5, 6, 7, 8, 12, 15, 18, 22]):
+            title = f"DebuffTest{i} - Hero"
+            hero, skills = _throughput_test_hero(
+                title, cd, 20, "ATK debuff", "debuff"
+            )
+            heroes.append(hero)
+            skills_by_title[title] = skills
+        _assign_magnitudes_for_heroes(heroes, skills_by_title)
+        fast_mag = rs._MAG_ORDER.index(heroes[0].effects[0].magnitude)
+        slow_mag = rs._MAG_ORDER.index(heroes[-1].effects[0].magnitude)
+        self.assertGreaterEqual(fast_mag, slow_mag)
+
+    def test_damage_throughput_favors_faster_cadence(self):
+        text_low = "Deals 180% (ATK-based) damage to all enemies."
+        text_high = "Deals 420% (ATK-based) damage to all enemies."
+        fast_skills = [
+            rs.SkillMeta(
+                "Skill1", None, False, 8.0, 0.0, None, None, text_low
+            )
+        ]
+        slow_skills = [
+            rs.SkillMeta(
+                "Skill2", None, False, 25.0, 0.0, None, None, text_high
+            ),
+        ]
+        burst_fast = rs._score_damage_chunk(
+            text_low, "Physical", "All units", skills=None
+        )
+        burst_slow = rs._score_damage_chunk(
+            text_high, "Physical", "All units", skills=None
+        )
+        self.assertGreater(burst_slow, burst_fast)
+        tp_fast = rs._score_damage_chunk(
+            text_low,
+            "Physical",
+            "All units",
+            section="Skill1",
+            skills=fast_skills,
+        )
+        tp_slow = rs._score_damage_chunk(
+            text_high,
+            "Physical",
+            "All units",
+            section="Skill2",
+            skills=slow_skills,
+        )
+        self.assertGreater(tp_fast, tp_slow)
 
 
 if __name__ == "__main__":

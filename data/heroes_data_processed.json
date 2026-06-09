@@ -920,7 +920,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -1844,7 +1844,7 @@
             "buffs": "medium",
             "debuffs": "medium",
             "true_damage": {
-              "True damage": "medium"
+              "True damage": "high"
             }
           },
           "ultimate": {
@@ -1854,7 +1854,7 @@
             "buffs": "medium",
             "debuffs": "medium",
             "true_damage": {
-              "True damage": "medium"
+              "True damage": "high"
             }
           },
           "non_ultimate": {
@@ -2421,7 +2421,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "true_damage": {
-              "True damage": "high"
+              "True damage": "medium"
             }
           },
           "ultimate": {
@@ -2431,7 +2431,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "true_damage": {
-              "True damage": "high"
+              "True damage": "medium"
             }
           },
           "non_ultimate": {
@@ -2652,7 +2652,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "low",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
@@ -3118,7 +3118,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -3126,7 +3126,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -3139,7 +3139,7 @@
             "buffs": "medium",
             "debuffs": "medium",
             "true_damage": {
-              "Max HP-based damage": "medium"
+              "Max HP-based damage": "high"
             }
           }
         }
@@ -3344,7 +3344,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -3352,7 +3352,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -3590,7 +3590,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -3970,7 +3970,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "low",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -4197,7 +4197,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -4205,7 +4205,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -5055,7 +5055,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
@@ -5279,7 +5279,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "true_damage": {
-              "Max HP-based damage": "high"
+              "Max HP-based damage": "medium"
             }
           },
           "non_ultimate": {
@@ -5735,7 +5735,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "high"
+        "true": "medium"
       },
       "benefit_stats": [
         "atk_spd",
@@ -5759,7 +5759,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -5767,7 +5767,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -5775,12 +5775,12 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
             "true_damage": {
-              "True damage": "high"
+              "True damage": "medium"
             }
           }
         }
@@ -6068,7 +6068,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -6076,7 +6076,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -6316,7 +6316,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -6602,7 +6602,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "low",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
@@ -8803,7 +8803,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "high"
+        "max_hp": "medium"
       },
       "benefit_stats": [
         "atk_spd",
@@ -8832,7 +8832,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -8840,7 +8840,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -9179,7 +9179,7 @@
           },
           "non_ultimate": {
             "speed": "normal",
-            "damage": "low",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
@@ -9919,7 +9919,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "medium",
+            "damage": "low",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -9927,7 +9927,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "medium",
+            "damage": "low",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -10155,7 +10155,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "high",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
@@ -10743,7 +10743,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "high",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
@@ -11976,7 +11976,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "low"
+        "hp_loss": "medium"
       },
       "benefit_stats": [
         "atk",
@@ -12023,7 +12023,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "true_damage": {
-              "HP loss": "low"
+              "HP loss": "medium"
             }
           }
         }
@@ -12420,7 +12420,7 @@
         "skill_overview": {
           "signature": {
             "speed": "normal",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -12428,7 +12428,7 @@
           },
           "ultimate": {
             "speed": "normal",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -13734,7 +13734,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "high",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -13977,7 +13977,7 @@
         "skill_overview": {
           "signature": {
             "speed": "normal",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -13985,7 +13985,7 @@
           },
           "ultimate": {
             "speed": "normal",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -14208,7 +14208,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -14216,7 +14216,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -14607,7 +14607,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "high",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -14844,7 +14844,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -14852,7 +14852,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -16311,7 +16311,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "medium",
+        "true": "high",
         "max_hp": "medium"
       },
       "benefit_stats": [
@@ -16343,12 +16343,12 @@
           },
           "ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "true_damage": {
-              "True damage": "medium"
+              "True damage": "high"
             }
           },
           "non_ultimate": {
@@ -16564,7 +16564,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "medium"
+        "max_hp": "low"
       },
       "benefit_stats": [
         "atk",
@@ -16610,7 +16610,7 @@
             "buffs": "medium",
             "debuffs": "medium",
             "true_damage": {
-              "Max HP-based damage": "medium"
+              "Max HP-based damage": "low"
             }
           }
         }
@@ -17008,7 +17008,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -17016,7 +17016,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -17714,7 +17714,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -19414,7 +19414,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -19892,7 +19892,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "low",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
@@ -20574,7 +20574,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "low",
+            "damage": "medium",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
@@ -20834,7 +20834,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -21592,7 +21592,7 @@
         "skill_overview": {
           "signature": {
             "speed": "normal",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -21600,7 +21600,7 @@
           },
           "ultimate": {
             "speed": "normal",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -21608,7 +21608,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "low",
+            "damage": "medium",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -21950,7 +21950,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "damage": "low",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -21966,7 +21966,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "low",
+            "damage": "high",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -22406,7 +22406,7 @@
         "skill_overview": {
           "signature": {
             "speed": "normal",
-            "damage": "low",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -22414,7 +22414,7 @@
           },
           "ultimate": {
             "speed": "normal",
-            "damage": "low",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -22422,7 +22422,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "low",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -22659,7 +22659,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "low",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
@@ -22862,7 +22862,7 @@
         "skill_overview": {
           "signature": {
             "speed": "normal",
-            "damage": "medium",
+            "damage": "high",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -22870,7 +22870,7 @@
           },
           "ultimate": {
             "speed": "normal",
-            "damage": "medium",
+            "damage": "high",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -23056,7 +23056,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -23892,7 +23892,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "high",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
@@ -24396,7 +24396,7 @@
       ],
       "damage_magnitudes": {
         "true": "low",
-        "max_hp": "medium"
+        "max_hp": "high"
       },
       "benefit_stats": [
         "atk",
@@ -24656,7 +24656,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -25588,7 +25588,7 @@
       ],
       "damage_magnitudes": {
         "true": "medium",
-        "hp_loss": "low"
+        "hp_loss": "medium"
       },
       "benefit_stats": [
         "atk",
@@ -25619,7 +25619,7 @@
             "debuffs": "none",
             "true_damage": {
               "True damage": "medium",
-              "HP loss": "low"
+              "HP loss": "medium"
             }
           },
           "ultimate": {
@@ -25630,7 +25630,7 @@
             "debuffs": "none",
             "true_damage": {
               "True damage": "medium",
-              "HP loss": "low"
+              "HP loss": "medium"
             }
           },
           "non_ultimate": {
@@ -26094,7 +26094,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "low"
+        "max_hp": "medium"
       },
       "benefit_stats": [
         "atk_spd",
@@ -26124,7 +26124,7 @@
             "buffs": "none",
             "debuffs": "none",
             "true_damage": {
-              "Max HP-based damage": "low"
+              "Max HP-based damage": "medium"
             }
           },
           "ultimate": {
@@ -26134,12 +26134,12 @@
             "buffs": "none",
             "debuffs": "none",
             "true_damage": {
-              "Max HP-based damage": "low"
+              "Max HP-based damage": "medium"
             }
           },
           "non_ultimate": {
             "speed": "fast",
-            "damage": "medium",
+            "damage": "high",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -26574,7 +26574,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -26790,7 +26790,7 @@
       ],
       "damage_magnitudes": {
         "max_hp": "low",
-        "hp_loss": "low"
+        "hp_loss": "medium"
       },
       "benefit_stats": [
         "max_hp",
@@ -26840,7 +26840,7 @@
             "buffs": "medium",
             "debuffs": "medium",
             "true_damage": {
-              "HP loss": "low"
+              "HP loss": "medium"
             }
           }
         }
@@ -27067,7 +27067,7 @@
     "Zanie - Timeless Tinkerer": {
       "faction": "lightbearer",
       "class": "marksman",
-      "is_supporting_unit": true,
+      "is_supporting_unit": false,
       "is_energy_provider": false,
       "skills": {
         "Vein Pulse": {
