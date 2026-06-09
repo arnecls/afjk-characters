@@ -1,2 +1,3 @@
 .store/
 .venv/
+scripts/__pycache__/
