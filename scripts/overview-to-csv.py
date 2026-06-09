@@ -122,16 +122,27 @@ COLUMNS: list[str] = (
 
 SUMMARY_RE = re.compile(r"^### Summary for ", re.M)
 HERO_RE = re.compile(r"^## ([^\n]+)$", re.M)
-MOVEMENT_RE = re.compile(r"^- Movement: ([^\n]+)$", re.M)
+_BOLD_LABEL = r"(?:\*\*)?"
+_BOLD_LABEL_END = r"(?:\*\*)?"
+MOVEMENT_RE = re.compile(
+    rf"^- {_BOLD_LABEL}Movement{_BOLD_LABEL_END}: ([^\n]+)$", re.M
+)
 CASTING_SPEED_RE = re.compile(r"^- Casting speed: (\w+)$", re.M)
-DEFINING_SKILL_SPEED_RE = re.compile(r"^- Signature skill speed: (\w+)$", re.M)
-NON_ULT_SPEED_RE = re.compile(r"^- Non-ultimate speed: (\w+)$", re.M)
+DEFINING_SKILL_SPEED_RE = re.compile(
+    rf"^- {_BOLD_LABEL}Signature skill speed{_BOLD_LABEL_END}: (\w+)$", re.M
+)
+NON_ULT_SPEED_RE = re.compile(
+    rf"^- {_BOLD_LABEL}Non-ultimate speed{_BOLD_LABEL_END}: (\w+)$", re.M
+)
 SKILL_OVERVIEW_SIG_SPEED_RE = re.compile(
-    r"^- Signature skill(?: \(ultimate\))?:.*?\bspeed `(slow|normal|fast)`",
+    rf"^- {_BOLD_LABEL}Signature skill(?: \(ultimate\))?{_BOLD_LABEL_END}:"
+    r".*?\bspeed `(slow|normal|fast)`",
     re.M,
 )
 SKILL_OVERVIEW_NON_ULT_SPEED_RE = re.compile(
-    r"^- Non-ultimate:.*?\bspeed `(slow|normal|fast)`", re.M
+    rf"^- {_BOLD_LABEL}Non-ultimate{_BOLD_LABEL_END}:.*?"
+    r"\bspeed `(slow|normal|fast)`",
+    re.M,
 )
 SECTION_RE = re.compile(r"^#### (.+)$", re.M)
 BULLET_RE = re.compile(r"^- (.+)$", re.M)

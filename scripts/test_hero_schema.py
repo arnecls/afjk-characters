@@ -238,19 +238,19 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotIn("Signature skill speed:", text)
         self.assertNotIn("damage `none`", text)
         self.assertNotIn("- Ultimate:", text)
-        self.assertIn("- Signature skill (ultimate):", text)
-        self.assertIn("- Ally composition:", text)
-        self.assertIn("- Self placement:", text)
+        self.assertIn("- **Signature skill (ultimate)**:", text)
+        self.assertIn("- **Ally composition**:", text)
+        self.assertIn("- **Self placement**:", text)
 
     def test_non_ult_signature_keeps_ultimate_row(self):
         _, behavior = self._hero_by_display("Daimon")
         text = "\n".join(rs.format_behavior_section("Daimon", behavior))
-        self.assertIn("- Ultimate:", text)
+        self.assertIn("- **Ultimate**:", text)
 
     def test_ravion_true_damage_line_in_skill_overview(self):
         _, behavior = self._hero_by_display("Ravion")
         text = "\n".join(rs.format_behavior_section("Ravion", behavior))
-        self.assertIn("- True damage:", text)
+        self.assertIn("- **True damage**:", text)
         self.assertIn("HP loss", text)
         self.assertTrue(behavior.skill_overview["signature"].true_damage)
 
@@ -295,6 +295,85 @@ class PlacementConstraintTests(unittest.TestCase):
             self._hero_skills("Bonnie"), "Bonnie"
         )
         self.assertEqual(constraints, [])
+
+    def test_gala_ally_composition(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Gala"), "Gala"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_composition", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_composition"]
+        self.assertTrue(any("prioritizes ally behind" in t for t in texts), texts)
+
+    def test_gala_heroes2_typo_still_detected(self):
+        """heroes2/fandom text misspells prioritizing as priortizing."""
+        text = (
+            "When a battle starts, Galahad marks the nearest allied hero, "
+            "priortizing the one behind her."
+        )
+        constraints = rs.detect_placement_constraints(
+            [rs.SkillMeta("Ex. Skill", None, False, None, None, None, None, text)],
+            "Gala",
+        )
+        self.assertTrue(constraints)
+
+    def test_niru_ally_composition(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Niru"), "Niru"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_composition", kinds)
+
+    def test_thoran_ally_placement(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Thoran"), "Thoran"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        self.assertTrue(any("Soul Pact" in t for t in texts), texts)
+
+    def test_thoran_heroes2_on_tile_behind(self):
+        text = (
+            "Before a battle starts, Thoran signs a pact with the ally "
+            "on the tile behind him, agreeing to take 50% of the damage "
+            "for this ally until the battle ends."
+        )
+        constraints = rs.detect_placement_constraints(
+            [rs.SkillMeta("Ex. Skill", None, False, None, None, None, None, text)],
+            "Thoran",
+        )
+        self.assertTrue(constraints)
+
+    def test_sonja_ally_placement(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Sonja"), "Sonja"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        self.assertTrue(any("left and right" in t for t in texts), texts)
+
+    def test_gunnar_ally_placement(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Gunnar"), "Gunnar"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        self.assertTrue(any("Doomfield" in t for t in texts), texts)
+
+    def test_aliceth_ally_composition(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Aliceth"), "Aliceth"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_composition", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_composition"]
+        self.assertTrue(
+            any("nearest ally in same row" in t for t in texts),
+            texts,
+        )
 
 
 @unittest.skipUnless(hs.jsonschema is not None, "jsonschema not installed")

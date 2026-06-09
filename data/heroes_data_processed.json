@@ -298,7 +298,12 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "nearest ally in same row receives Brightfeather at battle start"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "slow",
@@ -3909,7 +3914,7 @@
         "placement_constraints": [
           {
             "kind": "ally_composition",
-            "text": "nearest ally blessed at battle start; prioritizes ally behind"
+            "text": "nearest ally auto-selected at battle start; prioritizes ally behind"
           }
         ],
         "skill_overview": {
@@ -7943,7 +7948,12 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "normal",
         "non_ult_speed": "slow",
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "nearest ally auto-selected at battle start; prioritizes ally behind"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "fast",
@@ -8744,7 +8754,12 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place ally 1 tile behind at battle start (Doomfield buffs and coordinated attacks)"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "slow",
@@ -10437,7 +10452,7 @@
           },
           {
             "kind": "ally_placement",
-            "text": "put one ally on the tile 1 tile behind (ATK bonus; buff ends if they leave the sigil)"
+            "text": "put one ally 1 tile behind him (ATK bonus; buff ends if they leave the sigil)"
           }
         ],
         "skill_overview": {
@@ -17114,7 +17129,12 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_composition",
+            "text": "nearest ally auto-selected at battle start; prioritizes ally behind"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "slow",
@@ -22790,7 +22810,12 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place allies on left and right at battle start (Crimson Covenant buffs; prioritizes front row)"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "fast",
@@ -24633,7 +24658,12 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "normal",
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place ally 1 tile behind at battle prep (Soul Pact damage share and revive)"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "fast",

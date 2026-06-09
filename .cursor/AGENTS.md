@@ -169,7 +169,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
 - **Signature skill** — the one skill that most characterises how the
   hero is played. Stored in `data/signature_skills.json` (key =
   display name from `heroes-overview.md`). Shown in the behavior block
-  as `Signature skill: {name} [(ultimate)] — {2–5 word description}`.
+  as `**Signature skill**: {name} [(ultimate)] — {2–5 word description}`.
   Often the Ultimate, but not always. Pick the skill that defines the
   unit's identity in combat.
   **Indicators:** enhanced by Ex / Supreme+ (`Enhance Force`); unique
@@ -196,7 +196,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   indicators among `speed`, `heal`, `buffs`, `debuffs`, `damage` (damage
   last; `high` / `medium` / `low`; speed `slow` / `normal` / `fast`).
   When any tier deals **HP loss**, **Max HP-based damage**, or **True
-  damage**, a final `- True damage: {type} \`{mag}\`, …` line lists types
+  damage**, a final `- **True damage**: {type} \`{mag}\`, …` line lists types
   (peak per type across tiers; p75 for non-ultimate).
   Computed in `compute_skill_overview()` in
   `rewrite-summaries.py`; stored in `behavior.skill_overview`. Speed uses

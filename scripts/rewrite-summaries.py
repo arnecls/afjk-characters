@@ -3852,7 +3852,7 @@ def detect_placement_constraints(
                 re.I,
             ),
             "ally_placement",
-            "put one ally on the tile 1 tile behind "
+            "put one ally 1 tile behind him "
             "(ATK bonus; buff ends if they leave the sigil)",
         ),
         (
@@ -3873,6 +3873,35 @@ def detect_placement_constraints(
             "ally_placement",
             "place lieutenant 1 tile behind at battle prep "
             "(Crit + shared shields)",
+        ),
+        (
+            re.compile(
+                r"signs a pact with the ally "
+                r"(?:placed 1 tile|on the tile) behind (?:him|her)",
+                re.I,
+            ),
+            "ally_placement",
+            "place ally 1 tile behind at battle prep "
+            "(Soul Pact damage share and revive)",
+        ),
+        (
+            re.compile(
+                r"if there is an ally placed 1 tile behind .{0,60}Doomfield",
+                re.I,
+            ),
+            "ally_placement",
+            "place ally 1 tile behind at battle start "
+            "(Doomfield buffs and coordinated attacks)",
+        ),
+        (
+            re.compile(
+                r"forms Crimson Covenant with two allies placed to "
+                r"(?:her|his) left and right",
+                re.I,
+            ),
+            "ally_placement",
+            "place allies on left and right at battle start "
+            "(Crimson Covenant buffs; prioritizes front row)",
         ),
         (
             re.compile(
@@ -4016,12 +4045,30 @@ def detect_placement_constraints(
         ),
         (
             re.compile(
-                r"selects the nearest ally.{0,80}prioritizing the ally "
-                r"behind (?:herself|himself)",
+                r"(?:selects|marks) the nearest all(?:ied hero|y).{0,80}"
+                r"prior\w+ the (?:ally |one )behind (?:herself|himself|her|him)",
                 re.I,
             ),
             "ally_composition",
-            "nearest ally blessed at battle start; prioritizes ally behind",
+            "nearest ally auto-selected at battle start; prioritizes ally behind",
+        ),
+        (
+            re.compile(
+                r"nearest ally.{0,100}when a battle starts.{0,40}"
+                r"prior\w+ the ally behind (?:herself|himself)",
+                re.I,
+            ),
+            "ally_composition",
+            "nearest ally auto-selected at battle start; prioritizes ally behind",
+        ),
+        (
+            re.compile(
+                r"grants? an ally \w+.{0,40}prioritizing the nearest ally "
+                r"in (?:her|his) row",
+                re.I,
+            ),
+            "ally_composition",
+            "nearest ally in same row receives Brightfeather at battle start",
         ),
         (
             re.compile(
@@ -4548,6 +4595,10 @@ _SKILL_OVERVIEW_FIELD_ORDER = (
 )
 
 
+def _behavior_bullet(label: str, body: str) -> str:
+    return f"- **{label}**: {body}"
+
+
 def _format_skill_overview_line(label: str, metrics: SkillOverviewMetrics) -> str:
     parts = [
         f"{name} `{getattr(metrics, attr)}`"
@@ -4555,8 +4606,8 @@ def _format_skill_overview_line(label: str, metrics: SkillOverviewMetrics) -> st
         if getattr(metrics, attr) != "none"
     ]
     if not parts:
-        return f"- {label}: —"
-    return f"- {label}: {', '.join(parts)}"
+        return _behavior_bullet(label, "—")
+    return _behavior_bullet(label, ", ".join(parts))
 
 
 def _format_true_damage_line(true_damage: dict[str, str]) -> str | None:
@@ -4567,7 +4618,7 @@ def _format_true_damage_line(true_damage: dict[str, str]) -> str | None:
     ]
     if not parts:
         return None
-    return f"- True damage: {', '.join(parts)}"
+    return _behavior_bullet("True damage", ", ".join(parts))
 
 
 def _merge_true_damage(*tier_damage: dict[str, str]) -> dict[str, str]:
@@ -4589,10 +4640,17 @@ def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[s
             " (ultimate)" if behavior.signature_skill_is_ult else ""
         )
         lines.append(
-            f"- Signature skill: {behavior.signature_skill_name}{ult_suffix}"
-            f" — {behavior.signature_skill_description}"
+            _behavior_bullet(
+                "Signature skill",
+                f"{behavior.signature_skill_name}{ult_suffix}"
+                f" — {behavior.signature_skill_description}",
+            )
         )
-    lines.append(f"- Movement: {behavior.movement} ({behavior.movement_note})")
+    lines.append(
+        _behavior_bullet(
+            "Movement", f"{behavior.movement} ({behavior.movement_note})"
+        )
+    )
     for constraint in behavior.placement_constraints:
         if isinstance(constraint, PlacementConstraint):
             kind = constraint.kind
@@ -4601,9 +4659,9 @@ def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[s
             kind = constraint["kind"]
             text = constraint["text"]
         if kind in ("ally_placement", "ally_composition"):
-            lines.append(f"- Ally composition: {text}")
+            lines.append(_behavior_bullet("Ally composition", text))
         elif kind == "self_placement":
-            lines.append(f"- Self placement: {text}")
+            lines.append(_behavior_bullet("Self placement", text))
     overview = behavior.skill_overview or {}
     lines.append("")
     lines.append("#### Skill overview")
