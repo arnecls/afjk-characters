@@ -38,6 +38,19 @@ def _hero_by_short_name(name: str):
     raise KeyError(name)
 
 
+def _hero_with_magnitudes(name: str):
+    text = rs.HEROES_MD.read_text(encoding="utf-8")
+    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+    for block in blocks:
+        if block.startswith(f"## {name} "):
+            hero = rs.parse_hero_block(block)
+            rs.analyze_hero(hero)
+            rs.assign_magnitudes([hero], skills_by_title)
+            return hero
+    raise KeyError(name)
+
+
 def _effects(hero, category: str, label: str | None = None):
     for e in hero.effects:
         if e.category != category:
@@ -128,6 +141,42 @@ class SummaryParsingTests(unittest.TestCase):
             if e.targeting != "Self"
         ]
         self.assertEqual(ally_life, [])
+
+    def test_solise_ally_healing_targeting(self):
+        hero = _hero_by_short_name("Solise")
+        healing = next(e for e in _effects(hero, "buff", "Healing"))
+        self.assertIn(
+            healing.targeting, ("All units", "Multiple targets", "Single target")
+        )
+        skill2 = hero.skill_slices.get("Skill2")
+        self.assertIsNotNone(skill2)
+        favor = next(e for e in skill2.effects if e.label == "Healing")
+        self.assertEqual(favor.targeting, "Multiple targets")
+        skill1 = hero.skill_slices.get("Skill1")
+        self.assertIsNotNone(skill1)
+        bulbs = [e for e in skill1.effects if e.label == "Healing over time"]
+        self.assertTrue(bulbs)
+
+    def test_healing_level_upgrade_keeps_ally_targeting(self):
+        hero = _hero_by_short_name("Solise")
+        healing = next(e for e in _effects(hero, "buff", "Healing"))
+        self.assertNotEqual(healing.targeting, "Self")
+        self.assertGreaterEqual(healing.numeric or 0, 220.0)
+
+    def test_healing_throughput_favors_faster_cadence(self):
+        fast = _hero_with_magnitudes("Fay")
+        slow = _hero_with_magnitudes("Hewynn")
+        fast_heal = max(
+            rs._MAG_ORDER.index(e.magnitude)
+            for e in _effects(fast, "buff")
+            if e.label == "Healing" and e.targeting != "Self"
+        )
+        slow_heal = max(
+            rs._MAG_ORDER.index(e.magnitude)
+            for e in _effects(slow, "buff")
+            if e.label == "Healing" and e.targeting == "All units"
+        )
+        self.assertGreaterEqual(fast_heal, slow_heal)
 
 
 if __name__ == "__main__":

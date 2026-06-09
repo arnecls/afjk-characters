@@ -59,7 +59,8 @@ def build_processed(data: dict) -> dict:
         )
         rs.analyze_hero(hero)
 
-    rs.assign_magnitudes(heroes)
+    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+    rs.assign_magnitudes(heroes, skills_by_title)
 
     display_by_title = {h.title: gen.short_name(h.title) for h in heroes}
     behavior_by_title = rs.build_behavior_for_heroes(

@@ -188,13 +188,17 @@ def build_overview(
     data_by_title = {h["title"]: h for h in data["heroes"]}
     parts = list(OVERVIEW_HEADER)
 
-    heroes_by_title: dict[str, rs.Hero] = {}
-    for title in sorted(processed["heroes"]):
-        damage_type = data_by_title.get(title, {}).get("damage_type")
-        heroes_by_title[title] = hs.deserialize_hero(
-            title, processed["heroes"][title], damage_type or ""
-        )
-    rs.assign_magnitudes(list(heroes_by_title.values()))
+    heroes_text = io.reconstruct_heroes_md(data)
+    import re
+
+    blocks = [b for b in re.split(r"\n(?=## )", heroes_text) if b.startswith("## ")]
+    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+    summary_heroes: dict[str, rs.Hero] = {}
+    for block in blocks:
+        hero = rs.parse_hero_block(block)
+        rs.analyze_hero(hero)
+        summary_heroes[hero.title] = hero
+    rs.assign_magnitudes(list(summary_heroes.values()), skills_by_title)
 
     for title in sorted(processed["heroes"]):
         p = {
@@ -202,7 +206,7 @@ def build_overview(
             **synergies["heroes"][title],
         }
         short = gen.short_name(title)
-        hero = heroes_by_title[title]
+        hero = summary_heroes[title]
         behavior = rs.HeroBehavior(**p["behavior"])
 
         syn_lines = _format_synergies(

@@ -64,5 +64,9 @@
     "range_slack": 0.5,
     "receiver_whitelist": [],
     "provider_blacklist": []
+  },
+  "magnitude_throughput": {
+    "min_cycle_seconds": 3.0,
+    "passive_reference_cycle_seconds": 10.0
   }
 }

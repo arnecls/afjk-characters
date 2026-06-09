@@ -4407,17 +4407,17 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "heal",
               "name": "Healing",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 200.0
+                  "value": 150.0
                 }
               ]
             },
@@ -5434,11 +5434,12 @@
             },
             {
               "tier": "ex+5",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "heal",
               "name": "Healing",
               "value": [
@@ -5508,7 +5509,6 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -8042,7 +8042,7 @@
     "Gerda - Soothing Siren": {
       "faction": "mauler",
       "class": "tank",
-      "is_supporting_unit": false,
+      "is_supporting_unit": true,
       "is_energy_provider": false,
       "skills": {
         "Splashing Fun": {
@@ -8051,11 +8051,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "heal",
               "name": "Healing",
               "value": [
@@ -8085,11 +8085,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "dot",
               "name": "Healing over time",
               "value": [
@@ -8282,8 +8283,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
-        "max_hp",
-        "healing"
+        "max_hp"
       ],
       "behavior": {
         "movement": "high movement",
@@ -9598,11 +9598,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "heal",
               "name": "Healing",
               "value": [
@@ -15196,11 +15196,11 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "heal",
               "name": "Healing",
               "value": [
@@ -15278,7 +15278,6 @@
       "benefit_stats": [
         "atk_spd",
         "haste",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -15824,11 +15823,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "All units",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
               "type": "dot",
               "name": "Healing over time",
               "value": [
@@ -15942,8 +15942,7 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "atk",
-        "haste",
-        "healing"
+        "haste"
       ],
       "behavior": {
         "movement": "moving",
@@ -19678,11 +19677,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "heal",
               "name": "Healing",
               "value": [
@@ -19857,7 +19857,6 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "haste",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -22681,17 +22680,18 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "All units",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
               "type": "heal",
               "name": "Healing",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 140.0
+                  "value": 220.0
                 }
               ]
             },
@@ -22714,6 +22714,24 @@
           "description": "When a battle starts, Solise sends a Bulb to each non-summoned ally, blessing them with nature's gift. These Bulbs provide 40% (ATK-based) + 10% healing to their host every 3s. Solise becomes unaffected while casting this skill. During battle, each Bulb can store any excess healing its host receives. When this stores healing reaches 600% of Solise's initial ATK, the Bulb blooms into a Bulbsprite. The Bulbsprite permanently increases its host's ATK by a value equal to 15% + 1.5% of Solise' initial ATK. Even when Solise is defeated in battle, the effects from her Bulbs and Bulbsprites stay active. But they can't grow or respond to her anymore. Increases the healing provided by a Bulb to 60% (ATK-based) + 10%. Increases the healing provided by a Bulb to 80% (ATK-based) + 10%. Increases the healing provided by a Bulb to 100% (ATK-based) + 10%.",
           "effects": [
             {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
+            },
+            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -22731,17 +22749,17 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "heal",
               "name": "Healing",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 190.0
+                  "value": 250.0
                 }
               ]
             },
@@ -22825,8 +22843,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
-        "atk",
-        "healing"
+        "atk"
       ],
       "behavior": {
         "movement": "stationary",
@@ -23692,11 +23709,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "dot",
               "name": "Healing over time",
               "value": [
@@ -23710,11 +23728,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "heal",
               "name": "Healing",
               "value": [

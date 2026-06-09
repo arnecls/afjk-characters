@@ -1885,7 +1885,10 @@ def build_overview() -> str:
         )
         _rs.analyze_hero(hero)
 
-    _rs.assign_magnitudes(heroes)
+    skills_by_title = _rs.load_skills_by_title_from_blocks(
+        list(block_by_title.values())
+    )
+    _rs.assign_magnitudes(heroes, skills_by_title)
     enabler_matchers = _make_enabler_matchers(hero_class_by_title)
 
     display_by_title = {h.title: short_name(h.title) for h in heroes}

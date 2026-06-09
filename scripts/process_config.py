@@ -80,3 +80,9 @@ def apply_config(config: dict) -> None:
         _gen.PROXIMITY_RECEIVER_WHITELIST = frozenset(ps["receiver_whitelist"])
     if "provider_blacklist" in ps:
         _gen.PROXIMITY_PROVIDER_BLACKLIST = frozenset(ps["provider_blacklist"])
+
+    mt = config.get("magnitude_throughput", {})
+    if "min_cycle_seconds" in mt:
+        _rs.MIN_CYCLE_SECONDS = mt["min_cycle_seconds"]
+    if "passive_reference_cycle_seconds" in mt:
+        _rs.PASSIVE_REFERENCE_CYCLE_SECONDS = mt["passive_reference_cycle_seconds"]

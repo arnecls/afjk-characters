@@ -180,16 +180,37 @@ def _energy_recovery_targets_self(t: str) -> bool:
     return False
 
 
+def _allies_receive_healing(clause: str) -> bool:
+    """True when restore/heal language targets one or more allies."""
+    t = clause.lower()
+    if re.search(
+        r"\b(?:to|for) (?:all )?(?:allies|an ally|the ally|affected allies|"
+        r"weakest ally|weakest \d+ allies|frontal allies|target ally|"
+        r"guarded ally|2 weakest allies)\b",
+        t,
+    ):
+        return True
+    if re.search(r"\bheals? all allies\b", t):
+        return True
+    if re.search(
+        r"\bacross the battlefield\b", t
+    ) and re.search(r"\ballies?\b", t):
+        return True
+    if re.search(r"\b(?:their|each) host\b", t) and re.search(
+        r"\bhealing\b", t
+    ):
+        return True
+    if re.search(r"\ballies\b", t) and re.search(
+        r"\b(?:heal|restor|recover)\w*\b", t
+    ):
+        return True
+    return False
+
+
 def _healing_targets_self(clause: str) -> bool:
     """True when HP restore applies to the caster, not an ally."""
     t = clause.lower()
-    if re.search(
-        r"\b(?:to|for) (?:all )?(?:allies|an ally|the ally|weakest ally|"
-        r"frontal allies|target ally|guarded ally|2 weakest allies)\b",
-        t,
-    ):
-        return False
-    if re.search(r"\bheals? all allies\b", t):
+    if _allies_receive_healing(t):
         return False
     if re.search(r",\s*recovering \d+%", t):
         return True
@@ -481,6 +502,7 @@ class Effect:
     # Buffs only: None = always relevant; frequent = often (>~50% of fights);
     # rare = situational (not every battle / kill-gated / limited procs).
     conditional: str | None = None
+    source_section: str | None = None
 
 
 @dataclass
@@ -941,6 +963,8 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         "Energy recovery",
         "Shield",
     ):
+        if re.search(r"\bweakest \d+ allies\b", t):
+            return "Multiple targets"
         if re.search(
             r"\b(?:to|for) (?:a |the )?(?:target |weakest |marked |rearmost )?ally\b",
             t,
@@ -1009,8 +1033,12 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     if re.search(
         r"center of the battlefield|across the battlefield|whole battlefield",
         t,
-    ) and re.search(r"\benemies?\b", t):
-        return "All units"
+    ):
+        if category == "buff" and label in ("Healing", "Healing over time"):
+            if re.search(r"\ballies?\b", t):
+                return "All units"
+        if re.search(r"\benemies?\b", t):
+            return "All units"
     if re.search(r"\b(?:area|within \d+ tiles?|surrounding|in (?:its|the) path)\b", t):
         if category == "buff" and effect_targets_self_only(t, label, category):
             return "Self"
@@ -1290,6 +1318,7 @@ def add_effect(
     text: str,
     *,
     scope: str | None = None,
+    source_section: str | None = None,
 ):
     key = (category, label)
     existing = [e for e in effects if (e.category, e.label) == key]
@@ -1329,6 +1358,8 @@ def add_effect(
         ):
             cur.numeric = n
             cur.qualitative = cond_text
+            if source_section:
+                cur.source_section = source_section
             if category == "buff" and new_buff_tgt is not None:
                 cur.targeting = _prefer_buff_targeting(
                     new_buff_tgt, cur.targeting
@@ -1339,6 +1370,8 @@ def add_effect(
                 )
         elif cond and not cur.qualitative:
             cur.qualitative = cond_text
+        if source_section and not cur.source_section:
+            cur.source_section = source_section
         return
     buff_tgt = (
         _resolve_buff_targeting(text, label, scope=scope)
@@ -1357,6 +1390,7 @@ def add_effect(
             numeric=n,
             qualitative=cond_text,
             conditional=cond,
+            source_section=source_section,
         )
     )
 
@@ -1442,6 +1476,10 @@ BUFF_RULES = [
     # Healing over time (HoT): HP restore with "per second", "per 0.Xs",
     # "every second" etc.  Must come BEFORE the instant-Healing rules.
     (
+        r"(?:provide|provides|providing).{0,50}healing to (?:their )?host every",
+        "Healing over time",
+    ),
+    (
         r"(?:recover|restore)(?:s|ing)? .{0,60}hp.{0,30}"
         r"(?:per second|per 0\.\d|every second|every \d+\.?\d* s)",
         "Healing over time",
@@ -1477,6 +1515,7 @@ BUFF_RULES = [
     (r"heal(?:s|ing)? .{0,40}(?:for \d+%|\bhp\b|by \d+%)", "Healing"),
     (r"heal(?:s|ing)? all allies", "Healing"),
     (r"restor(?:e|es|ing) \d+% .{0,20}hp", "Healing"),
+    (r"increas(?:e|es|ing) healing to \d+%", "Healing"),
     # Healing stat buff: "Increases Healing by X" — the Healing stat itself
     (
         r"increas(?:e|es|ing) (?:her |his |their )?healing\b (?:by|during)\b",
@@ -2429,6 +2468,72 @@ def _damage_frequency_multiplier(text: str) -> float:
     return 1.0
 
 
+def _effect_frequency_multiplier(text: str) -> float:
+    """Burst multiplier for heals and damage (waves, HoT duration, multi-hit)."""
+    t = text.lower()
+    if m := re.search(r"(\d+)\s+waves?\s+of\s+healing", t):
+        return float(m.group(1))
+    if re.search(
+        r"(?:heal|restor|recover)\w*.{0,80}per second", t
+    ) or re.search(r"heals? .{0,40}per second", t):
+        dur = 1.0
+        if m := re.search(r"for\s+(\d+(?:\.\d+)?)\s*s", t):
+            dur = float(m.group(1))
+        return max(1.0, dur)
+    return _damage_frequency_multiplier(text)
+
+
+def _effect_cycle_time(
+    section: str,
+    skill: SkillMeta | None,
+    skills: list[SkillMeta],
+) -> float:
+    """Seconds between repeated casts of the effect's source skill."""
+    if section == "Ultimate":
+        return max(MIN_CYCLE_SECONDS, _ult_casting_time(skills))
+    if skill is not None and (
+        (skill.cooldown or 0) > 0 or (skill.initial_cd or 0) > 0
+    ):
+        return max(MIN_CYCLE_SECONDS, _skill_casting_time(skill))
+    return PASSIVE_REFERENCE_CYCLE_SECONDS
+
+
+def _section_skill_text(
+    hero: Hero, skills: list[SkillMeta], section: str
+) -> str:
+    skill = _skill_by_section(skills, section)
+    if skill and skill.text:
+        return skill.text
+    parts = [text for _tier, text, sec in hero.skill_chunks if sec == section]
+    return " ".join(parts)
+
+
+def _effect_throughput_score(
+    effect: Effect,
+    hero: Hero,
+    skills: list[SkillMeta],
+) -> float:
+    base = effect.numeric
+    if base is None or base <= 0:
+        return 0.0
+    section = effect.source_section or ""
+    skill = _skill_by_section(skills, section) if section else None
+    text = _section_skill_text(hero, skills, section)
+    burst = base * _effect_frequency_multiplier(text)
+    cycle = _effect_cycle_time(section, skill, skills)
+    return burst / cycle
+
+
+def load_skills_by_title_from_blocks(
+    blocks: list[str],
+) -> dict[str, list[SkillMeta]]:
+    skills_by_title: dict[str, list[SkillMeta]] = {}
+    for block in blocks:
+        title = block.splitlines()[0].replace("## ", "").strip()
+        skills_by_title[title] = load_skill_meta(block)
+    return skills_by_title
+
+
 def _score_true_damage_chunk(text: str, dmg_type: str, targeting: str) -> float:
     if targeting == "Self" and not _chunk_targets_enemies(text):
         return 0.0
@@ -2581,13 +2686,22 @@ def analyze_text(
     tier: str,
     text: str,
     primary_dmg: str = "Physical",
+    source_section: str | None = None,
 ):
     t = text.lower()
     for pat, label in BUFF_RULES:
         for scope in _buff_match_scopes(text, label, pat):
             if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(scope):
                 continue
-            add_effect(effects, "buff", label, tier, text, scope=scope)
+            add_effect(
+                effects,
+                "buff",
+                label,
+                tier,
+                text,
+                scope=scope,
+                source_section=source_section,
+            )
         if _matching_summon_buff_match(text, label, pat):
             add_summon_buff_effect(summon_effects, label, tier, text)
     for pat, label in DEBUFF_RULES:
@@ -2596,7 +2710,15 @@ def analyze_text(
             # rather than debuffing an enemy (e.g. Elijah & Lailah bond penalty).
             if label == "ATK debuff" and _debuff_match_is_ally_atk_penalty(scope):
                 continue
-            add_effect(effects, "debuff", label, tier, text, scope=scope)
+            add_effect(
+                effects,
+                "debuff",
+                label,
+                tier,
+                text,
+                scope=scope,
+                source_section=source_section,
+            )
     for pat, label in CC_RULES:
         for scope in _effect_match_scopes(text, pat):
             # Skip CC matches that target an ally rather than an enemy
@@ -2608,7 +2730,15 @@ def analyze_text(
                     continue
                 if not _cc_cannot_move_targets_enemy(scope):
                     continue
-            add_effect(effects, "cc", label, tier, text, scope=scope)
+            add_effect(
+                effects,
+                "cc",
+                label,
+                tier,
+                text,
+                scope=scope,
+                source_section=source_section,
+            )
 
     if not _skill_chunk_has_ally_only_damage(text):
         tgt = detect_targeting(text)
@@ -2884,6 +3014,7 @@ def analyze_hero(hero: Hero):
             tier,
             text,
             primary_dmg,
+            source_section=section or None,
         )
         detect_special_effects(hero.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
@@ -2899,6 +3030,7 @@ def analyze_hero(hero: Hero):
             tier,
             text,
             primary_dmg,
+            source_section=section or None,
         )
         detect_special_effects(chunk.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
@@ -3059,40 +3191,69 @@ def assign_damage_magnitudes(heroes: list[Hero]) -> None:
             )
 
 
-def assign_magnitudes(heroes: list[Hero]):
-    by_key: dict[str, list[Effect]] = defaultdict(list)
+def assign_magnitudes(
+    heroes: list[Hero],
+    skills_by_title: dict[str, list[SkillMeta]] | None = None,
+):
+    skills_map = skills_by_title or {}
+    by_key: dict[str, list[tuple[Hero, Effect]]] = defaultdict(list)
     for hero in heroes:
         for eff in hero.effects + hero.summon_effects:
-            by_key[f"{eff.category}:{eff.label}"].append(eff)
+            by_key[f"{eff.category}:{eff.label}"].append((hero, eff))
     for group in by_key.values():
+        category = group[0][1].category
+        label = group[0][1].label
         # CC magnitudes are duration-based, not damage-% quantiles.
-        if group[0].category == "cc":
-            for e in group:
+        if category == "cc":
+            for _hero, e in group:
                 e.magnitude = qualitative_magnitude(e)
             continue
         # For always-high labels, skip quantile – just apply the heuristic.
-        if group[0].label in _ALWAYS_HIGH_BUFFS:
-            for e in group:
+        if label in _ALWAYS_HIGH_BUFFS:
+            for _hero, e in group:
                 e.magnitude = qualitative_magnitude(e)
             continue
-        if (
-            group[0].category == "debuff"
-            and group[0].label in _ALWAYS_MEDIUM_DEBUFFS
-        ):
-            for e in group:
+        if category == "debuff" and label in _ALWAYS_MEDIUM_DEBUFFS:
+            for _hero, e in group:
                 e.magnitude = qualitative_magnitude(e)
             continue
-        nums = sorted(e.numeric for e in group if e.numeric is not None)
+        use_throughput = (
+            category == "buff"
+            and label in _THROUGHPUT_HEAL_LABELS
+            and bool(skills_map)
+        )
+        scored: list[tuple[float | None, Hero, Effect]] = []
+        for hero, e in group:
+            if use_throughput:
+                skills = skills_map.get(hero.title, [])
+                val = (
+                    _effect_throughput_score(e, hero, skills)
+                    if skills
+                    else e.numeric
+                )
+                scored.append((val if val and val > 0 else e.numeric, hero, e))
+            else:
+                scored.append((e.numeric, hero, e))
+        nums = sorted(v for v, _h, _e in scored if v is not None)
         if len(nums) >= 6:
             t1, t2 = statistics.quantiles(nums, n=3)
-            for e in group:
-                e.magnitude = (
-                    qualitative_magnitude(e)
-                    if e.numeric is None
-                    else ("low" if e.numeric <= t1 else "medium" if e.numeric <= t2 else "high")
-                )
+            for val, _hero, e in scored:
+                if val is None:
+                    e.magnitude = qualitative_magnitude(e)
+                else:
+                    e.magnitude = (
+                        qualitative_magnitude(e)
+                        if use_throughput and val <= 0
+                        else (
+                            "low"
+                            if val <= t1
+                            else "medium"
+                            if val <= t2
+                            else "high"
+                        )
+                    )
         else:
-            for e in group:
+            for _val, _hero, e in scored:
                 e.magnitude = qualitative_magnitude(e)
     for hero in heroes:
         for eff in hero.effects + hero.summon_effects:
@@ -3334,6 +3495,11 @@ _CHANNEL_DURATION_CAP = 30.0
 
 # No listed cooldown => highest usage frequency for range weighting.
 _NO_CD_FREQUENCY_WEIGHT = 2.0
+
+# Throughput bucketing for heal effects (overridden via heroes_config.json).
+MIN_CYCLE_SECONDS: float = 3.0
+PASSIVE_REFERENCE_CYCLE_SECONDS: float = 10.0
+_THROUGHPUT_HEAL_LABELS = frozenset({"Healing", "Healing over time"})
 
 
 @dataclass
