@@ -23,7 +23,7 @@ Each section in [heroes-overview.md](heroes-overview.md) includes:
 
 - **Behavior** — movement pattern, signature skill, casting speed, placement constraints
 - **Units X benefits from** — up to five ranked synergy partners (stat buffs, enablers, summon support)
-- **Units benefitting from X** — reverse index of heroes who synergize with this unit
+- **Units benefitting most from X** — reverse index of heroes who synergize with this unit
 - **Replacements** — similar heroes grouped by role (damage, crowd control, buffs, etc.)
 - **Summary** — structured breakdown of stats benefited, damage types, buffs, debuffs, crowd control, and special effects
 

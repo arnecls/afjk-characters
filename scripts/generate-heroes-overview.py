@@ -1752,7 +1752,7 @@ def format_synergies(
     benefited = beneficiaries_index.get(receiver.title, [])
     if benefited:
         lines.append("")
-        lines.append(f"### Units benefitting from {receiver_name}")
+        lines.append(f"### Units benefitting most from {receiver_name}")
         lines.append("")
         total = len(benefited)
         if total > MAX_BENEFICIARIES_DISPLAY:

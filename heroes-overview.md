@@ -49,7 +49,7 @@ Common buffers are **Lyca**, **Mikola**, or **Koko**.
   - Energy recovery (1000 at battle start, single target) `signature fuel`
   - Enables Debuff on target via ATK debuff (all units)
 
-### Units benefitting from Aliceth
+### Units benefitting most from Aliceth
 
 - Kulu
 
@@ -303,7 +303,7 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
   - Healing (area, medium)
   - Energy recovery (area, low) `signature fuel`
 
-### Units benefitting from Antandra
+### Units benefitting most from Antandra
 
 - Alna
 - Callan
@@ -619,7 +619,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Aurora
+### Units benefitting most from Aurora
 
 - Bryon
 - Florabelle
@@ -710,7 +710,7 @@ Common buffers are **Twins**, **Mikola**, or **Koko**.
   - ATK buff (multiple targets, low)
   - Healing (area, medium)
 
-### Units benefitting from Baelran
+### Units benefitting most from Baelran
 
 - Carolina
 
@@ -1337,7 +1337,7 @@ Common buffers are **Lyca**, **Twins**, or **Rowan**.
   - DEF buff (multiple targets, low)
   - DEF buff (multiple targets, low)
 
-### Units benefitting from Cecia
+### Units benefitting most from Cecia
 
 - Kordan
 - Walker
@@ -1777,7 +1777,7 @@ Common buffers are **Mikola**, **Hugin**, or **Twins**.
   - ATK buff (multiple targets, high)
   - Healing (single target, medium)
 
-### Units benefitting from Damian
+### Units benefitting most from Damian
 
 **16** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -2103,7 +2103,7 @@ Common buffers are **Mikola**, **Hugin**, or **Rowan**.
   - Healing (area, medium)
   - Energy recovery (area, low) `signature fuel`
 
-### Units benefitting from Twins
+### Units benefitting most from Twins
 
 **81** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -2200,7 +2200,7 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 - **Velara**
   - Healing (area, medium)
 
-### Units benefitting from Evie
+### Units benefitting most from Evie
 
 - Bonnie
 - Shadewing
@@ -2377,7 +2377,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Fay
+### Units benefitting most from Fay
 
 - Granny Dahnie
 - Niru
@@ -2457,7 +2457,7 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 - **Vala**
   - Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Florabelle
+### Units benefitting most from Florabelle
 
 - Dunlingr
 - Phraesto
@@ -2542,7 +2542,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Frieren
+### Units benefitting most from Frieren
 
 - Shadewing
 - Bonnie
@@ -2616,7 +2616,7 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 - **Vala**
   - Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Galahad
+### Units benefitting most from Galahad
 
 - Faramor
 - Sonja
@@ -3156,7 +3156,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (multiple targets, medium) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, medium) `signature fuel`
 
-### Units benefitting from Hepler
+### Units benefitting most from Hepler
 
 - Nerion
 - Shadewing
@@ -3251,7 +3251,7 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) `signature fuel`
 
-### Units benefitting from Hewynn
+### Units benefitting most from Hewynn
 
 - Alna
 - Callan
@@ -3474,7 +3474,7 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Hugin
+### Units benefitting most from Hugin
 
 **78** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -3852,7 +3852,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Koko
+### Units benefitting most from Koko
 
 **44** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -4179,7 +4179,7 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
   - ATK buff (multiple targets, low)
   - ATK SPD buff (multiple targets, low) `signature fuel`
 
-### Units benefitting from Kulu
+### Units benefitting most from Kulu
 
 - Indris
 - Aliceth
@@ -4422,7 +4422,7 @@ Common buffers are **Lyca**, **Rowan**, or **Mikola**.
 - **Valka**
   - ATK SPD buff (multiple targets, high) `signature fuel`
 
-### Units benefitting from Lily May
+### Units benefitting most from Lily May
 
 - Bonnie
 - Aliceth
@@ -4517,7 +4517,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Healing (area, medium)
   - Energy recovery (area, low) `signature fuel`
 
-### Units benefitting from Lorsan
+### Units benefitting most from Lorsan
 
 **27** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -4680,7 +4680,7 @@ Common buffers are **Lyca**, **Mikola**, or **Rowan**.
   - Healing (area, medium)
   - Energy recovery (area, low) `signature fuel`
 
-### Units benefitting from Lucius
+### Units benefitting most from Lucius
 
 **14** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -5003,7 +5003,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Lyca
+### Units benefitting most from Lyca
 
 **79** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -5316,7 +5316,7 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - Healing (arc, high, conditional (frequent))
   - ATK SPD buff (multiple targets, low) `signature fuel`
 
-### Units benefitting from Mikola
+### Units benefitting most from Mikola
 
 **81** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -5534,7 +5534,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Natsu
+### Units benefitting most from Natsu
 
 - Indris
 - Bonnie
@@ -5867,7 +5867,7 @@ Common buffers are **Rowan** or **Lyca**.
 - **Thador**
   - Energy recovery (single target, low) `signature fuel`
 
-### Units benefitting from Pandora
+### Units benefitting most from Pandora
 
 - Indris
 - Chippy
@@ -6319,7 +6319,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Ravion
+### Units benefitting most from Ravion
 
 **17** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -6562,7 +6562,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Healing (arc, high, conditional (frequent))
   - ATK SPD buff (multiple targets, low) `signature fuel`
 
-### Units benefitting from Rowan
+### Units benefitting most from Rowan
 
 **58** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -6654,7 +6654,7 @@ Common buffers are **Koko**, **Lorsan**, or **Hugin**.
 - **Ludovic**
   - Healing (area, medium)
 
-### Units benefitting from Saida
+### Units benefitting most from Saida
 
 - Daimon
 - Eironn
@@ -7442,7 +7442,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - **Mehira**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
-### Units benefitting from Sinbad
+### Units benefitting most from Sinbad
 
 - Indris
 
@@ -7513,7 +7513,7 @@ Common buffers are **Koko**, **Lorsan**, or **Mikola**.
 - **Antandra**
   - Healing (multiple targets, high)
 
-### Units benefitting from Smokey & Meerky
+### Units benefitting most from Smokey & Meerky
 
 - Solise
 - Contess
@@ -7961,7 +7961,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 
-### Units benefitting from Tasi
+### Units benefitting most from Tasi
 
 - Nerion
 - Carolina
@@ -8122,7 +8122,7 @@ Common buffers are **Twins**, **Koko**, or **Hugin**.
   - Healing (area, medium)
   - Energy recovery (area, low) `signature fuel`
 
-### Units benefitting from Thador
+### Units benefitting most from Thador
 
 - Pandora
 
@@ -8586,7 +8586,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
   - Max HP via Shield (single target, high)
 
-### Units benefitting from Valka
+### Units benefitting most from Valka
 
 - Brutus
 - Lucy
@@ -8660,7 +8660,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
   - Haste buff (single target, low) `signature fuel`
   - Max HP via Shield (multiple targets, medium)
 
-### Units benefitting from Velara
+### Units benefitting most from Velara
 
 - Lorsan
 - Mikola

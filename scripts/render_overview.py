@@ -149,7 +149,7 @@ def _format_synergies(
     benefited = p["beneficiaries"]
     if benefited:
         lines.append("")
-        lines.append(f"### Units benefitting from {short}")
+        lines.append(f"### Units benefitting most from {short}")
         lines.append("")
         total = len(benefited)
         if total > max_ben:
