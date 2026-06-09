@@ -4,7 +4,7 @@
 behavior, structured skill summaries, and replacement suggestions for the full
 roster.
 
-This repository collects and analyzes hero skill data for [AFK Journey](https://afk-journey.fandom.com/wiki/AFK_Journey). Skill text is sourced from [Yaphalla](https://www.yaphalla.com/heroes) and the AFK Journey Fandom wiki, then parsed to extract buffs, debuffs, crowd control, damage types, and team synergies.
+This repository collects and analyzes hero skill data for [AFK Journey](https://afk-journey.fandom.com/wiki/AFK_Journey). Skill text is sourced primarily from the [AFK Journey Fandom wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla](https://www.yaphalla.com/heroes), then parsed to extract buffs, debuffs, crowd control, damage types, and team synergies.
 
 ## What is in this repository
 

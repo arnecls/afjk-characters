@@ -2,8 +2,10 @@
 """Live downloaders for the two hero data sources (stdlib only).
 
 - ``fetch_fandom()`` reads wikitext from the AFK Journey fandom MediaWiki API
-  (https://afk-journey.fandom.com/api.php).
+  (https://afk-journey.fandom.com/api.php). This is the baseline: translated
+  skill text plus Skill Range and Initial Energy.
 - ``fetch_yaphalla()`` scrapes hero pages from https://www.yaphalla.com/heroes.
+  Used only to fill gaps in the Fandom record during ``heroes_io.merge_sources``.
 
 Both return hero records in the same structure as ``heroes_io.parse_md`` so the
 results can be merged by ``heroes_io.merge_sources``.
@@ -417,7 +419,8 @@ def _fetch_yaphalla_hero(name: str) -> dict:
         )
 
     # Faction / class / damage are no longer exposed by Yaphalla as JSON; they
-    # are gap-filled from the fandom record during merge.
+    # come from the Fandom baseline during merge. Yaphalla only gap-fills when
+    # Fandom fields are missing.
     return {
         "title": title,
         "name": name,

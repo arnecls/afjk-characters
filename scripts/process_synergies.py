@@ -106,12 +106,12 @@ def _sanitize_replacements(replacements: dict) -> dict:
 
 
 def build_synergies(raw: dict, processed: dict) -> dict:
-    yaphalla_text = io.reconstruct_heroes_md(raw)
-    fandom_text = io.reconstruct_heroes2_md(raw)
+    heroes_text = io.reconstruct_heroes_md(raw)
+    behavior_text = io.reconstruct_heroes2_md(raw)
 
     import re
 
-    blocks = [b for b in re.split(r"\n(?=## )", yaphalla_text) if b.startswith("## ")]
+    blocks = [b for b in re.split(r"\n(?=## )", heroes_text) if b.startswith("## ")]
     heroes: list = []
     block_by_title: dict[str, str] = {}
     for block in blocks:
@@ -135,8 +135,8 @@ def build_synergies(raw: dict, processed: dict) -> dict:
     behavior_by_title = rs.build_behavior_for_heroes(
         heroes,
         display_by_title,
-        heroes2_text=fandom_text,
-        heroes_text=yaphalla_text,
+        heroes2_text=behavior_text,
+        heroes_text=heroes_text,
     )
     beneficiaries_index = gen.build_beneficiaries_index(
         heroes, enabler_matchers, behavior_by_title

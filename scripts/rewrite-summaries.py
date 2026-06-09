@@ -3149,6 +3149,13 @@ BEHAVIOR_NAME_ALIASES: dict[str, str] = {
     "Gala": "Galahad",
 }
 
+_CURATED_DISPLAY_ALIASES = {v: k for k, v in BEHAVIOR_NAME_ALIASES.items()}
+
+
+def curated_display_name(display: str) -> str:
+    """Map wiki display name to curated JSON keys (signature skills, etc.)."""
+    return _CURATED_DISPLAY_ALIASES.get(display, display)
+
 BEHAVIOR_ATTACK_SECTIONS = frozenset(
     {"Ultimate", "Skill1", "Skill2", "Ex. Skill"}
 )
@@ -4514,12 +4521,13 @@ def build_behavior_for_heroes(
         skills = skills_by_title[hero.title]
         movement, note = compute_movement(skills)
         display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
+        curated = curated_display_name(display)
         speeds = per_skill_speeds.get(hero.title, {})
-        defining = defining_by_display.get(display)
-        alternative = alternative_by_display.get(display)
+        defining = defining_by_display.get(curated)
+        alternative = alternative_by_display.get(curated)
         placement_constraints = detect_placement_constraints(
             skills,
-            display,
+            curated,
             placement_overrides,
             block_text=block_by_title[hero.title],
         )

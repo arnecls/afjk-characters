@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Process heroes_data.json into heroes_data_processed.json.
 
-Pass 1 of the analysis pipeline. Reconstructs the Yaphalla / fandom documents
-from ``heroes_data.json`` and runs per-hero skill/summary/behaviour analysis,
+Pass 1 of the analysis pipeline. Reconstructs hero markdown from
+``heroes_data.json`` and runs per-hero skill/summary/behaviour analysis,
 then serialises derived data — effects, synergy profile, damage magnitudes,
 and behaviour. Roster-wide synergy rankings are produced by
 ``process_synergies.py``.
@@ -39,12 +39,12 @@ gen = _load_module("gen_overview", "generate-heroes-overview.py")
 
 
 def build_processed(data: dict) -> dict:
-    yaphalla_text = io.reconstruct_heroes_md(data)
-    fandom_text = io.reconstruct_heroes2_md(data)
+    heroes_text = io.reconstruct_heroes_md(data)
+    behavior_text = io.reconstruct_heroes2_md(data)
 
     import re
 
-    blocks = [b for b in re.split(r"\n(?=## )", yaphalla_text) if b.startswith("## ")]
+    blocks = [b for b in re.split(r"\n(?=## )", heroes_text) if b.startswith("## ")]
     heroes: list = []
     block_by_title: dict[str, str] = {}
     for block in blocks:
@@ -65,8 +65,8 @@ def build_processed(data: dict) -> dict:
     behavior_by_title = rs.build_behavior_for_heroes(
         heroes,
         display_by_title,
-        heroes2_text=fandom_text,
-        heroes_text=yaphalla_text,
+        heroes2_text=behavior_text,
+        heroes_text=heroes_text,
     )
 
     # Match overview-to-csv: energy providers are detected from freshly parsed

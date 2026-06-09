@@ -3,18 +3,16 @@
 
 Defines the ``heroes_data.json`` schema and provides:
 
-- parsers that read the legacy ``Heroes.md`` (Yaphalla) and ``heroes2.md``
-  (fandom) markdown into structured hero records,
-- a merge that combines both sources into one record list,
-- reconstructors that rebuild the Yaphalla / fandom markdown blocks from a
-  record (used both to render ``heroes.md`` and to feed the existing
-  markdown-based analysis without changing it),
+- parsers that read ``Heroes.md`` / ``heroes2.md`` markdown into structured
+  hero records,
+- a merge that uses the Fandom wiki as baseline and fills gaps from Yaphalla,
+- reconstructors that rebuild markdown blocks from a record for render and
+  analysis,
 - helpers to load/save the JSON artefacts.
 
-The schema deliberately keeps the per-source skill text because the synergy
-analysis is sensitive to exact wording (Yaphalla text) while the behaviour
-analysis reads fandom skill ranges / energy. Storing both lets the render and
-process steps reproduce the current outputs byte-for-byte.
+The Fandom wiki supplies translated skill text plus Skill Range and Initial
+Energy. Yaphalla is consulted only when Fandom fields are missing, and
+untranslated Yaphalla strings (CJK / ``不用翻译`` markers) are skipped.
 """
 
 from __future__ import annotations
@@ -53,10 +51,14 @@ META_LABELS = ["Cooldown", "Initial Cooldown", "Skill Range", "Initial Energy"]
 _HEROES_MD_HEADER = (
     "# AFK Journey Heroes\n"
     "\n"
-    "Skill data sourced from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\n"
+    "Skill data sourced from "
+    "[AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), "
+    "with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\n"
     "Summaries live in [heroes-overview.md](heroes-overview.md) "
     "(see `scripts/generate-heroes-overview.py`).\n"
 )
+
+_CJK_RE = re.compile(r"[\u4e00-\u9fff\u3400-\u4dbf]")
 
 _LEVEL_RE = re.compile(r"^Level (\d+)(?: — (.+))?$")
 _WIKI_TAG_RE = re.compile(r"\[([^\]]+)\]([^\[]+)\[/\]")
@@ -261,80 +263,128 @@ def parse_md(text: str) -> list[dict]:
 # Source merge
 # ---------------------------------------------------------------------------
 
-# Display name -> fandom hero name, for heroes named differently per source.
+# Fandom roster name -> Yaphalla page name when they differ.
+YAPHALLA_NAME_ALIASES: dict[str, str] = {
+    "Elijah & Lailah": "Twins",
+    "Galahad": "Gala",
+}
+
+# Legacy: Yaphalla display name -> Fandom name (old merge direction).
 NAME_ALIASES: dict[str, str] = {
     "Twins": "Elijah & Lailah",
     "Gala": "Galahad",
 }
 
 
-def _gapfill_identity(record: dict, fandom_hero: dict) -> None:
-    """Fill missing Yaphalla identity fields from the fandom baseline.
+def _has_text(text: str | None) -> bool:
+    return bool(text and str(text).strip())
 
-    No-op when the Yaphalla record is already complete (the markdown path), so
-    this only affects the live web download where Yaphalla no longer exposes
-    faction / class / damage.
-    """
-    for key in ("faction", "class", "damage_type"):
-        if not record.get(key) and fandom_hero.get(key):
-            record[key] = fandom_hero[key]
-    if not record.get("description") and fandom_hero.get("description"):
-        record["description"] = fandom_hero["description"]
-    if " - " not in record.get("title", "") and fandom_hero.get("title"):
-        record["title"] = fandom_hero["title"]
+
+def is_usable_yaphalla_text(text: str | None) -> bool:
+    """True when Yaphalla text is safe to use (translated, non-empty)."""
+    if not _has_text(text):
+        return False
+    s = str(text)
+    if "不用翻译" in s:
+        return False
+    return _CJK_RE.search(s) is None
+
+
+def curated_display_name(display: str) -> str:
+    """Map wiki roster display name to curated JSON keys (signature skills, etc.)."""
+    return YAPHALLA_NAME_ALIASES.get(display, display)
+
+
+def _lookup_yaphalla(name: str, yaphalla_by_name: dict[str, dict]) -> dict | None:
+    hero = yaphalla_by_name.get(name)
+    if hero is not None:
+        return hero
+    alias = YAPHALLA_NAME_ALIASES.get(name)
+    if alias:
+        return yaphalla_by_name.get(alias)
+    return None
+
+
+def _gapfill_from_yaphalla(record: dict, yaphalla_hero: dict) -> None:
+    """Fill gaps in a Fandom baseline record from translated Yaphalla data."""
+    for key in ("faction", "class", "damage_type", "tags"):
+        if not record.get(key) and yaphalla_hero.get(key):
+            record[key] = yaphalla_hero[key]
+    if not record.get("description") and is_usable_yaphalla_text(
+        yaphalla_hero.get("description")
+    ):
+        record["description"] = yaphalla_hero["description"]
+    if " - " not in record.get("title", "") and is_usable_yaphalla_text(
+        yaphalla_hero.get("title")
+    ):
+        record["title"] = yaphalla_hero["title"]
     if not record.get("tags"):
         tags = " · ".join(
-            t for t in (record.get("faction"), record.get("class"),
-                        record.get("damage_type")) if t
+            t
+            for t in (
+                record.get("faction"),
+                record.get("class"),
+                record.get("damage_type"),
+            )
+            if t
         )
         record["tags"] = tags or None
 
-    # Per-skill gap-fill: Yaphalla's current site no longer exposes level
-    # upgrades, so borrow level text (and empty descriptions) from fandom.
-    fandom_skills = {s["section"]: s for s in fandom_hero.get("skills", [])}
+    yaphalla_skills = {s["section"]: s for s in yaphalla_hero.get("skills", [])}
     for skill in record.get("skills", []):
-        fskill = fandom_skills.get(skill["section"])
-        if not fskill:
+        yskill = yaphalla_skills.get(skill["section"])
+        if not yskill:
             continue
-        if not skill.get("levels") and fskill.get("levels"):
-            skill["levels"] = fskill["levels"]
-        if not skill.get("description") and fskill.get("description"):
-            skill["description"] = fskill["description"]
-        if not skill.get("name") and fskill.get("name"):
-            skill["name"] = fskill["name"]
+        meta = skill.setdefault("meta", {})
+        for label in ("Cooldown", "Initial Cooldown"):
+            if label not in meta and yskill.get("meta", {}).get(label):
+                meta[label] = yskill["meta"][label]
+        if not _has_text(skill.get("name")) and is_usable_yaphalla_text(
+            yskill.get("name")
+        ):
+            skill["name"] = yskill["name"]
+        if not _has_text(skill.get("description")) and is_usable_yaphalla_text(
+            yskill.get("description")
+        ):
+            skill["description"] = yskill["description"]
+        if not skill.get("levels"):
+            ylevels = yskill.get("levels", [])
+            if ylevels and all(
+                is_usable_yaphalla_text(level.get("text")) for level in ylevels
+            ):
+                skill["levels"] = ylevels
 
 
 def merge_sources(
-    yaphalla: list[dict],
     fandom: list[dict],
-    yaphalla_header: str = _HEROES_MD_HEADER,
+    yaphalla: list[dict],
+    heroes_header: str = _HEROES_MD_HEADER,
     fandom_header: str = "",
     gapfill: bool = False,
+    *,
+    yaphalla_header: str | None = None,
 ) -> dict:
-    """Merge Yaphalla (baseline text) + fandom (metadata) into one document.
+    """Merge Fandom (baseline) + Yaphalla (gap-fill) into one document.
 
-    The Yaphalla record drives ``heroes.md`` and the synergy/summary analysis
-    (which is sensitive to exact wording); the fandom record supplies Skill
-    Range / Initial Energy and the behaviour skill text. Both are retained so
-    the render/process steps reproduce the current outputs.
+    Each hero record is the Fandom wiki entry (Skill Range, Initial Energy,
+    translated text). When ``gapfill`` is true, missing identity or skill
+    fields are filled from Yaphalla only if that text is translated.
     """
-    fandom_by_name = {h["name"]: h for h in fandom}
+    yaphalla_by_name = {h["name"]: h for h in yaphalla}
+    header = yaphalla_header if yaphalla_header is not None else heroes_header
 
     heroes: list[dict] = []
-    for hero in yaphalla:
-        name = hero["name"]
-        fandom_hero = fandom_by_name.get(name)
-        if fandom_hero is None and name in NAME_ALIASES:
-            fandom_hero = fandom_by_name.get(NAME_ALIASES[name])
+    for hero in fandom:
         record = dict(hero)
-        if gapfill and fandom_hero:
-            _gapfill_identity(record, fandom_hero)
+        yaphalla_hero = _lookup_yaphalla(hero["name"], yaphalla_by_name)
+        if gapfill and yaphalla_hero:
+            _gapfill_from_yaphalla(record, yaphalla_hero)
         normalize_hero_skills(record)
-        record["fandom"] = fandom_hero
         heroes.append(record)
 
     return {
-        "yaphalla_header": yaphalla_header,
+        "heroes_header": header,
+        "yaphalla_header": header,
         "fandom_header": fandom_header,
         "heroes": heroes,
     }
@@ -345,18 +395,36 @@ def merge_sources(
 # ---------------------------------------------------------------------------
 
 
+def _heroes_document_header(data: dict) -> str:
+    return (
+        data.get("heroes_header")
+        or data.get("yaphalla_header")
+        or _HEROES_MD_HEADER
+    )
+
+
+def _behavior_hero_records(data: dict) -> list[dict]:
+    """Hero records for behaviour analysis (ranges / energy)."""
+    records: list[dict] = []
+    for hero in data["heroes"]:
+        if hero.get("fandom"):
+            records.append(hero["fandom"])
+        else:
+            records.append(hero)
+    return records
+
+
 def reconstruct_heroes_md(data: dict) -> str:
-    """Rebuild the Yaphalla document (== Heroes.md) from heroes_data."""
-    return render_md(data["heroes"], header=data["yaphalla_header"])
+    """Rebuild Heroes.md from heroes_data (Fandom baseline + Yaphalla gaps)."""
+    return render_md(data["heroes"], header=_heroes_document_header(data))
 
 
 def reconstruct_heroes2_md(data: dict) -> str:
-    """Rebuild the fandom document (behaviour source) from heroes_data."""
-    fandom = [h["fandom"] for h in data["heroes"] if h.get("fandom")]
-    header = data.get("fandom_header") or ""
-    # Match heroes2.md spacing: a blank line trails each hero block.
+    """Rebuild the behaviour-source document from heroes_data."""
+    heroes = _behavior_hero_records(data)
+    header = data.get("fandom_header") or _heroes_document_header(data)
     parts = [header.rstrip("\n"), ""]
-    for hero in fandom:
+    for hero in heroes:
         parts.append(render_hero_block(hero) + "\n")
     return "\n".join(parts)
 

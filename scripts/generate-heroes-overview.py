@@ -1583,7 +1583,8 @@ def compute_replacement_scores(
         behavior = behavior_by_title.get(hero.title)
         sig_name = behavior.signature_skill_name if behavior else ""
         display = short_name(hero.title)
-        sig_section = sig_sections.get(display, "")
+        curated = _rs.curated_display_name(display)
+        sig_section = sig_sections.get(curated, "")
         damage_profiles[hero.title] = _hero_damage_profile(hero)
         damage_types[hero.title] = provider_damage_types(hero)
         debuff_profiles[hero.title] = _hero_debuff_profile(hero)
@@ -1600,7 +1601,8 @@ def compute_replacement_scores(
         dbpx = debuff_profiles[hero_x.title]
         cpx = cc_profiles[hero_x.title]
         display_x = short_name(hero_x.title)
-        tags_x = behavior_tags_map.get(display_x, frozenset())
+        curated_x = _rs.curated_display_name(display_x)
+        tags_x = behavior_tags_map.get(curated_x, frozenset())
         energy_eligible = is_energy_provider(hero_x)
 
         category_scores: dict[str, list[tuple[float, str, list[str]]]] = {
@@ -1614,7 +1616,8 @@ def compute_replacement_scores(
             dbpy = debuff_profiles[hero_y.title]
             cpy = cc_profiles[hero_y.title]
             display_y = short_name(hero_y.title)
-            tags_y = behavior_tags_map.get(display_y, frozenset())
+            curated_y = _rs.curated_display_name(display_y)
+            tags_y = behavior_tags_map.get(curated_y, frozenset())
             ey = energy_provided[hero_y.title]
 
             category_scores["buff"].append(

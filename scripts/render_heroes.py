@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render Heroes.md from heroes_data.json.
 
-Pure view: re-emits the Yaphalla skill document (skills only, no summaries).
+Pure view: re-emits the merged skill document (Fandom baseline, Yaphalla gaps).
 No analysis happens here.
 """
 

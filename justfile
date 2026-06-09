@@ -2,7 +2,7 @@
 # Run `just` (or `just -l`) to list recipes.
 #
 # Pipeline: download -> process -> render
-#   download : data/heroes_data.json          (merge fandom + Yaphalla)
+#   download : data/heroes_data.json          (Fandom baseline + Yaphalla gaps)
 #   process  : data/heroes_data_processed.json + heroes_data_synergies.json
 #   render   : Heroes.md, heroes-overview.md, heroes-overview.csv
 
@@ -23,7 +23,7 @@ ensure-venv:
       .venv/bin/pip install -q -r requirements.txt
     fi
 
-# Refresh data/heroes_data.json from live sources (fandom + Yaphalla; needs network).
+# Refresh data/heroes_data.json from live sources (Fandom baseline; needs network).
 download:
     python3 scripts/download_heroes.py
 
