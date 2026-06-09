@@ -58,29 +58,35 @@ fuzzy to define clear rules.
 
 ## Crowd Control
 
-- Stun
-- Knock down
-- Knock up
-- Frighten
-- Silence
-- Charm
-- Sleep
-- Move (force new position)
-- Pin (cannot move but still act)
-- Blind
-- Bind
-- Interrupt
+- Stun (unable to move or act)
+- Bind (immobilize, entangle, imprison; cannot move but may still act)
+- Knock down (unable to move or act)
+- Knock up (unable to move or act)
+- Knock back (unable to move briefly; forced reposition backward)
+- Frighten (run around in panic, no casting)
+- Silence (no spell casting)
+- Charm (cannot use ultimate)
+- Sleep (hypnotized; cannot move or act)
+- Displace (force new position; pull/teleport without knock immobility)
+- Blind (cannot use normal attacks)
+- Interrupt (stop ultimates)
+- Taunt (force attack on caster)
+
+Enemy freeze/frozen/freezing text maps to **Bind** (often paired with damage in
+the same skill). Battle-time pause and freeze-and-defeat execute are special
+mechanics, not standalone CC types.
 
 These types need to be derived from the text.
 For example:
 
-- "knocking them back" -> Move
+- "knocking them back" -> Knock back
 - "knocking them into the air" -> Knock up
 - "knocking them down" / "knocks the enemy down" -> Knock down
 - "hypnotizing all enemies" -> Sleep
 - "stunning them" -> Stun
-- "unable to move" -> Pin
-- "pulling in enemies" -> Move
+- "unable to move" / "immobilize" / "bind" -> Bind
+- "freezing them" / "freeze enemies" -> Bind
+- "pulling in enemies" -> Displace
 
 This needs to be done by the Agent, as text are too
 fuzzy to define clear rules.
@@ -412,11 +418,12 @@ Crit DMG Boost" is an offensive buff; "Crit" alone refers to crit rate.
 
 ## Anti Crowd-control
 
-- Unaffected
-- Steadfast
-- Immune
-- Resillience / Cleanse
-- Dispell (need to be derived from text)
+- Unaffected (immune to all control effects)
+- Steadfast (immune to knock down/up/back and displacement)
+- Dispell ("removes all their dispellable debuffs"; summaries label **Cleanse**)
+- Untargetable (cannot be targeted by spells)
+- Immune ("immune to control effects")
+- Invincible (immune to damage and cc, untargetable)
 
 Summary lines use `{type} ({tier}) — {targeting} — {timing}` (e.g. Unaffected,
 Immune, Steadfast, Cleanse — no extra "immunity" suffix).

@@ -52,7 +52,7 @@ Common buffers are **Lyca**, **Ravion**, or **Evie**.
 
 - Damian (78% `Blind` `Stun`)
 - Hepler (78% `Blind` `Stun`)
-- Twins (78% `Blind` `Move`)
+- Twins (78% `Blind` `Knock back`)
 
 ### Summary for Aliceth
 
@@ -79,7 +79,7 @@ Common buffers are **Lyca**, **Ravion**, or **Evie**.
 
 #### Crowd Control provided by Aliceth
 
-- Move — Single target — `low`
+- Knock back — Single target — `low`
 - Stun — Single target — `low`
 - Blind (EX+15) — Area — `low`
 
@@ -148,7 +148,9 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 **Crowd Control**
 
-- Carolina (100% `Freeze`)
+- Arden (100% `Bind`)
+- Carolina (100% `Bind`)
+- Gwyneth (100% `Bind`)
 
 ### Summary for Alna
 
@@ -172,7 +174,8 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 #### Crowd Control provided by Alna
 
-- Freeze (Supreme+) — Area — `medium`
+- Immune (Mythic+) — Self — Start of Battle
+- Bind (Supreme+) — Area — `medium`
 
 #### Alna Provides
 
@@ -222,9 +225,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Perseus (100% `Stun` `Move`)
-- Scarlita (100% `Stun` `Move`)
-- Soren (91% `Stun` `Move`)
+- Perseus (100% `Stun` `Knock back`)
+- Scarlita (100% `Stun` `Knock back`)
+- Soren (90% `Stun` `Knock back`)
 
 ### Summary for Alsa
 
@@ -242,7 +245,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Alsa
 
 - Immune — Area — Once
-- Move — Single target — `low`
+- Knock back — Single target — `low`
 - Stun — Single target — `high`
 
 #### Alsa Provides
@@ -389,9 +392,7 @@ Common buffers are **Ravion**, **Lyca**, or **Hugin**.
 
 **Crowd Control**
 
-- Gwyneth (100% `Pin`)
-- Indris (100% `Pin`)
-- Kordan (100% `Pin`)
+- Gwyneth (72% `Bind` `Stun`)
 
 ### Summary for Arden
 
@@ -403,7 +404,8 @@ Common buffers are **Ravion**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Arden
 
-- Pin — Single target — `high`
+- Bind — Single target — `high`
+- Stun — Multiple targets — `high`
 
 ## Atalanta
 
@@ -458,9 +460,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Crowd Control**
 
-- Cassadee (75% `Move` `Stun`)
-- Lenya (75% `Move` `Stun`)
-- Perseus (75% `Move` `Stun`)
+- Cassadee (75% `Knock back` `Stun`)
+- Lenya (75% `Knock back` `Stun`)
+- Perseus (75% `Knock back` `Stun`)
 
 ### Summary for Atalanta
 
@@ -475,8 +477,8 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Atalanta
 
-- Move — Single target — `high`
-- Pin — Single target — `medium`
+- Bind — Single target — `medium`
+- Knock back — Single target — `high`
 - Stun — Single target — `medium`
 
 #### Atalanta Provides
@@ -683,6 +685,10 @@ Common buffers are **Twins**, **Mikola**, or **Evie**.
 - **Hewynn**
   - Healing (all units, medium)
 
+### Units benefitting from Baelran
+
+- Carolina
+
 ### Units that can act as a replacement for Baelran
 
 **Similar Skills**
@@ -703,9 +709,8 @@ Common buffers are **Twins**, **Mikola**, or **Evie**.
 
 **Crowd Control**
 
-- Antandra (100% `Knock down`)
-- Ravion (100% `Knock down`)
-- Sylphira (100% `Knock down`)
+- Lucca (60% `Knock down` `Knock up`)
+- Lucy (60% `Knock up`)
 
 ### Summary for Baelran
 
@@ -723,6 +728,7 @@ Common buffers are **Twins**, **Mikola**, or **Evie**.
 
 - Unaffected — Self — Start of Battle
 - Knock down — Area — `medium`
+- Knock up — Area — `high`
 
 #### Baelran Provides
 
@@ -1087,9 +1093,9 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 **Crowd Control**
 
-- Antandra (68% `Knock down` `Stun`)
-- Lucca (68% `Knock down` `Stun`)
-- Zorya (68% `Knock down` `Stun`)
+- Antandra (100% `Knock down` `Stun`)
+- Lucca (100% `Knock down` `Stun`)
+- Zorya (100% `Knock down` `Stun`)
 
 ### Summary for Callan
 
@@ -1107,7 +1113,6 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 - Unaffected — Self — Once
 - Knock down — All units — `low`
-- Pin — Multiple targets — `low`
 - Stun (Mythic+) — Single target — `low`
 
 #### Callan Provides
@@ -1132,23 +1137,20 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 ### Units Carolina benefits from
 
 Look for units providing: `CRIT`  
-Common buffers are **Ravion**, **Lyca**, or **Lorsan**.
+Common buffers are **Ravion**, **Twins**, or **Lyca**.
 
 - **Zandrok**
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
   - Enables CC on enemies via Stun (area, high)
 - **Tasi**
   - Enables CC on enemies via Sleep (all units, high)
+- **Hepler**
+  - ATK SPD via Haste buff (single target, low) [signature fuel]
+  - Enables CC on enemies via Blind (area, high)
+- **Baelran**
+  - Enables CC on enemies via Knock up (area, high)
 - **Indris**
-  - Enables CC on enemies via Pin (area, high)
-- **Kordan**
-  - Enables CC on enemies via Pin (area, high)
-- **Lumont**
-  - Enables CC on enemies via Stun (area, high)
-
-### Units benefitting from Carolina
-
-- Nerion
+  - Enables CC on enemies via Knock back (area, high)
 
 ### Units that can act as a replacement for Carolina
 
@@ -1161,6 +1163,12 @@ Common buffers are **Ravion**, **Lyca**, or **Lorsan**.
 **Debuffs on enemies**
 
 - Eironn (100% `Haste debuff` `Magic DEF debuff`)
+
+**Crowd Control**
+
+- Kordan (100% `Bind`)
+- Gwyneth (66% `Bind`)
+- Indris (66% `Bind`)
 
 ### Summary for Carolina
 
@@ -1177,7 +1185,7 @@ Common buffers are **Ravion**, **Lyca**, or **Lorsan**.
 
 #### Crowd Control provided by Carolina
 
-- Freeze — Area — `high`
+- Bind — Area — `high`
 
 #### Carolina Provides
 
@@ -1233,9 +1241,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Scarlita (84% `Move` `Knock up` `Stun`)
-- Lenya (63% `Move` `Stun`)
-- Perseus (63% `Move` `Stun`)
+- Scarlita (84% `Knock back` `Knock up` `Stun`)
+- Lenya (63% `Knock back` `Stun`)
+- Perseus (63% `Knock back` `Stun`)
 
 ### Summary for Cassadee
 
@@ -1250,8 +1258,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Cassadee
 
+- Knock back — All units — `low`
 - Knock up — Single target — `high`
-- Move — All units — `low`
 - Stun — Single target — `high`
 
 #### Cassadee Provides
@@ -1308,9 +1316,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Crowd Control**
 
-- Arden (100% `Pin`)
-- Callan (100% `Pin`)
-- Eironn (100% `Pin`)
+- Alna (100% `Bind`)
+- Arden (100% `Bind`)
+- Carolina (100% `Bind`)
 
 ### Summary for Cecia
 
@@ -1333,7 +1341,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Cecia
 
-- Pin — Single target — `high`
+- Bind — Single target — `high`
 
 #### Cecia Provides
 
@@ -1531,11 +1539,12 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 #### Crowd Control provided by Cryonaia
 
 - Immune — Self — Conditional
-- Freeze (EX+15) — Self — `low`
 
 #### Cryonaia Provides
 
 - Enemy isolation (domain) — All units
+- Battle time pause (EX+15) — Self
+- Instant defeat (Supreme+) — Self
 
 #### Cryonaia Requires
 
@@ -1605,7 +1614,7 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - Steadfast — Area — Conditional
 - Unaffected — Self — Conditional
-- Pin — Area — `high`
+- Bind — Area — `high`
 - Silence (EX+10) — Single target — `low`
 
 #### Cyran Provides
@@ -1821,9 +1830,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 **Crowd Control**
 
+- Baelran (100% `Knock up`)
 - Florabelle (100% `Knock up`)
 - Lucca (100% `Knock up`)
-- Scarlita (100% `Knock up`)
 
 ### Summary for Dionel
 
@@ -1971,9 +1980,7 @@ Common buffers are **Hugin**.
 
 **Crowd Control**
 
-- Indris (100% `Move` `Pin`)
-- Evie (96% `Move` `Pin`)
-- Kordan (86% `Pin` `Move`)
+- Evie (96% `Displace` `Bind`)
 
 ### Summary for Eironn
 
@@ -1993,8 +2000,8 @@ Common buffers are **Hugin**.
 
 #### Crowd Control provided by Eironn
 
-- Move — Area — `medium`
-- Pin — Single target — `high`
+- Bind — Single target — `high`
+- Displace — Area — `medium`
 
 ## Twins
 
@@ -2030,7 +2037,7 @@ Common buffers are **Mikola**, **Hugin**, or **Damian**.
 
 ### Units benefitting from Twins
 
-**84** units include this provider among their top 5 synergy partners. Why the match is common:
+**85** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -2038,6 +2045,7 @@ These are the **10** strongest pairings:
 
 - Perseus
 - Silven
+- Nerion
 - Valka
 - Alsa
 - Hepler
@@ -2045,7 +2053,6 @@ These are the **10** strongest pairings:
 - Lumont
 - Mehira
 - Soren
-- Tasi
 
 ### Units that can act as a replacement for Twins
 
@@ -2063,7 +2070,7 @@ These are the **10** strongest pairings:
 
 **Crowd Control**
 
-- Aliceth (68% `Blind` `Move`)
+- Aliceth (68% `Blind` `Knock back`)
 
 ### Summary for Twins
 
@@ -2083,7 +2090,7 @@ These are the **10** strongest pairings:
 
 - Unaffected — Area — On Skill
 - Blind — Area — `low`
-- Move — Area — `low`
+- Knock back — Area — `low`
 
 #### Twins Provides
 
@@ -2160,9 +2167,7 @@ These are the **10** strongest pairings:
 
 **Crowd Control**
 
-- Indris (76% `Move` `Pin` `Silence`)
-- Eironn (63% `Move` `Pin`)
-- Kordan (60% `Pin` `Move`)
+- Eironn (63% `Displace` `Bind`)
 
 ### Summary for Evie
 
@@ -2182,8 +2187,8 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Evie
 
-- Move — All units — `low`
-- Pin — All units — `low`
+- Bind — All units — `low`
+- Displace — All units — `low`
 - Silence — All units — `low`
 
 #### Evie Provides
@@ -2246,8 +2251,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 **Crowd Control**
 
 - Antandra (100% `Stun`)
+- Arden (100% `Stun`)
 - Koko (100% `Stun`)
-- Lorsan (100% `Stun`)
 
 ### Summary for Faramor
 
@@ -2403,9 +2408,9 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 **Crowd Control**
 
+- Baelran (100% `Knock up`)
 - Dionel (100% `Knock up`)
 - Lucca (100% `Knock up`)
-- Scarlita (100% `Knock up`)
 
 ### Summary for Florabelle
 
@@ -2555,9 +2560,9 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 **Crowd Control**
 
-- Arden (100% `Pin`)
-- Atalanta (100% `Pin`)
-- Callan (100% `Pin`)
+- Alna (100% `Bind`)
+- Arden (100% `Bind`)
+- Atalanta (100% `Bind`)
 
 ### Summary for Gala
 
@@ -2574,7 +2579,7 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 #### Crowd Control provided by Gala
 
 - Steadfast (Supreme+) — Self — On Skill
-- Pin — Single target — `medium`
+- Bind — Single target — `medium`
 
 #### Gala Provides
 
@@ -2624,9 +2629,8 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 **Crowd Control**
 
-- Atalanta (62% `Stun` `Pin`)
-- Callan (62% `Stun` `Pin`)
-- Lucca (62% `Stun` `Interrupt`)
+- Lucca (83% `Stun` `Interrupt`)
+- Smokey & Meerky (66% `Interrupt` `Stun`)
 
 ### Summary for Gerda
 
@@ -2643,7 +2647,6 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 - Unaffected — Self — Conditional
 - Interrupt — Single target — `medium`
-- Pin — Multiple targets — `low`
 - Stun — Single target — `high`
 
 ## Granny Dahnie
@@ -2698,6 +2701,12 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 - Athalia (75% `ATK debuff`)
 - Bonnie (75% `ATK debuff` `Haste debuff`)
 
+**Crowd Control**
+
+- Antandra (100% `Stun` `Taunt`)
+- Lumont (100% `Stun` `Taunt`)
+- Hepler (80% `Taunt` `Stun`)
+
 ### Summary for Granny Dahnie
 
 #### Damage types dealt by Granny Dahnie
@@ -2713,7 +2722,7 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 #### Crowd Control provided by Granny Dahnie
 
 - Unaffected — Self — Conditional
-- Pin — Area — `low`
+- Stun — Area — `low`
 - Taunt — Single target — `high`
 
 ## Gunnar
@@ -2761,7 +2770,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Callan (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Gunnar
 
@@ -2833,8 +2842,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Crowd Control**
 
-- Indris (71% `Pin` `Silence`)
-- Kordan (60% `Pin`)
+- Indris (71% `Bind` `Silence`)
+- Arden (65% `Bind` `Stun`)
+- Carolina (60% `Bind`)
 
 ### Summary for Gwyneth
 
@@ -2851,7 +2861,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Gwyneth
 
-- Pin — Area — `medium`
+- Bind — Area — `medium`
 - Silence — Area — `low`
 - Stun — Area — `low`
 
@@ -2970,9 +2980,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Kordan (100% `Move` `Knock down`)
-- Ravion (100% `Move` `Knock down`)
-- Reinier (100% `Move` `Knock down`)
+- Kordan (100% `Knock back` `Knock down`)
+- Scarlita (100% `Knock back` `Knock down`)
+- Ulmus (91% `Knock back` `Knock down`)
 
 ### Summary for Harak
 
@@ -2994,8 +3004,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Harak
 
 - Unaffected — Self — On Skill
+- Knock back — Single target — `high`
 - Knock down — Single target — `low`
-- Move — Single target — `high`
 
 #### Harak Provides
 
@@ -3043,7 +3053,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting from Hepler
 
+- Nerion
 - Shadewing
+- Carolina
 - Daimon
 - Thoran
 
@@ -3482,10 +3494,6 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via Haste debuff (area)
 
-### Units benefitting from Indris
-
-- Carolina
-
 ### Units that can act as a replacement for Indris
 
 **Damage**
@@ -3498,6 +3506,10 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 
 - Sinbad (100% `Damage taken debuff` `Magic DEF debuff` `Phys DEF debuff`)
 - Kruger (75% `Damage taken debuff` `Phys DEF debuff`)
+
+**Crowd Control**
+
+- Kordan (68% `Bind` `Knock back`)
 
 ### Summary for Indris
 
@@ -3517,8 +3529,7 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 #### Crowd Control provided by Indris
 
 - Bind — Single target — `high`
-- Move — Area — `high`
-- Pin — Area — `high`
+- Knock back — Area — `high`
 - Silence — Single target — `low`
 
 #### Indris Requires
@@ -3659,9 +3670,9 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 
 **Crowd Control**
 
-- Alsa (100% `Stun` `Move`)
-- Atalanta (100% `Stun` `Move`)
-- Cassadee (100% `Stun` `Move`)
+- Atalanta (100% `Stun` `Knock back`)
+- Cassadee (100% `Stun` `Knock back`)
+- Lenya (100% `Stun` `Knock back`)
 
 ### Summary for Kafra
 
@@ -3680,7 +3691,7 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 #### Crowd Control provided by Kafra
 
 - Unaffected (Mythic+) — Self — Conditional
-- Move — Single target — `low`
+- Knock back — Single target — `low`
 - Stun — Single target — `high`
 
 #### Kafra Provides
@@ -3759,8 +3770,8 @@ These are the **10** strongest pairings:
 **Crowd Control**
 
 - Antandra (100% `Stun`)
+- Arden (100% `Stun`)
 - Faramor (100% `Stun`)
-- Lorsan (100% `Stun`)
 
 ### Summary for Koko
 
@@ -3826,7 +3837,6 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 ### Units benefitting from Kordan
 
 - Nerion
-- Carolina
 
 ### Units that can act as a replacement for Kordan
 
@@ -3841,10 +3851,6 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 - Aliceth (100% `Physical` `HP loss`)
 - Faramor (100% `Physical` `HP loss`)
 - Ravion (100% `Physical` `HP loss`)
-
-**Crowd Control**
-
-- Indris (63% `Pin` `Move`)
 
 ### Summary for Kordan
 
@@ -3861,9 +3867,10 @@ Common buffers are **Mikola**, **Twins**, or **Evie**.
 
 #### Crowd Control provided by Kordan
 
+- Bind — Area — `high`
+- Knock back — Area — `low`
 - Knock down — Single target — `high`
-- Move — Area — `low`
-- Pin — Area — `high`
+- Knock up (Mythic+) — Single target — `medium`
 
 ## Korin
 
@@ -3913,9 +3920,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 **Crowd Control**
 
-- Eironn (100% `Move` `Pin`)
-- Evie (100% `Move` `Pin`)
-- Indris (100% `Move` `Pin`)
+- Indris (100% `Knock back` `Bind`)
+- Kordan (100% `Knock back` `Bind`)
+- Atalanta (71% `Knock back` `Bind`)
 
 ### Summary for Korin
 
@@ -3932,8 +3939,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 #### Crowd Control provided by Korin
 
-- Move — Area — `low`
-- Pin — Single target — `medium`
+- Bind — Single target — `medium`
+- Knock back — Area — `low`
 
 ## Kruger
 
@@ -4054,9 +4061,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Crowd Control**
 
-- Cassadee (100% `Knock up` `Move`)
-- Scarlita (100% `Knock up` `Move`)
-- Reinier (83% `Move` `Knock up`)
+- Cassadee (66% `Knock back` `Knock up`)
+- Kordan (66% `Knock back` `Knock up`)
+- Scarlita (66% `Knock back` `Knock up`)
 
 ### Summary for Kulu
 
@@ -4078,8 +4085,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 #### Crowd Control provided by Kulu
 
 - Unaffected — Area — On Ultimate
+- Displace — Single target — `low`
+- Knock back — Single target — `low`
 - Knock up — Single target — `low`
-- Move — Single target — `low`
 
 #### Kulu Provides
 
@@ -4133,9 +4141,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Crowd Control**
 
-- Arden (100% `Pin`)
-- Gwyneth (100% `Pin`)
-- Indris (100% `Pin`)
+- Antandra (100% `Stun`)
+- Arden (100% `Stun`)
+- Faramor (100% `Stun`)
 
 ### Summary for Laios
 
@@ -4151,7 +4159,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Laios
 
-- Pin — Area — `medium`
+- Stun — Area — `medium`
 
 #### Laios Provides
 
@@ -4208,9 +4216,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Cassadee (100% `Move` `Stun`)
-- Perseus (100% `Move` `Stun`)
-- Scarlita (90% `Move` `Stun`)
+- Cassadee (100% `Knock back` `Stun`)
+- Perseus (100% `Knock back` `Stun`)
+- Scarlita (90% `Knock back` `Stun`)
 
 ### Summary for Lenya
 
@@ -4227,7 +4235,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Lenya
 
 - Unaffected — Self — Once
-- Move — Area — `low`
+- Knock back — Area — `low`
 - Stun — Single target — `medium`
 
 ## Lily May
@@ -4382,8 +4390,8 @@ These are the **10** strongest pairings:
 **Crowd Control**
 
 - Antandra (100% `Stun`)
+- Arden (100% `Stun`)
 - Lucca (100% `Stun`)
-- Lumont (100% `Stun`)
 
 ### Summary for Lorsan
 
@@ -4540,9 +4548,9 @@ These are the **10** strongest pairings:
 
 **Crowd Control**
 
-- Atalanta (100% `Move` `Stun`)
-- Cassadee (100% `Move` `Stun`)
-- Lenya (100% `Move` `Stun`)
+- Atalanta (100% `Knock back` `Stun`)
+- Cassadee (100% `Knock back` `Stun`)
+- Lenya (100% `Knock back` `Stun`)
 
 ### Summary for Lucius
 
@@ -4561,7 +4569,7 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Lucius
 
-- Move — Single target — `high`
+- Knock back — Single target — `high`
 - Stun — Single target — `low`
 
 #### Lucius Provides
@@ -4617,9 +4625,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Alsa (100% `Stun`)
-- Antandra (100% `Stun`)
-- Faramor (100% `Stun`)
+- Scarlita (67% `Knock up` `Stun`)
 
 ### Summary for Lucy
 
@@ -4639,6 +4645,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Lucy
 
 - Unaffected — Self — On Skill
+- Knock up — All units — `medium`
 - Stun — Single target — `high`
 
 ## Ludovic
@@ -4694,7 +4701,7 @@ Common buffers are **Lyca**, **Mikola**, or **Lorsan**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Ludovic
 
@@ -4771,8 +4778,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Antandra (100% `Stun` `Taunt`)
-- Hepler (66% `Taunt` `Stun`)
+- Antandra (94% `Stun` `Taunt`)
+- Hepler (62% `Taunt` `Stun`)
 
 ### Summary for Lumont
 
@@ -4794,6 +4801,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Unaffected — Self — On Skill
 - Stun — Single target — `high`
 - Taunt — Single target — `medium`
+- Knock up (Mythic+) — Single target — `low`
 
 ## Lyca
 
@@ -5273,9 +5281,9 @@ Common buffers are **Ravion** or **Lyca**.
 
 **Crowd Control**
 
+- Baelran (100% `Knock down` `Knock up`)
+- Kordan (100% `Knock down` `Knock up`)
 - Lucca (100% `Knock down` `Knock up`)
-- Scarlita (80% `Knock down` `Knock up`)
-- Antandra (60% `Knock down`)
 
 ### Summary for Nara
 
@@ -5413,7 +5421,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Nazrik
 
@@ -5452,20 +5460,22 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 ### Units Nerion benefits from
 
 Look for units providing: `ATK SPD / Haste` `Max HP` `Energy` `DEF Penetration`  
-Common buffers are **Ravion**, **Twins**, or **Lyca**.
+Common buffers are **Twins**, **Ravion**, or **Lyca**.
 
 - **Zandrok**
   - ATK SPD via Haste buff (area, medium, conditional (frequent)) [signature fuel]
   - Enables CC on enemies via Stun (area, high)
 - **Tasi**
   - Enables CC on enemies via Sleep (all units, high)
+- **Hepler**
+  - ATK SPD via Haste buff (single target, low) [signature fuel]
+  - Max HP via Shield (multiple targets, medium)
+  - Enables CC on enemies via Blind (area, high)
 - **Kordan**
   - DEF Penetration buff (multiple targets, low)
-  - Enables CC on enemies via Pin (area, high)
-- **Carolina**
-  - Enables CC on enemies via Freeze (area, high)
-- **Indris**
-  - Enables CC on enemies via Pin (area, high)
+  - Enables CC on enemies via Bind (area, high)
+- **Baelran**
+  - Enables CC on enemies via Knock up (area, high)
 
 ### Units that can act as a replacement for Nerion
 
@@ -5489,7 +5499,7 @@ Common buffers are **Ravion**, **Twins**, or **Lyca**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Nerion
 
@@ -5745,7 +5755,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Faramor (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Pang
 
@@ -5872,7 +5882,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Scarlita (72% `Stun` `Move`)
+- Scarlita (72% `Stun` `Knock back`)
 - Antandra (66% `Stun`)
 - Lucca (66% `Stun`)
 
@@ -5891,7 +5901,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Perseus
 
 - Unaffected — Multiple targets — Conditional
-- Move — Area — `low`
+- Knock back — Area — `low`
 - Stun — Area — `medium`
 
 #### Perseus Requires
@@ -5943,8 +5953,8 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 **Crowd Control**
 
 - Antandra (100% `Stun` `Taunt`)
+- Granny Dahnie (100% `Stun` `Taunt`)
 - Hepler (100% `Stun` `Taunt`)
-- Lumont (100% `Stun` `Taunt`)
 
 ### Summary for Phraesto
 
@@ -6021,9 +6031,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Kordan (100% `Pin` `Knock down` `Move`)
-- Atalanta (70% `Pin` `Move`)
-- Callan (70% `Pin` `Knock down`)
+- Eironn (70% `Bind` `Displace`)
+- Evie (70% `Bind` `Displace`)
+- Kordan (70% `Bind` `Knock down`)
 
 ### Summary for Pippa
 
@@ -6045,9 +6055,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Pippa
 
 - Unaffected — Self — On Skill
+- Bind — Single target — `medium`
+- Displace — Single target — `low`
 - Knock down — Single target — `low`
-- Move — Single target — `low`
-- Pin — Single target — `medium`
 
 ## Ravion
 
@@ -6082,14 +6092,13 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting from Ravion
 
-**23** units include this provider among their top 5 synergy partners. Why the match is common:
+**22** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
 
 These are the **10** strongest pairings: 
 
-- Nerion
 - Carolina
 - Aliceth
 - Arden
@@ -6099,6 +6108,7 @@ These are the **10** strongest pairings:
 - Vala
 - Cryonaia
 - Cyran
+- Hammie
 
 ### Units that can act as a replacement for Ravion
 
@@ -6140,8 +6150,8 @@ These are the **10** strongest pairings:
 #### Crowd Control provided by Ravion
 
 - Unaffected — Self — Conditional
+- Displace — Multiple targets — `high`
 - Knock down — Multiple targets — `high`
-- Move — Multiple targets — `high`
 
 #### Ravion Provides
 
@@ -6199,7 +6209,7 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 **Crowd Control**
 
-- Ravion (63% `Move` `Knock down`)
+- Ravion (63% `Displace` `Knock down`)
 
 ### Summary for Reinier
 
@@ -6221,9 +6231,9 @@ Common buffers are **Lorsan**, **Evie**, or **Mikola**.
 
 - Steadfast — Self — Conditional
 - Unaffected — Self — Conditional
+- Displace — Multiple targets — `high`
 - Interrupt — Single target — `high`
 - Knock up — Single target — `low`
-- Move — Multiple targets — `high`
 - Knock down (Mythic+) — Single target — `low`
 
 ## Rhys
@@ -6265,9 +6275,9 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 **Crowd Control**
 
-- Cassadee (100% `Move`)
-- Eironn (100% `Move`)
-- Evie (100% `Move`)
+- Atalanta (100% `Knock back`)
+- Cassadee (100% `Knock back`)
+- Harak (100% `Knock back`)
 
 ### Summary for Rhys
 
@@ -6282,7 +6292,7 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 #### Crowd Control provided by Rhys
 
-- Move — Single target — `high`
+- Knock back — Single target — `high`
 
 ## Rowan
 
@@ -6436,7 +6446,7 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 **Crowd Control**
 
-- Reinier (100% `Interrupt` `Move`)
+- Reinier (100% `Interrupt` `Displace`)
 - Gerda (64% `Interrupt`)
 - Lily May (64% `Interrupt`)
 
@@ -6459,8 +6469,8 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 #### Crowd Control provided by Saida
 
 - Unaffected — Self — Conditional
+- Displace — Single target — `low`
 - Interrupt — Area — `low`
-- Move — Single target — `low`
 
 #### Saida Provides
 
@@ -6521,9 +6531,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Crowd Control**
 
-- Arden (100% `Pin`)
-- Atalanta (100% `Pin`)
-- Callan (100% `Pin`)
+- Alna (100% `Bind`)
+- Arden (100% `Bind`)
+- Atalanta (100% `Bind`)
 
 ### Summary for Salazer
 
@@ -6538,7 +6548,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Salazer
 
-- Pin — Self — `low`
+- Bind — Self — `low`
 
 ## Satrana
 
@@ -6663,6 +6673,7 @@ Common buffers are **Ravion** or **Lyca**.
 **Crowd Control**
 
 - Lucca (70% `Stun` `Knock up` `Knock down`)
+- Lucy (61% `Knock up` `Stun`)
 
 ### Summary for Scarlita
 
@@ -6679,9 +6690,9 @@ Common buffers are **Ravion** or **Lyca**.
 #### Crowd Control provided by Scarlita
 
 - Unaffected — Self — Conditional
+- Knock back — All units — `low`
 - Knock down — Arc — `low`
 - Knock up — Area — `medium`
-- Move — All units — `low`
 - Stun — Single target — `medium`
 
 #### Scarlita Provides
@@ -6750,8 +6761,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Crowd Control**
 
-- Alna (100% `Freeze`)
-- Carolina (100% `Freeze`)
+- Alna (100% `Bind`)
+- Arden (100% `Bind`)
+- Atalanta (100% `Bind`)
 
 ### Summary for Seth
 
@@ -6772,7 +6784,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Crowd Control provided by Seth
 
-- Freeze — Single target — `low`
+- Bind — Single target — `low`
 
 #### Seth Provides
 
@@ -6900,6 +6912,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - Nara (100% `Vitality debuff`)
 - Pandora (100% `Vitality debuff`)
 
+**Crowd Control**
+
+- Baelran (100% `Knock up`)
+- Dionel (100% `Knock up`)
+- Florabelle (100% `Knock up`)
+
 ### Summary for Shakir
 
 #### Damage types dealt by Shakir
@@ -6920,6 +6938,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Shakir
 
 - Unaffected — Self — Form
+- Knock up — Area — `low`
 
 #### Shakir Provides
 
@@ -7369,7 +7388,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Sonja
 
@@ -7440,9 +7459,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Perseus (100% `Stun` `Move`)
-- Scarlita (100% `Stun` `Move`)
-- Atalanta (85% `Move` `Stun`)
+- Perseus (100% `Stun` `Knock back`)
+- Scarlita (100% `Stun` `Knock back`)
+- Atalanta (85% `Knock back` `Stun`)
 
 ### Summary for Soren
 
@@ -7459,7 +7478,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Soren
 
-- Move — Multiple targets — `high`
+- Knock back — Single target — `high`
 - Stun — Single target — `low`
 
 ## Sylphira
@@ -7575,9 +7594,9 @@ Common buffers are **Evie**, **Lorsan**, or **Mikola**.
 
 **Crowd Control**
 
-- Atalanta (100% `Move`)
-- Cassadee (100% `Move`)
-- Eironn (100% `Move`)
+- Atalanta (100% `Knock back`)
+- Cassadee (100% `Knock back`)
+- Harak (100% `Knock back`)
 
 ### Summary for Talene
 
@@ -7589,7 +7608,7 @@ Common buffers are **Evie**, **Lorsan**, or **Mikola**.
 
 #### Crowd Control provided by Talene
 
-- Move — Area — `low`
+- Knock back — Area — `low`
 
 #### Talene Provides
 
@@ -7662,7 +7681,6 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Tasi
 
-- Pin — All units — `low`
 - Sleep — Single target — `high`
 - Stun — Area — `high`
 
@@ -8003,9 +8021,9 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 
 **Crowd Control**
 
-- Indris (70% `Move` `Bind`)
-- Kordan (70% `Move` `Knock down`)
-- Ravion (70% `Move` `Knock down`)
+- Kordan (100% `Knock back` `Bind` `Knock down`)
+- Atalanta (70% `Knock back` `Bind`)
+- Indris (70% `Knock back` `Bind`)
 
 ### Summary for Ulmus
 
@@ -8024,7 +8042,7 @@ Common buffers are **Lorsan**, **Evie**, or **Hugin**.
 - Unaffected — Self — On Skill
 - Bind (Mythic+) — Single target — `medium`
 - Knock down (Mythic+) — Single target — `medium`
-- Move (Supreme+) — Area — `low`
+- Knock back (Supreme+) — Area — `low`
 
 #### Ulmus Requires
 
@@ -8087,7 +8105,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Vala
 
@@ -8167,7 +8185,7 @@ Common buffers are **Lyca**, **Ravion**, or **Mikola**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Valen
 
@@ -8322,9 +8340,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Arden (100% `Pin`)
-- Callan (100% `Pin`)
-- Cecia (100% `Pin`)
+- Alna (100% `Bind`)
+- Arden (100% `Bind`)
+- Carolina (100% `Bind`)
 
 ### Summary for Velara
 
@@ -8344,7 +8362,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Velara
 
-- Pin — Single target — `high`
+- Bind — Single target — `high`
 
 #### Velara Provides
 
@@ -8476,7 +8494,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Alsa (100% `Stun`)
 - Antandra (100% `Stun`)
-- Atalanta (100% `Stun`)
+- Arden (100% `Stun`)
 
 ### Summary for Walker
 
@@ -8635,9 +8653,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Atalanta (100% `Move` `Stun`)
-- Cassadee (100% `Move` `Stun`)
-- Lenya (100% `Move` `Stun`)
+- Atalanta (100% `Knock back` `Stun`)
+- Cassadee (100% `Knock back` `Stun`)
+- Lenya (100% `Knock back` `Stun`)
 
 ### Summary for Zanie
 
@@ -8663,7 +8681,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Crowd Control provided by Zanie
 
-- Move — Single target — `high`
+- Knock back — Single target — `high`
 - Stun — Single target — `low`
 
 #### Zanie Provides

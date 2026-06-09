@@ -67,7 +67,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             }
           ],
           "cooldown": 7.0,
@@ -521,6 +521,16 @@
               "type": "buff",
               "name": "Damage and control immunity",
               "label": "buff_stat"
+            },
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "immune",
+              "timing": "start_of_battle",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
             }
           ],
           "tier": "mythic+",
@@ -575,7 +585,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "freeze",
+              "cc-type": "bind",
               "duration": 2.0
             }
           ],
@@ -732,7 +742,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             }
           ],
           "cooldown": 8.0
@@ -1112,7 +1122,18 @@
               "area": "single",
               "target_count": 3,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "stun",
+              "duration": 25.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": false,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "crowd_control",
+              "cc-type": "bind",
               "duration": 25.0
             }
           ],
@@ -1161,7 +1182,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 3.0
             }
           ],
@@ -1243,7 +1264,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "knock_back",
               "duration": 12.0
             },
             {
@@ -1254,7 +1275,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 3.0
             }
           ],
@@ -1998,6 +2019,18 @@
           "category": "skill2",
           "description": "Baelran knocks his target into the air with an upward slash, dealing 180% (ATK-based) + 20% damage. He then slams his sword down, dealing 300% (ATK-based) + 40% damage to enemies within a 3-tile rectangular area in front of him, knocking them down for 2 s. Increase the slam damage to (scaled). Increase the slam damage to (scaled). Increase the slam damage to (scaled).",
           "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": false,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "knock_up",
+              "duration": 10.0
+            },
             {
               "tier": "base",
               "targeting_label": "Area",
@@ -2978,16 +3011,6 @@
               ]
             },
             {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": false,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "crowd_control",
-              "cc-type": "pin"
-            },
-            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -3199,7 +3222,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "freeze",
+              "cc-type": "bind",
               "duration": 6.0
             }
           ]
@@ -3333,7 +3356,7 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "knock_back",
               "duration": 1.0
             }
           ],
@@ -3494,7 +3517,7 @@
               "target_count": -1,
               "area_direction": "front",
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 2.0
             },
             {
@@ -3615,7 +3638,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 15.0
             },
             {
@@ -3645,7 +3668,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "bind"
             }
           ],
           "tier": "ex+5"
@@ -4135,16 +4158,6 @@
               "type": "debuff",
               "name": "Damage taken debuff",
               "label": "debuff_stat"
-            },
-            {
-              "tier": "ex+15",
-              "targeting_label": "Self",
-              "is_max_known": false,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "freeze"
             }
           ],
           "tier": "mythic+"
@@ -4152,19 +4165,9 @@
         "Enhance Force": {
           "category": "skill5",
           "description": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15% . Within the domain of Eternal Winter, Cryonaia's ice storms move (scaled) faster and deal damage once every (scaled)s. While inside the domain, Cryonaia also gains (scaled) damage reduction, and dealing damage to enemies triggers extra magic damage equal to (scaled) of the target's current HP. The extra magic damage cannot exceed (scaled).",
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": false,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "freeze"
-            }
-          ],
-          "tier": "ex+5"
+          "effects": [],
+          "tier": "ex+5",
+          "passive_only": true
         }
       },
       "synergy_profile": {
@@ -4174,6 +4177,18 @@
             "tier": "base",
             "targeting": "All units",
             "description": "Cryonaia summons the domain of Eternal Winter, trapping up to 3 enemy heroes and their summons in the domain for 12 s, cutting them off from the rest of the battlefield. This skill prioritizes enemy heroes who have dealt the highest cumulative damage. In Boss fights, Cryonaia traps all enemies in the domain of Eternal Winter. When Cryonaia casts Frostveil Domain, she gains a Frost Shield that only lasts when Eternal Winter is active, absorbing up to 1400% (ATK-based) + 250% damage. When the shield is active, Cryonaia is immune to control effects, her Haste increases by 60 , her ATK increases by 60% , and she cannot be defeated. Eternal Winter will end early if all trapped enemies are defeated or if the Frost Shield is destroyed."
+          },
+          {
+            "label": "Battle time pause",
+            "tier": "ex+15",
+            "targeting": "Self",
+            "description": "The biting cold of Eternal Winter freezes time itself. Cryonaia can stop the battle time for up to (scaled)s with Eternal Winter."
+          },
+          {
+            "label": "Instant defeat",
+            "tier": "supreme+",
+            "targeting": "Self",
+            "description": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15% ."
           }
         ],
         "requires": [
@@ -4247,7 +4262,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 1.0
             },
             {
@@ -4325,7 +4340,7 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 8.0
             },
             {
@@ -5303,7 +5318,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 3.0
             },
             {
@@ -5315,7 +5330,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "displace",
               "duration": 2.0
             }
           ],
@@ -5436,7 +5451,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 6.0
             }
           ],
@@ -5471,7 +5486,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "bind"
             }
           ],
           "tier": "supreme+"
@@ -5619,7 +5634,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             },
             {
               "tier": "base",
@@ -5813,7 +5828,7 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "bind"
             },
             {
               "tier": "base",
@@ -5824,7 +5839,7 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "displace"
             }
           ]
         },
@@ -6788,7 +6803,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 4.0
             }
           ],
@@ -6982,7 +6997,7 @@
               "area": "single",
               "target_count": 3,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "stun",
               "duration": 1.0
             }
           ]
@@ -7240,7 +7255,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "stun"
             },
             {
               "type": "immunity",
@@ -7679,7 +7694,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 2.0
             }
           ]
@@ -8004,7 +8019,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "knock_back",
               "duration": 15.0
             }
           ],
@@ -9277,20 +9292,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "knock_back",
               "duration": 12.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": false,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "crowd_control",
-              "cc-type": "pin",
-              "duration": 5.0
             },
             {
               "tier": "base",
@@ -9700,7 +9703,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             }
           ],
           "cooldown": 3.0
@@ -10181,7 +10184,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             },
             {
               "tier": "base",
@@ -10192,7 +10195,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 5.0
             }
           ]
@@ -10269,6 +10272,17 @@
           "category": "skill4",
           "description": "When Kordan achieves his first assist or defeat of a non-summoned enemy within the hunting circle, or after he has fought inside the circle for 20 s, his Fury Slash and Sundering Strike become enhanced. Enhanced Fury Slash: Deals extra damage equal to 30% of the target's lost HP, up to 600% . (ATK-based) Enhanced Sundering Strike: Allows Kordan to also knock his target into the air, increasing the duration of the subsequent knockdown for 2 s and dealing 300% (ATK-based) extra damage. +5 Increases the extra damage dealt by Fury Slash to 35% of the target's lost HP, up to 700% . (ATK-based) Also increases the extra damage dealt by Sundering Strike to 350% . Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys \\u0026 Magic DEF by (scaled), stacking up to (scaled) times. Each assist or defeat also restores (scaled) of his max HP every second for (scaled)s. Increases the extra damage dealt by Fury Slash to (scaled) of the target's lost HP, up to (scaled). Also increases the extra damage dealt by Sundering Strike to (scaled).",
           "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": false,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_up",
+              "duration": 2.0
+            },
             {
               "tier": "ex+10",
               "targeting_label": "Self",
@@ -10366,7 +10380,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             },
             {
               "tier": "base",
@@ -10376,7 +10390,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 4.0
             }
           ]
@@ -10758,7 +10772,17 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "displace"
             }
           ],
           "cooldown": 11.0,
@@ -10921,7 +10945,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "stun",
               "duration": 3.0
             }
           ],
@@ -11222,7 +11246,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             },
             {
               "type": "immunity",
@@ -12087,7 +12111,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "knock_back",
               "duration": 8.0
             },
             {
@@ -12301,6 +12325,18 @@
               "area_count": -1,
               "type": "crowd_control",
               "cc-type": "stun",
+              "duration": 2.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": false,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "knock_up",
               "duration": 2.0
             },
             {
@@ -12719,6 +12755,16 @@
                   "value": 40.0
                 }
               ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": false,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
             },
             {
               "type": "immunity",
@@ -15539,7 +15585,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             },
             {
               "type": "immunity",
@@ -15934,7 +15980,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "bind"
             },
             {
               "tier": "base",
@@ -15944,7 +15990,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "displace"
             },
             {
               "type": "immunity",
@@ -16029,7 +16075,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 2.0
             }
           ],
@@ -16047,7 +16093,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "bind"
             },
             {
               "tier": "supreme+",
@@ -16057,7 +16103,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "displace"
             }
           ],
           "tier": "supreme+"
@@ -16217,7 +16263,7 @@
               "area": "single",
               "target_count": 3,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "displace",
               "duration": 8.0
             },
             {
@@ -16245,7 +16291,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "displace",
               "duration": 10.0
             },
             {
@@ -16461,7 +16507,7 @@
               "area": "single",
               "target_count": 3,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "displace",
               "duration": 10.0
             },
             {
@@ -16711,7 +16757,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "knock_back",
               "duration": 10.0
             }
           ],
@@ -17067,7 +17113,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "displace"
             },
             {
               "type": "immunity",
@@ -17292,7 +17338,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "bind"
             }
           ]
         },
@@ -17332,7 +17378,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "bind"
             }
           ],
           "tier": "mythic+"
@@ -17365,7 +17411,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "bind"
             },
             {
               "tier": "supreme+",
@@ -17636,7 +17682,7 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             },
             {
               "type": "immunity",
@@ -17891,7 +17937,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "freeze"
+              "cc-type": "bind"
             }
           ]
         },
@@ -18335,6 +18381,17 @@
                 }
               ],
               "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": false,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
             },
             {
               "tier": "base",
@@ -19690,7 +19747,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             }
           ]
         },
@@ -19716,7 +19773,7 @@
               "area": "single",
               "target_count": 3,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "knock_back",
               "duration": 11.0
             }
           ],
@@ -19817,6 +19874,16 @@
           "category": "skill5",
           "description": "After Deflecting Swing is triggered, the next Repel Sweep knocks enemies back 2 tiles and deals bonus damage equal to 50% of the damage blocked. If an enemy hit by Whirlwind Swing or Repel Sweep collides with any unit, terrain, or battlefield boundaries while being knocked back, restores 80 Energy to Soren. This also grants Soren a shield equal to 100% (ATK-based) for the rest of the battle and refreshes the cooldown of Deflecting Swing. This effect can be triggered once per skill cast.",
           "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_back"
+            },
             {
               "tier": "supreme+",
               "targeting_label": "Single target",
@@ -20276,7 +20343,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             }
           ]
         },
@@ -20417,7 +20484,7 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "pin"
+              "cc-type": "stun"
             }
           ]
         },
@@ -21610,7 +21677,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "move"
+              "cc-type": "knock_back"
             }
           ],
           "tier": "supreme+"
@@ -22377,7 +22444,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "pin",
+              "cc-type": "bind",
               "duration": 12.0
             },
             {
@@ -23119,7 +23186,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "move",
+              "cc-type": "knock_back",
               "duration": 5.0
             }
           ]

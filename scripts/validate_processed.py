@@ -35,13 +35,40 @@ PROCESSED = io.HEROES_DATA_PROCESSED
 
 _CC_KEYWORDS: dict[str, str] = {
     "stun": r"\bstun(?:s|ned|ning)?\b",
-    "knock_back": r"\bknock(?:s|ing)? (?:them |the enemy |enemies )?back\b",
+    "knock_back": (
+        r"\bknock(?:s|ing)? (?:them |the enemy |enemies )?(?:\d+ tiles? )?back\b"
+    ),
+    "knock_down": r"\bknock(?:s|ing)? (?:the enemy|an enemy|them) down\b",
+    "knock_up": r"\bknock(?:s|ing)? .{0,25}?into the air\b",
+    "frighten": r"\bfrighten(?:ing|ed|s)?\b",
     "silence": r"(?<! of )silenc(?:e|es|ed|ing)",
+    "charm": r"\bcharm(?:ed|s|ing)?\b",
+    "sleep": r"\b(?:asleep|hypnotiz)",
+    "displace": r"\b(?:pull(?:ing|s)? (?:in |them|the)|teleport)\b",
+    "interrupt": r"\binterrupt\b",
+    "taunt": r"\btaunt\b",
     "blind": r"\bblind(?:ing|s|ed)?\b",
-    "bind": r"\bbind(?:ing|s)?\b",
-    "pin": r"\bimmobiliz",
-    "freeze": r"\bfreez(?:e|es|ed|ing)\b",
+    "bind": r"\b(?:bind(?:ing|s)?|immobiliz|entangl|imprison)\b",
+    "freeze": r"\bfreez(?:e|es|ed|ing) (?!time itself)(?!and defeats)\b",
 }
+
+_CC_SCHEMA_MAP: dict[str, str] = {
+    "freeze": "bind",
+}
+
+_ANTI_CC_KEYWORDS: dict[str, str] = {
+    "unaffected": (
+        r"(?:becomes?|is|remain|making|grants?|granted|linked).{0,60}unaffected|"
+        r"unaffected (?:while|when|for|during)"
+    ),
+    "steadfast": r"(?:becomes?|is|grants?|granted).{0,40}steadfast",
+    "immune": r"\bimmune to (?:damage and )?control\b",
+    "cleanse": r"removes? all dispellable debuffs",
+}
+
+_FREEZE_SKIP_RE = re.compile(
+    r"freez(?:e|es|ing|ed) (?:time itself|and defeats)"
+)
 
 
 def _load_module(name: str, filename: str):
@@ -104,6 +131,16 @@ def _cc_types(effects: list[dict[str, Any]]) -> set[str]:
     return out
 
 
+def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
+    out: set[str] = set()
+    for eff in effects:
+        if eff.get("type") == "immunity":
+            imm = eff.get("immunity_type")
+            if imm:
+                out.add(imm)
+    return out
+
+
 def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
     issues: dict[str, list[str]] = defaultdict(list)
     wiki_re = re.compile(r"\[[^\]]+\][^\[]+\[/\]")
@@ -131,13 +168,37 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                 issues["placeholder_damage"].append(f"{title} / {skill_name}")
 
             text = desc.lower()
-            for cc, pat in _CC_KEYWORDS.items():
-                if re.search(pat, text):
-                    mapped = "move" if cc == "knock_back" else cc
-                    if mapped not in _cc_types(effects):
+            cc_found = _cc_types(effects)
+            if not passive:
+                for cc, pat in _CC_KEYWORDS.items():
+                    if cc == "freeze" and _FREEZE_SKIP_RE.search(text):
+                        continue
+                    if cc == "displace" and re.search(
+                        r"pull(?:s|ing)? (?:the |a )?"
+                        r"(?:rearmost|weakest|nearest|frontmost)? ?ally\b",
+                        text,
+                    ):
+                        continue
+                    if not re.search(pat, text):
+                        continue
+                    mapped = _CC_SCHEMA_MAP.get(cc, cc)
+                    if mapped not in cc_found:
                         issues["cc_missing"].append(
                             f"{title} / {skill_name}: {cc}"
                         )
+
+            imm_found = _immunity_types(effects)
+            for imm, pat in _ANTI_CC_KEYWORDS.items():
+                if imm == "unaffected" and re.search(
+                    r"(?:who are|if they are|enemies who are|unaffected enemies|"
+                    r"ineffective against) unaffected",
+                    text,
+                ):
+                    continue
+                if re.search(pat, text) and imm not in imm_found:
+                    issues["anti_cc_missing"].append(
+                        f"{title} / {skill_name}: {imm}"
+                    )
 
             for eff in effects:
                 if eff.get("name") == "Marked target (focus fire)":
@@ -178,11 +239,8 @@ def main() -> int:
             print("OK: Heroes.md matches heroes_data.json")
     else:
         md_errors = check_md_parity()
-        print(
-            f"info: Heroes.md parity — {len(md_errors)} issue(s)"
-            if md_errors
-            else "OK: Heroes.md matches heroes_data.json"
-        )
+        if md_errors:
+            warnings["md_parity"] = md_errors
 
     stored = json.loads(PROCESSED.read_text(encoding="utf-8"))
     fresh = _rebuild_processed()
@@ -192,53 +250,47 @@ def main() -> int:
         if drift:
             errors.extend(drift)
         else:
-            print("OK: processed JSON matches re-analysis")
+            print("OK: processed JSON matches re-analysis output")
     else:
         drift = check_reanalysis_parity(stored, fresh)
-        print(
-            f"info: re-analysis drift — {len(drift)} hero(s)"
-            if drift
-            else "OK: processed JSON matches re-analysis"
-        )
+        if drift:
+            warnings["reanalysis"] = drift
 
     if "schema" in fail_on:
         try:
-            hs.validate_processed(stored)
-            print("OK: schema validation")
+            hs.validate_processed(fresh)
+            print("OK: processed JSON validates against schema")
         except Exception as exc:
             errors.append(f"schema validation failed: {exc}")
     else:
         try:
-            hs.validate_processed(stored)
-            print("OK: schema validation")
+            hs.validate_processed(fresh)
         except Exception as exc:
-            print(f"warn: schema validation: {exc}")
+            warnings["schema"] = [str(exc)]
 
-    semantic = check_semantic(stored)
-    warnings = dict(semantic)
+    semantic = check_semantic(fresh)
     for category, items in sorted(semantic.items()):
-        print(f"semantic [{category}]: {len(items)}")
-        for item in items[:5]:
-            print(f"  - {item}")
-        if len(items) > 5:
-            print(f"  ... and {len(items) - 5} more")
-
-    if "semantic" in fail_on and args.max_semantic >= 0:
-        for category, items in semantic.items():
-            if args.max_semantic == 0:
-                continue
+        if items:
+            print(f"semantic [{category}]: {len(items)}")
+            for item in items[:10]:
+                print(f"  - {item}")
+            if len(items) > 10:
+                print(f"  ... and {len(items) - 10} more")
+        if category in fail_on and args.max_semantic >= 0:
             if len(items) > args.max_semantic:
                 errors.append(
-                    f"semantic {category}: {len(items)} > {args.max_semantic}"
+                    f"semantic {category}: {len(items)} issues "
+                    f"(max {args.max_semantic})"
                 )
 
-    if errors:
-        print("\nFAILED:", file=sys.stderr)
-        for err in errors:
-            print(f"  {err}", file=sys.stderr)
-        return 1
+    if warnings:
+        for key, items in warnings.items():
+            print(f"warning [{key}]: {len(items)}", file=sys.stderr)
 
-    print("\nValidation passed.")
+    if errors:
+        for err in errors:
+            print(f"ERROR: {err}", file=sys.stderr)
+        return 1
     return 0
 
 

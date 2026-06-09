@@ -56,14 +56,13 @@
         "stun",
         "knock_down",
         "knock_up",
+        "knock_back",
         "frighten",
         "silence",
         "charm",
         "sleep",
-        "move",
-        "pin",
+        "displace",
         "interrupt",
-        "freeze",
         "taunt",
         "blind",
         "bind"
@@ -73,16 +72,12 @@
     "immunityType": {
       "type": "string",
       "enum": [
-        "damage",
-        "crowd_control",
-        "debuff",
-        "all",
         "unaffected",
         "steadfast",
         "immune",
         "cleanse"
       ],
-      "description": "What the unit becomes immune or resistant to."
+      "description": "Anti crowd-control category (Dispell stored as cleanse)."
     },
     "battlePhase": {
       "type": "string",

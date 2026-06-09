@@ -558,14 +558,15 @@ def match_dot_damage(provider: _rs.Hero) -> tuple[float, str] | None:
 _CC_SUSTAINED_LABELS = frozenset(
     {
         "Stun",
-        "Pin",
-        "Freeze",
+        "Bind",
         "Sleep",
         "Silence",
         "Charm",
         "Frighten",
         "Knock up",
         "Knock down",
+        "Knock back",
+        "Blind",
     }
 )
 

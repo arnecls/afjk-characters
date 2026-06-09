@@ -52,6 +52,14 @@ class EnumMappingTests(unittest.TestCase):
         self.assertEqual(hs.to_display_cc("knock_up"), "Knock up")
         self.assertEqual(hs.to_schema_cc("Blind"), "blind")
         self.assertEqual(hs.to_schema_cc("Bind"), "bind")
+        self.assertEqual(hs.to_schema_cc("Pin"), "bind")
+        self.assertEqual(hs.to_display_cc("pin"), "Bind")
+        self.assertEqual(hs.to_schema_cc("Displace"), "displace")
+        self.assertEqual(hs.to_display_cc("displace"), "Displace")
+        self.assertEqual(hs.to_schema_cc("Knock back"), "knock_back")
+        self.assertEqual(hs.to_display_cc("knock_back"), "Knock back")
+        self.assertEqual(hs.to_schema_cc("Freeze"), "bind")
+        self.assertEqual(hs.to_display_cc("freeze"), "Bind")
 
     def test_faction_round_trip(self):
         self.assertEqual(hs.to_schema_faction("Wilder"), "wilder")

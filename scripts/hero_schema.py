@@ -42,7 +42,7 @@ def _rs():
 # ---------------------------------------------------------------------------
 
 _LOWERCASE_PARTICLES = frozenset(
-    {"of", "per", "on", "the", "up", "down", "control"}
+    {"back", "of", "per", "on", "the", "up", "down", "control"}
 )
 
 # Non-obvious labels that are not plain lower/underscore transforms.
@@ -199,11 +199,16 @@ def to_display_damage_type(schema: str) -> str:
     return _schema_token_to_title(schema)
 
 
+_CC_SCHEMA_ALIASES = {"pin": "bind", "freeze": "bind"}
+
+
 def to_schema_cc(label: str) -> str:
-    return _display_phrase_to_schema(label)
+    token = _display_phrase_to_schema(label)
+    return _CC_SCHEMA_ALIASES.get(token, token)
 
 
 def to_display_cc(schema: str) -> str:
+    schema = _CC_SCHEMA_ALIASES.get(schema, schema)
     return _schema_token_to_phrase(schema)
 
 

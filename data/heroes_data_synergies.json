@@ -681,7 +681,7 @@
             "score": 0.7857,
             "matches": [
               "Blind",
-              "Move"
+              "Knock back"
             ]
           }
         ]
@@ -977,10 +977,24 @@
         ],
         "cc": [
           {
+            "name": "Arden",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Carolina",
             "score": 1.0,
             "matches": [
-              "Freeze"
+              "Bind"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 1.0,
+            "matches": [
+              "Bind"
             ]
           }
         ]
@@ -1317,7 +1331,7 @@
             "score": 1.0,
             "matches": [
               "Stun",
-              "Move"
+              "Knock back"
             ]
           },
           {
@@ -1325,15 +1339,15 @@
             "score": 1.0,
             "matches": [
               "Stun",
-              "Move"
+              "Knock back"
             ]
           },
           {
             "name": "Soren",
-            "score": 0.9167,
+            "score": 0.9091,
             "matches": [
               "Stun",
-              "Move"
+              "Knock back"
             ]
           }
         ]
@@ -2021,23 +2035,10 @@
         "cc": [
           {
             "name": "Gwyneth",
-            "score": 1.0,
+            "score": 0.7222,
             "matches": [
-              "Pin"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 1.0,
-            "matches": [
-              "Pin"
-            ]
-          },
-          {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "Pin"
+              "Bind",
+              "Stun"
             ]
           }
         ]
@@ -2382,7 +2383,7 @@
             "name": "Cassadee",
             "score": 0.75,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -2390,7 +2391,7 @@
             "name": "Lenya",
             "score": 0.75,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -2398,7 +2399,7 @@
             "name": "Perseus",
             "score": 0.75,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           }
@@ -3442,7 +3443,12 @@
           "score": 1.275
         }
       ],
-      "beneficiaries": [],
+      "beneficiaries": [
+        {
+          "score": 24.0,
+          "name": "Carolina"
+        }
+      ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
@@ -3510,24 +3516,18 @@
         ],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
+            "name": "Lucca",
+            "score": 0.6,
             "matches": [
-              "Knock down"
+              "Knock down",
+              "Knock up"
             ]
           },
           {
-            "name": "Ravion",
-            "score": 1.0,
+            "name": "Lucy",
+            "score": 0.6,
             "matches": [
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Sylphira",
-            "score": 1.0,
-            "matches": [
-              "Knock down"
+              "Knock up"
             ]
           }
         ]
@@ -5422,7 +5422,7 @@
         "cc": [
           {
             "name": "Antandra",
-            "score": 0.6897,
+            "score": 1.0,
             "matches": [
               "Knock down",
               "Stun"
@@ -5430,7 +5430,7 @@
           },
           {
             "name": "Lucca",
-            "score": 0.6897,
+            "score": 1.0,
             "matches": [
               "Knock down",
               "Stun"
@@ -5438,7 +5438,7 @@
           },
           {
             "name": "Zorya",
-            "score": 0.6897,
+            "score": 1.0,
             "matches": [
               "Knock down",
               "Stun"
@@ -5474,16 +5474,31 @@
           "score": 27.470057142857144
         },
         {
+          "provider": "Hepler - Master of Forms",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) [signature fuel]",
+            "Enables CC on enemies via Blind (area, high)"
+          ],
+          "score": 25.35
+        },
+        {
+          "provider": "Baelran - Dawnblade",
+          "reasons": [
+            "Enables CC on enemies via Knock up (area, high)"
+          ],
+          "score": 24.0
+        },
+        {
           "provider": "Indris - Chain Breaker",
           "reasons": [
-            "Enables CC on enemies via Pin (area, high)"
+            "Enables CC on enemies via Knock back (area, high)"
           ],
           "score": 24.0
         },
         {
           "provider": "Kordan - Ironblood Chieftain",
           "reasons": [
-            "Enables CC on enemies via Pin (area, high)"
+            "Enables CC on enemies via Bind (area, high)"
           ],
           "score": 24.0
         },
@@ -5493,6 +5508,14 @@
             "Enables CC on enemies via Stun (area, high)"
           ],
           "score": 24.0
+        },
+        {
+          "provider": "Elijah & Lailah - Celestial Twins",
+          "reasons": [
+            "ATK SPD via Haste buff (all units, high) [signature fuel]",
+            "Enables CC on enemies via Knock back (area, low)"
+          ],
+          "score": 21.5
         },
         {
           "provider": "Lyca - Keeper of Glades",
@@ -5512,9 +5535,16 @@
           "score": 20.05
         },
         {
+          "provider": "Lucy - Celestial Spirit Mage",
+          "reasons": [
+            "Enables CC on enemies via Knock up (all units, medium)"
+          ],
+          "score": 20.0
+        },
+        {
           "provider": "Arden - Oak Sage",
           "reasons": [
-            "Enables CC on enemies via Pin (multiple targets, high)"
+            "Enables CC on enemies via Stun (multiple targets, high)"
           ],
           "score": 18.0
         },
@@ -5528,7 +5558,7 @@
         {
           "provider": "Alna - Frozen Mother",
           "reasons": [
-            "Enables CC on enemies via Freeze (area, medium)"
+            "Enables CC on enemies via Bind (area, medium)"
           ],
           "score": 16.0
         },
@@ -5536,13 +5566,6 @@
           "provider": "Antandra - Desert Fury",
           "reasons": [
             "Enables CC on enemies via Stun (area, medium)"
-          ],
-          "score": 16.0
-        },
-        {
-          "provider": "Baelran - Dawnblade",
-          "reasons": [
-            "Enables CC on enemies via Knock down (area, medium)"
           ],
           "score": 16.0
         },
@@ -5563,7 +5586,7 @@
         {
           "provider": "Gwyneth - Dragonslayer Knight",
           "reasons": [
-            "Enables CC on enemies via Pin (area, medium)"
+            "Enables CC on enemies via Bind (area, medium)"
           ],
           "score": 16.0
         },
@@ -5577,7 +5600,7 @@
         {
           "provider": "Laios - Dungeon Adventurer",
           "reasons": [
-            "Enables CC on enemies via Pin (area, medium)"
+            "Enables CC on enemies via Stun (area, medium)"
           ],
           "score": 16.0
         },
@@ -5617,6 +5640,14 @@
           "score": 16.0
         },
         {
+          "provider": "Damian - Woody Wonder",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]",
+            "Enables CC on enemies via Blind (single target, high)"
+          ],
+          "score": 15.885000000000002
+        },
+        {
           "provider": "Valka - Forsaken Blade",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, high) [signature fuel]",
@@ -5641,21 +5672,6 @@
           "score": 13.6
         },
         {
-          "provider": "Elijah & Lailah - Celestial Twins",
-          "reasons": [
-            "ATK SPD via Haste buff (all units, high) [signature fuel]"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Damian - Woody Wonder",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]",
-            "Enables CC on enemies via Stun (single target, medium)"
-          ],
-          "score": 12.885000000000002
-        },
-        {
           "provider": "Gunnar - Iron Doom",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
@@ -5671,10 +5687,18 @@
           "score": 10.799999999999999
         },
         {
+          "provider": "Shakir - Furious Howl",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, low) [signature fuel]",
+            "Enables CC on enemies via Knock up (area, low)"
+          ],
+          "score": 10.7
+        },
+        {
           "provider": "Velara - Pale Votary",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) [signature fuel]",
-            "Enables CC on enemies via Pin (single target, high)"
+            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 10.35
         },
@@ -5682,7 +5706,7 @@
           "provider": "Cecia - Requiem of Thorns",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
-            "Enables CC on enemies via Pin (single target, high)"
+            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 10.08
         },
@@ -5690,7 +5714,7 @@
           "provider": "Gala - Daughter of Dawn",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) [signature fuel]",
-            "Enables CC on enemies via Pin (single target, medium)"
+            "Enables CC on enemies via Bind (single target, medium)"
           ],
           "score": 10.05
         },
@@ -5717,6 +5741,13 @@
           "score": 10.0
         },
         {
+          "provider": "Cassadee - Azure Prodigy",
+          "reasons": [
+            "Enables CC on enemies via Knock back (all units, low)"
+          ],
+          "score": 10.0
+        },
+        {
           "provider": "Evie - Royal Envoy",
           "reasons": [
             "Enables CC on enemies via Silence (all units, low)"
@@ -5731,17 +5762,16 @@
           "score": 10.0
         },
         {
-          "provider": "Hepler - Master of Forms",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) [signature fuel]",
-            "Enables CC on enemies via Stun (area, low)"
-          ],
-          "score": 9.35
-        },
-        {
           "provider": "Alsa - Desert Flare",
           "reasons": [
             "Enables CC on enemies via Stun (single target, high)"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Atalanta - Fortune Finder",
+          "reasons": [
+            "Enables CC on enemies via Knock back (single target, high)"
           ],
           "score": 9.0
         },
@@ -5753,16 +5783,9 @@
           "score": 9.0
         },
         {
-          "provider": "Cassadee - Azure Prodigy",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Eironn - Stormsword",
           "reasons": [
-            "Enables CC on enemies via Pin (single target, high)"
+            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 9.0
         },
@@ -5774,6 +5797,13 @@
           "score": 9.0
         },
         {
+          "provider": "Harak - Deepsea Ravager",
+          "reasons": [
+            "Enables CC on enemies via Knock back (single target, high)"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Kafra - Gale Rider",
           "reasons": [
             "Enables CC on enemies via Stun (single target, high)"
@@ -5781,9 +5811,9 @@
           "score": 9.0
         },
         {
-          "provider": "Lucy - Celestial Spirit Mage",
+          "provider": "Lucius - The Lightbringer",
           "reasons": [
-            "Enables CC on enemies via Stun (single target, high)"
+            "Enables CC on enemies via Knock back (single target, high)"
           ],
           "score": 9.0
         },
@@ -5795,9 +5825,30 @@
           "score": 9.0
         },
         {
+          "provider": "Rhys - Fiery Cavalier",
+          "reasons": [
+            "Enables CC on enemies via Knock back (single target, high)"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Satrana - Ember Enchantress",
           "reasons": [
             "Enables CC on enemies via Charm (single target, high)"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Soren - Silent Fury",
+          "reasons": [
+            "Enables CC on enemies via Knock back (single target, high)"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Zanie - Timeless Tinkerer",
+          "reasons": [
+            "Enables CC on enemies via Knock back (single target, high)"
           ],
           "score": 9.0
         },
@@ -5824,6 +5875,13 @@
           "score": 8.1
         },
         {
+          "provider": "Aliceth - Radiant Wings",
+          "reasons": [
+            "Enables CC on enemies via Blind (area, low)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Enables CC on enemies via Frighten (area, low)"
@@ -5847,7 +5905,21 @@
         {
           "provider": "Granny Dahnie - Forest Guardian",
           "reasons": [
-            "Enables CC on enemies via Pin (area, low)"
+            "Enables CC on enemies via Stun (area, low)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Korin - Wood Warden",
+          "reasons": [
+            "Enables CC on enemies via Knock back (area, low)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Lenya - Wild Cyclone",
+          "reasons": [
+            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 8.0
         },
@@ -5880,9 +5952,16 @@
           "score": 8.0
         },
         {
-          "provider": "Soren - Silent Fury",
+          "provider": "Talene - Resurging Flame",
           "reasons": [
-            "Enables CC on enemies via Stun (area, low)"
+            "Enables CC on enemies via Knock back (area, low)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ulmus - Grove Keeper",
+          "reasons": [
+            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 8.0
         },
@@ -5893,13 +5972,6 @@
             "Enables CC on enemies via Stun (single target, low)"
           ],
           "score": 6.375
-        },
-        {
-          "provider": "Atalanta - Fortune Finder",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, medium)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Bryon - Evergreen Sentinel",
@@ -5923,23 +5995,16 @@
           "score": 6.0
         },
         {
-          "provider": "Korin - Wood Warden",
-          "reasons": [
-            "Enables CC on enemies via Pin (single target, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Lenya - Wild Cyclone",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, medium)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Ludovic - Wreathed Eternalist",
           "reasons": [
             "Enables CC on enemies via Stun (single target, medium)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Marcille - Elven Mage",
+          "reasons": [
+            "Enables CC on enemies via Blind (single target, medium)"
           ],
           "score": 6.0
         },
@@ -5960,19 +6025,12 @@
         {
           "provider": "Pippa - The Muddled Magician",
           "reasons": [
-            "Enables CC on enemies via Pin (single target, medium)"
+            "Enables CC on enemies via Bind (single target, medium)"
           ],
           "score": 6.0
         },
         {
           "provider": "Silven - Heir of Glory",
-          "reasons": [
-            "Enables CC on enemies via Knock down (single target, medium)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Ulmus - Grove Keeper",
           "reasons": [
             "Enables CC on enemies via Knock down (single target, medium)"
           ],
@@ -6001,13 +6059,6 @@
           "score": 4.2636
         },
         {
-          "provider": "Aliceth - Radiant Wings",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Bonnie - Obsidian Claws",
           "reasons": [
             "Enables CC on enemies via Stun (single target, low)"
@@ -6022,13 +6073,6 @@
           "score": 3.0
         },
         {
-          "provider": "Harak - Deepsea Ravager",
-          "reasons": [
-            "Enables CC on enemies via Knock down (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Kruger - Dauntless Warrior",
           "reasons": [
             "Enables CC on enemies via Knock down (single target, low)"
@@ -6039,13 +6083,6 @@
           "provider": "Kulu - Blast Master",
           "reasons": [
             "Enables CC on enemies via Knock up (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lucius - The Lightbringer",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, low)"
           ],
           "score": 3.0
         },
@@ -6066,30 +6103,16 @@
         {
           "provider": "Salazer - Lash of Bantus",
           "reasons": [
-            "Enables CC on enemies via Pin (single target, low)"
+            "Enables CC on enemies via Bind (single target, low)"
           ],
           "score": 3.0
         },
         {
           "provider": "Seth - Swift Shadow",
           "reasons": [
-            "Enables CC on enemies via Freeze (single target, low)"
+            "Enables CC on enemies via Bind (single target, low)"
           ],
           "score": 3.0
-        },
-        {
-          "provider": "Zanie - Timeless Tinkerer",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, low) [signature fuel]"
-          ],
-          "score": 2.7
         },
         {
           "provider": "Isabella - The Taken Soul",
@@ -6106,12 +6129,7 @@
           "score": 2.1600000000000006
         }
       ],
-      "beneficiaries": [
-        {
-          "score": 40.8,
-          "name": "Nerion"
-        }
-      ],
+      "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
@@ -6152,7 +6170,29 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [
+          {
+            "name": "Kordan",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 0.6667,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
+            "name": "Indris",
+            "score": 0.6667,
+            "matches": [
+              "Bind"
+            ]
+          }
+        ]
       }
     },
     "Cassadee - Azure Prodigy": {
@@ -6408,7 +6448,7 @@
             "name": "Scarlita",
             "score": 0.8485,
             "matches": [
-              "Move",
+              "Knock back",
               "Knock up",
               "Stun"
             ]
@@ -6417,7 +6457,7 @@
             "name": "Lenya",
             "score": 0.6364,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -6425,7 +6465,7 @@
             "name": "Perseus",
             "score": 0.6364,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           }
@@ -6742,24 +6782,24 @@
         ],
         "cc": [
           {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Arden",
             "score": 1.0,
             "matches": [
-              "Pin"
+              "Bind"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Carolina",
             "score": 1.0,
             "matches": [
-              "Pin"
-            ]
-          },
-          {
-            "name": "Eironn",
-            "score": 1.0,
-            "matches": [
-              "Pin"
+              "Bind"
             ]
           }
         ]
@@ -8876,6 +8916,13 @@
         ],
         "cc": [
           {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Knock up"
+            ]
+          },
+          {
             "name": "Florabelle",
             "score": 1.0,
             "matches": [
@@ -8884,13 +8931,6 @@
           },
           {
             "name": "Lucca",
-            "score": 1.0,
-            "matches": [
-              "Knock up"
-            ]
-          },
-          {
-            "name": "Scarlita",
             "score": 1.0,
             "matches": [
               "Knock up"
@@ -9494,27 +9534,11 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Indris",
-            "score": 1.0,
-            "matches": [
-              "Move",
-              "Pin"
-            ]
-          },
-          {
             "name": "Evie",
             "score": 0.9661,
             "matches": [
-              "Move",
-              "Pin"
-            ]
-          },
-          {
-            "name": "Kordan",
-            "score": 0.8644,
-            "matches": [
-              "Pin",
-              "Move"
+              "Displace",
+              "Bind"
             ]
           }
         ]
@@ -9782,6 +9806,10 @@
         {
           "score": 63.75,
           "name": "Silven"
+        },
+        {
+          "score": 52.6,
+          "name": "Nerion"
         },
         {
           "score": 50.25,
@@ -10174,7 +10202,7 @@
             "score": 0.6875,
             "matches": [
               "Blind",
-              "Move"
+              "Knock back"
             ]
           }
         ]
@@ -10463,28 +10491,11 @@
         ],
         "cc": [
           {
-            "name": "Indris",
-            "score": 0.7667,
-            "matches": [
-              "Move",
-              "Pin",
-              "Silence"
-            ]
-          },
-          {
             "name": "Eironn",
             "score": 0.6333,
             "matches": [
-              "Move",
-              "Pin"
-            ]
-          },
-          {
-            "name": "Kordan",
-            "score": 0.6,
-            "matches": [
-              "Pin",
-              "Move"
+              "Displace",
+              "Bind"
             ]
           }
         ]
@@ -10878,14 +10889,14 @@
             ]
           },
           {
-            "name": "Koko",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Lorsan",
+            "name": "Koko",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -11352,6 +11363,13 @@
         "debuff": [],
         "cc": [
           {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Knock up"
+            ]
+          },
+          {
             "name": "Dionel",
             "score": 1.0,
             "matches": [
@@ -11360,13 +11378,6 @@
           },
           {
             "name": "Lucca",
-            "score": 1.0,
-            "matches": [
-              "Knock up"
-            ]
-          },
-          {
-            "name": "Scarlita",
             "score": 1.0,
             "matches": [
               "Knock up"
@@ -11867,24 +11878,24 @@
         "debuff": [],
         "cc": [
           {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Arden",
             "score": 1.0,
             "matches": [
-              "Pin"
+              "Bind"
             ]
           },
           {
             "name": "Atalanta",
             "score": 1.0,
             "matches": [
-              "Pin"
-            ]
-          },
-          {
-            "name": "Callan",
-            "score": 1.0,
-            "matches": [
-              "Pin"
+              "Bind"
             ]
           }
         ]
@@ -12147,27 +12158,19 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Atalanta",
-            "score": 0.625,
-            "matches": [
-              "Stun",
-              "Pin"
-            ]
-          },
-          {
-            "name": "Callan",
-            "score": 0.625,
-            "matches": [
-              "Stun",
-              "Pin"
-            ]
-          },
-          {
             "name": "Lucca",
-            "score": 0.625,
+            "score": 0.8333,
             "matches": [
               "Stun",
               "Interrupt"
+            ]
+          },
+          {
+            "name": "Smokey & Meerky",
+            "score": 0.6667,
+            "matches": [
+              "Interrupt",
+              "Stun"
             ]
           }
         ]
@@ -12499,7 +12502,32 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [
+          {
+            "name": "Antandra",
+            "score": 1.0,
+            "matches": [
+              "Stun",
+              "Taunt"
+            ]
+          },
+          {
+            "name": "Lumont",
+            "score": 1.0,
+            "matches": [
+              "Stun",
+              "Taunt"
+            ]
+          },
+          {
+            "name": "Hepler",
+            "score": 0.8095,
+            "matches": [
+              "Taunt",
+              "Stun"
+            ]
+          }
+        ]
       }
     },
     "Gunnar - Iron Doom": {
@@ -12871,7 +12899,7 @@
             ]
           },
           {
-            "name": "Callan",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -13127,15 +13155,23 @@
             "name": "Indris",
             "score": 0.7125,
             "matches": [
-              "Pin",
+              "Bind",
               "Silence"
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Arden",
+            "score": 0.65,
+            "matches": [
+              "Bind",
+              "Stun"
+            ]
+          },
+          {
+            "name": "Carolina",
             "score": 0.6,
             "matches": [
-              "Pin"
+              "Bind"
             ]
           }
         ]
@@ -13860,23 +13896,23 @@
             "name": "Kordan",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Knock down"
             ]
           },
           {
-            "name": "Ravion",
+            "name": "Scarlita",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Knock down"
             ]
           },
           {
-            "name": "Reinier",
-            "score": 1.0,
+            "name": "Ulmus",
+            "score": 0.9167,
             "matches": [
-              "Move",
+              "Knock back",
               "Knock down"
             ]
           }
@@ -14257,8 +14293,16 @@
       ],
       "beneficiaries": [
         {
+          "score": 49.8,
+          "name": "Nerion"
+        },
+        {
           "score": 31.5,
           "name": "Shadewing"
+        },
+        {
+          "score": 25.35,
+          "name": "Carolina"
         },
         {
           "score": 6.0,
@@ -16977,12 +17021,7 @@
           "score": 2.4000000000000004
         }
       ],
-      "beneficiaries": [
-        {
-          "score": 24.0,
-          "name": "Carolina"
-        }
-      ],
+      "beneficiaries": [],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
@@ -17038,7 +17077,16 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [
+          {
+            "name": "Kordan",
+            "score": 0.6857,
+            "matches": [
+              "Bind",
+              "Knock back"
+            ]
+          }
+        ]
       }
     },
     "Isabella - The Taken Soul": {
@@ -17800,19 +17848,11 @@
         ],
         "cc": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Stun",
-              "Move"
-            ]
-          },
-          {
             "name": "Atalanta",
             "score": 1.0,
             "matches": [
               "Stun",
-              "Move"
+              "Knock back"
             ]
           },
           {
@@ -17820,7 +17860,15 @@
             "score": 1.0,
             "matches": [
               "Stun",
-              "Move"
+              "Knock back"
+            ]
+          },
+          {
+            "name": "Lenya",
+            "score": 1.0,
+            "matches": [
+              "Stun",
+              "Knock back"
             ]
           }
         ]
@@ -18226,14 +18274,14 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Lorsan",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -18683,10 +18731,6 @@
         {
           "score": 43.8,
           "name": "Nerion"
-        },
-        {
-          "score": 24.0,
-          "name": "Carolina"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -18748,16 +18792,7 @@
           }
         ],
         "debuff": [],
-        "cc": [
-          {
-            "name": "Indris",
-            "score": 0.6316,
-            "matches": [
-              "Pin",
-              "Move"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Korin - Wood Warden": {
@@ -19105,27 +19140,27 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Eironn",
-            "score": 1.0,
-            "matches": [
-              "Move",
-              "Pin"
-            ]
-          },
-          {
-            "name": "Evie",
-            "score": 1.0,
-            "matches": [
-              "Move",
-              "Pin"
-            ]
-          },
-          {
             "name": "Indris",
             "score": 1.0,
             "matches": [
-              "Move",
-              "Pin"
+              "Knock back",
+              "Bind"
+            ]
+          },
+          {
+            "name": "Kordan",
+            "score": 1.0,
+            "matches": [
+              "Knock back",
+              "Bind"
+            ]
+          },
+          {
+            "name": "Atalanta",
+            "score": 0.7143,
+            "matches": [
+              "Knock back",
+              "Bind"
             ]
           }
         ]
@@ -19726,25 +19761,25 @@
         "cc": [
           {
             "name": "Cassadee",
-            "score": 1.0,
+            "score": 0.6667,
             "matches": [
-              "Knock up",
-              "Move"
+              "Knock back",
+              "Knock up"
+            ]
+          },
+          {
+            "name": "Kordan",
+            "score": 0.6667,
+            "matches": [
+              "Knock back",
+              "Knock up"
             ]
           },
           {
             "name": "Scarlita",
-            "score": 1.0,
+            "score": 0.6667,
             "matches": [
-              "Knock up",
-              "Move"
-            ]
-          },
-          {
-            "name": "Reinier",
-            "score": 0.8333,
-            "matches": [
-              "Move",
+              "Knock back",
               "Knock up"
             ]
           }
@@ -20191,24 +20226,24 @@
         "debuff": [],
         "cc": [
           {
+            "name": "Antandra",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
             "name": "Arden",
             "score": 1.0,
             "matches": [
-              "Pin"
+              "Stun"
             ]
           },
           {
-            "name": "Gwyneth",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
-              "Pin"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 1.0,
-            "matches": [
-              "Pin"
+              "Stun"
             ]
           }
         ]
@@ -20553,7 +20588,7 @@
             "name": "Cassadee",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -20561,7 +20596,7 @@
             "name": "Perseus",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -20569,7 +20604,7 @@
             "name": "Scarlita",
             "score": 0.9048,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           }
@@ -21361,14 +21396,14 @@
             ]
           },
           {
-            "name": "Lucca",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Lumont",
+            "name": "Lucca",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -22206,7 +22241,7 @@
             "name": "Atalanta",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -22214,7 +22249,7 @@
             "name": "Cassadee",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -22222,7 +22257,7 @@
             "name": "Lenya",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           }
@@ -22437,23 +22472,10 @@
         ],
         "cc": [
           {
-            "name": "Alsa",
-            "score": 1.0,
+            "name": "Scarlita",
+            "score": 0.6782,
             "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Faramor",
-            "score": 1.0,
-            "matches": [
+              "Knock up",
               "Stun"
             ]
           }
@@ -22797,7 +22819,7 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -23228,7 +23250,7 @@
         "cc": [
           {
             "name": "Antandra",
-            "score": 1.0,
+            "score": 0.9412,
             "matches": [
               "Stun",
               "Taunt"
@@ -23236,7 +23258,7 @@
           },
           {
             "name": "Hepler",
-            "score": 0.6667,
+            "score": 0.6275,
             "matches": [
               "Taunt",
               "Stun"
@@ -25751,7 +25773,7 @@
         ],
         "cc": [
           {
-            "name": "Lucca",
+            "name": "Baelran",
             "score": 1.0,
             "matches": [
               "Knock down",
@@ -25759,18 +25781,19 @@
             ]
           },
           {
-            "name": "Scarlita",
-            "score": 0.8,
+            "name": "Kordan",
+            "score": 1.0,
             "matches": [
               "Knock down",
               "Knock up"
             ]
           },
           {
-            "name": "Antandra",
-            "score": 0.6,
+            "name": "Lucca",
+            "score": 1.0,
             "matches": [
-              "Knock down"
+              "Knock down",
+              "Knock up"
             ]
           }
         ]
@@ -26252,7 +26275,7 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -26272,6 +26295,15 @@
           "score": 54.4
         },
         {
+          "provider": "Elijah & Lailah - Celestial Twins",
+          "reasons": [
+            "ATK SPD via Haste buff (all units, high) [signature fuel]",
+            "Max HP via Max HP buff (multiple targets, high)",
+            "Enables CC on enemies via Knock back (area, low)"
+          ],
+          "score": 52.6
+        },
+        {
           "provider": "Tasi - Fairy of Dreams",
           "reasons": [
             "Enables CC on enemies via Sleep (all units, high)"
@@ -26279,10 +26311,19 @@
           "score": 51.0
         },
         {
+          "provider": "Hepler - Master of Forms",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) [signature fuel]",
+            "Max HP via Shield (multiple targets, medium)",
+            "Enables CC on enemies via Blind (area, high)"
+          ],
+          "score": 49.8
+        },
+        {
           "provider": "Kordan - Ironblood Chieftain",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (multiple targets, low)",
-            "Enables CC on enemies via Pin (area, high)"
+            "Enables CC on enemies via Bind (area, high)"
           ],
           "score": 43.8
         },
@@ -26296,16 +26337,23 @@
           "score": 43.158857142857144
         },
         {
+          "provider": "Baelran - Dawnblade",
+          "reasons": [
+            "Enables CC on enemies via Knock up (area, high)"
+          ],
+          "score": 40.8
+        },
+        {
           "provider": "Carolina - Candlelight Specter",
           "reasons": [
-            "Enables CC on enemies via Freeze (area, high)"
+            "Enables CC on enemies via Bind (area, high)"
           ],
           "score": 40.8
         },
         {
           "provider": "Indris - Chain Breaker",
           "reasons": [
-            "Enables CC on enemies via Pin (area, high)"
+            "Enables CC on enemies via Knock back (area, high)"
           ],
           "score": 40.8
         },
@@ -26317,12 +26365,12 @@
           "score": 40.8
         },
         {
-          "provider": "Elijah & Lailah - Celestial Twins",
+          "provider": "Lucy - Celestial Spirit Mage",
           "reasons": [
-            "ATK SPD via Haste buff (all units, high) [signature fuel]",
-            "Max HP via Max HP buff (multiple targets, high)"
+            "Max HP via Shield (single target, high)",
+            "Enables CC on enemies via Knock up (all units, medium)"
           ],
-          "score": 39.0
+          "score": 38.5
         },
         {
           "provider": "Mehira - Mind Cager",
@@ -26350,9 +26398,17 @@
           "score": 31.707142857142856
         },
         {
+          "provider": "Damian - Woody Wonder",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]",
+            "Enables CC on enemies via Blind (single target, high)"
+          ],
+          "score": 30.6
+        },
+        {
           "provider": "Arden - Oak Sage",
           "reasons": [
-            "Enables CC on enemies via Pin (multiple targets, high)"
+            "Enables CC on enemies via Stun (multiple targets, high)"
           ],
           "score": 30.599999999999998
         },
@@ -26375,7 +26431,7 @@
           "provider": "Alna - Frozen Mother",
           "reasons": [
             "Max HP via Max HP buff (single target, low)",
-            "Enables CC on enemies via Freeze (area, medium)"
+            "Enables CC on enemies via Bind (area, medium)"
           ],
           "score": 28.7
         },
@@ -26388,16 +26444,17 @@
           "score": 28.0
         },
         {
+          "provider": "Lucius - The Lightbringer",
+          "reasons": [
+            "Max HP via Shield (area, high)",
+            "Enables CC on enemies via Knock back (single target, high)"
+          ],
+          "score": 27.299999999999997
+        },
+        {
           "provider": "Antandra - Desert Fury",
           "reasons": [
             "Enables CC on enemies via Stun (area, medium)"
-          ],
-          "score": 27.2
-        },
-        {
-          "provider": "Baelran - Dawnblade",
-          "reasons": [
-            "Enables CC on enemies via Knock down (area, medium)"
           ],
           "score": 27.2
         },
@@ -26418,14 +26475,14 @@
         {
           "provider": "Gwyneth - Dragonslayer Knight",
           "reasons": [
-            "Enables CC on enemies via Pin (area, medium)"
+            "Enables CC on enemies via Bind (area, medium)"
           ],
           "score": 27.2
         },
         {
           "provider": "Laios - Dungeon Adventurer",
           "reasons": [
-            "Enables CC on enemies via Pin (area, medium)"
+            "Enables CC on enemies via Stun (area, medium)"
           ],
           "score": 27.2
         },
@@ -26466,20 +26523,12 @@
           "score": 27.0
         },
         {
-          "provider": "Damian - Woody Wonder",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) [signature fuel]",
-            "Enables CC on enemies via Stun (single target, medium)"
-          ],
-          "score": 25.5
-        },
-        {
           "provider": "Cecia - Requiem of Thorns",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) [signature fuel]",
             "Max HP via Max HP buff (single target, high)",
             "DEF Penetration via DEF Penetration buff (single target, medium)",
-            "Enables CC on enemies via Pin (single target, high)"
+            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 25.2
         },
@@ -26496,7 +26545,7 @@
           "reasons": [
             "ATK SPD via Haste buff (single target, high) [signature fuel]",
             "Max HP via Shield (single target, high)",
-            "Enables CC on enemies via Pin (single target, medium)"
+            "Enables CC on enemies via Bind (single target, medium)"
           ],
           "score": 23.7
         },
@@ -26509,13 +26558,13 @@
           "score": 23.0
         },
         {
-          "provider": "Hepler - Master of Forms",
+          "provider": "Zanie - Timeless Tinkerer",
           "reasons": [
-            "ATK SPD via Haste buff (single target, low) [signature fuel]",
-            "Max HP via Shield (multiple targets, medium)",
-            "Enables CC on enemies via Stun (area, low)"
+            "Max HP via Shield (single target, high)",
+            "DEF Penetration via DEF Penetration buff (single target, medium)",
+            "Enables CC on enemies via Knock back (single target, high)"
           ],
-          "score": 22.6
+          "score": 22.799999999999997
         },
         {
           "provider": "Thador - Ironsworn General",
@@ -26526,12 +26575,20 @@
           "score": 20.025
         },
         {
-          "provider": "Lucy - Celestial Spirit Mage",
+          "provider": "Aliceth - Radiant Wings",
           "reasons": [
-            "Max HP via Shield (single target, high)",
-            "Enables CC on enemies via Stun (single target, high)"
+            "DEF Penetration via DEF Penetration buff (multiple targets, medium)",
+            "Enables CC on enemies via Blind (area, low)"
           ],
-          "score": 19.799999999999997
+          "score": 19.6
+        },
+        {
+          "provider": "Shakir - Furious Howl",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, low) [signature fuel]",
+            "Enables CC on enemies via Knock up (area, low)"
+          ],
+          "score": 19.6
         },
         {
           "provider": "Gunnar - Iron Doom",
@@ -26553,7 +26610,7 @@
           "provider": "Velara - Pale Votary",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) [signature fuel]",
-            "Enables CC on enemies via Pin (single target, high)"
+            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 18.299999999999997
         },
@@ -26573,17 +26630,16 @@
           "score": 18.0
         },
         {
-          "provider": "Lucius - The Lightbringer",
-          "reasons": [
-            "Max HP via Shield (area, high)",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 17.1
-        },
-        {
           "provider": "Athalia - Harbinger of Justice",
           "reasons": [
             "Enables CC on enemies via Knock down (all units, low)"
+          ],
+          "score": 17.0
+        },
+        {
+          "provider": "Cassadee - Azure Prodigy",
+          "reasons": [
+            "Enables CC on enemies via Knock back (all units, low)"
           ],
           "score": 17.0
         },
@@ -26602,10 +26658,26 @@
           "score": 17.0
         },
         {
+          "provider": "Soren - Silent Fury",
+          "reasons": [
+            "Max HP via Shield (single target, low)",
+            "Enables CC on enemies via Knock back (single target, high)"
+          ],
+          "score": 16.799999999999997
+        },
+        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, low)",
             "Enables CC on enemies via Frighten (area, low)"
+          ],
+          "score": 16.6
+        },
+        {
+          "provider": "Korin - Wood Warden",
+          "reasons": [
+            "Max HP via Shield (single target, medium)",
+            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 16.6
         },
@@ -26626,6 +26698,13 @@
           "score": 15.299999999999999
         },
         {
+          "provider": "Atalanta - Fortune Finder",
+          "reasons": [
+            "Enables CC on enemies via Knock back (single target, high)"
+          ],
+          "score": 15.299999999999999
+        },
+        {
           "provider": "Aurora - Celestial of Dreams",
           "reasons": [
             "Enables CC on enemies via Sleep (single target, high)"
@@ -26633,16 +26712,9 @@
           "score": 15.299999999999999
         },
         {
-          "provider": "Cassadee - Azure Prodigy",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, high)"
-          ],
-          "score": 15.299999999999999
-        },
-        {
           "provider": "Eironn - Stormsword",
           "reasons": [
-            "Enables CC on enemies via Pin (single target, high)"
+            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 15.299999999999999
         },
@@ -26650,6 +26722,13 @@
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Enables CC on enemies via Stun (single target, high)"
+          ],
+          "score": 15.299999999999999
+        },
+        {
+          "provider": "Harak - Deepsea Ravager",
+          "reasons": [
+            "Enables CC on enemies via Knock back (single target, high)"
           ],
           "score": 15.299999999999999
         },
@@ -26664,6 +26743,13 @@
           "provider": "Nara - Wrathful Wraith",
           "reasons": [
             "Enables CC on enemies via Knock down (single target, high)"
+          ],
+          "score": 15.299999999999999
+        },
+        {
+          "provider": "Rhys - Fiery Cavalier",
+          "reasons": [
+            "Enables CC on enemies via Knock back (single target, high)"
           ],
           "score": 15.299999999999999
         },
@@ -26683,10 +26769,10 @@
           "score": 15.299999999999999
         },
         {
-          "provider": "Soren - Silent Fury",
+          "provider": "Ulmus - Grove Keeper",
           "reasons": [
             "Max HP via Shield (single target, low)",
-            "Enables CC on enemies via Stun (area, low)"
+            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 15.1
         },
@@ -26700,7 +26786,14 @@
         {
           "provider": "Granny Dahnie - Forest Guardian",
           "reasons": [
-            "Enables CC on enemies via Pin (area, low)"
+            "Enables CC on enemies via Stun (area, low)"
+          ],
+          "score": 13.6
+        },
+        {
+          "provider": "Lenya - Wild Cyclone",
+          "reasons": [
+            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 13.6
         },
@@ -26726,6 +26819,13 @@
           "score": 13.6
         },
         {
+          "provider": "Talene - Resurging Flame",
+          "reasons": [
+            "Enables CC on enemies via Knock back (area, low)"
+          ],
+          "score": 13.6
+        },
+        {
           "provider": "Contess - Abyssal Rulekeeper",
           "reasons": [
             "Max HP via Shield (single target, medium)",
@@ -26734,34 +26834,9 @@
           "score": 13.2
         },
         {
-          "provider": "Korin - Wood Warden",
-          "reasons": [
-            "Max HP via Shield (single target, medium)",
-            "Enables CC on enemies via Pin (single target, medium)"
-          ],
-          "score": 13.2
-        },
-        {
-          "provider": "Zanie - Timeless Tinkerer",
-          "reasons": [
-            "Max HP via Shield (single target, high)",
-            "DEF Penetration via DEF Penetration buff (single target, medium)",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 12.6
-        },
-        {
           "provider": "Silven - Heir of Glory",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables CC on enemies via Knock down (single target, medium)"
-          ],
-          "score": 11.7
-        },
-        {
-          "provider": "Ulmus - Grove Keeper",
-          "reasons": [
-            "Max HP via Shield (single target, low)",
             "Enables CC on enemies via Knock down (single target, medium)"
           ],
           "score": 11.7
@@ -26776,14 +26851,6 @@
           "score": 11.475
         },
         {
-          "provider": "Aliceth - Radiant Wings",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (multiple targets, medium)",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 11.1
-        },
-        {
           "provider": "Pandora - Hope Unleashed",
           "reasons": [
             "Max HP via Max HP buff (single target, low)",
@@ -26791,13 +26858,6 @@
             "Energy via Energy recovery (1000 at battle start, single target) [signature fuel]"
           ],
           "score": 10.425428571428572
-        },
-        {
-          "provider": "Atalanta - Fortune Finder",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, medium)"
-          ],
-          "score": 10.2
         },
         {
           "provider": "Bryon - Evergreen Sentinel",
@@ -26814,16 +26874,16 @@
           "score": 10.2
         },
         {
-          "provider": "Lenya - Wild Cyclone",
+          "provider": "Ludovic - Wreathed Eternalist",
           "reasons": [
             "Enables CC on enemies via Stun (single target, medium)"
           ],
           "score": 10.2
         },
         {
-          "provider": "Ludovic - Wreathed Eternalist",
+          "provider": "Marcille - Elven Mage",
           "reasons": [
-            "Enables CC on enemies via Stun (single target, medium)"
+            "Enables CC on enemies via Blind (single target, medium)"
           ],
           "score": 10.2
         },
@@ -26837,7 +26897,7 @@
         {
           "provider": "Pippa - The Muddled Magician",
           "reasons": [
-            "Enables CC on enemies via Pin (single target, medium)"
+            "Enables CC on enemies via Bind (single target, medium)"
           ],
           "score": 10.2
         },
@@ -26882,16 +26942,9 @@
           "provider": "Salazer - Lash of Bantus",
           "reasons": [
             "Max HP via Shield (single target, low, conditional (frequent))",
-            "Enables CC on enemies via Pin (single target, low)"
+            "Enables CC on enemies via Bind (single target, low)"
           ],
           "score": 6.375
-        },
-        {
-          "provider": "Shakir - Furious Howl",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, low) [signature fuel]"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Isabella - The Taken Soul",
@@ -26911,13 +26964,6 @@
           "provider": "Cyran - Umbral Weaver",
           "reasons": [
             "Enables CC on enemies via Silence (single target, low)"
-          ],
-          "score": 5.1
-        },
-        {
-          "provider": "Harak - Deepsea Ravager",
-          "reasons": [
-            "Enables CC on enemies via Knock down (single target, low)"
           ],
           "score": 5.1
         },
@@ -26945,7 +26991,7 @@
         {
           "provider": "Seth - Swift Shadow",
           "reasons": [
-            "Enables CC on enemies via Freeze (single target, low)"
+            "Enables CC on enemies via Bind (single target, low)"
           ],
           "score": 5.1
         },
@@ -27043,7 +27089,7 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -27230,6 +27276,13 @@
             "ATK SPD via Haste buff (single target, low) [signature fuel]"
           ],
           "score": 5.35
+        },
+        {
+          "provider": "Cryonaia - Arctic Revenant",
+          "reasons": [
+            "Enables Enemy defeat via Instant defeat"
+          ],
+          "score": 5.0
         },
         {
           "provider": "Harak - Deepsea Ravager",
@@ -28013,7 +28066,7 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -28825,7 +28878,7 @@
             "score": 0.7222,
             "matches": [
               "Stun",
-              "Move"
+              "Knock back"
             ]
           },
           {
@@ -29057,7 +29110,7 @@
             ]
           },
           {
-            "name": "Hepler",
+            "name": "Granny Dahnie",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -29065,7 +29118,7 @@
             ]
           },
           {
-            "name": "Lumont",
+            "name": "Hepler",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -29332,27 +29385,26 @@
         ],
         "cc": [
           {
+            "name": "Eironn",
+            "score": 0.7,
+            "matches": [
+              "Bind",
+              "Displace"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.7,
+            "matches": [
+              "Bind",
+              "Displace"
+            ]
+          },
+          {
             "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "Pin",
-              "Knock down",
-              "Move"
-            ]
-          },
-          {
-            "name": "Atalanta",
             "score": 0.7,
             "matches": [
-              "Pin",
-              "Move"
-            ]
-          },
-          {
-            "name": "Callan",
-            "score": 0.7,
-            "matches": [
-              "Pin",
+              "Bind",
               "Knock down"
             ]
           }
@@ -29551,10 +29603,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 43.158857142857144,
-          "name": "Nerion"
-        },
         {
           "score": 27.470057142857144,
           "name": "Carolina"
@@ -29900,7 +29948,7 @@
             "name": "Ravion",
             "score": 0.6364,
             "matches": [
-              "Move",
+              "Displace",
               "Knock down"
             ]
           }
@@ -30190,24 +30238,24 @@
         "debuff": [],
         "cc": [
           {
+            "name": "Atalanta",
+            "score": 1.0,
+            "matches": [
+              "Knock back"
+            ]
+          },
+          {
             "name": "Cassadee",
             "score": 1.0,
             "matches": [
-              "Move"
+              "Knock back"
             ]
           },
           {
-            "name": "Eironn",
+            "name": "Harak",
             "score": 1.0,
             "matches": [
-              "Move"
-            ]
-          },
-          {
-            "name": "Evie",
-            "score": 1.0,
-            "matches": [
-              "Move"
+              "Knock back"
             ]
           }
         ]
@@ -30914,7 +30962,7 @@
             "score": 1.0,
             "matches": [
               "Interrupt",
-              "Move"
+              "Displace"
             ]
           },
           {
@@ -31335,24 +31383,24 @@
         "debuff": [],
         "cc": [
           {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Arden",
             "score": 1.0,
             "matches": [
-              "Pin"
+              "Bind"
             ]
           },
           {
             "name": "Atalanta",
             "score": 1.0,
             "matches": [
-              "Pin"
-            ]
-          },
-          {
-            "name": "Callan",
-            "score": 1.0,
-            "matches": [
-              "Pin"
+              "Bind"
             ]
           }
         ]
@@ -31830,6 +31878,14 @@
               "Knock up",
               "Knock down"
             ]
+          },
+          {
+            "name": "Lucy",
+            "score": 0.6146,
+            "matches": [
+              "Knock up",
+              "Stun"
+            ]
           }
         ]
       }
@@ -32243,14 +32299,21 @@
             "name": "Alna",
             "score": 1.0,
             "matches": [
-              "Freeze"
+              "Bind"
             ]
           },
           {
-            "name": "Carolina",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
-              "Freeze"
+              "Bind"
+            ]
+          },
+          {
+            "name": "Atalanta",
+            "score": 1.0,
+            "matches": [
+              "Bind"
             ]
           }
         ]
@@ -33231,7 +33294,29 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [
+          {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Knock up"
+            ]
+          },
+          {
+            "name": "Dionel",
+            "score": 1.0,
+            "matches": [
+              "Knock up"
+            ]
+          },
+          {
+            "name": "Florabelle",
+            "score": 1.0,
+            "matches": [
+              "Knock up"
+            ]
+          }
+        ]
       }
     },
     "Shemira - Corpsemaker": {
@@ -35558,7 +35643,7 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -35985,7 +36070,7 @@
             "score": 1.0,
             "matches": [
               "Stun",
-              "Move"
+              "Knock back"
             ]
           },
           {
@@ -35993,14 +36078,14 @@
             "score": 1.0,
             "matches": [
               "Stun",
-              "Move"
+              "Knock back"
             ]
           },
           {
             "name": "Atalanta",
             "score": 0.8571,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           }
@@ -36695,21 +36780,21 @@
             "name": "Atalanta",
             "score": 1.0,
             "matches": [
-              "Move"
+              "Knock back"
             ]
           },
           {
             "name": "Cassadee",
             "score": 1.0,
             "matches": [
-              "Move"
+              "Knock back"
             ]
           },
           {
-            "name": "Eironn",
+            "name": "Harak",
             "score": 1.0,
             "matches": [
-              "Move"
+              "Knock back"
             ]
           }
         ]
@@ -38891,27 +38976,28 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Indris",
+            "name": "Kordan",
+            "score": 1.0,
+            "matches": [
+              "Knock back",
+              "Bind",
+              "Knock down"
+            ]
+          },
+          {
+            "name": "Atalanta",
             "score": 0.7,
             "matches": [
-              "Move",
+              "Knock back",
               "Bind"
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Indris",
             "score": 0.7,
             "matches": [
-              "Move",
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Ravion",
-            "score": 0.7,
-            "matches": [
-              "Move",
-              "Knock down"
+              "Knock back",
+              "Bind"
             ]
           }
         ]
@@ -39124,6 +39210,13 @@
           "score": 6.375
         },
         {
+          "provider": "Cryonaia - Arctic Revenant",
+          "reasons": [
+            "Enables Enemy defeat via Instant defeat"
+          ],
+          "score": 5.0
+        },
+        {
           "provider": "Harak - Deepsea Ravager",
           "reasons": [
             "Enables Enemy defeat via Instant defeat"
@@ -39304,7 +39397,7 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -39563,7 +39656,7 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -40505,24 +40598,24 @@
         ],
         "cc": [
           {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Arden",
             "score": 1.0,
             "matches": [
-              "Pin"
+              "Bind"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Carolina",
             "score": 1.0,
             "matches": [
-              "Pin"
-            ]
-          },
-          {
-            "name": "Cecia",
-            "score": 1.0,
-            "matches": [
-              "Pin"
+              "Bind"
             ]
           }
         ]
@@ -41259,7 +41352,7 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -41831,7 +41924,7 @@
             "name": "Atalanta",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -41839,7 +41932,7 @@
             "name": "Cassadee",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           },
@@ -41847,7 +41940,7 @@
             "name": "Lenya",
             "score": 1.0,
             "matches": [
-              "Move",
+              "Knock back",
               "Stun"
             ]
           }

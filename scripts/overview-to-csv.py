@@ -32,15 +32,16 @@ CC_TYPES: list[str] = [
     "Stun",
     "Knock down",
     "Knock up",
+    "Knock back",
     "Frighten",
     "Silence",
     "Charm",
     "Sleep",
-    "Move",
-    "Pin",
+    "Displace",
+    "Bind",
     "Interrupt",
-    "Freeze",
     "Taunt",
+    "Blind",
 ]
 
 ANTI_CC_TYPES: list[str] = [
@@ -48,7 +49,6 @@ ANTI_CC_TYPES: list[str] = [
     "Steadfast",
     "Immune",
     "Cleanse",
-    "Resilience",
 ]
 
 BUFF_TYPES: list[str] = [
@@ -176,6 +176,8 @@ def cc_column_name(label: str) -> str | None:
     if base.endswith(" immunity"):
         return base[: -len(" immunity")]
     if base in CC_COLUMN_SET:
+        return base
+    if base in ANTI_CC_COLUMN_SET:
         return base
     return None
 

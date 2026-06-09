@@ -821,7 +821,7 @@ def grants_cc_immunity(text: str, imm_type: str) -> bool:
     if imm_type == "Steadfast":
         return bool(re.search(r"(?:becomes?|is|grants?|granted).{0,40}steadfast", t))
     if imm_type == "Immune":
-        return bool(re.search(r"\bimmune to control\b", t))
+        return bool(re.search(r"\bimmune to (?:damage and )?control\b", t))
     if imm_type == "Cleanse":
         return bool(re.search(r"removes? all dispellable debuffs", t))
     return False
@@ -1084,15 +1084,17 @@ _CC_LABEL_KEYWORDS: dict[str, str] = {
         r"knock(?:ing|ed|s)?\s+(?:the enemy|an enemy|them\s+)?down|"
         r"knocked\s+down|slam(?:ming|s)?\s+them\s+down"
     ),
-    "Move": r"knock(?:ing|s)?\s+back|pull(?:ing|s)?|teleport",
+    "Knock back": r"knock(?:ing|s)?\s+back",
+    "Displace": r"pull(?:ing|s)?|teleport",
     "Frighten": r"frighten",
     "Silence": r"silenc",
     "Charm": r"charm",
     "Sleep": r"asleep|hypnotiz",
-    "Freeze": r"freez",
-    "Pin": r"immobiliz|entangl|imprison|cannot move or act|unable to move",
+    "Bind": (
+        r"immobiliz|entangl|imprison|unable to move|"
+        r"bind(?:ing|s)?|freez(?:e|es|ing|ed)"
+    ),
     "Blind": r"blind(?:ing|s|ed)?",
-    "Bind": r"bind(?:ing|s)?",
     "Taunt": r"taunt",
     "Interrupt": r"interrupt",
 }
@@ -1101,7 +1103,9 @@ _CC_LABEL_KEYWORDS: dict[str, str] = {
 def extract_cc_duration(text: str, label: str = "") -> float | None:
     """Longest CC duration near the effect keyword (ignores cooldown lines)."""
     t = text.lower()
-    kw = _CC_LABEL_KEYWORDS.get(label, r"stun|knock|silenc|charm|freez|taunt|interrupt|pin")
+    kw = _CC_LABEL_KEYWORDS.get(
+        label, r"stun|knock|silenc|charm|freez|taunt|interrupt|bind|immobiliz"
+    )
     best: float | None = None
 
     def consider(val: float) -> None:
@@ -1552,8 +1556,7 @@ DEBUFF_RULES = [
 CC_RULES = [
     (r"\bstun(?:s|ned|ning)?\b|\bstunn(?:ed|ing|s)?\b", "Stun"),
     (
-        r"knock(?:s|ing)? (?:them |the enemy |an enemy |the target )?"
-        r"into the air",
+        r"knock(?:s|ing)? .{0,25}?into the air",
         "Knock up",
     ),
     (
@@ -1564,8 +1567,9 @@ CC_RULES = [
     ),
     (
         r"knocking them (?:\d+ tiles? )?back|"
-        r"knock(?:ing|s)? (?:them )?(?:\d+ tiles? )?back",
-        "Move",
+        r"knock(?:ing|s)? (?:them |enemies |the enemy )?"
+        r"(?:\d+ tiles? )?back",
+        "Knock back",
     ),
     (r"frighten(?:ing|ed|s)?", "Frighten"),
     # "(?<! of )" prevents skill-name references like "Echo of Silence" from
@@ -1575,23 +1579,29 @@ CC_RULES = [
     (r"spellbind.{0,60}unable to cast", "Silence"),
     (r"charm(?:ed|s|ing)?", "Charm"),
     (r"\basleep\b|hypnotiz", "Sleep"),
-    (r"freez(?:e|es|ing|ed)", "Freeze"),
-    (r"immobiliz", "Pin"),
+    (
+        r"freez(?:e|es|ing|ed) (?!time itself)(?!and defeats)",
+        "Bind",
+    ),
+    (r"immobiliz", "Bind"),
     # Exclude self-restrictions ("she/he cannot move or act") – only enemy CC.
     # Python lookbehind must be fixed-width, so list each pronoun separately.
-    (r"(?<!she )(?<!he )(?<!it )cannot move or act|unable to move or act", "Pin"),
-    (r"entangl|imprison", "Pin"),
+    (
+        r"(?<!she )(?<!he )(?<!it )cannot move or act|unable to move or act",
+        "Stun",
+    ),
+    (r"entangl|imprison", "Bind"),
     (r"\bblind(?:ing|s|ed)?\b", "Blind"),
     (r"\bbind(?:ing|s)?\b", "Bind"),
-    (r"teleport", "Move"),
-    (r"pull(?:ing|s)? (?:in |them|the)", "Move"),
+    (r"teleport", "Displace"),
+    (r"pull(?:ing|s)? (?:in |them|the)", "Displace"),
     (r"taunt", "Taunt"),
     (r"interrupt", "Interrupt"),
 ]
 
 SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     # Core mechanics
-    (r"instantly defeat", "Instant defeat"),
+    (r"instantly (?:freezes and )?defeat", "Instant defeat"),
     (r"\breviv(?:e|es|ing)\b", "Revive ally"),
     # Ally empower: hero designates one specific ally with a named role/bond
     (r"selects? an ally.{0,80}to become", "Ally empower"),
@@ -1672,6 +1682,7 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
         r"cutting them off from the rest of the battlefield",
         "Enemy isolation (domain)",
     ),
+    (r"freezes time itself|stop the battle time", "Battle time pause"),
     (r"unable to cast ultimate", "Ultimate lock (Spellbind)"),
     (r"unable to restore hp for others", "Heal lock (Curelock)"),
     (r"\buntargetable\b", "Untargetable"),
@@ -2430,13 +2441,28 @@ def _debuff_match_is_ally_atk_penalty(clause: str) -> bool:
     return has_ally_context and not has_enemy_context
 
 
+def _cc_bind_scope_covers_cannot_move(scope: str) -> bool:
+    """Immobilize/entangle clauses already encode bind-style CC."""
+    return bool(
+        re.search(r"immobiliz|entangl|imprison|\bbind(?:ing|s)?\b", scope.lower())
+    )
+
+
+def _cc_cannot_move_targets_enemy(scope: str) -> bool:
+    """Self-restrictions like 'Callan cannot move or act' are not enemy CC."""
+    t = scope.lower()
+    if not re.search(r"cannot move or act|unable to move or act", t):
+        return True
+    return bool(re.search(r"\b(?:enemy|enemies|target|foe|them|hypnotized)\b", t))
+
+
 def _cc_match_is_ally_targeted(clause: str, label: str) -> bool:
     """True when a CC effect is applied to an ally rather than an enemy.
 
     Pandora pulls the rearmost ally into her box — a protective mechanic
-    that must not be classified as an enemy-facing Move CC.
+    that must not be classified as an enemy-facing Displace CC.
     """
-    if label != "Move":
+    if label != "Displace":
         return False
     t = clause.lower()
     if re.search(
@@ -2477,6 +2503,11 @@ def analyze_text(
             # (e.g. Pandora pulling an ally into her box).
             if _cc_match_is_ally_targeted(scope, label):
                 continue
+            if label == "Stun":
+                if _cc_bind_scope_covers_cannot_move(scope):
+                    continue
+                if not _cc_cannot_move_targets_enemy(scope):
+                    continue
             add_effect(effects, "cc", label, tier, text, scope=scope)
 
     if not _skill_chunk_has_ally_only_damage(text):
