@@ -1601,15 +1601,20 @@
     route();
   }
 
+  function localServerHint() {
+    return (
+      "<code>python3 -m http.server</code> from the " +
+      "<code>site/</code> directory (after " +
+      "<code>just render-site</code>)."
+    );
+  }
+
   function loadHeroData() {
-    if (window.HEROES_DATA) {
-      initHeroes(window.HEROES_DATA);
-      return;
-    }
     if (location.protocol === "file:") {
       heroGrid.innerHTML =
-        '<p class="empty-state">Hero data missing. Run ' +
-        "<code>just render-site</code> to generate js/heroes-data.js.</p>";
+        '<p class="empty-state">Open this site via a local web server: ' +
+        localServerHint() +
+        "</p>";
       return;
     }
     fetch(assetUrl("data/heroes.json"))
@@ -1622,15 +1627,11 @@
         heroGrid.innerHTML =
           '<p class="empty-state">Could not load hero data: ' +
           escapeHtml(String(err)) +
-          "</p>";
+          ". Run <code>just render-site</code>.</p>";
       });
   }
 
   function loadCsvData() {
-    if (window.HEROES_CSV) {
-      initCsv(window.HEROES_CSV);
-      return;
-    }
     if (location.protocol === "file:") {
       return;
     }

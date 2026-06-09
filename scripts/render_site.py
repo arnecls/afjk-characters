@@ -29,10 +29,8 @@ from render_overview import (
 
 SITE_DIR = io.ROOT / "site"
 SITE_DATA = SITE_DIR / "data" / "heroes.json"
-SITE_DATA_JS = SITE_DIR / "js" / "heroes-data.js"
 OVERVIEW_CSV = io.ROOT / "heroes-overview.csv"
 SITE_CSV = SITE_DIR / "data" / "heroes-overview.csv"
-SITE_CSV_JS = SITE_DIR / "js" / "heroes-csv.js"
 
 rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
 gen = _load_module("gen_overview", "generate-heroes-overview.py")
@@ -268,26 +266,15 @@ def main() -> None:
     encoded = json.dumps(payload, ensure_ascii=False)
     SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
     SITE_DATA.write_text(encoded + "\n", encoding="utf-8")
-    SITE_DATA_JS.parent.mkdir(parents=True, exist_ok=True)
-    SITE_DATA_JS.write_text(
-        f"window.HEROES_DATA = {encoded};\n",
-        encoding="utf-8",
-    )
     print(
         f"Wrote {SITE_DATA.relative_to(io.ROOT)} "
         f"({payload['meta']['hero_count']} heroes)"
     )
-    print(f"Wrote {SITE_DATA_JS.relative_to(io.ROOT)}")
 
     if OVERVIEW_CSV.is_file():
         csv_text = OVERVIEW_CSV.read_text(encoding="utf-8")
         SITE_CSV.write_text(csv_text, encoding="utf-8")
-        SITE_CSV_JS.write_text(
-            f"window.HEROES_CSV = {json.dumps(csv_text)};\n",
-            encoding="utf-8",
-        )
         print(f"Wrote {SITE_CSV.relative_to(io.ROOT)}")
-        print(f"Wrote {SITE_CSV_JS.relative_to(io.ROOT)}")
     else:
         print(
             f"Warning: {OVERVIEW_CSV.name} missing; "

@@ -48,13 +48,13 @@ render-heroes:
 render-overview:
     python3 scripts/render_overview.py
 
-# Build site/data/heroes.json and cache missing portraits.
-render-site:
+# Build site/data from overview views and cache missing portraits.
+render-site: render-overview
     python3 scripts/render_site.py
     python3 scripts/download_hero_images.py
 
 # Render all view files.
-render: render-heroes render-overview render-site
+render: render-heroes render-site
 
 # Regenerate views from the committed data/heroes_data.json (no network).
 views: analyze render

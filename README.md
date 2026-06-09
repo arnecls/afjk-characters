@@ -52,7 +52,15 @@ Rebuild site data locally:
 just render-site
 ```
 
-This writes `site/data/heroes.json` and downloads any missing portrait images from Yaphalla into `site/assets/`. Running `just views` also refreshes the site JSON.
+This refreshes `heroes-overview.md` / `heroes-overview.csv`, copies the CSV into `site/data/`, writes `site/data/heroes.json`, and downloads any missing portrait images from Yaphalla into `site/assets/`. Running `just views` also refreshes the site data.
+
+Preview locally (required — the site loads data via `fetch`):
+
+```bash
+cd site && python3 -m http.server
+```
+
+Then open `http://localhost:8000/` in your browser.
 
 Enable GitHub Pages once in the repository settings: source **Deploy from a branch**, branch **`gh-pages`**, folder **`/` (root)**. Pushes to `main` or `webview` trigger [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
 
@@ -72,7 +80,7 @@ just setup
 just views
 ```
 
-This runs analysis (`data/heroes_data_processed.json`, `data/heroes_data_synergies.json`) and renders `Heroes.md`, `heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json`.
+This runs analysis (`data/heroes_data_processed.json`, `data/heroes_data_synergies.json`) and renders `Heroes.md`, `heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json` + `site/data/heroes-overview.csv`.
 
 **Full refresh from live sources (requires network):**
 
