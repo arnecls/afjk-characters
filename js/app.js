@@ -413,9 +413,9 @@
     return closePos === -1 || closePos >= index;
   }
 
-  function isInsideSkillInlineStat(html, index) {
+  function isInsideSpanClass(html, index, className) {
     const before = html.slice(0, index);
-    const openTag = '<span class="skill-inline-stat"';
+    const openTag = '<span class="' + className + '"';
     let openPos = -1;
     let searchFrom = 0;
     for (;;) {
@@ -433,6 +433,14 @@
     return closePos === -1 || closePos >= index;
   }
 
+  function isInsideSkillInlineStat(html, index) {
+    return isInsideSpanClass(html, index, "skill-inline-stat");
+  }
+
+  function isInsideSkillInlineTime(html, index) {
+    return isInsideSpanClass(html, index, "skill-inline-time");
+  }
+
   function replaceOutsideChips(text, re, replacer) {
     return text.replace(re, function () {
       const args = Array.prototype.slice.call(arguments);
@@ -441,7 +449,8 @@
       if (
         isInsideHtmlTag(text, offset) ||
         isInsideChipSpan(text, offset) ||
-        isInsideSkillInlineStat(text, offset)
+        isInsideSkillInlineStat(text, offset) ||
+        isInsideSkillInlineTime(text, offset)
       ) {
         return match;
       }
@@ -1237,6 +1246,12 @@
 
   // Popup-only: verb/adjective inflections for single-word TAG_DEFINITIONS
   // keys (base forms are matched by SKILL_CHIP_KEYS above).
+  const SKILL_DURATION_PATTERNS = [
+    /\d+(?:\.\d+)?\s*\+\s*\d+(?:\.\d+)?\s*s\b/gi,
+    /\d+(?:\.\d+)?\s*-\s*\d+(?:\.\d+)?\s*s\b/gi,
+    /\d+(?:\.\d+)?\s*s\b/gi,
+  ];
+
   const SKILL_INFLECTION_CHIPS = [
     { re: /\bstunn(?:ed|ing|s)\b/gi, tag: "Stun" },
     { re: /\bstun(?:s|ned|ning)\b/gi, tag: "Stun" },
@@ -1290,6 +1305,15 @@
       /\{\{HP_BASED\}\}/g,
       '<span class="skill-inline-stat">❤️ HP</span>'
     );
+    SKILL_DURATION_PATTERNS.forEach(function (re) {
+      out = replaceOutsideChips(out, re, function (match) {
+        return (
+          '<span class="skill-inline-time">⏱️ ' +
+          escapeHtml(match) +
+          "</span>"
+        );
+      });
+    });
     return out;
   }
 
@@ -1348,7 +1372,7 @@
             " " +
             escapeHtml(label) +
             ": " +
-            escapeHtml(meta[label]) +
+            enrichSkillInline(meta[label]) +
             "</span>"
         );
       }
