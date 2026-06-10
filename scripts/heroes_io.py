@@ -54,6 +54,8 @@ _HEROES_MD_HEADER = (
     "Skill data sourced from "
     "[AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), "
     "with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\n"
+    "Meta tiers from "
+    "[Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).\n"
     "Summaries live in [heroes-overview.md](heroes-overview.md) "
     "(see `scripts/generate-heroes-overview.py`).\n"
 )
@@ -384,6 +386,22 @@ def merge_sources(
         "fandom_header": fandom_header,
         "heroes": heroes,
     }
+
+
+def apply_prydwen_tiers(
+    heroes: list[dict],
+    tiers_by_name: dict[str, dict[str, str]],
+) -> list[str]:
+    """Attach ``prydwen_tiers`` to hero records; return names with no ratings."""
+    missing: list[str] = []
+    for hero in heroes:
+        tiers = tiers_by_name.get(hero["name"])
+        if tiers:
+            hero["prydwen_tiers"] = dict(tiers)
+        else:
+            hero.pop("prydwen_tiers", None)
+            missing.append(hero["name"])
+    return missing
 
 
 # ---------------------------------------------------------------------------

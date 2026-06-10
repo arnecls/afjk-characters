@@ -60,6 +60,8 @@ OVERVIEW_HEADER = [
     "Up to five partners by combined score. Omitted: ATK-only, Max HP",
     "buff-only, and Shield-only (unless the hero benefits from Max HP/",
     "shields). Rare conditional buffs score lower.",
+    "Meta tiers from "
+    "[Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).",
     "Regenerate: `python3 scripts/generate-heroes-overview.py`.",
     "",
 ]
@@ -208,6 +210,7 @@ def build_overview(
         short = gen.short_name(title)
         hero = summary_heroes[title]
         behavior = rs.HeroBehavior(**p["behavior"])
+        meta = data_by_title.get(title, {})
         skill_summaries = rs._load_skill_summaries().get(short, {})
         hero_categories = {s["category"] for s in p["skills"].values()}
 
@@ -229,6 +232,7 @@ def build_overview(
                 behavior,
                 skill_summaries=skill_summaries,
                 hero_categories=hero_categories,
+                prydwen_tiers=meta.get("prydwen_tiers"),
             )
         )
         parts.append(f"### Units {short} benefits from")
@@ -262,7 +266,10 @@ def build_overview(
 
 def write_csv(overview_text: str, energy_providers: frozenset[str]) -> int:
     hero_meta = csv_mod._load_hero_faction_class()
-    rows = csv_mod.convert(overview_text, energy_providers, hero_meta)
+    hero_tiers = csv_mod._load_hero_prydwen_tiers()
+    rows = csv_mod.convert(
+        overview_text, energy_providers, hero_meta, hero_tiers
+    )
     with OVERVIEW_CSV.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.writer(fh)
         writer.writerow(csv_mod.COLUMNS)

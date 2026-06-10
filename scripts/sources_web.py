@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""Live downloaders for the two hero data sources (stdlib only).
+"""Live downloaders for hero data sources (stdlib only).
 
 - ``fetch_fandom()`` reads wikitext from the AFK Journey fandom MediaWiki API
   (https://afk-journey.fandom.com/api.php). This is the baseline: translated
   skill text plus Skill Range and Initial Energy.
 - ``fetch_yaphalla()`` scrapes hero pages from https://www.yaphalla.com/heroes.
   Used only to fill gaps in the Fandom record during ``heroes_io.merge_sources``.
+- ``fetch_prydwen_tiers()`` scrapes meta tiers from Prydwen character pages
+  (https://www.prydwen.gg/afk-journey/characters), aligned with their tier list.
 
-Both return hero records in the same structure as ``heroes_io.parse_md`` so the
-results can be merged by ``heroes_io.merge_sources``.
+Both hero fetchers return records in the same structure as ``heroes_io.parse_md``
+so the results can be merged by ``heroes_io.merge_sources``.
 
 These are Python ports of the former ``scripts/generate-heroes2-md.js`` and
 ``scripts/generate-heroes-md.js``. Network access is required.
@@ -18,13 +20,39 @@ from __future__ import annotations
 
 import json
 import re
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 FANDOM_API = "https://afk-journey.fandom.com/api.php"
 YAPHALLA_BASE = "https://www.yaphalla.com/heroes"
+PRYDWEN_BASE = "https://www.prydwen.gg/afk-journey/characters"
+PRYDWEN_TIER_LIST_URL = "https://www.prydwen.gg/afk-journey/tier-list"
 CONCURRENCY = 4
+
+PRYDWEN_USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+)
+
+# Fandom roster name -> Prydwen URL slug when they differ.
+PRYDWEN_SLUG_ALIASES: dict[str, str] = {
+    "Elijah & Lailah": "elijah-and-lailah",
+}
+
+_PRYDWEN_RATING_RE = re.compile(
+    r'<div class="rating-box[^"]*">\s*([^<]+)</div></span><p>([^<]+)</p>',
+    re.I,
+)
+
+_PRYDWEN_MODE_KEYS = {
+    "afk stages": "afk_stages",
+    "dream realm": "dream_realm",
+    "dream realm (endless)": "dream_realm_endless",
+    "pvp": "pvp",
+}
 
 FANDOM_HEADER = (
     "# AFK Journey Heroes\n"
@@ -66,10 +94,28 @@ SKILL_TYPE_MAP = {
 }
 
 
-def _http_get(url: str, user_agent: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": user_agent})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return resp.read().decode("utf-8")
+def _http_get(url: str, user_agent: str, *, retries: int = 1) -> str:
+    headers = {"User-Agent": user_agent, "Accept": "text/html"}
+    last_err: OSError | None = None
+    for attempt in range(retries):
+        req = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                return resp.read().decode("utf-8")
+        except urllib.error.HTTPError as exc:
+            last_err = exc
+            if exc.code in (403, 429) and attempt + 1 < retries:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            raise
+        except OSError as exc:
+            last_err = exc
+            if attempt + 1 < retries:
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            raise
+    assert last_err is not None
+    raise last_err
 
 
 def _map_pool(items, fn):
@@ -481,6 +527,71 @@ def fetch_yaphalla() -> list[dict]:
             }
 
     return _map_pool(names, one)
+
+
+# ---------------------------------------------------------------------------
+# Prydwen (meta tier ratings)
+# ---------------------------------------------------------------------------
+
+
+def _prydwen_slug(name: str) -> str:
+    alias = PRYDWEN_SLUG_ALIASES.get(name)
+    if alias:
+        return alias
+    slug = name.lower().strip().replace("&", "and")
+    slug = re.sub(r"[^a-z0-9]+", "-", slug)
+    return slug.strip("-")
+
+
+def _normalize_prydwen_tier(text: str) -> str:
+    tier = text.strip()
+    tier = tier.replace("-plus", "+").replace("-minus", "-")
+    return tier
+
+
+def _parse_prydwen_ratings(html: str) -> dict[str, str] | None:
+    """Parse General Ratings from a Prydwen character page."""
+    if "General Ratings" not in html:
+        return None
+    ratings: dict[str, str] = {}
+    for tier_raw, mode in _PRYDWEN_RATING_RE.findall(html):
+        key = _PRYDWEN_MODE_KEYS.get(mode.strip().lower())
+        if key:
+            ratings[key] = _normalize_prydwen_tier(tier_raw)
+    if len(ratings) != 4:
+        return None
+    return ratings
+
+
+def _fetch_prydwen_hero_tiers(name: str) -> tuple[str, dict[str, str] | None]:
+    slug = _prydwen_slug(name)
+    url = f"{PRYDWEN_BASE}/{slug}"
+    try:
+        html = _http_get(url, PRYDWEN_USER_AGENT, retries=4)
+    except OSError:
+        return name, None
+    return name, _parse_prydwen_ratings(html)
+
+
+def fetch_prydwen_tiers(hero_names: list[str]) -> dict[str, dict[str, str]]:
+    """Return meta tier ratings keyed by hero display name."""
+    tiers_by_name: dict[str, dict[str, str]] = {}
+    missing = list(hero_names)
+    for round_idx in range(3):
+        if not missing:
+            break
+        if round_idx:
+            time.sleep(2.0 * round_idx)
+        batch_missing: list[str] = []
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(_fetch_prydwen_hero_tiers, missing))
+        for name, tiers in results:
+            if tiers:
+                tiers_by_name[name] = tiers
+            else:
+                batch_missing.append(name)
+        missing = batch_missing
+    return tiers_by_name
 
 
 if __name__ == "__main__":

@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HEROES_MD = ROOT / "Heroes.md"
 OVERVIEW_MD = ROOT / "heroes-overview.md"
+HEROES_DATA = ROOT / "data" / "heroes_data.json"
 
 _SPEC = importlib.util.spec_from_file_location(
     "rewrite_summaries", ROOT / "scripts" / "rewrite-summaries.py"
@@ -1934,9 +1935,19 @@ def build_overview() -> str:
         "Up to five partners by combined score. Omitted: ATK-only, Max HP",
         "buff-only, and Shield-only (unless the hero benefits from Max HP/",
         "shields). Rare conditional buffs score lower.",
+        "Meta tiers from "
+        "[Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).",
         "Regenerate: `python3 scripts/generate-heroes-overview.py`.",
         "",
     ]
+
+    tiers_by_title: dict[str, dict[str, str]] = {}
+    if HEROES_DATA.is_file():
+        payload = json.loads(HEROES_DATA.read_text(encoding="utf-8"))
+        for record in payload.get("heroes", []):
+            tiers = record.get("prydwen_tiers")
+            if tiers and record.get("title"):
+                tiers_by_title[record["title"]] = tiers
 
     for hero in heroes:
         syn_lines = format_synergies(
@@ -1948,7 +1959,13 @@ def build_overview() -> str:
         parts.append("")
         hero_name = short_name(hero.title)
         behavior = behavior_by_title[hero.title]
-        parts.extend(_rs.format_behavior_section(hero_name, behavior))
+        parts.extend(
+            _rs.format_behavior_section(
+                hero_name,
+                behavior,
+                prydwen_tiers=tiers_by_title.get(hero.title),
+            )
+        )
         parts.append(f"### Units {hero_name} benefits from")
         parts.append("")
         parts.extend(syn_lines)

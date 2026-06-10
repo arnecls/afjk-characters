@@ -23,7 +23,7 @@ ensure-venv:
       .venv/bin/pip install -q -r requirements.txt
     fi
 
-# Refresh data/heroes_data.json from live sources (Fandom baseline; needs network).
+# Refresh data/heroes_data.json from live sources (Fandom, Yaphalla, Prydwen).
 download:
     python3 scripts/download_heroes.py
 

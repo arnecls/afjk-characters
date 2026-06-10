@@ -1,6 +1,6 @@
 {
-  "heroes_header": "# AFK Journey Heroes\n\nSkill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\nSummaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).\n",
-  "yaphalla_header": "# AFK Journey Heroes\n\nSkill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\nSummaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).\n",
+  "heroes_header": "# AFK Journey Heroes\n\nSkill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\nMeta tiers from [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).\nSummaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).\n",
+  "yaphalla_header": "# AFK Journey Heroes\n\nSkill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).\nMeta tiers from [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).\nSummaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).\n",
   "fandom_header": "# AFK Journey Heroes\n\nSkill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List).\nSummaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).\n",
   "heroes": [
     {
@@ -159,7 +159,13 @@
           "levels": [],
           "description_lite": "Each time an ally with Brightfeather unleashes a set number of feathers, Aliceth's Ultimate is enhanced to fire additional volleys of arrows with each cast."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "S",
+        "dream_realm": "B",
+        "dream_realm_endless": "S+"
+      }
     },
     {
       "title": "Alna - Frozen Mother",
@@ -319,7 +325,13 @@
           "levels": [],
           "description_lite": "Alna and her Winter Warrior gain a stat buff. The first time either of them leaves the Chilling Presence state, Alna or the Winter Warrior freezes nearby enemies."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S+",
+        "pvp": "S+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Alsa - Desert Flare",
@@ -478,7 +490,13 @@
           "levels": [],
           "description_lite": "Rolling Boulder deals extra damage to enemies recently affected by multiple control effects."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Antandra - Desert Fury",
@@ -644,7 +662,13 @@
           ],
           "description_lite": "Antandra increases her Phys DEF when Shield Assault hits the enemy."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Arden - Oak Sage",
@@ -804,7 +828,13 @@
           "levels": [],
           "description_lite": "Arden reduces the lightning strike interval of Force of Nature for the same enemy."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Atalanta - Fortune Finder",
@@ -969,7 +999,13 @@
           ],
           "description_lite": "Atalanta heals herself when Wild Sniper hits the enemy directly."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Athalia - Harbinger of Justice",
@@ -1129,7 +1165,13 @@
           "levels": [],
           "description_lite": "Reduces the target enemy's shield value."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "S+",
+        "dream_realm": "B",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Aurora - Celestial of Dreams",
@@ -1284,7 +1326,13 @@
           "levels": [],
           "description_lite": "If Aurora's Energy is above a certain threshold while she's asleep, the range of Plushification increases."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "B",
+        "dream_realm": "S+",
+        "dream_realm_endless": "S+"
+      }
     },
     {
       "title": "Baelran - Dawnblade",
@@ -1443,7 +1491,13 @@
           "levels": [],
           "description_lite": "The extra damage from Baelran's Sanctified Surge reduces the max HP of non-boss enemies by a set percentage, or causes extra HP loss to bosses."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "S",
+        "dream_realm": "A",
+        "dream_realm_endless": "S"
+      }
     },
     {
       "title": "Berial - Sinister Jester",
@@ -1602,7 +1656,13 @@
           "levels": [],
           "description_lite": "Increases the hiding duration after being defeated."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Bonnie - Obsidian Claws",
@@ -1760,7 +1820,13 @@
           "levels": [],
           "description_lite": "When Aging reaches its maximum stack on an enemy, they take more magic damage."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A+",
+        "dream_realm": "A",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Brutus - Blood Claw",
@@ -1921,7 +1987,13 @@
           "levels": [],
           "description_lite": "Brutus increases the skill duration of Indomitable."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Bryon - Evergreen Sentinel",
@@ -2087,7 +2159,13 @@
           ],
           "description_lite": "Bryon generates two leaves beside Elona when casting Leafblade Gale."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A+",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Callan - Grim Soulkeeper",
@@ -2252,7 +2330,13 @@
           ],
           "description_lite": "Callan recovers a certain amount of HP when gaining a shield."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "A+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Carolina - Candlelight Specter",
@@ -2409,7 +2493,13 @@
           "description": "Carolina inflicts Frostbite when dealing damage with Snowball Witchery.",
           "levels": []
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Cassadee - Azure Prodigy",
@@ -2575,7 +2665,13 @@
           ],
           "description_lite": "Cassadee reduces Magic DEF of enemies hit by Running Tide for a while."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "A+",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Cecia - Requiem of Thorns",
@@ -2733,7 +2829,13 @@
           "levels": [],
           "description_lite": "The required normal attacks to trigger Agonizing Puncture is reducted."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Chippy - Acorn Knight",
@@ -2997,7 +3099,13 @@
           "levels": [],
           "description_lite": "Contess punishes enemies who violate a school rule with an extra effect."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "S",
+        "dream_realm": "S+",
+        "dream_realm_endless": "S+"
+      }
     },
     {
       "title": "Cryonaia - Arctic Revenant",
@@ -3163,7 +3271,13 @@
           ],
           "description_lite": "Cryonaia instantly defeats enemies within the domain of Eternal Winter when their HP falls below a certain percentage."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "S",
+        "dream_realm": "A",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Cyran - Umbral Weaver",
@@ -3323,7 +3437,13 @@
           "levels": [],
           "description_lite": "Gains extra Energy."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "S",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Daimon - Forsaken Child",
@@ -3480,7 +3600,13 @@
           "levels": [],
           "description_lite": "Converts leftover shield value into HP."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "A",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Damian - Woody Wonder",
@@ -3644,7 +3770,13 @@
           ],
           "description_lite": "The blind duration increases when the toy chariot's HP ratio is high."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "B",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Dionel - Venus of Dawn",
@@ -3809,7 +3941,13 @@
           ],
           "description_lite": "Dionel increases Execution within the duration of Nectar Feast if it's been activated."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "S",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Dunlingr - Eternal Voice",
@@ -3973,7 +4111,13 @@
           ],
           "description_lite": "Dunlingr increases ATK SPD or Life Drain for allies upon casting Echo of Silence."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "S+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Eironn - Stormsword",
@@ -4135,7 +4279,13 @@
           "levels": [],
           "description_lite": "Eironn reduces an extra Magic DEF on a target if they are immobilized by Verdant Cyclone."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S+",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Elijah & Lailah - Celestial Twins",
@@ -4294,7 +4444,13 @@
           "description": "Elijah and Lailah increase the ATK, Phys DEF, and Magic DEF of each ally linked through Stellar Bond. The increases for each linked ally are equal to 15% of the highest corresponding stats among other linked allies, but cannot exceed 30% of the original corresponding stats of Elijah and Lailah. These stat boosts are not included when calculating increases from this skill.",
           "levels": []
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "A+",
+        "dream_realm": "S+",
+        "dream_realm_endless": "S+"
+      }
     },
     {
       "title": "Evie - Royal Envoy",
@@ -4451,7 +4607,13 @@
           "levels": [],
           "description_lite": "After gathering intel on all enemies, Evie sends out an extra quill."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "B",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Faramor - Silverfang Mantle",
@@ -4608,7 +4770,13 @@
           "levels": [],
           "description_lite": "Faramor reduces the Vitality of enemies who revive within his magic circle."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "B",
+        "dream_realm": "S",
+        "dream_realm_endless": "A+"
+      }
     },
     {
       "title": "Fay - Colorful Dancer",
@@ -4766,7 +4934,13 @@
           "levels": [],
           "description_lite": "Fay grants a low-HP ally powerful healing once when Healing Gemstones takes effect."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Florabelle - Blooming Maiden",
@@ -4931,7 +5105,13 @@
             }
           ]
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "B",
+        "dream_realm": "S",
+        "dream_realm_endless": "S"
+      }
     },
     {
       "title": "Frieren - The Legendary Mage",
@@ -5089,7 +5269,13 @@
           "levels": [],
           "description_lite": "Frieren knocks the enemy with the highest cumulative damage dealt into the air before knocking them down."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A+",
+        "dream_realm": "B",
+        "dream_realm_endless": "S+"
+      }
     },
     {
       "title": "Galahad - Daughter of Dawn",
@@ -5251,7 +5437,13 @@
           "levels": [],
           "description_lite": "Galahad continuously recovers Energy and becomes steadfast while affected by Merlin's buffs."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "A",
+        "dream_realm": "B",
+        "dream_realm_endless": "S+"
+      }
     },
     {
       "title": "Gerda - Soothing Siren",
@@ -5415,7 +5607,13 @@
           ],
           "description_lite": "Gerda no longer interrupts enemies during Spring Therapy but stuns them instead."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Granny Dahnie - Forest Guardian",
@@ -5579,7 +5777,13 @@
           ],
           "description_lite": "Granny Dahnie recovers HP when shooting seeds using Seed Cannon."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "B",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Gunnar - Iron Doom",
@@ -5738,7 +5942,13 @@
           "levels": [],
           "description_lite": "If an area is already set on fire, striking it again with Doomsday Meteor intensifies the fire, preventing affected enemies from healing or gaining shields."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S+",
+        "pvp": "S",
+        "dream_realm": "S+",
+        "dream_realm_endless": "S+"
+      }
     },
     {
       "title": "Gwyneth - Dragonslayer Knight",
@@ -5896,7 +6106,13 @@
           "levels": [],
           "description_lite": "Gwyneth reduces her normal attack interval when there are no enemies nearby."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "S",
+        "dream_realm": "S+",
+        "dream_realm_endless": "?"
+      }
     },
     {
       "title": "Hammie - Acorn Mage",
@@ -6158,7 +6374,13 @@
           "levels": [],
           "description_lite": "Upon assisting or defeating a number of units, Harak recovers Energy from casting Vicious Bite."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "A+"
+      }
     },
     {
       "title": "Hepler - Master of Forms",
@@ -6316,7 +6538,13 @@
           "levels": [],
           "description_lite": "Whenever Hepler spends Spark stacks, he and the protected ally permanently increase their Phys & Magic DEF and reduce their damage taken."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Hewynn - Tender Leaf",
@@ -6475,7 +6703,13 @@
           "levels": [],
           "description_lite": "Hewynn increases the target's Haste for seconds when Revitalize is in effect."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Himmel - The Legendary Hero",
@@ -6635,7 +6869,13 @@
           "levels": [],
           "description_lite": "Himmel and his party members cause increased HP loss on bosses."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "A",
+        "dream_realm_endless": "A+"
+      }
     },
     {
       "title": "Hodgkin - Reviled Captain",
@@ -6801,7 +7041,13 @@
           ],
           "description_lite": "Hodgkin reduces the Phys DEF of enemies hit by the cannon."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Hugin - Maverick Smith",
@@ -6961,7 +7207,13 @@
           "levels": [],
           "description_lite": "While active, the shield Hugin grants also reduces the protected ally's damage taken."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S+",
+        "pvp": "A+",
+        "dream_realm": "B",
+        "dream_realm_endless": "S"
+      }
     },
     {
       "title": "Igor - Mad Dagger",
@@ -7118,7 +7370,13 @@
           "levels": [],
           "description_lite": "Igor summons an extra tombstone with Funereal Ring when a battle starts."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "A+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Indris - Chain Breaker",
@@ -7282,7 +7540,13 @@
           ],
           "description_lite": "After hitting an enemy with Arcane Binding, Indris can trigger the exposed weakness damage without cooldown for a while."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "A+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Isabella - The Taken Soul",
@@ -7440,7 +7704,13 @@
           "levels": [],
           "description_lite": "Whenever Isabella's companion receives a powerful buff, Isabella gains an extra stack of spell note."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "S",
+        "dream_realm_endless": "A+"
+      }
     },
     {
       "title": "Kafra - Gale Rider",
@@ -7601,7 +7871,13 @@
           "levels": [],
           "description_lite": "The damage of Relentless Chase's first casting is increased."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Koko - Wild Child",
@@ -7760,7 +8036,13 @@
           "levels": [],
           "description_lite": "Increases the target's Vitality for a while after Koko feeds them using Fulfilling Feast."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "B",
+        "dream_realm": "B",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Kordan - Ironblood Chieftain",
@@ -7920,7 +8202,13 @@
           "levels": [],
           "description_lite": "Whenever Kordan assists or defeats an enemy inside the hunting circle, he leaps to a new target and moves the circle to his new position."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "A",
+        "dream_realm": "S+",
+        "dream_realm_endless": "S"
+      }
     },
     {
       "title": "Korin - Wood Warden",
@@ -8078,7 +8366,13 @@
           "levels": [],
           "description_lite": "Korin reduces damage taken from enemy beyond 1 tile."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Kruger - Dauntless Warrior",
@@ -8236,7 +8530,13 @@
           "levels": [],
           "description_lite": "Kruger gains an ATK boost when a Vulnerable enemy is defeated."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "S",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Kulu - Blast Master",
@@ -8396,7 +8696,13 @@
           "levels": [],
           "description_lite": "Kulu gains extra ATK SPD and Ranged DEF during battle, with the values based on the number of enemies on her half of the battlefield."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "S",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Laios - Dungeon Adventurer",
@@ -8556,7 +8862,13 @@
           "levels": [],
           "description_lite": "Laios permanently increases his max HP after collecting ingredents."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Lenya - Wild Cyclone",
@@ -8720,7 +9032,13 @@
           ],
           "description_lite": "Reduces damage taken from enemies other than her target."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "A+",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Lily May - Twilight Tracker",
@@ -8877,7 +9195,13 @@
           "levels": [],
           "description_lite": "When Lily May first interrupts an enemy's Ultimate, the enemy loses more Energy."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "A+",
+        "dream_realm": "B",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Lorsan - Windweaver Protector",
@@ -9043,7 +9367,13 @@
           ],
           "description_lite": "Zephyr's Embrace also makes the protected target unaffected."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Lucca - Stalwart Fighter",
@@ -9209,7 +9539,13 @@
           ],
           "description_lite": "Lucca recovers HP when casting Courageous Call."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Lucius - The Lightbringer",
@@ -9370,7 +9706,13 @@
           "levels": [],
           "description_lite": "Lucius heals an additional ally with Divine Light Blessing."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Lucy - Celestial Spirit Mage",
@@ -9694,7 +10036,13 @@
           "levels": [],
           "description_lite": "Enemies who step into the everbloom field will take damage and be stunned."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Lumont - Benign Horn",
@@ -9855,7 +10203,13 @@
           "levels": [],
           "description_lite": "Lumont recovers HP per second while shielded by Totem Ward."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Lyca - Keeper of Glades",
@@ -10022,7 +10376,13 @@
           ],
           "description_lite": "Lyca reduces the target's Phys DEF if they are hit by Comet Archery."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "A+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Marcille - Elven Mage",
@@ -10183,7 +10543,13 @@
           "levels": [],
           "description_lite": "Marcille recovers additional Energy while buffed by allies."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "S",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Marilee - Forest's Arrow",
@@ -10341,7 +10707,13 @@
           "levels": [],
           "description_lite": "Marilee triggers Hyperfocus more easily."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Mehira - Mind Cager",
@@ -10502,7 +10874,13 @@
           "levels": [],
           "description_lite": "Increases the damage taken by enemies charmed or bewitched by Mehira."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S+",
+        "pvp": "A+",
+        "dream_realm": "A",
+        "dream_realm_endless": "A+"
+      }
     },
     {
       "title": "Mikola - Warbeat Compere",
@@ -10659,7 +11037,13 @@
           "description": "Mikola's Courage Sphere remains unaffected in duration if her side gains control of the Honor Arena.",
           "levels": []
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "A",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Mirael - Scarlet Sorceress",
@@ -10826,7 +11210,13 @@
           ],
           "description_lite": "Mirael increases the burning duration of Bone Sear."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Nara - Wrathful Wraith",
@@ -10990,7 +11380,13 @@
           ],
           "description_lite": "After defating an enemy with Crimson Vengeance, Nara recovers Energy."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Natsu - Fire Dragon Slayer Mage",
@@ -11306,7 +11702,13 @@
           "levels": [],
           "description_lite": "Each time Nazrik lands a critical hit, that hit gains increased Crit DMG Boost."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "B",
+        "dream_realm": "A",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Nerion - Bereaved Tide",
@@ -11464,7 +11866,13 @@
           "levels": [],
           "description_lite": "When all non-summoned enemies are under the drowning effect, Nerion becomes permanently empowered by the force of the tide and increases his Penetration."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Niru - Soul Collector",
@@ -11631,7 +12039,13 @@
           ],
           "description_lite": "Niru's Soul Reaping briefly prevents the enemy from recovering HP."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A+",
+        "pvp": "S",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Odie - Desert Defender",
@@ -11790,7 +12204,13 @@
           "levels": [],
           "description_lite": "Odie increases Triple Tap's damage when hitting a poisoned target."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Pandora - Hope Unleashed",
@@ -11948,7 +12368,13 @@
           "levels": [],
           "description_lite": "Allies placed inside the box are immune to Pandora's Ultimate."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A+",
+        "dream_realm": "C",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Pang - Bamboo Guardian",
@@ -12107,7 +12533,13 @@
           "levels": [],
           "description_lite": "Pang immediately gains a Chi Barrier upon entering the Unyielding Force stance. While in this stance, he gains extra DEF Penetration."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Parisa - Ode to Flowers",
@@ -12270,7 +12702,13 @@
           ],
           "description_lite": "Parisa triggers Flower Power with fewer normal attacks."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Perseus - Chosen Champion",
@@ -12427,7 +12865,13 @@
           "levels": [],
           "description_lite": "Expands the range of fertile ground."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "S+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Phraesto - Misty Scorpion",
@@ -12588,7 +13032,13 @@
           "levels": [],
           "description_lite": "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield when a battle starts."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Pippa - The Muddled Magician",
@@ -12747,7 +13197,13 @@
           "levels": [],
           "description_lite": "Pippa sends the teleported targets falling through portals."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Ravion - Twilight's Burden",
@@ -12906,7 +13362,13 @@
           "levels": [],
           "description_lite": "When an ally accepts Ravion's Objective, they temporarily increase their ATK and becoming unaffected for a short period."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "A+",
+        "dream_realm": "S",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Reinier - Symmetric Sin",
@@ -13065,7 +13527,13 @@
           "levels": [],
           "description_lite": "Reinier increases the allied herp's ATK if they're in a symmetrical position with an enemy hero."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "B",
+        "dream_realm": "A",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Rhys - Fiery Cavalier",
@@ -13229,7 +13697,13 @@
           ],
           "description_lite": "The cooldown of Defensive Stance is reduced."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Rowan - The Roamer",
@@ -13389,7 +13863,13 @@
           "levels": [],
           "description_lite": "Rowan places 1 more health potion using Smart Stall."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "A",
+        "dream_realm": "A",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Saida - Vampiric Vine",
@@ -13546,7 +14026,13 @@
           "levels": [],
           "description_lite": "When a battle starts, Saida plants Drain Seeds in nearby allies."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S+",
+        "pvp": "S+",
+        "dream_realm": "A",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Salazer - Lash of Bantus",
@@ -13709,7 +14195,13 @@
           ],
           "description_lite": "Salazer heals himself after imprisoning an enemy."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Satrana - Ember Enchantress",
@@ -13872,7 +14364,13 @@
           ],
           "description_lite": "Vixen Rush's cooldown is removed when all enemy heroes have been ignited."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Scarlita - Herald of Compassion",
@@ -14036,7 +14534,13 @@
           ],
           "description_lite": "Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie Spirit to protect them."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Seth - Swift Shadow",
@@ -14194,7 +14698,13 @@
           "levels": [],
           "description_lite": "Seth reduces the target's Phys DEF by an extra amount if he carries Bloodlust when casting Predator's Lunge."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Shadewing - Undying Vow",
@@ -14352,7 +14862,13 @@
           "levels": [],
           "description_lite": "When a battle starts, Shadewing drains HP from the ally 1 tile in front of him to gain a shield and stat bonuses."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A+",
+        "pvp": "S+",
+        "dream_realm": "S",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Shakir - Furious Howl",
@@ -14505,7 +15021,13 @@
           "levels": [],
           "description_lite": "Shakir casts Savage Cleave to reduce the target's Vitality"
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "B",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Shemira - Corpsemaker",
@@ -14665,7 +15187,13 @@
           "levels": [],
           "description_lite": "Each time a hero is defeated, Shemira summons a ghost."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "A+",
+        "dream_realm": "S+",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Silven - Heir of Glory",
@@ -14822,7 +15350,13 @@
           "levels": [],
           "description_lite": "Silven deals more damage to enemies with a high HP ratio."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "A+",
+        "dream_realm": "S",
+        "dream_realm_endless": "A+"
+      }
     },
     {
       "title": "Silvina - The Taken Breath",
@@ -14980,7 +15514,13 @@
           "levels": [],
           "description_lite": "Silvina reduces the target's Vitality with each Whirl Assault."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Sinbad - Seaside Savant",
@@ -15139,7 +15679,13 @@
           "levels": [],
           "description_lite": "Sinbad deals extra damage to enemies he has marked."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Smokey & Meerky - Wasteland Apothecary",
@@ -15299,7 +15845,13 @@
           "levels": [],
           "description_lite": "Smokey & Meerky use Special Aroma to recover more HP."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "S"
+      }
     },
     {
       "title": "Solise - Floral Wonder",
@@ -15457,7 +16009,13 @@
           "levels": [],
           "description_lite": "When a Bulbsprite deals damage, it deals extra damage equal to a portion of the total excess healing it has stored."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "S",
+        "dream_realm": "S+",
+        "dream_realm_endless": "S"
+      }
     },
     {
       "title": "Sonja - Crimson Queenpin",
@@ -15615,7 +16173,13 @@
           "levels": [],
           "description_lite": "Sonja converts some of the damage dealt by Tempest Thrusts into self-healing."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "B",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Soren - Silent Fury",
@@ -15778,7 +16342,13 @@
           ],
           "description_lite": "Increases the knockback distance of the next Repel Sweep when triggering Deflecting Swing, dealing extra damage."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Sylphira - Sovereign of Song",
@@ -15938,7 +16508,13 @@
           "levels": [],
           "description_lite": "Once her score is activated, Sylphira's normal attacks deal extra true damage and gain Life Drain."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A",
+        "pvp": "S",
+        "dream_realm": "A+",
+        "dream_realm_endless": "?"
+      }
     },
     {
       "title": "Talene - Resurging Flame",
@@ -16095,7 +16671,13 @@
           "levels": [],
           "description_lite": "Talene increases her HP recovery rate when defeated for the first time."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Tasi - Fairy of Dreams",
@@ -16253,7 +16835,13 @@
           "levels": [],
           "description_lite": "Tasi gains an extra attempt to cast Fluttering Dream each time she assists or defeats an enemy."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Temesia - Lightsavior",
@@ -16416,7 +17004,13 @@
           ],
           "description_lite": "Tamesia reduces the enemys phys DEF if they are hit by the Knight's Heart."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Thador - Ironsworn General",
@@ -16576,7 +17170,13 @@
           "levels": [],
           "description_lite": "Thador continuously restores his own HP while his lieutenant is alive."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S",
+        "pvp": "A+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Thoran - Fallen King",
@@ -16741,7 +17341,13 @@
           "levels": [],
           "description_lite": "Thoran drains HP from the enemy again when casting Soul Retaliation."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "B",
+        "dream_realm": "A+",
+        "dream_realm_endless": "A"
+      }
     },
     {
       "title": "Tilaya - Wild Blade",
@@ -16900,7 +17506,13 @@
           "levels": [],
           "description_lite": "Increases Vine Ward's shield recovery speed while Tilaya casts her Ultimate."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Ulmus - Grove Keeper",
@@ -17058,7 +17670,13 @@
           "levels": [],
           "description_lite": "Ulmus knocks back adjacent enemies when the shield granted by Verdant Barrier breaks."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Vala - Phantom of Oakenfell",
@@ -17221,7 +17839,13 @@
           ],
           "description_lite": "Vala deals a higher damage to the marked enemy."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Valen - Roving Swordsman",
@@ -17388,7 +18012,13 @@
           ],
           "description_lite": "Valen stuns the enemy with Fury Thunder Strike."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Valka - Forsaken Blade",
@@ -17551,7 +18181,13 @@
           ],
           "description_lite": "While shield granted by Spectral Bulwark is active, Valka recovers Energy from launching normal attacks."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "A+",
+        "dream_realm_endless": "B"
+      }
     },
     {
       "title": "Velara - Pale Votary",
@@ -17709,7 +18345,13 @@
           "levels": [],
           "description_lite": "After all magic circles are awakened, Ruthless Rite causes them to cover the entire battlefield until the battle ends. Each subsequent cast makes allies unaffected and increases their damage."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "S+",
+        "pvp": "B",
+        "dream_realm": "S+",
+        "dream_realm_endless": "S"
+      }
     },
     {
       "title": "Viperian - Shadow Serpent",
@@ -17871,7 +18513,13 @@
           "levels": [],
           "description_lite": "Darkvipers return when the possessed enemies are defeated, recovering HP and Energy for Viperian."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Walker - Wildland Outlaw",
@@ -18033,7 +18681,13 @@
           ],
           "description_lite": "Walker gains a shield when dealing damage to the bounty target for the first time."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "B",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Zandrok - Watchful Edge",
@@ -18191,7 +18845,13 @@
           "levels": [],
           "description_lite": "Any excess healing Zandrok receives is converted into max HP."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A+",
+        "pvp": "A+",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     },
     {
       "title": "Zanie - Timeless Tinkerer",
@@ -18351,7 +19011,13 @@
           "levels": [],
           "description_lite": "Laser turret attacks burn enemies hit."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "A+",
+        "pvp": "A",
+        "dream_realm": "S",
+        "dream_realm_endless": "A+"
+      }
     },
     {
       "title": "Zorya - Watcher in Stone",
@@ -18510,7 +19176,13 @@
           "levels": [],
           "description_lite": "When Zorya takes a fatal blow, she avoids defeat and immediately enters the dormán state."
         }
-      ]
+      ],
+      "prydwen_tiers": {
+        "afk_stages": "C",
+        "pvp": "S",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      }
     }
   ]
 }

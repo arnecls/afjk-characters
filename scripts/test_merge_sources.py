@@ -156,6 +156,24 @@ class MergeSourcesTests(unittest.TestCase):
         self.assertEqual(_rs.curated_display_name("Galahad"), "Galahad")
         self.assertEqual(_rs.curated_display_name("Aliceth"), "Aliceth")
 
+    def test_apply_prydwen_tiers_attaches_and_reports_missing(self) -> None:
+        heroes = [
+            {"name": "Aliceth", "title": "Aliceth - Radiant Wings"},
+            {"name": "Chippy", "title": "Chippy"},
+        ]
+        tiers = {
+            "Aliceth": {
+                "afk_stages": "B",
+                "dream_realm": "B",
+                "dream_realm_endless": "S+",
+                "pvp": "S",
+            }
+        }
+        missing = io.apply_prydwen_tiers(heroes, tiers)
+        self.assertEqual(missing, ["Chippy"])
+        self.assertEqual(heroes[0]["prydwen_tiers"]["pvp"], "S")
+        self.assertNotIn("prydwen_tiers", heroes[1])
+
 
 if __name__ == "__main__":
     unittest.main()

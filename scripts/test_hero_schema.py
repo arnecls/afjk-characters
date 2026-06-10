@@ -228,6 +228,28 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertEqual(overview["ultimate"].speed, "slow")
         self.assertEqual(overview["non_ultimate"].speed, "fast")
 
+    def test_format_behavior_includes_prydwen_tiers_line(self):
+        _, behavior = self._hero_by_display("Aliceth")
+        tiers = {
+            "afk_stages": "B",
+            "dream_realm": "B",
+            "dream_realm_endless": "S+",
+            "pvp": "S",
+        }
+        lines = rs.format_behavior_section(
+            "Aliceth", behavior, prydwen_tiers=tiers
+        )
+        text = "\n".join(lines)
+        self.assertIn("### Aliceth's behavior\n", text)
+        self.assertIn(
+            "`AFK Stages [B]`, `Dream Realm [B]`, "
+            "`Dream Realm (Endless) [S+]`, `PVP [S]`",
+            text,
+        )
+        sig_idx = text.index("- **Signature skill**")
+        tier_idx = text.index("`AFK Stages [B]`")
+        self.assertLess(tier_idx, sig_idx)
+
     def test_format_behavior_has_skill_overview(self):
         _, behavior = self._hero_by_display("Hugin")
         lines = rs.format_behavior_section("Hugin", behavior)

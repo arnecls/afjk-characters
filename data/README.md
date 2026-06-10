@@ -7,7 +7,7 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 
 | File | Category | Notes |
 | --- | --- | --- |
-| [heroes_data.json](heroes_data.json) | **Script-generated** | Merged roster from the Fandom wiki (baseline) and Yaphalla (gap-fill). Regenerate with `just download`. Committed as the canonical skill source when offline. |
+| [heroes_data.json](heroes_data.json) | **Script-generated** | Merged roster from the Fandom wiki (baseline), Yaphalla (gap-fill), and Prydwen meta tiers. Each hero may include `prydwen_tiers` with `afk_stages`, `dream_realm`, `dream_realm_endless`, and `pvp` ratings. Regenerate with `just download`. Committed as the canonical skill source when offline. |
 | [heroes_data_processed.json](heroes_data_processed.json) | **Script-generated** | Per-hero analysis: effects, behavior, synergy profile, magnitudes. Regenerate with `just analyze` (or `just views`). Do not edit by hand. |
 | [heroes_data_synergies.json](heroes_data_synergies.json) | **Script-generated** | Roster-wide synergy rankings, beneficiaries, and replacements. Regenerate with `just analyze` or `just analyze-synergies`. Do not edit by hand. |
 | [signature_skills.json](signature_skills.json) | **AI-generated** | Signature skill per hero by category (`signature_calculated`, optional `signature_override`, optional `speed_override`). Skill names come from `heroes_data.json`; edit when a hero’s identity skill is wrong. |

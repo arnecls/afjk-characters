@@ -63,5 +63,40 @@ class FandomParseTests(unittest.TestCase):
         )
 
 
+_ALICETH_PRYDWEN_HTML = """\
+<h5>General Ratings</h5><div class="detailed-ratings general">
+<div class="rating-box-container "><span><div class="rating-box reverse reverse B">B</div></span><p>AFK Stages</p></div>
+<div class="rating-box-container "><span><div class="rating-box reverse reverse S">S</div></span><p>PVP</p></div>
+<div class="rating-box-container "><span><div class="rating-box reverse reverse B">B</div></span><p>Dream Realm</p></div>
+<div class="rating-box-container "><span><div class="rating-box reverse reverse S-plus">S+</div></span><p>Dream Realm (Endless)</p></div>
+</div>
+"""
+
+
+class PrydwenParseTests(unittest.TestCase):
+    def test_parse_ratings_normalizes_tiers(self) -> None:
+        ratings = sources_web._parse_prydwen_ratings(_ALICETH_PRYDWEN_HTML)
+        self.assertEqual(
+            ratings,
+            {
+                "afk_stages": "B",
+                "pvp": "S",
+                "dream_realm": "B",
+                "dream_realm_endless": "S+",
+            },
+        )
+
+    def test_parse_ratings_pending_endless(self) -> None:
+        html = _ALICETH_PRYDWEN_HTML.replace(
+            'reverse S-plus">S+</div></span><p>Dream Realm (Endless)</p>',
+            'reverse pending">?</div></span><p>Dream Realm (Endless)</p>',
+        )
+        ratings = sources_web._parse_prydwen_ratings(html)
+        self.assertEqual(ratings["dream_realm_endless"], "?")
+
+    def test_parse_ratings_missing_section(self) -> None:
+        self.assertIsNone(sources_web._parse_prydwen_ratings("<html></html>"))
+
+
 if __name__ == "__main__":
     unittest.main()

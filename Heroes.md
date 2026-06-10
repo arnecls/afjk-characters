@@ -1,6 +1,7 @@
 # AFK Journey Heroes
 
 Skill data sourced from [AFK Journey Wiki](https://afk-journey.fandom.com/wiki/Hero/List), with gaps filled from [Yaphalla Heroes](https://www.yaphalla.com/heroes).
+Meta tiers from [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).
 Summaries live in [heroes-overview.md](heroes-overview.md) (see `scripts/generate-heroes-overview.py`).
 
 ## Aliceth - Radiant Wings

@@ -5488,6 +5488,24 @@ def _format_skill_summary_subsections(
     return lines
 
 
+_PRYDWEN_TIER_LABELS: tuple[tuple[str, str], ...] = (
+    ("afk_stages", "AFK Stages"),
+    ("dream_realm", "Dream Realm"),
+    ("dream_realm_endless", "Dream Realm (Endless)"),
+    ("pvp", "PVP"),
+)
+
+
+def format_prydwen_tiers_line(tiers: dict[str, str]) -> str:
+    """Comma-separated Prydwen meta tier line for the behavior section."""
+    parts = [
+        f"`{label} [{tiers[key]}]`"
+        for key, label in _PRYDWEN_TIER_LABELS
+        if tiers.get(key)
+    ]
+    return ", ".join(parts)
+
+
 def format_behavior_section(
     display_name: str,
     behavior: HeroBehavior,
@@ -5495,8 +5513,14 @@ def format_behavior_section(
     skill_summaries: dict[str, str] | None = None,
     hero_categories: set[str] | None = None,
     include_skill_summaries: bool = True,
+    prydwen_tiers: dict[str, str] | None = None,
 ) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
+    if prydwen_tiers:
+        tier_line = format_prydwen_tiers_line(prydwen_tiers)
+        if tier_line:
+            lines.append(tier_line)
+            lines.append("")
     if behavior.signature_skill_name:
         lines.append(
             _behavior_bullet(

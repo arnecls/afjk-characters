@@ -132,6 +132,16 @@ in isolation.
 strength. **Conditional (rare)** lowers magnitude by two steps; some labels
 (Invincible, Fatal blow immunity) are always high.
 
+## Meta tiers (Prydwen)
+
+Per-mode strength ratings (`S+`, `S`, `A+`, `A`, `B`, `C`, `?`) are stored on
+each hero in `heroes_data.json` as `prydwen_tiers` (`afk_stages`, `dream_realm`,
+`dream_realm_endless`, `pvp`). Sourced from the
+[Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list) via character
+pages during `just download`. Shown at the top of each hero's behavior section
+in `heroes-overview.md` (comma-separated text) and the site viewer (tier boxes).
+Do not confuse these with ascension unlock tiers in skill summaries.
+
 Synergy scoring weights magnitude (high > medium > low). When auditing,
 compare heroes with the same buff/debuff label — wrong targeting or clause
 parsing often yields wrong indicators.

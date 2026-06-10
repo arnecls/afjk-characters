@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Build heroes_data.json by downloading and merging both hero data sources.
+"""Build heroes_data.json by downloading and merging hero data sources.
 
-Fetches live data from the Fandom MediaWiki API (baseline) and Yaphalla
-(gap-fill only), then merges them into ``heroes_data.json``. The Fandom
-record drives ``Heroes.md`` and analysis (translated text, Skill Range,
-Initial Energy). Yaphalla fills only missing fields and untranslated strings
-are skipped.
+Fetches live data from the Fandom MediaWiki API (baseline), Yaphalla
+(gap-fill only), and Prydwen character pages (meta tiers), then merges them
+into ``heroes_data.json``. The Fandom record drives ``Heroes.md`` and analysis
+(translated text, Skill Range, Initial Energy). Yaphalla fills only missing
+fields and untranslated strings are skipped. Prydwen supplies per-mode meta
+tier ratings (S+, S, A, etc.) from their tier list.
 
 Network access is required. ``heroes_data.json`` is the canonical, committed
 source for the pipeline; re-running this refreshes it from live data, which may
@@ -29,13 +30,21 @@ def build_from_web() -> dict:
     fandom = sources_web.fetch_fandom()
     print("Fetching Yaphalla (gap-fill)...")
     yaphalla = sources_web.fetch_yaphalla()
-    return io.merge_sources(
+    data = io.merge_sources(
         fandom,
         yaphalla,
         heroes_header=io._HEROES_MD_HEADER,
         fandom_header=sources_web.FANDOM_HEADER,
         gapfill=True,
     )
+    print("Fetching Prydwen meta tiers...")
+    tiers = sources_web.fetch_prydwen_tiers([h["name"] for h in data["heroes"]])
+    missing = io.apply_prydwen_tiers(data["heroes"], tiers)
+    if missing:
+        print(f"  Warning: no Prydwen tiers for {len(missing)} hero(es): "
+              f"{', '.join(missing)}")
+    print(f"  Attached tiers for {len(tiers)} hero(es)")
+    return data
 
 
 def main() -> None:
@@ -44,7 +53,7 @@ def main() -> None:
     n = len(data["heroes"])
     print(
         f"Wrote {io.HEROES_DATA.relative_to(io.ROOT)} "
-        f"({n} heroes, Fandom baseline with Yaphalla gap-fill)"
+        f"({n} heroes, Fandom + Yaphalla gap-fill + Prydwen tiers)"
     )
 
 

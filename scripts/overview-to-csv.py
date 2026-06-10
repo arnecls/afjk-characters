@@ -107,6 +107,10 @@ COLUMNS: list[str] = (
         "Name",
         "Faction",
         "Class",
+        "AFK Stages tier",
+        "Dream Realm tier",
+        "Dream Realm Endless tier",
+        "PVP tier",
         "Movement",
         "Signature skill speed",
         "Non-ultimate speed",
@@ -159,6 +163,10 @@ class HeroRow:
     name: str
     faction: str = ""
     class_name: str = ""
+    afk_stages_tier: str = ""
+    dream_realm_tier: str = ""
+    dream_realm_endless_tier: str = ""
+    pvp_tier: str = ""
     movement: str = ""
     signature_skill_speed: str = ""
     non_ult_speed: str = ""
@@ -247,8 +255,8 @@ def parse_behavior(block: str) -> tuple[str, str, str]:
     return movement, defining_skill_speed, non_ult_speed
 
 
-def _load_hero_faction_class() -> dict[str, tuple[str, str]]:
-    """Map overview short name -> (faction, class) from heroes_data.json."""
+def _load_heroes_data_by_short_name() -> dict[str, dict]:
+    """Map overview short name -> hero record from heroes_data.json."""
     spec = importlib.util.spec_from_file_location(
         "gen_overview", SCRIPTS / "generate-heroes-overview.py"
     )
@@ -259,14 +267,32 @@ def _load_hero_faction_class() -> dict[str, tuple[str, str]]:
 
     data_path = ROOT / "data" / "heroes_data.json"
     payload = json.loads(data_path.read_text(encoding="utf-8"))
-    out: dict[str, tuple[str, str]] = {}
+    out: dict[str, dict] = {}
     for hero in payload.get("heroes", []):
         title = hero.get("title", "")
         short = gen.short_name(title)
+        out[short] = hero
+    return out
+
+
+def _load_hero_faction_class() -> dict[str, tuple[str, str]]:
+    """Map overview short name -> (faction, class) from heroes_data.json."""
+    out: dict[str, tuple[str, str]] = {}
+    for short, hero in _load_heroes_data_by_short_name().items():
         out[short] = (
             hero.get("faction", "") or "",
             hero.get("class", "") or "",
         )
+    return out
+
+
+def _load_hero_prydwen_tiers() -> dict[str, dict[str, str]]:
+    """Map overview short name -> prydwen_tiers from heroes_data.json."""
+    out: dict[str, dict[str, str]] = {}
+    for short, hero in _load_heroes_data_by_short_name().items():
+        tiers = hero.get("prydwen_tiers")
+        if tiers:
+            out[short] = tiers
     return out
 
 
@@ -309,6 +335,7 @@ def parse_hero_block(
     block: str,
     energy_providers: frozenset[str],
     hero_meta: dict[str, tuple[str, str]],
+    hero_tiers: dict[str, dict[str, str]] | None = None,
 ) -> HeroRow | None:
     summary_match = SUMMARY_RE.search(block)
     if not summary_match:
@@ -316,10 +343,15 @@ def parse_hero_block(
 
     movement, signature_skill_speed, non_ult_speed = parse_behavior(block)
     faction, class_name = hero_meta.get(name, ("", ""))
+    tiers = (hero_tiers or {}).get(name, {})
     row = HeroRow(
         name=name,
         faction=faction,
         class_name=class_name,
+        afk_stages_tier=tiers.get("afk_stages", ""),
+        dream_realm_tier=tiers.get("dream_realm", ""),
+        dream_realm_endless_tier=tiers.get("dream_realm_endless", ""),
+        pvp_tier=tiers.get("pvp", ""),
         movement=movement,
         signature_skill_speed=signature_skill_speed,
         non_ult_speed=non_ult_speed,
@@ -385,6 +417,7 @@ def parse_overview(
     text: str,
     energy_providers: frozenset[str],
     hero_meta: dict[str, tuple[str, str]],
+    hero_tiers: dict[str, dict[str, str]] | None = None,
 ) -> list[HeroRow]:
     heroes: list[HeroRow] = []
     hero_matches = list(HERO_RE.finditer(text))
@@ -393,7 +426,9 @@ def parse_overview(
         start = match.end()
         end = hero_matches[idx + 1].start() if idx + 1 < len(hero_matches) else len(text)
         block = text[start:end]
-        row = parse_hero_block(name, block, energy_providers, hero_meta)
+        row = parse_hero_block(
+            name, block, energy_providers, hero_meta, hero_tiers
+        )
         if row is not None:
             heroes.append(row)
     return heroes
@@ -412,6 +447,10 @@ def row_to_csv(row: HeroRow) -> list[str]:
         row.name,
         row.faction,
         row.class_name,
+        row.afk_stages_tier,
+        row.dream_realm_tier,
+        row.dream_realm_endless_tier,
+        row.pvp_tier,
         row.movement,
         row.signature_skill_speed,
         row.non_ult_speed,
@@ -432,8 +471,9 @@ def convert(
     text: str,
     energy_providers: frozenset[str],
     hero_meta: dict[str, tuple[str, str]],
+    hero_tiers: dict[str, dict[str, str]] | None = None,
 ) -> list[list[str]]:
-    rows = parse_overview(text, energy_providers, hero_meta)
+    rows = parse_overview(text, energy_providers, hero_meta, hero_tiers)
     return [row_to_csv(row) for row in rows]
 
 
@@ -460,7 +500,8 @@ def main() -> None:
     text = args.input.read_text(encoding="utf-8")
     energy_providers = _load_energy_provider_names()
     hero_meta = _load_hero_faction_class()
-    data = convert(text, energy_providers, hero_meta)
+    hero_tiers = _load_hero_prydwen_tiers()
+    data = convert(text, energy_providers, hero_meta, hero_tiers)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", encoding="utf-8", newline="") as fh:

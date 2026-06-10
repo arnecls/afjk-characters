@@ -220,6 +220,7 @@ def build_site_data(
         skill_summaries = rs._load_skill_summaries().get(short, {})
         hero_categories = {s["category"] for s in p["skills"].values()}
         hero_skills = skills_by_title.get(title, [])
+        prydwen_tiers = meta.get("prydwen_tiers")
         behavior_md = "\n".join(
             rs.format_behavior_section(
                 short,
@@ -227,6 +228,7 @@ def build_site_data(
                 skill_summaries=skill_summaries,
                 hero_categories=hero_categories,
                 include_skill_summaries=False,
+                prydwen_tiers=prydwen_tiers,
             )
         ).strip()
         skill_cards = rs.format_skill_cards(
@@ -267,6 +269,7 @@ def build_site_data(
                 "description": meta.get("description", ""),
                 "portrait": f"assets/portraits/{short}.png",
                 "signatureSkill": signature_skill,
+                "prydwenTiers": prydwen_tiers,
                 "sections": {
                     "behavior": behavior_md,
                     "skillCards": skill_cards,

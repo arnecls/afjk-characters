@@ -7,11 +7,14 @@ enabler partners matching **Requires** special effects.
 Up to five partners by combined score. Omitted: ATK-only, Max HP
 buff-only, and Shield-only (unless the hero benefits from Max HP/
 shields). Rare conditional buffs score lower.
+Meta tiers from [Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).
 Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ## Aliceth
 
 ### Aliceth's behavior
+
+`AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [S+]`, `PVP [S]`
 
 - **Signature skill**: Radiant Rain (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
@@ -134,6 +137,8 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ### Alna's behavior
 
+`AFK Stages [S+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
+
 - **Signature skill**: Winter Anthem (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: place ally in same row at battle prep (Winter Warrior buffs)
@@ -247,6 +252,8 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 
 ### Alsa's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Twirling Rocks (ultimate)
 - **Movement**: mostly stationary (avg attack range 6.0 tiles)
 
@@ -351,6 +358,8 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 ## Antandra
 
 ### Antandra's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Shield Assault (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -462,6 +471,8 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Arden's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Force of Nature (ultimate)
 - **Movement**: stationary (no finite attack range)
 
@@ -554,6 +565,8 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 ## Atalanta
 
 ### Atalanta's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Wild Sniper (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -663,6 +676,8 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 ## Athalia
 
 ### Athalia's behavior
+
+`AFK Stages [S]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
 
 - **Signature skill**: Unbroken Retribution (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -774,6 +789,8 @@ Common buffers are **Hepler**, **Rowan**, or **Hugin**.
 ## Aurora
 
 ### Aurora's behavior
+
+`AFK Stages [A]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [B]`
 
 - **Signature skill**: Starlit Slumber (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -888,6 +905,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Baelran's behavior
 
+`AFK Stages [S]`, `Dream Realm [A]`, `Dream Realm (Endless) [S]`, `PVP [S]`
+
 - **Signature skill**: Celestial Rise (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
@@ -1001,6 +1020,8 @@ Common buffers are **Mikola**, **Hepler**, or **Hugin**.
 
 ### Berial's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
+
 - **Signature skill**: Scared Swamp (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -1102,6 +1123,8 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 ## Bonnie
 
 ### Bonnie's behavior
+
+`AFK Stages [B]`, `Dream Realm [A]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Decay's Reach (Skill 1)
 - **Movement**: high movement (repositioning skills)
@@ -1214,6 +1237,8 @@ Common buffers are **Lyca**, **Ravion**, or **Rowan**.
 ## Brutus
 
 ### Brutus's behavior
+
+`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Whirlwind Wrath (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -1331,6 +1356,8 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ### Bryon's behavior
 
+`AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
+
 - **Signature skill**: Falcon Raid (ultimate)
 - **Movement**: stationary (summon moves)
 
@@ -1433,6 +1460,8 @@ Common buffers are **Hewynn**, **Mikola**, or **Smokey & Meerky**.
 ## Callan
 
 ### Callan's behavior
+
+`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Restless Guardian (ultimate)
 - **Movement**: moving (avg attack range 1.7 tiles)
@@ -1538,6 +1567,8 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 
 ### Carolina's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Frozen Grave (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
 
@@ -1639,6 +1670,8 @@ Common buffers are **Ravion**, **Lyca**, or **Hepler**.
 ## Cassadee
 
 ### Cassadee's behavior
+
+`AFK Stages [C]`, `Dream Realm [A+]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Tidal Strength (Skill 2)
 - **Movement**: stationary (avg attack range 10.0 tiles)
@@ -1752,6 +1785,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 ## Cecia
 
 ### Cecia's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Queen's Summons (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
@@ -1926,6 +1961,8 @@ rare chance for massive single normal attack damage
 
 ### Contess's behavior
 
+`AFK Stages [C]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [S]`
+
 - **Signature skill**: Detention Pass (ultimate)
 - **Movement**: stationary (no finite attack range)
 
@@ -2037,6 +2074,8 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
 
 ### Cryonaia's behavior
 
+`AFK Stages [B]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [S]`
+
 - **Signature skill**: Frostveil Domain (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
 
@@ -2142,6 +2181,8 @@ Common buffers are **Hugin**, **Lyca**, or **Rowan**.
 
 ### Cyran's behavior
 
+`AFK Stages [S]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
+
 - **Signature skill**: Gravitic Requiem (ultimate)
 - **Movement**: mostly stationary (avg attack range 6.0 tiles)
 
@@ -2246,6 +2287,8 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 ### Daimon's behavior
 
+`AFK Stages [B]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [A]`
+
 - **Signature skill**: Buddy Barrier (Skill 2)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
@@ -2345,6 +2388,8 @@ Common buffers are **Hepler** or **Hugin**.
 ## Damian
 
 ### Damian's behavior
+
+`AFK Stages [C]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Inventor's Will (Mythic+)
 - **Movement**: stationary (off battlefield)
@@ -2466,6 +2511,8 @@ These are the **10** strongest pairings:
 
 ### Dionel's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
+
 - **Signature skill**: Dawn Light (ultimate)
 - **Movement**: moving (avg attack range 0.0 tiles)
 
@@ -2579,6 +2626,8 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 ## Dunlingr
 
 ### Dunlingr's behavior
+
+`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
 
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: stationary (avg attack range 6.4 tiles)
@@ -2696,6 +2745,8 @@ Common buffers are **Hugin**, **Hepler**, or **Twins**.
 
 ### Eironn's behavior
 
+`AFK Stages [S+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
+
 - **Signature skill**: Howling Hurricane (Mythic+)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
@@ -2788,6 +2839,8 @@ Common buffers are **Hepler**, **Hugin**, or **Rowan**.
 ## Twins
 
 ### Twins's behavior
+
+`AFK Stages [S]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [A+]`
 
 - **Signature skill**: Starlight Waltz (ultimate)
 - **Movement**: moving / stationary (two units)
@@ -2915,6 +2968,8 @@ These are the **10** strongest pairings:
 
 ### Evie's behavior
 
+`AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [A]`
+
 - **Signature skill**: Intel Chase (ultimate)
 - **Movement**: high movement (repositioning skills)
 - **Ally composition**: rearmost ally starts with healing quill; tracks highest damage dealer
@@ -3027,6 +3082,8 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 ## Faramor
 
 ### Faramor's behavior
+
+`AFK Stages [S]`, `Dream Realm [S]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
 
 - **Signature skill**: Sanctified Circle (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -3145,6 +3202,8 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Fay's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [B]`, `PVP [B]`
+
 - **Signature skill**: Vibrant Dance (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
 
@@ -3248,6 +3307,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Florabelle's behavior
 
+`AFK Stages [B]`, `Dream Realm [S]`, `Dream Realm (Endless) [S]`, `PVP [B]`
+
 - **Signature skill**: Pounding Blow (ultimate)
 - **Movement**: stationary (no finite attack range)
 
@@ -3350,6 +3411,8 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 ### Frieren's behavior
 
+`AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [S+]`, `PVP [A+]`
+
 - **Signature skill**: Zoltraak (ultimate)
 - **Movement**: stationary (avg attack range 7.0 tiles)
 - **Ally composition**: frontmost ally shares damage reduction with this hero
@@ -3450,6 +3513,8 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 ## Galahad
 
 ### Galahad's behavior
+
+`AFK Stages [S]`, `Dream Realm [B]`, `Dream Realm (Endless) [S+]`, `PVP [A]`
 
 - **Signature skill**: Time Recast (Mythic+)
 - **Movement**: stationary (avg attack range 10.0 tiles)
@@ -3559,6 +3624,8 @@ Common buffers are **Hugin**, **Mikola**, or **Ravion**.
 
 ### Gerda's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
+
 - **Signature skill**: Spring Therapy (Skill 1)
 - **Movement**: high movement (repositioning skills)
 
@@ -3655,6 +3722,8 @@ Common buffers are **Hepler** or **Hugin**.
 ## Granny Dahnie
 
 ### Granny Dahnie's behavior
+
+`AFK Stages [C]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Threshold of Jade (ultimate)
 - **Movement**: moving (avg attack range 2.0 tiles)
@@ -3763,6 +3832,8 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Gunnar's behavior
 
+`AFK Stages [S+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [S]`
+
 - **Signature skill**: Annihilation Directive (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: place ally 1 tile behind at battle start (Doomfield buffs and coordinated attacks)
@@ -3866,6 +3937,8 @@ Common buffers are **Hugin**, **Hepler**, or **Twins**.
 ## Gwyneth
 
 ### Gwyneth's behavior
+
+`AFK Stages [A]`, `Dream Realm [S+]`, `Dream Realm (Endless) [?]`, `PVP [S]`
 
 - **Signature skill**: Hailing Arrows (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
@@ -4049,6 +4122,8 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 ### Harak's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
+
 - **Signature skill**: Flesh Feast (Skill 2)
 - **Movement**: high movement (repositioning skills)
 
@@ -4169,6 +4244,8 @@ Common buffers are **Rowan**, **Hepler**, or **Hugin**.
 ## Hepler
 
 ### Hepler's behavior
+
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Form Shift (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -4302,6 +4379,8 @@ These are the **10** strongest pairings:
 
 ### Hewynn's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Rain Prayer (ultimate)
 - **Movement**: stationary (no finite attack range)
 
@@ -4415,6 +4494,8 @@ These are the **10** strongest pairings:
 
 ### Himmel's behavior
 
+`AFK Stages [B]`, `Dream Realm [A]`, `Dream Realm (Endless) [A+]`, `PVP [A]`
+
 - **Signature skill**: Hero Party (Skill 2)
 - **Movement**: high movement (repositioning skills)
 
@@ -4508,6 +4589,8 @@ Common buffers are **Mikola**, **Hepler**, or **Hugin**.
 
 ### Hodgkin's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Cannon Fire (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles)
 
@@ -4600,6 +4683,8 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 ## Hugin
 
 ### Hugin's behavior
+
+`AFK Stages [S+]`, `Dream Realm [B]`, `Dream Realm (Endless) [S]`, `PVP [A+]`
 
 - **Signature skill**: Unstoppable! (ultimate)
 - **Movement**: stationary (no finite attack range)
@@ -4706,6 +4791,8 @@ These are the **10** strongest pairings:
 
 ### Igor's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
+
 - **Signature skill**: Funereal Ring (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -4787,6 +4874,8 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 ## Indris
 
 ### Indris's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Spellbane Shot (ultimate)
 - **Movement**: stationary (no finite attack range)
@@ -4902,6 +4991,8 @@ Common buffers are **Lyca**, **Ravion**, or **Hugin**.
 
 ### Isabella's behavior
 
+`AFK Stages [C]`, `Dream Realm [S]`, `Dream Realm (Endless) [A+]`, `PVP [C]`
+
 - **Signature skill**: Grimoire Pact (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: frontmost ally becomes companion (stat stacks and ult buffs)
@@ -5011,6 +5102,8 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Hugin**.
 
 ### Kafra's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Gale Thrust (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -5118,6 +5211,8 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 ## Koko
 
 ### Koko's behavior
+
+`AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [B]`
 
 - **Signature skill**: Full Energy (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
@@ -5242,6 +5337,8 @@ These are the **10** strongest pairings:
 
 ### Kordan's behavior
 
+`AFK Stages [C]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S]`, `PVP [A]`
+
 - **Signature skill**: Dominance Ring (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -5346,6 +5443,8 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 ## Korin
 
 ### Korin's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Demonseal Spear (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -5455,6 +5554,8 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 ### Kruger's behavior
 
+`AFK Stages [C]`, `Dream Realm [S]`, `Dream Realm (Endless) [A]`, `PVP [C]`
+
 - **Signature skill**: Devastating Axe (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
@@ -5556,6 +5657,8 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 ## Kulu
 
 ### Kulu's behavior
+
+`AFK Stages [S]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
 
 - **Signature skill**: Demolition Zone (Skill 1)
 - **Movement**: high movement (repositioning skills)
@@ -5667,6 +5770,8 @@ Common buffers are **Lyca**, **Mikola**, or **Twins**.
 
 ### Laios's behavior
 
+`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Dungeon Gourmet (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
@@ -5775,6 +5880,8 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 ### Lenya's behavior
 
+`AFK Stages [C]`, `Dream Realm [A+]`, `Dream Realm (Endless) [C]`, `PVP [B]`
+
 - **Signature skill**: Wild Duel (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -5881,6 +5988,8 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 ## Lily May
 
 ### Lily May's behavior
+
+`AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Tempest Shot (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -5994,6 +6103,8 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 ## Lorsan
 
 ### Lorsan's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Whispering Tempest (ultimate)
 - **Movement**: stationary (no finite attack range)
@@ -6114,6 +6225,8 @@ These are the **10** strongest pairings:
 
 ### Lucca's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Quake Slam (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: place adjacent allies behind at battle prep (DEF buff)
@@ -6212,6 +6325,8 @@ Common buffers are **Rowan**, **Hepler**, or **Hugin**.
 ## Lucius
 
 ### Lucius's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Divine Light Aegis (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -6419,6 +6534,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Ludovic's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [A]`, `PVP [A]`
+
 - **Signature skill**: Eternal Serenity (ultimate)
 - **Movement**: stationary (no finite attack range)
 
@@ -6522,6 +6639,8 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 ## Lumont
 
 ### Lumont's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Lumont's Charge (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -6640,6 +6759,8 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ### Lyca's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
+
 - **Signature skill**: Comet Archery (ultimate)
 - **Movement**: stationary (avg attack range 11.0 tiles)
 
@@ -6748,6 +6869,8 @@ These are the **10** strongest pairings:
 
 ### Marcille's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
+
 - **Signature skill**: Silver-White Wings that Streak Across the Skies (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: place ally 1 tile in front at battle prep (revive target)
@@ -6855,6 +6978,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Marilee's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Mid-Air Shot (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -6949,6 +7074,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 ## Mehira
 
 ### Mehira's behavior
+
+`AFK Stages [S+]`, `Dream Realm [A]`, `Dream Realm (Endless) [A+]`, `PVP [A+]`
 
 - **Signature skill**: Euphoric Rush (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -7061,6 +7188,8 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ### Mikola's behavior
 
+`AFK Stages [C]`, `Dream Realm [A]`, `Dream Realm (Endless) [A]`, `PVP [B]`
+
 - **Signature skill**: Dauntless Hymn (ultimate)
 - **Movement**: moving (avg attack range 2.0 tiles)
 
@@ -7164,6 +7293,8 @@ These are the **10** strongest pairings:
 
 ### Mirael's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Winged Flame (ultimate)
 - **Movement**: stationary (avg attack range 10.1 tiles)
 
@@ -7252,6 +7383,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 ## Nara
 
 ### Nara's behavior
+
+`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Phantom Chains (Skill 1)
 - **Movement**: mostly stationary (pulls enemies)
@@ -7453,6 +7586,8 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Nazrik's behavior
 
+`AFK Stages [B]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [B]`
+
 - **Signature skill**: Rend Rupture (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles)
 
@@ -7550,6 +7685,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 ## Nerion
 
 ### Nerion's behavior
+
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Drowning Doom (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
@@ -7656,6 +7793,8 @@ Common buffers are **Hepler**, **Lyca**, or **Ravion**.
 
 ### Niru's behavior
 
+`AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
+
 - **Signature skill**: Soul Shepherd (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
@@ -7749,6 +7888,8 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Odie's behavior
 
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Heart Crusher (Mythic+)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
 
@@ -7833,6 +7974,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 ## Pandora
 
 ### Pandora's behavior
+
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [A]`, `PVP [A+]`
 
 - **Signature skill**: Boxed Blessing (Skill 1)
 - **Movement**: stationary (no finite attack range)
@@ -7930,6 +8073,8 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 ## Pang
 
 ### Pang's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Sky Splitter (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -8040,6 +8185,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Parisa's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Floral Splendor (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
 
@@ -8117,6 +8264,8 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 ## Perseus
 
 ### Perseus's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
 
 - **Signature skill**: Divine Rend (ultimate)
 - **Movement**: moving (avg attack range 2.9 tiles)
@@ -8232,6 +8381,8 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 ### Phraesto's behavior
 
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [B]`, `PVP [B]`
+
 - **Signature skill**: Crimson Contract (Skill 1)
 - **Movement**: moving (avg attack range 1.8 tiles)
 - **Ally composition**: place allies 1 tile behind this hero and the Illusion for contract buffs
@@ -8336,6 +8487,8 @@ Common buffers are **Smokey & Meerky**, **Rowan**, or **Hewynn**.
 ## Pippa
 
 ### Pippa's behavior
+
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Wild Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -8446,6 +8599,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 ## Ravion
 
 ### Ravion's behavior
+
+`AFK Stages [A]`, `Dream Realm [S]`, `Dream Realm (Endless) [A]`, `PVP [A+]`
 
 - **Signature skill**: Killer Flush (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -8578,6 +8733,8 @@ These are the **10** strongest pairings:
 
 ### Reinier's behavior
 
+`AFK Stages [B]`, `Dream Realm [A]`, `Dream Realm (Endless) [A]`, `PVP [B]`
+
 - **Signature skill**: Dynamic Balance (Skill 1)
 - **Movement**: high movement (repositioning skills)
 
@@ -8686,6 +8843,8 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 
 ### Rhys's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Flame Barrage (ultimate)
 - **Movement**: high movement (moves while attacking)
 
@@ -8779,6 +8938,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 ## Rowan
 
 ### Rowan's behavior
+
+`AFK Stages [A]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [A]`
 
 - **Signature skill**: Fatal Greed (ultimate)
 - **Movement**: moving (repositions on cast)
@@ -8901,6 +9062,8 @@ These are the **10** strongest pairings:
 
 ### Saida's behavior
 
+`AFK Stages [S+]`, `Dream Realm [A]`, `Dream Realm (Endless) [A]`, `PVP [S+]`
+
 - **Signature skill**: Seed Siphon (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -9022,6 +9185,8 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 
 ### Salazer's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Rain of Blades (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
@@ -9124,6 +9289,8 @@ Common buffers are **Rowan**, **Lyca**, or **Hepler**.
 ## Satrana
 
 ### Satrana's behavior
+
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Fiery Dance (ultimate)
 - **Movement**: moving (avg attack range 1.5 tiles)
@@ -9236,6 +9403,8 @@ strike has no cooldown limit when all enemies are ignited
 
 ### Scarlita's behavior
 
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
+
 - **Signature skill**: Divine Wrath (Mythic+)
 - **Movement**: moving (brief reposition)
 
@@ -9337,6 +9506,8 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 ## Seth
 
 ### Seth's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Shadow Strike (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -9457,6 +9628,8 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 ### Shadewing's behavior
 
+`AFK Stages [A+]`, `Dream Realm [S]`, `Dream Realm (Endless) [B]`, `PVP [S+]`
+
 - **Signature skill**: Withering Curse (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
@@ -9566,6 +9739,8 @@ Common buffers are **Lyca**, **Hepler**, or **Rowan**.
 ## Shakir
 
 ### Shakir's behavior
+
+`AFK Stages [B]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [A]`
 
 - **Signature skill**: Ravaging Claws (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -9686,6 +9861,8 @@ These are the **10** strongest pairings:
 
 ### Shemira's behavior
 
+`AFK Stages [A]`, `Dream Realm [S+]`, `Dream Realm (Endless) [A]`, `PVP [A+]`
+
 - **Signature skill**: Phantom Procession (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
 
@@ -9769,6 +9946,8 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 ## Silven
 
 ### Silven's behavior
+
+`AFK Stages [S]`, `Dream Realm [S]`, `Dream Realm (Endless) [A+]`, `PVP [A+]`
 
 - **Signature skill**: Gravity Collapse (Skill 1)
 - **Movement**: stationary (avg attack range 12.0 tiles)
@@ -9881,6 +10060,8 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Silvina's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
+
 - **Signature skill**: Shadow Slayer (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
@@ -9979,6 +10160,8 @@ Common buffers are **Hugin**, **Twins**, or **Hepler**.
 
 ### Sinbad's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
+
 - **Signature skill**: Whizzing Edge (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -10070,6 +10253,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 ## Smokey & Meerky
 
 ### Smokey & Meerky's behavior
+
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [S]`, `PVP [C]`
 
 - **Signature skill**: Special Aroma (ultimate)
 - **Movement**: stationary (no finite attack range)
@@ -10186,6 +10371,8 @@ These are the **10** strongest pairings:
 
 ### Solise's behavior
 
+`AFK Stages [S]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S]`, `PVP [S]`
+
 - **Signature skill**: Life's Embrace (ultimate)
 - **Movement**: stationary (no finite attack range)
 
@@ -10300,6 +10487,8 @@ These are the **10** strongest pairings:
 
 ### Sonja's behavior
 
+`AFK Stages [C]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [B]`
+
 - **Signature skill**: Crimson Covenant (Skill 1)
 - **Movement**: high movement (repositioning skills)
 - **Ally composition**: place allies on left and right at battle start (Crimson Covenant buffs; prioritizes front row)
@@ -10401,6 +10590,8 @@ Common buffers are **Hugin**, **Twins**, or **Hepler**.
 ## Soren
 
 ### Soren's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Whirlwind Swing (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -10510,6 +10701,8 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 ### Sylphira's behavior
 
+`AFK Stages [A]`, `Dream Realm [A+]`, `Dream Realm (Endless) [?]`, `PVP [S]`
+
 - **Signature skill**: Grand Finale (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
@@ -10609,6 +10802,8 @@ Common buffers are **Mikola**, **Twins**, or **Rowan**.
 ## Talene
 
 ### Talene's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [A]`, `PVP [B]`
 
 - **Signature skill**: Divine Conflagration (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles)
@@ -10716,6 +10911,8 @@ Common buffers are **Mikola**, **Hepler**, or **Hewynn**.
 
 ### Tasi's behavior
 
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
+
 - **Signature skill**: Eternal Dreamscape (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles)
 
@@ -10811,6 +11008,8 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 ## Temesia
 
 ### Temesia's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
 
 - **Signature skill**: Knight's Heart (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -10924,6 +11123,8 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Thador's behavior
 
+`AFK Stages [S]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
+
 - **Signature skill**: Darkmoon Pact (Skill 1)
 - **Movement**: moving (avg attack range 0.2 tiles)
 - **Ally composition**: place lieutenant 1 tile behind at battle prep (Crit + shared shields)
@@ -11030,6 +11231,8 @@ Common buffers are **Hepler**, **Rowan**, or **Hugin**.
 
 ### Thoran's behavior
 
+`AFK Stages [B]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A]`, `PVP [B]`
+
 - **Signature skill**: Resurrection (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: place ally 1 tile behind at battle prep (Soul Pact damage share and revive)
@@ -11131,6 +11334,8 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
 
 ### Tilaya's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
+
 - **Signature skill**: Wrath of the Wilds (ultimate)
 - **Movement**: high movement (repositioning skills)
 
@@ -11227,6 +11432,8 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 ## Ulmus
 
 ### Ulmus's behavior
+
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Way of the Forest (Skill 2)
 - **Movement**: moving (stationary when rooted)
@@ -11336,6 +11543,8 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
 ## Vala
 
 ### Vala's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Swift Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
@@ -11458,6 +11667,8 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 ### Valen's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Thunder Swordwork (ultimate)
 - **Movement**: moving (avg attack range 1.4 tiles)
 
@@ -11558,6 +11769,8 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 ## Valka
 
 ### Valka's behavior
+
+`AFK Stages [C]`, `Dream Realm [A+]`, `Dream Realm (Endless) [B]`, `PVP [B]`
 
 - **Signature skill**: Phantom Slasher (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -11672,6 +11885,8 @@ These are the **10** strongest pairings:
 ## Velara
 
 ### Velara's behavior
+
+`AFK Stages [S+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S]`, `PVP [B]`
 
 - **Signature skill**: Ruthless Rite (ultimate)
 - **Movement**: stationary (no finite attack range)
@@ -11790,6 +12005,8 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ### Viperian's behavior
 
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [C]`
+
 - **Signature skill**: Crimson Waltz (Mythic+)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
 
@@ -11888,6 +12105,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 ## Walker
 
 ### Walker's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Six-Shot (ultimate)
 - **Movement**: moving (avg attack range 2.0 tiles)
@@ -11990,6 +12209,8 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 ## Zandrok
 
 ### Zandrok's behavior
+
+`AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Rallying Roar (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -12095,6 +12316,8 @@ Common buffers are **Hepler**, **Hugin**, or **Twins**.
 ## Zanie
 
 ### Zanie's behavior
+
+`AFK Stages [A+]`, `Dream Realm [S]`, `Dream Realm (Endless) [A+]`, `PVP [A]`
 
 - **Signature skill**: Vein Pulse (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
@@ -12214,6 +12437,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 ## Zorya
 
 ### Zorya's behavior
+
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
 
 - **Signature skill**: Guardian's Ring (ultimate)
 - **Movement**: moving (inactive while dormant)
