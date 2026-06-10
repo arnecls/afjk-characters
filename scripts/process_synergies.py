@@ -132,8 +132,15 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         title: record["faction"]
         for title, record in processed["heroes"].items()
     }
+    role_category_by_title = {
+        title: record["role_category"]
+        for title, record in processed["heroes"].items()
+    }
     replacements_index = gen.compute_replacement_scores(
-        heroes, behavior_by_title, faction_by_title
+        heroes,
+        behavior_by_title,
+        faction_by_title,
+        role_category_by_title,
     )
 
     synergy_heroes: dict[str, dict] = {}

@@ -44,6 +44,15 @@ def build_from_web() -> dict:
         print(f"  Warning: no Prydwen tiers for {len(missing)} hero(es): "
               f"{', '.join(missing)}")
     print(f"  Attached tiers for {len(tiers)} hero(es)")
+    print("Fetching Prydwen role categories...")
+    categories = sources_web.fetch_prydwen_role_categories()
+    missing_categories = io.apply_prydwen_role_categories(data["heroes"], categories)
+    if missing_categories:
+        print(
+            f"  Warning: no Prydwen role category for {len(missing_categories)} "
+            f"hero(es): {', '.join(missing_categories)}"
+        )
+    print(f"  Attached role categories for {len(categories)} hero(es)")
     return data
 
 
@@ -53,7 +62,7 @@ def main() -> None:
     n = len(data["heroes"])
     print(
         f"Wrote {io.HEROES_DATA.relative_to(io.ROOT)} "
-        f"({n} heroes, Fandom + Yaphalla gap-fill + Prydwen tiers)"
+        f"({n} heroes, Fandom + Yaphalla gap-fill + Prydwen tiers/categories)"
     )
 
 

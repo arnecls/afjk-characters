@@ -1694,7 +1694,48 @@
     return parts.join("\n");
   }
 
-  function renderBadges(hero) {
+  const ROLE_CATEGORY_META = {
+    damage_dealer: {
+      label: "Damage dealer",
+      emoji: "⚔️",
+      className: "badge-role-damage-dealer",
+    },
+    specialist: {
+      label: "Specialist",
+      emoji: "🎭",
+      className: "badge-role-specialist",
+    },
+    support: {
+      label: "Support",
+      emoji: "🤝",
+      className: "badge-role-support",
+    },
+    tank: {
+      label: "Tank",
+      emoji: "🛡️",
+      className: "badge-role-tank",
+    },
+  };
+
+  function renderRoleCategoryBadge(hero) {
+    const meta = ROLE_CATEGORY_META[hero.roleCategory];
+    if (!meta) {
+      return "";
+    }
+    return (
+      '<span class="badge ' +
+      meta.className +
+      '"><span class="badge-emoji" aria-hidden="true">' +
+      meta.emoji +
+      "</span>" +
+      escapeHtml(meta.label) +
+      "</span>"
+    );
+  }
+
+  function renderBadges(hero, options) {
+    const includeRoleCategory =
+      options && options.includeRoleCategory === true;
     const badges = [];
     if (hero.faction) {
       const icon = iconPath("factions", hero.faction);
@@ -1719,6 +1760,12 @@
           escapeHtml(hero.class) +
           "</span>"
       );
+    }
+    if (includeRoleCategory) {
+      const roleBadge = renderRoleCategoryBadge(hero);
+      if (roleBadge) {
+        badges.push(roleBadge);
+      }
     }
     if (hero.damage_type) {
       badges.push(
@@ -2390,7 +2437,10 @@
       html +=
         '<p class="detail-subtitle">' + escapeHtml(hero.title) + "</p>";
     }
-    html += '<div class="badges badges-left">' + renderBadges(hero) + "</div>";
+    html +=
+      '<div class="badges badges-left">' +
+      renderBadges(hero, { includeRoleCategory: true }) +
+      "</div>";
     if (hero.description) {
       html +=
         '<p class="detail-desc">' + escapeHtml(hero.description) + "</p>";

@@ -111,6 +111,88 @@ class ReplacementFactionRankingTests(unittest.TestCase):
         self.assertAlmostEqual(not_boosted, raw)
 
 
+class ReplacementRoleCategoryRankingTests(unittest.TestCase):
+    def setUp(self) -> None:
+        gen.REPLACEMENT_MIN_SCORE = 0.5
+        gen.REPLACEMENT_MAX = 3
+        gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = 1.2
+
+    def test_same_role_category_boosts_ranking(self) -> None:
+        scores = [
+            (0.95, "Other - Cross Role", ["tag"]),
+            (0.90, "Ally - Same Role", ["tag"]),
+        ]
+        role_categories = {
+            "Source - Hero": "damage_dealer",
+            "Ally - Same Role": "damage_dealer",
+            "Other - Cross Role": "support",
+        }
+        ranked = gen._rank_replacement_category(
+            scores,
+            role_category_by_title=role_categories,
+            source_role_category="damage_dealer",
+        )
+        self.assertEqual(ranked[0]["name"], "Ally")
+        self.assertAlmostEqual(ranked[0]["score"], 1.0)
+        self.assertEqual(ranked[1]["name"], "Other")
+
+    def test_large_gap_preserves_cross_role_winner(self) -> None:
+        scores = [
+            (1.0, "Other - Cross Role", ["tag"]),
+            (0.75, "Ally - Same Role", ["tag"]),
+        ]
+        role_categories = {
+            "Source - Hero": "specialist",
+            "Ally - Same Role": "specialist",
+            "Other - Cross Role": "tank",
+        }
+        ranked = gen._rank_replacement_category(
+            scores,
+            role_category_by_title=role_categories,
+            source_role_category="specialist",
+        )
+        self.assertEqual(ranked[0]["name"], "Other")
+        self.assertEqual(ranked[1]["name"], "Ally")
+
+    def test_missing_role_category_skips_boost(self) -> None:
+        scores = [
+            (0.95, "Other - Cross Role", ["tag"]),
+            (0.90, "Ally - Same Role", ["tag"]),
+        ]
+        ranked = gen._rank_replacement_category(scores)
+        self.assertEqual(ranked[0]["name"], "Other")
+        self.assertEqual(ranked[1]["name"], "Ally")
+
+    def test_same_role_and_faction_stack(self) -> None:
+        raw = 0.80
+        factions = {
+            "Ally - Match": "celestial",
+            "Other - Mismatch": "wilder",
+        }
+        role_categories = {
+            "Ally - Match": "support",
+            "Other - Mismatch": "damage_dealer",
+        }
+        boosted = gen._replacement_rank_score(
+            raw,
+            "Ally - Match",
+            "celestial",
+            factions,
+            "support",
+            role_categories,
+        )
+        not_boosted = gen._replacement_rank_score(
+            raw,
+            "Other - Mismatch",
+            "celestial",
+            factions,
+            "support",
+            role_categories,
+        )
+        self.assertAlmostEqual(boosted, 1.0)
+        self.assertAlmostEqual(not_boosted, raw)
+
+
 class ReplacementTierRankingTests(unittest.TestCase):
     def setUp(self) -> None:
         gen.REPLACEMENT_MIN_SCORE = 0.5

@@ -73,7 +73,38 @@ _ALICETH_PRYDWEN_HTML = """\
 """
 
 
+_PRYDWEN_TIER_LIST_SNIPPET = (
+    '\\"name\\":\\"Aliceth\\",\\"slug\\":\\"aliceth\\",\\"tierListCategory\\":\\"DPS\\"'
+    '\\"name\\":\\"Aurora\\",\\"slug\\":\\"aurora\\",\\"tierListCategory\\":\\"Support\\"'
+    '\\"name\\":\\"Elijah and Lailah\\",\\"slug\\":\\"elijah-and-lailah\\",'
+    '\\"tierListCategory\\":\\"Support\\"'
+)
+
+
 class PrydwenParseTests(unittest.TestCase):
+    def test_parse_role_categories_maps_to_schema(self) -> None:
+        categories = sources_web._parse_prydwen_role_categories(
+            _PRYDWEN_TIER_LIST_SNIPPET
+        )
+        self.assertEqual(
+            categories,
+            {
+                "Aliceth": "damage_dealer",
+                "Aurora": "support",
+                "Elijah and Lailah": "support",
+            },
+        )
+
+    def test_fetch_role_categories_maps_roster_aliases(self) -> None:
+        html = _PRYDWEN_TIER_LIST_SNIPPET
+        by_prydwen = sources_web._parse_prydwen_role_categories(html)
+        alias_targets = {v: k for k, v in sources_web.PRYDWEN_NAME_ALIASES.items()}
+        mapped = {
+            alias_targets.get(name, name): category
+            for name, category in by_prydwen.items()
+        }
+        self.assertEqual(mapped["Elijah & Lailah"], "support")
+
     def test_parse_ratings_normalizes_tiers(self) -> None:
         ratings = sources_web._parse_prydwen_ratings(_ALICETH_PRYDWEN_HTML)
         self.assertEqual(

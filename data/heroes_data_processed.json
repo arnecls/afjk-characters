@@ -3,7 +3,7 @@
     "Aliceth - Radiant Wings": {
       "faction": "celestial",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Radiant Rain": {
@@ -371,7 +371,7 @@
     "Alna - Frozen Mother": {
       "faction": "celestial",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Winter Anthem": {
@@ -703,7 +703,7 @@
     "Alsa - Desert Flare": {
       "faction": "mauler",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Twirling Rocks": {
@@ -931,7 +931,7 @@
     "Antandra - Desert Fury": {
       "faction": "mauler",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Shield Assault": {
@@ -1201,7 +1201,7 @@
     "Arden - Oak Sage": {
       "faction": "wilder",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Force of Nature": {
@@ -1363,7 +1363,7 @@
     "Atalanta - Fortune Finder": {
       "faction": "lightbearer",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Wild Sniper": {
@@ -1599,7 +1599,7 @@
     "Athalia - Harbinger of Justice": {
       "faction": "celestial",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Unbroken Retribution": {
@@ -1885,7 +1885,7 @@
     "Aurora - Celestial of Dreams": {
       "faction": "celestial",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Starlit Slumber": {
@@ -2157,7 +2157,7 @@
     "Baelran - Dawnblade": {
       "faction": "celestial",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Celestial Rise": {
@@ -2462,7 +2462,7 @@
     "Berial - Sinister Jester": {
       "faction": "hypogean",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Scared Swamp": {
@@ -2678,7 +2678,7 @@
     "Bonnie - Obsidian Claws": {
       "faction": "graveborn",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Deathmark Arrow": {
@@ -2911,7 +2911,7 @@
     "Brutus - Blood Claw": {
       "faction": "mauler",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Whirlwind Wrath": {
@@ -3160,7 +3160,7 @@
     "Bryon - Evergreen Sentinel": {
       "faction": "wilder",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Falcon Raid": {
@@ -3386,7 +3386,7 @@
     "Callan - Grim Soulkeeper": {
       "faction": "graveborn",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Restless Guardian": {
@@ -3618,7 +3618,7 @@
     "Carolina - Candlelight Specter": {
       "faction": "graveborn",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Frozen Grave": {
@@ -3800,7 +3800,7 @@
     "Cassadee - Azure Prodigy": {
       "faction": "lightbearer",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Running Tide": {
@@ -4002,7 +4002,7 @@
     "Cecia - Requiem of Thorns": {
       "faction": "graveborn",
       "class": "marksman",
-      "is_supporting_unit": true,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Queen's Summons": {
@@ -4247,7 +4247,7 @@
     "Chippy - Acorn Knight": {
       "faction": "lightbearer",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Brothers-in-arms": {
@@ -4338,7 +4338,7 @@
     "Contess - Abyssal Rulekeeper": {
       "faction": "hypogean",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Detention Pass": {
@@ -4652,7 +4652,7 @@
     "Cryonaia - Arctic Revenant": {
       "faction": "hypogean",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Frostveil Domain": {
@@ -4852,7 +4852,7 @@
     "Cyran - Umbral Weaver": {
       "faction": "lightbearer",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Gravitic Requiem": {
@@ -5099,7 +5099,7 @@
     "Daimon - Forsaken Child": {
       "faction": "graveborn",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Dolly Defender": {
@@ -5330,7 +5330,7 @@
     "Damian - Woody Wonder": {
       "faction": "wilder",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Explode, my chariot!": {
@@ -5590,7 +5590,7 @@
     "Dionel - Venus of Dawn": {
       "faction": "celestial",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Dawn Light": {
@@ -5825,7 +5825,7 @@
     "Dunlingr - Eternal Voice": {
       "faction": "celestial",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Echo of Silence": {
@@ -6136,7 +6136,7 @@
     "Eironn - Stormsword": {
       "faction": "wilder",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Verdant Cyclone": {
@@ -6376,7 +6376,7 @@
     "Elijah & Lailah - Celestial Twins": {
       "faction": "celestial",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Starlight Waltz": {
@@ -6656,7 +6656,7 @@
     "Evie - Royal Envoy": {
       "faction": "lightbearer",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Intel Chase": {
@@ -6900,7 +6900,7 @@
     "Faramor - Silverfang Mantle": {
       "faction": "wilder",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Sanctified Circle": {
@@ -7123,7 +7123,7 @@
     "Fay - Colorful Dancer": {
       "faction": "lightbearer",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Vibrant Dance": {
@@ -7395,7 +7395,7 @@
     "Florabelle - Blooming Maiden": {
       "faction": "wilder",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Pounding Blow": {
@@ -7649,7 +7649,7 @@
     "Frieren - The Legendary Mage": {
       "faction": "dimensional",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Zoltraak": {
@@ -7871,7 +7871,7 @@
     "Galahad - Daughter of Dawn": {
       "faction": "mauler",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Temporal Field": {
@@ -8096,7 +8096,7 @@
     "Gerda - Soothing Siren": {
       "faction": "mauler",
       "class": "tank",
-      "is_supporting_unit": true,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Splashing Fun": {
@@ -8386,7 +8386,7 @@
     "Granny Dahnie - Forest Guardian": {
       "faction": "wilder",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Threshold of Jade": {
@@ -8669,7 +8669,7 @@
     "Gunnar - Iron Doom": {
       "faction": "hypogean",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Annihilation Directive": {
@@ -8922,7 +8922,7 @@
     "Gwyneth - Dragonslayer Knight": {
       "faction": "lightbearer",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Hailing Arrows": {
@@ -9111,7 +9111,7 @@
     "Hammie - Acorn Mage": {
       "faction": "lightbearer",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Pretty Fireball": {
@@ -9255,7 +9255,7 @@
     "Harak - Deepsea Ravager": {
       "faction": "hypogean",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Vicious Bite": {
@@ -9559,7 +9559,7 @@
     "Hepler - Master of Forms": {
       "faction": "mauler",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Form Shift": {
@@ -9832,7 +9832,7 @@
     "Hewynn - Tender Leaf": {
       "faction": "wilder",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Rain Prayer": {
@@ -10010,7 +10010,7 @@
     "Himmel - The Legendary Hero": {
       "faction": "dimensional",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Heroic Slash": {
@@ -10232,7 +10232,7 @@
     "Hodgkin - Reviled Captain": {
       "faction": "graveborn",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Cannon Fire": {
@@ -10458,7 +10458,7 @@
     "Hugin - Maverick Smith": {
       "faction": "lightbearer",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Unstoppable!": {
@@ -10648,7 +10648,7 @@
     "Igor - Mad Dagger": {
       "faction": "graveborn",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Funereal Ring": {
@@ -10826,7 +10826,7 @@
     "Indris - Chain Breaker": {
       "faction": "wilder",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Spellbane Shot": {
@@ -11096,7 +11096,7 @@
     "Isabella - The Taken Soul": {
       "faction": "graveborn",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Grimoire Pact": {
@@ -11340,7 +11340,7 @@
     "Kafra - Gale Rider": {
       "faction": "wilder",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Gale Thrust": {
@@ -11606,7 +11606,7 @@
     "Koko - Wild Child": {
       "faction": "mauler",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Full Energy": {
@@ -11846,7 +11846,7 @@
     "Kordan - Ironblood Chieftain": {
       "faction": "mauler",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Dominance Ring": {
@@ -12113,7 +12113,7 @@
     "Korin - Wood Warden": {
       "faction": "lightbearer",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Demonseal Spear": {
@@ -12329,7 +12329,7 @@
     "Kruger - Dauntless Warrior": {
       "faction": "mauler",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Devastating Axe": {
@@ -12533,7 +12533,7 @@
     "Kulu - Blast Master": {
       "faction": "hypogean",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Blast Mayhem": {
@@ -12774,7 +12774,7 @@
     "Laios - Dungeon Adventurer": {
       "faction": "dimensional",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Living Armor - Kensuke": {
@@ -13112,7 +13112,7 @@
     "Lenya - Wild Cyclone": {
       "faction": "wilder",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Wild Duel": {
@@ -13429,7 +13429,7 @@
     "Lily May - Twilight Tracker": {
       "faction": "wilder",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Tempest Shot": {
@@ -13655,7 +13655,7 @@
     "Lorsan - Windweaver Protector": {
       "faction": "wilder",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Whispering Tempest": {
@@ -13841,7 +13841,7 @@
     "Lucca - Stalwart Fighter": {
       "faction": "lightbearer",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Quake Slam": {
@@ -14102,7 +14102,7 @@
     "Lucius - The Lightbringer": {
       "faction": "lightbearer",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Divine Light Aegis": {
@@ -14335,7 +14335,7 @@
     "Lucy - Celestial Spirit Mage": {
       "faction": "dimensional",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Celestial Spirit Summon": {
@@ -14538,7 +14538,7 @@
     "Ludovic - Wreathed Eternalist": {
       "faction": "graveborn",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Eternal Serenity": {
@@ -14722,7 +14722,7 @@
     "Lumont - Benign Horn": {
       "faction": "mauler",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Lumont's Charge": {
@@ -14977,7 +14977,7 @@
     "Lyca - Keeper of Glades": {
       "faction": "wilder",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": true,
       "skills": {
         "Comet Archery": {
@@ -15201,7 +15201,7 @@
     "Marcille - Elven Mage": {
       "faction": "dimensional",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Silver-White Wings that Streak Across the Skies": {
@@ -15439,7 +15439,7 @@
     "Marilee - Forest's Arrow": {
       "faction": "lightbearer",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Mid-Air Shot": {
@@ -15643,7 +15643,7 @@
     "Mehira - Mind Cager": {
       "faction": "hypogean",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Euphoric Rush": {
@@ -15867,7 +15867,7 @@
     "Mikola - Warbeat Compere": {
       "faction": "mauler",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Dauntless Hymn": {
@@ -16104,7 +16104,7 @@
     "Mirael - Scarlet Sorceress": {
       "faction": "lightbearer",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Winged Flame": {
@@ -16258,7 +16258,7 @@
     "Nara - Wrathful Wraith": {
       "faction": "graveborn",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Crimson Vengeance": {
@@ -16486,7 +16486,7 @@
     "Natsu - Fire Dragon Slayer Mage": {
       "faction": "dimensional",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Lightning Fire Dragon's Roar/Fire Dragon King's Roar": {
@@ -16740,7 +16740,7 @@
     "Nazrik - Soulstalker": {
       "faction": "mauler",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Rend Rupture": {
@@ -16970,7 +16970,7 @@
     "Nerion - Bereaved Tide": {
       "faction": "graveborn",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Drowning Doom": {
@@ -17161,7 +17161,7 @@
     "Niru - Soul Collector": {
       "faction": "graveborn",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Soul Shepherd": {
@@ -17385,7 +17385,7 @@
     "Odie - Desert Defender": {
       "faction": "mauler",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Corrosive Dart": {
@@ -17574,7 +17574,7 @@
     "Pandora - Hope Unleashed": {
       "faction": "dimensional",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": true,
       "skills": {
         "Panic Projection": {
@@ -17865,7 +17865,7 @@
     "Pang - Bamboo Guardian": {
       "faction": "wilder",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Sky Splitter": {
@@ -18082,7 +18082,7 @@
     "Parisa - Ode to Flowers": {
       "faction": "wilder",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Floral Splendor": {
@@ -18239,7 +18239,7 @@
     "Perseus - Chosen Champion": {
       "faction": "lightbearer",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Divine Rend": {
@@ -18487,7 +18487,7 @@
     "Phraesto - Misty Scorpion": {
       "faction": "hypogean",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": true,
       "skills": {
         "Futile Echo": {
@@ -18714,7 +18714,7 @@
     "Pippa - The Muddled Magician": {
       "faction": "wilder",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Wild Shift": {
@@ -18946,7 +18946,7 @@
     "Ravion - Twilight's Burden": {
       "faction": "wilder",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": true,
       "skills": {
         "Killer Flush": {
@@ -19324,7 +19324,7 @@
     "Reinier - Symmetric Sin": {
       "faction": "hypogean",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Mutual Reflection": {
@@ -19579,7 +19579,7 @@
     "Rhys - Fiery Cavalier": {
       "faction": "mauler",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Flame Barrage": {
@@ -19805,7 +19805,7 @@
     "Rowan - The Roamer": {
       "faction": "lightbearer",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": true,
       "skills": {
         "Fatal Greed": {
@@ -20053,7 +20053,7 @@
     "Saida - Vampiric Vine": {
       "faction": "hypogean",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Seed Siphon": {
@@ -20316,7 +20316,7 @@
     "Salazer - Lash of Bantus": {
       "faction": "graveborn",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Rain of Blades": {
@@ -20522,7 +20522,7 @@
     "Satrana - Ember Enchantress": {
       "faction": "mauler",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Fiery Dance": {
@@ -20743,7 +20743,7 @@
     "Scarlita - Herald of Compassion": {
       "faction": "celestial",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Divine Quake": {
@@ -21013,7 +21013,7 @@
     "Seth - Swift Shadow": {
       "faction": "mauler",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Shadow Strike": {
@@ -21284,7 +21284,7 @@
     "Shadewing - Undying Vow": {
       "faction": "graveborn",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Crimson Venom": {
@@ -21561,7 +21561,7 @@
     "Shakir - Furious Howl": {
       "faction": "mauler",
       "class": "rogue",
-      "is_supporting_unit": true,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Ravaging Claws": {
@@ -21776,7 +21776,7 @@
     "Shemira - Corpsemaker": {
       "faction": "graveborn",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Phantom Procession": {
@@ -21929,7 +21929,7 @@
     "Silven - Heir of Glory": {
       "faction": "lightbearer",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Aloft Edge": {
@@ -22140,7 +22140,7 @@
     "Silvina - The Taken Breath": {
       "faction": "graveborn",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Shadow Slayer": {
@@ -22343,7 +22343,7 @@
     "Sinbad - Seaside Savant": {
       "faction": "lightbearer",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Whizzing Edge": {
@@ -22598,7 +22598,7 @@
     "Smokey & Meerky - Wasteland Apothecary": {
       "faction": "mauler",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Special Aroma": {
@@ -22837,7 +22837,7 @@
     "Solise - Floral Wonder": {
       "faction": "wilder",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Life's Embrace": {
@@ -23058,7 +23058,7 @@
     "Sonja - Crimson Queenpin": {
       "faction": "lightbearer",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Tempest Thrusts": {
@@ -23238,7 +23238,7 @@
     "Soren - Silent Fury": {
       "faction": "mauler",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Whirlwind Swing": {
@@ -23498,7 +23498,7 @@
     "Sylphira - Sovereign of Song": {
       "faction": "celestial",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Grand Finale": {
@@ -23827,7 +23827,7 @@
     "Talene - Resurging Flame": {
       "faction": "celestial",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Divine Conflagration": {
@@ -24080,7 +24080,7 @@
     "Tasi - Fairy of Dreams": {
       "faction": "wilder",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Eternal Dreamscape": {
@@ -24348,7 +24348,7 @@
     "Temesia - Lightsavior": {
       "faction": "lightbearer",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Knight's Heart": {
@@ -24632,7 +24632,7 @@
     "Thador - Ironsworn General": {
       "faction": "wilder",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": true,
       "skills": {
         "Moonveil Manifest": {
@@ -24858,7 +24858,7 @@
     "Thoran - Fallen King": {
       "faction": "graveborn",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Soul Retaliation": {
@@ -25073,7 +25073,7 @@
     "Tilaya - Wild Blade": {
       "faction": "wilder",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "tank",
       "is_energy_provider": false,
       "skills": {
         "Wrath of the Wilds": {
@@ -25326,7 +25326,7 @@
     "Ulmus - Grove Keeper": {
       "faction": "wilder",
       "class": "tank",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Ancient Tenacity": {
@@ -25564,7 +25564,7 @@
     "Vala - Phantom of Oakenfell": {
       "faction": "lightbearer",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Swift Shift": {
@@ -25837,7 +25837,7 @@
     "Valen - Roving Swordsman": {
       "faction": "lightbearer",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Thunder Swordwork": {
@@ -26038,7 +26038,7 @@
     "Valka - Forsaken Blade": {
       "faction": "graveborn",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Phantom Slasher": {
@@ -26345,7 +26345,7 @@
     "Velara - Pale Votary": {
       "faction": "wilder",
       "class": "support",
-      "is_supporting_unit": true,
+      "role_category": "support",
       "is_energy_provider": false,
       "skills": {
         "Ruthless Rite": {
@@ -26583,7 +26583,7 @@
     "Viperian - Shadow Serpent": {
       "faction": "graveborn",
       "class": "mage",
-      "is_supporting_unit": false,
+      "role_category": "damage_dealer",
       "is_energy_provider": false,
       "skills": {
         "Spiritual Viper": {
@@ -26800,7 +26800,7 @@
     "Walker - Wildland Outlaw": {
       "faction": "lightbearer",
       "class": "rogue",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Six-Shot": {
@@ -27049,7 +27049,7 @@
     "Zandrok - Watchful Edge": {
       "faction": "mauler",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Savage Slash": {
@@ -27287,7 +27287,7 @@
     "Zanie - Timeless Tinkerer": {
       "faction": "lightbearer",
       "class": "marksman",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Vein Pulse": {
@@ -27569,7 +27569,7 @@
     "Zorya - Watcher in Stone": {
       "faction": "graveborn",
       "class": "warrior",
-      "is_supporting_unit": false,
+      "role_category": "specialist",
       "is_energy_provider": false,
       "skills": {
         "Guardian's Ring": {

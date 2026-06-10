@@ -122,6 +122,7 @@ DEFINING_TIER_SCORE_MULT = {
 REPLACEMENT_MIN_SCORE = 0.6
 REPLACEMENT_MAX = 3
 REPLACEMENT_SAME_FACTION_MULT = 1.20
+REPLACEMENT_SAME_ROLE_CATEGORY_MULT = 1.20
 PRYDWEN_TIER_MODES = (
     "afk_stages",
     "dream_realm",
@@ -1687,14 +1688,21 @@ def _replacement_rank_score(
     candidate_title: str,
     source_faction: str | None,
     faction_by_title: dict[str, str],
+    source_role_category: str | None = None,
+    role_category_by_title: dict[str, str] | None = None,
 ) -> float:
-    """Similarity score used for ranking; same-faction candidates get a boost."""
-    if not source_faction:
-        return raw
-    candidate_faction = faction_by_title.get(candidate_title)
-    if not candidate_faction or candidate_faction != source_faction:
-        return raw
-    return min(raw * REPLACEMENT_SAME_FACTION_MULT, 1.0)
+    """Similarity score for ranking; same-faction/role candidates get a boost."""
+    score = raw
+    if source_faction:
+        candidate_faction = faction_by_title.get(candidate_title)
+        if candidate_faction and candidate_faction == source_faction:
+            score = min(score * REPLACEMENT_SAME_FACTION_MULT, 1.0)
+    role_categories = role_category_by_title or {}
+    if source_role_category:
+        candidate_role = role_categories.get(candidate_title)
+        if candidate_role and candidate_role == source_role_category:
+            score = min(score * REPLACEMENT_SAME_ROLE_CATEGORY_MULT, 1.0)
+    return score
 
 
 def _rank_replacement_category(
@@ -1703,9 +1711,12 @@ def _rank_replacement_category(
     faction_by_title: dict[str, str] | None = None,
     source_title: str | None = None,
     tiers_by_title: dict[str, dict[str, str]] | None = None,
+    source_role_category: str | None = None,
+    role_category_by_title: dict[str, str] | None = None,
 ) -> list[dict]:
     """Top replacement picks for one category above min_score."""
     factions = faction_by_title or {}
+    role_categories = role_category_by_title or {}
     tiers = tiers_by_title or {}
     source_tiers = tiers.get(source_title or "", {})
     ranked_items = [
@@ -1713,7 +1724,14 @@ def _rank_replacement_category(
             _prydwen_tier_preference(source_tiers, tiers.get(title, {}))
             if source_title
             else 0,
-            _replacement_rank_score(score, title, source_faction, factions),
+            _replacement_rank_score(
+                score,
+                title,
+                source_faction,
+                factions,
+                source_role_category,
+                role_categories,
+            ),
             title,
             matches,
         )
@@ -1740,9 +1758,11 @@ def compute_replacement_scores(
     heroes: list[_rs.Hero],
     behavior_by_title: dict[str, _rs.HeroBehavior],
     faction_by_title: dict[str, str] | None = None,
+    role_category_by_title: dict[str, str] | None = None,
 ) -> dict[str, dict[str, list[dict]]]:
     """Per-category replacement lists for each hero (0–1 similarity per category)."""
     factions = faction_by_title or {}
+    role_categories = role_category_by_title or {}
     tiers_by_title = _load_prydwen_tiers_by_title()
 
     profiles: dict[str, dict[str, float]] = {}
@@ -1859,6 +1879,7 @@ def compute_replacement_scores(
             )
 
         source_faction = factions.get(hero_x.title)
+        source_role_category = role_categories.get(hero_x.title)
         result[hero_x.title] = {
             key: _rank_replacement_category(
                 category_scores[key],
@@ -1866,6 +1887,8 @@ def compute_replacement_scores(
                 factions,
                 hero_x.title,
                 tiers_by_title,
+                source_role_category,
+                role_categories,
             )
             for key in REPLACEMENT_CATEGORIES
         }

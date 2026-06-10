@@ -57,7 +57,8 @@
   "replacement_scoring": {
     "min_score": 0.5,
     "max_replacements": 3,
-    "same_faction_mult": 1.2
+    "same_faction_mult": 1.2,
+    "same_role_category_mult": 1.2
   },
   "proximity_synergy": {
     "melee_max_range": 3.5,

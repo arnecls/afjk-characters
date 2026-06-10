@@ -21,7 +21,7 @@
       "required": [
         "faction",
         "class",
-        "is_supporting_unit",
+        "role_category",
         "is_energy_provider",
         "skills",
         "synergy_profile",
@@ -38,9 +38,8 @@
         "class": {
           "$ref": "#/$defs/heroClass"
         },
-        "is_supporting_unit": {
-          "type": "boolean",
-          "description": "True for summons and companions that are not full roster heroes."
+        "role_category": {
+          "$ref": "#/$defs/roleCategory"
         },
         "is_energy_provider": {
           "type": "boolean",
@@ -102,6 +101,11 @@
     },
     "heroClass": {
       "$ref": "game_properties.schema.json#/$defs/class"
+    },
+    "roleCategory": {
+      "type": "string",
+      "enum": ["damage_dealer", "specialist", "support", "tank"],
+      "description": "Prydwen tier-list role category."
     },
     "synergyProfile": {
       "type": "object",

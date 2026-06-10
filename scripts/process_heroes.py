@@ -78,6 +78,11 @@ def build_processed(data: dict) -> dict:
         if gen.is_energy_provider(hero)
     }
 
+    import sources_web
+
+    categories_by_name = sources_web.fetch_prydwen_role_categories()
+    io.apply_prydwen_role_categories(data["heroes"], categories_by_name)
+
     data_by_title = {h["title"]: h for h in data["heroes"]}
     processed_heroes: dict[str, dict] = {}
     for hero in heroes:
@@ -88,9 +93,6 @@ def build_processed(data: dict) -> dict:
         processed_heroes[hero.title] = hs.serialize_processed_hero(
             hero,
             hero_record,
-            is_supporting_unit=gen.is_supporting_unit(
-                hero, hero_class_by_title.get(hero.title, "")
-            ),
             is_energy_provider=hero.title in energy_provider_titles,
             behavior=behavior_dict,
         )

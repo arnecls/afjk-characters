@@ -425,6 +425,31 @@ a:hover {
 .badge-faction-wilder { background: #e8f8ee; color: #207040; }
 .badge-faction-dimensional { background: #e6f4ff; color: #2060a0; }
 
+.badge-emoji {
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+.badge-role-damage-dealer {
+  background: #fde8ea;
+  color: #b82832;
+}
+
+.badge-role-specialist {
+  background: #f5e6fc;
+  color: #8a40b0;
+}
+
+.badge-role-support {
+  background: #e8fbeb;
+  color: #2a8048;
+}
+
+.badge-role-tank {
+  background: #fff8e0;
+  color: #a07000;
+}
+
 .empty-state {
   text-align: center;
   color: var(--text-muted);

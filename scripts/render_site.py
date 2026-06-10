@@ -288,6 +288,7 @@ def build_site_data(
                 "title": meta.get("title", title),
                 "faction": meta.get("faction"),
                 "class": meta.get("class"),
+                "roleCategory": p.get("role_category"),
                 "damage_type": meta.get("damage_type"),
                 "description": meta.get("description", ""),
                 "portrait": f"assets/portraits/{short}.png",

@@ -70,6 +70,8 @@ def apply_config(config: dict) -> None:
         _gen.REPLACEMENT_MAX = rs_cfg["max_replacements"]
     if "same_faction_mult" in rs_cfg:
         _gen.REPLACEMENT_SAME_FACTION_MULT = rs_cfg["same_faction_mult"]
+    if "same_role_category_mult" in rs_cfg:
+        _gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = rs_cfg["same_role_category_mult"]
 
     ps = config.get("proximity_synergy", {})
     if "melee_max_range" in ps:

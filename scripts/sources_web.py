@@ -8,6 +8,8 @@
   Used only to fill gaps in the Fandom record during ``heroes_io.merge_sources``.
 - ``fetch_prydwen_tiers()`` scrapes meta tiers from Prydwen character pages
   (https://www.prydwen.gg/afk-journey/characters), aligned with their tier list.
+- ``fetch_prydwen_role_categories()`` scrapes role categories (DPS, Specialist,
+  Support, Tank) from the Prydwen tier list page.
 
 Both hero fetchers return records in the same structure as ``heroes_io.parse_md``
 so the results can be merged by ``heroes_io.merge_sources``.
@@ -41,6 +43,25 @@ PRYDWEN_USER_AGENT = (
 PRYDWEN_SLUG_ALIASES: dict[str, str] = {
     "Elijah & Lailah": "elijah-and-lailah",
 }
+
+# Fandom roster name -> Prydwen tier-list display name when they differ.
+PRYDWEN_NAME_ALIASES: dict[str, str] = {
+    "Elijah & Lailah": "Elijah and Lailah",
+    "Lucy": "Lucy Heartfilia",
+    "Natsu": "Natsu Dragneel",
+}
+
+PRYDWEN_ROLE_CATEGORY_TO_SCHEMA: dict[str, str] = {
+    "DPS": "damage_dealer",
+    "Specialist": "specialist",
+    "Support": "support",
+    "Tank": "tank",
+}
+
+_PRYDWEN_ROLE_CATEGORY_RE = re.compile(
+    r'\\"name\\":\\"([^\\"]+)\\"[^}]{0,500}?'
+    r'\\"tierListCategory\\":\\"([^\\"]+)\\"',
+)
 
 _PRYDWEN_RATING_RE = re.compile(
     r'<div class="rating-box[^"]*">\s*([^<]+)</div></span><p>([^<]+)</p>',
@@ -571,6 +592,36 @@ def _fetch_prydwen_hero_tiers(name: str) -> tuple[str, dict[str, str] | None]:
     except OSError:
         return name, None
     return name, _parse_prydwen_ratings(html)
+
+
+def _prydwen_display_name(name: str) -> str:
+    return PRYDWEN_NAME_ALIASES.get(name, name)
+
+
+def _normalize_prydwen_role_category(raw: str) -> str | None:
+    return PRYDWEN_ROLE_CATEGORY_TO_SCHEMA.get(raw.strip())
+
+
+def _parse_prydwen_role_categories(html: str) -> dict[str, str]:
+    """Parse tier-list role categories keyed by Prydwen display name."""
+    categories: dict[str, str] = {}
+    for display_name, raw in _PRYDWEN_ROLE_CATEGORY_RE.findall(html):
+        schema_value = _normalize_prydwen_role_category(raw)
+        if schema_value:
+            categories[display_name] = schema_value
+    return categories
+
+
+def fetch_prydwen_role_categories() -> dict[str, str]:
+    """Return role categories keyed by Fandom roster display name."""
+    html = _http_get(PRYDWEN_TIER_LIST_URL, PRYDWEN_USER_AGENT, retries=4)
+    by_prydwen_name = _parse_prydwen_role_categories(html)
+    by_roster_name: dict[str, str] = {}
+    alias_targets = {v: k for k, v in PRYDWEN_NAME_ALIASES.items()}
+    for prydwen_name, category in by_prydwen_name.items():
+        roster_name = alias_targets.get(prydwen_name, prydwen_name)
+        by_roster_name[roster_name] = category
+    return by_roster_name
 
 
 def fetch_prydwen_tiers(hero_names: list[str]) -> dict[str, dict[str, str]]:

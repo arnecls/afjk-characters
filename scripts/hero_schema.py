@@ -67,6 +67,15 @@ _TIMING_DISPLAY_ALIASES = {
     "once_per_battle": "Once",
 }
 
+ROLE_CATEGORIES = frozenset(
+    {"damage_dealer", "specialist", "support", "tank"}
+)
+
+_CLASS_ROLE_CATEGORY_FALLBACK = {
+    "tank": "tank",
+    "support": "support",
+}
+
 _STAT_ABBREVIATIONS = frozenset(
     {"atk", "def", "dmg", "hp", "spd", "crit", "resist"}
 )
@@ -750,11 +759,19 @@ def _build_skill_record(
     return name, record
 
 
+def resolve_role_category(hero_record: dict[str, Any]) -> str:
+    """Resolve Prydwen role category from hero record or class fallback."""
+    category = hero_record.get("role_category")
+    if category in ROLE_CATEGORIES:
+        return category
+    hero_class = to_schema_class(hero_record.get("class"))
+    return _CLASS_ROLE_CATEGORY_FALLBACK.get(hero_class, "damage_dealer")
+
+
 def serialize_processed_hero(
     hero: Any,
     hero_record: dict[str, Any],
     *,
-    is_supporting_unit: bool,
     is_energy_provider: bool,
     behavior: dict[str, Any],
 ) -> dict[str, Any]:
@@ -790,7 +807,7 @@ def serialize_processed_hero(
     return {
         "faction": to_schema_faction(hero_record.get("faction")),
         "class": to_schema_class(hero_record.get("class")),
-        "is_supporting_unit": is_supporting_unit,
+        "role_category": resolve_role_category(hero_record),
         "is_energy_provider": is_energy_provider,
         "skills": skills,
         "synergy_profile": {"provides": provides, "requires": requires},

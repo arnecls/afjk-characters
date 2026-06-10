@@ -85,7 +85,6 @@ class RoundTripTests(unittest.TestCase):
         serialized = hs.serialize_processed_hero(
             hero,
             record,
-            is_supporting_unit=False,
             is_energy_provider=False,
             behavior={
                 "movement": "moving",

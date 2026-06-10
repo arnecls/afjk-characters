@@ -404,6 +404,22 @@ def apply_prydwen_tiers(
     return missing
 
 
+def apply_prydwen_role_categories(
+    heroes: list[dict],
+    categories_by_name: dict[str, str],
+) -> list[str]:
+    """Attach ``role_category`` to hero records; return names with no category."""
+    missing: list[str] = []
+    for hero in heroes:
+        category = categories_by_name.get(hero["name"])
+        if category:
+            hero["role_category"] = category
+        else:
+            hero.pop("role_category", None)
+            missing.append(hero["name"])
+    return missing
+
+
 # ---------------------------------------------------------------------------
 # Document reconstruction (for feeding the existing analysis unchanged)
 # ---------------------------------------------------------------------------
