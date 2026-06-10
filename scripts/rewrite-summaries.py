@@ -2361,11 +2361,63 @@ def _text_has_max_hp_damage(text: str) -> bool:
                 continue
             return True
     return False
-_LOST_HP_DAMAGE_RE = re.compile(
-    r"(?:extra )?damage.{0,60}(?:equal to|of|deals?).{0,30}"
-    r"(?:\d+%[^.]{0,25})?(?:lost hp|of (?:her|his|their|the target's) lost hp)",
+
+# Damage that scales on HP already lost (not direct HP drain or game-term
+# "HP loss" vulnerability / heal-on-lost-HP text in the same clause).
+_LOST_HP_SCALING_RES = [
+    re.compile(p, re.I)
+    for p in (
+        r"(?:extra |plus |additional )?(?:true )?damage\s+"
+        r"(?:equal to|dealt equals? to)\s+"
+        r"(?:\d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?(?:\s*%\s*)?)"
+        r"(?:of (?:the )?)?"
+        r"(?:target'?s?|enemy'?s?|enemies'|their|her|his|"
+        r"all enemies' total)\s+(?:lost\s+hp|hp\s+lost)",
+        r"(?:extra )?damage equal to \d+(?:\.\d+)? times (?:of )?"
+        r"(?:the )?target'?s? lost\s+hp",
+        r"plus \d+(?:\.\d+)?(?:\s*%\s*)? of (?:the )?"
+        r"(?:target'?s?|enemy'?s?|their)\s+lost\s+hp",
+        r"extra true damage equal to .{0,40}?total hp lost",
+        r"extra damage dealt by .{0,50}?to \d+(?:\.\d+)?(?:\s*%\s*)? of "
+        r"(?:the )?target'?s? lost\s+hp",
+        r"damage dealt equals? to \d+(?:\.\d+)?(?:\s*%\s*)? of "
+        r"(?:the )?target'?s? lost\s+hp",
+        r"additional damage to \d+(?:\.\d+)? times (?:of )?"
+        r"(?:the )?target'?s? lost\s+hp",
+        r"extra damage to \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?"
+        r"(?:\s*%\s*)? of (?:her|his|their) lost\s+hp",
+        r"damage plus (?:the )?damage equal to \d+(?:\.\d+)?(?:\s*%\s*)? of "
+        r"(?:the )?target'?s? lost\s+hp",
+    )
+]
+_LOST_HP_DAMAGE_EXCLUDE_RE = re.compile(
+    r"(?:recover|restor|heal|shield|convert).{0,50}(?:lost hp|hp lost)|"
+    r"(?:of|from) (?:the )?hp lost from|"
+    r"\blost hp when\b|"
+    r"\bmore hp loss\b|"
+    r"\bhp loss (?:caused|from this|effect|ration|cannot|on boss)\b|"
+    r"\benemy'?s? hp loss\b|"
+    r"\bminimum hp loss\b|"
+    r"\bhp lost per\b|"
+    r"\bloses? hp equal to\b|"
+    r"\b(?:lose|loses) \d+[^.]{0,40}\bhp\b(?!\s+lost)|"
+    r"\bas much hp loss as\b",
     re.I,
 )
+
+
+def _text_has_lost_hp_damage(text: str) -> bool:
+    """True when damage scales on HP already lost (not heal or direct drain)."""
+    t = text.lower()
+    for pat in _LOST_HP_SCALING_RES:
+        for m in pat.finditer(text):
+            clause = _clause_around(t, m.start())
+            if _LOST_HP_DAMAGE_EXCLUDE_RE.search(clause):
+                continue
+            return True
+    return False
+
+
 _SELF_HP_COST_RE = re.compile(
     r"(?:consumes?|loses?|sacrifices?)\s+(?:\d+%|an amount).{0,30}"
     r"(?:of\s+)?(?:her|his|their)\s+(?:max\s+)?hp|"
@@ -2454,6 +2506,17 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float:
             r"(?:total\s+)?lost\s+hp",
             r"(\d+(?:\.\d+)?)\s*%\s+of\s+(?:the\s+)?(?:enemy's|enemies'|their)\s+"
             r"lost\s+hp",
+            r"plus (\d+(?:\.\d+)?)\s*%\s+of (?:the )?target's lost hp",
+            r"damage equal to (\d+(?:\.\d+)?) times (?:of )?"
+            r"(?:the )?target's lost hp",
+            r"additional damage to (\d+(?:\.\d+)?) times (?:of )?"
+            r"(?:the )?target's lost hp",
+            r"extra damage dealt by .{0,40}to (\d+(?:\.\d+)?)\s*%\s+of "
+            r"(?:the )?target's lost hp",
+            r"damage dealt equals? to (\d+(?:\.\d+)?)\s*%\s+of "
+            r"(?:the )?target's lost hp",
+            r"extra damage to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s+of (?:her|his|their) lost hp",
         ]
     elif dmg_type == "True damage":
         patterns = [
@@ -2666,13 +2729,13 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
     t = text.lower()
     types: list[str] = []
     if re.search(r"\btrue damage\b", t):
-        if re.search(r"\blost hp\b", t):
+        if _text_has_lost_hp_damage(text):
             types.append("HP loss")
         elif _text_has_max_hp_damage(text):
             types.append("Max HP-based damage")
         else:
             types.append("True damage")
-    if _LOST_HP_DAMAGE_RE.search(text) and "HP loss" not in types:
+    if _text_has_lost_hp_damage(text) and "HP loss" not in types:
         types.append("HP loss")
     if _text_has_max_hp_damage(text) and "Max HP-based damage" not in types:
         types.append("Max HP-based damage")

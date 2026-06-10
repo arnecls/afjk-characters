@@ -1802,11 +1802,16 @@
           "All units, Area, Single target"
         ],
         [
+          "hp_loss",
+          "All units"
+        ],
+        [
           "true",
-          "All units, Single target"
+          "Single target"
         ]
       ],
       "damage_magnitudes": {
+        "hp_loss": "high",
         "true": "medium"
       },
       "benefit_stats": [
@@ -1837,7 +1842,8 @@
             "buffs": "medium",
             "debuffs": "medium",
             "true_damage": {
-              "True damage": "high"
+              "HP loss": "high",
+              "True damage": "medium"
             }
           },
           "ultimate": {
@@ -1847,7 +1853,8 @@
             "buffs": "medium",
             "debuffs": "medium",
             "true_damage": {
-              "True damage": "high"
+              "HP loss": "high",
+              "True damage": "medium"
             }
           },
           "non_ultimate": {
@@ -2408,7 +2415,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "true_damage": {
-              "True damage": "medium"
+              "True damage": "high"
             }
           },
           "ultimate": {
@@ -2418,7 +2425,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "true_damage": {
-              "True damage": "medium"
+              "True damage": "high"
             }
           },
           "non_ultimate": {
@@ -23805,11 +23812,11 @@
         ],
         [
           "hp_loss",
-          "All units, Single target"
+          "All units"
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "high"
+        "hp_loss": "medium"
       },
       "benefit_stats": [
         "atk",
@@ -23844,7 +23851,7 @@
             "buffs": "none",
             "debuffs": "none",
             "true_damage": {
-              "HP loss": "high"
+              "HP loss": "medium"
             }
           },
           "ultimate": {
@@ -23854,7 +23861,7 @@
             "buffs": "none",
             "debuffs": "none",
             "true_damage": {
-              "HP loss": "high"
+              "HP loss": "medium"
             }
           },
           "non_ultimate": {

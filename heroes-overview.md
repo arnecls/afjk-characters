@@ -56,9 +56,9 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 **Damage**
 
+- Athalia (100% `Physical` `HP loss`)
 - Faramor (100% `Physical` `HP loss`)
 - Dunlingr (97% `HP loss`)
-- Talene (97% `HP loss`)
 
 **Crowd Control**
 
@@ -527,7 +527,7 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 - **Signature skill (ultimate)**: speed `normal`, buffs `medium`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **True damage**: True damage `high`
+- **True damage**: HP loss `high`, True damage `medium`
 
 ### Units Athalia benefits from
 
@@ -564,9 +564,9 @@ Common buffers are **Hepler**, **Rowan**, or **Hugin**.
 
 **Damage**
 
-- Baelran (100% `True damage` `Physical`)
-- Dionel (100% `True damage` `Physical`)
-- Scarlita (100% `Physical` `True damage`)
+- Faramor (83% `Physical` `HP loss` `True damage`)
+- Vala (76% `HP loss` `True damage` `Physical`)
+- Shadewing (69% `HP loss` `True damage`)
 
 **Debuffs on enemies**
 
@@ -591,7 +591,8 @@ Common buffers are **Hepler**, **Rowan**, or **Hugin**.
 
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
-- True damage — All units, Single target — `medium`
+- HP loss — All units — `high`
+- True damage — Single target — `medium`
 
 #### Debuffs provided by Athalia
 
@@ -702,7 +703,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **True damage**: True damage `medium`
+- **True damage**: True damage `high`
 
 ### Units Baelran benefits from
 
@@ -736,7 +737,7 @@ Common buffers are **Mikola**, **Hepler**, or **Hugin**.
 
 **Damage**
 
-- Athalia (100% `True damage` `Physical`)
+- Athalia (100% `Physical` `True damage`)
 - Dionel (100% `True damage` `Physical`)
 - Faramor (100% `True damage` `Physical`)
 
@@ -1963,7 +1964,7 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 **Damage**
 
-- Athalia (100% `True damage` `Physical`)
+- Athalia (100% `Physical` `True damage`)
 - Baelran (100% `True damage` `Physical`)
 - Scarlita (100% `Physical` `True damage`)
 
@@ -2053,9 +2054,9 @@ Common buffers are **Hugin**, **Hepler**, or **Twins**.
 
 **Damage**
 
+- Athalia (100% `HP loss`)
 - Talene (100% `HP loss` `Magic`)
 - Zorya (96% `HP loss` `Magic`)
-- Aliceth (90% `HP loss`)
 
 **Debuffs on enemies**
 
@@ -2409,9 +2410,9 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 **Damage**
 
+- Athalia (88% `Physical` `HP loss` `True damage`)
 - Vala (79% `HP loss` `True damage` `Physical`)
 - Indris (70% `True damage` `Physical`)
-- Shadewing (70% `HP loss` `True damage`)
 
 **Debuffs on enemies**
 
@@ -3202,8 +3203,8 @@ Common buffers are **Rowan**, **Hepler**, or **Hugin**.
 **Damage**
 
 - Aliceth (100% `Physical` `HP loss`)
+- Athalia (100% `Physical` `HP loss`)
 - Faramor (100% `Physical` `HP loss`)
-- Kordan (100% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -4136,8 +4137,8 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 **Damage**
 
 - Aliceth (100% `Physical` `HP loss`)
+- Athalia (100% `Physical` `HP loss`)
 - Faramor (100% `Physical` `HP loss`)
-- Walker (100% `Physical` `HP loss`)
 
 ### Summary for Kordan
 
@@ -6607,8 +6608,8 @@ These are the **10** strongest pairings:
 **Damage**
 
 - Aliceth (100% `Physical` `HP loss`)
+- Athalia (100% `Physical` `HP loss`)
 - Faramor (100% `Physical` `HP loss`)
-- Kordan (100% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -7292,8 +7293,8 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 **Damage**
 
 - Aliceth (100% `Physical`)
+- Athalia (100% `Physical`)
 - Faramor (100% `Physical`)
-- Harak (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -8234,7 +8235,7 @@ Common buffers are **Mikola**, **Twins**, or **Rowan**.
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **True damage**: HP loss `high`
+- **True damage**: HP loss `medium`
 
 ### Units Talene benefits from
 
@@ -8272,9 +8273,9 @@ Common buffers are **Mikola**, **Hepler**, or **Hewynn**.
 
 **Damage**
 
+- Athalia (100% `HP loss`)
 - Dunlingr (100% `HP loss` `Magic`)
-- Zorya (94% `HP loss` `Magic`)
-- Aliceth (87% `HP loss`)
+- Zorya (100% `HP loss` `Magic`)
 
 **Crowd Control**
 
@@ -8293,7 +8294,7 @@ Common buffers are **Mikola**, **Hepler**, or **Hewynn**.
 
 - Primary damage type (unit): **Magic**
 - Magic — Area, Single target
-- HP loss — All units, Single target — `high`
+- HP loss — All units — `medium`
 
 #### Buffs provided by Talene
 
@@ -8832,9 +8833,9 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 **Damage**
 
+- Athalia (100% `HP loss` `True damage` `Physical`)
 - Faramor (100% `HP loss` `True damage` `Physical`)
 - Shadewing (78% `HP loss` `True damage`)
-- Korin (65% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -9520,7 +9521,7 @@ Common buffers are **Rowan**, **Hugin**, or **Smokey & Meerky**.
 
 **Damage**
 
-- Talene (100% `HP loss` `Magic`)
+- Talene (95% `HP loss` `Magic`)
 - Niru (94% `Magic` `HP loss`)
 - Shadewing (94% `Magic` `HP loss`)
 

@@ -696,6 +696,14 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Athalia",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "HP loss"
+            ]
+          },
+          {
             "name": "Faramor",
             "score": 1.0,
             "matches": [
@@ -705,13 +713,6 @@
           },
           {
             "name": "Dunlingr",
-            "score": 0.9722,
-            "matches": [
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Talene",
             "score": 0.9722,
             "matches": [
               "HP loss"
@@ -3059,26 +3060,28 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
-            "name": "Dionel",
-            "score": 1.0,
-            "matches": [
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
-            "name": "Scarlita",
-            "score": 1.0,
+            "name": "Faramor",
+            "score": 0.8321,
             "matches": [
               "Physical",
+              "HP loss",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Vala",
+            "score": 0.7635,
+            "matches": [
+              "HP loss",
+              "True damage",
+              "Physical"
+            ]
+          },
+          {
+            "name": "Shadewing",
+            "score": 0.6926,
+            "matches": [
+              "HP loss",
               "True damage"
             ]
           }
@@ -3798,8 +3801,8 @@
             "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "True damage",
-              "Physical"
+              "Physical",
+              "True damage"
             ]
           },
           {
@@ -9487,8 +9490,8 @@
             "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "True damage",
-              "Physical"
+              "Physical",
+              "True damage"
             ]
           },
           {
@@ -9950,6 +9953,13 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Athalia",
+            "score": 1.0,
+            "matches": [
+              "HP loss"
+            ]
+          },
+          {
             "name": "Talene",
             "score": 1.0,
             "matches": [
@@ -9963,13 +9973,6 @@
             "matches": [
               "HP loss",
               "Magic"
-            ]
-          },
-          {
-            "name": "Aliceth",
-            "score": 0.9089,
-            "matches": [
-              "HP loss"
             ]
           }
         ],
@@ -11502,6 +11505,15 @@
         ],
         "damage": [
           {
+            "name": "Athalia",
+            "score": 0.8885,
+            "matches": [
+              "Physical",
+              "HP loss",
+              "True damage"
+            ]
+          },
+          {
             "name": "Vala",
             "score": 0.7987,
             "matches": [
@@ -11516,14 +11528,6 @@
             "matches": [
               "True damage",
               "Physical"
-            ]
-          },
-          {
-            "name": "Shadewing",
-            "score": 0.7058,
-            "matches": [
-              "HP loss",
-              "True damage"
             ]
           }
         ],
@@ -14742,7 +14746,7 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -14750,7 +14754,7 @@
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -20019,7 +20023,7 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -20027,7 +20031,7 @@
             ]
           },
           {
-            "name": "Walker",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -31431,7 +31435,7 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -31439,7 +31443,7 @@
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -34285,14 +34289,14 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Harak",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -39325,6 +39329,13 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Athalia",
+            "score": 1.0,
+            "matches": [
+              "HP loss"
+            ]
+          },
+          {
             "name": "Dunlingr",
             "score": 1.0,
             "matches": [
@@ -39334,17 +39345,10 @@
           },
           {
             "name": "Zorya",
-            "score": 0.9484,
+            "score": 1.0,
             "matches": [
               "HP loss",
               "Magic"
-            ]
-          },
-          {
-            "name": "Aliceth",
-            "score": 0.873,
-            "matches": [
-              "HP loss"
             ]
           }
         ],
@@ -42361,6 +42365,15 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Athalia",
+            "score": 1.0,
+            "matches": [
+              "HP loss",
+              "True damage",
+              "Physical"
+            ]
+          },
+          {
             "name": "Faramor",
             "score": 1.0,
             "matches": [
@@ -42375,14 +42388,6 @@
             "matches": [
               "HP loss",
               "True damage"
-            ]
-          },
-          {
-            "name": "Korin",
-            "score": 0.6525,
-            "matches": [
-              "True damage",
-              "Physical"
             ]
           }
         ],
@@ -45618,7 +45623,7 @@
         "damage": [
           {
             "name": "Talene",
-            "score": 1.0,
+            "score": 0.9596,
             "matches": [
               "HP loss",
               "Magic"
