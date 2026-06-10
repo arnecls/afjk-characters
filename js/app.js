@@ -809,12 +809,21 @@
 
   const TIER_RANK_ORDER = ["C", "B", "A", "A+", "S", "S+"];
 
+  function isUnrankedPrydwenTier(tier) {
+    const value = tier != null ? String(tier).trim() : "";
+    return !value || value === "?";
+  }
+
   function prydwenTierClass(tier) {
-    if (!tier) {
+    if (isUnrankedPrydwenTier(tier)) {
       return "tier-unknown";
     }
-    const normalized = String(tier).replace(/\+/g, "-plus");
+    const normalized = String(tier).trim().replace(/\+/g, "-plus");
     return "tier-" + normalized.toLowerCase();
+  }
+
+  function prydwenTierDisplay(tier) {
+    return isUnrankedPrydwenTier(tier) ? "?" : String(tier).trim();
   }
 
   function prydwenTierRank(tier) {
@@ -966,15 +975,13 @@
     const chipClass = compact ? "tier-chip tier-chip-compact" : "tier-chip";
     let html = '<div class="' + rowClass + '">';
     PRYDWEN_TIER_MODES.forEach(function (mode) {
-      const tier = tiers[mode.key];
-      if (!tier) {
-        return;
-      }
-      let colorClass = prydwenTierClass(tier);
+      const rawTier = tiers[mode.key];
+      const displayTier = prydwenTierDisplay(rawTier);
+      let colorClass = prydwenTierClass(rawTier);
       let tipAttrs = "";
       if (relative) {
         const mainTier = compareTo[mode.key];
-        const relation = comparePrydwenTiers(tier, mainTier);
+        const relation = comparePrydwenTiers(rawTier, mainTier);
         colorClass = "tier-rel-" + relation;
         tipAttrs = chipTipAttrs(
           relativeTierTooltip(
@@ -982,7 +989,7 @@
             mainHeroName || "this hero",
             mode.label,
             mainTier,
-            tier
+            displayTier
           )
         );
       }
@@ -996,7 +1003,7 @@
         tipAttrs +
         ">" +
         '<span class="tier-grade">' +
-        escapeHtml(tier) +
+        escapeHtml(displayTier) +
         "</span>" +
         '<span class="tier-mode">' +
         escapeHtml(mode.label) +
