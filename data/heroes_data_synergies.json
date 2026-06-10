@@ -736,6 +736,22 @@
     "Alna - Frozen Mother": {
       "synergies": [
         {
+          "provider": "Hugin - Maverick Smith",
+          "reasons": [
+            "Max HP via Shield (multiple targets, high)",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 17.1
+        },
+        {
+          "provider": "Elijah & Lailah - Celestial Twins",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, medium)",
+            "ATK SPD via Haste buff (all units, medium) `signature fuel`"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Solise - Floral Wonder",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -743,16 +759,17 @@
           "score": 15.0
         },
         {
+          "provider": "Velara - Pale Votary",
+          "reasons": [
+            "Healing via Healing (area, medium)",
+            "ATK SPD via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 12.05
+        },
+        {
           "provider": "Contess - Abyssal Rulekeeper",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Hugin - Maverick Smith",
-          "reasons": [
-            "Max HP via Shield (multiple targets, high)"
           ],
           "score": 9.0
         },
@@ -772,26 +789,59 @@
           "score": 9.0
         },
         {
-          "provider": "Velara - Pale Votary",
-          "reasons": [
-            "Healing via Healing (area, medium)"
-          ],
-          "score": 8.0
-        },
-        {
           "provider": "Galahad - Daughter of Dawn",
           "reasons": [
-            "Max HP via Shield (single target, medium)"
+            "Max HP via Shield (single target, medium)",
+            "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
-          "score": 3.0
+          "score": 7.05
+        },
+        {
+          "provider": "Mehira - Mind Cager",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 4.05
+        },
+        {
+          "provider": "Ravion - Twilight's Burden",
+          "reasons": [
+            "Energy via Energy recovery (multiple targets, medium) `signature fuel`"
+          ],
+          "score": 2.5272
+        },
+        {
+          "provider": "Gunnar - Iron Doom",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 1.0800000000000003
         },
         {
           "provider": "Hepler - Master of Forms",
           "reasons": [
             "Max HP via Shield (multiple targets, high)",
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing (multiple targets, high)",
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 18.0
+          "score": 19.35
+        },
+        {
+          "provider": "Rowan - The Roamer",
+          "reasons": [
+            "Max HP via Max HP buff (single target, high)",
+            "Healing via Healing (area, medium)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 17.5544
+        },
+        {
+          "provider": "Smokey & Meerky - Wasteland Apothecary",
+          "reasons": [
+            "Healing via Healing (area, high)",
+            "Energy via Energy recovery (area, medium) `signature fuel`"
+          ],
+          "score": 15.3696
         },
         {
           "provider": "Hewynn - Tender Leaf",
@@ -816,26 +866,28 @@
           "score": 15.0
         },
         {
-          "provider": "Rowan - The Roamer",
+          "provider": "Lyca - Keeper of Glades",
           "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Healing (area, medium)"
+            "Energy via Energy recovery (all units, low) `signature fuel`",
+            "ATK SPD via ATK SPD buff (all units, high) `signature fuel`"
           ],
-          "score": 12.5
-        },
-        {
-          "provider": "Smokey & Meerky - Wasteland Apothecary",
-          "reasons": [
-            "Healing via Healing (area, high)"
-          ],
-          "score": 12.0
+          "score": 12.906
         },
         {
           "provider": "Mikola - Warbeat Compere",
           "reasons": [
-            "Healing via Healing over time (all units, medium)"
+            "Healing via Healing over time (all units, medium)",
+            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
-          "score": 10.0
+          "score": 12.7
+        },
+        {
+          "provider": "Damian - Woody Wonder",
+          "reasons": [
+            "Healing via Healing (area, medium)",
+            "ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 12.59
         },
         {
           "provider": "Antandra - Desert Fury",
@@ -859,11 +911,20 @@
           "score": 9.0
         },
         {
-          "provider": "Damian - Woody Wonder",
+          "provider": "Pandora - Hope Unleashed",
           "reasons": [
-            "Healing via Healing (area, medium)"
+            "Max HP via Max HP buff (single target, medium)",
+            "Healing via Healing (single target, high)",
+            "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
-          "score": 8.0
+          "score": 8.1318
+        },
+        {
+          "provider": "Shakir - Furious Howl",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 8.1
         },
         {
           "provider": "Lucius - The Lightbringer",
@@ -880,12 +941,27 @@
           "score": 8.0
         },
         {
-          "provider": "Pandora - Hope Unleashed",
+          "provider": "Fay - Colorful Dancer",
           "reasons": [
-            "Max HP via Max HP buff (single target, medium)",
-            "Healing via Healing (single target, high)"
+            "Healing via Healing (arc, medium, conditional (frequent))",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
           ],
-          "score": 7.5
+          "score": 7.26
+        },
+        {
+          "provider": "Valka - Forsaken Blade",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 6.48
+        },
+        {
+          "provider": "Zandrok - Watchful Edge",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, low)",
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 6.0600000000000005
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -895,11 +971,12 @@
           "score": 6.0
         },
         {
-          "provider": "Fay - Colorful Dancer",
+          "provider": "Cecia - Requiem of Thorns",
           "reasons": [
-            "Healing via Healing (arc, medium, conditional (frequent))"
+            "Max HP via Max HP buff (single target, high)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
-          "score": 5.1
+          "score": 5.58
         },
         {
           "provider": "Evie - Royal Envoy",
@@ -923,6 +1000,13 @@
           "score": 4.5
         },
         {
+          "provider": "Vala - Phantom of Oakenfell",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 4.05
+        },
+        {
           "provider": "Nara - Wrathful Wraith",
           "reasons": [
             "Healing via Healing (area, low)"
@@ -935,6 +1019,13 @@
             "Healing via Healing (area, low)"
           ],
           "score": 4.0
+        },
+        {
+          "provider": "Dunlingr - Eternal Voice",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
+          ],
+          "score": 3.6
         },
         {
           "provider": "Callan - Grim Soulkeeper",
@@ -973,6 +1064,21 @@
           "score": 3.0
         },
         {
+          "provider": "Soren - Silent Fury",
+          "reasons": [
+            "Max HP via Shield (single target, low)",
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 2.85
+        },
+        {
+          "provider": "Isabella - The Taken Soul",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 2.7
+        },
+        {
           "provider": "Pang - Bamboo Guardian",
           "reasons": [
             "Max HP via Shield (single target, low)"
@@ -987,18 +1093,18 @@
           "score": 1.5
         },
         {
-          "provider": "Soren - Silent Fury",
-          "reasons": [
-            "Max HP via Shield (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Salazer - Lash of Bantus",
           "reasons": [
             "Max HP via Shield (single target, low, conditional (frequent))"
           ],
           "score": 1.275
+        },
+        {
+          "provider": "Thador - Ironsworn General",
+          "reasons": [
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         }
       ],
       "beneficiaries": [
@@ -10426,6 +10532,10 @@
         },
         {
           "score": 15.0,
+          "name": "Alna"
+        },
+        {
+          "score": 15.0,
           "name": "Cryonaia"
         },
         {
@@ -16498,6 +16608,10 @@
         },
         {
           "score": 17.1,
+          "name": "Alna"
+        },
+        {
+          "score": 17.1,
           "name": "Antandra"
         },
         {
@@ -16591,10 +16705,6 @@
         {
           "score": 11.25,
           "name": "Zanie"
-        },
-        {
-          "score": 9.0,
-          "name": "Alna"
         },
         {
           "score": 9.0,
@@ -31696,10 +31806,6 @@
         },
         {
           "score": 9.0,
-          "name": "Alna"
-        },
-        {
-          "score": 9.0,
           "name": "Baelran"
         },
         {
@@ -41999,6 +42105,10 @@
         },
         {
           "score": 12.05,
+          "name": "Alna"
+        },
+        {
+          "score": 12.05,
           "name": "Niru"
         },
         {
@@ -43486,10 +43596,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 9.0,
-          "name": "Alna"
-        },
         {
           "score": 4.5,
           "name": "Daimon"

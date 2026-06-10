@@ -134,13 +134,14 @@ Common buffers are **Ravion**, **Hugin**, or **Solise**.
 
 `AFK Stages [S+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
 
-- **Signature skill**: Winter Anthem (ultimate)
+- **Signature skill**: Shared Resolve (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: place ally in same row at battle prep (Winter Warrior buffs)
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `high`
+- **Signature skill**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Ultimate**: speed `slow`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
 
 ##### Ultimate
@@ -170,7 +171,7 @@ shared stat buff; first immunity exit freezes nearby enemies
 ### Units Alna benefits from
 
 Look for units providing: `Max HP` `Healing`  
-Common buffers are **Solise**, **Hugin**, or **Velara**.
+Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 - **Contess**
   - Healing (multiple targets, high)
@@ -181,9 +182,9 @@ Common buffers are **Solise**, **Hugin**, or **Velara**.
   - Healing (single target, high)
 - **Galahad**
   - Max HP via Shield (single target, medium)
-- **Hepler**
-  - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, high)
+  - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Mehira**
+  - ATK SPD via Haste buff (single target, high) `signature fuel`
 
 ### Units benefitting most from Alna
 
@@ -2816,7 +2817,7 @@ Common buffers are **Solise**, **Rowan**, or **Hugin**.
 
 ### Units benefitting most from Twins
 
-**74** units include this provider among their top 5 synergy partners. Why the match is common:
+**75** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -8882,7 +8883,7 @@ Common buffers are **Solise**, **Velara**, or **Rowan**.
 
 ### Units benefitting most from Saida
 
-**15** units include this provider among their top 5 synergy partners. Why the match is common:
+**14** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -8890,7 +8891,6 @@ These are the **10** strongest pairings:
 
 - Shadewing
 - Silven
-- Alna
 - Baelran
 - Contess
 - Cryonaia
@@ -8898,6 +8898,7 @@ These are the **10** strongest pairings:
 - Eironn
 - Faramor
 - Gerda
+- Kruger
 
 ### Units that can act as a replacement for Saida
 
@@ -11606,7 +11607,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Velara
 
-**25** units include this provider among their top 5 synergy partners. Why the match is common:
+**26** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -12026,7 +12027,6 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 ### Units benefitting most from Zanie
 
-- Alna
 - Daimon
 - Eironn
 

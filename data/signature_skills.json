@@ -4,8 +4,7 @@
   },
   "Alna": {
     "signature_calculated": "skill2",
-    "signature_override": "ultimate",
-    "speed_override": "fast"
+    "signature_override": "skill1"
   },
   "Alsa": {
     "signature_calculated": "ultimate"
