@@ -1372,7 +1372,7 @@
             " " +
             escapeHtml(label) +
             ": " +
-            enrichSkillInline(meta[label]) +
+            escapeHtml(meta[label]) +
             "</span>"
         );
       }
