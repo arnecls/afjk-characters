@@ -1448,7 +1448,7 @@ BUFF_RULES = [
     (
         r"grants?.{0,40}(?:the )?winter warrior.{0,40}same immunity|"
         r"grants?.{0,50}same (?:damage and control |immunity )?immunity effects",
-        "Damage and control immunity",
+        "Dmg and CC immunity",
     ),
     # ATK buff: match increase/increases/increasing + optional pronoun + "atk by"
     (r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s )?atk by", "ATK buff"),
@@ -1815,13 +1815,13 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     ),
     (r"prevents their defeat", "Fatal blow save"),
     (r"\binvincible\b", "Invincibility"),
-    (r"immune to damage and control", "Damage and control immunity"),
+    (r"immune to damage and control", "Dmg and CC immunity"),
     # Ally granted same immunity: distinct label so it doesn't collapse into
     # the self-immunity entry and loses its Single-target targeting.
     (
         r"grants?.{0,40}(?:the )?winter warrior.{0,40}same immunity|"
         r"grants?.{0,50}same (?:damage and control |immunity )?immunity effects",
-        "Damage and control immunity (ally)",
+        "Dmg and CC immunity (ally)",
     ),
     (
         r"drains? \d+% of .{0,30}current hp",
@@ -3394,7 +3394,7 @@ def analyze_hero(hero: Hero):
 # Buff labels where the effect is inherently high-value, regardless of any
 # incidental number extracted from the surrounding text.
 _ALWAYS_HIGH_BUFFS = frozenset(
-    {"Invincible", "Fatal blow immunity", "Damage and control immunity"}
+    {"Invincible", "Fatal blow immunity", "Dmg and CC immunity"}
 )
 _ALWAYS_MEDIUM_DEBUFFS = frozenset({"Marked target (focus fire)"})
 
@@ -3704,11 +3704,9 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
                 )
             out.append("")
 
-    if hero.damage_entries or hero.damage_type:
+    if hero.damage_entries:
         out.append(f"#### Damage types dealt by {name}")
         out.append("")
-        if hero.damage_type:
-            out.append(f"- Primary damage type (unit): **{hero.damage_type}**")
         for dt, tgt in hero.damage_entries:
             mag = hero.damage_magnitudes.get(dt, "")
             if mag and dt in TRUE_DAMAGE_TYPES:
@@ -5756,6 +5754,29 @@ def format_prydwen_tiers_line(tiers: dict[str, str]) -> str:
     return ", ".join(parts)
 
 
+def _primary_damage_type_magnitude(
+    behavior: HeroBehavior,
+    hero: Hero,
+    merged: dict[str, str],
+) -> str:
+    primary = hero.damage_type
+    if not primary:
+        return "low"
+    if primary in merged:
+        return merged[primary]
+    if primary in (hero.damage_magnitudes or {}):
+        return hero.damage_magnitudes[primary]
+    overview = behavior.skill_overview or {}
+    damage_scores = [
+        _MAG_SCORE.get(_skill_overview_metrics(overview, key).damage, 0)
+        for key in SKILL_OVERVIEW_KEYS
+        if _skill_overview_metrics(overview, key).damage != "none"
+    ]
+    if damage_scores:
+        return _SCORE_TO_MAG[max(damage_scores)]
+    return "low"
+
+
 def _hero_skill_overview_damage_types(
     behavior: HeroBehavior,
     hero: Hero | None = None,
@@ -5779,6 +5800,10 @@ def _hero_skill_overview_damage_types(
         elif dt in hero.damage_scores:
             t1, t2 = (40.0, 120.0)
             result[dt] = _damage_score_to_magnitude(hero.damage_scores[dt], (t1, t2))
+    if hero.damage_type and hero.damage_type not in result:
+        result[hero.damage_type] = _primary_damage_type_magnitude(
+            behavior, hero, merged
+        )
     return result
 
 
@@ -5821,6 +5846,12 @@ def format_behavior_section(
             lines.append(_behavior_bullet("Ally composition", text))
         elif kind == "self_placement":
             lines.append(_behavior_bullet("Self placement", text))
+    if hero is not None and (
+        dt_line := _format_damage_types_line(
+            _hero_skill_overview_damage_types(behavior, hero)
+        )
+    ):
+        lines.append(dt_line)
     overview = behavior.skill_overview or {}
     lines.append("")
     lines.append("#### Skill overview")
@@ -5837,10 +5868,6 @@ def format_behavior_section(
     if not behavior.signature_skill_is_ult:
         lines.append(_format_skill_overview_line("Ultimate", ult_metrics))
     lines.append(_format_skill_overview_line("Non-ultimate", non_ult_metrics))
-    if dt_line := _format_damage_types_line(
-        _hero_skill_overview_damage_types(behavior, hero)
-    ):
-        lines.append(dt_line)
     if include_skill_summaries:
         lines.extend(
             _format_skill_summary_subsections(skill_summaries, hero_categories)

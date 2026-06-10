@@ -19,12 +19,12 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Signature skill**: Radiant Rain (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
 - **Ally composition**: nearest ally in same row receives Brightfeather at battle start
+- **Damage types**: Physical `high`, HP loss `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`, HP loss `high`
 
 ##### Ultimate
 
@@ -104,7 +104,6 @@ Aliceth provides Ally empower buff to single targets `low`, Attack range buff to
 
 #### Damage types dealt by Aliceth
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 - HP loss — Single target — `high`
 
@@ -129,13 +128,13 @@ Aliceth provides Ally empower buff to single targets `low`, Attack range buff to
 - **Signature skill**: Shared Resolve (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: place ally in same row at battle prep (Winter Warrior buffs)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **Ultimate**: speed `slow`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -210,7 +209,6 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 
 #### Damage types dealt by Alna
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Arc, Single target
 
 #### Debuffs provided by Alna
@@ -231,12 +229,12 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 
 - **Signature skill**: Twirling Rocks (ultimate)
 - **Movement**: mostly stationary (avg attack range 6.0 tiles)
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -322,7 +320,6 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 #### Damage types dealt by Alsa
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Debuffs provided by Alsa
@@ -345,12 +342,12 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 - **Signature skill**: Shield Assault (ultimate)
 - **Movement**: high movement (repositioning skills)
 - **Ally composition**: frontmost ally becomes guarded ally (shared shields)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -430,7 +427,6 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 #### Damage types dealt by Antandra
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Area
 
 #### Crowd Control provided by Antandra
@@ -448,12 +444,12 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 - **Signature skill**: Force of Nature (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -528,7 +524,6 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 
 #### Damage types dealt by Arden
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets
 
 #### Crowd Control provided by Arden
@@ -544,12 +539,12 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 
 - **Signature skill**: Wild Sniper (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -635,7 +630,6 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 #### Damage types dealt by Atalanta
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 
 #### Debuffs provided by Atalanta
@@ -656,12 +650,12 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 - **Signature skill**: Unbroken Retribution (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`, HP loss `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, buffs `medium`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`, HP loss `high`
 
 ##### Ultimate
 
@@ -743,7 +737,6 @@ Common buffers are **Hugin**, **Solise**, or **Twins**.
 
 #### Damage types dealt by Athalia
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 - HP loss — All units — `high`
 
@@ -764,12 +757,12 @@ Common buffers are **Hugin**, **Solise**, or **Twins**.
 
 - **Signature skill**: Starlit Slumber (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -849,7 +842,6 @@ Aurora provides Haste buff to summons `medium`, Invincible to single targets `hi
 
 #### Damage types dealt by Aurora
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets
 
 #### Debuffs provided by Aurora
@@ -868,12 +860,12 @@ Aurora provides Haste buff to summons `medium`, Invincible to single targets `hi
 
 - **Signature skill**: Celestial Rise (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `high`, True damage `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`, True damage `medium`
 
 ##### Ultimate
 
@@ -940,7 +932,6 @@ Common buffers are **Twins**, **Solise**, or **Velara**.
 
 #### Damage types dealt by Baelran
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 - True damage — Arc, Area — `medium`
 
@@ -962,12 +953,12 @@ Common buffers are **Twins**, **Solise**, or **Velara**.
 
 - **Signature skill**: Scared Swamp (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -1048,7 +1039,6 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 #### Damage types dealt by Berial
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Debuffs provided by Berial
@@ -1068,13 +1058,13 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 - **Signature skill**: Decay's Reach (Skill 1)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, debuffs `medium`, damage `high`
 - **Ultimate**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -1156,7 +1146,6 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 #### Damage types dealt by Bonnie
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Debuffs provided by Bonnie
@@ -1177,12 +1166,12 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 - **Signature skill**: Whirlwind Wrath (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `high`, DoT `medium`, Max HP-based damage `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`, DoT `medium`, Max HP-based damage `high`
 
 ##### Ultimate
 
@@ -1267,7 +1256,6 @@ Brutus provides Lifedrain buff to single targets `medium`.
 
 #### Damage types dealt by Brutus
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 - DoT — Area
 - Max HP-based damage — Arc, Single target — `high`
@@ -1291,12 +1279,12 @@ Brutus provides Lifedrain buff to single targets `medium`.
 
 - **Signature skill**: Falcon Raid (ultimate)
 - **Movement**: stationary (summon moves)
+- **Damage types**: Magic `high`, DoT `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, damage `low`
-- **Damage types**: Magic `high`, DoT `medium`
 
 ##### Ultimate
 
@@ -1375,7 +1363,6 @@ Common buffers are **Solise**, **Mikola**, or **Velara**.
 
 #### Damage types dealt by Bryon
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 - DoT — Area
 
@@ -1396,12 +1383,12 @@ Common buffers are **Solise**, **Mikola**, or **Velara**.
 
 - **Signature skill**: Restless Guardian (ultimate)
 - **Movement**: moving (avg attack range 1.7 tiles)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
 - **Non-ultimate**: speed `fast`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -1480,7 +1467,6 @@ Callan provides Shield to single targets `medium`.
 
 #### Damage types dealt by Callan
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Crowd Control provided by Callan
@@ -1497,12 +1483,12 @@ Callan provides Shield to single targets `medium`.
 
 - **Signature skill**: Frozen Grave (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -1585,7 +1571,6 @@ Carolina also requires units **applying crowd control** to enemies
 
 #### Damage types dealt by Carolina
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Debuffs provided by Carolina
@@ -1606,13 +1591,13 @@ Carolina also requires units **applying crowd control** to enemies
 - **Signature skill**: Tidal Strength (Skill 2)
 - **Movement**: stationary (avg attack range 10.0 tiles)
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, first cast speed `fast`
 - **Ultimate**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `low`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -1694,7 +1679,6 @@ Cassadee also requires a unit **to bless**
 
 #### Damage types dealt by Cassadee
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 
 #### Debuffs provided by Cassadee
@@ -1715,12 +1699,12 @@ Cassadee also requires a unit **to bless**
 
 - **Signature skill**: Queen's Summons (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Damage types**: Physical `medium`, DoT `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `medium`, DoT `high`
 
 ##### Ultimate
 
@@ -1800,7 +1784,6 @@ Cecia provides ATK SPD buff to single targets `low`, DEF Penetration buff to sin
 
 #### Damage types dealt by Cecia
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 - DoT — Arc, Single target
 
@@ -1814,6 +1797,7 @@ Cecia provides ATK SPD buff to single targets `low`, DEF Penetration buff to sin
 
 - **Signature skill**: Brothers-in-arms (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `low`
 
 #### Skill overview
 
@@ -1866,10 +1850,6 @@ rare chance for massive single normal attack damage
 
 ### Summary for Chippy
 
-#### Damage types dealt by Chippy
-
-- Primary damage type (unit): **Physical**
-
 ## Contess
 
 ### Contess's behavior
@@ -1878,12 +1858,12 @@ rare chance for massive single normal attack damage
 
 - **Signature skill**: Detention Pass (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -1979,7 +1959,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Contess
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Multiple targets
 
 #### Debuffs provided by Contess
@@ -2002,12 +1981,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Frostveil Domain (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -2085,7 +2064,6 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
 
 #### Damage types dealt by Cryonaia
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Debuffs provided by Cryonaia
@@ -2104,12 +2082,12 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
 
 - **Signature skill**: Gravitic Requiem (ultimate)
 - **Movement**: mostly stationary (avg attack range 6.0 tiles)
+- **Damage types**: Magic `high`, True damage `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Magic `high`, True damage `low`
 
 ##### Ultimate
 
@@ -2179,7 +2157,6 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 
 #### Damage types dealt by Cyran
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - True damage — All units — `medium`
 
@@ -2204,13 +2181,13 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 - **Signature skill**: Buddy Barrier (Skill 2)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
+- **Damage types**: Magic `high`, Max HP-based damage `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
 - **Ultimate**: speed `slow`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`, Max HP-based damage `high`
 
 ##### Ultimate
 
@@ -2279,7 +2256,6 @@ Daimon provides Lifedrain buff to single targets `medium` and Shield to multiple
 
 #### Damage types dealt by Daimon
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 - Max HP-based damage — Area — `high`
 
@@ -2295,13 +2271,13 @@ Daimon provides Lifedrain buff to single targets `medium` and Shield to multiple
 
 - **Signature skill**: Inventor's Will (Mythic+)
 - **Movement**: stationary (off battlefield)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, heal `medium`, buffs `medium`, damage `low`
 - **Ultimate**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -2392,7 +2368,6 @@ Damian provides Healing in an area `medium` and Haste buff (Mythic+) to multiple
 
 #### Damage types dealt by Damian
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Crowd Control provided by Damian
@@ -2408,12 +2383,12 @@ Damian provides Healing in an area `medium` and Haste buff (Mythic+) to multiple
 
 - **Signature skill**: Dawn Light (ultimate)
 - **Movement**: moving (avg attack range 0.0 tiles)
+- **Damage types**: Physical `medium`, True damage `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`, True damage `medium`
 
 ##### Ultimate
 
@@ -2502,7 +2477,6 @@ Dionel provides DEF Penetration buff to single targets `high`.
 
 #### Damage types dealt by Dionel
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 - True damage — All units, Single target — `medium`
 
@@ -2523,12 +2497,12 @@ Dionel provides DEF Penetration buff to single targets `high`.
 
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: stationary (avg attack range 6.4 tiles)
+- **Damage types**: Magic `medium`, HP loss `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`, HP loss `medium`
 
 ##### Ultimate
 
@@ -2603,7 +2577,6 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 
 #### Damage types dealt by Dunlingr
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - HP loss — Area — `medium`
 
@@ -2624,13 +2597,13 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 
 - **Signature skill**: Howling Hurricane (Mythic+)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`
 - **Ultimate**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -2699,7 +2672,6 @@ Common buffers are **Hugin** or **Rowan**.
 
 #### Damage types dealt by Eironn
 
-- Primary damage type (unit): **Magic**
 - Magic — Arc, Area
 
 #### Debuffs provided by Eironn
@@ -2720,12 +2692,12 @@ Common buffers are **Hugin** or **Rowan**.
 
 - **Signature skill**: Starlight Waltz (ultimate)
 - **Movement**: moving / stationary (two units)
+- **Damage types**: Magic `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
-- **Damage types**: Magic `low`
 
 ##### Ultimate
 
@@ -2813,7 +2785,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Twins
 
-- Primary damage type (unit): **Magic**
 - Magic — Area
 
 #### Crowd Control provided by Twins
@@ -2831,12 +2802,12 @@ These are the **10** strongest pairings:
 - **Signature skill**: Intel Chase (ultimate)
 - **Movement**: high movement (repositioning skills)
 - **Ally composition**: rearmost ally starts with healing quill; tracks highest damage dealer
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -2923,7 +2894,6 @@ Evie provides ATK buff to multiple targets `high` and Healing to single targets 
 
 #### Damage types dealt by Evie
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Multiple targets, Single target
 
 #### Debuffs provided by Evie
@@ -2945,12 +2915,12 @@ Evie provides ATK buff to multiple targets `high` and Healing to single targets 
 - **Signature skill**: Sanctified Circle (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: bless adjacent ally at battle prep; prioritizes tile behind
+- **Damage types**: Physical `high`, HP loss `high`, True damage `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`, HP loss `high`, True damage `high`
 
 ##### Ultimate
 
@@ -3016,7 +2986,6 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 #### Damage types dealt by Faramor
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 - HP loss — Single target — `high`
 - True damage — Multiple targets — `high`
@@ -3037,12 +3006,12 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 - **Signature skill**: Vibrant Dance (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -3123,7 +3092,6 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 
 #### Damage types dealt by Fay
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets
 
 #### Debuffs provided by Fay
@@ -3139,12 +3107,12 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 
 - **Signature skill**: Pounding Blow (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -3220,7 +3188,6 @@ Florabelle provides Lifedrain buff to summons `high` — conditional (frequent),
 
 #### Damage types dealt by Florabelle
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Crowd Control provided by Florabelle
@@ -3237,12 +3204,12 @@ Florabelle provides Lifedrain buff to summons `high` — conditional (frequent),
 - **Signature skill**: Zoltraak (ultimate)
 - **Movement**: stationary (avg attack range 7.0 tiles)
 - **Ally composition**: frontmost ally shares damage reduction with this hero
+- **Damage types**: Magic `high`, DoT `high`, True damage `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`, DoT `high`, True damage `high`
 
 ##### Ultimate
 
@@ -3310,7 +3277,6 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 
 #### Damage types dealt by Frieren
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - DoT — All units
 - True damage — All units — `high`
@@ -3334,13 +3300,13 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 - **Signature skill**: Time Recast (Mythic+)
 - **Movement**: stationary (avg attack range 10.0 tiles)
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`
 - **Ultimate**: speed `normal`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -3431,7 +3397,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Galahad
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Crowd Control provided by Galahad
@@ -3447,13 +3412,13 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Spring Therapy (Skill 1)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, heal `medium`, damage `medium`
 - **Ultimate**: speed `slow`, heal `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -3527,7 +3492,6 @@ Gerda provides Healing to multiple targets `high` and Healing over time in an ar
 
 #### Damage types dealt by Gerda
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 
 #### Crowd Control provided by Gerda
@@ -3544,12 +3508,12 @@ Gerda provides Healing to multiple targets `high` and Healing over time in an ar
 
 - **Signature skill**: Threshold of Jade (ultimate)
 - **Movement**: moving (avg attack range 2.0 tiles)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -3633,7 +3597,6 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 #### Damage types dealt by Granny Dahnie
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Debuffs provided by Granny Dahnie
@@ -3656,12 +3619,12 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 - **Signature skill**: Annihilation Directive (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: place ally 1 tile behind at battle start (Doomfield buffs and coordinated attacks)
+- **Damage types**: Physical `medium`, DoT `high`, Max HP-based damage `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`, DoT `high`, Max HP-based damage `medium`
 
 ##### Ultimate
 
@@ -3744,7 +3707,6 @@ Gunnar provides ATK SPD buff to single targets `low`, Ranged DEF buff (Legendary
 
 #### Damage types dealt by Gunnar
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 - DoT — Area
 - Max HP-based damage — All units — `medium`
@@ -3761,12 +3723,12 @@ Gunnar provides ATK SPD buff to single targets `low`, Ranged DEF buff (Legendary
 
 - **Signature skill**: Hailing Arrows (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
+- **Damage types**: Physical `high`, Max HP-based damage `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`, Max HP-based damage `medium`
 
 ##### Ultimate
 
@@ -3826,7 +3788,6 @@ Common buffers are **Twins**, **Velara**, or **Lyca**.
 
 #### Damage types dealt by Gwyneth
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 - Max HP-based damage — Single target — `low`
 
@@ -3846,6 +3807,7 @@ Common buffers are **Twins**, **Velara**, or **Lyca**.
 
 - **Signature skill**: Pretty Fireball (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Damage types**: Magic `low`
 
 #### Skill overview
 
@@ -3914,10 +3876,6 @@ Hammie provides ATK buff to multiple targets `low`.
 
 ### Summary for Hammie
 
-#### Damage types dealt by Hammie
-
-- Primary damage type (unit): **Magic**
-
 ## Harak
 
 ### Harak's behavior
@@ -3926,13 +3884,13 @@ Hammie provides ATK buff to multiple targets `low`.
 
 - **Signature skill**: Flesh Feast (Skill 2)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `low`, HP loss `low`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`
 - **Ultimate**: speed `slow`, heal `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`
-- **Damage types**: Physical `low`, HP loss `low`
 
 ##### Ultimate
 
@@ -4015,7 +3973,6 @@ Harak provides Invincible to single targets `high` and Lifedrain buff (Legendary
 
 #### Damage types dealt by Harak
 
-- Primary damage type (unit): **Physical**
 - Physical — Single target
 - HP loss — Single target — `low`
 
@@ -4037,12 +3994,12 @@ Harak provides Invincible to single targets `high` and Lifedrain buff (Legendary
 - **Signature skill**: Form Shift (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: frontmost adjacent ally gets fatal-blow protection
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -4151,7 +4108,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Hepler
 
-- Primary damage type (unit): **Physical**
 - Physical — Area
 
 #### Debuffs provided by Hepler
@@ -4172,6 +4128,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Rain Prayer (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Magic `low`
 
 #### Skill overview
 
@@ -4252,10 +4209,6 @@ Hewynn provides Healing to all units `high`.
 
 ### Summary for Hewynn
 
-#### Damage types dealt by Hewynn
-
-- Primary damage type (unit): **Magic**
-
 #### Crowd Control provided by Hewynn
 
 - Unaffected (Mythic+) — Self — On skill
@@ -4268,13 +4221,13 @@ Hewynn provides Healing to all units `high`.
 
 - **Signature skill**: Hero Party (Skill 2)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`, Max HP-based damage `low`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `medium`
 - **Ultimate**: speed `normal`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `high`, Max HP-based damage `low`
 
 ##### Ultimate
 
@@ -4347,7 +4300,6 @@ Himmel provides Shield to single targets `low`, ATK buff (Mythic+) to multiple t
 
 #### Damage types dealt by Himmel
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Multiple targets
 - Max HP-based damage — All units — `low`
 
@@ -4359,12 +4311,12 @@ Himmel provides Shield to single targets `low`, ATK buff (Mythic+) to multiple t
 
 - **Signature skill**: Cannon Fire (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -4438,7 +4390,6 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 
 #### Damage types dealt by Hodgkin
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Area
 
 #### Debuffs provided by Hodgkin
@@ -4457,6 +4408,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 - **Movement**: stationary (no finite attack range)
 - **Self placement**: stays anchored to battle-prep tile; returns after displacement
 - **Ally composition**: put one ally 1 tile behind him (ATK bonus; buff ends if they leave the sigil)
+- **Damage types**: Physical `low`
 
 #### Skill overview
 
@@ -4542,10 +4494,6 @@ These are the **10** strongest pairings:
 
 ### Summary for Hugin
 
-#### Damage types dealt by Hugin
-
-- Primary damage type (unit): **Physical**
-
 ## Igor
 
 ### Igor's behavior
@@ -4554,12 +4502,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Funereal Ring (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -4624,7 +4572,6 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 #### Damage types dealt by Igor
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Area
 
 #### Debuffs provided by Igor
@@ -4639,12 +4586,12 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 - **Signature skill**: Spellbane Shot (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Physical `high`, Max HP-based damage `low`, True damage `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`, Max HP-based damage `low`, True damage `medium`
 
 ##### Ultimate
 
@@ -4723,7 +4670,6 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 #### Damage types dealt by Indris
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 - Max HP-based damage — Single target — `low`
 - True damage — Multiple targets — `high`
@@ -4749,6 +4695,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 - **Signature skill**: Grimoire Pact (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: frontmost ally becomes companion (stat stacks and ult buffs)
+- **Damage types**: Magic `low`
 
 #### Skill overview
 
@@ -4830,7 +4777,6 @@ Isabella provides Haste buff (Supreme+) to multiple targets `low`.
 
 #### Damage types dealt by Isabella
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Debuffs provided by Isabella
@@ -4849,12 +4795,12 @@ Isabella provides Haste buff (Supreme+) to multiple targets `low`.
 
 - **Signature skill**: Gale Thrust (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -4938,7 +4884,6 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 #### Damage types dealt by Kafra
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Debuffs provided by Kafra
@@ -4962,12 +4907,12 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 - **Signature skill**: Full Energy (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -5072,7 +5017,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Koko
 
-- Primary damage type (unit): **Physical**
 - Physical — Area
 
 #### Debuffs provided by Koko
@@ -5091,12 +5035,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Dominance Ring (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`, HP loss `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`, HP loss `medium`
 
 ##### Ultimate
 
@@ -5163,7 +5107,6 @@ Kordan provides Lifedrain buff to multiple targets `medium` and DEF Penetration 
 
 #### Damage types dealt by Kordan
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 - HP loss — Single target — `medium`
 
@@ -5182,12 +5125,12 @@ Kordan provides Lifedrain buff to multiple targets `medium` and DEF Penetration 
 
 - **Signature skill**: Demonseal Spear (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `low`, Max HP-based damage `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `low`, Max HP-based damage `medium`
 
 ##### Ultimate
 
@@ -5272,7 +5215,6 @@ Korin provides Shield to single targets `medium`.
 
 #### Damage types dealt by Korin
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 - Max HP-based damage — Area — `medium`
 
@@ -5289,12 +5231,12 @@ Korin provides Shield to single targets `medium`.
 
 - **Signature skill**: Devastating Axe (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -5370,7 +5312,6 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 
 #### Damage types dealt by Kruger
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Debuffs provided by Kruger
@@ -5391,13 +5332,13 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 
 - **Signature skill**: Demolition Zone (Skill 1)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `low`
 - **Ultimate**: speed `normal`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -5474,7 +5415,6 @@ Kulu provides DEF Penetration buff (EX+15) to single targets `low`.
 
 #### Damage types dealt by Kulu
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 
 #### Debuffs provided by Kulu
@@ -5497,13 +5437,13 @@ Kulu provides DEF Penetration buff (EX+15) to single targets `low`.
 
 - **Signature skill**: Dungeon Gourmet (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, heal `medium`, buffs `medium`, damage `high`
 - **Ultimate**: speed `fast`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -5585,7 +5525,6 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 
 #### Damage types dealt by Laios
 
-- Primary damage type (unit): **Physical**
 - Physical — Area
 
 #### Crowd Control provided by Laios
@@ -5600,12 +5539,12 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 
 - **Signature skill**: Wild Duel (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -5686,7 +5625,6 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 
 #### Damage types dealt by Lenya
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Crowd Control provided by Lenya
@@ -5703,12 +5641,12 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 
 - **Signature skill**: Tempest Shot (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Magic `medium`, Max HP-based damage `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Magic `medium`, Max HP-based damage `low`
 
 ##### Ultimate
 
@@ -5791,7 +5729,6 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 #### Damage types dealt by Lily May
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 - Max HP-based damage — Single target — `low`
 
@@ -5812,12 +5749,12 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 - **Signature skill**: Whispering Tempest (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -5903,7 +5840,6 @@ Lorsan provides Healing (Mythic+) to all units `high`.
 
 #### Damage types dealt by Lorsan
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Crowd Control provided by Lorsan
@@ -5921,12 +5857,12 @@ Lorsan provides Healing (Mythic+) to all units `high`.
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: place adjacent allies behind at battle prep (DEF buff)
 - **Ally composition**: place allies on adjacent tiles behind at battle start (shields and ATK boost)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -6004,7 +5940,6 @@ Common buffers are **Rowan**, **Hugin**, or **Solise**.
 
 #### Damage types dealt by Lucca
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Crowd Control provided by Lucca
@@ -6023,12 +5958,12 @@ Common buffers are **Rowan**, **Hugin**, or **Solise**.
 
 - **Signature skill**: Divine Light Aegis (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -6118,7 +6053,6 @@ Lucius provides Shield in an area `medium`.
 
 #### Damage types dealt by Lucius
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Debuffs provided by Lucius
@@ -6136,13 +6070,13 @@ Lucius provides Shield in an area `medium`.
 
 - **Signature skill**: Star Dress: Aquarius Form (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, damage `high`
 - **Ultimate**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -6216,7 +6150,6 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 
 #### Damage types dealt by Lucy
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 
 #### Crowd Control provided by Lucy
@@ -6233,12 +6166,12 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 
 - **Signature skill**: Eternal Serenity (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -6320,7 +6253,6 @@ Ludovic provides Healing in an area `medium`.
 
 #### Damage types dealt by Ludovic
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Crowd Control provided by Ludovic
@@ -6336,12 +6268,12 @@ Ludovic provides Healing in an area `medium`.
 
 - **Signature skill**: Lumont's Charge (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -6433,7 +6365,6 @@ Lumont provides DEF buff to multiple targets `low`.
 
 #### Damage types dealt by Lumont
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Debuffs provided by Lumont
@@ -6455,12 +6386,12 @@ Lumont provides DEF buff to multiple targets `low`.
 
 - **Signature skill**: Comet Archery (ultimate)
 - **Movement**: stationary (avg attack range 11.0 tiles)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -6544,7 +6475,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Lyca
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 
 #### Debuffs provided by Lyca
@@ -6565,12 +6495,12 @@ These are the **10** strongest pairings:
 - **Signature skill**: Silver-White Wings that Streak Across the Skies (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: place ally 1 tile in front at battle prep (revive target)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -6651,7 +6581,6 @@ Marcille provides Healing to multiple targets `high`.
 
 #### Damage types dealt by Marcille
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Crowd Control provided by Marcille
@@ -6668,12 +6597,12 @@ Marcille provides Healing to multiple targets `high`.
 
 - **Signature skill**: Mid-Air Shot (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `low`, True damage `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `low`, True damage `low`
 
 ##### Ultimate
 
@@ -6749,7 +6678,6 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 #### Damage types dealt by Marilee
 
-- Primary damage type (unit): **Physical**
 - Physical — Multiple targets, Single target
 - True damage — Multiple targets — `low`
 
@@ -6765,12 +6693,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 - **Signature skill**: Euphoric Rush (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -6858,7 +6786,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Mehira
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Debuffs provided by Mehira
@@ -6878,6 +6805,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Dauntless Hymn (ultimate)
 - **Movement**: moving (avg attack range 2.0 tiles)
+- **Damage types**: Physical `low`
 
 #### Skill overview
 
@@ -6971,7 +6899,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Mikola
 
-- Primary damage type (unit): **Physical**
 - Physical — Area
 
 #### Crowd Control provided by Mikola
@@ -6986,12 +6913,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Winged Flame (ultimate)
 - **Movement**: stationary (avg attack range 10.1 tiles)
+- **Damage types**: Magic `medium`, DoT `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `medium`, DoT `low`
 
 ##### Ultimate
 
@@ -7062,7 +6989,6 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 #### Damage types dealt by Mirael
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 - DoT — Single target
 
@@ -7078,13 +7004,13 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 - **Signature skill**: Phantom Chains (Skill 1)
 - **Movement**: mostly stationary (pulls enemies)
+- **Damage types**: Physical `high`, Max HP-based damage `medium`, True damage `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`
 - **Ultimate**: speed `fast`, first cast speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, damage `low`
-- **Damage types**: Physical `high`, Max HP-based damage `medium`, True damage `high`
 
 ##### Ultimate
 
@@ -7158,7 +7084,6 @@ Nara provides Healing (Mythic+) in an area `low`.
 
 #### Damage types dealt by Nara
 
-- Primary damage type (unit): **Physical**
 - Physical — Single target
 - Max HP-based damage — Area — `medium`
 - True damage — Single target — `high`
@@ -7180,12 +7105,12 @@ Nara provides Healing (Mythic+) in an area `low`.
 
 - **Signature skill**: Lightning Fire Dragon's Roar/Fire Dragon King's Roar (ultimate)
 - **Movement**: stationary (avg attack range 11.0 tiles)
+- **Damage types**: Magic `high`, Max HP-based damage `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, first cast speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`, Max HP-based damage `low`
 
 ##### Ultimate
 
@@ -7265,7 +7190,6 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 #### Damage types dealt by Natsu
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 - Max HP-based damage — Area — `low`
 
@@ -7288,12 +7212,12 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 - **Signature skill**: Rend Rupture (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles)
+- **Damage types**: Physical `high`, Max HP-based damage `medium`, True damage `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `low`
-- **Damage types**: Physical `high`, Max HP-based damage `medium`, True damage `medium`
 
 ##### Ultimate
 
@@ -7368,7 +7292,6 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 #### Damage types dealt by Nazrik
 
-- Primary damage type (unit): **Physical**
 - Physical — Single target
 - Max HP-based damage — Single target — `low`
 - True damage — Single target — `high`
@@ -7393,12 +7316,12 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 - **Signature skill**: Drowning Doom (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -7484,7 +7407,6 @@ Nerion also requires units **applying crowd control** to enemies
 
 #### Damage types dealt by Nerion
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Debuffs provided by Nerion
@@ -7504,12 +7426,12 @@ Nerion also requires units **applying crowd control** to enemies
 - **Signature skill**: Soul Shepherd (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
+- **Damage types**: Magic `medium`, HP loss `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, damage `medium`
-- **Damage types**: Magic `medium`, HP loss `low`
 
 ##### Ultimate
 
@@ -7577,7 +7499,6 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 #### Damage types dealt by Niru
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 - HP loss — Single target — `low`
 
@@ -7589,13 +7510,13 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 - **Signature skill**: Heart Crusher (Mythic+)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Damage types**: Magic `low`, DoT `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, debuffs `medium`
 - **Ultimate**: speed `slow`, debuffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `low`
-- **Damage types**: Magic `low`, DoT `medium`
 
 ##### Ultimate
 
@@ -7661,7 +7582,6 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 #### Damage types dealt by Odie
 
-- Primary damage type (unit): **Magic**
 - Magic — Single target
 - DoT — Single target
 
@@ -7678,13 +7598,13 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - **Signature skill**: Boxed Blessing (Skill 1)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: rearmost ally enters invincible box, then gains Energy and ATK
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
 - **Ultimate**: speed `slow`, debuffs `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -7760,7 +7680,6 @@ Pandora provides Energy recovery to single targets `low`, Healing to single targ
 
 #### Damage types dealt by Pandora
 
-- Primary damage type (unit): **Magic**
 - Magic — Single target
 
 #### Debuffs provided by Pandora
@@ -7779,12 +7698,12 @@ Pandora provides Energy recovery to single targets `low`, Healing to single targ
 
 - **Signature skill**: Sky Splitter (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -7872,7 +7791,6 @@ Pang provides Shield (EX+10) to single targets `low` and DEF Penetration buff (S
 
 #### Damage types dealt by Pang
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Crowd Control provided by Pang
@@ -7888,12 +7806,12 @@ Pang provides Shield (EX+10) to single targets `low` and DEF Penetration buff (S
 
 - **Signature skill**: Floral Splendor (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -7962,7 +7880,6 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 #### Damage types dealt by Parisa
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
 
 ## Perseus
@@ -7973,12 +7890,12 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 - **Signature skill**: Divine Rend (ultimate)
 - **Movement**: moving (avg attack range 2.9 tiles)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -8056,7 +7973,6 @@ Perseus provides ATK buff to multiple targets `medium`.
 
 #### Damage types dealt by Perseus
 
-- Primary damage type (unit): **Physical**
 - Physical — Area
 
 #### Crowd Control provided by Perseus
@@ -8075,13 +7991,13 @@ Perseus provides ATK buff to multiple targets `medium`.
 - **Movement**: moving (avg attack range 1.8 tiles)
 - **Ally composition**: place allies 1 tile behind this hero and the Illusion for contract buffs
 - **Self placement**: keep this hero and Illusion in the same row (damage reduction and battle-start shields)
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `low`
 - **Ultimate**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -8161,7 +8077,6 @@ Phraesto provides Damage taken reduction to single targets `low`, Max HP buff to
 
 #### Damage types dealt by Phraesto
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 
 #### Crowd Control provided by Phraesto
@@ -8177,12 +8092,12 @@ Phraesto provides Damage taken reduction to single targets `low`, Max HP buff to
 
 - **Signature skill**: Wild Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Magic `medium`, Max HP-based damage `low`, True damage `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, damage `medium`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`, Max HP-based damage `low`, True damage `low`
 
 ##### Ultimate
 
@@ -8265,7 +8180,6 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 #### Damage types dealt by Pippa
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Multiple targets, Single target
 - Max HP-based damage — Single target — `low`
 - True damage — Area — `medium`
@@ -8290,12 +8204,12 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - **Signature skill**: Killer Flush (ultimate)
 - **Movement**: high movement (repositioning skills)
 - **Ally composition**: Objectives go to the 2 rearmost allies; backline heroes receive ATK and Energy on completion
+- **Damage types**: Physical `medium`, HP loss `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`, HP loss `low`
 
 ##### Ultimate
 
@@ -8379,7 +8293,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Ravion
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 - HP loss — Single target — `low`
 
@@ -8402,13 +8315,13 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Dynamic Balance (Skill 1)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, heal `medium`
 - **Ultimate**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, debuffs `medium`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -8486,7 +8399,6 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 #### Damage types dealt by Reinier
 
-- Primary damage type (unit): **Magic**
 - Magic — Multiple targets, Single target
 
 #### Debuffs provided by Reinier
@@ -8511,12 +8423,12 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 - **Signature skill**: Flame Barrage (ultimate)
 - **Movement**: high movement (moves while attacking)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -8590,7 +8502,6 @@ Rhys provides Healing to single targets `medium` and Movement speed buff (Mythic
 
 #### Damage types dealt by Rhys
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Single target
 
 #### Crowd Control provided by Rhys
@@ -8605,12 +8516,12 @@ Rhys provides Healing to single targets `medium` and Movement speed buff (Mythic
 
 - **Signature skill**: Fatal Greed (ultimate)
 - **Movement**: moving (repositions on cast)
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -8710,7 +8621,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Rowan
 
-- Primary damage type (unit): **Magic**
 - Magic — Single target
 
 #### Debuffs provided by Rowan
@@ -8725,12 +8635,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Seed Siphon (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `fast`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -8811,7 +8721,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Saida
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 
 #### Debuffs provided by Saida
@@ -8832,12 +8741,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Rain of Blades (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -8921,7 +8830,6 @@ Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to
 
 #### Damage types dealt by Salazer
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Single target
 
 #### Crowd Control provided by Salazer
@@ -8936,12 +8844,12 @@ Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to
 
 - **Signature skill**: Fiery Dance (ultimate)
 - **Movement**: moving (avg attack range 1.5 tiles)
+- **Damage types**: Magic `medium`, Max HP-based damage `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`, Max HP-based damage `high`
 
 ##### Ultimate
 
@@ -9020,7 +8928,6 @@ Satrana provides Damage taken reduction (Legendary+) to single targets `medium`.
 
 #### Damage types dealt by Satrana
 
-- Primary damage type (unit): **Magic**
 - Magic — Arc, Area, Single target
 - Max HP-based damage — Arc, Area — `high`
 
@@ -9041,13 +8948,13 @@ Satrana provides Damage taken reduction (Legendary+) to single targets `medium`.
 
 - **Signature skill**: Divine Wrath (Mythic+)
 - **Movement**: moving (brief reposition)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, damage `low`
 - **Ultimate**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -9123,7 +9030,6 @@ Scarlita provides Shield to single targets `low`.
 
 #### Damage types dealt by Scarlita
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Arc, Area, Single target
 
 #### Crowd Control provided by Scarlita
@@ -9142,12 +9048,12 @@ Scarlita provides Shield to single targets `low`.
 
 - **Signature skill**: Shadow Strike (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `low`, HP loss `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `low`, HP loss `medium`
 
 ##### Ultimate
 
@@ -9240,7 +9146,6 @@ Seth provides Crit buff to single targets `low` and Lifedrain buff to single tar
 
 #### Damage types dealt by Seth
 
-- Primary damage type (unit): **Physical**
 - Physical — Single target
 - HP loss — Single target
 
@@ -9260,13 +9165,13 @@ Seth provides Crit buff to single targets `low` and Lifedrain buff to single tar
 
 - **Signature skill**: Withering Curse (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Magic `high`, DoT `low`, HP loss `low`, Max HP-based damage `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 - **Ultimate**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`, DoT `low`, HP loss `low`, Max HP-based damage `high`
 
 ##### Ultimate
 
@@ -9327,7 +9232,6 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 #### Damage types dealt by Shadewing
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 - DoT — Single target
 - HP loss — Single target — `low`
@@ -9345,12 +9249,12 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 - **Signature skill**: Ravaging Claws (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -9444,7 +9348,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Shakir
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Area
 
 #### Debuffs provided by Shakir
@@ -9463,12 +9366,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Phantom Procession (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
+- **Damage types**: Magic `high`, Max HP-based damage `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`, Max HP-based damage `high`
 
 ##### Ultimate
 
@@ -9529,7 +9432,6 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 #### Damage types dealt by Shemira
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - Max HP-based damage — Area, Single target — `high`
 
@@ -9541,13 +9443,13 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 - **Signature skill**: Gravity Collapse (Skill 1)
 - **Movement**: stationary (avg attack range 12.0 tiles)
+- **Damage types**: Magic `medium`, Max HP-based damage `low`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, damage `high`
 - **Ultimate**: speed `fast`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Magic `medium`, Max HP-based damage `low`
 
 ##### Ultimate
 
@@ -9617,7 +9519,6 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 #### Damage types dealt by Silven
 
-- Primary damage type (unit): **Magic**
 - Magic — Single target
 - Max HP-based damage — Single target
 
@@ -9633,12 +9534,12 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 - **Signature skill**: Shadow Slayer (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -9714,7 +9615,6 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 #### Damage types dealt by Silvina
 
-- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 #### Debuffs provided by Silvina
@@ -9735,12 +9635,12 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 - **Signature skill**: Whizzing Edge (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -9808,7 +9708,6 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 #### Damage types dealt by Sinbad
 
-- Primary damage type (unit): **Physical**
 - Physical — Multiple targets, Single target
 
 #### Debuffs provided by Sinbad
@@ -9832,12 +9731,12 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 - **Signature skill**: Special Aroma (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Magic `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`
-- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -9937,7 +9836,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Smokey & Meerky
 
-- Primary damage type (unit): **Magic**
 - Magic — Area
 
 #### Crowd Control provided by Smokey & Meerky
@@ -9953,12 +9851,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Life's Embrace (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, heal `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -10047,7 +9945,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Solise
 
-- Primary damage type (unit): **Magic**
 - Magic — All units
 
 #### Crowd Control provided by Solise
@@ -10063,13 +9960,13 @@ These are the **10** strongest pairings:
 - **Signature skill**: Crimson Covenant (Skill 1)
 - **Movement**: high movement (repositioning skills)
 - **Ally composition**: place allies on left and right at battle start (Crimson Covenant buffs; prioritizes front row)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
 - **Ultimate**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -10151,7 +10048,6 @@ Sonja provides ATK buff to multiple targets `low`.
 
 #### Damage types dealt by Sonja
 
-- Primary damage type (unit): **Physical**
 - Physical — Area
 
 #### Crowd Control provided by Sonja
@@ -10166,12 +10062,12 @@ Sonja provides ATK buff to multiple targets `low`.
 
 - **Signature skill**: Whirlwind Swing (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -10258,7 +10154,6 @@ Soren provides Damage taken reduction to single targets `high`, Haste buff (Lege
 
 #### Damage types dealt by Soren
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Multiple targets, Single target
 
 #### Crowd Control provided by Soren
@@ -10274,12 +10169,12 @@ Soren provides Damage taken reduction to single targets `high`, Haste buff (Lege
 
 - **Signature skill**: Grand Finale (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Magic `high`, Max HP-based damage `medium`, True damage `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`, Max HP-based damage `medium`, True damage `high`
 
 ##### Ultimate
 
@@ -10338,7 +10233,6 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 #### Damage types dealt by Sylphira
 
-- Primary damage type (unit): **Magic**
 - Magic — Area, Single target
 - Max HP-based damage — Single target — `medium`
 - True damage — Area — `high`
@@ -10366,12 +10260,12 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 - **Signature skill**: Divine Conflagration (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles)
 - **Ally composition**: frontmost ally carries Pyre of Renewal (AoE damage and healing)
+- **Damage types**: Magic `medium`, HP loss `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Magic `medium`, HP loss `medium`
 
 ##### Ultimate
 
@@ -10456,7 +10350,6 @@ Talene provides Healing in an area `low` and Healing over time in an area `low`.
 
 #### Damage types dealt by Talene
 
-- Primary damage type (unit): **Magic**
 - Magic — Area
 - HP loss — All units — `medium`
 
@@ -10472,12 +10365,12 @@ Talene provides Healing in an area `low` and Healing over time in an area `low`.
 
 - **Signature skill**: Eternal Dreamscape (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles)
+- **Damage types**: Magic `medium`, DoT `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`, DoT `medium`
 
 ##### Ultimate
 
@@ -10552,7 +10445,6 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 #### Damage types dealt by Tasi
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
 - DoT — All units
 
@@ -10569,12 +10461,12 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 - **Signature skill**: Knight's Heart (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `high`, Max HP-based damage `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, damage `low`
-- **Damage types**: Physical `high`, Max HP-based damage `high`
 
 ##### Ultimate
 
@@ -10660,7 +10552,6 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 #### Damage types dealt by Temesia
 
-- Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 - Max HP-based damage — Single target — `high`
 
@@ -10683,13 +10574,13 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 - **Signature skill**: Darkmoon Pact (Skill 1)
 - **Movement**: moving (avg attack range 0.2 tiles)
 - **Ally composition**: place lieutenant 1 tile behind at battle prep (Crit + shared shields)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`
 - **Ultimate**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -10767,7 +10658,6 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 
 #### Damage types dealt by Thador
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Debuffs provided by Thador
@@ -10787,13 +10677,13 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 - **Signature skill**: Resurrection (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: place ally 1 tile behind at battle prep (Soul Pact damage share and revive)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`
 - **Ultimate**: speed `slow`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -10870,7 +10760,6 @@ Thoran provides Lifedrain buff to single targets `low`.
 
 #### Damage types dealt by Thoran
 
-- Primary damage type (unit): **Physical**
 - Physical — Single target
 
 #### Crowd Control provided by Thoran
@@ -10886,12 +10775,12 @@ Thoran provides Lifedrain buff to single targets `low`.
 
 - **Signature skill**: Wrath of the Wilds (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -10969,7 +10858,6 @@ Tilaya provides Max HP buff (EX+10) in an area `medium`.
 
 #### Damage types dealt by Tilaya
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 
 #### Crowd Control provided by Tilaya
@@ -10985,13 +10873,13 @@ Tilaya provides Max HP buff (EX+10) in an area `medium`.
 - **Signature skill**: Way of the Forest (Skill 2)
 - **Movement**: moving (stationary when rooted)
 - **Ally composition**: when rooted, shields frontmost ally instead of self
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, heal `medium`
 - **Ultimate**: speed `slow`, heal `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -11077,7 +10965,6 @@ Ulmus provides Healing over time to single targets `low` and Shield to single ta
 
 #### Damage types dealt by Ulmus
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Crowd Control provided by Ulmus
@@ -11095,12 +10982,12 @@ Ulmus provides Healing over time to single targets `low` and Shield to single ta
 
 - **Signature skill**: Swift Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
+- **Damage types**: Physical `medium`, HP loss `low`, True damage `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Physical `medium`, HP loss `low`, True damage `low`
 
 ##### Ultimate
 
@@ -11194,7 +11081,6 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 #### Damage types dealt by Vala
 
-- Primary damage type (unit): **Physical**
 - Physical — Single target
 - HP loss — Single target — `medium`
 - True damage — Single target — `medium`
@@ -11217,12 +11103,12 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 - **Signature skill**: Thunder Swordwork (ultimate)
 - **Movement**: moving (avg attack range 1.4 tiles)
+- **Damage types**: Physical `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, damage `medium`
-- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -11302,7 +11188,6 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 #### Damage types dealt by Valen
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Debuffs provided by Valen
@@ -11321,12 +11206,12 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 - **Signature skill**: Phantom Slasher (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `high`, Max HP-based damage `medium`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, heal `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`, Max HP-based damage `medium`
 
 ##### Ultimate
 
@@ -11413,7 +11298,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Valka
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 - Max HP-based damage — Area — `medium`
 
@@ -11431,12 +11315,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Ruthless Rite (ultimate)
 - **Movement**: stationary (no finite attack range)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -11535,7 +11419,6 @@ These are the **10** strongest pairings:
 
 #### Damage types dealt by Velara
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Area, Multiple targets
 
 #### Debuffs provided by Velara
@@ -11554,13 +11437,13 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Crimson Waltz (Mythic+)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
+- **Damage types**: Magic `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, damage `low`
 - **Ultimate**: speed `normal`, first cast speed `fast`, heal `medium`, damage `high`
 - **Non-ultimate**: speed `slow`, heal `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Magic `high`
 
 ##### Ultimate
 
@@ -11637,7 +11520,6 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 #### Damage types dealt by Viperian
 
-- Primary damage type (unit): **Magic**
 - Magic — All units, Single target
 
 #### Debuffs provided by Viperian
@@ -11656,12 +11538,12 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 - **Signature skill**: Six-Shot (ultimate)
 - **Movement**: moving (avg attack range 2.0 tiles)
+- **Damage types**: Physical `low`, HP loss `medium`, Max HP-based damage `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Physical `low`, HP loss `medium`, Max HP-based damage `low`
 
 ##### Ultimate
 
@@ -11738,7 +11620,6 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 #### Damage types dealt by Walker
 
-- Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
 - HP loss — Single target — `medium`
 - Max HP-based damage — Single target — `low`
@@ -11759,6 +11640,7 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 - **Signature skill**: Rallying Roar (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `low`
 
 #### Skill overview
 
@@ -11833,7 +11715,6 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 #### Damage types dealt by Zandrok
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Crowd Control provided by Zandrok
@@ -11849,6 +11730,7 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 - **Signature skill**: Vein Pulse (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
+- **Damage types**: Physical `low`
 
 #### Skill overview
 
@@ -11934,7 +11816,6 @@ Zanie provides Healing to single targets `high`, Shield to single targets `high`
 
 #### Damage types dealt by Zanie
 
-- Primary damage type (unit): **Physical**
 - Physical — Area, Single target
 
 #### Debuffs provided by Zanie
@@ -11956,12 +11837,12 @@ Zanie provides Healing to single targets `high`, Shield to single targets `high`
 
 - **Signature skill**: Guardian's Ring (ultimate)
 - **Movement**: moving (inactive while dormant)
+- **Damage types**: Magic `high`, HP loss `high`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`, HP loss `high`
 
 ##### Ultimate
 
@@ -12045,7 +11926,6 @@ Zorya also requires allies **casting ultimates**
 
 #### Damage types dealt by Zorya
 
-- Primary damage type (unit): **Magic**
 - Magic — Arc, Area
 - HP loss — Area — `high`
 

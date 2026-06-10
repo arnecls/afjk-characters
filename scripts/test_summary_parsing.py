@@ -298,6 +298,28 @@ class SummaryParsingTests(unittest.TestCase):
                     offenders.append(f"{short}: {dt} -> {tgt}")
         self.assertEqual(offenders, [])
 
+    def test_summary_excludes_primary_damage_type_line(self):
+        hero = _hero_by_short_name("Aliceth")
+        summary = rs.format_summary(hero, "Aliceth")
+        self.assertNotIn("Primary damage type", summary)
+        self.assertIn("Physical —", summary)
+
+    def test_behavior_header_includes_primary_damage_type(self):
+        hero = _hero_by_short_name("Chippy")
+        text = rs.HEROES_MD.read_text(encoding="utf-8")
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+        skills = rs.load_skills_by_title_from_blocks(blocks)
+        rs.assign_magnitudes([hero], skills)
+        behavior = rs.build_behavior_for_heroes(
+            [hero], {hero.title: "Chippy"}
+        )[hero.title]
+        lines = rs.format_behavior_section("Chippy", behavior, hero=hero)
+        text = "\n".join(lines)
+        self.assertIn("- **Damage types**: Physical `low`", text)
+        overview_idx = text.index("#### Skill overview")
+        damage_idx = text.index("- **Damage types**:")
+        self.assertLess(damage_idx, overview_idx)
+
     def test_healing_throughput_favors_faster_cadence(self):
         fast = _hero_with_magnitudes("Fay")
         slow = _hero_with_magnitudes("Hewynn")
