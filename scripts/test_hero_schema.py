@@ -365,6 +365,22 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("first cast speed `fast`", text)
         self.assertIn("speed `slow`", text)
 
+    def test_bryon_signature_first_cast_speed(self):
+        _, behavior = self._hero_by_display("Bryon")
+        sig_metrics = behavior.skill_overview["signature"]
+        self.assertEqual(sig_metrics.speed, "fast")
+        self.assertEqual(sig_metrics.first_cast_speed, "fast")
+        text = "\n".join(rs.format_behavior_section("Bryon", behavior))
+        self.assertIn("first cast speed `fast`", text)
+
+    def test_niru_signature_first_cast_speed(self):
+        _, behavior = self._hero_by_display("Niru")
+        sig_metrics = behavior.skill_overview["signature"]
+        self.assertEqual(sig_metrics.speed, "slow")
+        self.assertEqual(sig_metrics.first_cast_speed, "fast")
+        text = "\n".join(rs.format_behavior_section("Niru", behavior))
+        self.assertIn("first cast speed `fast`", text)
+
     def test_include_skill_summaries_false_omits_subsections(self):
         _, behavior = self._hero_by_display("Aliceth")
         summaries = rs._load_skill_summaries().get("Aliceth", {})

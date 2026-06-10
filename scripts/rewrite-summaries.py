@@ -4981,21 +4981,32 @@ _BATTLE_START_OPENER_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"during battle preparation", re.I),
 )
 
+_BATTLE_START_ULTIMATE_CAST_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"casts? ultimate\b.{0,120}when a battle starts", re.I),
+    re.compile(r"when a battle starts.{0,120}casts? ultimate\b", re.I),
+)
+
 
 def _section_has_fast_first_cast(
-    text: str, section: str, skill: SkillMeta | None
+    text: str,
+    section: str,
+    skill: SkillMeta | None,
+    all_skills: list[SkillMeta] | None = None,
 ) -> bool:
     """True when the skill's opener applies at battle start, not on cooldown."""
-    if not text.strip():
-        return False
-    if text_has_start_of_battle_ultimate(text, section):
-        return True
-    if section == "Ultimate" and re.search(
-        r"passive\.\s*when a battle starts", text, re.I
-    ):
-        return True
-    if any(p.search(text) for p in _BATTLE_START_OPENER_RES):
-        return True
+    if text.strip():
+        if text_has_start_of_battle_ultimate(text, section):
+            return True
+        if section == "Ultimate" and re.search(
+            r"passive\.\s*when a battle starts", text, re.I
+        ):
+            return True
+        if any(p.search(text) for p in _BATTLE_START_OPENER_RES):
+            return True
+    if section == "Ultimate" and all_skills:
+        combined = " ".join(s.text for s in all_skills if s.text)
+        if any(p.search(combined) for p in _BATTLE_START_ULTIMATE_CAST_RES):
+            return True
     if skill and section == "Ultimate":
         ie = skill.initial_energy if skill.initial_energy is not None else 0.0
         icd = skill.initial_cd or 0.0
@@ -5013,12 +5024,9 @@ def _section_first_cast_speed_label(
 ) -> str:
     if not has_section:
         return "none"
-    regular = _section_speed_label(speeds, section, True)
-    if regular == "fast":
-        return "none"
     skill = _skill_by_section(skills, section)
     text = skill.text if skill else ""
-    if _section_has_fast_first_cast(text, section, skill):
+    if _section_has_fast_first_cast(text, section, skill, skills):
         return "fast"
     return "none"
 
