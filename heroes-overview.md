@@ -76,8 +76,8 @@ Aliceth also requires units **putting debuffs** on enemies
 
 Aliceth provides Ally empower buff to single targets `low`, Attack range buff to single targets `low`, DEF Penetration buff to multiple targets `high`, ATK buff (Legendary+) to multiple targets `low`, and Fatal blow immunity (Mythic+) to single targets `high` — conditional (rare).
 
-- Kulu (4.0 / 5)
-- Lily May (2.8 / 5)
+- Kulu (4.2 / 5)
+- Lily May (3.2 / 5)
 
 ### Units that can act as a replacement for Aliceth
 
@@ -183,8 +183,8 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 Alna provides Ally empower buff to single targets `low`, Max HP buff to single targets `low`, Damage and control immunity (EX+15) to single targets `high`, and ATK buff (Supreme+) to single targets `medium`.
 
-- Bonnie (3.3 / 5)
-- Indris (2.2 / 5)
+- Bonnie (3.6 / 5)
+- Indris (2.8 / 5)
 
 ### Units that can act as a replacement for Alna
 
@@ -288,9 +288,9 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Units benefitting most from Alsa
 
-- Bonnie (2.8 / 5)
-- Indris (1.6 / 5)
-- Nerion (1.4 / 5)
+- Bonnie (3.2 / 5)
+- Indris (2.3 / 5)
+- Nerion (2.2 / 5)
 
 ### Units that can act as a replacement for Alsa
 
@@ -400,9 +400,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Antandra
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
-- Shadewing (1.2 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
+- Shadewing (2.0 / 5)
 
 ### Units that can act as a replacement for Antandra
 
@@ -500,9 +500,9 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 
 ### Units benefitting most from Arden
 
-- Carolina (3.0 / 5)
-- Nerion (2.9 / 5)
-- Bonnie (0.8 / 5)
+- Carolina (3.4 / 5)
+- Nerion (3.3 / 5)
+- Bonnie (1.6 / 5)
 
 ### Units that can act as a replacement for Arden
 
@@ -598,9 +598,9 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Atalanta
 
-- Carolina (1.5 / 5)
-- Nerion (1.4 / 5)
-- Indris (0.6 / 5)
+- Carolina (2.2 / 5)
+- Nerion (2.2 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Atalanta
 
@@ -707,9 +707,9 @@ Common buffers are **Hugin**, **Solise**, or **Twins**.
 
 ### Units benefitting most from Athalia
 
-- Aliceth (1.7 / 5)
-- Nerion (1.6 / 5)
-- Indris (1.2 / 5)
+- Aliceth (2.4 / 5)
+- Nerion (2.3 / 5)
+- Indris (2.0 / 5)
 
 ### Units that can act as a replacement for Athalia
 
@@ -820,12 +820,12 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 Aurora provides Haste buff to summons `medium`, Invincible to single targets `high`, and Summon damage buff (Mythic+) to summons `low`.
 
-- Zanie (3.5 / 5)
-- Phraesto (3.0 / 5)
-- Damian (2.9 / 5)
-- Florabelle (2.9 / 5)
-- Mehira (1.7 / 5)
-- Shadewing (0.7 / 5)
+- Zanie (3.8 / 5)
+- Phraesto (3.4 / 5)
+- Damian (3.3 / 5)
+- Florabelle (3.3 / 5)
+- Mehira (2.3 / 5)
+- Shadewing (1.6 / 5)
 
 ### Units that can act as a replacement for Aurora
 
@@ -922,8 +922,8 @@ Common buffers are **Twins**, **Solise**, or **Velara**.
 
 ### Units benefitting most from Baelran
 
-- Carolina (4.0 / 5)
-- Nerion (3.9 / 5)
+- Carolina (4.2 / 5)
+- Nerion (4.1 / 5)
 
 ### Units that can act as a replacement for Baelran
 
@@ -1021,9 +1021,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Berial
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
-- Bonnie (1.1 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
+- Bonnie (1.9 / 5)
 
 ### Units that can act as a replacement for Berial
 
@@ -1129,9 +1129,9 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 ### Units benefitting most from Bonnie
 
-- Shadewing (1.1 / 5)
-- Indris (0.9 / 5)
-- Aliceth (0.8 / 5)
+- Shadewing (1.9 / 5)
+- Indris (1.7 / 5)
+- Aliceth (1.6 / 5)
 
 ### Units that can act as a replacement for Bonnie
 
@@ -1238,9 +1238,9 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 Brutus provides Lifedrain buff to single targets `medium`.
 
-- Shadewing (3.6 / 5)
-- Indris (1.6 / 5)
-- Aliceth (1.4 / 5)
+- Shadewing (3.9 / 5)
+- Indris (2.3 / 5)
+- Aliceth (2.1 / 5)
 
 ### Units that can act as a replacement for Brutus
 
@@ -1347,9 +1347,9 @@ Common buffers are **Solise**, **Mikola**, or **Velara**.
 
 ### Units benefitting most from Bryon
 
-- Shadewing (4.0 / 5)
-- Bonnie (3.9 / 5)
-- Indris (1.4 / 5)
+- Shadewing (4.2 / 5)
+- Bonnie (4.1 / 5)
+- Indris (2.2 / 5)
 
 ### Units that can act as a replacement for Bryon
 
@@ -1452,9 +1452,9 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 Callan provides Shield to single targets `medium`.
 
-- Nerion (1.9 / 5)
-- Carolina (1.7 / 5)
-- Perseus (0.6 / 5)
+- Nerion (2.5 / 5)
+- Carolina (2.3 / 5)
+- Perseus (1.5 / 5)
 
 ### Units that can act as a replacement for Callan
 
@@ -1554,9 +1554,9 @@ Carolina also requires units **applying crowd control** to enemies
 
 ### Units benefitting most from Carolina
 
-- Nerion (3.9 / 5)
-- Bonnie (2.1 / 5)
-- Indris (1.1 / 5)
+- Nerion (4.1 / 5)
+- Bonnie (2.7 / 5)
+- Indris (1.9 / 5)
 
 ### Units that can act as a replacement for Carolina
 
@@ -1668,9 +1668,9 @@ Cassadee also requires a unit **to bless**
 
 ### Units benefitting most from Cassadee
 
-- Carolina (3.3 / 5)
-- Nerion (3.2 / 5)
-- Bonnie (1.6 / 5)
+- Carolina (3.7 / 5)
+- Nerion (3.6 / 5)
+- Bonnie (2.3 / 5)
 
 ### Units that can act as a replacement for Cassadee
 
@@ -1775,9 +1775,9 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 
 Cecia provides ATK SPD buff to single targets `low`, DEF Penetration buff to single targets `medium`, Lifedrain buff in an area `high`, and Max HP buff to single targets `high`.
 
-- Silven (3.0 / 5)
-- Perseus (2.6 / 5)
-- Nerion (2.4 / 5)
+- Silven (3.4 / 5)
+- Perseus (3.0 / 5)
+- Nerion (2.9 / 5)
 
 ### Units that can act as a replacement for Cecia
 
@@ -1854,7 +1854,7 @@ rare chance for massive single normal attack damage
 
 ### Units benefitting most from Chippy
 
-- Himmel (0.9 / 5)
+- Himmel (1.7 / 5)
 
 ### Units that can act as a replacement for Chippy
 
@@ -1944,16 +1944,16 @@ Contess provides ATK buff to single targets `high` and Healing to multiple targe
 
 These are the **10** strongest pairings: 
 
-- Smokey & Meerky (3.6 / 5)
-- Himmel (3.4 / 5)
-- Baelran (3.1 / 5)
-- Callan (3.0 / 5)
-- Isabella (3.0 / 5)
-- Kordan (2.4 / 5)
-- Athalia (2.4 / 5)
-- Silven (2.3 / 5)
-- Alna (2.3 / 5)
-- Aliceth (2.0 / 5)
+- Smokey & Meerky (3.8 / 5)
+- Himmel (3.7 / 5)
+- Baelran (3.5 / 5)
+- Callan (3.4 / 5)
+- Isabella (3.4 / 5)
+- Kordan (2.9 / 5)
+- Athalia (2.9 / 5)
+- Silven (2.9 / 5)
+- Alna (2.9 / 5)
+- Aliceth (2.6 / 5)
 
 ### Units that can act as a replacement for Contess
 
@@ -2061,9 +2061,9 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
 
 ### Units benefitting most from Cryonaia
 
-- Bonnie (1.7 / 5)
-- Himmel (0.9 / 5)
-- Niru (0.8 / 5)
+- Bonnie (2.4 / 5)
+- Himmel (1.7 / 5)
+- Niru (1.6 / 5)
 
 ### Units that can act as a replacement for Cryonaia
 
@@ -2160,9 +2160,9 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 
 ### Units benefitting most from Cyran
 
-- Bonnie (2.5 / 5)
-- Nerion (1.4 / 5)
-- Indris (0.7 / 5)
+- Bonnie (3.0 / 5)
+- Nerion (2.2 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Cyran
 
@@ -2263,7 +2263,7 @@ Common buffers are **Hugin**.
 
 Daimon provides Lifedrain buff to single targets `medium` and Shield to multiple targets `medium`.
 
-- Gerda (3.3 / 5)
+- Gerda (3.7 / 5)
 
 ### Units that can act as a replacement for Daimon
 
@@ -2356,9 +2356,9 @@ Common buffers are **Hugin**, **Mikola**, or **Ravion**.
 
 Damian provides Healing in an area `medium` and Haste buff (Mythic+) to multiple targets `medium` — conditional (frequent).
 
-- Viperian (4.2 / 5)
-- Odie (2.1 / 5)
-- Natsu (2.0 / 5)
+- Viperian (4.3 / 5)
+- Odie (2.7 / 5)
+- Natsu (2.6 / 5)
 
 ### Units that can act as a replacement for Damian
 
@@ -2470,9 +2470,9 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 Dionel provides DEF Penetration buff to single targets `high`.
 
-- Nerion (1.7 / 5)
-- Aliceth (1.0 / 5)
-- Silven (0.9 / 5)
+- Nerion (2.4 / 5)
+- Aliceth (1.8 / 5)
+- Silven (1.7 / 5)
 
 ### Units that can act as a replacement for Dionel
 
@@ -2585,7 +2585,7 @@ Common buffers are **Solise**, **Hugin**, or **Twins**.
 
 Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to single targets `low`, ATK SPD buff (Supreme+) to all units `low`, and Lifedrain buff (Supreme+) to all units `low`.
 
-- Marcille (1.8 / 5)
+- Marcille (2.4 / 5)
 
 ### Units that can act as a replacement for Dunlingr
 
@@ -2681,9 +2681,9 @@ Common buffers are **Hugin** or **Rowan**.
 
 ### Units benefitting most from Eironn
 
-- Bonnie (2.9 / 5)
-- Indris (1.5 / 5)
-- Nerion (1.4 / 5)
+- Bonnie (3.3 / 5)
+- Indris (2.2 / 5)
+- Nerion (2.2 / 5)
 
 ### Units that can act as a replacement for Eironn
 
@@ -2795,11 +2795,11 @@ These are the **10** strongest pairings:
 - Lenya (4.9 / 5)
 - Lumont (4.9 / 5)
 - Mehira (4.9 / 5)
-- Soren (4.5 / 5)
-- Zorya (4.3 / 5)
-- Tasi (3.8 / 5)
-- Perseus (3.7 / 5)
-- Silven (3.6 / 5)
+- Soren (4.6 / 5)
+- Zorya (4.5 / 5)
+- Tasi (4.1 / 5)
+- Perseus (4.0 / 5)
+- Silven (3.9 / 5)
 
 ### Units that can act as a replacement for Twins
 
@@ -2889,7 +2889,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 Evie provides ATK buff to multiple targets `high` and Healing to single targets `high`.
 
-- Smokey & Meerky (3.6 / 5)
+- Smokey & Meerky (3.8 / 5)
 
 ### Units that can act as a replacement for Evie
 
@@ -3004,9 +3004,9 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 ### Units benefitting most from Faramor
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
-- Indris (0.3 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
+- Indris (1.2 / 5)
 
 ### Units that can act as a replacement for Faramor
 
@@ -3100,9 +3100,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple targets `low`, DEF buff to multiple targets `low`, Healing to arc `medium` — conditional (frequent), and Vitality buff (EX+5) to single targets `low`.
 
-- Silven (2.5 / 5)
-- Perseus (2.2 / 5)
-- Indris (1.4 / 5)
+- Silven (3.0 / 5)
+- Perseus (2.7 / 5)
+- Indris (2.1 / 5)
 
 ### Units that can act as a replacement for Fay
 
@@ -3202,10 +3202,10 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 Florabelle provides Lifedrain buff to summons `high` — conditional (frequent), Shield (Mythic+) to summons `medium`, Haste buff (EX+10) to summons `medium` — conditional (frequent), and Summon damage buff (Supreme+) to summons `medium`.
 
-- Dunlingr (4.4 / 5)
-- Bryon (4.1 / 5)
-- Phraesto (3.5 / 5)
-- Damian (3.4 / 5)
+- Dunlingr (4.5 / 5)
+- Bryon (4.3 / 5)
+- Phraesto (3.8 / 5)
+- Damian (3.8 / 5)
 
 ### Units that can act as a replacement for Florabelle
 
@@ -3301,7 +3301,7 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 
 ### Units benefitting most from Frieren
 
-- Bonnie (3.7 / 5)
+- Bonnie (4.0 / 5)
 
 ### Units that can act as a replacement for Frieren
 
@@ -3404,16 +3404,16 @@ Galahad provides Haste buff to single targets `high` and Shield to single target
 
 These are the **10** strongest pairings: 
 
-- Alsa (2.3 / 5)
-- Lenya (2.3 / 5)
-- Cassadee (2.2 / 5)
-- Koko (2.2 / 5)
-- Pippa (2.2 / 5)
-- Ravion (2.2 / 5)
-- Rowan (2.2 / 5)
-- Faramor (2.2 / 5)
-- Frieren (1.8 / 5)
-- Cyran (1.3 / 5)
+- Alsa (2.8 / 5)
+- Lenya (2.8 / 5)
+- Cassadee (2.8 / 5)
+- Koko (2.8 / 5)
+- Pippa (2.8 / 5)
+- Ravion (2.8 / 5)
+- Rowan (2.8 / 5)
+- Faramor (2.8 / 5)
+- Frieren (2.4 / 5)
+- Cyran (2.0 / 5)
 
 ### Units that can act as a replacement for Galahad
 
@@ -3510,9 +3510,9 @@ Common buffers are **Hugin**.
 
 Gerda provides Healing to multiple targets `high` and Healing over time in an area `medium`.
 
-- Silven (2.1 / 5)
-- Perseus (1.7 / 5)
-- Nerion (1.4 / 5)
+- Silven (2.7 / 5)
+- Perseus (2.4 / 5)
+- Nerion (2.2 / 5)
 
 ### Units that can act as a replacement for Gerda
 
@@ -3611,9 +3611,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Granny Dahnie
 
-- Carolina (1.3 / 5)
-- Nerion (1.3 / 5)
-- Indris (0.6 / 5)
+- Carolina (2.1 / 5)
+- Nerion (2.0 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Granny Dahnie
 
@@ -3722,12 +3722,12 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 Gunnar provides ATK SPD buff to single targets `low`, Ranged DEF buff (Legendary+) to single targets `low`, and Vitality buff (Legendary+) to single targets `low`.
 
-- Shadewing (1.2 / 5)
-- Gwyneth (0.3 / 5)
-- Solise (0.3 / 5)
-- Aurora (0.2 / 5)
-- Hugin (0.2 / 5)
-- Twins (0.2 / 5)
+- Shadewing (2.0 / 5)
+- Gwyneth (1.3 / 5)
+- Solise (1.2 / 5)
+- Aurora (1.2 / 5)
+- Hugin (1.2 / 5)
+- Twins (1.1 / 5)
 
 ### Units that can act as a replacement for Gunnar
 
@@ -3821,9 +3821,9 @@ Common buffers are **Twins**, **Velara**, or **Lyca**.
 
 ### Units benefitting most from Gwyneth
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
-- Shadewing (2.3 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
+- Shadewing (2.8 / 5)
 
 ### Units that can act as a replacement for Gwyneth
 
@@ -3899,9 +3899,9 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 Hammie provides ATK buff to multiple targets `low`.
 
-- Himmel (1.5 / 5)
-- Bonnie (1.2 / 5)
-- Silven (0.4 / 5)
+- Himmel (2.2 / 5)
+- Bonnie (2.0 / 5)
+- Silven (1.3 / 5)
 
 ### Units that can act as a replacement for Hammie
 
@@ -3991,9 +3991,9 @@ Common buffers are **Rowan**, **Hugin**, or **Smokey & Meerky**.
 
 Harak provides Invincible to single targets `high` and Lifedrain buff (Legendary+) to single targets `low`.
 
-- Silven (0.7 / 5)
-- Perseus (0.6 / 5)
-- Nerion (0.5 / 5)
+- Silven (1.6 / 5)
+- Perseus (1.5 / 5)
+- Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Harak
 
@@ -4116,14 +4116,14 @@ These are the **10** strongest pairings:
 
 - Nerion (5.0 / 5)
 - Gunnar (4.9 / 5)
-- Contess (4.3 / 5)
-- Carolina (4.2 / 5)
-- Lucca (3.7 / 5)
-- Lumont (3.5 / 5)
-- Salazer (3.4 / 5)
-- Soren (3.1 / 5)
-- Antandra (2.8 / 5)
-- Tasi (2.7 / 5)
+- Contess (4.4 / 5)
+- Carolina (4.4 / 5)
+- Lucca (4.0 / 5)
+- Lumont (3.8 / 5)
+- Salazer (3.7 / 5)
+- Soren (3.5 / 5)
+- Antandra (3.2 / 5)
+- Tasi (3.1 / 5)
 
 ### Units that can act as a replacement for Hepler
 
@@ -4238,10 +4238,10 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 Hewynn provides Healing to all units `high`.
 
-- Saida (4.2 / 5)
-- Gunnar (3.7 / 5)
-- Lucius (3.1 / 5)
-- Lucca (2.9 / 5)
+- Saida (4.3 / 5)
+- Gunnar (4.0 / 5)
+- Lucius (3.5 / 5)
+- Lucca (3.3 / 5)
 
 ### Units that can act as a replacement for Hewynn
 
@@ -4343,7 +4343,7 @@ Himmel also requires a party **with the right composition**
 
 Himmel provides Shield to single targets `low`, ATK buff (Mythic+) to multiple targets `low`, and Max HP buff (Mythic+) to multiple targets `high`.
 
-- Cryonaia (2.3 / 5)
+- Cryonaia (2.8 / 5)
 
 ### Units that can act as a replacement for Himmel
 
@@ -4426,9 +4426,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 
 ### Units benefitting most from Hodgkin
 
-- Indris (1.5 / 5)
-- Bonnie (0.9 / 5)
-- Aliceth (0.7 / 5)
+- Indris (2.2 / 5)
+- Bonnie (1.7 / 5)
+- Aliceth (1.5 / 5)
 
 ### Units that can act as a replacement for Hodgkin
 
@@ -4541,7 +4541,7 @@ These are the **10** strongest pairings:
 - Mehira (5.0 / 5)
 - Natsu (5.0 / 5)
 - Tasi (5.0 / 5)
-- Perseus (4.4 / 5)
+- Perseus (4.5 / 5)
 
 ### Units that can act as a replacement for Hugin
 
@@ -4620,9 +4620,9 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 ### Units benefitting most from Igor
 
-- Bonnie (0.7 / 5)
-- Aliceth (0.5 / 5)
-- Indris (0.5 / 5)
+- Bonnie (1.6 / 5)
+- Aliceth (1.4 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Igor
 
@@ -4716,7 +4716,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 ### Units benefitting most from Indris
 
-- Nerion (3.9 / 5)
+- Nerion (4.1 / 5)
 
 ### Units that can act as a replacement for Indris
 
@@ -4819,9 +4819,9 @@ Common buffers are **Hugin**, **Rowan**, or **Solise**.
 
 Isabella provides Haste buff (Supreme+) to multiple targets `low`.
 
-- Bonnie (1.8 / 5)
-- Indris (1.1 / 5)
-- Perseus (0.7 / 5)
+- Bonnie (2.5 / 5)
+- Indris (1.9 / 5)
+- Perseus (1.5 / 5)
 
 ### Units that can act as a replacement for Isabella
 
@@ -4919,9 +4919,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Units benefitting most from Kafra
 
-- Carolina (1.5 / 5)
-- Nerion (1.4 / 5)
-- Indris (1.0 / 5)
+- Carolina (2.2 / 5)
+- Nerion (2.2 / 5)
+- Indris (1.8 / 5)
 
 ### Units that can act as a replacement for Kafra
 
@@ -5041,16 +5041,16 @@ Koko provides Damage taken reduction to all units `medium`, Healing to all units
 
 These are the **10** strongest pairings: 
 
-- Talene (4.7 / 5)
-- Igor (4.3 / 5)
-- Tilaya (4.2 / 5)
-- Gunnar (3.7 / 5)
-- Harak (3.5 / 5)
-- Ulmus (3.5 / 5)
-- Valka (3.5 / 5)
-- Callan (3.3 / 5)
-- Perseus (3.3 / 5)
-- Lucca (2.9 / 5)
+- Talene (4.8 / 5)
+- Igor (4.5 / 5)
+- Tilaya (4.3 / 5)
+- Gunnar (4.0 / 5)
+- Harak (3.8 / 5)
+- Ulmus (3.8 / 5)
+- Valka (3.8 / 5)
+- Callan (3.7 / 5)
+- Perseus (3.6 / 5)
+- Lucca (3.3 / 5)
 
 ### Units that can act as a replacement for Koko
 
@@ -5164,9 +5164,9 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
 
 Kordan provides Lifedrain buff to multiple targets `medium` and DEF Penetration buff (Supreme+) to multiple targets `low`.
 
-- Carolina (4.0 / 5)
-- Nerion (3.9 / 5)
-- Perseus (0.9 / 5)
+- Carolina (4.2 / 5)
+- Nerion (4.1 / 5)
+- Perseus (1.7 / 5)
 
 ### Units that can act as a replacement for Kordan
 
@@ -5255,9 +5255,9 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 Korin provides Shield to single targets `medium`.
 
-- Nerion (1.6 / 5)
-- Carolina (1.3 / 5)
-- Perseus (0.5 / 5)
+- Nerion (2.3 / 5)
+- Carolina (2.1 / 5)
+- Perseus (1.4 / 5)
 
 ### Units that can act as a replacement for Korin
 
@@ -5358,9 +5358,9 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 
 ### Units benefitting most from Kruger
 
-- Indris (1.5 / 5)
-- Bonnie (0.9 / 5)
-- Aliceth (0.7 / 5)
+- Indris (2.2 / 5)
+- Bonnie (1.7 / 5)
+- Aliceth (1.5 / 5)
 
 ### Units that can act as a replacement for Kruger
 
@@ -5462,8 +5462,8 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 Kulu provides DEF Penetration buff (EX+15) to single targets `low`.
 
-- Bonnie (3.5 / 5)
-- Indris (2.5 / 5)
+- Bonnie (3.8 / 5)
+- Indris (3.0 / 5)
 
 ### Units that can act as a replacement for Kulu
 
@@ -5573,8 +5573,8 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF buff to single targets `low` — conditional (rare).
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
 
 ### Units that can act as a replacement for Laios
 
@@ -5677,9 +5677,9 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 Lenya provides Shield (Supreme+) to single targets `high`.
 
-- Nerion (1.7 / 5)
-- Perseus (0.9 / 5)
-- Silven (0.8 / 5)
+- Nerion (2.4 / 5)
+- Perseus (1.7 / 5)
+- Silven (1.6 / 5)
 
 ### Units that can act as a replacement for Lenya
 
@@ -5775,7 +5775,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
-- Bonnie (4.4 / 5)
+- Bonnie (4.6 / 5)
 
 ### Units that can act as a replacement for Lily May
 
@@ -5889,9 +5889,9 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 Lorsan provides Healing (Mythic+) to all units `high`.
 
-- Berial (3.1 / 5)
-- Lucius (3.1 / 5)
-- Granny Dahnie (1.9 / 5)
+- Berial (3.5 / 5)
+- Lucius (3.5 / 5)
+- Granny Dahnie (2.5 / 5)
 
 ### Units that can act as a replacement for Lorsan
 
@@ -5994,9 +5994,9 @@ Common buffers are **Rowan**, **Hugin**, or **Solise**.
 
 ### Units benefitting most from Lucca
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
-- Himmel (0.9 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
+- Himmel (1.7 / 5)
 
 ### Units that can act as a replacement for Lucca
 
@@ -6096,9 +6096,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 Lucius provides Shield in an area `medium`.
 
-- Shadewing (3.2 / 5)
-- Nerion (2.2 / 5)
-- Perseus (1.3 / 5)
+- Shadewing (3.5 / 5)
+- Nerion (2.8 / 5)
+- Perseus (2.0 / 5)
 
 ### Units that can act as a replacement for Lucius
 
@@ -6208,9 +6208,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 Lucy provides Shield (Mythic+) to single targets `high`.
 
-- Nerion (3.6 / 5)
-- Carolina (3.3 / 5)
-- Perseus (0.7 / 5)
+- Nerion (3.9 / 5)
+- Carolina (3.7 / 5)
+- Perseus (1.6 / 5)
 
 ### Units that can act as a replacement for Lucy
 
@@ -6304,9 +6304,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Solise**.
 
 Ludovic provides Healing in an area `medium`.
 
-- Himmel (2.4 / 5)
-- Silven (1.0 / 5)
-- Perseus (0.8 / 5)
+- Himmel (2.9 / 5)
+- Silven (1.8 / 5)
+- Perseus (1.6 / 5)
 
 ### Units that can act as a replacement for Ludovic
 
@@ -6414,9 +6414,9 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 Lumont provides DEF buff to multiple targets `low`.
 
-- Carolina (4.0 / 5)
-- Nerion (3.9 / 5)
-- Indris (0.6 / 5)
+- Carolina (4.2 / 5)
+- Nerion (4.1 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Lumont
 
@@ -6542,7 +6542,7 @@ These are the **10** strongest pairings:
 - Mirael (5.0 / 5)
 - Parisa (5.0 / 5)
 - Rhys (5.0 / 5)
-- Nerion (4.2 / 5)
+- Nerion (4.4 / 5)
 
 ### Units that can act as a replacement for Lyca
 
@@ -6636,9 +6636,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 Marcille provides Healing to multiple targets `high`.
 
-- Himmel (2.6 / 5)
-- Silven (1.1 / 5)
-- Perseus (0.9 / 5)
+- Himmel (3.1 / 5)
+- Silven (1.9 / 5)
+- Perseus (1.7 / 5)
 
 ### Units that can act as a replacement for Marcille
 
@@ -6736,8 +6736,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Marilee
 
-- Carolina (0.5 / 5)
-- Nerion (0.5 / 5)
+- Carolina (1.4 / 5)
+- Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Marilee
 
@@ -6842,16 +6842,16 @@ Mehira provides Haste buff to single targets `high`.
 
 These are the **10** strongest pairings: 
 
-- Aurora (2.2 / 5)
-- Cassadee (2.2 / 5)
-- Hugin (2.2 / 5)
-- Pippa (2.2 / 5)
-- Ravion (2.2 / 5)
-- Rowan (2.2 / 5)
-- Shakir (2.2 / 5)
-- Frieren (1.8 / 5)
-- Faramor (1.6 / 5)
-- Cyran (1.3 / 5)
+- Aurora (2.8 / 5)
+- Cassadee (2.8 / 5)
+- Hugin (2.8 / 5)
+- Pippa (2.8 / 5)
+- Ravion (2.8 / 5)
+- Rowan (2.8 / 5)
+- Shakir (2.8 / 5)
+- Frieren (2.4 / 5)
+- Faramor (2.3 / 5)
+- Cyran (2.0 / 5)
 
 ### Units that can act as a replacement for Mehira
 
@@ -6958,16 +6958,16 @@ Mikola provides ATK buff to multiple targets `high`, Haste buff to multiple targ
 
 These are the **10** strongest pairings: 
 
-- Hammie (4.5 / 5)
-- Seth (4.4 / 5)
-- Vala (4.4 / 5)
-- Laios (4.4 / 5)
-- Hepler (4.2 / 5)
-- Lorsan (4.2 / 5)
-- Perseus (4.1 / 5)
-- Hodgkin (3.6 / 5)
-- Temesia (3.6 / 5)
-- Tasi (3.3 / 5)
+- Hammie (4.6 / 5)
+- Seth (4.5 / 5)
+- Vala (4.5 / 5)
+- Laios (4.5 / 5)
+- Hepler (4.4 / 5)
+- Lorsan (4.4 / 5)
+- Perseus (4.3 / 5)
+- Hodgkin (3.9 / 5)
+- Temesia (3.9 / 5)
+- Tasi (3.6 / 5)
 
 ### Units that can act as a replacement for Mikola
 
@@ -7054,9 +7054,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Mirael
 
-- Shadewing (1.5 / 5)
-- Bonnie (1.1 / 5)
-- Himmel (0.9 / 5)
+- Shadewing (2.2 / 5)
+- Bonnie (1.9 / 5)
+- Himmel (1.7 / 5)
 
 ### Units that can act as a replacement for Mirael
 
@@ -7143,9 +7143,9 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 
 Nara provides Healing (Mythic+) in an area `low`.
 
-- Carolina (1.5 / 5)
-- Nerion (1.4 / 5)
-- Perseus (0.4 / 5)
+- Carolina (2.2 / 5)
+- Nerion (2.2 / 5)
+- Perseus (1.3 / 5)
 
 ### Units that can act as a replacement for Nara
 
@@ -7253,9 +7253,9 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Units benefitting most from Natsu
 
-- Shadewing (3.1 / 5)
-- Bonnie (3.0 / 5)
-- Indris (1.9 / 5)
+- Shadewing (3.5 / 5)
+- Bonnie (3.4 / 5)
+- Indris (2.5 / 5)
 
 ### Units that can act as a replacement for Natsu
 
@@ -7356,9 +7356,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Nazrik
 
-- Carolina (1.0 / 5)
-- Indris (1.0 / 5)
-- Nerion (1.0 / 5)
+- Carolina (1.8 / 5)
+- Indris (1.8 / 5)
+- Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Nazrik
 
@@ -7466,9 +7466,9 @@ Nerion also requires units **applying crowd control** to enemies
 
 ### Units benefitting most from Nerion
 
-- Bonnie (1.5 / 5)
-- Carolina (1.0 / 5)
-- Indris (0.3 / 5)
+- Bonnie (2.2 / 5)
+- Carolina (1.8 / 5)
+- Indris (1.2 / 5)
 
 ### Units that can act as a replacement for Nerion
 
@@ -7575,9 +7575,9 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 ### Units benefitting most from Niru
 
-- Bonnie (1.3 / 5)
-- Zorya (0.9 / 5)
-- Himmel (0.9 / 5)
+- Bonnie (2.0 / 5)
+- Zorya (1.8 / 5)
+- Himmel (1.7 / 5)
 
 ### Units that can act as a replacement for Niru
 
@@ -7658,9 +7658,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Odie
 
-- Shadewing (1.9 / 5)
-- Bonnie (1.5 / 5)
-- Indris (0.5 / 5)
+- Shadewing (2.5 / 5)
+- Bonnie (2.2 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Odie
 
@@ -7741,16 +7741,16 @@ Common buffers are **Rowan**, **Ravion**, or **Smokey & Meerky**.
 
 Pandora provides Energy recovery to single targets `low`, Healing to single targets `high`, Invincible to single targets `high`, and Max HP buff (Legendary+) to single targets `medium`.
 
-- Indris (3.3 / 5)
-- Salazer (2.8 / 5)
-- Ludovic (2.7 / 5)
-- Walker (2.6 / 5)
-- Chippy (1.9 / 5)
-- Lily May (1.9 / 5)
-- Satrana (1.9 / 5)
-- Reinier (1.5 / 5)
-- Scarlita (0.6 / 5)
-- Nara (0.5 / 5)
+- Indris (3.6 / 5)
+- Salazer (3.2 / 5)
+- Ludovic (3.1 / 5)
+- Walker (3.1 / 5)
+- Chippy (2.5 / 5)
+- Lily May (2.5 / 5)
+- Satrana (2.5 / 5)
+- Reinier (2.2 / 5)
+- Scarlita (1.5 / 5)
+- Nara (1.4 / 5)
 
 ### Units that can act as a replacement for Pandora
 
@@ -7854,9 +7854,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 Pang provides Shield (EX+10) to single targets `low` and DEF Penetration buff (Supreme+) to single targets `low`.
 
-- Nerion (1.6 / 5)
-- Carolina (1.3 / 5)
-- Perseus (0.4 / 5)
+- Nerion (2.3 / 5)
+- Carolina (2.1 / 5)
+- Perseus (1.3 / 5)
 
 ### Units that can act as a replacement for Pang
 
@@ -7957,9 +7957,9 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Parisa
 
-- Himmel (0.9 / 5)
-- Bonnie (0.8 / 5)
-- Niru (0.5 / 5)
+- Himmel (1.7 / 5)
+- Bonnie (1.6 / 5)
+- Niru (1.4 / 5)
 
 ### Units that can act as a replacement for Parisa
 
@@ -8053,9 +8053,9 @@ Perseus also requires units **buffing them**
 
 Perseus provides ATK buff to multiple targets `medium`.
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
-- Silven (0.7 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
+- Silven (1.6 / 5)
 
 ### Units that can act as a replacement for Perseus
 
@@ -8149,9 +8149,9 @@ Common buffers are **Smokey & Meerky**, **Rowan**, or **Solise**.
 
 Phraesto provides Damage taken reduction to single targets `low`, Max HP buff to single targets `low`, and Shield to single targets `medium`.
 
-- Nerion (1.1 / 5)
-- Perseus (1.0 / 5)
-- Silven (0.7 / 5)
+- Nerion (1.9 / 5)
+- Perseus (1.8 / 5)
+- Silven (1.6 / 5)
 
 ### Units that can act as a replacement for Phraesto
 
@@ -8251,9 +8251,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Units benefitting most from Pippa
 
-- Bonnie (3.0 / 5)
-- Aliceth (1.4 / 5)
-- Indris (1.0 / 5)
+- Bonnie (3.4 / 5)
+- Aliceth (2.1 / 5)
+- Indris (1.8 / 5)
 
 ### Units that can act as a replacement for Pippa
 
@@ -8372,16 +8372,16 @@ Ravion provides ATK buff to multiple targets `medium`, Energy recovery to multip
 
 These are the **10** strongest pairings: 
 
-- Carolina (4.6 / 5)
-- Arden (4.2 / 5)
-- Nerion (4.1 / 5)
-- Hodgkin (3.1 / 5)
-- Cryonaia (3.0 / 5)
-- Aliceth (2.8 / 5)
-- Parisa (2.7 / 5)
-- Frieren (2.5 / 5)
-- Indris (2.3 / 5)
-- Cyran (2.2 / 5)
+- Carolina (4.7 / 5)
+- Arden (4.4 / 5)
+- Nerion (4.3 / 5)
+- Hodgkin (3.5 / 5)
+- Cryonaia (3.4 / 5)
+- Aliceth (3.2 / 5)
+- Parisa (3.1 / 5)
+- Frieren (3.0 / 5)
+- Indris (2.8 / 5)
+- Cyran (2.8 / 5)
 
 ### Units that can act as a replacement for Ravion
 
@@ -8474,9 +8474,9 @@ Common buffers are **Solise**, **Rowan**, or **Velara**.
 
 Reinier provides ATK buff (Legendary+) to single targets `low`.
 
-- Bonnie (1.5 / 5)
-- Himmel (1.2 / 5)
-- Indris (0.5 / 5)
+- Bonnie (2.2 / 5)
+- Himmel (2.0 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Reinier
 
@@ -8582,9 +8582,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 Rhys provides Healing to single targets `medium` and Movement speed buff (Mythic+) to single targets `low`.
 
-- Carolina (1.5 / 5)
-- Nerion (1.4 / 5)
-- Perseus (0.5 / 5)
+- Carolina (2.2 / 5)
+- Nerion (2.2 / 5)
+- Perseus (1.4 / 5)
 
 ### Units that can act as a replacement for Rhys
 
@@ -8689,14 +8689,14 @@ These are the **10** strongest pairings:
 
 - Antandra (5.0 / 5)
 - Granny Dahnie (5.0 / 5)
-- Niru (5.0 / 5)
-- Soren (5.0 / 5)
-- Zorya (5.0 / 5)
 - Hodgkin (5.0 / 5)
+- Niru (5.0 / 5)
 - Seth (5.0 / 5)
+- Soren (5.0 / 5)
 - Twins (5.0 / 5)
+- Zorya (5.0 / 5)
 - Temesia (5.0 / 5)
-- Perseus (4.2 / 5)
+- Perseus (4.4 / 5)
 
 ### Units that can act as a replacement for Rowan
 
@@ -8807,13 +8807,13 @@ These are the **10** strongest pairings:
 - Daimon (5.0 / 5)
 - Eironn (5.0 / 5)
 - Gerda (5.0 / 5)
-- Kruger (3.0 / 5)
-- Shadewing (2.5 / 5)
-- Contess (2.1 / 5)
-- Baelran (2.0 / 5)
-- Faramor (1.7 / 5)
-- Cryonaia (1.7 / 5)
-- Silven (1.1 / 5)
+- Kruger (3.4 / 5)
+- Shadewing (3.0 / 5)
+- Contess (2.7 / 5)
+- Baelran (2.6 / 5)
+- Faramor (2.4 / 5)
+- Cryonaia (2.4 / 5)
+- Silven (1.9 / 5)
 
 ### Units that can act as a replacement for Saida
 
@@ -8909,9 +8909,9 @@ Common buffers are **Rowan**, **Lyca**, or **Hugin**.
 
 Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to single targets `low` — conditional (frequent).
 
-- Nerion (0.6 / 5)
-- Perseus (0.4 / 5)
-- Silven (0.4 / 5)
+- Nerion (1.5 / 5)
+- Perseus (1.3 / 5)
+- Silven (1.3 / 5)
 
 ### Units that can act as a replacement for Salazer
 
@@ -9005,9 +9005,9 @@ strike has no cooldown limit when all enemies are ignited
 
 Satrana provides Damage taken reduction (Legendary+) to single targets `medium`.
 
-- Shadewing (3.1 / 5)
-- Bonnie (3.0 / 5)
-- Indris (1.9 / 5)
+- Shadewing (3.5 / 5)
+- Bonnie (3.4 / 5)
+- Indris (2.5 / 5)
 
 ### Units that can act as a replacement for Satrana
 
@@ -9107,9 +9107,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 
 Scarlita provides Shield to single targets `low`.
 
-- Nerion (2.7 / 5)
-- Carolina (2.7 / 5)
-- Perseus (0.2 / 5)
+- Nerion (3.2 / 5)
+- Carolina (3.1 / 5)
+- Perseus (1.2 / 5)
 
 ### Units that can act as a replacement for Scarlita
 
@@ -9218,9 +9218,9 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 Seth provides Crit buff to single targets `low` and Lifedrain buff to single targets `low`.
 
-- Carolina (0.8 / 5)
-- Nerion (0.5 / 5)
-- Perseus (0.3 / 5)
+- Carolina (1.6 / 5)
+- Nerion (1.4 / 5)
+- Perseus (1.2 / 5)
 
 ### Units that can act as a replacement for Seth
 
@@ -9335,8 +9335,8 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 ### Units benefitting most from Shadewing
 
-- Bonnie (3.3 / 5)
-- Aliceth (1.7 / 5)
+- Bonnie (3.6 / 5)
+- Aliceth (2.4 / 5)
 ### Summary for Shadewing
 
 #### Shadewing Provides
@@ -9429,16 +9429,16 @@ Shakir provides Damage taken reduction to multiple targets `high`, Haste buff to
 
 These are the **10** strongest pairings: 
 
-- Mikola (4.5 / 5)
-- Pang (4.5 / 5)
-- Atalanta (4.0 / 5)
-- Lucy (3.8 / 5)
-- Hepler (3.6 / 5)
-- Lenya (3.6 / 5)
-- Soren (3.3 / 5)
-- Sinbad (3.1 / 5)
-- Dionel (2.6 / 5)
-- Korin (2.6 / 5)
+- Mikola (4.6 / 5)
+- Pang (4.6 / 5)
+- Atalanta (4.2 / 5)
+- Lucy (4.0 / 5)
+- Hepler (3.9 / 5)
+- Lenya (3.9 / 5)
+- Soren (3.6 / 5)
+- Sinbad (3.5 / 5)
+- Dionel (3.1 / 5)
+- Korin (3.1 / 5)
 
 ### Units that can act as a replacement for Shakir
 
@@ -9536,8 +9536,8 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 ### Units benefitting most from Shemira
 
-- Bonnie (0.9 / 5)
-- Himmel (0.9 / 5)
+- Bonnie (1.7 / 5)
+- Himmel (1.7 / 5)
 
 ### Units that can act as a replacement for Shemira
 
@@ -9620,9 +9620,9 @@ Silven also requires units **buffing them**
 
 Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
-- Nerion (1.1 / 5)
-- Carolina (1.0 / 5)
-- Bonnie (0.8 / 5)
+- Nerion (1.9 / 5)
+- Carolina (1.8 / 5)
+- Bonnie (1.6 / 5)
 
 ### Units that can act as a replacement for Silven
 
@@ -9702,9 +9702,9 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Units benefitting most from Silvina
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
-- Indris (0.7 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
+- Indris (1.6 / 5)
 
 ### Units that can act as a replacement for Silvina
 
@@ -9802,9 +9802,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Sinbad
 
-- Indris (2.5 / 5)
-- Bonnie (2.1 / 5)
-- Aliceth (1.5 / 5)
+- Indris (3.0 / 5)
+- Bonnie (2.7 / 5)
+- Aliceth (2.2 / 5)
 
 ### Units that can act as a replacement for Sinbad
 
@@ -9911,15 +9911,15 @@ Smokey & Meerky provides Energy recovery in an area `medium`, Healing in an area
 These are the **10** strongest pairings: 
 
 - Phraesto (5.0 / 5)
-- Zorya (4.4 / 5)
-- Harak (4.2 / 5)
-- Ulmus (4.2 / 5)
-- Hammie (3.9 / 5)
-- Hodgkin (3.7 / 5)
-- Seth (3.7 / 5)
-- Vala (3.7 / 5)
-- Antandra (2.8 / 5)
-- Granny Dahnie (2.5 / 5)
+- Zorya (4.5 / 5)
+- Harak (4.4 / 5)
+- Ulmus (4.4 / 5)
+- Hammie (4.1 / 5)
+- Hodgkin (4.0 / 5)
+- Seth (4.0 / 5)
+- Vala (4.0 / 5)
+- Antandra (3.3 / 5)
+- Granny Dahnie (3.0 / 5)
 
 ### Units that can act as a replacement for Smokey & Meerky
 
@@ -10031,15 +10031,15 @@ Solise provides Healing to all units `high`, Healing over time to single targets
 These are the **10** strongest pairings: 
 
 - Dunlingr (5.0 / 5)
-- Athalia (3.9 / 5)
-- Alna (3.9 / 5)
-- Himmel (3.7 / 5)
-- Baelran (3.4 / 5)
-- Mehira (3.3 / 5)
-- Berial (3.1 / 5)
-- Niru (2.9 / 5)
-- Silven (2.4 / 5)
-- Aliceth (1.7 / 5)
+- Athalia (4.2 / 5)
+- Alna (4.1 / 5)
+- Himmel (4.0 / 5)
+- Baelran (3.7 / 5)
+- Mehira (3.7 / 5)
+- Berial (3.5 / 5)
+- Niru (3.3 / 5)
+- Silven (2.9 / 5)
+- Aliceth (2.4 / 5)
 
 ### Units that can act as a replacement for Solise
 
@@ -10136,9 +10136,9 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 Sonja provides ATK buff to multiple targets `low`.
 
-- Carolina (1.3 / 5)
-- Nerion (1.3 / 5)
-- Silven (0.5 / 5)
+- Carolina (2.1 / 5)
+- Nerion (2.0 / 5)
+- Silven (1.4 / 5)
 
 ### Units that can act as a replacement for Sonja
 
@@ -10245,9 +10245,9 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 Soren provides Damage taken reduction to single targets `high`, Haste buff (Legendary+) to single targets `low`, and Shield (Supreme+) to single targets `low`.
 
-- Nerion (1.9 / 5)
-- Silven (1.1 / 5)
-- Perseus (1.0 / 5)
+- Nerion (2.5 / 5)
+- Silven (1.9 / 5)
+- Perseus (1.8 / 5)
 
 ### Units that can act as a replacement for Soren
 
@@ -10344,9 +10344,9 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 ### Units benefitting most from Sylphira
 
-- Bonnie (3.0 / 5)
-- Nerion (2.6 / 5)
-- Indris (1.6 / 5)
+- Bonnie (3.4 / 5)
+- Nerion (3.1 / 5)
+- Indris (2.3 / 5)
 
 ### Units that can act as a replacement for Sylphira
 
@@ -10449,9 +10449,9 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 
 Talene provides Healing in an area `low` and Healing over time in an area `low`.
 
-- Nerion (1.3 / 5)
-- Silven (1.0 / 5)
-- Perseus (0.8 / 5)
+- Nerion (2.0 / 5)
+- Silven (1.8 / 5)
+- Perseus (1.6 / 5)
 
 ### Units that can act as a replacement for Talene
 
@@ -10650,9 +10650,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Units benefitting most from Temesia
 
-- Carolina (1.7 / 5)
-- Nerion (1.6 / 5)
-- Himmel (0.9 / 5)
+- Carolina (2.3 / 5)
+- Nerion (2.3 / 5)
+- Himmel (1.7 / 5)
 
 ### Units that can act as a replacement for Temesia
 
@@ -10764,7 +10764,7 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 Thador provides Energy recovery (EX+10) to single targets `low`.
 
-- Pandora (0.6 / 5)
+- Pandora (1.5 / 5)
 
 ### Units that can act as a replacement for Thador
 
@@ -10867,9 +10867,9 @@ Common buffers are **Rowan**, **Solise**, or **Hugin**.
 
 Thoran provides Lifedrain buff to single targets `low`.
 
-- Himmel (0.9 / 5)
-- Silven (0.2 / 5)
-- Perseus (0.2 / 5)
+- Himmel (1.7 / 5)
+- Silven (1.1 / 5)
+- Perseus (1.1 / 5)
 
 ### Units that can act as a replacement for Thoran
 
@@ -10966,8 +10966,8 @@ Common buffers are **Solise**, **Rowan**, or **Smokey & Meerky**.
 
 Tilaya provides Max HP buff (EX+10) in an area `medium`.
 
-- Zorya (2.1 / 5)
-- Silven (1.4 / 5)
+- Zorya (2.7 / 5)
+- Silven (2.1 / 5)
 
 ### Units that can act as a replacement for Tilaya
 
@@ -11066,9 +11066,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Solise**.
 
 Ulmus provides Healing over time to single targets `low` and Shield to single targets `low`.
 
-- Himmel (1.5 / 5)
-- Nerion (1.4 / 5)
-- Carolina (1.3 / 5)
+- Himmel (2.2 / 5)
+- Nerion (2.1 / 5)
+- Carolina (2.1 / 5)
 
 ### Units that can act as a replacement for Ulmus
 
@@ -11181,9 +11181,9 @@ Vala also requires enemies **to be defeated**
 
 Vala provides Haste buff (Mythic+) to single targets `high`.
 
-- Nerion (1.8 / 5)
-- Indris (1.2 / 5)
-- Perseus (1.0 / 5)
+- Nerion (2.5 / 5)
+- Indris (2.0 / 5)
+- Perseus (1.8 / 5)
 
 ### Units that can act as a replacement for Vala
 
@@ -11296,9 +11296,9 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ### Units benefitting most from Valen
 
-- Carolina (1.0 / 5)
-- Nerion (1.0 / 5)
-- Indris (0.3 / 5)
+- Carolina (1.8 / 5)
+- Nerion (1.8 / 5)
+- Indris (1.2 / 5)
 
 ### Units that can act as a replacement for Valen
 
@@ -11407,16 +11407,16 @@ Valka provides ATK SPD buff to multiple targets `high`, Lifedrain buff (EX+10) t
 
 These are the **10** strongest pairings: 
 
-- Lyca (3.6 / 5)
-- Lucy (3.5 / 5)
-- Marcille (2.9 / 5)
-- Brutus (2.6 / 5)
-- Sinbad (2.5 / 5)
-- Cecia (2.1 / 5)
-- Dionel (2.1 / 5)
-- Fay (2.1 / 5)
-- Mirael (2.1 / 5)
-- Rhys (2.1 / 5)
+- Lyca (3.9 / 5)
+- Lucy (3.8 / 5)
+- Marcille (3.3 / 5)
+- Brutus (3.1 / 5)
+- Sinbad (3.0 / 5)
+- Cecia (2.7 / 5)
+- Dionel (2.7 / 5)
+- Fay (2.7 / 5)
+- Mirael (2.7 / 5)
+- Rhys (2.7 / 5)
 
 ### Units that can act as a replacement for Valka
 
@@ -11518,16 +11518,16 @@ Velara provides Haste buff to single targets `high` and Healing in an area `medi
 
 These are the **10** strongest pairings: 
 
-- Bryon (4.2 / 5)
-- Viperian (3.9 / 5)
-- Zorya (3.6 / 5)
-- Sylphira (3.6 / 5)
-- Dunlingr (3.2 / 5)
-- Himmel (3.2 / 5)
-- Mehira (3.1 / 5)
-- Isabella (3.0 / 5)
-- Baelran (2.8 / 5)
-- Silven (2.6 / 5)
+- Bryon (4.3 / 5)
+- Viperian (4.1 / 5)
+- Zorya (3.9 / 5)
+- Sylphira (3.9 / 5)
+- Dunlingr (3.6 / 5)
+- Himmel (3.6 / 5)
+- Mehira (3.4 / 5)
+- Isabella (3.4 / 5)
+- Baelran (3.3 / 5)
+- Silven (3.1 / 5)
 
 ### Units that can act as a replacement for Velara
 
@@ -11636,9 +11636,9 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 ### Units benefitting most from Viperian
 
-- Shadewing (1.9 / 5)
-- Bonnie (1.6 / 5)
-- Indris (0.5 / 5)
+- Shadewing (2.5 / 5)
+- Bonnie (2.3 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Viperian
 
@@ -11739,9 +11739,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Units benefitting most from Walker
 
-- Carolina (1.0 / 5)
-- Nerion (1.0 / 5)
-- Indris (0.3 / 5)
+- Carolina (1.8 / 5)
+- Nerion (1.8 / 5)
+- Indris (1.2 / 5)
 
 ### Units that can act as a replacement for Walker
 
@@ -11840,9 +11840,9 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedrain buff in an area `low` — conditional (frequent), and Max HP buff to multiple targets `low`.
 
-- Nerion (2.2 / 5)
-- Perseus (1.7 / 5)
-- Silven (1.7 / 5)
+- Nerion (2.8 / 5)
+- Perseus (2.4 / 5)
+- Silven (2.4 / 5)
 
 ### Units that can act as a replacement for Zandrok
 
@@ -11929,8 +11929,8 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 Zanie provides Healing to single targets `high`, Shield to single targets `high`, DEF Penetration buff (Legendary+) to single targets `medium`, and Max HP buff (Mythic+) to single targets `low`.
 
-- Daimon (2.5 / 5)
-- Eironn (2.5 / 5)
+- Daimon (3.0 / 5)
+- Eironn (3.0 / 5)
 
 ### Units that can act as a replacement for Zanie
 
@@ -12043,9 +12043,9 @@ Zorya also requires allies **casting ultimates**
 
 ### Units benefitting most from Zorya
 
-- Carolina (2.7 / 5)
-- Nerion (2.6 / 5)
-- Bonnie (1.1 / 5)
+- Carolina (3.1 / 5)
+- Nerion (3.1 / 5)
+- Bonnie (1.9 / 5)
 
 ### Units that can act as a replacement for Zorya
 

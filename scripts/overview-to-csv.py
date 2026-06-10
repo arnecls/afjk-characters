@@ -19,8 +19,6 @@ DEFAULT_INPUT = ROOT / "heroes-overview.md"
 DEFAULT_OUTPUT = ROOT / "heroes-overview.csv"
 
 DAMAGE_TYPES: list[tuple[str, str]] = [
-    ("Normal", "Normal DMG"),
-    ("Melee", "Melee DMG"),
     ("Magic", "Magic DMG"),
     ("Ranged", "Ranged DMG"),
     ("Physical", "Physical DMG"),
