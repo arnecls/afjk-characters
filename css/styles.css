@@ -16,6 +16,27 @@
   --faction-wilder: #50c878;
   --faction-dimensional: #50b0ff;
   --list-sticky-top: 0px;
+  --chip-border: rgba(30, 50, 90, 0.1);
+  --chip-damage-bg: #ffe3e0;
+  --chip-damage-fg: #a03030;
+  --chip-stat-bg: #d8e3f6;
+  --chip-stat-fg: #304060;
+  --chip-debuff-bg: #f5d4d4;
+  --chip-debuff-fg: #702020;
+  --chip-cc-bg: #e2d8f8;
+  --chip-cc-fg: #5a3d8a;
+  --chip-target-bg: #cce8f8;
+  --chip-target-fg: #1a5a80;
+  --chip-role-bg: #dceee0;
+  --chip-role-fg: #305030;
+  --chip-generic-bg: #e4eaf2;
+  --chip-generic-fg: #405070;
+  --chip-quality-high-bg: #d4f5dc;
+  --chip-quality-high-fg: #1a6b32;
+  --chip-quality-medium-bg: #fff0c2;
+  --chip-quality-medium-fg: #8a6200;
+  --chip-quality-low-bg: #fddede;
+  --chip-quality-low-fg: #9b2c2c;
 }
 
 *,
@@ -488,78 +509,117 @@ a:hover {
   margin-top: 0;
 }
 
-/* Tag chips */
+/* Tag chips — shared across summary, skill cards, table, synergies */
 .chip {
   display: inline-block;
-  padding: 0.15rem 0.5rem;
+  padding: 0.12rem 0.42rem;
+  border: 1px solid var(--chip-border);
   border-radius: 999px;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.35;
   margin: 0.1rem 0.15rem 0.1rem 0;
   white-space: nowrap;
 }
 
-.chip-quality.chip-q-high {
-  background: #d4f5dc;
-  color: #1a6b32;
+.chip-has-tip {
+  cursor: help;
 }
 
-.chip-quality.chip-q-medium {
-  background: #fff0c2;
-  color: #8a6200;
+.chip-has-tip.chip-tip-active {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-.chip-quality.chip-q-low {
-  background: #fddede;
-  color: #9b2c2c;
+.chip-tooltip {
+  position: fixed;
+  z-index: 10000;
+  max-width: 16rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.35rem;
+  background: #1f2937;
+  color: #f9fafb;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.chip-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-top-color: #1f2937;
+}
+
+.chip-tooltip[hidden] {
+  display: none !important;
+}
+
+.chip-quality.chip-q-high,
+.chip-speed.chip-s-fast {
+  background: var(--chip-quality-high-bg);
+  color: var(--chip-quality-high-fg);
+}
+
+.chip-quality.chip-q-medium,
+.chip-speed.chip-s-normal {
+  background: var(--chip-quality-medium-bg);
+  color: var(--chip-quality-medium-fg);
+}
+
+.chip-quality.chip-q-low,
+.chip-speed.chip-s-slow {
+  background: var(--chip-quality-low-bg);
+  color: var(--chip-quality-low-fg);
 }
 
 .chip-signature-fuel {
-  background: #ebe0ff;
-  color: #5a3d8a;
+  background: var(--chip-cc-bg);
+  color: var(--chip-cc-fg);
 }
 
-.chip-speed.chip-s-slow {
-  background: #fddede;
-  color: #9b2c2c;
-}
-
-.chip-speed.chip-s-normal {
-  background: #fff0c2;
-  color: #8a6200;
-}
-
-.chip-speed.chip-s-fast {
-  background: #d4f5dc;
-  color: #1a6b32;
-}
-
-/* Unified category colors: damage, CC, targeting */
 .chip-damage {
-  background: #ffe8e6;
-  color: #a03030;
+  background: var(--chip-damage-bg);
+  color: var(--chip-damage-fg);
 }
 
 .chip-cc {
-  background: #ebe0ff;
-  color: #5a3d8a;
+  background: var(--chip-cc-bg);
+  color: var(--chip-cc-fg);
 }
 
 .chip-target {
-  background: #dceefb;
-  color: #1a5a80;
+  background: var(--chip-target-bg);
+  color: var(--chip-target-fg);
 }
 
 .chip-stat {
-  background: #e8eef8;
-  color: #304060;
+  background: var(--chip-stat-bg);
+  color: var(--chip-stat-fg);
 }
 
-.chip-debuff { background: #f8e0e0; color: #702020; }
-.chip-role { background: #e8f0e8; color: #305030; }
-.chip-movement { background: #eef2f8; color: #405070; }
-.chip-generic { background: #eef2f8; color: #405070; }
+.chip-debuff {
+  background: var(--chip-debuff-bg);
+  color: var(--chip-debuff-fg);
+}
+
+.chip-role {
+  background: var(--chip-role-bg);
+  color: var(--chip-role-fg);
+}
+
+.chip-movement,
+.chip-generic {
+  background: var(--chip-generic-bg);
+  color: var(--chip-generic-fg);
+}
 
 /* Horizontal hero row cards */
 .hero-row-list {
@@ -753,8 +813,98 @@ a:hover {
   vertical-align: baseline;
 }
 
-.skill-overview-section {
-  margin-bottom: 1.75rem;
+.skill-overview-section .skill-overview-metrics {
+  margin-bottom: 2rem;
+}
+
+.skill-overview-section .skill-overview-metrics ul {
+  margin-top: 0;
+}
+
+.skill-overview-section .skill-card-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+}
+
+.skill-overview-section .skill-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  background: #f7f8fa;
+  border: 1px solid #e2e6eb;
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0.45rem 0.5rem;
+  box-shadow: 0 1px 3px rgba(30, 50, 90, 0.04);
+}
+
+.skill-overview-section .skill-card h4 {
+  margin: 0 0 0.3rem;
+  font-size: 0.72rem;
+  color: #4a5568;
+  border-bottom: 1px solid #e2e6eb;
+  padding-bottom: 0.25rem;
+  transition: color 0.25s ease, border-bottom-color 0.25s ease;
+}
+
+.skill-card-summary {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.skill-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  margin-top: auto;
+  padding-top: 0.2rem;
+}
+
+.skill-card-tags .chip {
+  margin: 0;
+  padding: 0.1rem 0.38rem;
+  font-size: 0.64rem;
+  vertical-align: baseline;
+}
+
+.signature-skill-link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(79, 124, 255, 0.45);
+  text-underline-offset: 0.15em;
+}
+
+.signature-skill-link:hover {
+  text-decoration-color: var(--accent);
+}
+
+@keyframes skill-card-glow {
+  0%,
+  100% {
+    background-color: #f7f8fa;
+    border-color: #e2e6eb;
+    box-shadow: 0 1px 3px rgba(30, 50, 90, 0.04);
+  }
+  50% {
+    background-color: #fff3bf;
+    border-color: #e6b800;
+    box-shadow:
+      0 0 0 2px rgba(230, 184, 0, 0.35),
+      0 0 12px rgba(230, 184, 0, 0.28);
+  }
+}
+
+.skill-card.skill-card-highlight {
+  animation: skill-card-glow 0.75s ease-in-out 2;
+}
+
+.skill-card.skill-card-highlight h4 {
+  color: #8a6d00;
+  border-bottom-color: #e6b800;
 }
 
 .hero-link {

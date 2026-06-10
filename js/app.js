@@ -85,11 +85,15 @@
     return BASE + relative;
   }
 
+  function heroHash(slug) {
+    return "#hero/" + encodeURIComponent(slug);
+  }
+
   function heroUrl(slug) {
     if (isLocalFile()) {
-      return "#hero/" + slug;
+      return heroHash(slug);
     }
-    return BASE + "hero/" + slug;
+    return BASE + heroHash(slug);
   }
 
   function homeUrl() {
@@ -100,19 +104,40 @@
   }
 
   function slugFromLocation() {
-    if (isLocalFile()) {
-      const match = location.hash.match(/^#hero\/([^/?#]+)/);
-      return match ? decodeURIComponent(match[1]) : null;
+    const hashMatch = location.hash.match(/^#hero\/([^/?#]+)/);
+    if (hashMatch) {
+      return decodeURIComponent(hashMatch[1]);
     }
     const path = location.pathname;
     const prefix = BASE.replace(/\/$/, "");
     if (path.startsWith(prefix + "/hero/")) {
-      return path.slice((prefix + "/hero/").length).replace(/\/$/, "");
+      return decodeURIComponent(
+        path.slice((prefix + "/hero/").length).replace(/\/$/, "")
+      );
     }
     if (path.indexOf("/hero/") !== -1) {
-      return path.split("/hero/")[1].replace(/\/$/, "");
+      return decodeURIComponent(
+        path.split("/hero/")[1].replace(/\/$/, "")
+      );
     }
     return null;
+  }
+
+  function redirectLegacyHeroPath() {
+    if (location.hash.match(/^#hero\//)) {
+      return;
+    }
+    const path = location.pathname;
+    const idx = path.indexOf("/hero/");
+    if (idx === -1) {
+      return;
+    }
+    const slug = path.slice(idx + 6).replace(/\/$/, "");
+    if (!slug) {
+      return;
+    }
+    const base = path.slice(0, idx + 1);
+    history.replaceState(null, "", base + heroHash(decodeURIComponent(slug)));
   }
 
   function iconPath(kind, value) {
@@ -188,6 +213,53 @@
     normal: "⏱️",
     fast: "🚀",
   };
+
+  const QUALITY_TOOLTIPS = {
+    high:
+      "Top third vs the roster for this effect (parsed %, reach, " +
+      "frequency, or CC duration; fully ascended).",
+    medium: "Middle band vs other heroes with the same effect label.",
+    low: "Below average vs the roster for this effect type.",
+  };
+
+  const SPEED_TOOLTIPS = {
+    slow:
+      "Slow to cast: longer cooldown, initial delay, or ultimate " +
+      "energy fill time.",
+    normal: "Typical cast timing for this skill group across the roster.",
+    fast:
+      "Quick to cast: short delay, low cooldown, or battle-start " +
+      "override.",
+  };
+
+  const SIGNATURE_FUEL_TOOLTIP =
+    "Signature skill casts slowly; Haste and Energy recovery " +
+    "buffs are especially valuable.";
+
+  function conditionalTooltip(text) {
+    const lower = text.toLowerCase();
+    if (lower.indexOf("conditional (frequent)") !== -1) {
+      return "Often applies in a fight; magnitude is not reduced.";
+    }
+    if (lower.indexOf("conditional (rare)") !== -1) {
+      return (
+        "Situational or once per battle; magnitude is lowered " +
+        "by two steps."
+      );
+    }
+    return "";
+  }
+
+  function chipTipAttrs(tooltip) {
+    if (!tooltip) {
+      return "";
+    }
+    return (
+      ' data-tip="' +
+      escapeHtml(tooltip) +
+      '" tabindex="0" role="button" aria-describedby="chip-tooltip"'
+    );
+  }
 
   const TAG_DEFINITIONS = {
     Physical: { emoji: "⚔️", cls: "chip-damage" },
@@ -365,16 +437,14 @@
       .join(" ");
   }
 
-  function chipSpan(emoji, text, cls) {
-    return (
-      '<span class="chip ' +
+  function chipSpan(emoji, text, cls, tooltip) {
+    const attrs =
+      ' class="chip ' +
       cls +
-      '">' +
-      emoji +
-      " " +
-      escapeHtml(text) +
-      "</span>"
-    );
+      (tooltip ? " chip-has-tip" : "") +
+      '"' +
+      (tooltip ? chipTipAttrs(tooltip) : "");
+    return "<span" + attrs + ">" + emoji + " " + escapeHtml(text) + "</span>";
   }
 
   function tryChipify(token) {
@@ -532,7 +602,11 @@
       const last = segments[segments.length - 1];
       if (last.indexOf("conditional") !== -1) {
         trailingParts.unshift(
-          '<span class="chip chip-generic">🎲 ' + escapeHtml(last) + "</span>"
+          '<span class="chip chip-generic chip-has-tip"' +
+            chipTipAttrs(conditionalTooltip(last)) +
+            ">🎲 " +
+            escapeHtml(last) +
+            "</span>"
         );
         segments.pop();
       }
@@ -601,28 +675,27 @@
     const lower = text.toLowerCase();
 
     if (lower === "signature fuel") {
-      return '<span class="chip chip-signature-fuel">⚡ signature fuel</span>';
+      return chipSpan(
+        "⚡",
+        "signature fuel",
+        "chip-signature-fuel",
+        SIGNATURE_FUEL_TOOLTIP
+      );
     }
     if (QUALITY_CLASS[lower]) {
-      return (
-        '<span class="chip chip-quality ' +
-        QUALITY_CLASS[lower] +
-        '">' +
-        QUALITY_EMOJI[lower] +
-        " " +
-        escapeHtml(text) +
-        "</span>"
+      return chipSpan(
+        QUALITY_EMOJI[lower],
+        text,
+        "chip-quality " + QUALITY_CLASS[lower],
+        QUALITY_TOOLTIPS[lower]
       );
     }
     if (SPEED_CLASS[lower]) {
-      return (
-        '<span class="chip chip-speed ' +
-        SPEED_CLASS[lower] +
-        '">' +
-        SPEED_EMOJI[lower] +
-        " " +
-        escapeHtml(text) +
-        "</span>"
+      return chipSpan(
+        SPEED_EMOJI[lower],
+        text,
+        "chip-speed " + SPEED_CLASS[lower],
+        SPEED_TOOLTIPS[lower]
       );
     }
 
@@ -715,6 +788,183 @@
       html += "</div>";
     });
     html += "</div></div>";
+    return html;
+  }
+
+  function extractChipHtml(html) {
+    if (!html || html.indexOf('<span class="chip') !== 0) {
+      return null;
+    }
+    const end = html.indexOf("</span>");
+    if (end === -1) {
+      return null;
+    }
+    return html.slice(0, end + 7);
+  }
+
+  function chipifySkillCardTag(raw) {
+    let tag = raw.trim();
+    if (!tag) {
+      return "";
+    }
+    tag = tag
+      .replace(
+        /\s*\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)/gi,
+        ""
+      )
+      .trim();
+
+    const direct = tryChipify(tag);
+    if (direct) {
+      return direct;
+    }
+
+    const ccChip = extractChipHtml(chipifyLeadingCcType(tag));
+    if (ccChip) {
+      return ccChip;
+    }
+
+    const statChip = extractChipHtml(chipifyLeadingStat(tag));
+    if (statChip) {
+      return statChip;
+    }
+
+    const effectChip = extractChipHtml(chipifyEffectName(tag));
+    if (effectChip) {
+      return effectChip;
+    }
+
+    const label = tag.replace(/\s*\([^)]*\)/g, "").trim();
+    if (!label) {
+      return "";
+    }
+    return chipSpan("🏷️", label, "chip-generic");
+  }
+
+  const SKILL_CARD_DAMAGE_KEYS = [
+    "HP loss",
+    "Max HP-based damage",
+    "True damage",
+    "Physical",
+    "Magic",
+    "DoT",
+  ];
+
+  const SKILL_CARD_CC_KEYS = Object.keys(TAG_DEFINITIONS)
+    .filter(function (key) {
+      const cls = TAG_DEFINITIONS[key].cls;
+      return cls && cls.indexOf("chip-cc") !== -1;
+    })
+    .sort(function (a, b) {
+      return b.length - a.length;
+    });
+
+  function skillCardChipKey(raw) {
+    let tag = raw.trim().toLowerCase();
+    if (!tag) {
+      return "";
+    }
+    tag = tag
+      .replace(
+        /\s*\((?:legendary\+|mythic\+|supreme\+|ex\+\d+)\)/gi,
+        ""
+      )
+      .trim();
+
+    let i;
+    for (i = 0; i < SKILL_CARD_DAMAGE_KEYS.length; i++) {
+      const dt = SKILL_CARD_DAMAGE_KEYS[i].toLowerCase();
+      if (tag === dt || tag.indexOf(dt + " ") === 0) {
+        return dt;
+      }
+    }
+    for (i = 0; i < SKILL_CARD_CC_KEYS.length; i++) {
+      const cc = SKILL_CARD_CC_KEYS[i].toLowerCase();
+      if (tag === cc || tag.indexOf(cc + " ") === 0) {
+        return cc;
+      }
+    }
+    for (i = 0; i < STAT_KEYS.length; i++) {
+      const stat = STAT_KEYS[i].toLowerCase();
+      if (tag === stat || tag.indexOf(stat + " ") === 0) {
+        return stat;
+      }
+    }
+    if (tag.indexOf("healing") !== -1) {
+      return "healing";
+    }
+    return tag.replace(/\s*\([^)]*\)/g, "").trim();
+  }
+
+  function renderSkillCardTags(tags) {
+    if (!tags || !tags.length) {
+      return "";
+    }
+
+    const seen = new Set();
+    let html = "";
+    tags.forEach(function (tag) {
+      const key = skillCardChipKey(tag);
+      if (!key || seen.has(key)) {
+        return;
+      }
+      seen.add(key);
+      const chip = chipifySkillCardTag(tag);
+      if (chip) {
+        html += chip;
+      }
+    });
+    return html;
+  }
+
+  function stripSkillSummarySubsections(md) {
+    const marker = "##### ";
+    const idx = md.indexOf(marker);
+    if (idx === -1) {
+      return md;
+    }
+    return md.slice(0, idx).trim();
+  }
+
+  function renderSkillOverviewMetrics(md) {
+    if (!md) {
+      return "";
+    }
+    const metrics = stripSkillSummarySubsections(md);
+    const lines = metrics.split("\n").filter(function (line) {
+      return !line.startsWith("#### ");
+    });
+    return renderMarkdown(lines.join("\n"), { skillOverview: true });
+  }
+
+  function renderSkillCards(cards) {
+    if (!cards || !cards.length) {
+      return "";
+    }
+
+    let html = '<div class="skill-card-grid">';
+    cards.forEach(function (card) {
+      const tags = card.tags || card.effects || [];
+      html +=
+        '<div class="skill-card" data-skill-category="' +
+        escapeHtml(card.category) +
+        '">';
+      html += "<h4>" + escapeHtml(card.label) + "</h4>";
+      if (card.summary) {
+        html +=
+          '<p class="skill-card-summary">' +
+          escapeHtml(card.summary) +
+          "</p>";
+      }
+      if (tags.length) {
+        html +=
+          '<div class="skill-card-tags">' +
+          renderSkillCardTags(tags) +
+          "</div>";
+      }
+      html += "</div>";
+    });
+    html += "</div>";
     return html;
   }
 
@@ -818,6 +1068,26 @@
     return null;
   }
 
+  function renderSignatureSkillLine(text, hero) {
+    const match = text.match(/^\*\*Signature skill\*\*:\s*(.+)$/i);
+    if (!match) {
+      return null;
+    }
+    const body = match[1].trim();
+    if (!hero || !hero.signatureSkill) {
+      return (
+        "<strong>Signature skill</strong>: " + escapeHtml(body)
+      );
+    }
+    return (
+      '<strong>Signature skill</strong>: <a href="#" class="signature-skill-link" data-skill-category="' +
+      escapeHtml(hero.signatureSkill.category) +
+      '">' +
+      escapeHtml(body) +
+      "</a>"
+    );
+  }
+
   function renderMovementLine(text) {
     const match = text.match(/^\*\*Movement\*\*:\s*(.+)$/i);
     if (!match) {
@@ -843,7 +1113,12 @@
     return renderInline(text);
   }
 
-  function renderBehaviorItem(text) {
+  function renderBehaviorItem(text, options) {
+    const hero = options && options.behaviorHero;
+    const signature = renderSignatureSkillLine(text, hero);
+    if (signature !== null) {
+      return signature;
+    }
     const movement = renderMovementLine(text);
     if (movement !== null) {
       return movement;
@@ -856,7 +1131,9 @@
     const skillOverview = options && options.skillOverview;
     const renderItem = skillOverview
       ? renderSkillOverviewItem
-      : renderBehaviorItem;
+      : function (text) {
+          return renderBehaviorItem(text, options);
+        };
     const lines = md.split("\n");
     const parts = [];
     let inList = false;
@@ -875,7 +1152,10 @@
         continue;
       }
 
-      if (line.startsWith("#### ")) {
+      if (line.startsWith("##### ")) {
+        closeList();
+        parts.push("<h5>" + renderInline(line.slice(6)) + "</h5>");
+      } else if (line.startsWith("#### ")) {
         closeList();
         parts.push("<h4>" + renderInline(line.slice(5)) + "</h4>");
       } else if (line.startsWith("### ")) {
@@ -1369,12 +1649,28 @@
       const parts = splitBehavior(hero.sections.behavior);
       if (parts.behavior) {
         html += '<div class="detail-section">';
-        html += renderMarkdown(parts.behavior);
+        html += renderMarkdown(parts.behavior, { behaviorHero: hero });
         html += "</div>";
       }
-      if (parts.skillOverview) {
-        html += '<div class="detail-section skill-overview-section">';
-        html += renderMarkdown(parts.skillOverview, { skillOverview: true });
+      if (
+        parts.skillOverview ||
+        (hero.sections.skillCards && hero.sections.skillCards.length)
+      ) {
+        html +=
+          '<div class="detail-section summary-section skill-overview-section">';
+        html += "<h2>Skill overview</h2>";
+        if (parts.skillOverview) {
+          const hasSkillCards =
+            hero.sections.skillCards && hero.sections.skillCards.length;
+          const metricsHtml = hasSkillCards
+            ? renderSkillOverviewMetrics(parts.skillOverview)
+            : renderMarkdown(parts.skillOverview, { skillOverview: true });
+          html +=
+            '<div class="skill-overview-metrics">' + metricsHtml + "</div>";
+        }
+        if (hero.sections.skillCards && hero.sections.skillCards.length) {
+          html += renderSkillCards(hero.sections.skillCards);
+        }
         html += "</div>";
       }
     }
@@ -1392,45 +1688,46 @@
     window.scrollTo(0, 0);
   }
 
+  function highlightSkillCard(category) {
+    if (!category || !heroDetail) {
+      return;
+    }
+    const card = heroDetail.querySelector(
+      '.skill-card[data-skill-category="' + category + '"]'
+    );
+    if (!card || card.classList.contains("skill-card-highlight")) {
+      return;
+    }
+
+    function onHighlightEnd(event) {
+      if (event.animationName !== "skill-card-glow") {
+        return;
+      }
+      card.classList.remove("skill-card-highlight");
+      card.removeEventListener("animationend", onHighlightEnd);
+    }
+
+    card.addEventListener("animationend", onHighlightEnd);
+    card.classList.add("skill-card-highlight");
+    card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
   function showGrid() {
     document.title = "AFK Journey Heroes";
     showIndexView();
   }
 
   function navigateHome(replace) {
-    if (isLocalFile()) {
-      const path = location.pathname;
-      if (replace) {
-        history.replaceState(null, "", path);
-      } else {
-        history.pushState(null, "", path);
-      }
-      showGrid();
-      return;
+    const home = homeUrl();
+    if (replace) {
+      history.replaceState(null, "", home);
+    } else {
+      history.pushState(null, "", home);
     }
-    navigateTo(BASE, replace);
+    showGrid();
   }
 
   function navigateTo(url, replace) {
-    if (isLocalFile()) {
-      const match = String(url).match(/#hero\/([^/?#]+)/);
-      if (match) {
-        const slug = decodeURIComponent(match[1]);
-        const hero = heroBySlug[slug];
-        if (hero) {
-          const hash = "#hero/" + slug;
-          if (replace) {
-            history.replaceState(null, "", hash);
-          } else {
-            history.pushState(null, "", hash);
-          }
-          showDetail(hero);
-        }
-        return;
-      }
-      navigateHome(replace);
-      return;
-    }
     if (replace) {
       history.replaceState(null, "", url);
     } else {
@@ -1584,6 +1881,13 @@
     if (link && link.dataset.slug) {
       e.preventDefault();
       navigateTo(heroUrl(link.dataset.slug));
+      return;
+    }
+
+    const sigLink = e.target.closest("a.signature-skill-link");
+    if (sigLink && sigLink.dataset.skillCategory) {
+      e.preventDefault();
+      highlightSkillCard(sigLink.dataset.skillCategory);
     }
   });
 
@@ -1678,6 +1982,163 @@
     new ResizeObserver(updateListStickyOffset).observe(siteHeader);
   }
 
+  (function initChipTooltips() {
+    const chipTooltip = document.createElement("div");
+    chipTooltip.id = "chip-tooltip";
+    chipTooltip.className = "chip-tooltip";
+    chipTooltip.hidden = true;
+    chipTooltip.setAttribute("role", "tooltip");
+    document.body.appendChild(chipTooltip);
+
+    let tipAnchor = null;
+    let tipHideTimer = null;
+    const hoverCapable = window.matchMedia(
+      "(hover: hover) and (pointer: fine)"
+    ).matches;
+
+    function positionChipTooltip(anchor) {
+      const rect = anchor.getBoundingClientRect();
+      chipTooltip.style.left = rect.left + rect.width / 2 + "px";
+      chipTooltip.style.top = rect.top - 8 + "px";
+    }
+
+    function showChipTooltip(anchor) {
+      const text = anchor.getAttribute("data-tip");
+      if (!text) {
+        return;
+      }
+      clearTimeout(tipHideTimer);
+      if (tipAnchor && tipAnchor !== anchor) {
+        tipAnchor.classList.remove("chip-tip-active");
+      }
+      tipAnchor = anchor;
+      anchor.classList.add("chip-tip-active");
+      chipTooltip.textContent = text;
+      chipTooltip.hidden = false;
+      positionChipTooltip(anchor);
+    }
+
+    function hideChipTooltip(delay) {
+      clearTimeout(tipHideTimer);
+      tipHideTimer = setTimeout(function () {
+        if (tipAnchor) {
+          tipAnchor.classList.remove("chip-tip-active");
+        }
+        chipTooltip.hidden = true;
+        tipAnchor = null;
+      }, delay || 0);
+    }
+
+    if (hoverCapable) {
+      document.addEventListener(
+        "pointerover",
+        function (e) {
+          if (e.pointerType !== "mouse") {
+            return;
+          }
+          const chip = e.target.closest(".chip[data-tip]");
+          if (chip) {
+            showChipTooltip(chip);
+          }
+        },
+        true
+      );
+      document.addEventListener(
+        "pointerout",
+        function (e) {
+          if (e.pointerType !== "mouse") {
+            return;
+          }
+          const chip = e.target.closest(".chip[data-tip]");
+          if (
+            chip &&
+            tipAnchor === chip &&
+            !chip.contains(e.relatedTarget)
+          ) {
+            hideChipTooltip(100);
+          }
+        },
+        true
+      );
+    }
+
+    document.addEventListener("keydown", function (e) {
+      const chip = e.target.closest(".chip[data-tip]");
+      if (!chip) {
+        return;
+      }
+      if (e.key === "Escape" && tipAnchor === chip) {
+        hideChipTooltip(0);
+        chip.blur();
+        return;
+      }
+      if ((e.key === " " || e.key === "Enter") && !hoverCapable) {
+        e.preventDefault();
+        if (tipAnchor === chip) {
+          hideChipTooltip(0);
+        } else {
+          showChipTooltip(chip);
+        }
+      }
+    });
+
+    document.addEventListener(
+      "click",
+      function (e) {
+        const chip = e.target.closest(".chip[data-tip]");
+        if (!chip) {
+          if (tipAnchor) {
+            hideChipTooltip(0);
+          }
+          return;
+        }
+        const touchLike =
+          e.pointerType === "touch" || !hoverCapable;
+        if (!touchLike) {
+          return;
+        }
+        e.stopPropagation();
+        if (tipAnchor === chip) {
+          hideChipTooltip(0);
+        } else {
+          showChipTooltip(chip);
+        }
+      },
+      true
+    );
+
+    document.addEventListener("focusin", function (e) {
+      const chip = e.target.closest(".chip[data-tip]");
+      if (chip) {
+        showChipTooltip(chip);
+      }
+    });
+
+    document.addEventListener("focusout", function (e) {
+      const chip = e.target.closest(".chip[data-tip]");
+      if (chip && tipAnchor === chip) {
+        hideChipTooltip(0);
+      }
+    });
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (tipAnchor && !chipTooltip.hidden) {
+          positionChipTooltip(tipAnchor);
+        }
+      },
+      true
+    );
+
+    window.addEventListener("resize", function () {
+      if (tipAnchor && !chipTooltip.hidden) {
+        positionChipTooltip(tipAnchor);
+      }
+    });
+  })();
+
+  redirectLegacyHeroPath();
   loadHeroData();
   loadCsvData();
 })();
