@@ -258,6 +258,7 @@
     area: { emoji: "⭕", cls: "chip-target" },
     arc: { emoji: "📐", cls: "chip-target" },
     self: { emoji: "🪞", cls: "chip-target" },
+    allies: { emoji: "🤝", cls: "chip-target" },
     enemies: { emoji: "☠️", cls: "chip-target" },
     global: { emoji: "🌍", cls: "chip-target" },
     "on skill": { emoji: "⏱️", cls: "chip-target" },
