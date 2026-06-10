@@ -35,6 +35,17 @@ REPLACEMENT_CATEGORY_LABELS = {
 }
 
 
+def _receiver_synergies(
+    beneficiary_short: str,
+    synergies: dict,
+    title_by_short: dict[str, str],
+) -> list[dict]:
+    title = title_by_short.get(beneficiary_short)
+    if not title:
+        return []
+    return synergies["heroes"].get(title, {}).get("synergies", [])
+
+
 def _format_replacement_line(
     entry: dict,
     *,
@@ -112,6 +123,8 @@ def _format_synergies(
     max_ben: int,
     provider_beneficiary_count: dict[str, int],
     obvious_threshold: int,
+    synergies: dict,
+    title_by_short: dict[str, str],
 ) -> list[str]:
     lines: list[str] = []
     benefit_stats = [
@@ -169,8 +182,23 @@ def _format_synergies(
             display = benefited[:max_ben]
         else:
             display = benefited
+        display = sorted(
+            display,
+            key=lambda b: (
+                -gen.beneficiary_rating_out_of_five(
+                    b["score"],
+                    _receiver_synergies(b["name"], synergies, title_by_short),
+                ),
+                b["name"],
+            ),
+        )
         for b in display:
-            lines.append(f"- {b['name']}")
+            receiver_synergies = _receiver_synergies(
+                b["name"], synergies, title_by_short
+            )
+            lines.append(
+                f"- {b['name']} ({gen.format_beneficiary_rating_markdown(b['score'], receiver_synergies)})"
+            )
     return lines
 
 
@@ -186,6 +214,9 @@ def build_overview(
     provider_beneficiary_count = {
         title: len(s["beneficiaries"])
         for title, s in synergies["heroes"].items()
+    }
+    title_by_short = {
+        gen.short_name(title): title for title in synergies["heroes"]
     }
 
     data_by_title = {h["title"]: h for h in data["heroes"]}
@@ -222,6 +253,8 @@ def build_overview(
             max_ben,
             provider_beneficiary_count,
             obvious_threshold,
+            synergies,
+            title_by_short,
         )
         summary = rs.format_summary(hero, short).rstrip()
 

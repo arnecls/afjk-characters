@@ -72,8 +72,8 @@ Common buffers are **Ravion**, **Hugin**, or **Solise**.
 
 ### Units benefitting most from Aliceth
 
-- Kulu
-- Lily May
+- Kulu (4.0 / 5)
+- Lily May (2.8 / 5)
 
 ### Units that can act as a replacement for Aliceth
 
@@ -188,8 +188,8 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 ### Units benefitting most from Alna
 
-- Indris
-- Bonnie
+- Bonnie (3.3 / 5)
+- Indris (2.2 / 5)
 
 ### Units that can act as a replacement for Alna
 
@@ -299,9 +299,9 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Units benefitting most from Alsa
 
-- Indris
-- Bonnie
-- Nerion
+- Bonnie (2.8 / 5)
+- Indris (1.6 / 5)
+- Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Alsa
 
@@ -410,9 +410,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Antandra
 
-- Nerion
-- Carolina
-- Shadewing
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
+- Shadewing (1.2 / 5)
 
 ### Units that can act as a replacement for Antandra
 
@@ -513,9 +513,9 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 
 ### Units benefitting most from Arden
 
-- Nerion
-- Carolina
-- Bonnie
+- Carolina (3.0 / 5)
+- Nerion (2.9 / 5)
+- Bonnie (0.8 / 5)
 
 ### Units that can act as a replacement for Arden
 
@@ -610,9 +610,9 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Atalanta
 
-- Nerion
-- Carolina
-- Indris
+- Carolina (1.5 / 5)
+- Nerion (1.4 / 5)
+- Indris (0.6 / 5)
 
 ### Units that can act as a replacement for Atalanta
 
@@ -719,9 +719,9 @@ Common buffers are **Hugin**, **Solise**, or **Twins**.
 
 ### Units benefitting most from Athalia
 
-- Indris
-- Nerion
-- Aliceth
+- Aliceth (1.7 / 5)
+- Nerion (1.6 / 5)
+- Indris (1.2 / 5)
 
 ### Units that can act as a replacement for Athalia
 
@@ -829,12 +829,12 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 ### Units benefitting most from Aurora
 
-- Damian
-- Florabelle
-- Mehira
-- Phraesto
-- Zanie
-- Shadewing
+- Zanie (3.5 / 5)
+- Phraesto (3.0 / 5)
+- Damian (2.9 / 5)
+- Florabelle (2.9 / 5)
+- Mehira (1.7 / 5)
+- Shadewing (0.7 / 5)
 
 ### Units that can act as a replacement for Aurora
 
@@ -937,8 +937,8 @@ Common buffers are **Twins**, **Solise**, or **Velara**.
 
 ### Units benefitting most from Baelran
 
-- Nerion
-- Carolina
+- Carolina (4.0 / 5)
+- Nerion (3.9 / 5)
 
 ### Units that can act as a replacement for Baelran
 
@@ -1039,9 +1039,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Berial
 
-- Nerion
-- Carolina
-- Bonnie
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
+- Bonnie (1.1 / 5)
 
 ### Units that can act as a replacement for Berial
 
@@ -1144,9 +1144,9 @@ Common buffers are **Ravion**, **Rowan**, or **Velara**.
 
 ### Units benefitting most from Bonnie
 
-- Indris
-- Aliceth
-- Shadewing
+- Shadewing (1.1 / 5)
+- Indris (0.9 / 5)
+- Aliceth (0.8 / 5)
 
 ### Units that can act as a replacement for Bonnie
 
@@ -1257,9 +1257,9 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ### Units benefitting most from Brutus
 
-- Shadewing
-- Indris
-- Aliceth
+- Shadewing (3.6 / 5)
+- Indris (1.6 / 5)
+- Aliceth (1.4 / 5)
 
 ### Units that can act as a replacement for Brutus
 
@@ -1369,9 +1369,9 @@ Common buffers are **Solise**, **Mikola**, or **Velara**.
 
 ### Units benefitting most from Bryon
 
-- Shadewing
-- Bonnie
-- Indris
+- Shadewing (4.0 / 5)
+- Bonnie (3.9 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Bryon
 
@@ -1471,9 +1471,9 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 ### Units benefitting most from Callan
 
-- Nerion
-- Carolina
-- Perseus
+- Nerion (1.9 / 5)
+- Carolina (1.7 / 5)
+- Perseus (0.6 / 5)
 
 ### Units that can act as a replacement for Callan
 
@@ -1578,9 +1578,9 @@ Common buffers are **Ravion**, **Lyca**, or **Twins**.
 
 ### Units benefitting most from Carolina
 
-- Nerion
-- Indris
-- Bonnie
+- Nerion (3.9 / 5)
+- Bonnie (2.1 / 5)
+- Indris (1.1 / 5)
 
 ### Units that can act as a replacement for Carolina
 
@@ -1693,9 +1693,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Units benefitting most from Cassadee
 
-- Nerion
-- Carolina
-- Bonnie
+- Carolina (3.3 / 5)
+- Nerion (3.2 / 5)
+- Bonnie (1.6 / 5)
 
 ### Units that can act as a replacement for Cassadee
 
@@ -1801,9 +1801,9 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 
 ### Units benefitting most from Cecia
 
-- Perseus
-- Silven
-- Nerion
+- Silven (3.0 / 5)
+- Perseus (2.6 / 5)
+- Nerion (2.4 / 5)
 
 ### Units that can act as a replacement for Cecia
 
@@ -1890,7 +1890,7 @@ rare chance for massive single normal attack damage
 
 ### Units benefitting most from Chippy
 
-- Himmel
+- Himmel (0.9 / 5)
 
 ### Units that can act as a replacement for Chippy
 
@@ -1977,16 +1977,16 @@ Common buffers are **Solise**, **Velara**, or **Rowan**.
 
 These are the **10** strongest pairings: 
 
-- Silven
-- Himmel
-- Aliceth
-- Baelran
-- Isabella
-- Kordan
-- Smokey & Meerky
-- Alna
-- Athalia
-- Callan
+- Smokey & Meerky (3.6 / 5)
+- Himmel (3.4 / 5)
+- Baelran (3.1 / 5)
+- Callan (3.0 / 5)
+- Isabella (3.0 / 5)
+- Kordan (2.4 / 5)
+- Athalia (2.4 / 5)
+- Silven (2.3 / 5)
+- Alna (2.3 / 5)
+- Aliceth (2.0 / 5)
 
 ### Units that can act as a replacement for Contess
 
@@ -2098,9 +2098,9 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
 
 ### Units benefitting most from Cryonaia
 
-- Bonnie
-- Himmel
-- Niru
+- Bonnie (1.7 / 5)
+- Himmel (0.9 / 5)
+- Niru (0.8 / 5)
 
 ### Units that can act as a replacement for Cryonaia
 
@@ -2201,9 +2201,9 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 
 ### Units benefitting most from Cyran
 
-- Bonnie
-- Nerion
-- Indris
+- Bonnie (2.5 / 5)
+- Nerion (1.4 / 5)
+- Indris (0.7 / 5)
 
 ### Units that can act as a replacement for Cyran
 
@@ -2305,7 +2305,7 @@ Common buffers are **Hugin**.
 
 ### Units benefitting most from Daimon
 
-- Gerda
+- Gerda (3.3 / 5)
 
 ### Units that can act as a replacement for Daimon
 
@@ -2400,9 +2400,9 @@ Common buffers are **Hugin**, **Mikola**, or **Ravion**.
 
 ### Units benefitting most from Damian
 
-- Viperian
-- Natsu
-- Odie
+- Viperian (4.2 / 5)
+- Odie (2.1 / 5)
+- Natsu (2.0 / 5)
 
 ### Units that can act as a replacement for Damian
 
@@ -2517,9 +2517,9 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ### Units benefitting most from Dionel
 
-- Nerion
-- Silven
-- Aliceth
+- Nerion (1.7 / 5)
+- Aliceth (1.0 / 5)
+- Silven (0.9 / 5)
 
 ### Units that can act as a replacement for Dionel
 
@@ -2634,7 +2634,7 @@ Common buffers are **Solise**, **Hugin**, or **Twins**.
 
 ### Units benefitting most from Dunlingr
 
-- Marcille
+- Marcille (1.8 / 5)
 
 ### Units that can act as a replacement for Dunlingr
 
@@ -2736,9 +2736,9 @@ Common buffers are **Hugin** or **Rowan**.
 
 ### Units benefitting most from Eironn
 
-- Indris
-- Bonnie
-- Nerion
+- Bonnie (2.9 / 5)
+- Indris (1.5 / 5)
+- Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Eironn
 
@@ -2839,16 +2839,16 @@ Common buffers are **Solise**, **Rowan**, or **Hugin**.
 
 These are the **10** strongest pairings: 
 
-- Perseus
-- Silven
-- Alsa
-- Hepler
-- Lenya
-- Lumont
-- Mehira
-- Soren
-- Tasi
-- Zorya
+- Alsa (4.9 / 5)
+- Hepler (4.9 / 5)
+- Lenya (4.9 / 5)
+- Lumont (4.9 / 5)
+- Mehira (4.9 / 5)
+- Soren (4.5 / 5)
+- Zorya (4.3 / 5)
+- Tasi (3.8 / 5)
+- Perseus (3.7 / 5)
+- Silven (3.6 / 5)
 
 ### Units that can act as a replacement for Twins
 
@@ -2946,7 +2946,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 ### Units benefitting most from Evie
 
-- Smokey & Meerky
+- Smokey & Meerky (3.6 / 5)
 
 ### Units that can act as a replacement for Evie
 
@@ -3069,9 +3069,9 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 ### Units benefitting most from Faramor
 
-- Nerion
-- Carolina
-- Indris
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
+- Indris (0.3 / 5)
 
 ### Units that can act as a replacement for Faramor
 
@@ -3166,9 +3166,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Fay
 
-- Perseus
-- Silven
-- Indris
+- Silven (2.5 / 5)
+- Perseus (2.2 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Fay
 
@@ -3273,10 +3273,10 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 ### Units benefitting most from Florabelle
 
-- Dunlingr
-- Bryon
-- Damian
-- Phraesto
+- Dunlingr (4.4 / 5)
+- Bryon (4.1 / 5)
+- Phraesto (3.5 / 5)
+- Damian (3.4 / 5)
 
 ### Units that can act as a replacement for Florabelle
 
@@ -3379,7 +3379,7 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 
 ### Units benefitting most from Frieren
 
-- Bonnie
+- Bonnie (3.7 / 5)
 
 ### Units that can act as a replacement for Frieren
 
@@ -3479,16 +3479,16 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 These are the **10** strongest pairings: 
 
-- Alsa
-- Lenya
-- Faramor
-- Cassadee
-- Frieren
-- Koko
-- Ravion
-- Cyran
-- Pippa
-- Rowan
+- Alsa (2.3 / 5)
+- Lenya (2.3 / 5)
+- Cassadee (2.2 / 5)
+- Koko (2.2 / 5)
+- Pippa (2.2 / 5)
+- Ravion (2.2 / 5)
+- Rowan (2.2 / 5)
+- Faramor (2.2 / 5)
+- Frieren (1.8 / 5)
+- Cyran (1.3 / 5)
 
 ### Units that can act as a replacement for Galahad
 
@@ -3591,9 +3591,9 @@ Common buffers are **Hugin**.
 
 ### Units benefitting most from Gerda
 
-- Perseus
-- Silven
-- Nerion
+- Silven (2.1 / 5)
+- Perseus (1.7 / 5)
+- Nerion (1.4 / 5)
 
 ### Units that can act as a replacement for Gerda
 
@@ -3696,9 +3696,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Granny Dahnie
 
-- Nerion
-- Indris
-- Carolina
+- Carolina (1.3 / 5)
+- Nerion (1.3 / 5)
+- Indris (0.6 / 5)
 
 ### Units that can act as a replacement for Granny Dahnie
 
@@ -3805,12 +3805,12 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Units benefitting most from Gunnar
 
-- Shadewing
-- Gwyneth
-- Aurora
-- Twins
-- Hugin
-- Solise
+- Shadewing (1.2 / 5)
+- Gwyneth (0.3 / 5)
+- Solise (0.3 / 5)
+- Aurora (0.2 / 5)
+- Hugin (0.2 / 5)
+- Twins (0.2 / 5)
 
 ### Units that can act as a replacement for Gunnar
 
@@ -3910,9 +3910,9 @@ Common buffers are **Twins**, **Velara**, or **Lyca**.
 
 ### Units benefitting most from Gwyneth
 
-- Nerion
-- Carolina
-- Shadewing
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
+- Shadewing (2.3 / 5)
 
 ### Units that can act as a replacement for Gwyneth
 
@@ -3985,9 +3985,9 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 ### Units benefitting most from Hammie
 
-- Bonnie
-- Himmel
-- Perseus
+- Himmel (1.5 / 5)
+- Bonnie (1.2 / 5)
+- Perseus (0.5 / 5)
 
 ### Units that can act as a replacement for Hammie
 
@@ -4079,9 +4079,9 @@ Common buffers are **Rowan**, **Hugin**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Harak
 
-- Perseus
-- Silven
-- Nerion
+- Silven (0.7 / 5)
+- Perseus (0.6 / 5)
+- Nerion (0.5 / 5)
 
 ### Units that can act as a replacement for Harak
 
@@ -4208,16 +4208,16 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 These are the **10** strongest pairings: 
 
-- Nerion
-- Carolina
-- Lumont
-- Soren
-- Tasi
-- Gunnar
-- Antandra
-- Salazer
-- Lucca
-- Contess
+- Nerion (5.0 / 5)
+- Gunnar (4.9 / 5)
+- Contess (4.3 / 5)
+- Carolina (4.2 / 5)
+- Lucca (3.7 / 5)
+- Lumont (3.5 / 5)
+- Salazer (3.4 / 5)
+- Soren (3.1 / 5)
+- Antandra (2.8 / 5)
+- Tasi (2.7 / 5)
 
 ### Units that can act as a replacement for Hepler
 
@@ -4335,10 +4335,10 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Hewynn
 
-- Gunnar
-- Lucca
-- Lucius
-- Saida
+- Saida (4.2 / 5)
+- Gunnar (3.7 / 5)
+- Lucius (3.1 / 5)
+- Lucca (2.9 / 5)
 
 ### Units that can act as a replacement for Hewynn
 
@@ -4444,7 +4444,7 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 ### Units benefitting most from Himmel
 
-- Cryonaia
+- Cryonaia (2.3 / 5)
 
 ### Units that can act as a replacement for Himmel
 
@@ -4537,9 +4537,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 
 ### Units benefitting most from Hodgkin
 
-- Indris
-- Aliceth
-- Bonnie
+- Indris (1.5 / 5)
+- Bonnie (0.9 / 5)
+- Aliceth (0.7 / 5)
 
 ### Units that can act as a replacement for Hodgkin
 
@@ -4640,16 +4640,16 @@ Common buffers are **Twins**, **Velara**, or **Lyca**.
 
 These are the **10** strongest pairings: 
 
-- Perseus
-- Tasi
-- Alsa
-- Frieren
-- Hepler
-- Lenya
-- Lorsan
-- Lumont
-- Mehira
-- Natsu
+- Alsa (5.0 / 5)
+- Frieren (5.0 / 5)
+- Hepler (5.0 / 5)
+- Lenya (5.0 / 5)
+- Lorsan (5.0 / 5)
+- Lumont (5.0 / 5)
+- Mehira (5.0 / 5)
+- Natsu (5.0 / 5)
+- Tasi (5.0 / 5)
+- Perseus (4.4 / 5)
 
 ### Units that can act as a replacement for Hugin
 
@@ -4733,9 +4733,9 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 ### Units benefitting most from Igor
 
-- Indris
-- Aliceth
-- Bonnie
+- Bonnie (0.7 / 5)
+- Aliceth (0.5 / 5)
+- Indris (0.5 / 5)
 
 ### Units that can act as a replacement for Igor
 
@@ -4827,7 +4827,7 @@ Common buffers are **Lyca**, **Ravion**, or **Hugin**.
 
 ### Units benefitting most from Indris
 
-- Nerion
+- Nerion (3.9 / 5)
 
 ### Units that can act as a replacement for Indris
 
@@ -4933,9 +4933,9 @@ Common buffers are **Hugin**, **Rowan**, or **Solise**.
 
 ### Units benefitting most from Isabella
 
-- Indris
-- Bonnie
-- Perseus
+- Bonnie (1.8 / 5)
+- Indris (1.1 / 5)
+- Perseus (0.7 / 5)
 
 ### Units that can act as a replacement for Isabella
 
@@ -5040,9 +5040,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Units benefitting most from Kafra
 
-- Nerion
-- Indris
-- Carolina
+- Carolina (1.5 / 5)
+- Nerion (1.4 / 5)
+- Indris (1.0 / 5)
 
 ### Units that can act as a replacement for Kafra
 
@@ -5159,16 +5159,16 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 These are the **10** strongest pairings: 
 
-- Perseus
-- Talene
-- Gunnar
-- Harak
-- Lucca
-- Tilaya
-- Ulmus
-- Valka
-- Igor
-- Callan
+- Talene (4.7 / 5)
+- Igor (4.3 / 5)
+- Tilaya (4.2 / 5)
+- Gunnar (3.7 / 5)
+- Harak (3.5 / 5)
+- Ulmus (3.5 / 5)
+- Valka (3.5 / 5)
+- Callan (3.3 / 5)
+- Perseus (3.3 / 5)
+- Lucca (2.9 / 5)
 
 ### Units that can act as a replacement for Koko
 
@@ -5288,9 +5288,9 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
 
 ### Units benefitting most from Kordan
 
-- Nerion
-- Carolina
-- Perseus
+- Carolina (4.0 / 5)
+- Nerion (3.9 / 5)
+- Perseus (0.9 / 5)
 
 ### Units that can act as a replacement for Kordan
 
@@ -5382,9 +5382,9 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 ### Units benefitting most from Korin
 
-- Nerion
-- Carolina
-- Perseus
+- Nerion (1.6 / 5)
+- Carolina (1.3 / 5)
+- Perseus (0.5 / 5)
 
 ### Units that can act as a replacement for Korin
 
@@ -5488,9 +5488,9 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 
 ### Units benefitting most from Kruger
 
-- Indris
-- Aliceth
-- Bonnie
+- Indris (1.5 / 5)
+- Bonnie (0.9 / 5)
+- Aliceth (0.7 / 5)
 
 ### Units that can act as a replacement for Kruger
 
@@ -5593,8 +5593,8 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 ### Units benefitting most from Kulu
 
-- Indris
-- Bonnie
+- Bonnie (3.5 / 5)
+- Indris (2.5 / 5)
 
 ### Units that can act as a replacement for Kulu
 
@@ -5705,8 +5705,8 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 ### Units benefitting most from Laios
 
-- Nerion
-- Carolina
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
 
 ### Units that can act as a replacement for Laios
 
@@ -5816,9 +5816,9 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ### Units benefitting most from Lenya
 
-- Nerion
-- Perseus
-- Silven
+- Nerion (1.7 / 5)
+- Perseus (0.9 / 5)
+- Silven (0.8 / 5)
 
 ### Units that can act as a replacement for Lenya
 
@@ -5916,7 +5916,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 ### Units benefitting most from Lily May
 
-- Bonnie
+- Bonnie (4.4 / 5)
 
 ### Units that can act as a replacement for Lily May
 
@@ -6031,9 +6031,9 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 ### Units benefitting most from Lorsan
 
-- Berial
-- Granny Dahnie
-- Lucius
+- Berial (3.1 / 5)
+- Lucius (3.1 / 5)
+- Granny Dahnie (1.9 / 5)
 
 ### Units that can act as a replacement for Lorsan
 
@@ -6139,9 +6139,9 @@ Common buffers are **Rowan**, **Hugin**, or **Solise**.
 
 ### Units benefitting most from Lucca
 
-- Nerion
-- Carolina
-- Himmel
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
+- Himmel (0.9 / 5)
 
 ### Units that can act as a replacement for Lucca
 
@@ -6238,9 +6238,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Lucius
 
-- Nerion
-- Perseus
-- Shadewing
+- Shadewing (3.2 / 5)
+- Nerion (2.2 / 5)
+- Perseus (1.3 / 5)
 
 ### Units that can act as a replacement for Lucius
 
@@ -6351,9 +6351,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Lucy
 
-- Nerion
-- Carolina
-- Perseus
+- Nerion (3.6 / 5)
+- Carolina (3.3 / 5)
+- Perseus (0.7 / 5)
 
 ### Units that can act as a replacement for Lucy
 
@@ -6448,9 +6448,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Solise**.
 
 ### Units benefitting most from Ludovic
 
-- Himmel
-- Perseus
-- Silven
+- Himmel (2.4 / 5)
+- Silven (1.0 / 5)
+- Perseus (0.8 / 5)
 
 ### Units that can act as a replacement for Ludovic
 
@@ -6559,9 +6559,9 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ### Units benefitting most from Lumont
 
-- Nerion
-- Carolina
-- Indris
+- Carolina (4.0 / 5)
+- Nerion (3.9 / 5)
+- Indris (0.6 / 5)
 
 ### Units that can act as a replacement for Lumont
 
@@ -6679,16 +6679,16 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 These are the **10** strongest pairings: 
 
-- Indris
-- Nerion
-- Cecia
-- Fay
-- Gwyneth
-- Korin
-- Marilee
-- Mirael
-- Parisa
-- Rhys
+- Cecia (5.0 / 5)
+- Fay (5.0 / 5)
+- Gwyneth (5.0 / 5)
+- Indris (5.0 / 5)
+- Korin (5.0 / 5)
+- Marilee (5.0 / 5)
+- Mirael (5.0 / 5)
+- Parisa (5.0 / 5)
+- Rhys (5.0 / 5)
+- Nerion (4.2 / 5)
 
 ### Units that can act as a replacement for Lyca
 
@@ -6784,9 +6784,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Marcille
 
-- Perseus
-- Himmel
-- Silven
+- Himmel (2.6 / 5)
+- Silven (1.1 / 5)
+- Perseus (0.9 / 5)
 
 ### Units that can act as a replacement for Marcille
 
@@ -6892,8 +6892,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Marilee
 
-- Nerion
-- Carolina
+- Carolina (0.5 / 5)
+- Nerion (0.5 / 5)
 
 ### Units that can act as a replacement for Marilee
 
@@ -6995,16 +6995,16 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 These are the **10** strongest pairings: 
 
-- Aurora
-- Cassadee
-- Frieren
-- Ravion
-- Cyran
-- Faramor
-- Hugin
-- Pippa
-- Rowan
-- Shakir
+- Aurora (2.2 / 5)
+- Cassadee (2.2 / 5)
+- Hugin (2.2 / 5)
+- Pippa (2.2 / 5)
+- Ravion (2.2 / 5)
+- Rowan (2.2 / 5)
+- Shakir (2.2 / 5)
+- Frieren (1.8 / 5)
+- Faramor (1.6 / 5)
+- Cyran (1.3 / 5)
 
 ### Units that can act as a replacement for Mehira
 
@@ -7112,16 +7112,16 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 These are the **10** strongest pairings: 
 
-- Perseus
-- Hepler
-- Lorsan
-- Seth
-- Tasi
-- Vala
-- Laios
-- Temesia
-- Hammie
-- Hodgkin
+- Hammie (4.5 / 5)
+- Seth (4.4 / 5)
+- Vala (4.4 / 5)
+- Laios (4.4 / 5)
+- Hepler (4.2 / 5)
+- Lorsan (4.2 / 5)
+- Perseus (4.1 / 5)
+- Hodgkin (3.6 / 5)
+- Temesia (3.6 / 5)
+- Tasi (3.3 / 5)
 
 ### Units that can act as a replacement for Mikola
 
@@ -7215,9 +7215,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Mirael
 
-- Shadewing
-- Bonnie
-- Himmel
+- Shadewing (1.5 / 5)
+- Bonnie (1.1 / 5)
+- Himmel (0.9 / 5)
 
 ### Units that can act as a replacement for Mirael
 
@@ -7302,9 +7302,9 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 
 ### Units benefitting most from Nara
 
-- Nerion
-- Carolina
-- Perseus
+- Carolina (1.5 / 5)
+- Nerion (1.4 / 5)
+- Perseus (0.4 / 5)
 
 ### Units that can act as a replacement for Nara
 
@@ -7415,9 +7415,9 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Units benefitting most from Natsu
 
-- Indris
-- Shadewing
-- Bonnie
+- Shadewing (3.1 / 5)
+- Bonnie (3.0 / 5)
+- Indris (1.9 / 5)
 
 ### Units that can act as a replacement for Natsu
 
@@ -7518,9 +7518,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Nazrik
 
-- Indris
-- Nerion
-- Carolina
+- Carolina (1.0 / 5)
+- Indris (1.0 / 5)
+- Nerion (1.0 / 5)
 
 ### Units that can act as a replacement for Nazrik
 
@@ -7625,9 +7625,9 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 
 ### Units benefitting most from Nerion
 
-- Bonnie
-- Carolina
-- Indris
+- Bonnie (1.5 / 5)
+- Carolina (1.0 / 5)
+- Indris (0.3 / 5)
 
 ### Units that can act as a replacement for Nerion
 
@@ -7736,9 +7736,9 @@ Common buffers are **Rowan**, **Solise**, or **Velara**.
 
 ### Units benefitting most from Niru
 
-- Bonnie
-- Zorya
-- Himmel
+- Bonnie (1.3 / 5)
+- Zorya (0.9 / 5)
+- Himmel (0.9 / 5)
 
 ### Units that can act as a replacement for Niru
 
@@ -7823,9 +7823,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Odie
 
-- Shadewing
-- Bonnie
-- Indris
+- Shadewing (1.9 / 5)
+- Bonnie (1.5 / 5)
+- Indris (0.5 / 5)
 
 ### Units that can act as a replacement for Odie
 
@@ -7903,16 +7903,16 @@ Common buffers are **Rowan**, **Ravion**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Pandora
 
-- Indris
-- Salazer
-- Ludovic
-- Walker
-- Chippy
-- Lily May
-- Satrana
-- Reinier
-- Nara
-- Scarlita
+- Indris (3.3 / 5)
+- Salazer (2.8 / 5)
+- Ludovic (2.7 / 5)
+- Walker (2.6 / 5)
+- Chippy (1.9 / 5)
+- Lily May (1.9 / 5)
+- Satrana (1.9 / 5)
+- Reinier (1.5 / 5)
+- Scarlita (0.6 / 5)
+- Nara (0.5 / 5)
 
 ### Units that can act as a replacement for Pandora
 
@@ -8020,9 +8020,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Units benefitting most from Pang
 
-- Nerion
-- Carolina
-- Perseus
+- Nerion (1.6 / 5)
+- Carolina (1.3 / 5)
+- Perseus (0.4 / 5)
 
 ### Units that can act as a replacement for Pang
 
@@ -8127,9 +8127,9 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Parisa
 
-- Bonnie
-- Himmel
-- Niru
+- Himmel (0.9 / 5)
+- Bonnie (0.8 / 5)
+- Niru (0.5 / 5)
 
 ### Units that can act as a replacement for Parisa
 
@@ -8218,9 +8218,9 @@ Common buffers are **Hugin**, **Rowan**, or **Mikola**.
 
 ### Units benefitting most from Perseus
 
-- Nerion
-- Carolina
-- Silven
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
+- Silven (0.7 / 5)
 
 ### Units that can act as a replacement for Perseus
 
@@ -8319,9 +8319,9 @@ Common buffers are **Smokey & Meerky**, **Rowan**, or **Solise**.
 
 ### Units benefitting most from Phraesto
 
-- Perseus
-- Nerion
-- Silven
+- Nerion (1.1 / 5)
+- Perseus (1.0 / 5)
+- Silven (0.7 / 5)
 
 ### Units that can act as a replacement for Phraesto
 
@@ -8427,9 +8427,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Units benefitting most from Pippa
 
-- Bonnie
-- Indris
-- Aliceth
+- Bonnie (3.0 / 5)
+- Aliceth (1.4 / 5)
+- Indris (1.0 / 5)
 
 ### Units that can act as a replacement for Pippa
 
@@ -8546,16 +8546,16 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 These are the **10** strongest pairings: 
 
-- Nerion
-- Indris
-- Carolina
-- Aliceth
-- Arden
-- Hodgkin
-- Parisa
-- Cryonaia
-- Cyran
-- Frieren
+- Carolina (4.6 / 5)
+- Arden (4.2 / 5)
+- Nerion (4.1 / 5)
+- Hodgkin (3.1 / 5)
+- Cryonaia (3.0 / 5)
+- Aliceth (2.8 / 5)
+- Parisa (2.7 / 5)
+- Frieren (2.5 / 5)
+- Indris (2.3 / 5)
+- Cyran (2.2 / 5)
 
 ### Units that can act as a replacement for Ravion
 
@@ -8656,9 +8656,9 @@ Common buffers are **Solise**, **Rowan**, or **Velara**.
 
 ### Units benefitting most from Reinier
 
-- Bonnie
-- Indris
-- Himmel
+- Bonnie (1.5 / 5)
+- Himmel (1.2 / 5)
+- Indris (0.5 / 5)
 
 ### Units that can act as a replacement for Reinier
 
@@ -8765,9 +8765,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Rhys
 
-- Nerion
-- Carolina
-- Perseus
+- Carolina (1.5 / 5)
+- Nerion (1.4 / 5)
+- Perseus (0.5 / 5)
 
 ### Units that can act as a replacement for Rhys
 
@@ -8872,16 +8872,16 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 These are the **10** strongest pairings: 
 
-- Perseus
-- Granny Dahnie
-- Zorya
-- Antandra
-- Soren
-- Temesia
-- Niru
-- Hodgkin
-- Seth
-- Twins
+- Antandra (5.0 / 5)
+- Granny Dahnie (5.0 / 5)
+- Niru (5.0 / 5)
+- Soren (5.0 / 5)
+- Zorya (5.0 / 5)
+- Hodgkin (5.0 / 5)
+- Seth (5.0 / 5)
+- Twins (5.0 / 5)
+- Temesia (5.0 / 5)
+- Perseus (4.2 / 5)
 
 ### Units that can act as a replacement for Rowan
 
@@ -8997,16 +8997,16 @@ Common buffers are **Solise**, **Velara**, or **Rowan**.
 
 These are the **10** strongest pairings: 
 
-- Shadewing
-- Silven
-- Baelran
-- Contess
-- Cryonaia
-- Daimon
-- Eironn
-- Faramor
-- Gerda
-- Kruger
+- Daimon (5.0 / 5)
+- Eironn (5.0 / 5)
+- Gerda (5.0 / 5)
+- Kruger (3.0 / 5)
+- Shadewing (2.5 / 5)
+- Contess (2.1 / 5)
+- Baelran (2.0 / 5)
+- Faramor (1.7 / 5)
+- Cryonaia (1.7 / 5)
+- Silven (1.1 / 5)
 
 ### Units that can act as a replacement for Saida
 
@@ -9107,9 +9107,9 @@ Common buffers are **Rowan**, **Lyca**, or **Hugin**.
 
 ### Units benefitting most from Salazer
 
-- Nerion
-- Perseus
-- Silven
+- Nerion (0.6 / 5)
+- Perseus (0.4 / 5)
+- Silven (0.4 / 5)
 
 ### Units that can act as a replacement for Salazer
 
@@ -9206,9 +9206,9 @@ strike has no cooldown limit when all enemies are ignited
 
 ### Units benefitting most from Satrana
 
-- Indris
-- Shadewing
-- Bonnie
+- Shadewing (3.1 / 5)
+- Bonnie (3.0 / 5)
+- Indris (1.9 / 5)
 
 ### Units that can act as a replacement for Satrana
 
@@ -9310,9 +9310,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 
 ### Units benefitting most from Scarlita
 
-- Nerion
-- Carolina
-- Perseus
+- Nerion (2.7 / 5)
+- Carolina (2.7 / 5)
+- Perseus (0.2 / 5)
 
 ### Units that can act as a replacement for Scarlita
 
@@ -9422,9 +9422,9 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 ### Units benefitting most from Seth
 
-- Nerion
-- Perseus
-- Carolina
+- Carolina (0.8 / 5)
+- Nerion (0.5 / 5)
+- Perseus (0.3 / 5)
 
 ### Units that can act as a replacement for Seth
 
@@ -9542,8 +9542,8 @@ Common buffers are **Hugin**, **Velara**, or **Lyca**.
 
 ### Units benefitting most from Shadewing
 
-- Bonnie
-- Aliceth
+- Bonnie (3.3 / 5)
+- Aliceth (1.7 / 5)
 ### Summary for Shadewing
 
 #### Shadewing Provides
@@ -9638,16 +9638,16 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 These are the **10** strongest pairings: 
 
-- Atalanta
-- Hepler
-- Lenya
-- Mikola
-- Pang
-- Soren
-- Dionel
-- Korin
-- Sinbad
-- Lucy
+- Mikola (4.5 / 5)
+- Pang (4.5 / 5)
+- Atalanta (4.0 / 5)
+- Lucy (3.8 / 5)
+- Hepler (3.6 / 5)
+- Lenya (3.6 / 5)
+- Soren (3.3 / 5)
+- Sinbad (3.1 / 5)
+- Dionel (2.6 / 5)
+- Korin (2.6 / 5)
 
 ### Units that can act as a replacement for Shakir
 
@@ -9751,8 +9751,8 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 ### Units benefitting most from Shemira
 
-- Bonnie
-- Himmel
+- Bonnie (0.9 / 5)
+- Himmel (0.9 / 5)
 
 ### Units that can act as a replacement for Shemira
 
@@ -9831,9 +9831,9 @@ Common buffers are **Twins**, **Velara**, or **Solise**.
 
 ### Units benefitting most from Silven
 
-- Nerion
-- Carolina
-- Bonnie
+- Nerion (1.1 / 5)
+- Carolina (1.0 / 5)
+- Bonnie (0.8 / 5)
 
 ### Units that can act as a replacement for Silven
 
@@ -9920,9 +9920,9 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Units benefitting most from Silvina
 
-- Nerion
-- Carolina
-- Indris
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
+- Indris (0.7 / 5)
 
 ### Units that can act as a replacement for Silvina
 
@@ -10019,9 +10019,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units benefitting most from Sinbad
 
-- Indris
-- Aliceth
-- Bonnie
+- Indris (2.5 / 5)
+- Bonnie (2.1 / 5)
+- Aliceth (1.5 / 5)
 
 ### Units that can act as a replacement for Sinbad
 
@@ -10124,16 +10124,16 @@ Common buffers are **Mikola**, **Rowan**, or **Solise**.
 
 These are the **10** strongest pairings: 
 
-- Zorya
-- Hodgkin
-- Seth
-- Vala
-- Antandra
-- Granny Dahnie
-- Hammie
-- Harak
-- Phraesto
-- Ulmus
+- Phraesto (5.0 / 5)
+- Zorya (4.4 / 5)
+- Harak (4.2 / 5)
+- Ulmus (4.2 / 5)
+- Hammie (3.9 / 5)
+- Hodgkin (3.7 / 5)
+- Seth (3.7 / 5)
+- Vala (3.7 / 5)
+- Antandra (2.8 / 5)
+- Granny Dahnie (2.5 / 5)
 
 ### Units that can act as a replacement for Smokey & Meerky
 
@@ -10247,16 +10247,16 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 These are the **10** strongest pairings: 
 
-- Silven
-- Dunlingr
-- Mehira
-- Himmel
-- Niru
-- Aliceth
-- Alna
-- Athalia
-- Baelran
-- Berial
+- Dunlingr (5.0 / 5)
+- Athalia (3.9 / 5)
+- Alna (3.9 / 5)
+- Himmel (3.7 / 5)
+- Baelran (3.4 / 5)
+- Mehira (3.3 / 5)
+- Berial (3.1 / 5)
+- Niru (2.9 / 5)
+- Silven (2.4 / 5)
+- Aliceth (1.7 / 5)
 
 ### Units that can act as a replacement for Solise
 
@@ -10356,9 +10356,9 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 ### Units benefitting most from Sonja
 
-- Nerion
-- Perseus
-- Carolina
+- Carolina (1.3 / 5)
+- Nerion (1.3 / 5)
+- Perseus (0.6 / 5)
 
 ### Units that can act as a replacement for Sonja
 
@@ -10466,9 +10466,9 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 ### Units benefitting most from Soren
 
-- Nerion
-- Perseus
-- Silven
+- Nerion (1.9 / 5)
+- Silven (1.1 / 5)
+- Perseus (1.0 / 5)
 
 ### Units that can act as a replacement for Soren
 
@@ -10571,9 +10571,9 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 ### Units benefitting most from Sylphira
 
-- Nerion
-- Indris
-- Bonnie
+- Bonnie (3.0 / 5)
+- Nerion (2.6 / 5)
+- Indris (1.6 / 5)
 
 ### Units that can act as a replacement for Sylphira
 
@@ -10674,9 +10674,9 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 
 ### Units benefitting most from Talene
 
-- Nerion
-- Perseus
-- Silven
+- Nerion (1.3 / 5)
+- Silven (1.0 / 5)
+- Perseus (0.8 / 5)
 
 ### Units that can act as a replacement for Talene
 
@@ -10787,7 +10787,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ### Units benefitting most from Tasi
 
-- Carolina
+- Carolina (5.0 / 5)
 
 ### Units that can act as a replacement for Tasi
 
@@ -10879,9 +10879,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Units benefitting most from Temesia
 
-- Nerion
-- Carolina
-- Himmel
+- Carolina (1.7 / 5)
+- Nerion (1.6 / 5)
+- Himmel (0.9 / 5)
 
 ### Units that can act as a replacement for Temesia
 
@@ -10990,7 +10990,7 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 ### Units benefitting most from Thador
 
-- Pandora
+- Pandora (0.6 / 5)
 
 ### Units that can act as a replacement for Thador
 
@@ -11094,9 +11094,9 @@ Common buffers are **Rowan**, **Solise**, or **Hugin**.
 
 ### Units benefitting most from Thoran
 
-- Himmel
-- Perseus
-- Silven
+- Himmel (0.9 / 5)
+- Silven (0.2 / 5)
+- Perseus (0.2 / 5)
 
 ### Units that can act as a replacement for Thoran
 
@@ -11194,9 +11194,9 @@ Common buffers are **Solise**, **Rowan**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Tilaya
 
-- Perseus
-- Silven
-- Zorya
+- Zorya (2.1 / 5)
+- Perseus (1.6 / 5)
+- Silven (1.4 / 5)
 
 ### Units that can act as a replacement for Tilaya
 
@@ -11296,9 +11296,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Solise**.
 
 ### Units benefitting most from Ulmus
 
-- Nerion
-- Carolina
-- Himmel
+- Himmel (1.5 / 5)
+- Nerion (1.4 / 5)
+- Carolina (1.3 / 5)
 
 ### Units that can act as a replacement for Ulmus
 
@@ -11416,9 +11416,9 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 ### Units benefitting most from Vala
 
-- Nerion
-- Indris
-- Perseus
+- Nerion (1.8 / 5)
+- Indris (1.2 / 5)
+- Perseus (1.0 / 5)
 
 ### Units that can act as a replacement for Vala
 
@@ -11538,9 +11538,9 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ### Units benefitting most from Valen
 
-- Nerion
-- Carolina
-- Indris
+- Carolina (1.0 / 5)
+- Nerion (1.0 / 5)
+- Indris (0.3 / 5)
 
 ### Units that can act as a replacement for Valen
 
@@ -11647,16 +11647,16 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 These are the **10** strongest pairings: 
 
-- Cecia
-- Dionel
-- Fay
-- Lyca
-- Mirael
-- Rhys
-- Marcille
-- Brutus
-- Sinbad
-- Lucy
+- Lyca (3.6 / 5)
+- Lucy (3.5 / 5)
+- Marcille (2.9 / 5)
+- Brutus (2.6 / 5)
+- Sinbad (2.5 / 5)
+- Cecia (2.1 / 5)
+- Dionel (2.1 / 5)
+- Fay (2.1 / 5)
+- Mirael (2.1 / 5)
+- Rhys (2.1 / 5)
 
 ### Units that can act as a replacement for Valka
 
@@ -11761,16 +11761,16 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 These are the **10** strongest pairings: 
 
-- Silven
-- Zorya
-- Mehira
-- Sylphira
-- Viperian
-- Himmel
-- Dunlingr
-- Isabella
-- Baelran
-- Bryon
+- Bryon (4.2 / 5)
+- Viperian (3.9 / 5)
+- Zorya (3.6 / 5)
+- Sylphira (3.6 / 5)
+- Dunlingr (3.2 / 5)
+- Himmel (3.2 / 5)
+- Mehira (3.1 / 5)
+- Isabella (3.0 / 5)
+- Baelran (2.8 / 5)
+- Silven (2.6 / 5)
 
 ### Units that can act as a replacement for Velara
 
@@ -11887,9 +11887,9 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 ### Units benefitting most from Viperian
 
-- Shadewing
-- Bonnie
-- Indris
+- Shadewing (1.9 / 5)
+- Bonnie (1.6 / 5)
+- Indris (0.5 / 5)
 
 ### Units that can act as a replacement for Viperian
 
@@ -11990,9 +11990,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ### Units benefitting most from Walker
 
-- Nerion
-- Carolina
-- Indris
+- Carolina (1.0 / 5)
+- Nerion (1.0 / 5)
+- Indris (0.3 / 5)
 
 ### Units that can act as a replacement for Walker
 
@@ -12089,9 +12089,9 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 ### Units benefitting most from Zandrok
 
-- Perseus
-- Nerion
-- Silven
+- Nerion (2.2 / 5)
+- Perseus (1.7 / 5)
+- Silven (1.7 / 5)
 
 ### Units that can act as a replacement for Zandrok
 
@@ -12181,8 +12181,8 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 ### Units benefitting most from Zanie
 
-- Daimon
-- Eironn
+- Daimon (2.5 / 5)
+- Eironn (2.5 / 5)
 
 ### Units that can act as a replacement for Zanie
 
@@ -12300,9 +12300,9 @@ Common buffers are **Rowan**, **Hugin**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Zorya
 
-- Nerion
-- Carolina
-- Bonnie
+- Carolina (2.7 / 5)
+- Nerion (2.6 / 5)
+- Bonnie (1.1 / 5)
 
 ### Units that can act as a replacement for Zorya
 

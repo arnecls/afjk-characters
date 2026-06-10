@@ -25,6 +25,7 @@ from render_overview import (
     _format_replacement_line,
     _join_names,
     _load_module,
+    _receiver_synergies,
 )
 
 SITE_DIR = io.ROOT / "site"
@@ -89,6 +90,8 @@ def _build_synergy_sections(
     provider_beneficiary_count: dict[str, int],
     obvious_threshold: int,
     slug_by_name: dict[str, str],
+    synergies: dict,
+    title_by_short: dict[str, str],
 ) -> dict:
     benefit_stats = [hs.to_display_stat(s) for s in p.get("benefit_stats", [])]
     intro_lines: list[str] = []
@@ -149,11 +152,29 @@ def _build_synergy_sections(
             display = benefited[:max_ben]
         else:
             display = benefited
-        benefited_by["heroes"] = [
-            _hero_ref(b["name"], slug_by_name)
-            for b in display
-            if b["name"] in slug_by_name
-        ]
+        benefited_by["heroes"] = []
+        for b in display:
+            if b["name"] not in slug_by_name:
+                continue
+            receiver_synergies = _receiver_synergies(
+                b["name"], synergies, title_by_short
+            )
+            rating = gen.beneficiary_rating_out_of_five(
+                b["score"], receiver_synergies
+            )
+            benefited_by["heroes"].append(
+                {
+                    **_hero_ref(b["name"], slug_by_name),
+                    "score": b["score"],
+                    "scoreRating": rating,
+                    "scoreDisplay": gen.format_beneficiary_rating_display(
+                        b["score"], receiver_synergies
+                    ),
+                }
+            )
+        benefited_by["heroes"].sort(
+            key=lambda hero: (-hero["scoreRating"], hero["name"])
+        )
 
     return {
         "intro": "\n".join(intro_lines) if intro_lines else None,
@@ -207,6 +228,9 @@ def build_site_data(
     provider_beneficiary_count = {
         title: len(s["beneficiaries"])
         for title, s in synergies["heroes"].items()
+    }
+    title_by_short = {
+        gen.short_name(title): title for title in synergies["heroes"]
     }
 
     data_by_title = {h["title"]: h for h in data["heroes"]}
@@ -269,6 +293,8 @@ def build_site_data(
             provider_beneficiary_count,
             obvious_threshold,
             slug_by_name,
+            synergies,
+            title_by_short,
         )
         replacements = _build_replacements(
             short, p.get("replacements", {}), max_rep, slug_by_name

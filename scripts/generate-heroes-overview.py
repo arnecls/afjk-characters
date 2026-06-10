@@ -66,6 +66,8 @@ HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
 MAX_SYNERGIES = 5
 MAX_BENEFICIARIES_DISPLAY = 10
 FALLBACK_BENEFICIARIES_DISPLAY = 3
+BENEFIT_MAX_STARS = 5
+BENEFIT_STAR = "⭐"
 
 # Proximity aura buffs (provider-attached) only match melee-close receivers.
 PROXIMITY_MELEE_MAX_RANGE = 3.5
@@ -1163,6 +1165,41 @@ def rank_synergies(
     ]
 
 
+def beneficiary_rating_out_of_five(
+    raw_score: float,
+    receiver_synergies: list[dict],
+) -> float:
+    """Map a raw synergy score to a 0–5 benefit rating for the receiver."""
+    if not receiver_synergies:
+        return 0.0
+    top = max(entry["score"] for entry in receiver_synergies)
+    if top <= 0:
+        return 0.0
+    return min(
+        float(BENEFIT_MAX_STARS),
+        float(BENEFIT_MAX_STARS) * raw_score / top,
+    )
+
+
+def format_beneficiary_rating_display(
+    raw_score: float,
+    receiver_synergies: list[dict],
+) -> str:
+    """Stars plus numeric rating, e.g. ``⭐️⭐️⭐️ (3.4)``."""
+    rating = beneficiary_rating_out_of_five(raw_score, receiver_synergies)
+    full_stars = max(0, min(BENEFIT_MAX_STARS, int(rating // 1)))
+    return f"{BENEFIT_STAR * full_stars} ({rating:.1f})"
+
+
+def format_beneficiary_rating_markdown(
+    raw_score: float,
+    receiver_synergies: list[dict],
+) -> str:
+    """Numeric rating for markdown, e.g. ``3.4 / 5``."""
+    rating = beneficiary_rating_out_of_five(raw_score, receiver_synergies)
+    return f"{rating:.1f} / {BENEFIT_MAX_STARS}"
+
+
 def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
     """Why a provider lands on many receivers' top-five synergy lists."""
     reasons: list[str] = []
@@ -1975,8 +2012,44 @@ def format_synergies(
             display = benefited[:MAX_BENEFICIARIES_DISPLAY]
         else:
             display = benefited
-        for _score, name in display:
-            lines.append(f"- {name}")
+        receiver_by_short = {short_name(h.title): h for h in heroes}
+
+        def _beneficiary_sort_key(item: tuple[float, str]) -> tuple[float, str]:
+            score, name = item
+            receiver = receiver_by_short.get(name)
+            receiver_synergies: list[dict] = []
+            if receiver:
+                receiver_synergies = [
+                    {"score": entry_score}
+                    for entry_score, _reasons, _provider in rank_synergy_entries(
+                        receiver,
+                        heroes,
+                        enabler_matchers,
+                        behavior_by_title,
+                    )
+                ]
+            return (
+                -beneficiary_rating_out_of_five(score, receiver_synergies),
+                name,
+            )
+
+        display = sorted(display, key=_beneficiary_sort_key)
+        for score, name in display:
+            receiver = receiver_by_short.get(name)
+            receiver_synergies: list[dict] = []
+            if receiver:
+                receiver_synergies = [
+                    {"score": entry_score}
+                    for entry_score, _reasons, _provider in rank_synergy_entries(
+                        receiver,
+                        heroes,
+                        enabler_matchers,
+                        behavior_by_title,
+                    )
+                ]
+            lines.append(
+                f"- {name} ({format_beneficiary_rating_markdown(score, receiver_synergies)})"
+            )
 
     return lines
 

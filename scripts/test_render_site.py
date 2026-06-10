@@ -56,6 +56,10 @@ class RenderSiteTests(unittest.TestCase):
             bb = syn.get("benefited_by") or {}
             for ref in bb.get("heroes", []):
                 self.assertIn(ref["slug"], slug_set)
+                self.assertIn("score", ref)
+                self.assertIn("scoreRating", ref)
+                self.assertIn("scoreDisplay", ref)
+                self.assertRegex(ref["scoreDisplay"], r"⭐* \(\d+\.\d\)")
 
     def test_sections_present(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))

@@ -1507,6 +1507,31 @@
     return html;
   }
 
+  const BENEFIT_MAX_STARS = 5;
+  const BENEFIT_STAR = "⭐";
+
+  function formatBeneficiaryRatingDisplay(scoreRating) {
+    const rating = Number(scoreRating);
+    if (!isFinite(rating)) {
+      return "";
+    }
+    const clamped = Math.max(0, Math.min(BENEFIT_MAX_STARS, rating));
+    const fullStars = Math.max(0, Math.min(BENEFIT_MAX_STARS, Math.floor(clamped)));
+    return BENEFIT_STAR.repeat(fullStars) + " (" + clamped.toFixed(1) + ")";
+  }
+
+  function renderBeneficiaryScore(scoreRating, scoreDisplay) {
+    const text = scoreDisplay || formatBeneficiaryRatingDisplay(scoreRating);
+    if (!text) {
+      return "";
+    }
+    return (
+      '<div class="hero-compact-score" title="Benefit rating out of 5">' +
+      escapeHtml(text) +
+      "</div>"
+    );
+  }
+
   function renderHeroCompactCard(slug, name, bodyHtml, footerHtml) {
     const hero = heroBySlug[slug];
     const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
@@ -2428,9 +2453,26 @@
         html += "<p>" + renderInline(bb.strongest_note) + "</p>";
       }
       if (bb.heroes && bb.heroes.length) {
+        const benefitedHeroes = bb.heroes.slice().sort(function (a, b) {
+          const aRating =
+            a.scoreRating != null ? a.scoreRating : a.score_rating;
+          const bRating =
+            b.scoreRating != null ? b.scoreRating : b.score_rating;
+          if (bRating !== aRating) {
+            return bRating - aRating;
+          }
+          return String(a.name || "").localeCompare(String(b.name || ""));
+        });
         html += renderHeroRowList(
-          bb.heroes.map(function (h) {
-            return renderHeroCompactCard(h.slug, h.name, "");
+          benefitedHeroes.map(function (h) {
+            return renderHeroCompactCard(
+              h.slug,
+              h.name,
+              renderBeneficiaryScore(
+                h.scoreRating != null ? h.scoreRating : h.score_rating,
+                h.scoreDisplay || h.score_display
+              )
+            );
           }),
           "hero-compact-grid-4"
         );
