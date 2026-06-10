@@ -853,6 +853,19 @@ a:hover {
   vertical-align: baseline;
 }
 
+.skill-inline-time {
+  display: inline-block;
+  padding: 0.08rem 0.32rem;
+  border: 1px solid #b8dcc4;
+  border-radius: 999px;
+  background: #d4f5dc;
+  color: #1a6b32;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
 .skill-card-popover .chip {
   font-size: 0.68rem;
   padding: 0.08rem 0.32rem;
