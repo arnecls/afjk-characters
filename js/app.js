@@ -926,11 +926,22 @@
       return;
     }
 
+    let roleIdx = csvHeaders.indexOf("Role");
+    if (roleIdx === -1) {
+      roleIdx = classIdx + 1;
+      csvHeaders.splice(roleIdx, 0, "Role");
+      csvRows = csvRows.map(function (row) {
+        const newRow = row.slice();
+        newRow.splice(roleIdx, 0, "");
+        return newRow;
+      });
+    }
+
     const missing = TIER_CSV_COLUMNS.filter(function (tierCol) {
       return csvHeaders.indexOf(tierCol.header) === -1;
     });
     if (missing.length) {
-      const insertAt = classIdx + 1;
+      const insertAt = roleIdx + 1;
       missing.forEach(function (tierCol, offset) {
         csvHeaders.splice(insertAt + offset, 0, tierCol.header);
       });
@@ -951,9 +962,19 @@
       }
     });
 
+    const roleColIdx = csvHeaders.indexOf("Role");
     csvRows.forEach(function (row) {
       const hero = heroByName[row[0] || ""];
-      if (!hero || !hero.prydwenTiers) {
+      if (!hero) {
+        return;
+      }
+      if (roleColIdx !== -1 && !String(row[roleColIdx] || "").trim()) {
+        const roleMeta = roleCategoryMeta(hero.roleCategory);
+        if (roleMeta) {
+          row[roleColIdx] = roleMeta.label;
+        }
+      }
+      if (!hero.prydwenTiers) {
         return;
       }
       Object.keys(colByKey).forEach(function (key) {
@@ -1717,8 +1738,16 @@
     },
   };
 
-  function renderRoleCategoryBadge(hero) {
-    const meta = ROLE_CATEGORY_META[hero.roleCategory];
+  function roleCategoryMeta(roleCategory) {
+    return ROLE_CATEGORY_META[roleCategory] || null;
+  }
+
+  function renderRoleCategoryBadge(heroOrCategory) {
+    const key =
+      typeof heroOrCategory === "string"
+        ? heroOrCategory
+        : heroOrCategory.roleCategory;
+    const meta = roleCategoryMeta(key);
     if (!meta) {
       return "";
     }
@@ -1784,7 +1813,10 @@
       return (
         h.name.toLowerCase().indexOf(token) !== -1 ||
         (h.faction || "").toLowerCase().indexOf(token) !== -1 ||
-        (h.class || "").toLowerCase().indexOf(token) !== -1
+        (h.class || "").toLowerCase().indexOf(token) !== -1 ||
+        (roleCategoryMeta(h.roleCategory) || { label: "" }).label
+          .toLowerCase()
+          .indexOf(token) !== -1
       );
     });
   }
@@ -1905,6 +1937,18 @@
     }
     if (column === "Class") {
       return renderBadgeChip(value, "class");
+    }
+    if (column === "Role") {
+      const roleKey = Object.keys(ROLE_CATEGORY_META).find(function (key) {
+        return (
+          ROLE_CATEGORY_META[key].label.toLowerCase() ===
+          String(value).trim().toLowerCase()
+        );
+      });
+      if (roleKey) {
+        return renderRoleCategoryBadge(roleKey);
+      }
+      return escapeHtml(value);
     }
     if (
       column === "Signature skill speed" ||
@@ -2207,6 +2251,9 @@
       if (TIER_CSV_HEADERS[col]) {
         cls += " col-tier";
       }
+      if (col === "Role") {
+        cls += " col-role";
+      }
       headHtml +=
         '<th class="' +
         cls +
@@ -2262,6 +2309,8 @@
           tdCls = " class=\"col-name\"";
         } else if (TIER_CSV_HEADERS[col]) {
           tdCls = " class=\"col-tier\"";
+        } else if (col === "Role") {
+          tdCls = " class=\"col-role\"";
         }
         bodyHtml += "<td" + tdCls + ">" + inner + "</td>";
       });

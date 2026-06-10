@@ -633,6 +633,13 @@ a:hover {
   max-width: 5.5rem;
 }
 
+.heroes-table thead th.col-role,
+.heroes-table td.col-role {
+  text-align: center;
+  white-space: nowrap;
+  min-width: 7.5rem;
+}
+
 .heroes-table td.col-tier {
   text-align: center;
   white-space: nowrap;
