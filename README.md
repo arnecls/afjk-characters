@@ -46,6 +46,8 @@ Browse the roster in a browser at **[https://arnecls.github.io/afjk-characters/]
 
 Each hero has a shareable URL, e.g. `/hero/aliceth`. Synergy partners link to their own pages.
 
+Hero portraits and faction/class icons in the web viewer are from [Yaphalla](https://www.yaphalla.com/heroes).
+
 Rebuild site data locally:
 
 ```bash
