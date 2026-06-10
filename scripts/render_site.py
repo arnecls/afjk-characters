@@ -35,6 +35,28 @@ SITE_CSV = SITE_DIR / "data" / "heroes-overview.csv"
 rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
 gen = _load_module("gen_overview", "generate-heroes-overview.py")
 
+_PRYDWEN_TIER_KEYS = (
+    "afk_stages",
+    "dream_realm",
+    "dream_realm_endless",
+    "pvp",
+)
+
+
+def _normalize_prydwen_tiers(tiers: dict | None) -> dict | None:
+    """Ensure all Prydwen modes are present; missing ratings become ``?``."""
+    if not tiers:
+        return None
+    out: dict[str, str] = {}
+    for key in _PRYDWEN_TIER_KEYS:
+        value = tiers.get(key)
+        if value is None:
+            out[key] = "?"
+            continue
+        text = str(value).strip()
+        out[key] = text if text else "?"
+    return out
+
 
 def hero_slug(name: str) -> str:
     """URL slug from a hero display name."""
@@ -220,7 +242,7 @@ def build_site_data(
         skill_summaries = rs._load_skill_summaries().get(short, {})
         hero_categories = {s["category"] for s in p["skills"].values()}
         hero_skills = skills_by_title.get(title, [])
-        prydwen_tiers = meta.get("prydwen_tiers")
+        prydwen_tiers = _normalize_prydwen_tiers(meta.get("prydwen_tiers"))
         behavior_md = "\n".join(
             rs.format_behavior_section(
                 short,

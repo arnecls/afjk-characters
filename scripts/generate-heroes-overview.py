@@ -137,11 +137,15 @@ MIN_SUPPORT_SCORE = 11.0
 REPLACEMENT_CATEGORIES = (
     "buff",
     "energy",
+    "healing",
     "similar_skills",
     "damage",
     "debuff",
     "cc",
 )
+
+# HP recovery only; Healing stat buff is a buff, not ally HP restore.
+HP_RECOVERY_LABELS = frozenset({"Healing", "Healing over time"})
 
 _DEFAULT_LIEUTENANT_ENERGY = 200.0
 _DEFAULT_ENERGY_POTION = 200.0
@@ -415,6 +419,24 @@ def is_energy_provider(provider: _rs.Hero) -> bool:
         and not _rs._energy_recovery_targets_self(e.qualitative)
         for e in provider.effects
     )
+
+
+def _healing_effect_is_ally_provider(effect: _rs.Effect) -> bool:
+    """True when a parsed effect restores ally HP (not Healing stat buffs)."""
+    if effect.category != "buff":
+        return False
+    if effect.label not in HP_RECOVERY_LABELS:
+        return False
+    if effect.targeting not in ALLY_TARGETINGS:
+        return False
+    if effect.conditional == "rare":
+        return False
+    return True
+
+
+def is_healing_provider(provider: _rs.Hero) -> bool:
+    """True when the hero restores ally HP (instant or over time)."""
+    return any(_healing_effect_is_ally_provider(e) for e in provider.effects)
 
 
 def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
@@ -1239,9 +1261,24 @@ def _hero_provider_profile(hero: _rs.Hero) -> dict[str, float]:
     for effect in hero.effects:
         if effect.category != "buff":
             continue
+        if effect.label in HP_RECOVERY_LABELS:
+            continue
         if effect.targeting not in ALLY_TARGETINGS:
             continue
         if effect.conditional == "rare":
+            continue
+        weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
+            effect.magnitude, 1.0
+        )
+        profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
+    return profile
+
+
+def _hero_healing_profile(hero: _rs.Hero) -> dict[str, float]:
+    """Weighted ally-healing profile for replacement scoring."""
+    profile: dict[str, float] = {}
+    for effect in hero.effects:
+        if not _healing_effect_is_ally_provider(effect):
             continue
         weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
             effect.magnitude, 1.0
@@ -1579,6 +1616,12 @@ def _cc_overlap_tags(
     return _profile_overlap_tags(cc_a, cc_b, limit)
 
 
+def _healing_overlap_tags(
+    healing_a: dict[str, float], healing_b: dict[str, float], limit: int = 5
+) -> list[str]:
+    return _profile_overlap_tags(healing_a, healing_b, limit)
+
+
 _prydwen_tiers_cache: dict[str, dict[str, str]] | None = None
 
 
@@ -1708,11 +1751,13 @@ def compute_replacement_scores(
     damage_types: dict[str, set[str]] = {}
     debuff_profiles: dict[str, dict[str, float]] = {}
     cc_profiles: dict[str, dict[str, float]] = {}
+    healing_profiles: dict[str, dict[str, float]] = {}
     behavior_tags_map = _load_behavior_tags()
     sig_sections = _signature_sections()
 
     for hero in heroes:
         profiles[hero.title] = _hero_provider_profile(hero)
+        healing_profiles[hero.title] = _hero_healing_profile(hero)
         energy_provided[hero.title] = _hero_effective_ally_energy_provided(hero)
         behavior = behavior_by_title.get(hero.title)
         sig_name = behavior.signature_skill_name if behavior else ""
@@ -1734,10 +1779,12 @@ def compute_replacement_scores(
         dtx = damage_types[hero_x.title]
         dbpx = debuff_profiles[hero_x.title]
         cpx = cc_profiles[hero_x.title]
+        hpx = healing_profiles[hero_x.title]
         display_x = short_name(hero_x.title)
         curated_x = _rs.curated_display_name(display_x)
         tags_x = behavior_tags_map.get(curated_x, frozenset())
         energy_eligible = is_energy_provider(hero_x)
+        healing_eligible = is_healing_provider(hero_x)
 
         category_scores: dict[str, list[tuple[float, str, list[str]]]] = {
             key: [] for key in REPLACEMENT_CATEGORIES
@@ -1764,6 +1811,18 @@ def compute_replacement_scores(
             if energy_eligible and is_energy_provider(hero_y):
                 category_scores["energy"].append(
                     (_energy_replacement_coverage(ex, ey), hero_y.title, [])
+                )
+            if healing_eligible and is_healing_provider(hero_y):
+                category_scores["healing"].append(
+                    (
+                        _replacement_coverage(
+                            hpx, healing_profiles[hero_y.title]
+                        ),
+                        hero_y.title,
+                        _healing_overlap_tags(
+                            hpx, healing_profiles[hero_y.title]
+                        ),
+                    )
                 )
             category_scores["similar_skills"].append(
                 (

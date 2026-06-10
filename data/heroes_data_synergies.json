@@ -371,13 +371,6 @@
           "score": 9.45
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Dionel - Venus of Dawn",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, high)",
@@ -693,6 +686,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -888,13 +882,6 @@
             "ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`"
           ],
           "score": 12.59
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -1123,6 +1110,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -1476,6 +1464,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -1916,38 +1905,17 @@
           "name": "Carolina"
         },
         {
-          "score": 14.4,
-          "name": "Perseus"
+          "score": 7.5,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Contess",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
-            "name": "Gerda",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
-            "name": "Hepler",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -2202,6 +2170,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Lorsan",
@@ -2445,13 +2414,6 @@
           "score": 9.470057142857142
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Contess - Abyssal Rulekeeper",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -2617,6 +2579,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Zandrok",
@@ -2858,13 +2821,6 @@
           "score": 9.801
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -3102,6 +3058,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Baelran",
@@ -3397,6 +3354,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -3552,13 +3510,6 @@
             "Max HP via Max HP buff (multiple targets, high)"
           ],
           "score": 12.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -3796,6 +3747,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -4101,13 +4053,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Rhys - Fiery Cavalier",
           "reasons": [
             "Healing via Healing (single target, medium)"
@@ -4142,6 +4087,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -4882,6 +4828,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -5220,6 +5167,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Zorya",
@@ -5467,13 +5415,6 @@
           "score": 10.5
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -5550,6 +5491,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -5705,13 +5647,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -5824,6 +5759,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -6572,6 +6508,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -6851,6 +6788,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -7184,6 +7122,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Viperian",
@@ -7432,6 +7371,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Florabelle",
@@ -7551,13 +7491,6 @@
             "Healing via Healing over time (all units, medium)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -7838,16 +7771,31 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
             "name": "Solise",
-            "score": 0.6667,
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Velara",
+            "score": 0.8889,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Gerda",
+            "score": 1.0,
             "matches": [
               "Healing"
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -8219,6 +8167,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Alna",
@@ -8480,6 +8429,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -8684,6 +8634,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Shemira",
@@ -8901,30 +8852,51 @@
       "replacements": {
         "buff": [
           {
-            "name": "Velara",
+            "name": "Hugin",
             "score": 1.0,
             "matches": [
-              "Healing",
               "Haste"
             ]
           },
           {
-            "name": "Solise",
-            "score": 0.6857,
+            "name": "Shakir",
+            "score": 1.0,
+            "matches": [
+              "Haste"
+            ]
+          },
+          {
+            "name": "Twins",
+            "score": 1.0,
+            "matches": [
+              "Haste"
+            ]
+          }
+        ],
+        "energy": [],
+        "healing": [
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Gerda",
+            "score": 1.0,
             "matches": [
               "Healing"
             ]
           },
           {
             "name": "Hepler",
-            "score": 0.6786,
+            "score": 1.0,
             "matches": [
-              "Healing",
-              "Haste"
+              "Healing"
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [
           {
             "name": "Laios",
@@ -9318,6 +9290,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -9572,13 +9545,6 @@
           "score": 10.5
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -9765,6 +9731,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -9987,6 +9954,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -10177,13 +10145,6 @@
             "Healing via Healing (all units, medium)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -10633,6 +10594,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -10727,13 +10689,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -10816,30 +10771,51 @@
       "replacements": {
         "buff": [
           {
-            "name": "Mikola",
-            "score": 1.0,
-            "matches": [
-              "ATK",
-              "Healing"
-            ]
-          },
-          {
             "name": "Hugin",
-            "score": 0.8,
+            "score": 1.0,
             "matches": [
               "ATK"
             ]
           },
           {
-            "name": "Contess",
-            "score": 0.6667,
+            "name": "Mikola",
+            "score": 1.0,
             "matches": [
-              "ATK",
-              "Healing"
+              "ATK"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.8,
+            "matches": [
+              "ATK"
             ]
           }
         ],
         "energy": [],
+        "healing": [
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Koko",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Mikola",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          }
+        ],
         "similar_skills": [],
         "damage": [
           {
@@ -11228,6 +11204,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -11437,27 +11414,31 @@
         "**Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
-            "name": "Rowan",
-            "score": 0.6545,
+            "name": "Contess",
+            "score": 1.0,
             "matches": [
-              "Healing",
-              "Magic DEF",
-              "Physical DEF"
+              "Healing"
             ]
           },
           {
-            "name": "Mikola",
-            "score": 0.6364,
+            "name": "Damian",
+            "score": 1.0,
             "matches": [
-              "Healing",
-              "ATK",
-              "Vitality buff"
+              "Healing"
+            ]
+          },
+          {
+            "name": "Gerda",
+            "score": 1.0,
+            "matches": [
+              "Healing"
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [
           {
             "name": "Ludovic",
@@ -11670,6 +11651,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Zanie",
@@ -11921,6 +11903,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -12219,6 +12202,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -12409,11 +12393,14 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
             "name": "Mikola",
             "score": 0.9882,
             "matches": [
+              "Healing over time",
               "Healing"
             ]
           },
@@ -12421,7 +12408,8 @@
             "name": "Solise",
             "score": 0.7941,
             "matches": [
-              "Healing"
+              "Healing",
+              "Healing over time"
             ]
           },
           {
@@ -12432,7 +12420,6 @@
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -12755,13 +12742,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Lumont - Benign Horn",
           "reasons": [
             "Physical DEF via DEF buff (multiple targets, low)",
@@ -12804,6 +12784,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Brutus",
@@ -12996,13 +12977,6 @@
             "Healing via Healing (area, high)"
           ],
           "score": 12.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -13278,6 +13252,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -13527,6 +13502,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -13688,13 +13664,6 @@
             "Healing via Healing (all units, medium)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Elijah & Lailah - Celestial Twins",
@@ -13887,6 +13856,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Isabella",
@@ -14175,13 +14145,6 @@
           "score": 13.1
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -14338,6 +14301,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -14732,13 +14696,6 @@
           "score": 10.26
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -14889,15 +14846,45 @@
       "replacements": {
         "buff": [
           {
-            "name": "Koko",
-            "score": 0.8615,
+            "name": "Hugin",
+            "score": 1.0,
             "matches": [
-              "Healing",
+              "Max HP",
+              "Haste"
+            ]
+          },
+          {
+            "name": "Saida",
+            "score": 0.8571,
+            "matches": [
               "Max HP"
             ]
           }
         ],
         "energy": [],
+        "healing": [
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Koko",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Marcille",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          }
+        ],
         "similar_skills": [
           {
             "name": "Ulmus",
@@ -15160,7 +15147,9 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
             "name": "Lorsan",
             "score": 1.0,
@@ -15183,7 +15172,6 @@
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [
           {
             "name": "Fay",
@@ -15448,14 +15436,6 @@
           "score": 17.5
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)",
-            "Enables Party composition via Tank (party slot)"
-          ],
-          "score": 14.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)",
@@ -15606,6 +15586,13 @@
           "provider": "Alsa - Desert Flare",
           "reasons": [
             "Enables Party composition via Mage (party slot)"
+          ],
+          "score": 5.0
+        },
+        {
+          "provider": "Antandra - Desert Fury",
+          "reasons": [
+            "Enables Party composition via Tank (party slot)"
           ],
           "score": 5.0
         },
@@ -15812,6 +15799,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -15989,13 +15977,6 @@
             "Healing via Healing (all units, medium)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Elijah & Lailah - Celestial Twins",
@@ -16180,6 +16161,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -16737,6 +16719,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Twins",
@@ -16960,13 +16943,6 @@
           "score": 12.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -17029,6 +17005,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -17719,6 +17696,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -17958,13 +17936,6 @@
           "score": 10.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -18092,6 +18063,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -18466,6 +18438,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Sinbad",
@@ -18788,8 +18761,40 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [],
+        "buff": [
+          {
+            "name": "Shakir",
+            "score": 0.7385,
+            "matches": [
+              "Damage taken reduction",
+              "Life Drain"
+            ]
+          }
+        ],
         "energy": [],
+        "healing": [
+          {
+            "name": "Smokey & Meerky",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Solise",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 0.9,
+            "matches": [
+              "Healing"
+            ]
+          }
+        ],
         "similar_skills": [
           {
             "name": "Saida",
@@ -19123,13 +19128,6 @@
           "score": 9.46
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)",
@@ -19360,6 +19358,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -19711,6 +19710,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Scarlita",
@@ -20101,6 +20101,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -20365,6 +20366,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -20754,13 +20756,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Vala - Phantom of Oakenfell",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
@@ -20835,6 +20830,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Damian",
@@ -21234,6 +21230,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -21543,6 +21540,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Athalia",
@@ -21881,13 +21879,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Rhys - Fiery Cavalier",
           "reasons": [
             "Healing via Healing (single target, medium)"
@@ -21920,7 +21911,9 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
             "name": "Solise",
             "score": 1.0,
@@ -21943,7 +21936,6 @@
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [
           {
             "name": "Faramor",
@@ -22119,13 +22111,6 @@
             "ATK SPD via ATK SPD buff (all units, high) `signature fuel`"
           ],
           "score": 9.801
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -22409,6 +22394,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Hugin",
@@ -22579,13 +22565,6 @@
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 9.470057142857142
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -22813,6 +22792,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Hepler",
@@ -23093,6 +23073,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -23324,13 +23305,6 @@
           "score": 10.35
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -23420,7 +23394,9 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
             "name": "Contess",
             "score": 1.0,
@@ -23443,7 +23419,6 @@
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [
           {
             "name": "Smokey & Meerky",
@@ -23674,13 +23649,6 @@
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 9.470057142857142
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -23933,6 +23901,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Kruger",
@@ -24387,6 +24356,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -24622,7 +24592,9 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
             "name": "Contess",
             "score": 1.0,
@@ -24645,7 +24617,6 @@
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -24899,6 +24870,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Kordan",
@@ -25181,13 +25153,6 @@
           "score": 9.470057142857142
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -25466,6 +25431,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -25797,8 +25763,34 @@
         "**Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight"
       ],
       "replacements": {
-        "buff": [],
+        "buff": [
+          {
+            "name": "Hugin",
+            "score": 0.8,
+            "matches": [
+              "ATK",
+              "Haste"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.6,
+            "matches": [
+              "ATK"
+            ]
+          }
+        ],
         "energy": [],
+        "healing": [
+          {
+            "name": "Solise",
+            "score": 0.6562,
+            "matches": [
+              "Healing",
+              "Healing over time"
+            ]
+          }
+        ],
         "similar_skills": [],
         "damage": [
           {
@@ -26022,6 +26014,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Gwyneth",
@@ -26157,7 +26150,9 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
             "name": "Contess",
             "score": 1.0,
@@ -26180,7 +26175,6 @@
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -26473,6 +26467,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -26721,6 +26716,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -27513,6 +27509,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Shadewing",
@@ -27797,13 +27794,6 @@
           "score": 10.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -27973,6 +27963,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -28152,6 +28143,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -28290,18 +28282,31 @@
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
           {
             "name": "Rowan",
-            "score": 0.6667,
+            "score": 1.0,
             "matches": [
-              "Healing",
-              "Max HP",
-              "Energy"
+              "Healing"
+            ]
+          },
+          {
+            "name": "Solise",
+            "score": 1.0,
+            "matches": [
+              "Healing"
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -28626,6 +28631,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Ulmus",
@@ -28894,6 +28900,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -29328,13 +29335,6 @@
           "score": 14.58
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
-          ],
-          "score": 14.4
-        },
-        {
           "provider": "Marcille - Elven Mage",
           "reasons": [
             "Enables Ally stat buffs via 1 ally stat buff"
@@ -29518,6 +29518,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -29718,13 +29719,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -29796,6 +29790,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -30046,6 +30041,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Kordan",
@@ -30453,6 +30449,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Hugin",
@@ -30571,13 +30568,6 @@
             "Healing via Healing over time (all units, medium)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -30699,6 +30689,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -30960,30 +30951,31 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
-            "name": "Antandra",
-            "score": 0.8,
+            "name": "Contess",
+            "score": 1.0,
             "matches": [
               "Healing"
             ]
           },
           {
-            "name": "Gerda",
-            "score": 0.8,
+            "name": "Damian",
+            "score": 1.0,
             "matches": [
               "Healing"
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.8,
+            "name": "Evie",
+            "score": 1.0,
             "matches": [
               "Healing"
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -31475,6 +31467,29 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Solise",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Velara",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          }
+        ],
         "similar_skills": [
           {
             "name": "Twins",
@@ -31608,13 +31623,6 @@
             "Healing via Healing over time (all units, medium)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -31859,6 +31867,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -32010,13 +32019,6 @@
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 9.470057142857142
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -32302,6 +32304,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Zorya",
@@ -32578,6 +32581,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -32713,6 +32717,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -32976,13 +32981,6 @@
           "score": 10.26
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -33153,6 +33151,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Harak",
@@ -33931,6 +33930,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [],
         "debuff": [],
@@ -34181,6 +34181,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -34400,13 +34401,6 @@
           "score": 12.558857142857143
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -34618,6 +34612,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -34896,13 +34891,6 @@
             "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
           ],
           "score": 16.799999999999997
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
-          ],
-          "score": 13.5
         },
         {
           "provider": "Daimon - Forsaken Child",
@@ -35187,6 +35175,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [],
         "debuff": [],
@@ -35507,6 +35496,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -35758,6 +35748,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -35884,13 +35875,6 @@
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -36071,15 +36055,45 @@
       "replacements": {
         "buff": [
           {
-            "name": "Rowan",
-            "score": 0.6957,
+            "name": "Ravion",
+            "score": 0.8182,
             "matches": [
               "Energy",
-              "Healing"
+              "ATK"
+            ]
+          },
+          {
+            "name": "Rowan",
+            "score": 0.7273,
+            "matches": [
+              "Energy"
             ]
           }
         ],
         "energy": [],
+        "healing": [
+          {
+            "name": "Koko",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Solise",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 0.75,
+            "matches": [
+              "Healing"
+            ]
+          }
+        ],
         "similar_skills": [
           {
             "name": "Solise",
@@ -36446,6 +36460,30 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [
+          {
+            "name": "Hewynn",
+            "score": 0.9231,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Lorsan",
+            "score": 0.9231,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Gerda",
+            "score": 0.6923,
+            "matches": [
+              "Healing",
+              "Healing over time"
+            ]
+          }
+        ],
         "similar_skills": [],
         "damage": [
           {
@@ -36714,6 +36752,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Perseus",
@@ -37113,13 +37152,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)"
@@ -37200,6 +37232,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Lenya",
@@ -37461,13 +37494,6 @@
           "score": 10.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -37599,6 +37625,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -37895,13 +37922,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -37999,23 +38019,26 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
+        "buff": [],
+        "energy": [],
+        "healing": [
           {
             "name": "Mikola",
             "score": 1.0,
             "matches": [
-              "Healing"
+              "Healing",
+              "Healing over time"
             ]
           },
           {
             "name": "Solise",
             "score": 1.0,
             "matches": [
-              "Healing"
+              "Healing",
+              "Healing over time"
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [],
         "damage": [
           {
@@ -38418,13 +38441,6 @@
           "score": 11.25
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)"
@@ -38489,6 +38505,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -38719,13 +38736,6 @@
           "score": 9.5
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -38941,6 +38951,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Cassadee",
@@ -39201,13 +39212,6 @@
           "score": 12.59
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -39432,6 +39436,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -39616,13 +39621,6 @@
             "Healing via Healing over time (all units, medium)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Gerda - Soothing Siren",
@@ -39824,6 +39822,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -40086,13 +40085,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)"
@@ -40170,6 +40162,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Silven",
@@ -40420,13 +40413,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -40517,21 +40503,51 @@
       "replacements": {
         "buff": [
           {
-            "name": "Lenya",
-            "score": 0.6,
+            "name": "Callan",
+            "score": 1.0,
             "matches": [
               "Max HP"
             ]
           },
           {
-            "name": "Solise",
-            "score": 0.6,
+            "name": "Daimon",
+            "score": 1.0,
             "matches": [
-              "Healing"
+              "Max HP"
+            ]
+          },
+          {
+            "name": "Galahad",
+            "score": 1.0,
+            "matches": [
+              "Max HP"
             ]
           }
         ],
         "energy": [],
+        "healing": [
+          {
+            "name": "Mikola",
+            "score": 1.0,
+            "matches": [
+              "Healing over time"
+            ]
+          },
+          {
+            "name": "Solise",
+            "score": 1.0,
+            "matches": [
+              "Healing over time"
+            ]
+          },
+          {
+            "name": "Talene",
+            "score": 1.0,
+            "matches": [
+              "Healing over time"
+            ]
+          }
+        ],
         "similar_skills": [
           {
             "name": "Hepler",
@@ -40912,13 +40928,6 @@
           "score": 15.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Kafra - Gale Rider",
           "reasons": [
             "Enables Enemy defeat via Marked target (focus fire)"
@@ -40989,6 +40998,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -41259,6 +41269,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -41554,13 +41565,6 @@
           "score": 14.375
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -41764,6 +41768,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -42170,14 +42175,37 @@
       "replacements": {
         "buff": [
           {
+            "name": "Twins",
+            "score": 1.0,
+            "matches": [
+              "Haste"
+            ]
+          }
+        ],
+        "energy": [],
+        "healing": [
+          {
             "name": "Solise",
-            "score": 0.768,
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Damian",
+            "score": 1.0,
             "matches": [
               "Healing"
             ]
           }
         ],
-        "energy": [],
         "similar_skills": [
           {
             "name": "Solise",
@@ -42346,13 +42374,6 @@
             "Healing via Healing (all units, medium)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
@@ -42529,6 +42550,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Arden",
@@ -42951,6 +42973,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -43207,13 +43230,6 @@
           "score": 12.0
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -43415,6 +43431,7 @@
           }
         ],
         "energy": [],
+        "healing": [],
         "similar_skills": [],
         "damage": [
           {
@@ -43609,8 +43626,39 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [],
+        "buff": [
+          {
+            "name": "Hugin",
+            "score": 0.6,
+            "matches": [
+              "Max HP"
+            ]
+          }
+        ],
         "energy": [],
+        "healing": [
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Solise",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Velara",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          }
+        ],
         "similar_skills": [],
         "damage": [
           {
@@ -43972,13 +44020,6 @@
           "score": 11.25
         },
         {
-          "provider": "Antandra - Desert Fury",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -44109,6 +44150,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
+        "healing": [],
         "similar_skills": [
           {
             "name": "Daimon",

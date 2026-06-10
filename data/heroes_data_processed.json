@@ -1101,11 +1101,11 @@
           "effects": [
             {
               "tier": "supreme+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "heal",
               "name": "Healing",
               "value": [

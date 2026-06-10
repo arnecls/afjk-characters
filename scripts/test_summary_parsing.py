@@ -159,6 +159,24 @@ class SummaryParsingTests(unittest.TestCase):
         ]
         self.assertEqual(ally_heal, [])
 
+    def test_antandra_guarded_ally_heal_is_self(self):
+        clause = (
+            "While the shield is active, the guarded ally also heals "
+            "Antandra for 60% of the damage they deal."
+        )
+        self.assertTrue(rs._healing_targets_self(clause))
+        self.assertEqual(
+            rs._resolve_buff_targeting(clause, "Healing"), "Self"
+        )
+        hero = _hero_by_short_name("Antandra")
+        ally_heal = [
+            e
+            for e in _effects(hero, "buff")
+            if e.label in ("Healing", "Healing over time")
+            and e.targeting != "Self"
+        ]
+        self.assertEqual(ally_heal, [])
+
     def test_evie_invincible_self(self):
         hero = _hero_by_short_name("Evie")
         inv = list(_effects(hero, "buff", "Invincible"))

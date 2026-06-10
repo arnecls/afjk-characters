@@ -408,15 +408,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 - Nerion
 - Carolina
-- Perseus
+- Shadewing
 
 ### Units that can act as a replacement for Antandra
-
-**Buffs on allies**
-
-- Contess (100% `Healing`)
-- Gerda (100% `Healing`)
-- Hepler (100% `Healing`)
 
 **Damage**
 
@@ -444,10 +438,6 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Self, Single target
-
-#### Buffs provided by Antandra
-
-- Healing — Multiple targets — `high`
 
 #### Crowd Control provided by Antandra
 
@@ -1982,9 +1972,11 @@ These are the **10** strongest pairings:
 
 ### Units that can act as a replacement for Contess
 
-**Buffs on allies**
+**Healing**
 
-- Solise (66% `Healing`)
+- Solise (100% `Healing`)
+- Velara (88% `Healing`)
+- Gerda (100% `Healing`)
 
 **Damage**
 
@@ -2398,9 +2390,15 @@ Common buffers are **Hugin**, **Mikola**, or **Ravion**.
 
 **Buffs on allies**
 
-- Velara (100% `Healing` `Haste`)
-- Solise (68% `Healing`)
-- Hepler (67% `Healing` `Haste`)
+- Hugin (100% `Haste`)
+- Shakir (100% `Haste`)
+- Twins (100% `Haste`)
+
+**Healing**
+
+- Contess (100% `Healing`)
+- Gerda (100% `Healing`)
+- Hepler (100% `Healing`)
 
 **Similar Skills**
 
@@ -2932,9 +2930,15 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 **Buffs on allies**
 
-- Mikola (100% `ATK` `Healing`)
-- Hugin (80% `ATK`)
-- Contess (66% `ATK` `Healing`)
+- Hugin (100% `ATK`)
+- Mikola (100% `ATK`)
+- Perseus (80% `ATK`)
+
+**Healing**
+
+- Contess (100% `Healing`)
+- Koko (100% `Healing`)
+- Mikola (100% `Healing`)
 
 **Damage**
 
@@ -3145,10 +3149,11 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units that can act as a replacement for Fay
 
-**Buffs on allies**
+**Healing**
 
-- Rowan (65% `Healing` `Magic DEF` `Physical DEF`)
-- Mikola (63% `Healing` `ATK` `Vitality buff`)
+- Contess (100% `Healing`)
+- Damian (100% `Healing`)
+- Gerda (100% `Healing`)
 
 **Similar Skills**
 
@@ -3569,10 +3574,10 @@ Common buffers are **Hugin**.
 
 ### Units that can act as a replacement for Gerda
 
-**Buffs on allies**
+**Healing**
 
-- Mikola (98% `Healing`)
-- Solise (79% `Healing`)
+- Mikola (98% `Healing over time` `Healing`)
+- Solise (79% `Healing` `Healing over time`)
 - Hepler (63% `Healing`)
 
 **Damage**
@@ -4194,7 +4199,14 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Koko (86% `Healing` `Max HP`)
+- Hugin (100% `Max HP` `Haste`)
+- Saida (85% `Max HP`)
+
+**Healing**
+
+- Contess (100% `Healing`)
+- Koko (100% `Healing`)
+- Marcille (100% `Healing`)
 
 **Similar Skills**
 
@@ -4305,7 +4317,7 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 ### Units that can act as a replacement for Hewynn
 
-**Buffs on allies**
+**Healing**
 
 - Lorsan (100% `Healing`)
 - Solise (100% `Healing`)
@@ -5128,6 +5140,16 @@ These are the **10** strongest pairings:
 - Callan
 
 ### Units that can act as a replacement for Koko
+
+**Buffs on allies**
+
+- Shakir (73% `Damage taken reduction` `Life Drain`)
+
+**Healing**
+
+- Smokey & Meerky (100% `Healing`)
+- Solise (100% `Healing`)
+- Contess (90% `Healing`)
 
 **Similar Skills**
 
@@ -5978,7 +6000,7 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 ### Units that can act as a replacement for Lorsan
 
-**Buffs on allies**
+**Healing**
 
 - Solise (100% `Healing`)
 - Smokey & Meerky (80% `Healing`)
@@ -6390,7 +6412,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Solise**.
 
 ### Units that can act as a replacement for Ludovic
 
-**Buffs on allies**
+**Healing**
 
 - Contess (100% `Healing`)
 - Koko (100% `Healing`)
@@ -6725,7 +6747,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units that can act as a replacement for Marcille
 
-**Buffs on allies**
+**Healing**
 
 - Contess (100% `Healing`)
 - Koko (100% `Healing`)
@@ -7060,6 +7082,15 @@ These are the **10** strongest pairings:
 
 ### Units that can act as a replacement for Mikola
 
+**Buffs on allies**
+
+- Hugin (80% `ATK` `Haste`)
+- Evie (60% `ATK`)
+
+**Healing**
+
+- Solise (65% `Healing` `Healing over time`)
+
 **Damage**
 
 - Alna (100% `Physical`)
@@ -7234,7 +7265,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 
 ### Units that can act as a replacement for Nara
 
-**Buffs on allies**
+**Healing**
 
 - Contess (100% `Healing`)
 - Evie (100% `Healing`)
@@ -7827,9 +7858,11 @@ Common buffers are **Rowan**, **Ravion**, or **Smokey & Meerky**.
 
 ### Units that can act as a replacement for Pandora
 
-**Buffs on allies**
+**Healing**
 
-- Rowan (66% `Healing` `Max HP` `Energy`)
+- Contess (100% `Healing`)
+- Rowan (100% `Healing`)
+- Solise (100% `Healing`)
 
 **Damage**
 
@@ -8669,11 +8702,11 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Units that can act as a replacement for Rhys
 
-**Buffs on allies**
+**Healing**
 
-- Antandra (80% `Healing`)
-- Gerda (80% `Healing`)
-- Hepler (80% `Healing`)
+- Contess (100% `Healing`)
+- Damian (100% `Healing`)
+- Evie (100% `Healing`)
 
 **Damage**
 
@@ -8782,6 +8815,12 @@ These are the **10** strongest pairings:
 - Twins
 
 ### Units that can act as a replacement for Rowan
+
+**Healing**
+
+- Contess (100% `Healing`)
+- Solise (100% `Healing`)
+- Velara (100% `Healing`)
 
 **Similar Skills**
 
@@ -10022,7 +10061,14 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Rowan (69% `Energy` `Healing`)
+- Ravion (81% `Energy` `ATK`)
+- Rowan (72% `Energy`)
+
+**Healing**
+
+- Koko (100% `Healing`)
+- Solise (100% `Healing`)
+- Contess (75% `Healing`)
 
 **Similar Skills**
 
@@ -10134,6 +10180,12 @@ These are the **10** strongest pairings:
 - Berial
 
 ### Units that can act as a replacement for Solise
+
+**Healing**
+
+- Hewynn (92% `Healing`)
+- Lorsan (92% `Healing`)
+- Gerda (69% `Healing` `Healing over time`)
 
 **Damage**
 
@@ -10545,10 +10597,10 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 
 ### Units that can act as a replacement for Talene
 
-**Buffs on allies**
+**Healing**
 
-- Mikola (100% `Healing`)
-- Solise (100% `Healing`)
+- Mikola (100% `Healing` `Healing over time`)
+- Solise (100% `Healing` `Healing over time`)
 
 **Damage**
 
@@ -11167,8 +11219,15 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Solise**.
 
 **Buffs on allies**
 
-- Lenya (60% `Max HP`)
-- Solise (60% `Healing`)
+- Callan (100% `Max HP`)
+- Daimon (100% `Max HP`)
+- Galahad (100% `Max HP`)
+
+**Healing**
+
+- Mikola (100% `Healing over time`)
+- Solise (100% `Healing over time`)
+- Talene (100% `Healing over time`)
 
 **Similar Skills**
 
@@ -11628,7 +11687,13 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Solise (76% `Healing`)
+- Twins (100% `Haste`)
+
+**Healing**
+
+- Solise (100% `Healing`)
+- Contess (100% `Healing`)
+- Damian (100% `Healing`)
 
 **Similar Skills**
 
@@ -12031,6 +12096,16 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 - Eironn
 
 ### Units that can act as a replacement for Zanie
+
+**Buffs on allies**
+
+- Hugin (60% `Max HP`)
+
+**Healing**
+
+- Contess (100% `Healing`)
+- Solise (100% `Healing`)
+- Velara (100% `Healing`)
 
 **Damage**
 

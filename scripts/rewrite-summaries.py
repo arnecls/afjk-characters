@@ -210,14 +210,34 @@ def _allies_receive_healing(clause: str) -> bool:
     return False
 
 
+def _ally_sources_caster_healing(clause: str) -> bool:
+    """True when an ally is the heal source and the caster is the recipient."""
+    t = clause.lower()
+    return bool(
+        re.search(
+            r"\b(?:guarded ally|the ally|an ally)\b.{0,60}\b(?:also )?heals?\s+"
+            r"(?!the (?:allied )?(?:unit|ally)\b|all allies\b)",
+            t,
+        )
+    )
+
+
 def _healing_targets_self(clause: str) -> bool:
     """True when HP restore applies to the caster, not an ally."""
     t = clause.lower()
     if _allies_receive_healing(t):
         return False
+    if _ally_sources_caster_healing(t):
+        return True
     if re.search(r",\s*recovering \d+%", t):
         return True
     if re.search(r"\b(?:recovers?|restores?|heals?).{0,80}\bhp\b", t):
+        return True
+    if re.search(
+        r"\bheals?\s+(?!the (?:allied )?(?:unit|ally)\b|all allies\b)"
+        r"(?:herself|himself|itself|\w+)\s+for\s+\d+%",
+        t,
+    ):
         return True
     return False
 
@@ -978,9 +998,11 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         if re.search(
             r"\b(?:recover(?:ing|s)?|restore|restoring|heal(?:s|ing)?)\b", t
         ) and not re.search(r"\b(?:to|for) (?:all )?(?:enemies|an enemy)\b", t):
-            if re.search(r"\bguarded ally\b", t) or re.search(
-                r"\b(?:herself|himself) and\b", t
-            ):
+            if re.search(r"\b(?:herself|himself) and\b", t):
+                return "Multiple targets"
+            if re.search(r"\bguarded ally\b", t):
+                if _healing_targets_self(t):
+                    return "Self"
                 return "Multiple targets"
             if re.search(r"\b(?:herself|himself|itself)\b", t):
                 return "Self"

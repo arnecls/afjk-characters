@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import importlib.util
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -12,18 +13,37 @@ SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
 
-def _load_gen():
-    spec = importlib.util.spec_from_file_location(
+def _load_modules():
+    spec_rs = importlib.util.spec_from_file_location(
+        "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
+    )
+    rs = importlib.util.module_from_spec(spec_rs)
+    sys.modules["rewrite_summaries"] = rs
+    assert spec_rs.loader is not None
+    spec_rs.loader.exec_module(rs)
+
+    spec_gen = importlib.util.spec_from_file_location(
         "gen_overview", SCRIPTS / "generate-heroes-overview.py"
     )
-    module = importlib.util.module_from_spec(spec)
-    sys.modules["gen_overview"] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+    gen = importlib.util.module_from_spec(spec_gen)
+    sys.modules["gen_overview"] = gen
+    assert spec_gen.loader is not None
+    spec_gen.loader.exec_module(gen)
+    return rs, gen
 
 
-gen = _load_gen()
+rs, gen = _load_modules()
+
+
+def _hero_by_short_name(name: str):
+    text = rs.HEROES_MD.read_text(encoding="utf-8")
+    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+    for block in blocks:
+        if block.startswith(f"## {name} "):
+            hero = rs.parse_hero_block(block)
+            rs.analyze_hero(hero)
+            return hero
+    raise KeyError(name)
 
 
 class ReplacementFactionRankingTests(unittest.TestCase):
@@ -217,6 +237,53 @@ class ReplacementTierRankingTests(unittest.TestCase):
             gen._prydwen_tier_preference({}, {"afk_stages": "S"}),
             0,
         )
+
+
+class HealingReplacementTests(unittest.TestCase):
+    def test_healing_provider_detection(self) -> None:
+        hewynn = _hero_by_short_name("Hewynn")
+        hepler = _hero_by_short_name("Hepler")
+        aliceth = _hero_by_short_name("Aliceth")
+        self.assertTrue(gen.is_healing_provider(hewynn))
+        self.assertTrue(gen.is_healing_provider(hepler))
+        self.assertFalse(gen.is_healing_provider(aliceth))
+
+    def test_healing_stat_buff_is_not_hp_recovery_provider(self) -> None:
+        lucius = _hero_by_short_name("Lucius")
+        self.assertFalse(gen.is_healing_provider(lucius))
+        healing_profile = gen._hero_healing_profile(lucius)
+        self.assertNotIn("Healing stat buff", healing_profile)
+
+    def test_buff_profile_excludes_hp_recovery_not_stat_buff(self) -> None:
+        hewynn = _hero_by_short_name("Hewynn")
+        buff_profile = gen._hero_provider_profile(hewynn)
+        healing_profile = gen._hero_healing_profile(hewynn)
+        self.assertFalse(buff_profile)
+        self.assertIn("Healing", healing_profile)
+        evie = _hero_by_short_name("Evie")
+        evie_buff = gen._hero_provider_profile(evie)
+        evie_healing = gen._hero_healing_profile(evie)
+        self.assertIn("ATK buff", evie_buff)
+        self.assertNotIn("Healing stat buff", evie_healing)
+        self.assertIn("Healing", evie_healing)
+
+    def test_healing_category_gated_for_healers(self) -> None:
+        text = rs.HEROES_MD.read_text(encoding="utf-8")
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+        heroes = []
+        for block in blocks:
+            hero = rs.parse_hero_block(block)
+            rs.analyze_hero(hero)
+            heroes.append(hero)
+        display = {h.title: gen.short_name(h.title) for h in heroes}
+        behavior = rs.build_behavior_for_heroes(heroes, display)
+        replacements = gen.compute_replacement_scores(heroes, behavior, {})
+        hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
+        aliceth = next(h for h in heroes if h.title.startswith("Aliceth"))
+        hewynn_healing = replacements[hewynn.title]["healing"]
+        aliceth_healing = replacements[aliceth.title]["healing"]
+        self.assertGreater(len(hewynn_healing), 0)
+        self.assertEqual(aliceth_healing, [])
 
 
 if __name__ == "__main__":

@@ -27,6 +27,7 @@ OVERVIEW_CSV = io.ROOT / "heroes-overview.csv"
 REPLACEMENT_CATEGORY_LABELS = {
     "buff": "Buffs on allies",
     "energy": "Energy provider",
+    "healing": "Healing",
     "similar_skills": "Similar Skills",
     "damage": "Damage",
     "debuff": "Debuffs on enemies",

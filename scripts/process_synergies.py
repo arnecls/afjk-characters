@@ -72,6 +72,7 @@ def _assert_title_sets_match(processed: dict, analyzed_titles: set[str]) -> None
 _REPLACEMENT_CATEGORIES = (
     "buff",
     "energy",
+    "healing",
     "similar_skills",
     "damage",
     "debuff",
