@@ -13,6 +13,8 @@
   let csvRows = [];
   let sortColumn = 0;
   let sortDir = 1;
+  let detailHero = null;
+  let closeSkillCardPopover = function () {};
 
   const gridView = document.getElementById("grid-view");
   const listView = document.getElementById("list-view");
@@ -274,17 +276,23 @@
     "ATK SPD / Haste": { emoji: "⚡", cls: "chip-stat" },
     Haste: { emoji: "💨", cls: "chip-stat" },
     Healing: { emoji: "💚", cls: "chip-stat" },
+    Shield: { emoji: "🛡️", cls: "chip-stat" },
     "Max HP": { emoji: "❤️", cls: "chip-stat" },
     Energy: { emoji: "🔋", cls: "chip-stat" },
     "DEF Penetration": { emoji: "🎯", cls: "chip-stat" },
+    Penetration: { emoji: "🎯", cls: "chip-stat" },
     Crit: { emoji: "💥", cls: "chip-stat" },
     "Crit DMG Boost": { emoji: "💥", cls: "chip-stat" },
     Execution: { emoji: "🗡️", cls: "chip-stat" },
     "Life Drain": { emoji: "🩸", cls: "chip-stat" },
     Lifedrain: { emoji: "🩸", cls: "chip-stat" },
     "Physical DEF": { emoji: "🛡️", cls: "chip-stat" },
+    "Phys DEF": { emoji: "🛡️", cls: "chip-stat" },
     "Magic DEF": { emoji: "🔮", cls: "chip-stat" },
     "Energy recovery": { emoji: "🔋", cls: "chip-stat" },
+    Vitality: { emoji: "🌿", cls: "chip-generic" },
+    "Vitality buff": { emoji: "🌿", cls: "chip-generic" },
+    "Vitality debuff": { emoji: "🥀", cls: "chip-debuff" },
     Blind: { emoji: "👁️", cls: "chip-cc" },
     Stun: { emoji: "💫", cls: "chip-cc" },
     "Knock back": { emoji: "↩️", cls: "chip-cc" },
@@ -303,12 +311,13 @@
     "battlefield-modification": { emoji: "🗺️", cls: "chip-role" },
     "cc-immunity": { emoji: "🛡️", cls: "chip-role" },
     invincibility: { emoji: "✨", cls: "chip-role" },
+    Invincible: { emoji: "✨", cls: "chip-role" },
     "Knock up": { emoji: "⬆️", cls: "chip-cc" },
     Interrupt: { emoji: "🚫", cls: "chip-cc" },
     Displace: { emoji: "↔️", cls: "chip-cc" },
     Unaffected: { emoji: "🛡️", cls: "chip-cc" },
     Steadfast: { emoji: "🛡️", cls: "chip-cc" },
-    Immune: { emoji: "🛡️", cls: "chip-cc" },
+    Immune: { emoji: "⛔", cls: "chip-cc" },
     Untargetable: { emoji: "👻", cls: "chip-cc" },
     Cleanse: { emoji: "💧", cls: "chip-cc" },
     "Max HP-based damage": { emoji: "💔", cls: "chip-damage" },
@@ -402,6 +411,42 @@
     }
     const closePos = before.indexOf("</span>", openPos);
     return closePos === -1 || closePos >= index;
+  }
+
+  function isInsideSkillInlineStat(html, index) {
+    const before = html.slice(0, index);
+    const openTag = '<span class="skill-inline-stat"';
+    let openPos = -1;
+    let searchFrom = 0;
+    for (;;) {
+      const idx = before.indexOf(openTag, searchFrom);
+      if (idx === -1) {
+        break;
+      }
+      openPos = idx;
+      searchFrom = idx + 1;
+    }
+    if (openPos === -1) {
+      return false;
+    }
+    const closePos = before.indexOf("</span>", openPos);
+    return closePos === -1 || closePos >= index;
+  }
+
+  function replaceOutsideChips(text, re, replacer) {
+    return text.replace(re, function () {
+      const args = Array.prototype.slice.call(arguments);
+      const offset = args[args.length - 2];
+      const match = args[0];
+      if (
+        isInsideHtmlTag(text, offset) ||
+        isInsideChipSpan(text, offset) ||
+        isInsideSkillInlineStat(text, offset)
+      ) {
+        return match;
+      }
+      return replacer.apply(null, args);
+    });
   }
 
   function enhancePlainTargetingInHtml(html) {
@@ -1172,6 +1217,211 @@
     return renderMarkdown(lines.join("\n"), { skillOverview: true });
   }
 
+  const SKILL_META_EMOJI = {
+    Cooldown: "⏱️",
+    "Initial Cooldown": "⏳",
+    "Skill Range": "📏",
+    "Initial Energy": "🔋",
+  };
+
+  const SKILL_META_ORDER = [
+    "Cooldown",
+    "Initial Cooldown",
+    "Skill Range",
+    "Initial Energy",
+  ];
+
+  const SKILL_CHIP_KEYS = Object.keys(TAG_DEFINITIONS).sort(function (a, b) {
+    return b.length - a.length;
+  });
+
+  // Popup-only: verb/adjective inflections for single-word TAG_DEFINITIONS
+  // keys (base forms are matched by SKILL_CHIP_KEYS above).
+  const SKILL_INFLECTION_CHIPS = [
+    { re: /\bstunn(?:ed|ing|s)\b/gi, tag: "Stun" },
+    { re: /\bstun(?:s|ned|ning)\b/gi, tag: "Stun" },
+    { re: /\bblind(?:ing|s|ed)\b/gi, tag: "Blind" },
+    { re: /\bimmobiliz(?:e|es|ed|ing)\b/gi, tag: "Bind" },
+    { re: /\bentangl(?:e|es|ed|ing)\b/gi, tag: "Bind" },
+    { re: /\bimprison(?:s|ed|ing)\b/gi, tag: "Bind" },
+    { re: /\bfreez(?:e|es|ing|ed)\b(?! time)(?!and defeats)/gi, tag: "Bind" },
+    { re: /\bbind(?:ing|s)\b/gi, tag: "Bind" },
+    { re: /(?<! of )silenc(?:e|es|ed|ing)\b/gi, tag: "Silence" },
+    { re: /\bcharm(?:ed|s|ing)\b/gi, tag: "Charm" },
+    { re: /\bhypnotiz(?:e|es|ed|ing)\b/gi, tag: "Sleep" },
+    { re: /\basleep\b/gi, tag: "Sleep" },
+    { re: /\btaunt(?:ing|s|ed)\b/gi, tag: "Taunt" },
+    { re: /\bfrighten(?:ing|ed|s)\b/gi, tag: "Frighten" },
+    { re: /\binterrupt(?:s|ed|ing)\b/gi, tag: "Interrupt" },
+    { re: /\bshield(?:s|ed|ing)\b/gi, tag: "Shield" },
+    { re: /\bheal(?:s|ed|ing)\b/gi, tag: "Healing" },
+    { re: /\bcleanse(?:s|d|ing)\b/gi, tag: "Cleanse" },
+    { re: /\bdispel(?:s|led|ling)\b/gi, tag: "Cleanse" },
+  ];
+
+  function enrichSkillInline(text) {
+    if (!text) {
+      return "";
+    }
+    let out = escapeHtml(text);
+    out = out.replace(/\(ATK-based\)/g, "{{ATK_BASED}}");
+    out = out.replace(/\(HP-based\)/g, "{{HP_BASED}}");
+    SKILL_CHIP_KEYS.forEach(function (key) {
+      const def = TAG_DEFINITIONS[key];
+      const re = new RegExp(
+        "\\b" + key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b",
+        "gi"
+      );
+      out = replaceOutsideChips(out, re, function (match) {
+        return chipSpan(def.emoji, match, def.cls);
+      });
+    });
+    SKILL_INFLECTION_CHIPS.forEach(function (entry) {
+      const def = TAG_DEFINITIONS[entry.tag];
+      out = replaceOutsideChips(out, entry.re, function () {
+        return chipSpan(def.emoji, entry.tag, def.cls);
+      });
+    });
+    out = out.replace(
+      /\{\{ATK_BASED\}\}/g,
+      '<span class="skill-inline-stat">💪 ATK</span>'
+    );
+    out = out.replace(
+      /\{\{HP_BASED\}\}/g,
+      '<span class="skill-inline-stat">❤️ HP</span>'
+    );
+    return out;
+  }
+
+  function splitSkillPhases(description) {
+    const text = (description || "").trim();
+    if (!text) {
+      return [];
+    }
+    if (!/\bPassive\.\s/.test(text) && !/\bActive\.\s/.test(text)) {
+      return [{ label: null, body: text }];
+    }
+    const phases = [];
+    text.split(/(?=Passive\.\s|Active\.\s)/).forEach(function (part) {
+      const trimmed = part.trim();
+      if (!trimmed) {
+        return;
+      }
+      const passiveMatch = trimmed.match(/^Passive\.\s*(.*)$/s);
+      if (passiveMatch) {
+        phases.push({ label: "passive", body: passiveMatch[1].trim() });
+        return;
+      }
+      const activeMatch = trimmed.match(/^Active\.\s*(.*)$/s);
+      if (activeMatch) {
+        phases.push({ label: "active", body: activeMatch[1].trim() });
+        return;
+      }
+      phases.push({ label: null, body: trimmed });
+    });
+    return phases.length ? phases : [{ label: null, body: text }];
+  }
+
+  function formatSkillDetail(card) {
+    const title = card.name || card.label || "Skill";
+    let headerHtml =
+      '<div class="skill-popover-header">' +
+      '<button type="button" class="skill-popover-close" aria-label="Close">' +
+      "×</button>" +
+      '<h4 id="skill-popover-title" class="skill-popover-title">' +
+      escapeHtml(title) +
+      "</h4>";
+    if (card.unlock) {
+      headerHtml +=
+        '<p class="skill-popover-unlock">🔓 <em>' +
+        escapeHtml(card.unlock) +
+        "</em></p>";
+    }
+
+    const meta = card.meta || {};
+    const metaItems = [];
+    SKILL_META_ORDER.forEach(function (label) {
+      if (meta[label]) {
+        metaItems.push(
+          '<span class="skill-popover-meta-item">' +
+            SKILL_META_EMOJI[label] +
+            " " +
+            escapeHtml(label) +
+            ": " +
+            escapeHtml(meta[label]) +
+            "</span>"
+        );
+      }
+    });
+    if (metaItems.length) {
+      headerHtml +=
+        '<div class="skill-popover-meta">' + metaItems.join("") + "</div>";
+    }
+
+    headerHtml += "</div>";
+
+    let scrollHtml = '<div class="skill-popover-scroll">';
+
+    const description = card.description || card.summary || "";
+    if (description) {
+      scrollHtml += '<div class="skill-popover-body">';
+      splitSkillPhases(description).forEach(function (phase) {
+        if (phase.label === "passive") {
+          scrollHtml +=
+            '<p class="skill-popover-phase">' +
+            '<span class="skill-popover-phase-label">📖 <strong>Passive</strong></span> ' +
+            enrichSkillInline(phase.body) +
+            "</p>";
+        } else if (phase.label === "active") {
+          scrollHtml +=
+            '<p class="skill-popover-phase">' +
+            '<span class="skill-popover-phase-label">⚡ <strong>Active</strong></span> ' +
+            enrichSkillInline(phase.body) +
+            "</p>";
+        } else {
+          scrollHtml +=
+            '<p class="skill-popover-phase">' +
+            enrichSkillInline(phase.body) +
+            "</p>";
+        }
+      });
+      scrollHtml += "</div>";
+    }
+
+    const levels = card.levels || [];
+    if (levels.length) {
+      scrollHtml += '<ul class="skill-popover-levels">';
+      levels.forEach(function (level) {
+        const levelLabel = level.unlock
+          ? "Level " + level.level + " — " + level.unlock
+          : "Level " + level.level;
+        scrollHtml +=
+          "<li><span class=\"skill-popover-level-label\">🔼 " +
+          escapeHtml(levelLabel) +
+          ":</span> " +
+          enrichSkillInline(level.text || "") +
+          "</li>";
+      });
+      scrollHtml += "</ul>";
+    }
+
+    scrollHtml += "</div>";
+    return headerHtml + scrollHtml;
+  }
+
+  function skillCardData(category) {
+    if (!detailHero || !detailHero.sections || !detailHero.sections.skillCards) {
+      return null;
+    }
+    const cards = detailHero.sections.skillCards;
+    for (let i = 0; i < cards.length; i++) {
+      if (cards[i].category === category) {
+        return cards[i];
+      }
+    }
+    return null;
+  }
+
   function renderSkillCards(cards) {
     if (!cards || !cards.length) {
       return "";
@@ -1183,7 +1433,8 @@
       html +=
         '<div class="skill-card" data-skill-category="' +
         escapeHtml(card.category) +
-        '">';
+        '" role="button" tabindex="0" aria-expanded="false" ' +
+        'aria-haspopup="dialog">';
       html += "<h4>" + escapeHtml(card.label) + "</h4>";
       if (card.summary) {
         html +=
@@ -1978,6 +2229,8 @@
   }
 
   function showIndexView() {
+    closeSkillCardPopover();
+    detailHero = null;
     detailView.classList.add("hidden");
     gridView.classList.toggle("hidden", viewMode !== "grid");
     listView.classList.toggle("hidden", viewMode !== "list");
@@ -2089,6 +2342,8 @@
   }
 
   function showDetail(hero) {
+    closeSkillCardPopover();
+    detailHero = hero;
     gridView.classList.add("hidden");
     listView.classList.add("hidden");
     detailView.classList.remove("hidden");
@@ -2615,6 +2870,174 @@
     window.addEventListener("resize", function () {
       if (tipAnchor && !chipTooltip.hidden) {
         positionChipTooltip(tipAnchor);
+      }
+    });
+  })();
+
+  (function initSkillCardPopover() {
+    const backdrop = document.createElement("div");
+    backdrop.className = "skill-card-popover-backdrop";
+    backdrop.hidden = true;
+
+    const popover = document.createElement("div");
+    popover.id = "skill-card-popover";
+    popover.className = "skill-card-popover";
+    popover.hidden = true;
+    popover.setAttribute("role", "dialog");
+    popover.setAttribute("aria-modal", "true");
+    popover.setAttribute("aria-labelledby", "skill-popover-title");
+
+    document.body.appendChild(backdrop);
+    document.body.appendChild(popover);
+
+    let anchorCard = null;
+
+    function setCardExpanded(card, expanded) {
+      if (!card) {
+        return;
+      }
+      card.setAttribute("aria-expanded", expanded ? "true" : "false");
+      card.classList.toggle("skill-card-active", expanded);
+    }
+
+    function positionSkillPopover(card) {
+      const rect = card.getBoundingClientRect();
+      const margin = 12;
+      const arrowSize = 10;
+      const maxHeight = Math.min(window.innerHeight * 0.6, 420);
+
+      popover.style.maxHeight = maxHeight + "px";
+      popover.style.visibility = "hidden";
+      popover.hidden = false;
+
+      const popH = popover.offsetHeight;
+      const popW = popover.offsetWidth;
+
+      let placeBelow = false;
+      let top = rect.top - popH - margin - arrowSize;
+      if (top < margin) {
+        placeBelow = true;
+        top = rect.bottom + margin + arrowSize;
+      }
+
+      let left = rect.left + rect.width / 2 - popW / 2;
+      const maxLeft = window.innerWidth - popW - margin;
+      left = Math.max(margin, Math.min(left, maxLeft));
+
+      const cardCenter = rect.left + rect.width / 2;
+      const arrowLeft = Math.max(18, Math.min(cardCenter - left, popW - 18));
+
+      popover.style.top = top + "px";
+      popover.style.left = left + "px";
+      popover.style.setProperty("--arrow-left", arrowLeft + "px");
+      popover.classList.toggle("skill-card-popover--below", placeBelow);
+      popover.style.visibility = "";
+    }
+
+    function hideSkillPopover() {
+      if (anchorCard) {
+        setCardExpanded(anchorCard, false);
+      }
+      popover.hidden = true;
+      backdrop.hidden = true;
+      anchorCard = null;
+    }
+
+    function showSkillPopover(card, cardData) {
+      if (!card || !cardData) {
+        return;
+      }
+      if (anchorCard === card) {
+        hideSkillPopover();
+        return;
+      }
+      if (anchorCard) {
+        setCardExpanded(anchorCard, false);
+      }
+      anchorCard = card;
+      popover.innerHTML = formatSkillDetail(cardData);
+      backdrop.hidden = false;
+      popover.hidden = false;
+      setCardExpanded(card, true);
+      positionSkillPopover(card);
+    }
+
+    closeSkillCardPopover = hideSkillPopover;
+
+    popover.addEventListener("click", function (e) {
+      if (e.target.closest(".skill-popover-close")) {
+        e.stopPropagation();
+        hideSkillPopover();
+      }
+    });
+
+    function skillCardFromEvent(e) {
+      const chip = e.target.closest(".skill-card-tags .chip");
+      if (chip) {
+        return null;
+      }
+      return e.target.closest(".skill-card[data-skill-category]");
+    }
+
+    function openFromCard(card) {
+      const data = skillCardData(card.dataset.skillCategory);
+      if (!data) {
+        return;
+      }
+      showSkillPopover(card, data);
+    }
+
+    document.addEventListener("click", function (e) {
+      const card = skillCardFromEvent(e);
+      if (card) {
+        e.preventDefault();
+        e.stopPropagation();
+        openFromCard(card);
+        return;
+      }
+      if (
+        anchorCard &&
+        !popover.contains(e.target) &&
+        !anchorCard.contains(e.target)
+      ) {
+        hideSkillPopover();
+      }
+    });
+
+    backdrop.addEventListener("click", function () {
+      hideSkillPopover();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      const card = e.target.closest(".skill-card[data-skill-category]");
+      if (
+        card &&
+        (e.key === "Enter" || e.key === " ") &&
+        !e.target.closest(".skill-card-tags .chip")
+      ) {
+        e.preventDefault();
+        openFromCard(card);
+        return;
+      }
+      if (e.key === "Escape" && anchorCard) {
+        hideSkillPopover();
+        anchorCard.focus();
+      }
+    });
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (anchorCard && !popover.hidden) {
+          positionSkillPopover(anchorCard);
+        }
+      },
+      true
+    );
+
+    window.addEventListener("resize", function () {
+      if (anchorCard && !popover.hidden) {
+        positionSkillPopover(anchorCard);
       }
     });
   })();

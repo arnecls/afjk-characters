@@ -5440,15 +5440,59 @@ def format_skill_card_tags(
     return tags
 
 
+_SKILL_META_LABELS: tuple[str, ...] = (
+    "Cooldown",
+    "Initial Cooldown",
+    "Skill Range",
+    "Initial Energy",
+)
+
+
+def _skill_detail_for_category(
+    source_skills: list[dict] | None, category: str
+) -> dict[str, str | dict[str, str] | list[dict[str, str]]]:
+    if not source_skills:
+        return {}
+    section = CATEGORY_TO_SECTION.get(category)
+    if not section:
+        return {}
+    for skill in source_skills:
+        if skill.get("section") != section:
+            continue
+        meta = skill.get("meta") or {}
+        return {
+            "name": skill.get("name") or "",
+            "unlock": skill.get("unlock") or "",
+            "meta": {
+                label: meta[label]
+                for label in _SKILL_META_LABELS
+                if label in meta
+            },
+            "description": skill.get("description") or "",
+            "levels": [
+                {
+                    "level": str(level.get("level", "")),
+                    "unlock": level.get("unlock") or "",
+                    "text": level.get("text") or "",
+                }
+                for level in skill.get("levels", [])
+            ],
+        }
+    return {}
+
+
 def format_skill_cards(
     hero: Hero,
     skill_summaries: dict[str, str] | None,
     hero_categories: set[str] | None,
     skills: list[SkillMeta] | None = None,
-) -> list[dict[str, str | list[str]]]:
+    source_skills: list[dict] | None = None,
+) -> list[dict[str, str | list[str] | dict[str, str] | list[dict[str, str]]]]:
     if not skill_summaries or not hero_categories:
         return []
-    cards: list[dict[str, str | list[str]]] = []
+    cards: list[
+        dict[str, str | list[str] | dict[str, str] | list[dict[str, str]]]
+    ] = []
     for category in SKILL_CATEGORY_ORDER:
         if category not in hero_categories:
             continue
@@ -5456,14 +5500,16 @@ def format_skill_cards(
         if not summary:
             continue
         label = CATEGORY_DISPLAY_LABELS.get(category, category)
-        cards.append(
-            {
-                "category": category,
-                "label": label,
-                "summary": summary,
-                "tags": format_skill_card_tags(hero, category, skills),
-            }
-        )
+        card: dict[str, str | list[str] | dict[str, str] | list[dict[str, str]]] = {
+            "category": category,
+            "label": label,
+            "summary": summary,
+            "tags": format_skill_card_tags(hero, category, skills),
+        }
+        detail = _skill_detail_for_category(source_skills, category)
+        if detail:
+            card.update(detail)
+        cards.append(card)
     return cards
 
 

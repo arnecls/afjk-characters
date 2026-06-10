@@ -331,12 +331,26 @@ class SkillOverviewTests(unittest.TestCase):
         hero, _ = self._hero_by_display("Aliceth")
         summaries = rs._load_skill_summaries().get("Aliceth", {})
         categories = set(summaries)
-        cards = rs.format_skill_cards(hero, summaries, categories)
+        source_skills: list[dict] = []
+        for record in io.load_heroes_data()["heroes"]:
+            if record["name"] == "Aliceth":
+                source_skills = record.get("skills", [])
+                break
+        cards = rs.format_skill_cards(
+            hero,
+            summaries,
+            categories,
+            source_skills=source_skills,
+        )
         self.assertEqual(len(cards), 6)
         labels = [c["label"] for c in cards]
         self.assertIn("Mythic+", labels)
         self.assertNotIn("Ex. Skill", labels)
         ultimate = next(c for c in cards if c["category"] == "ultimate")
+        self.assertEqual(ultimate["name"], "Radiant Rain")
+        self.assertIn("flies into the air", ultimate["description"].lower())
+        self.assertEqual(ultimate["meta"]["Skill Range"], "8 tiles")
+        self.assertGreater(len(ultimate["levels"]), 0)
         self.assertIn(summaries["ultimate"], ultimate["summary"])
         ultimate_tags = " ".join(ultimate["tags"])
         self.assertIn("Physical", ultimate_tags)

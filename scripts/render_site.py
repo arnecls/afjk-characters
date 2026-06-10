@@ -236,6 +236,7 @@ def build_site_data(
             skill_summaries,
             hero_categories,
             hero_skills,
+            source_skills=meta.get("skills", []),
         )
         summary_md = rs.format_summary(hero, short).strip()
         synergy = _build_synergy_sections(
