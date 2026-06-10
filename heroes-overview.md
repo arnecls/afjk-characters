@@ -105,7 +105,7 @@ Aliceth provides Ally empower buff to single targets `low`, Attack range buff to
 #### Damage types dealt by Aliceth
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Multiple targets, Single target
+- Physical — Area, Single target
 - HP loss — Single target — `high`
 
 #### Debuffs provided by Aliceth
@@ -236,7 +236,7 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `high`
+- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -323,7 +323,7 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 #### Damage types dealt by Alsa
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Self, Single target
+- Magic — All units, Area, Single target
 
 #### Debuffs provided by Alsa
 
@@ -431,7 +431,7 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 #### Damage types dealt by Antandra
 
 - Primary damage type (unit): **Physical**
-- Physical — Arc, Area, Self, Single target
+- Physical — Arc, Area
 
 #### Crowd Control provided by Antandra
 
@@ -529,7 +529,7 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 #### Damage types dealt by Arden
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Multiple targets, Single target
+- Magic — Area, Multiple targets
 
 #### Crowd Control provided by Arden
 
@@ -547,7 +547,7 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `medium`
 - **Damage types**: Physical `medium`
 
@@ -661,7 +661,7 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 - **Signature skill (ultimate)**: speed `normal`, buffs `medium`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`, HP loss `high`, True damage `medium`
+- **Damage types**: Physical `high`, HP loss `high`
 
 ##### Ultimate
 
@@ -720,9 +720,9 @@ Common buffers are **Hugin**, **Solise**, or **Twins**.
 
 **Damage**
 
-- Faramor (99% `Physical` `HP loss` `True damage`)
-- Shadewing (69% `HP loss` `True damage`)
-- Aliceth (66% `Physical` `HP loss`)
+- Aliceth (100% `Physical` `HP loss`)
+- Faramor (97% `Physical` `HP loss`)
+- Kordan (78% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -746,7 +746,6 @@ Common buffers are **Hugin**, **Solise**, or **Twins**.
 - Primary damage type (unit): **Physical**
 - Physical — All units, Area, Single target
 - HP loss — All units — `high`
-- True damage — Single target — `medium`
 
 #### Debuffs provided by Athalia
 
@@ -851,7 +850,7 @@ Aurora provides Haste buff to summons `medium`, Invincible to single targets `hi
 #### Damage types dealt by Aurora
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Multiple targets, Single target
+- Magic — Area, Multiple targets
 
 #### Debuffs provided by Aurora
 
@@ -874,7 +873,7 @@ Aurora provides Haste buff to summons `medium`, Invincible to single targets `hi
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`, True damage `high`
+- **Damage types**: Physical `high`, True damage `medium`
 
 ##### Ultimate
 
@@ -927,10 +926,6 @@ Common buffers are **Twins**, **Solise**, or **Velara**.
 
 ### Units that can act as a replacement for Baelran
 
-**Damage**
-
-- Silven (68% `True damage`)
-
 **Debuffs on enemies**
 
 - Contess (100% `Max HP debuff`)
@@ -947,7 +942,7 @@ Common buffers are **Twins**, **Solise**, or **Velara**.
 
 - Primary damage type (unit): **Physical**
 - Physical — Arc, Area, Single target
-- True damage — Arc, Area, Single target — `medium`
+- True damage — Arc, Area — `medium`
 
 #### Debuffs provided by Baelran
 
@@ -1273,9 +1268,9 @@ Brutus provides Lifedrain buff to single targets `medium`.
 #### Damage types dealt by Brutus
 
 - Primary damage type (unit): **Physical**
-- Physical — Arc, Area, Self, Single target
+- Physical — Arc, Area, Single target
 - DoT — Area
-- Max HP-based damage — Arc, Self — `high`
+- Max HP-based damage — Arc, Single target — `high`
 
 #### Debuffs provided by Brutus
 
@@ -1300,8 +1295,8 @@ Brutus provides Lifedrain buff to single targets `medium`.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, damage `medium`
-- **Damage types**: Magic `high`, DoT `high`
+- **Non-ultimate**: speed `fast`, heal `medium`, damage `low`
+- **Damage types**: Magic `high`, DoT `medium`
 
 ##### Ultimate
 
@@ -1486,7 +1481,7 @@ Callan provides Shield to single targets `medium`.
 #### Damage types dealt by Callan
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Self, Single target
+- Magic — All units, Area, Single target
 
 #### Crowd Control provided by Callan
 
@@ -1591,7 +1586,7 @@ Carolina also requires units **applying crowd control** to enemies
 #### Damage types dealt by Carolina
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Self, Single target
+- Magic — Area, Single target
 
 #### Debuffs provided by Carolina
 
@@ -1614,10 +1609,10 @@ Carolina also requires units **applying crowd control** to enemies
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, first cast speed `fast`, damage `low`
+- **Signature skill**: speed `slow`, first cast speed `fast`
 - **Ultimate**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `medium`
-- **Damage types**: Magic `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `low`
+- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -1822,9 +1817,8 @@ Cecia provides ATK SPD buff to single targets `low`, DEF Penetration buff to sin
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `normal`, damage `high`
-- **Damage types**: Physical `high`
+- **Signature skill (ultimate)**: speed `slow`
+- **Non-ultimate**: speed `normal`
 
 ##### Ultimate
 
@@ -1875,7 +1869,6 @@ rare chance for massive single normal attack damage
 #### Damage types dealt by Chippy
 
 - Primary damage type (unit): **Physical**
-- Physical — Single target
 
 ## Contess
 
@@ -1889,7 +1882,7 @@ rare chance for massive single normal attack damage
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `low`
 - **Damage types**: Magic `high`
 
 ##### Ultimate
@@ -2116,7 +2109,7 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Magic `high`, True damage `medium`
+- **Damage types**: Magic `high`, True damage `low`
 
 ##### Ultimate
 
@@ -2169,8 +2162,8 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 **Damage**
 
 - Frieren (100% `True damage` `Magic`)
-- Shadewing (98% `Magic` `True damage`)
 - Sylphira (97% `True damage` `Magic`)
+- Faramor (83% `True damage`)
 
 **Debuffs on enemies**
 
@@ -2287,7 +2280,7 @@ Daimon provides Lifedrain buff to single targets `medium` and Shield to multiple
 #### Damage types dealt by Daimon
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Self, Single target
+- Magic — Area, Single target
 - Max HP-based damage — Area — `high`
 
 #### Crowd Control provided by Daimon
@@ -2484,9 +2477,9 @@ Dionel provides DEF Penetration buff to single targets `high`.
 
 **Damage**
 
-- Athalia (100% `Physical` `True damage`)
 - Baelran (100% `True damage` `Physical`)
 - Faramor (100% `True damage` `Physical`)
+- Frieren (100% `True damage`)
 
 **Debuffs on enemies**
 
@@ -2510,7 +2503,7 @@ Dionel provides DEF Penetration buff to single targets `high`.
 #### Damage types dealt by Dionel
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Area, Self, Single target
+- Physical — All units, Area, Single target
 - True damage — All units, Single target — `medium`
 
 #### Debuffs provided by Dionel
@@ -2611,7 +2604,7 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 #### Damage types dealt by Dunlingr
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Self, Single target
+- Magic — All units, Area, Single target
 - HP loss — Area — `medium`
 
 #### Debuffs provided by Dunlingr
@@ -2707,7 +2700,7 @@ Common buffers are **Hugin** or **Rowan**.
 #### Damage types dealt by Eironn
 
 - Primary damage type (unit): **Magic**
-- Magic — Arc, Area, Single target
+- Magic — Arc, Area
 
 #### Debuffs provided by Eironn
 
@@ -2821,7 +2814,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Twins
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Multiple targets, Single target
+- Magic — Area
 
 #### Crowd Control provided by Twins
 
@@ -3010,10 +3003,6 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 ### Units that can act as a replacement for Faramor
 
-**Damage**
-
-- Shadewing (70% `HP loss` `True damage`)
-
 **Crowd Control**
 
 - Gunnar (62% `Stun`)
@@ -3051,7 +3040,7 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 - **Damage types**: Magic `medium`
 
@@ -3135,7 +3124,7 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 #### Damage types dealt by Fay
 
 - Primary damage type (unit): **Magic**
-- Magic — Arc, Area, Multiple targets, Single target
+- Magic — Area, Multiple targets
 
 #### Debuffs provided by Fay
 
@@ -3309,7 +3298,7 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 
 - Sylphira (100% `True damage` `Magic`)
 - Faramor (91% `True damage`)
-- Silven (83% `Magic` `True damage`)
+- Baelran (74% `True damage`)
 
 **Crowd Control**
 
@@ -3322,9 +3311,9 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 #### Damage types dealt by Frieren
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Self, Single target
-- DoT — All units, Single target
-- True damage — All units, Single target — `high`
+- Magic — All units, Area, Single target
+- DoT — All units
+- True damage — All units — `high`
 
 #### Debuffs provided by Frieren
 
@@ -3462,7 +3451,7 @@ These are the **10** strongest pairings:
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, heal `medium`, damage `medium`
-- **Ultimate**: speed `slow`, heal `medium`, damage `medium`
+- **Ultimate**: speed `slow`, heal `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **Damage types**: Physical `medium`
 
@@ -3645,7 +3634,7 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 #### Damage types dealt by Granny Dahnie
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Self, Single target
+- Physical — Area, Single target
 
 #### Debuffs provided by Granny Dahnie
 
@@ -3756,7 +3745,7 @@ Gunnar provides ATK SPD buff to single targets `low`, Ranged DEF buff (Legendary
 #### Damage types dealt by Gunnar
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Area, Self, Single target
+- Physical — All units, Area, Single target
 - DoT — Area
 - Max HP-based damage — All units — `medium`
 
@@ -3777,7 +3766,7 @@ Gunnar provides ATK SPD buff to single targets `low`, Ranged DEF buff (Legendary
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`, Max HP-based damage `low`
+- **Damage types**: Physical `high`, Max HP-based damage `medium`
 
 ##### Ultimate
 
@@ -3830,6 +3819,7 @@ Common buffers are **Twins**, **Velara**, or **Lyca**.
 **Damage**
 
 - Gunnar (100% `Physical` `Max HP-based damage`)
+- Silven (100% `Max HP-based damage`)
 - Shadewing (72% `Max HP-based damage`)
 
 ### Summary for Gwyneth
@@ -3859,9 +3849,8 @@ Common buffers are **Twins**, **Velara**, or **Lyca**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `normal`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`
+- **Signature skill (ultimate)**: speed `slow`
+- **Non-ultimate**: speed `normal`, heal `medium`, buffs `medium`
 
 ##### Ultimate
 
@@ -3928,7 +3917,6 @@ Hammie provides ATK buff to multiple targets `low`.
 #### Damage types dealt by Hammie
 
 - Primary damage type (unit): **Magic**
-- Magic — Single target
 
 ## Harak
 
@@ -3943,7 +3931,7 @@ Hammie provides ATK buff to multiple targets `low`.
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`
 - **Ultimate**: speed `slow`, heal `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`
 - **Damage types**: Physical `low`, HP loss `low`
 
 ##### Ultimate
@@ -4164,7 +4152,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Hepler
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Multiple targets, Single target
+- Physical — Area
 
 #### Debuffs provided by Hepler
 
@@ -4187,9 +4175,8 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, heal `medium`, damage `medium`
-- **Damage types**: Magic `medium`
+- **Signature skill (ultimate)**: speed `slow`, heal `medium`
+- **Non-ultimate**: speed `fast`, heal `medium`
 
 ##### Ultimate
 
@@ -4260,15 +4247,14 @@ Hewynn provides Healing to all units `high`.
 **Damage**
 
 - Alsa (100% `Magic`)
-- Callan (100% `Magic`)
-- Cassadee (100% `Magic`)
+- Arden (100% `Magic`)
+- Aurora (100% `Magic`)
 
 ### Summary for Hewynn
 
 #### Damage types dealt by Hewynn
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Single target
 
 #### Crowd Control provided by Hewynn
 
@@ -4362,7 +4348,7 @@ Himmel provides Shield to single targets `low`, ATK buff (Mythic+) to multiple t
 #### Damage types dealt by Himmel
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Area, Multiple targets, Self, Single target
+- Physical — All units, Area, Multiple targets
 - Max HP-based damage — All units — `low`
 
 ## Hodgkin
@@ -4453,7 +4439,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 #### Damage types dealt by Hodgkin
 
 - Primary damage type (unit): **Physical**
-- Physical — Arc, Area, Single target
+- Physical — Arc, Area
 
 #### Debuffs provided by Hodgkin
 
@@ -4475,8 +4461,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`
 
 ##### Ultimate
 
@@ -4560,7 +4545,6 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Hugin
 
 - Primary damage type (unit): **Physical**
-- Physical — Multiple targets, Single target
 
 ## Igor
 
@@ -4641,7 +4625,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 #### Damage types dealt by Igor
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Area, Self, Single target
+- Physical — All units, Area
 
 #### Debuffs provided by Igor
 
@@ -4660,7 +4644,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 - **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`, Max HP-based damage `low`, True damage `high`
+- **Damage types**: Physical `high`, Max HP-based damage `low`, True damage `medium`
 
 ##### Ultimate
 
@@ -4740,7 +4724,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 #### Damage types dealt by Indris
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Multiple targets, Self, Single target
+- Physical — Area, Multiple targets, Single target
 - Max HP-based damage — Single target — `low`
 - True damage — Multiple targets — `high`
 
@@ -4769,8 +4753,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`
+- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`
 
 ##### Ultimate
 
@@ -4983,8 +4966,8 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
+- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -5070,9 +5053,9 @@ These are the **10** strongest pairings:
 
 **Damage**
 
+- Aliceth (100% `Physical`)
 - Alna (100% `Physical`)
 - Athalia (100% `Physical`)
-- Gunnar (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -5090,7 +5073,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Koko
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Area, Single target
+- Physical — Area
 
 #### Debuffs provided by Koko
 
@@ -5111,7 +5094,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 - **Damage types**: Physical `high`, HP loss `medium`
 
@@ -5203,8 +5186,8 @@ Kordan provides Lifedrain buff to multiple targets `medium` and DEF Penetration 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`, Max HP-based damage `medium`, True damage `medium`
+- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
+- **Damage types**: Physical `low`, Max HP-based damage `medium`
 
 ##### Ultimate
 
@@ -5275,9 +5258,9 @@ Korin provides Shield to single targets `medium`.
 
 **Damage**
 
-- Nara (100% `Max HP-based damage` `True damage` `Physical`)
-- Shadewing (100% `Max HP-based damage` `True damage`)
-- Temesia (100% `Physical` `Max HP-based damage` `True damage`)
+- Brutus (100% `Max HP-based damage` `Physical`)
+- Gunnar (100% `Max HP-based damage` `Physical`)
+- Nara (100% `Max HP-based damage` `Physical`)
 
 **Crowd Control**
 
@@ -5290,9 +5273,8 @@ Korin provides Shield to single targets `medium`.
 #### Damage types dealt by Korin
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Self, Single target
+- Physical — Area, Single target
 - Max HP-based damage — Area — `medium`
-- True damage — Single target — `medium`
 
 #### Crowd Control provided by Korin
 
@@ -5310,7 +5292,7 @@ Korin provides Shield to single targets `medium`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `normal`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 - **Damage types**: Physical `high`
 
@@ -5604,7 +5586,7 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 #### Damage types dealt by Laios
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Single target
+- Physical — Area
 
 #### Crowd Control provided by Laios
 
@@ -5705,7 +5687,7 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 #### Damage types dealt by Lenya
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Self, Single target
+- Physical — Area, Single target
 
 #### Crowd Control provided by Lenya
 
@@ -5726,7 +5708,7 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Magic `high`, Max HP-based damage `low`
+- **Damage types**: Magic `medium`, Max HP-based damage `low`
 
 ##### Ultimate
 
@@ -5811,7 +5793,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Single target
-- Max HP-based damage — Self, Single target — `low`
+- Max HP-based damage — Single target — `low`
 
 #### Debuffs provided by Lily May
 
@@ -5834,7 +5816,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`
 - **Damage types**: Magic `high`
 
 ##### Ultimate
@@ -5907,9 +5889,9 @@ Lorsan provides Healing (Mythic+) to all units `high`.
 
 **Damage**
 
-- Callan (100% `Magic`)
-- Cassadee (100% `Magic`)
-- Contess (100% `Magic`)
+- Aurora (100% `Magic`)
+- Berial (100% `Magic`)
+- Bonnie (100% `Magic`)
 
 **Crowd Control**
 
@@ -5922,7 +5904,7 @@ Lorsan provides Healing (Mythic+) to all units `high`.
 #### Damage types dealt by Lorsan
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Single target
+- Magic — Area, Single target
 
 #### Crowd Control provided by Lorsan
 
@@ -6044,7 +6026,7 @@ Common buffers are **Rowan**, **Hugin**, or **Solise**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, buffs `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 - **Damage types**: Physical `medium`
 
@@ -6339,7 +6321,7 @@ Ludovic provides Healing in an area `medium`.
 #### Damage types dealt by Ludovic
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Self, Single target
+- Magic — All units, Area, Single target
 
 #### Crowd Control provided by Ludovic
 
@@ -6563,7 +6545,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Lyca
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Area, Self, Single target
+- Physical — All units, Area, Single target
 
 #### Debuffs provided by Lyca
 
@@ -6670,7 +6652,7 @@ Marcille provides Healing to multiple targets `high`.
 #### Damage types dealt by Marcille
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Multiple targets, Single target
+- Magic — All units, Area, Single target
 
 #### Crowd Control provided by Marcille
 
@@ -6749,9 +6731,9 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 **Damage**
 
-- Athalia (100% `Physical` `True damage`)
 - Baelran (100% `Physical` `True damage`)
 - Dionel (100% `Physical` `True damage`)
+- Faramor (100% `Physical` `True damage`)
 
 **Crowd Control**
 
@@ -6877,7 +6859,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Mehira
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Self, Single target
+- Magic — All units, Area, Single target
 
 #### Debuffs provided by Mehira
 
@@ -6899,9 +6881,8 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
-- **Damage types**: Physical `low`
+- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`
 
 ##### Ultimate
 
@@ -6982,16 +6963,16 @@ These are the **10** strongest pairings:
 
 **Damage**
 
+- Aliceth (100% `Physical`)
 - Alna (100% `Physical`)
 - Athalia (100% `Physical`)
-- Gunnar (100% `Physical`)
 
 ### Summary for Mikola
 
 #### Damage types dealt by Mikola
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Area, Multiple targets, Single target
+- Physical — Area
 
 #### Crowd Control provided by Mikola
 
@@ -7008,9 +6989,9 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`, DoT `low`
+- **Damage types**: Magic `medium`, DoT `low`
 
 ##### Ultimate
 
@@ -7157,9 +7138,9 @@ Nara provides Healing (Mythic+) in an area `low`.
 
 **Damage**
 
-- Shadewing (100% `Max HP-based damage` `True damage`)
 - Indris (84% `True damage` `Physical` `Max HP-based damage`)
 - Nazrik (84% `True damage` `Physical` `Max HP-based damage`)
+- Sylphira (83% `True damage` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -7311,8 +7292,8 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, damage `high`
-- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
-- **Damage types**: Physical `high`, Max HP-based damage `low`, True damage `high`
+- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `low`
+- **Damage types**: Physical `high`, Max HP-based damage `medium`, True damage `medium`
 
 ##### Ultimate
 
@@ -7370,8 +7351,8 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 **Damage**
 
 - Sylphira (100% `True damage` `Max HP-based damage`)
-- Silven (85% `True damage`)
-- Shadewing (78% `Max HP-based damage` `True damage`)
+- Faramor (73% `True damage` `Physical`)
+- Frieren (62% `True damage`)
 
 **Crowd Control**
 
@@ -7504,7 +7485,7 @@ Nerion also requires units **applying crowd control** to enemies
 #### Damage types dealt by Nerion
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Self, Single target
+- Magic — Area, Single target
 
 #### Debuffs provided by Nerion
 
@@ -7597,7 +7578,7 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 #### Damage types dealt by Niru
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Self, Single target
+- Magic — All units, Single target
 - HP loss — Single target — `low`
 
 ## Odie
@@ -7701,7 +7682,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
-- **Ultimate**: speed `slow`, debuffs `medium`, damage `medium`
+- **Ultimate**: speed `slow`, debuffs `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 - **Damage types**: Magic `medium`
 
@@ -7767,9 +7748,9 @@ Pandora provides Energy recovery to single targets `low`, Healing to single targ
 
 **Damage**
 
+- Aurora (100% `Magic`)
+- Bonnie (100% `Magic`)
 - Contess (100% `Magic`)
-- Cryonaia (100% `Magic`)
-- Cyran (100% `Magic`)
 
 ### Summary for Pandora
 
@@ -7780,7 +7761,7 @@ Pandora provides Energy recovery to single targets `low`, Healing to single targ
 #### Damage types dealt by Pandora
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Single target
+- Magic — Single target
 
 #### Debuffs provided by Pandora
 
@@ -7982,7 +7963,7 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 #### Damage types dealt by Parisa
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Multiple targets, Self, Single target
+- Magic — Area, Multiple targets, Single target
 
 ## Perseus
 
@@ -7995,9 +7976,9 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Physical `high`, True damage `low`
+- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -8067,17 +8048,16 @@ Perseus provides ATK buff to multiple targets `medium`.
 
 **Damage**
 
-- Athalia (100% `Physical` `True damage`)
-- Baelran (100% `Physical` `True damage`)
-- Faramor (100% `Physical` `True damage`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
+- Athalia (100% `Physical`)
 
 ### Summary for Perseus
 
 #### Damage types dealt by Perseus
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Self, Single target
-- True damage — Multiple targets — `low`
+- Physical — Area
 
 #### Crowd Control provided by Perseus
 
@@ -8100,7 +8080,7 @@ Perseus provides ATK buff to multiple targets `medium`.
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `low`
 - **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
 - **Damage types**: Magic `medium`
 
 ##### Ultimate
@@ -8202,7 +8182,7 @@ Phraesto provides Damage taken reduction to single targets `low`, Max HP buff to
 
 - **Signature skill (ultimate)**: speed `normal`, damage `medium`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
-- **Damage types**: Magic `medium`, Max HP-based damage `low`, True damage `medium`
+- **Damage types**: Magic `medium`, Max HP-based damage `low`, True damage `low`
 
 ##### Ultimate
 
@@ -8425,10 +8405,10 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, heal `medium`, damage `high`
+- **Signature skill**: speed `fast`, first cast speed `fast`, heal `medium`
 - **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, debuffs `medium`
+- **Damage types**: Magic `medium`
 
 ##### Ultimate
 
@@ -8474,7 +8454,7 @@ Common buffers are **Solise**, **Rowan**, or **Velara**.
 
 Reinier provides ATK buff (Legendary+) to single targets `low`.
 
-- Bonnie (2.2 / 5)
+- Bonnie (2.1 / 5)
 - Himmel (2.0 / 5)
 - Indris (1.4 / 5)
 
@@ -8488,9 +8468,9 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 **Damage**
 
+- Aurora (100% `Magic`)
+- Bonnie (100% `Magic`)
 - Contess (100% `Magic`)
-- Cryonaia (100% `Magic`)
-- Cyran (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -8507,7 +8487,7 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 #### Damage types dealt by Reinier
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Multiple targets, Single target
+- Magic — Multiple targets, Single target
 
 #### Debuffs provided by Reinier
 
@@ -8832,7 +8812,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Saida
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Multiple targets, Single target
+- Magic — All units, Area, Single target
 
 #### Debuffs provided by Saida
 
@@ -9067,7 +9047,7 @@ Satrana provides Damage taken reduction (Legendary+) to single targets `medium`.
 - **Signature skill**: speed `fast`, damage `low`
 - **Ultimate**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `high`, True damage `low`
+- **Damage types**: Physical `high`
 
 ##### Ultimate
 
@@ -9125,9 +9105,9 @@ Scarlita provides Shield to single targets `low`.
 
 **Damage**
 
-- Athalia (100% `Physical` `True damage`)
-- Baelran (100% `Physical` `True damage`)
-- Dionel (100% `Physical` `True damage`)
+- Alna (100% `Physical`)
+- Athalia (100% `Physical`)
+- Dionel (100% `Physical`)
 
 **Crowd Control**
 
@@ -9145,7 +9125,6 @@ Scarlita provides Shield to single targets `low`.
 
 - Primary damage type (unit): **Physical**
 - Physical — All units, Arc, Area, Single target
-- True damage — Multiple targets — `low`
 
 #### Crowd Control provided by Scarlita
 
@@ -9168,7 +9147,7 @@ Scarlita provides Shield to single targets `low`.
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
-- **Damage types**: Physical `low`
+- **Damage types**: Physical `low`, HP loss `medium`
 
 ##### Ultimate
 
@@ -9236,9 +9215,9 @@ Seth provides Crit buff to single targets `low` and Lifedrain buff to single tar
 
 **Damage**
 
-- Aliceth (100% `Physical`)
-- Athalia (100% `Physical`)
-- Faramor (100% `Physical`)
+- Aliceth (100% `HP loss` `Physical`)
+- Athalia (100% `HP loss` `Physical`)
+- Faramor (100% `HP loss` `Physical`)
 
 **Debuffs on enemies**
 
@@ -9262,8 +9241,8 @@ Seth provides Crit buff to single targets `low` and Lifedrain buff to single tar
 #### Damage types dealt by Seth
 
 - Primary damage type (unit): **Physical**
-- Physical — Self, Single target
-- HP loss — Self
+- Physical — Single target
+- HP loss — Single target
 
 #### Debuffs provided by Seth
 
@@ -9287,7 +9266,7 @@ Seth provides Crit buff to single targets `low` and Lifedrain buff to single tar
 - **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 - **Ultimate**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Magic `high`, DoT `medium`, HP loss `low`, Max HP-based damage `high`, True damage `low`
+- **Damage types**: Magic `high`, DoT `low`, HP loss `low`, Max HP-based damage `high`
 
 ##### Ultimate
 
@@ -9353,7 +9332,6 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 - DoT — Single target
 - HP loss — Single target — `low`
 - Max HP-based damage — All units — `high`
-- True damage — Single target — `low`
 
 #### Debuffs provided by Shadewing
 
@@ -9371,7 +9349,7 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
 - **Damage types**: Physical `high`
 
 ##### Ultimate
@@ -9467,7 +9445,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Shakir
 
 - Primary damage type (unit): **Physical**
-- Physical — Arc, Area, Multiple targets, Single target
+- Physical — Arc, Area
 
 #### Debuffs provided by Shakir
 
@@ -9544,15 +9522,15 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 **Damage**
 
 - Shadewing (100% `Max HP-based damage` `Magic`)
+- Silven (89% `Max HP-based damage` `Magic`)
 - Gunnar (83% `Max HP-based damage`)
-- Silven (82% `Magic`)
 
 ### Summary for Shemira
 
 #### Damage types dealt by Shemira
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Self, Single target
+- Magic — All units, Area, Single target
 - Max HP-based damage — Area, Single target — `high`
 
 ## Silven
@@ -9569,7 +9547,7 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 - **Signature skill**: speed `fast`, damage `high`
 - **Ultimate**: speed `fast`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
-- **Damage types**: Magic `high`, True damage `low`
+- **Damage types**: Magic `medium`, Max HP-based damage `low`
 
 ##### Ultimate
 
@@ -9626,6 +9604,11 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 ### Units that can act as a replacement for Silven
 
+**Damage**
+
+- Gwyneth (100% `Max HP-based damage`)
+- Gunnar (86% `Max HP-based damage`)
+
 **Crowd Control**
 
 - Baelran (100% `Knock down`)
@@ -9635,9 +9618,8 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 #### Damage types dealt by Silven
 
 - Primary damage type (unit): **Magic**
-- Magic — Self, Single target
-- Max HP-based damage — Self
-- True damage — Single target — `low`
+- Magic — Single target
+- Max HP-based damage — Single target
 
 #### Crowd Control provided by Silven
 
@@ -9655,7 +9637,7 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, debuffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`
 - **Damage types**: Physical `medium`
 
 ##### Ultimate
@@ -9756,7 +9738,7 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, damage `medium`
+- **Signature skill (ultimate)**: speed `normal`
 - **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
 - **Damage types**: Physical `medium`
 
@@ -9827,7 +9809,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 #### Damage types dealt by Sinbad
 
 - Primary damage type (unit): **Physical**
-- Physical — Multiple targets, Self, Single target
+- Physical — Multiple targets, Single target
 
 #### Debuffs provided by Sinbad
 
@@ -9854,7 +9836,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`
 - **Damage types**: Magic `medium`
 
 ##### Ultimate
@@ -9956,7 +9938,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Smokey & Meerky
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Multiple targets, Single target
+- Magic — Area
 
 #### Crowd Control provided by Smokey & Meerky
 
@@ -9975,7 +9957,7 @@ These are the **10** strongest pairings:
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, heal `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`
 - **Damage types**: Magic `high`
 
 ##### Ultimate
@@ -10066,7 +10048,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Solise
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Multiple targets, Single target
+- Magic — All units
 
 #### Crowd Control provided by Solise
 
@@ -10170,7 +10152,7 @@ Sonja provides ATK buff to multiple targets `low`.
 #### Damage types dealt by Sonja
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Single target
+- Physical — Area
 
 #### Crowd Control provided by Sonja
 
@@ -10347,14 +10329,6 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 - Bonnie (3.4 / 5)
 - Nerion (3.1 / 5)
 - Indris (2.3 / 5)
-
-### Units that can act as a replacement for Sylphira
-
-**Damage**
-
-- Silven (85% `Magic` `True damage`)
-- Shadewing (81% `Magic` `Max HP-based damage` `True damage`)
-
 ### Summary for Sylphira
 
 #### Sylphira Provides
@@ -10483,7 +10457,7 @@ Talene provides Healing in an area `low` and Healing over time in an area `low`.
 #### Damage types dealt by Talene
 
 - Primary damage type (unit): **Magic**
-- Magic — Area, Single target
+- Magic — Area
 - HP loss — All units — `medium`
 
 #### Crowd Control provided by Talene
@@ -10580,7 +10554,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 - Primary damage type (unit): **Magic**
 - Magic — All units, Area, Single target
-- DoT — All units, Single target
+- DoT — All units
 
 #### Crowd Control provided by Tasi
 
@@ -10600,7 +10574,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 - **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, damage `low`
-- **Damage types**: Physical `high`, Max HP-based damage `high`, True damage `low`
+- **Damage types**: Physical `high`, Max HP-based damage `high`
 
 ##### Ultimate
 
@@ -10662,9 +10636,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 **Damage**
 
-- Korin (100% `Physical` `Max HP-based damage` `True damage`)
-- Nara (100% `Max HP-based damage` `Physical` `True damage`)
-- Shadewing (97% `Max HP-based damage` `True damage`)
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Gwyneth (100% `Physical` `Max HP-based damage`)
+- Himmel (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -10687,9 +10661,8 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 #### Damage types dealt by Temesia
 
 - Primary damage type (unit): **Physical**
-- Physical — All units, Area, Self, Single target
+- Physical — All units, Area, Single target
 - Max HP-based damage — Single target — `high`
-- True damage — Single target — `low`
 
 #### Debuffs provided by Temesia
 
@@ -10713,10 +10686,10 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `medium`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`
 - **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
-- **Damage types**: Physical `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -10795,7 +10768,7 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 #### Damage types dealt by Thador
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Self, Single target
+- Physical — Area, Single target
 
 #### Debuffs provided by Thador
 
@@ -10819,8 +10792,8 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 
 - **Signature skill**: speed `fast`
 - **Ultimate**: speed `slow`, buffs `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`
-- **Damage types**: Physical `low`
+- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Damage types**: Physical `medium`
 
 ##### Ultimate
 
@@ -10898,7 +10871,7 @@ Thoran provides Lifedrain buff to single targets `low`.
 #### Damage types dealt by Thoran
 
 - Primary damage type (unit): **Physical**
-- Physical — Self, Single target
+- Physical — Single target
 
 #### Crowd Control provided by Thoran
 
@@ -11127,7 +11100,7 @@ Ulmus provides Healing over time to single targets `low` and Shield to single ta
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
-- **Damage types**: Physical `medium`, HP loss `medium`, True damage `medium`
+- **Damage types**: Physical `medium`, HP loss `low`, True damage `low`
 
 ##### Ultimate
 
@@ -11199,9 +11172,9 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 **Damage**
 
-- Athalia (100% `HP loss` `True damage` `Physical`)
 - Faramor (100% `HP loss` `True damage` `Physical`)
-- Perseus (78% `True damage` `Physical`)
+- Aliceth (65% `HP loss` `Physical`)
+- Athalia (65% `HP loss` `Physical`)
 
 **Debuffs on enemies**
 
@@ -11441,7 +11414,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Valka
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Self, Single target
+- Physical — Area, Single target
 - Max HP-based damage — Area — `medium`
 
 #### Crowd Control provided by Valka
@@ -11563,7 +11536,7 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Velara
 
 - Primary damage type (unit): **Magic**
-- Magic — All units, Area, Multiple targets, Single target
+- Magic — All units, Area, Multiple targets
 
 #### Debuffs provided by Velara
 
@@ -11586,7 +11559,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: speed `slow`, damage `low`
 - **Ultimate**: speed `normal`, first cast speed `fast`, heal `medium`, damage `high`
-- **Non-ultimate**: speed `slow`, heal `medium`, debuffs `medium`, damage `medium`
+- **Non-ultimate**: speed `slow`, heal `medium`, debuffs `medium`, damage `low`
 - **Damage types**: Magic `high`
 
 ##### Ultimate
@@ -11861,7 +11834,7 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 #### Damage types dealt by Zandrok
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Multiple targets, Self, Single target
+- Physical — Area, Single target
 
 #### Crowd Control provided by Zandrok
 
@@ -11880,8 +11853,7 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Damage types**: Physical `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`
 
 ##### Ultimate
 
@@ -11963,7 +11935,7 @@ Zanie provides Healing to single targets `high`, Shield to single targets `high`
 #### Damage types dealt by Zanie
 
 - Primary damage type (unit): **Physical**
-- Physical — Area, Self, Single target
+- Physical — Area, Single target
 
 #### Debuffs provided by Zanie
 
@@ -11987,7 +11959,7 @@ Zanie provides Healing to single targets `high`, Shield to single targets `high`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 - **Damage types**: Magic `high`, HP loss `high`
 
@@ -12074,7 +12046,7 @@ Zorya also requires allies **casting ultimates**
 #### Damage types dealt by Zorya
 
 - Primary damage type (unit): **Magic**
-- Magic — Arc, Area, Single target
+- Magic — Arc, Area
 - HP loss — Area — `high`
 
 #### Crowd Control provided by Zorya

@@ -3096,25 +3096,24 @@
         ],
         "damage": [
           {
-            "name": "Faramor",
-            "score": 0.9985,
+            "name": "Aliceth",
+            "score": 1.0,
             "matches": [
               "Physical",
-              "HP loss",
-              "True damage"
+              "HP loss"
             ]
           },
           {
-            "name": "Shadewing",
-            "score": 0.6926,
+            "name": "Faramor",
+            "score": 0.9706,
             "matches": [
-              "HP loss",
-              "True damage"
+              "Physical",
+              "HP loss"
             ]
           },
           {
-            "name": "Aliceth",
-            "score": 0.6689,
+            "name": "Kordan",
+            "score": 0.7846,
             "matches": [
               "Physical",
               "HP loss"
@@ -3782,15 +3781,7 @@
         "energy": [],
         "healing": [],
         "similar_skills": [],
-        "damage": [
-          {
-            "name": "Silven",
-            "score": 0.6894,
-            "matches": [
-              "True damage"
-            ]
-          }
-        ],
+        "damage": [],
         "debuff": [
           {
             "name": "Contess",
@@ -4280,20 +4271,20 @@
           "score": 15.0
         },
         {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Enables Debuff on target via ATK debuff (all units)",
-            "Enables Magic damage from allies via Magic damage + all enemies (all units)"
-          ],
-          "score": 13.5
-        },
-        {
           "provider": "Saida - Vampiric Vine",
           "reasons": [
             "Enables Debuff on target via Energy drain (single target)",
             "Enables Magic damage from allies via Magic damage + all enemies (all units)"
           ],
           "score": 12.75
+        },
+        {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Enables Debuff on target via ATK debuff (all units)",
+            "Enables Magic damage from allies via Magic damage (single target)"
+          ],
+          "score": 12.5
         },
         {
           "provider": "Aliceth - Radiant Wings",
@@ -4356,9 +4347,9 @@
           "reasons": [
             "ATK via ATK buff (single target, low)",
             "Enables Debuff on target via ATK debuff (single target)",
-            "Enables Magic damage from allies via Magic damage + all enemies (all units)"
+            "Enables Magic damage from allies via Magic damage (multiple targets)"
           ],
-          "score": 9.75
+          "score": 8.75
         },
         {
           "provider": "Galahad - Daughter of Dawn",
@@ -4687,13 +4678,6 @@
           "score": 6.0
         },
         {
-          "provider": "Hewynn - Tender Leaf",
-          "reasons": [
-            "Enables Magic damage from allies via Magic damage + all enemies (all units)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Hodgkin - Reviled Captain",
           "reasons": [
             "Enables Debuff on target via Energy drain (area)"
@@ -4704,13 +4688,6 @@
           "provider": "Koko - Wild Child",
           "reasons": [
             "Enables Debuff on target via Damage taken debuff (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Lorsan - Windweaver Protector",
-          "reasons": [
-            "Enables Magic damage from allies via Magic damage + all enemies (all units)"
           ],
           "score": 6.0
         },
@@ -4730,6 +4707,20 @@
         },
         {
           "provider": "Arden - Oak Sage",
+          "reasons": [
+            "Enables Magic damage from allies via Magic damage (area)"
+          ],
+          "score": 5.0
+        },
+        {
+          "provider": "Hewynn - Tender Leaf",
+          "reasons": [
+            "Enables Magic damage from allies via Magic damage (single target)"
+          ],
+          "score": 5.0
+        },
+        {
+          "provider": "Lorsan - Windweaver Protector",
           "reasons": [
             "Enables Magic damage from allies via Magic damage (area)"
           ],
@@ -8481,19 +8472,18 @@
             ]
           },
           {
-            "name": "Shadewing",
-            "score": 0.9858,
-            "matches": [
-              "Magic",
-              "True damage"
-            ]
-          },
-          {
             "name": "Sylphira",
             "score": 0.972,
             "matches": [
               "True damage",
               "Magic"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.839,
+            "matches": [
+              "True damage"
             ]
           }
         ],
@@ -9325,14 +9315,6 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "True damage"
-            ]
-          },
-          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
@@ -9346,6 +9328,13 @@
             "matches": [
               "True damage",
               "Physical"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 1.0,
+            "matches": [
+              "True damage"
             ]
           }
         ],
@@ -11264,16 +11253,7 @@
         "energy": [],
         "healing": [],
         "similar_skills": [],
-        "damage": [
-          {
-            "name": "Shadewing",
-            "score": 0.7058,
-            "matches": [
-              "HP loss",
-              "True damage"
-            ]
-          }
-        ],
+        "damage": [],
         "debuff": [],
         "cc": [
           {
@@ -11987,10 +11967,9 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.8319,
+            "name": "Baelran",
+            "score": 0.7488,
             "matches": [
-              "Magic",
               "True damage"
             ]
           }
@@ -13580,6 +13559,13 @@
             "score": 1.0,
             "matches": [
               "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Silven",
+            "score": 1.0,
+            "matches": [
               "Max HP-based damage"
             ]
           },
@@ -15284,14 +15270,14 @@
             ]
           },
           {
-            "name": "Callan",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Aurora",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -18908,6 +18894,13 @@
         ],
         "damage": [
           {
+            "name": "Aliceth",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
             "name": "Alna",
             "score": 1.0,
             "matches": [
@@ -18916,13 +18909,6 @@
           },
           {
             "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical"
-            ]
-          },
-          {
-            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -19838,29 +19824,27 @@
         ],
         "damage": [
           {
-            "name": "Nara",
+            "name": "Brutus",
             "score": 1.0,
             "matches": [
               "Max HP-based damage",
-              "True damage",
               "Physical"
             ]
           },
           {
-            "name": "Shadewing",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Max HP-based damage",
-              "True damage"
+              "Physical"
             ]
           },
           {
-            "name": "Temesia",
+            "name": "Nara",
             "score": 1.0,
             "matches": [
-              "Physical",
               "Max HP-based damage",
-              "True damage"
+              "Physical"
             ]
           }
         ],
@@ -22070,21 +22054,21 @@
         ],
         "damage": [
           {
-            "name": "Callan",
+            "name": "Aurora",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Berial",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Contess",
+            "name": "Bonnie",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -25046,14 +25030,6 @@
         ],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "True damage"
-            ]
-          },
-          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
@@ -25063,6 +25039,14 @@
           },
           {
             "name": "Dionel",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -25941,6 +25925,13 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Aliceth",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
             "name": "Alna",
             "score": 1.0,
             "matches": [
@@ -25949,13 +25940,6 @@
           },
           {
             "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical"
-            ]
-          },
-          {
-            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -26325,14 +26309,6 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Shadewing",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "True damage"
-            ]
-          },
-          {
             "name": "Indris",
             "score": 0.8431,
             "matches": [
@@ -26347,6 +26323,14 @@
             "matches": [
               "True damage",
               "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Sylphira",
+            "score": 0.831,
+            "matches": [
+              "True damage",
               "Max HP-based damage"
             ]
           }
@@ -26918,17 +26902,17 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.8587,
+            "name": "Faramor",
+            "score": 0.7312,
             "matches": [
-              "True damage"
+              "True damage",
+              "Physical"
             ]
           },
           {
-            "name": "Shadewing",
-            "score": 0.7812,
+            "name": "Frieren",
+            "score": 0.6262,
             "matches": [
-              "Max HP-based damage",
               "True damage"
             ]
           }
@@ -28516,21 +28500,21 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
             "name": "Contess",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Cryonaia",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -29681,27 +29665,24 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Aliceth",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
             "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "True damage"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "True damage"
-            ]
-          },
-          {
-            "name": "Faramor",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "True damage"
+              "Physical"
             ]
           }
         ],
@@ -30821,7 +30802,7 @@
       ],
       "beneficiaries": [
         {
-          "score": 9.75,
+          "score": 8.75,
           "name": "Bonnie"
         },
         {
@@ -30865,21 +30846,21 @@
         "similar_skills": [],
         "damage": [
           {
+            "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
             "name": "Contess",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Cryonaia",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -32902,27 +32883,24 @@
         ],
         "damage": [
           {
-            "name": "Athalia",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "True damage"
+              "Physical"
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "True damage"
+              "Physical"
             ]
           },
           {
             "name": "Dionel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "True damage"
+              "Physical"
             ]
           }
         ],
@@ -33357,6 +33335,7 @@
             "name": "Aliceth",
             "score": 1.0,
             "matches": [
+              "HP loss",
               "Physical"
             ]
           },
@@ -33364,6 +33343,7 @@
             "name": "Athalia",
             "score": 1.0,
             "matches": [
+              "HP loss",
               "Physical"
             ]
           },
@@ -33371,6 +33351,7 @@
             "name": "Faramor",
             "score": 1.0,
             "matches": [
+              "HP loss",
               "Physical"
             ]
           }
@@ -34814,17 +34795,18 @@
             ]
           },
           {
+            "name": "Silven",
+            "score": 0.8925,
+            "matches": [
+              "Max HP-based damage",
+              "Magic"
+            ]
+          },
+          {
             "name": "Gunnar",
             "score": 0.8375,
             "matches": [
               "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Silven",
-            "score": 0.825,
-            "matches": [
-              "Magic"
             ]
           }
         ],
@@ -35367,7 +35349,22 @@
         "energy": [],
         "healing": [],
         "similar_skills": [],
-        "damage": [],
+        "damage": [
+          {
+            "name": "Gwyneth",
+            "score": 1.0,
+            "matches": [
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Gunnar",
+            "score": 0.86,
+            "matches": [
+              "Max HP-based damage"
+            ]
+          }
+        ],
         "debuff": [],
         "cc": [
           {
@@ -37841,25 +37838,7 @@
         "energy": [],
         "healing": [],
         "similar_skills": [],
-        "damage": [
-          {
-            "name": "Silven",
-            "score": 0.8523,
-            "matches": [
-              "Magic",
-              "True damage"
-            ]
-          },
-          {
-            "name": "Shadewing",
-            "score": 0.8193,
-            "matches": [
-              "Magic",
-              "Max HP-based damage",
-              "True damage"
-            ]
-          }
-        ],
+        "damage": [],
         "debuff": [],
         "cc": []
       }
@@ -39185,29 +39164,27 @@
         ],
         "damage": [
           {
-            "name": "Korin",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
-              "True damage"
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Nara",
+            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Physical",
-              "True damage"
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Shadewing",
-            "score": 0.9789,
+            "name": "Himmel",
+            "score": 1.0,
             "matches": [
-              "Max HP-based damage",
-              "True damage"
+              "Physical",
+              "Max HP-based damage"
             ]
           }
         ],
@@ -41235,15 +41212,6 @@
         ],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "HP loss",
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
             "name": "Faramor",
             "score": 1.0,
             "matches": [
@@ -41253,10 +41221,18 @@
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.783,
+            "name": "Aliceth",
+            "score": 0.6525,
             "matches": [
-              "True damage",
+              "HP loss",
+              "Physical"
+            ]
+          },
+          {
+            "name": "Athalia",
+            "score": 0.6525,
+            "matches": [
+              "HP loss",
               "Physical"
             ]
           }

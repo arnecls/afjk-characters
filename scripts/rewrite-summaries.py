@@ -2728,9 +2728,9 @@ def _accumulate_true_damage_scores(hero: Hero, primary_dmg: str) -> None:
     for _tier, text, _section in hero.skill_chunks:
         if _chunk_is_companion_focused(text):
             continue
-        if _skill_chunk_has_ally_only_damage(text):
+        if not _chunk_deals_enemy_damage(text, primary_dmg):
             continue
-        tgt = detect_targeting(text)
+        tgt = detect_damage_targeting(text)
         for d in detect_damage_types(text, primary_dmg):
             if d not in TRUE_DAMAGE_TYPES:
                 continue
@@ -2751,7 +2751,18 @@ def _is_non_dealt_damage_context(text: str) -> bool:
             r"(?:reduc\w+|reduced) (?:the )?damage taken|"
             r"damage reduction|"
             r"extends? this skill'?s? damage and control|"
-            r"damage taken (?:by|is increased|during battle)",
+            r"damage taken (?:by|is increased|during battle)|"
+            r"(?:increases?|enhanc(?:es|ing)) (?:the )?(?:\w+ )?"
+            r"(?:\w+ )?damage (?:dealt )?(?:by|during|of|to \d+%)|"
+            r"converts? \d+%.{0,40}damage absorbed|"
+            r"(?:shield|absorb(?:s|ing)?).{0,50}\d+%.{0,30}\bdamage\b|"
+            r"(?:critical|crit) damage is increased|"
+            r"cumulative damage taken|"
+            r"excess damage is reduced|"
+            r"defensive magic on herself|"
+            r"(?:ultimate|skill|normal attack) damage (?:increases?|by \d+%)|"
+            r"increases? \w+'s damage during (?:her |his |the )|"
+            r"normal attack damage by \d+% for.{0,30}(?:herself|himself)",
             t,
         )
     )
@@ -2804,8 +2815,23 @@ def _skill_chunk_has_enemy_damage(text: str) -> bool:
     """True when a skill chunk deals damage to enemies."""
     if _chunk_targets_enemies(text):
         return True
+    t = text.lower()
+    if re.search(
+        r"\b(?:deal(?:s|t|ing)?|dealing|inflict(?:s|ing)?|"
+        r"bombard(?:s|ing)?|attack(?:s|ing)?|strike(?:s|ing)?|"
+        r"shoot(?:s|ing)?|kick(?:s|ing)?|slash(?:es|ing)?|"
+        r"drain(?:s|ing)?|pounce(?:s|ing)?|fire(?:s|ing)?)\b",
+        t,
+    ) and re.search(
+        r"\b(?:the target|an enemy|enemies?|target'?s?|weakest enemy|"
+        r"frontmost enemy|rearmost enemy|foes?)\b",
+        t,
+    ):
+        return True
     if re.search(r"\(atk-based\).{0,60}\bdamage\b", text, re.I) and re.search(
-        r"\b(?:the target|an enemy|enemies?)\b", text, re.I
+        r"\b(?:the target|an enemy|enemies?|target'?s?|weakest enemy|"
+        r"frontmost enemy|rearmost enemy)\b",
+        t,
     ):
         return True
     return False
@@ -2825,6 +2851,66 @@ def _skill_chunk_has_ally_only_damage(text: str) -> bool:
         or re.search(r"\b(?:true )?damage\b.{0,50}\bto (?:all )?allies\b", t)
     )
     return ally_damage and not _skill_chunk_has_enemy_damage(text)
+
+
+def _detect_targeting_enemy_override(text: str) -> str:
+    """Re-derive targeting when generic detect_targeting returned Self."""
+    t = text.lower()
+    if re.search(r"\ball enemies\b", t) and not re.search(
+        r"\ball enemies (?:within |along |around |in (?:a |\d+-tile )?arc)", t
+    ):
+        return "All units"
+    if re.search(r"\bin an arc\b|\b1-tile arc\b|\btile arc\b", t):
+        return "Arc"
+    if re.search(r"\badjacent\b", t):
+        return "Area"
+    if re.search(
+        r"\b(?:area|within \d+ tiles?|surrounding|in (?:its|the) path)\b", t
+    ):
+        return "Area"
+    if re.search(r"\b\d+ (?:closest|nearest|random|different)? ?enemies\b", t):
+        return "Multiple targets"
+    return "Single target"
+
+
+def detect_damage_targeting(text: str) -> str:
+    """Targeting for enemy-dealt damage in a skill chunk."""
+    tgt = detect_targeting(text)
+    if tgt == "Self":
+        return _detect_targeting_enemy_override(text)
+    return tgt
+
+
+def _chunk_deals_enemy_damage(text: str, primary_dmg: str = "Physical") -> bool:
+    """True when a skill chunk describes damage dealt to enemies."""
+    if _skill_chunk_has_ally_only_damage(text):
+        return False
+    if not detect_damage_types(text, primary_dmg):
+        return False
+    if _is_non_dealt_damage_context(text):
+        return False
+    t = text.lower()
+    if _skill_chunk_has_enemy_damage(text):
+        return True
+    if _text_has_max_hp_damage(text) and re.search(
+        r"\b(?:deal(?:s|t|ing)?|dealing|enhanced attacks? deal)\b", t
+    ):
+        return True
+    if _text_has_lost_hp_damage(text) and re.search(r"\bdeals?\b", t):
+        return True
+    if re.search(r"normal attacks? deal", t):
+        return True
+    if re.search(r"\bdrain(?:s|ing)? \d+%", t) and re.search(
+        r"\b(?:target|enemy)", t
+    ):
+        return True
+    if re.search(
+        r"\b(?:voidling|ghost|turret|snowball|laser turret|gun turret)\b", t
+    ) and re.search(r"\b(?:attack|deal|fire).{0,80}\benem", t):
+        return True
+    if re.search(r"absorb(?:s|ing)? \d+%.{0,80}enemy", t):
+        return True
+    return False
 
 
 def _debuff_match_is_ally_atk_penalty(clause: str) -> bool:
@@ -2958,8 +3044,8 @@ def analyze_text(
                 source_section=source_section,
             )
 
-    if not _skill_chunk_has_ally_only_damage(text):
-        tgt = detect_targeting(text)
+    if _chunk_deals_enemy_damage(text, primary_dmg):
+        tgt = detect_damage_targeting(text)
         for d in detect_damage_types(text, primary_dmg):
             damage_map.setdefault(d, set()).add(tgt)
 
@@ -4962,9 +5048,9 @@ def _section_damage_score(
             continue
         if _chunk_is_companion_focused(text):
             continue
-        if _skill_chunk_has_ally_only_damage(text):
+        if not _chunk_deals_enemy_damage(text, primary_dmg):
             continue
-        tgt = detect_targeting(text)
+        tgt = detect_damage_targeting(text)
         for dmg_type in detect_damage_types(text, primary_dmg):
             score = _score_damage_chunk(
                 text, dmg_type, tgt, section=section, skills=skills
@@ -4985,9 +5071,9 @@ def _section_damage_type_scores(
             continue
         if _chunk_is_companion_focused(text):
             continue
-        if _skill_chunk_has_ally_only_damage(text):
+        if not _chunk_deals_enemy_damage(text, primary_dmg):
             continue
-        tgt = detect_targeting(text)
+        tgt = detect_damage_targeting(text)
         for dmg_type in detect_damage_types(text, primary_dmg):
             score = _score_damage_chunk(
                 text, dmg_type, tgt, section=section, skills=skills

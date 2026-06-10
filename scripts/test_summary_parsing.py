@@ -268,6 +268,36 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertNotIn("Self", physical[1])
         self.assertIn("All units", physical[1])
 
+    def test_brutus_damage_excludes_self_targeting(self):
+        hero = _hero_by_short_name("Brutus")
+        for dt, tgt in hero.damage_entries:
+            self.assertNotIn("Self", tgt, dt)
+
+    def test_seth_damage_excludes_self_targeting(self):
+        hero = _hero_by_short_name("Seth")
+        for dt, tgt in hero.damage_entries:
+            self.assertNotIn("Self", tgt, dt)
+        hp_loss = next(e for e in hero.damage_entries if e[0] == "HP loss")
+        self.assertIn("Single target", hp_loss[1])
+
+    def test_alsa_ex_skill_not_counted_as_self_damage(self):
+        hero = _hero_by_short_name("Alsa")
+        for dt, tgt in hero.damage_entries:
+            self.assertNotIn("Self", tgt, dt)
+
+    def test_no_hero_damage_entries_use_self_targeting(self):
+        text = rs.HEROES_MD.read_text(encoding="utf-8")
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+        offenders: list[str] = []
+        for block in blocks:
+            hero = rs.parse_hero_block(block)
+            rs.analyze_hero(hero)
+            short = hero.title.split(" - ")[0]
+            for dt, tgt in hero.damage_entries:
+                if "Self" in tgt:
+                    offenders.append(f"{short}: {dt} -> {tgt}")
+        self.assertEqual(offenders, [])
+
     def test_healing_throughput_favors_faster_cadence(self):
         fast = _hero_with_magnitudes("Fay")
         slow = _hero_with_magnitudes("Hewynn")

@@ -300,7 +300,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Single target"
+          "Area, Single target"
         ],
         [
           "hp_loss",
@@ -886,7 +886,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -916,7 +916,7 @@
             "buffs": "medium",
             "debuffs": "medium",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "medium"
             }
           },
           "ultimate": {
@@ -927,7 +927,7 @@
             "buffs": "medium",
             "debuffs": "medium",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "medium"
             }
           },
           "non_ultimate": {
@@ -1156,7 +1156,7 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area, Self, Single target"
+          "Arc, Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -1330,7 +1330,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Multiple targets, Single target"
+          "Area, Multiple targets"
         ]
       ],
       "damage_magnitudes": {},
@@ -1597,23 +1597,23 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "medium"
+              "Physical": "low"
             }
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "medium"
+              "Physical": "low"
             }
           },
           "non_ultimate": {
@@ -1850,10 +1850,6 @@
         [
           "hp_loss",
           "All units"
-        ],
-        [
-          "true",
-          "Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -1889,8 +1885,7 @@
             "debuffs": "medium",
             "damage_types": {
               "HP loss": "high",
-              "Physical": "high",
-              "True damage": "medium"
+              "Physical": "high"
             }
           },
           "ultimate": {
@@ -1902,8 +1897,7 @@
             "debuffs": "medium",
             "damage_types": {
               "HP loss": "high",
-              "Physical": "high",
-              "True damage": "medium"
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -2104,7 +2098,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Multiple targets, Single target"
+          "Area, Multiple targets"
         ]
       ],
       "damage_magnitudes": {},
@@ -2405,7 +2399,7 @@
         ],
         [
           "true",
-          "Arc, Area, Single target"
+          "Arc, Area"
         ]
       ],
       "damage_magnitudes": {
@@ -2439,7 +2433,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "medium",
               "Physical": "medium"
             }
           },
@@ -2451,7 +2445,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "medium",
               "Physical": "medium"
             }
           },
@@ -2463,8 +2457,8 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "medium",
-              "Physical": "high"
+              "Physical": "high",
+              "True damage": "low"
             }
           }
         }
@@ -3117,7 +3111,7 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area, Self, Single target"
+          "Arc, Area, Single target"
         ],
         [
           "dot",
@@ -3125,7 +3119,7 @@
         ],
         [
           "max_hp",
-          "Arc, Self"
+          "Arc, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -3392,7 +3386,7 @@
             "debuffs": "medium",
             "damage_types": {
               "Magic": "high",
-              "DoT": "high"
+              "DoT": "medium"
             }
           },
           "ultimate": {
@@ -3404,18 +3398,18 @@
             "debuffs": "medium",
             "damage_types": {
               "Magic": "high",
-              "DoT": "high"
+              "DoT": "medium"
             }
           },
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "medium"
+              "Magic": "low"
             }
           }
         }
@@ -3602,7 +3596,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -3786,7 +3780,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Self, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -4018,13 +4012,11 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "fast",
-            "damage": "low",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "low"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -4034,18 +4026,18 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "medium"
             }
           },
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "medium"
+              "Magic": "low"
             }
           }
         }
@@ -4344,12 +4336,7 @@
         "provides": [],
         "requires": []
       },
-      "damage_entries": [
-        [
-          "physical",
-          "Single target"
-        ]
-      ],
+      "damage_entries": [],
       "damage_magnitudes": {},
       "benefit_stats": [],
       "behavior": {
@@ -4369,35 +4356,29 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "normal",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "high"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -4711,12 +4692,12 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
             "damage_types": {
-              "Magic": "medium"
+              "Magic": "low"
             }
           }
         }
@@ -5197,7 +5178,7 @@
             "debuffs": "medium",
             "damage_types": {
               "Magic": "low",
-              "True damage": "medium"
+              "True damage": "low"
             }
           }
         }
@@ -5368,7 +5349,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Self, Single target"
+          "Area, Single target"
         ],
         [
           "max_hp",
@@ -5417,7 +5398,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "medium",
+              "Max HP-based damage": "high",
               "Magic": "high"
             }
           },
@@ -5876,7 +5857,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ],
         [
           "true",
@@ -6191,7 +6172,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ],
         [
           "hp_loss",
@@ -6446,7 +6427,7 @@
       "damage_entries": [
         [
           "magic",
-          "Arc, Area, Single target"
+          "Arc, Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -6729,7 +6710,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Multiple targets, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -7481,7 +7462,7 @@
       "damage_entries": [
         [
           "magic",
-          "Arc, Area, Multiple targets, Single target"
+          "Area, Multiple targets"
         ]
       ],
       "damage_magnitudes": {},
@@ -7505,24 +7486,20 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -7949,15 +7926,15 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ],
         [
           "dot",
-          "All units, Single target"
+          "All units"
         ],
         [
           "true",
-          "All units, Single target"
+          "All units"
         ]
       ],
       "damage_magnitudes": {
@@ -8529,7 +8506,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
@@ -8780,7 +8757,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Self, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -9023,7 +9000,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ],
         [
           "dot",
@@ -9288,7 +9265,7 @@
             "debuffs": "medium",
             "damage_types": {
               "Physical": "high",
-              "Max HP-based damage": "low"
+              "Max HP-based damage": "medium"
             }
           }
         }
@@ -9383,12 +9360,7 @@
         "provides": [],
         "requires": []
       },
-      "damage_entries": [
-        [
-          "magic",
-          "Single target"
-        ]
-      ],
+      "damage_entries": [],
       "damage_magnitudes": {},
       "benefit_stats": [
         "atk",
@@ -9411,35 +9383,29 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "normal",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -9740,13 +9706,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "low",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "damage_types": {
-              "Physical": "low"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -9965,7 +9929,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -10154,12 +10118,7 @@
           }
         ]
       },
-      "damage_entries": [
-        [
-          "magic",
-          "All units, Single target"
-        ]
-      ],
+      "damage_entries": [],
       "damage_magnitudes": {},
       "benefit_stats": [
         "atk"
@@ -10181,35 +10140,29 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "none",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "low"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "none",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "low"
-            }
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -10374,7 +10327,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Multiple targets, Self, Single target"
+          "All units, Area, Multiple targets"
         ],
         [
           "max_hp",
@@ -10435,7 +10388,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "medium"
             }
           }
         }
@@ -10614,7 +10567,7 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area, Single target"
+          "Arc, Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -10799,12 +10752,7 @@
         "provides": [],
         "requires": []
       },
-      "damage_entries": [
-        [
-          "physical",
-          "Multiple targets, Single target"
-        ]
-      ],
+      "damage_entries": [],
       "damage_magnitudes": {},
       "benefit_stats": [
         "haste",
@@ -10854,13 +10802,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "none",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "high"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -10991,7 +10937,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Self, Single target"
+          "All units, Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -11250,7 +11196,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Self, Single target"
+          "Area, Multiple targets, Single target"
         ],
         [
           "max_hp",
@@ -11315,7 +11261,7 @@
             "buffs": "medium",
             "debuffs": "medium",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "medium",
               "Physical": "high"
             }
           }
@@ -11557,13 +11503,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -12028,7 +11972,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -12071,12 +12015,12 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "medium"
             }
           }
         }
@@ -12320,7 +12264,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -12331,7 +12275,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -12503,15 +12447,11 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Self, Single target"
+          "Area, Single target"
         ],
         [
           "max_hp",
           "Area"
-        ],
-        [
-          "true",
-          "Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -12562,13 +12502,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "medium",
-              "Physical": "medium",
               "Max HP-based damage": "medium"
             }
           }
@@ -12752,7 +12690,7 @@
           "signature": {
             "speed": "normal",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -12763,7 +12701,7 @@
           "ultimate": {
             "speed": "normal",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
@@ -13314,7 +13252,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -13636,7 +13574,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Self, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -13669,7 +13607,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "medium"
+              "Physical": "low"
             }
           },
           "ultimate": {
@@ -13680,7 +13618,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "medium"
+              "Physical": "low"
             }
           },
           "non_ultimate": {
@@ -13867,7 +13805,7 @@
         ],
         [
           "max_hp",
-          "Self, Single target"
+          "Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -13899,7 +13837,7 @@
             "buffs": "none",
             "debuffs": "medium",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "medium"
             }
           },
           "ultimate": {
@@ -13910,7 +13848,7 @@
             "buffs": "none",
             "debuffs": "medium",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "medium"
             }
           },
           "non_ultimate": {
@@ -14061,7 +13999,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -14109,13 +14047,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "medium",
+            "damage": "none",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -14593,24 +14529,20 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -14968,7 +14900,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -15459,7 +15391,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -15696,7 +15628,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Multiple targets, Single target"
+          "All units, Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -16140,7 +16072,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -16384,7 +16316,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Multiple targets, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -16409,35 +16341,29 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "low"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "low"
-            }
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "low",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "low"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -16569,7 +16495,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -16580,7 +16506,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -16596,7 +16522,7 @@
             "buffs": "none",
             "debuffs": "medium",
             "damage_types": {
-              "Magic": "high",
+              "Magic": "medium",
               "DoT": "low"
             }
           }
@@ -16837,7 +16763,6 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low",
               "Max HP-based damage": "medium"
             }
           }
@@ -17305,7 +17230,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "medium",
               "Physical": "high"
             }
           },
@@ -17317,19 +17242,19 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "medium",
               "Physical": "high"
             }
           },
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
             "damage_types": {
-              "Max HP-based damage": "low",
+              "Max HP-based damage": "medium",
               "Physical": "low"
             }
           }
@@ -17473,7 +17398,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Self, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -17691,7 +17616,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Self, Single target"
+          "All units, Single target"
         ],
         [
           "hp_loss",
@@ -18187,7 +18112,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Single target"
+          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -18225,13 +18150,11 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -18574,7 +18497,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Multiple targets, Self, Single target"
+          "Area, Multiple targets, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -18820,11 +18743,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Self, Single target"
-        ],
-        [
-          "true",
-          "Multiple targets"
+          "Area"
         ]
       ],
       "damage_magnitudes": {
@@ -18852,7 +18771,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -18863,7 +18782,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -18879,8 +18798,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "high",
-              "True damage": "low"
+              "Physical": "high"
             }
           }
         }
@@ -19108,12 +19026,12 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "low",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "medium"
+              "Magic": "low"
             }
           }
         }
@@ -19350,7 +19268,7 @@
             "debuffs": "medium",
             "damage_types": {
               "Magic": "medium",
-              "True damage": "medium"
+              "True damage": "low"
             }
           }
         }
@@ -19942,7 +19860,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Multiple targets, Single target"
+          "Multiple targets, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -19966,13 +19884,11 @@
           "signature": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "none",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "high"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -19988,13 +19904,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "none",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "damage_types": {
-              "Magic": "high"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -20692,7 +20606,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Multiple targets, Single target"
+          "All units, Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -21397,10 +21311,6 @@
         [
           "physical",
           "All units, Arc, Area, Single target"
-        ],
-        [
-          "true",
-          "Multiple targets"
         ]
       ],
       "damage_magnitudes": {
@@ -21432,7 +21342,6 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "low",
               "Physical": "low"
             }
           },
@@ -21455,8 +21364,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "medium",
-              "True damage": "low"
+              "Physical": "medium"
             }
           }
         }
@@ -21673,11 +21581,11 @@
       "damage_entries": [
         [
           "physical",
-          "Self, Single target"
+          "Single target"
         ],
         [
           "hp_loss",
-          "Self"
+          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -21733,6 +21641,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
+              "HP loss": "medium",
               "Physical": "low"
             }
           }
@@ -21948,10 +21857,6 @@
         [
           "max_hp",
           "All units"
-        ],
-        [
-          "true",
-          "Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -22013,9 +21918,8 @@
             "debuffs": "medium",
             "damage_types": {
               "Magic": "high",
-              "DoT": "medium",
-              "Max HP-based damage": "high",
-              "True damage": "low"
+              "DoT": "low",
+              "Max HP-based damage": "high"
             }
           }
         }
@@ -22185,7 +22089,7 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area, Multiple targets, Single target"
+          "Arc, Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -22231,7 +22135,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
@@ -22334,7 +22238,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ],
         [
           "max_hp",
@@ -22545,14 +22449,10 @@
       "damage_entries": [
         [
           "magic",
-          "Self, Single target"
+          "Single target"
         ],
         [
           "max_hp",
-          "Self"
-        ],
-        [
-          "true",
           "Single target"
         ]
       ],
@@ -22587,7 +22487,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "medium"
             }
           },
           "ultimate": {
@@ -22609,8 +22509,8 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high",
-              "True damage": "low"
+              "Magic": "medium",
+              "Max HP-based damage": "low"
             }
           }
         }
@@ -22814,13 +22714,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -23028,7 +22926,7 @@
       "damage_entries": [
         [
           "physical",
-          "Multiple targets, Self, Single target"
+          "Multiple targets, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -23053,24 +22951,20 @@
           "signature": {
             "speed": "normal",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "normal",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -23272,7 +23166,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Multiple targets, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -23320,13 +23214,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "medium"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -23501,7 +23393,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Multiple targets, Single target"
+          "All units"
         ]
       ],
       "damage_magnitudes": {},
@@ -23547,13 +23439,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Magic": "high"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -23681,7 +23571,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -24526,7 +24416,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Single target"
+          "Area"
         ],
         [
           "hp_loss",
@@ -24569,8 +24459,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "HP loss": "medium",
-              "Magic": "low"
+              "HP loss": "medium"
             }
           },
           "ultimate": {
@@ -24581,8 +24470,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "HP loss": "medium",
-              "Magic": "low"
+              "HP loss": "medium"
             }
           },
           "non_ultimate": {
@@ -24813,7 +24701,7 @@
         ],
         [
           "dot",
-          "All units, Single target"
+          "All units"
         ]
       ],
       "damage_magnitudes": {},
@@ -24869,8 +24757,7 @@
             "buffs": "medium",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "medium",
-              "DoT": "low"
+              "Magic": "medium"
             }
           }
         }
@@ -25092,14 +24979,10 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Self, Single target"
+          "All units, Area, Single target"
         ],
         [
           "max_hp",
-          "Single target"
-        ],
-        [
-          "true",
           "Single target"
         ]
       ],
@@ -25158,8 +25041,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low",
-              "True damage": "low"
+              "Physical": "low"
             }
           }
         }
@@ -25333,7 +25215,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Self, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -25364,13 +25246,11 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "fast",
-            "damage": "medium",
+            "damage": "none",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -25386,12 +25266,12 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "medium",
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "medium"
             }
           }
         }
@@ -25554,7 +25434,7 @@
       "damage_entries": [
         [
           "physical",
-          "Self, Single target"
+          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -25605,11 +25485,13 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "none",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -26360,9 +26242,9 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "medium",
+              "True damage": "low",
               "Physical": "medium",
-              "HP loss": "medium"
+              "HP loss": "low"
             }
           },
           "ultimate": {
@@ -26373,9 +26255,9 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "medium",
+              "True damage": "low",
               "Physical": "medium",
-              "HP loss": "medium"
+              "HP loss": "low"
             }
           },
           "non_ultimate": {
@@ -26842,7 +26724,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Self, Single target"
+          "Area, Single target"
         ],
         [
           "max_hp",
@@ -27095,7 +26977,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Multiple targets, Single target"
+          "All units, Area, Multiple targets"
         ]
       ],
       "damage_magnitudes": {},
@@ -27366,12 +27248,12 @@
           "non_ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "medium",
+            "damage": "low",
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
             "damage_types": {
-              "Magic": "medium"
+              "Magic": "low"
             }
           }
         }
@@ -27813,7 +27695,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Self, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -28098,7 +27980,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Self, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -28140,13 +28022,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "medium",
+            "damage": "none",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "damage_types": {
-              "Physical": "medium"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -28379,7 +28259,7 @@
       "damage_entries": [
         [
           "magic",
-          "Arc, Area, Single target"
+          "Arc, Area"
         ],
         [
           "hp_loss",
@@ -28412,7 +28292,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
@@ -28423,7 +28303,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "medium",
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
