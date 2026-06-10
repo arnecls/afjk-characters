@@ -1131,6 +1131,15 @@ a:hover {
   font-size: 0.9rem;
 }
 
+.hero-compact-score {
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  margin-top: 0.15rem;
+  line-height: 1.2;
+}
+
 .hero-compact-detail {
   font-size: 0.78rem;
   color: var(--text-muted);

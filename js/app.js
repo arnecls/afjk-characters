@@ -8,6 +8,7 @@
   let heroByName = {};
   let activeFaction = "";
   let activeClass = "";
+  let activeRole = "";
   let viewMode = "grid";
   let csvHeaders = [];
   let csvRows = [];
@@ -1506,6 +1507,31 @@
     return html;
   }
 
+  const BENEFIT_MAX_STARS = 5;
+  const BENEFIT_STAR = "⭐";
+
+  function formatBeneficiaryRatingDisplay(scoreRating) {
+    const rating = Number(scoreRating);
+    if (!isFinite(rating)) {
+      return "";
+    }
+    const clamped = Math.max(0, Math.min(BENEFIT_MAX_STARS, rating));
+    const fullStars = Math.max(0, Math.min(BENEFIT_MAX_STARS, Math.floor(clamped)));
+    return BENEFIT_STAR.repeat(fullStars) + " (" + clamped.toFixed(1) + ")";
+  }
+
+  function renderBeneficiaryScore(scoreRating, scoreDisplay) {
+    const text = scoreDisplay || formatBeneficiaryRatingDisplay(scoreRating);
+    if (!text) {
+      return "";
+    }
+    return (
+      '<div class="hero-compact-score" title="Benefit rating out of 5">' +
+      escapeHtml(text) +
+      "</div>"
+    );
+  }
+
   function renderHeroCompactCard(slug, name, bodyHtml, footerHtml) {
     const hero = heroBySlug[slug];
     const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
@@ -1738,6 +1764,13 @@
     },
   };
 
+  const ROLE_FILTER_ORDER = [
+    "damage_dealer",
+    "specialist",
+    "support",
+    "tank",
+  ];
+
   function roleCategoryMeta(roleCategory) {
     return ROLE_CATEGORY_META[roleCategory] || null;
   }
@@ -1828,6 +1861,9 @@
         return false;
       }
       if (activeClass && h.class !== activeClass) {
+        return false;
+      }
+      if (activeRole && h.roleCategory !== activeRole) {
         return false;
       }
       if (!heroMatchesSearch(h, q)) {
@@ -2417,9 +2453,26 @@
         html += "<p>" + renderInline(bb.strongest_note) + "</p>";
       }
       if (bb.heroes && bb.heroes.length) {
+        const benefitedHeroes = bb.heroes.slice().sort(function (a, b) {
+          const aRating =
+            a.scoreRating != null ? a.scoreRating : a.score_rating;
+          const bRating =
+            b.scoreRating != null ? b.scoreRating : b.score_rating;
+          if (bRating !== aRating) {
+            return bRating - aRating;
+          }
+          return String(a.name || "").localeCompare(String(b.name || ""));
+        });
         html += renderHeroRowList(
-          bb.heroes.map(function (h) {
-            return renderHeroCompactCard(h.slug, h.name, "");
+          benefitedHeroes.map(function (h) {
+            return renderHeroCompactCard(
+              h.slug,
+              h.name,
+              renderBeneficiaryScore(
+                h.scoreRating != null ? h.scoreRating : h.score_rating,
+                h.scoreDisplay || h.score_display
+              )
+            );
           }),
           "hero-compact-grid-4"
         );
@@ -2612,6 +2665,7 @@
     const classes = [];
     const seenF = {};
     const seenC = {};
+    const seenRoles = {};
     heroes.forEach(function (h) {
       if (h.faction && !seenF[h.faction]) {
         seenF[h.faction] = true;
@@ -2620,6 +2674,9 @@
       if (h.class && !seenC[h.class]) {
         seenC[h.class] = true;
         classes.push(h.class);
+      }
+      if (h.roleCategory && !seenRoles[h.roleCategory]) {
+        seenRoles[h.roleCategory] = true;
       }
     });
     factions.sort();
@@ -2646,6 +2703,19 @@
         escapeHtml(c) +
         "</button>";
     });
+    html += '<span class="filter-label">Role</span>';
+    ROLE_FILTER_ORDER.forEach(function (roleKey) {
+      if (!seenRoles[roleKey]) {
+        return;
+      }
+      const meta = ROLE_CATEGORY_META[roleKey];
+      html +=
+        '<button type="button" class="filter-btn" data-filter="role" data-value="' +
+        escapeHtml(roleKey) +
+        '">' +
+        escapeHtml(meta.label) +
+        "</button>";
+    });
     filtersEl.innerHTML = html;
     updateFilterActiveStates();
     updateListStickyOffset();
@@ -2655,11 +2725,16 @@
     filtersEl.querySelectorAll(".filter-btn").forEach(function (b) {
       const f = b.dataset.filter;
       if (f === "all") {
-        b.classList.toggle("active", !activeFaction && !activeClass);
+        b.classList.toggle(
+          "active",
+          !activeFaction && !activeClass && !activeRole
+        );
       } else if (f === "faction") {
         b.classList.toggle("active", b.dataset.value === activeFaction);
       } else if (f === "class") {
         b.classList.toggle("active", b.dataset.value === activeClass);
+      } else if (f === "role") {
+        b.classList.toggle("active", b.dataset.value === activeRole);
       }
     });
   }
@@ -2672,12 +2747,16 @@
     if (btn.dataset.filter === "all") {
       activeFaction = "";
       activeClass = "";
+      activeRole = "";
     } else if (btn.dataset.filter === "faction") {
       const v = btn.dataset.value;
       activeFaction = activeFaction === v ? "" : v;
     } else if (btn.dataset.filter === "class") {
       const v = btn.dataset.value;
       activeClass = activeClass === v ? "" : v;
+    } else if (btn.dataset.filter === "role") {
+      const v = btn.dataset.value;
+      activeRole = activeRole === v ? "" : v;
     }
     updateFilterActiveStates();
     renderCurrentView();
