@@ -8,6 +8,7 @@
   let heroByName = {};
   let activeFaction = "";
   let activeClass = "";
+  let activeRole = "";
   let viewMode = "grid";
   let csvHeaders = [];
   let csvRows = [];
@@ -1738,6 +1739,13 @@
     },
   };
 
+  const ROLE_FILTER_ORDER = [
+    "damage_dealer",
+    "specialist",
+    "support",
+    "tank",
+  ];
+
   function roleCategoryMeta(roleCategory) {
     return ROLE_CATEGORY_META[roleCategory] || null;
   }
@@ -1828,6 +1836,9 @@
         return false;
       }
       if (activeClass && h.class !== activeClass) {
+        return false;
+      }
+      if (activeRole && h.roleCategory !== activeRole) {
         return false;
       }
       if (!heroMatchesSearch(h, q)) {
@@ -2612,6 +2623,7 @@
     const classes = [];
     const seenF = {};
     const seenC = {};
+    const seenRoles = {};
     heroes.forEach(function (h) {
       if (h.faction && !seenF[h.faction]) {
         seenF[h.faction] = true;
@@ -2620,6 +2632,9 @@
       if (h.class && !seenC[h.class]) {
         seenC[h.class] = true;
         classes.push(h.class);
+      }
+      if (h.roleCategory && !seenRoles[h.roleCategory]) {
+        seenRoles[h.roleCategory] = true;
       }
     });
     factions.sort();
@@ -2646,6 +2661,19 @@
         escapeHtml(c) +
         "</button>";
     });
+    html += '<span class="filter-label">Role</span>';
+    ROLE_FILTER_ORDER.forEach(function (roleKey) {
+      if (!seenRoles[roleKey]) {
+        return;
+      }
+      const meta = ROLE_CATEGORY_META[roleKey];
+      html +=
+        '<button type="button" class="filter-btn" data-filter="role" data-value="' +
+        escapeHtml(roleKey) +
+        '">' +
+        escapeHtml(meta.label) +
+        "</button>";
+    });
     filtersEl.innerHTML = html;
     updateFilterActiveStates();
     updateListStickyOffset();
@@ -2655,11 +2683,16 @@
     filtersEl.querySelectorAll(".filter-btn").forEach(function (b) {
       const f = b.dataset.filter;
       if (f === "all") {
-        b.classList.toggle("active", !activeFaction && !activeClass);
+        b.classList.toggle(
+          "active",
+          !activeFaction && !activeClass && !activeRole
+        );
       } else if (f === "faction") {
         b.classList.toggle("active", b.dataset.value === activeFaction);
       } else if (f === "class") {
         b.classList.toggle("active", b.dataset.value === activeClass);
+      } else if (f === "role") {
+        b.classList.toggle("active", b.dataset.value === activeRole);
       }
     });
   }
@@ -2672,12 +2705,16 @@
     if (btn.dataset.filter === "all") {
       activeFaction = "";
       activeClass = "";
+      activeRole = "";
     } else if (btn.dataset.filter === "faction") {
       const v = btn.dataset.value;
       activeFaction = activeFaction === v ? "" : v;
     } else if (btn.dataset.filter === "class") {
       const v = btn.dataset.value;
       activeClass = activeClass === v ? "" : v;
+    } else if (btn.dataset.filter === "role") {
+      const v = btn.dataset.value;
+      activeRole = activeRole === v ? "" : v;
     }
     updateFilterActiveStates();
     renderCurrentView();
