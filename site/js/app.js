@@ -753,12 +753,82 @@
     TIER_CSV_HEADERS[tierCol.header] = true;
   });
 
+  const TIER_RANK_ORDER = ["C", "B", "A", "A+", "S", "S+"];
+
   function prydwenTierClass(tier) {
     if (!tier) {
       return "tier-unknown";
     }
     const normalized = String(tier).replace(/\+/g, "-plus");
     return "tier-" + normalized.toLowerCase();
+  }
+
+  function prydwenTierRank(tier) {
+    if (!tier || tier === "?") {
+      return -1;
+    }
+    const idx = TIER_RANK_ORDER.indexOf(tier);
+    return idx >= 0 ? idx : -1;
+  }
+
+  function comparePrydwenTiers(repTier, mainTier) {
+    const repRank = prydwenTierRank(repTier);
+    const mainRank = prydwenTierRank(mainTier);
+    if (mainRank < 0 && repRank < 0) {
+      return "same";
+    }
+    if (mainRank < 0) {
+      return "better";
+    }
+    if (repRank < 0) {
+      return "worse";
+    }
+    if (repRank > mainRank) {
+      return "better";
+    }
+    if (repRank < mainRank) {
+      return "worse";
+    }
+    return "same";
+  }
+
+  function relativeTierTooltip(
+    relation,
+    mainHeroName,
+    modeLabel,
+    mainTier,
+    repTier
+  ) {
+    const base = mainHeroName + "'s " + modeLabel + " tier";
+    if (!mainTier) {
+      return "No Prydwen tier listed for " + base + ".";
+    }
+    if (!repTier) {
+      return "No Prydwen tier listed for this replacement hero.";
+    }
+    if (relation === "better") {
+      return (
+        "Better than " +
+        base +
+        " (" +
+        mainTier +
+        "). This replacement is " +
+        repTier +
+        "."
+      );
+    }
+    if (relation === "worse") {
+      return (
+        "Worse than " +
+        base +
+        " (" +
+        mainTier +
+        "). This replacement is " +
+        repTier +
+        "."
+      );
+    }
+    return "Same as " + base + " (" + mainTier + ").";
   }
 
   function formatTierColumnHeader(col) {
@@ -832,20 +902,45 @@
     });
   }
 
-  function renderPrydwenTierBoxes(tiers) {
+  function renderPrydwenTierBoxes(tiers, variant, compareTo, mainHeroName) {
     if (!tiers) {
       return "";
     }
-    let html = '<div class="tier-box-row">';
+    const compact = variant === "compact";
+    const relative = compact && compareTo;
+    const rowClass = compact ? "tier-box-row tier-box-row-compact" : "tier-box-row";
+    const chipClass = compact ? "tier-chip tier-chip-compact" : "tier-chip";
+    let html = '<div class="' + rowClass + '">';
     PRYDWEN_TIER_MODES.forEach(function (mode) {
       const tier = tiers[mode.key];
       if (!tier) {
         return;
       }
+      let colorClass = prydwenTierClass(tier);
+      let tipAttrs = "";
+      if (relative) {
+        const mainTier = compareTo[mode.key];
+        const relation = comparePrydwenTiers(tier, mainTier);
+        colorClass = "tier-rel-" + relation;
+        tipAttrs = chipTipAttrs(
+          relativeTierTooltip(
+            relation,
+            mainHeroName || "this hero",
+            mode.label,
+            mainTier,
+            tier
+          )
+        );
+      }
       html +=
-        '<span class="tier-chip ' +
-        prydwenTierClass(tier) +
-        '">' +
+        '<span class="' +
+        chipClass +
+        " " +
+        colorClass +
+        (tipAttrs ? " chip-has-tip" : "") +
+        '"' +
+        tipAttrs +
+        ">" +
         '<span class="tier-grade">' +
         escapeHtml(tier) +
         "</span>" +
@@ -1108,7 +1203,7 @@
     return html;
   }
 
-  function renderHeroCompactCard(slug, name, bodyHtml) {
+  function renderHeroCompactCard(slug, name, bodyHtml, footerHtml) {
     const hero = heroBySlug[slug];
     const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
     return (
@@ -1125,6 +1220,7 @@
       linkifyHero(name, slug) +
       "</div>" +
       (bodyHtml || "") +
+      (footerHtml || "") +
       "</div></article>"
     );
   }
@@ -1954,7 +2050,7 @@
     return html;
   }
 
-  function renderReplacements(sections) {
+  function renderReplacements(sections, mainHero) {
     const reps = sections.replacements;
     if (!reps || !reps.length) return "";
 
@@ -1972,7 +2068,17 @@
               renderInline(e.detail) +
               "</div>";
           }
-          return renderHeroCompactCard(e.slug, e.name, body);
+          let footer = "";
+          const repHero = heroBySlug[e.slug];
+          if (repHero && repHero.prydwenTiers) {
+            footer = renderPrydwenTierBoxes(
+              repHero.prydwenTiers,
+              "compact",
+              mainHero && mainHero.prydwenTiers,
+              mainHero && mainHero.name
+            );
+          }
+          return renderHeroCompactCard(e.slug, e.name, body, footer);
         }),
         "hero-compact-grid-3"
       );
@@ -2048,7 +2154,7 @@
     }
 
     html += renderSynergies(hero.sections, hero.name);
-    html += renderReplacements(hero.sections);
+    html += renderReplacements(hero.sections, hero);
 
     heroDetail.innerHTML = html;
     document.title = hero.name + " — AFK Journey Heroes";
@@ -2353,6 +2459,7 @@
   }
 
   (function initChipTooltips() {
+    const TIP_CHIP_SELECTOR = ".chip[data-tip], .tier-chip[data-tip]";
     const chipTooltip = document.createElement("div");
     chipTooltip.id = "chip-tooltip";
     chipTooltip.className = "chip-tooltip";
@@ -2365,6 +2472,10 @@
     const hoverCapable = window.matchMedia(
       "(hover: hover) and (pointer: fine)"
     ).matches;
+
+    function tipChipFromEvent(e) {
+      return e.target.closest(TIP_CHIP_SELECTOR);
+    }
 
     function positionChipTooltip(anchor) {
       const rect = anchor.getBoundingClientRect();
@@ -2406,7 +2517,7 @@
           if (e.pointerType !== "mouse") {
             return;
           }
-          const chip = e.target.closest(".chip[data-tip]");
+          const chip = tipChipFromEvent(e);
           if (chip) {
             showChipTooltip(chip);
           }
@@ -2419,7 +2530,7 @@
           if (e.pointerType !== "mouse") {
             return;
           }
-          const chip = e.target.closest(".chip[data-tip]");
+          const chip = tipChipFromEvent(e);
           if (
             chip &&
             tipAnchor === chip &&
@@ -2433,7 +2544,7 @@
     }
 
     document.addEventListener("keydown", function (e) {
-      const chip = e.target.closest(".chip[data-tip]");
+      const chip = tipChipFromEvent(e);
       if (!chip) {
         return;
       }
@@ -2455,7 +2566,7 @@
     document.addEventListener(
       "click",
       function (e) {
-        const chip = e.target.closest(".chip[data-tip]");
+        const chip = tipChipFromEvent(e);
         if (!chip) {
           if (tipAnchor) {
             hideChipTooltip(0);
