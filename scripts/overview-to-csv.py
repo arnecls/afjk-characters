@@ -102,11 +102,19 @@ ANTI_CC_COLUMN_SET = frozenset(ANTI_CC_TYPES)
 BUFF_COLUMN_SET = frozenset(BUFF_TYPES)
 DEBUFF_COLUMN_SET = frozenset(DEBUFF_TYPES)
 
+ROLE_CATEGORY_LABELS: dict[str, str] = {
+    "damage_dealer": "Damage dealer",
+    "specialist": "Specialist",
+    "support": "Support",
+    "tank": "Tank",
+}
+
 COLUMNS: list[str] = (
     [
         "Name",
         "Faction",
         "Class",
+        "Role",
         "AFK Stages tier",
         "Dream Realm tier",
         "Dream Realm Endless tier",
@@ -163,6 +171,7 @@ class HeroRow:
     name: str
     faction: str = ""
     class_name: str = ""
+    role: str = ""
     afk_stages_tier: str = ""
     dream_realm_tier: str = ""
     dream_realm_endless_tier: str = ""
@@ -296,6 +305,32 @@ def _load_hero_prydwen_tiers() -> dict[str, dict[str, str]]:
     return out
 
 
+def _load_gen_overview():
+    spec = importlib.util.spec_from_file_location(
+        "gen_overview_roles", SCRIPTS / "generate-heroes-overview.py"
+    )
+    gen = importlib.util.module_from_spec(spec)
+    sys.modules["gen_overview_roles"] = gen
+    assert spec.loader is not None
+    spec.loader.exec_module(gen)
+    return gen
+
+
+def _load_hero_role_categories() -> dict[str, str]:
+    """Map overview short name -> Prydwen role label from processed data."""
+    path = ROOT / "data" / "heroes_data_processed.json"
+    if not path.is_file():
+        return {}
+    gen = _load_gen_overview()
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    out: dict[str, str] = {}
+    for title, record in payload.get("heroes", {}).items():
+        short = gen.short_name(title)
+        role = record.get("role_category", "")
+        out[short] = ROLE_CATEGORY_LABELS.get(role, "")
+    return out
+
+
 def _load_energy_provider_names() -> frozenset[str]:
     """Short names of heroes that grant ally Energy (shared synergy logic)."""
     spec = importlib.util.spec_from_file_location(
@@ -336,6 +371,7 @@ def parse_hero_block(
     energy_providers: frozenset[str],
     hero_meta: dict[str, tuple[str, str]],
     hero_tiers: dict[str, dict[str, str]] | None = None,
+    hero_roles: dict[str, str] | None = None,
 ) -> HeroRow | None:
     summary_match = SUMMARY_RE.search(block)
     if not summary_match:
@@ -348,6 +384,7 @@ def parse_hero_block(
         name=name,
         faction=faction,
         class_name=class_name,
+        role=(hero_roles or {}).get(name, ""),
         afk_stages_tier=tiers.get("afk_stages", ""),
         dream_realm_tier=tiers.get("dream_realm", ""),
         dream_realm_endless_tier=tiers.get("dream_realm_endless", ""),
@@ -418,6 +455,7 @@ def parse_overview(
     energy_providers: frozenset[str],
     hero_meta: dict[str, tuple[str, str]],
     hero_tiers: dict[str, dict[str, str]] | None = None,
+    hero_roles: dict[str, str] | None = None,
 ) -> list[HeroRow]:
     heroes: list[HeroRow] = []
     hero_matches = list(HERO_RE.finditer(text))
@@ -427,7 +465,7 @@ def parse_overview(
         end = hero_matches[idx + 1].start() if idx + 1 < len(hero_matches) else len(text)
         block = text[start:end]
         row = parse_hero_block(
-            name, block, energy_providers, hero_meta, hero_tiers
+            name, block, energy_providers, hero_meta, hero_tiers, hero_roles
         )
         if row is not None:
             heroes.append(row)
@@ -447,6 +485,7 @@ def row_to_csv(row: HeroRow) -> list[str]:
         row.name,
         row.faction,
         row.class_name,
+        row.role,
         row.afk_stages_tier,
         row.dream_realm_tier,
         row.dream_realm_endless_tier,
@@ -472,8 +511,11 @@ def convert(
     energy_providers: frozenset[str],
     hero_meta: dict[str, tuple[str, str]],
     hero_tiers: dict[str, dict[str, str]] | None = None,
+    hero_roles: dict[str, str] | None = None,
 ) -> list[list[str]]:
-    rows = parse_overview(text, energy_providers, hero_meta, hero_tiers)
+    rows = parse_overview(
+        text, energy_providers, hero_meta, hero_tiers, hero_roles
+    )
     return [row_to_csv(row) for row in rows]
 
 
@@ -501,7 +543,8 @@ def main() -> None:
     energy_providers = _load_energy_provider_names()
     hero_meta = _load_hero_faction_class()
     hero_tiers = _load_hero_prydwen_tiers()
-    data = convert(text, energy_providers, hero_meta, hero_tiers)
+    hero_roles = _load_hero_role_categories()
+    data = convert(text, energy_providers, hero_meta, hero_tiers, hero_roles)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", encoding="utf-8", newline="") as fh:

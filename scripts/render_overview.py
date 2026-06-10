@@ -268,8 +268,9 @@ def build_overview(
 def write_csv(overview_text: str, energy_providers: frozenset[str]) -> int:
     hero_meta = csv_mod._load_hero_faction_class()
     hero_tiers = csv_mod._load_hero_prydwen_tiers()
+    hero_roles = csv_mod._load_hero_role_categories()
     rows = csv_mod.convert(
-        overview_text, energy_providers, hero_meta, hero_tiers
+        overview_text, energy_providers, hero_meta, hero_tiers, hero_roles
     )
     with OVERVIEW_CSV.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.writer(fh)

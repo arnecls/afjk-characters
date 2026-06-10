@@ -196,8 +196,8 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 **Damage**
 
 - Athalia (100% `Physical`)
+- Baelran (100% `Physical`)
 - Gunnar (100% `Physical`)
-- Aliceth (96% `Physical`)
 
 **Crowd Control**
 
@@ -305,6 +305,10 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ### Units that can act as a replacement for Alsa
 
+**Similar Skills**
+
+- Athalia (60% `self-repositioner` `transformation`)
+
 **Damage**
 
 - Callan (100% `Magic`)
@@ -319,7 +323,7 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 - Perseus (100% `Stun` `Knock back`)
 - Antandra (98% `Stun`)
-- Koko (98% `Stun`)
+- Arden (98% `Stun`)
 
 ### Summary for Alsa
 
@@ -412,6 +416,10 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ### Units that can act as a replacement for Antandra
 
+**Similar Skills**
+
+- Lucca (60% `ally-shielder`)
+
 **Damage**
 
 - Aliceth (100% `Physical`)
@@ -420,8 +428,8 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 **Crowd Control**
 
-- Lumont (66% `Stun` `Taunt`)
-- Lucca (60% `Stun` `Knock down`)
+- Lumont (79% `Stun` `Taunt`)
+- Lucca (72% `Stun` `Knock down`)
 - Zorya (60% `Stun` `Knock down`)
 
 ### Summary for Antandra
@@ -514,8 +522,8 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 **Similar Skills**
 
 - Lorsan (100% `aoe-damage` `dot-specialist`)
-- Faramor (80% `aoe-damage` `dot-specialist`)
-- Viperian (66% `aoe-damage` `dot-specialist`)
+- Faramor (96% `aoe-damage` `dot-specialist`)
+- Viperian (80% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -525,9 +533,9 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 
 **Crowd Control**
 
-- Gwyneth (72% `Bind` `Stun`)
-- Indris (60% `Bind`)
-- Lorsan (60% `Stun`)
+- Gwyneth (86% `Bind` `Stun`)
+- Indris (72% `Bind`)
+- Faramor (64% `Stun`)
 
 ### Summary for Arden
 
@@ -626,9 +634,9 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 **Crowd Control**
 
+- Perseus (100% `Knock back` `Stun`)
 - Cassadee (90% `Knock back` `Stun`)
-- Perseus (90% `Knock back` `Stun`)
-- Korin (75% `Knock back` `Bind`)
+- Lenya (90% `Knock back` `Stun`)
 
 ### Summary for Atalanta
 
@@ -724,8 +732,9 @@ Common buffers are **Hugin**, **Solise**, or **Twins**.
 
 **Damage**
 
-- Faramor (83% `Physical` `HP loss` `True damage`)
+- Faramor (99% `Physical` `HP loss` `True damage`)
 - Shadewing (69% `HP loss` `True damage`)
+- Aliceth (66% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -735,7 +744,7 @@ Common buffers are **Hugin**, **Solise**, or **Twins**.
 
 - Baelran (100% `Knock down`)
 - Ravion (100% `Knock down`)
-- Kordan (60% `Knock down`)
+- Silven (72% `Knock down`)
 
 ### Summary for Athalia
 
@@ -834,6 +843,10 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 - Contess (100% `Magic`)
 - Mehira (100% `Magic`)
 - Saida (100% `Magic`)
+
+**Debuffs on enemies**
+
+- Velara (60% `Haste debuff`)
 
 ### Summary for Aurora
 
@@ -1042,11 +1055,11 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 - Pandora (100% `Damage taken debuff` `Energy drain`)
 - Sinbad (100% `Damage taken debuff` `Energy drain`)
-- Contess (60% `Energy drain`)
+- Cryonaia (72% `Damage taken debuff`)
 
 **Crowd Control**
 
-- Silvina (66% `Frighten`)
+- Silvina (80% `Frighten`)
 
 ### Summary for Berial
 
@@ -1263,8 +1276,8 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 **Damage**
 
 - Gunnar (100% `Max HP-based damage` `DoT` `Physical`)
+- Daimon (97% `Max HP-based damage`)
 - Satrana (97% `Max HP-based damage`)
-- Valka (88% `Max HP-based damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -1365,8 +1378,8 @@ Common buffers are **Solise**, **Mikola**, or **Velara**.
 **Damage**
 
 - Frieren (100% `DoT` `Magic`)
+- Lily May (72% `Magic`)
 - Shadewing (68% `Magic` `DoT`)
-- Eironn (60% `Magic`)
 
 **Debuffs on enemies**
 
@@ -1376,8 +1389,8 @@ Common buffers are **Solise**, **Mikola**, or **Velara**.
 **Crowd Control**
 
 - Smokey & Meerky (100% `Interrupt` `Stun`)
-- Faramor (60% `Stun`)
-- Lenya (60% `Stun`)
+- Faramor (72% `Stun`)
+- Lenya (72% `Stun`)
 
 ### Summary for Bryon
 
@@ -1479,8 +1492,8 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 **Crowd Control**
 
 - Valka (100% `Knock down` `Stun`)
-- Athalia (62% `Knock down`)
-- Baelran (62% `Knock down`)
+- Baelran (75% `Knock down`)
+- Thador (67% `Knock down`)
 
 ### Summary for Callan
 
@@ -1571,6 +1584,10 @@ Common buffers are **Ravion**, **Lyca**, or **Twins**.
 
 ### Units that can act as a replacement for Carolina
 
+**Similar Skills**
+
+- Kruger (60% `enemy-debuffer`)
+
 **Damage**
 
 - Alsa (100% `Magic`)
@@ -1580,8 +1597,8 @@ Common buffers are **Ravion**, **Lyca**, or **Twins**.
 **Debuffs on enemies**
 
 - Eironn (100% `Haste debuff` `Magic DEF debuff`)
-- Bonnie (60% `Haste debuff`)
-- Shadewing (60% `Magic DEF debuff`)
+- Bonnie (72% `Haste debuff`)
+- Shadewing (72% `Magic DEF debuff`)
 
 **Crowd Control**
 
@@ -1696,8 +1713,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 **Crowd Control**
 
+- Scarlita (78% `Knock back` `Knock up` `Stun`)
 - Perseus (66% `Knock back` `Stun`)
-- Scarlita (65% `Knock back` `Knock up` `Stun`)
 
 ### Summary for Cassadee
 
@@ -1792,13 +1809,13 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 
 **Similar Skills**
 
-- Viperian (60% `dot-specialist` `life-drain`)
+- Viperian (72% `dot-specialist` `life-drain`)
 
 **Damage**
 
 - Brutus (100% `Physical` `DoT`)
 - Gunnar (100% `Physical` `DoT`)
-- Hodgkin (68% `Physical`)
+- Aliceth (68% `Physical`)
 
 **Crowd Control**
 
@@ -1881,6 +1898,7 @@ rare chance for massive single normal attack damage
 
 - Florabelle (100% `summoner`)
 - Zanie (100% `summoner`)
+- Dunlingr (60% `summoner`)
 
 **Damage**
 
@@ -1975,8 +1993,8 @@ These are the **10** strongest pairings:
 **Healing**
 
 - Solise (100% `Healing`)
-- Velara (88% `Healing`)
-- Gerda (100% `Healing`)
+- Velara (100% `Healing`)
+- Damian (100% `Healing`)
 
 **Damage**
 
@@ -2192,8 +2210,8 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 **Damage**
 
 - Frieren (100% `True damage` `Magic`)
+- Shadewing (98% `Magic` `True damage`)
 - Sylphira (97% `True damage` `Magic`)
-- Silven (86% `Magic` `True damage`)
 
 **Debuffs on enemies**
 
@@ -2302,9 +2320,9 @@ Common buffers are **Hugin**.
 
 **Damage**
 
+- Gunnar (100% `Max HP-based damage`)
 - Shadewing (100% `Max HP-based damage` `Magic`)
 - Shemira (100% `Max HP-based damage` `Magic`)
-- Gunnar (85% `Max HP-based damage`)
 
 ### Summary for Daimon
 
@@ -2515,7 +2533,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 - Athalia (100% `Physical` `True damage`)
 - Baelran (100% `True damage` `Physical`)
-- Sylphira (100% `True damage`)
+- Faramor (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -2732,11 +2750,11 @@ Common buffers are **Hugin** or **Rowan**.
 
 **Debuffs on enemies**
 
-- Shadewing (60% `Magic DEF debuff`)
+- Shadewing (72% `Magic DEF debuff`)
 
 **Crowd Control**
 
-- Ravion (65% `Displace`)
+- Ravion (78% `Displace`)
 
 ### Summary for Eironn
 
@@ -2833,6 +2851,10 @@ These are the **10** strongest pairings:
 - Zorya
 
 ### Units that can act as a replacement for Twins
+
+**Similar Skills**
+
+- Solise (60% `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -3060,6 +3082,7 @@ Common buffers are **Hugin**, **Twins**, or **Velara**.
 **Crowd Control**
 
 - Gunnar (62% `Stun`)
+- Gwyneth (60% `Stun`)
 
 ### Summary for Faramor
 
@@ -3153,13 +3176,13 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 - Contess (100% `Healing`)
 - Damian (100% `Healing`)
-- Gerda (100% `Healing`)
+- Evie (100% `Healing`)
 
 **Similar Skills**
 
 - Ludovic (100% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (100% `ally-healer` `aoe-healing`)
-- Solise (66% `ally-healer` `aoe-healing`)
+- Solise (80% `ally-healer` `aoe-healing`)
 
 **Damage**
 
@@ -3362,15 +3385,15 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 
 **Damage**
 
-- Sylphira (86% `True damage` `Magic`)
-- Shadewing (77% `Magic` `DoT` `True damage`)
-- Faramor (76% `True damage`)
+- Sylphira (100% `True damage` `Magic`)
+- Faramor (91% `True damage`)
+- Silven (83% `Magic` `True damage`)
 
 **Crowd Control**
 
-- Athalia (66% `Knock down`)
-- Baelran (66% `Knock down`)
-- Kordan (66% `Knock down`)
+- Athalia (80% `Knock down`)
+- Silven (80% `Knock down`)
+- Sylphira (80% `Knock down`)
 
 ### Summary for Frieren
 
@@ -3578,7 +3601,7 @@ Common buffers are **Hugin**.
 
 - Mikola (98% `Healing over time` `Healing`)
 - Solise (79% `Healing` `Healing over time`)
-- Hepler (63% `Healing`)
+- Hepler (76% `Healing`)
 
 **Damage**
 
@@ -3589,7 +3612,8 @@ Common buffers are **Hugin**.
 **Crowd Control**
 
 - Smokey & Meerky (80% `Interrupt` `Stun`)
-- Koko (60% `Stun`)
+- Hepler (64% `Stun`)
+- Gunnar (60% `Stun`)
 
 ### Summary for Gerda
 
@@ -3680,8 +3704,8 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 **Similar Skills**
 
-- Brutus (66% `hp-scaling` `taunt`)
-- Tilaya (60% `hp-scaling`)
+- Brutus (80% `hp-scaling` `taunt`)
+- Tilaya (72% `hp-scaling`)
 
 **Damage**
 
@@ -3693,13 +3717,13 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 - Bonnie (100% `ATK debuff` `Haste debuff`)
 - Pandora (100% `ATK debuff` `Haste debuff`)
-- Bryon (60% `Haste debuff`)
+- Alna (60% `Haste debuff`)
 
 **Crowd Control**
 
-- Hepler (80% `Taunt` `Stun`)
+- Hepler (97% `Taunt` `Stun`)
 - Faramor (68% `Stun`)
-- Lorsan (68% `Stun`)
+- Laios (68% `Stun`)
 
 ### Summary for Granny Dahnie
 
@@ -3796,9 +3820,9 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 **Damage**
 
-- Brutus (96% `Max HP-based damage` `DoT` `Physical`)
+- Brutus (100% `Max HP-based damage` `DoT` `Physical`)
+- Daimon (97% `Max HP-based damage`)
 - Korin (86% `Max HP-based damage` `Physical`)
-- Valka (86% `Max HP-based damage` `Physical`)
 
 **Crowd Control**
 
@@ -3975,7 +3999,7 @@ Common buffers are **Rowan**, **Mikola**, or **Lyca**.
 
 **Similar Skills**
 
-- Isabella (66% `ally-buffer` `ally-healer`)
+- Isabella (80% `ally-buffer` `ally-healer`)
 - Laios (66% `ally-buffer` `ally-healer`)
 - Perseus (60% `ally-buffer`)
 
@@ -4201,6 +4225,7 @@ These are the **10** strongest pairings:
 
 - Hugin (100% `Max HP` `Haste`)
 - Saida (85% `Max HP`)
+- Daimon (68% `Max HP`)
 
 **Healing**
 
@@ -4321,7 +4346,7 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 - Lorsan (100% `Healing`)
 - Solise (100% `Healing`)
-- Smokey & Meerky (80% `Healing`)
+- Smokey & Meerky (96% `Healing`)
 
 **Similar Skills**
 
@@ -4422,6 +4447,10 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 - Cryonaia
 
 ### Units that can act as a replacement for Himmel
+
+**Buffs on allies**
+
+- Twins (66% `Max HP`)
 
 **Damage**
 
@@ -4626,7 +4655,7 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Twins (66% `ally-shielder` `energy-provider`)
+- Twins (80% `ally-shielder` `energy-provider`)
 
 **Damage**
 
@@ -4805,8 +4834,8 @@ Common buffers are **Lyca**, **Ravion**, or **Hugin**.
 **Damage**
 
 - Pippa (100% `True damage` `Max HP-based damage`)
-- Sylphira (88% `True damage` `Max HP-based damage`)
-- Nara (82% `True damage` `Physical` `Max HP-based damage`)
+- Sylphira (100% `True damage` `Max HP-based damage`)
+- Nazrik (99% `True damage` `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -4815,6 +4844,7 @@ Common buffers are **Lyca**, **Ravion**, or **Hugin**.
 **Crowd Control**
 
 - Kordan (68% `Bind` `Knock back`)
+- Gwyneth (65% `Bind` `Silence`)
 
 ### Summary for Indris
 
@@ -5018,7 +5048,7 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 **Similar Skills**
 
-- Sinbad (66% `enemy-debuffer` `mark-target`)
+- Sinbad (80% `enemy-debuffer` `mark-target`)
 
 **Damage**
 
@@ -5028,8 +5058,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 **Debuffs on enemies**
 
-- Lyca (65% `ATK debuff` `Phys DEF debuff`)
-- Ravion (65% `ATK debuff` `Phys DEF debuff`)
+- Lyca (78% `ATK debuff` `Phys DEF debuff`)
+- Ravion (78% `ATK debuff` `Phys DEF debuff`)
+- Bonnie (65% `ATK debuff` `Haste debuff`)
 
 **Crowd Control**
 
@@ -5147,9 +5178,9 @@ These are the **10** strongest pairings:
 
 **Healing**
 
+- Contess (100% `Healing`)
 - Smokey & Meerky (100% `Healing`)
 - Solise (100% `Healing`)
-- Contess (90% `Healing`)
 
 **Similar Skills**
 
@@ -5267,7 +5298,7 @@ Common buffers are **Hugin**, **Ravion**, or **Twins**.
 
 - Aliceth (100% `Physical` `HP loss`)
 - Faramor (100% `Physical` `HP loss`)
-- Ravion (93% `Physical` `HP loss`)
+- Ravion (100% `Physical` `HP loss`)
 
 ### Summary for Kordan
 
@@ -5365,15 +5396,15 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 **Similar Skills**
 
-- Scarlita (66% `ally-shielder` `hp-scaling`)
+- Scarlita (80% `ally-shielder` `hp-scaling`)
 - Lucca (60% `ally-shielder`)
 - Silven (60% `hp-scaling`)
 
 **Damage**
 
+- Nara (100% `Max HP-based damage` `True damage` `Physical`)
+- Shadewing (100% `Max HP-based damage` `True damage`)
 - Temesia (100% `Physical` `Max HP-based damage` `True damage`)
-- Nara (92% `Max HP-based damage` `True damage` `Physical`)
-- Indris (86% `Physical` `True damage` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -5462,6 +5493,10 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 - Bonnie
 
 ### Units that can act as a replacement for Kruger
+
+**Similar Skills**
+
+- Shadewing (60% `enemy-debuffer`)
 
 **Damage**
 
@@ -5577,7 +5612,7 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 **Crowd Control**
 
-- Kordan (66% `Knock back` `Knock up`)
+- Kordan (80% `Knock back` `Knock up`)
 
 ### Summary for Kulu
 
@@ -5802,6 +5837,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 **Crowd Control**
 
 - Perseus (100% `Knock back` `Stun`)
+- Faramor (61% `Stun`)
 
 ### Summary for Lenya
 
@@ -5892,17 +5928,18 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 **Similar Skills**
 
-- Athalia (60% `hp-scaling` `self-repositioner` `transformation`)
+- Athalia (72% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
 
 - Shadewing (100% `Magic` `Max HP-based damage`)
 - Shemira (100% `Magic` `Max HP-based damage`)
-- Daimon (94% `Magic` `Max HP-based damage`)
+- Sylphira (100% `Magic` `Max HP-based damage`)
 
 **Crowd Control**
 
-- Sylphira (80% `Interrupt`)
+- Sylphira (96% `Interrupt`)
+- Saida (64% `Interrupt`)
 - Reinier (60% `Interrupt`)
 
 ### Summary for Lily May
@@ -6110,9 +6147,9 @@ Common buffers are **Rowan**, **Hugin**, or **Solise**.
 
 **Similar Skills**
 
+- Lucius (72% `ally-shielder`)
+- Antandra (60% `ally-shielder`)
 - Hugin (60% `ally-shielder`)
-- Korin (60% `ally-shielder`)
-- Lucius (60% `ally-shielder`)
 
 **Damage**
 
@@ -6122,8 +6159,9 @@ Common buffers are **Rowan**, **Hugin**, or **Solise**.
 
 **Crowd Control**
 
-- Antandra (66% `Stun` `Knock down`)
+- Antandra (80% `Stun` `Knock down`)
 - Zorya (66% `Stun` `Knock down`)
+- Lumont (60% `Stun` `Knock up`)
 
 ### Summary for Lucca
 
@@ -6214,9 +6252,9 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 **Similar Skills**
 
-- Hepler (66% `ally-healer` `ally-shielder`)
+- Hepler (80% `ally-healer` `ally-shielder`)
+- Lucca (72% `ally-shielder`)
 - Solise (66% `ally-healer` `ally-shielder`)
-- Twins (66% `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -6331,6 +6369,10 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - Callan (100% `Magic`)
 - Cassadee (100% `Magic`)
 
+**Crowd Control**
+
+- Scarlita (60% `Knock up` `Stun`)
+
 ### Summary for Lucy
 
 #### Damage types dealt by Lucy
@@ -6421,7 +6463,8 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Solise**.
 **Similar Skills**
 
 - Smokey & Meerky (100% `ally-healer` `aoe-healing`)
-- Solise (66% `ally-healer` `aoe-healing`)
+- Solise (80% `ally-healer` `aoe-healing`)
+- Velara (60% `ally-healer` `aoe-healing`)
 
 **Damage**
 
@@ -6546,8 +6589,8 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 **Crowd Control**
 
 - Antandra (100% `Stun` `Taunt`)
-- Lucca (75% `Stun` `Knock up`)
-- Perseus (66% `Stun`)
+- Lucca (90% `Stun` `Knock up`)
+- Granny Dahnie (70% `Stun` `Taunt`)
 
 ### Summary for Lumont
 
@@ -6761,9 +6804,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 **Crowd Control**
 
-- Lily May (60% `Interrupt`)
-- Reinier (60% `Interrupt`)
-- Smokey & Meerky (60% `Interrupt`)
+- Lily May (72% `Interrupt`)
+- Sylphira (72% `Interrupt`)
+- Saida (64% `Interrupt`)
 
 ### Summary for Marcille
 
@@ -6856,8 +6899,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 **Similar Skills**
 
+- Pippa (80% `hp-scaling` `self-repositioner`)
 - Kordan (66% `hp-scaling` `self-repositioner`)
-- Pippa (66% `hp-scaling` `self-repositioner`)
 - Tasi (66% `mass-cc` `self-repositioner`)
 
 **Damage**
@@ -7084,12 +7127,12 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Hugin (80% `ATK` `Haste`)
-- Evie (60% `ATK`)
+- Hugin (96% `ATK` `Haste`)
+- Evie (72% `ATK`)
 
 **Healing**
 
-- Solise (65% `Healing` `Healing over time`)
+- Solise (78% `Healing` `Healing over time`)
 
 **Damage**
 
@@ -7180,7 +7223,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 **Similar Skills**
 
-- Gwyneth (80% `dot-specialist` `fire-attack`)
+- Gwyneth (96% `dot-specialist` `fire-attack`)
 - Satrana (66% `dot-specialist` `fire-attack`)
 
 **Damage**
@@ -7287,7 +7330,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 
 - Baelran (100% `Knock down` `Knock up`)
 - Kordan (100% `Knock down` `Knock up`)
-- Scarlita (80% `Knock down` `Knock up`)
+- Scarlita (96% `Knock down` `Knock up`)
 
 ### Summary for Nara
 
@@ -7378,11 +7421,20 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Units that can act as a replacement for Natsu
 
+**Similar Skills**
+
+- Frieren (61% `aoe-damage` `dot-specialist` `high-damage-ult`)
+- Gwyneth (60% `dot-specialist` `fire-attack` `mass-cc`)
+
 **Damage**
 
 - Daimon (100% `Magic` `Max HP-based damage`)
-- Satrana (100% `Magic` `Max HP-based damage`)
-- Shadewing (100% `Magic` `Max HP-based damage`)
+- Lily May (100% `Magic` `Max HP-based damage`)
+- Pippa (100% `Magic` `Max HP-based damage`)
+
+**Debuffs on enemies**
+
+- Bryon (68% `Haste debuff`)
 
 **Crowd Control**
 
@@ -7472,11 +7524,16 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units that can act as a replacement for Nazrik
 
+**Similar Skills**
+
+- Aliceth (60% `hp-scaling` `mark-target`)
+- Silven (60% `hp-scaling`)
+
 **Damage**
 
-- Sylphira (91% `True damage` `Max HP-based damage`)
+- Sylphira (100% `True damage` `Max HP-based damage`)
+- Silven (85% `True damage`)
 - Shadewing (78% `Max HP-based damage` `True damage`)
-- Silven (71% `True damage`)
 
 **Crowd Control**
 
@@ -7577,6 +7634,7 @@ Common buffers are **Lyca**, **Ravion**, or **Twins**.
 **Similar Skills**
 
 - Shadewing (100% `dot-specialist` `enemy-debuffer`)
+- Kruger (60% `enemy-debuffer`)
 
 **Damage**
 
@@ -7858,6 +7916,11 @@ Common buffers are **Rowan**, **Ravion**, or **Smokey & Meerky**.
 
 ### Units that can act as a replacement for Pandora
 
+**Buffs on allies**
+
+- Aurora (60% `Invincible`)
+- Rowan (60% `Max HP` `Energy`)
+
 **Healing**
 
 - Contess (100% `Healing`)
@@ -7966,8 +8029,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 **Buffs on allies**
 
 - Zanie (100% `DEF Penetration` `Max HP`)
-- Lenya (60% `Max HP`)
-- Lily May (60% `DEF Penetration`)
+- Lenya (72% `Max HP`)
+- Lily May (72% `DEF Penetration`)
 
 **Similar Skills**
 
@@ -8069,6 +8132,10 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 - Niru
 
 ### Units that can act as a replacement for Parisa
+
+**Similar Skills**
+
+- Cassadee (60% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -8262,7 +8329,7 @@ Common buffers are **Smokey & Meerky**, **Rowan**, or **Solise**.
 
 - Koko (75% `Max HP` `Damage taken reduction`)
 - Zanie (75% `Max HP`)
-- Saida (60% `Max HP`)
+- Callan (60% `Max HP`)
 
 **Damage**
 
@@ -8273,8 +8340,8 @@ Common buffers are **Smokey & Meerky**, **Rowan**, or **Solise**.
 **Crowd Control**
 
 - Hepler (100% `Stun` `Taunt`)
-- Contess (60% `Stun`)
-- Gunnar (60% `Stun`)
+- Gunnar (72% `Stun`)
+- Brutus (60% `Taunt`)
 
 ### Summary for Phraesto
 
@@ -8369,17 +8436,19 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 **Similar Skills**
 
 - Kordan (100% `hp-scaling` `self-repositioner`)
-- Athalia (66% `hp-scaling` `self-repositioner`)
+- Athalia (80% `hp-scaling` `self-repositioner`)
+- Silven (60% `hp-scaling`)
 
 **Damage**
 
 - Indris (100% `True damage` `Max HP-based damage`)
 - Sylphira (100% `True damage` `Magic` `Max HP-based damage`)
-- Shadewing (84% `Magic` `Max HP-based damage` `True damage`)
+- Nazrik (94% `True damage` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
 - Lily May (100% `Energy drain`)
+- Saida (67% `Energy drain`)
 - Dunlingr (62% `Energy drain`)
 
 **Crowd Control**
@@ -8609,7 +8678,7 @@ Common buffers are **Solise**, **Rowan**, or **Velara**.
 
 - Bonnie (100% `ATK debuff` `Damage taken debuff`)
 - Pandora (100% `ATK debuff` `Damage taken debuff`)
-- Contess (60% `ATK debuff`)
+- Contess (72% `ATK debuff`)
 
 **Crowd Control**
 
@@ -8824,7 +8893,7 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Twins (66% `ally-healer` `energy-provider`)
+- Twins (80% `ally-healer` `energy-provider`)
 
 **Damage**
 
@@ -9048,7 +9117,7 @@ Common buffers are **Rowan**, **Lyca**, or **Hugin**.
 
 - Daimon (100% `Life Drain` `Max HP`)
 - Koko (100% `Life Drain` `Max HP`)
-- Callan (60% `Max HP`)
+- Cecia (72% `Life Drain`)
 
 **Similar Skills**
 
@@ -9253,6 +9322,10 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 - Daimon (100% `Max HP`)
 - Galahad (100% `Max HP`)
 
+**Similar Skills**
+
+- Zandrok (60% `aoe-damage` `hp-scaling`)
+
 **Damage**
 
 - Athalia (100% `Physical` `True damage`)
@@ -9261,8 +9334,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 
 **Crowd Control**
 
+- Cassadee (78% `Knock back` `Knock up` `Stun`)
 - Baelran (69% `Knock up` `Knock down`)
-- Cassadee (65% `Knock back` `Knock up` `Stun`)
+- Kordan (69% `Knock back` `Knock down` `Knock up`)
 
 ### Summary for Scarlita
 
@@ -9357,12 +9431,12 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 **Buffs on allies**
 
 - Brutus (60% `Life Drain`)
-- Koko (60% `Life Drain`)
-- Kordan (60% `Life Drain`)
+- Cecia (60% `Life Drain`)
+- Harak (60% `Life Drain`)
 
 **Similar Skills**
 
-- Harak (66% `assassin` `life-drain`)
+- Harak (80% `assassin` `life-drain`)
 
 **Damage**
 
@@ -9686,7 +9760,7 @@ Common buffers are **Hugin**, **Twins**, or **Solise**.
 
 - Shadewing (100% `Max HP-based damage` `Magic`)
 - Gunnar (83% `Max HP-based damage`)
-- Silven (68% `Magic`)
+- Silven (82% `Magic`)
 
 ### Summary for Shemira
 
@@ -9861,12 +9935,12 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 **Debuffs on enemies**
 
 - Sinbad (100% `Energy drain` `Vitality debuff`)
-- Dunlingr (75% `Energy drain`)
-- Lily May (75% `Energy drain`)
+- Lily May (90% `Energy drain`)
+- Pippa (90% `Energy drain`)
 
 **Crowd Control**
 
-- Berial (64% `Frighten`)
+- Berial (76% `Frighten`)
 
 ### Summary for Silvina
 
@@ -9950,6 +10024,10 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 - Bonnie
 
 ### Units that can act as a replacement for Sinbad
+
+**Similar Skills**
+
+- Kruger (60% `enemy-debuffer`)
 
 **Damage**
 
@@ -10061,18 +10139,19 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
+- Rowan (87% `Energy`)
 - Ravion (81% `Energy` `ATK`)
-- Rowan (72% `Energy`)
 
 **Healing**
 
 - Koko (100% `Healing`)
 - Solise (100% `Healing`)
-- Contess (75% `Healing`)
+- Contess (90% `Healing`)
 
 **Similar Skills**
 
-- Solise (66% `ally-healer` `aoe-healing`)
+- Solise (80% `ally-healer` `aoe-healing`)
+- Velara (60% `ally-healer` `aoe-healing`)
 
 **Damage**
 
@@ -10084,7 +10163,7 @@ These are the **10** strongest pairings:
 
 - Lily May (80% `Interrupt`)
 - Sylphira (80% `Interrupt`)
-- Reinier (60% `Interrupt`)
+- Reinier (72% `Interrupt`)
 
 ### Summary for Smokey & Meerky
 
@@ -10183,13 +10262,17 @@ These are the **10** strongest pairings:
 
 **Healing**
 
-- Hewynn (92% `Healing`)
+- Hewynn (100% `Healing`)
 - Lorsan (92% `Healing`)
-- Gerda (69% `Healing` `Healing over time`)
+- Smokey & Meerky (73% `Healing`)
+
+**Similar Skills**
+
+- Twins (60% `ally-healer` `ally-shielder`)
 
 **Damage**
 
-- Twins (80% `Magic`)
+- Twins (96% `Magic`)
 
 ### Summary for Solise
 
@@ -10391,8 +10474,8 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 **Buffs on allies**
 
+- Shakir (100% `Damage taken reduction` `Haste`)
 - Koko (96% `Damage taken reduction` `Max HP`)
-- Shakir (96% `Damage taken reduction` `Haste`)
 
 **Similar Skills**
 
@@ -10496,8 +10579,8 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 **Damage**
 
+- Silven (85% `Magic` `True damage`)
 - Shadewing (81% `Magic` `Max HP-based damage` `True damage`)
-- Silven (71% `Magic` `True damage`)
 
 ### Summary for Sylphira
 
@@ -10601,6 +10684,7 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 
 - Mikola (100% `Healing` `Healing over time`)
 - Solise (100% `Healing` `Healing over time`)
+- Nara (60% `Healing`)
 
 **Damage**
 
@@ -10711,7 +10795,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 - Frieren (100% `DoT` `Magic`)
 - Bryon (96% `DoT` `Magic`)
-- Shadewing (65% `Magic` `DoT`)
+- Shadewing (78% `Magic` `DoT`)
 
 ### Summary for Tasi
 
@@ -10803,13 +10887,13 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 **Similar Skills**
 
-- Cassadee (60% `aoe-damage` `enemy-debuffer`)
+- Cassadee (72% `aoe-damage` `enemy-debuffer`)
 
 **Damage**
 
 - Korin (100% `Physical` `Max HP-based damage` `True damage`)
-- Indris (88% `Physical` `Max HP-based damage` `True damage`)
-- Nara (87% `Max HP-based damage` `Physical` `True damage`)
+- Nara (100% `Max HP-based damage` `Physical` `True damage`)
+- Shadewing (97% `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -10820,8 +10904,8 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 **Crowd Control**
 
 - Lucca (100% `Knock down` `Interrupt`)
+- Ravion (100% `Knock down`)
 - Sylphira (100% `Knock down` `Interrupt`)
-- Antandra (83% `Knock down`)
 
 ### Summary for Temesia
 
@@ -11124,6 +11208,7 @@ Common buffers are **Solise**, **Rowan**, or **Smokey & Meerky**.
 **Similar Skills**
 
 - Silven (100% `hp-scaling`)
+- Baelran (60% `hp-scaling`)
 - Pippa (60% `hp-scaling`)
 
 **Damage**
@@ -11243,7 +11328,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Solise**.
 
 - Kordan (100% `Knock back` `Bind` `Knock down`)
 - Indris (94% `Knock back` `Bind`)
-- Scarlita (78% `Knock back` `Knock down`)
+- Scarlita (94% `Knock back` `Knock down`)
 
 ### Summary for Ulmus
 
@@ -11343,15 +11428,19 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 - Galahad (100% `Haste`)
 - Hugin (100% `Haste`)
 
+**Similar Skills**
+
+- Athalia (60% `hp-scaling` `self-repositioner` `transformation`)
+
 **Damage**
 
 - Athalia (100% `HP loss` `True damage` `Physical`)
 - Faramor (100% `HP loss` `True damage` `Physical`)
-- Shadewing (78% `HP loss` `True damage`)
+- Perseus (78% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
-- Aliceth (66% `Marked target (focus fire)`)
+- Aliceth (80% `Marked target (focus fire)`)
 
 **Crowd Control**
 
@@ -11697,12 +11786,12 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Solise (90% `ally-healer` `ally-shielder` `aoe-healing`)
+- Solise (100% `ally-healer` `ally-shielder` `aoe-healing`)
 
 **Damage**
 
 - Solise (100% `Magic`)
-- Twins (80% `Magic`)
+- Twins (96% `Magic`)
 
 **Crowd Control**
 
@@ -11806,9 +11895,9 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 **Similar Skills**
 
-- Arden (66% `aoe-damage` `dot-specialist`)
+- Arden (80% `aoe-damage` `dot-specialist`)
+- Cecia (72% `dot-specialist` `life-drain`)
 - Lorsan (66% `aoe-damage` `dot-specialist`)
-- Cecia (60% `dot-specialist` `life-drain`)
 
 **Damage**
 
@@ -11909,9 +11998,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 **Damage**
 
-- Shadewing (75% `HP loss` `Max HP-based damage`)
+- Shadewing (90% `HP loss` `Max HP-based damage`)
+- Kordan (74% `Physical` `HP loss`)
 - Gwyneth (68% `Physical` `Max HP-based damage`)
-- Aliceth (62% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -12224,14 +12313,14 @@ Common buffers are **Rowan**, **Hugin**, or **Smokey & Meerky**.
 
 **Damage**
 
+- Shadewing (100% `Magic` `HP loss`)
 - Niru (94% `Magic` `HP loss`)
-- Shadewing (94% `Magic` `HP loss`)
 - Dunlingr (91% `HP loss` `Magic`)
 
 **Crowd Control**
 
+- Valka (80% `Stun` `Knock down`)
 - Perseus (66% `Stun`)
-- Valka (66% `Stun` `Knock down`)
 
 ### Summary for Zorya
 
