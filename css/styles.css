@@ -25,6 +25,8 @@
   --chip-debuff-fg: #702020;
   --chip-cc-bg: #e2d8f8;
   --chip-cc-fg: #5a3d8a;
+  --chip-anti-cc-bg: #eaf5d6;
+  --chip-anti-cc-fg: #456832;
   --chip-target-bg: #cce8f8;
   --chip-target-fg: #1a5a80;
   --chip-role-bg: #dceee0;
@@ -1024,6 +1026,11 @@ a:hover {
 .chip-cc {
   background: var(--chip-cc-bg);
   color: var(--chip-cc-fg);
+}
+
+.chip-anti-cc {
+  background: var(--chip-anti-cc-bg);
+  color: var(--chip-anti-cc-fg);
 }
 
 .chip-target {

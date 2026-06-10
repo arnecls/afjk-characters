@@ -350,17 +350,21 @@
     "ally-shielder": { emoji: "🛡️", cls: "chip-role" },
     "energy-provider": { emoji: "🔋", cls: "chip-role" },
     "battlefield-modification": { emoji: "🗺️", cls: "chip-role" },
-    "cc-immunity": { emoji: "🛡️", cls: "chip-role" },
+    "cc-immunity": { emoji: "🔰", cls: "chip-anti-cc" },
     invincibility: { emoji: "✨", cls: "chip-role" },
     Invincible: { emoji: "✨", cls: "chip-role" },
+    "Dmg and CC immunity": { emoji: "🔰", cls: "chip-anti-cc" },
+    "Dmg and CC immunity (ally)": { emoji: "🔰", cls: "chip-anti-cc" },
+    "Damage and control immunity": { emoji: "🔰", cls: "chip-anti-cc" },
+    "Damage and control immunity (ally)": { emoji: "🔰", cls: "chip-anti-cc" },
     "Knock up": { emoji: "⬆️", cls: "chip-cc" },
     Interrupt: { emoji: "🚫", cls: "chip-cc" },
     Displace: { emoji: "↔️", cls: "chip-cc" },
-    Unaffected: { emoji: "🛡️", cls: "chip-cc" },
-    Steadfast: { emoji: "🛡️", cls: "chip-cc" },
-    Immune: { emoji: "⛔", cls: "chip-cc" },
-    Untargetable: { emoji: "👻", cls: "chip-cc" },
-    Cleanse: { emoji: "💧", cls: "chip-cc" },
+    Unaffected: { emoji: "🛡️", cls: "chip-anti-cc" },
+    Steadfast: { emoji: "🛡️", cls: "chip-anti-cc" },
+    Immune: { emoji: "⛔", cls: "chip-anti-cc" },
+    Untargetable: { emoji: "👻", cls: "chip-anti-cc" },
+    Cleanse: { emoji: "💧", cls: "chip-anti-cc" },
     "Max HP-based damage": { emoji: "💔", cls: "chip-damage" },
   };
 
@@ -570,19 +574,31 @@
     };
   }
 
+  function isCcChipClass(cls) {
+    return cls === "chip-cc";
+  }
+
+  function isCcFamilyChipClass(cls) {
+    return cls === "chip-cc" || cls === "chip-anti-cc";
+  }
+
+  function ccFamilyChipKeys() {
+    return Object.keys(TAG_DEFINITIONS)
+      .filter(function (key) {
+        return isCcFamilyChipClass(TAG_DEFINITIONS[key].cls);
+      })
+      .sort(function (a, b) {
+        return b.length - a.length;
+      });
+  }
+
   function resolveLeadingChip(label) {
     const trimmed = label.trim();
     if (!trimmed) {
       return { textOnly: "", remainder: "", isCc: false };
     }
 
-    const ccKeys = Object.keys(TAG_DEFINITIONS).filter(function (key) {
-      const cls = TAG_DEFINITIONS[key].cls;
-      return cls && cls.indexOf("chip-cc") !== -1;
-    });
-    ccKeys.sort(function (a, b) {
-      return b.length - a.length;
-    });
+    const ccKeys = ccFamilyChipKeys();
 
     const labelLower = trimmed.toLowerCase();
     for (let i = 0; i < ccKeys.length; i++) {
@@ -598,7 +614,7 @@
           emoji: def.emoji,
           text: cc,
           cls: def.cls,
-          isCc: true,
+          isCc: isCcChipClass(def.cls),
           remainder: trimmed.slice(cc.length),
         };
       }
@@ -625,7 +641,7 @@
         emoji: def.emoji,
         text: trimmed,
         cls: def.cls,
-        isCc: def.cls.indexOf("chip-cc") !== -1,
+        isCc: isCcChipClass(def.cls),
         remainder: "",
       };
     }
@@ -636,7 +652,7 @@
           emoji: def.emoji,
           text: key,
           cls: def.cls,
-          isCc: def.cls.indexOf("chip-cc") !== -1,
+          isCc: isCcChipClass(def.cls),
           remainder: "",
         };
       }
@@ -841,13 +857,7 @@
   }
 
   function chipifyLeadingCcType(label) {
-    const ccKeys = Object.keys(TAG_DEFINITIONS).filter(function (key) {
-      const cls = TAG_DEFINITIONS[key].cls;
-      return cls && cls.indexOf("chip-cc") !== -1;
-    });
-    ccKeys.sort(function (a, b) {
-      return b.length - a.length;
-    });
+    const ccKeys = ccFamilyChipKeys();
 
     const labelLower = label.toLowerCase();
     for (let i = 0; i < ccKeys.length; i++) {
@@ -1530,8 +1540,7 @@
 
   const SKILL_CARD_CC_KEYS = Object.keys(TAG_DEFINITIONS)
     .filter(function (key) {
-      const cls = TAG_DEFINITIONS[key].cls;
-      return cls && cls.indexOf("chip-cc") !== -1;
+      return isCcChipClass(TAG_DEFINITIONS[key].cls);
     })
     .sort(function (a, b) {
       return b.length - a.length;
