@@ -122,6 +122,13 @@ DEFINING_TIER_SCORE_MULT = {
 REPLACEMENT_MIN_SCORE = 0.6
 REPLACEMENT_MAX = 3
 REPLACEMENT_SAME_FACTION_MULT = 1.20
+PRYDWEN_TIER_MODES = (
+    "afk_stages",
+    "dream_realm",
+    "dream_realm_endless",
+    "pvp",
+)
+TIER_RANK_ORDER = ("C", "B", "A", "A+", "S", "S+")
 REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
 REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST = 1.5
 REPLACEMENT_SIGNATURE_CC_BOOST = 1.5
@@ -1563,6 +1570,58 @@ def _cc_overlap_tags(
     return _profile_overlap_tags(cc_a, cc_b, limit)
 
 
+def _load_prydwen_tiers_by_title() -> dict[str, dict[str, str]]:
+    if not HEROES_DATA.exists():
+        return {}
+    data = json.loads(HEROES_DATA.read_text(encoding="utf-8"))
+    out: dict[str, dict[str, str]] = {}
+    for hero in data.get("heroes", []):
+        title = hero.get("title")
+        tiers = hero.get("prydwen_tiers")
+        if title and tiers:
+            out[title] = tiers
+    return out
+
+
+def _prydwen_tier_rank(tier: str | None) -> int | None:
+    if not tier or tier == "?":
+        return None
+    try:
+        return TIER_RANK_ORDER.index(tier)
+    except ValueError:
+        return None
+
+
+def _prydwen_tier_avg_delta(
+    source_tiers: dict[str, str] | None,
+    candidate_tiers: dict[str, str] | None,
+) -> float | None:
+    """Mean candidate rank minus source rank over modes where both have tiers."""
+    src = source_tiers or {}
+    cand = candidate_tiers or {}
+    deltas: list[float] = []
+    for mode in PRYDWEN_TIER_MODES:
+        source_rank = _prydwen_tier_rank(src.get(mode))
+        candidate_rank = _prydwen_tier_rank(cand.get(mode))
+        if source_rank is None or candidate_rank is None:
+            continue
+        deltas.append(candidate_rank - source_rank)
+    if not deltas:
+        return None
+    return sum(deltas) / len(deltas)
+
+
+def _prydwen_tier_preference(
+    source_tiers: dict[str, str] | None,
+    candidate_tiers: dict[str, str] | None,
+) -> int:
+    """1 when candidate average tier is >= source; 0 otherwise."""
+    delta = _prydwen_tier_avg_delta(source_tiers, candidate_tiers)
+    if delta is None:
+        return 0
+    return 1 if delta >= 0 else 0
+
+
 def _replacement_rank_score(
     raw: float,
     candidate_title: str,
@@ -1582,20 +1641,27 @@ def _rank_replacement_category(
     scores: list[tuple[float, str, list[str]]],
     source_faction: str | None = None,
     faction_by_title: dict[str, str] | None = None,
+    source_title: str | None = None,
+    tiers_by_title: dict[str, dict[str, str]] | None = None,
 ) -> list[dict]:
     """Top replacement picks for one category above min_score."""
     factions = faction_by_title or {}
+    tiers = tiers_by_title or {}
+    source_tiers = tiers.get(source_title or "", {})
     ranked_items = [
         (
+            _prydwen_tier_preference(source_tiers, tiers.get(title, {}))
+            if source_title
+            else 0,
             _replacement_rank_score(score, title, source_faction, factions),
             title,
             matches,
         )
         for score, title, matches in scores
     ]
-    ranked_items.sort(key=lambda item: (-item[0], short_name(item[1])))
+    ranked_items.sort(key=lambda item: (-item[0], -item[1], short_name(item[2])))
     ranked: list[dict] = []
-    for effective, title, matches in ranked_items:
+    for _tier_pref, effective, title, matches in ranked_items:
         if effective < REPLACEMENT_MIN_SCORE:
             break
         ranked.append(
@@ -1617,6 +1683,7 @@ def compute_replacement_scores(
 ) -> dict[str, dict[str, list[dict]]]:
     """Per-category replacement lists for each hero (0–1 similarity per category)."""
     factions = faction_by_title or {}
+    tiers_by_title = _load_prydwen_tiers_by_title()
 
     profiles: dict[str, dict[str, float]] = {}
     energy_provided: dict[str, float] = {}
@@ -1718,7 +1785,11 @@ def compute_replacement_scores(
         source_faction = factions.get(hero_x.title)
         result[hero_x.title] = {
             key: _rank_replacement_category(
-                category_scores[key], source_faction, factions
+                category_scores[key],
+                source_faction,
+                factions,
+                hero_x.title,
+                tiers_by_title,
             )
             for key in REPLACEMENT_CATEGORIES
         }

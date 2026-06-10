@@ -696,14 +696,6 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "HP loss"
-            ]
-          },
-          {
             "name": "Faramor",
             "score": 1.0,
             "matches": [
@@ -712,23 +704,24 @@
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.9722,
+            "name": "Kordan",
+            "score": 0.9466,
             "matches": [
+              "Physical",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Ravion",
+            "score": 0.8932,
+            "matches": [
+              "Physical",
               "HP loss"
             ]
           }
         ],
         "debuff": [],
         "cc": [
-          {
-            "name": "Hepler",
-            "score": 0.8636,
-            "matches": [
-              "Blind",
-              "Stun"
-            ]
-          },
           {
             "name": "Twins",
             "score": 0.6,
@@ -1028,27 +1021,10 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Cryonaia",
-            "score": 0.75,
-            "matches": [
-              "battlefield-modification",
-              "cc-immunity",
-              "invincibility"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical"
-            ]
-          },
-          {
-            "name": "Dionel",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -1060,34 +1036,26 @@
             "matches": [
               "Physical"
             ]
-          }
-        ],
-        "debuff": [
+          },
           {
-            "name": "Bryon",
-            "score": 0.75,
+            "name": "Aliceth",
+            "score": 0.96,
             "matches": [
-              "Haste debuff"
+              "Physical"
             ]
           }
         ],
+        "debuff": [],
         "cc": [
           {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Carolina",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
             "name": "Gwyneth",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -3048,14 +3016,6 @@
               "hp-scaling",
               "self-repositioner"
             ]
-          },
-          {
-            "name": "Pippa",
-            "score": 0.6667,
-            "matches": [
-              "hp-scaling",
-              "self-repositioner"
-            ]
           }
         ],
         "damage": [
@@ -3069,15 +3029,6 @@
             ]
           },
           {
-            "name": "Vala",
-            "score": 0.7635,
-            "matches": [
-              "HP loss",
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
             "name": "Shadewing",
             "score": 0.6926,
             "matches": [
@@ -3088,20 +3039,6 @@
         ],
         "debuff": [
           {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": [
-              "ATK debuff"
-            ]
-          },
-          {
-            "name": "Lucius",
-            "score": 0.8,
-            "matches": [
-              "ATK debuff"
-            ]
-          },
-          {
             "name": "Ravion",
             "score": 0.6,
             "matches": [
@@ -3110,13 +3047,6 @@
           }
         ],
         "cc": [
-          {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Knock down"
-            ]
-          },
           {
             "name": "Baelran",
             "score": 1.0,
@@ -3127,6 +3057,13 @@
           {
             "name": "Ravion",
             "score": 1.0,
+            "matches": [
+              "Knock down"
+            ]
+          },
+          {
+            "name": "Kordan",
+            "score": 0.6,
             "matches": [
               "Knock down"
             ]
@@ -3340,79 +3277,34 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Harak",
-            "score": 1.0,
-            "matches": [
-              "Invincible"
-            ]
-          },
-          {
-            "name": "Pandora",
-            "score": 1.0,
-            "matches": [
-              "Invincible"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Mehira",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Berial",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Bonnie",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Bryon",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          }
-        ],
-        "cc": [
-          {
-            "name": "Tasi",
-            "score": 1.0,
-            "matches": [
-              "Sleep"
-            ]
-          }
-        ]
+        "debuff": [],
+        "cc": []
       }
     },
     "Baelran - Dawnblade": {
@@ -3786,39 +3678,13 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Athalia",
-            "score": 0.8,
-            "matches": [
-              "hp-scaling",
-              "transformation"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 1.0,
+            "name": "Silven",
+            "score": 0.6894,
             "matches": [
-              "Physical",
               "True damage"
-            ]
-          },
-          {
-            "name": "Dionel",
-            "score": 1.0,
-            "matches": [
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
-            "name": "Faramor",
-            "score": 1.0,
-            "matches": [
-              "True damage",
-              "Physical"
             ]
           }
         ],
@@ -3829,47 +3695,9 @@
             "matches": [
               "Max HP debuff"
             ]
-          },
-          {
-            "name": "Natsu",
-            "score": 1.0,
-            "matches": [
-              "Max HP debuff"
-            ]
-          },
-          {
-            "name": "Nazrik",
-            "score": 1.0,
-            "matches": [
-              "Max HP debuff"
-            ]
           }
         ],
-        "cc": [
-          {
-            "name": "Scarlita",
-            "score": 0.66,
-            "matches": [
-              "Knock up",
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Lucca",
-            "score": 0.6,
-            "matches": [
-              "Knock down",
-              "Knock up"
-            ]
-          },
-          {
-            "name": "Lucy",
-            "score": 0.6,
-            "matches": [
-              "Knock up"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Berial - Sinister Jester": {
@@ -4199,21 +4027,21 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bryon",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -4939,21 +4767,21 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -4961,14 +4789,6 @@
           }
         ],
         "debuff": [
-          {
-            "name": "Kafra",
-            "score": 0.8571,
-            "matches": [
-              "ATK debuff",
-              "Haste debuff"
-            ]
-          },
           {
             "name": "Pandora",
             "score": 0.8571,
@@ -4988,14 +4808,14 @@
             ]
           },
           {
-            "name": "Alsa",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -5260,13 +5080,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Cecia",
-            "score": 1.0,
-            "matches": [
-              "Life Drain"
-            ]
-          },
-          {
             "name": "Daimon",
             "score": 1.0,
             "matches": [
@@ -5279,18 +5092,17 @@
             "matches": [
               "Life Drain"
             ]
+          },
+          {
+            "name": "Koko",
+            "score": 1.0,
+            "matches": [
+              "Life Drain"
+            ]
           }
         ],
         "energy": [],
         "similar_skills": [
-          {
-            "name": "Granny Dahnie",
-            "score": 0.6667,
-            "matches": [
-              "hp-scaling",
-              "taunt"
-            ]
-          },
           {
             "name": "Zorya",
             "score": 0.6667,
@@ -5318,7 +5130,7 @@
             ]
           },
           {
-            "name": "Korin",
+            "name": "Valka",
             "score": 0.8873,
             "matches": [
               "Max HP-based damage",
@@ -5339,13 +5151,6 @@
           {
             "name": "Hepler",
             "score": 1.0,
-            "matches": [
-              "Taunt"
-            ]
-          },
-          {
-            "name": "Antandra",
-            "score": 0.6,
             "matches": [
               "Taunt"
             ]
@@ -5634,19 +5439,18 @@
             ]
           },
           {
-            "name": "Tasi",
-            "score": 1.0,
-            "matches": [
-              "DoT",
-              "Magic"
-            ]
-          },
-          {
-            "name": "Mirael",
+            "name": "Shadewing",
             "score": 0.6875,
             "matches": [
               "Magic",
               "DoT"
+            ]
+          },
+          {
+            "name": "Eironn",
+            "score": 0.6,
+            "matches": [
+              "Magic"
             ]
           }
         ],
@@ -5654,13 +5458,6 @@
           {
             "name": "Alna",
             "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Natsu",
-            "score": 0.6667,
             "matches": [
               "Haste debuff"
             ]
@@ -5675,26 +5472,24 @@
         ],
         "cc": [
           {
-            "name": "Gerda",
-            "score": 1.0,
-            "matches": [
-              "Interrupt",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Lucca",
-            "score": 1.0,
-            "matches": [
-              "Interrupt",
-              "Stun"
-            ]
-          },
-          {
             "name": "Smokey & Meerky",
             "score": 1.0,
             "matches": [
               "Interrupt",
+              "Stun"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.6,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Lenya",
+            "score": 0.6,
+            "matches": [
               "Stun"
             ]
           }
@@ -5899,7 +5694,7 @@
             ]
           },
           {
-            "name": "Hepler",
+            "name": "Hugin",
             "score": 1.0,
             "matches": [
               "Max HP"
@@ -5910,21 +5705,21 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Cassadee",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cryonaia",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -5934,27 +5729,25 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Knock down",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Lucca",
-            "score": 1.0,
-            "matches": [
-              "Knock down",
-              "Stun"
-            ]
-          },
-          {
             "name": "Valka",
             "score": 1.0,
             "matches": [
               "Knock down",
               "Stun"
+            ]
+          },
+          {
+            "name": "Athalia",
+            "score": 0.625,
+            "matches": [
+              "Knock down"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 0.625,
+            "matches": [
+              "Knock down"
             ]
           }
         ]
@@ -6936,24 +6729,8 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Temesia",
-            "score": 0.6,
-            "matches": [
-              "aoe-damage",
-              "enemy-debuffer"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
-          {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
           {
             "name": "Callan",
             "score": 1.0,
@@ -6967,16 +6744,16 @@
             "matches": [
               "Magic"
             ]
+          },
+          {
+            "name": "Cryonaia",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
           }
         ],
         "debuff": [
-          {
-            "name": "Carolina",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF debuff"
-            ]
-          },
           {
             "name": "Eironn",
             "score": 1.0,
@@ -6985,7 +6762,14 @@
             ]
           },
           {
-            "name": "Fay",
+            "name": "Shadewing",
+            "score": 1.0,
+            "matches": [
+              "Magic DEF debuff"
+            ]
+          },
+          {
+            "name": "Thador",
             "score": 1.0,
             "matches": [
               "Magic DEF debuff"
@@ -7890,23 +7674,7 @@
       "replacements": {
         "buff": [
           {
-            "name": "Smokey & Meerky",
-            "score": 0.8889,
-            "matches": [
-              "Healing",
-              "ATK"
-            ]
-          },
-          {
-            "name": "Mikola",
-            "score": 0.7778,
-            "matches": [
-              "Healing",
-              "ATK"
-            ]
-          },
-          {
-            "name": "Antandra",
+            "name": "Solise",
             "score": 0.6667,
             "matches": [
               "Healing"
@@ -7917,21 +7685,21 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Solise",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Velara",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -7958,14 +7726,7 @@
             ]
           },
           {
-            "name": "Cyran",
-            "score": 0.6,
-            "matches": [
-              "Silence"
-            ]
-          },
-          {
-            "name": "Dunlingr",
+            "name": "Sylphira",
             "score": 0.6,
             "matches": [
               "Silence"
@@ -8305,21 +8066,21 @@
         ],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Frieren",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -8328,21 +8089,14 @@
         ],
         "debuff": [
           {
-            "name": "Berial",
+            "name": "Kulu",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
             ]
           },
           {
-            "name": "Bonnie",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff"
-            ]
-          },
-          {
-            "name": "Indris",
+            "name": "Mehira",
             "score": 1.0,
             "matches": [
               "Damage taken debuff"
@@ -8579,11 +8333,11 @@
             ]
           },
           {
-            "name": "Pippa",
-            "score": 0.93,
+            "name": "Silven",
+            "score": 0.8682,
             "matches": [
-              "True damage",
-              "Magic"
+              "Magic",
+              "True damage"
             ]
           }
         ],
@@ -8596,14 +8350,7 @@
             ]
           },
           {
-            "name": "Lucius",
-            "score": 1.0,
-            "matches": [
-              "ATK debuff"
-            ]
-          },
-          {
-            "name": "Lyca",
+            "name": "Ravion",
             "score": 1.0,
             "matches": [
               "ATK debuff"
@@ -8612,24 +8359,8 @@
         ],
         "cc": [
           {
-            "name": "Evie",
-            "score": 1.0,
-            "matches": [
-              "Silence",
-              "Bind"
-            ]
-          },
-          {
             "name": "Gwyneth",
             "score": 1.0,
-            "matches": [
-              "Bind",
-              "Silence"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 0.7353,
             "matches": [
               "Bind",
               "Silence"
@@ -8772,22 +8503,14 @@
       "replacements": {
         "buff": [
           {
-            "name": "Koko",
-            "score": 0.8889,
-            "matches": [
-              "Max HP",
-              "Life Drain"
-            ]
-          },
-          {
-            "name": "Hepler",
+            "name": "Hugin",
             "score": 0.6667,
             "matches": [
               "Max HP"
             ]
           },
           {
-            "name": "Hugin",
+            "name": "Saida",
             "score": 0.6667,
             "matches": [
               "Max HP"
@@ -8804,25 +8527,9 @@
               "life-drain",
               "summoner"
             ]
-          },
-          {
-            "name": "Zorya",
-            "score": 0.6,
-            "matches": [
-              "hp-scaling",
-              "life-drain"
-            ]
           }
         ],
         "damage": [
-          {
-            "name": "Satrana",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "Magic"
-            ]
-          },
           {
             "name": "Shadewing",
             "score": 1.0,
@@ -8838,25 +8545,17 @@
               "Max HP-based damage",
               "Magic"
             ]
+          },
+          {
+            "name": "Gunnar",
+            "score": 0.8519,
+            "matches": [
+              "Max HP-based damage"
+            ]
           }
         ],
         "debuff": [],
-        "cc": [
-          {
-            "name": "Berial",
-            "score": 1.0,
-            "matches": [
-              "Frighten"
-            ]
-          },
-          {
-            "name": "Silvina",
-            "score": 1.0,
-            "matches": [
-              "Frighten"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Damian - Woody Wonder": {
@@ -9084,17 +8783,18 @@
             ]
           },
           {
-            "name": "Hewynn",
+            "name": "Solise",
             "score": 0.6857,
             "matches": [
               "Healing"
             ]
           },
           {
-            "name": "Lorsan",
-            "score": 0.6857,
+            "name": "Hepler",
+            "score": 0.6786,
             "matches": [
-              "Healing"
+              "Healing",
+              "Haste"
             ]
           }
         ],
@@ -9118,13 +8818,6 @@
         ],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Callan",
             "score": 1.0,
             "matches": [
@@ -9133,6 +8826,13 @@
           },
           {
             "name": "Cassadee",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -9158,7 +8858,7 @@
             ]
           },
           {
-            "name": "Arden",
+            "name": "Faramor",
             "score": 0.6,
             "matches": [
               "Stun"
@@ -9477,14 +9177,14 @@
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Kordan",
             "score": 0.6667,
             "matches": [
               "DEF Penetration"
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Zanie",
             "score": 0.6667,
             "matches": [
               "DEF Penetration"
@@ -9511,10 +9211,9 @@
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
-              "Physical",
               "True damage"
             ]
           }
@@ -9535,7 +9234,7 @@
             ]
           },
           {
-            "name": "Hodgkin",
+            "name": "Nazrik",
             "score": 1.0,
             "matches": [
               "Vitality debuff"
@@ -9558,8 +9257,8 @@
             ]
           },
           {
-            "name": "Lucca",
-            "score": 1.0,
+            "name": "Zandrok",
+            "score": 0.6667,
             "matches": [
               "Knock up"
             ]
@@ -9946,17 +9645,7 @@
         "**Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Valka",
-            "score": 0.8462,
-            "matches": [
-              "ATK SPD",
-              "Life Drain",
-              "Haste"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "similar_skills": [],
         "damage": [
@@ -9968,48 +9657,23 @@
             ]
           },
           {
-            "name": "Talene",
-            "score": 1.0,
+            "name": "Aliceth",
+            "score": 0.9089,
             "matches": [
-              "HP loss",
-              "Magic"
+              "HP loss"
             ]
           },
           {
-            "name": "Zorya",
-            "score": 0.9682,
+            "name": "Niru",
+            "score": 0.8449,
             "matches": [
-              "HP loss",
-              "Magic"
+              "Magic",
+              "HP loss"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Sinbad",
-            "score": 1.0,
-            "matches": [
-              "Energy drain",
-              "ATK debuff"
-            ]
-          },
-          {
-            "name": "Pandora",
-            "score": 0.6111,
-            "matches": [
-              "ATK debuff",
-              "Energy drain"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": [
-          {
-            "name": "Evie",
-            "score": 1.0,
-            "matches": [
-              "Silence"
-            ]
-          },
           {
             "name": "Sylphira",
             "score": 0.96,
@@ -10019,6 +9683,13 @@
           },
           {
             "name": "Contess",
+            "score": 0.6,
+            "matches": [
+              "Silence"
+            ]
+          },
+          {
+            "name": "Cyran",
             "score": 0.6,
             "matches": [
               "Silence"
@@ -10201,21 +9872,21 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -10232,14 +9903,6 @@
           }
         ],
         "cc": [
-          {
-            "name": "Evie",
-            "score": 0.9661,
-            "matches": [
-              "Displace",
-              "Bind"
-            ]
-          },
           {
             "name": "Ravion",
             "score": 0.6508,
@@ -10828,49 +10491,10 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Hugin",
-            "score": 0.6667,
-            "matches": [
-              "ally-shielder",
-              "energy-provider"
-            ]
-          },
-          {
-            "name": "Lucius",
-            "score": 0.6667,
-            "matches": [
-              "ally-healer",
-              "ally-shielder"
-            ]
-          },
-          {
-            "name": "Rowan",
-            "score": 0.6667,
-            "matches": [
-              "ally-healer",
-              "energy-provider"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Aurora",
+            "name": "Solise",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -10878,30 +10502,7 @@
           }
         ],
         "debuff": [],
-        "cc": [
-          {
-            "name": "Aliceth",
-            "score": 0.825,
-            "matches": [
-              "Blind",
-              "Knock back"
-            ]
-          },
-          {
-            "name": "Scarlita",
-            "score": 0.6,
-            "matches": [
-              "Knock back"
-            ]
-          },
-          {
-            "name": "Talene",
-            "score": 0.6,
-            "matches": [
-              "Knock back"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Evie - Royal Envoy": {
@@ -11108,13 +10709,6 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Callan",
             "score": 1.0,
             "matches": [
@@ -11122,7 +10716,14 @@
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -11493,93 +11094,22 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Arden",
-            "score": 0.8,
-            "matches": [
-              "aoe-damage",
-              "dot-specialist"
-            ]
-          },
-          {
-            "name": "Lorsan",
-            "score": 0.8,
-            "matches": [
-              "aoe-damage",
-              "dot-specialist"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 0.8885,
+            "name": "Shadewing",
+            "score": 0.7058,
             "matches": [
-              "Physical",
               "HP loss",
               "True damage"
             ]
-          },
-          {
-            "name": "Vala",
-            "score": 0.7987,
-            "matches": [
-              "HP loss",
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 0.7096,
-            "matches": [
-              "True damage",
-              "Physical"
-            ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Vitality debuff"
-            ]
-          },
-          {
-            "name": "Dionel",
-            "score": 1.0,
-            "matches": [
-              "Vitality debuff"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 1.0,
-            "matches": [
-              "Vitality debuff"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Koko",
-            "score": 1.0,
+            "name": "Gunnar",
+            "score": 0.625,
             "matches": [
               "Stun"
             ]
@@ -11796,14 +11326,6 @@
         "energy": [],
         "similar_skills": [
           {
-            "name": "Hewynn",
-            "score": 1.0,
-            "matches": [
-              "ally-healer",
-              "aoe-healing"
-            ]
-          },
-          {
             "name": "Ludovic",
             "score": 1.0,
             "matches": [
@@ -11818,25 +11340,33 @@
               "ally-healer",
               "aoe-healing"
             ]
+          },
+          {
+            "name": "Solise",
+            "score": 0.6667,
+            "matches": [
+              "ally-healer",
+              "aoe-healing"
+            ]
           }
         ],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bryon",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -11844,14 +11374,6 @@
           }
         ],
         "debuff": [
-          {
-            "name": "Sinbad",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF debuff",
-              "Phys DEF debuff"
-            ]
-          },
           {
             "name": "Indris",
             "score": 0.75,
@@ -11861,7 +11383,14 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Cassadee",
+            "score": 0.6,
+            "matches": [
+              "Magic DEF debuff"
+            ]
+          },
+          {
+            "name": "Zanie",
             "score": 0.6,
             "matches": [
               "Phys DEF debuff"
@@ -12005,22 +11534,8 @@
         "energy": [],
         "similar_skills": [
           {
-            "name": "Chippy",
-            "score": 1.0,
-            "matches": [
-              "summoner"
-            ]
-          },
-          {
             "name": "Zanie",
             "score": 1.0,
-            "matches": [
-              "summoner"
-            ]
-          },
-          {
-            "name": "Damian",
-            "score": 0.6,
             "matches": [
               "summoner"
             ]
@@ -12042,7 +11557,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -12053,20 +11568,6 @@
         "cc": [
           {
             "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Knock up"
-            ]
-          },
-          {
-            "name": "Dionel",
-            "score": 1.0,
-            "matches": [
-              "Knock up"
-            ]
-          },
-          {
-            "name": "Lucca",
             "score": 1.0,
             "matches": [
               "Knock up"
@@ -12297,54 +11798,43 @@
             ]
           },
           {
-            "name": "Cyran",
-            "score": 0.8559,
+            "name": "Shadewing",
+            "score": 0.7756,
             "matches": [
-              "True damage",
-              "Magic"
+              "Magic",
+              "DoT",
+              "True damage"
             ]
           },
           {
-            "name": "Pippa",
-            "score": 0.8147,
+            "name": "Faramor",
+            "score": 0.7612,
             "matches": [
-              "True damage",
-              "Magic"
+              "True damage"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Evie",
-            "score": 0.6061,
-            "matches": [
-              "DoT"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
+            "name": "Athalia",
+            "score": 0.6667,
             "matches": [
-              "Knock down",
-              "Stun"
+              "Knock down"
             ]
           },
           {
-            "name": "Callan",
-            "score": 1.0,
+            "name": "Baelran",
+            "score": 0.6667,
             "matches": [
-              "Knock down",
-              "Stun"
+              "Knock down"
             ]
           },
           {
-            "name": "Lucca",
-            "score": 1.0,
+            "name": "Kordan",
+            "score": 0.6667,
             "matches": [
-              "Knock down",
-              "Stun"
+              "Knock down"
             ]
           }
         ]
@@ -12539,10 +12029,9 @@
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.72,
+            "name": "Mehira",
+            "score": 0.6,
             "matches": [
-              "Max HP",
               "Haste"
             ]
           }
@@ -12551,21 +12040,21 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Mehira",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -12575,21 +12064,14 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Alna",
+            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Atalanta",
+            "name": "Velara",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -12761,7 +12243,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Hepler",
             "score": 0.6353,
             "matches": [
               "Healing"
@@ -12786,7 +12268,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -12796,14 +12278,6 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Lucca",
-            "score": 0.8333,
-            "matches": [
-              "Stun",
-              "Interrupt"
-            ]
-          },
-          {
             "name": "Smokey & Meerky",
             "score": 0.8,
             "matches": [
@@ -12812,7 +12286,7 @@
             ]
           },
           {
-            "name": "Alsa",
+            "name": "Koko",
             "score": 0.6,
             "matches": [
               "Stun"
@@ -13181,7 +12655,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -13198,44 +12672,41 @@
             ]
           },
           {
-            "name": "Kafra",
-            "score": 1.0,
-            "matches": [
-              "ATK debuff",
-              "Haste debuff"
-            ]
-          },
-          {
             "name": "Pandora",
             "score": 1.0,
             "matches": [
               "ATK debuff",
               "Haste debuff"
             ]
+          },
+          {
+            "name": "Bryon",
+            "score": 0.6,
+            "matches": [
+              "Haste debuff"
+            ]
           }
         ],
         "cc": [
-          {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Stun",
-              "Taunt"
-            ]
-          },
-          {
-            "name": "Lumont",
-            "score": 1.0,
-            "matches": [
-              "Stun",
-              "Taunt"
-            ]
-          },
           {
             "name": "Hepler",
             "score": 0.8095,
             "matches": [
               "Taunt",
+              "Stun"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.6857,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Lorsan",
+            "score": 0.6857,
+            "matches": [
               "Stun"
             ]
           }
@@ -13862,25 +13333,8 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Mirael",
-            "score": 0.8,
-            "matches": [
-              "dot-specialist",
-              "fire-attack"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
-          {
-            "name": "Brutus",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
           {
             "name": "Gunnar",
             "score": 1.0,
@@ -13890,63 +13344,15 @@
             ]
           },
           {
-            "name": "Himmel",
-            "score": 1.0,
+            "name": "Shadewing",
+            "score": 0.7268,
             "matches": [
-              "Physical",
               "Max HP-based damage"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Evie",
-            "score": 1.0,
-            "matches": [
-              "DoT"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 1.0,
-            "matches": [
-              "DoT"
-            ]
-          },
-          {
-            "name": "Brutus",
-            "score": 0.8889,
-            "matches": [
-              "DoT"
-            ]
-          }
-        ],
-        "cc": [
-          {
-            "name": "Indris",
-            "score": 0.7125,
-            "matches": [
-              "Bind",
-              "Silence"
-            ]
-          },
-          {
-            "name": "Evie",
-            "score": 0.69,
-            "matches": [
-              "Bind",
-              "Silence"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 0.65,
-            "matches": [
-              "Bind",
-              "Stun"
-            ]
-          }
-        ]
+        "debuff": [],
+        "cc": []
       }
     },
     "Hammie - Acorn Mage": {
@@ -14738,16 +14144,7 @@
           }
         ],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Seth",
-            "score": 0.6667,
-            "matches": [
-              "assassin",
-              "life-drain"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Aliceth",
@@ -14785,13 +14182,6 @@
         ],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Knock down"
-            ]
-          },
-          {
             "name": "Athalia",
             "score": 1.0,
             "matches": [
@@ -14800,6 +14190,13 @@
           },
           {
             "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Knock down"
+            ]
+          },
+          {
+            "name": "Callan",
             "score": 1.0,
             "matches": [
               "Knock down"
@@ -15369,22 +14766,6 @@
         "energy": [],
         "similar_skills": [
           {
-            "name": "Lucius",
-            "score": 0.6667,
-            "matches": [
-              "ally-healer",
-              "ally-shielder"
-            ]
-          },
-          {
-            "name": "Pang",
-            "score": 0.6667,
-            "matches": [
-              "ally-shielder",
-              "transformation"
-            ]
-          },
-          {
             "name": "Ulmus",
             "score": 0.6667,
             "matches": [
@@ -15409,7 +14790,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -16388,18 +15769,17 @@
             ]
           },
           {
-            "name": "Temesia",
-            "score": 0.985,
+            "name": "Gwyneth",
+            "score": 0.855,
             "matches": [
               "Physical",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Brutus",
-            "score": 0.96,
+            "name": "Shadewing",
+            "score": 0.8,
             "matches": [
-              "Physical",
               "Max HP-based damage"
             ]
           }
@@ -17293,46 +16673,31 @@
         "energy": [],
         "similar_skills": [
           {
-            "name": "Ravion",
-            "score": 0.6667,
-            "matches": [
-              "ally-shielder",
-              "energy-provider"
-            ]
-          },
-          {
             "name": "Twins",
             "score": 0.6667,
             "matches": [
               "ally-shielder",
               "energy-provider"
             ]
-          },
-          {
-            "name": "Lucca",
-            "score": 0.6,
-            "matches": [
-              "ally-shielder"
-            ]
           }
         ],
         "damage": [
           {
-            "name": "Aliceth",
+            "name": "Baelran",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Alna",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -18315,33 +17680,16 @@
             ]
           },
           {
-            "name": "Korin",
-            "score": 0.8674,
+            "name": "Nara",
+            "score": 0.8268,
             "matches": [
-              "Physical",
               "True damage",
+              "Physical",
               "Max HP-based damage"
             ]
           }
         ],
         "debuff": [
-          {
-            "name": "Sinbad",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff",
-              "Phys DEF debuff",
-              "Magic DEF debuff"
-            ]
-          },
-          {
-            "name": "Fay",
-            "score": 0.6,
-            "matches": [
-              "Phys DEF debuff",
-              "Magic DEF debuff"
-            ]
-          },
           {
             "name": "Kruger",
             "score": 0.6,
@@ -18664,13 +18012,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Damian",
-            "score": 1.0,
-            "matches": [
-              "Haste"
-            ]
-          },
-          {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
@@ -18683,36 +18024,34 @@
             "matches": [
               "Haste"
             ]
+          },
+          {
+            "name": "Mehira",
+            "score": 1.0,
+            "matches": [
+              "Haste"
+            ]
           }
         ],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Hammie",
-            "score": 0.6667,
-            "matches": [
-              "ally-buffer",
-              "ally-healer"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -18728,14 +18067,14 @@
             ]
           },
           {
-            "name": "Bonnie",
+            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "ATK debuff"
             ]
           },
           {
-            "name": "Cyran",
+            "name": "Ravion",
             "score": 1.0,
             "matches": [
               "ATK debuff"
@@ -19439,7 +18778,7 @@
             ]
           },
           {
-            "name": "Dionel",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -19460,33 +18799,26 @@
             "matches": [
               "Damage taken debuff"
             ]
-          },
-          {
-            "name": "Indris",
-            "score": 0.75,
-            "matches": [
-              "Damage taken debuff"
-            ]
           }
         ],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
-            "score": 1.0,
+            "name": "Valka",
+            "score": 0.75,
             "matches": [
               "Stun"
             ]
@@ -19988,43 +19320,9 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Cecia",
-            "score": 1.0,
-            "matches": [
-              "Life Drain",
-              "DEF Penetration"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Pippa",
-            "score": 1.0,
-            "matches": [
-              "hp-scaling",
-              "self-repositioner"
-            ]
-          },
-          {
-            "name": "Athalia",
-            "score": 0.6667,
-            "matches": [
-              "hp-scaling",
-              "self-repositioner"
-            ]
-          },
-          {
-            "name": "Marilee",
-            "score": 0.6667,
-            "matches": [
-              "hp-scaling",
-              "self-repositioner"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Aliceth",
@@ -20035,7 +19333,7 @@
             ]
           },
           {
-            "name": "Athalia",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -20043,8 +19341,8 @@
             ]
           },
           {
-            "name": "Faramor",
-            "score": 1.0,
+            "name": "Ravion",
+            "score": 0.937,
             "matches": [
               "Physical",
               "HP loss"
@@ -20765,15 +20063,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Lumont",
-            "score": 0.6,
-            "matches": [
-              "enemy-debuffer"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Aliceth",
@@ -20790,7 +20080,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -20800,13 +20090,6 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Knock down"
-            ]
-          },
-          {
             "name": "Athalia",
             "score": 1.0,
             "matches": [
@@ -20815,6 +20098,13 @@
           },
           {
             "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Knock down"
+            ]
+          },
+          {
+            "name": "Frieren",
             "score": 1.0,
             "matches": [
               "Knock down"
@@ -21026,14 +20316,14 @@
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "DEF Penetration"
             ]
           },
           {
-            "name": "Dionel",
+            "name": "Silven",
             "score": 1.0,
             "matches": [
               "DEF Penetration"
@@ -21058,7 +20348,7 @@
             ]
           },
           {
-            "name": "Dionel",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -21068,26 +20358,10 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Cassadee",
-            "score": 0.6667,
-            "matches": [
-              "Knock back",
-              "Knock up"
-            ]
-          },
-          {
             "name": "Kordan",
             "score": 0.6667,
             "matches": [
               "Knock back",
-              "Knock up"
-            ]
-          },
-          {
-            "name": "Reinier",
-            "score": 0.6667,
-            "matches": [
-              "Displace",
               "Knock up"
             ]
           }
@@ -21535,14 +20809,6 @@
               "ally-healer",
               "summoner"
             ]
-          },
-          {
-            "name": "Hammie",
-            "score": 0.6667,
-            "matches": [
-              "ally-buffer",
-              "ally-healer"
-            ]
           }
         ],
         "damage": [
@@ -21561,7 +20827,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -21571,21 +20837,21 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
             "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Koko",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -21919,14 +21185,14 @@
             ]
           },
           {
-            "name": "Hepler",
+            "name": "Hugin",
             "score": 1.0,
             "matches": [
               "Max HP"
             ]
           },
           {
-            "name": "Hugin",
+            "name": "Koko",
             "score": 1.0,
             "matches": [
               "Max HP"
@@ -21934,16 +21200,7 @@
           }
         ],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Soren",
-            "score": 0.6667,
-            "matches": [
-              "counterattack",
-              "self-repositioner"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Aliceth",
@@ -21960,7 +21217,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -21970,24 +21227,8 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Cassadee",
-            "score": 1.0,
-            "matches": [
-              "Knock back",
-              "Stun"
-            ]
-          },
-          {
             "name": "Perseus",
             "score": 1.0,
-            "matches": [
-              "Knock back",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Atalanta",
-            "score": 0.8571,
             "matches": [
               "Knock back",
               "Stun"
@@ -22253,14 +21494,14 @@
             ]
           },
           {
-            "name": "Cecia",
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "DEF Penetration"
             ]
           },
           {
-            "name": "Dionel",
+            "name": "Kulu",
             "score": 1.0,
             "matches": [
               "DEF Penetration"
@@ -22281,14 +21522,6 @@
         ],
         "damage": [
           {
-            "name": "Pippa",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Shadewing",
             "score": 1.0,
             "matches": [
@@ -22303,25 +21536,18 @@
               "Magic",
               "Max HP-based damage"
             ]
-          }
-        ],
-        "debuff": [
-          {
-            "name": "Pippa",
-            "score": 0.64,
-            "matches": [
-              "Energy drain"
-            ]
-          }
-        ],
-        "cc": [
-          {
-            "name": "Smokey & Meerky",
-            "score": 0.8,
-            "matches": [
-              "Interrupt"
-            ]
           },
+          {
+            "name": "Daimon",
+            "score": 0.9429,
+            "matches": [
+              "Magic",
+              "Max HP-based damage"
+            ]
+          }
+        ],
+        "debuff": [],
+        "cc": [
           {
             "name": "Sylphira",
             "score": 0.8,
@@ -22330,7 +21556,7 @@
             ]
           },
           {
-            "name": "Gerda",
+            "name": "Reinier",
             "score": 0.6,
             "matches": [
               "Interrupt"
@@ -22706,13 +21932,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Hewynn",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
             "name": "Solise",
             "score": 1.0,
             "matches": [
@@ -22725,18 +21944,17 @@
             "matches": [
               "Healing"
             ]
+          },
+          {
+            "name": "Koko",
+            "score": 0.6667,
+            "matches": [
+              "Healing"
+            ]
           }
         ],
         "energy": [],
         "similar_skills": [
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "aoe-damage",
-              "dot-specialist"
-            ]
-          },
           {
             "name": "Faramor",
             "score": 0.8,
@@ -22744,24 +21962,9 @@
               "aoe-damage",
               "dot-specialist"
             ]
-          },
-          {
-            "name": "Viperian",
-            "score": 0.6667,
-            "matches": [
-              "aoe-damage",
-              "dot-specialist"
-            ]
           }
         ],
         "damage": [
-          {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
           {
             "name": "Callan",
             "score": 1.0,
@@ -22775,26 +21978,33 @@
             "matches": [
               "Magic"
             ]
+          },
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
           }
         ],
         "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
             "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Tasi",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -24222,13 +23432,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
             "name": "Contess",
             "score": 1.0,
             "matches": [
@@ -24236,7 +23439,14 @@
             ]
           },
           {
-            "name": "Damian",
+            "name": "Koko",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Marcille",
             "score": 1.0,
             "matches": [
               "Healing"
@@ -24246,24 +23456,16 @@
         "energy": [],
         "similar_skills": [
           {
-            "name": "Fay",
-            "score": 1.0,
-            "matches": [
-              "ally-healer",
-              "aoe-healing"
-            ]
-          },
-          {
-            "name": "Hewynn",
-            "score": 1.0,
-            "matches": [
-              "ally-healer",
-              "aoe-healing"
-            ]
-          },
-          {
             "name": "Smokey & Meerky",
             "score": 1.0,
+            "matches": [
+              "ally-healer",
+              "aoe-healing"
+            ]
+          },
+          {
+            "name": "Solise",
+            "score": 0.6667,
             "matches": [
               "ally-healer",
               "aoe-healing"
@@ -24272,13 +23474,6 @@
         ],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Callan",
             "score": 1.0,
             "matches": [
@@ -24286,7 +23481,14 @@
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -24296,21 +23498,21 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Callan",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -25334,21 +24536,21 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Callan",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -25544,13 +24746,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
             "name": "Contess",
             "score": 1.0,
             "matches": [
@@ -25558,7 +24753,14 @@
             ]
           },
           {
-            "name": "Gerda",
+            "name": "Koko",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Smokey & Meerky",
             "score": 1.0,
             "matches": [
               "Healing"
@@ -25569,13 +24771,6 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Callan",
             "score": 1.0,
             "matches": [
@@ -25583,7 +24778,14 @@
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -25593,13 +24795,6 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Gerda",
-            "score": 0.6,
-            "matches": [
-              "Interrupt"
-            ]
-          },
-          {
             "name": "Lily May",
             "score": 0.6,
             "matches": [
@@ -25608,6 +24803,13 @@
           },
           {
             "name": "Reinier",
+            "score": 0.6,
+            "matches": [
+              "Interrupt"
+            ]
+          },
+          {
+            "name": "Smokey & Meerky",
             "score": 0.6,
             "matches": [
               "Interrupt"
@@ -26320,21 +25522,21 @@
       "replacements": {
         "buff": [
           {
-            "name": "Damian",
-            "score": 1.0,
-            "matches": [
-              "Haste"
-            ]
-          },
-          {
-            "name": "Galahad",
-            "score": 1.0,
-            "matches": [
-              "Haste"
-            ]
-          },
-          {
             "name": "Hugin",
+            "score": 1.0,
+            "matches": [
+              "Haste"
+            ]
+          },
+          {
+            "name": "Twins",
+            "score": 1.0,
+            "matches": [
+              "Haste"
+            ]
+          },
+          {
+            "name": "Velara",
             "score": 1.0,
             "matches": [
               "Haste"
@@ -26345,50 +25547,28 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Shadewing",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Berial",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff"
-            ]
-          },
-          {
-            "name": "Bonnie",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff"
-            ]
-          },
-          {
-            "name": "Cryonaia",
-            "score": 1.0,
-            "matches": [
-              "Damage taken debuff"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": []
       }
     },
@@ -26746,7 +25926,7 @@
             ]
           },
           {
-            "name": "Dionel",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -27089,13 +26269,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
             "name": "Contess",
             "score": 1.0,
             "matches": [
@@ -27103,7 +26276,14 @@
             ]
           },
           {
-            "name": "Damian",
+            "name": "Evie",
+            "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Hepler",
             "score": 1.0,
             "matches": [
               "Healing"
@@ -27122,16 +26302,16 @@
             ]
           },
           {
-            "name": "Korin",
-            "score": 0.9638,
+            "name": "Indris",
+            "score": 0.8431,
             "matches": [
-              "Max HP-based damage",
               "True damage",
-              "Physical"
+              "Physical",
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Indris",
+            "name": "Nazrik",
             "score": 0.8431,
             "matches": [
               "True damage",
@@ -27181,8 +26361,8 @@
             ]
           },
           {
-            "name": "Lucca",
-            "score": 1.0,
+            "name": "Scarlita",
+            "score": 0.8,
             "matches": [
               "Knock down",
               "Knock up"
@@ -27654,51 +26834,47 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Indris",
-            "score": 1.0,
+            "name": "Sylphira",
+            "score": 0.9125,
             "matches": [
               "True damage",
-              "Physical",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Nara",
-            "score": 1.0,
+            "name": "Shadewing",
+            "score": 0.7812,
             "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "True damage"
             ]
           },
           {
-            "name": "Korin",
-            "score": 0.9344,
+            "name": "Silven",
+            "score": 0.7156,
             "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "True damage"
             ]
           }
         ],
         "debuff": [],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Callan",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -28459,21 +27635,21 @@
         ],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bryon",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -28505,21 +27681,21 @@
         ],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Callan",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -28926,10 +28102,9 @@
             ]
           },
           {
-            "name": "Zorya",
-            "score": 1.0,
+            "name": "Aliceth",
+            "score": 0.7143,
             "matches": [
-              "Magic",
               "HP loss"
             ]
           }
@@ -29106,7 +28281,7 @@
             ]
           },
           {
-            "name": "Mirael",
+            "name": "Shadewing",
             "score": 1.0,
             "matches": [
               "DoT",
@@ -29224,39 +28399,28 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Sinbad",
-            "score": 0.8065,
-            "matches": [
-              "ATK debuff",
-              "Vitality debuff",
-              "Damage taken debuff",
-              "Energy drain"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": []
       }
     },
@@ -29590,7 +28754,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -29600,21 +28764,21 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Koko",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Laios",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -30448,22 +29612,7 @@
           }
         ],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Hammie",
-            "score": 0.6,
-            "matches": [
-              "ally-buffer"
-            ]
-          },
-          {
-            "name": "Sonja",
-            "score": 0.6,
-            "matches": [
-              "ally-buffer"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Athalia",
@@ -30482,7 +29631,7 @@
             ]
           },
           {
-            "name": "Dionel",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -30491,30 +29640,7 @@
           }
         ],
         "debuff": [],
-        "cc": [
-          {
-            "name": "Lucca",
-            "score": 0.8,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Cassadee",
-            "score": 0.7,
-            "matches": [
-              "Knock back",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Antandra",
-            "score": 0.6667,
-            "matches": [
-              "Stun"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Phraesto - Misty Scorpion": {
@@ -30767,21 +29893,21 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bryon",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -30791,27 +29917,25 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Stun",
-              "Taunt"
-            ]
-          },
-          {
-            "name": "Granny Dahnie",
-            "score": 1.0,
-            "matches": [
-              "Stun",
-              "Taunt"
-            ]
-          },
-          {
             "name": "Hepler",
             "score": 1.0,
             "matches": [
               "Stun",
               "Taunt"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 0.6,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
+            "name": "Gunnar",
+            "score": 0.6,
+            "matches": [
+              "Stun"
             ]
           }
         ]
@@ -31032,14 +30156,6 @@
               "hp-scaling",
               "self-repositioner"
             ]
-          },
-          {
-            "name": "Marilee",
-            "score": 0.6667,
-            "matches": [
-              "hp-scaling",
-              "self-repositioner"
-            ]
           }
         ],
         "damage": [
@@ -31074,13 +30190,6 @@
           {
             "name": "Lily May",
             "score": 1.0,
-            "matches": [
-              "Energy drain"
-            ]
-          },
-          {
-            "name": "Sinbad",
-            "score": 0.75,
             "matches": [
               "Energy drain"
             ]
@@ -31416,16 +30525,7 @@
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Smokey & Meerky",
-            "score": 0.75,
-            "matches": [
-              "Energy",
-              "ATK"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "similar_skills": [
           {
@@ -31447,48 +30547,23 @@
             ]
           },
           {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "HP loss"
-            ]
-          },
-          {
             "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical",
               "HP loss"
             ]
-          }
-        ],
-        "debuff": [
-          {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": [
-              "ATK debuff",
-              "Phys DEF debuff"
-            ]
           },
           {
-            "name": "Sinbad",
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
-              "ATK debuff",
-              "Phys DEF debuff"
-            ]
-          },
-          {
-            "name": "Kafra",
-            "score": 0.9,
-            "matches": [
-              "ATK debuff",
-              "Phys DEF debuff"
+              "Physical",
+              "HP loss"
             ]
           }
         ],
+        "debuff": [],
         "cc": []
       }
     },
@@ -31701,21 +30776,21 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -31740,11 +30815,10 @@
             ]
           },
           {
-            "name": "Sinbad",
-            "score": 1.0,
+            "name": "Contess",
+            "score": 0.6,
             "matches": [
-              "ATK debuff",
-              "Damage taken debuff"
+              "ATK debuff"
             ]
           }
         ],
@@ -32527,21 +31601,21 @@
         ],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -32557,15 +31631,15 @@
             ]
           },
           {
-            "name": "Lily May",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
               "Energy drain"
             ]
           },
           {
-            "name": "Pippa",
-            "score": 1.0,
+            "name": "Sylphira",
+            "score": 0.6667,
             "matches": [
               "Energy drain"
             ]
@@ -32865,110 +31939,34 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Hepler",
-            "score": 1.0,
-            "matches": [
-              "Max HP"
-            ]
-          },
-          {
-            "name": "Hugin",
-            "score": 1.0,
-            "matches": [
-              "Max HP"
-            ]
-          },
-          {
-            "name": "Lucius",
-            "score": 0.8889,
-            "matches": [
-              "Max HP"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Koko",
-            "score": 0.6667,
-            "matches": [
-              "ally-shielder",
-              "life-drain"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Contess",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Callan",
+            "name": "Solise",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Cassadee",
+            "name": "Velara",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Dunlingr",
-            "score": 1.0,
-            "matches": [
-              "Energy drain"
-            ]
-          },
-          {
-            "name": "Lily May",
-            "score": 1.0,
-            "matches": [
-              "Energy drain"
-            ]
-          },
-          {
-            "name": "Pippa",
-            "score": 1.0,
-            "matches": [
-              "Energy drain"
-            ]
-          }
-        ],
-        "cc": [
-          {
-            "name": "Reinier",
-            "score": 1.0,
-            "matches": [
-              "Interrupt",
-              "Displace"
-            ]
-          },
-          {
-            "name": "Gerda",
-            "score": 0.64,
-            "matches": [
-              "Interrupt"
-            ]
-          },
-          {
-            "name": "Lily May",
-            "score": 0.64,
-            "matches": [
-              "Interrupt"
-            ]
-          }
-        ]
+        "debuff": [],
+        "cc": []
       }
     },
     "Salazer - Lash of Bantus": {
@@ -33659,26 +32657,10 @@
             "matches": [
               "Damage taken reduction"
             ]
-          },
-          {
-            "name": "Soren",
-            "score": 1.0,
-            "matches": [
-              "Damage taken reduction"
-            ]
           }
         ],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Mirael",
-            "score": 0.6667,
-            "matches": [
-              "dot-specialist",
-              "fire-attack"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Daimon",
@@ -33712,13 +32694,6 @@
             "matches": [
               "Vitality debuff",
               "DoT"
-            ]
-          },
-          {
-            "name": "Sinbad",
-            "score": 0.6667,
-            "matches": [
-              "Vitality debuff"
             ]
           }
         ],
@@ -33820,16 +32795,7 @@
           }
         ],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Korin",
-            "score": 0.6667,
-            "matches": [
-              "ally-shielder",
-              "hp-scaling"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Athalia",
@@ -33872,15 +32838,6 @@
             "matches": [
               "Knock back",
               "Knock up",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Lucca",
-            "score": 0.6316,
-            "matches": [
-              "Knock up",
-              "Knock down",
               "Stun"
             ]
           }
@@ -35060,42 +34017,9 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Nerion",
-            "score": 1.0,
-            "matches": [
-              "dot-specialist",
-              "enemy-debuffer"
-            ]
-          }
-        ],
-        "damage": [
-          {
-            "name": "Nara",
-            "score": 0.6696,
-            "matches": [
-              "Max HP-based damage",
-              "True damage"
-            ]
-          }
-        ],
-        "debuff": [
-          {
-            "name": "Eironn",
-            "score": 0.9,
-            "matches": [
-              "Magic DEF debuff"
-            ]
-          },
-          {
-            "name": "Sinbad",
-            "score": 0.6,
-            "matches": [
-              "Magic DEF debuff"
-            ]
-          }
-        ],
+        "similar_skills": [],
+        "damage": [],
+        "debuff": [],
         "cc": []
       }
     },
@@ -35380,7 +34304,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -35396,14 +34320,14 @@
             ]
           },
           {
-            "name": "Dionel",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Vitality debuff"
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Frieren",
             "score": 1.0,
             "matches": [
               "Vitality debuff"
@@ -35800,34 +34724,8 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Daimon",
-            "score": 0.72,
-            "matches": [
-              "hp-scaling",
-              "life-drain",
-              "summoner"
-            ]
-          },
-          {
-            "name": "Zorya",
-            "score": 0.6,
-            "matches": [
-              "hp-scaling",
-              "life-drain"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
-          {
-            "name": "Daimon",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "Magic"
-            ]
-          },
           {
             "name": "Shadewing",
             "score": 1.0,
@@ -35837,10 +34735,16 @@
             ]
           },
           {
-            "name": "Satrana",
-            "score": 0.975,
+            "name": "Gunnar",
+            "score": 0.8375,
             "matches": [
-              "Max HP-based damage",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Silven",
+            "score": 0.6875,
+            "matches": [
               "Magic"
             ]
           }
@@ -36387,95 +35291,12 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          },
-          {
-            "name": "Cecia",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          },
-          {
-            "name": "Dionel",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Tilaya",
-            "score": 1.0,
-            "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
-            "name": "Korin",
-            "score": 0.6,
-            "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
-            "name": "Sonja",
-            "score": 0.6,
-            "matches": [
-              "hp-scaling"
-            ]
-          }
-        ],
-        "damage": [
-          {
-            "name": "Pippa",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "True damage"
-            ]
-          },
-          {
-            "name": "Shadewing",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "True damage"
-            ]
-          },
-          {
-            "name": "Sylphira",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "True damage"
-            ]
-          }
-        ],
+        "similar_skills": [],
+        "damage": [],
         "debuff": [],
         "cc": [
-          {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Knock down"
-            ]
-          },
           {
             "name": "Baelran",
             "score": 1.0,
@@ -36809,7 +35630,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -36817,14 +35638,6 @@
           }
         ],
         "debuff": [
-          {
-            "name": "Hodgkin",
-            "score": 1.0,
-            "matches": [
-              "Energy drain",
-              "Vitality debuff"
-            ]
-          },
           {
             "name": "Sinbad",
             "score": 1.0,
@@ -36835,6 +35648,13 @@
           },
           {
             "name": "Dunlingr",
+            "score": 0.75,
+            "matches": [
+              "Energy drain"
+            ]
+          },
+          {
+            "name": "Lily May",
             "score": 0.75,
             "matches": [
               "Energy drain"
@@ -37036,16 +35856,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Kafra",
-            "score": 0.6667,
-            "matches": [
-              "enemy-debuffer",
-              "mark-target"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Aliceth",
@@ -37062,7 +35873,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -37385,24 +36196,8 @@
         "energy": [],
         "similar_skills": [
           {
-            "name": "Fay",
-            "score": 1.0,
-            "matches": [
-              "ally-healer",
-              "aoe-healing"
-            ]
-          },
-          {
-            "name": "Hewynn",
-            "score": 1.0,
-            "matches": [
-              "ally-healer",
-              "aoe-healing"
-            ]
-          },
-          {
-            "name": "Ludovic",
-            "score": 1.0,
+            "name": "Solise",
+            "score": 0.6667,
             "matches": [
               "ally-healer",
               "aoe-healing"
@@ -37411,21 +36206,21 @@
         ],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
             "name": "Aurora",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
+            "name": "Callan",
             "score": 1.0,
             "matches": [
               "Magic"
@@ -37434,14 +36229,6 @@
         ],
         "debuff": [],
         "cc": [
-          {
-            "name": "Gerda",
-            "score": 0.96,
-            "matches": [
-              "Interrupt",
-              "Stun"
-            ]
-          },
           {
             "name": "Lily May",
             "score": 0.8,
@@ -37452,6 +36239,13 @@
           {
             "name": "Sylphira",
             "score": 0.8,
+            "matches": [
+              "Interrupt"
+            ]
+          },
+          {
+            "name": "Reinier",
+            "score": 0.6,
             "matches": [
               "Interrupt"
             ]
@@ -37684,75 +36478,13 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Hewynn",
-            "score": 0.9231,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
-            "name": "Lorsan",
-            "score": 0.9231,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
-            "name": "Gerda",
-            "score": 0.6923,
-            "matches": [
-              "Healing"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Velara",
-            "score": 0.9,
-            "matches": [
-              "ally-healer",
-              "ally-shielder",
-              "aoe-healing"
-            ]
-          },
-          {
-            "name": "Hewynn",
-            "score": 0.8,
-            "matches": [
-              "ally-healer",
-              "aoe-healing"
-            ]
-          },
-          {
-            "name": "Fay",
-            "score": 0.6667,
-            "matches": [
-              "ally-healer",
-              "aoe-healing"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
-            "name": "Alsa",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Callan",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Cassadee",
-            "score": 1.0,
+            "name": "Twins",
+            "score": 0.8,
             "matches": [
               "Magic"
             ]
@@ -38048,7 +36780,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -38058,21 +36790,21 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -38528,7 +37260,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -38537,14 +37269,6 @@
         ],
         "debuff": [],
         "cc": [
-          {
-            "name": "Atalanta",
-            "score": 1.0,
-            "matches": [
-              "Knock back",
-              "Stun"
-            ]
-          },
           {
             "name": "Cassadee",
             "score": 1.0,
@@ -38555,6 +37279,14 @@
           },
           {
             "name": "Lenya",
+            "score": 1.0,
+            "matches": [
+              "Knock back",
+              "Stun"
+            ]
+          },
+          {
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
               "Knock back",
@@ -38904,28 +37636,19 @@
         "similar_skills": [],
         "damage": [
           {
-            "name": "Pippa",
-            "score": 0.9053,
-            "matches": [
-              "True damage",
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 0.8307,
-            "matches": [
-              "True damage",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Shadewing",
             "score": 0.8193,
             "matches": [
               "Magic",
               "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Silven",
+            "score": 0.7102,
+            "matches": [
+              "Magic",
               "True damage"
             ]
           }
@@ -39312,13 +38035,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Gerda",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
             "name": "Mikola",
             "score": 1.0,
             "matches": [
@@ -39363,13 +38079,6 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Atalanta",
-            "score": 1.0,
-            "matches": [
-              "Knock back"
-            ]
-          },
-          {
             "name": "Cassadee",
             "score": 1.0,
             "matches": [
@@ -39378,6 +38087,13 @@
           },
           {
             "name": "Indris",
+            "score": 1.0,
+            "matches": [
+              "Knock back"
+            ]
+          },
+          {
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Knock back"
@@ -39811,16 +38527,7 @@
       "replacements": {
         "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Marilee",
-            "score": 0.6667,
-            "matches": [
-              "mass-cc",
-              "self-repositioner"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Frieren",
@@ -40748,21 +39455,14 @@
       "replacements": {
         "buff": [
           {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": [
-              "Energy"
-            ]
-          },
-          {
-            "name": "Pandora",
-            "score": 1.0,
-            "matches": [
-              "Energy"
-            ]
-          },
-          {
             "name": "Ravion",
+            "score": 1.0,
+            "matches": [
+              "Energy"
+            ]
+          },
+          {
+            "name": "Rowan",
             "score": 1.0,
             "matches": [
               "Energy"
@@ -40787,7 +39487,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -40808,23 +39508,9 @@
             "matches": [
               "Magic DEF debuff"
             ]
-          },
-          {
-            "name": "Sinbad",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF debuff"
-            ]
           }
         ],
         "cc": [
-          {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Knock down"
-            ]
-          },
           {
             "name": "Athalia",
             "score": 1.0,
@@ -40834,6 +39520,13 @@
           },
           {
             "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Knock down"
+            ]
+          },
+          {
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Knock down"
@@ -41154,21 +39847,14 @@
       "replacements": {
         "buff": [
           {
-            "name": "Brutus",
+            "name": "Dunlingr",
             "score": 1.0,
             "matches": [
               "Life Drain"
             ]
           },
           {
-            "name": "Cecia",
-            "score": 1.0,
-            "matches": [
-              "Life Drain"
-            ]
-          },
-          {
-            "name": "Daimon",
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Life Drain"
@@ -41193,7 +39879,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -41203,21 +39889,14 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Bryon",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
               "Interrupt"
             ]
           },
           {
-            "name": "Gerda",
-            "score": 1.0,
-            "matches": [
-              "Interrupt"
-            ]
-          },
-          {
-            "name": "Lily May",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
               "Interrupt"
@@ -41538,13 +40217,6 @@
             ]
           },
           {
-            "name": "Granny Dahnie",
-            "score": 0.6,
-            "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
             "name": "Pippa",
             "score": 0.6,
             "matches": [
@@ -41568,7 +40240,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -41890,13 +40562,6 @@
             ]
           },
           {
-            "name": "Pang",
-            "score": 0.6,
-            "matches": [
-              "Max HP"
-            ]
-          },
-          {
             "name": "Solise",
             "score": 0.6,
             "matches": [
@@ -41906,14 +40571,6 @@
         ],
         "energy": [],
         "similar_skills": [
-          {
-            "name": "Pang",
-            "score": 1.0,
-            "matches": [
-              "ally-shielder",
-              "transformation"
-            ]
-          },
           {
             "name": "Hepler",
             "score": 0.6667,
@@ -41939,7 +40596,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -41966,11 +40623,11 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Scarlita",
             "score": 0.7857,
             "matches": [
               "Knock back",
-              "Bind"
+              "Knock down"
             ]
           }
         ]
@@ -42401,14 +41058,6 @@
         ],
         "debuff": [
           {
-            "name": "Kafra",
-            "score": 1.0,
-            "matches": [
-              "Marked target (focus fire)",
-              "Haste debuff"
-            ]
-          },
-          {
             "name": "Aliceth",
             "score": 0.6667,
             "matches": [
@@ -42418,21 +41067,21 @@
         ],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Damian",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -43150,26 +41799,11 @@
               "Life Drain",
               "Haste"
             ]
-          },
-          {
-            "name": "Lyca",
-            "score": 0.6,
-            "matches": [
-              "ATK SPD"
-            ]
           }
         ],
         "energy": [],
         "similar_skills": [],
         "damage": [
-          {
-            "name": "Brutus",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "Physical"
-            ]
-          },
           {
             "name": "Daimon",
             "score": 1.0,
@@ -43184,32 +41818,37 @@
               "Max HP-based damage",
               "Physical"
             ]
+          },
+          {
+            "name": "Shadewing",
+            "score": 1.0,
+            "matches": [
+              "Max HP-based damage"
+            ]
           }
         ],
         "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
+            "name": "Callan",
+            "score": 0.84,
             "matches": [
-              "Stun",
-              "Knock down"
+              "Knock down",
+              "Stun"
             ]
           },
           {
-            "name": "Lucca",
-            "score": 1.0,
+            "name": "Faramor",
+            "score": 0.6,
             "matches": [
-              "Stun",
-              "Knock down"
+              "Stun"
             ]
           },
           {
-            "name": "Zorya",
-            "score": 1.0,
+            "name": "Koko",
+            "score": 0.6,
             "matches": [
-              "Stun",
-              "Knock down"
+              "Stun"
             ]
           }
         ]
@@ -43469,22 +42108,7 @@
       "replacements": {
         "buff": [
           {
-            "name": "Damian",
-            "score": 1.0,
-            "matches": [
-              "Healing",
-              "Haste"
-            ]
-          },
-          {
-            "name": "Hewynn",
-            "score": 0.768,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
-            "name": "Lorsan",
+            "name": "Solise",
             "score": 0.768,
             "matches": [
               "Healing"
@@ -43501,79 +42125,28 @@
               "ally-shielder",
               "aoe-healing"
             ]
-          },
-          {
-            "name": "Hewynn",
-            "score": 0.6,
-            "matches": [
-              "ally-healer",
-              "aoe-healing"
-            ]
           }
         ],
         "damage": [
           {
-            "name": "Alsa",
+            "name": "Solise",
             "score": 1.0,
             "matches": [
               "Magic"
             ]
           },
           {
-            "name": "Callan",
-            "score": 1.0,
-            "matches": [
-              "Magic"
-            ]
-          },
-          {
-            "name": "Cassadee",
-            "score": 1.0,
+            "name": "Twins",
+            "score": 0.8,
             "matches": [
               "Magic"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Aurora",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Bonnie",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": [
           {
-            "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Carolina",
+            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -44335,11 +42908,11 @@
             ]
           },
           {
-            "name": "Korin",
-            "score": 0.6819,
+            "name": "Aliceth",
+            "score": 0.6216,
             "matches": [
               "Physical",
-              "Max HP-based damage"
+              "HP loss"
             ]
           }
         ],
@@ -44354,21 +42927,21 @@
         ],
         "cc": [
           {
-            "name": "Alsa",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Damian",
             "score": 1.0,
             "matches": [
               "Stun"
             ]
           },
           {
-            "name": "Arden",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -44771,22 +43344,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Shakir",
-            "score": 0.7636,
-            "matches": [
-              "Haste",
-              "Life Drain"
-            ]
-          },
-          {
-            "name": "Cecia",
-            "score": 0.6364,
-            "matches": [
-              "Life Drain",
-              "Max HP"
-            ]
-          },
-          {
             "name": "Twins",
             "score": 0.6364,
             "matches": [
@@ -44796,16 +43353,7 @@
           }
         ],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Atalanta",
-            "score": 0.6667,
-            "matches": [
-              "aoe-damage",
-              "battle-start-burst"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
             "name": "Aliceth",
@@ -44822,7 +43370,7 @@
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -44830,32 +43378,7 @@
           }
         ],
         "debuff": [],
-        "cc": [
-          {
-            "name": "Cassadee",
-            "score": 1.0,
-            "matches": [
-              "Knock up",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Lucca",
-            "score": 1.0,
-            "matches": [
-              "Knock up",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Lucy",
-            "score": 1.0,
-            "matches": [
-              "Knock up",
-              "Stun"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Zanie - Timeless Tinkerer": {
@@ -45028,113 +43551,39 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Hepler",
-            "score": 0.6667,
-            "matches": [
-              "Healing",
-              "Max HP"
-            ]
-          },
-          {
-            "name": "Koko",
-            "score": 0.6667,
-            "matches": [
-              "Healing",
-              "Max HP"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
-        "similar_skills": [
-          {
-            "name": "Chippy",
-            "score": 1.0,
-            "matches": [
-              "summoner"
-            ]
-          },
-          {
-            "name": "Florabelle",
-            "score": 1.0,
-            "matches": [
-              "summoner"
-            ]
-          }
-        ],
+        "similar_skills": [],
         "damage": [
           {
-            "name": "Aliceth",
+            "name": "Baelran",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Alna",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           },
           {
-            "name": "Antandra",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical"
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Sinbad",
-            "score": 0.9,
-            "matches": [
-              "Phys DEF debuff",
-              "ATK debuff"
-            ]
-          },
-          {
-            "name": "Brutus",
-            "score": 0.75,
-            "matches": [
-              "Phys DEF debuff",
-              "DoT"
-            ]
-          },
-          {
-            "name": "Kafra",
-            "score": 0.75,
-            "matches": [
-              "Phys DEF debuff",
-              "ATK debuff"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": [
           {
-            "name": "Atalanta",
-            "score": 1.0,
+            "name": "Twins",
+            "score": 0.6667,
             "matches": [
-              "Knock back",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Cassadee",
-            "score": 1.0,
-            "matches": [
-              "Knock back",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Lenya",
-            "score": 1.0,
-            "matches": [
-              "Knock back",
-              "Stun"
+              "Knock back"
             ]
           }
         ]
@@ -45604,23 +44053,15 @@
         "energy": [],
         "similar_skills": [
           {
-            "name": "Salazer",
-            "score": 0.8,
-            "matches": [
-              "hp-scaling",
-              "life-drain"
-            ]
-          },
-          {
-            "name": "Brutus",
-            "score": 0.6667,
-            "matches": [
-              "hp-scaling",
-              "life-drain"
-            ]
-          },
-          {
             "name": "Daimon",
+            "score": 0.6,
+            "matches": [
+              "hp-scaling",
+              "life-drain"
+            ]
+          },
+          {
+            "name": "Shemira",
             "score": 0.6,
             "matches": [
               "hp-scaling",
@@ -45629,14 +44070,6 @@
           }
         ],
         "damage": [
-          {
-            "name": "Talene",
-            "score": 0.9596,
-            "matches": [
-              "HP loss",
-              "Magic"
-            ]
-          },
           {
             "name": "Niru",
             "score": 0.9456,
@@ -45652,31 +44085,31 @@
               "Magic",
               "HP loss"
             ]
+          },
+          {
+            "name": "Dunlingr",
+            "score": 0.9192,
+            "matches": [
+              "HP loss",
+              "Magic"
+            ]
           }
         ],
         "debuff": [],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Stun",
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Lucca",
-            "score": 1.0,
-            "matches": [
-              "Stun",
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Lumont",
+            "name": "Perseus",
             "score": 0.6667,
             "matches": [
               "Stun"
+            ]
+          },
+          {
+            "name": "Valka",
+            "score": 0.6667,
+            "matches": [
+              "Stun",
+              "Knock down"
             ]
           }
         ]
