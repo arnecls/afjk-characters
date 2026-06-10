@@ -197,8 +197,11 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   **Signature skill** (labeled **Signature skill (ultimate)** when the
   ultimate row is omitted), **Ultimate** (only when signature is not the
   ultimate), and **Non-ultimate**. Each row lists only non-`none`
-  indicators among `speed`, `heal`, `buffs`, `debuffs`, `damage` (damage
-  last; `high` / `medium` / `low`; speed `slow` / `normal` / `fast`).
+  indicators among `speed`, `first cast speed`, `heal`, `buffs`, `debuffs`,
+  `damage` (damage last; `high` / `medium` / `low`; speed `slow` / `normal`
+  / `fast`). **First cast speed** is shown when the opener applies at battle
+  start or battle preparation while recurring cast speed is slower (e.g.
+  Cassadee's Tidal Strength blesses at battle start).
   When any tier deals **HP loss**, **Max HP-based damage**, or **True
   damage**, a final `- **True damage**: {type} \`{mag}\`, …` line lists types
   (peak per type across tiers; p75 for non-ultimate).

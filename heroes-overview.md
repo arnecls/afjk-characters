@@ -140,8 +140,8 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `slow`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
 
 ##### Ultimate
 
@@ -359,7 +359,7 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
 
 ##### Ultimate
 
@@ -780,7 +780,7 @@ Common buffers are **Hepler**, **Rowan**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
 
 ##### Ultimate
@@ -893,7 +893,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 - **True damage**: True damage `high`
 
@@ -1439,7 +1439,7 @@ Common buffers are **Hewynn**, **Mikola**, or **Smokey & Meerky**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
 - **Non-ultimate**: speed `fast`, damage `high`
 
 ##### Ultimate
@@ -1646,9 +1646,9 @@ Common buffers are **Ravion**, **Lyca**, or **Hepler**.
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, damage `low`
+- **Signature skill**: speed `slow`, first cast speed `fast`, damage `low`
 - **Ultimate**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, damage `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `medium`
 
 ##### Ultimate
 
@@ -1931,7 +1931,7 @@ rare chance for massive single normal attack damage
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `normal`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `medium`
 
 ##### Ultimate
@@ -2352,7 +2352,7 @@ Common buffers are **Hepler** or **Hugin**.
 #### Skill overview
 
 - **Signature skill**: speed `fast`, heal `medium`, buffs `medium`, damage `low`
-- **Ultimate**: speed `slow`, buffs `medium`, damage `high`
+- **Ultimate**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ##### Ultimate
@@ -2585,7 +2585,7 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
 - **True damage**: HP loss `medium`
 
@@ -2921,7 +2921,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 
 ##### Ultimate
@@ -3253,7 +3253,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
 
 ##### Ultimate
@@ -3769,7 +3769,7 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **True damage**: Max HP-based damage `medium`
 
@@ -4420,9 +4420,9 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, buffs `medium`, damage `medium`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `medium`
 - **Ultimate**: speed `normal`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 - **True damage**: Max HP-based damage `low`
 
 ##### Ultimate
@@ -4608,7 +4608,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
 
 ##### Ultimate
@@ -4711,7 +4711,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `high`
 
 ##### Ultimate
@@ -4908,7 +4908,7 @@ Common buffers are **Lyca**, **Ravion**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ##### Ultimate
@@ -5562,9 +5562,9 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, buffs `medium`, damage `low`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `low`
 - **Ultimate**: speed `normal`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ##### Ultimate
 
@@ -5887,7 +5887,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, debuffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
 - **True damage**: Max HP-based damage `low`
 
@@ -6646,7 +6646,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
 
 ##### Ultimate
 
@@ -6755,7 +6755,7 @@ These are the **10** strongest pairings:
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `normal`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, damage `high`
 
 ##### Ultimate
 
@@ -6956,7 +6956,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
 
 ##### Ultimate
 
@@ -7361,7 +7361,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, damage `high`
+- **Signature skill (ultimate)**: speed `normal`, first cast speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 - **True damage**: Max HP-based damage `low`
 
@@ -8239,9 +8239,9 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, buffs `medium`, damage `low`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `low`
 - **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
 
 ##### Ultimate
 
@@ -10930,9 +10930,9 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, buffs `medium`, damage `medium`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `medium`
 - **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ##### Ultimate
 
@@ -11136,7 +11136,7 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ##### Ultimate
@@ -11678,7 +11678,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, debuffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
 
 ##### Ultimate
@@ -11796,7 +11796,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 #### Skill overview
 
 - **Signature skill**: speed `slow`, damage `low`
-- **Ultimate**: speed `normal`, heal `medium`, damage `high`
+- **Ultimate**: speed `normal`, first cast speed `fast`, heal `medium`, damage `high`
 - **Non-ultimate**: speed `slow`, heal `medium`, debuffs `medium`, damage `medium`
 
 ##### Ultimate
@@ -12101,7 +12101,7 @@ Common buffers are **Hepler**, **Hugin**, or **Twins**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
 
 ##### Ultimate
@@ -12220,7 +12220,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
 - **True damage**: HP loss `high`
 

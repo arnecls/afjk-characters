@@ -356,6 +356,15 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertFalse(aurora.synergy_signature_is_ult)
         self.assertEqual(sig["Aurora"]["signature_calculated"], "skill1")
 
+    def test_cassadee_signature_first_cast_speed(self):
+        _, behavior = self._hero_by_display("Cassadee")
+        sig_metrics = behavior.skill_overview["signature"]
+        self.assertEqual(sig_metrics.speed, "slow")
+        self.assertEqual(sig_metrics.first_cast_speed, "fast")
+        text = "\n".join(rs.format_behavior_section("Cassadee", behavior))
+        self.assertIn("first cast speed `fast`", text)
+        self.assertIn("speed `slow`", text)
+
     def test_include_skill_summaries_false_omits_subsections(self):
         _, behavior = self._hero_by_display("Aliceth")
         summaries = rs._load_skill_summaries().get("Aliceth", {})

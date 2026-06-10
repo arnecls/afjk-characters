@@ -3728,6 +3728,7 @@ class PlacementConstraint:
 @dataclass
 class SkillOverviewMetrics:
     speed: str = "none"
+    first_cast_speed: str = "none"
     damage: str = "none"
     heal: str = "none"
     buffs: str = "none"
@@ -4973,6 +4974,55 @@ def _section_speed_label(
     return speeds.get(key, "normal")
 
 
+_BATTLE_START_OPENER_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(r"when a battle starts", re.I),
+    re.compile(r"at (?:the )?start of (?:a )?battle", re.I),
+    re.compile(r"at battle start", re.I),
+    re.compile(r"during battle preparation", re.I),
+)
+
+
+def _section_has_fast_first_cast(
+    text: str, section: str, skill: SkillMeta | None
+) -> bool:
+    """True when the skill's opener applies at battle start, not on cooldown."""
+    if not text.strip():
+        return False
+    if text_has_start_of_battle_ultimate(text, section):
+        return True
+    if section == "Ultimate" and re.search(
+        r"passive\.\s*when a battle starts", text, re.I
+    ):
+        return True
+    if any(p.search(text) for p in _BATTLE_START_OPENER_RES):
+        return True
+    if skill and section == "Ultimate":
+        ie = skill.initial_energy if skill.initial_energy is not None else 0.0
+        icd = skill.initial_cd or 0.0
+        ch = skill.channel_duration or 0.0
+        if ie >= ULT_ENERGY_CAPACITY and icd + ch <= CASTING_SPEED_FAST_THRESHOLD:
+            return True
+    return False
+
+
+def _section_first_cast_speed_label(
+    speeds: dict[str, str],
+    section: str,
+    skills: list[SkillMeta],
+    has_section: bool,
+) -> str:
+    if not has_section:
+        return "none"
+    regular = _section_speed_label(speeds, section, True)
+    if regular == "fast":
+        return "none"
+    skill = _skill_by_section(skills, section)
+    text = skill.text if skill else ""
+    if _section_has_fast_first_cast(text, section, skill):
+        return "fast"
+    return "none"
+
+
 def _section_effect_metrics(
     hero: Hero, section: str
 ) -> tuple[str, str, str]:
@@ -5014,6 +5064,9 @@ def compute_section_skill_metrics(
     heal, buffs, debuffs = _section_effect_metrics(hero, section)
     return SkillOverviewMetrics(
         speed=_section_speed_label(speeds, section, True),
+        first_cast_speed=_section_first_cast_speed_label(
+            speeds, section, skills, True
+        ),
         damage=_damage_score_to_magnitude(
             _section_damage_score(hero, section, primary, skills),
             damage_thresholds,
@@ -5068,10 +5121,14 @@ def compute_skill_overview(
         )
         for section in NON_ULT_SKILL_SECTIONS
     ]
+    non_ult_first_cast = [
+        m.first_cast_speed for m in non_ult_metrics if m.first_cast_speed != "none"
+    ]
     non_ultimate = SkillOverviewMetrics(
         speed=_p75_label(
             [m.speed for m in non_ult_metrics], _SPEED_SCORE, _SCORE_TO_SPEED
         ),
+        first_cast_speed="fast" if "fast" in non_ult_first_cast else "none",
         damage=_p75_label(
             [m.damage for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
         ),
@@ -5214,6 +5271,7 @@ def _skill_overview_metrics(
     if isinstance(raw, dict) and raw:
         return SkillOverviewMetrics(
             speed=raw.get("speed", "none"),
+            first_cast_speed=raw.get("first_cast_speed", "none"),
             damage=raw.get("damage", "none"),
             heal=raw.get("heal", "none"),
             buffs=raw.get("buffs", "none"),
@@ -5225,6 +5283,7 @@ def _skill_overview_metrics(
 
 _SKILL_OVERVIEW_FIELD_ORDER = (
     ("speed", "speed"),
+    ("first_cast_speed", "first cast speed"),
     ("heal", "heal"),
     ("buffs", "buffs"),
     ("debuffs", "debuffs"),

@@ -344,6 +344,9 @@
         "speed": {
           "$ref": "#/$defs/skillOverviewSpeed"
         },
+        "first_cast_speed": {
+          "$ref": "#/$defs/skillOverviewSpeed"
+        },
         "damage": {
           "$ref": "#/$defs/skillOverviewMagnitude"
         },
