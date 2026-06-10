@@ -39,32 +39,17 @@ gen = _load_module("gen_overview", "generate-heroes-overview.py")
 
 def rank_synergies_full(receiver, heroes, enabler_matchers, behavior_by_title):
     """Like gen.rank_synergies but without the top-N display cap."""
-    receiver_behavior = behavior_by_title[receiver.title]
-    receiver_movement = receiver_behavior.movement
-    signature_speed = receiver_behavior.synergy_signature_speed or "normal"
-    ranked: list[tuple[float, list[str], str]] = []
-    for provider in heroes:
-        score, reasons = gen.score_combined_synergy(
-            provider,
-            receiver,
-            enabler_matchers,
-            receiver_behavior,
-            receiver_movement,
-            signature_speed,
-        )
-        if score <= 0 or not reasons:
-            continue
-        ranked.append((score, reasons, provider.title))
-
-    ranked.sort(key=lambda x: (-x[0], x[2]))
-    filtered = [
-        entry
-        for entry in ranked
-        if not gen.should_exclude_synergy(entry[1], receiver)
-    ]
+    tiers_by_title = gen._load_prydwen_tiers_by_title()
+    entries = gen.rank_synergy_entries(
+        receiver,
+        heroes,
+        enabler_matchers,
+        behavior_by_title,
+        tiers_by_title,
+    )
     return [
         {"provider": title, "reasons": reasons, "score": score}
-        for score, reasons, title in filtered
+        for score, reasons, title in entries
     ]
 
 

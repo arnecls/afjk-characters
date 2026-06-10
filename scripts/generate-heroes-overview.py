@@ -1091,10 +1091,13 @@ def rank_synergy_entries(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
     behavior_by_title: dict[str, _rs.HeroBehavior],
+    tiers_by_title: dict[str, dict[str, str]] | None = None,
 ) -> list[tuple[float, list[str], str]]:
     receiver_behavior = behavior_by_title[receiver.title]
     receiver_movement = receiver_behavior.movement
     signature_speed = receiver_behavior.synergy_signature_speed or "normal"
+    tiers = tiers_by_title if tiers_by_title is not None else _load_prydwen_tiers_by_title()
+    receiver_tiers = tiers.get(receiver.title, {})
     ranked: list[tuple[float, list[str], str]] = []
     for provider in heroes:
         score, reasons = score_combined_synergy(
@@ -1109,7 +1112,13 @@ def rank_synergy_entries(
             continue
         ranked.append((score, reasons, provider.title))
 
-    ranked.sort(key=lambda x: (-x[0], x[2]))
+    ranked.sort(
+        key=lambda x: (
+            -_prydwen_tier_preference(receiver_tiers, tiers.get(x[2], {})),
+            -x[0],
+            x[2],
+        )
+    )
     return [
         entry
         for entry in ranked
@@ -1570,9 +1579,16 @@ def _cc_overlap_tags(
     return _profile_overlap_tags(cc_a, cc_b, limit)
 
 
+_prydwen_tiers_cache: dict[str, dict[str, str]] | None = None
+
+
 def _load_prydwen_tiers_by_title() -> dict[str, dict[str, str]]:
+    global _prydwen_tiers_cache
+    if _prydwen_tiers_cache is not None:
+        return _prydwen_tiers_cache
     if not HEROES_DATA.exists():
-        return {}
+        _prydwen_tiers_cache = {}
+        return _prydwen_tiers_cache
     data = json.loads(HEROES_DATA.read_text(encoding="utf-8"))
     out: dict[str, dict[str, str]] = {}
     for hero in data.get("heroes", []):
@@ -1580,6 +1596,7 @@ def _load_prydwen_tiers_by_title() -> dict[str, dict[str, str]]:
         tiers = hero.get("prydwen_tiers")
         if title and tiers:
             out[title] = tiers
+    _prydwen_tiers_cache = out
     return out
 
 
@@ -1802,11 +1819,16 @@ def build_beneficiaries_index(
     behavior_by_title: dict[str, _rs.HeroBehavior],
 ) -> dict[str, list[tuple[float, str]]]:
     """Provider title -> (score, receiver short name), strongest matches first."""
+    tiers_by_title = _load_prydwen_tiers_by_title()
     primary: dict[str, list[tuple[float, str]]] = defaultdict(list)
     full: dict[str, list[tuple[float, str]]] = defaultdict(list)
     for receiver in heroes:
         entries = rank_synergy_entries(
-            receiver, heroes, enabler_matchers, behavior_by_title
+            receiver,
+            heroes,
+            enabler_matchers,
+            behavior_by_title,
+            tiers_by_title,
         )
         receiver_name = short_name(receiver.title)
         for score, _reasons, provider_title in entries[:MAX_SYNERGIES]:
