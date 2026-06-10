@@ -456,6 +456,74 @@ a:hover {
   max-width: 60ch;
 }
 
+.tier-box-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.tier-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.tier-grade {
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding-right: 0.35rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.tier-mode {
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.tier-s-plus { background: #1f8a42; }
+.tier-s { background: #3aa655; }
+.tier-a-plus { background: #6ab04a; }
+.tier-a { background: #a8b82a; color: #1a2332; }
+.tier-a .tier-grade { border-right-color: rgba(26, 35, 50, 0.25); }
+.tier-b { background: #e09030; }
+.tier-c { background: #d04040; }
+.tier-unknown { background: #8890a0; }
+
+.tier-chip-table {
+  padding: 0.12rem 0.38rem;
+  font-size: 0.72rem;
+}
+
+.tier-chip-table .tier-grade {
+  padding-right: 0;
+  border-right: none;
+  font-size: 0.78rem;
+}
+
+.heroes-table thead th.col-tier {
+  white-space: normal;
+  line-height: 1.25;
+  text-align: center;
+  vertical-align: top;
+  min-width: 3.25rem;
+  max-width: 5.5rem;
+}
+
+.heroes-table td.col-tier {
+  text-align: center;
+  white-space: nowrap;
+  min-width: 2.75rem;
+  max-width: 4.5rem;
+}
+
 .detail-section {
   margin-bottom: 1.75rem;
 }

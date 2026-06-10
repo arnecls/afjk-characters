@@ -734,6 +734,146 @@
     );
   }
 
+  const PRYDWEN_TIER_MODES = [
+    { key: "afk_stages", label: "AFK Stages" },
+    { key: "dream_realm", label: "Dream Realm" },
+    { key: "dream_realm_endless", label: "Dream Realm (Endless)" },
+    { key: "pvp", label: "PVP" },
+  ];
+
+  const TIER_CSV_COLUMNS = [
+    { header: "AFK Stages tier", key: "afk_stages" },
+    { header: "Dream Realm tier", key: "dream_realm" },
+    { header: "Dream Realm Endless tier", key: "dream_realm_endless" },
+    { header: "PVP tier", key: "pvp" },
+  ];
+
+  const TIER_CSV_HEADERS = {};
+  TIER_CSV_COLUMNS.forEach(function (tierCol) {
+    TIER_CSV_HEADERS[tierCol.header] = true;
+  });
+
+  function prydwenTierClass(tier) {
+    if (!tier) {
+      return "tier-unknown";
+    }
+    const normalized = String(tier).replace(/\+/g, "-plus");
+    return "tier-" + normalized.toLowerCase();
+  }
+
+  function formatTierColumnHeader(col) {
+    if (col.endsWith(" tier")) {
+      return (
+        escapeHtml(col.slice(0, -5)) + "<br>" + escapeHtml("tier")
+      );
+    }
+    return escapeHtml(col);
+  }
+
+  function renderTierTableCell(tier) {
+    const value = (tier || "").trim();
+    if (!value) {
+      return "";
+    }
+    return (
+      '<span class="tier-chip tier-chip-table ' +
+      prydwenTierClass(value) +
+      '"><span class="tier-grade">' +
+      escapeHtml(value) +
+      "</span></span>"
+    );
+  }
+
+  function augmentCsvWithTiers() {
+    if (!csvHeaders.length || !Object.keys(heroByName).length) {
+      return;
+    }
+    const classIdx = csvHeaders.indexOf("Class");
+    if (classIdx === -1) {
+      return;
+    }
+
+    const missing = TIER_CSV_COLUMNS.filter(function (tierCol) {
+      return csvHeaders.indexOf(tierCol.header) === -1;
+    });
+    if (missing.length) {
+      const insertAt = classIdx + 1;
+      missing.forEach(function (tierCol, offset) {
+        csvHeaders.splice(insertAt + offset, 0, tierCol.header);
+      });
+      csvRows = csvRows.map(function (row) {
+        const newRow = row.slice();
+        missing.forEach(function (_, offset) {
+          newRow.splice(insertAt + offset, 0, "");
+        });
+        return newRow;
+      });
+    }
+
+    const colByKey = {};
+    TIER_CSV_COLUMNS.forEach(function (tierCol) {
+      const idx = csvHeaders.indexOf(tierCol.header);
+      if (idx !== -1) {
+        colByKey[tierCol.key] = idx;
+      }
+    });
+
+    csvRows.forEach(function (row) {
+      const hero = heroByName[row[0] || ""];
+      if (!hero || !hero.prydwenTiers) {
+        return;
+      }
+      Object.keys(colByKey).forEach(function (key) {
+        const idx = colByKey[key];
+        if (!String(row[idx] || "").trim()) {
+          row[idx] = hero.prydwenTiers[key] || "";
+        }
+      });
+    });
+  }
+
+  function renderPrydwenTierBoxes(tiers) {
+    if (!tiers) {
+      return "";
+    }
+    let html = '<div class="tier-box-row">';
+    PRYDWEN_TIER_MODES.forEach(function (mode) {
+      const tier = tiers[mode.key];
+      if (!tier) {
+        return;
+      }
+      html +=
+        '<span class="tier-chip ' +
+        prydwenTierClass(tier) +
+        '">' +
+        '<span class="tier-grade">' +
+        escapeHtml(tier) +
+        "</span>" +
+        '<span class="tier-mode">' +
+        escapeHtml(mode.label) +
+        "</span></span>";
+    });
+    html += "</div>";
+    return html;
+  }
+
+  function stripPrydwenTierLine(md) {
+    if (!md) {
+      return md;
+    }
+    const parts = md.split("\n\n");
+    if (parts.length < 3) {
+      return md;
+    }
+    if (!parts[0].endsWith("'s behavior")) {
+      return md;
+    }
+    if (parts[1].startsWith("- ") || parts[1].startsWith("#")) {
+      return md;
+    }
+    return [parts[0], parts.slice(2).join("\n\n")].join("\n\n");
+  }
+
   function splitBehavior(md) {
     const marker = "#### Skill overview";
     const idx = md.indexOf(marker);
@@ -1369,6 +1509,9 @@
         "</span>"
       );
     }
+    if (TIER_CSV_HEADERS[column]) {
+      return renderTierTableCell(value);
+    }
     return value
       .split(/\s*;\s*/)
       .map(function (part) {
@@ -1390,9 +1533,184 @@
       .join(" ");
   }
 
-  function compareCsvRows(a, b) {
-    const av = (a[sortColumn] || "").trim().toLowerCase();
-    const bv = (b[sortColumn] || "").trim().toLowerCase();
+  const EFFECT_CC_COLUMNS = [
+    "Stun",
+    "Knock down",
+    "Knock up",
+    "Knock back",
+    "Frighten",
+    "Silence",
+    "Charm",
+    "Sleep",
+    "Displace",
+    "Bind",
+    "Interrupt",
+    "Taunt",
+    "Blind",
+  ];
+
+  const EFFECT_ANTI_CC_COLUMNS = [
+    "Unaffected",
+    "Steadfast",
+    "Immune",
+    "Untargetable",
+    "Cleanse",
+  ];
+
+  const TARGETING_RANK = {
+    "all units": 70,
+    global: 65,
+    area: 60,
+    arc: 50,
+    "multiple targets": 40,
+    allies: 35,
+    enemies: 35,
+    "single target": 30,
+    self: 20,
+  };
+
+  const TIMING_RANK = {
+    permanent: 50,
+    "start of battle": 40,
+    form: 35,
+    "on ultimate": 30,
+    "on skill": 25,
+    once: 20,
+    "conditional (frequent)": 15,
+    conditional: 10,
+    "conditional (rare)": 5,
+  };
+
+  const STRENGTH_RANK = {
+    high: 3,
+    medium: 2,
+    low: 1,
+  };
+
+  function isEffectSortColumn(column) {
+    if (!column) {
+      return false;
+    }
+    if (column.endsWith(" DMG")) {
+      return true;
+    }
+    if (column === "Healing" || column === "Shields") {
+      return true;
+    }
+    if (column.endsWith(" buff") || column.endsWith(" debuff")) {
+      return true;
+    }
+    if (EFFECT_CC_COLUMNS.indexOf(column) !== -1) {
+      return true;
+    }
+    if (EFFECT_ANTI_CC_COLUMNS.indexOf(column) !== -1) {
+      return true;
+    }
+    return false;
+  }
+
+  function targetingRank(text) {
+    const trimmed = text.trim();
+    if (!trimmed) {
+      return 0;
+    }
+    const lower = trimmed.toLowerCase();
+    if (Object.prototype.hasOwnProperty.call(TARGETING_RANK, lower)) {
+      return TARGETING_RANK[lower];
+    }
+    if (trimmed.indexOf(",") !== -1) {
+      return trimmed.split(/\s*,\s*/).reduce(function (max, part) {
+        return Math.max(max, targetingRank(part));
+      }, 0);
+    }
+    return 0;
+  }
+
+  function timingRank(text) {
+    const lower = text.trim().toLowerCase();
+    if (Object.prototype.hasOwnProperty.call(TIMING_RANK, lower)) {
+      return TIMING_RANK[lower];
+    }
+    if (lower.indexOf("conditional (frequent)") !== -1) {
+      return TIMING_RANK["conditional (frequent)"];
+    }
+    if (lower.indexOf("conditional (rare)") !== -1) {
+      return TIMING_RANK["conditional (rare)"];
+    }
+    if (lower.indexOf("start of battle") !== -1) {
+      return TIMING_RANK["start of battle"];
+    }
+    if (lower.indexOf("on ultimate") !== -1) {
+      return TIMING_RANK["on ultimate"];
+    }
+    if (lower.indexOf("on skill") !== -1) {
+      return TIMING_RANK["on skill"];
+    }
+    if (lower.indexOf("permanent") !== -1) {
+      return TIMING_RANK.permanent;
+    }
+    return 0;
+  }
+
+  function parseEffectEntry(entry) {
+    const trimmed = entry.trim();
+    if (!trimmed) {
+      return null;
+    }
+    const parts = trimmed.split(/\s*—\s*/);
+    if (parts.length === 1) {
+      return {
+        targeting: targetingRank(parts[0]),
+        strength: 0,
+        timing: 0,
+      };
+    }
+    let strength = 0;
+    let timing = 0;
+    for (let i = 1; i < parts.length; i++) {
+      const token = parts[i].trim().toLowerCase();
+      if (Object.prototype.hasOwnProperty.call(STRENGTH_RANK, token)) {
+        strength = Math.max(strength, STRENGTH_RANK[token]);
+      } else {
+        timing = Math.max(timing, timingRank(parts[i]));
+      }
+    }
+    return {
+      targeting: targetingRank(parts[0]),
+      strength: strength,
+      timing: timing,
+    };
+  }
+
+  function effectSortKey(cellValue) {
+    if (!cellValue || !cellValue.trim()) {
+      return [-1, -1, -1];
+    }
+    const entries = cellValue.split(/\s*;\s*/);
+    let best = [-1, -1, -1];
+    entries.forEach(function (entry) {
+      const parsed = parseEffectEntry(entry);
+      if (!parsed) {
+        return;
+      }
+      const key = [parsed.targeting, parsed.strength, parsed.timing];
+      if (compareEffectSortKeys(key, best) > 0) {
+        best = key;
+      }
+    });
+    return best;
+  }
+
+  function compareEffectSortKeys(ka, kb) {
+    for (let i = 0; i < 3; i++) {
+      if (ka[i] !== kb[i]) {
+        return ka[i] - kb[i];
+      }
+    }
+    return 0;
+  }
+
+  function compareEffectCells(av, bv) {
     if (!av && !bv) {
       return 0;
     }
@@ -1402,10 +1720,35 @@
     if (!bv) {
       return -1;
     }
-    if (av < bv) {
+    const cmp = compareEffectSortKeys(effectSortKey(av), effectSortKey(bv));
+    if (cmp !== 0) {
+      return cmp * sortDir;
+    }
+    return 0;
+  }
+
+  function compareCsvRows(a, b) {
+    const col = csvHeaders[sortColumn];
+    const av = (a[sortColumn] || "").trim();
+    const bv = (b[sortColumn] || "").trim();
+    if (isEffectSortColumn(col)) {
+      return compareEffectCells(av, bv);
+    }
+    const avLower = av.toLowerCase();
+    const bvLower = bv.toLowerCase();
+    if (!avLower && !bvLower) {
+      return 0;
+    }
+    if (!avLower) {
+      return 1;
+    }
+    if (!bvLower) {
+      return -1;
+    }
+    if (avLower < bvLower) {
       return -sortDir;
     }
-    if (av > bv) {
+    if (avLower > bvLower) {
       return sortDir;
     }
     return 0;
@@ -1436,13 +1779,16 @@
       if (col === "Name") {
         cls += " col-name";
       }
+      if (TIER_CSV_HEADERS[col]) {
+        cls += " col-tier";
+      }
       headHtml +=
         '<th class="' +
         cls +
         '" data-col="' +
         idx +
         '">' +
-        escapeHtml(col) +
+        (TIER_CSV_HEADERS[col] ? formatTierColumnHeader(col) : escapeHtml(col)) +
         "</th>";
     });
     headHtml += "</tr>";
@@ -1475,9 +1821,23 @@
             inner = escapeHtml(name);
           }
         } else {
-          inner = renderTableCell(col, cell);
+          let cellValue = cell;
+          if (hero && TIER_CSV_HEADERS[col] && !String(cellValue || "").trim()) {
+            const tierCol = TIER_CSV_COLUMNS.find(function (t) {
+              return t.header === col;
+            });
+            if (tierCol && hero.prydwenTiers) {
+              cellValue = hero.prydwenTiers[tierCol.key] || "";
+            }
+          }
+          inner = renderTableCell(col, cellValue);
         }
-        const tdCls = col === "Name" ? " class=\"col-name\"" : "";
+        let tdCls = "";
+        if (col === "Name") {
+          tdCls = " class=\"col-name\"";
+        } else if (TIER_CSV_HEADERS[col]) {
+          tdCls = " class=\"col-tier\"";
+        }
         bodyHtml += "<td" + tdCls + ">" + inner + "</td>";
       });
       bodyHtml += "</tr>";
@@ -1647,9 +2007,17 @@
 
     if (hero.sections.behavior) {
       const parts = splitBehavior(hero.sections.behavior);
-      if (parts.behavior) {
+      if (parts.behavior || hero.prydwenTiers) {
         html += '<div class="detail-section">';
-        html += renderMarkdown(parts.behavior, { behaviorHero: hero });
+        if (hero.prydwenTiers) {
+          html += renderPrydwenTierBoxes(hero.prydwenTiers);
+        }
+        if (parts.behavior) {
+          const behaviorMd = hero.prydwenTiers
+            ? stripPrydwenTierLine(parts.behavior)
+            : parts.behavior;
+          html += renderMarkdown(behaviorMd, { behaviorHero: hero });
+        }
         html += "</div>";
       }
       if (
@@ -1911,6 +2279,7 @@
     }
     csvHeaders = parsed[0];
     csvRows = parsed.slice(1);
+    augmentCsvWithTiers();
     if (!detailView.classList.contains("hidden")) {
       return;
     }
@@ -1925,6 +2294,7 @@
       heroBySlug[h.slug] = h;
       heroByName[h.name] = h;
     });
+    augmentCsvWithTiers();
     buildFilters();
     route();
   }
