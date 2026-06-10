@@ -949,15 +949,16 @@ a:hover {
 
 .skill-overview-section .skill-card-grid {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0.4rem;
 }
 
 .skill-overview-section .skill-card {
   display: flex;
   flex-direction: column;
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 1 1 8.5rem;
+  min-width: min(100%, 8.5rem);
+  max-width: 100%;
   background: #f7f8fa;
   border: 1px solid #e2e6eb;
   border-radius: calc(var(--radius) - 2px);
@@ -971,6 +972,7 @@ a:hover {
   color: #4a5568;
   border-bottom: 1px solid #e2e6eb;
   padding-bottom: 0.25rem;
+  overflow-wrap: break-word;
   transition: color 0.25s ease, border-bottom-color 0.25s ease;
 }
 
@@ -980,6 +982,7 @@ a:hover {
   line-height: 1.4;
   color: var(--text-muted);
   flex: 1;
+  overflow-wrap: break-word;
 }
 
 .skill-card-tags {
