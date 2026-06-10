@@ -1,0 +1,1199 @@
+[
+  {
+    "hero": "Alna",
+    "category": "ultimate",
+    "skill_name": "Winter Anthem",
+    "description_lite": "Alna summons a blizzard to reduce enemies' Haste and deal damage over time.",
+    "current_summary": "Passive: frost field lowers all haste; Active: AoE strips buffs"
+  },
+  {
+    "hero": "Alna",
+    "category": "skill1",
+    "skill_name": "Shared Resolve",
+    "description_lite": "Alna appoints a Winter Warrior and grants them buffs.",
+    "current_summary": "Passive: same-row ally max HP boost; Active: attack deals damage and heals"
+  },
+  {
+    "hero": "Alna",
+    "category": "skill2",
+    "skill_name": "Wild Whirl",
+    "description_lite": "Alna sweeps her spear, dealing damage to nearby enemies and reducing their Haste.",
+    "current_summary": "multi-hit arc sweep, applying haste reduction"
+  },
+  {
+    "hero": "Alna",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Reduce damage taken; damage reduction increases as the battle continues.",
+    "current_summary": "battle damage reduction scales over time"
+  },
+  {
+    "hero": "Alna",
+    "category": "skill4",
+    "skill_name": "Chilling Presence",
+    "description_lite": "Alna calls upon the protection of icy winds, becoming immune to damage and control effects.",
+    "current_summary": "periodic immunity to damage and control"
+  },
+  {
+    "hero": "Alna",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Alna and her Winter Warrior gain a stat buff. The first time either of them leaves the Chilling Presence state, Alna or the Winter Warrior freezes nearby enemies.",
+    "current_summary": "shared stats until one falls; bind on immunity exit"
+  },
+  {
+    "hero": "Atalanta",
+    "category": "ultimate",
+    "skill_name": "Wild Sniper",
+    "description_lite": "Atalanta dashes forward and shoots a powerful penetrative bolt in a direction.",
+    "current_summary": "dash then line AoE stun in chosen direction"
+  },
+  {
+    "hero": "Atalanta",
+    "category": "skill1",
+    "skill_name": "Sweet Encounter",
+    "description_lite": "Atalanta knocks an enemy back. If another enemy is behind the target within range, skill's effects are applied to both of them.",
+    "current_summary": "melee knock back and bind; chain into second target"
+  },
+  {
+    "hero": "Atalanta",
+    "category": "skill2",
+    "skill_name": "Scorching Gift",
+    "description_lite": "Atalanta shoots a powerful explosive bolt.",
+    "current_summary": "explosive shot with area splash damage"
+  },
+  {
+    "hero": "Atalanta",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Atalanta's Haste increases during battle. She gains extra Haste after dealing damage to 3 different enemies within seconds.",
+    "current_summary": "haste grows from hitting multiple different foes"
+  },
+  {
+    "hero": "Atalanta",
+    "category": "skill4",
+    "skill_name": "Sleight of Hand",
+    "description_lite": "Sweet Encounter can be cast multiple times in a row when a battle starts.",
+    "current_summary": "double cast at start; steal target ATK and DEF"
+  },
+  {
+    "hero": "Atalanta",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Atalanta heals herself when Wild Sniper hits the enemy directly.",
+    "current_summary": "direct hit heals; chained hit reduces target DEF"
+  },
+  {
+    "hero": "Berial",
+    "category": "ultimate",
+    "skill_name": "Scared Swamp",
+    "description_lite": "Berial hides within the shadow and follows the target, dealing damage to the target and absorbing Energy continuously, during which he becomes Invincible. Then he jumps out to damage and frighten adjacent enemies.",
+    "current_summary": "enter stealth on target, draining energy then leap to frighten"
+  },
+  {
+    "hero": "Berial",
+    "category": "skill1",
+    "skill_name": "Shadow Trick",
+    "description_lite": "Berial hides within the shadow. If isolated enemies exist, he moves toward the targets and deals damage. Otherwise, restoring HP continuously within the shadow and returning to his original tile.",
+    "current_summary": "enter stealth to hunt isolated targets"
+  },
+  {
+    "hero": "Berial",
+    "category": "skill2",
+    "skill_name": "Devil's Contract",
+    "description_lite": "Berial hides within the shadow for a while after being defeated. Upon a non-summoned enemy is taken down, he will revive from the vanquished enemy and restore a certain amount of HP.",
+    "current_summary": "revive from a newly-defeated enemy after own defeat"
+  },
+  {
+    "hero": "Berial",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Berlal reduces the damage dealt by an isolated enemy and increases the damage they take.",
+    "current_summary": "penalize isolated enemy damage dealt and taken"
+  },
+  {
+    "hero": "Berial",
+    "category": "skill4",
+    "skill_name": "Shadow Reflection",
+    "description_lite": "If non-summoned enemies remain isolated for a while, they will generate a Silhouette that loses its HP over time and can only deal damage by normal attacks.",
+    "current_summary": "isolated enemies spawn decaying decoy summons"
+  },
+  {
+    "hero": "Berial",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Increases the hiding duration after being defeated.",
+    "current_summary": "extend stealth duration after own defeat"
+  },
+  {
+    "hero": "Callan",
+    "category": "ultimate",
+    "skill_name": "Restless Guardian",
+    "description_lite": "At the start of the battle or when actively used, Callan gains a shield that absorbs damage for allies.",
+    "current_summary": "start shielded, absorbing portion of ally damage then join battle"
+  },
+  {
+    "hero": "Callan",
+    "category": "skill1",
+    "skill_name": "Flail Slam",
+    "description_lite": "Callan deals damage multiple times to a target enemy, knocking the target and nearby enemies down.",
+    "current_summary": "double hit, then arc ground slam with knock down"
+  },
+  {
+    "hero": "Callan",
+    "category": "skill2",
+    "skill_name": "Eternal Watch",
+    "description_lite": "Callan converts the damage absorbed by his shield into golem's might. When the stored golem's might reaches a threshold, unleashes it to deal AoE damage.",
+    "current_summary": "convert absorbed damage to stored burst release"
+  },
+  {
+    "hero": "Callan",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Callan increases his Vitality.",
+    "current_summary": "battle vitality increase"
+  },
+  {
+    "hero": "Callan",
+    "category": "skill4",
+    "skill_name": "Hollowed Wrath",
+    "description_lite": "When Callan or an ally's HP drops low, he unleashes a devastating attack, dealing massive damage to nearby enemies and stunning them. This skill can be used once per battle.",
+    "current_summary": "low HP threshold triggers burst damage and stun"
+  },
+  {
+    "hero": "Callan",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Callan recovers a certain amount of HP when gaining a shield.",
+    "current_summary": "heal when gaining any shield"
+  },
+  {
+    "hero": "Chippy",
+    "category": "ultimate",
+    "skill_name": "Brothers-in-arms",
+    "description_lite": "Chippy calls in two hamster friends for help.",
+    "current_summary": "call allies together for a combined powerful slam"
+  },
+  {
+    "hero": "Chippy",
+    "category": "skill1",
+    "skill_name": "Take This!",
+    "description_lite": "Chippy jumps to deal damage to the enemy.",
+    "current_summary": "leap at single target, dealing damage"
+  },
+  {
+    "hero": "Chippy",
+    "category": "skill2",
+    "skill_name": "Eureka!",
+    "description_lite": "Chippy has a chance to deal high damage with normal attacks.",
+    "current_summary": "rare chance for massive single normal attack damage"
+  },
+  {
+    "hero": "Daimon",
+    "category": "ultimate",
+    "skill_name": "Dolly Defender",
+    "description_lite": "Daimon summons his guardian spirit to fight alongside him.",
+    "current_summary": "Passive: companion auto-attacks; Active: cast deals true damage scaling on target max HP"
+  },
+  {
+    "hero": "Daimon",
+    "category": "skill1",
+    "skill_name": "Playtime Plunder",
+    "description_lite": "Daimon converts enemy's HP into a shield for himself.",
+    "current_summary": "companion periodic true damage converts to personal shield"
+  },
+  {
+    "hero": "Daimon",
+    "category": "skill2",
+    "skill_name": "Buddy Barrier",
+    "description_lite": "Daimon grants a portion of the shield he receives to the ally bonded to him.",
+    "current_summary": "shield linked ally, boosting their ATK and drain"
+  },
+  {
+    "hero": "Daimon",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Daimon reduces his damage taken, and by an extra percentage while shielded.",
+    "current_summary": "damage reduction grows while shielded"
+  },
+  {
+    "hero": "Daimon",
+    "category": "skill4",
+    "skill_name": "Guardian Howl",
+    "description_lite": "Stitchy's roar frightens enemies around Daimon.",
+    "current_summary": "companion frightens nearby enemies after sustained damage taken"
+  },
+  {
+    "hero": "Daimon",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Converts leftover shield value into HP.",
+    "current_summary": "expiring shields convert remainder to ally healing"
+  },
+  {
+    "hero": "Eironn",
+    "category": "ultimate",
+    "skill_name": "Verdant Cyclone",
+    "description_lite": "Eironn summons magical swords, pulling nearby enemies to the center, dealing damage, and immobilizing them.",
+    "current_summary": "pull nearby enemies inward then explode, immobilizing"
+  },
+  {
+    "hero": "Eironn",
+    "category": "skill1",
+    "skill_name": "Ice Spike",
+    "description_lite": "Eironn deals AoE damage with two swords and reduces enemies' Haste and Magic DEF.",
+    "current_summary": "arc slash lowers enemy haste; stab reduces magic DEF"
+  },
+  {
+    "hero": "Eironn",
+    "category": "skill2",
+    "skill_name": "Tempest Guard",
+    "description_lite": "Eironn gains a shield and the ability to dodge.",
+    "current_summary": "large personal shield, granting high dodge rate"
+  },
+  {
+    "hero": "Eironn",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Eironn increases his Ranged DEF during battle. He gains extra Ranged DEF when his HP is low.",
+    "current_summary": "ranged DEF scales up when health is low"
+  },
+  {
+    "hero": "Eironn",
+    "category": "skill4",
+    "skill_name": "Howling Hurricane",
+    "description_lite": "Eironn can cast Verdant Cyclone on any tile when a battle starts.",
+    "current_summary": "first pull per battle is free at reduced power"
+  },
+  {
+    "hero": "Eironn",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Eironn reduces an extra Magic DEF on a target if they are immobilized by Verdant Cyclone.",
+    "current_summary": "extra magic DEF reduction on immobilized targets"
+  },
+  {
+    "hero": "Florabelle",
+    "category": "ultimate",
+    "skill_name": "Pounding Blow",
+    "description_lite": "Summons Spiny when a battle starts. When actively used, summons Smashy and deals AoE damage.",
+    "current_summary": "Passive: battle-start tank summon; Active: cast is adjacent AoE smash"
+  },
+  {
+    "hero": "Florabelle",
+    "category": "skill1",
+    "skill_name": "Overgrowth",
+    "description_lite": "Transforms a Bulbsprite into a giant, increasing their Haste and Life Drain.",
+    "current_summary": "grant growth buff to ally summon, boosting haste and life drain"
+  },
+  {
+    "hero": "Florabelle",
+    "category": "skill2",
+    "skill_name": "Tiny Sharpshooter",
+    "description_lite": "Summons a ranged Bulbsprite into battle.",
+    "current_summary": "summon ranged ally with rapid fire volleys"
+  },
+  {
+    "hero": "Florabelle",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Florabelle's ATK increases during battle, and it further increases when at least 2 of her summons are on the battlefield.",
+    "current_summary": "combat ATK bonus with multiple summons on field"
+  },
+  {
+    "hero": "Florabelle",
+    "category": "skill4",
+    "skill_name": "Protective Blessing",
+    "description_lite": "Grants a permanent shield to an allied summon when it enters the battlefield.",
+    "current_summary": "summon entrance triggers shield and growth buff"
+  },
+  {
+    "hero": "Florabelle",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "",
+    "current_summary": "large summons gain control immunity and ATK boost"
+  },
+  {
+    "hero": "Granny Dahnie",
+    "category": "ultimate",
+    "skill_name": "Threshold of Jade",
+    "description_lite": "Granny Dahnie summons Parasitic Grass to immobilize the enemies in range, absorb their HP and reduce their Energy. She is immune to control effects during the effect.",
+    "current_summary": "ensnare enemies, draining energy and HP; self-heals equal amount"
+  },
+  {
+    "hero": "Granny Dahnie",
+    "category": "skill1",
+    "skill_name": "Seed Cannon",
+    "description_lite": "When an enemy deals a certain amount of total damage to Granny Dahnie, she attacks them back with Parasitic Seeds, reducing their Haste.",
+    "current_summary": "trigger projectile when absorbing threshold damage"
+  },
+  {
+    "hero": "Granny Dahnie",
+    "category": "skill2",
+    "skill_name": "Angry Taunt",
+    "description_lite": "Granny Dahnie taunts an enemy and recovers HP.",
+    "current_summary": "taunt enemy targeting weakest ally with instant self-heal"
+  },
+  {
+    "hero": "Granny Dahnie",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Granny Dahnie's Vitality increases during battle. She gains extra Vitality while casting Threshold of Jade.",
+    "current_summary": "battle vitality scales with ultimate casting"
+  },
+  {
+    "hero": "Granny Dahnie",
+    "category": "skill4",
+    "skill_name": "Glimmerbloom Blessings",
+    "description_lite": "When Granny Dahnie's HP is low, she gains Phys DEF, Magic DEF, and recovers HP.",
+    "current_summary": "low HP triggers DEF surge and sustained HP regeneration"
+  },
+  {
+    "hero": "Granny Dahnie",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Granny Dahnie recovers HP when shooting seeds using Seed Cannon.",
+    "current_summary": "triggered projectiles grant instant self HP recovery"
+  },
+  {
+    "hero": "Harak",
+    "category": "ultimate",
+    "skill_name": "Vicious Bite",
+    "description_lite": "Harak viciously strikes an enemy, dealing continuous damage and preventing them from recovering HP.",
+    "current_summary": "sustained multi-strike preventing target HP recovery"
+  },
+  {
+    "hero": "Harak",
+    "category": "skill1",
+    "skill_name": "Tidal Assault",
+    "description_lite": "Harak swiftly reaches the weakest enemy, dealing damage and knocking them into the air.",
+    "current_summary": "dive surfacing to damage frontmost; assists and defeats reset cooldown"
+  },
+  {
+    "hero": "Harak",
+    "category": "skill2",
+    "skill_name": "Flesh Feast",
+    "description_lite": "Harak enters feast mode when a battle starts, significantly enhancing his combat abilities. Assisting or defeating a unit resets the duration of feast mode. Upon exiting feast mode, Harak loses control and indiscriminately devours a non-summoned unit.",
+    "current_summary": "enhanced state boosts crit and haste; ends by absorbing weakest unit"
+  },
+  {
+    "hero": "Harak",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Harak increases his Life Drain during battle, with additional gains upon assisting or defeating enemies.",
+    "current_summary": "life drain increases with assists and defeats"
+  },
+  {
+    "hero": "Harak",
+    "category": "skill4",
+    "skill_name": "Ravenous Digestion",
+    "description_lite": "Harak Increases his ATK and max HP when assisting or defeating a unit",
+    "current_summary": "absorb defeated unit stats and max HP temporarily"
+  },
+  {
+    "hero": "Harak",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Upon assisting or defeating a number of units, Harak recovers Energy from casting Vicious Bite.",
+    "current_summary": "multiple assists in one ultimate restore energy"
+  },
+  {
+    "hero": "Hodgkin",
+    "category": "ultimate",
+    "skill_name": "Cannon Fire",
+    "description_lite": "Hodgkin deals AoE damage by firing cannons at his enemies.",
+    "current_summary": "sequential single-target shots on each enemy with adjacent splash"
+  },
+  {
+    "hero": "Hodgkin",
+    "category": "skill1",
+    "skill_name": "Phantom Respite",
+    "description_lite": "Hodgkin enters an ethereal state, during which he is immune to physical damage and recovers HP.",
+    "current_summary": "intangible phase grants physical immunity with sustained HP regeneration"
+  },
+  {
+    "hero": "Hodgkin",
+    "category": "skill2",
+    "skill_name": "Rending Cleave",
+    "description_lite": "Hodgkin deals damage to enemies within the radius of an arc and steals their Energy.",
+    "current_summary": "arc damage stealing enemy energy"
+  },
+  {
+    "hero": "Hodgkin",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Hodgkin increases his ATK, gaining an extra boost while in ethereal state.",
+    "current_summary": "ATK grows higher during intangible phase"
+  },
+  {
+    "hero": "Hodgkin",
+    "category": "skill4",
+    "skill_name": "Ardent Believers",
+    "description_lite": "Hodgkin summons Dead Tide Warriors into the battle, dealing AoE damage and reducing enemies' Energy upon defeat.",
+    "current_summary": "summon minions at start; minion defeat triggers AoE explosion"
+  },
+  {
+    "hero": "Hodgkin",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Hodgkin reduces the Phys DEF of enemies hit by the cannon.",
+    "current_summary": "shots reduce target DEF stacking; energy and vitality drain"
+  },
+  {
+    "hero": "Isabella",
+    "category": "ultimate",
+    "skill_name": "Grimoire Pact",
+    "description_lite": "Isabella selects the frontmost ally as her companion. When she casts her Ultimate, she grants the companion powerful buffs.",
+    "current_summary": "track companion buff types to build stacked debuff counts"
+  },
+  {
+    "hero": "Isabella",
+    "category": "skill1",
+    "skill_name": "Lingering Grace",
+    "description_lite": "Isabella heals her companion and deals damage to enemies around them.",
+    "current_summary": "heal companion and deal damage to adjacent foes"
+  },
+  {
+    "hero": "Isabella",
+    "category": "skill2",
+    "skill_name": "Hexward",
+    "description_lite": "After her companion is affected by control effects, Isabella can make them unaffected. Additionally, when her companion takes damage, Isabella can reduce the attacker's ATK.",
+    "current_summary": "grant companion unaffected after accumulated control; reduce attacker ATK"
+  },
+  {
+    "hero": "Isabella",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases Assistance.",
+    "current_summary": "battle assistance stat increase"
+  },
+  {
+    "hero": "Isabella",
+    "category": "skill4",
+    "skill_name": "Retributive Echo",
+    "description_lite": "When casting her Ultimate, Isabella also debuffs an enemy hero.",
+    "current_summary": "cast stat debuffs matching tracked buff types on top attacker"
+  },
+  {
+    "hero": "Isabella",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Whenever Isabella's companion receives a powerful buff, Isabella gains an extra stack of spell note.",
+    "current_summary": "large enough buff grants extra debuff stack"
+  },
+  {
+    "hero": "Korin",
+    "category": "ultimate",
+    "skill_name": "Demonseal Spear",
+    "description_lite": "Korin knocks back nearby enemies and immobilizes them.",
+    "current_summary": "arc sweep immobilize and knock back adjacent enemies"
+  },
+  {
+    "hero": "Korin",
+    "category": "skill1",
+    "skill_name": "Defiance Charge",
+    "description_lite": "Korin jumps next to an ally, granting them a shield and dealing true damage to enemies.",
+    "current_summary": "jump to weakest ally shielding both then dash true damage"
+  },
+  {
+    "hero": "Korin",
+    "category": "skill2",
+    "skill_name": "Air Strike",
+    "description_lite": "Korin deals a guaranteed critical strike to enemies 1 tile beyond.",
+    "current_summary": "guaranteed crit on distant targets; crit rate scales crit damage"
+  },
+  {
+    "hero": "Korin",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases Haste during battle.",
+    "current_summary": "battle haste increase"
+  },
+  {
+    "hero": "Korin",
+    "category": "skill4",
+    "skill_name": "Vine Arms",
+    "description_lite": "Korin deals additional true damage to enemies when he and allied heroes cast a certain amount of Ultimates.",
+    "current_summary": "accumulated team ultimates trigger true damage buff"
+  },
+  {
+    "hero": "Korin",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Korin reduces damage taken from enemy beyond 1 tile.",
+    "current_summary": "reduce incoming ranged damage taken"
+  },
+  {
+    "hero": "Lenya",
+    "category": "ultimate",
+    "skill_name": "Wild Duel",
+    "description_lite": "Lenya targets the enemy who has dealt the highest cumulative damage, kicks them into an open area and initiates a duel.",
+    "current_summary": "isolate top attacker in one-on-one combat"
+  },
+  {
+    "hero": "Lenya",
+    "category": "skill1",
+    "skill_name": "Tornado Strike",
+    "description_lite": "Lenya can dodge enemies' normal attacks and strike back with a kick that deals AoE damage.",
+    "current_summary": "counter adjacent melee attack and counterattack with stun"
+  },
+  {
+    "hero": "Lenya",
+    "category": "skill2",
+    "skill_name": "Flurry Kicks",
+    "description_lite": "Lenya increases her Crit. When dealing critical damage with her normal attacks, she follows up with a power kick that deals damage and stuns the enemy.",
+    "current_summary": "crit triggers follow-up power kick with stun"
+  },
+  {
+    "hero": "Lenya",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases Haste during battle.",
+    "current_summary": "battle haste increase"
+  },
+  {
+    "hero": "Lenya",
+    "category": "skill4",
+    "skill_name": "Winning Resolve",
+    "description_lite": "Lenya increases her stats and enhances her Flurry Kicks skill during the duel.",
+    "current_summary": "full potential in duel for super multi-hit kick"
+  },
+  {
+    "hero": "Lenya",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Reduces damage taken from enemies other than her target.",
+    "current_summary": "reduce damage taken from non-duel opponents"
+  },
+  {
+    "hero": "Lucius",
+    "category": "ultimate",
+    "skill_name": "Divine Light Aegis",
+    "description_lite": "Lucius provides allies with a shield.",
+    "current_summary": "AoE shield granted to allies around selected tile"
+  },
+  {
+    "hero": "Lucius",
+    "category": "skill1",
+    "skill_name": "Divine Bash",
+    "description_lite": "Lucius bashes with his shield, dealing damage to an enemy and knocking them back, while gaining a shield for himself.",
+    "current_summary": "melee knock back, gaining a personal shield"
+  },
+  {
+    "hero": "Lucius",
+    "category": "skill2",
+    "skill_name": "Divine Light Blessing",
+    "description_lite": "Lucius heals an ally when gaining a shield.",
+    "current_summary": "gain heal for weakest ally whenever gaining a shield"
+  },
+  {
+    "hero": "Lucius",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases Healing during battle.",
+    "current_summary": "battle healing stat increase"
+  },
+  {
+    "hero": "Lucius",
+    "category": "skill4",
+    "skill_name": "Sacred Beam",
+    "description_lite": "Lucius deals damage to enemies in a frontal area and reduces their ATK.",
+    "current_summary": "frontal line attack reduces enemy ATK; gain shield per hit"
+  },
+  {
+    "hero": "Lucius",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Lucius heals an additional ally with Divine Light Blessing.",
+    "current_summary": "heal one extra ally per cast"
+  },
+  {
+    "hero": "Lyca",
+    "category": "ultimate",
+    "skill_name": "Comet Archery",
+    "description_lite": "Lyca fires a comet-like arrow, dealing damage to enemies in its path. Allies within range summon meteors with their normal attacks, dealing extra damage to the target.",
+    "current_summary": "line shot leaves AoE aura zone buffing allies"
+  },
+  {
+    "hero": "Lyca",
+    "category": "skill1",
+    "skill_name": "Empyrean Blessing",
+    "description_lite": "Lyca bestows blessings of the stars on all allies, increasing their ATK SPD. She also grants them extra Energy on the first cast.",
+    "current_summary": "buff all allies ATK speed and grant energy at battle start"
+  },
+  {
+    "hero": "Lyca",
+    "category": "skill2",
+    "skill_name": "Nova Fall",
+    "description_lite": "Lyca summons meteors to attack all enemies, reducing their Phys DEF.",
+    "current_summary": "AoE rain reduces enemy DEF"
+  },
+  {
+    "hero": "Lyca",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases ATK SPD during battle.",
+    "current_summary": "battle ATK speed increase"
+  },
+  {
+    "hero": "Lyca",
+    "category": "skill4",
+    "skill_name": "Meteor Catastrophe",
+    "description_lite": "Lyca summons meteors to assist in battle.",
+    "current_summary": "persistent companion attacks with normal attacks; enhanced shot breaks shields"
+  },
+  {
+    "hero": "Lyca",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Lyca reduces the target's Phys DEF if they are hit by Comet Archery.",
+    "current_summary": "ultimate hit permanently reduces target DEF"
+  },
+  {
+    "hero": "Mikola",
+    "category": "ultimate",
+    "skill_name": "Dauntless Hymn",
+    "description_lite": "Mikola generates a Courage Sphere and provides buffs for nearby allies. Upon dealing sufficient damage, she heals all allies within range.",
+    "current_summary": "mobile aura zone follows caster; nearby allies gain haste and ranged DEF; damage threshold triggers heal wave"
+  },
+  {
+    "hero": "Mikola",
+    "category": "skill1",
+    "skill_name": "Heroic Duel",
+    "description_lite": "Mikola generates an Honor Arena in the center of the battlefield and provides buffs for all allies after her side gains control of the arena.",
+    "current_summary": "control arena; side with more units gains healing and ATK"
+  },
+  {
+    "hero": "Mikola",
+    "category": "skill2",
+    "skill_name": "Vigorous Call",
+    "description_lite": "Mikola restores HP and temporarily increases Phys and Magic DEF for herself and the two weakest allies.",
+    "current_summary": "heal self and two weakest allies with DEF boost"
+  },
+  {
+    "hero": "Mikola",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases ATK.",
+    "current_summary": "ATK scales while own side holds arena control"
+  },
+  {
+    "hero": "Mikola",
+    "category": "skill4",
+    "skill_name": "Passionate Opening",
+    "description_lite": "Mikola enhances her Courage Sphere after some time and deals continuous damage to enemies adjacent to allies within the Courage Sphere.",
+    "current_summary": "enhanced aura grants combat fury with sustained area damage"
+  },
+  {
+    "hero": "Mikola",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "",
+    "current_summary": "aura duration frozen when own side controls arena"
+  },
+  {
+    "hero": "Nazrik",
+    "category": "ultimate",
+    "skill_name": "Rend Rupture",
+    "description_lite": "Nazrik marks an enemy as his Prey. When casting this skill, he throws a spear to trigger all Rend stacks on an enemy.",
+    "current_summary": "guaranteed critical throw, dealing true damage then detonate stacks"
+  },
+  {
+    "hero": "Nazrik",
+    "category": "skill1",
+    "skill_name": "Savage Wound",
+    "description_lite": "When Nazrik lands a critical hit with a spear throw, he inflicts Rend on the enemy hit. Enemies with Rend take damage whenever they cast their ultimate.",
+    "current_summary": "crit hits deal extra HP-based true damage reducing target max HP"
+  },
+  {
+    "hero": "Nazrik",
+    "category": "skill2",
+    "skill_name": "Staggering Strike",
+    "description_lite": "Nazrik hurls a spear at the enemy with the highest total healing done, dealing damage, stunning them, and reducing their Healing.",
+    "current_summary": "target highest healer with damage stun and anti-heal"
+  },
+  {
+    "hero": "Nazrik",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Nazrik increases his Crit and gains extra Crit after inflicting a certain number of Rend stacks.",
+    "current_summary": "crit stat grows after accumulating debuff stacks"
+  },
+  {
+    "hero": "Nazrik",
+    "category": "skill4",
+    "skill_name": "Pack Tactics",
+    "description_lite": "Allied units have a chance to inflict Rend stacks whenever they deal damage to Nazrik's Prey.",
+    "current_summary": "debuffed target crit resist reduced; allies add stacks on crit hits"
+  },
+  {
+    "hero": "Nazrik",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Each time Nazrik lands a critical hit, that hit gains increased Crit DMG Boost.",
+    "current_summary": "crit damage boosts further per point of crit rate"
+  },
+  {
+    "hero": "Pandora",
+    "category": "ultimate",
+    "skill_name": "Panic Projection",
+    "description_lite": "Pandora opens her box and lets disaster loose. Everyone on the battlefield, friend or foe, is affected. She alone is spared.",
+    "current_summary": "AoE frighten all units fleeing; enemies ATK reduced after"
+  },
+  {
+    "hero": "Pandora",
+    "category": "skill1",
+    "skill_name": "Boxed Blessing",
+    "description_lite": "When a battle starts, Pandora pulls an ally into her box and restores their Energy.",
+    "current_summary": "pull rearmost ally into invincible enclosure then release empowered"
+  },
+  {
+    "hero": "Pandora",
+    "category": "skill2",
+    "skill_name": "Tainted Tribute",
+    "description_lite": "Pandora is corrupted by her box, allowing her to inflict debuffs on enemies based on her current Corruption stacks.",
+    "current_summary": "each skill cast restores released ally and spreads debuff"
+  },
+  {
+    "hero": "Pandora",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "During battle, Pandora's max HP increases, and by an extra amount after being corrupted by her box.",
+    "current_summary": "battle max HP grows with debuff stack count"
+  },
+  {
+    "hero": "Pandora",
+    "category": "skill4",
+    "skill_name": "Eternal Legacy",
+    "description_lite": "Pandora's box remains on the battlefield after she is defeated and cannot be destroyed.",
+    "current_summary": "enclosure persists after defeat continuing to fire debuffs"
+  },
+  {
+    "hero": "Pandora",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Allies placed inside the box are immune to Pandora's Ultimate.",
+    "current_summary": "pulled ally permanently immune to AoE frighten effect"
+  },
+  {
+    "hero": "Phraesto",
+    "category": "ultimate",
+    "skill_name": "Futile Echo",
+    "description_lite": "Passive. Phraesto sacrifices max HP to summon an Illusion who can cast all his skills. Active. Phraesto deals damage to enemies nearby and recovers his HP for each enemy hit.",
+    "current_summary": "clone on same row shares damage reduction with caster until one falls"
+  },
+  {
+    "hero": "Phraesto",
+    "category": "skill1",
+    "skill_name": "Crimson Contract",
+    "description_lite": "Phraesto and his Illusion each sign a permanent contract with different allied heroes positioned behind them at the start of every battle. Active. Deals damage to a frontal enemy 3 times.",
+    "current_summary": "Passive: clone and self grant rear allies stat contracts; Active: frontal multi-strike"
+  },
+  {
+    "hero": "Phraesto",
+    "category": "skill2",
+    "skill_name": "Vicious Sting",
+    "description_lite": "Phraesto inflicts an enemy with Paralyzing Venom, making them lose HP constantly and reducing their stats.",
+    "current_summary": "single-target hit applies sustained HP drain, haste reduction, and vitality reduction"
+  },
+  {
+    "hero": "Phraesto",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Phraesto increases the Phys & Magic DEF of both himself and his Illusion. Whenever one of them loses HP, the other gains Energy.",
+    "current_summary": "DEF boost shared with clone; energy cross-transfers on damage"
+  },
+  {
+    "hero": "Phraesto",
+    "category": "skill4",
+    "skill_name": "Foggy Whisper",
+    "description_lite": "Phraesto deals damage to an enemy and stuns them if the Illusion is defeated before he is.",
+    "current_summary": "clone defeat triggers taunt burst stun"
+  },
+  {
+    "hero": "Phraesto",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield when a battle starts.",
+    "current_summary": "both in same row gain initial shield at battle start"
+  },
+  {
+    "hero": "Rhys",
+    "category": "ultimate",
+    "skill_name": "Flame Barrage",
+    "description_lite": "Passive. Rhys can move while attacking. Active. Rhys shoots at enemies and uses Blast Ammo to enhance follow-up normal attacks.",
+    "current_summary": "continuous walking arc fire burst with loaded-shot cycle"
+  },
+  {
+    "hero": "Rhys",
+    "category": "skill1",
+    "skill_name": "Defensive Stance",
+    "description_lite": "Rhys increases Crit and gains control immunity when taking control effects.",
+    "current_summary": "Passive: crit boost; Active: control immunity and self-heal"
+  },
+  {
+    "hero": "Rhys",
+    "category": "skill2",
+    "skill_name": "Concussive Strike",
+    "description_lite": "Rhys knocks back nearby enemies and deals damage.",
+    "current_summary": "load knock back shot for next attack"
+  },
+  {
+    "hero": "Rhys",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Rhys' Crit DMG Boost increases during battle, and it further increases when Blast Ammo is loaded.",
+    "current_summary": "battle crit damage boost scales with splash shots equipped"
+  },
+  {
+    "hero": "Rhys",
+    "category": "skill4",
+    "skill_name": "Fury Rush",
+    "description_lite": "Rhys loads Blast Ammo to enhance his follow-up normal attacks after moving continuously for a while.",
+    "current_summary": "movement loads splash shots for enhanced area attacks"
+  },
+  {
+    "hero": "Rhys",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "The cooldown of Defensive Stance is reduced.",
+    "current_summary": "control immunity cooldown reduced; blast ultimate freezes time"
+  },
+  {
+    "hero": "Satrana",
+    "category": "ultimate",
+    "skill_name": "Fiery Dance",
+    "description_lite": "Satrana deals continuous damage to enemies and is invincible during the effect.",
+    "current_summary": "spin AoE; final hit charms enemies"
+  },
+  {
+    "hero": "Satrana",
+    "category": "skill1",
+    "skill_name": "Vixen Rush",
+    "description_lite": "Satrana attacks enemies within the radius of an arc and gains Life Drain.",
+    "current_summary": "frontal arc strike with HP-based extra damage and lifesteal"
+  },
+  {
+    "hero": "Satrana",
+    "category": "skill2",
+    "skill_name": "Ignite Passions",
+    "description_lite": "Satrana or allies with Sparks ignite enemies, reducing their Vitality and dealing continuous damage to them.",
+    "current_summary": "buff shared with allies burns targets after enough hits"
+  },
+  {
+    "hero": "Satrana",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Reduces damage taken during battle.",
+    "current_summary": "battle damage taken reduction"
+  },
+  {
+    "hero": "Satrana",
+    "category": "skill4",
+    "skill_name": "Radiant Vigor",
+    "description_lite": "Satrana ignites enemies, causing her and her allies to take less magic damage.",
+    "current_summary": "damage reduction grows for each ignited enemy hero"
+  },
+  {
+    "hero": "Satrana",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Vixen Rush's cooldown is removed when all enemy heroes have been ignited.",
+    "current_summary": "strike has no cooldown limit when all enemies are ignited"
+  },
+  {
+    "hero": "Shakir",
+    "category": "ultimate",
+    "skill_name": "Ravaging Claws",
+    "description_lite": "Shakir transforms into a wolf with more powerful combat capabilities.",
+    "current_summary": "transformation form AoE normal attacks with sustained energy drain"
+  },
+  {
+    "hero": "Shakir",
+    "category": "skill1",
+    "skill_name": "Savage Cleave",
+    "description_lite": "Shakir launches 3 consecutive strikes, dealing AoE damage while in Wolf Form.",
+    "current_summary": "three-hit frontal arc; enhanced third hit"
+  },
+  {
+    "hero": "Shakir",
+    "category": "skill2",
+    "skill_name": "Wolf's Will",
+    "description_lite": "Gains Ranged DEF and Life Drain while in Wolf Form.",
+    "current_summary": "passive ranged DEF; transformation unaffected with drain and aura buff"
+  },
+  {
+    "hero": "Shakir",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Shakir's damage taken is reduced during battle and is further reduced when multiple non-summoned allies are buffed by Lupine Aura.",
+    "current_summary": "battle damage taken reduction grows with aura allies"
+  },
+  {
+    "hero": "Shakir",
+    "category": "skill4",
+    "skill_name": "All-Conquering",
+    "description_lite": "Shakir into wolf in advance.",
+    "current_summary": "transformation sustained at lower energy threshold"
+  },
+  {
+    "hero": "Shakir",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Shakir casts Savage Cleave to reduce the target's Vitality",
+    "current_summary": "third hit reduces target vitality"
+  },
+  {
+    "hero": "Sinbad",
+    "category": "ultimate",
+    "skill_name": "Whizzing Edge",
+    "description_lite": "Deals damage multiple times to the enemy.",
+    "current_summary": "Passive: skills count as normal attacks; Active: sustained rapid strikes"
+  },
+  {
+    "hero": "Sinbad",
+    "category": "skill1",
+    "skill_name": "Tracker's Instincts",
+    "description_lite": "Sinbad assesses his enemies' strength, focusing his attacks on the one dealing the most damage and the one taking the most damage.",
+    "current_summary": "battle-start mark two enemy roles; charge both with debuffs"
+  },
+  {
+    "hero": "Sinbad",
+    "category": "skill2",
+    "skill_name": "Duo Cut",
+    "description_lite": "Sinbad attacks the target twice.",
+    "current_summary": "double two-hit blade strike"
+  },
+  {
+    "hero": "Sinbad",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases ATK SPD during battle.",
+    "current_summary": "battle ATK speed increase"
+  },
+  {
+    "hero": "Sinbad",
+    "category": "skill4",
+    "skill_name": "Adaptive Prowess",
+    "description_lite": "Sinbad studies the fighting styles of the \"hitter\" and the \"guard\" to further weaken them in battle.",
+    "current_summary": "debuff adapts to enemy combat role"
+  },
+  {
+    "hero": "Sinbad",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Sinbad deals extra damage to enemies he has marked.",
+    "current_summary": "enhanced damage against marked enemy roles"
+  },
+  {
+    "hero": "Soren",
+    "category": "ultimate",
+    "skill_name": "Whirlwind Swing",
+    "description_lite": "Rushes to the selected target and knocks back nearby enemies, dealing extra damage and stunning them if they collide with other entities.",
+    "current_summary": "rush to tile; knock back on collision deals stun damage"
+  },
+  {
+    "hero": "Soren",
+    "category": "skill1",
+    "skill_name": "Repel Sweep",
+    "description_lite": "Deals damage to a target and knocks them back, dealing additional damage and stunning them upon collision.",
+    "current_summary": "melee knock back; collision stuns and repositions"
+  },
+  {
+    "hero": "Soren",
+    "category": "skill2",
+    "skill_name": "Deflecting Swing",
+    "description_lite": "Blocks a powerful single attack and resets the cooldown of Repel Sweep.",
+    "current_summary": "big hit damage reduction resets knock back skill"
+  },
+  {
+    "hero": "Soren",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases Haste during battle.",
+    "current_summary": "combat haste increase"
+  },
+  {
+    "hero": "Soren",
+    "category": "skill4",
+    "skill_name": "Dusk Rejuvenation",
+    "description_lite": "Increases Haste and recovers HP and Energy when his HP is low.",
+    "current_summary": "low HP haste regeneration cleanse cooldown"
+  },
+  {
+    "hero": "Soren",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Increases the knockback distance of the next Repel Sweep when triggering Deflecting Swing, dealing extra damage.",
+    "current_summary": "extended knock back grants energy on collision"
+  },
+  {
+    "hero": "Temesia",
+    "category": "ultimate",
+    "skill_name": "Knight's Heart",
+    "description_lite": "Passive. Tamesia charges on the battlefield, dealing damage to all enemies on her path. Active. Tamesia summons her mount on leap forward, dealing damage and knocking back adjacent enemies down, and increasing her charge speed.",
+    "current_summary": "passive auto-charge farthest enemy; ATK speed boosts charge damage"
+  },
+  {
+    "hero": "Temesia",
+    "category": "skill1",
+    "skill_name": "Iron Heel",
+    "description_lite": "Tamesia deals damage and reduces damage dealt by the enemy when charging in the opposite direction",
+    "current_summary": "kick interrupts and weakens when charge direction changes"
+  },
+  {
+    "hero": "Temesia",
+    "category": "skill2",
+    "skill_name": "Courage Sword",
+    "description_lite": "Tamesia deals damage to the surrounding enemies based on the targets ATK",
+    "current_summary": "sword attacks adjacent scaling on target ATK"
+  },
+  {
+    "hero": "Temesia",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Tamesisa's ATK increases during battle. She gains extra ATK after the first Knight's cast.",
+    "current_summary": "battle ATK grows after first ultimate activation"
+  },
+  {
+    "hero": "Temesia",
+    "category": "skill4",
+    "skill_name": "Invincible Fury",
+    "description_lite": "Tamesia gains permanent control immunity and turns the charge damage into true damage after casting Ultimate several times.",
+    "current_summary": "permanent unaffected and true damage after repeated charges"
+  },
+  {
+    "hero": "Temesia",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Tamesia reduces the enemys phys DEF if they are hit by the Knight's Heart.",
+    "current_summary": "charges stack target DEF reduction"
+  },
+  {
+    "hero": "Twins",
+    "category": "ultimate",
+    "skill_name": "Starlight Waltz",
+    "description_lite": "Elijah and Lailah greatly increase all allies' Haste and make allies linked through Stellar Bond unaffected.",
+    "current_summary": "linked duo performance inspires allied haste; linked allies become unaffected"
+  },
+  {
+    "hero": "Twins",
+    "category": "skill1",
+    "skill_name": "Stellar Bond",
+    "description_lite": "Elijah and Lailah form a straight-line link, channeling blessings that recover allies' Energy and HP along the path.",
+    "current_summary": "row alignment link boosts ATK of all linked allies"
+  },
+  {
+    "hero": "Twins",
+    "category": "skill2",
+    "skill_name": "Cosmic Protection",
+    "description_lite": "Elijah grants a shield to allies, while Lailah casts Stellar Pulse to deal damage and inflict blind on enemies surrounding her allies.",
+    "current_summary": "one twin shields an ally; the other blasts nearby foes"
+  },
+  {
+    "hero": "Twins",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Elijah and Lailah increase their own Haste and grant extra Haste to allies linked through Stellar Bond each time they cast Starlight Waltz.",
+    "current_summary": "haste grows each time the performance is repeated"
+  },
+  {
+    "hero": "Twins",
+    "category": "skill4",
+    "skill_name": "Starbound Harmony",
+    "description_lite": "When all linked allies belong to the same faction, Stellar Bond becomes stronger and is permanently enhanced after all linked allies use their Ultimate.",
+    "current_summary": "same-faction link grants resonance and energy burst"
+  },
+  {
+    "hero": "Twins",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "",
+    "current_summary": "linked allies borrow best stats from each other"
+  },
+  {
+    "hero": "Valka",
+    "category": "ultimate",
+    "skill_name": "Phantom Slasher",
+    "description_lite": "Passive: Valka's normal attacks apply Panic stacks to her target, striking them with a fear of battle. Active: Valka unleashes powerfull slashes on an enemy in the panic state, dealing damage and healing herself.",
+    "current_summary": "full stacks trigger stun slash at energy cost"
+  },
+  {
+    "hero": "Valka",
+    "category": "skill1",
+    "skill_name": "Deathbloom Scheme",
+    "description_lite": "Valka skillfully utilizes various sword techniques in battle.",
+    "current_summary": "multiple sword techniques at appropriate range cost energy"
+  },
+  {
+    "hero": "Valka",
+    "category": "skill2",
+    "skill_name": "Spectral Bulwark",
+    "description_lite": "When a battle starts, Valka gains a shield and increases her allies' ATK SPD.",
+    "current_summary": "battle-start shield from nearby allies; ATK speed buff to all"
+  },
+  {
+    "hero": "Valka",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Increases ATK SPD during battle.",
+    "current_summary": "battle ATK speed increase"
+  },
+  {
+    "hero": "Valka",
+    "category": "skill4",
+    "skill_name": "Soulshock Riposte",
+    "description_lite": "Valka blocks the enemy's Ultimate and launches a counterattack.",
+    "current_summary": "counter incoming ultimate damage with free parry counter"
+  },
+  {
+    "hero": "Valka",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "While shield granted by Spectral Bulwark is active, Valka recovers Energy from launching normal attacks.",
+    "current_summary": "while shielded gain bonus energy from normal attacks"
+  },
+  {
+    "hero": "Zandrok",
+    "category": "ultimate",
+    "skill_name": "Savage Slash",
+    "description_lite": "Zandrok raises his axe and slams it down, destroying all obstacles within the area.",
+    "current_summary": "slam destroys obstacles and knock up area enemies"
+  },
+  {
+    "hero": "Zandrok",
+    "category": "skill1",
+    "skill_name": "Rallying Roar",
+    "description_lite": "Zandrok summons illusions to destroy all obstacles in their path.",
+    "current_summary": "charge formation inspires all allies with max HP and stats"
+  },
+  {
+    "hero": "Zandrok",
+    "category": "skill2",
+    "skill_name": "Shock Stomp",
+    "description_lite": "Zandrok stomps the ground, striking nearby enemies.",
+    "current_summary": "HP-scaled stomp stuns adjacent enemies"
+  },
+  {
+    "hero": "Zandrok",
+    "category": "skill3",
+    "skill_name": "Hero Focus",
+    "description_lite": "Zandrok increases his max HP during battle. He further increases his max HP while temporary Rallying Roar buffs are active.",
+    "current_summary": "battle max HP increase"
+  },
+  {
+    "hero": "Zandrok",
+    "category": "skill4",
+    "skill_name": "Hunter's Fury",
+    "description_lite": "Zandrok deals extra damage equal to a portion of his max HP with his normal attacks.",
+    "current_summary": "high HP threshold enables HP-scaling normal attack bonus"
+  },
+  {
+    "hero": "Zandrok",
+    "category": "skill5",
+    "skill_name": "Enhance Force",
+    "description_lite": "Any excess healing Zandrok receives is converted into max HP.",
+    "current_summary": "excess healing converts to permanent max HP gain"
+  }
+]

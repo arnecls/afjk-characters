@@ -250,19 +250,27 @@ def _parse_fandom_hero(wikitext: str, hero_name: str) -> dict:
             if raw_energy != "":
                 meta["Initial Energy"] = raw_energy
 
-        raw_desc = fields.get("full") or fields.get("lite") or ""
-        desc = re.sub(r" {2,}", " ", re.sub(r"\n+", " ", process_wikitext(raw_desc))).strip()
+        def _skill_desc(raw: str) -> str:
+            if not raw:
+                return ""
+            return re.sub(
+                r" {2,}", " ", re.sub(r"\n+", " ", process_wikitext(raw))
+            ).strip()
 
-        skills.append(
-            {
-                "section": section,
-                "name": (fields.get("name") or skill_type).strip(),
-                "unlock": unlock,
-                "meta": meta,
-                "description": desc,
-                "levels": _parse_level_upgrades(fields.get("buffs", "")),
-            }
-        )
+        skill_description = _skill_desc(fields.get("full", ""))
+        skill_description_lite = _skill_desc(fields.get("lite", ""))
+        skill_record: dict = {
+            "section": section,
+            "name": (fields.get("name") or skill_type).strip(),
+            "unlock": unlock,
+            "meta": meta,
+            "description": skill_description,
+            "levels": _parse_level_upgrades(fields.get("buffs", "")),
+        }
+        if skill_description_lite and skill_description_lite != skill_description:
+            skill_record["description_lite"] = skill_description_lite
+
+        skills.append(skill_record)
 
     title = f"{name} - {subtitle}" if subtitle else name
     tags = " · ".join([t for t in (faction, hero_class, damage) if t]) or None

@@ -32,6 +32,8 @@ import heroes_io as io
 
 HEROES_MD = ROOT / "Heroes.md"
 PROCESSED = io.HEROES_DATA_PROCESSED
+SKILL_SUMMARY = ROOT / "data" / "heroes_data_skill_summary.json"
+SKILL_SUMMARY_SCHEMA = ROOT / "data" / "schema" / "skill_summary.schema.json"
 
 _CC_KEYWORDS: dict[str, str] = {
     "stun": r"\bstun(?:s|ned|ning)?\b",
@@ -225,12 +227,108 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
     return issues
 
 
+def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
+    """Validate heroes_data_skill_summary.json coverage and basic lint."""
+    errors: list[str] = []
+    gen = _load_module("gen_overview", "generate-heroes-overview.py")
+
+    if not SKILL_SUMMARY.exists():
+        errors.append("missing heroes_data_skill_summary.json")
+        return errors
+
+    try:
+        summaries = json.loads(SKILL_SUMMARY.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"skill summary JSON parse error: {exc}"]
+
+    if jsonschema_available():
+        try:
+            schema = json.loads(SKILL_SUMMARY_SCHEMA.read_text(encoding="utf-8"))
+            import jsonschema
+
+            # Pre-load all sibling schema files into the resolver's store
+            # so relative $ref URIs are served locally instead of over
+            # the network (all schema $ids use the afkj.local fake host).
+            store: dict[str, object] = {}
+            for sibling in SKILL_SUMMARY_SCHEMA.parent.glob("*.schema.json"):
+                sibling_schema = json.loads(sibling.read_text(encoding="utf-8"))
+                sid = sibling_schema.get("$id")
+                if sid:
+                    store[sid] = sibling_schema
+            schema_dir = SKILL_SUMMARY_SCHEMA.parent.resolve().as_uri() + "/"
+            resolver = jsonschema.RefResolver(schema_dir, schema, store=store)
+            jsonschema.validate(summaries, schema, resolver=resolver)
+        except Exception as exc:
+            errors.append(f"skill summary schema validation failed: {exc}")
+
+    expected: dict[str, set[str]] = {}
+    skill_names: dict[str, dict[str, str]] = {}
+    for title, hero in processed["heroes"].items():
+        short = gen.short_name(title)
+        categories = {s["category"] for s in hero["skills"].values()}
+        expected[short] = categories
+        skill_names[short] = {
+            s["category"]: name for name, s in hero["skills"].items()
+        }
+
+    for short, categories in sorted(expected.items()):
+        hero_summaries = summaries.get(short)
+        if not hero_summaries:
+            errors.append(f"skill summary missing hero: {short}")
+            continue
+        for category in categories:
+            if category not in hero_summaries:
+                errors.append(
+                    f"skill summary missing {short} / {category}"
+                )
+        extra = set(hero_summaries) - categories
+        for category in sorted(extra):
+            errors.append(
+                f"skill summary extra category {short} / {category}"
+            )
+
+    for short, hero_summaries in summaries.items():
+        if short not in expected:
+            errors.append(f"skill summary unknown hero: {short}")
+            continue
+        for category, text in hero_summaries.items():
+            if not isinstance(text, str) or not text.strip():
+                errors.append(f"skill summary empty {short} / {category}")
+                continue
+            if re.search(r"\d", text):
+                errors.append(
+                    f"skill summary contains digit {short} / {category}: {text!r}"
+                )
+            skill_name = skill_names.get(short, {}).get(category, "")
+            if skill_name and skill_name.lower() in text.lower():
+                errors.append(
+                    f"skill summary contains skill name {short} / {category}: "
+                    f"{text!r}"
+                )
+            if short.lower() in text.lower():
+                errors.append(
+                    f"skill summary contains hero name {short} / {category}: "
+                    f"{text!r}"
+                )
+
+    return errors
+
+
+def jsonschema_available() -> bool:
+    try:
+        import jsonschema  # noqa: F401
+
+        return True
+    except ImportError:
+        return False
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--fail-on",
         nargs="*",
-        default=["md_parity", "reanalysis", "schema", "semantic"],
+        default=["md_parity", "reanalysis", "schema", "skill_summary", "semantic"],
         help="Check groups that cause a non-zero exit when failing",
     )
     parser.add_argument(
@@ -281,6 +379,17 @@ def main() -> int:
             hs.validate_processed(fresh)
         except Exception as exc:
             warnings["schema"] = [str(exc)]
+
+    if "skill_summary" in fail_on:
+        summary_errors = check_skill_summaries(stored)
+        if summary_errors:
+            errors.extend(summary_errors)
+        else:
+            print("OK: skill summaries complete and valid")
+    else:
+        summary_errors = check_skill_summaries(stored)
+        if summary_errors:
+            warnings["skill_summary"] = summary_errors
 
     semantic = check_semantic(fresh)
     for category, items in sorted(semantic.items()):

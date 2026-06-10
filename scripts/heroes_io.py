@@ -76,6 +76,8 @@ def normalize_hero_skills(hero: dict) -> None:
     for skill in hero.get("skills", []):
         if skill.get("description"):
             skill["description"] = normalize_skill_text(skill["description"])
+        if skill.get("description_lite"):
+            skill["description_lite"] = normalize_skill_text(skill["description_lite"])
         for level in skill.get("levels", []):
             if level.get("text"):
                 level["text"] = normalize_skill_text(level["text"])

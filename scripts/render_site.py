@@ -217,7 +217,24 @@ def build_site_data(
         behavior = rs.HeroBehavior(**p["behavior"])
         meta = data_by_title.get(title, {})
 
-        behavior_md = "\n".join(rs.format_behavior_section(short, behavior)).strip()
+        skill_summaries = rs._load_skill_summaries().get(short, {})
+        hero_categories = {s["category"] for s in p["skills"].values()}
+        hero_skills = skills_by_title.get(title, [])
+        behavior_md = "\n".join(
+            rs.format_behavior_section(
+                short,
+                behavior,
+                skill_summaries=skill_summaries,
+                hero_categories=hero_categories,
+                include_skill_summaries=False,
+            )
+        ).strip()
+        skill_cards = rs.format_skill_cards(
+            hero,
+            skill_summaries,
+            hero_categories,
+            hero_skills,
+        )
         summary_md = rs.format_summary(hero, short).strip()
         synergy = _build_synergy_sections(
             short,
@@ -231,6 +248,13 @@ def build_site_data(
         replacements = _build_replacements(
             short, p.get("replacements", {}), max_rep, slug_by_name
         )
+        sig_category = rs.signature_skill_category(short, behavior)
+        signature_skill = None
+        if behavior.signature_skill_name and sig_category:
+            signature_skill = {
+                "name": behavior.signature_skill_name,
+                "category": sig_category,
+            }
 
         heroes_out.append(
             {
@@ -242,8 +266,10 @@ def build_site_data(
                 "damage_type": meta.get("damage_type"),
                 "description": meta.get("description", ""),
                 "portrait": f"assets/portraits/{short}.png",
+                "signatureSkill": signature_skill,
                 "sections": {
                     "behavior": behavior_md,
+                    "skillCards": skill_cards,
                     "benefits_from": synergy,
                     "replacements": replacements,
                     "summary": summary_md,

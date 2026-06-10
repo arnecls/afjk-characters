@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/skill_summary.schema.json",
+  "title": "Hero skill summaries",
+  "description": "AI-curated short mechanic summaries per hero and skill category. Join key is category from heroes_data_processed.json.",
+  "type": "object",
+  "minProperties": 1,
+  "additionalProperties": {
+    "$ref": "#/$defs/heroSkillSummaries"
+  },
+  "$defs": {
+    "heroSkillSummaries": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/summaryText"
+      },
+      "propertyNames": {
+        "$ref": "skills.schema.json#/$defs/skillCategory"
+      }
+    },
+    "summaryText": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "description": "Short mechanic summary without numbers or hero-specific names."
+    }
+  }
+}

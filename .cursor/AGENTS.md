@@ -206,6 +206,57 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   Skill1/Skill2/Ex with **p75** per metric type. Synergy fuel still uses
   `signature_skill_speed` / `synergy_signature_speed` in processed JSON
   (not shown in the markdown block).
+  After the metric rows (and optional True damage line), **per-category
+  summaries** appear as `##### {slot}` headers with a short paragraph
+  underneath. Summaries come from `data/heroes_data_skill_summary.json`
+  (key = display name, then `category` from processed JSON:
+  `ultimate`, `skill1`–`skill5`). Labels: Ultimate, Skill 1, Skill 2,
+  Legendary+, Ex. Skill, Supreme+. The signature skill line still uses
+  `data/signature_skills.json` descriptions.
+
+**Skill summary authoring** (AI-generated, not scripted):
+
+- Read fully ascended `description` from `heroes_data_processed.json`.
+- Write a **short mechanic summary** using **generalized game vocabulary**
+  from `data/schema/game_properties.schema.json` (damage types, CC,
+  stats, immunities, battle phases) and effect labels in
+  `data/schema/skills.schema.json`.
+- **No numbers** (no `%`, tile counts, cooldowns, energy values).
+- **No hero-specific wording** — no hero names, skill names, companion
+  or grant names, or skill-only imagery (feather, lance, dark cloud,
+  winged form, intel, party, etc.). Use generic terms instead:
+  transformation, companion, summon, mark, ally grant, DoT zone,
+  HP-loss, observation stacks, formation, bond, channeling.
+- Use schema vocabulary in **display form**: `HP-loss`, `knock down`,
+  `knock back`, `knock up` — not enum tokens like `hp_loss` or
+  `knock_down`.
+- Prefer established game terms over flavor nouns: **circular area** or
+  **zone** (not magic circle), **melee buff state** (not combat stance),
+  **area with most enemies** (not dense group), **counterattack** (not
+  retaliate), **channel then single-target magic damage** (not charged
+  fireball), **sequential single-target shots** (not artillery salvo),
+  **line AoE** (not piercing stun line), **untargetable aerial AoE
+  damage** (not repeated spear thrusts), **AoE zone** (not storm centered),
+  **mobile aura zone follows caster** (not empowerment sphere follows),
+  **removed from battlefield** (not separate dimension), **clone** (not
+  illusion copy).
+- Describe **what happens** (mechanics/effects), not ascension tier
+  labels or flavor nouns tied to one hero.
+- **Punctuation conventions** (avoid ambiguous phrasing):
+  - **Passive / active:** prefix `Passive:` and `Active:` when both
+    appear, or split into two sentences.
+  - **Participial phrases:** comma before `-ing` clauses that describe
+    the caster's action (`enemy, dealing …` not `enemy dealing …`).
+  - **CC types:** separate CC from follow-up with comma or `then`
+    (`knock back, then stun` not `knock back stun`).
+  - **Abbreviations:** expand `regeneration` (not `regen`), `trigger` /
+    `bonus effects` (not `proc`), `normal attacks` (not `normals`),
+    `alternate form` (not `alt form`); keep ATK/DEF/HP/AoE/DoT.
+  - **HP wording:** use **HP-loss** for the damage type; **max HP
+    reduction** for cap penalties; **ally losing HP** for heal triggers.
+  - **Lists:** Oxford commas for stat/effect lists (`HP drain, haste
+    reduction, and vitality reduction`).
+- Validate with `just validate` (`skill_summary` check group).
 
 Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).
 

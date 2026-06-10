@@ -208,6 +208,8 @@ def build_overview(
         short = gen.short_name(title)
         hero = summary_heroes[title]
         behavior = rs.HeroBehavior(**p["behavior"])
+        skill_summaries = rs._load_skill_summaries().get(short, {})
+        hero_categories = {s["category"] for s in p["skills"].values()}
 
         syn_lines = _format_synergies(
             short,
@@ -221,7 +223,14 @@ def build_overview(
 
         parts.append(f"## {short}")
         parts.append("")
-        parts.extend(rs.format_behavior_section(short, behavior))
+        parts.extend(
+            rs.format_behavior_section(
+                short,
+                behavior,
+                skill_summaries=skill_summaries,
+                hero_categories=hero_categories,
+            )
+        )
         parts.append(f"### Units {short} benefits from")
         parts.append("")
         parts.extend(syn_lines)

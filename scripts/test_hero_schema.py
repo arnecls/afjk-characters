@@ -254,6 +254,108 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("HP loss", text)
         self.assertTrue(behavior.skill_overview["signature"].true_damage)
 
+    def test_skill_summary_subsections_after_overview_metrics(self):
+        _, behavior = self._hero_by_display("Aliceth")
+        summaries = rs._load_skill_summaries().get("Aliceth", {})
+        categories = set(summaries)
+        lines = rs.format_behavior_section(
+            "Aliceth",
+            behavior,
+            skill_summaries=summaries,
+            hero_categories=categories,
+        )
+        text = "\n".join(lines)
+        overview_idx = text.index("#### Skill overview")
+        ultimate_idx = text.index("##### Ultimate")
+        self.assertGreater(ultimate_idx, overview_idx)
+        self.assertIn(summaries["ultimate"], text)
+        self.assertLess(
+            text.index(summaries["ultimate"]),
+            text.index("##### Skill 1"),
+        )
+
+    def test_skill_summary_skips_missing_categories(self):
+        _, behavior = self._hero_by_display("Chippy")
+        summaries = {
+            "ultimate": "call allies together for a combined powerful slam",
+            "skill1": "leap at single target dealing damage",
+        }
+        lines = rs.format_behavior_section(
+            "Chippy",
+            behavior,
+            skill_summaries=summaries,
+            hero_categories={"ultimate", "skill1", "skill2"},
+        )
+        text = "\n".join(lines)
+        self.assertIn("##### Ultimate", text)
+        self.assertIn("##### Skill 1", text)
+        self.assertNotIn("##### Skill 2", text)
+
+    def test_mythic_plus_display_label(self):
+        _, behavior = self._hero_by_display("Aliceth")
+        summaries = rs._load_skill_summaries().get("Aliceth", {})
+        categories = set(summaries)
+        text = "\n".join(
+            rs.format_behavior_section(
+                "Aliceth",
+                behavior,
+                skill_summaries=summaries,
+                hero_categories=categories,
+            )
+        )
+        self.assertIn("##### Mythic+", text)
+        self.assertNotIn("##### Ex. Skill", text)
+
+    def test_format_skill_cards_aliceth(self):
+        hero, _ = self._hero_by_display("Aliceth")
+        summaries = rs._load_skill_summaries().get("Aliceth", {})
+        categories = set(summaries)
+        cards = rs.format_skill_cards(hero, summaries, categories)
+        self.assertEqual(len(cards), 6)
+        labels = [c["label"] for c in cards]
+        self.assertIn("Mythic+", labels)
+        self.assertNotIn("Ex. Skill", labels)
+        ultimate = next(c for c in cards if c["category"] == "ultimate")
+        self.assertIn(summaries["ultimate"], ultimate["summary"])
+        ultimate_tags = " ".join(ultimate["tags"])
+        self.assertIn("Physical", ultimate_tags)
+        self.assertIn("HP loss", ultimate_tags)
+        self.assertNotIn(" — ", ultimate_tags)
+        self.assertNotIn("`high`", ultimate_tags)
+        skill1 = next(c for c in cards if c["category"] == "skill1")
+        skill1_tags = " ".join(skill1["tags"])
+        self.assertIn("Stun", skill1_tags)
+        mythic = next(c for c in cards if c["category"] == "skill4")
+        mythic_keys = [rs._canonical_skill_card_chip_key(t) for t in mythic["tags"]]
+        self.assertEqual(len(mythic_keys), len(set(mythic_keys)))
+        self.assertEqual(mythic_keys.count("blind"), 1)
+
+    def test_signature_skill_body_omits_description(self):
+        _, behavior = self._hero_by_display("Aliceth")
+        body = rs._format_signature_skill_body("Aliceth", behavior)
+        self.assertEqual(body, "Radiant Rain (ultimate)")
+        self.assertNotIn("aerial", body)
+        text = "\n".join(rs.format_behavior_section("Aliceth", behavior))
+        self.assertIn("- **Signature skill**: Radiant Rain (ultimate)", text)
+        self.assertNotIn("aerial area arrow rain", text)
+
+    def test_include_skill_summaries_false_omits_subsections(self):
+        _, behavior = self._hero_by_display("Aliceth")
+        summaries = rs._load_skill_summaries().get("Aliceth", {})
+        categories = set(summaries)
+        text = "\n".join(
+            rs.format_behavior_section(
+                "Aliceth",
+                behavior,
+                skill_summaries=summaries,
+                hero_categories=categories,
+                include_skill_summaries=False,
+            )
+        )
+        self.assertIn("#### Skill overview", text)
+        self.assertNotIn("##### Ultimate", text)
+        self.assertNotIn(summaries["ultimate"], text)
+
 
 class PlacementConstraintTests(unittest.TestCase):
     def _hero_skills(self, display_name: str):

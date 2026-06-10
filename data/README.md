@@ -13,6 +13,7 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 | [signature_skills.json](signature_skills.json) | **AI-generated** | Curated signature skill per hero (section, name, speed overrides). Read by analysis; edit when a hero’s identity skill is wrong. |
 | [defining_skills_alternative.json](defining_skills_alternative.json) | **AI-generated** | Alternate signature skill used for synergy fuel when the primary signature is a slow, non-buffable Ultimate. |
 | [hero_behavior_tags.json](hero_behavior_tags.json) | **AI-generated** | Combat-role tags per hero for replacement scoring. |
+| [heroes_data_skill_summary.json](heroes_data_skill_summary.json) | **AI-generated** | Short mechanic summary per hero and skill category (`ultimate`, `skill1`–`skill5`). Joined to processed skills by `category`; shown in Skill overview subsections. |
 | [placement_constraint_overrides.json](placement_constraint_overrides.json) | **Manual configuration** | Optional overrides when placement/composition rules cannot be parsed from skill text. |
 | [heroes_config.json](heroes_config.json) | **Manual configuration** | Tunables: synergy weights, display limits, casting-speed thresholds, replacement scoring, proximity-aura reach (`proximity_synergy`). |
 | [schema/](schema/) | **Manual configuration** | JSON Schema definitions used to validate processed data and tag enums. |
@@ -68,5 +69,6 @@ heroes_data.json
 heroes_data_processed.json
 heroes_data_synergies.json
         ↓  just render
+    + heroes_data_skill_summary.json
 Heroes.md · heroes-overview.md · heroes-overview.csv
 ```

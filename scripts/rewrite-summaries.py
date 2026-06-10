@@ -20,6 +20,7 @@ HEROES_MD = ROOT / "Heroes.md"
 HEROES2_MD = ROOT / "heroes2.md"
 DEFINING_SKILLS_FILE = ROOT / "data" / "signature_skills.json"
 DEFINING_SKILLS_ALTERNATIVE_FILE = ROOT / "data" / "defining_skills_alternative.json"
+SKILL_SUMMARY_FILE = ROOT / "data" / "heroes_data_skill_summary.json"
 PLACEMENT_CONSTRAINT_OVERRIDES_FILE = (
     ROOT / "data" / "placement_constraint_overrides.json"
 )
@@ -3762,6 +3763,7 @@ class HeroBehavior:
     casting_speed: str
     signature_skill_name: str = ""
     signature_skill_is_ult: bool = False
+    signature_skill_section: str = ""
     signature_skill_description: str = ""
     signature_skill_speed: str = ""
     synergy_signature_speed: str = ""
@@ -4198,10 +4200,108 @@ def compute_per_skill_speeds(
     return result
 
 
+SKILL_CATEGORY_ORDER: tuple[str, ...] = (
+    "ultimate",
+    "skill1",
+    "skill2",
+    "skill3",
+    "skill4",
+    "skill5",
+)
+
+CATEGORY_DISPLAY_LABELS: dict[str, str] = {
+    "ultimate": "Ultimate",
+    "skill1": "Skill 1",
+    "skill2": "Skill 2",
+    "skill3": "Legendary+",
+    "skill4": "Mythic+",
+    "skill5": "Supreme+",
+}
+
+CATEGORY_TO_SECTION: dict[str, str] = {
+    "ultimate": "Ultimate",
+    "skill1": "Skill1",
+    "skill2": "Skill2",
+    "skill3": "Unlocks at Legendary+",
+    "skill4": "Ex. Skill",
+    "skill5": "Unlocks at Supreme+",
+}
+
+SECTION_TO_SKILL_CATEGORY: dict[str, str] = {
+    section: category for category, section in CATEGORY_TO_SECTION.items()
+}
+
+_SKILL_CARD_CC_KEYS: tuple[str, ...] = tuple(
+    sorted(
+        (
+            "Blind",
+            "Stun",
+            "Knock back",
+            "Knock down",
+            "Knock up",
+            "Bind",
+            "Silence",
+            "Charm",
+            "Sleep",
+            "Taunt",
+            "Frighten",
+            "Interrupt",
+            "Displace",
+            "Unaffected",
+            "Steadfast",
+            "Immune",
+            "Untargetable",
+            "Cleanse",
+        ),
+        key=len,
+        reverse=True,
+    )
+)
+
+_SKILL_CARD_DAMAGE_KEYS: tuple[str, ...] = (
+    "HP loss",
+    "Max HP-based damage",
+    "True damage",
+    "Physical",
+    "Magic",
+    "DoT",
+)
+
+_SKILL_CARD_STAT_KEYS: tuple[str, ...] = tuple(
+    sorted(
+        (
+            "ATK SPD / Haste",
+            "ATK SPD",
+            "DEF Penetration",
+            "Crit DMG Boost",
+            "Physical DEF",
+            "Magic DEF",
+            "Energy recovery",
+            "Life Drain",
+            "Healing",
+            "Max HP",
+            "Haste",
+            "Crit",
+            "Execution",
+            "ATK",
+            "Energy",
+        ),
+        key=len,
+        reverse=True,
+    )
+)
+
+
 def _load_signature_skills() -> dict[str, dict]:
     if not DEFINING_SKILLS_FILE.exists():
         return {}
     return json.loads(DEFINING_SKILLS_FILE.read_text(encoding="utf-8"))
+
+
+def _load_skill_summaries() -> dict[str, dict[str, str]]:
+    if not SKILL_SUMMARY_FILE.exists():
+        return {}
+    return json.loads(SKILL_SUMMARY_FILE.read_text(encoding="utf-8"))
 
 
 def _load_signature_skills_alternative() -> dict[str, dict]:
@@ -5020,6 +5120,7 @@ def build_behavior_for_heroes(
                 casting_speed=casting_labels.get(hero.title, "normal"),
                 signature_skill_name=defining.get("name", ""),
                 signature_skill_is_ult=bool(defining.get("is_ultimate")),
+                signature_skill_section=defining.get("section", ""),
                 signature_skill_description=defining.get("description", ""),
                 signature_skill_speed=_signature_skill_speed_label(
                     defining, speeds
@@ -5113,17 +5214,177 @@ def _merge_true_damage(*tier_damage: dict[str, str]) -> dict[str, str]:
     return merged
 
 
-def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[str]:
+def _canonical_skill_card_chip_key(tag: str) -> str:
+    text = re.sub(
+        r"\s*\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)",
+        "",
+        tag.strip(),
+        flags=re.I,
+    ).strip()
+    low = text.lower()
+    for dt in _SKILL_CARD_DAMAGE_KEYS:
+        if low == dt.lower() or low.startswith(dt.lower() + " "):
+            return dt.lower()
+    for cc in _SKILL_CARD_CC_KEYS:
+        if low == cc.lower() or low.startswith(cc.lower() + " "):
+            return cc.lower()
+    for stat in _SKILL_CARD_STAT_KEYS:
+        if low == stat.lower() or low.startswith(stat.lower() + " "):
+            return stat.lower()
+    if low in _SKILL_HEAL_LABELS:
+        return "healing"
+    return re.sub(r"\s*\([^)]*\)", "", low).strip()
+
+
+def _format_signature_skill_body(
+    display_name: str, behavior: HeroBehavior
+) -> str:
+    name = behavior.signature_skill_name
+    if behavior.signature_skill_is_ult:
+        return f"{name} (ultimate)"
+    section = behavior.signature_skill_section
+    if not section:
+        defining = _load_signature_skills().get(
+            curated_display_name(display_name), {}
+        )
+        section = defining.get("section", "")
+    category = SECTION_TO_SKILL_CATEGORY.get(section, "")
+    slot = CATEGORY_DISPLAY_LABELS.get(category, section)
+    return f"{name} ({slot})"
+
+
+def signature_skill_category(
+    display_name: str, behavior: HeroBehavior
+) -> str | None:
+    if not behavior.signature_skill_name:
+        return None
+    if behavior.signature_skill_is_ult:
+        return "ultimate"
+    section = behavior.signature_skill_section
+    if not section:
+        defining = _load_signature_skills().get(
+            curated_display_name(display_name), {}
+        )
+        section = defining.get("section", "")
+    return SECTION_TO_SKILL_CATEGORY.get(section)
+
+
+def format_skill_card_tags(
+    hero: Hero,
+    category: str,
+    skills: list[SkillMeta] | None = None,
+) -> list[str]:
+    """Deduped chip labels for one skill card (no targeting or magnitude)."""
+    section = CATEGORY_TO_SECTION.get(category)
+    if not section:
+        return []
+    tags: list[str] = []
+    seen: set[str] = set()
+    primary = hero.damage_type or "Physical"
+
+    def add(tag: str) -> None:
+        key = _canonical_skill_card_chip_key(tag)
+        if key and key not in seen:
+            seen.add(key)
+            tags.append(tag.strip())
+
+    for _tier, text, sec in hero.skill_chunks:
+        if sec != section:
+            continue
+        if _chunk_is_companion_focused(text):
+            continue
+        if _skill_chunk_has_ally_only_damage(text):
+            continue
+        for dt in detect_damage_types(text, primary):
+            add(dt)
+
+    sl = hero.skill_slices.get(section)
+    if not sl:
+        return tags
+
+    all_buffs = [
+        e for e in sl.effects + sl.summon_effects if e.category == "buff"
+    ]
+    healing = [e for e in all_buffs if e.label in _SKILL_HEAL_LABELS]
+    buffs = [e for e in all_buffs if e.label not in _SKILL_HEAL_LABELS]
+    debuffs = [e for e in sl.effects if e.category == "debuff"]
+    cc_items = [e for e in sl.effects if e.category == "cc"]
+
+    for group in (healing, buffs, debuffs, cc_items):
+        for e in sorted(
+            group, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)
+        ):
+            add(e.label)
+    for imm in sorted(
+        sl.cc_immunities,
+        key=lambda x: (TIER_ORDER.get(x.tier, 9), x.immunity_type),
+    ):
+        add(imm.immunity_type)
+    return tags
+
+
+def format_skill_cards(
+    hero: Hero,
+    skill_summaries: dict[str, str] | None,
+    hero_categories: set[str] | None,
+    skills: list[SkillMeta] | None = None,
+) -> list[dict[str, str | list[str]]]:
+    if not skill_summaries or not hero_categories:
+        return []
+    cards: list[dict[str, str | list[str]]] = []
+    for category in SKILL_CATEGORY_ORDER:
+        if category not in hero_categories:
+            continue
+        summary = skill_summaries.get(category, "").strip()
+        if not summary:
+            continue
+        label = CATEGORY_DISPLAY_LABELS.get(category, category)
+        cards.append(
+            {
+                "category": category,
+                "label": label,
+                "summary": summary,
+                "tags": format_skill_card_tags(hero, category, skills),
+            }
+        )
+    return cards
+
+
+def _format_skill_summary_subsections(
+    skill_summaries: dict[str, str] | None,
+    hero_categories: set[str] | None,
+) -> list[str]:
+    if not skill_summaries or not hero_categories:
+        return []
+    lines: list[str] = []
+    for category in SKILL_CATEGORY_ORDER:
+        if category not in hero_categories:
+            continue
+        summary = skill_summaries.get(category, "").strip()
+        if not summary:
+            continue
+        label = CATEGORY_DISPLAY_LABELS.get(category, category)
+        lines.append("")
+        lines.append(f"##### {label}")
+        lines.append("")
+        lines.append(summary)
+    return lines
+
+
+def format_behavior_section(
+    display_name: str,
+    behavior: HeroBehavior,
+    *,
+    skill_summaries: dict[str, str] | None = None,
+    hero_categories: set[str] | None = None,
+    include_skill_summaries: bool = True,
+) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
     if behavior.signature_skill_name:
-        ult_suffix = (
-            " (ultimate)" if behavior.signature_skill_is_ult else ""
-        )
         lines.append(
             _behavior_bullet(
                 "Signature skill",
-                f"{behavior.signature_skill_name}{ult_suffix}"
-                f" — {behavior.signature_skill_description}",
+                _format_signature_skill_body(display_name, behavior),
             )
         )
     lines.append(
@@ -5163,6 +5424,10 @@ def format_behavior_section(display_name: str, behavior: HeroBehavior) -> list[s
         true_damage_tiers.insert(1, ult_metrics.true_damage)
     if td_line := _format_true_damage_line(_merge_true_damage(*true_damage_tiers)):
         lines.append(td_line)
+    if include_skill_summaries:
+        lines.extend(
+            _format_skill_summary_subsections(skill_summaries, hero_categories)
+        )
     lines.append("")
     return lines
 
