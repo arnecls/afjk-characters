@@ -17,8 +17,8 @@
   --faction-dimensional: #50b0ff;
   --list-sticky-top: 0px;
   --chip-border: rgba(30, 50, 90, 0.1);
-  --chip-damage-bg: #ffe3e0;
-  --chip-damage-fg: #a03030;
+  --chip-damage-bg: #f3ece3;
+  --chip-damage-fg: #6b5848;
   --chip-stat-bg: #d8e3f6;
   --chip-stat-fg: #304060;
   --chip-debuff-bg: #f5d4d4;
@@ -692,6 +692,51 @@ a:hover {
   margin-bottom: 0.75rem;
 }
 
+.synergy-requires {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.synergy-requires p {
+  margin: 0;
+}
+
+.synergy-buff-pills {
+  display: inline;
+}
+
+.synergy-buff-entry .chip {
+  margin: 0 0.12rem 0.12rem 0;
+  vertical-align: baseline;
+}
+
+.synergy-partner-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.45rem;
+  margin-top: 0.2rem;
+}
+
+.synergy-partner-pill .chip {
+  margin: 0;
+  vertical-align: baseline;
+}
+
+.synergy-partner-specials {
+  margin-top: 0.35rem;
+}
+
+.synergy-partner-special {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.synergy-partner-special .chip {
+  margin: 0 0.12rem 0.12rem 0;
+  vertical-align: baseline;
+}
+
 .replacement-category {
   margin-bottom: 1rem;
 }
@@ -720,6 +765,17 @@ a:hover {
 .chip-has-tip.chip-tip-active {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+.chip.chip-merged:has(.chip-tip-active) {
+  overflow: visible;
+}
+
+.chip-merged-right.chip-has-tip.chip-tip-active {
+  position: relative;
+  z-index: 1;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .chip-tooltip {
@@ -996,6 +1052,66 @@ a:hover {
   color: var(--chip-generic-fg);
 }
 
+.chip.chip-merged {
+  display: inline-flex;
+  align-items: stretch;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  vertical-align: baseline;
+}
+
+.chip-merged-left,
+.chip-merged-right {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.42rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.chip-merged-left {
+  border-radius: 999px 0 0 999px;
+}
+
+.chip-merged-right {
+  border-radius: 0 999px 999px 0;
+  border-left: 1px solid rgba(30, 50, 90, 0.18);
+}
+
+.chip-merged-label {
+  background: #eef1f5;
+  color: #6b7280;
+}
+
+.chip-merged-tier {
+  font-size: 0.85em;
+  font-weight: 500;
+  opacity: 0.88;
+}
+
+.chip-merged-sep {
+  display: none;
+}
+
+.chip-merged-right.chip-q-high,
+.chip-merged-right.chip-s-fast {
+  background: var(--chip-quality-high-bg);
+  color: var(--chip-quality-high-fg);
+}
+
+.chip-merged-right.chip-q-medium,
+.chip-merged-right.chip-s-normal {
+  background: var(--chip-quality-medium-bg);
+  color: var(--chip-quality-medium-fg);
+}
+
+.chip-merged-right.chip-q-low,
+.chip-merged-right.chip-s-slow {
+  background: var(--chip-quality-low-bg);
+  color: var(--chip-quality-low-fg);
+}
+
 /* Horizontal hero row cards */
 .hero-row-list {
   display: flex;
@@ -1077,6 +1193,12 @@ a:hover {
 .hero-row-list.hero-compact-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.hero-row-list.hero-compact-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
 }
 
@@ -1201,8 +1323,54 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-.skill-overview-section .skill-overview-metrics ul {
+.skill-overview-section .skill-overview-list {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  list-style: none;
+  padding-left: 0;
   margin-top: 0;
+}
+
+.skill-overview-section .skill-overview-list > li {
+  display: table-row;
+}
+
+.skill-overview-section .skill-overview-label,
+.skill-overview-section .skill-overview-pills {
+  display: table-cell;
+  vertical-align: baseline;
+  padding-bottom: 0.35rem;
+}
+
+.skill-overview-section .skill-overview-label {
+  white-space: nowrap;
+  padding-right: 2rem;
+}
+
+.skill-overview-section .skill-overview-list > li:not(:has(.skill-overview-label)) {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.skill-overview-section .skill-overview-full {
+  display: table-cell;
+  padding-bottom: 0.35rem;
+}
+
+.skill-overview-section .skill-overview-pills {
+  width: 100%;
+}
+
+.skill-overview-section .skill-overview-pills .chip,
+.skill-overview-section .skill-overview-pills .chip.chip-merged {
+  margin: 0 0.35rem 0.25rem 0;
+}
+
+.skill-overview-section .skill-overview-pills .chip,
+.skill-overview-section .skill-overview-pills .chip-merged-left,
+.skill-overview-section .skill-overview-pills .chip-merged-right {
+  font-size: 0.75rem;
 }
 
 .skill-overview-section .skill-card-grid {
@@ -1341,7 +1509,8 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-row-list.hero-compact-grid-4 {
+  .hero-row-list.hero-compact-grid-4,
+  .hero-row-list.hero-compact-grid-2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1374,7 +1543,8 @@ a:hover {
   }
 
   .hero-row-list.hero-compact-grid-3,
-  .hero-row-list.hero-compact-grid-4 {
+  .hero-row-list.hero-compact-grid-4,
+  .hero-row-list.hero-compact-grid-2 {
     grid-template-columns: 1fr;
   }
 

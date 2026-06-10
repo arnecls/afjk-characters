@@ -13894,8 +13894,8 @@
           "name": "Himmel"
         },
         {
-          "score": 7.800000000000001,
-          "name": "Perseus"
+          "score": 4.5,
+          "name": "Silven"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -29151,7 +29151,7 @@
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
             "Max HP via Shield (multiple targets, high)",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 70.2
         },
@@ -29161,7 +29161,7 @@
             "Max HP via Max HP buff (single target, high)",
             "Energy via Energy recovery (area, high) `signature fuel`",
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Perseus"
           ],
           "score": 66.7544
         },
@@ -29170,7 +29170,7 @@
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`",
-            "Enables Ally stat buffs via 5 ally stat buffs"
+            "Grants 5 distinct stat buffs to Perseus"
           ],
           "score": 64.6
         },
@@ -29179,7 +29179,7 @@
           "reasons": [
             "ATK SPD via Haste buff (all units, medium) `signature fuel`",
             "Max HP via Max HP buff (multiple targets, medium)",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Perseus"
           ],
           "score": 58.800000000000004
         },
@@ -29187,7 +29187,7 @@
           "provider": "Koko - Wild Child",
           "reasons": [
             "Max HP via Shield (all units, low)",
-            "Enables Ally stat buffs via 5 ally stat buffs"
+            "Grants 5 distinct stat buffs to Perseus"
           ],
           "score": 52.2
         },
@@ -29195,7 +29195,7 @@
           "provider": "Shakir - Furious Howl",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 51.6
         },
@@ -29204,7 +29204,7 @@
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
             "Energy via Energy recovery (area, medium) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 43.1696
         },
@@ -29214,23 +29214,15 @@
             "Max HP via Max HP buff (single target, medium)",
             "Energy via Energy recovery (single target, low) `signature fuel`",
             "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
-            "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
+            "Grants 4 distinct stat buffs to Perseus (start of battle)"
           ],
           "score": 41.39322857142857
-        },
-        {
-          "provider": "Evie - Royal Envoy",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
-          ],
-          "score": 39.239999999999995
         },
         {
           "provider": "Valka - Forsaken Blade",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 38.4
         },
@@ -29238,17 +29230,9 @@
           "provider": "Velara - Pale Votary",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
+            "Grants 2 distinct stat buffs to Perseus (start of battle)"
           ],
           "score": 37.0
-        },
-        {
-          "provider": "Contess - Abyssal Rulekeeper",
-          "reasons": [
-            "ATK via ATK buff (single target, high)",
-            "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
-          ],
-          "score": 34.739999999999995
         },
         {
           "provider": "Ravion - Twilight's Burden",
@@ -29256,7 +29240,7 @@
             "ATK via ATK buff (multiple targets, medium)",
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 34.67005714285715
         },
@@ -29265,14 +29249,14 @@
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
             "Max HP via Max HP buff (multiple targets, high)",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 33.6
         },
         {
           "provider": "Solise - Floral Wonder",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 31.200000000000003
         },
@@ -29281,7 +29265,7 @@
           "reasons": [
             "ATK via ATK buff (single target, low)",
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Perseus"
           ],
           "score": 30.3
         },
@@ -29290,7 +29274,7 @@
           "reasons": [
             "ATK via ATK buff (single target, medium)",
             "Max HP via Max HP buff (single target, low)",
-            "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
+            "Grants 4 distinct stat buffs to Perseus (start of battle)"
           ],
           "score": 28.02
         },
@@ -29299,23 +29283,15 @@
           "reasons": [
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
             "Max HP via Max HP buff (multiple targets, low)",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 27.400000000000002
-        },
-        {
-          "provider": "Aliceth - Radiant Wings",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Enables Ally stat buffs via 4 ally stat buffs"
-          ],
-          "score": 27.0
         },
         {
           "provider": "Zanie - Timeless Tinkerer",
           "reasons": [
             "Max HP via Shield (single target, high)",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Perseus"
           ],
           "score": 26.1
         },
@@ -29324,7 +29300,7 @@
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
             "Max HP via Shield (single target, medium)",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 24.0
         },
@@ -29332,7 +29308,7 @@
           "provider": "Saida - Vampiric Vine",
           "reasons": [
             "Max HP via Shield (multiple targets, high)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 23.4
         },
@@ -29340,7 +29316,7 @@
           "provider": "Daimon - Forsaken Child",
           "reasons": [
             "Max HP via Shield (multiple targets, medium)",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 20.4
         },
@@ -29348,14 +29324,14 @@
           "provider": "Mehira - Mind Cager",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 16.2
         },
         {
           "provider": "Kordan - Ironblood Chieftain",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 14.4
         },
@@ -29363,14 +29339,14 @@
           "provider": "Isabella - The Taken Soul",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 10.8
         },
         {
           "provider": "Aurora - Celestial of Dreams",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Perseus (start of battle)"
           ],
           "score": 10.08
         },
@@ -29378,7 +29354,7 @@
           "provider": "Callan - Grim Soulkeeper",
           "reasons": [
             "Max HP via Shield (single target, medium)",
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Perseus (start of battle)"
           ],
           "score": 9.719999999999999
         },
@@ -29386,7 +29362,7 @@
           "provider": "Gunnar - Iron Doom",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 9.600000000000001
         },
@@ -29394,43 +29370,35 @@
           "provider": "Thador - Ironsworn General",
           "reasons": [
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`",
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Perseus (start of battle)"
           ],
           "score": 8.084999999999999
         },
         {
-          "provider": "Reinier - Symmetric Sin",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Ally stat buffs via 1 ally stat buff"
-          ],
-          "score": 3.9000000000000004
-        },
-        {
           "provider": "Kulu - Blast Master",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 2.4000000000000004
         },
         {
           "provider": "Lily May - Twilight Tracker",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 2.4000000000000004
         },
         {
           "provider": "Silven - Heir of Glory",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 2.4000000000000004
         },
         {
           "provider": "Thoran - Fallen King",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 2.4000000000000004
         },
@@ -29439,7 +29407,7 @@
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, high) `signature fuel`",
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
+            "Grants 2 distinct stat buffs to Perseus (start of battle)"
           ],
           "score": 79.40714285714287
         },
@@ -29448,7 +29416,7 @@
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
             "Max HP via Shield (multiple targets, high)",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 43.2
         },
@@ -29457,7 +29425,7 @@
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
             "Max HP via Max HP buff (single target, high)",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Perseus"
           ],
           "score": 40.5
         },
@@ -29466,7 +29434,7 @@
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Enables Ally stat buffs via 5 ally stat buffs"
+            "Grants 5 distinct stat buffs to Perseus"
           ],
           "score": 34.2
         },
@@ -29474,36 +29442,28 @@
           "provider": "Damian - Woody Wonder",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 32.6
         },
         {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 27.200000000000003
         },
         {
-          "provider": "Tilaya - Wild Blade",
-          "reasons": [
-            "Max HP via Max HP buff (area, medium)",
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
-          ],
-          "score": 25.919999999999998
-        },
-        {
           "provider": "Hewynn - Tender Leaf",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 24.0
         },
         {
           "provider": "Lorsan - Windweaver Protector",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 24.0
         },
@@ -29511,7 +29471,7 @@
           "provider": "Lucius - The Lightbringer",
           "reasons": [
             "Max HP via Shield (area, medium)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 20.8
         },
@@ -29520,7 +29480,7 @@
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
             "Max HP via Shield (single target, low)",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 16.5
         },
@@ -29528,7 +29488,7 @@
           "provider": "Vala - Phantom of Oakenfell",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 16.2
         },
@@ -29537,7 +29497,7 @@
           "reasons": [
             "Max HP via Shield (single target, medium)",
             "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 15.975000000000001
         },
@@ -29545,28 +29505,28 @@
           "provider": "Lenya - Wild Cyclone",
           "reasons": [
             "Max HP via Shield (single target, high)",
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Perseus (start of battle)"
           ],
           "score": 14.58
         },
         {
           "provider": "Marcille - Elven Mage",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 14.4
         },
         {
           "provider": "Ludovic - Wreathed Eternalist",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 12.8
         },
         {
           "provider": "Talene - Resurging Flame",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 12.8
         },
@@ -29574,59 +29534,43 @@
           "provider": "Lucy - Celestial Spirit Mage",
           "reasons": [
             "Max HP via Shield (single target, high)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 11.7
         },
         {
-          "provider": "Sonja - Crimson Queenpin",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
-          ],
-          "score": 9.719999999999999
-        },
-        {
           "provider": "Harak - Deepsea Ravager",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 9.600000000000001
-        },
-        {
-          "provider": "Hammie - Acorn Mage",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Enables Ally stat buffs via 1 ally stat buff"
-          ],
-          "score": 7.800000000000001
         },
         {
           "provider": "Korin - Wood Warden",
           "reasons": [
             "Max HP via Shield (single target, medium)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 7.800000000000001
         },
         {
           "provider": "Dionel - Venus of Dawn",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 7.2
         },
         {
           "provider": "Rhys - Fiery Cavalier",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 7.2
         },
         {
           "provider": "Nara - Wrathful Wraith",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 6.4
         },
@@ -29634,7 +29578,7 @@
           "provider": "Pang - Bamboo Guardian",
           "reasons": [
             "Max HP via Shield (single target, low)",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 6.300000000000001
         },
@@ -29642,7 +29586,7 @@
           "provider": "Ulmus - Grove Keeper",
           "reasons": [
             "Max HP via Shield (single target, low)",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 6.300000000000001
         },
@@ -29650,35 +29594,35 @@
           "provider": "Salazer - Lash of Bantus",
           "reasons": [
             "Max HP via Shield (single target, low, conditional (frequent))",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 6.075000000000001
         },
         {
           "provider": "Brutus - Blood Claw",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 4.800000000000001
         },
         {
           "provider": "Lumont - Benign Horn",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 4.800000000000001
         },
         {
           "provider": "Satrana - Ember Enchantress",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 4.800000000000001
         },
         {
           "provider": "Seth - Swift Shadow",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 4.800000000000001
         },
@@ -29686,7 +29630,7 @@
           "provider": "Scarlita - Herald of Compassion",
           "reasons": [
             "Max HP via Shield (single target, low)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 3.9000000000000004
         }
@@ -34894,7 +34838,7 @@
           "provider": "Elijah & Lailah - Celestial Twins",
           "reasons": [
             "ATK SPD via Haste buff (all units, medium) `signature fuel`",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 43.25
         },
@@ -34902,28 +34846,28 @@
           "provider": "Velara - Pale Votary",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
+            "Grants 2 distinct stat buffs to Silven (start of battle)"
           ],
           "score": 31.875
         },
         {
           "provider": "Solise - Floral Wonder",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 29.25
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
+            "Grants 2 distinct stat buffs to Silven (start of battle)"
           ],
           "score": 28.349999999999998
         },
         {
           "provider": "Saida - Vampiric Vine",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 13.5
         },
@@ -34931,7 +34875,7 @@
           "provider": "Gunnar - Iron Doom",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 8.25
         },
@@ -34940,7 +34884,7 @@
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, high) `signature fuel`",
             "Energy via Energy recovery (all units, low) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
+            "Grants 2 distinct stat buffs to Silven (start of battle)"
           ],
           "score": 60.6
         },
@@ -34949,7 +34893,7 @@
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
             "Physical DEF via DEF buff (single target, high)",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 56.64
         },
@@ -34957,7 +34901,7 @@
           "provider": "Hugin - Maverick Smith",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 51.75
         },
@@ -34965,14 +34909,14 @@
           "provider": "Mikola - Warbeat Compere",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`",
-            "Enables Ally stat buffs via 5 ally stat buffs"
+            "Grants 5 distinct stat buffs to Silven"
           ],
           "score": 50.25
         },
         {
           "provider": "Koko - Wild Child",
           "reasons": [
-            "Enables Ally stat buffs via 5 ally stat buffs"
+            "Grants 5 distinct stat buffs to Silven"
           ],
           "score": 44.25
         },
@@ -34980,7 +34924,7 @@
           "provider": "Smokey & Meerky - Wasteland Apothecary",
           "reasons": [
             "Energy via Energy recovery (area, medium) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 40.26
         },
@@ -34989,7 +34933,7 @@
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
             "DEF Penetration via DEF Penetration buff (single target, medium)",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 36.0
         },
@@ -34997,14 +34941,14 @@
           "provider": "Aliceth - Radiant Wings",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (multiple targets, high)",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 31.5
         },
         {
           "provider": "Shakir - Furious Howl",
           "reasons": [
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 31.5
         },
@@ -35012,7 +34956,7 @@
           "provider": "Valka - Forsaken Blade",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, high) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 31.5
         },
@@ -35020,7 +34964,7 @@
           "provider": "Hepler - Master of Forms",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 31.125
         },
@@ -35029,7 +34973,7 @@
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
             "Physical DEF via DEF buff (multiple targets, low)",
-            "Enables Ally stat buffs via 5 ally stat buffs"
+            "Grants 5 distinct stat buffs to Silven"
           ],
           "score": 30.75
         },
@@ -35037,14 +34981,14 @@
           "provider": "Pandora - Hope Unleashed",
           "reasons": [
             "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
+            "Grants 4 distinct stat buffs to Silven (start of battle)"
           ],
           "score": 29.43
         },
         {
           "provider": "Evie - Royal Envoy",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs (start of battle)"
+            "Grants 2 distinct stat buffs to Silven (start of battle)"
           ],
           "score": 28.349999999999998
         },
@@ -35052,14 +34996,14 @@
           "provider": "Damian - Woody Wonder",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, medium, conditional (frequent)) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 27.375
         },
         {
           "provider": "Gerda - Soothing Siren",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 25.5
         },
@@ -35067,7 +35011,7 @@
           "provider": "Dunlingr - Eternal Voice",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 24.5
         },
@@ -35075,21 +35019,21 @@
           "provider": "Zanie - Timeless Tinkerer",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, medium)",
-            "Enables Ally stat buffs via 4 ally stat buffs"
+            "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 23.25
         },
         {
           "provider": "Hewynn - Tender Leaf",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 22.5
         },
         {
           "provider": "Lorsan - Windweaver Protector",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 22.5
         },
@@ -35097,14 +35041,14 @@
           "provider": "Ravion - Twilight's Burden",
           "reasons": [
             "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 22.32
         },
         {
           "provider": "Alna - Frozen Mother",
           "reasons": [
-            "Enables Ally stat buffs via 4 ally stat buffs (start of battle)"
+            "Grants 4 distinct stat buffs to Silven (start of battle)"
           ],
           "score": 22.049999999999997
         },
@@ -35112,14 +35056,14 @@
           "provider": "Zandrok - Watchful Edge",
           "reasons": [
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 20.75
         },
         {
           "provider": "Himmel - The Legendary Hero",
           "reasons": [
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 20.25
         },
@@ -35127,35 +35071,35 @@
           "provider": "Galahad - Daughter of Dawn",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 16.875
         },
         {
           "provider": "Tilaya - Wild Blade",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Silven (start of battle)"
           ],
           "score": 16.799999999999997
         },
         {
           "provider": "Daimon - Forsaken Child",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 13.5
         },
         {
           "provider": "Kordan - Ironblood Chieftain",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 13.5
         },
         {
           "provider": "Marcille - Elven Mage",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 13.5
         },
@@ -35163,7 +35107,7 @@
           "provider": "Soren - Silent Fury",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 13.125
         },
@@ -35171,7 +35115,7 @@
           "provider": "Mehira - Mind Cager",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 12.375
         },
@@ -35179,28 +35123,28 @@
           "provider": "Vala - Phantom of Oakenfell",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 12.375
         },
         {
           "provider": "Lucius - The Lightbringer",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 12.0
         },
         {
           "provider": "Ludovic - Wreathed Eternalist",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 12.0
         },
         {
           "provider": "Talene - Resurging Flame",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 12.0
         },
@@ -35208,42 +35152,42 @@
           "provider": "Dionel - Venus of Dawn",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, high)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 11.25
         },
         {
           "provider": "Aurora - Celestial of Dreams",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Silven (start of battle)"
           ],
           "score": 9.45
         },
         {
           "provider": "Lenya - Wild Cyclone",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Silven (start of battle)"
           ],
           "score": 9.45
         },
         {
           "provider": "Harak - Deepsea Ravager",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 9.0
         },
         {
           "provider": "Perseus - Chosen Champion",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 9.0
         },
         {
           "provider": "Phraesto - Misty Scorpion",
           "reasons": [
-            "Enables Ally stat buffs via 3 ally stat buffs"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 9.0
         },
@@ -35251,7 +35195,7 @@
           "provider": "Isabella - The Taken Soul",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 8.25
         },
@@ -35259,42 +35203,42 @@
           "provider": "Lumont - Benign Horn",
           "reasons": [
             "Physical DEF via DEF buff (multiple targets, low)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 7.5
         },
         {
           "provider": "Lucy - Celestial Spirit Mage",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 6.75
         },
         {
           "provider": "Rhys - Fiery Cavalier",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 6.75
         },
         {
           "provider": "Callan - Grim Soulkeeper",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Silven (start of battle)"
           ],
           "score": 6.299999999999999
         },
         {
           "provider": "Sonja - Crimson Queenpin",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Silven (start of battle)"
           ],
           "score": 6.299999999999999
         },
         {
           "provider": "Nara - Wrathful Wraith",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 6.0
         },
@@ -35302,56 +35246,56 @@
           "provider": "Pang - Bamboo Guardian",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 6.0
         },
         {
           "provider": "Brutus - Blood Claw",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 4.5
         },
         {
           "provider": "Hammie - Acorn Mage",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 4.5
         },
         {
           "provider": "Korin - Wood Warden",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 4.5
         },
         {
           "provider": "Salazer - Lash of Bantus",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 4.5
         },
         {
           "provider": "Satrana - Ember Enchantress",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 4.5
         },
         {
           "provider": "Seth - Swift Shadow",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 4.5
         },
         {
           "provider": "Ulmus - Grove Keeper",
           "reasons": [
-            "Enables Ally stat buffs via 2 ally stat buffs"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 4.5
         },
@@ -35359,7 +35303,7 @@
           "provider": "Thador - Ironsworn General",
           "reasons": [
             "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Enables Ally stat buffs via 1 ally stat buff (start of battle)"
+            "Grants 1 distinct stat buff to Silven (start of battle)"
           ],
           "score": 4.2299999999999995
         },
@@ -35367,7 +35311,7 @@
           "provider": "Kulu - Blast Master",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 3.75
         },
@@ -35375,28 +35319,28 @@
           "provider": "Lily May - Twilight Tracker",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 3.75
         },
         {
           "provider": "Reinier - Symmetric Sin",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 2.25
         },
         {
           "provider": "Scarlita - Herald of Compassion",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 2.25
         },
         {
           "provider": "Thoran - Fallen King",
           "reasons": [
-            "Enables Ally stat buffs via 1 ally stat buff"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 2.25
         }
@@ -36986,12 +36930,12 @@
           "name": "Nerion"
         },
         {
-          "score": 9.719999999999999,
-          "name": "Perseus"
-        },
-        {
           "score": 8.0,
           "name": "Carolina"
+        },
+        {
+          "score": 6.299999999999999,
+          "name": "Silven"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -40404,10 +40348,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 25.919999999999998,
-          "name": "Perseus"
-        },
         {
           "score": 16.799999999999997,
           "name": "Silven"

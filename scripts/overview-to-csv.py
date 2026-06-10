@@ -228,11 +228,67 @@ def add_cell(row: HeroRow, column: str, value: str) -> None:
         row.cells[column].append(value)
 
 
+def apply_buff_effect_to_row(row: HeroRow, effect) -> None:
+    label = (
+        f"{effect.label} ({effect.tier})"
+        if effect.tier and effect.tier != "base"
+        else effect.label
+    )
+    trailing = effect.magnitude
+    if effect.conditional:
+        trailing = f"{effect.magnitude} — conditional ({effect.conditional})"
+    value = format_cell_value(effect.targeting, trailing)
+    buff_label = base_label(label)
+    if buff_label == "Healing over time":
+        row.flags["HoT"] = True
+        return
+    if buff_label == "Healing":
+        add_cell(row, "Healing", value)
+    elif buff_label == "Shield":
+        add_cell(row, "Shields", value)
+    elif buff_label in BUFF_COLUMN_SET:
+        add_cell(row, buff_label, value)
+
+
+def _load_rewrite_summaries():
+    spec = importlib.util.spec_from_file_location(
+        "rewrite_summaries_csv", SCRIPTS / "rewrite-summaries.py"
+    )
+    rs = importlib.util.module_from_spec(spec)
+    sys.modules["rewrite_summaries_csv"] = rs
+    assert spec.loader is not None
+    spec.loader.exec_module(rs)
+    return rs
+
+
+def _load_analyzed_heroes_by_short() -> dict[str, object]:
+    rs = _load_rewrite_summaries()
+    spec = importlib.util.spec_from_file_location(
+        "heroes_io_csv", SCRIPTS / "heroes_io.py"
+    )
+    io = importlib.util.module_from_spec(spec)
+    sys.modules["heroes_io_csv"] = io
+    assert spec.loader is not None
+    spec.loader.exec_module(io)
+
+    gen = _load_gen_overview()
+    import re
+
+    text = io.reconstruct_heroes_md(io.load_heroes_data())
+    blocks = [
+        b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")
+    ]
+    out: dict[str, object] = {}
+    for block in blocks:
+        hero = rs.parse_hero_block(block)
+        rs.analyze_hero(hero)
+        out[gen.short_name(hero.title)] = hero
+    return out
+
+
 def section_kind(heading: str, hero_name: str) -> str | None:
     if heading.startswith("Damage types dealt by "):
         return "damage"
-    if heading.startswith("Buffs provided by "):
-        return "buffs"
     if heading.startswith("Debuffs provided by "):
         return "debuffs"
     if heading.startswith("Crowd Control provided by "):
@@ -372,6 +428,7 @@ def parse_hero_block(
     hero_meta: dict[str, tuple[str, str]],
     hero_tiers: dict[str, dict[str, str]] | None = None,
     hero_roles: dict[str, str] | None = None,
+    analyzed_heroes: dict[str, object] | None = None,
 ) -> HeroRow | None:
     summary_match = SUMMARY_RE.search(block)
     if not summary_match:
@@ -447,6 +504,12 @@ def parse_hero_block(
             elif kind == "provides" and base_label(label).startswith("Summoning"):
                 row.flags["Summons"] = True
 
+    hero_obj = (analyzed_heroes or {}).get(name)
+    if hero_obj is not None:
+        rs = _load_rewrite_summaries()
+        for effect in rs.collect_hero_buff_effects(hero_obj):
+            apply_buff_effect_to_row(row, effect)
+
     return row
 
 
@@ -458,6 +521,7 @@ def parse_overview(
     hero_roles: dict[str, str] | None = None,
 ) -> list[HeroRow]:
     heroes: list[HeroRow] = []
+    analyzed_heroes = _load_analyzed_heroes_by_short()
     hero_matches = list(HERO_RE.finditer(text))
     for idx, match in enumerate(hero_matches):
         name = match.group(1).strip()
@@ -465,7 +529,13 @@ def parse_overview(
         end = hero_matches[idx + 1].start() if idx + 1 < len(hero_matches) else len(text)
         block = text[start:end]
         row = parse_hero_block(
-            name, block, energy_providers, hero_meta, hero_tiers, hero_roles
+            name,
+            block,
+            energy_providers,
+            hero_meta,
+            hero_tiers,
+            hero_roles,
+            analyzed_heroes,
         )
         if row is not None:
             heroes.append(row)

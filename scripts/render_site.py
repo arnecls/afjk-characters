@@ -71,6 +71,25 @@ def _hero_ref(name: str, slug_by_name: dict[str, str]) -> dict[str, str]:
     return {"name": name, "slug": slug_by_name[name]}
 
 
+def _provider_synergy_reasons(
+    beneficiary_short: str,
+    provider_short: str,
+    synergies: dict,
+    title_by_short: dict[str, str],
+) -> list[str]:
+    """Why *beneficiary_short* pairs with *provider_short* (receiver view)."""
+    provider_title = title_by_short.get(provider_short)
+    if not provider_title:
+        return []
+    for pick in _receiver_synergies(beneficiary_short, synergies, title_by_short):
+        if pick.get("provider") == provider_title:
+            return [
+                gen.format_reason_for_display(r)
+                for r in pick.get("reasons", [])
+            ]
+    return []
+
+
 def _parse_replacement_detail(line: str, name: str) -> str:
     """Strip leading '- Name (...)' to keep the parenthetical detail."""
     prefix = f"- {name}"
@@ -85,6 +104,7 @@ def _parse_replacement_detail(line: str, name: str) -> str:
 def _build_synergy_sections(
     short: str,
     p: dict,
+    hero,
     max_syn: int,
     max_ben: int,
     provider_beneficiary_count: dict[str, int],
@@ -120,10 +140,12 @@ def _build_synergy_sections(
         if provider_beneficiary_count.get(pick["provider"], 0) <= obvious_threshold
     ]
     picks = filtered[:max_syn]
+    receiver_synergies = _receiver_synergies(short, synergies, title_by_short)
     partners: list[dict] = []
     if picks:
         for pick in picks:
             pname = gen.short_name(pick["provider"])
+            score = pick["score"]
             partners.append(
                 {
                     "name": pname,
@@ -131,12 +153,25 @@ def _build_synergy_sections(
                     "reasons": [
                         gen.format_reason_for_display(r) for r in pick["reasons"]
                     ],
+                    "score": score,
+                    "scoreRating": gen.beneficiary_rating_out_of_five(
+                        score, receiver_synergies
+                    ),
+                    "scoreDisplay": gen.format_beneficiary_rating_display(
+                        score, receiver_synergies
+                    ),
                 }
             )
+        partners.sort(key=lambda partner: (-partner["scoreRating"], partner["name"]))
 
-    benefited_by: dict = {"intro": None, "overflow_reasons": [], "heroes": []}
+    benefited_by: dict = {
+        "buffs_provided": rs.format_buffs_provided_data(hero, short),
+        "intro": None,
+        "overflow_reasons": [],
+        "heroes": [],
+    }
     benefited = p["beneficiaries"]
-    if benefited:
+    if benefited or benefited_by["buffs_provided"]:
         total = len(benefited)
         if total > max_ben:
             benefited_by["intro"] = (
@@ -170,6 +205,9 @@ def _build_synergy_sections(
                     "scoreDisplay": gen.format_beneficiary_rating_display(
                         b["score"], receiver_synergies
                     ),
+                    "reasons": _provider_synergy_reasons(
+                        b["name"], short, synergies, title_by_short
+                    ),
                 }
             )
         benefited_by["heroes"].sort(
@@ -178,9 +216,12 @@ def _build_synergy_sections(
 
     return {
         "intro": "\n".join(intro_lines) if intro_lines else None,
+        "requires": gen.format_synergy_requires_json(hero, short),
         "common_buffers": common_buffers,
         "partners": partners,
-        "benefited_by": benefited_by if benefited else None,
+        "benefited_by": benefited_by
+        if (benefited or benefited_by["buffs_provided"])
+        else None,
     }
 
 
@@ -275,8 +316,10 @@ def build_site_data(
                 hero_categories=hero_categories,
                 include_skill_summaries=False,
                 prydwen_tiers=prydwen_tiers,
+                hero=hero,
             )
         ).strip()
+        damage_types = rs._hero_skill_overview_damage_types(behavior, hero)
         skill_cards = rs.format_skill_cards(
             hero,
             skill_summaries,
@@ -288,6 +331,7 @@ def build_site_data(
         synergy = _build_synergy_sections(
             short,
             p,
+            hero,
             max_syn,
             max_ben,
             provider_beneficiary_count,
@@ -322,6 +366,7 @@ def build_site_data(
                 "prydwenTiers": prydwen_tiers,
                 "sections": {
                     "behavior": behavior_md,
+                    "damageTypes": damage_types,
                     "skillCards": skill_cards,
                     "benefits_from": synergy,
                     "replacements": replacements,

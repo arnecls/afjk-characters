@@ -3386,10 +3386,93 @@ def format_tier_suffix(tier: str) -> str:
     return f" ({tier})"
 
 
+def _summary_debuff_display_label(label: str) -> str:
+    if label.lower().endswith(" debuff"):
+        return label[: -len(" debuff")]
+    return label
+
+
 def format_effect_magnitude(effect: Effect) -> str:
     if effect.conditional:
         return f"`{effect.magnitude}` — conditional ({effect.conditional})"
     return f"`{effect.magnitude}`"
+
+
+def collect_hero_buff_effects(hero: Hero) -> list[Effect]:
+    items = [
+        e for e in hero.effects
+        if e.category == "buff" and e.targeting != "Self"
+    ]
+    items.extend(
+        e for e in hero.summon_effects
+        if e.category == "buff" and e.targeting != "Self"
+    )
+    return sorted(items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label))
+
+
+def _format_buff_targeting_phrase(targeting: str) -> str:
+    lower = targeting.strip().lower()
+    if lower == "summons only":
+        return "to summons"
+    if lower == "single target":
+        return "to single targets"
+    if lower == "multiple targets":
+        return "to multiple targets"
+    if lower == "all units":
+        return "to all units"
+    if lower == "area":
+        return "in an area"
+    if lower == "allies":
+        return "to allies"
+    if lower == "enemies":
+        return "to enemies"
+    if lower == "self":
+        return "to self"
+    return f"to {lower}"
+
+
+def _join_intro_fragments(fragments: list[str]) -> str:
+    if len(fragments) == 1:
+        return fragments[0]
+    if len(fragments) == 2:
+        return f"{fragments[0]} and {fragments[1]}"
+    return ", ".join(fragments[:-1]) + f", and {fragments[-1]}"
+
+
+def format_buffs_provided_data(
+    hero: Hero, display_name: str
+) -> dict[str, object] | None:
+    items = collect_hero_buff_effects(hero)
+    if not items:
+        return None
+    buffs: list[dict[str, str | None]] = []
+    for effect in items:
+        entry: dict[str, str | None] = {
+            "label": f"{effect.label}{format_tier_suffix(effect.tier)}",
+            "targetingType": effect.targeting,
+            "quality": effect.magnitude,
+        }
+        if effect.conditional:
+            entry["conditional"] = effect.conditional
+        buffs.append(entry)
+    return {"hero": display_name, "buffs": buffs}
+
+
+def format_buffs_provided_intro(hero: Hero, display_name: str) -> str | None:
+    data = format_buffs_provided_data(hero, display_name)
+    if not data:
+        return None
+    items = collect_hero_buff_effects(hero)
+    fragments: list[str] = []
+    for effect in items:
+        label = f"{effect.label}{format_tier_suffix(effect.tier)}"
+        targeting = _format_buff_targeting_phrase(effect.targeting)
+        quality = effect.magnitude
+        fragment = f"{label} {targeting} `{quality}`"
+        if effect.conditional:
+            fragment += f" — conditional ({effect.conditional})"
+        fragments.append(fragment)
+    return f"{display_name} provides {_join_intro_fragments(fragments)}."
 
 
 def _recompute_damage_scores(
@@ -3526,22 +3609,10 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
             [se for se in hero.special_effects if se.kind == "provides"],
             key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
         )
-        requires = sorted(
-            [se for se in hero.special_effects if se.kind == "requires"],
-            key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
-        )
         if provides:
             out.append(f"#### {name} Provides")
             out.append("")
             for se in provides:
-                out.append(
-                    f"- {se.label}{format_tier_suffix(se.tier)} — {se.targeting}"
-                )
-            out.append("")
-        if requires:
-            out.append(f"#### {name} Requires")
-            out.append("")
-            for se in requires:
                 out.append(
                     f"- {se.label}{format_tier_suffix(se.tier)} — {se.targeting}"
                 )
@@ -3560,23 +3631,18 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
                 out.append(f"- {dt} — {tgt}")
         out.append("")
 
-    for cat, heading in [("buff", "Buffs"), ("debuff", "Debuffs")]:
+    for cat, heading in [("debuff", "Debuffs")]:
         items = [
             e for e in hero.effects
             if e.category == cat and e.targeting != "Self"
         ]
-        if cat == "buff":
-            items.extend(
-                e for e in hero.summon_effects
-                if e.category == cat and e.targeting != "Self"
-            )
         if not items:
             continue
         out.append(f"#### {heading} provided by {name}")
         out.append("")
         for e in sorted(items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)):
             out.append(
-                f"- {e.label}{format_tier_suffix(e.tier)} — {e.targeting} — "
+                f"- {_summary_debuff_display_label(e.label)}{format_tier_suffix(e.tier)} — {e.targeting} — "
                 f"{format_effect_magnitude(e)}"
             )
         out.append("")
@@ -3783,11 +3849,13 @@ class SkillOverviewMetrics:
     heal: str = "none"
     buffs: str = "none"
     debuffs: str = "none"
-    true_damage: dict[str, str] = field(default_factory=dict)
+    damage_types: dict[str, str] = field(default_factory=dict)
 
 
 SKILL_OVERVIEW_KEYS = ("signature", "ultimate", "non_ultimate")
-TRUE_DAMAGE_TYPE_ORDER = ("HP loss", "Max HP-based damage", "True damage")
+SKILL_OVERVIEW_DAMAGE_TYPE_ORDER = tuple(
+    sorted(DAMAGE_TYPE_SORT_KEY, key=lambda k: DAMAGE_TYPE_SORT_KEY[k])
+)
 NON_ULT_SKILL_SECTIONS = ("Skill1", "Skill2", "Ex. Skill")
 SECTION_TO_SPEED_KEY: dict[str, str] = {
     "Ultimate": "ult",
@@ -4905,7 +4973,7 @@ def _section_damage_score(
     return max_score
 
 
-def _section_true_damage_scores(
+def _section_damage_type_scores(
     hero: Hero,
     section: str,
     primary_dmg: str,
@@ -4921,8 +4989,6 @@ def _section_true_damage_scores(
             continue
         tgt = detect_targeting(text)
         for dmg_type in detect_damage_types(text, primary_dmg):
-            if dmg_type not in TRUE_DAMAGE_TYPES:
-                continue
             score = _score_damage_chunk(
                 text, dmg_type, tgt, section=section, skills=skills
             )
@@ -4931,7 +4997,7 @@ def _section_true_damage_scores(
     return scores
 
 
-def build_true_damage_thresholds(
+def build_damage_type_thresholds(
     heroes: list[Hero],
     skills_by_title: dict[str, list[SkillMeta]] | None = None,
 ) -> dict[str, tuple[float, float]]:
@@ -4941,7 +5007,7 @@ def build_true_damage_thresholds(
         primary = hero.damage_type or "Physical"
         skills = skills_map.get(hero.title, [])
         for section in ("Ultimate", *NON_ULT_SKILL_SECTIONS):
-            for dmg_type, score in _section_true_damage_scores(
+            for dmg_type, score in _section_damage_type_scores(
                 hero, section, primary, skills or None
             ).items():
                 by_type[dmg_type].append(score)
@@ -4956,7 +5022,7 @@ def build_true_damage_thresholds(
     return thresholds
 
 
-def _true_damage_scores_to_magnitudes(
+def _damage_type_scores_to_magnitudes(
     scores: dict[str, float],
     thresholds: dict[str, tuple[float, float]],
 ) -> dict[str, str]:
@@ -4967,7 +5033,7 @@ def _true_damage_scores_to_magnitudes(
     return mags
 
 
-def _aggregate_true_damage_p75(
+def _aggregate_damage_types_p75(
     section_mags: list[dict[str, str]],
 ) -> dict[str, str]:
     by_type: dict[str, list[str]] = defaultdict(list)
@@ -5114,7 +5180,7 @@ def compute_section_skill_metrics(
     section: str,
     speeds: dict[str, str],
     damage_thresholds: tuple[float, float],
-    true_damage_thresholds: dict[str, tuple[float, float]],
+    damage_type_thresholds: dict[str, tuple[float, float]],
 ) -> SkillOverviewMetrics:
     if not _hero_has_section(hero, skills, section):
         return _empty_skill_overview_metrics()
@@ -5132,9 +5198,9 @@ def compute_section_skill_metrics(
         heal=heal,
         buffs=buffs,
         debuffs=debuffs,
-        true_damage=_true_damage_scores_to_magnitudes(
-            _section_true_damage_scores(hero, section, primary, skills),
-            true_damage_thresholds,
+        damage_types=_damage_type_scores_to_magnitudes(
+            _section_damage_type_scores(hero, section, primary, skills),
+            damage_type_thresholds,
         ),
     )
 
@@ -5145,7 +5211,7 @@ def compute_skill_overview(
     speeds: dict[str, str],
     defining: dict | None,
     damage_thresholds: tuple[float, float],
-    true_damage_thresholds: dict[str, tuple[float, float]],
+    damage_type_thresholds: dict[str, tuple[float, float]],
 ) -> dict[str, SkillOverviewMetrics]:
     sig_section = defining.get("section", "Ultimate") if defining else None
     signature = (
@@ -5155,7 +5221,7 @@ def compute_skill_overview(
             sig_section,
             speeds,
             damage_thresholds,
-            true_damage_thresholds,
+            damage_type_thresholds,
         )
         if sig_section
         else _empty_skill_overview_metrics()
@@ -5166,7 +5232,7 @@ def compute_skill_overview(
         "Ultimate",
         speeds,
         damage_thresholds,
-        true_damage_thresholds,
+        damage_type_thresholds,
     )
     non_ult_metrics = [
         compute_section_skill_metrics(
@@ -5175,7 +5241,7 @@ def compute_skill_overview(
             section,
             speeds,
             damage_thresholds,
-            true_damage_thresholds,
+            damage_type_thresholds,
         )
         for section in NON_ULT_SKILL_SECTIONS
     ]
@@ -5199,8 +5265,8 @@ def compute_skill_overview(
         debuffs=_p75_label(
             [m.debuffs for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
         ),
-        true_damage=_aggregate_true_damage_p75(
-            [m.true_damage for m in non_ult_metrics]
+        damage_types=_aggregate_damage_types_p75(
+            [m.damage_types for m in non_ult_metrics]
         ),
     )
     return {
@@ -5242,7 +5308,7 @@ def build_behavior_for_heroes(
     signature_by_display = _load_signature_categories()
     placement_overrides = _load_placement_constraint_overrides()
     damage_thresholds = build_section_damage_thresholds(heroes, skills_by_title)
-    true_damage_thresholds = build_true_damage_thresholds(
+    damage_type_thresholds = build_damage_type_thresholds(
         heroes, skills_by_title
     )
 
@@ -5277,7 +5343,7 @@ def build_behavior_for_heroes(
             speeds,
             defining,
             damage_thresholds,
-            true_damage_thresholds,
+            damage_type_thresholds,
         )
 
         if defining:
@@ -5334,7 +5400,9 @@ def _skill_overview_metrics(
             heal=raw.get("heal", "none"),
             buffs=raw.get("buffs", "none"),
             debuffs=raw.get("debuffs", "none"),
-            true_damage=dict(raw.get("true_damage", {})),
+            damage_types=dict(
+                raw.get("damage_types") or raw.get("true_damage", {})
+            ),
         )
     return _empty_skill_overview_metrics()
 
@@ -5364,18 +5432,18 @@ def _format_skill_overview_line(label: str, metrics: SkillOverviewMetrics) -> st
     return _behavior_bullet(label, ", ".join(parts))
 
 
-def _format_true_damage_line(true_damage: dict[str, str]) -> str | None:
+def _format_damage_types_line(damage_types: dict[str, str]) -> str | None:
     parts = [
-        f"{dmg_type} `{true_damage[dmg_type]}`"
-        for dmg_type in TRUE_DAMAGE_TYPE_ORDER
-        if dmg_type in true_damage
+        f"{dmg_type} `{damage_types[dmg_type]}`"
+        for dmg_type in SKILL_OVERVIEW_DAMAGE_TYPE_ORDER
+        if dmg_type in damage_types
     ]
     if not parts:
         return None
-    return _behavior_bullet("True damage", ", ".join(parts))
+    return _behavior_bullet("Damage types", ", ".join(parts))
 
 
-def _merge_true_damage(*tier_damage: dict[str, str]) -> dict[str, str]:
+def _merge_damage_types(*tier_damage: dict[str, str]) -> dict[str, str]:
     merged: dict[str, str] = {}
     for td in tier_damage:
         for dmg_type, mag in td.items():
@@ -5602,6 +5670,32 @@ def format_prydwen_tiers_line(tiers: dict[str, str]) -> str:
     return ", ".join(parts)
 
 
+def _hero_skill_overview_damage_types(
+    behavior: HeroBehavior,
+    hero: Hero | None = None,
+) -> dict[str, str]:
+    overview = behavior.skill_overview or {}
+    sig_metrics = _skill_overview_metrics(overview, "signature")
+    ult_metrics = _skill_overview_metrics(overview, "ultimate")
+    non_ult_metrics = _skill_overview_metrics(overview, "non_ultimate")
+    tier_maps = [sig_metrics.damage_types, non_ult_metrics.damage_types]
+    if not behavior.signature_skill_is_ult:
+        tier_maps.insert(1, ult_metrics.damage_types)
+    merged = _merge_damage_types(*tier_maps)
+    if hero is None:
+        return merged
+    result: dict[str, str] = {}
+    for dt, _tgt in hero.damage_entries:
+        if dt in merged:
+            result[dt] = merged[dt]
+        elif dt in hero.damage_magnitudes:
+            result[dt] = hero.damage_magnitudes[dt]
+        elif dt in hero.damage_scores:
+            t1, t2 = (40.0, 120.0)
+            result[dt] = _damage_score_to_magnitude(hero.damage_scores[dt], (t1, t2))
+    return result
+
+
 def format_behavior_section(
     display_name: str,
     behavior: HeroBehavior,
@@ -5610,6 +5704,7 @@ def format_behavior_section(
     hero_categories: set[str] | None = None,
     include_skill_summaries: bool = True,
     prydwen_tiers: dict[str, str] | None = None,
+    hero: Hero | None = None,
 ) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
     if prydwen_tiers:
@@ -5656,11 +5751,10 @@ def format_behavior_section(
     if not behavior.signature_skill_is_ult:
         lines.append(_format_skill_overview_line("Ultimate", ult_metrics))
     lines.append(_format_skill_overview_line("Non-ultimate", non_ult_metrics))
-    true_damage_tiers = [sig_metrics.true_damage, non_ult_metrics.true_damage]
-    if not behavior.signature_skill_is_ult:
-        true_damage_tiers.insert(1, ult_metrics.true_damage)
-    if td_line := _format_true_damage_line(_merge_true_damage(*true_damage_tiers)):
-        lines.append(td_line)
+    if dt_line := _format_damage_types_line(
+        _hero_skill_overview_damage_types(behavior, hero)
+    ):
+        lines.append(dt_line)
     if include_skill_summaries:
         lines.extend(
             _format_skill_summary_subsections(skill_summaries, hero_categories)

@@ -177,14 +177,36 @@
     return escapeHtml(name);
   }
 
+  function tryMergeTrailingLabel(before, indicator) {
+    const match = before.match(/(^|[\s,])([\w][\w\s]*?)\s+$/);
+    if (!match) {
+      return null;
+    }
+    const prefix = before.slice(0, match.index) + match[1];
+    const label = match[2].trim();
+    const merged = mergeLabelWithIndicator(label, indicator.trim());
+    if (!merged) {
+      return null;
+    }
+    return escapeHtml(prefix) + merged;
+  }
+
   function renderInline(text) {
     const parts = [];
     let last = 0;
     const re = /`([^`]+)`/g;
     let match;
     while ((match = re.exec(text))) {
-      parts.push(escapeHtml(text.slice(last, match.index)));
-      parts.push(formatTag(match[1]));
+      const merged = tryMergeTrailingLabel(
+        text.slice(last, match.index),
+        match[1]
+      );
+      if (merged) {
+        parts.push(merged);
+      } else {
+        parts.push(escapeHtml(text.slice(last, match.index)));
+        parts.push(formatTag(match[1]));
+      }
       last = match.index + match[0].length;
     }
     parts.push(escapeHtml(text.slice(last)));
@@ -215,6 +237,12 @@
     slow: "🐢",
     normal: "⏱️",
     fast: "🚀",
+  };
+
+  const CC_DURATION_LABEL = {
+    low: "short",
+    medium: "average",
+    high: "long",
   };
 
   const QUALITY_TOOLTIPS = {
@@ -272,6 +300,18 @@
     Ranged: { emoji: "🏹", cls: "chip-damage" },
     "True damage": { emoji: "✨", cls: "chip-damage" },
     Normal: { emoji: "👊", cls: "chip-damage" },
+    "Magic damage": { emoji: "🪄", cls: "chip-damage" },
+    "Physical damage": { emoji: "⚔️", cls: "chip-damage" },
+    "Magic damage from allies": { emoji: "🪄", cls: "chip-role" },
+    "Debuff on target": { emoji: "🥀", cls: "chip-debuff" },
+    "Multiple debuffs on target": { emoji: "🥀", cls: "chip-debuff" },
+    "CC on enemies": { emoji: "💫", cls: "chip-cc" },
+    "Ally stat buffs": { emoji: "💪", cls: "chip-role" },
+    "Party composition": { emoji: "👥", cls: "chip-role" },
+    "Continuous damage on enemies": { emoji: "🔥", cls: "chip-debuff" },
+    "Enemy defeat": { emoji: "💀", cls: "chip-role" },
+    "Ally Ultimate casts": { emoji: "⚡", cls: "chip-role" },
+    "Ally blessing active": { emoji: "✨", cls: "chip-role" },
     ATK: { emoji: "💪", cls: "chip-stat" },
     "ATK SPD": { emoji: "⚡", cls: "chip-stat" },
     "ATK SPD / Haste": { emoji: "⚡", cls: "chip-stat" },
@@ -344,6 +384,7 @@
     enemies: { emoji: "☠️", cls: "chip-target" },
     global: { emoji: "🌍", cls: "chip-target" },
     "on skill": { emoji: "⏱️", cls: "chip-target" },
+    "summons only": { emoji: "👻", cls: "chip-target" },
   };
 
   const MOVEMENT_DEFINITIONS = {
@@ -365,6 +406,7 @@
     { re: /\bEnemies\b/gi, key: "enemies" },
     { re: /\bGlobal\b/gi, key: "global" },
     { re: /\bOn Skill\b/gi, key: "on skill" },
+    { re: /\bSummons only\b/gi, key: "summons only" },
     { re: /\bArea\b/g, key: "area" },
     { re: /\bArc\b/g, key: "arc" },
     { re: /\bSelf\b/g, key: "self" },
@@ -502,6 +544,230 @@
     return "<span" + attrs + ">" + emoji + " " + escapeHtml(text) + "</span>";
   }
 
+  function qualityIndicatorMeta(value, isCc) {
+    const lower = value.toLowerCase();
+    if (!QUALITY_CLASS[lower]) {
+      return null;
+    }
+    return {
+      cls: "chip-quality " + QUALITY_CLASS[lower],
+      label: isCc ? CC_DURATION_LABEL[lower] : lower,
+      tooltip: QUALITY_TOOLTIPS[lower],
+      emoji: QUALITY_EMOJI[lower],
+    };
+  }
+
+  function speedIndicatorMeta(value) {
+    const lower = value.toLowerCase();
+    if (!SPEED_CLASS[lower]) {
+      return null;
+    }
+    return {
+      cls: "chip-speed " + SPEED_CLASS[lower],
+      label: lower,
+      tooltip: SPEED_TOOLTIPS[lower],
+      emoji: SPEED_EMOJI[lower],
+    };
+  }
+
+  function resolveLeadingChip(label) {
+    const trimmed = label.trim();
+    if (!trimmed) {
+      return { textOnly: "", remainder: "", isCc: false };
+    }
+
+    const ccKeys = Object.keys(TAG_DEFINITIONS).filter(function (key) {
+      const cls = TAG_DEFINITIONS[key].cls;
+      return cls && cls.indexOf("chip-cc") !== -1;
+    });
+    ccKeys.sort(function (a, b) {
+      return b.length - a.length;
+    });
+
+    const labelLower = trimmed.toLowerCase();
+    for (let i = 0; i < ccKeys.length; i++) {
+      const cc = ccKeys[i];
+      const ccLower = cc.toLowerCase();
+      if (
+        labelLower === ccLower ||
+        labelLower.startsWith(ccLower + " ") ||
+        labelLower.startsWith(ccLower + " HP")
+      ) {
+        const def = TAG_DEFINITIONS[cc];
+        return {
+          emoji: def.emoji,
+          text: cc,
+          cls: def.cls,
+          isCc: true,
+          remainder: trimmed.slice(cc.length),
+        };
+      }
+    }
+
+    for (let i = 0; i < STAT_KEYS.length; i++) {
+      const stat = STAT_KEYS[i];
+      const statLower = stat.toLowerCase();
+      if (labelLower === statLower || labelLower.startsWith(statLower + " ")) {
+        const def = TAG_DEFINITIONS[stat];
+        return {
+          emoji: def.emoji,
+          text: stat,
+          cls: def.cls,
+          isCc: false,
+          remainder: trimmed.slice(stat.length),
+        };
+      }
+    }
+
+    if (TAG_DEFINITIONS[trimmed]) {
+      const def = TAG_DEFINITIONS[trimmed];
+      return {
+        emoji: def.emoji,
+        text: trimmed,
+        cls: def.cls,
+        isCc: def.cls.indexOf("chip-cc") !== -1,
+        remainder: "",
+      };
+    }
+    for (const key of Object.keys(TAG_DEFINITIONS)) {
+      if (key.toLowerCase() === labelLower) {
+        const def = TAG_DEFINITIONS[key];
+        return {
+          emoji: def.emoji,
+          text: key,
+          cls: def.cls,
+          isCc: def.cls.indexOf("chip-cc") !== -1,
+          remainder: "",
+        };
+      }
+    }
+
+    return { textOnly: trimmed, remainder: "", isCc: false };
+  }
+
+  function formatMergedTierSuffix(tierSuffix) {
+    if (!tierSuffix) {
+      return "";
+    }
+    return (
+      ' <span class="chip-merged-tier">' +
+      escapeHtml(tierSuffix) +
+      "</span>"
+    );
+  }
+
+  function formatMergedIndicator(left, indicatorMeta, textOnlyLeft) {
+    let leftHtml;
+    if (left.hasIcon) {
+      leftHtml =
+        '<span class="chip-merged-left ' +
+        left.cls +
+        '">' +
+        left.emoji +
+        " " +
+        escapeHtml(left.text) +
+        formatMergedTierSuffix(left.tierSuffix) +
+        "</span>";
+    } else {
+      leftHtml =
+        '<span class="chip-merged-left chip-merged-label">' +
+        escapeHtml(left.textOnly) +
+        formatMergedTierSuffix(left.tierSuffix) +
+        "</span>";
+    }
+
+    const emojiPart =
+      textOnlyLeft && indicatorMeta.emoji ? indicatorMeta.emoji + " " : "";
+    const rightAttrs =
+      ' class="chip-merged-right ' +
+      indicatorMeta.cls +
+      (indicatorMeta.tooltip ? " chip-has-tip" : "") +
+      '"' +
+      (indicatorMeta.tooltip ? chipTipAttrs(indicatorMeta.tooltip) : "");
+    const rightHtml =
+      "<span" +
+      rightAttrs +
+      ">" +
+      emojiPart +
+      escapeHtml(indicatorMeta.label) +
+      "</span>";
+
+    return (
+      '<span class="chip chip-merged">' +
+      leftHtml +
+      '<span class="chip-merged-sep" aria-hidden="true">|</span>' +
+      rightHtml +
+      "</span>"
+    );
+  }
+
+  function mergeLabelWithIndicator(label, indicator, tierSuffix) {
+    const speedMeta = speedIndicatorMeta(indicator);
+    if (speedMeta) {
+      return formatMergedIndicator(
+        { textOnly: label, tierSuffix: tierSuffix || "" },
+        speedMeta,
+        true
+      );
+    }
+    const leading = resolveLeadingChip(label);
+    const qualityMeta = qualityIndicatorMeta(indicator, leading.isCc);
+    if (!qualityMeta) {
+      return null;
+    }
+    if (leading.emoji) {
+      return (
+        formatMergedIndicator(
+          {
+            hasIcon: true,
+            emoji: leading.emoji,
+            text: leading.text,
+            cls: leading.cls,
+            tierSuffix: tierSuffix || "",
+          },
+          qualityMeta,
+          false
+        ) + escapeHtml(leading.remainder || "")
+      );
+    }
+    return formatMergedIndicator(
+      { textOnly: label, tierSuffix: tierSuffix || "" },
+      qualityMeta,
+      true
+    );
+  }
+
+  function mergeEffectWithQuality(effectLabel, qualityValue, tierSuffix) {
+    const qualityMeta = qualityIndicatorMeta(
+      qualityValue,
+      resolveLeadingChip(effectLabel).isCc
+    );
+    if (!qualityMeta) {
+      return null;
+    }
+    const leading = resolveLeadingChip(effectLabel);
+    if (leading.emoji) {
+      return (
+        formatMergedIndicator(
+          {
+            hasIcon: true,
+            emoji: leading.emoji,
+            text: leading.text,
+            cls: leading.cls,
+            tierSuffix: tierSuffix || "",
+          },
+          qualityMeta,
+          false
+        ) + escapeHtml(leading.remainder || "")
+      );
+    }
+    return formatMergedIndicator(
+      { textOnly: effectLabel, tierSuffix: tierSuffix || "" },
+      qualityMeta,
+      true
+    );
+  }
+
   function tryChipify(token) {
     const text = normalizeToken(token);
     if (!text) {
@@ -541,41 +807,37 @@
   }
 
   function chipifyEffectName(name) {
-    const tierMatch = name.match(/^(.+?)\s*(\([^)]+\))\s*$/);
-    const label = tierMatch ? tierMatch[1].trim() : name.trim();
-    const tierSuffix = tierMatch ? " " + escapeHtml(tierMatch[2]) : "";
+    const parsed = parseEffectLabelParts(name);
+    const label = parsed.base;
+    const tier = parsed.tier;
 
-    const direct = tryChipify(label);
-    if (direct) {
-      return direct + tierSuffix;
+    if (label.indexOf(" via ") === -1) {
+      return renderStandaloneEffectChip(label, tier);
     }
 
     const viaIdx = label.indexOf(" via ");
-    if (viaIdx !== -1) {
-      const left = label.slice(0, viaIdx).trim();
-      const right = label.slice(viaIdx + 5).trim();
-      const leftChip = chipifyLeadingStat(left);
-      const rightChip = chipifyLeadingStat(right);
-      if (leftChip !== null || rightChip !== null) {
-        const leftHtml =
-          leftChip !== null ? leftChip : escapeHtml(left);
-        const rightHtml =
-          rightChip !== null ? rightChip : escapeHtml(right);
-        return leftHtml + " via " + rightHtml + tierSuffix;
+    const left = label.slice(0, viaIdx).trim();
+    const right = label.slice(viaIdx + 5).trim();
+    const leftChip = chipifyLeadingStat(left);
+    const rightChip = chipifyLeadingStat(right);
+    if (leftChip !== null || rightChip !== null) {
+      let leftHtml = leftChip !== null ? leftChip : escapeHtml(left);
+      let rightHtml = rightChip !== null ? rightChip : escapeHtml(right);
+      if (tier) {
+        const leftOnly = extractChipHtml(leftHtml);
+        const rightOnly = extractChipHtml(rightHtml);
+        if (leftOnly) {
+          leftHtml = injectTierIntoChipHtml(leftOnly, tier) + leftHtml.slice(leftOnly.length);
+        } else if (rightOnly) {
+          rightHtml = injectTierIntoChipHtml(rightOnly, tier) + rightHtml.slice(rightOnly.length);
+        } else {
+          leftHtml += formatMergedTierSuffix(tier);
+        }
       }
+      return leftHtml + " via " + rightHtml;
     }
 
-    const leadingStat = chipifyLeadingStat(label);
-    if (leadingStat) {
-      return leadingStat + tierSuffix;
-    }
-
-    const leadingCc = chipifyLeadingCcType(label);
-    if (leadingCc) {
-      return leadingCc + tierSuffix;
-    }
-
-    return escapeHtml(name);
+    return renderStandaloneEffectChip(label, tier);
   }
 
   function chipifyLeadingCcType(label) {
@@ -632,10 +894,93 @@
     });
   }
 
+  const ASCENSION_TIER_SUFFIX_RE =
+    /\s*(\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\))\s*$/i;
+
+  function parseEffectLabelParts(label) {
+    let text = (label || "").trim();
+    let tier = "";
+    const tierMatch = text.match(ASCENSION_TIER_SUFFIX_RE);
+    if (tierMatch) {
+      tier = tierMatch[1];
+      text = text.slice(0, tierMatch.index).trim();
+    }
+    return { base: text, tier: tier };
+  }
+
+  function injectTierIntoChipHtml(chipHtml, tier) {
+    if (!tier || !chipHtml) {
+      return chipHtml;
+    }
+    const closeIdx = chipHtml.lastIndexOf("</span>");
+    if (closeIdx === -1) {
+      return chipHtml + formatMergedTierSuffix(tier);
+    }
+    return (
+      chipHtml.slice(0, closeIdx) +
+      formatMergedTierSuffix(tier) +
+      chipHtml.slice(closeIdx)
+    );
+  }
+
+  function renderStandaloneEffectChip(base, tier) {
+    const leading = resolveLeadingChip(base);
+    if (leading.emoji) {
+      return (
+        '<span class="chip ' +
+        leading.cls +
+        '">' +
+        leading.emoji +
+        " " +
+        escapeHtml(leading.text) +
+        formatMergedTierSuffix(tier) +
+        escapeHtml(leading.remainder || "") +
+        "</span>"
+      );
+    }
+    const direct = tryChipify(base);
+    if (direct) {
+      return injectTierIntoChipHtml(direct, tier);
+    }
+    const ccChip = extractChipHtml(chipifyLeadingCcType(base));
+    if (ccChip) {
+      return injectTierIntoChipHtml(ccChip, tier);
+    }
+    const statChip = extractChipHtml(chipifyLeadingStat(base));
+    if (statChip) {
+      return injectTierIntoChipHtml(statChip, tier);
+    }
+    return escapeHtml(base) + formatMergedTierSuffix(tier);
+  }
+
+  function renderSummaryEffectChip(base, tier, quality) {
+    if (quality) {
+      const merged =
+        mergeEffectWithQuality(base, quality, tier) ||
+        mergeLabelWithIndicator(base, quality, tier);
+      if (merged) {
+        return merged;
+      }
+      const qMeta = qualityIndicatorMeta(
+        quality,
+        resolveLeadingChip(base).isCc
+      );
+      if (qMeta) {
+        return formatMergedIndicator(
+          { textOnly: base, tierSuffix: tier },
+          qMeta,
+          true
+        );
+      }
+    }
+    return renderStandaloneEffectChip(base, tier);
+  }
+
   function renderEmDashLine(text) {
     const segments = splitSummarySegments(text);
 
     const trailingParts = [];
+    let trailingQuality = null;
 
     function popTrailingQuality() {
       if (!segments.length) {
@@ -645,7 +990,7 @@
       const unwrapped = unwrapBackticks(raw);
       const lower = unwrapped.toLowerCase();
       if (QUALITY_CLASS[lower]) {
-        trailingParts.unshift(formatTag(unwrapped));
+        trailingQuality = unwrapped;
         segments.pop();
       }
     }
@@ -672,11 +1017,18 @@
     popTrailingConditional();
 
     const first = segments.shift();
+    const parsed = parseEffectLabelParts(first);
     let firstHtml;
     if (/^Primary damage type/i.test(first)) {
       firstHtml = promoteStrongToDamageChips(renderInline(first));
+    } else if (trailingQuality) {
+      firstHtml = renderSummaryEffectChip(
+        parsed.base,
+        parsed.tier,
+        trailingQuality
+      );
     } else {
-      firstHtml = chipifyEffectName(first);
+      firstHtml = renderSummaryEffectChip(parsed.base, parsed.tier, "");
     }
 
     const targetingHtml = segments
@@ -1076,7 +1428,16 @@
         if (current) {
           cards.push(current);
         }
-        current = { title: line.slice(5).trim(), items: [] };
+        const cardTitle = line.slice(5).trim();
+        if (/ Requires$/i.test(cardTitle)) {
+          current = null;
+          return;
+        }
+        if (/^Buffs provided by /i.test(cardTitle)) {
+          current = null;
+          return;
+        }
+        current = { title: cardTitle, items: [] };
         return;
       }
       if (line.startsWith("- ") && current) {
@@ -1125,29 +1486,25 @@
     if (!tag) {
       return "";
     }
-    tag = tag
-      .replace(
-        /\s*\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)/gi,
-        ""
-      )
-      .trim();
+    const parsed = parseEffectLabelParts(tag);
+    tag = parsed.base;
 
     const direct = tryChipify(tag);
     if (direct) {
-      return direct;
+      return injectTierIntoChipHtml(direct, parsed.tier);
     }
 
     const ccChip = extractChipHtml(chipifyLeadingCcType(tag));
     if (ccChip) {
-      return ccChip;
+      return injectTierIntoChipHtml(ccChip, parsed.tier);
     }
 
     const statChip = extractChipHtml(chipifyLeadingStat(tag));
     if (statChip) {
-      return statChip;
+      return injectTierIntoChipHtml(statChip, parsed.tier);
     }
 
-    const effectChip = extractChipHtml(chipifyEffectName(tag));
+    const effectChip = extractChipHtml(renderStandaloneEffectChip(tag, parsed.tier));
     if (effectChip) {
       return effectChip;
     }
@@ -1156,7 +1513,10 @@
     if (!label) {
       return "";
     }
-    return chipSpan("🏷️", label, "chip-generic");
+    return injectTierIntoChipHtml(
+      chipSpan("🏷️", label, "chip-generic"),
+      parsed.tier
+    );
   }
 
   const SKILL_CARD_DAMAGE_KEYS = [
@@ -1244,15 +1604,106 @@
     return md.slice(0, idx).trim();
   }
 
-  function renderSkillOverviewMetrics(md) {
+  const SKILL_OVERVIEW_DAMAGE_TYPE_ORDER = [
+    "Physical",
+    "Magic",
+    "Melee",
+    "Ranged",
+    "DoT",
+    "HP loss",
+    "Max HP-based damage",
+    "True damage",
+  ];
+
+  function parseSkillOverviewMetricEntry(entry) {
+    const match = entry.trim().match(/^(.+?)\s+`(high|medium|low|slow|normal|fast)`$/i);
+    if (!match) {
+      return null;
+    }
+    return {
+      label: match[1].trim(),
+      value: match[2].trim(),
+    };
+  }
+
+  function formatSkillOverviewRow(labelHtml, pillsHtml) {
+    if (pillsHtml) {
+      return (
+        '<span class="skill-overview-label">' +
+        labelHtml +
+        "</span>" +
+        '<span class="skill-overview-pills">' +
+        pillsHtml +
+        "</span>"
+      );
+    }
+    return '<span class="skill-overview-full">' + labelHtml + "</span>";
+  }
+
+  function renderDamageTypeEntry(typeName, quality) {
+    const merged = mergeEffectWithQuality(typeName, quality);
+    if (merged) {
+      return merged;
+    }
+    const typeChip = tryChipify(typeName);
+    const qualityChip = formatTag(quality);
+    return (
+      (typeChip !== null ? typeChip : escapeHtml(typeName)) +
+      " " +
+      qualityChip
+    );
+  }
+
+  function renderDamageTypesFromData(damageTypes) {
+    if (!damageTypes || typeof damageTypes !== "object") {
+      return "";
+    }
+    const rendered = [];
+    SKILL_OVERVIEW_DAMAGE_TYPE_ORDER.forEach(function (typeName) {
+      const quality = damageTypes[typeName];
+      if (quality) {
+        rendered.push(renderDamageTypeEntry(typeName, quality));
+      }
+    });
+    if (!rendered.length) {
+      return "";
+    }
+    return formatSkillOverviewRow(
+      "<strong>Damage types</strong>",
+      rendered.join("")
+    );
+  }
+
+  function stripSkillOverviewDamageTypesLine(md) {
+    return md.replace(/\n- \*\*Damage types\*\*:[^\n]*/gi, "");
+  }
+
+  function appendSkillOverviewDamageTypes(html, damageTypesHtml) {
+    if (!damageTypesHtml) {
+      return html;
+    }
+    if (html.indexOf("</ul>") !== -1) {
+      return html.replace("</ul>", "<li>" + damageTypesHtml + "</li></ul>");
+    }
+    return html + '<ul class="skill-overview-list"><li>' + damageTypesHtml + "</li></ul>";
+  }
+
+  function renderSkillOverviewMetrics(md, damageTypes) {
     if (!md) {
       return "";
     }
-    const metrics = stripSkillSummarySubsections(md);
+    const damageTypesHtml = renderDamageTypesFromData(damageTypes);
+    const metrics = stripSkillSummarySubsections(
+      damageTypesHtml ? stripSkillOverviewDamageTypesLine(md) : md
+    );
     const lines = metrics.split("\n").filter(function (line) {
       return !line.startsWith("#### ");
     });
-    return renderMarkdown(lines.join("\n"), { skillOverview: true });
+    const html = renderMarkdown(lines.join("\n"), { skillOverview: true });
+    return appendSkillOverviewDamageTypes(
+      html,
+      renderDamageTypesFromData(damageTypes)
+    );
   }
 
   const SKILL_META_EMOJI = {
@@ -1508,6 +1959,7 @@
   }
 
   const BENEFIT_MAX_STARS = 5;
+  const BENEFIT_MIN_STARS = 1;
   const BENEFIT_STAR = "⭐";
 
   function formatBeneficiaryRatingDisplay(scoreRating) {
@@ -1515,8 +1967,14 @@
     if (!isFinite(rating)) {
       return "";
     }
-    const clamped = Math.max(0, Math.min(BENEFIT_MAX_STARS, rating));
-    const fullStars = Math.max(0, Math.min(BENEFIT_MAX_STARS, Math.floor(clamped)));
+    const clamped = Math.max(
+      BENEFIT_MIN_STARS,
+      Math.min(BENEFIT_MAX_STARS, rating)
+    );
+    const fullStars = Math.max(
+      BENEFIT_MIN_STARS,
+      Math.min(BENEFIT_MAX_STARS, Math.floor(clamped))
+    );
     return BENEFIT_STAR.repeat(fullStars) + " (" + clamped.toFixed(1) + ")";
   }
 
@@ -1588,8 +2046,8 @@
     );
   }
 
-  function renderTrueDamageOverviewLine(text) {
-    const match = text.match(/^\*\*True damage\*\*:\s*(.+)$/i);
+  function renderDamageTypesOverviewLine(text) {
+    const match = text.match(/^\*\*Damage types\*\*:\s*(.+)$/i);
     if (!match) {
       return null;
     }
@@ -1600,21 +2058,16 @@
       })
       .filter(Boolean);
     const rendered = entries.map(function (entry) {
-      const entryMatch = entry.match(/^(.+?)\s+`(high|medium|low)`$/i);
-      if (!entryMatch) {
+      const parsed = parseSkillOverviewMetricEntry(entry);
+      if (!parsed) {
         return renderInline(entry);
       }
-      const typeName = entryMatch[1].trim();
-      const quality = entryMatch[2].trim();
-      const typeChip = tryChipify(typeName);
-      const qualityChip = formatTag(quality);
-      return (
-        (typeChip !== null ? typeChip : escapeHtml(typeName)) +
-        " " +
-        qualityChip
-      );
+      return renderDamageTypeEntry(parsed.label, parsed.value);
     });
-    return "<strong>True damage</strong>: " + rendered.join(", ");
+    return formatSkillOverviewRow(
+      "<strong>Damage types</strong>",
+      rendered.join("")
+    );
   }
 
   function formatMovementChip(text) {
@@ -1670,11 +2123,56 @@
     );
   }
 
-  function renderSkillOverviewItem(text) {
-    const trueDamage = renderTrueDamageOverviewLine(text);
-    if (trueDamage !== null) {
-      return trueDamage;
+  function renderSkillOverviewMetric(text) {
+    const trimmed = text.trim();
+    const parsed = parseSkillOverviewMetricEntry(trimmed);
+    if (!parsed) {
+      return renderInline(trimmed);
     }
+    const labelParts = parseEffectLabelParts(parsed.label);
+    return (
+      mergeEffectWithQuality(
+        labelParts.base,
+        parsed.value,
+        labelParts.tier
+      ) ||
+      mergeLabelWithIndicator(
+        labelParts.base,
+        parsed.value,
+        labelParts.tier
+      ) ||
+      renderSummaryEffectChip(labelParts.base, labelParts.tier, parsed.value)
+    );
+  }
+
+  function renderSkillOverviewItem(text) {
+    const damageTypes = renderDamageTypesOverviewLine(text);
+    if (damageTypes !== null) {
+      return damageTypes;
+    }
+
+    const colonMatch = text.match(/^(.+?:\s*)(.+)$/);
+    if (colonMatch) {
+      const segments = colonMatch[2]
+        .trim()
+        .split(/\s*,\s*/)
+        .filter(Boolean);
+      const allMetrics =
+        segments.length > 0 &&
+        segments.every(function (segment) {
+          return parseSkillOverviewMetricEntry(segment.trim()) !== null;
+        });
+      if (allMetrics) {
+        const pills = segments.map(function (segment) {
+          return renderSkillOverviewMetric(segment);
+        });
+        return formatSkillOverviewRow(
+          renderInline(colonMatch[1].trim().replace(/:\s*$/, "")),
+          pills.join("")
+        );
+      }
+    }
+
     return renderInline(text);
   }
 
@@ -1728,7 +2226,9 @@
         parts.push("<h3>" + renderInline(line.slice(4)) + "</h3>");
       } else if (line.startsWith("- ")) {
         if (!inList) {
-          parts.push("<ul>");
+          parts.push(
+            skillOverview ? '<ul class="skill-overview-list">' : "<ul>"
+          );
           inList = true;
         }
         parts.push("<li>" + renderItem(line.slice(2)) + "</li>");
@@ -2016,6 +2516,18 @@
     }
     if (TIER_CSV_HEADERS[column]) {
       return renderTierTableCell(value);
+    }
+    if (isEffectSortColumn(column)) {
+      return value
+        .split(/\s*;\s*/)
+        .map(function (part) {
+          const trimmed = part.trim();
+          if (!trimmed) {
+            return "";
+          }
+          return renderTableEntry(column + " — " + trimmed);
+        })
+        .join(" ");
     }
     return value
       .split(/\s*;\s*/)
@@ -2401,13 +2913,261 @@
     renderCurrentView();
   }
 
+  const SYNERGY_TARGETING_TOKENS = {
+    "single target": true,
+    "multiple targets": true,
+    "all units": true,
+    area: true,
+    arc: true,
+    global: true,
+    self: true,
+    allies: true,
+    enemies: true,
+    "on skill": true,
+    "summons only": true,
+  };
+
+  const SYNERGY_QUALITY_TOKENS = {
+    low: true,
+    medium: true,
+    high: true,
+  };
+
+  function parseSynergyReasonConditional(part) {
+    const match = part.match(/^conditional(?:\s*\((.+)\))?$/i);
+    if (!match) {
+      return null;
+    }
+    return match[1] ? match[1].trim() : part.replace(/^conditional\s*/i, "").trim();
+  }
+
+  function stripSynergyReasonTargeting(text) {
+    const parenMatch = text.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+    if (!parenMatch) {
+      return text.trim();
+    }
+    const kept = parenMatch[2]
+      .split(/\s*,\s*/)
+      .map(function (part) {
+        return part.trim();
+      })
+      .filter(function (part) {
+        const lower = part.toLowerCase();
+        return !SYNERGY_TARGETING_TOKENS[lower];
+      });
+    if (!kept.length) {
+      return parenMatch[1].trim();
+    }
+    return parenMatch[1].trim() + " (" + kept.join(", ") + ")";
+  }
+
+  function parseSynergyReason(reason) {
+    let text = normalizeSummaryText(reason);
+    let signatureFuel = false;
+    if (/`signature fuel`\s*$/i.test(text)) {
+      signatureFuel = true;
+      text = text.replace(/`signature fuel`\s*$/i, "").trim();
+    }
+
+    if (/^Enables /i.test(text) || /^Grants /i.test(text)) {
+      return {
+        type: "enable",
+        text: stripSynergyReasonTargeting(text),
+      };
+    }
+
+    const parenMatch = text.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+    let label = text;
+    let quality = "";
+    let conditional = "";
+    if (parenMatch) {
+      label = parenMatch[1].trim();
+      parenMatch[2].split(/\s*,\s*/).forEach(function (part) {
+        const lower = part.toLowerCase();
+        if (SYNERGY_QUALITY_TOKENS[lower]) {
+          quality = lower;
+          return;
+        }
+        const cond = parseSynergyReasonConditional(part);
+        if (cond) {
+          conditional = cond;
+          return;
+        }
+        if (SYNERGY_TARGETING_TOKENS[lower]) {
+          return;
+        }
+      });
+    }
+
+    const parsed = parseBuffEffectLabel(label);
+    return {
+      type: "effect",
+      base: parsed.base,
+      tier: parsed.tier,
+      quality: quality,
+      conditional: conditional,
+      signatureFuel: signatureFuel,
+    };
+  }
+
+  function synergyReasonKey(parsed) {
+    return [
+      parsed.base,
+      parsed.tier,
+      parsed.quality,
+      parsed.conditional,
+      parsed.signatureFuel ? "1" : "0",
+    ].join("|");
+  }
+
+  function chipifySynergyEnableLabel(text) {
+    const direct = tryChipify(text);
+    if (direct) {
+      return direct;
+    }
+    return escapeHtml(text);
+  }
+
+  function chipifySynergyEnableDetail(text) {
+    const parsed = parseBuffEffectLabel(text);
+    const html = parsed.base
+      .split(/\s+\+\s+/)
+      .map(function (part) {
+        const trimmed = part.trim();
+        const direct = tryChipify(trimmed);
+        if (direct) {
+          return direct;
+        }
+        const cc = chipifyLeadingCcType(trimmed);
+        if (cc) {
+          return cc;
+        }
+        const effect = chipifyEffectName(trimmed);
+        if (effect !== escapeHtml(trimmed)) {
+          return effect;
+        }
+        return escapeHtml(trimmed);
+      })
+      .join(" + ");
+    return html + formatMergedTierSuffix(parsed.tier);
+  }
+
+  function renderSynergyEnableLine(text) {
+    if (/^Grants /i.test(text)) {
+      return escapeHtml(text);
+    }
+    const viaIdx = text.toLowerCase().indexOf(" via ");
+    if (viaIdx === -1) {
+      return chipifySynergyEnableLabel(text);
+    }
+    const prefix = text.slice(0, viaIdx).trim();
+    const effect = text.slice(viaIdx + 5).trim();
+    const enableMatch = prefix.match(/^Enables\s+(.+)$/i);
+    const enableLabel = enableMatch ? enableMatch[1].trim() : prefix;
+    return (
+      "Enables " +
+      chipifySynergyEnableLabel(enableLabel) +
+      " via " +
+      chipifySynergyEnableDetail(effect)
+    );
+  }
+
+  function renderSynergyPartnerExplanation(reasons) {
+    if (!reasons || !reasons.length) {
+      return "";
+    }
+    const effects = [];
+    const enables = [];
+    const seen = Object.create(null);
+
+    reasons.forEach(function (reason) {
+      const parsed = parseSynergyReason(reason);
+      if (parsed.type === "enable") {
+        enables.push(parsed.text);
+        return;
+      }
+      const key = synergyReasonKey(parsed);
+      if (seen[key]) {
+        return;
+      }
+      seen[key] = true;
+      effects.push(parsed);
+    });
+
+    let html = "";
+    if (effects.length) {
+      html += '<div class="synergy-partner-pills">';
+      effects.forEach(function (effect) {
+        let pill = renderMergedEffectPill(
+          effect.base,
+          effect.quality,
+          effect.tier,
+          effect.conditional
+        );
+        if (effect.signatureFuel) {
+          pill += " " + formatTag("signature fuel");
+        }
+        html += '<span class="synergy-partner-pill">' + pill + "</span>";
+      });
+      html += "</div>";
+    }
+    if (enables.length) {
+      html += '<div class="synergy-partner-specials">';
+      enables.forEach(function (line) {
+        html +=
+          '<div class="synergy-partner-special">' +
+          renderSynergyEnableLine(line) +
+          "</div>";
+      });
+      html += "</div>";
+    }
+    return html;
+  }
+
+  function sortSynergyHeroes(heroes) {
+    return heroes.slice().sort(function (a, b) {
+      const aRating =
+        a.scoreRating != null ? a.scoreRating : a.score_rating;
+      const bRating =
+        b.scoreRating != null ? b.scoreRating : b.score_rating;
+      if (bRating !== aRating) {
+        return bRating - aRating;
+      }
+      return String(a.name || "").localeCompare(String(b.name || ""));
+    });
+  }
+
+  function renderSynergyHeroCard(ref, bodyHtml) {
+    const scoreHtml = renderBeneficiaryScore(
+      ref.scoreRating != null ? ref.scoreRating : ref.score_rating,
+      ref.scoreDisplay || ref.score_display
+    );
+    return renderHeroCompactCard(
+      ref.slug,
+      ref.name,
+      scoreHtml + (bodyHtml || "")
+    );
+  }
+
+  function renderSynergyHeroGrid(heroes, bodyForHero) {
+    if (!heroes || !heroes.length) {
+      return "";
+    }
+    return renderHeroRowList(
+      sortSynergyHeroes(heroes).map(function (hero) {
+        return renderSynergyHeroCard(hero, bodyForHero(hero));
+      }),
+      "hero-compact-grid-2"
+    );
+  }
+
   function renderSynergies(sections, heroName) {
     const syn = sections.benefits_from;
     if (!syn) return "";
 
     let html = '<div class="detail-section">';
     html +=
-      "<h2>Units " + escapeHtml(heroName) + " benefits from</h2>";
+      "<h2>Units improving " + escapeHtml(heroName) + "</h2>";
 
     if (syn.intro) {
       html +=
@@ -2416,67 +3176,183 @@
         "</div>";
     }
 
+    if (syn.requires && syn.requires.text) {
+      html +=
+        '<div class="synergy-requires"><p>' +
+        renderInline(syn.requires.text) +
+        "</p></div>";
+    }
+
     if (syn.partners && syn.partners.length) {
-      html += renderHeroRowList(
-        syn.partners.map(function (p) {
-          let body = "";
-          if (p.reasons && p.reasons.length) {
-            body += '<ul class="hero-row-reasons">';
-            p.reasons.forEach(function (r) {
-              body += "<li>" + renderRichLine(r) + "</li>";
-            });
-            body += "</ul>";
-          }
-          return renderHeroRowCard(p.slug, p.name, body);
-        })
-      );
+      html += renderSynergyHeroGrid(syn.partners, function (partner) {
+        return renderSynergyPartnerExplanation(partner.reasons);
+      });
     } else {
       html +=
         "<p><em>No synergy partners matched stat buffs or enablers.</em></p>";
     }
 
+    html += "</div>";
+
     if (syn.benefited_by) {
-      const bb = syn.benefited_by;
+      html += renderBenefitedBySection(syn.benefited_by, heroName);
+    }
+
+    return html;
+  }
+
+  function joinIntroFragments(fragments) {
+    if (!fragments.length) {
+      return "";
+    }
+    if (fragments.length === 1) {
+      return fragments[0];
+    }
+    if (fragments.length === 2) {
+      return fragments[0] + " and " + fragments[1];
+    }
+    return (
+      fragments.slice(0, -1).join(", ") +
+      ", and " +
+      fragments[fragments.length - 1]
+    );
+  }
+
+  function parseBuffEffectLabel(label) {
+    let text = (label || "").trim();
+    let tier = "";
+    const tierMatch = text.match(ASCENSION_TIER_SUFFIX_RE);
+    if (tierMatch) {
+      tier = tierMatch[1];
+      text = text.slice(0, tierMatch.index).trim();
+    }
+    text = text.replace(/\s+(?:de)?buff\s*$/i, "").trim();
+    if (!text) {
+      text = (label || "").trim();
+    }
+    return { base: text, tier: tier };
+  }
+
+  function renderBuffTargetingChip(targetingType) {
+    if (!targetingType) {
+      return "";
+    }
+    return chipifyTargetingSegment(targetingType);
+  }
+
+  function renderMergedEffectPill(baseLabel, quality, tier, conditional) {
+    const qMeta = qualityIndicatorMeta(
+      quality,
+      resolveLeadingChip(baseLabel).isCc
+    );
+    let merged =
+      mergeEffectWithQuality(baseLabel, quality, tier) ||
+      mergeLabelWithIndicator(baseLabel, quality, tier);
+    if (!merged && qMeta) {
+      merged = formatMergedIndicator(
+        { textOnly: baseLabel, tierSuffix: tier || "" },
+        qMeta,
+        true
+      );
+    }
+    if (!merged) {
+      merged =
+        chipifyEffectName(baseLabel) +
+        formatMergedTierSuffix(tier) +
+        (quality ? " " + formatTag(quality) : "");
+    }
+    if (conditional) {
+      merged +=
+        ' <span class="chip chip-generic chip-has-tip"' +
+        chipTipAttrs(conditionalTooltip(conditional)) +
+        ">🎲 " +
+        escapeHtml("conditional (" + conditional + ")") +
+        "</span>";
+    }
+    return merged;
+  }
+
+  function renderBuffProvidedEntry(buff) {
+    const parsed = parseBuffEffectLabel(buff.label || "");
+    const quality = buff.quality || "";
+    let html = renderMergedEffectPill(
+      parsed.base,
+      quality,
+      parsed.tier,
+      buff.conditional
+    );
+    const targetingHtml = renderBuffTargetingChip(
+      buff.targetingType || buff.targeting
+    );
+    if (targetingHtml) {
+      html += " " + targetingHtml;
+    }
+    return '<span class="synergy-buff-entry">' + html + "</span>";
+  }
+
+  function renderBuffsProvidedIntro(data) {
+    if (!data || !data.buffs || !data.buffs.length) {
+      return "";
+    }
+    const entries = data.buffs.map(renderBuffProvidedEntry);
+    return (
+      escapeHtml(data.hero + " provides ") +
+      '<span class="synergy-buff-pills">' +
+      joinIntroFragments(entries) +
+      "</span>."
+    );
+  }
+
+  function renderBenefitedBySection(bb, heroName) {
+    const hasHeroes = bb.heroes && bb.heroes.length;
+    const hasOverflow =
+      bb.intro ||
+      (bb.overflow_reasons && bb.overflow_reasons.length) ||
+      bb.strongest_note;
+    const buffsProvided = bb.buffs_provided || null;
+    if (!buffsProvided && !bb.buffs_intro && !hasHeroes && !hasOverflow) {
+      return "";
+    }
+
+    let html = '<div class="detail-section">';
+    html +=
+      "<h2>Units benefitting most from " + escapeHtml(heroName) + "</h2>";
+
+    if (buffsProvided) {
       html +=
-        "<h3>Units benefitting most from " + escapeHtml(heroName) + "</h3>";
-      if (bb.intro) {
-        html += "<p>" + renderInline(bb.intro) + "</p>";
-      }
-      if (bb.overflow_reasons && bb.overflow_reasons.length) {
-        html += "<ul>";
-        bb.overflow_reasons.forEach(function (r) {
-          html += "<li>" + renderRichLine(r) + "</li>";
-        });
-        html += "</ul>";
-      }
-      if (bb.strongest_note) {
-        html += "<p>" + renderInline(bb.strongest_note) + "</p>";
-      }
-      if (bb.heroes && bb.heroes.length) {
-        const benefitedHeroes = bb.heroes.slice().sort(function (a, b) {
-          const aRating =
-            a.scoreRating != null ? a.scoreRating : a.score_rating;
-          const bRating =
-            b.scoreRating != null ? b.scoreRating : b.score_rating;
-          if (bRating !== aRating) {
-            return bRating - aRating;
-          }
-          return String(a.name || "").localeCompare(String(b.name || ""));
-        });
-        html += renderHeroRowList(
-          benefitedHeroes.map(function (h) {
-            return renderHeroCompactCard(
-              h.slug,
-              h.name,
-              renderBeneficiaryScore(
-                h.scoreRating != null ? h.scoreRating : h.score_rating,
-                h.scoreDisplay || h.score_display
-              )
-            );
-          }),
-          "hero-compact-grid-4"
-        );
-      }
+        '<div class="synergy-intro">' +
+        renderBuffsProvidedIntro(buffsProvided) +
+        "</div>";
+    } else if (bb.buffs_intro) {
+      html +=
+        '<div class="synergy-intro">' +
+        renderInline(bb.buffs_intro) +
+        "</div>";
+    }
+
+    if (bb.intro) {
+      html +=
+        '<div class="synergy-intro">' +
+        renderInline(bb.intro.replace(/\n/g, " ")) +
+        "</div>";
+    }
+    if (bb.overflow_reasons && bb.overflow_reasons.length) {
+      html += "<ul>";
+      bb.overflow_reasons.forEach(function (r) {
+        html += "<li>" + renderRichLine(r) + "</li>";
+      });
+      html += "</ul>";
+    }
+    if (bb.strongest_note) {
+      html +=
+        '<div class="synergy-intro">' +
+        renderInline(bb.strongest_note) +
+        "</div>";
+    }
+    if (hasHeroes) {
+      html += renderSynergyHeroGrid(bb.heroes, function (hero) {
+        return renderSynergyPartnerExplanation(hero.reasons);
+      });
     }
 
     html += "</div>";
@@ -2574,9 +3450,25 @@
         if (parts.skillOverview) {
           const hasSkillCards =
             hero.sections.skillCards && hero.sections.skillCards.length;
-          const metricsHtml = hasSkillCards
-            ? renderSkillOverviewMetrics(parts.skillOverview)
-            : renderMarkdown(parts.skillOverview, { skillOverview: true });
+          const damageTypes = hero.sections.damageTypes || null;
+          let metricsHtml;
+          if (hasSkillCards) {
+            metricsHtml = renderSkillOverviewMetrics(
+              parts.skillOverview,
+              damageTypes
+            );
+          } else {
+            const damageTypesHtml = renderDamageTypesFromData(damageTypes);
+            metricsHtml = appendSkillOverviewDamageTypes(
+              renderMarkdown(
+                damageTypesHtml
+                  ? stripSkillOverviewDamageTypesLine(parts.skillOverview)
+                  : parts.skillOverview,
+                { skillOverview: true }
+              ),
+              damageTypesHtml
+            );
+          }
           html +=
             '<div class="skill-overview-metrics">' + metricsHtml + "</div>";
         }
@@ -2923,7 +3815,8 @@
   }
 
   (function initChipTooltips() {
-    const TIP_CHIP_SELECTOR = ".chip[data-tip], .tier-chip[data-tip]";
+    const TIP_CHIP_SELECTOR =
+      "[data-tip].chip-has-tip, .tier-chip[data-tip]";
     const chipTooltip = document.createElement("div");
     chipTooltip.id = "chip-tooltip";
     chipTooltip.className = "chip-tooltip";
@@ -3053,14 +3946,14 @@
     );
 
     document.addEventListener("focusin", function (e) {
-      const chip = e.target.closest(".chip[data-tip]");
+      const chip = tipChipFromEvent(e);
       if (chip) {
         showChipTooltip(chip);
       }
     });
 
     document.addEventListener("focusout", function (e) {
-      const chip = e.target.closest(".chip[data-tip]");
+      const chip = tipChipFromEvent(e);
       if (chip && tipAnchor === chip) {
         hideChipTooltip(0);
       }

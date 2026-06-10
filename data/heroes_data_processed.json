@@ -341,8 +341,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "high"
+            "damage_types": {
+              "HP loss": "high",
+              "Physical": "high"
             }
           },
           "ultimate": {
@@ -352,8 +353,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "high"
+            "damage_types": {
+              "HP loss": "high",
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -363,7 +365,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -677,7 +681,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -686,7 +692,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "slow",
@@ -695,7 +703,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -905,7 +915,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -914,7 +926,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -923,7 +937,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -1175,7 +1191,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -1184,7 +1202,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -1193,7 +1213,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -1337,7 +1359,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -1346,7 +1370,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -1355,7 +1381,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -1573,7 +1601,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -1582,7 +1612,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -1591,7 +1623,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -1853,8 +1887,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
               "HP loss": "high",
+              "Physical": "high",
               "True damage": "medium"
             }
           },
@@ -1865,8 +1900,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
               "HP loss": "high",
+              "Physical": "high",
               "True damage": "medium"
             }
           },
@@ -1877,7 +1913,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -2095,7 +2133,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -2104,7 +2144,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -2113,7 +2155,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -2394,8 +2438,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Physical": "medium"
             }
           },
           "ultimate": {
@@ -2405,8 +2450,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Physical": "medium"
             }
           },
           "non_ultimate": {
@@ -2416,8 +2462,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "medium"
+            "damage_types": {
+              "True damage": "medium",
+              "Physical": "high"
             }
           }
         }
@@ -2616,7 +2663,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -2625,7 +2674,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -2634,7 +2685,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           }
         }
       }
@@ -2849,7 +2902,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -2858,7 +2913,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -2867,7 +2924,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -3096,7 +3155,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low",
+              "DoT": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -3105,7 +3167,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low",
+              "DoT": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -3114,8 +3179,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
-              "Max HP-based damage": "high"
+            "damage_types": {
+              "Max HP-based damage": "high",
+              "Physical": "high"
             }
           }
         }
@@ -3324,7 +3390,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high",
+              "DoT": "high"
+            }
           },
           "ultimate": {
             "speed": "fast",
@@ -3333,7 +3402,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high",
+              "DoT": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -3342,7 +3414,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -3556,7 +3630,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -3565,7 +3639,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -3574,7 +3648,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -3738,7 +3814,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -3747,7 +3825,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -3756,7 +3836,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -3940,7 +4022,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -3949,7 +4033,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -3958,7 +4044,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -4185,7 +4273,10 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium",
+              "DoT": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -4194,7 +4285,10 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium",
+              "DoT": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -4203,7 +4297,10 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low",
+              "DoT": "low"
+            }
           }
         }
       }
@@ -4276,7 +4373,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -4285,7 +4384,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "normal",
@@ -4294,7 +4395,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -4590,7 +4693,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -4599,7 +4704,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -4608,7 +4715,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -4790,7 +4899,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -4799,7 +4910,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -4808,7 +4921,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -5058,7 +5173,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -5067,7 +5184,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -5076,7 +5195,8 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
+              "Magic": "low",
               "True damage": "medium"
             }
           }
@@ -5287,7 +5407,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -5296,8 +5416,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "Max HP-based damage": "medium"
+            "damage_types": {
+              "Max HP-based damage": "medium",
+              "Magic": "high"
             }
           },
           "non_ultimate": {
@@ -5307,8 +5428,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "Max HP-based damage": "high"
+            "damage_types": {
+              "Max HP-based damage": "high",
+              "Magic": "high"
             }
           }
         }
@@ -5551,7 +5673,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -5560,7 +5684,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -5569,7 +5695,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -5784,7 +5912,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -5793,7 +5923,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -5802,8 +5934,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
-              "True damage": "medium"
+            "damage_types": {
+              "True damage": "medium",
+              "Physical": "medium"
             }
           }
         }
@@ -6095,7 +6228,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -6104,7 +6239,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -6113,8 +6250,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
-              "HP loss": "medium"
+            "damage_types": {
+              "HP loss": "medium",
+              "Magic": "medium"
             }
           }
         }
@@ -6337,7 +6475,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -6346,7 +6484,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -6355,7 +6495,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -6617,7 +6759,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -6626,7 +6768,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -6635,7 +6777,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           }
         }
       }
@@ -6861,7 +7005,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -6870,7 +7016,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -6879,7 +7027,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -7078,8 +7228,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "high"
+            "damage_types": {
+              "HP loss": "high",
+              "Physical": "high"
             }
           },
           "ultimate": {
@@ -7089,8 +7240,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "high"
+            "damage_types": {
+              "HP loss": "high",
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -7100,8 +7252,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Physical": "high"
             }
           }
         }
@@ -7356,7 +7509,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -7365,7 +7520,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -7374,7 +7531,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -7610,7 +7769,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -7619,7 +7780,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -7628,7 +7791,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -7828,8 +7993,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Magic": "high",
+              "DoT": "high"
             }
           },
           "ultimate": {
@@ -7839,8 +8006,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Magic": "high",
+              "DoT": "high"
             }
           },
           "non_ultimate": {
@@ -7850,7 +8019,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -8057,7 +8228,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "normal",
@@ -8066,7 +8237,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -8075,7 +8248,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -8347,7 +8522,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -8356,7 +8533,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -8365,7 +8544,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -8630,7 +8811,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -8639,7 +8822,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -8648,7 +8833,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -8881,7 +9068,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium",
+              "DoT": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -8890,7 +9080,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium",
+              "DoT": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -8899,8 +9092,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
-              "Max HP-based damage": "medium"
+            "damage_types": {
+              "Max HP-based damage": "medium",
+              "Physical": "medium"
             }
           }
         }
@@ -9070,7 +9264,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -9079,7 +9275,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -9088,7 +9286,8 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "high",
               "Max HP-based damage": "low"
             }
           }
@@ -9216,7 +9415,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -9225,7 +9426,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "normal",
@@ -9234,7 +9437,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -9518,7 +9723,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -9527,8 +9732,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "low"
+            "damage_types": {
+              "HP loss": "low",
+              "Physical": "low"
             }
           },
           "non_ultimate": {
@@ -9538,7 +9744,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -9793,7 +10001,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -9802,7 +10012,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -9811,7 +10023,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -9971,7 +10185,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -9980,7 +10196,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -9989,7 +10207,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -10191,7 +10411,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -10200,8 +10422,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "Max HP-based damage": "low"
+            "damage_types": {
+              "Max HP-based damage": "low",
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -10211,7 +10434,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -10419,7 +10644,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -10428,7 +10655,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -10437,7 +10666,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -10609,7 +10840,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -10618,7 +10849,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -10627,7 +10858,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -10787,7 +11020,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -10796,7 +11031,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -10805,7 +11042,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -11051,7 +11290,8 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "medium",
               "Max HP-based damage": "low"
             }
           },
@@ -11062,7 +11302,8 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "medium",
               "Max HP-based damage": "low"
             }
           },
@@ -11073,8 +11314,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Physical": "high"
             }
           }
         }
@@ -11301,7 +11543,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -11310,7 +11552,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -11319,7 +11561,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -11567,7 +11811,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -11576,7 +11822,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -11585,7 +11833,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -11807,7 +12057,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -11816,7 +12066,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -11825,7 +12075,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -12072,7 +12324,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -12081,7 +12335,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -12090,7 +12346,8 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "high",
               "HP loss": "medium"
             }
           }
@@ -12287,7 +12544,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -12296,7 +12555,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -12305,8 +12566,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
               "True damage": "medium",
+              "Physical": "medium",
               "Max HP-based damage": "medium"
             }
           }
@@ -12494,7 +12756,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -12503,7 +12767,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -12512,7 +12778,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -12735,7 +13003,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -12744,7 +13014,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -12753,7 +13025,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -13073,7 +13347,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "fast",
@@ -13082,7 +13358,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -13091,7 +13367,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -13390,7 +13668,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -13399,7 +13679,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -13408,7 +13690,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -13614,7 +13898,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -13623,7 +13909,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -13632,7 +13920,8 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Magic": "low",
               "Max HP-based damage": "low"
             }
           }
@@ -13802,7 +14091,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -13811,7 +14102,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -13820,7 +14113,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -14063,7 +14358,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -14072,7 +14369,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -14081,7 +14380,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -14296,7 +14597,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -14305,7 +14608,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -14314,7 +14619,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -14499,7 +14806,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "fast",
@@ -14508,7 +14817,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -14517,7 +14828,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -14683,7 +14996,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -14692,7 +15007,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -14701,7 +15018,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -14938,7 +15257,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -14947,7 +15268,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -14956,7 +15279,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -15162,7 +15487,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -15171,7 +15498,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -15180,7 +15509,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -15400,7 +15731,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -15409,7 +15742,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -15418,7 +15753,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -15602,7 +15939,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -15611,7 +15950,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -15620,7 +15961,8 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "low",
               "True damage": "low"
             }
           }
@@ -15828,7 +16170,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -15837,7 +16181,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -15846,7 +16192,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           }
         }
       }
@@ -16065,7 +16413,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -16074,7 +16424,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -16083,7 +16435,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -16219,7 +16573,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -16228,7 +16584,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -16237,7 +16595,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high",
+              "DoT": "low"
+            }
           }
         }
       }
@@ -16454,7 +16815,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "fast",
@@ -16463,8 +16824,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -16474,7 +16836,8 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "low",
               "Max HP-based damage": "medium"
             }
           }
@@ -16710,7 +17073,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -16719,7 +17084,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -16728,8 +17095,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
-              "Max HP-based damage": "low"
+            "damage_types": {
+              "Max HP-based damage": "low",
+              "Magic": "high"
             }
           }
         }
@@ -16936,8 +17304,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Physical": "high"
             }
           },
           "ultimate": {
@@ -16947,8 +17316,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "high"
+            "damage_types": {
+              "True damage": "high",
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -16958,8 +17328,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {
-              "Max HP-based damage": "low"
+            "damage_types": {
+              "Max HP-based damage": "low",
+              "Physical": "low"
             }
           }
         }
@@ -17133,7 +17504,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -17142,7 +17515,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -17151,7 +17526,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -17355,7 +17732,7 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -17364,7 +17741,7 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -17373,8 +17750,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "low"
+            "damage_types": {
+              "HP loss": "low",
+              "Magic": "medium"
             }
           }
         }
@@ -17546,7 +17924,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -17555,7 +17933,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low",
+              "DoT": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -17564,7 +17945,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           }
         }
       }
@@ -17837,7 +18220,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -17846,7 +18229,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -17855,7 +18240,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -18054,7 +18441,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -18063,7 +18452,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -18072,7 +18463,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -18211,7 +18604,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -18220,7 +18615,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -18229,7 +18626,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           }
         }
       }
@@ -18457,7 +18856,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -18466,7 +18867,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -18475,7 +18878,8 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "high",
               "True damage": "low"
             }
           }
@@ -18686,7 +19090,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -18695,7 +19101,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -18704,7 +19112,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -18916,7 +19326,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -18925,7 +19337,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -18934,7 +19348,8 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
+              "Magic": "medium",
               "True damage": "medium"
             }
           }
@@ -19292,8 +19707,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "low"
+            "damage_types": {
+              "HP loss": "low",
+              "Physical": "low"
             }
           },
           "ultimate": {
@@ -19303,8 +19719,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "low"
+            "damage_types": {
+              "HP loss": "low",
+              "Physical": "low"
             }
           },
           "non_ultimate": {
@@ -19314,7 +19731,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -19551,7 +19970,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -19560,7 +19981,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -19569,7 +19992,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -19777,7 +20202,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -19786,7 +20213,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -19795,7 +20224,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -20025,7 +20456,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "normal",
@@ -20034,7 +20465,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -20043,7 +20474,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -20288,7 +20721,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "fast",
@@ -20297,7 +20732,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -20306,7 +20743,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -20494,7 +20933,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -20503,7 +20944,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -20512,7 +20955,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -20713,7 +21158,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -20722,7 +21169,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -20731,8 +21180,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
-              "Max HP-based damage": "high"
+            "damage_types": {
+              "Max HP-based damage": "high",
+              "Magic": "medium"
             }
           }
         }
@@ -20981,8 +21431,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "True damage": "low"
+            "damage_types": {
+              "True damage": "low",
+              "Physical": "low"
             }
           },
           "ultimate": {
@@ -20992,7 +21443,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -21001,7 +21454,8 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "medium",
               "True damage": "low"
             }
           }
@@ -21256,7 +21710,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -21265,7 +21721,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -21274,7 +21732,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -21526,8 +21986,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
-              "Max HP-based damage": "high"
+            "damage_types": {
+              "Max HP-based damage": "high",
+              "Magic": "high"
             }
           },
           "ultimate": {
@@ -21537,8 +21998,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "low"
+            "damage_types": {
+              "HP loss": "low",
+              "Magic": "low",
+              "DoT": "low"
             }
           },
           "non_ultimate": {
@@ -21548,7 +22011,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
+              "Magic": "high",
+              "DoT": "medium",
               "Max HP-based damage": "high",
               "True damage": "low"
             }
@@ -21748,7 +22213,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -21757,7 +22224,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -21766,7 +22235,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -21899,7 +22370,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -21908,7 +22381,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -21917,7 +22392,8 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Magic": "high",
               "Max HP-based damage": "high"
             }
           }
@@ -22110,7 +22586,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "fast",
@@ -22119,7 +22597,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -22128,7 +22608,8 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Magic": "high",
               "True damage": "low"
             }
           }
@@ -22315,7 +22796,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -22324,7 +22807,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -22333,7 +22818,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -22570,7 +23057,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -22579,7 +23068,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -22588,7 +23079,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -22809,7 +23302,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -22818,7 +23313,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -22827,7 +23324,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -23030,7 +23529,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -23039,7 +23540,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -23048,7 +23551,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -23210,7 +23715,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -23219,7 +23724,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -23228,7 +23735,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -23470,7 +23979,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -23479,7 +23990,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -23488,7 +24001,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -23797,7 +24312,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -23806,7 +24323,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -23815,7 +24334,8 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
+              "Magic": "high",
               "True damage": "high"
             }
           }
@@ -24048,8 +24568,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "medium"
+            "damage_types": {
+              "HP loss": "medium",
+              "Magic": "low"
             }
           },
           "ultimate": {
@@ -24059,8 +24580,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "HP loss": "medium"
+            "damage_types": {
+              "HP loss": "medium",
+              "Magic": "low"
             }
           },
           "non_ultimate": {
@@ -24070,7 +24592,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -24320,7 +24844,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low",
+              "DoT": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -24329,7 +24856,10 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low",
+              "DoT": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -24338,7 +24868,10 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium",
+              "DoT": "low"
+            }
           }
         }
       }
@@ -24602,7 +25135,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -24611,7 +25146,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -24620,7 +25157,8 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "low",
               "True damage": "low"
             }
           }
@@ -24830,7 +25368,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -24839,7 +25379,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -24848,7 +25390,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -25045,7 +25589,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -25054,7 +25598,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -25063,7 +25609,7 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           }
         }
       }
@@ -25298,7 +25844,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -25307,7 +25855,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -25316,7 +25866,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -25536,7 +26088,7 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -25545,7 +26097,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -25554,7 +26108,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -25803,8 +26359,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
               "True damage": "medium",
+              "Physical": "medium",
               "HP loss": "medium"
             }
           },
@@ -25815,8 +26372,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
               "True damage": "medium",
+              "Physical": "medium",
               "HP loss": "medium"
             }
           },
@@ -25827,7 +26385,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           }
         }
       }
@@ -26010,7 +26570,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -26019,7 +26581,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -26028,7 +26592,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -26313,8 +26879,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "Max HP-based damage": "medium"
+            "damage_types": {
+              "Max HP-based damage": "medium",
+              "Physical": "high"
             }
           },
           "ultimate": {
@@ -26324,8 +26891,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "Max HP-based damage": "medium"
+            "damage_types": {
+              "Max HP-based damage": "medium",
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -26335,7 +26903,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "high"
+            }
           }
         }
       }
@@ -26555,7 +27125,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -26564,7 +27136,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -26573,7 +27147,9 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           }
         }
       }
@@ -26772,7 +27348,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "low"
+            }
           },
           "ultimate": {
             "speed": "normal",
@@ -26781,7 +27359,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "high"
+            }
           },
           "non_ultimate": {
             "speed": "slow",
@@ -26790,7 +27370,9 @@
             "heal": "medium",
             "buffs": "none",
             "debuffs": "medium",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           }
         }
       }
@@ -27015,8 +27597,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "Max HP-based damage": "low"
+            "damage_types": {
+              "Max HP-based damage": "low",
+              "Physical": "low"
             }
           },
           "ultimate": {
@@ -27026,8 +27609,9 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {
-              "Max HP-based damage": "low"
+            "damage_types": {
+              "Max HP-based damage": "low",
+              "Physical": "low"
             }
           },
           "non_ultimate": {
@@ -27037,7 +27621,8 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "medium",
-            "true_damage": {
+            "damage_types": {
+              "Physical": "low",
               "HP loss": "medium"
             }
           }
@@ -27259,7 +27844,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -27268,7 +27853,7 @@
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -27277,7 +27862,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           }
         }
       }
@@ -27541,7 +28126,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -27550,7 +28135,7 @@
             "heal": "none",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {}
           },
           "non_ultimate": {
             "speed": "fast",
@@ -27559,7 +28144,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Physical": "medium"
+            }
           }
         }
       }
@@ -27829,7 +28416,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "ultimate": {
             "speed": "slow",
@@ -27838,7 +28427,9 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {}
+            "damage_types": {
+              "Magic": "medium"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -27847,7 +28438,8 @@
             "heal": "medium",
             "buffs": "medium",
             "debuffs": "none",
-            "true_damage": {
+            "damage_types": {
+              "Magic": "high",
               "HP loss": "high"
             }
           }

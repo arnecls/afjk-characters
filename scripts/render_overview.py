@@ -67,7 +67,7 @@ OVERVIEW_HEADER = [
     "",
     "Per-hero synergy picks and summaries derived from skill text in",
     "[Heroes.md](Heroes.md). [Heroes.md](Heroes.md) has skills only.",
-    "Synergy: stat buff tags under **Units X benefits from**, and",
+    "Synergy: stat buff tags under **Units improving X**, and",
     "enabler partners matching **Requires** special effects.",
     "Up to five partners by combined score. Omitted: ATK-only, Max HP",
     "buff-only, and Shield-only (unless the hero benefits from Max HP/",
@@ -119,6 +119,7 @@ def _join_names(names: list[str]) -> str:
 def _format_synergies(
     short: str,
     p: dict,
+    hero,
     max_syn: int,
     max_ben: int,
     provider_beneficiary_count: dict[str, int],
@@ -148,6 +149,10 @@ def _format_synergies(
             lines.append(f"Common buffers are {_join_names(excluded)}.")
         lines.append("")
 
+    requires_lines = gen.format_synergy_requires_markdown(hero, short)
+    if requires_lines:
+        lines.extend(requires_lines)
+
     filtered = [
         pick
         for pick in p["synergies"]
@@ -163,12 +168,16 @@ def _format_synergies(
         lines.append("_No synergy partners matched stat buffs or enablers._")
 
     benefited = p["beneficiaries"]
-    if benefited:
+    buffs_intro = rs.format_buffs_provided_intro(hero, short)
+    if benefited or buffs_intro:
         lines.append("")
         lines.append(f"### Units benefitting most from {short}")
         lines.append("")
+        if buffs_intro:
+            lines.append(buffs_intro)
+            lines.append("")
         total = len(benefited)
-        if total > max_ben:
+        if benefited and total > max_ben:
             lines.append(
                 f"**{total}** units include this provider among their "
                 f"top {max_syn} synergy partners. Why the match is common:"
@@ -180,25 +189,28 @@ def _format_synergies(
             lines.append(f"These are the **{max_ben}** strongest pairings: ")
             lines.append("")
             display = benefited[:max_ben]
-        else:
+        elif benefited:
             display = benefited
-        display = sorted(
-            display,
-            key=lambda b: (
-                -gen.beneficiary_rating_out_of_five(
-                    b["score"],
-                    _receiver_synergies(b["name"], synergies, title_by_short),
+        else:
+            display = []
+        if display:
+            display = sorted(
+                display,
+                key=lambda b: (
+                    -gen.beneficiary_rating_out_of_five(
+                        b["score"],
+                        _receiver_synergies(b["name"], synergies, title_by_short),
+                    ),
+                    b["name"],
                 ),
-                b["name"],
-            ),
-        )
-        for b in display:
-            receiver_synergies = _receiver_synergies(
-                b["name"], synergies, title_by_short
             )
-            lines.append(
-                f"- {b['name']} ({gen.format_beneficiary_rating_markdown(b['score'], receiver_synergies)})"
-            )
+            for b in display:
+                receiver_synergies = _receiver_synergies(
+                    b["name"], synergies, title_by_short
+                )
+                lines.append(
+                    f"- {b['name']} ({gen.format_beneficiary_rating_markdown(b['score'], receiver_synergies)})"
+                )
     return lines
 
 
@@ -249,6 +261,7 @@ def build_overview(
         syn_lines = _format_synergies(
             short,
             p,
+            hero,
             max_syn,
             max_ben,
             provider_beneficiary_count,
@@ -267,9 +280,10 @@ def build_overview(
                 skill_summaries=skill_summaries,
                 hero_categories=hero_categories,
                 prydwen_tiers=meta.get("prydwen_tiers"),
+                hero=hero,
             )
         )
-        parts.append(f"### Units {short} benefits from")
+        parts.append(f"### Units improving {short}")
         parts.append("")
         parts.extend(syn_lines)
         replacements = p.get("replacements", {})

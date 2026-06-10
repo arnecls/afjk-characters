@@ -67,6 +67,7 @@ MAX_SYNERGIES = 5
 MAX_BENEFICIARIES_DISPLAY = 10
 FALLBACK_BENEFICIARIES_DISPLAY = 3
 BENEFIT_MAX_STARS = 5
+BENEFIT_MIN_STARS = 1
 BENEFIT_STAR = "⭐"
 
 # Proximity aura buffs (provider-attached) only match melee-close receivers.
@@ -754,7 +755,19 @@ def match_party_composition(
     return 5.0, f"{hero_class} (party slot)"
 
 
-def match_ally_stat_buffs(provider: _rs.Hero) -> tuple[float, str] | None:
+def _format_ally_stat_buff_grant(
+    n: int, target_name: str, *, start_of_battle: bool = False
+) -> str:
+    detail = (
+        f"Grants {n} distinct stat buff{'s' if n != 1 else ''} "
+        f"to {target_name}"
+    )
+    if start_of_battle:
+        detail += " (start of battle)"
+    return detail
+
+
+def _ally_stat_buff_synergy(provider: _rs.Hero) -> tuple[float, int, bool] | None:
     """Providers that grant many/wide ally stat buffs (Perseus, Silven enabler)."""
     ally_buffs = [
         e
@@ -775,11 +788,20 @@ def match_ally_stat_buffs(provider: _rs.Hero) -> tuple[float, str] | None:
             best_by_label[effect.label] = score
     pts = sum(best_by_label.values())
     n = len(best_by_label)
-    detail = f"{n} ally stat buff" + ("s" if n != 1 else "")
-    if provider_buffs_at_battle_start(provider):
+    start_of_battle = provider_buffs_at_battle_start(provider)
+    if start_of_battle:
         pts *= 1.4
-        detail += " (start of battle)"
-    return pts, detail
+    return pts, n, start_of_battle
+
+
+def match_ally_stat_buffs(provider: _rs.Hero) -> tuple[float, str] | None:
+    result = _ally_stat_buff_synergy(provider)
+    if not result:
+        return None
+    pts, n, start_of_battle = result
+    return pts, _format_ally_stat_buff_grant(
+        n, "allies", start_of_battle=start_of_battle
+    )
 
 
 def match_adjacent_allies(provider: _rs.Hero) -> tuple[float, str] | None:
@@ -843,6 +865,72 @@ def receiver_requires(hero: _rs.Hero) -> list[_rs.SpecialEffect]:
     return [se for se in hero.special_effects if se.kind == "requires"]
 
 
+REQUIRE_SYNERGY_FRAGMENTS: dict[str, str] = {
+    "Magic damage from allies": "units **dealing magic damage**",
+    "Ranged damage from allies": "units **dealing ranged damage**",
+    "Continuous damage on enemies": (
+        "units **dealing continuous damage** to enemies"
+    ),
+    "Damage over time": "units **applying damage over time** to enemies",
+    "Debuff on target": "units **putting debuffs** on enemies",
+    "Multiple debuffs on target": "units **putting multiple debuffs** on enemies",
+    "Ally blessing active": "a unit **to bless**",
+    "Ally on positioning link": "units **positioned on their link**",
+    "Ally Ultimate casts": "allies **casting ultimates**",
+    "Enemy defeat": "enemies **to be defeated**",
+    "Adjacent allies": "allies **adjacent** to them",
+    "Party composition": "a party **with the right composition**",
+    "Ally stat buffs": "units **buffing them**",
+    "CC on enemies": "units **applying crowd control** to enemies",
+}
+
+
+def _join_require_fragments(fragments: list[str]) -> str:
+    if len(fragments) == 1:
+        return fragments[0]
+    if len(fragments) == 2:
+        return f"{fragments[0]} and/or {fragments[1]}"
+    return ", ".join(fragments[:-1]) + f", and/or {fragments[-1]}"
+
+
+def partner_synergy_require_fragments(hero: _rs.Hero) -> list[str]:
+    labels_present = {
+        req.label
+        for req in receiver_requires(hero)
+        if req.label not in SKIP_ENABLER_REQUIRES
+        and req.label in ENABLER_REQUIRE_HANDLERS
+    }
+    fragments: list[str] = []
+    for label in ENABLER_REQUIRE_HANDLERS:
+        if label not in labels_present:
+            continue
+        fragments.append(REQUIRE_SYNERGY_FRAGMENTS.get(label, label))
+    return fragments
+
+
+def format_synergy_requires_sentence(hero: _rs.Hero, display_name: str) -> str | None:
+    fragments = partner_synergy_require_fragments(hero)
+    if not fragments:
+        return None
+    return f"{display_name} also requires {_join_require_fragments(fragments)}"
+
+
+def format_synergy_requires_markdown(hero: _rs.Hero, display_name: str) -> list[str]:
+    sentence = format_synergy_requires_sentence(hero, display_name)
+    if not sentence:
+        return []
+    return [sentence, ""]
+
+
+def format_synergy_requires_json(
+    hero: _rs.Hero, display_name: str
+) -> dict[str, object] | None:
+    sentence = format_synergy_requires_sentence(hero, display_name)
+    if not sentence:
+        return None
+    return {"text": sentence}
+
+
 def score_enabler_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
@@ -863,14 +951,29 @@ def score_enabler_synergy(
         matcher = enabler_matchers.get(req.label)
         if not matcher:
             continue
-        result = matcher(provider)
-        if not result:
-            continue
-        pts, detail = result
+        if req.label == "Ally stat buffs":
+            result = _ally_stat_buff_synergy(provider)
+            if not result:
+                continue
+            pts, buff_count, start_of_battle = result
+        else:
+            result = matcher(provider)
+            if not result:
+                continue
+            pts, detail = result
         pts *= DEFINING_TIER_SCORE_MULT.get(req.tier, 1.0)
         seen.add(req.label)
         total += pts
-        reasons.append(f"Enables {req.label} via {detail}")
+        if req.label == "Ally stat buffs":
+            reasons.append(
+                _format_ally_stat_buff_grant(
+                    buff_count,
+                    short_name(receiver.title),
+                    start_of_battle=start_of_battle,
+                )
+            )
+        else:
+            reasons.append(f"Enables {req.label} via {detail}")
 
     return total, reasons
 
@@ -1169,25 +1272,29 @@ def beneficiary_rating_out_of_five(
     raw_score: float,
     receiver_synergies: list[dict],
 ) -> float:
-    """Map a raw synergy score to a 0–5 benefit rating for the receiver."""
+    """Map a raw synergy score to a 1–5 benefit rating for the receiver."""
     if not receiver_synergies:
-        return 0.0
+        return float(BENEFIT_MIN_STARS)
     top = max(entry["score"] for entry in receiver_synergies)
-    if top <= 0:
-        return 0.0
-    return min(
-        float(BENEFIT_MAX_STARS),
-        float(BENEFIT_MAX_STARS) * raw_score / top,
+    if top <= 0 or raw_score <= 0:
+        return float(BENEFIT_MIN_STARS)
+    scaled = (
+        float(BENEFIT_MIN_STARS)
+        + (float(BENEFIT_MAX_STARS) - float(BENEFIT_MIN_STARS)) * raw_score / top
     )
+    return min(float(BENEFIT_MAX_STARS), max(float(BENEFIT_MIN_STARS), scaled))
 
 
 def format_beneficiary_rating_display(
     raw_score: float,
     receiver_synergies: list[dict],
 ) -> str:
-    """Stars plus numeric rating, e.g. ``⭐️⭐️⭐️ (3.4)``."""
+    """Stars plus numeric rating, e.g. ``⭐️ (1.0)`` or ``⭐️⭐️⭐️ (3.4)``."""
     rating = beneficiary_rating_out_of_five(raw_score, receiver_synergies)
-    full_stars = max(0, min(BENEFIT_MAX_STARS, int(rating // 1)))
+    full_stars = max(
+        BENEFIT_MIN_STARS,
+        min(BENEFIT_MAX_STARS, int(rating // 1)),
+    )
     return f"{BENEFIT_STAR * full_stars} ({rating:.1f})"
 
 
@@ -1978,6 +2085,9 @@ def format_synergies(
 ) -> list[str]:
     lines: list[str] = []
     receiver_name = short_name(receiver.title)
+    requires_lines = format_synergy_requires_markdown(receiver, receiver_name)
+    if requires_lines:
+        lines.extend(requires_lines)
     picks = rank_synergies(
         receiver, heroes, enabler_matchers, behavior_by_title
     )
@@ -2178,7 +2288,7 @@ def build_overview() -> str:
         "",
         "Per-hero synergy picks and summaries derived from skill text in",
         "[Heroes.md](Heroes.md). [Heroes.md](Heroes.md) has skills only.",
-        "Synergy: stat buff tags under **Units X benefits from**, and",
+        "Synergy: stat buff tags under **Units improving X**, and",
         "enabler partners matching **Requires** special effects.",
         "Up to five partners by combined score. Omitted: ATK-only, Max HP",
         "buff-only, and Shield-only (unless the hero benefits from Max HP/",
@@ -2212,9 +2322,10 @@ def build_overview() -> str:
                 hero_name,
                 behavior,
                 prydwen_tiers=tiers_by_title.get(hero.title),
+                hero=hero,
             )
         )
-        parts.append(f"### Units {hero_name} benefits from")
+        parts.append(f"### Units improving {hero_name}")
         parts.append("")
         parts.extend(syn_lines)
         parts.append("")

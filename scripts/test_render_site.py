@@ -53,13 +53,19 @@ class RenderSiteTests(unittest.TestCase):
             for partner in syn.get("partners", []):
                 self.assertIn("slug", partner)
                 self.assertIn(partner["slug"], slug_set)
+                self.assertIn("score", partner)
+                self.assertIn("scoreRating", partner)
+                self.assertIn("scoreDisplay", partner)
+                self.assertRegex(partner["scoreDisplay"], r"⭐+ \(\d+\.\d\)")
             bb = syn.get("benefited_by") or {}
             for ref in bb.get("heroes", []):
                 self.assertIn(ref["slug"], slug_set)
                 self.assertIn("score", ref)
                 self.assertIn("scoreRating", ref)
                 self.assertIn("scoreDisplay", ref)
-                self.assertRegex(ref["scoreDisplay"], r"⭐* \(\d+\.\d\)")
+                self.assertRegex(ref["scoreDisplay"], r"⭐+ \(\d+\.\d\)")
+                self.assertIn("reasons", ref)
+                self.assertIsInstance(ref["reasons"], list)
 
     def test_sections_present(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
@@ -68,6 +74,58 @@ class RenderSiteTests(unittest.TestCase):
             self.assertTrue(sections.get("behavior"))
             self.assertTrue(sections.get("summary"))
             self.assertIn("benefits_from", sections)
+
+    def test_damage_types_in_site_json(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        with_damage = 0
+        for hero in payload["heroes"]:
+            sections = hero["sections"]
+            self.assertIn("damageTypes", sections)
+            dt = sections["damageTypes"]
+            self.assertIsInstance(dt, dict)
+            behavior = sections["behavior"]
+            if dt:
+                with_damage += 1
+                self.assertIn(
+                    "**Damage types**:",
+                    behavior,
+                    msg=f"{hero['name']} has damageTypes but no overview line",
+                )
+        self.assertGreater(with_damage, 100)
+
+    def test_aurora_beneficiary_buffs_intro(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        aurora = next(h for h in payload["heroes"] if h["name"] == "Aurora")
+        bb = aurora["sections"]["benefits_from"]["benefited_by"]
+        buffs = bb["buffs_provided"]
+        self.assertEqual(buffs["hero"], "Aurora")
+        labels = [item["label"] for item in buffs["buffs"]]
+        self.assertIn("Haste buff", labels)
+        self.assertIn("Invincible", labels)
+        haste = next(item for item in buffs["buffs"] if item["label"] == "Haste buff")
+        self.assertEqual(haste["targetingType"], "Summons only")
+        self.assertIn(haste["quality"], ("low", "medium", "high"))
+        self.assertNotIn("Buffs provided by Aurora", aurora["sections"]["summary"])
+        zanie = next(
+            h
+            for h in bb["heroes"]
+            if h["name"] == "Zanie"
+        )
+        self.assertTrue(zanie["reasons"])
+        self.assertTrue(
+            any("Summon damage buff" in r for r in zanie["reasons"]),
+        )
+
+    def test_bonnie_synergy_requires(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        bonnie = next(h for h in payload["heroes"] if h["name"] == "Bonnie")
+        requires = bonnie["sections"]["benefits_from"]["requires"]
+        self.assertEqual(
+            requires["text"],
+            "Bonnie also requires units **dealing magic damage** and/or "
+            "units **putting debuffs** on enemies",
+        )
+        self.assertNotIn("Requires", bonnie["sections"]["summary"])
 
     def test_site_csv_matches_root_overview(self) -> None:
         self.assertTrue(OVERVIEW_CSV.is_file(), f"missing {OVERVIEW_CSV.name}")

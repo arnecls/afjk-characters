@@ -364,7 +364,7 @@
         "debuffs": {
           "$ref": "#/$defs/skillOverviewMagnitude"
         },
-        "true_damage": {
+        "damage_types": {
           "type": "object",
           "additionalProperties": {
             "$ref": "#/$defs/skillOverviewMagnitude"

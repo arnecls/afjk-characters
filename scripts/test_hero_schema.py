@@ -267,12 +267,14 @@ class SkillOverviewTests(unittest.TestCase):
         text = "\n".join(rs.format_behavior_section("Daimon", behavior))
         self.assertIn("- **Ultimate**:", text)
 
-    def test_ravion_true_damage_line_in_skill_overview(self):
-        _, behavior = self._hero_by_display("Ravion")
-        text = "\n".join(rs.format_behavior_section("Ravion", behavior))
-        self.assertIn("- **True damage**:", text)
+    def test_ravion_damage_types_line_in_skill_overview(self):
+        hero, behavior = self._hero_by_display("Ravion")
+        text = "\n".join(
+            rs.format_behavior_section("Ravion", behavior, hero=hero)
+        )
+        self.assertIn("- **Damage types**:", text)
         self.assertIn("HP loss", text)
-        self.assertTrue(behavior.skill_overview["signature"].true_damage)
+        self.assertTrue(behavior.skill_overview["signature"].damage_types)
 
     def test_skill_summary_subsections_after_overview_metrics(self):
         _, behavior = self._hero_by_display("Aliceth")
