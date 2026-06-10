@@ -1049,6 +1049,20 @@ a:hover {
   font-size: 0.85rem;
 }
 
+.site-footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.site-footer p + p {
+  margin-top: 0.35rem;
+}
+
+.site-footer-sep {
+  margin: 0 0.45em;
+  opacity: 0.55;
+}
+
 @media (max-width: 900px) {
   .summary-grid {
     grid-template-columns: repeat(2, 1fr);
