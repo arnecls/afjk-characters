@@ -852,6 +852,7 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 
 #### Aurora Provides
 
+- Dream sleep (transformation) — Self
 - Invincibility — Multiple targets
 - Start-of-battle cast — Multiple targets
 - Summoning — Single target
@@ -874,7 +875,6 @@ Common buffers are **Twins**, **Hugin**, or **Velara**.
 #### Crowd Control provided by Aurora
 
 - Unaffected — Self — On skill
-- Sleep — Single target — `high`
 
 ## Baelran
 

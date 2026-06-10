@@ -243,6 +243,20 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertIn("Transformation", provides)
         self.assertIn("Invincibility", provides)
 
+    def test_aurora_dream_sleep_not_enemy_cc(self):
+        hero = _hero_by_short_name("Aurora")
+        sleep_cc = list(_effects(hero, "cc", "Sleep"))
+        self.assertEqual(sleep_cc, [])
+        provides = {
+            s.label for s in hero.special_effects if s.kind == "provides"
+        }
+        self.assertIn("Dream sleep (transformation)", provides)
+
+    def test_tasi_hypnotize_still_sleep_cc(self):
+        hero = _hero_by_short_name("Tasi")
+        sleep_cc = list(_effects(hero, "cc", "Sleep"))
+        self.assertGreater(len(sleep_cc), 0)
+
     def test_alna_damage_excludes_immunity_and_mitigation(self):
         hero = _hero_by_short_name("Alna")
         physical = next(e for e in hero.damage_entries if e[0] == "Physical")

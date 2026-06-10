@@ -6180,13 +6180,6 @@
           "score": 9.0
         },
         {
-          "provider": "Aurora - Celestial of Dreams",
-          "reasons": [
-            "Enables CC on enemies via Sleep (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Contess - Abyssal Rulekeeper",
           "reasons": [
             "Enables CC on enemies via Silence (single target, high)"
@@ -27228,13 +27221,6 @@
             "Enables CC on enemies via Silence (all units, low)"
           ],
           "score": 17.0
-        },
-        {
-          "provider": "Aurora - Celestial of Dreams",
-          "reasons": [
-            "Enables CC on enemies via Sleep (single target, high)"
-          ],
-          "score": 15.299999999999999
         },
         {
           "provider": "Contess - Abyssal Rulekeeper",

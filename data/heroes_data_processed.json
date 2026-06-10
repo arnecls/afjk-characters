@@ -1922,16 +1922,6 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "crowd_control",
-              "cc-type": "sleep"
-            },
-            {
-              "tier": "base",
               "targeting_label": "Summons only",
               "is_max_known": true,
               "target": "summon",
@@ -1953,22 +1943,10 @@
         "Dreamspark Bunny": {
           "category": "skill1",
           "description": "This skill can only be used while Aurora is asleep. Aurora summons a magical bunny beside her that lasts for up to 12s. The magical bunny inherits 100% + 10% of Aurora's HP and 80% + 8% of her other basic stats, and deals 100% (ATK-based) damage with its normal attacks. When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% damage to all adjacent enemies. Increases the bunny's detonation damage to 370% (ATK-based) + 40%. Increases the bunny's detonation damage to 400% (ATK-based) + 40%. Increases the bunny's detonation damage to 430% (ATK-based) + 40%.",
-          "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "crowd_control",
-              "cc-type": "sleep",
-              "duration": 5.0
-            }
-          ],
+          "effects": [],
           "cooldown": 9.0,
-          "initial_cooldown": 1.5
+          "initial_cooldown": 1.5,
+          "passive_only": true
         },
         "Plushification": {
           "category": "skill2",
@@ -2019,16 +1997,6 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "sleep"
-            },
-            {
-              "tier": "mythic+",
               "targeting_label": "Summons only",
               "is_max_known": true,
               "target": "summon",
@@ -2061,19 +2029,9 @@
         "Enhance Force": {
           "category": "skill5",
           "description": "If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, expanding the range of Plushification to a 3-tile radius.",
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "sleep"
-            }
-          ],
-          "tier": "supreme+"
+          "effects": [],
+          "tier": "supreme+",
+          "passive_only": true
         }
       },
       "synergy_profile": {
@@ -2088,6 +2046,12 @@
             "label": "Start-of-battle cast",
             "tier": "base",
             "targeting": "Multiple targets",
+            "description": "- Skill Range: Global Aurora summons her unicorn Sonny to her side and drifts into a deep sleep. Sonny inherits 140% + 20% of Aurora's HP and 120% + 10% of her other basic stats, then creates a rainbow aura that inspires allies. All inspired allied summons gain 50 Haste, and their movement becomes smoother, letting them move past enemies and obstacles more easily. This skill can be cast even when Aurora is under control effects. While asleep, Aurora stays invincible. For normal attacks, she conjures objects from her dreams and hurls them at enemies to deal 320% (ATK-based) damage. If Sonny gets defeated in battle, Aurora jolts awake. Once awaken, she becomes vulnerable to enemy attacks and can't use any skills except her Ultimate. Passive. When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side. The frontmost enemy hero gets marked as the Nightmare. The mark reduces their Haste by 40, but increases their ATK 2%. Sonny rallies all allied summons to focus their attacks on the Nightmare."
+          },
+          {
+            "label": "Dream sleep (transformation)",
+            "tier": "base",
+            "targeting": "Self",
             "description": "- Skill Range: Global Aurora summons her unicorn Sonny to her side and drifts into a deep sleep. Sonny inherits 140% + 20% of Aurora's HP and 120% + 10% of her other basic stats, then creates a rainbow aura that inspires allies. All inspired allied summons gain 50 Haste, and their movement becomes smoother, letting them move past enemies and obstacles more easily. This skill can be cast even when Aurora is under control effects. While asleep, Aurora stays invincible. For normal attacks, she conjures objects from her dreams and hurls them at enemies to deal 320% (ATK-based) damage. If Sonny gets defeated in battle, Aurora jolts awake. Once awaken, she becomes vulnerable to enemy attacks and can't use any skills except her Ultimate. Passive. When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side. The frontmost enemy hero gets marked as the Nightmare. The mark reduces their Haste by 40, but increases their ATK 2%. Sonny rallies all allied summons to focus their attacks on the Nightmare."
           },
           {

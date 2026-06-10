@@ -156,6 +156,7 @@ def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
 
 
 def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
+    rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
     issues: dict[str, list[str]] = defaultdict(list)
     wiki_re = re.compile(r"\[[^\]]+\][^\[]+\[/\]")
 
@@ -193,6 +194,14 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                         text,
                     ):
                         continue
+                    if cc == "sleep" and re.search(pat, text):
+                        if not any(
+                            not rs._cc_sleep_is_caster_owned(
+                                rs._clause_around(text, m.start())
+                            )
+                            for m in re.finditer(pat, text)
+                        ):
+                            continue
                     if not re.search(pat, text):
                         continue
                     mapped = _CC_SCHEMA_MAP.get(cc, cc)

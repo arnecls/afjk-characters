@@ -1791,6 +1791,11 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     (r"selects? an ally.{0,80}to become", "Ally empower"),
     (r"(?:transform|morph)s? into", "Transformation"),
     (
+        r"(?:drifts? into|falls?|enters?) (?:a )?(?:deep(?:er)? )?sleep|"
+        r"immediately falls asleep",
+        "Dream sleep (transformation)",
+    ),
+    (
         r"mark of |places .{0,40} mark on|forest mark|"
         r"notice to mark|marked enemy|noticed enemy|"
         r"prioritizes attacking the .{0,30}marked",
@@ -2272,7 +2277,7 @@ def detect_special_targeting(text: str, kind: str, label: str) -> str:
         return "—"
     if label == "Enemy artifact block":
         return "Single target"
-    if label == "Transformation":
+    if label in ("Transformation", "Dream sleep (transformation)"):
         return "Self"
     return detect_targeting(text, label, "special")
 
@@ -2851,6 +2856,22 @@ def _cc_cannot_move_targets_enemy(scope: str) -> bool:
     return bool(re.search(r"\b(?:enemy|enemies|target|foe|them|hypnotized)\b", t))
 
 
+def _cc_sleep_is_caster_owned(clause: str) -> bool:
+    """Dream sleep on the caster (e.g. Aurora) is a form, not enemy Sleep CC."""
+    t = clause.lower()
+    if re.search(r"hypnotiz", t):
+        return False
+    return bool(
+        re.search(
+            r"\b(?:drifts? into|falls?|enters?) (?:a )?(?:deep(?:er)? )?sleep\b|"
+            r"\bimmediately falls asleep\b|"
+            r"\bwhile (?:asleep|.{0,25}is asleep)\b|"
+            r"only be used while .{0,30}is asleep\b",
+            t,
+        )
+    )
+
+
 def _cc_match_is_ally_targeted(clause: str, label: str) -> bool:
     """True when a CC effect is applied to an ally rather than an enemy.
 
@@ -2914,6 +2935,8 @@ def analyze_text(
             # Skip CC matches that target an ally rather than an enemy
             # (e.g. Pandora pulling an ally into her box).
             if _cc_match_is_ally_targeted(scope, label):
+                continue
+            if label == "Sleep" and _cc_sleep_is_caster_owned(scope):
                 continue
             if label == "Stun":
                 if _cc_bind_scope_covers_cannot_move(scope):
