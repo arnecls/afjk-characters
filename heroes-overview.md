@@ -2218,10 +2218,6 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 - Athalia (100% `ATK debuff`)
 - Ravion (100% `ATK debuff`)
 
-**Crowd Control**
-
-- Gwyneth (100% `Bind` `Silence`)
-
 ### Summary for Cyran
 
 #### Cyran Provides
@@ -2244,6 +2240,7 @@ Common buffers are **Hugin**, **Twins**, or **Ravion**.
 - Steadfast — Area — Conditional
 - Unaffected — Self — Start of battle
 - Bind — Area — `low`
+- Displace — Area — `high`
 - Silence (EX+10) — Single target — `high`
 
 ## Daimon
@@ -2754,6 +2751,7 @@ Common buffers are **Hugin** or **Rowan**.
 
 **Crowd Control**
 
+- Cyran (97% `Displace` `Bind`)
 - Ravion (78% `Displace`)
 
 ### Summary for Eironn
@@ -2974,6 +2972,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 **Crowd Control**
 
+- Cyran (85% `Displace` `Silence` `Bind`)
 - Eironn (63% `Displace` `Bind`)
 - Gwyneth (61% `Bind` `Silence`)
 
@@ -7328,9 +7327,9 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 
 **Crowd Control**
 
-- Baelran (100% `Knock down` `Knock up`)
-- Kordan (100% `Knock down` `Knock up`)
-- Scarlita (96% `Knock down` `Knock up`)
+- Ravion (90% `Displace` `Knock down`)
+- Kordan (75% `Knock down` `Knock up`)
+- Baelran (62% `Knock down` `Knock up`)
 
 ### Summary for Nara
 
@@ -7352,6 +7351,7 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 #### Crowd Control provided by Nara
 
 - Unaffected (Supreme+) — Self — Permanent
+- Displace — Single target — `medium`
 - Knock down — Single target — `high`
 - Knock up — Single target — `medium`
 
@@ -8455,7 +8455,7 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - Eironn (84% `Bind` `Displace`)
 - Ravion (72% `Displace` `Knock down`)
-- Evie (70% `Bind` `Displace`)
+- Cyran (70% `Bind` `Displace`)
 
 ### Summary for Pippa
 

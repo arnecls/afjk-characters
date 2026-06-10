@@ -1777,8 +1777,13 @@ CC_RULES = [
     (r"entangl|imprison", "Bind"),
     (r"\bblind(?:ing|s|ed)?\b", "Blind"),
     (r"\bbind(?:ing|s)?\b", "Bind"),
-    (r"teleport", "Displace"),
-    (r"pull(?:ing|s)? (?:in |them|the)", "Displace"),
+    (
+        r"pull(?:ing|s|ed)? (?:in |them |the )|"
+        r"pull(?:ed|ing|s)? .{0,40}toward|"
+        r"hurl(?:s|ing|ed)? .{0,30}into|"
+        r"teleport",
+        "Displace",
+    ),
     (r"taunt", "Taunt"),
     (r"interrupt", "Interrupt"),
 ]

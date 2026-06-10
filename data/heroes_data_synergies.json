@@ -8513,16 +8513,7 @@
             ]
           }
         ],
-        "cc": [
-          {
-            "name": "Gwyneth",
-            "score": 1.0,
-            "matches": [
-              "Bind",
-              "Silence"
-            ]
-          }
-        ]
+        "cc": []
       }
     },
     "Daimon - Forsaken Child": {
@@ -10031,6 +10022,14 @@
         ],
         "cc": [
           {
+            "name": "Cyran",
+            "score": 0.9763,
+            "matches": [
+              "Displace",
+              "Bind"
+            ]
+          },
+          {
             "name": "Ravion",
             "score": 0.781,
             "matches": [
@@ -10900,6 +10899,15 @@
           }
         ],
         "cc": [
+          {
+            "name": "Cyran",
+            "score": 0.8533,
+            "matches": [
+              "Displace",
+              "Silence",
+              "Bind"
+            ]
+          },
           {
             "name": "Eironn",
             "score": 0.6333,
@@ -26368,24 +26376,24 @@
         ],
         "cc": [
           {
-            "name": "Baelran",
-            "score": 1.0,
+            "name": "Ravion",
+            "score": 0.9,
             "matches": [
-              "Knock down",
-              "Knock up"
+              "Displace",
+              "Knock down"
             ]
           },
           {
             "name": "Kordan",
-            "score": 1.0,
+            "score": 0.75,
             "matches": [
               "Knock down",
               "Knock up"
             ]
           },
           {
-            "name": "Scarlita",
-            "score": 0.96,
+            "name": "Baelran",
+            "score": 0.625,
             "matches": [
               "Knock down",
               "Knock up"
@@ -30342,7 +30350,7 @@
             ]
           },
           {
-            "name": "Evie",
+            "name": "Cyran",
             "score": 0.7,
             "matches": [
               "Bind",

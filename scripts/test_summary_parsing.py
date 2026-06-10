@@ -257,6 +257,11 @@ class SummaryParsingTests(unittest.TestCase):
         sleep_cc = list(_effects(hero, "cc", "Sleep"))
         self.assertGreater(len(sleep_cc), 0)
 
+    def test_cyran_displacement_parsed_as_cc(self):
+        hero = _hero_by_short_name("Cyran")
+        displace = list(_effects(hero, "cc", "Displace"))
+        self.assertGreater(len(displace), 0)
+
     def test_alna_damage_excludes_immunity_and_mitigation(self):
         hero = _hero_by_short_name("Alna")
         physical = next(e for e in hero.damage_entries if e[0] == "Physical")

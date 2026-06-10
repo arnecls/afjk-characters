@@ -4822,9 +4822,20 @@
         "Gravitic Requiem": {
           "category": "ultimate",
           "description": "Cyran selects a tile and summons a black hole that lasts for 5s, with its center covering a 1-tile radius. Every 0.25s, enemies within the center take 16% (ATK-based) + 2% damage, and those outside the center but within 4 tiles take 6% (ATK-based) + 1% damage. All enemies on the battlefield are pulled toward the center, with the gravitational force increasing as they get closer. Non-Boss enemies within the center are immediately defeated if their current HP is below Cyran's 600% (ATK-based) + 20% and their HP ratio is below 15% + 1%. Increases the black hole's damage to enemies within the center to 17% (ATK-based) + 2% per 0.25s, and to enemies at the edges to 7% (ATK-based) + 1% per second. Increases the black hole's damage to enemies within the center to 18% (ATK-based) + 2% per 0.25s, and to enemies at the edges to 8% (ATK-based) + 1% per second. Increases the black hole's damage to enemies within the center to 19% (ATK-based) + 2% per 0.25s, and to enemies at the edges to 9% (ATK-based) + 1% per second. Increases the black hole's damage to enemies within the center to 20% (ATK-based) + 2% per 0.25s, and to enemies at the edges to 10% (ATK-based) + 1% per second.",
-          "effects": [],
-          "initial_energy": 400.0,
-          "passive_only": true
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "displace"
+            }
+          ],
+          "initial_energy": 400.0
         },
         "Arcane Barrage": {
           "category": "skill1",
@@ -4849,6 +4860,18 @@
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "displace",
+              "duration": 15.0
             },
             {
               "type": "immunity",
@@ -16236,9 +16259,20 @@
         "Phantom Chains": {
           "category": "skill1",
           "description": "Nara pulls a distant enemy hero toward her when there are no enemy heroes within her normal attack range. The target loses 3.5% + 0.5% HP for every tile they are pulled, up to 250% of Nara's ATK. This skill won't defeat the enemy and prioritizes attacking the closest enemy in a symmetrical|align=right position. Increases the HP lost per tile pulled to 4% + 0.5%. Increases the HP lost per tile pulled to 4,5% + 0.5%. Increases the HP lost per tile pulled to 5% + 0.5%.",
-          "effects": [],
-          "cooldown": 4.0,
-          "passive_only": true
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "displace",
+              "duration": 4.0
+            }
+          ],
+          "cooldown": 4.0
         },
         "Killer Kick": {
           "category": "skill2",

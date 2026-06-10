@@ -46,7 +46,12 @@ _CC_KEYWORDS: dict[str, str] = {
     "silence": r"(?<! of )silenc(?:e|es|ed|ing)",
     "charm": r"\bcharm(?:ed|s|ing)?\b",
     "sleep": r"\b(?:asleep|hypnotiz)",
-    "displace": r"\b(?:pull(?:ing|s)? (?:in |them|the)|teleport)\b",
+    "displace": (
+        r"\b(?:pull(?:ing|s|ed)? (?:in |them |the )|"
+        r"pull(?:ed|ing|s)? .{0,40}toward|"
+        r"hurl(?:s|ing|ed)? .{0,30}into|"
+        r"teleport)\b"
+    ),
     "interrupt": r"\binterrupt\b",
     "taunt": r"\btaunt\b",
     "blind": r"\bblind(?:ing|s|ed)?\b",

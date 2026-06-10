@@ -321,6 +321,28 @@ class ReplacementTierRankingTests(unittest.TestCase):
         )
 
 
+class DisplacementReplacementTests(unittest.TestCase):
+    def test_eironn_lists_cyran_as_cc_replacement(self) -> None:
+        eironn = _hero_by_short_name("Eironn")
+        cyran = _hero_by_short_name("Cyran")
+        displace = [
+            e for e in cyran.effects if e.category == "cc" and e.label == "Displace"
+        ]
+        self.assertGreater(len(displace), 0)
+        text = rs.HEROES_MD.read_text(encoding="utf-8")
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+        heroes = []
+        for block in blocks:
+            hero = rs.parse_hero_block(block)
+            rs.analyze_hero(hero)
+            heroes.append(hero)
+        display = {h.title: gen.short_name(h.title) for h in heroes}
+        behavior = rs.build_behavior_for_heroes(heroes, display)
+        replacements = gen.compute_replacement_scores(heroes, behavior, {})
+        cc_names = [entry["name"] for entry in replacements[eironn.title]["cc"]]
+        self.assertIn("Cyran", cc_names)
+
+
 class HealingReplacementTests(unittest.TestCase):
     def test_healing_provider_detection(self) -> None:
         hewynn = _hero_by_short_name("Hewynn")
