@@ -217,6 +217,9 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
 **Skill summary authoring** (AI-generated, not scripted):
 
 - Read fully ascended `description` from `heroes_data_processed.json`.
+- Cross-check against `description_lite` in `heroes_data.json` for each
+  skill slot — it is the preferred source for validating mechanics and
+  catching missing or invented effects.
 - Write a **short mechanic summary** using **generalized game vocabulary**
   from `data/schema/game_properties.schema.json` (damage types, CC,
   stats, immunities, battle phases) and effect labels in

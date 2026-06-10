@@ -25,15 +25,15 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 ##### Ultimate
 
-invincible AoE volleys with HP-loss bonus damage
+fly up and fire arrow volley at single target
 
 ##### Skill 1
 
-Passive: empower nearest row ally with follow-up bonus effects; Active: stun charge
+Passive: empower an ally with follow-up strike after set hits; Active: heavy strike, knocking back and stunning target
 
 ##### Skill 2
 
-mark farthest enemy, boosting penetration; execute threshold
+mark farthest enemy; caster and bonded allies prioritize that target
 
 ##### Legendary+
 
@@ -41,11 +41,11 @@ battle ATK grows after first marked target falls
 
 ##### Mythic+
 
-block first fatal blow per ally; invincible repositioning
+prevent first fatal blow for caster or bonded ally
 
 ##### Supreme+
 
-empowered ally attacks add extra ultimate casts
+bonded ally feather threshold enhances ultimate with additional arrow volleys
 
 ### Units Aliceth benefits from
 
@@ -145,11 +145,11 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ##### Ultimate
 
-Passive: frost field lowers all haste; Active: AoE strips buffs
+AoE blizzard reduces enemy haste and deals DoT
 
 ##### Skill 1
 
-Passive: same-row ally max HP boost; Active: attack deals damage and heals
+appoint a companion, granting them buffs
 
 ##### Skill 2
 
@@ -161,11 +161,11 @@ battle damage reduction scales over time
 
 ##### Mythic+
 
-periodic immunity to damage and control
+immunity to damage and control effects
 
 ##### Supreme+
 
-shared stats until one falls; bind on immunity exit
+shared stat buff; first immunity exit freezes nearby enemies
 
 ### Units Alna benefits from
 
@@ -257,11 +257,11 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 
 ##### Ultimate
 
-dash to tile; enter melee buff state with enhanced skill casts
+enter combat stance with enhanced damage and dodge
 
 ##### Skill 1
 
-targeted stun blast creates terrain obstacles behind target
+deal damage to target, creating terrain obstacles on the field
 
 ##### Skill 2
 
@@ -269,11 +269,11 @@ AoE damage on enemies recently affected by control
 
 ##### Legendary+
 
-extra haste bonus after entering melee buff state
+battle haste increase
 
 ##### Mythic+
 
-repeated skill casts stack damage and shield value
+enhanced combat capabilities while in combat stance
 
 ##### Supreme+
 
@@ -363,15 +363,15 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ##### Ultimate
 
-taunt nearby; damage reduction then stun slam and heal
+damage reduction, then stun surrounding enemies, striking for damage and self-heal
 
 ##### Skill 1
 
-shield frontmost ally with shared ongoing protection
+grant shield to selected ally and herself
 
 ##### Skill 2
 
-frontal arc attack, reducing enemy ATK
+repeated frontal area attacks, reducing targets' ATK
 
 ##### Legendary+
 
@@ -379,11 +379,11 @@ battle max HP increase
 
 ##### Mythic+
 
-rush to endangered ally, reducing their damage taken
+rush to guarded ally, granting them damage reduction
 
 ##### Supreme+
 
-hits boost own DEF; shielded ally heals tank in return
+hitting with ultimate boosts own Phys DEF
 
 ### Units Antandra benefits from
 
@@ -472,15 +472,15 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-AoE strike leaves persistent DoT zone on controlled enemies
+place persistent lightning AoE zone; controlled enemies struck more frequently
 
 ##### Skill 1
 
-bind closest enemies, dealing periodic damage
+bind multiple enemies, dealing continuous damage
 
 ##### Skill 2
 
-recover energy whenever non-summoned enemies are controlled
+recover energy whenever enemies are controlled
 
 ##### Legendary+
 
@@ -488,11 +488,11 @@ battle ATK increase
 
 ##### Mythic+
 
-post-ultimate bind all DoT-zone targets simultaneously
+post-ultimate bind all targets under dark cloud simultaneously
 
 ##### Supreme+
 
-shorten DoT zone trigger interval per additional affected target
+reduce lightning strike interval for same target within AoE zone
 
 ### Units Arden benefits from
 
@@ -565,11 +565,11 @@ Common buffers are **Rowan**, **Lyca**, or **Ravion**.
 
 ##### Ultimate
 
-dash then line AoE stun in chosen direction
+dash forward, then fire a penetrative line shot
 
 ##### Skill 1
 
-melee knock back and bind; chain into second target
+knock back target, chaining effects to a second enemy behind
 
 ##### Skill 2
 
@@ -581,11 +581,11 @@ haste grows from hitting multiple different foes
 
 ##### Mythic+
 
-double cast at start; steal target ATK and DEF
+skill can be cast multiple times in a row at battle start
 
 ##### Supreme+
 
-direct hit heals; chained hit reduces target DEF
+direct ultimate hit heals self
 
 ### Units Atalanta benefits from
 
@@ -675,23 +675,23 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-Passive: persists after defeat with reduced ATK; Active: true damage scaling on accumulated HP-loss
+deal massive true damage to the highest cumulative damage dealer
 
 ##### Skill 1
 
-invincible dash targeting highest cumulative attacker
+dash behind highest damage dealer, dealing damage to target and enemies in path
 
 ##### Skill 2
 
-unaffected multi-strike with damage reduction and self-heal
+deal damage to adjacent enemies and self-heal
 
 ##### Legendary+
 
-crit boost higher against highest damage dealer
+battle crit increase
 
 ##### Mythic+
 
-alternate dashes release cross-path area slashes
+consecutive dashes trigger additional area slashes
 
 ##### Supreme+
 
@@ -785,15 +785,15 @@ Common buffers are **Hepler**, **Rowan**, or **Hugin**.
 
 ##### Ultimate
 
-sleep state summons stat-inherit companion with ally aura
+fall asleep and become invincible, summoning companion to buff allied summons and attack enemies
 
 ##### Skill 1
 
-while in sleep state summon companion that explodes on expiry
+summon companion that attacks enemies, detonating for AoE damage on expiry
 
 ##### Skill 2
 
-nearby field transforms lingering controlled enemies into harmless summons
+nearby enemies lingering too long are transformed into harmless form
 
 ##### Legendary+
 
@@ -801,11 +801,11 @@ ATK scales with variety of allied summons on field
 
 ##### Mythic+
 
-allied summons receive type-based combat role buffs
+while asleep, allied summons enhanced and companion becomes unaffected
 
 ##### Supreme+
 
-high energy deepens sleep, expanding transform field radius
+high energy during sleep expands transformation field radius
 
 ### Units Aurora benefits from
 
@@ -899,7 +899,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ##### Ultimate
 
-start with decaying bonus max HP; restore triggers transformation
+decaying shield and bonus HP trigger transformation; active frontal true damage and HP restore
 
 ##### Skill 1
 
@@ -907,7 +907,7 @@ passive HP regeneration; transformation adds true damage per hit
 
 ##### Skill 2
 
-upward slash, then downward knock down slam
+knock up single enemy, then knock down all enemies in frontal area
 
 ##### Legendary+
 
@@ -915,7 +915,7 @@ haste grows with each form transition
 
 ##### Mythic+
 
-enhanced form fully restores max HP and becomes unaffected
+repeat max HP restore enters enhanced form with permanent unaffected and ultimate true damage
 
 ##### Supreme+
 
@@ -1011,11 +1011,11 @@ Common buffers are **Mikola**, **Hepler**, or **Hugin**.
 
 ##### Ultimate
 
-enter stealth on target, draining energy then leap to frighten
+enter invincible stealth on target, draining their energy, then leap to damage and frighten adjacent enemies
 
 ##### Skill 1
 
-enter stealth to hunt isolated targets
+enter stealth; hunt isolated targets or heal and return
 
 ##### Skill 2
 
@@ -1114,15 +1114,15 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-magic AoE damage twice; bonus damage and stun on max debuff stack
+AoE damage; bonus damage and stun against debuffed targets
 
 ##### Skill 1
 
-stacking haste debuff on rearmost enemy reduces haste permanently
+apply haste-reducing debuff to rearmost enemy; ally magic damage further stacks the debuff
 
 ##### Skill 2
 
-invincible teleport firing multi-target magic damage
+transform into mist and reposition to safety
 
 ##### Legendary+
 
@@ -1226,11 +1226,11 @@ Common buffers are **Lyca**, **Ravion**, or **Rowan**.
 
 ##### Ultimate
 
-spin, dealing sustained area damage while unaffected
+spin, dealing sustained damage to adjacent enemies
 
 ##### Skill 1
 
-taunt surrounding enemies, reducing their DEF
+taunt nearby enemies, reducing their Phys DEF
 
 ##### Skill 2
 
@@ -1242,11 +1242,11 @@ battle life drain elevated during spin
 
 ##### Mythic+
 
-counterattack after absorbing adjacent melee hits, with HP-scaling damage
+cleave enemies in front; gain life drain after taking physical hits from adjacent enemies
 
 ##### Supreme+
 
-extend immunity and unaffected duration from damage survival
+extend immunity duration
 
 ### Units Brutus benefits from
 
@@ -1341,7 +1341,7 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ##### Ultimate
 
-Passive: summons companion; Active: cast deals coordinated strike damage
+summon companion to deal damage and assist in battle
 
 ##### Skill 1
 
@@ -1349,7 +1349,7 @@ launch multiple magic projectiles at target
 
 ##### Skill 2
 
-Passive: drain enemy energy on each hit; Active: secondary strike
+Passive: drain enemy energy on each hit; Active: two-hit strike
 
 ##### Legendary+
 
@@ -1357,11 +1357,11 @@ haste scales while companion is on battlefield
 
 ##### Mythic+
 
-companion counterattacks when owner is controlled or struck hard
+companion counterattacks and stuns when owner is controlled or struck hard, also blocking fatal blows
 
 ##### Supreme+
 
-projectiles spawn near companion; companion chains damage to multiple targets
+casting projectile skill also spawns leaves near companion
 
 ### Units Bryon benefits from
 
@@ -1444,11 +1444,11 @@ Common buffers are **Hewynn**, **Mikola**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-start shielded, absorbing portion of ally damage then join battle
+grant a shield at battle start and on cast, absorbing damage for allies
 
 ##### Skill 1
 
-double hit, then arc ground slam with knock down
+multi-hit on target, knocking target and nearby enemies down
 
 ##### Skill 2
 
@@ -1460,7 +1460,7 @@ battle vitality increase
 
 ##### Mythic+
 
-low HP threshold triggers burst damage and stun
+once per battle, low HP triggers AoE burst damage and stun on nearby enemies
 
 ##### Supreme+
 
@@ -1548,7 +1548,7 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 
 ##### Ultimate
 
-charge up bind then surrounding DoT field
+deal damage and freeze target, creating an arctic field that inflicts DoT
 
 ##### Skill 1
 
@@ -1564,7 +1564,7 @@ crit scales with repeated use count
 
 ##### Mythic+
 
-repeated casts stack projectile damage and reduce DEF
+repeated casts stack projectile AoE damage and reduce Magic DEF
 
 ##### Supreme+
 
@@ -1651,15 +1651,15 @@ Common buffers are **Ravion**, **Lyca**, or **Hepler**.
 
 ##### Ultimate
 
-wide wave knock back all enemies in path
+knock back and damage enemies in a straight line
 
 ##### Skill 1
 
-displace enemy upward, stunning on landing
+deal heavy single-target damage
 
 ##### Skill 2
 
-bless one ally whose hits trigger bonus magic damage
+bless one ally, dealing bonus damage to enemies hit by their normal attacks
 
 ##### Legendary+
 
@@ -1671,7 +1671,7 @@ ultimate path blesses all hit allies temporarily
 
 ##### Supreme+
 
-ultimate reduces magic DEF; ally blessing becomes permanent
+ultimate reduces enemies' Magic DEF for a while
 
 ### Units Cassadee benefits from
 
@@ -1757,15 +1757,15 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ##### Ultimate
 
-summon companion that binds on arrival
+summon companion to assist in battle
 
 ##### Skill 1
 
-grant ATK speed burst and companion power attack
+increase own and companion ATK speed
 
 ##### Skill 2
 
-passive DEF penetration; periodic enhanced normal attack
+periodic enhanced normal attack dealing heavy damage
 
 ##### Legendary+
 
@@ -1773,11 +1773,11 @@ ATK speed scales with companion presence on battlefield
 
 ##### Mythic+
 
-bind permanently drains enemy DEF
+bind an enemy and drain their stats
 
 ##### Supreme+
 
-reduce normal attacks needed to trigger enhanced trigger
+reduce normal attacks needed to trigger enhanced attack
 
 ### Units Cecia benefits from
 
@@ -1868,7 +1868,7 @@ Common buffers are **Lyca**, **Rowan**, or **Twins**.
 
 ##### Ultimate
 
-call allies together for a combined powerful slam
+summon two companion units to join the battle
 
 ##### Skill 1
 
@@ -1930,11 +1930,11 @@ rare chance for massive single normal attack damage
 
 ##### Ultimate
 
-Passive: start hidden recovering energy; Active: heal and grant immunity
+Passive: start hidden recovering energy; Active: heal ally, grant rule immunity, ally converts HP to shield
 
 ##### Skill 1
 
-penalize damage threshold violators with max HP reduction
+Passive: penalize units causing large HP or shield loss; Active: heal weakest allies and reduce high-damage enemies' ATK
 
 ##### Skill 2
 
@@ -1946,7 +1946,7 @@ violations permanently stack ATK and energy reduction
 
 ##### Mythic+
 
-repeated violations lead to permanent silence
+repeated violations lead to permanent silence and increased HP-loss, bypassing unaffected
 
 ##### Supreme+
 
@@ -2041,7 +2041,7 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-isolate top damage dealers in a separate domain
+trap several enemies in a separate domain, granting self various boosts
 
 ##### Skill 1
 
@@ -2049,7 +2049,7 @@ sweeping AoE damage crosses the entire battlefield
 
 ##### Skill 2
 
-rapid burst; cooldown halved while shielded
+fire multiple projectiles at target, dealing damage
 
 ##### Legendary+
 
@@ -2057,7 +2057,7 @@ ATK grows the longer shield stays active
 
 ##### Mythic+
 
-only caster can cast ultimates inside the domain
+deal massive damage each time enemies enter domain; only self can cast ultimate within
 
 ##### Supreme+
 
@@ -2147,11 +2147,11 @@ Common buffers are **Hugin**, **Lyca**, or **Rowan**.
 
 ##### Ultimate
 
-place AoE pull zone damaging nearby enemies
+place AoE pull zone dealing damage; execute low-HP enemies at center
 
 ##### Skill 1
 
-launch cluster projectiles at area with most enemies
+launch multiple magic orbs at enemies
 
 ##### Skill 2
 
@@ -2159,7 +2159,7 @@ lift nearest enemy and throw at area with most enemies
 
 ##### Legendary+
 
-crit grows and stacks after kills inside pull zone
+battle crit increase
 
 ##### Mythic+
 
@@ -2253,15 +2253,15 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 ##### Ultimate
 
-Passive: companion auto-attacks; Active: cast deals true damage scaling on target max HP
+summon companion to fight alongside
 
 ##### Skill 1
 
-companion periodic true damage converts to personal shield
+convert enemy HP-loss into a personal shield
 
 ##### Skill 2
 
-shield linked ally, boosting their ATK and drain
+share a portion of received shield with bonded ally
 
 ##### Legendary+
 
@@ -2269,11 +2269,11 @@ damage reduction grows while shielded
 
 ##### Mythic+
 
-companion frightens nearby enemies after sustained damage taken
+companion frightens nearby enemies
 
 ##### Supreme+
 
-expiring shields convert remainder to ally healing
+excess shield value converts to HP
 
 ### Units Daimon benefits from
 
@@ -2351,7 +2351,7 @@ Common buffers are **Hepler** or **Hugin**.
 
 ##### Ultimate
 
-Passive: proxy summon holds position; Active: charge deals damage and blinds
+summon or control toy chariot to blind enemies
 
 ##### Skill 1
 
@@ -2359,7 +2359,7 @@ summon heals weakest nearby ally or restores energy
 
 ##### Skill 2
 
-launched projectile stuns and damages farthest target
+control toy plane to stun the farthest enemy
 
 ##### Legendary+
 
@@ -2471,7 +2471,7 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-untargetable aerial AoE damage on area with most enemies
+soar into the air, dealing AoE damage; final hit deals bonus damage and knocks up
 
 ##### Skill 1
 
@@ -2479,7 +2479,7 @@ normal attack becomes long-range penetrating line
 
 ##### Skill 2
 
-Passive: stack buffs from allies; Active: ATK speed surge
+Passive: gain stacking buffs from allied boosts; Active: increase ATK and ATK SPD
 
 ##### Legendary+
 
@@ -2491,7 +2491,7 @@ true damage burst available at max buff stacks
 
 ##### Supreme+
 
-execution grows with active buff; shield at max stacks
+execution bonus increases while active buff is in effect
 
 ### Units Dionel benefits from
 
@@ -2585,7 +2585,7 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 ##### Ultimate
 
-choose battlefield rule blocking ultimates or blocking healing
+pre-battle set a battlefield rule; Active: re-enforce the rule for additional duration
 
 ##### Skill 1
 
@@ -2593,15 +2593,15 @@ frontal area multi-hit with rule-based bonus effect
 
 ##### Skill 2
 
-gain shield when active rule type is violated
+gain shield whenever order conditions are met
 
 ##### Legendary+
 
-battle damage reduction strengthened during active rule
+battle damage taken reduction
 
 ##### Mythic+
 
-protect one ally from the imposed rule penalty
+protect one ally from the imposed rule
 
 ##### Supreme+
 
@@ -2701,11 +2701,11 @@ Common buffers are **Hugin**, **Hepler**, or **Twins**.
 
 ##### Ultimate
 
-pull nearby enemies inward then explode, immobilizing
+pull nearby enemies to center, dealing damage and immobilizing
 
 ##### Skill 1
 
-arc slash lowers enemy haste; stab reduces magic DEF
+AoE dual-sword attack reducing enemy haste and magic DEF
 
 ##### Skill 2
 
@@ -2717,7 +2717,7 @@ ranged DEF scales up when health is low
 
 ##### Mythic+
 
-first pull per battle is free at reduced power
+cast ultimate on any tile at battle start
 
 ##### Supreme+
 
@@ -2797,11 +2797,11 @@ linked duo performance inspires allied haste; linked allies become unaffected
 
 ##### Skill 1
 
-row alignment link boosts ATK of all linked allies
+form line link channeling blessings to recover linked allies' energy and HP
 
 ##### Skill 2
 
-one twin shields an ally; the other blasts nearby foes
+one twin shields allies; the other damages and blinds nearby enemies
 
 ##### Legendary+
 
@@ -2809,7 +2809,7 @@ haste grows each time the performance is repeated
 
 ##### Mythic+
 
-same-faction link grants resonance and energy burst
+same-faction link strengthens bond; permanently enhanced when all linked allies cast ultimate
 
 ##### Supreme+
 
@@ -2920,7 +2920,7 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-start concealed gathering debuff stacks on enemy heroes
+Passive: start concealed on enemy side gathering intel; Active: immobilize enemy, also silencing if intel gathered
 
 ##### Skill 1
 
@@ -2928,7 +2928,7 @@ Passive: observation stacks reduce target magic DEF; Active: multi-strike
 
 ##### Skill 2
 
-roving support heals and buffs highest damage dealer
+send a quill to follow an ally, buffing and healing them
 
 ##### Legendary+
 
@@ -2936,11 +2936,11 @@ battle healing stat increase
 
 ##### Mythic+
 
-full observation permanently reduces all enemy damage dealt
+gathering intel on all enemies inflicts debuffs on them
 
 ##### Supreme+
 
-extra support ally buffs second-highest damage dealer
+full intel spawns an extra ally support quill
 
 ### Units Evie benefits from
 
@@ -3038,11 +3038,11 @@ circular area blocks healing and deals sustained true damage
 
 ##### Skill 1
 
-gain shield then strike; true damage when buffed by allies
+gain shield and deal damage to current target
 
 ##### Skill 2
 
-bless adjacent ally, sharing ATK and triggering periodic area damage
+bless an ally, boosting ATK for both, then stun nearby enemies around each
 
 ##### Legendary+
 
@@ -3050,7 +3050,7 @@ battle haste increase
 
 ##### Mythic+
 
-sustain attacks inside area; allies deal true damage within
+active circle enhances own abilities and grants allies bonus true damage inside
 
 ##### Supreme+
 
@@ -3149,11 +3149,11 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ##### Ultimate
 
-frontal arc ally heal and ATK boost
+heal and buff allies within range
 
 ##### Skill 1
 
-sustained heal weakest ally over time
+heal one ally over time
 
 ##### Skill 2
 
@@ -3165,7 +3165,7 @@ combat max HP increase
 
 ##### Mythic+
 
-battle-start front ally grants skill buffs
+battle-start heal and buff the ally on tile in front
 
 ##### Supreme+
 
@@ -3260,7 +3260,7 @@ grant growth buff to ally summon, boosting haste and life drain
 
 ##### Skill 2
 
-summon ranged ally with rapid fire volleys
+summon a ranged ally
 
 ##### Legendary+
 
@@ -3268,7 +3268,7 @@ combat ATK bonus with multiple summons on field
 
 ##### Mythic+
 
-summon entrance triggers shield and growth buff
+grant permanent shield to each allied summon when they enter battle
 
 ##### Supreme+
 
@@ -3356,11 +3356,11 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 ##### Ultimate
 
-reposition rear; sustained area true damage
+deal heavy damage to enemies in a rectangular area
 
 ##### Skill 1
 
-conceal then amplify state replaces normal attacks
+conceal magic then amplify, replacing normal attacks with enhanced attacks that can stun
 
 ##### Skill 2
 
@@ -3368,15 +3368,15 @@ area burn applies vitality reduction
 
 ##### Legendary+
 
-combat ATK bonus after amplification
+battle ATK increase
 
 ##### Mythic+
 
-battle-start damage cap on front ally
+reduce damage taken for self and frontmost ally
 
 ##### Supreme+
 
-post-amplify throw top damage dealer to knock down
+knock up then knock down the highest cumulative damage dealer
 
 ### Units Frieren benefits from
 
@@ -3457,11 +3457,11 @@ Common buffers are **Hugin**, **Twins**, or **Lyca**.
 
 ##### Ultimate
 
-consume energy for AoE then build slow-forming circular zone
+AoE damage then create energy-consuming zone; when full, gain buff and skill casts spawn shadow duplicates
 
 ##### Skill 1
 
-immobilize top attacker; target loses HP from prior healing
+immobilize top attacker, causing HP-loss based on healing received, then AoE in wider range
 
 ##### Skill 2
 
@@ -3473,7 +3473,7 @@ ATK grows after circular zone fully forms
 
 ##### Mythic+
 
-zone summons clone of marked ally
+once zone fully forms, summon temporary shadow of an ally to fight alongside
 
 ##### Supreme+
 
@@ -3567,11 +3567,11 @@ AoE sleep nearby enemies and heal allies
 
 ##### Skill 1
 
-leap stomp creates AoE healing zone
+leap forward at battle start, interrupting nearby enemies and creating a healing zone
 
 ##### Skill 2
 
-taunt one enemy while gaining large shield
+stun an enemy while gaining a shield
 
 ##### Legendary+
 
@@ -3579,11 +3579,11 @@ battle damage taken reduction
 
 ##### Mythic+
 
-healing zone bonus; entering ally gains unaffected briefly
+enhance healing zone healing; reduce skill cooldown whenever ally is healed by zone
 
 ##### Supreme+
 
-stomp stuns instead of interrupting; allies entering gain shield
+battle-start leap stuns enemies instead of interrupting
 
 ### Units Gerda benefits from
 
@@ -3659,15 +3659,15 @@ Common buffers are **Hepler** or **Hugin**.
 
 ##### Ultimate
 
-ensnare enemies, draining energy and HP; self-heals equal amount
+immobilize enemies in range, draining their HP and energy, unaffected by control during effect
 
 ##### Skill 1
 
-trigger projectile when absorbing threshold damage
+trigger retaliatory projectile at damage threshold, reducing attacker haste
 
 ##### Skill 2
 
-taunt enemy targeting weakest ally with instant self-heal
+taunt an enemy and recover HP
 
 ##### Legendary+
 
@@ -3675,7 +3675,7 @@ battle vitality scales with ultimate casting
 
 ##### Mythic+
 
-low HP triggers DEF surge and sustained HP regeneration
+low HP triggers Phys and Magic DEF boost and HP recovery
 
 ##### Supreme+
 
@@ -3768,15 +3768,15 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-battle-start empower adjacent ally in field; both steadfast
+Passive: summon field on rear ally's tile, enhancing them; Active: massive AoE damage, setting area on fire
 
 ##### Skill 1
 
-multi-shot burst; empowered ally coordinates strike and stun
+fire cannons multiple times, dealing damage to enemies in targeted areas
 
 ##### Skill 2
 
-shield self and allies behind; strengthen field ATK speed
+shield self and all allies behind, also empowering the field ally
 
 ##### Legendary+
 
@@ -3871,15 +3871,15 @@ Common buffers are **Hugin**, **Hepler**, or **Twins**.
 
 ##### Ultimate
 
-Passive: build-up heavy normal; Active: immobilizing AoE damage
+rain arrows on enemies within range, dealing damage
 
 ##### Skill 1
 
-third attack in cycle: lightning silence splash stun
+fire arrow dealing splash damage and applying CC to nearby enemies
 
 ##### Skill 2
 
-second attack in cycle: fire burn with vitality reduction
+fire arrow dealing high damage and applying burn DoT to target
 
 ##### Legendary+
 
@@ -3887,7 +3887,7 @@ ATK speed grows higher when no nearby enemies present
 
 ##### Mythic+
 
-combined lightning-fire first attack also burns splash
+simultaneously fire both arrows, applying all effects of each at once
 
 ##### Supreme+
 
@@ -3971,15 +3971,15 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-channel then single-target magic damage
+single-target fireball dealing damage
 
 ##### Skill 1
 
-heal weakest ally, boosting their ATK briefly
+heal weakest ally and buff them
 
 ##### Skill 2
 
-self-heal when HP falls below threshold
+self-heal
 
 ### Units Hammie benefits from
 
@@ -4058,11 +4058,11 @@ sustained multi-strike preventing target HP recovery
 
 ##### Skill 1
 
-dive surfacing to damage frontmost; assists and defeats reset cooldown
+dash to weakest enemy, dealing damage and knocking them up
 
 ##### Skill 2
 
-enhanced state boosts crit and haste; ends by absorbing weakest unit
+battle-start enhanced state extended by assists or defeats; on exit, uncontrolled devour a non-summoned unit
 
 ##### Legendary+
 
@@ -4070,11 +4070,11 @@ life drain increases with assists and defeats
 
 ##### Mythic+
 
-absorb defeated unit stats and max HP temporarily
+gain ATK and max HP on assist or defeat
 
 ##### Supreme+
 
-multiple assists in one ultimate restore energy
+after enough assists or defeats, ultimate recovers energy on cast
 
 ### Units Harak benefits from
 
@@ -4174,11 +4174,11 @@ Common buffers are **Rowan**, **Hepler**, or **Hugin**.
 
 ##### Ultimate
 
-enter alternate form with AoE taunt and charge stacks
+alternate form taunt consumes stacks; revert deals AoE damage and blind
 
 ##### Skill 1
 
-alternate form AoE stun; base form single haste reduction stun
+true form: single target damage and haste reduction; alternate form: AoE damage and stun
 
 ##### Skill 2
 
@@ -4309,11 +4309,11 @@ sustained AoE heal over time for all allies
 
 ##### Skill 1
 
-large single-target heal; extra during ultimate
+heal a single ally
 
 ##### Skill 2
 
-heal ally, cleansing dispellable debuffs
+heal allies, cleansing dispellable debuffs
 
 ##### Legendary+
 
@@ -4420,15 +4420,15 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-sustained frontal multi-slash then true damage sweep
+repeated frontal slashes finishing with a massive sweep
 
 ##### Skill 1
 
-dash to two top damage dealers knocking both down
+dash to two enemies, striking and knocking them down
 
 ##### Skill 2
 
-battle-start multi-class formation inspires shared stats and shield
+Passive: battle-start formation with allies; Active: deal damage to frontal enemies
 
 ##### Legendary+
 
@@ -4436,7 +4436,7 @@ battle haste increase
 
 ##### Mythic+
 
-formation members receive class-based stat and max HP buffs
+battle-start petals grant blessings to battlefield allies
 
 ##### Supreme+
 
@@ -4511,7 +4511,7 @@ Common buffers are **Mikola**, **Hepler**, or **Hugin**.
 
 ##### Ultimate
 
-sequential single-target shots on each enemy with adjacent splash
+fire cannons dealing AoE damage to enemies
 
 ##### Skill 1
 
@@ -4527,11 +4527,11 @@ ATK grows higher during intangible phase
 
 ##### Mythic+
 
-summon minions at start; minion defeat triggers AoE explosion
+summon minions; on defeat, they deal AoE damage and reduce enemy energy
 
 ##### Supreme+
 
-shots reduce target DEF stacking; energy and vitality drain
+cannon hits reduce target Phys DEF
 
 ### Units Hodgkin benefits from
 
@@ -4606,7 +4606,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 
 ##### Ultimate
 
-enhance top damage dealer with permanent combat stat boosts
+boost ATK and Haste of the ally with highest cumulative damage
 
 ##### Skill 1
 
@@ -4614,7 +4614,7 @@ large shield granted to weakest ally
 
 ##### Skill 2
 
-adjacent ally gets ATK boost and energy whenever shielded
+boost ATK of ally directly behind; that ally recovers energy when caster shields
 
 ##### Legendary+
 
@@ -4622,7 +4622,7 @@ battle haste increase
 
 ##### Mythic+
 
-ultimate generates enhanced shields for two weakest allies
+ultimate also grants shields to weakest allies
 
 ##### Supreme+
 
@@ -4709,11 +4709,11 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-place field markers at start and on enemy HP thresholds
+deal damage to all enemies
 
 ##### Skill 1
 
-leap to field markers, dealing area damage; immune while leaping
+leap to an active marker, dealing area damage, then deactivate it
 
 ##### Skill 2
 
@@ -4721,15 +4721,15 @@ dodge fatal blows by leaping to markers with HP recovery
 
 ##### Legendary+
 
-life drain scales with marker first-use trigger
+life drain elevated after first fatal blow dodge trigger
 
 ##### Mythic+
 
-leaping high-HP targets reduces target healing
+extend leap-explosion range when HP ratio is high
 
 ##### Supreme+
 
-extra field marker at start placed on tile with most enemies
+battle-start ultimate summons an extra marker
 
 ### Units Igor benefits from
 
@@ -4792,7 +4792,7 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 
 ##### Ultimate
 
-multi-stat debuffs expose weakness; guaranteed crit true damage on target
+fire silencing arrow, preventing stat gains and permanently reducing target DEF
 
 ##### Skill 1
 
@@ -4808,7 +4808,7 @@ ATK grows while an enemy has exposed weakness
 
 ##### Mythic+
 
-ATK speed burst each time exposed weakness bonus effects
+ATK speed burst each time exposed weakness bonus triggers
 
 ##### Supreme+
 
@@ -4906,7 +4906,7 @@ Common buffers are **Lyca**, **Ravion**, or **Hugin**.
 
 ##### Ultimate
 
-track companion buff types to build stacked debuff counts
+select frontmost ally as companion, granting them powerful buffs on ultimate cast
 
 ##### Skill 1
 
@@ -4914,7 +4914,7 @@ heal companion and deal damage to adjacent foes
 
 ##### Skill 2
 
-grant companion unaffected after accumulated control; reduce attacker ATK
+make companion unaffected after control; reduce attacker ATK when companion takes damage
 
 ##### Legendary+
 
@@ -4922,7 +4922,7 @@ battle assistance stat increase
 
 ##### Mythic+
 
-cast stat debuffs matching tracked buff types on top attacker
+debuff an enemy hero when casting ultimate
 
 ##### Supreme+
 
@@ -5014,7 +5014,7 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Hugin**.
 
 ##### Ultimate
 
-prioritize marked enemy; knock back strike on mark
+knock back an enemy and apply mark
 
 ##### Skill 1
 
@@ -5022,7 +5022,7 @@ charge out-of-range marked enemy, stunning them
 
 ##### Skill 2
 
-mark reduces enemy DEF; mark kill triggers area heal
+mark reduces enemy Phys DEF; defeating marked enemy grants self buffs
 
 ##### Legendary+
 
@@ -5126,11 +5126,11 @@ inspire all allies with damage reduction and stat buffs
 
 ##### Skill 1
 
-heal weakest ally; companion gains bonus energy on hit
+feed an ally or herself, recovering HP and increasing stats
 
 ##### Skill 2
 
-throw projectile at enemy; companion stuns adjacent enemies
+deal high damage and apply debuffs to enemy
 
 ##### Legendary+
 
@@ -5138,11 +5138,11 @@ battle haste increase
 
 ##### Mythic+
 
-post-reduction damage converted to team shield
+gain extra shield when casting ultimate
 
 ##### Supreme+
 
-allies receiving heals gain vitality boost temporarily
+ally fed by heal gains temporary vitality boost
 
 ### Units Koko benefits from
 
@@ -5246,7 +5246,7 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-immobilize adjacent enemy inside hunting zone AoE
+hunting zone reduces damage taken and outside healing; allies inside gain ATK and life drain
 
 ##### Skill 1
 
@@ -5254,7 +5254,7 @@ powerful slash with proportional self-shield
 
 ##### Skill 2
 
-leap slam with knock down on target
+knock down an enemy, dealing damage
 
 ##### Legendary+
 
@@ -5262,11 +5262,11 @@ battle ATK increase
 
 ##### Mythic+
 
-enhanced attacks unlock inside circular zone after first kill
+first assist or defeat inside hunting circle permanently enhances skills
 
 ##### Supreme+
 
-assists reposition the circular zone; allies inside gain penetration
+assist or defeat inside zone repositions caster and circle to new target
 
 ### Units Kordan benefits from
 
@@ -5355,11 +5355,11 @@ arc sweep immobilize and knock back adjacent enemies
 
 ##### Skill 1
 
-jump to weakest ally shielding both then dash true damage
+jump to an ally, granting them a shield and dealing true damage to nearby enemies
 
 ##### Skill 2
 
-guaranteed crit on distant targets; crit rate scales crit damage
+guaranteed critical strike on distant targets
 
 ##### Legendary+
 
@@ -5458,15 +5458,15 @@ Common buffers are **Lyca**, **Hugin**, or **Twins**.
 
 ##### Ultimate
 
-large knock down slash, applying DEF shatter stacks
+slash to knock down an enemy and reduce their Phys DEF
 
 ##### Skill 1
 
-single slash, applying armor shatter stack
+deal damage to a single enemy, reducing their Phys DEF
 
 ##### Skill 2
 
-heavy strike on max-shattered enemy, draining life
+strike enemies with low Phys DEF, inflicting Vulnerable, increasing physical damage taken with life drain
 
 ##### Legendary+
 
@@ -5474,7 +5474,7 @@ battle ranged DEF increase
 
 ##### Mythic+
 
-isolated positioning grants large shield and control immunity
+isolated positioning grants battle-start shield and life drain
 
 ##### Supreme+
 
@@ -5561,15 +5561,15 @@ Common buffers are **Hugin**, **Rowan**, or **Twins**.
 
 ##### Ultimate
 
-Passive: normal attacks explode hitting all adjacent; Active: bombardment
+Passive: all skills deal friendly fire damage; Active: relentlessly bombard enemy side
 
 ##### Skill 1
 
-battle-start debris blocks center tile and marks it
+battle-start bomb enemy border tiles, creating movement-blocking debris; Active: knock up an enemy
 
 ##### Skill 2
 
-bouncing projectile swallows frontmost then releases at rearmost
+devour frontmost enemies and deliver them to enemy side, triggering bouncing explosions
 
 ##### Legendary+
 
@@ -5581,7 +5581,7 @@ enemies gain explosive debuff; defeated become detonation traps
 
 ##### Supreme+
 
-ATK speed scales inversely with enemies on own side
+ATK speed and Ranged DEF scale with enemy count on own half
 
 ### Units Kulu benefits from
 
@@ -5671,15 +5671,15 @@ Common buffers are **Lyca**, **Mikola**, or **Twins**.
 
 ##### Ultimate
 
-summon slow-moving armor construct with sustained combat
+summon armor construct that self-regenerates after defeat
 
 ##### Skill 1
 
-wide frontal confusion and DEF reduction on enemies
+confuse enemies in frontal area
 
 ##### Skill 2
 
-collect resource tokens from defeated units to trigger team heal
+collect ingredients from defeated enemies to grant ally buffs
 
 ##### Legendary+
 
@@ -5687,11 +5687,11 @@ battle ATK increase
 
 ##### Mythic+
 
-units drop bonus token when defeated above HP threshold
+battle-start analysis makes enemies drop more ingredients on defeat
 
 ##### Supreme+
 
-max HP grows with each unique resource type collected
+max HP permanently grows with each ingredient collected
 
 ### Units Laios benefits from
 
@@ -5782,7 +5782,7 @@ isolate top attacker in one-on-one combat
 
 ##### Skill 1
 
-counter adjacent melee attack and counterattack with stun
+dodge normal attacks, then counter with an AoE kick
 
 ##### Skill 2
 
@@ -5794,7 +5794,7 @@ battle haste increase
 
 ##### Mythic+
 
-full potential in duel for super multi-hit kick
+gain stat boost and enhanced kick ability during duel
 
 ##### Supreme+
 
@@ -5886,19 +5886,19 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ##### Ultimate
 
-interrupt enemy ultimate with anti-ultimate projectile draining energy
+enter defensive state and interrupt the enemy's ultimate
 
 ##### Skill 1
 
-invincible dash multi-hit; continues after defensive trigger
+deal multiple attacks while invincible
 
 ##### Skill 2
 
-experience from attacks; growth stacks ATK and enhanced true hits
+progressively grow stronger, each growth boosting ATK and enhancing attacks
 
 ##### Legendary+
 
-battle penetration bonus scales with dash usage
+battle penetration increase
 
 ##### Mythic+
 
@@ -5998,15 +5998,15 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ##### Ultimate
 
-AoE zone on frontmost enemy, dealing sustained damage and haste reduction
+summon storm dealing sustained damage and reducing Haste to enemies within range
 
 ##### Skill 1
 
-link farthest and nearest enemy chain-transferring damage
+battle-start link nearest and farthest enemy heroes with a chain
 
 ##### Skill 2
 
-protect weakest ally with dodge haste and sustained HP regeneration
+protect weakest ally with dodge, haste, and sustained HP regeneration
 
 ##### Legendary+
 
@@ -6018,7 +6018,7 @@ chain break heals allies; resets for multiple casts per battle
 
 ##### Supreme+
 
-chain transfer stuns on break; protected ally gains unaffected
+protected ally also gains unaffected status
 
 ### Units Lorsan benefits from
 
@@ -6123,7 +6123,7 @@ slam target to origin tile or slam adjacent area, stunning
 
 ##### Skill 1
 
-gain shield then shoulder-charge disabling enemy
+gain shield, then interrupt and disarm an enemy
 
 ##### Skill 2
 
@@ -6135,11 +6135,11 @@ battle max HP increase
 
 ##### Mythic+
 
-steadfast; gain shield from each adjacent supporting ally
+remain steadfast; gain shield for each ally behind
 
 ##### Supreme+
 
-adjacent allies reduce damage taken; melee hit triggers free ultimate
+recover HP when casting cleanse skill
 
 ### Units Lucca benefits from
 
@@ -6224,7 +6224,7 @@ melee knock back, gaining a personal shield
 
 ##### Skill 2
 
-gain heal for weakest ally whenever gaining a shield
+heal an ally whenever gaining a shield
 
 ##### Legendary+
 
@@ -6232,7 +6232,7 @@ battle healing stat increase
 
 ##### Mythic+
 
-frontal line attack reduces enemy ATK; gain shield per hit
+frontal AoE deals damage and reduces enemy ATK
 
 ##### Supreme+
 
@@ -6335,7 +6335,7 @@ summon companion; AoE knock up and stun
 
 ##### Skill 1
 
-strike top damage dealer, stunning and returning to tile
+strike the highest cumulative damage dealer, stunning them
 
 ##### Skill 2
 
@@ -6351,7 +6351,7 @@ companion shields weakest ally with large barrier
 
 ##### Supreme+
 
-ally at full energy grants companion ATK speed boost
+reaching max energy while companion is active boosts companion ATK speed
 
 ### Units Lucy benefits from
 
@@ -6422,15 +6422,15 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-generate healing field at position restoring adjacent allies
+move healing field to designated tile, restoring HP for allies within range
 
 ##### Skill 1
 
-throw projectiles at top attacker, dealing sustained HP-loss
+Passive: field healing restored when enemies lose HP; Active: deal damage and HP-loss to top attacker
 
 ##### Skill 2
 
-move field to weakest ally, absorbing nearby enemy HP
+move field to selected ally's position, absorbing nearby enemy HP to restore field healing
 
 ##### Legendary+
 
@@ -6438,7 +6438,7 @@ battle healing stat scales with field total healing stored
 
 ##### Mythic+
 
-field produces consumables that AoE heal and damage on explode
+field periodically produces berries that explode, damaging enemies and healing allies within range
 
 ##### Supreme+
 
@@ -6526,7 +6526,7 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-charge to tile, pushing enemies along; taunt on arrival
+charge in line, dealing damage and knocking enemies back toward selected tile
 
 ##### Skill 1
 
@@ -6534,7 +6534,7 @@ large shield growing per adjacent enemy
 
 ##### Skill 2
 
-stomp, stunning adjacent enemies; cooldown reduced per hit
+stomp dealing AoE damage
 
 ##### Legendary+
 
@@ -6643,15 +6643,15 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ##### Ultimate
 
-line shot leaves AoE aura zone buffing allies
+fire line shot; allies within range summon meteors with normal attacks
 
 ##### Skill 1
 
-buff all allies ATK speed and grant energy at battle start
+buff all allies ATK speed; grant energy on the first cast
 
 ##### Skill 2
 
-AoE rain reduces enemy DEF
+AoE meteor rain reduces enemy Phys DEF
 
 ##### Legendary+
 
@@ -6659,11 +6659,11 @@ battle ATK speed increase
 
 ##### Mythic+
 
-persistent companion attacks with normal attacks; enhanced shot breaks shields
+summon meteors to assist in battle
 
 ##### Supreme+
 
-ultimate hit permanently reduces target DEF
+ultimate hit reduces target Phys DEF
 
 ### Units Lyca benefits from
 
@@ -6752,7 +6752,7 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-Passive: channeling stacks permanent haste; Active: periodic line AoE damage across battlefield
+Passive: all skills require channeling to cast; Active: continuously summon companions to attack enemies
 
 ##### Skill 1
 
@@ -6764,15 +6764,15 @@ AoE blind and ally heal after channeling
 
 ##### Legendary+
 
-battle haste grows with each completed channel
+battle haste increase with extra bonus while channeling ultimate
 
 ##### Mythic+
 
-channel revives one allied hero once per battle
+revive a fallen ally after channeling completes
 
 ##### Supreme+
 
-active ally buffs grant extra energy recovery while channeling
+recover extra energy while buffed by allies
 
 ### Units Marcille benefits from
 
@@ -6859,7 +6859,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-leap and shoot two closest targets
+leap to far location while shooting targets
 
 ##### Skill 1
 
@@ -6879,7 +6879,7 @@ ATK stacks from each ally ultimate; true damage at max stacks
 
 ##### Supreme+
 
-required no-enemy distance for ATK speed bonus shortened
+trigger ATK speed bonus condition more easily
 
 ### Units Marilee benefits from
 
@@ -6953,15 +6953,15 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-multi-hit blast then charmed AoE burst on targets
+multi-hit AoE dealing damage and charming all enemies in target area
 
 ##### Skill 1
 
-melee hits cause HP-loss; allies gain haste from it
+frontal arc whip causes HP-loss to all units; allies hit gain haste
 
 ##### Skill 2
 
-decoy taunts all enemies to rush toward it
+pull all enemies toward a designated position
 
 ##### Legendary+
 
@@ -6969,11 +6969,11 @@ life drain and ATK scale with received healing
 
 ##### Mythic+
 
-summon sacrificial minions to block fatal blows
+summon voidlings that attack enemies; sacrifice one when in danger to become untargetable and recover HP
 
 ##### Supreme+
 
-charmed and taunted targets take increased damage
+charmed or bewitched enemies take increased damage
 
 ### Units Mehira benefits from
 
@@ -7064,11 +7064,11 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ##### Ultimate
 
-mobile aura zone follows caster; nearby allies gain haste and ranged DEF; damage threshold triggers heal wave
+generate Courage Sphere buffing nearby allies; damage threshold triggers heal for all in-range allies
 
 ##### Skill 1
 
-control arena; side with more units gains healing and ATK
+create arena in center; buff all allies when own side controls it
 
 ##### Skill 2
 
@@ -7076,11 +7076,11 @@ heal self and two weakest allies with DEF boost
 
 ##### Legendary+
 
-ATK scales while own side holds arena control
+battle ATK increase
 
 ##### Mythic+
 
-enhanced aura grants combat fury with sustained area damage
+Courage Sphere enhances over time, dealing continuous DoT to enemies adjacent to in-range allies
 
 ##### Supreme+
 
@@ -7183,11 +7183,11 @@ battle ATK speed increase
 
 ##### Mythic+
 
-post-first-ultimate AoE fire becomes permanent normal; burns added
+after first ultimate, area fireball becomes the normal attack permanently
 
 ##### Supreme+
 
-extend burn duration; ATK speed surge on each burn applied
+extend burn DoT duration
 
 ### Units Mirael benefits from
 
@@ -7258,11 +7258,11 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-start full energy; execute low HP targets with true damage
+strike an enemy hero, dealing more damage to lower HP ratio targets
 
 ##### Skill 1
 
-pull distant enemy hero; HP-loss damage per tile pulled
+pull enemy hero outside attack range toward self
 
 ##### Skill 2
 
@@ -7274,11 +7274,11 @@ ATK grows after each assist or defeat
 
 ##### Mythic+
 
-execute kill triggers shockwave healing all allies
+ultimate kill releases shockwave damaging enemies and healing allies
 
 ##### Supreme+
 
-chain pull applies slow and permanent max HP reduction
+recover energy after defeating enemy with ultimate
 
 ### Units Nara benefits from
 
@@ -7360,15 +7360,15 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Rowan**.
 
 ##### Ultimate
 
-mode choice: frontal stun AoE or single high damage strike
+mode choice: frontal AoE with stun, or frontal AoE with greater damage
 
 ##### Skill 1
 
-mode choice: haste debuff attack or HP-based knock down damage
+mode choice: haste debuff strike on top damage dealer, or knock down adjacent enemy
 
 ##### Skill 2
 
-rage grants ATK and DEF boost after first ally defeat
+first ally defeat boosts ATK and DEF; specific ally's defeat additionally boosts crit
 
 ##### Legendary+
 
@@ -7457,15 +7457,15 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ##### Ultimate
 
-guaranteed critical throw, dealing true damage then detonate stacks
+mark enemy as Prey; throw spear to detonate all Rend stacks
 
 ##### Skill 1
 
-crit hits deal extra HP-based true damage reducing target max HP
+crit spear throws apply Rend; Rend deals damage when afflicted enemy casts ultimate
 
 ##### Skill 2
 
-target highest healer with damage stun and anti-heal
+target highest healer with damage, stun, and anti-heal
 
 ##### Legendary+
 
@@ -7473,11 +7473,11 @@ crit stat grows after accumulating debuff stacks
 
 ##### Mythic+
 
-debuffed target crit resist reduced; allies add stacks on crit hits
+allies can apply Rend stacks to Prey on dealing damage
 
 ##### Supreme+
 
-crit damage boosts further per point of crit rate
+each critical hit gains increased crit DMG boost
 
 ### Units Nazrik benefits from
 
@@ -7554,7 +7554,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-Passive: prolonged control inflicts sustained DoT debuff; Active: empowerment state
+Passive: drowning DoT on controlled enemies; Active: ATK boost; attacks bounce between drowning targets
 
 ##### Skill 1
 
@@ -7570,11 +7570,11 @@ battle ATK speed increase
 
 ##### Mythic+
 
-battle-start apply sustained DoT to rearmost enemy immediately
+battle-start apply drowning to rearmost enemy, reducing ATK and Haste; drowning enemies take DoT while controlled
 
 ##### Supreme+
 
-all enemies DoT-afflicted grants permanent empowered state
+all non-summon enemies drowning grants permanent empowerment and penetration increase
 
 ### Units Nerion benefits from
 
@@ -7661,15 +7661,15 @@ Common buffers are **Hepler**, **Lyca**, or **Ravion**.
 
 ##### Ultimate
 
-block fatal blow on weakest ally; they return at partial HP with reduced damage until HP depletes
+store one ally's soul; they continue fighting in spirit form after fatal blow
 
 ##### Skill 1
 
-attack weakest enemy with HP-loss bonus damage
+attack weakest enemy, dealing more damage the lower their HP
 
 ##### Skill 2
 
-drain all enemy HP restoring equal amount to weakest ally
+drain all enemies' HP to heal the weakest ally
 
 ##### Legendary+
 
@@ -7677,11 +7677,11 @@ battle max HP increase
 
 ##### Mythic+
 
-battle-start automatically casts fatal-blow save on nearest ally
+cast ultimate at battle start without consuming energy
 
 ##### Supreme+
 
-replace normal attacks with drain; bonus DEF to specific allies
+attack briefly prevents target from recovering HP
 
 ### Units Niru benefits from
 
@@ -7753,11 +7753,11 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-apply persistent poison DoT to target that grows on hits
+apply persistent DoT to a target
 
 ##### Skill 1
 
-triple penetrating normal attack sequence
+triple-shot normal attack sequence
 
 ##### Skill 2
 
@@ -7773,7 +7773,7 @@ instantly defeat poisoned enemies below HP threshold
 
 ##### Supreme+
 
-normal attack bonus damage scales with DoT rate
+triple-shot deals bonus damage against poisoned targets
 
 ### Units Odie benefits from
 
@@ -7839,27 +7839,27 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-AoE frighten all units fleeing; enemies ATK reduced after
+AoE CC on all units, friend and foe; caster alone is unaffected
 
 ##### Skill 1
 
-pull rearmost ally into invincible enclosure then release empowered
+at battle start, pull an ally into the box and restore their energy
 
 ##### Skill 2
 
-each skill cast restores released ally and spreads debuff
+inflict enemy debuffs based on accumulated Corruption stacks
 
 ##### Legendary+
 
-battle max HP grows with debuff stack count
+max HP grows during battle, increased further after box corruption
 
 ##### Mythic+
 
-enclosure persists after defeat continuing to fire debuffs
+box remains on battlefield and is indestructible after caster defeat
 
 ##### Supreme+
 
-pulled ally permanently immune to AoE frighten effect
+ally inside the box is unaffected by caster ultimate
 
 ### Units Pandora benefits from
 
@@ -7934,19 +7934,19 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 
 ##### Ultimate
 
-meditate then burst AoE entering sustained drain-powered buff state
+channel then AoE burst; enter stance with ATK and haste, strikes block enemy energy recovery
 
 ##### Skill 1
 
-large strike with bonus damage based on target current HP
+deal heavy damage to a single enemy
 
 ##### Skill 2
 
-personal shield releases burst damage on expiry
+gain shield, remaining unaffected while active; shield expiry, break, or reapplication deals damage
 
 ##### Legendary+
 
-battle ATK grows while in enhanced combat buff state
+battle ATK increase
 
 ##### Mythic+
 
@@ -8043,15 +8043,15 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ##### Ultimate
 
-Passive: mark enemies; Active: burst hits all marked targets
+mark target with flower and deal AoE damage
 
 ##### Skill 1
 
-ATK speed and normal damage boost to self and nearest ally
+boost ATK speed and normal attack damage for herself and an ally
 
 ##### Skill 2
 
-periodic line attack deals damage and restores energy
+periodic line attack hitting enemies along path after several normal attacks
 
 ##### Legendary+
 
@@ -8063,7 +8063,7 @@ mark at start; normal attacks hit extra targets after accumulating marks
 
 ##### Supreme+
 
-reduce normal attacks needed to trigger periodic trigger
+fewer normal attacks needed to trigger periodic line attack
 
 ### Units Parisa benefits from
 
@@ -8122,15 +8122,15 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 ##### Ultimate
 
-advance with repeated multi-hit then terminal shield bash stun
+continuously march forward, dealing damage with repeated spear swings
 
 ##### Skill 1
 
-broad spin, dealing damage while gaining shield and ATK speed
+swing spear and shield, dealing damage to nearby enemies
 
 ##### Skill 2
 
-nearby terrain buff boosts ally ATK and DEF; low HP threshold expands own max HP
+grant buffs to allies standing on terrain zone tiles
 
 ##### Legendary+
 
@@ -8138,7 +8138,7 @@ ATK boost grows with temporary ally buffs active
 
 ##### Mythic+
 
-ally buffs amplified; extra damage and damage reduction from each
+amplify effects of all temporary stat buffs received
 
 ##### Supreme+
 
@@ -8238,7 +8238,7 @@ Common buffers are **Lyca**, **Hugin**, or **Rowan**.
 
 ##### Ultimate
 
-clone on same row shares damage reduction with caster until one falls
+Passive: sacrifice max HP to summon an Illusion that uses all skills; Active: AoE damage nearby, recovering HP per hit
 
 ##### Skill 1
 
@@ -8246,7 +8246,7 @@ Passive: clone and self grant rear allies stat contracts; Active: frontal multi-
 
 ##### Skill 2
 
-single-target hit applies sustained HP drain, haste reduction, and vitality reduction
+apply DoT and stat reduction to target
 
 ##### Legendary+
 
@@ -8254,7 +8254,7 @@ DEF boost shared with clone; energy cross-transfers on damage
 
 ##### Mythic+
 
-clone defeat triggers taunt burst stun
+if Illusion is defeated first, deal damage to an enemy and stun them
 
 ##### Supreme+
 
@@ -8341,11 +8341,11 @@ Common buffers are **Smokey & Meerky**, **Rowan**, or **Hewynn**.
 
 ##### Ultimate
 
-immobilize two rearmost then teleport them onto target tile
+immobilize and teleport enemies
 
 ##### Skill 1
 
-scatter magic missiles at enemies; out-of-control hits allies
+fire magic missiles at enemies in quick succession
 
 ##### Skill 2
 
@@ -8357,11 +8357,11 @@ battle haste scales with controlled consecutive casts
 
 ##### Mythic+
 
-first cast guaranteed; mutation adds true damage and immobilize
+skill casts may randomly trigger mutation
 
 ##### Supreme+
 
-teleport targets take extra max HP damage on delayed landing
+teleported targets fall through portals, taking additional damage
 
 ### Units Pippa benefits from
 
@@ -8452,15 +8452,15 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ##### Ultimate
 
-multi-hit fan, dealing damage scaling on target HP-loss
+multi-hit single target, dealing extra damage scaling with target's HP-loss
 
 ##### Skill 1
 
-assign objectives to two rearmost allies; completion rewards energy and ATK
+assign objectives to allies; completion grants energy and ATK and unlocks knock down strike
 
 ##### Skill 2
 
-teleport multiple times to areas with most enemies then retreat to safety
+repeated teleports, dealing area damage on early jumps, then repositioning away from enemies
 
 ##### Legendary+
 
@@ -8582,15 +8582,15 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-temporarily removes enemy from battlefield alone or with caster
+teleport with an enemy to another dimension, removing both from battlefield
 
 ##### Skill 1
 
-battle-start swap symmetrical ally-enemy positions; damage heals ally
+battle-start swap symmetrical ally-enemy positions
 
 ##### Skill 2
 
-multi-hit attack on healthiest enemy while off battlefield
+multi-hit attack knocking target into the air
 
 ##### Legendary+
 
@@ -8598,7 +8598,7 @@ position swap boosts ally ATK or reduces enemy ATK
 
 ##### Mythic+
 
-swap enemy takes permanent damage increase
+position swap wounds enemy to take more damage, while reducing an ally's damage taken
 
 ##### Supreme+
 
@@ -8689,15 +8689,15 @@ Common buffers are **Hewynn**, **Smokey & Meerky**, or **Mikola**.
 
 ##### Ultimate
 
-continuous walking arc fire burst with loaded-shot cycle
+Passive: move while attacking; Active: fire at enemies, loading Blast Ammo to enhance follow-up normal attacks
 
 ##### Skill 1
 
-Passive: crit boost; Active: control immunity and self-heal
+increase Crit and gain control immunity when taking CC
 
 ##### Skill 2
 
-load knock back shot for next attack
+knock back nearby enemies, dealing damage
 
 ##### Legendary+
 
@@ -8709,7 +8709,7 @@ movement loads splash shots for enhanced area attacks
 
 ##### Supreme+
 
-control immunity cooldown reduced; blast ultimate freezes time
+control immunity skill cooldown reduced
 
 ### Units Rhys benefits from
 
@@ -8799,7 +8799,7 @@ battle haste bonus before first heal restock
 
 ##### Mythic+
 
-multiple heal uses unlock enhanced heal with permanent DEF boost
+place a super heal that recovers HP and permanently increases the ally's Phys and Magic DEF
 
 ##### Supreme+
 
@@ -8904,11 +8904,11 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-teleport to enemy, immobilize, drain energy, and plant marker
+teleport to enemy, plant marker that deals periodic damage and drains energy
 
 ##### Skill 1
 
-self-heal proportional to all damage dealt; excess becomes shield
+Passive: heal on damage dealt, excess becomes shield; Active: damage triggers nearby markers on target
 
 ##### Skill 2
 
@@ -8920,11 +8920,11 @@ damage reduction grows per active marker count
 
 ##### Mythic+
 
-markers weaken attacker damage and accelerate DoT interval
+each ultimate cast shortens marker DoT interval
 
 ##### Supreme+
 
-battle-start markers on allied heroes grant protective shields
+battle-start plant markers in nearby allies
 
 ### Units Saida benefits from
 
@@ -9025,7 +9025,7 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 
 ##### Ultimate
 
-nine strikes on highest-HP enemy; each hit scales on target current HP
+summon flying swords to deal damage to an enemy
 
 ##### Skill 1
 
@@ -9033,7 +9033,7 @@ arc strike; extra hit when target is low HP
 
 ##### Skill 2
 
-imprison low HP enemy permanently, absorbing their ATK
+deal massive damage to low-HP enemy and imprison them
 
 ##### Legendary+
 
@@ -9041,11 +9041,11 @@ battle damage taken reduction
 
 ##### Mythic+
 
-charge state triggers free skill casts on form change or bind
+arc skill has no cooldown at battle start or after imprisoning an enemy, with guaranteed extra use
 
 ##### Supreme+
 
-imprisoned enemy defeat grants shield and self-healing
+heal self after imprisoning an enemy
 
 ### Units Salazer benefits from
 
@@ -9129,15 +9129,15 @@ Common buffers are **Rowan**, **Lyca**, or **Hepler**.
 
 ##### Ultimate
 
-spin AoE; final hit charms enemies
+invincible while dealing continuous AoE damage
 
 ##### Skill 1
 
-frontal arc strike with HP-based extra damage and lifesteal
+arc attack gaining Life Drain
 
 ##### Skill 2
 
-buff shared with allies burns targets after enough hits
+Sparks buff shared with allies ignites enemies, reducing their Vitality and dealing DoT
 
 ##### Legendary+
 
@@ -9145,7 +9145,7 @@ battle damage taken reduction
 
 ##### Mythic+
 
-damage reduction grows for each ignited enemy hero
+ignite enemies to reduce magic damage taken for self and allies
 
 ##### Supreme+
 
@@ -9241,27 +9241,27 @@ strike has no cooldown limit when all enemies are ignited
 
 ##### Ultimate
 
-battle-start hover invincible, gaining ATK; descend triggers ground smash
+slash ground to create wide wave knocking enemies to edge, then charge to knock down targets
 
 ##### Skill 1
 
-while airborne send ally shields; descend triggers arc sweep knock down
+charge power while airborne, then descend to deal AoE damage and stun
 
 ##### Skill 2
 
-execution scales with blessings sent while airborne
+grant weakest ally a shield while airborne, deal AoE damage on landing
 
 ##### Legendary+
 
-true damage and AoE knockout available with enough surviving allies
+gain execution stacks for each shield sent while airborne
 
 ##### Mythic+
 
-aerial blessings also transfer own DEF to protected ally
+deal true damage when enough allied heroes are alive
 
 ##### Supreme+
 
-instant shield for ally when their shield drops critically low
+shielding an ally also increases their Phys and Magic DEF
 
 ### Units Scarlita benefits from
 
@@ -9341,15 +9341,15 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 
 ##### Ultimate
 
-multi-hit flash then brief bind; final leap strike with self-heal
+flash to an enemy and deal multiple attacks
 
 ##### Skill 1
 
-pounce on weakest target with lost HP bonus damage
+pounce on weakest nearby enemy, dealing damage
 
 ##### Skill 2
 
-stacks from enemy HP thresholds, boosting haste and drain
+gain stat bonuses when an enemy HP is low
 
 ##### Legendary+
 
@@ -9357,11 +9357,11 @@ battle ATK increase
 
 ##### Mythic+
 
-cooldown and energy reset on each enemy defeat
+reset pounce cooldown and recover energy on each non-summoned enemy defeat
 
 ##### Supreme+
 
-frenzy stacks further reduce target DEF on pounce
+pounce reduces extra Phys DEF when carrying specific buff
 
 ### Units Seth benefits from
 
@@ -9470,7 +9470,7 @@ dual strike then sustained wound DoT
 
 ##### Skill 2
 
-battle-start dash through foes, applying persistent DEF reduction
+convert continuous damage taken by enemies into curse value; at threshold, lash out for heavy damage
 
 ##### Legendary+
 
@@ -9570,15 +9570,15 @@ Common buffers are **Lyca**, **Hepler**, or **Rowan**.
 
 ##### Ultimate
 
-transformation form AoE normal attacks with sustained energy drain
+transform into wolf form, enhancing combat capabilities
 
 ##### Skill 1
 
-three-hit frontal arc; enhanced third hit
+three consecutive AoE strikes while in Wolf Form
 
 ##### Skill 2
 
-passive ranged DEF; transformation unaffected with drain and aura buff
+gain Ranged DEF and Life Drain while in Wolf Form
 
 ##### Legendary+
 
@@ -9690,7 +9690,7 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-Passive: summons join attacks; Active: sustained summon AoE and self-heal
+summon ghosts to bombard random enemies
 
 ##### Skill 1
 
@@ -9698,7 +9698,7 @@ HP sacrifice fires orb line, dealing area damage
 
 ##### Skill 2
 
-Passive: summon on ally losing HP; Active: true damage HP sacrifice
+sacrifice HP to deal damage; sacrifice summons for extra AoE damage
 
 ##### Legendary+
 
@@ -9775,15 +9775,15 @@ Common buffers are **Rowan**, **Lyca**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-summon flying blades that augment normal attacks
+summon flying blades to attack enemies
 
 ##### Skill 1
 
-mark triggers cluster detonation and knock down
+knock down enemy and detonate marks on them
 
 ##### Skill 2
 
-standing still sharpens blades for true damage bonus
+set up a field that enhances flying blades
 
 ##### Legendary+
 
@@ -9791,7 +9791,7 @@ battle ATK speed increase
 
 ##### Mythic+
 
-ally buff triggers energy gain and penetration boost
+receiving ally buff grants energy, penetration, and ATK SPD
 
 ##### Supreme+
 
@@ -9884,23 +9884,23 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ##### Ultimate
 
-battle-start rush mark nearest symmetrical enemy stun
+strike the highest-energy enemy, dealing damage and reducing their energy
 
 ##### Skill 1
 
-sustained rapid normal attacks in opening window; extended on mark kill
+dash to closest symmetrical enemy at battle start, dealing damage
 
 ##### Skill 2
 
-battle crit increase
+normal attacks replaced by rapid strikes briefly at battle start
 
 ##### Legendary+
 
-post-first-strike shield blocking damage
+battle crit increase
 
 ##### Mythic+
 
-rapid attacks frighten nearby enemies on mark target defeat
+gain a shield at battle start
 
 ##### Supreme+
 
@@ -9982,15 +9982,15 @@ Common buffers are **Hugin**, **Twins**, or **Hepler**.
 
 ##### Ultimate
 
-Passive: skills count as normal attacks; Active: sustained rapid strikes
+deal multiple rapid damage hits to the enemy
 
 ##### Skill 1
 
-battle-start mark two enemy roles; charge both with debuffs
+mark the top attacker and top damage-taker as priority targets
 
 ##### Skill 2
 
-double two-hit blade strike
+attack target twice
 
 ##### Legendary+
 
@@ -10074,11 +10074,11 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-sustained channeled aura healing and energy recovery nearby
+create continuous healing aura, each active cast leveling up the aroma
 
 ##### Skill 1
 
-aura boosts ally ATK; scales with affected count
+boost ATK and recover energy for allies within the aura
 
 ##### Skill 2
 
@@ -10090,7 +10090,7 @@ ATK boost grows with more allies inside aura
 
 ##### Mythic+
 
-third aura upgrade empowers and drains enemy max HP
+third aura upgrade increases damage dealt to enemies
 
 ##### Supreme+
 
@@ -10189,23 +10189,23 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-healing waves restore allies; companion rings damage foes
+continuously heal all allies; companions deal damage to all enemies
 
 ##### Skill 1
 
-battle-start send healing projectiles to all non-summoned allies
+attach healing companion to each non-summoned ally, which can bloom into enhanced form
 
 ##### Skill 2
 
-heal two weakest allies; shielded if companion present
+heal weakest allies; grant shield if companion is present
 
 ##### Legendary+
 
-ATK scales with companion count present
+ATK increased further when companion present
 
 ##### Mythic+
 
-growth stage grants permanent DEF and ATK boost to host
+companion absorbs excess healing to unlock additional buffs for host
 
 ##### Supreme+
 
@@ -10309,15 +10309,15 @@ multi-hit then charge through frontal area
 
 ##### Skill 1
 
-adjacent ally bond, boosting ATK and DEF
+form pact with left and right allies at battle start, continuously increasing their stats
 
 ##### Skill 2
 
-spin slash stun adjacent enemies
+deal damage and stun nearby enemies twice
 
 ##### Legendary+
 
-battle haste grows after first ultimate cast
+battle haste increase
 
 ##### Mythic+
 
@@ -10405,15 +10405,15 @@ Common buffers are **Hugin**, **Twins**, or **Hepler**.
 
 ##### Ultimate
 
-rush to tile; knock back on collision deals stun damage
+rush to target, knocking back nearby enemies and stunning them on collision
 
 ##### Skill 1
 
-melee knock back; collision stuns and repositions
+melee knock back; collision deals extra damage and stuns
 
 ##### Skill 2
 
-big hit damage reduction resets knock back skill
+block a powerful attack, resetting the knock back skill cooldown
 
 ##### Legendary+
 
@@ -10421,11 +10421,11 @@ combat haste increase
 
 ##### Mythic+
 
-low HP haste regeneration cleanse cooldown
+low HP triggers haste boost and HP and energy recovery
 
 ##### Supreme+
 
-extended knock back grants energy on collision
+extended knock back on next melee skill when block triggers, dealing extra damage
 
 ### Units Soren benefits from
 
@@ -10514,11 +10514,11 @@ Common buffers are **Rowan**, **Hugin**, or **Twins**.
 
 ##### Ultimate
 
-accumulated rhythm charge activates area resonance buff
+Passive: active score increases ATK and Haste; Active: create silencing domain, then multi-hit target
 
 ##### Skill 1
 
-periodic strikes drain enemy energy
+three-hit strike dealing damage and draining enemy energy
 
 ##### Skill 2
 
@@ -10526,11 +10526,11 @@ control then area knock down burst
 
 ##### Legendary+
 
-haste grows with accumulated rhythm charge
+battle haste increase
 
 ##### Mythic+
 
-active rhythm auto-plays cleanse and heal
+once score activates, auto-play cleanses debuffs and recovers HP and energy
 
 ##### Supreme+
 
@@ -10615,11 +10615,11 @@ Common buffers are **Mikola**, **Twins**, or **Rowan**.
 
 ##### Ultimate
 
-fly to center spending HP and energy to fire sustained beam
+consume HP to shoot flames at enemies
 
 ##### Skill 1
 
-HP-loss triggers ally heal; HP regeneration triggers enemy damage
+Passive: HP-loss heals allies, being healed damages enemies; Active: deal damage to enemies
 
 ##### Skill 2
 
@@ -10631,7 +10631,7 @@ ATK scales with cumulative HP consumed
 
 ##### Mythic+
 
-apply sustained frontal burn-heal aura to front ally
+enhance frontmost ally to deal sustained damage to adjacent enemies
 
 ##### Supreme+
 
@@ -10723,11 +10723,11 @@ AoE sleep all enemies with sustained damage
 
 ##### Skill 1
 
-HP sacrifice leaps to two enemies dealing area stun damage
+consume HP to stun nearby enemies, then leap to distant enemy to deal damage and stun again
 
 ##### Skill 2
 
-transform to secondary form on low HP; invincible regeneration burst
+transform on HP-loss threshold, recovering HP while dealing damage to nearby enemies
 
 ##### Legendary+
 
@@ -10735,7 +10735,7 @@ ATK grows after sleep cast is active
 
 ##### Mythic+
 
-post-sleep haste surge and free HP-free leaps
+post-ultimate haste and damage reduction, with reduced cooldown on HP-sacrifice skill
 
 ##### Supreme+
 
@@ -10816,7 +10816,7 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 
 ##### Ultimate
 
-passive auto-charge farthest enemy; ATK speed boosts charge damage
+Passive: charge path damage; Active: mount leap knock down and charge speed boost
 
 ##### Skill 1
 
@@ -10836,7 +10836,7 @@ permanent unaffected and true damage after repeated charges
 
 ##### Supreme+
 
-charges stack target DEF reduction
+charge hits reduce target Phys DEF
 
 ### Units Temesia benefits from
 
@@ -10929,7 +10929,7 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ##### Ultimate
 
-ground slam AoE then ritual zone for eruption and healing
+AoE damage and perform ritual inflicting debuffs on affected enemies
 
 ##### Skill 1
 
@@ -10945,7 +10945,7 @@ battle damage taken reduction
 
 ##### Mythic+
 
-bonded ally ultimate triggers sustained DEF reduction and AoE burst
+bonded ally casting ultimate triggers AoE damage and Phys and Magic DEF reduction on all enemies
 
 ##### Supreme+
 
@@ -11035,11 +11035,11 @@ Common buffers are **Hepler**, **Rowan**, or **Hugin**.
 
 ##### Ultimate
 
-charge-up slash that absorbs damage dealt during charge
+charge up, slash in range for damage plus a portion of damage taken during charge, gaining life drain
 
 ##### Skill 1
 
-drain target current HP, boosting own max HP and marking them
+drain HP from highest HP enemy, increasing own HP
 
 ##### Skill 2
 
@@ -11051,11 +11051,11 @@ energy recovery from attacks; higher before revive triggers
 
 ##### Mythic+
 
-bonded ally absorbs tank damage; ally sacrifice revives tank
+absorb a portion of damage for bonded ally; on defeat, bonded ally sacrifices HP to revive self
 
 ##### Supreme+
 
-ultimate drains additional HP from all previously marked enemies
+ultimate additionally drains HP from enemy
 
 ### Units Thoran benefits from
 
@@ -11134,11 +11134,11 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-battle-start lose HP then gain auto-regeneration unaffected shield
+Passive: gain auto-regenerating shield; Active: repeated frontal greatsword attacks
 
 ##### Skill 1
 
-strike deals damage and restores shield value proportionally
+powerful strike that also restores shield value
 
 ##### Skill 2
 
@@ -11150,11 +11150,11 @@ battle vitality increase
 
 ##### Mythic+
 
-first shield break refills instantly; nature bond buffs nearby allies
+first shield break permanently increases shield recovery amount
 
 ##### Supreme+
 
-shield regeneration per second while casting ultimate
+shield regeneration speed increases while casting ultimate
 
 ### Units Tilaya benefits from
 
@@ -11233,11 +11233,11 @@ Common buffers are **Hepler**, **Hewynn**, or **Rowan**.
 
 ##### Ultimate
 
-on low HP retreat to rooted backline; normal attacks become ranged AoE
+Passive: retreat to initial tile and take root when HP is low; Active: knock up target and adjacent enemies
 
 ##### Skill 1
 
-HP-scaled personal shield; if rooted grant to frontmost ally
+gain shield that damages surrounding enemies when it breaks; after rooting, grant shield to frontmost ally instead
 
 ##### Skill 2
 
@@ -11341,15 +11341,15 @@ Common buffers are **Rowan**, **Hepler**, or **Smokey & Meerky**.
 
 ##### Ultimate
 
-jump to empty tile switches ranged mode; rush enemy switches melee
+switch to ranged mode dealing damage and stun, or melee mode dealing true damage
 
 ##### Skill 1
 
-mark farthest or nearest enemy; absorb energy per hit
+mark an enemy, prioritizing attacks on them and absorbing their energy
 
 ##### Skill 2
 
-ranged mode haste reduction shot; melee mode multi-hit stun
+mode-based: damage and haste reduction, or multi-hit attack
 
 ##### Legendary+
 
@@ -11357,11 +11357,11 @@ ATK grows with each non-summoned enemy defeated
 
 ##### Mythic+
 
-mark defeat triggers stealth and haste surge
+marked enemy defeat increases movement speed and haste
 
 ##### Supreme+
 
-marked enemy deals reduced damage; mode-based bonus stacks
+deal bonus damage to marked enemy
 
 ### Units Vala benefits from
 
@@ -11461,7 +11461,7 @@ Common buffers are **Rowan**, **Mikola**, or **Twins**.
 
 ##### Ultimate
 
-AoE multi-strike area then enter sustained ATK buff state
+launch multiple strikes within range and gain Invigoration buff state
 
 ##### Skill 1
 
@@ -11481,7 +11481,7 @@ permanent buff state; buff activations stack ATK bonus
 
 ##### Supreme+
 
-lightning AoE stuns; hit enemies lose haste and movement
+lightning AoE also stuns enemies
 
 ### Units Valen benefits from
 
@@ -11563,7 +11563,7 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ##### Ultimate
 
-full stacks trigger stun slash at energy cost
+Passive: normal attacks apply Panic stacks to target; Active: slash panicked target, dealing damage and self-healing
 
 ##### Skill 1
 
@@ -11571,7 +11571,7 @@ multiple sword techniques at appropriate range cost energy
 
 ##### Skill 2
 
-battle-start shield from nearby allies; ATK speed buff to all
+gain a shield and increase ally ATK SPD at battle start
 
 ##### Legendary+
 
@@ -11676,15 +11676,15 @@ These are the **10** strongest pairings:
 
 ##### Ultimate
 
-dormant circles accumulate energy; awaken for area heal and haste drain
+summon magic circles that awaken to affect nearby units; all circles awakened extends effects to entire battlefield
 
 ##### Skill 1
 
-immobilize top attacker, reducing haste and DEF
+immobilize the highest cumulative damage dealer and reduce their stats
 
 ##### Skill 2
 
-instant-awaken one circular zone; ally debuffs charge circle energy
+awaken one magic circle at battle start; nearby enemies with stat reductions charge circle energy
 
 ##### Legendary+
 
@@ -11692,11 +11692,11 @@ battle haste grows with awakened circle count
 
 ##### Mythic+
 
-awakened circles fire bolts shielding weakest ally or damaging foe
+awakened circles periodically apply effects to the weakest units
 
 ##### Supreme+
 
-all circles awakened expands burst range; allies gain unaffected
+all circles awakened extends battlefield coverage; subsequent casts make allies unaffected and boost their damage
 
 ### Units Velara benefits from
 
@@ -11798,11 +11798,11 @@ spend HP to send possessing summons onto all enemies
 
 ##### Skill 1
 
-drain HP from healthiest enemy recovering same amount
+drain HP from the healthiest enemy
 
 ##### Skill 2
 
-Passive: possessed enemies take periodic drain; Active: enhances it
+possessed summons periodically deal damage to their hosts
 
 ##### Legendary+
 
@@ -11814,7 +11814,7 @@ high HP threshold triggers large AoE damage burst
 
 ##### Supreme+
 
-summons return on possessed enemy defeat restoring HP and energy
+summons return on possessed enemy defeat, restoring HP and energy
 
 ### Units Viperian benefits from
 
@@ -11893,15 +11893,15 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ##### Ultimate
 
-fire multiple revolving shots at random enemies, stunning per hit
+fire sequential shots at frontal enemies, stunning each
 
 ##### Skill 1
 
-triple penetrating bullets per normal attack
+normal attacks deal AoE damage
 
 ##### Skill 2
 
-mark top attacker for damage boost and damage reduction
+prioritize attacking highest-damage-dealt enemy, gaining a buff
 
 ##### Legendary+
 
@@ -11909,11 +11909,11 @@ battle crit damage boost
 
 ##### Mythic+
 
-battle-start grenades stun and reduce target DEF
+throw grenades at battle start, dealing AoE damage and stunning enemies
 
 ##### Supreme+
 
-shield on first hit of marked target; crit bonus against marked target
+gain a shield on first hit against the marked target
 
 ### Units Walker benefits from
 
@@ -11995,23 +11995,23 @@ Common buffers are **Lyca**, **Rowan**, or **Hugin**.
 
 ##### Ultimate
 
-slam destroys obstacles and knock up area enemies
+slam axe down, destroying all obstacles in the area
 
 ##### Skill 1
 
-charge formation inspires all allies with max HP and stats
+summon illusions that destroy obstacles in their path
 
 ##### Skill 2
 
-HP-scaled stomp stuns adjacent enemies
+stomp the ground to strike nearby enemies
 
 ##### Legendary+
 
-battle max HP increase
+battle max HP increase, further boosted while buff state is active
 
 ##### Mythic+
 
-high HP threshold enables HP-scaling normal attack bonus
+normal attacks deal bonus damage scaling on max HP
 
 ##### Supreme+
 
@@ -12099,11 +12099,11 @@ Common buffers are **Hepler**, **Hugin**, or **Twins**.
 
 ##### Ultimate
 
-deploy linked turrets that fire or combine beams
+Passive: reduce max HP to deploy laser turrets; Active: boost ATK and ATK speed for self and turrets
 
 ##### Skill 1
 
-build turret; after normal attacks triggers heavy multi-hit attack
+battle-start deploy gun turret that targets enemies near laser turrets
 
 ##### Skill 2
 
@@ -12115,11 +12115,11 @@ battle penetration increase
 
 ##### Mythic+
 
-periodic turret upgrades boost max HP, ATK, and range
+upgrade a turret to make it more powerful
 
 ##### Supreme+
 
-turret hits burn enemy ATK and DEF
+laser turret attacks apply burn to enemies hit
 
 ### Units Zanie benefits from
 
@@ -12219,15 +12219,15 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ##### Ultimate
 
-dormant phase recovers HP and energy; awaken with AoE stun
+alternate dormant and awake states; each awakening jumps to nearby enemies, dealing damage
 
 ##### Skill 1
 
-Passive: awaken hardens skin reducing damage taken; Active: arc knock down
+Passive: reduce damage taken on awaken; Active: knock down enemies in front
 
 ##### Skill 2
 
-Passive: awaken life drain; nearby defeat heals; Active: burst on lost HP
+Passive: awaken increases life drain; Active: deal multiple hits to nearby enemies
 
 ##### Legendary+
 
@@ -12235,11 +12235,11 @@ battle damage dealt grows with surrounding enemy count
 
 ##### Mythic+
 
-awaken creates aura slowing enemy haste and movement
+awaken creates aura reducing enemy haste and movement speed, boosting own haste
 
 ##### Supreme+
 
-fatal blow triggers dormancy once per battle
+fatal blow triggers immediate transition to dormant state
 
 ### Units Zorya benefits from
 
