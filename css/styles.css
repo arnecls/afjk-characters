@@ -508,6 +508,64 @@ a:hover {
   font-size: 0.78rem;
 }
 
+.tier-box-row-compact {
+  justify-content: flex-start;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+.tier-chip-compact {
+  padding: 0.1rem 0.38rem;
+  font-size: 0.68rem;
+  line-height: 1.2;
+  border-radius: 5px;
+}
+
+.tier-chip-compact .tier-grade {
+  font-size: 0.74rem;
+  padding-right: 0.28rem;
+}
+
+.tier-chip-compact .tier-mode {
+  font-size: 0.66rem;
+}
+
+.tier-chip.tier-rel-better {
+  background: #1f8a42;
+  color: #fff;
+}
+
+.tier-chip.tier-rel-worse {
+  background: #d04040;
+  color: #fff;
+}
+
+.tier-chip.tier-rel-same {
+  background: #8890a0;
+  color: #fff;
+}
+
+.tier-chip.tier-rel-better .tier-grade,
+.tier-chip.tier-rel-worse .tier-grade,
+.tier-chip.tier-rel-same .tier-grade {
+  border-right-color: rgba(255, 255, 255, 0.45);
+}
+
+.tier-chip.chip-has-tip {
+  cursor: help;
+}
+
+.tier-chip.chip-has-tip.chip-tip-active {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hero-compact-body .tier-box-row-compact {
+  align-self: flex-start;
+  width: 100%;
+}
+
 .heroes-table thead th.col-tier {
   white-space: normal;
   line-height: 1.25;
