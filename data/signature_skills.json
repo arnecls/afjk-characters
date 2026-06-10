@@ -1,724 +1,412 @@
 {
   "Aliceth": {
-    "section": "Ultimate",
-    "name": "Radiant Rain",
-    "is_ultimate": true,
-    "description": "aerial area arrow rain"
+    "signature_calculated": "ultimate"
   },
   "Alna": {
-    "section": "Ultimate",
-    "name": "Winter Anthem",
-    "is_ultimate": true,
-    "description": "battle-start area blizzard",
+    "signature_calculated": "skill2",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Alsa": {
-    "section": "Ultimate",
-    "name": "Twirling Rocks",
-    "is_ultimate": true,
-    "description": "area physical rock damage"
+    "signature_calculated": "ultimate"
   },
   "Antandra": {
-    "section": "Ultimate",
-    "name": "Shield Assault",
-    "is_ultimate": true,
-    "description": "charge + area knockback"
+    "signature_calculated": "ultimate"
   },
   "Arden": {
-    "section": "Ultimate",
-    "name": "Force of Nature",
-    "is_ultimate": true,
-    "description": "area nature damage burst"
+    "signature_calculated": "ultimate"
   },
   "Atalanta": {
-    "section": "Ultimate",
-    "name": "Wild Sniper",
-    "is_ultimate": true,
-    "description": "dash + line stun shot"
+    "signature_calculated": "ultimate"
   },
   "Athalia": {
-    "section": "Ultimate",
-    "name": "Unbroken Retribution",
-    "is_ultimate": true,
-    "description": "post-death attacking lance"
+    "signature_calculated": "ultimate"
   },
   "Aurora": {
-    "section": "Ultimate",
-    "name": "Starlit Slumber",
-    "is_ultimate": true,
-    "description": "sleep all enemies"
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate"
   },
   "Baelran": {
-    "section": "Ultimate",
-    "name": "Celestial Rise",
-    "is_ultimate": true,
-    "description": "HP-based shield + transform",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Berial": {
-    "section": "Ultimate",
-    "name": "Scared Swamp",
-    "is_ultimate": true,
-    "description": "shadow dive + area frighten"
+    "signature_calculated": "ultimate"
   },
   "Bonnie": {
-    "section": "Skill1",
-    "name": "Decay's Reach",
-    "is_ultimate": false,
-    "description": "battle-start aging debuff",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
     "speed_override": "fast"
   },
   "Brutus": {
-    "section": "Ultimate",
-    "name": "Whirlwind Wrath",
-    "is_ultimate": true,
-    "description": "area spin damage"
+    "signature_calculated": "ultimate"
   },
   "Bryon": {
-    "section": "Ultimate",
-    "name": "Falcon Raid",
-    "is_ultimate": true,
-    "description": "falcon area dive damage",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Callan": {
-    "section": "Ultimate",
-    "name": "Restless Guardian",
-    "is_ultimate": true,
-    "description": "absorb ally damage shield",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Carolina": {
-    "section": "Ultimate",
-    "name": "Frozen Grave",
-    "is_ultimate": true,
-    "description": "freeze + bury area"
+    "signature_calculated": "ultimate"
   },
   "Cassadee": {
-    "section": "Ultimate",
-    "name": "Running Tide",
-    "is_ultimate": true,
-    "description": "tidal wave knockback"
+    "signature_override": "skill2",
+    "signature_calculated": "ultimate"
   },
   "Cecia": {
-    "section": "Ultimate",
-    "name": "Queen's Summons",
-    "is_ultimate": true,
-    "description": "summon AoE damage unit"
+    "signature_calculated": "ultimate"
   },
   "Chippy": {
-    "section": "Ultimate",
-    "name": "Brothers-in-arms",
-    "is_ultimate": true,
-    "description": "summon support ally"
+    "signature_calculated": "ultimate"
   },
   "Contess": {
-    "section": "Ultimate",
-    "name": "Detention Pass",
-    "is_ultimate": true,
-    "description": "stealth start + punish",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Cryonaia": {
-    "section": "Ultimate",
-    "name": "Frostveil Domain",
-    "is_ultimate": true,
-    "description": "area frost slow field"
+    "signature_calculated": "ultimate"
   },
   "Cyran": {
-    "section": "Ultimate",
-    "name": "Gravitic Requiem",
-    "is_ultimate": true,
-    "description": "pull all + execute low HP"
+    "signature_calculated": "ultimate"
   },
   "Daimon": {
-    "section": "Skill2",
-    "name": "Buddy Barrier",
-    "is_ultimate": false,
-    "description": "shield + ATK buff ally behind"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill2"
   },
   "Damian": {
-    "section": "Ex. Skill",
-    "name": "Inventor's Will",
-    "is_ultimate": false,
-    "description": "chariot haste aura for allies"
+    "signature_calculated": "skill1",
+    "signature_override": "skill4"
   },
   "Dionel": {
-    "section": "Ultimate",
-    "name": "Dawn Light",
-    "is_ultimate": true,
-    "description": "airborne multi-hit AoE"
+    "signature_calculated": "ultimate"
   },
   "Dunlingr": {
-    "section": "Ultimate",
-    "name": "Echo of Silence",
-    "is_ultimate": true,
-    "description": "forbid heals or ultimates",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Eironn": {
-    "section": "Ex. Skill",
-    "name": "Howling Hurricane",
-    "is_ultimate": false,
-    "description": "free area pull at start"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill4"
   },
   "Evie": {
-    "section": "Ultimate",
-    "name": "Intel Chase",
-    "is_ultimate": true,
-    "description": "stealth + trigger burst",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Faramor": {
-    "section": "Ultimate",
-    "name": "Sanctified Circle",
-    "is_ultimate": true,
-    "description": "no-heal zone + true DoT"
+    "signature_calculated": "ultimate"
   },
   "Fay": {
-    "section": "Ultimate",
-    "name": "Vibrant Dance",
-    "is_ultimate": true,
-    "description": "arc heal + ATK buff"
+    "signature_calculated": "ultimate"
   },
   "Florabelle": {
-    "section": "Ultimate",
-    "name": "Pounding Blow",
-    "is_ultimate": true,
-    "description": "summon stomper ally",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Frieren": {
-    "section": "Ultimate",
-    "name": "Zoltraak",
-    "is_ultimate": true,
-    "description": "high-damage magic beam"
+    "signature_calculated": "ultimate"
   },
   "Galahad": {
-    "section": "Ex. Skill",
-    "name": "Time Recast",
-    "is_ultimate": false,
-    "description": "summon shadow copy of ally"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill4"
   },
   "Gerda": {
-    "section": "Skill1",
-    "name": "Spring Therapy",
-    "is_ultimate": false,
-    "description": "battle-start heal zone",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
     "speed_override": "fast"
   },
   "Granny Dahnie": {
-    "section": "Ultimate",
-    "name": "Threshold of Jade",
-    "is_ultimate": true,
-    "description": "root zone + HP drain"
+    "signature_calculated": "ultimate"
   },
   "Gunnar": {
-    "section": "Ultimate",
-    "name": "Annihilation Directive",
-    "is_ultimate": true,
-    "description": "long-range area bombing",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Gwyneth": {
-    "section": "Ultimate",
-    "name": "Hailing Arrows",
-    "is_ultimate": true,
-    "description": "area arrow rain"
+    "signature_calculated": "ultimate"
   },
   "Hammie": {
-    "section": "Ultimate",
-    "name": "Pretty Fireball",
-    "is_ultimate": true,
-    "description": "AoE magic fireball"
+    "signature_calculated": "ultimate"
   },
   "Harak": {
-    "section": "Skill2",
-    "name": "Flesh Feast",
-    "is_ultimate": false,
-    "description": "instantly defeat weakest unit"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill2"
   },
   "Hepler": {
-    "section": "Ultimate",
-    "name": "Form Shift",
-    "is_ultimate": true,
-    "description": "toggle attack/support form"
+    "signature_calculated": "ultimate"
   },
   "Hewynn": {
-    "section": "Ultimate",
-    "name": "Rain Prayer",
-    "is_ultimate": true,
-    "description": "AoE team healing"
+    "signature_calculated": "ultimate"
   },
   "Himmel": {
-    "section": "Skill2",
-    "name": "Hero Party",
-    "is_ultimate": false,
-    "description": "buff needing Mage+Tank+Support",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill2",
     "speed_override": "fast"
   },
   "Hodgkin": {
-    "section": "Ultimate",
-    "name": "Cannon Fire",
-    "is_ultimate": true,
-    "description": "AoE cannon salvo"
+    "signature_calculated": "ultimate"
   },
   "Hugin": {
-    "section": "Ultimate",
-    "name": "Unstoppable!",
-    "is_ultimate": true,
-    "description": "charge + shield assault"
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate"
   },
   "Igor": {
-    "section": "Ultimate",
-    "name": "Funereal Ring",
-    "is_ultimate": true,
-    "description": "tombstone zone damage",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Indris": {
-    "section": "Ultimate",
-    "name": "Spellbane Shot",
-    "is_ultimate": true,
-    "description": "silence + multi-debuff shot"
+    "signature_calculated": "ultimate"
   },
   "Isabella": {
-    "section": "Ultimate",
-    "name": "Grimoire Pact",
-    "is_ultimate": true,
-    "description": "permanent stat buff to companion",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Kafra": {
-    "section": "Ultimate",
-    "name": "Gale Thrust",
-    "is_ultimate": true,
-    "description": "mark + high single-target hit"
+    "signature_calculated": "ultimate"
   },
   "Koko": {
-    "section": "Ultimate",
-    "name": "Full Energy",
-    "is_ultimate": true,
-    "description": "DMG reduction + true damage return"
+    "signature_calculated": "ultimate"
   },
   "Kordan": {
-    "section": "Ultimate",
-    "name": "Dominance Ring",
-    "is_ultimate": true,
-    "description": "immobilize + zone damage"
+    "signature_calculated": "ultimate"
   },
   "Korin": {
-    "section": "Ultimate",
-    "name": "Demonseal Spear",
-    "is_ultimate": true,
-    "description": "pierce-through spear strike"
+    "signature_calculated": "ultimate"
   },
   "Kruger": {
-    "section": "Ultimate",
-    "name": "Devastating Axe",
-    "is_ultimate": true,
-    "description": "stack Phys DEF debuff"
+    "signature_calculated": "ultimate"
   },
   "Kulu": {
-    "section": "Skill1",
-    "name": "Demolition Zone",
-    "is_ultimate": false,
-    "description": "battle-start movement-blocking wall",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
     "speed_override": "fast"
   },
   "Laios": {
-    "section": "Skill2",
-    "name": "Dungeon Gourmet",
-    "is_ultimate": false,
-    "description": "cook ingredients for random ally buffs"
+    "signature_calculated": "skill2"
   },
   "Lenya": {
-    "section": "Ultimate",
-    "name": "Wild Duel",
-    "is_ultimate": true,
-    "description": "dash + duel multi-hit"
+    "signature_calculated": "ultimate"
   },
   "Lily May": {
-    "section": "Ultimate",
-    "name": "Tempest Shot",
-    "is_ultimate": true,
-    "description": "interrupt enemy ultimate"
+    "signature_calculated": "ultimate"
   },
   "Lorsan": {
-    "section": "Ultimate",
-    "name": "Whispering Tempest",
-    "is_ultimate": true,
-    "description": "storm zone + haste debuff"
+    "signature_calculated": "ultimate"
   },
   "Lucca": {
-    "section": "Ultimate",
-    "name": "Quake Slam",
-    "is_ultimate": true,
-    "description": "area knockdown slam"
+    "signature_calculated": "ultimate"
   },
   "Lucius": {
-    "section": "Ultimate",
-    "name": "Divine Light Aegis",
-    "is_ultimate": true,
-    "description": "area shield + light damage"
+    "signature_calculated": "ultimate"
   },
   "Lucy": {
-    "section": "Skill2",
-    "name": "Star Dress: Aquarius Form",
-    "is_ultimate": false,
-    "description": "permanent AoE water form"
+    "signature_calculated": "skill2"
   },
   "Ludovic": {
-    "section": "Ultimate",
-    "name": "Eternal Serenity",
-    "is_ultimate": true,
-    "description": "area sustained healing"
+    "signature_calculated": "ultimate"
   },
   "Lumont": {
-    "section": "Ultimate",
-    "name": "Lumont's Charge",
-    "is_ultimate": true,
-    "description": "charge + stomp knockdown"
+    "signature_calculated": "ultimate"
   },
   "Lyca": {
-    "section": "Ultimate",
-    "name": "Comet Archery",
-    "is_ultimate": true,
-    "description": "area ranged volley"
+    "signature_calculated": "ultimate"
   },
   "Marcille": {
-    "section": "Ultimate",
-    "name": "Silver-White Wings that Streak Across the Skies",
-    "is_ultimate": true,
-    "description": "large AoE magic damage"
+    "signature_calculated": "ultimate"
   },
   "Marilee": {
-    "section": "Ultimate",
-    "name": "Mid-Air Shot",
-    "is_ultimate": true,
-    "description": "high-damage precision shot"
+    "signature_calculated": "ultimate"
   },
   "Mehira": {
-    "section": "Ultimate",
-    "name": "Euphoric Rush",
-    "is_ultimate": true,
-    "description": "AoE damage + charm"
+    "signature_calculated": "ultimate"
   },
   "Mikola": {
-    "section": "Ultimate",
-    "name": "Dauntless Hymn",
-    "is_ultimate": true,
-    "description": "haste + DEF aura zone"
+    "signature_calculated": "ultimate"
   },
   "Mirael": {
-    "section": "Ultimate",
-    "name": "Winged Flame",
-    "is_ultimate": true,
-    "description": "area fire barrage"
+    "signature_calculated": "ultimate"
   },
   "Nara": {
-    "section": "Skill1",
-    "name": "Phantom Chains",
-    "is_ultimate": false,
-    "description": "pull enemy to self"
+    "signature_calculated": "skill1"
   },
   "Natsu": {
-    "section": "Ultimate",
-    "name": "Lightning Fire Dragon's Roar/Fire Dragon King's Roar",
-    "is_ultimate": true,
-    "description": "high-damage elemental beam"
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate"
   },
   "Nazrik": {
-    "section": "Ultimate",
-    "name": "Rend Rupture",
-    "is_ultimate": true,
-    "description": "HP-drain bleed DoT"
+    "signature_calculated": "ultimate"
   },
   "Nerion": {
-    "section": "Ultimate",
-    "name": "Drowning Doom",
-    "is_ultimate": true,
-    "description": "pull + submerge enemies"
+    "signature_calculated": "ultimate"
   },
   "Niru": {
-    "section": "Ultimate",
-    "name": "Soul Shepherd",
-    "is_ultimate": true,
-    "description": "save ally from fatal blow"
+    "signature_calculated": "ultimate"
   },
   "Odie": {
-    "section": "Ex. Skill",
-    "name": "Heart Crusher",
-    "is_ultimate": false,
-    "description": "instantly defeat below poison threshold"
+    "signature_calculated": "skill4"
   },
   "Pandora": {
-    "section": "Skill1",
-    "name": "Boxed Blessing",
-    "is_ultimate": false,
-    "description": "pull ally into box at start",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
     "speed_override": "fast"
   },
   "Pang": {
-    "section": "Ultimate",
-    "name": "Sky Splitter",
-    "is_ultimate": true,
-    "description": "area knockdown burst"
+    "signature_calculated": "ultimate"
   },
   "Parisa": {
-    "section": "Ultimate",
-    "name": "Floral Splendor",
-    "is_ultimate": true,
-    "description": "mark + AoE burst damage"
+    "signature_calculated": "ultimate"
   },
   "Perseus": {
-    "section": "Ultimate",
-    "name": "Divine Rend",
-    "is_ultimate": true,
-    "description": "march + continuous knockback"
+    "signature_calculated": "ultimate"
   },
   "Phraesto": {
-    "section": "Skill1",
-    "name": "Crimson Contract",
-    "is_ultimate": false,
-    "description": "buff two allies at battle start",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
     "speed_override": "fast"
   },
   "Pippa": {
-    "section": "Ultimate",
-    "name": "Chaos Manifest",
-    "is_ultimate": true,
-    "description": "reposition + random chaos"
+    "signature_calculated": "ultimate"
   },
   "Ravion": {
-    "section": "Ultimate",
-    "name": "Killer Flush",
-    "is_ultimate": true,
-    "description": "multi-hit lost-HP scaling"
+    "signature_calculated": "ultimate"
   },
   "Reinier": {
-    "section": "Skill1",
-    "name": "Dynamic Balance",
-    "is_ultimate": false,
-    "description": "swap ally+enemy positions at start",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
     "speed_override": "fast"
   },
   "Rhys": {
-    "section": "Ultimate",
-    "name": "Flame Barrage",
-    "is_ultimate": true,
-    "description": "ranged fire barrage"
+    "signature_calculated": "ultimate"
   },
   "Rowan": {
-    "section": "Ultimate",
-    "name": "Fatal Greed",
-    "is_ultimate": true,
-    "description": "AoE energy recovery burst"
+    "signature_calculated": "ultimate"
   },
   "Saida": {
-    "section": "Ultimate",
-    "name": "Seed Siphon",
-    "is_ultimate": true,
-    "description": "pin + energy drain + seed"
+    "signature_calculated": "ultimate"
   },
   "Salazer": {
-    "section": "Ultimate",
-    "name": "Rain of Blades",
-    "is_ultimate": true,
-    "description": "area blade storm"
+    "signature_calculated": "ultimate"
   },
   "Satrana": {
-    "section": "Ultimate",
-    "name": "Fiery Dance",
-    "is_ultimate": true,
-    "description": "area fire burn damage"
+    "signature_calculated": "ultimate"
   },
   "Scarlita": {
-    "section": "Ex. Skill",
-    "name": "Divine Wrath",
-    "is_ultimate": false,
-    "description": "instantly defeat low-HP enemies"
+    "signature_calculated": "skill4"
   },
   "Seth": {
-    "section": "Ultimate",
-    "name": "Shadow Strike",
-    "is_ultimate": true,
-    "description": "multi-hit shadow burst"
+    "signature_calculated": "ultimate"
   },
   "Shadewing": {
-    "section": "Skill2",
-    "name": "Withering Curse",
-    "is_ultimate": false,
-    "description": "convert DoT to burst damage",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill2",
     "speed_override": "fast"
   },
   "Shakir": {
-    "section": "Ultimate",
-    "name": "Ravaging Claws",
-    "is_ultimate": true,
-    "description": "single-target charge damage"
+    "signature_calculated": "ultimate"
   },
   "Shemira": {
-    "section": "Ultimate",
-    "name": "Phantom Procession",
-    "is_ultimate": true,
-    "description": "sustained area ghost damage"
+    "signature_calculated": "ultimate"
   },
   "Silven": {
-    "section": "Skill1",
-    "name": "Gravity Collapse",
-    "is_ultimate": false,
-    "description": "stack marks + detonate stun"
+    "signature_calculated": "skill1"
   },
   "Silvina": {
-    "section": "Ultimate",
-    "name": "Shadow Slayer",
-    "is_ultimate": true,
-    "description": "stealth + execute burst"
+    "signature_calculated": "ultimate"
   },
   "Sinbad": {
-    "section": "Ultimate",
-    "name": "Whizzing Edge",
-    "is_ultimate": true,
-    "description": "multi-hit physical slashes"
+    "signature_calculated": "ultimate"
   },
   "Smokey & Meerky": {
-    "section": "Ultimate",
-    "name": "Special Aroma",
-    "is_ultimate": true,
-    "description": "heal aura + upgradeable zone",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Solise": {
-    "section": "Ultimate",
-    "name": "Life's Embrace",
-    "is_ultimate": true,
-    "description": "AoE healing waves"
+    "signature_calculated": "ultimate"
   },
   "Sonja": {
-    "section": "Skill1",
-    "name": "Crimson Covenant",
-    "is_ultimate": false,
-    "description": "ATK + DEF buff two flanking allies",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
     "speed_override": "fast"
   },
   "Soren": {
-    "section": "Ultimate",
-    "name": "Whirlwind Swing",
-    "is_ultimate": true,
-    "description": "knockback + collision stun"
+    "signature_calculated": "ultimate"
   },
   "Sylphira": {
-    "section": "Ultimate",
-    "name": "Grand Finale",
-    "is_ultimate": true,
-    "description": "beat stacking + song DoT"
+    "signature_calculated": "ultimate"
   },
   "Talene": {
-    "section": "Ultimate",
-    "name": "Divine Conflagration",
-    "is_ultimate": true,
-    "description": "sustained channelled flame beam",
+    "signature_calculated": "ultimate",
     "speed_override": "fast"
   },
   "Tasi": {
-    "section": "Ultimate",
-    "name": "Eternal Dreamscape",
-    "is_ultimate": true,
-    "description": "sleep all enemies"
+    "signature_calculated": "ultimate"
   },
   "Temesia": {
-    "section": "Ultimate",
-    "name": "Knight's Heart",
-    "is_ultimate": true,
-    "description": "constant charge + knockdown through enemies"
+    "signature_calculated": "ultimate"
   },
   "Thador": {
-    "section": "Skill1",
-    "name": "Darkmoon Pact",
-    "is_ultimate": false,
-    "description": "crit + shield for ally behind"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1"
   },
   "Thoran": {
-    "section": "Skill2",
-    "name": "Resurrection",
-    "is_ultimate": false,
-    "description": "self-revive on defeat"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill2"
   },
   "Tilaya": {
-    "section": "Ultimate",
-    "name": "Wrath of the Wilds",
-    "is_ultimate": true,
-    "description": "8-hit greatsword arc slashes",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Twins": {
-    "section": "Ultimate",
-    "name": "Starlight Waltz",
-    "is_ultimate": true,
-    "description": "high haste buff all allies"
+    "signature_calculated": "ultimate"
   },
   "Ulmus": {
-    "section": "Skill2",
-    "name": "Way of the Forest",
-    "is_ultimate": false,
-    "description": "HP regen + energy when rooted"
+    "signature_calculated": "skill2"
   },
   "Vala": {
-    "section": "Ultimate",
-    "name": "Swift Shift",
-    "is_ultimate": true,
-    "description": "mode shift + stun/true damage"
+    "signature_calculated": "ultimate"
   },
   "Valen": {
-    "section": "Ultimate",
-    "name": "Thunder Swordwork",
-    "is_ultimate": true,
-    "description": "multi-hit area + ATK buff"
+    "signature_calculated": "ultimate"
   },
   "Valka": {
-    "section": "Ultimate",
-    "name": "Blooming Terror",
-    "is_ultimate": true,
-    "description": "stack fear + consume enemy"
+    "signature_calculated": "ultimate"
   },
   "Velara": {
-    "section": "Ultimate",
-    "name": "Ruthless Rite",
-    "is_ultimate": true,
-    "description": "transfer enemy stats to allies",
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate",
     "speed_override": "fast"
   },
   "Viperian": {
-    "section": "Ex. Skill",
-    "name": "Crimson Waltz",
-    "is_ultimate": false,
-    "description": "AoE burst damage to all enemies"
+    "signature_calculated": "skill4"
   },
   "Walker": {
-    "section": "Ultimate",
-    "name": "Six-Shot",
-    "is_ultimate": true,
-    "description": "multi-target burst shots"
+    "signature_calculated": "ultimate"
   },
   "Zandrok": {
-    "section": "Skill1",
-    "name": "Rallying Roar",
-    "is_ultimate": false,
-    "description": "destroy obstacles + inspire allies",
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
     "speed_override": "fast"
   },
   "Zanie": {
-    "section": "Ultimate",
-    "name": "Vein Pulse",
-    "is_ultimate": true,
-    "description": "deploy turrets at battle start",
+    "signature_calculated": "ultimate",
     "speed_override": "fast"
   },
   "Zorya": {
-    "section": "Ultimate",
-    "name": "Circle of Vigil",
-    "is_ultimate": true,
-    "description": "dormant cycle + AoE jump"
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate"
   }
 }

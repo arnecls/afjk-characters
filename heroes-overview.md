@@ -1640,13 +1640,14 @@ Common buffers are **Ravion**, **Lyca**, or **Hepler**.
 
 ### Cassadee's behavior
 
-- **Signature skill**: Running Tide (ultimate)
+- **Signature skill**: Tidal Strength (Skill 2)
 - **Movement**: stationary (avg attack range 10.0 tiles)
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `high`
+- **Signature skill**: speed `slow`, damage `low`
+- **Ultimate**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, damage `medium`
 
 ##### Ultimate
@@ -1717,6 +1718,11 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - Carolina (100% `Magic DEF debuff`)
 - Eironn (100% `Magic DEF debuff`)
 - Fay (100% `Magic DEF debuff`)
+
+**Crowd Control**
+
+- Perseus (66% `Knock back` `Stun`)
+- Scarlita (65% `Knock back` `Knock up` `Stun`)
 
 ### Summary for Cassadee
 
@@ -3498,6 +3504,7 @@ Common buffers are **Hugin**, **Mikola**, or **Ravion**.
 ### Units benefitting most from Galahad
 
 - Alsa
+- Cassadee
 - Hugin
 - Pippa
 - Rowan
@@ -8330,7 +8337,7 @@ Common buffers are **Smokey & Meerky**, **Rowan**, or **Hewynn**.
 
 ### Pippa's behavior
 
-- **Signature skill**: Chaos Manifest (ultimate)
+- **Signature skill**: Wild Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
 
 #### Skill overview
@@ -8828,7 +8835,7 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 ### Units benefitting most from Rowan
 
-**76** units include this provider among their top 5 synergy partners. Why the match is common:
+**75** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -11552,7 +11559,7 @@ Common buffers are **Lyca**, **Rowan**, or **Ravion**.
 
 ### Valka's behavior
 
-- **Signature skill**: Blooming Terror (ultimate)
+- **Signature skill**: Phantom Slasher (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 
 #### Skill overview
@@ -12208,7 +12215,7 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 
 ### Zorya's behavior
 
-- **Signature skill**: Circle of Vigil (ultimate)
+- **Signature skill**: Guardian's Ring (ultimate)
 - **Movement**: moving (inactive while dormant)
 
 #### Skill overview

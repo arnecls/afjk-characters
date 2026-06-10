@@ -83,6 +83,8 @@ def build_processed(data: dict) -> dict:
     for hero in heroes:
         behavior = behavior_by_title[hero.title]
         hero_record = data_by_title[hero.title]
+        behavior_dict = asdict(behavior)
+        behavior_dict.pop("signature_skill_section", None)
         processed_heroes[hero.title] = hs.serialize_processed_hero(
             hero,
             hero_record,
@@ -90,7 +92,7 @@ def build_processed(data: dict) -> dict:
                 hero, hero_class_by_title.get(hero.title, "")
             ),
             is_energy_provider=hero.title in energy_provider_titles,
-            behavior=asdict(behavior),
+            behavior=behavior_dict,
         )
 
     result = {"heroes": processed_heroes}

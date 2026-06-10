@@ -109,7 +109,6 @@ class BeneficiaryFallbackTests(unittest.TestCase):
                 casting_speed="normal",
                 signature_skill_name="",
                 signature_skill_is_ult=False,
-                signature_skill_description="",
                 signature_skill_speed="normal",
                 synergy_signature_speed="normal",
                 synergy_signature_is_ult=False,

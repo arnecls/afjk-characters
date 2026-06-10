@@ -168,20 +168,24 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   Twins → Elijah & Lailah).
 - **Signature skill** — the one skill that most characterises how the
   hero is played. Stored in `data/signature_skills.json` (key =
-  display name from `heroes-overview.md`). Shown in the behavior block
-  as `**Signature skill**: {name} [(ultimate)] — {2–5 word description}`.
+  display name from `heroes-overview.md`). Each entry has
+  `signature_calculated` (best repeatable, buffable skill by category:
+  `ultimate`, `skill1`, `skill2`, `skill4`) and optional
+  `signature_override` when the curated identity skill differs.
+  Effective signature = `signature_override ?? signature_calculated`.
+  Optional `speed_override` applies to the effective signature.
+  Skill names resolve from `heroes_data.json`; shown in the behavior
+  block as `**Signature skill**: {name} [(ultimate)]`.
   Often the Ultimate, but not always. Pick the skill that defines the
   unit's identity in combat.
   **Indicators:** enhanced by Ex / Supreme+ (`Enhance Force`); unique
   mechanic few others share; exceptional damage or buff; battle-start or
   formation setup.
-- **Alternative signature skill** — parallel set in
-  `data/defining_skills_alternative.json` (same shape as
-  `data/signature_skills.json`). Holds each hero's best **repeatable, buffable**
-  skill per the indicators above. Used as a synergy fuel fallback only when
-  the primary signature is a non-buffable **Ultimate** that is still slow
-  (not fast/battle-start). Non-ultimate signatures (e.g. Bonnie's Skill1)
-  keep primary speed so fuel targets identity, not a side ult.
+  **Synergy fuel fallback** — when the effective signature is a
+  non-buffable **Ultimate** that is still slow (not fast/battle-start),
+  `signature_calculated` drives `synergy_signature_speed` instead.
+  Non-ultimate signatures (e.g. Bonnie's Skill1) keep primary speed so
+  fuel targets identity, not a side ult.
 - **Placement constraints** — optional top-block bullets when skill text
   ties ally buffs to grid placement or auto-selected allies:
   **Ally composition** (`ally_placement` + `ally_composition` kinds) and
@@ -211,8 +215,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   underneath. Summaries come from `data/heroes_data_skill_summary.json`
   (key = display name, then `category` from processed JSON:
   `ultimate`, `skill1`–`skill5`). Labels: Ultimate, Skill 1, Skill 2,
-  Legendary+, Ex. Skill, Supreme+. The signature skill line still uses
-  `data/signature_skills.json` descriptions.
+  Legendary+, Ex. Skill, Supreme+.
 
 **Skill summary authoring** (AI-generated, not scripted):
 

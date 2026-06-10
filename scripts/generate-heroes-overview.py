@@ -1406,10 +1406,11 @@ def _hero_damage_profile(hero: _rs.Hero) -> dict[str, float]:
 def _signature_sections() -> dict[str, str]:
     global _SIGNATURE_SECTIONS
     if _SIGNATURE_SECTIONS is None:
-        path = ROOT / "data" / "signature_skills.json"
-        data = json.loads(path.read_text(encoding="utf-8"))
+        data = _rs._load_signature_categories()
         _SIGNATURE_SECTIONS = {
-            display: entry.get("section", "")
+            display: _rs.CATEGORY_TO_SECTION[
+                _rs._effective_signature_category(entry)
+            ]
             for display, entry in data.items()
         }
     return _SIGNATURE_SECTIONS

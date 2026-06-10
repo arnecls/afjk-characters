@@ -93,7 +93,6 @@ class RoundTripTests(unittest.TestCase):
                 "casting_speed": "normal",
                 "signature_skill_name": "Test",
                 "signature_skill_is_ult": False,
-                "signature_skill_description": "test skill",
                 "signature_skill_speed": "normal",
                 "synergy_signature_speed": "normal",
                 "synergy_signature_is_ult": False,
@@ -338,6 +337,24 @@ class SkillOverviewTests(unittest.TestCase):
         text = "\n".join(rs.format_behavior_section("Aliceth", behavior))
         self.assertIn("- **Signature skill**: Radiant Rain (ultimate)", text)
         self.assertNotIn("aerial area arrow rain", text)
+
+    def test_signature_categories_override_and_calculated(self):
+        sig = rs._load_signature_categories()
+        self.assertNotIn("signature_override", sig["Aliceth"])
+        self.assertEqual(sig["Aliceth"]["signature_calculated"], "ultimate")
+
+        _, alna = self._hero_by_display("Alna")
+        self.assertEqual(alna.signature_skill_name, "Winter Anthem")
+        self.assertTrue(alna.signature_skill_is_ult)
+        self.assertEqual(alna.signature_skill_speed, "fast")
+        self.assertEqual(sig["Alna"]["signature_override"], "ultimate")
+        self.assertEqual(sig["Alna"]["signature_calculated"], "skill2")
+
+        _, aurora = self._hero_by_display("Aurora")
+        self.assertEqual(aurora.signature_skill_name, "Starlit Slumber")
+        self.assertTrue(aurora.signature_skill_is_ult)
+        self.assertFalse(aurora.synergy_signature_is_ult)
+        self.assertEqual(sig["Aurora"]["signature_calculated"], "skill1")
 
     def test_include_skill_summaries_false_omits_subsections(self):
         _, behavior = self._hero_by_display("Aliceth")

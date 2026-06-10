@@ -10,8 +10,7 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 | [heroes_data.json](heroes_data.json) | **Script-generated** | Merged roster from the Fandom wiki (baseline) and Yaphalla (gap-fill). Regenerate with `just download`. Committed as the canonical skill source when offline. |
 | [heroes_data_processed.json](heroes_data_processed.json) | **Script-generated** | Per-hero analysis: effects, behavior, synergy profile, magnitudes. Regenerate with `just analyze` (or `just views`). Do not edit by hand. |
 | [heroes_data_synergies.json](heroes_data_synergies.json) | **Script-generated** | Roster-wide synergy rankings, beneficiaries, and replacements. Regenerate with `just analyze` or `just analyze-synergies`. Do not edit by hand. |
-| [signature_skills.json](signature_skills.json) | **AI-generated** | Curated signature skill per hero (section, name, speed overrides). Read by analysis; edit when a hero’s identity skill is wrong. |
-| [defining_skills_alternative.json](defining_skills_alternative.json) | **AI-generated** | Alternate signature skill used for synergy fuel when the primary signature is a slow, non-buffable Ultimate. |
+| [signature_skills.json](signature_skills.json) | **AI-generated** | Signature skill per hero by category (`signature_calculated`, optional `signature_override`, optional `speed_override`). Skill names come from `heroes_data.json`; edit when a hero’s identity skill is wrong. |
 | [hero_behavior_tags.json](hero_behavior_tags.json) | **AI-generated** | Combat-role tags per hero for replacement scoring. |
 | [heroes_data_skill_summary.json](heroes_data_skill_summary.json) | **AI-generated** | Short mechanic summary per hero and skill category (`ultimate`, `skill1`–`skill5`). Joined to processed skills by `category`; shown in Skill overview subsections. |
 | [placement_constraint_overrides.json](placement_constraint_overrides.json) | **Manual configuration** | Optional overrides when placement/composition rules cannot be parsed from skill text. |
@@ -62,7 +61,6 @@ Edit these when tuning scoring, fixing edge cases, or extending validation:
 heroes_data.json
     + heroes_config.json
     + signature_skills.json
-    + defining_skills_alternative.json
     + hero_behavior_tags.json
     + placement_constraint_overrides.json
         ↓  just analyze

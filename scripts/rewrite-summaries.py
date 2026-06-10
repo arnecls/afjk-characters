@@ -18,8 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HEROES_MD = ROOT / "Heroes.md"
 HEROES2_MD = ROOT / "heroes2.md"
-DEFINING_SKILLS_FILE = ROOT / "data" / "signature_skills.json"
-DEFINING_SKILLS_ALTERNATIVE_FILE = ROOT / "data" / "defining_skills_alternative.json"
+SIGNATURE_SKILLS_FILE = ROOT / "data" / "signature_skills.json"
+HEROES_DATA_FILE = ROOT / "data" / "heroes_data.json"
 SKILL_SUMMARY_FILE = ROOT / "data" / "heroes_data_skill_summary.json"
 PLACEMENT_CONSTRAINT_OVERRIDES_FILE = (
     ROOT / "data" / "placement_constraint_overrides.json"
@@ -3764,7 +3764,6 @@ class HeroBehavior:
     signature_skill_name: str = ""
     signature_skill_is_ult: bool = False
     signature_skill_section: str = ""
-    signature_skill_description: str = ""
     signature_skill_speed: str = ""
     synergy_signature_speed: str = ""
     synergy_signature_is_ult: bool = False
@@ -4292,24 +4291,72 @@ _SKILL_CARD_STAT_KEYS: tuple[str, ...] = tuple(
 )
 
 
-def _load_signature_skills() -> dict[str, dict]:
-    if not DEFINING_SKILLS_FILE.exists():
+def _load_signature_categories() -> dict[str, dict]:
+    if not SIGNATURE_SKILLS_FILE.exists():
         return {}
-    return json.loads(DEFINING_SKILLS_FILE.read_text(encoding="utf-8"))
+    return json.loads(SIGNATURE_SKILLS_FILE.read_text(encoding="utf-8"))
+
+
+def _effective_signature_category(raw: dict) -> str:
+    return raw.get("signature_override") or raw["signature_calculated"]
+
+
+def _signature_entry_for_category(raw: dict, category: str) -> dict:
+    """Legacy-shaped entry for speed/synergy helpers (section, is_ultimate)."""
+    section = CATEGORY_TO_SECTION[category]
+    entry: dict = {
+        "section": section,
+        "is_ultimate": category == "ultimate",
+    }
+    if category == _effective_signature_category(raw):
+        if override := raw.get("speed_override"):
+            entry["speed_override"] = override
+    return entry
+
+
+_skill_names_cache: dict[str, dict[str, str]] | None = None
+
+
+def _skill_names_by_display() -> dict[str, dict[str, str]]:
+    global _skill_names_cache
+    if _skill_names_cache is not None:
+        return _skill_names_cache
+    if not HEROES_DATA_FILE.exists():
+        _skill_names_cache = {}
+        return _skill_names_cache
+    data = json.loads(HEROES_DATA_FILE.read_text(encoding="utf-8"))
+    result: dict[str, dict[str, str]] = {}
+    for hero in data.get("heroes", []):
+        display = hero.get("name") or hero.get("title", "").split(" - ", 1)[0]
+        by_category: dict[str, str] = {}
+        for skill in hero.get("skills", []):
+            section = skill.get("section", "")
+            category = SECTION_TO_SKILL_CATEGORY.get(section)
+            if category and skill.get("name"):
+                by_category[category] = skill["name"]
+        result[display] = by_category
+        curated = curated_display_name(display)
+        if curated != display:
+            result[curated] = by_category
+    _skill_names_cache = result
+    return result
+
+
+def _skill_name_for_category(display: str, category: str) -> str:
+    return _skill_names_by_display().get(display, {}).get(category, "")
+
+
+def _resolved_signature_section(display_name: str) -> str:
+    raw = _load_signature_categories().get(curated_display_name(display_name))
+    if not raw:
+        return ""
+    return CATEGORY_TO_SECTION.get(_effective_signature_category(raw), "")
 
 
 def _load_skill_summaries() -> dict[str, dict[str, str]]:
     if not SKILL_SUMMARY_FILE.exists():
         return {}
     return json.loads(SKILL_SUMMARY_FILE.read_text(encoding="utf-8"))
-
-
-def _load_signature_skills_alternative() -> dict[str, dict]:
-    if not DEFINING_SKILLS_ALTERNATIVE_FILE.exists():
-        return {}
-    return json.loads(
-        DEFINING_SKILLS_ALTERNATIVE_FILE.read_text(encoding="utf-8")
-    )
 
 
 def _load_placement_constraint_overrides() -> dict[str, list[PlacementConstraint]]:
@@ -5077,8 +5124,7 @@ def build_behavior_for_heroes(
     casting_scores = compute_casting_scores(skills_by_title)
     casting_labels = casting_speed_labels(casting_scores)
     per_skill_speeds = compute_per_skill_speeds(skills_by_title)
-    defining_by_display = _load_signature_skills()
-    alternative_by_display = _load_signature_skills_alternative()
+    signature_by_display = _load_signature_categories()
     placement_overrides = _load_placement_constraint_overrides()
     damage_thresholds = build_section_damage_thresholds(heroes, skills_by_title)
     true_damage_thresholds = build_true_damage_thresholds(
@@ -5093,8 +5139,17 @@ def build_behavior_for_heroes(
         display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
         curated = curated_display_name(display)
         speeds = per_skill_speeds.get(hero.title, {})
-        defining = defining_by_display.get(curated)
-        alternative = alternative_by_display.get(curated)
+        raw_sig = signature_by_display.get(curated)
+        defining = None
+        alternative = None
+        if raw_sig:
+            effective_cat = _effective_signature_category(raw_sig)
+            calculated_cat = raw_sig["signature_calculated"]
+            defining = _signature_entry_for_category(raw_sig, effective_cat)
+            if calculated_cat != effective_cat:
+                alternative = _signature_entry_for_category(
+                    raw_sig, calculated_cat
+                )
         placement_constraints = detect_placement_constraints(
             skills,
             curated,
@@ -5118,10 +5173,11 @@ def build_behavior_for_heroes(
                 movement=movement,
                 movement_note=note,
                 casting_speed=casting_labels.get(hero.title, "normal"),
-                signature_skill_name=defining.get("name", ""),
+                signature_skill_name=_skill_name_for_category(
+                    curated, _effective_signature_category(raw_sig)
+                ),
                 signature_skill_is_ult=bool(defining.get("is_ultimate")),
                 signature_skill_section=defining.get("section", ""),
-                signature_skill_description=defining.get("description", ""),
                 signature_skill_speed=_signature_skill_speed_label(
                     defining, speeds
                 ),
@@ -5242,12 +5298,9 @@ def _format_signature_skill_body(
     name = behavior.signature_skill_name
     if behavior.signature_skill_is_ult:
         return f"{name} (ultimate)"
-    section = behavior.signature_skill_section
-    if not section:
-        defining = _load_signature_skills().get(
-            curated_display_name(display_name), {}
-        )
-        section = defining.get("section", "")
+    section = behavior.signature_skill_section or _resolved_signature_section(
+        display_name
+    )
     category = SECTION_TO_SKILL_CATEGORY.get(section, "")
     slot = CATEGORY_DISPLAY_LABELS.get(category, section)
     return f"{name} ({slot})"
@@ -5260,12 +5313,9 @@ def signature_skill_category(
         return None
     if behavior.signature_skill_is_ult:
         return "ultimate"
-    section = behavior.signature_skill_section
-    if not section:
-        defining = _load_signature_skills().get(
-            curated_display_name(display_name), {}
-        )
-        section = defining.get("section", "")
+    section = behavior.signature_skill_section or _resolved_signature_section(
+        display_name
+    )
     return SECTION_TO_SKILL_CATEGORY.get(section)
 
 

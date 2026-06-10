@@ -6751,18 +6751,10 @@
         {
           "provider": "Lyca - Keeper of Glades",
           "reasons": [
-            "ATK SPD via ATK SPD buff (all units, high) `signature fuel`",
-            "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+            "Energy via Energy recovery (all units, low) `signature fuel`",
+            "ATK SPD via ATK SPD buff (all units, high) `signature fuel`"
           ],
-          "score": 21.40714285714286
-        },
-        {
-          "provider": "Rowan - The Roamer",
-          "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
-          ],
-          "score": 15.854399999999998
+          "score": 12.906
         },
         {
           "provider": "Damian - Woody Wonder",
@@ -6805,14 +6797,6 @@
           "score": 11.25
         },
         {
-          "provider": "Ravion - Twilight's Burden",
-          "reasons": [
-            "Energy via Energy recovery (multiple targets, medium) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 9.470057142857142
-        },
-        {
           "provider": "Valka - Forsaken Blade",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -6827,14 +6811,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 8.5
-        },
-        {
-          "provider": "Pandora - Hope Unleashed",
-          "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 8.153228571428572
         },
         {
           "provider": "Isabella - The Taken Soul",
@@ -6868,11 +6844,11 @@
           "score": 6.0
         },
         {
-          "provider": "Thador - Ironsworn General",
+          "provider": "Rowan - The Roamer",
           "reasons": [
-            "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
+            "Energy via Energy recovery (area, high) `signature fuel`"
           ],
-          "score": 4.725
+          "score": 5.0544
         },
         {
           "provider": "Hepler - Master of Forms",
@@ -6891,18 +6867,18 @@
           "score": 3.7500000000000004
         },
         {
-          "provider": "Phraesto - Misty Scorpion",
-          "reasons": [
-            "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
-          ],
-          "score": 3.375
-        },
-        {
           "provider": "Smokey & Meerky - Wasteland Apothecary",
           "reasons": [
             "Energy via Energy recovery (area, medium) `signature fuel`"
           ],
           "score": 3.3695999999999997
+        },
+        {
+          "provider": "Ravion - Twilight's Burden",
+          "reasons": [
+            "Energy via Energy recovery (multiple targets, medium) `signature fuel`"
+          ],
+          "score": 2.5272
         },
         {
           "provider": "Fay - Colorful Dancer",
@@ -6924,6 +6900,20 @@
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Pandora - Hope Unleashed",
+          "reasons": [
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
+        },
+        {
+          "provider": "Thador - Ironsworn General",
+          "reasons": [
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         }
       ],
       "beneficiaries": [
@@ -7002,7 +6992,25 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [
+          {
+            "name": "Perseus",
+            "score": 0.6632,
+            "matches": [
+              "Knock back",
+              "Stun"
+            ]
+          },
+          {
+            "name": "Scarlita",
+            "score": 0.6579,
+            "matches": [
+              "Knock back",
+              "Knock up",
+              "Stun"
+            ]
+          }
+        ]
       }
     },
     "Cecia - Requiem of Thorns": {
@@ -12487,6 +12495,10 @@
         {
           "score": 14.25,
           "name": "Alsa"
+        },
+        {
+          "score": 11.25,
+          "name": "Cassadee"
         },
         {
           "score": 8.4375,
@@ -25100,10 +25112,6 @@
         },
         {
           "score": 21.40714285714286,
-          "name": "Cassadee"
-        },
-        {
-          "score": 21.40714285714286,
           "name": "Chippy"
         },
         {
@@ -25233,6 +25241,10 @@
         {
           "score": 12.906,
           "name": "Aurora"
+        },
+        {
+          "score": 12.906,
+          "name": "Cassadee"
         },
         {
           "score": 12.906,
@@ -32402,10 +32414,6 @@
         {
           "score": 15.854399999999998,
           "name": "Brutus"
-        },
-        {
-          "score": 15.854399999999998,
-          "name": "Cassadee"
         },
         {
           "score": 15.854399999999998,
