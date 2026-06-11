@@ -283,6 +283,12 @@ the global minimum score from `heroes_config.json`. **Synergy lines and chip
 magnitudes stay per-role** (`assign_magnitudes()`); **replacement profiles**
 (buff, healing, damage, debuff, cc) use **global raw throughput, numeric, or
 duration scores** so substitutes compare across roles on absolute kit strength.
+**Replacement ranking** sorts by kit similarity first (coverage / Jaccard);
+Prydwen tier breaks ties only. For tier comparison, `dream_realm` and
+`dream_realm_endless` are merged to the **max** of both (three modes:
+afk_stages, dream_realm, pvp). Candidates **without any Prydwen tiers** are
+excluded; candidates **2+ tiers below the source on every overlapping mode**
+are excluded. Synergy ranking is unchanged.
 Assign a small set
 (typically three to five) that describe how the hero is played, not every minor
 skill effect.
@@ -541,7 +547,13 @@ Do not list these as hero stat types; detect them as buffs, debuffs, or special
 effects instead.
 
 - **Damage taken** — combat modifier (e.g. damage taken reduction, damage taken
-  debuff), not a character-sheet stat.
+  debuff), not a character-sheet stat. Summaries display **Damage taken** in
+  both buff and debuff sections; parse as `Damage taken reduction` (buff) or
+  `Damage taken debuff` (debuff).
+- **Magic damage taken** — parse increased enemy magic damage taken as debuff
+  `Magic damage amplification`; reduced self/ally magic damage taken as buff
+  `Magic damage reduction`. Both display as **Magic damage amplification** in
+  summaries (buff = mitigation, debuff = vulnerability).
 - **Max HP** — scaling phrase in skills (`max HP`, `% of max HP`); not a
   separate wiki stat column (use **HP** for the health pool).
 - **Dodge chance** — skill-granted avoidance (e.g. Eironn's shield), not a base

@@ -147,6 +147,8 @@ PRYDWEN_TIER_MODES = (
     "dream_realm_endless",
     "pvp",
 )
+REPLACEMENT_TIER_MODES = ("afk_stages", "dream_realm", "pvp")
+REPLACEMENT_MAX_TIER_DEFICIT = 2
 TIER_RANK_ORDER = ("C", "B", "A", "A+", "S", "S+")
 REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
 REPLACEMENT_HEALING_THROUGHPUT_BLEND = 0.65
@@ -1946,15 +1948,30 @@ def _prydwen_tier_rank(tier: str | None) -> int | None:
         return None
 
 
+def _normalize_replacement_prydwen_tiers(
+    tiers: dict[str, str] | None,
+) -> dict[str, str]:
+    """Merge dream-realm modes to max tier for replacement comparison."""
+    raw = dict(tiers or {})
+    dr_rank = _prydwen_tier_rank(raw.get("dream_realm"))
+    dre_rank = _prydwen_tier_rank(raw.get("dream_realm_endless"))
+    ranks = [r for r in (dr_rank, dre_rank) if r is not None]
+    if ranks:
+        raw["dream_realm"] = TIER_RANK_ORDER[max(ranks)]
+    raw.pop("dream_realm_endless", None)
+    return raw
+
+
 def _prydwen_tier_avg_delta(
     source_tiers: dict[str, str] | None,
     candidate_tiers: dict[str, str] | None,
+    modes: tuple[str, ...] = PRYDWEN_TIER_MODES,
 ) -> float | None:
     """Mean candidate rank minus source rank over modes where both have tiers."""
     src = source_tiers or {}
     cand = candidate_tiers or {}
     deltas: list[float] = []
-    for mode in PRYDWEN_TIER_MODES:
+    for mode in modes:
         source_rank = _prydwen_tier_rank(src.get(mode))
         candidate_rank = _prydwen_tier_rank(cand.get(mode))
         if source_rank is None or candidate_rank is None:
@@ -1976,14 +1993,48 @@ def _prydwen_tier_preference(
     return 1 if delta >= 0 else 0
 
 
+def _replacement_prydwen_tiers_present(tiers: dict[str, str] | None) -> bool:
+    """True when hero has at least one Prydwen tier in replacement modes."""
+    normalized = _normalize_replacement_prydwen_tiers(tiers)
+    return any(
+        _prydwen_tier_rank(normalized.get(mode)) is not None
+        for mode in REPLACEMENT_TIER_MODES
+    )
+
+
+def _replacement_candidate_meets_tier_floor(
+    source_tiers: dict[str, str] | None,
+    candidate_tiers: dict[str, str] | None,
+    max_deficit: int = REPLACEMENT_MAX_TIER_DEFICIT,
+) -> bool:
+    """False when candidate lacks Prydwen tiers or is max_deficit+ below on all overlaps."""
+    if not _replacement_prydwen_tiers_present(candidate_tiers):
+        return False
+    src = _normalize_replacement_prydwen_tiers(source_tiers)
+    cand = _normalize_replacement_prydwen_tiers(candidate_tiers)
+    deltas: list[int] = []
+    for mode in REPLACEMENT_TIER_MODES:
+        source_rank = _prydwen_tier_rank(src.get(mode))
+        candidate_rank = _prydwen_tier_rank(cand.get(mode))
+        if source_rank is None or candidate_rank is None:
+            continue
+        deltas.append(candidate_rank - source_rank)
+    if not deltas:
+        return True
+    return not all(d <= -max_deficit for d in deltas)
+
+
 def _replacement_tier_rank_key(
     source_tiers: dict[str, str] | None,
     candidate_tiers: dict[str, str] | None,
 ) -> tuple[int, float]:
     """Sort key for replacement ranking: meets bar, then how much better."""
-    delta = _prydwen_tier_avg_delta(source_tiers, candidate_tiers)
-    pref = _prydwen_tier_preference(source_tiers, candidate_tiers)
-    return (pref, delta if delta is not None else float("-inf"))
+    src = _normalize_replacement_prydwen_tiers(source_tiers)
+    cand = _normalize_replacement_prydwen_tiers(candidate_tiers)
+    delta = _prydwen_tier_avg_delta(src, cand, modes=REPLACEMENT_TIER_MODES)
+    if delta is None:
+        return (0, float("-inf"))
+    return (1 if delta >= 0 else 0, delta)
 
 
 def _replacement_rank_score(
@@ -2041,13 +2092,18 @@ def _rank_replacement_category(
     ]
     ranked_items.sort(
         key=lambda item: (
-            (-item[1], -item[0][0], -item[0][1], short_name(item[2]))
-            if min_tag_overlap > 0
-            else (-item[0][0], -item[0][1], -item[1], short_name(item[2]))
+            -item[1],
+            -item[0][0],
+            -item[0][1],
+            short_name(item[2]),
         )
     )
     ranked: list[dict] = []
     for _tier_key, effective, title, matches in ranked_items:
+        if not _replacement_candidate_meets_tier_floor(
+            source_tiers, tiers.get(title, {})
+        ):
+            continue
         if min_tag_overlap > 0:
             if len(matches) < min_tag_overlap:
                 continue

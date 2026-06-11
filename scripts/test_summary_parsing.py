@@ -452,6 +452,30 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertIn("Revive ally", provides)
         self.assertNotIn("Cheat death", provides)
 
+    def test_bonnie_magic_damage_amplification_is_debuff_not_provide(self):
+        hero = _hero_by_short_name("Bonnie")
+        provides = {
+            s.label for s in hero.special_effects if s.kind == "provides"
+        }
+        debuff_labels = {
+            e.label for e in hero.effects if e.category == "debuff"
+        }
+        self.assertNotIn("Magic damage amplification", provides)
+        self.assertIn("Magic damage amplification", debuff_labels)
+
+    def test_berial_damage_taken_debuff_not_magic_amplification(self):
+        hero = _hero_by_short_name("Berial")
+        debuff_labels = {
+            e.label for e in hero.effects if e.category == "debuff"
+        }
+        self.assertIn("Damage taken debuff", debuff_labels)
+        self.assertNotIn("Magic damage amplification", debuff_labels)
+
+    def test_satrana_magic_damage_reduction_buff(self):
+        hero = _hero_by_short_name("Satrana")
+        buff_labels = {e.label for e in hero.effects if e.category == "buff"}
+        self.assertIn("Magic damage reduction", buff_labels)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1285,6 +1285,28 @@ def extract_number(text: str, label: str = "") -> float | None:
         )
         if amounts:
             return max(amounts)
+    if label == "Magic damage reduction":
+        amounts = _all_amounts(
+            text,
+            [
+                r"magic damage taken.{0,50}reduc\w+ by (\d+(?:\.\d+)?)\s*%",
+                r"reduc(?:e|es|ing) .{0,40}magic damage taken by "
+                r"(\d+(?:\.\d+)?)\s*%",
+                r"magic dmg reduction to (\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+    if label == "Magic damage amplification":
+        amounts = _all_amounts(
+            text,
+            [
+                r"magic damage taken is increased by (\d+(?:\.\d+)?)\s*%",
+                r"increased by (\d+(?:\.\d+)?)\s*%.{0,40}magic damage taken",
+            ],
+        )
+        if amounts:
+            return max(amounts)
     if label == "ATK debuff":
         for pat in (
             r"reduc(?:e|es|ing|tion in) .{0,50}atk by (\d+(?:\.\d+)?)\s*%",
@@ -1959,6 +1981,12 @@ BUFF_RULES = [
     (r"reduc(?:e|es|ing) (?:her |his |their |the .{0,20})?damage taken", "Damage taken reduction"),
     # Abbreviated form used in some skill descriptions (e.g. Koko, Phraesto).
     (r"\bdmg reduction\b", "Damage taken reduction"),
+    (
+        r"magic damage taken.{0,50}(?:is |are )?reduc\w+|"
+        r"reduc(?:e|es|ing) .{0,40}magic damage taken|"
+        r"magic dmg reduction|magic damage reduction",
+        "Magic damage reduction",
+    ),
     (r"invincible", "Invincible"),
     (
         r"extra \d+ \+ \d+ penetration|penetration applied to|"
@@ -2163,10 +2191,17 @@ DEBUFF_RULES = [
         r"reduc(?:e|es|ing) (?:their|the target'?s?) healing\b",
         "Healing debuff",
     ),
-    # Damage taken debuff (enemies take more damage)
+    # Magic damage taken debuff (before generic damage taken debuff)
     (
-        r"increas(?:e|es|ing|ed) .{0,30}damage taken|"
-        r"damage taken.{0,20}(?:is |are )?increas\w+",
+        r"magic damage taken is increased|"
+        r"increased? .{0,30}magic damage taken|"
+        r"take more magic damage",
+        "Magic damage amplification",
+    ),
+    # Damage taken debuff (enemies take more damage; not magic-specific)
+    (
+        r"increas(?:e|es|ing|ed) .{0,30}(?<!magic )damage taken|"
+        r"(?<!magic )damage taken.{0,20}(?:is |are )?increas\w+",
         "Damage taken debuff",
     ),
     # Movement / Haste debuff
@@ -2314,11 +2349,6 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     ),
     (r"spirit form", "Spirit form protection"),
     (r"inflicts? .{0,40}(?:venom|curse|aging)", "Debuff application"),
-    (
-        r"magic damage taken is increased|"
-        r"increased? .{0,30}magic damage taken",
-        "Magic damage amplification",
-    ),
     (r"hypnotiz", "Sleep (area)"),
     # Damage absorption / release
     (
@@ -4400,6 +4430,14 @@ def _summary_debuff_display_label(label: str) -> str:
     return label
 
 
+def _summary_buff_display_label(label: str) -> str:
+    if label == "Damage taken reduction":
+        return "Damage taken"
+    if label == "Magic damage reduction":
+        return "Magic damage amplification"
+    return label
+
+
 def format_effect_magnitude(effect: Effect) -> str:
     if effect.conditional:
         return f"`{effect.magnitude}` — conditional ({effect.conditional})"
@@ -4456,7 +4494,10 @@ def format_buffs_provided_data(
     buffs: list[dict[str, str | None]] = []
     for effect in items:
         entry: dict[str, str | None] = {
-            "label": f"{effect.label}{format_tier_suffix(effect.tier)}",
+            "label": (
+                f"{_summary_buff_display_label(effect.label)}"
+                f"{format_tier_suffix(effect.tier)}"
+            ),
             "targetingType": effect.targeting,
             "quality": effect.magnitude,
         }
@@ -4473,7 +4514,10 @@ def format_buffs_provided_intro(hero: Hero, display_name: str) -> str | None:
     items = collect_hero_buff_effects(hero)
     fragments: list[str] = []
     for effect in items:
-        label = f"{effect.label}{format_tier_suffix(effect.tier)}"
+        label = (
+            f"{_summary_buff_display_label(effect.label)}"
+            f"{format_tier_suffix(effect.tier)}"
+        )
         targeting = _format_buff_targeting_phrase(effect.targeting)
         quality = effect.magnitude
         fragment = f"{label} {targeting} `{quality}`"

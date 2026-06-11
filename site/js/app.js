@@ -488,6 +488,9 @@
     "Blind HP loss debuff": { emoji: "👁️", cls: "chip-debuff" },
     "DoT debuff": { emoji: "🔥", cls: "chip-debuff" },
     "Damage taken debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Damage taken": { emoji: "🥀", cls: "chip-debuff" },
+    "Magic damage amplification": { emoji: "🪄", cls: "chip-debuff" },
+    "Magic damage reduction": { emoji: "🪄", cls: "chip-stat" },
     "Energy drain": { emoji: "🔋", cls: "chip-debuff" },
     "Execution debuff": { emoji: "☠️", cls: "chip-debuff" },
     "Magic DEF debuff": { emoji: "🔮", cls: "chip-debuff" },
@@ -821,10 +824,26 @@
     return null;
   }
 
-  function resolveLeadingChip(label) {
+  const BUFF_DISPLAY_EFFECT_CHIPS = {
+    "Damage taken": { emoji: "🛡️", cls: "chip-stat" },
+    "Magic damage amplification": { emoji: "🪄", cls: "chip-stat" },
+  };
+
+  function resolveLeadingChip(label, polarity) {
     const trimmed = label.trim();
     if (!trimmed) {
       return { textOnly: "", remainder: "", isCc: false };
+    }
+
+    if (polarity === "buff" && BUFF_DISPLAY_EFFECT_CHIPS[trimmed]) {
+      const buff = BUFF_DISPLAY_EFFECT_CHIPS[trimmed];
+      return {
+        emoji: buff.emoji,
+        text: trimmed,
+        cls: buff.cls,
+        isCc: false,
+        remainder: "",
+      };
     }
 
     const exactKey = exactTagDefinitionKey(trimmed);
@@ -950,8 +969,8 @@
     );
   }
 
-  function mergeLabelWithIndicator(label, indicator, tierSuffix) {
-    const leading = resolveLeadingChip(label);
+  function mergeLabelWithIndicator(label, indicator, tierSuffix, polarity) {
+    const leading = resolveLeadingChip(label, polarity);
     const meta = resolveIndicatorMeta(label, indicator, leading.isCc);
     if (!meta) {
       return null;
@@ -978,15 +997,15 @@
     );
   }
 
-  function mergeEffectWithQuality(effectLabel, qualityValue, tierSuffix) {
+  function mergeEffectWithQuality(effectLabel, qualityValue, tierSuffix, polarity) {
     const qualityMeta = qualityIndicatorMeta(
       qualityValue,
-      resolveLeadingChip(effectLabel).isCc
+      resolveLeadingChip(effectLabel, polarity).isCc
     );
     if (!qualityMeta) {
       return null;
     }
-    const leading = resolveLeadingChip(effectLabel);
+    const leading = resolveLeadingChip(effectLabel, polarity);
     if (leading.emoji) {
       return (
         formatMergedIndicator(
@@ -1047,13 +1066,13 @@
     return chip !== null ? chip : escapeHtml(token.trim());
   }
 
-  function chipifyEffectName(name) {
+  function chipifyEffectName(name, polarity) {
     const parsed = parseEffectLabelParts(name);
     const label = parsed.base;
     const tier = parsed.tier;
 
     if (label.indexOf(" via ") === -1) {
-      return renderStandaloneEffectChip(label, tier);
+      return renderStandaloneEffectChip(label, tier, polarity);
     }
 
     const viaIdx = label.indexOf(" via ");
@@ -1078,7 +1097,7 @@
       return leftHtml + " via " + rightHtml;
     }
 
-    return renderStandaloneEffectChip(label, tier);
+    return renderStandaloneEffectChip(label, tier, polarity);
   }
 
   function chipifyLeadingCcType(label) {
@@ -1162,8 +1181,8 @@
     );
   }
 
-  function renderStandaloneEffectChip(base, tier) {
-    const leading = resolveLeadingChip(base);
+  function renderStandaloneEffectChip(base, tier, polarity) {
+    const leading = resolveLeadingChip(base, polarity);
     if (leading.emoji) {
       return (
         '<span class="chip ' +
@@ -3531,14 +3550,14 @@
     return chipifyTargetingSegment(targetingType);
   }
 
-  function renderMergedEffectPill(baseLabel, quality, tier, conditional) {
+  function renderMergedEffectPill(baseLabel, quality, tier, conditional, polarity) {
     const qMeta = qualityIndicatorMeta(
       quality,
-      resolveLeadingChip(baseLabel).isCc
+      resolveLeadingChip(baseLabel, polarity).isCc
     );
     let merged =
-      mergeEffectWithQuality(baseLabel, quality, tier) ||
-      mergeLabelWithIndicator(baseLabel, quality, tier);
+      mergeEffectWithQuality(baseLabel, quality, tier, polarity) ||
+      mergeLabelWithIndicator(baseLabel, quality, tier, polarity);
     if (!merged && qMeta) {
       merged = formatMergedIndicator(
         { textOnly: baseLabel, tierSuffix: tier || "" },
@@ -3548,7 +3567,7 @@
     }
     if (!merged) {
       merged =
-        chipifyEffectName(baseLabel) +
+        chipifyEffectName(baseLabel, polarity) +
         formatMergedTierSuffix(tier) +
         (quality ? " " + formatTag(quality) : "");
     }
@@ -3570,7 +3589,8 @@
       parsed.base,
       quality,
       parsed.tier,
-      buff.conditional
+      buff.conditional,
+      "buff"
     );
     const targetingHtml = renderBuffTargetingChip(
       buff.targetingType || buff.targeting

@@ -41,6 +41,27 @@ def _load_modules():
 rs, gen = _load_modules()
 
 
+def _default_prydwen_tiers(tier: str = "A") -> dict[str, str]:
+    return {
+        "afk_stages": tier,
+        "dream_realm": tier,
+        "dream_realm_endless": tier,
+        "pvp": tier,
+    }
+
+
+def _baseline_tiers_for_scores(
+    scores: list[tuple[float, str, list[str]]],
+    source_title: str | None = None,
+    tier: str = "A",
+) -> dict[str, dict[str, str]]:
+    titles = {title for _, title, _ in scores}
+    if source_title:
+        titles.add(source_title)
+    block = _default_prydwen_tiers(tier)
+    return {t: dict(block) for t in titles}
+
+
 def _hero_by_short_name(name: str):
     text = rs.HEROES_MD.read_text(encoding="utf-8")
     blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
@@ -69,7 +90,13 @@ class ReplacementFactionRankingTests(unittest.TestCase):
             "Other - Cross Faction": "wilder",
         }
         ranked = gen._rank_replacement_category(
-            scores, "celestial", factions
+            scores,
+            "celestial",
+            factions,
+            source_title="Source - Hero",
+            tiers_by_title=_baseline_tiers_for_scores(
+                scores, source_title="Source - Hero"
+            ),
         )
         self.assertEqual(ranked[0]["name"], "Ally")
         self.assertAlmostEqual(ranked[0]["score"], 1.0)
@@ -86,7 +113,13 @@ class ReplacementFactionRankingTests(unittest.TestCase):
             "Other - Cross Faction": "wilder",
         }
         ranked = gen._rank_replacement_category(
-            scores, "celestial", factions
+            scores,
+            "celestial",
+            factions,
+            source_title="Source - Hero",
+            tiers_by_title=_baseline_tiers_for_scores(
+                scores, source_title="Source - Hero"
+            ),
         )
         self.assertEqual(ranked[0]["name"], "Other")
         self.assertEqual(ranked[1]["name"], "Ally")
@@ -96,7 +129,15 @@ class ReplacementFactionRankingTests(unittest.TestCase):
             (0.95, "Other - Cross Faction", ["tag"]),
             (0.90, "Ally - Same Faction", ["tag"]),
         ]
-        ranked = gen._rank_replacement_category(scores, None, {})
+        ranked = gen._rank_replacement_category(
+            scores,
+            None,
+            {},
+            source_title="Source - Hero",
+            tiers_by_title=_baseline_tiers_for_scores(
+                scores, source_title="Source - Hero"
+            ),
+        )
         self.assertEqual(ranked[0]["name"], "Other")
         self.assertEqual(ranked[1]["name"], "Ally")
 
@@ -137,6 +178,10 @@ class ReplacementRoleCategoryRankingTests(unittest.TestCase):
             scores,
             role_category_by_title=role_categories,
             source_role_category="damage_dealer",
+            source_title="Source - Hero",
+            tiers_by_title=_baseline_tiers_for_scores(
+                scores, source_title="Source - Hero"
+            ),
         )
         self.assertEqual(ranked[0]["name"], "Ally")
         self.assertAlmostEqual(ranked[0]["score"], 1.0)
@@ -156,6 +201,10 @@ class ReplacementRoleCategoryRankingTests(unittest.TestCase):
             scores,
             role_category_by_title=role_categories,
             source_role_category="specialist",
+            source_title="Source - Hero",
+            tiers_by_title=_baseline_tiers_for_scores(
+                scores, source_title="Source - Hero"
+            ),
         )
         self.assertEqual(ranked[0]["name"], "Other")
         self.assertEqual(ranked[1]["name"], "Ally")
@@ -165,7 +214,13 @@ class ReplacementRoleCategoryRankingTests(unittest.TestCase):
             (0.95, "Other - Cross Role", ["tag"]),
             (0.90, "Ally - Same Role", ["tag"]),
         ]
-        ranked = gen._rank_replacement_category(scores)
+        ranked = gen._rank_replacement_category(
+            scores,
+            source_title="Source - Hero",
+            tiers_by_title=_baseline_tiers_for_scores(
+                scores, source_title="Source - Hero"
+            ),
+        )
         self.assertEqual(ranked[0]["name"], "Other")
         self.assertEqual(ranked[1]["name"], "Ally")
 
@@ -206,7 +261,7 @@ class ReplacementTierRankingTests(unittest.TestCase):
 
     def test_equal_or_better_avg_tier_ranks_above_worse(self) -> None:
         scores = [
-            (0.95, "Worse - Tier", ["tag"]),
+            (0.90, "Worse - Tier", ["tag"]),
             (0.90, "Better - Tier", ["tag"]),
         ]
         tiers = {
@@ -237,10 +292,10 @@ class ReplacementTierRankingTests(unittest.TestCase):
         self.assertEqual(ranked[0]["name"], "Better")
         self.assertEqual(ranked[1]["name"], "Worse")
 
-    def test_equal_avg_tier_beats_worse_despite_lower_score(self) -> None:
+    def test_equal_avg_tier_beats_worse_when_kit_scores_tie(self) -> None:
         scores = [
-            (0.95, "Worse - Tier", ["tag"]),
-            (0.80, "Equal - Tier", ["tag"]),
+            (0.90, "Worse - Tier", ["tag"]),
+            (0.90, "Equal - Tier", ["tag"]),
         ]
         tiers = {
             "Source - Hero": {
@@ -270,7 +325,7 @@ class ReplacementTierRankingTests(unittest.TestCase):
         self.assertEqual(ranked[0]["name"], "Equal")
         self.assertEqual(ranked[1]["name"], "Worse")
 
-    def test_higher_prydwen_tier_beats_slightly_better_kit_score(self) -> None:
+    def test_kit_score_beats_higher_tier_when_coverage_differs(self) -> None:
         scores = [
             (1.0, "Lorsan - Tier", ["Healing"]),
             (0.96, "Solise - Tier", ["Healing"]),
@@ -300,8 +355,39 @@ class ReplacementTierRankingTests(unittest.TestCase):
             source_title="Source - Hero",
             tiers_by_title=tiers,
         )
-        self.assertEqual(ranked[0]["name"], "Solise")
-        self.assertEqual(ranked[1]["name"], "Lorsan")
+        self.assertEqual(ranked[0]["name"], "Lorsan")
+        self.assertEqual(ranked[1]["name"], "Solise")
+
+    def test_kit_score_beats_tier_when_scores_differ(self) -> None:
+        scores = [
+            (0.88, "Nerion - Kit", ["Magic"]),
+            (0.77, "Solise - Tier", ["Magic"]),
+        ]
+        tiers = {
+            "Source - Hero": {"afk_stages": "B", "pvp": "A+"},
+            "Nerion - Kit": {"afk_stages": "C", "pvp": "B"},
+            "Solise - Tier": {"afk_stages": "S", "pvp": "S"},
+        }
+        ranked = gen._rank_replacement_category(
+            scores,
+            source_title="Source - Hero",
+            tiers_by_title=tiers,
+        )
+        self.assertEqual(ranked[0]["name"], "Nerion")
+        self.assertEqual(ranked[1]["name"], "Solise")
+
+    def test_dream_realm_tiers_use_max(self) -> None:
+        source = {"dream_realm": "A", "dream_realm_endless": "C"}
+        candidate = {"dream_realm_endless": "B"}
+        normalized = gen._normalize_replacement_prydwen_tiers(source)
+        self.assertEqual(normalized["dream_realm"], "A")
+        self.assertNotIn("dream_realm_endless", normalized)
+        delta = gen._prydwen_tier_avg_delta(
+            gen._normalize_replacement_prydwen_tiers(source),
+            gen._normalize_replacement_prydwen_tiers(candidate),
+            modes=gen.REPLACEMENT_TIER_MODES,
+        )
+        self.assertAlmostEqual(delta, -1.0)
 
     def test_tier_preference_after_faction_boost(self) -> None:
         scores = [
@@ -359,6 +445,63 @@ class ReplacementTierRankingTests(unittest.TestCase):
             0,
         )
 
+    def test_excludes_candidate_without_prydwen_tiers(self) -> None:
+        scores = [
+            (1.0, "No - Tiers", ["summoner"]),
+            (0.6, "Has - Tiers", ["summoner"]),
+        ]
+        tiers = {
+            "Source - Hero": {"afk_stages": "A", "pvp": "A"},
+            "Has - Tiers": {"afk_stages": "A", "pvp": "A"},
+        }
+        ranked = gen._rank_replacement_category(
+            scores,
+            source_title="Source - Hero",
+            tiers_by_title=tiers,
+            min_tag_overlap=gen.SIMILAR_SKILLS_MIN_TAG_OVERLAP,
+        )
+        self.assertEqual(len(ranked), 1)
+        self.assertEqual(ranked[0]["name"], "Has")
+
+    def test_excludes_candidate_when_all_modes_two_plus_tiers_lower(self) -> None:
+        scores = [
+            (1.0, "Far - Below", ["tag"]),
+            (0.9, "Near - Below", ["tag"]),
+        ]
+        tiers = {
+            "Source - Hero": {
+                "afk_stages": "S",
+                "dream_realm": "S",
+                "pvp": "S",
+            },
+            "Far - Below": {
+                "afk_stages": "C",
+                "dream_realm": "C",
+                "pvp": "C",
+            },
+            "Near - Below": {
+                "afk_stages": "A+",
+                "dream_realm": "A+",
+                "pvp": "A+",
+            },
+        }
+        ranked = gen._rank_replacement_category(
+            scores,
+            source_title="Source - Hero",
+            tiers_by_title=tiers,
+        )
+        names = [entry["name"] for entry in ranked]
+        self.assertNotIn("Far", names)
+        self.assertIn("Near", names)
+
+    def test_keeps_candidate_when_not_all_modes_two_plus_lower(self) -> None:
+        self.assertTrue(
+            gen._replacement_candidate_meets_tier_floor(
+                {"afk_stages": "S", "pvp": "S"},
+                {"afk_stages": "A+", "pvp": "C"},
+            )
+        )
+
 
 class SimilarSkillsReplacementTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -372,6 +515,10 @@ class SimilarSkillsReplacementTests(unittest.TestCase):
         ]
         ranked = gen._rank_replacement_category(
             scores,
+            source_title="Source - Hero",
+            tiers_by_title=_baseline_tiers_for_scores(
+                scores, source_title="Source - Hero"
+            ),
             min_tag_overlap=gen.SIMILAR_SKILLS_MIN_TAG_OVERLAP,
         )
         self.assertEqual(len(ranked), 1)
@@ -385,6 +532,10 @@ class SimilarSkillsReplacementTests(unittest.TestCase):
         ]
         ranked = gen._rank_replacement_category(
             scores,
+            source_title="Source - Hero",
+            tiers_by_title=_baseline_tiers_for_scores(
+                scores, source_title="Source - Hero"
+            ),
             min_tag_overlap=gen.SIMILAR_SKILLS_MIN_TAG_OVERLAP,
         )
         self.assertEqual(ranked[0]["name"], "Two")
@@ -416,7 +567,7 @@ class SimilarSkillsReplacementTests(unittest.TestCase):
         tiers = {
             "Source - Hero": {"afk_stages": "S", "pvp": "S"},
             "Low - Score Better Tier": {"afk_stages": "S+", "pvp": "S+"},
-            "High - Score Worse Tier": {"afk_stages": "B", "pvp": "B"},
+            "High - Score Worse Tier": {"afk_stages": "A+", "pvp": "A+"},
         }
         ranked = gen._rank_replacement_category(
             scores,

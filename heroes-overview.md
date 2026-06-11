@@ -95,9 +95,9 @@ Aliceth provides Ally empower buff to single targets `low`, Attack range buff to
 
 **Damage**
 
-- Shadewing (65% `HP loss`)
 - Faramor (100% `Physical` `HP loss`)
-- Kordan (68% `Physical` `HP loss`)
+- Vala (79% `Physical` `HP loss`)
+- Seth (79% `Physical` `HP loss`)
 
 **Crowd Control**
 
@@ -204,8 +204,8 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 **Buffs on allies**
 
 - Twins (75% `Max HP` `ATK`)
-- Aliceth (56% `ATK` `Ally empower buff`)
 - Himmel (62% `Max HP` `ATK`)
+- Aliceth (56% `ATK` `Ally empower buff`)
 
 **Similar Skills**
 
@@ -215,15 +215,15 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 
 **Damage**
 
-- Baelran (57% `Physical`)
-- Faramor (100% `Physical`)
 - Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
+- Athalia (100% `Physical`)
 
 **Crowd Control**
 
-- Velara (93% `Bind`)
-- Galahad (75% `Bind`)
-- Gwyneth (56% `Bind`)
+- Eironn (100% `Bind`)
+- Kordan (100% `Bind`)
+- Evie (100% `Bind`)
 
 ### Summary for Alna
 
@@ -327,8 +327,8 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (91% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -336,9 +336,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 **Crowd Control**
 
-- Aliceth (96% `Stun` `Knock back`)
-- Zandrok (92% `Stun`)
-- Bonnie (74% `Stun`)
+- Perseus (100% `Stun` `Knock back`)
+- Lenya (100% `Stun` `Knock back`)
+- Scarlita (100% `Stun` `Knock back`)
 
 ### Summary for Alsa
 
@@ -446,15 +446,15 @@ Antandra provides DEF buff (Supreme+) to single targets `low`.
 
 **Damage**
 
-- Gunnar (81% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
 
 **Crowd Control**
 
+- Hepler (100% `Stun` `Taunt`)
+- Lucca (90% `Stun` `Knock down`)
 - Callan (75% `Stun` `Knock down`)
-- Koko (60% `Stun`)
-- Perseus (50% `Stun`)
 
 ### Summary for Antandra
 
@@ -558,15 +558,15 @@ Arden provides Energy recovery to single targets `low`.
 
 **Damage**
 
-- Solise (99% `Magic`)
-- Velara (81% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
-- Velara (85% `Bind`)
-- Gwyneth (51% `Bind`)
-- Galahad (68% `Bind`)
+- Eironn (100% `Bind`)
+- Kordan (100% `Bind`)
+- Evie (100% `Bind`)
 
 ### Summary for Arden
 
@@ -655,21 +655,21 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Damage**
 
-- Gunnar (96% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
 
 **Debuffs on enemies**
 
-- Zanie (90% `Phys DEF debuff`)
-- Ravion (75% `Phys DEF debuff`)
 - Brutus (100% `Phys DEF debuff`)
+- Lyca (100% `Phys DEF debuff`)
+- Kafra (100% `Phys DEF debuff`)
 
 **Crowd Control**
 
 - Gwyneth (89% `Bind` `Stun`)
-- Galahad (51% `Bind`)
-- Aliceth (60% `Stun` `Knock back`)
+- Perseus (82% `Stun` `Knock back`)
+- Lenya (68% `Stun` `Knock back`)
 
 ### Summary for Atalanta
 
@@ -766,21 +766,21 @@ Common buffers are **Solise**, **Twins**, or **Contess**.
 
 **Damage**
 
-- Baelran (98% `Physical` `True damage`)
 - Faramor (100% `Physical` `True damage`)
-- Frieren (87% `True damage`)
+- Dionel (100% `True damage` `Physical`)
+- Nazrik (100% `Physical` `True damage`)
 
 **Debuffs on enemies**
 
-- Zanie (100% `ATK debuff`)
 - Ravion (100% `ATK debuff`)
+- Zanie (100% `ATK debuff`)
 - Cyran (100% `ATK debuff`)
 
 **Crowd Control**
 
 - Baelran (100% `Knock down`)
 - Silven (100% `Knock down`)
-- Kordan (100% `Knock down`)
+- Frieren (100% `Knock down`)
 
 ### Summary for Athalia
 
@@ -888,8 +888,8 @@ Aurora provides Haste buff to summons `high`, Invincible to single targets `high
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (92% `Magic`)
-- Sylphira (100% `Magic`)
+- Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -989,20 +989,19 @@ Common buffers are **Twins**, **Solise**, or **Contess**.
 **Similar Skills**
 
 - Athalia (80% `hp-scaling` `transformation`)
-- Tilaya (60% `hp-scaling`)
 - Silven (50% `hp-scaling`)
+- Sylphira (40% `transformation`)
 
 **Damage**
 
-- Faramor (100% `True damage` `Physical`)
 - Athalia (100% `Physical` `True damage`)
-- Frieren (84% `True damage`)
+- Faramor (100% `True damage` `Physical`)
+- Dionel (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
 - Contess (100% `Max HP debuff`)
 - Sylphira (100% `Max HP debuff`)
-- Nazrik (100% `Max HP debuff`)
 
 **Crowd Control**
 
@@ -1117,8 +1116,8 @@ Common buffers are **Solise**, **Rowan**, or **Lyca**.
 **Debuffs on enemies**
 
 - Saida (100% `Energy drain`)
-- Dunlingr (94% `Energy drain`)
-- Rowan (94% `Energy drain`)
+- Lily May (100% `Energy drain`)
+- Silvina (100% `Energy drain`)
 
 **Crowd Control**
 
@@ -1226,15 +1225,15 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 **Damage**
 
-- Solise (76% `Magic`)
-- Velara (62% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
-- Contess (61% `Stun`)
-- Aliceth (76% `Stun`)
 - Zandrok (100% `Stun`)
+- Callan (100% `Stun`)
+- Perseus (100% `Stun`)
 
 ### Summary for Bonnie
 
@@ -1242,7 +1241,6 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 - Invincibility — Self
 - Transformation — Self
-- Magic damage amplification (Supreme+) — Single target
 
 #### Damage types dealt by Bonnie
 
@@ -1252,7 +1250,7 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 - ATK — Single target — `average`
 - Haste — Single target — `average`
-- Damage taken (Supreme+) — Single target — `low`
+- Magic damage amplification (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Bonnie
 
@@ -1327,8 +1325,8 @@ Brutus provides Lifedrain buff to single targets `average`.
 **Buffs on allies**
 
 - Kordan (100% `Life Drain`)
-- Thoran (76% `Life Drain`)
-- Dunlingr (68% `Life Drain`)
+- Zandrok (100% `Life Drain`)
+- Koko (100% `Life Drain`)
 
 **Similar Skills**
 
@@ -1339,20 +1337,20 @@ Brutus provides Lifedrain buff to single targets `average`.
 **Damage**
 
 - Gunnar (98% `Physical` `DoT` `Max HP-based damage`)
-- Silven (65% `Max HP-based damage`)
-- Shemira (67% `Max HP-based damage`)
+- Valka (95% `Physical` `Max HP-based damage`)
+- Himmel (90% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
-- Zanie (58% `Phys DEF debuff`)
-- Ravion (58% `Phys DEF debuff`)
 - Lyca (100% `Phys DEF debuff`)
+- Kafra (87% `Phys DEF debuff`)
+- Atalanta (78% `Phys DEF debuff`)
 
 **Crowd Control**
 
 - Hepler (100% `Taunt`)
 - Phraesto (100% `Taunt`)
-- Granny Dahnie (67% `Taunt`)
+- Antandra (100% `Taunt`)
 
 ### Summary for Brutus
 
@@ -1449,21 +1447,21 @@ Common buffers are **Twins**, **Solise**, or **Hugin**.
 
 **Damage**
 
-- Solise (82% `Magic`)
-- Velara (67% `Magic`)
+- Frieren (100% `Magic` `DoT`)
+- Arden (100% `Magic`)
 - Saida (90% `Magic`)
 
 **Debuffs on enemies**
 
 - Velara (100% `Haste debuff`)
-- Aurora (100% `Haste debuff`)
 - Alna (100% `Haste debuff`)
+- Aurora (100% `Haste debuff`)
 
 **Crowd Control**
 
-- Saida (80% `Interrupt`)
 - Sylphira (100% `Interrupt`)
-- Thoran (66% `Interrupt`)
+- Lily May (100% `Interrupt`)
+- Smokey & Meerky (100% `Interrupt`)
 
 ### Summary for Bryon
 
@@ -1552,9 +1550,9 @@ Callan provides Shield to single targets `average`.
 
 **Buffs on allies**
 
-- Contess (100% `Max HP`)
-- Saida (100% `Max HP`)
 - Hugin (100% `Max HP`)
+- Saida (100% `Max HP`)
+- Galahad (100% `Max HP`)
 
 **Similar Skills**
 
@@ -1564,15 +1562,15 @@ Callan provides Shield to single targets `average`.
 
 **Damage**
 
-- Solise (81% `Magic`)
-- Velara (66% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
-- Koko (66% `Stun`)
-- Perseus (66% `Stun`)
-- Valka (50% `Knock down` `Stun`)
+- Zorya (100% `Stun` `Knock down`)
+- Antandra (100% `Stun` `Knock down`)
+- Lucca (100% `Stun` `Knock down`)
 
 ### Summary for Callan
 
@@ -1674,20 +1672,20 @@ Carolina provides DEF buff (Mythic+) to single targets `average`.
 
 **Damage**
 
-- Solise (56% `Magic`)
 - Saida (100% `Magic`)
-- Aurora (59% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
-- Velara (87% `Haste debuff` `Magic DEF debuff`)
-- Alna (71% `Haste debuff`)
 - Eironn (100% `Haste debuff` `Magic DEF debuff`)
+- Bonnie (100% `Haste debuff`)
+- Velara (87% `Haste debuff` `Magic DEF debuff`)
 
 **Crowd Control**
 
-- Kordan (100% `Bind`)
 - Eironn (100% `Bind`)
+- Kordan (100% `Bind`)
 - Evie (100% `Bind`)
 
 ### Summary for Carolina
@@ -1785,25 +1783,25 @@ Cassadee also requires a unit **to bless**
 
 - Temesia (72% `aoe-damage` `enemy-debuffer`)
 - Parisa (60% `ally-buffer` `aoe-damage`)
-- Kruger (40% `enemy-debuffer`)
+- Perseus (40% `ally-buffer`)
 
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
-- Velara (100% `Magic DEF debuff`)
 - Shadewing (100% `Magic DEF debuff`)
+- Velara (100% `Magic DEF debuff`)
 - Eironn (100% `Magic DEF debuff`)
 
 **Crowd Control**
 
-- Zandrok (53% `Stun` `Knock up`)
 - Perseus (100% `Knock back` `Stun`)
-- Lenya (83% `Knock back` `Stun`)
+- Scarlita (100% `Knock back` `Stun` `Knock up`)
+- Soren (100% `Knock back` `Stun`)
 
 ### Summary for Cassadee
 
@@ -1905,14 +1903,14 @@ Cecia provides ATK SPD buff to single targets `low`, DEF Penetration buff to sin
 **Damage**
 
 - Gunnar (95% `Physical` `DoT`)
-- Gwyneth (60% `Physical`)
-- Baelran (50% `Physical`)
+- Salazer (72% `Physical`)
+- Brutus (69% `Physical` `DoT`)
 
 **Crowd Control**
 
-- Kordan (100% `Bind`)
-- Alna (50% `Bind`)
 - Eironn (100% `Bind`)
+- Kordan (100% `Bind`)
+- Evie (100% `Bind`)
 
 ### Summary for Cecia
 
@@ -2073,15 +2071,15 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Saida (100% `Max HP`)
 - Hugin (100% `Max HP` `ATK`)
+- Saida (100% `Max HP`)
 - Zanie (89% `Max HP` `ATK`)
 
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
-- Twins (87% `Direct healing` `Healing`)
-- Velara (51% `Direct healing` `Healing`)
+- Pandora (100% `Direct healing` `Healing`)
+- Smokey & Meerky (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -2097,9 +2095,9 @@ These are the **10** strongest pairings:
 
 **Crowd Control**
 
-- Gwyneth (50% `Silence` `Stun`)
-- Cyran (75% `Silence`)
 - Evie (90% `Silence`)
+- Cyran (75% `Silence`)
+- Gwyneth (50% `Silence` `Stun`)
 
 ### Summary for Contess
 
@@ -2197,13 +2195,13 @@ Common buffers are **Hugin**, **Twins**, or **Contess**.
 
 - Saida (100% `Magic`)
 - Galahad (100% `Magic`)
-- Sylphira (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
 - Mehira (100% `Damage taken debuff`)
 - Kulu (100% `Damage taken debuff`)
-- Bonnie (100% `Damage taken debuff`)
+- Pandora (100% `Damage taken debuff`)
 
 ### Summary for Cryonaia
 
@@ -2297,20 +2295,20 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 **Damage**
 
-- Baelran (65% `True damage`)
-- Faramor (65% `True damage`)
-- Frieren (74% `Magic` `True damage`)
+- Korin (93% `True damage`)
+- Nara (78% `True damage`)
+- Vala (78% `True damage`)
 
 **Debuffs on enemies**
 
-- Zanie (86% `ATK debuff`)
 - Bonnie (100% `ATK debuff`)
 - Lyca (100% `ATK debuff`)
+- Lumont (100% `ATK debuff`)
 
 **Crowd Control**
 
-- Eironn (56% `Bind` `Displace`)
 - Evie (95% `Silence` `Bind` `Displace`)
+- Eironn (56% `Bind` `Displace`)
 
 ### Summary for Cyran
 
@@ -2404,9 +2402,9 @@ Daimon provides Lifedrain buff to single targets `average` and Shield to multipl
 
 **Buffs on allies**
 
-- Contess (90% `Max HP`)
-- Saida (90% `Max HP`)
-- Hugin (90% `Max HP`)
+- Callan (100% `Max HP`)
+- Hepler (100% `Max HP`)
+- Lucius (100% `Max HP`)
 
 **Similar Skills**
 
@@ -2416,9 +2414,9 @@ Daimon provides Lifedrain buff to single targets `average` and Shield to multipl
 
 **Damage**
 
-- Gunnar (82% `Max HP-based damage`)
-- Silven (87% `Magic` `Max HP-based damage`)
 - Shemira (100% `Magic` `Max HP-based damage`)
+- Valka (93% `Max HP-based damage`)
+- Brutus (93% `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -2514,15 +2512,15 @@ Damian provides Haste buff (Mythic+) to multiple targets `average` — condition
 
 **Buffs on allies**
 
-- Twins (100% `Haste`)
 - Hugin (100% `Haste`)
-- Galahad (62% `Haste`)
+- Twins (100% `Haste`)
+- Shakir (100% `Haste`)
 
 **Healing**
 
 - Solise (100% `Healing over time` `Healing`)
-- Twins (78% `Healing`)
-- Velara (93% `Healing`)
+- Ludovic (100% `Healing over time` `Healing`)
+- Hepler (100% `Healing over time` `Healing`)
 
 **Similar Skills**
 
@@ -2533,13 +2531,13 @@ Damian provides Haste buff (Mythic+) to multiple targets `average` — condition
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Crowd Control**
 
-- Twins (59% `Blind`)
 - Hepler (100% `Blind` `Stun`)
+- Twins (59% `Blind`)
 
 ### Summary for Damian
 
@@ -2628,8 +2626,8 @@ Dionel provides ATK buff to single targets `low`.
 **Buffs on allies**
 
 - Gunnar (100% `ATK`)
+- Hugin (100% `ATK`)
 - Twins (100% `ATK`)
-- Contess (100% `ATK`)
 
 **Similar Skills**
 
@@ -2640,20 +2638,20 @@ Dionel provides ATK buff to single targets `low`.
 **Damage**
 
 - Baelran (100% `True damage` `Physical`)
-- Faramor (100% `True damage` `Physical`)
 - Athalia (100% `True damage` `Physical`)
+- Faramor (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
-- Faramor (100% `Vitality debuff`)
 - Alna (100% `Vitality debuff`)
+- Faramor (100% `Vitality debuff`)
 - Frieren (100% `Vitality debuff`)
 
 **Crowd Control**
 
-- Baelran (80% `Knock up`)
-- Kordan (66% `Knock up`)
+- Kulu (100% `Knock up`)
 - Florabelle (100% `Knock up`)
+- Zandrok (100% `Knock up`)
 
 ### Summary for Dionel
 
@@ -2759,14 +2757,14 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 
 **Similar Skills**
 
-- Chippy (60% `summoner`)
 - Zanie (50% `summoner`)
 - Florabelle (50% `summoner`)
+- Bryon (50% `battle-start-burst` `summoner`)
 
 **Damage**
 
-- Shadewing (78% `Magic` `HP loss`)
-- Faramor (68% `HP loss`)
+- Zorya (100% `Magic` `HP loss`)
+- Niru (96% `Magic` `HP loss`)
 - Aliceth (81% `HP loss`)
 
 **Debuffs on enemies**
@@ -2776,8 +2774,8 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 
 **Crowd Control**
 
-- Contess (100% `Silence`)
 - Gwyneth (100% `Silence`)
+- Contess (100% `Silence`)
 - Sylphira (100% `Silence`)
 
 ### Summary for Dunlingr
@@ -2876,20 +2874,20 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
-- Velara (79% `Haste debuff` `Magic DEF debuff`)
-- Alna (71% `Haste debuff`)
+- Carolina (90% `Haste debuff` `Magic DEF debuff`)
+- Kafra (88% `Haste debuff`)
 - Bonnie (85% `Haste debuff`)
 
 **Crowd Control**
 
 - Kordan (96% `Bind`)
-- Evie (67% `Bind` `Displace`)
 - Korin (96% `Bind`)
+- Carolina (72% `Bind`)
 
 ### Summary for Eironn
 
@@ -2990,21 +2988,20 @@ Evie provides ATK buff to multiple targets `high` and Direct healing to single t
 
 **Damage**
 
-- Solise (53% `Magic`)
 - Saida (100% `Magic`)
-- Aurora (56% `Magic`)
+- Frieren (100% `Magic`)
+- Sylphira (100% `Magic`)
 
 **Debuffs on enemies**
 
 - Gwyneth (100% `DoT`)
 - Frieren (100% `DoT`)
-- Natsu (100% `DoT`)
 
 **Crowd Control**
 
 - Cyran (63% `Silence` `Bind` `Displace`)
-- Eironn (52% `Bind` `Displace`)
 - Korin (56% `Bind`)
+- Eironn (52% `Bind` `Displace`)
 
 ### Summary for Evie
 
@@ -3102,9 +3099,9 @@ Common buffers are **Twins**, **Hugin**, or **Contess**.
 
 **Damage**
 
-- Aliceth (53% `Physical` `HP loss`)
-- Frieren (63% `True damage`)
+- Vala (79% `True damage` `Physical` `HP loss`)
 - Nara (72% `True damage` `Physical` `HP loss`)
+- Frieren (63% `True damage`)
 
 **Debuffs on enemies**
 
@@ -3115,8 +3112,8 @@ Common buffers are **Twins**, **Hugin**, or **Contess**.
 **Crowd Control**
 
 - Gwyneth (100% `Stun`)
-- Contess (100% `Stun`)
 - Aliceth (100% `Stun`)
+- Contess (100% `Stun`)
 
 ### Summary for Faramor
 
@@ -3205,13 +3202,13 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 
 **Buffs on allies**
 
-- Twins (61% `ATK` `Magic DEF` `Physical DEF` `Vitality buff`)
 - Sonja (78% `Magic DEF` `Physical DEF` `ATK`)
+- Twins (61% `ATK` `Magic DEF` `Physical DEF` `Vitality buff`)
 
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
-- Pandora (65% `Direct healing` `Healing`)
+- Smokey & Meerky (100% `Direct healing` `Healing`)
 - Evie (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -3223,14 +3220,14 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 **Damage**
 
 - Solise (100% `Magic`)
-- Twins (61% `Magic`)
-- Velara (100% `Magic`)
+- Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
+- Sinbad (100% `Magic DEF debuff` `Phys DEF debuff`)
 - Velara (87% `Magic DEF debuff` `Phys DEF debuff`)
-- Shadewing (72% `Magic DEF debuff` `Phys DEF debuff`)
-- Zanie (60% `Phys DEF debuff`)
+- Indris (73% `Phys DEF debuff` `Magic DEF debuff`)
 
 ### Summary for Fay
 
@@ -3312,20 +3309,20 @@ Florabelle provides Lifedrain buff to summons `high` — conditional (frequent),
 **Similar Skills**
 
 - Zanie (100% `summoner`)
-- Chippy (100% `summoner`)
 - Damian (60% `summoner`)
+- Dunlingr (50% `summoner`)
 
 **Damage**
 
-- Gunnar (56% `Physical`)
 - Gwyneth (100% `Physical`)
-- Baelran (70% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Crowd Control**
 
+- Lucca (100% `Knock up`)
 - Zandrok (66% `Knock up`)
 - Scarlita (66% `Knock up`)
-- Lucca (100% `Knock up`)
 
 ### Summary for Florabelle
 
@@ -3410,21 +3407,21 @@ Frieren provides ATK buff to single targets `high`.
 
 **Buffs on allies**
 
+- Hugin (100% `ATK`)
 - Twins (100% `ATK`)
 - Contess (100% `ATK`)
-- Hugin (100% `ATK`)
 
 **Similar Skills**
 
-- Natsu (61% `aoe-damage` `dot-specialist` `high-damage-ult`)
 - Arden (60% `aoe-damage` `dot-specialist`)
 - Lorsan (50% `aoe-damage` `dot-specialist`)
+- Faramor (48% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
-- Baelran (65% `True damage`)
 - Faramor (88% `True damage`)
-- Athalia (78% `True damage`)
+- Indris (79% `True damage`)
+- Nazrik (78% `True damage`)
 
 **Debuffs on enemies**
 
@@ -3432,9 +3429,9 @@ Frieren provides ATK buff to single targets `high`.
 
 **Crowd Control**
 
-- Sylphira (96% `Knock down`)
-- Silven (96% `Knock down`)
-- Baelran (80% `Knock down`)
+- Callan (100% `Knock down` `Stun`)
+- Valka (100% `Knock down` `Stun`)
+- Zorya (100% `Knock down` `Stun`)
 
 ### Summary for Frieren
 
@@ -3539,27 +3536,27 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Saida (100% `Max HP`)
-- Contess (74% `Max HP`)
 - Hugin (100% `Max HP` `Haste`)
+- Saida (100% `Max HP`)
+- Lenya (100% `Max HP`)
 
 **Similar Skills**
 
 - Phraesto (50% `ally-shielder` `clone`)
-- Lucca (50% `ally-shielder`)
 - Koko (40% `ally-shielder`)
+- Pang (40% `ally-shielder`)
 
 **Damage**
 
-- Sylphira (100% `Magic`)
 - Saida (100% `Magic`)
 - Frieren (100% `Magic`)
+- Sylphira (100% `Magic`)
 
 **Crowd Control**
 
-- Gwyneth (90% `Bind`)
 - Velara (100% `Bind`)
-- Kordan (100% `Bind`)
+- Alna (100% `Bind`)
+- Cyran (100% `Bind`)
 
 ### Summary for Galahad
 
@@ -3646,8 +3643,8 @@ Gerda provides Direct healing to multiple targets `average`, Healing over time i
 **Healing**
 
 - Solise (100% `Direct healing` `Healing over time` `Healing`)
-- Twins (67% `Direct healing` `Healing`)
-- Contess (87% `Direct healing` `Healing`)
+- Smokey & Meerky (100% `Direct healing` `Healing`)
+- Koko (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -3758,14 +3755,14 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Debuffs on enemies**
 
 - Velara (100% `Haste debuff`)
-- Aurora (57% `Haste debuff`)
 - Alna (100% `Haste debuff`)
+- Eironn (100% `Haste debuff`)
 
 **Crowd Control**
 
@@ -3865,25 +3862,24 @@ Gunnar provides ATK SPD buff to single targets `low`, ATK buff to single targets
 **Buffs on allies**
 
 - Twins (54% `ATK` `Vitality buff`)
-- Mikola (54% `ATK` `Vitality buff`)
-- Fay (72% `ATK` `Vitality buff` `ATK SPD`)
 
 **Similar Skills**
 
-- Rhys (50% `aoe-damage` `fire-attack`)
 - Hugin (40% `ally-shielder` `static-tile-buffer`)
-- Scarlita (40% `ally-shielder` `aoe-damage`)
+- Galahad (20% `ally-shielder`)
+- Saida (20% `ally-shielder`)
 
 **Damage**
 
-- Silven (65% `Max HP-based damage`)
 - Shemira (65% `Max HP-based damage`)
+- Lily May (65% `Max HP-based damage`)
+- Silven (65% `Max HP-based damage`)
 
 **Crowd Control**
 
 - Gwyneth (100% `Stun`)
+- Aliceth (100% `Stun`)
 - Contess (100% `Stun`)
-- Faramor (100% `Stun`)
 
 ### Summary for Gunnar
 
@@ -3967,15 +3963,15 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Similar Skills**
 
-- Mirael (96% `dot-specialist` `fire-attack`)
-- Natsu (60% `dot-specialist` `fire-attack` `mass-cc`)
 - Satrana (50% `dot-specialist` `fire-attack`)
+- Odie (30% `dot-specialist`)
+- Shadewing (25% `dot-specialist`)
 
 **Damage**
 
+- Aliceth (100% `Physical`)
 - Faramor (100% `Physical`)
 - Thador (100% `Physical`)
-- Aliceth (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -3983,9 +3979,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Crowd Control**
 
-- Contess (57% `Silence` `Stun`)
 - Cyran (97% `Bind` `Silence`)
-- Galahad (51% `Bind`)
+- Evie (97% `Bind` `Silence`)
+- Contess (57% `Silence` `Stun`)
 
 ### Summary for Gwyneth
 
@@ -4162,9 +4158,9 @@ Harak provides Invincible to single targets `high` and Lifedrain buff (Legendary
 
 **Damage**
 
-- Shadewing (65% `HP loss`)
-- Faramor (100% `Physical` `HP loss`)
 - Aliceth (100% `Physical` `HP loss`)
+- Faramor (100% `Physical` `HP loss`)
+- Ravion (100% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -4172,9 +4168,9 @@ Harak provides Invincible to single targets `high` and Lifedrain buff (Legendary
 
 **Crowd Control**
 
-- Sylphira (100% `Knock down`)
 - Baelran (100% `Knock down`)
 - Silven (100% `Knock down`)
+- Frieren (100% `Knock down`)
 
 ### Summary for Harak
 
@@ -4287,15 +4283,15 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Saida (98% `Max HP`)
 - Hugin (99% `Max HP` `Haste`)
+- Saida (98% `Max HP`)
 - Lenya (60% `Max HP`)
 
 **Healing**
 
-- Solise (79% `Healing over time` `Healing`)
 - Mikola (100% `Healing over time` `Healing`)
-- Smokey & Meerky (78% `Healing`)
+- Hewynn (100% `Healing over time` `Healing`)
+- Solise (79% `Healing over time` `Healing`)
 
 **Similar Skills**
 
@@ -4305,15 +4301,15 @@ These are the **10** strongest pairings:
 
 **Damage**
 
-- Gunnar (80% `Physical`)
 - Baelran (100% `Physical`)
 - Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
 
 **Debuffs on enemies**
 
 - Velara (100% `Haste debuff`)
-- Aurora (80% `Haste debuff`)
 - Alna (100% `Haste debuff`)
+- Eironn (100% `Haste debuff`)
 
 **Crowd Control**
 
@@ -4514,8 +4510,9 @@ Himmel provides Shield to single targets `low`, ATK buff (Mythic+) to multiple t
 
 **Damage**
 
-- Gunnar (81% `Physical` `Max HP-based damage`)
-- Silven (65% `Max HP-based damage`)
+- Valka (100% `Physical` `Max HP-based damage`)
+- Brutus (100% `Physical` `Max HP-based damage`)
+- Temesia (91% `Physical`)
 
 ### Summary for Himmel
 
@@ -4600,15 +4597,15 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 
 **Damage**
 
-- Gunnar (64% `Physical`)
 - Gwyneth (100% `Physical`)
-- Baelran (80% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Debuffs on enemies**
 
+- Silvina (100% `Energy drain` `Vitality debuff`)
 - Saida (90% `Energy drain`)
 - Dunlingr (90% `Energy drain`)
-- Rowan (84% `Energy drain`)
 
 ### Summary for Hodgkin
 
@@ -4795,9 +4792,9 @@ Common buffers are **Mikola**, **Solise**, or **Smokey & Meerky**.
 
 **Damage**
 
-- Baelran (56% `Physical`)
 - Gwyneth (100% `Physical`)
-- Faramor (100% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -4897,21 +4894,21 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 **Damage**
 
-- Baelran (90% `True damage` `Physical`)
-- Faramor (100% `True damage` `Physical`)
 - Athalia (100% `Physical` `True damage`)
+- Faramor (100% `True damage` `Physical`)
+- Frieren (100% `True damage`)
 
 **Debuffs on enemies**
 
-- Velara (51% `Magic DEF debuff` `Phys DEF debuff`)
-- Thador (51% `Magic DEF debuff` `Phys DEF debuff`)
+- Sinbad (80% `Phys DEF debuff` `Magic DEF debuff` `Damage taken debuff`)
 - Fay (61% `Phys DEF debuff` `Magic DEF debuff`)
+- Velara (51% `Magic DEF debuff` `Phys DEF debuff`)
 
 **Crowd Control**
 
-- Velara (78% `Bind`)
-- Galahad (62% `Bind`)
-- Kordan (84% `Bind` `Knock back`)
+- Korin (100% `Bind` `Knock back`)
+- Pippa (93% `Bind`)
+- Arden (93% `Bind`)
 
 ### Summary for Indris
 
@@ -5006,19 +5003,19 @@ Isabella provides ATK buff to multiple targets `low` — conditional (frequent),
 
 - Twins (100% `Haste` `ATK` `Magic DEF` `Physical DEF`)
 - Hugin (96% `Haste` `ATK`)
-- Kordan (58% `ATK` `Magic DEF` `Physical DEF`)
+- Mikola (96% `Haste` `ATK`)
 
 **Similar Skills**
 
-- Hammie (80% `ally-buffer` `ally-healer`)
 - Laios (50% `ally-buffer` `ally-healer`)
 - Ludovic (36% `ally-healer`)
+- Perseus (33% `ally-buffer`)
 
 **Debuffs on enemies**
 
-- Zanie (100% `ATK debuff`)
-- Ravion (100% `ATK debuff`)
 - Athalia (100% `ATK debuff`)
+- Ravion (100% `ATK debuff`)
+- Zanie (100% `ATK debuff`)
 
 ### Summary for Isabella
 
@@ -5108,21 +5105,21 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Damage**
 
-- Gunnar (56% `Physical`)
 - Gwyneth (100% `Physical`)
-- Baelran (70% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Debuffs on enemies**
 
-- Velara (68% `Haste debuff` `Phys DEF debuff`)
-- Alna (63% `Haste debuff`)
 - Eironn (91% `Haste debuff`)
+- Bonnie (83% `Haste debuff` `ATK debuff`)
+- Velara (68% `Haste debuff` `Phys DEF debuff`)
 
 **Crowd Control**
 
-- Contess (57% `Stun`)
-- Zanie (51% `Knock back` `Stun`)
-- Aliceth (85% `Stun` `Knock back`)
+- Perseus (100% `Stun` `Knock back`)
+- Lenya (100% `Stun` `Knock back`)
+- Cassadee (100% `Stun` `Knock back`)
 
 ### Summary for Kafra
 
@@ -5209,7 +5206,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Koko
 
-Koko provides Damage taken reduction to all units `low`, Direct healing to all units `low`, Lifedrain buff to multiple targets `average`, Shield (Mythic+) to all units `low`, and Vitality buff (Supreme+) to single targets `low`.
+Koko provides Damage taken to all units `low`, Direct healing to all units `low`, Lifedrain buff to multiple targets `average`, Shield (Mythic+) to all units `low`, and Vitality buff (Supreme+) to single targets `low`.
 
 - Igor (3.9 / 5)
 - Walker (3.5 / 5)
@@ -5225,15 +5222,15 @@ Koko provides Damage taken reduction to all units `low`, Direct healing to all u
 
 **Buffs on allies**
 
-- Twins (53% `Max HP` `Vitality buff`)
-- Daimon (59% `Max HP` `Life Drain`)
 - Shakir (66% `Life Drain` `Damage taken reduction`)
+- Daimon (59% `Max HP` `Life Drain`)
+- Twins (53% `Max HP` `Vitality buff`)
 
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
-- Twins (62% `Direct healing` `Healing`)
-- Contess (85% `Direct healing` `Healing`)
+- Pandora (100% `Direct healing` `Healing`)
+- Smokey & Meerky (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -5244,20 +5241,20 @@ Koko provides Damage taken reduction to all units `low`, Direct healing to all u
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Debuffs on enemies**
 
 - Mehira (100% `Damage taken debuff`)
-- Cryonaia (100% `Damage taken debuff`)
 - Kulu (100% `Damage taken debuff`)
+- Cryonaia (100% `Damage taken debuff`)
 
 **Crowd Control**
 
-- Zandrok (60% `Stun`)
 - Perseus (100% `Stun`)
-- Callan (83% `Stun`)
+- Zorya (100% `Stun`)
+- Hepler (100% `Stun`)
 
 ### Summary for Koko
 
@@ -5361,15 +5358,15 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 
 **Damage**
 
-- Shadewing (78% `HP loss`)
-- Faramor (100% `Physical` `HP loss`)
 - Aliceth (100% `Physical` `HP loss`)
+- Faramor (100% `Physical` `HP loss`)
+- Nara (100% `Physical` `HP loss`)
 
 **Crowd Control**
 
-- Eironn (81% `Bind`)
-- Evie (51% `Bind`)
 - Korin (89% `Bind` `Knock back`)
+- Eironn (81% `Bind`)
+- Carolina (61% `Bind`)
 
 ### Summary for Kordan
 
@@ -5455,9 +5452,9 @@ Korin provides Shield to single targets `average`.
 
 **Buffs on allies**
 
-- Saida (100% `Max HP`)
-- Contess (95% `Max HP`)
 - Hugin (100% `Max HP`)
+- Saida (100% `Max HP`)
+- Galahad (100% `Max HP`)
 
 **Similar Skills**
 
@@ -5468,8 +5465,8 @@ Korin provides Shield to single targets `average`.
 **Damage**
 
 - Baelran (100% `True damage` `Physical`)
-- Faramor (100% `True damage` `Physical`)
 - Athalia (100% `True damage` `Physical`)
+- Faramor (100% `True damage` `Physical`)
 
 **Crowd Control**
 
@@ -5562,8 +5559,8 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 **Damage**
 
 - Gwyneth (100% `Physical`)
-- Faramor (100% `Physical`)
 - Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -5666,8 +5663,8 @@ Kulu provides DEF Penetration buff (EX+15) to single targets `low`.
 **Buffs on allies**
 
 - Silven (100% `DEF Penetration`)
-- Zanie (100% `DEF Penetration`)
 - Aliceth (100% `DEF Penetration`)
+- Zanie (100% `DEF Penetration`)
 
 **Similar Skills**
 
@@ -5677,15 +5674,15 @@ Kulu provides DEF Penetration buff (EX+15) to single targets `low`.
 
 **Damage**
 
-- Gunnar (54% `Physical`)
-- Baelran (57% `Physical`)
-- Faramor (100% `Physical`)
+- Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Crowd Control**
 
+- Scarlita (80% `Knock back` `Knock up`)
 - Kordan (66% `Knock back` `Knock up`)
 - Reinier (66% `Displace` `Knock up`)
-- Scarlita (80% `Knock back` `Knock up`)
 
 ### Summary for Kulu
 
@@ -5786,14 +5783,14 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 **Similar Skills**
 
 - Damian (66% `ally-healer` `summoner`)
-- Hammie (66% `ally-buffer` `ally-healer`)
 - Isabella (50% `ally-buffer` `ally-healer`)
+- Zanie (33% `summoner`)
 
 **Crowd Control**
 
-- Velara (62% `Bind`)
-- Galahad (50% `Bind`)
+- Eironn (100% `Bind`)
 - Kordan (100% `Bind`)
+- Evie (100% `Bind`)
 
 ### Summary for Laios
 
@@ -5881,8 +5878,8 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 
 **Buffs on allies**
 
-- Saida (100% `Max HP`)
 - Hugin (100% `Max HP`)
+- Saida (100% `Max HP`)
 - Hepler (100% `Max HP`)
 
 **Similar Skills**
@@ -5893,15 +5890,15 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 
 **Damage**
 
-- Gunnar (59% `Physical`)
-- Baelran (74% `Physical`)
 - Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Crowd Control**
 
-- Aliceth (60% `Stun` `Knock back`)
 - Perseus (100% `Knock back` `Stun`)
-- Nazrik (51% `Stun`)
+- Soren (100% `Knock back` `Stun`)
+- Scarlita (90% `Knock back` `Stun`)
 
 ### Summary for Lenya
 
@@ -5989,8 +5986,8 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 **Buffs on allies**
 
 - Silven (100% `DEF Penetration`)
-- Zanie (100% `DEF Penetration`)
 - Aliceth (100% `DEF Penetration`)
+- Zanie (100% `DEF Penetration`)
 
 **Similar Skills**
 
@@ -6000,9 +5997,9 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 **Damage**
 
-- Gunnar (65% `Max HP-based damage`)
 - Silven (100% `Magic` `Max HP-based damage`)
 - Shemira (100% `Magic` `Max HP-based damage`)
+- Sylphira (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -6011,9 +6008,9 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 **Crowd Control**
 
-- Saida (80% `Interrupt`)
 - Sylphira (100% `Interrupt`)
-- Thoran (66% `Interrupt`)
+- Smokey & Meerky (100% `Interrupt`)
+- Bryon (100% `Interrupt`)
 
 ### Summary for Lily May
 
@@ -6122,15 +6119,15 @@ Lorsan provides Direct healing (Mythic+) to all units `low`.
 
 **Damage**
 
-- Solise (78% `Magic`)
-- Velara (64% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
-- Koko (80% `Stun`)
-- Perseus (80% `Stun`)
-- Callan (66% `Stun`)
+- Scarlita (100% `Stun`)
+- Zorya (96% `Stun`)
+- Soren (90% `Stun`)
 
 ### Summary for Lorsan
 
@@ -6224,15 +6221,15 @@ Lucca provides DEF buff in an area `high`.
 
 **Damage**
 
-- Gunnar (73% `Physical`)
 - Gwyneth (100% `Physical`)
-- Baelran (92% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Crowd Control**
 
+- Antandra (84% `Stun` `Knock down`)
+- Scarlita (74% `Stun` `Knock up` `Knock down`)
 - Callan (70% `Stun` `Knock down`)
-- Perseus (56% `Stun`)
-- Zorya (70% `Stun` `Knock down`)
 
 ### Summary for Lucca
 
@@ -6320,9 +6317,9 @@ Lucius provides Shield in an area `average`.
 
 **Buffs on allies**
 
-- Saida (100% `Max HP`)
 - Hugin (100% `Max HP`)
-- Zanie (67% `Max HP`)
+- Saida (100% `Max HP`)
+- Lenya (100% `Max HP`)
 
 **Similar Skills**
 
@@ -6333,20 +6330,20 @@ Lucius provides Shield in an area `average`.
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Debuffs on enemies**
 
 - Zanie (100% `ATK debuff`)
 - Cyran (100% `ATK debuff`)
-- Dunlingr (50% `ATK debuff`)
+- Bonnie (100% `ATK debuff`)
 
 **Crowd Control**
 
-- Twins (50% `Knock back`)
-- Gwyneth (60% `Stun`)
-- Contess (50% `Stun`)
+- Aliceth (100% `Knock back` `Stun`)
+- Perseus (100% `Knock back` `Stun`)
+- Lenya (100% `Knock back` `Stun`)
 
 ### Summary for Lucius
 
@@ -6535,8 +6532,8 @@ Ludovic provides Direct healing in an area `average`, Healing over time to singl
 **Healing**
 
 - Solise (100% `Direct healing` `Healing over time` `Healing`)
-- Contess (62% `Direct healing` `Healing`)
-- Pandora (82% `Direct healing` `Healing`)
+- Smokey & Meerky (100% `Direct healing` `Healing`)
+- Evie (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -6546,15 +6543,15 @@ Ludovic provides Direct healing in an area `average`, Healing over time to singl
 
 **Damage**
 
-- Solise (95% `Magic`)
-- Velara (77% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
-- Contess (80% `Stun`)
-- Aliceth (83% `Stun`)
 - Bonnie (100% `Stun`)
+- Zandrok (100% `Stun`)
+- Callan (100% `Stun`)
 
 ### Summary for Ludovic
 
@@ -6653,9 +6650,9 @@ Lumont provides DEF buff to multiple targets `low`.
 
 **Damage**
 
-- Gunnar (73% `Physical`)
 - Gwyneth (100% `Physical`)
-- Baelran (92% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -6783,14 +6780,14 @@ These are the **10** strongest pairings:
 
 **Debuffs on enemies**
 
-- Zanie (51% `Phys DEF debuff` `ATK debuff`)
 - Kafra (67% `Phys DEF debuff` `ATK debuff`)
+- Zanie (51% `Phys DEF debuff` `ATK debuff`)
 
 **Crowd Control**
 
-- Contess (50% `Stun`)
-- Aliceth (62% `Stun`)
 - Zandrok (100% `Stun`)
+- Callan (100% `Stun`)
+- Perseus (100% `Stun`)
 
 ### Summary for Lyca
 
@@ -6890,14 +6887,14 @@ Marcille provides Direct healing (Mythic+) to multiple targets `low`.
 
 **Damage**
 
-- Sylphira (61% `Magic`)
 - Frieren (100% `Magic`)
 - Cyran (100% `Magic`)
+- Berial (100% `Magic`)
 
 **Crowd Control**
 
-- Twins (81% `Blind`)
 - Aliceth (97% `Blind`)
+- Twins (81% `Blind`)
 - Hepler (81% `Blind`)
 
 ### Summary for Marcille
@@ -6991,14 +6988,14 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Crowd Control**
 
 - Gunnar (100% `Stun`)
 - Gwyneth (100% `Stun`)
-- Contess (100% `Stun`)
+- Aliceth (100% `Stun`)
 
 ### Summary for Marilee
 
@@ -7091,27 +7088,27 @@ Mehira provides Haste buff to single targets `low`.
 
 **Buffs on allies**
 
-- Twins (100% `Haste`)
-- Velara (50% `Haste`)
 - Hugin (100% `Haste`)
+- Twins (100% `Haste`)
+- Galahad (100% `Haste`)
 
 **Similar Skills**
 
 - Eironn (40% `enemy-grouping` `mass-cc`)
-- Cecia (28% `life-drain` `summoner`)
-- Viperian (28% `aoe-damage` `life-drain`)
+- Igor (26% `aoe-damage` `untargetable`)
+- Shemira (25% `life-drain` `summoner`)
 
 **Damage**
 
 - Solise (100% `Magic`)
-- Twins (62% `Magic`)
-- Velara (100% `Magic`)
+- Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
-- Cryonaia (100% `Damage taken debuff`)
 - Kulu (100% `Damage taken debuff`)
-- Bonnie (100% `Damage taken debuff`)
+- Cryonaia (100% `Damage taken debuff`)
+- Pandora (100% `Damage taken debuff`)
 
 **Crowd Control**
 
@@ -7230,15 +7227,15 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Hugin (67% `ATK` `Haste`)
 - Evie (92% `ATK`)
-- Talene (61% `ATK`)
+- Pang (76% `ATK`)
+- Hugin (67% `ATK` `Haste`)
 
 **Healing**
 
 - Solise (100% `Healing over time` `Direct healing` `Healing`)
-- Smokey & Meerky (98% `Direct healing` `Healing`)
-- Evie (81% `Direct healing` `Healing`)
+- Hepler (100% `Healing over time` `Healing`)
+- Hewynn (100% `Healing over time` `Healing`)
 
 **Similar Skills**
 
@@ -7324,9 +7321,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Damage**
 
-- Solise (91% `Magic`)
-- Velara (91% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Silven (100% `Magic`)
 
 ### Summary for Mirael
 
@@ -7418,20 +7415,20 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 **Damage**
 
 - Faramor (100% `True damage` `Physical` `HP loss`)
+- Vala (70% `True damage` `Physical` `HP loss`)
 - Frieren (52% `True damage`)
-- Athalia (50% `Physical` `True damage`)
 
 **Debuffs on enemies**
 
-- Faramor (100% `Vitality debuff`)
 - Alna (100% `Vitality debuff`)
+- Faramor (100% `Vitality debuff`)
 - Frieren (100% `Vitality debuff`)
 
 **Crowd Control**
 
+- Scarlita (80% `Knock down` `Knock up`)
+- Reinier (77% `Displace` `Knock down` `Knock up`)
 - Baelran (66% `Knock down` `Knock up`)
-- Kordan (53% `Knock down` `Knock up`)
-- Ravion (53% `Displace` `Knock down`)
 
 ### Summary for Nara
 
@@ -7624,15 +7621,15 @@ Look for units providing: `CRIT`
 
 **Damage**
 
-- Baelran (91% `True damage` `Physical`)
-- Faramor (100% `True damage` `Physical`)
 - Athalia (100% `Physical` `True damage`)
+- Faramor (100% `True damage` `Physical`)
+- Frieren (100% `True damage`)
 
 **Crowd Control**
 
-- Gwyneth (53% `Stun`)
-- Contess (66% `Stun`)
-- Faramor (53% `Stun`)
+- Aliceth (100% `Stun`)
+- Bonnie (100% `Stun`)
+- Zandrok (100% `Stun`)
 
 ### Summary for Nazrik
 
@@ -7734,21 +7731,21 @@ Nerion also requires units **applying crowd control** to enemies
 
 **Damage**
 
-- Solise (87% `Magic`)
-- Velara (71% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
-- Zanie (100% `ATK debuff`)
-- Ravion (100% `ATK debuff`)
 - Athalia (100% `ATK debuff`)
+- Ravion (100% `ATK debuff`)
+- Zanie (100% `ATK debuff`)
 
 **Crowd Control**
 
+- Aliceth (100% `Stun`)
 - Contess (100% `Stun`)
-- Gwyneth (66% `Stun`)
-- Faramor (66% `Stun`)
+- Bonnie (100% `Stun`)
 
 ### Summary for Nerion
 
@@ -7845,9 +7842,9 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 **Damage**
 
+- Zorya (100% `Magic` `HP loss`)
 - Shadewing (90% `Magic` `HP loss`)
-- Faramor (65% `HP loss`)
-- Aliceth (65% `HP loss`)
+- Dunlingr (90% `Magic` `HP loss`)
 
 ### Summary for Niru
 
@@ -7934,9 +7931,9 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 **Damage**
 
-- Solise (62% `Magic`)
-- Twins (62% `Magic`)
-- Velara (62% `Magic`)
+- Frieren (100% `Magic` `DoT`)
+- Bryon (100% `Magic` `DoT`)
+- Tasi (100% `Magic` `DoT`)
 
 **Debuffs on enemies**
 
@@ -8025,33 +8022,33 @@ Pandora provides Direct healing to single targets `average`, Invincible to singl
 
 **Buffs on allies**
 
-- Twins (84% `Max HP`)
-- Alna (51% `Max HP`)
 - Himmel (100% `Max HP`)
+- Twins (84% `Max HP`)
+- Rowan (84% `Max HP`)
 
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
-- Twins (66% `Direct healing` `Healing`)
-- Contess (90% `Direct healing` `Healing`)
+- Smokey & Meerky (100% `Direct healing` `Healing`)
+- Evie (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
 - Rowan (40% `energy-provider`)
-- Lucy (40% `mass-cc`)
 - Eironn (33% `mass-cc`)
+- Tasi (33% `mass-cc`)
 
 **Damage**
 
 - Solise (100% `Magic`)
-- Twins (76% `Magic`)
-- Velara (100% `Magic`)
+- Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
-- Velara (50% `Haste debuff`)
 - Alna (62% `Haste debuff` `Vitality debuff`)
-- Bonnie (57% `Haste debuff` `ATK debuff` `Damage taken debuff`)
+- Velara (50% `Haste debuff`)
+- Bonnie (50% `Haste debuff` `ATK debuff`)
 
 ### Summary for Pandora
 
@@ -8153,15 +8150,15 @@ Pang provides ATK buff to single targets `high`, Shield (EX+10) to single target
 
 **Damage**
 
-- Gunnar (56% `Physical`)
 - Gwyneth (100% `Physical`)
-- Baelran (70% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Crowd Control**
 
-- Contess (88% `Stun`)
-- Gwyneth (71% `Stun`)
-- Faramor (85% `Stun`)
+- Aliceth (100% `Stun`)
+- Bonnie (100% `Stun`)
+- Zandrok (100% `Stun`)
 
 ### Summary for Pang
 
@@ -8254,9 +8251,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Damage**
 
-- Solise (92% `Magic`)
-- Velara (75% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 ### Summary for Parisa
 
@@ -8346,27 +8343,27 @@ Perseus provides ATK buff to multiple targets `low`.
 
 **Buffs on allies**
 
+- Hugin (100% `ATK`)
 - Twins (100% `ATK`)
 - Contess (100% `ATK`)
-- Hugin (100% `ATK`)
 
 **Similar Skills**
 
 - Sonja (60% `ally-buffer`)
-- Hammie (60% `ally-buffer`)
 - Mikola (50% `ally-buffer`)
+- Cassadee (40% `ally-buffer`)
 
 **Damage**
 
-- Gunnar (50% `Physical`)
-- Baelran (62% `Physical`)
 - Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Crowd Control**
 
-- Koko (66% `Stun`)
-- Callan (55% `Stun`)
-- Lenya (70% `Knock back` `Stun`)
+- Soren (95% `Stun` `Knock back`)
+- Scarlita (94% `Stun` `Knock back`)
+- Lucca (80% `Stun`)
 
 ### Summary for Perseus
 
@@ -8447,7 +8444,7 @@ Common buffers are **Solise**, **Rowan**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Phraesto
 
-Phraesto provides Damage taken reduction to single targets `low`, Max HP buff to single targets `average`, and Shield to single targets `low`.
+Phraesto provides Damage taken to single targets `low`, Max HP buff to single targets `average`, and Shield to single targets `low`.
 
 - Carolina (2.3 / 5)
 - Nerion (2.1 / 5)
@@ -8457,27 +8454,27 @@ Phraesto provides Damage taken reduction to single targets `low`, Max HP buff to
 
 **Buffs on allies**
 
-- Twins (74% `Max HP`)
-- Contess (91% `Max HP`)
 - Saida (91% `Max HP`)
+- Contess (91% `Max HP`)
+- Callan (91% `Max HP`)
 
 **Similar Skills**
 
 - Galahad (50% `ally-shielder` `clone`)
 - Thador (48% `ally-shielder` `energy-provider`)
-- Twins (40% `ally-shielder` `energy-provider`)
+- Hugin (40% `ally-shielder` `energy-provider`)
 
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Crowd Control**
 
-- Callan (60% `Stun`)
-- Koko (50% `Stun`)
-- Perseus (50% `Stun`)
+- Hepler (100% `Stun` `Taunt`)
+- Antandra (100% `Stun` `Taunt`)
+- Lumont (100% `Taunt` `Stun`)
 
 ### Summary for Phraesto
 
@@ -8567,20 +8564,20 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
 - Saida (100% `Energy drain`)
-- Sylphira (58% `Energy drain`)
 - Dunlingr (100% `Energy drain`)
+- Lily May (100% `Energy drain`)
 
 **Crowd Control**
 
-- Velara (72% `Bind`)
-- Galahad (57% `Bind`)
-- Kordan (76% `Bind` `Knock down`)
+- Eironn (98% `Bind` `Displace`)
+- Arden (92% `Bind`)
+- Indris (86% `Bind`)
 
 ### Summary for Pippa
 
@@ -8675,21 +8672,20 @@ Ravion provides ATK buff to multiple targets `low`, Energy recovery to multiple 
 
 **Buffs on allies**
 
-- Rowan (90% `Energy`)
 - Smokey & Meerky (94% `Energy` `ATK`)
-- Seth (78% `Energy`)
+- Rowan (90% `Energy`)
 
 **Similar Skills**
 
 - Thador (60% `ally-shielder` `energy-provider`)
-- Twins (50% `ally-shielder` `energy-provider`)
 - Hugin (50% `ally-shielder` `energy-provider`)
+- Twins (50% `ally-shielder` `energy-provider`)
 
 **Damage**
 
-- Shadewing (78% `HP loss`)
-- Faramor (100% `Physical` `HP loss`)
 - Aliceth (100% `Physical` `HP loss`)
+- Faramor (100% `Physical` `HP loss`)
+- Kordan (100% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -8699,9 +8695,9 @@ Ravion provides ATK buff to multiple targets `low`, Energy recovery to multiple 
 
 **Crowd Control**
 
-- Baelran (50% `Knock down`)
-- Saida (50% `Displace`)
-- Silven (50% `Knock down`)
+- Reinier (100% `Displace` `Knock down`)
+- Nara (100% `Displace` `Knock down`)
+- Pippa (100% `Displace` `Knock down`)
 
 ### Summary for Ravion
 
@@ -8791,8 +8787,8 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 **Buffs on allies**
 
 - Gunnar (100% `ATK`)
+- Hugin (100% `ATK`)
 - Twins (100% `ATK`)
-- Contess (100% `ATK`)
 
 **Similar Skills**
 
@@ -8803,20 +8799,20 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 **Damage**
 
 - Solise (100% `Magic`)
-- Twins (71% `Magic`)
-- Velara (100% `Magic`)
+- Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
+- Pandora (100% `ATK debuff` `Damage taken debuff`)
+- Sinbad (90% `ATK debuff` `Damage taken debuff`)
 - Mehira (54% `Damage taken debuff`)
-- Zanie (54% `ATK debuff`)
-- Cryonaia (54% `Damage taken debuff`)
 
 **Crowd Control**
 
+- Nara (70% `Displace` `Knock down` `Knock up`)
 - Saida (60% `Displace` `Interrupt`)
 - Kulu (60% `Displace` `Knock up`)
-- Nara (70% `Displace` `Knock down` `Knock up`)
 
 ### Summary for Reinier
 
@@ -8910,8 +8906,8 @@ Rhys provides Crit buff to single targets `low`, Direct healing to single target
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
+- Saida (100% `Direct healing` `Healing`)
 - Twins (100% `Direct healing` `Healing`)
-- Velara (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
@@ -8922,14 +8918,14 @@ Rhys provides Crit buff to single targets `low`, Direct healing to single target
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Crowd Control**
 
 - Twins (100% `Knock back`)
-- Zanie (100% `Knock back`)
 - Aliceth (100% `Knock back`)
+- Zanie (100% `Knock back`)
 
 ### Summary for Rhys
 
@@ -9027,19 +9023,19 @@ These are the **10** strongest pairings:
 
 - Solise (100% `Direct healing` `Healing`)
 - Twins (100% `Direct healing` `Healing`)
-- Velara (98% `Direct healing` `Healing`)
+- Contess (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
 - Twins (80% `ally-healer` `energy-provider`)
 - Fay (48% `ally-healer`)
-- Hammie (48% `ally-healer`)
+- Pandora (40% `energy-provider`)
 
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -9146,7 +9142,6 @@ These are the **10** strongest pairings:
 
 - Hugin (100% `Max HP`)
 - Lenya (60% `Max HP`)
-- Hepler (81% `Max HP`)
 
 **Healing**
 
@@ -9158,13 +9153,13 @@ These are the **10** strongest pairings:
 
 - Koko (66% `ally-shielder` `life-drain`)
 - Thoran (50% `cheat-death` `life-drain`)
-- Ulmus (50% `ally-shielder` `cheat-death`)
+- Daimon (40% `ally-shielder` `life-drain`)
 
 **Damage**
 
-- Galahad (56% `Magic`)
 - Frieren (100% `Magic`)
 - Sylphira (100% `Magic`)
+- Cyran (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -9172,9 +9167,9 @@ These are the **10** strongest pairings:
 
 **Crowd Control**
 
+- Reinier (100% `Displace` `Interrupt`)
 - Kulu (72% `Displace`)
 - Cyran (60% `Displace`)
-- Eironn (60% `Displace`)
 
 ### Summary for Saida
 
@@ -9268,9 +9263,9 @@ Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to
 
 **Buffs on allies**
 
-- Twins (77% `Max HP`)
 - Saida (100% `Max HP`)
-- Contess (90% `Max HP`)
+- Galahad (100% `Max HP`)
+- Callan (100% `Max HP`)
 
 **Similar Skills**
 
@@ -9280,15 +9275,15 @@ Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to
 
 **Damage**
 
-- Gunnar (94% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
 
 **Crowd Control**
 
-- Velara (51% `Bind`)
+- Eironn (100% `Bind`)
 - Kordan (100% `Bind`)
-- Alna (54% `Bind`)
+- Evie (100% `Bind`)
 
 ### Summary for Salazer
 
@@ -9358,6 +9353,8 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 ### Units benefitting most from Satrana
 
+Satrana provides Magic damage amplification (Mythic+) to single targets `average`.
+
 - Shadewing (2.7 / 5)
 - Bonnie (2.5 / 5)
 - Indris (2.0 / 5)
@@ -9372,15 +9369,15 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 **Damage**
 
-- Gunnar (65% `Max HP-based damage`)
-- Silven (99% `Magic` `Max HP-based damage`)
 - Shemira (100% `Magic` `Max HP-based damage`)
+- Lily May (99% `Magic` `Max HP-based damage`)
+- Silven (99% `Magic` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
+- Sinbad (73% `Vitality debuff`)
 - Frieren (69% `DoT` `Vitality debuff`)
 - Alna (60% `Vitality debuff`)
-- Pandora (60% `Vitality debuff`)
 
 **Crowd Control**
 
@@ -9477,9 +9474,9 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 **Buffs on allies**
 
-- Twins (51% `Max HP` `Magic DEF` `Physical DEF`)
-- Velara (59% `Magic DEF` `Physical DEF`)
 - Rowan (71% `Magic DEF` `Physical DEF`)
+- Tilaya (71% `Magic DEF` `Physical DEF`)
+- Lucca (71% `Magic DEF` `Physical DEF`)
 
 **Similar Skills**
 
@@ -9489,15 +9486,15 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 **Damage**
 
-- Gunnar (90% `Physical`)
 - Baelran (100% `Physical`)
 - Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
 
 **Crowd Control**
 
-- Perseus (60% `Stun` `Knock back`)
-- Zorya (64% `Stun` `Knock down`)
 - Soren (69% `Stun` `Knock back`)
+- Lucca (67% `Stun` `Knock up` `Knock down`)
+- Zorya (64% `Stun` `Knock down`)
 
 ### Summary for Scarlita
 
@@ -9592,9 +9589,9 @@ Seth provides Crit buff to single targets `low` and Energy recovery (Mythic+) to
 
 **Buffs on allies**
 
+- Smokey & Meerky (100% `Energy`)
 - Ravion (96% `Energy`)
 - Rowan (96% `Energy`)
-- Smokey & Meerky (100% `Energy`)
 
 **Similar Skills**
 
@@ -9604,21 +9601,21 @@ Seth provides Crit buff to single targets `low` and Energy recovery (Mythic+) to
 
 **Damage**
 
-- Shadewing (65% `HP loss`)
-- Faramor (100% `Physical` `HP loss`)
 - Aliceth (100% `Physical` `HP loss`)
+- Faramor (100% `Physical` `HP loss`)
+- Kordan (100% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
-- Velara (100% `Phys DEF debuff`)
 - Shadewing (100% `Phys DEF debuff`)
-- Zanie (100% `Phys DEF debuff`)
+- Velara (100% `Phys DEF debuff`)
+- Ravion (100% `Phys DEF debuff`)
 
 **Crowd Control**
 
-- Velara (100% `Bind`)
-- Gwyneth (100% `Bind`)
 - Galahad (100% `Bind`)
+- Gwyneth (100% `Bind`)
+- Velara (100% `Bind`)
 
 ### Summary for Seth
 
@@ -9710,21 +9707,21 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 **Similar Skills**
 
-- Nerion (100% `dot-specialist` `enemy-debuffer`)
 - Kruger (60% `enemy-debuffer`)
-- Carolina (48% `enemy-debuffer`)
+- Cassadee (30% `enemy-debuffer`)
+- Gwyneth (25% `dot-specialist`)
 
 **Damage**
 
-- Faramor (65% `HP loss`)
-- Kordan (78% `HP loss`)
-- Ravion (78% `HP loss`)
+- Niru (100% `Magic` `HP loss`)
+- Zorya (100% `Magic` `HP loss`)
+- Nara (94% `HP loss`)
 
 **Debuffs on enemies**
 
-- Velara (64% `Magic DEF debuff` `Phys DEF debuff`)
 - Eironn (100% `Magic DEF debuff`)
 - Thador (100% `Magic DEF debuff` `Phys DEF debuff`)
+- Velara (64% `Magic DEF debuff` `Phys DEF debuff`)
 
 ### Summary for Shadewing
 
@@ -9804,7 +9801,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting most from Shakir
 
-Shakir provides Damage taken reduction to multiple targets `average`, Haste buff to multiple targets `high`, and Lifedrain buff to single targets `average`.
+Shakir provides Damage taken to multiple targets `average`, Haste buff to multiple targets `high`, and Lifedrain buff to single targets `average`.
 
 - Lucy (4.6 / 5)
 - Sinbad (4.1 / 5)
@@ -9829,14 +9826,14 @@ Shakir provides Damage taken reduction to multiple targets `average`, Haste buff
 
 **Damage**
 
-- Gunnar (71% `Physical`)
 - Gwyneth (100% `Physical`)
-- Baelran (89% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Debuffs on enemies**
 
-- Faramor (100% `Vitality debuff`)
 - Alna (100% `Vitality debuff`)
+- Faramor (100% `Vitality debuff`)
 - Frieren (100% `Vitality debuff`)
 
 ### Summary for Shakir
@@ -9928,13 +9925,13 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 
 - Daimon (72% `hp-scaling` `life-drain` `summoner`)
 - Zorya (60% `hp-scaling` `life-drain`)
-- Cecia (57% `life-drain` `summoner`)
+- Brutus (40% `hp-scaling` `life-drain`)
 
 **Damage**
 
-- Gunnar (66% `Max HP-based damage`)
 - Silven (100% `Magic` `Max HP-based damage`)
 - Sylphira (100% `Magic`)
+- Lily May (100% `Magic` `Max HP-based damage`)
 
 ### Summary for Shemira
 
@@ -10018,27 +10015,27 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 **Buffs on allies**
 
-- Zanie (100% `DEF Penetration`)
 - Aliceth (100% `DEF Penetration`)
-- Kordan (100% `DEF Penetration`)
+- Zanie (100% `DEF Penetration`)
+- Kulu (100% `DEF Penetration`)
 
 **Similar Skills**
 
 - Tilaya (100% `hp-scaling`)
-- Nazrik (60% `hp-scaling`)
 - Pippa (60% `hp-scaling`)
+- Baelran (50% `hp-scaling`)
 
 **Damage**
 
-- Gunnar (65% `Max HP-based damage`)
 - Shemira (100% `Magic` `Max HP-based damage`)
 - Sylphira (100% `Magic`)
+- Lily May (100% `Magic` `Max HP-based damage`)
 
 **Crowd Control**
 
 - Baelran (100% `Knock down`)
 - Sylphira (100% `Knock down`)
-- Frieren (80% `Knock down`)
+- Callan (100% `Knock down`)
 
 ### Summary for Silven
 
@@ -10125,14 +10122,14 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Debuffs on enemies**
 
 - Saida (100% `Energy drain`)
-- Dunlingr (96% `Energy drain`)
-- Rowan (71% `Energy drain`)
+- Lily May (100% `Energy drain`)
+- Hodgkin (96% `Energy drain` `Vitality debuff`)
 
 **Crowd Control**
 
@@ -10230,9 +10227,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Damage**
 
-- Gunnar (92% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
+- Aliceth (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -10346,15 +10343,15 @@ These are the **10** strongest pairings:
 
 **Buffs on allies**
 
-- Ravion (62% `Energy` `ATK`)
 - Rowan (100% `Energy`)
 - Seth (62% `Energy`)
+- Ravion (62% `Energy` `ATK`)
 
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
 - Evie (100% `Direct healing` `Healing`)
-- Mikola (67% `Direct healing` `Healing`)
+- Hewynn (78% `Healing`)
 
 **Similar Skills**
 
@@ -10364,9 +10361,9 @@ These are the **10** strongest pairings:
 
 **Crowd Control**
 
+- Gerda (100% `Interrupt` `Stun`)
 - Sylphira (93% `Interrupt`)
-- Saida (62% `Interrupt`)
-- Thoran (62% `Interrupt`)
+- Lily May (93% `Interrupt`)
 
 ### Summary for Smokey & Meerky
 
@@ -10444,21 +10441,17 @@ These are the **10** strongest pairings:
 
 ### Units that can act as a replacement for Solise
 
-**Healing**
-
-- Hewynn (85% `Healing over time` `Healing`)
-
 **Similar Skills**
 
 - Velara (100% `ally-healer` `ally-shielder` `aoe-healing`)
-- Hewynn (96% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (80% `ally-healer` `aoe-healing`)
+- Twins (60% `ally-healer` `ally-shielder`)
 
 **Damage**
 
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
-- Silven (84% `Magic`)
+- Galahad (100% `Magic`)
+- Velara (100% `Magic`)
 
 ### Summary for Solise
 
@@ -10544,9 +10537,9 @@ Sonja provides ATK buff to multiple targets `average` and DEF buff to multiple t
 
 **Buffs on allies**
 
-- Twins (68% `ATK` `Magic DEF` `Physical DEF`)
-- Velara (58% `Magic DEF` `Physical DEF`)
-- Contess (60% `ATK`)
+- Hugin (72% `ATK`)
+- Rowan (72% `Magic DEF` `Physical DEF`)
+- Evie (72% `ATK`)
 
 **Similar Skills**
 
@@ -10557,14 +10550,14 @@ Sonja provides ATK buff to multiple targets `average` and DEF buff to multiple t
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Crowd Control**
 
-- Gwyneth (100% `Stun`)
+- Aliceth (100% `Stun`)
 - Contess (100% `Stun`)
-- Faramor (83% `Stun`)
+- Bonnie (100% `Stun`)
 
 ### Summary for Sonja
 
@@ -10652,9 +10645,9 @@ Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supre
 
 **Buffs on allies**
 
-- Twins (88% `Max HP` `Haste`)
-- Contess (83% `Max HP`)
-- Saida (83% `Max HP`)
+- Hugin (100% `Max HP` `Haste`)
+- Galahad (100% `Max HP` `Haste`)
+- Zanie (100% `Max HP`)
 
 **Similar Skills**
 
@@ -10664,14 +10657,14 @@ Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supre
 
 **Damage**
 
-- Gunnar (66% `Physical`)
 - Gwyneth (100% `Physical`)
-- Baelran (84% `Physical`)
+- Aliceth (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Crowd Control**
 
-- Zandrok (50% `Stun`)
 - Perseus (100% `Stun` `Knock back`)
+- Scarlita (100% `Stun` `Knock back`)
 - Koko (78% `Stun`)
 
 ### Summary for Soren
@@ -10759,12 +10752,13 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 
 - Baelran (40% `transformation`)
 - Indris (40% `disabler`)
-- Pang (40% `transformation`)
+- Athalia (36% `transformation`)
 
 **Damage**
 
 - Silven (83% `Magic`)
 - Shemira (83% `Magic`)
+- Lily May (82% `Magic`)
 
 **Debuffs on enemies**
 
@@ -10775,8 +10769,6 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 **Crowd Control**
 
 - Baelran (76% `Knock down`)
-- Lucca (60% `Knock down` `Interrupt`)
-- Temesia (60% `Knock down` `Interrupt`)
 
 ### Summary for Sylphira
 
@@ -10878,15 +10870,15 @@ Talene provides Healing over time in an area `low` and ATK buff (Legendary+) in 
 
 **Buffs on allies**
 
-- Hugin (66% `ATK`)
 - Evie (100% `ATK`)
 - Mikola (100% `ATK`)
+- Pang (100% `ATK`)
 
 **Healing**
 
 - Solise (100% `Healing over time` `Healing`)
-- Twins (78% `Healing`)
-- Velara (65% `Healing`)
+- Ludovic (100% `Healing over time` `Healing`)
+- Hepler (100% `Healing over time` `Healing`)
 
 **Similar Skills**
 
@@ -10897,14 +10889,14 @@ Talene provides Healing over time in an area `low` and ATK buff (Legendary+) in 
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Crowd Control**
 
 - Twins (100% `Knock back`)
-- Kordan (67% `Knock back`)
-- Kulu (67% `Knock back`)
+- Perseus (100% `Knock back`)
+- Lenya (100% `Knock back`)
 
 ### Summary for Talene
 
@@ -11010,9 +11002,9 @@ Tasi provides Haste buff (Mythic+) to single targets `high`.
 
 **Damage**
 
-- Solise (75% `Magic`)
-- Velara (75% `Magic`)
-- Saida (63% `Magic`)
+- Frieren (100% `Magic` `DoT`)
+- Bryon (100% `Magic` `DoT`)
+- Eironn (90% `Magic`)
 
 **Crowd Control**
 
@@ -11115,19 +11107,21 @@ Common buffers are **Mikola**, **Twins**, or **Smokey & Meerky**.
 
 **Damage**
 
-- Gunnar (86% `Physical`)
+- Himmel (100% `Physical`)
+- Valka (100% `Physical`)
+- Brutus (100% `Physical`)
 
 **Debuffs on enemies**
 
-- Velara (100% `Phys DEF debuff`)
 - Shadewing (100% `Phys DEF debuff`)
-- Zanie (100% `Phys DEF debuff`)
+- Velara (100% `Phys DEF debuff`)
+- Ravion (100% `Phys DEF debuff`)
 
 **Crowd Control**
 
-- Baelran (80% `Knock down`)
-- Silven (72% `Knock down`)
 - Sylphira (100% `Knock down` `Interrupt`)
+- Lucca (100% `Knock down` `Interrupt`)
+- Zorya (96% `Knock down`)
 
 ### Summary for Temesia
 
@@ -11227,20 +11221,20 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 **Similar Skills**
 
 - Ravion (60% `ally-shielder` `energy-provider`)
-- Twins (50% `ally-shielder` `energy-provider`)
 - Hugin (50% `ally-shielder` `energy-provider`)
+- Twins (50% `ally-shielder` `energy-provider`)
 
 **Damage**
 
-- Gwyneth (94% `Physical`)
-- Faramor (100% `Physical`)
 - Aliceth (100% `Physical`)
+- Faramor (100% `Physical`)
+- Gwyneth (94% `Physical`)
 
 **Crowd Control**
 
 - Baelran (100% `Knock down`)
 - Silven (100% `Knock down`)
-- Ravion (80% `Knock down`)
+- Frieren (100% `Knock down`)
 
 ### Summary for Thador
 
@@ -11340,8 +11334,8 @@ Thoran provides Lifedrain buff to single targets `average` and Energy recovery (
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Crowd Control**
 
@@ -11435,9 +11429,9 @@ Tilaya provides DEF buff (EX+10) in an area `average` and Max HP buff (EX+10) in
 
 **Buffs on allies**
 
-- Himmel (50% `Max HP`)
 - Rowan (65% `Magic DEF` `Max HP` `Physical DEF`)
 - Lucca (60% `Magic DEF` `Physical DEF`)
+- Himmel (50% `Max HP`)
 
 **Similar Skills**
 
@@ -11558,26 +11552,25 @@ These are the **10** strongest pairings:
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
-- Velara (70% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Zanie (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
 - Rowan (80% `ally-healer` `energy-provider`)
-- Lucius (66% `ally-healer` `ally-shielder`)
 - Solise (60% `ally-healer` `ally-shielder`)
+- Hugin (60% `ally-shielder` `energy-provider`)
 
 **Damage**
 
 - Solise (100% `Magic`)
-- Velara (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Crowd Control**
 
-- Aliceth (75% `Blind` `Knock back`)
 - Hepler (81% `Blind`)
-- Damian (97% `Blind`)
+- Aliceth (75% `Blind` `Knock back`)
 
 ### Summary for Twins
 
@@ -11672,7 +11665,7 @@ Ulmus provides Energy recovery to single targets `low` and Shield to single targ
 
 - Twins (100% `Energy` `Max HP`)
 - Ravion (97% `Energy`)
-- Rowan (67% `Energy`)
+- Lyca (95% `Energy`)
 
 **Similar Skills**
 
@@ -11689,8 +11682,8 @@ Ulmus provides Energy recovery to single targets `low` and Shield to single targ
 **Crowd Control**
 
 - Twins (100% `Knock back`)
-- Kordan (67% `Knock back`)
-- Kulu (67% `Knock back`)
+- Perseus (100% `Knock back`)
+- Lenya (100% `Knock back`)
 
 ### Summary for Ulmus
 
@@ -11784,9 +11777,9 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 **Buffs on allies**
 
-- Twins (100% `Haste`)
 - Hugin (100% `Haste`)
-- Galahad (75% `Haste`)
+- Twins (100% `Haste`)
+- Shakir (100% `Haste`)
 
 **Similar Skills**
 
@@ -11796,21 +11789,21 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 **Damage**
 
-- Baelran (66% `True damage` `Physical`)
 - Faramor (100% `True damage` `Physical` `HP loss`)
-- Aliceth (56% `Physical` `HP loss`)
+- Nara (100% `True damage` `Physical` `HP loss`)
+- Athalia (80% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
 - Saida (75% `Energy drain`)
-- Sylphira (54% `Energy drain`)
+- Lily May (75% `Energy drain`)
 - Rowan (75% `Energy drain`)
 
 **Crowd Control**
 
-- Aliceth (50% `Stun`)
-- Zandrok (66% `Stun`)
-- Bonnie (54% `Stun`)
+- Callan (100% `Stun`)
+- Perseus (100% `Stun`)
+- Koko (100% `Stun`)
 
 ### Summary for Vala
 
@@ -11912,20 +11905,20 @@ Common buffers are **Lyca**, **Mikola**, or **Twins**.
 **Damage**
 
 - Gunnar (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Baelran (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Debuffs on enemies**
 
 - Velara (100% `Haste debuff`)
-- Aurora (100% `Haste debuff`)
 - Alna (100% `Haste debuff`)
+- Aurora (100% `Haste debuff`)
 
 **Crowd Control**
 
-- Gwyneth (64% `Stun`)
-- Contess (66% `Stun`)
-- Faramor (53% `Stun`)
+- Aliceth (100% `Stun`)
+- Bonnie (100% `Stun`)
+- Zandrok (100% `Stun`)
 
 ### Summary for Valen
 
@@ -12030,15 +12023,15 @@ Valka provides ATK SPD buff to multiple targets `average` and Lifedrain buff (EX
 
 **Damage**
 
-- Gunnar (70% `Physical` `Max HP-based damage`)
-- Silven (65% `Max HP-based damage`)
-- Shemira (79% `Max HP-based damage`)
+- Temesia (89% `Physical`)
+- Walker (81% `Physical` `Max HP-based damage`)
+- Brutus (79% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
-- Baelran (64% `Knock down`)
-- Silven (64% `Knock down`)
-- Sylphira (64% `Knock down`)
+- Callan (100% `Knock down` `Stun`)
+- Zorya (100% `Knock down` `Stun`)
+- Scarlita (100% `Knock down` `Stun`)
 
 ### Summary for Valka
 
@@ -12138,7 +12131,7 @@ These are the **10** strongest pairings:
 
 - Rowan (96% `Magic DEF` `Physical DEF`)
 - Sonja (96% `Magic DEF` `Physical DEF`)
-- Scarlita (80% `Magic DEF` `Physical DEF`)
+- Tilaya (96% `Magic DEF` `Physical DEF`)
 
 **Healing**
 
@@ -12156,18 +12149,18 @@ These are the **10** strongest pairings:
 
 - Solise (100% `Magic`)
 - Saida (100% `Magic`)
-- Silven (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
-- Alna (69% `Haste debuff`)
 - Eironn (100% `Haste debuff` `Magic DEF debuff`)
-- Bonnie (69% `Haste debuff`)
+- Carolina (92% `Haste debuff` `Magic DEF debuff`)
+- Kafra (92% `Haste debuff` `Phys DEF debuff`)
 
 **Crowd Control**
 
-- Gwyneth (60% `Bind`)
-- Galahad (80% `Bind`)
+- Alna (100% `Bind`)
+- Eironn (100% `Bind`)
 - Kordan (100% `Bind`)
 
 ### Summary for Velara
@@ -12268,15 +12261,15 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Damage**
 
-- Solise (73% `Magic`)
-- Velara (60% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
 - Saida (100% `Energy drain`)
-- Sylphira (56% `Energy drain`)
 - Dunlingr (100% `Energy drain`)
+- Lily May (100% `Energy drain`)
 
 ### Summary for Viperian
 
@@ -12375,8 +12368,8 @@ Walker provides Crit buff to single targets `low`.
 **Damage**
 
 - Gunnar (100% `Physical` `Max HP-based damage`)
-- Silven (78% `Max HP-based damage`)
-- Shemira (65% `Max HP-based damage`)
+- Himmel (100% `Physical` `Max HP-based damage`)
+- Valka (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -12384,9 +12377,9 @@ Walker provides Crit buff to single targets `low`.
 
 **Crowd Control**
 
-- Contess (60% `Stun`)
-- Aliceth (75% `Stun`)
 - Bonnie (100% `Stun`)
+- Zandrok (100% `Stun`)
+- Callan (100% `Stun`)
 
 ### Summary for Walker
 
@@ -12483,8 +12476,8 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 **Buffs on allies**
 
-- Twins (63% `Haste` `Max HP`)
 - Shakir (91% `Haste` `Life Drain`)
+- Twins (63% `Haste` `Max HP`)
 - Cecia (63% `Life Drain` `Max HP`)
 
 **Similar Skills**
@@ -12495,9 +12488,9 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 **Crowd Control**
 
-- Bonnie (58% `Stun`)
-- Koko (72% `Stun`)
-- Callan (60% `Stun`)
+- Scarlita (100% `Stun` `Knock up`)
+- Lucca (100% `Stun` `Knock up`)
+- Soren (86% `Stun`)
 
 ### Summary for Zandrok
 
@@ -12578,33 +12571,33 @@ Zanie provides ATK buff to single targets `low`, Direct healing to single target
 
 **Buffs on allies**
 
-- Saida (90% `Max HP`)
-- Contess (79% `Max HP` `ATK`)
 - Hugin (100% `Max HP` `ATK`)
+- Saida (90% `Max HP`)
+- Lenya (90% `Max HP`)
 
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
 - Twins (100% `Direct healing` `Healing`)
-- Velara (58% `Direct healing` `Healing`)
+- Contess (100% `Direct healing` `Healing`)
 
 **Similar Skills**
 
 - Florabelle (100% `summoner`)
-- Chippy (100% `summoner`)
 - Dunlingr (50% `summoner`)
+- Damian (50% `summoner`)
 
 **Debuffs on enemies**
 
-- Ravion (96% `Phys DEF debuff` `ATK debuff`)
-- Cyran (57% `ATK debuff`)
 - Lyca (100% `Phys DEF debuff` `ATK debuff`)
+- Ravion (96% `Phys DEF debuff` `ATK debuff`)
+- Sinbad (86% `Phys DEF debuff` `ATK debuff`)
 
 **Crowd Control**
 
-- Twins (66% `Knock back`)
 - Aliceth (100% `Knock back` `Stun`)
-- Kordan (80% `Knock back`)
+- Perseus (100% `Knock back` `Stun`)
+- Lenya (100% `Knock back` `Stun`)
 
 ### Summary for Zanie
 
@@ -12709,14 +12702,14 @@ Zorya also requires allies **casting ultimates**
 **Damage**
 
 - Shadewing (100% `Magic` `HP loss`)
-- Faramor (67% `HP loss`)
-- Kordan (80% `HP loss`)
+- Niru (100% `Magic` `HP loss`)
+- Nara (94% `HP loss`)
 
 **Crowd Control**
 
 - Callan (100% `Stun` `Knock down`)
-- Koko (66% `Stun`)
-- Perseus (66% `Stun`)
+- Scarlita (100% `Stun` `Knock down`)
+- Antandra (100% `Stun` `Knock down`)
 
 ### Summary for Zorya
 
