@@ -301,7 +301,7 @@
 
   const QUALITY_EMOJI = {
     high: "📈",
-    average: "⚖️",
+    average: "➖",
     low: "📉",
   };
 
@@ -313,7 +313,7 @@
 
   const SPEED_EMOJI = {
     slow: "🐢",
-    average: "⏱️",
+    average: "🚶",
     fast: "🚀",
   };
 

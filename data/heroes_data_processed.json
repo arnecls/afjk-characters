@@ -174,22 +174,22 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "debuff",
               "name": "Execution debuff",
               "label": "debuff_offensive"
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "debuff",
               "name": "Marked target (focus fire)",
               "label": "debuff_stat"
@@ -313,12 +313,11 @@
             },
             {
               "tier": "ex+15",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Blind HP loss debuff",
               "label": "debuff_stat"
@@ -512,7 +511,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 55.0
+                  "value": 50.0
                 }
               ]
             },
@@ -638,12 +637,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Arc",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "arc",
+              "area": "radius",
               "target_count": -1,
-              "area_direction": "front",
+              "area_count": 2,
               "type": "debuff",
               "name": "Haste debuff",
               "label": "debuff_offensive",
@@ -917,12 +916,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
@@ -1149,7 +1147,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "ultimate": {
@@ -1160,7 +1158,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "non_ultimate": {
@@ -1521,7 +1519,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 180.0
+                  "value": 230.0
                 }
               ]
             }
@@ -1970,7 +1968,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -1981,7 +1979,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -2039,24 +2037,22 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "ATK debuff",
               "label": "debuff_offensive"
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.5
@@ -2165,7 +2161,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 150.0
                 }
               ]
             },
@@ -2422,11 +2418,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "enemy",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "debuff",
               "name": "Haste debuff",
               "label": "debuff_offensive",
@@ -2735,7 +2731,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 320.0
+                  "value": 360.0
                 }
               ]
             },
@@ -2818,12 +2814,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_up"
             },
@@ -2946,24 +2941,6 @@
               "type": "debuff",
               "name": "Max HP debuff",
               "label": "debuff_stat"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 800.0
-                }
-              ]
             }
           ],
           "tier": "supreme+"
@@ -3681,7 +3658,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 125.0
+                  "value": 140.0
                 }
               ],
               "duration": 4,
@@ -4022,7 +3999,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 40.0
+                  "value": 110.0
                 }
               ],
               "duration": 2,
@@ -4076,7 +4053,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 190.0
+                  "value": 200.0
                 }
               ]
             },
@@ -4132,7 +4109,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 350.0
+                  "value": 450.0
                 }
               ]
             },
@@ -4598,15 +4575,14 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
-              "duration": 6.0
+              "duration": 8.0
             },
             {
               "tier": "base",
@@ -5065,7 +5041,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "non_ultimate": {
@@ -5095,12 +5071,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Arc",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "arc",
-              "target_count": -1,
-              "area_direction": "front",
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 2.0
@@ -5138,7 +5113,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 170.0
+                  "value": 185.0
                 }
               ],
               "duration": 2,
@@ -5303,7 +5278,7 @@
               "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
-              "duration": 15.0
+              "duration": 4.0
             },
             {
               "tier": "mythic+",
@@ -5319,7 +5294,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 60.0
+                  "value": 80.0
                 }
               ],
               "duration": 4,
@@ -5617,7 +5592,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 666.0
                 }
               ]
             },
@@ -5667,17 +5642,17 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 240.0
                 }
               ]
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "enemy",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "debuff",
               "name": "Max HP debuff",
               "label": "debuff_stat"
@@ -5760,11 +5735,11 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "silence",
               "duration": -1.0
@@ -5912,7 +5887,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 1650.0
+                  "value": 3250.0
                 }
               ]
             },
@@ -6049,27 +6024,9 @@
         "Enhance Force": {
           "category": "skill5",
           "description": "While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%. Level 2 (Unlocks with ): Within the domain of Eternal Winter, Cryonaia's ice storms move 37.5% faster and deal damage once every 0.25s. While inside the domain, Cryonaia also gains 60% damage reduction, and dealing damage to enemies triggers extra magic damage equal to 4% of the target's current HP. The extra magic damage cannot exceed 40% (ATK-based).",
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 40.0
-                }
-              ]
-            }
-          ],
-          "tier": "supreme+"
+          "effects": [],
+          "tier": "supreme+",
+          "passive_only": true
         }
       },
       "synergy_profile": {
@@ -6341,12 +6298,11 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 1.5
@@ -6366,7 +6322,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 40.0
+                  "value": 50.0
                 }
               ]
             },
@@ -6566,7 +6522,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 23.0
+                  "value": 28.0
                 }
               ]
             },
@@ -6628,25 +6584,6 @@
                 {
                   "type": "percentage",
                   "value": 20.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 400.0
                 }
               ]
             }
@@ -6758,26 +6695,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 5.0
-                }
-              ]
-            },
-            {
-              "tier": "ex+10",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 100.0
+                  "value": 6.0
                 }
               ]
             }
@@ -6843,25 +6761,24 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "low",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
               "Max HP-based damage": "average",
-              "Magic": "high"
+              "Magic": "low"
             }
           },
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "low",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "average",
-              "Magic": "high"
+              "Max HP-based damage": "average"
             }
           }
         }
@@ -6897,12 +6814,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
+              "area": "radius",
               "target_count": -1,
-              "area_count": -1,
+              "area_count": 2,
               "type": "crowd_control",
               "cc-type": "blind",
               "duration": 3.0
@@ -6944,7 +6861,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 150.0
                 }
               ]
             }
@@ -7181,12 +7098,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_up"
             },
@@ -7242,7 +7158,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 160.0
+                  "value": 170.0
                 }
               ]
             }
@@ -7318,7 +7234,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 200.0
+                  "value": 220.0
                 }
               ]
             },
@@ -7505,12 +7421,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "silence",
               "duration": 6.25
@@ -7543,12 +7458,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "ATK debuff",
               "label": "debuff_offensive"
@@ -7635,7 +7549,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 150.0
+                  "value": 180.0
                 }
               ]
             }
@@ -7917,12 +7831,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Arc",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "arc",
-              "target_count": -1,
-              "area_direction": "front",
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Magic DEF debuff",
               "label": "debuff_defensive",
@@ -8224,7 +8137,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 140.0
+                  "value": 130.0
                 }
               ]
             },
@@ -8530,12 +8443,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "DoT",
               "label": "dot",
@@ -8548,36 +8460,33 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "silence",
-              "duration": 6.0
+              "duration": 8.0
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
-              "duration": 6.0
+              "duration": 8.0
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "displace"
             }
@@ -8643,7 +8552,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 11.0
+                  "value": 120.0
                 }
               ]
             }
@@ -8858,7 +8767,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 275.0
+                  "value": 280.0
                 }
               ]
             },
@@ -9169,7 +9078,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 300.0
                 }
               ]
             },
@@ -9227,7 +9136,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 150.0
                 }
               ]
             },
@@ -9781,7 +9690,7 @@
                   "value": 300.0
                 }
               ],
-              "duration": 2,
+              "duration": 3,
               "tick": 1
             }
           ],
@@ -10359,17 +10268,17 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 15.0
+                  "value": 120.0
                 }
               ]
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 1.0
@@ -10412,7 +10321,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 25.0
                 }
               ],
               "duration": 2,
@@ -10504,7 +10413,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 370.0
+                  "value": 430.0
                 }
               ]
             }
@@ -10709,12 +10618,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 3.0
@@ -10790,7 +10698,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 170.0
                 }
               ]
             },
@@ -10803,7 +10711,7 @@
               "target_count": 1,
               "type": "crowd_control",
               "cc-type": "taunt",
-              "duration": 10.0
+              "duration": 3.0
             }
           ],
           "cooldown": 10.0,
@@ -11041,7 +10949,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 88.0
+                  "value": 550.0
                 }
               ],
               "duration": 15,
@@ -11056,12 +10964,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 0.5
@@ -11367,12 +11274,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 2.0
@@ -11737,7 +11643,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           },
           "ultimate": {
@@ -11748,7 +11654,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           },
           "non_ultimate": {
@@ -12189,12 +12095,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Haste debuff",
               "label": "debuff_offensive",
@@ -12282,7 +12187,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 16.0
+                  "value": 160.0
                 }
               ]
             }
@@ -12474,7 +12379,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 115.0
                 }
               ]
             }
@@ -12498,7 +12403,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 30.0
+                  "value": 300.0
                 }
               ]
             }
@@ -12973,7 +12878,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 100.0
                 }
               ],
               "duration": 2,
@@ -13043,12 +12948,11 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Energy drain",
               "label": "debuff_stat",
@@ -13678,7 +13582,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 500.0
+                  "value": 320.0
                 }
               ]
             }
@@ -13732,7 +13636,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 185.0
+                  "value": 200.0
                 }
               ]
             }
@@ -13755,12 +13659,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 5.0
@@ -13908,7 +13811,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "average"
+        "true": "high"
       },
       "benefit_stats": [
         "atk",
@@ -13931,23 +13834,23 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "low"
             }
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "low"
             }
           },
           "non_ultimate": {
@@ -14036,7 +13939,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 40.0
+                  "value": 400.0
                 }
               ]
             },
@@ -14055,7 +13958,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 380.0
+                  "value": 440.0
                 }
               ]
             }
@@ -14425,12 +14328,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Marked target (focus fire)",
               "label": "debuff_stat"
@@ -14510,7 +14412,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 270.0
+                  "value": 350.0
                 }
               ]
             },
@@ -14691,7 +14593,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 20.0
+                  "value": 260.0
                 }
               ]
             }
@@ -14705,12 +14607,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Damage taken debuff",
               "label": "debuff_stat"
@@ -14916,12 +14817,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_back"
             },
@@ -15252,7 +15152,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -15263,7 +15163,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -15393,7 +15293,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 320.0
+                  "value": 340.0
                 }
               ]
             }
@@ -15643,12 +15543,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Damage taken debuff",
               "label": "debuff_stat"
@@ -15931,7 +15830,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 170.0
+                  "value": 230.0
                 }
               ]
             }
@@ -15970,7 +15869,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 120.0
+                  "value": 150.0
                 }
               ]
             }
@@ -16034,7 +15933,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 210.0
+                  "value": 270.0
                 }
               ]
             },
@@ -16526,12 +16425,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
@@ -16584,12 +16482,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
@@ -16888,7 +16785,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "ultimate": {
@@ -16899,7 +16796,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "non_ultimate": {
@@ -16929,12 +16826,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Energy drain",
               "label": "debuff_stat",
@@ -16947,12 +16843,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "interrupt"
             },
@@ -17264,7 +17159,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 120.0
                 }
               ],
               "duration": 2,
@@ -17282,7 +17177,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 132.0
+                  "value": 120.0
                 }
               ]
             }
@@ -17843,7 +17738,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 330.0
+                  "value": 350.0
                 }
               ]
             },
@@ -17878,7 +17773,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 80.0
                 }
               ]
             }
@@ -18051,12 +17946,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
@@ -18136,24 +18030,22 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_up"
             },
@@ -18325,7 +18217,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 0
                 }
               ]
             },
@@ -18362,7 +18254,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 50.0
+                  "value": 55.0
                 }
               ]
             }
@@ -18707,7 +18599,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 240.0
+                  "value": 280.0
                 }
               ]
             }
@@ -19382,7 +19274,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 250.0
+                  "value": 500.0
                 }
               ]
             }
@@ -19754,12 +19646,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "charm",
               "duration": 3.0
@@ -20039,7 +19930,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 110.0
                 }
               ]
             }
@@ -20124,7 +20015,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 130.0
                 }
               ]
             }
@@ -20204,6 +20095,7 @@
       "benefit_stats": [
         "atk",
         "haste",
+        "healing",
         "physical_def",
         "magic_def"
       ],
@@ -20306,7 +20198,7 @@
                   "value": 45.0
                 }
               ],
-              "duration": 2,
+              "duration": 10,
               "tick": 1
             }
           ],
@@ -20816,7 +20708,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 2680.0
+                  "value": 3080.0
                 }
               ]
             }
@@ -20830,12 +20722,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Haste debuff",
               "label": "debuff_offensive",
@@ -20892,7 +20783,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 1100.0
+                  "value": 616.0
                 }
               ]
             }
@@ -21158,7 +21049,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 670.0
+                  "value": 720.0
                 }
               ]
             },
@@ -21230,7 +21121,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 200.0
+                  "value": 38.5
                 }
               ]
             }
@@ -21422,7 +21313,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "average",
@@ -21585,7 +21476,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 70.0
+                  "value": 600.0
                 }
               ]
             },
@@ -21753,7 +21644,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0.3
+                  "value": 0.45
                 }
               ]
             },
@@ -21771,7 +21662,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 140.0
+                  "value": 600.0
                 }
               ]
             }
@@ -22021,7 +21912,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 150.0
+                  "value": 250.0
                 }
               ],
               "duration": 2,
@@ -22232,12 +22123,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "ATK debuff",
               "label": "debuff_offensive"
@@ -22295,7 +22185,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 290.0
                 }
               ]
             },
@@ -22375,7 +22265,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 315.0
+                  "value": 345.0
                 }
               ]
             }
@@ -22574,12 +22464,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 1.5
@@ -22900,7 +22789,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 220.0
+                  "value": 235.0
                 }
               ]
             }
@@ -23266,7 +23155,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -23277,7 +23166,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -23733,12 +23622,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Energy drain",
               "label": "debuff_stat",
@@ -24012,11 +23900,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "debuff",
               "name": "ATK debuff",
               "label": "debuff_offensive",
@@ -24029,11 +23917,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "debuff",
               "name": "Phys DEF debuff",
               "label": "debuff_defensive",
@@ -24046,22 +23934,22 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.0
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "displace"
             },
@@ -24505,7 +24393,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 120.0
+                  "value": 200.0
                 }
               ]
             },
@@ -25061,7 +24949,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 44.0
+                  "value": 40.0
                 }
               ]
             },
@@ -25309,9 +25197,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "enemy",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "debuff",
@@ -25397,18 +25285,17 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 300.0
+                  "value": 3000.0
                 }
               ]
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "interrupt"
             },
@@ -25426,7 +25313,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 3300.0
+                  "value": 490.0
                 }
               ]
             }
@@ -25823,7 +25710,7 @@
           "signature": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -25968,24 +25855,22 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 3,
               "type": "debuff",
               "name": "Vitality debuff",
               "label": "debuff_defensive"
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 3,
               "type": "debuff",
               "name": "DoT",
               "label": "dot",
@@ -26863,7 +26748,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 68.0
+                  "value": 88.0
                 }
               ]
             },
@@ -26884,7 +26769,7 @@
                   "value": 80.0
                 }
               ],
-              "duration": 2,
+              "duration": 10,
               "tick": 1
             }
           ],
@@ -26961,33 +26846,14 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Phys DEF debuff",
               "label": "debuff_defensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
-              "type": "debuff",
-              "name": "Magic DEF debuff",
-              "label": "debuff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ]
             },
             {
               "tier": "base",
@@ -26996,14 +26862,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "type": "debuff",
+              "name": "Magic DEF debuff",
+              "label": "debuff_defensive",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 990.0
+                  "value": 20.0
                 }
               ]
             }
@@ -27147,7 +27012,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Single target"
+          "Single target"
         ],
         [
           "dot",
@@ -27184,13 +27049,11 @@
           "signature": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "none",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
-            "damage_types": {
-              "Magic": "high"
-            }
+            "damage_types": {}
           },
           "ultimate": {
             "speed": "slow",
@@ -27208,12 +27071,12 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "low",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high",
+              "Magic": "low",
               "DoT": "average"
             }
           }
@@ -27317,7 +27180,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 180.0
+                  "value": 240.0
                 }
               ]
             }
@@ -27463,7 +27326,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -27568,7 +27431,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 27.0
+                  "value": 33.0
                 }
               ]
             },
@@ -27625,11 +27488,12 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "All units",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -27637,7 +27501,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 250.0
+                  "value": 300.0
                 }
               ]
             },
@@ -27768,7 +27632,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 79.0
+                  "value": 99.0
                 }
               ]
             }
@@ -27848,7 +27712,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 1.5
+                  "value": 1.5999999999999999
                 }
               ]
             },
@@ -27866,7 +27730,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 16.0
+                  "value": 22.0
                 }
               ]
             }
@@ -28006,7 +27870,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "ultimate": {
@@ -28028,7 +27892,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average",
+              "Magic": "high",
               "Max HP-based damage": "low"
             }
           }
@@ -28140,7 +28004,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 150.0
+                  "value": 180.0
                 }
               ]
             }
@@ -28431,9 +28295,9 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "enemy",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "debuff",
@@ -28470,11 +28334,11 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "enemy",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "debuff",
               "name": "Energy drain",
               "label": "debuff_stat",
@@ -28639,7 +28503,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 15.0
+                  "value": 170.0
                 }
               ]
             },
@@ -28663,12 +28527,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "interrupt"
             }
@@ -28718,7 +28581,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 120.0
                 }
               ]
             }
@@ -28875,7 +28738,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 22.0
+                  "value": 220.0
                 }
               ]
             },
@@ -28894,7 +28757,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 162.0
+                  "value": 242.0
                 }
               ]
             },
@@ -28928,7 +28791,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 100.0
                 }
               ],
               "duration": 2,
@@ -28986,7 +28849,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 25.0
+                  "value": 250.0
                 }
               ]
             },
@@ -29441,11 +29304,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_back"
             },
@@ -29716,12 +29579,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
               "type": "debuff",
               "name": "Max HP debuff",
               "label": "debuff_stat",
@@ -29734,24 +29596,22 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "silence",
               "duration": 1.0
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "interrupt"
             },
@@ -29945,44 +29805,6 @@
               ]
             },
             {
-              "tier": "mythic+",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "damage",
-              "damage_type": "true",
-              "name": "True damage",
-              "label": "damage_true",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 1000.0
-                }
-              ]
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 1000.0
-                }
-              ]
-            },
-            {
               "type": "immunity",
               "tier": "mythic+",
               "immunity_type": "cleanse",
@@ -30017,24 +29839,6 @@
                   "value": 18.0
                 }
               ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 600.0
-                }
-              ]
             }
           ],
           "tier": "supreme+"
@@ -30065,14 +29869,9 @@
         [
           "max_hp",
           "Single target"
-        ],
-        [
-          "true",
-          "Area"
         ]
       ],
       "damage_magnitudes": {
-        "true": "high",
         "max_hp": "low"
       },
       "benefit_stats": [
@@ -30119,13 +29918,12 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "average",
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high",
-              "True damage": "high"
+              "Magic": "average"
             }
           }
         }
@@ -30480,12 +30278,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 4.0
@@ -30507,7 +30304,7 @@
                   "value": 110.0
                 }
               ],
-              "duration": 2,
+              "duration": 4,
               "tick": 1
             }
           ],
@@ -30569,7 +30366,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 120.0
                 }
               ],
               "duration": 2,
@@ -30824,12 +30621,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
+              "area": "radius",
               "target_count": -1,
-              "area_count": -1,
+              "area_count": 2,
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.0
@@ -31064,24 +30861,6 @@
                 {
                   "type": "percentage",
                   "value": 30.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 300.0
                 }
               ]
             }
@@ -32186,7 +31965,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 4.0
+                  "value": 3.5
                 }
               ],
               "duration": 2,
@@ -32346,7 +32125,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
@@ -33022,24 +32801,22 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 0.0
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.0
@@ -33059,7 +32836,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 14.0
+                  "value": 20.0
                 }
               ]
             },
@@ -33387,7 +33164,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 70.0
                 }
               ]
             },
@@ -33469,7 +33246,7 @@
               "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
-              "duration": 12.0
+              "duration": 5.0
             },
             {
               "tier": "base",
@@ -33570,7 +33347,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 300.0
+                  "value": 400.0
                 }
               ]
             }
@@ -33951,7 +33728,7 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           }
         }
@@ -34671,7 +34448,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 0
+                  "value": 300.0
                 }
               ]
             }
@@ -35035,7 +34812,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 15.0
+                  "value": 85.0
                 }
               ]
             },
@@ -35192,7 +34969,7 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
@@ -35203,7 +34980,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",

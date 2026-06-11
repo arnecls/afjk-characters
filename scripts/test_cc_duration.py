@@ -101,6 +101,46 @@ class CcDurationTests(unittest.TestCase):
         )
         self.assertEqual(rs.extract_cc_duration(text, "Taunt"), 4.5)
 
+    def test_cooldown_prefix_not_cc_duration(self):
+        text = (
+            "15s - Skill Range: 5 Tiles Cecia entangles an enemy, "
+            "the target cannot move or act for 4s."
+        )
+        self.assertEqual(rs.extract_cc_duration(text, "Bind"), 4.0)
+
+    def test_granny_taunt_not_cooldown(self):
+        text = (
+            "10s 5s - Skill Range: Global Granny Dahnie taunts an enemy "
+            "for 3s and instantly recovers 140% (ATK-based) + 15% HP."
+        )
+        self.assertEqual(rs.extract_cc_duration(text, "Taunt"), 3.0)
+
+    def test_evie_interrogation_upgrade_chunk(self):
+        from rewrite_summaries import Effect, analyze_text
+
+        effects: list[Effect] = []
+        base = (
+            "Evie interrogates the enemy for 6s. During the interrogation, "
+            "she immobilizes them. If she has already gathered intel on "
+            "the target, the skill also silences them during the "
+            "interrogation."
+        )
+        analyze_text(effects, [], {}, [], "base", base)
+        analyze_text(
+            effects,
+            [],
+            {},
+            [],
+            "base",
+            "Increases interrogation duration to 8s when this skill is used actively.",
+        )
+        bind = next(e for e in effects if e.category == "cc" and e.label == "Bind")
+        silence = next(
+            e for e in effects if e.category == "cc" and e.label == "Silence"
+        )
+        self.assertEqual(bind.numeric, 8.0)
+        self.assertEqual(silence.numeric, 8.0)
+
 
 class SpuriousCcTests(unittest.TestCase):
     def test_indris_silencing_arrow_spurious(self):

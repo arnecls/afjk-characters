@@ -233,7 +233,7 @@ class ExtractionFixTests(unittest.TestCase):
             "Lailah's green glow to 130% (ATK-based) + 10%."
         )
         val = rs.extract_number(text, "Healing")
-        self.assertEqual(val, 140.0)
+        self.assertEqual(val, 130.0)
 
     def test_twins_healing_tier_chunks_merge(self):
         from rewrite_summaries import add_effect
@@ -254,7 +254,35 @@ class ExtractionFixTests(unittest.TestCase):
                 for scope in rs._buff_match_scopes(text, label, pat):
                     add_effect(effects, "buff", label, tier, text, scope=scope)
         self.assertEqual(len(effects), 1)
-        self.assertEqual(effects[0].numeric, 140.0)
+        self.assertEqual(effects[0].numeric, 130.0)
+
+    def test_healing_wave_max_tier(self):
+        text = (
+            "Hewynn heals 1 weakest ally for 280% (ATK-based) + 30% of their HP. "
+            "Increases HP recovery to 300% (ATK-based) + 30%."
+        )
+        self.assertEqual(rs.extract_number(text, "Healing"), 300.0)
+
+    def test_velara_immobilize_bind(self):
+        text = (
+            "12s 5s - Skill Range: Global Velara immobilizes the enemy with "
+            "the highest cumulative damage dealt, reducing their Haste by "
+            "50 + 10 and their Phys & Magic DEF by 45% + 6% for 5s."
+        )
+        self.assertEqual(rs.extract_cc_duration(text, "Bind"), 5.0)
+
+    def test_graceful_edict_damage_not_shield(self):
+        text = (
+            "Increases the shield value granted by Graceful Edict to "
+            "600% (ATK-based) and the damage it deals to 400%."
+        )
+        self.assertEqual(rs._extract_damage_amount(text, "Magic"), 400.0)
+        text = (
+            "dealing 240% (ATK-based) + 20% damage. The true damage cannot "
+            "exceed 500% (ATK-based). Increases the damage of the silencing "
+            "arrow to 300% (ATK-based) + 20%."
+        )
+        self.assertEqual(rs._extract_damage_amount(text, "Physical"), 320.0)
 
     def test_bonnie_enhance_force_no_damage(self):
         text = (

@@ -966,6 +966,10 @@ def add_cc_immunity(hero: Hero, imm_type: str, tier: str, text: str):
 
 def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     t = text.lower()
+    if category == "cc" and re.search(
+        r"\binterrogat(?:es|ion)\s+(?:the\s+)?enemy\b", t
+    ):
+        return "Single target"
     if label in ("Invincible",) and _invincibility_targets_self(t):
         return "Self"
     if label == "Shield":
@@ -1310,19 +1314,7 @@ def extract_number(text: str, label: str = "") -> float | None:
             if nums:
                 return float(nums[-1])
     if label in ("Healing", "Healing over time"):
-        amounts = _all_amounts(
-            text,
-            [
-                r"hp amount equal to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
-                r"(\d+(?:\.\d+)?)\s*%",
-                r"hp recovered .{0,120}to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
-                r"(\d+(?:\.\d+)?)\s*%",
-                r"recover(?:s|y|ing)? (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of",
-                r"heal(?:s|ing)? .{0,120}(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
-                r"(\d+(?:\.\d+)?)\s*%",
-                r"restor(?:e|es|ing) (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of",
-            ],
-        )
+        amounts = _healing_amounts(text)
         if amounts:
             return max(amounts)
         return None
@@ -1421,7 +1413,7 @@ def _default_cc_duration(text: str, label: str) -> float | None:
         return 0.0
     if label == "Bind" and re.search(
         r"immobiliz(?:ed|es|ing)?", t
-    ) and not re.search(r"immobiliz(?:ed|es|ing)? .{0,60}for \d", t):
+    ) and not re.search(r"immobiliz(?:ed|es|ing)? .{0,200}for \d", t):
         return 0.0
     if label == "Stun" and re.search(
         r"stunn(?:ing|s)? them while (?:executing|casting)", t
@@ -1430,9 +1422,19 @@ def _default_cc_duration(text: str, label: str) -> float | None:
     return None
 
 
+def _strip_skill_meta_prefix(text: str) -> str:
+    """Remove leading cooldown / initial-cooldown prefixes from skill chunks."""
+    return re.sub(
+        r"^(?:-\s*)?(?:\d+(?:\.\d+)?s(?:\s+\d+(?:\.\d+)?s)?\s*-\s*)+",
+        "",
+        text.strip(),
+        flags=re.I,
+    )
+
+
 def extract_cc_duration(text: str, label: str = "") -> float | None:
     """Longest CC duration near the effect keyword (ignores cooldown lines)."""
-    text = _normalize_effect_text(text)
+    text = _strip_skill_meta_prefix(_normalize_effect_text(text))
     if label in _CC_NO_DURATION_LABELS:
         return None
     t = text.lower()
@@ -1478,13 +1480,19 @@ def extract_cc_duration(text: str, label: str = "") -> float | None:
             consider(_pair_sum_amount(m))
     if label == "Bind":
         for m in re.finditer(
+            r"immobiliz(?:es|ing|ed)? .{0,200}?for "
+            r"(\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*s\b",
+            t,
+        ):
+            consider(_pair_sum_amount(m))
+        for m in re.finditer(
             r"for (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*s\b.{0,120}?"
             r"(?:cannot move or act|unable to move or act|immobiliz)",
             t,
         ):
             consider(_pair_sum_amount(m))
         for m in re.finditer(
-            r"(?:cannot move or act|unable to move or act).{0,80}for "
+            r"(?:cannot move or act|unable to move or act).{0,200}for "
             r"(\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*s\b",
             t,
         ):
@@ -1710,15 +1718,13 @@ def add_effect(
         if source_section and not cur.source_section:
             cur.source_section = source_section
         return
+    targeting_text = scope if scope is not None else text
     buff_tgt = (
         _resolve_buff_targeting(text, label, scope=scope)
         if category == "buff"
         else detect_damage_targeting(text)
         if category == "damage"
-        # For CC/debuff effects use the full skill-chunk text so that
-        # field-wide context (e.g. "all non-boss units") is visible even
-        # when the matched clause is a short colon-terminated fragment.
-        else detect_targeting(text, label, category)
+        else detect_targeting(targeting_text, label, category)
     )
     effects.append(
         Effect(
@@ -2825,13 +2831,74 @@ def _pair_sum_amount(m: re.Match) -> float:
     return float(m.group(1))
 
 
+def _healing_atk_amount(m: re.Match) -> float:
+    """ATK-based heal magnitude; ignore trailing + X% HP bonus."""
+    return float(m.group(1))
+
+
+def _healing_amounts(text: str) -> list[float]:
+    t = _normalize_effect_text(text).lower()
+    patterns = [
+        r"hp amount equal to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*%",
+        r"hp recovered .{0,120}to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*%",
+        r"increases (?:the )?hp recovery to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)"
+        r"\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+        r"increases the amount of direct healing to "
+        r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+        r"healing amount per second is increased to "
+        r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*hp",
+        r"increases healing to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*%",
+        r"increases the orb's healing amount to "
+        r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+        r"restoring (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*hp to them every second",
+        r"recover(?:s|y|ing)? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*%\s*hp\b",
+        r"recover(?:s|y|ing)? (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of",
+        r"heal(?:s|ing)? .{0,80}?for (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*%",
+        r"heal(?:s|ing)? .{0,80}?(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*%\s*hp",
+        r"heal(?:s|ing)? .{0,80}?(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*%",
+        r"restor(?:e|es|ing) (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of",
+        r"restor(?:e|es|ing) (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*%\s*hp",
+    ]
+    found: list[float] = []
+    for pat in patterns:
+        for m in re.finditer(pat, t):
+            found.append(_healing_atk_amount(m))
+    return found
+
+
 def _all_amounts(text: str, patterns: list[str]) -> list[float]:
     t = text.lower()
     found: list[float] = []
     for pat in patterns:
         for m in re.finditer(pat, t):
+            if _is_damage_cap_context(t, m.start()):
+                continue
+            if _is_shield_context(t, m.start()):
+                continue
             found.append(_pair_sum_amount(m))
     return found
+
+
+def _is_damage_cap_context(text: str, start: int) -> bool:
+    before = text[max(0, start - 60) : start]
+    return bool(re.search(r"cannot exceed\s*$|cannot exceed ", before))
+
+
+def _is_shield_context(text: str, start: int) -> bool:
+    after = text[start : start + 40].lower()
+    m = re.match(
+        r"\s*(\d+(?:\.\d+)?)\s*%\s*(?:\([^)]*\))?\s*shield\b",
+        after,
+    )
+    return m is not None
 
 
 def _has_instant_atk_damage(text: str) -> bool:
@@ -2947,6 +3014,10 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
             r"each (?:time |cannon strike )?deal(?:s|ing)? "
             r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+damage",
+            r"each blade deals (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s+damage",
+            r"damage it deals to (\d+(?:\.\d+)?)\s*%",
+            r"they take (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s+damage",
             r"deals? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s+damage(?:\s+\d+\s+times)?",
             r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+(?:true )?damage",
             r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+damage",
@@ -2961,10 +3032,16 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
         return max(amounts)
 
     if dmg_type in ("Physical", "Magic", "Ranged", "DoT"):
-        if m := re.search(r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)", text, re.I):
+        for m in re.finditer(r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)", text, re.I):
+            if _is_damage_cap_context(text.lower(), m.start()):
+                continue
+            if _is_shield_context(text.lower(), m.start()):
+                continue
             return float(m.group(1))
     if dmg_type == "True damage":
-        if m := re.search(r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)", text, re.I):
+        for m in re.finditer(r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)", text, re.I):
+            if _is_damage_cap_context(text.lower(), m.start()):
+                continue
             return float(m.group(1))
     return None
 
@@ -3649,6 +3726,68 @@ def analyze_text(
         if re.search(pat, t) and stat not in benefits:
             benefits.append(stat)
 
+    _apply_scalar_upgrades(effects, text, primary_dmg)
+
+
+def _apply_scalar_upgrades(
+    effects: list,
+    text: str,
+    primary_dmg: str = "Physical",
+) -> None:
+    """Bump existing effect numerics from tier-upgrade-only skill chunks."""
+    t = _normalize_effect_text(text).lower()
+    if not t:
+        return
+
+    def bump(category: str, label: str, val: float) -> None:
+        for e in effects:
+            if e.category == category and e.label == label:
+                if e.numeric is None or val > e.numeric:
+                    e.numeric = val
+
+    def bump_cc(labels: tuple[str, ...], val: float) -> None:
+        for e in effects:
+            if e.category == "cc" and e.label in labels:
+                if e.numeric is None or val > e.numeric:
+                    e.numeric = val
+
+    for m in re.finditer(
+        r"increases interrogation duration to (\d+(?:\.\d+)?)\s*s\b", t
+    ):
+        bump_cc(("Silence", "Bind"), float(m.group(1)))
+    for m in re.finditer(
+        r"increases frozen duration to (\d+(?:\.\d+)?)\s*s\b", t
+    ):
+        bump_cc(("Bind",), float(m.group(1)))
+    for label, pat in (
+        ("Stun", r"increases (?:the )?stun duration to (\d+(?:\.\d+)?)\s*s\b"),
+        ("Taunt", r"increases (?:the )?taunt duration to (\d+(?:\.\d+)?)\s*s\b"),
+        (
+            "Silence",
+            r"increases (?:the )?(?:silence|silencing) duration to "
+            r"(\d+(?:\.\d+)?)\s*s\b",
+        ),
+        (
+            "Bind",
+            r"increases (?:the )?(?:bind|frozen|entangled) duration to "
+            r"(\d+(?:\.\d+)?)\s*s\b",
+        ),
+    ):
+        for m in re.finditer(pat, t):
+            bump("cc", label, float(m.group(1)))
+
+    for dmg_label in {
+        e.label for e in effects if e.category == "damage"
+    } | set(detect_damage_types(text, primary_dmg)):
+        amt = _extract_damage_amount(text, dmg_label)
+        if amt is not None:
+            bump("damage", dmg_label, amt)
+
+    for heal_label in ("Healing", "Healing over time"):
+        amt = extract_number(text, heal_label)
+        if amt is not None:
+            bump("buff", heal_label, amt)
+
 
 BENEFIT_STAT_ORDER = (
     "ATK",
@@ -3893,6 +4032,7 @@ def analyze_hero(hero: Hero):
             sl.summon_effects.extend(chunk.summon_effects)
             sl.cc_immunities.extend(chunk.cc_immunities)
             sl.special_effects.extend(chunk.special_effects)
+            _apply_scalar_upgrades(sl.effects, text, primary_dmg)
             if TIER_ORDER.get(tier, 99) < TIER_ORDER.get(sl.tier, 99):
                 sl.tier = tier
         else:
@@ -3903,6 +4043,9 @@ def analyze_hero(hero: Hero):
                 summon_effects=list(chunk.summon_effects),
                 cc_immunities=list(chunk.cc_immunities),
                 special_effects=list(chunk.special_effects),
+            )
+            _apply_scalar_upgrades(
+                hero.skill_slices[section].effects, text, primary_dmg
             )
     for dt, tgts in sorted(
         damage_map.items(),
