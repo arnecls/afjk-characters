@@ -21,6 +21,8 @@
   --chip-damage-fg: #6b5848;
   --chip-stat-bg: #d8e3f6;
   --chip-stat-fg: #304060;
+  --chip-heal-bg: #c8e6d4;
+  --chip-heal-fg: #1f4d36;
   --chip-debuff-bg: #f5d4d4;
   --chip-debuff-fg: #702020;
   --chip-cc-bg: #e2d8f8;
@@ -1223,6 +1225,11 @@ html.welcome-warning-pending .welcome-warning,
 .chip-stat {
   background: var(--chip-stat-bg);
   color: var(--chip-stat-fg);
+}
+
+.chip-heal {
+  background: var(--chip-heal-bg);
+  color: var(--chip-heal-fg);
 }
 
 .chip-debuff {
