@@ -360,6 +360,74 @@ class ReplacementTierRankingTests(unittest.TestCase):
         )
 
 
+class SimilarSkillsReplacementTests(unittest.TestCase):
+    def setUp(self) -> None:
+        gen.REPLACEMENT_MIN_SCORE = 0.5
+        gen.REPLACEMENT_MAX = 3
+
+    def test_one_shared_tag_qualifies_despite_low_jaccard(self) -> None:
+        scores = [
+            (0.20, "Weak - Match", ["ally-buffer"]),
+            (0.95, "Strong - Other", []),
+        ]
+        ranked = gen._rank_replacement_category(
+            scores,
+            min_tag_overlap=gen.SIMILAR_SKILLS_MIN_TAG_OVERLAP,
+        )
+        self.assertEqual(len(ranked), 1)
+        self.assertEqual(ranked[0]["name"], "Weak")
+        self.assertAlmostEqual(ranked[0]["score"], 0.20)
+
+    def test_more_shared_tags_rank_higher(self) -> None:
+        scores = [
+            (0.25, "One - Tag", ["dot-specialist"]),
+            (0.60, "Two - Tags", ["dot-specialist", "aoe-damage"]),
+        ]
+        ranked = gen._rank_replacement_category(
+            scores,
+            min_tag_overlap=gen.SIMILAR_SKILLS_MIN_TAG_OVERLAP,
+        )
+        self.assertEqual(ranked[0]["name"], "Two")
+        self.assertEqual(ranked[1]["name"], "One")
+        self.assertGreater(ranked[0]["score"], ranked[1]["score"])
+
+    def test_no_shared_tags_excluded(self) -> None:
+        scores = [(0.95, "No - Overlap", [])]
+        ranked = gen._rank_replacement_category(
+            scores,
+            min_tag_overlap=gen.SIMILAR_SKILLS_MIN_TAG_OVERLAP,
+        )
+        self.assertEqual(ranked, [])
+
+    def test_more_shared_tags_increase_jaccard_score(self) -> None:
+        tags_g = frozenset(
+            {"ally-shielder", "aoe-damage", "fire-attack", "static-tile-buffer"}
+        )
+        tags_h = frozenset({"ally-shielder", "energy-provider", "static-tile-buffer"})
+        tags_t = frozenset({"ally-healer", "ally-shielder", "energy-provider"})
+        self.assertGreater(gen._set_jaccard(tags_g, tags_h), gen._set_jaccard(tags_g, tags_t))
+        self.assertGreaterEqual(len(tags_g & tags_h), gen.SIMILAR_SKILLS_MIN_TAG_OVERLAP)
+
+    def test_similar_skills_rank_by_tag_score_not_tier(self) -> None:
+        scores = [
+            (0.17, "Low - Score Better Tier", ["ally-shielder"]),
+            (0.40, "High - Score Worse Tier", ["ally-shielder", "static-tile-buffer"]),
+        ]
+        tiers = {
+            "Source - Hero": {"afk_stages": "S", "pvp": "S"},
+            "Low - Score Better Tier": {"afk_stages": "S+", "pvp": "S+"},
+            "High - Score Worse Tier": {"afk_stages": "B", "pvp": "B"},
+        }
+        ranked = gen._rank_replacement_category(
+            scores,
+            source_title="Source - Hero",
+            tiers_by_title=tiers,
+            min_tag_overlap=gen.SIMILAR_SKILLS_MIN_TAG_OVERLAP,
+        )
+        self.assertEqual(ranked[0]["name"], "High")
+        self.assertEqual(ranked[1]["name"], "Low")
+
+
 class DisplacementReplacementTests(unittest.TestCase):
     def test_eironn_lists_cyran_as_cc_replacement(self) -> None:
         eironn = _hero_by_short_name("Eironn")

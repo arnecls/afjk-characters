@@ -276,9 +276,12 @@ Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).
 
 Curated combat-role tags live in `data/hero_behavior_tags.json`; allowed values
 are enumerated in `data/schema/tags.schema.json`. Tags drive **Similar Skills**
-replacement scoring (Jaccard overlap in `generate-heroes-overview.py`). Assign
-a small set (typically three to five) that describe how the hero is played, not
-every minor skill effect.
+replacement scoring (Jaccard overlap on shared tags in
+`generate-heroes-overview.py`). Any hero pair with at least one shared tag can
+appear; more shared tags score higher. Other replacement categories still use
+the global minimum score from `heroes_config.json`. Assign a small set
+(typically three to five) that describe how the hero is played, not every minor
+skill effect.
 
 - ally-buffer: Grants meaningful offensive or defensive stat buffs to allies.
 - ally-healer: Restores ally HP directly or via healing over time as a core role.

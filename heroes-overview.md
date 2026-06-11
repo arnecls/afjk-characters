@@ -90,6 +90,8 @@ Aliceth provides Ally empower buff to single targets `high`, Attack range buff t
 **Similar Skills**
 
 - Nazrik (60% `hp-scaling` `mark-target`)
+- Aurora (48% `invincibility` `mark-target`)
+- Silven (30% `hp-scaling`)
 
 **Damage**
 
@@ -205,6 +207,8 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 **Similar Skills**
 
 - Cryonaia (50% `cc-immunity` `invincibility`)
+- Igor (33% `aoe-damage` `invincibility`)
+- Lily May (28% `cc-immunity` `invincibility`)
 
 **Damage**
 
@@ -318,6 +322,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 - Athalia (60% `self-repositioner` `transformation`)
 - Kulu (50% `battlefield-modification` `self-repositioner`)
+- Lily May (34% `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -432,6 +437,8 @@ Antandra provides DEF buff (Supreme+) to single targets `low`.
 **Similar Skills**
 
 - Lucca (60% `ally-shielder`)
+- Lumont (48% `taunt`)
+- Galahad (40% `ally-shielder`)
 
 **Damage**
 
@@ -540,9 +547,9 @@ Arden provides Energy recovery to single targets `low`.
 
 **Similar Skills**
 
-- Faramor (96% `aoe-damage` `dot-specialist`)
-- Frieren (60% `aoe-damage` `dot-specialist`)
 - Lorsan (100% `aoe-damage` `dot-specialist`)
+- Faramor (96% `aoe-damage` `dot-specialist`)
+- Viperian (80% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -637,6 +644,8 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 **Similar Skills**
 
 - Zandrok (66% `aoe-damage` `battle-start-burst`)
+- Valen (48% `aoe-damage`)
+- Igor (40% `aoe-damage` `battle-start-burst`)
 
 **Damage**
 
@@ -744,8 +753,8 @@ Common buffers are **Solise**, **Twins**, or **Contess**.
 **Similar Skills**
 
 - Baelran (80% `hp-scaling` `transformation`)
+- Pippa (80% `hp-scaling` `self-repositioner`)
 - Kordan (66% `hp-scaling` `self-repositioner`)
-- Lily May (60% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -861,6 +870,12 @@ Aurora provides Haste buff to summons `high`, Invincible to single targets `high
 - Pandora (100% `Invincible`)
 - Harak (100% `Invincible`)
 
+**Similar Skills**
+
+- Aliceth (48% `invincibility` `mark-target`)
+- Zanie (33% `summoner`)
+- Florabelle (33% `summoner`)
+
 **Damage**
 
 - Solise (100% `Magic`)
@@ -952,9 +967,9 @@ Common buffers are **Twins**, **Solise**, or **Contess**.
 
 **Similar Skills**
 
-- Silven (50% `hp-scaling`)
 - Athalia (80% `hp-scaling` `transformation`)
 - Tilaya (60% `hp-scaling`)
+- Silven (50% `hp-scaling`)
 
 **Damage**
 
@@ -1063,6 +1078,12 @@ Common buffers are **Solise**, **Rowan**, or **Lyca**.
 - Bonnie (1.9 / 5)
 
 ### Units that can act as a replacement for Berial
+
+**Similar Skills**
+
+- Galahad (30% `clone`)
+- Marcille (30% `revive`)
+- Saida (28% `revive`)
 
 **Damage**
 
@@ -1174,6 +1195,12 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 - Indris (1.6 / 5)
 
 ### Units that can act as a replacement for Bonnie
+
+**Similar Skills**
+
+- Igor (41% `battle-start-burst` `invincibility`)
+- Shadewing (28% `dot-specialist`)
+- Nerion (28% `dot-specialist`)
 
 **Damage**
 
@@ -1288,8 +1315,8 @@ Brutus provides Lifedrain buff to single targets `high`.
 
 **Similar Skills**
 
-- Zorya (66% `hp-scaling` `life-drain`)
 - Granny Dahnie (80% `hp-scaling` `taunt`)
+- Zorya (66% `hp-scaling` `life-drain`)
 - Salazer (50% `hp-scaling` `life-drain`)
 
 **Damage**
@@ -1398,6 +1425,8 @@ Common buffers are **Twins**, **Solise**, or **Hugin**.
 **Similar Skills**
 
 - Dunlingr (50% `battle-start-burst` `summoner`)
+- Florabelle (36% `summoner`)
+- Igor (28% `battle-start-burst` `untargetable`)
 
 **Damage**
 
@@ -1507,6 +1536,12 @@ Callan provides Shield to single targets `average`.
 - Contess (100% `Max HP`)
 - Saida (100% `Max HP`)
 
+**Similar Skills**
+
+- Lucca (40% `ally-shielder`)
+- Gerda (34% `ally-shielder` `battle-start-burst`)
+- Dunlingr (30% `battle-start-burst`)
+
 **Damage**
 
 - Solise (100% `Magic`)
@@ -1613,6 +1648,8 @@ Carolina provides DEF buff (Mythic+) to single targets `average`.
 **Similar Skills**
 
 - Kruger (60% `enemy-debuffer`)
+- Shadewing (48% `enemy-debuffer`)
+- Nerion (48% `enemy-debuffer`)
 
 **Damage**
 
@@ -1727,6 +1764,7 @@ Cassadee also requires a unit **to bless**
 
 - Temesia (72% `aoe-damage` `enemy-debuffer`)
 - Parisa (60% `ally-buffer` `aoe-damage`)
+- Kruger (40% `enemy-debuffer`)
 
 **Damage**
 
@@ -1842,8 +1880,9 @@ Cecia provides ATK SPD buff to single targets `high`, DEF Penetration buff to si
 
 **Similar Skills**
 
-- Shemira (57% `life-drain` `summoner`)
 - Viperian (72% `dot-specialist` `life-drain`)
+- Shemira (57% `life-drain` `summoner`)
+- Daimon (48% `life-drain` `summoner`)
 
 **Damage**
 
@@ -2027,6 +2066,8 @@ These are the **10** strongest pairings:
 **Similar Skills**
 
 - Lucius (50% `ally-healer` `ally-shielder`)
+- Solise (48% `ally-healer` `ally-shielder`)
+- Twins (48% `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -2133,6 +2174,8 @@ Common buffers are **Hugin**, **Twins**, or **Contess**.
 **Similar Skills**
 
 - Alna (50% `cc-immunity` `invincibility`)
+- Lily May (34% `cc-immunity` `invincibility`)
+- Kulu (24% `battlefield-modification`)
 
 **Damage**
 
@@ -2228,6 +2271,12 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 - Bonnie (5.0 / 5)
 
 ### Units that can act as a replacement for Cyran
+
+**Similar Skills**
+
+- Eironn (30% `enemy-grouping`)
+- Atalanta (30% `battle-start-burst`)
+- Hodgkin (30% `battle-start-burst`)
 
 **Damage**
 
@@ -2345,8 +2394,8 @@ Daimon provides Lifedrain buff to single targets `average` and Shield to multipl
 **Similar Skills**
 
 - Shemira (72% `hp-scaling` `life-drain` `summoner`)
-- Koko (50% `ally-shielder` `life-drain`)
 - Zorya (60% `hp-scaling` `life-drain`)
+- Koko (50% `ally-shielder` `life-drain`)
 
 **Damage**
 
@@ -2459,9 +2508,9 @@ Damian provides Haste buff (Mythic+) to multiple targets `average` — condition
 
 **Similar Skills**
 
-- Zanie (50% `summoner`)
-- Florabelle (60% `summoner`)
 - Laios (66% `ally-healer` `summoner`)
+- Florabelle (60% `summoner`)
+- Zanie (50% `summoner`)
 
 **Damage**
 
@@ -2564,6 +2613,12 @@ Dionel provides ATK buff to single targets `low`.
 - Gunnar (100% `ATK`)
 - Twins (100% `ATK`)
 - Contess (100% `ATK`)
+
+**Similar Skills**
+
+- Igor (40% `self-repositioner` `untargetable`)
+- Pippa (40% `self-repositioner`)
+- Vala (40% `self-repositioner` `untargetable`)
 
 **Damage**
 
@@ -2684,9 +2739,9 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 
 **Similar Skills**
 
+- Chippy (60% `summoner`)
 - Zanie (50% `summoner`)
 - Florabelle (50% `summoner`)
-- Bryon (50% `battle-start-burst` `summoner`)
 
 **Damage**
 
@@ -2785,6 +2840,12 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - Nerion (3.8 / 5)
 
 ### Units that can act as a replacement for Eironn
+
+**Similar Skills**
+
+- Tasi (48% `mass-cc`)
+- Mehira (40% `enemy-grouping` `mass-cc`)
+- Carolina (40% `mass-cc`)
 
 **Damage**
 
@@ -2896,6 +2957,12 @@ Evie provides ATK buff to multiple targets `high` and Direct healing to single t
 - Smokey & Meerky (100% `Direct healing` `Healing`)
 - Hewynn (78% `Healing`)
 
+**Similar Skills**
+
+- Vala (34% `self-repositioner` `stealth`)
+- Igor (33% `invincibility` `self-repositioner`)
+- Lily May (28% `invincibility` `self-repositioner`)
+
 **Damage**
 
 - Solise (100% `Magic`)
@@ -3003,9 +3070,9 @@ Common buffers are **Twins**, **Hugin**, or **Contess**.
 
 **Similar Skills**
 
-- Zandrok (50% `aoe-damage` `hp-scaling`)
-- Satrana (50% `dot-specialist` `hp-scaling`)
-- Scarlita (50% `aoe-damage` `hp-scaling`)
+- Arden (96% `aoe-damage` `dot-specialist`)
+- Lorsan (80% `aoe-damage` `dot-specialist`)
+- Viperian (60% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -3125,9 +3192,9 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 
 **Similar Skills**
 
-- Solise (80% `ally-healer` `aoe-healing`)
-- Velara (80% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (100% `ally-healer` `aoe-healing`)
+- Ludovic (100% `ally-healer` `aoe-healing`)
+- Hewynn (100% `ally-healer` `aoe-healing`)
 
 **Damage**
 
@@ -3220,7 +3287,7 @@ Florabelle provides Lifedrain buff to summons `high` — conditional (frequent),
 **Similar Skills**
 
 - Zanie (100% `summoner`)
-- Dunlingr (50% `summoner`)
+- Chippy (100% `summoner`)
 - Damian (60% `summoner`)
 
 **Damage**
@@ -3323,9 +3390,9 @@ Frieren provides ATK buff to single targets `high`.
 
 **Similar Skills**
 
-- Lorsan (50% `aoe-damage` `dot-specialist`)
-- Arden (60% `aoe-damage` `dot-specialist`)
 - Natsu (61% `aoe-damage` `dot-specialist` `high-damage-ult`)
+- Arden (60% `aoe-damage` `dot-specialist`)
+- Lorsan (50% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -3449,6 +3516,7 @@ These are the **10** strongest pairings:
 
 - Phraesto (50% `ally-shielder` `clone`)
 - Lucca (50% `ally-shielder`)
+- Koko (40% `ally-shielder`)
 
 **Damage**
 
@@ -3553,6 +3621,7 @@ Gerda provides Direct healing to multiple targets `average`, Healing over time i
 
 - Solise (50% `ally-healer` `ally-shielder` `aoe-healing`)
 - Velara (50% `ally-healer` `ally-shielder` `aoe-healing`)
+- Hepler (41% `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -3648,9 +3717,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 
 **Similar Skills**
 
-- Silven (50% `hp-scaling`)
 - Brutus (80% `hp-scaling` `taunt`)
 - Tilaya (72% `hp-scaling`)
+- Silven (50% `hp-scaling`)
 
 **Damage**
 
@@ -3768,6 +3837,8 @@ Gunnar provides ATK SPD buff to single targets `high`, ATK buff to single target
 **Similar Skills**
 
 - Rhys (50% `aoe-damage` `fire-attack`)
+- Hugin (40% `ally-shielder` `static-tile-buffer`)
+- Scarlita (40% `ally-shielder` `aoe-damage`)
 
 **Damage**
 
@@ -3862,9 +3933,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Similar Skills**
 
-- Satrana (50% `dot-specialist` `fire-attack`)
 - Mirael (96% `dot-specialist` `fire-attack`)
 - Natsu (60% `dot-specialist` `fire-attack` `mass-cc`)
+- Satrana (50% `dot-specialist` `fire-attack`)
 
 **Damage**
 
@@ -4055,8 +4126,9 @@ Harak provides Invincible to single targets `high` and Lifedrain buff (Legendary
 
 **Similar Skills**
 
-- Nara (50% `assassin` `execute`)
 - Seth (80% `assassin` `life-drain`)
+- Nara (50% `assassin` `execute`)
+- Odie (30% `execute`)
 
 **Damage**
 
@@ -4196,9 +4268,9 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Solise (50% `ally-healer` `ally-shielder`)
-- Twins (50% `ally-healer` `ally-shielder`)
-- Velara (50% `ally-healer` `ally-shielder`)
+- Lucius (80% `ally-healer` `ally-shielder`)
+- Ulmus (66% `ally-shielder` `transformation`)
+- Pang (66% `ally-shielder` `transformation`)
 
 **Damage**
 
@@ -4316,9 +4388,9 @@ Hewynn provides Healing over time to all units `high`.
 
 **Similar Skills**
 
-- Solise (96% `ally-healer` `aoe-healing`)
-- Velara (96% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (100% `ally-healer` `aoe-healing`)
+- Ludovic (100% `ally-healer` `aoe-healing`)
+- Fay (100% `ally-healer` `aoe-healing`)
 
 **Damage**
 
@@ -4415,6 +4487,7 @@ Himmel provides Shield to single targets `low`, ATK buff (Mythic+) to multiple t
 
 - Ravion (50% `ally-shielder` `self-repositioner`)
 - Valka (50% `ally-buffer` `ally-shielder`)
+- Perseus (33% `ally-buffer`)
 
 **Damage**
 
@@ -4495,6 +4568,12 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 - Aliceth (1.6 / 5)
 
 ### Units that can act as a replacement for Hodgkin
+
+**Similar Skills**
+
+- Dunlingr (33% `battle-start-burst`)
+- Reinier (33% `battle-start-burst`)
+- Atalanta (33% `battle-start-burst`)
 
 **Damage**
 
@@ -4689,6 +4768,12 @@ Common buffers are **Mikola**, **Solise**, or **Smokey & Meerky**.
 
 ### Units that can act as a replacement for Igor
 
+**Similar Skills**
+
+- Bonnie (41% `battle-start-burst` `invincibility`)
+- Dionel (40% `self-repositioner` `untargetable`)
+- Atalanta (40% `aoe-damage` `battle-start-burst`)
+
 **Damage**
 
 - Gunnar (100% `Physical`)
@@ -4788,6 +4873,8 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 **Similar Skills**
 
 - Kruger (50% `enemy-debuffer`)
+- Sylphira (40% `disabler`)
+- Shadewing (33% `enemy-debuffer`)
 
 **Damage**
 
@@ -4903,8 +4990,9 @@ Isabella provides ATK buff to multiple targets `low` — conditional (frequent),
 
 **Similar Skills**
 
-- Laios (50% `ally-buffer` `ally-healer`)
 - Hammie (80% `ally-buffer` `ally-healer`)
+- Laios (50% `ally-buffer` `ally-healer`)
+- Ludovic (36% `ally-healer`)
 
 **Damage**
 
@@ -5002,6 +5090,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Sinbad (80% `enemy-debuffer` `mark-target`)
 - Silvina (50% `assassin` `mark-target`)
+- Kruger (40% `enemy-debuffer`)
 
 **Damage**
 
@@ -5249,9 +5338,9 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 
 **Similar Skills**
 
-- Silven (50% `hp-scaling`)
-- Athalia (66% `hp-scaling` `self-repositioner`)
 - Pippa (100% `hp-scaling` `self-repositioner`)
+- Athalia (66% `hp-scaling` `self-repositioner`)
+- Marilee (66% `hp-scaling` `self-repositioner`)
 
 **Damage**
 
@@ -5354,9 +5443,9 @@ Korin provides Shield to single targets `average`.
 
 **Similar Skills**
 
-- Silven (60% `hp-scaling`)
-- Daimon (50% `ally-shielder` `hp-scaling`)
 - Scarlita (80% `ally-shielder` `hp-scaling`)
+- Silven (60% `hp-scaling`)
+- Lucca (60% `ally-shielder`)
 
 **Damage**
 
@@ -5448,7 +5537,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 - Shadewing (60% `enemy-debuffer`)
 - Nerion (60% `enemy-debuffer`)
-- Indris (50% `enemy-debuffer`)
+- Sinbad (60% `enemy-debuffer`)
 
 **Damage**
 
@@ -5562,6 +5651,8 @@ Kulu provides ATK buff (Legendary+) to single targets `low` and DEF Penetration 
 **Similar Skills**
 
 - Alsa (50% `battlefield-modification` `self-repositioner`)
+- Igor (40% `battle-start-burst` `self-repositioner`)
+- Kordan (30% `self-repositioner`)
 
 **Damage**
 
@@ -5672,9 +5763,9 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 
 **Similar Skills**
 
-- Isabella (50% `ally-buffer` `ally-healer`)
 - Damian (66% `ally-healer` `summoner`)
 - Hammie (66% `ally-buffer` `ally-healer`)
+- Isabella (50% `ally-buffer` `ally-healer`)
 
 **Damage**
 
@@ -5780,6 +5871,8 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 **Similar Skills**
 
 - Soren (66% `counterattack` `self-repositioner`)
+- Pippa (36% `self-repositioner`)
+- Dionel (30% `self-repositioner`)
 
 **Damage**
 
@@ -5884,6 +5977,8 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 **Similar Skills**
 
 - Athalia (60% `hp-scaling` `self-repositioner` `transformation`)
+- Pippa (48% `hp-scaling` `self-repositioner`)
+- Vala (40% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -6003,9 +6098,9 @@ Lorsan provides Direct healing (Mythic+) to all units `low`.
 
 **Similar Skills**
 
-- Faramor (80% `aoe-damage` `dot-specialist`)
-- Frieren (50% `aoe-damage` `dot-specialist`)
 - Arden (100% `aoe-damage` `dot-specialist`)
+- Faramor (80% `aoe-damage` `dot-specialist`)
+- Viperian (66% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -6109,9 +6204,9 @@ Lucca provides DEF buff in an area `high`.
 
 **Similar Skills**
 
-- Galahad (50% `ally-shielder`)
-- Koko (50% `ally-shielder`)
-- Ulmus (50% `ally-shielder`)
+- Lucius (72% `ally-shielder`)
+- Antandra (60% `ally-shielder`)
+- Korin (60% `ally-shielder`)
 
 **Damage**
 
@@ -6216,9 +6311,9 @@ Lucius provides Shield in an area `average`.
 
 **Similar Skills**
 
+- Hepler (80% `ally-healer` `ally-shielder`)
+- Lucca (72% `ally-shielder`)
 - Solise (66% `ally-healer` `ally-shielder`)
-- Twins (66% `ally-healer` `ally-shielder`)
-- Velara (66% `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -6327,6 +6422,8 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 **Similar Skills**
 
 - Lucca (50% `ally-shielder`)
+- Carolina (40% `mass-cc`)
+- Eironn (40% `mass-cc`)
 
 **Damage**
 
@@ -6427,9 +6524,9 @@ Ludovic provides Direct healing in an area `average`, Healing over time to singl
 
 **Similar Skills**
 
-- Solise (80% `ally-healer` `aoe-healing`)
-- Velara (80% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (100% `ally-healer` `aoe-healing`)
+- Fay (100% `ally-healer` `aoe-healing`)
+- Hewynn (100% `ally-healer` `aoe-healing`)
 
 **Damage**
 
@@ -6532,6 +6629,8 @@ Lumont provides DEF buff to multiple targets `high`.
 **Similar Skills**
 
 - Kruger (60% `enemy-debuffer`)
+- Antandra (48% `taunt`)
+- Granny Dahnie (40% `taunt`)
 
 **Damage**
 
@@ -6649,6 +6748,12 @@ These are the **10** strongest pairings:
 
 ### Units that can act as a replacement for Lyca
 
+**Similar Skills**
+
+- Perseus (33% `ally-buffer`)
+- Hodgkin (30% `battle-start-burst`)
+- Ravion (28% `energy-provider`)
+
 **Damage**
 
 - Gunnar (100% `Physical`)
@@ -6760,6 +6865,12 @@ Marcille provides Haste buff to single targets `low` and Direct healing (Mythic+
 - Twins (100% `Direct healing` `Healing`)
 - Velara (100% `Direct healing` `Healing`)
 
+**Similar Skills**
+
+- Talene (40% `ally-healer` `revive`)
+- Rowan (33% `ally-healer`)
+- Smokey & Meerky (33% `ally-healer`)
+
 **Damage**
 
 - Solise (100% `Magic`)
@@ -6855,9 +6966,9 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 **Similar Skills**
 
-- Kordan (66% `hp-scaling` `self-repositioner`)
-- Athalia (60% `hp-scaling` `self-repositioner`)
 - Pippa (80% `hp-scaling` `self-repositioner`)
+- Kordan (66% `hp-scaling` `self-repositioner`)
+- Tasi (66% `mass-cc` `self-repositioner`)
 
 **Damage**
 
@@ -6962,6 +7073,12 @@ Mehira provides Haste buff to single targets `low`.
 - Twins (100% `Haste`)
 - Velara (100% `Haste`)
 - Hugin (100% `Haste`)
+
+**Similar Skills**
+
+- Eironn (40% `enemy-grouping` `mass-cc`)
+- Cecia (28% `life-drain` `summoner`)
+- Viperian (28% `aoe-damage` `life-drain`)
 
 **Damage**
 
@@ -7104,6 +7221,8 @@ These are the **10** strongest pairings:
 **Similar Skills**
 
 - Perseus (50% `ally-buffer`)
+- Smokey & Meerky (48% `aoe-healing`)
+- Ludovic (40% `aoe-healing`)
 
 **Damage**
 
@@ -7184,6 +7303,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Gwyneth (96% `dot-specialist` `fire-attack`)
 - Satrana (66% `dot-specialist` `fire-attack`)
+- Odie (40% `dot-specialist`)
 
 **Damage**
 
@@ -7274,6 +7394,8 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 **Similar Skills**
 
 - Harak (50% `assassin` `execute`)
+- Ludovic (30% `ally-healer`)
+- Rowan (25% `ally-healer`)
 
 **Damage**
 
@@ -7379,6 +7501,7 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 - Frieren (61% `aoe-damage` `dot-specialist` `high-damage-ult`)
 - Gwyneth (60% `dot-specialist` `fire-attack` `mass-cc`)
+- Arden (40% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -7585,6 +7708,7 @@ Nerion also requires units **applying crowd control** to enemies
 
 - Shadewing (100% `dot-specialist` `enemy-debuffer`)
 - Kruger (60% `enemy-debuffer`)
+- Carolina (48% `enemy-debuffer`)
 
 **Damage**
 
@@ -7690,6 +7814,12 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 ### Units that can act as a replacement for Niru
 
+**Similar Skills**
+
+- Ludovic (36% `ally-healer`)
+- Silven (33% `hp-scaling`)
+- Tilaya (33% `hp-scaling`)
+
 **Damage**
 
 - Shadewing (96% `Magic` `HP loss`)
@@ -7771,6 +7901,12 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Odie
+
+**Similar Skills**
+
+- Arden (40% `dot-specialist`)
+- Mirael (40% `dot-specialist`)
+- Shadewing (33% `dot-specialist`)
 
 **Damage**
 
@@ -7873,6 +8009,12 @@ Pandora provides Direct healing to single targets `average`, Invincible to singl
 - Solise (100% `Direct healing` `Healing`)
 - Twins (66% `Direct healing` `Healing`)
 - Contess (90% `Direct healing` `Healing`)
+
+**Similar Skills**
+
+- Rowan (40% `energy-provider`)
+- Lucy (40% `mass-cc`)
+- Eironn (33% `mass-cc`)
 
 **Damage**
 
@@ -8080,6 +8222,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 **Similar Skills**
 
 - Cassadee (60% `ally-buffer` `aoe-damage`)
+- Lorsan (36% `aoe-damage`)
+- Perseus (33% `ally-buffer`)
 
 **Damage**
 
@@ -8180,9 +8324,9 @@ Perseus provides ATK buff to multiple targets `low`.
 
 **Similar Skills**
 
-- Mikola (50% `ally-buffer`)
 - Sonja (60% `ally-buffer`)
 - Hammie (60% `ally-buffer`)
+- Mikola (50% `ally-buffer`)
 
 **Damage**
 
@@ -8291,6 +8435,8 @@ Phraesto provides Damage taken reduction to single targets `low`, Max HP buff to
 **Similar Skills**
 
 - Galahad (50% `ally-shielder` `clone`)
+- Thador (48% `ally-shielder` `energy-provider`)
+- Twins (40% `ally-shielder` `energy-provider`)
 
 **Damage**
 
@@ -8384,9 +8530,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Similar Skills**
 
-- Silven (60% `hp-scaling`)
 - Kordan (100% `hp-scaling` `self-repositioner`)
 - Athalia (80% `hp-scaling` `self-repositioner`)
+- Marilee (80% `hp-scaling` `self-repositioner`)
 
 **Damage**
 
@@ -8505,9 +8651,9 @@ Ravion provides ATK buff to multiple targets `low`, Energy recovery to multiple 
 
 **Similar Skills**
 
+- Thador (60% `ally-shielder` `energy-provider`)
 - Twins (50% `ally-shielder` `energy-provider`)
 - Hugin (50% `ally-shielder` `energy-provider`)
-- Himmel (50% `ally-shielder` `self-repositioner`)
 
 **Damage**
 
@@ -8616,6 +8762,12 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 - Gunnar (100% `ATK`)
 - Twins (100% `ATK`)
 - Contess (100% `ATK`)
+
+**Similar Skills**
+
+- Sylphira (33% `disabler`)
+- Dunlingr (33% `battle-start-burst`)
+- Indris (33% `disabler`)
 
 **Damage**
 
@@ -8733,6 +8885,8 @@ Rhys provides Crit buff to single targets `low`, Direct healing to single target
 **Similar Skills**
 
 - Gunnar (50% `aoe-damage` `fire-attack`)
+- Talene (40% `aoe-damage` `fire-attack`)
+- Arden (40% `aoe-damage`)
 
 **Damage**
 
@@ -8851,6 +9005,8 @@ These are the **10** strongest pairings:
 **Similar Skills**
 
 - Twins (80% `ally-healer` `energy-provider`)
+- Fay (48% `ally-healer`)
+- Hammie (48% `ally-healer`)
 
 **Damage**
 
@@ -8966,8 +9122,9 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Thoran (50% `life-drain` `revive`)
 - Koko (66% `ally-shielder` `life-drain`)
+- Thoran (50% `life-drain` `revive`)
+- Daimon (40% `ally-shielder` `life-drain`)
 
 **Damage**
 
@@ -9073,8 +9230,8 @@ Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to
 
 **Similar Skills**
 
-- Shemira (57% `hp-scaling` `life-drain`)
 - Zorya (80% `hp-scaling` `life-drain`)
+- Shemira (57% `hp-scaling` `life-drain`)
 - Brutus (50% `hp-scaling` `life-drain`)
 
 **Damage**
@@ -9164,9 +9321,9 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 **Similar Skills**
 
+- Mirael (66% `dot-specialist` `fire-attack`)
 - Gwyneth (50% `dot-specialist` `fire-attack`)
 - Faramor (50% `dot-specialist` `hp-scaling`)
-- Mirael (66% `dot-specialist` `fire-attack`)
 
 **Damage**
 
@@ -9280,9 +9437,9 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 **Similar Skills**
 
-- Faramor (50% `aoe-damage` `hp-scaling`)
-- Zandrok (60% `aoe-damage` `hp-scaling`)
 - Korin (80% `ally-shielder` `hp-scaling`)
+- Zandrok (60% `aoe-damage` `hp-scaling`)
+- Faramor (50% `aoe-damage` `hp-scaling`)
 
 **Damage**
 
@@ -9395,6 +9552,8 @@ Seth provides Crit buff to single targets `low` and Energy recovery (Mythic+) to
 **Similar Skills**
 
 - Harak (80% `assassin` `life-drain`)
+- Koko (40% `life-drain`)
+- Shakir (40% `life-drain`)
 
 **Damage**
 
@@ -9502,8 +9661,9 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 **Similar Skills**
 
-- Kruger (60% `enemy-debuffer`)
 - Nerion (100% `dot-specialist` `enemy-debuffer`)
+- Kruger (60% `enemy-debuffer`)
+- Carolina (48% `enemy-debuffer`)
 
 **Damage**
 
@@ -9612,6 +9772,12 @@ Shakir provides Damage taken reduction to multiple targets `average`, Haste buff
 - Twins (50% `Haste`)
 - Hugin (50% `Haste`)
 - Zandrok (56% `Haste` `Life Drain`)
+
+**Similar Skills**
+
+- Koko (40% `life-drain`)
+- Zorya (40% `life-drain`)
+- Ulmus (40% `transformation`)
 
 **Damage**
 
@@ -9809,9 +9975,9 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 **Similar Skills**
 
-- Baelran (50% `hp-scaling`)
-- Kordan (50% `hp-scaling`)
+- Tilaya (100% `hp-scaling`)
 - Nazrik (60% `hp-scaling`)
+- Pippa (60% `hp-scaling`)
 
 **Damage**
 
@@ -9903,6 +10069,8 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 **Similar Skills**
 
 - Kafra (50% `assassin` `mark-target`)
+- Sylphira (30% `disabler`)
+- Nazrik (30% `mark-target`)
 
 **Damage**
 
@@ -10007,8 +10175,9 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 **Similar Skills**
 
-- Kruger (60% `enemy-debuffer`)
 - Kafra (80% `enemy-debuffer` `mark-target`)
+- Kruger (60% `enemy-debuffer`)
+- Walker (48% `mark-target`)
 
 **Damage**
 
@@ -10131,9 +10300,9 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Solise (80% `ally-healer` `aoe-healing`)
-- Velara (80% `ally-healer` `aoe-healing`)
 - Ludovic (100% `ally-healer` `aoe-healing`)
+- Fay (100% `ally-healer` `aoe-healing`)
+- Hewynn (100% `ally-healer` `aoe-healing`)
 
 **Damage**
 
@@ -10228,8 +10397,8 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Twins (60% `ally-healer` `ally-shielder`)
 - Velara (100% `ally-healer` `ally-shielder` `aoe-healing`)
+- Hewynn (96% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (80% `ally-healer` `aoe-healing`)
 
 **Damage**
@@ -10435,6 +10604,8 @@ Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supre
 **Similar Skills**
 
 - Lenya (66% `counterattack` `self-repositioner`)
+- Kordan (48% `self-repositioner`)
+- Tasi (40% `self-repositioner`)
 
 **Damage**
 
@@ -10527,6 +10698,12 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 - Bonnie (2.2 / 5)
 
 ### Units that can act as a replacement for Sylphira
+
+**Similar Skills**
+
+- Baelran (40% `transformation`)
+- Indris (40% `disabler`)
+- Pang (40% `transformation`)
 
 **Damage**
 
@@ -10654,6 +10831,12 @@ Talene provides Healing over time in an area `low` and ATK buff (Legendary+) in 
 - Twins (78% `Healing`)
 - Velara (65% `Healing`)
 
+**Similar Skills**
+
+- Marcille (40% `ally-healer` `revive`)
+- Rhys (40% `aoe-damage` `fire-attack`)
+- Valen (40% `aoe-damage` `transformation`)
+
 **Damage**
 
 - Solise (100% `Magic`)
@@ -10762,6 +10945,8 @@ Tasi provides Haste buff (Mythic+) to single targets `high`.
 **Similar Skills**
 
 - Marilee (66% `mass-cc` `self-repositioner`)
+- Eironn (48% `mass-cc`)
+- Kordan (40% `self-repositioner`)
 
 **Damage**
 
@@ -10863,6 +11048,8 @@ Common buffers are **Mikola**, **Twins**, or **Smokey & Meerky**.
 **Similar Skills**
 
 - Cassadee (72% `aoe-damage` `enemy-debuffer`)
+- Frieren (40% `aoe-damage` `self-repositioner`)
+- Kruger (40% `enemy-debuffer`)
 
 **Damage**
 
@@ -10977,9 +11164,9 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 
 **Similar Skills**
 
+- Ravion (60% `ally-shielder` `energy-provider`)
 - Twins (50% `ally-shielder` `energy-provider`)
 - Hugin (50% `ally-shielder` `energy-provider`)
-- Ravion (60% `ally-shielder` `energy-provider`)
 
 **Damage**
 
@@ -11090,6 +11277,8 @@ Thoran provides Lifedrain buff to single targets `high` and Energy recovery (Leg
 **Similar Skills**
 
 - Saida (50% `life-drain` `revive`)
+- Zorya (30% `life-drain`)
+- Koko (25% `life-drain`)
 
 **Damage**
 
@@ -11192,8 +11381,8 @@ Tilaya provides DEF buff (EX+10) in an area `low` and Max HP buff (EX+10) in an 
 **Similar Skills**
 
 - Silven (100% `hp-scaling`)
+- Granny Dahnie (72% `hp-scaling`)
 - Baelran (60% `hp-scaling`)
-- Kordan (50% `hp-scaling`)
 
 **Damage**
 
@@ -11312,9 +11501,9 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
+- Rowan (80% `ally-healer` `energy-provider`)
+- Lucius (66% `ally-healer` `ally-shielder`)
 - Solise (60% `ally-healer` `ally-shielder`)
-- Velara (60% `ally-healer` `ally-shielder`)
-- Hugin (60% `ally-shielder` `energy-provider`)
 
 **Damage**
 
@@ -11423,8 +11612,8 @@ Ulmus provides Energy recovery to single targets `low` and Shield to single targ
 
 **Similar Skills**
 
-- Hepler (66% `ally-shielder` `transformation`)
 - Pang (100% `ally-shielder` `transformation`)
+- Hepler (66% `ally-shielder` `transformation`)
 - Lucca (50% `ally-shielder`)
 
 **Damage**
@@ -11533,6 +11722,8 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 **Similar Skills**
 
 - Athalia (60% `hp-scaling` `self-repositioner` `transformation`)
+- Marilee (41% `hp-scaling` `self-repositioner`)
+- Lily May (40% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -11640,6 +11831,12 @@ Common buffers are **Lyca**, **Mikola**, or **Twins**.
 - Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Valen
+
+**Similar Skills**
+
+- Atalanta (48% `aoe-damage`)
+- Talene (40% `aoe-damage` `transformation`)
+- Sylphira (40% `transformation`)
 
 **Damage**
 
@@ -11755,6 +11952,8 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 **Similar Skills**
 
 - Himmel (50% `ally-buffer` `ally-shielder`)
+- Perseus (33% `ally-buffer`)
+- Lucca (33% `ally-shielder`)
 
 **Damage**
 
@@ -11876,7 +12075,7 @@ These are the **10** strongest pairings:
 **Similar Skills**
 
 - Solise (100% `ally-healer` `ally-shielder` `aoe-healing`)
-- Twins (60% `ally-healer` `ally-shielder`)
+- Hewynn (96% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (80% `ally-healer` `aoe-healing`)
 
 **Damage**
@@ -11988,9 +12187,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Similar Skills**
 
-- Faramor (60% `aoe-damage` `dot-specialist`)
-- Lorsan (66% `aoe-damage` `dot-specialist`)
 - Arden (80% `aoe-damage` `dot-specialist`)
+- Cecia (72% `dot-specialist` `life-drain`)
+- Lorsan (66% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -12089,6 +12288,12 @@ Walker provides Crit buff to single targets `low`.
 
 - Rhys (100% `Crit`)
 - Seth (100% `Crit`)
+
+**Similar Skills**
+
+- Sinbad (48% `mark-target`)
+- Shakir (40% `life-drain`)
+- Zorya (40% `life-drain`)
 
 **Damage**
 
@@ -12204,9 +12409,9 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 **Similar Skills**
 
-- Faramor (50% `aoe-damage` `hp-scaling`)
-- Scarlita (60% `aoe-damage` `hp-scaling`)
 - Atalanta (66% `aoe-damage` `battle-start-burst`)
+- Scarlita (60% `aoe-damage` `hp-scaling`)
+- Faramor (50% `aoe-damage` `hp-scaling`)
 
 **Damage**
 
@@ -12309,8 +12514,8 @@ Zanie provides ATK buff to single targets `low`, Direct healing to single target
 **Similar Skills**
 
 - Florabelle (100% `summoner`)
+- Chippy (100% `summoner`)
 - Dunlingr (50% `summoner`)
-- Damian (50% `summoner`)
 
 **Damage**
 
@@ -12425,9 +12630,9 @@ Zorya also requires allies **casting ultimates**
 
 **Similar Skills**
 
-- Silven (50% `hp-scaling`)
+- Salazer (80% `hp-scaling` `life-drain`)
+- Brutus (66% `hp-scaling` `life-drain`)
 - Shemira (60% `hp-scaling` `life-drain`)
-- Daimon (60% `hp-scaling` `life-drain`)
 
 **Damage**
 

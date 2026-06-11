@@ -138,6 +138,7 @@ DEFINING_TIER_SCORE_MULT = {
 # Replacement scoring: per-category similarity between heroes as substitutes.
 REPLACEMENT_MIN_SCORE = 0.5
 REPLACEMENT_MAX = 3
+SIMILAR_SKILLS_MIN_TAG_OVERLAP = 1
 REPLACEMENT_SAME_FACTION_MULT = 1.20
 REPLACEMENT_SAME_ROLE_CATEGORY_MULT = 1.20
 PRYDWEN_TIER_MODES = (
@@ -1975,6 +1976,7 @@ def _rank_replacement_category(
     tiers_by_title: dict[str, dict[str, str]] | None = None,
     source_role_category: str | None = None,
     role_category_by_title: dict[str, str] | None = None,
+    min_tag_overlap: int = 0,
 ) -> list[dict]:
     """Top replacement picks for one category above min_score."""
     factions = faction_by_title or {}
@@ -1999,15 +2001,17 @@ def _rank_replacement_category(
     ]
     ranked_items.sort(
         key=lambda item: (
-            -item[0][0],
-            -item[0][1],
-            -item[1],
-            short_name(item[2]),
+            (-item[1], -item[0][0], -item[0][1], short_name(item[2]))
+            if min_tag_overlap > 0
+            else (-item[0][0], -item[0][1], -item[1], short_name(item[2]))
         )
     )
     ranked: list[dict] = []
     for _tier_key, effective, title, matches in ranked_items:
-        if effective < REPLACEMENT_MIN_SCORE:
+        if min_tag_overlap > 0:
+            if len(matches) < min_tag_overlap:
+                continue
+        elif effective < REPLACEMENT_MIN_SCORE:
             continue
         ranked.append(
             {
@@ -2146,18 +2150,22 @@ def compute_replacement_scores(
 
         source_faction = factions.get(hero_x.title)
         source_role_category = role_categories.get(hero_x.title)
-        result[hero_x.title] = {
-            key: _rank_replacement_category(
+        result[hero_x.title] = {}
+        for key in REPLACEMENT_CATEGORIES:
+            rank_kwargs = {
+                "source_faction": source_faction,
+                "faction_by_title": factions,
+                "source_title": hero_x.title,
+                "tiers_by_title": tiers_by_title,
+                "source_role_category": source_role_category,
+                "role_category_by_title": role_categories,
+            }
+            if key == "similar_skills":
+                rank_kwargs["min_tag_overlap"] = SIMILAR_SKILLS_MIN_TAG_OVERLAP
+            result[hero_x.title][key] = _rank_replacement_category(
                 category_scores[key],
-                source_faction,
-                factions,
-                hero_x.title,
-                tiers_by_title,
-                source_role_category,
-                role_categories,
+                **rank_kwargs,
             )
-            for key in REPLACEMENT_CATEGORIES
-        }
     return result
 
 
