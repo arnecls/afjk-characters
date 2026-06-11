@@ -7,9 +7,18 @@
           "reasons": [
             "ATK via ATK buff (single target, high)",
             "Healing via Healing (multiple targets, high)",
-            "Enables Debuff on target via Energy drain (single target)"
+            "Enables Debuff on target via Energy drain (multiple targets)"
           ],
-          "score": 18.0
+          "score": 22.5
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "Healing via Healing (area, low)",
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Enables Debuff on target via Haste debuff (area)"
+          ],
+          "score": 17.0125
         },
         {
           "provider": "Twins",
@@ -54,15 +63,6 @@
             "Enables Debuff on target via Phys DEF debuff (single target)"
           ],
           "score": 9.5412
-        },
-        {
-          "provider": "Velara",
-          "reasons": [
-            "Healing via Healing (area, low)",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables Debuff on target via Haste debuff (single target)"
-          ],
-          "score": 9.5125
         },
         {
           "provider": "Gunnar",
@@ -191,6 +191,14 @@
           "score": 18.0
         },
         {
+          "provider": "Alna",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables Debuff on target via Haste debuff (all units)"
+          ],
+          "score": 16.5
+        },
+        {
           "provider": "Frieren",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -205,6 +213,13 @@
             "Healing via Healing (area, low)"
           ],
           "score": 16.0
+        },
+        {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
         },
         {
           "provider": "Lorsan",
@@ -233,14 +248,6 @@
           "score": 14.219999999999999
         },
         {
-          "provider": "Alna",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via Haste debuff (area)"
-          ],
-          "score": 13.5
-        },
-        {
           "provider": "Rowan",
           "reasons": [
             "Healing via Healing (area, low)",
@@ -265,23 +272,9 @@
           "score": 11.442499999999999
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Eironn",
           "reasons": [
             "Enables Debuff on target via Haste debuff (arc)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
           ],
           "score": 9.0
         },
@@ -291,6 +284,20 @@
             "Enables Debuff on target via Magic DEF debuff (multiple targets)"
           ],
           "score": 9.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Vala",
@@ -380,6 +387,13 @@
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
             "Enables Debuff on target via Energy drain (single target)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Lucius",
+          "reasons": [
+            "Enables Debuff on target via ATK debuff (area)"
           ],
           "score": 6.0
         },
@@ -492,13 +506,6 @@
           "score": 4.0125
         },
         {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
-        },
-        {
           "provider": "Cecia",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
@@ -583,13 +590,6 @@
           "provider": "Igor",
           "reasons": [
             "Enables Debuff on target via Healing debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Lucius",
-          "reasons": [
-            "Enables Debuff on target via ATK debuff (single target)"
           ],
           "score": 2.25
         },
@@ -679,10 +679,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 36.2,
-          "name": "Nerion"
-        },
         {
           "score": 15.0,
           "name": "Kordan"
@@ -817,6 +813,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -838,26 +841,12 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
             "Healing via Healing (all units, low)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Rowan",
@@ -875,9 +864,23 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -924,13 +927,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -1019,15 +1015,7 @@
       ],
       "beneficiaries": [
         {
-          "score": 28.7,
-          "name": "Nerion"
-        },
-        {
-          "score": 23.16,
-          "name": "Perseus"
-        },
-        {
-          "score": 23.1,
+          "score": 28.5,
           "name": "Indris"
         }
       ],
@@ -1554,6 +1542,13 @@
           "score": 15.075
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -1575,13 +1570,6 @@
             "ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`"
           ],
           "score": 11.442499999999999
-        },
-        {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
         },
         {
           "provider": "Koko",
@@ -1607,13 +1595,6 @@
           "score": 9.18
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Saida",
           "reasons": [
             "Max HP via Shield (multiple targets, high)"
@@ -1637,9 +1618,23 @@
           "score": 8.295
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -1734,13 +1729,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 4.0125
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -1987,7 +1975,7 @@
             ]
           },
           {
-            "name": "Zorya",
+            "name": "Callan",
             "score": 0.6,
             "matches": [
               "Stun",
@@ -2218,11 +2206,11 @@
       ],
       "beneficiaries": [
         {
-          "score": 11.604,
+          "score": 21.804,
           "name": "Nerion"
         },
         {
-          "score": 6.6318,
+          "score": 12.6318,
           "name": "Carolina"
         },
         {
@@ -2318,14 +2306,14 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Carolina",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Carolina",
+            "name": "Eironn",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -2390,6 +2378,13 @@
           "score": 16.0824
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -2421,13 +2416,6 @@
             "Physical DEF via DEF buff (area, high)"
           ],
           "score": 12.0
-        },
-        {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
         },
         {
           "provider": "Solise",
@@ -2463,13 +2451,6 @@
           "score": 9.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Lumont",
           "reasons": [
             "Physical DEF via DEF buff (multiple targets, high)"
@@ -2491,6 +2472,20 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 8.4375
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Isabella",
@@ -2576,13 +2571,6 @@
             "Healing via Healing (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -2902,6 +2890,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -2923,26 +2918,12 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
             "Healing via Healing (all units, low)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Rowan",
@@ -2960,9 +2941,23 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -3009,13 +3004,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -3492,6 +3480,13 @@
           "score": 16.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -3540,13 +3535,6 @@
           "score": 10.5
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -3561,13 +3549,6 @@
             "Max HP via Max HP buff (multiple targets, average)"
           ],
           "score": 9.4
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Shakir",
@@ -3593,9 +3574,23 @@
           "score": 8.1
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -3690,13 +3685,6 @@
             "Haste via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -3912,18 +3900,25 @@
           "score": 9.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.1
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Fay",
@@ -3998,13 +3993,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.05
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -4093,9 +4081,9 @@
         {
           "provider": "Hewynn",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
+          "score": 15.0
         },
         {
           "provider": "Cecia",
@@ -4253,10 +4241,26 @@
           "provider": "Contess",
           "reasons": [
             "ATK via ATK buff (single target, high)",
-            "Enables Debuff on target via Energy drain (single target)",
+            "Enables Debuff on target via Energy drain (multiple targets)",
             "Enables Magic damage from allies via Magic damage + early battle (single target)"
           ],
-          "score": 15.75
+          "score": 20.25
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "Enables Debuff on target via Haste debuff (area)",
+            "Enables Magic damage from allies via Magic damage + early battle (area)"
+          ],
+          "score": 18.75
+        },
+        {
+          "provider": "Alna",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables Debuff on target via Haste debuff (all units)"
+          ],
+          "score": 16.5
         },
         {
           "provider": "Eironn",
@@ -4265,22 +4269,6 @@
             "Enables Magic damage from allies via Magic damage (area)"
           ],
           "score": 14.0
-        },
-        {
-          "provider": "Alna",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via Haste debuff (area)"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Velara",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (single target)",
-            "Enables Magic damage from allies via Magic damage + early battle (area)"
-          ],
-          "score": 11.25
         },
         {
           "provider": "Twins",
@@ -4687,6 +4675,13 @@
           "score": 6.0
         },
         {
+          "provider": "Lucius",
+          "reasons": [
+            "Enables Debuff on target via ATK debuff (area)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Ludovic",
           "reasons": [
             "Enables Magic damage from allies via Magic damage + all enemies (all units)"
@@ -4824,13 +4819,6 @@
           "provider": "Koko",
           "reasons": [
             "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Lucius",
-          "reasons": [
-            "Enables Debuff on target via ATK debuff (single target)"
           ],
           "score": 2.25
         },
@@ -5115,7 +5103,15 @@
             ]
           }
         ],
-        "debuff": [],
+        "debuff": [
+          {
+            "name": "Lyca",
+            "score": 1.0,
+            "matches": [
+              "Phys DEF debuff"
+            ]
+          }
+        ],
         "cc": [
           {
             "name": "Hepler",
@@ -5220,6 +5216,13 @@
           "score": 8.4
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Velara",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -5273,13 +5276,6 @@
             "Healing via Healing (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Mehira",
@@ -5341,6 +5337,13 @@
           "score": 20.75
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -5373,13 +5376,6 @@
           "score": 11.25
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy recovery (all units, low) `signature fuel`",
@@ -5390,9 +5386,9 @@
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing over time (area, average)"
           ],
-          "score": 9.0
+          "score": 8.0
         },
         {
           "provider": "Fay",
@@ -5523,7 +5519,7 @@
           },
           {
             "name": "Velara",
-            "score": 0.9,
+            "score": 1.0,
             "matches": [
               "Haste debuff"
             ]
@@ -5634,25 +5630,18 @@
           "score": 3.0
         },
         {
-          "provider": "Lorsan",
+          "provider": "Hewynn",
           "reasons": [
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
         },
         {
-          "provider": "Hewynn",
+          "provider": "Lorsan",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
+          "score": 15.0
         },
         {
           "provider": "Hepler",
@@ -5669,18 +5658,25 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Fay",
           "reasons": [
             "Healing via Healing (arc, average, conditional (frequent))"
           ],
           "score": 5.1
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -5720,16 +5716,8 @@
       ],
       "beneficiaries": [
         {
-          "score": 20.0,
+          "score": 37.0,
           "name": "Nerion"
-        },
-        {
-          "score": 10.0,
-          "name": "Carolina"
-        },
-        {
-          "score": 9.719999999999999,
-          "name": "Perseus"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -5788,17 +5776,10 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Baelran",
-            "score": 0.75,
+            "name": "Perseus",
+            "score": 0.6667,
             "matches": [
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Sylphira",
-            "score": 0.625,
-            "matches": [
-              "Knock down"
+              "Stun"
             ]
           }
         ]
@@ -5806,6 +5787,14 @@
     },
     "Carolina": {
       "synergies": [
+        {
+          "provider": "Damian",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`",
+            "Enables CC on enemies via Blind (area, high)"
+          ],
+          "score": 28.59
+        },
         {
           "provider": "Twins",
           "reasons": [
@@ -5831,6 +5820,13 @@
           "score": 24.0
         },
         {
+          "provider": "Eironn",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, high)"
+          ],
+          "score": 24.0
+        },
+        {
           "provider": "Kordan",
           "reasons": [
             "Enables CC on enemies via Bind (area, high)"
@@ -5845,6 +5841,13 @@
             "Enables CC on enemies via Stun (single target, average)"
           ],
           "score": 23.807142857142857
+        },
+        {
+          "provider": "Callan",
+          "reasons": [
+            "Enables CC on enemies via Stun (all units, average)"
+          ],
+          "score": 20.0
         },
         {
           "provider": "Lorsan",
@@ -5896,6 +5899,13 @@
           "score": 16.0
         },
         {
+          "provider": "Korin",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Laios",
           "reasons": [
             "Enables CC on enemies via Bind (area, average)"
@@ -5911,6 +5921,20 @@
         },
         {
           "provider": "Perseus",
+          "reasons": [
+            "Enables CC on enemies via Stun (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Pippa",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Scarlita",
           "reasons": [
             "Enables CC on enemies via Stun (area, average)"
           ],
@@ -5954,20 +5978,20 @@
           "score": 14.05
         },
         {
-          "provider": "Damian",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`",
-            "Enables CC on enemies via Blind (single target, high)"
-          ],
-          "score": 13.59
-        },
-        {
           "provider": "Soren",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
             "Enables CC on enemies via Stun (multiple targets, average)"
           ],
           "score": 13.35
+        },
+        {
+          "provider": "Arden",
+          "reasons": [
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Enables CC on enemies via Bind (multiple targets, average)"
+          ],
+          "score": 12.6318
         },
         {
           "provider": "Dunlingr",
@@ -6003,6 +6027,14 @@
           "score": 10.35
         },
         {
+          "provider": "Valka",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Enables CC on enemies via Knock down (area, low)"
+          ],
+          "score": 10.16
+        },
+        {
           "provider": "Vala",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
@@ -6011,21 +6043,7 @@
           "score": 10.05
         },
         {
-          "provider": "Callan",
-          "reasons": [
-            "Enables CC on enemies via Knock down (all units, low)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Cassadee",
-          "reasons": [
-            "Enables CC on enemies via Knock back (all units, low)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Scarlita",
           "reasons": [
             "Enables CC on enemies via Knock back (all units, low)"
           ],
@@ -6058,13 +6076,6 @@
           "provider": "Cyran",
           "reasons": [
             "Enables CC on enemies via Silence (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 9.0
         },
@@ -6142,13 +6153,6 @@
           "score": 8.0
         },
         {
-          "provider": "Korin",
-          "reasons": [
-            "Enables CC on enemies via Knock back (area, low)"
-          ],
-          "score": 8.0
-        },
-        {
           "provider": "Lenya",
           "reasons": [
             "Enables CC on enemies via Knock back (area, low)"
@@ -6214,14 +6218,6 @@
             "Enables CC on enemies via Charm (single target, average)"
           ],
           "score": 7.35
-        },
-        {
-          "provider": "Arden",
-          "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Enables CC on enemies via Bind (single target, average)"
-          ],
-          "score": 6.6318
         },
         {
           "provider": "Gunnar",
@@ -6309,13 +6305,6 @@
           "score": 6.0
         },
         {
-          "provider": "Pippa",
-          "reasons": [
-            "Enables CC on enemies via Bind (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Satrana",
           "reasons": [
             "Enables CC on enemies via Charm (single target, average)"
@@ -6344,14 +6333,6 @@
             "Enables CC on enemies via Bind (single target, low)"
           ],
           "score": 5.7636
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 5.16
         },
         {
           "provider": "Rhys",
@@ -6570,7 +6551,7 @@
           },
           {
             "name": "Velara",
-            "score": 0.75,
+            "score": 0.875,
             "matches": [
               "Haste debuff",
               "Magic DEF debuff"
@@ -6593,14 +6574,14 @@
             ]
           },
           {
-            "name": "Evie",
+            "name": "Eironn",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Evie",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -7645,6 +7626,13 @@
           "score": 20.64
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -7667,20 +7655,6 @@
           "score": 12.64
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -7689,6 +7663,20 @@
         },
         {
           "provider": "Damian",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
           "reasons": [
             "Healing via Healing (area, average)"
           ],
@@ -7728,13 +7716,6 @@
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
           "score": 4.32
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -7827,12 +7808,16 @@
           "name": "Silven"
         },
         {
+          "score": 22.5,
+          "name": "Aliceth"
+        },
+        {
           "score": 21.5,
           "name": "Himmel"
         },
         {
-          "score": 18.0,
-          "name": "Aliceth"
+          "score": 20.25,
+          "name": "Bonnie"
         },
         {
           "score": 16.5,
@@ -7844,11 +7829,11 @@
         },
         {
           "score": 16.5,
-          "name": "Talene"
+          "name": "Shadewing"
         },
         {
-          "score": 15.75,
-          "name": "Bonnie"
+          "score": 16.5,
+          "name": "Talene"
         },
         {
           "score": 13.5,
@@ -7881,10 +7866,6 @@
         {
           "score": 12.0,
           "name": "Salazer"
-        },
-        {
-          "score": 12.0,
-          "name": "Shadewing"
         },
         {
           "score": 12.0,
@@ -8685,7 +8666,16 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [
+          {
+            "name": "Gwyneth",
+            "score": 0.6,
+            "matches": [
+              "Bind",
+              "Silence"
+            ]
+          }
+        ]
       }
     },
     "Daimon": {
@@ -9076,6 +9066,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 28.59,
+          "name": "Carolina"
+        },
+        {
           "score": 20.75,
           "name": "Lorsan"
         },
@@ -9157,14 +9151,14 @@
             ]
           },
           {
-            "name": "Gerda",
+            "name": "Hepler",
             "score": 1.0,
             "matches": [
               "Healing"
             ]
           },
           {
-            "name": "Hepler",
+            "name": "Ludovic",
             "score": 1.0,
             "matches": [
               "Healing"
@@ -9223,16 +9217,9 @@
           },
           {
             "name": "Aliceth",
-            "score": 0.8333,
+            "score": 0.6667,
             "matches": [
               "Blind",
-              "Stun"
-            ]
-          },
-          {
-            "name": "Koko",
-            "score": 0.6,
-            "matches": [
               "Stun"
             ]
           }
@@ -9814,6 +9801,13 @@
           "score": 18.75
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -9844,13 +9838,6 @@
           "score": 10.25
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -9874,13 +9861,6 @@
           "score": 9.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Fay",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
@@ -9889,9 +9869,23 @@
           "score": 8.1
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -9961,13 +9955,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -10495,16 +10482,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 16.2,
-          "name": "Indris"
-        },
-        {
-          "score": 15.299999999999999,
+          "score": 40.8,
           "name": "Nerion"
         },
         {
-          "score": 14.0,
-          "name": "Bonnie"
+          "score": 24.0,
+          "name": "Carolina"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -10541,7 +10524,7 @@
         "debuff": [
           {
             "name": "Velara",
-            "score": 0.8,
+            "score": 1.0,
             "matches": [
               "Haste debuff",
               "Magic DEF debuff"
@@ -10557,8 +10540,15 @@
         ],
         "cc": [
           {
+            "name": "Kordan",
+            "score": 0.8,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Cyran",
-            "score": 0.8571,
+            "score": 0.6667,
             "matches": [
               "Displace",
               "Bind"
@@ -10618,6 +10608,13 @@
           "score": 16.875
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -10642,13 +10639,6 @@
           "score": 11.8125
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy recovery (all units, low) `signature fuel`",
@@ -10658,13 +10648,6 @@
         },
         {
           "provider": "Contess",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Gerda",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
           ],
@@ -10685,6 +10668,20 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 8.4375
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Velara",
@@ -10771,13 +10768,6 @@
             "Healing via Healing (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -10980,10 +10970,6 @@
         {
           "score": 27.808,
           "name": "Koko"
-        },
-        {
-          "score": 27.2636,
-          "name": "Indris"
         },
         {
           "score": 26.66,
@@ -11223,10 +11209,6 @@
         },
         {
           "score": 12.0,
-          "name": "Salazer"
-        },
-        {
-          "score": 12.0,
           "name": "Thador"
         },
         {
@@ -11400,25 +11382,18 @@
           "score": 3.0
         },
         {
-          "provider": "Lorsan",
+          "provider": "Hewynn",
           "reasons": [
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
         },
         {
-          "provider": "Hewynn",
+          "provider": "Lorsan",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
+          "score": 15.0
         },
         {
           "provider": "Hepler",
@@ -11435,18 +11410,25 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Fay",
           "reasons": [
             "Healing via Healing (arc, average, conditional (frequent))"
           ],
           "score": 5.1
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -11583,20 +11565,20 @@
         ],
         "cc": [
           {
+            "name": "Cyran",
+            "score": 0.819,
+            "matches": [
+              "Silence",
+              "Bind",
+              "Displace"
+            ]
+          },
+          {
             "name": "Gwyneth",
             "score": 0.6476,
             "matches": [
               "Bind",
               "Silence"
-            ]
-          },
-          {
-            "name": "Cyran",
-            "score": 0.6286,
-            "matches": [
-              "Silence",
-              "Displace",
-              "Bind"
             ]
           }
         ]
@@ -13045,15 +13027,15 @@
       ],
       "beneficiaries": [
         {
-          "score": 27.200000000000003,
+          "score": 22.400000000000002,
           "name": "Perseus"
         },
         {
-          "score": 25.5,
+          "score": 21.0,
           "name": "Silven"
         },
         {
-          "score": 14.0,
+          "score": 13.0,
           "name": "Himmel"
         }
       ],
@@ -13065,24 +13047,24 @@
         "energy": [],
         "healing": [
           {
-            "name": "Solise",
-            "score": 0.7941,
-            "matches": [
-              "Healing",
-              "Healing over time"
-            ]
-          },
-          {
             "name": "Mikola",
-            "score": 0.7765,
+            "score": 0.9429,
             "matches": [
               "Healing over time",
               "Healing"
             ]
           },
           {
+            "name": "Solise",
+            "score": 0.75,
+            "matches": [
+              "Healing",
+              "Healing over time"
+            ]
+          },
+          {
             "name": "Hepler",
-            "score": 0.7624,
+            "score": 0.6171,
             "matches": [
               "Healing"
             ]
@@ -13210,13 +13192,6 @@
           "score": 9.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Scarlita",
           "reasons": [
             "Physical DEF via DEF buff (single target, high)",
@@ -13226,6 +13201,20 @@
         },
         {
           "provider": "Damian",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
           "reasons": [
             "Healing via Healing (area, average)"
           ],
@@ -13266,13 +13255,6 @@
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
           "score": 4.32
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -13372,9 +13354,9 @@
         {
           "provider": "Hewynn",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
+          "score": 15.0
         },
         {
           "provider": "Carolina",
@@ -13561,6 +13543,13 @@
           "score": 18.75
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -13599,13 +13588,6 @@
           "score": 10.25
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -13632,13 +13614,6 @@
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, high) `signature fuel`",
             "Max HP via Max HP buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
           ],
           "score": 9.0
         },
@@ -13674,9 +13649,23 @@
           "score": 8.1
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -13769,13 +13758,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -13877,10 +13859,6 @@
         {
           "score": 8.399999999999999,
           "name": "Cyran"
-        },
-        {
-          "score": 7.5,
-          "name": "Shadewing"
         },
         {
           "score": 5.3999999999999995,
@@ -14260,6 +14238,13 @@
           "score": 15.075
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -14299,13 +14284,6 @@
           "score": 10.0125
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Solise",
           "reasons": [
             "Healing via Healing (all units, average)"
@@ -14322,19 +14300,26 @@
           "score": 9.719999999999999
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Rowan",
           "reasons": [
             "Healing via Healing (area, low)",
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 8.0824
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Lyca",
@@ -14406,13 +14391,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 4.0125
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -14728,6 +14706,13 @@
           "score": 9.0
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Galahad",
           "reasons": [
             "Haste via Haste buff (single target, average) `signature fuel`",
@@ -14779,13 +14764,6 @@
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
           "score": 4.32
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Callan",
@@ -14846,6 +14824,13 @@
           "score": 19.5
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -14861,18 +14846,11 @@
           "score": 13.1
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing over time (area, average)"
           ],
-          "score": 9.0
+          "score": 8.0
         },
         {
           "provider": "Lucius",
@@ -15286,6 +15264,13 @@
           "score": 8.55
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Galahad",
           "reasons": [
             "Haste via Haste buff (single target, average) `signature fuel`",
@@ -15331,13 +15316,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -15408,6 +15386,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -15433,18 +15418,11 @@
           "score": 13.1
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing over time (area, average)"
           ],
-          "score": 9.0
+          "score": 8.0
         },
         {
           "provider": "Lucius",
@@ -15950,16 +15928,24 @@
       ],
       "beneficiaries": [
         {
-          "score": 16.0,
-          "name": "Perseus"
+          "score": 15.0,
+          "name": "Contess"
         },
         {
           "score": 15.0,
-          "name": "Himmel"
+          "name": "Gunnar"
         },
         {
           "score": 15.0,
-          "name": "Silven"
+          "name": "Hodgkin"
+        },
+        {
+          "score": 15.0,
+          "name": "Lucius"
+        },
+        {
+          "score": 15.0,
+          "name": "Salazer"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -15970,22 +15956,22 @@
         "energy": [],
         "healing": [
           {
-            "name": "Contess",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
-            "name": "Damian",
-            "score": 1.0,
-            "matches": [
-              "Healing"
-            ]
-          },
-          {
             "name": "Lorsan",
             "score": 1.0,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Smokey & Meerky",
+            "score": 0.96,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Solise",
+            "score": 0.96,
             "matches": [
               "Healing"
             ]
@@ -16208,6 +16194,14 @@
           "score": 21.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)",
+            "Enables Party composition via Support (party slot)"
+          ],
+          "score": 20.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)",
@@ -16243,14 +16237,6 @@
           "score": 18.1
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)",
-            "Enables Party composition via Support (party slot)"
-          ],
-          "score": 15.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -16258,14 +16244,6 @@
             "Enables Party composition via Support (party slot)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)",
-            "Enables Party composition via Tank (party slot)"
-          ],
-          "score": 14.0
         },
         {
           "provider": "Rowan",
@@ -16286,10 +16264,26 @@
           "score": 13.1
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)",
+            "Enables Party composition via Tank (party slot)"
+          ],
+          "score": 13.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)",
             "Enables Party composition via Tank (party slot)"
+          ],
+          "score": 13.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)",
+            "Enables Party composition via Support (party slot)"
           ],
           "score": 13.0
         },
@@ -16361,14 +16355,6 @@
             "Max HP via Max HP buff (multiple targets, average)"
           ],
           "score": 9.4
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)",
-            "Enables Party composition via Support (party slot)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Shakir",
@@ -16700,6 +16686,13 @@
           "score": 16.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -16756,20 +16749,6 @@
           "score": 11.16
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -16786,6 +16765,20 @@
         },
         {
           "provider": "Damian",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
           "reasons": [
             "Healing via Healing (area, average)"
           ],
@@ -16813,13 +16806,6 @@
             "Healing via Healing (all units, low)"
           ],
           "score": 5.0
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -17181,10 +17167,6 @@
         {
           "score": 27.0,
           "name": "Dionel"
-        },
-        {
-          "score": 27.0,
-          "name": "Indris"
         },
         {
           "score": 27.0,
@@ -17567,6 +17549,13 @@
           "score": 9.0
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Zandrok",
           "reasons": [
             "Life Drain via Lifedrain buff (area, average, conditional (frequent))"
@@ -17607,13 +17596,6 @@
             "Healing via Healing (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -17693,6 +17675,13 @@
           "score": 1.5
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -17707,23 +17696,16 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
+          "provider": "Damian",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (area, average)"
           ],
-          "score": 10.0
+          "score": 8.0
         },
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Damian",
-          "reasons": [
-            "Healing via Healing (area, average)"
+            "Healing via Healing over time (area, average)"
           ],
           "score": 8.0
         },
@@ -17813,10 +17795,10 @@
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, average) `signature fuel`",
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`",
-            "Enables Multiple debuffs on target via ATK debuff",
+            "Enables Multiple debuffs on target via 2 debuff types",
             "Enables Debuff on target via ATK debuff (all units)"
           ],
-          "score": 51.10714285714286
+          "score": 61.10714285714286
         },
         {
           "provider": "Dunlingr",
@@ -17836,6 +17818,24 @@
             "Enables Debuff on target via Damage taken debuff (all units)"
           ],
           "score": 36.0
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Enables Multiple debuffs on target via 3 debuff types",
+            "Enables Debuff on target via Haste debuff (area)"
+          ],
+          "score": 29.4
+        },
+        {
+          "provider": "Alna",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables Multiple debuffs on target via 2 debuff types",
+            "Enables Debuff on target via Haste debuff (all units)"
+          ],
+          "score": 28.5
         },
         {
           "provider": "Twins",
@@ -17872,15 +17872,6 @@
           "score": 24.5
         },
         {
-          "provider": "Alna",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Multiple debuffs on target via 2 debuff types",
-            "Enables Debuff on target via Haste debuff (area)"
-          ],
-          "score": 23.1
-        },
-        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
@@ -17897,6 +17888,15 @@
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
           "score": 21.0
+        },
+        {
+          "provider": "Contess",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "Enables Multiple debuffs on target via 2 debuff types",
+            "Enables Debuff on target via Energy drain (multiple targets)"
+          ],
+          "score": 20.7
         },
         {
           "provider": "Ravion",
@@ -17969,15 +17969,6 @@
           "score": 14.0
         },
         {
-          "provider": "Velara",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables Multiple debuffs on target via 3 debuff types",
-            "Enables Debuff on target via Haste debuff (single target)"
-          ],
-          "score": 12.899999999999999
-        },
-        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`",
@@ -17995,15 +17986,6 @@
             "Enables Debuff on target via ATK debuff (single target)"
           ],
           "score": 12.8
-        },
-        {
-          "provider": "Contess",
-          "reasons": [
-            "ATK via ATK buff (single target, high)",
-            "Enables Multiple debuffs on target via 2 debuff types",
-            "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 12.6
         },
         {
           "provider": "Nazrik",
@@ -18365,6 +18347,14 @@
           "score": 8.1
         },
         {
+          "provider": "Lucius",
+          "reasons": [
+            "Enables Multiple debuffs on target via ATK debuff",
+            "Enables Debuff on target via ATK debuff (area)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Cecia",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, high) `signature fuel`"
@@ -18427,14 +18417,6 @@
             "Enables Debuff on target via Phys DEF debuff (single target)"
           ],
           "score": 5.5136
-        },
-        {
-          "provider": "Lucius",
-          "reasons": [
-            "Enables Multiple debuffs on target via ATK debuff",
-            "Enables Debuff on target via ATK debuff (single target)"
-          ],
-          "score": 4.25
         },
         {
           "provider": "Temesia",
@@ -18543,17 +18525,17 @@
             ]
           },
           {
+            "name": "Pippa",
+            "score": 0.7624,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
             "name": "Lenya",
             "score": 0.6776,
             "matches": [
               "Knock back"
-            ]
-          },
-          {
-            "name": "Eironn",
-            "score": 0.6353,
-            "matches": [
-              "Bind"
             ]
           }
         ]
@@ -18698,6 +18680,13 @@
           "score": 16.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -18746,18 +18735,18 @@
           "score": 10.875
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing over time (area, average)"
           ],
-          "score": 9.0
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Tasi",
@@ -18801,13 +18790,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 4.25
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -19351,7 +19333,16 @@
             ]
           }
         ],
-        "debuff": [],
+        "debuff": [
+          {
+            "name": "Lyca",
+            "score": 0.72,
+            "matches": [
+              "Phys DEF debuff",
+              "ATK debuff"
+            ]
+          }
+        ],
         "cc": [
           {
             "name": "Lenya",
@@ -19733,6 +19724,13 @@
         ],
         "cc": [
           {
+            "name": "Callan",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
             "name": "Perseus",
             "score": 1.0,
             "matches": [
@@ -19992,6 +19990,13 @@
           "score": 15.860000000000001
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -20058,20 +20063,6 @@
           "score": 10.1
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK buff (multiple targets, low, conditional (frequent))",
@@ -20082,9 +20073,23 @@
           "score": 8.25
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -20197,13 +20202,6 @@
           "score": 4.05
         },
         {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
-        },
-        {
           "provider": "Nara",
           "reasons": [
             "Healing via Healing (area, low)"
@@ -20304,10 +20302,6 @@
         {
           "score": 40.8,
           "name": "Nerion"
-        },
-        {
-          "score": 24.0,
-          "name": "Carolina"
         },
         {
           "score": 18.0,
@@ -20668,11 +20662,11 @@
       ],
       "beneficiaries": [
         {
-          "score": 16.6,
+          "score": 30.2,
           "name": "Nerion"
         },
         {
-          "score": 8.0,
+          "score": 16.0,
           "name": "Carolina"
         },
         {
@@ -20761,26 +20755,18 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Indris",
-            "score": 0.8095,
-            "matches": [
-              "Bind",
-              "Knock back"
-            ]
-          },
-          {
             "name": "Kordan",
-            "score": 0.7714,
+            "score": 0.95,
             "matches": [
               "Bind",
               "Knock back"
             ]
           },
           {
-            "name": "Cassadee",
-            "score": 0.6857,
+            "name": "Eironn",
+            "score": 0.8,
             "matches": [
-              "Knock back"
+              "Bind"
             ]
           }
         ]
@@ -21540,13 +21526,6 @@
           "score": 9.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Saida",
           "reasons": [
             "Max HP via Shield (multiple targets, high)"
@@ -21575,6 +21554,20 @@
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
           "score": 8.55
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Gunnar",
@@ -21636,13 +21629,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -21710,6 +21696,13 @@
           "score": 1.4040000000000001
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -21723,13 +21716,6 @@
             "Max HP via Max HP buff (single target, high)"
           ],
           "score": 11.7
-        },
-        {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
         },
         {
           "provider": "Vala",
@@ -21860,15 +21846,15 @@
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Eironn",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Evie",
-            "score": 0.8438,
+            "name": "Kordan",
+            "score": 1.0,
             "matches": [
               "Bind"
             ]
@@ -22891,19 +22877,26 @@
           "score": 9.9
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Zandrok",
           "reasons": [
             "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 8.5
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Velara",
@@ -22970,13 +22963,6 @@
           "score": 4.725
         },
         {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
-        },
-        {
           "provider": "Nara",
           "reasons": [
             "Healing via Healing (area, low)"
@@ -23023,9 +23009,9 @@
         {
           "provider": "Hewynn",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
+          "score": 15.0
         },
         {
           "provider": "Cecia",
@@ -23059,23 +23045,7 @@
       "beneficiaries": [
         {
           "score": 15.0,
-          "name": "Contess"
-        },
-        {
-          "score": 15.0,
           "name": "Granny Dahnie"
-        },
-        {
-          "score": 15.0,
-          "name": "Gunnar"
-        },
-        {
-          "score": 15.0,
-          "name": "Hodgkin"
-        },
-        {
-          "score": 15.0,
-          "name": "Lucius"
         },
         {
           "score": 15.0,
@@ -23147,6 +23117,13 @@
         "debuff": [],
         "cc": [
           {
+            "name": "Callan",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
             "name": "Perseus",
             "score": 1.0,
             "matches": [
@@ -23154,14 +23131,7 @@
             ]
           },
           {
-            "name": "Soren",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Zorya",
+            "name": "Scarlita",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -23220,6 +23190,13 @@
           "score": 17.5
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -23275,13 +23252,6 @@
           "score": 10.5
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -23304,13 +23274,6 @@
             "Magic DEF via DEF buff (single target, average)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Hugin",
@@ -23342,9 +23305,23 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -23385,13 +23362,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -23600,6 +23570,14 @@
             ]
           },
           {
+            "name": "Callan",
+            "score": 0.7059,
+            "matches": [
+              "Stun",
+              "Knock down"
+            ]
+          },
+          {
             "name": "Zorya",
             "score": 0.7059,
             "matches": [
@@ -23646,6 +23624,13 @@
           "score": 17.0544
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -23686,13 +23671,6 @@
           "score": 10.35
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Solise",
           "reasons": [
             "Healing via Healing (all units, average)"
@@ -23715,13 +23693,6 @@
           "score": 9.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
@@ -23734,6 +23705,20 @@
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
           ],
           "score": 8.1
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Fay",
@@ -23808,13 +23793,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.05
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -23935,12 +23913,12 @@
           "name": "Perseus"
         },
         {
-          "score": 13.1,
-          "name": "Nerion"
+          "score": 14.0,
+          "name": "Shadewing"
         },
         {
-          "score": 13.0,
-          "name": "Himmel"
+          "score": 13.1,
+          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -24022,22 +24000,22 @@
         ],
         "debuff": [
           {
-            "name": "Athalia",
+            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "ATK debuff"
             ]
           },
           {
-            "name": "Bonnie",
+            "name": "Lyca",
             "score": 1.0,
             "matches": [
               "ATK debuff"
             ]
           },
           {
-            "name": "Contess",
-            "score": 1.0,
+            "name": "Lumont",
+            "score": 0.9,
             "matches": [
               "ATK debuff"
             ]
@@ -24300,7 +24278,7 @@
             ]
           },
           {
-            "name": "Zandrok",
+            "name": "Scarlita",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -24308,8 +24286,8 @@
             ]
           },
           {
-            "name": "Scarlita",
-            "score": 0.9333,
+            "name": "Zandrok",
+            "score": 1.0,
             "matches": [
               "Stun",
               "Knock up"
@@ -24489,6 +24467,13 @@
           "score": 0.5103000000000001
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -24512,18 +24497,11 @@
           "score": 10.0125
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing over time (area, average)"
           ],
-          "score": 9.0
+          "score": 8.0
         },
         {
           "provider": "Lyca",
@@ -24621,16 +24599,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 10.2,
-          "name": "Nerion"
-        },
-        {
-          "score": 9.0,
+          "score": 13.0,
           "name": "Himmel"
         },
         {
-          "score": 6.4,
+          "score": 12.8,
           "name": "Perseus"
+        },
+        {
+          "score": 12.0,
+          "name": "Silven"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -24648,14 +24626,14 @@
             ]
           },
           {
-            "name": "Evie",
+            "name": "Smokey & Meerky",
             "score": 1.0,
             "matches": [
               "Healing"
             ]
           },
           {
-            "name": "Koko",
+            "name": "Solise",
             "score": 1.0,
             "matches": [
               "Healing"
@@ -24796,6 +24774,13 @@
           "score": 16.0824
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -24829,13 +24814,6 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -24849,13 +24827,6 @@
             "Healing via Healing (all units, average)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Saida",
@@ -24898,9 +24869,23 @@
           "score": 8.4375
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -25000,13 +24985,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -25226,7 +25204,7 @@
             ]
           },
           {
-            "name": "Lyca",
+            "name": "Lucius",
             "score": 1.0,
             "matches": [
               "ATK debuff"
@@ -25234,14 +25212,6 @@
           }
         ],
         "cc": [
-          {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Taunt",
-              "Stun"
-            ]
-          },
           {
             "name": "Hepler",
             "score": 1.0,
@@ -25251,10 +25221,17 @@
             ]
           },
           {
-            "name": "Phraesto",
-            "score": 0.72,
+            "name": "Antandra",
+            "score": 0.8229,
             "matches": [
-              "Stun",
+              "Taunt",
+              "Stun"
+            ]
+          },
+          {
+            "name": "Brutus",
+            "score": 0.6583,
+            "matches": [
               "Taunt"
             ]
           }
@@ -25479,12 +25456,8 @@
       ],
       "beneficiaries": [
         {
-          "score": 51.10714285714286,
+          "score": 61.10714285714286,
           "name": "Indris"
-        },
-        {
-          "score": 36.80714285714286,
-          "name": "Nerion"
         },
         {
           "score": 26.607142857142858,
@@ -25493,10 +25466,6 @@
         {
           "score": 26.607142857142858,
           "name": "Rhys"
-        },
-        {
-          "score": 23.807142857142857,
-          "name": "Carolina"
         },
         {
           "score": 17.807142857142857,
@@ -25615,7 +25584,7 @@
         "debuff": [
           {
             "name": "Cyran",
-            "score": 1.0,
+            "score": 0.72,
             "matches": [
               "ATK debuff"
             ]
@@ -25711,6 +25680,13 @@
           "score": 8.0
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Velara",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
@@ -25759,13 +25735,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 4.25
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Galahad",
@@ -25817,6 +25786,13 @@
           "score": 1.08
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -25848,26 +25824,19 @@
           "score": 10.875
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Fay",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
             "Healing via Healing (arc, average, conditional (frequent))"
           ],
           "score": 8.1
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Tasi",
@@ -26512,6 +26481,13 @@
           "score": 17.0544
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -26562,13 +26538,6 @@
           "score": 10.5
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -26583,13 +26552,6 @@
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
           "score": 9.470057142857142
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Zanie",
@@ -26608,9 +26570,23 @@
           "score": 8.4
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -26692,13 +26668,6 @@
             "Max HP via Shield (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -27154,6 +27123,13 @@
           "score": 15.75
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -27177,26 +27153,26 @@
           "score": 11.25
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Scarlita",
           "reasons": [
             "Physical DEF via DEF buff (single target, high)",
             "Magic DEF via DEF buff (single target, high)"
           ],
           "score": 9.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Tilaya",
@@ -27230,13 +27206,6 @@
             "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
           ],
           "score": 4.875
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -28219,7 +28188,7 @@
             ]
           },
           {
-            "name": "Lucca",
+            "name": "Callan",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -28227,7 +28196,7 @@
             ]
           },
           {
-            "name": "Zorya",
+            "name": "Lucca",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -28373,11 +28342,26 @@
           "score": 52.8
         },
         {
+          "provider": "Eironn",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, high)"
+          ],
+          "score": 40.8
+        },
+        {
           "provider": "Kordan",
           "reasons": [
             "Enables CC on enemies via Bind (area, high)"
           ],
           "score": 40.8
+        },
+        {
+          "provider": "Callan",
+          "reasons": [
+            "Max HP via Shield (single target, average)",
+            "Enables CC on enemies via Stun (all units, average)"
+          ],
+          "score": 37.0
         },
         {
           "provider": "Lyca",
@@ -28421,6 +28405,14 @@
           "score": 28.7
         },
         {
+          "provider": "Scarlita",
+          "reasons": [
+            "Max HP via Shield (single target, low)",
+            "Enables CC on enemies via Stun (area, average)"
+          ],
+          "score": 28.7
+        },
+        {
           "provider": "Baelran",
           "reasons": [
             "Enables CC on enemies via Knock down (area, average)"
@@ -28431,6 +28423,13 @@
           "provider": "Perseus",
           "reasons": [
             "Enables CC on enemies via Stun (area, average)"
+          ],
+          "score": 27.2
+        },
+        {
+          "provider": "Pippa",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, average)"
           ],
           "score": 27.2
         },
@@ -28483,14 +28482,6 @@
           "score": 23.299999999999997
         },
         {
-          "provider": "Callan",
-          "reasons": [
-            "Max HP via Shield (single target, average)",
-            "Enables CC on enemies via Knock down (all units, low)"
-          ],
-          "score": 20.0
-        },
-        {
           "provider": "Galahad",
           "reasons": [
             "ATK SPD via Haste buff (single target, average) `signature fuel`",
@@ -28500,12 +28491,12 @@
           "score": 19.2
         },
         {
-          "provider": "Scarlita",
+          "provider": "Valka",
           "reasons": [
-            "Max HP via Shield (single target, low)",
-            "Enables CC on enemies via Knock back (all units, low)"
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Enables CC on enemies via Knock down (area, low)"
           ],
-          "score": 18.5
+          "score": 18.4
         },
         {
           "provider": "Contess",
@@ -28577,13 +28568,6 @@
           "provider": "Cyran",
           "reasons": [
             "Enables CC on enemies via Silence (single target, high)"
-          ],
-          "score": 15.299999999999999
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 15.299999999999999
         },
@@ -28714,26 +28698,11 @@
           "score": 10.2
         },
         {
-          "provider": "Pippa",
-          "reasons": [
-            "Enables CC on enemies via Bind (single target, average)"
-          ],
-          "score": 10.2
-        },
-        {
           "provider": "Satrana",
           "reasons": [
             "Enables CC on enemies via Charm (single target, average)"
           ],
           "score": 10.2
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 9.9
         },
         {
           "provider": "Thador",
@@ -28829,6 +28798,14 @@
           "score": 1.5
         },
         {
+          "provider": "Damian",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`",
+            "Enables CC on enemies via Blind (area, high)"
+          ],
+          "score": 51.0
+        },
+        {
           "provider": "Antandra",
           "reasons": [
             "Enables CC on enemies via Stun (area, high)"
@@ -28841,6 +28818,14 @@
             "Enables CC on enemies via Stun (multiple targets, high)"
           ],
           "score": 30.599999999999998
+        },
+        {
+          "provider": "Korin",
+          "reasons": [
+            "Max HP via Shield (single target, average)",
+            "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 30.2
         },
         {
           "provider": "Berial",
@@ -28888,14 +28873,6 @@
           "score": 26.0
         },
         {
-          "provider": "Damian",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`",
-            "Enables CC on enemies via Blind (single target, high)"
-          ],
-          "score": 25.5
-        },
-        {
           "provider": "Cecia",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, high) `signature fuel`",
@@ -28906,20 +28883,20 @@
           "score": 23.4
         },
         {
+          "provider": "Arden",
+          "reasons": [
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Enables CC on enemies via Bind (multiple targets, average)"
+          ],
+          "score": 21.804
+        },
+        {
           "provider": "Vala",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`",
             "Enables CC on enemies via Stun (single target, average)"
           ],
           "score": 19.2
-        },
-        {
-          "provider": "Korin",
-          "reasons": [
-            "Max HP via Shield (single target, average)",
-            "Enables CC on enemies via Knock back (area, low)"
-          ],
-          "score": 16.6
         },
         {
           "provider": "Salazer",
@@ -28972,14 +28949,6 @@
             "Enables CC on enemies via Knock back (single target, low)"
           ],
           "score": 13.1
-        },
-        {
-          "provider": "Arden",
-          "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Enables CC on enemies via Bind (single target, average)"
-          ],
-          "score": 11.604
         },
         {
           "provider": "Alsa",
@@ -29283,6 +29252,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -29330,20 +29306,6 @@
           "score": 11.1
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Scarlita",
           "reasons": [
             "Physical DEF via DEF buff (single target, high)",
@@ -29353,6 +29315,20 @@
         },
         {
           "provider": "Damian",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
           "reasons": [
             "Healing via Healing (area, average)"
           ],
@@ -29399,13 +29375,6 @@
           "provider": "Cassadee",
           "reasons": [
             "Enables Ally blessing active via Ally blessing"
-          ],
-          "score": 4.0
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
           ],
           "score": 4.0
         },
@@ -30865,11 +30834,11 @@
           "score": 30.05
         },
         {
-          "provider": "Gerda",
+          "provider": "Hewynn",
           "reasons": [
-            "Grants 2 distinct stat buffs to Perseus"
+            "Grants 1 distinct stat buff to Perseus"
           ],
-          "score": 27.200000000000003
+          "score": 24.0
         },
         {
           "provider": "Lorsan",
@@ -30877,6 +30846,13 @@
             "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 24.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Perseus"
+          ],
+          "score": 22.400000000000002
         },
         {
           "provider": "Lucius",
@@ -30901,13 +30877,6 @@
             "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 18.0
-        },
-        {
-          "provider": "Hewynn",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 16.0
         },
         {
           "provider": "Lenya",
@@ -30939,6 +30908,13 @@
             "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 13.95
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Grants 1 distinct stat buff to Perseus"
+          ],
+          "score": 12.8
         },
         {
           "provider": "Soren",
@@ -31018,13 +30994,6 @@
             "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 6.810300000000001
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 6.4
         },
         {
           "provider": "Nara",
@@ -31247,6 +31216,13 @@
           "score": 9.0
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Koko",
           "reasons": [
             "Healing via Healing (all units, low)"
@@ -31273,13 +31249,6 @@
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
           "score": 4.32
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -31370,6 +31339,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -31386,23 +31362,16 @@
           "score": 11.1
         },
         {
-          "provider": "Hewynn",
+          "provider": "Damian",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (area, average)"
           ],
-          "score": 10.0
+          "score": 8.0
         },
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Damian",
-          "reasons": [
-            "Healing via Healing (area, average)"
+            "Healing via Healing over time (area, average)"
           ],
           "score": 8.0
         },
@@ -31678,16 +31647,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 11.75,
-          "name": "Bonnie"
-        },
-        {
-          "score": 10.2,
+          "score": 27.2,
           "name": "Nerion"
         },
         {
-          "score": 6.5,
-          "name": "Indris"
+          "score": 16.0,
+          "name": "Carolina"
+        },
+        {
+          "score": 11.75,
+          "name": "Bonnie"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -31771,15 +31740,7 @@
         "cc": [
           {
             "name": "Eironn",
-            "score": 0.84,
-            "matches": [
-              "Bind",
-              "Displace"
-            ]
-          },
-          {
-            "name": "Evie",
-            "score": 0.7,
+            "score": 0.984,
             "matches": [
               "Bind",
               "Displace"
@@ -31787,10 +31748,18 @@
           },
           {
             "name": "Kordan",
-            "score": 0.6,
+            "score": 0.76,
             "matches": [
               "Bind",
               "Knock down"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.72,
+            "matches": [
+              "Bind",
+              "Displace"
             ]
           }
         ]
@@ -32145,6 +32114,13 @@
           "score": 3.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -32166,20 +32142,6 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "Healing via Healing (multiple targets, high)"
@@ -32188,6 +32150,20 @@
         },
         {
           "provider": "Damian",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
           "reasons": [
             "Healing via Healing (area, average)"
           ],
@@ -32213,13 +32189,6 @@
             "Healing via Healing (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -33155,6 +33124,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -33176,26 +33152,12 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
             "Healing via Healing (all units, low)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Hugin",
@@ -33228,9 +33190,23 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -33277,13 +33253,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -33485,6 +33454,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -33522,13 +33498,6 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -33542,13 +33511,6 @@
             "Healing via Healing (all units, average)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Hugin",
@@ -33588,9 +33550,23 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -33630,13 +33606,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -33825,14 +33794,14 @@
             ]
           },
           {
-            "name": "Carolina",
+            "name": "Arden",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Evie",
+            "name": "Carolina",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -34113,16 +34082,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 18.5,
+          "score": 28.7,
           "name": "Nerion"
+        },
+        {
+          "score": 16.0,
+          "name": "Carolina"
         },
         {
           "score": 13.5,
           "name": "Silven"
-        },
-        {
-          "score": 11.100000000000001,
-          "name": "Perseus"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -34194,12 +34163,19 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Cassadee",
-            "score": 0.64,
+            "name": "Zorya",
+            "score": 0.66,
             "matches": [
-              "Knock back",
-              "Knock up",
-              "Stun"
+              "Stun",
+              "Knock down"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.65,
+            "matches": [
+              "Stun",
+              "Knock back"
             ]
           }
         ]
@@ -34311,6 +34287,13 @@
           "score": 15.719999999999999
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -34402,13 +34385,6 @@
           "score": 11.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Solise",
           "reasons": [
             "Healing via Healing (all units, average)"
@@ -34422,13 +34398,6 @@
             "ATK SPD via ATK SPD buff (all units, average) `signature fuel`"
           ],
           "score": 9.18
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Scarlita",
@@ -34453,6 +34422,20 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 8.4375
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Tilaya",
@@ -34525,13 +34508,6 @@
             "Life Drain via Lifedrain buff (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -34786,7 +34762,14 @@
           "reasons": [
             "ATK via ATK buff (single target, high)",
             "Max HP via Shield (single target, average)",
-            "Enables Debuff on target via Energy drain (single target)"
+            "Enables Debuff on target via Energy drain (multiple targets)"
+          ],
+          "score": 16.5
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "Enables Debuff on target via Haste debuff (area)"
           ],
           "score": 12.0
         },
@@ -34810,13 +34793,6 @@
             "Enables Continuous damage on enemies via DoT"
           ],
           "score": 7.5
-        },
-        {
-          "provider": "Velara",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (single target)"
-          ],
-          "score": 4.5
         },
         {
           "provider": "Baelran",
@@ -34926,6 +34902,15 @@
           "score": 19.5
         },
         {
+          "provider": "Alna",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Max HP via Max HP buff (single target, low)",
+            "Enables Debuff on target via Haste debuff (all units)"
+          ],
+          "score": 18.0
+        },
+        {
           "provider": "Kordan",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -34953,15 +34938,6 @@
           "score": 17.64
         },
         {
-          "provider": "Alna",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Max HP via Max HP buff (single target, low)",
-            "Enables Debuff on target via Haste debuff (area)"
-          ],
-          "score": 15.0
-        },
-        {
           "provider": "Fay",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -34969,6 +34945,14 @@
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 15.0
+        },
+        {
+          "provider": "Lucius",
+          "reasons": [
+            "Max HP via Shield (area, average)",
+            "Enables Debuff on target via ATK debuff (area)"
+          ],
+          "score": 14.0
         },
         {
           "provider": "Bryon",
@@ -35075,14 +35059,6 @@
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 10.5
-        },
-        {
-          "provider": "Lucius",
-          "reasons": [
-            "Max HP via Shield (area, average)",
-            "Enables Debuff on target via ATK debuff (single target)"
-          ],
-          "score": 10.25
         },
         {
           "provider": "Eironn",
@@ -35842,6 +35818,13 @@
           "score": 17.7
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -35874,13 +35857,6 @@
           "score": 12.558857142857143
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -35899,14 +35875,21 @@
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing over time (area, average)"
           ],
-          "score": 9.0
+          "score": 8.0
         },
         {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -35992,13 +35975,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.05
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -36365,19 +36341,19 @@
           "score": 26.75
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 25.5
-        },
-        {
           "provider": "Sonja",
           "reasons": [
             "Physical DEF via DEF buff (multiple targets, average)",
             "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 24.0
+        },
+        {
+          "provider": "Hewynn",
+          "reasons": [
+            "Grants 1 distinct stat buff to Silven"
+          ],
+          "score": 22.5
         },
         {
           "provider": "Lorsan",
@@ -36400,6 +36376,13 @@
             "Grants 3 distinct stat buffs to Silven (start of battle)"
           ],
           "score": 22.049999999999997
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Silven"
+          ],
+          "score": 21.0
         },
         {
           "provider": "Himmel",
@@ -36431,13 +36414,6 @@
             "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 16.5
-        },
-        {
-          "provider": "Hewynn",
-          "reasons": [
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 15.0
         },
         {
           "provider": "Scarlita",
@@ -36489,6 +36465,13 @@
         },
         {
           "provider": "Lucius",
+          "reasons": [
+            "Grants 1 distinct stat buff to Silven"
+          ],
+          "score": 12.0
+        },
+        {
+          "provider": "Ludovic",
           "reasons": [
             "Grants 1 distinct stat buff to Silven"
           ],
@@ -36609,13 +36592,6 @@
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
             "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 6.0
         },
@@ -36964,6 +36940,13 @@
         ],
         "debuff": [
           {
+            "name": "Contess",
+            "score": 0.75,
+            "matches": [
+              "Energy drain"
+            ]
+          },
+          {
             "name": "Dunlingr",
             "score": 0.75,
             "matches": [
@@ -36976,13 +36959,6 @@
             "matches": [
               "Energy drain",
               "Vitality debuff"
-            ]
-          },
-          {
-            "name": "Lily May",
-            "score": 0.6,
-            "matches": [
-              "Energy drain"
             ]
           }
         ],
@@ -37379,25 +37355,18 @@
           "score": 16.0
         },
         {
-          "provider": "Lorsan",
+          "provider": "Hewynn",
           "reasons": [
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
         },
         {
-          "provider": "Hewynn",
+          "provider": "Lorsan",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
+          "score": 15.0
         },
         {
           "provider": "Hepler",
@@ -37422,11 +37391,18 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Ludovic",
           "reasons": [
-            "Healing via Healing (area, low)"
+            "Healing via Healing (area, average)"
           ],
-          "score": 4.0
+          "score": 8.0
         },
         {
           "provider": "Nara",
@@ -37774,10 +37750,6 @@
         {
           "score": 14.0,
           "name": "Niru"
-        },
-        {
-          "score": 10.0,
-          "name": "Aliceth"
         },
         {
           "score": 10.0,
@@ -38369,13 +38341,6 @@
           "score": 10.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Saida",
           "reasons": [
             "Max HP via Shield (multiple targets, high)"
@@ -38397,6 +38362,20 @@
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
           "score": 8.4
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Phraesto",
@@ -38461,13 +38440,6 @@
             "Max HP via Shield (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -38551,9 +38523,9 @@
         {
           "provider": "Hewynn",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
+          "score": 15.0
         },
         {
           "provider": "Lucius",
@@ -38703,14 +38675,15 @@
             ]
           },
           {
-            "name": "Lorsan",
-            "score": 0.72,
+            "name": "Scarlita",
+            "score": 1.0,
             "matches": [
-              "Stun"
+              "Stun",
+              "Knock back"
             ]
           },
           {
-            "name": "Zorya",
+            "name": "Lorsan",
             "score": 0.72,
             "matches": [
               "Stun"
@@ -38858,6 +38831,13 @@
           "score": 16.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -38924,13 +38904,6 @@
           "score": 10.05
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -38940,19 +38913,26 @@
           "score": 9.9
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Zandrok",
           "reasons": [
             "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 8.5
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Galahad",
@@ -38992,13 +38972,6 @@
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
           ],
           "score": 4.725
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -39256,6 +39229,13 @@
           "score": 8.5
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -39307,13 +39287,6 @@
             "Life Drain via Lifedrain buff (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -39402,25 +39375,18 @@
           "score": 16.5
         },
         {
-          "provider": "Lorsan",
+          "provider": "Hewynn",
           "reasons": [
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
         },
         {
-          "provider": "Hewynn",
+          "provider": "Lorsan",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
+          "score": 15.0
         },
         {
           "provider": "Fay",
@@ -39434,6 +39400,13 @@
           "provider": "Damian",
           "reasons": [
             "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
           ],
           "score": 8.0
         },
@@ -39803,18 +39776,25 @@
           "score": 9.9
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Saida",
           "reasons": [
             "Max HP via Shield (multiple targets, high)"
           ],
           "score": 9.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Phraesto",
@@ -39872,13 +39852,6 @@
             "Max HP via Shield (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -39947,6 +39920,13 @@
           "score": 1.2636
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -39960,13 +39940,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 11.25
-        },
-        {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
         },
         {
           "provider": "Lucius",
@@ -40179,6 +40152,13 @@
           "score": 16.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -40251,13 +40231,6 @@
           "score": 10.25
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
@@ -40281,13 +40254,6 @@
           "score": 9.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Saida",
           "reasons": [
             "Max HP via Shield (multiple targets, high)"
@@ -40295,9 +40261,23 @@
           "score": 9.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -40408,13 +40388,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -40716,6 +40689,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -40737,26 +40717,12 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
             "Healing via Healing (all units, low)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Damian",
@@ -40766,9 +40732,23 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -40815,13 +40795,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -41135,6 +41108,13 @@
           "score": 18.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -41149,26 +41129,12 @@
           "score": 15.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Max HP via Shield (all units, low)",
             "Healing via Healing (all units, low)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Damian",
@@ -41178,9 +41144,23 @@
           "score": 8.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -41227,13 +41207,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -41473,13 +41446,6 @@
           "score": 10.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "Max HP via Shield (multiple targets, high)"
@@ -41511,6 +41477,20 @@
         },
         {
           "provider": "Damian",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
           "reasons": [
             "Healing via Healing (area, average)"
           ],
@@ -41552,13 +41532,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -41631,18 +41604,18 @@
           "score": 1.5
         },
         {
-          "provider": "Lorsan",
+          "provider": "Hewynn",
           "reasons": [
             "Healing via Healing (all units, high)"
           ],
           "score": 15.0
         },
         {
-          "provider": "Hewynn",
+          "provider": "Lorsan",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
+          "score": 15.0
         },
         {
           "provider": "Lucius",
@@ -41849,6 +41822,13 @@
           "score": 9.0
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Pandora",
           "reasons": [
             "Max HP via Max HP buff (single target, average)",
@@ -41884,13 +41864,6 @@
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
           "score": 4.32
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -41970,6 +41943,13 @@
           "score": 1.08
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -41977,23 +41957,16 @@
           "score": 15.0
         },
         {
-          "provider": "Hewynn",
+          "provider": "Damian",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (area, average)"
           ],
-          "score": 10.0
+          "score": 8.0
         },
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Damian",
-          "reasons": [
-            "Healing via Healing (area, average)"
+            "Healing via Healing over time (area, average)"
           ],
           "score": 8.0
         },
@@ -42345,19 +42318,26 @@
           "score": 9.9
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Zandrok",
           "reasons": [
             "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 8.5
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Mehira",
@@ -42439,13 +42419,6 @@
           "score": 4.725
         },
         {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
-        },
-        {
           "provider": "Nara",
           "reasons": [
             "Healing via Healing (area, low)"
@@ -42505,9 +42478,9 @@
         {
           "provider": "Hewynn",
           "reasons": [
-            "Healing via Healing (all units, average)"
+            "Healing via Healing (all units, high)"
           ],
-          "score": 10.0
+          "score": 15.0
         },
         {
           "provider": "Kafra",
@@ -42652,6 +42625,13 @@
         ],
         "cc": [
           {
+            "name": "Callan",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
             "name": "Damian",
             "score": 1.0,
             "matches": [
@@ -42660,13 +42640,6 @@
           },
           {
             "name": "Faramor",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -43202,6 +43175,13 @@
           "score": 19.875
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -43225,24 +43205,10 @@
           "score": 13.6
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Cecia",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, high) `signature fuel`",
             "Max HP via Max HP buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
           ],
           "score": 9.0
         },
@@ -43255,9 +43221,23 @@
           "score": 8.1
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -43312,13 +43292,6 @@
             "Healing via Healing (single target, low)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -43394,16 +43367,16 @@
       ],
       "beneficiaries": [
         {
+          "score": 18.4,
+          "name": "Nerion"
+        },
+        {
           "score": 13.200000000000001,
           "name": "Perseus"
         },
         {
           "score": 12.0,
           "name": "Silven"
-        },
-        {
-          "score": 9.9,
-          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -43467,23 +43440,23 @@
             "name": "Callan",
             "score": 1.0,
             "matches": [
-              "Stun",
-              "Knock down"
-            ]
-          },
-          {
-            "name": "Bonnie",
-            "score": 0.864,
-            "matches": [
+              "Knock down",
               "Stun"
             ]
           },
           {
             "name": "Frieren",
-            "score": 0.8,
+            "score": 0.72,
             "matches": [
               "Knock down",
               "Stun"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 0.64,
+            "matches": [
+              "Knock down"
             ]
           }
         ]
@@ -43755,8 +43728,20 @@
       ],
       "beneficiaries": [
         {
+          "score": 29.4,
+          "name": "Indris"
+        },
+        {
           "score": 22.724999999999998,
           "name": "Silven"
+        },
+        {
+          "score": 17.0125,
+          "name": "Aliceth"
+        },
+        {
+          "score": 12.0,
+          "name": "Shadewing"
         },
         {
           "score": 10.0,
@@ -43928,6 +43913,13 @@
           "score": 17.0544
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -43960,13 +43952,6 @@
           "score": 11.25
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Solise",
           "reasons": [
             "Healing via Healing (all units, average)"
@@ -43997,13 +43982,6 @@
           "score": 9.0
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Healing via Healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Zandrok",
           "reasons": [
             "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
@@ -44018,6 +43996,20 @@
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
           "score": 8.4
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Healing via Healing over time (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Velara",
@@ -44081,13 +44073,6 @@
             "Healing via Healing (single target, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -44697,6 +44682,13 @@
         ],
         "cc": [
           {
+            "name": "Callan",
+            "score": 1.0,
+            "matches": [
+              "Stun"
+            ]
+          },
+          {
             "name": "Damian",
             "score": 1.0,
             "matches": [
@@ -44705,13 +44697,6 @@
           },
           {
             "name": "Gwyneth",
-            "score": 1.0,
-            "matches": [
-              "Stun"
-            ]
-          },
-          {
-            "name": "Hepler",
             "score": 1.0,
             "matches": [
               "Stun"
@@ -44880,6 +44865,13 @@
           "score": 16.0
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -44910,23 +44902,23 @@
           "score": 12.0
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing over time (area, average)"
           ],
-          "score": 9.0
+          "score": 8.0
         },
         {
           "provider": "Lucius",
           "reasons": [
             "Max HP via Shield (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
           ],
           "score": 8.0
         },
@@ -45002,13 +44994,6 @@
             "Haste via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
         },
         {
           "provider": "Nara",
@@ -45603,6 +45588,13 @@
           "score": 8.25
         },
         {
+          "provider": "Ludovic",
+          "reasons": [
+            "Healing via Healing (area, average)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Isabella",
           "reasons": [
             "Haste via Haste buff (multiple targets, low) `signature fuel`",
@@ -45679,13 +45671,6 @@
           "score": 4.5
         },
         {
-          "provider": "Ludovic",
-          "reasons": [
-            "Healing via Healing (area, low)"
-          ],
-          "score": 4.0
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -45758,6 +45743,13 @@
           "score": 18.75
         },
         {
+          "provider": "Hewynn",
+          "reasons": [
+            "Healing via Healing (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Healing (all units, high)"
@@ -45781,18 +45773,11 @@
           "score": 11.25
         },
         {
-          "provider": "Hewynn",
-          "reasons": [
-            "Healing via Healing (all units, average)"
-          ],
-          "score": 10.0
-        },
-        {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing (multiple targets, high)"
+            "Healing via Healing over time (area, average)"
           ],
-          "score": 9.0
+          "score": 8.0
         },
         {
           "provider": "Lucius",
@@ -45982,6 +45967,14 @@
         ],
         "debuff": [],
         "cc": [
+          {
+            "name": "Callan",
+            "score": 1.0,
+            "matches": [
+              "Stun",
+              "Knock down"
+            ]
+          },
           {
             "name": "Perseus",
             "score": 0.6667,

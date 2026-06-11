@@ -303,7 +303,11 @@ def _stat_from_label(label: str) -> str | None:
 
 
 def _targeting_to_schema(
-    targeting: str, category: str, *, summon: bool = False
+    targeting: str,
+    category: str,
+    *,
+    summon: bool = False,
+    area_count: int | None = None,
 ) -> dict[str, Any]:
     if targeting == "Self":
         return {"target": "self", "area": "single", "target_count": 1}
@@ -325,7 +329,13 @@ def _targeting_to_schema(
     if targeting == "Arc":
         return {"target": base, "area": "arc", "target_count": -1, "area_direction": "front"}
     if targeting == "Area":
-        return {"target": base, "area": "radius", "target_count": -1, "area_count": 2}
+        count = area_count if area_count is not None else 2
+        return {
+            "target": base,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": count,
+        }
     if targeting == "All units":
         return {"target": base, "area": "zone", "target_count": -1, "area_count": -1}
     return {"target": base, "area": "single", "target_count": 1}
@@ -434,6 +444,7 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
                     numeric=eff.numeric,
                     qualitative=eff.qualitative,
                     magnitude=eff.magnitude,
+                    area_count=getattr(eff, "area_count", None),
                     conditional=eff.conditional,
                 )
             )
@@ -445,7 +456,11 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
         if eff.category == "buff":
             cur.targeting = rs._prefer_buff_targeting(eff.targeting, cur.targeting)
         else:
-            cur.targeting = rs._prefer_targeting(eff.targeting, cur.targeting)
+            cur.targeting = rs._prefer_wider_targeting(eff.targeting, cur.targeting)
+        eff_count = getattr(eff, "area_count", None)
+        if eff_count is not None:
+            if cur.area_count is None or eff_count != 2:
+                cur.area_count = eff_count
         if eff.numeric is not None and (
             cur.numeric is None or eff.numeric > cur.numeric
         ):
@@ -551,7 +566,14 @@ def effect_to_schema(
         "targeting_label": effect.targeting,
         "is_max_known": is_max_known,
     }
-    out.update(_targeting_to_schema(effect.targeting, category, summon=summon))
+    out.update(
+        _targeting_to_schema(
+            effect.targeting,
+            category,
+            summon=summon,
+            area_count=getattr(effect, "area_count", None),
+        )
+    )
     conditions = _conditional_to_conditions(effect.conditional)
     if conditions:
         out["conditions"] = conditions
@@ -646,6 +668,11 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
     targeting = _schema_to_targeting(effect, "buff")
     numeric = _numeric_from_value(effect.get("value"))
     conditional = _conditions_to_conditional(effect.get("conditions"))
+    area_count = (
+        effect.get("area_count")
+        if effect.get("area") == "radius"
+        else None
+    )
 
     if etype == "crowd_control":
         label = to_display_cc(effect.get("cc-type", "stun"))
@@ -660,6 +687,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            area_count=area_count,
         )
 
     if etype == "immunity":
@@ -681,6 +709,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            area_count=area_count,
         )
 
     if etype == "debuff":
@@ -693,6 +722,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            area_count=area_count,
         )
 
     if etype == "damage":
@@ -705,6 +735,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            area_count=area_count,
         )
 
     if etype == "dot" and effect.get("damage_type"):
@@ -716,6 +747,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            area_count=area_count,
         )
 
     name = effect.get("name", etype.replace("_", " ").title())
@@ -727,6 +759,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         numeric=numeric,
         qualitative="",
         conditional=conditional,
+        area_count=area_count,
     )
 
 

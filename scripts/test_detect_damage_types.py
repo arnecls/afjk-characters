@@ -294,6 +294,48 @@ class ExtractionFixTests(unittest.TestCase):
         self.assertFalse(rs._chunk_deals_enemy_damage(text, "Magic"))
         self.assertEqual(rs.detect_damage_types(text, "Magic"), [])
 
+    def test_hp_based_heal(self):
+        text = "The affected hero recovers 40% (HP-based)."
+        self.assertEqual(rs.extract_number(text, "Healing"), 40.0)
+
+    def test_ludovic_healing_wave_max_tier(self):
+        text = (
+            "restoring HP for all allies within 2 tiles by 110% (ATK-based). "
+            "Increases the healing amount of each healing wave to "
+            "150% (ATK-based)."
+        )
+        self.assertEqual(rs.extract_number(text, "Healing"), 150.0)
+
+    def test_parse_area_tile_count(self):
+        self.assertEqual(rs.parse_area_tile_count("adjacent enemies"), 1)
+        self.assertEqual(
+            rs.parse_area_tile_count("enemies within 3 tiles"), 3
+        )
+        self.assertIsNone(
+            rs.parse_area_tile_count("moved to a safe spot within 4 tiles")
+        )
+        self.assertEqual(
+            rs.parse_area_tile_count("all surrounding enemies"), 1
+        )
+
+    def test_wild_whirl_arc_targeting_preserved(self):
+        from rewrite_summaries import add_effect
+
+        effects = []
+        base = (
+            "striking enemies within a 1-tile arc in front of her twice, "
+            "with each hit dealing 120% (ATK-based) + 15% damage."
+        )
+        upgrade = (
+            "Increases the damage of the first 2 strikes to "
+            "150% (ATK-based) + 15%, and the final strike to "
+            "260% (ATK-based) + 30%."
+        )
+        add_effect(effects, "damage", "Physical", "base", base)
+        add_effect(effects, "damage", "Physical", "EX+15", upgrade)
+        self.assertEqual(effects[0].targeting, "Arc")
+        self.assertEqual(effects[0].numeric, 290.0)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -80,6 +80,12 @@ def _prefer_targeting(candidate: str, current: str) -> str:
     return candidate if cp < cu else current
 
 
+def _prefer_wider_targeting(candidate: str, current: str) -> str:
+    cp = _TARGETING_PRIORITY.get(candidate, 99)
+    cu = _TARGETING_PRIORITY.get(current, 99)
+    return candidate if cp > cu else current
+
+
 def _prefer_buff_targeting(candidate: str, current: str) -> str:
     """When merging buffs, keep the broadest ally reach (never widen Self)."""
     if candidate == "Self" or current == "Self":
@@ -549,6 +555,8 @@ class Effect:
     numeric: float | None = None
     qualitative: str = ""
     magnitude: str = "average"
+    # Radius tile count when targeting is Area; None uses schema default (2).
+    area_count: int | None = None
     # Buffs only: None = always relevant; frequent = often (>~50% of fights);
     # rare = situational (not every battle / kill-gated / limited procs).
     conditional: str | None = None
@@ -1082,7 +1090,12 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         r"\ball enemies (?:within |along |around |in (?:a |\d+-tile )?arc)", t
     ):
         return "All units"
-    if re.search(r"\bin an arc\b|\b1-tile arc\b|\btile arc\b", t):
+    if re.search(
+        r"\bin (?:a |an )?\d+(?:\.\d+)?[-\s]*tile arc\b|"
+        r"\bwithin (?:a |an )?\d+(?:\.\d+)?[-\s]*tile arc\b|"
+        r"\bin an arc\b|\b1-tile arc\b|\btile arc\b",
+        t,
+    ):
         return "Arc"
     if re.search(r"\badjacent\b", t):
         if (
@@ -1705,16 +1718,24 @@ def add_effect(
                 cur.targeting = _prefer_buff_targeting(
                     new_buff_tgt, cur.targeting
                 )
-            elif category == "damage":
-                cur.targeting = _prefer_targeting(
+            elif category == "damage" and _text_has_targeting_cue(text):
+                cur.targeting = _prefer_wider_targeting(
                     detect_damage_targeting(text), cur.targeting
                 )
-            elif text_applies_effect(cond_text, label):
-                cur.targeting = _prefer_targeting(
+            elif text_applies_effect(cond_text, label) and _text_has_targeting_cue(
+                cond_text
+            ):
+                cur.targeting = _prefer_wider_targeting(
                     detect_targeting(cond_text, label, category), cur.targeting
                 )
         elif cond and not cur.qualitative:
             cur.qualitative = cond_text
+        cur.area_count = _merge_area_count(
+            cur.area_count,
+            cond_text,
+            cur.targeting,
+            from_cue=_text_has_targeting_cue(cond_text),
+        )
         if source_section and not cur.source_section:
             cur.source_section = source_section
         return
@@ -1722,9 +1743,12 @@ def add_effect(
     buff_tgt = (
         _resolve_buff_targeting(text, label, scope=scope)
         if category == "buff"
-        else detect_damage_targeting(text)
+        else detect_damage_targeting(targeting_text)
         if category == "damage"
         else detect_targeting(targeting_text, label, category)
+    )
+    area_count = _resolve_area_count(
+        targeting_text if category != "buff" else cond_text, buff_tgt
     )
     effects.append(
         Effect(
@@ -1735,6 +1759,7 @@ def add_effect(
             numeric=n,
             qualitative=cond_text,
             conditional=cond,
+            area_count=area_count,
             source_section=source_section,
         )
     )
@@ -1954,6 +1979,66 @@ def _chunk_has_proximity_aura_buff(text: str) -> bool:
     if any(re.search(pat, t) for pat in PROXIMITY_AURA_EXCLUDE_PATTERNS):
         return False
     return any(re.search(pat, t) for pat in PROVIDER_PROXIMITY_AURA_PATTERNS)
+
+
+def _text_has_targeting_cue(text: str) -> bool:
+    t = text.lower()
+    return bool(
+        re.search(
+            r"\badjacent\b|\bsurrounding\b|\bwithin \d+(?:\.\d+)? tiles?\b|"
+            r"\bin (?:a |an )?\d+(?:\.\d+)?[-\s]*tile arc\b|"
+            r"\bwithin (?:a |an )?\d+(?:\.\d+)?[-\s]*tile arc\b|"
+            r"\bin an arc\b|\d+[-\s]*tile arc\b|\ball enemies\b|"
+            r"\ball allies\b|\ball units\b|"
+            r"\b\d+ (?:closest|nearest|random|different)? ?enemies\b",
+            t,
+        )
+    )
+
+
+def parse_area_tile_count(text: str) -> int | None:
+    """Tile radius for Area targeting; None when text has no AoE cue."""
+    t = text.lower()
+    if re.search(r"\badjacent\b", t):
+        return 1
+    if re.search(r"\bsurrounding\b", t):
+        return 1
+    for m in re.finditer(r"within (\d+(?:\.\d+)?) tiles?", t):
+        before = t[max(0, m.start() - 70) : m.start()]
+        if re.search(
+            r"(?:moved|move(?:d|s|ment)?|teleport|safe spot|skill range|"
+            r"investigat|designated tile|everbloom field|to a )",
+            before,
+        ):
+            continue
+        return max(1, int(float(m.group(1))))
+    for pat in (
+        r"range of (\d+(?:\.\d+)?)[-\s]*tile",
+        r"within a (\d+(?:\.\d+)?)[-\s]*tile radius",
+    ):
+        if m := re.search(pat, t):
+            return max(1, int(float(m.group(1))))
+    return None
+
+
+def _resolve_area_count(text: str, targeting: str) -> int | None:
+    if targeting != "Area":
+        return None
+    parsed = parse_area_tile_count(text)
+    return parsed if parsed is not None else 2
+
+
+def _merge_area_count(
+    current: int | None, text: str, targeting: str, *, from_cue: bool
+) -> int | None:
+    if targeting != "Area":
+        return current
+    parsed = parse_area_tile_count(text)
+    if parsed is not None:
+        return parsed
+    if not from_cue:
+        return current
+    return current if current is not None else 2
 
 
 def parse_proximity_aura_radius(text: str, *, default: float = 2.0) -> float:
@@ -2836,9 +2921,21 @@ def _healing_atk_amount(m: re.Match) -> float:
     return float(m.group(1))
 
 
+def _healing_hp_amount(m: re.Match) -> float:
+    """HP-based heal magnitude; ignore trailing + X% HP bonus."""
+    return float(m.group(1))
+
+
 def _healing_amounts(text: str) -> list[float]:
     t = _normalize_effect_text(text).lower()
-    patterns = [
+    hp_patterns = [
+        r"the affected hero recovers? (\d+(?:\.\d+)?)\s*%\s*\(hp-based\)",
+        r"recover(?:s|y|ing)? (\d+(?:\.\d+)?)\s*%\s*\(hp-based\)",
+        r"restor(?:e|es|ing) (\d+(?:\.\d+)?)\s*%\s*\(hp-based\)",
+    ]
+    atk_patterns = [
+        r"increases the healing amount of each healing wave to "
+        r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
         r"hp amount equal to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
         r"(\d+(?:\.\d+)?)\s*%",
         r"hp recovered .{0,120}to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
@@ -2868,7 +2965,10 @@ def _healing_amounts(text: str) -> list[float]:
         r"(\d+(?:\.\d+)?)\s*%\s*hp",
     ]
     found: list[float] = []
-    for pat in patterns:
+    for pat in hp_patterns:
+        for m in re.finditer(pat, t):
+            found.append(_healing_hp_amount(m))
+    for pat in atk_patterns:
         for m in re.finditer(pat, t):
             found.append(_healing_atk_amount(m))
     return found
@@ -3389,7 +3489,12 @@ def _detect_targeting_enemy_override(text: str) -> str:
         r"\ball enemies (?:within |along |around |in (?:a |\d+-tile )?arc)", t
     ):
         return "All units"
-    if re.search(r"\bin an arc\b|\b1-tile arc\b|\btile arc\b", t):
+    if re.search(
+        r"\bin (?:a |an )?\d+(?:\.\d+)?[-\s]*tile arc\b|"
+        r"\bwithin (?:a |an )?\d+(?:\.\d+)?[-\s]*tile arc\b|"
+        r"\bin an arc\b|\b1-tile arc\b|\btile arc\b",
+        t,
+    ):
         return "Arc"
     if re.search(r"\badjacent\b", t):
         return "Area"
