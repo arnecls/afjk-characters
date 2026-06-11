@@ -6746,7 +6746,7 @@ def format_behavior_section(
     lines.append("#### Skill overview")
     lines.append("")
     sig_overview_label = (
-        "Signature skill (ultimate)"
+        "Signature skill (ult)"
         if behavior.signature_skill_is_ult
         else "Signature skill"
     )

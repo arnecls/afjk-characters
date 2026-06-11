@@ -299,10 +299,9 @@
     low: "chip-q-low",
   };
 
-  const QUALITY_EMOJI = {
-    high: "📈",
-    average: "➖",
-    low: "📉",
+  const SKILL_OVERVIEW_SPEED_LABELS = {
+    speed: true,
+    "first cast speed": true,
   };
 
   const SPEED_CLASS = {
@@ -324,9 +323,7 @@
   };
 
   const QUALITY_TOOLTIPS = {
-    high:
-      "Top third vs same-role peers for this effect (parsed %, reach, " +
-      "frequency, or CC duration; fully ascended).",
+    high: "Top third vs same-role peers for this effect.",
     average:
       "Middle band vs same-role peers with the same effect label.",
     low: "Below average vs same-role peers for this effect type.",
@@ -625,7 +622,12 @@
       (tooltip ? " chip-has-tip" : "") +
       '"' +
       (tooltip ? chipTipAttrs(tooltip) : "");
-    return "<span" + attrs + ">" + emoji + " " + escapeHtml(text) + "</span>";
+    const prefix = emoji ? emoji + " " : "";
+    return "<span" + attrs + ">" + prefix + escapeHtml(text) + "</span>";
+  }
+
+  function isSpeedMetricLabel(label) {
+    return SKILL_OVERVIEW_SPEED_LABELS[label.trim().toLowerCase()] === true;
   }
 
   function qualityIndicatorMeta(value, isCc) {
@@ -637,8 +639,21 @@
       cls: "chip-quality " + QUALITY_CLASS[lower],
       label: isCc ? CC_DURATION_LABEL[lower] : lower,
       tooltip: QUALITY_TOOLTIPS[lower],
-      emoji: QUALITY_EMOJI[lower],
+      emoji: "",
     };
+  }
+
+  function resolveIndicatorMeta(label, indicator, isCc) {
+    if (isSpeedMetricLabel(label)) {
+      return (
+        speedIndicatorMeta(indicator) ||
+        qualityIndicatorMeta(indicator, isCc)
+      );
+    }
+    return (
+      qualityIndicatorMeta(indicator, isCc) ||
+      speedIndicatorMeta(indicator)
+    );
   }
 
   function speedIndicatorMeta(value) {
@@ -798,17 +813,9 @@
   }
 
   function mergeLabelWithIndicator(label, indicator, tierSuffix) {
-    const speedMeta = speedIndicatorMeta(indicator);
-    if (speedMeta) {
-      return formatMergedIndicator(
-        { textOnly: label, tierSuffix: tierSuffix || "" },
-        speedMeta,
-        true
-      );
-    }
     const leading = resolveLeadingChip(label);
-    const qualityMeta = qualityIndicatorMeta(indicator, leading.isCc);
-    if (!qualityMeta) {
+    const meta = resolveIndicatorMeta(label, indicator, leading.isCc);
+    if (!meta) {
       return null;
     }
     if (leading.emoji) {
@@ -821,14 +828,14 @@
             cls: leading.cls,
             tierSuffix: tierSuffix || "",
           },
-          qualityMeta,
+          meta,
           false
         ) + escapeHtml(leading.remainder || "")
       );
     }
     return formatMergedIndicator(
       { textOnly: label, tierSuffix: tierSuffix || "" },
-      qualityMeta,
+      meta,
       true
     );
   }
@@ -1181,7 +1188,7 @@
     }
     if (QUALITY_CLASS[lower]) {
       return chipSpan(
-        QUALITY_EMOJI[lower],
+        "",
         text,
         "chip-quality " + QUALITY_CLASS[lower],
         QUALITY_TOOLTIPS[lower]
@@ -1504,6 +1511,20 @@
       behavior: md.slice(0, idx).trim(),
       skillOverview: md.slice(idx).trim(),
     };
+  }
+
+  function splitBehaviorHeading(md) {
+    if (!md) {
+      return { title: "", body: "" };
+    }
+    const lines = md.split("\n");
+    if (lines[0].trim().startsWith("### ")) {
+      return {
+        title: lines[0].trim().slice(4).trim(),
+        body: lines.slice(1).join("\n").trim(),
+      };
+    }
+    return { title: "", body: md };
   }
 
   function renderSummaryCards(md) {
@@ -2181,18 +2202,18 @@
       return null;
     }
     const body = match[1].trim();
-    if (!hero || !hero.signatureSkill) {
-      return (
-        "<strong>Signature skill</strong>: " + escapeHtml(body)
-      );
+    let pillsHtml;
+    if (hero && hero.signatureSkill) {
+      pillsHtml =
+        '<a href="#" class="signature-skill-link" data-skill-category="' +
+        escapeHtml(hero.signatureSkill.category) +
+        '">' +
+        escapeHtml(body) +
+        "</a>";
+    } else {
+      pillsHtml = escapeHtml(body);
     }
-    return (
-      '<strong>Signature skill</strong>: <a href="#" class="signature-skill-link" data-skill-category="' +
-      escapeHtml(hero.signatureSkill.category) +
-      '">' +
-      escapeHtml(body) +
-      "</a>"
-    );
+    return formatSkillOverviewRow("<strong>Signature skill</strong>", pillsHtml);
   }
 
   function renderMovementLine(text) {
@@ -2205,10 +2226,9 @@
     const base = paren ? paren[1].trim() : rest;
     const suffix = paren ? " " + escapeHtml(paren[2]) : "";
     const chip = formatMovementChip(base);
-    return (
-      "<strong>Movement</strong>: " +
-      (chip !== null ? chip : escapeHtml(base)) +
-      suffix
+    return formatSkillOverviewRow(
+      "<strong>Movement</strong>",
+      (chip !== null ? chip : escapeHtml(base)) + suffix
     );
   }
 
@@ -2219,6 +2239,15 @@
       return renderInline(trimmed);
     }
     const labelParts = parseEffectLabelParts(parsed.label);
+    if (isSpeedMetricLabel(labelParts.base)) {
+      return (
+        mergeLabelWithIndicator(
+          labelParts.base,
+          parsed.value,
+          labelParts.tier
+        ) || renderSummaryEffectChip(labelParts.base, labelParts.tier, parsed.value)
+      );
+    }
     return (
       mergeEffectWithQuality(
         labelParts.base,
@@ -2275,12 +2304,26 @@
     if (movement !== null) {
       return movement;
     }
+    const damageTypes = renderDamageTypesOverviewLine(text);
+    if (damageTypes !== null) {
+      return damageTypes;
+    }
+    const colonMatch = text.match(/^\*\*(.+?)\*\*:\s*(.+)$/);
+    if (colonMatch) {
+      const label = colonMatch[1].trim();
+      return formatSkillOverviewRow(
+        "<strong>" + escapeHtml(label) + "</strong>",
+        renderInline(colonMatch[2].trim())
+      );
+    }
     return renderInline(text);
   }
 
   function renderMarkdown(md, options) {
     if (!md) return "";
     const skillOverview = options && options.skillOverview;
+    const behaviorSection = options && options.behaviorSection;
+    const overviewList = skillOverview || behaviorSection;
     const renderItem = skillOverview
       ? renderSkillOverviewItem
       : function (text) {
@@ -2316,7 +2359,7 @@
       } else if (line.startsWith("- ")) {
         if (!inList) {
           parts.push(
-            skillOverview ? '<ul class="skill-overview-list">' : "<ul>"
+            overviewList ? '<ul class="skill-overview-list">' : "<ul>"
           );
           inList = true;
         }
@@ -3517,7 +3560,8 @@
     if (hero.sections.behavior) {
       const parts = splitBehavior(hero.sections.behavior);
       if (parts.behavior || hero.prydwenTiers) {
-        html += '<div class="detail-section">';
+        html +=
+          '<div class="detail-section summary-section skill-overview-section">';
         if (hero.prydwenTiers) {
           html += renderPrydwenTierBoxes(hero.prydwenTiers);
         }
@@ -3525,7 +3569,18 @@
           const behaviorMd = hero.prydwenTiers
             ? stripPrydwenTierLine(parts.behavior)
             : parts.behavior;
-          html += renderMarkdown(behaviorMd, { behaviorHero: hero });
+          const behaviorParts = splitBehaviorHeading(behaviorMd);
+          if (behaviorParts.title) {
+            html += "<h2>" + escapeHtml(behaviorParts.title) + "</h2>";
+          }
+          if (behaviorParts.body) {
+            html += '<div class="skill-overview-metrics">';
+            html += renderMarkdown(behaviorParts.body, {
+              behaviorHero: hero,
+              behaviorSection: true,
+            });
+            html += "</div>";
+          }
         }
         html += "</div>";
       }

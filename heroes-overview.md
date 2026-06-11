@@ -23,7 +23,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -57,6 +57,10 @@ Common buffers are **Contess**, **Twins**, or **Hugin**.
 
 Aliceth also requires units **putting debuffs** on enemies
 
+- **Velara**
+  - Healing (area, low)
+  - ATK SPD via Haste buff (single target, low) `signature fuel`
+  - Enables Debuff on target via Haste debuff (area)
 - **Zanie**
   - ATK buff (single target, low)
   - Healing (single target, high)
@@ -66,10 +70,6 @@ Aliceth also requires units **putting debuffs** on enemies
   - ATK buff (multiple targets, low)
   - Energy recovery (multiple targets, average) `signature fuel`
   - Enables Debuff on target via Phys DEF debuff (single target)
-- **Velara**
-  - Healing (area, low)
-  - ATK SPD via Haste buff (single target, low) `signature fuel`
-  - Enables Debuff on target via Haste debuff (single target)
 - **Gunnar**
   - ATK buff (single target, average)
   - ATK SPD buff (single target, high) `signature fuel`
@@ -82,7 +82,6 @@ Aliceth provides Ally empower buff to single targets `high`, Attack range buff t
 
 - Lily May (4.5 / 5)
 - Kulu (4.2 / 5)
-- Nerion (3.5 / 5)
 - Pang (3.3 / 5)
 - Kordan (2.8 / 5)
 
@@ -181,16 +180,14 @@ Common buffers are **Contess**, **Twins**, or **Solise**.
   - Healing (area, low)
 - **Galahad**
   - Max HP via Shield (single target, average)
-- **Lorsan**
+- **Hewynn**
   - Healing (all units, high)
 
 ### Units benefitting most from Alna
 
 Alna provides Ally empower buff to single targets `low`, Max HP buff to single targets `low`, Dmg and CC immunity (EX+15) to single targets `high`, and ATK buff (Supreme+) to single targets `low`.
 
-- Nerion (2.9 / 5)
-- Indris (2.8 / 5)
-- Perseus (2.0 / 5)
+- Indris (2.9 / 5)
 
 ### Units that can act as a replacement for Alna
 
@@ -219,7 +216,7 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 
 #### Debuffs provided by Alna
 
-- Haste — Area — `average`
+- Haste — All units — `average`
 - Vitality (Supreme+) — Area — `low`
 
 #### Crowd Control provided by Alna
@@ -239,7 +236,7 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `average`, debuffs `average`, damage `high`
+- **Signature skill (ult)**: speed `slow`, buffs `average`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -291,7 +288,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 ### Units benefitting most from Alsa
 
 - Bonnie (2.5 / 5)
-- Indris (2.2 / 5)
+- Indris (2.0 / 5)
 - Nerion (1.7 / 5)
 
 ### Units that can act as a replacement for Alsa
@@ -350,7 +347,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, heal `average`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, heal `average`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -382,24 +379,24 @@ hitting with ultimate boosts own Phys DEF
 Look for units providing: `Max HP` `Healing` `Energy`  
 Common buffers are **Smokey & Meerky**, **Twins**, or **Hepler**.
 
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Damian**
   - Healing (area, average)
   - ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
-- **Hewynn**
-  - Healing (all units, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
-- **Gerda**
-  - Healing (multiple targets, high)
+- **Saida**
+  - Max HP via Shield (multiple targets, high)
 
 ### Units benefitting most from Antandra
 
 Antandra provides DEF buff (Supreme+) to single targets `low`.
 
-- Carolina (4.7 / 5)
+- Carolina (4.4 / 5)
 
 ### Units that can act as a replacement for Antandra
 
@@ -423,7 +420,7 @@ Antandra provides DEF buff (Supreme+) to single targets `low`.
 
 - Lucca (72% `Stun` `Knock down`)
 - Hepler (67% `Stun` `Taunt`)
-- Zorya (60% `Stun` `Knock down`)
+- Callan (60% `Stun` `Knock down`)
 
 ### Summary for Antandra
 
@@ -454,7 +451,7 @@ Antandra provides DEF buff (Supreme+) to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `high`
+- **Signature skill (ult)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -506,8 +503,8 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 
 Arden provides Energy recovery to single targets `low`.
 
-- Carolina (2.0 / 5)
-- Nerion (1.8 / 5)
+- Carolina (2.8 / 5)
+- Nerion (2.5 / 5)
 - Zorya (1.5 / 5)
 
 ### Units that can act as a replacement for Arden
@@ -533,8 +530,8 @@ Arden provides Energy recovery to single targets `low`.
 **Crowd Control**
 
 - Alna (100% `Bind`)
-- Atalanta (100% `Bind`)
 - Carolina (100% `Bind`)
+- Eironn (100% `Bind`)
 
 ### Summary for Arden
 
@@ -544,7 +541,7 @@ Arden provides Energy recovery to single targets `low`.
 
 #### Crowd Control provided by Arden
 
-- Bind — Single target — `average`
+- Bind — Multiple targets — `average`
 
 ## Atalanta
 
@@ -558,7 +555,7 @@ Arden provides Energy recovery to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, damage `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `average`
 
 ##### Ultimate
@@ -597,18 +594,18 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - **Shakir**
   - Haste buff (multiple targets, high) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Lucca**
   - DEF buff (area, high)
-- **Hewynn**
-  - Healing (all units, average)
 
 ### Units benefitting most from Atalanta
 
-- Carolina (1.9 / 5)
+- Carolina (1.8 / 5)
 - Nerion (1.7 / 5)
-- Indris (1.5 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Atalanta
 
@@ -667,7 +664,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -708,12 +705,12 @@ Common buffers are **Contess**, **Twins**, or **Solise**.
   - Healing (area, low)
 - **Galahad**
   - Max HP via Shield (single target, average)
-- **Lorsan**
+- **Hewynn**
   - Healing (all units, high)
 
 ### Units benefitting most from Athalia
 
-- Carolina (1.5 / 5)
+- Carolina (1.4 / 5)
 - Nerion (1.3 / 5)
 - Indris (1.3 / 5)
 
@@ -775,7 +772,7 @@ Common buffers are **Contess**, **Twins**, or **Solise**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -869,7 +866,7 @@ Aurora provides Haste buff to summons `high`, Invincible to single targets `high
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -909,15 +906,14 @@ Common buffers are **Twins**, **Contess**, or **Solise**.
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
-- **Evie**
-  - ATK buff (multiple targets, high)
-  - Healing (single target, high)
 
 ### Units benefitting most from Baelran
 
-- Carolina (3.4 / 5)
+- Carolina (3.2 / 5)
 - Nerion (2.8 / 5)
 - Zorya (1.6 / 5)
 ### Summary for Baelran
@@ -955,7 +951,7 @@ Common buffers are **Twins**, **Contess**, or **Solise**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `slow`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
@@ -1004,7 +1000,7 @@ Common buffers are **Rowan**, **Lyca**, or **Mikola**.
 
 ### Units benefitting most from Berial
 
-- Carolina (3.4 / 5)
+- Carolina (3.2 / 5)
 - Nerion (2.8 / 5)
 - Bonnie (1.9 / 5)
 
@@ -1109,15 +1105,15 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
   - ATK buff (single target, high)
   - Enables Debuff on target via DoT (area)
   - Enables Magic damage from allies via Magic damage + all enemies (all units)
-- **Eironn**
-  - Enables Debuff on target via Haste debuff (arc)
-  - Enables Magic damage from allies via Magic damage (area)
+- **Velara**
+  - Enables Debuff on target via Haste debuff (area)
+  - Enables Magic damage from allies via Magic damage + early battle (area)
 
 ### Units benefitting most from Bonnie
 
-- Carolina (1.9 / 5)
-- Indris (1.8 / 5)
+- Carolina (1.8 / 5)
 - Nerion (1.7 / 5)
+- Indris (1.6 / 5)
 
 ### Units that can act as a replacement for Bonnie
 
@@ -1220,7 +1216,7 @@ Brutus provides Lifedrain buff to single targets `high`.
 
 - Shadewing (4.3 / 5)
 - Aliceth (2.5 / 5)
-- Indris (2.1 / 5)
+- Indris (1.9 / 5)
 
 ### Units that can act as a replacement for Brutus
 
@@ -1239,6 +1235,10 @@ Brutus provides Lifedrain buff to single targets `high`.
 - Gunnar (100% `DoT` `Physical` `Max HP-based damage`)
 - Daimon (88% `Max HP-based damage`)
 - Satrana (88% `Max HP-based damage`)
+
+**Debuffs on enemies**
+
+- Lyca (100% `Phys DEF debuff`)
 
 **Crowd Control**
 
@@ -1319,16 +1319,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Dunlingr**
   - Haste buff (single target, average) `signature fuel`
   - ATK SPD buff (all units, low) `signature fuel`
-- **Velara**
-  - Haste buff (single target, low) `signature fuel`
-  - Healing (area, low)
-  - ATK SPD via Haste buff (single target, low) `signature fuel`
+- **Ludovic**
+  - Healing (area, average)
 
 ### Units benefitting most from Bryon
 
 - Shadewing (2.9 / 5)
 - Bonnie (2.6 / 5)
-- Indris (1.6 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Bryon
 
@@ -1341,7 +1339,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - Alna (100% `Haste debuff`)
 - Eironn (100% `Haste debuff`)
-- Velara (90% `Haste debuff`)
+- Velara (100% `Haste debuff`)
 
 **Crowd Control**
 
@@ -1382,7 +1380,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, buffs `average`
 - **Non-ultimate**: speed `fast`, damage `high`
 
 ##### Ultimate
@@ -1429,9 +1427,7 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 
 Callan provides Shield to single targets `average`.
 
-- Carolina (2.5 / 5)
-- Nerion (2.4 / 5)
-- Perseus (1.4 / 5)
+- Nerion (3.5 / 5)
 
 ### Units that can act as a replacement for Callan
 
@@ -1449,8 +1445,7 @@ Callan provides Shield to single targets `average`.
 
 **Crowd Control**
 
-- Baelran (75% `Knock down`)
-- Sylphira (62% `Knock down`)
+- Perseus (66% `Stun`)
 
 ### Summary for Callan
 
@@ -1467,7 +1462,7 @@ Callan provides Shield to single targets `average`.
 
 - Unaffected — Self — Start of battle
 - Knock down — All units — `low`
-- Stun (Mythic+) — Single target — `average`
+- Stun (Mythic+) — All units — `average`
 
 ## Carolina
 
@@ -1481,7 +1476,7 @@ Callan provides Shield to single targets `average`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, debuffs `average`, damage `high`
+- **Signature skill (ult)**: speed `slow`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -1515,24 +1510,25 @@ Common buffers are **Twins**, **Hepler**, or **Lyca**.
 
 Carolina also requires units **applying crowd control** to enemies
 
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
+  - Enables CC on enemies via Blind (area, high)
 - **Antandra**
   - Enables CC on enemies via Stun (area, high)
+- **Eironn**
+  - Enables CC on enemies via Bind (area, high)
 - **Kordan**
   - Enables CC on enemies via Bind (area, high)
-- **Lorsan**
-  - Enables CC on enemies via Stun (multiple targets, high)
-- **Aliceth**
-  - Enables CC on enemies via Blind (area, average)
-- **Alna**
-  - Enables CC on enemies via Bind (area, average)
+- **Callan**
+  - Enables CC on enemies via Stun (all units, average)
 
 ### Units benefitting most from Carolina
 
 Carolina provides DEF buff (Mythic+) to single targets `average`.
 
 - Bonnie (2.7 / 5)
-- Indris (2.2 / 5)
 - Nerion (2.0 / 5)
+- Indris (2.0 / 5)
 
 ### Units that can act as a replacement for Carolina
 
@@ -1555,14 +1551,14 @@ Carolina provides DEF buff (Mythic+) to single targets `average`.
 **Debuffs on enemies**
 
 - Eironn (100% `Haste debuff` `Magic DEF debuff`)
-- Velara (75% `Haste debuff` `Magic DEF debuff`)
+- Velara (87% `Haste debuff` `Magic DEF debuff`)
 - Sinbad (60% `Magic DEF debuff`)
 
 **Crowd Control**
 
 - Alna (100% `Bind`)
+- Eironn (100% `Bind`)
 - Evie (100% `Bind`)
-- Kordan (100% `Bind`)
 
 ### Summary for Carolina
 
@@ -1649,7 +1645,7 @@ Cassadee also requires a unit **to bless**
 
 ### Units benefitting most from Cassadee
 
-- Carolina (2.5 / 5)
+- Carolina (2.4 / 5)
 - Nerion (2.2 / 5)
 - Bonnie (2.1 / 5)
 
@@ -1705,7 +1701,7 @@ Cassadee also requires a unit **to bless**
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, buffs `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, buffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -1804,7 +1800,7 @@ Cecia provides ATK SPD buff to single targets `high`, DEF Penetration buff to si
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, damage `average`
 - **Non-ultimate**: speed `average`, damage `average`
 
 ##### Ultimate
@@ -1868,7 +1864,7 @@ rare chance for massive single normal attack damage
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
 - **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`
 
 ##### Ultimate
@@ -1902,14 +1898,14 @@ Common buffers are **Solise**, **Twins**, or **Smokey & Meerky**.
 
 - **Velara**
   - Healing (area, low)
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
-- **Hewynn**
-  - Healing (all units, average)
-- **Gerda**
-  - Healing (multiple targets, high)
 - **Damian**
   - Healing (area, average)
+- **Gerda**
+  - Healing over time (area, average)
 
 ### Units benefitting most from Contess
 
@@ -1921,16 +1917,16 @@ Contess provides ATK buff to single targets `high`, Healing to multiple targets 
 
 These are the **10** strongest pairings: 
 
+- Aliceth (3.8 / 5)
+- Bonnie (3.6 / 5)
+- Shadewing (3.3 / 5)
 - Himmel (3.3 / 5)
-- Aliceth (3.2 / 5)
 - Talene (3.2 / 5)
-- Bonnie (3.0 / 5)
 - Baelran (3.0 / 5)
 - Kordan (2.9 / 5)
 - Smokey & Meerky (2.8 / 5)
 - Silven (2.8 / 5)
 - Isabella (2.6 / 5)
-- Sylphira (2.4 / 5)
 
 ### Units that can act as a replacement for Contess
 
@@ -1960,7 +1956,7 @@ These are the **10** strongest pairings:
 
 #### Debuffs provided by Contess
 
-- Energy drain — Single target — `average`
+- Energy drain — Multiple targets — `average`
 - ATK (Legendary+) — Single target — `low`
 
 #### Crowd Control provided by Contess
@@ -1981,7 +1977,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `slow`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -2084,7 +2080,7 @@ Common buffers are **Hugin**, **Twins**, or **Contess**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
@@ -2141,6 +2137,10 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 - Baelran (80% `True damage`)
 - Faramor (80% `True damage`)
 
+**Crowd Control**
+
+- Gwyneth (60% `Bind` `Silence`)
+
 ### Summary for Cyran
 
 #### Cyran Provides
@@ -2161,7 +2161,7 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 - Steadfast — Area — Conditional
 - Unaffected — Self — Start of battle
-- Bind — Single target — `low`
+- Bind — Area — `low`
 - Displace — All units — `low`
 - Silence (EX+10) — Single target — `high`
 
@@ -2226,7 +2226,7 @@ Common buffers are **Hugin**, **Contess**, or **Hepler**.
 
 Daimon provides Lifedrain buff to single targets `average` and Shield to multiple targets `low`.
 
-- Carolina (3.4 / 5)
+- Carolina (3.2 / 5)
 - Nerion (3.0 / 5)
 - Perseus (1.5 / 5)
 
@@ -2323,18 +2323,18 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 Damian provides Healing in an area `average` and Haste buff (Mythic+) to multiple targets `average` — conditional (frequent).
 
-**11** units include this provider among their top 5 synergy partners. Why the match is common:
+**12** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **10** strongest pairings: 
 
+- Carolina (5.0 / 5)
 - Twins (4.3 / 5)
 - Viperian (3.8 / 5)
 - Atalanta (3.7 / 5)
 - Lorsan (3.2 / 5)
 - Lumont (3.2 / 5)
-- Odie (3.0 / 5)
 - Mirael (2.9 / 5)
 - Fay (2.5 / 5)
 - Rhys (2.5 / 5)
@@ -2351,8 +2351,8 @@ These are the **10** strongest pairings:
 **Healing**
 
 - Contess (100% `Healing`)
-- Gerda (100% `Healing`)
 - Hepler (100% `Healing`)
+- Ludovic (100% `Healing`)
 
 **Similar Skills**
 
@@ -2368,8 +2368,7 @@ These are the **10** strongest pairings:
 **Crowd Control**
 
 - Hepler (100% `Blind` `Stun`)
-- Aliceth (83% `Blind` `Stun`)
-- Koko (60% `Stun`)
+- Aliceth (66% `Blind` `Stun`)
 
 ### Summary for Damian
 
@@ -2383,7 +2382,7 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Damian
 
-- Blind — Single target — `high`
+- Blind — Area — `high`
 - Stun — Single target — `high`
 
 ## Dionel
@@ -2398,7 +2397,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Signature skill (ult)**: speed `slow`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -2450,7 +2449,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 Dionel provides ATK buff to single targets `low`.
 
 - Aliceth (1.5 / 5)
-- Indris (1.5 / 5)
+- Indris (1.4 / 5)
 - Nerion (1.3 / 5)
 
 ### Units that can act as a replacement for Dionel
@@ -2512,7 +2511,7 @@ Dionel provides ATK buff to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `average`, damage `average`
+- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, heal `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -2565,7 +2564,7 @@ Common buffers are **Twins**, **Solise**, or **Hugin**.
 Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to single targets `average`, ATK SPD buff (Supreme+) to all units `low`, and Lifedrain buff (Supreme+) to all units `low`.
 
 - Bonnie (4.8 / 5)
-- Indris (4.4 / 5)
+- Indris (3.9 / 5)
 - Lucy (3.6 / 5)
 - Brutus (2.7 / 5)
 - Pippa (2.2 / 5)
@@ -2618,7 +2617,7 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -2666,9 +2665,8 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Eironn
 
-- Bonnie (2.8 / 5)
-- Indris (2.3 / 5)
-- Nerion (2.0 / 5)
+- Carolina (4.4 / 5)
+- Nerion (3.8 / 5)
 
 ### Units that can act as a replacement for Eironn
 
@@ -2680,12 +2678,13 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 **Debuffs on enemies**
 
-- Velara (80% `Haste debuff` `Magic DEF debuff`)
+- Velara (100% `Haste debuff` `Magic DEF debuff`)
 - Alna (66% `Haste debuff`)
 
 **Crowd Control**
 
-- Cyran (85% `Displace` `Bind`)
+- Kordan (80% `Bind`)
+- Cyran (66% `Displace` `Bind`)
 
 ### Summary for Eironn
 
@@ -2700,7 +2699,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 #### Crowd Control provided by Eironn
 
-- Bind — Single target — `high`
+- Bind — Area — `high`
 - Displace — Area — `low`
 
 ## Evie
@@ -2716,7 +2715,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, first cast speed `fast`, buffs `average`, debuffs `average`
+- **Signature skill (ult)**: speed `average`, first cast speed `fast`, buffs `average`, debuffs `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -2756,7 +2755,7 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
   - Healing (area, low)
 - **Pandora**
   - Healing (single target, average)
-- **Lorsan**
+- **Hewynn**
   - Healing (all units, high)
 
 ### Units benefitting most from Evie
@@ -2792,8 +2791,8 @@ Evie provides ATK buff to multiple targets `high` and Healing to single targets 
 
 **Crowd Control**
 
+- Cyran (81% `Silence` `Bind` `Displace`)
 - Gwyneth (64% `Bind` `Silence`)
-- Cyran (62% `Silence` `Displace` `Bind`)
 
 ### Summary for Evie
 
@@ -2829,7 +2828,7 @@ Evie provides ATK buff to multiple targets `high` and Healing to single targets 
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -2876,7 +2875,7 @@ Common buffers are **Twins**, **Hugin**, or **Contess**.
 
 ### Units benefitting most from Faramor
 
-- Carolina (2.2 / 5)
+- Carolina (2.1 / 5)
 - Nerion (1.9 / 5)
 - Indris (1.3 / 5)
 
@@ -2919,7 +2918,7 @@ Common buffers are **Twins**, **Hugin**, or **Contess**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `average`, buffs `average`
+- **Signature skill (ult)**: speed `slow`, heal `average`, buffs `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -2968,8 +2967,8 @@ Common buffers are **Lyca**, **Twins**, or **Hugin**.
 Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple targets `low`, DEF buff to multiple targets `low`, Healing to arc `average` — conditional (frequent), and Vitality buff (EX+5) to single targets `low`.
 
 - Silven (2.6 / 5)
-- Indris (2.5 / 5)
 - Perseus (2.4 / 5)
+- Indris (2.3 / 5)
 
 ### Units that can act as a replacement for Fay
 
@@ -3026,7 +3025,7 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, first cast speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `average`, first cast speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -3118,7 +3117,7 @@ Florabelle provides Lifedrain buff to summons `high` — conditional (frequent),
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -3378,19 +3377,19 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 ### Units benefitting most from Gerda
 
-Gerda provides Healing to multiple targets `high` and Healing over time in an area `average`.
+Gerda provides Healing to multiple targets `average` and Healing over time in an area `average`.
 
-- Himmel (2.5 / 5)
-- Silven (2.3 / 5)
-- Perseus (2.1 / 5)
+- Himmel (2.4 / 5)
+- Silven (2.1 / 5)
+- Perseus (1.9 / 5)
 
 ### Units that can act as a replacement for Gerda
 
 **Healing**
 
-- Solise (79% `Healing` `Healing over time`)
-- Mikola (77% `Healing over time` `Healing`)
-- Hepler (76% `Healing`)
+- Mikola (94% `Healing over time` `Healing`)
+- Solise (75% `Healing` `Healing over time`)
+- Hepler (61% `Healing`)
 
 **Damage**
 
@@ -3423,7 +3422,7 @@ Gerda provides Healing to multiple targets `high` and Healing over time in an ar
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, heal `average`
+- **Signature skill (ult)**: speed `fast`, heal `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
@@ -3468,14 +3467,15 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
   - Healing (area, low)
   - DEF buff (single target, average)
   - DEF buff (single target, average)
-- **Gerda**
-  - Healing (multiple targets, high)
+- **Scarlita**
+  - DEF buff (single target, high)
+  - DEF buff (single target, high)
 
 ### Units benefitting most from Granny Dahnie
 
-- Carolina (1.9 / 5)
+- Carolina (1.8 / 5)
 - Nerion (1.7 / 5)
-- Indris (1.6 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Granny Dahnie
 
@@ -3532,7 +3532,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`, damage `average`
+- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -3564,6 +3564,8 @@ scorched area enemies cannot heal or gain shields
 Look for units providing: `ATK SPD / Haste` `Max HP` `Healing`  
 Common buffers are **Twins**, **Hugin**, or **Hepler**.
 
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Damian**
@@ -3572,8 +3574,6 @@ Common buffers are **Twins**, **Hugin**, or **Hepler**.
 - **Zandrok**
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
   - Max HP buff (multiple targets, average)
-- **Hewynn**
-  - Healing (all units, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
@@ -3586,7 +3586,6 @@ Gunnar provides ATK SPD buff to single targets `high`, ATK buff to single target
 - Silven (2.4 / 5)
 - Gwyneth (2.3 / 5)
 - Zanie (2.3 / 5)
-- Shadewing (2.0 / 5)
 - Kulu (2.0 / 5)
 - Twins (1.5 / 5)
 
@@ -3637,7 +3636,7 @@ Gunnar provides ATK SPD buff to single targets `high`, ATK buff to single target
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -3683,7 +3682,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 ### Units benefitting most from Gwyneth
 
 - Shadewing (2.7 / 5)
-- Carolina (2.2 / 5)
+- Carolina (2.1 / 5)
 - Nerion (1.9 / 5)
 
 ### Units that can act as a replacement for Gwyneth
@@ -3718,7 +3717,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `low`
+- **Signature skill (ult)**: speed `average`, damage `low`
 - **Non-ultimate**: speed `average`, heal `average`, buffs `average`
 
 ##### Ultimate
@@ -3741,6 +3740,8 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Twins**.
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Evie**
@@ -3749,8 +3750,6 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Twins**.
 - **Damian**
   - Healing (area, average)
   - ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
-- **Hewynn**
-  - Healing (all units, average)
 
 ### Units benefitting most from Hammie
 
@@ -3910,7 +3909,7 @@ Harak provides Invincible to single targets `high` and Lifedrain buff (Legendary
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -3973,9 +3972,9 @@ These are the **10** strongest pairings:
 - Lucca (5.0 / 5)
 - Saida (5.0 / 5)
 - Salazer (5.0 / 5)
-- Carolina (4.9 / 5)
 - Antandra (4.6 / 5)
 - Nerion (4.6 / 5)
+- Carolina (4.5 / 5)
 - Gunnar (4.2 / 5)
 - Lumont (3.6 / 5)
 - Temesia (3.4 / 5)
@@ -4042,7 +4041,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `average`
+- **Signature skill (ult)**: speed `slow`, heal `average`
 - **Non-ultimate**: speed `fast`, heal `average`
 
 ##### Ultimate
@@ -4092,19 +4091,21 @@ Common buffers are **Lyca**, **Mikola**, or **Hugin**.
 
 ### Units benefitting most from Hewynn
 
-Hewynn provides Healing to all units `average`.
+Hewynn provides Healing to all units `high`.
 
-- Himmel (2.6 / 5)
-- Silven (1.8 / 5)
-- Perseus (1.7 / 5)
+- Salazer (4.3 / 5)
+- Lucius (4.0 / 5)
+- Contess (3.9 / 5)
+- Gunnar (3.4 / 5)
+- Hodgkin (3.0 / 5)
 
 ### Units that can act as a replacement for Hewynn
 
 **Healing**
 
-- Contess (100% `Healing`)
-- Damian (100% `Healing`)
 - Lorsan (100% `Healing`)
+- Smokey & Meerky (96% `Healing`)
+- Solise (96% `Healing`)
 
 **Similar Skills**
 
@@ -4227,7 +4228,7 @@ Himmel provides Shield to single targets `low`, ATK buff (Mythic+) to multiple t
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -4262,6 +4263,8 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Aurora**
@@ -4270,13 +4273,10 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (single target, high)
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
 
 ### Units benefitting most from Hodgkin
 
-- Indris (1.8 / 5)
+- Indris (1.6 / 5)
 - Bonnie (1.6 / 5)
 - Aliceth (1.6 / 5)
 
@@ -4373,7 +4373,7 @@ Common buffers are **Twins**, **Rowan**, or **Smokey & Meerky**.
 
 Hugin provides ATK buff to multiple targets `high`, Haste buff to multiple targets `high`, and Shield (Mythic+) to multiple targets `high`.
 
-**80** units include this provider among their top 5 synergy partners. Why the match is common:
+**79** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -4387,8 +4387,8 @@ These are the **10** strongest pairings:
 - Soren (4.2 / 5)
 - Lenya (3.9 / 5)
 - Perseus (3.8 / 5)
+- Laios (3.6 / 5)
 - Zorya (3.6 / 5)
-- Indris (3.1 / 5)
 
 ### Units that can act as a replacement for Hugin
 
@@ -4420,7 +4420,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, damage `average`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, damage `average`
 - **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -4455,20 +4455,20 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 - **Koko**
   - Healing (all units, low)
   - Lifedrain buff (multiple targets, average)
+- **Ludovic**
+  - Healing (area, average)
 - **Zandrok**
   - Lifedrain buff (area, average, conditional (frequent))
 - **Dunlingr**
   - Lifedrain buff (all units, low)
 - **Brutus**
   - Lifedrain buff (single target, high)
-- **Evie**
-  - Healing (single target, high)
 
 ### Units benefitting most from Igor
 
-- Indris (1.3 / 5)
 - Bonnie (1.3 / 5)
 - Aliceth (1.3 / 5)
+- Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Igor
 
@@ -4504,7 +4504,7 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Solise**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, debuffs `average`, damage `low`
+- **Signature skill (ult)**: speed `slow`, debuffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -4547,21 +4547,22 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
   - ATK buff (single target, low)
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via Damage taken debuff (all units)
+- **Velara**
+  - ATK SPD via Haste buff (single target, low) `signature fuel`
+  - Enables Multiple debuffs on target via 3 debuff types
+  - Enables Debuff on target via Haste debuff (area)
+- **Alna**
+  - ATK buff (single target, low)
+  - Enables Multiple debuffs on target via 2 debuff types
+  - Enables Debuff on target via Haste debuff (all units)
 - **Frieren**
   - ATK buff (single target, high)
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via DoT (area)
-- **Cyran**
-  - Enables Multiple debuffs on target via ATK debuff
-  - Enables Debuff on target via ATK debuff (all units)
-- **Alna**
-  - ATK buff (single target, low)
-  - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via Haste debuff (area)
 
 ### Units benefitting most from Indris
 
-- Carolina (2.4 / 5)
+- Carolina (2.3 / 5)
 - Nerion (2.0 / 5)
 - Aliceth (1.6 / 5)
 
@@ -4581,8 +4582,8 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 **Crowd Control**
 
 - Kordan (79% `Bind` `Knock back`)
+- Pippa (76% `Bind`)
 - Lenya (67% `Knock back`)
-- Eironn (63% `Bind`)
 
 ### Summary for Indris
 
@@ -4615,7 +4616,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`
+- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`
 
 ##### Ultimate
@@ -4716,7 +4717,7 @@ Isabella provides ATK buff to multiple targets `low` — conditional (frequent),
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, debuffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -4764,7 +4765,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting most from Kafra
 
-- Indris (2.1 / 5)
+- Indris (1.9 / 5)
 - Aliceth (1.8 / 5)
 - Nerion (1.7 / 5)
 
@@ -4779,6 +4780,10 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 - Aliceth (100% `Physical`)
 - Alna (100% `Physical`)
 - Antandra (100% `Physical`)
+
+**Debuffs on enemies**
+
+- Lyca (72% `Phys DEF debuff` `ATK debuff`)
 
 **Crowd Control**
 
@@ -4821,7 +4826,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `average`
+- **Signature skill (ult)**: speed `slow`, buffs `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -4907,6 +4912,7 @@ Koko provides Damage taken reduction to all units `low`, Healing to all units `l
 
 **Crowd Control**
 
+- Callan (100% `Stun`)
 - Perseus (100% `Stun`)
 - Zandrok (60% `Stun`)
 
@@ -4936,7 +4942,7 @@ Koko provides Damage taken reduction to all units `low`, Healing to all units `l
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `average`
+- **Signature skill (ult)**: speed `slow`, buffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -4992,7 +4998,6 @@ Common buffers are **Twins**, **Hugin**, or **Contess**.
 
 Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple targets `high`, DEF buff (EX+10) to single targets `low`, and DEF Penetration buff (Supreme+) to multiple targets `low`.
 
-- Carolina (4.7 / 5)
 - Brutus (4.0 / 5)
 - Lily May (3.8 / 5)
 - Nerion (3.8 / 5)
@@ -5033,7 +5038,7 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `low`
+- **Signature skill (ult)**: speed `average`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -5083,8 +5088,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 Korin provides Shield to single targets `average`.
 
-- Carolina (2.2 / 5)
-- Nerion (2.1 / 5)
+- Carolina (3.2 / 5)
+- Nerion (3.0 / 5)
 - Perseus (1.3 / 5)
 
 ### Units that can act as a replacement for Korin
@@ -5109,9 +5114,8 @@ Korin provides Shield to single targets `average`.
 
 **Crowd Control**
 
-- Indris (80% `Bind` `Knock back`)
-- Kordan (77% `Bind` `Knock back`)
-- Cassadee (68% `Knock back`)
+- Kordan (95% `Bind` `Knock back`)
+- Eironn (80% `Bind`)
 
 ### Summary for Korin
 
@@ -5122,7 +5126,7 @@ Korin provides Shield to single targets `average`.
 
 #### Crowd Control provided by Korin
 
-- Bind — Single target — `average`
+- Bind — Area — `average`
 - Knock back — Area — `low`
 
 ## Kruger
@@ -5137,7 +5141,7 @@ Korin provides Shield to single targets `average`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, debuffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -5182,7 +5186,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Kruger
 
-- Indris (2.6 / 5)
+- Indris (2.3 / 5)
 - Bonnie (1.8 / 5)
 - Aliceth (1.7 / 5)
 
@@ -5287,7 +5291,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 Kulu provides ATK buff (Legendary+) to single targets `low` and DEF Penetration buff (EX+15) to single targets `low`.
 
 - Bonnie (4.1 / 5)
-- Indris (3.8 / 5)
+- Indris (3.4 / 5)
 
 ### Units that can act as a replacement for Kulu
 
@@ -5396,7 +5400,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF buff to single targets `low` — conditional (rare).
 
-- Carolina (3.4 / 5)
+- Carolina (3.2 / 5)
 - Nerion (2.8 / 5)
 - Shadewing (2.0 / 5)
 
@@ -5415,8 +5419,8 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 **Crowd Control**
 
 - Alna (100% `Bind`)
+- Eironn (100% `Bind`)
 - Kordan (100% `Bind`)
-- Evie (84% `Bind`)
 
 ### Summary for Laios
 
@@ -5441,7 +5445,7 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Signature skill (ult)**: speed `slow`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -5541,7 +5545,7 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, first cast speed `fast`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, first cast speed `fast`, debuffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -5595,7 +5599,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 - Bonnie (2.3 / 5)
 - Aliceth (1.7 / 5)
-- Indris (1.5 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Lily May
 
@@ -5659,7 +5663,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `high`
+- **Signature skill (ult)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`
 
 ##### Ultimate
@@ -5714,11 +5718,7 @@ Common buffers are **Mikola**, **Twins**, or **Hugin**.
 Lorsan provides Healing to all units `high`.
 
 - Salazer (4.3 / 5)
-- Lucius (4.0 / 5)
-- Contess (3.9 / 5)
 - Granny Dahnie (3.5 / 5)
-- Gunnar (3.4 / 5)
-- Hodgkin (3.0 / 5)
 
 ### Units that can act as a replacement for Lorsan
 
@@ -5740,9 +5740,9 @@ Lorsan provides Healing to all units `high`.
 
 **Crowd Control**
 
+- Callan (100% `Stun`)
 - Perseus (100% `Stun`)
-- Soren (100% `Stun`)
-- Zorya (100% `Stun`)
+- Scarlita (100% `Stun`)
 
 ### Summary for Lorsan
 
@@ -5769,7 +5769,7 @@ Lorsan provides Healing to all units `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -5808,15 +5808,13 @@ Common buffers are **Hepler**, **Twins**, or **Rowan**.
 - **Lumont**
   - DEF buff (multiple targets, high)
   - DEF buff (multiple targets, high)
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Sonja**
   - DEF buff (multiple targets, average)
   - DEF buff (multiple targets, average)
-- **Fay**
-  - Healing (arc, average, conditional (frequent))
-  - DEF buff (multiple targets, low)
-  - DEF buff (multiple targets, low)
 
 ### Units benefitting most from Lucca
 
@@ -5847,6 +5845,7 @@ Lucca provides DEF buff in an area `high`.
 **Crowd Control**
 
 - Antandra (84% `Stun` `Knock down`)
+- Callan (70% `Stun` `Knock down`)
 - Zorya (70% `Stun` `Knock down`)
 
 ### Summary for Lucca
@@ -5875,7 +5874,7 @@ Lucca provides DEF buff in an area `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `average`
+- **Signature skill (ult)**: speed `slow`, buffs `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -5907,6 +5906,8 @@ heal one extra ally per cast
 Look for units providing: `Healing`  
 Common buffers are **Rowan**, **Lyca**, or **Mikola**.
 
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Damian**
@@ -5915,8 +5916,6 @@ Common buffers are **Rowan**, **Lyca**, or **Mikola**.
 - **Pandora**
   - Healing (single target, average)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Hewynn**
-  - Healing (all units, average)
 - **Ravion**
   - Energy recovery (multiple targets, average) `signature fuel`
   - Energy recovery (150 early objective, multiple targets) `signature fuel`
@@ -5925,7 +5924,7 @@ Common buffers are **Rowan**, **Lyca**, or **Mikola**.
 
 Lucius provides Shield in an area `average`.
 
-- Himmel (2.4 / 5)
+- Shadewing (2.9 / 5)
 - Nerion (1.9 / 5)
 - Perseus (1.9 / 5)
 
@@ -5951,9 +5950,9 @@ Lucius provides Shield in an area `average`.
 
 **Debuffs on enemies**
 
-- Athalia (100% `ATK debuff`)
-- Bonnie (100% `ATK debuff`)
-- Contess (100% `ATK debuff`)
+- Cyran (100% `ATK debuff`)
+- Lyca (100% `ATK debuff`)
+- Lumont (90% `ATK debuff`)
 
 **Crowd Control**
 
@@ -5969,7 +5968,7 @@ Lucius provides Shield in an area `average`.
 
 #### Debuffs provided by Lucius
 
-- ATK (Mythic+) — Single target — `low`
+- ATK (Mythic+) — Area — `low`
 
 #### Crowd Control provided by Lucius
 
@@ -6056,8 +6055,8 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 **Crowd Control**
 
 - Lucca (100% `Stun` `Knock up`)
+- Scarlita (100% `Stun` `Knock up`)
 - Zandrok (100% `Stun` `Knock up`)
-- Scarlita (93% `Stun` `Knock up`)
 
 ### Summary for Lucy
 
@@ -6083,7 +6082,7 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, heal `average`
+- **Signature skill (ult)**: speed `average`, heal `average`
 - **Non-ultimate**: speed `average`, heal `average`, damage `high`
 
 ##### Ultimate
@@ -6130,19 +6129,19 @@ Common buffers are **Mikola**, **Smokey & Meerky**, or **Twins**.
 
 ### Units benefitting most from Ludovic
 
-Ludovic provides Healing in an area `low`.
+Ludovic provides Healing in an area `average`.
 
-- Himmel (1.9 / 5)
-- Nerion (1.7 / 5)
-- Perseus (1.3 / 5)
+- Himmel (2.4 / 5)
+- Silven (1.6 / 5)
+- Perseus (1.5 / 5)
 
 ### Units that can act as a replacement for Ludovic
 
 **Healing**
 
 - Contess (100% `Healing`)
-- Evie (100% `Healing`)
-- Koko (100% `Healing`)
+- Smokey & Meerky (100% `Healing`)
+- Solise (100% `Healing`)
 
 **Similar Skills**
 
@@ -6185,7 +6184,7 @@ Ludovic provides Healing in an area `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -6221,14 +6220,14 @@ Common buffers are **Twins**, **Hugin**, or **Hepler**.
   - Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
   - Healing (area, average)
   - ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Zandrok**
   - Haste buff (area, low, conditional (frequent)) `signature fuel`
   - Max HP buff (multiple targets, average)
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
-- **Hewynn**
-  - Healing (all units, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
@@ -6261,13 +6260,13 @@ Lumont provides DEF buff to multiple targets `high`.
 
 - Bonnie (100% `ATK debuff`)
 - Cyran (100% `ATK debuff`)
-- Lyca (100% `ATK debuff`)
+- Lucius (100% `ATK debuff`)
 
 **Crowd Control**
 
-- Antandra (100% `Taunt` `Stun`)
 - Hepler (100% `Taunt` `Stun`)
-- Phraesto (72% `Stun` `Taunt`)
+- Antandra (82% `Taunt` `Stun`)
+- Brutus (65% `Taunt`)
 
 ### Summary for Lumont
 
@@ -6283,7 +6282,7 @@ Lumont provides DEF buff to multiple targets `high`.
 
 - Unaffected — Self — On skill
 - Stun — Area — `low`
-- Taunt — Single target — `average`
+- Taunt — Area — `average`
 - Knock up (Mythic+) — Single target — `low`
 
 ## Lyca
@@ -6298,7 +6297,7 @@ Lumont provides DEF buff to multiple targets `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Signature skill (ult)**: speed `slow`, damage `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -6346,7 +6345,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 Lyca provides ATK SPD buff to all units `average` and Energy recovery to all units `low`.
 
-**25** units include this provider among their top 5 synergy partners. Why the match is common:
+**23** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -6358,11 +6357,11 @@ These are the **10** strongest pairings:
 - Hewynn (5.0 / 5)
 - Indris (5.0 / 5)
 - Rhys (5.0 / 5)
-- Carolina (4.6 / 5)
+- Valen (5.0 / 5)
 - Berial (4.6 / 5)
 - Lucius (4.6 / 5)
 - Arden (4.2 / 5)
-- Nerion (3.5 / 5)
+- Cecia (3.3 / 5)
 - Alsa (3.0 / 5)
 
 ### Units that can act as a replacement for Lyca
@@ -6375,7 +6374,7 @@ These are the **10** strongest pairings:
 
 **Debuffs on enemies**
 
-- Cyran (100% `ATK debuff`)
+- Cyran (72% `ATK debuff`)
 
 **Crowd Control**
 
@@ -6392,6 +6391,7 @@ These are the **10** strongest pairings:
 #### Debuffs provided by Lyca
 
 - ATK — All units — `high`
+- Phys DEF — All units — `average`
 
 #### Crowd Control provided by Lyca
 
@@ -6410,7 +6410,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, damage `high`
 
 ##### Ultimate
@@ -6445,6 +6445,8 @@ Common buffers are **Smokey & Meerky**, **Mikola**, or **Twins**.
 - **Dunlingr**
   - ATK SPD buff (all units, low) `signature fuel`
   - Haste buff (single target, average) `signature fuel`
+- **Ludovic**
+  - Healing (area, average)
 - **Velara**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
   - Healing (area, low)
@@ -6452,8 +6454,6 @@ Common buffers are **Smokey & Meerky**, **Mikola**, or **Twins**.
   - Healing (all units, low)
 - **Evie**
   - Healing (single target, high)
-- **Gunnar**
-  - ATK SPD buff (single target, high) `signature fuel`
 
 ### Units benefitting most from Marcille
 
@@ -6517,7 +6517,7 @@ Marcille provides Haste buff to single targets `low` and Healing to multiple tar
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `low`
+- **Signature skill (ult)**: speed `average`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -6564,7 +6564,7 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 ### Units benefitting most from Marilee
 
-- Carolina (1.5 / 5)
+- Carolina (1.4 / 5)
 - Nerion (1.3 / 5)
 
 ### Units that can act as a replacement for Marilee
@@ -6613,7 +6613,7 @@ Common buffers are **Twins**, **Mikola**, or **Lyca**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Signature skill (ult)**: speed `slow`, damage `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -6717,7 +6717,7 @@ Mehira provides Haste buff to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `average`, buffs `average`
+- **Signature skill (ult)**: speed `slow`, heal `average`, buffs `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
@@ -6824,7 +6824,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, damage `average`
 - **Non-ultimate**: speed `fast`, damage `high`
 
 ##### Ultimate
@@ -7013,7 +7013,7 @@ Nara provides Healing (Mythic+) in an area `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -7080,8 +7080,8 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 **Crowd Control**
 
 - Antandra (100% `Stun` `Knock down`)
+- Callan (100% `Stun` `Knock down`)
 - Lucca (100% `Stun` `Knock down`)
-- Zorya (100% `Stun` `Knock down`)
 
 ### Summary for Natsu
 
@@ -7113,7 +7113,7 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -7153,8 +7153,8 @@ Look for units providing: `CRIT`
 
 ### Units benefitting most from Nazrik
 
-- Carolina (1.9 / 5)
-- Indris (1.9 / 5)
+- Carolina (1.8 / 5)
+- Indris (1.7 / 5)
 - Nerion (1.7 / 5)
 
 ### Units that can act as a replacement for Nazrik
@@ -7211,7 +7211,7 @@ Look for units providing: `CRIT`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `low`
+- **Signature skill (ult)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -7245,25 +7245,24 @@ Common buffers are **Twins**, **Hepler**, or **Lyca**.
 
 Nerion also requires units **applying crowd control** to enemies
 
+- **Eironn**
+  - Enables CC on enemies via Bind (area, high)
 - **Kordan**
   - Enables CC on enemies via Bind (area, high)
+- **Callan**
+  - Max HP via Shield (single target, average)
+  - Enables CC on enemies via Stun (all units, average)
 - **Aliceth**
   - DEF Penetration buff (multiple targets, high)
   - Enables CC on enemies via Blind (area, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Enables CC on enemies via Stun (area, average)
-- **Daimon**
-  - Max HP via Shield (multiple targets, low)
-  - Enables CC on enemies via Frighten (area, average)
-- **Alna**
-  - Max HP buff (single target, low)
-  - Enables CC on enemies via Bind (area, average)
 
 ### Units benefitting most from Nerion
 
 - Bonnie (2.2 / 5)
-- Carolina (1.9 / 5)
+- Carolina (1.8 / 5)
 - Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Nerion
@@ -7322,7 +7321,7 @@ Nerion also requires units **applying crowd control** to enemies
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, heal `average`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, damage `average`
 
 ##### Ultimate
@@ -7455,7 +7454,7 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 - Shadewing (2.7 / 5)
 - Bonnie (2.2 / 5)
-- Indris (1.5 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Odie
 
@@ -7544,7 +7543,7 @@ Common buffers are **Rowan**, **Twins**, or **Smokey & Meerky**.
 Pandora provides Healing to single targets `average`, Invincible to single targets `high`, and Max HP buff (Legendary+) to single targets `average`.
 
 - Kordan (2.6 / 5)
-- Indris (2.5 / 5)
+- Indris (2.3 / 5)
 - Silven (2.1 / 5)
 
 ### Units that can act as a replacement for Pandora
@@ -7594,7 +7593,7 @@ Pandora provides Healing to single targets `average`, Invincible to single targe
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -7702,7 +7701,7 @@ Pang provides ATK buff to single targets `high`, Shield (EX+10) to single target
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -7789,7 +7788,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -7846,7 +7845,7 @@ Perseus also requires units **buffing them**
 
 Perseus provides ATK buff to multiple targets `low`.
 
-- Carolina (3.4 / 5)
+- Carolina (3.2 / 5)
 - Nerion (2.8 / 5)
 - Silven (1.2 / 5)
 
@@ -8001,7 +8000,7 @@ Phraesto provides Damage taken reduction to single targets `low`, Healing to sin
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `average`
+- **Signature skill (ult)**: speed `fast`, damage `average`
 - **Non-ultimate**: speed `fast`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -8046,9 +8045,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting most from Pippa
 
+- Carolina (3.2 / 5)
+- Nerion (2.8 / 5)
 - Bonnie (2.5 / 5)
-- Nerion (1.7 / 5)
-- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Pippa
 
@@ -8072,9 +8071,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 **Crowd Control**
 
-- Eironn (84% `Bind` `Displace`)
-- Evie (70% `Bind` `Displace`)
-- Kordan (60% `Bind` `Knock down`)
+- Eironn (98% `Bind` `Displace`)
+- Kordan (76% `Bind` `Knock down`)
+- Evie (72% `Bind` `Displace`)
 
 ### Summary for Pippa
 
@@ -8089,7 +8088,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 #### Crowd Control provided by Pippa
 
 - Unaffected — Self — On skill
-- Bind — Single target — `average`
+- Bind — Area — `average`
 - Displace — Single target — `low`
 - Knock down — Single target — `low`
 
@@ -8106,7 +8105,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `low`
+- **Signature skill (ult)**: speed `fast`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -8265,10 +8264,10 @@ Common buffers are **Solise**, **Contess**, or **Rowan**.
   - Healing (area, low)
 - **Pandora**
   - Healing (single target, average)
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
-- **Hewynn**
-  - Healing (all units, average)
 
 ### Units benefitting most from Reinier
 
@@ -8276,7 +8275,7 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 - Bonnie (2.1 / 5)
 - Himmel (1.7 / 5)
-- Indris (1.6 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Reinier
 
@@ -8335,7 +8334,7 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Signature skill (ult)**: speed `slow`, damage `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -8432,7 +8431,7 @@ Rhys provides Crit buff to single targets `low`, Healing to single targets `low`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, buffs `average`
+- **Signature skill (ult)**: speed `fast`, buffs `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -8550,7 +8549,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, debuffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -8584,15 +8583,16 @@ Common buffers are **Contess**, **Twins**, or **Solise**.
 
 - **Velara**
   - Healing (area, low)
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
-- **Hewynn**
-  - Healing (all units, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
-- **Gerda**
-  - Healing (multiple targets, high)
+- **Zanie**
+  - Max HP via Shield (single target, high)
+  - Healing (single target, high)
 
 ### Units benefitting most from Saida
 
@@ -8684,23 +8684,24 @@ heal self after imprisoning an enemy
 Look for units providing: `Max HP` `Healing`  
 Common buffers are **Hepler**, **Mikola**, or **Contess**.
 
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
-- **Hewynn**
-  - Healing (all units, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
-- **Gerda**
-  - Healing (multiple targets, high)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
+- **Zanie**
+  - Max HP via Shield (single target, high)
+  - Healing (single target, high)
 
 ### Units benefitting most from Salazer
 
 Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to single targets `low` — conditional (frequent).
 
-- Carolina (2.4 / 5)
+- Carolina (2.3 / 5)
 - Nerion (2.1 / 5)
 - Perseus (1.3 / 5)
 
@@ -8725,8 +8726,8 @@ Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to
 **Crowd Control**
 
 - Alna (100% `Bind`)
+- Arden (100% `Bind`)
 - Carolina (100% `Bind`)
-- Evie (100% `Bind`)
 
 ### Summary for Salazer
 
@@ -8750,7 +8751,7 @@ Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, buffs `average`, damage `average`
+- **Signature skill (ult)**: speed `fast`, buffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -8797,7 +8798,7 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 - Shadewing (2.7 / 5)
 - Bonnie (2.5 / 5)
-- Indris (2.2 / 5)
+- Indris (2.0 / 5)
 
 ### Units that can act as a replacement for Satrana
 
@@ -8897,9 +8898,9 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Lyca**.
 
 Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to single targets `high`.
 
-- Nerion (2.3 / 5)
+- Carolina (3.2 / 5)
+- Nerion (2.9 / 5)
 - Silven (1.7 / 5)
-- Perseus (1.5 / 5)
 
 ### Units that can act as a replacement for Scarlita
 
@@ -8921,7 +8922,8 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 **Crowd Control**
 
-- Cassadee (64% `Knock back` `Knock up` `Stun`)
+- Zorya (66% `Stun` `Knock down`)
+- Perseus (65% `Stun` `Knock back`)
 
 ### Summary for Scarlita
 
@@ -8939,7 +8941,7 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 - Knock back — All units — `low`
 - Knock down — Arc — `low`
 - Knock up — Area — `low`
-- Stun — Single target — `average`
+- Stun — Area — `average`
 
 ## Seth
 
@@ -8953,7 +8955,7 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, heal `average`, buffs `average`, damage `low`
+- **Signature skill (ult)**: speed `average`, heal `average`, buffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -9106,12 +9108,12 @@ Common buffers are **Twins**, **Contess**, or **Hugin**.
 
 Shadewing also requires units **dealing continuous damage** to enemies and/or units **putting debuffs** on enemies
 
+- **Velara**
+  - Enables Debuff on target via Haste debuff (area)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
 - **Gunnar**
   - Enables Continuous damage on enemies via DoT
-- **Velara**
-  - Enables Debuff on target via Haste debuff (single target)
 - **Baelran**
   - Enables Debuff on target via Max HP debuff (single target)
 - **Mehira**
@@ -9120,8 +9122,8 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 ### Units benefitting most from Shadewing
 
 - Bonnie (2.2 / 5)
-- Indris (1.6 / 5)
 - Aliceth (1.6 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Shadewing
 
@@ -9161,7 +9163,7 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -9261,7 +9263,7 @@ Shakir provides Damage taken reduction to multiple targets `average`, Haste buff
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `average`, damage `low`
+- **Signature skill (ult)**: speed `slow`, heal `average`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -9394,7 +9396,7 @@ Silven also requires units **buffing them**
 
 Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
-- Carolina (1.9 / 5)
+- Carolina (1.8 / 5)
 - Nerion (1.8 / 5)
 - Bonnie (1.6 / 5)
 
@@ -9477,9 +9479,9 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 ### Units benefitting most from Silvina
 
-- Carolina (3.4 / 5)
+- Carolina (3.2 / 5)
 - Nerion (2.8 / 5)
-- Indris (1.8 / 5)
+- Indris (1.7 / 5)
 
 ### Units that can act as a replacement for Silvina
 
@@ -9491,9 +9493,9 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 **Debuffs on enemies**
 
+- Contess (75% `Energy drain`)
 - Dunlingr (75% `Energy drain`)
 - Pandora (75% `Energy drain` `Vitality debuff`)
-- Lily May (60% `Energy drain`)
 
 **Crowd Control**
 
@@ -9532,7 +9534,7 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `average`
+- **Signature skill (ult)**: speed `fast`, damage `average`
 - **Non-ultimate**: speed `fast`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -9577,7 +9579,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 ### Units benefitting most from Sinbad
 
-- Indris (2.8 / 5)
+- Indris (2.5 / 5)
 - Bonnie (2.2 / 5)
 - Aliceth (2.1 / 5)
 
@@ -9626,7 +9628,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, heal `average`, buffs `average`
+- **Signature skill (ult)**: speed `average`, heal `average`, buffs `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
@@ -9741,7 +9743,7 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, heal `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, heal `average`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
@@ -9778,7 +9780,7 @@ _No synergy partners matched stat buffs or enablers._
 
 Solise provides ATK buff to summons `high` — conditional (frequent), Healing to all units `average`, Healing over time to single targets `high`, Shield to summons `average`, and DEF buff (Mythic+) to summons `low`.
 
-**29** units include this provider among their top 5 synergy partners. Why the match is common:
+**28** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -9931,7 +9933,7 @@ Sonja provides ATK buff to multiple targets `average` and DEF buff to multiple t
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `high`
+- **Signature skill (ult)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -9985,7 +9987,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supreme+) to single targets `average`.
 
-- Carolina (3.0 / 5)
+- Carolina (2.9 / 5)
 - Nerion (2.8 / 5)
 - Perseus (1.5 / 5)
 
@@ -10010,8 +10012,8 @@ Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supre
 **Crowd Control**
 
 - Perseus (100% `Stun` `Knock back`)
+- Scarlita (100% `Stun` `Knock back`)
 - Lorsan (72% `Stun`)
-- Zorya (72% `Stun`)
 
 ### Summary for Soren
 
@@ -10036,7 +10038,7 @@ Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supre
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `average`, debuffs `average`, damage `high`
+- **Signature skill (ult)**: speed `slow`, buffs `average`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -10087,7 +10089,7 @@ Common buffers are **Twins**, **Hugin**, or **Contess**.
 
 ### Units benefitting most from Sylphira
 
-- Carolina (3.4 / 5)
+- Carolina (3.2 / 5)
 - Nerion (2.8 / 5)
 - Bonnie (2.2 / 5)
 
@@ -10145,7 +10147,7 @@ Common buffers are **Twins**, **Hugin**, or **Contess**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, damage `low`
+- **Signature skill (ult)**: speed `fast`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -10254,7 +10256,7 @@ Talene provides Healing in an area `low`, Healing over time in an area `low`, an
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `low`
+- **Signature skill (ult)**: speed `slow`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -10357,7 +10359,7 @@ Tasi provides Haste buff (Mythic+) to single targets `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, damage `low`
 
 ##### Ultimate
@@ -10392,6 +10394,8 @@ Common buffers are **Mikola**, **Twins**, or **Smokey & Meerky**.
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Damian**
@@ -10400,13 +10404,10 @@ Common buffers are **Mikola**, **Twins**, or **Smokey & Meerky**.
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (single target, high)
-- **Himmel**
-  - ATK buff (multiple targets, low)
-  - Max HP buff (multiple targets, high)
 
 ### Units benefitting most from Temesia
 
-- Carolina (2.2 / 5)
+- Carolina (2.1 / 5)
 - Nerion (1.9 / 5)
 - Himmel (1.5 / 5)
 
@@ -10510,7 +10511,7 @@ Common buffers are **Contess**, **Twins**, or **Solise**.
   - Healing (area, low)
 - **Galahad**
   - Max HP via Shield (single target, average)
-- **Lorsan**
+- **Hewynn**
   - Healing (all units, high)
 
 ### Units benefitting most from Thador
@@ -10670,7 +10671,7 @@ Thoran provides Lifedrain buff to single targets `high` and Energy recovery (Leg
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -10705,8 +10706,6 @@ Common buffers are **Hepler**, **Mikola**, or **Contess**.
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
-- **Gerda**
-  - Healing (multiple targets, high)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
@@ -10714,6 +10713,8 @@ Common buffers are **Hepler**, **Mikola**, or **Contess**.
   - Healing (single target, high)
 - **Damian**
   - Healing (area, average)
+- **Gerda**
+  - Healing over time (area, average)
 
 ### Units benefitting most from Tilaya
 
@@ -10765,7 +10766,7 @@ Tilaya provides DEF buff (EX+10) in an area `low` and Max HP buff (EX+10) in an 
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, buffs `average`
+- **Signature skill (ult)**: speed `average`, buffs `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -10805,18 +10806,19 @@ Twins also requires units **positioned on their link**
   - Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
   - Healing (area, average)
   - ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
-- **Hewynn**
-  - Healing (all units, average)
-- **Gerda**
-  - Healing (multiple targets, high)
+- **Tasi**
+  - Haste buff (single target, high) `signature fuel`
+  - ATK SPD via Haste buff (single target, high) `signature fuel`
 
 ### Units benefitting most from Twins
 
 Twins provides ATK buff to multiple targets `average`, Energy recovery to multiple targets `low`, Haste buff to all units `average`, Healing to multiple targets `low`, Max HP buff to multiple targets `high`, Shield to single targets `average`, Vitality buff (Mythic+) to multiple targets `low`, and DEF buff (Supreme+) to single targets `average`.
 
-**98** units include this provider among their top 5 synergy partners. Why the match is common:
+**96** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -10921,17 +10923,17 @@ Common buffers are **Smokey & Meerky**, **Hepler**, or **Rowan**.
 - **Zanie**
   - Max HP via Shield (single target, high)
   - Healing (single target, high)
+- **Ludovic**
+  - Healing (area, average)
 - **Pandora**
   - Max HP buff (single target, average)
   - Healing (single target, average)
-- **Evie**
-  - Healing (single target, high)
 
 ### Units benefitting most from Ulmus
 
 Ulmus provides Energy recovery to single targets `low` and Shield to single targets `low`.
 
-- Carolina (2.3 / 5)
+- Carolina (2.2 / 5)
 - Nerion (2.1 / 5)
 - Zorya (1.6 / 5)
 
@@ -10982,7 +10984,7 @@ Ulmus provides Energy recovery to single targets `low` and Shield to single targ
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Signature skill (ult)**: speed `slow`, damage `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
@@ -11037,8 +11039,8 @@ Vala also requires enemies **to be defeated**
 
 Vala provides Haste buff (Mythic+) to single targets `high`.
 
-- Indris (2.3 / 5)
 - Nerion (2.3 / 5)
+- Indris (2.1 / 5)
 - Perseus (1.6 / 5)
 
 ### Units that can act as a replacement for Vala
@@ -11066,9 +11068,9 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 **Crowd Control**
 
+- Callan (100% `Stun`)
 - Damian (100% `Stun`)
 - Faramor (100% `Stun`)
-- Gwyneth (100% `Stun`)
 
 ### Summary for Vala
 
@@ -11104,7 +11106,7 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `low`
+- **Signature skill (ult)**: speed `slow`, buffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -11153,9 +11155,9 @@ Common buffers are **Lyca**, **Mikola**, or **Twins**.
 
 ### Units benefitting most from Valen
 
-- Carolina (1.9 / 5)
+- Carolina (1.8 / 5)
 - Nerion (1.7 / 5)
-- Indris (1.5 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Valen
 
@@ -11208,7 +11210,7 @@ Common buffers are **Lyca**, **Mikola**, or **Twins**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, heal `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, damage `high`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -11258,7 +11260,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Hugin**.
 
 Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10) to single targets `average`.
 
-- Nerion (1.7 / 5)
+- Nerion (2.2 / 5)
 - Silven (1.6 / 5)
 - Perseus (1.6 / 5)
 
@@ -11278,9 +11280,9 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 **Crowd Control**
 
-- Callan (100% `Stun` `Knock down`)
-- Bonnie (86% `Stun`)
-- Frieren (80% `Knock down` `Stun`)
+- Callan (100% `Knock down` `Stun`)
+- Frieren (72% `Knock down` `Stun`)
+- Baelran (64% `Knock down`)
 
 ### Summary for Valka
 
@@ -11292,7 +11294,7 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 #### Crowd Control provided by Valka
 
 - Unaffected — Self — On skill
-- Knock down — Single target — `low`
+- Knock down — Area — `low`
 - Stun — Single target — `low`
 
 ## Velara
@@ -11307,7 +11309,7 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `average`, debuffs `average`
+- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, heal `average`, debuffs `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -11356,22 +11358,22 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 Velara provides DEF buff to single targets `average`, Haste buff to single targets `low`, and Healing in an area `low`.
 
-**12** units include this provider among their top 5 synergy partners. Why the match is common:
+**15** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **10** strongest pairings: 
 
+- Aliceth (3.1 / 5)
+- Indris (2.9 / 5)
 - Niru (2.7 / 5)
+- Shadewing (2.7 / 5)
 - Silven (2.2 / 5)
 - Reinier (2.1 / 5)
 - Saida (1.9 / 5)
 - Contess (1.8 / 5)
 - Baelran (1.7 / 5)
 - Gwyneth (1.6 / 5)
-- Aurora (1.3 / 5)
-- Frieren (1.3 / 5)
-- Galahad (1.3 / 5)
 
 ### Units that can act as a replacement for Velara
 
@@ -11410,7 +11412,7 @@ These are the **10** strongest pairings:
 
 #### Debuffs provided by Velara
 
-- Haste — Single target — `average`
+- Haste — Area — `average`
 - Magic DEF — Single target — `average`
 - Phys DEF — Single target — `low`
 
@@ -11467,6 +11469,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
   - Healing (area, average)
   - ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`
+- **Hewynn**
+  - Healing (all units, high)
 - **Lorsan**
   - Healing (all units, high)
 - **Tasi**
@@ -11475,14 +11479,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 - **Vala**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Hewynn**
-  - Healing (all units, average)
 
 ### Units benefitting most from Viperian
 
 - Shadewing (2.7 / 5)
 - Bonnie (2.3 / 5)
-- Indris (1.5 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Viperian
 
@@ -11530,7 +11532,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, damage `low`
+- **Signature skill (ult)**: speed `average`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
@@ -11597,9 +11599,9 @@ Walker provides Crit buff to single targets `low`.
 
 **Crowd Control**
 
+- Callan (100% `Stun`)
 - Damian (100% `Stun`)
 - Gwyneth (100% `Stun`)
-- Hepler (100% `Stun`)
 
 ### Summary for Walker
 
@@ -11720,7 +11722,7 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`
+- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
@@ -11830,7 +11832,7 @@ Zanie provides ATK buff to single targets `low`, Healing to single targets `high
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `average`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -11885,7 +11887,7 @@ Zorya also requires allies **casting ultimates**
 
 ### Units benefitting most from Zorya
 
-- Carolina (3.4 / 5)
+- Carolina (3.2 / 5)
 - Nerion (2.8 / 5)
 - Bonnie (1.9 / 5)
 
@@ -11904,6 +11906,7 @@ Zorya also requires allies **casting ultimates**
 
 **Crowd Control**
 
+- Callan (100% `Stun` `Knock down`)
 - Perseus (66% `Stun`)
 
 ### Summary for Zorya

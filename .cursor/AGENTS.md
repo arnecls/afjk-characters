@@ -197,7 +197,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   `behavior.placement_constraints`. Overrides in
   `data/placement_constraint_overrides.json`.
 - **Skill overview** — `#### Skill overview` subsection with rows for
-  **Signature skill** (labeled **Signature skill (ultimate)** when the
+  **Signature skill** (labeled **Signature skill (ult)** when the
   ultimate row is omitted), **Ultimate** (only when signature is not the
   ultimate), and **Non-ultimate**. Each row lists only non-`none`
   indicators among `speed`, `first cast speed`, `heal`, `buffs`, `debuffs`,
