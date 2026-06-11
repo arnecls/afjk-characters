@@ -38,6 +38,13 @@ def _hero_by_short_name(name: str):
     raise KeyError(name)
 
 
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+    is_hp_recovery_label,
+)
+
+
 def _hero_with_magnitudes(name: str):
     text = rs.HEROES_MD.read_text(encoding="utf-8")
     blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
@@ -154,7 +161,7 @@ class SummaryParsingTests(unittest.TestCase):
         ally_heal = [
             e
             for e in _effects(hero, "buff")
-            if e.label in ("Healing", "Healing over time")
+            if is_hp_recovery_label(e.label)
             and e.targeting != "Self"
         ]
         self.assertEqual(ally_heal, [])
@@ -166,13 +173,13 @@ class SummaryParsingTests(unittest.TestCase):
         )
         self.assertTrue(rs._healing_targets_self(clause))
         self.assertEqual(
-            rs._resolve_buff_targeting(clause, "Healing"), "Self"
+            rs._resolve_buff_targeting(clause, DIRECT_HEALING_LABEL), "Self"
         )
         hero = _hero_by_short_name("Antandra")
         ally_heal = [
             e
             for e in _effects(hero, "buff")
-            if e.label in ("Healing", "Healing over time")
+            if is_hp_recovery_label(e.label)
             and e.targeting != "Self"
         ]
         self.assertEqual(ally_heal, [])
@@ -199,22 +206,22 @@ class SummaryParsingTests(unittest.TestCase):
 
     def test_solise_ally_healing_targeting(self):
         hero = _hero_by_short_name("Solise")
-        healing = next(e for e in _effects(hero, "buff", "Healing"))
+        healing = next(e for e in _effects(hero, "buff", DIRECT_HEALING_LABEL))
         self.assertIn(
             healing.targeting, ("All units", "Multiple targets", "Single target")
         )
         skill2 = hero.skill_slices.get("Skill2")
         self.assertIsNotNone(skill2)
-        favor = next(e for e in skill2.effects if e.label == "Healing")
+        favor = next(e for e in skill2.effects if e.label == DIRECT_HEALING_LABEL)
         self.assertEqual(favor.targeting, "Multiple targets")
         skill1 = hero.skill_slices.get("Skill1")
         self.assertIsNotNone(skill1)
-        bulbs = [e for e in skill1.effects if e.label == "Healing over time"]
+        bulbs = [e for e in skill1.effects if e.label == HEALING_OVER_TIME_LABEL]
         self.assertTrue(bulbs)
 
     def test_healing_level_upgrade_keeps_ally_targeting(self):
         hero = _hero_by_short_name("Solise")
-        healing = next(e for e in _effects(hero, "buff", "Healing"))
+        healing = next(e for e in _effects(hero, "buff", DIRECT_HEALING_LABEL))
         self.assertNotEqual(healing.targeting, "Self")
         self.assertGreaterEqual(healing.numeric or 0, 220.0)
 
@@ -326,12 +333,12 @@ class SummaryParsingTests(unittest.TestCase):
         fast_heal = max(
             rs._MAG_ORDER.index(e.magnitude)
             for e in _effects(fast, "buff")
-            if e.label == "Healing" and e.targeting != "Self"
+            if e.label == DIRECT_HEALING_LABEL and e.targeting != "Self"
         )
         slow_heal = max(
             rs._MAG_ORDER.index(e.magnitude)
             for e in _effects(slow, "buff")
-            if e.label == "Healing" and e.targeting == "All units"
+            if e.label == HEALING_OVER_TIME_LABEL and e.targeting == "All units"
         )
         self.assertGreaterEqual(fast_heal, slow_heal)
 

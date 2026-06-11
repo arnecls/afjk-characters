@@ -2799,22 +2799,6 @@
               ],
               "duration": 2,
               "tick": 1
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "name": "Healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 2.0
-                }
-              ]
             }
           ],
           "initial_cooldown": 9999.0
@@ -6994,14 +6978,16 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 2,
-              "type": "heal",
-              "name": "Healing",
+              "type": "dot",
+              "name": "Healing over time",
               "value": [
                 {
                   "type": "percentage",
                   "value": 0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "tier": "mythic+",
@@ -7063,6 +7049,7 @@
       "benefit_stats": [
         "atk",
         "haste",
+        "healing",
         "energy"
       ],
       "behavior": {
@@ -9144,14 +9131,16 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "heal",
-              "name": "Healing",
+              "type": "dot",
+              "name": "Healing over time",
               "value": [
                 {
                   "type": "percentage",
                   "value": 0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "cooldown": 11.0
@@ -9318,7 +9307,8 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
-        "atk_spd"
+        "atk_spd",
+        "healing"
       ],
       "behavior": {
         "movement": "mostly stationary",
@@ -12231,14 +12221,16 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
-              "type": "heal",
-              "name": "Healing",
+              "type": "dot",
+              "name": "Healing over time",
               "value": [
                 {
                   "type": "percentage",
                   "value": 160.0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "cooldown": 12.0
@@ -12345,7 +12337,6 @@
         "atk",
         "haste",
         "max_hp",
-        "healing",
         "physical_def",
         "magic_def"
       ],
@@ -12423,14 +12414,16 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "heal",
-              "name": "Healing",
+              "type": "dot",
+              "name": "Healing over time",
               "value": [
                 {
                   "type": "percentage",
                   "value": 115.0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "initial_cooldown": 1.25,
@@ -12532,7 +12525,8 @@
       "damage_entries": [],
       "damage_magnitudes": {},
       "benefit_stats": [
-        "atk"
+        "atk",
+        "healing"
       ],
       "behavior": {
         "movement": "stationary",
@@ -15127,22 +15121,6 @@
               ],
               "duration": 2,
               "tick": 1
-            },
-            {
-              "tier": "ex+10",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "name": "Healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
             }
           ],
           "tier": "mythic+",
@@ -17228,22 +17206,6 @@
               ],
               "duration": 2,
               "tick": 1
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "name": "Healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 120.0
-                }
-              ]
             }
           ],
           "cooldown": 12.0,
@@ -18274,6 +18236,24 @@
           "effects": [
             {
               "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
+            },
+            {
+              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "ally",
@@ -18420,6 +18400,24 @@
                   "value": 120.0
                 }
               ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "tier": "mythic+",
@@ -23369,22 +23367,6 @@
               "tier": "base",
               "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "name": "Healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
               "target": "enemy",
               "area": "single",
               "target_count": 1,
@@ -23590,7 +23572,7 @@
             "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "high",
-            "heal": "average",
+            "heal": "none",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
@@ -25223,6 +25205,7 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "haste",
+        "healing",
         "energy"
       ],
       "behavior": {
@@ -30148,23 +30131,6 @@
               "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
-              "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
-              "type": "heal",
-              "name": "Healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": true,
               "target": "enemy",
               "area": "radius",
               "target_count": -1,
@@ -30224,22 +30190,6 @@
           "category": "skill4",
           "description": "Talene grants Pyre of Renewal to the frontmost allied hero other than herself from the beginning of the battle until the end. Pyre of Renewal carrier will deal damage equal to 50% of their ATK per second to adjacent enemies and restore HP equal to 25% of their damage dealt. Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks. Increases Pyre of Renewal carrier's damage dealt to adjacent enemies to 55% of their ATK, and HP recovery to 30% of their damage dealt. Increases Pyre of Renewal carrier's damage dealt to adjacent enemies to 60% of their ATK, and HP recovery to 35% of their damage dealt. When Pyre of Renewal reaches the maximum number of stacks and its carrier is defeated, all stacks will be consumed to transform the carrier into a ball of flame. The carrier will then resurrect in 3s with 50% of their max HP. This effect can only be triggered once in each battle.",
           "effects": [
-            {
-              "tier": "mythic+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "name": "Healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
-            },
             {
               "tier": "ex+5",
               "targeting_label": "Area",
@@ -30884,22 +30834,6 @@
               "tick": 1
             },
             {
-              "tier": "ex+5",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "name": "Healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
-            },
-            {
               "type": "immunity",
               "tier": "mythic+",
               "immunity_type": "unaffected",
@@ -31254,22 +31188,6 @@
               ],
               "duration": 2,
               "tick": 1
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "name": "Healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
             }
           ],
           "tier": "supreme+"

@@ -15,6 +15,16 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+    HEALING_STAT_BUFF_LABEL,
+    HP_RECOVERY_LABELS,
+    LEGACY_DIRECT_HEALING_LABEL,
+    is_hp_recovery_label,
+    normalize_healing_label,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 HEROES_MD = ROOT / "Heroes.md"
 HEROES2_MD = ROOT / "heroes2.md"
@@ -293,11 +303,11 @@ def _resolve_buff_targeting(
     snippet = scope if scope is not None else text
     t = snippet.lower()
     full = text.lower()
-    if label in ("Healing", "Healing over time", "Energy recovery") and re.search(
+    if label in (*HP_RECOVERY_LABELS, "Energy recovery") and re.search(
         r"\beach ally along (?:the |its )?path\b", full
     ):
         return "Multiple targets"
-    if label in ("Healing", "Healing over time") and _healing_targets_self(t):
+    if is_hp_recovery_label(label) and _healing_targets_self(t):
         return "Self"
     if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
         return "Self"
@@ -377,7 +387,7 @@ def _text_has_enemy_direct_hp_loss(text: str) -> bool:
 
 
 _RESTORE_BUFF_LABELS = frozenset(
-    {"Healing", "Healing over time", "Shield", "Energy recovery"}
+    {*HP_RECOVERY_LABELS, "Shield", "Energy recovery"}
 )
 
 
@@ -787,8 +797,8 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
             return True
 
-    if label in ("Shield", "Healing", "Healing over time"):
-        if label in ("Healing", "Healing over time") and _healing_targets_self(t):
+    if label in ("Shield", *HP_RECOVERY_LABELS):
+        if is_hp_recovery_label(label) and _healing_targets_self(t):
             return True
         if re.search(r"\bwhile shielded\b", t) and not re.search(
             r"\b(?:allies?|ally)\b", t
@@ -1026,7 +1036,6 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     ):
         return "Multiple targets"
     if category == "buff" and label in (
-        "Healing",
         "Healing over time",
         "Energy recovery",
         "Shield",
@@ -1111,7 +1120,7 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         r"center of the battlefield|across the battlefield|whole battlefield",
         t,
     ):
-        if category == "buff" and label in ("Healing", "Healing over time"):
+        if category == "buff" and is_hp_recovery_label(label):
             if re.search(r"\ballies?\b", t):
                 return "All units"
         if re.search(r"\b(?:enemies|enemy)\b", t):
@@ -1186,7 +1195,6 @@ _STAT_LABELS_NO_GENERIC = frozenset(
         "Haste buff",
         "Crit buff",
         "Damage taken reduction",
-        "Healing",
         "Healing over time",
     }
 )
@@ -1326,7 +1334,7 @@ def extract_number(text: str, label: str = "") -> float | None:
             nums = re.findall(r"(\d+(?:\.\d+)?)\s*%", before)
             if nums:
                 return float(nums[-1])
-    if label in ("Healing", "Healing over time"):
+    if is_hp_recovery_label(label):
         amounts = _healing_amounts(text)
         if amounts:
             return max(amounts)
@@ -1656,6 +1664,28 @@ def _buff_condition(category: str, text: str) -> str | None:
     return classify_buff_condition(text) if category == "buff" else None
 
 
+_HP_RECOVERY_EFFECT_LABELS = HP_RECOVERY_LABELS
+
+
+def _scope_is_hot_healing(scope: str) -> bool:
+    """True when a heal clause describes per-second or interval restore."""
+    return bool(
+        re.search(
+            r"per second|per 0\.\d|every second|every \d+\.?\d* s(?:ec)?",
+            scope.lower(),
+        )
+    )
+
+
+def _effect_dedupe_key(
+    category: str, label: str, source_section: str | None
+) -> tuple:
+    """HP recovery effects stay separate per skill section."""
+    if category == "buff" and label in _HP_RECOVERY_EFFECT_LABELS:
+        return (category, label, source_section or "")
+    return (category, label)
+
+
 def add_effect(
     effects: list[Effect],
     category: str,
@@ -1666,8 +1696,12 @@ def add_effect(
     scope: str | None = None,
     source_section: str | None = None,
 ):
-    key = (category, label)
-    existing = [e for e in effects if (e.category, e.label) == key]
+    key = _effect_dedupe_key(category, label, source_section)
+    existing = [
+        e
+        for e in effects
+        if _effect_dedupe_key(e.category, e.label, e.source_section) == key
+    ]
     cond_text = scope if scope is not None else text
     n = (
         extract_cc_duration(text, label)
@@ -1700,8 +1734,8 @@ def add_effect(
             and cur.targeting != "Self"
             and label
             not in (
-                "Healing",
-                "Healing over time",
+                *HP_RECOVERY_LABELS,
+                LEGACY_DIRECT_HEALING_LABEL,
                 "Energy recovery",
             )
         )
@@ -1854,52 +1888,56 @@ BUFF_RULES = [
         "Shield",
     ),
     # Healing over time (HoT): HP restore with "per second", "per 0.Xs",
-    # "every second" etc.  Must come BEFORE the instant-Healing rules.
+    # "every second" etc.  Must come BEFORE direct-healing rules.
     (
         r"(?:provide|provides|providing).{0,50}healing to (?:their )?host every",
-        "Healing over time",
+        HEALING_OVER_TIME_LABEL,
     ),
     (
         r"(?:recover|restore)(?:s|ing)? .{0,60}hp.{0,30}"
         r"(?:per second|per 0\.\d|every second|every \d+\.?\d* s)",
-        "Healing over time",
+        HEALING_OVER_TIME_LABEL,
     ),
     (
         r"(?:recover|restore)(?:s|ing)? \d+%.{0,50}"
         r"(?:per second|per 0\.\d|every second|every \d+\.?\d* s)",
-        "Healing over time",
+        HEALING_OVER_TIME_LABEL,
     ),
     # HoT: gradual recovery "over the next Xs" / "over Xs" phrasing.
     (
         r"(?:recover|restore)(?:s|ing)? .{0,80}hp.{0,60}over the next \d+\.?\d* s",
-        "Healing over time",
+        HEALING_OVER_TIME_LABEL,
     ),
     (
         r"(?:recover|restore)(?:s|ing)? \d+%.{0,80}over the next \d+\.?\d* s",
-        "Healing over time",
+        HEALING_OVER_TIME_LABEL,
     ),
-    # Instant Healing: exclude texts where "per second" or "over the next Xs"
+    (
+        r"heal(?:s|ing)? .{0,80}(?:per second|every \d+\.?\d* s(?:ec)?)",
+        HEALING_OVER_TIME_LABEL,
+    ),
+    # Direct healing: exclude texts where "per second" or "over the next Xs"
     # follows within 60 chars of the HP or percentage reference (those are HoT).
     (
         r"(?:recover|restore)(?:s|ing)? \d+%"
         r"(?!.{0,60}(?:per second|per 0\.\d|every second|every \d|over the next \d))",
-        "Healing",
+        DIRECT_HEALING_LABEL,
     ),
     (
         r"(?:recover|restore)(?:s|ing)? (?!(?:his|her|their|its) )"
         r".{0,30}hp"
         r"(?!.{0,60}(?:per second|per 0\.\d|every second|every \d))",
-        "Healing",
+        DIRECT_HEALING_LABEL,
     ),
-    (r"heals? .{0,30} for \d+%", "Healing"),
-    (r"heal(?:s|ing)? .{0,40}(?:for \d+%|\bhp\b|by \d+%)", "Healing"),
-    (r"heal(?:s|ing)? all allies", "Healing"),
-    (r"restor(?:e|es|ing) \d+% .{0,20}hp", "Healing"),
-    (r"increas(?:e|es|ing) healing to \d+%", "Healing"),
+    (r"heals? .{0,30} for \d+%", DIRECT_HEALING_LABEL),
+    (r"heal(?:s|ing)? .{0,40}(?:for \d+%|\bhp\b|by \d+%)", DIRECT_HEALING_LABEL),
+    (r"heal(?:s|ing)? all allies", DIRECT_HEALING_LABEL),
+    (r"restor(?:e|es|ing) \d+% .{0,20}hp", DIRECT_HEALING_LABEL),
+    (r"increas(?:e|es|ing) healing to \d+%", DIRECT_HEALING_LABEL),
     # Healing stat buff: "Increases Healing by X" — the Healing stat itself
     (
         r"increas(?:e|es|ing) (?:her |his |their )?healing\b (?:by|during)\b",
-        "Healing stat buff",
+        HEALING_STAT_BUFF_LABEL,
     ),
     (r"life drain", "Lifedrain buff"),
     (r"reduc(?:e|es|ing) (?:her |his |their |the .{0,20})?damage taken", "Damage taken reduction"),
@@ -1921,8 +1959,8 @@ BUFF_RULES = [
     (r"(?:recover(?:s|ing|ed)?|restor(?:e|es|ing|ed)?) \d+(?:\s*\+\s*\d+)? energy", "Energy recovery"),
     (r"increases the energy recovered .{0,80}to \d+(?:\s*\+\s*\d+)?", "Energy recovery"),
     (r"increases energy recovery to \d+(?:\s*\+\s*\d+)?", "Energy recovery"),
-    (r"increases the hp recovered .{0,120}to \d+(?:\.\d+)?% \(atk-based\) \+ \d+(?:\.\d+)?%", "Healing"),
-    (r"hp recovered .{0,120}to \d+(?:\.\d+)?% \(atk-based\) \+ \d+(?:\.\d+)?%", "Healing"),
+    (r"increases the hp recovered .{0,120}to \d+(?:\.\d+)?% \(atk-based\) \+ \d+(?:\.\d+)?%", DIRECT_HEALING_LABEL),
+    (r"hp recovered .{0,120}to \d+(?:\.\d+)?% \(atk-based\) \+ \d+(?:\.\d+)?%", DIRECT_HEALING_LABEL),
     (r"normal attack range is increased", "Attack range buff"),
     (r"prevents their defeat", "Fatal blow immunity"),
     # Crit buff
@@ -3700,6 +3738,8 @@ def analyze_text(
                 continue
             if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(scope):
                 continue
+            if label == DIRECT_HEALING_LABEL and _scope_is_hot_healing(scope):
+                continue
             add_effect(
                 effects,
                 "buff",
@@ -3888,7 +3928,7 @@ def _apply_scalar_upgrades(
         if amt is not None:
             bump("damage", dmg_label, amt)
 
-    for heal_label in ("Healing", "Healing over time"):
+    for heal_label in (*HP_RECOVERY_LABELS, LEGACY_DIRECT_HEALING_LABEL):
         amt = extract_number(text, heal_label)
         if amt is not None:
             bump("buff", heal_label, amt)
@@ -3921,9 +3961,10 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     "Crit buff": ("Crit",),
     "Execution buff": ("Execution",),
     "Resilience buff": ("Resilience",),
-    "Healing stat buff": ("Healing",),
-    "Healing": ("Healing",),
-    "Healing over time": ("Healing",),
+    DIRECT_HEALING_LABEL: ("Healing",),
+    HEALING_OVER_TIME_LABEL: ("Healing",),
+    LEGACY_DIRECT_HEALING_LABEL: ("Healing",),
+    HEALING_STAT_BUFF_LABEL: ("Healing",),
     "Energy recovery": ("Energy",),
     "DEF Penetration buff": ("DEF Penetration",),
     "Lifedrain buff": ("Life Drain",),
@@ -4159,7 +4200,7 @@ def analyze_hero(hero: Hero):
         hero.damage_entries.append((dt, ", ".join(sorted(tgts))))
     _accumulate_true_damage_scores(hero, primary_dmg)
     # Healing stat matters only when the hero heals or scales their own Healing.
-    healing_labels = {"Healing", "Healing over time", "Healing stat buff"}
+    healing_labels = {*HP_RECOVERY_LABELS, HEALING_STAT_BUFF_LABEL, LEGACY_DIRECT_HEALING_LABEL}
     if (
         any(
             e.label in healing_labels
@@ -4768,7 +4809,7 @@ SECTION_TO_SPEED_KEY: dict[str, str] = {
     "Skill2": "skill2",
     "Ex. Skill": "ex",
 }
-_SKILL_HEAL_LABELS = frozenset({"Healing", "Healing over time"})
+_SKILL_HEAL_LABELS = HP_RECOVERY_LABELS | {LEGACY_DIRECT_HEALING_LABEL}
 _MAG_SCORE = {"none": 0, "low": 1, "average": 2, "high": 3}
 _SPEED_SCORE = {"none": 0, "slow": 1, "average": 2, "fast": 3}
 _SCORE_TO_MAG = {0: "none", 1: "low", 2: "average", 3: "high"}
@@ -6428,6 +6469,16 @@ def _merge_damage_types(*tier_damage: dict[str, str]) -> dict[str, str]:
     return merged
 
 
+def _skill_card_tag_label(label: str) -> str:
+    """Display label for a skill-card chip (HoT shorthand on cards)."""
+    norm = normalize_healing_label(label.strip())
+    if norm == HEALING_OVER_TIME_LABEL:
+        return "HoT"
+    if norm == DIRECT_HEALING_LABEL:
+        return DIRECT_HEALING_LABEL
+    return label.strip()
+
+
 def _canonical_skill_card_chip_key(tag: str) -> str:
     text = re.sub(
         r"\s*\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)",
@@ -6445,8 +6496,11 @@ def _canonical_skill_card_chip_key(tag: str) -> str:
     for stat in _SKILL_CARD_STAT_KEYS:
         if low == stat.lower() or low.startswith(stat.lower() + " "):
             return stat.lower()
-    if low in _SKILL_HEAL_LABELS:
-        return "healing"
+    norm_label = normalize_healing_label(text)
+    if low == "hot" or norm_label == HEALING_OVER_TIME_LABEL:
+        return "hot"
+    if norm_label == DIRECT_HEALING_LABEL:
+        return "direct healing"
     return re.sub(r"\s*\([^)]*\)", "", low).strip()
 
 
@@ -6522,7 +6576,7 @@ def format_skill_card_tags(
         for e in sorted(
             group, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)
         ):
-            add(e.label)
+            add(_skill_card_tag_label(e.label))
     for imm in sorted(
         sl.cc_immunities,
         key=lambda x: (TIER_ORDER.get(x.tier, 9), x.immunity_type),

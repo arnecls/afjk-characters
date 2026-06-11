@@ -13,6 +13,12 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+    normalize_healing_label,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = Path(__file__).resolve().parent
 DEFAULT_INPUT = ROOT / "heroes-overview.md"
@@ -237,10 +243,11 @@ def apply_buff_effect_to_row(row: HeroRow, effect) -> None:
         trailing = f"{effect.magnitude} — conditional ({effect.conditional})"
     value = format_cell_value(effect.targeting, trailing)
     buff_label = base_label(label)
-    if buff_label == "Healing over time":
+    norm = normalize_healing_label(buff_label)
+    if norm == HEALING_OVER_TIME_LABEL:
         row.flags["HoT"] = True
         return
-    if buff_label == "Healing":
+    if norm == DIRECT_HEALING_LABEL:
         add_cell(row, "Healing", value)
     elif buff_label == "Shield":
         add_cell(row, "Shields", value)
@@ -477,10 +484,11 @@ def parse_hero_block(
                     add_cell(row, column, value)
             elif kind == "buffs":
                 buff_label = base_label(label)
-                if buff_label == "Healing over time":
+                norm = normalize_healing_label(buff_label)
+                if norm == HEALING_OVER_TIME_LABEL:
                     row.flags["HoT"] = True
                     continue
-                if buff_label == "Healing":
+                if norm == DIRECT_HEALING_LABEL:
                     add_cell(row, "Healing", value)
                 elif buff_label == "Shield":
                     add_cell(row, "Shields", value)

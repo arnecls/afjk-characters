@@ -10,6 +10,16 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+    HP_RECOVERY_LABELS,
+    healing_profile_key,
+    healing_profile_label,
+    is_hp_recovery_label,
+    normalize_healing_label,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 HEROES_MD = ROOT / "Heroes.md"
 OVERVIEW_MD = ROOT / "heroes-overview.md"
@@ -32,7 +42,11 @@ STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "Crit DMG Boost": ["Crit DMG boost"],
     "Execution": ["Execution buff"],
     "Resilience": ["Resilience buff"],
-    "Healing": ["Healing", "Healing over time", "Healing stat buff"],
+    "Healing": [
+        DIRECT_HEALING_LABEL,
+        HEALING_OVER_TIME_LABEL,
+        "Healing stat buff",
+    ],
     "Energy": ["Energy recovery"],
     "DEF Penetration": ["DEF Penetration buff"],
     "Life Drain": ["Lifedrain buff"],
@@ -122,7 +136,7 @@ DEFINING_TIER_SCORE_MULT = {
 }
 
 # Replacement scoring: per-category similarity between heroes as substitutes.
-REPLACEMENT_MIN_SCORE = 0.6
+REPLACEMENT_MIN_SCORE = 0.5
 REPLACEMENT_MAX = 3
 REPLACEMENT_SAME_FACTION_MULT = 1.20
 REPLACEMENT_SAME_ROLE_CATEGORY_MULT = 1.20
@@ -134,6 +148,7 @@ PRYDWEN_TIER_MODES = (
 )
 TIER_RANK_ORDER = ("C", "B", "A", "A+", "S", "S+")
 REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
+REPLACEMENT_HEALING_THROUGHPUT_BLEND = 0.65
 REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST = 1.5
 REPLACEMENT_SIGNATURE_CC_BOOST = 1.5
 MIN_SUPPORT_SCORE = 11.0
@@ -147,9 +162,6 @@ REPLACEMENT_CATEGORIES = (
     "debuff",
     "cc",
 )
-
-# HP recovery only; Healing stat buff is a buff, not ally HP restore.
-HP_RECOVERY_LABELS = frozenset({"Healing", "Healing over time"})
 
 _DEFAULT_LIEUTENANT_ENERGY = 200.0
 _DEFAULT_ENERGY_POTION = 200.0
@@ -429,7 +441,7 @@ def _healing_effect_is_ally_provider(effect: _rs.Effect) -> bool:
     """True when a parsed effect restores ally HP (not Healing stat buffs)."""
     if effect.category != "buff":
         return False
-    if effect.label not in HP_RECOVERY_LABELS:
+    if not is_hp_recovery_label(effect.label):
         return False
     if effect.targeting not in ALLY_TARGETINGS:
         return False
@@ -1406,7 +1418,7 @@ def _hero_provider_profile(hero: _rs.Hero) -> dict[str, float]:
     for effect in hero.effects:
         if effect.category != "buff":
             continue
-        if effect.label in HP_RECOVERY_LABELS:
+        if is_hp_recovery_label(effect.label):
             continue
         if effect.targeting not in ALLY_TARGETINGS:
             continue
@@ -1419,17 +1431,99 @@ def _hero_provider_profile(hero: _rs.Hero) -> dict[str, float]:
     return profile
 
 
-def _hero_healing_profile(hero: _rs.Hero) -> dict[str, float]:
-    """Weighted ally-healing profile for replacement scoring."""
+def _healing_candidate_by_label(profile: dict[str, float]) -> dict[str, float]:
+    """Per heal-type weight summed across all sections."""
+    by_label: dict[str, float] = {}
+    for key, weight in profile.items():
+        label = healing_profile_label(key)
+        by_label[label] = by_label.get(label, 0.0) + weight
+    return by_label
+
+
+def _healing_profile_total(profile: dict[str, float]) -> float:
+    return sum(weight for weight in profile.values() if weight > 0)
+
+
+def _healing_throughput_coverage(
+    source: dict[str, float],
+    candidate: dict[str, float],
+) -> float:
+    """How much of the source hero's total healing throughput is met."""
+    src_total = _healing_profile_total(source)
+    cand_total = _healing_profile_total(candidate)
+    if src_total <= 0 or cand_total <= 0:
+        return 0.0
+    return min(cand_total / src_total, 1.0)
+
+
+def _healing_type_coverage(
+    source: dict[str, float],
+    candidate: dict[str, float],
+) -> float:
+    """Coverage of direct vs HoT mix after aggregating by heal type."""
+    return _replacement_coverage(
+        _healing_candidate_by_label(source),
+        _healing_candidate_by_label(candidate),
+    )
+
+
+# Back-compat for tests and callers that used private helpers.
+_healing_profile_label = healing_profile_label
+
+
+def _normalize_healing_profile(profile: dict[str, float]) -> dict[str, float]:
+    """Scale to each hero's strongest heal mode (display / shape helpers)."""
+    if not profile:
+        return profile
+    peak = max(profile.values())
+    if peak <= 0:
+        return profile
+    return {key: weight / peak for key, weight in profile.items()}
+
+
+def _healing_effect_weight(
+    effect: _rs.Effect,
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None,
+) -> float:
+    """Throughput-based ally-healing weight for replacement scoring."""
+    targeting = TARGETING_WEIGHT.get(effect.targeting, 1.0)
+    skills = (skills_by_title or {}).get(hero.title, [])
+    if skills:
+        throughput = _rs._effect_throughput_score(effect, hero, skills)
+        if throughput > 0:
+            return throughput * targeting
+    return targeting * MAG_WEIGHT.get(effect.magnitude, 1.0)
+
+
+def _hero_healing_profile(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> dict[str, float]:
+    """Weighted ally-healing profile for replacement scoring (raw throughput)."""
     profile: dict[str, float] = {}
     for effect in hero.effects:
         if not _healing_effect_is_ally_provider(effect):
             continue
-        weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
-            effect.magnitude, 1.0
+        key = healing_profile_key(
+            normalize_healing_label(effect.label), effect.source_section
         )
-        profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
+        weight = _healing_effect_weight(effect, hero, skills_by_title)
+        profile[key] = max(profile.get(key, 0.0), weight)
     return profile
+
+
+def _healing_replacement_coverage(
+    source: dict[str, float],
+    candidate: dict[str, float],
+) -> float:
+    """Healing replacement: total throughput first, heal-type mix second."""
+    if not source:
+        return 0.0
+    throughput = _healing_throughput_coverage(source, candidate)
+    type_cov = _healing_type_coverage(source, candidate)
+    blend = REPLACEMENT_HEALING_THROUGHPUT_BLEND
+    return blend * throughput + (1.0 - blend) * type_cov
 
 
 def _flat_ally_energy_from_text(text: str) -> float | None:
@@ -1764,7 +1858,21 @@ def _cc_overlap_tags(
 def _healing_overlap_tags(
     healing_a: dict[str, float], healing_b: dict[str, float], limit: int = 5
 ) -> list[str]:
-    return _profile_overlap_tags(healing_a, healing_b, limit)
+    ranked: list[tuple[float, str]] = []
+    throughput = _healing_throughput_coverage(healing_a, healing_b)
+    if throughput > 0:
+        ranked.append((throughput, "Healing"))
+    src_by_label = _healing_candidate_by_label(healing_a)
+    cand_by_label = _healing_candidate_by_label(healing_b)
+    for label, src in src_by_label.items():
+        if src <= 0:
+            continue
+        cand = cand_by_label.get(label, 0.0)
+        if cand <= 0:
+            continue
+        weight = min(cand / src, 1.0) * src
+        ranked.append((weight, label))
+    return _dedupe_ranked_tags(ranked, limit)
 
 
 _prydwen_tiers_cache: dict[str, dict[str, str]] | None = None
@@ -1827,6 +1935,16 @@ def _prydwen_tier_preference(
     return 1 if delta >= 0 else 0
 
 
+def _replacement_tier_rank_key(
+    source_tiers: dict[str, str] | None,
+    candidate_tiers: dict[str, str] | None,
+) -> tuple[int, float]:
+    """Sort key for replacement ranking: meets bar, then how much better."""
+    delta = _prydwen_tier_avg_delta(source_tiers, candidate_tiers)
+    pref = _prydwen_tier_preference(source_tiers, candidate_tiers)
+    return (pref, delta if delta is not None else float("-inf"))
+
+
 def _replacement_rank_score(
     raw: float,
     candidate_title: str,
@@ -1865,9 +1983,7 @@ def _rank_replacement_category(
     source_tiers = tiers.get(source_title or "", {})
     ranked_items = [
         (
-            _prydwen_tier_preference(source_tiers, tiers.get(title, {}))
-            if source_title
-            else 0,
+            _replacement_tier_rank_key(source_tiers, tiers.get(title, {})),
             _replacement_rank_score(
                 score,
                 title,
@@ -1881,11 +1997,18 @@ def _rank_replacement_category(
         )
         for score, title, matches in scores
     ]
-    ranked_items.sort(key=lambda item: (-item[0], -item[1], short_name(item[2])))
+    ranked_items.sort(
+        key=lambda item: (
+            -item[0][0],
+            -item[0][1],
+            -item[1],
+            short_name(item[2]),
+        )
+    )
     ranked: list[dict] = []
-    for _tier_pref, effective, title, matches in ranked_items:
+    for _tier_key, effective, title, matches in ranked_items:
         if effective < REPLACEMENT_MIN_SCORE:
-            break
+            continue
         ranked.append(
             {
                 "name": short_name(title),
@@ -1903,6 +2026,7 @@ def compute_replacement_scores(
     behavior_by_title: dict[str, _rs.HeroBehavior],
     faction_by_title: dict[str, str] | None = None,
     role_category_by_title: dict[str, str] | None = None,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
 ) -> dict[str, dict[str, list[dict]]]:
     """Per-category replacement lists for each hero (0–1 similarity per category)."""
     factions = faction_by_title or {}
@@ -1921,7 +2045,7 @@ def compute_replacement_scores(
 
     for hero in heroes:
         profiles[hero.title] = _hero_provider_profile(hero)
-        healing_profiles[hero.title] = _hero_healing_profile(hero)
+        healing_profiles[hero.title] = _hero_healing_profile(hero, skills_by_title)
         energy_provided[hero.title] = _hero_effective_ally_energy_provided(hero)
         behavior = behavior_by_title.get(hero.title)
         sig_name = behavior.signature_skill_name if behavior else ""
@@ -1948,7 +2072,6 @@ def compute_replacement_scores(
         curated_x = _rs.curated_display_name(display_x)
         tags_x = behavior_tags_map.get(curated_x, frozenset())
         energy_eligible = is_energy_provider(hero_x)
-        healing_eligible = is_healing_provider(hero_x)
 
         category_scores: dict[str, list[tuple[float, str, list[str]]]] = {
             key: [] for key in REPLACEMENT_CATEGORIES
@@ -1976,18 +2099,17 @@ def compute_replacement_scores(
                 category_scores["energy"].append(
                     (_energy_replacement_coverage(ex, ey), hero_y.title, [])
                 )
-            if healing_eligible and is_healing_provider(hero_y):
-                category_scores["healing"].append(
-                    (
-                        _replacement_coverage(
-                            hpx, healing_profiles[hero_y.title]
-                        ),
-                        hero_y.title,
-                        _healing_overlap_tags(
-                            hpx, healing_profiles[hero_y.title]
-                        ),
-                    )
+            category_scores["healing"].append(
+                (
+                    _healing_replacement_coverage(
+                        hpx, healing_profiles[hero_y.title]
+                    ),
+                    hero_y.title,
+                    _healing_overlap_tags(
+                        hpx, healing_profiles[hero_y.title]
+                    ),
                 )
+            )
             category_scores["similar_skills"].append(
                 (
                     _set_jaccard(tags_x, tags_y),

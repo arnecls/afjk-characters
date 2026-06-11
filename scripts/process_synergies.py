@@ -150,6 +150,7 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         behavior_by_title,
         faction_by_title,
         role_category_by_title,
+        skills_by_title,
     )
 
     synergy_heroes: dict[str, dict] = {}

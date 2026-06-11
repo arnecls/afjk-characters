@@ -12,6 +12,12 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+    is_hp_recovery_label,
+)
+
 
 def _load_modules():
     spec_rs = importlib.util.spec_from_file_location(
@@ -264,6 +270,39 @@ class ReplacementTierRankingTests(unittest.TestCase):
         self.assertEqual(ranked[0]["name"], "Equal")
         self.assertEqual(ranked[1]["name"], "Worse")
 
+    def test_higher_prydwen_tier_beats_slightly_better_kit_score(self) -> None:
+        scores = [
+            (1.0, "Lorsan - Tier", ["Healing"]),
+            (0.96, "Solise - Tier", ["Healing"]),
+        ]
+        tiers = {
+            "Source - Hero": {
+                "afk_stages": "C",
+                "dream_realm": "C",
+                "dream_realm_endless": "C",
+                "pvp": "C",
+            },
+            "Solise - Tier": {
+                "afk_stages": "S",
+                "dream_realm": "S+",
+                "dream_realm_endless": "S",
+                "pvp": "S",
+            },
+            "Lorsan - Tier": {
+                "afk_stages": "C",
+                "dream_realm": "C",
+                "dream_realm_endless": "C",
+                "pvp": "B",
+            },
+        }
+        ranked = gen._rank_replacement_category(
+            scores,
+            source_title="Source - Hero",
+            tiers_by_title=tiers,
+        )
+        self.assertEqual(ranked[0]["name"], "Solise")
+        self.assertEqual(ranked[1]["name"], "Lorsan")
+
     def test_tier_preference_after_faction_boost(self) -> None:
         scores = [
             (0.95, "Cross - Worse Tier", ["tag"]),
@@ -363,15 +402,23 @@ class HealingReplacementTests(unittest.TestCase):
         buff_profile = gen._hero_provider_profile(hewynn)
         healing_profile = gen._hero_healing_profile(hewynn)
         self.assertFalse(buff_profile)
-        self.assertIn("Healing", healing_profile)
+        self.assertTrue(
+            any(
+                gen._healing_profile_label(k) == HEALING_OVER_TIME_LABEL
+                for k in healing_profile
+            )
+        )
         evie = _hero_by_short_name("Evie")
         evie_buff = gen._hero_provider_profile(evie)
         evie_healing = gen._hero_healing_profile(evie)
         self.assertIn("ATK buff", evie_buff)
         self.assertNotIn("Healing stat buff", evie_healing)
-        self.assertIn("Healing", evie_healing)
+        self.assertTrue(
+            any(gen._healing_profile_label(k) == DIRECT_HEALING_LABEL for k in evie_healing)
+        )
 
-    def test_healing_category_gated_for_healers(self) -> None:
+    def test_healing_replacements_require_source_profile(self) -> None:
+        """Heroes with no ally healing profile get no healing replacement list."""
         text = rs.HEROES_MD.read_text(encoding="utf-8")
         blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
         heroes = []
@@ -388,6 +435,106 @@ class HealingReplacementTests(unittest.TestCase):
         aliceth_healing = replacements[aliceth.title]["healing"]
         self.assertGreater(len(hewynn_healing), 0)
         self.assertEqual(aliceth_healing, [])
+
+
+class HealingEffectSeparationTests(unittest.TestCase):
+    def test_hewynn_keeps_ult_hot_separate_from_skill_burst(self) -> None:
+        hewynn = _hero_by_short_name("Hewynn")
+        healing = [
+            e
+            for e in hewynn.effects
+            if gen._healing_effect_is_ally_provider(e)
+            or is_hp_recovery_label(e.label)
+        ]
+        labels_sections = {(e.label, e.source_section) for e in healing}
+        self.assertIn((HEALING_OVER_TIME_LABEL, "Ultimate"), labels_sections)
+
+    def test_healing_profile_uses_throughput_weights(self) -> None:
+        text = rs.HEROES_MD.read_text(encoding="utf-8")
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+        heroes = []
+        for block in blocks:
+            hero = rs.parse_hero_block(block)
+            rs.analyze_hero(hero)
+            heroes.append(hero)
+        skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+        hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
+        profile = gen._hero_healing_profile(hewynn, skills_by_title)
+        self.assertGreater(next(iter(profile.values())), 0.0)
+
+    def test_healing_replacement_prefers_total_throughput(self) -> None:
+        source = {
+            f"{HEALING_OVER_TIME_LABEL}|Ultimate": 100.0,
+            f"{DIRECT_HEALING_LABEL}|Skill1": 50.0,
+        }
+        high_total = {
+            f"{DIRECT_HEALING_LABEL}|Skill1": 200.0,
+        }
+        low_total = {
+            f"{HEALING_OVER_TIME_LABEL}|Ultimate": 120.0,
+        }
+        self.assertGreater(
+            gen._healing_replacement_coverage(source, high_total),
+            gen._healing_replacement_coverage(source, low_total),
+        )
+
+    def test_healing_type_mix_is_secondary(self) -> None:
+        source = {
+            f"{HEALING_OVER_TIME_LABEL}|Ultimate": 100.0,
+            f"{DIRECT_HEALING_LABEL}|Skill1": 100.0,
+        }
+        matched_types = {
+            f"{HEALING_OVER_TIME_LABEL}|Ultimate": 100.0,
+            f"{DIRECT_HEALING_LABEL}|Skill1": 100.0,
+        }
+        throughput_only = {
+            f"{DIRECT_HEALING_LABEL}|Skill1": 250.0,
+        }
+        self.assertAlmostEqual(
+            gen._healing_type_coverage(source, matched_types),
+            1.0,
+        )
+        self.assertGreater(
+            gen._healing_replacement_coverage(source, throughput_only),
+            gen._healing_type_coverage(source, throughput_only),
+        )
+
+    def test_solise_scores_at_least_as_high_as_lorsan_for_hewynn(self) -> None:
+        text = rs.HEROES_MD.read_text(encoding="utf-8")
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+        heroes = []
+        block_by_title = {}
+        for block in blocks:
+            hero = rs.parse_hero_block(block)
+            rs.analyze_hero(hero)
+            heroes.append(hero)
+            block_by_title[hero.title] = block
+        skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+        role_category_by_title = {
+            h.title: rs._hero_role(h.title, None) for h in heroes
+        }
+        rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
+        display = {h.title: gen.short_name(h.title) for h in heroes}
+        behavior = rs.build_behavior_for_heroes(
+            heroes, display, role_category_by_title=role_category_by_title
+        )
+        replacements = gen.compute_replacement_scores(
+            heroes, behavior, {}, role_category_by_title, skills_by_title
+        )
+        hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
+        healing = {
+            entry["name"]: entry["score"]
+            for entry in replacements[hewynn.title]["healing"]
+        }
+        healing_order = [
+            entry["name"] for entry in replacements[hewynn.title]["healing"]
+        ]
+        self.assertGreaterEqual(healing.get("Solise", 0.0), healing.get("Lorsan", 0.0))
+        if "Solise" in healing_order and "Lorsan" in healing_order:
+            self.assertLess(
+                healing_order.index("Solise"),
+                healing_order.index("Lorsan"),
+            )
 
 
 if __name__ == "__main__":

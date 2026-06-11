@@ -50,6 +50,14 @@
       ],
       "description": "Damage classification."
     },
+    "healingType": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "over_time"
+      ],
+      "description": "Ally HP recovery classification. Direct is instant restore; over_time is sustained restore (HoT)."
+    },
     "ccType": {
       "type": "string",
       "enum": [

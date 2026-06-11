@@ -18,6 +18,17 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 SCHEMA_DIR = ROOT / "data" / "schema"
 
+from healing_types import (
+    DIRECT_HEALING_LABEL,
+    HEALING_OVER_TIME_LABEL,
+    HEALING_TYPE_DIRECT,
+    HEALING_TYPE_OVER_TIME,
+    healing_type_display,
+    healing_type_from_label,
+    is_hp_recovery_label,
+    normalize_healing_label,
+)
+
 _RS = None
 
 
@@ -239,15 +250,24 @@ def to_display_timing(schema: str) -> str:
     return _schema_token_to_phrase(schema)
 
 
+def to_display_healing_type(schema: str) -> str:
+    return healing_type_display(schema)
+
+
+def to_schema_healing_type(label: str) -> str | None:
+    return healing_type_from_label(label)
+
+
 def _label_to_effect_label(category: str, label: str, *, summon: bool = False) -> str:
     low = label.lower()
     if category == "cc":
         return "cc"
     if "shield" in low:
         return "shield"
-    if "healing over time" in low or "hot" in low:
+    ht = healing_type_from_label(label)
+    if ht == HEALING_TYPE_OVER_TIME:
         return "hot"
-    if "healing" in low and category == "buff":
+    if ht == HEALING_TYPE_DIRECT:
         return "healing"
     if category == "buff" and summon:
         if "atk" in low or "haste" in low:
@@ -599,9 +619,12 @@ def effect_to_schema(
             out["name"] = effect.label
             out["value"] = _value_from_numeric(effect.numeric, effect.label)
             return out
-        if "healing" in effect.label.lower():
-            out["type"] = "heal" if "over time" not in effect.label.lower() else "dot"
-            out["name"] = effect.label
+        if is_hp_recovery_label(effect.label):
+            ht = healing_type_from_label(effect.label)
+            assert ht is not None
+            out["type"] = "heal" if ht == HEALING_TYPE_DIRECT else "dot"
+            out["healing_type"] = ht
+            out["name"] = normalize_healing_label(effect.label)
             out["value"] = _value_from_numeric(effect.numeric, effect.label)
             if out["type"] == "dot":
                 out["duration"] = 2
@@ -699,8 +722,21 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         )
         return imm
 
+    if etype in ("heal", "dot") and effect.get("healing_type"):
+        label = healing_type_display(effect["healing_type"])
+        return rs.Effect(
+            category="buff",
+            label=label,
+            tier=tier,
+            targeting=targeting if not summon else "Single target",
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            area_count=area_count,
+        )
+
     if etype in ("buff", "stat_mod", "shield", "heal"):
-        name = effect.get("name", "Buff")
+        name = normalize_healing_label(effect.get("name", "Buff"))
         return rs.Effect(
             category="buff",
             label=name,

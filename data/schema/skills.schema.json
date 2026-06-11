@@ -237,6 +237,9 @@
     "damageType": {
       "$ref": "game_properties.schema.json#/$defs/damageType"
     },
+    "healingType": {
+      "$ref": "game_properties.schema.json#/$defs/healingType"
+    },
     "statModifier": {
       "$ref": "game_properties.schema.json#/$defs/stat",
       "description": "Stat used to scale a percentage value."
@@ -473,6 +476,9 @@
         },
         "damage_type": {
           "$ref": "#/$defs/damageType"
+        },
+        "healing_type": {
+          "$ref": "#/$defs/healingType"
         },
         "area": {
           "$ref": "#/$defs/area"

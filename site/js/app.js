@@ -452,7 +452,10 @@
     "ATK SPD": { emoji: "⚡", cls: "chip-stat" },
     "ATK SPD / Haste": { emoji: "⚡", cls: "chip-stat" },
     Haste: { emoji: "💨", cls: "chip-stat" },
-    Healing: { emoji: "💚", cls: "chip-stat" },
+    Healing: { emoji: "💚", cls: "chip-heal" },
+    "Direct healing": { emoji: "💚", cls: "chip-heal" },
+    HoT: { emoji: "💚", cls: "chip-heal" },
+    "Healing over time": { emoji: "💚", cls: "chip-heal" },
     Shield: { emoji: "🛡️", cls: "chip-stat" },
     "Max HP": { emoji: "❤️", cls: "chip-stat" },
     Energy: { emoji: "🔋", cls: "chip-stat" },
@@ -512,6 +515,18 @@
     .sort(function (a, b) {
       return b.length - a.length;
     });
+
+  const HEAL_CHIP_KEYS = ["Direct healing", "Healing over time", "HoT", "Healing"]
+    .sort(function (a, b) {
+      return b.length - a.length;
+    });
+
+  function healingChipDisplay(text) {
+    if (text === "Healing over time") {
+      return "HoT";
+    }
+    return text;
+  }
 
   const TARGETING_DEFINITIONS = {
     "single target": { emoji: "🎯", cls: "chip-target" },
@@ -774,6 +789,21 @@
       }
     }
 
+    for (let i = 0; i < HEAL_CHIP_KEYS.length; i++) {
+      const heal = HEAL_CHIP_KEYS[i];
+      const healLower = heal.toLowerCase();
+      if (labelLower === healLower || labelLower.startsWith(healLower + " ")) {
+        const def = TAG_DEFINITIONS[heal];
+        return {
+          emoji: def.emoji,
+          text: healingChipDisplay(heal),
+          cls: def.cls,
+          isCc: false,
+          remainder: trimmed.slice(heal.length),
+        };
+      }
+    }
+
     for (let i = 0; i < STAT_KEYS.length; i++) {
       const stat = STAT_KEYS[i];
       const statLower = stat.toLowerCase();
@@ -951,12 +981,12 @@
 
     if (TAG_DEFINITIONS[text]) {
       const def = TAG_DEFINITIONS[text];
-      return chipSpan(def.emoji, text, def.cls);
+      return chipSpan(def.emoji, healingChipDisplay(text), def.cls);
     }
     for (const key of Object.keys(TAG_DEFINITIONS)) {
       if (key.toLowerCase() === lower) {
         const def = TAG_DEFINITIONS[key];
-        return chipSpan(def.emoji, key, def.cls);
+        return chipSpan(def.emoji, healingChipDisplay(key), def.cls);
       }
     }
 
@@ -1737,8 +1767,17 @@
         return stat;
       }
     }
-    if (tag.indexOf("healing") !== -1) {
-      return "healing";
+    if (tag === "hot" || tag === "healing over time" || tag.indexOf("healing over time") === 0) {
+      return "hot";
+    }
+    if (tag === "direct healing" || tag.indexOf("direct healing") === 0) {
+      return "direct healing";
+    }
+    if (tag.indexOf("healing") !== -1 && tag.indexOf("over time") === -1) {
+      return "direct healing";
+    }
+    if (tag.indexOf("healing") !== -1 && tag.indexOf("over time") !== -1) {
+      return "hot";
     }
     return tag.replace(/\s*\([^)]*\)/g, "").trim();
   }
@@ -3124,32 +3163,57 @@
     high: true,
   };
 
-  function parseSynergyReasonConditional(part) {
-    const match = part.match(/^conditional(?:\s*\((.+)\))?$/i);
+  function splitSynergyReasonDetail(text) {
+    const match = text.match(/^(.+?)\s*\((.+)\)\s*$/);
     if (!match) {
-      return null;
+      return {
+        label: text.trim(),
+        quality: "",
+        conditional: "",
+        modifiers: [],
+      };
     }
-    return match[1] ? match[1].trim() : part.replace(/^conditional\s*/i, "").trim();
+    let label = match[1].trim();
+    let inner = match[2].trim();
+    let conditional = "";
+    const condMatch = inner.match(/(?:,\s*)?conditional\s*\(([^)]+)\)\s*$/i);
+    if (condMatch) {
+      conditional = condMatch[1].trim();
+      inner = inner.slice(0, condMatch.index).replace(/,\s*$/, "").trim();
+    }
+    let quality = "";
+    const modifiers = [];
+    inner.split(/\s*,\s*/).forEach(function (part) {
+      const trimmed = part.trim();
+      if (!trimmed) {
+        return;
+      }
+      const lower = trimmed.toLowerCase();
+      if (SYNERGY_QUALITY_TOKENS[lower]) {
+        quality = lower;
+        return;
+      }
+      if (SYNERGY_TARGETING_TOKENS[lower]) {
+        return;
+      }
+      modifiers.push(trimmed);
+    });
+    return { label: label, quality: quality, conditional: conditional, modifiers: modifiers };
   }
 
   function stripSynergyReasonTargeting(text) {
-    const parenMatch = text.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
-    if (!parenMatch) {
-      return text.trim();
+    const detail = splitSynergyReasonDetail(text);
+    const kept = detail.modifiers.slice();
+    if (detail.quality) {
+      kept.push(detail.quality);
     }
-    const kept = parenMatch[2]
-      .split(/\s*,\s*/)
-      .map(function (part) {
-        return part.trim();
-      })
-      .filter(function (part) {
-        const lower = part.toLowerCase();
-        return !SYNERGY_TARGETING_TOKENS[lower];
-      });
+    if (detail.conditional) {
+      kept.push("conditional (" + detail.conditional + ")");
+    }
     if (!kept.length) {
-      return parenMatch[1].trim();
+      return detail.label;
     }
-    return parenMatch[1].trim() + " (" + kept.join(", ") + ")";
+    return detail.label + " (" + kept.join(", ") + ")";
   }
 
   function parseSynergyReason(reason) {
@@ -3167,36 +3231,19 @@
       };
     }
 
-    const parenMatch = text.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
-    let label = text;
-    let quality = "";
-    let conditional = "";
-    if (parenMatch) {
-      label = parenMatch[1].trim();
-      parenMatch[2].split(/\s*,\s*/).forEach(function (part) {
-        const lower = part.toLowerCase();
-        if (SYNERGY_QUALITY_TOKENS[lower]) {
-          quality = lower;
-          return;
-        }
-        const cond = parseSynergyReasonConditional(part);
-        if (cond) {
-          conditional = cond;
-          return;
-        }
-        if (SYNERGY_TARGETING_TOKENS[lower]) {
-          return;
-        }
-      });
+    const viaIdx = text.toLowerCase().indexOf(" via ");
+    if (viaIdx !== -1) {
+      text = text.slice(viaIdx + 5).trim();
     }
 
-    const parsed = parseBuffEffectLabel(label);
+    const detail = splitSynergyReasonDetail(text);
+    const parsed = parseBuffEffectLabel(detail.label);
     return {
       type: "effect",
       base: parsed.base,
       tier: parsed.tier,
-      quality: quality,
-      conditional: conditional,
+      quality: detail.quality,
+      conditional: detail.conditional,
       signatureFuel: signatureFuel,
     };
   }
