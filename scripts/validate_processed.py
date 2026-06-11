@@ -277,8 +277,7 @@ def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
 
     expected: dict[str, set[str]] = {}
     skill_names: dict[str, dict[str, str]] = {}
-    for title, hero in processed["heroes"].items():
-        short = gen.short_name(title)
+    for short, hero in processed["heroes"].items():
         categories = {s["category"] for s in hero["skills"].values()}
         expected[short] = categories
         skill_names[short] = {

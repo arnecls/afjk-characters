@@ -90,7 +90,8 @@ def build_processed(data: dict) -> dict:
         hero_record = data_by_title[hero.title]
         behavior_dict = asdict(behavior)
         behavior_dict.pop("signature_skill_section", None)
-        processed_heroes[hero.title] = hs.serialize_processed_hero(
+        short = display_by_title[hero.title]
+        processed_heroes[short] = hs.serialize_processed_hero(
             hero,
             hero_record,
             is_energy_provider=hero.title in energy_provider_titles,

@@ -35,15 +35,8 @@ REPLACEMENT_CATEGORY_LABELS = {
 }
 
 
-def _receiver_synergies(
-    beneficiary_short: str,
-    synergies: dict,
-    title_by_short: dict[str, str],
-) -> list[dict]:
-    title = title_by_short.get(beneficiary_short)
-    if not title:
-        return []
-    return synergies["heroes"].get(title, {}).get("synergies", [])
+def _receiver_synergies(beneficiary_short: str, synergies: dict) -> list[dict]:
+    return synergies["heroes"].get(beneficiary_short, {}).get("synergies", [])
 
 
 def _format_replacement_line(
@@ -125,7 +118,6 @@ def _format_synergies(
     provider_beneficiary_count: dict[str, int],
     obvious_threshold: int,
     synergies: dict,
-    title_by_short: dict[str, str],
 ) -> list[str]:
     lines: list[str] = []
     benefit_stats = [
@@ -199,15 +191,13 @@ def _format_synergies(
                 key=lambda b: (
                     -gen.beneficiary_rating_out_of_five(
                         b["score"],
-                        _receiver_synergies(b["name"], synergies, title_by_short),
+                        _receiver_synergies(b["name"], synergies),
                     ),
                     b["name"],
                 ),
             )
             for b in display:
-                receiver_synergies = _receiver_synergies(
-                    b["name"], synergies, title_by_short
-                )
+                receiver_synergies = _receiver_synergies(b["name"], synergies)
                 lines.append(
                     f"- {b['name']} ({gen.format_beneficiary_rating_markdown(b['score'], receiver_synergies)})"
                 )
@@ -224,11 +214,8 @@ def build_overview(
     rep_scoring = config.get("replacement_scoring", {})
     max_rep = rep_scoring.get("max_replacements", 3)
     provider_beneficiary_count = {
-        title: len(s["beneficiaries"])
-        for title, s in synergies["heroes"].items()
-    }
-    title_by_short = {
-        gen.short_name(title): title for title in synergies["heroes"]
+        short: len(s["beneficiaries"])
+        for short, s in synergies["heroes"].items()
     }
 
     data_by_title = {h["title"]: h for h in data["heroes"]}
@@ -246,15 +233,15 @@ def build_overview(
         summary_heroes[hero.title] = hero
     rs.assign_magnitudes(list(summary_heroes.values()), skills_by_title)
 
-    for title in sorted(processed["heroes"]):
+    for short in sorted(processed["heroes"]):
         p = {
-            **processed["heroes"][title],
-            **synergies["heroes"][title],
+            **processed["heroes"][short],
+            **synergies["heroes"][short],
         }
-        short = gen.short_name(title)
-        hero = summary_heroes[title]
+        long_name = p["long_name"]
+        hero = summary_heroes[long_name]
         behavior = rs.HeroBehavior(**p["behavior"])
-        meta = data_by_title.get(title, {})
+        meta = data_by_title.get(long_name, {})
         skill_summaries = rs._load_skill_summaries().get(short, {})
         hero_categories = {s["category"] for s in p["skills"].values()}
 
@@ -267,7 +254,6 @@ def build_overview(
             provider_beneficiary_count,
             obvious_threshold,
             synergies,
-            title_by_short,
         )
         summary = rs.format_summary(hero, short).rstrip()
 
@@ -339,8 +325,8 @@ def main() -> None:
     )
 
     energy_providers = frozenset(
-        gen.short_name(title)
-        for title, p in processed["heroes"].items()
+        short
+        for short, p in processed["heroes"].items()
         if p.get("is_energy_provider")
     )
     n = write_csv(content, energy_providers)

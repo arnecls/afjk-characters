@@ -1,6 +1,7 @@
 {
   "heroes": {
-    "Aliceth - Radiant Wings": {
+    "Aliceth": {
+      "long_name": "Aliceth - Radiant Wings",
       "faction": "celestial",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -372,7 +373,8 @@
         }
       }
     },
-    "Alna - Frozen Mother": {
+    "Alna": {
+      "long_name": "Alna - Frozen Mother",
       "faction": "celestial",
       "class": "tank",
       "role_category": "tank",
@@ -542,7 +544,7 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "Damage and control immunity",
+              "name": "Dmg and CC immunity",
               "label": "buff_stat"
             },
             {
@@ -630,13 +632,13 @@
             "description": "8s 1s - Skill Range: 1 tile During battle preparation, Alna selects an ally placed in the same row as herself to become the Winter Warrior. That ally is immune to Winter Anthem's Haste reduction effect, and their max HP is permanently increased by 15% + 1.5%. Active. Alna thrusts her spear to deal 340% (ATK-based) + 40% damage to enemies, restoring 100% + 10% HP to herself and the Winter Warrior."
           },
           {
-            "label": "Damage and control immunity",
+            "label": "Dmg and CC immunity",
             "tier": "mythic+",
             "targeting": "Self",
             "description": "20s - Skill Range: Global When a battle starts and every 20s thereafter, Alna envelops herself in icy winds, becoming immune to damage and control effects for 4s."
           },
           {
-            "label": "Damage and control immunity (ally)",
+            "label": "Dmg and CC immunity (ally)",
             "tier": "ex+15",
             "targeting": "Single target",
             "description": "After casting Chilling Presence, Alna also grants the Winter Warrior the same immunity effects. The first time either Alna's or the Winter Warrior's HP drops bellow 50% in battle, Chilling Presence triggers automatically for both. This effect can only be triggered 1 time per hero per battle."
@@ -710,7 +712,8 @@
         }
       }
     },
-    "Alsa - Desert Flare": {
+    "Alsa": {
+      "long_name": "Alsa - Desert Flare",
       "faction": "mauler",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -944,7 +947,8 @@
         }
       }
     },
-    "Antandra - Desert Fury": {
+    "Antandra": {
+      "long_name": "Antandra - Desert Fury",
       "faction": "mauler",
       "class": "tank",
       "role_category": "tank",
@@ -1220,7 +1224,8 @@
         }
       }
     },
-    "Arden - Oak Sage": {
+    "Arden": {
+      "long_name": "Arden - Oak Sage",
       "faction": "wilder",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -1388,7 +1393,8 @@
         }
       }
     },
-    "Atalanta - Fortune Finder": {
+    "Atalanta": {
+      "long_name": "Atalanta - Fortune Finder",
       "faction": "lightbearer",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -1630,7 +1636,8 @@
         }
       }
     },
-    "Athalia - Harbinger of Justice": {
+    "Athalia": {
+      "long_name": "Athalia - Harbinger of Justice",
       "faction": "celestial",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -1914,7 +1921,8 @@
         }
       }
     },
-    "Aurora - Celestial of Dreams": {
+    "Aurora": {
+      "long_name": "Aurora - Celestial of Dreams",
       "faction": "celestial",
       "class": "mage",
       "role_category": "support",
@@ -2156,7 +2164,8 @@
         }
       }
     },
-    "Baelran - Dawnblade": {
+    "Baelran": {
+      "long_name": "Baelran - Dawnblade",
       "faction": "celestial",
       "class": "warrior",
       "role_category": "tank",
@@ -2464,7 +2473,8 @@
         }
       }
     },
-    "Berial - Sinister Jester": {
+    "Berial": {
+      "long_name": "Berial - Sinister Jester",
       "faction": "hypogean",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -2686,7 +2696,8 @@
         }
       }
     },
-    "Bonnie - Obsidian Claws": {
+    "Bonnie": {
+      "long_name": "Bonnie - Obsidian Claws",
       "faction": "graveborn",
       "class": "marksman",
       "role_category": "specialist",
@@ -2925,7 +2936,8 @@
         }
       }
     },
-    "Brutus - Blood Claw": {
+    "Brutus": {
+      "long_name": "Brutus - Blood Claw",
       "faction": "mauler",
       "class": "warrior",
       "role_category": "tank",
@@ -3181,7 +3193,8 @@
         }
       }
     },
-    "Bryon - Evergreen Sentinel": {
+    "Bryon": {
+      "long_name": "Bryon - Evergreen Sentinel",
       "faction": "wilder",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -3415,7 +3428,8 @@
         }
       }
     },
-    "Callan - Grim Soulkeeper": {
+    "Callan": {
+      "long_name": "Callan - Grim Soulkeeper",
       "faction": "graveborn",
       "class": "tank",
       "role_category": "tank",
@@ -3649,7 +3663,8 @@
         }
       }
     },
-    "Carolina - Candlelight Specter": {
+    "Carolina": {
+      "long_name": "Carolina - Candlelight Specter",
       "faction": "graveborn",
       "class": "mage",
       "role_category": "specialist",
@@ -3837,7 +3852,8 @@
         }
       }
     },
-    "Cassadee - Azure Prodigy": {
+    "Cassadee": {
+      "long_name": "Cassadee - Azure Prodigy",
       "faction": "lightbearer",
       "class": "mage",
       "role_category": "specialist",
@@ -4043,7 +4059,8 @@
         }
       }
     },
-    "Cecia - Requiem of Thorns": {
+    "Cecia": {
+      "long_name": "Cecia - Requiem of Thorns",
       "faction": "graveborn",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -4297,7 +4314,8 @@
         }
       }
     },
-    "Chippy - Acorn Knight": {
+    "Chippy": {
+      "long_name": "Chippy - Acorn Knight",
       "faction": "lightbearer",
       "class": "tank",
       "role_category": "tank",
@@ -4383,7 +4401,8 @@
         }
       }
     },
-    "Contess - Abyssal Rulekeeper": {
+    "Contess": {
+      "long_name": "Contess - Abyssal Rulekeeper",
       "faction": "hypogean",
       "class": "support",
       "role_category": "support",
@@ -4703,7 +4722,8 @@
         }
       }
     },
-    "Cryonaia - Arctic Revenant": {
+    "Cryonaia": {
+      "long_name": "Cryonaia - Arctic Revenant",
       "faction": "hypogean",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -4909,7 +4929,8 @@
         }
       }
     },
-    "Cyran - Umbral Weaver": {
+    "Cyran": {
+      "long_name": "Cyran - Umbral Weaver",
       "faction": "lightbearer",
       "class": "mage",
       "role_category": "specialist",
@@ -5184,7 +5205,8 @@
         }
       }
     },
-    "Daimon - Forsaken Child": {
+    "Daimon": {
+      "long_name": "Daimon - Forsaken Child",
       "faction": "graveborn",
       "class": "tank",
       "role_category": "tank",
@@ -5417,7 +5439,8 @@
         }
       }
     },
-    "Damian - Woody Wonder": {
+    "Damian": {
+      "long_name": "Damian - Woody Wonder",
       "faction": "wilder",
       "class": "support",
       "role_category": "support",
@@ -5683,7 +5706,8 @@
         }
       }
     },
-    "Dionel - Venus of Dawn": {
+    "Dionel": {
+      "long_name": "Dionel - Venus of Dawn",
       "faction": "celestial",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -5923,7 +5947,8 @@
         }
       }
     },
-    "Dunlingr - Eternal Voice": {
+    "Dunlingr": {
+      "long_name": "Dunlingr - Eternal Voice",
       "faction": "celestial",
       "class": "tank",
       "role_category": "tank",
@@ -6239,7 +6264,8 @@
         }
       }
     },
-    "Eironn - Stormsword": {
+    "Eironn": {
+      "long_name": "Eironn - Stormsword",
       "faction": "wilder",
       "class": "rogue",
       "role_category": "specialist",
@@ -6483,7 +6509,8 @@
         }
       }
     },
-    "Elijah & Lailah - Celestial Twins": {
+    "Twins": {
+      "long_name": "Elijah & Lailah - Celestial Twins",
       "faction": "celestial",
       "class": "support",
       "role_category": "support",
@@ -6765,7 +6792,8 @@
         }
       }
     },
-    "Evie - Royal Envoy": {
+    "Evie": {
+      "long_name": "Evie - Royal Envoy",
       "faction": "lightbearer",
       "class": "support",
       "role_category": "support",
@@ -7015,7 +7043,8 @@
         }
       }
     },
-    "Faramor - Silverfang Mantle": {
+    "Faramor": {
+      "long_name": "Faramor - Silverfang Mantle",
       "faction": "wilder",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -7241,7 +7270,8 @@
         }
       }
     },
-    "Fay - Colorful Dancer": {
+    "Fay": {
+      "long_name": "Fay - Colorful Dancer",
       "faction": "lightbearer",
       "class": "support",
       "role_category": "support",
@@ -7515,7 +7545,8 @@
         }
       }
     },
-    "Florabelle - Blooming Maiden": {
+    "Florabelle": {
+      "long_name": "Florabelle - Blooming Maiden",
       "faction": "wilder",
       "class": "warrior",
       "role_category": "damage_dealer",
@@ -7775,7 +7806,8 @@
         }
       }
     },
-    "Frieren - The Legendary Mage": {
+    "Frieren": {
+      "long_name": "Frieren - The Legendary Mage",
       "faction": "dimensional",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -8003,7 +8035,8 @@
         }
       }
     },
-    "Galahad - Daughter of Dawn": {
+    "Galahad": {
+      "long_name": "Galahad - Daughter of Dawn",
       "faction": "mauler",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -8232,7 +8265,8 @@
         }
       }
     },
-    "Gerda - Soothing Siren": {
+    "Gerda": {
+      "long_name": "Gerda - Soothing Siren",
       "faction": "mauler",
       "class": "tank",
       "role_category": "tank",
@@ -8528,7 +8562,8 @@
         }
       }
     },
-    "Granny Dahnie - Forest Guardian": {
+    "Granny Dahnie": {
+      "long_name": "Granny Dahnie - Forest Guardian",
       "faction": "wilder",
       "class": "tank",
       "role_category": "tank",
@@ -8817,7 +8852,8 @@
         }
       }
     },
-    "Gunnar - Iron Doom": {
+    "Gunnar": {
+      "long_name": "Gunnar - Iron Doom",
       "faction": "hypogean",
       "class": "tank",
       "role_category": "tank",
@@ -9077,7 +9113,8 @@
         }
       }
     },
-    "Gwyneth - Dragonslayer Knight": {
+    "Gwyneth": {
+      "long_name": "Gwyneth - Dragonslayer Knight",
       "faction": "lightbearer",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -9271,7 +9308,8 @@
         }
       }
     },
-    "Hammie - Acorn Mage": {
+    "Hammie": {
+      "long_name": "Hammie - Acorn Mage",
       "faction": "lightbearer",
       "class": "support",
       "role_category": "support",
@@ -9410,7 +9448,8 @@
         }
       }
     },
-    "Harak - Deepsea Ravager": {
+    "Harak": {
+      "long_name": "Harak - Deepsea Ravager",
       "faction": "hypogean",
       "class": "warrior",
       "role_category": "damage_dealer",
@@ -9715,7 +9754,8 @@
         }
       }
     },
-    "Hepler - Master of Forms": {
+    "Hepler": {
+      "long_name": "Hepler - Master of Forms",
       "faction": "mauler",
       "class": "tank",
       "role_category": "tank",
@@ -9994,7 +10034,8 @@
         }
       }
     },
-    "Hewynn - Tender Leaf": {
+    "Hewynn": {
+      "long_name": "Hewynn - Tender Leaf",
       "faction": "wilder",
       "class": "support",
       "role_category": "support",
@@ -10167,7 +10208,8 @@
         }
       }
     },
-    "Himmel - The Legendary Hero": {
+    "Himmel": {
+      "long_name": "Himmel - The Legendary Hero",
       "faction": "dimensional",
       "class": "warrior",
       "role_category": "support",
@@ -10394,7 +10436,8 @@
         }
       }
     },
-    "Hodgkin - Reviled Captain": {
+    "Hodgkin": {
+      "long_name": "Hodgkin - Reviled Captain",
       "faction": "graveborn",
       "class": "warrior",
       "role_category": "specialist",
@@ -10626,7 +10669,8 @@
         }
       }
     },
-    "Hugin - Maverick Smith": {
+    "Hugin": {
+      "long_name": "Hugin - Maverick Smith",
       "faction": "lightbearer",
       "class": "support",
       "role_category": "support",
@@ -10811,7 +10855,8 @@
         }
       }
     },
-    "Igor - Mad Dagger": {
+    "Igor": {
+      "long_name": "Igor - Mad Dagger",
       "faction": "graveborn",
       "class": "warrior",
       "role_category": "specialist",
@@ -10995,7 +11040,8 @@
         }
       }
     },
-    "Indris - Chain Breaker": {
+    "Indris": {
+      "long_name": "Indris - Chain Breaker",
       "faction": "wilder",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -11268,7 +11314,8 @@
         }
       }
     },
-    "Isabella - The Taken Soul": {
+    "Isabella": {
+      "long_name": "Isabella - The Taken Soul",
       "faction": "graveborn",
       "class": "support",
       "role_category": "support",
@@ -11512,7 +11559,8 @@
         }
       }
     },
-    "Kafra - Gale Rider": {
+    "Kafra": {
+      "long_name": "Kafra - Gale Rider",
       "faction": "wilder",
       "class": "warrior",
       "role_category": "specialist",
@@ -11784,7 +11832,8 @@
         }
       }
     },
-    "Koko - Wild Child": {
+    "Koko": {
+      "long_name": "Koko - Wild Child",
       "faction": "mauler",
       "class": "support",
       "role_category": "support",
@@ -12026,7 +12075,8 @@
         }
       }
     },
-    "Kordan - Ironblood Chieftain": {
+    "Kordan": {
+      "long_name": "Kordan - Ironblood Chieftain",
       "faction": "mauler",
       "class": "warrior",
       "role_category": "specialist",
@@ -12298,7 +12348,8 @@
         }
       }
     },
-    "Korin - Wood Warden": {
+    "Korin": {
+      "long_name": "Korin - Wood Warden",
       "faction": "lightbearer",
       "class": "warrior",
       "role_category": "specialist",
@@ -12513,7 +12564,8 @@
         }
       }
     },
-    "Kruger - Dauntless Warrior": {
+    "Kruger": {
+      "long_name": "Kruger - Dauntless Warrior",
       "faction": "mauler",
       "class": "warrior",
       "role_category": "specialist",
@@ -12723,7 +12775,8 @@
         }
       }
     },
-    "Kulu - Blast Master": {
+    "Kulu": {
+      "long_name": "Kulu - Blast Master",
       "faction": "hypogean",
       "class": "marksman",
       "role_category": "specialist",
@@ -12970,7 +13023,8 @@
         }
       }
     },
-    "Laios - Dungeon Adventurer": {
+    "Laios": {
+      "long_name": "Laios - Dungeon Adventurer",
       "faction": "dimensional",
       "class": "warrior",
       "role_category": "tank",
@@ -13312,7 +13366,8 @@
         }
       }
     },
-    "Lenya - Wild Cyclone": {
+    "Lenya": {
+      "long_name": "Lenya - Wild Cyclone",
       "faction": "wilder",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -13635,7 +13690,8 @@
         }
       }
     },
-    "Lily May - Twilight Tracker": {
+    "Lily May": {
+      "long_name": "Lily May - Twilight Tracker",
       "faction": "wilder",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -13866,7 +13922,8 @@
         }
       }
     },
-    "Lorsan - Windweaver Protector": {
+    "Lorsan": {
+      "long_name": "Lorsan - Windweaver Protector",
       "faction": "wilder",
       "class": "support",
       "role_category": "specialist",
@@ -14056,7 +14113,8 @@
         }
       }
     },
-    "Lucca - Stalwart Fighter": {
+    "Lucca": {
+      "long_name": "Lucca - Stalwart Fighter",
       "faction": "lightbearer",
       "class": "tank",
       "role_category": "tank",
@@ -14323,7 +14381,8 @@
         }
       }
     },
-    "Lucius - The Lightbringer": {
+    "Lucius": {
+      "long_name": "Lucius - The Lightbringer",
       "faction": "lightbearer",
       "class": "tank",
       "role_category": "tank",
@@ -14558,7 +14617,8 @@
         }
       }
     },
-    "Lucy - Celestial Spirit Mage": {
+    "Lucy": {
+      "long_name": "Lucy - Celestial Spirit Mage",
       "faction": "dimensional",
       "class": "mage",
       "role_category": "specialist",
@@ -14767,7 +14827,8 @@
         }
       }
     },
-    "Ludovic - Wreathed Eternalist": {
+    "Ludovic": {
+      "long_name": "Ludovic - Wreathed Eternalist",
       "faction": "graveborn",
       "class": "support",
       "role_category": "support",
@@ -14957,7 +15018,8 @@
         }
       }
     },
-    "Lumont - Benign Horn": {
+    "Lumont": {
+      "long_name": "Lumont - Benign Horn",
       "faction": "mauler",
       "class": "tank",
       "role_category": "tank",
@@ -15218,7 +15280,8 @@
         }
       }
     },
-    "Lyca - Keeper of Glades": {
+    "Lyca": {
+      "long_name": "Lyca - Keeper of Glades",
       "faction": "wilder",
       "class": "marksman",
       "role_category": "specialist",
@@ -15448,7 +15511,8 @@
         }
       }
     },
-    "Marcille - Elven Mage": {
+    "Marcille": {
+      "long_name": "Marcille - Elven Mage",
       "faction": "dimensional",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -15692,7 +15756,8 @@
         }
       }
     },
-    "Marilee - Forest's Arrow": {
+    "Marilee": {
+      "long_name": "Marilee - Forest's Arrow",
       "faction": "lightbearer",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -15901,7 +15966,8 @@
         }
       }
     },
-    "Mehira - Mind Cager": {
+    "Mehira": {
+      "long_name": "Mehira - Mind Cager",
       "faction": "hypogean",
       "class": "mage",
       "role_category": "specialist",
@@ -16131,7 +16197,8 @@
         }
       }
     },
-    "Mikola - Warbeat Compere": {
+    "Mikola": {
+      "long_name": "Mikola - Warbeat Compere",
       "faction": "mauler",
       "class": "support",
       "role_category": "support",
@@ -16368,7 +16435,8 @@
         }
       }
     },
-    "Mirael - Scarlet Sorceress": {
+    "Mirael": {
+      "long_name": "Mirael - Scarlet Sorceress",
       "faction": "lightbearer",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -16529,7 +16597,8 @@
         }
       }
     },
-    "Nara - Wrathful Wraith": {
+    "Nara": {
+      "long_name": "Nara - Wrathful Wraith",
       "faction": "graveborn",
       "class": "rogue",
       "role_category": "specialist",
@@ -16769,7 +16838,8 @@
         }
       }
     },
-    "Natsu - Fire Dragon Slayer Mage": {
+    "Natsu": {
+      "long_name": "Natsu - Fire Dragon Slayer Mage",
       "faction": "dimensional",
       "class": "warrior",
       "role_category": "damage_dealer",
@@ -17028,7 +17098,8 @@
         }
       }
     },
-    "Nazrik - Soulstalker": {
+    "Nazrik": {
+      "long_name": "Nazrik - Soulstalker",
       "faction": "mauler",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -17261,7 +17332,8 @@
         }
       }
     },
-    "Nerion - Bereaved Tide": {
+    "Nerion": {
+      "long_name": "Nerion - Bereaved Tide",
       "faction": "graveborn",
       "class": "marksman",
       "role_category": "specialist",
@@ -17458,7 +17530,8 @@
         }
       }
     },
-    "Niru - Soul Collector": {
+    "Niru": {
+      "long_name": "Niru - Soul Collector",
       "faction": "graveborn",
       "class": "support",
       "role_category": "support",
@@ -17683,7 +17756,8 @@
         }
       }
     },
-    "Odie - Desert Defender": {
+    "Odie": {
+      "long_name": "Odie - Desert Defender",
       "faction": "mauler",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -17877,7 +17951,8 @@
         }
       }
     },
-    "Pandora - Hope Unleashed": {
+    "Pandora": {
+      "long_name": "Pandora - Hope Unleashed",
       "faction": "dimensional",
       "class": "support",
       "role_category": "support",
@@ -18170,7 +18245,8 @@
         }
       }
     },
-    "Pang - Bamboo Guardian": {
+    "Pang": {
+      "long_name": "Pang - Bamboo Guardian",
       "faction": "wilder",
       "class": "warrior",
       "role_category": "damage_dealer",
@@ -18393,7 +18469,8 @@
         }
       }
     },
-    "Parisa - Ode to Flowers": {
+    "Parisa": {
+      "long_name": "Parisa - Ode to Flowers",
       "faction": "wilder",
       "class": "mage",
       "role_category": "specialist",
@@ -18556,7 +18633,8 @@
         }
       }
     },
-    "Perseus - Chosen Champion": {
+    "Perseus": {
+      "long_name": "Perseus - Chosen Champion",
       "faction": "lightbearer",
       "class": "warrior",
       "role_category": "damage_dealer",
@@ -18804,7 +18882,8 @@
         }
       }
     },
-    "Phraesto - Misty Scorpion": {
+    "Phraesto": {
+      "long_name": "Phraesto - Misty Scorpion",
       "faction": "hypogean",
       "class": "tank",
       "role_category": "tank",
@@ -19037,7 +19116,8 @@
         }
       }
     },
-    "Pippa - The Muddled Magician": {
+    "Pippa": {
+      "long_name": "Pippa - The Muddled Magician",
       "faction": "wilder",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -19274,7 +19354,8 @@
         }
       }
     },
-    "Ravion - Twilight's Burden": {
+    "Ravion": {
+      "long_name": "Ravion - Twilight's Burden",
       "faction": "wilder",
       "class": "rogue",
       "role_category": "specialist",
@@ -19656,7 +19737,8 @@
         }
       }
     },
-    "Reinier - Symmetric Sin": {
+    "Reinier": {
+      "long_name": "Reinier - Symmetric Sin",
       "faction": "hypogean",
       "class": "support",
       "role_category": "support",
@@ -19913,7 +19995,8 @@
         }
       }
     },
-    "Rhys - Fiery Cavalier": {
+    "Rhys": {
+      "long_name": "Rhys - Fiery Cavalier",
       "faction": "mauler",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -20145,7 +20228,8 @@
         }
       }
     },
-    "Rowan - The Roamer": {
+    "Rowan": {
+      "long_name": "Rowan - The Roamer",
       "faction": "lightbearer",
       "class": "support",
       "role_category": "support",
@@ -20395,7 +20479,8 @@
         }
       }
     },
-    "Saida - Vampiric Vine": {
+    "Saida": {
+      "long_name": "Saida - Vampiric Vine",
       "faction": "hypogean",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -20664,7 +20749,8 @@
         }
       }
     },
-    "Salazer - Lash of Bantus": {
+    "Salazer": {
+      "long_name": "Salazer - Lash of Bantus",
       "faction": "graveborn",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -20876,7 +20962,8 @@
         }
       }
     },
-    "Satrana - Ember Enchantress": {
+    "Satrana": {
+      "long_name": "Satrana - Ember Enchantress",
       "faction": "mauler",
       "class": "mage",
       "role_category": "specialist",
@@ -21102,7 +21189,8 @@
         }
       }
     },
-    "Scarlita - Herald of Compassion": {
+    "Scarlita": {
+      "long_name": "Scarlita - Herald of Compassion",
       "faction": "celestial",
       "class": "warrior",
       "role_category": "specialist",
@@ -21370,7 +21458,8 @@
         }
       }
     },
-    "Seth - Swift Shadow": {
+    "Seth": {
+      "long_name": "Seth - Swift Shadow",
       "faction": "mauler",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -21648,7 +21737,8 @@
         }
       }
     },
-    "Shadewing - Undying Vow": {
+    "Shadewing": {
+      "long_name": "Shadewing - Undying Vow",
       "faction": "graveborn",
       "class": "rogue",
       "role_category": "specialist",
@@ -21925,7 +22015,8 @@
         }
       }
     },
-    "Shakir - Furious Howl": {
+    "Shakir": {
+      "long_name": "Shakir - Furious Howl",
       "faction": "mauler",
       "class": "rogue",
       "role_category": "specialist",
@@ -22146,7 +22237,8 @@
         }
       }
     },
-    "Shemira - Corpsemaker": {
+    "Shemira": {
+      "long_name": "Shemira - Corpsemaker",
       "faction": "graveborn",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -22304,7 +22396,8 @@
         }
       }
     },
-    "Silven - Heir of Glory": {
+    "Silven": {
+      "long_name": "Silven - Heir of Glory",
       "faction": "lightbearer",
       "class": "marksman",
       "role_category": "damage_dealer",
@@ -22516,7 +22609,8 @@
         }
       }
     },
-    "Silvina - The Taken Breath": {
+    "Silvina": {
+      "long_name": "Silvina - The Taken Breath",
       "faction": "graveborn",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -22723,7 +22817,8 @@
         }
       }
     },
-    "Sinbad - Seaside Savant": {
+    "Sinbad": {
+      "long_name": "Sinbad - Seaside Savant",
       "faction": "lightbearer",
       "class": "rogue",
       "role_category": "specialist",
@@ -22980,7 +23075,8 @@
         }
       }
     },
-    "Smokey & Meerky - Wasteland Apothecary": {
+    "Smokey & Meerky": {
+      "long_name": "Smokey & Meerky - Wasteland Apothecary",
       "faction": "mauler",
       "class": "support",
       "role_category": "support",
@@ -23223,7 +23319,8 @@
         }
       }
     },
-    "Solise - Floral Wonder": {
+    "Solise": {
+      "long_name": "Solise - Floral Wonder",
       "faction": "wilder",
       "class": "support",
       "role_category": "support",
@@ -23448,7 +23545,8 @@
         }
       }
     },
-    "Sonja - Crimson Queenpin": {
+    "Sonja": {
+      "long_name": "Sonja - Crimson Queenpin",
       "faction": "lightbearer",
       "class": "warrior",
       "role_category": "support",
@@ -23632,7 +23730,8 @@
         }
       }
     },
-    "Soren - Silent Fury": {
+    "Soren": {
+      "long_name": "Soren - Silent Fury",
       "faction": "mauler",
       "class": "rogue",
       "role_category": "specialist",
@@ -23898,7 +23997,8 @@
         }
       }
     },
-    "Sylphira - Sovereign of Song": {
+    "Sylphira": {
+      "long_name": "Sylphira - Sovereign of Song",
       "faction": "celestial",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -24232,7 +24332,8 @@
         }
       }
     },
-    "Talene - Resurging Flame": {
+    "Talene": {
+      "long_name": "Talene - Resurging Flame",
       "faction": "celestial",
       "class": "mage",
       "role_category": "specialist",
@@ -24487,7 +24588,8 @@
         }
       }
     },
-    "Tasi - Fairy of Dreams": {
+    "Tasi": {
+      "long_name": "Tasi - Fairy of Dreams",
       "faction": "wilder",
       "class": "mage",
       "role_category": "specialist",
@@ -24763,7 +24865,8 @@
         }
       }
     },
-    "Temesia - Lightsavior": {
+    "Temesia": {
+      "long_name": "Temesia - Lightsavior",
       "faction": "lightbearer",
       "class": "tank",
       "role_category": "specialist",
@@ -25047,7 +25150,8 @@
         }
       }
     },
-    "Thador - Ironsworn General": {
+    "Thador": {
+      "long_name": "Thador - Ironsworn General",
       "faction": "wilder",
       "class": "tank",
       "role_category": "tank",
@@ -25277,7 +25381,8 @@
         }
       }
     },
-    "Thoran - Fallen King": {
+    "Thoran": {
+      "long_name": "Thoran - Fallen King",
       "faction": "graveborn",
       "class": "tank",
       "role_category": "tank",
@@ -25496,7 +25601,8 @@
         }
       }
     },
-    "Tilaya - Wild Blade": {
+    "Tilaya": {
+      "long_name": "Tilaya - Wild Blade",
       "faction": "wilder",
       "class": "warrior",
       "role_category": "tank",
@@ -25755,7 +25861,8 @@
         }
       }
     },
-    "Ulmus - Grove Keeper": {
+    "Ulmus": {
+      "long_name": "Ulmus - Grove Keeper",
       "faction": "wilder",
       "class": "tank",
       "role_category": "specialist",
@@ -25997,7 +26104,8 @@
         }
       }
     },
-    "Vala - Phantom of Oakenfell": {
+    "Vala": {
+      "long_name": "Vala - Phantom of Oakenfell",
       "faction": "lightbearer",
       "class": "rogue",
       "role_category": "damage_dealer",
@@ -26274,7 +26382,8 @@
         }
       }
     },
-    "Valen - Roving Swordsman": {
+    "Valen": {
+      "long_name": "Valen - Roving Swordsman",
       "faction": "lightbearer",
       "class": "warrior",
       "role_category": "damage_dealer",
@@ -26481,7 +26590,8 @@
         }
       }
     },
-    "Valka - Forsaken Blade": {
+    "Valka": {
+      "long_name": "Valka - Forsaken Blade",
       "faction": "graveborn",
       "class": "warrior",
       "role_category": "specialist",
@@ -26792,7 +26902,8 @@
         }
       }
     },
-    "Velara - Pale Votary": {
+    "Velara": {
+      "long_name": "Velara - Pale Votary",
       "faction": "wilder",
       "class": "support",
       "role_category": "support",
@@ -27036,7 +27147,8 @@
         }
       }
     },
-    "Viperian - Shadow Serpent": {
+    "Viperian": {
+      "long_name": "Viperian - Shadow Serpent",
       "faction": "graveborn",
       "class": "mage",
       "role_category": "damage_dealer",
@@ -27259,7 +27371,8 @@
         }
       }
     },
-    "Walker - Wildland Outlaw": {
+    "Walker": {
+      "long_name": "Walker - Wildland Outlaw",
       "faction": "lightbearer",
       "class": "rogue",
       "role_category": "specialist",
@@ -27511,7 +27624,8 @@
         }
       }
     },
-    "Zandrok - Watchful Edge": {
+    "Zandrok": {
+      "long_name": "Zandrok - Watchful Edge",
       "faction": "mauler",
       "class": "warrior",
       "role_category": "specialist",
@@ -27749,7 +27863,8 @@
         }
       }
     },
-    "Zanie - Timeless Tinkerer": {
+    "Zanie": {
+      "long_name": "Zanie - Timeless Tinkerer",
       "faction": "lightbearer",
       "class": "marksman",
       "role_category": "specialist",
@@ -28031,7 +28146,8 @@
         }
       }
     },
-    "Zorya - Watcher in Stone": {
+    "Zorya": {
+      "long_name": "Zorya - Watcher in Stone",
       "faction": "graveborn",
       "class": "warrior",
       "role_category": "specialist",

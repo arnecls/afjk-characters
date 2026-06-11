@@ -375,11 +375,9 @@ def _load_hero_role_categories() -> dict[str, str]:
     path = ROOT / "data" / "heroes_data_processed.json"
     if not path.is_file():
         return {}
-    gen = _load_gen_overview()
     payload = json.loads(path.read_text(encoding="utf-8"))
     out: dict[str, str] = {}
-    for title, record in payload.get("heroes", {}).items():
-        short = gen.short_name(title)
+    for short, record in payload.get("heroes", {}).items():
         role = record.get("role_category", "")
         out[short] = ROLE_CATEGORY_LABELS.get(role, "")
     return out

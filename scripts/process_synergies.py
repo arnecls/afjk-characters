@@ -48,23 +48,29 @@ def rank_synergies_full(receiver, heroes, enabler_matchers, behavior_by_title):
         tiers_by_title,
     )
     return [
-        {"provider": title, "reasons": reasons, "score": score}
+        {
+            "provider": gen.short_name(title),
+            "reasons": reasons,
+            "score": score,
+        }
         for score, reasons, title in entries
     ]
 
 
-def _assert_title_sets_match(processed: dict, analyzed_titles: set[str]) -> None:
-    processed_titles = set(processed["heroes"])
-    if processed_titles != analyzed_titles:
-        only_processed = processed_titles - analyzed_titles
-        only_analyzed = analyzed_titles - processed_titles
+def _assert_short_name_sets_match(
+    processed: dict, analyzed_short_names: set[str]
+) -> None:
+    processed_short_names = set(processed["heroes"])
+    if processed_short_names != analyzed_short_names:
+        only_processed = processed_short_names - analyzed_short_names
+        only_analyzed = analyzed_short_names - processed_short_names
         parts: list[str] = []
         if only_processed:
             parts.append(f"only in processed: {sorted(only_processed)[:5]}")
         if only_analyzed:
             parts.append(f"only in heroes_data: {sorted(only_analyzed)[:5]}")
         raise SystemExit(
-            "heroes_data_processed.json and heroes_data.json hero titles "
+            "heroes_data_processed.json and heroes_data.json hero names "
             f"do not match ({'; '.join(parts)}). Re-run process_heroes.py."
         )
 
@@ -105,7 +111,9 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         heroes.append(hero)
         block_by_title[hero.title] = block
 
-    _assert_title_sets_match(processed, {h.title for h in heroes})
+    _assert_short_name_sets_match(
+        processed, {gen.short_name(h.title) for h in heroes}
+    )
 
     hero_class_by_title: dict[str, str] = {}
     for hero in heroes:
@@ -129,12 +137,14 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         heroes, enabler_matchers, behavior_by_title
     )
     faction_by_title = {
-        title: record["faction"]
-        for title, record in processed["heroes"].items()
+        hero.title: processed["heroes"][gen.short_name(hero.title)]["faction"]
+        for hero in heroes
     }
     role_category_by_title = {
-        title: record["role_category"]
-        for title, record in processed["heroes"].items()
+        hero.title: processed["heroes"][gen.short_name(hero.title)][
+            "role_category"
+        ]
+        for hero in heroes
     }
     replacements_index = gen.compute_replacement_scores(
         heroes,
@@ -146,7 +156,7 @@ def build_synergies(raw: dict, processed: dict) -> dict:
     synergy_heroes: dict[str, dict] = {}
     for hero in heroes:
         benefited = beneficiaries_index.get(hero.title, [])
-        synergy_heroes[hero.title] = {
+        synergy_heroes[gen.short_name(hero.title)] = {
             "synergies": rank_synergies_full(
                 hero, heroes, enabler_matchers, behavior_by_title
             ),

@@ -113,7 +113,7 @@ class RoundTripTests(unittest.TestCase):
 
     def test_aliceth_full_ascension_numerics(self):
         processed = io.load_processed()
-        hero = processed["heroes"]["Aliceth - Radiant Wings"]
+        hero = processed["heroes"]["Aliceth"]
         sealed = hero["skills"]["Sealed Fate"]
         pen = next(
             e
@@ -148,7 +148,7 @@ class RoundTripTests(unittest.TestCase):
 
     def test_dionel_untargetable_immunity(self):
         processed = io.load_processed()
-        skill = processed["heroes"]["Dionel - Venus of Dawn"]["skills"][
+        skill = processed["heroes"]["Dionel"]["skills"][
             "Dawn Light"
         ]
         imm_types = {
@@ -160,7 +160,7 @@ class RoundTripTests(unittest.TestCase):
 
     def test_aliceth_aegis_wings_blind_cc(self):
         processed = io.load_processed()
-        wings = processed["heroes"]["Aliceth - Radiant Wings"]["skills"][
+        wings = processed["heroes"]["Aliceth"]["skills"][
             "Aegis Wings"
         ]
         cc_types = {

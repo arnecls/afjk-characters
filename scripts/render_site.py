@@ -75,14 +75,10 @@ def _provider_synergy_reasons(
     beneficiary_short: str,
     provider_short: str,
     synergies: dict,
-    title_by_short: dict[str, str],
 ) -> list[str]:
     """Why *beneficiary_short* pairs with *provider_short* (receiver view)."""
-    provider_title = title_by_short.get(provider_short)
-    if not provider_title:
-        return []
-    for pick in _receiver_synergies(beneficiary_short, synergies, title_by_short):
-        if pick.get("provider") == provider_title:
+    for pick in _receiver_synergies(beneficiary_short, synergies):
+        if pick.get("provider") == provider_short:
             return [
                 gen.format_reason_for_display(r)
                 for r in pick.get("reasons", [])
@@ -111,7 +107,6 @@ def _build_synergy_sections(
     obvious_threshold: int,
     slug_by_name: dict[str, str],
     synergies: dict,
-    title_by_short: dict[str, str],
 ) -> dict:
     benefit_stats = [hs.to_display_stat(s) for s in p.get("benefit_stats", [])]
     intro_lines: list[str] = []
@@ -140,7 +135,7 @@ def _build_synergy_sections(
         if provider_beneficiary_count.get(pick["provider"], 0) <= obvious_threshold
     ]
     picks = filtered[:max_syn]
-    receiver_synergies = _receiver_synergies(short, synergies, title_by_short)
+    receiver_synergies = _receiver_synergies(short, synergies)
     partners: list[dict] = []
     if picks:
         for pick in picks:
@@ -191,9 +186,7 @@ def _build_synergy_sections(
         for b in display:
             if b["name"] not in slug_by_name:
                 continue
-            receiver_synergies = _receiver_synergies(
-                b["name"], synergies, title_by_short
-            )
+            receiver_synergies = _receiver_synergies(b["name"], synergies)
             rating = gen.beneficiary_rating_out_of_five(
                 b["score"], receiver_synergies
             )
@@ -206,7 +199,7 @@ def _build_synergy_sections(
                         b["score"], receiver_synergies
                     ),
                     "reasons": _provider_synergy_reasons(
-                        b["name"], short, synergies, title_by_short
+                        b["name"], short, synergies
                     ),
                 }
             )
@@ -267,18 +260,14 @@ def build_site_data(
     rep_scoring = config.get("replacement_scoring", {})
     max_rep = rep_scoring.get("max_replacements", 3)
     provider_beneficiary_count = {
-        title: len(s["beneficiaries"])
-        for title, s in synergies["heroes"].items()
-    }
-    title_by_short = {
-        gen.short_name(title): title for title in synergies["heroes"]
+        short: len(s["beneficiaries"])
+        for short, s in synergies["heroes"].items()
     }
 
     data_by_title = {h["title"]: h for h in data["heroes"]}
 
     slug_by_name: dict[str, str] = {}
-    for title in sorted(processed["heroes"]):
-        short = gen.short_name(title)
+    for short in sorted(processed["heroes"]):
         slug_by_name[short] = hero_slug(short)
 
     heroes_text = io.reconstruct_heroes_md(data)
@@ -294,19 +283,19 @@ def build_site_data(
     rs.assign_magnitudes(list(summary_heroes.values()), skills_by_title)
 
     heroes_out: list[dict] = []
-    for title in sorted(processed["heroes"]):
+    for short in sorted(processed["heroes"]):
         p = {
-            **processed["heroes"][title],
-            **synergies["heroes"][title],
+            **processed["heroes"][short],
+            **synergies["heroes"][short],
         }
-        short = gen.short_name(title)
-        hero = summary_heroes[title]
+        long_name = p["long_name"]
+        hero = summary_heroes[long_name]
         behavior = rs.HeroBehavior(**p["behavior"])
-        meta = data_by_title.get(title, {})
+        meta = data_by_title.get(long_name, {})
 
         skill_summaries = rs._load_skill_summaries().get(short, {})
         hero_categories = {s["category"] for s in p["skills"].values()}
-        hero_skills = skills_by_title.get(title, [])
+        hero_skills = skills_by_title.get(long_name, [])
         prydwen_tiers = _normalize_prydwen_tiers(meta.get("prydwen_tiers"))
         behavior_md = "\n".join(
             rs.format_behavior_section(
@@ -338,7 +327,6 @@ def build_site_data(
             obvious_threshold,
             slug_by_name,
             synergies,
-            title_by_short,
         )
         replacements = _build_replacements(
             short, p.get("replacements", {}), max_rep, slug_by_name
@@ -355,7 +343,7 @@ def build_site_data(
             {
                 "name": short,
                 "slug": slug_by_name[short],
-                "title": meta.get("title", title),
+                "title": meta.get("title", long_name),
                 "faction": meta.get("faction"),
                 "class": meta.get("class"),
                 "roleCategory": p.get("role_category"),

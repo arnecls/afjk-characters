@@ -19,6 +19,7 @@
     "hero": {
       "type": "object",
       "required": [
+        "long_name",
         "faction",
         "class",
         "role_category",
@@ -32,6 +33,11 @@
       ],
       "additionalProperties": false,
       "properties": {
+        "long_name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Full hero title (e.g. Aliceth - Radiant Wings) for display."
+        },
         "faction": {
           "$ref": "#/$defs/faction"
         },

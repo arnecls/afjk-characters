@@ -805,6 +805,7 @@ def serialize_processed_hero(
     benefit_stats = [to_schema_stat(s) for s in hero.benefit_stats]
 
     return {
+        "long_name": hero_record.get("title") or hero.title,
         "faction": to_schema_faction(hero_record.get("faction")),
         "class": to_schema_class(hero_record.get("class")),
         "role_category": resolve_role_category(hero_record),
