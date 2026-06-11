@@ -36,7 +36,69 @@
         >Submit issue</a>
       </div>
     </div>
-    <div class="filters" id="filters"></div>
+    <div class="filters-panel" id="filters-panel">
+      <div class="filters-body">
+        <div class="filters" id="filters"></div>
+        <button
+          type="button"
+          class="filters-toggle"
+          id="filters-toggle"
+          aria-expanded="true"
+          aria-controls="filters"
+          title="Hide filters"
+        >
+          <svg
+            class="filters-toggle-icon filters-toggle-icon-up"
+            viewBox="0 0 18 18"
+            width="15"
+            height="15"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 8 9 3l5 5"
+              stroke="currentColor"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+            <path
+              d="M4 15 9 10l5 5"
+              stroke="currentColor"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+          </svg>
+          <svg
+            class="filters-toggle-icon filters-toggle-icon-down"
+            viewBox="0 0 18 18"
+            width="15"
+            height="15"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 3 9 8l5-5"
+              stroke="currentColor"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+            <path
+              d="M4 10 9 15l5-5"
+              stroke="currentColor"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+          </svg>
+          <span class="visually-hidden" id="filters-toggle-label">Hide filters</span>
+        </button>
+      </div>
+    </div>
     <nav class="header-back hidden" id="header-back" aria-label="Back navigation">
       <a href="#" data-nav-home>&larr; All heroes</a>
     </nav>
