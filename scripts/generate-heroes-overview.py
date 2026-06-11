@@ -2251,6 +2251,28 @@ def scan_enabler_patterns_in_heroes(heroes: list[_rs.Hero]) -> dict[str, list[st
     return dict(candidates)
 
 
+def _role_category_by_title(
+    heroes: list[_rs.Hero],
+    block_by_title: dict[str, str],
+) -> dict[str, str]:
+    import hero_schema as hs
+    import heroes_io as io
+
+    try:
+        processed = io.load_processed()
+        return hs.role_category_by_title_from_processed(
+            heroes, processed, short_name
+        )
+    except (FileNotFoundError, KeyError):
+        pass
+    raw = json.loads(HEROES_DATA.read_text(encoding="utf-8"))
+    records = {h["title"]: h for h in raw.get("heroes", [])}
+    class_by_title = {
+        h.title: _parse_hero_class(block_by_title[h.title]) for h in heroes
+    }
+    return hs.build_role_category_by_title(heroes, records, class_by_title)
+
+
 def build_overview() -> str:
     text = HEROES_MD.read_text(encoding="utf-8")
     blocks = re.split(r"\n(?=## )", text)
@@ -2274,11 +2296,14 @@ def build_overview() -> str:
     skills_by_title = _rs.load_skills_by_title_from_blocks(
         list(block_by_title.values())
     )
-    _rs.assign_magnitudes(heroes, skills_by_title)
+    role_category_by_title = _role_category_by_title(heroes, block_by_title)
+    _rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
     enabler_matchers = _make_enabler_matchers(hero_class_by_title)
 
     display_by_title = {h.title: short_name(h.title) for h in heroes}
-    behavior_by_title = _rs.build_behavior_for_heroes(heroes, display_by_title)
+    behavior_by_title = _rs.build_behavior_for_heroes(
+        heroes, display_by_title, role_category_by_title=role_category_by_title
+    )
     beneficiaries_index = build_beneficiaries_index(
         heroes, enabler_matchers, behavior_by_title
     )

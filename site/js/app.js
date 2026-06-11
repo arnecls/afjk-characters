@@ -325,17 +325,19 @@
 
   const QUALITY_TOOLTIPS = {
     high:
-      "Top third vs the roster for this effect (parsed %, reach, " +
+      "Top third vs same-role peers for this effect (parsed %, reach, " +
       "frequency, or CC duration; fully ascended).",
-    average: "Middle band vs other heroes with the same effect label.",
-    low: "Below average vs the roster for this effect type.",
+    average:
+      "Middle band vs same-role peers with the same effect label.",
+    low: "Below average vs same-role peers for this effect type.",
   };
 
   const SPEED_TOOLTIPS = {
     slow:
       "Slow to cast: longer cooldown, initial delay, or ultimate " +
       "energy fill time.",
-    average: "Typical cast timing for this skill group across the roster.",
+    average:
+      "Typical cast timing for this skill group among same-role peers.",
     fast:
       "Quick to cast: short delay, low cooldown, or battle-start " +
       "override.",

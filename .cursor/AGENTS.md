@@ -99,7 +99,7 @@ Synergy picks in `heroes-overview.md` skip rare conditional ally buffs.
 
 ## Fully ascended comparison
 
-Synergy ranking and cross-hero magnitude bands assume every hero is **fully
+Synergy ranking and same-role magnitude bands assume every hero is **fully
 ascended**: all skill slots unlock (Ultimate through Supreme+ / EX tiers), and
 numeric comparison uses the **strongest parseable value** per effect label
 across skill level lines — not the base unlock value. This is implemented in
@@ -110,15 +110,16 @@ use `(scaled)` placeholders in source text.
 ## Quality indicators
 
 Summary lines mark relative strength with **`high`**, **`average`**, or
-**`low`** (backticks in output). These rank an effect against the roster, not
-in isolation.
+**`low`** (backticks in output). These rank an effect against **same-role
+peers** (Prydwen role category: damage dealer, specialist, support, tank),
+not the full roster.
 
-- **Buffs / debuffs** — parsed % compared within the same label across heroes
-  (quantiles when enough data); debuffs also reward `all enemies` reach.
-  `assign_magnitudes()` in `rewrite-summaries.py`.
+- **Buffs / debuffs** — parsed % compared within the same label across
+  same-role heroes (quantiles when enough data); debuffs also reward
+  `all enemies` reach. `assign_magnitudes()` in `rewrite-summaries.py`.
 - **Crowd control** — duration-based (≥5s → high, ≥2s → average).
 - **HP loss / max-HP / true damage** — composite score from %, targeting, and
-  frequency; roster quantiles in `assign_damage_magnitudes()`.
+  frequency; same-role quantiles in `assign_damage_magnitudes()`.
 
 **Tier** in parentheses (`Mythic+`, `Level 3`, …) is unlock level, not
 strength. **Conditional (rare)** lowers magnitude by two steps; some labels
@@ -209,8 +210,8 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   (peak per type across tiers; p75 for non-ultimate).
   Computed in `compute_skill_overview()` in
   `rewrite-summaries.py`; stored in `behavior.skill_overview`. Speed uses
-  `compute_per_skill_speeds()` thresholds. Damage scores per skill
-  section from chunk text (roster quantiles). Heal/buffs/debuffs peak
+  `compute_per_skill_speeds()` same-role quantiles. Damage scores per skill
+  section from chunk text (same-role quantiles). Heal/buffs/debuffs peak
   magnitudes from `skill_slices` effects. Non-ultimate row aggregates
   Skill1/Skill2/Ex with **p75** per metric type. Synergy fuel still uses
   `signature_skill_speed` / `synergy_signature_speed` in processed JSON
@@ -563,8 +564,8 @@ Character, Skill, found, expected.
 ### Detailed validation
 
 For each character, compare the detected skill effects with the values stated
-on the long discription of the skill. This check should validate targeting,
-timings and magnitueds.
+on the long discription of the skill. This check should validate targeting, area
+types, timings and magnitudes.
 
 Compile a list of the to be tested attributes per character, per skill and do
 the comparison in batches. Note down the findings in the form of:

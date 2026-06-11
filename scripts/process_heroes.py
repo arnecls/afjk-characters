@@ -59,25 +59,6 @@ def build_processed(data: dict) -> dict:
         )
         rs.analyze_hero(hero)
 
-    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
-    rs.assign_magnitudes(heroes, skills_by_title)
-
-    display_by_title = {h.title: gen.short_name(h.title) for h in heroes}
-    behavior_by_title = rs.build_behavior_for_heroes(
-        heroes,
-        display_by_title,
-        heroes2_text=behavior_text,
-        heroes_text=heroes_text,
-    )
-
-    # Match overview-to-csv: energy providers are detected from freshly parsed
-    # (un-analyzed) hero blocks, so only the battle-start text path counts.
-    energy_provider_titles = {
-        hero.title
-        for hero in (rs.parse_hero_block(b) for b in blocks)
-        if gen.is_energy_provider(hero)
-    }
-
     import sources_web
 
     try:
@@ -88,6 +69,29 @@ def build_processed(data: dict) -> dict:
         print(f"Warning: skipping Prydwen role categories ({exc})", file=sys.stderr)
 
     data_by_title = {h["title"]: h for h in data["heroes"]}
+    role_category_by_title = hs.build_role_category_by_title(
+        heroes, data_by_title, hero_class_by_title
+    )
+
+    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
+
+    display_by_title = {h.title: gen.short_name(h.title) for h in heroes}
+    behavior_by_title = rs.build_behavior_for_heroes(
+        heroes,
+        display_by_title,
+        heroes2_text=behavior_text,
+        heroes_text=heroes_text,
+        role_category_by_title=role_category_by_title,
+    )
+
+    # Match overview-to-csv: energy providers are detected from freshly parsed
+    # (un-analyzed) hero blocks, so only the battle-start text path counts.
+    energy_provider_titles = {
+        hero.title
+        for hero in (rs.parse_hero_block(b) for b in blocks)
+        if gen.is_energy_provider(hero)
+    }
     processed_heroes: dict[str, dict] = {}
     for hero in heroes:
         behavior = behavior_by_title[hero.title]

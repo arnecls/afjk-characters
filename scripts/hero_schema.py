@@ -839,6 +839,42 @@ def resolve_role_category(hero_record: dict[str, Any]) -> str:
     return _CLASS_ROLE_CATEGORY_FALLBACK.get(hero_class, "damage_dealer")
 
 
+def build_role_category_by_title(
+    heroes: list[Any],
+    records_by_title: dict[str, dict[str, Any]] | None = None,
+    class_by_title: dict[str, str] | None = None,
+) -> dict[str, str]:
+    """Map hero analysis titles to role categories for peer comparisons."""
+    records = records_by_title or {}
+    classes = class_by_title or {}
+    out: dict[str, str] = {}
+    for hero in heroes:
+        title = hero.title
+        record = dict(records.get(title, {}))
+        if "class" not in record and title in classes:
+            record["class"] = classes[title]
+        out[title] = resolve_role_category(record)
+    return out
+
+
+def role_category_by_title_from_processed(
+    heroes: list[Any],
+    processed: dict[str, Any],
+    short_name_fn: Any,
+) -> dict[str, str]:
+    """Build title → role map from processed hero JSON."""
+    by_short = processed.get("heroes", {})
+    out: dict[str, str] = {}
+    for hero in heroes:
+        short = short_name_fn(hero.title)
+        record = by_short.get(short, {})
+        long_name = record.get("long_name", hero.title)
+        out[hero.title] = record.get("role_category") or resolve_role_category(
+            {"long_name": long_name, "class": record.get("class")}
+        )
+    return out
+
+
 def serialize_processed_hero(
     hero: Any,
     hero_record: dict[str, Any],

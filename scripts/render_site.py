@@ -280,7 +280,13 @@ def build_site_data(
         hero = rs.parse_hero_block(block)
         rs.analyze_hero(hero)
         summary_heroes[hero.title] = hero
-    rs.assign_magnitudes(list(summary_heroes.values()), skills_by_title)
+    summary_list = list(summary_heroes.values())
+    role_category_by_title = hs.role_category_by_title_from_processed(
+        summary_list, processed, gen.short_name
+    )
+    rs.assign_magnitudes(
+        summary_list, skills_by_title, role_category_by_title
+    )
 
     heroes_out: list[dict] = []
     for short in sorted(processed["heroes"]):

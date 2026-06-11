@@ -122,8 +122,12 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         )
         rs.analyze_hero(hero)
 
+    role_category_by_title = hs.role_category_by_title_from_processed(
+        heroes, processed, gen.short_name
+    )
+
     skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
-    rs.assign_magnitudes(heroes, skills_by_title)
+    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
     enabler_matchers = gen._make_enabler_matchers(hero_class_by_title)
 
     display_by_title = {h.title: gen.short_name(h.title) for h in heroes}
@@ -132,18 +136,13 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         display_by_title,
         heroes2_text=behavior_text,
         heroes_text=heroes_text,
+        role_category_by_title=role_category_by_title,
     )
     beneficiaries_index = gen.build_beneficiaries_index(
         heroes, enabler_matchers, behavior_by_title
     )
     faction_by_title = {
         hero.title: processed["heroes"][gen.short_name(hero.title)]["faction"]
-        for hero in heroes
-    }
-    role_category_by_title = {
-        hero.title: processed["heroes"][gen.short_name(hero.title)][
-            "role_category"
-        ]
         for hero in heroes
     }
     replacements_index = gen.compute_replacement_scores(

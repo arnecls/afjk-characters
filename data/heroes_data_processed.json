@@ -424,7 +424,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "high"
+        "hp_loss": "average"
       },
       "benefit_stats": [
         "atk",
@@ -434,13 +434,13 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "avg attack range 8.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Radiant Rain",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 8.0,
         "placement_constraints": [
@@ -451,26 +451,26 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "HP loss": "high",
+              "HP loss": "average",
               "Physical": "high"
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "HP loss": "high",
+              "HP loss": "average",
               "Physical": "high"
             }
           },
@@ -826,8 +826,8 @@
         "casting_speed": "slow",
         "signature_skill_name": "Shared Resolve",
         "signature_skill_is_ult": false,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
@@ -840,7 +840,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "average",
             "heal": "average",
@@ -862,7 +862,7 @@
             }
           },
           "non_ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "average",
@@ -1135,7 +1135,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "slow",
+        "non_ult_speed": "average",
         "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -1147,7 +1147,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "average"
             }
           },
           "ultimate": {
@@ -1158,7 +1158,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "average"
             }
           },
           "non_ultimate": {
@@ -1441,13 +1441,13 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Shield Assault",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [
@@ -1458,7 +1458,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -1469,7 +1469,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -1658,14 +1658,14 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Force of Nature",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "slow",
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
@@ -1699,7 +1699,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "average"
             }
           }
         }
@@ -1957,34 +1957,34 @@
         "casting_speed": "slow",
         "signature_skill_name": "Wild Sniper",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
-        "non_ult_speed": "slow",
+        "ult_speed": "average",
+        "non_ult_speed": "average",
         "avg_attack_range": 3.094339622641509,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "non_ultimate": {
@@ -2328,7 +2328,7 @@
       ],
       "damage_magnitudes": {
         "hp_loss": "high",
-        "true": "average"
+        "true": "low"
       },
       "benefit_stats": [
         "max_hp",
@@ -2342,35 +2342,35 @@
         "casting_speed": "average",
         "signature_skill_name": "Unbroken Retribution",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "low",
               "Physical": "average"
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "low",
               "Physical": "average"
             }
           },
@@ -2626,19 +2626,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Starlit Slumber",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
-        "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "average",
             "heal": "none",
@@ -2649,7 +2649,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "average",
             "heal": "none",
@@ -3004,15 +3004,15 @@
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
@@ -3022,9 +3022,9 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
@@ -3888,7 +3888,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "high"
+        "max_hp": "low"
       },
       "benefit_stats": [
         "life_drain"
@@ -3896,14 +3896,14 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Indomitable",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "slow",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -3924,7 +3924,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "DoT": "average",
+              "DoT": "low",
               "Physical": "low"
             }
           },
@@ -4206,7 +4206,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "summon moves",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Shadow Flash",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "slow",
@@ -4237,7 +4237,7 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "high",
-              "DoT": "high"
+              "DoT": "average"
             }
           },
           "non_ultimate": {
@@ -4501,19 +4501,19 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.7 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "fast",
         "signature_skill_name": "Restless Guardian",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 1.7058823529411766,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "none",
@@ -4522,7 +4522,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "none",
@@ -5009,11 +5009,11 @@
         "casting_speed": "slow",
         "signature_skill_name": "Tidal Strength",
         "signature_skill_is_ult": false,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": 10.0,
         "placement_constraints": [
           {
@@ -5023,7 +5023,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "low",
             "heal": "none",
@@ -5354,16 +5354,16 @@
         "casting_speed": "slow",
         "signature_skill_name": "Queen's Summons",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -5375,7 +5375,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -5488,43 +5488,43 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Brothers-in-arms",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "low"
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "low"
             }
           },
           "non_ultimate": {
             "speed": "average",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -5798,19 +5798,19 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Detention Pass",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "average",
@@ -5819,7 +5819,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "average",
@@ -6435,16 +6435,16 @@
         "casting_speed": "slow",
         "signature_skill_name": "Gravitic Requiem",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -6455,7 +6455,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -6725,7 +6725,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "average"
+        "max_hp": "low"
       },
       "benefit_stats": [
         "max_hp"
@@ -6733,7 +6733,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "fast",
         "signature_skill_name": "Buddy Barrier",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
@@ -6766,8 +6766,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "average",
-              "Magic": "low"
+              "Max HP-based damage": "low",
+              "Magic": "average"
             }
           },
           "non_ultimate": {
@@ -7040,14 +7040,14 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "off battlefield",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Inventor's Will",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
@@ -7061,7 +7061,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
@@ -7710,7 +7710,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "average"
+        "hp_loss": "low"
       },
       "benefit_stats": [
         "atk_spd",
@@ -7728,7 +7728,7 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": 6.365853658536587,
         "placement_constraints": [],
         "skill_overview": {
@@ -7762,7 +7762,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "HP loss": "average",
+              "HP loss": "low",
               "Magic": "average"
             }
           }
@@ -7994,37 +7994,37 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Verdant Cyclone",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "non_ultimate": {
@@ -8373,16 +8373,16 @@
         "casting_speed": "slow",
         "signature_skill_name": "Starlight Waltz",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
@@ -8391,7 +8391,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
@@ -8634,14 +8634,14 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Intel Chase",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "ult_speed": "average",
+        "non_ult_speed": "average",
         "avg_attack_range": null,
         "placement_constraints": [
           {
@@ -8651,7 +8651,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "none",
@@ -8660,7 +8660,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "none",
@@ -8981,14 +8981,14 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Sanctified Circle",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
-        "non_ult_speed": "fast",
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [
           {
@@ -8998,7 +8998,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -9010,7 +9010,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -9293,7 +9293,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": 5.000000000000001,
         "placement_constraints": [],
         "skill_overview": {
@@ -9579,19 +9579,19 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Pounding Blow",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
@@ -9602,7 +9602,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
@@ -9905,13 +9905,13 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "avg attack range 7.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Zoltraak",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 7.0,
         "placement_constraints": [
@@ -9922,7 +9922,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -9935,7 +9935,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -10201,7 +10201,7 @@
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 10.0,
         "placement_constraints": [
@@ -10221,7 +10221,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -10239,7 +10239,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "average"
             }
           }
         }
@@ -10542,13 +10542,13 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Spring Therapy",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
@@ -10565,9 +10565,9 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "average",
             "buffs": "none",
             "debuffs": "none",
@@ -10844,19 +10844,19 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 2.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Threshold of Jade",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -10865,7 +10865,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -11196,7 +11196,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "average"
+        "max_hp": "low"
       },
       "benefit_stats": [
         "atk_spd",
@@ -11231,7 +11231,7 @@
             "debuffs": "none",
             "damage_types": {
               "Physical": "average",
-              "DoT": "high"
+              "DoT": "average"
             }
           },
           "ultimate": {
@@ -11243,18 +11243,18 @@
             "debuffs": "none",
             "damage_types": {
               "Physical": "average",
-              "DoT": "high"
+              "DoT": "average"
             }
           },
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "average",
+              "Max HP-based damage": "low",
               "Physical": "average"
             }
           }
@@ -11455,19 +11455,19 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "avg attack range 8.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Hailing Arrows",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 8.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -11478,7 +11478,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -11624,37 +11624,37 @@
       "behavior": {
         "movement": "mostly stationary",
         "movement_note": "avg attack range 5.0 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "fast",
         "signature_skill_name": "Pretty Fireball",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "average",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "low"
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "low"
             }
           },
           "non_ultimate": {
@@ -12303,13 +12303,13 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Form Shift",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [
@@ -12320,7 +12320,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -12331,7 +12331,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -12771,7 +12771,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "high"
+        "max_hp": "low"
       },
       "benefit_stats": [
         "atk",
@@ -12782,13 +12782,13 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Hero Party",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 2.894736842105263,
         "placement_constraints": [],
@@ -12805,14 +12805,14 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "high",
+              "Max HP-based damage": "low",
               "Physical": "high"
             }
           },
@@ -13066,16 +13066,16 @@
         "casting_speed": "slow",
         "signature_skill_name": "Cannon Fire",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 3.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -13086,7 +13086,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -13264,13 +13264,13 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Mechanized Bond",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": null,
         "placement_constraints": [
@@ -13294,7 +13294,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "none",
@@ -13482,19 +13482,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Funereal Ring",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "average",
             "heal": "none",
@@ -13505,7 +13505,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "average",
             "heal": "none",
@@ -13811,7 +13811,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "high"
+        "true": "average"
       },
       "benefit_stats": [
         "atk",
@@ -13820,14 +13820,14 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Spellbane Shot",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "slow",
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
@@ -14167,14 +14167,14 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Grimoire Pact",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": null,
         "placement_constraints": [
           {
@@ -14486,19 +14486,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Gale Thrust",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -14509,7 +14509,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -15145,7 +15145,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -15180,7 +15180,7 @@
             "debuffs": "none",
             "damage_types": {
               "Physical": "high",
-              "HP loss": "high"
+              "HP loss": "average"
             }
           }
         }
@@ -15392,7 +15392,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "low"
+        "true": "average"
       },
       "benefit_stats": [
         "atk_spd",
@@ -15402,19 +15402,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Demonseal Spear",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "ult_speed": "average",
+        "non_ult_speed": "average",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -15425,7 +15425,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -15443,7 +15443,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "low",
+              "True damage": "average",
               "Physical": "average"
             }
           }
@@ -15668,19 +15668,19 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Devastating Axe",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -15691,7 +15691,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -15991,13 +15991,13 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Demolition Zone",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": null,
         "placement_constraints": [],
@@ -16014,7 +16014,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -16371,14 +16371,14 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Dungeon Gourmet",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "slow",
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
-        "non_ult_speed": "slow",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -17055,21 +17055,21 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Tempest Shot",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": 3.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "average",
@@ -17078,9 +17078,9 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "average",
@@ -17097,7 +17097,7 @@
             "debuffs": "none",
             "damage_types": {
               "Magic": "low",
-              "Max HP-based damage": "low"
+              "Max HP-based damage": "average"
             }
           }
         }
@@ -17290,7 +17290,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
@@ -17605,14 +17605,14 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Quake Slam",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
-        "non_ult_speed": "slow",
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [
           {
@@ -17626,7 +17626,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -17637,7 +17637,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -17897,7 +17897,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -18411,19 +18411,19 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Eternal Serenity",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -18432,7 +18432,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -18441,7 +18441,7 @@
             "damage_types": {}
           },
           "non_ultimate": {
-            "speed": "fast",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -18746,16 +18746,16 @@
         "casting_speed": "slow",
         "signature_skill_name": "Lumont's Charge",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": 7.461538461538463,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -18766,7 +18766,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -19344,10 +19344,10 @@
         "casting_speed": "fast",
         "signature_skill_name": "Silver-White Wings that Streak Across the Skies",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": null,
         "placement_constraints": [
@@ -19358,7 +19358,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -19369,7 +19369,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -19586,19 +19586,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Mid-Air Shot",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -19609,7 +19609,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -20109,7 +20109,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -20319,18 +20319,18 @@
         "casting_speed": "average",
         "signature_skill_name": "Winged Flame",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "average",
         "avg_attack_range": 10.093750000000002,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -20339,9 +20339,9 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -20630,7 +20630,7 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -20979,16 +20979,16 @@
         "casting_speed": "average",
         "signature_skill_name": "Lightning Fire Dragon's Roar/Fire Dragon King's Roar",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "slow",
-        "synergy_signature_is_ult": false,
-        "ult_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 11.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
@@ -20999,7 +20999,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
@@ -21275,19 +21275,19 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "avg attack range 10.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Rend Rupture",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -21299,7 +21299,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -21820,13 +21820,13 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Soul Shepherd",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": null,
         "placement_constraints": [
@@ -21837,7 +21837,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "average",
@@ -21846,7 +21846,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "average",
@@ -22070,8 +22070,8 @@
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "ult_speed": "average",
+        "non_ult_speed": "average",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -22085,7 +22085,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -22367,7 +22367,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Boxed Blessing",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
@@ -22664,19 +22664,19 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Sky Splitter",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -22687,7 +22687,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -22867,16 +22867,16 @@
         "casting_speed": "average",
         "signature_skill_name": "Floral Splendor",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -22887,7 +22887,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -23144,18 +23144,18 @@
         "casting_speed": "average",
         "signature_skill_name": "Divine Rend",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 2.8823529411764706,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -23164,9 +23164,9 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -23460,13 +23460,13 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.8 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Crimson Contract",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": 1.8313090418353575,
         "placement_constraints": [
@@ -23488,18 +23488,18 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "non_ultimate": {
@@ -23510,7 +23510,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           }
         }
@@ -23751,19 +23751,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Wild Shift",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -23774,7 +23774,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -24205,7 +24205,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "average"
+        "hp_loss": "low"
       },
       "benefit_stats": [
         "atk",
@@ -24218,11 +24218,11 @@
         "casting_speed": "average",
         "signature_skill_name": "Killer Flush",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.1428571428571428,
         "placement_constraints": [
           {
@@ -24232,7 +24232,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -24244,7 +24244,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -25144,16 +25144,16 @@
         "casting_speed": "fast",
         "signature_skill_name": "Fatal Greed",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
@@ -25162,7 +25162,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
@@ -25173,7 +25173,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "average",
@@ -25696,13 +25696,13 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Spirit Shackles",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
@@ -25719,7 +25719,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -25963,7 +25963,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "low"
+        "max_hp": "average"
       },
       "benefit_stats": [
         "max_hp"
@@ -25971,19 +25971,19 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.5 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Fiery Dance",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.4800000000000002,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -25994,7 +25994,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -26311,13 +26311,13 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "brief reposition",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Divine Wrath",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": null,
         "placement_constraints": [],
@@ -26332,9 +26332,9 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -26345,7 +26345,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -26657,19 +26657,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Shadow Strike",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
@@ -26680,7 +26680,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
@@ -27293,16 +27293,16 @@
         "casting_speed": "fast",
         "signature_skill_name": "Ravaging Claws",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -27313,7 +27313,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -27600,7 +27600,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high",
+              "Magic": "average",
               "Max HP-based damage": "average"
             }
           }
@@ -27870,7 +27870,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "average"
             }
           },
           "ultimate": {
@@ -27892,7 +27892,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high",
+              "Magic": "average",
               "Max HP-based damage": "low"
             }
           }
@@ -28116,7 +28116,7 @@
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
@@ -28133,7 +28133,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -28432,19 +28432,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Whizzing Edge",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -28455,7 +28455,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -28468,7 +28468,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "average",
@@ -28673,19 +28673,19 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Special Aroma",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -28694,7 +28694,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -28958,16 +28958,16 @@
         "casting_speed": "fast",
         "signature_skill_name": "Life's Embrace",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -28978,7 +28978,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
@@ -29183,14 +29183,14 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Crimson Covenant",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 2.9199999999999995,
         "placement_constraints": [
           {
@@ -29209,14 +29209,14 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -29483,7 +29483,7 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Whirlwind Swing",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "slow",
@@ -29872,7 +29872,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "low"
+        "max_hp": "average"
       },
       "benefit_stats": [
         "atk",
@@ -30201,14 +30201,14 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 3.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Divine Conflagration",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 3.0,
         "placement_constraints": [
           {
@@ -30218,25 +30218,25 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           },
           "non_ultimate": {
@@ -30247,7 +30247,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           }
         }
@@ -30543,7 +30543,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "avg attack range 10.0 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Eternal Dreamscape",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "slow",
@@ -30562,7 +30562,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "DoT": "average"
+              "DoT": "high"
             }
           },
           "ultimate": {
@@ -30573,7 +30573,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "DoT": "average"
+              "DoT": "high"
             }
           },
           "non_ultimate": {
@@ -30585,7 +30585,7 @@
             "debuffs": "none",
             "damage_types": {
               "Magic": "average",
-              "DoT": "low"
+              "DoT": "average"
             }
           }
         }
@@ -30905,16 +30905,16 @@
         "casting_speed": "average",
         "signature_skill_name": "Knight's Heart",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -30925,7 +30925,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -31193,11 +31193,11 @@
         "casting_speed": "slow",
         "signature_skill_name": "Darkmoon Pact",
         "signature_skill_is_ult": false,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": 0.15384615384615385,
         "placement_constraints": [
           {
@@ -31207,7 +31207,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "none",
             "heal": "none",
@@ -31463,13 +31463,13 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "slow",
+        "casting_speed": "fast",
         "signature_skill_name": "Resurrection",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [
@@ -31489,9 +31489,9 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -31793,19 +31793,19 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "fast",
         "signature_skill_name": "Wrath of the Wilds",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 1.8955223880597014,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "low",
             "heal": "average",
@@ -31816,7 +31816,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "low",
             "heal": "average",
@@ -32086,14 +32086,14 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "stationary when rooted",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Way of the Forest",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "ult_speed": "fast",
+        "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [
           {
@@ -32112,7 +32112,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
@@ -32435,7 +32435,7 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Swift Shift",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "slow",
@@ -32456,7 +32456,7 @@
             "damage_types": {
               "True damage": "low",
               "Physical": "average",
-              "HP loss": "average"
+              "HP loss": "low"
             }
           },
           "ultimate": {
@@ -32469,7 +32469,7 @@
             "damage_types": {
               "True damage": "low",
               "Physical": "average",
-              "HP loss": "average"
+              "HP loss": "low"
             }
           },
           "non_ultimate": {
@@ -33110,7 +33110,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "high",
+              "Max HP-based damage": "low",
               "Physical": "high"
             }
           },
@@ -33122,7 +33122,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "high",
+              "Max HP-based damage": "low",
               "Physical": "high"
             }
           },
@@ -33693,7 +33693,7 @@
         "signature_skill_speed": "slow",
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
@@ -33710,7 +33710,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "average",
@@ -33721,14 +33721,14 @@
             }
           },
           "non_ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "low"
             }
           }
         }
@@ -34031,19 +34031,19 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 2.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Six-Shot",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
-        "synergy_signature_speed": "slow",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -34055,7 +34055,7 @@
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -34273,13 +34273,13 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Rallying Roar",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
@@ -34294,7 +34294,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
@@ -34600,7 +34600,7 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -34958,34 +34958,34 @@
         "casting_speed": "slow",
         "signature_skill_name": "Guardian's Ring",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "slow",
+        "signature_skill_speed": "average",
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
-        "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "ultimate": {
-            "speed": "slow",
+            "speed": "average",
             "first_cast_speed": "fast",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "non_ultimate": {
