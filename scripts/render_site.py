@@ -289,6 +289,7 @@ def build_site_data(
     )
 
     heroes_out: list[dict] = []
+    behavior_tags_map = gen._load_behavior_tags()
     for short in sorted(processed["heroes"]):
         p = {
             **processed["heroes"][short],
@@ -312,6 +313,7 @@ def build_site_data(
                 include_skill_summaries=False,
                 prydwen_tiers=prydwen_tiers,
                 hero=hero,
+                behavior_tags=sorted(behavior_tags_map.get(short, ())),
             )
         ).strip()
         damage_types = rs._hero_skill_overview_damage_types(behavior, hero)

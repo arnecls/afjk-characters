@@ -42,8 +42,8 @@
     "transformation"
   ],
   "Berial": [
+    "cheat-death",
     "clone",
-    "revive",
     "stealth"
   ],
   "Bonnie": [
@@ -392,8 +392,8 @@
   ],
   "Saida": [
     "ally-shielder",
-    "life-drain",
-    "revive"
+    "cheat-death",
+    "life-drain"
   ],
   "Salazer": [
     "disabler",
@@ -464,8 +464,8 @@
   "Talene": [
     "ally-healer",
     "aoe-damage",
+    "cheat-death",
     "fire-attack",
-    "revive",
     "transformation"
   ],
   "Tasi": [
@@ -483,9 +483,9 @@
     "energy-provider"
   ],
   "Thoran": [
+    "cheat-death",
     "counterattack",
-    "life-drain",
-    "revive"
+    "life-drain"
   ],
   "Tilaya": [
     "hp-scaling"
@@ -497,6 +497,7 @@
   ],
   "Ulmus": [
     "ally-shielder",
+    "cheat-death",
     "transformation"
   ],
   "Vala": [

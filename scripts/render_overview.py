@@ -238,6 +238,7 @@ def build_overview(
     rs.assign_magnitudes(
         summary_list, skills_by_title, role_category_by_title
     )
+    behavior_tags_map = gen._load_behavior_tags()
 
     for short in sorted(processed["heroes"]):
         p = {
@@ -273,6 +274,7 @@ def build_overview(
                 hero_categories=hero_categories,
                 prydwen_tiers=meta.get("prydwen_tiers"),
                 hero=hero,
+                behavior_tags=sorted(behavior_tags_map.get(short, ())),
             )
         )
         parts.append(f"### Units improving {short}")

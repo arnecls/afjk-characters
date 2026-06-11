@@ -484,15 +484,56 @@
     Taunt: { emoji: "📣", cls: "chip-cc" },
     Frighten: { emoji: "😱", cls: "chip-cc" },
     "Haste debuff": { emoji: "🐌", cls: "chip-debuff" },
+    "ATK debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Blind HP loss debuff": { emoji: "👁️", cls: "chip-debuff" },
+    "DoT debuff": { emoji: "🔥", cls: "chip-debuff" },
+    "Damage taken debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Energy drain": { emoji: "🔋", cls: "chip-debuff" },
+    "Execution debuff": { emoji: "☠️", cls: "chip-debuff" },
+    "Magic DEF debuff": { emoji: "🔮", cls: "chip-debuff" },
+    "Max HP debuff": { emoji: "💔", cls: "chip-debuff" },
+    "Movement speed debuff": { emoji: "🐌", cls: "chip-debuff" },
+    "Phys DEF debuff": { emoji: "🛡️", cls: "chip-debuff" },
+    "Healing debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Crit Resist debuff": { emoji: "💥", cls: "chip-debuff" },
+    "Vulnerable debuff": { emoji: "🎯", cls: "chip-debuff" },
+    "Damage taken reduction": { emoji: "🛡️", cls: "chip-stat" },
     "DoT": { emoji: "🔥", cls: "chip-debuff" },
+    "ally-buffer": { emoji: "📈", cls: "chip-role" },
     "ally-healer": { emoji: "💚", cls: "chip-role" },
     "ally-shielder": { emoji: "🛡️", cls: "chip-role" },
-    "energy-provider": { emoji: "🔋", cls: "chip-role" },
+    "aoe-damage": { emoji: "💥", cls: "chip-role" },
+    "aoe-healing": { emoji: "💚", cls: "chip-role" },
+    "assassin": { emoji: "🎯", cls: "chip-role" },
+    "battle-start-burst": { emoji: "🚀", cls: "chip-role" },
+    "battle-start-ult": { emoji: "⚡", cls: "chip-role" },
     "battlefield-modification": { emoji: "🗺️", cls: "chip-role" },
-    "static-tile-buffer": { emoji: "📍", cls: "chip-role" },
-    "ultimate-cancel": { emoji: "🚫", cls: "chip-cc" },
     "cc-immunity": { emoji: "🔰", cls: "chip-anti-cc" },
+    "cheat-death": { emoji: "♻️", cls: "chip-role" },
+    "clone": { emoji: "👥", cls: "chip-role" },
+    "counterattack": { emoji: "↩️", cls: "chip-role" },
+    "disabler": { emoji: "🚫", cls: "chip-role" },
+    "dot-specialist": { emoji: "🔥", cls: "chip-role" },
+    "enemy-debuffer": { emoji: "🥀", cls: "chip-role" },
+    "enemy-grouping": { emoji: "🧲", cls: "chip-role" },
+    "energy-provider": { emoji: "🔋", cls: "chip-role" },
+    "execute": { emoji: "☠️", cls: "chip-role" },
+    "fire-attack": { emoji: "🔥", cls: "chip-role" },
+    "high-damage-ult": { emoji: "💣", cls: "chip-role" },
+    "hp-scaling": { emoji: "❤️", cls: "chip-role" },
     invincibility: { emoji: "✨", cls: "chip-role" },
+    "life-drain": { emoji: "🩸", cls: "chip-role" },
+    "mark-target": { emoji: "🎯", cls: "chip-role" },
+    "mass-cc": { emoji: "💫", cls: "chip-role" },
+    revive: { emoji: "✨", cls: "chip-role" },
+    "self-repositioner": { emoji: "💨", cls: "chip-role" },
+    "static-tile-buffer": { emoji: "📍", cls: "chip-role" },
+    stealth: { emoji: "🥷", cls: "chip-role" },
+    summoner: { emoji: "🐾", cls: "chip-role" },
+    taunt: { emoji: "📣", cls: "chip-role" },
+    transformation: { emoji: "🔄", cls: "chip-role" },
+    "ultimate-cancel": { emoji: "🚫", cls: "chip-cc" },
+    untargetable: { emoji: "👻", cls: "chip-role" },
     Invincible: { emoji: "✨", cls: "chip-role" },
     "Dmg and CC immunity": { emoji: "🔰", cls: "chip-anti-cc" },
     "Dmg and CC immunity (ally)": { emoji: "🔰", cls: "chip-anti-cc" },
@@ -763,10 +804,39 @@
       });
   }
 
+  function exactTagDefinitionKey(label) {
+    const trimmed = label.trim();
+    if (!trimmed) {
+      return null;
+    }
+    if (TAG_DEFINITIONS[trimmed]) {
+      return trimmed;
+    }
+    const labelLower = trimmed.toLowerCase();
+    for (const key of Object.keys(TAG_DEFINITIONS)) {
+      if (key.toLowerCase() === labelLower) {
+        return key;
+      }
+    }
+    return null;
+  }
+
   function resolveLeadingChip(label) {
     const trimmed = label.trim();
     if (!trimmed) {
       return { textOnly: "", remainder: "", isCc: false };
+    }
+
+    const exactKey = exactTagDefinitionKey(trimmed);
+    if (exactKey) {
+      const def = TAG_DEFINITIONS[exactKey];
+      return {
+        emoji: def.emoji,
+        text: exactKey,
+        cls: def.cls,
+        isCc: isCcChipClass(def.cls),
+        remainder: "",
+      };
     }
 
     const ccKeys = ccFamilyChipKeys();
@@ -817,29 +887,6 @@
           cls: def.cls,
           isCc: false,
           remainder: trimmed.slice(stat.length),
-        };
-      }
-    }
-
-    if (TAG_DEFINITIONS[trimmed]) {
-      const def = TAG_DEFINITIONS[trimmed];
-      return {
-        emoji: def.emoji,
-        text: trimmed,
-        cls: def.cls,
-        isCc: isCcChipClass(def.cls),
-        remainder: "",
-      };
-    }
-    for (const key of Object.keys(TAG_DEFINITIONS)) {
-      if (key.toLowerCase() === labelLower) {
-        const def = TAG_DEFINITIONS[key];
-        return {
-          emoji: def.emoji,
-          text: key,
-          cls: def.cls,
-          isCc: isCcChipClass(def.cls),
-          remainder: "",
         };
       }
     }
@@ -1055,6 +1102,10 @@
   }
 
   function chipifyLeadingStat(label) {
+    const exactKey = exactTagDefinitionKey(label);
+    if (exactKey) {
+      return tryChipify(exactKey);
+    }
     const labelLower = label.toLowerCase();
     for (let i = 0; i < STAT_KEYS.length; i++) {
       const stat = STAT_KEYS[i];

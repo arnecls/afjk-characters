@@ -279,7 +279,11 @@ are enumerated in `data/schema/tags.schema.json`. Tags drive **Similar Skills**
 replacement scoring (Jaccard overlap on shared tags in
 `generate-heroes-overview.py`). Any hero pair with at least one shared tag can
 appear; more shared tags score higher. Other replacement categories still use
-the global minimum score from `heroes_config.json`. Assign a small set
+the global minimum score from `heroes_config.json`. **Synergy lines and chip
+magnitudes stay per-role** (`assign_magnitudes()`); **replacement profiles**
+(buff, healing, damage, debuff, cc) use **global raw throughput, numeric, or
+duration scores** so substitutes compare across roles on absolute kit strength.
+Assign a small set
 (typically three to five) that describe how the hero is played, not every minor
 skill effect.
 
@@ -293,6 +297,9 @@ skill effect.
 - battle-start-ult: Casts ultimate or reaches full energy unusually early in the fight.
 - battlefield-modification: Adds physical obstacles or transforms the map layout; buff or debuff zones alone do not count.
 - cc-immunity: Grants self or allies immunity to crowd control as a defining mechanic.
+- cheat-death: Survives a would-be defeat or critical HP threshold via
+  self-recovery (delayed resurrect, drain-seed revival, low-HP retreat/root,
+  etc.).
 - clone: Creates copy units or illusions that fight alongside the hero.
 - counterattack: Punishes enemies for attacking the hero with reactive damage or effects.
 - disabler: Applies hard shutdown effects such as Silence or Interrupt beyond routine CC.
@@ -308,7 +315,8 @@ skill effect.
 - life-drain: Sustains through lifesteal or HP recovery tied to dealing damage.
 - mark-target: Marks or designates units so allies or self can focus amplified damage.
 - mass-cc: Applies crowd control to multiple enemies or wide areas reliably.
-- revive: Brings defeated allies back or prevents fatal blows from sticking.
+- revive: Brings defeated allies back to the fight (e.g. Marcille); not
+  self-survival.
 - self-repositioner: Regularly moves self across the grid via jumps, dashes, or teleports.
 - static-tile-buffer: Buffs an ally only while they remain on a specific placement tile.
 - stealth: Enters hidden or untargetable states to avoid focus or enable picks.
@@ -426,8 +434,10 @@ Line format (no Provides/Requires prefix on each bullet):
 `{label} ({tier}) — {targeting}`
 
 - **Provides** — use descriptive labels (not skill names): e.g. instant defeat,
-  invincibility, summoning (includes named companions), marked target (focus
-  fire), ally empower, DoT conversion, dispel, fatal-blow save, stat steal,
+  invincibility, cheat death (self-survival after defeat or critical HP),
+  revive ally (fallen allied hero), summoning (includes named companions),
+  marked target (focus fire), ally empower, DoT conversion, dispel,
+  fatal-blow save, stat steal,
   ally positioning link, ally blessing, sleep (area), spirit form protection.
   **Ally empower:** when the empowered ally receives conditional immunity
   (e.g. Alna grants the Winter Warrior the same immunity effects), also list

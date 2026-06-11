@@ -429,7 +429,8 @@ class SimilarSkillsReplacementTests(unittest.TestCase):
 
 
 class DisplacementReplacementTests(unittest.TestCase):
-    def test_eironn_lists_cyran_as_cc_replacement(self) -> None:
+    def test_eironn_cc_replacement_uses_global_cc_strength(self) -> None:
+        """Bind duration dominates Eironn's CC profile; Displace alone is not enough."""
         eironn = _hero_by_short_name("Eironn")
         cyran = _hero_by_short_name("Cyran")
         displace = [
@@ -443,11 +444,17 @@ class DisplacementReplacementTests(unittest.TestCase):
             hero = rs.parse_hero_block(block)
             rs.analyze_hero(hero)
             heroes.append(hero)
+        skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
         display = {h.title: gen.short_name(h.title) for h in heroes}
         behavior = rs.build_behavior_for_heroes(heroes, display)
-        replacements = gen.compute_replacement_scores(heroes, behavior, {})
-        cc_names = [entry["name"] for entry in replacements[eironn.title]["cc"]]
-        self.assertIn("Cyran", cc_names)
+        replacements = gen.compute_replacement_scores(
+            heroes, behavior, {}, skills_by_title=skills_by_title
+        )
+        cc = replacements[eironn.title]["cc"]
+        cc_names = [entry["name"] for entry in cc]
+        self.assertIn("Evie", cc_names)
+        self.assertTrue(any("Displace" in entry.get("matches", []) for entry in cc))
+        self.assertNotIn("Cyran", cc_names)
 
 
 class HealingReplacementTests(unittest.TestCase):
@@ -603,6 +610,86 @@ class HealingEffectSeparationTests(unittest.TestCase):
                 healing_order.index("Solise"),
                 healing_order.index("Lorsan"),
             )
+
+
+class GlobalReplacementWeightTests(unittest.TestCase):
+    def _make_hero(self, title: str = "Test Hero") -> rs.Hero:
+        return rs.Hero(title=title, damage_type="Physical")
+
+    def test_magnitude_label_does_not_affect_weight(self) -> None:
+        hero = self._make_hero()
+        low = rs.Effect(
+            category="buff",
+            label="ATK buff",
+            tier="Skill1",
+            targeting="All units",
+            numeric=15.0,
+            magnitude="low",
+        )
+        high = rs.Effect(
+            category="buff",
+            label="ATK buff",
+            tier="Skill1",
+            targeting="All units",
+            numeric=15.0,
+            magnitude="high",
+        )
+        w_low = gen._replacement_effect_weight(low, hero, None)
+        w_high = gen._replacement_effect_weight(high, hero, None)
+        self.assertEqual(w_low, w_high)
+
+    def test_different_numeric_produces_different_weight(self) -> None:
+        hero = self._make_hero()
+        weak = rs.Effect(
+            category="buff",
+            label="ATK buff",
+            tier="Skill1",
+            targeting="All units",
+            numeric=10.0,
+            magnitude="high",
+        )
+        strong = rs.Effect(
+            category="buff",
+            label="ATK buff",
+            tier="Skill1",
+            targeting="All units",
+            numeric=30.0,
+            magnitude="low",
+        )
+        w_weak = gen._replacement_effect_weight(weak, hero, None)
+        w_strong = gen._replacement_effect_weight(strong, hero, None)
+        self.assertGreater(w_strong, w_weak)
+
+    def test_inflated_per_role_label_does_not_inflate_coverage(self) -> None:
+        """Higher raw numeric beats per-role 'high' when profiles use global weights."""
+        hero_support = self._make_hero("Support Hero")
+        hero_support.effects = [
+            rs.Effect(
+                category="buff",
+                label="ATK buff",
+                tier="Skill1",
+                targeting="All units",
+                numeric=10.0,
+                magnitude="high",
+            )
+        ]
+        hero_dps = self._make_hero("Damage Hero")
+        hero_dps.effects = [
+            rs.Effect(
+                category="buff",
+                label="ATK buff",
+                tier="Skill1",
+                targeting="All units",
+                numeric=25.0,
+                magnitude="low",
+            )
+        ]
+        source_prof = gen._hero_provider_profile(hero_support, None)
+        cand_prof = gen._hero_provider_profile(hero_dps, None)
+        cov_forward = gen._replacement_coverage(source_prof, cand_prof)
+        cov_reverse = gen._replacement_coverage(cand_prof, source_prof)
+        self.assertGreater(cov_forward, 0.9)
+        self.assertLess(cov_reverse, cov_forward)
 
 
 if __name__ == "__main__":

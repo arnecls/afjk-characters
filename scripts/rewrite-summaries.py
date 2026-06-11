@@ -2257,7 +2257,26 @@ CC_RULES = [
 SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     # Core mechanics
     (r"instantly (?:freezes and )?defeat", "Instant defeat"),
-    (r"\breviv(?:e|es|ing)\b", "Revive ally"),
+    # Self-survival after defeat or critical HP (behavior tag: cheat-death)
+    (r"hp ratio drops below.{0,150}takes root", "Cheat death"),
+    (
+        r"when (?:\w+'?s? )?(?:she|he|it|\w+) is defeated.{0,120}reviv",
+        "Cheat death",
+    ),
+    (
+        r"will resurrect|revive (?:him|her)?self|"
+        r"revive from the vanquished enemy",
+        "Cheat death",
+    ),
+    (
+        r"transforms? into a ball of flame whenever .{0,60}is defeated",
+        "Cheat death",
+    ),
+    (
+        r"reviv(?:e|es|ing) (?:an allied hero|a fallen allied hero|"
+        r"him one additional time)",
+        "Revive ally",
+    ),
     # Ally empower: hero designates one specific ally with a named role/bond
     (r"selects? an ally.{0,80}to become", "Ally empower"),
     (r"(?:transform|morph)s? into", "Transformation"),
@@ -2748,7 +2767,7 @@ def detect_special_targeting(text: str, kind: str, label: str) -> str:
         return "—"
     if label == "Enemy artifact block":
         return "Single target"
-    if label in ("Transformation", "Dream sleep (transformation)"):
+    if label in ("Transformation", "Dream sleep (transformation)", "Cheat death"):
         return "Self"
     return detect_targeting(text, label, "special")
 
@@ -6047,6 +6066,26 @@ def _section_damage_type_scores(
     return scores
 
 
+def hero_replacement_damage_profile(
+    hero: Hero,
+    skills: list[SkillMeta] | None = None,
+) -> dict[str, float]:
+    """Global per-damage-type throughput for replacement scoring."""
+    profile: dict[str, float] = {}
+    if skills:
+        primary = hero.damage_type or "Physical"
+        for section in ("Ultimate", *NON_ULT_SKILL_SECTIONS):
+            for dmg_type, score in _section_damage_type_scores(
+                hero, section, primary, skills
+            ).items():
+                profile[dmg_type] = max(profile.get(dmg_type, 0.0), score)
+    else:
+        for dmg_type, score in hero.damage_scores.items():
+            if score > 0:
+                profile[dmg_type] = max(profile.get(dmg_type, 0.0), score)
+    return profile
+
+
 def build_damage_type_thresholds(
     heroes: list[Hero],
     skills_by_title: dict[str, list[SkillMeta]] | None = None,
@@ -6500,6 +6539,13 @@ def _format_damage_types_line(damage_types: dict[str, str]) -> str | None:
     return _behavior_bullet("Damage types", ", ".join(parts))
 
 
+def _format_behavior_tags_line(tags: list[str] | None) -> str | None:
+    if not tags:
+        return None
+    body = " ".join(f"`{tag}`" for tag in sorted(tags))
+    return _behavior_bullet("Behavior tags", body)
+
+
 def _merge_damage_types(*tier_damage: dict[str, str]) -> dict[str, str]:
     merged: dict[str, str] = {}
     for td in tier_damage:
@@ -6802,6 +6848,7 @@ def format_behavior_section(
     include_skill_summaries: bool = True,
     prydwen_tiers: dict[str, str] | None = None,
     hero: Hero | None = None,
+    behavior_tags: list[str] | None = None,
 ) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
     if prydwen_tiers:
@@ -6821,6 +6868,8 @@ def format_behavior_section(
             "Movement", f"{behavior.movement} ({behavior.movement_note})"
         )
     )
+    if tag_line := _format_behavior_tags_line(behavior_tags):
+        lines.append(tag_line)
     for constraint in behavior.placement_constraints:
         if isinstance(constraint, PlacementConstraint):
             kind = constraint.kind

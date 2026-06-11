@@ -427,6 +427,31 @@ class SummaryParsingTests(unittest.TestCase):
         drains = list(_effects(hero, "debuff", "Energy drain"))
         self.assertEqual(drains, [])
 
+    def test_ulmus_cheat_death_in_provides(self):
+        hero = _hero_by_short_name("Ulmus")
+        provides = {
+            s.label for s in hero.special_effects if s.kind == "provides"
+        }
+        self.assertIn("Cheat death", provides)
+        self.assertNotIn("Revive ally", provides)
+
+    def test_thoran_saida_cheat_death_not_revive_ally(self):
+        for name in ("Thoran", "Saida", "Berial"):
+            hero = _hero_by_short_name(name)
+            provides = {
+                s.label for s in hero.special_effects if s.kind == "provides"
+            }
+            self.assertIn("Cheat death", provides, name)
+            self.assertNotIn("Revive ally", provides, name)
+
+    def test_marcille_revive_ally_not_cheat_death(self):
+        hero = _hero_by_short_name("Marcille")
+        provides = {
+            s.label for s in hero.special_effects if s.kind == "provides"
+        }
+        self.assertIn("Revive ally", provides)
+        self.assertNotIn("Cheat death", provides)
+
 
 if __name__ == "__main__":
     unittest.main()

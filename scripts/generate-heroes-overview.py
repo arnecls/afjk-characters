@@ -1413,7 +1413,36 @@ def is_supporting_unit(
     return support > _hero_attack_score(hero) and support >= min_support_score
 
 
-def _hero_provider_profile(hero: _rs.Hero) -> dict[str, float]:
+def _replacement_effect_weight(
+    effect: _rs.Effect,
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None,
+) -> float:
+    """Global raw strength for replacement profiles (ignores per-role magnitude)."""
+    targeting = TARGETING_WEIGHT.get(effect.targeting, 1.0)
+    skills = (skills_by_title or {}).get(hero.title, [])
+    if skills and _rs._effect_uses_throughput(effect.category, effect.label):
+        raw = _rs._effect_throughput_score(effect, hero, skills)
+        if raw and raw > 0:
+            return targeting * raw
+    if effect.category == "cc":
+        duration = effect.numeric
+        if duration is None or duration <= 0:
+            duration = _rs.extract_cc_duration(
+                effect.qualitative.lower(), effect.label
+            )
+        if duration and duration > 0:
+            return targeting * duration
+        return targeting * 1.0
+    if effect.numeric is not None and effect.numeric > 0:
+        return targeting * effect.numeric
+    return targeting * 1.0
+
+
+def _hero_provider_profile(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> dict[str, float]:
     """Weighted ally-buff profile for what a hero provides to allies."""
     profile: dict[str, float] = {}
     for effect in hero.effects:
@@ -1425,9 +1454,7 @@ def _hero_provider_profile(hero: _rs.Hero) -> dict[str, float]:
             continue
         if effect.conditional == "rare":
             continue
-        weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
-            effect.magnitude, 1.0
-        )
+        weight = _replacement_effect_weight(effect, hero, skills_by_title)
         profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
     return profile
 
@@ -1494,7 +1521,9 @@ def _healing_effect_weight(
         throughput = _rs._effect_throughput_score(effect, hero, skills)
         if throughput > 0:
             return throughput * targeting
-    return targeting * MAG_WEIGHT.get(effect.magnitude, 1.0)
+    if effect.numeric is not None and effect.numeric > 0:
+        return targeting * effect.numeric
+    return targeting * 1.0
 
 
 def _hero_healing_profile(
@@ -1677,23 +1706,34 @@ def _set_jaccard(a: frozenset[str], b: frozenset[str]) -> float:
     return len(a & b) / len(union)
 
 
-def _hero_damage_profile(hero: _rs.Hero) -> dict[str, float]:
-    """Weighted outgoing-damage profile per damage type."""
+def _hero_damage_profile(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> dict[str, float]:
+    """Weighted outgoing-damage profile per damage type (global throughput)."""
+    skills = (skills_by_title or {}).get(hero.title, [])
+    raw = _rs.hero_replacement_damage_profile(hero, skills if skills else None)
     profile: dict[str, float] = {}
-    mags = hero.damage_magnitudes or {}
+    if skills:
+        for dt, score in raw.items():
+            weight = score
+            if dt in _rs.TRUE_DAMAGE_TYPES:
+                weight *= REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST
+            profile[dt] = weight
+        return profile
     for dt, tgt in hero.damage_entries:
         if tgt == "Self":
             continue
         tw = 0.0
         for part in tgt.split(", "):
             tw = max(tw, TARGETING_WEIGHT.get(part, 1.0))
-        mw = MAG_WEIGHT.get(mags.get(dt, "average"), 1.0)
-        weight = tw * mw
+        score = raw.get(dt, 0.0) or 1.0
+        weight = tw * score
         if dt in _rs.TRUE_DAMAGE_TYPES:
             weight *= REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST
         profile[dt] = max(profile.get(dt, 0.0), weight)
     if hero.damage_type and hero.damage_type not in profile:
-        profile[hero.damage_type] = MAG_WEIGHT.get("low", 1.0)
+        profile[hero.damage_type] = 1.0
     return profile
 
 
@@ -1733,7 +1773,10 @@ def _cc_effect_in_signature(
     return False
 
 
-def _hero_debuff_profile(hero: _rs.Hero) -> dict[str, float]:
+def _hero_debuff_profile(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> dict[str, float]:
     """Weighted enemy debuff profile."""
     profile: dict[str, float] = {}
     for effect in hero.effects:
@@ -1741,9 +1784,7 @@ def _hero_debuff_profile(hero: _rs.Hero) -> dict[str, float]:
             continue
         if effect.targeting == "Self":
             continue
-        weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
-            effect.magnitude, 1.0
-        )
+        weight = _replacement_effect_weight(effect, hero, skills_by_title)
         profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
     return profile
 
@@ -1752,6 +1793,7 @@ def _hero_cc_profile(
     hero: _rs.Hero,
     sig_section: str = "",
     sig_name: str = "",
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
 ) -> tuple[dict[str, float], bool]:
     """Weighted enemy CC profile; signature-skill CC is boosted."""
     profile: dict[str, float] = {}
@@ -1761,9 +1803,7 @@ def _hero_cc_profile(
             continue
         if effect.targeting == "Self":
             continue
-        weight = TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
-            effect.magnitude, 1.0
-        )
+        weight = _replacement_effect_weight(effect, hero, skills_by_title)
         if _cc_effect_in_signature(effect, hero, sig_section, sig_name):
             weight *= REPLACEMENT_SIGNATURE_CC_BOOST
             has_signature_cc = True
@@ -2048,7 +2088,7 @@ def compute_replacement_scores(
     sig_sections = _signature_sections()
 
     for hero in heroes:
-        profiles[hero.title] = _hero_provider_profile(hero)
+        profiles[hero.title] = _hero_provider_profile(hero, skills_by_title)
         healing_profiles[hero.title] = _hero_healing_profile(hero, skills_by_title)
         energy_provided[hero.title] = _hero_effective_ally_energy_provided(hero)
         behavior = behavior_by_title.get(hero.title)
@@ -2056,11 +2096,11 @@ def compute_replacement_scores(
         display = short_name(hero.title)
         curated = _rs.curated_display_name(display)
         sig_section = sig_sections.get(curated, "")
-        damage_profiles[hero.title] = _hero_damage_profile(hero)
+        damage_profiles[hero.title] = _hero_damage_profile(hero, skills_by_title)
         damage_types[hero.title] = provider_damage_types(hero)
-        debuff_profiles[hero.title] = _hero_debuff_profile(hero)
+        debuff_profiles[hero.title] = _hero_debuff_profile(hero, skills_by_title)
         cc_profiles[hero.title], _ = _hero_cc_profile(
-            hero, sig_section, sig_name
+            hero, sig_section, sig_name, skills_by_title
         )
 
     result: dict[str, dict[str, list[dict]]] = {}
@@ -2462,6 +2502,8 @@ def build_overview() -> str:
             if tiers and record.get("title"):
                 tiers_by_title[record["title"]] = tiers
 
+    behavior_tags_map = _load_behavior_tags()
+
     for hero in heroes:
         syn_lines = format_synergies(
             hero, heroes, enabler_matchers, beneficiaries_index, behavior_by_title
@@ -2478,6 +2520,7 @@ def build_overview() -> str:
                 behavior,
                 prydwen_tiers=tiers_by_title.get(hero.title),
                 hero=hero,
+                behavior_tags=sorted(behavior_tags_map.get(hero_name, ())),
             )
         )
         parts.append(f"### Units improving {hero_name}")
