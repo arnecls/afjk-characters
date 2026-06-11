@@ -27,7 +27,11 @@
   const heroesTableHead = document.getElementById("heroes-table-head");
   const heroesTableBody = document.getElementById("heroes-table-body");
   const searchInput = document.getElementById("search");
+  const filtersPanel = document.getElementById("filters-panel");
   const filtersEl = document.getElementById("filters");
+  const filtersToggle = document.getElementById("filters-toggle");
+  const filtersToggleLabel = document.getElementById("filters-toggle-label");
+  const FILTERS_COLLAPSE_MQ = window.matchMedia("(max-width: 600px)");
   const headerBack = document.getElementById("header-back");
   const viewToggle = document.querySelector(".view-toggle");
   const siteHeader = document.querySelector(".site-header");
@@ -111,11 +115,66 @@
   }
 
   function updateHeaderNav(inDetail) {
-    filtersEl.classList.toggle("hidden", inDetail);
+    if (filtersPanel) {
+      filtersPanel.classList.toggle("hidden", inDetail);
+    }
     if (headerBack) {
       headerBack.classList.toggle("hidden", !inDetail);
     }
     updateListStickyOffset();
+  }
+
+  function updateFiltersToggleLabel() {
+    if (!filtersToggle) {
+      return;
+    }
+    const collapsed = filtersPanel
+      ? filtersPanel.classList.contains("filters-collapsed")
+      : false;
+    const parts = [];
+    if (activeFaction) {
+      parts.push(activeFaction);
+    }
+    if (activeClass) {
+      parts.push(activeClass);
+    }
+    if (activeRole) {
+      const meta = ROLE_CATEGORY_META[activeRole];
+      parts.push(meta ? meta.label : activeRole);
+    }
+    const action = collapsed ? "Show filters" : "Hide filters";
+    const activeSuffix = parts.length ? " (" + parts.join(", ") + ")" : "";
+    const label = action + activeSuffix;
+    filtersToggle.title = action;
+    filtersToggle.setAttribute("aria-label", label);
+    if (filtersToggleLabel) {
+      filtersToggleLabel.textContent = label;
+    }
+  }
+
+  function setFiltersCollapsed(collapsed) {
+    if (!filtersPanel || !filtersToggle) {
+      return;
+    }
+    filtersPanel.classList.toggle("filters-collapsed", collapsed);
+    filtersToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    updateFiltersToggleLabel();
+    updateListStickyOffset();
+  }
+
+  function initFiltersCollapse() {
+    if (!filtersPanel || !filtersToggle) {
+      return;
+    }
+    setFiltersCollapsed(FILTERS_COLLAPSE_MQ.matches);
+    filtersToggle.addEventListener("click", function () {
+      setFiltersCollapsed(
+        !filtersPanel.classList.contains("filters-collapsed")
+      );
+    });
+    FILTERS_COLLAPSE_MQ.addEventListener("change", function () {
+      setFiltersCollapsed(FILTERS_COLLAPSE_MQ.matches);
+    });
   }
 
   function updateListStickyOffset() {
@@ -3773,6 +3832,7 @@
         b.classList.toggle("active", b.dataset.value === activeRole);
       }
     });
+    updateFiltersToggleLabel();
   }
 
   filtersEl.addEventListener("click", function (e) {
@@ -4289,6 +4349,7 @@
   })();
 
   initWelcomeWarning();
+  initFiltersCollapse();
   redirectLegacyHeroPath();
   loadHeroData();
   loadCsvData();
