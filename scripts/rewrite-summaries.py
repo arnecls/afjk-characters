@@ -1399,6 +1399,37 @@ def _cc_duration_context_ok(before: str) -> bool:
     )
 
 
+def _default_cc_duration(text: str, label: str) -> float | None:
+    """Schema-backed defaults when no explicit seconds appear in text."""
+    t = text.lower()
+    if label == "Silence" and re.search(r"permanently silenced", t):
+        return -1.0
+    if label in ("Bind", "Stun") and re.search(
+        r"(?:freez(?:e|es|ing|ed)|stun(?:s|ning)?|bind(?:ing|s)?|immobiliz|control)"
+        r".{0,30}briefly|"
+        r"briefly.{0,30}(?:freez(?:e|es|ing|ed)|stun|bind|control)",
+        t,
+    ):
+        return 0.5
+    if label == "Knock down" and not re.search(
+        r"knock(?:ed|ing|s)? (?:the enemy|an enemy|them)? ?down for \d|"
+        r"knocks? the enemy down for \d|"
+        r"knocking the enemy down for \d|"
+        r"knocked down for \d",
+        t,
+    ):
+        return 0.0
+    if label == "Bind" and re.search(
+        r"immobiliz(?:ed|es|ing)?", t
+    ) and not re.search(r"immobiliz(?:ed|es|ing)? .{0,60}for \d", t):
+        return 0.0
+    if label == "Stun" and re.search(
+        r"stunn(?:ing|s)? them while (?:executing|casting)", t
+    ):
+        return 0.0
+    return None
+
+
 def extract_cc_duration(text: str, label: str = "") -> float | None:
     """Longest CC duration near the effect keyword (ignores cooldown lines)."""
     text = _normalize_effect_text(text)
@@ -1424,13 +1455,52 @@ def extract_cc_duration(text: str, label: str = "") -> float | None:
         r"(\d+(?:\.\d+)?)\s*s\b",
         r"increases (?:the )?(?:silence|bind) duration to "
         r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
+        r"increases interrogation duration to (\d+(?:\.\d+)?)\s*s\b",
         r"knocked down for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
         r"knocked down for (\d+(?:\.\d+)?)\s*s\b",
+        r"knocks? the enemy down for (\d+(?:\.\d+)?)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*s\b",
+        r"knocks? the enemy down for (\d+(?:\.\d+)?)\s*s\b",
+        r"knocking the enemy down for (\d+(?:\.\d+)?)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*s\b",
+        r"knocking the enemy down for (\d+(?:\.\d+)?)\s*s\b",
+        r"obey unconditionally for (\d+(?:\.\d+)?)\s*\+\s*"
+        r"(\d+(?:\.\d+)?)\s*s\b",
     ):
         for m in re.finditer(pat, t):
             consider(_pair_sum_amount(m))
+    if label in ("Silence", "Bind") and re.search(r"during the interrogation", t):
+        for m in re.finditer(
+            r"interrogat(?:ion|es) .{0,80}for (\d+(?:\.\d+)?)"
+            r"(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*s\b",
+            t,
+        ):
+            consider(_pair_sum_amount(m))
+    if label == "Bind":
+        for m in re.finditer(
+            r"for (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*s\b.{0,120}?"
+            r"(?:cannot move or act|unable to move or act|immobiliz)",
+            t,
+        ):
+            consider(_pair_sum_amount(m))
+        for m in re.finditer(
+            r"(?:cannot move or act|unable to move or act).{0,80}for "
+            r"(\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*s\b",
+            t,
+        ):
+            consider(_pair_sum_amount(m))
+    if label == "Taunt":
+        for m in re.finditer(
+            r"stunn(?:ing|s)? them for (\d+(?:\.\d+)?)\s*s\b", t
+        ):
+            consider(float(m.group(1)))
     for m in re.finditer(
         rf"(?:{kw}).{{0,90}}?for (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*s\b",
+        t,
+    ):
+        consider(_pair_sum_amount(m))
+    for m in re.finditer(
+        rf"(?:{kw}).{{0,90}}?for (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*seconds\b",
         t,
     ):
         consider(_pair_sum_amount(m))
@@ -1453,7 +1523,9 @@ def extract_cc_duration(text: str, label: str = "") -> float | None:
         if not _cc_duration_context_ok(before):
             continue
         consider(float(m.group(1)))
-    return best
+    if best is not None:
+        return best
+    return _default_cc_duration(text, label)
 
 
 def cc_magnitude_from_duration(duration: float | None) -> str:
@@ -2016,9 +2088,9 @@ CC_RULES = [
     # Python lookbehind must be fixed-width, so list each pronoun separately.
     (
         r"(?<!she )(?<!he )(?<!it )cannot move or act|unable to move or act",
-        "Stun",
+        "Bind",
     ),
-    (r"entangl|imprison", "Bind"),
+    (r"entangl|imprison(?:ing|s)\b", "Bind"),
     (r"\bblind(?:ing|s|ed)?\b", "Blind"),
     (r"\bbind(?:ing|s)?\b", "Bind"),
     (
@@ -3379,6 +3451,56 @@ def _cc_match_is_ally_targeted(clause: str, label: str) -> bool:
     return False
 
 
+def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
+    """True when a CC regex matched a conditional or mislabeled clause."""
+    t = scope.lower()
+    full = text.lower()
+    if label == "Silence" and re.search(r"silencing arrow|silencing shot", t):
+        return True
+    if label == "Bind" and re.search(r"immobilized target if", t):
+        return True
+    if label == "Charm" and re.search(
+        r"charmed with .{0,60}(?:or bewitched|damage taken)", t
+    ):
+        return True
+    if label == "Knock down" and re.search(
+        r"assigns an objective|objective to each|sets her shield up and taunt", t
+    ):
+        return True
+    if label == "Bind" and re.search(
+        r"\benemy is imprisoned\b|\bimprisoned enemy\b|\bwhen an enemy is imprisoned\b",
+        t,
+    ) and not re.search(r"imprison(?:ing|s) (?:them|the enemy|enemies|\d)", t):
+        return True
+    if label in ("Knock down", "Bind") and re.search(
+        r"knocked down, knocked into the air or affected by other displacement|"
+        r"binds the target to the ground, increasing the knockdown dur",
+        t,
+    ):
+        return True
+    if label == "Stun" and re.search(r"stuns them for s\b", t):
+        return True
+    if label == "Sleep" and re.search(
+        r"target(?:ing|s)? (?:the )?(?:farthest )?hypnotized enem", t
+    ) and not re.search(r"hypnotiz(?:ing|es)? (?:all )?enem", t):
+        return True
+    if label == "Sleep" and re.search(r"hypnotized enem", full):
+        if not re.search(
+            r"hypnotiz(?:ing|es)? (?:all )?enem|(?:put|falls?).{0,20}asleep|\basleep\b",
+            full,
+        ):
+            return True
+    if label == "Stun" and re.search(
+        r"cannot move or act|unable to move or act", t
+    ) and re.search(
+        r"for \d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?\s*s\b.{0,120}?"
+        r"(?:cannot move or act|unable to move or act|immobiliz)",
+        full,
+    ):
+        return True
+    return False
+
+
 def analyze_text(
     effects,
     summon_effects,
@@ -3430,6 +3552,8 @@ def analyze_text(
             # (e.g. Pandora pulling an ally into her box).
             if _cc_match_is_ally_targeted(scope, label):
                 continue
+            if _cc_match_is_spurious(scope, label, text):
+                continue
             if label == "Sleep" and _cc_sleep_is_caster_owned(scope):
                 continue
             if label == "Sleep" and re.search(
@@ -3442,6 +3566,11 @@ def analyze_text(
                 if not _cc_cannot_move_targets_enemy(scope):
                     continue
                 if re.search(r"hypnotiz|asleep|\bsleep\b", scope.lower()):
+                    continue
+            if label == "Bind" and re.search(
+                r"cannot move or act|unable to move or act", scope.lower()
+            ):
+                if not _cc_cannot_move_targets_enemy(scope):
                     continue
             add_effect(
                 effects,

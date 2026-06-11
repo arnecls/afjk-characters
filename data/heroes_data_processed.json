@@ -1236,7 +1236,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -4124,16 +4125,6 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "stun"
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -4339,7 +4330,8 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -5774,7 +5766,8 @@
               "area": "single",
               "target_count": 3,
               "type": "crowd_control",
-              "cc-type": "silence"
+              "cc-type": "silence",
+              "duration": -1.0
             }
           ],
           "tier": "mythic+",
@@ -7519,7 +7512,8 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "silence"
+              "cc-type": "silence",
+              "duration": 6.25
             },
             {
               "tier": "base",
@@ -8064,16 +8058,6 @@
               "type": "debuff",
               "name": "Magic DEF debuff",
               "label": "debuff_defensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "bind"
             }
           ],
           "tier": "supreme+"
@@ -8571,7 +8555,8 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "silence"
+              "cc-type": "silence",
+              "duration": 6.0
             },
             {
               "tier": "base",
@@ -8582,7 +8567,8 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "bind"
+              "cc-type": "bind",
+              "duration": 6.0
             },
             {
               "tier": "base",
@@ -10379,6 +10365,17 @@
             },
             {
               "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 1.0
+            },
+            {
+              "tier": "base",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
@@ -10719,7 +10716,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "stun"
+              "cc-type": "bind",
+              "duration": 3.0
             },
             {
               "type": "immunity",
@@ -11808,7 +11806,8 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -13672,16 +13671,6 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "silence"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -15044,7 +15033,8 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -16177,7 +16167,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "stun"
+              "cc-type": "bind",
+              "duration": 3.0
             },
             {
               "tier": "base",
@@ -16542,7 +16533,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "stun"
+              "cc-type": "stun",
+              "duration": 2.0
             },
             {
               "tier": "base",
@@ -17484,7 +17476,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -19921,16 +19914,6 @@
               "type": "debuff",
               "name": "Damage taken debuff",
               "label": "debuff_stat"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "charm"
             }
           ],
           "tier": "supreme+"
@@ -23513,7 +23496,8 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "taunt"
+              "cc-type": "taunt",
+              "duration": 4.5
             },
             {
               "tier": "mythic+",
@@ -23662,7 +23646,8 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -23672,7 +23657,8 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "bind"
+              "cc-type": "bind",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -24066,7 +24052,8 @@
               "area": "single",
               "target_count": 3,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -24613,7 +24600,8 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "mythic+",
@@ -25752,20 +25740,10 @@
         "Soul Drench": {
           "category": "skill4",
           "description": "Salazer immerses himself in the power of the Spirits and casts Enraptured Whip 1 times without cooldown when a battle starts or an enemy is imprisoned. An extra whip strike will be attempted. The Enraptured Whip deals additional damage equal to 5% of the enemy's current HP, granting 50 Life Drain to Salazer. The additional damage cannot exceed 150% of Salazer's ATK. Casts Enraptured Whip 2 times without cooldown. The Enraptured Whip deals additional damage equal to 5.5% of the enemy's current HP, granting 52 Life Drain to Salazer. The additional damage cannot exceed 160% of Salazer's ATK.",
-          "effects": [
-            {
-              "tier": "mythic+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "bind"
-            }
-          ],
+          "effects": [],
           "tier": "mythic+",
-          "skill_range": 1
+          "skill_range": 1,
+          "passive_only": true
         },
         "Enhance Force": {
           "category": "skill5",
@@ -25786,16 +25764,6 @@
                   "value": 0
                 }
               ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "bind"
             },
             {
               "tier": "supreme+",
@@ -26340,7 +26308,8 @@
               "target_count": -1,
               "area_direction": "front",
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -26554,7 +26523,8 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "bind"
+              "cc-type": "bind",
+              "duration": 0.5
             },
             {
               "tier": "base",
@@ -27817,7 +27787,8 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 2.0
             },
             {
               "tier": "base",
@@ -30509,6 +30480,18 @@
             },
             {
               "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 4.0
+            },
+            {
+              "tier": "base",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
@@ -30708,16 +30691,6 @@
               "type": "buff",
               "name": "Damage taken reduction",
               "label": "buff_stat"
-            },
-            {
-              "tier": "ex+10",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "sleep"
             }
           ],
           "tier": "mythic+"
@@ -30858,7 +30831,8 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -32274,26 +32248,6 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "knock_down"
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "bind"
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -33075,7 +33029,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "stun"
+              "cc-type": "stun",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -33086,7 +33041,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 0.0
             },
             {
               "tier": "base",
@@ -33170,7 +33126,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "crowd_control",
-              "cc-type": "knock_down"
+              "cc-type": "knock_down",
+              "duration": 1.0
             },
             {
               "tier": "base",
