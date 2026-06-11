@@ -484,15 +484,59 @@
     Taunt: { emoji: "📣", cls: "chip-cc" },
     Frighten: { emoji: "😱", cls: "chip-cc" },
     "Haste debuff": { emoji: "🐌", cls: "chip-debuff" },
+    "ATK debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Blind HP loss debuff": { emoji: "👁️", cls: "chip-debuff" },
+    "DoT debuff": { emoji: "🔥", cls: "chip-debuff" },
+    "Damage taken debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Damage taken": { emoji: "🥀", cls: "chip-debuff" },
+    "Magic damage amplification": { emoji: "🪄", cls: "chip-debuff" },
+    "Magic damage reduction": { emoji: "🪄", cls: "chip-stat" },
+    "Energy drain": { emoji: "🔋", cls: "chip-debuff" },
+    "Execution debuff": { emoji: "☠️", cls: "chip-debuff" },
+    "Magic DEF debuff": { emoji: "🔮", cls: "chip-debuff" },
+    "Max HP debuff": { emoji: "💔", cls: "chip-debuff" },
+    "Movement speed debuff": { emoji: "🐌", cls: "chip-debuff" },
+    "Phys DEF debuff": { emoji: "🛡️", cls: "chip-debuff" },
+    "Healing debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Crit Resist debuff": { emoji: "💥", cls: "chip-debuff" },
+    "Vulnerable debuff": { emoji: "🎯", cls: "chip-debuff" },
+    "Damage taken reduction": { emoji: "🛡️", cls: "chip-stat" },
     "DoT": { emoji: "🔥", cls: "chip-debuff" },
+    "ally-buffer": { emoji: "📈", cls: "chip-role" },
     "ally-healer": { emoji: "💚", cls: "chip-role" },
     "ally-shielder": { emoji: "🛡️", cls: "chip-role" },
-    "energy-provider": { emoji: "🔋", cls: "chip-role" },
+    "aoe-damage": { emoji: "💥", cls: "chip-role" },
+    "aoe-healing": { emoji: "💚", cls: "chip-role" },
+    "assassin": { emoji: "🎯", cls: "chip-role" },
+    "battle-start-burst": { emoji: "🚀", cls: "chip-role" },
+    "battle-start-ult": { emoji: "⚡", cls: "chip-role" },
     "battlefield-modification": { emoji: "🗺️", cls: "chip-role" },
-    "static-tile-buffer": { emoji: "📍", cls: "chip-role" },
-    "ultimate-cancel": { emoji: "🚫", cls: "chip-cc" },
     "cc-immunity": { emoji: "🔰", cls: "chip-anti-cc" },
+    "cheat-death": { emoji: "♻️", cls: "chip-role" },
+    "clone": { emoji: "👥", cls: "chip-role" },
+    "counterattack": { emoji: "↩️", cls: "chip-role" },
+    "disabler": { emoji: "🚫", cls: "chip-role" },
+    "dot-specialist": { emoji: "🔥", cls: "chip-role" },
+    "enemy-debuffer": { emoji: "🥀", cls: "chip-role" },
+    "enemy-grouping": { emoji: "🧲", cls: "chip-role" },
+    "energy-provider": { emoji: "🔋", cls: "chip-role" },
+    "execute": { emoji: "☠️", cls: "chip-role" },
+    "fire-attack": { emoji: "🔥", cls: "chip-role" },
+    "high-damage-ult": { emoji: "💣", cls: "chip-role" },
+    "hp-scaling": { emoji: "❤️", cls: "chip-role" },
     invincibility: { emoji: "✨", cls: "chip-role" },
+    "life-drain": { emoji: "🩸", cls: "chip-role" },
+    "mark-target": { emoji: "🎯", cls: "chip-role" },
+    "mass-cc": { emoji: "💫", cls: "chip-role" },
+    revive: { emoji: "✨", cls: "chip-role" },
+    "self-repositioner": { emoji: "💨", cls: "chip-role" },
+    "static-tile-buffer": { emoji: "📍", cls: "chip-role" },
+    stealth: { emoji: "🥷", cls: "chip-role" },
+    summoner: { emoji: "🐾", cls: "chip-role" },
+    taunt: { emoji: "📣", cls: "chip-role" },
+    transformation: { emoji: "🔄", cls: "chip-role" },
+    "ultimate-cancel": { emoji: "🚫", cls: "chip-cc" },
+    untargetable: { emoji: "👻", cls: "chip-role" },
     Invincible: { emoji: "✨", cls: "chip-role" },
     "Dmg and CC immunity": { emoji: "🔰", cls: "chip-anti-cc" },
     "Dmg and CC immunity (ally)": { emoji: "🔰", cls: "chip-anti-cc" },
@@ -763,10 +807,55 @@
       });
   }
 
-  function resolveLeadingChip(label) {
+  function exactTagDefinitionKey(label) {
+    const trimmed = label.trim();
+    if (!trimmed) {
+      return null;
+    }
+    if (TAG_DEFINITIONS[trimmed]) {
+      return trimmed;
+    }
+    const labelLower = trimmed.toLowerCase();
+    for (const key of Object.keys(TAG_DEFINITIONS)) {
+      if (key.toLowerCase() === labelLower) {
+        return key;
+      }
+    }
+    return null;
+  }
+
+  const BUFF_DISPLAY_EFFECT_CHIPS = {
+    "Damage taken": { emoji: "🛡️", cls: "chip-stat" },
+    "Magic damage amplification": { emoji: "🪄", cls: "chip-stat" },
+  };
+
+  function resolveLeadingChip(label, polarity) {
     const trimmed = label.trim();
     if (!trimmed) {
       return { textOnly: "", remainder: "", isCc: false };
+    }
+
+    if (polarity === "buff" && BUFF_DISPLAY_EFFECT_CHIPS[trimmed]) {
+      const buff = BUFF_DISPLAY_EFFECT_CHIPS[trimmed];
+      return {
+        emoji: buff.emoji,
+        text: trimmed,
+        cls: buff.cls,
+        isCc: false,
+        remainder: "",
+      };
+    }
+
+    const exactKey = exactTagDefinitionKey(trimmed);
+    if (exactKey) {
+      const def = TAG_DEFINITIONS[exactKey];
+      return {
+        emoji: def.emoji,
+        text: exactKey,
+        cls: def.cls,
+        isCc: isCcChipClass(def.cls),
+        remainder: "",
+      };
     }
 
     const ccKeys = ccFamilyChipKeys();
@@ -817,29 +906,6 @@
           cls: def.cls,
           isCc: false,
           remainder: trimmed.slice(stat.length),
-        };
-      }
-    }
-
-    if (TAG_DEFINITIONS[trimmed]) {
-      const def = TAG_DEFINITIONS[trimmed];
-      return {
-        emoji: def.emoji,
-        text: trimmed,
-        cls: def.cls,
-        isCc: isCcChipClass(def.cls),
-        remainder: "",
-      };
-    }
-    for (const key of Object.keys(TAG_DEFINITIONS)) {
-      if (key.toLowerCase() === labelLower) {
-        const def = TAG_DEFINITIONS[key];
-        return {
-          emoji: def.emoji,
-          text: key,
-          cls: def.cls,
-          isCc: isCcChipClass(def.cls),
-          remainder: "",
         };
       }
     }
@@ -903,8 +969,8 @@
     );
   }
 
-  function mergeLabelWithIndicator(label, indicator, tierSuffix) {
-    const leading = resolveLeadingChip(label);
+  function mergeLabelWithIndicator(label, indicator, tierSuffix, polarity) {
+    const leading = resolveLeadingChip(label, polarity);
     const meta = resolveIndicatorMeta(label, indicator, leading.isCc);
     if (!meta) {
       return null;
@@ -931,15 +997,15 @@
     );
   }
 
-  function mergeEffectWithQuality(effectLabel, qualityValue, tierSuffix) {
+  function mergeEffectWithQuality(effectLabel, qualityValue, tierSuffix, polarity) {
     const qualityMeta = qualityIndicatorMeta(
       qualityValue,
-      resolveLeadingChip(effectLabel).isCc
+      resolveLeadingChip(effectLabel, polarity).isCc
     );
     if (!qualityMeta) {
       return null;
     }
-    const leading = resolveLeadingChip(effectLabel);
+    const leading = resolveLeadingChip(effectLabel, polarity);
     if (leading.emoji) {
       return (
         formatMergedIndicator(
@@ -1000,13 +1066,13 @@
     return chip !== null ? chip : escapeHtml(token.trim());
   }
 
-  function chipifyEffectName(name) {
+  function chipifyEffectName(name, polarity) {
     const parsed = parseEffectLabelParts(name);
     const label = parsed.base;
     const tier = parsed.tier;
 
     if (label.indexOf(" via ") === -1) {
-      return renderStandaloneEffectChip(label, tier);
+      return renderStandaloneEffectChip(label, tier, polarity);
     }
 
     const viaIdx = label.indexOf(" via ");
@@ -1031,7 +1097,7 @@
       return leftHtml + " via " + rightHtml;
     }
 
-    return renderStandaloneEffectChip(label, tier);
+    return renderStandaloneEffectChip(label, tier, polarity);
   }
 
   function chipifyLeadingCcType(label) {
@@ -1055,6 +1121,10 @@
   }
 
   function chipifyLeadingStat(label) {
+    const exactKey = exactTagDefinitionKey(label);
+    if (exactKey) {
+      return tryChipify(exactKey);
+    }
     const labelLower = label.toLowerCase();
     for (let i = 0; i < STAT_KEYS.length; i++) {
       const stat = STAT_KEYS[i];
@@ -1111,8 +1181,8 @@
     );
   }
 
-  function renderStandaloneEffectChip(base, tier) {
-    const leading = resolveLeadingChip(base);
+  function renderStandaloneEffectChip(base, tier, polarity) {
+    const leading = resolveLeadingChip(base, polarity);
     if (leading.emoji) {
       return (
         '<span class="chip ' +
@@ -3480,14 +3550,14 @@
     return chipifyTargetingSegment(targetingType);
   }
 
-  function renderMergedEffectPill(baseLabel, quality, tier, conditional) {
+  function renderMergedEffectPill(baseLabel, quality, tier, conditional, polarity) {
     const qMeta = qualityIndicatorMeta(
       quality,
-      resolveLeadingChip(baseLabel).isCc
+      resolveLeadingChip(baseLabel, polarity).isCc
     );
     let merged =
-      mergeEffectWithQuality(baseLabel, quality, tier) ||
-      mergeLabelWithIndicator(baseLabel, quality, tier);
+      mergeEffectWithQuality(baseLabel, quality, tier, polarity) ||
+      mergeLabelWithIndicator(baseLabel, quality, tier, polarity);
     if (!merged && qMeta) {
       merged = formatMergedIndicator(
         { textOnly: baseLabel, tierSuffix: tier || "" },
@@ -3497,7 +3567,7 @@
     }
     if (!merged) {
       merged =
-        chipifyEffectName(baseLabel) +
+        chipifyEffectName(baseLabel, polarity) +
         formatMergedTierSuffix(tier) +
         (quality ? " " + formatTag(quality) : "");
     }
@@ -3519,7 +3589,8 @@
       parsed.base,
       quality,
       parsed.tier,
-      buff.conditional
+      buff.conditional,
+      "buff"
     );
     const targetingHtml = renderBuffTargetingChip(
       buff.targetingType || buff.targeting
