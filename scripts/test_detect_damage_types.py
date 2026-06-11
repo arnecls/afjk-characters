@@ -357,11 +357,11 @@ class CommonFailurePatternTests(unittest.TestCase):
         labels = [e.label for e in self._effects(text)]
         self.assertIn("Charm", labels)
 
-    def test_put_to_sleep_not_bind(self):
+    def test_put_to_sleep_also_bind_when_immobilized(self):
         text = "Enemies affected are put to sleep for 1s and cannot move or act"
         labels = [e.label for e in self._effects(text)]
         self.assertIn("Sleep", labels)
-        self.assertNotIn("Bind", labels)
+        self.assertIn("Bind", labels)
 
     def test_def_reduction_not_def_buff(self):
         text = (
@@ -528,6 +528,252 @@ class CommonFailurePatternTests(unittest.TestCase):
         text = "Natsu increases his ATK and DEF by 27% + 3%"
         labels = [e.label for e in self._effects(text)]
         self.assertIn("DEF buff", labels)
+
+    def test_pandora_hp_loss_dot_in_chunk(self):
+        text = (
+            "causing all units on the battlefield to flee in fright for 5s and "
+            "lose 50% (ATK-based) + 5% HP per 0.5s in the process."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("DoT", labels)
+
+    def test_pandora_hp_loss_upgrade_chunk(self):
+        text = "Increases enemy's HP loss to 55% (ATK-based) + 5% every 0.5s."
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("DoT", labels)
+
+    def test_indris_no_rider_true_damage(self):
+        text = (
+            "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) "
+            "+ 20% damage. When Indris fires a silencing arrow at a target with "
+            "exposed weakness, he deals extra true damage equal to 20% of the "
+            "exposed target's max HP."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Max HP-based damage", labels)
+        self.assertNotIn("True damage", labels)
+
+    def test_contess_quiet_period_energy_recovery_debuff(self):
+        text = "Contess reduces Energy recovery efficiency by 14% + 2%"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Energy recovery debuff", labels)
+
+    def test_contess_exemption_hp_loss(self):
+        text = "they lose 2.5% of their max HP every second, converting"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("HP loss", labels)
+
+    def test_evie_interrogation_not_dot_debuff(self):
+        text = (
+            "she deals 180% (ATK-based) + 18% damage to the enemy every second "
+            "and immobilizes them"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("DoT", labels)
+        self.assertNotIn("DoT", [e.label for e in self._effects(text) if e.category == "debuff"])
+
+    def test_harak_healing_debuff(self):
+        text = "prevents the enemy from recovering HP for 6s"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Healing debuff", labels)
+
+    def test_frieren_knock_up(self):
+        text = (
+            "knocks the enemy with the most cumulative damage dealt into the air "
+            "and hurls them toward the edge"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Knock up", labels)
+
+    def test_gunnar_vitality_debuff(self):
+        text = "take 80% (ATK-based) + 8% damage every second and lose 40 Vitality"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Vitality debuff", labels)
+
+    def test_mandatory_civility_atk_debuff(self):
+        text = "reduces the ATK of the 2 enemies with the most cumulative damage"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK debuff", labels)
+
+    def test_pippa_standalone_extra_true(self):
+        text = (
+            "Pippa deals extra true damage equal to 80% of the original damage "
+            "to enemies adjacent to the target"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("True damage", labels)
+
+    def test_hodgkin_explosion_max_hp(self):
+        text = (
+            "deals damage equal to 120% (ATK-based) plus an extra 10% of the "
+            "defeated unit's max HP to the adjacent enemies"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Max HP-based damage", labels)
+
+    def test_dunlingr_enhance_force_level2_debuffs(self):
+        text = (
+            "Spellbind: Reduces all enemies' Energy by 150 and their Haste by 10 "
+            "for 8s. Curelock: Reduces all enemies' HP by 150% (ATK-based) and "
+            "their Vitality by 50 for 8s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Energy drain", labels)
+        self.assertIn("Haste debuff", labels)
+        self.assertIn("Vitality debuff", labels)
+        damage = [e.label for e in self._effects(text) if e.category == "damage"]
+        self.assertEqual(damage, [])
+
+    def test_himmel_hero_party_buffs(self):
+        text = (
+            "increasing their basic stats by 12% (ATK-based) + 1% and granting "
+            "them a shared permanent shield"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK buff", labels)
+
+    def test_himmel_hero_party_healing(self):
+        text = "converts 30% + 2% of the damage dealt into healing for all party members"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Direct healing", labels)
+
+    def test_granny_enhance_haste_not_atk_debuff(self):
+        text = (
+            "Granny Dahnie's Haste increased by 150, and the ATK reduction the "
+            "seed inflicts on enemies is further increased by 70%"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Haste buff", labels)
+        self.assertNotIn("ATK debuff", labels)
+
+    def test_marilee_hyperfocus_atk_spd(self):
+        text = "Marilee increases ATK by 4% + 1% and ATK SPD by 25"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK buff", labels)
+        self.assertIn("ATK SPD buff", labels)
+
+    def test_gwyneth_burn_vitality_debuff(self):
+        text = "While burned, the target has their Vitality reduced by 40"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Vitality debuff", labels)
+
+    def test_cyran_grants_haste(self):
+        text = "Grants himself 30 Haste for 8s, during which he is unaffected"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Haste buff", labels)
+
+    def test_himmel_enhance_force_hp_loss_amp(self):
+        text = "cause 12% more HP loss on boss targets"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Damage taken debuff", labels)
+
+    def test_contess_expulsion_hp_loss_amp(self):
+        text = "Expelled units are permanently silenced and take 18% more HP loss"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Damage taken debuff", labels)
+
+    def test_granny_threshold_damage(self):
+        text = (
+            "Every second, enemies within range cannot move or act and lose "
+            "25 + 5 Energy and at least 60% (ATK-based) HP."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Energy drain", labels)
+        self.assertIn("Bind", labels)
+        self.assertIn("DoT", labels)
+
+    def test_nara_eerie_execution_max_hp_damage(self):
+        text = (
+            "dealing damage equal to 8% of the defeated target's max HP "
+            "to all enemies within the area"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Max HP-based damage", labels)
+
+    def test_nara_enhance_force_max_hp_debuff(self):
+        text = (
+            "permanently reduces the target's Vitality by 30. Also inflicts "
+            "max HP reduction equal to 20% of the target's max HP."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Vitality debuff", labels)
+        self.assertIn("Max HP debuff", labels)
+
+    def test_pang_sky_splitter_energy_recovery_debuff(self):
+        text = "the final strike also prevent Energy recovery for 5s"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Energy recovery debuff", labels)
+
+    def test_pippa_enhance_force_max_hp_damage(self):
+        text = (
+            "taking extra damage equal to 20% of their max HP. "
+            "This extra damage cannot exceed 400% of Pippa's ATK."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Max HP-based damage", labels)
+
+    def test_himmel_heroic_slash_true_damage(self):
+        text = (
+            "plus extra true damage equal to 15% + 2% of the target's max HP"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("True damage", labels)
+        self.assertNotIn("Max HP-based damage", labels)
+
+    def test_himmel_heroic_dash_knock_down(self):
+        text = "knocking each enemy down for 2s"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Knock down", labels)
+
+    def test_hugin_cogshield(self):
+        text = (
+            "Hugin crafts a cogshield for the weakest ally, allowing them to "
+            "block 600% (ATK-based) + 60% damage for 8s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Shield", labels)
+
+    def test_dunlingr_grand_resonance_haste_debuff(self):
+        text = "reduces the enemies' ATK SPD by an extra 60 for 4s"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Haste debuff", labels)
+        self.assertNotIn("ATK SPD debuff", labels)
+
+    def test_contess_expulsion_hp_loss_damage(self):
+        text = "take 18% more HP loss"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("HP loss", labels)
+
+    def test_antandra_shield_formation_grant(self):
+        text = (
+            "Antandra grants herself and the guarded ally shields that block "
+            "damage equal to 15% + 5% of the ally's max HP for 5s, and the "
+            "shield value is up to 500% (ATK-based) of her ATK."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Shield", labels)
+
+    def test_max_hp_per_second_dot(self):
+        text = "enemies within range to lose 12% of their max HP per second"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("DoT", labels)
+
+    def test_indris_normal_attack_extra_true_damage(self):
+        text = (
+            "Indris' normal attacks deal 60% (ATK-based) + 6% extra true "
+            "damage to enemies with exposed weakness."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("True damage", labels)
+        self.assertNotIn("Max HP-based damage", labels)
+
+    def test_ludovic_absorb_max_hp(self):
+        text = (
+            "the everbloom field will absorb 15% (HP-based) of their max HP, "
+            "up to 350% (ATK-based), as nutrients to restore its healing amount"
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Max HP-based damage", labels)
 
 
 if __name__ == "__main__":
