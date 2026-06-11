@@ -149,17 +149,17 @@ NON_ULT_SPEED_RE = re.compile(
 )
 SKILL_OVERVIEW_SIG_SPEED_RE = re.compile(
     rf"^- {_BOLD_LABEL}Signature skill(?: \(ultimate\))?{_BOLD_LABEL_END}:"
-    r".*?\bspeed `(slow|normal|fast)`",
+    r".*?\bspeed `(slow|average|fast)`",
     re.M,
 )
 SKILL_OVERVIEW_NON_ULT_SPEED_RE = re.compile(
     rf"^- {_BOLD_LABEL}Non-ultimate{_BOLD_LABEL_END}:.*?"
-    r"\bspeed `(slow|normal|fast)`",
+    r"\bspeed `(slow|average|fast)`",
     re.M,
 )
 SECTION_RE = re.compile(r"^#### (.+)$", re.M)
 BULLET_RE = re.compile(r"^- (.+)$", re.M)
-MAGNITUDE_RE = re.compile(r"`(high|medium|low)`")
+MAGNITUDE_RE = re.compile(r"`(high|average|low)`")
 PRIMARY_DAMAGE_RE = re.compile(r"^Primary damage type")
 TIER_SUFFIX_RE = re.compile(r" \([^)]+\)$")
 

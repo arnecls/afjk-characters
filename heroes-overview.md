@@ -23,8 +23,8 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -67,8 +67,8 @@ Aliceth also requires units **putting debuffs** on enemies
   - Enables Debuff on target via Max HP debuff (area)
 - **Zanie**
   - ATK buff (single target, low)
-  - Healing (single target, medium)
-  - DEF Penetration buff (single target, medium)
+  - Healing (single target, average)
+  - DEF Penetration buff (single target, average)
   - Enables Debuff on target via ATK debuff (single target)
 - **Velara**
   - Healing (area, low)
@@ -77,7 +77,7 @@ Aliceth also requires units **putting debuffs** on enemies
 
 ### Units benefitting most from Aliceth
 
-Aliceth provides Ally empower buff to single targets `high`, Attack range buff to single targets `high`, DEF Penetration buff to multiple targets `high`, ATK buff (Legendary+) to multiple targets `medium`, and Fatal blow immunity (Mythic+) to single targets `high` — conditional (rare).
+Aliceth provides Ally empower buff to single targets `high`, Attack range buff to single targets `high`, DEF Penetration buff to multiple targets `high`, ATK buff (Legendary+) to multiple targets `average`, and Fatal blow immunity (Mythic+) to single targets `high` — conditional (rare).
 
 - Lily May (3.9 / 5)
 - Kulu (3.4 / 5)
@@ -114,14 +114,14 @@ Aliceth provides Ally empower buff to single targets `high`, Attack range buff t
 #### Debuffs provided by Aliceth
 
 - Execution — Multiple targets — `low`
-- Marked target (focus fire) — Multiple targets — `medium`
+- Marked target (focus fire) — Multiple targets — `average`
 - Blind HP loss (EX+15) — Area — `low`
 
 #### Crowd Control provided by Aliceth
 
 - Knock back — Single target — `low`
-- Stun — Single target — `medium`
-- Blind (EX+15) — Area — `medium`
+- Stun — Single target — `average`
+- Blind (EX+15) — Area — `average`
 
 ## Alna
 
@@ -136,9 +136,9 @@ Aliceth provides Ally empower buff to single targets `high`, Attack range buff t
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Ultimate**: speed `slow`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill**: speed `slow`, first cast speed `fast`, heal `average`, buffs `average`, damage `average`
+- **Ultimate**: speed `slow`, first cast speed `fast`, heal `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `slow`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -173,9 +173,9 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Velara**
   - Healing (area, low)
@@ -185,7 +185,7 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 
 ### Units benefitting most from Alna
 
-Alna provides Ally empower buff to single targets `low`, Max HP buff to single targets `low`, Dmg and CC immunity (EX+15) to single targets `high`, and ATK buff (Supreme+) to single targets `medium`.
+Alna provides Ally empower buff to single targets `low`, Max HP buff to single targets `low`, Dmg and CC immunity (EX+15) to single targets `high`, and ATK buff (Supreme+) to single targets `average`.
 
 - Bonnie (3.6 / 5)
 
@@ -223,7 +223,7 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 #### Crowd Control provided by Alna
 
 - Immune (Mythic+) — Self — Start of battle
-- Bind (Supreme+) — Area — `medium`
+- Bind (Supreme+) — Area — `average`
 
 ## Alsa
 
@@ -233,12 +233,12 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 
 - **Signature skill**: Twirling Rocks (ultimate)
 - **Movement**: mostly stationary (avg attack range 6.0 tiles)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -334,7 +334,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 - Immune — Area — Permanent
 - Knock back — Single target — `low`
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Antandra
 
@@ -349,8 +349,8 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -383,15 +383,15 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Lorsan**
   - Healing (all units, high)
 - **Pandora**
-  - Max HP buff (single target, medium)
+  - Max HP buff (single target, average)
   - Healing (single target, low)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Damian**
@@ -458,7 +458,7 @@ Antandra provides DEF buff (Supreme+) to single targets `low`.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -491,7 +491,7 @@ Common buffers are **Twins**, **Rowan**, or **Ravion**.
 
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Pandora**
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Damian**
@@ -545,7 +545,7 @@ Arden provides Energy recovery to single targets `low`.
 
 #### Crowd Control provided by Arden
 
-- Bind — Single target — `medium`
+- Bind — Single target — `average`
 
 ## Atalanta
 
@@ -555,12 +555,12 @@ Arden provides Energy recovery to single targets `low`.
 
 - **Signature skill**: Wild Sniper (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `average`
 
 ##### Ultimate
 
@@ -603,8 +603,8 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
 - **Lucca**
   - DEF buff (area, high)
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 
 ### Units benefitting most from Atalanta
 
@@ -653,9 +653,9 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
 
 #### Crowd Control provided by Atalanta
 
-- Bind — Single target — `medium`
+- Bind — Single target — `average`
 - Knock back — Single target — `low`
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Athalia
 
@@ -665,12 +665,12 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
 
 - **Signature skill**: Unbroken Retribution (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `high`, True damage `medium`
+- **Damage types**: Physical `high`, True damage `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `average`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -705,9 +705,9 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Velara**
   - Healing (area, low)
@@ -753,7 +753,7 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 #### Damage types dealt by Athalia
 
 - Physical — All units, Area, Single target
-- True damage — Single target — `medium`
+- True damage — Single target — `average`
 
 #### Debuffs provided by Athalia
 
@@ -776,8 +776,8 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -820,8 +820,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Summon damage buff (summons only, average)
+  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
 
 ### Units benefitting most from Aurora
 
@@ -876,12 +876,12 @@ Aurora provides Haste buff to summons `high`, Invincible to single targets `high
 
 - **Signature skill**: Celestial Rise (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Damage types**: Physical `high`, True damage `medium`
+- **Damage types**: Physical `high`, True damage `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `average`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -914,7 +914,7 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 
 - **Contess**
   - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
@@ -924,7 +924,7 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 - **Hepler**
   - Haste buff (single target, low) `signature fuel`
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
@@ -952,7 +952,7 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 #### Damage types dealt by Baelran
 
 - Physical — Arc, Area, Single target
-- True damage — Arc, Area — `medium`
+- True damage — Arc, Area — `average`
 
 #### Debuffs provided by Baelran
 
@@ -961,7 +961,7 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 #### Crowd Control provided by Baelran
 
 - Unaffected — Self — Start of battle
-- Knock down — Area — `medium`
+- Knock down — Area — `average`
 - Knock up — Area — `low`
 
 ## Berial
@@ -976,8 +976,8 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -1014,11 +1014,11 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Summon damage buff (summons only, average)
+  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Damian**
   - Healing (area, low)
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
@@ -1067,7 +1067,7 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 
 #### Crowd Control provided by Berial
 
-- Frighten — Area — `medium`
+- Frighten — Area — `average`
 
 ## Bonnie
 
@@ -1081,9 +1081,9 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, debuffs `medium`, damage `high`
+- **Signature skill**: speed `fast`, first cast speed `fast`, debuffs `average`, damage `high`
 - **Ultimate**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -1130,7 +1130,7 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
   - ATK buff (single target, low)
   - Enables Debuff on target via Damage taken debuff (all units)
 - **Alna**
-  - ATK buff (single target, medium)
+  - ATK buff (single target, average)
   - Enables Debuff on target via Haste debuff (area)
 
 ### Units benefitting most from Bonnie
@@ -1177,7 +1177,7 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 #### Crowd Control provided by Bonnie
 
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Brutus
 
@@ -1187,13 +1187,13 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 - **Signature skill**: Indomitable (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Damage types**: Physical `high`, DoT `medium`, Max HP-based damage `high`
+- **Damage types**: Physical `high`, DoT `average`, Max HP-based damage `high`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, buffs `medium`
+- **Signature skill**: speed `fast`, buffs `average`
 - **Ultimate**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -1226,7 +1226,7 @@ Look for units providing: `Life Drain`
 - **Kordan**
   - Lifedrain buff (multiple targets, high)
 - **Koko**
-  - Lifedrain buff (multiple targets, medium)
+  - Lifedrain buff (multiple targets, average)
 - **Dunlingr**
   - Lifedrain buff (all units, low)
 - **Thoran**
@@ -1279,13 +1279,13 @@ Brutus provides Lifedrain buff to single targets `high`.
 
 #### Debuffs provided by Brutus
 
-- Phys DEF — Area — `medium`
+- Phys DEF — Area — `average`
 
 #### Crowd Control provided by Brutus
 
 - Immune — Self — On skill
 - Unaffected — Self — On skill
-- Taunt — Area — `medium`
+- Taunt — Area — `average`
 
 ## Bryon
 
@@ -1300,8 +1300,8 @@ Brutus provides Lifedrain buff to single targets `high`.
 #### Skill overview
 
 - **Signature skill**: speed `slow`, damage `low`
-- **Ultimate**: speed `fast`, first cast speed `fast`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, damage `medium`
+- **Ultimate**: speed `fast`, first cast speed `fast`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, damage `average`
 
 ##### Ultimate
 
@@ -1336,11 +1336,11 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Summon damage buff (summons only, average)
+  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Zandrok**
   - Haste buff (area, low, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
@@ -1408,7 +1408,7 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`
 - **Non-ultimate**: speed `fast`, damage `high`
 
 ##### Ultimate
@@ -1441,7 +1441,7 @@ Look for units providing: `Healing`
 Common buffers are **Solise**, **Twins**, or **Rowan**.
 
 - **Smokey & Meerky**
-  - Healing (area, medium)
+  - Healing (area, average)
 - **Koko**
   - Healing (all units, low)
 - **Evie**
@@ -1453,7 +1453,7 @@ Common buffers are **Solise**, **Twins**, or **Rowan**.
 
 ### Units benefitting most from Callan
 
-Callan provides Shield to single targets `medium`.
+Callan provides Shield to single targets `average`.
 
 - Carolina (2.3 / 5)
 - Nerion (2.2 / 5)
@@ -1494,7 +1494,7 @@ Callan provides Shield to single targets `medium`.
 
 - Unaffected — Self — Start of battle
 - Knock down — All units — `low`
-- Stun (Mythic+) — Single target — `medium`
+- Stun (Mythic+) — Single target — `average`
 
 ## Carolina
 
@@ -1508,8 +1508,8 @@ Callan provides Shield to single targets `medium`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -1556,7 +1556,7 @@ Carolina also requires units **applying crowd control** to enemies
 
 ### Units benefitting most from Carolina
 
-Carolina provides DEF buff (Mythic+) to single targets `medium`.
+Carolina provides DEF buff (Mythic+) to single targets `average`.
 
 - Nerion (3.5 / 5)
 - Bonnie (2.7 / 5)
@@ -1620,13 +1620,13 @@ Carolina provides DEF buff (Mythic+) to single targets `medium`.
 - **Signature skill**: Tidal Strength (Skill 2)
 - **Movement**: stationary (avg attack range 10.0 tiles)
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, damage `low`
 - **Ultimate**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `average`
 
 ##### Ultimate
 
@@ -1729,12 +1729,12 @@ Cassadee also requires a unit **to bless**
 
 - **Signature skill**: Queen's Summons (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
-- **Damage types**: Physical `medium`, DoT `high`
+- **Damage types**: Physical `average`, DoT `high`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -1772,8 +1772,8 @@ Common buffers are **Twins**, **Lyca**, or **Rowan**.
   - DEF buff (multiple targets, high)
   - DEF buff (multiple targets, high)
 - **Tilaya**
-  - DEF buff (area, medium)
-  - DEF buff (area, medium)
+  - DEF buff (area, average)
+  - DEF buff (area, average)
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Aurora**
@@ -1827,12 +1827,12 @@ Cecia provides ATK SPD buff to single targets `high`, DEF Penetration buff to si
 
 - **Signature skill**: Brothers-in-arms (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `normal`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `average`, damage `low`
 
 ##### Ultimate
 
@@ -1895,8 +1895,8 @@ rare chance for massive single normal attack damage
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, first cast speed `fast`, heal `medium`, buffs `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`
+- **Signature skill (ultimate)**: speed `average`, first cast speed `fast`, heal `average`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`
 
 ##### Ultimate
 
@@ -1932,16 +1932,16 @@ Common buffers are **Twins**, **Solise**, or **Rowan**.
 - **Lorsan**
   - Healing (all units, high)
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Hewynn**
-  - Healing (all units, medium)
+  - Healing (all units, average)
 - **Hepler**
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 
 ### Units benefitting most from Contess
 
-Contess provides ATK buff to single targets `high`, Healing to multiple targets `low`, and Shield to single targets `medium`.
+Contess provides ATK buff to single targets `high`, Healing to multiple targets `low`, and Shield to single targets `average`.
 
 - Saida (2.6 / 5)
 - Shadewing (2.5 / 5)
@@ -1996,7 +1996,7 @@ Contess provides ATK buff to single targets `high`, Healing to multiple targets 
 
 - Untargetable — Multiple targets — Start of battle
 - Silence (Mythic+) — Single target — `high`
-- Stun (Supreme+) — Single target — `medium`
+- Stun (Supreme+) — Single target — `average`
 
 ## Cryonaia
 
@@ -2010,8 +2010,8 @@ Contess provides ATK buff to single targets `high`, Healing to multiple targets 
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -2049,7 +2049,7 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
   - Max HP via Shield (multiple targets, high)
 - **Contess**
   - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
 - **Zanie**
   - ATK buff (single target, low)
   - Max HP via Shield (single target, high)
@@ -2113,7 +2113,7 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -2202,13 +2202,13 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 - **Signature skill**: Buddy Barrier (Skill 2)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
-- **Damage types**: Magic `high`, Max HP-based damage `medium`
+- **Damage types**: Magic `high`, Max HP-based damage `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
-- **Ultimate**: speed `slow`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
+- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Ultimate**: speed `slow`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -2244,15 +2244,15 @@ Common buffers are **Hugin** or **Galahad**.
 - **Zanie**
   - Max HP via Shield (single target, high)
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
 - **Lucius**
-  - Max HP via Shield (area, medium)
+  - Max HP via Shield (area, average)
 
 ### Units benefitting most from Daimon
 
-Daimon provides Lifedrain buff to single targets `medium` and Shield to multiple targets `low`.
+Daimon provides Lifedrain buff to single targets `average` and Shield to multiple targets `low`.
 
 - Carolina (3.1 / 5)
 - Nerion (2.8 / 5)
@@ -2280,11 +2280,11 @@ Daimon provides Lifedrain buff to single targets `medium` and Shield to multiple
 #### Damage types dealt by Daimon
 
 - Magic — Area
-- Max HP-based damage — Area — `medium`
+- Max HP-based damage — Area — `average`
 
 #### Crowd Control provided by Daimon
 
-- Frighten (Mythic+) — Area — `medium`
+- Frighten (Mythic+) — Area — `average`
 
 ## Damian
 
@@ -2298,9 +2298,9 @@ Daimon provides Lifedrain buff to single targets `medium` and Shield to multiple
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, heal `medium`, buffs `medium`
-- **Ultimate**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `low`
+- **Signature skill**: speed `fast`, heal `average`, buffs `average`
+- **Ultimate**: speed `slow`, first cast speed `fast`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -2335,11 +2335,11 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Summon damage buff (summons only, average)
+  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Isabella**
   - ATK buff (multiple targets, low, conditional (frequent))
   - Haste buff (multiple targets, low) `signature fuel`
@@ -2421,12 +2421,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Dawn Light (ultimate)
 - **Movement**: moving (avg attack range 0.0 tiles)
-- **Damage types**: Physical `medium`, True damage `medium`
+- **Damage types**: Physical `average`, True damage `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -2460,7 +2460,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Shakir**
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Pandora**
-  - Max HP buff (single target, medium)
+  - Max HP buff (single target, average)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
@@ -2514,7 +2514,7 @@ Dionel provides ATK buff to single targets `low`.
 #### Damage types dealt by Dionel
 
 - Physical — All units, Area, Single target
-- True damage — All units — `medium`
+- True damage — All units — `average`
 
 #### Debuffs provided by Dionel
 
@@ -2533,12 +2533,12 @@ Dionel provides ATK buff to single targets `low`.
 
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: stationary (avg attack range 6.4 tiles)
-- **Damage types**: Magic `medium`, HP loss `medium`
+- **Damage types**: Magic `average`, HP loss `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -2570,9 +2570,9 @@ Look for units providing: `ATK SPD / Haste` `Max HP` `Healing`
 Common buffers are **Twins**, **Solise**, or **Hugin**.
 
 - **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-  - Max HP via Shield (summons only, medium)
+  - Summon damage buff (summons only, average)
+  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
+  - Max HP via Shield (summons only, average)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -2580,9 +2580,9 @@ Common buffers are **Twins**, **Solise**, or **Hugin**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 
 ### Units benefitting most from Dunlingr
@@ -2615,7 +2615,7 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 #### Damage types dealt by Dunlingr
 
 - Magic — All units, Area, Single target
-- HP loss — Area — `medium`
+- HP loss — Area — `average`
 
 #### Debuffs provided by Dunlingr
 
@@ -2634,12 +2634,12 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 
 - **Signature skill**: Verdant Cyclone (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -2677,7 +2677,7 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 - **Zanie**
   - Max HP via Shield (single target, high)
 - **Velara**
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Isabella**
   - DEF buff (single target, low)
@@ -2714,7 +2714,7 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 #### Debuffs provided by Eironn
 
 - Haste — Arc — `high`
-- Magic DEF — Arc — `medium`
+- Magic DEF — Arc — `average`
 
 #### Crowd Control provided by Eironn
 
@@ -2734,8 +2734,8 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`, debuffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`, debuffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -2767,7 +2767,7 @@ Look for units providing: `Healing`
 Common buffers are **Solise**, **Twins**, or **Rowan**.
 
 - **Smokey & Meerky**
-  - Healing (area, medium)
+  - Healing (area, average)
 - **Koko**
   - Healing (all units, low)
 - **Velara**
@@ -2775,7 +2775,7 @@ Common buffers are **Solise**, **Twins**, or **Rowan**.
 - **Contess**
   - Healing (multiple targets, low)
 - **Zanie**
-  - Healing (single target, medium)
+  - Healing (single target, average)
 
 ### Units benefitting most from Evie
 
@@ -2825,7 +2825,7 @@ Evie provides ATK buff to multiple targets `high` and Healing to single targets 
 
 #### Debuffs provided by Evie
 
-- DoT — All units — `medium`
+- DoT — All units — `average`
 
 #### Crowd Control provided by Evie
 
@@ -2846,8 +2846,8 @@ Evie provides ATK buff to multiple targets `high` and Healing to single targets 
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -2882,7 +2882,7 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
   - Max HP via Shield (multiple targets, high)
 - **Contess**
   - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
 - **Zanie**
   - ATK buff (single target, low)
   - Max HP via Shield (single target, high)
@@ -2935,12 +2935,12 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 - **Signature skill**: Vibrant Dance (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`, buffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -3045,7 +3045,7 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -3091,7 +3091,7 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 ### Units benefitting most from Florabelle
 
-Florabelle provides Lifedrain buff to summons `medium` — conditional (frequent), Shield (Mythic+) to summons `medium`, Haste buff (EX+10) to summons `medium` — conditional (frequent), and Summon damage buff (Supreme+) to summons `medium`.
+Florabelle provides Lifedrain buff to summons `average` — conditional (frequent), Shield (Mythic+) to summons `average`, Haste buff (EX+10) to summons `average` — conditional (frequent), and Summon damage buff (Supreme+) to summons `average`.
 
 - Dunlingr (3.2 / 5)
 - Damian (3.1 / 5)
@@ -3141,7 +3141,7 @@ Florabelle provides Lifedrain buff to summons `medium` — conditional (frequent
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -3231,7 +3231,7 @@ Frieren provides ATK buff to single targets `high`.
 #### Crowd Control provided by Frieren
 
 - Stun — Single target — `low`
-- Knock down (Supreme+) — Single target — `medium`
+- Knock down (Supreme+) — Single target — `average`
 
 ## Galahad
 
@@ -3247,8 +3247,8 @@ Frieren provides ATK buff to single targets `high`.
 #### Skill overview
 
 - **Signature skill**: speed `fast`, first cast speed `fast`
-- **Ultimate**: speed `normal`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
+- **Ultimate**: speed `average`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -3285,7 +3285,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (single target, low) `signature fuel`
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Isabella**
@@ -3345,7 +3345,7 @@ These are the **10** strongest pairings:
 #### Crowd Control provided by Galahad
 
 - Steadfast (Supreme+) — Self — On skill
-- Bind — Single target — `medium`
+- Bind — Single target — `average`
 
 ## Gerda
 
@@ -3355,13 +3355,13 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Spring Therapy (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, heal `medium`, damage `medium`
-- **Ultimate**: speed `slow`, heal `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Signature skill**: speed `fast`, first cast speed `fast`, heal `average`, damage `average`
+- **Ultimate**: speed `slow`, heal `average`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -3441,7 +3441,7 @@ Gerda provides Healing to multiple targets `low` and Healing over time in an are
 
 - Unaffected — Self — Start of battle
 - Interrupt — Area — `low`
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Granny Dahnie
 
@@ -3455,8 +3455,8 @@ Gerda provides Healing to multiple targets `low` and Healing over time in an are
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -3488,20 +3488,20 @@ Look for units providing: `Healing` `Energy` `Physical DEF` `Magic DEF`
 Common buffers are **Rowan**, **Twins**, or **Lyca**.
 
 - **Tilaya**
-  - DEF buff (area, medium)
-  - DEF buff (area, medium)
+  - DEF buff (area, average)
+  - DEF buff (area, average)
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Lorsan**
   - Healing (all units, high)
 - **Sonja**
-  - DEF buff (multiple targets, medium)
-  - DEF buff (multiple targets, medium)
+  - DEF buff (multiple targets, average)
+  - DEF buff (multiple targets, average)
 - **Velara**
   - Healing (area, low)
-  - DEF buff (single target, medium)
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
+  - DEF buff (single target, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Granny Dahnie
@@ -3543,7 +3543,7 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 
 #### Debuffs provided by Granny Dahnie
 
-- Haste — Single target — `medium`
+- Haste — Single target — `average`
 - ATK (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Granny Dahnie
@@ -3561,12 +3561,12 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 - **Signature skill**: Annihilation Directive (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: place ally 1 tile behind at battle start (Doomfield buffs and coordinated attacks)
-- **Damage types**: Physical `medium`, DoT `high`, Max HP-based damage `medium`
+- **Damage types**: Physical `average`, DoT `high`, Max HP-based damage `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -3600,14 +3600,14 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Lorsan**
   - Healing (all units, high)
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - Healing (area, low)
 - **Hewynn**
-  - Healing (all units, medium)
+  - Healing (all units, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
@@ -3656,7 +3656,7 @@ Gunnar provides ATK SPD buff to single targets `high`, ATK buff to single target
 
 - Physical — All units, Area, Single target
 - DoT — Area
-- Max HP-based damage — All units — `medium`
+- Max HP-based damage — All units — `average`
 
 #### Crowd Control provided by Gunnar
 
@@ -3675,7 +3675,7 @@ Gunnar provides ATK SPD buff to single targets `high`, ATK buff to single target
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -3741,7 +3741,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Crowd Control provided by Gwyneth
 
-- Bind — Area — `medium`
+- Bind — Area — `average`
 - Silence — Area — `low`
 - Stun — Area — `low`
 
@@ -3755,8 +3755,8 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `normal`, heal `medium`, buffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `average`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -3782,8 +3782,8 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
   - Healing (all units, high)
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (single target, high)
@@ -3837,9 +3837,9 @@ Hammie provides ATK buff to multiple targets `low`.
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`
-- **Ultimate**: speed `slow`, heal `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
+- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`
+- **Ultimate**: speed `slow`, heal `average`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -3871,8 +3871,8 @@ Look for units providing: `Haste` `Max HP` `CRIT` `Healing` `Energy`
 Common buffers are **Twins**, **Rowan**, or **Hugin**.
 
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
@@ -3882,7 +3882,7 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
   - Haste buff (multiple targets, high) `signature fuel`
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 
 ### Units benefitting most from Harak
 
@@ -3950,7 +3950,7 @@ Harak provides Invincible to single targets `high` and Lifedrain buff (Legendary
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -3986,25 +3986,25 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Sonja**
   - ATK buff (multiple targets, high)
-  - DEF buff (multiple targets, medium)
-  - DEF buff (multiple targets, medium)
+  - DEF buff (multiple targets, average)
+  - DEF buff (multiple targets, average)
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Velara**
   - Haste buff (single target, low) `signature fuel`
   - Healing (area, low)
-  - DEF buff (single target, medium)
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
+  - DEF buff (single target, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Hepler
 
-Hepler provides Haste buff to single targets `low`, Healing to multiple targets `medium`, Shield to multiple targets `high`, and DEF buff (Supreme+) to single targets `low`.
+Hepler provides Haste buff to single targets `low`, Healing to multiple targets `average`, Shield to multiple targets `high`, and DEF buff (Supreme+) to single targets `low`.
 
 **15** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -4064,12 +4064,12 @@ These are the **10** strongest pairings:
 
 #### Debuffs provided by Hepler
 
-- Haste — Area — `medium`
+- Haste — Area — `average`
 
 #### Crowd Control provided by Hepler
 
 - Blind — Area — `high`
-- Stun — Area — `medium`
+- Stun — Area — `average`
 - Taunt — Area — `high`
 
 ## Hewynn
@@ -4084,8 +4084,8 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`
+- **Non-ultimate**: speed `fast`, heal `average`
 
 ##### Ultimate
 
@@ -4122,7 +4122,7 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Isabella**
   - ATK buff (multiple targets, low, conditional (frequent))
   - ATK SPD via Haste buff (multiple targets, low) `signature fuel`
@@ -4132,7 +4132,7 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 
 ### Units benefitting most from Hewynn
 
-Hewynn provides Healing to all units `medium`.
+Hewynn provides Healing to all units `average`.
 
 - Salazer (3.7 / 5)
 
@@ -4174,9 +4174,9 @@ Hewynn provides Healing to all units `medium`.
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `medium`
-- **Ultimate**: speed `normal`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `average`, damage `average`
+- **Ultimate**: speed `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -4211,7 +4211,7 @@ Himmel also requires a party **with the right composition**
 
 - **Contess**
   - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
   - Enables Party composition via Support (party slot)
 - **Velara**
@@ -4219,7 +4219,7 @@ Himmel also requires a party **with the right composition**
   - Healing (area, low)
   - Enables Party composition via Support (party slot)
 - **Alna**
-  - ATK buff (single target, medium)
+  - ATK buff (single target, average)
   - Max HP buff (single target, low)
   - Enables Party composition via Tank (party slot)
 - **Frieren**
@@ -4266,7 +4266,7 @@ Himmel provides Shield to single targets `low`, ATK buff (Mythic+) to multiple t
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -4299,8 +4299,8 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
@@ -4346,7 +4346,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 #### Debuffs provided by Hodgkin
 
-- Energy drain (Mythic+) — Area — `medium`
+- Energy drain (Mythic+) — Area — `average`
 - Phys DEF (Supreme+) — Single target — `low`
 - Vitality (Supreme+) — Single target — `low`
 
@@ -4364,9 +4364,9 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
-- **Ultimate**: speed `slow`, first cast speed `fast`, buffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`
+- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Ultimate**: speed `slow`, first cast speed `fast`, buffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`
 
 ##### Ultimate
 
@@ -4404,7 +4404,7 @@ Common buffers are **Twins**, **Rowan**, or **Galahad**.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Smokey & Meerky**
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
 
@@ -4459,8 +4459,8 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -4493,11 +4493,11 @@ Common buffers are **Solise**, **Twins**, or **Rowan**.
 
 - **Koko**
   - Healing (all units, low)
-  - Lifedrain buff (multiple targets, medium)
+  - Lifedrain buff (multiple targets, average)
 - **Smokey & Meerky**
-  - Healing (area, medium)
+  - Healing (area, average)
 - **Hepler**
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Dunlingr**
   - Lifedrain buff (all units, low)
 - **Brutus**
@@ -4543,8 +4543,8 @@ Common buffers are **Solise**, **Twins**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -4590,7 +4590,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via DoT (area)
 - **Alna**
-  - ATK buff (single target, medium)
+  - ATK buff (single target, average)
   - Enables Multiple debuffs on target via 2 debuff types
   - Enables Debuff on target via Haste debuff (area)
 - **Dunlingr**
@@ -4627,13 +4627,13 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 #### Damage types dealt by Indris
 
 - Physical — Area, Multiple targets, Single target
-- True damage — Multiple targets — `medium`
+- True damage — Multiple targets — `average`
 
 #### Debuffs provided by Indris
 
 - Damage taken — Multiple targets — `low`
 - Magic DEF — Single target — `low`
-- Phys DEF — Single target — `medium`
+- Phys DEF — Single target — `average`
 
 #### Crowd Control provided by Indris
 
@@ -4654,8 +4654,8 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`
 
 ##### Ultimate
 
@@ -4701,7 +4701,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
   - Healing (area, low)
 - **Zanie**
   - ATK buff (single target, low)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 
 ### Units benefitting most from Isabella
 
@@ -4756,8 +4756,8 @@ Isabella provides ATK buff to multiple targets `low` — conditional (frequent),
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, debuffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -4792,7 +4792,7 @@ Common buffers are **Twins**, **Rowan**, or **Lyca**.
   - ATK buff (multiple targets, low)
   - Max HP buff (multiple targets, high)
 - **Pandora**
-  - Max HP buff (single target, medium)
+  - Max HP buff (single target, average)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
@@ -4842,7 +4842,7 @@ Common buffers are **Twins**, **Rowan**, or **Lyca**.
 
 #### Debuffs provided by Kafra
 
-- Marked target (focus fire) — Single target — `medium`
+- Marked target (focus fire) — Single target — `average`
 - Phys DEF — Single target — `high`
 - ATK (Mythic+) — Single target — `low`
 - Haste (Mythic+) — Single target — `high`
@@ -4851,7 +4851,7 @@ Common buffers are **Twins**, **Rowan**, or **Lyca**.
 
 - Unaffected (Mythic+) — Self — Conditional
 - Knock back — Single target — `low`
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Koko
 
@@ -4861,12 +4861,12 @@ Common buffers are **Twins**, **Rowan**, or **Lyca**.
 
 - **Signature skill**: Full Energy (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -4906,14 +4906,14 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
   - Haste buff (multiple targets, low) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, low) `signature fuel`
 - **Smokey & Meerky**
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Dunlingr**
   - Haste buff (single target, low) `signature fuel`
   - ATK SPD buff (all units, low) `signature fuel`
 
 ### Units benefitting most from Koko
 
-Koko provides Damage taken reduction to all units `low`, Healing to all units `low`, Lifedrain buff to multiple targets `medium`, Shield (Mythic+) to all units `low`, and Vitality buff (Supreme+) to single targets `low`.
+Koko provides Damage taken reduction to all units `low`, Healing to all units `low`, Lifedrain buff to multiple targets `average`, Shield (Mythic+) to all units `low`, and Vitality buff (Supreme+) to single targets `low`.
 
 - Talene (4.0 / 5)
 - Igor (3.9 / 5)
@@ -4967,7 +4967,7 @@ Koko provides Damage taken reduction to all units `low`, Healing to all units `l
 
 #### Crowd Control provided by Koko
 
-- Stun — Area — `medium`
+- Stun — Area — `average`
 
 ## Kordan
 
@@ -4981,8 +4981,8 @@ Koko provides Damage taken reduction to all units `low`, Healing to all units `l
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -5014,21 +5014,21 @@ Look for units providing: `ATK` `Max HP` `Healing` `DEF Penetration` `Life Drain
 Common buffers are **Twins**, **Hugin**, or **Ravion**.
 
 - **Aliceth**
-  - ATK buff (multiple targets, medium)
+  - ATK buff (multiple targets, average)
   - DEF Penetration buff (multiple targets, high)
 - **Zanie**
   - ATK buff (single target, low)
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
-  - DEF Penetration buff (single target, medium)
+  - Healing (single target, average)
+  - DEF Penetration buff (single target, average)
 - **Velara**
   - Healing (area, low)
-  - DEF buff (single target, medium)
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
+  - DEF buff (single target, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Contess**
   - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
@@ -5056,7 +5056,7 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 #### Damage types dealt by Kordan
 
 - Physical — Area, Single target
-- HP loss — Single target — `medium`
+- HP loss — Single target — `average`
 
 #### Crowd Control provided by Kordan
 
@@ -5073,12 +5073,12 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 
 - **Signature skill**: Demonseal Spear (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `medium`, True damage `low`
+- **Damage types**: Physical `average`, True damage `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -5120,12 +5120,12 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - ATK SPD buff (single target, high) `signature fuel`
   - Max HP buff (single target, high)
 - **Pandora**
-  - Max HP buff (single target, medium)
+  - Max HP buff (single target, average)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 
 ### Units benefitting most from Korin
 
-Korin provides Shield to single targets `medium`.
+Korin provides Shield to single targets `average`.
 
 - Carolina (2.0 / 5)
 - Nerion (2.0 / 5)
@@ -5166,7 +5166,7 @@ Korin provides Shield to single targets `medium`.
 
 #### Crowd Control provided by Korin
 
-- Bind — Single target — `medium`
+- Bind — Single target — `average`
 - Knock back — Area — `low`
 
 ## Kruger
@@ -5181,8 +5181,8 @@ Korin provides Shield to single targets `medium`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -5221,7 +5221,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Zanie**
   - Max HP via Shield (single target, high)
 - **Velara**
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Isabella**
   - DEF buff (single target, low)
@@ -5283,9 +5283,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `low`
-- **Ultimate**: speed `normal`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `average`, damage `low`
+- **Ultimate**: speed `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -5317,13 +5317,13 @@ Look for units providing: `ATK` `ATK SPD / Haste` `DEF Penetration`
 Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 - **Aliceth**
-  - ATK buff (multiple targets, medium)
+  - ATK buff (multiple targets, average)
   - DEF Penetration buff (multiple targets, high)
 - **Gunnar**
   - ATK SPD buff (single target, high) `signature fuel`
 - **Zanie**
   - ATK buff (single target, low)
-  - DEF Penetration buff (single target, medium)
+  - DEF Penetration buff (single target, average)
 - **Mehira**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Velara**
@@ -5389,9 +5389,9 @@ Kulu provides ATK buff (Legendary+) to single targets `low` and DEF Penetration 
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, heal `medium`, buffs `medium`
+- **Signature skill**: speed `slow`, heal `average`, buffs `average`
 - **Ultimate**: speed `fast`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -5427,16 +5427,16 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Healing (area, low)
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
-  - Max HP via Shield (summons only, medium)
+  - Summon damage buff (summons only, average)
+  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
+  - Max HP via Shield (summons only, average)
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Shakir**
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 
@@ -5489,8 +5489,8 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -5532,11 +5532,11 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
   - Max HP buff (multiple targets, low)
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
 - **Pandora**
-  - Max HP buff (single target, medium)
+  - Max HP buff (single target, average)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 
 ### Units benefitting most from Lenya
 
@@ -5574,7 +5574,7 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 
 - Unaffected — Self — Once
 - Knock back — Area — `low`
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Lily May
 
@@ -5584,12 +5584,12 @@ Lenya provides Shield (Supreme+) to single targets `high`.
 
 - **Signature skill**: Tempest Shot (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Magic `medium`, Max HP-based damage `low`
+- **Damage types**: Magic `average`, Max HP-based damage `low`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -5621,7 +5621,7 @@ Look for units providing: `ATK` `DEF Penetration`
 Common buffers are **Twins**, **Rowan**, or **Ravion**.
 
 - **Aliceth**
-  - ATK buff (multiple targets, medium)
+  - ATK buff (multiple targets, average)
   - DEF Penetration buff (multiple targets, high)
 - **Kordan**
   - ATK buff (multiple targets, high)
@@ -5697,7 +5697,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`
 
 ##### Ultimate
 
@@ -5737,8 +5737,8 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Healing (area, low)
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (single target, high)
@@ -5805,8 +5805,8 @@ Lorsan provides Healing to all units `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -5838,12 +5838,12 @@ Look for units providing: `Max HP` `Healing` `Physical DEF` `Magic DEF`
 Common buffers are **Twins**, **Rowan**, or **Hugin**.
 
 - **Tilaya**
-  - Max HP buff (area, medium)
-  - DEF buff (area, medium)
-  - DEF buff (area, medium)
+  - Max HP buff (area, average)
+  - DEF buff (area, average)
+  - DEF buff (area, average)
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
   - DEF buff (single target, low)
   - DEF buff (single target, low)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
@@ -5853,8 +5853,8 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
 - **Lorsan**
   - Healing (all units, high)
 - **Sonja**
-  - DEF buff (multiple targets, medium)
-  - DEF buff (multiple targets, medium)
+  - DEF buff (multiple targets, average)
+  - DEF buff (multiple targets, average)
 
 ### Units benefitting most from Lucca
 
@@ -5900,7 +5900,7 @@ Lucca provides DEF buff in an area `high`.
 - Interrupt — Single target — `low`
 - Knock down — Area — `low`
 - Knock up — Area — `low`
-- Stun — Area — `medium`
+- Stun — Area — `average`
 
 ## Lucius
 
@@ -5910,12 +5910,12 @@ Lucca provides DEF buff in an area `high`.
 
 - **Signature skill**: Divine Light Aegis (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -5949,20 +5949,20 @@ Common buffers are **Rowan**, **Twins**, or **Lyca**.
 - **Lorsan**
   - Healing (all units, high)
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Damian**
   - Healing (area, low)
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Hewynn**
-  - Healing (all units, medium)
+  - Healing (all units, average)
 - **Pandora**
   - Healing (single target, low)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 
 ### Units benefitting most from Lucius
 
-Lucius provides Shield in an area `medium`.
+Lucius provides Shield in an area `average`.
 
 - Himmel (2.3 / 5)
 - Nerion (1.8 / 5)
@@ -6027,7 +6027,7 @@ Lucius provides Shield in an area `medium`.
 
 - **Signature skill**: speed `fast`, damage `high`
 - **Ultimate**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -6108,7 +6108,7 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 
 - Unaffected — Self — On skill
 - Knock up — All units — `low`
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Ludovic
 
@@ -6122,8 +6122,8 @@ Lucy provides Shield (Mythic+) to single targets `high`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`
+- **Non-ultimate**: speed `fast`, heal `average`, damage `high`
 
 ##### Ultimate
 
@@ -6155,8 +6155,8 @@ Look for units providing: `Healing`
 Common buffers are **Rowan**, **Twins**, or **Solise**.
 
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Pandora**
   - Healing (single target, low)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
@@ -6211,7 +6211,7 @@ Ludovic provides Healing in an area `low`.
 #### Crowd Control provided by Ludovic
 
 - Unaffected — Self — On skill
-- Stun (Supreme+) — Single target — `medium`
+- Stun (Supreme+) — Single target — `average`
 
 ## Lumont
 
@@ -6225,8 +6225,8 @@ Ludovic provides Healing in an area `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -6264,12 +6264,12 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Hepler**
   - Haste buff (single target, low) `signature fuel`
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Lorsan**
   - Healing (all units, high)
 - **Pandora**
-  - Max HP buff (single target, medium)
+  - Max HP buff (single target, average)
   - Healing (single target, low)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Zandrok**
@@ -6327,7 +6327,7 @@ Lumont provides DEF buff to multiple targets `high`.
 
 - Unaffected — Self — On skill
 - Stun — Area — `low`
-- Taunt — Single target — `medium`
+- Taunt — Single target — `average`
 - Knock up (Mythic+) — Single target — `low`
 
 ## Lyca
@@ -6338,12 +6338,12 @@ Lumont provides DEF buff to multiple targets `high`.
 
 - **Signature skill**: Comet Archery (ultimate)
 - **Movement**: stationary (avg attack range 11.0 tiles)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -6387,7 +6387,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Lyca
 
-Lyca provides ATK SPD buff to all units `medium` and Energy recovery to all units `low`.
+Lyca provides ATK SPD buff to all units `average` and Energy recovery to all units `low`.
 
 **32** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -6438,7 +6438,7 @@ These are the **10** strongest pairings:
 
 #### Crowd Control provided by Lyca
 
-- Stun (EX+10) — Single target — `medium`
+- Stun (EX+10) — Single target — `average`
 
 ## Marcille
 
@@ -6453,8 +6453,8 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `average`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, damage `high`
 
 ##### Ultimate
 
@@ -6486,8 +6486,8 @@ Look for units providing: `ATK SPD / Haste` `Healing` `Energy`
 Common buffers are **Twins**, **Rowan**, or **Hugin**.
 
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Dunlingr**
   - ATK SPD buff (all units, low) `signature fuel`
   - Haste buff (single target, low) `signature fuel`
@@ -6546,7 +6546,7 @@ Marcille provides Haste buff to single targets `low` and Healing to multiple tar
 #### Crowd Control provided by Marcille
 
 - Unaffected (Supreme+) — Self — On skill
-- Blind — Single target — `medium`
+- Blind — Single target — `average`
 - Interrupt (Mythic+) — Single target — `low`
 
 ## Marilee
@@ -6562,7 +6562,7 @@ Marcille provides Haste buff to single targets `low` and Healing to multiple tar
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -6653,12 +6653,12 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 
 - **Signature skill**: Euphoric Rush (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -6699,7 +6699,7 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
   - Healing (area, low)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Gunnar**
   - ATK SPD buff (single target, high) `signature fuel`
@@ -6746,7 +6746,7 @@ Mehira provides Haste buff to single targets `low`.
 #### Crowd Control provided by Mehira
 
 - Untargetable (Mythic+) — Self — Start of battle
-- Charm — Area — `medium`
+- Charm — Area — `average`
 
 ## Mikola
 
@@ -6760,8 +6760,8 @@ Mehira provides Haste buff to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`, buffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -6807,8 +6807,8 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
   - DEF buff (single target, low)
 - **Velara**
   - Haste buff (single target, low) `signature fuel`
-  - DEF buff (single target, medium)
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
+  - DEF buff (single target, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Zandrok**
   - Haste buff (area, low, conditional (frequent)) `signature fuel`
@@ -6866,7 +6866,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Winged Flame (ultimate)
 - **Movement**: stationary (avg attack range 10.1 tiles)
-- **Damage types**: Magic `medium`, DoT `low`
+- **Damage types**: Magic `average`, DoT `low`
 
 #### Skill overview
 
@@ -6947,13 +6947,13 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - **Signature skill**: Phantom Chains (Skill 1)
 - **Movement**: mostly stationary (pulls enemies)
-- **Damage types**: Physical `high`, HP loss `medium`, True damage `high`
+- **Damage types**: Physical `high`, HP loss `average`, True damage `high`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, damage `low`
 - **Ultimate**: speed `fast`, first cast speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, damage `low`
 
 ##### Ultimate
 
@@ -6986,7 +6986,7 @@ Common buffers are **Ravion**, **Rowan**, or **Twins**.
 
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Thador**
   - Energy recovery (single target, low) `signature fuel`
 - **Thoran**
@@ -7035,7 +7035,7 @@ Nara provides Healing (Mythic+) in an area `low`.
 #### Damage types dealt by Nara
 
 - Physical — Single target
-- HP loss — Single target — `medium`
+- HP loss — Single target — `average`
 - True damage — Single target — `high`
 
 #### Debuffs provided by Nara
@@ -7046,7 +7046,7 @@ Nara provides Healing (Mythic+) in an area `low`.
 
 - Unaffected (Supreme+) — Self — Permanent
 - Displace — Single target — `low`
-- Knock down — Single target — `medium`
+- Knock down — Single target — `average`
 - Knock up — Single target — `low`
 
 ## Natsu
@@ -7059,8 +7059,8 @@ Nara provides Healing (Mythic+) in an area `low`.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, first cast speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `average`, first cast speed `fast`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -7148,14 +7148,14 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Debuffs provided by Natsu
 
-- Haste — Area — `medium`
+- Haste — Area — `average`
 - Max HP (Mythic+) — Single target — `low`
-- DoT (Supreme+) — Single target — `medium`
+- DoT (Supreme+) — Single target — `average`
 
 #### Crowd Control provided by Natsu
 
 - Knock down — Area — `low`
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Nazrik
 
@@ -7165,12 +7165,12 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 - **Signature skill**: Rend Rupture (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles)
-- **Damage types**: Physical `high`, True damage `medium`
+- **Damage types**: Physical `high`, True damage `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, damage `high`
-- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `average`, damage `high`
+- **Non-ultimate**: speed `fast`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -7202,7 +7202,7 @@ Look for units providing: `CRIT`
 Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 - **Smokey & Meerky**
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Dunlingr**
   - ATK SPD buff (all units, low) `signature fuel`
 - **Gunnar**
@@ -7246,7 +7246,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 #### Damage types dealt by Nazrik
 
 - Physical — Single target
-- True damage — Single target — `medium`
+- True damage — Single target — `average`
 
 #### Debuffs provided by Nazrik
 
@@ -7258,7 +7258,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 #### Crowd Control provided by Nazrik
 
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Nerion
 
@@ -7273,7 +7273,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -7316,10 +7316,10 @@ Nerion also requires units **applying crowd control** to enemies
   - Enables CC on enemies via Bind (area, high)
 - **Aliceth**
   - DEF Penetration buff (multiple targets, high)
-  - Enables CC on enemies via Blind (area, medium)
+  - Enables CC on enemies via Blind (area, average)
 - **Koko**
   - Max HP via Shield (all units, low)
-  - Enables CC on enemies via Stun (area, medium)
+  - Enables CC on enemies via Stun (area, average)
 
 ### Units benefitting most from Nerion
 
@@ -7368,7 +7368,7 @@ Nerion also requires units **applying crowd control** to enemies
 
 #### Crowd Control provided by Nerion
 
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Niru
 
@@ -7379,12 +7379,12 @@ Nerion also requires units **applying crowd control** to enemies
 - **Signature skill**: Soul Shepherd (ultimate)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: nearest ally auto-selected at battle start; prioritizes ally behind
-- **Damage types**: Magic `medium`, HP loss `low`
+- **Damage types**: Magic `average`, HP loss `low`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, damage `average`
 
 ##### Ultimate
 
@@ -7419,8 +7419,8 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 - **Velara**
   - Healing (area, low)
-  - DEF buff (single target, medium)
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
+  - DEF buff (single target, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Isabella**
   - DEF buff (single target, low)
@@ -7468,13 +7468,13 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 - **Signature skill**: Heart Crusher (Mythic+)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles)
-- **Damage types**: Magic `low`, DoT `medium`
+- **Damage types**: Magic `low`, DoT `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, debuffs `medium`
+- **Signature skill**: speed `fast`, debuffs `average`
 - **Ultimate**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -7556,13 +7556,13 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 - **Signature skill**: Boxed Blessing (Skill 1)
 - **Movement**: stationary (no finite attack range)
 - **Ally composition**: rearmost ally enters invincible box, then gains Energy and ATK
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
-- **Ultimate**: speed `slow`, debuffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Ultimate**: speed `slow`, debuffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -7598,7 +7598,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 - **Thoran**
   - Energy recovery (single target, low) `signature fuel`
 - **Smokey & Meerky**
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Seth**
   - Energy recovery (single target, high) `signature fuel`
 - **Arden**
@@ -7606,7 +7606,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 ### Units benefitting most from Pandora
 
-Pandora provides Healing to single targets `low`, Invincible to single targets `high`, and Max HP buff (Legendary+) to single targets `medium`.
+Pandora provides Healing to single targets `low`, Invincible to single targets `high`, and Max HP buff (Legendary+) to single targets `average`.
 
 - Indris (4.5 / 5)
 - Satrana (3.0 / 5)
@@ -7648,8 +7648,8 @@ Pandora provides Healing to single targets `low`, Invincible to single targets `
 - ATK — All units — `low`
 - Damage taken — Single target — `low`
 - Energy drain — Single target — `low`
-- Haste — Single target — `medium`
-- Vitality — Single target — `medium`
+- Haste — Single target — `average`
+- Vitality — Single target — `average`
 
 ## Pang
 
@@ -7663,8 +7663,8 @@ Pandora provides Healing to single targets `low`, Invincible to single targets `
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -7702,7 +7702,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Aliceth**
-  - ATK buff (multiple targets, medium)
+  - ATK buff (multiple targets, average)
   - DEF Penetration buff (multiple targets, high)
 - **Kordan**
   - ATK buff (multiple targets, high)
@@ -7772,7 +7772,7 @@ Pang provides ATK buff to single targets `high`, Shield (EX+10) to single target
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -7807,7 +7807,7 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD buff (all units, low) `signature fuel`
@@ -7856,8 +7856,8 @@ Common buffers are **Twins**, **Hugin**, or **Lyca**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -7898,7 +7898,7 @@ Perseus also requires units **buffing them**
   - Grants 5 distinct stat buffs to Perseus
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
   - Grants 3 distinct stat buffs to Perseus
 - **Himmel**
   - ATK buff (multiple targets, low)
@@ -7906,7 +7906,7 @@ Perseus also requires units **buffing them**
   - Grants 3 distinct stat buffs to Perseus
 - **Contess**
   - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Grants 3 distinct stat buffs to Perseus (start of battle)
 
 ### Units benefitting most from Perseus
@@ -7941,7 +7941,7 @@ Perseus provides ATK buff to multiple targets `low`.
 
 - Unaffected — Multiple targets — On skill
 - Knock back — Area — `low`
-- Stun — Area — `medium`
+- Stun — Area — `average`
 
 ## Phraesto
 
@@ -7953,13 +7953,13 @@ Perseus provides ATK buff to multiple targets `low`.
 - **Movement**: moving (avg attack range 1.8 tiles)
 - **Ally composition**: place allies 1 tile behind this hero and the Illusion for contract buffs
 - **Self placement**: keep this hero and Illusion in the same row (damage reduction and battle-start shields)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`, damage `low`
-- **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `average`, damage `low`
+- **Ultimate**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -7994,22 +7994,22 @@ Common buffers are **Rowan**, **Solise**, or **Twins**.
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Summon damage buff (summons only, average)
+  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
 - **Sonja**
-  - DEF buff (multiple targets, medium)
-  - DEF buff (multiple targets, medium)
+  - DEF buff (multiple targets, average)
+  - DEF buff (multiple targets, average)
 - **Velara**
   - Healing (area, low)
-  - DEF buff (single target, medium)
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
+  - DEF buff (single target, average)
 
 ### Units benefitting most from Phraesto
 
-Phraesto provides Damage taken reduction to single targets `low`, Healing to single targets `low`, Max HP buff to single targets `medium`, and Shield to single targets `medium`.
+Phraesto provides Damage taken reduction to single targets `low`, Healing to single targets `low`, Max HP buff to single targets `average`, and Shield to single targets `average`.
 
 - Nerion (2.0 / 5)
 - Perseus (1.7 / 5)
@@ -8053,7 +8053,7 @@ Phraesto provides Damage taken reduction to single targets `low`, Healing to sin
 
 #### Crowd Control provided by Phraesto
 
-- Stun (Mythic+) — Single target — `medium`
+- Stun (Mythic+) — Single target — `average`
 - Taunt (Mythic+) — Single target — `low`
 
 ## Pippa
@@ -8064,12 +8064,12 @@ Phraesto provides Damage taken reduction to single targets `low`, Healing to sin
 
 - **Signature skill**: Wild Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, damage `medium`
-- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `average`, damage `average`
+- **Non-ultimate**: speed `fast`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -8156,12 +8156,12 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 #### Debuffs provided by Pippa
 
-- Energy drain — Area — `medium`
+- Energy drain — Area — `average`
 
 #### Crowd Control provided by Pippa
 
 - Unaffected — Self — On skill
-- Bind — Single target — `medium`
+- Bind — Single target — `average`
 - Displace — Single target — `low`
 - Knock down — Single target — `low`
 
@@ -8174,12 +8174,12 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 - **Signature skill**: Killer Flush (ultimate)
 - **Movement**: high movement (repositioning skills)
 - **Ally composition**: Objectives go to the 2 rearmost allies; backline heroes receive ATK and Energy on completion
-- **Damage types**: Physical `medium`, HP loss `low`
+- **Damage types**: Physical `average`, HP loss `low`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -8227,7 +8227,7 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 ### Units benefitting most from Ravion
 
-Ravion provides ATK buff to multiple targets `medium`, Energy recovery to multiple targets `medium`, Lifedrain buff (EX+10) to single targets `low` — conditional (rare), and Shield (EX+10) to single targets `low` — conditional (rare).
+Ravion provides ATK buff to multiple targets `average`, Energy recovery to multiple targets `average`, Lifedrain buff (EX+10) to single targets `low` — conditional (rare), and Shield (EX+10) to single targets `low` — conditional (rare).
 
 **25** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -8273,12 +8273,12 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Ravion
 
 - Physical — Area, Multiple targets, Single target
-- HP loss — Single target — `medium`
+- HP loss — Single target — `average`
 
 #### Debuffs provided by Ravion
 
-- ATK — Multiple targets — `medium`
-- Phys DEF — Multiple targets — `medium`
+- ATK — Multiple targets — `average`
+- Phys DEF — Multiple targets — `average`
 
 #### Crowd Control provided by Ravion
 
@@ -8294,13 +8294,13 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Dynamic Balance (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, heal `medium`
-- **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, debuffs `medium`, damage `low`
+- **Signature skill**: speed `fast`, first cast speed `fast`, heal `average`
+- **Ultimate**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -8336,7 +8336,7 @@ Common buffers are **Solise**, **Twins**, or **Rowan**.
 - **Contess**
   - Healing (multiple targets, low)
 - **Zanie**
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Pandora**
   - Healing (single target, low)
 - **Lorsan**
@@ -8384,7 +8384,7 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 #### Debuffs provided by Reinier
 
-- ATK (Legendary+) — Single target — `medium`
+- ATK (Legendary+) — Single target — `average`
 - Damage taken (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Reinier
@@ -8404,12 +8404,12 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 - **Signature skill**: Flame Barrage (ultimate)
 - **Movement**: high movement (moves while attacking)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -8502,12 +8502,12 @@ Rhys provides Crit buff to single targets `low`, Healing to single targets `low`
 
 - **Signature skill**: Fatal Greed (ultimate)
 - **Movement**: moving (repositions on cast)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, buffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `average`, buffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -8555,7 +8555,7 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 ### Units benefitting most from Rowan
 
-Rowan provides Energy recovery in an area `high`, Healing in an area `medium`, DEF buff (Mythic+) to single targets `high`, and Max HP buff (Mythic+) to single targets `high`.
+Rowan provides Energy recovery in an area `high`, Healing in an area `average`, DEF buff (Mythic+) to single targets `high`, and Max HP buff (Mythic+) to single targets `high`.
 
 **70** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -8625,8 +8625,8 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `fast`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -8658,17 +8658,17 @@ Look for units providing: `Max HP` `Healing`
 Common buffers are **Twins**, **Solise**, or **Rowan**.
 
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Velara**
   - Healing (area, low)
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Lorsan**
   - Healing (all units, high)
 - **Hewynn**
-  - Healing (all units, medium)
+  - Healing (all units, average)
 
 ### Units benefitting most from Saida
 
@@ -8727,13 +8727,13 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Spirit Shackles (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, damage `low`
-- **Ultimate**: speed `slow`, buffs `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `medium`
+- **Ultimate**: speed `slow`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `average`
 
 ##### Ultimate
 
@@ -8766,11 +8766,11 @@ Common buffers are **Twins**, **Rowan**, or **Solise**.
 
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Lorsan**
   - Healing (all units, high)
 - **Hewynn**
-  - Healing (all units, medium)
+  - Healing (all units, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
@@ -8827,12 +8827,12 @@ Salazer provides Lifedrain buff to single targets `low` and Shield (Supreme+) to
 
 - **Signature skill**: Fiery Dance (ultimate)
 - **Movement**: moving (avg attack range 1.5 tiles)
-- **Damage types**: Magic `medium`, Max HP-based damage `low`
+- **Damage types**: Magic `average`, Max HP-based damage `low`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -8864,7 +8864,7 @@ Look for units providing: `Max HP`
 Common buffers are **Twins**, **Rowan**, or **Lyca**.
 
 - **Pandora**
-  - Max HP buff (single target, medium)
+  - Max HP buff (single target, average)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
@@ -8874,7 +8874,7 @@ Common buffers are **Twins**, **Rowan**, or **Lyca**.
 - **Shakir**
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Phraesto**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`
 
 ### Units benefitting most from Satrana
@@ -8919,7 +8919,7 @@ Common buffers are **Twins**, **Rowan**, or **Lyca**.
 
 #### Crowd Control provided by Satrana
 
-- Charm — Single target — `medium`
+- Charm — Single target — `average`
 
 ## Scarlita
 
@@ -8934,8 +8934,8 @@ Common buffers are **Twins**, **Rowan**, or **Lyca**.
 #### Skill overview
 
 - **Signature skill**: speed `fast`
-- **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `medium`
+- **Ultimate**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -8967,7 +8967,7 @@ Look for units providing: `Execution` `Energy`
 Common buffers are **Rowan**, **Ravion**, or **Lyca**.
 
 - **Smokey & Meerky**
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Thador**
   - Energy recovery (single target, low) `signature fuel`
 - **Thoran**
@@ -8979,7 +8979,7 @@ Common buffers are **Rowan**, **Ravion**, or **Lyca**.
 
 ### Units benefitting most from Scarlita
 
-Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to single targets `medium`.
+Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to single targets `average`.
 
 - Carolina (2.3 / 5)
 - Nerion (2.1 / 5)
@@ -9024,7 +9024,7 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 - Knock back — All units — `low`
 - Knock down — Arc — `low`
 - Knock up — Area — `low`
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Seth
 
@@ -9034,12 +9034,12 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 - **Signature skill**: Shadow Strike (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `low`, HP loss `medium`
+- **Damage types**: Physical `low`, HP loss `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -9079,12 +9079,12 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Sonja**
   - ATK buff (multiple targets, high)
-  - DEF buff (multiple targets, medium)
-  - DEF buff (multiple targets, medium)
+  - DEF buff (multiple targets, average)
+  - DEF buff (multiple targets, average)
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Lumont**
   - DEF buff (multiple targets, high)
   - DEF buff (multiple targets, high)
@@ -9155,13 +9155,13 @@ Seth provides Crit buff to single targets `low` and Energy recovery (Mythic+) to
 
 - **Signature skill**: Withering Curse (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Damage types**: Magic `high`, DoT `medium`, HP loss `low`
+- **Damage types**: Magic `high`, DoT `average`, HP loss `low`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 - **Ultimate**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -9199,7 +9199,7 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
   - Enables Debuff on target via Energy drain (single target)
 - **Contess**
   - ATK buff (single target, high)
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Enables Debuff on target via Max HP debuff (multiple targets)
 - **Gunnar**
   - Enables Continuous damage on enemies via DoT
@@ -9228,7 +9228,7 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 #### Debuffs provided by Shadewing
 
-- Magic DEF — All units — `medium`
+- Magic DEF — All units — `average`
 - Phys DEF — All units — `low`
 
 ## Shakir
@@ -9243,8 +9243,8 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `average`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -9293,7 +9293,7 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 ### Units benefitting most from Shakir
 
-Shakir provides Damage taken reduction to multiple targets `medium`, Haste buff to multiple targets `high`, and Lifedrain buff to single targets `medium`.
+Shakir provides Damage taken reduction to multiple targets `average`, Haste buff to multiple targets `high`, and Lifedrain buff to single targets `average`.
 
 **14** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -9352,12 +9352,12 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Phantom Procession (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Damage types**: Magic `high`, Max HP-based damage `medium`
+- **Damage types**: Magic `high`, Max HP-based damage `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -9392,9 +9392,9 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Velara**
   - Healing (area, low)
@@ -9419,7 +9419,7 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 #### Damage types dealt by Shemira
 
 - Magic — All units, Area, Single target
-- Max HP-based damage — Area, Single target — `medium`
+- Max HP-based damage — Area, Single target — `average`
 
 ## Silven
 
@@ -9429,13 +9429,13 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 
 - **Signature skill**: Gravity Collapse (Skill 1)
 - **Movement**: stationary (avg attack range 12.0 tiles)
-- **Damage types**: Magic `medium`, Max HP-based damage `low`
+- **Damage types**: Magic `average`, Max HP-based damage `low`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`, damage `high`
 - **Ultimate**: speed `fast`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -9473,7 +9473,7 @@ Silven also requires units **buffing them**
   - Grants 4 distinct stat buffs to Silven (start of battle)
 - **Velara**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
-  - DEF buff (single target, medium)
+  - DEF buff (single target, average)
   - Grants 3 distinct stat buffs to Silven (start of battle)
 - **Contess**
   - Grants 3 distinct stat buffs to Silven (start of battle)
@@ -9520,13 +9520,13 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 - **Signature skill**: First Strike (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, damage `medium`
-- **Ultimate**: speed `normal`, debuffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `medium`
+- **Signature skill**: speed `fast`, first cast speed `fast`, damage `average`
+- **Ultimate**: speed `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -9611,7 +9611,7 @@ Common buffers are **Hugin** or **Galahad**.
 #### Crowd Control provided by Silvina
 
 - Stun — Single target — `high`
-- Frighten (EX+10) — Area — `medium`
+- Frighten (EX+10) — Area — `average`
 
 ## Sinbad
 
@@ -9625,8 +9625,8 @@ Common buffers are **Hugin** or **Galahad**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, damage `medium`
-- **Non-ultimate**: speed `fast`, debuffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `average`, damage `average`
+- **Non-ultimate**: speed `fast`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -9666,7 +9666,7 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 - **Vala**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Smokey & Meerky**
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 
 ### Units benefitting most from Sinbad
 
@@ -9700,10 +9700,10 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 - Damage taken — Multiple targets — `low`
 - ATK (Mythic+) — Multiple targets — `low`
-- Energy drain (Mythic+) — Multiple targets — `medium`
-- Magic DEF (Mythic+) — Multiple targets — `medium`
+- Energy drain (Mythic+) — Multiple targets — `average`
+- Magic DEF (Mythic+) — Multiple targets — `average`
 - Phys DEF (Mythic+) — Multiple targets — `low`
-- Vitality (Mythic+) — Multiple targets — `medium`
+- Vitality (Mythic+) — Multiple targets — `average`
 
 #### Crowd Control provided by Sinbad
 
@@ -9721,8 +9721,8 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, heal `medium`, buffs `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, heal `average`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -9763,13 +9763,13 @@ Common buffers are **Mikola**, **Twins**, or **Rowan**.
   - Healing (all units, low)
 - **Zanie**
   - ATK buff (single target, low)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Velara**
   - Healing (area, low)
 
 ### Units benefitting most from Smokey & Meerky
 
-Smokey & Meerky provides Energy recovery in an area `medium`, Healing in an area `medium`, and ATK buff (Legendary+) to multiple targets `low`.
+Smokey & Meerky provides Energy recovery in an area `average`, Healing in an area `average`, and ATK buff (Legendary+) to multiple targets `low`.
 
 **16** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -9837,8 +9837,8 @@ These are the **10** strongest pairings:
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `normal`, heal `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`
+- **Signature skill (ultimate)**: speed `average`, heal `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -9874,7 +9874,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - ATK SPD buff (single target, high) `signature fuel`
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Fay**
@@ -9886,7 +9886,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting most from Solise
 
-Solise provides ATK buff to summons `high` — conditional (frequent), Healing to all units `medium`, Healing over time to single targets `low`, Shield to summons `medium`, and DEF buff (Mythic+) to summons `low`.
+Solise provides ATK buff to summons `high` — conditional (frequent), Healing to all units `average`, Healing over time to single targets `low`, Shield to summons `average`, and DEF buff (Mythic+) to summons `low`.
 
 **28** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -9944,13 +9944,13 @@ These are the **10** strongest pairings:
 - **Signature skill**: Crimson Covenant (Skill 1)
 - **Movement**: high movement (repositioning skills)
 - **Ally composition**: place allies on left and right at battle start (Crimson Covenant buffs; prioritizes front row)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
-- **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `low`
+- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Ultimate**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -9996,7 +9996,7 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 ### Units benefitting most from Sonja
 
-Sonja provides ATK buff to multiple targets `high` and DEF buff to multiple targets `medium`.
+Sonja provides ATK buff to multiple targets `high` and DEF buff to multiple targets `average`.
 
 - Kordan (3.2 / 5)
 - Hepler (2.3 / 5)
@@ -10050,7 +10050,7 @@ Sonja provides ATK buff to multiple targets `high` and DEF buff to multiple targ
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -10091,17 +10091,17 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
 - **Hepler**
   - Haste buff (single target, low) `signature fuel`
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Lorsan**
   - Healing (all units, high)
 
 ### Units benefitting most from Soren
 
-Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supreme+) to single targets `medium`.
+Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supreme+) to single targets `average`.
 
 - Carolina (3.3 / 5)
 - Nerion (3.0 / 5)
@@ -10140,7 +10140,7 @@ Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supre
 #### Crowd Control provided by Soren
 
 - Knock back — Area — `low`
-- Stun — Area — `medium`
+- Stun — Area — `average`
 
 ## Sylphira
 
@@ -10154,8 +10154,8 @@ Soren provides Haste buff (Legendary+) to single targets `low` and Shield (Supre
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, debuffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -10195,7 +10195,7 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
   - Healing (multiple targets, low)
 - **Zanie**
   - ATK buff (single target, low)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Mehira**
   - Haste buff (single target, low) `signature fuel`
   - ATK SPD via Haste buff (single target, low) `signature fuel`
@@ -10222,8 +10222,8 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 
 #### Debuffs provided by Sylphira
 
-- Energy drain — Single target — `medium`
-- Max HP — Area — `medium`
+- Energy drain — Single target — `average`
+- Max HP — Area — `average`
 
 #### Crowd Control provided by Sylphira
 
@@ -10231,7 +10231,7 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 - Unaffected — Area — Conditional
 - Cleanse (Mythic+) — Self — On skill
 - Interrupt — Area — `low`
-- Knock down — Area — `medium`
+- Knock down — Area — `average`
 - Silence — Area — `low`
 
 ## Talene
@@ -10243,12 +10243,12 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 - **Signature skill**: Divine Conflagration (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles)
 - **Ally composition**: frontmost ally carries Pyre of Renewal (AoE damage and healing)
-- **Damage types**: Magic `medium`
+- **Damage types**: Magic `average`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -10285,10 +10285,10 @@ Common buffers are **Twins**, **Mikola**, or **Rowan**.
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
-  - Lifedrain buff (multiple targets, medium)
+  - Lifedrain buff (multiple targets, average)
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (single target, high)
@@ -10353,12 +10353,12 @@ Talene provides Healing in an area `low`, Healing over time in an area `low`, an
 
 - **Signature skill**: Eternal Dreamscape (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles)
-- **Damage types**: Magic `medium`, DoT `medium`
+- **Damage types**: Magic `average`, DoT `average`
 
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -10396,15 +10396,15 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Hepler**
   - Haste buff (single target, low) `signature fuel`
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Evie**
   - ATK buff (multiple targets, high)
   - Healing (single target, high)
@@ -10457,12 +10457,12 @@ Tasi provides Haste buff (Mythic+) to single targets `high`.
 
 - **Signature skill**: Knight's Heart (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `high`, Max HP-based damage `medium`
+- **Damage types**: Physical `high`, Max HP-based damage `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, heal `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, damage `low`
 
 ##### Ultimate
 
@@ -10498,12 +10498,12 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
   - Healing (area, low)
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Shakir**
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Talene**
@@ -10549,7 +10549,7 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
 #### Damage types dealt by Temesia
 
 - Physical — All units, Area, Single target
-- Max HP-based damage — Single target — `medium`
+- Max HP-based damage — Single target — `average`
 
 #### Debuffs provided by Temesia
 
@@ -10574,9 +10574,9 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
 
 #### Skill overview
 
-- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `medium`
-- **Ultimate**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill**: speed `slow`, first cast speed `fast`, buffs `average`
+- **Ultimate**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -10611,9 +10611,9 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Velara**
   - Healing (area, low)
@@ -10677,13 +10677,13 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 - **Signature skill**: Resurrection (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Ally composition**: place ally 1 tile behind at battle prep (Soul Pact damage share and revive)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
 - **Signature skill**: speed `fast`
-- **Ultimate**: speed `slow`, buffs `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Ultimate**: speed `slow`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -10718,9 +10718,9 @@ Common buffers are **Rowan**, **Twins**, or **Solise**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 - **Velara**
   - Healing (area, low)
@@ -10775,12 +10775,12 @@ Thoran provides Lifedrain buff to single targets `high` and Energy recovery (Leg
 
 - **Signature skill**: Wrath of the Wilds (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -10813,21 +10813,21 @@ Common buffers are **Twins**, **Rowan**, or **Solise**.
 
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
 - **Saida**
   - Max HP via Shield (multiple targets, high)
 - **Smokey & Meerky**
-  - Healing (area, medium)
+  - Healing (area, average)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 
 ### Units benefitting most from Tilaya
 
-Tilaya provides DEF buff (EX+10) in an area `medium` and Max HP buff (EX+10) in an area `medium`.
+Tilaya provides DEF buff (EX+10) in an area `average` and Max HP buff (EX+10) in an area `average`.
 
 - Lucca (4.3 / 5)
 - Granny Dahnie (2.6 / 5)
@@ -10872,8 +10872,8 @@ Tilaya provides DEF buff (EX+10) in an area `medium` and Max HP buff (EX+10) in 
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -10913,8 +10913,8 @@ Twins also requires units **positioned on their link**
   - Healing (area, low)
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Lorsan**
   - Healing (all units, high)
 - **Tasi**
@@ -10923,7 +10923,7 @@ Twins also requires units **positioned on their link**
 
 ### Units benefitting most from Twins
 
-Twins provides ATK buff to multiple targets `medium`, Energy recovery to multiple targets `low`, Haste buff to all units `high`, Healing to multiple targets `high`, Max HP buff to multiple targets `medium`, Shield to single targets `low`, Vitality buff (Mythic+) to multiple targets `low`, and DEF buff (Supreme+) to single targets `low`.
+Twins provides ATK buff to multiple targets `average`, Energy recovery to multiple targets `low`, Haste buff to all units `high`, Healing to multiple targets `high`, Max HP buff to multiple targets `average`, Shield to single targets `low`, Vitality buff (Mythic+) to multiple targets `low`, and DEF buff (Supreme+) to single targets `low`.
 
 **110** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -10973,7 +10973,7 @@ These are the **10** strongest pairings:
 #### Crowd Control provided by Twins
 
 - Unaffected — Area — On skill
-- Blind — Area — `medium`
+- Blind — Area — `average`
 - Knock back — Area — `low`
 
 ## Ulmus
@@ -10985,13 +10985,13 @@ These are the **10** strongest pairings:
 - **Signature skill**: Way of the Forest (Skill 2)
 - **Movement**: moving (stationary when rooted)
 - **Ally composition**: when rooted, shields frontmost ally instead of self
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, heal `medium`, buffs `medium`
-- **Ultimate**: speed `slow`, heal `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `low`
+- **Signature skill**: speed `fast`, heal `average`, buffs `average`
+- **Ultimate**: speed `slow`, heal `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -11024,10 +11024,10 @@ Common buffers are **Rowan**, **Twins**, or **Solise**.
 
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
-  - Healing (multiple targets, medium)
+  - Healing (multiple targets, average)
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Koko**
   - Max HP via Shield (all units, low)
   - Healing (all units, low)
@@ -11035,7 +11035,7 @@ Common buffers are **Rowan**, **Twins**, or **Solise**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 
 ### Units benefitting most from Ulmus
 
@@ -11090,12 +11090,12 @@ Ulmus provides Energy recovery to single targets `low` and Shield to single targ
 
 - **Signature skill**: Swift Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Damage types**: Physical `medium`, HP loss `medium`, True damage `low`
+- **Damage types**: Physical `average`, HP loss `average`, True damage `low`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, damage `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`, debuffs `medium`, damage `low`
+- **Signature skill (ultimate)**: speed `slow`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -11134,8 +11134,8 @@ Vala also requires enemies **to be defeated**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Talene**
   - ATK buff (area, high)
   - Healing (area, low)
@@ -11191,18 +11191,18 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 #### Damage types dealt by Vala
 
 - Physical — Single target
-- HP loss — Single target — `medium`
+- HP loss — Single target — `average`
 - True damage — Single target — `low`
 
 #### Debuffs provided by Vala
 
-- Haste — Single target — `medium`
-- Marked target (focus fire) — Single target — `medium`
+- Haste — Single target — `average`
+- Marked target (focus fire) — Single target — `average`
 
 #### Crowd Control provided by Vala
 
 - Untargetable (Mythic+) — Multiple targets — Conditional
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Valen
 
@@ -11212,12 +11212,12 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 - **Signature skill**: Thunder Swordwork (ultimate)
 - **Movement**: moving (avg attack range 1.4 tiles)
-- **Damage types**: Physical `medium`
+- **Damage types**: Physical `average`
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, buffs `medium`, damage `low`
-- **Non-ultimate**: speed `fast`, buffs `medium`, damage `medium`
+- **Signature skill (ultimate)**: speed `slow`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -11256,7 +11256,7 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Smokey & Meerky**
   - ATK buff (multiple targets, low)
-  - Energy recovery (area, medium) `signature fuel`
+  - Energy recovery (area, average) `signature fuel`
 - **Isabella**
   - ATK buff (multiple targets, low, conditional (frequent))
   - ATK SPD via Haste buff (multiple targets, low) `signature fuel`
@@ -11304,7 +11304,7 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 
 #### Crowd Control provided by Valen
 
-- Stun (Supreme+) — Single target — `medium`
+- Stun (Supreme+) — Single target — `average`
 
 ## Valka
 
@@ -11318,8 +11318,8 @@ Common buffers are **Twins**, **Lyca**, or **Mikola**.
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, heal `medium`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `fast`, first cast speed `fast`, heal `average`, damage `high`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -11351,8 +11351,8 @@ Look for units providing: `ATK SPD / Haste` `Max HP` `Healing` `Energy`
 Common buffers are **Twins**, **Rowan**, or **Hugin**.
 
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Shakir**
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Koko**
@@ -11362,11 +11362,11 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 
 ### Units benefitting most from Valka
 
-Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10) to single targets `medium`.
+Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10) to single targets `average`.
 
 - Nerion (2.1 / 5)
 - Silven (1.5 / 5)
@@ -11415,8 +11415,8 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, debuffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `average`, debuffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -11453,7 +11453,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Saida**
   - Max HP via Shield (multiple targets, high)
 - **Lucius**
-  - Max HP via Shield (area, medium)
+  - Max HP via Shield (area, average)
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Zandrok**
@@ -11462,7 +11462,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 ### Units benefitting most from Velara
 
-Velara provides DEF buff to single targets `medium`, Haste buff to single targets `low`, and Healing in an area `low`.
+Velara provides DEF buff to single targets `average`, Haste buff to single targets `low`, and Healing in an area `low`.
 
 **11** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -11519,7 +11519,7 @@ These are the **10** strongest pairings:
 #### Debuffs provided by Velara
 
 - Haste — Single target — `low`
-- Magic DEF — Single target — `medium`
+- Magic DEF — Single target — `average`
 - Phys DEF — Single target — `low`
 
 #### Crowd Control provided by Velara
@@ -11539,8 +11539,8 @@ These are the **10** strongest pairings:
 #### Skill overview
 
 - **Signature skill**: speed `slow`, damage `low`
-- **Ultimate**: speed `normal`, first cast speed `fast`, heal `medium`, damage `high`
-- **Non-ultimate**: speed `slow`, heal `medium`, debuffs `medium`, damage `medium`
+- **Ultimate**: speed `average`, first cast speed `fast`, heal `average`, damage `high`
+- **Non-ultimate**: speed `slow`, heal `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -11578,8 +11578,8 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Lorsan**
   - Healing (all units, high)
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
@@ -11621,7 +11621,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 #### Debuffs provided by Viperian
 
-- Energy drain — Single target — `medium`
+- Energy drain — Single target — `average`
 
 #### Crowd Control provided by Viperian
 
@@ -11640,7 +11640,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 #### Skill overview
 
 - **Signature skill (ultimate)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`, debuffs `medium`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -11672,13 +11672,13 @@ Look for units providing: `Max HP` `CRIT` `CRIT DMG Boost` `Life Drain`
 Common buffers are **Twins**, **Rowan**, or **Lyca**.
 
 - **Shakir**
-  - Lifedrain buff (single target, medium)
+  - Lifedrain buff (single target, average)
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Koko**
   - Max HP via Shield (all units, low)
-  - Lifedrain buff (multiple targets, medium)
+  - Lifedrain buff (multiple targets, average)
 - **Pandora**
-  - Max HP buff (single target, medium)
+  - Max HP buff (single target, average)
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Hepler**
   - Max HP via Shield (multiple targets, high)
@@ -11727,7 +11727,7 @@ Walker provides Crit buff to single targets `low`.
 
 #### Crowd Control provided by Walker
 
-- Stun — Single target — `medium`
+- Stun — Single target — `average`
 
 ## Zandrok
 
@@ -11741,9 +11741,9 @@ Walker provides Crit buff to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `medium`
+- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
 - **Ultimate**: speed `slow`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `medium`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`
 
 ##### Ultimate
 
@@ -11780,12 +11780,12 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
   - Max HP via Shield (multiple targets, high)
 - **Zanie**
   - Max HP via Shield (single target, high)
-  - Healing (single target, medium)
+  - Healing (single target, average)
 - **Dunlingr**
   - Haste buff (single target, low) `signature fuel`
   - Lifedrain buff (all units, low)
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
 
 ### Units benefitting most from Zandrok
@@ -11828,8 +11828,8 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `medium`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `medium`, buffs `medium`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, buffs `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -11870,12 +11870,12 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 - **Velara**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
 - **Florabelle**
-  - Summon damage buff (summons only, medium)
-  - ATK SPD via Haste buff (summons only, medium, conditional (frequent))
+  - Summon damage buff (summons only, average)
+  - ATK SPD via Haste buff (summons only, average, conditional (frequent))
 
 ### Units benefitting most from Zanie
 
-Zanie provides ATK buff to single targets `low`, Healing to single targets `medium`, Shield to single targets `high`, DEF Penetration buff (Legendary+) to single targets `medium`, and Max HP buff (Mythic+) to single targets `low`.
+Zanie provides ATK buff to single targets `low`, Healing to single targets `average`, Shield to single targets `high`, DEF Penetration buff (Legendary+) to single targets `average`, and Max HP buff (Mythic+) to single targets `low`.
 
 - Daimon (3.0 / 5)
 - Kordan (2.2 / 5)
@@ -11918,8 +11918,8 @@ Zanie provides ATK buff to single targets `low`, Healing to single targets `medi
 
 #### Debuffs provided by Zanie
 
-- ATK (Supreme+) — Single target — `medium`
-- Phys DEF (Supreme+) — Single target — `medium`
+- ATK (Supreme+) — Single target — `average`
+- Phys DEF (Supreme+) — Single target — `average`
 
 #### Crowd Control provided by Zanie
 
@@ -11938,8 +11938,8 @@ Zanie provides ATK buff to single targets `low`, Healing to single targets `medi
 
 #### Skill overview
 
-- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `medium`, buffs `medium`, damage `medium`
-- **Non-ultimate**: speed `fast`, heal `medium`, buffs `medium`, damage `high`
+- **Signature skill (ultimate)**: speed `slow`, first cast speed `fast`, heal `average`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -11973,8 +11973,8 @@ Common buffers are **Twins**, **Rowan**, or **Hugin**.
 Zorya also requires allies **casting ultimates**
 
 - **Smokey & Meerky**
-  - Healing (area, medium)
-  - Energy recovery (area, medium) `signature fuel`
+  - Healing (area, average)
+  - Energy recovery (area, average) `signature fuel`
   - Enables Ally Ultimate casts via Energy recovery (Ultimate pace)
 - **Shakir**
   - Haste buff (multiple targets, high) `signature fuel`
@@ -11985,7 +11985,7 @@ Zorya also requires allies **casting ultimates**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
   - Enables Ally Ultimate casts via Start-of-battle Ultimate
 - **Contess**
-  - Max HP via Shield (single target, medium)
+  - Max HP via Shield (single target, average)
   - Healing (multiple targets, low)
   - Enables Ally Ultimate casts via Start-of-battle Ultimate
 - **Zandrok**
@@ -12032,5 +12032,5 @@ Zorya also requires allies **casting ultimates**
 
 - Steadfast — Self — Start of battle
 - Unaffected (EX+10) — Single target — On skill
-- Knock down — Arc — `medium`
-- Stun — Area — `medium`
+- Knock down — Arc — `average`
+- Stun — Area — `average`

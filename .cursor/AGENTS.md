@@ -93,7 +93,7 @@ Optional suffix: `— conditional (frequent)` or `— conditional (rare)`.
   (e.g. on cast, on kill, first proc). Magnitude is not reduced.
 - **conditional (rare)** — not every battle or hard to proc (e.g. enemy
   monsters, ingredients, once per battle). Magnitude is lowered by two steps
-  (`high`→`low`, `medium`→`low`).
+  (`high`→`low`, `average`→`low`).
 
 Synergy picks in `heroes-overview.md` skip rare conditional ally buffs.
 
@@ -109,14 +109,14 @@ use `(scaled)` placeholders in source text.
 
 ## Quality indicators
 
-Summary lines mark relative strength with **`high`**, **`medium`**, or
+Summary lines mark relative strength with **`high`**, **`average`**, or
 **`low`** (backticks in output). These rank an effect against the roster, not
 in isolation.
 
 - **Buffs / debuffs** — parsed % compared within the same label across heroes
   (quantiles when enough data); debuffs also reward `all enemies` reach.
   `assign_magnitudes()` in `rewrite-summaries.py`.
-- **Crowd control** — duration-based (≥5s → high, ≥2s → medium).
+- **Crowd control** — duration-based (≥5s → high, ≥2s → average).
 - **HP loss / max-HP / true damage** — composite score from %, targeting, and
   frequency; roster quantiles in `assign_damage_magnitudes()`.
 
@@ -134,7 +134,7 @@ pages during `just download`. Shown at the top of each hero's behavior section
 in `heroes-overview.md` (comma-separated text) and the site viewer (tier boxes).
 Do not confuse these with ascension unlock tiers in skill summaries.
 
-Synergy scoring weights magnitude (high > medium > low). When auditing,
+Synergy scoring weights magnitude (high > average > low). When auditing,
 compare heroes with the same buff/debuff label — wrong targeting or clause
 parsing often yields wrong indicators.
 
@@ -200,7 +200,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   ultimate row is omitted), **Ultimate** (only when signature is not the
   ultimate), and **Non-ultimate**. Each row lists only non-`none`
   indicators among `speed`, `first cast speed`, `heal`, `buffs`, `debuffs`,
-  `damage` (damage last; `high` / `medium` / `low`; speed `slow` / `normal`
+  `damage` (damage last; `high` / `average` / `low`; speed `slow` / `average`
   / `fast`). **First cast speed** is shown when the opener applies at battle
   start or battle preparation while recurring cast speed is slower (e.g.
   Cassadee's Tidal Strength blesses at battle start).
@@ -307,9 +307,9 @@ reviewing or fixing matches, work through both heroes in this order.
    ultimate is slow.
    **Signature-skill fuel:** Haste/ATK SPD ally buffs are boosted by the
    receiver's effective synergy signature speed (`SIGNATURE_FUEL_SPEED_MULT`:
-   slow 1.6×, normal 1.2×, fast 1.0×). Energy recovery uses a lighter
+   slow 1.6×, average 1.2×, fast 1.0×). Energy recovery uses a lighter
    `SIGNATURE_FUEL_ENERGY_MULT` (slow 1.3×) plus `ENERGY_SYNERGY_SCORE_MULT`
-   (0.72×) so batteries do not dominate lists. Slow/normal effective speeds
+   (0.72×) so batteries do not dominate lists. Slow/average effective speeds
    also implicitly value Energy and ATK SPD at `IMPLICIT_FUEL_BASE` (0.45×)
    when not in benefit stats.    Buffability
    is detected from skill text (`NON_BUFFABLE_SIGNATURE_RES` in
@@ -386,7 +386,7 @@ Line format (no Provides/Requires prefix on each bullet):
   (e.g. Alna grants the Winter Warrior the same immunity effects), also list
   `Damage and control immunity` in the **Buffs** section (always `high`).
   **Marked target (focus fire):** also list in the **Debuffs** section so
-  synergy matching can see which heroes debuff via marking (always `medium`).
+  synergy matching can see which heroes debuff via marking (always `average`).
   **Ally grants:** phrasing like `grants Sparks to allies` or `grants an ally
   Brightfeather` adds `Ally grant (name)`; when allies with that grant can
   inflict DoT or debuffs on enemies in the same skill text, also list

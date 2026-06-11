@@ -9,7 +9,7 @@
     },
     "mag_weight": {
       "high": 3.0,
-      "medium": 2.0,
+      "average": 2.0,
       "low": 1.0
     },
     "summon_targeting_weight": 3.0,
@@ -17,19 +17,19 @@
     "frequent_conditional_score": 0.85,
     "signature_fuel_speed_mult": {
       "slow": 1.6,
-      "normal": 1.2,
+      "average": 1.2,
       "fast": 1.0
     },
     "signature_fuel_energy_mult": {
       "slow": 1.3,
-      "normal": 1.05,
+      "average": 1.05,
       "fast": 1.0
     },
     "energy_synergy_score_mult": 0.72,
     "implicit_fuel_base": 0.45,
     "early_battle_energy_ult_mult": {
       "slow": 1.25,
-      "normal": 1.0,
+      "average": 1.0,
       "fast": 0.85
     },
     "defining_tier_score_mult": {

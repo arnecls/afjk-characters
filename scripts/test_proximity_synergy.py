@@ -113,7 +113,7 @@ class ProximityReachGateTests(unittest.TestCase):
             provider,
             receiver,
             behavior.movement,
-            behavior.synergy_signature_speed or "normal",
+            behavior.synergy_signature_speed or "average",
             behavior,
         )
         return score
@@ -190,11 +190,11 @@ class PositionalTileRegressionTests(unittest.TestCase):
         behavior = rs.HeroBehavior(
             movement="moving",
             movement_note="",
-            casting_speed="normal",
+            casting_speed="average",
             avg_attack_range=1.0,
         )
         score, _ = gen.score_synergy(
-            provider, receiver, "moving", "normal", behavior
+            provider, receiver, "moving", "average", behavior
         )
         self.assertEqual(score, 0.0)
 

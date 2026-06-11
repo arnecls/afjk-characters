@@ -217,31 +217,31 @@
 
   const QUALITY_CLASS = {
     high: "chip-q-high",
-    medium: "chip-q-medium",
+    average: "chip-q-medium",
     low: "chip-q-low",
   };
 
   const QUALITY_EMOJI = {
     high: "📈",
-    medium: "⚖️",
+    average: "⚖️",
     low: "📉",
   };
 
   const SPEED_CLASS = {
     slow: "chip-s-slow",
-    normal: "chip-s-normal",
+    average: "chip-s-normal",
     fast: "chip-s-fast",
   };
 
   const SPEED_EMOJI = {
     slow: "🐢",
-    normal: "⏱️",
+    average: "⏱️",
     fast: "🚀",
   };
 
   const CC_DURATION_LABEL = {
     low: "short",
-    medium: "average",
+    average: "average",
     high: "long",
   };
 
@@ -249,7 +249,7 @@
     high:
       "Top third vs the roster for this effect (parsed %, reach, " +
       "frequency, or CC duration; fully ascended).",
-    medium: "Middle band vs other heroes with the same effect label.",
+    average: "Middle band vs other heroes with the same effect label.",
     low: "Below average vs the roster for this effect type.",
   };
 
@@ -257,7 +257,7 @@
     slow:
       "Slow to cast: longer cooldown, initial delay, or ultimate " +
       "energy fill time.",
-    normal: "Typical cast timing for this skill group across the roster.",
+    average: "Typical cast timing for this skill group across the roster.",
     fast:
       "Quick to cast: short delay, low cooldown, or battle-start " +
       "override.",
@@ -1625,7 +1625,7 @@
   ];
 
   function parseSkillOverviewMetricEntry(entry) {
-    const match = entry.trim().match(/^(.+?)\s+`(high|medium|low|slow|normal|fast)`$/i);
+    const match = entry.trim().match(/^(.+?)\s+`(high|average|low|slow|fast)`$/i);
     if (!match) {
       return null;
     }
@@ -2609,7 +2609,7 @@
 
   const STRENGTH_RANK = {
     high: 3,
-    medium: 2,
+    average: 2,
     low: 1,
   };
 
@@ -2938,7 +2938,7 @@
 
   const SYNERGY_QUALITY_TOKENS = {
     low: true,
-    medium: true,
+    average: true,
     high: true,
   };
 

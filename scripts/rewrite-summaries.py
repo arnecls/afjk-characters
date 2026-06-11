@@ -548,7 +548,7 @@ class Effect:
     targeting: str
     numeric: float | None = None
     qualitative: str = ""
-    magnitude: str = "medium"
+    magnitude: str = "average"
     # Buffs only: None = always relevant; frequent = often (>~50% of fights);
     # rare = situational (not every battle / kill-gated / limited procs).
     conditional: str | None = None
@@ -1462,7 +1462,7 @@ def cc_magnitude_from_duration(duration: float | None) -> str:
     if duration >= 5:
         return "high"
     if duration >= 2:
-        return "medium"
+        return "average"
     return "low"
 
 
@@ -3846,26 +3846,26 @@ def qualitative_magnitude(e: Effect) -> str:
         if e.label in _ALWAYS_HIGH_BUFFS:
             return "high"
         if any(x in t for x in ("unaffected",)):
-            return "medium"
+            return "average"
         if e.numeric and e.numeric >= 50:
             return "high"
         if e.numeric and e.numeric >= 20:
-            return "medium"
+            return "average"
         if "shield" in t:
-            return "medium"
+            return "average"
         return "low"
     if e.category == "debuff":
         if e.label in _ALWAYS_MEDIUM_DEBUFFS:
-            return "medium"
+            return "average"
         if "all enemies" in t:
             return "high"
         if e.numeric and e.numeric >= 20:
-            return "medium"
+            return "average"
         return "low"
-    return "medium"
+    return "average"
 
 
-_MAG_ORDER = ("low", "medium", "high")
+_MAG_ORDER = ("low", "average", "high")
 
 
 def downgrade_magnitude(mag: str, steps: int) -> str:
@@ -4031,7 +4031,7 @@ def assign_damage_magnitudes(heroes: list[Hero]) -> None:
             score = hero.damage_scores[dt]
             t1, t2 = thresholds.get(dt, (40.0, 120.0))
             hero.damage_magnitudes[dt] = (
-                "low" if score <= t1 else "medium" if score <= t2 else "high"
+                "low" if score <= t1 else "average" if score <= t2 else "high"
             )
 
 
@@ -4091,7 +4091,7 @@ def assign_magnitudes(
                         else (
                             "low"
                             if val <= t1
-                            else "medium"
+                            else "average"
                             if val <= t2
                             else "high"
                         )
@@ -4367,10 +4367,10 @@ SECTION_TO_SPEED_KEY: dict[str, str] = {
     "Ex. Skill": "ex",
 }
 _SKILL_HEAL_LABELS = frozenset({"Healing", "Healing over time"})
-_MAG_SCORE = {"none": 0, "low": 1, "medium": 2, "high": 3}
-_SPEED_SCORE = {"none": 0, "slow": 1, "normal": 2, "fast": 3}
-_SCORE_TO_MAG = {0: "none", 1: "low", 2: "medium", 3: "high"}
-_SCORE_TO_SPEED = {0: "none", 1: "slow", 2: "normal", 3: "fast"}
+_MAG_SCORE = {"none": 0, "low": 1, "average": 2, "high": 3}
+_SPEED_SCORE = {"none": 0, "slow": 1, "average": 2, "fast": 3}
+_SCORE_TO_MAG = {0: "none", 1: "low", 2: "average", 3: "high"}
+_SCORE_TO_SPEED = {0: "none", 1: "slow", 2: "average", 3: "fast"}
 _ATK_DAMAGE_PATTERNS = [
     r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
     r"deals?\s+(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
@@ -4752,12 +4752,12 @@ def compute_casting_scores(
 
 
 def _casting_speed_label(score: float) -> str:
-    """Classify a raw time score as slow / normal / fast."""
+    """Classify a raw time score as slow / average / fast."""
     if score <= CASTING_SPEED_FAST_THRESHOLD:
         return "fast"
     if score >= CASTING_SPEED_SLOW_THRESHOLD:
         return "slow"
-    return "normal"
+    return "average"
 
 
 def casting_speed_labels(scores: dict[str, float]) -> dict[str, str]:
@@ -5369,7 +5369,7 @@ def _effective_synergy_signature(
 ) -> tuple[str, bool]:
     """Return (speed label, is_ultimate) for synergy fuel weighting."""
     if not primary:
-        return "normal", False
+        return "average", False
 
     primary_speed = _signature_skill_speed_label(primary, speeds)
     primary_section = primary.get("section", "Ultimate")
@@ -5397,13 +5397,13 @@ def _signature_skill_speed_label(
     per_skill: dict[str, str],
 ) -> str:
     if not defining:
-        return "normal"
+        return "average"
     # Manual override wins (e.g. battle-start or channeled quick-recast).
     if override := defining.get("speed_override"):
         return override
     section = defining.get("section", "Ultimate")
     key = SIGNATURE_SKILL_SECTION_KEYS.get(section, "ult")
-    return per_skill.get(key, "normal")
+    return per_skill.get(key, "average")
 
 
 def _hero_has_section(hero: Hero, skills: list[SkillMeta], section: str) -> bool:
@@ -5557,7 +5557,7 @@ def _damage_score_to_magnitude(score: float, thresholds: tuple[float, float]) ->
     if score <= t1:
         return "low"
     if score <= t2:
-        return "medium"
+        return "average"
     return "high"
 
 
@@ -5590,7 +5590,7 @@ def _section_speed_label(
     key = SECTION_TO_SPEED_KEY.get(section)
     if not key:
         return "none"
-    return speeds.get(key, "normal")
+    return speeds.get(key, "average")
 
 
 _BATTLE_START_OPENER_RES: tuple[re.Pattern[str], ...] = (
@@ -5856,7 +5856,7 @@ def build_behavior_for_heroes(
             result[hero.title] = HeroBehavior(
                 movement=movement,
                 movement_note=note,
-                casting_speed=casting_labels.get(hero.title, "normal"),
+                casting_speed=casting_labels.get(hero.title, "average"),
                 signature_skill_name=_skill_name_for_category(
                     curated, _effective_signature_category(raw_sig)
                 ),
@@ -5867,8 +5867,8 @@ def build_behavior_for_heroes(
                 ),
                 synergy_signature_speed=synergy_speed,
                 synergy_signature_is_ult=synergy_is_ult,
-                ult_speed=speeds.get("ult", "normal"),
-                non_ult_speed=speeds.get("non_ult", "normal"),
+                ult_speed=speeds.get("ult", "average"),
+                non_ult_speed=speeds.get("non_ult", "average"),
                 avg_attack_range=avg_range,
                 placement_constraints=placement_constraints,
                 skill_overview=skill_overview,
@@ -5877,10 +5877,10 @@ def build_behavior_for_heroes(
             result[hero.title] = HeroBehavior(
                 movement=movement,
                 movement_note=note,
-                casting_speed=casting_labels.get(hero.title, "normal"),
-                synergy_signature_speed="normal",
-                ult_speed=speeds.get("ult", "normal"),
-                non_ult_speed=speeds.get("non_ult", "normal"),
+                casting_speed=casting_labels.get(hero.title, "average"),
+                synergy_signature_speed="average",
+                ult_speed=speeds.get("ult", "average"),
+                non_ult_speed=speeds.get("non_ult", "average"),
                 avg_attack_range=avg_range,
                 placement_constraints=placement_constraints,
                 skill_overview=skill_overview,

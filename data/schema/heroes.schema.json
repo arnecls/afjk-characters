@@ -68,7 +68,7 @@
           "type": "object",
           "additionalProperties": {
             "type": "string",
-            "enum": ["high", "medium", "low"]
+            "enum": ["high", "average", "low"]
           },
           "description": "Roster-relative magnitude per special damage type (HP loss, Max HP-based, True damage)."
         },
@@ -380,15 +380,15 @@
     },
     "skillOverviewSpeed": {
       "type": "string",
-      "enum": ["slow", "normal", "fast", "none"]
+      "enum": ["slow", "average", "fast", "none"]
     },
     "skillOverviewMagnitude": {
       "type": "string",
-      "enum": ["high", "medium", "low", "none"]
+      "enum": ["high", "average", "low", "none"]
     },
     "castingSpeed": {
       "type": "string",
-      "enum": ["slow", "normal", "fast"]
+      "enum": ["slow", "average", "fast"]
     }
   }
 }

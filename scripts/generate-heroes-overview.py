@@ -57,7 +57,7 @@ TARGETING_WEIGHT = {
     "Single target": 1.5,
 }
 
-MAG_WEIGHT = {"high": 3.0, "medium": 2.0, "low": 1.0}
+MAG_WEIGHT = {"high": 3.0, "average": 2.0, "low": 1.0}
 
 # Haste increases attack speed; prefer Haste buff over ATK SPD buff for ATK SPD
 # beneficiaries (multiplier breaks ties at equal targeting/magnitude).
@@ -81,10 +81,10 @@ FREQUENT_CONDITIONAL_SCORE = 0.85
 
 # Signature skill "casting fuel": boost Haste/ATK SPD synergies so a unit's
 # signature skill comes online faster. Scaled by effective synergy speed.
-SIGNATURE_FUEL_SPEED_MULT = {"slow": 1.6, "normal": 1.2, "fast": 1.0}
+SIGNATURE_FUEL_SPEED_MULT = {"slow": 1.6, "average": 1.2, "fast": 1.0}
 
 # Energy recovery is weighted lower than Haste so batteries do not dominate.
-SIGNATURE_FUEL_ENERGY_MULT = {"slow": 1.3, "normal": 1.05, "fast": 1.0}
+SIGNATURE_FUEL_ENERGY_MULT = {"slow": 1.3, "average": 1.05, "fast": 1.0}
 ENERGY_SYNERGY_SCORE_MULT = 0.72
 
 # Fuel buff labels that accelerate skill casting / energy gain.
@@ -103,7 +103,7 @@ IMPLICIT_FUEL_BASE = 0.45
 IMPLICIT_FUEL_STATS = ("Energy", "ATK SPD")
 
 # Ally energy granted at or right after battle start (Pandora box, Lyca, Thador).
-EARLY_BATTLE_ENERGY_ULT_MULT = {"slow": 1.25, "normal": 1.0, "fast": 0.85}
+EARLY_BATTLE_ENERGY_ULT_MULT = {"slow": 1.25, "average": 1.0, "fast": 0.85}
 
 _BATTLE_START_RE = re.compile(
     r"when a battle starts|at (?:the )?start of (?:a )?battle|"
@@ -1041,7 +1041,7 @@ def score_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
     receiver_movement: str = "",
-    signature_speed: str = "normal",
+    signature_speed: str = "average",
     receiver_behavior: _rs.HeroBehavior | None = None,
 ) -> tuple[float, list[str]]:
     if provider.title == receiver.title:
@@ -1192,7 +1192,7 @@ def score_combined_synergy(
     enabler_matchers: dict[str, callable],
     receiver_behavior: _rs.HeroBehavior,
     receiver_movement: str = "",
-    signature_speed: str = "normal",
+    signature_speed: str = "average",
 ) -> tuple[float, list[str]]:
     buff_score, buff_reasons = score_synergy(
         provider,
@@ -1223,7 +1223,7 @@ def rank_synergy_entries(
 ) -> list[tuple[float, list[str], str]]:
     receiver_behavior = behavior_by_title[receiver.title]
     receiver_movement = receiver_behavior.movement
-    signature_speed = receiver_behavior.synergy_signature_speed or "normal"
+    signature_speed = receiver_behavior.synergy_signature_speed or "average"
     tiers = tiers_by_title if tiers_by_title is not None else _load_prydwen_tiers_by_title()
     receiver_tiers = tiers.get(receiver.title, {})
     ranked: list[tuple[float, list[str], str]] = []
@@ -1375,7 +1375,7 @@ def _hero_attack_score(hero: _rs.Hero) -> float:
             (TARGETING_WEIGHT.get(part, 1.0) for part in tgt.split(", ")),
             default=1.0,
         )
-        total += tw * MAG_WEIGHT.get(mags.get(dt, "medium"), 1.0)
+        total += tw * MAG_WEIGHT.get(mags.get(dt, "average"), 1.0)
     for effect in hero.effects:
         if effect.category not in ("debuff", "cc"):
             continue
@@ -1592,7 +1592,7 @@ def _hero_damage_profile(hero: _rs.Hero) -> dict[str, float]:
         tw = 0.0
         for part in tgt.split(", "):
             tw = max(tw, TARGETING_WEIGHT.get(part, 1.0))
-        mw = MAG_WEIGHT.get(mags.get(dt, "medium"), 1.0)
+        mw = MAG_WEIGHT.get(mags.get(dt, "average"), 1.0)
         weight = tw * mw
         if dt in _rs.TRUE_DAMAGE_TYPES:
             weight *= REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST
