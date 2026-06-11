@@ -272,6 +272,49 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
 
 Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).
 
+## Behavior tags
+
+Curated combat-role tags live in `data/hero_behavior_tags.json`; allowed values
+are enumerated in `data/schema/tags.schema.json`. Tags drive **Similar Skills**
+replacement scoring (Jaccard overlap in `generate-heroes-overview.py`). Assign
+a small set (typically three to five) that describe how the hero is played, not
+every minor skill effect.
+
+- ally-buffer: Grants meaningful offensive or defensive stat buffs to allies.
+- ally-healer: Restores ally HP directly or via healing over time as a core role.
+- ally-shielder: Grants shields to allies as a significant part of the kit.
+- aoe-damage: Deals substantial multi-target or area damage on a regular basis.
+- aoe-healing: Heals multiple allies or wide ally groups, not only single-target sustain.
+- assassin: Built to pick off isolated or backline targets with burst damage.
+- battle-start-burst: Applies strong damage or key effects at or right after battle start.
+- battle-start-ult: Casts ultimate or reaches full energy unusually early in the fight.
+- battlefield-modification: Adds physical obstacles or transforms the map layout; buff or debuff zones alone do not count.
+- cc-immunity: Grants self or allies immunity to crowd control as a defining mechanic.
+- clone: Creates copy units or illusions that fight alongside the hero.
+- counterattack: Punishes enemies for attacking the hero with reactive damage or effects.
+- disabler: Applies hard shutdown effects such as Silence or Interrupt beyond routine CC.
+- dot-specialist: Relies on damage over time or recurring tick damage as a primary pattern.
+- enemy-debuffer: Applies meaningful stat or combat debuffs to enemies as a core output.
+- enemy-grouping: Pulls, pushes, or clusters enemies to set up follow-up damage or CC.
+- energy-provider: Grants Energy to allies or routinely accelerates ally ultimates.
+- execute: Finishes low-HP enemies or scales damage strongly on wounded targets.
+- fire-attack: Applies burning or scorched-ground fire damage as a significant part of the kit.
+- high-damage-ult: Ultimate is the main damage spike and a large share of total output.
+- hp-scaling: Damage, survivability, or effects scale strongly with HP values.
+- invincibility: Grants damage and/or control immunity windows to self or allies.
+- life-drain: Sustains through lifesteal or HP recovery tied to dealing damage.
+- mark-target: Marks or designates units so allies or self can focus amplified damage.
+- mass-cc: Applies crowd control to multiple enemies or wide areas reliably.
+- revive: Brings defeated allies back or prevents fatal blows from sticking.
+- self-repositioner: Regularly moves self across the grid via jumps, dashes, or teleports.
+- static-tile-buffer: Buffs an ally only while they remain on a specific placement tile.
+- stealth: Enters hidden or untargetable states to avoid focus or enable picks.
+- summoner: Fields persistent summons or companions that contribute in combat.
+- taunt: Forces enemies to attack the hero or redirects enemy focus onto them.
+- transformation: Swaps between forms or stances that materially change kit behavior.
+- ultimate-cancel: Cancels or interrupts enemy ultimates when they begin casting.
+- untargetable: Routinely becomes untargetable by enemy skills during normal gameplay.
+
 ## Detecting synergies between units
 
 Synergy is **provider → receiver**: one hero supplies what another needs.

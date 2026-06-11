@@ -1053,9 +1053,8 @@
         "similar_skills": [
           {
             "name": "Cryonaia",
-            "score": 0.75,
+            "score": 0.5,
             "matches": [
-              "battlefield-modification",
               "cc-immunity",
               "invincibility"
             ]
@@ -3182,7 +3181,7 @@
           },
           {
             "name": "Lily May",
-            "score": 0.72,
+            "score": 0.6,
             "matches": [
               "hp-scaling",
               "self-repositioner",
@@ -8629,9 +8628,8 @@
         "similar_skills": [
           {
             "name": "Alna",
-            "score": 0.75,
+            "score": 0.5,
             "matches": [
-              "battlefield-modification",
               "cc-immunity",
               "invincibility"
             ]
@@ -11805,16 +11803,16 @@
             ]
           },
           {
-            "name": "Hugin",
-            "score": 0.8,
+            "name": "Velara",
+            "score": 0.6,
             "matches": [
-              "ally-shielder",
-              "energy-provider"
+              "ally-healer",
+              "ally-shielder"
             ]
           },
           {
-            "name": "Ravion",
-            "score": 0.5,
+            "name": "Hugin",
+            "score": 0.6,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -12900,7 +12898,7 @@
           },
           {
             "name": "Velara",
-            "score": 0.6,
+            "score": 0.8,
             "matches": [
               "ally-healer",
               "aoe-healing"
@@ -13889,6 +13887,15 @@
         "similar_skills": [
           {
             "name": "Solise",
+            "score": 0.5,
+            "matches": [
+              "ally-healer",
+              "ally-shielder",
+              "aoe-healing"
+            ]
+          },
+          {
+            "name": "Velara",
             "score": 0.5,
             "matches": [
               "ally-healer",
@@ -16492,11 +16499,11 @@
             ]
           },
           {
-            "name": "Ulmus",
-            "score": 0.6667,
+            "name": "Velara",
+            "score": 0.5,
             "matches": [
-              "ally-shielder",
-              "transformation"
+              "ally-healer",
+              "ally-shielder"
             ]
           }
         ],
@@ -16924,7 +16931,7 @@
           },
           {
             "name": "Velara",
-            "score": 0.72,
+            "score": 0.96,
             "matches": [
               "ally-healer",
               "aoe-healing"
@@ -18422,7 +18429,7 @@
         "similar_skills": [
           {
             "name": "Twins",
-            "score": 0.8,
+            "score": 0.6,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -18430,7 +18437,7 @@
           },
           {
             "name": "Ravion",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -23793,19 +23800,11 @@
         "similar_skills": [
           {
             "name": "Athalia",
-            "score": 0.72,
+            "score": 0.6,
             "matches": [
               "hp-scaling",
               "self-repositioner",
               "transformation"
-            ]
-          },
-          {
-            "name": "Pippa",
-            "score": 0.576,
-            "matches": [
-              "hp-scaling",
-              "self-repositioner"
             ]
           }
         ],
@@ -24702,13 +24701,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Hugin",
-            "score": 0.6,
-            "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
             "name": "Galahad",
             "score": 0.5,
             "matches": [
@@ -24717,6 +24709,13 @@
           },
           {
             "name": "Koko",
+            "score": 0.5,
+            "matches": [
+              "ally-shielder"
+            ]
+          },
+          {
+            "name": "Ulmus",
             "score": 0.5,
             "matches": [
               "ally-shielder"
@@ -25154,7 +25153,7 @@
           },
           {
             "name": "Velara",
-            "score": 0.5,
+            "score": 0.6667,
             "matches": [
               "ally-healer",
               "ally-shielder"
@@ -25839,7 +25838,7 @@
           },
           {
             "name": "Velara",
-            "score": 0.6,
+            "score": 0.8,
             "matches": [
               "ally-healer",
               "aoe-healing"
@@ -28737,7 +28736,15 @@
             ]
           }
         ],
-        "similar_skills": [],
+        "similar_skills": [
+          {
+            "name": "Perseus",
+            "score": 0.5,
+            "matches": [
+              "ally-buffer"
+            ]
+          }
+        ],
         "damage": [
           {
             "name": "Gunnar",
@@ -32387,6 +32394,13 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Mikola",
+            "score": 0.5,
+            "matches": [
+              "ally-buffer"
+            ]
+          },
+          {
             "name": "Sonja",
             "score": 0.6,
             "matches": [
@@ -32805,14 +32819,6 @@
         "energy": [],
         "healing": [],
         "similar_skills": [
-          {
-            "name": "Hugin",
-            "score": 0.5,
-            "matches": [
-              "ally-shielder",
-              "energy-provider"
-            ]
-          },
           {
             "name": "Galahad",
             "score": 0.5,
@@ -33360,7 +33366,7 @@
           },
           {
             "name": "Hugin",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -39529,7 +39535,7 @@
           },
           {
             "name": "Velara",
-            "score": 0.6,
+            "score": 0.8,
             "matches": [
               "ally-healer",
               "aoe-healing"
@@ -42920,8 +42926,24 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Twins",
+            "score": 0.5,
+            "matches": [
+              "ally-shielder",
+              "energy-provider"
+            ]
+          },
+          {
             "name": "Hugin",
             "score": 0.5,
+            "matches": [
+              "ally-shielder",
+              "energy-provider"
+            ]
+          },
+          {
+            "name": "Ravion",
+            "score": 0.6,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -45891,16 +45913,16 @@
             ]
           },
           {
-            "name": "Smokey & Meerky",
+            "name": "Twins",
             "score": 0.6,
             "matches": [
               "ally-healer",
-              "aoe-healing"
+              "ally-shielder"
             ]
           },
           {
-            "name": "Ludovic",
-            "score": 0.6,
+            "name": "Smokey & Meerky",
+            "score": 0.8,
             "matches": [
               "ally-healer",
               "aoe-healing"

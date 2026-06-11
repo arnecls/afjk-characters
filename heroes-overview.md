@@ -204,7 +204,7 @@ Alna provides Ally empower buff to single targets `low`, Max HP buff to single t
 
 **Similar Skills**
 
-- Cryonaia (75% `battlefield-modification` `cc-immunity` `invincibility`)
+- Cryonaia (50% `cc-immunity` `invincibility`)
 
 **Damage**
 
@@ -745,7 +745,7 @@ Common buffers are **Solise**, **Twins**, or **Contess**.
 
 - Baelran (80% `hp-scaling` `transformation`)
 - Kordan (66% `hp-scaling` `self-repositioner`)
-- Lily May (72% `hp-scaling` `self-repositioner` `transformation`)
+- Lily May (60% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -2132,7 +2132,7 @@ Common buffers are **Hugin**, **Twins**, or **Contess**.
 
 **Similar Skills**
 
-- Alna (75% `battlefield-modification` `cc-immunity` `invincibility`)
+- Alna (50% `cc-immunity` `invincibility`)
 
 **Damage**
 
@@ -3126,7 +3126,7 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 **Similar Skills**
 
 - Solise (80% `ally-healer` `aoe-healing`)
-- Velara (60% `ally-healer` `aoe-healing`)
+- Velara (80% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (100% `ally-healer` `aoe-healing`)
 
 **Damage**
@@ -3552,6 +3552,7 @@ Gerda provides Direct healing to multiple targets `average`, Healing over time i
 **Similar Skills**
 
 - Solise (50% `ally-healer` `ally-shielder` `aoe-healing`)
+- Velara (50% `ally-healer` `ally-shielder` `aoe-healing`)
 
 **Damage**
 
@@ -4197,7 +4198,7 @@ These are the **10** strongest pairings:
 
 - Solise (50% `ally-healer` `ally-shielder`)
 - Twins (50% `ally-healer` `ally-shielder`)
-- Ulmus (66% `ally-shielder` `transformation`)
+- Velara (50% `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -4316,7 +4317,7 @@ Hewynn provides Healing over time to all units `high`.
 **Similar Skills**
 
 - Solise (96% `ally-healer` `aoe-healing`)
-- Velara (72% `ally-healer` `aoe-healing`)
+- Velara (96% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (100% `ally-healer` `aoe-healing`)
 
 **Damage**
@@ -4612,8 +4613,8 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Twins (80% `ally-shielder` `energy-provider`)
-- Ravion (66% `ally-shielder` `energy-provider`)
+- Twins (60% `ally-shielder` `energy-provider`)
+- Ravion (50% `ally-shielder` `energy-provider`)
 - Thador (50% `ally-shielder` `energy-provider`)
 
 **Damage**
@@ -5882,8 +5883,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 **Similar Skills**
 
-- Athalia (72% `hp-scaling` `self-repositioner` `transformation`)
-- Pippa (57% `hp-scaling` `self-repositioner`)
+- Athalia (60% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -6109,9 +6109,9 @@ Lucca provides DEF buff in an area `high`.
 
 **Similar Skills**
 
-- Hugin (60% `ally-shielder`)
 - Galahad (50% `ally-shielder`)
 - Koko (50% `ally-shielder`)
+- Ulmus (50% `ally-shielder`)
 
 **Damage**
 
@@ -6218,7 +6218,7 @@ Lucius provides Shield in an area `average`.
 
 - Solise (66% `ally-healer` `ally-shielder`)
 - Twins (66% `ally-healer` `ally-shielder`)
-- Velara (50% `ally-healer` `ally-shielder`)
+- Velara (66% `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -6428,7 +6428,7 @@ Ludovic provides Direct healing in an area `average`, Healing over time to singl
 **Similar Skills**
 
 - Solise (80% `ally-healer` `aoe-healing`)
-- Velara (60% `ally-healer` `aoe-healing`)
+- Velara (80% `ally-healer` `aoe-healing`)
 - Smokey & Meerky (100% `ally-healer` `aoe-healing`)
 
 **Damage**
@@ -7100,6 +7100,10 @@ These are the **10** strongest pairings:
 - Solise (100% `Healing over time` `Direct healing` `Healing`)
 - Smokey & Meerky (98% `Direct healing` `Healing`)
 - Evie (81% `Direct healing` `Healing`)
+
+**Similar Skills**
+
+- Perseus (50% `ally-buffer`)
 
 **Damage**
 
@@ -8176,6 +8180,7 @@ Perseus provides ATK buff to multiple targets `low`.
 
 **Similar Skills**
 
+- Mikola (50% `ally-buffer`)
 - Sonja (60% `ally-buffer`)
 - Hammie (60% `ally-buffer`)
 
@@ -8285,7 +8290,6 @@ Phraesto provides Damage taken reduction to single targets `low`, Max HP buff to
 
 **Similar Skills**
 
-- Hugin (50% `ally-shielder` `energy-provider`)
 - Galahad (50% `ally-shielder` `clone`)
 
 **Damage**
@@ -8502,7 +8506,7 @@ Ravion provides ATK buff to multiple targets `low`, Energy recovery to multiple 
 **Similar Skills**
 
 - Twins (50% `ally-shielder` `energy-provider`)
-- Hugin (66% `ally-shielder` `energy-provider`)
+- Hugin (50% `ally-shielder` `energy-provider`)
 - Himmel (50% `ally-shielder` `self-repositioner`)
 
 **Damage**
@@ -10128,7 +10132,7 @@ These are the **10** strongest pairings:
 **Similar Skills**
 
 - Solise (80% `ally-healer` `aoe-healing`)
-- Velara (60% `ally-healer` `aoe-healing`)
+- Velara (80% `ally-healer` `aoe-healing`)
 - Ludovic (100% `ally-healer` `aoe-healing`)
 
 **Damage**
@@ -10973,7 +10977,9 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 
 **Similar Skills**
 
+- Twins (50% `ally-shielder` `energy-provider`)
 - Hugin (50% `ally-shielder` `energy-provider`)
+- Ravion (60% `ally-shielder` `energy-provider`)
 
 **Damage**
 
@@ -11307,8 +11313,8 @@ These are the **10** strongest pairings:
 **Similar Skills**
 
 - Solise (60% `ally-healer` `ally-shielder`)
-- Hugin (80% `ally-shielder` `energy-provider`)
-- Ravion (50% `ally-shielder` `energy-provider`)
+- Velara (60% `ally-healer` `ally-shielder`)
+- Hugin (60% `ally-shielder` `energy-provider`)
 
 **Damage**
 
@@ -11870,8 +11876,8 @@ These are the **10** strongest pairings:
 **Similar Skills**
 
 - Solise (100% `ally-healer` `ally-shielder` `aoe-healing`)
-- Smokey & Meerky (60% `ally-healer` `aoe-healing`)
-- Ludovic (60% `ally-healer` `aoe-healing`)
+- Twins (60% `ally-healer` `ally-shielder`)
+- Smokey & Meerky (80% `ally-healer` `aoe-healing`)
 
 **Damage**
 

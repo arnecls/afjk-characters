@@ -44,10 +44,12 @@
         "mass-cc",
         "revive",
         "self-repositioner",
+        "static-tile-buffer",
         "stealth",
         "summoner",
         "taunt",
         "transformation",
+        "ultimate-cancel",
         "untargetable"
       ],
       "description": "High-level combat role or mechanic tag for a hero."

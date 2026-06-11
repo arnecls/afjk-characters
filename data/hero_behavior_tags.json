@@ -7,7 +7,6 @@
   ],
   "Alna": [
     "aoe-damage",
-    "battlefield-modification",
     "cc-immunity",
     "invincibility"
   ],
@@ -166,8 +165,8 @@
   "Gunnar": [
     "ally-shielder",
     "aoe-damage",
-    "battlefield-modification",
-    "fire-attack"
+    "fire-attack",
+    "static-tile-buffer"
   ],
   "Gwyneth": [
     "dot-specialist",
@@ -203,7 +202,8 @@
   ],
   "Hugin": [
     "ally-shielder",
-    "energy-provider"
+    "energy-provider",
+    "static-tile-buffer"
   ],
   "Igor": [
     "aoe-damage",
@@ -261,7 +261,8 @@
     "hp-scaling",
     "invincibility",
     "self-repositioner",
-    "transformation"
+    "transformation",
+    "ultimate-cancel"
   ],
   "Lorsan": [
     "aoe-damage",
@@ -310,8 +311,7 @@
   ],
   "Mikola": [
     "ally-buffer",
-    "aoe-healing",
-    "battlefield-modification"
+    "aoe-healing"
   ],
   "Mirael": [
     "dot-specialist",
@@ -479,7 +479,6 @@
   ],
   "Thador": [
     "ally-shielder",
-    "battlefield-modification",
     "enemy-debuffer",
     "energy-provider"
   ],
@@ -520,8 +519,7 @@
   "Velara": [
     "ally-healer",
     "ally-shielder",
-    "aoe-healing",
-    "battlefield-modification"
+    "aoe-healing"
   ],
   "Viperian": [
     "aoe-damage",

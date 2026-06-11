@@ -263,7 +263,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -507,7 +508,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -601,7 +603,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -1198,7 +1201,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -1402,7 +1406,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -1877,7 +1882,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -2165,7 +2171,8 @@
                 }
               ],
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -2718,7 +2725,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -2790,6 +2798,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -3121,7 +3130,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -4121,6 +4131,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -4145,7 +4156,8 @@
                 }
               ],
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -4455,7 +4467,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -5595,7 +5608,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -5645,7 +5659,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -6869,7 +6884,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -6979,6 +6995,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -7016,7 +7033,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -7428,7 +7446,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -8154,7 +8173,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -8571,7 +8591,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -8592,14 +8613,9 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "heal",
+              "type": "buff",
               "name": "Healing stat buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
+              "label": "buff_healing"
             }
           ],
           "tier": "legendary+",
@@ -9097,7 +9113,8 @@
               "target_count": -1,
               "area_direction": "front",
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -9132,6 +9149,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -9157,7 +9175,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -9283,7 +9302,8 @@
                 }
               ],
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -10297,7 +10317,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -10350,6 +10371,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -10487,7 +10509,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -10642,7 +10665,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -10728,7 +10752,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -10799,6 +10824,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -10835,7 +10861,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -11134,7 +11161,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -11604,7 +11632,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -11629,7 +11658,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -11731,6 +11761,7 @@
                 }
               ],
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -11939,7 +11970,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -12222,6 +12254,7 @@
               "area": "single",
               "target_count": 3,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -12415,6 +12448,7 @@
               "target_count": -1,
               "area_count": -1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -12441,7 +12475,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -12769,7 +12804,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -12920,6 +12956,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -13435,7 +13472,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -13483,7 +13521,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -13986,7 +14025,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -14640,7 +14680,8 @@
               "target_count": -1,
               "area_count": -1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -15112,6 +15153,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -16218,6 +16260,7 @@
                 }
               ],
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -16242,7 +16285,8 @@
                 }
               ],
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -17197,6 +17241,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -17250,7 +17295,8 @@
               "target_count": -1,
               "area_count": -1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -17582,7 +17628,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -17796,7 +17843,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -17817,14 +17865,9 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "heal",
+              "type": "buff",
               "name": "Healing stat buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
+              "label": "buff_healing"
             }
           ],
           "tier": "legendary+",
@@ -18242,6 +18285,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -18261,7 +18305,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -18356,7 +18401,7 @@
                   "value": 2400.0
                 }
               ],
-              "label": "healing"
+              "label": "buff_healing"
             }
           ],
           "tier": "legendary+",
@@ -18374,7 +18419,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -18409,6 +18455,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -18779,6 +18826,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -19236,7 +19284,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -19315,7 +19364,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -19826,7 +19876,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -20001,7 +20052,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -20045,6 +20097,7 @@
               "target_count": -1,
               "area_count": -1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -20086,7 +20139,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -20611,7 +20665,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -21690,7 +21745,8 @@
                 }
               ],
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -21758,7 +21814,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -21817,7 +21874,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -22258,7 +22316,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -24413,7 +24472,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -24479,7 +24539,8 @@
                 }
               ],
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -24714,7 +24775,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -25014,7 +25076,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -25159,7 +25222,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -25351,7 +25415,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -25404,7 +25469,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -25717,7 +25783,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -26453,7 +26520,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -27434,7 +27502,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -28578,7 +28647,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -28656,7 +28726,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -28726,7 +28797,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -28813,7 +28885,8 @@
               "target_count": -1,
               "area_count": -1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -28866,6 +28939,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -28924,7 +28998,8 @@
               "area": "single",
               "target_count": 3,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -29490,6 +29565,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -29880,7 +29956,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -30057,7 +30134,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -30117,6 +30195,7 @@
               "target_count": -1,
               "area_count": 2,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -30415,6 +30494,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -30729,7 +30809,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -30823,6 +30904,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -31179,6 +31261,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -31422,7 +31505,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -31570,6 +31654,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -31716,7 +31801,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -31777,6 +31863,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -31888,7 +31975,8 @@
                 }
               ],
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -31984,6 +32072,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -32383,7 +32472,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -32817,7 +32907,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -33188,7 +33279,8 @@
               "target_count": -1,
               "area_count": 2,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -33486,7 +33578,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -33538,7 +33631,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -33688,7 +33782,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -34277,7 +34372,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -34475,7 +34571,8 @@
               "area": "single",
               "target_count": 1,
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -34684,6 +34781,7 @@
               "area": "single",
               "target_count": 1,
               "type": "dot",
+              "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
@@ -34841,7 +34939,8 @@
                 }
               ],
               "type": "heal",
-              "name": "Healing",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
