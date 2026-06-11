@@ -811,6 +811,111 @@ a:hover {
   display: none !important;
 }
 
+html.welcome-warning-pending body,
+body.welcome-warning-open {
+  overflow: hidden;
+}
+
+.welcome-warning {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+html.welcome-warning-pending .welcome-warning,
+.welcome-warning.is-open {
+  display: flex;
+}
+
+.welcome-warning[hidden] {
+  display: none !important;
+}
+
+.welcome-warning-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 246, 251, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.welcome-warning-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(28rem, 100%);
+  padding: 1.5rem 1.5rem 1.25rem;
+  border: 4px solid #f0b030;
+  border-radius: calc(var(--radius) + 2px);
+  background: #fff;
+  color: var(--text);
+  box-shadow:
+    0 12px 40px rgba(30, 50, 90, 0.2),
+    0 2px 8px rgba(30, 50, 90, 0.08);
+}
+
+.welcome-warning-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.welcome-warning-icon {
+  flex-shrink: 0;
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.welcome-warning-title {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.welcome-warning-body {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.welcome-warning-body p {
+  margin: 0 0 0.75rem;
+}
+
+.welcome-warning-body p:last-child {
+  margin-bottom: 0;
+}
+
+.welcome-warning-btn {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid #f0b030;
+  border-radius: 8px;
+  background: #fff;
+  color: #9a7200;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.welcome-warning-btn:hover {
+  background: #fffbf0;
+  border-color: #e0a020;
+}
+
+.welcome-warning-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .skill-card-popover-backdrop {
   position: fixed;
   inset: 0;

@@ -31,6 +31,84 @@
   const headerBack = document.getElementById("header-back");
   const viewToggle = document.querySelector(".view-toggle");
   const siteHeader = document.querySelector(".site-header");
+  const WELCOME_WARNING_KEY = "afjk-welcome-dismissed";
+
+  function initWelcomeWarning() {
+    const root = document.getElementById("welcome-warning");
+    if (!root) {
+      return;
+    }
+    if (localStorage.getItem(WELCOME_WARNING_KEY) === "1") {
+      root.hidden = true;
+      document.documentElement.classList.remove("welcome-warning-pending");
+      return;
+    }
+
+    const dismissBtn = document.getElementById("welcome-warning-dismiss");
+    const blocked = [
+      siteHeader,
+      document.getElementById("app"),
+      document.querySelector(".site-footer"),
+    ].filter(Boolean);
+
+    function setBlocked(block) {
+      root.classList.toggle("is-open", block);
+      document.body.classList.toggle("welcome-warning-open", block);
+      document.documentElement.classList.toggle("welcome-warning-pending", block);
+      blocked.forEach(function (el) {
+        if (block) {
+          el.setAttribute("inert", "");
+          el.setAttribute("aria-hidden", "true");
+        } else {
+          el.removeAttribute("inert");
+          el.removeAttribute("aria-hidden");
+        }
+      });
+    }
+
+    function blockSitePointer(e) {
+      if (root.hidden) {
+        return;
+      }
+      if (root.contains(e.target)) {
+        return;
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      if (typeof e.stopImmediatePropagation === "function") {
+        e.stopImmediatePropagation();
+      }
+    }
+
+    function dismissWelcomeWarning() {
+      root.hidden = true;
+      setBlocked(false);
+      try {
+        localStorage.setItem(WELCOME_WARNING_KEY, "1");
+      } catch (e) {
+        /* ignore quota / private-mode errors */
+      }
+    }
+
+    dismissBtn.addEventListener("click", dismissWelcomeWarning);
+
+    ["click", "mousedown", "touchstart"].forEach(function (type) {
+      document.addEventListener(type, blockSitePointer, true);
+    });
+
+    root.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+      }
+      if (e.key === "Tab") {
+        e.preventDefault();
+        dismissBtn.focus();
+      }
+    });
+
+    setBlocked(true);
+    dismissBtn.focus();
+  }
 
   function updateHeaderNav(inDetail) {
     filtersEl.classList.toggle("hidden", inDetail);
@@ -217,47 +295,46 @@
 
   const QUALITY_CLASS = {
     high: "chip-q-high",
-    medium: "chip-q-medium",
+    average: "chip-q-medium",
     low: "chip-q-low",
   };
 
-  const QUALITY_EMOJI = {
-    high: "📈",
-    medium: "⚖️",
-    low: "📉",
+  const SKILL_OVERVIEW_SPEED_LABELS = {
+    speed: true,
+    "first cast speed": true,
   };
 
   const SPEED_CLASS = {
     slow: "chip-s-slow",
-    normal: "chip-s-normal",
+    average: "chip-s-normal",
     fast: "chip-s-fast",
   };
 
   const SPEED_EMOJI = {
     slow: "🐢",
-    normal: "⏱️",
+    average: "🚶",
     fast: "🚀",
   };
 
   const CC_DURATION_LABEL = {
     low: "short",
-    medium: "average",
+    average: "average",
     high: "long",
   };
 
   const QUALITY_TOOLTIPS = {
-    high:
-      "Top third vs the roster for this effect (parsed %, reach, " +
-      "frequency, or CC duration; fully ascended).",
-    medium: "Middle band vs other heroes with the same effect label.",
-    low: "Below average vs the roster for this effect type.",
+    high: "Top third vs same-role peers for this effect.",
+    average:
+      "Middle band vs same-role peers with the same effect label.",
+    low: "Below average vs same-role peers for this effect type.",
   };
 
   const SPEED_TOOLTIPS = {
     slow:
       "Slow to cast: longer cooldown, initial delay, or ultimate " +
       "energy fill time.",
-    normal: "Typical cast timing for this skill group across the roster.",
+    average:
+      "Typical cast timing for this skill group among same-role peers.",
     fast:
       "Quick to cast: short delay, low cooldown, or battle-start " +
       "override.",
@@ -545,7 +622,12 @@
       (tooltip ? " chip-has-tip" : "") +
       '"' +
       (tooltip ? chipTipAttrs(tooltip) : "");
-    return "<span" + attrs + ">" + emoji + " " + escapeHtml(text) + "</span>";
+    const prefix = emoji ? emoji + " " : "";
+    return "<span" + attrs + ">" + prefix + escapeHtml(text) + "</span>";
+  }
+
+  function isSpeedMetricLabel(label) {
+    return SKILL_OVERVIEW_SPEED_LABELS[label.trim().toLowerCase()] === true;
   }
 
   function qualityIndicatorMeta(value, isCc) {
@@ -557,8 +639,21 @@
       cls: "chip-quality " + QUALITY_CLASS[lower],
       label: isCc ? CC_DURATION_LABEL[lower] : lower,
       tooltip: QUALITY_TOOLTIPS[lower],
-      emoji: QUALITY_EMOJI[lower],
+      emoji: "",
     };
+  }
+
+  function resolveIndicatorMeta(label, indicator, isCc) {
+    if (isSpeedMetricLabel(label)) {
+      return (
+        speedIndicatorMeta(indicator) ||
+        qualityIndicatorMeta(indicator, isCc)
+      );
+    }
+    return (
+      qualityIndicatorMeta(indicator, isCc) ||
+      speedIndicatorMeta(indicator)
+    );
   }
 
   function speedIndicatorMeta(value) {
@@ -718,17 +813,9 @@
   }
 
   function mergeLabelWithIndicator(label, indicator, tierSuffix) {
-    const speedMeta = speedIndicatorMeta(indicator);
-    if (speedMeta) {
-      return formatMergedIndicator(
-        { textOnly: label, tierSuffix: tierSuffix || "" },
-        speedMeta,
-        true
-      );
-    }
     const leading = resolveLeadingChip(label);
-    const qualityMeta = qualityIndicatorMeta(indicator, leading.isCc);
-    if (!qualityMeta) {
+    const meta = resolveIndicatorMeta(label, indicator, leading.isCc);
+    if (!meta) {
       return null;
     }
     if (leading.emoji) {
@@ -741,14 +828,14 @@
             cls: leading.cls,
             tierSuffix: tierSuffix || "",
           },
-          qualityMeta,
+          meta,
           false
         ) + escapeHtml(leading.remainder || "")
       );
     }
     return formatMergedIndicator(
       { textOnly: label, tierSuffix: tierSuffix || "" },
-      qualityMeta,
+      meta,
       true
     );
   }
@@ -1101,7 +1188,7 @@
     }
     if (QUALITY_CLASS[lower]) {
       return chipSpan(
-        QUALITY_EMOJI[lower],
+        "",
         text,
         "chip-quality " + QUALITY_CLASS[lower],
         QUALITY_TOOLTIPS[lower]
@@ -1426,6 +1513,20 @@
     };
   }
 
+  function splitBehaviorHeading(md) {
+    if (!md) {
+      return { title: "", body: "" };
+    }
+    const lines = md.split("\n");
+    if (lines[0].trim().startsWith("### ")) {
+      return {
+        title: lines[0].trim().slice(4).trim(),
+        body: lines.slice(1).join("\n").trim(),
+      };
+    }
+    return { title: "", body: md };
+  }
+
   function renderSummaryCards(md) {
     const cards = [];
     let current = null;
@@ -1625,7 +1726,7 @@
   ];
 
   function parseSkillOverviewMetricEntry(entry) {
-    const match = entry.trim().match(/^(.+?)\s+`(high|medium|low|slow|normal|fast)`$/i);
+    const match = entry.trim().match(/^(.+?)\s+`(high|average|low|slow|fast)`$/i);
     if (!match) {
       return null;
     }
@@ -2101,18 +2202,18 @@
       return null;
     }
     const body = match[1].trim();
-    if (!hero || !hero.signatureSkill) {
-      return (
-        "<strong>Signature skill</strong>: " + escapeHtml(body)
-      );
+    let pillsHtml;
+    if (hero && hero.signatureSkill) {
+      pillsHtml =
+        '<a href="#" class="signature-skill-link" data-skill-category="' +
+        escapeHtml(hero.signatureSkill.category) +
+        '">' +
+        escapeHtml(body) +
+        "</a>";
+    } else {
+      pillsHtml = escapeHtml(body);
     }
-    return (
-      '<strong>Signature skill</strong>: <a href="#" class="signature-skill-link" data-skill-category="' +
-      escapeHtml(hero.signatureSkill.category) +
-      '">' +
-      escapeHtml(body) +
-      "</a>"
-    );
+    return formatSkillOverviewRow("<strong>Signature skill</strong>", pillsHtml);
   }
 
   function renderMovementLine(text) {
@@ -2125,10 +2226,9 @@
     const base = paren ? paren[1].trim() : rest;
     const suffix = paren ? " " + escapeHtml(paren[2]) : "";
     const chip = formatMovementChip(base);
-    return (
-      "<strong>Movement</strong>: " +
-      (chip !== null ? chip : escapeHtml(base)) +
-      suffix
+    return formatSkillOverviewRow(
+      "<strong>Movement</strong>",
+      (chip !== null ? chip : escapeHtml(base)) + suffix
     );
   }
 
@@ -2139,6 +2239,15 @@
       return renderInline(trimmed);
     }
     const labelParts = parseEffectLabelParts(parsed.label);
+    if (isSpeedMetricLabel(labelParts.base)) {
+      return (
+        mergeLabelWithIndicator(
+          labelParts.base,
+          parsed.value,
+          labelParts.tier
+        ) || renderSummaryEffectChip(labelParts.base, labelParts.tier, parsed.value)
+      );
+    }
     return (
       mergeEffectWithQuality(
         labelParts.base,
@@ -2195,12 +2304,26 @@
     if (movement !== null) {
       return movement;
     }
+    const damageTypes = renderDamageTypesOverviewLine(text);
+    if (damageTypes !== null) {
+      return damageTypes;
+    }
+    const colonMatch = text.match(/^\*\*(.+?)\*\*:\s*(.+)$/);
+    if (colonMatch) {
+      const label = colonMatch[1].trim();
+      return formatSkillOverviewRow(
+        "<strong>" + escapeHtml(label) + "</strong>",
+        renderInline(colonMatch[2].trim())
+      );
+    }
     return renderInline(text);
   }
 
   function renderMarkdown(md, options) {
     if (!md) return "";
     const skillOverview = options && options.skillOverview;
+    const behaviorSection = options && options.behaviorSection;
+    const overviewList = skillOverview || behaviorSection;
     const renderItem = skillOverview
       ? renderSkillOverviewItem
       : function (text) {
@@ -2236,7 +2359,7 @@
       } else if (line.startsWith("- ")) {
         if (!inList) {
           parts.push(
-            skillOverview ? '<ul class="skill-overview-list">' : "<ul>"
+            overviewList ? '<ul class="skill-overview-list">' : "<ul>"
           );
           inList = true;
         }
@@ -2609,7 +2732,7 @@
 
   const STRENGTH_RANK = {
     high: 3,
-    medium: 2,
+    average: 2,
     low: 1,
   };
 
@@ -2938,7 +3061,7 @@
 
   const SYNERGY_QUALITY_TOKENS = {
     low: true,
-    medium: true,
+    average: true,
     high: true,
   };
 
@@ -3437,7 +3560,8 @@
     if (hero.sections.behavior) {
       const parts = splitBehavior(hero.sections.behavior);
       if (parts.behavior || hero.prydwenTiers) {
-        html += '<div class="detail-section">';
+        html +=
+          '<div class="detail-section summary-section skill-overview-section">';
         if (hero.prydwenTiers) {
           html += renderPrydwenTierBoxes(hero.prydwenTiers);
         }
@@ -3445,7 +3569,18 @@
           const behaviorMd = hero.prydwenTiers
             ? stripPrydwenTierLine(parts.behavior)
             : parts.behavior;
-          html += renderMarkdown(behaviorMd, { behaviorHero: hero });
+          const behaviorParts = splitBehaviorHeading(behaviorMd);
+          if (behaviorParts.title) {
+            html += "<h2>" + escapeHtml(behaviorParts.title) + "</h2>";
+          }
+          if (behaviorParts.body) {
+            html += '<div class="skill-overview-metrics">';
+            html += renderMarkdown(behaviorParts.body, {
+              behaviorHero: hero,
+              behaviorSection: true,
+            });
+            html += "</div>";
+          }
         }
         html += "</div>";
       }
@@ -4153,6 +4288,7 @@
     });
   })();
 
+  initWelcomeWarning();
   redirectLegacyHeroPath();
   loadHeroData();
   loadCsvData();
