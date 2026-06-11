@@ -1884,17 +1884,6 @@
     return md.slice(0, idx).trim();
   }
 
-  const SKILL_OVERVIEW_DAMAGE_TYPE_ORDER = [
-    "Physical",
-    "Magic",
-    "Melee",
-    "Ranged",
-    "DoT",
-    "HP loss",
-    "Max HP-based damage",
-    "True damage",
-  ];
-
   function parseSkillOverviewMetricEntry(entry) {
     const match = entry.trim().match(/^(.+?)\s+`(high|average|low|slow|fast)`$/i);
     if (!match) {
@@ -1934,56 +1923,21 @@
     );
   }
 
-  function renderDamageTypesFromData(damageTypes) {
-    if (!damageTypes || typeof damageTypes !== "object") {
-      return "";
-    }
-    const rendered = [];
-    SKILL_OVERVIEW_DAMAGE_TYPE_ORDER.forEach(function (typeName) {
-      const quality = damageTypes[typeName];
-      if (quality) {
-        rendered.push(renderDamageTypeEntry(typeName, quality));
-      }
-    });
-    if (!rendered.length) {
-      return "";
-    }
-    return formatSkillOverviewRow(
-      "<strong>Damage types</strong>",
-      rendered.join("")
-    );
-  }
-
   function stripSkillOverviewDamageTypesLine(md) {
     return md.replace(/\n- \*\*Damage types\*\*:[^\n]*/gi, "");
   }
 
-  function appendSkillOverviewDamageTypes(html, damageTypesHtml) {
-    if (!damageTypesHtml) {
-      return html;
-    }
-    if (html.indexOf("</ul>") !== -1) {
-      return html.replace("</ul>", "<li>" + damageTypesHtml + "</li></ul>");
-    }
-    return html + '<ul class="skill-overview-list"><li>' + damageTypesHtml + "</li></ul>";
-  }
-
-  function renderSkillOverviewMetrics(md, damageTypes) {
+  function renderSkillOverviewMetrics(md) {
     if (!md) {
       return "";
     }
-    const damageTypesHtml = renderDamageTypesFromData(damageTypes);
     const metrics = stripSkillSummarySubsections(
-      damageTypesHtml ? stripSkillOverviewDamageTypesLine(md) : md
+      stripSkillOverviewDamageTypesLine(md)
     );
     const lines = metrics.split("\n").filter(function (line) {
       return !line.startsWith("#### ");
     });
-    const html = renderMarkdown(lines.join("\n"), { skillOverview: true });
-    return appendSkillOverviewDamageTypes(
-      html,
-      renderDamageTypesFromData(damageTypes)
-    );
+    return renderMarkdown(lines.join("\n"), { skillOverview: true });
   }
 
   const SKILL_META_EMOJI = {
@@ -2434,9 +2388,8 @@
   }
 
   function renderSkillOverviewItem(text) {
-    const damageTypes = renderDamageTypesOverviewLine(text);
-    if (damageTypes !== null) {
-      return damageTypes;
+    if (renderDamageTypesOverviewLine(text) !== null) {
+      return "";
     }
 
     const colonMatch = text.match(/^(.+?:\s*)(.+)$/);
@@ -3339,27 +3292,31 @@
   }
 
   function chipifySynergyEnableDetail(text) {
-    const parsed = parseBuffEffectLabel(text);
-    const html = parsed.base
-      .split(/\s+\+\s+/)
-      .map(function (part) {
-        const trimmed = part.trim();
-        const direct = tryChipify(trimmed);
-        if (direct) {
-          return direct;
-        }
-        const cc = chipifyLeadingCcType(trimmed);
-        if (cc) {
-          return cc;
-        }
-        const effect = chipifyEffectName(trimmed);
-        if (effect !== escapeHtml(trimmed)) {
-          return effect;
-        }
-        return escapeHtml(trimmed);
+    const detail = splitSynergyReasonDetail(text);
+    const parsed = parseBuffEffectLabel(detail.label);
+    const parts = parsed.base.split(/\s+\+\s+/);
+
+    function renderPart(part, applyQuality) {
+      const partParsed = parseBuffEffectLabel(part.trim());
+      return renderMergedEffectPill(
+        partParsed.base,
+        applyQuality ? detail.quality : "",
+        applyQuality ? parsed.tier || partParsed.tier : partParsed.tier,
+        applyQuality ? detail.conditional : ""
+      );
+    }
+
+    if (parts.length === 1) {
+      return renderPart(parts[0], true);
+    }
+
+    return parts
+      .map(function (part, idx) {
+        const applyQuality =
+          idx === parts.length - 1 && !!detail.quality;
+        return renderPart(part, applyQuality);
       })
       .join(" + ");
-    return html + formatMergedTierSuffix(parsed.tier);
   }
 
   function renderSynergyEnableLine(text) {
@@ -3771,27 +3728,7 @@
           '<div class="detail-section summary-section skill-overview-section">';
         html += "<h2>Skill overview</h2>";
         if (parts.skillOverview) {
-          const hasSkillCards =
-            hero.sections.skillCards && hero.sections.skillCards.length;
-          const damageTypes = hero.sections.damageTypes || null;
-          let metricsHtml;
-          if (hasSkillCards) {
-            metricsHtml = renderSkillOverviewMetrics(
-              parts.skillOverview,
-              damageTypes
-            );
-          } else {
-            const damageTypesHtml = renderDamageTypesFromData(damageTypes);
-            metricsHtml = appendSkillOverviewDamageTypes(
-              renderMarkdown(
-                damageTypesHtml
-                  ? stripSkillOverviewDamageTypesLine(parts.skillOverview)
-                  : parts.skillOverview,
-                { skillOverview: true }
-              ),
-              damageTypesHtml
-            );
-          }
+          const metricsHtml = renderSkillOverviewMetrics(parts.skillOverview);
           html +=
             '<div class="skill-overview-metrics">' + metricsHtml + "</div>";
         }
