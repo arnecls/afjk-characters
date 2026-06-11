@@ -20,28 +20,20 @@
 
 ## Damage types
 
-- Normal
-- Melee
-- Magic
-- Ranged
-- Physical
-- True damage (classic, no HP scaling in the phrase)
-- HP loss — extra/true damage scaling on **lost HP** (self or target)
-- Max HP-based damage — damage scaling on **max HP**
+- Normal damage types
+  - Physical
+  - Magic
+  - Ranged
+- True damage tyes
+  - True damage (classic, no HP scaling in the phrase)
+  - HP loss — extra/true damage scaling on **the target's lost HP**
+  - Max HP-based damage — damage scaling on **the target's max HP**
 - Damage over time (DoT)
 
-Summaries list every type detected in skill text (not only the unit's
-primary type). Detection rules live in `detect_damage_types()` in
-`rewrite-summaries.py`.
-
-**HP loss**, **Max HP-based damage**, and **True damage** lines add a
-`high` / `medium` / `low` magnitude (vs the roster for that type), scored
-from parsed damage %, targeting reach, and frequency (`assign_damage_magnitudes()`
-in `rewrite-summaries.py`). Format: `- {type} — {targeting} — \`{magnitude}\``.
-
 Damage over time needs to derived from text by look for indicators like "deals
-damage for 2s". This needs to be done by the Agent, as text are too
-fuzzy to define clear rules.
+damage for 2s".
+
+True damage types ignore defensive stats and shields.
 
 ## Targeting
 
@@ -65,7 +57,7 @@ fuzzy to define clear rules.
 - Knock back (unable to move briefly; forced reposition backward)
 - Frighten (run around in panic, no casting)
 - Silence (no spell casting)
-- Charm (cannot use ultimate)
+- Charm (attacks their own allies)
 - Sleep (hypnotized; cannot move or act)
 - Displace (force new position; pull/teleport without knock immobility)
 - Blind (cannot use normal attacks)
@@ -551,3 +543,29 @@ New exlusive skills are unlocked at the following levels:
 - Ex25
 - R2 (Paragon 2)
 - R4 (Paragon 4)
+
+## Validating detection algorithms
+
+To validate the quality of the detection algorithm, the contents of
+`data/heroes_data_processed.json` have to be post processed. This must not
+be done through a script or unittest.
+
+### High level validation
+
+For each character, compare the detected damage types, crowd control types,
+buffs and debuffs per skill with the long description of the skill. This step
+does not compare concrete values, timings or target attribution.
+
+Compile a list of the to be tested attributes per character, per skill and do
+the comparison in batches. Note down the findings in the form of:
+Character, Skill, found, expected.
+
+### Detailed validation
+
+For each character, compare the detected skill effects with the values stated
+on the long discription of the skill. This check should validate targeting,
+timings and magnitueds.
+
+Compile a list of the to be tested attributes per character, per skill and do
+the comparison in batches. Note down the findings in the form of:
+Character, Skill, found, expected.

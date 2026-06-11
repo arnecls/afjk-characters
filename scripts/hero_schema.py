@@ -265,6 +265,12 @@ def _label_to_effect_label(category: str, label: str, *, summon: bool = False) -
         if "healing" in low:
             return "debuff_healing"
         return "debuff_stat"
+    if category == "damage":
+        if label == "DoT":
+            return "dot"
+        if label in ("HP loss", "Max HP-based damage", "True damage"):
+            return f"damage_{to_schema_damage_type(label)}"
+        return "damage_normal"
     if category == "buff":
         if any(x in low for x in ("atk", "haste", "crit", "execution")):
             return "buff_offensive"
@@ -371,10 +377,26 @@ def _conditions_to_conditional(conditions: list[dict[str, Any]] | None) -> str |
     return None
 
 
-def _value_from_numeric(numeric: float | None) -> Any:
+_FLAT_VALUE_LABELS = frozenset(
+    {
+        "Haste buff",
+        "Haste debuff",
+        "Energy recovery",
+        "Energy drain",
+        "Crit buff",
+        "DEF Penetration buff",
+        "ATK SPD buff",
+        "Movement speed debuff",
+        "Movement speed buff",
+    }
+)
+
+
+def _value_from_numeric(numeric: float | None, label: str = "") -> Any:
     if numeric is None:
         return [{"type": "percentage", "value": 0}]
-    return [{"type": "percentage", "value": numeric}]
+    value_type = "flat" if label in _FLAT_VALUE_LABELS else "percentage"
+    return [{"type": value_type, "value": numeric}]
 
 
 def _numeric_from_value(value: Any) -> float | None:
@@ -499,6 +521,23 @@ def _is_placeholder_schema_effect(effect: dict[str, Any]) -> bool:
     return False
 
 
+def _dot_duration_from_text(text: str) -> int:
+    t = text.lower()
+    for pat in (
+        r"for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
+        r"lasts for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
+        r"for (?:the next )?(\d+(?:\.\d+)?)\s*s\b",
+        r"every second for (\d+(?:\.\d+)?)\s*s",
+        r"inflicts? .{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+        r"lasts for (\d+(?:\.\d+)?)\s*s\b",
+    ):
+        if m := re.search(pat, t):
+            if m.lastindex and m.lastindex >= 2 and m.group(2) is not None:
+                return max(1, int(float(m.group(1)) + float(m.group(2))))
+            return max(1, int(float(m.group(1))))
+    return 2
+
+
 def effect_to_schema(
     effect: Any,
     *,
@@ -530,18 +569,18 @@ def effect_to_schema(
             out["type"] = "stat_mod"
             out["stat"] = stat
             out["name"] = effect.label
-            out["value"] = _value_from_numeric(effect.numeric)
+            out["value"] = _value_from_numeric(effect.numeric, effect.label)
             out["label"] = _label_to_effect_label(category, effect.label, summon=summon)
             return out
         if "shield" in effect.label.lower():
             out["type"] = "shield"
             out["name"] = effect.label
-            out["value"] = _value_from_numeric(effect.numeric)
+            out["value"] = _value_from_numeric(effect.numeric, effect.label)
             return out
         if "healing" in effect.label.lower():
             out["type"] = "heal" if "over time" not in effect.label.lower() else "dot"
             out["name"] = effect.label
-            out["value"] = _value_from_numeric(effect.numeric)
+            out["value"] = _value_from_numeric(effect.numeric, effect.label)
             if out["type"] == "dot":
                 out["duration"] = 2
                 out["tick"] = 1
@@ -550,7 +589,7 @@ def effect_to_schema(
         out["name"] = effect.label
         out["label"] = _label_to_effect_label(category, effect.label, summon=summon)
         if effect.numeric is not None:
-            out["value"] = _value_from_numeric(effect.numeric)
+            out["value"] = _value_from_numeric(effect.numeric, effect.label)
         return out
 
     if category == "debuff":
@@ -558,7 +597,27 @@ def effect_to_schema(
         out["name"] = effect.label
         out["label"] = _label_to_effect_label(category, effect.label)
         if effect.numeric is not None:
-            out["value"] = _value_from_numeric(effect.numeric)
+            out["value"] = _value_from_numeric(effect.numeric, effect.label)
+        return out
+
+    if category == "damage":
+        if effect.label == "DoT":
+            out["type"] = "dot"
+        else:
+            out["type"] = "damage"
+        out["damage_type"] = to_schema_damage_type(effect.label)
+        out["name"] = effect.label
+        out["label"] = _label_to_effect_label(category, effect.label)
+        amount = effect.numeric
+        if amount is None:
+            amount = _rs()._extract_damage_amount(
+                effect.qualitative, effect.label
+            )
+        if amount is not None:
+            out["value"] = _value_from_numeric(amount, effect.label)
+        if out["type"] == "dot":
+            out["duration"] = _dot_duration_from_text(effect.qualitative)
+            out["tick"] = 1
         return out
 
     out["type"] = "buff"
@@ -637,9 +696,21 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         )
 
     if etype == "damage":
+        name = effect.get("name", "Damage")
         return rs.Effect(
-            category="debuff",
-            label="Damage",
+            category="damage",
+            label=name,
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+        )
+
+    if etype == "dot" and effect.get("damage_type"):
+        return rs.Effect(
+            category="damage",
+            label="DoT",
             tier=tier,
             targeting=targeting,
             numeric=numeric,

@@ -80,8 +80,12 @@ def build_processed(data: dict) -> dict:
 
     import sources_web
 
-    categories_by_name = sources_web.fetch_prydwen_role_categories()
-    io.apply_prydwen_role_categories(data["heroes"], categories_by_name)
+    try:
+        categories_by_name = sources_web.fetch_prydwen_role_categories()
+        io.apply_prydwen_role_categories(data["heroes"], categories_by_name)
+    except Exception as exc:
+        # Keep existing role_category values when Prydwen is unreachable.
+        print(f"Warning: skipping Prydwen role categories ({exc})", file=sys.stderr)
 
     data_by_title = {h["title"]: h for h in data["heroes"]}
     processed_heroes: dict[str, dict] = {}

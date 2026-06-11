@@ -223,7 +223,7 @@ class SkillOverviewTests(unittest.TestCase):
     def test_hugin_skill_overview_speeds(self):
         _, behavior = self._hero_by_display("Hugin")
         overview = behavior.skill_overview
-        self.assertEqual(overview["signature"].speed, "slow")
+        self.assertEqual(overview["signature"].speed, "fast")
         self.assertEqual(overview["ultimate"].speed, "slow")
         self.assertEqual(overview["non_ultimate"].speed, "fast")
 
@@ -254,11 +254,12 @@ class SkillOverviewTests(unittest.TestCase):
         lines = rs.format_behavior_section("Hugin", behavior)
         text = "\n".join(lines)
         self.assertIn("#### Skill overview", text)
-        self.assertIn("speed `slow`", text)
+        self.assertIn("speed `fast`", text)
         self.assertNotIn("Signature skill speed:", text)
         self.assertNotIn("damage `none`", text)
         self.assertNotIn("- Ultimate:", text)
-        self.assertIn("- **Signature skill (ultimate)**:", text)
+        self.assertIn("- **Signature skill**:", text)
+        self.assertIn("- **Ultimate**:", text)
         self.assertIn("- **Ally composition**:", text)
         self.assertIn("- **Self placement**:", text)
 
@@ -384,10 +385,10 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertEqual(sig["Aliceth"]["signature_calculated"], "ultimate")
 
         _, alna = self._hero_by_display("Alna")
-        self.assertEqual(alna.signature_skill_name, "Winter Anthem")
-        self.assertTrue(alna.signature_skill_is_ult)
-        self.assertEqual(alna.signature_skill_speed, "fast")
-        self.assertEqual(sig["Alna"]["signature_override"], "ultimate")
+        self.assertEqual(alna.signature_skill_name, "Shared Resolve")
+        self.assertFalse(alna.signature_skill_is_ult)
+        self.assertEqual(alna.signature_skill_speed, "slow")
+        self.assertEqual(sig["Alna"]["signature_override"], "skill1")
         self.assertEqual(sig["Alna"]["signature_calculated"], "skill2")
 
         _, aurora = self._hero_by_display("Aurora")
@@ -405,13 +406,14 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("first cast speed `fast`", text)
         self.assertIn("speed `slow`", text)
 
-    def test_bryon_signature_first_cast_speed(self):
+    def test_bryon_signature_skill(self):
         _, behavior = self._hero_by_display("Bryon")
+        self.assertEqual(behavior.signature_skill_name, "Shadow Flash")
+        self.assertFalse(behavior.signature_skill_is_ult)
         sig_metrics = behavior.skill_overview["signature"]
-        self.assertEqual(sig_metrics.speed, "fast")
-        self.assertEqual(sig_metrics.first_cast_speed, "fast")
+        self.assertEqual(sig_metrics.speed, "slow")
         text = "\n".join(rs.format_behavior_section("Bryon", behavior))
-        self.assertIn("first cast speed `fast`", text)
+        self.assertIn("- **Ultimate**:", text)
 
     def test_niru_signature_first_cast_speed(self):
         _, behavior = self._hero_by_display("Niru")

@@ -39,12 +39,12 @@
     "speed_override": "fast"
   },
   "Brutus": {
-    "signature_calculated": "ultimate"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill2"
   },
   "Bryon": {
     "signature_calculated": "skill1",
-    "signature_override": "ultimate",
-    "speed_override": "fast"
+    "signature_override": "skill2"
   },
   "Callan": {
     "signature_calculated": "skill1",
@@ -92,8 +92,7 @@
     "speed_override": "fast"
   },
   "Eironn": {
-    "signature_calculated": "ultimate",
-    "signature_override": "skill4"
+    "signature_calculated": "ultimate"
   },
   "Evie": {
     "signature_calculated": "skill1",
@@ -157,7 +156,7 @@
   },
   "Hugin": {
     "signature_calculated": "skill1",
-    "signature_override": "ultimate"
+    "signature_override": "skill2"
   },
   "Igor": {
     "signature_calculated": "skill1",
@@ -296,7 +295,8 @@
     "signature_calculated": "ultimate"
   },
   "Salazer": {
-    "signature_calculated": "ultimate"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill2"
   },
   "Satrana": {
     "signature_calculated": "ultimate"
@@ -322,7 +322,9 @@
     "signature_calculated": "skill1"
   },
   "Silvina": {
-    "signature_calculated": "ultimate"
+    "signature_calculated": "ultimate",
+    "signature_override": "skill1",
+    "speed_override": "fast"
   },
   "Sinbad": {
     "signature_calculated": "ultimate"
