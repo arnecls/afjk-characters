@@ -489,6 +489,8 @@
     "ally-shielder": { emoji: "🛡️", cls: "chip-role" },
     "energy-provider": { emoji: "🔋", cls: "chip-role" },
     "battlefield-modification": { emoji: "🗺️", cls: "chip-role" },
+    "static-tile-buffer": { emoji: "📍", cls: "chip-role" },
+    "ultimate-cancel": { emoji: "🚫", cls: "chip-cc" },
     "cc-immunity": { emoji: "🔰", cls: "chip-anti-cc" },
     invincibility: { emoji: "✨", cls: "chip-role" },
     Invincible: { emoji: "✨", cls: "chip-role" },
