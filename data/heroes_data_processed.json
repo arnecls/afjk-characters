@@ -20,13 +20,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 100.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -81,13 +75,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Ally empower buff",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 120.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -98,13 +86,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Attack range buff",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 120.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -304,13 +286,7 @@
               ],
               "type": "buff",
               "name": "Fatal blow immunity",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 30.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "ex+15",
@@ -573,7 +549,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 15.0
+                  "value": 8.0
                 }
               ]
             },
@@ -713,13 +689,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Dmg and CC immunity",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 50.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "type": "immunity",
@@ -903,7 +873,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 300.0
+                  "value": 25.0
                 }
               ]
             },
@@ -1231,7 +1201,7 @@
               "area_count": 1,
               "type": "crowd_control",
               "cc-type": "stun",
-              "duration": 5.0
+              "duration": 2.0
             },
             {
               "tier": "base",
@@ -2045,7 +2015,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 35.0
+                  "value": 0.5
                 }
               ]
             },
@@ -2123,13 +2093,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 360.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -2424,19 +2388,13 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 40.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "enemy",
               "area": "single",
               "target_count": 1,
               "type": "debuff",
@@ -3073,11 +3031,22 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
+              "label": "buff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Energy drain",
+              "label": "debuff_stat",
               "value": [
                 {
-                  "type": "percentage",
-                  "value": 36.0
+                  "type": "flat",
+                  "value": 20.0
                 }
               ]
             },
@@ -3152,7 +3121,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 300.0
+                  "value": 20.0
                 }
               ]
             },
@@ -3221,7 +3190,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 50.0
+                  "value": 180.0
                 }
               ]
             }
@@ -3290,7 +3259,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Magic": "high"
             }
@@ -3301,7 +3270,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Magic": "high"
             }
@@ -3436,13 +3405,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 35.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -3823,7 +3786,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 200.0
+                  "value": 30.0
                 }
               ]
             },
@@ -5090,11 +5053,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 2.0
@@ -5670,9 +5634,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "enemy",
               "area": "single",
               "target_count": 1,
               "type": "debuff",
@@ -5686,28 +5650,11 @@
         "Quiet Period": {
           "category": "skill2",
           "description": "Code of Conduct - Be Quiet Whenever a unit casts their Ultimate, that unit is deemed in violation of this rule. A unit may only violate this rule once every 6s. Active. Contess reduces Energy recovery efficiency by 14% + 2% for the 2 enemies who have cast the most Ultimates. This effect lasts 6s. Reduces enemies' Energy recovery efficiency by 16% + 2%. Reduces enemies' Energy recovery efficiency by 18% + 2%. Reduces enemies' Energy recovery efficiency by 20% + 2%.",
-          "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "debuff",
-              "name": "Energy drain",
-              "label": "debuff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ]
-            }
-          ],
+          "effects": [],
           "cooldown": 12.0,
           "initial_cooldown": 10.0,
-          "skill_range": 10
+          "skill_range": 10,
+          "passive_only": true
         },
         "Hero Focus": {
           "category": "skill3",
@@ -5726,23 +5673,6 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 4.0
-                }
-              ]
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Energy drain",
-              "label": "debuff_stat",
-              "value": [
-                {
-                  "type": "flat",
                   "value": 4.0
                 }
               ]
@@ -6383,7 +6313,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 5.0
+                  "value": 10.0
                 }
               ],
               "label": "buff_offensive"
@@ -6529,7 +6459,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 90.0
+                  "value": 60.0
                 }
               ]
             },
@@ -6590,7 +6520,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 20.0
+                  "value": 100.0
                 }
               ]
             },
@@ -6649,7 +6579,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 24.0
+                  "value": 25.0
                 }
               ]
             }
@@ -6687,8 +6617,7 @@
               "target_count": -1,
               "area_count": 3,
               "type": "crowd_control",
-              "cc-type": "frighten",
-              "duration": 2.0
+              "cc-type": "frighten"
             },
             {
               "tier": "ex+10",
@@ -6702,7 +6631,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 5.0
+                  "value": 100.0
                 }
               ]
             },
@@ -7215,7 +7144,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 18.0
+                  "value": 20.0
                 }
               ],
               "label": "buff_offensive"
@@ -7333,7 +7262,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 50.0
+                  "value": 60.0
                 }
               ]
             }
@@ -7352,7 +7281,7 @@
           {
             "label": "Execution scaling",
             "tier": "supreme+",
-            "targeting": "Self",
+            "targeting": "Single target",
             "description": "Level 2 (Unlocks with ): When Dionel casts Nectar Feast, he drinks the divine nectar 50% faster. While the divine nectar effect is active, he gains a shield that absorbs 60% (HP-based) damage. When he reaches max Intoxication stacks, his Execution increases by 25 further."
           }
         ],
@@ -7463,8 +7392,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "silence",
-              "duration": 6.25
+              "cc-type": "silence"
             },
             {
               "tier": "base",
@@ -7712,7 +7640,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 10.0
+                  "value": 150.0
                 }
               ]
             }
@@ -7964,15 +7892,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "ranged_def",
+              "type": "buff",
               "name": "Ranged DEF buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 50.0
-                }
-              ],
               "label": "buff_defensive"
             }
           ],
@@ -8124,7 +8045,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 60.0
+                  "value": 50.0
                 }
               ],
               "label": "buff_stat"
@@ -8342,15 +8263,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -8362,13 +8276,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "DEF buff",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ]
+              "label": "buff_defensive"
             }
           ],
           "tier": "supreme+"
@@ -8475,13 +8383,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 180.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -9764,7 +9666,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 60.0
+                  "value": 30.0
                 }
               ],
               "label": "buff_offensive"
@@ -10440,7 +10342,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 150.0
+                  "value": 340.0
                 }
               ]
             },
@@ -10682,8 +10584,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "bind",
-              "duration": 3.0
+              "cc-type": "bind"
             },
             {
               "type": "immunity",
@@ -11094,7 +10995,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 450.0
+                  "value": 8.0
                 }
               ],
               "label": "buff_offensive"
@@ -12304,7 +12205,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 5.0
+                  "value": 3.0
                 }
               ]
             }
@@ -12773,7 +12674,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 40.0
+                  "value": 12.0
                 }
               ],
               "label": "buff_offensive"
@@ -13043,7 +12944,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 60.0
+                  "value": 200.0
                 }
               ]
             },
@@ -14648,7 +14549,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 45.0
+                  "value": 40.0
                 }
               ]
             },
@@ -14904,7 +14805,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 180.0
+                  "value": 36.0
                 }
               ]
             },
@@ -14987,7 +14888,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 280.0
+                  "value": 100.0
                 }
               ]
             },
@@ -15137,13 +15038,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "DEF buff",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ]
+              "label": "buff_defensive"
             },
             {
               "tier": "ex+10",
@@ -15858,13 +15753,7 @@
               ],
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 150.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -16921,7 +16810,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 200.0
+                  "value": 700.0
                 }
               ]
             },
@@ -16980,13 +16869,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 65.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -17093,7 +16976,13 @@
               "target_count": 1,
               "type": "debuff",
               "name": "Energy drain",
-              "label": "debuff_stat"
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 1000.0
+                }
+              ]
             },
             {
               "tier": "supreme+",
@@ -17784,7 +17673,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 70.0
+                  "value": 300.0
                 }
               ]
             },
@@ -18392,15 +18281,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "healing",
+              "type": "buff",
               "name": "Healing stat buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 2400.0
-                }
-              ],
               "label": "buff_healing"
             }
           ],
@@ -18641,7 +18523,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 450.0
+                  "value": 30.0
                 }
               ]
             },
@@ -18976,13 +18858,7 @@
               "area_count": -1,
               "type": "buff",
               "name": "Energy recovery",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 25.0
-                }
-              ]
+              "label": "buff_stat"
             }
           ],
           "cooldown": 12.0
@@ -20963,13 +20839,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Crit DMG boost",
-              "label": "buff_offensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 27.0
-                }
-              ]
+              "label": "buff_offensive"
             }
           ],
           "skill_range": 3
@@ -21896,7 +21766,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 75.0
+                  "value": 60.0
                 }
               ]
             }
@@ -22258,9 +22128,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "enemy",
               "area": "single",
               "target_count": 1,
               "type": "debuff",
@@ -22283,13 +22153,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 35.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -22322,23 +22186,6 @@
                 {
                   "type": "percentage",
                   "value": 290.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Energy drain",
-              "label": "debuff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 45.0
                 }
               ]
             },
@@ -22748,7 +22595,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 15.0
+                  "value": 0
                 }
               ]
             }
@@ -23185,7 +23032,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 14.5
+                  "value": 40.0
                 }
               ],
               "label": "buff_stat"
@@ -23758,7 +23605,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 140.0
+                  "value": 150.0
                 }
               ]
             },
@@ -23844,7 +23691,7 @@
               "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
-              "duration": 1.5
+              "duration": 0.0
             },
             {
               "tier": "supreme+",
@@ -24033,13 +23880,7 @@
               "target_count": 1,
               "type": "debuff",
               "name": "ATK debuff",
-              "label": "debuff_offensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 12.0
-                }
-              ]
+              "label": "debuff_offensive"
             },
             {
               "tier": "base",
@@ -24874,15 +24715,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "movement_speed",
+              "type": "buff",
               "name": "Movement speed buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 5.0
-                }
-              ],
               "label": "buff_stat"
             },
             {
@@ -25123,7 +24957,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 150.0
+                  "value": 70.0
                 }
               ]
             },
@@ -25331,9 +25165,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "enemy",
               "area": "single",
               "target_count": 1,
               "type": "debuff",
@@ -25342,7 +25176,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 520.0
+                  "value": 240.0
                 }
               ]
             },
@@ -25403,7 +25237,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 100.0
+                  "value": 0
                 }
               ]
             },
@@ -25810,7 +25644,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 60.0
+                  "value": 100.0
                 }
               ]
             }
@@ -25903,13 +25737,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 240.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -26542,7 +26370,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 100.0
+                  "value": 25.0
                 }
               ]
             },
@@ -26982,13 +26810,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -27088,7 +26910,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 30.0
                 }
               ]
             },
@@ -27105,7 +26927,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 30.0
                 }
               ]
             }
@@ -27835,15 +27657,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "ranged_def",
+              "type": "buff",
               "name": "Ranged DEF buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 1.3
-                }
-              ],
               "label": "buff_defensive"
             },
             {
@@ -28071,7 +27886,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 300.0
+                  "value": 200.0
                 }
               ]
             },
@@ -28482,23 +28297,6 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Energy drain",
-              "label": "debuff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 60.0
-                }
-              ]
-            },
-            {
-              "tier": "mythic+",
               "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "enemy",
@@ -28506,13 +28304,7 @@
               "target_count": 3,
               "type": "debuff",
               "name": "Vitality debuff",
-              "label": "debuff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ]
+              "label": "debuff_defensive"
             },
             {
               "tier": "ex+15",
@@ -29737,20 +29529,14 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "enemy",
               "area": "single",
               "target_count": 1,
               "type": "debuff",
               "name": "Max HP debuff",
-              "label": "debuff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 30.0
-                }
-              ]
+              "label": "debuff_stat"
             },
             {
               "tier": "base",
@@ -29760,8 +29546,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "silence",
-              "duration": 1.0
+              "cc-type": "silence"
             },
             {
               "tier": "base",
@@ -29823,7 +29608,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 150.0
+                  "value": 120.0
                 }
               ]
             },
@@ -30156,7 +29941,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 20.0
                 }
               ]
             },
@@ -30415,8 +30200,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "bind",
-              "duration": 4.0
+              "cc-type": "bind"
             },
             {
               "tier": "base",
@@ -30518,7 +30302,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 50.0
+                  "value": 120.0
                 }
               ]
             },
@@ -31369,7 +31153,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 200.0
+                  "value": 20.0
                 }
               ]
             },
@@ -32339,6 +32123,23 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
+              "name": "Energy drain",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 100.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
               "name": "Marked target (focus fire)",
               "label": "debuff_stat"
             }
@@ -32623,7 +32424,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 70.0
+                  "value": 20.0
                 }
               ],
               "label": "buff_offensive"
@@ -32637,13 +32438,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "Invincible",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 70.0
-                }
-              ]
+              "label": "buff_stat"
             },
             {
               "tier": "base",
@@ -33062,7 +32857,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 24.0
+                  "value": 50.0
                 }
               ],
               "label": "buff_offensive"
@@ -33680,7 +33475,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 100.0
+                  "value": 115.0
                 }
               ]
             },

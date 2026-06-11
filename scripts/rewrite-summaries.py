@@ -1143,13 +1143,13 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         return "Self"
     # Possessive self-reference in buff context: "her ATK", "his Haste" → Self
     # Only when no ally/enemy target is also mentioned in the text
-    if re.search(
+    if category == "buff" and re.search(
         r"\b(?:her|his|their)\s+(?:atk|haste|crit|max\s*hp|phys\s*def|magic\s*def|atk\s*spd"
         r"|vitality|energy|life\s*drain|execution|resilience)\b",
         t,
     ) and not re.search(
         r"\b(?:allies?|ally|allied|enemies|enemy|the\s+target|prey|foes?|"
-        r"marked enemy)\b",
+        r"marked enemy|host)\b",
         t,
     ):
         if re.search(r"\btheir\b", t) and label in ("Max HP buff", "Haste buff"):
@@ -1192,6 +1192,7 @@ _STAT_LABELS_NO_GENERIC = frozenset(
         "Haste debuff",
         "Execution debuff",
         "Energy recovery",
+        "Energy drain",
         "Haste buff",
         "Crit buff",
         "Damage taken reduction",
@@ -1223,6 +1224,20 @@ def extract_number(text: str, label: str = "") -> float | None:
         )
         if amounts:
             return max(amounts)
+    if label == "Energy drain":
+        amounts = _all_amounts(
+            text,
+            [
+                r"drain(?:s|ing)? (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*energy",
+                r"absorb(?:s|ing)? (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*energy",
+                r"reduc(?:e|es|ing) .{0,40}energy by (\d+(?:\.\d+)?)"
+                r"(?:\s*\+\s*(\d+(?:\.\d+)?))?",
+                r"los(?:e|es) (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*energy",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if label == "DEF Penetration buff":
         amounts = _all_amounts(
             text,
@@ -1704,11 +1719,11 @@ def add_effect(
     ]
     cond_text = scope if scope is not None else text
     n = (
-        extract_cc_duration(text, label)
+        extract_cc_duration(cond_text, label)
         if category == "cc"
-        else _extract_damage_amount(text, label)
+        else _extract_damage_amount(cond_text, label)
         if category == "damage"
-        else extract_number(text, label)
+        else extract_number(cond_text, label)
     )
     cond = _buff_condition(category, cond_text)
     new_buff_tgt = (
@@ -1774,13 +1789,14 @@ def add_effect(
             cur.source_section = source_section
         return
     targeting_text = scope if scope is not None else text
-    buff_tgt = (
-        _resolve_buff_targeting(text, label, scope=scope)
-        if category == "buff"
-        else detect_damage_targeting(targeting_text)
-        if category == "damage"
-        else detect_targeting(targeting_text, label, category)
-    )
+    if category == "buff":
+        buff_tgt = _resolve_buff_targeting(text, label, scope=scope)
+    elif category == "damage":
+        buff_tgt = detect_damage_targeting(targeting_text)
+    else:
+        buff_tgt = detect_targeting(targeting_text, label, category)
+        if category == "debuff" and label == "Energy drain" and buff_tgt == "Self":
+            buff_tgt = _detect_targeting_enemy_override(targeting_text)
     area_count = _resolve_area_count(
         targeting_text if category != "buff" else cond_text, buff_tgt
     )
@@ -2128,13 +2144,18 @@ DEBUFF_RULES = [
     (r"reduc(?:e|es|ing) .{0,30}magic def", "Magic DEF debuff"),
     (r"reduc(?:e|es|ing) .{0,30}phys(?:ical)? def", "Phys DEF debuff"),
     # Energy drain (enemy only — not own summon/armor "loses energy")
-    (r"absorb(?:s|ing)? \d+ energy", "Energy drain"),
     (
-        r"(?:enemy|enemies|target|their|them)\b.{0,50}los(?:e|es) \d+ energy|"
-        r"los(?:e|es) \d+ energy.{0,50}(?:enemy|enemies|the target|their|them)",
+        r"drain(?:s|ing)? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy"
+        r"(?:\s+from|\b)",
         "Energy drain",
     ),
-    (r"reduc(?:e|es|ing) .{0,20}energy\b", "Energy drain"),
+    (r"absorb(?:s|ing)? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy", "Energy drain"),
+    (
+        r"(?:enemy|enemies|target|their|them|host)\b.{0,50}los(?:e|es) \d+ energy|"
+        r"los(?:e|es) \d+ energy.{0,50}(?:enemy|enemies|the target|their|them|host)",
+        "Energy drain",
+    ),
+    (r"reduc(?:e|es|ing) .{0,40}energy\b(?! recov)", "Energy drain"),
     # Vitality debuff
     (r"reduc(?:e|es|ing) .{0,20}vitality", "Vitality debuff"),
     # Healing debuff (enemy Healing stat reduction)
@@ -3597,6 +3618,24 @@ def _chunk_deals_enemy_damage(text: str, primary_dmg: str = "Physical") -> bool:
     return False
 
 
+def _debuff_match_is_caster_energy_cost(clause: str) -> bool:
+    """True when energy loss is a self upkeep cost, not an enemy debuff."""
+    t = clause.lower()
+    if re.search(r"which drain(?:s|ing)? \d+ energy", t):
+        return True
+    if re.search(
+        r"(?:armor|summon|companion).{0,40}los(?:e|es) \d+ energy|"
+        r"los(?:e|es) \d+ energy.{0,40}(?:armor|summon|companion)",
+        t,
+    ):
+        return True
+    if re.search(r"drain(?:s|ing)? \d+ energy per second", t) and not re.search(
+        r"\b(?:enemy|enemies|target|host)\b", t
+    ):
+        return True
+    return False
+
+
 def _debuff_match_is_ally_atk_penalty(clause: str) -> bool:
     """True when an ATK-debuff regex match reduces an ally's own ATK bonus.
 
@@ -3758,6 +3797,10 @@ def analyze_text(
             # Skip ATK debuff matches that reduce an ally's own bonus stat
             # rather than debuffing an enemy (e.g. Elijah & Lailah bond penalty).
             if label == "ATK debuff" and _debuff_match_is_ally_atk_penalty(scope):
+                continue
+            if label == "Energy drain" and _debuff_match_is_caster_energy_cost(
+                scope
+            ):
                 continue
             add_effect(
                 effects,

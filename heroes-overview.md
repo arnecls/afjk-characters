@@ -78,7 +78,7 @@ Aliceth also requires units **putting debuffs** on enemies
 
 ### Units benefitting most from Aliceth
 
-Aliceth provides Ally empower buff to single targets `high`, Attack range buff to single targets `high`, DEF Penetration buff to multiple targets `high`, ATK buff (Legendary+) to multiple targets `average`, and Fatal blow immunity (Mythic+) to single targets `high` — conditional (rare).
+Aliceth provides Ally empower buff to single targets `low`, Attack range buff to single targets `low`, DEF Penetration buff to multiple targets `high`, ATK buff (Legendary+) to multiple targets `low`, and Fatal blow immunity (Mythic+) to single targets `high` — conditional (rare).
 
 - Lily May (4.5 / 5)
 - Kulu (4.2 / 5)
@@ -466,7 +466,7 @@ Antandra provides DEF buff (Supreme+) to single targets `low`.
 
 - Unaffected — Area — On skill
 - Knock down — Area — `low`
-- Stun — Area — `high`
+- Stun — Area — `average`
 - Taunt — Area — `low`
 
 ## Arden
@@ -895,6 +895,10 @@ Aurora provides Haste buff to summons `high`, Invincible to single targets `high
 
 - Magic — Area, Multiple targets, Single target
 
+#### Debuffs provided by Aurora
+
+- Haste — Single target — `average`
+
 #### Crowd Control provided by Aurora
 
 - Unaffected — Self — On skill
@@ -1023,7 +1027,7 @@ Common buffers are **Twins**, **Solise**, or **Contess**.
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `slow`, buffs `average`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
@@ -1116,8 +1120,8 @@ Common buffers are **Solise**, **Rowan**, or **Lyca**.
 
 #### Debuffs provided by Berial
 
+- Energy drain — Single target — `average`
 - Damage taken (Legendary+) — Single target — `low`
-- Energy drain (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Berial
 
@@ -1299,7 +1303,7 @@ Look for units providing: `Life Drain`
 
 ### Units benefitting most from Brutus
 
-Brutus provides Lifedrain buff to single targets `high`.
+Brutus provides Lifedrain buff to single targets `average`.
 
 - Shadewing (4.3 / 5)
 - Aliceth (2.5 / 5)
@@ -1866,7 +1870,7 @@ Common buffers are **Twins**, **Lyca**, or **Solise**.
 
 ### Units benefitting most from Cecia
 
-Cecia provides ATK SPD buff to single targets `high`, DEF Penetration buff to single targets `low`, Lifedrain buff in an area `high`, and Max HP buff to single targets `high`.
+Cecia provides ATK SPD buff to single targets `low`, DEF Penetration buff to single targets `low`, Lifedrain buff in an area `high`, and Max HP buff to single targets `high`.
 
 - Shadewing (4.3 / 5)
 - Silven (3.0 / 5)
@@ -1909,7 +1913,7 @@ Cecia provides ATK SPD buff to single targets `high`, DEF Penetration buff to si
 
 #### Crowd Control provided by Cecia
 
-- Bind — Single target — `average`
+- Bind — Area — `average`
 
 ## Chippy
 
@@ -2094,7 +2098,7 @@ These are the **10** strongest pairings:
 
 #### Debuffs provided by Contess
 
-- Energy drain — Multiple targets — `average`
+- Max HP — Single target — `low`
 - ATK (Legendary+) — Single target — `low`
 
 #### Crowd Control provided by Contess
@@ -2417,7 +2421,7 @@ Daimon provides Lifedrain buff to single targets `average` and Shield to multipl
 
 #### Crowd Control provided by Daimon
 
-- Frighten (Mythic+) — Area — `average`
+- Frighten (Mythic+) — Area — `low`
 
 ## Damian
 
@@ -2643,7 +2647,7 @@ Dionel provides ATK buff to single targets `low`.
 #### Dionel Provides
 
 - Stacking buff — Single target
-- Execution scaling (Supreme+) — Self
+- Execution scaling (Supreme+) — Single target
 
 #### Damage types dealt by Dionel
 
@@ -2774,7 +2778,7 @@ Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to
 
 #### Crowd Control provided by Dunlingr
 
-- Silence — Single target — `high`
+- Silence — Single target — `low`
 
 ## Eironn
 
@@ -3753,7 +3757,7 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Mikola**.
 #### Crowd Control provided by Granny Dahnie
 
 - Unaffected — Self — On skill
-- Bind — Single target — `average`
+- Bind — Single target — `low`
 - Taunt — Single target — `average`
 
 ## Gunnar
@@ -3818,7 +3822,7 @@ Common buffers are **Twins**, **Hugin**, or **Hepler**.
 
 ### Units benefitting most from Gunnar
 
-Gunnar provides ATK SPD buff to single targets `high`, ATK buff to single targets `average`, Ranged DEF buff (Legendary+) to single targets `low`, and Vitality buff (Legendary+) to single targets `low`.
+Gunnar provides ATK SPD buff to single targets `low`, ATK buff to single targets `average`, Ranged DEF buff (Legendary+) to single targets `low`, and Vitality buff (Legendary+) to single targets `low`.
 
 - Cyran (2.5 / 5)
 - Silven (2.4 / 5)
@@ -5322,7 +5326,7 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 
 ### Units benefitting most from Kordan
 
-Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple targets `high`, DEF buff (EX+10) to single targets `low`, and DEF Penetration buff (Supreme+) to multiple targets `low`.
+Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple targets `low`, DEF buff (EX+10) to single targets `low`, and DEF Penetration buff (Supreme+) to multiple targets `low`.
 
 - Brutus (4.0 / 5)
 - Lily May (3.8 / 5)
@@ -5635,7 +5639,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting most from Kulu
 
-Kulu provides ATK buff (Legendary+) to single targets `low` and DEF Penetration buff (EX+15) to single targets `low`.
+Kulu provides DEF Penetration buff (EX+15) to single targets `low`.
 
 - Bonnie (4.1 / 5)
 - Indris (3.4 / 5)
@@ -6011,7 +6015,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 #### Debuffs provided by Lily May
 
-- Energy drain — Single target — `average`
+- Energy drain — Single target — `high`
 
 #### Crowd Control provided by Lily May
 
@@ -6613,7 +6617,7 @@ Common buffers are **Twins**, **Hugin**, or **Hepler**.
 
 ### Units benefitting most from Lumont
 
-Lumont provides DEF buff to multiple targets `high`.
+Lumont provides DEF buff to multiple targets `low`.
 
 - Lucca (4.4 / 5)
 - Cecia (4.0 / 5)
@@ -6845,7 +6849,7 @@ Common buffers are **Smokey & Meerky**, **Mikola**, or **Twins**.
 
 ### Units benefitting most from Marcille
 
-Marcille provides Haste buff to single targets `low` and Direct healing (Mythic+) to multiple targets `low`.
+Marcille provides Direct healing (Mythic+) to multiple targets `low`.
 
 - Himmel (2.0 / 5)
 - Nerion (1.9 / 5)
@@ -8038,8 +8042,8 @@ Pandora provides Direct healing to single targets `average`, Invincible to singl
 
 #### Debuffs provided by Pandora
 
+- ATK — Single target — `low`
 - Damage taken — Single target — `low`
-- Energy drain — Single target — `average`
 - Haste — Single target — `average`
 - Vitality — Single target — `average`
 
@@ -8560,7 +8564,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 #### Debuffs provided by Pippa
 
-- Energy drain — Single target — `average`
+- Energy drain — Single target — `low`
 
 #### Crowd Control provided by Pippa
 
@@ -9093,7 +9097,7 @@ Common buffers are **Solise**, **Twins**, or **Contess**.
 
 ### Units benefitting most from Saida
 
-Saida provides Shield to multiple targets `high`.
+Saida provides Direct healing to single targets `low` and Shield to multiple targets `high`.
 
 **15** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -9147,6 +9151,10 @@ These are the **10** strongest pairings:
 #### Damage types dealt by Saida
 
 - Magic — All units, Area, Single target
+
+#### Debuffs provided by Saida
+
+- Energy drain — Single target — `high`
 
 #### Crowd Control provided by Saida
 
@@ -10102,7 +10110,7 @@ Common buffers are **Hepler**, **Hugin**, or **Contess**.
 
 #### Debuffs provided by Silvina
 
-- Energy drain — Single target — `high`
+- Energy drain — Single target — `average`
 - Vitality (Supreme+) — Single target — `low`
 
 #### Crowd Control provided by Silvina
@@ -10198,9 +10206,10 @@ Common buffers are **Twins**, **Lyca**, or **Hugin**.
 #### Debuffs provided by Sinbad
 
 - Damage taken — Single target — `low`
+- ATK (Mythic+) — Single target — `low`
 - Magic DEF (Mythic+) — Multiple targets — `average`
 - Phys DEF (Mythic+) — Multiple targets — `low`
-- Vitality (Mythic+) — Multiple targets — `average`
+- Vitality (Mythic+) — Multiple targets — `low`
 
 #### Crowd Control provided by Sinbad
 
@@ -10738,6 +10747,7 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 #### Debuffs provided by Sylphira
 
 - Energy drain — Single target — `low`
+- Max HP — Single target — `low`
 
 #### Crowd Control provided by Sylphira
 
@@ -10973,7 +10983,7 @@ Tasi provides Haste buff (Mythic+) to single targets `high`.
 
 #### Crowd Control provided by Tasi
 
-- Bind — Single target — `average`
+- Bind — Single target — `low`
 - Sleep — All units — `low`
 - Stun — Area — `low`
 
@@ -11261,7 +11271,7 @@ Common buffers are **Rowan**, **Solise**, or **Twins**.
 
 ### Units benefitting most from Thoran
 
-Thoran provides Lifedrain buff to single targets `high` and Energy recovery (Legendary+) to single targets `average`.
+Thoran provides Lifedrain buff to single targets `average` and Energy recovery (Legendary+) to single targets `average`.
 
 - Brutus (2.5 / 5)
 - Pandora (2.0 / 5)
@@ -11366,7 +11376,7 @@ Common buffers are **Hepler**, **Mikola**, or **Solise**.
 
 ### Units benefitting most from Tilaya
 
-Tilaya provides DEF buff (EX+10) in an area `low` and Max HP buff (EX+10) in an area `high`.
+Tilaya provides DEF buff (EX+10) in an area `average` and Max HP buff (EX+10) in an area `high`.
 
 - Lucca (4.8 / 5)
 
@@ -11467,7 +11477,7 @@ Twins also requires units **positioned on their link**
 
 ### Units benefitting most from Twins
 
-Twins provides ATK buff to multiple targets `average`, Direct healing to multiple targets `low`, Energy recovery to multiple targets `low`, Haste buff to all units `average`, Max HP buff to multiple targets `high`, Shield to single targets `average`, Vitality buff (Mythic+) to multiple targets `low`, and DEF buff (Supreme+) to single targets `average`.
+Twins provides ATK buff to multiple targets `average`, Direct healing to multiple targets `low`, Energy recovery to multiple targets `low`, Haste buff to all units `average`, Max HP buff to multiple targets `high`, Shield to single targets `average`, Vitality buff (Mythic+) to multiple targets `low`, and DEF buff (Supreme+) to single targets `low`.
 
 **96** units include this provider among their top 5 synergy partners. Why the match is common:
 
@@ -11757,6 +11767,7 @@ Vala provides Haste buff (Mythic+) to single targets `high`.
 
 #### Debuffs provided by Vala
 
+- Energy drain — Single target — `low`
 - Haste — Single target — `average`
 - Marked target (focus fire) — Single target — `average`
 
@@ -11935,7 +11946,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Hugin**.
 
 ### Units benefitting most from Valka
 
-Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10) to single targets `average`.
+Valka provides ATK SPD buff to multiple targets `average` and Lifedrain buff (EX+10) to single targets `high`.
 
 - Nerion (2.2 / 5)
 - Silven (1.6 / 5)
@@ -12387,7 +12398,7 @@ Common buffers are **Twins**, **Hugin**, or **Solise**.
 
 ### Units benefitting most from Zandrok
 
-Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedrain buff in an area `average` — conditional (frequent), and Max HP buff to multiple targets `average`.
+Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedrain buff in an area `low` — conditional (frequent), and Max HP buff to multiple targets `average`.
 
 - Walker (4.2 / 5)
 - Brutus (3.3 / 5)

@@ -408,6 +408,25 @@ class SummaryParsingTests(unittest.TestCase):
         )
         self.assertGreater(tp_fast, tp_slow)
 
+    def test_saida_energy_drain_targets_enemy(self):
+        hero = _hero_by_short_name("Saida")
+        drains = list(_effects(hero, "debuff", "Energy drain"))
+        self.assertTrue(drains, "expected Energy drain debuff on Saida")
+        for e in drains:
+            self.assertNotEqual(e.targeting, "Self", e.qualitative)
+        best = max((e.numeric or 0) for e in drains)
+        self.assertGreaterEqual(best, 220.0)
+
+    def test_pang_stance_energy_cost_not_enemy_drain(self):
+        hero = _hero_by_short_name("Pang")
+        drains = list(_effects(hero, "debuff", "Energy drain"))
+        self.assertEqual(drains, [])
+
+    def test_sinbad_energy_recovery_efficiency_not_energy_drain(self):
+        hero = _hero_by_short_name("Sinbad")
+        drains = list(_effects(hero, "debuff", "Energy drain"))
+        self.assertEqual(drains, [])
+
 
 if __name__ == "__main__":
     unittest.main()
