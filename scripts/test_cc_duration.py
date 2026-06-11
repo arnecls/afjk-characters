@@ -169,5 +169,76 @@ class SpuriousCcTests(unittest.TestCase):
         self.assertNotIn("Silence", labels)
 
 
+class ValidateSpuriousCcTests(unittest.TestCase):
+    def test_check_semantic_skips_spurious_cc(self):
+        from validate_processed import check_semantic
+
+        processed = {
+            "heroes": {
+                "Bryon": {
+                    "skills": {
+                        "Tacit Strike": {
+                            "description": (
+                                "Elona deals damage and stuns them for s "
+                                "when Bryon is being controlled."
+                            ),
+                            "effects": [{"type": "damage", "name": "Magic"}],
+                        }
+                    }
+                },
+                "Indris": {
+                    "skills": {
+                        "Spellbane Shot": {
+                            "description": (
+                                "Indris fires a silencing arrow at an enemy, "
+                                "dealing damage. The shot disables stat buffs."
+                            ),
+                            "effects": [{"type": "debuff", "name": "Phys DEF debuff"}],
+                        }
+                    }
+                },
+                "Mehira": {
+                    "skills": {
+                        "Enhance Force": {
+                            "description": (
+                                "Increases the damage taken by enemies charmed "
+                                "with Mehira's Euphoric Rush or bewitched "
+                                "with her Alluring Mirage by 15%."
+                            ),
+                            "effects": [
+                                {"type": "debuff", "name": "Damage taken debuff"}
+                            ],
+                        }
+                    }
+                },
+                "Tasi": {
+                    "skills": {
+                        "Shimmering Dust": {
+                            "description": (
+                                "Tasi gains Haste. She will prioritize "
+                                "targeting the farthest hypnotized enemy."
+                            ),
+                            "effects": [{"type": "stat_mod", "name": "Haste buff"}],
+                        }
+                    }
+                },
+                "Ulmus": {
+                    "skills": {
+                        "Prowling Roots": {
+                            "description": (
+                                "Whenever an enemy is knocked down, Ulmus "
+                                "binds the target to the ground, increasing "
+                                "the knockdown duration by 2."
+                            ),
+                            "effects": [{"type": "damage", "name": "Physical"}],
+                        }
+                    }
+                },
+            }
+        }
+        issues = check_semantic(processed)
+        self.assertNotIn("cc_missing", issues)
+
+
 if __name__ == "__main__":
     unittest.main()

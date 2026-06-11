@@ -47,26 +47,28 @@ def _full_roster():
     for hero in heroes:
         rs.analyze_hero(hero)
     skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
-    rs.assign_magnitudes(heroes, skills_by_title)
+    role_category_by_title = gen._role_category_by_title(heroes, block_by_title)
+    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
     classes = {
         h.title: gen._parse_hero_class(block_by_title[h.title]) for h in heroes
     }
     matchers = gen._make_enabler_matchers(classes)
     display = {h.title: gen.short_name(h.title) for h in heroes}
-    behavior = rs.build_behavior_for_heroes(heroes, display)
+    behavior = rs.build_behavior_for_heroes(
+        heroes, display, role_category_by_title=role_category_by_title
+    )
     return heroes, matchers, behavior
 
 
 class BeneficiaryFallbackTests(unittest.TestCase):
-    def test_zandrok_gets_fallback_beneficiaries(self):
+    def test_zandrok_gets_primary_beneficiaries(self):
         heroes, matchers, behavior = _full_roster()
         index = gen.build_beneficiaries_index(heroes, matchers, behavior)
         zandrok = next(h for h in heroes if h.title.startswith("Zandrok"))
         benefited = index[zandrok.title]
-        self.assertGreater(len(benefited), 0)
-        self.assertLessEqual(len(benefited), gen.FALLBACK_BENEFICIARIES_DISPLAY)
+        self.assertGreater(len(benefited), gen.FALLBACK_BENEFICIARIES_DISPLAY)
         names = {name for _score, name in benefited}
-        self.assertIn("Perseus", names)
+        self.assertIn("Walker", names)
 
     def test_primary_beneficiaries_unchanged_for_top_buffer(self):
         heroes, matchers, behavior = _full_roster()

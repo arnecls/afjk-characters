@@ -126,6 +126,26 @@
                   "value": 550.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 500.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "cooldown": 7.0,
@@ -164,35 +184,6 @@
               "type": "debuff",
               "name": "Execution debuff",
               "label": "debuff_offensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Marked target (focus fire)",
-              "label": "debuff_stat"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 330.0
-                }
-              ]
             }
           ]
         },
@@ -217,17 +208,6 @@
                 }
               ],
               "label": "buff_offensive"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "debuff",
-              "name": "Marked target (focus fire)",
-              "label": "debuff_stat"
             }
           ],
           "tier": "legendary+",
@@ -319,16 +299,18 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
                   "value": 330.0
                 }
-              ]
+              ],
+              "duration": 3,
+              "tick": 1
             }
           ],
           "tier": "mythic+",
@@ -393,7 +375,11 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Single target"
+          "Single target"
+        ],
+        [
+          "dot",
+          "Area, Single target"
         ],
         [
           "hp_loss",
@@ -459,7 +445,8 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "high",
+              "DoT": "high"
             }
           }
         }
@@ -519,16 +506,18 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 66.0
+                  "value": 60.0
                 }
-              ]
+              ],
+              "duration": 8,
+              "tick": 1
             }
           ]
         },
@@ -587,6 +576,17 @@
                   "value": 0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Max HP debuff",
+              "label": "debuff_stat"
             },
             {
               "tier": "base",
@@ -787,7 +787,11 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Arc, Single target"
+          "Arc, Single target"
+        ],
+        [
+          "dot",
+          "All units"
         ]
       ],
       "damage_magnitudes": {},
@@ -820,7 +824,7 @@
             "damage": "average",
             "heal": "average",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Physical": "average"
             }
@@ -833,7 +837,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "high"
+              "DoT": "high",
+              "Physical": "low"
             }
           },
           "non_ultimate": {
@@ -1038,21 +1043,10 @@
         "Don of Terra": {
           "category": "skill4",
           "description": "Alsa increases the damage of Vigorous Slam by 50% (ATK-based) after dealing damage with the skill, stacking up to 2 times. She also increases the shield value of Swift Evasion by 5% of her max HP after casting it, stacking up to 2 times. Unlocks at Exclusive Weapon Level 5: Reduces the Energy cost to 400 when the Vigorous Slam buff is stacked to its maximum. Reduces the cooldown to 6s when the Swift Evasion buff is stacked to its maximum. Increases the damage dealt by the next Vigorous Slam by 55% (ATK-based). This effect can stack up to 2 times.",
-          "effects": [
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Energy drain",
-              "label": "debuff_stat"
-            }
-          ],
+          "effects": [],
           "tier": "mythic+",
-          "skill_range": 1
+          "skill_range": 1,
+          "passive_only": true
         },
         "Enhance Force": {
           "category": "skill5",
@@ -1124,7 +1118,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "ultimate": {
@@ -1135,7 +1129,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "non_ultimate": {
@@ -1144,7 +1138,7 @@
             "damage": "average",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "average",
+            "debuffs": "none",
             "damage_types": {
               "Magic": "average"
             }
@@ -1273,6 +1267,24 @@
           "category": "skill2",
           "description": "Antandra attacks the frontal area within 1-tile arc 3 times and reduces the targets' ATK by 20% for 6s + 1s, with the first 2 hits dealing 100% (ATK-based) damage and the third hit dealing 120% (ATK-based) damage. Unlocks at level 91: Increases the damage of 3rd attack to 140% (ATK-based). Unlocks at level 151: Increases the damage of 3rd attack to 160% (ATK-based). Unlocks at level 211: Increases the damage of 3rd attack to 180% (ATK-based).",
           "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_direction": "front",
+              "type": "debuff",
+              "name": "ATK debuff",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            },
             {
               "tier": "base",
               "targeting_label": "Arc",
@@ -1410,7 +1422,7 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area, Single target"
+          "Arc, Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -1466,7 +1478,7 @@
             "damage": "low",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Physical": "low"
             }
@@ -1493,16 +1505,18 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 230.0
+                  "value": 210.0
                 }
-              ]
+              ],
+              "duration": 7,
+              "tick": 1
             }
           ],
           "cooldown": 3.0,
@@ -1531,16 +1545,18 @@
               "target": "enemy",
               "area": "single",
               "target_count": 3,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
                   "value": 65.0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "cooldown": 8.0,
@@ -1628,8 +1644,8 @@
       },
       "damage_entries": [
         [
-          "magic",
-          "Area, Multiple targets, Single target"
+          "dot",
+          "Area, Multiple targets"
         ]
       ],
       "damage_magnitudes": {},
@@ -1659,7 +1675,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "DoT": "average"
             }
           },
           "ultimate": {
@@ -1670,7 +1686,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "DoT": "average"
             }
           },
           "non_ultimate": {
@@ -1681,7 +1697,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "DoT": "average",
+              "Magic": "low"
             }
           }
         }
@@ -1979,7 +1996,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "high"
             }
           }
         }
@@ -2026,17 +2043,6 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "debuff",
-              "name": "ATK debuff",
-              "label": "debuff_offensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.5
@@ -2052,24 +2058,6 @@
               "damage_type": "true",
               "name": "True damage",
               "label": "damage_true",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 297.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
               "value": [
                 {
                   "type": "percentage",
@@ -2094,24 +2082,6 @@
               "type": "buff",
               "name": "Invincible",
               "label": "buff_stat"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 520.0
-                }
-              ]
             }
           ],
           "cooldown": 7.0,
@@ -2307,8 +2277,8 @@
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "high",
-        "true": "low"
+        "true": "average",
+        "hp_loss": "high"
       },
       "benefit_stats": [
         "max_hp",
@@ -2336,10 +2306,9 @@
             "damage": "average",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "average",
+            "debuffs": "none",
             "damage_types": {
-              "True damage": "low",
-              "Physical": "average"
+              "True damage": "average"
             }
           },
           "ultimate": {
@@ -2348,10 +2317,9 @@
             "damage": "average",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "average",
+            "debuffs": "none",
             "damage_types": {
-              "True damage": "low",
-              "Physical": "average"
+              "True damage": "average"
             }
           },
           "non_ultimate": {
@@ -2476,6 +2444,18 @@
           "category": "skill2",
           "description": "While Aurora is dreaming, reality within 2 tiles around her slowly gets overtaken by her dream. If an enemy stays in that area for 12s, they will be transformed into a unicorn plushie, leaving them unable to move or attack for 1 + 0.125s. The longer an enemy remains in the area, the faster each subsequent transformation triggers (minimum 6s. This effect does not apply to unaffected enemies. Extends the unicorn plushie transformation duration to 1.5 + 0.125s. Extends the unicorn plushie transformation duration to 5 + 0.125s. Extends the unicorn plushie transformation duration to 2.5 + 0.125s.",
           "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 1.125
+            },
             {
               "type": "immunity",
               "tier": "base",
@@ -2615,7 +2595,7 @@
           "signature": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
@@ -2626,7 +2606,7 @@
           "ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
@@ -2712,25 +2692,6 @@
               ]
             },
             {
-              "tier": "base",
-              "targeting_label": "Arc",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "arc",
-              "target_count": -1,
-              "area_direction": "front",
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 400.0
-                }
-              ]
-            },
-            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -2766,6 +2727,24 @@
               ],
               "duration": 2,
               "tick": 1
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.8
+                }
+              ]
             }
           ],
           "initial_cooldown": 9999.0
@@ -2942,11 +2921,11 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area, Single target"
+          "Area"
         ],
         [
           "true",
-          "Arc, Area"
+          "Arc, Area, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -2980,7 +2959,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "Physical": "average"
             }
           },
@@ -2992,7 +2971,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "Physical": "average"
             }
           },
@@ -3004,8 +2983,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "high",
-              "True damage": "low"
+              "True damage": "average",
+              "Physical": "high"
             }
           }
         }
@@ -3080,6 +3059,27 @@
                   "value": 350.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 45.0
+                }
+              ],
+              "duration": 4,
+              "tick": 1
             }
           ],
           "cooldown": 1.0,
@@ -3215,9 +3215,9 @@
             "description": "1s 1s - Skill Range: 10 tiles - Initial Energy: 0 Berial flies beneath the enemy, hiding within their shadow and dealing 36% (ATK-based) damage every 0.25s, absorbing 15 + 5 Energy, lasting up to 5s. Berial is Invincible during the effect. Then he jumps out from the shadow, dealing 320% (ATK-based) + 30% damage to adjacent enemies and frightening them for 4s."
           },
           {
-            "label": "Revive ally",
+            "label": "Cheat death",
             "tier": "base",
-            "targeting": "Single target",
+            "targeting": "Self",
             "description": "- Skill Range: 1 tile Berial hides within the shadow for 10s after being defeated. However, during which, if a non-summoned enemy is taken down, Berial will revive from the vanquished enemy and return to the battlefield with 40% (HP-based) + 6% HP. This effect can only be triggered once per battle."
           },
           {
@@ -3232,6 +3232,10 @@
       "damage_entries": [
         [
           "magic",
+          "Area, Single target"
+        ],
+        [
+          "dot",
           "Area, Single target"
         ]
       ],
@@ -3261,7 +3265,8 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "high"
             }
           },
           "ultimate": {
@@ -3272,7 +3277,8 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "high"
             }
           },
           "non_ultimate": {
@@ -3388,6 +3394,26 @@
                   "value": 190.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 180.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "skill_range": 10
@@ -3494,8 +3520,14 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
-              "name": "Damage taken debuff",
-              "label": "debuff_stat"
+              "name": "Magic damage amplification",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ]
             }
           ],
           "tier": "supreme+"
@@ -3514,12 +3546,6 @@
             "tier": "base",
             "targeting": "Self",
             "description": "10s 3s - Skill Range: Global Bonnie transforms into a black mist, moving to a safe spot within 4 tiles and firing 6 arrows, each daling 35% (ATK-based) + 5% damage to an enemy. While in black mist form, Bonnie is invincible."
-          },
-          {
-            "label": "Magic damage amplification",
-            "tier": "supreme+",
-            "targeting": "Single target",
-            "description": "When the Aging effect reaches its maximum stack on an enemy, their magic damage taken is increased by 10%, with an extra 20% increase for magic damage taken from Ultimates."
           }
         ],
         "requires": [
@@ -3547,6 +3573,10 @@
         [
           "magic",
           "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -3575,7 +3605,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "average"
             }
           },
           "ultimate": {
@@ -3597,7 +3628,8 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "average"
             }
           }
         }
@@ -3634,24 +3666,6 @@
               ],
               "duration": 4,
               "tick": 1
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 155.0
-                }
-              ]
             },
             {
               "type": "immunity",
@@ -4075,6 +4089,16 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -4085,25 +4109,6 @@
                   "value": 450.0
                 }
               ]
-            },
-            {
-              "tier": "ex+5",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ],
-              "duration": 2,
-              "tick": 1
             },
             {
               "tier": "ex+5",
@@ -4212,7 +4217,7 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "high",
-              "DoT": "average"
+              "DoT": "low"
             }
           },
           "non_ultimate": {
@@ -4581,6 +4586,27 @@
                   "value": 300.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 280.0
+                }
+              ],
+              "duration": 6,
+              "tick": 1
             }
           ],
           "initial_energy": 0.0
@@ -4589,6 +4615,18 @@
           "category": "skill1",
           "description": "Carolina deals 155% (ATK-based) + 15% damage to a target and adjacent enemies and inflicts a Frostbite stack. Unlocks at level 71: Increases damage to 165% (ATK-based) + 15%. Unlocks at level 131: Increases damage to 175% (ATK-based) + 15%. Unlocks at level 191: Increases damage to 185% (ATK-based) + 15%.",
           "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Haste debuff",
+              "label": "debuff_offensive"
+            },
             {
               "tier": "base",
               "targeting_label": "Area",
@@ -4634,6 +4672,26 @@
                   "value": 160.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ]
         },
@@ -4677,23 +4735,6 @@
                   "value": 15.0
                 }
               ]
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "DEF buff",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 30.0
-                }
-              ]
             }
           ],
           "tier": "mythic+"
@@ -4701,9 +4742,20 @@
         "Enhance Force": {
           "category": "skill5",
           "description": "Carolina inflicts Frostbite when dealing damage with Snowball Witchery.",
-          "effects": [],
-          "tier": "supreme+",
-          "passive_only": true
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Haste debuff",
+              "label": "debuff_offensive"
+            }
+          ],
+          "tier": "supreme+"
         }
       },
       "synergy_profile": {
@@ -4727,6 +4779,10 @@
       "damage_entries": [
         [
           "magic",
+          "Area, Single target"
+        ],
+        [
+          "dot",
           "Area, Single target"
         ]
       ],
@@ -4756,7 +4812,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "high"
             }
           },
           "ultimate": {
@@ -4767,7 +4824,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "high"
             }
           },
           "non_ultimate": {
@@ -4775,10 +4833,11 @@
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
-            "buffs": "average",
+            "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "average",
+              "DoT": "average"
             }
           }
         }
@@ -5260,6 +5319,28 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF debuff",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Magic DEF debuff",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 4.0
@@ -5354,8 +5435,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average",
-              "DoT": "high"
+              "Physical": "high",
+              "DoT": "average"
             }
           },
           "ultimate": {
@@ -5366,8 +5447,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average",
-              "DoT": "high"
+              "Physical": "high",
+              "DoT": "average"
             }
           },
           "non_ultimate": {
@@ -5376,7 +5457,7 @@
             "damage": "low",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Physical": "low",
               "DoT": "low"
@@ -5450,11 +5531,29 @@
         "Eureka!": {
           "category": "skill2",
           "description": "Chippy's normal attacks have a 2% chance to deal 1000% (ATK-based) damage. These attacks cannot deal critical damage and can only be triggered 1 time per battle. Increases the chance to 3%. Increases the chance to 4%. Increases the chance to 5%.",
-          "effects": [],
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1000.0
+                }
+              ]
+            }
+          ],
           "cooldown": 7.0,
           "initial_cooldown": 2.0,
-          "skill_range": 5,
-          "passive_only": true
+          "skill_range": 5
         }
       },
       "synergy_profile": {
@@ -5491,7 +5590,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "ultimate": {
@@ -5502,18 +5601,18 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "non_ultimate": {
             "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "high"
             }
           }
         }
@@ -5530,6 +5629,23 @@
           "category": "ultimate",
           "description": "Passive. When a battle starts, Contess hides within her rulebook. While hidden, she cannot move or act, cannot be targeted by enemies, and recovers 66 Energy every second. She enters the battlefield when her Energy is full, when an enemy violates a rule, or when all other allies are defeated. Active. Contess restores 666% (ATK-based) + 66% HP to a target ally and grants them Exemption. Exemption: Prevents the target ally from being punished by allied Contess for rule violations. While the ally's HP ratio is above 40%, they lose 2.5% of their max HP every second, converting 200% of the lost amount into a shield. The shield value cannot exceed 100% of the ally's max HP. While this shield is active, the ally's ATK is increased by 30%. When auto battle is enabled, this skill prioritizes the ally with the most cumulative damage dealt who has not yet received Exemption. If all allies have already received Exemption, it instead targets the weakest ally. When an ally loses HP from Exemption's HP reduction effect, the shield conversion ratio increases to 225% of the lost HP. When an ally loses HP from Exemption's HP reduction effect, the shield conversion ratio increases to 250% of the lost HP. When an ally loses HP from Exemption's HP reduction effect, the shield conversion ratio increases to 275% of the lost HP. When an ally loses HP from Exemption's HP reduction effect, the shield conversion ratio increases to 300% of the lost HP.",
           "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Exemption buff",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 666.0
+                }
+              ]
+            },
             {
               "tier": "base",
               "targeting_label": "Single target",
@@ -5695,6 +5811,26 @@
               "type": "crowd_control",
               "cc-type": "silence",
               "duration": -1.0
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "tier": "mythic+",
@@ -5741,7 +5877,12 @@
         ],
         "requires": []
       },
-      "damage_entries": [],
+      "damage_entries": [
+        [
+          "dot",
+          "Multiple targets"
+        ]
+      ],
       "damage_magnitudes": {},
       "benefit_stats": [
         "healing",
@@ -5782,11 +5923,13 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "none",
+            "damage": "low",
             "heal": "average",
             "buffs": "none",
             "debuffs": "average",
-            "damage_types": {}
+            "damage_types": {
+              "DoT": "low"
+            }
           }
         }
       }
@@ -5878,6 +6021,27 @@
                   "value": 77.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 70.0
+                }
+              ],
+              "duration": 6,
+              "tick": 1
             }
           ],
           "cooldown": 12.0,
@@ -5947,16 +6111,18 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
                   "value": 200.0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             },
             {
               "tier": "ex+5",
@@ -5968,6 +6134,24 @@
               "type": "debuff",
               "name": "Damage taken debuff",
               "label": "debuff_stat"
+            },
+            {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ]
             }
           ],
           "tier": "mythic+",
@@ -6015,6 +6199,10 @@
         [
           "magic",
           "All units, Area, Single target"
+        ],
+        [
+          "dot",
+          "All units, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -6066,7 +6254,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "average"
             }
           }
         }
@@ -6112,6 +6301,27 @@
                   "value": 620.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 16.0
+                }
+              ],
+              "duration": 5,
+              "tick": 1
             }
           ],
           "initial_energy": 400.0
@@ -6147,6 +6357,18 @@
           "category": "skill2",
           "description": "Cyran uses magic to lift the nearest enemy into the air, imprisoning them for 1s before hurling them into the area with the most enemies. This knocks the target down for 0.5s and deals 150% (ATK-based) + 10% damage to enemies within 1 tile of the target. When casting this skill, Cyran prioritizes targeting an enemy who is neither unaffected nor steadfast. Increases damage to 160% (ATK-based) + 10%. Increases damage to 170% (ATK-based) + 10%. Increases damage to 180% (ATK-based) + 10%.",
           "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_down",
+              "duration": 0.0
+            },
             {
               "tier": "base",
               "targeting_label": "Area",
@@ -6248,8 +6470,14 @@
               "target_count": -1,
               "area_count": -1,
               "type": "debuff",
-              "name": "ATK debuff",
-              "label": "debuff_offensive"
+              "name": "ATK SPD debuff",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
             },
             {
               "tier": "mythic+",
@@ -6282,13 +6510,12 @@
               ]
             },
             {
-              "tier": "mythic+",
-              "targeting_label": "All units",
+              "tier": "ex+5",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -6373,12 +6600,16 @@
           "All units, Area, Single target"
         ],
         [
+          "dot",
+          "All units"
+        ],
+        [
           "true",
           "All units"
         ]
       ],
       "damage_magnitudes": {
-        "true": "low"
+        "true": "average"
       },
       "benefit_stats": [
         "atk",
@@ -6407,7 +6638,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "high"
             }
           },
           "ultimate": {
@@ -6418,7 +6650,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "high"
             }
           },
           "non_ultimate": {
@@ -6472,13 +6705,13 @@
               "target_count": -1,
               "area_count": 2,
               "type": "damage",
-              "damage_type": "max_hp",
-              "name": "Max HP-based damage",
-              "label": "damage_max_hp",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 28.0
+                  "value": 90.0
                 }
               ]
             },
@@ -6491,13 +6724,13 @@
               "target_count": -1,
               "area_count": 2,
               "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 90.0
+                  "value": 28.0
                 }
               ]
             }
@@ -6521,6 +6754,25 @@
                 {
                   "type": "percentage",
                   "value": 100.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
                 }
               ]
             },
@@ -6671,15 +6923,16 @@
       },
       "damage_entries": [
         [
-          "magic",
+          "max_hp",
           "Area"
         ],
         [
-          "max_hp",
+          "true",
           "Area"
         ]
       ],
       "damage_magnitudes": {
+        "true": "low",
         "max_hp": "low"
       },
       "benefit_stats": [
@@ -6721,8 +6974,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "low",
-              "Magic": "average"
+              "True damage": "high",
+              "Max HP-based damage": "low"
             }
           },
           "non_ultimate": {
@@ -6733,6 +6986,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
+              "True damage": "low",
               "Max HP-based damage": "average"
             }
           }
@@ -7203,25 +7457,6 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 220.0
-                }
-              ]
-            },
-            {
-              "tier": "mythic+",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
@@ -7290,11 +7525,11 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Single target"
+          "Area, Single target"
         ],
         [
           "true",
-          "All units"
+          "All units, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -7350,7 +7585,7 @@
             "debuffs": "average",
             "damage_types": {
               "True damage": "average",
-              "Physical": "average"
+              "Physical": "low"
             }
           }
         }
@@ -7402,16 +7637,18 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 260.0
+                  "value": 240.0
                 }
-              ]
+              ],
+              "duration": 6,
+              "tick": 1
             }
           ],
           "skill_range": 10,
@@ -7429,7 +7666,7 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
-              "name": "ATK debuff",
+              "name": "ATK SPD debuff",
               "label": "debuff_offensive"
             },
             {
@@ -7508,16 +7745,18 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 180.0
+                  "value": 160.0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             }
           ],
           "skill_range": 3
@@ -7668,7 +7907,11 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Single target"
+          "Area"
+        ],
+        [
+          "dot",
+          "All units, Single target"
         ],
         [
           "hp_loss",
@@ -7706,7 +7949,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "DoT": "average",
+              "Magic": "low"
             }
           },
           "ultimate": {
@@ -7717,7 +7961,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "DoT": "average",
+              "Magic": "low"
             }
           },
           "non_ultimate": {
@@ -7729,7 +7974,8 @@
             "debuffs": "average",
             "damage_types": {
               "HP loss": "low",
-              "Magic": "average"
+              "Magic": "average",
+              "DoT": "low"
             }
           }
         }
@@ -7887,6 +8133,17 @@
           "effects": [
             {
               "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "DEF buff",
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "legendary+",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -7944,13 +8201,14 @@
       "damage_entries": [
         [
           "magic",
-          "Arc, Area, Single target"
+          "Arc, Area"
         ]
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
         "max_hp",
-        "physical_def"
+        "physical_def",
+        "magic_def"
       ],
       "behavior": {
         "movement": "moving",
@@ -7996,7 +8254,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           }
         }
@@ -8565,7 +8823,7 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Single target"
+          "All units"
         ]
       ],
       "damage_magnitudes": {},
@@ -8642,6 +8900,24 @@
               "area": "single",
               "target_count": 1,
               "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
               "damage_type": "hp_loss",
               "name": "HP loss",
               "label": "damage_hp_loss",
@@ -8651,6 +8927,26 @@
                   "value": 20.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ],
+              "duration": 1,
+              "tick": 1
             },
             {
               "tier": "base",
@@ -8709,24 +9005,6 @@
                 {
                   "type": "percentage",
                   "value": 280.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 305.0
                 }
               ]
             }
@@ -8836,24 +9114,6 @@
                   "value": 600.0
                 }
               ]
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 600.0
-                }
-              ]
             }
           ],
           "tier": "mythic+",
@@ -8879,14 +9139,7 @@
         }
       },
       "synergy_profile": {
-        "provides": [
-          {
-            "label": "Revive ally",
-            "tier": "supreme+",
-            "targeting": "Single target",
-            "description": "If an enemy revives within Faramor's magic circle after their HP drops to 0, Faramor will reduce their Vitality by 50."
-          }
-        ],
+        "provides": [],
         "requires": [
           {
             "label": "Once per battle",
@@ -8899,7 +9152,11 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Single target"
+          "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
         ],
         [
           "hp_loss",
@@ -8907,12 +9164,12 @@
         ],
         [
           "true",
-          "Multiple targets"
+          "Multiple targets, Single target"
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "high",
-        "true": "high"
+        "true": "high",
+        "hp_loss": "high"
       },
       "benefit_stats": [
         "atk",
@@ -8946,8 +9203,10 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
+              "True damage": "high",
               "HP loss": "high",
-              "Physical": "high"
+              "DoT": "high",
+              "Physical": "average"
             }
           },
           "ultimate": {
@@ -8958,8 +9217,10 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
+              "True damage": "high",
               "HP loss": "high",
-              "Physical": "high"
+              "DoT": "high",
+              "Physical": "average"
             }
           },
           "non_ultimate": {
@@ -9224,7 +9485,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -9614,25 +9875,6 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 1980.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
               "type": "dot",
               "damage_type": "dot",
               "name": "DoT",
@@ -9715,7 +9957,8 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "debuff",
+              "type": "dot",
+              "damage_type": "dot",
               "name": "DoT",
               "label": "dot",
               "value": [
@@ -9723,26 +9966,9 @@
                   "type": "percentage",
                   "value": 300.0
                 }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 330.0
-                }
-              ]
+              ],
+              "duration": 5,
+              "tick": 1
             },
             {
               "tier": "base",
@@ -9837,15 +10063,15 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Single target"
+          "Single target"
         ],
         [
           "dot",
-          "All units, Single target"
+          "All units, Area"
         ],
         [
           "true",
-          "All units, Single target"
+          "All units"
         ]
       ],
       "damage_magnitudes": {
@@ -9883,7 +10109,6 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "high",
-              "Magic": "high",
               "DoT": "high"
             }
           },
@@ -9896,7 +10121,6 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "high",
-              "Magic": "high",
               "DoT": "high"
             }
           },
@@ -9908,7 +10132,8 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "low",
+              "DoT": "high"
             }
           }
         }
@@ -10194,7 +10419,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           }
         }
@@ -10236,7 +10461,7 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
-              "cc-type": "bind",
+              "cc-type": "sleep",
               "duration": 1.0
             },
             {
@@ -11116,19 +11341,15 @@
           "effects": [
             {
               "tier": "supreme+",
-              "targeting_label": "Self",
+              "targeting_label": "Area",
               "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0
-                }
-              ]
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "debuff",
+              "name": "Healing debuff",
+              "label": "debuff_healing"
             }
           ],
           "tier": "supreme+"
@@ -11330,33 +11551,18 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "debuff",
+              "type": "dot",
+              "damage_type": "dot",
               "name": "DoT",
               "label": "dot",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 490.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
                   "value": 550.0
                 }
-              ]
+              ],
+              "duration": 4,
+              "tick": 1
             }
           ],
           "skill_range": 8
@@ -11412,6 +11618,10 @@
         [
           "physical",
           "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -11460,9 +11670,10 @@
             "damage": "high",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "average",
+            "debuffs": "none",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "high",
+              "DoT": "high"
             }
           }
         }
@@ -11709,16 +11920,18 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 260.0
+                  "value": 100.0
                 }
-              ]
+              ],
+              "duration": 6,
+              "tick": 1
             },
             {
               "type": "immunity",
@@ -11752,24 +11965,6 @@
                 {
                   "type": "percentage",
                   "value": 15.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 275.0
                 }
               ]
             }
@@ -11935,7 +12130,7 @@
       },
       "damage_entries": [
         [
-          "physical",
+          "dot",
           "Single target"
         ],
         [
@@ -11985,6 +12180,7 @@
             "debuffs": "none",
             "damage_types": {
               "HP loss": "low",
+              "DoT": "low",
               "Physical": "low"
             }
           },
@@ -12263,7 +12459,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -12528,6 +12724,25 @@
               "target_count": -1,
               "area_count": -1,
               "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
               "label": "damage_max_hp",
@@ -12564,28 +12779,10 @@
         "Heroic Dash": {
           "category": "skill1",
           "description": "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% damage and knocking each enemy down for 2s. He then returns to his original position. Himmel remains while casting this skill. Increases the damage dealt to 360% (ATK-based) + 40%. Increases the damage dealt to 380% (ATK-based) + 40%. Increases the damage dealt to 400% (ATK-based) + 40%.",
-          "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 440.0
-                }
-              ]
-            }
-          ],
+          "effects": [],
           "cooldown": 10.0,
-          "initial_cooldown": 3.0
+          "initial_cooldown": 3.0,
+          "passive_only": true
         },
         "Hero Party": {
           "category": "skill2",
@@ -12750,9 +12947,14 @@
         [
           "max_hp",
           "All units"
+        ],
+        [
+          "true",
+          "All units"
         ]
       ],
       "damage_magnitudes": {
+        "true": "high",
         "max_hp": "low"
       },
       "benefit_stats": [
@@ -12794,6 +12996,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
+              "True damage": "high",
               "Max HP-based damage": "low",
               "Physical": "high"
             }
@@ -13461,7 +13664,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Single target"
+          "All units, Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -13565,6 +13768,16 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "silence"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -13573,6 +13786,24 @@
                 {
                   "type": "percentage",
                   "value": 320.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
                 }
               ]
             }
@@ -13609,24 +13840,6 @@
                 {
                   "type": "percentage",
                   "value": 185.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 200.0
                 }
               ]
             }
@@ -13794,15 +14007,15 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Multiple targets, Single target"
+          "Area, Single target"
         ],
         [
           "true",
-          "Multiple targets"
+          "Multiple targets, Single target"
         ]
       ],
       "damage_magnitudes": {
-        "true": "average"
+        "true": "high"
       },
       "benefit_stats": [
         "atk",
@@ -13830,7 +14043,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "low",
+              "True damage": "low"
             }
           },
           "ultimate": {
@@ -13841,7 +14055,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "low",
+              "True damage": "low"
             }
           },
           "non_ultimate": {
@@ -13853,7 +14068,7 @@
             "debuffs": "average",
             "damage_types": {
               "True damage": "high",
-              "Physical": "high"
+              "Physical": "average"
             }
           }
         }
@@ -14564,6 +14779,25 @@
               "type": "buff",
               "name": "Damage taken reduction",
               "label": "buff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
             }
           ],
           "initial_energy": 0.0
@@ -14727,10 +14961,16 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Single target"
+          "Area"
+        ],
+        [
+          "true",
+          "All units"
         ]
       ],
-      "damage_magnitudes": {},
+      "damage_magnitudes": {
+        "true": "low"
+      },
       "benefit_stats": [
         "haste",
         "energy"
@@ -14752,20 +14992,24 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "none",
+            "damage": "low",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
-            "damage_types": {}
+            "damage_types": {
+              "True damage": "low"
+            }
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "none",
+            "damage": "low",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
-            "damage_types": {}
+            "damage_types": {
+              "True damage": "low"
+            }
           },
           "non_ultimate": {
             "speed": "fast",
@@ -15012,24 +15256,6 @@
               ]
             },
             {
-              "tier": "ex+5",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "hp_loss",
-              "name": "HP loss",
-              "label": "damage_hp_loss",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 40.0
-                }
-              ]
-            },
-            {
               "tier": "ex+10",
               "targeting_label": "Single target",
               "is_max_known": true,
@@ -15090,10 +15316,6 @@
         [
           "physical",
           "Area, Single target"
-        ],
-        [
-          "hp_loss",
-          "Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -15253,24 +15475,6 @@
                   "value": 320.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 340.0
-                }
-              ]
             }
           ],
           "cooldown": 9.0,
@@ -15312,6 +15516,25 @@
           "category": "skill4",
           "description": "When Korin and the allies within 2 tiles cast their Ultimates 3 times in total, Korin's arms feel nature's power and enchant his spear with Wilder magic, dealing additional true damage equal to 2% of the targets' max HP for 8s with follow-up attacks, and the extra damage cannot exceed 40% of Korin's ATK. Increases ATK SPD by 60 during the skill. Increases additional true damage to 2.5% of the targets' max HP. Increases additional true damage to 2.8% of the targets' max HP.",
           "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
+            },
             {
               "tier": "ex+5",
               "targeting_label": "Self",
@@ -15359,11 +15582,11 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Single target"
+          "Area"
         ],
         [
           "true",
-          "Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -15419,7 +15642,7 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "average",
-              "Physical": "average"
+              "Physical": "low"
             }
           }
         }
@@ -15538,24 +15761,6 @@
               "type": "debuff",
               "name": "Vulnerable debuff",
               "label": "debuff_stat"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 570.0
-                }
-              ]
             }
           ],
           "cooldown": 2.0,
@@ -15565,6 +15770,17 @@
           "category": "skill3",
           "description": "Increases Ranged DEF by 16 during battle. Increases Ranged DEF by 21 during battle. Increases Ranged DEF by 26 during battle.",
           "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "DEF buff",
+              "label": "buff_defensive"
+            },
             {
               "tier": "legendary+",
               "targeting_label": "Self",
@@ -16034,26 +16250,39 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "crowd_control",
-              "cc-type": "bind",
-              "duration": 3.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "DEF buff",
-              "label": "buff_defensive",
+              "type": "debuff",
+              "name": "Phys DEF debuff",
+              "label": "debuff_defensive",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 50.0
+                  "value": 49.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Magic DEF debuff",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 3.0
             }
           ],
           "cooldown": 10.0,
@@ -16377,7 +16606,7 @@
             "damage": "none",
             "heal": "average",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {}
           }
         }
@@ -16923,6 +17152,24 @@
               "area": "single",
               "target_count": 1,
               "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
               "label": "damage_max_hp",
@@ -17017,9 +17264,14 @@
         [
           "max_hp",
           "Single target"
+        ],
+        [
+          "true",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {
+        "true": "low",
         "max_hp": "low"
       },
       "benefit_stats": [
@@ -17071,6 +17323,7 @@
             "debuffs": "none",
             "damage_types": {
               "Magic": "low",
+              "True damage": "low",
               "Max HP-based damage": "average"
             }
           }
@@ -17096,6 +17349,26 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 2,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 70.0
+                }
+              ],
+              "duration": 5,
+              "tick": 1
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -17232,7 +17505,11 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Single target"
+          "Single target"
+        ],
+        [
+          "dot",
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -17263,7 +17540,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "DoT": "high",
+              "Magic": "low"
             }
           },
           "ultimate": {
@@ -17274,7 +17552,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "DoT": "high",
+              "Magic": "low"
             }
           },
           "non_ultimate": {
@@ -18076,6 +18355,17 @@
                   "value": 450.0
                 }
               ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "DEF buff",
+              "label": "buff_defensive"
             }
           ],
           "tier": "mythic+",
@@ -19546,6 +19836,24 @@
                 }
               ],
               "label": "buff_offensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
             }
           ],
           "tier": "mythic+",
@@ -19574,9 +19882,15 @@
         [
           "physical",
           "Multiple targets, Single target"
+        ],
+        [
+          "true",
+          "Multiple targets"
         ]
       ],
-      "damage_magnitudes": {},
+      "damage_magnitudes": {
+        "true": "low"
+      },
       "benefit_stats": [
         "atk",
         "atk_spd",
@@ -19627,7 +19941,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "low",
+              "True damage": "low"
             }
           }
         }
@@ -19699,6 +20014,25 @@
                 }
               ],
               "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "hp_loss",
+              "name": "HP loss",
+              "label": "damage_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 23.0
+                }
+              ]
             }
           ],
           "cooldown": 10.0,
@@ -19708,11 +20042,22 @@
         "Alluring Mirage": {
           "category": "skill2",
           "description": "Mehira summons an illusion of herself on the tile closest to the enemy lineup, bewitching all enemies and making them rush mindlessly toward the illusion for 2.2 + 0.1s. When a battle starts, she summons such an illusion on a symmetrical tile across from where she stands. Increases the duration of the betwitched state to 2.3 + 0.1s. Increases the duration of the betwitched state to 2.4 + 0.1s. Increases the duration of the betwitched state to 2.5 + 0.1s.",
-          "effects": [],
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "charm"
+            }
+          ],
           "cooldown": 15.0,
           "initial_cooldown": 15.0,
-          "skill_range": 3,
-          "passive_only": true
+          "skill_range": 3
         },
         "Hero Focus": {
           "category": "skill3",
@@ -19780,6 +20125,26 @@
               ]
             },
             {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
+            },
+            {
               "type": "immunity",
               "tier": "mythic+",
               "immunity_type": "untargetable",
@@ -19833,9 +20198,19 @@
         [
           "magic",
           "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
+        ],
+        [
+          "hp_loss",
+          "All units"
         ]
       ],
-      "damage_magnitudes": {},
+      "damage_magnitudes": {
+        "hp_loss": "high"
+      },
       "benefit_stats": [
         "haste",
         "max_hp",
@@ -19885,7 +20260,9 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "low"
+              "HP loss": "high",
+              "Magic": "low",
+              "DoT": "low"
             }
           }
         }
@@ -19919,6 +20296,23 @@
                 }
               ],
               "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "buff",
+              "name": "DEF buff",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ]
             },
             {
               "tier": "base",
@@ -20100,9 +20494,7 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "healing",
-        "physical_def",
-        "magic_def"
+        "healing"
       ],
       "behavior": {
         "movement": "moving",
@@ -20397,24 +20789,6 @@
                   "value": 620.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 660.0
-                }
-              ]
             }
           ],
           "skill_range": 1,
@@ -20659,8 +21033,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
-              "Physical": "high"
+              "True damage": "average"
             }
           },
           "non_ultimate": {
@@ -20827,6 +21200,23 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
+              "name": "DEF buff",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 27.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
               "name": "Crit buff",
               "label": "buff_offensive"
             },
@@ -20918,7 +21308,8 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "debuff",
+              "type": "dot",
+              "damage_type": "dot",
               "name": "DoT",
               "label": "dot",
               "value": [
@@ -20926,25 +21317,9 @@
                   "type": "percentage",
                   "value": 80.0
                 }
-              ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 80.0
-                }
-              ]
+              ],
+              "duration": 5,
+              "tick": 1
             }
           ],
           "tier": "supreme+"
@@ -20960,6 +21335,10 @@
           "Area, Single target"
         ],
         [
+          "dot",
+          "Single target"
+        ],
+        [
           "max_hp",
           "Area"
         ]
@@ -20971,7 +21350,9 @@
         "atk",
         "haste",
         "crit",
-        "crit_dmg_boost"
+        "crit_dmg_boost",
+        "physical_def",
+        "magic_def"
       ],
       "behavior": {
         "movement": "stationary",
@@ -21052,24 +21433,6 @@
                   "value": 720.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 790.0
-                }
-              ]
             }
           ],
           "initial_energy": 200.0
@@ -21100,24 +21463,6 @@
               "damage_type": "true",
               "name": "True damage",
               "label": "damage_true",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 38.5
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
               "value": [
                 {
                   "type": "percentage",
@@ -21267,7 +21612,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "average"
+        "true": "high"
       },
       "benefit_stats": [
         "crit"
@@ -21294,7 +21639,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "Physical": "high"
             }
           },
@@ -21306,7 +21651,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "Physical": "high"
             }
           },
@@ -21318,8 +21663,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "True damage": "low",
-              "Physical": "low"
+              "True damage": "average",
+              "Physical": "average"
             }
           }
         }
@@ -21482,6 +21827,26 @@
               ]
             },
             {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 600.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
+            },
+            {
               "tier": "ex+10",
               "targeting_label": "Self",
               "is_max_known": true,
@@ -21531,6 +21896,10 @@
         [
           "magic",
           "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -21584,7 +21953,8 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "average",
+              "DoT": "average"
             }
           }
         }
@@ -21892,6 +22262,17 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "type": "debuff",
+              "name": "Poison debuff",
+              "label": "debuff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -21983,6 +22364,17 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "type": "debuff",
+              "name": "Poison debuff",
+              "label": "debuff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -22034,6 +22426,17 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
+              "name": "Poison debuff",
+              "label": "debuff_stat"
+            },
+            {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
               "name": "DoT",
               "label": "dot"
             }
@@ -22043,9 +22446,20 @@
         "Enhance Force": {
           "category": "skill5",
           "description": "Odie increases Triple Tap's damage against poisoned target by 1.5 times the Dart Poison damage per second.",
-          "effects": [],
-          "tier": "supreme+",
-          "passive_only": true
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Poison debuff",
+              "label": "debuff_stat"
+            }
+          ],
+          "tier": "supreme+"
         }
       },
       "synergy_profile": {
@@ -22095,10 +22509,10 @@
             "damage": "low",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Magic": "low",
-              "DoT": "average"
+              "DoT": "low"
             }
           },
           "non_ultimate": {
@@ -22136,6 +22550,17 @@
               "type": "debuff",
               "name": "ATK debuff",
               "label": "debuff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "frighten"
             }
           ],
           "initial_energy": 0.0
@@ -22343,7 +22768,9 @@
           "Single target"
         ]
       ],
-      "damage_magnitudes": {},
+      "damage_magnitudes": {
+        "hp_loss": "low"
+      },
       "benefit_stats": [
         "energy"
       ],
@@ -22890,7 +23317,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           }
         }
@@ -23119,7 +23546,9 @@
           "Area, Single target"
         ]
       ],
-      "damage_magnitudes": {},
+      "damage_magnitudes": {
+        "true": "low"
+      },
       "benefit_stats": [
         "atk",
         "atk_spd",
@@ -23673,6 +24102,25 @@
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 2.0
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
             }
           ],
           "tier": "mythic+",
@@ -23715,9 +24163,15 @@
         [
           "magic",
           "Area, Multiple targets, Single target"
+        ],
+        [
+          "true",
+          "Area"
         ]
       ],
-      "damage_magnitudes": {},
+      "damage_magnitudes": {
+        "true": "low"
+      },
       "benefit_stats": [
         "haste"
       ],
@@ -23765,7 +24219,8 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "average",
+              "True damage": "low"
             }
           }
         }
@@ -25188,6 +25643,16 @@
               "area": "single",
               "target_count": 1,
               "type": "crowd_control",
+              "cc-type": "bind"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
               "cc-type": "displace"
             },
             {
@@ -25339,23 +25804,36 @@
           "description": "Saida reduces the damage dealt by enemies afflicted with a Drain Seed by 35%. Each time she casts her Ultimate, the interval between Drain Seed attack effects is shortened by 0.5s, up to a maximum reduction of 1.5s for the current battle. Increases the damage dealt by Drain Seeds to 290% (ATK-based). Increases the damage dealt by Drain Seeds to 330% (ATK-based). When Saida has shortened the interval between Drain Seed's attack effects to its limit with Deepening Roots, she deals 1200% (ATK-based) damage to all enemies and traps them with blood spikes, preventing them from moving or acting. If an enemy becomes unaffected, they are temporarily freed, but the trap resumes once the unaffected effect ends. Each enemy is always trapped for a total of 45s, losing 160% (ATK-based) HP per second while trapped.",
           "effects": [
             {
-              "tier": "ex+5",
+              "tier": "ex+15",
               "targeting_label": "All units",
               "is_max_known": true,
               "target": "enemy",
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "type": "crowd_control",
+              "cc-type": "bind"
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
                   "value": 1200.0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             },
             {
               "type": "immunity",
@@ -25389,6 +25867,24 @@
                   "value": 800.0
                 }
               ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 800.0
+                }
+              ]
             }
           ],
           "tier": "supreme+"
@@ -25397,9 +25893,9 @@
       "synergy_profile": {
         "provides": [
           {
-            "label": "Revive ally",
+            "label": "Cheat death",
             "tier": "base",
-            "targeting": "Single target",
+            "targeting": "Self",
             "description": "- Skill Range: 1 tile When Saida is defeated, she consumes a Drain Seed to revive at the seed's position, restoring 10% (HP-based) + 1% HP. She prioritizes the oldest seed available and restores an extra 2.5% (HP-based) for each second the consumed seed existed. The extra HP cannot exceed 50% (HP-based)."
           }
         ],
@@ -25415,7 +25911,11 @@
       "damage_entries": [
         [
           "magic",
-          "All units, Area, Single target"
+          "Area, Multiple targets, Single target"
+        ],
+        [
+          "dot",
+          "All units"
         ]
       ],
       "damage_magnitudes": {},
@@ -25467,7 +25967,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "Magic": "high",
+              "DoT": "average"
             }
           }
         }
@@ -25689,7 +26190,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "ultimate": {
@@ -25711,7 +26212,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "high"
             }
           }
         }
@@ -25878,6 +26379,23 @@
           "description": "When an enemy hero is ignited, the magic damage taken by Satrana is reduced by 16% until the battle ends. Satrana grants this effect to a nearby ally when one more enemy hero is ignited. Each ignited enemy hero grants Satrana 200 Energy. Increases Satrana's magic DMG Reduction to 20%. Increases Satrana's magic DMG Reduction to 22%.",
           "effects": [
             {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic damage reduction",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 22.0
+                }
+              ]
+            },
+            {
               "tier": "ex+10",
               "targeting_label": "Single target",
               "is_max_known": true,
@@ -25925,7 +26443,7 @@
       "damage_entries": [
         [
           "magic",
-          "Arc, Area, Single target"
+          "Arc, Area"
         ],
         [
           "max_hp",
@@ -25960,7 +26478,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "ultimate": {
@@ -25971,7 +26489,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "non_ultimate": {
@@ -26273,10 +26791,12 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Arc, Area, Single target"
+          "All units, Arc, Area"
         ]
       ],
-      "damage_magnitudes": {},
+      "damage_magnitudes": {
+        "true": "average"
+      },
       "benefit_stats": [
         "execution",
         "energy"
@@ -26384,24 +26904,6 @@
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 0.5
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 200.0
-                }
-              ]
             }
           ],
           "initial_energy": 0.0
@@ -26992,7 +27494,8 @@
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "low"
+        "hp_loss": "low",
+        "true": "low"
       },
       "benefit_stats": [
         "atk",
@@ -27045,7 +27548,7 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "low",
-              "DoT": "average"
+              "DoT": "low"
             }
           }
         }
@@ -27395,13 +27898,13 @@
               "target_count": -1,
               "area_count": 1,
               "type": "damage",
-              "damage_type": "max_hp",
-              "name": "Max HP-based damage",
-              "label": "damage_max_hp",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 33.0
+                  "value": 27.0
                 }
               ]
             },
@@ -27414,13 +27917,13 @@
               "target_count": -1,
               "area_count": 1,
               "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 22.0
+                  "value": 33.0
                 }
               ]
             }
@@ -27483,6 +27986,24 @@
               "area": "single",
               "target_count": 1,
               "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
               "label": "damage_max_hp",
@@ -27516,9 +28037,14 @@
         [
           "max_hp",
           "Area, Single target"
+        ],
+        [
+          "true",
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
+        "true": "average",
         "max_hp": "average"
       },
       "benefit_stats": [
@@ -27571,6 +28097,7 @@
             "debuffs": "none",
             "damage_types": {
               "Magic": "average",
+              "True damage": "average",
               "Max HP-based damage": "average"
             }
           }
@@ -27658,8 +28185,37 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
+              "name": "DEF buff",
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
               "name": "Ranged DEF buff",
               "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
             },
             {
               "tier": "base",
@@ -27676,24 +28232,6 @@
                 {
                   "type": "percentage",
                   "value": 1.5999999999999999
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 22.0
                 }
               ]
             }
@@ -27800,6 +28338,10 @@
         [
           "max_hp",
           "Single target"
+        ],
+        [
+          "true",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -27809,7 +28351,8 @@
         "atk_spd",
         "energy",
         "def_penetration",
-        "physical_def"
+        "physical_def",
+        "magic_def"
       ],
       "behavior": {
         "movement": "stationary",
@@ -27856,6 +28399,7 @@
             "debuffs": "none",
             "damage_types": {
               "Magic": "average",
+              "True damage": "low",
               "Max HP-based damage": "low"
             }
           }
@@ -28264,8 +28808,14 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
-              "name": "ATK debuff",
-              "label": "debuff_offensive"
+              "name": "ATK SPD debuff",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ]
             },
             {
               "tier": "mythic+",
@@ -28305,6 +28855,17 @@
               "type": "debuff",
               "name": "Vitality debuff",
               "label": "debuff_defensive"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "ATK debuff",
+              "label": "debuff_offensive"
             },
             {
               "tier": "ex+15",
@@ -29120,7 +29681,7 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -29751,6 +30312,25 @@
               ]
             },
             {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            },
+            {
               "type": "immunity",
               "tier": "mythic+",
               "immunity_type": "cleanse",
@@ -29768,6 +30348,24 @@
           "category": "skill5",
           "description": "Once her score is activated, Sylphira performs Tremolo to enhance her normal attacks. The enhanced normal attacks gain 50 Life Drain and deal extra true damage equal to 18% of the target's max HP. The extra true damage dealt cannot exceed 600% (ATK-based).",
           "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
+            },
             {
               "tier": "supreme+",
               "targeting_label": "Single target",
@@ -29815,9 +30413,14 @@
         [
           "max_hp",
           "Single target"
+        ],
+        [
+          "true",
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
+        "true": "average",
         "max_hp": "average"
       },
       "benefit_stats": [
@@ -29869,7 +30472,8 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "average",
+              "True damage": "average"
             }
           }
         }
@@ -29885,27 +30489,9 @@
         "Divine Conflagration": {
           "category": "ultimate",
           "description": "Talene flies to a designated tile in the center of the battlefield, consumes 12.5% of her max HP and 250 Energy per second to shoot a 5-tile flame, dealing 150% + 20% damage and extra damage equal to 170% + 5% of her lost HP to enemies within range. The extra damage is shared among all hit enemies. Talene can cast this skill even when she is out of Energy, but the HP consumed per second will increase to 20% This skill ends when there are no more enemies within range. Increases damage dealt per second to 160% (ATK-based) + 20% and extra damage to 190% (ATK-based) + 5% of her lost HP. Increases damage dealt per second to 170% (ATK-based) + 20% and extra damage to 210% (ATK-based) + 5% of her lost HP Increases damage dealt per second to 180% (ATK-based) + 20% and extra damage to 230% (ATK-based) + 5% of her lost HP Increases damage dealt per second to 190% (ATK-based) + 20% and extra damage to 250% (ATK-based) + 5% of her lost HP",
-          "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 255.0
-                }
-              ]
-            }
-          ],
-          "initial_energy": 0.0
+          "effects": [],
+          "initial_energy": 0.0,
+          "passive_only": true
         },
         "Radiant Resurgence": {
           "category": "skill1",
@@ -30087,6 +30673,12 @@
       "synergy_profile": {
         "provides": [
           {
+            "label": "Cheat death",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "- Skill Range: 3 tiles Talene transforms into a ball of flame whenever she is defeated. During this state, she cannot be attacked as she is not considered alive, and she can restore 8% of her max HP per second as well as benefit from allies' skills When her HP reaches above 65%, she will resurrect and bring about an explosion, dealing 150% (ATK-based) + 10% damage to enemies within 2 tiles and knocking them 1 tile back. After each resurrection, her Vitality during the flame state will be reduced permanently by 33."
+          },
+          {
             "label": "Transformation",
             "tier": "base",
             "targeting": "Self",
@@ -30104,7 +30696,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -30314,24 +30906,6 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 130.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
               "type": "dot",
               "damage_type": "dot",
               "name": "DoT",
@@ -30339,10 +30913,10 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 60.0
+                  "value": 130.0
                 }
               ],
-              "duration": 2,
+              "duration": 3,
               "tick": 1
             }
           ]
@@ -30447,7 +31021,7 @@
         ],
         [
           "dot",
-          "All units, Single target"
+          "All units, Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -30479,7 +31053,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "DoT": "high"
+              "DoT": "low"
             }
           },
           "ultimate": {
@@ -30490,7 +31064,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "DoT": "high"
+              "DoT": "low"
             }
           },
           "non_ultimate": {
@@ -30501,7 +31075,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average",
+              "Magic": "low",
               "DoT": "average"
             }
           }
@@ -30599,24 +31173,6 @@
                 {
                   "type": "percentage",
                   "value": 0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 185.0
                 }
               ]
             }
@@ -30786,7 +31342,7 @@
       "damage_entries": [
         [
           "physical",
-          "All units, Area, Single target"
+          "All units, Area"
         ],
         [
           "max_hp",
@@ -30794,6 +31350,7 @@
         ]
       ],
       "damage_magnitudes": {
+        "true": "low",
         "max_hp": "average"
       },
       "benefit_stats": [
@@ -31020,6 +31577,26 @@
               ]
             },
             {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 560.0
+                }
+              ],
+              "duration": 2,
+              "tick": 1
+            },
+            {
               "tier": "ex+10",
               "targeting_label": "Single target",
               "is_max_known": true,
@@ -31068,6 +31645,10 @@
         [
           "physical",
           "Area, Single target"
+        ],
+        [
+          "dot",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -31123,7 +31704,8 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "high",
+              "DoT": "high"
             }
           }
         }
@@ -31330,10 +31912,10 @@
       "synergy_profile": {
         "provides": [
           {
-            "label": "Revive ally",
+            "label": "Cheat death",
             "tier": "base",
             "targeting": "Self",
-            "description": "Unlocks at level 91: Thoran can revive himself with 50% (HP-based) + 4% HP."
+            "description": "- Skill Range: 2 Tiles Thoran will resurrect with 40% (HP-based) + 4% HP restored after a short time when defeated. This effect can be triggered once per battle."
           }
         ],
         "requires": []
@@ -31468,12 +32050,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Arc",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
-              "area": "arc",
-              "target_count": -1,
-              "area_direction": "front",
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -31676,7 +32257,7 @@
       "damage_entries": [
         [
           "physical",
-          "Arc, Area, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {},
@@ -31923,6 +32504,16 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "bind"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -31957,7 +32548,14 @@
         }
       },
       "synergy_profile": {
-        "provides": [],
+        "provides": [
+          {
+            "label": "Cheat death",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "- Skill Range: 1 tile - Initial Energy: 0 Passive. When Ulmus' HP ratio drops below 30% for the first time, he retreats to the backline and takes root to recover 30% (HP-based) + 2% HP. When rooted, Ulmus is Unaffected and unable to move. His normal attacks become ranged and deal an additional 50% damage to enemies surrounding the primary target. Active. Ulmus attacks an enemy, knocking the target and adjacent enemies into the air, dealing 200% (ATK-based) + 20% damage plus an extra 4% (HP-based) damage. This skill prioritizes the area with the most enemies within his attack range."
+          }
+        ],
         "requires": [
           {
             "label": "Vulnerable enemy",
@@ -32026,7 +32624,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           }
         }
@@ -32065,24 +32663,6 @@
               "damage_type": "true",
               "name": "True damage",
               "label": "damage_true",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 490.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
               "value": [
                 {
                   "type": "percentage",
@@ -32337,7 +32917,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "low",
+        "true": "average",
         "hp_loss": "average"
       },
       "benefit_stats": [
@@ -32368,8 +32948,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "low",
-              "Physical": "average",
+              "True damage": "average",
               "HP loss": "low"
             }
           },
@@ -32381,8 +32960,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "low",
-              "Physical": "average",
+              "True damage": "average",
               "HP loss": "low"
             }
           },
@@ -32742,13 +33320,13 @@
               "target_count": -1,
               "area_count": 1,
               "type": "damage",
-              "damage_type": "max_hp",
-              "name": "Max HP-based damage",
-              "label": "damage_max_hp",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 20.0
+                  "value": 800.0
                 }
               ]
             },
@@ -32761,13 +33339,13 @@
               "target_count": -1,
               "area_count": 1,
               "type": "damage",
-              "damage_type": "physical",
-              "name": "Physical",
-              "label": "damage_normal",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 800.0
+                  "value": 20.0
                 }
               ]
             },
@@ -32985,14 +33563,19 @@
       "damage_entries": [
         [
           "physical",
-          "Area, Single target"
+          "Area"
         ],
         [
           "max_hp",
           "Area"
+        ],
+        [
+          "true",
+          "Area"
         ]
       ],
       "damage_magnitudes": {
+        "true": "high",
         "max_hp": "high"
       },
       "benefit_stats": [
@@ -33024,6 +33607,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
+              "True damage": "high",
               "Max HP-based damage": "low",
               "Physical": "high"
             }
@@ -33036,6 +33620,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
+              "True damage": "high",
               "Max HP-based damage": "low",
               "Physical": "high"
             }
@@ -33174,23 +33759,6 @@
               "type": "buff",
               "name": "Haste buff",
               "label": "buff_offensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "DEF buff",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ]
             }
           ],
           "cooldown": 12.0,
@@ -33390,16 +33958,18 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 340.0
+                  "value": 320.0
                 }
-              ]
+              ],
+              "duration": 2,
+              "tick": 1
             },
             {
               "type": "immunity",
@@ -33598,6 +34168,10 @@
         [
           "magic",
           "All units, Single target"
+        ],
+        [
+          "dot",
+          "All units"
         ]
       ],
       "damage_magnitudes": {},
@@ -33638,7 +34212,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "high"
+              "DoT": "average",
+              "Magic": "average"
             }
           },
           "non_ultimate": {
@@ -33649,7 +34224,7 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           }
         }

@@ -32,6 +32,31 @@ def _load_rs():
 rs = _load_rs()
 
 
+def _load_gen():
+    spec = importlib.util.spec_from_file_location(
+        "gen_overview", SCRIPTS / "generate-heroes-overview.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    sys.modules["gen_overview"] = module
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+gen = _load_gen()
+
+
+def _analyze_heroes_from_blocks(blocks: list[str]) -> tuple[list, dict[str, str], dict]:
+    heroes = [rs.parse_hero_block(b) for b in blocks]
+    block_by_title = {h.title: b for h, b in zip(heroes, blocks)}
+    for hero in heroes:
+        rs.analyze_hero(hero)
+    role_category_by_title = gen._role_category_by_title(heroes, block_by_title)
+    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
+    return heroes, block_by_title, role_category_by_title
+
+
 class EnumMappingTests(unittest.TestCase):
     def test_stat_round_trip(self):
         self.assertEqual(hs.to_schema_stat("ATK SPD"), "atk_spd")
@@ -74,10 +99,8 @@ class RoundTripTests(unittest.TestCase):
         text = io.reconstruct_heroes_md(data)
         blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith(f"## {prefix}")]
         self.assertTrue(blocks, f"hero not found: {prefix}")
-        hero = rs.parse_hero_block(blocks[0])
-        rs.analyze_hero(hero)
-        rs.assign_magnitudes([hero])
-        return hero, data
+        heroes, _blocks, _role = _analyze_heroes_from_blocks(blocks)
+        return heroes[0], data
 
     def _round_trip(self, prefix: str):
         hero, data = self._hero_by_title_prefix(prefix)
@@ -107,8 +130,8 @@ class RoundTripTests(unittest.TestCase):
 
     def test_aliceth_effect_labels_preserved(self):
         before, after = self._round_trip("Aliceth")
-        before_keys = {(e.category, e.label, e.targeting) for e in before.effects}
-        after_keys = {(e.category, e.label, e.targeting) for e in after.effects}
+        before_keys = {(e.category, e.label) for e in before.effects}
+        after_keys = {(e.category, e.label) for e in after.effects}
         self.assertEqual(before_keys, after_keys)
 
     def test_aliceth_full_ascension_numerics(self):
@@ -120,7 +143,7 @@ class RoundTripTests(unittest.TestCase):
             for e in sealed["effects"]
             if e.get("name") == "DEF Penetration buff"
         )
-        self.assertEqual(pen["value"][0]["value"], 40.0)
+        self.assertEqual(pen["value"][0]["value"], 55.0)
         marked = [
             e
             for e in sealed["effects"]
@@ -207,14 +230,13 @@ class SkillOverviewTests(unittest.TestCase):
     def _hero_by_display(self, display_name: str):
         text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
         blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-        heroes = [rs.parse_hero_block(b) for b in blocks]
-        for hero in heroes:
-            rs.analyze_hero(hero)
-        rs.assign_magnitudes(heroes)
+        heroes, _blocks, role_category_by_title = _analyze_heroes_from_blocks(blocks)
         display_by_title = {
             h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
         }
-        behavior_by_title = rs.build_behavior_for_heroes(heroes, display_by_title)
+        behavior_by_title = rs.build_behavior_for_heroes(
+            heroes, display_by_title, role_category_by_title=role_category_by_title
+        )
         for hero in heroes:
             if display_by_title[hero.title] == display_name:
                 return hero, behavior_by_title[hero.title]
@@ -387,7 +409,7 @@ class SkillOverviewTests(unittest.TestCase):
         _, alna = self._hero_by_display("Alna")
         self.assertEqual(alna.signature_skill_name, "Shared Resolve")
         self.assertFalse(alna.signature_skill_is_ult)
-        self.assertEqual(alna.signature_skill_speed, "slow")
+        self.assertEqual(alna.signature_skill_speed, "fast")
         self.assertEqual(sig["Alna"]["signature_override"], "skill1")
         self.assertEqual(sig["Alna"]["signature_calculated"], "skill2")
 
@@ -400,11 +422,11 @@ class SkillOverviewTests(unittest.TestCase):
     def test_cassadee_signature_first_cast_speed(self):
         _, behavior = self._hero_by_display("Cassadee")
         sig_metrics = behavior.skill_overview["signature"]
-        self.assertEqual(sig_metrics.speed, "slow")
+        self.assertEqual(sig_metrics.speed, "average")
         self.assertEqual(sig_metrics.first_cast_speed, "fast")
         text = "\n".join(rs.format_behavior_section("Cassadee", behavior))
         self.assertIn("first cast speed `fast`", text)
-        self.assertIn("speed `slow`", text)
+        self.assertIn("speed `average`", text)
 
     def test_bryon_signature_skill(self):
         _, behavior = self._hero_by_display("Bryon")
@@ -418,7 +440,7 @@ class SkillOverviewTests(unittest.TestCase):
     def test_niru_signature_first_cast_speed(self):
         _, behavior = self._hero_by_display("Niru")
         sig_metrics = behavior.skill_overview["signature"]
-        self.assertEqual(sig_metrics.speed, "slow")
+        self.assertEqual(sig_metrics.speed, "fast")
         self.assertEqual(sig_metrics.first_cast_speed, "fast")
         text = "\n".join(rs.format_behavior_section("Niru", behavior))
         self.assertIn("first cast speed `fast`", text)

@@ -63,6 +63,22 @@ _CC_SCHEMA_MAP: dict[str, str] = {
     "freeze": "bind",
 }
 
+_CC_LABEL_MAP: dict[str, str] = {
+    "stun": "Stun",
+    "knock_back": "Knock back",
+    "knock_down": "Knock down",
+    "knock_up": "Knock up",
+    "frighten": "Frighten",
+    "silence": "Silence",
+    "charm": "Charm",
+    "sleep": "Sleep",
+    "bind": "Bind",
+    "interrupt": "Interrupt",
+    "taunt": "Taunt",
+    "blind": "Blind",
+    "freeze": "Bind",
+}
+
 _ANTI_CC_KEYWORDS: dict[str, str] = {
     "unaffected": (
         r"(?:becomes?|is|remain|making|grants?|granted|linked).{0,60}unaffected|"
@@ -150,6 +166,30 @@ def _cc_types(effects: list[dict[str, Any]]) -> set[str]:
     return out
 
 
+def _cc_has_real_match(
+    rs: Any,
+    cc: str,
+    pat: str,
+    text: str,
+    full_desc: str,
+) -> bool:
+    """True when CC regex matched a non-spurious clause in skill text."""
+    label = _CC_LABEL_MAP.get(cc, cc)
+    for m in re.finditer(pat, text):
+        scope = rs._clause_around(text, m.start())
+        if rs._cc_match_is_spurious(scope, label, full_desc):
+            continue
+        if label == "Sleep" and rs._cc_sleep_is_caster_owned(scope):
+            continue
+        if label == "Sleep" and re.search(
+            r"target(?:ing|s)? (?:the )?(?:farthest )?hypnotized enem",
+            scope,
+        ) and not re.search(r"hypnotiz(?:ing|es)? (?:all )?enem", scope):
+            continue
+        return True
+    return False
+
+
 def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
     out: set[str] = set()
     for eff in effects:
@@ -199,15 +239,9 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                         text,
                     ):
                         continue
-                    if cc == "sleep" and re.search(pat, text):
-                        if not any(
-                            not rs._cc_sleep_is_caster_owned(
-                                rs._clause_around(text, m.start())
-                            )
-                            for m in re.finditer(pat, text)
-                        ):
-                            continue
                     if not re.search(pat, text):
+                        continue
+                    if not _cc_has_real_match(rs, cc, pat, text, desc):
                         continue
                     mapped = _CC_SCHEMA_MAP.get(cc, cc)
                     if mapped not in cc_found:

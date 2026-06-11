@@ -89,11 +89,6 @@ class HpLossDetectionTests(unittest.TestCase):
             "loses HP equal to 50% of non-excess healing; the HP loss cannot "
             "exceed 500% (ATK-based).",
         ),
-        (
-            "Mehira",
-            "Each hit causes a unit to lose 20% (ATK-based) + 3% HP. their HP "
-            "loss from this skill is reduced by 90%.",
-        ),
         ("Contess", "take 18% more HP loss."),
         (
             "Alna",
@@ -249,7 +244,7 @@ class ExtractionFixTests(unittest.TestCase):
         ]
         for tier, text in chunks:
             for pat, label in rs.BUFF_RULES:
-                if label != "Healing":
+                if label != rs.DIRECT_HEALING_LABEL:
                     continue
                 for scope in rs._buff_match_scopes(text, label, pat):
                     add_effect(effects, "buff", label, tier, text, scope=scope)
@@ -335,6 +330,204 @@ class ExtractionFixTests(unittest.TestCase):
         add_effect(effects, "damage", "Physical", "EX+15", upgrade)
         self.assertEqual(effects[0].targeting, "Arc")
         self.assertEqual(effects[0].numeric, 290.0)
+
+
+class CommonFailurePatternTests(unittest.TestCase):
+    def _effects(self, text: str, primary: str = "Physical") -> list:
+        effects: list = []
+        rs.analyze_text(effects, [], {}, [], "base", text, primary)
+        return effects
+
+    def test_execute_threshold_not_physical_damage(self):
+        text = (
+            "instantly defeat the marked enemy if her attack reduces the "
+            "enemy HP below 300% (ATK-based) + 30%."
+        )
+        self.assertEqual(rs.detect_damage_types(text, "Physical"), [])
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Execution debuff", labels)
+        self.assertNotIn("Physical", labels)
+
+    def test_dot_every_1s_without_primary_hit(self):
+        text = "dealing 50% (ATK-based) damage every 1s"
+        self.assertEqual(rs.detect_damage_types(text, "Magic"), ["DoT"])
+
+    def test_bewitching_is_charm(self):
+        text = "bewitching all enemies and making them rush mindlessly"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Charm", labels)
+
+    def test_put_to_sleep_not_bind(self):
+        text = "Enemies affected are put to sleep for 1s and cannot move or act"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Sleep", labels)
+        self.assertNotIn("Bind", labels)
+
+    def test_def_reduction_not_def_buff(self):
+        text = (
+            "suffer a 44% + 5% reduction in both Phys DEF and Magic DEF for 3s. "
+            "Increases the Phy DEF and Magic DEF reduction to 50% + 5%."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Phys DEF debuff", labels)
+        self.assertIn("Magic DEF debuff", labels)
+        self.assertNotIn("DEF buff", labels)
+
+    def test_mark_reference_not_marked_debuff(self):
+        text = "After the first enemy affected by her Mark of Judgement is defeated"
+        labels = [e.label for e in self._effects(text)]
+        self.assertNotIn("Marked target (focus fire)", labels)
+
+    def test_poison_debuff_on_venom(self):
+        text = "poisoned enemies take 80% (ATK-based) + 8% damage every second"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Poison debuff", labels)
+        self.assertIn("DoT", rs.detect_damage_types(text, "Physical"))
+
+    def test_on_hit_true_damage(self):
+        text = "dealing an extra 1.5% (HP-based) + 0.3% true damage with each hit"
+        self.assertIn("True damage", rs.detect_damage_types(text, "Physical"))
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("True damage", labels)
+
+    def test_recurring_strike_prefers_dot(self):
+        text = (
+            "repeatedly strike controlled enemies, dealing 80% (ATK-based) + 10% "
+            "damage each time"
+        )
+        self.assertEqual(rs.detect_damage_types(text, "Magic"), ["DoT"])
+
+    def test_scalar_upgrade_skips_new_damage(self):
+        effects = []
+        rs.analyze_text(
+            effects,
+            [],
+            {},
+            [],
+            "supreme",
+            "Increases damage to 65% (ATK-based)",
+            "Magic",
+        )
+        self.assertEqual(effects, [])
+
+    def test_chippy_normal_attack_damage(self):
+        text = "normal attacks have a 2% chance to deal 1000% (ATK-based) damage"
+        effects = self._effects(text)
+        damage = [e.label for e in effects if e.category == "damage"]
+        self.assertEqual(damage, ["Physical"])
+
+    def test_saida_trap_bind(self):
+        text = "preventing them from moving or acting"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Bind", labels)
+
+    def test_ulmus_root_bind(self):
+        text = "binds the target to the ground, increasing the knockdown duration"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Bind", labels)
+
+    def test_bryon_stun_placeholder_duration(self):
+        text = "stuns them for s when Bryon is being controlled"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Stun", labels)
+
+    def test_alna_blizzard_dot(self):
+        text = "deals 40% (ATK-based) damage to each enemy every 0.5s for 8s"
+        types = rs.detect_damage_types(text, "Physical")
+        self.assertEqual(types, ["DoT"])
+
+    def test_true_damage_keeps_explicit_label_with_max_hp(self):
+        text = "deals true damage equal to 8% + 0.5% of each target's max HP"
+        types = rs.detect_damage_types(text, "Physical")
+        self.assertIn("True damage", types)
+        self.assertIn("Max HP-based damage", types)
+
+    def test_athalia_self_atk_penalty_not_debuff(self):
+        text = (
+            "her unyielding resolve manifests as a lance that continues to attack "
+            "enemies on the battlefield, with her ATK reduced by 35%."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertNotIn("ATK debuff", labels)
+
+    def test_alsa_energy_cost_not_drain(self):
+        text = "Reduces the Energy cost to 400 when the Vigorous Slam buff is stacked"
+        labels = [e.label for e in self._effects(text)]
+        self.assertNotIn("Energy drain", labels)
+
+    def test_pandora_flee_in_fright(self):
+        text = "causing all units on the battlefield to flee in fright toward their own side"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Frighten", labels)
+
+    def test_antandra_targets_atk_debuff(self):
+        text = "reduces the targets' ATK by 20% for 6s"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK debuff", labels)
+
+    def test_cecia_absorb_def_debuff(self):
+        text = (
+            "Cecia absorbs 1.5% of Phys DEF and Magic DEF from the target every second."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Phys DEF debuff", labels)
+        self.assertIn("Magic DEF debuff", labels)
+
+    def test_gunnar_cannot_heal_not_shield_buff(self):
+        text = "enemies within the scorched area cannot heal or gain shields"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Healing debuff", labels)
+        self.assertNotIn("Shield", labels)
+
+    def test_cyran_atk_spd_not_atk_debuff(self):
+        text = "reduces their ATK SPD by 30% for 8s"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK SPD debuff", labels)
+        self.assertNotIn("ATK debuff", labels)
+
+    def test_indris_silencing_arrow_is_silence(self):
+        text = (
+            "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) "
+            "+ 20% damage. The shot disables the enemy's stat buffs for 8s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Silence", labels)
+
+    def test_mehira_whip_hp_loss(self):
+        text = (
+            "Each hit causes a unit to lose 20% (ATK-based) + 3% HP. "
+            "Mehira lashes her whip at all units, friend or foe."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("HP loss", labels)
+
+    def test_shemira_true_damage_without_atk_scalar(self):
+        text = (
+            "Shemira sacrifices 15% of her current HP to deal true damage to a "
+            "single enemy equal to 24% + 3% of their max HP."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("True damage", labels)
+
+    def test_marilee_conditional_true_damage(self):
+        text = "Her normal attacks deal true damage after reaching max stacks."
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("True damage", labels)
+
+    def test_carolina_frostbite_haste_debuff(self):
+        text = "inflicts a Frostbite stack"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Haste debuff", labels)
+
+    def test_pandora_atk_debuff_after_fright(self):
+        text = "When the fright effect wears off, their ATK is reduced by 10% for 8s."
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK debuff", labels)
+
+    def test_natsu_def_buff(self):
+        text = "Natsu increases his ATK and DEF by 27% + 3%"
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("DEF buff", labels)
 
 
 if __name__ == "__main__":

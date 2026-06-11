@@ -338,17 +338,39 @@ def _effect_match_scopes(text: str, pattern: str) -> list[str]:
     return [_clause_around(t, m.start()) for m in re.finditer(pattern, t)]
 
 
+def _dot_every_match_is_cooldown(text: str, start: int) -> bool:
+    """Skip 'once every Ns' proc cooldowns, not damage-over-time."""
+    before = text.lower()[max(0, start - 25) : start]
+    return bool(re.search(r"once every|trigger(?:ed)? once|can only affect", before))
+
+
 def _text_has_dot_damage(text: str) -> bool:
     """True when skill text describes damage-over-time, not proc cooldowns."""
     t = text.lower()
     if re.search(
         r"(?:deal(?:s|ing)?|dealing|takes?) damage.{0,80}per second|"
         r"damage equal to .{0,80}per second|"
-        r"damage per second",
+        r"damage per second|"
+        r"damage every \d+\.?\d*s\b|"
+        r"damage.{0,80}each time|"
+        r"repeatedly strike.{0,80}deal(?:s|ing)? .{0,40}damage|"
+        r"(?:los(?:e|es|ing)|losing) \d+(?:\.\d+)?(?:\s*%\s*)?"
+        r"(?:\([^)]*\)\s*)?hp per second|"
+        r"hp per second while",
         t,
     ):
         return True
-    for m in re.finditer(r"damage (?:every|per) (?:second|\d+\.?\d* s)", t, re.I):
+    for m in re.finditer(
+        r"(?:to )?(?:each |all )?enem(?:y|ies).{0,40}every \d+\.?\d*s\b", t, re.I
+    ):
+        if _dot_every_match_is_cooldown(t, m.start()):
+            continue
+        return True
+    if re.search(r"every 0\.\d+s", t):
+        return True
+    for m in re.finditer(
+        r"damage (?:every|per) (?:second|\d+\.?\d*\s*s\b|\d+\.?\d* s)", t, re.I
+    ):
         before = t[max(0, m.start() - 30) : m.start()]
         if _DOT_EXCLUDE_MIDDLE.search(before):
             continue
@@ -372,18 +394,28 @@ def _text_has_dot_damage(text: str) -> bool:
     return False
 
 
-def _text_has_enemy_direct_hp_loss(text: str) -> bool:
-    """True when enemies lose HP directly (pull drain, % HP loss), not scaling."""
+def _text_has_direct_hp_loss_hit(text: str) -> bool:
+    """True when a skill hit drains HP directly (ATK-based + flat % HP)."""
     t = text.lower()
-    if not re.search(r"\b(?:enemy|enemies|target|they)\b", t):
-        return False
     return bool(
         re.search(
-            r"\b(?:lose|loses|losing) \d+(?:\.\d+)?(?:\s*%\s*\+\s*"
-            r"\d+(?:\.\d+)?)?(?:\s*%\s*)? hp\b",
+            r"\b(?:lose|loses|losing|causes? .{0,30}to lose) "
+            r"\d+(?:\.\d+)?(?:\s*%\s*)?"
+            r"(?:\([^)]*\)\s*)?"
+            r"(?:\+\s*\d+(?:\.\d+)?(?:\s*%\s*)?)?\s*hp\b",
             t,
         )
     )
+
+
+def _text_has_enemy_direct_hp_loss(text: str) -> bool:
+    """True when enemies lose HP directly (pull drain, % HP loss), not scaling."""
+    t = text.lower()
+    if not re.search(
+        r"\b(?:enemy|enemies|target|they|unit|foe|friend or foe)\b", t
+    ):
+        return False
+    return _text_has_direct_hp_loss_hit(text)
 
 
 _RESTORE_BUFF_LABELS = frozenset(
@@ -438,6 +470,12 @@ def _buff_match_is_shield_modifier(t: str, label: str, match: re.Match[str]) -> 
     )
 
 
+def _buff_match_is_negative_context(t: str, label: str, match: re.Match[str]) -> bool:
+    """Skip buff regex hits inside denial phrasing (cannot heal/gain)."""
+    window = t[max(0, match.start() - 30) : match.start()]
+    return bool(re.search(r"\bcannot\b", window))
+
+
 def _blessing_is_summon_only(t: str) -> bool:
     """Blessing applies to allied summons, not general allies."""
     return bool(
@@ -481,6 +519,8 @@ def _buff_match_scopes(text: str, label: str, pattern: str) -> list[str]:
         if _buff_match_is_summon_only(t, label, m):
             continue
         if _buff_match_is_shield_modifier(t, label, m):
+            continue
+        if _buff_match_is_negative_context(t, label, m):
             continue
         if _buff_match_is_enemy_stat(t, label, m):
             continue
@@ -1317,18 +1357,25 @@ def extract_number(text: str, label: str = "") -> float | None:
                 return _pair_sum_amount(m)
         return None
     if label == "Magic DEF debuff":
-        if m := re.search(
-            r"reduc(?:e|es|ing) .{0,50}magic def by (\d+(?:\.\d+)?)\s*%", t, re.I
+        for pat in (
+            r"reduc(?:e|es|ing|tion) .{0,50}magic def by (\d+(?:\.\d+)?)\s*%",
+            r"reduc(?:e|es|ing|tion) in (?:both )?magic def.{0,20}"
+            r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%",
         ):
-            return float(m.group(1))
+            if m := re.search(pat, t, re.I):
+                return _pair_sum_amount(m) if m.lastindex and m.lastindex >= 2 else float(m.group(1))
         return None
     if label == "Phys DEF debuff":
-        if m := re.search(
-            r"reduc(?:e|es|ing) .{0,50}phys(?:ical)? def by (\d+(?:\.\d+)?)\s*%",
-            t,
-            re.I,
+        for pat in (
+            r"reduc(?:e|es|ing|tion) .{0,50}phys(?:ical)? def by "
+            r"(\d+(?:\.\d+)?)\s*%",
+            r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+reduction in "
+            r"both phys(?:ical)? def",
+            r"suffer a (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+"
+            r"reduction in both phys(?:ical)? def",
         ):
-            return float(m.group(1))
+            if m := re.search(pat, t, re.I):
+                return _pair_sum_amount(m) if m.lastindex and m.lastindex >= 2 else float(m.group(1))
         return None
     if label == "Haste debuff":
         if m := re.search(
@@ -1427,7 +1474,7 @@ _CC_LABEL_KEYWORDS: dict[str, str] = {
     "Frighten": r"frighten",
     "Silence": r"silenc",
     "Charm": r"charm",
-    "Sleep": r"asleep|hypnotiz",
+    "Sleep": r"asleep|hypnotiz|put(?:ting)? .{0,40}to sleep|sleep(?:s|ing)? for",
     "Bind": (
         r"immobiliz|entangl|imprison|unable to move|"
         r"bind(?:ing|s)?|freez(?:e|es|ing|ed)"
@@ -1839,6 +1886,7 @@ def add_effect(
 
 BUFF_RULES = [
     (r"grants? an ally brightfeather", "Ally empower buff"),
+    (r"grants? them exemption\b", "Exemption buff"),
     # Winter Warrior style: hero designates one ally for a named role
     (r"selects? an ally.{0,80}to become", "Ally empower buff"),
     # Immunity granted to the empowered ally
@@ -1853,6 +1901,10 @@ BUFF_RULES = [
     (r"gain an atk increase of \d+", "ATK buff"),
     (
         r"increas(?:e|es|ing) .{0,80}\batk\b(?:,|\s+and|\s+phys|\s+by|\s+during)",
+        "ATK buff",
+    ),
+    (
+        r"in .{0,50} mode.{0,40}increas(?:e|es|ing) (?:her |his |their )?atk\b",
         "ATK buff",
     ),
     # Enhance Force style: "gain a N% increase to their basic stats"
@@ -1899,6 +1951,10 @@ BUFF_RULES = [
     (r"increas(?:e|es|ing) atk spd", "ATK SPD buff"),
     # Haste buff: must be gaining Haste, not reducing it
     (r"increas(?:e|es|ing) .{0,60}?haste\b", "Haste buff"),
+    (
+        r"in .{0,50} mode.{0,40}increas(?:e|es|ing) (?:her |his |their )?haste\b",
+        "Haste buff",
+    ),
     (r"gains? \d+ haste|gain(?:s|ing)? extra \d+ haste", "Haste buff"),
     (
         r"boosting the damage of all allied summons|"
@@ -1913,7 +1969,12 @@ BUFF_RULES = [
     (r"extra max hp", "Max HP buff"),
     # DEF buff: only when the unit or allies gain DEF (not when enemies lose it)
     (
-        r"increas(?:e|es|ing) .{0,80}(?:phys(?:ical)?|magic) def",
+        r"increas(?:e|es|ing) .{0,40}\bdef by",
+        "DEF buff",
+    ),
+    (
+        r"increas(?:e|es|ing) .{0,80}(?:phys(?:ical)?|magic) def"
+        r"(?!.{0,20}reduc)",
         "DEF buff",
     ),
     # Shield: gains/granting/providing/converting into a shield
@@ -2156,21 +2217,48 @@ def detect_proximity_aura_buff_labels(hero: Hero) -> tuple[frozenset[str], float
 
 
 DEBUFF_RULES = [
+    # ATK SPD debuff before generic ATK (Cyran Mystic Recollection).
+    (r"reduc(?:e|es|ing|tion) .{0,30}atk spd", "ATK SPD debuff"),
     # ATK debuff (verb form: "reduces their ATK" / noun form: "reduction in their ATK")
-    (r"reduc(?:e|es|ing|tion) (?:in )?(?:the )?(?:target'?s?|their|enemy'?s?|enemies') .{0,10}atk\b", "ATK debuff"),
-    (r"reduc(?:e|es|ing) .{0,5}atk by", "ATK debuff"),
-    (r"\batk\b.{0,20}reduc(?:e|ed|es|ing|tion)", "ATK debuff"),
-    # DEF debuffs: "reducing their/the target's/enemies' Phys/Magic DEF"
     (
-        r"reduc(?:e|es|ing) .{0,40}phys(?:ical)? & magic def",
+        r"reduc(?:e|es|ing|tion) (?:in )?(?:the )?"
+        r"(?:target'?s?|targets'?|their|enemy'?s?|enemies') .{0,10}atk(?! spd)\b",
+        "ATK debuff",
+    ),
+    (r"reduc(?:e|es|ing) .{0,5}atk(?! spd) by", "ATK debuff"),
+    (r"\batk(?! spd)\b.{0,20}reduc(?:e|ed|es|ing|tion)", "ATK debuff"),
+    (
+        r"absorb(?:s|ing)? \d+(?:\.\d+)?% of phys(?:ical)? def.{0,40}from the target",
         "Phys DEF debuff",
     ),
     (
-        r"reduc(?:e|es|ing) .{0,40}phys(?:ical)? & magic def",
+        r"absorb(?:s|ing)? \d+(?:\.\d+)?% of phys(?:ical)? def and magic def"
+        r".{0,40}from the target",
         "Magic DEF debuff",
     ),
-    (r"reduc(?:e|es|ing) .{0,30}magic def", "Magic DEF debuff"),
-    (r"reduc(?:e|es|ing) .{0,30}phys(?:ical)? def", "Phys DEF debuff"),
+    (r"inflict(?:s|ing)? (?:a )?frostbite", "Haste debuff"),
+    (r"cannot heal or gain shields?", "Healing debuff"),
+    # DEF debuffs: "reducing their/the target's/enemies' Phys/Magic DEF"
+    (
+        r"reduc(?:e|es|ing|tion) .{0,50}(?:phys(?:ical)? & magic def|"
+        r"both phys(?:ical)? def and magic def)",
+        "Phys DEF debuff",
+    ),
+    (
+        r"reduc(?:e|es|ing|tion) .{0,50}(?:phys(?:ical)? & magic def|"
+        r"both phys(?:ical)? def and magic def)",
+        "Magic DEF debuff",
+    ),
+    (
+        r"reduc(?:e|es|ing|tion) in (?:both )?phys(?:ical)? def",
+        "Phys DEF debuff",
+    ),
+    (
+        r"reduc(?:e|es|ing|tion) in (?:both )?magic def",
+        "Magic DEF debuff",
+    ),
+    (r"reduc(?:e|es|ing|tion) .{0,30}magic def", "Magic DEF debuff"),
+    (r"reduc(?:e|es|ing|tion) .{0,30}phys(?:ical)? def", "Phys DEF debuff"),
     # Energy drain (enemy only — not own summon/armor "loses energy")
     (
         r"drain(?:s|ing)? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy"
@@ -2218,7 +2306,12 @@ DEBUFF_RULES = [
         r"takes? damage every second",
         "DoT",
     ),
-    (r"reduc(?:e|es|ing) .{0,20}max hp\b", "Max HP debuff"),
+    (
+        r"(?:poison(?:ed|s)? enemies|inflict(?:s|ing)? (?:a )?poison|"
+        r"venom(?:ous)? (?:dart|surge|debuff)|dart poison)",
+        "Poison debuff",
+    ),
+    (r"reduc(?:e|es|ing|tion) .{0,20}max hp\b", "Max HP debuff"),
     # Crit Resist debuff
     (r"reduc(?:e|es|ing) .{0,20}crit resist", "Crit Resist debuff"),
     # Vulnerable debuff – only the application, not "not affected by Vulnerable"
@@ -2231,7 +2324,7 @@ DEBUFF_RULES = [
     # Marked target: mark placed on an enemy is a debuff from the
     # enemy's perspective (focus fire, reduced effective defence, etc.)
     (
-        r"mark of |places .{0,40} mark on|forest mark|"
+        r"places? (?:her |his |their )?(?:\w+ ){0,4}mark on|forest mark|"
         r"notice to mark|noticed enemy|"
         r"prioritizes attacking the .{0,30}marked",
         "Marked target (focus fire)",
@@ -2245,7 +2338,7 @@ CC_RULES = [
         "Knock up",
     ),
     (
-        r"knock(?:s|ing)? (?:the enemy|an enemy|them) down|"
+        r"knock(?:s|ing)? (?:the enemy|an enemy|them|the target) down|"
         r"knock down an enemy|knocked down|slam(?:s|ming)? them down|"
         r"into the air and down|and down for",
         "Knock down",
@@ -2257,13 +2350,19 @@ CC_RULES = [
         "Knock back",
     ),
     (r"frighten(?:ing|ed|s)?", "Frighten"),
+    (r"flee in fright|fright effect", "Frighten"),
     # "(?<! of )" prevents skill-name references like "Echo of Silence" from
     # being falsely flagged as a Silence CC applied to a target.
     (r"(?<! of )silenc(?:e|es|ed|ing)", "Silence"),
     # Dunlingr Spellbind order: all non-boss units unable to cast ultimates.
     (r"spellbind.{0,60}unable to cast", "Silence"),
+    (r"bewitch(?:ing|ed|es)?(?: all enemies)?", "Charm"),
     (r"charm(?:ed|s|ing)?", "Charm"),
-    (r"\basleep\b|hypnotiz", "Sleep"),
+    (
+        r"\basleep\b|hypnotiz|put(?:ting)? .{0,40}to sleep|"
+        r"(?:^|[^\w])sleep(?:s|ing)? for \d",
+        "Sleep",
+    ),
     (
         r"freez(?:e|es|ing|ed) (?!time itself)(?!and defeats)",
         "Bind",
@@ -2272,7 +2371,9 @@ CC_RULES = [
     # Exclude self-restrictions ("she/he cannot move or act") – only enemy CC.
     # Python lookbehind must be fixed-width, so list each pronoun separately.
     (
-        r"(?<!she )(?<!he )(?<!it )cannot move or act|unable to move or act",
+        r"(?<!she )(?<!he )(?<!it )cannot move or (?:act|attack)|"
+        r"unable to move or (?:act|attack)|"
+        r"preventing them from moving or act(?:ing)?",
         "Bind",
     ),
     (r"entangl|imprison(?:ing|s)\b", "Bind"),
@@ -3120,7 +3221,9 @@ def _has_instant_atk_damage(text: str) -> bool:
         if re.search(r"hp recovered|hp amount equal to|healing|healed", before):
             continue
         after = t[m.end() : m.end() + 90]
-        if re.search(r"per second|every second|every 0\.\d", after):
+        if re.search(
+            r"per second|every second|every 0\.\d|every \d+\.?\d*s\b", after
+        ):
             continue
         if re.search(r"\bdamage\b", after):
             return True
@@ -3180,6 +3283,9 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+hp for every tile",
             r"hp lost per tile pulled to (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)",
             r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+hp for every",
+            r"(?:lose|loses|causes? .{0,30}to lose) "
+            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s*hp\b",
         ]
     elif dmg_type == "True damage":
         patterns = [
@@ -3198,6 +3304,9 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)\s*true\s+damage",
             r"dealing\s+(\d+(?:\.\d+)?)\s*%\s*\(hp-based\)\s+true\s+damage",
             r"(\d+(?:\.\d+)?)\s*%\s+true\s+damage",
+            r"deal true damage.{0,80}equal to\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s+of (?:their|the target's|each target's) max hp",
+            r"true damage equal to (\d+(?:\.\d+)?)\s*%\s+of max hp",
         ]
     elif dmg_type == "DoT":
         patterns = [
@@ -3251,6 +3360,8 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             if _is_damage_cap_context(text.lower(), m.start()):
                 continue
             return float(m.group(1))
+        if re.search(r"\btrue damage\b", text, re.I):
+            return 1.0
     return None
 
 
@@ -3439,6 +3550,9 @@ def _is_non_dealt_damage_context(text: str) -> bool:
         r"(?:magic|physical|ranged) damage taken|"
         r"damage taken is increased|"
         r"reduc(?:e|es|ing) .{0,40}damage dealt by|"
+        r"reduc(?:e|es|ing) .{0,40}(?:the )?(?:enemy'?s?|target'?s?) hp below|"
+        r"hp below \d+(?:\.\d+)?%\s*\(atk-based\)|"
+        r"instantly defeat.{0,120}hp below|"
         r"bonus damage ratio|"
         r"damage of all allied summons|"
         r"snowballs' damage by|"
@@ -3482,10 +3596,49 @@ def _is_non_dealt_damage_context(text: str) -> bool:
             r"snowballs' damage by|"
             r"deal damage times|"
             r"cannot exceed .{0,30}\(atk-based\)|"
+            r"damage is capped at|capped at \d+(?:\.\d+)?%\s*\(atk-based\)|"
             r"increase for magic damage taken|"
             r"damage dealt by an isolated enemy",
             t,
         )
+    )
+
+
+def _primary_damage_is_true_scored(text: str) -> bool:
+    """True when (ATK-based) damage is part of an explicit true-damage phrase."""
+    t = text.lower()
+    if re.search(r"\d+(?:\.\d+)?%\s*\(atk-based\).{0,40}true damage", t):
+        return True
+    if re.search(r"\d+(?:\.\d+)?%\s*\(hp-based\).{0,40}true damage", t):
+        return True
+    return bool(
+        re.search(r"\btrue damage\b", t)
+        and re.search(r"\(atk-based\)|\(hp-based\)", text, re.I)
+        and not re.search(
+            r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\)\s*\+\s*"
+            r"\d+(?:\.\d+)?%\s+damage.{0,40}(?:and|plus|then).{0,40}true damage",
+            t,
+        )
+    )
+
+
+def _is_damage_scalar_upgrade_chunk(text: str) -> bool:
+    """Tier-upgrade line that only bumps damage numbers, not a new hit."""
+    t = _normalize_effect_text(text).lower().strip()
+    if re.search(r"\bdealing \d+(?:\.\d+)?%\s*\(atk-based\)", t):
+        return False
+    if re.search(r"\bdeals? \d+(?:\.\d+)?%\s*\(atk-based\)", t):
+        return False
+    if re.search(r"\bcast(?:s|ing)?\b|\bsummon(?:s|ing)?\b", t):
+        return False
+    return bool(
+        re.search(
+            r"increases? (?:the )?(?:skill |impact |extra |counterattack |"
+            r"slash |damage of the charged arrow |damage dealt by )?"
+            r"(?:damage|damage dealt)(?: (?:dealt|by|of|to))?.{0,60}to \d+",
+            t,
+        )
+        or re.search(r"increase (?:the )?slam damage to \d+", t)
     )
 
 
@@ -3495,27 +3648,38 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
     t = text.lower()
     types: list[str] = []
     if re.search(r"\btrue damage\b", t):
-        if _text_has_lost_hp_damage(text):
+        types.append("True damage")
+        if _text_has_lost_hp_damage(text) and "HP loss" not in types:
             types.append("HP loss")
-        elif _text_has_max_hp_damage(text):
+        if _text_has_max_hp_damage(text) and "Max HP-based damage" not in types:
             types.append("Max HP-based damage")
-        else:
-            types.append("True damage")
     if _text_has_lost_hp_damage(text) and "HP loss" not in types:
         types.append("HP loss")
     if _text_has_enemy_direct_hp_loss(text) and "HP loss" not in types:
         types.append("HP loss")
+    if _text_has_direct_hp_loss_hit(text) and "HP loss" not in types:
+        types.append("HP loss")
     if _text_has_max_hp_damage(text) and "Max HP-based damage" not in types:
         types.append("Max HP-based damage")
     non_dealt = _is_non_dealt_damage_context(text)
+    hp_loss_hit = _text_has_direct_hp_loss_hit(text)
     if re.search(r"\(atk-based\)", text, re.I) and not non_dealt:
-        if _has_instant_atk_damage(text) or not _text_has_dot_damage(text):
-            types.append(primary_dmg)
+        if not _primary_damage_is_true_scored(text):
+            if hp_loss_hit:
+                pass
+            elif _has_instant_atk_damage(text) or not _text_has_dot_damage(text):
+                types.append(primary_dmg)
     if re.search(r"\bmagic damage\b", t) and not non_dealt:
         if not re.search(r"magic damage taken", t):
             types.append("Magic")
     if _text_has_dot_damage(text):
         types.append("DoT")
+    if primary_dmg in types and "DoT" in types and not _has_instant_atk_damage(text):
+        types = [dt for dt in types if dt != primary_dmg]
+    if primary_dmg in types and "DoT" in types and re.search(
+        r"each time|repeatedly strike", t
+    ):
+        types = [dt for dt in types if dt != primary_dmg]
     if (
         not types
         and "damage" in t
@@ -3555,7 +3719,18 @@ def _skill_chunk_has_enemy_damage(text: str) -> bool:
         t,
     ) and re.search(
         r"\b(?:the target|an enemy|enemies|enemy|target'?s?|weakest enemy|"
-        r"frontmost enemy|rearmost enemy|nearby enemy|foes?)\b",
+        r"frontmost enemy|rearmost enemy|nearby enemy|foes?|"
+        r"them|affected enemies|enemies affected|entangled|hypnotized)\b",
+        t,
+    ):
+        return True
+    if re.search(r"\bdealing?\b", t) and re.search(r"\bdamage\b", t) and re.search(
+        r"\b(?:them|entangled|affected enemies|enemies affected|hypnotized)\b",
+        t,
+    ):
+        return True
+    if re.search(r"\btrue damage\b", t) and re.search(
+        r"(?:each hit|every hit|with each hit|normal attacks?)",
         t,
     ):
         return True
@@ -3569,6 +3744,10 @@ def _skill_chunk_has_enemy_damage(text: str) -> bool:
         return True
     if _text_has_max_hp_damage(text) and _chunk_targets_enemies(text) and re.search(
         r"\b(?:deal(?:s|t|ing)?|dealing|take(?:s)?|loses?)\b", t
+    ):
+        return True
+    if _text_has_direct_hp_loss_hit(text) and re.search(
+        r"\b(?:friend or foe|enem|foe|target|unit)\b", t
     ):
         return True
     return False
@@ -3654,8 +3833,22 @@ def _chunk_deals_enemy_damage(text: str, primary_dmg: str = "Physical") -> bool:
         r"\b(?:voidling|ghost|turret|snowball|laser turret|gun turret)\b", t
     ) and re.search(r"\b(?:attack|deal|fire).{0,80}\benem", t):
         return True
+    if re.search(r'\bdeal(?:s|ing|t)?\b.{0,80}(?:true )?damage\b', t):
+        if re.search(r"\btarget'?s?|enem(?:y|ies)|them\b", t):
+            if not _skill_chunk_has_ally_only_damage(text):
+                return True
+    if re.search(
+        r"\bnormal attacks?\b.{0,80}\bdeal(?:s|ing|t)? \d+(?:\.\d+)?%", t
+    ):
+        return True
     if re.search(r"absorb(?:s|ing)? \d+%.{0,80}enemy", t):
         return True
+    if _text_has_dot_damage(text) and re.search(
+        r"\bdealing?\b|\btake(?:s)? damage\b|\blos(?:e|es|ing) \d+%",
+        t,
+    ):
+        if not _skill_chunk_has_ally_only_damage(text):
+            return True
     if re.search(
         r"increas(?:e|es|ing) .{0,80}damage .{0,40}to \d+(?:\.\d+)?% \(atk-based\)",
         t,
@@ -3682,7 +3875,27 @@ def _debuff_match_is_caster_energy_cost(clause: str) -> bool:
         r"\b(?:enemy|enemies|target|host)\b", t
     ):
         return True
+    if re.search(r"reduc(?:e|es|ing) the energy cost\b", t):
+        return True
     return False
+
+
+def _debuff_match_is_self_atk_penalty(clause: str) -> bool:
+    """True when ATK reduction applies to the caster/summon, not an enemy."""
+    t = clause.lower()
+    if re.search(r"\btheir atk is reduc", t):
+        return False
+    if re.search(
+        r"\b(?:with )?(?:her|his) atk reduc(?:e|ed|es|ing)|"
+        r"\b(?:her|his) atk.{0,15}reduc(?:e|ed|es|ing)",
+        t,
+    ):
+        return True
+    if re.search(
+        r"\b(?:enemy|enemies|target|the target|foe|foes)\b", t
+    ):
+        return False
+    return bool(re.search(r"\b(?:her|his|own) atk\b", t))
 
 
 def _debuff_match_is_ally_atk_penalty(clause: str) -> bool:
@@ -3723,7 +3936,7 @@ def _cc_cannot_move_targets_enemy(scope: str) -> bool:
     t = scope.lower()
     if not re.search(r"cannot move or act|unable to move or act", t):
         return True
-    return bool(re.search(r"\b(?:enemy|enemies|target|foe|them|hypnotized)\b", t))
+    return bool(re.search(r"\b(?:enemy|enemies|target|foe|them|hypnotized|affected)\b", t))
 
 
 def _cc_sleep_is_caster_owned(clause: str) -> bool:
@@ -3763,8 +3976,8 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
     """True when a CC regex matched a conditional or mislabeled clause."""
     t = scope.lower()
     full = text.lower()
-    if label == "Silence" and re.search(r"silencing arrow|silencing shot", t):
-        return True
+    if label == "Bind" and re.search(r"\bbinds the (?:target|enemy|them)\b", t):
+        return False
     if label == "Bind" and re.search(r"immobilized target if", t):
         return True
     if label == "Charm" and re.search(
@@ -3781,12 +3994,13 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
     ) and not re.search(r"imprison(?:ing|s) (?:them|the enemy|enemies|\d)", t):
         return True
     if label in ("Knock down", "Bind") and re.search(
-        r"knocked down, knocked into the air or affected by other displacement|"
-        r"binds the target to the ground, increasing the knockdown dur",
+        r"knocked down, knocked into the air or affected by other displacement",
         t,
     ):
         return True
-    if label == "Stun" and re.search(r"stuns them for s\b", t):
+    if label == "Stun" and re.search(
+        r"stuns them for s\b", t
+    ) and re.search(r"<[^>]+>|&(?:lt|gt);", full):
         return True
     if label == "Sleep" and re.search(
         r"target(?:ing|s)? (?:the )?(?:farthest )?hypnotized enem", t
@@ -3845,7 +4059,12 @@ def analyze_text(
         for scope in _effect_match_scopes(text, pat):
             # Skip ATK debuff matches that reduce an ally's own bonus stat
             # rather than debuffing an enemy (e.g. Elijah & Lailah bond penalty).
-            if label == "ATK debuff" and _debuff_match_is_ally_atk_penalty(scope):
+            if label == "ATK debuff" and (
+                _debuff_match_is_ally_atk_penalty(scope)
+                or _debuff_match_is_self_atk_penalty(scope)
+            ):
+                continue
+            if label == "ATK debuff" and re.search(r"\batk spd\b", scope.lower()):
                 continue
             if label == "Energy drain" and _debuff_match_is_caster_energy_cost(
                 scope
@@ -3882,10 +4101,16 @@ def analyze_text(
                 if re.search(r"hypnotiz|asleep|\bsleep\b", scope.lower()):
                     continue
             if label == "Bind" and re.search(
-                r"cannot move or act|unable to move or act", scope.lower()
+                r"cannot move or (?:act|attack)|unable to move or (?:act|attack)",
+                scope.lower(),
             ):
                 if not _cc_cannot_move_targets_enemy(scope):
                     continue
+            if label == "Bind" and re.search(
+                r"put(?:ting)? .{0,40}to sleep|(?:^|[^\w])sleep(?:s|ing)? for \d",
+                scope.lower(),
+            ):
+                continue
             add_effect(
                 effects,
                 "cc",
@@ -3897,19 +4122,22 @@ def analyze_text(
             )
 
     if _chunk_deals_enemy_damage(text, primary_dmg):
-        tgt = detect_damage_targeting(text)
-        for d in detect_damage_types(text, primary_dmg):
-            if _extract_damage_amount(text, d) is None:
-                continue
-            damage_map.setdefault(d, set()).add(tgt)
-            add_effect(
-                effects,
-                "damage",
-                d,
-                tier,
-                text,
-                source_section=source_section,
-            )
+        if _is_damage_scalar_upgrade_chunk(text):
+            _apply_scalar_upgrades(effects, text, primary_dmg)
+        else:
+            tgt = detect_damage_targeting(text)
+            for d in detect_damage_types(text, primary_dmg):
+                if _extract_damage_amount(text, d) is None:
+                    continue
+                damage_map.setdefault(d, set()).add(tgt)
+                add_effect(
+                    effects,
+                    "damage",
+                    d,
+                    tier,
+                    text,
+                    source_section=source_section,
+                )
 
     for stat, pat in [
         # ATK: scaling gains only — not every (ATK-based) damage line.
@@ -4015,10 +4243,21 @@ def _apply_scalar_upgrades(
 
     for dmg_label in {
         e.label for e in effects if e.category == "damage"
-    } | set(detect_damage_types(text, primary_dmg)):
+    }:
         amt = _extract_damage_amount(text, dmg_label)
         if amt is not None:
             bump("damage", dmg_label, amt)
+    if not any(e.category == "damage" for e in effects):
+        for dmg_label in detect_damage_types(text, primary_dmg):
+            amt = _extract_damage_amount(text, dmg_label)
+            if amt is not None:
+                bump("damage", dmg_label, amt)
+    elif any(e.label == "True damage" for e in effects if e.category == "damage"):
+        amt = _extract_damage_amount(text, "True damage")
+        if amt is None:
+            amt = _extract_damage_amount(text, primary_dmg)
+        if amt is not None:
+            bump("damage", "True damage", amt)
 
     for heal_label in (*HP_RECOVERY_LABELS, LEGACY_DIRECT_HEALING_LABEL):
         amt = extract_number(text, heal_label)
