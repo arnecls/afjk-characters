@@ -6,6 +6,17 @@
   <meta name="github-pages-base" content="/afjk-characters/">
   <title>AFK Journey Heroes</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("afjk-welcome-dismissed") !== "1") {
+          document.documentElement.classList.add("welcome-warning-pending");
+        }
+      } catch (e) {
+        document.documentElement.classList.add("welcome-warning-pending");
+      }
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -62,6 +73,40 @@
       Meta tiers from <a href="https://www.prydwen.gg/afk-journey/tier-list">Prydwen</a>
     </p>
   </footer>
+
+  <div id="welcome-warning" class="welcome-warning">
+    <div class="welcome-warning-scrim" aria-hidden="true"></div>
+    <div
+      class="welcome-warning-dialog"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="welcome-warning-title"
+      aria-describedby="welcome-warning-body"
+    >
+      <div class="welcome-warning-header">
+        <span class="welcome-warning-icon" aria-hidden="true">⚠️</span>
+        <h2 id="welcome-warning-title" class="welcome-warning-title">Early preview</h2>
+      </div>
+      <div id="welcome-warning-body" class="welcome-warning-body">
+        <p>
+          This project is still young. The automated skill analysis on this site
+          is experimental and can be wrong or incomplete.
+        </p>
+        <p>
+          If you spot incorrect data, please
+          <a
+            href="https://github.com/arnecls/afjk-characters/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+          >open a GitHub issue</a>
+          so we can fix it.
+        </p>
+      </div>
+      <button type="button" class="welcome-warning-btn" id="welcome-warning-dismiss">
+        I understand
+      </button>
+    </div>
+  </div>
 
   <script src="js/app.js"></script>
 </body>

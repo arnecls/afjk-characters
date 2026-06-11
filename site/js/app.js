@@ -31,6 +31,84 @@
   const headerBack = document.getElementById("header-back");
   const viewToggle = document.querySelector(".view-toggle");
   const siteHeader = document.querySelector(".site-header");
+  const WELCOME_WARNING_KEY = "afjk-welcome-dismissed";
+
+  function initWelcomeWarning() {
+    const root = document.getElementById("welcome-warning");
+    if (!root) {
+      return;
+    }
+    if (localStorage.getItem(WELCOME_WARNING_KEY) === "1") {
+      root.hidden = true;
+      document.documentElement.classList.remove("welcome-warning-pending");
+      return;
+    }
+
+    const dismissBtn = document.getElementById("welcome-warning-dismiss");
+    const blocked = [
+      siteHeader,
+      document.getElementById("app"),
+      document.querySelector(".site-footer"),
+    ].filter(Boolean);
+
+    function setBlocked(block) {
+      root.classList.toggle("is-open", block);
+      document.body.classList.toggle("welcome-warning-open", block);
+      document.documentElement.classList.toggle("welcome-warning-pending", block);
+      blocked.forEach(function (el) {
+        if (block) {
+          el.setAttribute("inert", "");
+          el.setAttribute("aria-hidden", "true");
+        } else {
+          el.removeAttribute("inert");
+          el.removeAttribute("aria-hidden");
+        }
+      });
+    }
+
+    function blockSitePointer(e) {
+      if (root.hidden) {
+        return;
+      }
+      if (root.contains(e.target)) {
+        return;
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      if (typeof e.stopImmediatePropagation === "function") {
+        e.stopImmediatePropagation();
+      }
+    }
+
+    function dismissWelcomeWarning() {
+      root.hidden = true;
+      setBlocked(false);
+      try {
+        localStorage.setItem(WELCOME_WARNING_KEY, "1");
+      } catch (e) {
+        /* ignore quota / private-mode errors */
+      }
+    }
+
+    dismissBtn.addEventListener("click", dismissWelcomeWarning);
+
+    ["click", "mousedown", "touchstart"].forEach(function (type) {
+      document.addEventListener(type, blockSitePointer, true);
+    });
+
+    root.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+      }
+      if (e.key === "Tab") {
+        e.preventDefault();
+        dismissBtn.focus();
+      }
+    });
+
+    setBlocked(true);
+    dismissBtn.focus();
+  }
 
   function updateHeaderNav(inDetail) {
     filtersEl.classList.toggle("hidden", inDetail);
@@ -4153,6 +4231,7 @@
     });
   })();
 
+  initWelcomeWarning();
   redirectLegacyHeroPath();
   loadHeroData();
   loadCsvData();
