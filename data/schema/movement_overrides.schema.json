@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/movement_overrides.schema.json",
+  "title": "Movement overrides",
+  "description": "Optional per-hero movement labels keyed by display name.",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/$defs/movementOverride"
+  },
+  "$defs": {
+    "movementLabel": {
+      "type": "string",
+      "enum": [
+        "stationary",
+        "mostly stationary",
+        "moving",
+        "high movement",
+        "moving / stationary"
+      ]
+    },
+    "movementOverride": {
+      "type": "object",
+      "required": ["movement"],
+      "additionalProperties": false,
+      "properties": {
+        "movement": {
+          "$ref": "#/$defs/movementLabel"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

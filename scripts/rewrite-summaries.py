@@ -34,6 +34,8 @@ SKILL_SUMMARY_FILE = ROOT / "data" / "heroes_data_skill_summary.json"
 PLACEMENT_CONSTRAINT_OVERRIDES_FILE = (
     ROOT / "data" / "placement_constraint_overrides.json"
 )
+MOVEMENT_OVERRIDES_FILE = ROOT / "data" / "movement_overrides.json"
+BEHAVIOR_TAGS_FILE = ROOT / "data" / "hero_behavior_tags.json"
 
 PLACEMENT_KIND_LABELS = {
     "ally_placement": "Ally placement",
@@ -5563,6 +5565,15 @@ BRIEF_REPOSITION_RES: tuple[re.Pattern[str], ...] = (
 
 NORMAL_ATTACK_RE = re.compile(r"\bnormal attack", re.I)
 
+FRONTAL_ARC_RANGE_RE = re.compile(
+    r"within (?:a )?(\d+(?:\.\d+)?)-tile frontal arc",
+    re.I,
+)
+
+MELEE_HERO_CLASSES = frozenset({"warrior", "rogue", "tank"})
+STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
+SUMMONER_STATIONARY_TAG = "summoner"
+
 # Energy assumed to fill at this rate (energy/second).
 ENERGY_FILL_RATE: float = 100.0
 ULT_ENERGY_CAPACITY: float = 1000.0
@@ -5895,6 +5906,16 @@ def _movement_range_candidates(
     return normal_attack if normal_attack else ranged
 
 
+def _effective_movement_range(skill: SkillMeta) -> float:
+    """Listed Skill Range capped by frontal-arc depth when present."""
+    assert skill.range_tiles is not None
+    text = _hero_movement_text(skill.text)
+    match = FRONTAL_ARC_RANGE_RE.search(text)
+    if match:
+        return float(match.group(1))
+    return skill.range_tiles
+
+
 def _weighted_attack_range(skills: list[SkillMeta]) -> float | None:
     candidates = _movement_range_candidates(skills)
     if not candidates:
@@ -5912,7 +5933,7 @@ def _weighted_attack_range(skills: list[SkillMeta]) -> float | None:
             w = 1.0 / skill.cooldown
         else:
             w = max_freq
-        weighted_sum += skill.range_tiles * w
+        weighted_sum += _effective_movement_range(skill) * w
         weight_total += w
 
     return weighted_sum / weight_total if weight_total else None
@@ -5973,6 +5994,65 @@ def compute_movement(skills: list[SkillMeta]) -> tuple[str, str]:
     if note:
         return label, note
     return label, f"avg attack range {avg:.1f} tiles"
+
+
+def _load_movement_overrides() -> dict[str, dict[str, str]]:
+    if not MOVEMENT_OVERRIDES_FILE.exists():
+        return {}
+    return json.loads(MOVEMENT_OVERRIDES_FILE.read_text(encoding="utf-8"))
+
+
+def _load_behavior_tags() -> dict[str, frozenset[str]]:
+    if not BEHAVIOR_TAGS_FILE.exists():
+        return {}
+    raw = json.loads(BEHAVIOR_TAGS_FILE.read_text(encoding="utf-8"))
+    return {name: frozenset(tags) for name, tags in raw.items()}
+
+
+def _melee_movement_floor_skipped(
+    behavior_tags: frozenset[str],
+    skills: list[SkillMeta],
+) -> bool:
+    if STATIC_TILE_BUFFER_TAG in behavior_tags:
+        return True
+    if (
+        SUMMONER_STATIONARY_TAG in behavior_tags
+        and _weighted_attack_range(skills) is None
+    ):
+        return True
+    return False
+
+
+def _apply_melee_movement_floor(
+    label: str,
+    note: str,
+    *,
+    hero_class: str,
+    behavior_tags: frozenset[str],
+    skills: list[SkillMeta],
+) -> tuple[str, str]:
+    """Warrior/rogue/tank default to moving unless static/summon exceptions."""
+    if hero_class not in MELEE_HERO_CLASSES:
+        return label, note
+    if label not in ("stationary", "mostly stationary"):
+        return label, note
+    if _melee_movement_floor_skipped(behavior_tags, skills):
+        return label, note
+    if note.startswith("avg attack range") or note == "no finite attack range":
+        return "moving", "melee class"
+    return "moving", note
+
+
+def _apply_movement_override(
+    label: str,
+    note: str,
+    display_name: str,
+    overrides: dict[str, dict[str, str]],
+) -> tuple[str, str]:
+    entry = overrides.get(display_name)
+    if not entry:
+        return label, note
+    return entry.get("movement", label), entry.get("note", note)
 
 
 def _skill_by_section(
@@ -7141,6 +7221,7 @@ def build_behavior_for_heroes(
     heroes2_text: str | None = None,
     heroes_text: str | None = None,
     role_category_by_title: dict[str, str] | None = None,
+    hero_class_by_title: dict[str, str] | None = None,
 ) -> dict[str, HeroBehavior]:
     """Compute movement and casting speed for each hero title."""
     h2_text = heroes2_text if heroes2_text is not None else (
@@ -7171,6 +7252,9 @@ def build_behavior_for_heroes(
     )
     signature_by_display = _load_signature_categories()
     placement_overrides = _load_placement_constraint_overrides()
+    movement_overrides = _load_movement_overrides()
+    behavior_tags = _load_behavior_tags()
+    class_by_title = hero_class_by_title or {}
     damage_thresholds = build_section_damage_thresholds(
         heroes, skills_by_title, role_category_by_title
     )
@@ -7185,6 +7269,18 @@ def build_behavior_for_heroes(
         avg_range = _weighted_attack_range(skills)
         display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
         curated = curated_display_name(display)
+        hero_class = class_by_title.get(hero.title, "").lower()
+        tags = behavior_tags.get(curated, frozenset())
+        movement, note = _apply_melee_movement_floor(
+            movement,
+            note,
+            hero_class=hero_class,
+            behavior_tags=tags,
+            skills=skills,
+        )
+        movement, note = _apply_movement_override(
+            movement, note, curated, movement_overrides
+        )
         speeds = per_skill_speeds.get(hero.title, {})
         raw_sig = signature_by_display.get(curated)
         defining = None

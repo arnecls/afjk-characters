@@ -12603,8 +12603,8 @@
         "healing"
       ],
       "behavior": {
-        "movement": "stationary",
-        "movement_note": "avg attack range 6.4 tiles",
+        "movement": "moving",
+        "movement_note": "melee class",
         "casting_speed": "slow",
         "signature_skill_name": "Echo of Silence",
         "signature_skill_is_ult": true,
@@ -34931,7 +34931,7 @@
       ],
       "behavior": {
         "movement": "mostly stationary",
-        "movement_note": "pulls enemies",
+        "movement_note": "pulls enemies; moves on failed pull",
         "casting_speed": "fast",
         "signature_skill_name": "Phantom Chains",
         "signature_skill_is_ult": false,
@@ -35474,8 +35474,8 @@
         "magic_def"
       ],
       "behavior": {
-        "movement": "stationary",
-        "movement_note": "avg attack range 11.0 tiles",
+        "movement": "moving",
+        "movement_note": "avg attack range 3.0 tiles",
         "casting_speed": "average",
         "signature_skill_name": "Lightning Fire Dragon's Roar/Fire Dragon King's Roar",
         "signature_skill_is_ult": true,
@@ -35484,7 +35484,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "average",
-        "avg_attack_range": 11.0,
+        "avg_attack_range": 3.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {

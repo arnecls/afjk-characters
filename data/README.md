@@ -14,6 +14,7 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 | [hero_behavior_tags.json](hero_behavior_tags.json) | **AI-generated** | Combat-role tags per hero for replacement scoring. |
 | [heroes_data_skill_summary.json](heroes_data_skill_summary.json) | **AI-generated** | Short mechanic summary per hero and skill category (`ultimate`, `skill1`–`skill5`). Joined to processed skills by `category`; shown in Skill overview subsections. |
 | [placement_constraint_overrides.json](placement_constraint_overrides.json) | **Manual configuration** | Optional overrides when placement/composition rules cannot be parsed from skill text. |
+| [movement_overrides.json](movement_overrides.json) | **Manual configuration** | Optional per-hero movement labels when automatic detection is wrong. |
 | [heroes_config.json](heroes_config.json) | **Manual configuration** | Tunables: synergy weights, display limits, casting-speed thresholds, replacement scoring, proximity-aura reach (`proximity_synergy`). |
 | [schema/](schema/) | **Manual configuration** | JSON Schema definitions used to validate processed data and tag enums. |
 

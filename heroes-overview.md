@@ -2258,7 +2258,7 @@ Common buffers are **Hugin**, **Mikola**, or **Rowan**.
 
 - **Signature skill**: Gravitic Requiem (ultimate)
 - **Movement**: mostly stationary (avg attack range 6.0 tiles)
-- **Behavior tags**: `battle-start-burst` `enemy-grouping` `execute`
+- **Behavior tags**: `enemy-grouping` `execute`
 - **Damage types**: Magic `high`, DoT `high`, Max HP-based damage `low`, True damage `low`
 
 #### Skill overview
@@ -2317,9 +2317,9 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 **Similar Skills**
 
-- Eironn (30% `enemy-grouping`)
-- Atalanta (30% `battle-start-burst`)
-- Hodgkin (30% `battle-start-burst`)
+- Eironn (40% `enemy-grouping`)
+- Odie (33% `execute`)
+- Nara (30% `execute`)
 
 **Damage**
 
@@ -2723,7 +2723,7 @@ Dionel provides ATK buff to single targets `low`.
 `AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S+]`
 
 - **Signature skill**: Echo of Silence (ultimate)
-- **Movement**: stationary (avg attack range 6.4 tiles)
+- **Movement**: moving (melee class)
 - **Behavior tags**: `battle-start-burst` `summoner`
 - **Damage types**: Magic `average`, DoT `average`, HP loss `low`, Max HP-based damage `average`
 
@@ -2909,7 +2909,7 @@ Eironn provides Dodge chance buff to single targets `high` and DEF buff (Legenda
 
 - Tasi (48% `mass-cc`)
 - Mehira (40% `enemy-grouping` `mass-cc`)
-- Carolina (40% `mass-cc`)
+- Cyran (40% `enemy-grouping`)
 
 **Damage**
 
@@ -7619,7 +7619,7 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 `AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
 
 - **Signature skill**: Phantom Chains (Skill 1)
-- **Movement**: mostly stationary (pulls enemies)
+- **Movement**: mostly stationary (pulls enemies; moves on failed pull)
 - **Behavior tags**: `ally-healer` `assassin` `execute`
 - **Damage types**: Physical `high`, HP loss `average`, Max HP-based damage `high`, True damage `high`
 
@@ -7689,8 +7689,8 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 **Similar Skills**
 
 - Harak (50% `assassin` `execute`)
+- Cyran (30% `execute`)
 - Ludovic (30% `ally-healer`)
-- Marcille (25% `ally-healer`)
 
 **Damage**
 
@@ -7735,7 +7735,7 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 ### Natsu's behavior
 
 - **Signature skill**: Lightning Fire Dragon's Roar/Fire Dragon King's Roar (ultimate)
-- **Movement**: stationary (avg attack range 11.0 tiles)
+- **Movement**: moving (avg attack range 3.0 tiles)
 - **Behavior tags**: `aoe-damage` `dot-specialist` `fire-attack` `high-damage-ult` `mass-cc` `transformation`
 - **Damage types**: Magic `high`, Max HP-based damage `high`
 
@@ -7787,9 +7787,10 @@ Common buffers are **Mikola**, **Hugin**, or **Twins**.
   - ATK buff (multiple targets, low)
   - DEF buff (multiple targets, average)
   - DEF buff (multiple targets, average)
-- **Kazim**
-  - ATK buff (single target, average)
-  - Haste buff (multiple targets, average) `signature fuel`
+- **Kordan**
+  - ATK buff (multiple targets, high)
+  - DEF buff (single target, low)
+  - DEF buff (single target, low)
 
 ### Units benefitting most from Natsu
 

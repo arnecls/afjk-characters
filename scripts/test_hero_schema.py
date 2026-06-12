@@ -627,6 +627,52 @@ class PlacementConstraintTests(unittest.TestCase):
 
 
 @unittest.skipUnless(hs.jsonschema is not None, "jsonschema not installed")
+class MovementDetectionTests(unittest.TestCase):
+    def _behavior(self, display_name: str):
+        text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+        heroes, block_by_title, role_category_by_title = _analyze_heroes_from_blocks(
+            blocks
+        )
+        display_by_title = {
+            h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
+        }
+        hero_class_by_title = {
+            h.title: gen._parse_hero_class(block_by_title[h.title]).lower()
+            for h in heroes
+        }
+        behavior_by_title = rs.build_behavior_for_heroes(
+            heroes,
+            display_by_title,
+            role_category_by_title=role_category_by_title,
+            hero_class_by_title=hero_class_by_title,
+        )
+        for hero in heroes:
+            if display_by_title[hero.title] == display_name:
+                return behavior_by_title[hero.title]
+        self.fail(f"hero not found: {display_name}")
+
+    def test_natsu_is_moving(self):
+        behavior = self._behavior("Natsu")
+        self.assertEqual(behavior.movement, "moving")
+
+    def test_nara_is_mostly_stationary(self):
+        behavior = self._behavior("Nara")
+        self.assertEqual(behavior.movement, "mostly stationary")
+
+    def test_gunnar_stays_stationary(self):
+        behavior = self._behavior("Gunnar")
+        self.assertEqual(behavior.movement, "stationary")
+
+    def test_daimon_stays_stationary(self):
+        behavior = self._behavior("Daimon")
+        self.assertEqual(behavior.movement, "stationary")
+
+    def test_florabelle_stays_stationary(self):
+        behavior = self._behavior("Florabelle")
+        self.assertEqual(behavior.movement, "stationary")
+
+
 class SchemaValidationTests(unittest.TestCase):
     def test_processed_json_validates(self):
         processed = io.load_processed()

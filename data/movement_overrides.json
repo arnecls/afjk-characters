@@ -1,0 +1,6 @@
+{
+  "Nara": {
+    "movement": "mostly stationary",
+    "note": "pulls enemies; moves on failed pull"
+  }
+}

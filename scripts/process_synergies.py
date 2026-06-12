@@ -135,6 +135,7 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         heroes2_text=behavior_text,
         heroes_text=heroes_text,
         role_category_by_title=role_category_by_title,
+        hero_class_by_title=hero_class_by_title,
     )
     beneficiaries_index = gen.build_beneficiaries_index(
         heroes, enabler_matchers, behavior_by_title

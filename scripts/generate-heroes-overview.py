@@ -2571,7 +2571,8 @@ def build_overview() -> str:
 
     display_by_title = {h.title: short_name(h.title) for h in heroes}
     behavior_by_title = _rs.build_behavior_for_heroes(
-        heroes, display_by_title, role_category_by_title=role_category_by_title
+        heroes, display_by_title, role_category_by_title=role_category_by_title,
+        hero_class_by_title=hero_class_by_title,
     )
     beneficiaries_index = build_beneficiaries_index(
         heroes, enabler_matchers, behavior_by_title

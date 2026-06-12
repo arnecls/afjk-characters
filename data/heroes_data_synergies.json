@@ -9245,23 +9245,23 @@
         "similar_skills": [
           {
             "name": "Eironn",
-            "score": 0.3,
+            "score": 0.4,
             "matches": [
               "enemy-grouping"
             ]
           },
           {
-            "name": "Atalanta",
-            "score": 0.3,
+            "name": "Odie",
+            "score": 0.3333,
             "matches": [
-              "battle-start-burst"
+              "execute"
             ]
           },
           {
-            "name": "Hodgkin",
+            "name": "Nara",
             "score": 0.3,
             "matches": [
-              "battle-start-burst"
+              "execute"
             ]
           }
         ],
@@ -11481,10 +11481,10 @@
             ]
           },
           {
-            "name": "Carolina",
+            "name": "Cyran",
             "score": 0.4,
             "matches": [
-              "mass-cc"
+              "enemy-grouping"
             ]
           }
         ],
@@ -30766,15 +30766,15 @@
             ]
           },
           {
-            "name": "Ludovic",
+            "name": "Cyran",
             "score": 0.3,
             "matches": [
-              "ally-healer"
+              "execute"
             ]
           },
           {
-            "name": "Marcille",
-            "score": 0.25,
+            "name": "Ludovic",
+            "score": 0.3,
             "matches": [
               "ally-healer"
             ]
@@ -30922,6 +30922,15 @@
           "score": 14.5
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK buff (single target, average)",
@@ -30942,6 +30951,13 @@
           "reasons": [
             "Physical DEF via DEF buff (single target, high)",
             "Magic DEF via DEF buff (single target, high)"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
           ],
           "score": 9.0
         },
@@ -31036,14 +31052,6 @@
           "provider": "Galahad",
           "reasons": [
             "Haste via Haste buff (single target, average) `signature fuel`"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 3.0
         },
