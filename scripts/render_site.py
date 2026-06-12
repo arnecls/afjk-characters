@@ -44,13 +44,12 @@ _PRYDWEN_TIER_KEYS = (
 )
 
 
-def _normalize_prydwen_tiers(tiers: dict | None) -> dict | None:
+def _normalize_prydwen_tiers(tiers: dict | None) -> dict[str, str]:
     """Ensure all Prydwen modes are present; missing ratings become ``?``."""
-    if not tiers:
-        return None
     out: dict[str, str] = {}
+    source = tiers or {}
     for key in _PRYDWEN_TIER_KEYS:
-        value = tiers.get(key)
+        value = source.get(key)
         if value is None:
             out[key] = "?"
             continue
