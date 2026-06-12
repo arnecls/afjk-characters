@@ -268,6 +268,28 @@ def _load_rewrite_summaries():
     return rs
 
 
+def _load_role_category_by_title(
+    rs,
+    gen,
+    records: list[dict],
+) -> dict[str, str]:
+    """Map hero title -> role_category for magnitude assignment."""
+    processed_path = ROOT / "data" / "heroes_data_processed.json"
+    by_short: dict[str, str] = {}
+    if processed_path.is_file():
+        payload = json.loads(processed_path.read_text(encoding="utf-8"))
+        for short, record in payload.get("heroes", {}).items():
+            by_short[short] = record.get("role_category", "damage_dealer")
+    out: dict[str, str] = {}
+    for record in records:
+        hero = rs.hero_from_record(record)
+        short = gen.short_name(hero.title)
+        out[hero.title] = by_short.get(
+            short, record.get("role_category", "damage_dealer")
+        )
+    return out
+
+
 def _load_analyzed_heroes_by_short() -> dict[str, object]:
     rs = _load_rewrite_summaries()
     spec = importlib.util.spec_from_file_location(
@@ -281,10 +303,16 @@ def _load_analyzed_heroes_by_short() -> dict[str, object]:
     gen = _load_gen_overview()
 
     records = io.load_heroes_data()["heroes"]
-    out: dict[str, object] = {}
+    heroes = []
     for record in records:
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
+        heroes.append(hero)
+    skills_by_title = rs.load_skills_by_title_from_records(records)
+    role_category_by_title = _load_role_category_by_title(rs, gen, records)
+    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
+    out: dict[str, object] = {}
+    for hero in heroes:
         out[gen.short_name(hero.title)] = hero
     return out
 
