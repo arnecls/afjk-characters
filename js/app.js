@@ -14,6 +14,11 @@
   let csvRows = [];
   let sortColumn = 0;
   let sortDir = 1;
+  let csvColumnFilters = {};
+  let csvColumnFilterOptions = [];
+  let openColumnFilter = -1;
+  let csvColumnWidths = [];
+  let columnWidthsLocked = false;
   let detailHero = null;
   let closeSkillCardPopover = function () {};
 
@@ -26,6 +31,7 @@
   const listEmptyState = document.getElementById("list-empty-state");
   const heroesTableHead = document.getElementById("heroes-table-head");
   const heroesTableBody = document.getElementById("heroes-table-body");
+  const heroesTable = document.getElementById("heroes-table");
   const searchInput = document.getElementById("search");
   const filtersPanel = document.getElementById("filters-panel");
   const filtersEl = document.getElementById("filters");
@@ -185,6 +191,186 @@
       "--list-sticky-top",
       siteHeader.offsetHeight + "px"
     );
+    updateTableHeadStickyOffsets();
+  }
+
+  function updateTableHeadStickyOffsets() {
+    if (!heroesTableHead) {
+      return;
+    }
+    const labelRow = heroesTableHead.querySelector(".heroes-table-label-row");
+    if (!labelRow) {
+      return;
+    }
+    document.documentElement.style.setProperty(
+      "--table-head-label-height",
+      labelRow.getBoundingClientRect().height + "px"
+    );
+  }
+
+  function getTableScrollEl() {
+    return listView ? listView.querySelector(".table-scroll") : null;
+  }
+
+  function clearColumnFilterPanelPosition(details) {
+    if (!details) {
+      return;
+    }
+    const panel = details.querySelector(".col-filter-panel");
+    if (!panel) {
+      return;
+    }
+    panel.classList.remove("is-floating");
+    panel.style.top = "";
+    panel.style.left = "";
+    panel.style.minWidth = "";
+    panel.style.maxWidth = "";
+  }
+
+  function positionOpenColumnFilter() {
+    if (openColumnFilter < 0 || !heroesTableHead) {
+      return;
+    }
+    heroesTableHead.querySelectorAll("details.col-filter[open]").forEach(function (details) {
+      if (parseInt(details.dataset.col, 10) !== openColumnFilter) {
+        clearColumnFilterPanelPosition(details);
+      }
+    });
+    const details = heroesTableHead.querySelector(
+      'details.col-filter[data-col="' + openColumnFilter + '"]'
+    );
+    if (!details || !details.open) {
+      return;
+    }
+    const panel = details.querySelector(".col-filter-panel");
+    const trigger = details.querySelector(".col-filter-trigger");
+    if (!panel || !trigger) {
+      return;
+    }
+    const rect = trigger.getBoundingClientRect();
+    panel.classList.add("is-floating");
+    panel.style.top = Math.round(rect.bottom + 2) + "px";
+    panel.style.left = Math.round(rect.left) + "px";
+    panel.style.minWidth = Math.round(rect.width) + "px";
+    panel.style.maxWidth = "16rem";
+  }
+
+  function measureColumnWidths() {
+    if (!heroesTableHead || !heroesTableBody || !csvHeaders.length) {
+      return;
+    }
+    if (!heroesTableBody.rows.length) {
+      return;
+    }
+    const widths = new Array(csvHeaders.length).fill(0);
+    const labelRow = heroesTableHead.querySelector(".heroes-table-label-row");
+    if (labelRow) {
+      let colIdx = 0;
+      Array.from(labelRow.cells).forEach(function (cell) {
+        widths[colIdx] = Math.max(
+          widths[colIdx],
+          cell.getBoundingClientRect().width
+        );
+        colIdx += cell.colSpan || 1;
+      });
+    }
+    const filterRow = heroesTableHead.querySelector(".heroes-table-filter-row");
+    if (filterRow) {
+      let colIdx = 1;
+      Array.from(filterRow.cells).forEach(function (cell) {
+        widths[colIdx] = Math.max(
+          widths[colIdx],
+          cell.getBoundingClientRect().width
+        );
+        colIdx += 1;
+      });
+    }
+    Array.from(heroesTableBody.rows).forEach(function (row) {
+      Array.from(row.cells).forEach(function (cell, idx) {
+        widths[idx] = Math.max(
+          widths[idx],
+          cell.getBoundingClientRect().width
+        );
+      });
+    });
+    csvColumnWidths = widths.map(function (width) {
+      return Math.ceil(width);
+    });
+  }
+
+  function updateTableColgroup() {
+    if (!heroesTable) {
+      return;
+    }
+    let colgroup = heroesTable.querySelector("colgroup");
+    if (!csvColumnWidths.length) {
+      if (colgroup) {
+        colgroup.remove();
+      }
+      heroesTable.style.tableLayout = "";
+      return;
+    }
+    if (!colgroup) {
+      colgroup = document.createElement("colgroup");
+      heroesTable.insertBefore(colgroup, heroesTableHead);
+    }
+    colgroup.innerHTML = csvColumnWidths
+      .map(function (width) {
+        return (
+          '<col style="width:' +
+          width +
+          "px;min-width:" +
+          width +
+          'px">'
+        );
+      })
+      .join("");
+    heroesTable.style.tableLayout = "fixed";
+  }
+
+  function buildListBodyHtml(rows) {
+    let bodyHtml = "";
+    rows.forEach(function (row) {
+      const name = row[0] || "";
+      const hero = heroByName[name];
+      bodyHtml += "<tr>";
+      row.forEach(function (cell, idx) {
+        const col = csvHeaders[idx];
+        let inner;
+        if (col === "Name") {
+          if (hero) {
+            inner =
+              '<a href="' +
+              escapeHtml(heroUrl(hero.slug)) +
+              '" class="hero-link col-name-link" data-slug="' +
+              escapeHtml(hero.slug) +
+              '">' +
+              '<span class="col-name-text">' +
+              escapeHtml(name) +
+              "</span>" +
+              '<img class="col-name-portrait" src="' +
+              assetUrl(hero.portrait) +
+              '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
+              "</a>";
+          } else {
+            inner = escapeHtml(name);
+          }
+        } else {
+          inner = renderTableCell(col, getListCellRawValue(row, idx, col));
+        }
+        let tdCls = "";
+        if (col === "Name") {
+          tdCls = " class=\"col-name\"";
+        } else if (TIER_CSV_HEADERS[col]) {
+          tdCls = " class=\"col-tier\"";
+        } else if (col === "Role") {
+          tdCls = " class=\"col-role\"";
+        }
+        bodyHtml += "<td" + tdCls + ">" + inner + "</td>";
+      });
+      bodyHtml += "</tr>";
+    });
+    return bodyHtml;
   }
 
   function inferBase() {
@@ -550,6 +736,7 @@
     Immune: { emoji: "⛔", cls: "chip-anti-cc" },
     Untargetable: { emoji: "👻", cls: "chip-anti-cc" },
     Cleanse: { emoji: "💧", cls: "chip-anti-cc" },
+    "Max HP damage": { emoji: "💔", cls: "chip-damage" },
     "Max HP-based damage": { emoji: "💔", cls: "chip-damage" },
   };
 
@@ -735,6 +922,13 @@
       .join(" ");
   }
 
+  function chipDisplayLabel(text) {
+    if (text === "Max HP-based damage") {
+      return "Max HP damage";
+    }
+    return text;
+  }
+
   function chipSpan(emoji, text, cls, tooltip) {
     const attrs =
       ' class="chip ' +
@@ -743,7 +937,14 @@
       '"' +
       (tooltip ? chipTipAttrs(tooltip) : "");
     const prefix = emoji ? emoji + " " : "";
-    return "<span" + attrs + ">" + prefix + escapeHtml(text) + "</span>";
+    return (
+      "<span" +
+      attrs +
+      ">" +
+      prefix +
+      escapeHtml(chipDisplayLabel(text)) +
+      "</span>"
+    );
   }
 
   function isSpeedMetricLabel(label) {
@@ -816,6 +1017,12 @@
       return trimmed;
     }
     const labelLower = trimmed.toLowerCase();
+    if (
+      labelLower === "max hp-based damage" ||
+      labelLower === "max hp damage"
+    ) {
+      return "Max HP damage";
+    }
     for (const key of Object.keys(TAG_DEFINITIONS)) {
       if (key.toLowerCase() === labelLower) {
         return key;
@@ -933,13 +1140,13 @@
         '">' +
         left.emoji +
         " " +
-        escapeHtml(left.text) +
+        escapeHtml(chipDisplayLabel(left.text)) +
         formatMergedTierSuffix(left.tierSuffix) +
         "</span>";
     } else {
       leftHtml =
         '<span class="chip-merged-left chip-merged-label">' +
-        escapeHtml(left.textOnly) +
+        escapeHtml(chipDisplayLabel(left.textOnly)) +
         formatMergedTierSuffix(left.tierSuffix) +
         "</span>";
     }
@@ -1190,7 +1397,7 @@
         '">' +
         leading.emoji +
         " " +
-        escapeHtml(leading.text) +
+        escapeHtml(chipDisplayLabel(leading.text)) +
         formatMergedTierSuffix(tier) +
         escapeHtml(leading.remainder || "") +
         "</span>"
@@ -1258,7 +1465,7 @@
         return;
       }
       const last = segments[segments.length - 1];
-      if (last.indexOf("conditional") !== -1) {
+      if (/conditional/i.test(last)) {
         trailingParts.unshift(
           '<span class="chip chip-generic chip-has-tip"' +
             chipTipAttrs(conditionalTooltip(last)) +
@@ -1375,7 +1582,7 @@
             '">' +
             match.emoji +
             " " +
-            escapeHtml(key) +
+            escapeHtml(chipDisplayLabel(key)) +
             "</span>"
           );
         }
@@ -1388,7 +1595,7 @@
         '">' +
         def.emoji +
         " " +
-        escapeHtml(text) +
+        escapeHtml(chipDisplayLabel(text)) +
         "</span>"
       );
     }
@@ -1514,16 +1721,24 @@
     return escapeHtml(col);
   }
 
+  function getHeroPrydwenTiers(hero) {
+    const tiers = (hero && hero.prydwenTiers) || {};
+    const out = {};
+    PRYDWEN_TIER_MODES.forEach(function (mode) {
+      const raw = tiers[mode.key];
+      out[mode.key] = isUnrankedPrydwenTier(raw) ? "?" : String(raw).trim();
+    });
+    return out;
+  }
+
   function renderTierTableCell(tier) {
     const value = (tier || "").trim();
-    if (!value) {
-      return "";
-    }
+    const display = prydwenTierDisplay(value);
     return (
       '<span class="tier-chip tier-chip-table ' +
       prydwenTierClass(value) +
       '"><span class="tier-grade">' +
-      escapeHtml(value) +
+      escapeHtml(display) +
       "</span></span>"
     );
   }
@@ -1585,13 +1800,11 @@
           row[roleColIdx] = roleMeta.label;
         }
       }
-      if (!hero.prydwenTiers) {
-        return;
-      }
+      const tiers = getHeroPrydwenTiers(hero);
       Object.keys(colByKey).forEach(function (key) {
         const idx = colByKey[key];
         if (!String(row[idx] || "").trim()) {
-          row[idx] = hero.prydwenTiers[key] || "";
+          row[idx] = tiers[key] || "?";
         }
       });
     });
@@ -1793,6 +2006,7 @@
 
   const SKILL_CARD_DAMAGE_KEYS = [
     "HP loss",
+    "Max HP damage",
     "Max HP-based damage",
     "True damage",
     "Physical",
@@ -2678,6 +2892,498 @@
     return rows;
   }
 
+  const DMG_COLUMN_BASE = {
+    Magic: "Magic",
+    Physical: "Physical",
+    Ranged: "Ranged",
+    True: "True damage",
+    "HP Loss": "HP loss",
+    "Max HP": "Max HP damage",
+  };
+
+  function parseDebuffEffectLabel(label) {
+    let text = (label || "").trim();
+    let tier = "";
+    const tierMatch = text.match(ASCENSION_TIER_SUFFIX_RE);
+    if (tierMatch) {
+      tier = tierMatch[1];
+      text = text.slice(0, tierMatch.index).trim();
+    }
+    text = text.replace(/\s+debuff\s*$/i, "").trim();
+    if (!text) {
+      text = (label || "").trim();
+    }
+    return { base: text, tier: tier };
+  }
+
+  function parseEffectColumnLabel(column) {
+    if (column.endsWith(" DMG")) {
+      const short = column.slice(0, -4);
+      return {
+        base: DMG_COLUMN_BASE[short] || short,
+        polarity: "damage",
+        tier: "",
+      };
+    }
+    if (column.endsWith(" buff")) {
+      const parsed = parseBuffEffectLabel(column);
+      return {
+        base: parsed.base,
+        polarity: "buff",
+        tier: parsed.tier,
+      };
+    }
+    if (column.endsWith(" debuff")) {
+      const parsed = parseDebuffEffectLabel(column);
+      return {
+        base: parsed.base,
+        polarity: "debuff",
+        tier: parsed.tier,
+      };
+    }
+    const parsed = parseEffectLabelParts(column);
+    return {
+      base: parsed.base,
+      polarity: null,
+      tier: parsed.tier,
+    };
+  }
+
+  function isTimingSegment(segment) {
+    const lower = segment.trim().toLowerCase();
+    if (Object.prototype.hasOwnProperty.call(TIMING_RANK, lower)) {
+      return true;
+    }
+    if (lower.indexOf("start of battle") !== -1) {
+      return true;
+    }
+    if (lower.indexOf("on ultimate") !== -1) {
+      return true;
+    }
+    if (lower.indexOf("on skill") !== -1) {
+      return true;
+    }
+    if (lower.indexOf("permanent") !== -1) {
+      return true;
+    }
+    return false;
+  }
+
+  function parseEffectCellPart(text) {
+    const segments = splitSummarySegments(text);
+    let quality = "";
+    let conditional = "";
+    let timing = "";
+
+    function popTrailingQuality() {
+      if (!segments.length) {
+        return;
+      }
+      const last = unwrapBackticks(segments[segments.length - 1]);
+      const lower = last.toLowerCase();
+      if (QUALITY_CLASS[lower]) {
+        quality = last;
+        segments.pop();
+      }
+    }
+
+    function popTrailingConditional() {
+      if (!segments.length) {
+        return;
+      }
+      const last = segments[segments.length - 1];
+      if (/conditional/i.test(last)) {
+        conditional = last;
+        segments.pop();
+      }
+    }
+
+    function popTrailingTiming() {
+      if (!segments.length) {
+        return;
+      }
+      const last = segments[segments.length - 1];
+      if (isTimingSegment(last)) {
+        timing = last;
+        segments.pop();
+      }
+    }
+
+    popTrailingConditional();
+    popTrailingQuality();
+    popTrailingConditional();
+    popTrailingTiming();
+
+    const targeting = segments.join(" — ");
+    return {
+      targeting: targeting,
+      quality: quality,
+      conditional: conditional,
+      timing: timing,
+    };
+  }
+
+  function renderEffectConditionalChip(conditionalText) {
+    if (!conditionalText) {
+      return "";
+    }
+    const condMatch = conditionalText.match(/conditional\s*\(([^)]+)\)/i);
+    if (condMatch) {
+      return "";
+    }
+    return (
+      ' <span class="chip chip-generic chip-has-tip"' +
+      chipTipAttrs(conditionalTooltip(conditionalText)) +
+      ">🎲 " +
+      escapeHtml(conditionalText) +
+      "</span>"
+    );
+  }
+
+  function renderEffectCellPart(column, text) {
+    if (!text || !text.trim()) {
+      return "";
+    }
+    const colMeta = parseEffectColumnLabel(column);
+    const parsed = parseEffectCellPart(text.trim());
+    let conditionalParam = "";
+    if (parsed.conditional) {
+      const condMatch = parsed.conditional.match(/conditional\s*\(([^)]+)\)/i);
+      if (condMatch) {
+        conditionalParam = condMatch[1].trim();
+      }
+    }
+
+    let html = renderMergedEffectPill(
+      colMeta.base,
+      parsed.quality,
+      colMeta.tier || "",
+      conditionalParam,
+      colMeta.polarity
+    );
+    if (parsed.targeting) {
+      html += " " + renderBuffTargetingChip(parsed.targeting);
+    }
+    if (parsed.timing) {
+      const timingChip = tryChipify(parsed.timing);
+      html += " " + (timingChip !== null ? timingChip : formatTag(parsed.timing));
+    }
+    html += renderEffectConditionalChip(parsed.conditional);
+    return html;
+  }
+
+  function getListCellRawValue(row, colIdx, col) {
+    let cellValue = row[colIdx] || "";
+    const hero = heroByName[row[0] || ""];
+    if (col === "Role" && !String(cellValue || "").trim() && hero) {
+      const roleMeta = roleCategoryMeta(hero.roleCategory);
+      if (roleMeta) {
+        cellValue = roleMeta.label;
+      }
+    }
+      if (hero && TIER_CSV_HEADERS[col] && !String(cellValue || "").trim()) {
+        const tierCol = TIER_CSV_COLUMNS.find(function (t) {
+          return t.header === col;
+        });
+        if (tierCol) {
+          cellValue = getHeroPrydwenTiers(hero)[tierCol.key] || "?";
+        }
+      }
+    return String(cellValue || "").trim();
+  }
+
+  function atomsFromEffectEntry(entry) {
+    const atoms = new Set();
+    const trimmed = entry.trim();
+    if (!trimmed) {
+      return atoms;
+    }
+    const parsed = parseEffectCellPart(trimmed);
+    if (parsed.targeting) {
+      parsed.targeting.split(/\s*,\s*/).forEach(function (token) {
+        const t = token.trim();
+        if (t) {
+          atoms.add(t);
+        }
+      });
+    }
+    if (parsed.quality) {
+      atoms.add(parsed.quality);
+    }
+    if (parsed.conditional) {
+      atoms.add(parsed.conditional);
+    }
+    if (parsed.timing) {
+      atoms.add(parsed.timing);
+    }
+    return atoms;
+  }
+
+  function extractCellFilterAtoms(column, cellValue) {
+    const values = new Set();
+    const raw = String(cellValue || "").trim();
+    if (!raw) {
+      return values;
+    }
+    if (isEffectSortColumn(column)) {
+      raw.split(/\s*;\s*/).forEach(function (entry) {
+        atomsFromEffectEntry(entry).forEach(function (atom) {
+          values.add(atom);
+        });
+      });
+      return values;
+    }
+    values.add(raw);
+    return values;
+  }
+
+  function effectEntryAtomSets(cellValue) {
+    const raw = String(cellValue || "").trim();
+    if (!raw) {
+      return [];
+    }
+    return raw.split(/\s*;\s*/).map(function (entry) {
+      return atomsFromEffectEntry(entry);
+    });
+  }
+
+  function atomSetHasAll(selected, atomSet) {
+    const normalized = {};
+    atomSet.forEach(function (atom) {
+      normalized[atom.toLowerCase()] = true;
+    });
+    let allPresent = true;
+    selected.forEach(function (value) {
+      if (!normalized[value.toLowerCase()]) {
+        allPresent = false;
+      }
+    });
+    return allPresent;
+  }
+
+  function buildColumnFilterOptions() {
+    if (!csvHeaders.length) {
+      csvColumnFilterOptions = [];
+      return;
+    }
+    csvColumnFilterOptions = csvHeaders.map(function (col, idx) {
+      if (col === "Name") {
+        return [];
+      }
+      const values = new Set();
+      csvRows.forEach(function (row) {
+        extractCellFilterAtoms(col, getListCellRawValue(row, idx, col))
+          .forEach(function (v) {
+            values.add(v);
+          });
+      });
+      return Array.from(values).sort(function (a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+      });
+    });
+  }
+
+  function cellMatchesColumnFilter(column, cellValue, selected) {
+    if (!selected || !selected.size) {
+      return true;
+    }
+    const raw = String(cellValue || "").trim();
+    if (!raw) {
+      return false;
+    }
+    if (isEffectSortColumn(column)) {
+      const entrySets = effectEntryAtomSets(raw);
+      return entrySets.some(function (atomSet) {
+        return atomSetHasAll(selected, atomSet);
+      });
+    }
+    const atoms = extractCellFilterAtoms(column, cellValue);
+    let matched = false;
+    selected.forEach(function (value) {
+      if (atoms.has(value)) {
+        matched = true;
+      }
+    });
+    return matched;
+  }
+
+  function rowMatchesColumnFilters(row) {
+    for (let colIdx = 0; colIdx < csvHeaders.length; colIdx++) {
+      const selected = csvColumnFilters[colIdx];
+      if (!selected || !selected.size) {
+        continue;
+      }
+      const col = csvHeaders[colIdx];
+      if (col === "Name") {
+        continue;
+      }
+      const cellValue = getListCellRawValue(row, colIdx, col);
+      if (!cellMatchesColumnFilter(col, cellValue, selected)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  const FILTER_QUALITY_EMOJI = {
+    high: "⬆️",
+    average: "➡️",
+    low: "⬇️",
+  };
+
+  function filterOptionIconHtml(column, value) {
+    const trimmed = (value || "").trim();
+    if (!trimmed) {
+      return "";
+    }
+    const lower = trimmed.toLowerCase();
+
+    if (column === "Faction") {
+      const icon = iconPath("factions", trimmed);
+      if (icon) {
+        return (
+          '<img class="col-filter-option-img" src="' +
+          assetUrl(icon) +
+          '" alt="" loading="lazy">'
+        );
+      }
+    }
+    if (column === "Class") {
+      const icon = iconPath("class", trimmed);
+      if (icon) {
+        return (
+          '<img class="col-filter-option-img" src="' +
+          assetUrl(icon) +
+          '" alt="" loading="lazy">'
+        );
+      }
+    }
+    if (column === "Role") {
+      const roleKey = Object.keys(ROLE_CATEGORY_META).find(function (key) {
+        return ROLE_CATEGORY_META[key].label.toLowerCase() === lower;
+      });
+      if (roleKey) {
+        return (
+          '<span class="col-filter-option-emoji" aria-hidden="true">' +
+          ROLE_CATEGORY_META[roleKey].emoji +
+          "</span>"
+        );
+      }
+    }
+    if (column === "Movement") {
+      const moveDef = MOVEMENT_DEFINITIONS[lower];
+      if (moveDef) {
+        return (
+          '<span class="col-filter-option-emoji" aria-hidden="true">' +
+          moveDef.emoji +
+          "</span>"
+        );
+      }
+    }
+    if (
+      column === "Signature skill speed" ||
+      column === "Non-ultimate speed"
+    ) {
+      if (SPEED_EMOJI[lower]) {
+        return (
+          '<span class="col-filter-option-emoji" aria-hidden="true">' +
+          SPEED_EMOJI[lower] +
+          "</span>"
+        );
+      }
+    }
+    if (
+      column === "DoT" ||
+      column === "HoT" ||
+      column === "Summons" ||
+      column === "Energy provider"
+    ) {
+      if (lower === "yes") {
+        return (
+          '<span class="col-filter-option-emoji" aria-hidden="true">✓</span>'
+        );
+      }
+    }
+
+    const targeting = TARGETING_DEFINITIONS[lower];
+    if (targeting) {
+      return (
+        '<span class="col-filter-option-emoji" aria-hidden="true">' +
+        targeting.emoji +
+        "</span>"
+      );
+    }
+
+    const exactKey = exactTagDefinitionKey(trimmed);
+    if (exactKey && TAG_DEFINITIONS[exactKey]) {
+      return (
+        '<span class="col-filter-option-emoji" aria-hidden="true">' +
+        TAG_DEFINITIONS[exactKey].emoji +
+        "</span>"
+      );
+    }
+
+    if (QUALITY_CLASS[lower]) {
+      return (
+        '<span class="col-filter-option-emoji" aria-hidden="true">' +
+        (FILTER_QUALITY_EMOJI[lower] || "") +
+        "</span>"
+      );
+    }
+
+    if (/conditional/i.test(trimmed)) {
+      return (
+        '<span class="col-filter-option-emoji" aria-hidden="true">🎲</span>'
+      );
+    }
+
+    if (isTimingSegment(trimmed)) {
+      return (
+        '<span class="col-filter-option-emoji" aria-hidden="true">⏱️</span>'
+      );
+    }
+
+    return "";
+  }
+
+  function renderColumnFilterPanel(colIdx, column, options) {
+    if (!options.length) {
+      return "";
+    }
+    const selected = csvColumnFilters[colIdx] || new Set();
+    let html =
+      '<div class="col-filter-panel" role="group" aria-label="Filter column">';
+    options.forEach(function (value) {
+      const checked = selected.has(value) ? " checked" : "";
+      const iconHtml = filterOptionIconHtml(column, value);
+      html +=
+        '<label class="col-filter-option">' +
+        '<input type="checkbox" class="col-filter-cb" data-col="' +
+        colIdx +
+        '" value="' +
+        escapeHtml(value) +
+        '"' +
+        checked +
+        ">" +
+        '<span class="col-filter-option-body">' +
+        (iconHtml
+          ? '<span class="col-filter-option-icon">' + iconHtml + "</span>"
+          : "") +
+        '<span class="col-filter-option-text">' +
+        escapeHtml(value) +
+        "</span>" +
+        "</span></label>";
+    });
+    if (selected.size) {
+      html +=
+        '<button type="button" class="col-filter-clear" data-col="' +
+        colIdx +
+        '">Clear</button>';
+    }
+    html += "</div>";
+    return html;
+  }
+
   function renderBadgeChip(label, kind) {
     if (!label) {
       return "";
@@ -2772,11 +3478,7 @@
       return value
         .split(/\s*;\s*/)
         .map(function (part) {
-          const trimmed = part.trim();
-          if (!trimmed) {
-            return "";
-          }
-          return renderTableEntry(column + " — " + trimmed);
+          return renderEffectCellPart(column, part);
         })
         .join(" ");
     }
@@ -3034,16 +3736,14 @@
 
     const allowed = filteredHeroNames();
     let rows = csvRows.filter(function (row) {
-      return allowed[row[0]];
+      return allowed[row[0]] && rowMatchesColumnFilters(row);
     });
     rows = rows.slice().sort(compareCsvRows);
 
-    let headHtml = "<tr>";
+    let labelRowHtml = '<tr class="heroes-table-label-row">';
+    let filterRowHtml = '<tr class="heroes-table-filter-row">';
     csvHeaders.forEach(function (col, idx) {
       let cls = "sortable";
-      if (idx === sortColumn) {
-        cls += sortDir === 1 ? " sort-asc" : " sort-desc";
-      }
       if (col === "Name") {
         cls += " col-name";
       }
@@ -3053,69 +3753,104 @@
       if (col === "Role") {
         cls += " col-role";
       }
-      headHtml +=
-        '<th class="' +
+      const options = csvColumnFilterOptions[idx] || [];
+      const activeCount =
+        csvColumnFilters[idx] && csvColumnFilters[idx].size
+          ? csvColumnFilters[idx].size
+          : 0;
+      const hasFilter = activeCount > 0;
+      const filterCls =
+        "col-filter" + (hasFilter ? " is-active" : "") + (options.length ? "" : " is-empty");
+      const label =
+        TIER_CSV_HEADERS[col] ? formatTierColumnHeader(col) : escapeHtml(col);
+      let sortCls = "th-sort-btn";
+      if (idx === sortColumn) {
+        sortCls += sortDir === 1 ? " sort-asc" : " sort-desc";
+      }
+      const showFilter = col !== "Name" && options.length;
+      const nameRowSpan = col === "Name" ? ' rowspan="2"' : "";
+      labelRowHtml +=
+        "<th" +
+        nameRowSpan +
+        ' class="' +
         cls +
         '" data-col="' +
         idx +
         '">' +
-        (TIER_CSV_HEADERS[col] ? formatTierColumnHeader(col) : escapeHtml(col)) +
-        "</th>";
+        '<button type="button" class="' +
+        sortCls +
+        '" data-col="' +
+        idx +
+        '">' +
+        label +
+        "</button></th>";
+      if (col === "Name") {
+        return;
+      }
+      let filterCellCls = "col-filter-cell";
+      if (TIER_CSV_HEADERS[col]) {
+        filterCellCls += " col-tier";
+      }
+      if (col === "Role") {
+        filterCellCls += " col-role";
+      }
+      filterRowHtml +=
+        '<th class="' +
+        filterCellCls +
+        '" data-col="' +
+        idx +
+        '">';
+      if (showFilter) {
+        const countHtml = hasFilter
+          ? '<span class="col-filter-count">(' + activeCount + ")</span>"
+          : "";
+        filterRowHtml +=
+          '<details class="' +
+          filterCls +
+          '" data-col="' +
+          idx +
+          '"' +
+          (openColumnFilter === idx ? " open" : "") +
+          ">" +
+          '<summary class="col-filter-trigger" title="Filter column">' +
+          '<span class="col-filter-field-label">' +
+          '<span class="col-filter-status-dot" aria-hidden="true"></span>' +
+          '<span class="col-filter-label-text">filter</span>' +
+          countHtml +
+          "</span>" +
+          '<span class="col-filter-sep" aria-hidden="true"></span>' +
+          '<span class="col-filter-caret" aria-hidden="true"></span>' +
+          "</summary>" +
+          renderColumnFilterPanel(idx, col, options) +
+          "</details>";
+      }
+      filterRowHtml += "</th>";
     });
-    headHtml += "</tr>";
-    heroesTableHead.innerHTML = headHtml;
+    labelRowHtml += "</tr>";
+    filterRowHtml += "</tr>";
+    heroesTableHead.innerHTML = labelRowHtml + filterRowHtml;
+    updateTableHeadStickyOffsets();
+    requestAnimationFrame(positionOpenColumnFilter);
 
-    let bodyHtml = "";
-    rows.forEach(function (row) {
-      const name = row[0] || "";
-      const hero = heroByName[name];
-      bodyHtml += "<tr>";
-      row.forEach(function (cell, idx) {
-        const col = csvHeaders[idx];
-        let inner;
-        if (col === "Name") {
-          if (hero) {
-            inner =
-              '<a href="' +
-              escapeHtml(heroUrl(hero.slug)) +
-              '" class="hero-link col-name-link" data-slug="' +
-              escapeHtml(hero.slug) +
-              '">' +
-              '<span class="col-name-text">' +
-              escapeHtml(name) +
-              "</span>" +
-              '<img class="col-name-portrait" src="' +
-              assetUrl(hero.portrait) +
-              '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
-              "</a>";
-          } else {
-            inner = escapeHtml(name);
-          }
-        } else {
-          let cellValue = cell;
-          if (hero && TIER_CSV_HEADERS[col] && !String(cellValue || "").trim()) {
-            const tierCol = TIER_CSV_COLUMNS.find(function (t) {
-              return t.header === col;
-            });
-            if (tierCol && hero.prydwenTiers) {
-              cellValue = hero.prydwenTiers[tierCol.key] || "";
-            }
-          }
-          inner = renderTableCell(col, cellValue);
-        }
-        let tdCls = "";
-        if (col === "Name") {
-          tdCls = " class=\"col-name\"";
-        } else if (TIER_CSV_HEADERS[col]) {
-          tdCls = " class=\"col-tier\"";
-        } else if (col === "Role") {
-          tdCls = " class=\"col-role\"";
-        }
-        bodyHtml += "<td" + tdCls + ">" + inner + "</td>";
-      });
-      bodyHtml += "</tr>";
+    const allRows = csvRows.filter(function (row) {
+      return allowed[row[0]];
     });
-    heroesTableBody.innerHTML = bodyHtml;
+
+    if (!columnWidthsLocked && allRows.length) {
+      heroesTableBody.innerHTML = buildListBodyHtml(allRows);
+      listEmptyState.classList.toggle("hidden", rows.length > 0);
+      requestAnimationFrame(function () {
+        measureColumnWidths();
+        columnWidthsLocked = csvColumnWidths.length > 0;
+        updateTableColgroup();
+        heroesTableBody.innerHTML = buildListBodyHtml(rows);
+        listEmptyState.classList.toggle("hidden", rows.length > 0);
+      });
+      return;
+    }
+
+    heroesTableBody.innerHTML = buildListBodyHtml(rows);
+    updateTableColgroup();
     listEmptyState.classList.toggle("hidden", rows.length > 0);
   }
 
@@ -3643,11 +4378,11 @@
           }
           let footer = "";
           const repHero = heroBySlug[e.slug];
-          if (repHero && repHero.prydwenTiers) {
+          if (repHero) {
             footer = renderPrydwenTierBoxes(
-              repHero.prydwenTiers,
+              getHeroPrydwenTiers(repHero),
               "compact",
-              mainHero && mainHero.prydwenTiers,
+              mainHero ? getHeroPrydwenTiers(mainHero) : null,
               mainHero && mainHero.name
             );
           }
@@ -3691,28 +4426,22 @@
 
     if (hero.sections.behavior) {
       const parts = splitBehavior(hero.sections.behavior);
-      if (parts.behavior || hero.prydwenTiers) {
+      if (parts.behavior) {
         html +=
           '<div class="detail-section summary-section skill-overview-section">';
-        if (hero.prydwenTiers) {
-          html += renderPrydwenTierBoxes(hero.prydwenTiers);
+        html += renderPrydwenTierBoxes(getHeroPrydwenTiers(hero));
+        const behaviorMd = stripPrydwenTierLine(parts.behavior);
+        const behaviorParts = splitBehaviorHeading(behaviorMd);
+        if (behaviorParts.title) {
+          html += "<h2>" + escapeHtml(behaviorParts.title) + "</h2>";
         }
-        if (parts.behavior) {
-          const behaviorMd = hero.prydwenTiers
-            ? stripPrydwenTierLine(parts.behavior)
-            : parts.behavior;
-          const behaviorParts = splitBehaviorHeading(behaviorMd);
-          if (behaviorParts.title) {
-            html += "<h2>" + escapeHtml(behaviorParts.title) + "</h2>";
-          }
-          if (behaviorParts.body) {
-            html += '<div class="skill-overview-metrics">';
-            html += renderMarkdown(behaviorParts.body, {
-              behaviorHero: hero,
-              behaviorSection: true,
-            });
-            html += "</div>";
-          }
+        if (behaviorParts.body) {
+          html += '<div class="skill-overview-metrics">';
+          html += renderMarkdown(behaviorParts.body, {
+            behaviorHero: hero,
+            behaviorSection: true,
+          });
+          html += "</div>";
         }
         html += "</div>";
       }
@@ -3934,11 +4663,32 @@
 
   if (heroesTableHead) {
     heroesTableHead.addEventListener("click", function (e) {
-      const th = e.target.closest("th[data-col]");
-      if (!th) {
+      const clearBtn = e.target.closest(".col-filter-clear");
+      if (clearBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const col = parseInt(clearBtn.dataset.col, 10);
+        openColumnFilter = col;
+        delete csvColumnFilters[col];
+        renderList();
         return;
       }
-      const col = parseInt(th.dataset.col, 10);
+      if (e.target.closest(".col-filter-panel")) {
+        return;
+      }
+      const filterTrigger = e.target.closest(".col-filter-trigger");
+      if (filterTrigger) {
+        const details = filterTrigger.closest("details.col-filter");
+        if (details) {
+          openColumnFilter = parseInt(details.dataset.col, 10);
+        }
+        return;
+      }
+      const sortBtn = e.target.closest(".th-sort-btn");
+      if (!sortBtn) {
+        return;
+      }
+      const col = parseInt(sortBtn.dataset.col, 10);
       if (col === sortColumn) {
         sortDir = -sortDir;
       } else {
@@ -3947,6 +4697,52 @@
       }
       renderList();
     });
+
+    heroesTableHead.addEventListener("change", function (e) {
+      const cb = e.target.closest(".col-filter-cb");
+      if (!cb) {
+        return;
+      }
+      const col = parseInt(cb.dataset.col, 10);
+      const value = cb.value;
+      if (!csvColumnFilters[col]) {
+        csvColumnFilters[col] = new Set();
+      }
+      if (cb.checked) {
+        csvColumnFilters[col].add(value);
+      } else {
+        csvColumnFilters[col].delete(value);
+        if (!csvColumnFilters[col].size) {
+          delete csvColumnFilters[col];
+        }
+      }
+      openColumnFilter = col;
+      renderList();
+    });
+
+    heroesTableHead.addEventListener("toggle", function (e) {
+      const details = e.target;
+      if (!details.matches || !details.matches("details.col-filter")) {
+        return;
+      }
+      if (details.open) {
+        openColumnFilter = parseInt(details.dataset.col, 10);
+        requestAnimationFrame(positionOpenColumnFilter);
+      } else {
+        clearColumnFilterPanelPosition(details);
+        if (openColumnFilter === parseInt(details.dataset.col, 10)) {
+          openColumnFilter = -1;
+        }
+      }
+    }, true);
+
+    const tableScrollEl = getTableScrollEl();
+    if (tableScrollEl) {
+      tableScrollEl.addEventListener("scroll", positionOpenColumnFilter, {
+        passive: true,
+      });
+    }
+    window.addEventListener("resize", positionOpenColumnFilter);
   }
 
   document.addEventListener("click", function (e) {
@@ -3998,7 +4794,10 @@
     }
     csvHeaders = parsed[0];
     csvRows = parsed.slice(1);
+    csvColumnWidths = [];
+    columnWidthsLocked = false;
     augmentCsvWithTiers();
+    buildColumnFilterOptions();
     if (!detailView.classList.contains("hidden")) {
       return;
     }
@@ -4014,6 +4813,7 @@
       heroByName[h.name] = h;
     });
     augmentCsvWithTiers();
+    buildColumnFilterOptions();
     buildFilters();
     route();
   }
