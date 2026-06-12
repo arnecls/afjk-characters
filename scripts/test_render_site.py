@@ -127,6 +127,15 @@ class RenderSiteTests(unittest.TestCase):
         )
         self.assertNotIn("Requires", bonnie["sections"]["summary"])
 
+    def test_kazim_synergy_requires(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        kazim = next(h for h in payload["heroes"] if h["name"] == "Kazim")
+        requires = kazim["sections"]["benefits_from"]["requires"]
+        self.assertEqual(
+            requires["text"],
+            "Kazim also requires units **providing knock up**",
+        )
+
     def test_site_csv_matches_root_overview(self) -> None:
         self.assertTrue(OVERVIEW_CSV.is_file(), f"missing {OVERVIEW_CSV.name}")
         self.assertTrue(SITE_CSV.is_file(), f"missing {SITE_CSV.name}")

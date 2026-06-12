@@ -2631,7 +2631,7 @@ DEBUFF_RULES = [
 CC_RULES = [
     (r"\bstun(?:s|ned|ning)?\b|\bstunn(?:ed|ing|s)?\b", "Stun"),
     (
-        r"knock(?:s|ing)? .{0,120}?(?:in(?:to)?) the air\b",
+        r"knock(?:s|ing|ed)? .{0,120}?(?:in(?:to)?) the air\b",
         "Knock up",
     ),
     (
@@ -2842,6 +2842,10 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
         r"whenever an allied hero deals magic damage|"
         r"allied hero deals magic damage",
         "Magic damage from allies",
+    ),
+    (
+        r"(?:when|whenever) an enemy hero is knocked into the air",
+        "Knock up from allies",
     ),
     (
         r"converts? any continuous damage|"
@@ -3252,6 +3256,8 @@ def detect_special_effects(
         if not re.search(pat, t):
             continue
         if label == "Form or stance active" and _form_or_stance_is_caster_owned(text):
+            continue
+        if label == "CC on enemies" and _is_displacement_reaction_clause(text):
             continue
         add_special_effect(effects, "requires", label, tier, text)
     detect_ally_grant_effects(effects, tier, text)
@@ -4389,6 +4395,20 @@ def _cc_match_is_ally_targeted(clause: str, label: str) -> bool:
     return False
 
 
+def _is_displacement_reaction_clause(scope: str) -> bool:
+    """True when text reacts to displacement, not applying knock up/down."""
+    t = scope.lower()
+    if not re.search(r"\b(?:when|whenever)\b", t):
+        return False
+    if not re.search(
+        r"(?:knocked down|knocked into the air|"
+        r"affected by (?:other )?displacement effects?)",
+        t,
+    ):
+        return False
+    return True
+
+
 def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
     """True when a CC regex matched a conditional or mislabeled clause."""
     t = scope.lower()
@@ -4410,9 +4430,12 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
         t,
     ) and not re.search(r"imprison(?:ing|s) (?:them|the enemy|enemies|\d)", t):
         return True
-    if label in ("Knock down", "Bind") and re.search(
-        r"knocked down, knocked into the air or affected by other displacement",
-        t,
+    if label in ("Knock up", "Knock down", "Bind") and (
+        _is_displacement_reaction_clause(scope)
+        or re.search(
+            r"knocked down, knocked into the air or affected by other displacement",
+            t,
+        )
     ):
         return True
     if label == "Stun" and re.search(

@@ -193,6 +193,7 @@ SKIP_ENABLER_REQUIRES = frozenset(
 
 # Maps receiver Requires label -> provider matcher name (see score_enabler_match).
 ENABLER_REQUIRE_HANDLERS = (
+    "Knock up from allies",
     "Magic damage from allies",
     "Continuous damage on enemies",
     "Damage over time",
@@ -542,6 +543,44 @@ def provider_enemy_debuffs(hero: _rs.Hero) -> list[_rs.Effect]:
     ]
 
 
+def match_knock_up_from_allies(provider: _rs.Hero) -> tuple[float, str] | None:
+    knock_up = [
+        e
+        for e in provider.effects
+        if e.category == "cc"
+        and e.label == "Knock up"
+        and e.targeting in ALLY_TARGETINGS
+    ]
+    if not knock_up:
+        return None
+    best = max(
+        knock_up,
+        key=lambda e: TARGETING_WEIGHT.get(e.targeting, 1.0)
+        * MAG_WEIGHT.get(e.magnitude, 1.0),
+    )
+    tw = TARGETING_WEIGHT.get(best.targeting, 1.0)
+    mw = MAG_WEIGHT.get(best.magnitude, 1.0)
+    pts = tw * mw * 2.5
+    text = provider_skill_text(provider)
+    tags = ["Knock up"]
+    if provider_has_start_of_battle_output(provider):
+        pts *= 1.35
+        tags.append("early battle")
+    if re.search(
+        r"center of the battlefield|across the battlefield|"
+        r"all enemy heroes|all enemies within|whole battlefield|"
+        r"most enemies|area with the most enemies|enemies within range",
+        text,
+    ):
+        pts *= 1.45
+        tags.append("wide area")
+    tgt = best.targeting
+    if tgt == "All units":
+        pts *= 1.2
+        tags.append("all enemies")
+    return pts, f"{' + '.join(tags)} ({tgt.lower()})"
+
+
 def match_magic_damage_allies(provider: _rs.Hero) -> tuple[float, str] | None:
     if "Magic" not in provider_damage_types(provider):
         return None
@@ -861,6 +900,7 @@ def _make_enabler_matchers(
         )
 
     return {
+        "Knock up from allies": match_knock_up_from_allies,
         "Magic damage from allies": match_magic_damage_allies,
         "Continuous damage on enemies": match_dot_damage,
         "Damage over time": match_dot_damage,
@@ -883,6 +923,7 @@ def receiver_requires(hero: _rs.Hero) -> list[_rs.SpecialEffect]:
 
 
 REQUIRE_SYNERGY_FRAGMENTS: dict[str, str] = {
+    "Knock up from allies": "units **providing knock up**",
     "Magic damage from allies": "units **dealing magic damage**",
     "Ranged damage from allies": "units **dealing ranged damage**",
     "Continuous damage on enemies": (

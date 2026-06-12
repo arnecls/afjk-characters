@@ -476,6 +476,25 @@ class SummaryParsingTests(unittest.TestCase):
         buff_labels = {e.label for e in hero.effects if e.category == "buff"}
         self.assertIn("Magic damage reduction", buff_labels)
 
+    def test_kazim_requires_knock_up_from_allies(self):
+        hero = _hero_by_short_name("Kazim")
+        knock_requires = [
+            s
+            for s in hero.special_effects
+            if s.kind == "requires" and s.label == "Knock up from allies"
+        ]
+        self.assertEqual(len(knock_requires), 1)
+        self.assertEqual(knock_requires[0].targeting, "Enemies")
+
+    def test_ulmus_displacement_not_knock_up_require(self):
+        hero = _hero_by_short_name("Ulmus")
+        knock_requires = [
+            s
+            for s in hero.special_effects
+            if s.kind == "requires" and s.label == "Knock up from allies"
+        ]
+        self.assertEqual(knock_requires, [])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -3967,8 +3967,8 @@
           "name": "Carolina"
         },
         {
-          "score": 4.25,
-          "name": "Indris"
+          "score": 5.4375,
+          "name": "Kazim"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -10460,12 +10460,12 @@
           "name": "Indris"
         },
         {
-          "score": 5.1,
-          "name": "Nerion"
+          "score": 5.4375,
+          "name": "Kazim"
         },
         {
-          "score": 3.75,
-          "name": "Aliceth"
+          "score": 5.1,
+          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -13693,6 +13693,10 @@
         {
           "score": 19.5,
           "name": "Dunlingr"
+        },
+        {
+          "score": 14.5,
+          "name": "Kazim"
         },
         {
           "score": 13.5,
@@ -19366,10 +19370,6 @@
         },
         {
           "score": 11.25,
-          "name": "Kazim"
-        },
-        {
-          "score": 11.25,
           "name": "Lucy"
         },
         {
@@ -21564,6 +21564,14 @@
     "Kazim": {
       "synergies": [
         {
+          "provider": "Ulmus",
+          "reasons": [
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Enables Knock up from allies via Knock up + wide area (area)"
+          ],
+          "score": 15.58
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK SPD via Haste buff (all units, average) `signature fuel`",
@@ -21572,11 +21580,47 @@
           "score": 14.66
         },
         {
+          "provider": "Florabelle",
+          "reasons": [
+            "Enables Knock up from allies via Knock up + wide area (area)"
+          ],
+          "score": 14.5
+        },
+        {
+          "provider": "Nerion",
+          "reasons": [
+            "Enables Knock up from allies via Knock up + wide area (area)"
+          ],
+          "score": 14.5
+        },
+        {
+          "provider": "Zandrok",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Enables Knock up from allies via Knock up (area)"
+          ],
+          "score": 14.25
+        },
+        {
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
           ],
           "score": 11.25
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Enables Knock up from allies via Knock up (area)"
+          ],
+          "score": 10.0
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Enables Knock up from allies via Knock up (area)"
+          ],
+          "score": 10.0
         },
         {
           "provider": "Rowan",
@@ -21630,6 +21674,48 @@
           "score": 5.625
         },
         {
+          "provider": "Baelran",
+          "reasons": [
+            "Enables Knock up from allies via Knock up + wide area (single target)"
+          ],
+          "score": 5.4375
+        },
+        {
+          "provider": "Dionel",
+          "reasons": [
+            "Enables Knock up from allies via Knock up + wide area (single target)"
+          ],
+          "score": 5.4375
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "Enables Knock up from allies via Knock up + wide area (single target)"
+          ],
+          "score": 5.4375
+        },
+        {
+          "provider": "Kulu",
+          "reasons": [
+            "Enables Knock up from allies via Knock up + wide area (single target)"
+          ],
+          "score": 5.4375
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Enables Knock up from allies via Knock up + wide area (single target)"
+          ],
+          "score": 5.4375
+        },
+        {
+          "provider": "Nara",
+          "reasons": [
+            "Enables Knock up from allies via Knock up + wide area (single target)"
+          ],
+          "score": 5.4375
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
@@ -21637,11 +21723,18 @@
           "score": 4.32
         },
         {
-          "provider": "Zandrok",
+          "provider": "Cassadee",
           "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+            "Enables Knock up from allies via Knock up (single target)"
           ],
-          "score": 4.25
+          "score": 3.75
+        },
+        {
+          "provider": "Frieren",
+          "reasons": [
+            "Enables Knock up from allies via Knock up (single target)"
+          ],
+          "score": 3.75
         },
         {
           "provider": "Galahad",
@@ -21658,9 +21751,23 @@
           "score": 3.75
         },
         {
+          "provider": "Lumont",
+          "reasons": [
+            "Enables Knock up from allies via Knock up (single target)"
+          ],
+          "score": 3.75
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 3.75
+        },
+        {
+          "provider": "Reinier",
+          "reasons": [
+            "Enables Knock up from allies via Knock up (single target)"
           ],
           "score": 3.75
         },
@@ -21743,13 +21850,6 @@
         },
         {
           "provider": "Thador",
-          "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 1.08
-        },
-        {
-          "provider": "Ulmus",
           "reasons": [
             "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
@@ -28344,10 +28444,6 @@
           "name": "Lyca"
         },
         {
-          "score": 8.6,
-          "name": "Kazim"
-        },
-        {
           "score": 7.701,
           "name": "Marilee"
         },
@@ -32223,16 +32319,8 @@
       ],
       "beneficiaries": [
         {
-          "score": 9.75,
-          "name": "Shadewing"
-        },
-        {
-          "score": 9.5,
-          "name": "Bonnie"
-        },
-        {
-          "score": 8.0,
-          "name": "Carolina"
+          "score": 14.5,
+          "name": "Kazim"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -36751,10 +36839,6 @@
         {
           "score": 8.64,
           "name": "Hugin"
-        },
-        {
-          "score": 8.64,
-          "name": "Kazim"
         },
         {
           "score": 8.64,
@@ -41989,10 +42073,6 @@
         },
         {
           "score": 8.64,
-          "name": "Kazim"
-        },
-        {
-          "score": 8.64,
           "name": "Pandora"
         },
         {
@@ -46774,16 +46854,8 @@
       ],
       "beneficiaries": [
         {
-          "score": 16.503999999999998,
-          "name": "Nerion"
-        },
-        {
-          "score": 8.6318,
-          "name": "Carolina"
-        },
-        {
-          "score": 7.404,
-          "name": "Zorya"
+          "score": 15.58,
+          "name": "Kazim"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -50041,6 +50113,10 @@
         {
           "score": 14.500000000000002,
           "name": "Alsa"
+        },
+        {
+          "score": 14.25,
+          "name": "Kazim"
         },
         {
           "score": 12.8,

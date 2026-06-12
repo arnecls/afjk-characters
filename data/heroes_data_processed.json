@@ -24506,7 +24506,14 @@
             "description": "Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks."
           }
         ],
-        "requires": []
+        "requires": [
+          {
+            "label": "Knock up from allies",
+            "tier": "base",
+            "targeting": "Enemies",
+            "description": "When an enemy hero is knocked into the air, Kazim manipulates the air currents to keep them airborne for 1s longer, 100% (ATK-based) + then fires 2 tracking feathers at the target, dealing 10% damage each."
+          }
+        ]
       },
       "damage_entries": [
         [
@@ -30225,6 +30232,16 @@
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
             }
           ],
           "skill_range": 1,

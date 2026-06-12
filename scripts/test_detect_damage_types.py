@@ -807,6 +807,30 @@ class CommonFailurePatternTests(unittest.TestCase):
         labels = [e.label for e in self._effects(text)]
         self.assertIn("Marked target (focus fire)", labels)
 
+    def test_kazim_airborne_trigger_not_knock_up_cc(self):
+        text = (
+            "When an enemy hero is knocked into the air, Kazim dives at them, "
+            "dealing 440% (ATK-based) + 50% damage and marking them as prey."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertNotIn("Knock up", labels)
+
+    def test_active_knock_into_air_still_knock_up_cc(self):
+        text = (
+            "The affected enemies are knocked into the air and stunned for 2s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Knock up", labels)
+
+    def test_ulmus_displacement_trigger_not_knock_down_cc(self):
+        text = (
+            "When an enemy is knocked down, knocked into the air or affected "
+            "by other displacement effects, Ulmus summons prowling roots."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertNotIn("Knock down", labels)
+        self.assertNotIn("Knock up", labels)
+
     def test_kazim_wind_field_self_haste_absorb(self):
         text = (
             "When Kazim stops soaring, he absorbs the power of the wind field, "
