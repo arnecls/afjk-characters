@@ -1088,6 +1088,20 @@
     };
   }
 
+  function targetingIndicatorMeta(targeting) {
+    const lower = (targeting || "").trim().toLowerCase();
+    if (lower !== "self") {
+      return null;
+    }
+    const def = TARGETING_DEFINITIONS.self;
+    return {
+      cls: def.cls,
+      label: "Self",
+      tooltip: "",
+      emoji: def.emoji,
+    };
+  }
+
   function resolveIndicatorMeta(label, indicator, isCc) {
     if (isSpeedMetricLabel(label)) {
       return (
@@ -1244,6 +1258,14 @@
     return { textOnly: trimmed, remainder: "", isCc: false };
   }
 
+  function effectChipRemainder(remainder) {
+    const trimmed = (remainder || "").trim().toLowerCase();
+    if (trimmed === "buff" || trimmed === "debuff") {
+      return "";
+    }
+    return remainder || "";
+  }
+
   function formatMergedTierSuffix(tierSuffix) {
     if (!tierSuffix) {
       return "";
@@ -1318,7 +1340,7 @@
           },
           meta,
           false
-        ) + escapeHtml(leading.remainder || "")
+        ) + escapeHtml(effectChipRemainder(leading.remainder))
       );
     }
     return formatMergedIndicator(
@@ -1349,12 +1371,40 @@
           },
           qualityMeta,
           false
-        ) + escapeHtml(leading.remainder || "")
+        ) + escapeHtml(effectChipRemainder(leading.remainder))
       );
     }
     return formatMergedIndicator(
       { textOnly: effectLabel, tierSuffix: tierSuffix || "" },
       qualityMeta,
+      true
+    );
+  }
+
+  function mergeEffectWithTargeting(effectLabel, targeting, tierSuffix, polarity) {
+    const targetingMeta = targetingIndicatorMeta(targeting);
+    if (!targetingMeta) {
+      return null;
+    }
+    const leading = resolveLeadingChip(effectLabel, polarity);
+    if (leading.emoji) {
+      return (
+        formatMergedIndicator(
+          {
+            hasIcon: true,
+            emoji: leading.emoji,
+            text: leading.text,
+            cls: leading.cls,
+            tierSuffix: tierSuffix || "",
+          },
+          targetingMeta,
+          false
+        ) + escapeHtml(effectChipRemainder(leading.remainder))
+      );
+    }
+    return formatMergedIndicator(
+      { textOnly: effectLabel, tierSuffix: tierSuffix || "" },
+      targetingMeta,
       true
     );
   }
@@ -2090,13 +2140,38 @@
     return html.slice(0, end + 7);
   }
 
-  function chipifySkillCardTag(raw) {
+  function parseSkillCardTag(raw) {
     let tag = raw.trim();
+    let targeting = "";
+    const selfMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Self\s*$/i);
+    if (selfMatch) {
+      tag = selfMatch[1].trim();
+      targeting = "Self";
+    }
+    return { tag: tag, targeting: targeting };
+  }
+
+  function chipifySkillCardTag(raw) {
+    const split = parseSkillCardTag(raw);
+    let tag = split.tag;
     if (!tag) {
       return "";
     }
     const parsed = parseEffectLabelParts(tag);
     tag = parsed.base;
+    const polarity = / debuff$/i.test(tag) ? "debuff" : "buff";
+
+    if (split.targeting === "Self") {
+      const merged = mergeEffectWithTargeting(
+        tag,
+        split.targeting,
+        parsed.tier,
+        polarity
+      );
+      if (merged) {
+        return merged;
+      }
+    }
 
     const direct = tryChipify(tag);
     if (direct) {
@@ -2151,6 +2226,7 @@
     if (!tag) {
       return "";
     }
+    tag = tag.replace(/\s*(?:—|–)\s*self\s*$/, "").trim();
     tag = tag
       .replace(
         /\s*\((?:legendary\+|mythic\+|supreme\+|ex\+\d+)\)/gi,
