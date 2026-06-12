@@ -1164,6 +1164,11 @@ def add_cc_immunity(hero: Hero, imm_type: str, tier: str, text: str):
 
 def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     t = text.lower()
+    if re.search(
+        r"\benemies?\s+(?:inside|within)\s+(?:the\s+)?(?:circle|forcefield|field|it)\b",
+        t,
+    ):
+        return "Area"
     if category == "cc" and re.search(
         r"\binterrogat(?:es|ion)\s+(?:the\s+)?enemy\b", t
     ):
@@ -1518,12 +1523,31 @@ def extract_number(text: str, label: str = "") -> float | None:
                 return _pair_sum_amount(m) if m.lastindex and m.lastindex >= 2 else float(m.group(1))
         return None
     if label == "Haste debuff":
-        if m := re.search(
-            r"reduc(?:e|es|ing) .{0,40}haste by (\d+(?:\.\d+)?)(?:\s+for|\s+until|\b)",
-            t,
-            re.I,
-        ):
-            return float(m.group(1))
+        amounts = _all_amounts(
+            text,
+            [
+                r"reduc(?:e|es|ing) .{0,40}haste by (\d+(?:\.\d+)?)"
+                r"(?:\s+for|\s+until|\b)",
+                r"los(?:e|es|ing) (\d+(?:\.\d+)?)\s+haste\b",
+                r"and (\d+(?:\.\d+)?)\s+haste\b",
+                r"max reduction of (\d+(?:\.\d+)?)\s+haste\b",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
+    if label == "Movement speed debuff":
+        amounts = _all_amounts(
+            text,
+            [
+                r"los(?:e|es|ing) (\d+(?:\.\d+)?)\s*%\s*movement speed",
+                r"and (\d+(?:\.\d+)?)\s*%\s*movement speed",
+                r"reduc(?:e|es|ing) .{0,50}(\d+(?:\.\d+)?)\s*%\s*movement speed",
+                r"max reduction of \d+ haste and (\d+(?:\.\d+)?)\s*%\s*movement speed",
+            ],
+        )
+        if amounts:
+            return max(amounts)
         return None
     if label == "Max HP debuff":
         for pat in (
@@ -2313,7 +2337,9 @@ def _text_has_targeting_cue(text: str) -> bool:
             r"\bwithin (?:a |an )?\d+(?:\.\d+)?[-\s]*tile arc\b|"
             r"\bin an arc\b|\d+[-\s]*tile arc\b|\ball enemies\b|"
             r"\ball allies\b|\ball units\b|"
-            r"\b\d+ (?:closest|nearest|random|different)? ?enemies\b",
+            r"\b\d+ (?:closest|nearest|random|different)? ?enemies\b|"
+            r"\benemies?\s+(?:inside|within)\s+(?:the\s+)?"
+            r"(?:circle|forcefield|field|it)\b",
             t,
         )
     )
@@ -2338,6 +2364,8 @@ def parse_area_tile_count(text: str) -> int | None:
     for pat in (
         r"range of (\d+(?:\.\d+)?)[-\s]*tile",
         r"within a (\d+(?:\.\d+)?)[-\s]*tile radius",
+        r"(\d+(?:\.\d+)?)[-\s]*tile[-\s]*forcefield",
+        r"(\d+(?:\.\d+)?)[-\s]*tile[-\s]*radius(?:\s+magic)?\s+circle",
     ):
         if m := re.search(pat, t):
             return max(1, int(float(m.group(1))))
@@ -2490,8 +2518,10 @@ DEBUFF_RULES = [
         "Damage taken debuff",
     ),
     # Movement / Haste debuff
-    (r"reduc(?:e|es|ing) .{0,20}movement speed", "Movement speed debuff"),
-    (r"reduc(?:e|es|ing) .{0,30}haste\b", "Haste debuff"),
+    (r"los(?:e|es|ing) .{0,40}movement speed", "Movement speed debuff"),
+    (r"los(?:e|es|ing) .{0,40}haste\b", "Haste debuff"),
+    (r"reduc(?:e|es|ing|tion) .{0,40}haste\b", "Haste debuff"),
+    (r"reduc(?:e|es|ing) .{0,50}movement speed", "Movement speed debuff"),
     (r"reduc(?:e|es|ing) .{0,100}haste by \d+", "Haste debuff"),
     (r"reduc(?:e|es|ing) .{0,100}vitality by \d+", "Vitality debuff"),
     (r"vitality reduc(?:e|ed|es|ing) by \d+", "Vitality debuff"),

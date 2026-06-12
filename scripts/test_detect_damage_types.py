@@ -775,6 +775,54 @@ class CommonFailurePatternTests(unittest.TestCase):
         labels = [e.label for e in self._effects(text)]
         self.assertIn("Max HP-based damage", labels)
 
+    def test_galahad_circle_lose_haste_movement_debuff(self):
+        text = (
+            "Enemies inside the circle lose 10 Haste and 16% movement speed "
+            "for every 10% of the circle's forming progress, up to a max "
+            "reduction of 50 Haste and 80% movement speed."
+        )
+        effects = self._effects(text)
+        labels = [e.label for e in effects]
+        self.assertIn("Haste debuff", labels)
+        self.assertIn("Movement speed debuff", labels)
+        debuffs = [e for e in effects if e.category == "debuff"]
+        self.assertEqual(
+            {e.label: e.targeting for e in debuffs},
+            {
+                "Haste debuff": "Area",
+                "Movement speed debuff": "Area",
+            },
+        )
+        haste = next(e for e in debuffs if e.label == "Haste debuff")
+        move = next(e for e in debuffs if e.label == "Movement speed debuff")
+        self.assertEqual(haste.numeric, 50.0)
+        self.assertEqual(move.numeric, 80.0)
+        self.assertEqual(haste.area_count, 2)
+
+    def test_zorya_forcefield_lose_haste_movement_debuff(self):
+        text = (
+            "While Zorya is awake, she creates a 2-tile forcefield around "
+            "herself, causing all enemies within it to lose 80% movement speed "
+            "and 60 Haste, while increasing her own Haste by 20."
+        )
+        effects = self._effects(text)
+        labels = [e.label for e in effects]
+        self.assertIn("Haste debuff", labels)
+        self.assertIn("Movement speed debuff", labels)
+        debuffs = [e for e in effects if e.category == "debuff"]
+        self.assertEqual(
+            {e.label: e.targeting for e in debuffs},
+            {
+                "Haste debuff": "Area",
+                "Movement speed debuff": "Area",
+            },
+        )
+        haste = next(e for e in debuffs if e.label == "Haste debuff")
+        move = next(e for e in debuffs if e.label == "Movement speed debuff")
+        self.assertEqual(haste.numeric, 60.0)
+        self.assertEqual(move.numeric, 80.0)
+        self.assertEqual(haste.area_count, 2)
+
 
 if __name__ == "__main__":
     unittest.main()

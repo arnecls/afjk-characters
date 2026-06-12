@@ -5217,7 +5217,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "DoT": "high",
+              "DoT": "average",
               "Max HP-based damage": "average",
               "Magic": "average"
             }
@@ -5230,7 +5230,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "DoT": "high",
+              "DoT": "average",
               "Max HP-based damage": "average",
               "Magic": "average"
             }
@@ -10618,7 +10618,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
@@ -14190,11 +14190,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "damage",
               "damage_type": "true",
               "name": "True damage",
@@ -14208,11 +14209,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "damage",
               "damage_type": "hp_loss",
               "name": "HP loss",
@@ -14226,11 +14228,12 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "dot",
               "damage_type": "dot",
               "name": "DoT",
@@ -14527,11 +14530,12 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 3,
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "damage",
               "damage_type": "true",
               "name": "True damage",
@@ -14588,11 +14592,11 @@
         ],
         [
           "dot",
-          "Single target"
+          "Area"
         ],
         [
           "hp_loss",
-          "Single target"
+          "Area"
         ],
         [
           "max_hp",
@@ -14600,7 +14604,7 @@
         ],
         [
           "true",
-          "Multiple targets, Single target"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -14642,7 +14646,7 @@
             "damage_types": {
               "True damage": "high",
               "HP loss": "high",
-              "DoT": "average",
+              "DoT": "high",
               "Physical": "average"
             }
           },
@@ -14656,7 +14660,7 @@
             "damage_types": {
               "True damage": "high",
               "HP loss": "high",
-              "DoT": "average",
+              "DoT": "high",
               "Physical": "average"
             }
           },
@@ -16304,6 +16308,42 @@
                 }
               ],
               "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "debuff",
+              "name": "Movement speed debuff",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 80.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "debuff",
+              "name": "Haste debuff",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 50.0
+                }
+              ]
             }
           ],
           "initial_energy": 400.0
@@ -16689,7 +16729,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Max HP-based damage": "high",
               "Magic": "high"
@@ -24469,21 +24509,23 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "crowd_control",
               "cc-type": "knock_back"
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -24888,7 +24930,7 @@
       "damage_entries": [
         [
           "physical",
-          "Single target"
+          "Area, Single target"
         ],
         [
           "max_hp",
@@ -24924,23 +24966,23 @@
           "signature": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "average"
             }
           },
           "non_ultimate": {
@@ -54351,6 +54393,17 @@
                   "value": 20.0
                 }
               ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Movement speed debuff",
+              "label": "debuff_stat"
             }
           ],
           "tier": "supreme+"
@@ -54500,6 +54553,23 @@
             ]
           },
           "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Haste debuff",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 10.0
+                }
+              ]
+            },
             {
               "tier": "base",
               "targeting_label": "Single target",
@@ -54983,7 +55053,7 @@
             "damage": "high",
             "heal": "average",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "True damage": "average",
               "Max HP-based damage": "average"
@@ -54995,7 +55065,7 @@
             "damage": "high",
             "heal": "average",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "True damage": "average",
               "Max HP-based damage": "average"
@@ -56455,7 +56525,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "low"
             }
           }
         }
@@ -57837,6 +57907,42 @@
               "label": "buff_offensive"
             },
             {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "debuff",
+              "name": "Movement speed debuff",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 80.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "debuff",
+              "name": "Haste debuff",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ]
+            },
+            {
               "type": "immunity",
               "tier": "ex+10",
               "immunity_type": "unaffected",
@@ -57950,7 +58056,7 @@
             "damage": "high",
             "heal": "average",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Max HP-based damage": "high",
               "Magic": "high",

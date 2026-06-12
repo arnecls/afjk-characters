@@ -36,6 +36,14 @@
           "score": 15.0
         },
         {
+          "provider": "Galahad",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, average) `signature fuel`",
+            "Enables Debuff on target via Movement speed debuff (area)"
+          ],
+          "score": 14.025
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -137,13 +145,6 @@
           "score": 2.25
         },
         {
-          "provider": "Galahad",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, average) `signature fuel`"
-          ],
-          "score": 2.025
-        },
-        {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK buff (all units, high)",
@@ -192,6 +193,13 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 19.0824
+        },
+        {
+          "provider": "Zorya",
+          "reasons": [
+            "Enables Debuff on target via Movement speed debuff (area)"
+          ],
+          "score": 18.0
         },
         {
           "provider": "Alna",
@@ -367,6 +375,13 @@
           "score": 6.824999999999999
         },
         {
+          "provider": "Bonnie",
+          "reasons": [
+            "Enables Debuff on target via Haste debuff (single target)"
+          ],
+          "score": 6.75
+        },
+        {
           "provider": "Himmel",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -441,6 +456,14 @@
           "score": 5.5125
         },
         {
+          "provider": "Valka",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, average) `signature fuel`",
+            "Enables Debuff on target via Haste debuff (single target)"
+          ],
+          "score": 5.49
+        },
+        {
           "provider": "Reinier",
           "reasons": [
             "ATK via ATK buff (single target, average)",
@@ -467,13 +490,6 @@
           "provider": "Berial",
           "reasons": [
             "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Bonnie",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (single target)"
           ],
           "score": 4.5
         },
@@ -562,13 +578,6 @@
             "Enables Debuff on target via Phys DEF debuff (single target)"
           ],
           "score": 3.2706
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.2399999999999998
         },
         {
           "provider": "Tasi",
@@ -1596,7 +1605,21 @@
         ],
         "debuff": [
           {
+            "name": "Galahad",
+            "score": 1.0,
+            "matches": [
+              "Movement speed debuff"
+            ]
+          },
+          {
             "name": "Kulu",
+            "score": 1.0,
+            "matches": [
+              "Movement speed debuff"
+            ]
+          },
+          {
+            "name": "Zorya",
             "score": 1.0,
             "matches": [
               "Movement speed debuff"
@@ -3502,6 +3525,13 @@
         ],
         "debuff": [
           {
+            "name": "Galahad",
+            "score": 1.0,
+            "matches": [
+              "Haste debuff"
+            ]
+          },
+          {
             "name": "Velara",
             "score": 1.0,
             "matches": [
@@ -3510,13 +3540,6 @@
           },
           {
             "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Dunlingr",
             "score": 1.0,
             "matches": [
               "Haste debuff"
@@ -4401,11 +4424,10 @@
             ]
           },
           {
-            "name": "Frieren",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "DoT",
-              "Magic",
               "Max HP-based damage"
             ]
           }
@@ -4478,6 +4500,14 @@
             "Enables Magic damage from allies via Magic damage (area)"
           ],
           "score": 21.5
+        },
+        {
+          "provider": "Galahad",
+          "reasons": [
+            "Enables Debuff on target via Movement speed debuff (area)",
+            "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
+          ],
+          "score": 20.7
         },
         {
           "provider": "Velara",
@@ -4611,13 +4641,6 @@
           "score": 9.5
         },
         {
-          "provider": "Galahad",
-          "reasons": [
-            "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
-          ],
-          "score": 8.7
-        },
-        {
           "provider": "Solise",
           "reasons": [
             "Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)"
@@ -4727,6 +4750,14 @@
             "Enables Debuff on target via Vitality debuff (single target)"
           ],
           "score": 2.25
+        },
+        {
+          "provider": "Zorya",
+          "reasons": [
+            "Enables Debuff on target via Movement speed debuff (area)",
+            "Enables Magic damage from allies via Magic damage + wide area (area)"
+          ],
+          "score": 25.25
         },
         {
           "provider": "Lyca",
@@ -4919,13 +4950,6 @@
           "reasons": [
             "Enables Debuff on target via Vitality debuff (single target)",
             "Enables Magic damage from allies via Magic damage (area)"
-          ],
-          "score": 7.25
-        },
-        {
-          "provider": "Zorya",
-          "reasons": [
-            "Enables Magic damage from allies via Magic damage + wide area (area)"
           ],
           "score": 7.25
         },
@@ -5142,6 +5166,13 @@
           "score": 2.25
         },
         {
+          "provider": "Valka",
+          "reasons": [
+            "Enables Debuff on target via Haste debuff (single target)"
+          ],
+          "score": 2.25
+        },
+        {
           "provider": "Walker",
           "reasons": [
             "Enables Debuff on target via Crit Resist debuff (single target)"
@@ -5151,16 +5182,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 12.0,
+          "score": 14.25,
           "name": "Shadewing"
+        },
+        {
+          "score": 12.149999999999999,
+          "name": "Indris"
         },
         {
           "score": 10.2,
           "name": "Nerion"
-        },
-        {
-          "score": 9.899999999999999,
-          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -5883,6 +5914,13 @@
         ],
         "debuff": [
           {
+            "name": "Galahad",
+            "score": 1.0,
+            "matches": [
+              "Haste debuff"
+            ]
+          },
+          {
             "name": "Velara",
             "score": 1.0,
             "matches": [
@@ -5891,13 +5929,6 @@
           },
           {
             "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Aurora",
             "score": 1.0,
             "matches": [
               "Haste debuff"
@@ -7017,11 +7048,10 @@
             ]
           },
           {
-            "name": "Velara",
-            "score": 0.8785,
+            "name": "Zorya",
+            "score": 1.0,
             "matches": [
-              "Haste debuff",
-              "Magic DEF debuff"
+              "Haste debuff"
             ]
           }
         ],
@@ -9259,15 +9289,23 @@
             ]
           },
           {
-            "name": "Valka",
-            "score": 0.8119,
+            "name": "Faramor",
+            "score": 0.8383,
             "matches": [
+              "DoT",
               "True damage",
               "Max HP-based damage"
             ]
           }
         ],
         "debuff": [
+          {
+            "name": "Galahad",
+            "score": 1.0,
+            "matches": [
+              "Haste debuff"
+            ]
+          },
           {
             "name": "Velara",
             "score": 1.0,
@@ -9277,13 +9315,6 @@
           },
           {
             "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Aurora",
             "score": 1.0,
             "matches": [
               "Haste debuff"
@@ -12014,10 +12045,6 @@
           "name": "Zanie"
         },
         {
-          "score": 12.2706,
-          "name": "Aliceth"
-        },
-        {
           "score": 12.16,
           "name": "Hugin"
         },
@@ -12835,7 +12862,7 @@
         "damage": [
           {
             "name": "Athalia",
-            "score": 1.0,
+            "score": 0.9086,
             "matches": [
               "True damage",
               "Physical",
@@ -12845,7 +12872,7 @@
           },
           {
             "name": "Vala",
-            "score": 0.8989,
+            "score": 0.8325,
             "matches": [
               "True damage",
               "Physical",
@@ -12855,7 +12882,7 @@
           },
           {
             "name": "Nara",
-            "score": 0.8549,
+            "score": 0.8278,
             "matches": [
               "True damage",
               "Physical",
@@ -13767,19 +13794,19 @@
         ],
         "damage": [
           {
-            "name": "Himmel",
-            "score": 0.7996,
+            "name": "Faramor",
+            "score": 0.8261,
             "matches": [
               "True damage",
+              "DoT",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Faramor",
-            "score": 0.7975,
+            "name": "Himmel",
+            "score": 0.7996,
             "matches": [
               "True damage",
-              "DoT",
               "Max HP-based damage"
             ]
           },
@@ -13997,6 +14024,14 @@
       ],
       "beneficiaries": [
         {
+          "score": 20.7,
+          "name": "Bonnie"
+        },
+        {
+          "score": 14.025,
+          "name": "Aliceth"
+        },
+        {
           "score": 11.0,
           "name": "Himmel"
         },
@@ -14126,7 +14161,16 @@
             ]
           }
         ],
-        "debuff": [],
+        "debuff": [
+          {
+            "name": "Zorya",
+            "score": 0.6462,
+            "matches": [
+              "Movement speed debuff",
+              "Haste debuff"
+            ]
+          }
+        ],
         "cc": [
           {
             "name": "Velara",
@@ -17063,6 +17107,13 @@
         ],
         "debuff": [
           {
+            "name": "Galahad",
+            "score": 1.0,
+            "matches": [
+              "Haste debuff"
+            ]
+          },
+          {
             "name": "Velara",
             "score": 1.0,
             "matches": [
@@ -17071,13 +17122,6 @@
           },
           {
             "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Eironn",
             "score": 1.0,
             "matches": [
               "Haste debuff"
@@ -19479,6 +19523,23 @@
           "score": 28.5
         },
         {
+          "provider": "Galahad",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, average) `signature fuel`",
+            "Enables Multiple debuffs on target via 2 debuff types",
+            "Enables Debuff on target via Movement speed debuff (area)"
+          ],
+          "score": 27.6
+        },
+        {
+          "provider": "Zorya",
+          "reasons": [
+            "Enables Multiple debuffs on target via 2 debuff types",
+            "Enables Debuff on target via Movement speed debuff (area)"
+          ],
+          "score": 27.6
+        },
+        {
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -19593,6 +19654,15 @@
           "score": 14.0
         },
         {
+          "provider": "Valka",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, average) `signature fuel`",
+            "Enables Multiple debuffs on target via Haste debuff",
+            "Enables Debuff on target via Haste debuff (single target)"
+          ],
+          "score": 13.850000000000001
+        },
+        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`",
@@ -19610,6 +19680,14 @@
             "Enables Debuff on target via ATK debuff (single target)"
           ],
           "score": 12.8
+        },
+        {
+          "provider": "Bonnie",
+          "reasons": [
+            "Enables Multiple debuffs on target via 3 debuff types",
+            "Enables Debuff on target via Haste debuff (single target)"
+          ],
+          "score": 12.149999999999999
         },
         {
           "provider": "Satrana",
@@ -19634,21 +19712,6 @@
             "Enables Debuff on target via Max HP debuff (single target)"
           ],
           "score": 11.25
-        },
-        {
-          "provider": "Bonnie",
-          "reasons": [
-            "Enables Multiple debuffs on target via 3 debuff types",
-            "Enables Debuff on target via Haste debuff (single target)"
-          ],
-          "score": 9.899999999999999
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 9.600000000000001
         },
         {
           "provider": "Zanie",
@@ -19775,13 +19838,6 @@
             "Enables Debuff on target via Haste debuff (single target)"
           ],
           "score": 6.5
-        },
-        {
-          "provider": "Galahad",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, average) `signature fuel`"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Harak",
@@ -20042,6 +20098,14 @@
           "score": 8.1
         },
         {
+          "provider": "Valen",
+          "reasons": [
+            "Enables Multiple debuffs on target via 2 debuff types",
+            "Enables Debuff on target via Haste debuff (single target)"
+          ],
+          "score": 8.1
+        },
+        {
           "provider": "Alsa",
           "reasons": [
             "Enables Multiple debuffs on target via Movement speed debuff",
@@ -20078,14 +20142,6 @@
           "reasons": [
             "Enables Multiple debuffs on target via ATK debuff",
             "Enables Debuff on target via ATK debuff (single target)"
-          ],
-          "score": 6.5
-        },
-        {
-          "provider": "Valen",
-          "reasons": [
-            "Enables Multiple debuffs on target via Haste debuff",
-            "Enables Debuff on target via Haste debuff (single target)"
           ],
           "score": 6.5
         },
@@ -20247,6 +20303,14 @@
         ],
         "cc": [
           {
+            "name": "Kordan",
+            "score": 0.8364,
+            "matches": [
+              "Bind",
+              "Knock back"
+            ]
+          },
+          {
             "name": "Korin",
             "score": 0.8364,
             "matches": [
@@ -20256,13 +20320,6 @@
           },
           {
             "name": "Pippa",
-            "score": 0.7855,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Arden",
             "score": 0.7855,
             "matches": [
               "Bind"
@@ -21093,11 +21150,10 @@
             ]
           },
           {
-            "name": "Velara",
-            "score": 0.6824,
+            "name": "Zorya",
+            "score": 0.7649,
             "matches": [
-              "Haste debuff",
-              "Phys DEF debuff"
+              "Haste debuff"
             ]
           }
         ],
@@ -22164,7 +22220,7 @@
         "cc": [
           {
             "name": "Korin",
-            "score": 0.8936,
+            "score": 0.9231,
             "matches": [
               "Bind",
               "Knock back"
@@ -22172,14 +22228,14 @@
           },
           {
             "name": "Eironn",
-            "score": 0.817,
+            "score": 0.7385,
             "matches": [
               "Bind"
             ]
           },
           {
             "name": "Carolina",
-            "score": 0.6128,
+            "score": 0.5538,
             "matches": [
               "Bind"
             ]
@@ -23216,7 +23272,15 @@
             ]
           }
         ],
-        "debuff": [],
+        "debuff": [
+          {
+            "name": "Zorya",
+            "score": 0.5333,
+            "matches": [
+              "Movement speed debuff"
+            ]
+          }
+        ],
         "cc": [
           {
             "name": "Scarlita",
@@ -25022,6 +25086,13 @@
         ],
         "damage": [
           {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "DoT"
+            ]
+          },
+          {
             "name": "Frieren",
             "score": 1.0,
             "matches": [
@@ -25031,14 +25102,6 @@
           },
           {
             "name": "Cyran",
-            "score": 1.0,
-            "matches": [
-              "DoT",
-              "Magic"
-            ]
-          },
-          {
-            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "DoT",
@@ -30025,21 +30088,21 @@
             ]
           },
           {
-            "name": "Athalia",
-            "score": 0.8498,
+            "name": "Faramor",
+            "score": 0.9288,
             "matches": [
-              "Physical",
               "True damage",
+              "Physical",
               "Max HP-based damage",
               "HP loss"
             ]
           },
           {
-            "name": "Faramor",
-            "score": 0.7919,
+            "name": "Athalia",
+            "score": 0.8498,
             "matches": [
-              "True damage",
               "Physical",
+              "True damage",
               "Max HP-based damage",
               "HP loss"
             ]
@@ -30408,6 +30471,13 @@
         ],
         "debuff": [
           {
+            "name": "Galahad",
+            "score": 0.6508,
+            "matches": [
+              "Haste debuff"
+            ]
+          },
+          {
             "name": "Pandora",
             "score": 0.6178,
             "matches": [
@@ -30417,13 +30487,6 @@
           {
             "name": "Vala",
             "score": 0.5492,
-            "matches": [
-              "Haste debuff"
-            ]
-          },
-          {
-            "name": "Alna",
-            "score": 0.5424,
             "matches": [
               "Haste debuff"
             ]
@@ -37953,6 +38016,13 @@
           "score": 18.0
         },
         {
+          "provider": "Zorya",
+          "reasons": [
+            "Enables Debuff on target via Movement speed debuff (area)"
+          ],
+          "score": 18.0
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Max HP via Max HP buff (single target, high)",
@@ -37996,6 +38066,14 @@
           "score": 15.0
         },
         {
+          "provider": "Galahad",
+          "reasons": [
+            "Max HP via Shield (single target, average)",
+            "Enables Debuff on target via Movement speed debuff (area)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Pandora",
           "reasons": [
             "Max HP via Max HP buff (single target, average)",
@@ -38003,6 +38081,14 @@
             "Enables Continuous damage on enemies via DoT"
           ],
           "score": 15.0
+        },
+        {
+          "provider": "Bonnie",
+          "reasons": [
+            "Enables Debuff on target via Haste debuff (single target)",
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 14.25
         },
         {
           "provider": "Himmel",
@@ -38017,6 +38103,15 @@
           "provider": "Kafra",
           "reasons": [
             "Enables Debuff on target via Phys DEF debuff (single target)",
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 14.25
+        },
+        {
+          "provider": "Valka",
+          "reasons": [
+            "Life Drain via Lifedrain buff (single target, high)",
+            "Enables Debuff on target via Haste debuff (single target)",
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 14.25
@@ -38098,14 +38193,6 @@
           "score": 12.0
         },
         {
-          "provider": "Bonnie",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Granny Dahnie",
           "reasons": [
             "Enables Debuff on target via Energy drain (single target)",
@@ -38158,14 +38245,6 @@
           "reasons": [
             "Enables Debuff on target via Vitality debuff (multiple targets)",
             "Enables Continuous damage on enemies via Burn"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "Life Drain via Lifedrain buff (single target, high)",
-            "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 12.0
         },
@@ -38467,13 +38546,6 @@
             "Enables Debuff on target via Vitality debuff (single target)"
           ],
           "score": 3.75
-        },
-        {
-          "provider": "Galahad",
-          "reasons": [
-            "Max HP via Shield (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Korin",
@@ -43129,14 +43201,14 @@
             ]
           },
           {
-            "name": "Perseus",
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Knock back"
             ]
           },
           {
-            "name": "Lenya",
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
               "Knock back"
@@ -45796,19 +45868,20 @@
             ]
           },
           {
+            "name": "Kordan",
+            "score": 0.8842,
+            "matches": [
+              "Knock back",
+              "Bind",
+              "Knock up"
+            ]
+          },
+          {
             "name": "Cassadee",
             "score": 0.6947,
             "matches": [
               "Knock back",
               "Knock up"
-            ]
-          },
-          {
-            "name": "Indris",
-            "score": 0.6947,
-            "matches": [
-              "Knock back",
-              "Bind"
             ]
           }
         ]
@@ -46592,7 +46665,7 @@
           "name": "Nerion"
         },
         {
-          "score": 6.5,
+          "score": 8.1,
           "name": "Indris"
         },
         {
@@ -46659,22 +46732,24 @@
         ],
         "debuff": [
           {
-            "name": "Velara",
+            "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Haste debuff"
+              "Haste debuff",
+              "Movement speed debuff"
             ]
           },
           {
-            "name": "Alna",
+            "name": "Zorya",
             "score": 1.0,
             "matches": [
-              "Haste debuff"
+              "Haste debuff",
+              "Movement speed debuff"
             ]
           },
           {
-            "name": "Aurora",
-            "score": 1.0,
+            "name": "Vala",
+            "score": 0.96,
             "matches": [
               "Haste debuff"
             ]
@@ -47176,7 +47251,29 @@
             ]
           }
         ],
-        "debuff": [],
+        "debuff": [
+          {
+            "name": "Galahad",
+            "score": 1.0,
+            "matches": [
+              "Haste debuff"
+            ]
+          },
+          {
+            "name": "Velara",
+            "score": 1.0,
+            "matches": [
+              "Haste debuff"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Haste debuff"
+            ]
+          }
+        ],
         "cc": [
           {
             "name": "Callan",
@@ -47470,10 +47567,6 @@
         {
           "score": 17.0125,
           "name": "Aliceth"
-        },
-        {
-          "score": 17.0,
-          "name": "Bonnie"
         },
         {
           "score": 10.125,
@@ -49741,15 +49834,15 @@
       ],
       "beneficiaries": [
         {
+          "score": 27.6,
+          "name": "Indris"
+        },
+        {
           "score": 27.2,
           "name": "Nerion"
         },
         {
-          "score": 16.0,
-          "name": "Carolina"
-        },
-        {
-          "score": 7.25,
+          "score": 25.25,
           "name": "Bonnie"
         }
       ],
@@ -49814,7 +49907,23 @@
             ]
           }
         ],
-        "debuff": [],
+        "debuff": [
+          {
+            "name": "Galahad",
+            "score": 1.0,
+            "matches": [
+              "Movement speed debuff",
+              "Haste debuff"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 0.6171,
+            "matches": [
+              "Haste debuff"
+            ]
+          }
+        ],
         "cc": [
           {
             "name": "Callan",
