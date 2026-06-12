@@ -399,6 +399,21 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertEqual(debuff_key, "haste debuff")
         self.assertNotEqual(buff_key, debuff_key)
 
+    def test_skill_card_chip_key_energy_recovery_debuff_distinct(self):
+        buff_key = rs._canonical_skill_card_chip_key("Energy recovery")
+        debuff_key = rs._canonical_skill_card_chip_key("Energy recovery debuff")
+        self.assertEqual(buff_key, "energy recovery")
+        self.assertEqual(debuff_key, "energy recovery debuff")
+        self.assertNotEqual(buff_key, debuff_key)
+
+    def test_contess_skill2_skill_card_energy_recovery_debuff(self):
+        hero, _ = self._hero_by_display("Contess")
+        tags = rs.format_skill_card_tags(hero, "skill2")
+        self.assertIn("Energy recovery debuff", tags)
+        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        self.assertIn("energy recovery debuff", keys)
+        self.assertNotIn("energy recovery", keys)
+
     def test_galahad_ultimate_skill_card_includes_haste_debuff(self):
         hero, _ = self._hero_by_display("Galahad")
         summaries = rs._load_skill_summaries().get("Galahad", {})

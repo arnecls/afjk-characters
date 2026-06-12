@@ -678,6 +678,7 @@
     "Magic damage amplification": { emoji: "🪄", cls: "chip-debuff" },
     "Magic damage reduction": { emoji: "🪄", cls: "chip-stat" },
     "Energy drain": { emoji: "🔋", cls: "chip-debuff" },
+    "Energy recovery debuff": { emoji: "🔋", cls: "chip-debuff" },
     "Execution debuff": { emoji: "☠️", cls: "chip-debuff" },
     "Magic DEF debuff": { emoji: "🔮", cls: "chip-debuff" },
     "Max HP debuff": { emoji: "💔", cls: "chip-debuff" },
