@@ -24,7 +24,7 @@ When determining which skill defines a hero, the system looks for:
 - **Battle-Start Setup**: Skills that dictate the team's formation or apply massive effects the moment the battle begins.
 
 ### 2. Calculated vs. Override
-By default, the system calculates the "best repeatable, buffable skill" (Ultimate, Skill 1, Skill 2, etc.). However, manual overrides are applied when a hero's true identity lies elsewhere. The final result is the **Effective Signature Skill**.
+By default, the system calculates the "best repeatable, buffable skill" (Ultimate, Skill 1, Skill 2, etc.). However, [manual overrides](../data/signature_skills.json) are applied when a hero's true identity lies elsewhere. The final result is the **Effective Signature Skill**.
 
 ---
 
