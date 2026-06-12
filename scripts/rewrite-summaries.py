@@ -171,8 +171,34 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
     return False
 
 
+def _caster_gains_label_stat(t: str, label: str) -> bool:
+    """True when he/she/it gains the stat for label (trigger context ok)."""
+    if not re.search(r"\b(?:he|she|it)\b", t, re.I):
+        return False
+    if re.search(
+        r"\b(?:allies?|ally)\s+(?:gain|receive|get|recover)\b", t, re.I
+    ):
+        return False
+    patterns = {
+        "Energy recovery": (
+            r"(?:permanently )?gains? \d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?\s+energy\b"
+            r"|\bgains? \d+(?:\.\d+)?\s+atk spd and \d+(?:\.\d+)?\s+energy\b"
+        ),
+        "ATK SPD buff": (
+            r"(?:permanently )?gains? \d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?\s+atk spd\b"
+            r"|\bgains? \d+(?:\.\d+)?\s+atk spd and \d+(?:\.\d+)?\s+energy\b"
+        ),
+    }
+    pat = patterns.get(label)
+    if not pat:
+        return False
+    return bool(re.search(pat, t, re.I))
+
+
 def _energy_recovery_targets_self(t: str) -> bool:
     """True when Energy recovery applies to the caster, not an ally."""
+    if _caster_gains_label_stat(t, "Energy recovery"):
+        return True
     if _has_explicit_ally_buff(t, "Energy recovery"):
         return False
     if re.search(r"\bthe ally\b", t) and re.search(
@@ -558,6 +584,11 @@ def _buff_match_is_enemy_stat(t: str, label: str, match: re.Match[str]) -> bool:
         return False
     clause = _clause_around(t, match.start())
     if re.search(
+        r"\b(?:he|she|it|himself|herself) (?:permanently )?gains?\s+\d+",
+        clause,
+    ):
+        return False
+    if re.search(
         r"\b(?:an ally|allies|that ally|the ally|allied units|allied heroes|"
         r"non-summoned allies|frontal allies|party members|weakest ally|"
         r"rearmost ally|linked through)\b",
@@ -565,7 +596,7 @@ def _buff_match_is_enemy_stat(t: str, label: str, match: re.Match[str]) -> bool:
     ) and not re.search(r"\benemy hero\b", clause):
         return False
     if re.search(
-        r"\b(?:enemy hero|marked as|nightmare|the enemy with|"
+        r"\b(?:enemy hero|marked as (?:the )?nightmare|nightmare|the enemy with|"
         r"frontmost enemy|rearmost enemy|isolated enemy)\b",
         clause,
     ):
@@ -973,6 +1004,8 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         ) and not _has_explicit_ally_buff(t, label):
             return True
         if label == "Energy recovery" and _energy_recovery_targets_self(t):
+            return True
+        if label == "ATK SPD buff" and _caster_gains_label_stat(t, label):
             return True
         if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
             return True
@@ -1405,6 +1438,7 @@ def extract_number(text: str, label: str = "") -> float | None:
                 r"energy recovered by .{0,40}to (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
                 r"energy recovery to (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
                 r"increases energy recovery to (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
+                r"gains? \d+(?:\.\d+)? atk spd and (\d+(?:\.\d+)?)\s+energy",
             ],
         )
         if amounts:
@@ -1563,9 +1597,21 @@ def extract_number(text: str, label: str = "") -> float | None:
             r"gain an atk increase of (\d+(?:\.\d+)?)\s*%",
             r"increas(?:e|es|ing) (?:their|allies?) atk by (\d+(?:\.\d+)?)",
             r"atk (?:is |are )?increased by (\d+(?:\.\d+)?)",
+            r"normal attacks? deal (\d+(?:\.\d+)?)% more damage",
         ):
             if m := re.search(pat, t, re.I):
                 return float(m.group(1))
+    if label == "ATK SPD buff":
+        amounts = _all_amounts(
+            text,
+            [
+                r"increases atk spd by (\d+(?:\.\d+)?)",
+                r"(?:permanently )?gains? (\d+(?:\.\d+)?)\s+atk spd\b",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if label == "Shield":
         m = re.search(r"converting\s+(\d+(?:\.\d+)?)\s*%", text, re.I)
         if m:
@@ -2126,6 +2172,12 @@ BUFF_RULES = [
     ),
     (r"increas(?:e|es|ing) atk spd", "ATK SPD buff"),
     (r"increas(?:e|es|ing) .{0,50}and atk spd by \d+", "ATK SPD buff"),
+    (r"(?:permanently )?gains? \d+(?:\.\d+)? atk spd\b", "ATK SPD buff"),
+    (
+        r"gains? \d+(?:\.\d+)? atk spd and \d+(?:\.\d+)? energy",
+        "ATK SPD buff",
+    ),
+    (r"normal attacks? deal \d+(?:\.\d+)?% more damage", "ATK buff"),
     # Haste buff: must be gaining Haste, not reducing it
     (r"increas(?:e|es|ing) .{0,60}?haste\b", "Haste buff"),
     (r"haste increased by \d+", "Haste buff"),
@@ -2261,6 +2313,10 @@ BUFF_RULES = [
         "Energy recovery",
     ),
     (r"(?:recover(?:s|ing|ed)?|restor(?:e|es|ing|ed)?) \d+(?:\s*\+\s*\d+)? energy", "Energy recovery"),
+    (
+        r"gains? \d+(?:\.\d+)? atk spd and \d+(?:\.\d+)? energy",
+        "Energy recovery",
+    ),
     (r"increases the energy recovered .{0,80}to \d+(?:\s*\+\s*\d+)?", "Energy recovery"),
     (r"increases energy recovery to \d+(?:\s*\+\s*\d+)?", "Energy recovery"),
     (r"increases the hp recovered .{0,120}to \d+(?:\.\d+)?% \(atk-based\) \+ \d+(?:\.\d+)?%", DIRECT_HEALING_LABEL),
@@ -2297,6 +2353,10 @@ BUFF_RULES = [
     (
         r"(?:gain\w*|increas\w+) .{0,30}movement speed",
         "Movement speed buff",
+    ),
+    (
+        r"gaining double the haste|absorbs? .{0,40}haste bonus",
+        "Haste buff",
     ),
 ]
 
@@ -2562,7 +2622,8 @@ DEBUFF_RULES = [
     (
         r"places? (?:her |his |their )?(?:\w+ ){0,4}mark on|forest mark|"
         r"notice to mark|noticed enemy|"
-        r"prioritizes attacking the .{0,30}marked",
+        r"prioritizes attacking the .{0,30}marked|"
+        r"marking them as prey",
         "Marked target (focus fire)",
     ),
 ]
@@ -3569,6 +3630,8 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"deal true damage.{0,80}equal to\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
             r"(\d+(?:\.\d+)?)\s*%\s+of (?:their|the target's|each target's) max hp",
             r"true damage equal to (\d+(?:\.\d+)?)\s*%\s+of max hp",
+            r"true damage equal to (\d+(?:\.\d+)?)\s*%\s+of (?:the )?target'?s max hp",
+            r"dealing true damage equal to (\d+(?:\.\d+)?)\s*%\s+of (?:the )?target'?s max hp",
             r"plus extra true damage equal to (\d+(?:\.\d+)?)\s*%\s*\+\s*"
             r"(\d+(?:\.\d+)?)\s*%\s+of (?:the )?target's max hp",
         ]
@@ -7248,6 +7311,8 @@ def _canonical_skill_card_chip_key(tag: str) -> str:
         flags=re.I,
     ).strip()
     low = text.lower()
+    if low.endswith(" debuff"):
+        return re.sub(r"\s*\([^)]*\)", "", low).strip()
     for dt in _SKILL_CARD_DAMAGE_KEYS:
         if low == dt.lower() or low.startswith(dt.lower() + " "):
             return dt.lower()

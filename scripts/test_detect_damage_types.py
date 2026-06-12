@@ -799,6 +799,67 @@ class CommonFailurePatternTests(unittest.TestCase):
         self.assertEqual(move.numeric, 80.0)
         self.assertEqual(haste.area_count, 2)
 
+    def test_kazim_prey_mark_debuff(self):
+        text = (
+            "When an enemy hero is knocked into the air, Kazim dives at them, "
+            "dealing 440% (ATK-based) + 50% damage and marking them as prey."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Marked target (focus fire)", labels)
+
+    def test_kazim_wind_field_self_haste_absorb(self):
+        text = (
+            "When Kazim stops soaring, he absorbs the power of the wind field, "
+            "gaining double the Haste bonus for 15s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Haste buff", labels)
+
+    def test_kazim_normal_attack_damage_buff(self):
+        text = (
+            "Kazim's normal attacks deal 25% more damage and lock on to all "
+            "enemies marked as prey."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK buff", labels)
+        atk = next(e for e in self._effects(text) if e.label == "ATK buff")
+        self.assertEqual(atk.numeric, 25.0)
+
+    def test_kazim_ex_true_damage_max_hp(self):
+        text = (
+            "Every 6 normal attacks, Kazim fires an enhanced arrow, knocking "
+            "the target into the air for 0.25s and dealing true damage equal "
+            "to 20% of the target's max HP."
+        )
+        effects = self._effects(text)
+        true = next(e for e in effects if e.label == "True damage")
+        self.assertEqual(true.numeric, 20.0)
+
+    def test_kazim_enhance_force_atk_spd_and_energy(self):
+        text = (
+            "Whenever Kazim marks an enemy as prey or an enemy hero is defeated, "
+            "he permanently gains 20 ATK SPD and 200 Energy."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK SPD buff", labels)
+        self.assertIn("Energy recovery", labels)
+        atk = next(e for e in self._effects(text) if e.label == "ATK SPD buff")
+        energy = next(
+            e for e in self._effects(text) if e.label == "Energy recovery"
+        )
+        self.assertEqual(atk.numeric, 20.0)
+        self.assertEqual(energy.numeric, 200.0)
+        self.assertEqual(atk.targeting, "Self")
+        self.assertEqual(energy.targeting, "Self")
+
+    def test_kazim_mark_trigger_not_marked_debuff(self):
+        text = (
+            "Every time Kazim marks an enemy as prey, the wind field grants "
+            "10 extra Haste to allies within it, up to 3 stacks."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertNotIn("Marked target (focus fire)", labels)
+
     def test_zorya_forcefield_lose_haste_movement_debuff(self):
         text = (
             "While Zorya is awake, she creates a 2-tile forcefield around "

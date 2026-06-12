@@ -369,6 +369,14 @@
     "skill4": "debuff an enemy hero when casting ultimate",
     "skill5": "large enough buff grants extra debuff stack"
   },
+  "Kazim": {
+    "ultimate": "Passive: extend knock up and fire tracking shots; Active: arc AoE knock up, then sustained volleys scaling with ATK SPD",
+    "skill1": "Passive: battle-start aerial invincibility, dive and mark prey on knock up, then stun marked prey on landing",
+    "skill2": "Passive: zone ally haste stacks on prey marks; self absorbs doubled haste after aerial phase; Active: line AoE knock up",
+    "skill3": "battle ATK SPD increase",
+    "skill4": "normal attacks bonus damage on marked prey; periodic max HP-based true damage with knock up",
+    "skill5": "knock up stationary rearmost enemy after aerial start; ATK SPD and Energy on prey marks or defeats"
+  },
   "Kafra": {
     "ultimate": "knock back an enemy and apply mark",
     "skill1": "charge out-of-range marked enemy, stunning them",

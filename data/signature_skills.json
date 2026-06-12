@@ -174,6 +174,10 @@
   "Kafra": {
     "signature_calculated": "ultimate"
   },
+  "Kazim": {
+    "signature_calculated": "skill1",
+    "signature_override": "ultimate"
+  },
   "Koko": {
     "signature_calculated": "ultimate"
   },

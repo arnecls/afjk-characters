@@ -3907,6 +3907,87 @@ When a marked enemy receives healing from other enemies, Kafra jumps to the heal
 
 The damage of Relentless Chase's first casting in battle is increased to 520% (ATK-based).
 
+## Kazim - Falcon's Vow
+
+*Mauler · Marksman · Physical*
+
+A sworn Marksman who excels at hunting enemies knocked into the air.
+
+### Ultimate
+
+**Gale Barrage**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 600
+
+Passive. When an enemy hero is knocked into the air, Kazim manipulates the air currents to keep them airborne for 1s longer, 100% (ATK-based) + then fires 2 tracking feathers at the target, dealing 10% damage each. Active. Kazim fires a powerful volley of arrows at the arc-shaped area with the most enemies, dealing 320% (ATK-based) + 140% damage and knocking all prey within range into the air for 0.5s. After that. he keeps firing arrows in succession for 3s, dealing 200% (ATK-based) + 20% damage per volley. The number of volleys fired scales with ATK SPD.
+
+- Level 2 — Unlocks at Level 51: Increases the powerful arrow damage to 340% (ATK-based) + 40%.
+- Level 3 — Unlocks at Level 111: Increases the powerful arrow damage to 360% (ATK-based) + 40%.
+- Level 4 — Unlocks at Level 171: Increases the powerful arrow damage to 380% (ATK-based) + 40%.
+- Level 5 — Unlocks at Level 231: Increases the powerful arrow damage to 400% (ATK-based) + 40%.
+
+### Skill1
+
+**Soaring Falcon**
+*Unlocks at Level 11*
+
+- Skill Range: Global
+
+Passive. When a battle starts, Kazim takes to the air and starts Soaring for 10s. While Soaring, Kazim is invincible and cannot be targeted. When an enemy hero is knocked into the air, Kazim dives at them, dealing 440% (ATK-based) + 50% damage and marking them as prey. When Kazim stops Soaring, he draws his bow and fires a powerful arrow at each prey in sequence, dealing 400% (ATK-based) + 40% damage and stunning them for 3s.
+
+- Level 2 — Unlocks at Level 71: Increases dive damage to 460% (ATK-based) + 50%.
+- Level 3 — Unlocks at Level 131: Increases dive damage to 480% (ATK-based) + 50%.
+- Level 4 — Unlocks at Level 191: Increases dive damage to 500% (ATK-based) + 50%.
+
+### Skill2
+
+**Stormy Dominion**
+*Unlocks at Level 31*
+
+- Cooldown: 9s
+- Initial Cooldown: 2s
+- Skill Range: Global
+
+When a battle starts, Kazim creates a wind field that covers the entire battlefield. Allies inside the wind field gain 30 Haste. Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks. When Kazim stops soaring, he absorbs the power of the wind field, gaining double the Haste bonus for 15s. Active. Kazim fires a gale-charged arrow toward the area with the most enemies, dealing 340% (ATK-based) + 40% damage to enemies in its path and knocking them into the air for 0.5s. Every time Kazim marks an enemy as prey, this arrow's damage and range are permanently increased by 20%, up to 3 stacks.
+
+- Level 2 — Unlocks at Level 91: Increases the impact damage to 360% (ATK-based) + 40%.
+- Level 3 — Unlocks at Level 151: Increases the impact damage to 380% (ATK-based) + 40%.
+- Level 4 — Unlocks at Level 211: Increases the impact damage to 400% (ATK-based) + 40%.
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Increases ATK SPD by 21 during battle.
+
+- Level 2: Increases ATK SPD by 27 during battle.
+- Level 3: Increases ATK SPD by 33 during battle.
+
+### Ex. Skill
+
+**Raptor's Vigil**
+*Unlocks at Mythic+*
+
+- Skill Range: 1 tile
+
+Kazim's normal attacks deal 25% more damage and lock on to all enemies marked as prey.
+
+- Level 2 — Unlocks at EX. +5: Increases normal attack damage by 30%.
+- Level 3 — Unlocks at EX. +10: Every 6 normal attacks, Kazim fires an enhanced arrow, knocking the target into the air for 0.25s and dealing true damage equal to 20% of the target's max HP. The true damage dealt cannot exceed Kazim's 500% (ATK-based). Every time Kazim marks an enemy as prey, the number of normal attacks required to trigger this skill is reduced by 1, up to 3 stacks.
+- Level 4 — Unlocks at EX. +15: Increases normal attack damage by 35%.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+2s after Kazim starts Soaring, he manipulates air currents to knock the rearmost enemy hero into the air (only targets enemies who have not moved since the battle began, excluding unaffected and steadfast targets). Whenever Kazim marks an enemy as prey or an enemy hero is defeated, he permanently gains 20 ATK SPD and 200 Energy. The ATK SPD bonus can stack up to 5 times.
+
 ## Koko - Wild Child
 
 *Mauler · Support · Physical*

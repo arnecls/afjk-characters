@@ -601,7 +601,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "avg attack range 8.0 tiles",
-        "casting_speed": "fast",
+        "casting_speed": "average",
         "signature_skill_name": "Radiant Rain",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "average",
@@ -3183,7 +3183,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -8493,15 +8493,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 25.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -8667,7 +8660,7 @@
           "signature": {
             "speed": "average",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -8680,7 +8673,7 @@
           "ultimate": {
             "speed": "average",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -11876,15 +11869,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 5.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -12499,15 +12485,8 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 6.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -16145,10 +16124,10 @@
         "casting_speed": "fast",
         "signature_skill_name": "Zoltraak",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "fast",
-        "synergy_signature_speed": "fast",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
-        "ult_speed": "fast",
+        "ult_speed": "average",
         "non_ult_speed": "fast",
         "avg_attack_range": 7.0,
         "placement_constraints": [
@@ -16159,7 +16138,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "fast",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -16172,7 +16151,7 @@
             }
           },
           "ultimate": {
-            "speed": "fast",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -18135,15 +18114,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 8.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -22847,15 +22819,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 40.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -23380,15 +23345,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 15.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -24005,6 +23963,623 @@
             "debuffs": "average",
             "damage_types": {
               "Physical": "high"
+            }
+          }
+        }
+      }
+    },
+    "Kazim": {
+      "long_name": "Kazim - Falcon's Vow",
+      "faction": "mauler",
+      "class": "marksman",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "skills": {
+        "Gale Barrage": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. When an enemy hero is knocked into the air, Kazim manipulates the air currents to keep them airborne for 1s longer, 100% (ATK-based) + then fires 2 tracking feathers at the target, dealing 10% damage each. Active. Kazim fires a powerful volley of arrows at the arc-shaped area with the most enemies, dealing 320% (ATK-based) + 140% damage and knocking all prey within range into the air for 0.5s. After that. he keeps firing arrows in succession for 3s, dealing 200% (ATK-based) + 20% damage per volley. The number of volleys fired scales with ATK SPD.",
+            "passive": [
+              "When an enemy hero is knocked into the air, Kazim manipulates the air currents to keep them airborne for 1s longer, 100% (ATK-based) + then fires 2 tracking feathers at the target, dealing 10% damage each."
+            ],
+            "active": [
+              "Kazim fires a powerful volley of arrows at the arc-shaped area with the most enemies, dealing 320% (ATK-based) + 140% damage and knocking all prey within range into the air for 0.5s.",
+              "After that.",
+              "he keeps firing arrows in succession for 3s, dealing 200% (ATK-based) + 20% damage per volley.",
+              "The number of volleys fired scales with ATK SPD."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the powerful arrow damage to 340% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the powerful arrow damage to 360% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the powerful arrow damage to 380% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the powerful arrow damage to 400% (ATK-based) + 40%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 460.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 140.0
+                }
+              ]
+            }
+          ],
+          "initial_energy": 600.0
+        },
+        "Soaring Falcon": {
+          "category": "skill1",
+          "description": {
+            "raw": "Passive. When a battle starts, Kazim takes to the air and starts Soaring for 10s. While Soaring, Kazim is invincible and cannot be targeted. When an enemy hero is knocked into the air, Kazim dives at them, dealing 440% (ATK-based) + 50% damage and marking them as prey. When Kazim stops Soaring, he draws his bow and fires a powerful arrow at each prey in sequence, dealing 400% (ATK-based) + 40% damage and stunning them for 3s.",
+            "passive": [
+              "When a battle starts, Kazim takes to the air and starts Soaring for 10s.",
+              "While Soaring, Kazim is invincible and cannot be targeted.",
+              "When an enemy hero is knocked into the air, Kazim dives at them, dealing 440% (ATK-based) + 50% damage and marking them as prey.",
+              "When Kazim stops Soaring, he draws his bow and fires a powerful arrow at each prey in sequence, dealing 400% (ATK-based) + 40% damage and stunning them for 3s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases dive damage to 460% (ATK-based) + 50%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases dive damage to 480% (ATK-based) + 50%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases dive damage to 500% (ATK-based) + 50%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Invincible",
+              "label": "buff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Marked target (focus fire)",
+              "label": "debuff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 550.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3.0
+            }
+          ]
+        },
+        "Stormy Dominion": {
+          "category": "skill2",
+          "description": {
+            "raw": "When a battle starts, Kazim creates a wind field that covers the entire battlefield. Allies inside the wind field gain 30 Haste. Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks. When Kazim stops soaring, he absorbs the power of the wind field, gaining double the Haste bonus for 15s. Active. Kazim fires a gale-charged arrow toward the area with the most enemies, dealing 340% (ATK-based) + 40% damage to enemies in its path and knocking them into the air for 0.5s. Every time Kazim marks an enemy as prey, this arrow's damage and range are permanently increased by 20%, up to 3 stacks.",
+            "passive": [
+              "When a battle starts, Kazim creates a wind field that covers the entire battlefield.",
+              "Allies inside the wind field gain 30 Haste.",
+              "Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks.",
+              "When Kazim stops soaring, he absorbs the power of the wind field, gaining double the Haste bonus for 15s."
+            ],
+            "active": [
+              "Kazim fires a gale-charged arrow toward the area with the most enemies, dealing 340% (ATK-based) + 40% damage to enemies in its path and knocking them into the air for 0.5s.",
+              "Every time Kazim marks an enemy as prey, this arrow's damage and range are permanently increased by 20%, up to 3 stacks."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the impact damage to 360% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the impact damage to 380% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the impact damage to 400% (ATK-based) + 40%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "stat_mod",
+              "stat": "haste",
+              "name": "Haste buff",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 440.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 9.0,
+          "initial_cooldown": 2.0
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases ATK SPD by 21 during battle.",
+            "active": [
+              "Increases ATK SPD by 21 during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases ATK SPD by 27 during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases ATK SPD by 33 during battle."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk_spd",
+              "name": "ATK SPD buff",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 33.0
+                }
+              ],
+              "label": "buff_offensive"
+            }
+          ],
+          "tier": "legendary+",
+          "skill_range": 1
+        },
+        "Raptor's Vigil": {
+          "category": "skill4",
+          "description": {
+            "raw": "Kazim's normal attacks deal 25% more damage and lock on to all enemies marked as prey.",
+            "active": [
+              "Kazim's normal attacks deal 25% more damage and lock on to all enemies marked as prey."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases normal attack damage by 30%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Every 6 normal attacks, Kazim fires an enhanced arrow, knocking the target into the air for 0.25s and dealing true damage equal to 20% of the target's max HP.",
+                  "The true damage dealt cannot exceed Kazim's 500% (ATK-based).",
+                  "Every time Kazim marks an enemy as prey, the number of normal attacks required to trigger this skill is reduced by 1, up to 3 stacks."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases normal attack damage by 35%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            }
+          ],
+          "tier": "mythic+",
+          "skill_range": 1
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "2s after Kazim starts Soaring, he manipulates air currents to knock the rearmost enemy hero into the air (only targets enemies who have not moved since the battle began, excluding unaffected and steadfast targets). Whenever Kazim marks an enemy as prey or an enemy hero is defeated, he permanently gains 20 ATK SPD and 200 Energy. The ATK SPD bonus can stack up to 5 times.",
+            "active": [
+              "2s after Kazim starts Soaring, he manipulates air currents to knock the rearmost enemy hero into the air (only targets enemies who have not moved since the battle began, excluding unaffected and steadfast targets).",
+              "Whenever Kazim marks an enemy as prey or an enemy hero is defeated, he permanently gains 20 ATK SPD and 200 Energy.",
+              "The ATK SPD bonus can stack up to 5 times."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "stat_mod",
+              "stat": "atk_spd",
+              "name": "ATK SPD buff",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 20.0
+                }
+              ],
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "buff",
+              "name": "Energy recovery",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 200.0
+                }
+              ]
+            }
+          ],
+          "tier": "supreme+"
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Invincibility",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "While Soaring, Kazim is invincible and cannot be targeted."
+          },
+          {
+            "label": "Stacking buff",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Area, Single target"
+        ],
+        [
+          "max_hp",
+          "Area, Single target"
+        ],
+        [
+          "true",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {
+        "max_hp": "high",
+        "true": "low"
+      },
+      "benefit_stats": [
+        "atk_spd",
+        "haste",
+        "energy"
+      ],
+      "behavior": {
+        "movement": "high movement",
+        "movement_note": "repositioning skills",
+        "casting_speed": "fast",
+        "signature_skill_name": "Gale Barrage",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "ult_speed": "fast",
+        "non_ult_speed": "fast",
+        "avg_attack_range": null,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "high",
+              "Max HP-based damage": "high"
+            }
+          },
+          "ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "none",
+            "debuffs": "none",
+            "damage_types": {
+              "Physical": "high",
+              "Max HP-based damage": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Max HP-based damage": "high",
+              "Physical": "high",
+              "True damage": "low"
             }
           }
         }
@@ -31095,15 +31670,8 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 40.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -32205,15 +32773,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 25.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -35360,7 +35921,7 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -36856,7 +37417,7 @@
           "ultimate": {
             "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "average",
@@ -38749,7 +39310,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "high",
+        "max_hp": "average",
         "true": "low"
       },
       "benefit_stats": [
@@ -43001,7 +43562,7 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "fast",
+        "casting_speed": "average",
         "signature_skill_name": "Spirit Shackles",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
@@ -46909,7 +47470,7 @@
             "debuffs": "average",
             "damage_types": {
               "Max HP-based damage": "high",
-              "Physical": "high"
+              "Physical": "average"
             }
           },
           "non_ultimate": {
@@ -49858,7 +50419,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 1.0
+                  "value": 18.0
                 }
               ]
             }
@@ -54804,15 +55365,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
-              "type": "stat_mod",
-              "stat": "atk_spd",
+              "type": "buff",
               "name": "ATK SPD buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 50.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],

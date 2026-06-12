@@ -245,7 +245,8 @@
         "pvp": "S",
         "dream_realm": "B",
         "dream_realm_endless": "S+"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Alna - Frozen Mother",
@@ -481,7 +482,8 @@
         "pvp": "S+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Alsa - Desert Flare",
@@ -715,7 +717,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Antandra - Desert Fury",
@@ -951,11 +954,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
-        "pvp": "C",
+        "afk_stages": "B",
+        "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Arden - Oak Sage",
@@ -1181,11 +1185,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "A",
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Atalanta - Fortune Finder",
@@ -1427,7 +1432,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Athalia - Harbinger of Justice",
@@ -1663,11 +1669,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "S",
-        "pvp": "S+",
+        "afk_stages": "A+",
+        "pvp": "S",
         "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Aurora - Celestial of Dreams",
@@ -1899,11 +1906,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "A",
+        "afk_stages": "A+",
         "pvp": "B",
-        "dream_realm": "S+",
+        "dream_realm": "A+",
         "dream_realm_endless": "S+"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Baelran - Dawnblade",
@@ -2143,7 +2151,8 @@
         "pvp": "S",
         "dream_realm": "A",
         "dream_realm_endless": "S"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Berial - Sinister Jester",
@@ -2375,7 +2384,8 @@
         "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Bonnie - Obsidian Claws",
@@ -2600,11 +2610,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A",
         "pvp": "A+",
         "dream_realm": "A",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Brutus - Blood Claw",
@@ -2837,10 +2848,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "A",
-        "pvp": "B",
-        "dream_realm": "C",
+        "pvp": "A",
+        "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Bryon - Evergreen Sentinel",
@@ -3095,10 +3107,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "A+",
-        "pvp": "B",
+        "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Callan - Grim Soulkeeper",
@@ -3334,11 +3347,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "A",
+        "afk_stages": "A+",
         "pvp": "A+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Carolina - Candlelight Specter",
@@ -3563,11 +3577,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Cassadee - Azure Prodigy",
@@ -3807,9 +3822,10 @@
       "prydwen_tiers": {
         "afk_stages": "C",
         "pvp": "C",
-        "dream_realm": "A+",
+        "dream_realm": "A",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Cecia - Requiem of Thorns",
@@ -4054,11 +4070,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "C",
-        "dream_realm": "C",
+        "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Chippy - Acorn Knight",
@@ -4437,11 +4454,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
-        "pvp": "S",
+        "afk_stages": "A+",
+        "pvp": "S+",
         "dream_realm": "S+",
         "dream_realm_endless": "S+"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Cryonaia - Arctic Revenant",
@@ -4692,9 +4710,10 @@
       "prydwen_tiers": {
         "afk_stages": "B",
         "pvp": "S",
-        "dream_realm": "A",
+        "dream_realm": "C",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Cyran - Umbral Weaver",
@@ -4925,10 +4944,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "S",
-        "pvp": "S",
+        "pvp": "A+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Daimon - Forsaken Child",
@@ -5169,11 +5189,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A+",
         "pvp": "A",
-        "dream_realm": "A",
+        "dream_realm": "B",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Damian - Woody Wonder",
@@ -5413,10 +5434,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "B",
+        "pvp": "A",
         "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Dionel - Venus of Dawn",
@@ -5659,7 +5681,8 @@
         "pvp": "S",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Dunlingr - Eternal Voice",
@@ -5898,7 +5921,8 @@
         "pvp": "S+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Eironn - Stormsword",
@@ -6128,11 +6152,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "S+",
-        "pvp": "A",
+        "afk_stages": "S",
+        "pvp": "A+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Elijah & Lailah - Celestial Twins",
@@ -6375,7 +6400,8 @@
         "pvp": "A+",
         "dream_realm": "S+",
         "dream_realm_endless": "S+"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Evie - Royal Envoy",
@@ -6620,9 +6646,10 @@
       "prydwen_tiers": {
         "afk_stages": "B",
         "pvp": "A",
-        "dream_realm": "B",
+        "dream_realm": "A+",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Faramor - Silverfang Mantle",
@@ -6857,7 +6884,8 @@
         "pvp": "B",
         "dream_realm": "S",
         "dream_realm_endless": "A+"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Fay - Colorful Dancer",
@@ -7081,10 +7109,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "B",
-        "dream_realm": "C",
+        "pvp": "C",
+        "dream_realm": "A",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Florabelle - Blooming Maiden",
@@ -7329,11 +7358,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
-        "pvp": "B",
-        "dream_realm": "S",
+        "afk_stages": "A",
+        "pvp": "C",
+        "dream_realm": "A+",
         "dream_realm_endless": "S"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Frieren - The Legendary Mage",
@@ -7562,11 +7592,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
-        "pvp": "A+",
-        "dream_realm": "B",
+        "afk_stages": "S",
+        "pvp": "S",
+        "dream_realm": "S+",
         "dream_realm_endless": "S+"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Galahad - Daughter of Dawn",
@@ -7809,10 +7840,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "S",
-        "pvp": "A",
-        "dream_realm": "B",
+        "pvp": "A+",
+        "dream_realm": "A+",
         "dream_realm_endless": "S+"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Gerda - Soothing Siren",
@@ -8053,7 +8085,8 @@
         "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Granny Dahnie - Forest Guardian",
@@ -8295,7 +8328,8 @@
         "pvp": "C",
         "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Gunnar - Iron Doom",
@@ -8526,10 +8560,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "S+",
-        "pvp": "S",
+        "pvp": "S+",
         "dream_realm": "S+",
         "dream_realm_endless": "S+"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Gwyneth - Dragonslayer Knight",
@@ -8767,10 +8802,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "A",
-        "pvp": "S",
+        "pvp": "B",
         "dream_realm": "S+",
         "dream_realm_endless": "?"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Hammie - Acorn Mage",
@@ -9143,7 +9179,8 @@
         "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "A+"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Hepler - Master of Forms",
@@ -9381,7 +9418,8 @@
         "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Hewynn - Tender Leaf",
@@ -9607,11 +9645,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Himmel - The Legendary Hero",
@@ -9845,11 +9884,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
-        "pvp": "A",
-        "dream_realm": "A",
+        "afk_stages": "S",
+        "pvp": "A+",
+        "dream_realm": "S+",
         "dream_realm_endless": "A+"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Hodgkin - Reviled Captain",
@@ -10095,7 +10135,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Hugin - Maverick Smith",
@@ -10324,10 +10365,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "S+",
-        "pvp": "A+",
-        "dream_realm": "B",
+        "pvp": "A",
+        "dream_realm": "A+",
         "dream_realm_endless": "S"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Igor - Mad Dagger",
@@ -10558,10 +10600,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "A+",
+        "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Indris - Chain Breaker",
@@ -10803,10 +10846,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "A+",
+        "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Isabella - The Taken Soul",
@@ -11040,9 +11084,10 @@
       "prydwen_tiers": {
         "afk_stages": "C",
         "pvp": "C",
-        "dream_realm": "S",
+        "dream_realm": "B",
         "dream_realm_endless": "A+"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Kafra - Gale Rider",
@@ -11273,7 +11318,245 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
+    },
+    {
+      "title": "Kazim - Falcon's Vow",
+      "name": "Kazim",
+      "tags": "Mauler · Marksman · Physical",
+      "faction": "Mauler",
+      "class": "Marksman",
+      "damage_type": "Physical",
+      "description": "A sworn Marksman who excels at hunting enemies knocked into the air.",
+      "skills": [
+        {
+          "section": "Ultimate",
+          "name": "Gale Barrage",
+          "unlock": "Unlocks at Level 1",
+          "meta": {
+            "Skill Range": "Global",
+            "Initial Energy": "600"
+          },
+          "description": {
+            "raw": "Passive. When an enemy hero is knocked into the air, Kazim manipulates the air currents to keep them airborne for 1s longer, 100% (ATK-based) + then fires 2 tracking feathers at the target, dealing 10% damage each. Active. Kazim fires a powerful volley of arrows at the arc-shaped area with the most enemies, dealing 320% (ATK-based) + 140% damage and knocking all prey within range into the air for 0.5s. After that. he keeps firing arrows in succession for 3s, dealing 200% (ATK-based) + 20% damage per volley. The number of volleys fired scales with ATK SPD.",
+            "passive": [
+              "When an enemy hero is knocked into the air, Kazim manipulates the air currents to keep them airborne for 1s longer, 100% (ATK-based) + then fires 2 tracking feathers at the target, dealing 10% damage each."
+            ],
+            "active": [
+              "Kazim fires a powerful volley of arrows at the arc-shaped area with the most enemies, dealing 320% (ATK-based) + 140% damage and knocking all prey within range into the air for 0.5s.",
+              "After that.",
+              "he keeps firing arrows in succession for 3s, dealing 200% (ATK-based) + 20% damage per volley.",
+              "The number of volleys fired scales with ATK SPD."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the powerful arrow damage to 340% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the powerful arrow damage to 360% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the powerful arrow damage to 380% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the powerful arrow damage to 400% (ATK-based) + 40%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Kazim continuously fires arrows at enemies within the arc-shaped area, dealing damage."
+        },
+        {
+          "section": "Skill1",
+          "name": "Soaring Falcon",
+          "unlock": "Unlocks at Level 11",
+          "meta": {
+            "Skill Range": "Global"
+          },
+          "description": {
+            "raw": "Passive. When a battle starts, Kazim takes to the air and starts Soaring for 10s. While Soaring, Kazim is invincible and cannot be targeted. When an enemy hero is knocked into the air, Kazim dives at them, dealing 440% (ATK-based) + 50% damage and marking them as prey. When Kazim stops Soaring, he draws his bow and fires a powerful arrow at each prey in sequence, dealing 400% (ATK-based) + 40% damage and stunning them for 3s.",
+            "passive": [
+              "When a battle starts, Kazim takes to the air and starts Soaring for 10s.",
+              "While Soaring, Kazim is invincible and cannot be targeted.",
+              "When an enemy hero is knocked into the air, Kazim dives at them, dealing 440% (ATK-based) + 50% damage and marking them as prey.",
+              "When Kazim stops Soaring, he draws his bow and fires a powerful arrow at each prey in sequence, dealing 400% (ATK-based) + 40% damage and stunning them for 3s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases dive damage to 460% (ATK-based) + 50%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases dive damage to 480% (ATK-based) + 50%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases dive damage to 500% (ATK-based) + 50%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "When a battle starts, Kazim takes to the air and hunts for prey from above."
+        },
+        {
+          "section": "Skill2",
+          "name": "Stormy Dominion",
+          "unlock": "Unlocks at Level 31",
+          "meta": {
+            "Cooldown": "9s",
+            "Initial Cooldown": "2s",
+            "Skill Range": "Global"
+          },
+          "description": {
+            "raw": "When a battle starts, Kazim creates a wind field that covers the entire battlefield. Allies inside the wind field gain 30 Haste. Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks. When Kazim stops soaring, he absorbs the power of the wind field, gaining double the Haste bonus for 15s. Active. Kazim fires a gale-charged arrow toward the area with the most enemies, dealing 340% (ATK-based) + 40% damage to enemies in its path and knocking them into the air for 0.5s. Every time Kazim marks an enemy as prey, this arrow's damage and range are permanently increased by 20%, up to 3 stacks.",
+            "passive": [
+              "When a battle starts, Kazim creates a wind field that covers the entire battlefield.",
+              "Allies inside the wind field gain 30 Haste.",
+              "Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks.",
+              "When Kazim stops soaring, he absorbs the power of the wind field, gaining double the Haste bonus for 15s."
+            ],
+            "active": [
+              "Kazim fires a gale-charged arrow toward the area with the most enemies, dealing 340% (ATK-based) + 40% damage to enemies in its path and knocking them into the air for 0.5s.",
+              "Every time Kazim marks an enemy as prey, this arrow's damage and range are permanently increased by 20%, up to 3 stacks."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the impact damage to 360% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the impact damage to 380% (ATK-based) + 40%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the impact damage to 400% (ATK-based) + 40%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Kazim fires a gale-charged arrow, dealing damage to enemies and knocking them into the air."
+        },
+        {
+          "section": "Unlocks at Legendary+",
+          "name": "Hero Focus",
+          "unlock": "Unlocks at Legendary+",
+          "meta": {
+            "Skill Range": "1 tile"
+          },
+          "description": {
+            "raw": "Increases ATK SPD by 21 during battle.",
+            "active": [
+              "Increases ATK SPD by 21 during battle."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases ATK SPD by 27 during battle."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases ATK SPD by 33 during battle."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Increases ATK SPD during battle."
+        },
+        {
+          "section": "Ex. Skill",
+          "name": "Raptor's Vigil",
+          "unlock": "Unlocks at Mythic+",
+          "meta": {
+            "Skill Range": "1 tile"
+          },
+          "description": {
+            "raw": "Kazim's normal attacks deal 25% more damage and lock on to all enemies marked as prey.",
+            "active": [
+              "Kazim's normal attacks deal 25% more damage and lock on to all enemies marked as prey."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases normal attack damage by 30%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Every 6 normal attacks, Kazim fires an enhanced arrow, knocking the target into the air for 0.25s and dealing true damage equal to 20% of the target's max HP.",
+                  "The true damage dealt cannot exceed Kazim's 500% (ATK-based).",
+                  "Every time Kazim marks an enemy as prey, the number of normal attacks required to trigger this skill is reduced by 1, up to 3 stacks."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases normal attack damage by 35%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Kazim's normal attacks lock on to all prey."
+        },
+        {
+          "section": "Unlocks at Supreme+",
+          "name": "Enhance Force",
+          "unlock": "Unlocks at Supreme+",
+          "meta": {},
+          "description": {
+            "raw": "2s after Kazim starts Soaring, he manipulates air currents to knock the rearmost enemy hero into the air (only targets enemies who have not moved since the battle began, excluding unaffected and steadfast targets). Whenever Kazim marks an enemy as prey or an enemy hero is defeated, he permanently gains 20 ATK SPD and 200 Energy. The ATK SPD bonus can stack up to 5 times.",
+            "active": [
+              "2s after Kazim starts Soaring, he manipulates air currents to knock the rearmost enemy hero into the air (only targets enemies who have not moved since the battle began, excluding unaffected and steadfast targets).",
+              "Whenever Kazim marks an enemy as prey or an enemy hero is defeated, he permanently gains 20 ATK SPD and 200 Energy.",
+              "The ATK SPD bonus can stack up to 5 times."
+            ]
+          },
+          "description_lite": "Kazim manipulates the air currents to knock an enemy into the air. He gains ATK SPD and Energy whenever he marks an enemy as prey."
+        }
+      ]
     },
     {
       "title": "Koko - Wild Child",
@@ -11500,10 +11783,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "A",
-        "pvp": "B",
+        "pvp": "A",
         "dream_realm": "B",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Kordan - Ironblood Chieftain",
@@ -11739,11 +12023,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
-        "pvp": "A",
-        "dream_realm": "S+",
+        "afk_stages": "A",
+        "pvp": "B",
+        "dream_realm": "A",
         "dream_realm_endless": "S"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Korin - Wood Warden",
@@ -11969,7 +12254,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Kruger - Dauntless Warrior",
@@ -12195,9 +12481,10 @@
       "prydwen_tiers": {
         "afk_stages": "C",
         "pvp": "C",
-        "dream_realm": "S",
+        "dream_realm": "A+",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Kulu - Blast Master",
@@ -12451,11 +12738,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "S",
+        "afk_stages": "A+",
         "pvp": "S",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Laios - Dungeon Adventurer",
@@ -12694,7 +12982,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Lenya - Wild Cyclone",
@@ -12938,9 +13227,10 @@
       "prydwen_tiers": {
         "afk_stages": "C",
         "pvp": "B",
-        "dream_realm": "A+",
+        "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Lily May - Twilight Tracker",
@@ -13180,7 +13470,8 @@
         "pvp": "A+",
         "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Lorsan - Windweaver Protector",
@@ -13425,11 +13716,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
-        "pvp": "B",
+        "afk_stages": "B",
+        "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Lucca - Stalwart Fighter",
@@ -13668,11 +13960,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
-        "pvp": "C",
+        "afk_stages": "B",
+        "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Lucius - The Lightbringer",
@@ -13895,11 +14188,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
-        "pvp": "C",
+        "afk_stages": "B",
+        "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Lucy - Celestial Spirit Mage",
@@ -14128,7 +14422,8 @@
           },
           "description_lite": "When Lucy reaches full Energy while Aquarius is on the battlefield, Aquarius' ATK SPD increases."
         }
-      ]
+      ],
+      "role_category": "specialist"
     },
     {
       "title": "Ludovic - Wreathed Eternalist",
@@ -14360,11 +14655,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "A",
         "pvp": "A",
-        "dream_realm": "C",
+        "dream_realm": "B",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Lumont - Benign Horn",
@@ -14599,7 +14895,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Lyca - Keeper of Glades",
@@ -14836,10 +15133,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "A+",
-        "dream_realm": "C",
+        "pvp": "B",
+        "dream_realm": "A",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Marcille - Elven Mage",
@@ -15077,11 +15375,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "A",
         "pvp": "S",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Marilee - Forest's Arrow",
@@ -15301,11 +15600,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "C",
-        "dream_realm": "C",
+        "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Mehira - Mind Cager",
@@ -15543,9 +15843,10 @@
       "prydwen_tiers": {
         "afk_stages": "S+",
         "pvp": "A+",
-        "dream_realm": "A",
+        "dream_realm": "B",
         "dream_realm_endless": "A+"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Mikola - Warbeat Compere",
@@ -15771,11 +16072,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
-        "pvp": "B",
-        "dream_realm": "A",
+        "afk_stages": "B",
+        "pvp": "A",
+        "dream_realm": "B",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Mirael - Scarlet Sorceress",
@@ -16013,7 +16315,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Nara - Wrathful Wraith",
@@ -16254,11 +16557,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "A",
+        "afk_stages": "B",
         "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Natsu - Fire Dragon Slayer Mage",
@@ -16494,7 +16798,8 @@
           },
           "description_lite": "When Natsu causes an enemy to lose HP through any means other than his normal attacks, he deals continuous damage to the enemy."
         }
-      ]
+      ],
+      "role_category": "damage_dealer"
     },
     {
       "title": "Nazrik - Soulstalker",
@@ -16726,11 +17031,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A",
         "pvp": "B",
         "dream_realm": "A",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Nerion - Bereaved Tide",
@@ -16963,11 +17269,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
-        "pvp": "A",
+        "afk_stages": "A",
+        "pvp": "A+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Niru - Soul Collector",
@@ -17204,10 +17511,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "A+",
-        "pvp": "S",
+        "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Odie - Desert Defender",
@@ -17432,11 +17740,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A",
         "pvp": "C",
-        "dream_realm": "C",
+        "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Pandora - Hope Unleashed",
@@ -17679,7 +17988,8 @@
         "pvp": "A+",
         "dream_realm": "C",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Pang - Bamboo Guardian",
@@ -17921,10 +18231,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "A",
+        "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Parisa - Ode to Flowers",
@@ -18155,11 +18466,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Perseus - Chosen Champion",
@@ -18394,10 +18706,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "S+",
+        "pvp": "S",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Phraesto - Misty Scorpion",
@@ -18634,11 +18947,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
-        "pvp": "B",
-        "dream_realm": "C",
+        "afk_stages": "A+",
+        "pvp": "A",
+        "dream_realm": "A",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Pippa - The Muddled Magician",
@@ -18872,10 +19186,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "B",
-        "pvp": "A",
+        "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Ravion - Twilight's Burden",
@@ -19112,11 +19427,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "A",
-        "pvp": "A+",
-        "dream_realm": "S",
+        "afk_stages": "A+",
+        "pvp": "A",
+        "dream_realm": "A+",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Reinier - Symmetric Sin",
@@ -19349,9 +19665,10 @@
       "prydwen_tiers": {
         "afk_stages": "B",
         "pvp": "B",
-        "dream_realm": "A",
+        "dream_realm": "S",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Rhys - Fiery Cavalier",
@@ -19595,11 +19912,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Rowan - The Roamer",
@@ -19830,9 +20148,10 @@
       "prydwen_tiers": {
         "afk_stages": "A",
         "pvp": "A",
-        "dream_realm": "A",
+        "dream_realm": "B",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Saida - Vampiric Vine",
@@ -20078,10 +20397,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "S+",
-        "pvp": "S+",
+        "pvp": "S",
         "dream_realm": "A",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Salazer - Lash of Bantus",
@@ -20325,7 +20645,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Satrana - Ember Enchantress",
@@ -20561,11 +20882,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A",
         "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Scarlita - Herald of Compassion",
@@ -20805,11 +21127,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A",
         "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Seth - Swift Shadow",
@@ -21034,10 +21357,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "C",
+        "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Shadewing - Undying Vow",
@@ -21272,10 +21596,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "A+",
-        "pvp": "S+",
-        "dream_realm": "S",
+        "pvp": "S",
+        "dream_realm": "A",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Shakir - Furious Howl",
@@ -21499,11 +21824,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A",
         "pvp": "A",
         "dream_realm": "B",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Shemira - Corpsemaker",
@@ -21746,11 +22072,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "A",
+        "afk_stages": "A+",
         "pvp": "A+",
         "dream_realm": "S+",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Silven - Heir of Glory",
@@ -21980,10 +22307,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "S",
-        "pvp": "A+",
+        "pvp": "A",
         "dream_realm": "S",
         "dream_realm_endless": "A+"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Silvina - The Taken Breath",
@@ -22208,7 +22536,8 @@
         "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Sinbad - Seaside Savant",
@@ -22441,11 +22770,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "B",
-        "dream_realm": "C",
+        "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Smokey & Meerky - Wasteland Apothecary",
@@ -22674,7 +23004,7 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "B",
+        "afk_stages": "A",
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "S"
@@ -22916,9 +23246,10 @@
       "prydwen_tiers": {
         "afk_stages": "S",
         "pvp": "S",
-        "dream_realm": "S+",
+        "dream_realm": "S",
         "dream_realm_endless": "S"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Sonja - Crimson Queenpin",
@@ -23151,11 +23482,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "B",
-        "dream_realm": "B",
+        "dream_realm": "A",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Soren - Silent Fury",
@@ -23395,7 +23727,8 @@
         "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Sylphira - Sovereign of Song",
@@ -23640,10 +23973,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "A",
-        "pvp": "S",
+        "pvp": "A+",
         "dream_realm": "A+",
         "dream_realm_endless": "?"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Talene - Resurging Flame",
@@ -23873,11 +24207,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "A",
         "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Tasi - Fairy of Dreams",
@@ -24108,10 +24443,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "B",
-        "pvp": "B",
+        "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Temesia - Lightsavior",
@@ -24355,9 +24691,10 @@
       "prydwen_tiers": {
         "afk_stages": "C",
         "pvp": "C",
-        "dream_realm": "C",
+        "dream_realm": "B",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Thador - Ironsworn General",
@@ -24591,9 +24928,10 @@
       "prydwen_tiers": {
         "afk_stages": "S",
         "pvp": "A+",
-        "dream_realm": "C",
+        "dream_realm": "A+",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Thoran - Fallen King",
@@ -24830,10 +25168,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "B",
-        "pvp": "B",
+        "pvp": "A",
         "dream_realm": "A+",
         "dream_realm_endless": "A"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Tilaya - Wild Blade",
@@ -25068,11 +25407,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
-        "pvp": "A",
+        "afk_stages": "A",
+        "pvp": "A+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "tank"
     },
     {
       "title": "Ulmus - Grove Keeper",
@@ -25306,7 +25646,8 @@
         "pvp": "A",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Vala - Phantom of Oakenfell",
@@ -25550,11 +25891,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "B",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Valen - Roving Swordsman",
@@ -25796,7 +26138,8 @@
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Valka - Forsaken Blade",
@@ -26046,9 +26389,10 @@
       "prydwen_tiers": {
         "afk_stages": "C",
         "pvp": "B",
-        "dream_realm": "A+",
+        "dream_realm": "A",
         "dream_realm_endless": "B"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Velara - Pale Votary",
@@ -26284,10 +26628,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "S+",
-        "pvp": "B",
-        "dream_realm": "S+",
+        "pvp": "A",
+        "dream_realm": "S",
         "dream_realm_endless": "S"
-      }
+      },
+      "role_category": "support"
     },
     {
       "title": "Viperian - Shadow Serpent",
@@ -26520,11 +26865,12 @@
         }
       ],
       "prydwen_tiers": {
-        "afk_stages": "C",
+        "afk_stages": "B",
         "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "damage_dealer"
     },
     {
       "title": "Walker - Wildland Outlaw",
@@ -26763,10 +27109,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "B",
+        "pvp": "C",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Zandrok - Watchful Edge",
@@ -27002,7 +27349,8 @@
         "pvp": "A+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Zanie - Timeless Tinkerer",
@@ -27247,10 +27595,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "A+",
-        "pvp": "A",
-        "dream_realm": "S",
+        "pvp": "B",
+        "dream_realm": "A+",
         "dream_realm_endless": "A+"
-      }
+      },
+      "role_category": "specialist"
     },
     {
       "title": "Zorya - Watcher in Stone",
@@ -27494,10 +27843,11 @@
       ],
       "prydwen_tiers": {
         "afk_stages": "C",
-        "pvp": "S",
+        "pvp": "A+",
         "dream_realm": "C",
         "dream_realm_endless": "C"
-      }
+      },
+      "role_category": "specialist"
     }
   ]
 }

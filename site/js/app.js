@@ -1820,6 +1820,10 @@
       )
       .trim();
 
+    if (tag.endsWith(" debuff")) {
+      return tag.replace(/\s*\([^)]*\)/g, "").trim();
+    }
+
     let i;
     for (i = 0; i < SKILL_CARD_DAMAGE_KEYS.length; i++) {
       const dt = SKILL_CARD_DAMAGE_KEYS[i].toLowerCase();

@@ -589,6 +589,8 @@ def merge_sources(
     header = yaphalla_header if yaphalla_header is not None else heroes_header
 
     heroes: list[dict] = []
+    fandom_names = {h["name"] for h in fandom}
+    yaphalla_alias_values = set(YAPHALLA_NAME_ALIASES.values())
     for hero in fandom:
         record = dict(hero)
         yaphalla_hero = _lookup_yaphalla(hero["name"], yaphalla_by_name)
@@ -596,6 +598,17 @@ def merge_sources(
             _gapfill_from_yaphalla(record, yaphalla_hero)
         normalize_hero_skills(record)
         heroes.append(record)
+
+    if gapfill:
+        for yhero in yaphalla:
+            yname = yhero["name"]
+            if yname in fandom_names or yname in yaphalla_alias_values:
+                continue
+            if NAME_ALIASES.get(yname) in fandom_names:
+                continue
+            record = dict(yhero)
+            normalize_hero_skills(record)
+            heroes.append(record)
 
     return {
         "heroes_header": header,

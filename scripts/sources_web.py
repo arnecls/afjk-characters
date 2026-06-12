@@ -93,7 +93,7 @@ HERO_NAMES = [
     "Evie", "Faramor", "Fay", "Florabelle", "Frieren", "Galahad", "Gerda",
     "Granny Dahnie", "Gunnar", "Gwyneth", "Hammie", "Harak", "Hepler",
     "Hewynn", "Himmel", "Hodgkin", "Hugin", "Igor", "Indris", "Isabella",
-    "Kafra", "Koko", "Kordan", "Korin", "Kruger", "Kulu", "Laios", "Lenya",
+    "Kafra", "Kazim", "Koko", "Kordan", "Korin", "Kruger", "Kulu", "Laios", "Lenya",
     "Lily May", "Lorsan", "Lucca", "Lucius", "Lucy", "Ludovic", "Lumont",
     "Lyca", "Marcille", "Marilee", "Mehira", "Mikola", "Mirael", "Nara",
     "Natsu", "Nazrik", "Nerion", "Niru", "Odie", "Pandora", "Pang", "Parisa",

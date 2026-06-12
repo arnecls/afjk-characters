@@ -392,6 +392,24 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertEqual(len(mythic_keys), len(set(mythic_keys)))
         self.assertEqual(mythic_keys.count("blind"), 1)
 
+    def test_skill_card_chip_key_haste_debuff_distinct_from_haste_buff(self):
+        buff_key = rs._canonical_skill_card_chip_key("Haste buff")
+        debuff_key = rs._canonical_skill_card_chip_key("Haste debuff")
+        self.assertEqual(buff_key, "haste")
+        self.assertEqual(debuff_key, "haste debuff")
+        self.assertNotEqual(buff_key, debuff_key)
+
+    def test_galahad_ultimate_skill_card_includes_haste_debuff(self):
+        hero, _ = self._hero_by_display("Galahad")
+        summaries = rs._load_skill_summaries().get("Galahad", {})
+        categories = set(summaries)
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        self.assertIn("Haste debuff", tags)
+        self.assertIn("Movement speed debuff", tags)
+        self.assertIn("Haste buff", tags)
+        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        self.assertEqual(len(keys), len(set(keys)))
+
     def test_signature_skill_body_omits_description(self):
         _, behavior = self._hero_by_display("Aliceth")
         body = rs._format_signature_skill_body("Aliceth", behavior)

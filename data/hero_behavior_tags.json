@@ -221,6 +221,13 @@
     "ally-healer",
     "life-drain"
   ],
+  "Kazim": [
+    "ally-buffer",
+    "aoe-damage",
+    "battle-start-burst",
+    "invincibility",
+    "mark-target"
+  ],
   "Kafra": [
     "assassin",
     "enemy-debuffer",
