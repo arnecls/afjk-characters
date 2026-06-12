@@ -54,7 +54,7 @@ To break ties and provide more cohesive team-building suggestions, candidates re
 ## Category-Specific Rules
 
 ### Similar Skills (Tags)
-Instead of math-heavy profiles, this category uses curated **Behavior Tags** (e.g., `aoe-damage`, `summoner`, `cheat-death`). 
+Instead of math-heavy profiles, this category uses curated [**Behavior Tags**](../data/hero_behavior_tags.json) (e.g., `aoe-damage`, `summoner`, `cheat-death`, [etc](../data/schema/tags.schema.json)). 
 - The score is calculated using **Jaccard Similarity**: `(Shared Tags) / (Total Unique Tags)`.
 - Candidates must share at least 1 tag with the Source to be considered.
 
