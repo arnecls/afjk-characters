@@ -2057,6 +2057,33 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 @media (max-width: 600px) {
+  .header-shell {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .header-shell > .search {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .header-shell > .header-actions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .header-shell > .filters-panel.filters-collapsed {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: end;
+  }
+
+  .header-shell > .filters-panel:not(.filters-collapsed) {
+    grid-row: 3;
+  }
+
   .hero-grid {
     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 0.75rem;
