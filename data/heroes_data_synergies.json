@@ -748,26 +748,28 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Nazrik",
+            "name": "Aurora",
             "score": 0.6,
             "matches": [
-              "hp-scaling",
-              "mark-target"
-            ]
-          },
-          {
-            "name": "Aurora",
-            "score": 0.48,
-            "matches": [
+              "ally-buffer",
               "invincibility",
               "mark-target"
             ]
           },
           {
             "name": "Silven",
-            "score": 0.3,
+            "score": 0.48,
             "matches": [
-              "hp-scaling"
+              "hp-scaling",
+              "mark-target"
+            ]
+          },
+          {
+            "name": "Nazrik",
+            "score": 0.48,
+            "matches": [
+              "hp-scaling",
+              "mark-target"
             ]
           }
         ],
@@ -1051,27 +1053,29 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Cryonaia",
-            "score": 0.5,
+            "name": "Aurora",
+            "score": 0.5143,
             "matches": [
-              "cc-immunity",
-              "invincibility"
+              "ally-buffer",
+              "invincibility",
+              "summoner"
             ]
           },
           {
-            "name": "Igor",
-            "score": 0.3333,
+            "name": "Faramor",
+            "score": 0.4286,
             "matches": [
+              "ally-buffer",
               "aoe-damage",
-              "invincibility"
+              "dot-specialist"
             ]
           },
           {
-            "name": "Lily May",
-            "score": 0.2857,
+            "name": "Laios",
+            "score": 0.3429,
             "matches": [
-              "cc-immunity",
-              "invincibility"
+              "ally-buffer",
+              "summoner"
             ]
           }
         ],
@@ -1498,8 +1502,8 @@
             ]
           },
           {
-            "name": "Lily May",
-            "score": 0.3429,
+            "name": "Tasi",
+            "score": 0.4,
             "matches": [
               "self-repositioner",
               "transformation"
@@ -2040,24 +2044,28 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Lucca",
-            "score": 0.6,
+            "name": "Ulmus",
+            "score": 0.5,
             "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
-            "name": "Lumont",
-            "score": 0.48,
-            "matches": [
-              "taunt"
+              "ally-shielder",
+              "aoe-damage",
+              "mass-cc"
             ]
           },
           {
             "name": "Galahad",
-            "score": 0.4,
+            "score": 0.48,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "aoe-damage"
+            ]
+          },
+          {
+            "name": "Lucca",
+            "score": 0.48,
+            "matches": [
+              "ally-shielder",
+              "mass-cc"
             ]
           }
         ],
@@ -2400,23 +2408,23 @@
         "similar_skills": [
           {
             "name": "Lorsan",
-            "score": 1.0,
+            "score": 0.8,
             "matches": [
               "aoe-damage",
               "dot-specialist"
             ]
           },
           {
-            "name": "Faramor",
-            "score": 0.96,
+            "name": "Gwyneth",
+            "score": 0.6,
             "matches": [
-              "aoe-damage",
-              "dot-specialist"
+              "dot-specialist",
+              "mass-cc"
             ]
           },
           {
             "name": "Viperian",
-            "score": 0.8,
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "dot-specialist"
@@ -2920,26 +2928,28 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Zandrok",
-            "score": 0.6667,
+            "name": "Himmel",
+            "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "battle-start-burst",
+              "self-repositioner"
+            ]
+          },
+          {
+            "name": "Florabelle",
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "battle-start-burst"
             ]
           },
           {
-            "name": "Valen",
-            "score": 0.48,
-            "matches": [
-              "aoe-damage"
-            ]
-          },
-          {
-            "name": "Igor",
-            "score": 0.4,
+            "name": "Dionel",
+            "score": 0.6,
             "matches": [
               "aoe-damage",
-              "battle-start-burst"
+              "self-repositioner"
             ]
           }
         ],
@@ -3351,23 +3361,27 @@
         "similar_skills": [
           {
             "name": "Aliceth",
-            "score": 0.48,
+            "score": 0.6,
             "matches": [
+              "ally-buffer",
               "invincibility",
               "mark-target"
             ]
           },
           {
-            "name": "Zanie",
-            "score": 0.3333,
+            "name": "Alna",
+            "score": 0.5143,
             "matches": [
+              "ally-buffer",
+              "invincibility",
               "summoner"
             ]
           },
           {
-            "name": "Florabelle",
-            "score": 0.3333,
+            "name": "Damian",
+            "score": 0.48,
             "matches": [
+              "ally-buffer",
               "summoner"
             ]
           }
@@ -3831,15 +3845,15 @@
             ]
           },
           {
-            "name": "Tilaya",
-            "score": 0.6,
+            "name": "Silven",
+            "score": 0.3333,
             "matches": [
               "hp-scaling"
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.5,
+            "name": "Kordan",
+            "score": 0.3333,
             "matches": [
               "hp-scaling"
             ]
@@ -4278,24 +4292,24 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Galahad",
-            "score": 0.3,
+            "name": "Seth",
+            "score": 0.24,
             "matches": [
-              "clone"
+              "assassin"
             ]
           },
           {
             "name": "Saida",
-            "score": 0.288,
+            "score": 0.24,
             "matches": [
               "cheat-death"
             ]
           },
           {
-            "name": "Evie",
-            "score": 0.2,
+            "name": "Harak",
+            "score": 0.24,
             "matches": [
-              "stealth"
+              "assassin"
             ]
           }
         ],
@@ -5106,25 +5120,30 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Igor",
-            "score": 0.4114,
+            "name": "Tasi",
+            "score": 0.6,
             "matches": [
-              "battle-start-burst",
-              "invincibility"
+              "aoe-damage",
+              "mass-cc",
+              "transformation"
             ]
           },
           {
-            "name": "Shadewing",
-            "score": 0.288,
+            "name": "Ulmus",
+            "score": 0.5143,
             "matches": [
-              "dot-specialist"
+              "aoe-damage",
+              "mass-cc",
+              "transformation"
             ]
           },
           {
-            "name": "Nerion",
-            "score": 0.288,
+            "name": "Temesia",
+            "score": 0.5143,
             "matches": [
-              "dot-specialist"
+              "aoe-damage",
+              "enemy-debuffer",
+              "mass-cc"
             ]
           }
         ],
@@ -5305,26 +5324,26 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Granny Dahnie",
-            "score": 0.8,
+            "name": "Antandra",
+            "score": 0.4114,
             "matches": [
-              "hp-scaling",
+              "aoe-damage",
               "taunt"
             ]
           },
           {
-            "name": "Zorya",
-            "score": 0.6667,
+            "name": "Thoran",
+            "score": 0.4,
             "matches": [
-              "hp-scaling",
+              "cheat-death",
               "life-drain"
             ]
           },
           {
-            "name": "Salazer",
-            "score": 0.5,
+            "name": "Saida",
+            "score": 0.3333,
             "matches": [
-              "hp-scaling",
+              "cheat-death",
               "life-drain"
             ]
           }
@@ -5774,17 +5793,18 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Dunlingr",
-            "score": 0.5,
+            "name": "Florabelle",
+            "score": 0.576,
             "matches": [
               "battle-start-burst",
               "summoner"
             ]
           },
           {
-            "name": "Florabelle",
-            "score": 0.36,
+            "name": "Dunlingr",
+            "score": 0.5,
             "matches": [
+              "battle-start-burst",
               "summoner"
             ]
           },
@@ -6172,15 +6192,16 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Lucca",
-            "score": 0.4,
+            "name": "Gerda",
+            "score": 0.3429,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "battle-start-burst"
             ]
           },
           {
-            "name": "Gerda",
-            "score": 0.3429,
+            "name": "Himmel",
+            "score": 0.3333,
             "matches": [
               "ally-shielder",
               "battle-start-burst"
@@ -6984,24 +7005,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Kruger",
-            "score": 0.6,
-            "matches": [
-              "enemy-debuffer"
-            ]
-          },
-          {
             "name": "Shadewing",
-            "score": 0.48,
+            "score": 0.96,
             "matches": [
+              "dot-specialist",
               "enemy-debuffer"
             ]
           },
           {
             "name": "Nerion",
-            "score": 0.48,
+            "score": 0.72,
             "matches": [
+              "dot-specialist",
               "enemy-debuffer"
+            ]
+          },
+          {
+            "name": "Cecia",
+            "score": 0.6,
+            "matches": [
+              "enemy-debuffer",
+              "mass-cc"
             ]
           }
         ],
@@ -7328,11 +7352,11 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Temesia",
-            "score": 0.72,
+            "name": "Perseus",
+            "score": 0.8,
             "matches": [
-              "aoe-damage",
-              "enemy-debuffer"
+              "ally-buffer",
+              "aoe-damage"
             ]
           },
           {
@@ -7344,10 +7368,11 @@
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.4,
+            "name": "Hodgkin",
+            "score": 0.6,
             "matches": [
-              "ally-buffer"
+              "aoe-damage",
+              "enemy-debuffer"
             ]
           }
         ],
@@ -7796,27 +7821,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Viperian",
-            "score": 0.72,
+            "name": "Carolina",
+            "score": 0.6,
             "matches": [
-              "dot-specialist",
-              "life-drain"
+              "enemy-debuffer",
+              "mass-cc"
             ]
           },
           {
-            "name": "Shemira",
-            "score": 0.576,
+            "name": "Hodgkin",
+            "score": 0.6,
             "matches": [
-              "life-drain",
+              "enemy-debuffer",
               "summoner"
             ]
           },
           {
-            "name": "Daimon",
-            "score": 0.48,
+            "name": "Pandora",
+            "score": 0.5,
             "matches": [
-              "life-drain",
-              "summoner"
+              "enemy-debuffer",
+              "mass-cc"
             ]
           }
         ],
@@ -8116,24 +8141,24 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Florabelle",
-            "score": 1.0,
+            "name": "Dunlingr",
+            "score": 0.4,
             "matches": [
               "summoner"
             ]
           },
           {
             "name": "Zanie",
-            "score": 1.0,
+            "score": 0.4,
             "matches": [
               "summoner"
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.6,
+            "name": "Kordan",
+            "score": 0.3333,
             "matches": [
-              "summoner"
+              "self-repositioner"
             ]
           }
         ],
@@ -8504,7 +8529,7 @@
             ]
           },
           {
-            "name": "Twins",
+            "name": "Velara",
             "score": 0.48,
             "matches": [
               "ally-healer",
@@ -8512,8 +8537,8 @@
             ]
           },
           {
-            "name": "Velara",
-            "score": 0.48,
+            "name": "Twins",
+            "score": 0.4,
             "matches": [
               "ally-healer",
               "ally-shielder"
@@ -8926,16 +8951,16 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Alna",
-            "score": 0.5,
+            "name": "Lily May",
+            "score": 0.3429,
             "matches": [
               "cc-immunity",
               "invincibility"
             ]
           },
           {
-            "name": "Lily May",
-            "score": 0.3429,
+            "name": "Alna",
+            "score": 0.2857,
             "matches": [
               "cc-immunity",
               "invincibility"
@@ -9244,24 +9269,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Eironn",
+            "name": "Atalanta",
+            "score": 0.48,
+            "matches": [
+              "aoe-damage",
+              "battle-start-burst"
+            ]
+          },
+          {
+            "name": "Walker",
+            "score": 0.4114,
+            "matches": [
+              "aoe-damage",
+              "battle-start-burst"
+            ]
+          },
+          {
+            "name": "Florabelle",
             "score": 0.4,
             "matches": [
-              "enemy-grouping"
-            ]
-          },
-          {
-            "name": "Odie",
-            "score": 0.3333,
-            "matches": [
-              "execute"
-            ]
-          },
-          {
-            "name": "Nara",
-            "score": 0.3,
-            "matches": [
-              "execute"
+              "aoe-damage",
+              "battle-start-burst"
             ]
           }
         ],
@@ -10017,24 +10045,27 @@
         "similar_skills": [
           {
             "name": "Laios",
-            "score": 0.6667,
+            "score": 1.0,
             "matches": [
+              "ally-buffer",
               "ally-healer",
               "summoner"
             ]
           },
           {
-            "name": "Florabelle",
+            "name": "Isabella",
             "score": 0.6,
             "matches": [
-              "summoner"
+              "ally-buffer",
+              "ally-healer"
             ]
           },
           {
-            "name": "Zanie",
-            "score": 0.5,
+            "name": "Twins",
+            "score": 0.48,
             "matches": [
-              "summoner"
+              "ally-buffer",
+              "ally-healer"
             ]
           }
         ],
@@ -10452,24 +10483,26 @@
         "similar_skills": [
           {
             "name": "Igor",
-            "score": 0.4,
+            "score": 0.6,
             "matches": [
+              "aoe-damage",
               "self-repositioner",
               "untargetable"
             ]
           },
           {
-            "name": "Vala",
-            "score": 0.4,
+            "name": "Rhys",
+            "score": 0.6,
             "matches": [
-              "self-repositioner",
-              "untargetable"
+              "aoe-damage",
+              "self-repositioner"
             ]
           },
           {
-            "name": "Pippa",
-            "score": 0.4,
+            "name": "Atalanta",
+            "score": 0.6,
             "matches": [
+              "aoe-damage",
               "self-repositioner"
             ]
           }
@@ -10992,16 +11025,10 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Zanie",
-            "score": 0.5,
-            "matches": [
-              "summoner"
-            ]
-          },
-          {
             "name": "Florabelle",
-            "score": 0.5,
+            "score": 0.6667,
             "matches": [
+              "battle-start-burst",
               "summoner"
             ]
           },
@@ -11010,6 +11037,13 @@
             "score": 0.5,
             "matches": [
               "battle-start-burst",
+              "summoner"
+            ]
+          },
+          {
+            "name": "Zanie",
+            "score": 0.3333,
+            "matches": [
               "summoner"
             ]
           }
@@ -11466,25 +11500,28 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Tasi",
-            "score": 0.48,
-            "matches": [
-              "mass-cc"
-            ]
-          },
-          {
             "name": "Mehira",
-            "score": 0.4,
+            "score": 0.5143,
             "matches": [
+              "aoe-damage",
               "enemy-grouping",
               "mass-cc"
             ]
           },
           {
-            "name": "Cyran",
-            "score": 0.4,
+            "name": "Arden",
+            "score": 0.48,
             "matches": [
-              "enemy-grouping"
+              "aoe-damage",
+              "mass-cc"
+            ]
+          },
+          {
+            "name": "Tasi",
+            "score": 0.48,
+            "matches": [
+              "aoe-damage",
+              "mass-cc"
             ]
           }
         ],
@@ -12302,7 +12339,7 @@
         "similar_skills": [
           {
             "name": "Rowan",
-            "score": 0.8,
+            "score": 0.6,
             "matches": [
               "ally-healer",
               "energy-provider"
@@ -12310,7 +12347,7 @@
           },
           {
             "name": "Solise",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
               "ally-healer",
               "ally-shielder"
@@ -12318,7 +12355,7 @@
           },
           {
             "name": "Hugin",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -12992,24 +13029,24 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Arden",
-            "score": 0.96,
+            "name": "Perseus",
+            "score": 0.6,
             "matches": [
-              "aoe-damage",
-              "dot-specialist"
+              "ally-buffer",
+              "aoe-damage"
             ]
           },
           {
             "name": "Lorsan",
-            "score": 0.8,
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "dot-specialist"
             ]
           },
           {
-            "name": "Viperian",
-            "score": 0.6,
+            "name": "Arden",
+            "score": 0.576,
             "matches": [
               "aoe-damage",
               "dot-specialist"
@@ -13724,23 +13761,26 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Zanie",
-            "score": 1.0,
+            "name": "Dunlingr",
+            "score": 0.6667,
             "matches": [
+              "battle-start-burst",
               "summoner"
             ]
           },
           {
-            "name": "Damian",
+            "name": "Atalanta",
             "score": 0.6,
             "matches": [
-              "summoner"
+              "aoe-damage",
+              "battle-start-burst"
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.5,
+            "name": "Bryon",
+            "score": 0.576,
             "matches": [
+              "battle-start-burst",
               "summoner"
             ]
           }
@@ -14069,25 +14109,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Faramor",
+            "name": "Dionel",
             "score": 0.48,
+            "matches": [
+              "aoe-damage",
+              "self-repositioner"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.4,
             "matches": [
               "aoe-damage",
               "dot-specialist"
             ]
           },
           {
-            "name": "Dionel",
-            "score": 0.24,
+            "name": "Himmel",
+            "score": 0.3429,
             "matches": [
+              "aoe-damage",
               "self-repositioner"
-            ]
-          },
-          {
-            "name": "Shadewing",
-            "score": 0.2,
-            "matches": [
-              "dot-specialist"
             ]
           }
         ],
@@ -14411,24 +14453,27 @@
         "similar_skills": [
           {
             "name": "Phraesto",
-            "score": 0.5,
+            "score": 0.6,
             "matches": [
               "ally-shielder",
+              "aoe-damage",
               "clone"
             ]
           },
           {
-            "name": "Koko",
-            "score": 0.4,
+            "name": "Scarlita",
+            "score": 0.5,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "aoe-damage"
             ]
           },
           {
-            "name": "Saida",
-            "score": 0.3,
+            "name": "Gunnar",
+            "score": 0.4,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "aoe-damage"
             ]
           }
         ],
@@ -15111,25 +15156,24 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Brutus",
-            "score": 0.8,
+            "name": "Baelran",
+            "score": 0.4,
             "matches": [
-              "hp-scaling",
+              "hp-scaling"
+            ]
+          },
+          {
+            "name": "Pippa",
+            "score": 0.4,
+            "matches": [
+              "hp-scaling"
+            ]
+          },
+          {
+            "name": "Lumont",
+            "score": 0.4,
+            "matches": [
               "taunt"
-            ]
-          },
-          {
-            "name": "Tilaya",
-            "score": 0.72,
-            "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
-            "name": "Silven",
-            "score": 0.5,
-            "matches": [
-              "hp-scaling"
             ]
           }
         ],
@@ -15578,6 +15622,14 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Galahad",
+            "score": 0.4,
+            "matches": [
+              "ally-shielder",
+              "aoe-damage"
+            ]
+          },
+          {
             "name": "Hugin",
             "score": 0.4,
             "matches": [
@@ -15586,17 +15638,11 @@
             ]
           },
           {
-            "name": "Galahad",
-            "score": 0.2,
+            "name": "Himmel",
+            "score": 0.2857,
             "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
-            "name": "Saida",
-            "score": 0.2,
-            "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "aoe-damage"
             ]
           }
         ],
@@ -15886,18 +15932,19 @@
             ]
           },
           {
+            "name": "Arden",
+            "score": 0.6,
+            "matches": [
+              "dot-specialist",
+              "mass-cc"
+            ]
+          },
+          {
             "name": "Satrana",
             "score": 0.5,
             "matches": [
               "dot-specialist",
               "fire-attack"
-            ]
-          },
-          {
-            "name": "Odie",
-            "score": 0.3,
-            "matches": [
-              "dot-specialist"
             ]
           }
         ],
@@ -16358,6 +16405,14 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Damian",
+            "score": 0.8,
+            "matches": [
+              "ally-buffer",
+              "ally-healer"
+            ]
+          },
+          {
             "name": "Isabella",
             "score": 0.8,
             "matches": [
@@ -16371,13 +16426,6 @@
             "matches": [
               "ally-buffer",
               "ally-healer"
-            ]
-          },
-          {
-            "name": "Perseus",
-            "score": 0.6,
-            "matches": [
-              "ally-buffer"
             ]
           }
         ],
@@ -16788,17 +16836,18 @@
             ]
           },
           {
+            "name": "Salazer",
+            "score": 0.6,
+            "matches": [
+              "execute",
+              "life-drain"
+            ]
+          },
+          {
             "name": "Nara",
             "score": 0.5,
             "matches": [
               "assassin",
-              "execute"
-            ]
-          },
-          {
-            "name": "Odie",
-            "score": 0.3,
-            "matches": [
               "execute"
             ]
           }
@@ -17239,14 +17288,6 @@
         ],
         "similar_skills": [
           {
-            "name": "Lucius",
-            "score": 0.8,
-            "matches": [
-              "ally-healer",
-              "ally-shielder"
-            ]
-          },
-          {
             "name": "Pang",
             "score": 0.6667,
             "matches": [
@@ -17256,6 +17297,14 @@
           },
           {
             "name": "Solise",
+            "score": 0.5,
+            "matches": [
+              "ally-healer",
+              "ally-shielder"
+            ]
+          },
+          {
+            "name": "Velara",
             "score": 0.5,
             "matches": [
               "ally-healer",
@@ -18348,25 +18397,29 @@
         ],
         "similar_skills": [
           {
-            "name": "Ravion",
-            "score": 0.5,
+            "name": "Igor",
+            "score": 0.4286,
             "matches": [
-              "ally-shielder",
+              "aoe-damage",
+              "battle-start-burst",
               "self-repositioner"
             ]
           },
           {
             "name": "Perseus",
-            "score": 0.3333,
+            "score": 0.4,
             "matches": [
-              "ally-buffer"
+              "ally-buffer",
+              "aoe-damage"
             ]
           },
           {
-            "name": "Koko",
-            "score": 0.3,
+            "name": "Gerda",
+            "score": 0.375,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "battle-start-burst",
+              "self-repositioner"
             ]
           }
         ],
@@ -18711,24 +18764,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Dunlingr",
-            "score": 0.3333,
+            "name": "Cassadee",
+            "score": 0.6,
             "matches": [
-              "battle-start-burst"
+              "aoe-damage",
+              "enemy-debuffer"
             ]
           },
           {
-            "name": "Reinier",
-            "score": 0.3333,
+            "name": "Cecia",
+            "score": 0.6,
             "matches": [
-              "battle-start-burst"
+              "enemy-debuffer",
+              "summoner"
             ]
           },
           {
-            "name": "Rhys",
-            "score": 0.3333,
+            "name": "Florabelle",
+            "score": 0.5,
             "matches": [
-              "fire-attack"
+              "aoe-damage",
+              "summoner"
             ]
           }
         ],
@@ -19285,14 +19341,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Twins",
-            "score": 0.6,
-            "matches": [
-              "ally-shielder",
-              "energy-provider"
-            ]
-          },
-          {
             "name": "Thador",
             "score": 0.5,
             "matches": [
@@ -19303,6 +19351,14 @@
           {
             "name": "Ravion",
             "score": 0.5,
+            "matches": [
+              "ally-shielder",
+              "energy-provider"
+            ]
+          },
+          {
+            "name": "Twins",
+            "score": 0.48,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -19579,27 +19635,30 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Bonnie",
-            "score": 0.4114,
-            "matches": [
-              "battle-start-burst",
-              "invincibility"
-            ]
-          },
-          {
             "name": "Dionel",
-            "score": 0.4,
+            "score": 0.6,
             "matches": [
+              "aoe-damage",
               "self-repositioner",
               "untargetable"
             ]
           },
           {
             "name": "Atalanta",
-            "score": 0.4,
+            "score": 0.6,
             "matches": [
               "aoe-damage",
-              "battle-start-burst"
+              "battle-start-burst",
+              "self-repositioner"
+            ]
+          },
+          {
+            "name": "Himmel",
+            "score": 0.4286,
+            "matches": [
+              "aoe-damage",
+              "battle-start-burst",
+              "self-repositioner"
             ]
           }
         ],
@@ -20415,17 +20474,11 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Kruger",
-            "score": 0.5,
-            "matches": [
-              "enemy-debuffer"
-            ]
-          },
-          {
-            "name": "Sylphira",
+            "name": "Temesia",
             "score": 0.4,
             "matches": [
-              "disabler"
+              "disabler",
+              "enemy-debuffer"
             ]
           },
           {
@@ -20433,6 +20486,13 @@
             "score": 0.3333,
             "matches": [
               "enemy-debuffer"
+            ]
+          },
+          {
+            "name": "Reinier",
+            "score": 0.3333,
+            "matches": [
+              "disabler"
             ]
           }
         ],
@@ -20899,6 +20959,14 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Damian",
+            "score": 0.6,
+            "matches": [
+              "ally-buffer",
+              "ally-healer"
+            ]
+          },
+          {
             "name": "Laios",
             "score": 0.5,
             "matches": [
@@ -20907,17 +20975,11 @@
             ]
           },
           {
-            "name": "Ludovic",
-            "score": 0.36,
+            "name": "Twins",
+            "score": 0.48,
             "matches": [
+              "ally-buffer",
               "ally-healer"
-            ]
-          },
-          {
-            "name": "Perseus",
-            "score": 0.3333,
-            "matches": [
-              "ally-buffer"
             ]
           }
         ],
@@ -21297,25 +21359,27 @@
         "similar_skills": [
           {
             "name": "Sinbad",
-            "score": 0.8,
+            "score": 0.9,
             "matches": [
+              "assassin",
               "enemy-debuffer",
               "mark-target"
             ]
           },
           {
-            "name": "Silvina",
-            "score": 0.5,
+            "name": "Lenya",
+            "score": 0.48,
             "matches": [
               "assassin",
-              "mark-target"
+              "self-repositioner"
             ]
           },
           {
-            "name": "Kruger",
+            "name": "Silvina",
             "score": 0.4,
             "matches": [
-              "enemy-debuffer"
+              "assassin",
+              "mark-target"
             ]
           }
         ],
@@ -21735,29 +21799,32 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Sonja",
+            "score": 0.5714,
+            "matches": [
+              "ally-buffer",
+              "aoe-damage",
+              "battle-start-burst",
+              "mass-cc"
+            ]
+          },
+          {
+            "name": "Walker",
+            "score": 0.5714,
+            "matches": [
+              "aoe-damage",
+              "battle-start-burst",
+              "mark-target",
+              "mass-cc"
+            ]
+          },
+          {
             "name": "Parisa",
-            "score": 0.6,
+            "score": 0.5,
             "matches": [
               "ally-buffer",
               "aoe-damage",
               "mark-target"
-            ]
-          },
-          {
-            "name": "Atalanta",
-            "score": 0.48,
-            "matches": [
-              "aoe-damage",
-              "battle-start-burst"
-            ]
-          },
-          {
-            "name": "Igor",
-            "score": 0.4286,
-            "matches": [
-              "aoe-damage",
-              "battle-start-burst",
-              "invincibility"
             ]
           }
         ],
@@ -22251,10 +22318,10 @@
             ]
           },
           {
-            "name": "Lucca",
-            "score": 0.5,
+            "name": "Shakir",
+            "score": 0.4,
             "matches": [
-              "ally-shielder"
+              "life-drain"
             ]
           }
         ],
@@ -23251,17 +23318,18 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.6,
+            "name": "Daimon",
+            "score": 0.5,
             "matches": [
+              "ally-shielder",
               "hp-scaling"
             ]
           },
           {
-            "name": "Lucca",
-            "score": 0.6,
+            "name": "Silven",
+            "score": 0.4,
             "matches": [
-              "ally-shielder"
+              "hp-scaling"
             ]
           }
         ],
@@ -23593,24 +23661,24 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Shakir",
+            "score": 0.48,
+            "matches": [
+              "life-drain"
+            ]
+          },
+          {
             "name": "Shadewing",
-            "score": 0.6,
+            "score": 0.4,
             "matches": [
               "enemy-debuffer"
             ]
           },
           {
-            "name": "Nerion",
-            "score": 0.6,
+            "name": "Koko",
+            "score": 0.4,
             "matches": [
-              "enemy-debuffer"
-            ]
-          },
-          {
-            "name": "Sinbad",
-            "score": 0.6,
-            "matches": [
-              "enemy-debuffer"
+              "life-drain"
             ]
           }
         ],
@@ -23919,18 +23987,19 @@
             ]
           },
           {
-            "name": "Igor",
-            "score": 0.4,
+            "name": "Atalanta",
+            "score": 0.5,
             "matches": [
               "battle-start-burst",
               "self-repositioner"
             ]
           },
           {
-            "name": "Kordan",
-            "score": 0.3,
+            "name": "Zandrok",
+            "score": 0.48,
             "matches": [
-              "self-repositioner"
+              "battle-start-burst",
+              "battlefield-modification"
             ]
           }
         ],
@@ -24379,8 +24448,9 @@
         "similar_skills": [
           {
             "name": "Damian",
-            "score": 0.6667,
+            "score": 1.0,
             "matches": [
+              "ally-buffer",
               "ally-healer",
               "summoner"
             ]
@@ -24394,9 +24464,10 @@
             ]
           },
           {
-            "name": "Zanie",
-            "score": 0.3333,
+            "name": "Marcille",
+            "score": 0.48,
             "matches": [
+              "ally-healer",
               "summoner"
             ]
           }
@@ -24837,15 +24908,16 @@
             ]
           },
           {
-            "name": "Pippa",
-            "score": 0.36,
+            "name": "Kafra",
+            "score": 0.48,
             "matches": [
+              "assassin",
               "self-repositioner"
             ]
           },
           {
-            "name": "Dionel",
-            "score": 0.3,
+            "name": "Pippa",
+            "score": 0.36,
             "matches": [
               "self-repositioner"
             ]
@@ -25720,14 +25792,6 @@
         "similar_skills": [
           {
             "name": "Arden",
-            "score": 1.0,
-            "matches": [
-              "aoe-damage",
-              "dot-specialist"
-            ]
-          },
-          {
-            "name": "Faramor",
             "score": 0.8,
             "matches": [
               "aoe-damage",
@@ -25737,6 +25801,14 @@
           {
             "name": "Viperian",
             "score": 0.6667,
+            "matches": [
+              "aoe-damage",
+              "dot-specialist"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "dot-specialist"
@@ -26193,24 +26265,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Lucius",
-            "score": 0.72,
-            "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
             "name": "Antandra",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "mass-cc"
             ]
           },
           {
-            "name": "Korin",
-            "score": 0.6,
+            "name": "Sylphira",
+            "score": 0.4,
             "matches": [
-              "ally-shielder"
+              "disabler",
+              "mass-cc"
+            ]
+          },
+          {
+            "name": "Temesia",
+            "score": 0.4,
+            "matches": [
+              "disabler",
+              "mass-cc"
             ]
           }
         ],
@@ -26706,26 +26781,27 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Thador",
+            "score": 0.48,
+            "matches": [
+              "ally-shielder",
+              "enemy-debuffer"
+            ]
+          },
+          {
             "name": "Hepler",
-            "score": 0.8,
+            "score": 0.48,
             "matches": [
               "ally-healer",
               "ally-shielder"
             ]
           },
           {
-            "name": "Lucca",
-            "score": 0.72,
+            "name": "Cassadee",
+            "score": 0.48,
             "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
-            "name": "Solise",
-            "score": 0.6667,
-            "matches": [
-              "ally-healer",
-              "ally-shielder"
+              "aoe-damage",
+              "enemy-debuffer"
             ]
           }
         ],
@@ -27002,22 +27078,25 @@
         "similar_skills": [
           {
             "name": "Lucca",
-            "score": 0.5,
+            "score": 0.6667,
             "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
-            "name": "Carolina",
-            "score": 0.4,
-            "matches": [
+              "ally-shielder",
               "mass-cc"
             ]
           },
           {
-            "name": "Eironn",
-            "score": 0.4,
+            "name": "Antandra",
+            "score": 0.5,
             "matches": [
+              "ally-shielder",
+              "mass-cc"
+            ]
+          },
+          {
+            "name": "Ulmus",
+            "score": 0.48,
+            "matches": [
+              "ally-shielder",
               "mass-cc"
             ]
           }
@@ -27965,16 +28044,9 @@
         "similar_skills": [
           {
             "name": "Kruger",
-            "score": 0.6,
+            "score": 0.4,
             "matches": [
               "enemy-debuffer"
-            ]
-          },
-          {
-            "name": "Antandra",
-            "score": 0.48,
-            "matches": [
-              "taunt"
             ]
           },
           {
@@ -27982,6 +28054,13 @@
             "score": 0.4,
             "matches": [
               "taunt"
+            ]
+          },
+          {
+            "name": "Shadewing",
+            "score": 0.3333,
+            "matches": [
+              "enemy-debuffer"
             ]
           }
         ],
@@ -28338,24 +28417,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Perseus",
-            "score": 0.3333,
+            "name": "Twins",
+            "score": 0.4,
             "matches": [
-              "ally-buffer"
+              "ally-buffer",
+              "energy-provider"
             ]
           },
           {
-            "name": "Hodgkin",
-            "score": 0.3,
+            "name": "Himmel",
+            "score": 0.3333,
             "matches": [
+              "ally-buffer",
               "battle-start-burst"
             ]
           },
           {
-            "name": "Ravion",
-            "score": 0.288,
+            "name": "Sonja",
+            "score": 0.3333,
             "matches": [
-              "energy-provider"
+              "ally-buffer",
+              "battle-start-burst"
             ]
           }
         ],
@@ -28798,24 +28880,27 @@
         ],
         "similar_skills": [
           {
-            "name": "Ludovic",
-            "score": 0.3333,
+            "name": "Florabelle",
+            "score": 0.48,
             "matches": [
-              "ally-healer"
+              "aoe-damage",
+              "summoner"
             ]
           },
           {
-            "name": "Smokey & Meerky",
-            "score": 0.3333,
+            "name": "Laios",
+            "score": 0.48,
             "matches": [
-              "ally-healer"
+              "ally-healer",
+              "summoner"
             ]
           },
           {
-            "name": "Rowan",
-            "score": 0.3333,
+            "name": "Damian",
+            "score": 0.4,
             "matches": [
-              "ally-healer"
+              "ally-healer",
+              "summoner"
             ]
           }
         ],
@@ -29131,10 +29216,10 @@
             ]
           },
           {
-            "name": "Tasi",
-            "score": 0.6667,
+            "name": "Athalia",
+            "score": 0.6,
             "matches": [
-              "mass-cc",
+              "hp-scaling",
               "self-repositioner"
             ]
           }
@@ -29607,26 +29692,28 @@
         "similar_skills": [
           {
             "name": "Eironn",
-            "score": 0.4,
+            "score": 0.5143,
             "matches": [
+              "aoe-damage",
               "enemy-grouping",
               "mass-cc"
             ]
           },
           {
-            "name": "Igor",
-            "score": 0.2667,
+            "name": "Sonja",
+            "score": 0.375,
             "matches": [
               "aoe-damage",
-              "untargetable"
+              "life-drain",
+              "mass-cc"
             ]
           },
           {
-            "name": "Shemira",
-            "score": 0.25,
+            "name": "Cyran",
+            "score": 0.3,
             "matches": [
-              "life-drain",
-              "summoner"
+              "aoe-damage",
+              "enemy-grouping"
             ]
           }
         ],
@@ -30329,13 +30416,6 @@
         ],
         "similar_skills": [
           {
-            "name": "Perseus",
-            "score": 0.5,
-            "matches": [
-              "ally-buffer"
-            ]
-          },
-          {
             "name": "Smokey & Meerky",
             "score": 0.48,
             "matches": [
@@ -30344,6 +30424,13 @@
           },
           {
             "name": "Ludovic",
+            "score": 0.4,
+            "matches": [
+              "aoe-healing"
+            ]
+          },
+          {
+            "name": "Fay",
             "score": 0.4,
             "matches": [
               "aoe-healing"
@@ -30595,10 +30682,10 @@
             ]
           },
           {
-            "name": "Odie",
+            "name": "Zanie",
             "score": 0.4,
             "matches": [
-              "dot-specialist"
+              "fire-attack"
             ]
           }
         ],
@@ -30766,15 +30853,15 @@
             ]
           },
           {
-            "name": "Cyran",
+            "name": "Ludovic",
             "score": 0.3,
             "matches": [
-              "execute"
+              "ally-healer"
             ]
           },
           {
-            "name": "Ludovic",
-            "score": 0.3,
+            "name": "Smokey & Meerky",
+            "score": 0.25,
             "matches": [
               "ally-healer"
             ]
@@ -31145,20 +31232,21 @@
             ]
           },
           {
+            "name": "Arden",
+            "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "dot-specialist",
+              "mass-cc"
+            ]
+          },
+          {
             "name": "Gwyneth",
             "score": 0.6,
             "matches": [
               "dot-specialist",
               "fire-attack",
               "mass-cc"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 0.4,
-            "matches": [
-              "aoe-damage",
-              "dot-specialist"
             ]
           }
         ],
@@ -31286,23 +31374,24 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Aliceth",
-            "score": 0.6,
+            "name": "Silven",
+            "score": 1.0,
             "matches": [
               "hp-scaling",
               "mark-target"
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.6,
+            "name": "Aliceth",
+            "score": 0.48,
             "matches": [
-              "hp-scaling"
+              "hp-scaling",
+              "mark-target"
             ]
           },
           {
-            "name": "Tilaya",
-            "score": 0.5,
+            "name": "Kordan",
+            "score": 0.4,
             "matches": [
               "hp-scaling"
             ]
@@ -32120,23 +32209,25 @@
         "similar_skills": [
           {
             "name": "Shadewing",
-            "score": 1.0,
+            "score": 0.96,
             "matches": [
               "dot-specialist",
               "enemy-debuffer"
             ]
           },
           {
-            "name": "Kruger",
-            "score": 0.6,
+            "name": "Carolina",
+            "score": 0.72,
             "matches": [
+              "dot-specialist",
               "enemy-debuffer"
             ]
           },
           {
-            "name": "Carolina",
+            "name": "Bonnie",
             "score": 0.48,
             "matches": [
+              "battle-start-burst",
               "enemy-debuffer"
             ]
           }
@@ -32590,17 +32681,17 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.3333,
+            "name": "Smokey & Meerky",
+            "score": 0.3,
             "matches": [
-              "hp-scaling"
+              "ally-healer"
             ]
           },
           {
-            "name": "Tilaya",
-            "score": 0.3333,
+            "name": "Rowan",
+            "score": 0.3,
             "matches": [
-              "hp-scaling"
+              "ally-healer"
             ]
           }
         ],
@@ -32824,13 +32915,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Arden",
-            "score": 0.4,
-            "matches": [
-              "dot-specialist"
-            ]
-          },
-          {
             "name": "Mirael",
             "score": 0.4,
             "matches": [
@@ -32839,6 +32923,13 @@
           },
           {
             "name": "Shadewing",
+            "score": 0.3333,
+            "matches": [
+              "dot-specialist"
+            ]
+          },
+          {
+            "name": "Lorsan",
             "score": 0.3333,
             "matches": [
               "dot-specialist"
@@ -33028,23 +33119,26 @@
         ],
         "similar_skills": [
           {
-            "name": "Rowan",
-            "score": 0.4,
+            "name": "Thador",
+            "score": 0.5,
             "matches": [
+              "enemy-debuffer",
               "energy-provider"
             ]
           },
           {
-            "name": "Eironn",
-            "score": 0.3333,
+            "name": "Cecia",
+            "score": 0.5,
             "matches": [
+              "enemy-debuffer",
               "mass-cc"
             ]
           },
           {
-            "name": "Tasi",
-            "score": 0.3333,
+            "name": "Carolina",
+            "score": 0.5,
             "matches": [
+              "enemy-debuffer",
               "mass-cc"
             ]
           }
@@ -33442,14 +33536,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Ulmus",
-            "score": 0.8,
-            "matches": [
-              "ally-shielder",
-              "transformation"
-            ]
-          },
-          {
             "name": "Hepler",
             "score": 0.6667,
             "matches": [
@@ -33458,10 +33544,18 @@
             ]
           },
           {
-            "name": "Lucca",
-            "score": 0.5,
+            "name": "Ulmus",
+            "score": 0.48,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "transformation"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 0.3333,
+            "matches": [
+              "transformation"
             ]
           }
         ],
@@ -33765,6 +33859,14 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Perseus",
+            "score": 0.6667,
+            "matches": [
+              "ally-buffer",
+              "aoe-damage"
+            ]
+          },
+          {
             "name": "Cassadee",
             "score": 0.6,
             "matches": [
@@ -33773,17 +33875,11 @@
             ]
           },
           {
-            "name": "Lorsan",
-            "score": 0.36,
+            "name": "Faramor",
+            "score": 0.48,
             "matches": [
+              "ally-buffer",
               "aoe-damage"
-            ]
-          },
-          {
-            "name": "Perseus",
-            "score": 0.3333,
-            "matches": [
-              "ally-buffer"
             ]
           }
         ],
@@ -34383,24 +34479,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Sonja",
+            "name": "Cassadee",
+            "score": 0.8,
+            "matches": [
+              "ally-buffer",
+              "aoe-damage"
+            ]
+          },
+          {
+            "name": "Parisa",
+            "score": 0.6667,
+            "matches": [
+              "ally-buffer",
+              "aoe-damage"
+            ]
+          },
+          {
+            "name": "Faramor",
             "score": 0.6,
             "matches": [
-              "ally-buffer"
-            ]
-          },
-          {
-            "name": "Mikola",
-            "score": 0.5,
-            "matches": [
-              "ally-buffer"
-            ]
-          },
-          {
-            "name": "Cassadee",
-            "score": 0.4,
-            "matches": [
-              "ally-buffer"
+              "ally-buffer",
+              "aoe-damage"
             ]
           }
         ],
@@ -34836,22 +34935,23 @@
         "similar_skills": [
           {
             "name": "Galahad",
-            "score": 0.5,
+            "score": 0.6,
             "matches": [
               "ally-shielder",
+              "aoe-damage",
               "clone"
             ]
           },
           {
-            "name": "Thador",
-            "score": 0.48,
+            "name": "Gunnar",
+            "score": 0.4114,
             "matches": [
               "ally-shielder",
-              "energy-provider"
+              "aoe-damage"
             ]
           },
           {
-            "name": "Twins",
+            "name": "Thador",
             "score": 0.4,
             "matches": [
               "ally-shielder",
@@ -35449,16 +35549,16 @@
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Hugin",
             "score": 0.5,
             "matches": [
               "ally-shielder",
-              "self-repositioner"
+              "energy-provider"
             ]
           },
           {
             "name": "Twins",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -35764,13 +35864,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Sylphira",
-            "score": 0.3333,
-            "matches": [
-              "disabler"
-            ]
-          },
-          {
             "name": "Dunlingr",
             "score": 0.3333,
             "matches": [
@@ -35778,8 +35871,15 @@
             ]
           },
           {
-            "name": "Atalanta",
+            "name": "Indris",
             "score": 0.3333,
+            "matches": [
+              "disabler"
+            ]
+          },
+          {
+            "name": "Kulu",
+            "score": 0.3,
             "matches": [
               "battle-start-burst"
             ]
@@ -36139,26 +36239,27 @@
         ],
         "similar_skills": [
           {
-            "name": "Gunnar",
-            "score": 0.5,
+            "name": "Dionel",
+            "score": 0.6,
             "matches": [
               "aoe-damage",
-              "fire-attack"
+              "self-repositioner"
             ]
           },
           {
-            "name": "Talene",
-            "score": 0.4,
+            "name": "Atalanta",
+            "score": 0.6,
             "matches": [
               "aoe-damage",
-              "fire-attack"
+              "self-repositioner"
             ]
           },
           {
-            "name": "Arden",
-            "score": 0.4,
+            "name": "Frieren",
+            "score": 0.48,
             "matches": [
-              "aoe-damage"
+              "aoe-damage",
+              "self-repositioner"
             ]
           }
         ],
@@ -36688,7 +36789,7 @@
         "similar_skills": [
           {
             "name": "Twins",
-            "score": 0.8,
+            "score": 0.6,
             "matches": [
               "ally-healer",
               "energy-provider"
@@ -37423,27 +37524,26 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Zorya",
-            "score": 0.8,
+            "name": "Harak",
+            "score": 0.6,
             "matches": [
-              "hp-scaling",
+              "execute",
               "life-drain"
             ]
           },
           {
-            "name": "Shemira",
-            "score": 0.576,
+            "name": "Sylphira",
+            "score": 0.48,
             "matches": [
-              "hp-scaling",
+              "disabler",
               "life-drain"
             ]
           },
           {
-            "name": "Brutus",
-            "score": 0.5,
+            "name": "Odie",
+            "score": 0.3,
             "matches": [
-              "hp-scaling",
-              "life-drain"
+              "execute"
             ]
           }
         ],
@@ -37531,19 +37631,19 @@
             ]
           },
           {
-            "name": "Faramor",
-            "score": 0.5,
-            "matches": [
-              "dot-specialist",
-              "hp-scaling"
-            ]
-          },
-          {
             "name": "Gwyneth",
             "score": 0.5,
             "matches": [
               "dot-specialist",
               "fire-attack"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.4,
+            "matches": [
+              "dot-specialist",
+              "hp-scaling"
             ]
           }
         ],
@@ -37737,16 +37837,16 @@
             ]
           },
           {
-            "name": "Zandrok",
-            "score": 0.6,
+            "name": "Galahad",
+            "score": 0.5,
             "matches": [
-              "aoe-damage",
-              "hp-scaling"
+              "ally-shielder",
+              "aoe-damage"
             ]
           },
           {
-            "name": "Faramor",
-            "score": 0.5,
+            "name": "Zandrok",
+            "score": 0.48,
             "matches": [
               "aoe-damage",
               "hp-scaling"
@@ -39169,7 +39269,7 @@
         "similar_skills": [
           {
             "name": "Nerion",
-            "score": 1.0,
+            "score": 0.96,
             "matches": [
               "dot-specialist",
               "enemy-debuffer"
@@ -39177,16 +39277,16 @@
           },
           {
             "name": "Kruger",
-            "score": 0.6,
+            "score": 0.4,
             "matches": [
               "enemy-debuffer"
             ]
           },
           {
-            "name": "Sinbad",
-            "score": 0.4,
+            "name": "Odie",
+            "score": 0.3333,
             "matches": [
-              "enemy-debuffer"
+              "dot-specialist"
             ]
           }
         ],
@@ -39421,21 +39521,22 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Sylphira",
+            "score": 0.5,
+            "matches": [
+              "life-drain",
+              "transformation"
+            ]
+          },
+          {
+            "name": "Kruger",
+            "score": 0.48,
+            "matches": [
+              "life-drain"
+            ]
+          },
+          {
             "name": "Koko",
-            "score": 0.4,
-            "matches": [
-              "life-drain"
-            ]
-          },
-          {
-            "name": "Zorya",
-            "score": 0.4,
-            "matches": [
-              "life-drain"
-            ]
-          },
-          {
-            "name": "Seth",
             "score": 0.4,
             "matches": [
               "life-drain"
@@ -39936,11 +40037,11 @@
             ]
           },
           {
-            "name": "Brutus",
-            "score": 0.4,
+            "name": "Mehira",
+            "score": 0.25,
             "matches": [
-              "hp-scaling",
-              "life-drain"
+              "life-drain",
+              "summoner"
             ]
           }
         ],
@@ -40654,24 +40755,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Tilaya",
+            "name": "Nazrik",
             "score": 1.0,
             "matches": [
-              "hp-scaling"
+              "hp-scaling",
+              "mark-target"
             ]
           },
           {
-            "name": "Nazrik",
-            "score": 0.6,
+            "name": "Aliceth",
+            "score": 0.48,
             "matches": [
-              "hp-scaling"
+              "hp-scaling",
+              "mark-target"
             ]
           },
           {
-            "name": "Sonja",
-            "score": 0.6,
+            "name": "Vala",
+            "score": 0.48,
             "matches": [
-              "hp-scaling"
+              "hp-scaling",
+              "mark-target"
             ]
           }
         ],
@@ -40914,7 +41018,7 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Kafra",
+            "name": "Sinbad",
             "score": 0.5,
             "matches": [
               "assassin",
@@ -40922,14 +41026,15 @@
             ]
           },
           {
-            "name": "Sylphira",
-            "score": 0.3,
+            "name": "Kafra",
+            "score": 0.4,
             "matches": [
-              "disabler"
+              "assassin",
+              "mark-target"
             ]
           },
           {
-            "name": "Nazrik",
+            "name": "Silven",
             "score": 0.3,
             "matches": [
               "mark-target"
@@ -41220,22 +41325,24 @@
         "similar_skills": [
           {
             "name": "Kafra",
-            "score": 0.8,
+            "score": 0.9,
             "matches": [
+              "assassin",
               "enemy-debuffer",
               "mark-target"
             ]
           },
           {
-            "name": "Kruger",
-            "score": 0.6,
+            "name": "Silvina",
+            "score": 0.5,
             "matches": [
-              "enemy-debuffer"
+              "assassin",
+              "mark-target"
             ]
           },
           {
-            "name": "Walker",
-            "score": 0.48,
+            "name": "Silven",
+            "score": 0.3,
             "matches": [
               "mark-target"
             ]
@@ -41972,8 +42079,8 @@
             ]
           },
           {
-            "name": "Twins",
-            "score": 0.6,
+            "name": "Contess",
+            "score": 0.48,
             "matches": [
               "ally-healer",
               "ally-shielder"
@@ -42177,24 +42284,30 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Silven",
-            "score": 0.6,
+            "name": "Walker",
+            "score": 0.8,
             "matches": [
-              "hp-scaling"
+              "aoe-damage",
+              "battle-start-burst",
+              "life-drain",
+              "mass-cc"
+            ]
+          },
+          {
+            "name": "Himmel",
+            "score": 0.5143,
+            "matches": [
+              "ally-buffer",
+              "aoe-damage",
+              "battle-start-burst"
             ]
           },
           {
             "name": "Perseus",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
-              "ally-buffer"
-            ]
-          },
-          {
-            "name": "Tilaya",
-            "score": 0.5,
-            "matches": [
-              "hp-scaling"
+              "ally-buffer",
+              "aoe-damage"
             ]
           }
         ],
@@ -42666,8 +42779,8 @@
             ]
           },
           {
-            "name": "Tasi",
-            "score": 0.4,
+            "name": "Pippa",
+            "score": 0.3333,
             "matches": [
               "self-repositioner"
             ]
@@ -43119,24 +43232,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Baelran",
+            "name": "Shakir",
+            "score": 0.5,
+            "matches": [
+              "life-drain",
+              "transformation"
+            ]
+          },
+          {
+            "name": "Lucca",
             "score": 0.4,
             "matches": [
-              "transformation"
+              "disabler",
+              "mass-cc"
             ]
           },
           {
-            "name": "Athalia",
-            "score": 0.36,
-            "matches": [
-              "transformation"
-            ]
-          },
-          {
-            "name": "Reinier",
+            "name": "Tasi",
             "score": 0.3333,
             "matches": [
-              "disabler"
+              "mass-cc",
+              "transformation"
             ]
           }
         ],
@@ -43555,26 +43671,27 @@
         ],
         "similar_skills": [
           {
-            "name": "Rhys",
-            "score": 0.4,
+            "name": "Ulmus",
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
-              "fire-attack"
+              "cheat-death",
+              "transformation"
             ]
           },
           {
-            "name": "Valen",
-            "score": 0.4,
+            "name": "Tasi",
+            "score": 0.3429,
             "matches": [
               "aoe-damage",
               "transformation"
             ]
           },
           {
-            "name": "Ulmus",
-            "score": 0.4,
+            "name": "Hepler",
+            "score": 0.3333,
             "matches": [
-              "cheat-death",
+              "ally-healer",
               "transformation"
             ]
           }
@@ -44040,25 +44157,30 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Marilee",
-            "score": 0.6667,
+            "name": "Valen",
+            "score": 0.75,
             "matches": [
+              "aoe-damage",
               "mass-cc",
-              "self-repositioner"
+              "transformation"
             ]
           },
           {
-            "name": "Eironn",
-            "score": 0.48,
+            "name": "Ulmus",
+            "score": 0.72,
             "matches": [
-              "mass-cc"
+              "aoe-damage",
+              "mass-cc",
+              "transformation"
             ]
           },
           {
-            "name": "Kordan",
-            "score": 0.4,
+            "name": "Bonnie",
+            "score": 0.6,
             "matches": [
-              "self-repositioner"
+              "aoe-damage",
+              "mass-cc",
+              "transformation"
             ]
           }
         ],
@@ -44561,25 +44683,28 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Cassadee",
-            "score": 0.72,
+            "name": "Tasi",
+            "score": 0.6,
             "matches": [
               "aoe-damage",
-              "enemy-debuffer"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 0.4,
-            "matches": [
-              "aoe-damage",
+              "mass-cc",
               "self-repositioner"
             ]
           },
           {
-            "name": "Kruger",
-            "score": 0.4,
+            "name": "Bonnie",
+            "score": 0.5143,
             "matches": [
+              "aoe-damage",
+              "enemy-debuffer",
+              "mass-cc"
+            ]
+          },
+          {
+            "name": "Cassadee",
+            "score": 0.48,
+            "matches": [
+              "aoe-damage",
               "enemy-debuffer"
             ]
           }
@@ -45004,7 +45129,7 @@
             ]
           },
           {
-            "name": "Twins",
+            "name": "Hugin",
             "score": 0.5,
             "matches": [
               "ally-shielder",
@@ -45012,10 +45137,10 @@
             ]
           },
           {
-            "name": "Hugin",
+            "name": "Pandora",
             "score": 0.5,
             "matches": [
-              "ally-shielder",
+              "enemy-debuffer",
               "energy-provider"
             ]
           }
@@ -45345,15 +45470,16 @@
             ]
           },
           {
-            "name": "Zorya",
-            "score": 0.3,
+            "name": "Brutus",
+            "score": 0.4,
             "matches": [
+              "cheat-death",
               "life-drain"
             ]
           },
           {
-            "name": "Koko",
-            "score": 0.25,
+            "name": "Zorya",
+            "score": 0.3,
             "matches": [
               "life-drain"
             ]
@@ -45746,24 +45872,24 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Silven",
-            "score": 1.0,
-            "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
-            "name": "Granny Dahnie",
-            "score": 0.72,
-            "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
-            "name": "Baelran",
+            "name": "Lorsan",
             "score": 0.6,
             "matches": [
-              "hp-scaling"
+              "aoe-damage"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.5,
+            "matches": [
+              "aoe-damage"
+            ]
+          },
+          {
+            "name": "Florabelle",
+            "score": 0.4,
+            "matches": [
+              "aoe-damage"
             ]
           }
         ],
@@ -46145,26 +46271,29 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Pang",
-            "score": 0.8,
+            "name": "Tasi",
+            "score": 0.72,
             "matches": [
-              "ally-shielder",
+              "aoe-damage",
+              "mass-cc",
               "transformation"
             ]
           },
           {
-            "name": "Saida",
-            "score": 0.5,
+            "name": "Valen",
+            "score": 0.6,
             "matches": [
-              "ally-shielder",
-              "cheat-death"
+              "aoe-damage",
+              "mass-cc",
+              "transformation"
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.5,
+            "name": "Bonnie",
+            "score": 0.5143,
             "matches": [
-              "ally-shielder",
+              "aoe-damage",
+              "mass-cc",
               "transformation"
             ]
           }
@@ -46679,20 +46808,19 @@
             ]
           },
           {
+            "name": "Silven",
+            "score": 0.48,
+            "matches": [
+              "hp-scaling",
+              "mark-target"
+            ]
+          },
+          {
             "name": "Marilee",
             "score": 0.4114,
             "matches": [
               "hp-scaling",
               "self-repositioner"
-            ]
-          },
-          {
-            "name": "Lily May",
-            "score": 0.4,
-            "matches": [
-              "hp-scaling",
-              "self-repositioner",
-              "transformation"
             ]
           }
         ],
@@ -47033,24 +47161,29 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Atalanta",
-            "score": 0.48,
-            "matches": [
-              "aoe-damage"
-            ]
-          },
-          {
-            "name": "Talene",
-            "score": 0.4,
+            "name": "Tasi",
+            "score": 0.75,
             "matches": [
               "aoe-damage",
+              "mass-cc",
               "transformation"
             ]
           },
           {
-            "name": "Sylphira",
-            "score": 0.4,
+            "name": "Bonnie",
+            "score": 0.6,
             "matches": [
+              "aoe-damage",
+              "mass-cc",
+              "transformation"
+            ]
+          },
+          {
+            "name": "Ulmus",
+            "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "mass-cc",
               "transformation"
             ]
           }
@@ -47572,25 +47705,26 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Himmel",
-            "score": 0.5,
+            "name": "Twins",
+            "score": 0.4,
             "matches": [
               "ally-buffer",
               "ally-shielder"
             ]
           },
           {
-            "name": "Perseus",
+            "name": "Himmel",
             "score": 0.3333,
             "matches": [
-              "ally-buffer"
+              "ally-buffer",
+              "ally-shielder"
             ]
           },
           {
-            "name": "Lucca",
-            "score": 0.3333,
+            "name": "Soren",
+            "score": 0.3,
             "matches": [
-              "ally-shielder"
+              "counterattack"
             ]
           }
         ],
@@ -48517,24 +48651,24 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Arden",
-            "score": 0.8,
+            "name": "Lorsan",
+            "score": 0.6667,
             "matches": [
               "aoe-damage",
               "dot-specialist"
             ]
           },
           {
-            "name": "Cecia",
-            "score": 0.72,
+            "name": "Arden",
+            "score": 0.6,
             "matches": [
-              "dot-specialist",
-              "life-drain"
+              "aoe-damage",
+              "dot-specialist"
             ]
           },
           {
-            "name": "Lorsan",
-            "score": 0.6667,
+            "name": "Frieren",
+            "score": 0.48,
             "matches": [
               "aoe-damage",
               "dot-specialist"
@@ -48949,24 +49083,31 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Sinbad",
-            "score": 0.48,
+            "name": "Sonja",
+            "score": 0.8,
             "matches": [
-              "mark-target"
+              "aoe-damage",
+              "battle-start-burst",
+              "life-drain",
+              "mass-cc"
             ]
           },
           {
-            "name": "Shakir",
-            "score": 0.4,
+            "name": "Bonnie",
+            "score": 0.5143,
             "matches": [
-              "life-drain"
+              "aoe-damage",
+              "battle-start-burst",
+              "mass-cc"
             ]
           },
           {
-            "name": "Zorya",
-            "score": 0.4,
+            "name": "Mehira",
+            "score": 0.45,
             "matches": [
-              "life-drain"
+              "aoe-damage",
+              "life-drain",
+              "mass-cc"
             ]
           }
         ],
@@ -49404,27 +49545,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Atalanta",
-            "score": 0.6667,
+            "name": "Kulu",
+            "score": 0.48,
             "matches": [
-              "aoe-damage",
-              "battle-start-burst"
+              "battle-start-burst",
+              "battlefield-modification"
             ]
           },
           {
             "name": "Scarlita",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
               "aoe-damage",
               "hp-scaling"
             ]
           },
           {
-            "name": "Faramor",
-            "score": 0.5,
+            "name": "Florabelle",
+            "score": 0.4,
             "matches": [
               "aoe-damage",
-              "hp-scaling"
+              "battle-start-burst"
             ]
           }
         ],
@@ -49714,24 +49855,24 @@
         ],
         "similar_skills": [
           {
-            "name": "Florabelle",
-            "score": 1.0,
+            "name": "Mirael",
+            "score": 0.4,
             "matches": [
-              "summoner"
+              "fire-attack"
             ]
           },
           {
             "name": "Dunlingr",
-            "score": 0.5,
+            "score": 0.3333,
             "matches": [
               "summoner"
             ]
           },
           {
-            "name": "Damian",
-            "score": 0.5,
+            "name": "Gwyneth",
+            "score": 0.3,
             "matches": [
-              "summoner"
+              "fire-attack"
             ]
           }
         ],
@@ -50181,27 +50322,26 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Salazer",
-            "score": 0.8,
-            "matches": [
-              "hp-scaling",
-              "life-drain"
-            ]
-          },
-          {
-            "name": "Brutus",
-            "score": 0.6667,
-            "matches": [
-              "hp-scaling",
-              "life-drain"
-            ]
-          },
-          {
             "name": "Shemira",
             "score": 0.6,
             "matches": [
               "hp-scaling",
               "life-drain"
+            ]
+          },
+          {
+            "name": "Daimon",
+            "score": 0.6,
+            "matches": [
+              "hp-scaling",
+              "life-drain"
+            ]
+          },
+          {
+            "name": "Kordan",
+            "score": 0.4,
+            "matches": [
+              "hp-scaling"
             ]
           }
         ],

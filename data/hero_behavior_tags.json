@@ -1,14 +1,18 @@
 {
   "Aliceth": [
+    "ally-buffer",
     "execute",
     "hp-scaling",
     "invincibility",
     "mark-target"
   ],
   "Alna": [
+    "ally-buffer",
     "aoe-damage",
     "cc-immunity",
-    "invincibility"
+    "dot-specialist",
+    "invincibility",
+    "summoner"
   ],
   "Alsa": [
     "battlefield-modification",
@@ -17,15 +21,19 @@
   ],
   "Antandra": [
     "ally-shielder",
+    "aoe-damage",
+    "mass-cc",
     "taunt"
   ],
   "Arden": [
     "aoe-damage",
-    "dot-specialist"
+    "dot-specialist",
+    "mass-cc"
   ],
   "Atalanta": [
     "aoe-damage",
-    "battle-start-burst"
+    "battle-start-burst",
+    "self-repositioner"
   ],
   "Athalia": [
     "hp-scaling",
@@ -33,6 +41,7 @@
     "transformation"
   ],
   "Aurora": [
+    "ally-buffer",
     "invincibility",
     "mark-target",
     "summoner"
@@ -42,18 +51,22 @@
     "transformation"
   ],
   "Berial": [
+    "assassin",
     "cheat-death",
     "clone",
     "stealth"
   ],
   "Bonnie": [
+    "aoe-damage",
     "battle-start-burst",
-    "dot-specialist",
-    "invincibility",
+    "enemy-debuffer",
+    "mass-cc",
     "transformation"
   ],
   "Brutus": [
-    "hp-scaling",
+    "aoe-damage",
+    "cheat-death",
+    "invincibility",
     "life-drain",
     "taunt"
   ],
@@ -69,6 +82,7 @@
     "cc-immunity"
   ],
   "Carolina": [
+    "dot-specialist",
     "enemy-debuffer",
     "mass-cc"
   ],
@@ -78,11 +92,12 @@
     "enemy-debuffer"
   ],
   "Cecia": [
-    "dot-specialist",
-    "life-drain",
+    "enemy-debuffer",
+    "mass-cc",
     "summoner"
   ],
   "Chippy": [
+    "self-repositioner",
     "summoner"
   ],
   "Contess": [
@@ -97,6 +112,8 @@
     "invincibility"
   ],
   "Cyran": [
+    "aoe-damage",
+    "battle-start-burst",
     "enemy-grouping",
     "execute"
   ],
@@ -107,10 +124,12 @@
     "summoner"
   ],
   "Damian": [
+    "ally-buffer",
     "ally-healer",
     "summoner"
   ],
   "Dionel": [
+    "aoe-damage",
     "self-repositioner",
     "untargetable"
   ],
@@ -119,6 +138,8 @@
     "summoner"
   ],
   "Eironn": [
+    "aoe-damage",
+    "battle-start-ult",
     "enemy-grouping",
     "mass-cc"
   ],
@@ -128,6 +149,7 @@
     "stealth"
   ],
   "Faramor": [
+    "ally-buffer",
     "aoe-damage",
     "dot-specialist",
     "hp-scaling"
@@ -137,6 +159,8 @@
     "aoe-healing"
   ],
   "Florabelle": [
+    "aoe-damage",
+    "battle-start-burst",
     "summoner"
   ],
   "Frieren": [
@@ -147,6 +171,7 @@
   ],
   "Galahad": [
     "ally-shielder",
+    "aoe-damage",
     "clone"
   ],
   "Gerda": [
@@ -193,11 +218,14 @@
   "Himmel": [
     "ally-buffer",
     "ally-shielder",
+    "aoe-damage",
+    "battle-start-burst",
     "self-repositioner"
   ],
   "Hodgkin": [
-    "battle-start-burst",
-    "fire-attack"
+    "aoe-damage",
+    "enemy-debuffer",
+    "summoner"
   ],
   "Hugin": [
     "ally-shielder",
@@ -225,12 +253,14 @@
     "aoe-damage",
     "battle-start-burst",
     "invincibility",
-    "mark-target"
+    "mark-target",
+    "mass-cc"
   ],
   "Kafra": [
     "assassin",
     "enemy-debuffer",
-    "mark-target"
+    "mark-target",
+    "self-repositioner"
   ],
   "Koko": [
     "ally-shielder",
@@ -245,7 +275,8 @@
     "hp-scaling"
   ],
   "Kruger": [
-    "enemy-debuffer"
+    "enemy-debuffer",
+    "life-drain"
   ],
   "Kulu": [
     "battle-start-burst",
@@ -275,11 +306,15 @@
     "dot-specialist"
   ],
   "Lucca": [
-    "ally-shielder"
+    "ally-shielder",
+    "disabler",
+    "mass-cc"
   ],
   "Lucius": [
     "ally-healer",
-    "ally-shielder"
+    "ally-shielder",
+    "aoe-damage",
+    "enemy-debuffer"
   ],
   "Lucy": [
     "ally-shielder",
@@ -300,7 +335,9 @@
   ],
   "Marcille": [
     "ally-healer",
-    "revive"
+    "aoe-damage",
+    "revive",
+    "summoner"
   ],
   "Marilee": [
     "hp-scaling",
@@ -341,6 +378,7 @@
     "mark-target"
   ],
   "Nerion": [
+    "battle-start-burst",
     "dot-specialist",
     "enemy-debuffer"
   ],
@@ -354,6 +392,7 @@
     "execute"
   ],
   "Pandora": [
+    "enemy-debuffer",
     "energy-provider",
     "mass-cc"
   ],
@@ -367,10 +406,12 @@
     "mark-target"
   ],
   "Perseus": [
-    "ally-buffer"
+    "ally-buffer",
+    "aoe-damage"
   ],
   "Phraesto": [
     "ally-shielder",
+    "aoe-damage",
     "clone",
     "energy-provider",
     "summoner"
@@ -390,7 +431,8 @@
   ],
   "Rhys": [
     "aoe-damage",
-    "fire-attack"
+    "fire-attack",
+    "self-repositioner"
   ],
   "Rowan": [
     "ally-healer",
@@ -403,7 +445,7 @@
   ],
   "Salazer": [
     "disabler",
-    "hp-scaling",
+    "execute",
     "life-drain"
   ],
   "Satrana": [
@@ -435,7 +477,8 @@
     "summoner"
   ],
   "Silven": [
-    "hp-scaling"
+    "hp-scaling",
+    "mark-target"
   ],
   "Silvina": [
     "assassin",
@@ -443,6 +486,7 @@
     "mark-target"
   ],
   "Sinbad": [
+    "assassin",
     "enemy-debuffer",
     "mark-target"
   ],
@@ -457,7 +501,10 @@
   ],
   "Sonja": [
     "ally-buffer",
-    "hp-scaling"
+    "aoe-damage",
+    "battle-start-burst",
+    "life-drain",
+    "mass-cc"
   ],
   "Soren": [
     "counterattack",
@@ -465,6 +512,8 @@
   ],
   "Sylphira": [
     "disabler",
+    "life-drain",
+    "mass-cc",
     "transformation"
   ],
   "Talene": [
@@ -475,12 +524,16 @@
     "transformation"
   ],
   "Tasi": [
+    "aoe-damage",
     "mass-cc",
-    "self-repositioner"
+    "self-repositioner",
+    "transformation"
   ],
   "Temesia": [
     "aoe-damage",
+    "disabler",
     "enemy-debuffer",
+    "mass-cc",
     "self-repositioner"
   ],
   "Thador": [
@@ -494,16 +547,19 @@
     "life-drain"
   ],
   "Tilaya": [
-    "hp-scaling"
+    "aoe-damage"
   ],
   "Twins": [
+    "ally-buffer",
     "ally-healer",
     "ally-shielder",
     "energy-provider"
   ],
   "Ulmus": [
     "ally-shielder",
+    "aoe-damage",
     "cheat-death",
+    "mass-cc",
     "transformation"
   ],
   "Vala": [
@@ -516,6 +572,7 @@
   ],
   "Valen": [
     "aoe-damage",
+    "mass-cc",
     "transformation"
   ],
   "Valka": [
@@ -534,15 +591,20 @@
     "life-drain"
   ],
   "Walker": [
+    "aoe-damage",
+    "battle-start-burst",
     "life-drain",
-    "mark-target"
+    "mark-target",
+    "mass-cc"
   ],
   "Zandrok": [
     "aoe-damage",
     "battle-start-burst",
+    "battlefield-modification",
     "hp-scaling"
   ],
   "Zanie": [
+    "fire-attack",
     "summoner"
   ],
   "Zorya": [

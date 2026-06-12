@@ -4,7 +4,9 @@
   "title": "Processed hero data",
   "description": "Per-hero skill analysis, synergy profile, and behavior. Roster-wide synergy rankings live in heroes_synergies.schema.json.",
   "type": "object",
-  "required": ["heroes"],
+  "required": [
+    "heroes"
+  ],
   "additionalProperties": false,
   "properties": {
     "heroes": {
@@ -68,7 +70,11 @@
           "type": "object",
           "additionalProperties": {
             "type": "string",
-            "enum": ["high", "average", "low"]
+            "enum": [
+              "high",
+              "average",
+              "low"
+            ]
           },
           "description": "Roster-relative magnitude per special damage type (HP loss, Max HP-based, True damage)."
         },
@@ -110,12 +116,20 @@
     },
     "roleCategory": {
       "type": "string",
-      "enum": ["damage_dealer", "specialist", "support", "tank"],
+      "enum": [
+        "damage_dealer",
+        "specialist",
+        "support",
+        "tank"
+      ],
       "description": "Prydwen tier-list role category."
     },
     "synergyProfile": {
       "type": "object",
-      "required": ["provides", "requires"],
+      "required": [
+        "provides",
+        "requires"
+      ],
       "additionalProperties": false,
       "description": "Hero-level synergy mechanics replacing special_effects. Provides are what the hero supplies; requires are partner dependencies.",
       "properties": {
@@ -137,7 +151,10 @@
     },
     "synergyMechanic": {
       "type": "object",
-      "required": ["label", "tier"],
+      "required": [
+        "label",
+        "tier"
+      ],
       "additionalProperties": false,
       "properties": {
         "label": {
@@ -307,13 +324,19 @@
           "$ref": "#/$defs/castingSpeed"
         },
         "avg_attack_range": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "placement_constraints": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["kind", "text"],
+            "required": [
+              "kind",
+              "text"
+            ],
             "additionalProperties": false,
             "properties": {
               "kind": {
@@ -350,7 +373,13 @@
     },
     "skillOverviewMetrics": {
       "type": "object",
-      "required": ["speed", "damage", "heal", "buffs", "debuffs"],
+      "required": [
+        "speed",
+        "damage",
+        "heal",
+        "buffs",
+        "debuffs"
+      ],
       "additionalProperties": false,
       "properties": {
         "speed": {
@@ -381,15 +410,29 @@
     },
     "skillOverviewSpeed": {
       "type": "string",
-      "enum": ["slow", "average", "fast", "none"]
+      "enum": [
+        "slow",
+        "average",
+        "fast",
+        "none"
+      ]
     },
     "skillOverviewMagnitude": {
       "type": "string",
-      "enum": ["high", "average", "low", "none"]
+      "enum": [
+        "high",
+        "average",
+        "low",
+        "none"
+      ]
     },
     "castingSpeed": {
       "type": "string",
-      "enum": ["slow", "average", "fast"]
+      "enum": [
+        "slow",
+        "average",
+        "fast"
+      ]
     }
   }
 }
