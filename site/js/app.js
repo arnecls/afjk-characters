@@ -4498,6 +4498,48 @@
     );
   }
 
+  function renderInlineHeroPortrait(slug, name) {
+    const hero = heroBySlug[slug];
+    const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
+    return (
+      '<img class="inline-hero-portrait" src="' +
+      assetUrl(portrait) +
+      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">'
+    );
+  }
+
+  function synergyIntroWithoutCommonBuffers(intro) {
+    if (!intro) {
+      return "";
+    }
+    return intro
+      .split("\n")
+      .filter(function (line) {
+        return !/^Common buffers are /i.test(line.trim());
+      })
+      .join("\n")
+      .trim();
+  }
+
+  function renderCommonBuffers(buffers) {
+    if (!buffers || !buffers.length) {
+      return "";
+    }
+    const items = buffers.map(function (ref) {
+      return (
+        '<span class="synergy-common-buffer">' +
+        renderInlineHeroPortrait(ref.slug, ref.name) +
+        linkifyHero(ref.name, ref.slug) +
+        "</span>"
+      );
+    });
+    return (
+      '<div class="synergy-common-buffers">Common buffers are ' +
+      joinIntroFragments(items) +
+      ".</div>"
+    );
+  }
+
   function renderSynergies(sections, heroName) {
     const syn = sections.benefits_from;
     if (!syn) return "";
@@ -4506,11 +4548,20 @@
     html +=
       "<h2>Units improving " + escapeHtml(heroName) + "</h2>";
 
-    if (syn.intro) {
-      html +=
-        '<div class="synergy-intro">' +
-        renderInline(syn.intro.replace(/\n/g, " ")) +
-        "</div>";
+    if (syn.intro || (syn.common_buffers && syn.common_buffers.length)) {
+      const introText = synergyIntroWithoutCommonBuffers(syn.intro);
+      const buffersHtml = renderCommonBuffers(syn.common_buffers);
+      if (introText || buffersHtml) {
+        html += '<div class="synergy-intro-block">';
+        if (introText) {
+          html +=
+            '<div class="synergy-intro">' +
+            renderInline(introText.replace(/\n/g, " ")) +
+            "</div>";
+        }
+        html += buffersHtml;
+        html += "</div>";
+      }
     }
 
     if (syn.requires && syn.requires.text) {
