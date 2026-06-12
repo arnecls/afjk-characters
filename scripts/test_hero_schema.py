@@ -382,7 +382,7 @@ class SkillOverviewTests(unittest.TestCase):
         ultimate_tags = " ".join(ultimate["tags"])
         self.assertIn("Physical", ultimate_tags)
         self.assertIn("HP loss", ultimate_tags)
-        self.assertNotIn(" — ", ultimate_tags)
+        self.assertIn("Invincible — Self", ultimate_tags)
         self.assertNotIn("`high`", ultimate_tags)
         skill1 = next(c for c in cards if c["category"] == "skill1")
         skill1_tags = " ".join(skill1["tags"])
@@ -424,6 +424,15 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("Haste buff", tags)
         keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
         self.assertEqual(len(keys), len(set(keys)))
+
+    def test_kazim_skill5_self_targeted_energy_recovery_tag(self):
+        hero, _ = self._hero_by_display("Kazim")
+        tags = rs.format_skill_card_tags(hero, "skill5")
+        self.assertIn("Energy recovery — Self", tags)
+        self.assertIn("ATK SPD buff — Self", tags)
+        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        self.assertIn("energy recovery", keys)
+        self.assertIn("atk spd", keys)
 
     def test_signature_skill_body_omits_description(self):
         _, behavior = self._hero_by_display("Aliceth")

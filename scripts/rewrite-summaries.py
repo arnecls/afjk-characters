@@ -7326,11 +7326,25 @@ def _skill_card_tag_label(label: str) -> str:
     return label.strip()
 
 
+def _skill_card_tag_for_effect(label: str, targeting: str) -> str:
+    """Skill-card chip text; self-targeted effects include a targeting suffix."""
+    text = _skill_card_tag_label(label)
+    if targeting == "Self":
+        return f"{text} — Self"
+    return text
+
+
 def _canonical_skill_card_chip_key(tag: str) -> str:
+    text = re.sub(
+        r"\s*(?:—|–)\s*self\s*$",
+        "",
+        tag.strip(),
+        flags=re.I,
+    )
     text = re.sub(
         r"\s*\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)",
         "",
-        tag.strip(),
+        text.strip(),
         flags=re.I,
     ).strip()
     low = text.lower()
@@ -7385,7 +7399,7 @@ def format_skill_card_tags(
     category: str,
     skills: list[SkillMeta] | None = None,
 ) -> list[str]:
-    """Deduped chip labels for one skill card (no targeting or magnitude)."""
+    """Deduped chip labels for one skill card (Self targeting only; no magnitude)."""
     section = CATEGORY_TO_SECTION.get(category)
     if not section:
         return []
@@ -7425,12 +7439,12 @@ def format_skill_card_tags(
         for e in sorted(
             group, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)
         ):
-            add(_skill_card_tag_label(e.label))
+            add(_skill_card_tag_for_effect(e.label, e.targeting))
     for imm in sorted(
         sl.cc_immunities,
         key=lambda x: (TIER_ORDER.get(x.tier, 9), x.immunity_type),
     ):
-        add(imm.immunity_type)
+        add(_skill_card_tag_for_effect(imm.immunity_type, imm.targeting))
     return tags
 
 

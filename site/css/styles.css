@@ -1968,6 +1968,16 @@ html.welcome-warning-pending .welcome-warning,
   vertical-align: baseline;
 }
 
+.skill-card-tags .chip.chip-merged {
+  padding: 0;
+}
+
+.skill-card-tags .chip-merged-left,
+.skill-card-tags .chip-merged-right {
+  font-size: 0.64rem;
+  padding: 0.1rem 0.38rem;
+}
+
 .signature-skill-link {
   font-weight: 600;
   text-decoration: underline;
