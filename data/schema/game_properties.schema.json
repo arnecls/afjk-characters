@@ -31,6 +31,7 @@
         "proficiency",
         "ranged_def",
         "resilience",
+        "shield",
         "vitality"
       ],
       "description": "Hero stat or skill scaling attribute from the roster stat list."

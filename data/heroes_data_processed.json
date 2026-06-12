@@ -1680,7 +1680,7 @@
       },
       "benefit_stats": [
         "haste",
-        "max_hp"
+        "shield"
       ],
       "behavior": {
         "movement": "mostly stationary",
@@ -2193,6 +2193,7 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "max_hp",
+        "shield",
         "healing",
         "energy"
       ],
@@ -4676,7 +4677,7 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "max_hp",
+        "shield",
         "healing"
       ],
       "behavior": {
@@ -7102,6 +7103,7 @@
         "max_hp": "average"
       },
       "benefit_stats": [
+        "shield",
         "healing"
       ],
       "behavior": {
@@ -9964,7 +9966,7 @@
       },
       "benefit_stats": [
         "atk",
-        "max_hp"
+        "shield"
       ],
       "behavior": {
         "movement": "mostly stationary",
@@ -11061,7 +11063,8 @@
         "max_hp": "high"
       },
       "benefit_stats": [
-        "max_hp"
+        "max_hp",
+        "shield"
       ],
       "behavior": {
         "movement": "stationary",
@@ -12034,7 +12037,7 @@
       },
       "benefit_stats": [
         "atk_spd",
-        "max_hp",
+        "shield",
         "execution"
       ],
       "behavior": {
@@ -12596,6 +12599,7 @@
         "atk_spd",
         "haste",
         "max_hp",
+        "shield",
         "healing"
       ],
       "behavior": {
@@ -13091,7 +13095,7 @@
         "max_hp": "average"
       },
       "benefit_stats": [
-        "max_hp",
+        "shield",
         "physical_def",
         "magic_def"
       ],
@@ -14594,7 +14598,7 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "max_hp"
+        "shield"
       ],
       "behavior": {
         "movement": "moving",
@@ -17260,7 +17264,8 @@
         "max_hp": "average"
       },
       "benefit_stats": [
-        "max_hp"
+        "max_hp",
+        "shield"
       ],
       "behavior": {
         "movement": "high movement",
@@ -18320,7 +18325,7 @@
       },
       "benefit_stats": [
         "atk_spd",
-        "max_hp",
+        "shield",
         "healing"
       ],
       "behavior": {
@@ -23914,7 +23919,7 @@
       },
       "benefit_stats": [
         "atk",
-        "max_hp"
+        "shield"
       ],
       "behavior": {
         "movement": "high movement",
@@ -24976,6 +24981,7 @@
       },
       "benefit_stats": [
         "haste",
+        "shield",
         "energy"
       ],
       "behavior": {
@@ -25525,7 +25531,7 @@
       },
       "benefit_stats": [
         "atk",
-        "max_hp",
+        "shield",
         "healing",
         "def_penetration",
         "physical_def",
@@ -26441,7 +26447,7 @@
         "max_hp": "high"
       },
       "benefit_stats": [
-        "max_hp",
+        "shield",
         "physical_def"
       ],
       "behavior": {
@@ -28180,6 +28186,7 @@
         "atk",
         "haste",
         "max_hp",
+        "shield",
         "crit",
         "crit_dmg_boost",
         "energy"
@@ -29636,6 +29643,7 @@
       },
       "benefit_stats": [
         "max_hp",
+        "shield",
         "healing",
         "physical_def",
         "magic_def"
@@ -30085,6 +30093,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
+        "shield",
         "healing"
       ],
       "behavior": {
@@ -31500,7 +31509,7 @@
       },
       "benefit_stats": [
         "haste",
-        "max_hp",
+        "shield",
         "healing"
       ],
       "behavior": {
@@ -36429,7 +36438,7 @@
       },
       "benefit_stats": [
         "atk_spd",
-        "max_hp",
+        "shield",
         "energy",
         "def_penetration"
       ],
@@ -39333,7 +39342,8 @@
       "benefit_stats": [
         "atk",
         "atk_spd",
-        "max_hp"
+        "max_hp",
+        "shield"
       ],
       "behavior": {
         "movement": "moving",
@@ -43574,6 +43584,7 @@
       },
       "benefit_stats": [
         "max_hp",
+        "shield",
         "healing"
       ],
       "behavior": {
@@ -45626,7 +45637,7 @@
       },
       "benefit_stats": [
         "atk",
-        "max_hp",
+        "shield",
         "energy",
         "life_drain"
       ],
@@ -46542,7 +46553,7 @@
         "true": "average"
       },
       "benefit_stats": [
-        "max_hp",
+        "shield",
         "healing",
         "energy"
       ],
@@ -47449,7 +47460,7 @@
         "max_hp": "average"
       },
       "benefit_stats": [
-        "max_hp",
+        "shield",
         "crit"
       ],
       "behavior": {
@@ -52022,7 +52033,7 @@
       "benefit_stats": [
         "atk",
         "atk_spd",
-        "max_hp",
+        "shield",
         "healing",
         "energy"
       ],
@@ -52520,6 +52531,7 @@
       },
       "benefit_stats": [
         "max_hp",
+        "shield",
         "crit",
         "healing"
       ],
@@ -53429,6 +53441,7 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "max_hp",
+        "shield",
         "healing"
       ],
       "behavior": {
@@ -53951,6 +53964,7 @@
       },
       "benefit_stats": [
         "max_hp",
+        "shield",
         "healing",
         "energy"
       ],
@@ -55600,7 +55614,7 @@
       "benefit_stats": [
         "atk_spd",
         "haste",
-        "max_hp",
+        "shield",
         "healing",
         "energy"
       ],
@@ -56043,7 +56057,7 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "haste",
-        "max_hp",
+        "shield",
         "energy"
       ],
       "behavior": {
@@ -57047,6 +57061,7 @@
       },
       "benefit_stats": [
         "max_hp",
+        "shield",
         "crit",
         "crit_dmg_boost"
       ],

@@ -36,8 +36,8 @@
       "Mythic+": 1.5,
       "EX+5": 1.5,
       "EX+10": 1.6,
-      "EX+15": 1.7,
-      "Supreme+": 1.8
+    "EX+15": 1.8,
+    "Supreme+": 1.7
     }
   },
   "display_limits": {

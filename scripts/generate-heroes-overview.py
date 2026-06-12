@@ -37,7 +37,8 @@ STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "ATK": ["ATK buff"],
     "ATK SPD": ["ATK SPD buff"],
     "Haste": ["Haste buff"],
-    "Max HP": ["Max HP buff", "Shield"],
+    "Max HP": ["Max HP buff"],
+    "Shield": ["Shield"],
     "Crit": ["Crit buff"],
     "Crit DMG Boost": ["Crit DMG boost"],
     "Execution": ["Execution buff"],
@@ -131,8 +132,8 @@ DEFINING_TIER_SCORE_MULT = {
     "Mythic+": 1.5,
     "EX+5": 1.5,
     "EX+10": 1.6,
-    "EX+15": 1.7,
-    "Supreme+": 1.8,
+    "EX+15": 1.8,
+    "Supreme+": 1.7,
 }
 
 # Replacement scoring: per-category similarity between heroes as substitutes.
@@ -233,6 +234,8 @@ def _direct_buff_labels_for_stat(stat: str) -> list[str]:
         return ["ATK SPD buff"]
     if stat == "Max HP":
         return ["Max HP buff"]
+    if stat == "Shield":
+        return ["Shield"]
     labels = list(STAT_TO_BUFF_LABELS.get(stat, []))
     if stat == "ATK" and "Summon damage buff" not in labels:
         labels.append("Summon damage buff")
@@ -1041,8 +1044,8 @@ def _stat_synergy_reasons(reasons: list[str]) -> list[str]:
 
 
 def receiver_benefits_from_shields(receiver: _rs.Hero) -> bool:
-    """Shield buffs map to Max HP stat; heroes with Max HP in benefits value shields."""
-    return "Max HP" in receiver_stats(receiver)
+    """Heroes with Shield in benefit stats value ally shield grants."""
+    return "Shield" in receiver_stats(receiver)
 
 
 def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
@@ -1054,12 +1057,9 @@ def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
         if all(r.startswith("ATK via ") for r in stat):
             return True
         if all(r.startswith("Max HP via ") for r in stat):
-            if all("Max HP via Max HP buff" in r for r in stat):
-                return True
-            if all("Max HP via Shield" in r for r in stat):
-                return not receiver_benefits_from_shields(receiver)
-            # Only Max HP-bucket buffs (mix of buff + shield), no other stats.
             return True
+        if all(r.startswith("Shield via ") for r in stat):
+            return not receiver_benefits_from_shields(receiver)
 
     return False
 
@@ -2585,8 +2585,8 @@ def build_overview() -> str:
         "Synergy: stat buff tags under **Units improving X**, and",
         "enabler partners matching **Requires** special effects.",
         "Up to five partners by combined score. Omitted: ATK-only, Max HP",
-        "buff-only, and Shield-only (unless the hero benefits from Max HP/",
-        "shields). Rare conditional buffs score lower.",
+        "buff-only, and Shield-only (unless the hero benefits from shields).",
+        "Rare conditional buffs score lower.",
         "Meta tiers from "
         "[Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).",
         "Regenerate: `python3 scripts/generate-heroes-overview.py`.",

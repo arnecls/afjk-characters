@@ -63,8 +63,8 @@ OVERVIEW_HEADER = [
     "Synergy: stat buff tags under **Units improving X**, and",
     "enabler partners matching **Requires** special effects.",
     "Up to five partners by combined score. Omitted: ATK-only, Max HP",
-    "buff-only, and Shield-only (unless the hero benefits from Max HP/",
-    "shields). Rare conditional buffs score lower.",
+    "buff-only, and Shield-only (unless the hero benefits from shields).",
+    "Rare conditional buffs score lower.",
     "Meta tiers from "
     "[Prydwen tier list](https://www.prydwen.gg/afk-journey/tier-list).",
     "Regenerate: `python3 scripts/generate-heroes-overview.py`.",

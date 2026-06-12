@@ -4630,6 +4630,11 @@ def analyze_text(
             r"\b(?:increases?|gains?|bonus).{0,40}max hp\b|"
             r"\b(?:her |his )max hp\b",
         ),
+        (
+            "Shield",
+            r"\b(?:gain(?:s|ing)?|grants? (?:her|him|herself|himself))"
+            r".{0,40}shield\b",
+        ),
         ("Crit", r"increas(?:e|es|ing) .{0,20}crit\b|gains? .{0,20}crit\b"),
         ("Execution", r"increas(?:e|es|ing) .{0,20}execution\b"),
         ("Resilience", r"increas(?:e|es|ing) .{0,20}resilience\b"),
@@ -4743,6 +4748,7 @@ BENEFIT_STAT_ORDER = (
     "ATK SPD",
     "Haste",
     "Max HP",
+    "Shield",
     "Crit",
     "Crit DMG Boost",
     "Execution",
@@ -4772,9 +4778,9 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     "Energy recovery": ("Energy",),
     "DEF Penetration buff": ("DEF Penetration",),
     "Lifedrain buff": ("Life Drain",),
-    "Shield": ("Max HP",),
+    "Shield": ("Shield",),
     "DEF buff": ("Physical DEF", "Magic DEF"),
-    # Tanks that self-stack damage reduction want sustain (Max HP / shields).
+    # Tanks that self-stack damage reduction want sustain (Max HP buffs).
     "Damage taken reduction": ("Max HP",),
     "Ranged DEF buff": ("Physical DEF",),
     "Crit DMG boost": ("Crit DMG Boost",),
@@ -4861,6 +4867,13 @@ def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
                 return True
             if re.search(
                 r"\b(?:increases?|gains?) (?:her |his |their )hp\b", t
+            ):
+                return True
+        elif stat == "Shield":
+            if re.search(
+                r"\b(?:gain(?:s|ing)?|grants? (?:her|him|herself|himself))"
+                r".{0,40}shield\b",
+                t,
             ):
                 return True
         elif stat == "Energy":

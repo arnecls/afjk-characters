@@ -348,7 +348,7 @@ reviewing or fixing matches, work through both heroes in this order.
 
 2. **Match provider → receiver** on three paths:
    - **Stat buffs** — ally buff label maps to a receiver benefit stat
-     (e.g. `Haste buff` → Haste or ATK SPD; `Shield` → Max HP)
+     (e.g. `Haste buff` → Haste or ATK SPD; `Shield` → Shield only, not Max HP)
    - **Summon buffs** — summon buffs for heroes who field summons
    - **Enablers** — provider satisfies a receiver **Requires** label
      (DoT on enemies, magic damage from allies, party composition, etc.)
@@ -356,7 +356,8 @@ reviewing or fixing matches, work through both heroes in this order.
 3. **Score and rank** — broader targeting and higher magnitude win; skip
    **rare conditional** ally buffs; sum stat + summon + enabler scores; keep
    the top five partners per receiver. Drop weak-only picks (generic ATK,
-   Max HP / Shield when the receiver does not value those stats).
+   Max HP / Shield when the receiver does not value those stats). Shields do not
+   count toward Max HP scaling needs.
    **Defining-tier enablers:** requirements from Ex-Skills (`Mythic+`,
    `EX+n`) and `Supreme+` skills are unit-defining and score higher via
    `DEFINING_TIER_SCORE_MULT` in `generate-heroes-overview.py`.
@@ -406,7 +407,8 @@ include this unit in their top five.
 1. **Stat buffs** — provider buffs match the hero's **Stats the unit benefits
    from** (magnitude, targeting, conditional weighting). Omitted when that is
    the only value: ATK-only buffs, Max HP buff-only, Shield-only (unless the
-   hero benefits from Max HP/shields). Rare conditional buffs score lower.
+   hero benefits from shields). Shields extend survivability but do not affect
+   Max HP scaling. Rare conditional buffs score lower.
    **Haste vs ATK SPD:** Haste also increases attack speed. For heroes that
    benefit from **ATK SPD**, ally **Haste buff** counts toward that need and
    is scored above **ATK SPD buff** at equal reach/magnitude (see

@@ -31,6 +31,77 @@ def _hero(title: str) -> SimpleNamespace:
     return SimpleNamespace(title=title, effects=[])
 
 
+class ShieldMaxHpSynergyTests(unittest.TestCase):
+    def test_shield_does_not_score_for_max_hp_only_receiver(self) -> None:
+        rs_spec = importlib.util.spec_from_file_location(
+            "rewrite_summaries",
+            SCRIPTS / "rewrite-summaries.py",
+        )
+        rs = importlib.util.module_from_spec(rs_spec)
+        sys.modules["rewrite_summaries"] = rs
+        assert rs_spec.loader is not None
+        rs_spec.loader.exec_module(rs)
+
+        receiver = SimpleNamespace(
+            title="Scaler - Hero",
+            benefit_stats=["Max HP"],
+            effects=[],
+            summon_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+        provider = SimpleNamespace(
+            title="Guard - Hero",
+            effects=[
+                SimpleNamespace(
+                    category="buff",
+                    label="Shield",
+                    targeting="Multiple targets",
+                    magnitude="high",
+                    conditional=None,
+                )
+            ],
+            summon_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+        score, reasons = gen.score_synergy(provider, receiver)
+        self.assertEqual(score, 0.0)
+        self.assertEqual(reasons, [])
+
+    def test_shield_scores_for_shield_beneficiary(self) -> None:
+        receiver = SimpleNamespace(
+            title="Tank - Hero",
+            benefit_stats=["Shield"],
+            effects=[],
+            summon_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+        provider = SimpleNamespace(
+            title="Guard - Hero",
+            effects=[
+                SimpleNamespace(
+                    category="buff",
+                    label="Shield",
+                    targeting="Multiple targets",
+                    magnitude="high",
+                    conditional=None,
+                )
+            ],
+            summon_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+        score, reasons = gen.score_synergy(provider, receiver)
+        self.assertGreater(score, 0.0)
+        self.assertTrue(any(r.startswith("Shield via ") for r in reasons))
+
+
 class SynergyTierRankingTests(unittest.TestCase):
     def test_equal_or_better_avg_tier_ranks_above_worse(self) -> None:
         receiver = _hero("Receiver - Hero")
