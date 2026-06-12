@@ -41,16 +41,14 @@ gen = _load_module("gen_overview", "generate-heroes-overview.py")
 def build_processed(data: dict) -> dict:
     heroes_text = io.reconstruct_heroes_md(data)
     behavior_text = io.reconstruct_heroes2_md(data)
+    hero_records = data["heroes"]
 
-    import re
-
-    blocks = [b for b in re.split(r"\n(?=## )", heroes_text) if b.startswith("## ")]
     heroes: list = []
     block_by_title: dict[str, str] = {}
-    for block in blocks:
-        hero = rs.parse_hero_block(block)
+    for record in hero_records:
+        hero = rs.hero_from_record(record)
         heroes.append(hero)
-        block_by_title[hero.title] = block
+        block_by_title[hero.title] = io.render_hero_block(record)
 
     hero_class_by_title: dict[str, str] = {}
     for hero in heroes:
@@ -73,7 +71,7 @@ def build_processed(data: dict) -> dict:
         heroes, data_by_title, hero_class_by_title
     )
 
-    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+    skills_by_title = rs.load_skills_by_title_from_records(hero_records)
     rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
 
     display_by_title = {h.title: gen.short_name(h.title) for h in heroes}
@@ -85,11 +83,9 @@ def build_processed(data: dict) -> dict:
         role_category_by_title=role_category_by_title,
     )
 
-    # Match overview-to-csv: energy providers are detected from freshly parsed
-    # (un-analyzed) hero blocks, so only the battle-start text path counts.
     energy_provider_titles = {
         hero.title
-        for hero in (rs.parse_hero_block(b) for b in blocks)
+        for hero in (rs.hero_from_record(record) for record in hero_records)
         if gen.is_energy_provider(hero)
     }
     processed_heroes: dict[str, dict] = {}

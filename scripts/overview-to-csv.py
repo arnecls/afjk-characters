@@ -279,15 +279,11 @@ def _load_analyzed_heroes_by_short() -> dict[str, object]:
     spec.loader.exec_module(io)
 
     gen = _load_gen_overview()
-    import re
 
-    text = io.reconstruct_heroes_md(io.load_heroes_data())
-    blocks = [
-        b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")
-    ]
+    records = io.load_heroes_data()["heroes"]
     out: dict[str, object] = {}
-    for block in blocks:
-        hero = rs.parse_hero_block(block)
+    for record in records:
+        hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         out[gen.short_name(hero.title)] = hero
     return out

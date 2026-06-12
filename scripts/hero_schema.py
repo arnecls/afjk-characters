@@ -823,15 +823,29 @@ def synergy_mechanic_to_special(se: dict[str, Any], kind: str) -> Any:
     )
 
 
-def _skill_description(skill: dict[str, Any]) -> str:
-    from heroes_io import normalize_skill_text
+def _skill_description_structured(skill: dict[str, Any]) -> dict[str, Any]:
+    from heroes_io import (
+        is_structured_description,
+        normalize_skill_description,
+        skill_description_raw,
+        skill_upgrades,
+    )
 
-    parts = [normalize_skill_text(skill.get("description") or "")]
-    for level in skill.get("levels", []):
-        text = normalize_skill_text(level.get("text") or "")
-        if text:
-            parts.append(text)
-    return " ".join(p for p in parts if p).strip() or "_No description._"
+    work = dict(skill)
+    if not is_structured_description(work.get("description")):
+        normalize_skill_description(work)
+    desc = work["description"]
+    out: dict[str, Any] = {
+        "raw": desc.get("raw") or skill_description_raw(desc),
+    }
+    if desc.get("passive"):
+        out["passive"] = desc["passive"]
+    if desc.get("active"):
+        out["active"] = desc["active"]
+    upgrades = skill_upgrades(work)
+    if upgrades:
+        out["upgrades"] = upgrades
+    return out
 
 
 def _parse_meta_number(raw: str | None) -> float | None:
@@ -855,7 +869,7 @@ def _build_skill_record(
     name = skill.get("name") or section
     record: dict[str, Any] = {
         "category": _SECTION_TO_CATEGORY.get(section, "passive"),
-        "description": _skill_description(skill),
+        "description": _skill_description_structured(skill),
         "effects": [],
     }
     tier = slice_.tier if slice_ else "base"
@@ -878,7 +892,12 @@ def _build_skill_record(
         record["initial_energy"] = ie
 
     description = record["description"]
-    has_scaled = "(scaled)" in description.lower() or "<hp>" in description.lower()
+    desc_text = (
+        description.get("raw", "")
+        if isinstance(description, dict)
+        else str(description)
+    )
+    has_scaled = "(scaled)" in desc_text.lower() or "<hp>" in desc_text.lower()
 
     effects: list[dict[str, Any]] = []
     if slice_:

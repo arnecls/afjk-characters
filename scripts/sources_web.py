@@ -336,6 +336,9 @@ def _parse_fandom_hero(wikitext: str, hero_name: str) -> dict:
         }
         if skill_description_lite and skill_description_lite != skill_description:
             skill_record["description_lite"] = skill_description_lite
+        import heroes_io as io
+
+        io.normalize_skill_description(skill_record)
 
         skills.append(skill_record)
 

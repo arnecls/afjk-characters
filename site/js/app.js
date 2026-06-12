@@ -2031,33 +2031,24 @@
     return out;
   }
 
-  function splitSkillPhases(description) {
-    const text = (description || "").trim();
-    if (!text) {
+  function skillDetailPhases(card) {
+    const passive = (card.passive || "").trim();
+    const active = (card.active || "").trim();
+    if (passive || active) {
+      const phases = [];
+      if (passive) {
+        phases.push({ label: "passive", body: passive });
+      }
+      if (active) {
+        phases.push({ label: "active", body: active });
+      }
+      return phases;
+    }
+    const description = (card.description || card.summary || "").trim();
+    if (!description) {
       return [];
     }
-    if (!/\bPassive\.\s/.test(text) && !/\bActive\.\s/.test(text)) {
-      return [{ label: null, body: text }];
-    }
-    const phases = [];
-    text.split(/(?=Passive\.\s|Active\.\s)/).forEach(function (part) {
-      const trimmed = part.trim();
-      if (!trimmed) {
-        return;
-      }
-      const passiveMatch = trimmed.match(/^Passive\.\s*(.*)$/s);
-      if (passiveMatch) {
-        phases.push({ label: "passive", body: passiveMatch[1].trim() });
-        return;
-      }
-      const activeMatch = trimmed.match(/^Active\.\s*(.*)$/s);
-      if (activeMatch) {
-        phases.push({ label: "active", body: activeMatch[1].trim() });
-        return;
-      }
-      phases.push({ label: null, body: trimmed });
-    });
-    return phases.length ? phases : [{ label: null, body: text }];
+    return [{ label: null, body: description }];
   }
 
   function formatSkillDetail(card) {
@@ -2101,9 +2092,10 @@
     let scrollHtml = '<div class="skill-popover-scroll">';
 
     const description = card.description || card.summary || "";
-    if (description) {
+    const phases = skillDetailPhases(card);
+    if (phases.length) {
       scrollHtml += '<div class="skill-popover-body">';
-      splitSkillPhases(description).forEach(function (phase) {
+      phases.forEach(function (phase) {
         if (phase.label === "passive") {
           scrollHtml +=
             '<p class="skill-popover-phase">' +

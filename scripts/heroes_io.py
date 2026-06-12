@@ -64,6 +64,8 @@ _CJK_RE = re.compile(r"[\u4e00-\u9fff\u3400-\u4dbf]")
 
 _LEVEL_RE = re.compile(r"^Level (\d+)(?: — (.+))?$")
 _WIKI_TAG_RE = re.compile(r"\[([^\]]+)\]([^\[]+)\[/\]")
+_PHASE_SPLIT_RE = re.compile(r"(?=(?:Passive\.\s|Active\.?\s))")
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 
 def normalize_skill_text(text: str) -> str:
@@ -73,16 +75,219 @@ def normalize_skill_text(text: str) -> str:
     return _WIKI_TAG_RE.sub(lambda m: m.group(2), text)
 
 
+def is_structured_description(desc: Any) -> bool:
+    return isinstance(desc, dict)
+
+
+def split_into_sentences(text: str) -> list[str]:
+    """Split skill prose into sentence-sized analysis chunks."""
+    text = normalize_skill_text((text or "").strip())
+    if not text:
+        return []
+    parts = [s.strip() for s in _SENTENCE_SPLIT_RE.split(text) if s.strip()]
+    return parts if parts else [text]
+
+
+def normalize_phase_text(value: str | list[str] | None) -> list[str]:
+    """Coerce passive/active/upgrade text to a flat sentence list."""
+    if not value:
+        return []
+    if isinstance(value, str):
+        return split_into_sentences(value)
+    out: list[str] = []
+    for item in value:
+        if not item:
+            continue
+        if isinstance(item, str):
+            out.extend(split_into_sentences(item))
+    return out
+
+
+def join_segments(value: str | list[str] | None) -> str:
+    """Join sentence lists back into display prose."""
+    if not value:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    return " ".join(s.strip() for s in value if s and s.strip())
+
+
+def joined_skill_chunks(
+    chunks: list[tuple[str, str, str]],
+) -> list[tuple[str, str, str]]:
+    """Join sentence chunks per section/tier for cross-sentence heuristics."""
+    grouped: dict[tuple[str, str], list[str]] = {}
+    order: list[tuple[str, str]] = []
+    for tier, text, section in chunks:
+        key = (section, tier)
+        if key not in grouped:
+            order.append(key)
+            grouped[key] = []
+        grouped[key].append(text)
+    return [
+        (tier, " ".join(grouped[(section, tier)]), section)
+        for section, tier in order
+    ]
+
+
+def split_passive_active(text: str) -> tuple[str | None, str | None]:
+    """Split base skill text into passive and active bodies when marked."""
+    text = normalize_skill_text((text or "").strip())
+    if not text:
+        return None, None
+    if not re.search(r"\bPassive\.\s", text) and not re.search(
+        r"\bActive\.?\s", text
+    ):
+        return None, text
+    passive: str | None = None
+    active: str | None = None
+    for part in _PHASE_SPLIT_RE.split(text):
+        part = part.strip()
+        if not part:
+            continue
+        m = re.match(r"^Passive\.\s*(.*)$", part, re.DOTALL)
+        if m:
+            passive = m.group(1).strip()
+            continue
+        m = re.match(r"^Active\.?\s*(.*)$", part, re.DOTALL)
+        if m:
+            active = m.group(1).strip()
+    return passive, active
+
+
+def skill_upgrades(skill: dict[str, Any]) -> list[dict[str, Any]]:
+    """Return level-upgrade entries from structured or legacy skill records."""
+    desc = skill.get("description")
+    if is_structured_description(desc):
+        return list(desc.get("upgrades") or [])
+    return list(skill.get("levels") or [])
+
+
+def skill_description_raw(desc: dict[str, Any] | str) -> str:
+    """Rebuild Heroes.md body text from structured or legacy description."""
+    if isinstance(desc, str):
+        text = normalize_skill_text(desc.strip())
+        return text or "_No description._"
+    raw = normalize_skill_text((desc.get("raw") or "").strip())
+    if raw:
+        return raw
+    parts: list[str] = []
+    passive = join_segments(desc.get("passive"))
+    active = join_segments(desc.get("active"))
+    if passive:
+        parts.append(f"Passive. {passive}")
+    if active:
+        parts.append(f"Active. {active}")
+    if parts:
+        return " ".join(parts)
+    fallback = join_segments(desc.get("active"))
+    return fallback or "_No description._"
+
+
+def skill_description_text(skill: dict[str, Any]) -> str:
+    """Flat skill text for semantic scans (base phases only, no upgrades)."""
+    desc = skill.get("description")
+    if is_structured_description(desc):
+        parts: list[str] = []
+        passive = join_segments(desc.get("passive"))
+        active = join_segments(desc.get("active"))
+        if passive:
+            parts.append(f"Passive. {passive}")
+        if active:
+            parts.append(f"Active. {active}")
+        if parts:
+            return " ".join(parts)
+        return skill_description_raw(desc)
+    return skill_description_raw(desc if isinstance(desc, str) else "")
+
+
+def build_structured_description(
+    raw: str,
+    *,
+    passive: str | list[str] | None = None,
+    active: str | list[str] | None = None,
+    upgrades: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    """Build a normalized structured description object."""
+    raw = normalize_skill_text(raw.strip())
+    passive_sents = normalize_phase_text(passive)
+    active_sents = normalize_phase_text(active)
+    if not passive_sents and not active_sents:
+        split_passive, split_active = split_passive_active(raw)
+        passive_sents = normalize_phase_text(split_passive)
+        active_sents = normalize_phase_text(split_active or raw)
+    out: dict[str, Any] = {
+        "raw": raw
+        or skill_description_raw(
+            {"passive": passive_sents, "active": active_sents}
+        ),
+    }
+    if passive_sents:
+        out["passive"] = passive_sents
+    if active_sents:
+        out["active"] = active_sents
+    if upgrades:
+        normalized: list[dict[str, Any]] = []
+        for level in upgrades:
+            entry = dict(level)
+            if entry.get("text"):
+                entry["text"] = normalize_phase_text(entry["text"])
+            normalized.append(entry)
+        out["upgrades"] = normalized
+    return out
+
+
+def normalize_skill_description(skill: dict[str, Any]) -> dict[str, Any]:
+    """Coerce legacy or partial skill records to structured description."""
+    desc = skill.get("description")
+    legacy_levels = list(skill.pop("levels", []) or [])
+    if is_structured_description(desc):
+        raw = normalize_skill_text((desc.get("raw") or "").strip())
+        passive_sents = normalize_phase_text(desc.get("passive"))
+        active_sents = normalize_phase_text(desc.get("active"))
+        upgrades = desc.get("upgrades") or legacy_levels
+        if not raw:
+            raw = skill_description_raw(
+                {"passive": passive_sents, "active": active_sents}
+            )
+        if not passive_sents and not active_sents and raw:
+            split_passive, split_active = split_passive_active(raw)
+            passive_sents = normalize_phase_text(split_passive)
+            active_sents = normalize_phase_text(split_active)
+        structured = build_structured_description(
+            raw,
+            passive=passive_sents,
+            active=active_sents,
+            upgrades=upgrades,
+        )
+    else:
+        raw = normalize_skill_text(str(desc or "").strip())
+        split_passive, split_active = split_passive_active(raw)
+        structured = build_structured_description(
+            raw,
+            passive=split_passive,
+            active=split_active,
+            upgrades=legacy_levels,
+        )
+    skill["description"] = structured
+    return skill
+
+
+def skill_has_description(skill: dict[str, Any]) -> bool:
+    """True when a skill record has non-placeholder description text."""
+    desc = skill.get("description")
+    if is_structured_description(desc):
+        text = skill_description_raw(desc)
+        return bool(text and text != "_No description._")
+    return _has_text(desc)
+
+
 def normalize_hero_skills(hero: dict) -> None:
-    """Normalize skill description and level text in a hero record (in place)."""
+    """Normalize skill description and upgrade text in a hero record (in place)."""
     for skill in hero.get("skills", []):
-        if skill.get("description"):
-            skill["description"] = normalize_skill_text(skill["description"])
+        normalize_skill_description(skill)
         if skill.get("description_lite"):
             skill["description_lite"] = normalize_skill_text(skill["description_lite"])
-        for level in skill.get("levels", []):
-            if level.get("text"):
-                level["text"] = normalize_skill_text(level["text"])
 
 
 # ---------------------------------------------------------------------------
@@ -151,8 +356,7 @@ def _parse_skill_block(part: str) -> dict:
         "name": None,
         "unlock": None,
         "meta": {},
-        "description": "",
-        "levels": [],
+        "description": {"raw": "", "upgrades": []},
     }
     body: list[str] = []
     in_header = True
@@ -189,7 +393,7 @@ def _parse_skill_block(part: str) -> dict:
         desc_lines.pop(0)
     while desc_lines and desc_lines[-1] == "":
         desc_lines.pop()
-    skill["description"] = "\n".join(desc_lines)
+    raw_desc = "\n".join(desc_lines)
 
     # Drop the single trailing blank that separates the block from the next
     # section; interior blanks stay attached to their level entry.
@@ -202,7 +406,11 @@ def _parse_skill_block(part: str) -> dict:
             entries.append([ln])
         elif entries:
             entries[-1].append(ln)
-    skill["levels"] = [_parse_level_entry(e) for e in entries]
+    upgrades = [_parse_level_entry(e) for e in entries]
+    passive, active = split_passive_active(raw_desc)
+    skill["description"] = build_structured_description(
+        raw_desc, passive=passive, active=active, upgrades=upgrades
+    )
     return skill
 
 
@@ -341,16 +549,25 @@ def _gapfill_from_yaphalla(record: dict, yaphalla_hero: dict) -> None:
             yskill.get("name")
         ):
             skill["name"] = yskill["name"]
-        if not _has_text(skill.get("description")) and is_usable_yaphalla_text(
-            yskill.get("description")
-        ):
-            skill["description"] = yskill["description"]
-        if not skill.get("levels"):
-            ylevels = yskill.get("levels", [])
+        ydesc = yskill.get("description")
+        if not skill_has_description(skill):
+            if is_usable_yaphalla_text(
+                ydesc if isinstance(ydesc, str) else (ydesc or {}).get("raw")
+            ):
+                skill["description"] = ydesc
+                normalize_skill_description(skill)
+        elif not skill_upgrades(skill):
+            ylevels = skill_upgrades(yskill)
             if ylevels and all(
                 is_usable_yaphalla_text(level.get("text")) for level in ylevels
             ):
-                skill["levels"] = ylevels
+                desc = skill["description"]
+                if is_structured_description(desc):
+                    desc["upgrades"] = ylevels
+                else:
+                    skill["description"] = build_structured_description(
+                        str(desc), upgrades=ylevels
+                    )
 
 
 def merge_sources(
@@ -467,11 +684,12 @@ def reconstruct_heroes2_md(data: dict) -> str:
 def _level_line(level: dict) -> str:
     if level.get("raw"):
         return f"- {level['text']}"
+    text = join_segments(level.get("text"))
     if level.get("unlock"):
         label = f"Level {level['level']} — {level['unlock']}"
     else:
         label = f"Level {level['level']}"
-    return f"- {label}: {level['text']}"
+    return f"- {label}: {text}"
 
 
 def render_skill_block(skill: dict) -> str:
@@ -488,12 +706,12 @@ def render_skill_block(skill: dict) -> str:
         lines.extend(meta_lines)
         lines.append("")
 
-    lines.append(skill.get("description") or "_No description._")
+    lines.append(skill_description_raw(skill.get("description") or ""))
     lines.append("")
 
-    for level in skill.get("levels", []):
+    for level in skill_upgrades(skill):
         lines.append(_level_line(level))
-    if skill.get("levels"):
+    if skill_upgrades(skill):
         lines.append("")
 
     return "\n".join(lines)

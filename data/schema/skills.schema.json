@@ -9,6 +9,32 @@
     "$ref": "#/$defs/heroSkills"
   },
   "$defs": {
+    "sentenceList": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "skillDescription": {
+      "type": "object",
+      "required": ["raw"],
+      "properties": {
+        "raw": { "type": "string", "minLength": 1 },
+        "passive": { "$ref": "#/$defs/sentenceList" },
+        "active": { "$ref": "#/$defs/sentenceList" },
+        "upgrades": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/skillUpgrade" }
+        }
+      }
+    },
+    "skillUpgrade": {
+      "type": "object",
+      "properties": {
+        "level": { "type": ["string", "null"] },
+        "unlock": { "type": ["string", "null"] },
+        "text": { "$ref": "#/$defs/sentenceList" },
+        "raw": { "type": "boolean" }
+      }
+    },
     "heroSkills": {
       "title": "Skill collection",
       "description": "Skills keyed by skill name. Reused as the skills section on each hero in heroes-data-processed.schema.json.",
@@ -31,9 +57,7 @@
           "$ref": "#/$defs/skillCategory"
         },
         "description": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Full skill text or summary."
+          "$ref": "#/$defs/skillDescription"
         },
         "cooldown": {
           "type": "number",

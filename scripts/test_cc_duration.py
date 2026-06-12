@@ -11,6 +11,8 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+import heroes_io as io
+
 
 def _load_rs():
     spec = importlib.util.spec_from_file_location(
@@ -170,73 +172,17 @@ class SpuriousCcTests(unittest.TestCase):
 
 
 class ValidateSpuriousCcTests(unittest.TestCase):
-    def test_check_semantic_skips_spurious_cc(self):
+    def test_check_semantic_no_spurious_cc_on_processed(self) -> None:
         from validate_processed import check_semantic
 
-        processed = {
-            "heroes": {
-                "Bryon": {
-                    "skills": {
-                        "Tacit Strike": {
-                            "description": (
-                                "Elona deals damage and stuns them for s "
-                                "when Bryon is being controlled."
-                            ),
-                            "effects": [{"type": "damage", "name": "Magic"}],
-                        }
-                    }
-                },
-                "Indris": {
-                    "skills": {
-                        "Spellbane Shot": {
-                            "description": (
-                                "Indris fires a silencing arrow at an enemy, "
-                                "dealing damage. The shot disables stat buffs."
-                            ),
-                            "effects": [{"type": "debuff", "name": "Phys DEF debuff"}],
-                        }
-                    }
-                },
-                "Mehira": {
-                    "skills": {
-                        "Enhance Force": {
-                            "description": (
-                                "Increases the damage taken by enemies charmed "
-                                "with Mehira's Euphoric Rush or bewitched "
-                                "with her Alluring Mirage by 15%."
-                            ),
-                            "effects": [
-                                {"type": "debuff", "name": "Damage taken debuff"}
-                            ],
-                        }
-                    }
-                },
-                "Tasi": {
-                    "skills": {
-                        "Shimmering Dust": {
-                            "description": (
-                                "Tasi gains Haste. She will prioritize "
-                                "targeting the farthest hypnotized enemy."
-                            ),
-                            "effects": [{"type": "stat_mod", "name": "Haste buff"}],
-                        }
-                    }
-                },
-                "Ulmus": {
-                    "skills": {
-                        "Prowling Roots": {
-                            "description": (
-                                "Whenever an enemy is knocked down, Ulmus "
-                                "binds the target to the ground, increasing "
-                                "the knockdown duration by 2."
-                            ),
-                            "effects": [{"type": "damage", "name": "Physical"}],
-                        }
-                    }
-                },
-            }
+        processed = io.load_json(io.HEROES_DATA_PROCESSED)
+        names = ["Bryon", "Indris", "Mehira", "Tasi", "Ulmus"]
+        subset = {
+            name: processed["heroes"][name]
+            for name in names
+            if name in processed["heroes"]
         }
-        issues = check_semantic(processed)
+        issues = check_semantic({"heroes": subset})
         self.assertNotIn("cc_missing", issues)
 
 

@@ -100,16 +100,14 @@ def _sanitize_replacements(replacements: dict) -> dict:
 def build_synergies(raw: dict, processed: dict) -> dict:
     heroes_text = io.reconstruct_heroes_md(raw)
     behavior_text = io.reconstruct_heroes2_md(raw)
+    hero_records = raw["heroes"]
 
-    import re
-
-    blocks = [b for b in re.split(r"\n(?=## )", heroes_text) if b.startswith("## ")]
     heroes: list = []
     block_by_title: dict[str, str] = {}
-    for block in blocks:
-        hero = rs.parse_hero_block(block)
+    for record in hero_records:
+        hero = rs.hero_from_record(record)
         heroes.append(hero)
-        block_by_title[hero.title] = block
+        block_by_title[hero.title] = io.render_hero_block(record)
 
     _assert_short_name_sets_match(
         processed, {gen.short_name(h.title) for h in heroes}
@@ -126,7 +124,7 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         heroes, processed, gen.short_name
     )
 
-    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+    skills_by_title = rs.load_skills_by_title_from_records(hero_records)
     rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
     enabler_matchers = gen._make_enabler_matchers(hero_class_by_title)
 

@@ -29,6 +29,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 import hero_schema as hs
 import heroes_io as io
+import heroes_io as io
 
 HEROES_MD = ROOT / "Heroes.md"
 PROCESSED = io.HEROES_DATA_PROCESSED
@@ -208,13 +209,18 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
     for title, hero in processed["heroes"].items():
         for skill_name, skill in hero.get("skills", {}).items():
             desc = skill.get("description", "")
+            desc_text = (
+                io.skill_description_text(skill)
+                if isinstance(desc, dict)
+                else str(desc)
+            )
             effects = skill.get("effects", [])
             passive = skill.get("passive_only", False)
 
-            if wiki_re.search(desc):
+            if wiki_re.search(desc_text):
                 issues["wiki_markup"].append(f"{title} / {skill_name}")
 
-            if "(scaled)" in desc.lower():
+            if "(scaled)" in desc_text.lower():
                 issues["scaled_placeholder"].append(f"{title} / {skill_name}")
 
             if passive and effects:
@@ -227,7 +233,7 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
             if hs._is_placeholder_schema_effect(effects[0]) if len(effects) == 1 else False:
                 issues["placeholder_damage"].append(f"{title} / {skill_name}")
 
-            text = desc.lower()
+            text = desc_text.lower()
             cc_found = _cc_types(effects)
             if not passive:
                 for cc, pat in _CC_KEYWORDS.items():
@@ -241,7 +247,7 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                         continue
                     if not re.search(pat, text):
                         continue
-                    if not _cc_has_real_match(rs, cc, pat, text, desc):
+                    if not _cc_has_real_match(rs, cc, pat, text, desc_text):
                         continue
                     mapped = _CC_SCHEMA_MAP.get(cc, cc)
                     if mapped not in cc_found:

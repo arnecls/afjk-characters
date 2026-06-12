@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/heroes_data.schema.json",
+  "title": "Heroes source data",
+  "description": "Per-hero skill text and metadata from Fandom/Yaphalla download pipeline.",
+  "type": "object",
+  "required": ["heroes"],
+  "properties": {
+    "heroes_header": { "type": "string" },
+    "yaphalla_header": { "type": "string" },
+    "fandom_header": { "type": "string" },
+    "heroes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/heroRecord" }
+    }
+  },
+  "$defs": {
+    "heroRecord": {
+      "type": "object",
+      "required": ["title", "name", "skills"],
+      "properties": {
+        "title": { "type": "string" },
+        "name": { "type": "string" },
+        "tags": { "type": ["string", "null"] },
+        "faction": { "type": ["string", "null"] },
+        "class": { "type": ["string", "null"] },
+        "damage_type": { "type": ["string", "null"] },
+        "description": { "type": "string" },
+        "role_category": { "type": "string" },
+        "prydwen_tiers": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "skills": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/skillRecord" }
+        }
+      }
+    },
+    "skillRecord": {
+      "type": "object",
+      "required": ["section", "description"],
+      "properties": {
+        "section": { "type": "string" },
+        "name": { "type": ["string", "null"] },
+        "unlock": { "type": ["string", "null"] },
+        "meta": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "description": { "$ref": "#/$defs/skillDescription" },
+        "description_lite": { "type": "string" }
+      }
+    },
+    "sentenceList": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "skillDescription": {
+      "type": "object",
+      "required": ["raw"],
+      "properties": {
+        "raw": { "type": "string" },
+        "passive": { "$ref": "#/$defs/sentenceList" },
+        "active": { "$ref": "#/$defs/sentenceList" },
+        "upgrades": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/skillUpgrade" }
+        }
+      }
+    },
+    "skillUpgrade": {
+      "type": "object",
+      "properties": {
+        "level": { "type": ["string", "null"] },
+        "unlock": { "type": ["string", "null"] },
+        "text": { "$ref": "#/$defs/sentenceList" },
+        "raw": { "type": "boolean" }
+      }
+    }
+  }
+}

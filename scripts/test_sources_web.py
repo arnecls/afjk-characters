@@ -39,8 +39,15 @@ class FandomParseTests(unittest.TestCase):
         hero = sources_web._parse_fandom_hero(_ALICETH_WIKITEXT, "Aliceth")
         skill = hero["skills"][0]
         self.assertEqual(
-            skill["description"],
+            skill["description"]["raw"],
             "Aliceth flies into the air and fires 6 volleys of 3 arrows in rapid succession at an enemy.",
+        )
+        self.assertEqual(
+            skill["description"]["active"],
+            [
+                "Aliceth flies into the air and fires 6 volleys of 3 arrows "
+                "in rapid succession at an enemy."
+            ],
         )
         self.assertEqual(
             skill["description_lite"],

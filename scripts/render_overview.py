@@ -222,13 +222,11 @@ def build_overview(
     parts = list(OVERVIEW_HEADER)
 
     heroes_text = io.reconstruct_heroes_md(data)
-    import re
-
-    blocks = [b for b in re.split(r"\n(?=## )", heroes_text) if b.startswith("## ")]
-    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+    hero_records = data["heroes"]
+    skills_by_title = rs.load_skills_by_title_from_records(hero_records)
     summary_heroes: dict[str, rs.Hero] = {}
-    for block in blocks:
-        hero = rs.parse_hero_block(block)
+    for record in hero_records:
+        hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         summary_heroes[hero.title] = hero
     summary_list = list(summary_heroes.values())

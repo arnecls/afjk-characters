@@ -798,6 +798,80 @@ def parse_hero_block(block: str) -> Hero:
     return hero
 
 
+def _upgrade_tier(level: dict, section: str) -> str:
+    if level.get("raw"):
+        return SECTION_TIERS.get(section, "base")
+    line = f"Level {level.get('level') or ''}"
+    if level.get("unlock"):
+        line += f" — {level['unlock']}"
+    text = level.get("text") or ""
+    line += f": {text}"
+    return parse_level_tier(line, section)
+
+
+def skill_chunks_from_skill(skill: dict) -> list[tuple[str, str, str]]:
+    """Build analysis chunks from a structured heroes_data skill record."""
+    from heroes_io import (
+        is_structured_description,
+        normalize_phase_text,
+        normalize_skill_description,
+        skill_upgrades,
+    )
+
+    if not is_structured_description(skill.get("description")):
+        normalize_skill_description(skill)
+    section = skill["section"]
+    base_tier = SECTION_TIERS.get(section, "base")
+    chunks: list[tuple[str, str, str]] = []
+    desc = skill["description"]
+    passive_sents = normalize_phase_text(desc.get("passive"))
+    active_sents = normalize_phase_text(desc.get("active"))
+    for sent in passive_sents:
+        chunks.append((base_tier, sent, section))
+    for sent in active_sents:
+        chunks.append((base_tier, sent, section))
+    if not passive_sents and not active_sents:
+        raw = (desc.get("raw") or "").strip()
+        if raw:
+            for sent in normalize_phase_text(raw):
+                chunks.append((base_tier, sent, section))
+    for level in skill_upgrades(skill):
+        tier = _upgrade_tier(level, section)
+        for sent in normalize_phase_text(level.get("text")):
+            chunks.append((tier, sent, section))
+    return chunks
+
+
+def hero_from_record(hero_record: dict) -> Hero:
+    """Build an analysis Hero directly from a heroes_data.json record."""
+    from heroes_io import normalize_skill_description
+
+    title = hero_record["title"]
+    tags = hero_record.get("tags") or ""
+    dmg = hero_record.get("damage_type") or ""
+    if not dmg and tags:
+        parts = [p.strip() for p in tags.split("·")]
+        if len(parts) >= 3:
+            dmg = parts[2]
+    hero = Hero(title=title, damage_type=dmg or "")
+    for skill in hero_record.get("skills", []):
+        normalize_skill_description(skill)
+        hero.skill_chunks.extend(skill_chunks_from_skill(skill))
+    return hero
+
+
+def load_skills_by_title_from_records(
+    heroes: list[dict],
+) -> dict[str, list[SkillMeta]]:
+    from heroes_io import render_hero_block
+
+    skills_by_title: dict[str, list[SkillMeta]] = {}
+    for hero in heroes:
+        block = render_hero_block(hero)
+        skills_by_title[hero["title"]] = load_skill_meta(block)
+    return skills_by_title
+
+
 def text_applies_effect(text: str, label: str) -> bool:
     """True when text grants the effect, not only references it."""
     t = text.lower()
@@ -5593,7 +5667,9 @@ def load_skill_meta(block: str) -> list[SkillMeta]:
 
 
 def _split_sentences(text: str) -> list[str]:
-    return [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
+    from heroes_io import split_into_sentences
+
+    return split_into_sentences(text)
 
 
 def _filter_sentences(
@@ -7251,6 +7327,14 @@ _SKILL_META_LABELS: tuple[str, ...] = (
 def _skill_detail_for_category(
     source_skills: list[dict] | None, category: str
 ) -> dict[str, str | dict[str, str] | list[dict[str, str]]]:
+    from heroes_io import (
+        is_structured_description,
+        join_segments,
+        normalize_skill_description,
+        skill_description_raw,
+        skill_upgrades,
+    )
+
     if not source_skills:
         return {}
     section = CATEGORY_TO_SECTION.get(category)
@@ -7259,6 +7343,9 @@ def _skill_detail_for_category(
     for skill in source_skills:
         if skill.get("section") != section:
             continue
+        if not is_structured_description(skill.get("description")):
+            normalize_skill_description(skill)
+        desc = skill["description"]
         meta = skill.get("meta") or {}
         return {
             "name": skill.get("name") or "",
@@ -7268,14 +7355,16 @@ def _skill_detail_for_category(
                 for label in _SKILL_META_LABELS
                 if label in meta
             },
-            "description": skill.get("description") or "",
+            "description": skill_description_raw(desc),
+            "passive": join_segments(desc.get("passive")),
+            "active": join_segments(desc.get("active")),
             "levels": [
                 {
                     "level": str(level.get("level", "")),
                     "unlock": level.get("unlock") or "",
-                    "text": level.get("text") or "",
+                    "text": join_segments(level.get("text")),
                 }
-                for level in skill.get("levels", [])
+                for level in skill_upgrades(skill)
             ],
         }
     return {}

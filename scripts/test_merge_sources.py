@@ -117,7 +117,9 @@ class MergeSourcesTests(unittest.TestCase):
         ]
         merged = io.merge_sources(fandom, yaphalla, gapfill=True)
         skill = merged["heroes"][0]["skills"][0]
-        self.assertEqual(skill["description"], "Deals 100% (ATK-based) damage.")
+        self.assertEqual(
+            skill["description"]["raw"], "Deals 100% (ATK-based) damage."
+        )
         self.assertEqual(skill["meta"]["Skill Range"], "5 tiles")
         self.assertEqual(skill["meta"]["Initial Energy"], "0")
         self.assertEqual(skill["meta"]["Cooldown"], "10s")

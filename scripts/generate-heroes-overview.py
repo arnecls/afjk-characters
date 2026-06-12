@@ -349,7 +349,9 @@ def provider_early_battle_ally_energy(
     """Score ally-facing energy granted at or immediately after battle start."""
     best: tuple[float, str] | None = None
 
-    for _tier, text, _section in provider.skill_chunks:
+    from heroes_io import joined_skill_chunks
+
+    for _tier, text, _section in joined_skill_chunks(provider.skill_chunks):
         t = text.lower()
         if not _BATTLE_START_RE.search(t):
             continue
