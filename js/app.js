@@ -42,6 +42,38 @@
   const viewToggle = document.querySelector(".view-toggle");
   const siteHeader = document.querySelector(".site-header");
   const WELCOME_WARNING_KEY = "afjk-welcome-dismissed";
+  const VIEW_MODE_KEY = "afjk-view-mode";
+
+  function readStoredViewMode() {
+    try {
+      const stored = localStorage.getItem(VIEW_MODE_KEY);
+      if (stored === "grid" || stored === "list") {
+        return stored;
+      }
+    } catch (e) {
+      /* private mode / disabled storage */
+    }
+    return "grid";
+  }
+
+  function storeViewMode(mode) {
+    try {
+      localStorage.setItem(VIEW_MODE_KEY, mode);
+    } catch (e) {
+      /* private mode / disabled storage */
+    }
+  }
+
+  function syncViewToggleButtons() {
+    if (!viewToggle) {
+      return;
+    }
+    viewToggle.querySelectorAll(".view-btn").forEach(function (b) {
+      const active = b.dataset.view === viewMode;
+      b.classList.toggle("active", active);
+      b.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
 
   function initWelcomeWarning() {
     const root = document.getElementById("welcome-warning");
@@ -236,9 +268,7 @@
         clearColumnFilterPanelPosition(details);
       }
     });
-    const details = heroesTableHead.querySelector(
-      'details.col-filter[data-col="' + openColumnFilter + '"]'
-    );
+    const details = getOpenColumnFilterDetails();
     if (!details || !details.open) {
       return;
     }
@@ -253,6 +283,95 @@
     panel.style.left = Math.round(rect.left) + "px";
     panel.style.minWidth = Math.round(rect.width) + "px";
     panel.style.maxWidth = "16rem";
+  }
+
+  function getOpenColumnFilterDetails() {
+    if (openColumnFilter < 0 || !heroesTableHead) {
+      return null;
+    }
+    return heroesTableHead.querySelector(
+      'details.col-filter[data-col="' + openColumnFilter + '"]'
+    );
+  }
+
+  let columnFilterPointerHandler = null;
+
+  function rectContainsPoint(rect, x, y, pad) {
+    return (
+      x >= rect.left - pad &&
+      x <= rect.right + pad &&
+      y >= rect.top - pad &&
+      y <= rect.bottom + pad
+    );
+  }
+
+  function isPointerInColumnFilterZone(clientX, clientY) {
+    const details = getOpenColumnFilterDetails();
+    if (!details || !details.open) {
+      return false;
+    }
+    const trigger = details.querySelector(".col-filter-trigger");
+    const panel = details.querySelector(".col-filter-panel");
+    const pad = 6;
+    if (trigger && rectContainsPoint(trigger.getBoundingClientRect(), clientX, clientY, pad)) {
+      return true;
+    }
+    if (panel && rectContainsPoint(panel.getBoundingClientRect(), clientX, clientY, pad)) {
+      return true;
+    }
+    return false;
+  }
+
+  function unbindColumnFilterPointerTracking() {
+    if (!columnFilterPointerHandler) {
+      return;
+    }
+    document.removeEventListener("mousemove", columnFilterPointerHandler);
+    columnFilterPointerHandler = null;
+  }
+
+  function bindColumnFilterPointerTracking() {
+    if (columnFilterPointerHandler) {
+      return;
+    }
+    columnFilterPointerHandler = function (e) {
+      if (openColumnFilter < 0) {
+        unbindColumnFilterPointerTracking();
+        return;
+      }
+      if (!isPointerInColumnFilterZone(e.clientX, e.clientY)) {
+        closeColumnFilter();
+      }
+    };
+    document.addEventListener("mousemove", columnFilterPointerHandler);
+  }
+
+  function closeColumnFilter() {
+    const details = getOpenColumnFilterDetails();
+    unbindColumnFilterPointerTracking();
+    if (details && details.open) {
+      details.open = false;
+      return;
+    }
+    openColumnFilter = -1;
+  }
+
+  function closeColumnFilterOnScroll() {
+    if (openColumnFilter >= 0) {
+      closeColumnFilter();
+    }
+  }
+
+  function measureEffectStackCellWidth(cell) {
+    const entries = cell.querySelectorAll(".effect-cell-entry");
+    if (!entries.length) {
+      return cell.getBoundingClientRect().width;
+    }
+    let max = 0;
+    entries.forEach(function (entry) {
+      max = Math.max(max, entry.scrollWidth);
+    });
+    return max;
   }
 
   function measureColumnWidths() {
@@ -287,10 +406,12 @@
     }
     Array.from(heroesTableBody.rows).forEach(function (row) {
       Array.from(row.cells).forEach(function (cell, idx) {
-        widths[idx] = Math.max(
-          widths[idx],
-          cell.getBoundingClientRect().width
-        );
+        const col = csvHeaders[idx];
+        const width =
+          isEffectSortColumn(col) && cell.querySelector(".effect-cell-entry")
+            ? measureEffectStackCellWidth(cell)
+            : cell.getBoundingClientRect().width;
+        widths[idx] = Math.max(widths[idx], width);
       });
     });
     csvColumnWidths = widths.map(function (width) {
@@ -365,6 +486,8 @@
           tdCls = " class=\"col-tier\"";
         } else if (col === "Role") {
           tdCls = " class=\"col-role\"";
+        } else if (isEffectSortColumn(col)) {
+          tdCls = " class=\"col-effect-stack\"";
         }
         bodyHtml += "<td" + tdCls + ">" + inner + "</td>";
       });
@@ -3093,6 +3216,104 @@
     return String(cellValue || "").trim();
   }
 
+  function classifyFilterAtom(value) {
+    const trimmed = (value || "").trim();
+    if (!trimmed) {
+      return "other";
+    }
+    const lower = trimmed.toLowerCase();
+    if (QUALITY_CLASS[lower]) {
+      return "quality";
+    }
+    if (/conditional/i.test(trimmed)) {
+      return "conditional";
+    }
+    if (TARGETING_DEFINITIONS[lower]) {
+      return "targeting";
+    }
+    if (isTimingSegment(trimmed)) {
+      return "timing";
+    }
+    return "other";
+  }
+
+  const FILTER_GROUP_META = [
+    { id: "targeting", label: "Targeting" },
+    { id: "quality", label: "Magnitude" },
+    { id: "timing", label: "Timing" },
+    { id: "conditional", label: "Conditional" },
+    { id: "other", label: "Other" },
+  ];
+
+  function splitSelectedByFilterGroup(selected) {
+    const groups = {};
+    selected.forEach(function (value) {
+      const kind = classifyFilterAtom(value);
+      if (!groups[kind]) {
+        groups[kind] = new Set();
+      }
+      groups[kind].add(value);
+    });
+    return groups;
+  }
+
+  function atomSetMatchesGroupedSelection(atomSet, selectedByGroup) {
+    const normalized = {};
+    atomSet.forEach(function (atom) {
+      normalized[atom.toLowerCase()] = atom;
+    });
+    return FILTER_GROUP_META.every(function (meta) {
+      const groupSelected = selectedByGroup[meta.id];
+      if (!groupSelected || !groupSelected.size) {
+        return true;
+      }
+      let groupMatched = false;
+      groupSelected.forEach(function (value) {
+        if (normalized[value.toLowerCase()]) {
+          groupMatched = true;
+        }
+      });
+      return groupMatched;
+    });
+  }
+
+  function sortFilterOptionValues(values) {
+    return values.slice().sort(function (a, b) {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
+  }
+
+  function buildEffectColumnFilterGroups(col, idx) {
+    const byGroup = {};
+    csvRows.forEach(function (row) {
+      extractCellFilterAtoms(col, getListCellRawValue(row, idx, col)).forEach(
+        function (v) {
+          const kind = classifyFilterAtom(v);
+          if (!byGroup[kind]) {
+            byGroup[kind] = new Set();
+          }
+          byGroup[kind].add(v);
+        }
+      );
+    });
+    return FILTER_GROUP_META.map(function (meta) {
+      const values = byGroup[meta.id];
+      return {
+        id: meta.id,
+        label: meta.label,
+        values: values ? sortFilterOptionValues(Array.from(values)) : [],
+      };
+    }).filter(function (group) {
+      return group.values.length;
+    });
+  }
+
+  function filterOptionGroupsHasChoices(groups) {
+    return groups.some(function (group) {
+      return group.values.length;
+    });
+  }
+
   function atomsFromEffectEntry(entry) {
     const atoms = new Set();
     const trimmed = entry.trim();
@@ -3148,20 +3369,6 @@
     });
   }
 
-  function atomSetHasAll(selected, atomSet) {
-    const normalized = {};
-    atomSet.forEach(function (atom) {
-      normalized[atom.toLowerCase()] = true;
-    });
-    let allPresent = true;
-    selected.forEach(function (value) {
-      if (!normalized[value.toLowerCase()]) {
-        allPresent = false;
-      }
-    });
-    return allPresent;
-  }
-
   function buildColumnFilterOptions() {
     if (!csvHeaders.length) {
       csvColumnFilterOptions = [];
@@ -3171,16 +3378,24 @@
       if (col === "Name") {
         return [];
       }
+      if (isEffectSortColumn(col)) {
+        return buildEffectColumnFilterGroups(col, idx);
+      }
       const values = new Set();
       csvRows.forEach(function (row) {
-        extractCellFilterAtoms(col, getListCellRawValue(row, idx, col))
-          .forEach(function (v) {
+        extractCellFilterAtoms(col, getListCellRawValue(row, idx, col)).forEach(
+          function (v) {
             values.add(v);
-          });
+          }
+        );
       });
-      return Array.from(values).sort(function (a, b) {
-        return a.toLowerCase().localeCompare(b.toLowerCase());
-      });
+      return [
+        {
+          id: "value",
+          label: "",
+          values: sortFilterOptionValues(Array.from(values)),
+        },
+      ];
     });
   }
 
@@ -3193,9 +3408,10 @@
       return false;
     }
     if (isEffectSortColumn(column)) {
+      const selectedByGroup = splitSelectedByFilterGroup(selected);
       const entrySets = effectEntryAtomSets(raw);
       return entrySets.some(function (atomSet) {
-        return atomSetHasAll(selected, atomSet);
+        return atomSetMatchesGroupedSelection(atomSet, selectedByGroup);
       });
     }
     const atoms = extractCellFilterAtoms(column, cellValue);
@@ -3347,33 +3563,52 @@
     return "";
   }
 
-  function renderColumnFilterPanel(colIdx, column, options) {
-    if (!options.length) {
+  function renderColumnFilterPanel(colIdx, column, optionGroups) {
+    if (!filterOptionGroupsHasChoices(optionGroups)) {
       return "";
     }
     const selected = csvColumnFilters[colIdx] || new Set();
+    const visibleGroups = optionGroups.filter(function (group) {
+      return group.values.length;
+    });
+    const showGroupLabels = visibleGroups.length > 1;
     let html =
       '<div class="col-filter-panel" role="group" aria-label="Filter column">';
-    options.forEach(function (value) {
-      const checked = selected.has(value) ? " checked" : "";
-      const iconHtml = filterOptionIconHtml(column, value);
-      html +=
-        '<label class="col-filter-option">' +
-        '<input type="checkbox" class="col-filter-cb" data-col="' +
-        colIdx +
-        '" value="' +
-        escapeHtml(value) +
-        '"' +
-        checked +
-        ">" +
-        '<span class="col-filter-option-body">' +
-        (iconHtml
-          ? '<span class="col-filter-option-icon">' + iconHtml + "</span>"
-          : "") +
-        '<span class="col-filter-option-text">' +
-        escapeHtml(value) +
-        "</span>" +
-        "</span></label>";
+    visibleGroups.forEach(function (group, groupIdx) {
+      if (showGroupLabels && group.label) {
+        if (groupIdx > 0) {
+          html += '<div class="col-filter-group-sep" role="separator"></div>';
+        }
+        html +=
+          '<div class="col-filter-group-label">' +
+          escapeHtml(group.label) +
+          "</div>";
+      } else if (groupIdx > 0) {
+        html += '<div class="col-filter-group-sep" role="separator"></div>';
+      }
+      group.values.forEach(function (value) {
+        const checked = selected.has(value) ? " checked" : "";
+        const iconHtml = filterOptionIconHtml(column, value);
+        html +=
+          '<label class="col-filter-option">' +
+          '<input type="checkbox" class="col-filter-cb" data-col="' +
+          colIdx +
+          '" data-group="' +
+          escapeHtml(group.id) +
+          '" value="' +
+          escapeHtml(value) +
+          '"' +
+          checked +
+          ">" +
+          '<span class="col-filter-option-body">' +
+          (iconHtml
+            ? '<span class="col-filter-option-icon">' + iconHtml + "</span>"
+            : "") +
+          '<span class="col-filter-option-text">' +
+          escapeHtml(value) +
+          "</span>" +
+          "</span></label>";
+      });
     });
     if (selected.size) {
       html +=
@@ -3476,12 +3711,27 @@
       return renderTierTableCell(value);
     }
     if (isEffectSortColumn(column)) {
-      return value
+      const parts = String(value || "")
         .split(/\s*;\s*/)
-        .map(function (part) {
-          return renderEffectCellPart(column, part);
-        })
-        .join(" ");
+        .filter(function (part) {
+          return part.trim();
+        });
+      if (!parts.length) {
+        return "";
+      }
+      return (
+        '<span class="effect-cell-stack">' +
+        parts
+          .map(function (part) {
+            return (
+              '<span class="effect-cell-entry">' +
+              renderEffectCellPart(column, part) +
+              "</span>"
+            );
+          })
+          .join("") +
+        "</span>"
+      );
     }
     return value
       .split(/\s*;\s*/)
@@ -3558,11 +3808,15 @@
     low: 1,
   };
 
+  function isDmgColumn(column) {
+    return !!column && column.endsWith(" DMG");
+  }
+
   function isEffectSortColumn(column) {
     if (!column) {
       return false;
     }
-    if (column.endsWith(" DMG")) {
+    if (isDmgColumn(column)) {
       return true;
     }
     if (column === "Healing" || column === "Shields") {
@@ -3754,21 +4008,26 @@
       if (col === "Role") {
         cls += " col-role";
       }
-      const options = csvColumnFilterOptions[idx] || [];
+      if (isEffectSortColumn(col)) {
+        cls += " col-effect-stack";
+      }
+      const optionGroups = csvColumnFilterOptions[idx] || [];
       const activeCount =
         csvColumnFilters[idx] && csvColumnFilters[idx].size
           ? csvColumnFilters[idx].size
           : 0;
       const hasFilter = activeCount > 0;
       const filterCls =
-        "col-filter" + (hasFilter ? " is-active" : "") + (options.length ? "" : " is-empty");
+        "col-filter" +
+        (hasFilter ? " is-active" : "") +
+        (filterOptionGroupsHasChoices(optionGroups) ? "" : " is-empty");
       const label =
         TIER_CSV_HEADERS[col] ? formatTierColumnHeader(col) : escapeHtml(col);
       let sortCls = "th-sort-btn";
       if (idx === sortColumn) {
         sortCls += sortDir === 1 ? " sort-asc" : " sort-desc";
       }
-      const showFilter = col !== "Name" && options.length;
+      const showFilter = col !== "Name" && filterOptionGroupsHasChoices(optionGroups);
       const nameRowSpan = col === "Name" ? ' rowspan="2"' : "";
       labelRowHtml +=
         "<th" +
@@ -3794,6 +4053,9 @@
       }
       if (col === "Role") {
         filterCellCls += " col-role";
+      }
+      if (isEffectSortColumn(col)) {
+        filterCellCls += " col-effect-stack";
       }
       filterRowHtml +=
         '<th class="' +
@@ -3822,7 +4084,7 @@
           '<span class="col-filter-sep" aria-hidden="true"></span>' +
           '<span class="col-filter-caret" aria-hidden="true"></span>' +
           "</summary>" +
-          renderColumnFilterPanel(idx, col, options) +
+          renderColumnFilterPanel(idx, col, optionGroups) +
           "</details>";
       }
       filterRowHtml += "</th>";
@@ -4650,11 +4912,8 @@
         return;
       }
       viewMode = btn.dataset.view;
-      viewToggle.querySelectorAll(".view-btn").forEach(function (b) {
-        const active = b === btn;
-        b.classList.toggle("active", active);
-        b.setAttribute("aria-pressed", active ? "true" : "false");
-      });
+      storeViewMode(viewMode);
+      syncViewToggleButtons();
       if (!detailView.classList.contains("hidden")) {
         return;
       }
@@ -4729,8 +4988,10 @@
       if (details.open) {
         openColumnFilter = parseInt(details.dataset.col, 10);
         requestAnimationFrame(positionOpenColumnFilter);
+        bindColumnFilterPointerTracking();
       } else {
         clearColumnFilterPanelPosition(details);
+        unbindColumnFilterPointerTracking();
         if (openColumnFilter === parseInt(details.dataset.col, 10)) {
           openColumnFilter = -1;
         }
@@ -4739,10 +5000,13 @@
 
     const tableScrollEl = getTableScrollEl();
     if (tableScrollEl) {
-      tableScrollEl.addEventListener("scroll", positionOpenColumnFilter, {
+      tableScrollEl.addEventListener("scroll", closeColumnFilterOnScroll, {
         passive: true,
       });
     }
+    window.addEventListener("scroll", closeColumnFilterOnScroll, {
+      passive: true,
+    });
     window.addEventListener("resize", positionOpenColumnFilter);
   }
 
@@ -5202,6 +5466,8 @@
     });
   })();
 
+  viewMode = readStoredViewMode();
+  syncViewToggleButtons();
   initWelcomeWarning();
   initFiltersCollapse();
   redirectLegacyHeroPath();

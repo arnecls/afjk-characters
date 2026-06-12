@@ -651,6 +651,20 @@ a:hover {
   min-width: 0;
 }
 
+.col-filter-group-label {
+  margin: 0.15rem 0 0.2rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.col-filter-group-sep {
+  margin: 0.35rem 0;
+  border-top: 1px solid var(--border);
+}
+
 .col-filter-clear {
   display: block;
   width: 100%;
@@ -1017,6 +1031,25 @@ a:hover {
   text-align: center;
   white-space: nowrap;
   min-width: 7.5rem;
+}
+
+.heroes-table-label-row th.col-effect-stack,
+.heroes-table-filter-row th.col-effect-stack,
+.heroes-table td.col-effect-stack {
+  vertical-align: top;
+}
+
+.effect-cell-stack {
+  display: block;
+}
+
+.effect-cell-entry {
+  display: block;
+  white-space: nowrap;
+}
+
+.effect-cell-entry + .effect-cell-entry {
+  margin-top: 0.2rem;
 }
 
 .heroes-table td.col-tier {
