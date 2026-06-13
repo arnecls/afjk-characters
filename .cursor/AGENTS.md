@@ -18,6 +18,22 @@
 - Rogue
 - Warrior
 
+## Artifacts
+
+[Artifacts](https://afk-journey.fandom.com/wiki/Artifact) are equippable items
+selected before battle. They grant team stat buffs and cast **Assistance**
+skills during combat — a core mechanic separate from hero kits.
+
+**Skill text naming:** when a skill mentions **Magister Merlin**, that is the
+story name for the **player** (the protagonist), not a roster hero.
+**Magister Merlin's skills** means the **Artifact currently enabled** for
+that fight — i.e. its Assistance effects, not any hero's abilities.
+
+- **Starter Story artifacts** — unlocked through Main Quests; remain permanently
+  available and effective in every season.
+- **Seasonal artifacts** — unlock per season and apply only for that season;
+  the roster rotates roughly every three months.
+
 ## Damage types
 
 - Normal damage types
