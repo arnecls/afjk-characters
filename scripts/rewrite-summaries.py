@@ -2779,7 +2779,7 @@ def detect_positional_tile_buff_labels(hero: Hero) -> frozenset[str]:
     for _tier, text, _section in hero.skill_chunks:
         if not _chunk_has_positional_tile_buff(text):
             continue
-        for pat, label in BUFF_RULES:
+        for pat, label in BUFF_RULES_COMPILED:
             for _scope in _buff_match_scopes(text, label, pat):
                 labels.add(label)
         t = text.lower()
@@ -2932,7 +2932,7 @@ def detect_proximity_aura_buff_labels(hero: Hero) -> tuple[frozenset[str], float
             continue
         radius = parse_proximity_aura_radius(text)
         max_radius = radius if max_radius is None else max(max_radius, radius)
-        for pat, label in BUFF_RULES:
+        for pat, label in BUFF_RULES_COMPILED:
             for _scope in _buff_match_scopes(text, label, pat):
                 labels.add(label)
         t = text.lower()
@@ -3115,6 +3115,11 @@ DEBUFF_RULES = [
         r"marking them as prey",
         "Marked target (focus fire)",
     ),
+]
+
+BUFF_RULES_COMPILED = [(re.compile(pat, re.I), label) for pat, label in BUFF_RULES]
+DEBUFF_RULES_COMPILED = [
+    (re.compile(pat, re.I), label) for pat, label in DEBUFF_RULES
 ]
 
 CC_RULES = [
@@ -5054,7 +5059,7 @@ def analyze_text(
     source_section: str | None = None,
 ):
     t = text.lower()
-    for pat, label in BUFF_RULES:
+    for pat, label in BUFF_RULES_COMPILED:
         for scope in _buff_match_scopes(text, label, pat):
             if label == "ATK buff" and _buff_match_is_ally_atk_penalty(scope):
                 continue
@@ -5100,7 +5105,7 @@ def analyze_text(
             )
         if _matching_summon_buff_match(text, label, pat):
             add_summon_buff_effect(summon_effects, label, tier, text)
-    for pat, label in DEBUFF_RULES:
+    for pat, label in DEBUFF_RULES_COMPILED:
         if label == "DoT" and _text_has_dot_damage(text):
             continue
         for scope in _effect_match_scopes(text, pat):

@@ -2350,7 +2350,7 @@
       "faction": "wilder",
       "class": "mage",
       "role_category": "damage_dealer",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "skills": {
         "Force of Nature": {
           "category": "ultimate",
@@ -13409,7 +13409,7 @@
       "faction": "celestial",
       "class": "support",
       "role_category": "support",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "skills": {
         "Starlight Waltz": {
           "category": "ultimate",
@@ -48867,7 +48867,7 @@
       "faction": "mauler",
       "class": "support",
       "role_category": "support",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "skills": {
         "Special Aroma": {
           "category": "ultimate",
@@ -53309,7 +53309,7 @@
       "faction": "graveborn",
       "class": "tank",
       "role_category": "tank",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "skills": {
         "Soul Retaliation": {
           "category": "ultimate",
@@ -54186,7 +54186,7 @@
       "faction": "wilder",
       "class": "tank",
       "role_category": "specialist",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "skills": {
         "Ancient Tenacity": {
           "category": "ultimate",

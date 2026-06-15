@@ -2,3 +2,4 @@
 .venv/
 scripts/__pycache__/
 data/prydwen_reviews_cache.json
+data/.roster_analysis_cache.pkl

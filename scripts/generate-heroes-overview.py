@@ -2462,23 +2462,55 @@ def compute_replacement_scores(
     return result
 
 
-def build_beneficiaries_index(
+def build_synergy_entries_by_receiver(
     heroes: list[_rs.Hero],
     enabler_matchers: dict[str, callable],
     behavior_by_title: dict[str, _rs.HeroBehavior],
-) -> dict[str, list[tuple[float, str]]]:
-    """Provider title -> (score, receiver short name), strongest matches first."""
+) -> dict[str, list[tuple[float, list[str], str]]]:
+    """Full synergy ranking per receiver (no top-N cap)."""
     tiers_by_title = _load_prydwen_tiers_by_title()
-    primary: dict[str, list[tuple[float, str]]] = defaultdict(list)
-    full: dict[str, list[tuple[float, str]]] = defaultdict(list)
-    for receiver in heroes:
-        entries = rank_synergy_entries(
+    return {
+        receiver.title: rank_synergy_entries(
             receiver,
             heroes,
             enabler_matchers,
             behavior_by_title,
             tiers_by_title,
         )
+        for receiver in heroes
+    }
+
+
+def format_synergy_entries(
+    entries: list[tuple[float, list[str], str]],
+) -> list[dict]:
+    return [
+        {
+            "provider": short_name(title),
+            "reasons": reasons,
+            "score": score,
+        }
+        for score, reasons, title in entries
+    ]
+
+
+def build_beneficiaries_index(
+    heroes: list[_rs.Hero],
+    enabler_matchers: dict[str, callable],
+    behavior_by_title: dict[str, _rs.HeroBehavior],
+    synergy_entries_by_receiver: (
+        dict[str, list[tuple[float, list[str], str]]] | None
+    ) = None,
+) -> dict[str, list[tuple[float, str]]]:
+    """Provider title -> (score, receiver short name), strongest matches first."""
+    if synergy_entries_by_receiver is None:
+        synergy_entries_by_receiver = build_synergy_entries_by_receiver(
+            heroes, enabler_matchers, behavior_by_title
+        )
+    primary: dict[str, list[tuple[float, str]]] = defaultdict(list)
+    full: dict[str, list[tuple[float, str]]] = defaultdict(list)
+    for receiver in heroes:
+        entries = synergy_entries_by_receiver[receiver.title]
         receiver_name = short_name(receiver.title)
         for score, _reasons, provider_title in entries[:MAX_SYNERGIES]:
             primary[provider_title].append((score, receiver_name))

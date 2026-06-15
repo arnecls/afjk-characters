@@ -12,7 +12,6 @@ titles can be validated.
 
 from __future__ import annotations
 
-import importlib.util
 import sys
 from pathlib import Path
 
@@ -22,39 +21,7 @@ sys.path.insert(0, str(SCRIPTS))
 import heroes_io as io
 import hero_schema as hs
 from process_config import apply_config
-
-
-def _load_module(name: str, filename: str):
-    spec = importlib.util.spec_from_file_location(name, SCRIPTS / filename)
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[name] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
-
-
-rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
-gen = _load_module("gen_overview", "generate-heroes-overview.py")
-
-
-def rank_synergies_full(receiver, heroes, enabler_matchers, behavior_by_title):
-    """Like gen.rank_synergies but without the top-N display cap."""
-    tiers_by_title = gen._load_prydwen_tiers_by_title()
-    entries = gen.rank_synergy_entries(
-        receiver,
-        heroes,
-        enabler_matchers,
-        behavior_by_title,
-        tiers_by_title,
-    )
-    return [
-        {
-            "provider": gen.short_name(title),
-            "reasons": reasons,
-            "score": score,
-        }
-        for score, reasons, title in entries
-    ]
+from roster_analysis import analysis_modules, get_roster_analysis
 
 
 def _assert_short_name_sets_match(
@@ -102,47 +69,30 @@ def _sanitize_replacements(replacements: dict) -> dict:
 
 
 def build_synergies(raw: dict, processed: dict) -> dict:
-    heroes_text = io.reconstruct_heroes_md(raw)
-    behavior_text = io.reconstruct_heroes2_md(raw)
+    rs, gen = analysis_modules()
     hero_records = raw["heroes"]
-
-    heroes: list = []
-    block_by_title: dict[str, str] = {}
-    for record in hero_records:
-        hero = rs.hero_from_record(record)
-        heroes.append(hero)
-        block_by_title[hero.title] = io.render_hero_block(record)
-
+    heroes_stub = [rs.hero_from_record(record) for record in hero_records]
     _assert_short_name_sets_match(
-        processed, {gen.short_name(h.title) for h in heroes}
+        processed, {gen.short_name(hero.title) for hero in heroes_stub}
     )
-
-    hero_class_by_title: dict[str, str] = {}
-    for hero in heroes:
-        hero_class_by_title[hero.title] = gen._parse_hero_class(
-            block_by_title[hero.title]
-        )
-        rs.analyze_hero(hero)
 
     role_category_by_title = hs.role_category_by_title_from_processed(
-        heroes, processed, gen.short_name
+        heroes_stub, processed, gen.short_name
     )
+    analysis = get_roster_analysis(raw, role_category_by_title)
+    heroes = analysis.heroes
+    behavior_by_title = analysis.behavior_by_title
+    skills_by_title = analysis.skills_by_title
+    enabler_matchers = analysis.enabler_matchers
 
-    skills_by_title = rs.load_skills_by_title_from_records(hero_records)
-    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
-    enabler_matchers = gen._make_enabler_matchers(hero_class_by_title)
-
-    display_by_title = {h.title: gen.short_name(h.title) for h in heroes}
-    behavior_by_title = rs.build_behavior_for_heroes(
-        heroes,
-        display_by_title,
-        heroes2_text=behavior_text,
-        heroes_text=heroes_text,
-        role_category_by_title=role_category_by_title,
-        hero_class_by_title=hero_class_by_title,
+    synergy_entries_by_receiver = gen.build_synergy_entries_by_receiver(
+        heroes, enabler_matchers, behavior_by_title
     )
     beneficiaries_index = gen.build_beneficiaries_index(
-        heroes, enabler_matchers, behavior_by_title
+        heroes,
+        enabler_matchers,
+        behavior_by_title,
+        synergy_entries_by_receiver=synergy_entries_by_receiver,
     )
     faction_by_title = {
         hero.title: processed["heroes"][gen.short_name(hero.title)]["faction"]
@@ -160,8 +110,8 @@ def build_synergies(raw: dict, processed: dict) -> dict:
     for hero in heroes:
         benefited = beneficiaries_index.get(hero.title, [])
         synergy_heroes[gen.short_name(hero.title)] = {
-            "synergies": rank_synergies_full(
-                hero, heroes, enabler_matchers, behavior_by_title
+            "synergies": gen.format_synergy_entries(
+                synergy_entries_by_receiver[hero.title]
             ),
             "beneficiaries": [
                 {"score": score, "name": name} for score, name in benefited

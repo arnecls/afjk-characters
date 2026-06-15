@@ -12,7 +12,6 @@ Static weights and thresholds are loaded from ``heroes_config.json``.
 
 from __future__ import annotations
 
-import importlib.util
 import sys
 from dataclasses import asdict
 from pathlib import Path
@@ -23,39 +22,12 @@ sys.path.insert(0, str(SCRIPTS))
 import heroes_io as io
 import hero_schema as hs
 from process_config import apply_config
-
-
-def _load_module(name: str, filename: str):
-    spec = importlib.util.spec_from_file_location(name, SCRIPTS / filename)
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[name] = module
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
-
-
-rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
-gen = _load_module("gen_overview", "generate-heroes-overview.py")
+from roster_analysis import analysis_modules, get_roster_analysis
 
 
 def build_processed(data: dict) -> dict:
-    heroes_text = io.reconstruct_heroes_md(data)
-    behavior_text = io.reconstruct_heroes2_md(data)
+    rs, gen = analysis_modules()
     hero_records = data["heroes"]
-
-    heroes: list = []
-    block_by_title: dict[str, str] = {}
-    for record in hero_records:
-        hero = rs.hero_from_record(record)
-        heroes.append(hero)
-        block_by_title[hero.title] = io.render_hero_block(record)
-
-    hero_class_by_title: dict[str, str] = {}
-    for hero in heroes:
-        hero_class_by_title[hero.title] = gen._parse_hero_class(
-            block_by_title[hero.title]
-        )
-        rs.analyze_hero(hero)
 
     import sources_web
 
@@ -66,28 +38,23 @@ def build_processed(data: dict) -> dict:
         # Keep existing role_category values when Prydwen is unreachable.
         print(f"Warning: skipping Prydwen role categories ({exc})", file=sys.stderr)
 
-    data_by_title = {h["title"]: h for h in data["heroes"]}
+    data_by_title = {record["title"]: record for record in hero_records}
+    heroes_stub = [rs.hero_from_record(record) for record in hero_records]
+    hero_class_stub = {
+        hero.title: gen._parse_hero_class(io.render_hero_block(data_by_title[hero.title]))
+        for hero in heroes_stub
+    }
     role_category_by_title = hs.build_role_category_by_title(
-        heroes, data_by_title, hero_class_by_title
+        heroes_stub, data_by_title, hero_class_stub
     )
 
-    skills_by_title = rs.load_skills_by_title_from_records(hero_records)
-    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
-
-    display_by_title = {h.title: gen.short_name(h.title) for h in heroes}
-    behavior_by_title = rs.build_behavior_for_heroes(
-        heroes,
-        display_by_title,
-        heroes2_text=behavior_text,
-        heroes_text=heroes_text,
-        role_category_by_title=role_category_by_title,
-        hero_class_by_title=hero_class_by_title,
-    )
+    analysis = get_roster_analysis(data, role_category_by_title)
+    heroes = analysis.heroes
+    behavior_by_title = analysis.behavior_by_title
+    display_by_title = analysis.display_by_title
 
     energy_provider_titles = {
-        hero.title
-        for hero in (rs.hero_from_record(record) for record in hero_records)
-        if gen.is_energy_provider(hero)
+        hero.title for hero in heroes if gen.is_energy_provider(hero)
     }
     processed_heroes: dict[str, dict] = {}
     for hero in heroes:
