@@ -9372,25 +9372,22 @@
             "score": 1.0,
             "matches": [
               "Max HP-based damage",
-              "Magic",
-              "True damage"
+              "Magic"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
-              "True damage"
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Shemira",
+            "name": "Galahad",
             "score": 1.0,
             "matches": [
               "Max HP-based damage",
-              "Magic",
-              "True damage"
+              "Magic"
             ]
           }
         ],
@@ -14263,12 +14260,11 @@
             ]
           },
           {
-            "name": "Shemira",
-            "score": 0.7888,
+            "name": "Baelran",
+            "score": 0.6588,
             "matches": [
-              "Magic",
-              "Max HP-based damage",
-              "True damage"
+              "True damage",
+              "Max HP-based damage"
             ]
           }
         ],
@@ -30703,15 +30699,6 @@
         ],
         "damage": [
           {
-            "name": "Valka",
-            "score": 0.9521,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Athalia",
             "score": 0.8462,
             "matches": [
@@ -30729,6 +30716,14 @@
               "Physical",
               "Max HP-based damage",
               "HP loss"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 0.6776,
+            "matches": [
+              "True damage",
+              "Max HP-based damage"
             ]
           }
         ],
@@ -31226,7 +31221,7 @@
             ]
           },
           {
-            "name": "Valka",
+            "name": "Nara",
             "score": 1.0,
             "matches": [
               "True damage",
@@ -34959,7 +34954,7 @@
             ]
           },
           {
-            "name": "Shemira",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -34968,10 +34963,9 @@
             ]
           },
           {
-            "name": "Sylphira",
-            "score": 1.0,
+            "name": "Athalia",
+            "score": 0.8419,
             "matches": [
-              "Magic",
               "Max HP-based damage",
               "True damage"
             ]
@@ -39784,26 +39778,23 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
-              "True damage"
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Sylphira",
+            "name": "Galahad",
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
-              "True damage"
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Daimon",
-            "score": 0.8588,
+            "name": "Saida",
+            "score": 1.0,
             "matches": [
-              "Max HP-based damage",
               "Magic",
-              "True damage"
+              "Max HP-based damage"
             ]
           }
         ],
@@ -39834,15 +39825,23 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.6828,
+            "score": 0.6826,
             "matches": [
               "Damage",
               "Debuffs on enemies"
             ]
           },
           {
+            "name": "Zorya",
+            "score": 0.582,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          },
+          {
             "name": "Nazrik",
-            "score": 0.5549,
+            "score": 0.548,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -42916,18 +42915,18 @@
             ]
           },
           {
-            "name": "Shemira",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "Magic",
               "Max HP-based damage",
               "True damage"
             ]
           },
           {
-            "name": "Athalia",
+            "name": "Pippa",
             "score": 1.0,
             "matches": [
+              "Magic",
               "Max HP-based damage",
               "True damage"
             ]
@@ -47139,28 +47138,25 @@
         ],
         "damage": [
           {
-            "name": "Nara",
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "True damage",
               "Physical",
               "Max HP-based damage"
             ]
           },
           {
             "name": "Athalia",
-            "score": 0.9334,
+            "score": 1.0,
             "matches": [
-              "True damage",
               "Physical",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Nazrik",
-            "score": 0.9174,
+            "name": "Kordan",
+            "score": 1.0,
             "matches": [
-              "True damage",
               "Physical",
               "Max HP-based damage"
             ]
@@ -47215,7 +47211,17 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Zorya",
+            "score": 0.5492,
+            "matches": [
+              "Debuffs on enemies",
+              "Crowd Control",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Velara": {

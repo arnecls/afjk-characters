@@ -37,7 +37,7 @@ Run **high-level** first, then **detailed**. Do not mix scopes in one report.
 ```
 Task progress:
 - [ ] 1. Baseline — read latest docs/validation-*.md; note resolved items
-- [ ] 2. Pre-scan — run ally-target triage; note candidate count
+- [ ] 2. Pre-scan — run ally-target and true/max-HP triage; note counts
 - [ ] 3. Inventory — hero/skill counts; pick batch boundaries (~25–35 heroes)
 - [ ] 4. High-level pass — labels only (damage, healing, CC, buffs, debuffs)
 - [ ] 5. Write docs/validation-high-level-YYYY-MM-DD.md
@@ -66,7 +66,31 @@ For each skill, list what `effects` contain vs what the description states.
 Flag **missing** labels, **spurious** labels, and **wrong** labels (e.g. ally
 buff vs enemy debuff).
 
-**Finding format:**
+#### True vs Max HP-based double-label (high-level)
+
+When text says **true damage equal to X% of max HP** (any word order), expect
+**Max HP-based damage only** — not both `True damage` and `Max HP-based
+damage` on the same strike. Run the true/max-HP pre-scan below.
+
+**Convention:** max-HP-scaled true hits collapse to **Max HP-based damage**
+(`_apply_true_damage_hierarchy` in `rewrite-summaries.py`). Generic **True
+damage** is correct only when the strike is true without max-HP scaling (e.g.
+flat `+27% true damage` on an ATK-based hit).
+
+**Phrasing gaps** — dedup fails when the parser misses the link:
+
+| Text pattern | Example hero/skill |
+|--------------|-------------------|
+| `true damage to … equal to X% of their max HP` | Shemira Ghastly Tribute |
+| `true damage to the target and adjacent enemies, equal to …` | Daimon Playtime Plunder |
+| `true damage equal to X% of max HP` + heal in same sentence | Valka Phantom Slasher |
+
+**Why partial fixes recur:** June 2026 added hierarchy dedup but the trigger
+regex only matched contiguous `true damage equal to … of target's max HP`.
+Tests that only assert True **is** detected (not that Max HP is the **only**
+label) let regressions slip through. Re-run pre-scan after detection changes.
+
+**Finding format:** `Shemira (Ghastly Tribute): True + Max HP -> Max HP only`
 
 `Character (Skill): found -> expected`
  
@@ -181,6 +205,51 @@ PY
 Report the candidate count in the validation doc header. After fixes, re-run;
 closed rows go under **Resolved since {date}**.
 
+### Pre-scan — true / max-HP double-label triage
+
+Run during **pass 1** (label scope). Lists skills storing both `damage_type:
+true` and `damage_type: max_hp`. Confirm each hit against the skill text;
+some combos are legitimate (e.g. separate strikes in one skill).
+
+```bash
+python3 - <<'PY'
+import json, re
+from pathlib import Path
+
+processed = json.loads(Path("data/heroes_data_processed.json").read_text())
+# Max-HP-scaled true phrasing; extend when new gaps are found.
+MAX_HP_TRUE_PATS = [
+    r"\btrue damage(?:\s+to[^,]{0,120}?)?,?\s+equal to \d",
+    r"\bdeal(?:s|ing|t)? true damage\b",
+]
+
+hits = []
+for hero, data in sorted(processed["heroes"].items()):
+    for skill, sk in data.get("skills", {}).items():
+        types = {
+            e.get("damage_type")
+            for e in sk.get("effects", [])
+            if e.get("type") == "damage"
+        }
+        if not ({"true", "max_hp"} <= types):
+            continue
+        raw = sk.get("description", {})
+        text = raw.get("raw", "") if isinstance(raw, dict) else str(raw)
+        tl = text.lower()
+        if any(re.search(p, tl) for p in MAX_HP_TRUE_PATS):
+            names = [
+                e.get("name")
+                for e in sk.get("effects", [])
+                if e.get("type") == "damage"
+            ]
+            hits.append(f"{hero} / {skill}: {names} -> likely Max HP only")
+
+print(f"True+MaxHP candidates: {len(hits)}")
+for line in hits:
+    print(" ", line)
+PY
+```
+
 ### Comparison rules
 
 - **Fully ascended:** use the **strongest parseable value** per effect across
@@ -229,7 +298,8 @@ Save under `docs/` with today's date.
 **Detailed** (`validation-detailed-YYYY-MM-DD.md`):
 
 - Scope + link to high-level baseline
-- **Pre-scan results** — ally-target candidate count at start/end of run
+- **Pre-scan results** — ally-target and true/max-HP candidate counts at
+  start/end of run
 - Same roster stats and **Common failure patterns** (detailed-specific)
 - **Findings** by batch with `found -> expected`
 - **Spot-checked confirmations**
@@ -247,7 +317,8 @@ Save under `docs/` with today's date.
    change (otherwise `just analyze` may reuse stale parsed heroes).
 4. Run `just analyze` to regenerate `heroes_data_processed.json` and synergies.
 5. Run `just validate`.
-6. Re-run the ally-target pre-scan; grep `"buff"` replacements for affected heroes.
+6. Re-run pre-scans (ally-target, true/max-HP); grep `"buff"` replacements
+   for affected heroes.
 7. Spot-check representative skills from the report; move rows to **Resolved**.
 8. Do **not** re-audit the full roster unless asked — note that findings
    tables may be stale until re-run.
@@ -257,12 +328,14 @@ Save under `docs/` with today's date.
 Highest impact on magnitude bands and synergy scoring:
 
 1. **Heal `value: 0`** when text says restore HP
-2. **Self-only effects tagged `target: ally`** (Invincible, Unaffected, self
+2. **True + Max HP double-label** on max-HP-scaled true strikes — skews
+   damage-type profiles and magnitude bands
+3. **Self-only effects tagged `target: ally`** (Invincible, Unaffected, self
    stat buffs) — distorts replacement **Buffs on allies** lists
-3. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
-4. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
-5. **Upgrade-tier magnitudes** not merged to max tier
-6. **Spurious damage rows** (execute riders, shield absorb as Physical)
+4. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
+5. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
+6. **Upgrade-tier magnitudes** not merged to max tier
+7. **Spurious damage rows** (execute riders, shield absorb as Physical)
 
 ## Definition guardrails
 
@@ -271,6 +344,7 @@ Apply `.cursor/AGENTS.md` strictly. Common label confusions:
 | Topic | Correct | Reject / watch |
 |-------|---------|----------------|
 | True damage | True / HP loss / Max HP-based only on scored hit | Also tagging Physical/Magic |
+| True + Max HP | **Max HP-based damage only** when `true damage equal to X% of max HP` | Both `True damage` and `Max HP-based damage` rows |
 | DoT | Sustained enemy damage (`every Ns`, poison ticks) | Channeled magic burst; self/summon HP drain |
 | Direct healing | Instant HP restore (`restoring N% HP`) | HoT phrasing (`per second`, `over Ns`) |
 | Healing over time | Sustained restore to allies | Healing-lock cast cost; enemy HP drain |
@@ -293,7 +367,7 @@ Summarize:
 1. **Coverage** — heroes/skills audited, discrepancy rate per pass
 2. **Themes** — top 5 failure patterns (with counts if estimated)
 3. **Critical examples** — 3–5 skills that most affect synergy scoring
-   (include any pre-scan hits that distort replacement `"buff"` lists)
+   (include pre-scan hits: false `"buff"` replacements, true+max-HP doubles)
 4. **Resolved** — what improved vs last validation doc
 5. **Recommended fixes** — ordered pattern groups, not a flat hero list
 
@@ -312,6 +386,15 @@ expect **no** enemy DoT, **no** Healing over time, **no** Direct healing.
 
 **High-level — Lorsan Zephyr's Embrace:** sustained ally restore → expect
 **Healing over time**, not only a Haste buff.
+
+**High-level — Shemira Ghastly Tribute:** `deal true damage to a single enemy
+equal to 24% + 3% of their max HP` → **Max HP-based damage only**; pre-scan
+flags `True damage` + `Max HP-based damage` on same skill. Regression tests
+must assert True is **absent**, not merely present.
+
+**High-level — Valka Phantom Slasher:** slash clause has true max-HP damage
+and self-heal in one sentence → still **Max HP-based damage only** (heal must
+not block dedup).
 
 **Detailed — Kazim Gale Barrage:** max-HP tier uses upgrade scalar **+40%**,
 not base-line **+140%** bleed-through.

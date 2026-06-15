@@ -4880,7 +4880,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "average",
               "Physical": "average"
             }
           },
@@ -4892,7 +4892,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "average",
               "Physical": "average"
             }
           },
@@ -4904,7 +4904,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "low",
               "Physical": "high",
               "Max HP-based damage": "high"
             }
@@ -10832,7 +10832,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
@@ -11006,25 +11006,6 @@
               "target_count": -1,
               "area_count": 1,
               "type": "damage",
-              "damage_type": "true",
-              "name": "True damage",
-              "label": "damage_true",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 1.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
               "label": "damage_max_hp",
@@ -11056,7 +11037,6 @@
           "cooldown": 8.0,
           "skill_card_tags": [
             "Max HP-based damage",
-            "True damage",
             "Shield"
           ]
         },
@@ -11297,10 +11277,6 @@
         [
           "max_hp",
           "Area, Single target"
-        ],
-        [
-          "true",
-          "Area"
         ]
       ],
       "damage_magnitudes": {
@@ -11359,7 +11335,6 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
               "Max HP-based damage": "high"
             }
           }
@@ -12308,7 +12283,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "average",
               "Physical": "low"
             }
           }
@@ -26396,7 +26371,7 @@
       ],
       "damage_magnitudes": {
         "max_hp": "low",
-        "true": "average"
+        "true": "high"
       },
       "benefit_stats": [
         "atk_spd",
@@ -26449,7 +26424,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "low",
               "Max HP-based damage": "average",
               "Physical": "low"
             }
@@ -39599,7 +39574,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -47170,25 +47145,6 @@
               "target_count": -1,
               "area_count": 1,
               "type": "damage",
-              "damage_type": "true",
-              "name": "True damage",
-              "label": "damage_true",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 27.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
               "label": "damage_max_hp",
@@ -47203,8 +47159,7 @@
           "cooldown": 8.0,
           "initial_cooldown": 4.0,
           "skill_card_tags": [
-            "Max HP-based damage",
-            "True damage"
+            "Max HP-based damage"
           ]
         },
         "Hero Focus": {
@@ -47356,15 +47311,10 @@
         [
           "max_hp",
           "Area, Single target"
-        ],
-        [
-          "true",
-          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "high",
-        "true": "average"
+        "max_hp": "high"
       },
       "benefit_stats": [
         "shield",
@@ -47416,8 +47366,7 @@
             "debuffs": "average",
             "damage_types": {
               "Max HP-based damage": "high",
-              "Magic": "high",
-              "True damage": "low"
+              "Magic": "high"
             }
           }
         }
@@ -51331,7 +51280,7 @@
             "damage_types": {
               "Magic": "average",
               "Max HP-based damage": "average",
-              "True damage": "average"
+              "True damage": "low"
             }
           }
         }
@@ -54685,7 +54634,7 @@
           "ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "average",
             "buffs": "none",
             "debuffs": "none",
@@ -55861,13 +55810,13 @@
               "area": "single",
               "target_count": 1,
               "type": "damage",
-              "damage_type": "true",
-              "name": "True damage",
-              "label": "damage_true",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 800.0
+                  "value": 20.0
                 }
               ]
             },
@@ -55881,24 +55830,6 @@
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "max_hp",
-              "name": "Max HP-based damage",
-              "label": "damage_max_hp",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ]
             },
             {
               "type": "immunity",
@@ -55915,7 +55846,6 @@
           "initial_energy": 1000.0,
           "skill_card_tags": [
             "Max HP-based damage",
-            "True damage",
             "Direct healing — Self",
             "Haste debuff",
             "Knock down",
@@ -56287,14 +56217,9 @@
         [
           "max_hp",
           "Single target"
-        ],
-        [
-          "true",
-          "Single target"
         ]
       ],
       "damage_magnitudes": {
-        "true": "high",
         "max_hp": "average"
       },
       "benefit_stats": [
@@ -56321,24 +56246,22 @@
           "signature": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "low",
             "heal": "average",
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "True damage": "average",
               "Max HP-based damage": "high"
             }
           },
           "ultimate": {
             "speed": "fast",
             "first_cast_speed": "fast",
-            "damage": "high",
+            "damage": "low",
             "heal": "average",
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "True damage": "average",
               "Max HP-based damage": "high"
             }
           },

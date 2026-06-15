@@ -3824,9 +3824,9 @@ def _text_has_max_hp_damage(text: str) -> bool:
 
 
 _TRUE_DAMAGE_MAX_HP_RE = re.compile(
-    r"true damage equal to \d+(?:\.\d+)?(?:\s*%\s*"
+    r"true damage(?:\s+to[^,]{0,120}?)?,?\s+equal to \d+(?:\.\d+)?(?:\s*%\s*"
     r"(?:\+\s*\d+(?:\.\d+)?(?:\s*%\s*)?)?)?\s+of (?:the )?(?:each )?"
-    r"(?:target'?s?|targets'?|enemies'?) max hp",
+    r"(?:target'?s?|targets'?|enemies'?|enemy'?s?|their)\s+max hp",
     re.I,
 )
 
@@ -3834,6 +3834,16 @@ _TRUE_DAMAGE_MAX_HP_RE = re.compile(
 def _true_damage_primary_scales_on_max_hp(text: str) -> bool:
     """True when true damage scales on target max HP."""
     return bool(_TRUE_DAMAGE_MAX_HP_RE.search(text))
+
+
+def _true_damage_prefers_max_hp_label(text: str) -> bool:
+    """True when generic True damage should collapse to Max HP-based only."""
+    t = text.lower()
+    if _true_damage_primary_scales_on_max_hp(text):
+        return True
+    return bool(
+        _text_has_max_hp_damage(text) and re.search(r"\btrue damage\b", t)
+    )
 
 
 def _apply_true_damage_hierarchy(types: list[str], text: str) -> list[str]:
@@ -3845,6 +3855,11 @@ def _apply_true_damage_hierarchy(types: list[str], text: str) -> list[str]:
     if "True damage" not in types:
         return types
     out = list(types)
+    if _true_damage_prefers_max_hp_label(text):
+        out = [d for d in out if d != "True damage"]
+        if "Max HP-based damage" not in out:
+            out.append("Max HP-based damage")
+        return out
     if "Max HP-based damage" in out and _true_damage_primary_scales_on_max_hp(
         text
     ):

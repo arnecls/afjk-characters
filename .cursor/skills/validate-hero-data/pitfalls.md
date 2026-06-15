@@ -52,10 +52,42 @@ a stat/shield/execute rider.
 `(ATK-based) … true damage` should not also emit normal Physical/Magic when
 true damage is the scored hit.
 
-Examples: Faramor Sanctified Circle, Himmel Heroic Slash, Shemira, Silven,
-Valka.
+Examples: Faramor Sanctified Circle, Himmel Heroic Slash, Silven, Valka.
 
-**Convention:** prefer **true-only** when the strike is explicitly true.
+**Convention:** prefer **true-only** (drop Physical/Magic) when the strike is
+explicitly true without a separate ATK-based component.
+
+### True vs Max HP-based double-tag
+
+`true damage equal to X% (+ Y%) of max HP` is one strike — store **Max
+HP-based damage only**, not generic **True damage** alongside it.
+
+**June 2026 partial fix:** `_apply_true_damage_hierarchy` dedupes when the
+trigger regex matches. Gaps that still produced double labels:
+
+| Gap | Symptom | Example |
+|-----|---------|---------|
+| Intervening target phrase | Regex misses; both labels emitted | Shemira: `true damage to a single enemy equal to …` |
+| Pronoun `their` | `_TRUE_DAMAGE_MAX_HP_RE` missed `their max HP` | Shemira ghost strike |
+| Heal in same sentence | `_text_has_max_hp_damage` false; only True emitted | Valka slash + self-heal clause |
+| Weak regression test | Test asserts True **present**, not Max HP **only** | `test_shemira_true_damage_without_atk_scalar` (fixed) |
+
+**Audit checklist:**
+
+1. Run true/max-HP pre-scan from `SKILL.md` (pass 1).
+2. Read the **clause** that deals damage, not upgrade cap lines (`cannot exceed
+   N% (ATK-based)` is a cap, not a second damage type).
+3. After fix: skill should have one `damage_type: max_hp` row; skill-card tags
+   should not list both `True damage` and `Max HP-based damage`.
+4. Add regression test asserting `True damage` **not in** labels/types.
+
+Resolved: Shemira Ghastly Tribute, Valka Phantom Slasher (slash clauses),
+Daimon Playtime Plunder (passive Stitchy attack). Still open / different
+pattern: Nara Crimson Vengeance (`damage equal to X% of max HP` without
+`true damage` word), Vala Swift Shift (mixed strike types).
+
+**Convention:** prefer **Max HP-based damage only** for max-HP-scaled true
+hits (not generic True + Max HP).
 
 ### DoT false positives
 
@@ -259,6 +291,8 @@ Use these to calibrate both passes:
 | Harak Vicious Bite | No DoT/HoT | Healing debuff from lock |
 | Harak Tidal Assault | Invincible Self | Not ally buff; no replacement buff match |
 | Aurora Starlit Slumber | Invincible Self; Haste on summons | Self sleep immunity ≠ ally buffer |
+| Shemira Ghastly Tribute | Max HP-based damage only | Not True + Max HP double label |
+| Valka Phantom Slasher | Max HP-based damage on slashes | Heal in same clause must not block dedup |
 | Faramor Sanctified Circle | True + DoT; no Physical | area_count 1; 0.5s tick |
 | Lorsan Whispering Tempest | DoT + Haste debuff | -33 flat; 5s / 0.5s tick |
 | Chippy (all skills) | Clean label pass | No targeting/magnitude issues |
@@ -287,13 +321,17 @@ Note ambiguity instead of forcing a single expected value:
 - **Berial Shadow Reflection** — self HP drain on Silhouette: self-cost vs
   enemy DoT
 - **Aurora Plushification** — bind duration when source tiers conflict
-- **Shemira Ghastly Tribute** — context-dependent true/max-HP cap
+- **Shemira Ghastly Tribute** — context-dependent true/max-HP cap on ghost
+  strikes (resolved: label is Max HP-only; magnitude cap is pass 2)
+- **Nara Crimson Vengeance** — shockwave `damage equal to X% of max HP` without
+  `true damage` word: may legitimately differ from true-scaled hits
 
 ## Regression tests after fixes
 
 Prior passes added tests in:
 
-- `scripts/test_detect_damage_types.py`
+- `scripts/test_detect_damage_types.py` — true/max-HP dedup (Shemira, Valka,
+  Daimon)
 - `scripts/test_skill_descriptions.py`
 - `scripts/test_detailed_validation.py`
 - `scripts/test_summary_parsing.py` — self Invincible (Evie, Harak, Aurora)

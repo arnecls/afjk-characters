@@ -507,8 +507,43 @@ class CommonFailurePatternTests(unittest.TestCase):
             "Shemira sacrifices 15% of her current HP to deal true damage to a "
             "single enemy equal to 24% + 3% of their max HP."
         )
+        types = rs.detect_damage_types(text, "Magic")
+        types = rs._apply_true_damage_hierarchy(types, text)
+        self.assertNotIn("True damage", types)
+        self.assertIn("Max HP-based damage", types)
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("True damage", labels)
+        self.assertNotIn("True damage", labels)
+        self.assertIn("Max HP-based damage", labels)
+
+    def test_shemira_ghost_strike_max_hp_only(self):
+        text = (
+            "dealing true damage equal to 20% + 2% of their max HP."
+        )
+        types = rs.detect_damage_types(text, "Magic")
+        types = rs._apply_true_damage_hierarchy(types, text)
+        self.assertNotIn("True damage", types)
+        self.assertIn("Max HP-based damage", types)
+
+    def test_daimon_playtime_plunder_passive_max_hp_only(self):
+        text = (
+            "Every 8s, Stitchy unleashes a powerful attack that deals true "
+            "damage to the target and adjacent enemies, equal to 20% of the "
+            "target's max HP."
+        )
+        types = rs.detect_damage_types(text, "Magic")
+        types = rs._apply_true_damage_hierarchy(types, text)
+        self.assertNotIn("True damage", types)
+        self.assertIn("Max HP-based damage", types)
+
+    def test_valka_slash_true_max_hp_heal_clause(self):
+        text = (
+            "Each slash deals true damage equal to 6% + 1.5% of the target's "
+            "max HP and recovers 350% (ATK-based) + 50% of Valka's HP."
+        )
+        types = rs.detect_damage_types(text, "Physical")
+        types = rs._apply_true_damage_hierarchy(types, text)
+        self.assertNotIn("True damage", types)
+        self.assertIn("Max HP-based damage", types)
 
     def test_marilee_conditional_true_damage(self):
         text = "Her normal attacks deal true damage after reaching max stacks."

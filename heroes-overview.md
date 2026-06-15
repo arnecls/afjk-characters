@@ -1012,7 +1012,7 @@ Aurora provides Haste buff to summons `high` and Summon damage buff (Mythic+) to
 - **Signature skill**: Celestial Rise (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Behavior tags**: `hp-scaling` `transformation`
-- **Damage types**: Physical `high`, Max HP-based damage `high`, True damage `high`
+- **Damage types**: Physical `high`, Max HP-based damage `high`, True damage `average`
 
 #### Play overview
 
@@ -2413,7 +2413,7 @@ Cyran a CC-heavy kit based around attacking grouped-up enemies and PvP disruptio
 #### Skill overview
 
 - **Signature skill (ult)**: speed `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -2520,7 +2520,7 @@ Common buffers are **Twins**, **Ravion**, or **Mikola**.
 - **Movement**: stationary (no finite attack range)
 - **Behavior tags**: `ally-shielder` `hp-scaling` `life-drain` `summoner`
 - **Ally composition**: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
-- **Damage types**: Magic `low`, Max HP-based damage `high`, True damage `average`
+- **Damage types**: Magic `low`, Max HP-based damage `high`
 
 #### Play overview
 
@@ -2599,9 +2599,9 @@ Daimon provides Lifedrain buff to single targets `low` and Shield to multiple ta
 
 **Damage**
 
-- Frieren (100% `Max HP-based damage` `Magic` `True damage`)
-- Baelran (100% `Max HP-based damage` `True damage`)
-- Shemira (100% `Max HP-based damage` `Magic` `True damage`)
+- Frieren (100% `Max HP-based damage` `Magic`)
+- Baelran (100% `Max HP-based damage`)
+- Galahad (100% `Max HP-based damage` `Magic`)
 
 **Crowd Control**
 
@@ -2615,7 +2615,6 @@ Daimon provides Lifedrain buff to single targets `low` and Shield to multiple ta
 
 - Magic — Single target
 - Max HP-based damage — Area, Single target — `high`
-- True damage — Area — `low`
 
 #### Crowd Control provided by Daimon
 
@@ -2740,7 +2739,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Mikola**.
 - **Signature skill**: Dawn Light (ultimate)
 - **Movement**: moving (avg attack range 0.0 tiles)
 - **Behavior tags**: `aoe-damage` `self-repositioner` `untargetable`
-- **Damage types**: Physical `average`, True damage `high`
+- **Damage types**: Physical `average`, True damage `average`
 
 #### Play overview
 
@@ -3695,7 +3694,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 - Athalia (79% `True damage` `Max HP-based damage`)
 - Sylphira (78% `Magic` `Max HP-based damage` `True damage`)
-- Shemira (78% `Magic` `Max HP-based damage` `True damage`)
+- Baelran (65% `True damage` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -6018,7 +6017,7 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 - **Signature skill**: Demonseal Spear (ultimate)
 - **Movement**: high movement (repositioning skills)
 - **Behavior tags**: `ally-shielder` `hp-scaling`
-- **Damage types**: Physical `low`, True damage `average`
+- **Damage types**: Physical `low`, True damage `low`
 
 #### Play overview
 
@@ -6111,7 +6110,7 @@ Korin provides Shield to single targets `average`.
 #### Damage types dealt by Korin
 
 - Physical — Area
-- True damage — Single target — `average`
+- True damage — Single target — `high`
 
 #### Crowd Control provided by Korin
 
@@ -8207,9 +8206,9 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 
 **Damage**
 
-- Valka (95% `True damage` `Physical` `Max HP-based damage`)
 - Athalia (84% `Physical` `True damage` `Max HP-based damage` `HP loss`)
 - Vala (71% `True damage` `Physical` `Max HP-based damage` `HP loss`)
+- Frieren (67% `True damage` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -8442,7 +8441,7 @@ Look for units providing: `CRIT`
 
 - Frieren (100% `True damage` `Max HP-based damage`)
 - Athalia (100% `True damage` `Physical` `Max HP-based damage`)
-- Valka (100% `True damage` `Physical` `Max HP-based damage`)
+- Nara (100% `True damage` `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -9074,7 +9073,7 @@ Parisa excels in basic attack-based teams, buffs crit, and also deals some fairl
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -9485,8 +9484,8 @@ Common buffers are **Twins** or **Mikola**.
 **Damage**
 
 - Frieren (100% `Magic` `Max HP-based damage` `True damage`)
-- Shemira (100% `Magic` `Max HP-based damage` `True damage`)
 - Sylphira (100% `Magic` `Max HP-based damage` `True damage`)
+- Athalia (84% `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -10861,7 +10860,7 @@ These are the **10** strongest pairings:
 - **Signature skill**: Phantom Procession (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
 - **Behavior tags**: `high-damage-ult` `hp-scaling` `life-drain` `summoner`
-- **Damage types**: Magic `high`, Max HP-based damage `high`, True damage `low`
+- **Damage types**: Magic `high`, Max HP-based damage `high`
 
 #### Play overview
 
@@ -10926,7 +10925,8 @@ Common buffers are **Twins**, **Solise**, or **Rowan**.
 **Best overall replacement**
 
 - Sylphira (68% `Damage` `Debuffs on enemies`)
-- Nazrik (55% `Damage` `Debuffs on enemies`)
+- Zorya (58% `Damage` `Similar Skills`)
+- Nazrik (54% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
@@ -10936,9 +10936,9 @@ Common buffers are **Twins**, **Solise**, or **Rowan**.
 
 **Damage**
 
-- Frieren (100% `Magic` `Max HP-based damage` `True damage`)
-- Sylphira (100% `Magic` `Max HP-based damage` `True damage`)
-- Daimon (85% `Max HP-based damage` `Magic` `True damage`)
+- Frieren (100% `Magic` `Max HP-based damage`)
+- Galahad (100% `Magic` `Max HP-based damage`)
+- Saida (100% `Magic` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -10952,7 +10952,6 @@ Common buffers are **Twins**, **Solise**, or **Rowan**.
 
 - Magic — Area, Single target
 - Max HP-based damage — Area, Single target — `high`
-- True damage — Area, Single target — `average`
 
 #### Debuffs provided by Shemira
 
@@ -11752,7 +11751,7 @@ Soren provides Shield (Supreme+) to single targets `low`.
 - **Signature skill**: Grand Finale (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Behavior tags**: `disabler` `life-drain` `mass-cc` `transformation`
-- **Damage types**: Magic `high`, Max HP-based damage `high`, True damage `average`
+- **Damage types**: Magic `high`, Max HP-based damage `high`, True damage `low`
 
 #### Play overview
 
@@ -11830,8 +11829,8 @@ Common buffers are **Twins**, **Ravion**, or **Solise**.
 **Damage**
 
 - Frieren (100% `Magic` `Max HP-based damage` `True damage`)
-- Shemira (100% `Magic` `Max HP-based damage` `True damage`)
 - Athalia (100% `Max HP-based damage` `True damage`)
+- Pippa (100% `Magic` `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -12713,7 +12712,7 @@ Ulmus' gimmick involves not dying on frontlines immediately but rather jumping t
 #### Skill overview
 
 - **Signature skill**: speed `fast`, heal `average`, buffs `average`
-- **Ultimate**: speed `fast`, heal `average`, damage `average`
+- **Ultimate**: speed `fast`, heal `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -13072,7 +13071,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 - **Signature skill**: Phantom Slasher (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
 - **Behavior tags**: `ally-buffer` `ally-shielder` `counterattack`
-- **Damage types**: Physical `high`, Max HP-based damage `high`, True damage `average`
+- **Damage types**: Physical `high`, Max HP-based damage `high`
 
 #### Play overview
 
@@ -13080,7 +13079,7 @@ Valka’s Ultimate is unique, in that it is not tied to a full Energy bar, and i
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, debuffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, debuffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -13133,6 +13132,10 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 ### Units that can act as a replacement for Valka
 
+**Best overall replacement**
+
+- Zorya (54% `Debuffs on enemies` `Crowd Control` `Damage`)
+
 **Buffs on allies**
 
 - Dunlingr (100% `ATK SPD` `Life Drain`)
@@ -13147,9 +13150,9 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 **Damage**
 
-- Nara (100% `True damage` `Physical` `Max HP-based damage`)
-- Athalia (93% `True damage` `Physical` `Max HP-based damage`)
-- Nazrik (91% `True damage` `Physical` `Max HP-based damage`)
+- Himmel (100% `Physical` `Max HP-based damage`)
+- Athalia (100% `Physical` `Max HP-based damage`)
+- Kordan (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -13169,7 +13172,6 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 - Physical — Area
 - Max HP-based damage — Single target — `average`
-- True damage — Single target — `high`
 
 #### Debuffs provided by Valka
 
