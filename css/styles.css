@@ -33,6 +33,8 @@
   --chip-target-fg: #1a5a80;
   --chip-role-bg: #dceee0;
   --chip-role-fg: #305030;
+  --chip-behavior-tag-bg: #f3ece3;
+  --chip-behavior-tag-fg: #6b5848;
   --chip-generic-bg: #e4eaf2;
   --chip-generic-fg: #405070;
   --chip-quality-high-bg: #d4f5dc;
@@ -1237,6 +1239,16 @@ a:hover {
   margin-top: 0;
 }
 
+.replacement-category-icon {
+  display: inline-block;
+}
+
+.replacement-overall-divider {
+  margin: 0.25rem 0 1.35rem;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
 /* Tag chips — shared across summary, skill cards, table, synergies */
 .chip {
   display: inline-block;
@@ -1657,6 +1669,24 @@ html.welcome-warning-pending .welcome-warning,
 .chip-generic {
   background: var(--chip-generic-bg);
   color: var(--chip-generic-fg);
+}
+
+.behavior-tags-cell {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  max-width: 14rem;
+}
+
+.chip-behavior-tag {
+  background: var(--chip-behavior-tag-bg);
+  color: var(--chip-behavior-tag-fg);
+  font-size: 0.82em;
+}
+
+.col-behavior-tags .effect-cell-stack,
+.col-behavior-tags .behavior-tags-cell {
+  max-width: 14rem;
 }
 
 .chip.chip-merged {
