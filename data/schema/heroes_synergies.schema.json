@@ -92,6 +92,7 @@
     "replacements": {
       "type": "object",
       "required": [
+        "overall",
         "buff",
         "energy",
         "healing",
@@ -102,6 +103,9 @@
       ],
       "additionalProperties": false,
       "properties": {
+        "overall": {
+          "$ref": "#/$defs/replacementList"
+        },
         "buff": {
           "$ref": "#/$defs/replacementList"
         },

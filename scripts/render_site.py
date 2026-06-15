@@ -226,7 +226,10 @@ def _build_replacements(
     out: list[dict] = []
     if not isinstance(replacements, dict) or not any(replacements.values()):
         return out
-    for key, label in REPLACEMENT_CATEGORY_LABELS.items():
+    for key in gen.REPLACEMENT_CATEGORY_ORDER:
+        label = REPLACEMENT_CATEGORY_LABELS.get(key)
+        if not label:
+            continue
         entries = replacements.get(key, [])
         if not entries:
             continue

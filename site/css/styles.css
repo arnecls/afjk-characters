@@ -1239,6 +1239,16 @@ a:hover {
   margin-top: 0;
 }
 
+.replacement-category-icon {
+  display: inline-block;
+}
+
+.replacement-overall-divider {
+  margin: 0.25rem 0 1.35rem;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
 /* Tag chips — shared across summary, skill cards, table, synergies */
 .chip {
   display: inline-block;

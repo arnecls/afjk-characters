@@ -94,6 +94,10 @@ def _sanitize_replacements(replacements: dict) -> dict:
         if not isinstance(rows, list):
             rows = []
         out[key] = [row for row in rows if row.get("matches")]
+    overall = replacements.get("overall", [])
+    if not isinstance(overall, list):
+        overall = []
+    out["overall"] = [row for row in overall if row.get("matches")]
     return out
 
 

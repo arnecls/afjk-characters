@@ -830,6 +830,22 @@
               "Stun"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Athalia",
+            "score": 0.6013,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Vala",
+            "score": 0.5291,
+            "matches": [
+              "Damage"
+            ]
+          }
         ]
       }
     },
@@ -1105,7 +1121,8 @@
               "Bind"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Alsa": {
@@ -1522,6 +1539,33 @@
             "matches": [
               "Stun",
               "Knock back"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Galahad",
+            "score": 0.7754,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Zorya",
+            "score": 0.6571,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Soren",
+            "score": 0.5605,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -2045,6 +2089,34 @@
               "Knock down"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Lumont",
+            "score": 0.8864,
+            "matches": [
+              "Buffs on allies",
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Lucca",
+            "score": 0.704,
+            "matches": [
+              "Buffs on allies",
+              "Crowd Control",
+              "Damage"
+            ]
+          },
+          {
+            "name": "Hepler",
+            "score": 0.5408,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          }
         ]
       }
     },
@@ -2347,6 +2419,30 @@
             "score": 1.0,
             "matches": [
               "Bind"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Frieren",
+            "score": 0.5723,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 0.5676,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.553,
+            "matches": [
+              "Damage"
             ]
           }
         ]
@@ -2883,6 +2979,31 @@
               "Knock back"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Perseus",
+            "score": 0.8031,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 0.6703,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Kafra",
+            "score": 0.6105,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          }
         ]
       }
     },
@@ -3162,6 +3283,32 @@
               "Knock down"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Baelran",
+            "score": 0.671,
+            "matches": [
+              "Damage",
+              "Similar Skills",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Pippa",
+            "score": 0.5754,
+            "matches": [
+              "Similar Skills",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Sylphira",
+            "score": 0.5293,
+            "matches": [
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -3408,7 +3555,8 @@
               "Bind"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Baelran": {
@@ -3848,6 +3996,17 @@
               "Knock down"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Sylphira",
+            "score": 0.5711,
+            "matches": [
+              "Crowd Control",
+              "Debuffs on enemies",
+              "Damage"
+            ]
+          }
         ]
       }
     },
@@ -4265,6 +4424,32 @@
             "score": 0.8,
             "matches": [
               "Frighten"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Saida",
+            "score": 0.7264,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Silvina",
+            "score": 0.6432,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Cryonaia",
+            "score": 0.5586,
+            "matches": [
+              "Damage"
             ]
           }
         ]
@@ -5098,7 +5283,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Brutus": {
@@ -5285,6 +5471,24 @@
             "score": 1.0,
             "matches": [
               "Taunt"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Lumont",
+            "score": 0.5922,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          },
+          {
+            "name": "Hepler",
+            "score": 0.5602,
+            "matches": [
+              "Crowd Control",
+              "Damage"
             ]
           }
         ]
@@ -5725,7 +5929,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Callan": {
@@ -6065,7 +6270,8 @@
               "Knock down"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Carolina": {
@@ -6887,6 +7093,17 @@
               "Bind"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Eironn",
+            "score": 0.5714,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -7197,7 +7414,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Cecia": {
@@ -7660,6 +7878,32 @@
               "Bind"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Gwyneth",
+            "score": 0.6765,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 0.6028,
+            "matches": [
+              "Damage",
+              "Crowd Control",
+              "Buffs on allies"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.5231,
+            "matches": [
+              "Damage"
+            ]
+          }
         ]
       }
     },
@@ -7889,7 +8133,8 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Contess": {
@@ -8268,7 +8513,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Cryonaia": {
@@ -8664,7 +8910,25 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Berial",
+            "score": 0.6618,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Mehira",
+            "score": 0.5035,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          }
+        ]
       }
     },
     "Cyran": {
@@ -8936,7 +9200,8 @@
               "Displace"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Daimon": {
@@ -9185,7 +9450,8 @@
               "Frighten"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Damian": {
@@ -9587,7 +9853,8 @@
               "Blind"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Dionel": {
@@ -10018,6 +10285,33 @@
             "score": 1.0,
             "matches": [
               "Knock up"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Frieren",
+            "score": 0.8335,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.6482,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Nazrik",
+            "score": 0.6462,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -10569,7 +10863,8 @@
               "Silence"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Eironn": {
@@ -11032,7 +11327,8 @@
               "Bind"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Twins": {
@@ -11846,6 +12142,32 @@
               "Knock back"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Smokey & Meerky",
+            "score": 0.676,
+            "matches": [
+              "Healing",
+              "Energy provider"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 0.5913,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Rowan",
+            "score": 0.5684,
+            "matches": [
+              "Energy provider",
+              "Healing",
+              "Similar Skills"
+            ]
+          }
         ]
       }
     },
@@ -12190,7 +12512,8 @@
               "Displace"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Faramor": {
@@ -12515,6 +12838,31 @@
             "score": 1.0,
             "matches": [
               "Stun"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Nazrik",
+            "score": 0.6147,
+            "matches": [
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 0.5767,
+            "matches": [
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Vala",
+            "score": 0.5432,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -12964,7 +13312,32 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Smokey & Meerky",
+            "score": 0.6626,
+            "matches": [
+              "Healing",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Mikola",
+            "score": 0.6497,
+            "matches": [
+              "Buffs on allies",
+              "Healing"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.5986,
+            "matches": [
+              "Healing"
+            ]
+          }
+        ]
       }
     },
     "Florabelle": {
@@ -13185,6 +13558,30 @@
             "score": 0.6667,
             "matches": [
               "Knock up"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Pang",
+            "score": 0.5538,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Atalanta",
+            "score": 0.5436,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.5308,
+            "matches": [
+              "Damage"
             ]
           }
         ]
@@ -13474,7 +13871,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Galahad": {
@@ -13798,6 +14196,31 @@
               "Bind"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Saida",
+            "score": 0.6565,
+            "matches": [
+              "Damage",
+              "Buffs on allies"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 0.5058,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Marcille",
+            "score": 0.5011,
+            "matches": [
+              "Damage"
+            ]
+          }
         ]
       }
     },
@@ -14028,7 +14451,8 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Granny Dahnie": {
@@ -14469,6 +14893,18 @@
               "Taunt"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Hepler",
+            "score": 0.653,
+            "matches": [
+              "Buffs on allies",
+              "Crowd Control",
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          }
         ]
       }
     },
@@ -14906,7 +15342,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Gwyneth": {
@@ -15197,6 +15634,33 @@
             "matches": [
               "Bind",
               "Stun"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Atalanta",
+            "score": 0.624,
+            "matches": [
+              "Damage",
+              "Crowd Control",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 0.6006,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Mirael",
+            "score": 0.5842,
+            "matches": [
+              "Damage",
+              "Similar Skills"
             ]
           }
         ]
@@ -15610,7 +16074,33 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Evie",
+            "score": 0.8862,
+            "matches": [
+              "Buffs on allies",
+              "Healing"
+            ]
+          },
+          {
+            "name": "Mikola",
+            "score": 0.7471,
+            "matches": [
+              "Buffs on allies",
+              "Healing"
+            ]
+          },
+          {
+            "name": "Smokey & Meerky",
+            "score": 0.7262,
+            "matches": [
+              "Healing",
+              "Buffs on allies"
+            ]
+          }
+        ]
       }
     },
     "Harak": {
@@ -16070,6 +16560,33 @@
               "Knock down"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Nara",
+            "score": 0.6538,
+            "matches": [
+              "Damage",
+              "Crowd Control",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Seth",
+            "score": 0.6462,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Athalia",
+            "score": 0.6,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -16477,7 +16994,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Hewynn": {
@@ -16780,7 +17298,8 @@
         ],
         "damage": [],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Himmel": {
@@ -17461,6 +17980,33 @@
               "Knock down"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Contess",
+            "score": 0.8538,
+            "matches": [
+              "Buffs on allies",
+              "Healing",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Twins",
+            "score": 0.6809,
+            "matches": [
+              "Healing",
+              "Buffs on allies"
+            ]
+          },
+          {
+            "name": "Mikola",
+            "score": 0.6272,
+            "matches": [
+              "Healing",
+              "Buffs on allies"
+            ]
+          }
         ]
       }
     },
@@ -17797,7 +18343,8 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Hugin": {
@@ -18075,7 +18622,8 @@
         ],
         "damage": [],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Igor": {
@@ -18390,7 +18938,8 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Indris": {
@@ -19231,6 +19780,31 @@
               "Bind"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Faramor",
+            "score": 0.5413,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Korin",
+            "score": 0.5385,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Pippa",
+            "score": 0.5195,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -19706,7 +20280,8 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Kafra": {
@@ -20118,7 +20693,8 @@
               "Knock back"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Kazim": {
@@ -20527,6 +21103,34 @@
             "matches": [
               "Stun",
               "Knock up"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Aliceth",
+            "score": 0.796,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Buffs on allies"
+            ]
+          },
+          {
+            "name": "Vala",
+            "score": 0.6506,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.6036,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -21057,6 +21661,26 @@
             "score": 1.0,
             "matches": [
               "Stun"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Hepler",
+            "score": 0.6598,
+            "matches": [
+              "Healing",
+              "Buffs on allies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Contess",
+            "score": 0.5597,
+            "matches": [
+              "Healing",
+              "Buffs on allies",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -21700,7 +22324,8 @@
               "Bind"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Korin": {
@@ -22000,7 +22625,8 @@
               "Bind"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Kruger": {
@@ -22370,7 +22996,8 @@
               "Knock down"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Kulu": {
@@ -22660,7 +23287,8 @@
               "Knock up"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Laios": {
@@ -23079,7 +23707,8 @@
               "Bind"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Lenya": {
@@ -23512,6 +24141,33 @@
               "Stun"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Soren",
+            "score": 0.6856,
+            "matches": [
+              "Damage",
+              "Similar Skills",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Kafra",
+            "score": 0.6646,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.6462,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -23881,6 +24537,32 @@
             "score": 1.0,
             "matches": [
               "Interrupt"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Saida",
+            "score": 0.7692,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Pippa",
+            "score": 0.6978,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Sylphira",
+            "score": 0.6903,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -24348,7 +25030,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Lucca": {
@@ -24773,7 +25456,8 @@
               "Knock down"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Lucius": {
@@ -25288,6 +25972,35 @@
               "Stun"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Hepler",
+            "score": 0.624,
+            "matches": [
+              "Buffs on allies",
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Scarlita",
+            "score": 0.5745,
+            "matches": [
+              "Crowd Control",
+              "Damage",
+              "Buffs on allies"
+            ]
+          },
+          {
+            "name": "Antandra",
+            "score": 0.5333,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -25540,7 +26253,8 @@
               "Knock up"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Ludovic": {
@@ -25933,6 +26647,16 @@
             "score": 1.0,
             "matches": [
               "Stun"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Smokey & Meerky",
+            "score": 0.5449,
+            "matches": [
+              "Healing",
+              "Similar Skills"
             ]
           }
         ]
@@ -26440,6 +27164,16 @@
               "Stun"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Hepler",
+            "score": 0.5571,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          }
         ]
       }
     },
@@ -26804,7 +27538,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Marcille": {
@@ -27207,6 +27942,15 @@
               "Blind"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Frieren",
+            "score": 0.504,
+            "matches": [
+              "Damage"
+            ]
+          }
         ]
       }
     },
@@ -27484,6 +28228,32 @@
             "score": 1.0,
             "matches": [
               "Stun"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Vala",
+            "score": 0.8703,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Nazrik",
+            "score": 0.7154,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 0.6804,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -27987,7 +28757,8 @@
               "Charm"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Mikola": {
@@ -28671,7 +29442,17 @@
         ],
         "damage": [],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Evie",
+            "score": 0.5079,
+            "matches": [
+              "Buffs on allies",
+              "Healing"
+            ]
+          }
+        ]
       }
     },
     "Mirael": {
@@ -28915,7 +29696,31 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Gwyneth",
+            "score": 0.6067,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Silven",
+            "score": 0.5382,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 0.5169,
+            "matches": [
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Nara": {
@@ -29139,7 +29944,8 @@
               "Knock up"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Natsu": {
@@ -29479,6 +30285,30 @@
               "Knock down"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Frieren",
+            "score": 0.6175,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Marcille",
+            "score": 0.613,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Vala",
+            "score": 0.5539,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -29587,6 +30417,23 @@
             "score": 1.0,
             "matches": [
               "Stun"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Vala",
+            "score": 0.6384,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Athalia",
+            "score": 0.5254,
+            "matches": [
+              "Damage"
             ]
           }
         ]
@@ -30442,7 +31289,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Niru": {
@@ -30863,7 +31711,8 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Odie": {
@@ -31062,7 +31911,31 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Frieren",
+            "score": 0.6889,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Mirael",
+            "score": 0.5538,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Galahad",
+            "score": 0.5002,
+            "matches": [
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Pandora": {
@@ -31290,7 +32163,8 @@
               "Frighten"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Pang": {
@@ -31672,6 +32546,34 @@
               "Stun"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Hepler",
+            "score": 0.7444,
+            "matches": [
+              "Damage",
+              "Similar Skills",
+              "Crowd Control",
+              "Buffs on allies"
+            ]
+          },
+          {
+            "name": "Lenya",
+            "score": 0.6357,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.6334,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -31921,7 +32823,8 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Perseus": {
@@ -32536,6 +33439,32 @@
               "Knock back"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Atalanta",
+            "score": 0.7269,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Aliceth",
+            "score": 0.6133,
+            "matches": [
+              "Damage",
+              "Buffs on allies"
+            ]
+          },
+          {
+            "name": "Cassadee",
+            "score": 0.5745,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          }
         ]
       }
     },
@@ -33051,7 +33980,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Pippa": {
@@ -33261,6 +34191,30 @@
             "score": 0.864,
             "matches": [
               "Bind"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Sylphira",
+            "score": 0.5842,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
+            "name": "Lily May",
+            "score": 0.5817,
+            "matches": [
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Saida",
+            "score": 0.5618,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -33619,7 +34573,8 @@
               "Knock down"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Reinier": {
@@ -33925,6 +34880,16 @@
             "matches": [
               "Displace",
               "Knock down"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Contess",
+            "score": 0.5337,
+            "matches": [
+              "Buffs on allies",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -34237,6 +35202,33 @@
             "score": 1.0,
             "matches": [
               "Knock back"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Atalanta",
+            "score": 0.7821,
+            "matches": [
+              "Damage",
+              "Crowd Control",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.7128,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Kordan",
+            "score": 0.7048,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -34751,7 +35743,24 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Pandora",
+            "score": 0.553,
+            "matches": [
+              "Healing",
+              "Energy provider"
+            ]
+          },
+          {
+            "name": "Fay",
+            "score": 0.5368,
+            "matches": [
+              "Healing"
+            ]
+          }
+        ]
       }
     },
     "Saida": {
@@ -35052,6 +36061,15 @@
             "matches": [
               "Bind",
               "Displace"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Galahad",
+            "score": 0.5165,
+            "matches": [
+              "Damage"
             ]
           }
         ]
@@ -35471,6 +36489,31 @@
               "Bind"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Cecia",
+            "score": 0.752,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Kordan",
+            "score": 0.5385,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 0.5183,
+            "matches": [
+              "Damage"
+            ]
+          }
         ]
       }
     },
@@ -35647,7 +36690,8 @@
               "Charm"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Scarlita": {
@@ -35840,7 +36884,8 @@
               "Knock down"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Seth": {
@@ -36287,6 +37332,32 @@
             "score": 1.0,
             "matches": [
               "Bind"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Harak",
+            "score": 0.5747,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Ravion",
+            "score": 0.5143,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 0.507,
+            "matches": [
+              "Debuffs on enemies",
+              "Crowd Control"
             ]
           }
         ]
@@ -37174,7 +38245,8 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Shakir": {
@@ -37378,7 +38450,8 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Shemira": {
@@ -37853,7 +38926,25 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Sylphira",
+            "score": 0.6828,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Nazrik",
+            "score": 0.5549,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          }
+        ]
       }
     },
     "Silven": {
@@ -38549,6 +39640,32 @@
               "Knock down"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Sylphira",
+            "score": 0.6306,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Zorya",
+            "score": 0.5856,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Nazrik",
+            "score": 0.584,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          }
         ]
       }
     },
@@ -38782,6 +39899,32 @@
             "score": 0.7046,
             "matches": [
               "Frighten"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Hodgkin",
+            "score": 0.6107,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Berial",
+            "score": 0.6037,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Vala",
+            "score": 0.5713,
+            "matches": [
+              "Damage"
             ]
           }
         ]
@@ -39031,7 +40174,8 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Smokey & Meerky": {
@@ -39551,7 +40695,8 @@
               "Interrupt"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Solise": {
@@ -39772,7 +40917,8 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Sonja": {
@@ -40007,7 +41153,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Soren": {
@@ -40449,7 +41596,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Sylphira": {
@@ -40930,6 +42078,32 @@
               "Silence"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Pippa",
+            "score": 0.6212,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Saida",
+            "score": 0.5288,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 0.527,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -41297,7 +42471,8 @@
               "Knock back"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Tasi": {
@@ -41737,7 +42912,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Temesia": {
@@ -42238,7 +43414,8 @@
               "Knock down"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Thador": {
@@ -42613,6 +43790,18 @@
               "Knock down"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Ravion",
+            "score": 0.647,
+            "matches": [
+              "Buffs on allies",
+              "Crowd Control",
+              "Damage",
+              "Similar Skills"
+            ]
+          }
         ]
       }
     },
@@ -42932,7 +44121,8 @@
               "Interrupt"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Tilaya": {
@@ -43269,7 +44459,8 @@
           }
         ],
         "debuff": [],
-        "cc": []
+        "cc": [],
+        "overall": []
       }
     },
     "Ulmus": {
@@ -43722,7 +44913,8 @@
               "Knock up"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Vala": {
@@ -44221,6 +45413,32 @@
               "Stun"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Athalia",
+            "score": 0.6,
+            "matches": [
+              "Damage",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Nazrik",
+            "score": 0.5438,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Silvina",
+            "score": 0.5065,
+            "matches": [
+              "Crowd Control",
+              "Debuffs on enemies"
+            ]
+          }
         ]
       }
     },
@@ -44543,6 +45761,33 @@
             "score": 1.0,
             "matches": [
               "Stun"
+            ]
+          }
+        ],
+        "overall": [
+          {
+            "name": "Perseus",
+            "score": 0.8585,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Atalanta",
+            "score": 0.8418,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Vala",
+            "score": 0.8003,
+            "matches": [
+              "Damage",
+              "Crowd Control",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -45058,7 +46303,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Velara": {
@@ -45472,6 +46718,24 @@
               "Bind"
             ]
           }
+        ],
+        "overall": [
+          {
+            "name": "Solise",
+            "score": 0.6646,
+            "matches": [
+              "Healing",
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.5608,
+            "matches": [
+              "Healing",
+              "Crowd Control"
+            ]
+          }
         ]
       }
     },
@@ -45868,7 +47132,33 @@
             ]
           }
         ],
-        "cc": []
+        "cc": [],
+        "overall": [
+          {
+            "name": "Saida",
+            "score": 0.7015,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Berial",
+            "score": 0.6462,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Pippa",
+            "score": 0.6421,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
+            ]
+          }
+        ]
       }
     },
     "Walker": {
@@ -46286,7 +47576,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Zandrok": {
@@ -46689,7 +47980,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Zanie": {
@@ -47008,7 +48300,8 @@
               "Stun"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     },
     "Zorya": {
@@ -47488,7 +48781,8 @@
               "Knock down"
             ]
           }
-        ]
+        ],
+        "overall": []
       }
     }
   }

@@ -167,6 +167,60 @@ REPLACEMENT_CATEGORIES = (
     "cc",
 )
 
+REPLACEMENT_CATEGORY_DISPLAY = {
+    "buff": "Buffs on allies",
+    "energy": "Energy provider",
+    "healing": "Healing",
+    "similar_skills": "Similar Skills",
+    "damage": "Damage",
+    "debuff": "Debuffs on enemies",
+    "cc": "Crowd Control",
+}
+
+REPLACEMENT_CATEGORY_ORDER = (
+    "overall",
+    *REPLACEMENT_CATEGORIES,
+)
+
+REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE: dict[str, dict[str, float]] = {
+    "damage_dealer": {
+        "similar_skills": 3,
+        "damage": 5,
+        "debuff": 2,
+        "cc": 2,
+        "buff": 1,
+        "healing": 0,
+        "energy": 1,
+    },
+    "tank": {
+        "cc": 4,
+        "buff": 3,
+        "damage": 2,
+        "debuff": 2,
+        "similar_skills": 2,
+        "healing": 2,
+        "energy": 0,
+    },
+    "support": {
+        "buff": 4,
+        "healing": 4,
+        "energy": 3,
+        "similar_skills": 2,
+        "cc": 2,
+        "debuff": 1,
+        "damage": 0,
+    },
+    "specialist": {
+        "similar_skills": 4,
+        "damage": 2,
+        "debuff": 2,
+        "cc": 2,
+        "buff": 2,
+        "healing": 2,
+        "energy": 1,
+    },
+}
+
 _DEFAULT_LIEUTENANT_ENERGY = 200.0
 _DEFAULT_ENERGY_POTION = 200.0
 # Flat-energy equivalent per 1% ally energy recovery speed boost.
@@ -2102,6 +2156,96 @@ def _replacement_rank_score(
     return score
 
 
+def _replacement_category_weights(role: str | None) -> dict[str, float]:
+    """Normalized per-category weights for overall replacement scoring."""
+    role_key = role or _rs.DEFAULT_ROLE_CATEGORY
+    raw = REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE.get(
+        role_key,
+        REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE.get(_rs.DEFAULT_ROLE_CATEGORY, {}),
+    )
+    weights = {key: float(raw.get(key, 0.0)) for key in REPLACEMENT_CATEGORIES}
+    total = sum(weights.values())
+    if total <= 0:
+        even = 1.0 / len(REPLACEMENT_CATEGORIES)
+        return dict.fromkeys(REPLACEMENT_CATEGORIES, even)
+    return {key: weight / total for key, weight in weights.items()}
+
+
+def _overall_replacement_match_labels(
+    active: dict[str, float],
+    weights: dict[str, float],
+) -> list[str]:
+    """Top contributing categories for an overall replacement entry."""
+    ranked = sorted(
+        active.items(),
+        key=lambda item: -(weights.get(item[0], 0.0) * item[1]),
+    )
+    labels: list[str] = []
+    for cat_key, cat_score in ranked:
+        if cat_score < REPLACEMENT_MIN_SCORE:
+            continue
+        label = REPLACEMENT_CATEGORY_DISPLAY.get(cat_key, cat_key)
+        if label not in labels:
+            labels.append(label)
+        if len(labels) >= 5:
+            break
+    if labels:
+        return labels
+    for cat_key, _ in ranked[:3]:
+        label = REPLACEMENT_CATEGORY_DISPLAY.get(cat_key, cat_key)
+        if label not in labels:
+            labels.append(label)
+    return labels or ["Overall"]
+
+
+def _rank_overall_replacements(
+    category_scores: dict[str, list[tuple[float, str, list[str]]]],
+    *,
+    energy_eligible: bool,
+    source_role_category: str | None,
+    source_faction: str | None = None,
+    faction_by_title: dict[str, str] | None = None,
+    source_title: str | None = None,
+    tiers_by_title: dict[str, dict[str, str]] | None = None,
+    role_category_by_title: dict[str, str] | None = None,
+) -> list[dict]:
+    """Weighted blend of all replacement categories, role-weighted."""
+    weights = _replacement_category_weights(source_role_category)
+    by_title: dict[str, dict[str, float]] = defaultdict(dict)
+
+    for key, scores in category_scores.items():
+        if weights.get(key, 0.0) <= 0:
+            continue
+        if key == "energy" and not energy_eligible:
+            continue
+        for raw, title, _matches in scores:
+            by_title[title][key] = raw
+
+    weighted_scores: list[tuple[float, str, list[str]]] = []
+    for title, cat_raw in by_title.items():
+        active = {
+            key: score
+            for key, score in cat_raw.items()
+            if weights.get(key, 0.0) > 0
+        }
+        if not active:
+            continue
+        denom = sum(weights[key] for key in active)
+        blended = sum(weights[key] * active[key] for key in active) / denom
+        match_labels = _overall_replacement_match_labels(active, weights)
+        weighted_scores.append((blended, title, match_labels))
+
+    return _rank_replacement_category(
+        weighted_scores,
+        source_faction=source_faction,
+        faction_by_title=faction_by_title,
+        source_title=source_title,
+        tiers_by_title=tiers_by_title,
+        source_role_category=source_role_category,
+        role_category_by_title=role_category_by_title,
+    )
+
+
 def _rank_replacement_category(
     scores: list[tuple[float, str, list[str]]],
     source_faction: str | None = None,
@@ -2305,6 +2449,16 @@ def compute_replacement_scores(
                 category_scores[key],
                 **rank_kwargs,
             )
+        result[hero_x.title]["overall"] = _rank_overall_replacements(
+            category_scores,
+            energy_eligible=energy_eligible,
+            source_role_category=source_role_category,
+            source_faction=source_faction,
+            faction_by_title=factions,
+            source_title=hero_x.title,
+            tiers_by_title=tiers_by_title,
+            role_category_by_title=role_categories,
+        )
     return result
 
 

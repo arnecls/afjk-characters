@@ -72,6 +72,10 @@ def apply_config(config: dict) -> None:
         _gen.REPLACEMENT_SAME_FACTION_MULT = rs_cfg["same_faction_mult"]
     if "same_role_category_mult" in rs_cfg:
         _gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = rs_cfg["same_role_category_mult"]
+    if "category_weights_by_role" in rs_cfg:
+        _gen.REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE = rs_cfg[
+            "category_weights_by_role"
+        ]
 
     ps = config.get("proximity_synergy", {})
     if "melee_max_range" in ps:

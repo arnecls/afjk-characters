@@ -843,5 +843,80 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         self.assertLess(cov_reverse, cov_forward)
 
 
+class OverallReplacementTests(unittest.TestCase):
+    def setUp(self) -> None:
+        gen.REPLACEMENT_MIN_SCORE = 0.5
+        gen.REPLACEMENT_MAX = 3
+        gen.REPLACEMENT_SAME_FACTION_MULT = 1.0
+        gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = 1.0
+
+    def test_damage_dealer_prefers_high_damage_candidate(self) -> None:
+        category_scores = {
+            "similar_skills": [
+                (0.9, "Skiller - Hero", ["aoe-damage"]),
+                (0.6, "Damager - Hero", ["mark-target"]),
+            ],
+            "damage": [
+                (0.95, "Damager - Hero", ["Physical"]),
+                (0.55, "Skiller - Hero", ["Magic"]),
+            ],
+            "debuff": [(0.0, "Skiller - Hero", []), (0.0, "Damager - Hero", [])],
+            "cc": [(0.0, "Skiller - Hero", []), (0.0, "Damager - Hero", [])],
+            "buff": [(0.0, "Skiller - Hero", []), (0.0, "Damager - Hero", [])],
+            "healing": [(0.0, "Skiller - Hero", []), (0.0, "Damager - Hero", [])],
+            "energy": [],
+        }
+        tiers = _baseline_tiers_for_scores(
+            category_scores["similar_skills"]
+            + category_scores["damage"],
+            source_title="Source - Hero",
+        )
+        ranked = gen._rank_overall_replacements(
+            category_scores,
+            energy_eligible=False,
+            source_role_category="damage_dealer",
+            source_title="Source - Hero",
+            tiers_by_title=tiers,
+        )
+        self.assertTrue(ranked)
+        self.assertEqual(ranked[0]["name"], "Damager")
+
+    def test_support_prefers_healing_and_buffs(self) -> None:
+        category_scores = {
+            "similar_skills": [
+                (0.5, "Healer - Hero", ["ally-healer"]),
+                (0.5, "Striker - Hero", ["aoe-damage"]),
+            ],
+            "damage": [
+                (0.9, "Striker - Hero", ["Physical"]),
+                (0.2, "Healer - Hero", []),
+            ],
+            "healing": [
+                (0.95, "Healer - Hero", ["Direct healing"]),
+                (0.1, "Striker - Hero", []),
+            ],
+            "buff": [
+                (0.9, "Healer - Hero", ["ATK buff"]),
+                (0.2, "Striker - Hero", []),
+            ],
+            "debuff": [],
+            "cc": [],
+            "energy": [],
+        }
+        tiers = _baseline_tiers_for_scores(
+            category_scores["healing"] + category_scores["buff"],
+            source_title="Source - Hero",
+        )
+        ranked = gen._rank_overall_replacements(
+            category_scores,
+            energy_eligible=False,
+            source_role_category="support",
+            source_title="Source - Hero",
+            tiers_by_title=tiers,
+        )
+        self.assertEqual(ranked[0]["name"], "Healer")
+        self.assertIn("Healing", ranked[0]["matches"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -24,16 +24,6 @@ import hero_schema as hs
 OVERVIEW_MD = io.ROOT / "heroes-overview.md"
 OVERVIEW_CSV = io.ROOT / "heroes-overview.csv"
 
-REPLACEMENT_CATEGORY_LABELS = {
-    "buff": "Buffs on allies",
-    "energy": "Energy provider",
-    "healing": "Healing",
-    "similar_skills": "Similar Skills",
-    "damage": "Damage",
-    "debuff": "Debuffs on enemies",
-    "cc": "Crowd Control",
-}
-
 
 def _receiver_synergies(beneficiary_short: str, synergies: dict) -> list[dict]:
     return synergies["heroes"].get(beneficiary_short, {}).get("synergies", [])
@@ -84,6 +74,11 @@ def _load_module(name: str, filename: str):
 rs = _load_module("rewrite_summaries", "rewrite-summaries.py")
 gen = _load_module("gen_overview", "generate-heroes-overview.py")
 csv_mod = _load_module("overview_to_csv", "overview-to-csv.py")
+
+REPLACEMENT_CATEGORY_LABELS = {
+    "overall": "Best overall replacement",
+    **gen.REPLACEMENT_CATEGORY_DISPLAY,
+}
 
 
 def _format_benefit_stat_tags(benefit_stats: list[str]) -> list[str]:
@@ -283,7 +278,10 @@ def build_overview(
             parts.append("")
             parts.append(f"### Units that can act as a replacement for {short}")
             parts.append("")
-            for key, label in REPLACEMENT_CATEGORY_LABELS.items():
+            for key in gen.REPLACEMENT_CATEGORY_ORDER:
+                label = REPLACEMENT_CATEGORY_LABELS.get(key)
+                if not label:
+                    continue
                 entries = replacements.get(key, [])
                 if not entries:
                     continue

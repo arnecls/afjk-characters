@@ -4840,6 +4840,34 @@
     return html;
   }
 
+  function replacementCategoryIcon(label) {
+    const icons = {
+      "Buffs on allies": "💪",
+      "Energy provider": "🔋",
+      Healing: "💚",
+      "Similar Skills": "🏷️",
+      Damage: "⚔️",
+      "Debuffs on enemies": "🥀",
+      "Crowd Control": "💫",
+    };
+    return icons[label] || "";
+  }
+
+  function renderReplacementCategoryHeading(label) {
+    const icon = replacementCategoryIcon(label);
+    if (!icon) {
+      return "<h4>" + escapeHtml(label) + "</h4>";
+    }
+    return (
+      "<h4>" +
+      '<span class="replacement-category-icon" aria-hidden="true">' +
+      icon +
+      "</span> " +
+      escapeHtml(label) +
+      "</h4>"
+    );
+  }
+
   function renderReplacements(sections, mainHero) {
     const reps = sections.replacements;
     if (!reps || !reps.length) return "";
@@ -4848,7 +4876,7 @@
     html += "<h2>Replacement options</h2>";
     reps.forEach(function (cat) {
       html += '<div class="replacement-category">';
-      html += "<h4>" + escapeHtml(cat.category) + "</h4>";
+      html += renderReplacementCategoryHeading(cat.category);
       html += renderHeroRowList(
         cat.entries.map(function (e) {
           let body = "";
@@ -4873,6 +4901,9 @@
         "hero-compact-grid-3"
       );
       html += "</div>";
+      if (cat.category === "Best overall replacement") {
+        html += '<hr class="replacement-overall-divider">';
+      }
     });
     html += "</div>";
     return html;
