@@ -343,8 +343,11 @@ def save_json(path: Path, data: Any) -> None:
     )
 
 
-def load_heroes_data() -> list[dict]:
-    return load_json(HEROES_DATA)
+def load_heroes_data() -> dict:
+    data = load_json(HEROES_DATA)
+    for hero in data.get("heroes", []):
+        normalize_hero_skills(hero)
+    return data
 
 
 def load_processed() -> dict:

@@ -1893,9 +1893,9 @@ An outstanding Marksman who makes a big difference under allied reinforcement an
 Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) + 15% damage to all adjacent enemies. The last hit of spear thrust knocks the enemy into the air, and its damage dealt is increased to 250% (ATK-based).
 
 - Level 2: Unlocks at level 51: Gains a Nectar Feast buff within the effect duration. Using this skill won't shorten its duration until the skill ends if Dionel has already been buffed.
-- Level 3: Unlocks at level 111: Increases the damage of to 180% (ATK-based) &plus; 15% and the damage of its last hit to 260% (ATK-based).
+- Level 3: Unlocks at level 111: Increases the damage of to 180% (ATK-based) + 15% and the damage of its last hit to 260% (ATK-based).
 - Level 4: Unlocks at level 171: The skill duration is extended by 2s if Dionel achieves an Assist or Defeat on an enemy hero, triggered only once per casting.
-- Level 5: Unlocks at level 231: Increases the damage of to 190% (ATK-based) &plus; 15% and the damage of its last hit to 270% (ATK-based).
+- Level 5: Unlocks at level 231: Increases the damage of to 190% (ATK-based) + 15% and the damage of its last hit to 270% (ATK-based).
 
 ### Skill1
 
@@ -1906,9 +1906,9 @@ Dionel soars into the air and becomes untargetable for 6s, during which he attac
 
 Passive. Dionel's normal attack turns into a Penetration attack, dealing 145% + 15% damage to all enemies along the way.
 
-- Level 2: Unlocks at level 71: Increases the Penetration attack damage to 150% &plus; 15%.
+- Level 2: Unlocks at level 71: Increases the Penetration attack damage to 150% + 15%.
 - Level 3: Unlocks at level 131: Flashes to a better attacking position if not in a good spot, triggered once every 6s.
-- Level 4: Unlocks at level 191: Increases the Penetration attack damage to 155% &plus; 15%.
+- Level 4: Unlocks at level 191: Increases the Penetration attack damage to 155% + 15%.
 
 ### Skill2
 
@@ -1922,7 +1922,7 @@ Passive. Dionel gains a stack of Intoxication when receiving the non-permanent s
 
 - Level 2: Unlocks at level 91: For each Intoxication stack, the ATK bonus is increased to 16%, and the ATK SPD bonus is increased to 16.
 - Level 3: Unlocks at level 151: For each Intoxication stack, the ATK bonus is increased to 18%, and the ATK SPD bonus is increased to 18.
-- Level 4: Unlocks at level 211: The bonuses from active casting are increased to 25% &plus; 2% ATK and 25 &plus; 3 ATK SPD.
+- Level 4: Unlocks at level 211: The bonuses from active casting are increased to 25% + 2% ATK and 25 + 3 ATK SPD.
 
 ### Unlocks at Legendary+
 
@@ -6085,9 +6085,9 @@ A Marksman who is skilled at war of attrition and dealing continuous damage.
 Odie fires a Corrosive Dart, dealing 150% (ATK-based) + 20% damage and Dart Poison to an enemy. The poisoned target will receive 30% (ATK-based) damage every second until defeated. Dart Poison cannot be dispelled.
 
 - Level 2 — Unlocks at Level 51: Gains 600 Energy when a poisoned enemy is defeated, but only 200 Energy if the enemy is a summoned unit.
-- Level 3 — Unlocks at Level 111: Increases damage to 200% (ATK-based) &plus; 20%.
-- Level 4 — Unlocks at Level 171: Increases damage to 225% (ATK-based) &plus; 20%.
-- Level 5 — Unlocks at Level 231: Increases damage to 250% (ATK-based) &plus; 20%.
+- Level 3 — Unlocks at Level 111: Increases damage to 200% (ATK-based) + 20%.
+- Level 4 — Unlocks at Level 171: Increases damage to 225% (ATK-based) + 20%.
+- Level 5 — Unlocks at Level 231: Increases damage to 250% (ATK-based) + 20%.
 
 ### Skill1
 
@@ -6099,9 +6099,9 @@ Odie fires a Corrosive Dart, dealing 150% (ATK-based) + 20% damage and Dart Pois
 
 Odie deals 60% (ATK-based) + 5% damage to an enemy 3 times. The attacks from this skill are considered normal attacks.
 
-- Level 2 — Unlocks at Level 71: Increases damage to 62% (ATK-based) &plus; 5%.
-- Level 3 — Unlocks at Level 131: Increases damage to 65% (ATK-based) &plus; 5%.
-- Level 4 — Unlocks at Level 191: Increases damage to 70% (ATK-based) &plus; 5%.
+- Level 2 — Unlocks at Level 71: Increases damage to 62% (ATK-based) + 5%.
+- Level 3 — Unlocks at Level 131: Increases damage to 65% (ATK-based) + 5%.
+- Level 4 — Unlocks at Level 191: Increases damage to 70% (ATK-based) + 5%.
 
 ### Skill2
 
@@ -7475,10 +7475,10 @@ A ferocious Warrior who can dominate the battlefield, especially in his Wolf Mod
 
 Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected. Shakir consumes 60 Energy per second to maintain his wolf shape. Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks. Allies within the range of Lupine Aura reduce 20% + 2% taken damage and increase 10 + 3 Haste.
 
-- Level 2: Reduce the allies' damage taken within Lupine Aura by 20% &plus; 2% and increase their Haste by 15 &plus; 3.
-- Level 3: Reduce the allies' damage taken within Lupine Aura by 25% &plus; 2% and increase their Haste by 15 &plus; 3.
-- Level 4: Reduce the allies' damage taken within Lupine Aura by 25% &plus; 2% and increase their Haste by 20 &plus; 3.
-- Level 5: Reduce the allies' damage taken within Lupine Aura by 25% &plus; 2% and increase their Haste by 25 &plus; 3.
+- Level 2: Reduce the allies' damage taken within Lupine Aura by 20% + 2% and increase their Haste by 15 + 3.
+- Level 3: Reduce the allies' damage taken within Lupine Aura by 25% + 2% and increase their Haste by 15 + 3.
+- Level 4: Reduce the allies' damage taken within Lupine Aura by 25% + 2% and increase their Haste by 20 + 3.
+- Level 5: Reduce the allies' damage taken within Lupine Aura by 25% + 2% and increase their Haste by 25 + 3.
 
 ### Skill1
 
@@ -7490,9 +7490,9 @@ Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and d
 
 Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10% damage with his first 2 attacks and 160% + 20% damage with his 3rd attack. While in Wolf Form, this skill damages enemies within a frontal 1-tile arc.
 
-- Level 2: The 3rd attack deals 180% &plus; 20% damage.
-- Level 3: The 3rd attack deals 200% &plus; 20% damage.
-- Level 4: The 3rd attack deals 220% &plus; 20% damage.
+- Level 2: The 3rd attack deals 180% + 20% damage.
+- Level 3: The 3rd attack deals 200% + 20% damage.
+- Level 4: The 3rd attack deals 220% + 20% damage.
 
 ### Skill2
 
@@ -7501,9 +7501,9 @@ Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10%
 
 Passive. Shakir gains 25 Ranged DEF. In Wolf Form, he is Unaffected and gains 30 + 5 Life Drain. Each non-summoned ally within Lupine Aura him 5% + 1% ATK.
 
-- Level 2: Increases passive Life Drain bonus to 40 &plus; 5.
+- Level 2: Increases passive Life Drain bonus to 40 + 5.
 - Level 3: Increases passive Ranged DEF bonus to 30.
-- Level 4: The bonus ATK from each non-summoned ally within Lupine Aura is increased to 7.5% &plus; 1%.
+- Level 4: The bonus ATK from each non-summoned ally within Lupine Aura is increased to 7.5% + 1%.
 
 ### Unlocks at Legendary+
 
