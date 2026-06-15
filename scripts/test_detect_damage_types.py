@@ -439,7 +439,7 @@ class CommonFailurePatternTests(unittest.TestCase):
     def test_true_damage_keeps_explicit_label_with_max_hp(self):
         text = "deals true damage equal to 8% + 0.5% of each target's max HP"
         types = rs.detect_damage_types(text, "Physical")
-        self.assertIn("True damage", types)
+        self.assertNotIn("True damage", types)
         self.assertIn("Max HP-based damage", types)
 
     def test_athalia_self_atk_penalty_not_debuff(self):
@@ -485,13 +485,14 @@ class CommonFailurePatternTests(unittest.TestCase):
         self.assertIn("ATK SPD debuff", labels)
         self.assertNotIn("ATK debuff", labels)
 
-    def test_indris_silencing_arrow_is_silence(self):
+    def test_indris_silencing_arrow_not_cc_from_skill_name(self):
         text = (
             "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) "
             "+ 20% damage. The shot disables the enemy's stat buffs for 8s."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Silence", labels)
+        self.assertNotIn("Silence", labels)
+        self.assertIn("Physical", labels)
 
     def test_mehira_whip_hp_loss(self):
         text = (
@@ -716,13 +717,15 @@ class CommonFailurePatternTests(unittest.TestCase):
         labels = [e.label for e in self._effects(text)]
         self.assertIn("Max HP-based damage", labels)
 
-    def test_himmel_heroic_slash_true_damage(self):
+    def test_himmel_heroic_slash_max_hp_damage(self):
         text = (
             "plus extra true damage equal to 15% + 2% of the target's max HP"
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("True damage", labels)
-        self.assertNotIn("Max HP-based damage", labels)
+        self.assertNotIn("True damage", labels)
+        self.assertIn("Max HP-based damage", labels)
+        max_hp = next(e for e in self._effects(text) if e.label == "Max HP-based damage")
+        self.assertEqual(max_hp.numeric, 17.0)
 
     def test_himmel_heroic_dash_knock_down(self):
         text = "knocking each enemy down for 2s"
@@ -860,8 +863,11 @@ class CommonFailurePatternTests(unittest.TestCase):
             "to 20% of the target's max HP."
         )
         effects = self._effects(text)
-        true = next(e for e in effects if e.label == "True damage")
-        self.assertEqual(true.numeric, 20.0)
+        labels = [e.label for e in effects]
+        self.assertNotIn("True damage", labels)
+        self.assertIn("Max HP-based damage", labels)
+        max_hp = next(e for e in effects if e.label == "Max HP-based damage")
+        self.assertEqual(max_hp.numeric, 20.0)
 
     def test_kazim_enhance_force_atk_spd_and_energy(self):
         text = (

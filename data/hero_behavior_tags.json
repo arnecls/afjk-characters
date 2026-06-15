@@ -337,7 +337,8 @@
     "ally-healer",
     "aoe-damage",
     "revive",
-    "summoner"
+    "summoner",
+    "high-damage-ult"
   ],
   "Marilee": [
     "hp-scaling",

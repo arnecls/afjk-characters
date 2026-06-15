@@ -51,6 +51,13 @@ damage for 2s".
 
 True damage types ignore defensive stats and shields.
 
+**Hierarchy:** Max HP-based damage and HP loss are specialized forms of true
+damage. When both a generic `True damage` label and a concrete subtype apply
+to the same scaling phrase, keep the subtype and drop generic True. Never
+drop Max HP-based damage or HP loss in favor of generic True damage—the
+subtype labels are more precise (including `plus extra true damage equal to …
+max HP` riders).
+
 ## Targeting
 
 - Self

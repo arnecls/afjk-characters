@@ -227,16 +227,53 @@ class RoundTripTests(unittest.TestCase):
 
 
 class SkillOverviewTests(unittest.TestCase):
-    def _hero_by_display(self, display_name: str):
+    _roster_cache: tuple[list, dict[str, str], dict[str, str]] | None = None
+    _behavior_cache: dict[str, object] | None = None
+
+    @classmethod
+    def _all_heroes_analyzed(cls):
+        if cls._roster_cache is None:
+            text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
+            blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
+            cls._roster_cache = _analyze_heroes_from_blocks(blocks)
+        return cls._roster_cache
+
+    @classmethod
+    def _behavior_by_title(cls) -> dict[str, object]:
+        if cls._behavior_cache is None:
+            heroes, _blocks, role_category_by_title = cls._all_heroes_analyzed()
+            display_by_title = {
+                h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
+            }
+            cls._behavior_cache = rs.build_behavior_for_heroes(
+                heroes, display_by_title, role_category_by_title=role_category_by_title
+            )
+        return cls._behavior_cache
+
+    def _hero_block(self, display_name: str) -> str:
         text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
         blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-        heroes, _blocks, role_category_by_title = _analyze_heroes_from_blocks(blocks)
+        matching = [
+            b
+            for b in blocks
+            if b.split("\n", 1)[0].removeprefix("## ").split(" - ", 1)[0].strip()
+            == display_name
+        ]
+        self.assertEqual(len(matching), 1, f"hero not found: {display_name}")
+        return matching[0]
+
+    def _hero_analyzed(self, display_name: str):
+        """Analyze one hero block — for per-hero skill card / effect checks."""
+        heroes, _, _role = _analyze_heroes_from_blocks([self._hero_block(display_name)])
+        return heroes[0]
+
+    def _hero_by_display(self, display_name: str):
+        """Full roster (cached) — needed for behavior / overview peer thresholds."""
+        heroes, _blocks, _role = self._all_heroes_analyzed()
+        behavior_by_title = self._behavior_by_title()
         display_by_title = {
             h.title: h.title.split(" - ", 1)[0].strip() for h in heroes
         }
-        behavior_by_title = rs.build_behavior_for_heroes(
-            heroes, display_by_title, role_category_by_title=role_category_by_title
-        )
         for hero in heroes:
             if display_by_title[hero.title] == display_name:
                 return hero, behavior_by_title[hero.title]
@@ -355,7 +392,7 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotIn("##### Ex. Skill", text)
 
     def test_format_skill_cards_aliceth(self):
-        hero, _ = self._hero_by_display("Aliceth")
+        hero = self._hero_analyzed("Aliceth")
         summaries = rs._load_skill_summaries().get("Aliceth", {})
         categories = set(summaries)
         source_skills: list[dict] = []
@@ -407,7 +444,7 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotEqual(buff_key, debuff_key)
 
     def test_contess_skill2_skill_card_energy_recovery_debuff(self):
-        hero, _ = self._hero_by_display("Contess")
+        hero = self._hero_analyzed("Contess")
         tags = rs.format_skill_card_tags(hero, "skill2")
         self.assertIn("Energy recovery debuff", tags)
         keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
@@ -415,7 +452,7 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotIn("energy recovery", keys)
 
     def test_galahad_ultimate_skill_card_includes_haste_debuff(self):
-        hero, _ = self._hero_by_display("Galahad")
+        hero = self._hero_analyzed("Galahad")
         summaries = rs._load_skill_summaries().get("Galahad", {})
         categories = set(summaries)
         tags = rs.format_skill_card_tags(hero, "ultimate")
@@ -426,7 +463,7 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertEqual(len(keys), len(set(keys)))
 
     def test_kazim_skill5_self_targeted_energy_recovery_tag(self):
-        hero, _ = self._hero_by_display("Kazim")
+        hero = self._hero_analyzed("Kazim")
         tags = rs.format_skill_card_tags(hero, "skill5")
         self.assertIn("Energy recovery — Self", tags)
         self.assertIn("ATK SPD buff — Self", tags)
@@ -435,8 +472,8 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("atk spd", keys)
 
     def test_kazim_skill_cards_omit_implicit_max_hp_damage(self):
-        hero, _ = self._hero_by_display("Kazim")
-        for category in ("ultimate", "skill1", "skill2", "skill4"):
+        hero = self._hero_analyzed("Kazim")
+        for category in ("ultimate", "skill1", "skill2"):
             tags = rs.format_skill_card_tags(hero, category)
             tag_text = " ".join(tags)
             self.assertNotIn(
@@ -447,13 +484,14 @@ class SkillOverviewTests(unittest.TestCase):
         ult_tags = rs.format_skill_card_tags(hero, "ultimate")
         self.assertIn("Physical", ult_tags)
         mythic_tags = rs.format_skill_card_tags(hero, "skill4")
-        self.assertIn("True damage", mythic_tags)
+        self.assertNotIn("True damage", mythic_tags)
+        self.assertIn("Max HP-based damage", mythic_tags)
 
     def test_skill_card_damage_tags_match_skill_slices(self):
         """Damage chips come from skill_slices, not a parallel text re-parse."""
         samples = ("Kazim", "Aliceth", "Galahad", "Athalia")
         for display in samples:
-            hero, _ = self._hero_by_display(display)
+            hero = self._hero_analyzed(display)
             for category in rs.SKILL_CATEGORY_ORDER:
                 section = rs.CATEGORY_TO_SECTION.get(category)
                 if not section or section not in hero.skill_slices:

@@ -103,6 +103,8 @@ def _prefer_buff_targeting(candidate: str, current: str) -> str:
     if candidate == "Self" or current == "Self":
         if candidate == current:
             return candidate
+        if "Single target" in (candidate, current):
+            return "Self"
         return candidate if candidate != "Self" else current
     cp = _TARGETING_PRIORITY.get(candidate, 99)
     cu = _TARGETING_PRIORITY.get(current, 99)
@@ -237,6 +239,10 @@ def _allies_receive_healing(clause: str) -> bool:
         t,
     ):
         return True
+    if re.search(r"\bheals? \d+ weakest all(?:y|ies)\b", t):
+        return True
+    if re.search(r"\bheals? (?:the )?weakest all(?:y|ies)\b", t):
+        return True
     if re.search(r"\bheals? all allies\b", t):
         return True
     if re.search(
@@ -336,6 +342,21 @@ def _resolve_buff_targeting(
     ):
         return "Multiple targets"
     if is_hp_recovery_label(label) and _healing_targets_self(t):
+        if re.search(
+            r"\b(?:to|for) (?:the )?(?:weakest |marked |rearmost )?ally\b", t
+        ):
+            return detect_targeting(snippet, label, "buff")
+        return "Self"
+    if label in ("Haste buff", "Crit buff", "Max HP buff", "DEF Penetration buff"):
+        self_pat = (
+            r"\b(?:increas(?:e|es|ing)|boosts?|grants?) (?:her |his |their )"
+            r"(?:haste|crit|max hp|penetration)\b"
+        )
+        if re.search(self_pat, t) or re.search(self_pat, full):
+            return "Self"
+    if label in ("Dodge chance buff", "Crit buff") and re.search(
+        r"\b(?:she|he|they) gains? \d+", t
+    ):
         return "Self"
     if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
         return "Self"
@@ -806,6 +827,10 @@ class Effect:
     magnitude: str = "average"
     # Radius tile count when targeting is Area; None uses schema default (2).
     area_count: int | None = None
+    # Parsed unit count for Multiple targets; None uses schema default (3).
+    target_count: int | None = None
+    # Timed buff/debuff/shield duration in seconds when extractable.
+    duration: float | None = None
     # Buffs only: None = always relevant; frequent = often (>~50% of fights);
     # rare = situational (not every battle / kill-gated / limited procs).
     conditional: str | None = None
@@ -1315,8 +1340,52 @@ def add_cc_immunity(hero: Hero, imm_type: str, tier: str, text: str):
     hero.cc_immunities.append(CcImmunity(imm_type, tier, targeting, timing))
 
 
+def _dot_is_discrete_proc(text: str) -> bool:
+    """Periodic proc or cooldown-gated hit — not sustained enemy DoT."""
+    t = text.lower()
+    if re.search(
+        r"once every|auto-shot|auto(?:matically)?[- ]?shoot|"
+        r"per-enemy cooldown|every \d+\.?\d*s at most",
+        t,
+    ):
+        return True
+    if re.search(r"shoots? .{0,50}every \d+(?:\.\d+)?\s*s", t):
+        return True
+    if re.search(
+        r"when .{0,80}(?:enter|enters) (?:the |its |a )(?:domain|field|zone)",
+        t,
+    ):
+        return True
+    if re.search(
+        r"each time .{0,80}(?:enter|enters|brought into).{0,40}"
+        r"(?:domain|field|zone)",
+        t,
+    ):
+        return True
+    return False
+
+
+def _is_ally_hp_threshold_context(text: str) -> bool:
+    """Trigger threshold on ally HP — not a combat heal/damage effect."""
+    t = text.lower()
+    return bool(
+        re.search(
+            r"when .{0,80}(?:ally|allies).{0,60}(?:hp |health ).{0,40}"
+            r"(?:falls?|drops?|below|reaches)",
+            t,
+        )
+        or re.search(r"hp (?:falls?|drops?) below \d+(?:\.\d+)?%", t)
+    )
+
+
 def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     t = text.lower()
+    if re.search(
+        r"along the path|1-tile-wide path|penetrating line|"
+        r"all enemies along|enemies along the path",
+        t,
+    ):
+        return "Area"
     if re.search(
         r"\benemies?\s+(?:inside|within)\s+(?:the\s+)?(?:circle|forcefield|field|it)\b",
         t,
@@ -1680,6 +1749,7 @@ def extract_number(text: str, label: str = "") -> float | None:
         amounts = _all_amounts(
             text,
             [
+                r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s+haste reduction",
                 r"reduc(?:e|es|ing) .{0,40}haste by (\d+(?:\.\d+)?)"
                 r"(?:\s+for|\s+until|\b)",
                 r"los(?:e|es|ing) (\d+(?:\.\d+)?)\s+haste\b",
@@ -1733,6 +1803,20 @@ def extract_number(text: str, label: str = "") -> float | None:
             return max(amounts)
         return None
     if label == "Shield":
+        amounts = _all_amounts(
+            text,
+            [
+                r"shield (?:that can absorb|equal to|value|that blocks) "
+                r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+                r"increases? the shield value to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+                r"gains? a shield that (?:can )?absorb(?:s)? "
+                r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+                r"crafts? a cogshield .{0,40}block "
+                r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+            ],
+        )
+        if amounts:
+            return max(amounts)
         m = re.search(r"converting\s+(\d+(?:\.\d+)?)\s*%", text, re.I)
         if m:
             return float(m.group(1))
@@ -1760,6 +1844,18 @@ def extract_number(text: str, label: str = "") -> float | None:
         amounts = _healing_amounts(text)
         if amounts:
             return max(amounts)
+        return None
+    if label == "Lifedrain buff":
+        for pat in (
+            r"life drain in giant form to (\d+(?:\.\d+)?)",
+            r"increases? life drain (?:in giant form )?to (\d+(?:\.\d+)?)",
+            r"(\d+(?:\s*\+\s*\d+(?:\.\d+)?)?)\s*life drain",
+        ):
+            if m := re.search(pat, t, re.I):
+                raw = m.group(1).replace(" ", "")
+                if "+" in raw:
+                    return float(raw.split("+")[0].strip())
+                return float(raw)
         return None
     # Flat stat values (Haste 60+4, ATK SPD 45+5) before generic patterns
     stat_pats = [
@@ -2153,6 +2249,15 @@ def add_effect(
         else extract_number(cond_text, label)
     )
     cond = _buff_condition(category, cond_text)
+    timed_dur = (
+        extract_timed_duration(cond_text, label)
+        if category in ("buff", "debuff")
+        else extract_timed_duration(text, label)
+        if category == "damage" and label == "DoT"
+        else None
+    )
+    count_text = cond_text if category == "buff" else text
+    parsed_count = parse_target_count(count_text) or parse_target_count(text)
     new_buff_tgt = (
         _resolve_buff_targeting(text, label, scope=scope)
         if category == "buff"
@@ -2212,6 +2317,12 @@ def add_effect(
             cur.targeting,
             from_cue=_text_has_targeting_cue(cond_text),
         )
+        if parsed_count is not None:
+            cur.target_count = parsed_count
+        if timed_dur is not None and (
+            cur.duration is None or timed_dur > cur.duration
+        ):
+            cur.duration = timed_dur
         if source_section and not cur.source_section:
             cur.source_section = source_section
         return
@@ -2227,6 +2338,10 @@ def add_effect(
     area_count = _resolve_area_count(
         targeting_text if category != "buff" else cond_text, buff_tgt
     )
+    if buff_tgt == "Area" and area_count == 2:
+        full_count = parse_area_tile_count(text)
+        if full_count is not None:
+            area_count = full_count
     effects.append(
         Effect(
             category=category,
@@ -2237,6 +2352,8 @@ def add_effect(
             qualitative=cond_text,
             conditional=cond,
             area_count=area_count,
+            target_count=parsed_count,
+            duration=timed_dur,
             source_section=source_section,
         )
     )
@@ -2554,9 +2671,59 @@ def _text_has_targeting_cue(text: str) -> bool:
     )
 
 
+def parse_target_count(text: str) -> int | None:
+    """How many units when text names an explicit count."""
+    t = text.lower()
+    for pat in (
+        r"weakest (\d+) allies",
+        r"(\d+) weakest allies",
+        r"(\d+) closest enemies",
+        r"(\d+) nearest enemies",
+        r"(\d+) highest[- ]damage (?:dealers|enemies)",
+        r"(\d+) (?:closest|nearest|different) enemies",
+        r"(\d+) enemies",
+        r"(\d+) allies",
+    ):
+        if m := re.search(pat, t):
+            return int(m.group(1))
+    return None
+
+
+def extract_timed_duration(text: str, label: str = "") -> float | None:
+    """Buff/debuff/shield duration in seconds from skill text."""
+    text = _normalize_effect_text(text)
+    t = text.lower()
+    if label == "Shield" or "shield" in label.lower():
+        for pat in (
+            r"shield.{0,60}for (\d+(?:\.\d+)?)\s*s\b",
+            r"blocks? \d+(?:\.\d+)?%.{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+            r"absorb(?:s|ing)? \d+(?:\.\d+)?%.{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+            r"cogshield .{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+        ):
+            if m := re.search(pat, t):
+                return float(m.group(1))
+    for pat in (
+        r"for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
+        r"for (\d+(?:\.\d+)?)\s*s\b",
+        r"lasting for (\d+(?:\.\d+)?)\s*s\b",
+        r"while active.{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+    ):
+        if m := re.search(pat, t):
+            if m.lastindex and m.lastindex >= 2 and m.group(2) is not None:
+                return float(m.group(1)) + float(m.group(2))
+            return float(m.group(1))
+    return None
+
+
 def parse_area_tile_count(text: str) -> int | None:
     """Tile radius for Area targeting; None when text has no AoE cue."""
     t = text.lower()
+    if re.search(r"\b1[-\s]*tile(?:\s+magic)?\s+circle\b", t):
+        return 1
+    if m := re.search(r"(\d+)[-\s]*tile[-\s]*wide", t):
+        return max(1, int(m.group(1)))
+    if m := re.search(r"(\d+)\s*[×x]\s*(\d+)", t):
+        return max(int(m.group(1)), int(m.group(2)))
     if re.search(r"\badjacent\b", t):
         return 1
     if re.search(r"\bsurrounding\b", t):
@@ -3499,6 +3666,38 @@ def _text_has_max_hp_damage(text: str) -> bool:
             return True
     return False
 
+
+_TRUE_DAMAGE_MAX_HP_RE = re.compile(
+    r"true damage equal to \d+(?:\.\d+)?(?:\s*%\s*"
+    r"(?:\+\s*\d+(?:\.\d+)?(?:\s*%\s*)?)?)?\s+of (?:the )?(?:each )?"
+    r"(?:target'?s?|targets'?|enemies'?) max hp",
+    re.I,
+)
+
+
+def _true_damage_primary_scales_on_max_hp(text: str) -> bool:
+    """True when true damage scales on target max HP."""
+    return bool(_TRUE_DAMAGE_MAX_HP_RE.search(text))
+
+
+def _apply_true_damage_hierarchy(types: list[str], text: str) -> list[str]:
+    """Drop redundant generic True when a concrete true-damage subtype applies.
+
+    Max HP-based damage and HP loss are specialized true-damage forms. Keep
+    the subtype label; never drop Max HP or HP loss in favor of generic True.
+    """
+    if "True damage" not in types:
+        return types
+    out = list(types)
+    if "Max HP-based damage" in out and _true_damage_primary_scales_on_max_hp(
+        text
+    ):
+        out = [d for d in out if d != "True damage"]
+    if "HP loss" in out and _text_has_lost_hp_damage(text):
+        if not _text_has_primary_true_damage(text):
+            out = [d for d in out if d != "True damage"]
+    return out
+
 # Damage that scales on HP already lost (not direct HP drain or game-term
 # "HP loss" vulnerability / heal-on-lost-HP text in the same clause).
 _LOST_HP_SCALING_RES = [
@@ -3660,6 +3859,14 @@ def _healing_amounts(text: str) -> list[float]:
         r"restor(?:e|es|ing) (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of",
         r"restor(?:e|es|ing) (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
         r"(\d+(?:\.\d+)?)\s*%\s*hp",
+        r"restor(?:e|es|ing) hp equal to (\d+(?:\.\d+)?)\s*%\s*of",
+        r"recovers? hp equal to (\d+(?:\.\d+)?)\s*%\s*of",
+        r"restores? hp equal to (\d+(?:\.\d+)?)\s*%\s*of",
+        r"recovers? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*hp\b",
+        r"restoring (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*hp\b",
+        r"equal to (\d+(?:\.\d+)?)\s*%\s*of (?:the )?damage dealt",
+        r"(\d+(?:\.\d+)?)\s*%\s*of (?:the )?defeated (?:unit'?s?|target'?s?) "
+        r"max hp",
     ]
     found: list[float] = []
     for pat in hp_patterns:
@@ -4154,7 +4361,7 @@ def _is_damage_scalar_upgrade_chunk(text: str) -> bool:
     if re.search(
         r"increases? the (?:damage dealt when (?:summoning|casting)|"
         r"storm damage per hit|subsequent damage to|entangled target'?s "
-        r"damake taken per second|dark flame damage)",
+        r"damake taken per second|dark flame damage|shield value)",
         t,
     ):
         return True
@@ -4223,11 +4430,12 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
     if re.search(r"\bmagic damage\b", t) and not non_dealt:
         if not re.search(r"magic damage taken", t):
             types.append("Magic")
-    if _text_has_dot_damage(text):
+    if _text_has_dot_damage(text) and not _dot_is_discrete_proc(text):
         types.append("DoT")
     if "True damage" in types and "Max HP-based damage" in types:
         if re.search(r"\+\s*\d+(?:\.\d+)?%\s+true damage", t):
             types = [dt for dt in types if dt != "Max HP-based damage"]
+    types = _apply_true_damage_hierarchy(types, text)
     if re.search(r"increases? the true damage dealt to", t):
         types = [dt for dt in types if dt != "Max HP-based damage"]
     if _dot_is_channeled_skill_damage(text):
@@ -4247,6 +4455,18 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
         types.append(primary_dmg)
     if "True damage" in types and _primary_damage_is_true_scored(text):
         types = [dt for dt in types if dt not in (primary_dmg, "Physical", "Magic")]
+    if (
+        "Max HP-based damage" in types
+        and primary_dmg in types
+        and re.search(
+            r"\d+(?:\.\d+)?%\s*\(atk-based\)\s*\+\s*\d+(?:\.\d+)?%\s+damage\b",
+            t,
+        )
+        and not _text_has_max_hp_damage(text)
+    ):
+        amounts = _atk_flat_max_hp_amounts(text)
+        if not amounts or max(amounts) < 30:
+            types = [dt for dt in types if dt != "Max HP-based damage"]
     seen: set[str] = set()
     ordered: list[str] = []
     for dt in types:
@@ -4665,6 +4885,8 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
             full,
         ):
             return True
+    if label == "Silence" and re.search(r"\bsilencing arrow\b", t):
+        return True
     if label == "Stun" and re.search(
         r"cannot move or act|unable to move or act", t
     ) and re.search(
@@ -4698,13 +4920,28 @@ def analyze_text(
                 and (
                     _scope_is_hp_loss_not_healing(scope)
                     or _dot_is_healing_lock_hp_drain(scope)
+                    or re.search(r"max hp per second", scope.lower())
                 )
             ):
                 continue
+            if is_hp_recovery_label(label) and _is_ally_hp_threshold_context(
+                scope
+            ):
+                continue
             if label == "DEF Penetration buff" and re.search(
-                r"attacks against .{0,60}penetration|"
                 r"penetration applied to .{0,60}attacks against",
                 scope.lower(),
+            ) and not re.search(
+                r"(?:gain(?:s|ing)? (?:an )?extra|increases? .{0,50}by) "
+                r"\d+",
+                scope.lower(),
+            ):
+                continue
+            if label == "DEF Penetration buff" and re.search(
+                r"attacks against .{0,60}penetration",
+                scope.lower(),
+            ) and not re.search(
+                r"gain(?:s|ing)? (?:an )?extra \d+.*penetration", scope.lower()
             ):
                 continue
             add_effect(
@@ -4790,28 +5027,18 @@ def analyze_text(
                 source_section=source_section,
             )
 
-    if _chunk_deals_enemy_damage(text, primary_dmg):
+    if _chunk_deals_enemy_damage(text, primary_dmg) and not _is_ally_hp_threshold_context(
+        text
+    ):
         if _is_damage_scalar_upgrade_chunk(text):
             _apply_scalar_upgrades(effects, text, primary_dmg)
         else:
             tgt = detect_damage_targeting(text)
             dmg_types = detect_damage_types(text, primary_dmg)
-            if (
-                "True damage" in dmg_types
-                and re.search(r"plus extra true damage equal to", t)
-            ):
-                dmg_types = [
-                    d
-                    for d in dmg_types
-                    if d not in ("Physical", "Magic", "Max HP-based damage")
-                ]
-            if (
-                "True damage" in dmg_types
-                and "Max HP-based damage" in dmg_types
-                and re.search(r"true damage equal to", t)
-            ):
-                dmg_types = [d for d in dmg_types if d != "Max HP-based damage"]
+            dmg_types = _apply_true_damage_hierarchy(dmg_types, text)
             for d in dmg_types:
+                if d == "DoT" and _dot_is_discrete_proc(text):
+                    continue
                 amt = _extract_damage_amount(text, d)
                 if amt is None:
                     if d == "True damage" and re.search(
@@ -4987,6 +5214,10 @@ def _apply_scalar_upgrades(
         amt = extract_number(text, heal_label)
         if amt is not None:
             bump("buff", heal_label, amt)
+    for buff_label in {e.label for e in effects if e.category == "buff"}:
+        amt = extract_number(text, buff_label)
+        if amt is not None:
+            bump("buff", buff_label, amt)
 
 
 BENEFIT_STAT_ORDER = (
@@ -5192,6 +5423,30 @@ def refine_benefit_stats(hero: Hero) -> None:
     hero.benefit_stats = [s for s in BENEFIT_STAT_ORDER if s in merged]
 
 
+def _finalize_skill_slice_effects(
+    slices: dict[str, SkillSlice], section_texts: dict[str, list[str]]
+) -> None:
+    """Fill cross-chunk DoT duration and area radius from combined skill text."""
+    for section, sl in slices.items():
+        combined = " ".join(section_texts.get(section, []))
+        if not combined:
+            continue
+        dot_dur = extract_timed_duration(combined, "DoT")
+        if dot_dur is not None:
+            for eff in sl.effects:
+                if eff.category == "damage" and eff.label == "DoT" and (
+                    eff.duration is None or dot_dur > eff.duration
+                ):
+                    eff.duration = dot_dur
+        area_count = parse_area_tile_count(combined)
+        if area_count is not None:
+            for eff in sl.effects:
+                if eff.targeting == "Area" and (
+                    eff.area_count is None or eff.area_count == 2
+                ):
+                    eff.area_count = area_count
+
+
 def analyze_hero(hero: Hero):
     hero.effects.clear()
     hero.summon_effects.clear()
@@ -5205,7 +5460,10 @@ def analyze_hero(hero: Hero):
     damage_map: dict[str, set[str]] = {}
     # Use the hero's own damage type so (ATK-based) doesn't always emit "Physical"
     primary_dmg = hero.damage_type if hero.damage_type else "Physical"
+    section_texts: dict[str, list[str]] = {}
     for tier, text, section in hero.skill_chunks:
+        sec = section or ""
+        section_texts.setdefault(sec, []).append(text)
         analyze_text(
             hero.effects,
             hero.summon_effects,
@@ -5256,6 +5514,7 @@ def analyze_hero(hero: Hero):
             _apply_scalar_upgrades(
                 hero.skill_slices[section].effects, text, primary_dmg
             )
+    _finalize_skill_slice_effects(hero.skill_slices, section_texts)
     for dt, tgts in sorted(
         damage_map.items(),
         key=lambda x: (DAMAGE_TYPE_SORT_KEY.get(x[0], 99), x[0]),
@@ -7765,7 +8024,6 @@ def _apply_skill_card_damage_display_policy(
     text = _skill_section_text(hero, section)
     if not text.strip():
         return labels
-    t = text.lower()
     out = list(labels)
     if (
         "Max HP-based damage" in out
@@ -7773,13 +8031,6 @@ def _apply_skill_card_damage_display_policy(
         and not _text_has_max_hp_damage(text)
     ):
         out = [label for label in out if label != "Max HP-based damage"]
-    if "True damage" in out and "Max HP-based damage" in out:
-        if re.search(r"\+\s*\d+(?:\.\d+)?%\s+true damage", t) or re.search(
-            r"true damage equal to \d+(?:\.\d+)?(?:\s*%\s*)?"
-            r"of .{0,50}max hp",
-            t,
-        ):
-            out = [label for label in out if label != "Max HP-based damage"]
     return out
 
 

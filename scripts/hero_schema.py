@@ -328,6 +328,7 @@ def _targeting_to_schema(
     *,
     summon: bool = False,
     area_count: int | None = None,
+    target_count: int | None = None,
 ) -> dict[str, Any]:
     if targeting == "Self":
         return {"target": "self", "area": "single", "target_count": 1}
@@ -345,7 +346,8 @@ def _targeting_to_schema(
     if targeting == "Single target":
         return {"target": base, "area": "single", "target_count": 1}
     if targeting == "Multiple targets":
-        return {"target": base, "area": "single", "target_count": 3}
+        count = target_count if target_count is not None else 3
+        return {"target": base, "area": "single", "target_count": count}
     if targeting == "Arc":
         return {"target": base, "area": "arc", "target_count": -1, "area_direction": "front"}
     if targeting == "Area":
@@ -414,19 +416,103 @@ _FLAT_VALUE_LABELS = frozenset(
         "Energy recovery",
         "Energy drain",
         "Crit buff",
+        "Crit DMG boost",
         "DEF Penetration buff",
         "ATK SPD buff",
+        "ATK SPD debuff",
         "Movement speed debuff",
         "Movement speed buff",
+        "Lifedrain buff",
+        "Vitality buff",
+        "Vitality debuff",
     }
 )
 
 
 def _value_from_numeric(numeric: float | None, label: str = "") -> Any:
     if numeric is None:
-        return [{"type": "percentage", "value": 0}]
+        return None
     value_type = "flat" if label in _FLAT_VALUE_LABELS else "percentage"
     return [{"type": value_type, "value": numeric}]
+
+
+def _resolve_effect_numeric(effect: Any, label: str) -> float | None:
+    """Numeric magnitude with qualitative-text fallback."""
+    n = effect.numeric
+    if n is not None:
+        return n
+    text = effect.qualitative or ""
+    if not text:
+        return None
+    rs = _rs()
+    if is_hp_recovery_label(label):
+        amounts = rs._healing_amounts(text)
+        if amounts:
+            return max(amounts)
+    return rs.extract_number(text, label)
+
+
+def _apply_schema_value(
+    out: dict[str, Any], numeric: float | None, label: str
+) -> None:
+    val = _value_from_numeric(numeric, label)
+    if val is not None:
+        out["value"] = val
+
+
+def _effect_duration(effect: Any, label: str) -> float | None:
+    dur = getattr(effect, "duration", None)
+    if dur is not None:
+        return dur
+    text = effect.qualitative or ""
+    if not text:
+        return None
+    return _rs().extract_timed_duration(text, label)
+
+
+def _apply_effect_duration(
+    out: dict[str, Any], effect: Any, label: str
+) -> None:
+    dur = _effect_duration(effect, label)
+    if dur is not None:
+        out["duration"] = dur
+
+
+def _dot_tick_from_text(text: str) -> float:
+    t = text.lower()
+    if m := re.search(
+        r"every\s+(\d+(?:\.\d+)?)\s*s(?:ec(?:ond)?s?)?", t
+    ):
+        return float(m.group(1))
+    if re.search(r"every second|per second|damage per second", t):
+        return 1.0
+    return 1.0
+
+
+def _dot_duration_from_text(text: str) -> int:
+    t = text.lower()
+    for pat in (
+        r"lasting for (\d+(?:\.\d+)?)\s*s\b",
+        r"storm.{0,60}lasting for (\d+(?:\.\d+)?)\s*s",
+        r"every\s+\d+(?:\.\d+)?\s*s(?:ec(?:ond)?s?)?\s+for\s+"
+        r"(\d+(?:\.\d+)?)\s*s",
+        r"for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
+        r"lasts for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
+        r"for (?:the next )?(\d+(?:\.\d+)?)\s*s\b",
+        r"every second for (\d+(?:\.\d+)?)\s*s",
+        r"inflicts? .{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+        r"lasts for (\d+(?:\.\d+)?)\s*s\b",
+        r"while .{0,40}active.{0,40}for (\d+(?:\.\d+)?)\s*s\b",
+    ):
+        if m := re.search(pat, t):
+            if m.lastindex and m.lastindex >= 2 and m.group(2) is not None:
+                return max(1, int(float(m.group(1)) + float(m.group(2))))
+            return max(1, int(float(m.group(1))))
+    tick = _dot_tick_from_text(text)
+    if tick < 1.0 and re.search(r"every\s+\d+(?:\.\d+)?\s*s", t):
+        if m := re.search(r"for (\d+(?:\.\d+)?)\s*s\b", t):
+            return max(1, int(float(m.group(1))))
+    return 2
 
 
 def _numeric_from_value(value: Any) -> float | None:
@@ -465,6 +551,8 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
                     qualitative=eff.qualitative,
                     magnitude=eff.magnitude,
                     area_count=getattr(eff, "area_count", None),
+                    target_count=getattr(eff, "target_count", None),
+                    duration=getattr(eff, "duration", None),
                     conditional=eff.conditional,
                 )
             )
@@ -481,6 +569,14 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
         if eff_count is not None:
             if cur.area_count is None or eff_count != 2:
                 cur.area_count = eff_count
+        eff_target_count = getattr(eff, "target_count", None)
+        if eff_target_count is not None:
+            cur.target_count = eff_target_count
+        eff_duration = getattr(eff, "duration", None)
+        if eff_duration is not None and (
+            cur.duration is None or eff_duration > cur.duration
+        ):
+            cur.duration = eff_duration
         if eff.numeric is not None and (
             cur.numeric is None or eff.numeric > cur.numeric
         ):
@@ -556,21 +652,18 @@ def _is_placeholder_schema_effect(effect: dict[str, Any]) -> bool:
     return False
 
 
-def _dot_duration_from_text(text: str) -> int:
-    t = text.lower()
-    for pat in (
-        r"for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
-        r"lasts for (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*s\b",
-        r"for (?:the next )?(\d+(?:\.\d+)?)\s*s\b",
-        r"every second for (\d+(?:\.\d+)?)\s*s",
-        r"inflicts? .{0,40}for (\d+(?:\.\d+)?)\s*s\b",
-        r"lasts for (\d+(?:\.\d+)?)\s*s\b",
-    ):
-        if m := re.search(pat, t):
-            if m.lastindex and m.lastindex >= 2 and m.group(2) is not None:
-                return max(1, int(float(m.group(1)) + float(m.group(2))))
-            return max(1, int(float(m.group(1))))
-    return 2
+def _schema_effect_is_complete(effect: dict[str, Any]) -> bool:
+    """Drop effects that omit schema-required magnitudes (no value: 0 placeholders)."""
+    etype = effect.get("type")
+    if etype in ("heal", "shield", "damage", "range_increase", "stat_mod"):
+        return effect.get("value") is not None
+    if etype == "dot":
+        return (
+            effect.get("value") is not None
+            and effect.get("duration") is not None
+            and effect.get("tick") is not None
+        )
+    return True
 
 
 def effect_to_schema(
@@ -592,6 +685,7 @@ def effect_to_schema(
             category,
             summon=summon,
             area_count=getattr(effect, "area_count", None),
+            target_count=getattr(effect, "target_count", None),
         )
     )
     conditions = _conditional_to_conditions(effect.conditional)
@@ -616,13 +710,19 @@ def effect_to_schema(
             out["type"] = "stat_mod"
             out["stat"] = stat
             out["name"] = effect.label
-            out["value"] = _value_from_numeric(effect.numeric, effect.label)
+            _apply_schema_value(
+                out, _resolve_effect_numeric(effect, effect.label), effect.label
+            )
+            _apply_effect_duration(out, effect, effect.label)
             out["label"] = _label_to_effect_label(category, effect.label, summon=summon)
             return out
         if "shield" in effect.label.lower():
             out["type"] = "shield"
             out["name"] = effect.label
-            out["value"] = _value_from_numeric(effect.numeric, effect.label)
+            _apply_schema_value(
+                out, _resolve_effect_numeric(effect, effect.label), effect.label
+            )
+            _apply_effect_duration(out, effect, effect.label)
             return out
         if is_hp_recovery_label(effect.label):
             ht = healing_type_from_label(effect.label)
@@ -630,24 +730,35 @@ def effect_to_schema(
             out["type"] = "heal" if ht == HEALING_TYPE_DIRECT else "dot"
             out["healing_type"] = ht
             out["name"] = normalize_healing_label(effect.label)
-            out["value"] = _value_from_numeric(effect.numeric, effect.label)
+            _apply_schema_value(
+                out, _resolve_effect_numeric(effect, effect.label), effect.label
+            )
             if out["type"] == "dot":
-                out["duration"] = 2
-                out["tick"] = 1
+                out["duration"] = _dot_duration_from_text(effect.qualitative)
+                out["tick"] = _dot_tick_from_text(effect.qualitative)
+                if "value" not in out:
+                    out["type"] = "heal"
+                    out.pop("tick", None)
+            else:
+                _apply_effect_duration(out, effect, effect.label)
             return out
         out["type"] = "buff"
         out["name"] = effect.label
         out["label"] = _label_to_effect_label(category, effect.label, summon=summon)
-        if effect.numeric is not None:
-            out["value"] = _value_from_numeric(effect.numeric, effect.label)
+        _apply_schema_value(
+            out, _resolve_effect_numeric(effect, effect.label), effect.label
+        )
+        _apply_effect_duration(out, effect, effect.label)
         return out
 
     if category == "debuff":
         out["type"] = "debuff"
         out["name"] = effect.label
         out["label"] = _label_to_effect_label(category, effect.label)
-        if effect.numeric is not None:
-            out["value"] = _value_from_numeric(effect.numeric, effect.label)
+        _apply_schema_value(
+            out, _resolve_effect_numeric(effect, effect.label), effect.label
+        )
+        _apply_effect_duration(out, effect, effect.label)
         return out
 
     if category == "damage":
@@ -663,11 +774,14 @@ def effect_to_schema(
             amount = _rs()._extract_damage_amount(
                 effect.qualitative, effect.label
             )
-        if amount is not None:
-            out["value"] = _value_from_numeric(amount, effect.label)
+        _apply_schema_value(out, amount, effect.label)
         if out["type"] == "dot":
-            out["duration"] = _dot_duration_from_text(effect.qualitative)
-            out["tick"] = 1
+            dur = getattr(effect, "duration", None)
+            if dur is not None:
+                out["duration"] = max(1, int(float(dur)))
+            else:
+                out["duration"] = _dot_duration_from_text(effect.qualitative)
+            out["tick"] = _dot_tick_from_text(effect.qualitative)
         return out
 
     out["type"] = "buff"
@@ -907,13 +1021,15 @@ def _build_skill_record(
     effects: list[dict[str, Any]] = []
     if slice_:
         for eff in _merge_effects(slice_.effects):
-            effects.append(
-                effect_to_schema(eff, is_max_known=not has_scaled)
-            )
+            schema_eff = effect_to_schema(eff, is_max_known=not has_scaled)
+            if _schema_effect_is_complete(schema_eff):
+                effects.append(schema_eff)
         for eff in _merge_effects(slice_.summon_effects):
-            effects.append(
-                effect_to_schema(eff, summon=True, is_max_known=not has_scaled)
+            schema_eff = effect_to_schema(
+                eff, summon=True, is_max_known=not has_scaled
             )
+            if _schema_effect_is_complete(schema_eff):
+                effects.append(schema_eff)
         for imm in _merge_immunities(slice_.cc_immunities):
             effects.append(cc_immunity_to_schema(imm))
 
