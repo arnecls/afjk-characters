@@ -37,13 +37,16 @@ Run **high-level** first, then **detailed**. Do not mix scopes in one report.
 ```
 Task progress:
 - [ ] 1. Baseline — read latest docs/validation-*.md; note resolved items
-- [ ] 2. Inventory — hero/skill counts; pick batch boundaries (~25–35 heroes)
-- [ ] 3. High-level pass — labels only (damage, healing, CC, buffs, debuffs)
-- [ ] 4. Write docs/validation-high-level-YYYY-MM-DD.md
-- [ ] 5. Detailed pass — targeting, area, timings, magnitudes
-- [ ] 6. Write docs/validation-detailed-YYYY-MM-DD.md
-- [ ] 7. Prioritize fixes; patch detection; update skill-card tags
-- [ ] 8. just analyze && just validate; spot-check closed findings
+- [ ] 2. Pre-scan — run ally-target triage; note candidate count
+- [ ] 3. Inventory — hero/skill counts; pick batch boundaries (~25–35 heroes)
+- [ ] 4. High-level pass — labels only (damage, healing, CC, buffs, debuffs)
+- [ ] 5. Write docs/validation-high-level-YYYY-MM-DD.md
+- [ ] 6. Detailed pass — targeting (incl. ally misalignment), area, timings, magnitudes
+- [ ] 7. Write docs/validation-detailed-YYYY-MM-DD.md
+- [ ] 8. Synergy spot-check — grep false buff replacements for fixed heroes
+- [ ] 9. Prioritize fixes; patch detection; add regression tests
+- [ ] 10. Bump roster_analysis CACHE_VERSION if detection changed; just analyze && just validate
+- [ ] 11. Re-run pre-scan; move closed rows to Resolved
 ```
 
 ### Pass 1 — High-level validation
@@ -86,6 +89,97 @@ ticks, magnitudes (`value`, damage-type fields).
 `Character (Skill): found -> expected`
 
 Example: `Alna (Winter Anthem): DoT tick 1s -> 0.5s`
+
+#### Ally-target misalignment (high priority)
+
+Self-only effects stored as ally buffs corrupt **Buffs on allies** replacement
+scoring and beneficiary lists. Run the pre-scan below, then read each flagged
+skill's full description before recording a finding.
+
+**Always verify `target` / `targeting_label` against the clause that names
+the effect**, not the whole skill paragraph. A skill may buff allies *and*
+grant self invincibility in separate sentences — only the invincibility row
+should be `Self`.
+
+| Effect family | Self-only phrasing in text | Wrong stored target |
+|---------------|---------------------------|---------------------|
+| Invincible | `stays invincible`, `reaching the invincible`, `{name} is invincible` (no ally in clause) | `ally` + `Single target` |
+| Unaffected / Immune | `while casting, {name} remains unaffected`, `{name} is unaffected` | `ally` |
+| Crit / Haste / Dodge | `{name} enters feast mode, increasing Crit…`, `gains N Dodge` on caster | `ally` |
+| Shield / heal | `gains a shield`, `restores HP` with her/his/self, no ally grant | `ally` |
+
+**Summon-only is not ally:** `target: summon` / `Summons only` (Aurora Haste,
+Florabelle shields) must not be treated as ally buffs during validation — but
+also must not be mis-tagged as `target: ally`.
+
+**Downstream spot-check:** when an ally-targeted defensive buff looks wrong on
+a **damage dealer**, grep replacements in
+`data/heroes_data_synergies.json` (`"buff"` list). False ally buffs create
+nonsense substitute pairs (e.g. Harak listed under Aurora **Buffs on allies**
+via shared mis-tagged Invincible). Confirm the pairing disappears after the
+target fix and `just analyze`.
+
+### Pre-scan — ally-target triage
+
+Run **before** the detailed pass to surface candidates. This is triage only;
+confirm each hit by reading the skill text (do not treat the script as the audit).
+
+```bash
+python3 - <<'PY'
+import json, re
+from pathlib import Path
+
+processed = json.loads(Path("data/heroes_data_processed.json").read_text())
+# Self-only phrasing; extend when new parser gaps are found.
+SELF_PATS = [
+    r"\bstays invincible\b",
+    r"\breaching the invincible\b",
+    r"\b(?:while casting|during this time),?\s+\w+ (?:is|remains|stays) unaffected\b",
+    r"\b\w+ is invincible\b",
+    r"\b(?:she|he|it) (?:is|stays|remains) invincible\b",
+    r"\benters feast mode,?\s+increasing (?:crit|haste)\b",
+    r"\b(?:increases?|boosts?|grants?) (?:her|his|their) (?:crit|haste|dodge)\b",
+]
+ALLY_EFFECT = re.compile(
+    r'"target":\s*"ally".*?"name":\s*"(Invincible|Unaffected|Immune|'
+    r'Haste buff|Crit buff|Dodge chance buff|Shield|Direct healing)"',
+    re.S,
+)
+
+hits = []
+for hero, data in sorted(processed["heroes"].items()):
+    role = data.get("role_category", "")
+    for skill, sk in data.get("skills", {}).items():
+        blob = json.dumps(sk.get("effects", []))
+        if '"target": "ally"' not in blob:
+            continue
+        raw = sk.get("description", {})
+        text = raw.get("raw", "") if isinstance(raw, dict) else str(raw)
+        tl = text.lower()
+        if not any(re.search(p, tl) for p in SELF_PATS):
+            continue
+        if re.search(r"\ball(?:ied)? (?:heroes?|units|summons?) (?:gain|receive|get)\b", tl):
+            # Skill also has explicit ally grants — still verify per effect row.
+            pass
+        for eff in sk.get("effects", []):
+            if eff.get("target") != "ally":
+                continue
+            name = eff.get("name", "")
+            if name in (
+                "Invincible", "Unaffected", "Immune",
+                "Haste buff", "Crit buff", "Dodge chance buff",
+                "Shield", "Direct healing",
+            ):
+                hits.append(f"{hero} / {skill}: {name} -> likely Self ({role})")
+
+print(f"Ally-target candidates: {len(hits)}")
+for line in hits:
+    print(" ", line)
+PY
+```
+
+Report the candidate count in the validation doc header. After fixes, re-run;
+closed rows go under **Resolved since {date}**.
 
 ### Comparison rules
 
@@ -135,6 +229,7 @@ Save under `docs/` with today's date.
 **Detailed** (`validation-detailed-YYYY-MM-DD.md`):
 
 - Scope + link to high-level baseline
+- **Pre-scan results** — ally-target candidate count at start/end of run
 - Same roster stats and **Common failure patterns** (detailed-specific)
 - **Findings** by batch with `found -> expected`
 - **Spot-checked confirmations**
@@ -148,10 +243,13 @@ Save under `docs/` with today's date.
 2. Fix `scripts/rewrite-summaries.py`, `scripts/heroes_io.py`, or
    `scripts/hero_schema.py` with **regression tests** in matching
    `scripts/test_*.py`.
-3. Run `just analyze` to regenerate `heroes_data_processed.json`.
-4. Run `just validate`.
-5. Spot-check representative skills from the report; move rows to **Resolved**.
-6. Do **not** re-audit the full roster unless asked — note that findings
+3. Bump `CACHE_VERSION` in `scripts/roster_analysis.py` when detection rules
+   change (otherwise `just analyze` may reuse stale parsed heroes).
+4. Run `just analyze` to regenerate `heroes_data_processed.json` and synergies.
+5. Run `just validate`.
+6. Re-run the ally-target pre-scan; grep `"buff"` replacements for affected heroes.
+7. Spot-check representative skills from the report; move rows to **Resolved**.
+8. Do **not** re-audit the full roster unless asked — note that findings
    tables may be stale until re-run.
 
 ### Fix prioritization (detailed pass)
@@ -159,10 +257,12 @@ Save under `docs/` with today's date.
 Highest impact on magnitude bands and synergy scoring:
 
 1. **Heal `value: 0`** when text says restore HP
-2. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
-3. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
-4. **Upgrade-tier magnitudes** not merged to max tier
-5. **Spurious damage rows** (execute riders, shield absorb as Physical)
+2. **Self-only effects tagged `target: ally`** (Invincible, Unaffected, self
+   stat buffs) — distorts replacement **Buffs on allies** lists
+3. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
+4. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
+5. **Upgrade-tier magnitudes** not merged to max tier
+6. **Spurious damage rows** (execute riders, shield absorb as Physical)
 
 ## Definition guardrails
 
@@ -179,6 +279,8 @@ Apply `.cursor/AGENTS.md` strictly. Common label confusions:
 | Haste vs ATK SPD | Flat `+N Haste` → Haste buff/debuff | Flat `ATK SPD by N` → ATK SPD debuff |
 | Life Drain | Lifedrain buff; magnitude is flat points (`+60 Life Drain`) | Stored as `%` when text only gives points; confused with Direct healing |
 | Marked target | Enemy debuff + focus fire | Ally ATK buff |
+| Invincible / immunity | Self when caster only (`stays`, `reaching the invincible`, `is invincible`) | Ally `Single target` on DPS self-buff windows |
+| Summon buffs | `target: summon` / Summons only | `target: ally` (counts in wrong replacement bucket) |
 | Damage dealt vs taken | Match phrase direction | Berial Hero Focus-style swaps |
 | Enhance Force | Parse EX/Supreme+ lines in same skill | Upgrade-only effects missing |
 
@@ -191,6 +293,7 @@ Summarize:
 1. **Coverage** — heroes/skills audited, discrepancy rate per pass
 2. **Themes** — top 5 failure patterns (with counts if estimated)
 3. **Critical examples** — 3–5 skills that most affect synergy scoring
+   (include any pre-scan hits that distort replacement `"buff"` lists)
 4. **Resolved** — what improved vs last validation doc
 5. **Recommended fixes** — ordered pattern groups, not a flat hero list
 
@@ -215,6 +318,18 @@ not base-line **+140%** bleed-through.
 
 **Detailed — Faramor Sanctified Circle:** `area_count` **1** (1-tile circle);
 DoT **55% true per 0.5s** at max tier, not 250% tick 1s.
+
+**Detailed — Harak Tidal Assault:** `reaching the invincible` is self-dive
+immunity → `target: self`, not `ally`. Pre-scan should flag; after fix Harak
+must not appear in any hero's replacement `"buff"` list.
+
+**Detailed — Aurora Starlit Slumber:** `While asleep, Aurora stays invincible`
+→ Invincible row is **Self**. Her real ally support is Haste / summon damage
+(`target: summon`), not self invincibility.
+
+**Synergy cross-check — Aurora replacements:** before fix, `"buff"` listed
+Harak via overlapping mis-tagged Invincible; after fix `"buff": []` is expected
+(Aurora's summon buffs are outside the ally-buff replacement profile).
 
 **Split pass — Lorsan Whispering Tempest:** high-level may show DoT + Haste
 debuff OK; detailed still open on flat **-33** Haste, **5s** duration,

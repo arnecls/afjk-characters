@@ -178,10 +178,40 @@ Himmel Heroic Slash (should be **3**).
 
 ### Self vs ally mis-targeting
 
-Dodge, Crit, heals, DEF buffs on wrong `target`.
+Dodge, Crit, heals, DEF buffs, **Invincible**, and immunity on wrong `target`.
+Ally mis-tags on **damage dealers** are high impact: they pollute
+`heroes_data_synergies.json` replacement `"buff"` lists even when the label
+is otherwise correct.
 
-Examples: Eironn Tempest Guard (Dodge → Self), Harak Flesh Feast (Crit →
-Self), Hewynn Healing Wave (weakest ally), Marcille Hero Focus (Haste → Self).
+**Invincible / immunity — read the clause, not the skill title:**
+
+| Skill | Text cue | Wrong | Correct |
+|-------|----------|-------|---------|
+| Harak Tidal Assault | `reaching the invincible` (self dive) | `target: ally` | `Self` |
+| Aurora Starlit Slumber | `Aurora stays invincible` while asleep | `target: ally` | `Self` |
+| Harak Flesh Feast | `enters feast mode, increasing Crit` | `target: ally` | `Self` |
+| Evie (ult) | `{name} is invincible` (caster) | `target: ally` | `Self` |
+
+Phrasing that often means **Self** but is easy to miss (no `{name} is
+invincible` pattern):
+
+- `stays invincible`
+- `reaching the invincible`
+- `while casting, … remains unaffected`
+- `enters feast mode, increasing Crit/Haste`
+
+**Synergy false positive:** two heroes with the same mis-tag (e.g. Harak +
+Aurora both storing self Invincible as `ally`) score as **Buffs on allies**
+replacements for each other. After fixing targeting, re-grep
+`data/heroes_data_synergies.json` for the hero under `"replacements"."buff"`.
+
+**Summon vs ally:** Aurora Haste and Summon damage buff use `target: summon`.
+They are valid ally *support* in synergy scoring but must not be validated as
+`target: ally` rows, and they do not fill the replacement **Buffs on allies**
+profile (which uses standard ally targetings only).
+
+Other examples: Eironn Tempest Guard (Dodge → Self), Hewynn Healing Wave
+(weakest ally), Marcille Hero Focus (Haste → Self).
 
 ### Upgrade-tier magnitudes not merged
 
@@ -227,6 +257,8 @@ Use these to calibrate both passes:
 |-------|------------------------|-----------------|
 | Kazim Gale Barrage | Max HP-based damage | **+40%** max tier, not +140% base |
 | Harak Vicious Bite | No DoT/HoT | Healing debuff from lock |
+| Harak Tidal Assault | Invincible Self | Not ally buff; no replacement buff match |
+| Aurora Starlit Slumber | Invincible Self; Haste on summons | Self sleep immunity ≠ ally buffer |
 | Faramor Sanctified Circle | True + DoT; no Physical | area_count 1; 0.5s tick |
 | Lorsan Whispering Tempest | DoT + Haste debuff | -33 flat; 5s / 0.5s tick |
 | Chippy (all skills) | Clean label pass | No targeting/magnitude issues |
@@ -264,6 +296,8 @@ Prior passes added tests in:
 - `scripts/test_detect_damage_types.py`
 - `scripts/test_skill_descriptions.py`
 - `scripts/test_detailed_validation.py`
+- `scripts/test_summary_parsing.py` — self Invincible (Evie, Harak, Aurora)
 
 Add a **minimal** case per new pattern; run `just validate` before closing
-the validation task.
+the validation task. When detection rules change, bump
+`scripts/roster_analysis.py` `CACHE_VERSION` before `just analyze`.
