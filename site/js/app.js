@@ -1071,6 +1071,29 @@
     );
   }
 
+  function behaviorTagDefinition(tag) {
+    const text = (tag || "").trim();
+    if (!text) {
+      return null;
+    }
+    const lower = text.toLowerCase();
+    if (TAG_DEFINITIONS[text]) {
+      return TAG_DEFINITIONS[text];
+    }
+    for (const key of Object.keys(TAG_DEFINITIONS)) {
+      if (key.toLowerCase() === lower) {
+        return TAG_DEFINITIONS[key];
+      }
+    }
+    return null;
+  }
+
+  function behaviorTagChip(tag) {
+    const def = behaviorTagDefinition(tag);
+    const emoji = def ? def.emoji : "🏷️";
+    return chipSpan(emoji, tag.trim(), "chip-behavior-tag");
+  }
+
   function isSpeedMetricLabel(label) {
     return SKILL_OVERVIEW_SPEED_LABELS[label.trim().toLowerCase()] === true;
   }
@@ -2766,6 +2789,26 @@
     );
   }
 
+  function renderBehaviorTagsLine(text) {
+    const match = text.match(/^\*\*Behavior tags\*\*:\s*(.+)$/i);
+    if (!match) {
+      return null;
+    }
+    const tags = match[1].match(/`([^`]+)`/g);
+    if (!tags || !tags.length) {
+      return null;
+    }
+    const chips = tags
+      .map(function (raw) {
+        return behaviorTagChip(raw.slice(1, -1));
+      })
+      .join(" ");
+    return formatSkillOverviewRow(
+      "<strong>Behavior tags</strong>",
+      '<span class="behavior-tags-cell">' + chips + "</span>"
+    );
+  }
+
   function renderSkillOverviewMetric(text) {
     const trimmed = text.trim();
     const parsed = parseSkillOverviewMetricEntry(trimmed);
@@ -2836,6 +2879,10 @@
     const movement = renderMovementLine(text);
     if (movement !== null) {
       return movement;
+    }
+    const behaviorTags = renderBehaviorTagsLine(text);
+    if (behaviorTags !== null) {
+      return behaviorTags;
     }
     const damageTypes = renderDamageTypesOverviewLine(text);
     if (damageTypes !== null) {
@@ -3417,10 +3464,39 @@
     return atoms;
   }
 
+  function renderBehaviorTagsCell(value) {
+    const parts = String(value || "")
+      .split(/\s*;\s*/)
+      .filter(function (part) {
+        return part.trim();
+      });
+    if (!parts.length) {
+      return "";
+    }
+    return (
+      '<span class="behavior-tags-cell">' +
+      parts
+        .map(function (tag) {
+          return behaviorTagChip(tag);
+        })
+        .join(" ") +
+      "</span>"
+    );
+  }
+
   function extractCellFilterAtoms(column, cellValue) {
     const values = new Set();
     const raw = String(cellValue || "").trim();
     if (!raw) {
+      return values;
+    }
+    if (column === "Behavior tags") {
+      raw.split(/\s*;\s*/).forEach(function (tag) {
+        const trimmed = tag.trim();
+        if (trimmed) {
+          values.add(trimmed);
+        }
+      });
       return values;
     }
     if (isEffectSortColumn(column)) {
@@ -3569,6 +3645,16 @@
         return (
           '<span class="col-filter-option-emoji" aria-hidden="true">' +
           moveDef.emoji +
+          "</span>"
+        );
+      }
+    }
+    if (column === "Behavior tags") {
+      const def = behaviorTagDefinition(trimmed);
+      if (def) {
+        return (
+          '<span class="col-filter-option-emoji" aria-hidden="true">' +
+          def.emoji +
           "</span>"
         );
       }
@@ -3782,6 +3868,9 @@
         escapeHtml(value.trim()) +
         "</span>"
       );
+    }
+    if (column === "Behavior tags") {
+      return renderBehaviorTagsCell(value);
     }
     if (TIER_CSV_HEADERS[column]) {
       return renderTierTableCell(value);
@@ -4083,6 +4172,9 @@
       }
       if (col === "Role") {
         cls += " col-role";
+      }
+      if (col === "Behavior tags") {
+        cls += " col-behavior-tags";
       }
       if (isEffectSortColumn(col)) {
         cls += " col-effect-stack";

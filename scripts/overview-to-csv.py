@@ -126,6 +126,7 @@ COLUMNS: list[str] = (
         "Dream Realm Endless tier",
         "PVP tier",
         "Movement",
+        "Behavior tags",
         "Signature skill speed",
         "Non-ultimate speed",
         "DoT",
@@ -147,6 +148,9 @@ _BOLD_LABEL = r"(?:\*\*)?"
 _BOLD_LABEL_END = r"(?:\*\*)?"
 MOVEMENT_RE = re.compile(
     rf"^- {_BOLD_LABEL}Movement{_BOLD_LABEL_END}: ([^\n]+)$", re.M
+)
+BEHAVIOR_TAGS_RE = re.compile(
+    rf"^- {_BOLD_LABEL}Behavior tags{_BOLD_LABEL_END}: ([^\n]+)$", re.M
 )
 CASTING_SPEED_RE = re.compile(r"^- Casting speed: (\w+)$", re.M)
 DEFINING_SKILL_SPEED_RE = re.compile(
@@ -183,6 +187,7 @@ class HeroRow:
     dream_realm_endless_tier: str = ""
     pvp_tier: str = ""
     movement: str = ""
+    behavior_tags: str = ""
     signature_skill_speed: str = ""
     non_ult_speed: str = ""
     energy_provider: bool = False
@@ -329,14 +334,18 @@ def section_kind(heading: str, hero_name: str) -> str | None:
     return None
 
 
-def parse_behavior(block: str) -> tuple[str, str, str]:
-    """Return movement, signature skill speed, non-ultimate speed."""
+def parse_behavior(block: str) -> tuple[str, str, str, str]:
+    """Return movement, behavior tags, signature skill speed, non-ult speed."""
     movement = ""
+    behavior_tags = ""
     defining_skill_speed = ""  # local name kept for legacy fallback logic
     non_ult_speed = ""
     if m := MOVEMENT_RE.search(block):
         # "stationary (no finite attack range)" -> "stationary"
         movement = m.group(1).split(" (", 1)[0].strip()
+    if m := BEHAVIOR_TAGS_RE.search(block):
+        tags = re.findall(r"`([^`]+)`", m.group(1))
+        behavior_tags = "; ".join(sorted(tags))
     if m := SKILL_OVERVIEW_SIG_SPEED_RE.search(block):
         defining_skill_speed = m.group(1).strip()
     if m := SKILL_OVERVIEW_NON_ULT_SPEED_RE.search(block):
@@ -348,7 +357,7 @@ def parse_behavior(block: str) -> tuple[str, str, str]:
     # Legacy single casting-speed line (pre-signature-skill overview).
     if not defining_skill_speed and (m := CASTING_SPEED_RE.search(block)):
         defining_skill_speed = m.group(1).strip()
-    return movement, defining_skill_speed, non_ult_speed
+    return movement, behavior_tags, defining_skill_speed, non_ult_speed
 
 
 def _load_heroes_data_by_short_name() -> dict[str, dict]:
@@ -463,7 +472,9 @@ def parse_hero_block(
     if not summary_match:
         return None
 
-    movement, signature_skill_speed, non_ult_speed = parse_behavior(block)
+    movement, behavior_tags, signature_skill_speed, non_ult_speed = parse_behavior(
+        block
+    )
     faction, class_name = hero_meta.get(name, ("", ""))
     tiers = (hero_tiers or {}).get(name, {})
     row = HeroRow(
@@ -476,6 +487,7 @@ def parse_hero_block(
         dream_realm_endless_tier=tiers.get("dream_realm_endless", ""),
         pvp_tier=tiers.get("pvp", ""),
         movement=movement,
+        behavior_tags=behavior_tags,
         signature_skill_speed=signature_skill_speed,
         non_ult_speed=non_ult_speed,
         energy_provider=name in energy_providers,
@@ -591,6 +603,7 @@ def row_to_csv(row: HeroRow) -> list[str]:
         row.dream_realm_endless_tier,
         row.pvp_tier,
         row.movement,
+        row.behavior_tags,
         row.signature_skill_speed,
         row.non_ult_speed,
     ]
