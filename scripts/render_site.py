@@ -2,7 +2,8 @@
 """Build site/data/heroes.json for the static hero browser.
 
 Uses the same processed data and formatters as render_overview.py so JSON
-content stays in sync with heroes-overview.md.
+content stays in sync with heroes-overview.md. Rehydrates hero objects from
+processed JSON; does not re-run skill-text detection.
 """
 
 from __future__ import annotations
@@ -26,6 +27,7 @@ from render_overview import (
     _join_names,
     _load_module,
     _receiver_synergies,
+    load_summary_heroes,
 )
 
 SITE_DIR = io.ROOT / "site"
@@ -272,21 +274,7 @@ def build_site_data(
     for short in sorted(processed["heroes"]):
         slug_by_name[short] = hero_slug(short)
 
-    heroes_text = io.reconstruct_heroes_md(data)
-    hero_records = data["heroes"]
-    skills_by_title = rs.load_skills_by_title_from_records(hero_records)
-    summary_heroes: dict[str, rs.Hero] = {}
-    for record in hero_records:
-        hero = rs.hero_from_record(record)
-        rs.analyze_hero(hero)
-        summary_heroes[hero.title] = hero
-    summary_list = list(summary_heroes.values())
-    role_category_by_title = hs.role_category_by_title_from_processed(
-        summary_list, processed, gen.short_name
-    )
-    rs.assign_magnitudes(
-        summary_list, skills_by_title, role_category_by_title
-    )
+    summary_heroes, skills_by_title = load_summary_heroes(data, processed)
 
     heroes_out: list[dict] = []
     behavior_tags_map = gen._load_behavior_tags()

@@ -134,6 +134,16 @@ class RoundTripTests(unittest.TestCase):
         after_keys = {(e.category, e.label) for e in after.effects}
         self.assertEqual(before_keys, after_keys)
 
+    def test_round_trip_summary_parity(self):
+        for prefix in ("Aliceth", "Lorsan", "Contess"):
+            before, after = self._round_trip(prefix)
+            short = gen.short_name(before.title)
+            self.assertEqual(
+                rs.format_summary(before, short).strip(),
+                rs.format_summary(after, short).strip(),
+                prefix,
+            )
+
     def test_aliceth_full_ascension_numerics(self):
         processed = io.load_processed()
         hero = processed["heroes"]["Aliceth"]

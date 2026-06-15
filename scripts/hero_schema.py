@@ -76,6 +76,9 @@ _DAMAGE_DISPLAY_ALIASES = {
 }
 _TIMING_DISPLAY_ALIASES = {
     "once_per_battle": "Once",
+    "on_skill": "On skill",
+    "start_of_battle": "Start of battle",
+    "on_ultimate": "On ultimate",
 }
 
 ROLE_CATEGORIES = frozenset(

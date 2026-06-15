@@ -496,5 +496,37 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertEqual(knock_requires, [])
 
 
+class HeroEffectAggregateTests(unittest.TestCase):
+    """Roster-wide hero.effects must not inflate buff numerics across skills."""
+
+    def _max_slice_numeric(self, hero, label: str) -> float:
+        vals = [
+            e.numeric
+            for sl in hero.skill_slices.values()
+            for e in sl.effects
+            if e.category == "buff" and e.label == label and e.numeric is not None
+        ]
+        return max(vals) if vals else 0.0
+
+    def test_roster_atk_buff_matches_per_skill_slices(self):
+        for short in ("Aliceth", "Gunnar", "Dionel", "Hugin"):
+            hero = _hero_by_short_name(short)
+            slice_max = self._max_slice_numeric(hero, "ATK buff")
+            live_vals = [
+                e.numeric
+                for e in hero.effects
+                if e.category == "buff" and e.label == "ATK buff" and e.numeric
+            ]
+            self.assertTrue(live_vals, short)
+            self.assertEqual(max(live_vals), slice_max, short)
+
+    def test_aliceth_atk_buff_not_inflated_by_execute_threshold(self):
+        hero = _hero_with_magnitudes("Aliceth")
+        atk = [e for e in hero.effects if e.label == "ATK buff"]
+        self.assertTrue(atk)
+        self.assertEqual(max(e.numeric for e in atk), 16.0)
+        self.assertEqual(atk[0].magnitude, "low")
+
+
 if __name__ == "__main__":
     unittest.main()

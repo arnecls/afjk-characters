@@ -2224,6 +2224,147 @@ def _effect_dedupe_key(
     return (category, label)
 
 
+def _copy_effect(effect: Effect) -> Effect:
+    return Effect(
+        category=effect.category,
+        label=effect.label,
+        tier=effect.tier,
+        targeting=effect.targeting,
+        numeric=effect.numeric,
+        qualitative=effect.qualitative,
+        magnitude=effect.magnitude,
+        area_count=effect.area_count,
+        target_count=effect.target_count,
+        duration=effect.duration,
+        conditional=effect.conditional,
+        source_section=effect.source_section,
+    )
+
+
+def _merge_effect_records(into: Effect, src: Effect) -> None:
+    """Merge a parsed slice effect into a roster aggregate effect."""
+    if TIER_ORDER.get(src.tier, 99) < TIER_ORDER.get(into.tier, 99):
+        into.tier = src.tier
+    into.conditional = _merge_conditional(into.conditional, src.conditional)
+    if src.category == "buff":
+        into.targeting = _prefer_buff_targeting(src.targeting, into.targeting)
+    elif src.category != "buff":
+        into.targeting = _prefer_wider_targeting(src.targeting, into.targeting)
+    ally_keeps_primary = (
+        src.category == "buff"
+        and src.targeting == "Self"
+        and into.targeting != "Self"
+        and src.label
+        not in (
+            *HP_RECOVERY_LABELS,
+            LEGACY_DIRECT_HEALING_LABEL,
+            "Energy recovery",
+        )
+    )
+    if (
+        src.numeric is not None
+        and (into.numeric is None or src.numeric > into.numeric)
+        and not ally_keeps_primary
+    ):
+        into.numeric = src.numeric
+        if src.qualitative:
+            into.qualitative = src.qualitative
+        if src.source_section:
+            into.source_section = src.source_section
+        if src.category == "buff":
+            into.targeting = _prefer_buff_targeting(src.targeting, into.targeting)
+    elif src.qualitative and not into.qualitative:
+        into.qualitative = src.qualitative
+    into.area_count = _merge_area_count(
+        into.area_count,
+        src.qualitative,
+        into.targeting,
+        from_cue=_text_has_targeting_cue(src.qualitative),
+    )
+    if src.target_count is not None:
+        into.target_count = src.target_count
+    if src.duration is not None and (
+        into.duration is None or src.duration > into.duration
+    ):
+        into.duration = src.duration
+    if src.source_section and not into.source_section:
+        into.source_section = src.source_section
+
+
+def _merge_effects_from_list(effects: list[Effect]) -> list[Effect]:
+    """Merge per-skill effects into one roster-wide list."""
+    merged: list[Effect] = []
+    for src in effects:
+        key = _effect_dedupe_key(src.category, src.label, src.source_section)
+        existing = [
+            e
+            for e in merged
+            if _effect_dedupe_key(e.category, e.label, e.source_section) == key
+        ]
+        if not existing:
+            merged.append(_copy_effect(src))
+            continue
+        _merge_effect_records(existing[0], src)
+    return merged
+
+
+def _merge_cc_immunity_records(records: list[CcImmunity]) -> list[CcImmunity]:
+    merged: dict[str, CcImmunity] = {}
+    for imm in records:
+        cur = merged.get(imm.immunity_type)
+        if cur is None:
+            merged[imm.immunity_type] = CcImmunity(
+                imm.immunity_type, imm.tier, imm.targeting, imm.timing
+            )
+            continue
+        if TIER_ORDER.get(imm.tier, 99) < TIER_ORDER.get(cur.tier, 99):
+            cur.tier = imm.tier
+        cur.targeting = _prefer_targeting(imm.targeting, cur.targeting)
+        cur.timing = _prefer_timing(imm.timing, cur.timing)
+    return list(merged.values())
+
+
+def _merge_special_effect_records(
+    records: list[SpecialEffect],
+) -> list[SpecialEffect]:
+    merged: dict[tuple[str, str], SpecialEffect] = {}
+    for se in records:
+        key = (se.kind, se.label)
+        cur = merged.get(key)
+        if cur is None:
+            merged[key] = SpecialEffect(
+                se.kind, se.label, se.tier, se.targeting, se.qualitative
+            )
+            continue
+        if TIER_ORDER.get(se.tier, 99) < TIER_ORDER.get(cur.tier, 99):
+            cur.tier = se.tier
+        if se.qualitative and not cur.qualitative:
+            cur.qualitative = se.qualitative
+    return list(merged.values())
+
+
+def _rebuild_hero_aggregates_from_slices(hero: Hero) -> None:
+    """Rebuild roster effects from finalized per-skill slices.
+
+    Cross-chunk ``analyze_text`` on ``hero.effects`` can inflate buff numerics
+    when unrelated damage/threshold clauses share a label (e.g. ATK buff vs
+    300% execute threshold). Per-skill slices stay scoped correctly.
+    """
+    effects: list[Effect] = []
+    summon: list[Effect] = []
+    immunities: list[CcImmunity] = []
+    special: list[SpecialEffect] = []
+    for sl in hero.skill_slices.values():
+        effects.extend(sl.effects)
+        summon.extend(sl.summon_effects)
+        immunities.extend(sl.cc_immunities)
+        special.extend(sl.special_effects)
+    hero.effects = _merge_effects_from_list(effects)
+    hero.summon_effects = _merge_effects_from_list(summon)
+    hero.cc_immunities = _merge_cc_immunity_records(immunities)
+    hero.special_effects = _merge_special_effect_records(special)
+
+
 def add_effect(
     effects: list[Effect],
     category: str,
@@ -5515,6 +5656,7 @@ def analyze_hero(hero: Hero):
                 hero.skill_slices[section].effects, text, primary_dmg
             )
     _finalize_skill_slice_effects(hero.skill_slices, section_texts)
+    _rebuild_hero_aggregates_from_slices(hero)
     for dt, tgts in sorted(
         damage_map.items(),
         key=lambda x: (DAMAGE_TYPE_SORT_KEY.get(x[0], 99), x[0]),

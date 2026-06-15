@@ -4,8 +4,9 @@
 Pure view over ``heroes_data.json`` (identity / damage type),
 ``heroes_data_processed.json`` (derived effects, behaviour), and
 ``heroes_data_synergies.json`` (synergies, beneficiaries, replacements).
-No analysis is performed here; display thresholds (top-N synergies /
-beneficiaries) come from ``heroes_config.json``.
+Rehydrates hero objects from processed JSON; does not re-run skill-text
+detection. Display thresholds (top-N synergies / beneficiaries) come from
+``heroes_config.json``.
 """
 
 from __future__ import annotations
@@ -102,6 +103,34 @@ def _join_names(names: list[str]) -> str:
     if len(bold) == 2:
         return f"{bold[0]} or {bold[1]}"
     return f"{bold[0]}, {bold[1]}, or {bold[2]}"
+
+
+def load_summary_heroes(
+    data: dict, processed: dict
+) -> tuple[dict[str, rs.Hero], dict[str, list]]:
+    """Rebuild analyzed heroes from processed JSON (no skill-text detection)."""
+    hero_records = data["heroes"]
+    data_by_title = {h["title"]: h for h in hero_records}
+    skills_by_title = rs.load_skills_by_title_from_records(hero_records)
+    summary_heroes: dict[str, rs.Hero] = {}
+    for short, p in processed["heroes"].items():
+        long_name = p["long_name"]
+        meta = data_by_title.get(long_name, {})
+        damage_type = meta.get("damage_type", "Physical") or "Physical"
+        summary_heroes[long_name] = hs.deserialize_hero(long_name, p, damage_type)
+    summary_list = list(summary_heroes.values())
+    role_category_by_title = hs.role_category_by_title_from_processed(
+        summary_list, processed, gen.short_name
+    )
+    rs.assign_magnitudes(
+        summary_list, skills_by_title, role_category_by_title
+    )
+    return summary_heroes, skills_by_title
+
+
+def summary_heroes_by_short(summary_heroes: dict[str, rs.Hero]) -> dict[str, rs.Hero]:
+    """Map display short name -> hero for CSV export."""
+    return {gen.short_name(title): hero for title, hero in summary_heroes.items()}
 
 
 def _format_synergies(
@@ -201,7 +230,7 @@ def _format_synergies(
 
 def build_overview(
     data: dict, processed: dict, synergies: dict, config: dict
-) -> str:
+) -> tuple[str, dict[str, rs.Hero]]:
     limits = config.get("display_limits", {})
     max_syn = limits.get("max_synergies", 5)
     max_ben = limits.get("max_beneficiaries_display", 10)
@@ -216,21 +245,7 @@ def build_overview(
     data_by_title = {h["title"]: h for h in data["heroes"]}
     parts = list(OVERVIEW_HEADER)
 
-    heroes_text = io.reconstruct_heroes_md(data)
-    hero_records = data["heroes"]
-    skills_by_title = rs.load_skills_by_title_from_records(hero_records)
-    summary_heroes: dict[str, rs.Hero] = {}
-    for record in hero_records:
-        hero = rs.hero_from_record(record)
-        rs.analyze_hero(hero)
-        summary_heroes[hero.title] = hero
-    summary_list = list(summary_heroes.values())
-    role_category_by_title = hs.role_category_by_title_from_processed(
-        summary_list, processed, gen.short_name
-    )
-    rs.assign_magnitudes(
-        summary_list, skills_by_title, role_category_by_title
-    )
+    summary_heroes, _skills_by_title = load_summary_heroes(data, processed)
     behavior_tags_map = gen._load_behavior_tags()
 
     for short in sorted(processed["heroes"]):
@@ -299,15 +314,25 @@ def build_overview(
         parts.append(summary)
         parts.append("")
 
-    return "\n".join(parts).rstrip() + "\n"
+    return "\n".join(parts).rstrip() + "\n", summary_heroes
 
 
-def write_csv(overview_text: str, energy_providers: frozenset[str]) -> int:
+def write_csv(
+    overview_text: str,
+    energy_providers: frozenset[str],
+    *,
+    analyzed_heroes: dict[str, rs.Hero] | None = None,
+) -> int:
     hero_meta = csv_mod._load_hero_faction_class()
     hero_tiers = csv_mod._load_hero_prydwen_tiers()
     hero_roles = csv_mod._load_hero_role_categories()
     rows = csv_mod.convert(
-        overview_text, energy_providers, hero_meta, hero_tiers, hero_roles
+        overview_text,
+        energy_providers,
+        hero_meta,
+        hero_tiers,
+        hero_roles,
+        analyzed_heroes=analyzed_heroes,
     )
     with OVERVIEW_CSV.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.writer(fh)
@@ -322,7 +347,7 @@ def main() -> None:
     synergies = io.load_synergies()
     config = io.load_config()
 
-    content = build_overview(data, processed, synergies, config)
+    content, summary_heroes = build_overview(data, processed, synergies, config)
     OVERVIEW_MD.write_text(content, encoding="utf-8")
     print(
         f"Wrote {OVERVIEW_MD.relative_to(io.ROOT)} ({len(content.splitlines())} lines)"
@@ -333,7 +358,11 @@ def main() -> None:
         for short, p in processed["heroes"].items()
         if p.get("is_energy_provider")
     )
-    n = write_csv(content, energy_providers)
+    n = write_csv(
+        content,
+        energy_providers,
+        analyzed_heroes=summary_heroes_by_short(summary_heroes),
+    )
     print(
         f"Wrote {OVERVIEW_CSV.relative_to(io.ROOT)} "
         f"({n} heroes × {len(csv_mod.COLUMNS)} columns)"

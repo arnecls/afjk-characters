@@ -561,9 +561,12 @@ def parse_overview(
     hero_meta: dict[str, tuple[str, str]],
     hero_tiers: dict[str, dict[str, str]] | None = None,
     hero_roles: dict[str, str] | None = None,
+    *,
+    analyzed_heroes: dict[str, object] | None = None,
 ) -> list[HeroRow]:
     heroes: list[HeroRow] = []
-    analyzed_heroes = _load_analyzed_heroes_by_short()
+    if analyzed_heroes is None:
+        analyzed_heroes = _load_analyzed_heroes_by_short()
     hero_matches = list(HERO_RE.finditer(text))
     for idx, match in enumerate(hero_matches):
         name = match.group(1).strip()
@@ -625,9 +628,16 @@ def convert(
     hero_meta: dict[str, tuple[str, str]],
     hero_tiers: dict[str, dict[str, str]] | None = None,
     hero_roles: dict[str, str] | None = None,
+    *,
+    analyzed_heroes: dict[str, object] | None = None,
 ) -> list[list[str]]:
     rows = parse_overview(
-        text, energy_providers, hero_meta, hero_tiers, hero_roles
+        text,
+        energy_providers,
+        hero_meta,
+        hero_tiers,
+        hero_roles,
+        analyzed_heroes=analyzed_heroes,
     )
     return [row_to_csv(row) for row in rows]
 
