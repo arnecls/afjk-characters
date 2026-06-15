@@ -1020,6 +1020,11 @@ a:hover {
   color: #fff;
 }
 
+.tier-chip.tier-rel-worse-1 {
+  background: #e09030;
+  color: #fff;
+}
+
 .tier-chip.tier-rel-worse {
   background: #d04040;
   color: #fff;
@@ -1031,6 +1036,7 @@ a:hover {
 }
 
 .tier-chip.tier-rel-better .tier-grade,
+.tier-chip.tier-rel-worse-1 .tier-grade,
 .tier-chip.tier-rel-worse .tier-grade,
 .tier-chip.tier-rel-same .tier-grade {
   border-right-color: rgba(255, 255, 255, 0.45);

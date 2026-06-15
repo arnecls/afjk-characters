@@ -1865,7 +1865,7 @@
       return "better";
     }
     if (repRank < mainRank) {
-      return "worse";
+      return mainRank - repRank === 1 ? "worse-1" : "worse";
     }
     return "same";
   }
@@ -1887,6 +1887,17 @@
     if (relation === "better") {
       return (
         "Better than " +
+        base +
+        " (" +
+        mainTier +
+        "). This replacement is " +
+        repTier +
+        "."
+      );
+    }
+    if (relation === "worse-1") {
+      return (
+        "One tier below " +
         base +
         " (" +
         mainTier +
