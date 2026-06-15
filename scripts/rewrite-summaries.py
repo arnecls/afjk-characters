@@ -391,13 +391,76 @@ def _dot_is_healing_lock_hp_drain(text: str) -> bool:
     )
 
 
+def _dot_is_self_hp_drain(text: str) -> bool:
+    """Self/summon upkeep HP loss per second — not enemy DoT."""
+    t = text.lower()
+    if re.search(r"\b(?:enemy|enemies|afflicted|marked target)\b", t):
+        if re.search(r"takes? \d+(?:\.\d+)?(?:\s*%\s*)? damage every", t):
+            return False
+        if re.search(
+            r"(?:causing|and causes?).{0,40}(?:them )?to lose "
+            r"\d+(?:\.\d+)?%?\s*\(atk-based\)\s*hp per second",
+            t,
+        ):
+            return False
+    return bool(
+        re.search(
+            r"(?:silhouette|summon|turret|ghost|armor|host)\b.{0,80}"
+            r"los(?:e|es|ing) \d+(?:\.\d+)?(?:\s*%\s*)? of (?:its|their) "
+            r"max hp per second",
+            t,
+        )
+        or (
+            re.search(
+                r"los(?:e|es|ing) \d+(?:\.\d+)?(?:\s*%\s*)? of (?:its|their|her|his) "
+                r"max hp per second",
+                t,
+            )
+            and not re.search(r"\b(?:enemy|enemies|target|afflicted)\b", t)
+        )
+    )
+
+
+def _dot_is_channeled_skill_damage(text: str) -> bool:
+    """Active channel damage every second — skill hit, not a DoT ailment."""
+    t = text.lower()
+    return bool(
+        re.search(
+            r"(?:during the interrogation|while casting this skill|"
+            r"while channeling).{0,120}"
+            r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\).{0,60}every second",
+            t,
+        )
+        or re.search(
+            r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\).{0,60}"
+            r"every second.{0,80}(?:immobiliz|interrogat)",
+            t,
+        )
+        or re.search(
+            r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\).{0,60}"
+            r"every second.{0,40}and immobiliz",
+            t,
+        )
+    )
+
+
 def _text_has_dot_damage(text: str) -> bool:
     """True when skill text describes damage-over-time, not proc cooldowns."""
     t = text.lower()
     if _dot_is_healing_lock_hp_drain(text):
         return False
+    if _dot_is_self_hp_drain(text):
+        return False
+    if _dot_is_channeled_skill_damage(text):
+        return False
     if re.search(r"damage per volley", t):
         return False
+    if re.search(
+        r"(?:afflicted |marked )?(?:enemy|enemies|target|they)\b.{0,80}"
+        r"takes? \d+(?:\.\d+)?(?:\s*%\s*)?(?:\(atk-based\)\s*)?damage every",
+        t,
+    ):
+        return True
     if re.search(
         r"(?:deal(?:s|ing)?|dealing|takes?) damage.{0,80}per second|"
         r"damage equal to .{0,80}per second|"
@@ -509,6 +572,8 @@ def _atk_flat_max_hp_amounts(text: str) -> list[float]:
     )
     found: list[float] = []
     for m in re.finditer(deal_pat, t):
+        if _is_damage_cap_context(t, m.start()):
+            continue
         after = t[m.end() : m.end() + 30]
         if re.match(r"\s+each time", after):
             continue
@@ -880,10 +945,13 @@ def _upgrade_tier(level: dict, section: str) -> str:
 def skill_chunks_from_skill(skill: dict) -> list[tuple[str, str, str]]:
     """Build analysis chunks from a structured heroes_data skill record."""
     from heroes_io import (
+        _skip_phase_marker_sentence,
         is_structured_description,
+        merge_unique_sentences,
         normalize_phase_text,
         normalize_skill_description,
         skill_upgrades,
+        split_passive_active,
     )
 
     if not is_structured_description(skill.get("description")):
@@ -894,9 +962,22 @@ def skill_chunks_from_skill(skill: dict) -> list[tuple[str, str, str]]:
     desc = skill["description"]
     passive_sents = normalize_phase_text(desc.get("passive"))
     active_sents = normalize_phase_text(desc.get("active"))
+    raw = (desc.get("raw") or "").strip()
+    if raw:
+        split_passive, split_active = split_passive_active(raw)
+        passive_sents = merge_unique_sentences(
+            normalize_phase_text(split_passive), passive_sents
+        )
+        active_sents = merge_unique_sentences(
+            normalize_phase_text(split_active), active_sents
+        )
     for sent in passive_sents:
+        if _skip_phase_marker_sentence(sent):
+            continue
         chunks.append((base_tier, sent, section))
     for sent in active_sents:
+        if _skip_phase_marker_sentence(sent):
+            continue
         chunks.append((base_tier, sent, section))
     if not passive_sents and not active_sents:
         raw = (desc.get("raw") or "").strip()
@@ -906,6 +987,8 @@ def skill_chunks_from_skill(skill: dict) -> list[tuple[str, str, str]]:
     for level in skill_upgrades(skill):
         tier = _upgrade_tier(level, section)
         for sent in normalize_phase_text(level.get("text")):
+            if _skip_phase_marker_sentence(sent):
+                continue
             chunks.append((tier, sent, section))
     return chunks
 
@@ -2006,12 +2089,32 @@ def _buff_condition(category: str, text: str) -> str | None:
 _HP_RECOVERY_EFFECT_LABELS = HP_RECOVERY_LABELS
 
 
+def _scope_is_hp_loss_not_healing(scope: str) -> bool:
+    """HoT regex matched HP drain or anti-heal, not gradual recovery."""
+    t = scope.lower()
+    if _dot_is_healing_lock_hp_drain(scope):
+        return True
+    return bool(
+        re.search(
+            r"\b(?:lose|loses|losing|causing them to lose)\b.{0,60}\bhp\b", t
+        )
+        and re.search(r"per second|every \d", t)
+    )
+
+
 def _scope_is_hot_healing(scope: str) -> bool:
     """True when a heal clause describes per-second or interval restore."""
+    t = scope.lower()
+    if re.search(
+        r"\b(?:lose|loses|losing|causing them to lose)\b.{0,60}\bhp\b", t
+    ) and re.search(r"per second|every \d", t):
+        return False
+    if re.search(r"prevents? .{0,40}from recover", t):
+        return False
     return bool(
         re.search(
             r"per second|per 0\.\d|every second|every \d+\.?\d* s(?:ec)?",
-            scope.lower(),
+            t,
         )
     )
 
@@ -2217,6 +2320,7 @@ BUFF_RULES = [
     (r"normal attacks? deal \d+(?:\.\d+)?% more damage", "ATK buff"),
     # Haste buff: must be gaining Haste, not reducing it
     (r"increas(?:e|es|ing) .{0,60}?haste\b", "Haste buff"),
+    (r"gain(?:s|ing)? an extra \d+(?:\s*\+\s*\d+)? haste\b", "Haste buff"),
     (r"haste increased by \d+", "Haste buff"),
     (
         r"grants? (?:himself|herself|themselves|(?:her|his|their)self) \d+ haste",
@@ -2227,6 +2331,8 @@ BUFF_RULES = [
         "Haste buff",
     ),
     (r"gains? \d+ haste|gain(?:s|ing)? extra \d+ haste", "Haste buff"),
+    (r"gains? \d+(?:\s*\+\s*\d+)? haste\b", "Haste buff"),
+    (r",\s*\d+(?:\s*\+\s*\d+)? haste\b", "Haste buff"),
     (
         r"boosting the damage of all allied summons|"
         r"increase all allied summons'? damage|"
@@ -2328,6 +2434,12 @@ BUFF_RULES = [
     (r"blessing of tidal strength|(?:permanent )?tidal strength", "Tidal Strength buff"),
     (r"life drain", "Lifedrain buff"),
     (r"reduc(?:e|es|ing) (?:her |his |their |the .{0,20})?damage taken", "Damage taken reduction"),
+    (r"(?:all )?allies take \d+(?:\.\d+)?% less damage", "Damage taken reduction"),
+    (
+        r"(?:protected )?all(?:y|ies) (?:also )?take(?:s)? "
+        r"\d+(?:\.\d+)?% less damage",
+        "Damage taken reduction",
+    ),
     # Abbreviated form used in some skill descriptions (e.g. Koko, Phraesto).
     (r"\bdmg reduction\b", "Damage taken reduction"),
     (
@@ -2338,9 +2450,9 @@ BUFF_RULES = [
     ),
     (r"invincible", "Invincible"),
     (
-        r"extra \d+ \+ \d+ penetration|penetration applied to|"
+        r"extra \d+ \+ \d+ penetration|"
         r"gain(?:s|ing)? \d+(?:\s*\+\s*\d+)? (?:def )?penetration\b|"
-        r"increas(?:e|es|ing) .{0,25}penetration by",
+        r"increas(?:e|es|ing) (?:her |his |their )?penetration by",
         "DEF Penetration buff",
     ),
     (r"(?:the )?ally gains? \d+(?:\s*\+\s*\d+)? energy", "Energy recovery"),
@@ -2524,6 +2636,7 @@ def detect_proximity_aura_buff_labels(hero: Hero) -> tuple[frozenset[str], float
 DEBUFF_RULES = [
     # ATK SPD debuff before generic ATK (Cyran Mystic Recollection).
     (r"reduc(?:e|es|ing|tion) .{0,30}atk spd", "ATK SPD debuff"),
+    (r"shatter armor", "Phys DEF debuff"),
     # ATK debuff (verb form: "reduces their ATK" / noun form: "reduction in their ATK")
     (
         r"reduc(?:e|es|ing|tion) (?:in )?(?:the )?"
@@ -2562,12 +2675,27 @@ DEBUFF_RULES = [
         r"reduc(?:e|es|ing|tion) in (?:both )?magic def",
         "Magic DEF debuff",
     ),
+    (
+        r"magic def.{0,40}(?:is |are )?(?:permanently )?"
+        r"reduc(?:e|ed|es|ing|tion)",
+        "Magic DEF debuff",
+    ),
+    (
+        r"phys(?:ical)? def.{0,40}(?:is |are )?(?:permanently )?"
+        r"reduc(?:e|ed|es|ing|tion)",
+        "Phys DEF debuff",
+    ),
     (r"reduc(?:e|es|ing|tion) .{0,30}magic def", "Magic DEF debuff"),
     (r"reduc(?:e|es|ing|tion) .{0,30}phys(?:ical)? def", "Phys DEF debuff"),
     # Energy drain (enemy only — not own summon/armor "loses energy")
     (
         r"drain(?:s|ing)? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy"
         r"(?:\s+from|\b)",
+        "Energy drain",
+    ),
+    (
+        r"absorb(?:s|ing)? (?:targets'?|target'?s?|enemies'?|the target'?s?) "
+        r"energy\b",
         "Energy drain",
     ),
     (r"absorb(?:s|ing)? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy", "Energy drain"),
@@ -2595,6 +2723,10 @@ DEBUFF_RULES = [
     ),
     (r"los(?:e|es|ing) \d+ vitality\b", "Vitality debuff"),
     # Vitality debuff
+    (
+        r"absorb(?:s|ing)? \d+ of the target'?s vitality",
+        "Vitality debuff",
+    ),
     (r"reduc(?:e|es|ing) .{0,20}vitality", "Vitality debuff"),
     # Healing debuff (enemy Healing stat reduction)
     (
@@ -2608,6 +2740,16 @@ DEBUFF_RULES = [
         r"take more magic damage",
         "Magic damage amplification",
     ),
+    # Damage dealt debuff (enemy deals less damage)
+    (
+        r"reduces? the damage dealt by .{0,80}enem",
+        "Damage dealt debuff",
+    ),
+    (
+        r"reduc(?:e|es|ing) .{0,40}(?:the )?(?:enemy'?s?|target'?s?|their) "
+        r"damage dealt\b",
+        "Damage dealt debuff",
+    ),
     # Damage taken debuff (enemies take more damage; not magic-specific)
     (
         r"increas(?:e|es|ing|ed) .{0,30}(?<!magic )damage taken|"
@@ -2615,6 +2757,7 @@ DEBUFF_RULES = [
         "Damage taken debuff",
     ),
     # Movement / Haste debuff
+    (r"\d+(?:\s*\+\s*\d+)? haste reduction", "Haste debuff"),
     (r"los(?:e|es|ing) .{0,40}movement speed", "Movement speed debuff"),
     (r"los(?:e|es|ing) .{0,40}haste\b", "Haste debuff"),
     (r"reduc(?:e|es|ing|tion) .{0,40}haste\b", "Haste debuff"),
@@ -2657,9 +2800,9 @@ DEBUFF_RULES = [
     # Marked target: mark placed on an enemy is a debuff from the
     # enemy's perspective (focus fire, reduced effective defence, etc.)
     (
-        r"places? (?:her |his |their )?(?:\w+ ){0,4}mark on|forest mark|"
+        r"places? .{0,50}mark(?: of \w+)? on|forest mark|"
         r"notice to mark|noticed enemy|"
-        r"prioritizes attacking the .{0,30}marked|"
+        r"prioritiz(?:e|es|ing) attacking the .{0,30}marked|"
         r"marking them as prey",
         "Marked target (focus fire)",
     ),
@@ -3565,6 +3708,8 @@ def _has_instant_atk_damage(text: str) -> bool:
         before = t[max(0, m.start() - 50) : m.start()]
         if re.search(r"hp recovered|hp amount equal to|healing|healed", before):
             continue
+        if re.search(r"shield|absorb", before):
+            continue
         after = t[m.end() : m.end() + 90]
         if re.search(
             r"per second|every second|every 0\.\d|every \d+\.?\d*s\b", after
@@ -3690,6 +3835,7 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"damage equal to (\d+(?:\.\d+)?)(?:\s*%\s*)? of the turret's atk per second",
             r"los(?:e|es|ing) (\d+(?:\.\d+)?)(?:\s*%\s*)?"
             r"(?:\+\s*(\d+(?:\.\d+)?)(?:\s*%\s*)?)? of (?:their|its) max hp per second",
+            r"takes? (\d+(?:\.\d+)?)\s*%\s+damage every",
         ]
     elif dmg_type in ("Physical", "Magic", "Ranged"):
         patterns = [
@@ -4005,6 +4151,13 @@ def _is_damage_scalar_upgrade_chunk(text: str) -> bool:
         return False
     if re.search(r"\bdeals? \d+(?:\.\d+)?%\s*\(atk-based\)", t):
         return False
+    if re.search(
+        r"increases? the (?:damage dealt when (?:summoning|casting)|"
+        r"storm damage per hit|subsequent damage to|entangled target'?s "
+        r"damake taken per second|dark flame damage)",
+        t,
+    ):
+        return True
     if re.search(r"\bcast(?:s|ing)?\b|\bsummon(?:s|ing)?\b", t):
         return False
     return bool(
@@ -4072,6 +4225,13 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
             types.append("Magic")
     if _text_has_dot_damage(text):
         types.append("DoT")
+    if "True damage" in types and "Max HP-based damage" in types:
+        if re.search(r"\+\s*\d+(?:\.\d+)?%\s+true damage", t):
+            types = [dt for dt in types if dt != "Max HP-based damage"]
+    if re.search(r"increases? the true damage dealt to", t):
+        types = [dt for dt in types if dt != "Max HP-based damage"]
+    if _dot_is_channeled_skill_damage(text):
+        types = [dt for dt in types if dt != "Max HP-based damage"]
     if primary_dmg in types and "DoT" in types and not _has_instant_atk_damage(text):
         types = [dt for dt in types if dt != primary_dmg]
     if primary_dmg in types and "DoT" in types and re.search(
@@ -4085,6 +4245,8 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
         and (_skill_chunk_has_enemy_damage(text) or re.search(r"deal(?:s|ing|t)? \d+%", t))
     ):
         types.append(primary_dmg)
+    if "True damage" in types and _primary_damage_is_true_scored(text):
+        types = [dt for dt in types if dt not in (primary_dmg, "Physical", "Magic")]
     seen: set[str] = set()
     ordered: list[str] = []
     for dt in types:
@@ -4136,9 +4298,19 @@ def _skill_chunk_has_enemy_damage(text: str) -> bool:
         r"\b(?:the target|an enemy|enemies|enemy|target'?s?|weakest enemy|"
         r"frontmost enemy|rearmost enemy|nearby enemy)\b",
         t,
+    ) and not re.search(
+        r"(?:shield|absorb(?:s|ing)?).{0,100}\(atk-based\).{0,60}\bdamage\b", t
     ):
         return True
     if _has_instant_atk_damage(text) and _chunk_targets_enemies(text):
+        return True
+    if re.search(
+        r"\b(?:afflicted |marked )?(?:enemy|enemies|target|they)\b.{0,80}"
+        r"takes? \d+(?:\.\d+)?(?:\s*%\s*)?(?:\(atk-based\)\s*)?damage",
+        t,
+    ):
+        return True
+    if re.search(r"takes? \d+(?:\.\d+)?(?:\s*%\s*)? damage every", t):
         return True
     if _text_has_max_hp_damage(text) and _chunk_targets_enemies(text) and re.search(
         r"\b(?:deal(?:s|t|ing)?|dealing|take(?:s)?|taking|loses?)\b", t
@@ -4449,6 +4621,11 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
     """True when a CC regex matched a conditional or mislabeled clause."""
     t = scope.lower()
     full = text.lower()
+    if label == "Interrupt" and re.search(
+        r"skill interruption effect|interruption effect on (?:the )?target",
+        t,
+    ):
+        return True
     if label == "Bind" and re.search(r"\bbinds the (?:target|enemy|them)\b", t):
         return False
     if label == "Bind" and re.search(r"immobilized target if", t):
@@ -4514,9 +4691,21 @@ def analyze_text(
         for scope in _buff_match_scopes(text, label, pat):
             if label == "ATK buff" and _buff_match_is_ally_atk_penalty(scope):
                 continue
-            if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(scope):
-                continue
             if label == DIRECT_HEALING_LABEL and _scope_is_hot_healing(scope):
+                continue
+            if (
+                label == HEALING_OVER_TIME_LABEL
+                and (
+                    _scope_is_hp_loss_not_healing(scope)
+                    or _dot_is_healing_lock_hp_drain(scope)
+                )
+            ):
+                continue
+            if label == "DEF Penetration buff" and re.search(
+                r"attacks against .{0,60}penetration|"
+                r"penetration applied to .{0,60}attacks against",
+                scope.lower(),
+            ):
                 continue
             add_effect(
                 effects,
@@ -4551,9 +4740,9 @@ def analyze_text(
                 continue
             debuff_label = label
             if label == "ATK SPD debuff" and re.search(
-                r"atk spd by (?:an extra )?\d+(?:\.\d+)?(?:\s+for|\s+until)",
+                r"atk spd by an extra \d+(?:\.\d+)?(?:\s+for|\s+until)",
                 scope.lower(),
-            ) and not re.search(r"atk spd by (?:an extra )?\d+(?:\.\d+)?%", scope.lower()):
+            ):
                 debuff_label = "Haste debuff"
             add_effect(
                 effects,
@@ -4609,6 +4798,15 @@ def analyze_text(
             dmg_types = detect_damage_types(text, primary_dmg)
             if (
                 "True damage" in dmg_types
+                and re.search(r"plus extra true damage equal to", t)
+            ):
+                dmg_types = [
+                    d
+                    for d in dmg_types
+                    if d not in ("Physical", "Magic", "Max HP-based damage")
+                ]
+            if (
+                "True damage" in dmg_types
                 and "Max HP-based damage" in dmg_types
                 and re.search(r"true damage equal to", t)
             ):
@@ -4619,6 +4817,8 @@ def analyze_text(
                     if d == "True damage" and re.search(
                         r"\btrue damage\b", text, re.I
                     ):
+                        pass
+                    elif d == "DoT" and _extract_damage_amount(text, "DoT") is not None:
                         pass
                     else:
                         continue
@@ -4703,6 +4903,12 @@ def analyze_text(
         ),
     ]:
         if re.search(pat, t) and stat not in benefits:
+            if stat == "DEF Penetration" and re.search(
+                r"penetration applied to .{0,60}attacks against|"
+                r"attacks against .{0,60}penetration",
+                t,
+            ):
+                continue
             benefits.append(stat)
 
     _apply_scalar_upgrades(effects, text, primary_dmg)

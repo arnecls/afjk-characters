@@ -607,7 +607,12 @@ def effect_to_schema(
 
     if category == "buff":
         stat = _stat_from_label(effect.label)
-        if stat and "buff" in effect.label.lower() and effect.numeric is not None:
+        if (
+            stat
+            and "buff" in effect.label.lower()
+            and effect.numeric is not None
+            and not summon
+        ):
             out["type"] = "stat_mod"
             out["stat"] = stat
             out["name"] = effect.label

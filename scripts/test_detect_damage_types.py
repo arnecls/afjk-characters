@@ -565,12 +565,16 @@ class CommonFailurePatternTests(unittest.TestCase):
 
     def test_evie_interrogation_not_dot_debuff(self):
         text = (
-            "she deals 180% (ATK-based) + 18% damage to the enemy every second "
-            "and immobilizes them"
+            "During the interrogation, she deals 180% (ATK-based) + 18% damage "
+            "to the enemy every second and immobilizes them"
         )
-        labels = [e.label for e in self._effects(text)]
-        self.assertIn("DoT", labels)
-        self.assertNotIn("DoT", [e.label for e in self._effects(text) if e.category == "debuff"])
+        labels = [e.label for e in self._effects(text, "Magic")]
+        self.assertIn("Magic", labels)
+        self.assertNotIn("DoT", labels)
+        self.assertNotIn(
+            "DoT",
+            [e.label for e in self._effects(text, "Magic") if e.category == "debuff"],
+        )
 
     def test_harak_healing_debuff(self):
         text = "prevents the enemy from recovering HP for 6s"
@@ -933,6 +937,90 @@ class CommonFailurePatternTests(unittest.TestCase):
         types = rs.detect_damage_types(text, "Physical")
         self.assertNotIn("DoT", types)
 
+    def test_harak_vicious_bite_not_hot(self):
+        text = (
+            "While casting this skill, Harak remains Unaffected and prevents the "
+            "enemy from recovering HP for 6s, causing them to lose 40% "
+            "(ATK-based) HP per second."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        labels = [e.label for e in effects if e.category == "buff"]
+        self.assertNotIn(rs.HEALING_OVER_TIME_LABEL, labels)
+
+    def test_bonnie_decay_reach_max_stack_dot(self):
+        text = (
+            "Once the Aging effect reaches its maximum stack, the afflicted enemy "
+            "suffers a 30% + 3% reduction in their ATK and takes 100% damage "
+            "every 1s."
+        )
+        self.assertTrue(rs._text_has_dot_damage(text))
+        self.assertTrue(rs._chunk_deals_enemy_damage(text, "Magic"))
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        self.assertIn(
+            "DoT",
+            [e.label for e in effects if e.category == "damage"],
+        )
+
+    def test_berial_silhouette_self_hp_drain_not_dot(self):
+        text = "This Silhouette loses 8% of its max HP per second."
+        self.assertFalse(rs._text_has_dot_damage(text))
+
+    def test_berial_hero_focus_damage_dealt_debuff(self):
+        text = (
+            "Berial reduces the damage dealt by an isolated enemy by 6% and "
+            "increases their damage taken by 8%."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        labels = [e.label for e in effects if e.category == "debuff"]
+        self.assertIn("Damage dealt debuff", labels)
+        self.assertIn("Damage taken debuff", labels)
+
+    def test_evie_intel_chase_channeled_not_dot(self):
+        text = (
+            "During the interrogation, she deals 180% (ATK-based) + 18% damage "
+            "to the enemy every second and immobilizes them."
+        )
+        self.assertFalse(rs._text_has_dot_damage(text))
+        types = rs.detect_damage_types(text, "Magic")
+        self.assertIn("Magic", types)
+        self.assertNotIn("DoT", types)
+
+    def test_evie_pointed_proof_magic_def_debuff(self):
+        text = (
+            "When Evie finishes gathering intel on an enemy hero, that enemy "
+            "hero's Magic DEF is permanently reduced by 20% + 2%."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        self.assertIn(
+            "Magic DEF debuff",
+            [e.label for e in effects if e.category == "debuff"],
+        )
+
+    def test_bryon_shadow_flash_absorb_energy(self):
+        text = (
+            "Bryon's normal attacks and skills deal damage times, absorbing "
+            "targets' Energy."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        self.assertIn(
+            "Energy drain",
+            [e.label for e in effects if e.category == "debuff"],
+        )
+
+    def test_athalia_true_damage_without_spurious_max_hp(self):
+        text = (
+            "dealing 150% (ATK-based) + 27% true damage plus extra true damage "
+            "equal to 30% + 3% of all enemies' total HP lost she has recorded."
+        )
+        types = rs.detect_damage_types(text, "Physical")
+        self.assertIn("True damage", types)
+        self.assertNotIn("Max HP-based damage", types)
+
     def test_galahad_shadow_merlin_artifact_buff(self):
         text = (
             "Every time Magister Merlin casts a skill, a shadow Merlin appears "
@@ -943,6 +1031,128 @@ class CommonFailurePatternTests(unittest.TestCase):
         rs.detect_special_effects(effects, "ex+10", text)
         labels = [e.label for e in effects if e.kind == "provides"]
         self.assertIn("Artifact buff", labels)
+
+
+class TestBatchThreeDetectionFixes(unittest.TestCase):
+    def test_lorsan_haste_reduction_debuff(self):
+        text = (
+            "Enemies within 2 tiles of the target are affected by the storm, "
+            "suffering a 30 + 3 Haste reduction and taking from 50% "
+            "(ATK-based) + 6% damage from Lorsan every 0.5s."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        debuffs = [e.label for e in effects if e.category == "debuff"]
+        self.assertIn("Haste debuff", debuffs)
+        damage = [e.label for e in effects if e.category == "damage"]
+        self.assertIn("DoT", damage)
+        self.assertNotIn("Magic", damage)
+
+    def test_lorsan_storm_upgrade_is_scalar(self):
+        text = "Increases the storm damage per hit to 55% (ATK-based) + 6%."
+        self.assertTrue(rs._is_damage_scalar_upgrade_chunk(text))
+
+    def test_cecia_vitality_absorb_debuff(self):
+        text = (
+            "Absorbs 1 of the target's Vitality each time when stealing stats."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "ex+5", text, "Physical")
+        self.assertIn(
+            "Vitality debuff",
+            [e.label for e in effects if e.category == "debuff"],
+        )
+
+    def test_kruger_shatter_armor_phys_def_debuff(self):
+        text = (
+            "Kruger slashes an enemy, dealing 240% (ATK-based) damage and "
+            "inflicting them with a stack of Shatter Armor."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        self.assertIn(
+            "Phys DEF debuff",
+            [e.label for e in effects if e.category == "debuff"],
+        )
+
+    def test_cyran_atk_spd_debuff_not_haste(self):
+        text = (
+            "Starshard Spell: Conjures a dark flame across the battlefield, "
+            "dealing 40% (ATK-based) true damage to all enemies and reducing "
+            "their ATK SPD by 20 for 5s."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "mythic+", text, "Magic")
+        debuffs = [e.label for e in effects if e.category == "debuff"]
+        self.assertIn("ATK SPD debuff", debuffs)
+        self.assertNotIn("Haste debuff", debuffs)
+
+    def test_hugin_enhance_force_damage_taken_reduction(self):
+        text = (
+            "While the cogshield or enhanced cogshield is active, the protected "
+            "ally also takes 30% less damage."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "supreme+", text, "Physical")
+        self.assertIn(
+            "Damage taken reduction",
+            [e.label for e in effects if e.category == "buff"],
+        )
+
+    def test_faramor_summon_upgrade_is_scalar(self):
+        text = (
+            "Increases the damage dealt when summoning the magic circle to "
+            "220% (ATK-based) + 20% and the subsequent damage to 40% "
+            "(ATK-based) per hit."
+        )
+        self.assertTrue(rs._is_damage_scalar_upgrade_chunk(text))
+
+    def test_faramor_true_damage_suppresses_physical(self):
+        text = (
+            "dealing 210% (ATK-based) + 20% true damage to enemies caught inside."
+        )
+        types = rs.detect_damage_types(text, "Physical")
+        self.assertIn("True damage", types)
+        self.assertNotIn("Physical", types)
+
+    def test_lorsan_zephyr_haste_buff(self):
+        text = (
+            "While active, the protected ally gains 50 Dodge, 30 + 3 Haste, "
+            "and recovers 90% (ATK-based) + 12% HP per second."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        buffs = [e.label for e in effects if e.category == "buff"]
+        self.assertIn("Haste buff", buffs)
+
+    def test_kruger_ruthless_vanguard_lifedrain(self):
+        text = (
+            "Additionally, Kruger gains 30 Life Drain when no allies are "
+            "detected within the surrounding 1 tile."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "mythic+", text, "Physical")
+        self.assertIn(
+            "Lifedrain buff",
+            [e.label for e in effects if e.category == "buff"],
+        )
+
+    def test_dunlingr_harmonic_soundwall_no_damage(self):
+        text = (
+            "If the Bell of Order is set to Spellbind, Dunlingr gains a shield "
+            "that absorbs 130% (ATK-based) + 20% damage whenever an enemy casts "
+            "their Ultimate, lasting until the battle ends."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        self.assertIn(
+            "Shield",
+            [e.label for e in effects if e.category == "buff"],
+        )
+        self.assertEqual(
+            [e.label for e in effects if e.category == "damage"],
+            [],
+        )
 
 
 if __name__ == "__main__":

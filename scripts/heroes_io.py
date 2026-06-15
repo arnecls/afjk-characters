@@ -103,6 +103,11 @@ def normalize_phase_text(value: str | list[str] | None) -> list[str]:
     return out
 
 
+def _skip_phase_marker_sentence(sentence: str) -> bool:
+    """Bare Passive./Active. markers are not skill-effect text."""
+    return bool(re.fullmatch(r"(?i)(?:passive|active)\.?", (sentence or "").strip()))
+
+
 def join_segments(value: str | list[str] | None) -> str:
     """Join sentence lists back into display prose."""
     if not value:
@@ -130,6 +135,28 @@ def joined_skill_chunks(
     ]
 
 
+def _sentence_key(sentence: str) -> str:
+    return re.sub(r"\s+", " ", (sentence or "").strip().lower())
+
+
+def merge_unique_sentences(
+    primary: list[str] | None, secondary: list[str] | None
+) -> list[str]:
+    """Union sentence lists; ``primary`` order first, then new from secondary."""
+    out: list[str] = []
+    seen: set[str] = set()
+    for group in (primary, secondary):
+        if not group:
+            continue
+        for sent in group:
+            key = _sentence_key(sent)
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            out.append(sent)
+    return out
+
+
 def split_passive_active(text: str) -> tuple[str | None, str | None]:
     """Split base skill text into passive and active bodies when marked."""
     text = normalize_skill_text((text or "").strip())
@@ -141,6 +168,7 @@ def split_passive_active(text: str) -> tuple[str | None, str | None]:
         return None, text
     passive: str | None = None
     active: str | None = None
+    preamble: str | None = None
     for part in _PHASE_SPLIT_RE.split(text):
         part = part.strip()
         if not part:
@@ -152,6 +180,11 @@ def split_passive_active(text: str) -> tuple[str | None, str | None]:
         m = re.match(r"^Active\.?\s*(.*)$", part, re.DOTALL)
         if m:
             active = m.group(1).strip()
+            continue
+        if passive is None and active is None:
+            preamble = part.strip()
+    if preamble:
+        active = f"{preamble} {active}".strip() if active else preamble
     return passive, active
 
 

@@ -63,6 +63,31 @@ class SplitPassiveActiveTests(unittest.TestCase):
         self.assertIn("Brightfeather", passive or "")
         self.assertIn("charged arrow", active or "")
 
+    def test_preamble_before_passive_becomes_active(self) -> None:
+        text = (
+            "When a battle starts, Aliceth places her Mark of Judgement on the "
+            "farthest enemy. Passive. After Aliceth locks on the same enemy for "
+            "6s, the Mark of Judgement is enhanced."
+        )
+        passive, active = io.split_passive_active(text)
+        self.assertIn("Mark of Judgement", active or "")
+        self.assertIn("locks on", passive or "")
+
+    def test_skill_chunks_skip_bare_active_marker(self) -> None:
+        skill = {
+            "section": "Skill1",
+            "description": {
+                "raw": "Passive. Grants haste. Active. Deals damage.",
+                "passive": ["Grants haste."],
+                "active": ["Deals damage."],
+                "upgrades": [{"level": "3", "text": ["Active.", "Deals more damage."]}],
+            },
+        }
+        chunks = rs.skill_chunks_from_skill(skill)
+        texts = [text for _tier, text, _sec in chunks]
+        self.assertNotIn("Active.", texts)
+        self.assertIn("Deals more damage.", texts)
+
 
 class NormalizeSkillDescriptionTests(unittest.TestCase):
     def test_legacy_string_and_levels(self) -> None:
@@ -113,6 +138,20 @@ class NormalizeSkillDescriptionTests(unittest.TestCase):
             base_texts[len(desc["passive"]) : len(desc["passive"]) + len(desc["active"])],
             desc["active"],
         )
+
+
+    def test_sealed_fate_includes_mark_sentences(self) -> None:
+        data = io.load_json(io.HEROES_DATA)
+        aliceth = next(h for h in data["heroes"] if h["name"] == "Aliceth")
+        skill = next(s for s in aliceth["skills"] if s.get("name") == "Sealed Fate")
+        chunks = rs.skill_chunks_from_skill(skill)
+        chunk_text = " ".join(text for _tier, text, _sec in chunks)
+        self.assertIn("places her Mark of Judgement", chunk_text)
+        effects: list[rs.Effect] = []
+        for tier, text, _section in chunks:
+            rs.analyze_text(effects, [], {}, [], tier, text, "Physical")
+        labels = [e.label for e in effects if e.category == "debuff"]
+        self.assertIn("Marked target (focus fire)", labels)
 
 
 class SkillChunksTests(unittest.TestCase):

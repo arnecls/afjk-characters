@@ -639,20 +639,23 @@ be done through a script or unittest.
 
 ### High level validation
 
-For each character, compare the detected damage types, crowd control types,
-buffs and debuffs per skill with the long description of the skill. This step
-does not compare concrete values, timings or target attribution.
+For each character in heroes_data_processed.json, compare the detected
+damage types, healing types, crowd control types, buffs and debuffs per skill
+with the descriptions of each skill. All detections must conceptually match what
+is stated in the skill description. Further context is provided in AGENTS.md.
+This step does not compare concrete values, timings or target attribution.
 
-Compile a list of the to be tested attributes per character, per skill and do
+Compile a list of the to be tested detections per character, per skill and do
 the comparison in batches. Note down the findings in the form of:
-Character, Skill, found, expected.
+Character, Skill: found -> expected.
 
 ### Detailed validation
 
-For each character, compare the detected skill effects with the values stated
-on the long discription of the skill. This check should validate targeting, area
-types, timings and magnitudes.
+For each character in heroes_data_processed.json, compare the targeting, area
+types, timings and magnitudes per skill with the descriptions of each skill.
+All detections must conceptually match what is stated in the skill description.
+Further context is provided in AGENTS.md.
 
-Compile a list of the to be tested attributes per character, per skill and do
+Compile a list of the to be tested detections per character, per skill and do
 the comparison in batches. Note down the findings in the form of:
-Character, Skill, found, expected.
+Character, Skill: found -> expected.
