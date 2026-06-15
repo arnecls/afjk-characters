@@ -4853,6 +4853,20 @@
     return icons[label] || "";
   }
 
+  function replacementCategoryClass(label) {
+    const classes = {
+      "Best overall replacement": "replacement-category--overall",
+      "Buffs on allies": "replacement-category--buff",
+      "Energy provider": "replacement-category--energy",
+      Healing: "replacement-category--healing",
+      "Similar Skills": "replacement-category--similar",
+      Damage: "replacement-category--damage",
+      "Debuffs on enemies": "replacement-category--debuff",
+      "Crowd Control": "replacement-category--cc",
+    };
+    return classes[label] || "replacement-category--generic";
+  }
+
   function renderReplacementCategoryHeading(label) {
     const icon = replacementCategoryIcon(label);
     if (!icon) {
@@ -4875,7 +4889,10 @@
     let html = '<div class="detail-section">';
     html += "<h2>Replacement options</h2>";
     reps.forEach(function (cat) {
-      html += '<div class="replacement-category">';
+      html +=
+        '<div class="replacement-category ' +
+        replacementCategoryClass(cat.category) +
+        '">';
       html += renderReplacementCategoryHeading(cat.category);
       html += renderHeroRowList(
         cat.entries.map(function (e) {
