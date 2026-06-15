@@ -714,7 +714,7 @@ Atalanta provides Haste buff (Legendary+) to multiple targets `high` — conditi
 
 **Best overall replacement**
 
-- Perseus (80% `Damage` `Crowd Control`)
+- Perseus (83% `Damage` `Crowd Control`)
 - Gwyneth (67% `Damage`)
 - Kafra (61% `Damage` `Debuffs on enemies`)
 
@@ -1915,9 +1915,9 @@ Cassadee provides Tidal Strength buff to all units `high`.
 
 **Similar Skills**
 
-- Perseus (80% `ally-buffer` `aoe-damage`)
 - Parisa (60% `ally-buffer` `aoe-damage`)
 - Hodgkin (60% `aoe-damage` `enemy-debuffer`)
+- Lucius (48% `aoe-damage` `enemy-debuffer`)
 
 **Damage**
 
@@ -3326,9 +3326,9 @@ Faramor also requires units **buffing them**
 
 **Similar Skills**
 
-- Perseus (60% `ally-buffer` `aoe-damage`)
 - Lorsan (60% `aoe-damage` `dot-specialist`)
 - Arden (57% `aoe-damage` `dot-specialist`)
+- Parisa (48% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -3571,9 +3571,9 @@ Florabelle provides Haste buff to summons `high`, Lifedrain buff to summons `hig
 
 **Best overall replacement**
 
+- Perseus (55% `Damage`)
 - Pang (55% `Damage`)
 - Atalanta (54% `Damage` `Similar Skills`)
-- Perseus (53% `Damage`)
 
 **Similar Skills**
 
@@ -4920,8 +4920,8 @@ Himmel provides ATK buff to multiple targets `high` and Shield to single targets
 **Similar Skills**
 
 - Igor (42% `aoe-damage` `battle-start-burst` `self-repositioner`)
-- Perseus (40% `ally-buffer` `aoe-damage`)
 - Gerda (37% `ally-shielder` `battle-start-burst` `self-repositioner`)
+- Frieren (34% `aoe-damage` `self-repositioner`)
 
 **Damage**
 
@@ -5693,7 +5693,7 @@ Kazim provides Haste buff to multiple targets `average` and ATK buff (Mythic+) t
 
 - Aliceth (71% `Damage` `Debuffs on enemies`)
 - Vala (65% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Perseus (60% `Damage` `Crowd Control`)
+- Nazrik (57% `Damage`)
 
 **Buffs on allies**
 
@@ -9130,9 +9130,9 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 **Similar Skills**
 
-- Perseus (66% `ally-buffer` `aoe-damage`)
 - Cassadee (60% `ally-buffer` `aoe-damage`)
 - Faramor (48% `ally-buffer` `aoe-damage`)
+- Aurora (40% `ally-buffer` `mark-target`)
 
 **Damage**
 
@@ -9158,7 +9158,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 - **Signature skill**: Divine Rend (ultimate)
 - **Movement**: moving (avg attack range 2.9 tiles)
-- **Behavior tags**: `ally-buffer` `aoe-damage`
+- **Behavior tags**: `aoe-damage`
 - **Damage types**: Physical `high`, Max HP-based damage `high`
 
 #### Play overview
@@ -9233,9 +9233,9 @@ Perseus provides ATK buff to multiple targets `average`.
 
 **Best overall replacement**
 
-- Atalanta (72% `Damage` `Crowd Control`)
-- Cassadee (57% `Damage` `Similar Skills`)
-- Aliceth (55% `Damage`)
+- Atalanta (75% `Damage` `Crowd Control`)
+- Vala (52% `Damage` `Crowd Control`)
+- Florabelle (52% `Damage`)
 
 **Buffs on allies**
 
@@ -9245,9 +9245,9 @@ Perseus provides ATK buff to multiple targets `average`.
 
 **Similar Skills**
 
-- Cassadee (80% `ally-buffer` `aoe-damage`)
-- Parisa (66% `ally-buffer` `aoe-damage`)
-- Faramor (60% `ally-buffer` `aoe-damage`)
+- Tilaya (100% `aoe-damage`)
+- Lorsan (50% `aoe-damage`)
+- Atalanta (48% `aoe-damage`)
 
 **Damage**
 
@@ -9850,7 +9850,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 **Best overall replacement**
 
 - Atalanta (78% `Damage` `Crowd Control` `Similar Skills`)
-- Perseus (71% `Damage` `Crowd Control`)
+- Perseus (73% `Damage` `Crowd Control`)
 - Kordan (70% `Damage` `Crowd Control`)
 
 **Healing**
@@ -11606,7 +11606,7 @@ Sonja provides ATK buff to multiple targets `average` and DEF buff to multiple t
 
 - Walker (80% `aoe-damage` `battle-start-burst` `life-drain` `mass-cc`)
 - Himmel (51% `ally-buffer` `aoe-damage` `battle-start-burst`)
-- Perseus (48% `ally-buffer` `aoe-damage`)
+- Bonnie (42% `aoe-damage` `battle-start-burst` `mass-cc`)
 
 **Damage**
 
@@ -12529,8 +12529,8 @@ Tilaya provides DEF buff (EX+10) in an area `average` and Max HP buff (EX+10) in
 
 **Similar Skills**
 
+- Perseus (100% `aoe-damage`)
 - Lorsan (60% `aoe-damage`)
-- Perseus (50% `aoe-damage`)
 - Florabelle (40% `aoe-damage`)
 
 **Damage**
@@ -13014,7 +13014,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 **Best overall replacement**
 
-- Perseus (85% `Damage` `Crowd Control`)
+- Perseus (88% `Damage` `Crowd Control`)
 - Atalanta (84% `Damage` `Crowd Control`)
 - Vala (80% `Damage` `Crowd Control` `Debuffs on enemies`)
 

@@ -31,6 +31,7 @@ Examples that **are** `mass-cc`:
 - Self-only shields (Eironn skill 2)
 - Summon buffs/shields (Florabelle, Zanie turret shields)
 - Companion buffs without a separate summon-buff tag in this enum
+- Require buffs (Perseus)
 
 ## `battlefield-modification` vs zones
 

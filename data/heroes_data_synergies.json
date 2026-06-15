@@ -2964,7 +2964,7 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.8031,
+            "score": 0.8308,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -7299,14 +7299,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Perseus",
-            "score": 0.8,
-            "matches": [
-              "ally-buffer",
-              "aoe-damage"
-            ]
-          },
-          {
             "name": "Parisa",
             "score": 0.6,
             "matches": [
@@ -7317,6 +7309,14 @@
           {
             "name": "Hodgkin",
             "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "enemy-debuffer"
+            ]
+          },
+          {
+            "name": "Lucius",
+            "score": 0.48,
             "matches": [
               "aoe-damage",
               "enemy-debuffer"
@@ -13150,14 +13150,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Perseus",
-            "score": 0.6,
-            "matches": [
-              "ally-buffer",
-              "aoe-damage"
-            ]
-          },
-          {
             "name": "Lorsan",
             "score": 0.6,
             "matches": [
@@ -13171,6 +13163,14 @@
             "matches": [
               "aoe-damage",
               "dot-specialist"
+            ]
+          },
+          {
+            "name": "Parisa",
+            "score": 0.48,
+            "matches": [
+              "ally-buffer",
+              "aoe-damage"
             ]
           }
         ],
@@ -13991,6 +13991,13 @@
         ],
         "overall": [
           {
+            "name": "Perseus",
+            "score": 0.5538,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
             "name": "Pang",
             "score": 0.5538,
             "matches": [
@@ -14003,13 +14010,6 @@
             "matches": [
               "Damage",
               "Similar Skills"
-            ]
-          },
-          {
-            "name": "Perseus",
-            "score": 0.5308,
-            "matches": [
-              "Damage"
             ]
           }
         ]
@@ -18500,19 +18500,19 @@
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.4,
-            "matches": [
-              "ally-buffer",
-              "aoe-damage"
-            ]
-          },
-          {
             "name": "Gerda",
             "score": 0.375,
             "matches": [
               "ally-shielder",
               "battle-start-burst",
+              "self-repositioner"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 0.3429,
+            "matches": [
+              "aoe-damage",
               "self-repositioner"
             ]
           }
@@ -21731,11 +21731,10 @@
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.6037,
+            "name": "Nazrik",
+            "score": 0.5785,
             "matches": [
-              "Damage",
-              "Crowd Control"
+              "Damage"
             ]
           }
         ]
@@ -33593,14 +33592,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Perseus",
-            "score": 0.6667,
-            "matches": [
-              "ally-buffer",
-              "aoe-damage"
-            ]
-          },
-          {
             "name": "Cassadee",
             "score": 0.6,
             "matches": [
@@ -33614,6 +33605,14 @@
             "matches": [
               "ally-buffer",
               "aoe-damage"
+            ]
+          },
+          {
+            "name": "Aurora",
+            "score": 0.4,
+            "matches": [
+              "ally-buffer",
+              "mark-target"
             ]
           }
         ],
@@ -34167,26 +34166,23 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Cassadee",
-            "score": 0.8,
+            "name": "Tilaya",
+            "score": 1.0,
             "matches": [
-              "ally-buffer",
               "aoe-damage"
             ]
           },
           {
-            "name": "Parisa",
-            "score": 0.6667,
+            "name": "Lorsan",
+            "score": 0.5,
             "matches": [
-              "ally-buffer",
               "aoe-damage"
             ]
           },
           {
-            "name": "Faramor",
-            "score": 0.6,
+            "name": "Atalanta",
+            "score": 0.48,
             "matches": [
-              "ally-buffer",
               "aoe-damage"
             ]
           }
@@ -34247,23 +34243,23 @@
         "overall": [
           {
             "name": "Atalanta",
-            "score": 0.7269,
+            "score": 0.7546,
             "matches": [
               "Damage",
               "Crowd Control"
             ]
           },
           {
-            "name": "Cassadee",
-            "score": 0.5745,
+            "name": "Vala",
+            "score": 0.5293,
             "matches": [
               "Damage",
-              "Similar Skills"
+              "Crowd Control"
             ]
           },
           {
-            "name": "Aliceth",
-            "score": 0.5579,
+            "name": "Florabelle",
+            "score": 0.5268,
             "matches": [
               "Damage"
             ]
@@ -36092,7 +36088,7 @@
           },
           {
             "name": "Perseus",
-            "score": 0.7128,
+            "score": 0.7359,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -42000,11 +41996,12 @@
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.48,
+            "name": "Bonnie",
+            "score": 0.4286,
             "matches": [
-              "ally-buffer",
-              "aoe-damage"
+              "aoe-damage",
+              "battle-start-burst",
+              "mass-cc"
             ]
           }
         ],
@@ -45325,15 +45322,15 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Lorsan",
-            "score": 0.6,
+            "name": "Perseus",
+            "score": 1.0,
             "matches": [
               "aoe-damage"
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.5,
+            "name": "Lorsan",
+            "score": 0.6,
             "matches": [
               "aoe-damage"
             ]
@@ -46678,7 +46675,7 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.8585,
+            "score": 0.8862,
             "matches": [
               "Damage",
               "Crowd Control"
