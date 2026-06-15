@@ -92,6 +92,14 @@
         "passive_only": {
           "type": "boolean",
           "description": "True when the skill has no extractable combat effects."
+        },
+        "skill_card_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Deduped chip labels for the site skill card (from skill_slices)."
         }
       },
       "allOf": [

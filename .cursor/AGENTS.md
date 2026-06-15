@@ -239,6 +239,22 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   `ultimate`, `skill1`–`skill5`). Labels: Ultimate, Skill 1, Skill 2,
   Legendary+, Ex. Skill, Supreme+.
 
+**Skill cards** (site character sheet) — chip tags under each skill summary
+in `site/data/heroes.json` → `sections.skillCards`. Tags are computed during
+`just analyze` from the same `analyze_hero()` pass as processed JSON:
+
+- **Damage chips** — labels from `skill_slices[section].effects` (category
+  `damage`), not a second pass over raw skill text.
+- **Buff / debuff / CC / immunity chips** — same `skill_slices` effects.
+- **Display policy** — `_apply_skill_card_damage_display_policy()` may hide
+  labels that detection still records (e.g. implicit max-HP from
+  `ATK + X%` convention on cards only; processed JSON keeps them).
+
+Stored on each skill as `skill_card_tags` in `heroes_data_processed.json`.
+`render_site.py` reads those tags (does not re-derive). After changing
+detection in `rewrite-summaries.py`, run `just views` (analyze + render) so
+processed JSON and the site stay aligned.
+
 **Skill summary authoring** (AI-generated, not scripted):
 
 - Read fully ascended `description` from `heroes_data_processed.json`.
@@ -649,6 +665,8 @@ Compile a list of the to be tested detections per character, per skill and do
 the comparison in batches. Note down the findings in the form of:
 Character, Skill: found -> expected.
 
+When fixing, make sure to also update skill-card tags.
+
 ### Detailed validation
 
 For each character in heroes_data_processed.json, compare the targeting, area
@@ -659,3 +677,5 @@ Further context is provided in AGENTS.md.
 Compile a list of the to be tested detections per character, per skill and do
 the comparison in batches. Note down the findings in the form of:
 Character, Skill: found -> expected.
+
+When fixing, makes sure to also update skill-card tags.

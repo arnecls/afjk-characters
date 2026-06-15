@@ -988,10 +988,16 @@ def serialize_processed_hero(
 
     skills: dict[str, Any] = {}
     primary = hero.damage_type or hero_record.get("damage_type") or "Physical"
+    rs = _rs()
     for skill in hero_record.get("skills", []):
         section = skill["section"]
         slice_ = hero.skill_slices.get(section)
         skill_name, skill_rec = _build_skill_record(skill, slice_, primary)
+        category = _SECTION_TO_CATEGORY.get(section)
+        if category:
+            skill_rec["skill_card_tags"] = rs.format_skill_card_tags(
+                hero, category
+            )
         skills[skill_name] = skill_rec
 
     damage_entries = [

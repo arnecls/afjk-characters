@@ -434,6 +434,65 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("energy recovery", keys)
         self.assertIn("atk spd", keys)
 
+    def test_kazim_skill_cards_omit_implicit_max_hp_damage(self):
+        hero, _ = self._hero_by_display("Kazim")
+        for category in ("ultimate", "skill1", "skill2", "skill4"):
+            tags = rs.format_skill_card_tags(hero, category)
+            tag_text = " ".join(tags)
+            self.assertNotIn(
+                "Max HP-based damage",
+                tag_text,
+                msg=f"{category} should not show implicit max-HP chip",
+            )
+        ult_tags = rs.format_skill_card_tags(hero, "ultimate")
+        self.assertIn("Physical", ult_tags)
+        mythic_tags = rs.format_skill_card_tags(hero, "skill4")
+        self.assertIn("True damage", mythic_tags)
+
+    def test_skill_card_damage_tags_match_skill_slices(self):
+        """Damage chips come from skill_slices, not a parallel text re-parse."""
+        samples = ("Kazim", "Aliceth", "Galahad", "Athalia")
+        for display in samples:
+            hero, _ = self._hero_by_display(display)
+            for category in rs.SKILL_CATEGORY_ORDER:
+                section = rs.CATEGORY_TO_SECTION.get(category)
+                if not section or section not in hero.skill_slices:
+                    continue
+                tags = rs.format_skill_card_tags(hero, category)
+                damage_in_tags = [
+                    tag for tag in tags if tag in rs._SKILL_CARD_DAMAGE_KEYS
+                ]
+                expected = rs._skill_card_damage_labels(
+                    hero, hero.skill_slices[section]
+                )
+                self.assertEqual(
+                    damage_in_tags,
+                    expected,
+                    msg=f"{display}/{category}",
+                )
+
+    def test_processed_skill_card_tags_match_live_analysis(self):
+        processed = io.load_processed()
+        data = io.load_heroes_data()
+        rs_mod = rs
+        for record in data["heroes"]:
+            short = record.get("name") or record["title"].split(" - ", 1)[0]
+            if short not in processed["heroes"]:
+                continue
+            hero = rs_mod.hero_from_record(record)
+            rs_mod.analyze_hero(hero)
+            for skill in processed["heroes"][short].get("skills", {}).values():
+                category = skill.get("category")
+                stored = skill.get("skill_card_tags")
+                if not category or stored is None:
+                    continue
+                live = rs_mod.format_skill_card_tags(hero, category)
+                self.assertEqual(
+                    stored,
+                    live,
+                    msg=f"{short}/{category}",
+                )
+
     def test_signature_skill_body_omits_description(self):
         _, behavior = self._hero_by_display("Aliceth")
         body = rs._format_signature_skill_body("Aliceth", behavior)

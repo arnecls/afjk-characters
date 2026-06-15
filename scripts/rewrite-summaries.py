@@ -7747,6 +7747,52 @@ def signature_skill_category(
     return SECTION_TO_SKILL_CATEGORY.get(section)
 
 
+def _skill_section_text(hero: Hero, section: str) -> str:
+    """Concatenate all analyzed chunks for one skill section."""
+    parts: list[str] = []
+    for _tier, text, sec in hero.skill_chunks:
+        if sec == section:
+            parts.append(text)
+    return " ".join(parts)
+
+
+def _apply_skill_card_damage_display_policy(
+    labels: list[str],
+    hero: Hero,
+    section: str,
+) -> list[str]:
+    """Skill-card display rules; detection lives in skill_slices effects."""
+    text = _skill_section_text(hero, section)
+    if not text.strip():
+        return labels
+    t = text.lower()
+    out = list(labels)
+    if (
+        "Max HP-based damage" in out
+        and _text_has_atk_plus_flat_damage(text)
+        and not _text_has_max_hp_damage(text)
+    ):
+        out = [label for label in out if label != "Max HP-based damage"]
+    if "True damage" in out and "Max HP-based damage" in out:
+        if re.search(r"\+\s*\d+(?:\.\d+)?%\s+true damage", t) or re.search(
+            r"true damage equal to \d+(?:\.\d+)?(?:\s*%\s*)?"
+            r"of .{0,50}max hp",
+            t,
+        ):
+            out = [label for label in out if label != "Max HP-based damage"]
+    return out
+
+
+def _skill_card_damage_labels(hero: Hero, slice_: SkillSlice) -> list[str]:
+    """Damage chip labels from analyzed effects (not raw text re-parse)."""
+    damage_order = {label: idx for idx, label in enumerate(_SKILL_CARD_DAMAGE_KEYS)}
+    labels = sorted(
+        {e.label for e in slice_.effects if e.category == "damage"},
+        key=lambda label: damage_order.get(label, len(_SKILL_CARD_DAMAGE_KEYS)),
+    )
+    return _apply_skill_card_damage_display_policy(labels, hero, slice_.section)
+
+
 def format_skill_card_tags(
     hero: Hero,
     category: str,
@@ -7758,7 +7804,6 @@ def format_skill_card_tags(
         return []
     tags: list[str] = []
     seen: set[str] = set()
-    primary = hero.damage_type or "Physical"
 
     def add(tag: str) -> None:
         key = _canonical_skill_card_chip_key(tag)
@@ -7766,19 +7811,12 @@ def format_skill_card_tags(
             seen.add(key)
             tags.append(tag.strip())
 
-    for _tier, text, sec in hero.skill_chunks:
-        if sec != section:
-            continue
-        if _chunk_is_companion_focused(text):
-            continue
-        if _skill_chunk_has_ally_only_damage(text):
-            continue
-        for dt in detect_damage_types(text, primary):
-            add(dt)
-
     sl = hero.skill_slices.get(section)
     if not sl:
         return tags
+
+    for label in _skill_card_damage_labels(hero, sl):
+        add(label)
 
     all_buffs = [
         e for e in sl.effects + sl.summon_effects if e.category == "buff"
@@ -7861,6 +7899,7 @@ def format_skill_cards(
     hero_categories: set[str] | None,
     skills: list[SkillMeta] | None = None,
     source_skills: list[dict] | None = None,
+    skill_card_tags_by_category: dict[str, list[str]] | None = None,
 ) -> list[dict[str, str | list[str] | dict[str, str] | list[dict[str, str]]]]:
     if not skill_summaries or not hero_categories:
         return []
@@ -7874,11 +7913,18 @@ def format_skill_cards(
         if not summary:
             continue
         label = CATEGORY_DISPLAY_LABELS.get(category, category)
+        tags = (
+            (skill_card_tags_by_category or {}).get(category)
+            if skill_card_tags_by_category
+            else None
+        )
+        if tags is None:
+            tags = format_skill_card_tags(hero, category, skills)
         card: dict[str, str | list[str] | dict[str, str] | list[dict[str, str]]] = {
             "category": category,
             "label": label,
             "summary": summary,
-            "tags": format_skill_card_tags(hero, category, skills),
+            "tags": tags,
         }
         detail = _skill_detail_for_category(source_skills, category)
         if detail:

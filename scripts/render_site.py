@@ -314,12 +314,19 @@ def build_site_data(
             )
         ).strip()
         damage_types = rs._hero_skill_overview_damage_types(behavior, hero)
+        skill_card_tags_by_category: dict[str, list[str]] = {}
+        for skill_data in p.get("skills", {}).values():
+            category = skill_data.get("category")
+            tags = skill_data.get("skill_card_tags")
+            if category and tags is not None:
+                skill_card_tags_by_category[category] = tags
         skill_cards = rs.format_skill_cards(
             hero,
             skill_summaries,
             hero_categories,
             hero_skills,
             source_skills=meta.get("skills", []),
+            skill_card_tags_by_category=skill_card_tags_by_category or None,
         )
         summary_md = rs.format_summary(hero, short).strip()
         synergy = _build_synergy_sections(

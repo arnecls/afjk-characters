@@ -56,6 +56,8 @@ just render-site
 
 This refreshes `heroes-overview.md` / `heroes-overview.csv`, copies the CSV into `site/data/`, writes `site/data/heroes.json`, and downloads any missing portrait images from Yaphalla into `site/assets/`. Running `just views` also refreshes the site data.
 
+Skill-card chip tags on the character sheet come from the same analysis pass as `heroes_data_processed.json` (`skill_card_tags` per skill). After changing detection logic in `scripts/rewrite-summaries.py`, run `just views` (not `just analyze` alone) so both processed JSON and `site/data/heroes.json` update together.
+
 Preview locally (required — the site loads data via `fetch`):
 
 ```bash
@@ -104,12 +106,12 @@ Run `just` (or `just --list`) to see all available recipes.
 
 ```
 download  →  data/heroes_data.json
-analyze   →  data/heroes_data_processed.json
+analyze   →  data/heroes_data_processed.json  (includes skill_card_tags per skill)
              data/heroes_data_synergies.json
 render    →  Heroes.md
              heroes-overview.md
              heroes-overview.csv
-             site/data/heroes.json
+             site/data/heroes.json  (skillCards read from processed skill_card_tags)
 ```
 
 Configuration for synergy scoring and display limits lives in `data/heroes_config.json`. Curated metadata (signature skills, behavior tags, placement overrides) is in other files under `data/`.
