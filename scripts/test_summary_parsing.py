@@ -195,6 +195,31 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertTrue(provides)
         self.assertEqual(provides[0].targeting, "Self")
 
+    def test_harak_tidal_assault_invincible_self(self):
+        hero = _hero_by_short_name("Harak")
+        skill1 = hero.skill_slices.get("Skill1")
+        self.assertIsNotNone(skill1)
+        inv = [e for e in skill1.effects if e.label == "Invincible"]
+        self.assertTrue(inv)
+        self.assertEqual(inv[0].targeting, "Self")
+        ally_inv = [
+            e
+            for e in _effects(hero, "buff", "Invincible")
+            if e.targeting != "Self"
+        ]
+        self.assertEqual(ally_inv, [])
+
+    def test_aurora_starlit_slumber_invincible_self(self):
+        hero = _hero_by_short_name("Aurora")
+        inv = list(_effects(hero, "buff", "Invincible"))
+        self.assertTrue(inv)
+        self.assertEqual(inv[0].targeting, "Self")
+        provides = [
+            s for s in hero.special_effects if s.label == "Invincibility"
+        ]
+        self.assertTrue(provides)
+        self.assertEqual(provides[0].targeting, "Self")
+
     def test_salazer_no_ally_lifedrain(self):
         hero = _hero_by_short_name("Salazer")
         ally_life = [

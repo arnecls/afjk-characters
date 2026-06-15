@@ -3915,9 +3915,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -3969,7 +3969,7 @@
           "skill_card_tags": [
             "Magic",
             "Haste buff",
-            "Invincible",
+            "Invincible — Self",
             "Haste debuff"
           ]
         },
@@ -4271,7 +4271,7 @@
           {
             "label": "Invincibility",
             "tier": "base",
-            "targeting": "Single target",
+            "targeting": "Self",
             "description": "While asleep, Aurora stays invincible."
           }
         ],
@@ -19630,9 +19630,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -19649,7 +19649,7 @@
           "cooldown": 15.0,
           "initial_cooldown": 5.0,
           "skill_card_tags": [
-            "Invincible"
+            "Invincible — Self"
           ]
         },
         "Flesh Feast": {
@@ -19902,7 +19902,7 @@
           {
             "label": "Invincibility",
             "tier": "base",
-            "targeting": "Single target",
+            "targeting": "Self",
             "description": "Harak dives beneath the surface, swiftly reaching the invincible, and each assist or defeat resets Tidal Assault's cooldown."
           },
           {
@@ -39725,8 +39725,8 @@
               "tier": "base",
               "immunity_type": "unaffected",
               "timing": "on_skill",
-              "targeting_label": "Single target",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
               "target_count": 1
             }
@@ -39737,7 +39737,7 @@
             "Physical",
             "Knock back",
             "Stun",
-            "Unaffected"
+            "Unaffected — Self"
           ]
         },
         "Spear-Shield Combo": {
@@ -59285,8 +59285,8 @@
               "tier": "ex+10",
               "immunity_type": "unaffected",
               "timing": "on_skill",
-              "targeting_label": "Single target",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
               "target_count": 1
             }
@@ -59297,7 +59297,7 @@
             "Haste buff — Self",
             "Haste debuff",
             "Movement speed debuff",
-            "Unaffected"
+            "Unaffected — Self"
           ]
         },
         "Enhance Force": {

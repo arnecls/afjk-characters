@@ -3419,15 +3419,7 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Harak",
-            "score": 0.7812,
-            "matches": [
-              "Invincible"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -10077,20 +10069,6 @@
           "score": 5.7636
         },
         {
-          "provider": "Aurora",
-          "reasons": [
-            "Grants 1 distinct stat buff to Dionel"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Harak",
-          "reasons": [
-            "Grants 1 distinct stat buff to Dionel"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
@@ -12769,13 +12747,6 @@
           "score": 12.0
         },
         {
-          "provider": "Aurora",
-          "reasons": [
-            "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Velara",
           "reasons": [
             "Grants 1 distinct stat buff to Faramor"
@@ -13029,13 +13000,6 @@
             "Grants 1 distinct stat buff to Faramor"
           ],
           "score": 5.55
-        },
-        {
-          "provider": "Harak",
-          "reasons": [
-            "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 4.5
         },
         {
           "provider": "Thoran",
@@ -16918,31 +16882,23 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.75,
-          "name": "Lily May"
-        },
-        {
-          "score": 6.75,
-          "name": "Silven"
-        },
-        {
           "score": 5.85,
           "name": "Indris"
+        },
+        {
+          "score": 5.0,
+          "name": "Niru"
+        },
+        {
+          "score": 5.0,
+          "name": "Vala"
         }
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Aurora",
-            "score": 1.0,
-            "matches": [
-              "Invincible"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -25026,13 +24982,6 @@
           "score": 7.7706
         },
         {
-          "provider": "Aurora",
-          "reasons": [
-            "Grants 1 distinct stat buff to Lily May"
-          ],
-          "score": 6.75
-        },
-        {
           "provider": "Velara",
           "reasons": [
             "Grants 1 distinct stat buff to Lily May"
@@ -25202,13 +25151,6 @@
             "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 8.25
-        },
-        {
-          "provider": "Harak",
-          "reasons": [
-            "Grants 1 distinct stat buff to Lily May"
-          ],
-          "score": 6.75
         },
         {
           "provider": "Salazer",
@@ -32919,22 +32861,7 @@
         "**Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Aurora",
-            "score": 1.0,
-            "matches": [
-              "Invincible"
-            ]
-          },
-          {
-            "name": "Harak",
-            "score": 0.9542,
-            "matches": [
-              "Invincible"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [
           {
@@ -33946,20 +33873,6 @@
             "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 5.5206
-        },
-        {
-          "provider": "Aurora",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Harak",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 4.5
         },
         {
           "provider": "Velara",
@@ -40348,20 +40261,6 @@
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 7.6875
-        },
-        {
-          "provider": "Aurora",
-          "reasons": [
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 6.75
-        },
-        {
-          "provider": "Harak",
-          "reasons": [
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 6.75
         },
         {
           "provider": "Salazer",

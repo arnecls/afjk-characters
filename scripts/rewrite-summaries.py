@@ -320,6 +320,10 @@ def _invincibility_targets_self(clause: str) -> bool:
     t = clause.lower()
     if re.search(r"\bwhile concealed,?\s+\w+ is invincible\b", t):
         return True
+    if re.search(r"\breaching the invincible\b", t):
+        return True
+    if re.search(r"\bstays invincible\b", t):
+        return True
     for m in re.finditer(r"\b\w+ is invincible\b", t):
         c = _clause_around(t, m.start())
         if re.search(r"\ballies?\b", c):
@@ -1083,7 +1087,7 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         "Invincible",
     ):
         for m in re.finditer(
-            r"\b(?:becomes?|is|remains?) (?:unaffected|immune(?: to control)?|"
+            r"\b(?:becomes?|is|remains?|stays) (?:unaffected|immune(?: to control)?|"
             r"steadfast|invincible)\b",
             t,
         ):
@@ -1418,7 +1422,9 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         or imm_type in ("Unaffected", "Immune", "Steadfast", "Cleanse")
     ):
         if re.search(
-            r"\b(?:she|he|it|[\w]+) is (?:invincible|unaffected|immune|steadfast)\b", t
+            r"\b(?:she|he|it|[\w]+) (?:is|stays|remains) "
+            r"(?:invincible|unaffected|immune|steadfast)\b",
+            t,
         ):
             return "Self"
     if category == "buff" and label == "Max HP buff" and re.search(

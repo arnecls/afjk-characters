@@ -947,7 +947,7 @@ Common buffers are **Twins** or **Mikola**.
 
 ### Units benefitting most from Aurora
 
-Aurora provides Haste buff to summons `high`, Invincible to single targets `high`, and Summon damage buff (Mythic+) to summons `low`.
+Aurora provides Haste buff to summons `high` and Summon damage buff (Mythic+) to summons `low`.
 
 - Florabelle (4.0 / 5)
 - Zanie (3.7 / 5)
@@ -956,10 +956,6 @@ Aurora provides Haste buff to summons `high`, Invincible to single targets `high
 - Mehira (2.5 / 5)
 
 ### Units that can act as a replacement for Aurora
-
-**Buffs on allies**
-
-- Harak (78% `Invincible`)
 
 **Similar Skills**
 
@@ -990,7 +986,7 @@ Aurora provides Haste buff to summons `high`, Invincible to single targets `high
 #### Aurora Provides
 
 - Dream sleep (transformation) — Self
-- Invincibility — Single target
+- Invincibility — Self
 - Summoning — Single target
 
 #### Damage types dealt by Aurora
@@ -4507,11 +4503,9 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Rowan**.
 
 ### Units benefitting most from Harak
 
-Harak provides Invincible to single targets `high`.
-
+- Niru (1.8 / 5)
+- Vala (1.5 / 5)
 - Indris (1.4 / 5)
-- Lily May (1.4 / 5)
-- Silven (1.3 / 5)
 
 ### Units that can act as a replacement for Harak
 
@@ -4520,10 +4514,6 @@ Harak provides Invincible to single targets `high`.
 - Nara (65% `Damage` `Crowd Control` `Similar Skills`)
 - Seth (64% `Damage` `Similar Skills`)
 - Athalia (60% `Damage` `Crowd Control`)
-
-**Buffs on allies**
-
-- Aurora (100% `Invincible`)
 
 **Similar Skills**
 
@@ -4554,7 +4544,7 @@ Harak provides Invincible to single targets `high`.
 #### Harak Provides
 
 - Instant defeat — Single target
-- Invincibility — Single target
+- Invincibility — Self
 
 #### Damage types dealt by Harak
 
@@ -8883,11 +8873,6 @@ Pandora provides Direct healing to single targets `average`, Invincible to singl
 
 ### Units that can act as a replacement for Pandora
 
-**Buffs on allies**
-
-- Aurora (100% `Invincible`)
-- Harak (95% `Invincible`)
-
 **Healing**
 
 - Solise (100% `Direct healing` `Healing`)
@@ -9286,7 +9271,7 @@ Perseus provides ATK buff to multiple targets `average`.
 
 #### Crowd Control provided by Perseus
 
-- Unaffected — Single target — On skill
+- Unaffected — Self — On skill
 - Knock back — Area — `low`
 - Stun — Area — `average`
 
@@ -13904,6 +13889,6 @@ Zorya also requires allies **casting ultimates**
 #### Crowd Control provided by Zorya
 
 - Steadfast — Self — On skill
-- Unaffected (EX+10) — Single target — On skill
+- Unaffected (EX+10) — Self — On skill
 - Knock down — Arc — `average`
 - Stun — Area — `average`
