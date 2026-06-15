@@ -85,3 +85,30 @@ RULES (critical):
 
 The @data/heroes_data.json contains a field "description_lite", which provides an alternative short description. Use them to validate the statements in @data/heroes_data_skill_summary.json. Correct ambiguities and improve wording. Keep in mind to prefer game mechanical terms over game unspecific, descriptive terms.
 ```
+
+---
+
+## 4. `hero_play_overviews.json`
+
+### Content
+
+Maps each hero's display name to a short playstyle summary (3–5 sentences, up to ~900 characters).
+
+### Purpose
+
+Shown at the bottom of each hero's **behavior** section (before Skill overview) in `heroes-overview.md` and the site viewer. Summarizes how the hero is played: role identity, core mechanics, mode strengths, team pairings, and investment notes.
+
+### Prompt to Update
+
+```markdown
+Regenerate entries in @data/hero_play_overviews.json from the Review section on https://www.prydwen.gg/afk-journey/characters per character.
+
+Use `python3 scripts/generate_play_overviews.py` to fetch Prydwen reviews and draft summaries, then edit for clarity.
+
+RULES:
+1. Three to five sentences per hero; plain prose (no markdown bullets). Keep under ~900 characters so the block fits 5–6 lines in the web UI.
+2. Cover role identity, signature play pattern, and one mode strength or key pairing — skip investment breakpoints and skill-by-skill detail.
+3. Synthesize the Prydwen review; do not copy Pros/Cons lists verbatim.
+4. Omit heroes with no Prydwen review page and report them as missing.
+5. Keys use display names from heroes-overview.md (e.g. Twins, Galahad).
+```

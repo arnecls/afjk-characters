@@ -36,6 +36,7 @@ PLACEMENT_CONSTRAINT_OVERRIDES_FILE = (
 )
 MOVEMENT_OVERRIDES_FILE = ROOT / "data" / "movement_overrides.json"
 BEHAVIOR_TAGS_FILE = ROOT / "data" / "hero_behavior_tags.json"
+PLAY_OVERVIEW_FILE = ROOT / "data" / "hero_play_overviews.json"
 
 PLACEMENT_KIND_LABELS = {
     "ally_placement": "Ally placement",
@@ -3392,7 +3393,10 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
     (
         r"temporary (?:stat )?buffs? from (?:a |an )?(?:different )?all(?:y|ies)|"
         r"temporary stat buffs? from allies|"
-        r"receives? a temporary stat buff from an ally",
+        r"receives? a temporary stat buff from an ally|"
+        r"non-permanent stat(?:s)? boost from (?:an )?"
+        r"(?:his |her |their )?all(?:y|ies)|"
+        r"receiving the non-permanent stats boost from an ally",
         "Ally stat buffs",
     ),
     # Resources / thresholds
@@ -5220,8 +5224,9 @@ def analyze_text(
         # ATK: scaling gains only — not every (ATK-based) damage line.
         (
             "ATK",
-            r"\b(?:increases?|gains?) (?:her |his |their )?atk(?! spd)\b|"
-            r"\bincreases? atk(?! spd)\b",
+            r"\b(?:increases?|increasing|gains?) (?:her |his |their )?"
+            r"atk(?! spd)\b|"
+            r"\b(?:increases?|increasing) \d+(?:\.\d+)?% atk(?! spd)\b",
         ),
         ("ATK SPD", r"atk spd"),
         # Haste only when the unit gains/increases it (not when reducing enemy Haste)
@@ -5471,8 +5476,9 @@ def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
         t = text.lower()
         if stat == "ATK":
             if re.search(
-                r"\b(?:increases?|gains?) (?:her |his |their )?atk(?! spd)\b|"
-                r"\bincreases? atk(?! spd)\b",
+                r"\b(?:increases?|increasing|gains?) (?:her |his |their )?"
+                r"atk(?! spd)\b|"
+                r"\b(?:increases?|increasing) \d+(?:\.\d+)?% atk(?! spd)\b",
                 t,
             ):
                 return True
@@ -7043,6 +7049,12 @@ def _load_skill_summaries() -> dict[str, dict[str, str]]:
     return json.loads(SKILL_SUMMARY_FILE.read_text(encoding="utf-8"))
 
 
+def _load_play_overviews() -> dict[str, str]:
+    if not PLAY_OVERVIEW_FILE.exists():
+        return {}
+    return json.loads(PLAY_OVERVIEW_FILE.read_text(encoding="utf-8"))
+
+
 def _load_placement_constraint_overrides() -> dict[str, list[PlacementConstraint]]:
     if not PLACEMENT_CONSTRAINT_OVERRIDES_FILE.exists():
         return {}
@@ -8428,6 +8440,7 @@ def format_behavior_section(
     prydwen_tiers: dict[str, str] | None = None,
     hero: Hero | None = None,
     behavior_tags: list[str] | None = None,
+    play_overview: str | None = None,
 ) -> list[str]:
     lines = [f"### {display_name}'s behavior", ""]
     if prydwen_tiers:
@@ -8466,6 +8479,11 @@ def format_behavior_section(
         )
     ):
         lines.append(dt_line)
+    if play_overview and play_overview.strip():
+        lines.append("")
+        lines.append("#### Play overview")
+        lines.append("")
+        lines.append(play_overview.strip())
     overview = behavior.skill_overview or {}
     lines.append("")
     lines.append("#### Skill overview")

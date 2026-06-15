@@ -1,3 +1,4 @@
 .store/
 .venv/
 scripts/__pycache__/
+data/prydwen_reviews_cache.json

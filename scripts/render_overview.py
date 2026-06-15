@@ -247,6 +247,7 @@ def build_overview(
 
     summary_heroes, _skills_by_title = load_summary_heroes(data, processed)
     behavior_tags_map = gen._load_behavior_tags()
+    play_overviews = rs._load_play_overviews()
 
     for short in sorted(processed["heroes"]):
         p = {
@@ -283,6 +284,7 @@ def build_overview(
                 prydwen_tiers=meta.get("prydwen_tiers"),
                 hero=hero,
                 behavior_tags=sorted(behavior_tags_map.get(short, ())),
+                play_overview=play_overviews.get(short),
             )
         )
         parts.append(f"### Units improving {short}")

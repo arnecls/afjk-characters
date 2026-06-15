@@ -717,6 +717,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 43.5,
+          "name": "Lily May"
+        },
+        {
           "score": 25.0,
           "name": "Nerion"
         },
@@ -727,10 +731,6 @@
         {
           "score": 12.0,
           "name": "Kulu"
-        },
-        {
-          "score": 12.0,
-          "name": "Lily May"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -1017,6 +1017,10 @@
         {
           "score": 24.0,
           "name": "Shadewing"
+        },
+        {
+          "score": 6.0,
+          "name": "Sonja"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -1553,8 +1557,8 @@
             ]
           },
           {
-            "name": "Soren",
-            "score": 0.5605,
+            "name": "Natsu",
+            "score": 0.6386,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -2357,11 +2361,12 @@
             ]
           },
           {
-            "name": "Viperian",
+            "name": "Natsu",
             "score": 0.6,
             "matches": [
               "aoe-damage",
-              "dot-specialist"
+              "dot-specialist",
+              "mass-cc"
             ]
           }
         ],
@@ -5899,7 +5904,17 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Natsu",
+            "score": 0.665,
+            "matches": [
+              "Damage",
+              "Crowd Control",
+              "Debuffs on enemies"
+            ]
+          }
+        ]
       }
     },
     "Callan": {
@@ -6608,6 +6623,13 @@
           "score": 8.0
         },
         {
+          "provider": "Natsu",
+          "reasons": [
+            "Enables CC on enemies via Knock down (area, low)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Nerion",
           "reasons": [
             "Enables CC on enemies via Knock up (area, low)"
@@ -6912,13 +6934,6 @@
           "provider": "Lumont",
           "reasons": [
             "Enables CC on enemies via Stun (area, low)"
-          ],
-          "score": 8.0
-        },
-        {
-          "provider": "Natsu",
-          "reasons": [
-            "Enables CC on enemies via Knock down (area, low)"
           ],
           "score": 8.0
         },
@@ -7272,15 +7287,15 @@
       "beneficiaries": [
         {
           "score": 31.5,
+          "name": "Lily May"
+        },
+        {
+          "score": 31.5,
           "name": "Silven"
         },
         {
           "score": 21.0,
-          "name": "Perseus"
-        },
-        {
-          "score": 10.0,
-          "name": "Carolina"
+          "name": "Dionel"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -7725,11 +7740,11 @@
         },
         {
           "score": 16.5,
-          "name": "Silven"
+          "name": "Lily May"
         },
         {
-          "score": 16.0,
-          "name": "Carolina"
+          "score": 16.5,
+          "name": "Silven"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -8319,6 +8334,10 @@
       "beneficiaries": [
         {
           "score": 22.5,
+          "name": "Faramor"
+        },
+        {
+          "score": 22.5,
           "name": "Silven"
         },
         {
@@ -8328,10 +8347,6 @@
         {
           "score": 10.5,
           "name": "Baelran"
-        },
-        {
-          "score": 7.5,
-          "name": "Faramor"
         },
         {
           "score": 6.0,
@@ -9822,289 +9837,509 @@
         {
           "provider": "Twins",
           "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
             "ATK SPD via Haste buff (all units, average) `signature fuel`",
             "Shield via Shield (single target, low)",
-            "Energy via Energy recovery (multiple targets, low) `signature fuel`"
+            "Energy via Energy recovery (multiple targets, low) `signature fuel`",
+            "Grants 8 distinct stat buffs to Dionel"
           ],
-          "score": 22.7636
+          "score": 71.7636
         },
         {
-          "provider": "Shakir",
+          "provider": "Mikola",
           "reasons": [
-            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+            "ATK via ATK buff (all units, average)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 6 distinct stat buffs to Dionel"
           ],
-          "score": 18.0
+          "score": 64.0
         },
         {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
-            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`",
+            "Grants 4 distinct stat buffs to Dionel"
           ],
-          "score": 15.854399999999998
+          "score": 39.3544
         },
         {
-          "provider": "Mikola",
+          "provider": "Smokey & Meerky",
           "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+            "ATK via ATK buff (multiple targets, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Dionel"
           ],
-          "score": 12.0
+          "score": 35.0544
+        },
+        {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Dionel"
+          ],
+          "score": 34.5
         },
         {
           "provider": "Ravion",
           "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 9.470057142857142
+          "score": 33.470057142857144
+        },
+        {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Shield via Shield (multiple targets, high)",
+            "Grants 3 distinct stat buffs to Dionel"
+          ],
+          "score": 33.0
+        },
+        {
+          "provider": "Koko",
+          "reasons": [
+            "Shield via Shield (all units, low)",
+            "Grants 5 distinct stat buffs to Dionel"
+          ],
+          "score": 32.5
+        },
+        {
+          "provider": "Dunlingr",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
+            "Grants 4 distinct stat buffs to Dionel"
+          ],
+          "score": 32.0
+        },
+        {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
+            "Grants 5 distinct stat buffs to Dionel (start of battle)"
+          ],
+          "score": 25.799999999999997
+        },
+        {
+          "provider": "Himmel",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Shield via Shield (single target, average)",
+            "Grants 3 distinct stat buffs to Dionel"
+          ],
+          "score": 25.5
+        },
+        {
+          "provider": "Contess",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "Shield via Shield (single target, average)",
+            "Grants 4 distinct stat buffs to Dionel"
+          ],
+          "score": 22.5
+        },
+        {
+          "provider": "Pandora",
+          "reasons": [
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
+            "Grants 3 distinct stat buffs to Dionel (start of battle)"
+          ],
+          "score": 22.22142857142857
+        },
+        {
+          "provider": "Zandrok",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Grants 3 distinct stat buffs to Dionel"
+          ],
+          "score": 20.8
+        },
+        {
+          "provider": "Solise",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 19.5
+        },
+        {
+          "provider": "Saida",
+          "reasons": [
+            "Shield via Shield (multiple targets, high)",
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 18.0
+        },
+        {
+          "provider": "Zanie",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Grants 4 distinct stat buffs to Dionel"
+          ],
+          "score": 18.0
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Daimon",
+          "reasons": [
+            "Shield via Shield (multiple targets, average)",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 15.0
         },
         {
           "provider": "Galahad",
           "reasons": [
             "ATK SPD via Haste buff (single target, average) `signature fuel`",
-            "Shield via Shield (single target, average)"
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 9.0
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "Shield via Shield (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Saida",
-          "reasons": [
-            "Shield via Shield (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Dunlingr",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
-          ],
-          "score": 8.0
-        },
-        {
-          "provider": "Pandora",
-          "reasons": [
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
-          ],
-          "score": 7.521428571428572
-        },
-        {
-          "provider": "Zandrok",
-          "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.800000000000001
-        },
-        {
-          "provider": "Daimon",
-          "reasons": [
-            "Shield via Shield (multiple targets, average)"
-          ],
-          "score": 6.0
+          "score": 15.0
         },
         {
           "provider": "Isabella",
           "reasons": [
-            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
+            "ATK via ATK buff (multiple targets, low, conditional (frequent))",
+            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 6.0
+          "score": 14.55
         },
         {
-          "provider": "Smokey & Meerky",
+          "provider": "Ludovic",
           "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`"
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 5.0544
-        },
-        {
-          "provider": "Koko",
-          "reasons": [
-            "Shield via Shield (all units, low)"
-          ],
-          "score": 5.0
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 4.800000000000001
-        },
-        {
-          "provider": "Thador",
-          "reasons": [
-            "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
-          ],
-          "score": 4.725
-        },
-        {
-          "provider": "Phraesto",
-          "reasons": [
-            "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`"
-          ],
-          "score": 3.375
-        },
-        {
-          "provider": "Contess",
-          "reasons": [
-            "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Himmel",
-          "reasons": [
-            "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Mehira",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
-          ],
-          "score": 3.0
+          "score": 13.5
         },
         {
           "provider": "Scarlita",
           "reasons": [
-            "Shield via Shield (single target, average)"
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 3.0
+          "score": 10.5
         },
         {
-          "provider": "Zanie",
+          "provider": "Valka",
           "reasons": [
-            "Shield via Shield (single target, average)"
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 3.0
+          "score": 9.3
         },
         {
-          "provider": "Gunnar",
+          "provider": "Eironn",
           "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 2.4000000000000004
+          "score": 9.0
+        },
+        {
+          "provider": "Marcille",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Thador",
+          "reasons": [
+            "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`",
+            "Grants 1 distinct stat buff to Dionel (start of battle)"
+          ],
+          "score": 6.824999999999999
+        },
+        {
+          "provider": "Phraesto",
+          "reasons": [
+            "Energy via Energy recovery speed (contract ally, start of battle) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 6.375
         },
         {
           "provider": "Thoran",
           "reasons": [
-            "Energy via Energy recovery (single target, average) `signature fuel`"
+            "Energy via Energy recovery (single target, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 1.2636
+          "score": 5.7636
         },
         {
-          "provider": "Lyca",
+          "provider": "Aurora",
           "reasons": [
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
-            "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
+            "Grants 1 distinct stat buff to Dionel"
           ],
-          "score": 18.607142857142858
+          "score": 4.5
+        },
+        {
+          "provider": "Harak",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Mehira",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Satrana",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Kruger",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Kulu",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Lily May",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Silven",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 1.5
         },
         {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Shield via Shield (multiple targets, high)"
+            "Shield via Shield (multiple targets, high)",
+            "Grants 4 distinct stat buffs to Dionel"
           ],
-          "score": 12.0
+          "score": 33.0
         },
         {
-          "provider": "Kazim",
+          "provider": "Lyca",
           "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
+            "Energy via Energy recovery (120 at battle start, all units) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel (start of battle)"
           ],
-          "score": 12.0
-        },
-        {
-          "provider": "Lorsan",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, high) `signature fuel`"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Atalanta",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 5.1000000000000005
+          "score": 32.60714285714286
         },
         {
           "provider": "Fay",
           "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Grants 5 distinct stat buffs to Dionel"
           ],
-          "score": 4.800000000000001
+          "score": 30.3
+        },
+        {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 27.0
+        },
+        {
+          "provider": "Hewynn",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Dionel"
+          ],
+          "score": 22.5
+        },
+        {
+          "provider": "Cassadee",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel (start of battle)"
+          ],
+          "score": 21.0
+        },
+        {
+          "provider": "Lorsan",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, high) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 18.5
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 14.0
         },
         {
           "provider": "Lucy",
           "reasons": [
-            "Shield via Shield (single target, high)"
+            "Shield via Shield (single target, high)",
+            "Grants 2 distinct stat buffs to Dionel"
           ],
-          "score": 4.5
+          "score": 13.5
         },
         {
-          "provider": "Lucius",
+          "provider": "Lucca",
           "reasons": [
-            "Shield via Shield (area, low)"
+            "Grants 1 distinct stat buff to Dionel"
           ],
-          "score": 4.0
+          "score": 12.0
+        },
+        {
+          "provider": "Cecia",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Dionel"
+          ],
+          "score": 10.0
         },
         {
           "provider": "Salazer",
           "reasons": [
-            "Shield via Shield (single target, high, conditional (frequent))"
+            "Shield via Shield (single target, high, conditional (frequent))",
+            "Grants 1 distinct stat buff to Dionel"
           ],
-          "score": 3.8249999999999997
+          "score": 8.325
         },
         {
-          "provider": "Granny Dahnie",
+          "provider": "Atalanta",
           "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`",
+            "Grants 1 distinct stat buff to Dionel"
           ],
-          "score": 3.0
+          "score": 8.100000000000001
         },
         {
-          "provider": "Korin",
+          "provider": "Lucius",
           "reasons": [
-            "Shield via Shield (single target, average)"
+            "Shield via Shield (area, low)",
+            "Grants 1 distinct stat buff to Dionel"
           ],
-          "score": 3.0
+          "score": 8.0
         },
         {
           "provider": "Pang",
           "reasons": [
-            "Shield via Shield (single target, average)"
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Korin",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Granny Dahnie",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Damian",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Nara",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
           ],
           "score": 3.0
         },
         {
           "provider": "Soren",
           "reasons": [
-            "Shield via Shield (single target, low)"
+            "Shield via Shield (single target, low)",
+            "Grants 1 distinct stat buff to Dionel"
           ],
-          "score": 1.5
+          "score": 3.0
         },
         {
           "provider": "Arden",
           "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`"
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Dionel"
           ],
-          "score": 0.6318
+          "score": 2.1318
         },
         {
           "provider": "Ulmus",
           "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`"
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Dionel"
           ],
-          "score": 0.6318
+          "score": 2.1318
+        },
+        {
+          "provider": "Rhys",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Seth",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -10251,7 +10486,7 @@
         "overall": [
           {
             "name": "Frieren",
-            "score": 0.8335,
+            "score": 0.8306,
             "matches": [
               "Damage",
               "Debuffs on enemies",
@@ -10260,7 +10495,7 @@
           },
           {
             "name": "Faramor",
-            "score": 0.6482,
+            "score": 0.6493,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -10693,10 +10928,6 @@
         {
           "score": 3.0,
           "name": "Shakir"
-        },
-        {
-          "score": 3.0,
-          "name": "Sonja"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -11559,8 +11790,20 @@
           "name": "Silven"
         },
         {
+          "score": 76.7706,
+          "name": "Lily May"
+        },
+        {
           "score": 75.5206,
           "name": "Perseus"
+        },
+        {
+          "score": 71.7636,
+          "name": "Dionel"
+        },
+        {
+          "score": 60.5,
+          "name": "Faramor"
         },
         {
           "score": 48.808,
@@ -11615,6 +11858,10 @@
           "name": "Hepler"
         },
         {
+          "score": 33.2636,
+          "name": "Fay"
+        },
+        {
           "score": 33.018,
           "name": "Seth"
         },
@@ -11645,6 +11892,10 @@
         {
           "score": 28.16,
           "name": "Temesia"
+        },
+        {
+          "score": 28.0,
+          "name": "Sonja"
         },
         {
           "score": 27.7636,
@@ -11683,10 +11934,6 @@
           "name": "Lumont"
         },
         {
-          "score": 24.2636,
-          "name": "Fay"
-        },
-        {
           "score": 24.16,
           "name": "Damian"
         },
@@ -11701,10 +11948,6 @@
         {
           "score": 23.5,
           "name": "Baelran"
-        },
-        {
-          "score": 22.7636,
-          "name": "Dionel"
         },
         {
           "score": 22.518,
@@ -11759,10 +12002,6 @@
           "name": "Cryonaia"
         },
         {
-          "score": 20.5,
-          "name": "Faramor"
-        },
-        {
           "score": 19.7706,
           "name": "Aliceth"
         },
@@ -11795,10 +12034,6 @@
           "name": "Florabelle"
         },
         {
-          "score": 19.0,
-          "name": "Sonja"
-        },
-        {
           "score": 18.2706,
           "name": "Kafra"
         },
@@ -11813,10 +12048,6 @@
         {
           "score": 17.0,
           "name": "Gunnar"
-        },
-        {
-          "score": 16.7706,
-          "name": "Lily May"
         },
         {
           "score": 16.5,
@@ -11849,6 +12080,10 @@
         {
           "score": 14.66,
           "name": "Sinbad"
+        },
+        {
+          "score": 14.16,
+          "name": "Evie"
         },
         {
           "score": 14.16,
@@ -11907,6 +12142,10 @@
           "name": "Nara"
         },
         {
+          "score": 11.16,
+          "name": "Scarlita"
+        },
+        {
           "score": 10.7706,
           "name": "Ludovic"
         },
@@ -11935,20 +12174,12 @@
           "name": "Chippy"
         },
         {
-          "score": 5.16,
-          "name": "Evie"
-        },
-        {
           "score": 3.0,
           "name": "Reinier"
         },
         {
           "score": 2.16,
           "name": "Pandora"
-        },
-        {
-          "score": 2.16,
-          "name": "Scarlita"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -12127,6 +12358,31 @@
           "score": 15.0
         },
         {
+          "provider": "Twins",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Healing via Direct healing (multiple targets, low)",
+            "Energy via Energy recovery (multiple targets, low) `signature fuel`"
+          ],
+          "score": 14.16
+        },
+        {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 13.32
+        },
+        {
+          "provider": "Himmel",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Healing via Direct healing (single target, low)"
+          ],
+          "score": 10.5
+        },
+        {
           "provider": "Ludovic",
           "reasons": [
             "Healing via Direct healing (multiple targets, high)"
@@ -12134,12 +12390,12 @@
           "score": 9.0
         },
         {
-          "provider": "Twins",
+          "provider": "Contess",
           "reasons": [
-            "Healing via Direct healing (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, low) `signature fuel`"
+            "ATK via ATK buff (single target, high)",
+            "Healing via Direct healing (multiple targets, low)"
           ],
-          "score": 5.16
+          "score": 7.5
         },
         {
           "provider": "Zanie",
@@ -12149,13 +12405,6 @@
           "score": 4.5
         },
         {
-          "provider": "Ravion",
-          "reasons": [
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 4.32
-        },
-        {
           "provider": "Velara",
           "reasons": [
             "Healing via Direct healing (area, low)"
@@ -12163,25 +12412,11 @@
           "score": 4.0
         },
         {
-          "provider": "Contess",
-          "reasons": [
-            "Healing via Direct healing (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Thoran",
           "reasons": [
             "Energy via Energy recovery (single target, average) `signature fuel`"
           ],
           "score": 2.16
-        },
-        {
-          "provider": "Himmel",
-          "reasons": [
-            "Healing via Direct healing (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Thador",
@@ -12193,15 +12428,24 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
             "Healing via Direct healing (area, high)",
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
-          "score": 20.64
+          "score": 23.64
         },
         {
           "provider": "Hewynn",
           "reasons": [
             "Healing via Healing over time (all units, high)"
+          ],
+          "score": 15.0
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "Healing via Healing over time (all units, low)"
           ],
           "score": 15.0
         },
@@ -12214,11 +12458,27 @@
           "score": 12.64
         },
         {
+          "provider": "Hammie",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Healing via Direct healing (single target, low)"
+          ],
+          "score": 10.5
+        },
+        {
           "provider": "Koko",
           "reasons": [
             "Healing via Direct healing (all units, average)"
           ],
           "score": 10.0
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "Healing via Direct healing (arc, average)"
+          ],
+          "score": 9.0
         },
         {
           "provider": "Hepler",
@@ -12242,23 +12502,9 @@
           "score": 8.0
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "Healing via Direct healing (arc, average)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "Healing via Direct healing (all units, low)"
-          ],
-          "score": 5.0
-        },
-        {
-          "provider": "Mikola",
-          "reasons": [
-            "Healing via Healing over time (all units, low)"
           ],
           "score": 5.0
         },
@@ -12289,13 +12535,6 @@
             "Healing via Direct healing (single target, average)"
           ],
           "score": 3.0
-        },
-        {
-          "provider": "Hammie",
-          "reasons": [
-            "Healing via Direct healing (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Rhys",
@@ -12473,53 +12712,88 @@
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
             "Haste via Haste buff (all units, average) `signature fuel`",
-            "Shield via Shield (single target, low)"
+            "Shield via Shield (single target, low)",
+            "Grants 8 distinct stat buffs to Faramor"
           ],
-          "score": 20.5
+          "score": 60.5
         },
         {
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
-            "Shield via Shield (multiple targets, high)"
+            "Shield via Shield (multiple targets, high)",
+            "Grants 3 distinct stat buffs to Faramor"
           ],
-          "score": 15.0
+          "score": 33.0
         },
         {
           "provider": "Himmel",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
-            "Shield via Shield (single target, average)"
+            "Shield via Shield (single target, average)",
+            "Grants 3 distinct stat buffs to Faramor"
           ],
-          "score": 12.0
-        },
-        {
-          "provider": "Saida",
-          "reasons": [
-            "Shield via Shield (multiple targets, high)"
-          ],
-          "score": 9.0
+          "score": 25.5
         },
         {
           "provider": "Contess",
           "reasons": [
             "ATK via ATK buff (single target, high)",
-            "Shield via Shield (single target, average)"
+            "Shield via Shield (single target, average)",
+            "Grants 4 distinct stat buffs to Faramor"
           ],
-          "score": 7.5
+          "score": 22.5
+        },
+        {
+          "provider": "Solise",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 19.5
+        },
+        {
+          "provider": "Saida",
+          "reasons": [
+            "Shield via Shield (multiple targets, high)",
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 18.0
         },
         {
           "provider": "Galahad",
           "reasons": [
             "Haste via Haste buff (single target, average) `signature fuel`",
-            "Shield via Shield (single target, average)"
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Faramor"
           ],
-          "score": 6.0
+          "score": 12.0
+        },
+        {
+          "provider": "Aurora",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 4.0
         },
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Silven",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
           ],
           "score": 1.5
         },
@@ -12527,144 +12801,367 @@
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK buff (all units, average)",
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
+            "Haste via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 6 distinct stat buffs to Faramor"
           ],
-          "score": 16.0
+          "score": 58.0
+        },
+        {
+          "provider": "Koko",
+          "reasons": [
+            "Shield via Shield (all units, low)",
+            "Grants 5 distinct stat buffs to Faramor"
+          ],
+          "score": 32.5
         },
         {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
-            "Shield via Shield (multiple targets, high)"
+            "Shield via Shield (multiple targets, high)",
+            "Grants 4 distinct stat buffs to Faramor"
           ],
-          "score": 10.5
-        },
-        {
-          "provider": "Kazim",
-          "reasons": [
-            "ATK via ATK buff (single target, high)",
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 10.5
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, high) `signature fuel`"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Daimon",
-          "reasons": [
-            "Shield via Shield (multiple targets, average)"
-          ],
-          "score": 6.0
+          "score": 31.5
         },
         {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, average)",
-            "Haste via Haste buff (single target, average) `signature fuel`"
+            "Haste via Haste buff (single target, average) `signature fuel`",
+            "Grants 4 distinct stat buffs to Faramor"
           ],
-          "score": 6.0
+          "score": 27.0
+        },
+        {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Faramor"
+          ],
+          "score": 25.5
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Grants 4 distinct stat buffs to Faramor"
+          ],
+          "score": 23.5
+        },
+        {
+          "provider": "Hewynn",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Faramor"
+          ],
+          "score": 22.5
+        },
+        {
+          "provider": "Cassadee",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor (start of battle)"
+          ],
+          "score": 21.0
+        },
+        {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "Haste via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 21.0
+        },
+        {
+          "provider": "Zanie",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Grants 4 distinct stat buffs to Faramor"
+          ],
+          "score": 18.0
+        },
+        {
+          "provider": "Zandrok",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Grants 3 distinct stat buffs to Faramor"
+          ],
+          "score": 17.4
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Daimon",
+          "reasons": [
+            "Shield via Shield (multiple targets, average)",
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 15.0
+        },
+        {
+          "provider": "Pandora",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Faramor (start of battle)"
+          ],
+          "score": 14.7
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 14.0
+        },
+        {
+          "provider": "Lorsan",
+          "reasons": [
+            "Haste via Haste buff (single target, high) `signature fuel`",
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 14.0
+        },
+        {
+          "provider": "Lyca",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor (start of battle)"
+          ],
+          "score": 14.0
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Shield via Shield (single target, high)",
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 13.5
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 13.5
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK buff (multiple targets, low, conditional (frequent))",
-            "Haste via Haste buff (multiple targets, low) `signature fuel`"
+            "Haste via Haste buff (multiple targets, low) `signature fuel`",
+            "Grants 2 distinct stat buffs to Faramor"
           ],
-          "score": 5.55
-        },
-        {
-          "provider": "Koko",
-          "reasons": [
-            "Shield via Shield (all units, low)"
-          ],
-          "score": 5.0
-        },
-        {
-          "provider": "Lorsan",
-          "reasons": [
-            "Haste via Haste buff (single target, high) `signature fuel`"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Shield via Shield (single target, high)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Lucius",
-          "reasons": [
-            "Shield via Shield (area, low)"
-          ],
-          "score": 4.0
-        },
-        {
-          "provider": "Salazer",
-          "reasons": [
-            "Shield via Shield (single target, high, conditional (frequent))"
-          ],
-          "score": 3.8249999999999997
-        },
-        {
-          "provider": "Zandrok",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.4
-        },
-        {
-          "provider": "Korin",
-          "reasons": [
-            "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Pang",
-          "reasons": [
-            "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
+          "score": 11.55
         },
         {
           "provider": "Scarlita",
           "reasons": [
-            "Shield via Shield (single target, average)"
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Faramor"
           ],
-          "score": 3.0
+          "score": 10.5
         },
         {
-          "provider": "Zanie",
+          "provider": "Cecia",
           "reasons": [
-            "Shield via Shield (single target, average)"
+            "Grants 3 distinct stat buffs to Faramor"
           ],
-          "score": 3.0
+          "score": 10.0
+        },
+        {
+          "provider": "Eironn",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Marcille",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Salazer",
+          "reasons": [
+            "Shield via Shield (single target, high, conditional (frequent))",
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 8.325
+        },
+        {
+          "provider": "Lucius",
+          "reasons": [
+            "Shield via Shield (area, low)",
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Pang",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Korin",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Atalanta",
           "reasons": [
-            "Haste via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`"
+            "Haste via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`",
+            "Grants 1 distinct stat buff to Faramor"
           ],
-          "score": 2.55
+          "score": 5.55
+        },
+        {
+          "provider": "Harak",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Thoran",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Valka",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Damian",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Nara",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 3.0
         },
         {
           "provider": "Granny Dahnie",
           "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Faramor"
           ],
-          "score": 1.5
+          "score": 3.0
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Phraesto",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Satrana",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 3.0
         },
         {
           "provider": "Soren",
           "reasons": [
-            "Shield via Shield (single target, low)"
+            "Shield via Shield (single target, low)",
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Thador",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor (start of battle)"
+          ],
+          "score": 2.0999999999999996
+        },
+        {
+          "provider": "Arden",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Kruger",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Kulu",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Lily May",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Rhys",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Seth",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Ulmus",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
           ],
           "score": 1.5
         }
@@ -12823,11 +13320,30 @@
         {
           "provider": "Twins",
           "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
             "ATK SPD via Haste buff (all units, average) `signature fuel`",
             "Healing via Direct healing (multiple targets, low)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`"
           ],
-          "score": 24.2636
+          "score": 33.2636
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Healing via Healing over time (all units, low)"
+          ],
+          "score": 27.0
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "Healing via Direct healing (area, high)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 20.0544
         },
         {
           "provider": "Rowan",
@@ -12847,20 +13363,13 @@
           "score": 18.607142857142858
         },
         {
-          "provider": "Smokey & Meerky",
+          "provider": "Ravion",
           "reasons": [
-            "Healing via Direct healing (area, high)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
+            "ATK via ATK buff (multiple targets, high)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
-          "score": 17.0544
-        },
-        {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Healing via Healing over time (all units, low)"
-          ],
-          "score": 17.0
+          "score": 18.470057142857144
         },
         {
           "provider": "Solise",
@@ -12868,6 +13377,14 @@
             "Healing via Direct healing (all units, high)"
           ],
           "score": 15.0
+        },
+        {
+          "provider": "Evie",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Healing via Direct healing (single target, high)"
+          ],
+          "score": 13.5
         },
         {
           "provider": "Hepler",
@@ -12878,6 +13395,14 @@
           "score": 12.0
         },
         {
+          "provider": "Dunlingr",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
+          ],
+          "score": 11.0
+        },
+        {
           "provider": "Pandora",
           "reasons": [
             "Healing via Direct healing (single target, average)",
@@ -12886,19 +13411,19 @@
           "score": 10.521428571428572
         },
         {
+          "provider": "Himmel",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Healing via Direct healing (single target, low)"
+          ],
+          "score": 10.5
+        },
+        {
           "provider": "Koko",
           "reasons": [
             "Healing via Direct healing (all units, average)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 9.470057142857142
         },
         {
           "provider": "Ludovic",
@@ -12915,11 +13440,28 @@
           "score": 9.0
         },
         {
-          "provider": "Dunlingr",
+          "provider": "Isabella",
           "reasons": [
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
+            "ATK via ATK buff (multiple targets, low, conditional (frequent))",
+            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
-          "score": 8.0
+          "score": 8.55
+        },
+        {
+          "provider": "Contess",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "Healing via Direct healing (multiple targets, low)"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 6.9
         },
         {
           "provider": "Zandrok",
@@ -12936,13 +13478,6 @@
           "score": 6.0
         },
         {
-          "provider": "Isabella",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
@@ -12955,13 +13490,6 @@
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
           ],
           "score": 4.725
-        },
-        {
-          "provider": "Evie",
-          "reasons": [
-            "Healing via Direct healing (single target, high)"
-          ],
-          "score": 4.5
         },
         {
           "provider": "Zanie",
@@ -12992,32 +13520,11 @@
           "score": 3.375
         },
         {
-          "provider": "Contess",
-          "reasons": [
-            "Healing via Direct healing (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 3.0
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 2.4000000000000004
-        },
-        {
-          "provider": "Himmel",
-          "reasons": [
-            "Healing via Direct healing (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Thoran",
@@ -13032,6 +13539,14 @@
             "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
           "score": 0.6318
+        },
+        {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+          ],
+          "score": 16.5
         },
         {
           "provider": "Hewynn",
@@ -13049,11 +13564,12 @@
           "score": 14.0
         },
         {
-          "provider": "Kazim",
+          "provider": "Hammie",
           "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+            "ATK via ATK buff (multiple targets, high)",
+            "Healing via Direct healing (single target, low)"
           ],
-          "score": 12.0
+          "score": 10.5
         },
         {
           "provider": "Gerda",
@@ -13082,13 +13598,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 3.0
-        },
-        {
-          "provider": "Hammie",
-          "reasons": [
-            "Healing via Direct healing (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Rhys",
@@ -14306,15 +14815,15 @@
       "beneficiaries": [
         {
           "score": 21.0,
+          "name": "Lily May"
+        },
+        {
+          "score": 21.0,
           "name": "Silven"
         },
         {
           "score": 14.0,
-          "name": "Perseus"
-        },
-        {
-          "score": 13.0,
-          "name": "Himmel"
+          "name": "Dionel"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -15532,11 +16041,12 @@
             ]
           },
           {
-            "name": "Satrana",
-            "score": 0.5,
+            "name": "Natsu",
+            "score": 0.6,
             "matches": [
               "dot-specialist",
-              "fire-attack"
+              "fire-attack",
+              "mass-cc"
             ]
           }
         ],
@@ -16409,15 +16919,15 @@
       "beneficiaries": [
         {
           "score": 6.75,
+          "name": "Lily May"
+        },
+        {
+          "score": 6.75,
           "name": "Silven"
         },
         {
           "score": 5.85,
           "name": "Indris"
-        },
-        {
-          "score": 5.0,
-          "name": "Niru"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -17936,6 +18446,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 25.5,
+          "name": "Faramor"
+        },
+        {
           "score": 13.5,
           "name": "Baelran"
         },
@@ -17949,11 +18463,11 @@
         },
         {
           "score": 12.0,
-          "name": "Faramor"
+          "name": "Kafra"
         },
         {
-          "score": 12.0,
-          "name": "Kafra"
+          "score": 10.5,
+          "name": "Evie"
         },
         {
           "score": 10.5,
@@ -18636,6 +19150,10 @@
       "beneficiaries": [
         {
           "score": 33.0,
+          "name": "Faramor"
+        },
+        {
+          "score": 33.0,
           "name": "Perseus"
         },
         {
@@ -18649,10 +19167,6 @@
         {
           "score": 15.0,
           "name": "Cryonaia"
-        },
-        {
-          "score": 15.0,
-          "name": "Faramor"
         },
         {
           "score": 15.0,
@@ -19469,6 +19983,14 @@
           "score": 8.1
         },
         {
+          "provider": "Natsu",
+          "reasons": [
+            "Enables Multiple debuffs on target via 2 debuff types",
+            "Enables Debuff on target via Haste debuff (single target)"
+          ],
+          "score": 8.1
+        },
+        {
           "provider": "Odie",
           "reasons": [
             "Enables Multiple debuffs on target via 2 debuff types",
@@ -19773,14 +20295,6 @@
             "Enables Debuff on target via Marked target (focus fire) (single target)"
           ],
           "score": 23.0
-        },
-        {
-          "provider": "Natsu",
-          "reasons": [
-            "Enables Multiple debuffs on target via 2 debuff types",
-            "Enables Debuff on target via Haste debuff (single target)"
-          ],
-          "score": 8.1
         }
       ],
       "beneficiaries": [
@@ -20319,16 +20833,16 @@
       ],
       "beneficiaries": [
         {
+          "score": 14.55,
+          "name": "Dionel"
+        },
+        {
+          "score": 13.575,
+          "name": "Lily May"
+        },
+        {
           "score": 13.05,
           "name": "Perseus"
-        },
-        {
-          "score": 12.8,
-          "name": "Indris"
-        },
-        {
-          "score": 12.75,
-          "name": "Silven"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -21565,6 +22079,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 41.25,
+          "name": "Lily May"
+        },
+        {
           "score": 32.5,
           "name": "Perseus"
         },
@@ -22345,10 +22863,6 @@
           "name": "Natsu"
         },
         {
-          "score": 12.0,
-          "name": "Lily May"
-        },
-        {
           "score": 9.0,
           "name": "Eironn"
         },
@@ -22664,7 +23178,7 @@
         },
         {
           "score": 6.0,
-          "name": "Perseus"
+          "name": "Dionel"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -24335,234 +24849,482 @@
     "Lily May": {
       "synergies": [
         {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 6 distinct stat buffs to Lily May"
+          ],
+          "score": 77.05
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`",
-            "ATK SPD via Haste buff (all units, average) `signature fuel`"
+            "ATK SPD via Haste buff (all units, average) `signature fuel`",
+            "Grants 8 distinct stat buffs to Lily May"
           ],
-          "score": 16.7706
-        },
-        {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK via ATK buff (all units, average)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 14.05
-        },
-        {
-          "provider": "Aliceth",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "DEF Penetration via DEF Penetration buff (multiple targets, high)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 11.0412
+          "score": 76.7706
         },
         {
           "provider": "Smokey & Meerky",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Lily May"
           ],
-          "score": 7.082400000000001
+          "score": 47.5824
         },
         {
-          "provider": "Shakir",
+          "provider": "Aliceth",
           "reasons": [
-            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+            "ATK via ATK buff (multiple targets, low)",
+            "DEF Penetration via DEF Penetration buff (multiple targets, high)",
+            "Grants 4 distinct stat buffs to Lily May"
           ],
-          "score": 6.075
+          "score": 43.5
+        },
+        {
+          "provider": "Koko",
+          "reasons": [
+            "Grants 5 distinct stat buffs to Lily May"
+          ],
+          "score": 41.25
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "DEF Penetration via DEF Penetration buff (multiple targets, low)",
+            "Grants 4 distinct stat buffs to Lily May"
+          ],
+          "score": 41.25
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Grants 4 distinct stat buffs to Lily May"
+          ],
+          "score": 39.3324
         },
         {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, average)",
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
+            "Grants 4 distinct stat buffs to Lily May"
           ],
-          "score": 5.7
+          "score": 37.2
         },
         {
           "provider": "Gunnar",
           "reasons": [
             "ATK via ATK buff (single target, high)",
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
+            "Grants 5 distinct stat buffs to Lily May (start of battle)"
           ],
-          "score": 5.31
+          "score": 33.66
         },
         {
-          "provider": "Rowan",
+          "provider": "Ravion",
           "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`"
+            "ATK via ATK buff (multiple targets, high)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May"
           ],
-          "score": 4.082400000000001
+          "score": 33.5412
+        },
+        {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Lily May"
+          ],
+          "score": 30.825
+        },
+        {
+          "provider": "Solise",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 29.25
         },
         {
           "provider": "Zanie",
           "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, average)"
+            "DEF Penetration via DEF Penetration buff (single target, average)",
+            "Grants 4 distinct stat buffs to Lily May"
           ],
-          "score": 3.0
+          "score": 25.5
         },
         {
           "provider": "Zandrok",
           "reasons": [
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Grants 3 distinct stat buffs to Lily May"
           ],
-          "score": 2.295
+          "score": 23.295
+        },
+        {
+          "provider": "Pandora",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Lily May (start of battle)"
+          ],
+          "score": 22.049999999999997
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 20.25
+        },
+        {
+          "provider": "Daimon",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 13.5
+        },
+        {
+          "provider": "Eironn",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 13.5
+        },
+        {
+          "provider": "Marcille",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 13.5
+        },
+        {
+          "provider": "Saida",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 13.5
         },
         {
           "provider": "Galahad",
           "reasons": [
-            "ATK SPD via Haste buff (single target, average) `signature fuel`"
+            "ATK SPD via Haste buff (single target, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May"
           ],
-          "score": 2.025
-        },
-        {
-          "provider": "Kulu",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
+          "score": 11.025
         },
         {
           "provider": "Thoran",
           "reasons": [
-            "Energy via Energy recovery (single target, average) `signature fuel`"
+            "Energy via Energy recovery (single target, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May"
           ],
-          "score": 1.0206000000000002
+          "score": 7.7706
         },
         {
-          "provider": "Mehira",
+          "provider": "Aurora",
           "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "Grants 1 distinct stat buff to Lily May"
           ],
-          "score": 1.0125
+          "score": 6.75
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Phraesto",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Kulu",
+          "reasons": [
+            "DEF Penetration via DEF Penetration buff (single target, low)",
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 3.75
+        },
+        {
+          "provider": "Silven",
+          "reasons": [
+            "DEF Penetration via DEF Penetration buff (single target, low)",
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 3.75
         },
         {
           "provider": "Thador",
           "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`"
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Lily May (start of battle)"
           ],
-          "score": 0.5103000000000001
+          "score": 3.6602999999999994
         },
         {
-          "provider": "Kazim",
+          "provider": "Mehira",
           "reasons": [
-            "ATK via ATK buff (single target, high)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Lily May"
           ],
-          "score": 8.55
+          "score": 3.2625
         },
         {
           "provider": "Fay",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Grants 5 distinct stat buffs to Lily May"
           ],
-          "score": 4.62
+          "score": 38.37
         },
         {
-          "provider": "Isabella",
+          "provider": "Hewynn",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low, conditional (frequent))",
-            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
+            "Grants 3 distinct stat buffs to Lily May"
           ],
-          "score": 4.574999999999999
+          "score": 33.75
+        },
+        {
+          "provider": "Hepler",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Grants 4 distinct stat buffs to Lily May"
+          ],
+          "score": 32.5125
+        },
+        {
+          "provider": "Cassadee",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May (start of battle)"
+          ],
+          "score": 31.5
         },
         {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy recovery (all units, low) `signature fuel`",
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May (start of battle)"
           ],
-          "score": 4.401
+          "score": 25.401
+        },
+        {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 24.3
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 24.0
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 21.0
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 18.0
         },
         {
           "provider": "Lorsan",
           "reasons": [
-            "ATK SPD via Haste buff (single target, high) `signature fuel`"
+            "ATK SPD via Haste buff (single target, high) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May"
           ],
-          "score": 3.0375
-        },
-        {
-          "provider": "Atalanta",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 1.72125
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 1.6199999999999999
+          "score": 17.2875
         },
         {
           "provider": "Cecia",
           "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
+            "DEF Penetration via DEF Penetration buff (single target, low)",
+            "Grants 3 distinct stat buffs to Lily May"
           ],
-          "score": 1.5
+          "score": 16.5
+        },
+        {
+          "provider": "Isabella",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low, conditional (frequent))",
+            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 13.575
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 13.5
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 11.25
+        },
+        {
+          "provider": "Valka",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 8.37
         },
         {
           "provider": "Pang",
           "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
+            "DEF Penetration via DEF Penetration buff (single target, low)",
+            "Grants 2 distinct stat buffs to Lily May"
           ],
-          "score": 1.5
+          "score": 8.25
+        },
+        {
+          "provider": "Harak",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.75
+        },
+        {
+          "provider": "Salazer",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.75
+        },
+        {
+          "provider": "Atalanta",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`",
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.2212499999999995
+        },
+        {
+          "provider": "Damian",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Lucius",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Nara",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Korin",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Satrana",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Granny Dahnie",
           "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Lily May"
           ],
-          "score": 1.0125
-        },
-        {
-          "provider": "Hepler",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
-          ],
-          "score": 1.0125
+          "score": 3.2625
         },
         {
           "provider": "Arden",
           "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`"
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Lily May"
           ],
-          "score": 0.5103000000000001
+          "score": 2.7603
         },
         {
           "provider": "Ulmus",
           "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`"
+            "Energy via Energy recovery (single target, low) `signature fuel`",
+            "Grants 1 distinct stat buff to Lily May"
           ],
-          "score": 0.5103000000000001
+          "score": 2.7603
+        },
+        {
+          "provider": "Kruger",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 2.25
+        },
+        {
+          "provider": "Rhys",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 2.25
+        },
+        {
+          "provider": "Seth",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 2.25
+        },
+        {
+          "provider": "Soren",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 2.25
         }
       ],
       "beneficiaries": [
@@ -25997,11 +26759,11 @@
         },
         {
           "score": 8.0,
-          "name": "Indris"
+          "name": "Dionel"
         },
         {
           "score": 8.0,
-          "name": "Perseus"
+          "name": "Faramor"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -26291,11 +27053,11 @@
         },
         {
           "score": 13.5,
-          "name": "Eironn"
+          "name": "Dionel"
         },
         {
           "score": 13.5,
-          "name": "Kordan"
+          "name": "Eironn"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -26366,16 +27128,16 @@
             ]
           },
           {
-            "name": "Galahad",
-            "score": 0.9953,
+            "name": "Natsu",
+            "score": 1.0,
             "matches": [
               "Magic",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Saida",
-            "score": 0.9895,
+            "name": "Galahad",
+            "score": 0.9953,
             "matches": [
               "Magic",
               "Max HP-based damage"
@@ -27998,11 +28760,11 @@
         },
         {
           "score": 13.5,
-          "name": "Silven"
+          "name": "Lily May"
         },
         {
-          "score": 9.0,
-          "name": "Aliceth"
+          "score": 13.5,
+          "name": "Silven"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -28114,6 +28876,13 @@
           }
         ],
         "overall": [
+          {
+            "name": "Natsu",
+            "score": 0.6272,
+            "matches": [
+              "Damage"
+            ]
+          },
           {
             "name": "Frieren",
             "score": 0.504,
@@ -29247,6 +30016,14 @@
       ],
       "beneficiaries": [
         {
+          "score": 77.05,
+          "name": "Lily May"
+        },
+        {
+          "score": 64.0,
+          "name": "Dionel"
+        },
+        {
           "score": 61.0,
           "name": "Perseus"
         },
@@ -29277,6 +30054,10 @@
         {
           "score": 27.0,
           "name": "Cecia"
+        },
+        {
+          "score": 27.0,
+          "name": "Fay"
         },
         {
           "score": 27.0,
@@ -29347,10 +30128,6 @@
           "name": "Parisa"
         },
         {
-          "score": 17.0,
-          "name": "Fay"
-        },
-        {
           "score": 16.25,
           "name": "Lumont"
         },
@@ -29373,6 +30150,10 @@
         {
           "score": 16.0,
           "name": "Ravion"
+        },
+        {
+          "score": 16.0,
+          "name": "Sonja"
         },
         {
           "score": 15.4,
@@ -29415,16 +30196,8 @@
           "name": "Kafra"
         },
         {
-          "score": 14.05,
-          "name": "Lily May"
-        },
-        {
           "score": 12.5,
           "name": "Marcille"
-        },
-        {
-          "score": 12.0,
-          "name": "Dionel"
         },
         {
           "score": 12.0,
@@ -29469,10 +30242,6 @@
         {
           "score": 6.0,
           "name": "Shakir"
-        },
-        {
-          "score": 6.0,
-          "name": "Sonja"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -29835,15 +30604,15 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.5382,
+            "name": "Natsu",
+            "score": 0.5408,
             "matches": [
               "Damage"
             ]
           },
           {
-            "name": "Frieren",
-            "score": 0.5169,
+            "name": "Silven",
+            "score": 0.5382,
             "matches": [
               "Damage"
             ]
@@ -30142,23 +30911,7 @@
           "score": 16.0
         },
         {
-          "provider": "Kazim",
-          "reasons": [
-            "ATK via ATK buff (single target, high)",
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 10.5
-        },
-        {
           "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Lucy",
           "reasons": [
             "Physical DEF via DEF buff (single target, high)",
             "Magic DEF via DEF buff (single target, high)"
@@ -30193,14 +30946,6 @@
           "reasons": [
             "ATK via ATK buff (single target, average)",
             "Haste via Haste buff (single target, average) `signature fuel`"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, low)",
-            "Magic DEF via DEF buff (multiple targets, low)"
           ],
           "score": 6.0
         },
@@ -30259,13 +31004,6 @@
           "score": 3.0
         },
         {
-          "provider": "Atalanta",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 2.55
-        },
-        {
           "provider": "Granny Dahnie",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`"
@@ -30285,6 +31023,37 @@
             "Crit via Crit buff (single target, low)"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "Haste via Haste buff (multiple targets, average) `signature fuel`"
+          ],
+          "score": 10.5
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, high)",
+            "Magic DEF via DEF buff (single target, high)"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Atalanta",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 2.55
         }
       ],
       "beneficiaries": [
@@ -30319,20 +31088,20 @@
             ]
           },
           {
-            "name": "Arden",
-            "score": 0.6,
-            "matches": [
-              "aoe-damage",
-              "dot-specialist",
-              "mass-cc"
-            ]
-          },
-          {
             "name": "Gwyneth",
             "score": 0.6,
             "matches": [
               "dot-specialist",
               "fire-attack",
+              "mass-cc"
+            ]
+          },
+          {
+            "name": "Arden",
+            "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "dot-specialist",
               "mass-cc"
             ]
           }
@@ -30355,7 +31124,7 @@
             ]
           },
           {
-            "name": "Marcille",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -30390,14 +31159,6 @@
         ],
         "cc": [
           {
-            "name": "Antandra",
-            "score": 1.0,
-            "matches": [
-              "Stun",
-              "Knock down"
-            ]
-          },
-          {
             "name": "Callan",
             "score": 1.0,
             "matches": [
@@ -30406,7 +31167,15 @@
             ]
           },
           {
-            "name": "Lucca",
+            "name": "Scarlita",
+            "score": 1.0,
+            "matches": [
+              "Stun",
+              "Knock down"
+            ]
+          },
+          {
+            "name": "Zorya",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -32058,7 +32827,7 @@
           },
           {
             "name": "Galahad",
-            "score": 0.5002,
+            "score": 0.5035,
             "matches": [
               "Damage"
             ]
@@ -32134,16 +32903,16 @@
       ],
       "beneficiaries": [
         {
+          "score": 22.22142857142857,
+          "name": "Dionel"
+        },
+        {
+          "score": 22.049999999999997,
+          "name": "Lily May"
+        },
+        {
           "score": 22.049999999999997,
           "name": "Silven"
-        },
-        {
-          "score": 19.22142857142857,
-          "name": "Indris"
-        },
-        {
-          "score": 17.521428571428572,
-          "name": "Carolina"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -32261,11 +33030,10 @@
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.5031,
+            "name": "Natsu",
+            "score": 0.5094,
             "matches": [
-              "Haste debuff",
-              "Vitality debuff"
+              "Haste debuff"
             ]
           }
         ],
@@ -32544,15 +33312,15 @@
       "beneficiaries": [
         {
           "score": 8.25,
+          "name": "Lily May"
+        },
+        {
+          "score": 8.25,
           "name": "Silven"
         },
         {
           "score": 7.5,
-          "name": "Nerion"
-        },
-        {
-          "score": 7.5,
-          "name": "Perseus"
+          "name": "Dionel"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -34576,6 +35344,10 @@
         },
         {
           "score": 13.32,
+          "name": "Evie"
+        },
+        {
+          "score": 13.32,
           "name": "Galahad"
         },
         {
@@ -34585,6 +35357,10 @@
         {
           "score": 13.32,
           "name": "Parisa"
+        },
+        {
+          "score": 13.32,
+          "name": "Scarlita"
         },
         {
           "score": 13.32,
@@ -34608,15 +35384,7 @@
         },
         {
           "score": 11.0412,
-          "name": "Lily May"
-        },
-        {
-          "score": 11.0412,
           "name": "Marilee"
-        },
-        {
-          "score": 9.470057142857142,
-          "name": "Dionel"
         },
         {
           "score": 9.470057142857142,
@@ -34628,15 +35396,7 @@
         },
         {
           "score": 4.32,
-          "name": "Evie"
-        },
-        {
-          "score": 4.32,
           "name": "Pandora"
-        },
-        {
-          "score": 4.32,
-          "name": "Scarlita"
         },
         {
           "score": 4.32,
@@ -35303,7 +36063,7 @@
         },
         {
           "score": 2.25,
-          "name": "Silven"
+          "name": "Lily May"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -35705,6 +36465,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 39.3544,
+          "name": "Dionel"
+        },
+        {
           "score": 31.732,
           "name": "Zorya"
         },
@@ -35787,10 +36551,6 @@
         {
           "score": 15.854399999999998,
           "name": "Cryonaia"
-        },
-        {
-          "score": 15.854399999999998,
-          "name": "Dionel"
         },
         {
           "score": 15.854399999999998,
@@ -36151,10 +36911,6 @@
         {
           "score": 9.0,
           "name": "Eironn"
-        },
-        {
-          "score": 9.0,
-          "name": "Faramor"
         },
         {
           "score": 9.0,
@@ -36901,32 +37657,35 @@
     "Scarlita": {
       "synergies": [
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 13.32
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 11.64
+        },
+        {
+          "provider": "Twins",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Energy via Energy recovery (multiple targets, low) `signature fuel`"
+          ],
+          "score": 11.16
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 8.64
-        },
-        {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 8.64
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 4.32
-        },
-        {
-          "provider": "Twins",
-          "reasons": [
-            "Energy via Energy recovery (multiple targets, low) `signature fuel`"
-          ],
-          "score": 2.16
         },
         {
           "provider": "Thoran",
@@ -38542,6 +39301,10 @@
       ],
       "beneficiaries": [
         {
+          "score": 34.5,
+          "name": "Dionel"
+        },
+        {
           "score": 24.0,
           "name": "Zorya"
         },
@@ -38556,10 +39319,6 @@
         {
           "score": 22.5,
           "name": "Soren"
-        },
-        {
-          "score": 18.0,
-          "name": "Dionel"
         },
         {
           "score": 16.875,
@@ -40621,8 +41380,16 @@
       ],
       "beneficiaries": [
         {
+          "score": 47.5824,
+          "name": "Lily May"
+        },
+        {
           "score": 35.232,
           "name": "Zorya"
+        },
+        {
+          "score": 35.0544,
+          "name": "Dionel"
         },
         {
           "score": 34.0824,
@@ -40702,6 +41469,10 @@
         },
         {
           "score": 20.0544,
+          "name": "Fay"
+        },
+        {
+          "score": 20.0544,
           "name": "Lorsan"
         },
         {
@@ -40719,10 +41490,6 @@
         {
           "score": 17.0544,
           "name": "Berial"
-        },
-        {
-          "score": 17.0544,
-          "name": "Fay"
         },
         {
           "score": 17.0544,
@@ -40789,6 +41556,10 @@
           "name": "Parisa"
         },
         {
+          "score": 11.64,
+          "name": "Scarlita"
+        },
+        {
           "score": 11.232000000000001,
           "name": "Koko"
         },
@@ -40799,10 +41570,6 @@
         {
           "score": 8.64,
           "name": "Pandora"
-        },
-        {
-          "score": 8.64,
-          "name": "Scarlita"
         },
         {
           "score": 8.64,
@@ -40967,6 +41734,10 @@
         {
           "score": 20.0,
           "name": "Himmel"
+        },
+        {
+          "score": 19.5,
+          "name": "Faramor"
         },
         {
           "score": 19.0,
@@ -41161,10 +41932,19 @@
         {
           "provider": "Twins",
           "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
             "Haste via Haste buff (all units, average) `signature fuel`",
             "Max HP via Max HP buff (multiple targets, high)"
           ],
-          "score": 19.0
+          "score": 28.0
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "Haste via Haste buff (multiple targets, average) `signature fuel`"
+          ],
+          "score": 16.0
         },
         {
           "provider": "Zandrok",
@@ -41182,18 +41962,20 @@
           "score": 9.0
         },
         {
-          "provider": "Mikola",
+          "provider": "Alna",
           "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
+            "ATK via ATK buff (single target, low)",
+            "Max HP via Max HP buff (single target, high)"
           ],
           "score": 6.0
         },
         {
           "provider": "Dunlingr",
           "reasons": [
+            "ATK via ATK buff (single target, average)",
             "Haste via Haste buff (single target, average) `signature fuel`"
           ],
-          "score": 3.0
+          "score": 6.0
         },
         {
           "provider": "Galahad",
@@ -41212,9 +41994,18 @@
         {
           "provider": "Kazim",
           "reasons": [
+            "ATK via ATK buff (single target, high)",
             "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
-          "score": 6.0
+          "score": 10.5
+        },
+        {
+          "provider": "Isabella",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low, conditional (frequent))",
+            "Haste via Haste buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 5.55
         },
         {
           "provider": "Lorsan",
@@ -41222,13 +42013,6 @@
             "Haste via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Isabella",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Atalanta",
@@ -42625,18 +43409,19 @@
             ]
           },
           {
-            "name": "Tasi",
-            "score": 0.3429,
+            "name": "Natsu",
+            "score": 0.375,
             "matches": [
               "aoe-damage",
+              "fire-attack",
               "transformation"
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.3333,
+            "name": "Tasi",
+            "score": 0.3429,
             "matches": [
-              "ally-healer",
+              "aoe-damage",
               "transformation"
             ]
           }
@@ -48381,10 +49166,6 @@
         {
           "score": 7.5,
           "name": "Gerda"
-        },
-        {
-          "score": 4.5,
-          "name": "Evie"
         },
         {
           "score": 4.5,

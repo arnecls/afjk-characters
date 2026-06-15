@@ -349,6 +349,34 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertLess(damage_idx, overview_idx)
         self.assertTrue(behavior.skill_overview["signature"].damage_types)
 
+    def test_play_overview_before_skill_overview(self):
+        hero, behavior = self._hero_by_display("Aliceth")
+        overview = "First sentence. Second sentence. Third sentence. "
+        overview += "Fourth sentence. Fifth sentence."
+        text = "\n".join(
+            rs.format_behavior_section(
+                "Aliceth",
+                behavior,
+                hero=hero,
+                play_overview=overview,
+            )
+        )
+        play_idx = text.index("#### Play overview")
+        overview_idx = text.index("#### Skill overview")
+        self.assertLess(play_idx, overview_idx)
+        self.assertIn(overview, text)
+
+    def test_play_overview_omitted_when_blank(self):
+        _, behavior = self._hero_by_display("Aliceth")
+        text = "\n".join(
+            rs.format_behavior_section(
+                "Aliceth",
+                behavior,
+                play_overview="",
+            )
+        )
+        self.assertNotIn("#### Play overview", text)
+
     def test_skill_summary_subsections_after_overview_metrics(self):
         _, behavior = self._hero_by_display("Aliceth")
         summaries = rs._load_skill_summaries().get("Aliceth", {})

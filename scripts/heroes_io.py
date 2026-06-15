@@ -69,10 +69,15 @@ _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 
 def normalize_skill_text(text: str) -> str:
-    """Strip fandom/wiki highlight tags so analysis sees plain words."""
+    """Strip fandom/wiki tags and HTML entities from skill prose."""
     if not text:
         return text
-    return _WIKI_TAG_RE.sub(lambda m: m.group(2), text)
+    text = _WIKI_TAG_RE.sub(lambda m: m.group(2), text)
+    return (
+        text.replace("&plus;", "+")
+        .replace("&minus;", "-")
+        .replace("−", "-")
+    )
 
 
 def is_structured_description(desc: Any) -> bool:

@@ -8,6 +8,8 @@
   Used only to fill gaps in the Fandom record during ``heroes_io.merge_sources``.
 - ``fetch_prydwen_tiers()`` scrapes meta tiers from Prydwen character pages
   (https://www.prydwen.gg/afk-journey/characters), aligned with their tier list.
+- ``fetch_prydwen_reviews()`` scrapes the Review tab prose from Prydwen character
+  pages for play-overview generation.
 - ``fetch_prydwen_role_categories()`` scrapes role categories (DPS, Specialist,
   Support, Tank) from the Prydwen tier list page.
 
@@ -42,6 +44,9 @@ PRYDWEN_USER_AGENT = (
 # Fandom roster name -> Prydwen URL slug when they differ.
 PRYDWEN_SLUG_ALIASES: dict[str, str] = {
     "Elijah & Lailah": "elijah-and-lailah",
+    "Twins": "elijah-and-lailah",
+    "Lucy": "lucy-heartfilia",
+    "Natsu": "natsu-dragneel",
 }
 
 # Fandom roster name -> Prydwen tier-list display name when they differ.
@@ -74,6 +79,15 @@ _PRYDWEN_MODE_KEYS = {
     "dream realm (endless)": "dream_realm_endless",
     "pvp": "pvp",
 }
+
+_PRYDWEN_REVIEW_RE = re.compile(
+    r'<div class="section-analysis"><div class="review raw">(.*?)</div></div>',
+    re.I | re.S,
+)
+
+_PRYDWEN_HTML_BREAK_RE = re.compile(r"<br\s*/?>", re.I)
+_PRYDWEN_TAG_RE = re.compile(r"<[^>]+>")
+_PRYDWEN_ENTITY_RE = re.compile(r"&#x27;|&apos;|&#39;")
 
 FANDOM_HEADER = (
     "# AFK Journey Heroes\n"
@@ -625,6 +639,59 @@ def fetch_prydwen_role_categories() -> dict[str, str]:
         roster_name = alias_targets.get(prydwen_name, prydwen_name)
         by_roster_name[roster_name] = category
     return by_roster_name
+
+
+def _prydwen_html_to_text(fragment: str) -> str:
+    """Convert a Prydwen review HTML fragment to plain text."""
+    text = _PRYDWEN_HTML_BREAK_RE.sub("\n", fragment)
+    text = re.sub(r"</p>\s*<p>", "\n\n", text, flags=re.I)
+    text = re.sub(r"</li>\s*<li>", "\n", text, flags=re.I)
+    text = _PRYDWEN_TAG_RE.sub("", text)
+    text = _PRYDWEN_ENTITY_RE.sub("'", text)
+    text = text.replace("&amp;", "&").replace("&nbsp;", " ")
+    text = re.sub(r"[ \t]+\n", "\n", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
+def parse_prydwen_review(html: str) -> str | None:
+    """Parse the Review tab prose from a Prydwen character page."""
+    match = _PRYDWEN_REVIEW_RE.search(html)
+    if not match:
+        return None
+    text = _prydwen_html_to_text(match.group(1))
+    return text if text else None
+
+
+def _fetch_prydwen_hero_review(name: str) -> tuple[str, str | None]:
+    slug = _prydwen_slug(name)
+    url = f"{PRYDWEN_BASE}/{slug}"
+    try:
+        html = _http_get(url, PRYDWEN_USER_AGENT, retries=4)
+    except OSError:
+        return name, None
+    return name, parse_prydwen_review(html)
+
+
+def fetch_prydwen_reviews(hero_names: list[str]) -> dict[str, str]:
+    """Return review prose keyed by hero display name."""
+    reviews_by_name: dict[str, str] = {}
+    missing = list(hero_names)
+    for round_idx in range(3):
+        if not missing:
+            break
+        if round_idx:
+            time.sleep(2.0 * round_idx)
+        batch_missing: list[str] = []
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(_fetch_prydwen_hero_review, missing))
+        for name, review in results:
+            if review:
+                reviews_by_name[name] = review
+            else:
+                batch_missing.append(name)
+        missing = batch_missing
+    return reviews_by_name
 
 
 def fetch_prydwen_tiers(hero_names: list[str]) -> dict[str, dict[str, str]]:

@@ -35,6 +35,8 @@ HEROES_MD = ROOT / "Heroes.md"
 PROCESSED = io.HEROES_DATA_PROCESSED
 SKILL_SUMMARY = ROOT / "data" / "heroes_data_skill_summary.json"
 SKILL_SUMMARY_SCHEMA = ROOT / "data" / "schema" / "skill_summary.schema.json"
+PLAY_OVERVIEW = ROOT / "data" / "hero_play_overviews.json"
+PLAY_OVERVIEW_SCHEMA = ROOT / "data" / "schema" / "play_overview.schema.json"
 
 _CC_KEYWORDS: dict[str, str] = {
     "stun": r"\bstun(?:s|ned|ning)?\b",
@@ -367,6 +369,69 @@ def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
     return errors
 
 
+def _count_sentences(text: str) -> int:
+    normalized = re.sub(r"\.([A-Z])", r". \1", text)
+    parts = re.split(r"(?<=[.!?])\s+", normalized.strip())
+    return len([part for part in parts if part.strip()])
+
+
+def check_play_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str]]:
+    """Validate hero_play_overviews.json coverage and basic lint."""
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    if not PLAY_OVERVIEW.exists():
+        warnings.append("missing hero_play_overviews.json")
+        return errors, warnings
+
+    try:
+        overviews = json.loads(PLAY_OVERVIEW.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"play overview JSON parse error: {exc}"], warnings
+
+    if jsonschema_available():
+        try:
+            schema = json.loads(PLAY_OVERVIEW_SCHEMA.read_text(encoding="utf-8"))
+            import jsonschema
+
+            store: dict[str, object] = {}
+            for sibling in PLAY_OVERVIEW_SCHEMA.parent.glob("*.schema.json"):
+                sibling_schema = json.loads(sibling.read_text(encoding="utf-8"))
+                sid = sibling_schema.get("$id")
+                if sid:
+                    store[sid] = sibling_schema
+            schema_dir = PLAY_OVERVIEW_SCHEMA.parent.resolve().as_uri() + "/"
+            resolver = jsonschema.RefResolver(schema_dir, schema, store=store)
+            jsonschema.validate(overviews, schema, resolver=resolver)
+        except Exception as exc:
+            errors.append(f"play overview schema validation failed: {exc}")
+
+    expected = set(processed["heroes"])
+    for short in sorted(expected):
+        if short not in overviews:
+            warnings.append(f"play overview missing hero: {short}")
+            continue
+        text = overviews[short]
+        if not isinstance(text, str) or not text.strip():
+            errors.append(f"play overview empty {short}")
+            continue
+        sentence_count = _count_sentences(text)
+        if sentence_count < 3 or sentence_count > 5:
+            warnings.append(
+                f"play overview sentence count {short}: {sentence_count} (expected 3-5)"
+            )
+        if len(text) > 1000:
+            warnings.append(
+                f"play overview length {short}: {len(text)} chars (expected <=1000)"
+            )
+
+    for short in overviews:
+        if short not in expected:
+            errors.append(f"play overview unknown hero: {short}")
+
+    return errors, warnings
+
+
 def jsonschema_available() -> bool:
     try:
         import jsonschema  # noqa: F401
@@ -443,6 +508,21 @@ def main() -> int:
         summary_errors = check_skill_summaries(stored)
         if summary_errors:
             warnings["skill_summary"] = summary_errors
+
+    if "play_overview" in fail_on:
+        overview_errors, overview_warnings = check_play_overviews(stored)
+        if overview_errors:
+            errors.extend(overview_errors)
+        elif not overview_warnings:
+            print("OK: play overviews complete and valid")
+        if overview_warnings:
+            warnings["play_overview"] = overview_warnings
+    else:
+        overview_errors, overview_warnings = check_play_overviews(stored)
+        if overview_errors:
+            warnings["play_overview_errors"] = overview_errors
+        if overview_warnings:
+            warnings["play_overview"] = overview_warnings
 
     semantic = check_semantic(fresh)
     for category, items in sorted(semantic.items()):

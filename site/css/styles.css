@@ -1675,7 +1675,6 @@ html.welcome-warning-pending .welcome-warning,
   display: inline-flex;
   flex-wrap: wrap;
   gap: 0.2rem;
-  max-width: 14rem;
 }
 
 .chip-behavior-tag {
@@ -1997,6 +1996,14 @@ html.welcome-warning-pending .welcome-warning,
 
 .skill-overview-section .skill-overview-pills {
   width: 100%;
+}
+
+.skill-overview-section .skill-overview-pills .behavior-tags-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  width: 100%;
+  max-width: none;
 }
 
 .skill-overview-section .skill-overview-pills .chip,

@@ -13,6 +13,7 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 | [signature_skills.json](signature_skills.json) | **AI-generated** | Signature skill per hero by category (`signature_calculated`, optional `signature_override`, optional `speed_override`). Skill names come from `heroes_data.json`; edit when a hero’s identity skill is wrong. |
 | [hero_behavior_tags.json](hero_behavior_tags.json) | **AI-generated** | Combat-role tags per hero for replacement scoring. |
 | [heroes_data_skill_summary.json](heroes_data_skill_summary.json) | **AI-generated** | Short mechanic summary per hero and skill category (`ultimate`, `skill1`–`skill5`). Joined to processed skills by `category`; shown in Skill overview subsections. |
+| [hero_play_overviews.json](hero_play_overviews.json) | **AI-generated** | Short playstyle summary per hero (3–5 sentences, ~900 chars max), sourced from Prydwen character reviews. Shown in the behavior section before Skill overview. Regenerate with `python3 scripts/generate_play_overviews.py`. |
 | [placement_constraint_overrides.json](placement_constraint_overrides.json) | **Manual configuration** | Optional overrides when placement/composition rules cannot be parsed from skill text. |
 | [movement_overrides.json](movement_overrides.json) | **Manual configuration** | Optional per-hero movement labels when automatic detection is wrong. |
 | [heroes_config.json](heroes_config.json) | **Manual configuration** | Tunables: synergy weights, display limits, casting-speed thresholds, replacement scoring, proximity-aura reach (`proximity_synergy`). |
@@ -69,5 +70,6 @@ heroes_data_processed.json
 heroes_data_synergies.json
         ↓  just render
     + heroes_data_skill_summary.json
+    + hero_play_overviews.json
 Heroes.md · heroes-overview.md · heroes-overview.csv
 ```

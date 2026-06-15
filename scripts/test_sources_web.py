@@ -77,7 +77,18 @@ _ALICETH_PRYDWEN_HTML = """\
 <div class="rating-box-container "><span><div class="rating-box reverse reverse B">B</div></span><p>Dream Realm</p></div>
 <div class="rating-box-container "><span><div class="rating-box reverse reverse S-plus">S+</div></span><p>Dream Realm (Endless)</p></div>
 </div>
+<div class="section-analysis"><div class="review raw"><div><p>Aliceth is an S-level Celestial Marksman who specializes in single-target attack.</p><p>Her Ultimate deals lost HP damage while invincible.</p></div><ul><li><p><strong>Story and AFK Stages - </strong>She excels in AFK Stage content with multiple enemies.</p></li><li><p><strong>Dream Realm - </strong>She brings utility to boss battles.</p></li><li><p><strong>PVP </strong>- She enhances teams as support and secondary DPS.</p></li></ul><p>Her ideal investment is S+ with EX +15 as the key breakpoint.</p></div></div>
 """
+
+
+_ALICETH_REVIEW_TEXT = (
+    "Aliceth is an S-level Celestial Marksman who specializes in single-target attack.\n\n"
+    "Her Ultimate deals lost HP damage while invincible.\n\n"
+    "Story and AFK Stages - She excels in AFK Stage content with multiple enemies.\n\n"
+    "Dream Realm - She brings utility to boss battles.\n\n"
+    "PVP - She enhances teams as support and secondary DPS.\n\n"
+    "Her ideal investment is S+ with EX +15 as the key breakpoint."
+)
 
 
 _PRYDWEN_TIER_LIST_SNIPPET = (
@@ -134,6 +145,78 @@ class PrydwenParseTests(unittest.TestCase):
 
     def test_parse_ratings_missing_section(self) -> None:
         self.assertIsNone(sources_web._parse_prydwen_ratings("<html></html>"))
+
+    def test_parse_review_extracts_prose(self) -> None:
+        review = sources_web.parse_prydwen_review(_ALICETH_PRYDWEN_HTML)
+        self.assertIsNotNone(review)
+        assert review is not None
+        self.assertIn("Aliceth is an S-level Celestial Marksman", review)
+        self.assertIn("Story and AFK Stages", review)
+        self.assertIn("ideal investment", review)
+        self.assertNotIn("<p>", review)
+
+    def test_parse_review_missing_section(self) -> None:
+        self.assertIsNone(sources_web.parse_prydwen_review(_ALICETH_PRYDWEN_HTML.replace(
+            '<div class="section-analysis"><div class="review raw">', ""
+        )))
+
+    def test_prydwen_slug_aliases_lucy_and_natsu(self) -> None:
+        self.assertEqual(sources_web._prydwen_slug("Lucy"), "lucy-heartfilia")
+        self.assertEqual(sources_web._prydwen_slug("Natsu"), "natsu-dragneel")
+        self.assertEqual(sources_web._prydwen_slug("Twins"), "elijah-and-lailah")
+
+
+class PlayOverviewStripTests(unittest.TestCase):
+    def test_strip_role_intro_sentence(self) -> None:
+        import generate_play_overviews as gpo
+
+        result = gpo.strip_role_intro_sentence(
+            "Aliceth is an S-level Celestial Marksman who specializes in "
+            "single-target attack.",
+            "Aliceth",
+        )
+        self.assertEqual(result, "Specializes in single-target attack.")
+
+        result = gpo.strip_role_intro_sentence(
+            "Arden is an A-level Mage of the Wilder faction. His kit is "
+            "centered around crowd control.",
+            "Arden",
+        )
+        self.assertEqual(result, "His kit is centered around crowd control.")
+
+        result = gpo.strip_role_intro_sentence(
+            "Gwyneth is an S-Rank Lightbearer who, despite her slower attack "
+            "interval, trades it for massive damage.",
+            "Gwyneth",
+        )
+        self.assertTrue(result.startswith("Despite her slower attack interval"))
+
+    def test_resolve_vague_mode_references(self) -> None:
+        import generate_play_overviews as gpo
+
+        result = gpo.resolve_vague_mode_references(
+            "Alsa is a bad choice in this mode, as bosses cannot be affected "
+            "by Crowd Control.",
+            "Alsa",
+        )
+        self.assertIn("Dream Realm", result)
+        self.assertNotIn("this mode", result.lower())
+
+    def test_ensure_first_sentence_subject(self) -> None:
+        import generate_play_overviews as gpo
+
+        result = gpo.ensure_first_sentence_subject(
+            "Excels in sustained combat and boss encounters. Frieren is strong.",
+            "Frieren",
+        )
+        self.assertTrue(result.startswith("Frieren excels"))
+
+        result = gpo.ensure_first_sentence_subject(
+            "From the Frieren collaboration event who specializes in buffing "
+            "allies.",
+            "Himmel",
+        )
+        self.assertTrue(result.startswith("Himmel,"))
 
 
 if __name__ == "__main__":

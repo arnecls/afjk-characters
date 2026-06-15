@@ -16799,6 +16799,12 @@
           "description_lite": "When Natsu causes an enemy to lose HP through any means other than his normal attacks, he deals continuous damage to the enemy."
         }
       ],
+      "prydwen_tiers": {
+        "afk_stages": "B",
+        "pvp": "C",
+        "dream_realm": "C",
+        "dream_realm_endless": "C"
+      },
       "role_category": "damage_dealer"
     },
     {

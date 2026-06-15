@@ -486,6 +486,16 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertEqual(len(knock_requires), 1)
         self.assertEqual(knock_requires[0].targeting, "Enemies")
 
+    def test_dionel_requires_ally_stat_buffs(self):
+        hero = _hero_by_short_name("Dionel")
+        ally_buff_requires = [
+            s
+            for s in hero.special_effects
+            if s.kind == "requires" and s.label == "Ally stat buffs"
+        ]
+        self.assertEqual(len(ally_buff_requires), 1)
+        self.assertIn("ATK", hero.benefit_stats)
+
     def test_ulmus_displacement_not_knock_up_require(self):
         hero = _hero_by_short_name("Ulmus")
         knock_requires = [

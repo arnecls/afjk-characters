@@ -11839,9 +11839,9 @@
         "Dawn Light": {
           "category": "ultimate",
           "description": {
-            "raw": "Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) &plus; 15% damage to all adjacent enemies. The last hit of spear thrust knocks the enemy into the air, and its damage dealt is increased to 250% (ATK-based).",
+            "raw": "Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) + 15% damage to all adjacent enemies. The last hit of spear thrust knocks the enemy into the air, and its damage dealt is increased to 250% (ATK-based).",
             "active": [
-              "Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) &plus; 15% damage to all adjacent enemies.",
+              "Dionel soars into the air and becomes untargetable for 6s, during which he attacks the area with the most enemies using spear thrust, dealing 170% (ATK-based) + 15% damage to all adjacent enemies.",
               "The last hit of spear thrust knocks the enemy into the air, and its damage dealt is increased to 250% (ATK-based)."
             ],
             "upgrades": [
@@ -11857,7 +11857,7 @@
                 "level": "3",
                 "unlock": null,
                 "text": [
-                  "Unlocks at level 111: Increases the damage of to 180% (ATK-based) &plus; 15% and the damage of its last hit to 260% (ATK-based)."
+                  "Unlocks at level 111: Increases the damage of to 180% (ATK-based) + 15% and the damage of its last hit to 260% (ATK-based)."
                 ]
               },
               {
@@ -11871,7 +11871,7 @@
                 "level": "5",
                 "unlock": null,
                 "text": [
-                  "Unlocks at level 231: Increases the damage of to 190% (ATK-based) &plus; 15% and the damage of its last hit to 270% (ATK-based)."
+                  "Unlocks at level 231: Increases the damage of to 190% (ATK-based) + 15% and the damage of its last hit to 270% (ATK-based)."
                 ]
               }
             ]
@@ -11930,16 +11930,16 @@
         "Starry Void": {
           "category": "skill1",
           "description": {
-            "raw": "Passive. Dionel's normal attack turns into a Penetration attack, dealing 145% &plus; 15% damage to all enemies along the way.",
+            "raw": "Passive. Dionel's normal attack turns into a Penetration attack, dealing 145% + 15% damage to all enemies along the way.",
             "passive": [
-              "Dionel's normal attack turns into a Penetration attack, dealing 145% &plus; 15% damage to all enemies along the way."
+              "Dionel's normal attack turns into a Penetration attack, dealing 145% + 15% damage to all enemies along the way."
             ],
             "upgrades": [
               {
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Unlocks at level 71: Increases the Penetration attack damage to 150% &plus; 15%."
+                  "Unlocks at level 71: Increases the Penetration attack damage to 150% + 15%."
                 ]
               },
               {
@@ -11953,7 +11953,7 @@
                 "level": "4",
                 "unlock": null,
                 "text": [
-                  "Unlocks at level 191: Increases the Penetration attack damage to 155% &plus; 15%."
+                  "Unlocks at level 191: Increases the Penetration attack damage to 155% + 15%."
                 ]
               }
             ]
@@ -11986,12 +11986,12 @@
         "Nectar Feast": {
           "category": "skill2",
           "description": {
-            "raw": "Passive. Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally. Active. Dionel drinks the divine nectar to increase 20% &plus; 2% ATK and 20 &plus; 3 ATK SPD for 12s.",
+            "raw": "Passive. Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally. Active. Dionel drinks the divine nectar to increase 20% + 2% ATK and 20 + 3 ATK SPD for 12s.",
             "passive": [
               "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally."
             ],
             "active": [
-              "Dionel drinks the divine nectar to increase 20% &plus; 2% ATK and 20 &plus; 3 ATK SPD for 12s."
+              "Dionel drinks the divine nectar to increase 20% + 2% ATK and 20 + 3 ATK SPD for 12s."
             ],
             "upgrades": [
               {
@@ -12012,7 +12012,7 @@
                 "level": "4",
                 "unlock": null,
                 "text": [
-                  "Unlocks at level 211: The bonuses from active casting are increased to 25% &plus; 2% ATK and 25 &plus; 3 ATK SPD."
+                  "Unlocks at level 211: The bonuses from active casting are increased to 25% + 2% ATK and 25 + 3 ATK SPD."
                 ]
               }
             ]
@@ -12236,7 +12236,14 @@
             "description": "When he reaches max Intoxication stacks, his Execution increases by 25 further."
           }
         ],
-        "requires": []
+        "requires": [
+          {
+            "label": "Ally stat buffs",
+            "tier": "base",
+            "targeting": "Allies",
+            "description": "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally."
+          }
+        ]
       },
       "damage_entries": [
         [
@@ -12252,6 +12259,7 @@
         "true": "high"
       },
       "benefit_stats": [
+        "atk",
         "atk_spd",
         "shield",
         "execution"
@@ -14375,6 +14383,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
+        "atk",
         "healing",
         "energy"
       ],
@@ -14860,6 +14869,11 @@
       "synergy_profile": {
         "provides": [],
         "requires": [
+          {
+            "label": "Ally stat buffs",
+            "tier": "base",
+            "description": "If Faramor has an active non-permanent stat boost from his allies while using this skill, it instead deals true damage."
+          },
           {
             "label": "Once per battle",
             "tier": "ex+10",
@@ -15361,6 +15375,7 @@
         "max_hp": "average"
       },
       "benefit_stats": [
+        "atk",
         "atk_spd",
         "healing"
       ],
@@ -29140,7 +29155,14 @@
             "description": "She remains Invincible during these attacks and returns to her original tile afterward."
           }
         ],
-        "requires": []
+        "requires": [
+          {
+            "label": "Ally stat buffs",
+            "tier": "mythic+",
+            "targeting": "Allies",
+            "description": "Lily May grows once upon receiving a non-permanent stats boost from an ally."
+          }
+        ]
       },
       "damage_entries": [
         [
@@ -37643,9 +37665,9 @@
         "Corrosive Dart": {
           "category": "ultimate",
           "description": {
-            "raw": "Odie fires a Corrosive Dart, dealing 150% (ATK-based) &plus; 20% damage and Dart Poison to an enemy. The poisoned target will receive 30% (ATK-based) damage every second until defeated. Dart Poison cannot be dispelled.",
+            "raw": "Odie fires a Corrosive Dart, dealing 150% (ATK-based) + 20% damage and Dart Poison to an enemy. The poisoned target will receive 30% (ATK-based) damage every second until defeated. Dart Poison cannot be dispelled.",
             "active": [
-              "Odie fires a Corrosive Dart, dealing 150% (ATK-based) &plus; 20% damage and Dart Poison to an enemy.",
+              "Odie fires a Corrosive Dart, dealing 150% (ATK-based) + 20% damage and Dart Poison to an enemy.",
               "The poisoned target will receive 30% (ATK-based) damage every second until defeated.",
               "Dart Poison cannot be dispelled."
             ],
@@ -37661,21 +37683,21 @@
                 "level": "3",
                 "unlock": "Unlocks at Level 111",
                 "text": [
-                  "Increases damage to 200% (ATK-based) &plus; 20%."
+                  "Increases damage to 200% (ATK-based) + 20%."
                 ]
               },
               {
                 "level": "4",
                 "unlock": "Unlocks at Level 171",
                 "text": [
-                  "Increases damage to 225% (ATK-based) &plus; 20%."
+                  "Increases damage to 225% (ATK-based) + 20%."
                 ]
               },
               {
                 "level": "5",
                 "unlock": "Unlocks at Level 231",
                 "text": [
-                  "Increases damage to 250% (ATK-based) &plus; 20%."
+                  "Increases damage to 250% (ATK-based) + 20%."
                 ]
               }
             ]
@@ -37761,9 +37783,9 @@
         "Triple Tap": {
           "category": "skill1",
           "description": {
-            "raw": "Odie deals 60% (ATK-based) &plus; 5% damage to an enemy 3 times. The attacks from this skill are considered normal attacks.",
+            "raw": "Odie deals 60% (ATK-based) + 5% damage to an enemy 3 times. The attacks from this skill are considered normal attacks.",
             "active": [
-              "Odie deals 60% (ATK-based) &plus; 5% damage to an enemy 3 times.",
+              "Odie deals 60% (ATK-based) + 5% damage to an enemy 3 times.",
               "The attacks from this skill are considered normal attacks."
             ],
             "upgrades": [
@@ -37771,21 +37793,21 @@
                 "level": "2",
                 "unlock": "Unlocks at Level 71",
                 "text": [
-                  "Increases damage to 62% (ATK-based) &plus; 5%."
+                  "Increases damage to 62% (ATK-based) + 5%."
                 ]
               },
               {
                 "level": "3",
                 "unlock": "Unlocks at Level 131",
                 "text": [
-                  "Increases damage to 65% (ATK-based) &plus; 5%."
+                  "Increases damage to 65% (ATK-based) + 5%."
                 ]
               },
               {
                 "level": "4",
                 "unlock": "Unlocks at Level 191",
                 "text": [
-                  "Increases damage to 70% (ATK-based) &plus; 5%."
+                  "Increases damage to 70% (ATK-based) + 5%."
                 ]
               }
             ]
@@ -37819,10 +37841,10 @@
         "Venom Surge": {
           "category": "skill2",
           "description": {
-            "raw": "Odie prioritizes launching normal attacks at the nearest poisoned target. When the normal attacks hit a poisoned target, the base damage of the target's Dart Poison is permanently increased by 25% (ATK-based), up to 20 &plus; 2 stacks.",
+            "raw": "Odie prioritizes launching normal attacks at the nearest poisoned target. When the normal attacks hit a poisoned target, the base damage of the target's Dart Poison is permanently increased by 25% (ATK-based), up to 20 + 2 stacks.",
             "active": [
               "Odie prioritizes launching normal attacks at the nearest poisoned target.",
-              "When the normal attacks hit a poisoned target, the base damage of the target's Dart Poison is permanently increased by 25% (ATK-based), up to 20 &plus; 2 stacks."
+              "When the normal attacks hit a poisoned target, the base damage of the target's Dart Poison is permanently increased by 25% (ATK-based), up to 20 + 2 stacks."
             ],
             "upgrades": [
               {
@@ -38087,7 +38109,7 @@
           "ultimate": {
             "speed": "average",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "none",
             "debuffs": "average",
@@ -45385,6 +45407,7 @@
         "true": "average"
       },
       "benefit_stats": [
+        "atk",
         "execution",
         "energy"
       ],
@@ -46512,40 +46535,40 @@
         "Ravaging Claws": {
           "category": "ultimate",
           "description": {
-            "raw": "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected. Shakir consumes 60 Energy per second to maintain his wolf shape. Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks. Allies within the range of Lupine Aura reduce 20% &plus; 2% taken damage and increase 10 &plus; 3 Haste.",
+            "raw": "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected. Shakir consumes 60 Energy per second to maintain his wolf shape. Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks. Allies within the range of Lupine Aura reduce 20% + 2% taken damage and increase 10 + 3 Haste.",
             "active": [
               "Shakir morphs into a wolf and smashes a tile, knocking up the enemy there, and dealing 190% (ATK-based) damage to enemies within 2 tiles, during which he is Unaffected.",
               "Shakir consumes 60 Energy per second to maintain his wolf shape.",
               "Shakir generates a Lupine Aura in a range of 2-tile while in the wolf shape, dealing damage to all enemies within the frontal radius of the arc with normal attacks.",
-              "Allies within the range of Lupine Aura reduce 20% &plus; 2% taken damage and increase 10 &plus; 3 Haste."
+              "Allies within the range of Lupine Aura reduce 20% + 2% taken damage and increase 10 + 3 Haste."
             ],
             "upgrades": [
               {
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Reduce the allies' damage taken within Lupine Aura by 20% &plus; 2% and increase their Haste by 15 &plus; 3."
+                  "Reduce the allies' damage taken within Lupine Aura by 20% + 2% and increase their Haste by 15 + 3."
                 ]
               },
               {
                 "level": "3",
                 "unlock": null,
                 "text": [
-                  "Reduce the allies' damage taken within Lupine Aura by 25% &plus; 2% and increase their Haste by 15 &plus; 3."
+                  "Reduce the allies' damage taken within Lupine Aura by 25% + 2% and increase their Haste by 15 + 3."
                 ]
               },
               {
                 "level": "4",
                 "unlock": null,
                 "text": [
-                  "Reduce the allies' damage taken within Lupine Aura by 25% &plus; 2% and increase their Haste by 20 &plus; 3."
+                  "Reduce the allies' damage taken within Lupine Aura by 25% + 2% and increase their Haste by 20 + 3."
                 ]
               },
               {
                 "level": "5",
                 "unlock": null,
                 "text": [
-                  "Reduce the allies' damage taken within Lupine Aura by 25% &plus; 2% and increase their Haste by 25 &plus; 3."
+                  "Reduce the allies' damage taken within Lupine Aura by 25% + 2% and increase their Haste by 25 + 3."
                 ]
               }
             ]
@@ -46639,9 +46662,9 @@
         "Savage Cleave": {
           "category": "skill1",
           "description": {
-            "raw": "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) &plus; 10% damage with his first 2 attacks and 160% &plus; 20% damage with his 3rd attack. While in Wolf Form, this skill damages enemies within a frontal 1-tile arc.",
+            "raw": "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10% damage with his first 2 attacks and 160% + 20% damage with his 3rd attack. While in Wolf Form, this skill damages enemies within a frontal 1-tile arc.",
             "active": [
-              "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) &plus; 10% damage with his first 2 attacks and 160% &plus; 20% damage with his 3rd attack.",
+              "Shakir launches 3 consecutive strikes at an enemy, dealing 90% (ATK-based) + 10% damage with his first 2 attacks and 160% + 20% damage with his 3rd attack.",
               "While in Wolf Form, this skill damages enemies within a frontal 1-tile arc."
             ],
             "upgrades": [
@@ -46649,21 +46672,21 @@
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "The 3rd attack deals 180% &plus; 20% damage."
+                  "The 3rd attack deals 180% + 20% damage."
                 ]
               },
               {
                 "level": "3",
                 "unlock": null,
                 "text": [
-                  "The 3rd attack deals 200% &plus; 20% damage."
+                  "The 3rd attack deals 200% + 20% damage."
                 ]
               },
               {
                 "level": "4",
                 "unlock": null,
                 "text": [
-                  "The 3rd attack deals 220% &plus; 20% damage."
+                  "The 3rd attack deals 220% + 20% damage."
                 ]
               }
             ]
@@ -46697,18 +46720,18 @@
         "Wolf's Will": {
           "category": "skill2",
           "description": {
-            "raw": "Passive. Shakir gains 25 Ranged DEF. In Wolf Form, he is Unaffected and gains 30 &plus; 5 Life Drain. Each non-summoned ally within Lupine Aura him 5% &plus; 1% ATK.",
+            "raw": "Passive. Shakir gains 25 Ranged DEF. In Wolf Form, he is Unaffected and gains 30 + 5 Life Drain. Each non-summoned ally within Lupine Aura him 5% + 1% ATK.",
             "passive": [
               "Shakir gains 25 Ranged DEF.",
-              "In Wolf Form, he is Unaffected and gains 30 &plus; 5 Life Drain.",
-              "Each non-summoned ally within Lupine Aura him 5% &plus; 1% ATK."
+              "In Wolf Form, he is Unaffected and gains 30 + 5 Life Drain.",
+              "Each non-summoned ally within Lupine Aura him 5% + 1% ATK."
             ],
             "upgrades": [
               {
                 "level": "2",
                 "unlock": null,
                 "text": [
-                  "Increases passive Life Drain bonus to 40 &plus; 5."
+                  "Increases passive Life Drain bonus to 40 + 5."
                 ]
               },
               {
@@ -46722,7 +46745,7 @@
                 "level": "4",
                 "unlock": null,
                 "text": [
-                  "The bonus ATK from each non-summoned ally within Lupine Aura is increased to 7.5% &plus; 1%."
+                  "The bonus ATK from each non-summoned ally within Lupine Aura is increased to 7.5% + 1%."
                 ]
               }
             ]
@@ -50084,6 +50107,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
+        "atk",
         "haste",
         "max_hp"
       ],
