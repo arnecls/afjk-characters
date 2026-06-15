@@ -779,7 +779,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "DoT",
               "Max HP-based damage",
               "HP loss"
             ]
@@ -795,7 +794,7 @@
           },
           {
             "name": "Nara",
-            "score": 0.9863,
+            "score": 1.0,
             "matches": [
               "Physical",
               "Max HP-based damage",
@@ -3281,7 +3280,7 @@
           },
           {
             "name": "Nara",
-            "score": 0.9547,
+            "score": 0.9576,
             "matches": [
               "Physical",
               "True damage",
@@ -7040,15 +7039,16 @@
             ]
           },
           {
-            "name": "Shemira",
+            "name": "Mehira",
             "score": 1.0,
             "matches": [
+              "DoT",
               "Magic",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Bonnie",
+            "name": "Shemira",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -7851,7 +7851,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "DoT",
               "Max HP-based damage"
             ]
           },
@@ -8411,10 +8410,6 @@
           "name": "Silven"
         },
         {
-          "score": 19.5,
-          "name": "Shadewing"
-        },
-        {
           "score": 15.5,
           "name": "Himmel"
         },
@@ -8550,7 +8545,13 @@
             "name": "Mehira",
             "score": 1.0,
             "matches": [
-              "DoT",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Aliceth",
+            "score": 1.0,
+            "matches": [
               "HP loss"
             ]
           },
@@ -8558,15 +8559,6 @@
             "name": "Faramor",
             "score": 1.0,
             "matches": [
-              "DoT",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Dunlingr",
-            "score": 0.9923,
-            "matches": [
-              "DoT",
               "HP loss"
             ]
           }
@@ -11060,7 +11052,7 @@
           },
           {
             "name": "Mehira",
-            "score": 0.8451,
+            "score": 0.851,
             "matches": [
               "DoT",
               "Magic",
@@ -13790,21 +13782,24 @@
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical"
+              "Physical",
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Athalia",
+            "name": "Aliceth",
             "score": 1.0,
             "matches": [
-              "Physical"
+              "Physical",
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Kulu",
+            "name": "Thador",
             "score": 1.0,
             "matches": [
-              "Physical"
+              "Physical",
+              "Max HP-based damage"
             ]
           }
         ],
@@ -15656,7 +15651,7 @@
             ]
           },
           {
-            "name": "Aliceth",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -15665,7 +15660,7 @@
             ]
           },
           {
-            "name": "Alna",
+            "name": "Thador",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -15959,7 +15954,7 @@
           },
           {
             "name": "Perseus",
-            "score": 0.9763,
+            "score": 0.9779,
             "matches": [
               "Physical",
               "Max HP-based damage"
@@ -15967,7 +15962,7 @@
           },
           {
             "name": "Atalanta",
-            "score": 0.9737,
+            "score": 0.9753,
             "matches": [
               "Physical",
               "Max HP-based damage"
@@ -16785,16 +16780,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 11.25,
-          "name": "Shadewing"
-        },
-        {
           "score": 9.600000000000001,
           "name": "Perseus"
         },
         {
           "score": 9.0,
           "name": "Silven"
+        },
+        {
+          "score": 5.85,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -16858,7 +16853,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "DoT",
               "Max HP-based damage",
               "HP loss"
             ]
@@ -16868,7 +16862,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "DoT",
               "Max HP-based damage",
               "HP loss"
             ]
@@ -19190,6 +19183,10 @@
         {
           "score": 18.0,
           "name": "Rhys"
+        },
+        {
+          "score": 18.0,
+          "name": "Shadewing"
         },
         {
           "score": 18.0,
@@ -29723,13 +29720,13 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "HP loss",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "HP loss"
             ]
           },
           {
             "name": "Dunlingr",
-            "score": 0.9823,
+            "score": 0.9828,
             "matches": [
               "DoT",
               "Magic",
@@ -29739,11 +29736,11 @@
           },
           {
             "name": "Faramor",
-            "score": 0.841,
+            "score": 0.8454,
             "matches": [
               "DoT",
-              "HP loss",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "HP loss"
             ]
           }
         ],
@@ -30870,7 +30867,7 @@
         "damage": [
           {
             "name": "Valka",
-            "score": 0.9731,
+            "score": 0.9663,
             "matches": [
               "True damage",
               "Physical",
@@ -30879,7 +30876,7 @@
           },
           {
             "name": "Faramor",
-            "score": 0.9288,
+            "score": 0.9212,
             "matches": [
               "True damage",
               "Physical",
@@ -30889,7 +30886,7 @@
           },
           {
             "name": "Athalia",
-            "score": 0.8498,
+            "score": 0.8462,
             "matches": [
               "Physical",
               "True damage",
@@ -33153,18 +33150,17 @@
             ]
           },
           {
-            "name": "Contess",
-            "score": 0.8135,
+            "name": "Dunlingr",
+            "score": 0.794,
             "matches": [
               "DoT",
               "HP loss"
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.794,
+            "name": "Contess",
+            "score": 0.7827,
             "matches": [
-              "DoT",
               "HP loss"
             ]
           }
@@ -38474,16 +38470,6 @@
           "score": 23.25
         },
         {
-          "provider": "Contess",
-          "reasons": [
-            "ATK via ATK buff (single target, high)",
-            "Shield via Shield (single target, average)",
-            "Enables Debuff on target via ATK debuff (multiple targets)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 19.5
-        },
-        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -38541,9 +38527,18 @@
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
             "Enables Debuff on target via Execution debuff (single target)",
-            "Enables Continuous damage on enemies via DoT"
+            "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 12.75
+        },
+        {
+          "provider": "Contess",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "Shield via Shield (single target, average)",
+            "Enables Debuff on target via ATK debuff (multiple targets)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Velara",
@@ -38897,15 +38892,6 @@
           "score": 12.0
         },
         {
-          "provider": "Harak",
-          "reasons": [
-            "Life Drain via Lifedrain buff (single target, low)",
-            "Enables Debuff on target via Healing debuff (single target)",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 11.25
-        },
-        {
           "provider": "Phraesto",
           "reasons": [
             "Shield via Shield (single target, low)",
@@ -39177,6 +39163,14 @@
           "reasons": [
             "ATK via ATK buff (single target, low)",
             "Enables Debuff on target via Vitality debuff (single target)"
+          ],
+          "score": 3.75
+        },
+        {
+          "provider": "Harak",
+          "reasons": [
+            "Life Drain via Lifedrain buff (single target, low)",
+            "Enables Debuff on target via Healing debuff (single target)"
           ],
           "score": 3.75
         },
@@ -45166,7 +45160,7 @@
           },
           {
             "name": "Gwyneth",
-            "score": 0.9901,
+            "score": 0.9956,
             "matches": [
               "DoT",
               "Physical",
@@ -50365,11 +50359,11 @@
           },
           {
             "name": "Mehira",
-            "score": 0.9156,
+            "score": 0.9228,
             "matches": [
               "Magic",
-              "HP loss",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "HP loss"
             ]
           }
         ],

@@ -485,26 +485,6 @@
               "type": "debuff",
               "name": "Blind HP loss debuff",
               "label": "debuff_stat"
-            },
-            {
-              "tier": "ex+15",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 40.0
-                }
-              ],
-              "duration": 2,
-              "tick": 1
             }
           ],
           "tier": "mythic+",
@@ -530,7 +510,7 @@
             "label": "Invincibility",
             "tier": "base",
             "targeting": "Single target",
-            "description": "Aliceth remains invincible while airborne."
+            "description": "The affected hero instead becomes invincible for 1.5s and recovers 30% (HP-based)."
           },
           {
             "label": "Ally grant (Brightfeather)",
@@ -548,7 +528,7 @@
             "label": "Marked target (focus fire)",
             "tier": "base",
             "targeting": "Single target",
-            "description": "After Aliceth locks on the same enemy for 6s or casts her Ultimte, the Mark of Judgement is enhanced."
+            "description": "After the first enemy affected by her Mark of Judgement is defeated or becomes untargetable, Aliceth and allies with Brightfeather gain an extra 10% ATK."
           },
           {
             "label": "Instant defeat",
@@ -576,10 +556,6 @@
         [
           "physical",
           "Area, Single target"
-        ],
-        [
-          "dot",
-          "Single target"
         ],
         [
           "hp_loss",
@@ -652,8 +628,7 @@
             "debuffs": "average",
             "damage_types": {
               "Max HP-based damage": "high",
-              "Physical": "high",
-              "DoT": "low"
+              "Physical": "high"
             }
           }
         }
@@ -1728,7 +1703,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "average",
+              "Max HP-based damage": "high",
               "Magic": "average"
             }
           }
@@ -3319,6 +3294,24 @@
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.5
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 27.0
+                }
+              ]
             }
           ],
           "initial_energy": 300.0
@@ -3707,7 +3700,7 @@
         ],
         [
           "max_hp",
-          "Area"
+          "Area, Single target"
         ],
         [
           "true",
@@ -3748,7 +3741,8 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "high",
-              "HP loss": "high"
+              "HP loss": "high",
+              "Max HP-based damage": "average"
             }
           },
           "ultimate": {
@@ -3760,7 +3754,8 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "high",
-              "HP loss": "high"
+              "HP loss": "high",
+              "Max HP-based damage": "average"
             }
           },
           "non_ultimate": {
@@ -4118,13 +4113,13 @@
             "label": "Summoning",
             "tier": "base",
             "targeting": "Single target",
-            "description": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side."
+            "description": "When the magical bunny's duration ends, it leaps at the nearest enemy within 2 tiles and detonates, dealing 340% (ATK-based) + 40% damage to all adjacent enemies."
           },
           {
             "label": "Dream sleep (transformation)",
             "tier": "base",
             "targeting": "Self",
-            "description": "When a battle starts, Aurora immediately falls asleep, and Sonny appears at her side."
+            "description": "If Aurora's Energy is above 500 while she's asleep, she enters a deeper sleep, expanding the range of Plushification to a 3-tile radius."
           }
         ],
         "requires": []
@@ -4136,7 +4131,7 @@
         ],
         [
           "max_hp",
-          "Area"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -5159,7 +5154,7 @@
             "label": "Invincibility",
             "tier": "base",
             "targeting": "Self",
-            "description": "Berial is Invincible during the effect."
+            "description": "Berial hides within the shadow, and becomes Invincible while hidden."
           },
           {
             "label": "Cheat death",
@@ -6211,7 +6206,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "low",
+              "Max HP-based damage": "average",
               "DoT": "average",
               "Physical": "low"
             }
@@ -6612,7 +6607,7 @@
             "label": "Summoning",
             "tier": "base",
             "targeting": "Single target",
-            "description": "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona."
+            "description": "Bryon's normal attacks and skills deal damage times, granting Elona's next normal attack with thunderbolts, dealing additional damage equal to + 0,5% of enemy's current HP, along with a skill interruption effect."
           },
           {
             "label": "Counterattack",
@@ -8065,7 +8060,7 @@
             "label": "Ally blessing",
             "tier": "base",
             "targeting": "Self",
-            "description": "Cassadee selects the nearest ally when a battle starts (prioritizing the ally behind herself), granting them the blessing of Tidal Strength."
+            "description": "Level 2 (Unlocks with ): Cassadee enhances the blessing of Tidal Strength, making its effect permanent and granting extra 30 Penetration to the blessed ally."
           }
         ],
         "requires": [
@@ -9363,26 +9358,6 @@
                   "value": 22.0
                 }
               ]
-            },
-            {
-              "tier": "ex+15",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 30.0
-                }
-              ],
-              "duration": 2,
-              "tick": 1
             }
           ],
           "tier": "mythic+",
@@ -9429,10 +9404,6 @@
         "requires": []
       },
       "damage_entries": [
-        [
-          "dot",
-          "Multiple targets"
-        ],
         [
           "hp_loss",
           "Single target"
@@ -9484,13 +9455,11 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "none",
             "heal": "average",
             "buffs": "none",
             "debuffs": "average",
-            "damage_types": {
-              "DoT": "low"
-            }
+            "damage_types": {}
           }
         }
       }
@@ -9929,7 +9898,7 @@
             "label": "Battle time pause",
             "tier": "ex+15",
             "targeting": "Self",
-            "description": "The biting cold of Eternal Winter freezes time itself."
+            "description": "Cryonaia can stop the battle time for up to 30s with Eternal Winter."
           },
           {
             "label": "Instant defeat",
@@ -10536,7 +10505,7 @@
             "description": "Cyran mimics some of Merlin's impressive spells, casting them in the following sequence when a battle starts: Enlightening Spell: Grants himself 30 Haste for 8s, during which he is unaffected."
           },
           {
-            "label": "Enemy artifact block",
+            "label": "Artifact block",
             "tier": "ex+10",
             "targeting": "Single target",
             "description": "If Merlin is present on the enemy side, Merlin is silenced for 8s when a battle starts, preventing Merlin from casting any skills."
@@ -10618,7 +10587,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Max HP-based damage": "low",
+              "Max HP-based damage": "average",
               "Magic": "average",
               "True damage": "low"
             }
@@ -12568,7 +12537,7 @@
             "label": "Summoning",
             "tier": "base",
             "targeting": "Self",
-            "description": "Dunlingr summons the Bell of Order, declaring an order that all non-boss units on both sides must obey unconditionally for 6 + 0.25s."
+            "description": "If the Bell of Order is set to Spellbind, Dunlingr reduces the enemies' ATK SPD by an extra 60 for 4s If the Bell of Order is set to Curelock, Dunlingr deals extra damage equal to 3% of the enemies' lost HP, up to 30% of his own ATK."
           }
         ],
         "requires": []
@@ -12651,7 +12620,8 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "average",
-              "HP loss": "low"
+              "HP loss": "low",
+              "Max HP-based damage": "low"
             }
           }
         }
@@ -13607,7 +13577,7 @@
             "label": "Ally positioning link",
             "tier": "base",
             "targeting": "Single target",
-            "description": "During the dance, allies linked through Stellar Bond become unaffected."
+            "description": "When a battle starts, if the allies (excluding Elijah and Lailah) linked through Stellar Bond all belong to the same faction, a special resonance effect is triggered."
           }
         ],
         "requires": [
@@ -13625,7 +13595,7 @@
         ],
         [
           "max_hp",
-          "Area"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -14036,7 +14006,7 @@
             "label": "Invincibility",
             "tier": "base",
             "targeting": "Self",
-            "description": "While concealed, Evie is invincible and accumulates 120 Detection points every second."
+            "description": "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible."
           }
         ],
         "requires": [
@@ -15331,6 +15301,24 @@
                   "value": 120.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ]
             }
           ],
           "cooldown": 8.0,
@@ -15529,7 +15517,7 @@
             "label": "Summoning",
             "tier": "base",
             "targeting": "Single target",
-            "description": "Florabelle summons Spiny when a battle starts."
+            "description": "When all three Bulbsprites are on the battlefield, summoning Smashy will instead trigger a coordinated attack from all Bulbsprites, dealing 400% (ATK-based) damage to all enemies within 3 tiles and knocking them into the air."
           }
         ],
         "requires": []
@@ -15538,6 +15526,10 @@
         [
           "physical",
           "Area, Single target"
+        ],
+        [
+          "max_hp",
+          "Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -15591,7 +15583,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "low"
+              "Physical": "low",
+              "Max HP-based damage": "low"
             }
           }
         }
@@ -16645,10 +16638,10 @@
       "synergy_profile": {
         "provides": [
           {
-            "label": "Artifact amplification",
+            "label": "Artifact buff",
             "tier": "ex+10",
             "targeting": "Single target",
-            "description": "When Galahad's magic circle is fully formed for the first time, Magister Merlin's skills grant stat buffs that are 20% stronger and last 100% longer."
+            "description": "Every time Magister Merlin casts a skill, a shadow Merlin appears nearby and casts the same skill again, causing 60% as much HP loss as Merlin's original skill does."
           }
         ],
         "requires": [
@@ -18548,6 +18541,24 @@
                   "value": 310.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ]
             }
           ],
           "skill_range": 8
@@ -18762,7 +18773,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "low"
+        "max_hp": "average"
       },
       "benefit_stats": [
         "atk_spd"
@@ -18789,7 +18800,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "average",
+              "Max HP-based damage": "average"
             }
           },
           "ultimate": {
@@ -18800,7 +18812,8 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "average",
+              "Max HP-based damage": "average"
             }
           },
           "non_ultimate": {
@@ -18812,8 +18825,8 @@
             "debuffs": "average",
             "damage_types": {
               "Physical": "high",
-              "DoT": "high",
-              "Max HP-based damage": "low"
+              "Max HP-based damage": "average",
+              "DoT": "high"
             }
           }
         }
@@ -19230,26 +19243,6 @@
               "label": "debuff_healing"
             },
             {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "damage_type": "dot",
-              "name": "DoT",
-              "label": "dot",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 100.0
-                }
-              ],
-              "duration": 6,
-              "tick": 1
-            },
-            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -19562,10 +19555,6 @@
           "Single target"
         ],
         [
-          "dot",
-          "Single target"
-        ],
-        [
           "hp_loss",
           "Single target"
         ],
@@ -19618,8 +19607,7 @@
             "damage_types": {
               "Max HP-based damage": "low",
               "Physical": "low",
-              "HP loss": "low",
-              "DoT": "low"
+              "HP loss": "low"
             }
           },
           "non_ultimate": {
@@ -19630,6 +19618,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
+              "Max HP-based damage": "low",
               "Physical": "low"
             }
           }
@@ -21551,7 +21540,7 @@
         ],
         [
           "max_hp",
-          "Arc, Area"
+          "Arc, Area, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -23899,7 +23888,7 @@
             "label": "Marked target (focus fire)",
             "tier": "base",
             "targeting": "Single target",
-            "description": "Kafra prioritizes attacking the enemy who carries Forest Mark."
+            "description": "When a marked enemy receives healing from other enemies, Kafra jumps to the healer and attacks them, dealing 250% (ATK-based) damage and reducing their Haste by 40 for 5s."
           }
         ],
         "requires": []
@@ -24070,7 +24059,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 140.0
+                  "value": 40.0
                 }
               ]
             }
@@ -24508,7 +24497,7 @@
             "label": "Stacking buff",
             "tier": "base",
             "targeting": "Single target",
-            "description": "Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks."
+            "description": "Every time Kazim marks an enemy as prey, the number of normal attacks required to trigger this skill is reduced by 1, up to 3 stacks."
           }
         ],
         "requires": [
@@ -26024,6 +26013,7 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "average",
+              "Max HP-based damage": "low",
               "Physical": "low"
             }
           }
@@ -26421,7 +26411,7 @@
             "label": "Stacking buff",
             "tier": "base",
             "targeting": "Single target",
-            "description": "Each stack reduces the target's Phys DEF by 10%, up to 4 stacks on a target."
+            "description": "Kruger gains a 40% ATK boost until the battle ends when a Vulnerable enemy is defeated by Vital Strike, stacking up to 2 stacks."
           }
         ],
         "requires": [
@@ -32478,7 +32468,7 @@
             "label": "Revive ally",
             "tier": "mythic+",
             "targeting": "Single target",
-            "description": "After chanting for 3s, Marcille revives an allied hero and recovers 400% (ATK-based) HP for them."
+            "description": "However, if Laios is on the team, this skill can revive him one additional time (no position requirement and does not consume the skill's use limit), but this can only trigger once per battle."
           },
           {
             "label": "Stacking buff",
@@ -33450,7 +33440,7 @@
             "label": "Summoning",
             "tier": "mythic+",
             "targeting": "Single target",
-            "description": "When a battle starts, Mehira summons 3 voidlings around her."
+            "description": "Each time the stored amount reaches 50% of her inital max HP, she summons one extra voidling, up to 3 per battle."
           },
           {
             "label": "HP threshold strike",
@@ -33476,7 +33466,7 @@
         ],
         [
           "max_hp",
-          "Area"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -34421,7 +34411,7 @@
             "debuffs": "none",
             "damage_types": {
               "Max HP-based damage": "average",
-              "DoT": "average",
+              "DoT": "low",
               "Magic": "high"
             }
           }
@@ -34491,7 +34481,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 35.0
+                  "value": 60.0
                 }
               ]
             },
@@ -35932,7 +35922,7 @@
       ],
       "damage_magnitudes": {
         "true": "high",
-        "max_hp": "average"
+        "max_hp": "low"
       },
       "benefit_stats": [
         "crit"
@@ -38903,7 +38893,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "low",
+              "Max HP-based damage": "average",
               "Magic": "average"
             }
           }
@@ -39332,7 +39322,7 @@
         ],
         [
           "max_hp",
-          "Area"
+          "Area, Single target"
         ]
       ],
       "damage_magnitudes": {
@@ -40380,7 +40370,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "low",
+        "max_hp": "high",
         "true": "low"
       },
       "benefit_stats": [
@@ -40408,6 +40398,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
+              "Max HP-based damage": "high",
               "Magic": "average"
             }
           },
@@ -40419,6 +40410,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
+              "Max HP-based damage": "high",
               "Magic": "average"
             }
           },
@@ -41602,7 +41594,7 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -43329,7 +43321,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 25.0
+                  "value": 15.0
                 }
               ]
             },
@@ -47441,7 +47433,7 @@
             "label": "Marked target (focus fire)",
             "tier": "base",
             "targeting": "Single target",
-            "description": "Defeating the marked enemy prolongs the Whirl Assault duration by 6 + 2s."
+            "description": "When a marked enemy is defeated, Silvina frightens enemies within 2 tiles of the defeated enemy for 4s while Blade Vortex is in effect."
           }
         ],
         "requires": []
@@ -49564,7 +49556,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 20.0
                 }
               ]
             },
@@ -50487,7 +50479,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "high",
+        "max_hp": "average",
         "true": "average"
       },
       "benefit_stats": [
@@ -50941,7 +50933,7 @@
             "label": "Cheat death",
             "tier": "base",
             "targeting": "Self",
-            "description": "Talene transforms into a ball of flame whenever she is defeated."
+            "description": "During this state, she cannot be attacked as she is not considered alive, and she can restore 8% of her max HP per second as well as benefit from allies' skills When her HP reaches above 65%, she will resurrect and bring about an explosion, dealing 150% (ATK-based) + 10% damage to enemies within 2 tiles and knocking them 1 tile back."
           },
           {
             "label": "Transformation",
@@ -51462,7 +51454,7 @@
             "label": "Sleep (area)",
             "tier": "base",
             "targeting": "Single target",
-            "description": "Tasi summons a dream that lasts for 3.5 + 0.5s, hypnotizing all enemies."
+            "description": "Its damage counts as if Tasi had consumed 10% of her current HP, and she will prioritize targeting the farthest hypnotized enemy."
           },
           {
             "label": "Transformation",
@@ -54508,7 +54500,7 @@
             "label": "Marked target (focus fire)",
             "tier": "base",
             "targeting": "Self",
-            "description": "She prioritizes shooting the marked enemy, dealing 450% (ATK-based) + 40% damage and stunning them for 4s."
+            "description": "When the noticed enemy is defeated, Vala sends a new notice to mark the farthest enemy if she is in Skyblaster Mode or to the nearest if she is in Sword Mode."
           }
         ],
         "requires": [
@@ -54539,7 +54531,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "average",
+        "max_hp": "low",
         "true": "average",
         "hp_loss": "average"
       },
@@ -55081,8 +55073,8 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average",
-              "Max HP-based damage": "average"
+              "Max HP-based damage": "average",
+              "Physical": "average"
             }
           }
         }
@@ -56757,6 +56749,24 @@
               "area": "single",
               "target_count": 1,
               "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 6.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
               "label": "damage_normal",
@@ -57111,6 +57121,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
+              "Max HP-based damage": "low",
               "Physical": "low"
             }
           }

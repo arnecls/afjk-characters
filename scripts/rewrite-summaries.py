@@ -372,9 +372,32 @@ def _dot_every_match_is_cooldown(text: str, start: int) -> bool:
     return bool(re.search(r"once every|trigger(?:ed)? once|can only affect", before))
 
 
+def _dot_is_healing_lock_hp_drain(text: str) -> bool:
+    """ATK-based HP drain while healing is blocked — not a DoT ailment."""
+    t = text.lower()
+    return bool(
+        re.search(
+            r"prevent.{0,80}(?:recover|restor).{0,80}hp.{0,150}"
+            r"(?:causing|and causes?).{0,40}(?:them )?to lose "
+            r"\d+(?:\.\d+)?%?\s*\(atk-based\)\s*hp per second",
+            t,
+        )
+        or re.search(
+            r"(?:while casting|during this skill).{0,200}"
+            r"(?:causing|and causes?).{0,40}(?:them )?to lose "
+            r"\d+(?:\.\d+)?%?\s*\(atk-based\)\s*hp per second",
+            t,
+        )
+    )
+
+
 def _text_has_dot_damage(text: str) -> bool:
     """True when skill text describes damage-over-time, not proc cooldowns."""
     t = text.lower()
+    if _dot_is_healing_lock_hp_drain(text):
+        return False
+    if re.search(r"damage per volley", t):
+        return False
     if re.search(
         r"(?:deal(?:s|ing)?|dealing|takes?) damage.{0,80}per second|"
         r"damage equal to .{0,80}per second|"
@@ -382,8 +405,6 @@ def _text_has_dot_damage(text: str) -> bool:
         r"damage every \d+\.?\d*s\b|"
         r"damage.{0,80}each time|"
         r"repeatedly strike.{0,80}deal(?:s|ing)? .{0,40}damage|"
-        r"(?:los(?:e|es|ing)|losing) \d+(?:\.\d+)?(?:\s*%\s*)?"
-        r"(?:\([^)]*\)\s*)?hp per second|"
         r"(?:los(?:e|es|ing)|losing) \d+(?:\.\d+)?(?:\s*%\s*)?"
         r"(?:\([^)]*\)\s*)?"
         r"(?:\+\s*\d+(?:\.\d+)?(?:\s*%\s*)?)?\s*hp per 0\.\d+s|"
@@ -471,19 +492,33 @@ def _text_has_ongoing_max_hp_loss(text: str) -> bool:
     )
 
 
-def _text_has_atk_plus_flat_damage(text: str) -> bool:
-    """True for AFKJ convention: X% (ATK-based) + Y% damage (Y = max HP)."""
-    for m in re.finditer(
+def _atk_flat_max_hp_amounts(text: str) -> list[float]:
+    """Max-HP % from ATK+X% damage; prefer tier-upgrade increases-to values."""
+    text = _normalize_effect_text(text)
+    t = text.lower()
+    upgrade_pat = (
+        r"increases?(?: the)?(?: .{0,50})?damage(?: dealt)? to "
+        r"\d+(?:\.\d+)?%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%"
+    )
+    upgrade_vals = [float(m.group(1)) for m in re.finditer(upgrade_pat, t)]
+    if upgrade_vals:
+        return upgrade_vals
+    deal_pat = (
         r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\)\s*\+\s*"
-        r"(\d+(?:\.\d+)?)\s*%\s+damage\b",
-        text,
-        re.I,
-    ):
-        after = text[m.end() : m.end() + 30].lower()
+        r"(\d+(?:\.\d+)?)\s*%\s+damage\b"
+    )
+    found: list[float] = []
+    for m in re.finditer(deal_pat, t):
+        after = t[m.end() : m.end() + 30]
         if re.match(r"\s+each time", after):
             continue
-        return True
-    return False
+        found.append(float(m.group(1)))
+    return found
+
+
+def _text_has_atk_plus_flat_damage(text: str) -> bool:
+    """True for AFKJ convention: X% (ATK-based) + Y% damage (Y = max HP)."""
+    return bool(_atk_flat_max_hp_amounts(text))
 
 
 def _text_has_primary_true_damage(text: str) -> bool:
@@ -2805,17 +2840,13 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     # Position
     (r"knock(?:ing|s)? (?:them )?back \d+ tiles", "Reposition enemies"),
     (r"swap(?:s|ping)? (?:places|position)", "Position swap"),
-    # Artifact interactions
-    # Gala EX+10: amplifies artifact stat buffs (20% stronger, 100% longer)
+    # Artifact interactions (block / mimic / buff)
+    # Gala EX+10: stronger artifact buffs; shadow Merlin echoes artifact skills
     (
         r"magister merlin'?s? skills? grant stat buffs|"
-        r"merlin'?s? skills? grant.{0,30}stat buffs?.{0,30}stronger",
-        "Artifact amplification",
-    ),
-    # Gala EX+10: artifact shadow echoes each artifact skill
-    (
-        r"shadow of merlin appears?.{0,60}casts? the same skill",
-        "Artifact echo",
+        r"merlin'?s? skills? grant.{0,30}stat buffs?.{0,30}stronger|"
+        r"(?:a )?shadow (?:of )?merlin appears?.{0,60}casts? the same skill",
+        "Artifact buff",
     ),
     # Cyran Ex. Skill base: mimics artifact spell sequence at battle start
     (
@@ -2825,7 +2856,7 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     # Cyran EX+10: silences enemy artifact at battle start
     (
         r"present on the enemy side.{0,80}silenced.{0,60}when a battle starts",
-        "Enemy artifact block",
+        "Artifact block",
     ),
     # Enhanced / empowered combat form (Baelran, Nerion, …)
     (
@@ -3200,7 +3231,7 @@ def detect_special_targeting(text: str, kind: str, label: str) -> str:
         if re.search(r"\benem(?:y|ies)\b", t):
             return "Enemies"
         return "—"
-    if label == "Enemy artifact block":
+    if label == "Artifact block":
         return "Single target"
     if label in ("Transformation", "Dream sleep (transformation)", "Cheat death"):
         return "Self"
@@ -3224,6 +3255,9 @@ def add_special_effect(
         elif order < cur_order:
             cur.tier = tier
         cur.targeting = _prefer_targeting(targeting, cur.targeting)
+        if kind == "provides" and text.strip() and text.strip() not in cur.qualitative:
+            if len(text) > len(cur.qualitative):
+                cur.qualitative = text
         return
     effects.append(
         SpecialEffect(
@@ -3566,8 +3600,6 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"plus (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+target's\s+max\s+hp",
             r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of the target's max hp",
             r"damage plus (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+of",
-            r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\)\s*\+\s*"
-            r"(\d+(?:\.\d+)?)\s*%\s+damage\b",
             r"plus an extra (\d+(?:\.\d+)?)(?:\s*%\s*)? of .{0,40}max hp",
             r"(?:deal(?:s|ing|t)?|taking) (?:extra )?damage equal to "
             r"(\d+(?:\.\d+)?)(?:\s*%\s*)? of .{0,50}max hp",
@@ -3686,6 +3718,8 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
         return None
 
     amounts = _all_amounts(text, patterns)
+    if dmg_type == "Max HP-based damage":
+        amounts.extend(_atk_flat_max_hp_amounts(text))
     if amounts:
         return max(amounts)
 
@@ -3975,9 +4009,9 @@ def _is_damage_scalar_upgrade_chunk(text: str) -> bool:
         return False
     return bool(
         re.search(
-            r"increases? (?:the )?(?:skill |impact |extra |counterattack |"
-            r"slash |damage of the charged arrow |damage dealt by )?"
-            r"(?:damage|damage dealt)(?: (?:dealt|by|of|to))?.{0,60}to \d+",
+        r"increases? (?:the )?(?:skill |impact |extra |counterattack |"
+        r"slash |powerful arrow |damage of the charged arrow |damage dealt by )?"
+        r"(?:damage|damage dealt)(?: (?:dealt|by|of|to))?.{0,60}to \d+",
             t,
         )
         or re.search(r"increase (?:the )?slam damage to \d+", t)
@@ -4684,10 +4718,14 @@ def _apply_scalar_upgrades(
     if not t:
         return
 
+    is_scalar_upgrade = _is_damage_scalar_upgrade_chunk(text)
+
     def bump(category: str, label: str, val: float) -> None:
         for e in effects:
             if e.category == category and e.label == label:
-                if e.numeric is None or val > e.numeric:
+                if is_scalar_upgrade and label == "Max HP-based damage":
+                    e.numeric = val
+                elif e.numeric is None or val > e.numeric:
                     e.numeric = val
 
     def bump_cc(labels: tuple[str, ...], val: float) -> None:

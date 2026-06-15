@@ -908,6 +908,42 @@ class CommonFailurePatternTests(unittest.TestCase):
         self.assertEqual(move.numeric, 80.0)
         self.assertEqual(haste.area_count, 2)
 
+    def test_kazim_ult_max_hp_uses_upgrade_tier(self):
+        text = (
+            "Kazim fires a powerful volley of arrows at the arc-shaped area with "
+            "the most enemies, dealing 320% (ATK-based) + 140% damage and "
+            "knocking all prey within range into the air for 0.5s. "
+            "Increases the powerful arrow damage to 400% (ATK-based) + 40%."
+        )
+        amount = rs._extract_damage_amount(text, "Max HP-based damage")
+        self.assertEqual(amount, 40.0)
+        types = rs.detect_damage_types(text, "Physical")
+        self.assertIn("Max HP-based damage", types)
+        self.assertEqual(
+            rs._extract_damage_amount(text, "Max HP-based damage"), 40.0
+        )
+
+    def test_harak_vicious_bite_not_dot(self):
+        text = (
+            "While casting this skill, Harak remains Unaffected and prevents the "
+            "enemy from recovering HP for 6s, causing them to lose 40% "
+            "(ATK-based) HP per second."
+        )
+        self.assertFalse(rs._text_has_dot_damage(text))
+        types = rs.detect_damage_types(text, "Physical")
+        self.assertNotIn("DoT", types)
+
+    def test_galahad_shadow_merlin_artifact_buff(self):
+        text = (
+            "Every time Magister Merlin casts a skill, a shadow Merlin appears "
+            "nearby and casts the same skill again, causing 60% as much HP loss "
+            "as Merlin's original skill does."
+        )
+        effects: list[rs.SpecialEffect] = []
+        rs.detect_special_effects(effects, "ex+10", text)
+        labels = [e.label for e in effects if e.kind == "provides"]
+        self.assertIn("Artifact buff", labels)
+
 
 if __name__ == "__main__":
     unittest.main()
