@@ -288,8 +288,15 @@ def normalize_skill_description(skill: dict[str, Any]) -> dict[str, Any]:
             raw = skill_description_raw(
                 {"passive": passive_sents, "active": active_sents}
             )
-        if not passive_sents and not active_sents and raw:
-            split_passive, split_active = split_passive_active(raw)
+        split_passive, split_active = split_passive_active(raw)
+        has_phase_markers = bool(
+            re.search(r"\bPassive\.\s", raw)
+            or re.search(r"\bActive\.?\s", raw)
+        )
+        if has_phase_markers:
+            passive_sents = normalize_phase_text(split_passive)
+            active_sents = normalize_phase_text(split_active)
+        elif not passive_sents and not active_sents:
             passive_sents = normalize_phase_text(split_passive)
             active_sents = normalize_phase_text(split_active)
         structured = build_structured_description(

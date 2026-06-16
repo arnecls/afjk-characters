@@ -4943,11 +4943,11 @@
             ]
           },
           {
-            "name": "Cyran",
+            "name": "Tasi",
             "score": 0.4,
             "matches": [
               "aoe-damage",
-              "battle-start-burst"
+              "transformation"
             ]
           }
         ],
@@ -9023,28 +9023,26 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Eironn",
-            "score": 0.6,
+            "name": "Mehira",
+            "score": 0.4,
             "matches": [
               "aoe-damage",
-              "battle-start-burst",
               "enemy-grouping"
             ]
           },
           {
-            "name": "Atalanta",
-            "score": 0.48,
+            "name": "Eironn",
+            "score": 0.4,
             "matches": [
               "aoe-damage",
-              "battle-start-burst"
+              "enemy-grouping"
             ]
           },
           {
-            "name": "Walker",
-            "score": 0.4114,
+            "name": "Tilaya",
+            "score": 0.3333,
             "matches": [
-              "aoe-damage",
-              "battle-start-burst"
+              "aoe-damage"
             ]
           }
         ],
@@ -11547,15 +11545,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Cyran",
-            "score": 0.6,
-            "matches": [
-              "aoe-damage",
-              "battle-start-burst",
-              "enemy-grouping"
-            ]
-          },
-          {
             "name": "Mehira",
             "score": 0.5143,
             "matches": [
@@ -11570,6 +11559,14 @@
             "matches": [
               "aoe-damage",
               "battle-start-burst",
+              "mass-cc"
+            ]
+          },
+          {
+            "name": "Tasi",
+            "score": 0.4114,
+            "matches": [
+              "aoe-damage",
               "mass-cc"
             ]
           }
@@ -30652,7 +30649,7 @@
           },
           {
             "name": "Cyran",
-            "score": 0.3429,
+            "score": 0.4,
             "matches": [
               "aoe-damage",
               "enemy-grouping"
@@ -50866,11 +50863,11 @@
             ]
           },
           {
-            "name": "Cyran",
-            "score": 0.4114,
+            "name": "Sonja",
+            "score": 0.4,
             "matches": [
               "aoe-damage",
-              "battle-start-burst"
+              "life-drain"
             ]
           }
         ],

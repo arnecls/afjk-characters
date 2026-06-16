@@ -129,7 +129,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `self-repositioner` | **Regularly** jumps/dashes/teleports self | One incidental leap |
 | `hp-scaling` | Scales on **HP values** | Shield-value scaling |
 | `invincibility` | Meaningful immunity windows | Brief immunity already covered by `transformation`; do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
-| `battle-start-burst` | Deals damage in the **first ~2–3s** of battle | Buff/shield/debuff/energy/summon setup at battle start without immediate damage; delayed openers (Frieren 15s); terrain bombs without a damage clause (Kulu debris) |
+| `battle-start-burst` | Deals damage in the **first ~2–3s** of battle | Buff/shield/debuff/energy/summon setup at battle start without immediate damage; delayed openers (Frieren 15s); terrain bombs without a damage clause (Kulu debris); sequential battle-start cycles where damage is not the first effect (Cyran Mythic+) |
 
 ## Reporting
 

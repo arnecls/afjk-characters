@@ -1319,7 +1319,7 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 - Nerion (57% `battle-start-burst` `enemy-debuffer`)
 - Cassadee (48% `aoe-damage` `enemy-debuffer`)
-- Cyran (40% `aoe-damage` `battle-start-burst`)
+- Tasi (40% `aoe-damage` `transformation`)
 
 **Damage**
 
@@ -2420,7 +2420,7 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 - **Signature skill**: Gravitic Requiem (ultimate)
 - **Movement**: mostly stationary (avg attack range 6.0 tiles)
-- **Behavior tags**: `aoe-damage` `battle-start-burst` `enemy-grouping` `execute`
+- **Behavior tags**: `aoe-damage` `enemy-grouping` `execute`
 - **Damage types**: Magic `high`, DoT `high`, True damage `average`
 
 #### Play overview
@@ -2483,9 +2483,9 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 
 **Similar Skills**
 
-- Eironn (60% `aoe-damage` `battle-start-burst` `enemy-grouping`)
-- Atalanta (48% `aoe-damage` `battle-start-burst`)
-- Walker (41% `aoe-damage` `battle-start-burst`)
+- Mehira (40% `aoe-damage` `enemy-grouping`)
+- Eironn (40% `aoe-damage` `enemy-grouping`)
+- Tilaya (33% `aoe-damage`)
 
 **Damage**
 
@@ -3128,9 +3128,9 @@ Eironn provides Dodge chance buff to single targets `high`.
 
 **Similar Skills**
 
-- Cyran (60% `aoe-damage` `battle-start-burst` `enemy-grouping`)
 - Mehira (51% `aoe-damage` `enemy-grouping` `mass-cc`)
 - Walker (51% `aoe-damage` `battle-start-burst` `mass-cc`)
+- Tasi (41% `aoe-damage` `mass-cc`)
 
 **Damage**
 
@@ -7908,7 +7908,7 @@ Mehira provides Haste buff to single targets `average`.
 
 - Eironn (51% `aoe-damage` `enemy-grouping` `mass-cc`)
 - Igor (51% `aoe-damage` `life-drain` `untargetable`)
-- Cyran (34% `aoe-damage` `enemy-grouping`)
+- Cyran (40% `aoe-damage` `enemy-grouping`)
 
 **Damage**
 
@@ -13646,7 +13646,7 @@ Walker provides Crit buff to single targets `low`.
 
 - Mehira (51% `aoe-damage` `life-drain` `mass-cc`)
 - Eironn (51% `aoe-damage` `battle-start-burst` `mass-cc`)
-- Cyran (41% `aoe-damage` `battle-start-burst`)
+- Sonja (40% `aoe-damage` `life-drain`)
 
 **Damage**
 

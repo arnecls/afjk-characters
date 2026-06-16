@@ -343,8 +343,10 @@ skill effect.
   start" combined with damage dealt (e.g. Gerda Skill 1, Nerion Mythic+,
   Walker grenades). Also qualifies when a skill auto-casts at battle start or
   with a short initial cooldown so damage reliably lands in the opening seconds
-  (e.g. Atalanta's repeated opener, Marcille's early channeled flash). Not
-  buffs, shields, debuffs, energy, or summons alone without immediate damage.
+  (e.g. Marcille's early channeled flash, Atalanta Mythic+ double Sweet
+  Encounter at battle start). Not buffs, shields, debuffs, energy, or summons
+  alone without immediate damage; not sequential battle-start cycles where
+  non-damage effects run before the first hit (Cyran Mythic+).
 - battle-start-ult: Casts ultimate or reaches full energy unusually early in the fight.
 - battlefield-modification: Adds physical obstacles or transforms the map layout; buff or debuff zones alone do not count.
 - cc-immunity: Grants self or allies immunity to crowd control as a defining mechanic.

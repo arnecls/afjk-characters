@@ -62,15 +62,18 @@ reduction without ticks.
 ## `battle-start-burst` vs setup openers
 
 **Counts:** explicit battle-start damage (Gerda Skill 1, Bonnie Aging, Silvina
-First Strike, Cyran Mythic+ sequence, Walker grenades, Nerion Mythic+
-drowning); auto-cast or repeated openers that deal damage in the first few
-seconds (Atalanta Mythic+, Marcille early channeled flash); opening damage tied
-to battle-start soaring (Kazim Supreme+ knock-up → dive).
+First Strike, Walker grenades, Nerion Mythic+ drowning); auto-cast openers that
+deal damage in the first few seconds (Marcille early channeled flash); opening
+damage tied to battle-start soaring (Kazim Supreme+ knock-up → dive); extra
+instant casts of a damage skill at battle start (Atalanta Mythic+ double Sweet
+Encounter).
 
 **Does not count:** shields, buffs, energy, marks, or summons at battle start
 without immediate damage (Callan, Florabelle Spiny, Bryon falcon setup); delayed
 damage (Frieren 15s amplification); debuff-only openers without a damage
-clause; battlefield debris without direct bomb damage (Kulu border tiles).
+clause; battlefield debris without direct bomb damage (Kulu border tiles);
+sequential battle-start spell cycles where self-buff or setup runs before the
+first damage (Cyran Mythic+: Enlightening → Confining → Starshard).
 
 Do not confuse with `battle-start-ult` (early ultimate access, e.g. Eironn can
 have both when the ult also deals opening damage).
