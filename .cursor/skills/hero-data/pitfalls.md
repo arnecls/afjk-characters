@@ -119,6 +119,67 @@ Healing over time.
 - Laios Intimidate — ally DEF buff spurious; enemy Phys/Magic DEF debuffs
   missing
 - Cyran Mystic Recollection — enemy ATK SPD debuff, not ally ATK buff
+- Kafra Sylvan Banishment — **Haste debuff** on enemy; not Haste buff; not
+  spurious ATK debuff from `(ATK-based) damage and reducing … haste`
+
+### Damage dealt vs damage taken
+
+**Direction matters.** Enemy output reduction is **Damage dealt debuff** on
+`target: enemy` (`reduces the enemy's damage dealt`, Berial Hero Focus,
+Temesia Iron Heel). Caster mitigation is **Damage taken reduction** buff
+(`reduces damage taken`, `takes N% less damage`).
+
+**Display pitfall (June 2026):** detection stored `Damage dealt debuff`
+correctly while the site showed a buff-styled chip because
+`TAG_DEFINITIONS` lacked `Damage dealt debuff` / `Damage dealt`. Fix
+`site/js/app.js` and ensure `DEBUFF_TYPES` + CSV map
+`Damage dealt` → `Damage dealt debuff` in `overview-to-csv.py`.
+
+### DEF buff phrasing gaps
+
+Rules often match `increases … def by` but miss combined gains:
+
+- `gains N% Phys and Magic DEF` → **DEF buff Self** (Seth Hunter Instinct)
+- `increasing her Phys DEF by 50% and Magic DEF by 50%` → **DEF buff Self**,
+  not Phys/Magic DEF debuff (Granny Dahnie Glimmerbloom Blessings)
+
+Guard: `reduces … Phys DEF` must not match DEF buff rules (Seth Enhance
+Force → **Phys DEF debuff** on enemy).
+
+**Scalar bleed:** HoT or heal upgrade lines in the same skill must not bump
+DEF buff `value` (Granny: DEF stays 50%, HoT tier separate).
+
+### Impersonal self-buff upgrades
+
+Tier-upgrade chunks that start with the verb, not the hero name:
+
+- `Gains 25 Crit when he first triggers Bloodlust` → **Crit buff Self** (Seth)
+- Default targeting may yield `ally` / Single target if only `he gains N` is
+  matched, not `Gains N … when he`
+
+Audit upgrade `text[]` lines separately when base active text has no crit/def
+clause.
+
+### True damage conversion (no hit in chunk)
+
+`turning the charge damage into true damage` (Temesia Invincible Fury) should
+emit **True damage** on the Mythic+ skill card even when the chunk does not
+`deal` damage directly. `detect_damage_types` alone is insufficient —
+`_chunk_deals_enemy_damage` (or similar) must admit conversion phrasing.
+
+Do not confuse with max-HP-scaled true hits (those collapse to Max HP-based).
+
+### Detection correct, display wrong
+
+When JSON `skill_card_tags` already list `Haste debuff`, `Phys DEF debuff`,
+or `Damage dealt debuff` but the user reports a buff chip:
+
+1. Read `site/data/heroes.json` skillCards for the hero.
+2. Grep `TAG_DEFINITIONS` in `site/js/app.js` for the full debuff label.
+3. Fix chip resolution before adding new detection rules.
+
+`resolveLeadingChip` with `polarity === "debuff"` only styles correctly when
+the debuff key exists in `TAG_DEFINITIONS`.
 
 ### Self-debuff false positives (always verify)
 
@@ -379,6 +440,12 @@ Use these to calibrate both passes:
 | Cyran Cursed Grasp | No immunity rows | Targeting priority only |
 | Cyran Mystic Recollection (EX+10) | Artifact block; no Silence CC | Merlin ≠ enemy hero Silence |
 | Shemira Ghastly Tribute | Max HP-based damage only | Not True + Max HP double label |
+| Seth Hunter Instinct | DEF buff Self; Crit buff Self on upgrade | Not ally Crit; not missing combined Phys+Magic DEF |
+| Seth Enhance Force | Phys DEF debuff enemy | Not DEF buff from reduction text |
+| Granny Dahnie Glimmerbloom Blessings | DEF buff Self | Not self DEF debuff; DEF % not from HoT scalar |
+| Kafra Sylvan Banishment | Haste debuff | Not Haste buff; not ATK debuff |
+| Temesia Iron Heel | Damage dealt debuff | Debuff chip on site; not Damage taken buff |
+| Temesia Invincible Fury | True damage + Unaffected Self | Conversion line on Mythic+ card |
 | Valka Phantom Slasher | Max HP-based damage on slashes | Heal in same clause must not block dedup |
 | Faramor Sanctified Circle | True + DoT; no Physical | area_count 1; 0.5s tick |
 | Lorsan Whispering Tempest | DoT + Haste debuff | -33 flat; 5s / 0.5s tick |
@@ -418,13 +485,15 @@ Note ambiguity instead of forcing a single expected value:
 Prior passes added tests in:
 
 - `scripts/test_detect_damage_types.py` — true/max-HP dedup (Shemira, Valka,
-  Daimon)
+  Daimon); single-hero regressions (Seth, Kafra, Temesia, Granny Dahnie)
+- `scripts/test_hero_schema.py` — skill-card chip keys (debuff distinct from
+  buff stat, e.g. `damage dealt debuff` vs `damage taken reduction`)
 - `scripts/test_skill_descriptions.py`
 - `scripts/test_detailed_validation.py`
 - `scripts/test_summary_parsing.py` — self Invincible (Evie, Harak, Aurora);
   extend for ally-haste Self mis-tags, energy recovery Self, artifact silence
 
 Add a **minimal** case per new pattern; run `just validate` before closing
-the validation task. When detection rules change, bump
-`scripts/roster_analysis.py` `CACHE_VERSION` before `just analyze` (stale
-disk cache otherwise reuses pre-fix targeting).
+the task. When detection rules change, bump
+`scripts/roster_analysis.py` `CACHE_VERSION` before `just analyze` or
+`just views` (stale disk cache otherwise reuses pre-fix targeting).

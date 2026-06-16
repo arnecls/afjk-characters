@@ -3,8 +3,10 @@ name: validate-hero-data
 description: >-
   Audits detected skill effects in data/heroes_data_processed.json against hero
   skill descriptions and data/hero_play_overviews.json. Use when asked to
-  validate, audit, or review detection quality, run high-level or detailed
-  validation, or follow AGENTS.md validation sections.
+  validate, audit, or review detection quality; fix detection for one hero or
+  skill (e.g. wrong buff/debuff, missing damage type, wrong targeting); run
+  high-level or detailed roster validation; or follow AGENTS.md validation
+  sections.
 ---
 
 # Validate hero data
@@ -17,7 +19,112 @@ Manual audit of the detection pipeline output. Compare each skill's parsed
 text and JSON side by side. After fixing detection code, add targeted unit
 tests in `scripts/test_*.py` and run `just validate`.
 
-## Source files (read in this order)
+## Choose your mode
+
+| Mode | When to use | Output |
+|------|-------------|--------|
+| **Single-hero fix** | User reports one hero/skill (wrong label, missing effect, wrong targeting, wrong chip on site) | Code fix + regression test + regenerated JSON/site for that hero |
+| **Full roster validation** | Audit detection quality across the roster; baseline before/after a detection pass | `docs/validation-high-level-*.md` then `docs/validation-detailed-*.md` |
+
+Use **single-hero** for targeted fixes like Seth DEF/Crit self-buffs, Kafra
+Haste debuff, Temesia damage-dealt debuff, or Granny Dahnie self DEF. Use
+**full roster** when asked to validate, audit, or batch-review heroes.
+
+Both modes share the same comparison rules, guardrails, and fix workflow
+below. Single-hero skips batching and formal reports unless the user asks
+for a write-up.
+
+## Single-hero fix workflow
+
+Use when the user names a hero (and usually a skill or symptom). Work
+end-to-end like a mini validation pass — do not only patch JSON by hand.
+
+```
+Task progress (single hero):
+- [ ] 1. Symptom — note what user saw (processed JSON, skill card, overview, synergy)
+- [ ] 2. Read skill text — heroes_data.json or processed description (active + max-tier upgrades)
+- [ ] 3. Read detected output — effects[], skill_card_tags, benefit_stats (if relevant)
+- [ ] 4. Cross-check display — site/data/heroes.json skillCards; chip polarity in site/js/app.js if tags look right in JSON but wrong on site
+- [ ] 5. Reproduce — hero_from_record + analyze_hero, or analyze_text on the clause (see debug snippet below)
+- [ ] 6. Classify — missing label / spurious label / wrong label / wrong target / wrong magnitude / display-only
+- [ ] 7. Fix — rewrite-summaries.py (primary), hero_schema.py, site/js/app.js (chip defs), overview-to-csv.py (column maps) as needed
+- [ ] 8. Regression test — scripts/test_detect_damage_types.py or test_hero_schema.py; minimal hero integration test when useful
+- [ ] 9. Bump CACHE_VERSION in scripts/roster_analysis.py when detection rules change
+- [ ] 10. Regenerate — just views (or just analyze && render-site); re-read that hero in processed JSON + site
+- [ ] 11. just validate
+```
+
+### Single-hero debug snippet
+
+```bash
+python3 - <<'PY'
+import importlib.util, sys
+from pathlib import Path
+SCRIPTS = Path("scripts")
+sys.path.insert(0, str(SCRIPTS))
+spec = importlib.util.spec_from_file_location(
+    "rewrite_summaries", SCRIPTS / "rewrite-summaries.py"
+)
+rs = importlib.util.module_from_spec(spec)
+sys.modules["rewrite_summaries"] = spec.loader.load_module()
+spec.loader.exec_module(rs)
+import heroes_io as io
+
+NAME = "Seth"  # change
+record = next(r for r in io.load_heroes_data()["heroes"] if r.get("name") == NAME)
+hero = rs.hero_from_record(record)
+rs.analyze_hero(hero)
+for sec, sl in sorted(hero.skill_slices.items()):
+    if not sl.effects and not sl.cc_immunities:
+        continue
+    print("===", sec)
+    for e in sl.effects:
+        print(" ", e.category, e.label, e.targeting, e.tier, getattr(e, "numeric", None))
+    for imm in sl.cc_immunities:
+        print(" ", "immunity", imm.immunity_type, imm.targeting)
+PY
+```
+
+For one clause in isolation, use `rs.analyze_text(effects, [], {}, [], tier, text, primary_dmg)` and inspect `effects`.
+
+### Detection vs display
+
+**Always check both** when the user says something "is displayed as" X:
+
+| Layer | Where to look |
+|-------|----------------|
+| Detection | `data/heroes_data_processed.json` → `effects`, `skill_card_tags` |
+| Site cards | `site/data/heroes.json` → `sections.skillCards[].tags` |
+| Chip styling | `site/js/app.js` → `TAG_DEFINITIONS` (debuff labels need explicit entries, e.g. `Haste debuff`, `Phys DEF debuff`, `Damage dealt debuff`) |
+| Overview CSV | `heroes-overview.csv` debuff columns; label `Damage dealt` maps to column `Damage dealt debuff` |
+
+Detection can be correct while the UI shows a buff-styled stat chip because
+`resolveLeadingChip` strips ` debuff` and falls through to a generic stat.
+Fix: add the full debuff label to `TAG_DEFINITIONS` with `chip-debuff`.
+
+### Single-hero fix patterns (June 2026)
+
+Recent targeted fixes — use as checklists when similar text appears:
+
+| Symptom | Text cue | Expected | Fix area |
+|---------|----------|----------|----------|
+| Missing DEF buff Self | `gains N% Phys and Magic DEF` (not `increases … def by`) | DEF buff Self | BUFF_RULES + self targeting |
+| Crit buff on ally | Upgrade: `Gains N Crit when he/she…` (impersonal) | Crit buff Self | `_resolve_buff_targeting`, `effect_targets_self_only` |
+| Self DEF as debuff | `increasing her Phys DEF` | DEF buff Self, not Phys DEF debuff | debuff skip guards, self-debuff pre-scan |
+| Haste debuff as buff | `reducing their Haste` | Haste debuff | debuff rules; skip Haste buff on reduc+haste |
+| ATK debuff spurious | `(ATK-based) damage and reducing their Haste` | Haste debuff only | skip ATK debuff on atk-based haste line |
+| Damage dealt as buff chip | `Reduces the enemy's damage dealt` | Damage dealt debuff (debuff chip) | detection often OK; TAG_DEFINITIONS + CSV column |
+| True damage missing on mythic+ | `turning … damage into true damage` (no hit in chunk) | True damage on skill card | `_chunk_deals_enemy_damage` for conversion phrasing |
+| HoT scalar on DEF buff | Upgrade HoT % in same skill as DEF buff | DEF magnitude from DEF clause only | `_upgrade_chunk_relates_to_buff`, scalar guards |
+
+After any detection change: bump `CACHE_VERSION`, run `just views`, verify the
+named hero's `skill_card_tags` and `effects` before closing.
+
+## Full roster validation
+
+Two-pass plan for auditing the whole roster. Do not mix scopes in one report.
+
+### Source files (read in this order)
 
 1. `.cursor/AGENTS.md` — damage types, targeting, CC, buffs, stats,
    **Validating detection algorithms**
@@ -33,14 +140,14 @@ Optional: `docs/skill-analysis-pipeline.md` (why NLP is hard),
 `scripts/rewrite-summaries.py` (detection rules), `scripts/heroes_io.py`
 (chunk parsing).
 
-## Two-pass plan
+### Roster task checklist
 
 Run **high-level** first, then **detailed**. Do not mix scopes in one report.
 
 ```
 Task progress:
 - [ ] 1. Baseline — read latest docs/validation-*.md; note resolved items
-- [ ] 2. Pre-scan — ally-target, reverse ally-buff, **self-debuff**, immunity/silence, true/max-HP triage; note counts
+- [ ] 2. Pre-scan — ally-target, reverse ally-buff, **self-debuff**, debuff-chip, immunity/silence, true/max-HP triage; note counts
 - [ ] 3. Inventory — hero/skill counts; pick batch boundaries (~25–35 heroes)
 - [ ] 4. High-level pass — labels only (damage, healing, CC, buffs, debuffs)
 - [ ] 5. Write docs/validation-high-level-YYYY-MM-DD.md
@@ -48,7 +155,7 @@ Task progress:
 - [ ] 7. Write docs/validation-detailed-YYYY-MM-DD.md
 - [ ] 8. Synergy spot-check — grep false buff replacements for fixed heroes
 - [ ] 9. Prioritize fixes; patch detection; add regression tests
-- [ ] 10. Bump roster_analysis CACHE_VERSION if detection changed; just analyze && just validate
+- [ ] 10. Bump roster_analysis CACHE_VERSION if detection changed; just views && just validate
 - [ ] 11. Re-run pre-scan; move closed rows to Resolved
 ```
 
@@ -98,6 +205,18 @@ damage` on the same strike. Run the true/max-HP pre-scan below.
 (`_apply_true_damage_hierarchy` in `rewrite-summaries.py`). Generic **True
 damage** is correct only when the strike is true without max-HP scaling (e.g.
 flat `+27% true damage` on an ATK-based hit).
+
+**True damage without a hit in the chunk** — conversion / mode-change lines
+still belong on the skill card when they change how other hits work:
+
+| Text pattern | Example hero/skill |
+|--------------|-------------------|
+| `turning … charge damage into true damage` | Temesia Invincible Fury (Mythic+) |
+| `normal attacks deal true damage` (after condition) | Marilee Battlefield Learning |
+
+`detect_damage_types` may find True damage, but no `effects` row is emitted
+until `_chunk_deals_enemy_damage` (or equivalent) treats conversion phrasing
+as a damage-type grant. Audit `skill_card_tags`, not only `effects`.
 
 **Phrasing gaps** — dedup fails when the parser misses the link:
 
@@ -153,6 +272,7 @@ should be `Self`.
 | Invincible | `stays invincible`, `reaching the invincible`, `{name} is invincible` (no ally in clause) | `ally` + `Single target` |
 | Unaffected / Immune | `while casting, {name} remains unaffected`, `{name} is unaffected` | `ally` |
 | Crit / Haste / Dodge | `{name} enters feast mode, increasing Crit…`, `gains N Dodge` on caster, `{name}'s Haste permanently increases` | `ally` |
+| Impersonal upgrade self-buff | `Gains N Crit when he/she…` (upgrade line; no hero name before verb) | `ally` |
 | Shield / heal | `gains a shield`, `restores HP` with her/his/self, no ally grant | `ally` |
 
 **Reverse mis-tag (ally buff stored as Self):** when text grants haste/ATK to
@@ -312,6 +432,42 @@ PY
 Confirm each candidate: if text **increases** the caster's stat, expect a
 **buff** (or no row), not a debuff. Report count in the validation doc header.
 
+### Pre-scan — debuff chip / label display triage
+
+Run when pass 1 finds debuff labels in JSON but reviewers report buff-styled
+chips on the site, or overview CSV debuff columns stay empty.
+
+```bash
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+processed = json.loads(Path("data/heroes_data_processed.json").read_text())
+site = json.loads(Path("site/data/heroes.json").read_text())
+DEBUFF_NAMES = {
+    "Damage dealt debuff", "Haste debuff", "Phys DEF debuff", "Magic DEF debuff",
+    "ATK debuff", "Damage taken debuff",
+}
+
+for hero, data in sorted(processed["heroes"].items()):
+    for skill, sk in data.get("skills", {}).items():
+        effect_debuffs = {
+            e.get("name") for e in sk.get("effects", [])
+            if e.get("type") == "debuff"
+        }
+        tags = set(sk.get("skill_card_tags") or [])
+        for name in effect_debuffs & DEBUFF_NAMES:
+            if name not in tags and f"{name.split(' debuff')[0]} — Self" not in tags:
+                if not any(name.lower() in t.lower() for t in tags):
+                    print(f"{hero} / {skill}: effect {name!r} not in skill_card_tags {tags}")
+PY
+```
+
+Also grep `site/js/app.js` for the debuff label in `TAG_DEFINITIONS`. Overview
+CSV: debuff summary lines use shortened names (`Damage dealt` → column
+`Damage dealt debuff`); confirm `DEBUFF_TYPES` in `overview-to-csv.py`
+includes the full label.
+
 ### Pre-scan — spurious immunity / artifact-silence triage
 
 Run during **pass 1** (label scope). Surfaces immunity rows and Silence CC
@@ -414,7 +570,10 @@ PY
   `hero_play_overviews.json` for identity context (still verify against full
   skill text).
 - **Skill-card tags:** when fixing detection, also update skill-card tags
-  (per AGENTS.md).
+  (per AGENTS.md). After `just views`, confirm `site/data/heroes.json`
+  `skillCards` for the hero.
+- **Site chip defs:** if JSON tags are correct but UI shows buff-colored stat
+  chips, add or fix entries in `site/js/app.js` `TAG_DEFINITIONS`.
 - **Artifact / synergy-only:** effects may live only on `synergy_profile`
   (e.g. Galahad Time Recast). Note separately; do not expect combat
   `effects` rows.
@@ -454,7 +613,8 @@ Save under `docs/` with today's date.
 
 - Scope + link to high-level baseline
 - **Pre-scan results** — ally-target, reverse ally-buff, **self-debuff**,
-  immunity/silence, and true/max-HP candidate counts at start/end of run
+  debuff-chip/display, immunity/silence, and true/max-HP candidate counts at
+  start/end of run
 - Same roster stats and **Common failure patterns** (detailed-specific)
 - **Findings** by batch with `found -> expected`
 - **Spot-checked confirmations**
@@ -464,17 +624,21 @@ Save under `docs/` with today's date.
 
 ### After findings — fixing workflow
 
-1. Group findings by **failure pattern**, not hero.
+Applies to **single-hero** and **roster** fixes.
+
+1. Group roster findings by **failure pattern**, not hero (single-hero: one pattern).
 2. Fix `scripts/rewrite-summaries.py`, `scripts/heroes_io.py`, or
    `scripts/hero_schema.py` with **regression tests** in matching
-   `scripts/test_*.py`.
+   `scripts/test_*.py`. Fix `site/js/app.js` / `overview-to-csv.py` when
+   the issue is display or CSV columns, not detection.
 3. Bump `CACHE_VERSION` in `scripts/roster_analysis.py` when detection rules
    change (otherwise `just analyze` may reuse stale parsed heroes).
-4. Run `just analyze` to regenerate `heroes_data_processed.json` and synergies.
+4. Run `just views` (or `just analyze` then `render-site` / `render_overview`
+   as needed) to regenerate processed JSON, synergies, overview, and site.
 5. Run `just validate`.
-6. Re-run pre-scans (ally-target, **self-debuff**, true/max-HP); grep `"buff"`
-   replacements for affected heroes.
-7. Spot-check representative skills from the report; move rows to **Resolved**.
+6. Re-run pre-scans (ally-target, **self-debuff**, true/max-HP, debuff-chip);
+   grep `"buff"` replacements for affected heroes.
+7. Spot-check representative skills (or the named hero); move rows to **Resolved**.
 8. Do **not** re-audit the full roster unless asked — note that findings
    tables may be stale until re-run.
 
@@ -487,17 +651,20 @@ Highest impact on magnitude bands and synergy scoring:
    damage-type profiles and magnitude bands
 3. **Self-targeted debuffs** — almost always false; read every pre-scan hit
    (self DEF/ATK **increase** is usually a buff mis-tag)
-4. **Self-only effects tagged `target: ally`** (Invincible, Unaffected, self
-   stat buffs, **self Energy recovery**) — distorts replacement **Buffs on
-   allies** lists and beneficiary lines
-5. **Ally buffs tagged `target: self`** (`inspiring allies`, `their Haste`) —
+4. **Debuff labels with buff-styled chips** — JSON correct, `TAG_DEFINITIONS` /
+   overview CSV column missing (Damage dealt, Haste, Phys DEF debuffs)
+5. **Self-only effects tagged `target: ally`** (Invincible, Unaffected, self
+   stat buffs, **self Energy recovery**, impersonal `Gains N Crit when he…`) —
+   distorts replacement **Buffs on allies** lists and beneficiary lines
+6. **Ally buffs tagged `target: self`** (`inspiring allies`, `their Haste`) —
    removes provider from synergy buff matching
-6. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
-7. **Spurious immunity / Silence CC** (targeting priority, artifact Merlin block)
-8. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
-9. **Upgrade-tier magnitudes** not merged to max tier (incl. `N + M` scaled
+7. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
+8. **True damage conversion** missing from skill card (Mythic+ mode-change lines)
+9. **Spurious immunity / Silence CC** (targeting priority, artifact Merlin block)
+10. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
+11. **Upgrade-tier magnitudes** not merged to max tier (incl. `N + M` scaled
    amounts on energy recovery and haste)
-10. **Spurious damage rows** (execute riders, shield absorb as Physical)
+12. **Spurious damage rows** (execute riders, shield absorb as Physical)
 
 ## Definition guardrails
 
@@ -522,12 +689,29 @@ Apply `.cursor/AGENTS.md` strictly. Common label confusions:
 | Energy recovery | `{name} recovers N (+ M) Energy` on caster → **Self** | `ally` + `Single target` (enemy in trigger clause is not the buff target) |
 | Cheat death | `block the fatal damage`, fatal-blow survival → special provide + `cheat-death` tag | Only Direct healing, no Cheat death provide |
 | Summon buffs | `target: summon` / Summons only | `target: ally` (counts in wrong replacement bucket) |
-| Damage dealt vs taken | Match phrase direction | Berial Hero Focus-style swaps |
+| Damage dealt vs taken | `reduces the enemy's damage dealt` → **Damage dealt debuff** on enemy | **Damage taken reduction** buff on self; debuff chip styled as buff if `TAG_DEFINITIONS` missing |
+| DEF combined gain | `gains N% Phys and Magic DEF` → **DEF buff Self** | Only `increases … def by` matched; missing DEF buff |
+| Impersonal self stat | `Gains N Crit when he…` on upgrade line → **Crit buff Self** | `ally` / Single target from default targeting |
+| True damage conversion | `turning … into true damage` on Mythic+ skill | True damage missing from skill card despite text |
+| Debuff chip display | JSON has `Damage dealt debuff`; site shows buff-styled stat | `TAG_DEFINITIONS` in `site/js/app.js`; overview CSV column map |
 | Enhance Force | Parse EX/Supreme+ lines in same skill | Upgrade-only effects missing |
 
 For extended edge cases and prior-run examples, see [pitfalls.md](pitfalls.md).
 
 ## Reporting to the user
+
+### Single-hero fix
+
+Summarize briefly:
+
+1. **Symptom** — what was wrong (detection, targeting, display)
+2. **Root cause** — pattern name (link to pitfalls if useful)
+3. **Changes** — files touched (detection, tests, site chips, CACHE_VERSION)
+4. **Verified** — `skill_card_tags` and key `effects` for that hero after `just views`
+
+Do not regenerate overview docs unless the user asks.
+
+### Full roster validation
 
 Summarize:
 
@@ -611,3 +795,20 @@ Harak via overlapping mis-tagged Invincible; after fix `"buff": []` is expected
 **Split pass — Lorsan Whispering Tempest:** high-level may show DoT + Haste
 debuff OK; detailed still open on flat **-33** Haste, **5s** duration,
 **0.5s** tick.
+
+**Single-hero — Seth Hunter Instinct:** `Seth gains 25% Phys and Magic DEF`
+→ **DEF buff Self**; upgrade `Gains 25 Crit when he…` → **Crit buff Self**
+(not ally). Supreme+ Enhance Force → **Phys DEF debuff** on enemy only.
+
+**Single-hero — Granny Dahnie Glimmerbloom Blessings:** self Phys/Magic DEF
+increase must not be **DEF debuff Self**; HoT upgrade scalar must not inflate
+DEF buff magnitude.
+
+**Single-hero — Kafra Sylvan Banishment:** `reducing their Haste` → **Haste
+debuff**; must not emit **Haste buff** or spurious **ATK debuff** from
+`(ATK-based) damage and reducing … haste`.
+
+**Single-hero — Temesia Iron Heel:** `Reduces the enemy's damage dealt` →
+**Damage dealt debuff** (enemy); confirm debuff chip on site, not
+**Damage taken** buff styling. **Invincible Fury (Mythic+):** `turning the
+charge damage into true damage` → skill card includes **True damage**.
