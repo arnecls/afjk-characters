@@ -129,6 +129,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `self-repositioner` | **Regularly** jumps/dashes/teleports self | One incidental leap |
 | `hp-scaling` | Scales on **HP values** | Shield-value scaling |
 | `invincibility` | Meaningful immunity windows | Brief immunity already covered by `transformation`; do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
+| `battle-start-burst` | Deals damage in the **first ~2–3s** of battle | Buff/shield/debuff/energy/summon setup at battle start without immediate damage; delayed openers (Frieren 15s); terrain bombs without a damage clause (Kulu debris) |
 
 ## Reporting
 
@@ -144,11 +145,11 @@ Do not regenerate `heroes-overview.md` or the site unless the user asks.
 
 ## Examples
 
-**Bonnie** — debuff-spread mage, not DoT: `enemy-debuffer`, `transformation`,
-`aoe-damage`. Drop `battle-start-burst` (Aging opener is debuff setup, not
-burst damage), `mass-cc` (ult stun only on debuffed targets), `dot-specialist`
-(debuff stacking ≠ DoT), and `invincibility` when mist form is already
-`transformation`.
+**Bonnie** — debuff-spread mage with opening hit: `enemy-debuffer`,
+`transformation`, `aoe-damage`, `battle-start-burst` (Aging deals damage at
+battle start). Not `mass-cc` (ult stun only on debuffed targets),
+`dot-specialist` (debuff stacking ≠ DoT), or `invincibility` when mist form is
+already `transformation`.
 
 **Perseus** — terrain tile buffs: `ally-buffer`, `aoe-damage`. Not
 `battlefield-modification` (buff zones do not count).

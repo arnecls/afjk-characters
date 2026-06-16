@@ -55,6 +55,7 @@
   ],
   "Bonnie": [
     "aoe-damage",
+    "battle-start-burst",
     "enemy-debuffer",
     "transformation"
   ],
@@ -127,10 +128,12 @@
   "Dunlingr": [
     "ally-buffer",
     "aoe-damage",
+    "battle-start-burst",
     "disabler"
   ],
   "Eironn": [
     "aoe-damage",
+    "battle-start-burst",
     "battle-start-ult",
     "enemy-grouping",
     "mass-cc"
@@ -322,9 +325,10 @@
   "Marcille": [
     "ally-healer",
     "aoe-damage",
+    "battle-start-burst",
+    "high-damage-ult",
     "revive",
-    "summoner",
-    "high-damage-ult"
+    "summoner"
   ],
   "Marilee": [
     "hp-scaling",
@@ -363,6 +367,7 @@
     "mark-target"
   ],
   "Nerion": [
+    "battle-start-burst",
     "dot-specialist",
     "enemy-debuffer"
   ],
@@ -468,6 +473,7 @@
   ],
   "Silvina": [
     "assassin",
+    "battle-start-burst",
     "disabler",
     "mark-target"
   ],

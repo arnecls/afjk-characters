@@ -59,6 +59,22 @@ Nerion drowning DoT while controlled.
 **Does not count:** Bonnie haste-reduction debuff stacking, enemy ATK
 reduction without ticks.
 
+## `battle-start-burst` vs setup openers
+
+**Counts:** explicit battle-start damage (Gerda Skill 1, Bonnie Aging, Silvina
+First Strike, Cyran Mythic+ sequence, Walker grenades, Nerion Mythic+
+drowning); auto-cast or repeated openers that deal damage in the first few
+seconds (Atalanta Mythic+, Marcille early channeled flash); opening damage tied
+to battle-start soaring (Kazim Supreme+ knock-up → dive).
+
+**Does not count:** shields, buffs, energy, marks, or summons at battle start
+without immediate damage (Callan, Florabelle Spiny, Bryon falcon setup); delayed
+damage (Frieren 15s amplification); debuff-only openers without a damage
+clause; battlefield debris without direct bomb damage (Kulu border tiles).
+
+Do not confuse with `battle-start-ult` (early ultimate access, e.g. Eironn can
+have both when the ult also deals opening damage).
+
 ## `cheat-death` vs `revive`
 
 - `cheat-death` — self survives fatal blow (Brutus, Thoran, Berial)

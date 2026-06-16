@@ -211,8 +211,8 @@ Alna provides Ally empower buff to single targets `high`, Max HP buff to single 
 
 **Similar Skills**
 
-- Dunlingr (57% `ally-buffer` `aoe-damage`)
 - Perseus (50% `ally-buffer` `aoe-damage`)
+- Dunlingr (48% `ally-buffer` `aoe-damage`)
 - Himmel (40% `ally-buffer` `aoe-damage`)
 
 **Damage**
@@ -1183,7 +1183,7 @@ Common buffers are **Solise**, **Rowan**, or **Twins**.
 **Best overall replacement**
 
 - Saida (87% `Damage` `Debuffs on enemies`)
-- Silvina (77% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Silvina (76% `Damage` `Debuffs on enemies` `Crowd Control`)
 - Lily May (58% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
@@ -1240,7 +1240,7 @@ Common buffers are **Solise**, **Rowan**, or **Twins**.
 
 - **Signature skill**: Decay's Reach (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `aoe-damage` `enemy-debuffer` `transformation`
+- **Behavior tags**: `aoe-damage` `battle-start-burst` `enemy-debuffer` `transformation`
 - **Damage types**: Magic `average`
 
 #### Play overview
@@ -1311,11 +1311,15 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 ### Units that can act as a replacement for Bonnie
 
+**Best overall replacement**
+
+- Nerion (50% `Damage` `Crowd Control`)
+
 **Similar Skills**
 
-- Cassadee (60% `aoe-damage` `enemy-debuffer`)
-- Tasi (48% `aoe-damage` `transformation`)
-- Ulmus (48% `aoe-damage` `transformation`)
+- Nerion (57% `battle-start-burst` `enemy-debuffer`)
+- Cassadee (48% `aoe-damage` `enemy-debuffer`)
+- Cyran (40% `aoe-damage` `battle-start-burst`)
 
 **Damage**
 
@@ -1798,14 +1802,13 @@ Carolina also requires units **applying crowd control** to enemies
 
 **Best overall replacement**
 
-- Nerion (61% `Similar Skills` `Damage`)
 - Shadewing (54% `Similar Skills`)
 - Eironn (51% `Damage` `Debuffs on enemies` `Crowd Control`)
 
 **Similar Skills**
 
 - Shadewing (100% `dot-specialist` `enemy-debuffer`)
-- Nerion (100% `dot-specialist` `enemy-debuffer`)
+- Nerion (96% `dot-specialist` `enemy-debuffer`)
 - Kruger (40% `enemy-debuffer`)
 
 **Damage**
@@ -1927,8 +1930,8 @@ Cassadee provides Tidal Strength buff (Legendary+) to all units `low`.
 **Similar Skills**
 
 - Perseus (80% `ally-buffer` `aoe-damage`)
-- Bonnie (60% `aoe-damage` `enemy-debuffer`)
 - Sonja (60% `ally-buffer` `aoe-damage`)
+- Parisa (60% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -2480,9 +2483,9 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 
 **Similar Skills**
 
+- Eironn (60% `aoe-damage` `battle-start-burst` `enemy-grouping`)
 - Atalanta (48% `aoe-damage` `battle-start-burst`)
 - Walker (41% `aoe-damage` `battle-start-burst`)
-- Eironn (40% `aoe-damage` `enemy-grouping`)
 
 **Damage**
 
@@ -2921,7 +2924,7 @@ Dionel provides ATK buff to single targets `average`.
 
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: moving (melee class)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `disabler`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `disabler`
 - **Damage types**: Magic `average`, DoT `average`, HP loss `low`, Max HP-based damage `average`
 
 #### Play overview
@@ -3003,13 +3006,13 @@ These are the **10** strongest pairings:
 
 **Best overall replacement**
 
-- Sylphira (54% `Crowd Control` `Damage`)
+- Sylphira (53% `Crowd Control` `Damage`)
 
 **Similar Skills**
 
-- Perseus (66% `ally-buffer` `aoe-damage`)
-- Alna (57% `ally-buffer` `aoe-damage`)
-- Himmel (50% `ally-buffer` `aoe-damage`)
+- Perseus (50% `ally-buffer` `aoe-damage`)
+- Alna (48% `ally-buffer` `aoe-damage`)
+- Himmel (40% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -3060,7 +3063,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Verdant Cyclone (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `aoe-damage` `battle-start-ult` `enemy-grouping` `mass-cc`
+- **Behavior tags**: `aoe-damage` `battle-start-burst` `battle-start-ult` `enemy-grouping` `mass-cc`
 - **Damage types**: Magic `high`
 
 #### Play overview
@@ -3125,9 +3128,9 @@ Eironn provides Dodge chance buff to single targets `high`.
 
 **Similar Skills**
 
-- Mehira (60% `aoe-damage` `enemy-grouping` `mass-cc`)
-- Arden (48% `aoe-damage` `mass-cc`)
-- Tasi (48% `aoe-damage` `mass-cc`)
+- Cyran (60% `aoe-damage` `battle-start-burst` `enemy-grouping`)
+- Mehira (51% `aoe-damage` `enemy-grouping` `mass-cc`)
+- Walker (51% `aoe-damage` `battle-start-burst` `mass-cc`)
 
 **Damage**
 
@@ -3611,7 +3614,7 @@ Florabelle provides Haste buff to summons `high`, Lifedrain buff to summons `hig
 
 - Hodgkin (66% `aoe-damage` `summoner`)
 - Tilaya (60% `aoe-damage`)
-- Marcille (48% `aoe-damage` `summoner`)
+- Marcille (40% `aoe-damage` `summoner`)
 
 **Damage**
 
@@ -3728,7 +3731,7 @@ Frieren provides ATK buff to single targets `high`.
 
 - Himmel (48% `aoe-damage` `self-repositioner`)
 - Dionel (48% `aoe-damage` `self-repositioner`)
-- Marcille (41% `aoe-damage` `high-damage-ult`)
+- Faramor (40% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -3845,7 +3848,6 @@ Galahad provides Haste buff to single targets `average` and Shield to single tar
 
 - Saida (77% `Damage` `Crowd Control` `Buffs on allies`)
 - Alna (51% `Damage` `Crowd Control`)
-- Marcille (50% `Damage`)
 
 **Buffs on allies**
 
@@ -4949,8 +4951,8 @@ Himmel provides ATK buff to single targets `high` and Shield to single targets `
 **Similar Skills**
 
 - Perseus (66% `ally-buffer` `aoe-damage`)
-- Dunlingr (50% `ally-buffer` `aoe-damage`)
 - Kordan (50% `ally-buffer` `self-repositioner`)
+- Dionel (50% `aoe-damage` `self-repositioner`)
 
 **Damage**
 
@@ -5059,9 +5061,9 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 **Similar Skills**
 
-- Bonnie (72% `aoe-damage` `enemy-debuffer`)
 - Florabelle (66% `aoe-damage` `summoner`)
 - Cassadee (60% `aoe-damage` `enemy-debuffer`)
+- Cecia (60% `enemy-debuffer` `summoner`)
 
 **Damage**
 
@@ -5607,7 +5609,7 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 
 - Sinbad (90% `assassin` `enemy-debuffer` `mark-target`)
 - Lenya (48% `assassin` `self-repositioner`)
-- Silvina (40% `assassin` `mark-target`)
+- Temesia (34% `enemy-debuffer` `self-repositioner`)
 
 **Damage**
 
@@ -5730,7 +5732,7 @@ Kazim provides Haste buff to multiple targets `high` and ATK buff (Mythic+) to s
 
 - Walker (68% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc`)
 - Parisa (60% `ally-buffer` `aoe-damage` `mark-target`)
-- Alna (42% `ally-buffer` `aoe-damage` `invincibility`)
+- Eironn (45% `aoe-damage` `battle-start-burst` `mass-cc`)
 
 **Damage**
 
@@ -6212,7 +6214,7 @@ Common buffers are **Hugin** or **Twins**.
 
 - Shakir (48% `life-drain`)
 - Shadewing (40% `enemy-debuffer`)
-- Nerion (40% `enemy-debuffer`)
+- Zorya (40% `life-drain`)
 
 **Damage**
 
@@ -7587,7 +7589,7 @@ Lyca provides ATK SPD buff to all units `low` and Energy recovery to all units `
 
 - **Signature skill**: Silver-White Wings that Streak Across the Skies (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-healer` `aoe-damage` `high-damage-ult` `revive` `summoner`
+- **Behavior tags**: `ally-healer` `aoe-damage` `battle-start-burst` `high-damage-ult` `revive` `summoner`
 - **Ally composition**: place ally 1 tile in front at battle prep (revive target)
 - **Damage types**: Magic `high`, Max HP-based damage `high`
 
@@ -7652,9 +7654,8 @@ Marcille provides Haste buff (Legendary+) to single targets `low` and Direct hea
 
 **Best overall replacement**
 
-- Natsu (62% `Damage`)
+- Natsu (61% `Damage`)
 - Galahad (54% `Damage` `Buffs on allies`)
-- Frieren (50% `Damage`)
 
 **Buffs on allies**
 
@@ -7670,9 +7671,9 @@ Marcille provides Haste buff (Legendary+) to single targets `low` and Direct hea
 
 **Similar Skills**
 
-- Florabelle (48% `aoe-damage` `summoner`)
-- Frieren (41% `aoe-damage` `high-damage-ult`)
-- Laios (40% `ally-healer` `summoner`)
+- Florabelle (40% `aoe-damage` `summoner`)
+- Frieren (36% `aoe-damage` `high-damage-ult`)
+- Laios (34% `ally-healer` `summoner`)
 
 **Damage**
 
@@ -7905,7 +7906,7 @@ Mehira provides Haste buff to single targets `average`.
 
 **Similar Skills**
 
-- Eironn (60% `aoe-damage` `enemy-grouping` `mass-cc`)
+- Eironn (51% `aoe-damage` `enemy-grouping` `mass-cc`)
 - Igor (51% `aoe-damage` `life-drain` `untargetable`)
 - Cyran (34% `aoe-damage` `enemy-grouping`)
 
@@ -8535,7 +8536,7 @@ Look for units providing: `CRIT`
 
 - **Signature skill**: Drowning Doom (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Behavior tags**: `dot-specialist` `enemy-debuffer`
+- **Behavior tags**: `battle-start-burst` `dot-specialist` `enemy-debuffer`
 - **Damage types**: Magic `high`, DoT `average`, Max HP-based damage `high`
 
 #### Play overview
@@ -8600,9 +8601,9 @@ Nerion also requires units **applying crowd control** to enemies
 
 **Similar Skills**
 
-- Shadewing (100% `dot-specialist` `enemy-debuffer`)
-- Carolina (100% `dot-specialist` `enemy-debuffer`)
-- Kruger (40% `enemy-debuffer`)
+- Shadewing (96% `dot-specialist` `enemy-debuffer`)
+- Carolina (96% `dot-specialist` `enemy-debuffer`)
+- Bonnie (57% `battle-start-burst` `enemy-debuffer`)
 
 **Damage**
 
@@ -8829,7 +8830,7 @@ Common buffers are **Twins**, **Hugin**, or **Damian**.
 
 - Mirael (40% `dot-specialist`)
 - Shadewing (33% `dot-specialist`)
-- Nerion (33% `dot-specialist`)
+- Carolina (33% `dot-specialist`)
 
 **Damage**
 
@@ -10755,9 +10756,9 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 **Similar Skills**
 
-- Nerion (100% `dot-specialist` `enemy-debuffer`)
+- Nerion (96% `dot-specialist` `enemy-debuffer`)
 - Kruger (40% `enemy-debuffer`)
-- Bonnie (36% `enemy-debuffer`)
+- Odie (33% `dot-specialist`)
 
 **Damage**
 
@@ -11142,7 +11143,7 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 - **Signature skill**: First Strike (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `assassin` `disabler` `mark-target`
+- **Behavior tags**: `assassin` `battle-start-burst` `disabler` `mark-target`
 - **Damage types**: Physical `average`, Max HP-based damage `high`
 
 #### Play overview
@@ -11206,14 +11207,14 @@ Common buffers are **Hugin** or **Twins**.
 **Best overall replacement**
 
 - Hodgkin (73% `Damage` `Debuffs on enemies`)
-- Berial (72% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Berial (71% `Damage` `Debuffs on enemies` `Crowd Control`)
 - Perseus (64% `Damage`)
 
 **Similar Skills**
 
-- Sinbad (50% `assassin` `mark-target`)
-- Kafra (40% `assassin` `mark-target`)
-- Silven (30% `mark-target`)
+- Sinbad (40% `assassin` `mark-target`)
+- Dunlingr (33% `battle-start-burst` `disabler`)
+- Kafra (33% `assassin` `mark-target`)
 
 **Damage**
 
@@ -11328,7 +11329,7 @@ Common buffers are **Twins**, **Hugin**, or **Damian**.
 **Similar Skills**
 
 - Kafra (90% `assassin` `enemy-debuffer` `mark-target`)
-- Silvina (50% `assassin` `mark-target`)
+- Silvina (40% `assassin` `mark-target`)
 - Silven (30% `mark-target`)
 
 **Damage**
@@ -12034,8 +12035,8 @@ Talene provides ATK buff (EX+5) in an area `high`.
 **Similar Skills**
 
 - Ulmus (60% `aoe-damage` `cheat-death` `transformation`)
-- Bonnie (40% `aoe-damage` `transformation`)
 - Natsu (37% `aoe-damage` `fire-attack` `transformation`)
+- Bonnie (34% `aoe-damage` `transformation`)
 
 **Damage**
 
@@ -12153,7 +12154,7 @@ Tasi provides Haste buff (EX+5) to single targets `high`.
 
 - Valen (75% `aoe-damage` `mass-cc` `transformation`)
 - Temesia (60% `aoe-damage` `mass-cc` `self-repositioner`)
-- Bonnie (48% `aoe-damage` `transformation`)
+- Arden (48% `aoe-damage` `mass-cc`)
 
 **Damage**
 
@@ -12881,7 +12882,7 @@ Common buffers are **Smokey & Meerky**, **Twins**, or **Solise**.
 
 - Talene (60% `aoe-damage` `cheat-death` `transformation`)
 - Pang (60% `ally-shielder` `transformation`)
-- Bonnie (48% `aoe-damage` `transformation`)
+- Scarlita (48% `ally-shielder` `aoe-damage`)
 
 **Damage**
 
@@ -13257,7 +13258,7 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 **Best overall replacement**
 
 - Zorya (65% `Debuffs on enemies` `Crowd Control` `Damage`)
-- Dunlingr (52% `Buffs on allies` `Debuffs on enemies` `Damage`)
+- Dunlingr (51% `Buffs on allies` `Debuffs on enemies` `Damage`)
 
 **Buffs on allies**
 
@@ -13644,8 +13645,8 @@ Walker provides Crit buff to single targets `low`.
 **Similar Skills**
 
 - Mehira (51% `aoe-damage` `life-drain` `mass-cc`)
+- Eironn (51% `aoe-damage` `battle-start-burst` `mass-cc`)
 - Cyran (41% `aoe-damage` `battle-start-burst`)
-- Sonja (40% `aoe-damage` `life-drain`)
 
 **Damage**
 

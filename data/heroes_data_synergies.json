@@ -654,16 +654,16 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Dunlingr",
-            "score": 0.576,
+            "name": "Perseus",
+            "score": 0.5,
             "matches": [
               "ally-buffer",
               "aoe-damage"
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.5,
+            "name": "Dunlingr",
+            "score": 0.48,
             "matches": [
               "ally-buffer",
               "aoe-damage"
@@ -4162,7 +4162,7 @@
           },
           {
             "name": "Silvina",
-            "score": 0.7718,
+            "score": 0.7639,
             "matches": [
               "Damage",
               "Debuffs on enemies",
@@ -4927,27 +4927,27 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Nerion",
+            "score": 0.576,
+            "matches": [
+              "battle-start-burst",
+              "enemy-debuffer"
+            ]
+          },
+          {
             "name": "Cassadee",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
               "aoe-damage",
               "enemy-debuffer"
             ]
           },
           {
-            "name": "Tasi",
-            "score": 0.48,
+            "name": "Cyran",
+            "score": 0.4,
             "matches": [
               "aoe-damage",
-              "transformation"
-            ]
-          },
-          {
-            "name": "Ulmus",
-            "score": 0.48,
-            "matches": [
-              "aoe-damage",
-              "transformation"
+              "battle-start-burst"
             ]
           }
         ],
@@ -5009,7 +5009,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Nerion",
+            "score": 0.5009,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          }
+        ]
       }
     },
     "Brutus": {
@@ -6870,7 +6879,7 @@
           },
           {
             "name": "Nerion",
-            "score": 1.0,
+            "score": 0.96,
             "matches": [
               "dot-specialist",
               "enemy-debuffer"
@@ -6958,14 +6967,6 @@
           }
         ],
         "overall": [
-          {
-            "name": "Nerion",
-            "score": 0.6171,
-            "matches": [
-              "Similar Skills",
-              "Damage"
-            ]
-          },
           {
             "name": "Shadewing",
             "score": 0.5492,
@@ -7241,15 +7242,15 @@
             ]
           },
           {
-            "name": "Bonnie",
+            "name": "Sonja",
             "score": 0.6,
             "matches": [
-              "aoe-damage",
-              "enemy-debuffer"
+              "ally-buffer",
+              "aoe-damage"
             ]
           },
           {
-            "name": "Sonja",
+            "name": "Parisa",
             "score": 0.6,
             "matches": [
               "ally-buffer",
@@ -9022,6 +9023,15 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Eironn",
+            "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "battle-start-burst",
+              "enemy-grouping"
+            ]
+          },
+          {
             "name": "Atalanta",
             "score": 0.48,
             "matches": [
@@ -9035,14 +9045,6 @@
             "matches": [
               "aoe-damage",
               "battle-start-burst"
-            ]
-          },
-          {
-            "name": "Eironn",
-            "score": 0.4,
-            "matches": [
-              "aoe-damage",
-              "enemy-grouping"
             ]
           }
         ],
@@ -11060,7 +11062,7 @@
         "similar_skills": [
           {
             "name": "Perseus",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "ally-buffer",
               "aoe-damage"
@@ -11068,7 +11070,7 @@
           },
           {
             "name": "Alna",
-            "score": 0.576,
+            "score": 0.48,
             "matches": [
               "ally-buffer",
               "aoe-damage"
@@ -11076,7 +11078,7 @@
           },
           {
             "name": "Himmel",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "ally-buffer",
               "aoe-damage"
@@ -11154,7 +11156,7 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.5419,
+            "score": 0.5373,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -11545,8 +11547,17 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Mehira",
+            "name": "Cyran",
             "score": 0.6,
+            "matches": [
+              "aoe-damage",
+              "battle-start-burst",
+              "enemy-grouping"
+            ]
+          },
+          {
+            "name": "Mehira",
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "enemy-grouping",
@@ -11554,18 +11565,11 @@
             ]
           },
           {
-            "name": "Arden",
-            "score": 0.48,
+            "name": "Walker",
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
-              "mass-cc"
-            ]
-          },
-          {
-            "name": "Tasi",
-            "score": 0.48,
-            "matches": [
-              "aoe-damage",
+              "battle-start-burst",
               "mass-cc"
             ]
           }
@@ -14141,7 +14145,7 @@
           },
           {
             "name": "Marcille",
-            "score": 0.48,
+            "score": 0.4,
             "matches": [
               "aoe-damage",
               "summoner"
@@ -14412,11 +14416,11 @@
             ]
           },
           {
-            "name": "Marcille",
-            "score": 0.4114,
+            "name": "Faramor",
+            "score": 0.4,
             "matches": [
               "aoe-damage",
-              "high-damage-ult"
+              "dot-specialist"
             ]
           }
         ],
@@ -14832,13 +14836,6 @@
             "matches": [
               "Damage",
               "Crowd Control"
-            ]
-          },
-          {
-            "name": "Marcille",
-            "score": 0.5031,
-            "matches": [
-              "Damage"
             ]
           }
         ]
@@ -18737,18 +18734,18 @@
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.5,
-            "matches": [
-              "ally-buffer",
-              "aoe-damage"
-            ]
-          },
-          {
             "name": "Kordan",
             "score": 0.5,
             "matches": [
               "ally-buffer",
+              "self-repositioner"
+            ]
+          },
+          {
+            "name": "Dionel",
+            "score": 0.5,
+            "matches": [
+              "aoe-damage",
               "self-repositioner"
             ]
           }
@@ -19108,14 +19105,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Bonnie",
-            "score": 0.72,
-            "matches": [
-              "aoe-damage",
-              "enemy-debuffer"
-            ]
-          },
-          {
             "name": "Florabelle",
             "score": 0.6667,
             "matches": [
@@ -19129,6 +19118,14 @@
             "matches": [
               "aoe-damage",
               "enemy-debuffer"
+            ]
+          },
+          {
+            "name": "Cecia",
+            "score": 0.6,
+            "matches": [
+              "enemy-debuffer",
+              "summoner"
             ]
           }
         ],
@@ -21778,11 +21775,11 @@
             ]
           },
           {
-            "name": "Silvina",
-            "score": 0.4,
+            "name": "Temesia",
+            "score": 0.3429,
             "matches": [
-              "assassin",
-              "mark-target"
+              "enemy-debuffer",
+              "self-repositioner"
             ]
           }
         ],
@@ -22230,12 +22227,12 @@
             ]
           },
           {
-            "name": "Alna",
-            "score": 0.4286,
+            "name": "Eironn",
+            "score": 0.45,
             "matches": [
-              "ally-buffer",
               "aoe-damage",
-              "invincibility"
+              "battle-start-burst",
+              "mass-cc"
             ]
           }
         ],
@@ -24153,10 +24150,10 @@
             ]
           },
           {
-            "name": "Nerion",
+            "name": "Zorya",
             "score": 0.4,
             "matches": [
-              "enemy-debuffer"
+              "life-drain"
             ]
           }
         ],
@@ -29722,7 +29719,7 @@
         "similar_skills": [
           {
             "name": "Florabelle",
-            "score": 0.48,
+            "score": 0.4,
             "matches": [
               "aoe-damage",
               "summoner"
@@ -29730,7 +29727,7 @@
           },
           {
             "name": "Frieren",
-            "score": 0.4114,
+            "score": 0.36,
             "matches": [
               "aoe-damage",
               "high-damage-ult"
@@ -29738,7 +29735,7 @@
           },
           {
             "name": "Laios",
-            "score": 0.4,
+            "score": 0.3429,
             "matches": [
               "ally-healer",
               "summoner"
@@ -29798,24 +29795,17 @@
         "overall": [
           {
             "name": "Natsu",
-            "score": 0.6272,
+            "score": 0.6199,
             "matches": [
               "Damage"
             ]
           },
           {
             "name": "Galahad",
-            "score": 0.5481,
+            "score": 0.5432,
             "matches": [
               "Damage",
               "Buffs on allies"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 0.504,
-            "matches": [
-              "Damage"
             ]
           }
         ]
@@ -30644,7 +30634,7 @@
         "similar_skills": [
           {
             "name": "Eironn",
-            "score": 0.6,
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "enemy-grouping",
@@ -33374,7 +33364,7 @@
         "similar_skills": [
           {
             "name": "Shadewing",
-            "score": 1.0,
+            "score": 0.96,
             "matches": [
               "dot-specialist",
               "enemy-debuffer"
@@ -33382,16 +33372,17 @@
           },
           {
             "name": "Carolina",
-            "score": 1.0,
+            "score": 0.96,
             "matches": [
               "dot-specialist",
               "enemy-debuffer"
             ]
           },
           {
-            "name": "Kruger",
-            "score": 0.4,
+            "name": "Bonnie",
+            "score": 0.576,
             "matches": [
+              "battle-start-burst",
               "enemy-debuffer"
             ]
           }
@@ -34053,7 +34044,7 @@
             ]
           },
           {
-            "name": "Nerion",
+            "name": "Carolina",
             "score": 0.3333,
             "matches": [
               "dot-specialist"
@@ -40803,7 +40794,7 @@
         "similar_skills": [
           {
             "name": "Nerion",
-            "score": 1.0,
+            "score": 0.96,
             "matches": [
               "dot-specialist",
               "enemy-debuffer"
@@ -40817,10 +40808,10 @@
             ]
           },
           {
-            "name": "Bonnie",
-            "score": 0.36,
+            "name": "Odie",
+            "score": 0.3333,
             "matches": [
-              "enemy-debuffer"
+              "dot-specialist"
             ]
           }
         ],
@@ -42596,14 +42587,6 @@
         "similar_skills": [
           {
             "name": "Sinbad",
-            "score": 0.5,
-            "matches": [
-              "assassin",
-              "mark-target"
-            ]
-          },
-          {
-            "name": "Kafra",
             "score": 0.4,
             "matches": [
               "assassin",
@@ -42611,9 +42594,18 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.3,
+            "name": "Dunlingr",
+            "score": 0.3333,
             "matches": [
+              "battle-start-burst",
+              "disabler"
+            ]
+          },
+          {
+            "name": "Kafra",
+            "score": 0.3333,
+            "matches": [
+              "assassin",
               "mark-target"
             ]
           }
@@ -42688,7 +42680,7 @@
           },
           {
             "name": "Berial",
-            "score": 0.7244,
+            "score": 0.7165,
             "matches": [
               "Damage",
               "Debuffs on enemies",
@@ -42946,7 +42938,7 @@
           },
           {
             "name": "Silvina",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "assassin",
               "mark-target"
@@ -45265,19 +45257,19 @@
             ]
           },
           {
-            "name": "Bonnie",
-            "score": 0.4,
-            "matches": [
-              "aoe-damage",
-              "transformation"
-            ]
-          },
-          {
             "name": "Natsu",
             "score": 0.375,
             "matches": [
               "aoe-damage",
               "fire-attack",
+              "transformation"
+            ]
+          },
+          {
+            "name": "Bonnie",
+            "score": 0.3429,
+            "matches": [
+              "aoe-damage",
               "transformation"
             ]
           }
@@ -45735,11 +45727,11 @@
             ]
           },
           {
-            "name": "Bonnie",
+            "name": "Arden",
             "score": 0.48,
             "matches": [
               "aoe-damage",
-              "transformation"
+              "mass-cc"
             ]
           }
         ],
@@ -47915,11 +47907,11 @@
             ]
           },
           {
-            "name": "Bonnie",
+            "name": "Scarlita",
             "score": 0.48,
             "matches": [
-              "aoe-damage",
-              "transformation"
+              "ally-shielder",
+              "aoe-damage"
             ]
           }
         ],
@@ -48542,7 +48534,7 @@
           },
           {
             "name": "Silvina",
-            "score": 0.5065,
+            "score": 0.5027,
             "matches": [
               "Crowd Control",
               "Debuffs on enemies"
@@ -49491,7 +49483,7 @@
           },
           {
             "name": "Dunlingr",
-            "score": 0.5251,
+            "score": 0.5136,
             "matches": [
               "Buffs on allies",
               "Debuffs on enemies",
@@ -50865,19 +50857,20 @@
             ]
           },
           {
+            "name": "Eironn",
+            "score": 0.5143,
+            "matches": [
+              "aoe-damage",
+              "battle-start-burst",
+              "mass-cc"
+            ]
+          },
+          {
             "name": "Cyran",
             "score": 0.4114,
             "matches": [
               "aoe-damage",
               "battle-start-burst"
-            ]
-          },
-          {
-            "name": "Sonja",
-            "score": 0.4,
-            "matches": [
-              "aoe-damage",
-              "life-drain"
             ]
           }
         ],

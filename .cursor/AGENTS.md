@@ -338,7 +338,13 @@ skill effect.
 - aoe-damage: Deals substantial multi-target or area damage on a regular basis.
 - aoe-healing: Heals multiple allies or wide ally groups, not only single-target sustain.
 - assassin: Built to pick off isolated or backline targets with burst damage.
-- battle-start-burst: Applies strong damage or key effects at or right after battle start.
+- battle-start-burst: Deals damage to one or more units in the first ~2–3s of
+  battle. Primary signal: skill text with "when a battle starts" / "at battle
+  start" combined with damage dealt (e.g. Gerda Skill 1, Nerion Mythic+,
+  Walker grenades). Also qualifies when a skill auto-casts at battle start or
+  with a short initial cooldown so damage reliably lands in the opening seconds
+  (e.g. Atalanta's repeated opener, Marcille's early channeled flash). Not
+  buffs, shields, debuffs, energy, or summons alone without immediate damage.
 - battle-start-ult: Casts ultimate or reaches full energy unusually early in the fight.
 - battlefield-modification: Adds physical obstacles or transforms the map layout; buff or debuff zones alone do not count.
 - cc-immunity: Grants self or allies immunity to crowd control as a defining mechanic.
