@@ -458,6 +458,63 @@ a:hover {
   padding-bottom: 0.35rem;
 }
 
+.col-filter-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.2rem;
+}
+
+.col-filter-row .col-filter {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.col-filter-combine-toggle {
+  display: flex;
+  align-items: stretch;
+  flex: 0 0 auto;
+  gap: 1px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--surface);
+  font: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.col-filter-combine-toggle:hover {
+  border-color: var(--accent);
+}
+
+.col-filter-combine-seg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0.3rem;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.62rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.col-filter-combine-toggle:hover .col-filter-combine-seg {
+  color: var(--accent);
+}
+
+.col-filter-combine-seg.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.col-filter-combine-toggle:hover .col-filter-combine-seg.active {
+  color: #fff;
+}
+
 .th-sort-btn:hover {
   color: var(--accent);
 }
