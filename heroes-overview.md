@@ -1410,11 +1410,8 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Brutus
 
-Brutus provides Lifedrain buff to single targets `average`.
-
 - Shadewing (3.5 / 5)
-- Lily May (1.5 / 5)
-- Silven (1.5 / 5)
+- Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Brutus
 
@@ -1422,12 +1419,6 @@ Brutus provides Lifedrain buff to single targets `average`.
 
 - Lumont (71% `Crowd Control` `Damage`)
 - Hepler (67% `Crowd Control` `Damage`)
-
-**Buffs on allies**
-
-- Dunlingr (100% `Healing`)
-- Kordan (100% `Healing`)
-- Shakir (100% `Healing`)
 
 **Similar Skills**
 
@@ -2027,11 +2018,11 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
 ### Units benefitting most from Cecia
 
-Cecia provides DEF Penetration buff to single targets `low`, Lifedrain buff in an area `low`, and Max HP buff to single targets `high`.
+Cecia provides DEF Penetration buff to single targets `low` and Max HP buff to single targets `high`.
 
 - Carolina (3.3 / 5)
 - Nerion (3.2 / 5)
-- Lily May (2.3 / 5)
+- Lily May (2.1 / 5)
 
 ### Units that can act as a replacement for Cecia
 
@@ -2043,8 +2034,8 @@ Cecia provides DEF Penetration buff to single targets `low`, Lifedrain buff in a
 
 **Buffs on allies**
 
-- Alna (87% `Max HP`)
-- Tilaya (60% `Max HP`)
+- Alna (96% `Max HP`)
+- Tilaya (67% `Max HP`)
 
 **Similar Skills**
 
@@ -2604,8 +2595,8 @@ Daimon provides Lifedrain buff to single targets `low`.
 **Buffs on allies**
 
 - Koko (100% `Shield` `Healing`)
-- Salazer (85% `Healing` `Shield`)
 - Hepler (68% `Shield`)
+- Lucius (68% `Shield`)
 
 **Similar Skills**
 
@@ -2829,9 +2820,6 @@ Dionel also requires units **buffing them**
   - ATK buff (single target, high)
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
   - Grants 2 distinct stat buffs to Dionel
-- **Shakir**
-  - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
-  - Grants 3 distinct stat buffs to Dionel
 - **Lyca**
   - ATK SPD buff (all units, low) `signature fuel`
   - Energy recovery (120 at battle start, all units) `signature fuel`
@@ -2840,6 +2828,9 @@ Dionel also requires units **buffing them**
   - ATK buff (single target, low)
   - ATK SPD via Haste buff (single target, average) `signature fuel`
   - Grants 4 distinct stat buffs to Dionel
+- **Shakir**
+  - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
+  - Grants 2 distinct stat buffs to Dionel
 
 ### Units benefitting most from Dionel
 
@@ -4551,7 +4542,7 @@ Common buffers are **Twins**, **Rowan**, or **Galahad**.
 
 ### Units benefitting most from Harak
 
-Harak provides Crit buff to single targets `low` and Lifedrain buff (Legendary+) to single targets `low`.
+Harak provides Crit buff to single targets `low`.
 
 - Athalia (5.0 / 5)
 - Nazrik (5.0 / 5)
@@ -4566,8 +4557,8 @@ Harak provides Crit buff to single targets `low` and Lifedrain buff (Legendary+)
 
 **Buffs on allies**
 
-- Rhys (92% `Crit`)
-- Walker (61% `Crit`)
+- Rhys (100% `Crit`)
+- Walker (80% `Crit`)
 
 **Similar Skills**
 
@@ -5864,7 +5855,6 @@ Koko provides Damage taken to all units `low`, Direct healing to all units `high
 
 **Buffs on allies**
 
-- Shakir (72% `Damage taken reduction` `Healing`)
 - Hugin (52% `Shield` `Damage taken reduction`)
 - Soren (52% `Shield` `Damage taken reduction`)
 
@@ -5993,7 +5983,6 @@ Kordan provides ATK buff to multiple targets `low`, Lifedrain buff to multiple t
 **Buffs on allies**
 
 - Dunlingr (66% `Healing` `ATK`)
-- Salazer (55% `Healing`)
 
 **Similar Skills**
 
@@ -9353,13 +9342,13 @@ Perseus also requires units **buffing them**
   - ATK buff (single target, high)
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
   - Grants 2 distinct stat buffs to Perseus
-- **Shakir**
-  - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
-  - Grants 3 distinct stat buffs to Perseus
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD via Haste buff (single target, average) `signature fuel`
   - Grants 4 distinct stat buffs to Perseus
+- **Koko**
+  - Shield (all units, average)
+  - Grants 5 distinct stat buffs to Perseus
 
 ### Units benefitting most from Perseus
 
@@ -10349,8 +10338,6 @@ Common buffers are **Twins**, **Contess**, or **Galahad**.
 
 ### Units benefitting most from Salazer
 
-Salazer provides Lifedrain buff to single targets `average`.
-
 - Nerion (2.5 / 5)
 - Carolina (2.3 / 5)
 - Shadewing (2.3 / 5)
@@ -10359,15 +10346,15 @@ Salazer provides Lifedrain buff to single targets `average`.
 
 **Best overall replacement**
 
-- Cecia (81% `Damage` `Crowd Control` `Buffs on allies`)
-- Kordan (72% `Damage` `Crowd Control` `Buffs on allies`)
-- Nara (62% `Damage`)
+- Cecia (75% `Damage` `Crowd Control`)
+- Pang (66% `Damage` `Buffs on allies`)
+- Kordan (64% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
-- Dunlingr (83% `Healing`)
-- Kordan (83% `Healing`)
-- Cecia (80% `Healing`)
+- Gunnar (100% `Shield`)
+- Contess (100% `Shield`)
+- Galahad (100% `Shield`)
 
 **Similar Skills**
 
@@ -10929,7 +10916,7 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
 
 ### Units benefitting most from Shakir
 
-Shakir provides Damage taken to multiple targets `average`, Haste buff to multiple targets `average`, and Lifedrain buff to single targets `low`.
+Shakir provides Damage taken to multiple targets `average` and Haste buff to multiple targets `average`.
 
 **8** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -10948,9 +10935,9 @@ These are the **6** strongest pairings:
 
 **Buffs on allies**
 
-- Zandrok (58% `Haste` `Healing`)
-- Tasi (50% `Haste`)
-- Lorsan (50% `Haste`)
+- Tasi (60% `Haste`)
+- Lorsan (60% `Haste`)
+- Hugin (56% `Haste` `Damage taken reduction`)
 
 **Similar Skills**
 
@@ -12070,15 +12057,15 @@ Common buffers are **Contess**, **Twins**, or **Mikola**.
 - **Alna**
   - ATK buff (single target, low)
   - Max HP buff (single target, high)
-- **Cecia**
-  - Max HP buff (single target, high)
-  - Lifedrain buff (area, low)
 - **Pandora**
   - Max HP buff (single target, average)
   - Direct healing (single target, average)
 - **Dunlingr**
   - ATK buff (single target, low)
   - Lifedrain buff (all units, average)
+- **Fay**
+  - ATK buff (multiple targets, low)
+  - Direct healing (arc, average)
 
 ### Units benefitting most from Talene
 
@@ -12568,7 +12555,7 @@ Common buffers are **Twins**, **Ravion**, or **Rowan**.
 
 ### Units benefitting most from Thoran
 
-Thoran provides Lifedrain buff to single targets `low` and Energy recovery (Legendary+) to single targets `average`.
+Thoran provides Energy recovery (Legendary+) to single targets `average`.
 
 - Contess (3.7 / 5)
 - Pandora (3.7 / 5)
@@ -12585,9 +12572,9 @@ Thoran provides Lifedrain buff to single targets `low` and Energy recovery (Lege
 
 **Buffs on allies**
 
-- Twins (80% `Energy`)
-- Ravion (80% `Energy`)
-- Smokey & Meerky (80% `Energy`)
+- Twins (100% `Energy`)
+- Ravion (100% `Energy`)
+- Smokey & Meerky (100% `Energy`)
 
 **Similar Skills**
 
@@ -13337,7 +13324,7 @@ Common buffers are **Twins**, **Galahad**, or **Contess**.
 
 ### Units benefitting most from Valka
 
-Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10) to single targets `low`.
+Valka provides ATK SPD buff to multiple targets `low`.
 
 - Carolina (2.3 / 5)
 - Nerion (2.3 / 5)
@@ -13353,9 +13340,9 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 **Buffs on allies**
 
-- Dunlingr (100% `ATK SPD` `Healing`)
-- Lyca (80% `ATK SPD`)
-- Fay (66% `ATK SPD`)
+- Dunlingr (100% `ATK SPD`)
+- Lyca (100% `ATK SPD`)
+- Fay (100% `ATK SPD`)
 
 **Similar Skills**
 
@@ -13845,9 +13832,9 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 **Buffs on allies**
 
-- Shakir (96% `Haste` `Healing`)
 - Twins (77% `Haste` `Max HP`)
-- Cecia (55% `Max HP` `Healing`)
+- Shakir (64% `Haste`)
+- Tasi (53% `Haste`)
 
 **Similar Skills**
 

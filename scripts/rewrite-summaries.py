@@ -186,6 +186,14 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
         return True
     if re.search(r"\bgrants? them a chi barrier\b", t):
         return True
+    if re.search(r"\ballied units?\b.{0,80}\bgain(?:s|ing)?\b", t):
+        return True
+    if re.search(r"\bbonded ally\b.{0,60}\bgain(?:s|ing)?\b", t):
+        return True
+    if re.search(r"\ban ally with\b", t) and re.search(
+        r"\b(?:grant|granting|shield|life drain)\b", t
+    ):
+        return True
     return False
 
 
@@ -308,26 +316,49 @@ def _healing_targets_self(clause: str) -> bool:
     return False
 
 
+_LD_AMOUNT = r"\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?(?:%|\s*)?"
+
+
 def _lifedrain_buff_is_self_only(clause: str) -> bool:
     """True when life drain is a self stat grant, not an ally buff."""
     t = clause.lower()
     if _has_explicit_ally_buff(t, "Lifedrain buff"):
         return False
-    if re.search(r"\ball allies\b.{0,60}life drain\b", t):
+    if re.search(r"\ball allies\b.{0,80}life drain\b", t):
         return False
     if re.search(r"\bprovide.{0,40}life drain\b", t) and re.search(
         r"\ball allies\b", t
     ):
         return False
-    if re.search(r"\bgains? \d+ life drain\b", t):
-        return True
-    if re.search(r"\bgrants? \w+ \d+ life drain\b", t):
-        return True
-    if re.search(r"\bgranting \d+ life drain to\b", t):
-        return True
-    if re.search(r"\bincreas(?:e|es|ing) (?:her |his )?life drain\b", t):
-        return True
-    return False
+    if re.search(
+        r"\b(?:allied units?|bonded ally|allies)\b.{0,80}\b(?:gain(?:s|ing)?|receive(?:s|ing)?)\b",
+        t,
+    ) and re.search(r"\blife drain\b", t):
+        return False
+    if re.search(r"\ban ally with\b", t) and re.search(
+        r"\b(?:grant|granting).{0,80}life drain\b", t
+    ):
+        return False
+    self_patterns = (
+        rf"\bgain(?:s|ing)? (?:an extra )?{_LD_AMOUNT}\s*life drain\b",
+        rf"\bgaining {_LD_AMOUNT}\s*life drain\b",
+        rf"\bgrants? {_LD_AMOUNT}\s*life drain\b",
+        rf"\bgratns? \w+ {_LD_AMOUNT}\s*life drain\b",
+        rf"\bgrants? \w+ {_LD_AMOUNT}\s*life drain\b",
+        rf"\bgranting {_LD_AMOUNT}\s*life drain to\b",
+        rf"\bincreas(?:e|es|ing)(?: (?:her |his |their |own))?\s*life drain(?: by)?\b",
+        r"\bincreases? own\b.{0,80}life drain by\b",
+        r"\bgrants? it \d+(?:\.\d+)?\s*life drain\b",
+        r"\b(?:enhanced )?normal attacks gain \d+\s*life drain\b",
+        rf"\bdamage dealt by this skill grants? \w+ {_LD_AMOUNT}\s*life drain\b",
+        r"\bimmunity grants \d+\s*life drain\b",
+        rf"\bhe also gains {_LD_AMOUNT}\s*life drain\b",
+        rf"\bin wolf form.{0,80}gains? {_LD_AMOUNT}\s*life drain\b",
+        rf"\bincreases? (?:passive )?life drain(?: bonus)? to {_LD_AMOUNT}",
+        rf"\bincreases? life drain by {_LD_AMOUNT}",
+        r"\b(?:her |his )?life drain is increased by\b",
+    )
+    return any(re.search(pat, t) for pat in self_patterns)
 
 
 def _invincibility_targets_self(clause: str) -> bool:

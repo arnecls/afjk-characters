@@ -6199,9 +6199,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -6226,7 +6226,7 @@
             }
           ],
           "skill_card_tags": [
-            "Lifedrain buff",
+            "Lifedrain buff — Self",
             "Unaffected — Self"
           ]
         },
@@ -6263,17 +6263,6 @@
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Lifedrain buff",
-              "label": "buff_stat"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -6369,9 +6358,9 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -6386,7 +6375,7 @@
           "skill_card_tags": [
             "Max HP-based damage",
             "Physical",
-            "Lifedrain buff"
+            "Lifedrain buff — Self"
           ]
         },
         "Enhance Force": {
@@ -8533,12 +8522,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
               "type": "buff",
               "name": "Lifedrain buff",
               "label": "buff_stat",
@@ -8574,7 +8562,7 @@
           "skill_card_tags": [
             "Physical",
             "ATK SPD buff — Self",
-            "Lifedrain buff"
+            "Lifedrain buff — Self"
           ]
         },
         "Agonizing Puncture": {
@@ -19743,17 +19731,6 @@
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Lifedrain buff",
-              "label": "buff_stat"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -44360,9 +44337,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -44379,7 +44356,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
-            "Lifedrain buff"
+            "Lifedrain buff — Self"
           ]
         },
         "Enraptured Whip": {
@@ -47030,9 +47007,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -47057,7 +47034,7 @@
             }
           ],
           "skill_card_tags": [
-            "Lifedrain buff",
+            "Lifedrain buff — Self",
             "Unaffected — Self"
           ]
         },
@@ -53808,9 +53785,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -53844,7 +53821,7 @@
           "initial_energy": 200.0,
           "skill_card_tags": [
             "Physical",
-            "Lifedrain buff",
+            "Lifedrain buff — Self",
             "Interrupt",
             "Unaffected — Self"
           ]
@@ -56588,9 +56565,9 @@
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -56612,7 +56589,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Energy recovery — Self",
-            "Lifedrain buff",
+            "Lifedrain buff — Self",
             "Unaffected — Self"
           ]
         },

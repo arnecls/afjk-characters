@@ -229,6 +229,41 @@ class SummaryParsingTests(unittest.TestCase):
         ]
         self.assertEqual(ally_life, [])
 
+    def test_self_lifedrain_buffs_target_self_not_allies(self):
+        for name in (
+            "Brutus",
+            "Salazer",
+            "Shakir",
+            "Thoran",
+            "Valka",
+            "Satrana",
+            "Seth",
+            "Harak",
+            "Igor",
+            "Kruger",
+            "Mehira",
+            "Sylphira",
+            "Zorya",
+            "Walker",
+        ):
+            hero = _hero_by_short_name(name)
+            ally_life = [
+                e
+                for e in _effects(hero, "buff", "Lifedrain buff")
+                if e.targeting != "Self"
+            ]
+            self.assertEqual(ally_life, [], name)
+
+    def test_ally_lifedrain_buffs_stay_non_self(self):
+        for name in ("Daimon", "Kordan", "Koko", "Dunlingr", "Ravion"):
+            hero = _hero_by_short_name(name)
+            ally_life = [
+                e
+                for e in _effects(hero, "buff", "Lifedrain buff")
+                if e.targeting == "Self"
+            ]
+            self.assertEqual(ally_life, [], name)
+
     def test_solise_ally_healing_targeting(self):
         hero = _hero_by_short_name("Solise")
         healing = next(e for e in _effects(hero, "buff", DIRECT_HEALING_LABEL))
