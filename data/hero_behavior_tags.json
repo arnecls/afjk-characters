@@ -1,18 +1,16 @@
 {
   "Aliceth": [
     "ally-buffer",
+    "cheat-death",
     "execute",
     "hp-scaling",
-    "invincibility",
     "mark-target"
   ],
   "Alna": [
     "ally-buffer",
     "aoe-damage",
     "cc-immunity",
-    "dot-specialist",
-    "invincibility",
-    "summoner"
+    "invincibility"
   ],
   "Alsa": [
     "battlefield-modification",
@@ -41,7 +39,6 @@
     "transformation"
   ],
   "Aurora": [
-    "ally-buffer",
     "invincibility",
     "mark-target",
     "summoner"
@@ -58,9 +55,7 @@
   ],
   "Bonnie": [
     "aoe-damage",
-    "battle-start-burst",
     "enemy-debuffer",
-    "mass-cc",
     "transformation"
   ],
   "Brutus": [
@@ -71,20 +66,16 @@
     "taunt"
   ],
   "Bryon": [
-    "battle-start-burst",
     "battle-start-ult",
-    "summoner",
-    "untargetable"
+    "summoner"
   ],
   "Callan": [
     "ally-shielder",
-    "battle-start-burst",
     "cc-immunity"
   ],
   "Carolina": [
     "dot-specialist",
-    "enemy-debuffer",
-    "mass-cc"
+    "enemy-debuffer"
   ],
   "Cassadee": [
     "ally-buffer",
@@ -120,7 +111,6 @@
   "Daimon": [
     "ally-shielder",
     "hp-scaling",
-    "life-drain",
     "summoner"
   ],
   "Damian": [
@@ -134,8 +124,9 @@
     "untargetable"
   ],
   "Dunlingr": [
-    "battle-start-burst",
-    "summoner"
+    "ally-buffer",
+    "aoe-damage",
+    "disabler"
   ],
   "Eironn": [
     "aoe-damage",
@@ -144,7 +135,7 @@
     "mass-cc"
   ],
   "Evie": [
-    "invincibility",
+    "ally-healer",
     "self-repositioner",
     "stealth"
   ],
@@ -160,7 +151,6 @@
   ],
   "Florabelle": [
     "aoe-damage",
-    "battle-start-burst",
     "summoner"
   ],
   "Frieren": [
@@ -217,9 +207,7 @@
   ],
   "Himmel": [
     "ally-buffer",
-    "ally-shielder",
     "aoe-damage",
-    "battle-start-burst",
     "self-repositioner"
   ],
   "Hodgkin": [
@@ -234,8 +222,8 @@
   ],
   "Igor": [
     "aoe-damage",
-    "battle-start-burst",
-    "invincibility",
+    "cheat-death",
+    "life-drain",
     "self-repositioner",
     "untargetable"
   ],
@@ -245,8 +233,7 @@
   ],
   "Isabella": [
     "ally-buffer",
-    "ally-healer",
-    "life-drain"
+    "ally-healer"
   ],
   "Kazim": [
     "ally-buffer",
@@ -263,10 +250,11 @@
     "self-repositioner"
   ],
   "Koko": [
-    "ally-shielder",
-    "life-drain"
+    "ally-buffer",
+    "ally-healer"
   ],
   "Kordan": [
+    "ally-buffer",
     "hp-scaling",
     "self-repositioner"
   ],
@@ -279,7 +267,6 @@
     "life-drain"
   ],
   "Kulu": [
-    "battle-start-burst",
     "battlefield-modification",
     "self-repositioner"
   ],
@@ -307,8 +294,7 @@
   ],
   "Lucca": [
     "ally-shielder",
-    "disabler",
-    "mass-cc"
+    "disabler"
   ],
   "Lucius": [
     "ally-healer",
@@ -330,7 +316,6 @@
   ],
   "Lyca": [
     "ally-buffer",
-    "battle-start-burst",
     "energy-provider"
   ],
   "Marcille": [
@@ -342,7 +327,6 @@
   ],
   "Marilee": [
     "hp-scaling",
-    "mass-cc",
     "self-repositioner"
   ],
   "Mehira": [
@@ -379,7 +363,6 @@
     "mark-target"
   ],
   "Nerion": [
-    "battle-start-burst",
     "dot-specialist",
     "enemy-debuffer"
   ],
@@ -407,9 +390,11 @@
     "mark-target"
   ],
   "Perseus": [
+    "ally-buffer",
     "aoe-damage"
   ],
   "Phraesto": [
+    "ally-buffer",
     "ally-shielder",
     "aoe-damage",
     "clone",
@@ -417,8 +402,8 @@
     "summoner"
   ],
   "Pippa": [
-    "hp-scaling",
-    "self-repositioner"
+    "enemy-grouping",
+    "hp-scaling"
   ],
   "Ravion": [
     "ally-shielder",
@@ -426,8 +411,8 @@
     "self-repositioner"
   ],
   "Reinier": [
-    "battle-start-burst",
-    "disabler"
+    "disabler",
+    "enemy-grouping"
   ],
   "Rhys": [
     "aoe-damage",
@@ -451,7 +436,9 @@
   "Satrana": [
     "dot-specialist",
     "fire-attack",
-    "hp-scaling"
+    "hp-scaling",
+    "invincibility",
+    "life-drain"
   ],
   "Scarlita": [
     "ally-shielder",
@@ -502,9 +489,7 @@
   "Sonja": [
     "ally-buffer",
     "aoe-damage",
-    "battle-start-burst",
-    "life-drain",
-    "mass-cc"
+    "life-drain"
   ],
   "Soren": [
     "counterattack",
@@ -559,7 +544,6 @@
     "ally-shielder",
     "aoe-damage",
     "cheat-death",
-    "mass-cc",
     "transformation"
   ],
   "Vala": [
@@ -599,7 +583,6 @@
   ],
   "Zandrok": [
     "aoe-damage",
-    "battle-start-burst",
     "battlefield-modification",
     "hp-scaling"
   ],

@@ -18,7 +18,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 - **Signature skill**: Radiant Rain (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
-- **Behavior tags**: `ally-buffer` `execute` `hp-scaling` `invincibility` `mark-target`
+- **Behavior tags**: `ally-buffer` `cheat-death` `execute` `hp-scaling` `mark-target`
 - **Ally composition**: grants Brightfeather to nearest ally in her row
 - **Damage types**: Physical `high`, HP loss `low`, Max HP-based damage `high`
 
@@ -92,9 +92,9 @@ Aliceth provides Ally empower buff to single targets `high`, Attack range buff t
 
 **Similar Skills**
 
-- Aurora (60% `ally-buffer` `invincibility` `mark-target`)
 - Silven (48% `hp-scaling` `mark-target`)
 - Nazrik (48% `hp-scaling` `mark-target`)
+- Faramor (34% `ally-buffer` `hp-scaling`)
 
 **Damage**
 
@@ -145,7 +145,7 @@ Aliceth provides Ally empower buff to single targets `high`, Attack range buff t
 
 - **Signature skill**: Shared Resolve (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `cc-immunity` `dot-specialist` `invincibility` `summoner`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `cc-immunity` `invincibility`
 - **Ally composition**: place ally in same row at battle prep (Winter Warrior buffs)
 - **Damage types**: Physical `high`, DoT `high`, Max HP-based damage `high`
 
@@ -212,9 +212,9 @@ Alna provides Ally empower buff to single targets `high`, Max HP buff to single 
 
 **Similar Skills**
 
-- Aurora (51% `ally-buffer` `invincibility` `summoner`)
-- Faramor (42% `ally-buffer` `aoe-damage` `dot-specialist`)
-- Laios (34% `ally-buffer` `summoner`)
+- Dunlingr (57% `ally-buffer` `aoe-damage`)
+- Perseus (50% `ally-buffer` `aoe-damage`)
+- Himmel (40% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -339,8 +339,8 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 **Similar Skills**
 
+- Kulu (66% `battlefield-modification` `self-repositioner`)
 - Athalia (60% `self-repositioner` `transformation`)
-- Kulu (50% `battlefield-modification` `self-repositioner`)
 - Tasi (40% `self-repositioner` `transformation`)
 
 **Damage**
@@ -460,7 +460,7 @@ Antandra provides DEF buff (Supreme+) to single targets `average`.
 **Best overall replacement**
 
 - Lumont (100% `Buffs on allies` `Damage` `Debuffs on enemies`)
-- Lucca (84% `Buffs on allies` `Crowd Control` `Damage`)
+- Lucca (80% `Buffs on allies` `Crowd Control` `Damage`)
 - Hepler (64% `Crowd Control` `Damage`)
 
 **Buffs on allies**
@@ -471,9 +471,9 @@ Antandra provides DEF buff (Supreme+) to single targets `average`.
 
 **Similar Skills**
 
-- Ulmus (50% `ally-shielder` `aoe-damage` `mass-cc`)
 - Galahad (48% `ally-shielder` `aoe-damage`)
-- Lucca (48% `ally-shielder` `mass-cc`)
+- Brutus (41% `aoe-damage` `taunt`)
+- Scarlita (40% `ally-shielder` `aoe-damage`)
 
 **Damage**
 
@@ -709,7 +709,7 @@ Atalanta provides Haste buff (Legendary+) to multiple targets `high` — conditi
 
 **Best overall replacement**
 
-- Perseus (83% `Damage` `Crowd Control`)
+- Perseus (80% `Damage` `Crowd Control`)
 - Gwyneth (67% `Damage`)
 - Kafra (61% `Damage` `Debuffs on enemies`)
 
@@ -721,9 +721,9 @@ Atalanta provides Haste buff (Legendary+) to multiple targets `high` — conditi
 
 **Similar Skills**
 
-- Himmel (60% `aoe-damage` `battle-start-burst` `self-repositioner`)
-- Florabelle (60% `aoe-damage` `battle-start-burst`)
 - Dionel (60% `aoe-damage` `self-repositioner`)
+- Rhys (60% `aoe-damage` `self-repositioner`)
+- Himmel (50% `aoe-damage` `self-repositioner`)
 
 **Damage**
 
@@ -843,8 +843,8 @@ Common buffers are **Solise**, **Twins**, or **Smokey & Meerky**.
 **Similar Skills**
 
 - Baelran (80% `hp-scaling` `transformation`)
-- Pippa (80% `hp-scaling` `self-repositioner`)
-- Kordan (66% `hp-scaling` `self-repositioner`)
+- Marilee (80% `hp-scaling` `self-repositioner`)
+- Lily May (60% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -885,7 +885,7 @@ Common buffers are **Solise**, **Twins**, or **Smokey & Meerky**.
 
 - **Signature skill**: Starlit Slumber (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-buffer` `invincibility` `mark-target` `summoner`
+- **Behavior tags**: `invincibility` `mark-target` `summoner`
 - **Damage types**: Magic `high`, Max HP-based damage `high`
 
 #### Play overview
@@ -954,9 +954,9 @@ Aurora provides Haste buff to summons `high` and Summon damage buff (Mythic+) to
 
 **Similar Skills**
 
-- Aliceth (60% `ally-buffer` `invincibility` `mark-target`)
-- Alna (51% `ally-buffer` `invincibility` `summoner`)
-- Damian (48% `ally-buffer` `summoner`)
+- Silven (25% `mark-target`)
+- Zanie (25% `summoner`)
+- Florabelle (25% `summoner`)
 
 **Damage**
 
@@ -1080,7 +1080,7 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 
 - Athalia (80% `hp-scaling` `transformation`)
 - Silven (33% `hp-scaling`)
-- Kordan (33% `hp-scaling`)
+- Lily May (33% `hp-scaling` `transformation`)
 
 **Damage**
 
@@ -1255,7 +1255,7 @@ Common buffers are **Solise**, **Rowan**, or **Smokey & Meerky**.
 
 - **Signature skill**: Decay's Reach (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `aoe-damage` `battle-start-burst` `enemy-debuffer` `mass-cc` `transformation`
+- **Behavior tags**: `aoe-damage` `enemy-debuffer` `transformation`
 - **Damage types**: Magic `average`
 
 #### Play overview
@@ -1326,9 +1326,9 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 **Similar Skills**
 
-- Tasi (60% `aoe-damage` `mass-cc` `transformation`)
-- Ulmus (51% `aoe-damage` `mass-cc` `transformation`)
-- Temesia (51% `aoe-damage` `enemy-debuffer` `mass-cc`)
+- Cassadee (60% `aoe-damage` `enemy-debuffer`)
+- Tasi (48% `aoe-damage` `transformation`)
+- Ulmus (48% `aoe-damage` `transformation`)
 
 **Damage**
 
@@ -1444,9 +1444,9 @@ Common buffers are **Koko**.
 
 **Similar Skills**
 
+- Igor (42% `aoe-damage` `cheat-death` `life-drain`)
 - Antandra (41% `aoe-damage` `taunt`)
 - Thoran (40% `cheat-death` `life-drain`)
-- Saida (33% `cheat-death` `life-drain`)
 
 **Damage**
 
@@ -1492,7 +1492,7 @@ Common buffers are **Koko**.
 
 - **Signature skill**: Shadow Flash (Skill 2)
 - **Movement**: stationary (summon moves)
-- **Behavior tags**: `battle-start-burst` `battle-start-ult` `summoner` `untargetable`
+- **Behavior tags**: `battle-start-ult` `summoner`
 - **Damage types**: Magic `high`, DoT `average`
 
 #### Play overview
@@ -1560,12 +1560,13 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Solise**.
 **Best overall replacement**
 
 - Natsu (66% `Damage` `Crowd Control` `Debuffs on enemies`)
+- Damian (50% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
-- Florabelle (57% `battle-start-burst` `summoner`)
-- Dunlingr (50% `battle-start-burst` `summoner`)
-- Igor (28% `battle-start-burst` `untargetable`)
+- Florabelle (48% `summoner`)
+- Zanie (33% `summoner`)
+- Damian (30% `summoner`)
 
 **Damage**
 
@@ -1614,7 +1615,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Solise**.
 
 - **Signature skill**: Restless Guardian (ultimate)
 - **Movement**: moving (inactive while ultimate is running)
-- **Behavior tags**: `ally-shielder` `battle-start-burst` `cc-immunity`
+- **Behavior tags**: `ally-shielder` `cc-immunity`
 - **Damage types**: Magic `high`
 
 #### Play overview
@@ -1681,9 +1682,9 @@ Common buffers are **Koko**, **Solise**, or **Smokey & Meerky**.
 
 **Similar Skills**
 
-- Gerda (34% `ally-shielder` `battle-start-burst`)
-- Himmel (33% `ally-shielder` `battle-start-burst`)
-- Dunlingr (30% `battle-start-burst`)
+- Lucca (40% `ally-shielder`)
+- Daimon (36% `ally-shielder`)
+- Pang (33% `ally-shielder`)
 
 **Damage**
 
@@ -1722,7 +1723,7 @@ Common buffers are **Koko**, **Solise**, or **Smokey & Meerky**.
 
 - **Signature skill**: Frozen Grave (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Behavior tags**: `dot-specialist` `enemy-debuffer` `mass-cc`
+- **Behavior tags**: `dot-specialist` `enemy-debuffer`
 - **Damage types**: Magic `high`
 
 #### Play overview
@@ -1788,13 +1789,15 @@ Carolina also requires units **applying crowd control** to enemies
 
 **Best overall replacement**
 
-- Eironn (57% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Nerion (61% `Similar Skills` `Damage`)
+- Shadewing (54% `Similar Skills`)
+- Eironn (51% `Damage` `Debuffs on enemies` `Crowd Control`)
 
 **Similar Skills**
 
-- Shadewing (96% `dot-specialist` `enemy-debuffer`)
-- Nerion (72% `dot-specialist` `enemy-debuffer`)
-- Cecia (60% `enemy-debuffer` `mass-cc`)
+- Shadewing (100% `dot-specialist` `enemy-debuffer`)
+- Nerion (100% `dot-specialist` `enemy-debuffer`)
+- Kruger (40% `enemy-debuffer`)
 
 **Damage**
 
@@ -1914,9 +1917,9 @@ Cassadee provides Tidal Strength buff to all units `high`.
 
 **Similar Skills**
 
-- Parisa (60% `ally-buffer` `aoe-damage`)
-- Hodgkin (60% `aoe-damage` `enemy-debuffer`)
-- Lucius (48% `aoe-damage` `enemy-debuffer`)
+- Perseus (80% `ally-buffer` `aoe-damage`)
+- Bonnie (60% `aoe-damage` `enemy-debuffer`)
+- Sonja (60% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -2036,7 +2039,7 @@ Cecia provides DEF Penetration buff to single targets `low`, Lifedrain buff in a
 **Best overall replacement**
 
 - Gwyneth (67% `Damage` `Debuffs on enemies`)
-- Alna (60% `Damage` `Crowd Control` `Buffs on allies`)
+- Alna (58% `Damage` `Crowd Control` `Buffs on allies`)
 - Faramor (52% `Damage`)
 
 **Buffs on allies**
@@ -2046,9 +2049,9 @@ Cecia provides DEF Penetration buff to single targets `low`, Lifedrain buff in a
 
 **Similar Skills**
 
-- Carolina (60% `enemy-debuffer` `mass-cc`)
 - Hodgkin (60% `enemy-debuffer` `summoner`)
 - Pandora (50% `enemy-debuffer` `mass-cc`)
+- Temesia (33% `enemy-debuffer` `mass-cc`)
 
 **Damage**
 
@@ -2137,9 +2140,9 @@ rare chance for massive single normal attack damage
 
 **Similar Skills**
 
-- Dunlingr (40% `summoner`)
+- Marilee (40% `self-repositioner`)
 - Zanie (40% `summoner`)
-- Kordan (33% `self-repositioner`)
+- Bryon (33% `summoner`)
 
 **Damage**
 
@@ -2360,9 +2363,9 @@ Common buffers are **Twins**, **Ravion**, or **Rowan**.
 
 **Similar Skills**
 
+- Alna (40% `cc-immunity` `invincibility`)
 - Lily May (34% `cc-immunity` `invincibility`)
-- Alna (28% `cc-immunity` `invincibility`)
-- Kulu (24% `battlefield-modification`)
+- Kulu (30% `battlefield-modification`)
 
 **Damage**
 
@@ -2471,7 +2474,7 @@ Common buffers are **Twins**, **Ravion**, or **Mikola**.
 
 - Atalanta (48% `aoe-damage` `battle-start-burst`)
 - Walker (41% `aoe-damage` `battle-start-burst`)
-- Florabelle (40% `aoe-damage` `battle-start-burst`)
+- Eironn (40% `aoe-damage` `enemy-grouping`)
 
 **Damage**
 
@@ -2521,7 +2524,7 @@ Common buffers are **Twins**, **Ravion**, or **Mikola**.
 
 - **Signature skill**: Buddy Barrier (Skill 2)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-shielder` `hp-scaling` `life-drain` `summoner`
+- **Behavior tags**: `ally-shielder` `hp-scaling` `summoner`
 - **Ally composition**: place ally directly behind at battle prep (shield share, Life Drain, and ATK bond)
 - **Damage types**: Magic `low`, Max HP-based damage `high`
 
@@ -2600,9 +2603,9 @@ Daimon provides Lifedrain buff to single targets `low` and Shield to multiple ta
 
 **Similar Skills**
 
-- Shemira (72% `hp-scaling` `life-drain` `summoner`)
-- Zorya (60% `hp-scaling` `life-drain`)
-- Koko (50% `ally-shielder` `life-drain`)
+- Korin (66% `ally-shielder` `hp-scaling`)
+- Scarlita (50% `ally-shielder` `hp-scaling`)
+- Shemira (48% `hp-scaling` `summoner`)
 
 **Damage**
 
@@ -2708,8 +2711,8 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Mikola**.
 **Similar Skills**
 
 - Laios (100% `ally-buffer` `ally-healer` `summoner`)
-- Isabella (60% `ally-buffer` `ally-healer`)
-- Twins (48% `ally-buffer` `ally-healer`)
+- Koko (80% `ally-buffer` `ally-healer`)
+- Isabella (80% `ally-buffer` `ally-healer`)
 
 **Damage**
 
@@ -2883,7 +2886,7 @@ Dionel provides ATK buff to single targets `average`.
 
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: moving (melee class)
-- **Behavior tags**: `battle-start-burst` `summoner`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `disabler`
 - **Damage types**: Magic `average`, DoT `average`, HP loss `low`, Max HP-based damage `average`
 
 #### Play overview
@@ -2965,13 +2968,13 @@ These are the **10** strongest pairings:
 
 **Best overall replacement**
 
-- Sylphira (50% `Crowd Control` `Damage`)
+- Sylphira (54% `Crowd Control` `Damage`)
 
 **Similar Skills**
 
-- Florabelle (66% `battle-start-burst` `summoner`)
-- Bryon (50% `battle-start-burst` `summoner`)
-- Zanie (33% `summoner`)
+- Perseus (66% `ally-buffer` `aoe-damage`)
+- Alna (57% `ally-buffer` `aoe-damage`)
+- Himmel (50% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -3133,7 +3136,7 @@ Eironn provides Dodge chance buff to single targets `high` and DEF buff (Legenda
 
 - **Signature skill**: Intel Chase (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `invincibility` `self-repositioner` `stealth`
+- **Behavior tags**: `ally-healer` `self-repositioner` `stealth`
 - **Ally composition**: rearmost ally starts with healing quill; tracks highest damage dealer
 - **Damage types**: Magic `average`
 
@@ -3206,9 +3209,9 @@ Evie provides ATK buff to multiple targets `high` and Direct healing to single t
 
 **Similar Skills**
 
-- Vala (34% `self-repositioner` `stealth`)
-- Igor (33% `invincibility` `self-repositioner`)
-- Lily May (28% `invincibility` `self-repositioner`)
+- Contess (48% `ally-healer` `stealth`)
+- Rowan (36% `ally-healer`)
+- Fay (36% `ally-healer`)
 
 **Damage**
 
@@ -3336,9 +3339,9 @@ Faramor also requires units **buffing them**
 
 **Similar Skills**
 
+- Perseus (60% `ally-buffer` `aoe-damage`)
 - Lorsan (60% `aoe-damage` `dot-specialist`)
 - Arden (57% `aoe-damage` `dot-specialist`)
-- Parisa (48% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -3455,9 +3458,9 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 
 **Best overall replacement**
 
+- Evie (57% `Healing` `Debuffs on enemies`)
 - Smokey & Meerky (56% `Healing` `Similar Skills`)
 - Ludovic (55% `Healing` `Similar Skills`)
-- Hewynn (52% `Healing` `Similar Skills`)
 
 **Buffs on allies**
 
@@ -3508,7 +3511,7 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 
 - **Signature skill**: Pounding Blow (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `aoe-damage` `battle-start-burst` `summoner`
+- **Behavior tags**: `aoe-damage` `summoner`
 - **Damage types**: Physical `high`, Max HP-based damage `low`
 
 #### Play overview
@@ -3583,13 +3586,13 @@ Florabelle provides Haste buff to summons `high`, Lifedrain buff to summons `hig
 
 - Perseus (66% `Damage`)
 - Pang (66% `Damage`)
-- Hodgkin (58% `Damage` `Similar Skills`)
+- Hodgkin (62% `Damage` `Similar Skills`)
 
 **Similar Skills**
 
-- Dunlingr (66% `battle-start-burst` `summoner`)
-- Atalanta (60% `aoe-damage` `battle-start-burst`)
-- Bryon (57% `battle-start-burst` `summoner`)
+- Hodgkin (66% `aoe-damage` `summoner`)
+- Tilaya (60% `aoe-damage`)
+- Marcille (48% `aoe-damage` `summoner`)
 
 **Damage**
 
@@ -3696,9 +3699,9 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 **Similar Skills**
 
+- Himmel (48% `aoe-damage` `self-repositioner`)
 - Dionel (48% `aoe-damage` `self-repositioner`)
 - Marcille (41% `aoe-damage` `high-damage-ult`)
-- Faramor (40% `aoe-damage` `dot-specialist`)
 
 **Damage**
 
@@ -3823,7 +3826,7 @@ These are the **10** strongest pairings:
 **Best overall replacement**
 
 - Saida (77% `Damage` `Crowd Control` `Buffs on allies`)
-- Alna (50% `Damage` `Crowd Control`)
+- Alna (51% `Damage` `Crowd Control`)
 - Marcille (50% `Damage`)
 
 **Buffs on allies**
@@ -3834,7 +3837,7 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Phraesto (60% `ally-shielder` `aoe-damage` `clone`)
+- Phraesto (50% `ally-shielder` `aoe-damage` `clone`)
 - Scarlita (50% `ally-shielder` `aoe-damage`)
 - Gunnar (40% `ally-shielder` `aoe-damage`)
 
@@ -4206,7 +4209,7 @@ Gunnar provides ATK SPD buff to single targets `low`, ATK buff to single targets
 
 - Galahad (40% `ally-shielder` `aoe-damage`)
 - Hugin (40% `ally-shielder` `static-tile-buffer`)
-- Himmel (28% `ally-shielder` `aoe-damage`)
+- Florabelle (20% `aoe-damage`)
 
 **Damage**
 
@@ -4421,9 +4424,9 @@ Hammie provides ATK buff to multiple targets `high`.
 
 **Best overall replacement**
 
-- Evie (88% `Buffs on allies` `Healing`)
+- Evie (94% `Buffs on allies` `Healing`)
+- Himmel (78% `Buffs on allies` `Healing`)
 - Contess (77% `Buffs on allies` `Healing`)
-- Himmel (76% `Buffs on allies` `Healing`)
 
 **Buffs on allies**
 
@@ -4439,9 +4442,9 @@ Hammie provides ATK buff to multiple targets `high`.
 
 **Similar Skills**
 
+- Isabella (100% `ally-buffer` `ally-healer`)
+- Koko (100% `ally-buffer` `ally-healer`)
 - Damian (80% `ally-buffer` `ally-healer`)
-- Isabella (80% `ally-buffer` `ally-healer`)
-- Laios (66% `ally-buffer` `ally-healer`)
 
 **Damage**
 
@@ -4811,6 +4814,10 @@ Hewynn provides Direct healing to single targets `high`, Healing over time to al
 
 ### Units that can act as a replacement for Hewynn
 
+**Best overall replacement**
+
+- Koko (50% `Buffs on allies`)
+
 **Buffs on allies**
 
 - Koko (100% `Damage taken reduction`)
@@ -4843,7 +4850,7 @@ Hewynn provides Direct healing to single targets `high`, Healing over time to al
 
 - **Signature skill**: Hero Party (Skill 2)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `battle-start-burst` `self-repositioner`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `self-repositioner`
 - **Ally composition**: place Mage, Tank, and Support within 1 tile at battle start (Hero Party)
 - **Damage types**: Physical `high`, Max HP-based damage `high`
 
@@ -4922,9 +4929,9 @@ Himmel provides ATK buff to multiple targets `high` and Shield to single targets
 
 **Best overall replacement**
 
-- Contess (85% `Buffs on allies` `Healing` `Debuffs on enemies`)
-- Evie (66% `Healing` `Buffs on allies`)
-- Mikola (64% `Healing`)
+- Contess (83% `Buffs on allies` `Healing` `Debuffs on enemies`)
+- Evie (67% `Healing` `Buffs on allies`)
+- Mikola (65% `Healing`)
 
 **Buffs on allies**
 
@@ -4940,9 +4947,9 @@ Himmel provides ATK buff to multiple targets `high` and Shield to single targets
 
 **Similar Skills**
 
-- Igor (42% `aoe-damage` `battle-start-burst` `self-repositioner`)
-- Gerda (37% `ally-shielder` `battle-start-burst` `self-repositioner`)
-- Frieren (34% `aoe-damage` `self-repositioner`)
+- Perseus (66% `ally-buffer` `aoe-damage`)
+- Dunlingr (50% `ally-buffer` `aoe-damage`)
+- Kordan (50% `ally-buffer` `self-repositioner`)
 
 **Damage**
 
@@ -5051,9 +5058,9 @@ Common buffers are **Smokey & Meerky**, **Solise**, or **Mikola**.
 
 **Similar Skills**
 
+- Bonnie (72% `aoe-damage` `enemy-debuffer`)
+- Florabelle (66% `aoe-damage` `summoner`)
 - Cassadee (60% `aoe-damage` `enemy-debuffer`)
-- Cecia (60% `enemy-debuffer` `summoner`)
-- Florabelle (50% `aoe-damage` `summoner`)
 
 **Damage**
 
@@ -5192,7 +5199,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Funereal Ring (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `aoe-damage` `battle-start-burst` `invincibility` `self-repositioner` `untargetable`
+- **Behavior tags**: `aoe-damage` `cheat-death` `life-drain` `self-repositioner` `untargetable`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -5255,8 +5262,8 @@ Common buffers are **Koko**, **Solise**, or **Smokey & Meerky**.
 **Similar Skills**
 
 - Dionel (60% `aoe-damage` `self-repositioner` `untargetable`)
-- Atalanta (60% `aoe-damage` `battle-start-burst` `self-repositioner`)
-- Himmel (42% `aoe-damage` `battle-start-burst` `self-repositioner`)
+- Mehira (45% `aoe-damage` `life-drain` `untargetable`)
+- Brutus (42% `aoe-damage` `cheat-death` `life-drain`)
 
 **Damage**
 
@@ -5417,7 +5424,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 - **Signature skill**: Grimoire Pact (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-buffer` `ally-healer` `life-drain`
+- **Behavior tags**: `ally-buffer` `ally-healer`
 - **Ally composition**: frontmost ally becomes companion (stat stacks and ult buffs)
 - **Damage types**: Magic `low`
 
@@ -5495,9 +5502,9 @@ Isabella provides ATK buff to multiple targets `average` — conditional (freque
 
 **Similar Skills**
 
-- Damian (60% `ally-buffer` `ally-healer`)
-- Laios (50% `ally-buffer` `ally-healer`)
-- Twins (48% `ally-buffer` `ally-healer`)
+- Koko (100% `ally-buffer` `ally-healer`)
+- Damian (80% `ally-buffer` `ally-healer`)
+- Laios (66% `ally-buffer` `ally-healer`)
 
 **Debuffs on enemies**
 
@@ -5720,9 +5727,9 @@ Kazim provides Haste buff to multiple targets `average` and ATK buff (Mythic+) t
 
 **Best overall replacement**
 
-- Aliceth (71% `Damage` `Debuffs on enemies`)
+- Aliceth (67% `Damage` `Debuffs on enemies`)
 - Vala (65% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Nazrik (57% `Damage`)
+- Perseus (60% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -5732,9 +5739,9 @@ Kazim provides Haste buff to multiple targets `average` and ATK buff (Mythic+) t
 
 **Similar Skills**
 
-- Sonja (57% `ally-buffer` `aoe-damage` `battle-start-burst` `mass-cc`)
 - Walker (57% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc`)
 - Parisa (50% `ally-buffer` `aoe-damage` `mark-target`)
+- Alna (42% `ally-buffer` `aoe-damage` `invincibility`)
 
 **Damage**
 
@@ -5783,7 +5790,7 @@ Kazim provides Haste buff to multiple targets `average` and ATK buff (Mythic+) t
 
 - **Signature skill**: Full Energy (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Behavior tags**: `ally-shielder` `life-drain`
+- **Behavior tags**: `ally-buffer` `ally-healer`
 - **Damage types**: Physical `low`
 
 #### Play overview
@@ -5866,6 +5873,7 @@ These are the **10** strongest pairings:
 
 - Hepler (65% `Healing` `Buffs on allies` `Crowd Control`)
 - Contess (55% `Healing` `Buffs on allies` `Debuffs on enemies`)
+- Smokey & Meerky (51% `Healing`)
 
 **Buffs on allies**
 
@@ -5881,9 +5889,9 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Saida (66% `ally-shielder` `life-drain`)
-- Daimon (50% `ally-shielder` `life-drain`)
-- Shakir (40% `life-drain`)
+- Isabella (100% `ally-buffer` `ally-healer`)
+- Damian (80% `ally-buffer` `ally-healer`)
+- Laios (66% `ally-buffer` `ally-healer`)
 
 **Damage**
 
@@ -5925,7 +5933,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Dominance Ring (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `hp-scaling` `self-repositioner`
+- **Behavior tags**: `ally-buffer` `hp-scaling` `self-repositioner`
 - **Damage types**: Physical `high`, Max HP-based damage `high`
 
 #### Play overview
@@ -6007,9 +6015,9 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 
 **Similar Skills**
 
-- Pippa (100% `hp-scaling` `self-repositioner`)
-- Athalia (66% `hp-scaling` `self-repositioner`)
 - Marilee (66% `hp-scaling` `self-repositioner`)
+- Himmel (50% `ally-buffer` `self-repositioner`)
+- Athalia (50% `hp-scaling` `self-repositioner`)
 
 **Damage**
 
@@ -6123,7 +6131,7 @@ Korin provides Shield to single targets `average`.
 **Similar Skills**
 
 - Scarlita (80% `ally-shielder` `hp-scaling`)
-- Daimon (50% `ally-shielder` `hp-scaling`)
+- Daimon (66% `ally-shielder` `hp-scaling`)
 - Silven (40% `hp-scaling`)
 
 **Damage**
@@ -6235,7 +6243,7 @@ Kruger provides DEF buff (Legendary+) to single targets `low`.
 
 - Shakir (48% `life-drain`)
 - Shadewing (40% `enemy-debuffer`)
-- Koko (40% `life-drain`)
+- Nerion (40% `enemy-debuffer`)
 
 **Damage**
 
@@ -6284,7 +6292,7 @@ Kruger provides DEF buff (Legendary+) to single targets `low`.
 
 - **Signature skill**: Demolition Zone (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `battle-start-burst` `battlefield-modification` `self-repositioner`
+- **Behavior tags**: `battlefield-modification` `self-repositioner`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -6357,9 +6365,9 @@ Kulu provides DEF Penetration buff (EX+15) to single targets `low`.
 
 **Similar Skills**
 
-- Alsa (50% `battlefield-modification` `self-repositioner`)
-- Atalanta (50% `battle-start-burst` `self-repositioner`)
-- Zandrok (48% `battle-start-burst` `battlefield-modification`)
+- Alsa (66% `battlefield-modification` `self-repositioner`)
+- Soren (40% `self-repositioner`)
+- Marilee (33% `self-repositioner`)
 
 **Damage**
 
@@ -6480,8 +6488,8 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 **Similar Skills**
 
 - Damian (100% `ally-buffer` `ally-healer` `summoner`)
-- Isabella (50% `ally-buffer` `ally-healer`)
-- Twins (40% `ally-buffer` `ally-healer`)
+- Koko (66% `ally-buffer` `ally-healer`)
+- Isabella (66% `ally-buffer` `ally-healer`)
 
 **Debuffs on enemies**
 
@@ -6593,7 +6601,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 - Soren (66% `counterattack` `self-repositioner`)
 - Kafra (48% `assassin` `self-repositioner`)
-- Pippa (36% `self-repositioner`)
+- Marilee (30% `self-repositioner`)
 
 **Damage**
 
@@ -6705,7 +6713,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 - Saida (92% `Damage` `Debuffs on enemies` `Crowd Control`)
 - Sylphira (82% `Damage` `Crowd Control`)
-- Pippa (69% `Damage`)
+- Pippa (63% `Damage`)
 
 **Buffs on allies**
 
@@ -6716,7 +6724,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 **Similar Skills**
 
 - Athalia (60% `hp-scaling` `self-repositioner` `transformation`)
-- Pippa (48% `hp-scaling` `self-repositioner`)
+- Marilee (40% `hp-scaling` `self-repositioner`)
 - Vala (40% `hp-scaling` `self-repositioner` `transformation`)
 
 **Damage**
@@ -6890,7 +6898,7 @@ Lorsan provides Haste buff to single targets `high`.
 
 - **Signature skill**: Quake Slam (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `ally-shielder` `disabler` `mass-cc`
+- **Behavior tags**: `ally-shielder` `disabler`
 - **Ally composition**: place adjacent allies behind at battle prep (DEF buff)
 - **Ally composition**: place allies on adjacent tiles behind at battle start (shields and ATK boost)
 - **Damage types**: Physical `high`
@@ -6964,15 +6972,11 @@ Lucca provides DEF buff in an area `high`.
 
 ### Units that can act as a replacement for Lucca
 
-**Best overall replacement**
-
-- Antandra (52% `Crowd Control` `Damage`)
-
 **Similar Skills**
 
-- Antandra (48% `ally-shielder` `mass-cc`)
-- Sylphira (40% `disabler` `mass-cc`)
-- Temesia (40% `disabler` `mass-cc`)
+- Callan (40% `ally-shielder`)
+- Korin (40% `ally-shielder`)
+- Reinier (33% `disabler`)
 
 **Damage**
 
@@ -7203,9 +7207,9 @@ Lucy provides Shield (Mythic+) to single targets `high` and DEF buff (EX+10) to 
 
 **Similar Skills**
 
-- Lucca (66% `ally-shielder` `mass-cc`)
 - Antandra (50% `ally-shielder` `mass-cc`)
-- Ulmus (48% `ally-shielder` `mass-cc`)
+- Korin (40% `ally-shielder`)
+- Callan (33% `ally-shielder`)
 
 **Damage**
 
@@ -7475,7 +7479,7 @@ Lumont provides DEF buff to multiple targets `low`.
 
 - **Signature skill**: Comet Archery (ultimate)
 - **Movement**: stationary (avg attack range 11.0 tiles)
-- **Behavior tags**: `ally-buffer` `battle-start-burst` `energy-provider`
+- **Behavior tags**: `ally-buffer` `energy-provider`
 - **Damage types**: Physical `average`
 
 #### Play overview
@@ -7560,9 +7564,9 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Twins (40% `ally-buffer` `energy-provider`)
-- Himmel (33% `ally-buffer` `battle-start-burst`)
-- Sonja (33% `ally-buffer` `battle-start-burst`)
+- Twins (50% `ally-buffer` `energy-provider`)
+- Ravion (36% `energy-provider`)
+- Parisa (36% `ally-buffer`)
 
 **Damage**
 
@@ -7682,8 +7686,8 @@ Marcille provides Direct healing (Mythic+) to multiple targets `high`.
 
 **Similar Skills**
 
+- Florabelle (48% `aoe-damage` `summoner`)
 - Frieren (41% `aoe-damage` `high-damage-ult`)
-- Florabelle (40% `aoe-damage` `summoner`)
 - Laios (40% `ally-healer` `summoner`)
 
 **Damage**
@@ -7724,7 +7728,7 @@ Marcille provides Direct healing (Mythic+) to multiple targets `high`.
 
 - **Signature skill**: Mid-Air Shot (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `hp-scaling` `mass-cc` `self-repositioner`
+- **Behavior tags**: `hp-scaling` `self-repositioner`
 - **Damage types**: Physical `average`, True damage `low`
 
 #### Play overview
@@ -7790,15 +7794,15 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 **Best overall replacement**
 
-- Vala (87% `Damage` `Crowd Control`)
-- Nazrik (71% `Damage` `Crowd Control`)
+- Vala (88% `Damage` `Crowd Control`)
+- Nazrik (73% `Damage` `Crowd Control`)
 - Faramor (68% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
-- Pippa (80% `hp-scaling` `self-repositioner`)
+- Athalia (80% `hp-scaling` `self-repositioner`)
 - Kordan (66% `hp-scaling` `self-repositioner`)
-- Athalia (60% `hp-scaling` `self-repositioner`)
+- Silven (48% `hp-scaling`)
 
 **Damage**
 
@@ -7911,8 +7915,8 @@ Mehira provides Haste buff to single targets `average`.
 **Similar Skills**
 
 - Eironn (51% `aoe-damage` `enemy-grouping` `mass-cc`)
-- Sonja (37% `aoe-damage` `life-drain` `mass-cc`)
-- Cyran (30% `aoe-damage` `enemy-grouping`)
+- Igor (45% `aoe-damage` `life-drain` `untargetable`)
+- Florabelle (33% `aoe-damage` `summoner`)
 
 **Damage**
 
@@ -8058,8 +8062,8 @@ These are the **10** strongest pairings:
 **Similar Skills**
 
 - Smokey & Meerky (48% `aoe-healing`)
+- Koko (48% `ally-buffer`)
 - Ludovic (40% `aoe-healing`)
-- Fay (40% `aoe-healing`)
 
 ### Summary for Mikola
 
@@ -8145,7 +8149,7 @@ Common buffers are **Twins**, **Mikola**, or **Rowan**.
 **Similar Skills**
 
 - Gwyneth (96% `dot-specialist` `fire-attack`)
-- Satrana (66% `dot-specialist` `fire-attack`)
+- Satrana (40% `dot-specialist` `fire-attack`)
 - Zanie (40% `fire-attack`)
 
 **Damage**
@@ -8243,7 +8247,7 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 
 - Harak (50% `assassin` `execute`)
 - Ludovic (30% `ally-healer`)
-- Smokey & Meerky (25% `ally-healer`)
+- Isabella (30% `ally-healer`)
 
 **Damage**
 
@@ -8476,7 +8480,7 @@ Look for units providing: `CRIT`
 
 - Silven (100% `hp-scaling` `mark-target`)
 - Aliceth (48% `hp-scaling` `mark-target`)
-- Kordan (40% `hp-scaling`)
+- Marilee (40% `hp-scaling`)
 
 **Damage**
 
@@ -8522,7 +8526,7 @@ Look for units providing: `CRIT`
 
 - **Signature skill**: Drowning Doom (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Behavior tags**: `battle-start-burst` `dot-specialist` `enemy-debuffer`
+- **Behavior tags**: `dot-specialist` `enemy-debuffer`
 - **Damage types**: Magic `high`, DoT `average`, Max HP-based damage `high`
 
 #### Play overview
@@ -8586,9 +8590,9 @@ Nerion also requires units **applying crowd control** to enemies
 
 **Similar Skills**
 
-- Shadewing (96% `dot-specialist` `enemy-debuffer`)
-- Carolina (72% `dot-specialist` `enemy-debuffer`)
-- Bonnie (48% `battle-start-burst` `enemy-debuffer`)
+- Shadewing (100% `dot-specialist` `enemy-debuffer`)
+- Carolina (100% `dot-specialist` `enemy-debuffer`)
+- Kruger (40% `enemy-debuffer`)
 
 **Damage**
 
@@ -8707,8 +8711,8 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 **Similar Skills**
 
 - Ludovic (36% `ally-healer`)
+- Isabella (36% `ally-healer`)
 - Smokey & Meerky (30% `ally-healer`)
-- Rowan (30% `ally-healer`)
 
 **Damage**
 
@@ -8817,7 +8821,7 @@ Common buffers are **Twins** or **Mikola**.
 
 - Mirael (40% `dot-specialist`)
 - Shadewing (33% `dot-specialist`)
-- Lorsan (33% `dot-specialist`)
+- Nerion (33% `dot-specialist`)
 
 **Damage**
 
@@ -8923,7 +8927,7 @@ Pandora provides Direct healing to single targets `average`, Invincible to singl
 
 - Thador (50% `enemy-debuffer` `energy-provider`)
 - Cecia (50% `enemy-debuffer` `mass-cc`)
-- Carolina (50% `enemy-debuffer` `mass-cc`)
+- Temesia (33% `enemy-debuffer` `mass-cc`)
 
 **Damage**
 
@@ -9056,7 +9060,7 @@ Pang provides Shield to single targets `average` and DEF Penetration buff (Supre
 **Similar Skills**
 
 - Hepler (66% `ally-shielder` `transformation`)
-- Ulmus (48% `ally-shielder` `transformation`)
+- Ulmus (60% `ally-shielder` `transformation`)
 - Baelran (33% `transformation`)
 
 **Damage**
@@ -9171,9 +9175,9 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 **Similar Skills**
 
+- Perseus (66% `ally-buffer` `aoe-damage`)
 - Cassadee (60% `ally-buffer` `aoe-damage`)
-- Faramor (48% `ally-buffer` `aoe-damage`)
-- Aurora (40% `ally-buffer` `mark-target`)
+- Himmel (50% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -9199,7 +9203,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 - **Signature skill**: Divine Rend (ultimate)
 - **Movement**: moving (avg attack range 2.9 tiles)
-- **Behavior tags**: `aoe-damage`
+- **Behavior tags**: `ally-buffer` `aoe-damage`
 - **Damage types**: Physical `high`, Max HP-based damage `high`
 
 #### Play overview
@@ -9274,9 +9278,9 @@ Perseus provides ATK buff to multiple targets `average`.
 
 **Best overall replacement**
 
-- Atalanta (75% `Damage` `Crowd Control`)
+- Himmel (73% `Damage` `Similar Skills` `Buffs on allies`)
+- Atalanta (72% `Damage` `Crowd Control`)
 - Florabelle (63% `Damage`)
-- Himmel (60% `Damage` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -9286,9 +9290,9 @@ Perseus provides ATK buff to multiple targets `average`.
 
 **Similar Skills**
 
-- Tilaya (100% `aoe-damage`)
-- Lorsan (50% `aoe-damage`)
-- Atalanta (48% `aoe-damage`)
+- Sonja (80% `ally-buffer` `aoe-damage`)
+- Cassadee (80% `ally-buffer` `aoe-damage`)
+- Himmel (66% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -9323,7 +9327,7 @@ Perseus provides ATK buff to multiple targets `average`.
 
 - **Signature skill**: Crimson Contract (Skill 1)
 - **Movement**: moving (avg attack range 1.8 tiles)
-- **Behavior tags**: `ally-shielder` `aoe-damage` `clone` `energy-provider` `summoner`
+- **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `clone` `energy-provider` `summoner`
 - **Ally composition**: place allies 1 tile behind this hero and the Illusion for contract buffs
 - **Self placement**: keep this hero and Illusion in the same row (damage reduction and battle-start shields)
 - **Damage types**: Magic `high`
@@ -9400,9 +9404,9 @@ Phraesto provides Damage taken to single targets `low` and Max HP buff to single
 
 **Similar Skills**
 
-- Galahad (60% `ally-shielder` `aoe-damage` `clone`)
-- Gunnar (41% `ally-shielder` `aoe-damage`)
-- Thador (40% `ally-shielder` `energy-provider`)
+- Galahad (50% `ally-shielder` `aoe-damage` `clone`)
+- Twins (42% `ally-buffer` `ally-shielder` `energy-provider`)
+- Gunnar (36% `ally-shielder` `aoe-damage`)
 
 **Damage**
 
@@ -9450,7 +9454,7 @@ Phraesto provides Damage taken to single targets `low` and Max HP buff to single
 
 - **Signature skill**: Wild Shift (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `hp-scaling` `self-repositioner`
+- **Behavior tags**: `enemy-grouping` `hp-scaling`
 - **Damage types**: Magic `average`, Max HP-based damage `high`, True damage `low`
 
 #### Play overview
@@ -9514,13 +9518,13 @@ Common buffers are **Twins** or **Mikola**.
 
 - Saida (63% `Damage` `Debuffs on enemies` `Crowd Control`)
 - Sylphira (58% `Damage`)
-- Lily May (58% `Debuffs on enemies`)
+- Lily May (51% `Debuffs on enemies`)
 
 **Similar Skills**
 
-- Kordan (100% `hp-scaling` `self-repositioner`)
-- Athalia (80% `hp-scaling` `self-repositioner`)
-- Marilee (80% `hp-scaling` `self-repositioner`)
+- Silven (40% `hp-scaling`)
+- Nazrik (40% `hp-scaling`)
+- Marilee (40% `hp-scaling`)
 
 **Damage**
 
@@ -9702,7 +9706,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Dynamic Balance (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `battle-start-burst` `disabler`
+- **Behavior tags**: `disabler` `enemy-grouping`
 - **Ally composition**: symmetrical ally-enemy tile pairs at battle start for Dynamic Balance swaps
 - **Damage types**: Magic `average`
 
@@ -9778,9 +9782,9 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 **Similar Skills**
 
-- Dunlingr (33% `battle-start-burst`)
+- Lucca (33% `disabler`)
+- Pippa (33% `enemy-grouping`)
 - Indris (33% `disabler`)
-- Kulu (30% `battle-start-burst`)
 
 **Damage**
 
@@ -9892,8 +9896,8 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 **Best overall replacement**
 
 - Atalanta (78% `Damage` `Crowd Control` `Similar Skills`)
-- Perseus (73% `Damage` `Crowd Control`)
-- Kordan (70% `Damage` `Crowd Control`)
+- Perseus (71% `Damage` `Crowd Control`)
+- Soren (69% `Damage` `Crowd Control`)
 
 **Healing**
 
@@ -9905,7 +9909,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 - Dionel (60% `aoe-damage` `self-repositioner`)
 - Atalanta (60% `aoe-damage` `self-repositioner`)
-- Frieren (48% `aoe-damage` `self-repositioner`)
+- Himmel (50% `aoe-damage` `self-repositioner`)
 
 **Damage**
 
@@ -10139,9 +10143,9 @@ Saida provides Shield to multiple targets `high`.
 
 **Similar Skills**
 
-- Koko (66% `ally-shielder` `life-drain`)
 - Thoran (50% `cheat-death` `life-drain`)
-- Daimon (40% `ally-shielder` `life-drain`)
+- Brutus (33% `cheat-death` `life-drain`)
+- Harak (28% `life-drain`)
 
 **Damage**
 
@@ -10306,7 +10310,7 @@ Salazer provides Shield (Supreme+) to single targets `high` — conditional (fre
 
 - **Signature skill**: Fiery Dance (ultimate)
 - **Movement**: moving (avg attack range 1.5 tiles)
-- **Behavior tags**: `dot-specialist` `fire-attack` `hp-scaling`
+- **Behavior tags**: `dot-specialist` `fire-attack` `hp-scaling` `invincibility` `life-drain`
 - **Damage types**: Magic `high`, Max HP-based damage `low`
 
 #### Play overview
@@ -10371,9 +10375,9 @@ Satrana provides Magic damage amplification (Mythic+) to single targets `average
 
 **Similar Skills**
 
-- Mirael (66% `dot-specialist` `fire-attack`)
-- Gwyneth (50% `dot-specialist` `fire-attack`)
-- Faramor (40% `dot-specialist` `hp-scaling`)
+- Zorya (48% `hp-scaling` `life-drain`)
+- Mirael (40% `dot-specialist` `fire-attack`)
+- Gwyneth (33% `dot-specialist` `fire-attack`)
 
 **Damage**
 
@@ -10496,8 +10500,8 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 **Similar Skills**
 
 - Korin (80% `ally-shielder` `hp-scaling`)
+- Zandrok (60% `aoe-damage` `hp-scaling`)
 - Galahad (50% `ally-shielder` `aoe-damage`)
-- Zandrok (48% `aoe-damage` `hp-scaling`)
 
 **Damage**
 
@@ -10614,8 +10618,8 @@ Seth provides Crit buff to single targets `low`.
 **Similar Skills**
 
 - Harak (80% `assassin` `life-drain`)
-- Koko (40% `life-drain`)
 - Shakir (40% `life-drain`)
+- Kruger (40% `life-drain`)
 
 **Damage**
 
@@ -10736,9 +10740,9 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 **Similar Skills**
 
-- Nerion (96% `dot-specialist` `enemy-debuffer`)
+- Nerion (100% `dot-specialist` `enemy-debuffer`)
 - Kruger (40% `enemy-debuffer`)
-- Odie (33% `dot-specialist`)
+- Bonnie (36% `enemy-debuffer`)
 
 **Damage**
 
@@ -10864,7 +10868,7 @@ These are the **10** strongest pairings:
 
 - Sylphira (50% `life-drain` `transformation`)
 - Kruger (48% `life-drain`)
-- Koko (40% `life-drain`)
+- Zorya (40% `life-drain`)
 
 **Damage**
 
@@ -10976,8 +10980,8 @@ Common buffers are **Twins**, **Solise**, or **Rowan**.
 
 **Similar Skills**
 
-- Daimon (72% `hp-scaling` `life-drain` `summoner`)
 - Zorya (60% `hp-scaling` `life-drain`)
+- Daimon (48% `hp-scaling` `summoner`)
 - Marcille (34% `high-damage-ult` `summoner`)
 
 **Damage**
@@ -11580,7 +11584,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Crimson Covenant (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `life-drain` `mass-cc`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `life-drain`
 - **Ally composition**: place allies on left and right at battle start (Crimson Covenant buffs; prioritizes front row)
 - **Damage types**: Physical `average`
 
@@ -11646,6 +11650,10 @@ Sonja provides ATK buff to multiple targets `average` and DEF buff to multiple t
 
 ### Units that can act as a replacement for Sonja
 
+**Best overall replacement**
+
+- Perseus (59% `Buffs on allies` `Crowd Control` `Similar Skills`)
+
 **Buffs on allies**
 
 - Kordan (100% `ATK` `Magic DEF` `Physical DEF`)
@@ -11654,9 +11662,9 @@ Sonja provides ATK buff to multiple targets `average` and DEF buff to multiple t
 
 **Similar Skills**
 
-- Walker (80% `aoe-damage` `battle-start-burst` `life-drain` `mass-cc`)
-- Himmel (51% `ally-buffer` `aoe-damage` `battle-start-burst`)
-- Bonnie (42% `aoe-damage` `battle-start-burst` `mass-cc`)
+- Perseus (80% `ally-buffer` `aoe-damage`)
+- Himmel (60% `ally-buffer` `aoe-damage`)
+- Cassadee (60% `ally-buffer` `aoe-damage`)
 
 **Damage**
 
@@ -11769,8 +11777,8 @@ Soren provides Shield (Supreme+) to single targets `low`.
 **Similar Skills**
 
 - Lenya (66% `counterattack` `self-repositioner`)
-- Kordan (48% `self-repositioner`)
-- Pippa (33% `self-repositioner`)
+- Kulu (40% `self-repositioner`)
+- Kordan (36% `self-repositioner`)
 
 **Damage**
 
@@ -11877,8 +11885,8 @@ Common buffers are **Twins**, **Ravion**, or **Solise**.
 **Similar Skills**
 
 - Shakir (50% `life-drain` `transformation`)
-- Lucca (40% `disabler` `mass-cc`)
 - Tasi (33% `mass-cc` `transformation`)
+- Natsu (30% `mass-cc` `transformation`)
 
 **Damage**
 
@@ -12009,9 +12017,9 @@ Talene provides ATK buff (Legendary+) in an area `high`.
 
 **Similar Skills**
 
-- Ulmus (51% `aoe-damage` `cheat-death` `transformation`)
+- Ulmus (60% `aoe-damage` `cheat-death` `transformation`)
+- Bonnie (40% `aoe-damage` `transformation`)
 - Natsu (37% `aoe-damage` `fire-attack` `transformation`)
-- Tasi (34% `aoe-damage` `transformation`)
 
 **Damage**
 
@@ -12120,8 +12128,8 @@ Common buffers are **Twins**, **Mikola**, or **Rowan**.
 **Similar Skills**
 
 - Valen (75% `aoe-damage` `mass-cc` `transformation`)
-- Ulmus (72% `aoe-damage` `mass-cc` `transformation`)
-- Bonnie (60% `aoe-damage` `mass-cc` `transformation`)
+- Temesia (60% `aoe-damage` `mass-cc` `self-repositioner`)
+- Bonnie (48% `aoe-damage` `transformation`)
 
 **Damage**
 
@@ -12231,8 +12239,8 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Mikola**.
 **Similar Skills**
 
 - Tasi (60% `aoe-damage` `mass-cc` `self-repositioner`)
-- Bonnie (51% `aoe-damage` `enemy-debuffer` `mass-cc`)
 - Cassadee (48% `aoe-damage` `enemy-debuffer`)
+- Indris (40% `disabler` `enemy-debuffer`)
 
 **Damage**
 
@@ -12480,7 +12488,7 @@ Thoran provides Lifedrain buff to single targets `low` and Energy recovery (Lege
 
 - Saida (50% `cheat-death` `life-drain`)
 - Brutus (40% `cheat-death` `life-drain`)
-- Zorya (30% `life-drain`)
+- Igor (40% `cheat-death` `life-drain`)
 
 **Damage**
 
@@ -12589,9 +12597,9 @@ Tilaya provides DEF buff (EX+10) in an area `average` and Max HP buff (EX+10) in
 
 **Similar Skills**
 
-- Perseus (100% `aoe-damage`)
+- Florabelle (60% `aoe-damage`)
 - Lorsan (60% `aoe-damage`)
-- Florabelle (40% `aoe-damage`)
+- Perseus (50% `aoe-damage`)
 
 **Damage**
 
@@ -12718,9 +12726,9 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
+- Koko (60% `ally-buffer` `ally-healer`)
 - Rowan (60% `ally-healer` `energy-provider`)
 - Solise (48% `ally-healer` `ally-shielder`)
-- Hugin (48% `ally-shielder` `energy-provider`)
 
 **Damage**
 
@@ -12760,7 +12768,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Way of the Forest (Skill 2)
 - **Movement**: moving (stationary when rooted)
-- **Behavior tags**: `ally-shielder` `aoe-damage` `cheat-death` `mass-cc` `transformation`
+- **Behavior tags**: `ally-shielder` `aoe-damage` `cheat-death` `transformation`
 - **Ally composition**: when rooted, shields frontmost ally instead of self
 - **Damage types**: Physical `average`
 
@@ -12829,8 +12837,8 @@ Ulmus provides Energy recovery to single targets `low`.
 
 **Best overall replacement**
 
-- Scarlita (51% `Damage` `Crowd Control`)
-- Ravion (50% `Buffs on allies` `Energy provider`)
+- Scarlita (54% `Damage` `Crowd Control`)
+- Ravion (51% `Buffs on allies` `Energy provider`)
 
 **Buffs on allies**
 
@@ -12840,9 +12848,9 @@ Ulmus provides Energy recovery to single targets `low`.
 
 **Similar Skills**
 
-- Tasi (72% `aoe-damage` `mass-cc` `transformation`)
-- Valen (60% `aoe-damage` `mass-cc` `transformation`)
-- Bonnie (51% `aoe-damage` `mass-cc` `transformation`)
+- Talene (60% `aoe-damage` `cheat-death` `transformation`)
+- Pang (60% `ally-shielder` `transformation`)
+- Bonnie (48% `aoe-damage` `transformation`)
 
 **Damage**
 
@@ -12961,7 +12969,7 @@ Vala also requires enemies **to be defeated**
 
 - Athalia (60% `hp-scaling` `self-repositioner` `transformation`)
 - Silven (48% `hp-scaling` `mark-target`)
-- Marilee (41% `hp-scaling` `self-repositioner`)
+- Marilee (48% `hp-scaling` `self-repositioner`)
 
 **Damage**
 
@@ -13079,14 +13087,14 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 **Best overall replacement**
 
 - Perseus (100% `Damage` `Crowd Control`)
-- Lucca (84% `Damage` `Crowd Control`)
 - Atalanta (84% `Damage` `Crowd Control`)
+- Hepler (82% `Damage` `Crowd Control` `Debuffs on enemies`)
 
 **Similar Skills**
 
 - Tasi (75% `aoe-damage` `mass-cc` `transformation`)
-- Bonnie (60% `aoe-damage` `mass-cc` `transformation`)
-- Ulmus (60% `aoe-damage` `mass-cc` `transformation`)
+- Arden (60% `aoe-damage` `mass-cc`)
+- Natsu (60% `aoe-damage` `mass-cc` `transformation`)
 
 **Damage**
 
@@ -13199,6 +13207,7 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 **Best overall replacement**
 
 - Zorya (65% `Debuffs on enemies` `Crowd Control` `Damage`)
+- Dunlingr (52% `Buffs on allies` `Debuffs on enemies` `Damage`)
 
 **Buffs on allies**
 
@@ -13209,8 +13218,8 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 **Similar Skills**
 
 - Twins (40% `ally-buffer` `ally-shielder`)
-- Himmel (33% `ally-buffer` `ally-shielder`)
-- Soren (30% `counterattack`)
+- Callan (30% `ally-shielder`)
+- Isabella (30% `ally-buffer`)
 
 **Damage**
 
@@ -13327,7 +13336,7 @@ Velara provides Direct healing in an area `low`.
 **Best overall replacement**
 
 - Solise (66% `Healing` `Similar Skills`)
-- Evie (57% `Healing` `Crowd Control`)
+- Evie (61% `Healing` `Crowd Control`)
 
 **Healing**
 
@@ -13458,7 +13467,7 @@ Common buffers are **Twins**, **Mikola**, or **Smokey & Meerky**.
 
 - Lorsan (66% `aoe-damage` `dot-specialist`)
 - Arden (60% `aoe-damage` `dot-specialist`)
-- Frieren (48% `aoe-damage` `dot-specialist`)
+- Sonja (50% `aoe-damage` `life-drain`)
 
 **Damage**
 
@@ -13561,9 +13570,9 @@ Common buffers are **Twins**, **Koko**, or **Rowan**.
 
 **Similar Skills**
 
-- Sonja (80% `aoe-damage` `battle-start-burst` `life-drain` `mass-cc`)
-- Bonnie (51% `aoe-damage` `battle-start-burst` `mass-cc`)
 - Mehira (45% `aoe-damage` `life-drain` `mass-cc`)
+- Cyran (41% `aoe-damage` `battle-start-burst`)
+- Sonja (40% `aoe-damage` `life-drain`)
 
 **Damage**
 
@@ -13604,7 +13613,7 @@ Common buffers are **Twins**, **Koko**, or **Rowan**.
 
 - **Signature skill**: Rallying Roar (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `aoe-damage` `battle-start-burst` `battlefield-modification` `hp-scaling`
+- **Behavior tags**: `aoe-damage` `battlefield-modification` `hp-scaling`
 - **Damage types**: Physical `low`
 
 #### Play overview
@@ -13685,9 +13694,9 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 **Similar Skills**
 
-- Kulu (48% `battle-start-burst` `battlefield-modification`)
-- Scarlita (48% `aoe-damage` `hp-scaling`)
-- Florabelle (40% `aoe-damage` `battle-start-burst`)
+- Scarlita (60% `aoe-damage` `hp-scaling`)
+- Faramor (40% `aoe-damage` `hp-scaling`)
+- Tilaya (33% `aoe-damage`)
 
 **Crowd Control**
 
@@ -13797,8 +13806,8 @@ Zanie provides Direct healing to single targets `high`, Shield to single targets
 **Similar Skills**
 
 - Mirael (40% `fire-attack`)
-- Dunlingr (33% `summoner`)
-- Gwyneth (30% `fire-attack`)
+- Florabelle (33% `summoner`)
+- Bryon (33% `summoner`)
 
 **Debuffs on enemies**
 
@@ -13913,8 +13922,8 @@ Zorya also requires allies **casting ultimates**
 **Similar Skills**
 
 - Shemira (60% `hp-scaling` `life-drain`)
-- Daimon (60% `hp-scaling` `life-drain`)
-- Kordan (40% `hp-scaling`)
+- Satrana (48% `hp-scaling` `life-drain`)
+- Shakir (40% `life-drain`)
 
 **Damage**
 
