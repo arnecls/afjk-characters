@@ -142,6 +142,7 @@ REPLACEMENT_MAX = 3
 SIMILAR_SKILLS_MIN_TAG_OVERLAP = 1
 REPLACEMENT_SAME_FACTION_MULT = 1.20
 REPLACEMENT_SAME_ROLE_CATEGORY_MULT = 1.20
+REPLACEMENT_SAME_MELEE_MULT = 1.20
 PRYDWEN_TIER_MODES = (
     "afk_stages",
     "dream_realm",
@@ -2141,8 +2142,12 @@ def _replacement_rank_score(
     faction_by_title: dict[str, str],
     source_role_category: str | None = None,
     role_category_by_title: dict[str, str] | None = None,
+    *,
+    prefer_melee: bool = False,
+    source_is_melee: bool = False,
+    is_melee_by_title: dict[str, bool] | None = None,
 ) -> float:
-    """Similarity score for ranking; same-faction/role candidates get a boost."""
+    """Similarity score for ranking; same-faction/role/melee candidates get a boost."""
     score = raw
     if source_faction:
         candidate_faction = faction_by_title.get(candidate_title)
@@ -2153,6 +2158,10 @@ def _replacement_rank_score(
         candidate_role = role_categories.get(candidate_title)
         if candidate_role and candidate_role == source_role_category:
             score = min(score * REPLACEMENT_SAME_ROLE_CATEGORY_MULT, 1.0)
+    if prefer_melee and source_is_melee:
+        melee_map = is_melee_by_title or {}
+        if melee_map.get(candidate_title):
+            score = min(score * REPLACEMENT_SAME_MELEE_MULT, 1.0)
     return score
 
 
@@ -2208,6 +2217,8 @@ def _rank_overall_replacements(
     source_title: str | None = None,
     tiers_by_title: dict[str, dict[str, str]] | None = None,
     role_category_by_title: dict[str, str] | None = None,
+    source_is_melee: bool = False,
+    is_melee_by_title: dict[str, bool] | None = None,
 ) -> list[dict]:
     """Weighted blend of all replacement categories, role-weighted."""
     weights = _replacement_category_weights(source_role_category)
@@ -2243,6 +2254,9 @@ def _rank_overall_replacements(
         tiers_by_title=tiers_by_title,
         source_role_category=source_role_category,
         role_category_by_title=role_category_by_title,
+        prefer_melee=source_is_melee,
+        source_is_melee=source_is_melee,
+        is_melee_by_title=is_melee_by_title,
     )
 
 
@@ -2255,6 +2269,10 @@ def _rank_replacement_category(
     source_role_category: str | None = None,
     role_category_by_title: dict[str, str] | None = None,
     min_tag_overlap: int = 0,
+    *,
+    prefer_melee: bool = False,
+    source_is_melee: bool = False,
+    is_melee_by_title: dict[str, bool] | None = None,
 ) -> list[dict]:
     """Top replacement picks for one category above min_score."""
     factions = faction_by_title or {}
@@ -2271,6 +2289,9 @@ def _rank_replacement_category(
                 factions,
                 source_role_category,
                 role_categories,
+                prefer_melee=prefer_melee,
+                source_is_melee=source_is_melee,
+                is_melee_by_title=is_melee_by_title,
             ),
             title,
             matches,
@@ -2314,6 +2335,7 @@ def compute_replacement_scores(
     faction_by_title: dict[str, str] | None = None,
     role_category_by_title: dict[str, str] | None = None,
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+    is_melee_by_title: dict[str, bool] | None = None,
 ) -> dict[str, dict[str, list[dict]]]:
     """Per-category replacement lists for each hero (0–1 similarity per category)."""
     factions = faction_by_title or {}
@@ -2433,6 +2455,7 @@ def compute_replacement_scores(
 
         source_faction = factions.get(hero_x.title)
         source_role_category = role_categories.get(hero_x.title)
+        source_is_melee = bool((is_melee_by_title or {}).get(hero_x.title))
         result[hero_x.title] = {}
         for key in REPLACEMENT_CATEGORIES:
             rank_kwargs = {
@@ -2442,6 +2465,9 @@ def compute_replacement_scores(
                 "tiers_by_title": tiers_by_title,
                 "source_role_category": source_role_category,
                 "role_category_by_title": role_categories,
+                "prefer_melee": key == "damage" and source_is_melee,
+                "source_is_melee": source_is_melee,
+                "is_melee_by_title": is_melee_by_title,
             }
             if key == "similar_skills":
                 rank_kwargs["min_tag_overlap"] = SIMILAR_SKILLS_MIN_TAG_OVERLAP
@@ -2458,6 +2484,8 @@ def compute_replacement_scores(
             source_title=hero_x.title,
             tiers_by_title=tiers_by_title,
             role_category_by_title=role_categories,
+            source_is_melee=source_is_melee,
+            is_melee_by_title=is_melee_by_title,
         )
     return result
 

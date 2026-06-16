@@ -1060,6 +1060,15 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage",
+              "DoT"
+            ]
+          },
+          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
@@ -1073,14 +1082,6 @@
             "matches": [
               "DoT",
               "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Dunlingr",
-            "score": 1.0,
-            "matches": [
-              "DoT",
               "Max HP-based damage"
             ]
           }
@@ -2089,7 +2090,7 @@
         "overall": [
           {
             "name": "Lumont",
-            "score": 0.8525,
+            "score": 1.0,
             "matches": [
               "Buffs on allies",
               "Damage",
@@ -2098,7 +2099,7 @@
           },
           {
             "name": "Lucca",
-            "score": 0.704,
+            "score": 0.8448,
             "matches": [
               "Buffs on allies",
               "Crowd Control",
@@ -2107,7 +2108,7 @@
           },
           {
             "name": "Hepler",
-            "score": 0.5408,
+            "score": 0.649,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -3213,12 +3214,21 @@
         "damage": [
           {
             "name": "Nara",
-            "score": 0.9576,
+            "score": 1.0,
             "matches": [
               "Physical",
               "True damage",
               "Max HP-based damage",
               "HP loss"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 0.9417,
+            "matches": [
+              "True damage",
+              "Physical",
+              "Max HP-based damage"
             ]
           },
           {
@@ -3229,15 +3239,6 @@
               "Physical",
               "Max HP-based damage",
               "HP loss"
-            ]
-          },
-          {
-            "name": "Nazrik",
-            "score": 0.8365,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
             ]
           }
         ],
@@ -3268,7 +3269,7 @@
         "overall": [
           {
             "name": "Baelran",
-            "score": 0.671,
+            "score": 0.8053,
             "matches": [
               "Damage",
               "Similar Skills",
@@ -3276,17 +3277,17 @@
             ]
           },
           {
-            "name": "Pippa",
-            "score": 0.5754,
+            "name": "Sylphira",
+            "score": 0.6351,
             "matches": [
-              "Similar Skills",
               "Crowd Control"
             ]
           },
           {
-            "name": "Sylphira",
-            "score": 0.5293,
+            "name": "Nara",
+            "score": 0.6266,
             "matches": [
+              "Damage",
               "Crowd Control"
             ]
           }
@@ -3901,19 +3902,19 @@
             ]
           },
           {
+            "name": "Sylphira",
+            "score": 0.9869,
+            "matches": [
+              "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
             "name": "Frieren",
             "score": 0.8524,
             "matches": [
               "True damage",
               "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Sylphira",
-            "score": 0.8224,
-            "matches": [
-              "Max HP-based damage",
-              "True damage"
             ]
           }
         ],
@@ -3966,7 +3967,7 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.5711,
+            "score": 0.6854,
             "matches": [
               "Crowd Control",
               "Debuffs on enemies",
@@ -4343,18 +4344,19 @@
             ]
           },
           {
-            "name": "Saida",
+            "name": "Mehira",
             "score": 1.0,
             "matches": [
-              "Magic",
               "DoT",
+              "Magic",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Gwyneth",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
+              "Magic",
               "DoT",
               "Max HP-based damage"
             ]
@@ -4396,7 +4398,7 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.7264,
+            "score": 0.8717,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -4404,7 +4406,7 @@
           },
           {
             "name": "Silvina",
-            "score": 0.6432,
+            "score": 0.7718,
             "matches": [
               "Damage",
               "Debuffs on enemies",
@@ -4412,10 +4414,11 @@
             ]
           },
           {
-            "name": "Cryonaia",
-            "score": 0.5586,
+            "name": "Lily May",
+            "score": 0.5909,
             "matches": [
-              "Damage"
+              "Damage",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -5385,11 +5388,10 @@
             ]
           },
           {
-            "name": "Alna",
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical",
-              "DoT",
               "Max HP-based damage"
             ]
           }
@@ -5443,7 +5445,7 @@
         "overall": [
           {
             "name": "Lumont",
-            "score": 0.5922,
+            "score": 0.7107,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -5451,7 +5453,7 @@
           },
           {
             "name": "Hepler",
-            "score": 0.5602,
+            "score": 0.6723,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -6255,7 +6257,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Zorya",
+            "score": 0.576,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Carolina": {
@@ -8095,21 +8106,21 @@
         ],
         "damage": [
           {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
+            "name": "Antandra",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
             "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical"
-            ]
-          },
-          {
-            "name": "Igor",
-            "score": 1.0,
-            "matches": [
-              "Physical"
-            ]
-          },
-          {
-            "name": "Kruger",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -9368,6 +9379,13 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Frieren",
             "score": 1.0,
             "matches": [
@@ -9380,14 +9398,6 @@
             "score": 1.0,
             "matches": [
               "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Galahad",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "Magic"
             ]
           }
         ],
@@ -9415,7 +9425,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Silvina",
+            "score": 0.5471,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Damian": {
@@ -10939,17 +10958,8 @@
         ],
         "damage": [
           {
-            "name": "Zorya",
-            "score": 0.8542,
-            "matches": [
-              "Magic",
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
             "name": "Mehira",
-            "score": 0.851,
+            "score": 1.0,
             "matches": [
               "DoT",
               "Magic",
@@ -10958,8 +10968,17 @@
             ]
           },
           {
-            "name": "Aliceth",
-            "score": 0.8059,
+            "name": "Zorya",
+            "score": 1.0,
+            "matches": [
+              "Magic",
+              "Max HP-based damage",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Athalia",
+            "score": 0.9671,
             "matches": [
               "Max HP-based damage",
               "HP loss"
@@ -11005,7 +11024,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Sylphira",
+            "score": 0.5099,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Eironn": {
@@ -13177,7 +13205,16 @@
         "damage": [
           {
             "name": "Athalia",
-            "score": 0.9041,
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "True damage",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Nara",
+            "score": 0.8855,
             "matches": [
               "Physical",
               "True damage",
@@ -13190,15 +13227,6 @@
             "matches": [
               "True damage",
               "Physical",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Nara",
-            "score": 0.7379,
-            "matches": [
-              "Physical",
-              "True damage",
               "HP loss"
             ]
           }
@@ -13941,23 +13969,23 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Thador",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -13992,21 +14020,21 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.5538,
+            "score": 0.6646,
             "matches": [
               "Damage"
             ]
           },
           {
             "name": "Pang",
-            "score": 0.5538,
+            "score": 0.6646,
             "matches": [
               "Damage"
             ]
           },
           {
-            "name": "Atalanta",
-            "score": 0.5436,
+            "name": "Hodgkin",
+            "score": 0.5801,
             "matches": [
               "Damage",
               "Similar Skills"
@@ -14876,7 +14904,16 @@
         ],
         "debuff": [],
         "cc": [],
-        "overall": []
+        "overall": [
+          {
+            "name": "Hepler",
+            "score": 0.5794,
+            "matches": [
+              "Damage",
+              "Healing"
+            ]
+          }
+        ]
       }
     },
     "Granny Dahnie": {
@@ -15321,7 +15358,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.653,
+            "score": 0.7836,
             "matches": [
               "Buffs on allies",
               "Crowd Control",
@@ -15741,19 +15778,17 @@
             ]
           },
           {
-            "name": "Alna",
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
-              "DoT"
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Thador",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Physical",
               "Max HP-based damage",
               "DoT"
             ]
@@ -15784,6 +15819,14 @@
           }
         ],
         "overall": [
+          {
+            "name": "Perseus",
+            "score": 0.5581,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          },
           {
             "name": "Aliceth",
             "score": 0.5049,
@@ -16925,6 +16968,14 @@
         ],
         "damage": [
           {
+            "name": "Mehira",
+            "score": 1.0,
+            "matches": [
+              "Max HP-based damage",
+              "HP loss"
+            ]
+          },
+          {
             "name": "Aliceth",
             "score": 1.0,
             "matches": [
@@ -16938,15 +16989,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage",
               "HP loss"
             ]
           }
@@ -17000,7 +17042,7 @@
         "overall": [
           {
             "name": "Nara",
-            "score": 0.6538,
+            "score": 0.7846,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -17009,7 +17051,7 @@
           },
           {
             "name": "Seth",
-            "score": 0.6462,
+            "score": 0.7754,
             "matches": [
               "Damage",
               "Similar Skills"
@@ -17017,7 +17059,7 @@
           },
           {
             "name": "Athalia",
-            "score": 0.6,
+            "score": 0.72,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -18519,16 +18561,8 @@
         ],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 0.9964,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Perseus",
-            "score": 0.9715,
+            "name": "Baelran",
+            "score": 1.0,
             "matches": [
               "Physical",
               "Max HP-based damage"
@@ -18536,7 +18570,15 @@
           },
           {
             "name": "Alna",
-            "score": 0.9408,
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Athalia",
+            "score": 1.0,
             "matches": [
               "Physical",
               "Max HP-based damage"
@@ -18608,11 +18650,10 @@
             ]
           },
           {
-            "name": "Twins",
-            "score": 0.6253,
+            "name": "Mikola",
+            "score": 0.6411,
             "matches": [
-              "Healing",
-              "Buffs on allies"
+              "Healing"
             ]
           }
         ]
@@ -18902,23 +18943,23 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -21219,23 +21260,23 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Thador",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -21293,7 +21334,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Lenya",
+            "score": 0.5264,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Kazim": {
@@ -22888,16 +22938,7 @@
         ],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Brutus",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -22905,7 +22946,15 @@
             ]
           },
           {
-            "name": "Nazrik",
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -23197,19 +23246,19 @@
             ]
           },
           {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "True damage",
+              "Physical"
+            ]
+          },
+          {
             "name": "Athalia",
             "score": 1.0,
             "matches": [
               "True damage",
               "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Cyran",
-            "score": 1.0,
-            "matches": [
-              "True damage",
               "Max HP-based damage"
             ]
           }
@@ -23239,7 +23288,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Scarlita",
+            "score": 0.5351,
+            "matches": [
+              "Similar Skills",
+              "Buffs on allies"
+            ]
+          }
+        ]
       }
     },
     "Kruger": {
@@ -23562,7 +23620,7 @@
             ]
           },
           {
-            "name": "Soren",
+            "name": "Brutus",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -23571,7 +23629,7 @@
           },
           {
             "name": "Satrana",
-            "score": 0.9368,
+            "score": 1.0,
             "matches": [
               "Max HP-based damage"
             ]
@@ -23623,7 +23681,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Kordan",
+            "score": 0.533,
+            "matches": [
+              "Buffs on allies",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Kulu": {
@@ -24771,7 +24838,7 @@
         "overall": [
           {
             "name": "Soren",
-            "score": 0.6856,
+            "score": 0.8227,
             "matches": [
               "Damage",
               "Similar Skills",
@@ -24780,7 +24847,7 @@
           },
           {
             "name": "Kafra",
-            "score": 0.6646,
+            "score": 0.7975,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -24788,7 +24855,7 @@
           },
           {
             "name": "Perseus",
-            "score": 0.6462,
+            "score": 0.7754,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -25353,7 +25420,7 @@
             ]
           },
           {
-            "name": "Saida",
+            "name": "Mehira",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -25403,10 +25470,18 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.7692,
+            "score": 0.9231,
             "matches": [
               "Damage",
               "Debuffs on enemies",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Sylphira",
+            "score": 0.8284,
+            "matches": [
+              "Damage",
               "Crowd Control"
             ]
           },
@@ -25415,14 +25490,6 @@
             "score": 0.6978,
             "matches": [
               "Damage"
-            ]
-          },
-          {
-            "name": "Sylphira",
-            "score": 0.6903,
-            "matches": [
-              "Damage",
-              "Crowd Control"
             ]
           }
         ]
@@ -26262,6 +26329,14 @@
         ],
         "damage": [
           {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
@@ -26271,14 +26346,6 @@
           },
           {
             "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -26314,7 +26381,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Antandra",
+            "score": 0.5293,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Lucius": {
@@ -26833,7 +26909,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.624,
+            "score": 0.7488,
             "matches": [
               "Buffs on allies",
               "Damage",
@@ -26842,7 +26918,7 @@
           },
           {
             "name": "Scarlita",
-            "score": 0.5442,
+            "score": 0.653,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -26850,7 +26926,7 @@
           },
           {
             "name": "Antandra",
-            "score": 0.5333,
+            "score": 0.64,
             "matches": [
               "Damage",
               "Debuffs on enemies",
@@ -27073,8 +27149,8 @@
             ]
           },
           {
-            "name": "Galahad",
-            "score": 0.9953,
+            "name": "Saida",
+            "score": 1.0,
             "matches": [
               "Magic",
               "Max HP-based damage"
@@ -28026,14 +28102,14 @@
         "overall": [
           {
             "name": "Antandra",
-            "score": 0.6005,
+            "score": 0.7206,
             "matches": [
               "Buffs on allies"
             ]
           },
           {
             "name": "Hepler",
-            "score": 0.5845,
+            "score": 0.7014,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -29579,6 +29655,16 @@
         ],
         "damage": [
           {
+            "name": "Dunlingr",
+            "score": 1.0,
+            "matches": [
+              "DoT",
+              "Magic",
+              "Max HP-based damage",
+              "HP loss"
+            ]
+          },
+          {
             "name": "Zorya",
             "score": 1.0,
             "matches": [
@@ -29588,18 +29674,8 @@
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.9828,
-            "matches": [
-              "DoT",
-              "Magic",
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
             "name": "Ravion",
-            "score": 0.8129,
+            "score": 0.9755,
             "matches": [
               "Max HP-based damage",
               "HP loss"
@@ -30699,10 +30775,18 @@
         "damage": [
           {
             "name": "Athalia",
-            "score": 0.8462,
+            "score": 1.0,
             "matches": [
               "Physical",
               "True damage",
+              "Max HP-based damage",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Zorya",
+            "score": 0.7626,
+            "matches": [
               "Max HP-based damage",
               "HP loss"
             ]
@@ -30715,14 +30799,6 @@
               "Physical",
               "Max HP-based damage",
               "HP loss"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 0.6776,
-            "matches": [
-              "True damage",
-              "Max HP-based damage"
             ]
           }
         ],
@@ -31128,18 +31204,19 @@
             ]
           },
           {
+            "name": "Zorya",
+            "score": 0.6167,
+            "matches": [
+              "Damage",
+              "Crowd Control",
+              "Debuffs on enemies"
+            ]
+          },
+          {
             "name": "Marcille",
             "score": 0.613,
             "matches": [
               "Damage"
-            ]
-          },
-          {
-            "name": "Vala",
-            "score": 0.5539,
-            "matches": [
-              "Damage",
-              "Crowd Control"
             ]
           }
         ]
@@ -33301,23 +33378,23 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -33367,7 +33444,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.7444,
+            "score": 0.8932,
             "matches": [
               "Damage",
               "Similar Skills",
@@ -33377,7 +33454,7 @@
           },
           {
             "name": "Lenya",
-            "score": 0.6357,
+            "score": 0.7628,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -33385,7 +33462,7 @@
           },
           {
             "name": "Perseus",
-            "score": 0.6334,
+            "score": 0.7601,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -34189,23 +34266,23 @@
         ],
         "damage": [
           {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Himmel",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -34250,18 +34327,18 @@
             ]
           },
           {
-            "name": "Vala",
-            "score": 0.5293,
+            "name": "Florabelle",
+            "score": 0.6322,
             "matches": [
-              "Damage",
-              "Crowd Control"
+              "Damage"
             ]
           },
           {
-            "name": "Florabelle",
-            "score": 0.5268,
+            "name": "Himmel",
+            "score": 0.608,
             "matches": [
-              "Damage"
+              "Damage",
+              "Buffs on allies"
             ]
           }
         ]
@@ -35368,6 +35445,14 @@
         ],
         "damage": [
           {
+            "name": "Mehira",
+            "score": 1.0,
+            "matches": [
+              "Max HP-based damage",
+              "HP loss"
+            ]
+          },
+          {
             "name": "Athalia",
             "score": 1.0,
             "matches": [
@@ -35377,19 +35462,9 @@
             ]
           },
           {
-            "name": "Nara",
+            "name": "Zorya",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Vala",
-            "score": 1.0,
-            "matches": [
-              "Physical",
               "Max HP-based damage",
               "HP loss"
             ]
@@ -36875,19 +36950,19 @@
             ]
           },
           {
+            "name": "Sylphira",
+            "score": 1.0,
+            "matches": [
+              "Magic",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Cryonaia",
             "score": 1.0,
             "matches": [
               "Magic",
               "DoT",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Marcille",
-            "score": 1.0,
-            "matches": [
-              "Magic",
               "Max HP-based damage"
             ]
           }
@@ -36933,6 +37008,14 @@
             "matches": [
               "Damage",
               "Crowd Control"
+            ]
+          },
+          {
+            "name": "Lily May",
+            "score": 0.5163,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -37305,6 +37388,14 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
@@ -37314,14 +37405,6 @@
           },
           {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Aliceth",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -37364,15 +37447,15 @@
           },
           {
             "name": "Kordan",
-            "score": 0.5385,
+            "score": 0.6462,
             "matches": [
               "Damage",
               "Crowd Control"
             ]
           },
           {
-            "name": "Gwyneth",
-            "score": 0.5183,
+            "name": "Nara",
+            "score": 0.6203,
             "matches": [
               "Damage"
             ]
@@ -37513,7 +37596,7 @@
             ]
           },
           {
-            "name": "Saida",
+            "name": "Mehira",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -37699,6 +37782,14 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
@@ -37708,14 +37799,6 @@
           },
           {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Aliceth",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -37751,7 +37834,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Korin",
+            "score": 0.5516,
+            "matches": [
+              "Similar Skills",
+              "Buffs on allies"
+            ]
+          }
+        ]
       }
     },
     "Seth": {
@@ -38204,7 +38296,7 @@
         "overall": [
           {
             "name": "Harak",
-            "score": 0.5747,
+            "score": 0.6896,
             "matches": [
               "Damage",
               "Similar Skills"
@@ -38212,18 +38304,17 @@
           },
           {
             "name": "Ravion",
-            "score": 0.5143,
+            "score": 0.6172,
             "matches": [
               "Damage",
               "Debuffs on enemies"
             ]
           },
           {
-            "name": "Gwyneth",
-            "score": 0.507,
+            "name": "Athalia",
+            "score": 0.5538,
             "matches": [
-              "Debuffs on enemies",
-              "Crowd Control"
+              "Damage"
             ]
           }
         ]
@@ -39297,6 +39388,13 @@
         ],
         "damage": [
           {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
@@ -39305,13 +39403,6 @@
           },
           {
             "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "Physical"
-            ]
-          },
-          {
-            "name": "Alna",
             "score": 1.0,
             "matches": [
               "Physical"
@@ -40731,6 +40822,14 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
@@ -40743,13 +40842,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Shemira",
-            "score": 1.0,
-            "matches": [
               "Max HP-based damage"
             ]
           }
@@ -40790,7 +40882,7 @@
         "overall": [
           {
             "name": "Hodgkin",
-            "score": 0.6107,
+            "score": 0.7328,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -40798,7 +40890,7 @@
           },
           {
             "name": "Berial",
-            "score": 0.6037,
+            "score": 0.7244,
             "matches": [
               "Damage",
               "Debuffs on enemies",
@@ -40806,8 +40898,8 @@
             ]
           },
           {
-            "name": "Vala",
-            "score": 0.5713,
+            "name": "Perseus",
+            "score": 0.6453,
             "matches": [
               "Damage"
             ]
@@ -41037,6 +41129,13 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
@@ -41049,18 +41148,20 @@
             "matches": [
               "Physical"
             ]
-          },
-          {
-            "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "Physical"
-            ]
           }
         ],
         "debuff": [],
         "cc": [],
-        "overall": []
+        "overall": [
+          {
+            "name": "Kafra",
+            "score": 0.54,
+            "matches": [
+              "Similar Skills",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Smokey & Meerky": {
@@ -42445,6 +42546,14 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
@@ -42454,14 +42563,6 @@
           },
           {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Aliceth",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -42495,7 +42596,17 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Hepler",
+            "score": 0.5456,
+            "matches": [
+              "Buffs on allies",
+              "Damage",
+              "Crowd Control"
+            ]
+          }
+        ]
       }
     },
     "Sylphira": {
@@ -42912,7 +43023,7 @@
             ]
           },
           {
-            "name": "Athalia",
+            "name": "Baelran",
             "score": 1.0,
             "matches": [
               "Max HP-based damage",
@@ -42920,10 +43031,9 @@
             ]
           },
           {
-            "name": "Pippa",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "Magic",
               "Max HP-based damage",
               "True damage"
             ]
@@ -42979,16 +43089,8 @@
         ],
         "overall": [
           {
-            "name": "Pippa",
-            "score": 0.6212,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies"
-            ]
-          },
-          {
             "name": "Saida",
-            "score": 0.5288,
+            "score": 0.6346,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -42996,10 +43098,18 @@
           },
           {
             "name": "Baelran",
-            "score": 0.527,
+            "score": 0.6324,
             "matches": [
               "Damage",
               "Crowd Control"
+            ]
+          },
+          {
+            "name": "Pippa",
+            "score": 0.6212,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -44249,23 +44359,23 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Alna",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -44639,29 +44749,28 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage",
+              "DoT"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Alna",
             "score": 1.0,
             "matches": [
               "DoT",
               "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Gwyneth",
-            "score": 0.9956,
-            "matches": [
-              "DoT",
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Brutus",
-            "score": 0.9708,
-            "matches": [
-              "Physical",
-              "DoT",
               "Max HP-based damage"
             ]
           }
@@ -44693,12 +44802,20 @@
         "overall": [
           {
             "name": "Ravion",
-            "score": 0.647,
+            "score": 0.7764,
             "matches": [
               "Buffs on allies",
               "Crowd Control",
               "Damage",
               "Similar Skills"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 0.5312,
+            "matches": [
+              "Crowd Control",
+              "Damage"
             ]
           }
         ]
@@ -45021,7 +45138,24 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Gerda",
+            "score": 0.576,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          },
+          {
+            "name": "Lucca",
+            "score": 0.576,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Tilaya": {
@@ -45822,7 +45956,24 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Scarlita",
+            "score": 0.5161,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Ravion",
+            "score": 0.5057,
+            "matches": [
+              "Buffs on allies",
+              "Energy provider"
+            ]
+          }
+        ]
       }
     },
     "Vala": {
@@ -46675,7 +46826,15 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.8862,
+            "score": 1.0,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Lucca",
+            "score": 0.8418,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -46687,15 +46846,6 @@
             "matches": [
               "Damage",
               "Crowd Control"
-            ]
-          },
-          {
-            "name": "Vala",
-            "score": 0.8003,
-            "matches": [
-              "Damage",
-              "Crowd Control",
-              "Debuffs on enemies"
             ]
           }
         ]
@@ -47135,23 +47285,23 @@
         ],
         "damage": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -47211,7 +47361,7 @@
         "overall": [
           {
             "name": "Zorya",
-            "score": 0.5492,
+            "score": 0.659,
             "matches": [
               "Debuffs on enemies",
               "Crowd Control",
@@ -49613,16 +49763,8 @@
         ],
         "damage": [
           {
-            "name": "Nara",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
             "name": "Mehira",
-            "score": 0.9228,
+            "score": 1.0,
             "matches": [
               "Magic",
               "Max HP-based damage",
@@ -49631,9 +49773,17 @@
           },
           {
             "name": "Dunlingr",
-            "score": 0.8558,
+            "score": 1.0,
             "matches": [
               "Magic",
+              "Max HP-based damage",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Nara",
+            "score": 1.0,
+            "matches": [
               "Max HP-based damage",
               "HP loss"
             ]

@@ -24,7 +24,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 
 #### Play overview
 
-Aliceth specializes in single-target attack and buffing one selected ally at battle start. Her main utility comes from her ability to not just buff an ally’s Attack, but to also increase the ally’s Normal Attack range by 5 tiles if they are a Ranged Hero. Aliceth excels in AFK Stage content with multiple targetable enemies due to her ability to instantly defeat an enemy affected by her Mark of Judgment. Aliceth can bring great utility to any Boss battle through her combination of DPS and Support capabilities for herself and her allied “Brightfeather.” Unfortunately, if the ally with “Brightfeather” is defeated, the buff does not transfer. She is Invincible while airborne, and her arrows deal extra damage equal to a percentage of the enemy’s lost HP.
+Aliceth **bonds one ally at battle start**, empowering their strikes so follow-up attacks land after a set number of hits. Her active skill delivers a **heavy strike with knockback and stun** on a focused target when activated. She marks the **farthest enemy**, and she and bonded allies **prioritize that target** until it falls, then her battle ATK climbs for the rest of the fight. Her ultimate fires **arrow volleys** at a single foe, growing heavier when her partner meets feather thresholds. She also blocks the **first fatal blow** on herself or her bonded ally. Against **spread formations**, the mark and focus fire fail to concentrate damage. If the bonded ally dies early, much of her buffing and ultimate scaling is lost entirely.
 
 #### Skill overview
 
@@ -156,7 +156,7 @@ Aliceth provides Ally empower buff to single targets `high`, Attack range buff t
 
 #### Play overview
 
-Alna has introduced a new era in the PvP Meta because of her unmatched utility by granting a carry Hero immunity to damage and Control Effects while simultaneously making ranged characters significantly less reliable on the field. Passively, this skill designates an ally in the same row as Alna as the 'Winter Warrior', granting them immunity to Haste reduction effects and increasing their max HP. Alna fits nicely into the Saida AFK Stage team, that's currently the best composition for pushing under high deficits. in Dream Realm as there’s little to no value in reducing the Haste or Range of Bosses as they’re usually immune to it. When activated, Alna thrusts her spear to deal damage, providing a heal to both herself and the 'Winter Warrior'.
+Before battle, Alna **requires a Winter Warrior in her row**, chosen during prep, who gains extra max HP and shared healing while resisting her opening frost. At fight start she blankets the field in frost, **cutting Haste and attack range** for nearly everyone, then cycles **damage and control immunity** windows that can extend to her partner as well. Her blizzard strips enemy Haste buffs and deals steady damage over time. Damage she or the Winter Warrior takes is then converted into **delayed healing**. Against **targets immune to Haste or range reduction**, much of her control is wasted while allies still suffer the frost penalty. She also needs **sustained fight time** to reapply her ultimate and periodic immunity cycles.
 
 #### Skill overview
 
@@ -223,9 +223,9 @@ Alna provides Ally empower buff to single targets `high`, Max HP buff to single 
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage` `DoT`)
 - Baelran (100% `Physical` `Max HP-based damage`)
 - Thador (100% `DoT` `Physical` `Max HP-based damage`)
-- Dunlingr (100% `DoT` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -275,7 +275,7 @@ Alna provides Ally empower buff to single targets `high`, Max HP buff to single 
 
 #### Play overview
 
-Alsa is a great Magic DPS on paper, but is also lacking in terms of survivability. Her Ultimate Skill, Twirling Rocks, causes Alsa to curl into a ball and move to a target tile, damaging nearby enemies before entering Combat Stance for the rest of the battle. In this stance, she gains two skills: Vigorous Slam, which consumes Energy to hit enemies, returns her to her original position and briefly stuns them; and Swift Evasion, which triggers when she is damaged by nearby enemies, striking adjacent targets, slowing their movement, then rolling away and granting her a shield, with a cooldown between activations. Alsa can deal good damage, but her tendency to roll out of position makes her vulnerable and prone to dying quickly. Alsa in Dream Realm, as bosses cannot be affected by Crowd Control, making half of her kit useless.
+Alsa enters a **combat stance** that boosts damage and dodge, then fights from that posture for the rest of the fight. Her ultimate curls into a ball, **damaging nearby enemies** and creating terrain obstacles that reshape paths across the field. She punishes **recently controlled foes** with AoE strikes and gains haste as the battle wears on. In stance she slams for extra hits and **evades incoming blows**, rolling away with a shield when pressed. Bonus damage also lands on **multiply-controlled targets**, rewarding teams that chain crowd control together. Terrain obstacles can block enemy movement and funnel foes into follow-up strikes. Against **immune or ungrouped targets**, her control payoff and obstacle value shrink sharply. Her habit of **rolling out of position** also leaves her exposed when enemies focus her down.
 
 #### Skill overview
 
@@ -401,7 +401,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 #### Play overview
 
-Antandra is a decent tank that is used mostly as a sub-tank as she lacks a proper stalling mechanic that would make her work in the main tank role. 'Shield Assault' is such a perfect ult for a Tank. Taunts enemies, reduces damage taken, becomes immune to crowd control and after that comes a stun to enemies near her then spear swinging them to a knockdown which serves as a great way for them to be controlled for a good amount of time then heals her by 20% of her max HP that increases for every enemy hit by the swing. Supreme+ passive increases her Physical Def permanently for the amount of enemies hit by the swing. 'Shield Formation' is most useful when you're with a second Tank, the only downside is that it has a hefty long cooldown.
+Antandra guards one ally with **shields and damage reduction**, then rushes to their side when they are threatened. Her ultimate first **cuts incoming damage**, then stuns surrounding enemies and swings for damage and self-heal that scales with foes hit. Repeated frontal strikes **lower enemy ATK** while her battle max HP grows over time. Landing ultimate hits also **raises her Phys DEF** permanently for the rest of the fight. She works best as a **secondary frontliner** beside another tank who can hold primary aggro and absorb burst. Her shield skill has a **long cooldown**, so mistimed casts leave allies exposed. Without a partner to guard or **dense enemy clusters**, her stun swing and heal scaling underdeliver.
 
 #### Skill overview
 
@@ -464,9 +464,9 @@ Antandra provides DEF buff (Supreme+) to single targets `average`.
 
 **Best overall replacement**
 
-- Lumont (85% `Buffs on allies` `Damage` `Debuffs on enemies`)
-- Lucca (70% `Buffs on allies` `Crowd Control` `Damage`)
-- Hepler (54% `Crowd Control` `Damage`)
+- Lumont (100% `Buffs on allies` `Damage` `Debuffs on enemies`)
+- Lucca (84% `Buffs on allies` `Crowd Control` `Damage`)
+- Hepler (64% `Crowd Control` `Damage`)
 
 **Buffs on allies**
 
@@ -532,7 +532,7 @@ Antandra provides DEF buff (Supreme+) to single targets `average`.
 
 #### Play overview
 
-Arden's kit is centered around the application and exploitation of crowd control from either himself or allies and combos especially well with units that can provide consistent sources of it to facilitate his damage. His "Entangling Roots" ability is the main source of Crowd Control from Arden himself, inflicting entangle on the 2 closest enemies. His "Gift of Nature" passive causes him to generate Energy whenever a non-summoned enemy is affected by crowd control, allowing him to cycle it decently quickly in the right teams. And a right team he needs because his Ultimate: "Force of Nature" rains lightning on nearby enemies, spreading dark clouds on the map that will then repeatedly strike crowd-controlled enemies. Over the full duration of this, this damage can tick up fast, especially when enemies are caught in chain cc.
+Arden builds damage around **crowd control on himself or allies**, cycling energy whenever enemies are controlled. His roots bind multiple foes with **continuous damage**, feeding faster skill use in control-heavy teams. His ultimate drops a **persistent lightning zone** that strikes controlled enemies more often than free targets. After casting, he can **bind every target** under the dark cloud at once for a chained lockdown. Strike intervals also **tighten on repeat hits** within the zone, letting damage tick up fast over the full duration. He needs **consistent control sources** from himself or teammates to fuel his rotation and keep the zone active. Against **control-immune or fast-cleansing teams**, his energy loop and lightning ticks never ramp up meaningfully. Pair him with allies who can chain stuns or roots to maximize lightning ticks.
 
 #### Skill overview
 
@@ -647,7 +647,7 @@ Arden provides Energy recovery to single targets `low`.
 
 #### Play overview
 
-Atalanta's kit revolves around Crowd Control and AoE damage, whilst being terrible at it. She is one, if not the worst, DPS that anyone could consider. There is some hope for her, but she needs a lot of buffs before she performs in PvP. The AoE only inflicts 60% of the damage dealt to the main target, which feels inconsistent, especially since her entire kit seems to revolve around this effect. For instance, her Ultimate, Wild Sniper, launches a bolt with a similar explosive effect, but again, the AoE damage is lower compared to the bolt's initial impact.
+Atalanta opens with **rapid chained casts** of her knockback and explosive shots before settling into normal pacing. Her ultimate dashes forward, then fires a **penetrating line shot** that can clip several foes. Hitting different enemies **raises her haste**, rewarding wide target access early. A direct ultimate hit also **heals herself**. Splash from her explosives only carries **partial damage**, so grouped hits feel weaker than the main strike. She struggles when **frontlines block her line** or when burst windows end before she can line up a clean shot.
 
 #### Skill overview
 
@@ -783,7 +783,7 @@ Atalanta provides Haste buff (Legendary+) to multiple targets `high` — conditi
 
 #### Play overview
 
-Athalia’s Ultimate has both passive and active components. The passive ability is that Athalia revives as a Lance after death, but with 35% reduced attack. Athalia’s kit is based on burst damage, while bosses favour sustained damage. Athalia’s kit offers a very valuable combination in PVP - Survivability, Burst Damage, and little Ultimate reliance.
+Athalia **dives behind the highest damage dealer**, slashing foes in her path while healing herself. Her ultimate deals **massive true damage** to whoever has dealt the most cumulative damage. Repeated dashes trigger **extra area slashes** that also **strip enemy shields**. She excels at **bursting isolated carries** but offers little when fights demand sustained pressure.
 
 #### Skill overview
 
@@ -841,9 +841,9 @@ Common buffers are **Solise**, **Twins**, or **Smokey & Meerky**.
 
 **Best overall replacement**
 
-- Baelran (67% `Damage` `Similar Skills` `Crowd Control`)
-- Pippa (57% `Similar Skills` `Crowd Control`)
-- Sylphira (52% `Crowd Control`)
+- Baelran (80% `Damage` `Similar Skills` `Crowd Control`)
+- Sylphira (63% `Crowd Control`)
+- Nara (62% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -853,9 +853,9 @@ Common buffers are **Solise**, **Twins**, or **Smokey & Meerky**.
 
 **Damage**
 
-- Nara (95% `Physical` `True damage` `Max HP-based damage` `HP loss`)
+- Nara (100% `Physical` `True damage` `Max HP-based damage` `HP loss`)
+- Baelran (94% `True damage` `Physical` `Max HP-based damage`)
 - Vala (90% `True damage` `Physical` `Max HP-based damage` `HP loss`)
-- Nazrik (83% `True damage` `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -895,7 +895,7 @@ Common buffers are **Solise**, **Twins**, or **Smokey & Meerky**.
 
 #### Play overview
 
-Aurora provides excellent utility for summoner-type heroes. She is free to obtain and can be upgraded to Supreme+ through the game's new tutorial and a permanent event. Her Ultimate, Starlit Slumber, has both passive and active effects. She can be used alongside summoner heroes, but she is generally outperformed by other options, especially for new players. Marking the boss as Nightmare while boosting the damage of summoned allies makes her a top-tier pick.
+Aurora summons a companion that **attacks and detonates for AoE damage**, then falls asleep to become **invincible** while buffing allied summons. Nearby enemies who linger are **transformed into harmless forms**, and her ATK scales with **summon variety** on the field. While asleep, allied summons are **enhanced** and her companion becomes unaffected. She shines beside **summon-heavy teams** but adds little when allies field few bodies or fights end before her sleep cycle.
 
 #### Skill overview
 
@@ -1016,7 +1016,7 @@ Aurora provides Haste buff to summons `high` and Summon damage buff (Mythic+) to
 
 #### Play overview
 
-Baelran has a massive health pool, high ramping damage, healing synergy and Hyper-carry potential. He requires high single-target heals to actually get good use out of his kit. His Ultimate, Celestial Rise, has a passive and an active state. While Baelran’s damage being based on his own HP scales just fine for PvP, that is not always the case for Dream Realm. Baelran is very close to meta viability in PvP.
+Baelran leans on a **massive HP pool** and passive regeneration, then transforms when shields decay or bonus HP triggers. In enhanced form he gains **unaffected status** and his ultimate deals **frontal true damage** with HP restore. Each form shift raises haste over time. His hits also **permanently shave enemy max HP** while transformed. He needs **reliable single-target healing** to cycle forms safely.
 
 #### Skill overview
 
@@ -1079,7 +1079,7 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 
 **Best overall replacement**
 
-- Sylphira (57% `Crowd Control` `Debuffs on enemies` `Damage`)
+- Sylphira (68% `Crowd Control` `Debuffs on enemies` `Damage`)
 
 **Similar Skills**
 
@@ -1090,8 +1090,8 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 **Damage**
 
 - Athalia (100% `True damage` `Physical` `Max HP-based damage`)
+- Sylphira (98% `Max HP-based damage` `True damage`)
 - Frieren (85% `True damage` `Max HP-based damage`)
-- Sylphira (82% `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -1141,7 +1141,7 @@ Common buffers are **Twins**, **Solise**, or **Mikola**.
 
 #### Play overview
 
-Berial's kit is tailored to deal with Isolated enemies, meaning enemies with no allies within a 1 tile radius of them. This often includes backliners such as healers, DPS, but also other Assassins that dive into your team. "Shadow Trick" is the core of Berial's kit, causing him to go Invincible and bounce between Isolated opponents to deal damage. If there are no Isolated enemies, he heals himself instead. This combined with "Devil's Contract" which allows him to resurrect himself once if an enemy is killed while he is dead makes him a deceptively hard unit to get rid of.
+Berial hunts **isolated enemies** with no allies within one tile, bouncing in stealth to drain energy and frighten nearby foes. If no one is isolated, he **heals and retreats** instead of pressing the attack. He can **revive from a newly defeated enemy** after his own death, and stealth duration **extends after he falls**. Isolated targets also suffer **penalized damage dealt and taken**, and may spawn decaying decoy summons. He dominates **scattered backlines** but does little when enemies stay **packed together**. Teams that protect rear targets or deny isolated picks waste his assassin kit.
 
 #### Skill overview
 
@@ -1202,9 +1202,9 @@ Common buffers are **Solise**, **Rowan**, or **Smokey & Meerky**.
 
 **Best overall replacement**
 
-- Saida (72% `Damage` `Debuffs on enemies`)
-- Silvina (64% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Cryonaia (55% `Damage`)
+- Saida (87% `Damage` `Debuffs on enemies`)
+- Silvina (77% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Lily May (59% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
@@ -1215,8 +1215,8 @@ Common buffers are **Solise**, **Rowan**, or **Smokey & Meerky**.
 **Damage**
 
 - Frieren (100% `DoT` `Magic` `Max HP-based damage`)
+- Mehira (100% `DoT` `Magic` `Max HP-based damage`)
 - Saida (100% `Magic` `DoT` `Max HP-based damage`)
-- Gwyneth (100% `DoT` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -1265,7 +1265,7 @@ Common buffers are **Solise**, **Rowan**, or **Smokey & Meerky**.
 
 #### Play overview
 
-Bonnie acts as a powerful debuffer and DPS, capable of reducing the enemy Haste and ATK, among other effects, with more dupes. At the start of battle, she will cast her unique “Aging” debuff on the rearmost enemy, dealing damage and reducing their Haste. This effect is enhanced when an ally deals Magic Damage to the target, making Magic Damage carries an ideal pairing for her teams. Bonnie deals less damage than other DR top performers, but has potential against bosses featuring split phases or multiple parts, thanks to her AoE damage, thereby increasing her overall damage output greatly. And once the effect is maxed out, the enemy also receives an ATK debuff.
+Bonnie opens by placing an **Aging debuff** on the rearmost enemy, slowing haste and stacking when allies deal magic damage to that target. Her ultimate hits AoE for **bonus damage and stun** against debuffed targets. She can **turn to mist and reposition** when threatened, and the debuff **spreads on max stack or death**. Max-stack victims also take **increased magic damage**, making magic dealers ideal partners. Battle ATK growth adds steady personal damage over time. She deals **less raw damage** than top burst dealers but excels when debuffs can spread across multiple targets. Against **immune or cleanse-heavy lines**, her debuff chain and ultimate payoff never build.
 
 #### Skill overview
 
@@ -1386,7 +1386,7 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 #### Play overview
 
-Brutus focuses on stalling enemies long enough to give your team time to ramp up. His second skill, Indomitable, grants him Invincibility and Immunity for 5 seconds after taking a fatal blow (6 seconds at Supreme+), making him a strong frontliner  even when focused on by enemies. His Ultimate, Whirlwind Wrath, deals AoE damage and makes him Invincible for 4 seconds. Brutus is rarely used in Dream Realm, as his main value for Dream Realm, which is his Physical DEF shred, is better handled by others, such as Kruger, who provides higher Physical DEF shred. He can be used as a meat shield in general and as a Physical debuffer.
+Brutus taunts nearby enemies while **shredding their Phys DEF**, then spins for sustained damage to adjacent foes. He **survives the first fatal blow** and gains temporary immunity, with extended immunity when triggered. Life drain rises during his spin, and taking **adjacent physical hits** feeds more drain after his frontal cleave. His ultimate spin also grants **brief invincibility** while active. His kit is built to **stall and soften frontlines** while he absorbs pressure. He adds little when enemies **ignore taunt** or burst him before Indomitable triggers. Without **melee traffic** around him, his spin and drain scaling stay flat.
 
 #### Skill overview
 
@@ -1444,8 +1444,8 @@ Common buffers are **Koko**.
 
 **Best overall replacement**
 
-- Lumont (59% `Crowd Control` `Damage`)
-- Hepler (56% `Crowd Control` `Damage`)
+- Lumont (71% `Crowd Control` `Damage`)
+- Hepler (67% `Crowd Control` `Damage`)
 
 **Similar Skills**
 
@@ -1457,7 +1457,7 @@ Common buffers are **Koko**.
 
 - Gunnar (100% `Physical` `Max HP-based damage` `DoT`)
 - Baelran (100% `Physical` `Max HP-based damage`)
-- Alna (100% `Physical` `DoT` `Max HP-based damage`)
+- Himmel (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -1502,7 +1502,7 @@ Common buffers are **Koko**.
 
 #### Play overview
 
-Bryon excels at dealing massive damage, particularly against groups, with the aid of his companion Elona. When activated, Shadow Flash strikes a single enemy twice. Bryon is a great choice in AFK Stages, especially when he is partnered with Eironn to deal damage to multiple enemies while denying their ability to act. He is never used in Dream Realm as his damage and utility come from AoE attacks and reducing enemy Haste, which is not valuable against bosses. His Ultimate, Falcon Raid, passively grants Bryon 1000 Energy and summons Elona.
+Bryon opens with a **battle-start companion summon** that fights beside him and gains haste while she remains on the field. His projectiles **drain enemy energy** on hit, and his companion **counterattacks and stuns** when he is controlled or struck hard, also blocking fatal blows. Casting his projectile skill also **spawns leaves near the companion** for extra pressure. He deals strong **multi-target magic damage** when enemies are grouped. He underperforms when the companion **dies early** or when foes are **spread beyond projectile reach**.
 
 #### Skill overview
 
@@ -1624,7 +1624,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Solise**.
 
 #### Play overview
 
-Callan serves as a meat shield that protects the team at the start of battle and offers some Crowd Control (CC). At the start of battle, Callan becomes unaffected and gains a shield, protecting allies in a 2 tile radius from damage for the first couple of seconds by redirecting half of their damage to himself. His first skill deals some damage and a Knock Down and his second skill retaliates with a portion of his absorbed damage, which, in theory, sounds great, but from testing, his retaliation attack is a lot weaker than Thoran’s counter. As a Tank with low damage output and no offensive buffs, Callan has no use in the current Dream Realm bosses, where every unit should either buff or deal damage. Callan is surprisingly tanky at Epic rarity, being able to survive against an initial Eironn burst, but he dies shortly after, much like Brutus, but without the Taunt or Invulnerability.
+Callan grants **shields at battle start and on ultimate cast**, absorbing damage meant for nearby allies at the opening of fights. His multi-hit skill **knocks down** the target and nearby enemies, while absorbed damage is **stored for a burst release** on his second skill. Once per battle, low HP triggers an **AoE burst and stun** on nearby foes. He also heals whenever he gains any shield, and battle vitality **grows over time** to keep him standing through long engagements. He is a **strong opening protector** but offers weak retaliation compared to dedicated counter tanks. His stored burst also **underwhelms against heavily armored targets** that shrug off the release. He provides no offensive buffs for allies once shields fall. Fights that **bypass or strip shields** leave him with little damage and no team buffs to contribute once his protection windows end.
 
 #### Skill overview
 
@@ -1680,6 +1680,10 @@ Common buffers are **Koko**, **Solise**, or **Smokey & Meerky**.
 
 ### Units that can act as a replacement for Callan
 
+**Best overall replacement**
+
+- Zorya (57% `Crowd Control` `Damage`)
+
 **Similar Skills**
 
 - Gerda (34% `ally-shielder` `battle-start-burst`)
@@ -1728,7 +1732,7 @@ Common buffers are **Koko**, **Solise**, or **Smokey & Meerky**.
 
 #### Play overview
 
-Carolina specializes in dealing high damage against enemies affected by Crowd Control. She excels at applying Crowd Control herself while reducing enemy Magic Defense, making her often paired alongside characters who deal Magic Damage and inflict Crowd Control. Her Ultimate, Frozen Grave, deals damage and Freezes the target for 8 seconds, rendering them unable to act. Carolina pretty much in Dream Realm as her primary damage relies on dealing damage to enemies under Crowd Control — something that isn’t possible in Dream Realm. In PvP Carolina used to be one of the main companions to Eironn, but with the release of new and more powerful DPS and the decline of Eironn teams in the regular arena, she has fallen out of use.
+Carolina stacks **DoT on area hits**, then freezes a target and lays an **arctic field** that keeps burning foes inside. Orbiting projectiles **auto-attack controlled enemies**, and repeated casts widen projectile AoE while **shaving Magic DEF**. Stacking projectiles also **apply DoT on impact**, and her crit grows with cast count over long fights. She peaks when **allies supply steady control** and magic damage can exploit lowered defenses. Her freeze and field reward extended engagements where stacks can compound. Against **control-immune targets**, her orbiting damage and freeze setup never activate. Short fights that end **before DoT and cast stacks** build also waste her kit entirely.
 
 #### Skill overview
 
@@ -1848,7 +1852,7 @@ Carolina also requires units **applying crowd control** to enemies
 
 #### Play overview
 
-Cassadee's kit is versatile and focuses on dealing damage, providing Crowd Control and also buffing allies. One of her primary gimmicks is Tidal Strength, which causes her to target the nearest ally (seen by the target marker) with a blessing that causes her to deal additional Magic Damage when the affected ally attacks an enemy. At LVL 151, she routinely reapplies the buff every 5 seconds, allowing her to get some decent damage over time. Her other skill, Undercurrent, gives her a bit of single-target Crowd Control to throw around, but it isn't anything surprising. Her Ultimate: Running Tide, is a column attack that deals decent damage and knocks away enemies in a straight line.
+Cassadee blesses one ally so their attacks **deal bonus magic damage** to struck enemies, keeping haste high while that ally lives. Her heavy single-target strike adds direct pressure, and her ultimate **knocks back foes in a line** while temporarily blessing allies it touches. The ultimate path also **lowers enemy Magic DEF** for a window after impact. She blends **damage, soft control, and ally amplification** in one slot. She falters when the **blessed ally dies early** or when enemies **dodge the line attack**. Without a **partner who attacks often**, her blessing contributes little sustained value over the fight. Her haste growth rewards keeping the blessed ally alive through sustained exchanges.
 
 #### Skill overview
 
@@ -1971,7 +1975,7 @@ Cassadee provides Tidal Strength buff to all units `high`.
 
 #### Play overview
 
-Cecia was the top AFK Stage pusher at the launch of the game. However, nowadays, she’s used less commonly in favor of higher DPS heroes. That said, she’s still a solid choice for new players, as she’s available for free early on in the game. She can still be used in Dream Realm for the DPS, but that's mostly it. If you're new to the game, Cecia is a solid choice for pushing in the lower ranks of Arena thanks to her CC, damage and tankiness.
+Cecia fights alongside a **permanent companion**, raising both their attack speeds and landing periodic **enhanced heavy strikes**. She binds an enemy to **drain their stats**, and attack speed scales while the companion stays on the field. Her ultimate **re-summons the companion** for another burst of pressure. She is a **solid carry** with bind and steady DPS but struggles against **tanky single targets** that resist bind.
 
 #### Skill overview
 
@@ -2095,6 +2099,10 @@ Cecia provides DEF Penetration buff to single targets `low`, Lifedrain buff in a
 - **Behavior tags**: `self-repositioner` `summoner`
 - **Damage types**: Physical `high`
 
+#### Play overview
+
+Chippy **summons two companions** at battle start to fight beside him, then leaps at a single target for direct damage. His normal attacks have a **rare chance to spike** into massive single-hit damage when luck lands. He is a **lightweight early summon** who adds bodies and occasional burst. Without **companions surviving** or fights long enough for crit spikes, his output stays modest. He offers little when enemies **wipe his summons immediately** or outscale his basic damage.
+
 #### Skill overview
 
 - **Signature skill (ult)**: speed `average`, damage `average`
@@ -2140,9 +2148,9 @@ rare chance for massive single normal attack damage
 
 **Damage**
 
+- Alna (100% `Physical`)
+- Antandra (100% `Physical`)
 - Athalia (100% `Physical`)
-- Igor (100% `Physical`)
-- Kruger (100% `Physical`)
 
 ### Summary for Chippy
 
@@ -2163,7 +2171,7 @@ rare chance for massive single normal attack damage
 
 #### Play overview
 
-Contess controls the battlefield through her "Code of Conduct", applying rules that punish both enemies and allies, though allies can gain exemption for added benefits. Her Ultimate, Detention Pass, has Contess retreat into her rulebook, making her untargetable and unable to move or act while rapidly regenerating energy. Once full, she emerges to punish all rule-breakers. Before Supreme+, Contess competes with other top-tier Dream Realm supports. Contess benefits a lot from having the fight go longer than usual, as she will exert more value in terms of healing, buffing and debuffing enemies - especially Silencing them.
+Contess starts **hidden while recovering energy**, then emerges to heal an ally, grant rule immunity, and **convert their HP into shield**. She punishes foes who deal **large HP or shield loss**, healing weakest allies and cutting high-damage enemies' ATK. She also **slows ultimate casters' energy recovery** and stacks permanent ATK and energy penalties on repeat violations. Severe violations can trigger **permanent silence** and increased HP-loss effects that bypass unaffected. She needs **long fights** to cycle rules and punishments. Teams that **burst her before she emerges** or ignore her conduct rules see little from her kit.
 
 #### Skill overview
 
@@ -2292,7 +2300,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Cryonaia can freeze time and the battlefield, isolating enemies in her domain of Eternal Winter to swiftly defeat them. Cryonaia’s skills are basic damaging attacks, that is, until she unleashes her Ultimate, which grants her a shield, Control Immunity, Haste and Attack, ending early when her shield breaks. But although her Ultimate is very powerful, she is vulnerable until she can cast it. Cryonaia’s Ultimate is one of the most powerful for PVP, and if she gets her Ultimate out, she is almost guaranteed to win the battle, as she quickly charges her Ultimate after the first one through killing the enemy team, allowing her to cast it again while the enemy is helpless to fight back. Cryonaia is not an essential character to have, rather, she is more of a luxury pull and often requires other Hypogeans/Celestials to shine and is the most impactful for PvP.
+Cryonaia traps several enemies in a **separate winter domain**, gaining shields, control immunity, haste, and attack while it lasts. Only she can cast her ultimate inside, and **weakened foes inside can be instantly defeated**. Enemies entering the domain take **massive damage**, while her sweeping AoE crosses the entire battlefield and her projectiles chip priority targets. Her attack **grows the longer her shield holds**, rewarding teams that help her survive the setup phase. She is devastating once the domain is up but **vulnerable until her first ultimate** lands. Teams must **protect her during the wind-up** or she never reaches her peak. Fights that **break her shield quickly** or deny grouping end the domain before her execute can trigger. Once inside, she alone controls the pace and can chain ultimates while enemies are trapped.
 
 #### Skill overview
 
@@ -2408,7 +2416,7 @@ Common buffers are **Twins**, **Ravion**, or **Rowan**.
 
 #### Play overview
 
-Cyran a CC-heavy kit based around attacking grouped-up enemies and PvP disruption. His first skill targets the biggest group of enemies and deals damage in a small AoE radius around his attack, while his second skill lifts an enemy for a second and throws them at a group of enemies, dealing moderate damage. His Ultimate is similar to Eironn’s Ultimate without the MDEF debuff and being slower to activate. Cyran’s damage is low and he does not provide enough utility in the form of buffs or debuffs to make him worth using against bosses. This is where Cyran shines, filling in a niche; he has a powerful role in the form of Anti-Artifact disruption.
+Cyran opens with **sequential battle-start spells** and a large initial energy bonus for fast ultimate access. His orbs chip multiple foes, and he **throws the nearest enemy** into the densest cluster to set up AoE follow-through. His ultimate places a **pull zone** that damages and executes low-HP enemies at the center. Battle crit growth rewards repeated casts on grouped targets. He excels at **disrupting clustered lines** and finishing wounded foes. His opening spell chain gives him **immediate board impact** before enemies can spread out. He adds little when enemies **stay spread** or resist grouping and execute thresholds.
 
 #### Skill overview
 
@@ -2524,7 +2532,7 @@ Common buffers are **Twins**, **Ravion**, or **Mikola**.
 
 #### Play overview
 
-Daimon primarily acts as a tanky Support but has some potential to be used as a Sub-DPS. At the start of battle, Stitchy, an untargetable ally, fights alongside Daimon, dealing 90% of Daimon’s Attack as damage with Basic Attacks. When Daimon uses his Ultimate, Stitchy attacks, dealing True Damage in an area based on enemy HP% and gives shields to Daimon and two allies. Daimon is in a bit of an awkward spot for Dream Realm, because, at least in Pre-Endless bosses, he does not make the cut in most teams, as he cannot replace Phraesto in a damage role and he cannot replace the Buffer/Healer of choice either, because his sustain by himself is not good enough. Daimon is used almost exclusively as a Shemira buffer, but he is not tanky enough to work as a solo Tank, even with the help of Hugin to double dip on shield generation.
+Daimon fights with an **untargetable companion** named Stitchy that frightens nearby enemies and joins his ultimate for true damage based on enemy HP. At battle start the companion attacks alongside him, dealing damage with basic attacks. He converts **enemy HP-loss into personal shield**, shares a portion of received shield with a **bonded ally**, and gains damage reduction while shielded. Excess shield value also **converts to HP** when overflowing, turning overheal into sustain. He blends **tanking, shielding, and sub-DPS** in one slot. He struggles as a **solo frontliner** without enough shield generation or a dedicated healer beside him. Teams that **deny HP-loss triggers** or kill his companion early blunt his sustain loop entirely. He pairs best with allies who generate frequent shields or trigger steady HP-loss on enemies.
 
 #### Skill overview
 
@@ -2585,6 +2593,10 @@ Daimon provides Lifedrain buff to single targets `low` and Shield to multiple ta
 
 ### Units that can act as a replacement for Daimon
 
+**Best overall replacement**
+
+- Silvina (54% `Crowd Control` `Damage`)
+
 **Buffs on allies**
 
 - Hepler (100% `Shield`)
@@ -2599,9 +2611,9 @@ Daimon provides Lifedrain buff to single targets `low` and Shield to multiple ta
 
 **Damage**
 
+- Gunnar (100% `Max HP-based damage`)
 - Frieren (100% `Max HP-based damage` `Magic`)
 - Baelran (100% `Max HP-based damage`)
-- Galahad (100% `Max HP-based damage` `Magic`)
 
 **Crowd Control**
 
@@ -2633,7 +2645,7 @@ Daimon provides Lifedrain buff to single targets `low` and Shield to multiple ta
 
 #### Play overview
 
-Damian is a support who can do healing, buffing and debuffing. Early on, you will not see any value in his kit until you have invested enough dupes for him to be Mythic+ or Supreme+. Damian still sees use in PvP modes, especially for stall comps and stages where some heroes have delayed entry until other heroes are defeated. - the passive part lets Damian summon a Toy Chariot in his stead, inheriting his stats and a portion of his HP at the start of battle.
+Damian summons toys that **heal weakest allies, restore energy, stun distant foes, and blind enemies** from a chariot he can control. His summon aura grants **haste to adjacent allies**, and battle ATK rises over time. Blinds last longer while **summon health stays above half**. He mixes **healing, buffing, and soft control** through multiple summons. Fights that **focus and kill his toys early** remove his healing, control, and blind extension.
 
 #### Skill overview
 
@@ -2743,7 +2755,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Mikola**.
 
 #### Play overview
 
-Dionel's kit is centered around dealing AoE damage and gobbling up all the buffs that his team provides to him to increase his damage output. Passively, Dionel's attack penetrates his enemies, dealing damage in a line. But the bread and butter of his kit is "Nectar Feast", which causes him to gain a massive stacking ATK and ATK SPD buff while its active component causes Dionel to sip on some wine to gain additional ATK and ATK SPD buffs. This means that Dionel realistically wants two things: allies that can provide enough buffs to stack the passive part and something that allows him to cycle his active more cleanly. His Ultimate "Dawn Light" causes Dionel to fly up, become untargetable, and continuously throw down spears at the opposing team before knocking them up with the last strike.
+Dionel's normal attacks become **long-range penetrating lines**, and he permanently gains attack speed with each strike. He stacks buffs from **allied boosts**, then spikes ATK and attack speed on active sip; at max stacks he unleashes a **true damage burst**. His ultimate soars untargetable, raining AoE hits that end with **bonus damage and knock-up**. Execution bonuses rise while his active buff is live. He needs **frequent ally buffs** to reach peak stacks and cycle his sip cleanly. Teams built around **continuous buffing** unlock his full damage ceiling. His attack speed snowballs over time, so longer fights favor his scaling pattern. Without buff support or **grouped enemies**, his line attacks and aerial burst underperform over the course of a long fight.
 
 #### Skill overview
 
@@ -2881,8 +2893,7 @@ Dionel provides ATK buff to single targets `average`.
 
 #### Play overview
 
-Dunlingr brings focus on Controlling the battle through blocking the use of Ultimates or Heals. Before battle begins, Player can choose one of the two Dunlingr’s Order:Curelock - All characters are unable to Heal others. Spellbind - All characters are unable to cast their Ultimates. Due to effectively debuffing his own team while not doing much to the bosses, he does not perform well in Dream Realm
-PvP - Dunlingr cements his place as Meta-Defining unit in PvP, as he effectively counters the two main archetypes: Ultimate reliant teams, such as Eironn Control teams or Sustain reliant teams, such as Scarlita Stall teams. At the beginning of battle, the Bell is summoned and the chosen Order is put into place for 12 seconds, this duration can be extended by Dunlingr summoning the Bell again by casting his Ultimate.
+Before battle, Dunlingr **chooses a field rule** that blocks all healing or all ultimates for both sides. A bell enforces the rule at start, and casting his ultimate **extends the order** for more duration. He gains shields when order conditions are met and can **shield one ally from the rule** while granting allies attack speed or life drain at rule start. Frontal multi-hits add **rule-based bonus effects** on top of damage. Battle damage taken reduction keeps him standing while the order is active. He is oppressive against **heal-reliant or ultimate-reliant teams** but **handicaps his own side** with the same restriction. Enemies that **ignore the order** or burst teams that end fights inside the window waste his setup entirely. Choosing the right rule before battle is essential, since both options hurt allies too.
 
 #### Skill overview
 
@@ -2957,6 +2968,10 @@ These are the **10** strongest pairings:
 
 ### Units that can act as a replacement for Dunlingr
 
+**Best overall replacement**
+
+- Sylphira (50% `Crowd Control` `Damage`)
+
 **Similar Skills**
 
 - Florabelle (66% `battle-start-burst` `summoner`)
@@ -2965,9 +2980,9 @@ These are the **10** strongest pairings:
 
 **Damage**
 
-- Zorya (85% `Magic` `Max HP-based damage` `HP loss`)
-- Mehira (85% `DoT` `Magic` `Max HP-based damage` `HP loss`)
-- Aliceth (80% `Max HP-based damage` `HP loss`)
+- Mehira (100% `DoT` `Magic` `Max HP-based damage` `HP loss`)
+- Zorya (100% `Magic` `Max HP-based damage` `HP loss`)
+- Athalia (96% `Max HP-based damage` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -3017,7 +3032,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Eironn is one of the most important characters in the game, performing exceptionally well in both AFK stage progression and PvP. His Ultimate Skill, Verdant Cyclone, is considered one of the strongest Ultimates in the game and remains highly relevant to this day. It pulls enemies within a 2-tile range to a designated tile, dealing damage and immobilizing them for 3 seconds. One of the best frontline supports for AFK Stages. Unfortunately, Eironn in Dream Realm.
+Eironn can **cast his ultimate on any tile at battle start**, pulling nearby enemies to the center for damage and immobilization. His dual-sword sweep **reduces enemy haste and Magic DEF**, and he shields himself with high dodge when pressed. Ranged defense **scales up at low HP**, and immobilized targets take **extra Magic DEF reduction**. He is a premier **opener for control and magic damage teams**. His value drops against **pull-immune or unaffected targets**.
 
 #### Skill overview
 
@@ -3129,7 +3144,7 @@ Eironn provides Dodge chance buff to single targets `high` and DEF buff (Legenda
 
 #### Play overview
 
-Evie offers a variety of utility to the team but lacks a specific specialization, making her less compelling compared to other options. Her Ultimate, Intel Chase, passively teleports her to the tile opposite her starting position, concealing her while she begins investigating enemies within one tile to gain Detection Points every 4.5 seconds. Sadly, she isn’t very viable in Dream Realm anymore, as Magic-based Dream Realm setups have largely been replaced by True Damage and HP Loss setups. She can only really be viable on offense, and even then, only against defense setups where the enemies are grouped closely together, so Evie can investigate most of them, if not all of them. She loses Detection Points whenever an ally uses their Ultimate.
+Evie begins **concealed on the enemy side**, gathering intel on nearby foes to reduce their Magic DEF and fuel her ultimate. She sends a quill to **follow an ally for buffs and healing**, and full intel on all enemies **inflicts debuffs** across the line. A completed investigation can **silence her immobilize target** and spawn an extra support quill. Battle healing growth keeps her sustain relevant over long fights. She loses intel when **allies cast ultimates**, slowing her setup considerably. She works best when enemies cluster so she can investigate most of the line quickly. Spread enemy lines or **fast burst** that ends fights before intel completes waste her debuff package entirely. She offers broad utility but lacks a single standout specialty.
 
 #### Skill overview
 
@@ -3252,7 +3267,7 @@ Evie provides ATK buff to multiple targets `high` and Direct healing to single t
 
 #### Play overview
 
-Faramor, from the wilder faction focused on dealing massive amounts of True Damage while enabling his allies to do the same. He is also able to counter healing or resurrecting enemies. As of the time of writing this, Faramor has been tested against 4 bosses. While Faramor, in theory, has immense PvP potential thanks to his Supreme+ skill effectively countering reviving heroes and his Ultimate countering enemy healing, Faramor does have trouble surviving against high burst teams and performs best in Supreme Arena with Wilder tiles, but when he does survive, he performs very well. His Ultimate creates a magic circle on the ground, which deals True Damage to enemies inside and remains as long as Faramor has Energy to burn or until all enemies leave the circle.
+Faramor drops a **circular zone that blocks healing** and deals sustained true damage to enemies inside. He shields on strike, blesses an ally to **boost both their ATK**, then stuns nearby foes around each of them. While the circle is active he **enhances his own skills** and grants allies bonus true damage inside. Enemies revived within the zone also suffer **reduced vitality**. Battle haste growth keeps his rotation moving through longer fights. He needs **survival time** to maintain the circle and energy to sustain it. **High burst teams** that kill him early or enemies that **never enter the zone** negate his anti-heal and true damage payoff. Allies who fight inside his circle gain the most from his true damage amplification.
 
 #### Skill overview
 
@@ -3332,9 +3347,9 @@ Faramor also requires units **buffing them**
 
 **Damage**
 
-- Athalia (90% `Physical` `True damage` `HP loss`)
+- Athalia (100% `Physical` `True damage` `HP loss`)
+- Nara (88% `Physical` `True damage` `HP loss`)
 - Vala (85% `True damage` `Physical` `HP loss`)
-- Nara (73% `Physical` `True damage` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -3378,7 +3393,7 @@ Faramor also requires units **buffing them**
 
 #### Play overview
 
-Fay is the first healer you will get when you start the game. She is serviceable as a support until you get a better healer from the gacha. She is not completely useless, but has problems with the kit that make her really frustrating to use. On her kit, she has heals from all of her skills, but it's mediocre in one way or another. Her Ultimate, 'Vibrant Dance', heals allies in an arc with good scaling and increases their ATK for a decent amount of time.
+Fay heals and buffs **allies within ultimate range**, with steady single-target healing and an AoE burst that damages foes while healing friends. She opens battle by **healing and buffing the ally in front of her tile**, and combat max HP rises over time. Low-HP allies also trigger an **emergency heal** for clutch saves. She is a **reliable early support** when stronger healers are unavailable. Her healing output and buffs are **modest compared to top supports**.
 
 #### Skill overview
 
@@ -3503,7 +3518,7 @@ Fay provides ATK SPD buff to multiple targets `low`, ATK buff to multiple target
 
 #### Play overview
 
-Florabelle is a dazzling release with a very even split between being good and bad. Florabelle focuses on summoning creatures to fight in her stead. Florabelle does not in Dream Realm. Her main gimmick is summoning Spiny, Smashy and Swifty - three different critters all with their own unique mechanics. The passive effect of "Pounding Blow" makes her summon Spiny, who focuses on continuous damage, while its active causes Florabelle to summon Smashy, who strikes the ground to knock enemies up upon being summoned.
+Florabelle opens with a **battle-start tank summon**, then smashes adjacent tiles on ultimate while buffing ally summons with **haste and life drain**. She can summon a **ranged ally**, and combat ATK rises with multiple summons on the field. Each allied summon gains a **permanent shield on entry**, and large summons gain **control immunity and ATK boost**. She peaks in **summon-heavy compositions** that keep bodies on the board. Against teams that **wipe her critters early**, her scaling and shields never build.
 
 #### Skill overview
 
@@ -3571,9 +3586,9 @@ Florabelle provides Haste buff to summons `high`, Lifedrain buff to summons `hig
 
 **Best overall replacement**
 
-- Perseus (55% `Damage`)
-- Pang (55% `Damage`)
-- Atalanta (54% `Damage` `Similar Skills`)
+- Perseus (66% `Damage`)
+- Pang (66% `Damage`)
+- Hodgkin (58% `Damage` `Similar Skills`)
 
 **Similar Skills**
 
@@ -3583,9 +3598,9 @@ Florabelle provides Haste buff to summons `high`, Lifedrain buff to summons `hig
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Aliceth (100% `Physical` `Max HP-based damage`)
-- Thador (100% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -3623,7 +3638,7 @@ Florabelle provides Haste buff to summons `high`, Lifedrain buff to summons `hig
 
 #### Play overview
 
-Frieren excels in sustained combat and boss encounters. Her kit is designed around a delayed Magic Amplification that significantly increases her damage output and skill frequency. Unlike many other Mages, she possesses unique defensive layers that protect her from being easily burst down by the enemy. Frieren is a powerhouse in the Dream Realm and high-level PvE, rivaling the performance of meta staples like Galahad. Her strength lies in her combination of Vitality reduction through her Hellfire: Vollzanbel skill and True Damage via her Ultimate, Zoltraak.
+Frieren begins **concealed and low-priority**, then needs about 15 seconds to **amplify her magic**. With **Himmel adjacent**, she skips the wait and gains a permanent ATK bonus from his stats. After ramping, her damage jumps from enhanced normal attacks and a **vitality-reducing burn**. Her rectangle ultimate adds **split true damage**. She shines in **long fights**, with damage reduction for herself and the frontmost ally buying time to cast. **Burst before amplification** shuts her down early, and **short fights** never develop her burn or ultimate.
 
 #### Skill overview
 
@@ -3736,7 +3751,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 #### Play overview
 
-Galahad has a range of 10 and arguably the most enthusiastically anticipated hero of the entire Thorns of Devotion season, due to her lasting impact on the playerbase as Merlin’s charming, deeply missed companion during and after the storyline. Galahad’s Ultimate, “Temporal Field”, deals damage to all enemies, then creates a Magic Circle centered on her. While she remains at the center, the circle remains active and expands by consuming Energy each second up to a limit; once this limit is reached, Energy consumption stops, and she gains 30 Haste. She is decent in PvP despite relying on her Ultimate; if she survives long enough, she can eventually wipe the enemy team. Enemies within the circle lose Haste and Movement Speed.
+Galahad needs her **circular zone to fill** with energy before clones and enhanced casts come online, so early timing matters. Her ultimate immobilizes the **top cumulative damage dealer** with HP-loss tied to healing received, then lashes a wider area. Weakest allies gain **exploding shields** that detonate for area damage on expiry. Once the zone completes, a **shadow duplicate** of an ally fights beside her while battle ATK climbs. External buffs grant **sustained energy and steadfast** status to keep the zone growing. She excels in **long attrition fights** where energy-fed clones stack pressure. **Early burst** that kills her before the zone matures, or teams that cannot protect the circle while it charges, blunt her payoff.
 
 #### Skill overview
 
@@ -3878,7 +3893,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Gerda has a kit centered around acting as a Hybrid Tank-cum-Support and a CC source. At the start of battle, Gerda jumps forward, interrupting enemies and placing her Healing Spring down, which will also stun the enemies at S+. Her Ultimate, Splashing Fun - heals allies, deals damage to enemies and also puts enemies to Sleep based on how much healing they received from Gerda’s Healing Spring. As a Tank with low damage output and no offensive buffs, Gerda has no use in the current Dream Realm bosses, where every unit should either buff or deal damage. Gerda is too squishy to be used as a solo frontline in PvP and can easily be burst down at the start of battle, with her kit being generally low impact and her Ultimate too slow.
+Gerda opens with a **battle-start leap** that interrupts nearby enemies and drops a **healing zone** where she lands. Her ultimate sleeps foes in range while **healing allies**, turning clustered lines into a stall window. A stun skill adds a personal shield, and battle damage taken reduction keeps her standing through the opener. Enhanced zone healing and **cooldown reduction on zone heals** keep her rotation moving as allies stand inside. At higher tiers the opening leap **stuns instead of interrupting**, tightening control on grouped targets. She is a **strong early tank-healer** when enemies bunch up and can be caught in the zone. **Spread formations** and foes immune to sleep or interrupt waste her leap and zone value entirely.
 
 #### Skill overview
 
@@ -3937,6 +3952,10 @@ Gerda provides Direct healing to multiple targets `high` and Healing over time i
 
 ### Units that can act as a replacement for Gerda
 
+**Best overall replacement**
+
+- Hepler (57% `Damage` `Healing`)
+
 **Healing**
 
 - Solise (100% `Direct healing` `Healing over time` `Healing`)
@@ -3982,7 +4001,7 @@ Gerda provides Direct healing to multiple targets `high` and Healing over time i
 
 #### Play overview
 
-Granny Dahnie was once one of the best Frontliners for PVP due to her self-healing, tankiness, and debuffs. However, nowadays, she is not as commonly used across any game mode, as newer Frontliners with better utility have been introduced, making her less relevant. Her main attraction is her Ultimate, which prevents enemies near her from moving, while dealing damage and reducing their energy, while Granny heals for the damage dealt. She is completely useless here, as she doesn’t provide anything that helps in Bossing type content. While still good for PVP, she has been outpaced by other Frontliners, making her less commonly picked in PVP Arena.
+Granny Dahnie taunts a foe and **recovers HP**, then retaliates with projectiles when damage thresholds are crossed, slowing attacker haste. Her ultimate immobilizes nearby enemies while **draining HP and energy**, staying unaffected during the channel. Low HP triggers **Phys and Magic DEF boosts** plus recovery, and triggered shots grant instant self-heals. Vitality scales with **ultimate casting** over longer fights. She stalls **melee-heavy lines** that keep feeding her retaliations and taunt cycles. **Burst before her ultimate** lands, or taunt-immune targets, leave her as a slow frontliner with modest team utility.
 
 #### Skill overview
 
@@ -4047,7 +4066,7 @@ Granny Dahnie provides Haste buff (Supreme+) to single targets `low`.
 
 **Best overall replacement**
 
-- Hepler (65% `Buffs on allies` `Crowd Control` `Damage` `Debuffs on enemies`)
+- Hepler (78% `Buffs on allies` `Crowd Control` `Damage` `Debuffs on enemies`)
 
 **Buffs on allies**
 
@@ -4111,7 +4130,7 @@ Granny Dahnie provides Haste buff (Supreme+) to single targets `low`.
 
 #### Play overview
 
-Gunnar strongly supports his backline by providing shields and linking with a carry to focus down a single target, while suppressing enemy healing and shielding. Starting from his Ultimate, Annihilation Directive, it has two effects, Passive and Active. With the Passive effect, Gunnar will create a Doomfield to the ally's location behind him at the start of battle, increasing the ally's attack range and ATK. This is where Gunnar truly shines, as his lock-on mechanic is most effective against a singular enemy, while also granting a hypercarry a massive ATK boost. Tanky enough to survive, especially with Alna, while supporting hypercarries with ATK up, ATK SPD up and Invincible when his HP is above 35%.
+Gunnar anchors a **rear ally on a passive field** that empowers their range and ATK, then shields everyone behind himself on active cast. Cannon volleys pepper targeted areas, and his **scorched ultimate** deals massive AoE while denying heals and shields inside the burn. Ranged DEF and vitality **scale with allied positioning**, and ally damage thresholds trigger **self-healing missiles** when the line takes pressure. He wants a protected rear partner and enemies walking into sustained fire across multiple casts. **Anti-shield or heal-immune foes** shrug off his zone denial entirely. Without **clustered enemies** in cannon and burn range, his damage and suppression stay modest for the slot.
 
 #### Skill overview
 
@@ -4179,6 +4198,7 @@ Gunnar provides ATK SPD buff to single targets `low`, ATK buff to single targets
 
 **Best overall replacement**
 
+- Perseus (55% `Crowd Control` `Damage`)
 - Aliceth (50% `Crowd Control` `Damage` `Buffs on allies`)
 
 **Buffs on allies**
@@ -4195,8 +4215,8 @@ Gunnar provides ATK SPD buff to single targets `low`, ATK buff to single targets
 **Damage**
 
 - Baelran (100% `Physical` `Max HP-based damage`)
-- Alna (100% `Physical` `Max HP-based damage` `DoT`)
-- Thador (100% `Physical` `Max HP-based damage` `DoT`)
+- Himmel (100% `Physical` `Max HP-based damage`)
+- Saida (100% `Max HP-based damage` `DoT`)
 
 **Crowd Control**
 
@@ -4238,7 +4258,7 @@ Gunnar provides ATK SPD buff to single targets `low`, ATK buff to single targets
 
 #### Play overview
 
-Gwyneth, despiteher slower attack interval, trades it for massive damage, firing arrows that can cleave both single targets and groups alike. Starting from her Ultimate, Hailing Arrows, which passively makes Gwyneth's attacks slower than traditional Marksmen heroes but causes her Normal Attacks to deal great damage, which increases even more for every ATK SPD and Haste she has. Actively, Gwyneth rains down arrows in a small area, dealing damage and immobilizing enemies for 2 seconds, although each consecutive wave of arrows dealt to the same enemy deals significantly less damage. At Pre-Endless Dream Realm, Gwyneth is currently the number one DPS option. Aside from her great DPS, she also has a remarkable range of 8 tiles, which helps her maintain a safe distance from enemies, though this can be countered by meta-diving heroes like Athalia.
+Gwyneth alternates **splash CC arrows** and **high-damage burn shots**, then fires both at once so every effect lands together on priority targets. Her ultimate rains arrows across range, and **empty nearby tiles** raise her attack speed while also tightening normal attack intervals when foes cannot close. Burn DoT and control stack on targets over time rather than in one burst, rewarding safe spacing throughout the fight. She peaks when **enemies cannot reach her** and she keeps casting from a protected rear tile without interruption. **Melee rush** or cleanse-heavy lines shut down her burn and CC chain before damage ramps meaningfully. Her kit relies on **sustained casting rhythm**, not a single opening burst window. Against **spread formations** her splash and rain cover too little area to justify the slot. She needs safe rear spacing to cycle both arrow types.
 
 #### Skill overview
 
@@ -4351,6 +4371,10 @@ Common buffers are **Twins**, **Ravion**, or **Mikola**.
 - **Behavior tags**: `ally-buffer` `ally-healer`
 - **Damage types**: Magic `average`
 
+#### Play overview
+
+Hammie **heals the weakest ally** and buffs them, then sustains himself with a simple self-heal skill. His ultimate is a **single-target fireball** for modest burst damage. He is an **early support** who keeps fragile allies alive with light healing and buffs. His numbers stay **modest compared to top healers**, and he brings little beyond sustain. Fights that need **strong shields, damage reduction, or teamwide healing** leave him underwhelming.
+
 #### Skill overview
 
 - **Signature skill (ult)**: speed `average`, damage `average`
@@ -4448,7 +4472,7 @@ Hammie provides ATK buff to multiple targets `high`.
 
 #### Play overview
 
-Harak is a very strong DPS who has a friendly-fire mechanic that you need to plan around to make him work. He possesses very high damage, Invincibility and Enemy Healing Reduction at the price of him executing a random character (either ally or enemy) every 12 seconds or so. Harak truly in Dream Realm because of his very high damage output outside of a few instances where he doesn’t work. Harak is basically Dunlingr without debuffing your whole team. Theoretically, this is supposed to be a bad thing but in reality it's actually not that bad as the teammates you're mostly gonna pair him with provide permanent effects to the combat even while they're dead.
+Harak enters an **enhanced battle-start state** that extends with assists and defeats, then devours a non-summoned unit when the state ends. He dashes to the **weakest enemy**, knocks them up, and his ultimate blocks **target HP recovery** with sustained multi-strikes. Life drain and **ATK plus max HP** grow with each takedown across the fight. Enough assists or defeats also **refund ultimate energy** for another execute window. He snowballs hardest in **chaotic multi-kill fights** where bodies feed his ramp and devour timing. **Single-target stalls** or teams that deny assists keep him from growing or force bad devour targets on allies.
 
 #### Skill overview
 
@@ -4510,9 +4534,9 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Rowan**.
 
 **Best overall replacement**
 
-- Nara (65% `Damage` `Crowd Control` `Similar Skills`)
-- Seth (64% `Damage` `Similar Skills`)
-- Athalia (60% `Damage` `Crowd Control`)
+- Nara (78% `Damage` `Crowd Control` `Similar Skills`)
+- Seth (77% `Damage` `Similar Skills`)
+- Athalia (72% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -4522,9 +4546,9 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Rowan**.
 
 **Damage**
 
+- Mehira (100% `Max HP-based damage` `HP loss`)
 - Aliceth (100% `Physical` `Max HP-based damage` `HP loss`)
 - Faramor (100% `Physical` `HP loss`)
-- Athalia (100% `Physical` `Max HP-based damage` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -4574,7 +4598,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Rowan**.
 
 #### Play overview
 
-Hepler is a hybrid hero who transitions from a backline student-teacher into a frontline Owlbear. Hepler’s kit revolves around his Ultimate, Form Shift, which allows him to enter an Owlbear form. Hepler’s skills change function depending on which form he is in. In his human form, Hepler’s skill does the following:Remedial Class: Deals damage and applies a minor Haste buff to an enemy. Extra Credit: Place a HoT on the lowest health ally that provides single-target healing and minor haste debuffs.
+Hepler toggles between **true-form offense** and an alternate **taunt form** that heals and shields multiple allies. His ultimate consumes taunt stacks for **AoE damage and blind** on revert. Charge spending **permanently stacks DEF** and damage reduction over the fight. He can **block a fatal blow** on the frontmost ally by transforming to safety. Alternate form also carries **higher damage taken reduction** than his human stance. **Fast burst** that skips his charge cycle leaves little defensive value.
 
 #### Skill overview
 
@@ -4723,7 +4747,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Hewynn her entire kit revolves around healing, and provides little beyond that, still, don't underestimate how much healing can provide. Her most iconic skill is her Ultimate, "Rain Prayer", which continually heals all allies on the map. The sheer range and speed of healing that this provides is a crutch for many, especially in PVP and while progressing through AFK Stages, as everyone has dealt with an impossibly annoying Hewynn before. Its relatively low Energy requirement also doesn't help, making battles a race against the clock to try and get any enemies killed before Hewynn casts this. Her "Wound Healing" skill is a simple single-target burst heal.
+Hewynn sustains allies with **single-target heals** and a cleanse that strips dispellable debuffs from multiple friends. Her ultimate delivers **AoE heal over time** while she stays unaffected and all allies gain **damage reduction** during the channel. Battle ATK rises after her **first ultimate**, and cleansed allies receive a **haste boost** for quicker rotations through the rest of the fight. She is a reliable healer when stronger options are unavailable on the roster. Output is **modest next to top supports** and she offers little beyond healing. Fights needing **shields or hard mitigation** rather than steady regeneration underuse her kit.
 
 #### Skill overview
 
@@ -4828,7 +4852,7 @@ Hewynn provides Direct healing to single targets `high`, Healing over time to al
 
 #### Play overview
 
-Himmel, from the Frieren collaboration event, specializes in buffing allies, especially those designated as part of the Hero Party, making him far more of a support than a frontliner. His Ultimate, Heroic Slash, strikes a 3x3 frontal area nine times, followed by an additional hit that deals True Damage based on the enemies' max HP. His Heroic Dash targets the two enemies that have dealt the most damage, dashing to them and knocking them down while granting Himmel Crowd Control Immunity during the skill. Himmel is used as a mini-Contess or even a mini-Reinier, as his HP Loss against Bosses can be useful if you don’t have neither Contess nor Reinier invested. His core ability, Hero Party, passively enhances one Mage, one Tank, and one Support ally positioned adjacent to him, marking them as Hero Party members.
+Himmel opens with a **battle-start formation** beside allies, granting petals that bless everyone on the field with sustained bonuses. He dashes to two high-damage foes, knocks them down, then slashes in a **repeated frontal ultimate** with a massive finishing sweep across the line. Formation strikes add **extra HP-loss on boss targets**, and battle haste keeps his rotation brisk through long fights. He pairs strongly with **Frieren adjacent** so she skips her ramp wait and shares ATK from his stats for the whole fight. He offers **soft buffs and line pressure**, not standalone carry damage or hard mitigation. **Spread lines** or burst that ends before formation and petal value builds waste his setup entirely. Without **adjacent allies** in formation, his petals and HP-loss bonuses contribute far less to the team.
 
 #### Skill overview
 
@@ -4903,7 +4927,7 @@ Himmel provides ATK buff to multiple targets `high` and Shield to single targets
 
 - Contess (85% `Buffs on allies` `Healing` `Debuffs on enemies`)
 - Evie (66% `Healing` `Buffs on allies`)
-- Twins (62% `Healing` `Buffs on allies`)
+- Mikola (64% `Healing`)
 
 **Buffs on allies**
 
@@ -4925,9 +4949,9 @@ Himmel provides ATK buff to multiple targets `high` and Shield to single targets
 
 **Damage**
 
-- Athalia (99% `Physical` `Max HP-based damage`)
-- Perseus (97% `Physical` `Max HP-based damage`)
-- Alna (94% `Physical` `Max HP-based damage`)
+- Baelran (100% `Physical` `Max HP-based damage`)
+- Alna (100% `Physical` `Max HP-based damage`)
+- Athalia (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -4969,7 +4993,7 @@ Himmel provides ATK buff to multiple targets `high` and Shield to single targets
 
 #### Play overview
 
-Hodgkin is an excellent Physical DPS counter as his skills reduce Physical Defense and he can gain immunity to any form of Physical DMG. Still, as the current meta favors Magic and True Damage DPS characters, he was released at the wrong time. He has some niche potential in Supreme Arena against Physical attackers - Harak, Lenya teams or Mauler teams that don't have Odie. His kit is full of synergy with Zoo compositions (teams that utilize multiple summons), especially those with Mikola, but his mechanics make him extremely awkward in those situations. Hodgkin summons are best when they die and trigger their effects, which goes against the standard Zoo playstyle that revolves around keeping multiple bodies on the board.
+Hodgkin phases **physically immune** with sustained regeneration, then fires cannons for **AoE damage** while ATK climbs during intangibility. Arc strikes **steal enemy energy**, and defeated minions **explode for AoE** while draining more energy from nearby foes. Cannon hits also **shave Phys DEF** on targets, softening them for follow-up physical damage from allies. Summoned bodies give him **extra detonation points** across the field when they fall in clusters. During intangible phase his ATK climbs higher, making cannon windows the main damage spike. He shines when enemies bunch for cannon fire and minion pops chain together. **Magic damage** or teams that kill minions before they explode blunt his energy drain and DEF shred loop.
 
 #### Skill overview
 
@@ -5036,9 +5060,9 @@ Common buffers are **Smokey & Meerky**, **Solise**, or **Mikola**.
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Alna (100% `Physical` `Max HP-based damage`)
-- Athalia (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -5079,7 +5103,7 @@ Common buffers are **Smokey & Meerky**, **Solise**, or **Mikola**.
 
 #### Play overview
 
-Hugin is a buff support that can grant huge shields to allies and upon reaching M+ EX+10, makes them CC Immune. While his abilities look impressive on paper, he lacks synergy with many heroes presently in the game and his kit has notable drawbacks that require creative workarounds. Aside from providing literal ATK and Haste boosts on his Ultimate and shielding, Hugin isn’t worth using in Dream Realm. Hugin will not be seen a lot in the PvP Arena. Hugin's Mechanized Bond ability etches a tile behind him, granting any ally positioned there an ATK boost and Energy whenever he activates Titan's Aegis.
+Hugin shields the **weakest ally** with large barriers, then boosts the **highest cumulative damage dealer's ATK and Haste** on ultimate. The ally directly behind gains **ATK**, and recovers energy whenever he shields anyone on the field. Shielded allies also **reduce damage taken**, and his ultimate adds shields to weak targets alongside the buff. He is a **strong buffer for a rear carry** positioned behind him on the board. Value drops when the **rear partner dies** or when no ally clearly leads damage dealt. He adds **little personal damage** if buff targets are misaligned or the top dealer changes mid-fight.
 
 #### Skill overview
 
@@ -5176,7 +5200,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Igor has a unique 'Cheat Death' mechanic that is different from Thoran’s. He thrives on enemies losing HP, using it to sustain himself and remain a menace on the battlefield, all while dishing out solid damage. Funeral Ring is a passive Ultimate ability that keeps Igor standing on a tombstone, which he can create additionally whenever an enemy loses 40% of their HP. Igor isn't particularly useful in Bossing situations, as he can't generate tombstones consistently. He is a decent menace in PvP, as enemy heroes often get distracted by targeting him.
+Igor places **battle-start markers** and leaps to them for **AoE explosions**, with an extra marker from his opening ultimate cast. Fatal blows trigger a **dodge leap** with HP recovery, and life drain rises after the first dodge proc. High HP ratio **widens explosion range**, letting him kite through danger while staying aggressive. His ultimate hits **all enemies** once markers are spent in sequence. He excels as a **mobile opener** that survives focus fire through repositioning. **Immobilize or marker denial** before he leaps leaves him exposed with modest sustained output.
 
 #### Skill overview
 
@@ -5272,7 +5296,7 @@ Common buffers are **Koko**, **Solise**, or **Smokey & Meerky**.
 
 #### Play overview
 
-Indris’ Ultimate prevents an enemy from gaining stat buffs for 8s (doesn’t work on bosses) and reduces their Defense by 20% for the rest of the battle. His first skill, True Sight, is a Passive that activates when an enemy is affected by 3 or more Stat Reduction debuffs, which causes Indris’s attacks to deal extra True Damage and changes his Normal Attack to fire 3 arrows, prioritizing hitting multiple enemies and dealing less damage against single targets. He holds some potential for Pre-Endless bosses, but the problem is that Sinbad, the most relevant Physical DPS for bosses, already has a 30% debuff to Defense in his kit, making Indris somewhat redundant in this role, despite being advertised as a DR hero.
+Indris opens **exposed weakness** windows with penetrating normal attacks that add **true damage** on marked foes. She pushes back close enemies, immobilizes the nearest, then fires a **silencing arrow** that blocks stat gains and permanently cuts DEF. ATK and **attack speed spike** whenever weakness bonuses trigger during the fight. Immobilize also grants a **no-cooldown weakness window** for rapid follow-up on chained targets. She dismantles **buff-reliant carries** over sustained engagements where DEF shred compounds. **Silence-immune or ungrouped targets** deny her DEF shred and speed ramp before she snowballs. Penetrating attacks prioritize multiple foes, but isolated single targets take less bonus from her weakness triggers.
 
 #### Skill overview
 
@@ -5402,7 +5426,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 #### Play overview
 
-Isabella enhances her companion each time they receive buffs from other sources, making her a true babysitter-type support. “Grimoire Pact” passively designates the frontmost ally as Isabella's companion and records a Spell Note each time the said companion receives a stat-boosting buff from allies other than Isabella, up to 3 stacks per stat. The affected stats include ATK, ATK SPD, Haste, Phy DEF, Magic DEF and Vitality. While Isabella has found a niche role in Nocturne Judicator due to her buffing of a frontmost hero, her performance on other bosses remains lackluster. The path to Isabella's first Ultimate is a slow one, making it common for her to get burst down or lose her companion before she can build momentum.
+Isabella bonds the **frontmost ally as companion**, buffing them heavily whenever she casts ultimate on that partner. She heals the companion while **damaging adjacent foes**, and makes them **unaffected after control** when they take a disabling hit. Companion damage taken **cuts attacker ATK**, and large buffs add **extra debuff stacks** on enemies during ultimate. Battle assistance stat growth rewards long support play beside a durable frontliner. She needs a **tanky front partner** to justify the bond and survive her setup phase. If the companion **dies early**, her healing and buff package collapses quickly. Her ultimate also debuffs an enemy hero on cast when buff stacks are large enough to add soft control.
 
 #### Skill overview
 
@@ -5511,7 +5535,7 @@ Isabella provides ATK buff to multiple targets `average` — conditional (freque
 
 #### Play overview
 
-Kafra, on initial inspection, he is written off as mediocre and perhaps one of the worst characters in the game, but after actually testing him, we found him quite a bit better than people make him out to be. The key part of his kit is "Wind Mark", which reduces the Physical Defense of the enemy marked with Forest Mark. On first read and try, he doesn't do much, a bit of damage and some random healing, but through testing we've found that Kafra is capable of keeping up with genuine Supports in terms of healing output over the course of a fight, assuming he's running in melee-oriented teams with units like Seth, Shakir, Satrana, Valen etc. When this enemy dies, a burst of healing applies to all allies near that target. This outputs a surprising amount and can potentially be a key factor in sustaining melee-oriented teams.
+Kafra marks an enemy, then **charges out-of-range targets** to stun them on approach for a reliable pick. Marks **shave Phys DEF**, and defeating a marked foe grants **self buffs** that keep his momentum going through the fight. His ultimate knocks back and reapplies the mark, while he **interrupts heals** on anyone treating the marked target. First battle charge greatly **boosts damage** for an opening assassination window against backliners. He excels at **hunting marked targets** in melee-heavy teams that can follow his picks. **Immune or heavily shielded marks** waste his charge, and spread lines deny follow-up kills on secondary targets. In melee-oriented teams with frequent picks, his mark-and-charge loop sustains pressure and can match support healing when marked foes die near grouped allies.
 
 #### Skill overview
 
@@ -5570,6 +5594,10 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 ### Units that can act as a replacement for Kafra
 
+**Best overall replacement**
+
+- Lenya (52% `Crowd Control` `Damage`)
+
 **Similar Skills**
 
 - Sinbad (90% `assassin` `enemy-debuffer` `mark-target`)
@@ -5578,9 +5606,9 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Thador (100% `Physical` `Max HP-based damage`)
-- Athalia (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -5626,6 +5654,10 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 - **Movement**: high movement (repositioning skills)
 - **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `invincibility` `mark-target` `mass-cc`
 - **Damage types**: Physical `high`, Max HP-based damage `high`
+
+#### Play overview
+
+Kazim opens **invincible in Soaring**, diving at airborne enemies to **mark prey** and stunning them after he lands. His ultimate chains **arc knock-ups** into sustained volleys that scale with attack speed. Marked prey takes **bonus normal-attack damage** and periodic max-HP true damage with knock-up. Allies in his zone gain **haste stacks from prey marks**, which he can absorb doubled after his aerial phase. He shines when **enemies can be kept airborne or marked** for follow-up focus. Fights with **grounded, spread, or knock-up-immune targets** deny his mark loop and aerial payoff.
 
 #### Skill overview
 
@@ -5759,7 +5791,7 @@ Kazim provides Haste buff to multiple targets `average` and ATK buff (Mythic+) t
 
 #### Play overview
 
-Koko's kit provides team damage taken reduction to keep allies alive longer. Her Ultimate, Full Energy, is the main reason why she is used; it gives all allies 55% Damage Reduction, Life Drain and ATK boost. These buffs are undispellable and cannot be stacked. She is a decent pick in Dream Realm, but other characters do her job better while also giving more essential buffs/debuffs against the Dream Realm Bosses. Used in any team that can reasonably expect to drag the fight long enough for Koko to use her Ultimate for Damage Reduction and healing.
+Koko feeds allies or herself to **recover HP and raise stats**, then inspires everyone with **damage reduction and buffs** on ultimate. Her strike skill deals heavy damage with debuffs, and fed allies gain a **temporary vitality boost** after each meal. Ultimate also grants her an **extra shield**, and battle haste keeps casts flowing. She blends **healing, buffing, and soft offense** in one slot. Healing is **modest compared to top supports**. Fights that **burst her before ultimate** see little team-wide value. She needs fight length for her ultimate to matter.
 
 #### Skill overview
 
@@ -5901,7 +5933,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Kordan can deal heavy amounts of damage, last at the frontline and support allies, giving him exceptional potential. His Ultimate, Dominance Ring, passively starts him at 1000 Energy, allowing him to immediately cast it. When activated, Kordan immobilizes a target enemy and initiates a duel by creating a Hunting Circle that deals damage to all enemies within its area while knocking other ranged enemies out of the field. Kordan is a decent frontliner, as his Ultimate provides Damage Reduction against ranged enemies outside the Hunting Circle, allowing him to lifesteal and sustain through the damage he takes. The current Dream Realm meta favors buffers that can affect allies regardless of positioning, which is especially unfavorable for Kordan since his Ultimate has limited reach.
+Kordan drops a **hunting zone** that cuts damage taken and outside healing while allies inside gain **ATK and life drain**. His slash grants a **proportional self-shield**, and knockdown strikes add direct pressure on isolated targets. First takedown inside the circle **permanently enhances skills**, and further kills **reposition the zone** to chase new prey across the field. He wants **melee allies** fighting inside his ring for the full buff package. His circle denies outside healing to enemies beyond the ring when the zone stays active. **Enemies that never enter the zone** or burst that ends before enhancements trigger waste his setup entirely. Ranged foes outside the circle avoid his damage reduction and healing denial. He needs committed melee allies inside the ring for the full payoff.
 
 #### Skill overview
 
@@ -5984,9 +6016,9 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 
 **Damage**
 
-- Athalia (100% `Physical` `Max HP-based damage` `HP loss`)
-- Brutus (100% `Physical` `Max HP-based damage`)
-- Nazrik (100% `Physical` `Max HP-based damage`)
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Baelran (100% `Physical` `Max HP-based damage`)
+- Himmel (100% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -6021,7 +6053,7 @@ Kordan provides ATK buff to multiple targets `high`, Lifedrain buff to multiple 
 
 #### Play overview
 
-Korin his role is split between offense and defense and he performs decently in both aspects, good enough to be considered for actual teambuilding. His most obvious skill is "All-round Tactic", whereby Korin jumps to the weakest ally and grants them a shield before dashing to the nearest enemy and dealing True Damage. It is temporary, but in teams with quick enough Energy generation, it is an extremely powerful tool to deal large amounts of damage to large HP targets (like Dream Realm bosses). It's simple, it's sweet, grants him mobility and deals decent damage. His other skill, "Air Strike", is a bit more subtle and the attack is a guaranteed Crit on his target, increasing in Crit DMG for every point of Crit available.
+Korin jumps to an ally, **shielding them** while dealing **true damage** to nearby enemies on landing. His ultimate sweeps adjacent foes with **immobilize and knockback**, disrupting packed frontlines. Distant targets eat guaranteed crits on his strike skill for reliable burst. Accumulated team ultimates trigger a **true damage buff** that spikes his follow-up hits. He also **reduces incoming ranged damage** for safer positioning in the back half. He is a flexible **front-to-back protector** with burst true damage. Value falls when **no ally needs a jump shield** or enemies stay outside sweep range. Team ultimate accumulation turns his jump-and-sweep combo into reliable burst against large HP targets when allies cast often.
 
 #### Skill overview
 
@@ -6081,6 +6113,10 @@ Korin provides Shield to single targets `average`.
 
 ### Units that can act as a replacement for Korin
 
+**Best overall replacement**
+
+- Scarlita (53% `Similar Skills` `Buffs on allies`)
+
 **Buffs on allies**
 
 - Contess (100% `Shield`)
@@ -6096,8 +6132,8 @@ Korin provides Shield to single targets `average`.
 **Damage**
 
 - Baelran (100% `True damage` `Physical` `Max HP-based damage`)
+- Faramor (100% `True damage` `Physical`)
 - Athalia (100% `True damage` `Physical` `Max HP-based damage`)
-- Cyran (100% `True damage` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -6130,7 +6166,7 @@ Korin provides Shield to single targets `average`.
 
 #### Play overview
 
-Kruger is a Physical Defense debuffer mainly used in Dream Realm and nowhere else. Even though niche, he is the best at his job (aside from Mythic+ Reinier - will get to that). Kruger is useful in Dream Realm thanks to his debuffs, helping to amplify the damage of other DPS characters on certain bosses. When talking about Kruger, it's all about the debuffs that he provides to make your Physical heroes deal more damage. Starting from his Ultimate, 'Devasting Axe', Kruger dunks on the enemy and knocks them down for a little bit and gives them 3 stacks of the debuff 'Shatter Armor', which will reduce their Physical Defense by 10% on every stack and caps at 4 stacks.
+Kruger shreds **Phys DEF** on single-target hits, then slashes to knock down foes and cut DEF further on ultimate. Low-DEF enemies take **Vulnerable** with increased physical damage and life drain on follow-up strikes. Isolated positioning grants a **battle-start shield** and extra drain for safer opening trades. Killing vulnerable foes **permanently stacks ATK** across the fight. He softens targets for **physical damage dealers** better than anyone in his niche. **Magic-heavy teams** gain little from his DEF shred, and **spread lines** deny his vulnerable execute chain. His battle ranged DEF increase helps him survive at distance while stacking vulnerable kills for permanent ATK.
 
 #### Skill overview
 
@@ -6188,6 +6224,10 @@ Kruger provides DEF buff (Legendary+) to single targets `low`.
 
 ### Units that can act as a replacement for Kruger
 
+**Best overall replacement**
+
+- Kordan (53% `Buffs on allies` `Damage`)
+
 **Buffs on allies**
 
 - Twins (100% `Magic DEF` `Physical DEF`)
@@ -6203,8 +6243,8 @@ Kruger provides DEF buff (Legendary+) to single targets `low`.
 **Damage**
 
 - Kordan (100% `Physical` `Max HP-based damage`)
-- Soren (100% `Physical` `Max HP-based damage`)
-- Satrana (93% `Max HP-based damage`)
+- Brutus (100% `Physical` `Max HP-based damage`)
+- Satrana (100% `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -6252,7 +6292,7 @@ Kruger provides DEF buff (Legendary+) to single targets `low`.
 
 #### Play overview
 
-Kulu’s Ultimate, Blast Mayhem, has both passive and active effects. Her Passive is an enhancement to her Normal Attacks, giving them some splash damage that deals light damage to allies. Kulu’s low damage multipliers make her a generally poor choice for Dream Realm, as her 10% damage taken debuff is not quite good enough to justify using up a slot over Reinier’s 25%, for example. Kulu is a total game changer in PvP, because she makes it so that the enemy has to think more about teambuilding to get around the changes she makes to the battlefield.
+Kulu opens by **blocking enemy lanes with debris**, then uses skills that **splash to both sides**—allies take reduced friendly-fire damage, but tight formations still suffer. Her ultimate bombards the enemy half with random strikes. Defeated foes can leave **explosive traps**, and her ATK climbs as she damages enemies. She shines when **enemies cluster on their side** and movement paths are contested. **Low raw multipliers** and a modest damage-taken debuff make her a weak pure DPS pick. **Single-target races** or splash-intolerant teams underperform badly.
 
 #### Skill overview
 
@@ -6376,7 +6416,7 @@ Kulu provides DEF Penetration buff (EX+15) to single targets `low`.
 
 #### Play overview
 
-Laios was featured for a limited time with the Delicious in Dungeon Collab. He can be ascended to Mythic+ for free by participating in the Dungeon Feast event. When Laios casts his Ultimate, he summons a giant but slow-moving suit of armor with infinite HP, controlled by Kensuke. Laios lacks the HP Loss/Pure damage that is necessary for success in Endless DR, so it is not anticipated that he will find any use in bossing for the remainder of the season. Since Laios requires enemy monsters to maximize the potential of his kit, he does not have much to offer in the realm of PVP.
+Laios summons a **self-regenerating armor construct** on ultimate and confuses enemies in a frontal area to open space. Defeated foes drop **ingredients** that buff allies, with battle-start analysis raising drop rates on early kills. Each ingredient also **permanently grows max HP** over the fight for scaling durability. He blends **summon pressure, debuff, and stacking buffs** in one tank slot. He peaks when **enemies die often** inside his ingredient loop. **Slow fights with few defeats** never stack HP or buffs, and burst that kills the construct early removes his frontline.
 
 #### Skill overview
 
@@ -6485,7 +6525,7 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare) and DEF
 
 #### Play overview
 
-Lenya excels in isolation and lock-down of enemy DPS, using her continuous control as well as high damage to dominate her enemies. With a limited attack range of 1, she charges towards the nearest enemy at the start of each battle, using her array of Stunning abilities to prevent them from counter attacking. Her first skill functions in both Passive and Active modes. Lenya struggles in Dream Realm, as her duel mechanic loses efficacy in Dream Realm. In theory, Lenya is a powerhouse in PvP due to her control mechanics.
+Lenya dodges normal attacks, then **counter-kicks** surrounding foes for AoE damage when pressured. Crits trigger a **power kick with stun**, and her ultimate isolates the **top attacker in a duel**. During the duel she gains **stat boosts and enhanced kicks**, while non-duel opponents deal **reduced damage** to her. Battle haste keeps her rotation quick through repeated counters. She shuts down **high-damage carries** locked in the duel. **Duel-immune targets** or teams that focus her outside the duel waste her isolation payoff.
 
 #### Skill overview
 
@@ -6548,9 +6588,9 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 **Best overall replacement**
 
-- Soren (68% `Damage` `Similar Skills` `Crowd Control`)
-- Kafra (66% `Damage` `Crowd Control`)
-- Perseus (64% `Damage` `Crowd Control`)
+- Soren (82% `Damage` `Similar Skills` `Crowd Control`)
+- Kafra (79% `Damage` `Crowd Control`)
+- Perseus (77% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -6596,7 +6636,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 #### Play overview
 
-Lily May is a specializing in countering enemy Ultimate while growing increasingly powerful throughout a battle as her damage ramps up. And when we say her damage ramps up, it’s a lot. At the core of Lily May’s kit is her Passive Ultimate, fully active even with just one copy. In the Dream Realm, Lily May outshines even long-standing favorites like Marilee, Odie, and Korin, thanks to her boss damage bonus and ATK% growth. Lily May revolutionizes the PVP meta by nullifying Eironn’s instant Ultimate at the start of battle while dealing significant damage herself.
+Lily May enters a **defensive ultimate** that interrupts the enemy's cast, draining extra energy on the first stop. She strikes multiple times while **invincible**, then grows stronger in stages that **raise ATK and hit count** on each growth. Ally buffs trigger growth and **expand enhanced attacks** for wider pressure across the line. Battle penetration rises over time so later hits bite harder on armored targets. She counters **enemy ultimate timing** and scales into a carry role. **Interrupt-immune casts** or burst that kills her before growth cycles complete blunt her entire kit.
 
 #### Skill overview
 
@@ -6666,9 +6706,9 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 **Best overall replacement**
 
-- Saida (76% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Saida (92% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Sylphira (82% `Damage` `Crowd Control`)
 - Pippa (69% `Damage`)
-- Sylphira (69% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -6686,7 +6726,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 - Frieren (100% `Magic` `Max HP-based damage`)
 - Galahad (100% `Magic` `Max HP-based damage`)
-- Saida (100% `Magic` `Max HP-based damage`)
+- Mehira (100% `Magic` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -6732,7 +6772,7 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 #### Play overview
 
-Lorsan's primary gimmick is duplicating damage dealt on one enemy to another, allowing him to match any DPS Hero’s damage output as long as there are two or more enemies present. Furthermore, he also heals and buffs an ally and debuffs the enemy team. His other skill, Zephyr’s Embrace, is a single-target Dodge and Haste buff along with a continuous healing effect that affects a single target for 6s. Lorsan’s main gimmick requires at least two enemies to activate, so unsurprisingly, it doesn’t quite work out in Dream Realm. In PVP, Lorsan works best in burst teams that can make full use of the Stormbound Chain link, though with the existence of Lily May stifling Eironn’s presence in the burst damage archetype, the options we are left with are Dionel teams in Regular Arena, a lucky Lily May burst against one of the linked targets, or Assassin teams.
+Lorsan links the **nearest and farthest enemy** at battle start, forcing shared damage and control across opposite ends of the line. He then summons a storm that **cuts Haste** and deals sustained damage to everyone within range. Breaking the chain **heals allies** and can reset for another cast within the same fight, rewarding repeated disruption. He shields the weakest ally with **dodge, haste, and regeneration**, and at higher tiers they also gain unaffected status during the protection window. ATK scales after the **first chain break**, so each successful unlink raises his damage ceiling. He mixes **control, healing, and AoE pressure** across a long engagement where the storm can tick for full duration. **Immune or unlinked targets** deny chain payoff entirely, and short fights end before storm damage ramps. Spread enemy lines unlock the full chain-and-storm payoff.
 
 #### Skill overview
 
@@ -6860,7 +6900,7 @@ Lorsan provides Haste buff to single targets `high`.
 
 #### Play overview
 
-Lucca focuses on n survival and anti-assassin role with some CC sprinkled on top. At the start of battle, he gains a big Shield and charges at the enemy frontline, holding them off as well as interrupting and disarming them. After charging his Ultimate, he stuns an adjacent enemy; otherwise, he drags an enemy from backline to the frontline before stunning them. He has little use in the mode owing to his low damage output and lack of teamwide offensive buffs outside one small Attack buff. Lucca is very good at keeping himself alive and if the enemy happens to focus their damage on him, he can buy time for the backline to kill the enemy, even against the likes of Dionel if RNG causes him to waste his Ultimate on Lucca.
+Lucca gains a shield, then **interrupts and disarms** an enemy while cleansing her own debuffs for brief **damage reduction**. Her ultimate slams a target to origin or **stuns adjacent tiles** when they cannot be returned. She stays steadfast and stacks **shields for each ally behind** her in formation. Cleansing also **recovers HP**, and battle max HP grows over time for durability. She is a **durable disruptor** for packed frontlines that need control. **Disarm-immune foes** or enemies that never cluster for the slam see limited control value. Her cleanse skill also recovers HP when used, giving her a self-sustain loop between disruption casts on the frontline. Steadfast status protects her while stacking shields behind allies.
 
 #### Skill overview
 
@@ -6927,6 +6967,10 @@ Lucca provides DEF buff in an area `high`.
 
 ### Units that can act as a replacement for Lucca
 
+**Best overall replacement**
+
+- Antandra (52% `Crowd Control` `Damage`)
+
 **Similar Skills**
 
 - Antandra (48% `ally-shielder` `mass-cc`)
@@ -6935,9 +6979,9 @@ Lucca provides DEF buff in an area `high`.
 
 **Damage**
 
+- Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
 - Alna (100% `Physical` `Max HP-based damage`)
-- Athalia (100% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -6972,7 +7016,7 @@ Lucca provides DEF buff in an area `high`.
 
 #### Play overview
 
-Lucius is the first Tank that you will get when you start the game. He is a decent tank for the early game because of his shield and healing, but he is easily overshadowed by other tanks after that, as he's not strong enough to fill the main tank role. Lucius does not in Dream Realm. Lucius sees very limited use in Dream Realm and can be quickly replaced by better heroes. His Ultimate, 'Divine Light Aegis', gives allied heroes a sizable shield that lasts for a fair amount of time.
+Lucius knocks back melee foes for a **personal shield**, then heals an ally whenever he gains any shield. His ultimate grants **AoE shields** around a chosen tile for team protection. Frontal strikes deal damage while **cutting enemy ATK**, and battle healing stat rises over time. Each cast **heals one extra ally** beyond the primary target. He mixes **shielding, healing, and soft debuff** in one tank slot. Output is **modest next to dedicated healers** when shield triggers are sparse.
 
 #### Skill overview
 
@@ -7035,9 +7079,9 @@ Lucius provides Shield in an area `high`.
 
 **Best overall replacement**
 
-- Hepler (62% `Buffs on allies` `Damage` `Crowd Control`)
-- Scarlita (54% `Crowd Control` `Damage`)
-- Antandra (53% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Hepler (74% `Buffs on allies` `Damage` `Crowd Control`)
+- Scarlita (65% `Crowd Control` `Damage`)
+- Antandra (64% `Damage` `Debuffs on enemies` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -7095,7 +7139,7 @@ Lucius provides Shield in an area `high`.
 
 #### Play overview
 
-Lucy's kit is based around Crowd Control while having some Support potential along with summoning Aquarius, who effectively acts as a second Lucy. At the start of battle, Lucy gains 700 Energy, which allows her to get her first Ultimate out very quickly. Her Ultimate, Celestial Spirit Summon can be cast twice per battle. Lucy’s kit, being mostly based around Crowd Control, does not work very well with bosses and she lacks the damage multipliers or damage buffs that favour using up a slot in bossing teams. Lucy is a hero who requires a long ramp-up, and the majority of her kit is locked behind her Ultimate, which will often be among the first to be cancelled by Lily May due to her initial Energy.
+Lucy stuns the **highest cumulative damage dealer**, then summons a companion whose ultimate triggers **AoE knock-up and stun** across the field. The companion **shields the weakest ally** with a large barrier while active on the board. Max energy during companion uptime **boosts companion attack speed** for faster follow-up. Ultimate also drives **transformation swirls** for extra AoE between casts. Battle haste keeps her rotation moving through control cycles. She blends **control and protection** around her summon. **Burst that kills her companion early** removes shields and stun follow-up. Reaching max energy while the companion is active accelerates stun and shield cycles for the weakest ally under pressure.
 
 #### Skill overview
 
@@ -7170,7 +7214,7 @@ Lucy provides Shield (Mythic+) to single targets `high` and DEF buff (EX+10) to 
 
 - Marcille (100% `Magic` `Max HP-based damage`)
 - Natsu (100% `Magic` `Max HP-based damage`)
-- Galahad (99% `Magic` `Max HP-based damage`)
+- Saida (100% `Magic` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -7204,7 +7248,7 @@ Lucy provides Shield (Mythic+) to single targets `high` and DEF buff (EX+10) to 
 
 #### Play overview
 
-Ludovic is a focusing on providing ample, consistent healing, as well as a small offensive buff thanks to his seasonal skill and a stun ability at Supreme+. His gimmick is that he places a field of flowers that heals allies, damages enemies & stuns any enemy who walks into it at Supreme+ (with a 12s cooldown). He can also reposition his field to follow allies. Ludovic has damage worth mentioning, but he works best as Support for Talene specifically, thanks to his consistent healing, allowing Talene to keep her Ultimate up he shines in the same conditions where she does well, which are the King Croaker, Skyclops and Lone Gaze bosses, along with Phraesto, requiring high investment overall. Ludovic shines best in the Talene team, used along with Scarlita, as he can reliably counter other meta teams, such as those built around Dionel or Eironn.
+Ludovic anchors a **movable healing field** that restores HP for allies inside and damages or stuns **enemies who enter** the zone. He shifts the field to allies or **absorbs nearby enemy HP** to refill stored healing when the pool runs low. Damage skills targeting the top attacker add **HP-loss pressure** alongside the field's passive refill when foes lose HP. Stored healing **scales his battle healing stat**, while periodic berries **explode for damage and ally heals** in range. Field healing restores when enemies lose HP, so sustained enemy damage keeps his pool topped. He excels in **long attrition fights** with steady enemy traffic through the field. Burst that skips the field or enemies that never step inside waste his heal-damage loop. Enemies entering the field take damage and stun, punishing anyone who walks through his shifted zone.
 
 #### Skill overview
 
@@ -7313,7 +7357,7 @@ Ludovic provides Direct healing in an area `average` and Healing over time to si
 
 #### Play overview
 
-Lumont's kit revolves around tanking mostly, with some moving opponents around. His most iconic skill is his Ultimate, "Lumont's Charge", which causes him to select a tile and start charging towards it, dragging all enemies with him before inflicting a taunt on them. This is great for moving enemies out of range and gathering them up to unleash AoEs on, but it doesn't provide any defensive coverage, so unless Lumont has his next skill up, he will struggle to stay alive. "Totem Power" is his only survivability tool and it forms a shield that scales with the number of enemies caught in the cast. This also provides a Physical Defense buff to his 2 closest allies for a short duration.
+Lumont charges in a line, **knocking enemies back** toward a chosen tile while building **large shields that grow per adjacent foe**. His stomp adds AoE damage, and **battle haste scales with nearby enemy count** so he swings faster the more bodies crowd him. Sustained damage taken triggers **multi-ring slams** that slash ATK from surrounding enemies, while shielded moments **regenerate HP each second** to stretch his frontline time. He excels as a **tank that thickens with crowd pressure**, punishing swarms that sit on him and feed his haste loop. Against **sparse lines or burst that breaks shields fast**, his regen, counter-slam scaling, and haste buildup never fully ramp.
 
 #### Skill overview
 
@@ -7377,8 +7421,8 @@ Lumont provides DEF buff to multiple targets `low`.
 
 **Best overall replacement**
 
-- Antandra (60% `Buffs on allies`)
-- Hepler (58% `Crowd Control` `Damage`)
+- Antandra (72% `Buffs on allies`)
+- Hepler (70% `Crowd Control` `Damage`)
 
 **Buffs on allies**
 
@@ -7439,7 +7483,7 @@ Lumont provides DEF buff to multiple targets `low`.
 
 #### Play overview
 
-Lyca may be a Marksman, but she possesses supportive capabilities that buff allies and debuff enemies while dealing a good amount of damage at the same time. 'Comet Archery' is a decent damage Ultimate, but the Nebula Reflection it leaves will buff heroes on it to deal some damage to enemies, up to one time, which is what we call pointless. Lyca in PvP for her ATK SPD buff. Supreme+ passive 'Enhance Force' gives utility to the firing of the Ultimate in the form of Physical Defense shred for a decent amount of time. 'Empyrean Blessing' is a great ATK speed buff skill, along with the energy charge at the beginning of the stage, which doesn't affect Lyca herself.
+Lyca opens by **buffing all allies' attack speed** and fueling the first cast with bonus energy for quick tempo. Her line shot lets nearby allies **summon meteors on normal attacks**, stacking area pressure alongside her ultimate volleys. AoE meteor rain also **shaves enemy Phys DEF**, and passive meteors assist throughout the fight while battle haste keeps her rotation moving. Ultimate hits **deepen the DEF shred**, letting dealers exploit softened targets over time. She shines when **allies stay within ultimate range** and attack often enough to proc meteors on every cycle. Spread formations or **allies outside her line** waste her attack-speed package and meteor summons.
 
 #### Skill overview
 
@@ -7570,7 +7614,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Marcille was featured for a limited time with the Delicious in Dungeon collab. Marcille has a very unique kit, in that all of her skills require chanting for her to cast. Her chanting speed is affected by Haste and ATK SPD, and she will attempt to cast her skills during the whole battle. Without HP Loss/Pure damage in her kit, Marcille is unlikely to see much use in Endless Dream Realm, but she still has massive potential to shine against Pre-Endless bosses as a main or auxiliary damage dealer. Marcille can be described as a glass cannon in the arena.
+Marcille must **channel every skill**, trading instant casts for heavy payoff once each completes without interruption. Her ultimate **continuously summons companions** while active, and channeled AoE blasts and blinds **heal allies** mid-fight when channels land cleanly. Channeling the ultimate also **raises battle haste**, and she can **revive one fallen ally** after a completed cast. She needs **protection and time** so channels finish before control cancels them. Fights that **interrupt her setup** leave much of her heal and summon value unrealized.
 
 #### Skill overview
 
@@ -7688,7 +7732,7 @@ Marcille provides Direct healing (Mythic+) to multiple targets `high`.
 
 #### Play overview
 
-Marilee has long fallen out of the meta, especially after the arrival of a character that made her pretty much obsolete. Her Ultimate, Mid-air Shot, is simply a leap that deals damage to 2 nearby enemies. Moreso, it often puts Marilee in risky situations, leaping straight into enemy DPS where she can be quickly burst down or focused or even landing outside the range of any healing or sustain. Marilee is still in Dream Realm, just that the current meta favors HP drain characters like Shemira that can scale in Endless mode. Marilee is not used in PvP, as she takes too long to build up her damage and usually dies without doing much.
+Marilee **leaps to distant tiles** while firing on targets, then strings **stunning enhanced shots** every few normal attacks for steady control from range. She gains ATK and attack speed **when no enemy sits adjacent**, rewarding rear or isolated placement away from melee pressure. Each ally ultimate **stacks her ATK**, culminating in **true damage at max stacks** that spikes her burst window late. Battle crit damage climbs over time, and easier bonus-attack triggers **keep her DPS scaling** through longer engagements. She falters when **enemies close distance** or when few allies cycle ultimates to feed her stacks.
 
 #### Skill overview
 
@@ -7799,7 +7843,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 #### Play overview
 
-Mehira has a highly nefarious reputation for charming anyone who crosses her path. At battle start, Mehira casts “Alluring Mirage,” summoning an illusion that bewitches all enemies for 2.5 seconds. Bewitched enemies will rush mindlessly toward the illusion, and are only immune to this initial control if they are granted Unaffected as the battle begins. Mehira does not seem to have much utility in a 1v5 PVE setting, mainly due to boss mechanics. This skill has a 15-second cooldown, and when recast, Mehira will summon her illusion on the tile closest to the enemy lineup.
+Mehira charms an area with **multi-hit AoE**, then whips a frontal arc that **costs HP from all units** but grants allies haste when caught in the lash. She **pulls enemies to a tile**, drains life while scaling ATK from healing received, and summons **voidlings that attack for her**. In danger she can **sacrifice a summon to become untargetable** and heal, while charmed foes take increased damage. She peaks against **clustered targets** that absorb whip pulls and charm setups. Teams that **kill voidlings early** or spread lines blunt her drain payoff.
 
 #### Skill overview
 
@@ -7875,9 +7919,9 @@ Mehira provides Haste buff to single targets `average`.
 
 **Damage**
 
+- Dunlingr (100% `DoT` `Magic` `Max HP-based damage` `HP loss`)
 - Zorya (100% `Magic` `Max HP-based damage` `HP loss`)
-- Dunlingr (98% `DoT` `Magic` `Max HP-based damage` `HP loss`)
-- Ravion (81% `Max HP-based damage` `HP loss`)
+- Ravion (97% `Max HP-based damage` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -7921,7 +7965,7 @@ Mehira provides Haste buff to single targets `average`.
 
 #### Play overview
 
-Mikola excels in supporting allies for long periods, which is why she is often used in Dream Realm. Her Ultimate, Dauntless Hymn, summons a Courage Sphere that follows her and increases the Haste and Ranged DEF of herself and nearby allies. Mikola is considered a top-tier support for both healing and buffing in Dream Realm, due to how easily her team can gain control of the Honor Arena at the start of battle. Mikola is heavily Charm-dependent to get her Ultimate out and current Charms don’t favour her in that way, which ends up with her dying before she can get her Ultimate out. Control of the Honor Arena is given to the team with more units inside it for 3 seconds.
+Mikola generates a **Courage Sphere** that buffs nearby allies and **heals everyone in range** once damage thresholds trip during the fight. She places a **central zone** that empowers allies while her side controls it, and heals two weakest allies with DEF boosts to keep fragile carries standing. The sphere grows over time, dealing **continuous DoT to enemies** adjacent to buffed allies, and zone control **freezes aura duration** so the buff window does not decay early. She needs **map control and grouped allies** inside Courage range to maximize healing, DoT aura, and zone bonuses. Fights that **deny zone ownership** or keep allies scattered shrink her buff and sustain impact.
 
 #### Skill overview
 
@@ -8039,7 +8083,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Mirael her performance may not be desirable; she is a decent burst mage from her Ultimate, but is held back by the rest of her kit with no utility to make up for her shortcomings. Her ult 'Winged Flame' is great for dealing a lot of damage. The only comment on this is that she cannot charge her Ultimate fast to use this unless you're paired with 'Rowan', which you should if ever you want to use Mirael. Going to the rest of Mirael's kit, 'Bone Sear' is a good skill for constantly burning an enemy for a good amount of time but it doesn't deal that much cause of the low scaling. Her Supreme+ passive extends the burn time of 'Bone Sear', which is not really bad, but would be better if it increased the damage of the burn.
+Mirael lays a **wide frontal burn line** that hits harder on already burning foes, then maintains **sustained single-target burn** between ultimates to keep pressure on priority marks. Magic burst adds **adjacent splash**, battle attack speed rises, and after the first ultimate her **normal attacks become area fireballs** permanently for the rest of the fight. She also **extends burn DoT duration** so flames linger longer on targets her team keeps controlled. Her kit rewards **grouped enemies** where splash, fireball normals, and burn bonuses chain together every cycle. Against **spread or cleanse-heavy lines**, burns fail to stack and her transformed attack pattern underdelivers for much of the fight.
 
 #### Skill overview
 
@@ -8134,7 +8178,7 @@ Common buffers are **Twins**, **Mikola**, or **Rowan**.
 
 #### Play overview
 
-Nara is centered around enemy units' isolation, allowing other teammates to deal damage and finish off low-health enemies. Unlike Burst-Type Assassins such as Silvina and Vala, Nara’s focus is on being a more Control-oriented Assassin, helping in setting up kills for the rest of the team while picking off easy prey. At the start of battle, Nara tries to pull the enemy she is targeting towards her and hold her Ultimate until she can use it against an enemy hero whose HP ratio is below 40%, bursting them down for a quick kill. Being a control-oriented character with low DPS, even when compared to other Assassins, Nara fails to make any impact in Dream Realm. The focus of Nara’s usage, she is great at isolating priority enemy targets as long as they are not Unaffected (An enemy with Enlightening Spell Artifact or Shakir during his Ultimate) or Untargetable (Lily May at battle start).
+Nara strikes a hero for **scaling damage against low HP ratios**, then yanks out-of-range foes **into melee** for a knock-up combo and rapid follow-up attacks. Each assist or defeat **grows her ATK**, and an ultimate kill **releases a shockwave** that damages enemies and heals allies while refunding energy on the finisher. She blends **assassin burst with team sustain** when fights produce kills and wounded targets she can reach. Pulling isolated carries and chaining knock-up strikes define her win condition against backline-heavy formations that leave squishy targets exposed. She needs **access to wounded or isolated targets** and enough energy to cycle her pull-strike loop repeatedly through the fight. **Tanky frontlines or foes that stay in range** deny her execute angle, shockwave value, and the energy refund that keeps her assassin tempo alive through longer trades.
 
 #### Skill overview
 
@@ -8206,9 +8250,9 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 
 **Damage**
 
-- Athalia (84% `Physical` `True damage` `Max HP-based damage` `HP loss`)
+- Athalia (100% `Physical` `True damage` `Max HP-based damage` `HP loss`)
+- Zorya (76% `Max HP-based damage` `HP loss`)
 - Vala (71% `True damage` `Physical` `Max HP-based damage` `HP loss`)
-- Frieren (67% `True damage` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -8256,7 +8300,7 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 
 #### Play overview
 
-Natsu's kit is based around reducing enemies max HP, and dealing massive damage in a small cone. Before battle, the player can choose between Lightning and Fire modes. Whereas Fire mode deals more damage, Lightning mode features CC and a Haste debuff. Natsu’s kit is intentionally nerfed against bosses, as his max HP reduction cannot trigger here which results in Natsu not being good enough for top Dream Realm Teams. Natsu can nuke enemy teams almost instantly when he gets his Ultimate to go off in a tight enemy formation.
+Natsu chooses modes between **stun-heavy frontal AoE** or **greater raw damage**, adapting each cast to the fight state. The first ally defeat **boosts his ATK and DEF**, with extra crit if a bonded ally falls, while every damage tick also **shaves target max HP**. Sustained burns apply when foes lose HP from **non-normal sources**, feeding his combat scaling. He peaks in **long fights with ally casualties** that unlock his spikes. Early burst or **lines that deny mode setup** leave his burn package thin.
 
 #### Skill overview
 
@@ -8322,8 +8366,8 @@ Common buffers are **Mikola**, **Twins**, or **Rowan**.
 **Best overall replacement**
 
 - Frieren (61% `Damage`)
+- Zorya (61% `Damage` `Crowd Control` `Debuffs on enemies`)
 - Marcille (61% `Damage`)
-- Vala (55% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -8380,7 +8424,7 @@ Common buffers are **Mikola**, **Twins**, or **Rowan**.
 
 #### Play overview
 
-Nazrik specializes in marking enemies and dealing heavy Critical True Damage. “Rend Rupture” automatically marks the enemy that has taken the most damage as Nazrik’s prey, focusing all his attacks and skills on this enemy. When activated, Nazrik throws a spear that deals guaranteed Critical True Damage and triggers all Rend stacks on the target. Nazrik is a strong DPS option for high-deficit and might even be a top contender, as his attacks deal true damage. Nazrik has shown veritable promise in early testing, with his own damage dealing on par with pre-endless staples such as Faramor.
+Nazrik marks prey and **detonates all Rend stacks** with a spear throw, while crit throws **apply Rend that ticks when prey casts ultimate**. He stuns the **highest healer** with anti-heal, grows crit from accumulated debuff stacks, and lets **allies add Rend on prey damage** so the whole team feeds the detonation. Each critical hit also **raises crit damage** for snowballing finishes once stacks are high. He needs **time to stack Rend** and allies who can proc it reliably before the spear detonates. **Cleanse or prey targets that never ult** waste his mark-and-detonate loop and stall his crit growth.
 
 #### Skill overview
 
@@ -8486,7 +8530,7 @@ Look for units providing: `CRIT`
 
 #### Play overview
 
-Nerion has unique mechanics that allow him to completely delete enemy backline heroes under the right conditions. His kit revolves around a debuff called Drowning which, when properly set up, can make him a powerhouse in PvP. Unfortunately, if the enemy team comp doesn’t allow for the setup, or if Nerion is in a defensive team, he essentially becomes a very underwhelming unit. PvP: In offensive PvP teams with the right setup against the right enemy teams, Nerion can literally delete rearmost enemies (especially Magic Damage Dealers) before the beetle even starts. Nerion’s kit revolves around a passive in his Ultimate, Drowning Doom.
+Nerion applies **drowning DoT to controlled enemies**, then bounces attacks between drowning targets after an ATK boost on ultimate for chained magic pressure. Enhanced normals **knock back and stun**, projectiles erupt with **delayed knock-up**, and battle start **drowns the rearmost foe** with ATK and haste cuts before control even lands. When every non-summon enemy drowns he gains **permanent empowerment and penetration**, spiking his damage for the rest of the fight. He excels beside **consistent control** that keeps drowning active across multiple targets. **Control-immune or fast-moving lines** never feed his bounce damage or empowerment spike.
 
 #### Skill overview
 
@@ -8602,7 +8646,7 @@ Nerion also requires units **applying crowd control** to enemies
 
 #### Play overview
 
-Niru focuses on expanding his allies’ lifespans by reviving them as Spirits to keep them fighting. His Signature ability, Soul Shepherd, targets the ally with the lowest HP. When that ally receives a fatal blow in battle, they’re instantly revived as a Spirit - restoring 45% of their HP. Niru is never used in Dream Realm, as Soul Reaping doesn’t work well against bosses with multiple health bars, unlike the big single health bar of Primal Lords. In PvP, Niru was already used as Anti-Lily May tech before his Supreme+ skill upgrade and his recent buff made him even more viable as he can now make Shemira and Daimon tankier while also remaining relatively safe in the backline himself.
+Niru stores an ally soul at battle start so they **keep fighting in spirit form** after a fatal blow, preserving output from a key carry. She strikes the weakest foe for **bonus damage at low HP**, drains enemy HP to **heal the weakest ally**, and grows battle max HP to stay relevant on the field. Her opening ultimate **costs no energy**, letting the spirit safeguard trigger immediately. Attacks also briefly **block target healing**, adding soft anti-sustain on her pressure target. She is a **battle-start safety net** for one ally with drain-based sustain for the team. Without a **worthy soul target** or fights that end before spirit triggers, much of her protection sits idle.
 
 #### Skill overview
 
@@ -8710,7 +8754,7 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 #### Play overview
 
-Odie is one of the most important characters in the game for nearly every type of content. His standout ability is executing enemies consistently, all while dealing Poison damage at an impressive range. He is often used in pre-Endless teams for Dream Realm bosses because Heart Crusher works on bosses, allowing him to clutch out clears with an execute. Odie remains a top-tier character in PvP, as long as you can keep him protected from being quickly burst down by enemies. It fires two darts—one deals direct damage, while the other applies Poison that continuously damages the target until they die.
+Odie plants a **persistent DoT** with his ultimate, then triple-shot normals that **stack poison base damage** on already poisoned targets for escalating tick pressure. Battle attack speed rises, and he can **instantly defeat poisoned foes below a HP threshold** once the venom has softened them enough. Bonus damage also lands on **poisoned triple-shots**, rewarding repeated focus on a single marked victim. He needs **time to layer poison** and enough shots on the same mark to reach execute range. **Cleanse or spread targets** that slip the threshold kill waste his execute angle and poison stacking loop.
 
 #### Skill overview
 
@@ -8814,7 +8858,7 @@ Common buffers are **Twins** or **Mikola**.
 
 #### Play overview
 
-Pandora is notable for having abilities that affect both enemies and allies, including herself, and an Ultimate that also affects both sides indiscriminately. Pandora’s ultimate, “Panic Projection”, causes all units, including allies, to flee to their side of the battlefield, taking damage and having their ATK temporarily reduced, stacking up to 3 times. Pandora offers HP loss damage, as well as a 10% damage taken debuff, temporary ATK buff to the ally affected by “Boxed Blessing”, and continuous energy regen, which allows the chosen ally to continuously spam their ultimate. However, Pandora herself is not affected by this skill. Her first skill, “Boxed Blessing”, activates at the start of battle, where Pandora pulls the rearmost ally into her box, making them invincible, but unable to interact with the battlefield during that time.
+Pandora's ultimate **CCs every unit except herself**, freezing the entire field while she alone keeps acting, while at battle start she **pulls an ally into her box** and restores their energy for an early tempo spike. Corruption stacks **drive debuffs on enemies** as the fight wears on, battle max HP grows especially after box corruption, and the **indestructible box persists** even after she falls to keep her setup alive. Allies inside the box **ignore her ultimate**, turning the global pause into a controlled window for one protected partner. She demands careful **ally selection for the box** and patience to build corruption before debuffs peak on the enemy line. Teams that **punish her before corruption ramps** or exploit the global CC window blunt her upside, box value, and late-fight max HP scaling.
 
 #### Skill overview
 
@@ -8937,7 +8981,7 @@ Pandora provides Direct healing to single targets `average`, Invincible to singl
 
 #### Play overview
 
-Pang has a relatively straightforward bruiser kit. Pang makes his allies Unaffected, provides shields and a small ATK buff, while also dealing high damage himself. Pang’s ultimate, “Sky Splitter”, causes Pang to deal damage in an area, and enter Unyielding Force stance, which gives him a Haste and ATK buff, improves his skills, and allows him to use the powerful “Skybreach Strikes” attack, dealing moderate damage, stunning an enemy and preventing energy recovery for 5s. Pang’s damage does not scale well enough to be a damage carry in Wndless bosses, and the ATK buff he provides is rather small, making him currently non-viable in Dream Realm. His first skill, “Radiant Fist”, is a simple attack dealing relatively high damage for a basic skill, but this damage increases significantly once Pang enters Unwielding Force.
+Pang channels then **bursts AoE**, entering a stance with ATK and haste where strikes **block enemy energy recovery** to stall opposing ultimates across the field. Heavy single-target hits add direct pressure, a shield keeps him **unaffected while active**, and shield break or expiry deals retaliation damage to punish focus fire on his frontline slot. Any shielded ally gains **ATK from his passive**, and entering the buff state **instantly grants shield and penetration** for an immediate power spike before the stance fully settles. Battle ATK rises over time, blending **burst damage with energy denial** once stance is online and retaliation triggers are armed. Fights that **break shields before stance** or deny melee access cut his retaliation loop, energy denial, and team ATK sharing.
 
 #### Skill overview
 
@@ -9002,9 +9046,9 @@ Pang provides Shield to single targets `average` and DEF Penetration buff (Supre
 
 **Best overall replacement**
 
-- Hepler (74% `Damage` `Similar Skills` `Crowd Control` `Buffs on allies`)
-- Lenya (63% `Damage` `Crowd Control`)
-- Perseus (63% `Damage` `Crowd Control`)
+- Hepler (89% `Damage` `Similar Skills` `Crowd Control` `Buffs on allies`)
+- Lenya (76% `Damage` `Crowd Control`)
+- Perseus (76% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -9020,9 +9064,9 @@ Pang provides Shield to single targets `average` and DEF Penetration buff (Supre
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Aliceth (100% `Physical` `Max HP-based damage`)
-- Athalia (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -9068,7 +9112,7 @@ Pang provides Shield to single targets `average` and DEF Penetration buff (Supre
 
 #### Play overview
 
-Parisa excels in basic attack-based teams, buffs crit, and also deals some fairly decent AoE damage on grouped enemies. Her main usage comes from her "Wilder Blessing" ability that targets herself and the nearest ally, enhancing their ATK SPD and basic attack damage. This synergizes well with units that rely on auto-attacks such as Odie to stack his poison, Marilee in general, and Dionel who requires continuous buffing. "Flower Power" helps Parisa with generating Energy, while at the same time dealing AoE damage. It's nothing special, but it helps and is enhanced the more Parisa is given ATK SPD buffs.
+Parisa marks with flowers for **AoE ultimate damage**, then boosts **attack speed and normal attack damage** for herself and one ally to accelerate their output together. Periodic line attacks sweep after several normals, battle ATK climbs, and marks at start let normals **hit extra targets after enough stacks** accumulate on the field. Fewer normals are needed to **trigger the line attack** at higher tiers, tightening her proc rhythm in longer fights. She shines beside **another high-attack ally** who can share her speed buff. Without **frequent normal attacks** or clustered marks, her line procs stay flat.
 
 #### Skill overview
 
@@ -9163,7 +9207,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 #### Play overview
 
-Perseus specializes in dealing heavy AoE damage and Crowd Control to the enemy frontline while offering a wide range of temporary buffs that increase his own and his nearby allies’ tankiness. Perseus’ Ultimate, “Divine Rend,” is a straightforward march that deals AoE damage 11 times to all adjacent enemies along the way. At the end of his 3-tile march, he bashes his shield to deal damage and Stun all enemies within a 1 tile radius. He also remains Unaffected for the duration of the attack. When Perseus casts his “Spear-Shield Combo” skill, he swings his weapons in a circle to strike adjacent enemies.
+Perseus **marches through packed frontlines**, dealing repeated AoE hits, knockback, and a finishing stun while he stays unaffected. Before heavy damage lands, he turns nearby tiles **fertile**, buffing allies who stand on them with ATK and DEF until the ground withers. He also **amplifies temporary ally buffs** into extra ATK for himself, then gains a one-time max HP surge and heal once he drops below 40% HP. Against **isolated or spread targets**, his march and tile buffs fail to connect. Teams that burst him early or **keep allies off his fertile ground** get little value from his kit.
 
 #### Skill overview
 
@@ -9234,8 +9278,8 @@ Perseus provides ATK buff to multiple targets `average`.
 **Best overall replacement**
 
 - Atalanta (75% `Damage` `Crowd Control`)
-- Vala (52% `Damage` `Crowd Control`)
-- Florabelle (52% `Damage`)
+- Florabelle (63% `Damage`)
+- Himmel (60% `Damage` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -9251,9 +9295,9 @@ Perseus provides ATK buff to multiple targets `average`.
 
 **Damage**
 
+- Baelran (100% `Physical` `Max HP-based damage`)
+- Himmel (100% `Physical` `Max HP-based damage`)
 - Aliceth (100% `Physical` `Max HP-based damage`)
-- Athalia (100% `Physical` `Max HP-based damage`)
-- Gwyneth (100% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -9289,7 +9333,7 @@ Perseus provides ATK buff to multiple targets `average`.
 
 #### Play overview
 
-Phraesto has a unique gimmick of having a clone that inherits 100% of his stats and can cast all his skills and act individually. Aside from the obvious benefit of having two tanks in the formation by the cost of one slot, Phraesto also counts with a passive of 30% damage reduction if he’s placed in the same row as his clone. His skill “Vicious Sting” grants him extra sustain, along with his Legendary+ passive, which further amps up his Phys & Magic DEF. On the utility side, Phraesto’s “Crimson Contract” grants DMG reduction to allies placed behind his clone, and Energy Recovery Speed to allies placed behind his true body. Adding this to his stalling capabilities, Phraesto can be very good for AFK pushing at high deficit and certain Arena tactics.
+Phraesto sacrifices max HP to **summon an Illusion that casts all his skills**, duplicating his kit while his active ultimate **heals per nearby hit** to recover the cost over time. He and the clone **grant rear allies stat contracts**, apply DoT and reductions on strike, share DEF and cross-transfer energy on damage so both bodies stay fueled through the fight. Row allies start with **shields at battle open**, and if the Illusion dies first he **damages and stuns an enemy** for a punish window. He needs **HP to feed the clone** and allies behind him positioned to honor contracts and benefit from rear buffs. Losing the Illusion early or **denying rear positioning** shrinks his buff, duplication value, and sustain loop across the fight.
 
 #### Skill overview
 
@@ -9414,7 +9458,7 @@ Phraesto provides Damage taken to single targets `low` and Max HP buff to single
 
 #### Play overview
 
-Pippa can deal heavy AoE damage and disrupt enemy positioning. However, her magic is unstable, causing her abilities to occasionally misfire or have their effectiveness reduced. Pippa is pretty in Dream Realm, as her strengths always play around multiple enemies or even AoE fights. She performs similarly to AFK stages, but her inconsistency is more noticeable here, especially when you need to avoid her skills backfiring. Actively, this targets the two rearmost enemies and displaces them to a chosen tile.
+Pippa **immobilizes and teleports enemies** on ultimate, then sprays **rapid magic missiles** and seeds magical growth on **the densest enemy cluster** to damage and drain energy. Consecutive casts **scale battle haste**, random mutations can surprise on skill use, and teleported foes **take extra portal fall damage** after repositioning. She excels when **enemies group** for growth, teleport setups, and missile volleys. Sparse lines or **RNG mutations that miss** leave her damage inconsistent.
 
 #### Skill overview
 
@@ -9532,7 +9576,7 @@ Common buffers are **Twins** or **Mikola**.
 
 #### Play overview
 
-Ravion, from the rogue class belonging to the Wilder faction. With a kit that is built around buffing his allies including himself, his range of 4 sets him apart from his fellow Rogue counterparts. Ravion’s abilities include permanent ATK boosts for himself and 2 backline allied units, teleportation to and from crowded enemy lines to deal high burst damage and quickly remove himself from danger, damage that scales by percentage of HP lost by his target, and granting himself and his allies unaffected. Although Ravion’s individual damage in boss battles cannot compete with the current nuclear PVE meta units like Shemira or Baelran, his skill specialization makes him a great supporting anchor to push these heroes to their maximum potential. When set up correctly, Ravion can be a menace to contend with on both offense and defense.
+Ravion assigns **objectives to allies**; completing them grants energy, ATK, and unlocks a knock-down strike for coordinated burst windows across the fight. His ultimate **scales with target HP-loss** across multi-hits, while repeated teleports **deal early jump damage** then reposition away from foes to stay safe through longer engagements. First enhanced strike **activates ATK bonus**, and unlocking it permanently **grants haste and ATK to self and allies** for a lasting team spike. Assigned tasks also give brief ATK boost and unaffected state while allies work objectives across the board. He needs **allies who finish objectives** and room to teleport safely through longer engagements. **Static teams or burst that pins him** before enhanced strikes land waste his coordination package and team buffs.
 
 #### Skill overview
 
@@ -9618,9 +9662,9 @@ These are the **10** strongest pairings:
 
 **Damage**
 
+- Mehira (100% `Max HP-based damage` `HP loss`)
 - Athalia (100% `Physical` `Max HP-based damage` `HP loss`)
-- Nara (100% `Physical` `Max HP-based damage` `HP loss`)
-- Vala (100% `Physical` `Max HP-based damage` `HP loss`)
+- Zorya (100% `Max HP-based damage` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -9666,7 +9710,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Reinier's kit is centered around the idea of symmetry, focusing on inflicting and applying effects to his allies and enemies equally to keep things in balance (as all things should be). The core part of his kit is "Dynamic Balance" which causes him, at the start of the round, to swap the position of his pre-targeted ally and the enemy on the opposite side's matching tile. The teleported ally is healed whenever the teleported enemy takes damage, meaning that most units can sustain for a surprisingly long amount of time while under this effect, especially if they have self-healing (this doesn't swap Dream Realm bosses, the effects still apply and the targeted ally is teleported directly to the boss). His second skill, "Golden Ratio" causes him to pummel an enemy, interrupting them and knocking them up while dealing extra damage if the target's HP is above specifically 61.8%.
+Reinier swaps **symmetrical ally-enemy positions at battle start**, disrupting enemy lines before the first cast, then can **remove himself and one foe** from the field with his ultimate dimension trip for a temporary duel outside the main fight. Multi-hit attacks **knock targets airborne**, swaps **boost ally ATK or cut enemy ATK**, wound swapped enemies to take more damage, and grant damage reduction to a swapped ally for survivability. Symmetrical allies also gain **ATK while holding position**, rewarding clean mirror setups when enemy layout matches yours across the board. He is devastating when **enemy layout mirrors yours** for clean swaps, wound chains, and dimension removal on a high-value target. Misaligned formations or **targets immune to displacement** negate his opener, wound setups, and the dimension removal that defines his late-fight control.
 
 #### Skill overview
 
@@ -9791,7 +9835,7 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 
 #### Play overview
 
-Rhys' kit revolves around constantly moving around the map while dealing consistent AoE and single-target damage. His ultimate, “Flame Barrage”, causes him to stop in his tracks and shoot 6 projectiles across the battlefield, dealing substantial AoE damage, and loading his gun with Blast Ammo, which enhances his normal attacks with extra splash damage until he gets stopped by a crowd control effect. Interestingly enough, this ultimate has a passive component, in that ATK SPD and Haste won’t affect his animation speed, but get converted into 2 Crit DMG Boost for each point of both. “Defensive Stance” passively grants Rhys up to 15 Crit, and has an Active component where when he gets hit by a Crowd Control effect, he gains control immunity and restores some HP, on a 12s cooldown, going down to a staggeringly low 3s at Supreme+.
+Rhys **moves while attacking**, loading **Blast Ammo** on ultimate to enhance follow-up normals into area shots that hit multiple tiles across the field. Control immunity and crit **trigger when he takes CC**, knockback clears nearby foes, and crit damage **scales with equipped splash shots** as he kites away from melee pressure on the board. Movement loads splash shots for enhanced area attacks, and immunity skill **cooldown drops** for faster recovery between control windows so he can re-engage safely. He needs **space to kite** and time to load ammo between bursts for maximum splash output on grouped targets throughout the fight. **Pinned melee lines** or fights without movement deny his splash scaling, crit ramp, and the ammo-enhanced normals that carry his sustained damage through longer trades on the field.
 
 #### Skill overview
 
@@ -9902,7 +9946,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 
 #### Play overview
 
-Rowan specializes in charging ally Energy, allowing them to use their Ultimates faster. This makes him one of the best supports in the game, and his utility ensures he remains viable across all game modes for a long time. Fatal Greed is his Ultimate ability, which allows him to move a tile or so and shower nearby allies with Energy, helping them use their Ultimates faster. Rowan isn't a top pick here, as there are better options for directly boosting damage, which is often crucial for Bossing. Rowan is still pretty viable in PVP for his utility, more often so in Supreme Arena more than PVP Arena.
+Rowan restores **energy to surrounding allies** on ultimate and places **consumable heals** that trigger when ally HP drops low for passive safety. His companion **drains enemy energy** while attacks restock heals when depleted, battle haste bonuses apply before first heal restock, and a **super heal permanently raises Phys and Magic DEF** on one ally. He places one extra heal at battle start for early protection. He is a **steady sustain and energy battery** for grouped teams that stay near his consumables. **Spread allies** or enemies that **burn heals before triggers** waste his consumable package.
 
 #### Skill overview
 
@@ -10029,7 +10073,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Saida specializes in Life Drain, survivability, self-revives, and a stall-based game plan. Saida’s ultimate, “Seed Siphon”, causes Saida to teleport in front of an enemy, interrupting them, dealing damage and draining energy while also planting a Drain Seed in the enemy, remaining unaffected while doing so and prioritizing enemies without a Drain Seed. Saida can have up to 8 Drain Seeds on the battlefield, and will passively deal damage and reduce energy from enemies carrying a Drain Seed. While Saida can perform similarly to Baelran in some bosses, she has not earned a spot in any top teams for endless bosses quite yet, as she specializes in dealing with multiple enemies rather than single enemies. For PVP, Saida is the ultimate stall carry, but takes some time to really get going, and wants to cast her ultimate multiple times to win the battle.
+Saida teleports to an enemy, planting a **marker that deals periodic damage and drains energy** to soften and stall the target over time. Damage dealt **heals her with excess becoming shield**, strikes **trigger nearby markers on the target**, and she can **consume a marker to revive** after defeat for a second life in longer fights on the board. Damage reduction grows with active markers, each ultimate **shortens marker DoT interval**, and battle start plants markers on nearby allies to seed the field early. She blends sustain, **energy drain, and cheat-death** when markers stay live across the fight and allies keep hers planted on the board. Teams that **clear markers or burst her before planting** deny her shield loop, revival safety, and the damage reduction scaling that keeps her standing through focused burst damage.
 
 #### Skill overview
 
@@ -10093,6 +10137,7 @@ Saida provides Shield to multiple targets `high`.
 **Best overall replacement**
 
 - Galahad (54% `Damage` `Crowd Control`)
+- Lily May (51% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
@@ -10103,8 +10148,8 @@ Saida provides Shield to multiple targets `high`.
 **Damage**
 
 - Galahad (100% `Magic` `Max HP-based damage`)
+- Sylphira (100% `Magic` `Max HP-based damage`)
 - Cryonaia (100% `Magic` `DoT` `Max HP-based damage`)
-- Marcille (100% `Magic` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -10153,7 +10198,7 @@ Saida provides Shield to multiple targets `high`.
 
 #### Play overview
 
-Salazer is built around fulfilling a plethora of roles, providing both AoE damage, single-target, crowd control and a bit of self-sustain. His bread and butter, and probably the reason why you'd use him, is his "Soul Cage" ability. When an enemy's HP drops to 70%, he traps them in a cage for a decent duration while dealing damage to and stealing ATK from them. Though it can only apply to each enemy once per battle, in the right team, it disrupts the oh-so-important first few seconds of the fight and Salazer can steal a considerable amount of ATK to try and sweep the opposing team along the way. His Ultimate, "Rain of Blades", deals decent single-target damage to the highest HP enemy and grants him a burst of Life Drain.
+Salazer summons **flying swords** on ultimate while arc strikes **add bonus hits on low-HP targets** for finisher pressure against wounded marks. He deals **massive damage and imprisons** very low foes, gains battle damage reduction, and at battle start or after imprison **arc skill has no cooldown** with a guaranteed extra use for chained finishers. Imprisoning also **heals himself**, keeping him in the fight through execute windows when victims are caged. He is a **finisher who chains arcs** once a victim is imprisoned and the team has softened HP totals across the line. Without **wounded targets** or early imprison windows, his reset loop, bonus hits, and self-heal on cage never activate.
 
 #### Skill overview
 
@@ -10218,8 +10263,8 @@ Salazer provides Shield (Supreme+) to single targets `high` — conditional (fre
 **Best overall replacement**
 
 - Cecia (75% `Damage` `Crowd Control`)
-- Kordan (53% `Damage` `Crowd Control`)
-- Gwyneth (51% `Damage`)
+- Kordan (64% `Damage` `Crowd Control`)
+- Nara (62% `Damage`)
 
 **Buffs on allies**
 
@@ -10235,9 +10280,9 @@ Salazer provides Shield (Supreme+) to single targets `high` — conditional (fre
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
 - Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Aliceth (100% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -10268,7 +10313,7 @@ Salazer provides Shield (Supreme+) to single targets `high` — conditional (fre
 
 #### Play overview
 
-Satrana's durable, self-sustaining, and excels at reducing enemy healing. Her Ultimate, Fiery Dance, makes her invincible for the duration of casting it and dealing damage. Satrana has a niche in arena, where she can be used in Bonnie teams, since she provides an additional DoT source while also reducing enemy healing received. The final hit Charms any enemies struck, preventing them from using skills. Her first skill, Vixen Rush, deals bonus damage based on the target’s max HP and has Life Drain, healing Satrana for the damage dealt.
+Satrana goes **invincible during ultimate** while dealing continuous AoE, then arc attacks with **life drain** and Sparks that **ignite enemies for Vitality cuts and DoT** shared with allies. Battle damage reduction helps her stand through the burn setup, ignited foes **lower magic damage taken** for her team, and when all enemies burn her strike **has no cooldown limit**. She peaks once **ignites spread across the line** and her team can exploit the magic mitigation. **Cleanse or short fights** before full ignite leave her cooldown relief inactive.
 
 #### Skill overview
 
@@ -10336,7 +10381,7 @@ Satrana provides Magic damage amplification (Mythic+) to single targets `average
 
 - Frieren (100% `Magic` `Max HP-based damage`)
 - Galahad (100% `Magic` `Max HP-based damage`)
-- Saida (100% `Magic` `Max HP-based damage`)
+- Mehira (100% `Magic` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -10382,7 +10427,7 @@ Satrana provides Magic damage amplification (Mythic+) to single targets `average
 
 #### Play overview
 
-Scarlita's kit is focused on providing a defensive start to the fight and ending with an explosive finish. When the battle starts, Scarlita flies up into the air using "Pure Cleanse" and becomes untargetable while generating Energy and ATK for herself for 15 seconds, after which she'll slam down near the frontmost ally and start attacking. During her flight, she periodically provides single-target shields to the lowest HP ally using "Valkyrie Spirit" and once she's come down her attacks deal damage in an arc and trigger a knockdown effect. Her Ultimate "Divine Quake" is a large line AoE that deals massive damage and stuns for one second and it can be used shortly after descending from "Pure Cleanse" due to the Energy generation provided by it.
+Scarlita slashes the ground to **send a wave that knocks foes to the edge**, then charges to **knock down survivors** for a two-step displacement combo across the battlefield. Airborne charges **build power for landing AoE stun**, weakest allies gain shields while she is airborne, and each shield sent **stacks execution potential** for later burst. Enough living allies let her **deal true damage**, and shielded allies also gain Phys and Magic DEF from her protection during air time. She needs **clustered enemies for the wave** and air time to charge before landing on grouped targets across the battlefield. **Sparse formations or burst that grounds her early** waste her knockdown follow-through, execution stacks, and true damage payoff.
 
 #### Skill overview
 
@@ -10440,6 +10485,10 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 ### Units that can act as a replacement for Scarlita
 
+**Best overall replacement**
+
+- Korin (55% `Similar Skills` `Buffs on allies`)
+
 **Buffs on allies**
 
 - Zanie (96% `Shield`)
@@ -10454,9 +10503,9 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
 - Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Aliceth (100% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -10495,7 +10544,7 @@ Scarlita provides Shield to single targets `low` and DEF buff (Supreme+) to sing
 
 #### Play overview
 
-Seth, while he is slow to get going, once he uses his ultimate and snags a kill or two, he is nearly impossible to stop as he will constantly heal himself while dealing a lot of damage. His main gimmick is "Hunter Instinct" which grants him a stack of Bloodlust whenever an opponent drops to low health. Each stack grants Seth permanent Haste and Life Drain, and he also gains a bunch of defensive stats upon triggering Bloodlust the first time (also Crit at later levels). "Beatdown" causes Seth to pounce on the weakest enemy, dealing a burst of damage. This helps greatly in triggering additional Bloodlust stacks, as the damage will often drop already weak enemies to the threshold of gaining a stack.
+Seth flashes to a foe for **multi-hit ultimate damage**, then pounces on the **weakest nearby enemy** for repeated assassin pressure between casts. Low enemy HP **grants stat bonuses**, battle ATK rises, and each non-summon defeat **resets pounce cooldown and refunds energy** to chain kills across the fight. Pounce also **shreds extra Phys DEF** when he carries a specific buff, opening tankier targets for follow-up from allies. He chains **assassin resets** in fights with frequent kills and accessible weak marks on the board. Without **finishes or accessible weak targets**, his pounce loop and stat spikes stall out before he can snowball through the enemy line in longer fights.
 
 #### Skill overview
 
@@ -10560,9 +10609,9 @@ Seth provides Crit buff to single targets `low`.
 
 **Best overall replacement**
 
-- Harak (57% `Damage` `Similar Skills`)
-- Ravion (51% `Damage` `Debuffs on enemies`)
-- Gwyneth (50% `Debuffs on enemies` `Crowd Control`)
+- Harak (68% `Damage` `Similar Skills`)
+- Ravion (61% `Damage` `Debuffs on enemies`)
+- Athalia (55% `Damage`)
 
 **Similar Skills**
 
@@ -10621,7 +10670,7 @@ Seth provides Crit buff to single targets `low`.
 
 #### Play overview
 
-Shadewing curses every enemy on the field with his lasting DoT effects. Similar to the spread of Bonnie’s Aging, Shadewing’s Curse Damage scales with additional DoT inflicted by his allies. At the start of battle, Shadewing flies over the enemy team for 5s and marks them with “Withering Curse.” The curse lowers all enemies’ Phys and Magic DEF, and converts any DoT damage they receive (from all sources) into Curse value. Shadewing has potential for pushing high-deficit stages, as his DoT effects can affect multiple enemies at the same time while also providing utility from his Phys and Magic DEF shred. His performance is pretty average, as there aren’t a lot of DoT units that he can synergize with.
+Shadewing applies **sustained DoT scaling on target lost HP** with his ultimate, then dual strikes plus **wound DoT** while converting enemy damage taken into **curse value for a heavy lash** at threshold. Battle ATK climbs, trigger hits **build energy and permanent damage**, and at start he **drains ally HP for lasting ATK and shield** to front-load his scaling. He needs **allies willing to pay the opening HP cost** and sustained damage across the team to fill curse quickly enough for the lash to land on priority targets in longer fights. **Short fights or allies that cannot spare HP** blunt his scaling lash, energy buildup, and self-buff loop across longer fights on the board.
 
 #### Skill overview
 
@@ -10739,7 +10788,7 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 #### Play overview
 
-Shakir is S-Level Warrior from the Mauler faction. He is a Jack-of-all-trades who surprisingly actually great at everything he does, making him a core member of Mauler-based teams. Shakir jumps up and turns into Wolf Form, knocks the enemy occupying the tile he lands into, and then deals damage to nearby enemies. While in Wolf Form, his normal attacks turn from singular to an arc that can deal damage to multiple enemies. It turns 'Savage Cleave' as well from a 3-hit attack to one enemy to a 3-hit frontal arc attack that can deal damage to multiple enemies which on his Supreme+ Passive will reduce the Vitality of enemies hit by it for a few seconds.
+Shakir **transforms into Wolf Form** to reshape his combat kit, trading single-target strikes for **frontal AoE cleaves** and sustained pressure. In form he gains **Ranged DEF and Life Drain**, helping him survive ranged fire while staying on enemies. His **damage reduction scales with aura allies**, so he peaks when teammates cluster inside his influence zone. A lower **energy threshold sustains transformation** longer, keeping wolf pressure online through extended fights. Third hit also **shaves enemy vitality**, softening targets for follow-up damage. Against **spread lines** or teams that deny his landing zone, wolf uptime and aura scaling stall out.
 
 #### Skill overview
 
@@ -10822,9 +10871,9 @@ These are the **10** strongest pairings:
 
 **Damage**
 
+- Baelran (100% `Physical`)
 - Himmel (100% `Physical`)
 - Aliceth (100% `Physical`)
-- Alna (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -10864,7 +10913,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Shemira’s kit is based around sacrificing her own health, dealing high AOE damage, and self-sustain. Shemira performs best in AFK stages, which represent the ideal scenario, multiple enemies. Shemira is a great character for most Dream Realm bosses, often being the best DPS you can use there. Her Ultimate, “Phantom Procession”, summons ghosts, deals damage, and heals her, but this damage sharply decreases once an enemy has been hit by 15 or more ghosts, making this ability less useful in single-target scenarios, but great against groups of enemies.
+Shemira **sacrifices HP to fuel damage**, firing orb lines and AoE bursts as her health pool shrinks. She **summons ghosts** to bombard random enemies, and each hero defeat **spawns an extra summon** to widen pressure. Energy recovery from attacks **scales with summon count**, rewarding teams that keep bodies on the field. When summons expire, **remaining power converts to all-enemy damage** for a closing burst. She needs **healing to cycle sacrifices** safely. Without sustain or summons, her HP costs leave her exposed quickly.
 
 #### Skill overview
 
@@ -10970,7 +11019,7 @@ Common buffers are **Twins**, **Solise**, or **Rowan**.
 
 #### Play overview
 
-Silven bombards a single target with relentless Flying Blades, prioritizing focused damage over AoE attack and specializing in true damage. His Ultimate, Aloft Edge, summons 6 Flying Blades that empower his Normal Attacks. Each attack sends the blades striking toward the target before rapidly re-forming for 8 seconds. This is where Silven could shine the brightest, but True Damage isn't that good in the pre-Endless world. While Tempered Field grants him increased Ranged DEF, he's vulnerable to dives, can be eliminated quickly, and any displacement can cause him to lose the Tempered Field buff.
+Silven builds damage around **flying blade summons** and marks that detonate when she knocks foes down. Her ultimate launches **blade volleys** at enemies, while a field skill **enhances blade output** for sustained AoE pressure. Receiving ally buffs grants her **energy, penetration, and ATK SPD**, so she rewards supportive teammates. She deals **bonus damage to high-HP-ratio targets**, making her strong against bulky frontliners. Battle **ATK speed growth** adds steady personal scaling over long fights. Against **immune or unmarked targets**, her detonation chain and blade field underdeliver.
 
 #### Skill overview
 
@@ -11085,7 +11134,7 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 #### Play overview
 
-Silvina is most certainly an Assassin ever, Silvina prides herself on high and safe single-target burst right out of the gates of a fight. This is done through "First Strike", which targets the closest enemy to Silvina's tile on the opposing side of the battlefield. When the battle starts, Silvina immediately blinks at them and deals a burst of damage (at later levels this also stuns her target). This is the primary gimmick and reason why she's so good: solid immediate burst on a fairly easily selectable target. "Choking Blade" helps with this, causing her basic attacks to deal increased damage at the start of a fight and prolonging this effect when she kills her "First Strike" targeted enemy.
+Silvina opens by **dashing to the closest symmetrical enemy**, landing burst damage before normal pacing resumes. At battle start she swaps to **rapid strikes** briefly and gains a shield for early survivability. Her ultimate strikes the **highest-energy enemy**, dealing damage and **draining their energy** to disrupt casters before they can fire. Battle crit growth adds finishing pressure, and rapid hits **reduce target vitality** for softer kills. She excels as an **opening assassin** who punishes backline energy hoarders and symmetrical formations. She falters when symmetrical targets are absent, when burst windows end before she reaches priority foes, or when enemies deny her opening dash entirely.
 
 #### Skill overview
 
@@ -11143,9 +11192,9 @@ Common buffers are **Koko** or **Twins**.
 
 **Best overall replacement**
 
-- Hodgkin (61% `Damage` `Debuffs on enemies`)
-- Berial (60% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Vala (57% `Damage`)
+- Hodgkin (73% `Damage` `Debuffs on enemies`)
+- Berial (72% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Perseus (64% `Damage`)
 
 **Similar Skills**
 
@@ -11155,9 +11204,9 @@ Common buffers are **Koko** or **Twins**.
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
 - Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Shemira (100% `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -11203,7 +11252,7 @@ Common buffers are **Koko** or **Twins**.
 
 #### Play overview
 
-Sinbad, after 6s into the battle, he leaves the battlefield for a moment - reducing enemy carry’s Attack by 45%, increasing damage taken for the enemy with most damage taken so far (usually the tank) by 25%. However these debuffs are capped to 20% against bosses, making him primarily a PvP unit. He doesn’t perform well in high deficit AFK stages due to his squishiness, as you need to survive first  to land those great debuffs! He performs well provided he gets the required Attack Speed and Haste boosting, allowing him to be part of some of the best bossing teams. That concludes his role as Debuffer, let us take a look at the DPS aspect now.
+Sinbad **marks the top attacker and top damage-taker**, then focuses fire on those roles with **enhanced damage against marked roles**. His ultimate delivers **multiple rapid hits** to a single target for concentrated burst pressure. A skill attacks the target twice, and his debuff **adapts to enemy combat role** for flexible disruption on each mark. Battle **ATK speed growth** keeps his rotation moving through longer fights. He is a **role-targeting specialist** who shines when enemy teams have clear carries to isolate. Against evenly distributed damage or mark-immune lines, his priority targeting adds little value.
 
 #### Skill overview
 
@@ -11259,6 +11308,10 @@ Common buffers are **Twins**, **Rowan**, or **Smokey & Meerky**.
 
 ### Units that can act as a replacement for Sinbad
 
+**Best overall replacement**
+
+- Kafra (54% `Similar Skills` `Damage`)
+
 **Similar Skills**
 
 - Kafra (90% `assassin` `enemy-debuffer` `mark-target`)
@@ -11267,9 +11320,9 @@ Common buffers are **Twins**, **Rowan**, or **Smokey & Meerky**.
 
 **Damage**
 
+- Gunnar (100% `Physical`)
 - Baelran (100% `Physical`)
 - Himmel (100% `Physical`)
-- Aliceth (100% `Physical`)
 
 ### Summary for Sinbad
 
@@ -11308,7 +11361,7 @@ Common buffers are **Twins**, **Rowan**, or **Smokey & Meerky**.
 
 #### Play overview
 
-Smokey & Meerky's kit revolves around the passive healing aura that their kit provides, enhancing it and allies within it at the cost of essentially standing still for the entire fight. This most iconic skill is the passive function of their Ultimate: "Special Aroma". Smokey projects a 2-tile radius aura that regenerates the HP of all allied units inside of it. Each active cast of the Ultimate grants a new effect to the aura, with the first cast increasing its range by 1 tile and the second providing a continuous Haste buff to allies inside. Unfortunately, the aura is considered a channel, and can thus be interrupted by crowd control.
+Smokey and Meerky anchor fights with a **continuous healing aura** that levels up with each active cast, deepening recovery over time. Allies inside gain **ATK and energy recovery**, while a separate skill **instant-heals everyone** within the zone on demand. ATK boost **grows with ally count inside the aura**, rewarding clustered formations that stay in range. The third aura upgrade also **increases damage dealt to enemies**, blending offense with sustain in one slot. Extra healing on each aura use **stacks recovery** over repeated casts. They underperform when allies **cannot stay inside the zone** or when fights end before aroma levels build.
 
 #### Skill overview
 
@@ -11432,7 +11485,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Solise specializes in empowering a single Hero while also providing healing to the rest of the team. This effect cannot be interrupted, as Solise is invulnerable while casting it. A very strong support who can compete with Velara in terms of utility, as she can boost an ally’s DPS output while also keeping the team healed. Has solid potential since the Bulb/Bulbsprite effects remain active even if Solise is defeated. During battle, once the Bulb's total healing exceeds a certain threshold, it permanently transforms into a Bulbsprite, increasing the ally's ATK based on Solise's initial ATK.
+Solise attaches **healing companions** to each non-summoned ally, then blooms them into **enhanced forms** for extra pressure. Her ultimate **continuously heals all allies** while companions deal **damage to all enemies**. Weakest allies receive direct heals and shields when a companion is present on them. Excess healing is **absorbed by companions** to unlock additional buffs for their hosts. Companion damage **scales on stored excess healing**, turning overheal into offense. She needs **clustered allies and fight time**; spread lines or early burst waste her companion setup.
 
 #### Skill overview
 
@@ -11536,7 +11589,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Sonja primarily functions as a buffer by protecting two other allies and herself, providing additional ATK & DEF and can also dish out some damage. At the start of battle, Sonja will be linked to the two allies nearest to her on the left and right side, increasing their stats. If an ally dies, Sonja then absorbs all the accumulated stat gain from both allies making her a capable DPS that can also be quite tanky. Sonja is a great addition for AFK stage pushing, as she not only makes her team tankier, but also deals great damage herself. Sonja can be used at 1 dupe as a “budget” alternative to Reinier in most teams, or as a buffer for events that require multiple teams.
+Sonja forms a **pact with left and right allies at battle start**, continuously raising their stats while all three remain alive. Her ultimate delivers **multi-hit damage** then charges through a frontal area, converting a portion of damage dealt to **self-healing**. She also **stuns nearby enemies twice** with her area skill for soft control at the front. Enhanced bond accumulates bonuses over time while partners survive, and battle **haste growth** keeps her rotation fluid. She is a **frontline buffer** who needs flanking allies to realize her pact value. Without adjacent partners or dense enemy clusters, her buffs and stun swings underwhelm.
 
 #### Skill overview
 
@@ -11643,7 +11696,7 @@ Sonja provides ATK buff to multiple targets `average` and DEF buff to multiple t
 
 #### Play overview
 
-Soren is the new Valen-level character, meaning his kit is good but he cannot go online and do what he is designed to do without dying. Starting from the defining thing about Soren, his ultimate 'Whirlwind Swing', he can cast this wherever with global range; he goes to the designated tile and swings his pole around, dealing damage and knocking back enemies by 1 tile, dealing more damage and stuns them if they collide with allies, enemies, battlefield borders, or even terrain which is what Alsa can do with her 'Stone Barrier' ability, so you could technically connect the stun most of the time if you're using Soren with Alsa. What makes this ultimate kind of frustrating is that it is not an auto-friendly ultimate to use even though it prioritizes the ones the position where a lot of enemies can be stunned.
+Soren rushes targets with **knockback and stun on collision**, using melee strikes to shove enemies into walls or allies for extra damage and control. His block skill **absorbs a powerful incoming attack** and resets knockback cooldown, enabling repeated displacement chains through the fight. Low HP triggers a **haste boost plus HP and energy recovery**, helping him recover after heavy trades and stay in the brawl longer. When block triggers, his next melee skill gains **extended knockback and bonus damage** for a punishing follow-up strike on clustered foes. Battle **haste growth** keeps his repositioning active through longer engagements without slowing down. He struggles against **knockback-immune targets** or enemies who burst him down before his block cycle can activate and reset his knockback pressure entirely.
 
 #### Skill overview
 
@@ -11706,6 +11759,10 @@ Soren provides Shield (Supreme+) to single targets `low`.
 
 ### Units that can act as a replacement for Soren
 
+**Best overall replacement**
+
+- Hepler (54% `Buffs on allies` `Damage` `Crowd Control`)
+
 **Buffs on allies**
 
 - Contess (100% `Shield`)
@@ -11720,9 +11777,9 @@ Soren provides Shield (Supreme+) to single targets `low`.
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
 - Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Aliceth (100% `Physical` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -11755,7 +11812,7 @@ Soren provides Shield (Supreme+) to single targets `low`.
 
 #### Play overview
 
-Sylphira, starting from her Ultimate, Grand Finale, Passively, Sylphira builds up her score by gaining beats automatically over time and gaining more when enemies are defeated or interrupted, eventually giving herself ATK and Haste while spreading her Active Skill's effects to multiple nearby enemies. Actively, she glides into the area with most enemies, dealing damage and creating a zone that silences enemies on it while making her unaffected, before finally dealing damage to the main target, which will reduce their Max HP based on the damage dealt. At Mythic+, once Sylphira's score is activated, she plays it every 8 seconds. At the moment, her viability varies as it's seen that in Pre-Endless Dream Realm, she is viable on King Croaker, though again, she needs that Supreme+ investment to gain that viability.
+Sylphira builds an **active score** that raises ATK and Haste, then unleashes a **silencing domain** followed by multi-hit strikes on her target. Her three-hit skill **drains enemy energy** on each connect, and a separate skill chains **control into area knockdown** for crowd disruption across grouped foes. Once score activates, auto-play **cleanses debuffs and recovers HP and energy**, keeping her self-sufficient through extended fights without external support. Enhanced attacks also deal **true damage life drain** for sustained personal pressure between ultimate windows. She blends control, silence, and self-sustain in one slot for attrition-heavy teams. Against **unaffected or silence-immune foes**, her domain, energy drain, and knockdown chain lose much of their disruptive value.
 
 #### Skill overview
 
@@ -11816,9 +11873,9 @@ Common buffers are **Twins**, **Ravion**, or **Solise**.
 
 **Best overall replacement**
 
+- Saida (63% `Damage` `Debuffs on enemies`)
+- Baelran (63% `Damage` `Crowd Control`)
 - Pippa (62% `Damage` `Debuffs on enemies`)
-- Saida (52% `Damage` `Debuffs on enemies`)
-- Baelran (52% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -11829,8 +11886,8 @@ Common buffers are **Twins**, **Ravion**, or **Solise**.
 **Damage**
 
 - Frieren (100% `Magic` `Max HP-based damage` `True damage`)
+- Baelran (100% `Max HP-based damage` `True damage`)
 - Athalia (100% `Max HP-based damage` `True damage`)
-- Pippa (100% `Magic` `Max HP-based damage` `True damage`)
 
 **Debuffs on enemies**
 
@@ -11885,7 +11942,7 @@ Common buffers are **Twins**, **Ravion**, or **Solise**.
 
 #### Play overview
 
-Talene can be used to push AFK stages, relying on stalling tactics, and you usually rely more on Smokey than Talene herself as her damage does not scale well at a high deficit, but she is more auto battle friendly than the usual teams that rely entirely on Smokey. She can be used in PVP, and her best teams are very Celestial/Hypogean heavy, with good synergy with Scarlita, Phraesto, Reinier, and even Dionel, since she helps stall out the enemy team, catch assassin aggro, and provides some extra healing in more damage oriented teams. She excels in Battle Drills, as her acceptable performance in both mob clearing and bossing allows her to provide good value without swapping slots. She also performs well in Dream Realm, and while she can reach the damage output of Marilee or Odie, it doesn't happen on every boss and also requires a specific setup that is very expensive to run.
+Talene **consumes HP to shoot flames** at enemies, and her ATK **scales with cumulative HP spent** over the course of the fight. HP loss passively **heals allies while damaging enemies**, turning her self-harm into team-wide value whenever she trades health for offense. On defeat she **transforms and regenerates to resurrect**, with faster recovery on the first fall to rejoin the battle quickly. She also **enhances the frontmost ally** to deal sustained damage to adjacent enemies, extending her sacrifice into allied pressure over long engagements where she can cycle flame bursts multiple times. She is a **self-sacrificing specialist** who needs reliable healing to survive her own HP consumption safely across repeated flame cycles. Without sustain or enough fight time to trigger resurrection, her flame scaling and ally enhancement never reach their peak.
 
 #### Skill overview
 
@@ -12000,7 +12057,7 @@ Talene provides ATK buff (Legendary+) in an area `high`.
 
 #### Play overview
 
-Tasi can consume her own HP to deal damage and stun enemies, and when she loses 50% HP, she becomes invincible and heals. She can use this ability multiple times per battle, making her very hard to kill. Tasi does not perform well at all against bosses, as bosses are immune to CC effects and her kit is geared towards crowd control and survival. Tasi works great against burst teams, most notably Dionel, where she can survive his initial barrage and then come back to finish him off.
+Tasi opens with **AoE sleep** that damages all enemies, then leaps to a distant foe to **deal damage and stun again**. HP sacrifice triggers **transformation that recovers HP** while damaging nearby enemies in her alternate form. ATK **grows after sleep casts**, and post-ultimate haste **tightens her rotation** between cycles. She gains **extra secondary form uses** on assists or kills for extended pressure windows. Against **sleep-immune targets**, her control package stalls before forms can cycle.
 
 #### Skill overview
 
@@ -12113,7 +12170,7 @@ Common buffers are **Twins**, **Mikola**, or **Rowan**.
 
 #### Play overview
 
-Unlike other heroes, temesiaother tanks, Temesia is constantly on the move, rushing through the enemy team and dealing consistent damage on the way. Her main gimmick is her Ultimate "Knight's Heart" passive. Instead of normal attacks, Temesia selects the furthest away enemy and charges toward them, dealing damage to all enemies along the way. The active causes her mount to leap forward, dealing AoE damage and knocking down enemies upon landing. This provides a constantly moving target (required in some content) and offers Temesia very easily applicable AoE damage and crowd control.
+Temesia charges through the field, dealing **path damage passively** and **knocking down enemies** on her mounted leap ultimate. Direction changes trigger **interrupting kicks** that weaken foes in her path. Sword attacks on adjacent tiles **scale on target ATK**, punishing high-damage frontliners. After repeated charges she gains **unaffected status and true damage**, and charge hits shave enemy Phys DEF. Battle ATK **grows after first ultimate**, adding scaling through longer fights. She underperforms when **charge paths are blocked** or enemies resist knockdown and displacement.
 
 #### Skill overview
 
@@ -12182,9 +12239,9 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Mikola**.
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Aliceth (100% `Physical` `Max HP-based damage`)
-- Alna (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -12233,7 +12290,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Mikola**.
 
 #### Play overview
 
-Thador can do a little bit of everything, while also acting as a Crit buffer and debuffer and providing a big chunk of Energy to an ally at the start of battle. Thador’s Ultimate, “Moonveil Manifest”, debuffs enemies’ Critical Damage Defense while inside the ritual zone, and then deals damage to enemies inside it, while also healing allies after enemies have accumulated damage. When placing units during battle preparation, the unit placed behind Thador becomes his lieutenant and benefits from his first skill, “Markmoon Pact”, which increases the ally’s Critical Rate, but more importantly, at EX +10 he also grants that ally 350 Energy, which is the most notable part of Thador’s kit, and enables unique strategies based around Ultimate-reliant heroes. This ability also has an Active state, where Thador grants Shields to himself and his lieutenant.
+Thador designates a **rear ally bond** that grants crit, then shields both partners when his active skill fires at the start of engagements. His ultimate deals **AoE damage and ritual debuffs** on affected enemies, layering disruption across the whole line. A frontal arc skill **knocks down** nearby foes, and battle **damage taken reduction** keeps him standing as a durable frontliner through sustained trades. When the bonded ally casts ultimate, he triggers **AoE damage plus Phys and Magic DEF reduction** on all enemies, amplifying team follow-up. Passive **HP regeneration** continues while the bonded ally lives, giving both partners staying power. He needs a **reliable rear partner** in formation; if the bond target dies early, much of his shielding, crit grant, and debuff payoff is lost for the rest of the fight.
 
 #### Skill overview
 
@@ -12295,7 +12352,8 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 
 **Best overall replacement**
 
-- Ravion (64% `Buffs on allies` `Crowd Control` `Damage` `Similar Skills`)
+- Ravion (77% `Buffs on allies` `Crowd Control` `Damage` `Similar Skills`)
+- Baelran (53% `Crowd Control` `Damage`)
 
 **Buffs on allies**
 
@@ -12311,9 +12369,9 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage` `DoT`)
+- Baelran (100% `Physical` `Max HP-based damage`)
 - Alna (100% `DoT` `Physical` `Max HP-based damage`)
-- Gwyneth (99% `DoT` `Physical` `Max HP-based damage`)
-- Brutus (97% `Physical` `DoT` `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -12352,7 +12410,7 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 
 #### Play overview
 
-Thoran is someone who’s all about staying alive in the most unexpected ways. He’s not your typical tank who just soaks up damage—he’s tanky because he cheats Death and Life Steals from enemies while thereby making them easier to kill. When Thoran’s on the field, he drains HP from enemies based on their current HP and adds it to his own. If you’re using Thoran here, it’s likely for one of two reasons: his cheat death mechanic that's good against King Croaker, or the increased damage taken from Soul Plunder. He has been mostly superseded in regular arena as Phraesto is tankier overall and can split the damage between two targets, though he still sees usage as counter to some melee teams, and burst teams.
+Thoran **charges up a slash** that adds a portion of damage taken during the charge, then gains **life drain** on the release for sustain. He drains HP from the **highest-HP enemy** to swell his own pool, and **revives once at partial HP** after his first defeat. Energy recovery from attacks is **higher before revive triggers**, fueling faster early ultimates while he still has his first life. He absorbs a portion of damage for a bonded ally, and on defeat the ally can sacrifice HP to revive him. His ultimate also **drains HP from enemies** on impact. He is a **durable frontliner** but offers weak output when enemies deny his drain targets and burst him before revive can matter.
 
 #### Skill overview
 
@@ -12410,6 +12468,11 @@ Thoran provides Lifedrain buff to single targets `low` and Energy recovery (Lege
 
 ### Units that can act as a replacement for Thoran
 
+**Best overall replacement**
+
+- Gerda (57% `Crowd Control` `Damage`)
+- Lucca (57% `Crowd Control` `Damage`)
+
 **Buffs on allies**
 
 - Twins (80% `Energy`)
@@ -12462,7 +12525,7 @@ Thoran provides Lifedrain buff to single targets `low` and Energy recovery (Lege
 
 #### Play overview
 
-Tilaya excels at tanking enemy hits with strong shields, returning hits as damage, and increasing the survivability of nearby allies. Tilaya’s kit revolves around the use of Vine Ward, a shield she gains from casting her Ultimate, Wrath of the Wilds. Since the majority of what Tilaya brings to a battle is a big ‘ole shield, she doesn't have much use in Dream Realm outside of maybe some survivability buffs. In PvP, Tilaya can easily be countered by True Damage, as her HP value immediately drops to 30% after converting to Vine Ward. At the start of battle, Tilaya will sacrifice 70% of her HP to gain Vine Ward, a shield equal to 120% of her max HP (plus a bit extra based on her Ultimate value).
+Tilaya fights behind an **auto-regenerating shield** that fuels both defense and offense throughout the fight. Her ultimate delivers **repeated frontal greatsword attacks**, and shield regeneration **speeds up while casting** to keep her barrier topped. A powerful strike **restores shield value**, while normal attacks gain extra damage proportional to current shield for scaling burst. First shield break **permanently increases shield recovery**, and battle vitality growth keeps her standing through long frontline trades. She is a **shield-scaling tank** who peaks when allowed to maintain and rebuild her barrier repeatedly. Fights that **strip or bypass shields** leave her damage scaling and sustain flat.
 
 #### Skill overview
 
@@ -12562,7 +12625,7 @@ Tilaya provides DEF buff (EX+10) in an area `average` and Max HP buff (EX+10) in
 
 #### Play overview
 
-Twins share the same health and energy pool, creating a tether between them. The Twins can massively speed up a team by buffing team Haste, Energy Regen and providing Ultimate energy refund. In current Dream Realm meta, Twins are best in slot support for every boss. Further they also provide healing, increase team stats, a single shield and some CC. The Haste buff comes from their Ultimate, which also makes linked allies unaffected whereas their first skill provides healing and Energy Regen to the linked allies.
+The Twins inspire allied **haste through a linked duo performance**, and linked allies become **unaffected** during the ultimate. They form **line links** that recover linked allies' energy and HP over sustained casts. One twin **shields allies** while the other **damages and blinds** nearby enemies in the same beat. Linked allies **borrow best stats from each other**, and haste grows with each repeated performance. They need **multiple linked partners** in formation; sparse lineups waste their buff and healing channels.
 
 #### Skill overview
 
@@ -12707,7 +12770,7 @@ These are the **10** strongest pairings:
 
 #### Play overview
 
-Ulmus' gimmick involves not dying on frontlines immediately but rather jumping to the backline when his HP ratio drops below 30%. After jumping, he roots himself to recover his HP while remaining unaffected and stationary. His Ultimate’s Passive Ability allows him to utilize ranged AoE attacks, whereas the Activite Ability knocks enemies into the area and prioritizes the area with most enemies within range. He doesn’t perform well in Boss content as they are immune to CC and his single target damage is lackluster. He finds himself in usual Eironn Control teams for the same reasons he works well in AFK stages, provided the enemy does not have Lily May.
+Ulmus gains a **shield that damages surrounding enemies when it breaks**, and retreats to **take root at low HP** for survival when pressured. While rooted he shifts to energy regeneration instead of HP regen, and grants **shield to the frontmost ally** after his own shield breaks. His ultimate **knocks up a target and adjacent enemies**, and displacement **extends knockdown duration with bonus damage**. Battle max HP growth adds durability over time, and shield break knocks back adjacent foes for extra control. He blends **tanking, control, and ally protection** in one slot. He struggles when enemies **focus him before rooting** or deny displacement setups entirely.
 
 #### Skill overview
 
@@ -12768,6 +12831,11 @@ Ulmus provides Energy recovery to single targets `low`.
 
 ### Units that can act as a replacement for Ulmus
 
+**Best overall replacement**
+
+- Scarlita (51% `Damage` `Crowd Control`)
+- Ravion (50% `Buffs on allies` `Energy provider`)
+
 **Buffs on allies**
 
 - Twins (100% `Energy`)
@@ -12822,7 +12890,7 @@ Ulmus provides Energy recovery to single targets `low`.
 
 #### Play overview
 
-Vala is a unique and powerful Assassin who switches between a ranged and melee mode to soften up her targets before diving in for the kill. Her trademark is "Notice Beforehand", whereby Vala targets the enemy that's furthest away from her (denoted by the purple mark before the battle starts). Whenever she attacks the marked target, she gains a burst of Energy, and when it dies she reapplies the mark (furthest enemy in Ranged mode, nearest enemy in Melee mode). Her other skill "Checkmate" is a simple attack that either reduces Haste massively if performed in Ranged mode or inflicts a long stun in Melee mode. Then what she is most known for: "Swift Shift".
+Vala **marks an enemy** and prioritizes them, **absorbing their energy** on each focused attack to starve their rotation. Her ultimate switches between **ranged stun mode** and **melee true damage mode** depending on positioning needs in the fight. Mode-based skills either reduce enemy haste or deliver multi-hit burst for flexible offense. ATK **grows with each non-summoned enemy defeated**, and marked enemy defeat boosts her movement speed and haste. She deals **bonus damage to marked targets** for reliable focus fire on priority carries. Against **mark-immune or stealth-heavy lines**, her energy drain and mode switching add little sustained pressure.
 
 #### Skill overview
 
@@ -12954,7 +13022,7 @@ Vala also requires enemies **to be defeated**
 
 #### Play overview
 
-Valen is this game's embodiment of an Achilles' heel. Great DPS performance but doesn't have the survivability capability to output it consistently making you drop him the moment you get into midgame onwards. His ult 'Thundering Swordwork' has amazing scaling, range, and the invulnerability he gets while doing it. He also gains 'Invigoration' for a good amount of time which increases his ATK and amplifies his other skills. Unlocking Valen's Exclusive Equipment makes 'Invigoration' permanent and also gives him +10% ATK every time he uses 'Thundering Swordwork' which sounds good on paper but unlike 'Seth' he cannot reliably stack this without dying, one of the main reasons why he isn't being used.
+Valen launches **multiple strikes within range** and enters a permanent **Invigoration buff state** that defines his entire rotation. Three-hit consecutive strikes **chain lightning to nearby foes** while buffed, and a separate skill delivers **AoE lightning burst** only during the buff window for spread damage. Buff activations **stack ATK bonus** over repeated casts, compounding personal damage through the fight, and lightning AoE also stuns enemies for control alongside raw burst output. He is a buff-gated damage dealer who needs Invigoration uptime to access his best skills. Without **grouped enemies for chain lightning**, his burst and stun payoff shrink sharply.
 
 #### Skill overview
 
@@ -13014,9 +13082,9 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 **Best overall replacement**
 
-- Perseus (88% `Damage` `Crowd Control`)
+- Perseus (100% `Damage` `Crowd Control`)
+- Lucca (84% `Damage` `Crowd Control`)
 - Atalanta (84% `Damage` `Crowd Control`)
-- Vala (80% `Damage` `Crowd Control` `Debuffs on enemies`)
 
 **Similar Skills**
 
@@ -13075,7 +13143,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 #### Play overview
 
-Valka’s Ultimate is unique, in that it is not tied to a full Energy bar, and is instead tied to enemy Panic state, costing only 100 Energy to activate as long as at least one enemy meets this criteria, debuffing enemies, dealing damage and healing herself. Her Normal Attacks also have variations depending on the number of enemies present, becoming the most powerful against single enemies. In the pre-endless meta, Valka does not rise to the top against any bosses and will not perform better than current carries, but her high True Damage multiplier becomes relevant once boss health and defenses increase going into Endless mode, slotting into some top teams. Valka does not deal that much damage in PvP, and can still be killed if focused down.
+Valka applies **Panic stacks through normal attacks**, then slashes panicked targets for **damage and self-healing** on ultimate for sustain at the front. She wields **multiple sword techniques** at appropriate range, each costing energy for flexible offense across melee and mid-range. At battle start she gains a **shield and raises ally ATK SPD**, supporting nearby partners while she pressures enemies. Battle ATK speed growth keeps her rotation fluid, and she **counters incoming ultimate damage** with a free parry counter when threatened. While shielded she gains **bonus energy from normal attacks**, fueling faster technique use. She underperforms when enemies **never accumulate Panic** or burst her before stacks complete.
 
 #### Skill overview
 
@@ -13134,7 +13202,7 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 **Best overall replacement**
 
-- Zorya (54% `Debuffs on enemies` `Crowd Control` `Damage`)
+- Zorya (65% `Debuffs on enemies` `Crowd Control` `Damage`)
 
 **Buffs on allies**
 
@@ -13150,9 +13218,9 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 **Damage**
 
+- Gunnar (100% `Physical` `Max HP-based damage`)
+- Baelran (100% `Physical` `Max HP-based damage`)
 - Himmel (100% `Physical` `Max HP-based damage`)
-- Athalia (100% `Physical` `Max HP-based damage`)
-- Kordan (100% `Physical` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -13196,7 +13264,7 @@ Valka provides ATK SPD buff to multiple targets `low` and Lifedrain buff (EX+10)
 
 #### Play overview
 
-Velara's main gimmick is using her 4 Magic Circles on each corner of the battlefield to give shields to allies and either heal them or debuff enemies instead. After charging the Circles, she gets to steal enemy stats for the team, acting as a powerful buffer. Her Ultimate, Ruthless Rite, has both passive and active states, and is by far the most relevant part of her kit. Velara is used mostly for her Haste debuff here, though if the battle goes on long enough it is still possible to activate her Stat Stealing effect, it just takes a while to get going. Dream Realm is where Velara has the most potential to shine, as she is the single best Attack buffer in the game once she gets her Magic Circles going, though this only happens roughly halfway through the battles due to how slow they are to charge.
+Velara summons **magic circles** that awaken to affect nearby units, extending to the **entire battlefield** once all circles are active across the field. She **immobilizes the highest cumulative damage dealer** and reduces their stats, blunting the enemy's main damage source early. One circle **awakens immediately at battle start**, and nearby debuffed enemies **charge circle energy** for faster full activation. Haste **grows with awakened circle count**, and awakened circles periodically buff weakest allies with healing and protection. Full awakening makes allies unaffected and boosts their damage on subsequent ultimate casts. She needs **fight time and enemy clustering** near circles to reach full coverage; fast burst that ends fights before all circles awaken wastes her scaling and team-wide buff package.
 
 #### Skill overview
 
@@ -13325,7 +13393,7 @@ Velara provides Direct healing in an area `low`.
 
 #### Play overview
 
-Viperian sacrifices his own HP to damage enemies, but can heal himself back when his HP drops too low through his Skill effects. His Ultimate Skill, Spiritual Viper, passively sends out Darkvipers to possess enemies, reducing his HP until it reaches 60% and while deploying them, he becomes Unaffected. Darkvipers drain enemy Energy and deal Damage over Time. Viperian is in Dream Realm and likely always will remain that way as his kit focuses on dealing damage to multiple enemies, while Dream Realm content is primarily single enemy focused content. Viperian was used in nuke teams during Season 0, but nowadays is not used anymore because not only does he have to sacrifice HP, but he also only gets one big attack before his DPS drops significantly.
+Viperian **spends HP to send possessing summons** onto all enemies, spreading pressure across the entire enemy line at once. She drains HP from the **healthiest foe** to refill herself, and possessed summons **periodically damage their hosts** for sustained DoT attrition. A high HP threshold triggers a **large AoE damage burst**, punishing healthy enemy formations. Battle **haste growth** keeps her rotation moving between possession cycles and drain windows, and when possessed enemies fall, summons **return to restore her HP and energy** for the next wave. She is a **DoT and life-drain specialist** who needs healing to cycle HP costs safely. Without sustain or long fights, her possession loop and burst threshold never fully activate.
 
 #### Skill overview
 
@@ -13436,7 +13504,7 @@ Common buffers are **Twins**, **Mikola**, or **Smokey & Meerky**.
 
 #### Play overview
 
-Walker's kit revolves around inflicting stuns consistently through dealing critical strikes. His "Shotgun Blast" skill is the primary way in which he achieves this. Normally, it just deals damage in a short conal area, however, at its lvl 71 upgrade, Walker's basic attacks start inflicting tiny stuns upon dealing a critical hit. To facilitate he uses his "Bounty Pursuit", which makes him target an opponent and, upon killing them, he gains extra damage dealt, reduced damage taken, and a boost to his Crit. His Ultimate "Six-Shot", loads 6 shots each prioritizing enemies he hasn't hit before.
+Walker fires **sequential frontal shots** that stun each target hit, and his normal attacks deal **AoE damage** for spread pressure. He **prioritizes the highest-damage-dealt enemy**, gaining a buff on focus, and throws **grenades at battle start** for AoE damage and stun. Battle **crit damage growth** adds scaling over time, and first hit against the marked target grants a shield for survivability. He excels as a **battle-start burst specialist** with sustained stun pressure on priority targets. Against **stun-immune targets** or lines that deny his opening grenade angles, his control chain stalls early.
 
 #### Skill overview
 
@@ -13546,7 +13614,7 @@ Common buffers are **Twins**, **Koko**, or **Rowan**.
 
 #### Play overview
 
-Zandrok's kit is based around Max HP increase, dealing damage on the basis of Max HP, destroying walls and providing some minor buffs. Zandrok’s Ultimate is a simple slam that destroys nearby obstacles, deals damage based on his Max HP, and knocks enemies to the air. Zandrok’s personal damage is low, and he doesn’t buff Max HP enough to make it worth including him in a team just to buff Baelran, making him unusable in current Dream Realm bosses. For PVP, Zandrok fits a niche anti-wall role, and can also counter Saida as he can destroy her seeds. His first skill, “Rallying Roar”, is the most important part of his kit, as it allows him to destroy most obstacles in the stage at the start of battle.
+Zandrok **slams his axe to destroy obstacles** in the area, reshaping paths while striking nearby foes. He summons **illusions that clear obstacles** in their path, opening lanes for allies, and stomping the ground deals **adjacent AoE damage** while battle max HP grows over time, further boosted while his buff state is active. Normal attacks deal **bonus damage scaling on max HP**, turning his growing pool into raw offense. Excess healing **converts to permanent max HP gain**, so sustain feeds his scaling loop. He is a **HP-scaling bruiser** who peaks on obstacle-heavy fields with healing support. On **open boards without obstacles**, much of his terrain value and illusion pathing is wasted.
 
 #### Skill overview
 
@@ -13652,7 +13720,7 @@ Zandrok provides Haste buff in an area `low` — conditional (frequent), Lifedra
 
 #### Play overview
 
-Zanie uses turrets to deal heavy damage while also protecting herself and her backline allies. Her Ultimate, Vein Pulse, lets the player place 2 Laser Turrets before battle that inherit part of Zanie's HP and ATK. Decent pick overall, though not best in slot for any of the bosses. Works well with heroes like Kulu and Dunlingr to control the early game where she's most vulnerable and needs time to ramp through turret upgrades, but even before that she already deals strong damage. These turrets have long range and hit random enemies, but if placed near each other, they link together and focus fire on a single target.
+Zanie **deploys laser turrets at reduced max HP**, then boosts **ATK and ATK speed** for herself and her turrets on ultimate. A gun turret **targets enemies near laser turrets** at battle start, and she **repairs turrets** to restore HP and grant shields to keep them on the field. One turret can be upgraded for more power, and laser attacks apply burn to enemies hit for steady pressure. Battle penetration growth helps her damage pierce defenses over time. She is a **summon-dependent specialist** who needs turrets alive to realize her kit. Fights that **destroy turrets early** or deny her setup window leave her weakened.
 
 #### Skill overview
 
@@ -13779,7 +13847,7 @@ Zanie provides Direct healing to single targets `high`, Shield to single targets
 
 #### Play overview
 
-Zorya’s kit revolves entirely around her Ultimate, Eternal Slumber. Unlike most heroes, Zorya begins every battle in a Dormant state. While Dormant, she is completely untargetable and invincible, recovering 85 Energy and 7% Max HP per second. It takes approximately 12 seconds of before her Energy bar fills and she finally joins the fray. Upon awakening, she dives into the area with the most enemies, dealing AOE damage and inflicting a stun.
+Zorya cycles **dormant and awake states**, jumping to nearby enemies for **AoE damage** on each awakening. While awake she gains **life drain and damage reduction**, and her aura **slows enemy haste** while boosting her own. Damage dealt **scales with nearby enemy count**, rewarding clustered foes. A fatal blow **forces immediate dormancy**, ending her active window. She needs **clustered enemies**; spread lines waste her cycles.
 
 #### Skill overview
 
@@ -13855,9 +13923,9 @@ Zorya also requires allies **casting ultimates**
 
 **Damage**
 
+- Mehira (100% `Magic` `Max HP-based damage` `HP loss`)
+- Dunlingr (100% `Magic` `Max HP-based damage` `HP loss`)
 - Nara (100% `Max HP-based damage` `HP loss`)
-- Mehira (92% `Magic` `Max HP-based damage` `HP loss`)
-- Dunlingr (85% `Magic` `Max HP-based damage` `HP loss`)
 
 **Debuffs on enemies**
 

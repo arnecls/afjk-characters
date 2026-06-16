@@ -26,6 +26,8 @@
         "class",
         "role_category",
         "is_energy_provider",
+        "is_melee",
+        "is_dual_range",
         "skills",
         "synergy_profile",
         "damage_entries",
@@ -52,6 +54,14 @@
         "is_energy_provider": {
           "type": "boolean",
           "description": "True when the hero meaningfully grants ally Energy."
+        },
+        "is_melee": {
+          "type": "boolean",
+          "description": "True when the hero primarily fights at melee range."
+        },
+        "is_dual_range": {
+          "type": "boolean",
+          "description": "True when the hero alternates between ranged and melee combat."
         },
         "skills": {
           "$ref": "skills.schema.json#/$defs/heroSkills"

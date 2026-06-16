@@ -96,19 +96,18 @@ Maps each hero's display name to a short playstyle summary (3–5 sentences, up 
 
 ### Purpose
 
-Shown at the bottom of each hero's **behavior** section (before Skill overview) in `heroes-overview.md` and the site viewer. Summarizes how the hero is played: role identity, core mechanics, mode strengths, team pairings, and investment notes.
+Shown at the bottom of each hero's **behavior** section (before Skill overview) in `heroes-overview.md` and the site viewer. Summarizes how the hero is played: special setup requirements, when they shine, and when they underperform.
 
 ### Prompt to Update
 
 ```markdown
-Regenerate entries in @data/hero_play_overviews.json from the Review section on https://www.prydwen.gg/afk-journey/characters per character.
-
-Use `python3 scripts/generate_play_overviews.py` to fetch Prydwen reviews and draft summaries, then edit for clarity.
+Regenerate entries in @data/hero_play_overviews.json using hero skill data from @data/heroes_data_processed.json and @data/heroes_data_skill_summary.json. Prydwen reviews (via `python3 scripts/generate_play_overviews.py`) may inform tone but must not be copied verbatim.
 
 RULES:
-1. Three to five sentences per hero; plain prose (no markdown bullets). Keep under ~900 characters so the block fits 5–6 lines in the web UI.
-2. Cover role identity, signature play pattern, and one mode strength or key pairing — skip investment breakpoints and skill-by-skill detail.
-3. Synthesize the Prydwen review; do not copy Pros/Cons lists verbatim.
-4. Omit heroes with no Prydwen review page and report them as missing.
-5. Keys use display names from heroes-overview.md (e.g. Twins, Galahad).
+1. Four to six sentences per hero; one idea per sentence — avoid dense multi-clause sentences. Keep under ~900 characters so the block fits 5–6 lines in the web UI.
+2. Cover: special requirements (placement, timing, pairing), strengths (situations where they shine), weaknesses (when they underperform).
+3. Use **bold markdown** sparingly (about 5–7 phrases per hero) for setup requirements, signature strengths, and clear failure conditions. Rendered as bold in the site viewer.
+4. Do NOT mention game modes (AFK, PvP, Dream Realm, Arena, etc.), class, faction, rarity, level breakpoints, or investment/dupes.
+5. Match each hero's existing entry length within ±30 characters when refreshing in place.
+6. Keys use display names from heroes-overview.md (e.g. Twins, Galahad).
 ```

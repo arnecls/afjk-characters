@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afkj.local/schema/melee_overrides.schema.json",
+  "title": "Melee overrides",
+  "description": "Optional per-hero melee or dual-range flags when automatic detection is wrong.",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/$defs/meleeOverride"
+  },
+  "$defs": {
+    "meleeOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "is_melee": {
+          "type": "boolean"
+        },
+        "is_dual_range": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

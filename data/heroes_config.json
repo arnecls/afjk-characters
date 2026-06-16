@@ -59,6 +59,7 @@
     "max_replacements": 3,
     "same_faction_mult": 1.2,
     "same_role_category_mult": 1.2,
+    "same_melee_mult": 1.2,
     "category_weights_by_role": {
       "damage_dealer": {
         "similar_skills": 3,
@@ -100,6 +101,7 @@
   },
   "proximity_synergy": {
     "melee_max_range": 3.5,
+    "non_melee_melee_max_range": 2.5,
     "default_aura_radius": 2.0,
     "range_slack": 0.5,
     "receiver_whitelist": [],

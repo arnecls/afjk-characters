@@ -98,12 +98,17 @@ def build_synergies(raw: dict, processed: dict) -> dict:
         hero.title: processed["heroes"][gen.short_name(hero.title)]["faction"]
         for hero in heroes
     }
+    is_melee_by_title = {
+        hero.title: processed["heroes"][gen.short_name(hero.title)]["is_melee"]
+        for hero in heroes
+    }
     replacements_index = gen.compute_replacement_scores(
         heroes,
         behavior_by_title,
         faction_by_title,
         role_category_by_title,
         skills_by_title,
+        is_melee_by_title,
     )
 
     synergy_heroes: dict[str, dict] = {}

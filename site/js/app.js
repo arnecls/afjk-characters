@@ -20,7 +20,7 @@
   let csvColumnWidths = [];
   let columnWidthsLocked = false;
   let detailHero = null;
-  let closeSkillCardPopover = function () {};
+  let closeSkillCardPopover = function () { };
 
   const gridView = document.getElementById("grid-view");
   const listView = document.getElementById("list-view");
@@ -953,7 +953,7 @@
     const openTag = "<span class=\"chip";
     let openPos = -1;
     let searchFrom = 0;
-    for (;;) {
+    for (; ;) {
       const idx = before.indexOf(openTag, searchFrom);
       if (idx === -1) {
         break;
@@ -973,7 +973,7 @@
     const openTag = '<span class="' + className + '"';
     let openPos = -1;
     let searchFrom = 0;
-    for (;;) {
+    for (; ;) {
       const idx = before.indexOf(openTag, searchFrom);
       if (idx === -1) {
         break;
@@ -1665,10 +1665,10 @@
       if (/conditional/i.test(last)) {
         trailingParts.unshift(
           '<span class="chip chip-generic chip-has-tip"' +
-            chipTipAttrs(conditionalTooltip(last)) +
-            ">🎲 " +
-            escapeHtml(last) +
-            "</span>"
+          chipTipAttrs(conditionalTooltip(last)) +
+          ">🎲 " +
+          escapeHtml(last) +
+          "</span>"
         );
         segments.pop();
       }
@@ -1727,10 +1727,10 @@
       const suffixHtml = suffixRaw ? renderInline(suffixRaw) : "";
       return enhancePlainTargetingInHtml(
         prefixHtml +
-          " (" +
-          innerHtml +
-          ")" +
-          (suffixHtml ? " " + suffixHtml : "")
+        " (" +
+        innerHtml +
+        ")" +
+        (suffixHtml ? " " + suffixHtml : "")
       );
     }
 
@@ -2525,12 +2525,12 @@
       if (meta[label]) {
         metaItems.push(
           '<span class="skill-popover-meta-item">' +
-            SKILL_META_EMOJI[label] +
-            " " +
-            escapeHtml(label) +
-            ": " +
-            escapeHtml(meta[label]) +
-            "</span>"
+          SKILL_META_EMOJI[label] +
+          " " +
+          escapeHtml(label) +
+          ": " +
+          escapeHtml(meta[label]) +
+          "</span>"
         );
       }
     });
@@ -2918,8 +2918,8 @@
     const renderItem = skillOverview
       ? renderSkillOverviewItem
       : function (text) {
-          return renderBehaviorItem(text, options);
-        };
+        return renderBehaviorItem(text, options);
+      };
     const lines = md.split("\n");
     const parts = [];
     let inList = false;
@@ -3026,24 +3026,24 @@
       const icon = iconPath("factions", hero.faction);
       badges.push(
         '<span class="badge ' +
-          factionClass(hero.faction) +
-          '">' +
-          (icon
-            ? '<img src="' + assetUrl(icon) + '" alt="" loading="lazy">'
-            : "") +
-          escapeHtml(hero.faction) +
-          "</span>"
+        factionClass(hero.faction) +
+        '">' +
+        (icon
+          ? '<img src="' + assetUrl(icon) + '" alt="" loading="lazy">'
+          : "") +
+        escapeHtml(hero.faction) +
+        "</span>"
       );
     }
     if (hero.class) {
       const icon = iconPath("class", hero.class);
       badges.push(
         '<span class="badge">' +
-          (icon
-            ? '<img src="' + assetUrl(icon) + '" alt="" loading="lazy">'
-            : "") +
-          escapeHtml(hero.class) +
-          "</span>"
+        (icon
+          ? '<img src="' + assetUrl(icon) + '" alt="" loading="lazy">'
+          : "") +
+        escapeHtml(hero.class) +
+        "</span>"
       );
     }
     if (includeRoleCategory) {
@@ -3339,14 +3339,14 @@
         cellValue = roleMeta.label;
       }
     }
-      if (hero && TIER_CSV_HEADERS[col] && !String(cellValue || "").trim()) {
-        const tierCol = TIER_CSV_COLUMNS.find(function (t) {
-          return t.header === col;
-        });
-        if (tierCol) {
-          cellValue = getHeroPrydwenTiers(hero)[tierCol.key] || "?";
-        }
+    if (hero && TIER_CSV_HEADERS[col] && !String(cellValue || "").trim()) {
+      const tierCol = TIER_CSV_COLUMNS.find(function (t) {
+        return t.header === col;
+      });
+      if (tierCol) {
+        cellValue = getHeroPrydwenTiers(hero)[tierCol.key] || "?";
       }
+    }
     return String(cellValue || "").trim();
   }
 
@@ -3805,8 +3805,8 @@
         '">' +
         (icon
           ? '<img src="' +
-            assetUrl(icon) +
-            '" alt="" loading="lazy">'
+          assetUrl(icon) +
+          '" alt="" loading="lazy">'
           : "") +
         escapeHtml(label) +
         "</span>"
@@ -3818,8 +3818,8 @@
         '<span class="badge">' +
         (icon
           ? '<img src="' +
-            assetUrl(icon) +
-            '" alt="" loading="lazy">'
+          assetUrl(icon) +
+          '" alt="" loading="lazy">'
           : "") +
         escapeHtml(label) +
         "</span>"
@@ -4893,12 +4893,22 @@
     );
   }
 
+  const REPLACEMENT_ALGORITHM_URL =
+    "https://github.com/arnecls/afjk-characters/blob/main/docs/replacement-algorithm.md";
+
   function renderReplacements(sections, mainHero) {
     const reps = sections.replacements;
     if (!reps || !reps.length) return "";
 
     let html = '<div class="detail-section">';
     html += "<h2>Replacement options</h2>";
+    html +=
+      '<div class="replacement-warning" role="note">' +
+      '<p class="replacement-warning-text"><span class="replacement-warning-icon" aria-hidden="true">⚠️ </span>' +
+      'The replacements presented in this section are not curated lists but have been <a href="' +
+      REPLACEMENT_ALGORITHM_URL +
+      '" target="_blank" rel="noopener noreferrer">detected by an algorithm</a>.</p>' +
+      "</div>";
     reps.forEach(function (cat) {
       html +=
         '<div class="replacement-category ' +
@@ -4929,9 +4939,6 @@
         "hero-compact-grid-3"
       );
       html += "</div>";
-      if (cat.category === "Best overall replacement") {
-        html += '<hr class="replacement-overall-divider">';
-      }
     });
     html += "</div>";
     return html;

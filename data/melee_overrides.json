@@ -1,0 +1,11 @@
+{
+  "Berial": {
+    "is_melee": true
+  },
+  "Talene": {
+    "is_dual_range": true
+  },
+  "Vala": {
+    "is_dual_range": true
+  }
+}

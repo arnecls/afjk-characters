@@ -35,6 +35,7 @@ PLACEMENT_CONSTRAINT_OVERRIDES_FILE = (
     ROOT / "data" / "placement_constraint_overrides.json"
 )
 MOVEMENT_OVERRIDES_FILE = ROOT / "data" / "movement_overrides.json"
+MELEE_OVERRIDES_FILE = ROOT / "data" / "melee_overrides.json"
 BEHAVIOR_TAGS_FILE = ROOT / "data" / "hero_behavior_tags.json"
 PLAY_OVERVIEW_FILE = ROOT / "data" / "hero_play_overviews.json"
 
@@ -6242,12 +6243,22 @@ BRIEF_REPOSITION_RES: tuple[re.Pattern[str], ...] = (
 
 NORMAL_ATTACK_RE = re.compile(r"\bnormal attack", re.I)
 
+DUAL_RANGE_RE = re.compile(
+    r"switch(?:es|ed|ing)?\s+between\s+(?:ranged|melee)|"
+    r"(?:ranged|melee)\s+(?:attack|mode).{0,60}(?:melee|ranged)\s+"
+    r"(?:attack|mode)|"
+    r"Skyblaster\s+Mode|Sword\s+Mode",
+    re.I,
+)
+
 FRONTAL_ARC_RANGE_RE = re.compile(
     r"within (?:a )?(\d+(?:\.\d+)?)-tile frontal arc",
     re.I,
 )
 
 MELEE_HERO_CLASSES = frozenset({"warrior", "rogue", "tank"})
+MELEE_MAX_RANGE: float = 3.5
+NON_MELEE_MELEE_MAX_RANGE: float = 2.5
 STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
 SUMMONER_STATIONARY_TAG = "summoner"
 
@@ -6569,18 +6580,64 @@ def _movement_range_candidates(
     skills: list[SkillMeta],
 ) -> list[SkillMeta]:
     """Skills whose range reflects how far the hero moves to fight."""
-    ranged = [
-        s
-        for s in skills
-        if s.section in BEHAVIOR_RANGE_SECTIONS
-        and not s.range_global
-        and s.range_tiles is not None
-        and _skill_deals_damage(_hero_movement_text(s.text))
-    ]
+    ranged = _offensive_attack_range_candidates(skills)
     normal_attack = [
         s for s in ranged if NORMAL_ATTACK_RE.search(s.text)
     ]
     return normal_attack if normal_attack else ranged
+
+
+def _skill_active_is_self_only(text: str) -> bool:
+    """True when the Active clause buffs self without dealing enemy damage."""
+    parts = re.split(r"\bActive\.\s*", text, maxsplit=1, flags=re.I)
+    if len(parts) < 2:
+        return False
+    active = parts[1]
+    if not re.search(
+        r"\b(?:empowers?|buffs?|enhances?|grants?|applies?|recovers?|"
+        r"restores?|shields?)\s+(?:himself|herself|themselves|self)\b",
+        active,
+        re.I,
+    ):
+        return False
+    return not _skill_deals_damage(active)
+
+
+def _offensive_attack_range_candidates(
+    skills: list[SkillMeta],
+) -> list[SkillMeta]:
+    """Offensive skills with a finite listed range (Ultimate, Skill1, Skill2)."""
+    candidates: list[SkillMeta] = []
+    for skill in skills:
+        if skill.section not in BEHAVIOR_RANGE_SECTIONS:
+            continue
+        if skill.range_global or skill.range_tiles is None:
+            continue
+        text = _hero_movement_text(skill.text)
+        if _skill_active_is_self_only(text):
+            continue
+        if _skill_deals_damage(text):
+            candidates.append(skill)
+    return candidates
+
+
+def _positive_offensive_ranges(skills: list[SkillMeta]) -> list[float]:
+    """Effective tile ranges above zero from offensive attack skills."""
+    return [
+        effective
+        for skill in _offensive_attack_range_candidates(skills)
+        if (effective := _effective_movement_range(skill)) > 0
+    ]
+
+
+def _min_positive_offensive_range(skills: list[SkillMeta]) -> float | None:
+    positive = _positive_offensive_ranges(skills)
+    return min(positive) if positive else None
+
+
+def _max_offensive_attack_range(skills: list[SkillMeta]) -> float | None:
+    positive = _positive_offensive_ranges(skills)
+    return max(positive) if positive else None
 
 
 def _effective_movement_range(skill: SkillMeta) -> float:
@@ -6614,6 +6671,74 @@ def _weighted_attack_range(skills: list[SkillMeta]) -> float | None:
         weight_total += w
 
     return weighted_sum / weight_total if weight_total else None
+
+
+def compute_is_melee(
+    skills: list[SkillMeta],
+    *,
+    hero_class: str,
+    display_name: str = "",
+    melee_max_range: float | None = None,
+    non_melee_melee_max_range: float | None = None,
+) -> bool:
+    """True when the hero primarily fights at melee range.
+
+    Tank, rogue, and warrior default to melee. When offensive skills list
+    finite attack ranges, the minimum positive range overrides class for
+    those melee classes. Non-melee classes use the maximum positive range
+    instead, so an occasional close-range skill does not override a
+    primarily ranged kit.
+    """
+    melee_threshold = (
+        MELEE_MAX_RANGE if melee_max_range is None else melee_max_range
+    )
+    non_melee_threshold = (
+        NON_MELEE_MELEE_MAX_RANGE
+        if non_melee_melee_max_range is None
+        else non_melee_melee_max_range
+    )
+    class_default = hero_class.lower() in MELEE_HERO_CLASSES
+    min_range = _min_positive_offensive_range(skills)
+    max_range = _max_offensive_attack_range(skills)
+
+    if class_default:
+        if min_range is not None:
+            detected = min_range <= melee_threshold
+        else:
+            detected = True
+    elif max_range is not None:
+        detected = max_range <= non_melee_threshold
+    else:
+        detected = False
+
+    curated = curated_display_name(display_name) if display_name else ""
+    if curated:
+        override = _load_melee_overrides().get(curated, {})
+        if "is_melee" in override:
+            return bool(override["is_melee"])
+    return detected
+
+
+def compute_is_dual_range(
+    skills: list[SkillMeta],
+    *,
+    display_name: str = "",
+) -> bool:
+    """True when the hero explicitly alternates ranged and melee combat."""
+    curated = curated_display_name(display_name) if display_name else ""
+    if curated:
+        override = _load_melee_overrides().get(curated, {})
+        if "is_dual_range" in override:
+            return bool(override["is_dual_range"])
+
+    all_text = " ".join(s.text for s in skills)
+    return bool(DUAL_RANGE_RE.search(all_text))
+
+
+def _load_melee_overrides() -> dict[str, dict[str, bool]]:
+    if not MELEE_OVERRIDES_FILE.exists():
+        return {}
+    return json.loads(MELEE_OVERRIDES_FILE.read_text(encoding="utf-8"))
 
 
 def _movement_from_range(avg_range: float) -> str:

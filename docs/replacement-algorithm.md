@@ -48,6 +48,7 @@ A replacement is only useful if they are viable in the current meta. The algorit
 To break ties and provide more cohesive team-building suggestions, candidates receive a score boost if they share traits with the Source:
 - **Same Faction**: 1.2× multiplier.
 - **Same Role Category** (e.g., Mage, Tank): 1.2× multiplier.
+- **Same Melee Range** (Damage and overall only): When the Source is a melee unit, melee candidates get a 1.2× multiplier.
 
 ---
 

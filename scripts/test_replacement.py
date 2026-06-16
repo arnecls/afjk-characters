@@ -917,6 +917,28 @@ class OverallReplacementTests(unittest.TestCase):
         self.assertEqual(ranked[0]["name"], "Healer")
         self.assertIn("Healing", ranked[0]["matches"])
 
+    def test_damage_prefers_melee_candidate_for_melee_source(self) -> None:
+        gen.REPLACEMENT_SAME_FACTION_MULT = 1.0
+        gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = 1.0
+        scores = [
+            (0.8, "Ranged - Hero", ["Physical"]),
+            (0.79, "Melee - Hero", ["Physical"]),
+        ]
+        tiers = _baseline_tiers_for_scores(scores, source_title="Source - Hero")
+        ranked = gen._rank_replacement_category(
+            scores,
+            source_title="Source - Hero",
+            tiers_by_title=tiers,
+            prefer_melee=True,
+            source_is_melee=True,
+            is_melee_by_title={
+                "Source - Hero": True,
+                "Melee - Hero": True,
+                "Ranged - Hero": False,
+            },
+        )
+        self.assertEqual(ranked[0]["name"], "Melee")
+
 
 if __name__ == "__main__":
     unittest.main()

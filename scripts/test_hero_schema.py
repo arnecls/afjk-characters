@@ -109,6 +109,8 @@ class RoundTripTests(unittest.TestCase):
             hero,
             record,
             is_energy_provider=False,
+            is_melee=False,
+            is_dual_range=False,
             behavior={
                 "movement": "moving",
                 "movement_note": "",

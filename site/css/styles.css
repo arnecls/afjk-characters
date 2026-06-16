@@ -916,6 +916,40 @@ a:hover {
   max-width: 60ch;
 }
 
+.replacement-warning {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin: 0 0 1.1rem;
+  padding: 0.75rem 0.9rem;
+  max-width: 100%;
+  border: 1px solid #e8c878;
+  border-radius: 8px;
+  background: #fff8e6;
+  color: #5c4a1e;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.replacement-warning-icon {
+  flex: 0 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.replacement-warning-text {
+  margin: 0;
+}
+
+.replacement-warning a {
+  color: #8a5a00;
+  font-weight: 500;
+}
+
+.replacement-warning a:hover {
+  color: #6b4500;
+}
+
 .tier-box-row {
   display: flex;
   flex-wrap: wrap;
@@ -1255,14 +1289,11 @@ a:hover {
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 92% 88% at 14% 6%,
-    color-mix(in srgb, var(--replacement-tint, var(--chip-generic-bg)) 34%, transparent) 0%,
-    color-mix(in srgb, var(--replacement-tint, var(--chip-generic-bg)) 10%, transparent) 58%,
-    transparent 100%
-  );
-  box-shadow: inset 0 0 36px 10px
-    color-mix(in srgb, var(--replacement-tint, var(--chip-generic-bg)) 16%, transparent);
+  background: radial-gradient(ellipse 92% 88% at 14% 6%,
+      color-mix(in srgb, var(--replacement-tint, var(--chip-generic-bg)) 34%, transparent) 0%,
+      color-mix(in srgb, var(--replacement-tint, var(--chip-generic-bg)) 10%, transparent) 58%,
+      transparent 100%);
+  box-shadow: inset 0 0 36px 10px color-mix(in srgb, var(--replacement-tint, var(--chip-generic-bg)) 16%, transparent);
 }
 
 .replacement-category::after {
@@ -1272,16 +1303,14 @@ a:hover {
   z-index: -1;
   border-radius: calc(var(--radius) + 6px);
   pointer-events: none;
-  background: color-mix(
-    in srgb,
-    var(--replacement-tint, var(--chip-generic-bg)) 70%,
-    transparent
-  );
+  background: color-mix(in srgb,
+      var(--replacement-tint, var(--chip-generic-bg)) 70%,
+      transparent);
   filter: blur(18px);
   opacity: 0.42;
 }
 
-.replacement-category > * {
+.replacement-category>* {
   position: relative;
   z-index: 1;
 }

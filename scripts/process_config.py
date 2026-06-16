@@ -72,6 +72,8 @@ def apply_config(config: dict) -> None:
         _gen.REPLACEMENT_SAME_FACTION_MULT = rs_cfg["same_faction_mult"]
     if "same_role_category_mult" in rs_cfg:
         _gen.REPLACEMENT_SAME_ROLE_CATEGORY_MULT = rs_cfg["same_role_category_mult"]
+    if "same_melee_mult" in rs_cfg:
+        _gen.REPLACEMENT_SAME_MELEE_MULT = rs_cfg["same_melee_mult"]
     if "category_weights_by_role" in rs_cfg:
         _gen.REPLACEMENT_CATEGORY_WEIGHTS_BY_ROLE = rs_cfg[
             "category_weights_by_role"
@@ -80,6 +82,9 @@ def apply_config(config: dict) -> None:
     ps = config.get("proximity_synergy", {})
     if "melee_max_range" in ps:
         _gen.PROXIMITY_MELEE_MAX_RANGE = ps["melee_max_range"]
+        _rs.MELEE_MAX_RANGE = ps["melee_max_range"]
+    if "non_melee_melee_max_range" in ps:
+        _rs.NON_MELEE_MELEE_MAX_RANGE = ps["non_melee_melee_max_range"]
     if "default_aura_radius" in ps:
         _gen.PROXIMITY_DEFAULT_AURA_RADIUS = ps["default_aura_radius"]
     if "range_slack" in ps:

@@ -1092,6 +1092,8 @@ def serialize_processed_hero(
     hero_record: dict[str, Any],
     *,
     is_energy_provider: bool,
+    is_melee: bool,
+    is_dual_range: bool,
     behavior: dict[str, Any],
 ) -> dict[str, Any]:
     provides = [
@@ -1135,6 +1137,8 @@ def serialize_processed_hero(
         "class": to_schema_class(hero_record.get("class")),
         "role_category": resolve_role_category(hero_record),
         "is_energy_provider": is_energy_provider,
+        "is_melee": is_melee,
+        "is_dual_range": is_dual_range,
         "skills": skills,
         "synergy_profile": {"provides": provides, "requires": requires},
         "damage_entries": damage_entries,

@@ -416,9 +416,9 @@ def check_play_overviews(processed: dict[str, Any]) -> tuple[list[str], list[str
             errors.append(f"play overview empty {short}")
             continue
         sentence_count = _count_sentences(text)
-        if sentence_count < 3 or sentence_count > 5:
+        if sentence_count < 4 or sentence_count > 7:
             warnings.append(
-                f"play overview sentence count {short}: {sentence_count} (expected 3-5)"
+                f"play overview sentence count {short}: {sentence_count} (expected 4-7)"
             )
         if len(text) > 1000:
             warnings.append(

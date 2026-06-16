@@ -20,8 +20,8 @@ OUTPUT = ROOT / "data" / "hero_play_overviews.json"
 REVIEWS_CACHE = ROOT / "data" / "prydwen_reviews_cache.json"
 
 MAX_CHARS = 900
-MAX_SENTENCES = 5
-MIN_SENTENCES = 3
+MAX_SENTENCES = 7
+MIN_SENTENCES = 4
 
 _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 _MODE_PREFIX_RE = re.compile(
