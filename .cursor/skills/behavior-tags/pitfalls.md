@@ -80,7 +80,9 @@ have both when the ult also deals opening damage).
 
 ## `cheat-death` vs `revive`
 
-- `cheat-death` — self survives fatal blow (Brutus, Thoran, Berial)
+- `cheat-death` — self survives fatal blow (Brutus, Thoran, Berial) or enters a
+  recovery form at a **critical HP threshold** (Tasi Fluttering Dream at 50% HP
+  loss: invincible butterfly with self-heal, up to twice per battle)
 - `revive` — ally returns after defeat (Marcille skill 4)
 
 Brutus Indomitable is **both**: `cheat-death` for the fatal-blow save, then

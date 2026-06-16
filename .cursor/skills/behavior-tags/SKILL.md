@@ -123,6 +123,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `life-drain` | HP sustain tied to **dealing damage** | Stat steal, shield regen, heal-on-shield |
 | `fire-attack` | Burning or scorched-ground damage | Cannon/artillery theming without burn |
 | `revive` | Brings **defeated allies** back | Self-survival (`cheat-death` instead) |
+| `cheat-death` | Self-survival at fatal blow or **critical HP threshold** via recovery/form | Ally revive (`revive` instead); form swap alone without a survival trigger |
 | `aoe-damage` | Substantial multi-target damage **regularly** | Occasional summon detonation |
 | `aoe-healing` | Heals **wide ally groups** | Single-target or post-channel one-off heal |
 | `assassin` | Picks isolated/backline with burst | General focus-fire marksmen |
@@ -164,5 +165,10 @@ not burst), `ally-buffer` / `ally-shielder`.
 **Mehira / Shemira** — voidlings and ghosts are **spell-form** damage, not
 battlefield companions: keep `aoe-damage`, `life-drain`, etc. Not `summoner`
 (cannot be targeted or destroyed; exist only briefly).
+
+**Tasi** — `aoe-damage`, `cheat-death`, `mass-cc`, `self-repositioner`,
+`transformation`. `cheat-death` from Fluttering Dream: butterfly form at 50% HP
+loss with invincibility and self-heal (up to twice per battle). Keep
+`transformation` for the form swap; both tags apply. Not `revive` (self-only).
 
 For more edge cases, see [pitfalls.md](pitfalls.md).

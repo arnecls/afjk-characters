@@ -514,6 +514,7 @@
   ],
   "Tasi": [
     "aoe-damage",
+    "cheat-death",
     "mass-cc",
     "self-repositioner",
     "transformation"
