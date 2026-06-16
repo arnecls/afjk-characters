@@ -438,8 +438,9 @@ reviewing or fixing matches, work through both heroes in this order.
    to stand in the aura (`receiver_can_reach_proximity_aura` in
    `generate-heroes-overview.py`; tunables in `heroes_config.json` →
    `proximity_synergy`). Global buffs (Twins dance, etc.) are unaffected.
-   Complements the existing rule that skips **positional tile** buffs for
-   **moving/high-movement** receivers.
+   Complements the existing rule that skips **positional tile** buffs and
+   **`static-tile-buffer`** providers for **moving/high-movement** receivers
+   (both `score_synergy` and ally-stat-buff enabler scoring).
 
 **Units benefitting most from** at the end of each Synergies block is the reverse index:
 heroes who list this unit among their top five synergy partners. When
@@ -493,7 +494,8 @@ DoT, CC, etc.); top picks are then sorted by score for display.
    the hero applies that debuff in their own kit (Bonnie casts Aging at battle
    start — partners need magic damage to stack it, not separate debuffs). Requirements on Ex/Supreme+ tiers get a
    defining-tier multiplier (`DEFINING_TIER_SCORE_MULT`). Synergy text uses
-   `Enables {label} via {detail}`.
+   `Enables {label} via {detail}`. Ally-stat-buff enabler scoring uses the
+   same movement / static-tile rules as stat-buff synergy lines.
 
 Matchers and skip lists live in `scripts/generate-heroes-overview.py`.
 `main()` prints an enabler pattern scan for skill phrases not yet in

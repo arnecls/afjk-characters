@@ -129,13 +129,13 @@ def _build_synergy_sections(
                 _hero_ref(n, slug_by_name) for n in excluded if n in slug_by_name
             ]
 
-    filtered = gen.filter_synergy_picks_for_display(
+    ranked = gen.rank_synergy_picks_for_display(
         p["synergies"],
         provider_beneficiary_count,
         obvious_threshold,
-        max_syn,
     )
-    picks = filtered
+    picks = ranked[:max_syn]
+    overflow_picks = ranked[max_syn:]
     receiver_synergies = _receiver_synergies(short, synergies)
     partners: list[dict] = []
     if picks:
@@ -159,6 +159,24 @@ def _build_synergy_sections(
                 }
             )
         partners.sort(key=lambda partner: (-partner["scoreRating"], partner["name"]))
+
+    more_partners: list[dict] = []
+    for pick in overflow_picks:
+        pname = gen.short_name(pick["provider"])
+        score = pick["score"]
+        more_partners.append(
+            {
+                "name": pname,
+                "slug": slug_by_name.get(pname, hero_slug(pname)),
+                "score": score,
+                "scoreRating": gen.beneficiary_rating_out_of_five(
+                    score, receiver_synergies
+                ),
+            }
+        )
+    more_partners.sort(
+        key=lambda ref: (-ref["scoreRating"], ref["name"].lower())
+    )
 
     benefited_by: dict = {
         "buffs_provided": rs.format_buffs_provided_data(hero, short),
@@ -213,6 +231,7 @@ def _build_synergy_sections(
         "requires": gen.format_synergy_requires_json(hero, short),
         "common_buffers": common_buffers,
         "partners": partners,
+        "more_partners": more_partners,
         "benefited_by": benefited_by
         if (benefited or benefited_by["buffs_provided"])
         else None,

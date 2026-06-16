@@ -303,6 +303,31 @@ def stat_buff_targeting_weight(
     return SYNERGY_STAT_BUFF_REACH_WEIGHT
 
 
+MOVING_RECEIVER_MOVEMENTS = frozenset({"moving", "high movement"})
+
+
+def _provider_has_static_tile_buffer_tag(provider: _rs.Hero) -> bool:
+    tags = _load_behavior_tags().get(short_name(provider.title), frozenset())
+    return _rs.STATIC_TILE_BUFFER_TAG in tags
+
+
+def ally_buff_applies_to_receiver(
+    provider: _rs.Hero,
+    effect: _rs.Effect,
+    receiver_movement: str,
+) -> bool:
+    """Whether an ally buff can help this receiver in synergy scoring."""
+    if effect.category != "buff" or effect.targeting not in ALLY_TARGETINGS:
+        return False
+    if receiver_movement not in MOVING_RECEIVER_MOVEMENTS:
+        return True
+    if _provider_has_static_tile_buffer_tag(provider):
+        return False
+    if effect.label in provider.positional_tile_buff_labels:
+        return False
+    return True
+
+
 def _direct_buff_labels_for_stat(stat: str) -> list[str]:
     """Buff labels that duplicate the stat name in synergy text (omit 'Stat via')."""
     if stat == "ATK SPD":
@@ -1013,7 +1038,10 @@ def _format_ally_stat_buff_grant(
     return detail
 
 
-def _ally_stat_buff_synergy(provider: _rs.Hero) -> tuple[float, int, bool] | None:
+def _ally_stat_buff_synergy(
+    provider: _rs.Hero,
+    receiver_movement: str = "",
+) -> tuple[float, int, bool] | None:
     """Providers that grant many/wide ally stat buffs (Perseus, Silven enabler)."""
     ally_buffs = [
         e
@@ -1026,12 +1054,15 @@ def _ally_stat_buff_synergy(provider: _rs.Hero) -> tuple[float, int, bool] | Non
         return None
     best_by_label: dict[str, float] = {}
     for effect in ally_buffs:
-        score = (
-            TARGETING_WEIGHT.get(effect.targeting, 1.0)
-            * MAG_WEIGHT.get(effect.magnitude, 1.0)
+        if not ally_buff_applies_to_receiver(provider, effect, receiver_movement):
+            continue
+        score = SYNERGY_STAT_BUFF_REACH_WEIGHT * MAG_WEIGHT.get(
+            effect.magnitude, 1.0
         )
         if effect.label not in best_by_label or score > best_by_label[effect.label]:
             best_by_label[effect.label] = score
+    if not best_by_label:
+        return None
     pts = sum(best_by_label.values())
     n = len(best_by_label)
     start_of_battle = provider_buffs_at_battle_start(provider)
@@ -1184,6 +1215,7 @@ def score_enabler_synergy(
     provider: _rs.Hero,
     receiver: _rs.Hero,
     enabler_matchers: dict[str, callable],
+    receiver_movement: str = "",
 ) -> tuple[float, list[str]]:
     if provider.title == receiver.title:
         return 0.0, []
@@ -1201,7 +1233,7 @@ def score_enabler_synergy(
         if not matcher:
             continue
         if req.label == "Ally stat buffs":
-            result = _ally_stat_buff_synergy(provider)
+            result = _ally_stat_buff_synergy(provider, receiver_movement)
             if not result:
                 continue
             pts, buff_count, start_of_battle = result
@@ -1295,11 +1327,10 @@ def common_stat_buffer_names(
     return names
 
 
-def filter_synergy_picks_for_display(
+def rank_synergy_picks_for_display(
     picks: list[dict],
     provider_beneficiary_count: dict[str, int],
     threshold: int,
-    max_syn: int,
 ) -> list[dict]:
     """Drop obvious generic buffers; rank remaining partners by score."""
     kept = [
@@ -1312,7 +1343,19 @@ def filter_synergy_picks_for_display(
     kept.sort(
         key=lambda pick: (-pick.get("score", 0), pick.get("provider", ""))
     )
-    return kept[:max_syn]
+    return kept
+
+
+def filter_synergy_picks_for_display(
+    picks: list[dict],
+    provider_beneficiary_count: dict[str, int],
+    threshold: int,
+    max_syn: int,
+) -> list[dict]:
+    """Ranked synergy partners capped for display."""
+    return rank_synergy_picks_for_display(
+        picks, provider_beneficiary_count, threshold
+    )[:max_syn]
 
 
 def _stats_for_synergy_scoring(
@@ -1377,9 +1420,8 @@ def score_synergy(
                 continue
             if effect.conditional == "rare":
                 continue
-            if (
-                effect.label in provider.positional_tile_buff_labels
-                and receiver_movement in ("moving", "high movement")
+            if not ally_buff_applies_to_receiver(
+                provider, effect, receiver_movement
             ):
                 continue
             if (
@@ -1515,7 +1557,7 @@ def score_combined_synergy(
     )
     summon_score, summon_reasons = score_summon_synergy(provider, receiver)
     en_score, en_reasons = score_enabler_synergy(
-        provider, receiver, enabler_matchers
+        provider, receiver, enabler_matchers, receiver_movement
     )
     return (
         buff_score + early_score + summon_score + en_score,

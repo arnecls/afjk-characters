@@ -2219,6 +2219,20 @@
     return { title: "", body: md };
   }
 
+  const REPLACEMENT_ALGORITHM_URL =
+    "https://github.com/arnecls/afjk-characters/blob/main/docs/replacement-algorithm.md";
+
+  function renderAlgorithmDisclaimer() {
+    return (
+      '<div class="replacement-warning" role="note">' +
+      '<p class="replacement-warning-text"><span class="replacement-warning-icon" aria-hidden="true">⚠️ </span>' +
+      "The sections below are not curated lists but have been <a href=\"" +
+      REPLACEMENT_ALGORITHM_URL +
+      '" target="_blank" rel="noopener noreferrer">detected by an algorithm</a>.</p>' +
+      "</div>"
+    );
+  }
+
   function renderSummaryCards(md) {
     const cards = [];
     let current = null;
@@ -2269,7 +2283,9 @@
       }
       html += "</div>";
     });
-    html += "</div></div>";
+    html += "</div>";
+    html += renderAlgorithmDisclaimer();
+    html += "</div>";
     return html;
   }
 
@@ -4878,6 +4894,68 @@
     );
   }
 
+  function synergyPartnerScoreRating(ref) {
+    const rating =
+      ref.scoreRating != null ? ref.scoreRating : ref.score_rating;
+    const value = Number(rating);
+    return Number.isFinite(value) ? value : 0;
+  }
+
+  function renderSynergyOverflowTooltipGrid(partners) {
+    const names = partners
+      .slice()
+      .sort(function (a, b) {
+        const ratingDiff =
+          synergyPartnerScoreRating(b) - synergyPartnerScoreRating(a);
+        if (ratingDiff !== 0) {
+          return ratingDiff;
+        }
+        return a.name.localeCompare(b.name);
+      })
+      .map(function (ref) {
+        return ref.name;
+      });
+    return (
+      '<div class="synergy-overflow-tip-grid">' +
+      names
+        .map(function (name) {
+          return "<span>" + escapeHtml(name) + "</span>";
+        })
+        .join("") +
+      "</div>"
+    );
+  }
+
+  function renderSynergyPartnerOverflow(morePartners) {
+    if (!morePartners || !morePartners.length) {
+      return "";
+    }
+    const overflowCount = morePartners.length;
+    const unitLabel = overflowCount === 1 ? "unit" : "units";
+    const highRated = morePartners.filter(function (ref) {
+      return synergyPartnerScoreRating(ref) > 2;
+    });
+    const highCount = highRated.length;
+    let html =
+      '<p class="synergy-partner-overflow">There were ' +
+      overflowCount +
+      " more " +
+      unitLabel +
+      " detected of which ";
+    if (highCount > 0) {
+      html +=
+        '<span class="synergy-overflow-trigger chip-has-tip" data-tip-html="' +
+        escapeHtml(renderSynergyOverflowTooltipGrid(highRated)) +
+        '" tabindex="0" role="button" aria-describedby="chip-tooltip">' +
+        highCount +
+        " score higher</span>";
+    } else {
+      html += highCount + " score higher";
+    }
+    html += " than 2.</p>";
+    return html;
+  }
+
   function renderSynergies(sections, heroName) {
     const syn = sections.benefits_from;
     if (!syn) return "";
@@ -4913,6 +4991,7 @@
       html += renderSynergyHeroGrid(syn.partners, function (partner) {
         return renderSynergyPartnerExplanation(partner.reasons);
       });
+      html += renderSynergyPartnerOverflow(syn.more_partners);
     } else {
       html +=
         "<p><em>No synergy partners matched stat buffs or enablers.</em></p>";
@@ -5128,22 +5207,12 @@
     );
   }
 
-  const REPLACEMENT_ALGORITHM_URL =
-    "https://github.com/arnecls/afjk-characters/blob/main/docs/replacement-algorithm.md";
-
   function renderReplacements(sections, mainHero) {
     const reps = sections.replacements;
     if (!reps || !reps.length) return "";
 
     let html = '<div class="detail-section">';
     html += "<h2>Replacement options</h2>";
-    html +=
-      '<div class="replacement-warning" role="note">' +
-      '<p class="replacement-warning-text"><span class="replacement-warning-icon" aria-hidden="true">⚠️ </span>' +
-      'The replacements presented in this section are not curated lists but have been <a href="' +
-      REPLACEMENT_ALGORITHM_URL +
-      '" target="_blank" rel="noopener noreferrer">detected by an algorithm</a>.</p>' +
-      "</div>";
     reps.forEach(function (cat) {
       html +=
         '<div class="replacement-category ' +
@@ -5673,7 +5742,7 @@
 
   (function initChipTooltips() {
     const TIP_CHIP_SELECTOR =
-      "[data-tip].chip-has-tip, .tier-chip[data-tip]";
+      "[data-tip].chip-has-tip, [data-tip-html].chip-has-tip, .tier-chip[data-tip]";
     const chipTooltip = document.createElement("div");
     chipTooltip.id = "chip-tooltip";
     chipTooltip.className = "chip-tooltip";
@@ -5698,8 +5767,9 @@
     }
 
     function showChipTooltip(anchor) {
+      const html = anchor.getAttribute("data-tip-html");
       const text = anchor.getAttribute("data-tip");
-      if (!text) {
+      if (!html && !text) {
         return;
       }
       clearTimeout(tipHideTimer);
@@ -5708,7 +5778,13 @@
       }
       tipAnchor = anchor;
       anchor.classList.add("chip-tip-active");
-      chipTooltip.textContent = text;
+      if (html) {
+        chipTooltip.innerHTML = html;
+        chipTooltip.classList.add("chip-tooltip--html");
+      } else {
+        chipTooltip.textContent = text;
+        chipTooltip.classList.remove("chip-tooltip--html");
+      }
       chipTooltip.hidden = false;
       positionChipTooltip(anchor);
     }

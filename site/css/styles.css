@@ -977,7 +977,7 @@ a:hover {
   display: flex;
   gap: 0.65rem;
   align-items: flex-start;
-  margin: 0 0 1.1rem;
+  margin: 1.1rem 0 0;
   padding: 0.75rem 0.9rem;
   max-width: 100%;
   border: 1px solid #e8c878;
@@ -1468,9 +1468,38 @@ a:hover {
   font-weight: 400;
   line-height: 1.4;
   text-align: center;
+  white-space: pre-line;
   pointer-events: none;
   transform: translate(-50%, -100%);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.chip-tooltip--html {
+  max-width: 22rem;
+  text-align: left;
+}
+
+.synergy-overflow-tip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.25rem 0.6rem;
+  white-space: normal;
+}
+
+.synergy-overflow-tip-grid span {
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.synergy-partner-overflow {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.synergy-overflow-trigger {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.15em;
 }
 
 .chip-tooltip::after {

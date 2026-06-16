@@ -2253,6 +2253,8 @@ POSITIONAL_TILE_PATTERNS: tuple[str, ...] = (
     r"this buff disappears when (?:the )?ally leaves",
     r"ally leaves the (?:doomfield|sigil|field|zone|formation)",
     r"until \d+\s*s? after the ally leaves",
+    r"ally within (?:the |his |her )?doomfield",
+    r"within (?:the |his |her )?doomfield",
 )
 
 # Ally buffs tied to a mobile aura/circle around the provider (not global).

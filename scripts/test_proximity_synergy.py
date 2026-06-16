@@ -198,6 +198,29 @@ class PositionalTileRegressionTests(unittest.TestCase):
         )
         self.assertEqual(score, 0.0)
 
+    def test_gunnar_scores_no_synergy_for_moving_perseus(self) -> None:
+        gen = _load_gen()
+        from test_summary_parsing import _hero_by_short_name
+        import json
+        from pathlib import Path
+
+        gunnar = _hero_by_short_name("Gunnar")
+        perseus = _hero_by_short_name("Perseus")
+        proc = json.loads(
+            (Path(__file__).resolve().parent.parent / "data" / "heroes_data_processed.json").read_text()
+        )
+        behavior = _load_rs().HeroBehavior(**proc["heroes"]["Perseus"]["behavior"])
+        score, reasons = gen.score_combined_synergy(
+            gunnar,
+            perseus,
+            gen._make_enabler_matchers({}),
+            behavior,
+            behavior.movement,
+            behavior.synergy_signature_speed or "average",
+        )
+        self.assertEqual(score, 0.0)
+        self.assertEqual(reasons, [])
+
 
 if __name__ == "__main__":
     unittest.main()
