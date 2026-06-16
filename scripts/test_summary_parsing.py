@@ -488,6 +488,15 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertNotIn("Magic damage amplification", provides)
         self.assertIn("Magic damage amplification", debuff_labels)
 
+    def test_bonnie_does_not_require_ally_debuffs(self):
+        hero = _hero_by_short_name("Bonnie")
+        require_labels = {
+            s.label for s in hero.special_effects if s.kind == "requires"
+        }
+        self.assertIn("Magic damage from allies", require_labels)
+        self.assertNotIn("Debuff on target", require_labels)
+        self.assertNotIn("Debuff on target (Aging)", require_labels)
+
     def test_berial_damage_taken_debuff_not_magic_amplification(self):
         hero = _hero_by_short_name("Berial")
         debuff_labels = {

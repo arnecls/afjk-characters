@@ -3572,9 +3572,9 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
         "Adjacent allies",
     ),
     (r"afflicted by aging", "Debuff on target (Aging)"),
-    # Target state
+    # Target state — partner must apply; self marks/debuffs filtered later.
     (
-        r"afflicted by|affected by .{0,35}(?:venom|curse|burn)",
+        r"affected by .{0,35}(?:venom|curse|burn)\b",
         "Debuff on target",
     ),
     (r"control immunity status", "Enemy not CC-immune"),
@@ -3624,6 +3624,58 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
     (r"affected by merlin'?s? buffs", "Artifact buffs active"),
     (r"(?:on |target\w* )?vulnerable enemies|rush to vulnerable", "Vulnerable enemy"),
 )
+
+_SELF_APPLIED_AGING_RE = re.compile(
+    r"when a battle starts.{0,160}casts the aging", re.I
+)
+
+_DEBUFF_REQUIRE_LABELS = frozenset(
+    {"Debuff on target", "Debuff on target (Aging)"}
+)
+
+
+def _debuff_state_self_applied_in_text(text: str) -> bool:
+    """True when the same skill text both applies and references a debuff."""
+    tl = text.lower()
+    if (
+        re.search(r"inflicts? crimson venom", tl)
+        and "affected by crimson venom" in tl
+    ):
+        return True
+    if (
+        re.search(r"inflicts? withering curse", tl)
+        and "withering curse" in tl
+    ):
+        return True
+    return False
+
+
+def _hero_combined_skill_text(hero: Hero) -> str:
+    return " ".join(text for _, text, _ in hero.skill_chunks)
+
+
+def _filter_self_satisfied_debuff_requires(hero: Hero) -> None:
+    """Drop partner debuff requires satisfied by the hero's own kit."""
+    combined = _hero_combined_skill_text(hero)
+    if not (
+        _SELF_APPLIED_AGING_RE.search(combined)
+        and re.search(r"afflicted by aging", combined, re.I)
+    ):
+        return
+
+    def _keep(se: SpecialEffect) -> bool:
+        return not (
+            se.kind == "requires" and se.label in _DEBUFF_REQUIRE_LABELS
+        )
+
+    for sl in hero.skill_slices.values():
+        sl.special_effects = [
+            se for se in sl.special_effects if _keep(se)
+        ]
+    hero.special_effects = [
+        se for se in hero.special_effects if _keep(se)
+    ]
+
 
 _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
     r"\bsilhouette",
@@ -3957,6 +4009,14 @@ def detect_special_effects(
             r"affected by (?:her|his|their) mark\b",
             text,
             re.I,
+        ):
+            continue
+        if label == "Debuff on target" and re.search(
+            r"afflicted by aging\b", text, re.I
+        ):
+            continue
+        if label == "Debuff on target" and _debuff_state_self_applied_in_text(
+            text
         ):
             continue
         add_special_effect(effects, "requires", label, tier, text)
@@ -6063,6 +6123,7 @@ def analyze_hero(hero: Hero):
     prox_labels, prox_radius = detect_proximity_aura_buff_labels(hero)
     hero.proximity_aura_buff_labels = prox_labels
     hero.proximity_aura_radius = prox_radius
+    _filter_self_satisfied_debuff_requires(hero)
 
 
 # Buff labels where the effect is inherently high-value, regardless of any

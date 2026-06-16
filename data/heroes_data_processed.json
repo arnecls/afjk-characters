@@ -5951,18 +5951,6 @@
         ],
         "requires": [
           {
-            "label": "Debuff on target (Aging)",
-            "tier": "base",
-            "targeting": "Enemies",
-            "description": "The magic arrrow deals 30% more damage to enemies afflicted by Aging and stuns them for 3 + 0.25s."
-          },
-          {
-            "label": "Debuff on target",
-            "tier": "base",
-            "targeting": "Enemies",
-            "description": "The magic arrrow deals 30% more damage to enemies afflicted by Aging and stuns them for 3 + 0.25s."
-          },
-          {
             "label": "Magic damage from allies",
             "tier": "base",
             "targeting": "Allies",
@@ -23719,12 +23707,6 @@
         "requires": [
           {
             "label": "Multiple debuffs on target",
-            "tier": "base",
-            "targeting": "Enemies",
-            "description": "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed."
-          },
-          {
-            "label": "Debuff on target",
             "tier": "base",
             "targeting": "Enemies",
             "description": "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed."

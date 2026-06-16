@@ -122,8 +122,7 @@ class RenderSiteTests(unittest.TestCase):
         requires = bonnie["sections"]["benefits_from"]["requires"]
         self.assertEqual(
             requires["text"],
-            "Bonnie also requires units **dealing magic damage** and/or "
-            "units **putting debuffs** on enemies",
+            "Bonnie also requires units **dealing magic damage**",
         )
         self.assertNotIn("Requires", bonnie["sections"]["summary"])
 

@@ -324,9 +324,9 @@ Common buffers are **Twins**, **Hugin**, or **Damian**.
 
 ### Units benefitting most from Alsa
 
-- Bonnie (2.6 / 5)
+- Bonnie (2.2 / 5)
 - Carolina (1.8 / 5)
-- Indris (1.6 / 5)
+- Nerion (1.5 / 5)
 
 ### Units that can act as a replacement for Alsa
 
@@ -1280,34 +1280,29 @@ max-stack debuffed targets suffer increased magic damage
 ### Units improving Bonnie
 
 Look for units providing: `ATK`  
-Common buffers are **Ravion**, **Twins**, or **Solise**.
+Common buffers are **Twins**, **Solise**, or **Smokey & Meerky**.
 
-Bonnie also requires units **dealing magic damage** and/or units **putting debuffs** on enemies
+Bonnie also requires units **dealing magic damage**
 
-- **Cyran**
-  - Enables Debuff on target via ATK SPD debuff (all units)
-  - Enables Magic damage from allies via Magic damage + wide area (area)
-- **Dunlingr**
-  - ATK buff (single target, low)
-  - Enables Debuff on target via Haste debuff (all units)
-  - Enables Magic damage from allies via Magic damage (area)
-- **Kulu**
-  - ATK buff (single target, low)
-  - Enables Debuff on target via Damage taken debuff (all units)
 - **Evie**
   - ATK buff (multiple targets, high)
-  - Enables Debuff on target via Magic DEF debuff (all units)
+  - Enables Magic damage from allies via Magic damage (single target)
+- **Contess**
+  - ATK buff (single target, high)
   - Enables Magic damage from allies via Magic damage (single target)
 - **Frieren**
   - ATK buff (single target, high)
-  - Enables Debuff on target via DoT (area)
   - Enables Magic damage from allies via Magic damage (area)
+- **Galahad**
+  - Enables Magic damage from allies via Magic damage + wide area + all enemies (all units)
+- **Cyran**
+  - Enables Magic damage from allies via Magic damage + wide area (area)
 
 ### Units benefitting most from Bonnie
 
 - Shadewing (2.4 / 5)
-- Indris (1.9 / 5)
 - Carolina (1.8 / 5)
+- Nerion (1.5 / 5)
 
 ### Units that can act as a replacement for Bonnie
 
@@ -1550,9 +1545,9 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Damian**.
 
 ### Units benefitting most from Bryon
 
-- Bonnie (2.5 / 5)
 - Shadewing (2.3 / 5)
-- Indris (2.2 / 5)
+- Bonnie (2.0 / 5)
+- Indris (2.0 / 5)
 
 ### Units that can act as a replacement for Bryon
 
@@ -1675,7 +1670,7 @@ Callan provides Shield to single targets `low`.
 
 - Carolina (3.6 / 5)
 - Nerion (2.7 / 5)
-- Bonnie (1.8 / 5)
+- Bonnie (2.2 / 5)
 
 ### Units that can act as a replacement for Callan
 
@@ -1794,9 +1789,9 @@ Carolina also requires units **applying crowd control** to enemies
 
 ### Units benefitting most from Carolina
 
-- Bonnie (2.8 / 5)
 - Shadewing (2.3 / 5)
-- Indris (2.2 / 5)
+- Indris (2.0 / 5)
+- Nerion (1.7 / 5)
 
 ### Units that can act as a replacement for Carolina
 
@@ -1922,8 +1917,8 @@ Cassadee also requires a unit **to bless**
 Cassadee provides Tidal Strength buff (Legendary+) to all units `low`.
 
 - Carolina (2.3 / 5)
-- Bonnie (2.1 / 5)
 - Nerion (1.8 / 5)
+- Lily May (1.4 / 5)
 
 ### Units that can act as a replacement for Cassadee
 
@@ -2230,19 +2225,19 @@ Common buffers are **Rowan**, **Smokey & Meerky**, or **Ravion**.
 
 Contess provides ATK buff to single targets `high`, Direct healing to multiple targets `high`, Exemption buff to single targets `high`, and Shield to single targets `average`.
 
-**16** units include this provider among their top 5 synergy partners. Why the match is common:
+**17** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **10** strongest pairings: 
 
+- Bonnie (3.0 / 5)
 - Baelran (2.8 / 5)
 - Evie (2.7 / 5)
 - Aliceth (2.5 / 5)
 - Faramor (2.5 / 5)
 - Himmel (2.5 / 5)
 - Alna (2.2 / 5)
-- Athalia (2.2 / 5)
 - Silven (2.2 / 5)
 - Shemira (2.2 / 5)
 - Sylphira (1.8 / 5)
@@ -2361,7 +2356,7 @@ Common buffers are **Hugin**, **Twins**, or **Mikola**.
 
 ### Units benefitting most from Cryonaia
 
-- Bonnie (2.5 / 5)
+- Bonnie (2.8 / 5)
 - Shadewing (1.9 / 5)
 - Himmel (1.5 / 5)
 
@@ -2477,7 +2472,9 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 
 ### Units benefitting most from Cyran
 
-- Bonnie (5.0 / 5)
+- Shadewing (3.9 / 5)
+- Carolina (2.0 / 5)
+- Nerion (1.6 / 5)
 
 ### Units that can act as a replacement for Cyran
 
@@ -2854,8 +2851,8 @@ Dionel also requires units **buffing them**
 Dionel provides ATK buff to single targets `average`.
 
 - Kazim (2.0 / 5)
-- Bonnie (1.5 / 5)
 - Indris (1.4 / 5)
+- Shadewing (1.4 / 5)
 
 ### Units that can act as a replacement for Dionel
 
@@ -2985,7 +2982,7 @@ Common buffers are **Twins**, **Solise**, or **Hugin**.
 
 Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to single targets `average`, ATK SPD buff (Supreme+) to all units `low`, and Lifedrain buff (Supreme+) to all units `average`.
 
-**13** units include this provider among their top 5 synergy partners. Why the match is common:
+**12** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -2993,13 +2990,13 @@ These are the **10** strongest pairings:
 
 - Brutus (5.0 / 5)
 - Satrana (5.0 / 5)
-- Bonnie (4.9 / 5)
-- Indris (4.8 / 5)
 - Kruger (4.3 / 5)
+- Indris (4.0 / 5)
 - Igor (3.5 / 5)
 - Walker (3.3 / 5)
 - Zandrok (2.9 / 5)
 - Harak (2.8 / 5)
+- Lucy (2.7 / 5)
 - Cyran (2.5 / 5)
 
 ### Units that can act as a replacement for Dunlingr
@@ -3711,8 +3708,8 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 Frieren provides ATK buff to single targets `high`.
 
-- Bonnie (3.9 / 5)
 - Shadewing (3.3 / 5)
+- Bonnie (3.0 / 5)
 - Himmel (2.0 / 5)
 
 ### Units that can act as a replacement for Frieren
@@ -3833,6 +3830,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 Galahad provides Haste buff to single targets `average` and Shield to single targets `average`.
 
+- Bonnie (2.8 / 5)
 - Eironn (2.3 / 5)
 - Velara (2.3 / 5)
 - Gwyneth (1.8 / 5)
@@ -4074,8 +4072,8 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Solise**.
 ### Units benefitting most from Granny Dahnie
 
 - Shadewing (2.2 / 5)
-- Indris (1.6 / 5)
 - Himmel (1.5 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Granny Dahnie
 
@@ -4425,7 +4423,7 @@ Common buffers are **Mikola**, **Twins**, or **Smokey & Meerky**.
 
 Hammie provides ATK buff to multiple targets `high`.
 
-- Bonnie (2.9 / 5)
+- Bonnie (3.9 / 5)
 - Himmel (2.6 / 5)
 - Silven (1.7 / 5)
 
@@ -5054,8 +5052,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 ### Units benefitting most from Hodgkin
 
-- Indris (1.7 / 5)
-- Bonnie (1.6 / 5)
+- Indris (1.6 / 5)
 - Shadewing (1.4 / 5)
 
 ### Units that can act as a replacement for Hodgkin
@@ -5259,8 +5256,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 ### Units benefitting most from Igor
 
 - Shadewing (1.9 / 5)
-- Indris (1.3 / 5)
-- Bonnie (1.3 / 5)
+- Indris (1.2 / 5)
 
 ### Units that can act as a replacement for Igor
 
@@ -5339,38 +5335,32 @@ immobilize opens a window with no-cooldown weakness trigger
 ### Units improving Indris
 
 Look for units providing: `ATK` `ATK SPD / Haste`  
-Common buffers are **Twins**, **Mikola**, or **Ravion**.
+Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
-Indris also requires units **putting debuffs** on enemies and/or units **putting multiple debuffs** on enemies
+Indris also requires units **putting multiple debuffs** on enemies
 
 - **Lyca**
   - ATK SPD buff (all units, low) `signature fuel`
   - Energy recovery (120 at battle start, all units) `signature fuel`
   - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via ATK debuff (all units)
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD buff (all units, low) `signature fuel`
   - Enables Multiple debuffs on target via 3 debuff types
-  - Enables Debuff on target via Haste debuff (all units)
-- **Lorsan**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
-  - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via Haste debuff (area)
-- **Kulu**
-  - ATK buff (single target, low)
-  - Enables Multiple debuffs on target via 2 debuff types
-  - Enables Debuff on target via Damage taken debuff (all units)
+- **Sinbad**
+  - Enables Multiple debuffs on target via 7 debuff types
 - **Alna**
   - ATK buff (single target, low)
   - Enables Multiple debuffs on target via 3 debuff types
-  - Enables Debuff on target via Haste debuff (all units)
+- **Contess**
+  - ATK buff (single target, high)
+  - Enables Multiple debuffs on target via 4 debuff types
 
 ### Units benefitting most from Indris
 
 - Carolina (2.2 / 5)
 - Nerion (1.7 / 5)
-- Bonnie (1.6 / 5)
+- Shadewing (1.4 / 5)
 
 ### Units that can act as a replacement for Indris
 
@@ -5492,7 +5482,7 @@ Common buffers are **Twins**, **Mikola**, or **Smokey & Meerky**.
 
 Isabella provides ATK buff to single targets `low` — conditional (frequent) and DEF buff to single targets `low`.
 
-- Bonnie (2.1 / 5)
+- Bonnie (2.3 / 5)
 - Himmel (1.7 / 5)
 - Silven (1.3 / 5)
 
@@ -5597,8 +5587,8 @@ Common buffers are **Hugin**, **Mikola**, or **Twins**.
 ### Units benefitting most from Kafra
 
 - Shadewing (2.4 / 5)
-- Indris (1.9 / 5)
-- Bonnie (1.9 / 5)
+- Carolina (1.8 / 5)
+- Nerion (1.5 / 5)
 
 ### Units that can act as a replacement for Kafra
 
@@ -6202,8 +6192,8 @@ Common buffers are **Hugin** or **Twins**.
 ### Units benefitting most from Kruger
 
 - Indris (2.5 / 5)
-- Bonnie (1.8 / 5)
 - Shadewing (1.6 / 5)
+- Carolina (1.4 / 5)
 
 ### Units that can act as a replacement for Kruger
 
@@ -6321,8 +6311,9 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 Kulu provides ATK buff (Legendary+) to single targets `low` and DEF Penetration buff (EX+15) to single targets `low`.
 
-- Bonnie (4.2 / 5)
-- Indris (3.7 / 5)
+- Shadewing (3.3 / 5)
+- Indris (2.4 / 5)
+- Lily May (1.4 / 5)
 
 ### Units that can act as a replacement for Kulu
 
@@ -6450,7 +6441,7 @@ Laios provides ATK buff to multiple targets `low` — conditional (rare).
 
 - Carolina (3.1 / 5)
 - Shadewing (2.9 / 5)
-- Indris (2.6 / 5)
+- Nerion (2.3 / 5)
 
 ### Units that can act as a replacement for Laios
 
@@ -6672,9 +6663,9 @@ Lily May also requires units **buffing them**
 
 Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
-- Bonnie (2.6 / 5)
-- Indris (1.7 / 5)
+- Bonnie (2.0 / 5)
 - Shadewing (1.7 / 5)
+- Silven (1.2 / 5)
 
 ### Units that can act as a replacement for Lily May
 
@@ -6803,7 +6794,6 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 Lorsan provides Haste buff to single targets `high`.
 
-- Indris (3.8 / 5)
 - Pippa (2.2 / 5)
 
 ### Units that can act as a replacement for Lorsan
@@ -7524,7 +7514,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 Lyca provides ATK SPD buff to all units `low` and Energy recovery to all units `low`.
 
-- Indris (5.0 / 5)
+- Indris (4.3 / 5)
 - Hewynn (3.7 / 5)
 - Arden (3.5 / 5)
 - Valen (3.5 / 5)
@@ -8021,7 +8011,7 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 
 Mikola provides ATK buff to all units `average`, Direct healing to multiple targets `low`, Haste buff to multiple targets `average`, and Vitality buff (EX+10) to multiple targets `high`.
 
-**45** units include this provider among their top 5 synergy partners. Why the match is common:
+**46** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -8132,8 +8122,8 @@ Common buffers are **Twins**, **Hugin**, or **Damian**.
 
 ### Units benefitting most from Mirael
 
+- Bonnie (2.0 / 5)
 - Shadewing (1.7 / 5)
-- Bonnie (1.7 / 5)
 - Himmel (1.5 / 5)
 
 ### Units that can act as a replacement for Mirael
@@ -8234,7 +8224,7 @@ Common buffers are **Mikola**, **Twins**, or **Ravion**.
 Nara provides Direct healing (Mythic+) in an area `low`.
 
 - Carolina (1.8 / 5)
-- Indris (1.6 / 5)
+- Nerion (1.5 / 5)
 - Lily May (1.3 / 5)
 
 ### Units that can act as a replacement for Nara
@@ -8359,9 +8349,9 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 Natsu provides Magic DEF buff to single targets `average` and Phys DEF buff to single targets `average`.
 
-- Bonnie (2.6 / 5)
 - Shadewing (2.2 / 5)
 - Lily May (1.4 / 5)
+- Silven (1.4 / 5)
 
 ### Units that can act as a replacement for Natsu
 
@@ -8474,8 +8464,8 @@ Look for units providing: `CRIT`
 
 ### Units benefitting most from Nazrik
 
+- Indris (2.0 / 5)
 - Shadewing (1.9 / 5)
-- Indris (1.8 / 5)
 - Carolina (1.8 / 5)
 
 ### Units that can act as a replacement for Nazrik
@@ -8714,7 +8704,7 @@ Niru also requires a unit **to bless** and/or enemies **to be defeated**
 
 ### Units benefitting most from Niru
 
-- Bonnie (2.4 / 5)
+- Bonnie (2.7 / 5)
 - Shadewing (1.9 / 5)
 - Zorya (1.4 / 5)
 
@@ -8817,9 +8807,9 @@ Common buffers are **Twins**, **Hugin**, or **Damian**.
 
 ### Units benefitting most from Odie
 
-- Bonnie (2.3 / 5)
 - Shadewing (2.2 / 5)
-- Indris (1.6 / 5)
+- Bonnie (2.0 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Odie
 
@@ -9175,7 +9165,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting most from Parisa
 
-- Bonnie (1.7 / 5)
+- Bonnie (2.0 / 5)
 - Niru (1.6 / 5)
 - Himmel (1.5 / 5)
 
@@ -9770,9 +9760,9 @@ Common buffers are **Solise**, **Twins**, or **Smokey & Meerky**.
 
 Reinier provides ATK buff (Legendary+) to single targets `low`.
 
-- Bonnie (2.2 / 5)
+- Bonnie (2.4 / 5)
 - Himmel (1.7 / 5)
-- Indris (1.6 / 5)
+- Indris (1.5 / 5)
 
 ### Units that can act as a replacement for Reinier
 
@@ -10379,9 +10369,9 @@ Look for units providing: `Max HP` `Life Drain`
 
 Satrana provides Magic damage amplification (Mythic+) to single targets `average` and Damage taken (EX+10) to single targets `low`.
 
-- Bonnie (2.6 / 5)
+- Bonnie (2.5 / 5)
 - Shadewing (2.2 / 5)
-- Indris (1.9 / 5)
+- Indris (1.8 / 5)
 
 ### Units that can act as a replacement for Satrana
 
@@ -10753,8 +10743,8 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 
 ### Units benefitting most from Shadewing
 
-- Bonnie (2.3 / 5)
-- Indris (1.6 / 5)
+- Bonnie (2.0 / 5)
+- Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Shadewing
 
@@ -11092,8 +11082,8 @@ Silven also requires units **buffing them**
 
 Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
+- Bonnie (2.0 / 5)
 - Carolina (1.8 / 5)
-- Bonnie (1.7 / 5)
 - Nerion (1.6 / 5)
 
 ### Units that can act as a replacement for Silven
@@ -11204,7 +11194,7 @@ Common buffers are **Hugin** or **Twins**.
 
 - Carolina (3.1 / 5)
 - Nerion (2.3 / 5)
-- Indris (1.6 / 5)
+- Shadewing (1.4 / 5)
 
 ### Units that can act as a replacement for Silvina
 
@@ -11320,9 +11310,7 @@ Common buffers are **Twins**, **Hugin**, or **Damian**.
 
 ### Units benefitting most from Sinbad
 
-- Indris (3.6 / 5)
-- Bonnie (2.2 / 5)
-- Shadewing (1.9 / 5)
+- Indris (3.7 / 5)
 
 ### Units that can act as a replacement for Sinbad
 
@@ -11892,7 +11880,7 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 ### Units benefitting most from Sylphira
 
 - Carolina (3.1 / 5)
-- Bonnie (2.3 / 5)
+- Bonnie (2.5 / 5)
 - Nerion (2.3 / 5)
 
 ### Units that can act as a replacement for Sylphira
@@ -12024,7 +12012,7 @@ Common buffers are **Mikola**, **Twins**, or **Solise**.
 
 Talene provides ATK buff (EX+5) in an area `high`.
 
-- Bonnie (3.6 / 5)
+- Bonnie (5.0 / 5)
 - Shadewing (2.9 / 5)
 - Silven (1.8 / 5)
 
@@ -12261,7 +12249,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 - Carolina (2.0 / 5)
 - Nerion (1.6 / 5)
-- Indris (1.4 / 5)
+- Himmel (1.5 / 5)
 
 ### Units that can act as a replacement for Temesia
 
@@ -12383,7 +12371,7 @@ Thador provides Energy recovery (EX+10) to single targets `low`.
 
 - Shadewing (2.3 / 5)
 - Carolina (2.0 / 5)
-- Indris (2.0 / 5)
+- Indris (1.9 / 5)
 
 ### Units that can act as a replacement for Thador
 
@@ -12725,7 +12713,7 @@ Common buffers are **Smokey & Meerky**, **Damian**, or **Hugin**.
 
 Twins provides ATK buff to multiple targets `average`, Direct healing to multiple targets `low`, Energy recovery to multiple targets `low`, Haste buff to all units `high`, Max HP buff to multiple targets `high`, Shield to single targets `low`, Vitality buff (Mythic+) to multiple targets `low`, and DEF buff (Supreme+) to single targets `low`.
 
-**103** units include this provider among their top 5 synergy partners. Why the match is common:
+**104** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -12992,7 +12980,7 @@ Vala also requires enemies **to be defeated**
 
 Vala provides Haste buff (Mythic+) to single targets `high`.
 
-- Indris (2.4 / 5)
+- Indris (2.5 / 5)
 - Nerion (2.2 / 5)
 - Dionel (1.7 / 5)
 
@@ -13126,9 +13114,9 @@ Common buffers are **Twins**, **Rowan**, or **Ravion**.
 
 Valen provides ATK buff (Mythic+) to single targets `low`.
 
-- Bonnie (1.8 / 5)
 - Carolina (1.8 / 5)
-- Indris (1.7 / 5)
+- Shadewing (1.6 / 5)
+- Nerion (1.5 / 5)
 
 ### Units that can act as a replacement for Valen
 
@@ -13526,9 +13514,9 @@ Common buffers are **Twins**, **Damian**, or **Hugin**.
 
 ### Units benefitting most from Viperian
 
-- Bonnie (2.4 / 5)
+- Bonnie (2.2 / 5)
 - Shadewing (2.2 / 5)
-- Indris (1.5 / 5)
+- Himmel (1.5 / 5)
 
 ### Units that can act as a replacement for Viperian
 
@@ -13989,8 +13977,8 @@ Zorya also requires allies **casting ultimates**
 
 Zorya provides Haste buff (EX+5) to single targets `low`.
 
-- Bonnie (4.4 / 5)
-- Indris (3.3 / 5)
+- Carolina (3.2 / 5)
+- Shadewing (2.7 / 5)
 - Nerion (2.5 / 5)
 
 ### Units that can act as a replacement for Zorya

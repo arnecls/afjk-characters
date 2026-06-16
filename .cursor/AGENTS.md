@@ -476,7 +476,9 @@ include this unit in their top five.
    (e.g. magic damage from allies for Bonnie, DoT on enemies for Shadewing,
    Mage/Tank/Support for Himmel's party composition, ally stat buffs for
    Perseus/Silven). Self-setup labels (Debuff on target (Aging), form/stance,
-   boss gates, etc.) are skipped. Requirements on Ex/Supreme+ tiers get a
+   boss gates, etc.) are skipped; **Debuff on target** is also omitted when
+   the hero applies that debuff in their own kit (Bonnie casts Aging at battle
+   start — partners need magic damage to stack it, not separate debuffs). Requirements on Ex/Supreme+ tiers get a
    defining-tier multiplier (`DEFINING_TIER_SCORE_MULT`). Synergy text uses
    `Enables {label} via {detail}`.
 
