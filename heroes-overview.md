@@ -2605,7 +2605,7 @@ Daimon provides Lifedrain buff to single targets `low` and Shield to multiple ta
 
 - Korin (66% `ally-shielder` `hp-scaling`)
 - Scarlita (50% `ally-shielder` `hp-scaling`)
-- Shemira (48% `hp-scaling` `summoner`)
+- Callan (36% `ally-shielder`)
 
 **Damage**
 
@@ -3090,7 +3090,7 @@ Eironn provides Dodge chance buff to single targets `high` and DEF buff (Legenda
 
 **Similar Skills**
 
-- Mehira (51% `aoe-damage` `enemy-grouping` `mass-cc`)
+- Mehira (60% `aoe-damage` `enemy-grouping` `mass-cc`)
 - Arden (48% `aoe-damage` `mass-cc`)
 - Tasi (48% `aoe-damage` `mass-cc`)
 
@@ -5262,7 +5262,7 @@ Common buffers are **Koko**, **Solise**, or **Smokey & Meerky**.
 **Similar Skills**
 
 - Dionel (60% `aoe-damage` `self-repositioner` `untargetable`)
-- Mehira (45% `aoe-damage` `life-drain` `untargetable`)
+- Mehira (51% `aoe-damage` `life-drain` `untargetable`)
 - Brutus (42% `aoe-damage` `cheat-death` `life-drain`)
 
 **Damage**
@@ -7839,7 +7839,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 - **Signature skill**: Euphoric Rush (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `aoe-damage` `enemy-grouping` `life-drain` `mass-cc` `summoner` `untargetable`
+- **Behavior tags**: `aoe-damage` `enemy-grouping` `life-drain` `mass-cc` `untargetable`
 - **Damage types**: Magic `low`, DoT `average`, HP loss `average`, Max HP-based damage `average`
 
 #### Play overview
@@ -7914,9 +7914,9 @@ Mehira provides Haste buff to single targets `average`.
 
 **Similar Skills**
 
-- Eironn (51% `aoe-damage` `enemy-grouping` `mass-cc`)
-- Igor (45% `aoe-damage` `life-drain` `untargetable`)
-- Florabelle (33% `aoe-damage` `summoner`)
+- Eironn (60% `aoe-damage` `enemy-grouping` `mass-cc`)
+- Igor (51% `aoe-damage` `life-drain` `untargetable`)
+- Cyran (34% `aoe-damage` `enemy-grouping`)
 
 **Damage**
 
@@ -10377,7 +10377,7 @@ Satrana provides Magic damage amplification (Mythic+) to single targets `average
 
 - Zorya (48% `hp-scaling` `life-drain`)
 - Mirael (40% `dot-specialist` `fire-attack`)
-- Gwyneth (33% `dot-specialist` `fire-attack`)
+- Shemira (33% `hp-scaling` `life-drain`)
 
 **Damage**
 
@@ -10909,7 +10909,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Phantom Procession (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles)
-- **Behavior tags**: `high-damage-ult` `hp-scaling` `life-drain` `summoner`
+- **Behavior tags**: `high-damage-ult` `hp-scaling` `life-drain`
 - **Damage types**: Magic `high`, Max HP-based damage `high`
 
 #### Play overview
@@ -10975,14 +10975,14 @@ Common buffers are **Twins**, **Solise**, or **Rowan**.
 **Best overall replacement**
 
 - Sylphira (68% `Damage` `Debuffs on enemies`)
-- Zorya (58% `Damage` `Similar Skills`)
-- Nazrik (54% `Damage` `Debuffs on enemies`)
+- Zorya (62% `Damage` `Similar Skills`)
+- Nazrik (56% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
-- Zorya (60% `hp-scaling` `life-drain`)
-- Daimon (48% `hp-scaling` `summoner`)
-- Marcille (34% `high-damage-ult` `summoner`)
+- Zorya (80% `hp-scaling` `life-drain`)
+- Satrana (33% `hp-scaling` `life-drain`)
+- Silven (30% `hp-scaling`)
 
 **Damage**
 
@@ -13570,7 +13570,7 @@ Common buffers are **Twins**, **Koko**, or **Rowan**.
 
 **Similar Skills**
 
-- Mehira (45% `aoe-damage` `life-drain` `mass-cc`)
+- Mehira (51% `aoe-damage` `life-drain` `mass-cc`)
 - Cyran (41% `aoe-damage` `battle-start-burst`)
 - Sonja (40% `aoe-damage` `life-drain`)
 
@@ -13921,7 +13921,7 @@ Zorya also requires allies **casting ultimates**
 
 **Similar Skills**
 
-- Shemira (60% `hp-scaling` `life-drain`)
+- Shemira (80% `hp-scaling` `life-drain`)
 - Satrana (48% `hp-scaling` `life-drain`)
 - Shakir (40% `life-drain`)
 

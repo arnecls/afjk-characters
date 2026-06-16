@@ -43,11 +43,13 @@ Faramor damage circle, Pandora's box.
 
 ## `summoner` vs skill VFX
 
-**Counts:** Mr. Carlyle, Sonny, turrets, voidlings, persistent illusions
-(Phraesto).
+**Counts:** Mr. Carlyle, Sonny, turrets, persistent illusions (Phraesto),
+Florabelle Bulbsprites — units placed on the battlefield that can be targeted
+or destroyed and contribute over time.
 
 **Does not count:** Flying swords (Salazer ult), flying blades (Silven ult),
-temporary blade volleys.
+temporary blade volleys; **spell-form** summons that are untargetable,
+undestroyable, and brief (Mehira voidlings, Shemira ghosts).
 
 ## `dot-specialist` vs debuffs
 

@@ -334,7 +334,6 @@
     "enemy-grouping",
     "life-drain",
     "mass-cc",
-    "summoner",
     "untargetable"
   ],
   "Mikola": [
@@ -460,8 +459,7 @@
   "Shemira": [
     "high-damage-ult",
     "hp-scaling",
-    "life-drain",
-    "summoner"
+    "life-drain"
   ],
   "Silven": [
     "hp-scaling",

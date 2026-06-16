@@ -118,7 +118,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `ally-buffer` / `ally-healer` / `ally-shielder` | Meaningful effect on **allies** | Self-only, or buffs/shields on summons/turrets |
 | `energy-provider` | Grants Energy to **allies** or accelerates ally ulimates | Self energy recovery only |
 | `battlefield-modification` | Physical obstacles or map layout changes | Buff/debuff/terrain **zones** alone |
-| `summoner` | **Persistent** companions on the field | Brief ult animations (flying blades, swords) |
+| `summoner` | **Persistent** companions on the battlefield (targetable, can be destroyed) | Brief ult animations (flying blades, swords); **spell-form** summons (Mehira voidlings, Shemira ghosts) that cannot be targeted or destroyed |
 | `dot-specialist` | Recurring tick damage as a **primary** pattern | Stat debuffs without DoT; bind damage alone |
 | `life-drain` | HP sustain tied to **dealing damage** | Stat steal, shield regen, heal-on-shield |
 | `fire-attack` | Burning or scorched-ground damage | Cannon/artillery theming without burn |
@@ -159,5 +159,9 @@ burst damage), `mass-cc` (ult stun only on debuffed targets), `dot-specialist`
 **Florabelle** — buffs/shields **summons**, not allies: `summoner`,
 `aoe-damage`. Not `battle-start-burst` (battle-start Spiny summon is setup,
 not burst), `ally-buffer` / `ally-shielder`.
+
+**Mehira / Shemira** — voidlings and ghosts are **spell-form** damage, not
+battlefield companions: keep `aoe-damage`, `life-drain`, etc. Not `summoner`
+(cannot be targeted or destroyed; exist only briefly).
 
 For more edge cases, see [pitfalls.md](pitfalls.md).

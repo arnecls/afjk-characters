@@ -8998,11 +8998,10 @@
             ]
           },
           {
-            "name": "Shemira",
-            "score": 0.48,
+            "name": "Callan",
+            "score": 0.36,
             "matches": [
-              "hp-scaling",
-              "summoner"
+              "ally-shielder"
             ]
           }
         ],
@@ -11030,7 +11029,7 @@
         "similar_skills": [
           {
             "name": "Mehira",
-            "score": 0.5143,
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "enemy-grouping",
@@ -19139,7 +19138,7 @@
           },
           {
             "name": "Mehira",
-            "score": 0.45,
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "life-drain",
@@ -29249,7 +29248,7 @@
         "similar_skills": [
           {
             "name": "Eironn",
-            "score": 0.5143,
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "enemy-grouping",
@@ -29258,7 +29257,7 @@
           },
           {
             "name": "Igor",
-            "score": 0.45,
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "life-drain",
@@ -29266,11 +29265,11 @@
             ]
           },
           {
-            "name": "Florabelle",
-            "score": 0.3333,
+            "name": "Cyran",
+            "score": 0.3429,
             "matches": [
               "aoe-damage",
-              "summoner"
+              "enemy-grouping"
             ]
           }
         ],
@@ -37191,11 +37190,11 @@
             ]
           },
           {
-            "name": "Gwyneth",
+            "name": "Shemira",
             "score": 0.3333,
             "matches": [
-              "dot-specialist",
-              "fire-attack"
+              "hp-scaling",
+              "life-drain"
             ]
           }
         ],
@@ -39452,26 +39451,25 @@
         "similar_skills": [
           {
             "name": "Zorya",
-            "score": 0.6,
+            "score": 0.8,
             "matches": [
               "hp-scaling",
               "life-drain"
             ]
           },
           {
-            "name": "Daimon",
-            "score": 0.48,
+            "name": "Satrana",
+            "score": 0.3333,
             "matches": [
               "hp-scaling",
-              "summoner"
+              "life-drain"
             ]
           },
           {
-            "name": "Marcille",
-            "score": 0.3429,
+            "name": "Silven",
+            "score": 0.3,
             "matches": [
-              "high-damage-ult",
-              "summoner"
+              "hp-scaling"
             ]
           }
         ],
@@ -39528,7 +39526,7 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.6826,
+            "score": 0.6892,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -39536,7 +39534,7 @@
           },
           {
             "name": "Zorya",
-            "score": 0.582,
+            "score": 0.6282,
             "matches": [
               "Damage",
               "Similar Skills"
@@ -39544,7 +39542,7 @@
           },
           {
             "name": "Nazrik",
-            "score": 0.548,
+            "score": 0.5619,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -48179,7 +48177,7 @@
         "similar_skills": [
           {
             "name": "Mehira",
-            "score": 0.45,
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "life-drain",
@@ -49358,7 +49356,7 @@
         "similar_skills": [
           {
             "name": "Shemira",
-            "score": 0.6,
+            "score": 0.8,
             "matches": [
               "hp-scaling",
               "life-drain"
