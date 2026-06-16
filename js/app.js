@@ -5145,7 +5145,7 @@
     if (bb.overflow_reasons && bb.overflow_reasons.length) {
       html += "<ul>";
       bb.overflow_reasons.forEach(function (r) {
-        html += "<li>" + renderRichLine(r) + "</li>";
+        html += "<li>" + renderInline(r) + "</li>";
       });
       html += "</ul>";
     }
