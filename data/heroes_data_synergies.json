@@ -10392,6 +10392,13 @@
           "score": 6.0
         },
         {
+          "provider": "Natsu",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Ulmus",
           "reasons": [
             "Shield via Shield (single target, average)",
@@ -13202,6 +13209,13 @@
           "reasons": [
             "Shield via Shield (single target, average)",
             "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Natsu",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
           ],
           "score": 6.0
         },
@@ -26068,6 +26082,13 @@
           "score": 9.7875
         },
         {
+          "provider": "Natsu",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
@@ -32291,15 +32312,24 @@
           "name": "Bonnie"
         },
         {
-          "score": 8.1,
-          "name": "Indris"
+          "score": 9.0,
+          "name": "Lily May"
         }
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [],
+        "buff": [
+          {
+            "name": "Perseus",
+            "score": 1.0,
+            "matches": [
+              "Magic DEF buff",
+              "Phys DEF buff"
+            ]
+          }
+        ],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -32410,6 +32440,15 @@
         ],
         "overall": [
           {
+            "name": "Perseus",
+            "score": 0.6941,
+            "matches": [
+              "Damage",
+              "Crowd Control",
+              "Buffs on allies"
+            ]
+          },
+          {
             "name": "Frieren",
             "score": 0.6175,
             "matches": [
@@ -32423,13 +32462,6 @@
               "Damage",
               "Crowd Control",
               "Debuffs on enemies"
-            ]
-          },
-          {
-            "name": "Marcille",
-            "score": 0.613,
-            "matches": [
-              "Damage"
             ]
           }
         ]
@@ -35471,6 +35503,13 @@
           "score": 6.0
         },
         {
+          "provider": "Natsu",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Perseus"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Ulmus",
           "reasons": [
             "Shield via Shield (single target, average)",
@@ -35532,45 +35571,23 @@
       ],
       "beneficiaries": [
         {
+          "score": 27.0,
+          "name": "Silven"
+        },
+        {
           "score": 16.0,
           "name": "Carolina"
         },
         {
           "score": 16.0,
           "name": "Nerion"
-        },
-        {
-          "score": 13.5,
-          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Contess",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -35654,15 +35671,6 @@
         ],
         "overall": [
           {
-            "name": "Himmel",
-            "score": 0.7373,
-            "matches": [
-              "Damage",
-              "Similar Skills",
-              "Buffs on allies"
-            ]
-          },
-          {
             "name": "Atalanta",
             "score": 0.7269,
             "matches": [
@@ -35671,11 +35679,18 @@
             ]
           },
           {
-            "name": "Pang",
-            "score": 0.6863,
+            "name": "Himmel",
+            "score": 0.6757,
             "matches": [
               "Damage",
-              "Buffs on allies"
+              "Similar Skills"
+            ]
+          },
+          {
+            "name": "Florabelle",
+            "score": 0.6322,
+            "matches": [
+              "Damage"
             ]
           }
         ]
@@ -41800,6 +41815,13 @@
           "score": 27.75
         },
         {
+          "provider": "Perseus",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Silven"
+          ],
+          "score": 27.0
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
@@ -41989,9 +42011,9 @@
           "score": 9.0
         },
         {
-          "provider": "Perseus",
+          "provider": "Natsu",
           "reasons": [
-            "Grants 1 distinct stat buff to Silven"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 9.0
         },

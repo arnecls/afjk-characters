@@ -24178,6 +24178,24 @@
               "area": "single",
               "target_count": 1,
               "type": "stat_mod",
+              "stat": "magic_def",
+              "name": "Magic DEF buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
               "stat": "vitality",
               "name": "Vitality buff",
               "value": [
@@ -24195,6 +24213,7 @@
             "ATK buff — Self",
             "DEF buff — Self",
             "Haste buff — Self",
+            "Magic DEF buff — Self",
             "Vitality buff — Self"
           ]
         }
@@ -28288,6 +28307,54 @@
                   "phase": "once_per_battle"
                 }
               ],
+              "type": "stat_mod",
+              "stat": "physical_def",
+              "name": "Phys DEF buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 560.0
+                }
+              ],
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "stat_mod",
+              "stat": "magic_def",
+              "name": "Magic DEF buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 560.0
+                }
+              ],
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",
@@ -28310,7 +28377,9 @@
             "ATK buff",
             "DEF buff — Self",
             "Energy recovery — Self",
-            "Haste buff — Self"
+            "Haste buff — Self",
+            "Magic DEF buff — Self",
+            "Phys DEF buff — Self"
           ]
         },
         "Hero Focus": {
@@ -36526,6 +36595,42 @@
                   "value": 30.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "physical_def",
+              "name": "Phys DEF buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ],
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "magic_def",
+              "name": "Magic DEF buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ],
+              "label": "buff_defensive"
             }
           ],
           "skill_range": 3,
@@ -36533,7 +36638,9 @@
             "ATK buff — Self",
             "Crit DMG boost — Self",
             "Crit buff — Self",
-            "DEF buff — Self"
+            "DEF buff — Self",
+            "Magic DEF buff",
+            "Phys DEF buff"
           ]
         },
         "Hero Focus": {
@@ -40466,6 +40573,42 @@
             },
             {
               "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "stat_mod",
+              "stat": "physical_def",
+              "name": "Phys DEF buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ],
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "stat_mod",
+              "stat": "magic_def",
+              "name": "Magic DEF buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ],
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -40492,7 +40635,9 @@
           "skill_range": 1,
           "skill_card_tags": [
             "ATK buff",
-            "Max HP buff — Self"
+            "Magic DEF buff",
+            "Max HP buff — Self",
+            "Phys DEF buff"
           ]
         },
         "Hero Focus": {

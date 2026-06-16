@@ -8373,17 +8373,23 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 ### Units benefitting most from Natsu
 
+Natsu provides Magic DEF buff to single targets `average` and Phys DEF buff to single targets `average`.
+
 - Bonnie (2.6 / 5)
 - Shadewing (2.2 / 5)
-- Indris (1.6 / 5)
+- Lily May (1.4 / 5)
 
 ### Units that can act as a replacement for Natsu
 
 **Best overall replacement**
 
+- Perseus (69% `Damage` `Crowd Control` `Buffs on allies`)
 - Frieren (61% `Damage`)
 - Zorya (61% `Damage` `Crowd Control` `Debuffs on enemies`)
-- Marcille (61% `Damage`)
+
+**Buffs on allies**
+
+- Perseus (100% `Magic DEF buff` `Phys DEF buff`)
 
 **Similar Skills**
 
@@ -9284,25 +9290,19 @@ Perseus also requires units **buffing them**
 
 ### Units benefitting most from Perseus
 
-Perseus provides ATK buff to multiple targets `average`.
+Perseus provides ATK buff to multiple targets `average`, Magic DEF buff to multiple targets `average`, and Phys DEF buff to multiple targets `average`.
 
 - Carolina (3.1 / 5)
-- Shadewing (2.3 / 5)
 - Nerion (2.3 / 5)
+- Silven (2.3 / 5)
 
 ### Units that can act as a replacement for Perseus
 
 **Best overall replacement**
 
-- Himmel (73% `Damage` `Similar Skills` `Buffs on allies`)
 - Atalanta (72% `Damage` `Crowd Control`)
-- Pang (68% `Damage` `Buffs on allies`)
-
-**Buffs on allies**
-
-- Gunnar (100% `ATK`)
-- Contess (100% `ATK`)
-- Frieren (100% `ATK`)
+- Himmel (67% `Damage` `Similar Skills`)
+- Florabelle (63% `Damage`)
 
 **Similar Skills**
 

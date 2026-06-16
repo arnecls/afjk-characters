@@ -1196,6 +1196,8 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         "Attack range buff",
         "Ranged DEF buff",
         "DEF buff",
+        "Phys DEF buff",
+        "Magic DEF buff",
         "Vitality buff",
         "Dodge chance buff",
         "Movement speed buff",
@@ -2770,6 +2772,24 @@ BUFF_RULES = [
         r"gain(?:s|ing)? .{0,50}(?:phys(?:ical)? and magic|magic and phys(?:ical)?) "
         r"def\b",
         "DEF buff",
+    ),
+    (
+        r"(?:phys(?:ical)? & magic def|both phys(?:ical)? def and magic def)"
+        r".{0,30}increas",
+        "Phys DEF buff",
+    ),
+    (
+        r"(?:phys(?:ical)? & magic def|both phys(?:ical)? def and magic def)"
+        r".{0,30}increas",
+        "Magic DEF buff",
+    ),
+    (
+        r"phys(?:ical)? def.{0,30}increas(?!.{0,20}reduc)",
+        "Phys DEF buff",
+    ),
+    (
+        r"magic def.{0,30}increas(?!.{0,20}reduc)",
+        "Magic DEF buff",
     ),
     # Shield: gains/granting/providing/converting into a shield
     (
@@ -5360,7 +5380,7 @@ def analyze_text(
                 r"\branged def\b", scope, re.I
             ):
                 continue
-            if label == "DEF buff" and re.search(
+            if label in ("DEF buff", "Phys DEF buff", "Magic DEF buff") and re.search(
                 r"\breduc\w+ .{0,40}(?:phys(?:ical)?|magic) def\b", scope.lower()
             ):
                 continue
@@ -5737,6 +5757,8 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     "Lifedrain buff": ("Life Drain",),
     "Shield": ("Shield",),
     "DEF buff": ("Physical DEF", "Magic DEF"),
+    "Phys DEF buff": ("Physical DEF",),
+    "Magic DEF buff": ("Magic DEF",),
     # Tanks that self-stack damage reduction want sustain (Max HP buffs).
     "Damage taken reduction": ("Max HP",),
     "Damage dealt buff": ("ATK",),

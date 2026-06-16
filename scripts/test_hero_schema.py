@@ -524,6 +524,18 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotIn("ranged", keys)
         self.assertNotIn("def buff", keys)
 
+    def test_perseus_skill2_skill_card_phys_and_magic_def_buffs(self):
+        hero = self._hero_analyzed("Perseus")
+        tags = rs.format_skill_card_tags(hero, "skill2")
+        self.assertIn("ATK buff", tags)
+        self.assertIn("Phys DEF buff", tags)
+        self.assertIn("Magic DEF buff", tags)
+        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        self.assertIn("atk", keys)
+        self.assertIn("phys def", keys)
+        self.assertIn("magic def", keys)
+        self.assertEqual(len(keys), len(set(keys)))
+
     def test_contess_skill2_skill_card_energy_recovery_debuff(self):
         hero = self._hero_analyzed("Contess")
         tags = rs.format_skill_card_tags(hero, "skill2")
