@@ -374,7 +374,7 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Silven",
+            "name": "Nazrik",
             "score": 0.48,
             "matches": [
               "hp-scaling",
@@ -382,8 +382,8 @@
             ]
           },
           {
-            "name": "Nazrik",
-            "score": 0.48,
+            "name": "Silven",
+            "score": 0.4,
             "matches": [
               "hp-scaling",
               "mark-target"
@@ -1217,7 +1217,7 @@
           },
           {
             "name": "Natsu",
-            "score": 0.6386,
+            "score": 0.6347,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -1685,11 +1685,11 @@
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Arden",
             "score": 0.4,
             "matches": [
-              "ally-shielder",
-              "aoe-damage"
+              "aoe-damage",
+              "mass-cc"
             ]
           }
         ],
@@ -1777,7 +1777,7 @@
           },
           {
             "name": "Lucca",
-            "score": 0.8064,
+            "score": 0.8,
             "matches": [
               "Buffs on allies",
               "Crowd Control",
@@ -1786,7 +1786,7 @@
           },
           {
             "name": "Scarlita",
-            "score": 0.624,
+            "score": 0.6133,
             "matches": [
               "Buffs on allies",
               "Crowd Control",
@@ -2054,12 +2054,11 @@
             ]
           },
           {
-            "name": "Natsu",
+            "name": "Viperian",
             "score": 0.6,
             "matches": [
               "aoe-damage",
-              "dot-specialist",
-              "mass-cc"
+              "dot-specialist"
             ]
           }
         ],
@@ -2952,17 +2951,17 @@
             ]
           },
           {
-            "name": "Sylphira",
-            "score": 0.6351,
-            "matches": [
-              "Crowd Control"
-            ]
-          },
-          {
             "name": "Nara",
             "score": 0.6266,
             "matches": [
               "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Sylphira",
+            "score": 0.6256,
+            "matches": [
               "Crowd Control"
             ]
           }
@@ -3139,13 +3138,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Silven",
-            "score": 0.25,
-            "matches": [
-              "mark-target"
-            ]
-          },
-          {
             "name": "Zanie",
             "score": 0.25,
             "matches": [
@@ -3157,6 +3149,13 @@
             "score": 0.25,
             "matches": [
               "summoner"
+            ]
+          },
+          {
+            "name": "Nazrik",
+            "score": 0.25,
+            "matches": [
+              "mark-target"
             ]
           }
         ],
@@ -3620,18 +3619,18 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.3333,
-            "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
             "name": "Lily May",
             "score": 0.3333,
             "matches": [
               "hp-scaling",
               "transformation"
+            ]
+          },
+          {
+            "name": "Zorya",
+            "score": 0.3333,
+            "matches": [
+              "hp-scaling"
             ]
           }
         ],
@@ -3712,7 +3711,7 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.6854,
+            "score": 0.679,
             "matches": [
               "Crowd Control",
               "Debuffs on enemies",
@@ -4075,17 +4074,17 @@
             ]
           },
           {
-            "name": "Saida",
-            "score": 0.24,
-            "matches": [
-              "cheat-death"
-            ]
-          },
-          {
             "name": "Harak",
             "score": 0.24,
             "matches": [
               "assassin"
+            ]
+          },
+          {
+            "name": "Saida",
+            "score": 0.2057,
+            "matches": [
+              "cheat-death"
             ]
           }
         ],
@@ -4154,7 +4153,7 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.8717,
+            "score": 0.8622,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -5609,24 +5608,26 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Florabelle",
-            "score": 0.36,
-            "matches": [
-              "summoner"
-            ]
-          },
-          {
-            "name": "Zanie",
-            "score": 0.25,
-            "matches": [
-              "summoner"
-            ]
-          },
-          {
             "name": "Saida",
-            "score": 0.24,
+            "score": 0.4,
             "matches": [
-              "cheat-death"
+              "cheat-death",
+              "high-initial-energy"
+            ]
+          },
+          {
+            "name": "Laios",
+            "score": 0.3333,
+            "matches": [
+              "high-initial-energy",
+              "summoner"
+            ]
+          },
+          {
+            "name": "Florabelle",
+            "score": 0.288,
+            "matches": [
+              "summoner"
             ]
           }
         ],
@@ -5708,7 +5709,7 @@
         "overall": [
           {
             "name": "Natsu",
-            "score": 0.665,
+            "score": 0.6927,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -5717,7 +5718,7 @@
           },
           {
             "name": "Saida",
-            "score": 0.5038,
+            "score": 0.5407,
             "matches": [
               "Damage"
             ]
@@ -6038,13 +6039,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Lucca",
-            "score": 0.4,
-            "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
             "name": "Daimon",
             "score": 0.36,
             "matches": [
@@ -6052,8 +6046,15 @@
             ]
           },
           {
-            "name": "Pang",
+            "name": "Korin",
             "score": 0.3333,
+            "matches": [
+              "ally-shielder"
+            ]
+          },
+          {
+            "name": "Thador",
+            "score": 0.3,
             "matches": [
               "ally-shielder"
             ]
@@ -6123,7 +6124,7 @@
           },
           {
             "name": "Hepler",
-            "score": 0.6017,
+            "score": 0.5921,
             "matches": [
               "Buffs on allies",
               "Crowd Control"
@@ -8682,7 +8683,7 @@
         "similar_skills": [
           {
             "name": "Alna",
-            "score": 0.4,
+            "score": 0.3333,
             "matches": [
               "cc-immunity",
               "invincibility"
@@ -8690,7 +8691,7 @@
           },
           {
             "name": "Lily May",
-            "score": 0.3429,
+            "score": 0.3,
             "matches": [
               "cc-immunity",
               "invincibility"
@@ -8698,7 +8699,7 @@
           },
           {
             "name": "Kulu",
-            "score": 0.3,
+            "score": 0.24,
             "matches": [
               "battlefield-modification"
             ]
@@ -9023,26 +9024,27 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Scarlita",
+            "score": 0.4,
+            "matches": [
+              "aoe-damage",
+              "execute"
+            ]
+          },
+          {
+            "name": "Nara",
+            "score": 0.4,
+            "matches": [
+              "execute",
+              "high-initial-energy"
+            ]
+          },
+          {
             "name": "Mehira",
-            "score": 0.4,
+            "score": 0.3429,
             "matches": [
               "aoe-damage",
               "enemy-grouping"
-            ]
-          },
-          {
-            "name": "Eironn",
-            "score": 0.4,
-            "matches": [
-              "aoe-damage",
-              "enemy-grouping"
-            ]
-          },
-          {
-            "name": "Tilaya",
-            "score": 0.3333,
-            "matches": [
-              "aoe-damage"
             ]
           }
         ],
@@ -9309,7 +9311,7 @@
           },
           {
             "name": "Scarlita",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "hp-scaling"
@@ -9842,15 +9844,6 @@
         ],
         "similar_skills": [
           {
-            "name": "Laios",
-            "score": 1.0,
-            "matches": [
-              "ally-buffer",
-              "ally-healer",
-              "summoner"
-            ]
-          },
-          {
             "name": "Koko",
             "score": 0.8,
             "matches": [
@@ -9864,6 +9857,15 @@
             "matches": [
               "ally-buffer",
               "ally-healer"
+            ]
+          },
+          {
+            "name": "Laios",
+            "score": 0.75,
+            "matches": [
+              "ally-buffer",
+              "ally-healer",
+              "summoner"
             ]
           }
         ],
@@ -11154,7 +11156,7 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.5373,
+            "score": 0.5339,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -11563,11 +11565,11 @@
             ]
           },
           {
-            "name": "Cyran",
+            "name": "Arden",
             "score": 0.4,
             "matches": [
               "aoe-damage",
-              "enemy-grouping"
+              "mass-cc"
             ]
           }
         ],
@@ -14742,15 +14744,15 @@
             ]
           },
           {
-            "name": "Scarlita",
-            "score": 0.5,
+            "name": "Gunnar",
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "aoe-damage"
             ]
           },
           {
-            "name": "Gunnar",
+            "name": "Scarlita",
             "score": 0.4,
             "matches": [
               "ally-shielder",
@@ -14820,7 +14822,7 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.7719,
+            "score": 0.7627,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -15059,11 +15061,11 @@
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.4114,
+            "name": "Smokey & Meerky",
+            "score": 0.4,
             "matches": [
               "ally-healer",
-              "ally-shielder"
+              "aoe-healing"
             ]
           }
         ],
@@ -15098,7 +15100,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.5794,
+            "score": 0.5712,
             "matches": [
               "Damage",
               "Healing"
@@ -15992,7 +15994,7 @@
           },
           {
             "name": "Hugin",
-            "score": 0.4,
+            "score": 0.3333,
             "matches": [
               "ally-shielder",
               "static-tile-buffer"
@@ -16317,7 +16319,7 @@
           },
           {
             "name": "Natsu",
-            "score": 0.6,
+            "score": 0.5143,
             "matches": [
               "dot-specialist",
               "fire-attack",
@@ -17274,7 +17276,7 @@
           },
           {
             "name": "Nara",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "assassin",
               "execute"
@@ -17356,20 +17358,19 @@
         ],
         "overall": [
           {
-            "name": "Nara",
-            "score": 0.7846,
-            "matches": [
-              "Damage",
-              "Crowd Control",
-              "Similar Skills"
-            ]
-          },
-          {
             "name": "Seth",
             "score": 0.7754,
             "matches": [
               "Damage",
               "Similar Skills"
+            ]
+          },
+          {
+            "name": "Nara",
+            "score": 0.7569,
+            "matches": [
+              "Damage",
+              "Crowd Control"
             ]
           },
           {
@@ -17700,23 +17701,24 @@
         "similar_skills": [
           {
             "name": "Pang",
-            "score": 0.6667,
+            "score": 0.75,
             "matches": [
               "ally-shielder",
+              "high-initial-energy",
               "transformation"
             ]
           },
           {
-            "name": "Solise",
-            "score": 0.5,
+            "name": "Lucca",
+            "score": 0.48,
             "matches": [
-              "ally-healer",
-              "ally-shielder"
+              "ally-shielder",
+              "high-initial-energy"
             ]
           },
           {
-            "name": "Velara",
-            "score": 0.5,
+            "name": "Solise",
+            "score": 0.4,
             "matches": [
               "ally-healer",
               "ally-shielder"
@@ -18731,16 +18733,16 @@
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Dionel",
             "score": 0.5,
             "matches": [
-              "ally-buffer",
+              "aoe-damage",
               "self-repositioner"
             ]
           },
           {
-            "name": "Dionel",
-            "score": 0.5,
+            "name": "Frieren",
+            "score": 0.48,
             "matches": [
               "aoe-damage",
               "self-repositioner"
@@ -19680,8 +19682,16 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Lucca",
+            "score": 0.48,
+            "matches": [
+              "ally-shielder",
+              "high-initial-energy"
+            ]
+          },
+          {
             "name": "Thador",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -19689,15 +19699,7 @@
           },
           {
             "name": "Ravion",
-            "score": 0.5,
-            "matches": [
-              "ally-shielder",
-              "energy-provider"
-            ]
-          },
-          {
-            "name": "Twins",
-            "score": 0.48,
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "energy-provider"
@@ -21365,8 +21367,8 @@
             ]
           },
           {
-            "name": "Laios",
-            "score": 0.6667,
+            "name": "Twins",
+            "score": 0.6,
             "matches": [
               "ally-buffer",
               "ally-healer"
@@ -22206,7 +22208,7 @@
         "similar_skills": [
           {
             "name": "Walker",
-            "score": 0.6857,
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "battle-start-burst",
@@ -22216,7 +22218,7 @@
           },
           {
             "name": "Parisa",
-            "score": 0.6,
+            "score": 0.5143,
             "matches": [
               "ally-buffer",
               "aoe-damage",
@@ -22225,7 +22227,7 @@
           },
           {
             "name": "Eironn",
-            "score": 0.45,
+            "score": 0.4,
             "matches": [
               "aoe-damage",
               "battle-start-burst",
@@ -22794,8 +22796,8 @@
             ]
           },
           {
-            "name": "Laios",
-            "score": 0.6667,
+            "name": "Twins",
+            "score": 0.6,
             "matches": [
               "ally-buffer",
               "ally-healer"
@@ -22886,7 +22888,7 @@
           },
           {
             "name": "Hepler",
-            "score": 0.6555,
+            "score": 0.6462,
             "matches": [
               "Healing",
               "Buffs on allies",
@@ -23428,7 +23430,7 @@
         "similar_skills": [
           {
             "name": "Marilee",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "hp-scaling",
               "self-repositioner"
@@ -23436,18 +23438,18 @@
           },
           {
             "name": "Himmel",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "ally-buffer",
               "self-repositioner"
             ]
           },
           {
-            "name": "Athalia",
-            "score": 0.5,
+            "name": "Silven",
+            "score": 0.4,
             "matches": [
-              "hp-scaling",
-              "self-repositioner"
+              "high-initial-energy",
+              "hp-scaling"
             ]
           }
         ],
@@ -23762,14 +23764,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Scarlita",
-            "score": 0.8,
-            "matches": [
-              "ally-shielder",
-              "hp-scaling"
-            ]
-          },
-          {
             "name": "Daimon",
             "score": 0.6667,
             "matches": [
@@ -23778,7 +23772,15 @@
             ]
           },
           {
-            "name": "Silven",
+            "name": "Scarlita",
+            "score": 0.6,
+            "matches": [
+              "ally-shielder",
+              "hp-scaling"
+            ]
+          },
+          {
+            "name": "Zorya",
             "score": 0.4,
             "matches": [
               "hp-scaling"
@@ -23838,16 +23840,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Scarlita",
-            "score": 0.5351,
-            "matches": [
-              "Similar Skills",
-              "Buffs on allies"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Kruger": {
@@ -24990,7 +24983,7 @@
         "similar_skills": [
           {
             "name": "Damian",
-            "score": 1.0,
+            "score": 0.75,
             "matches": [
               "ally-buffer",
               "ally-healer",
@@ -24999,7 +24992,7 @@
           },
           {
             "name": "Koko",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "ally-buffer",
               "ally-healer"
@@ -25007,7 +25000,7 @@
           },
           {
             "name": "Isabella",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "ally-buffer",
               "ally-healer"
@@ -26211,7 +26204,7 @@
           },
           {
             "name": "Sylphira",
-            "score": 0.8284,
+            "score": 0.8247,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -27077,24 +27070,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Callan",
-            "score": 0.4,
+            "name": "Pang",
+            "score": 0.5,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "high-initial-energy"
             ]
           },
           {
-            "name": "Korin",
-            "score": 0.4,
+            "name": "Hugin",
+            "score": 0.48,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "high-initial-energy"
             ]
           },
           {
-            "name": "Reinier",
-            "score": 0.3333,
+            "name": "Hepler",
+            "score": 0.48,
             "matches": [
-              "disabler"
+              "ally-shielder",
+              "high-initial-energy"
             ]
           }
         ],
@@ -27155,7 +27151,7 @@
         "overall": [
           {
             "name": "Antandra",
-            "score": 0.5835,
+            "score": 0.5771,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -27608,19 +27604,19 @@
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.48,
-            "matches": [
-              "ally-healer",
-              "ally-shielder"
-            ]
-          },
-          {
             "name": "Cassadee",
             "score": 0.48,
             "matches": [
               "aoe-damage",
               "enemy-debuffer"
+            ]
+          },
+          {
+            "name": "Galahad",
+            "score": 0.4,
+            "matches": [
+              "ally-shielder",
+              "aoe-damage"
             ]
           }
         ],
@@ -27699,7 +27695,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.7488,
+            "score": 0.736,
             "matches": [
               "Buffs on allies",
               "Damage",
@@ -27708,7 +27704,7 @@
           },
           {
             "name": "Scarlita",
-            "score": 0.653,
+            "score": 0.6424,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -27929,25 +27925,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Antandra",
+            "name": "Lucca",
             "score": 0.5,
             "matches": [
               "ally-shielder",
-              "mass-cc"
+              "high-initial-energy"
             ]
           },
           {
-            "name": "Korin",
-            "score": 0.4,
+            "name": "Pang",
+            "score": 0.5,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "high-initial-energy"
             ]
           },
           {
-            "name": "Callan",
-            "score": 0.3333,
+            "name": "Valka",
+            "score": 0.48,
             "matches": [
-              "ally-shielder"
+              "ally-shielder",
+              "high-initial-energy"
             ]
           }
         ],
@@ -28007,7 +28005,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.5076,
+            "score": 0.5591,
             "matches": [
               "Buffs on allies",
               "Crowd Control",
@@ -29731,11 +29729,11 @@
             ]
           },
           {
-            "name": "Laios",
+            "name": "Atalanta",
             "score": 0.3429,
             "matches": [
-              "ally-healer",
-              "summoner"
+              "aoe-damage",
+              "battle-start-burst"
             ]
           }
         ],
@@ -29792,7 +29790,7 @@
         "overall": [
           {
             "name": "Natsu",
-            "score": 0.6199,
+            "score": 0.6138,
             "matches": [
               "Damage"
             ]
@@ -30092,17 +30090,18 @@
           },
           {
             "name": "Kordan",
-            "score": 0.6667,
+            "score": 0.5,
             "matches": [
               "hp-scaling",
               "self-repositioner"
             ]
           },
           {
-            "name": "Silven",
+            "name": "Vala",
             "score": 0.48,
             "matches": [
-              "hp-scaling"
+              "hp-scaling",
+              "self-repositioner"
             ]
           }
         ],
@@ -30649,7 +30648,7 @@
           },
           {
             "name": "Cyran",
-            "score": 0.4,
+            "score": 0.3429,
             "matches": [
               "aoe-damage",
               "enemy-grouping"
@@ -31699,15 +31698,15 @@
             ]
           },
           {
-            "name": "Natsu",
-            "score": 0.5408,
+            "name": "Silven",
+            "score": 0.5382,
             "matches": [
               "Damage"
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.5382,
+            "name": "Natsu",
+            "score": 0.5276,
             "matches": [
               "Damage"
             ]
@@ -31980,24 +31979,26 @@
         "similar_skills": [
           {
             "name": "Harak",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "assassin",
               "execute"
             ]
           },
           {
-            "name": "Ludovic",
-            "score": 0.3,
+            "name": "Cyran",
+            "score": 0.4,
             "matches": [
-              "ally-healer"
+              "execute",
+              "high-initial-energy"
             ]
           },
           {
-            "name": "Isabella",
-            "score": 0.3,
+            "name": "Hepler",
+            "score": 0.3333,
             "matches": [
-              "ally-healer"
+              "ally-healer",
+              "high-initial-energy"
             ]
           }
         ],
@@ -32334,7 +32335,7 @@
         "similar_skills": [
           {
             "name": "Frieren",
-            "score": 0.6171,
+            "score": 0.54,
             "matches": [
               "aoe-damage",
               "dot-specialist",
@@ -32343,7 +32344,7 @@
           },
           {
             "name": "Gwyneth",
-            "score": 0.6,
+            "score": 0.5143,
             "matches": [
               "dot-specialist",
               "fire-attack",
@@ -32352,7 +32353,7 @@
           },
           {
             "name": "Arden",
-            "score": 0.6,
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "dot-specialist",
@@ -32440,18 +32441,11 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.6941,
+            "score": 0.6882,
             "matches": [
               "Damage",
               "Crowd Control",
               "Buffs on allies"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 0.6175,
-            "matches": [
-              "Damage"
             ]
           },
           {
@@ -32461,6 +32455,13 @@
               "Damage",
               "Crowd Control",
               "Debuffs on enemies"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 0.5997,
+            "matches": [
+              "Damage"
             ]
           }
         ]
@@ -32514,7 +32515,7 @@
         "similar_skills": [
           {
             "name": "Silven",
-            "score": 1.0,
+            "score": 0.8,
             "matches": [
               "hp-scaling",
               "mark-target"
@@ -34103,8 +34104,8 @@
             ]
           },
           {
-            "name": "Galahad",
-            "score": 0.5035,
+            "name": "Cryonaia",
+            "score": 0.5151,
             "matches": [
               "Damage"
             ]
@@ -34654,25 +34655,27 @@
         "similar_skills": [
           {
             "name": "Hepler",
-            "score": 0.6667,
+            "score": 0.75,
             "matches": [
               "ally-shielder",
+              "high-initial-energy",
               "transformation"
             ]
           },
           {
-            "name": "Ulmus",
-            "score": 0.6,
+            "name": "Lucca",
+            "score": 0.5,
             "matches": [
               "ally-shielder",
-              "transformation"
+              "high-initial-energy"
             ]
           },
           {
-            "name": "Baelran",
-            "score": 0.3333,
+            "name": "Saida",
+            "score": 0.48,
             "matches": [
-              "transformation"
+              "ally-shielder",
+              "high-initial-energy"
             ]
           }
         ],
@@ -34744,7 +34747,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.8398,
+            "score": 0.8629,
             "matches": [
               "Damage",
               "Similar Skills",
@@ -36216,7 +36219,7 @@
         "overall": [
           {
             "name": "Hepler",
-            "score": 0.6556,
+            "score": 0.6529,
             "matches": [
               "Crowd Control",
               "Buffs on allies"
@@ -36378,13 +36381,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Silven",
-            "score": 0.4,
-            "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
             "name": "Nazrik",
             "score": 0.4,
             "matches": [
@@ -36393,6 +36389,13 @@
           },
           {
             "name": "Marilee",
+            "score": 0.4,
+            "matches": [
+              "hp-scaling"
+            ]
+          },
+          {
+            "name": "Granny Dahnie",
             "score": 0.4,
             "matches": [
               "hp-scaling"
@@ -36816,15 +36819,15 @@
             ]
           },
           {
-            "name": "Hugin",
-            "score": 0.5,
+            "name": "Twins",
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "energy-provider"
             ]
           },
           {
-            "name": "Twins",
+            "name": "Hugin",
             "score": 0.4,
             "matches": [
               "ally-shielder",
@@ -37120,13 +37123,6 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Lucca",
-            "score": 0.3333,
-            "matches": [
-              "disabler"
-            ]
-          },
-          {
             "name": "Pippa",
             "score": 0.3333,
             "matches": [
@@ -37136,6 +37132,13 @@
           {
             "name": "Indris",
             "score": 0.3333,
+            "matches": [
+              "disabler"
+            ]
+          },
+          {
+            "name": "Lucca",
+            "score": 0.25,
             "matches": [
               "disabler"
             ]
@@ -38378,25 +38381,26 @@
         "similar_skills": [
           {
             "name": "Thoran",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "cheat-death",
               "life-drain"
             ]
           },
           {
-            "name": "Brutus",
+            "name": "Sylphira",
+            "score": 0.3429,
+            "matches": [
+              "high-initial-energy",
+              "life-drain"
+            ]
+          },
+          {
+            "name": "Hugin",
             "score": 0.3333,
             "matches": [
-              "cheat-death",
-              "life-drain"
-            ]
-          },
-          {
-            "name": "Harak",
-            "score": 0.288,
-            "matches": [
-              "life-drain"
+              "ally-shielder",
+              "high-initial-energy"
             ]
           }
         ],
@@ -38464,10 +38468,17 @@
         "overall": [
           {
             "name": "Galahad",
-            "score": 0.5458,
+            "score": 0.5365,
             "matches": [
               "Damage",
               "Crowd Control"
+            ]
+          },
+          {
+            "name": "Sylphira",
+            "score": 0.5321,
+            "matches": [
+              "Damage"
             ]
           },
           {
@@ -38874,7 +38885,7 @@
           },
           {
             "name": "Sylphira",
-            "score": 0.48,
+            "score": 0.4,
             "matches": [
               "disabler",
               "life-drain"
@@ -38957,7 +38968,7 @@
           },
           {
             "name": "Nara",
-            "score": 0.6203,
+            "score": 0.6092,
             "matches": [
               "Damage"
             ]
@@ -39277,7 +39288,7 @@
         "similar_skills": [
           {
             "name": "Korin",
-            "score": 0.8,
+            "score": 0.6,
             "matches": [
               "ally-shielder",
               "hp-scaling"
@@ -39285,7 +39296,7 @@
           },
           {
             "name": "Zandrok",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
               "aoe-damage",
               "hp-scaling"
@@ -39293,7 +39304,7 @@
           },
           {
             "name": "Galahad",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "ally-shielder",
               "aoe-damage"
@@ -39357,7 +39368,7 @@
         "overall": [
           {
             "name": "Korin",
-            "score": 0.5861,
+            "score": 0.5176,
             "matches": [
               "Similar Skills",
               "Buffs on allies"
@@ -41063,18 +41074,18 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Sylphira",
-            "score": 0.5,
-            "matches": [
-              "life-drain",
-              "transformation"
-            ]
-          },
-          {
             "name": "Kruger",
             "score": 0.48,
             "matches": [
               "life-drain"
+            ]
+          },
+          {
+            "name": "Sylphira",
+            "score": 0.4,
+            "matches": [
+              "life-drain",
+              "transformation"
             ]
           },
           {
@@ -41564,7 +41575,7 @@
             ]
           },
           {
-            "name": "Silven",
+            "name": "Nazrik",
             "score": 0.3,
             "matches": [
               "hp-scaling"
@@ -41624,7 +41635,7 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.6892,
+            "score": 0.6826,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -42288,15 +42299,7 @@
         "similar_skills": [
           {
             "name": "Nazrik",
-            "score": 1.0,
-            "matches": [
-              "hp-scaling",
-              "mark-target"
-            ]
-          },
-          {
-            "name": "Aliceth",
-            "score": 0.48,
+            "score": 0.8,
             "matches": [
               "hp-scaling",
               "mark-target"
@@ -42304,10 +42307,18 @@
           },
           {
             "name": "Vala",
-            "score": 0.48,
+            "score": 0.4114,
             "matches": [
               "hp-scaling",
               "mark-target"
+            ]
+          },
+          {
+            "name": "Kordan",
+            "score": 0.4,
+            "matches": [
+              "high-initial-energy",
+              "hp-scaling"
             ]
           }
         ],
@@ -42364,7 +42375,15 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.6306,
+            "score": 0.6702,
+            "matches": [
+              "Damage",
+              "Crowd Control"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 0.5724,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -42372,18 +42391,10 @@
           },
           {
             "name": "Zorya",
-            "score": 0.5856,
+            "score": 0.5663,
             "matches": [
               "Damage",
               "Crowd Control"
-            ]
-          },
-          {
-            "name": "Nazrik",
-            "score": 0.584,
-            "matches": [
-              "Damage",
-              "Similar Skills"
             ]
           }
         ]
@@ -42942,10 +42953,10 @@
             ]
           },
           {
-            "name": "Silven",
+            "name": "Shadewing",
             "score": 0.3,
             "matches": [
-              "mark-target"
+              "enemy-debuffer"
             ]
           }
         ],
@@ -44328,8 +44339,8 @@
             ]
           },
           {
-            "name": "Kordan",
-            "score": 0.36,
+            "name": "Marilee",
+            "score": 0.3333,
             "matches": [
               "self-repositioner"
             ]
@@ -44817,7 +44828,7 @@
         "similar_skills": [
           {
             "name": "Shakir",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "life-drain",
               "transformation"
@@ -44825,18 +44836,19 @@
           },
           {
             "name": "Natsu",
-            "score": 0.3,
+            "score": 0.4,
             "matches": [
+              "high-initial-energy",
               "mass-cc",
               "transformation"
             ]
           },
           {
-            "name": "Mehira",
-            "score": 0.2857,
+            "name": "Saida",
+            "score": 0.3429,
             "matches": [
-              "life-drain",
-              "mass-cc"
+              "high-initial-energy",
+              "life-drain"
             ]
           }
         ],
@@ -44910,7 +44922,7 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.6346,
+            "score": 0.6741,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -44918,7 +44930,7 @@
           },
           {
             "name": "Baelran",
-            "score": 0.6324,
+            "score": 0.6213,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -45263,11 +45275,10 @@
             ]
           },
           {
-            "name": "Natsu",
-            "score": 0.375,
+            "name": "Bonnie",
+            "score": 0.3429,
             "matches": [
               "aoe-damage",
-              "fire-attack",
               "transformation"
             ]
           }
@@ -46664,18 +46675,18 @@
             ]
           },
           {
-            "name": "Hugin",
-            "score": 0.5,
-            "matches": [
-              "ally-shielder",
-              "energy-provider"
-            ]
-          },
-          {
             "name": "Pandora",
             "score": 0.5,
             "matches": [
               "enemy-debuffer",
+              "energy-provider"
+            ]
+          },
+          {
+            "name": "Twins",
+            "score": 0.4,
+            "matches": [
+              "ally-shielder",
               "energy-provider"
             ]
           }
@@ -46995,7 +47006,7 @@
         "similar_skills": [
           {
             "name": "Saida",
-            "score": 0.5,
+            "score": 0.4,
             "matches": [
               "cheat-death",
               "life-drain"
@@ -47908,7 +47919,7 @@
           },
           {
             "name": "Pang",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
               "ally-shielder",
               "transformation"
@@ -47969,7 +47980,7 @@
         "overall": [
           {
             "name": "Scarlita",
-            "score": 0.7492,
+            "score": 0.7218,
             "matches": [
               "Buffs on allies",
               "Damage",
@@ -47978,10 +47989,9 @@
           },
           {
             "name": "Pang",
-            "score": 0.6171,
+            "score": 0.576,
             "matches": [
               "Buffs on allies",
-              "Similar Skills",
               "Damage"
             ]
           }
@@ -48421,19 +48431,19 @@
             ]
           },
           {
-            "name": "Silven",
-            "score": 0.48,
-            "matches": [
-              "hp-scaling",
-              "mark-target"
-            ]
-          },
-          {
             "name": "Marilee",
             "score": 0.48,
             "matches": [
               "hp-scaling",
               "self-repositioner"
+            ]
+          },
+          {
+            "name": "Silven",
+            "score": 0.4114,
+            "matches": [
+              "hp-scaling",
+              "mark-target"
             ]
           }
         ],
@@ -48832,7 +48842,7 @@
           },
           {
             "name": "Natsu",
-            "score": 0.6,
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "mass-cc",
@@ -48926,7 +48936,7 @@
           },
           {
             "name": "Pang",
-            "score": 0.9138,
+            "score": 0.8972,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -49374,25 +49384,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Twins",
+            "name": "Lucca",
+            "score": 0.4,
+            "matches": [
+              "ally-shielder",
+              "high-initial-energy"
+            ]
+          },
+          {
+            "name": "Pang",
+            "score": 0.4,
+            "matches": [
+              "ally-shielder",
+              "high-initial-energy"
+            ]
+          },
+          {
+            "name": "Kordan",
             "score": 0.4,
             "matches": [
               "ally-buffer",
-              "ally-shielder"
-            ]
-          },
-          {
-            "name": "Callan",
-            "score": 0.3,
-            "matches": [
-              "ally-shielder"
-            ]
-          },
-          {
-            "name": "Isabella",
-            "score": 0.3,
-            "matches": [
-              "ally-buffer"
+              "high-initial-energy"
             ]
           }
         ],
@@ -49482,8 +49494,16 @@
             ]
           },
           {
+            "name": "Hepler",
+            "score": 0.5057,
+            "matches": [
+              "Debuffs on enemies",
+              "Damage"
+            ]
+          },
+          {
             "name": "Dunlingr",
-            "score": 0.5136,
+            "score": 0.5055,
             "matches": [
               "Buffs on allies",
               "Debuffs on enemies",
@@ -50424,7 +50444,7 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.7015,
+            "score": 0.6923,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -51304,7 +51324,7 @@
         "similar_skills": [
           {
             "name": "Scarlita",
-            "score": 0.6,
+            "score": 0.48,
             "matches": [
               "aoe-damage",
               "hp-scaling"

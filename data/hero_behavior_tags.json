@@ -69,6 +69,7 @@
   "Bryon": [
     "battle-start-ult",
     "cheat-death",
+    "high-initial-energy",
     "summoner"
   ],
   "Callan": [
@@ -102,12 +103,14 @@
   "Cryonaia": [
     "battlefield-modification",
     "cc-immunity",
+    "execute",
     "invincibility"
   ],
   "Cyran": [
     "aoe-damage",
     "enemy-grouping",
-    "execute"
+    "execute",
+    "high-initial-energy"
   ],
   "Daimon": [
     "ally-shielder",
@@ -202,6 +205,7 @@
   "Hepler": [
     "ally-healer",
     "ally-shielder",
+    "high-initial-energy",
     "transformation"
   ],
   "Hewynn": [
@@ -221,6 +225,7 @@
   "Hugin": [
     "ally-shielder",
     "energy-provider",
+    "high-initial-energy",
     "static-tile-buffer"
   ],
   "Igor": [
@@ -242,6 +247,7 @@
     "ally-buffer",
     "aoe-damage",
     "battle-start-burst",
+    "high-initial-energy",
     "invincibility",
     "mark-target",
     "mass-cc"
@@ -258,6 +264,7 @@
   ],
   "Kordan": [
     "ally-buffer",
+    "high-initial-energy",
     "hp-scaling",
     "self-repositioner"
   ],
@@ -276,6 +283,7 @@
   "Laios": [
     "ally-buffer",
     "ally-healer",
+    "high-initial-energy",
     "summoner"
   ],
   "Lenya": [
@@ -297,7 +305,8 @@
   ],
   "Lucca": [
     "ally-shielder",
-    "disabler"
+    "disabler",
+    "high-initial-energy"
   ],
   "Lucius": [
     "ally-healer",
@@ -307,6 +316,7 @@
   ],
   "Lucy": [
     "ally-shielder",
+    "high-initial-energy",
     "mass-cc"
   ],
   "Ludovic": [
@@ -351,13 +361,15 @@
   "Nara": [
     "ally-healer",
     "assassin",
-    "execute"
+    "execute",
+    "high-initial-energy"
   ],
   "Natsu": [
     "aoe-damage",
     "dot-specialist",
     "fire-attack",
     "high-damage-ult",
+    "high-initial-energy",
     "mass-cc",
     "transformation"
   ],
@@ -386,6 +398,7 @@
   ],
   "Pang": [
     "ally-shielder",
+    "high-initial-energy",
     "transformation"
   ],
   "Parisa": [
@@ -430,6 +443,7 @@
   "Saida": [
     "ally-shielder",
     "cheat-death",
+    "high-initial-energy",
     "life-drain"
   ],
   "Salazer": [
@@ -447,6 +461,7 @@
   "Scarlita": [
     "ally-shielder",
     "aoe-damage",
+    "execute",
     "hp-scaling"
   ],
   "Seth": [
@@ -467,6 +482,7 @@
     "life-drain"
   ],
   "Silven": [
+    "high-initial-energy",
     "hp-scaling",
     "mark-target"
   ],
@@ -501,6 +517,7 @@
   ],
   "Sylphira": [
     "disabler",
+    "high-initial-energy",
     "life-drain",
     "mass-cc",
     "transformation"
@@ -567,7 +584,8 @@
   "Valka": [
     "ally-buffer",
     "ally-shielder",
-    "counterattack"
+    "counterattack",
+    "high-initial-energy"
   ],
   "Velara": [
     "ally-healer",

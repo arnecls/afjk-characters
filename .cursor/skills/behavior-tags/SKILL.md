@@ -70,6 +70,43 @@ For each hero, read play overview + summaries + `description_lite` and ask:
 
 Assign tags that describe **playstyle identity**, not every skill effect.
 
+**`high-initial-energy` (≥ 500 effective IE):** read Ultimate `Initial Energy`
+from skill `meta`, then add the largest ascension bonus matching
+`Gains extra N initial Energy` / `extra N initial Energy` in upgrade text.
+Re-audit when new heroes or ascension tiers change IE values:
+
+```bash
+python3 - <<'PY'
+import json, re
+from pathlib import Path
+
+EXTRA = re.compile(r"(?:Gains extra|extra)\s+(\d+)\s+initial\s+Energy", re.I)
+THRESH = 500
+
+def parse_num(s):
+    if s is None: return 0
+    try: return int(float(str(s).strip().replace(",", "")))
+    except: return 0
+
+for h in json.loads(Path("data/heroes_data.json").read_text())["heroes"]:
+    ult = extra = 0
+    for sk in h.get("skills", []):
+        if sk.get("section") == "Ultimate":
+            ult = parse_num((sk.get("meta") or {}).get("Initial Energy"))
+        desc = sk.get("description") or {}
+        parts = [desc.get("raw", "")]
+        for u in desc.get("upgrades") or []:
+            parts.extend(u.get("text") or [])
+        for p in parts:
+            m = EXTRA.search(p)
+            if m:
+                extra = max(extra, int(m.group(1)))
+    eff = ult + extra
+    if eff >= THRESH:
+        print(f"{h['name']}: {eff} ({ult}+{extra})")
+PY
+```
+
 ### 3. Apply edits
 
 - Edit only `data/hero_behavior_tags.json`.
@@ -131,6 +168,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `hp-scaling` | Scales on **HP values** | Shield-value scaling |
 | `invincibility` | Meaningful immunity windows | Brief immunity already covered by `transformation`; do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
 | `battle-start-burst` | Deals damage in the **first ~2–3s** of battle | Buff/shield/debuff/energy/summon setup at battle start without immediate damage; delayed openers (Frieren 15s); terrain bombs without a damage clause (Kulu debris); sequential battle-start cycles where damage is not the first effect (Cyran Mythic+) |
+| `high-initial-energy` | **Effective IE ≥ 500** on the ultimate when fully built (meta + max ascension bonus) | IE below 500; free/guaranteed early ult without IE fill (`battle-start-ult` instead, e.g. Eironn, Niru) |
 
 ## Reporting
 
@@ -170,5 +208,10 @@ battlefield companions: keep `aoe-damage`, `life-drain`, etc. Not `summoner`
 `transformation`. `cheat-death` from Fluttering Dream: butterfly form at 50% HP
 loss with invincibility and self-heal (up to twice per battle). Keep
 `transformation` for the form swap; both tags apply. Not `revive` (self-only).
+
+**Cyran** — `high-initial-energy` (400 base IE + 200 Supreme bonus = 600).
+Not `battle-start-burst` (Mythic+ battle-start cycle leads with self-buff before
+damage). **Bryon** — both `high-initial-energy` (1000 IE) and `battle-start-ult`
+(falcon setup + early ult pattern); not every high-IE hero has `battle-start-ult`.
 
 For more edge cases, see [pitfalls.md](pitfalls.md).

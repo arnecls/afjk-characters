@@ -363,6 +363,11 @@ skill effect.
 - execute: Finishes low-HP enemies or scales damage strongly on wounded targets.
 - fire-attack: Applies burning or scorched-ground fire damage as a significant part of the kit.
 - high-damage-ult: Ultimate is the main damage spike and a large share of total output.
+- high-initial-energy: Ultimate starts with **≥ 500 effective Initial Energy**
+  when fully built (Ultimate `Initial Energy` meta plus the highest ascension
+  bonus such as "Gains extra N initial Energy"). Aligns with fast ult fill
+  (~≤ 5s at 100 energy/s). Not the same as `battle-start-ult` (free or
+  guaranteed early cast without relying on IE fill).
 - hp-scaling: Damage, survivability, or effects scale strongly with HP values.
 - invincibility: Grants damage and/or control immunity windows to self or allies.
 - life-drain: Sustains through lifesteal or HP recovery tied to dealing damage.

@@ -78,6 +78,20 @@ first damage (Cyran Mythic+: Enlightening → Confining → Starshard).
 Do not confuse with `battle-start-ult` (early ultimate access, e.g. Eironn can
 have both when the ult also deals opening damage).
 
+## `high-initial-energy` vs `battle-start-ult`
+
+- `high-initial-energy` — numeric threshold: **effective IE ≥ 500** on the
+  ultimate at full build. Sum Ultimate `Initial Energy` meta with the largest
+  ascension "extra initial Energy" bonus in skill upgrades. 16 heroes qualify at
+  this threshold (500–1000 range).
+- `battle-start-ult` — kit grants a **free or guaranteed early ultimate** without
+  needing normal energy fill (Eironn, Niru). Bryon has 1000 IE **and**
+  `battle-start-ult`; Eironn/Niru do **not** get `high-initial-energy` from a
+  free-cast mechanic alone.
+
+When auditing, scan Ultimate meta first, then all upgrade text for
+`Gains extra N initial Energy` / `extra N initial Energy`.
+
 ## `cheat-death` vs `revive`
 
 - `cheat-death` — self survives fatal blow (Brutus, Thoran, Berial) or enters a
