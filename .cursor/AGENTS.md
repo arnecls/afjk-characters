@@ -654,35 +654,7 @@ New exlusive skills are unlocked at the following levels:
 - R2 (Paragon 2)
 - R4 (Paragon 4)
 
-## Validating detection algorithms
+## Temporary files
 
-To validate the quality of the detection algorithm, the contents of
-`data/heroes_data_processed.json` have to be post processed. This must not
-be done through a script or unittest.
-
-### High level validation
-
-For each character in heroes_data_processed.json, compare the detected
-damage types, healing types, crowd control types, buffs and debuffs per skill
-with the descriptions of each skill. All detections must conceptually match what
-is stated in the skill description. Further context is provided in AGENTS.md.
-This step does not compare concrete values, timings or target attribution.
-
-Compile a list of the to be tested detections per character, per skill and do
-the comparison in batches. Note down the findings in the form of:
-Character, Skill: found -> expected.
-
-When fixing, make sure to also update skill-card tags.
-
-### Detailed validation
-
-For each character in heroes_data_processed.json, compare the targeting, area
-types, timings and magnitudes per skill with the descriptions of each skill.
-All detections must conceptually match what is stated in the skill description.
-Further context is provided in AGENTS.md.
-
-Compile a list of the to be tested detections per character, per skill and do
-the comparison in batches. Note down the findings in the form of:
-Character, Skill: found -> expected.
-
-When fixing, makes sure to also update skill-card tags.
+When generating ephemeral files only required for a single agent run, create
+these files in the directory called `tmp`.
