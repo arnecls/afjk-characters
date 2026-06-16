@@ -120,6 +120,23 @@ Healing over time.
   missing
 - Cyran Mystic Recollection — enemy ATK SPD debuff, not ally ATK buff
 
+### Self-debuff false positives (always verify)
+
+Self-targeted debuffs (`target: self`, `… debuff — Self` tags) are **extremely
+rare**. Run the self-debuff pre-scan in SKILL.md; **validate every hit** — do
+not batch-close as low priority.
+
+Common pattern: text **increases** caster Phys/Magic DEF or ATK (`increasing
+her Phys DEF by 50%`) stored as **Phys DEF debuff Self** → expect **DEF buff
+Self** (Granny Dahnie Glimmerbloom Blessings).
+
+Other causes: HoT upgrade scalar bleed onto DEF buff magnitude; reduction
+regex matching inside an `increasing … def` clause.
+
+When auditing pass 1, if any self-debuff remains after a detection fix pass,
+re-run the pre-scan until the candidate list is empty or each row is confirmed
+legitimate.
+
 ### Upgrade-only lines skipped
 
 Enhance Force, EX, Supreme+ often hold the only mention of CC, debuffs, or

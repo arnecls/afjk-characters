@@ -40,7 +40,7 @@ Run **high-level** first, then **detailed**. Do not mix scopes in one report.
 ```
 Task progress:
 - [ ] 1. Baseline — read latest docs/validation-*.md; note resolved items
-- [ ] 2. Pre-scan — ally-target, reverse ally-buff, immunity/silence, true/max-HP triage; note counts
+- [ ] 2. Pre-scan — ally-target, reverse ally-buff, **self-debuff**, immunity/silence, true/max-HP triage; note counts
 - [ ] 3. Inventory — hero/skill counts; pick batch boundaries (~25–35 heroes)
 - [ ] 4. High-level pass — labels only (damage, healing, CC, buffs, debuffs)
 - [ ] 5. Write docs/validation-high-level-YYYY-MM-DD.md
@@ -68,6 +68,25 @@ under buffs.
 For each skill, list what `effects` contain vs what the description states.
 Flag **missing** labels, **spurious** labels, and **wrong** labels (e.g. ally
 buff vs enemy debuff).
+
+#### Self-debuffs (always validate)
+
+**Self-targeted debuffs are extremely rare** in AFK Journey skill text. Almost
+every debuff applies to **enemies** (or occasionally **allies** as a penalty).
+When `effects` or `skill_card_tags` show a debuff with `target: self` /
+`targeting_label: Self` (e.g. `Phys DEF debuff — Self`), **always** read the
+skill description before accepting it — do not pass the skill on label scope
+alone.
+
+Typical causes: self **DEF/ATK increase** misread as a debuff; upgrade scalar
+bleed; possessive `her/his` in a buff clause matched by a reduction regex.
+
+**Legitimate self-debuff examples are scarce** — treat each hit as guilty until
+the text explicitly reduces the caster's own stat (not an enemy's). When
+confirmed spurious, record under pass 1 as `wrong label` (often buff, not
+debuff) and fix detection.
+
+**Finding format:** `Granny Dahnie (Glimmerbloom Blessings): Phys DEF debuff Self -> DEF buff Self`
 
 #### True vs Max HP-based double-label (high-level)
 
@@ -259,6 +278,40 @@ PY
 Report both candidate counts in the validation doc header. After fixes, re-run;
 closed rows go under **Resolved since {date}**.
 
+### Pre-scan — self-debuff triage
+
+Run during **pass 1** (label scope). Self-targeted debuffs are **rare**; every
+hit must be read against the skill text (do not skip as "probably fine").
+
+```bash
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+processed = json.loads(Path("data/heroes_data_processed.json").read_text())
+hits = []
+for hero, data in sorted(processed["heroes"].items()):
+    for skill, sk in data.get("skills", {}).items():
+        for eff in sk.get("effects", []):
+            if eff.get("type") != "debuff":
+                continue
+            if eff.get("target") != "self":
+                continue
+            name = eff.get("name", "?")
+            hits.append(f"{hero} / {skill}: {name} (target self) -> VERIFY")
+        for tag in sk.get("skill_card_tags") or []:
+            if "debuff" in tag.lower() and "self" in tag.lower():
+                hits.append(f"{hero} / {skill}: tag {tag!r} -> VERIFY")
+
+print(f"Self-debuff candidates: {len(hits)}")
+for line in hits:
+    print(" ", line)
+PY
+```
+
+Confirm each candidate: if text **increases** the caster's stat, expect a
+**buff** (or no row), not a debuff. Report count in the validation doc header.
+
 ### Pre-scan — spurious immunity / artifact-silence triage
 
 Run during **pass 1** (label scope). Surfaces immunity rows and Silence CC
@@ -400,8 +453,8 @@ Save under `docs/` with today's date.
 **Detailed** (`validation-detailed-YYYY-MM-DD.md`):
 
 - Scope + link to high-level baseline
-- **Pre-scan results** — ally-target, reverse ally-buff, immunity/silence,
-  and true/max-HP candidate counts at start/end of run
+- **Pre-scan results** — ally-target, reverse ally-buff, **self-debuff**,
+  immunity/silence, and true/max-HP candidate counts at start/end of run
 - Same roster stats and **Common failure patterns** (detailed-specific)
 - **Findings** by batch with `found -> expected`
 - **Spot-checked confirmations**
@@ -419,8 +472,8 @@ Save under `docs/` with today's date.
    change (otherwise `just analyze` may reuse stale parsed heroes).
 4. Run `just analyze` to regenerate `heroes_data_processed.json` and synergies.
 5. Run `just validate`.
-6. Re-run pre-scans (ally-target, true/max-HP); grep `"buff"` replacements
-   for affected heroes.
+6. Re-run pre-scans (ally-target, **self-debuff**, true/max-HP); grep `"buff"`
+   replacements for affected heroes.
 7. Spot-check representative skills from the report; move rows to **Resolved**.
 8. Do **not** re-audit the full roster unless asked — note that findings
    tables may be stale until re-run.
@@ -432,17 +485,19 @@ Highest impact on magnitude bands and synergy scoring:
 1. **Heal `value: 0`** when text says restore HP
 2. **True + Max HP double-label** on max-HP-scaled true strikes — skews
    damage-type profiles and magnitude bands
-3. **Self-only effects tagged `target: ally`** (Invincible, Unaffected, self
+3. **Self-targeted debuffs** — almost always false; read every pre-scan hit
+   (self DEF/ATK **increase** is usually a buff mis-tag)
+4. **Self-only effects tagged `target: ally`** (Invincible, Unaffected, self
    stat buffs, **self Energy recovery**) — distorts replacement **Buffs on
    allies** lists and beneficiary lines
-4. **Ally buffs tagged `target: self`** (`inspiring allies`, `their Haste`) —
+5. **Ally buffs tagged `target: self`** (`inspiring allies`, `their Haste`) —
    removes provider from synergy buff matching
-5. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
-6. **Spurious immunity / Silence CC** (targeting priority, artifact Merlin block)
-7. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
-8. **Upgrade-tier magnitudes** not merged to max tier (incl. `N + M` scaled
+6. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
+7. **Spurious immunity / Silence CC** (targeting priority, artifact Merlin block)
+8. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
+9. **Upgrade-tier magnitudes** not merged to max tier (incl. `N + M` scaled
    amounts on energy recovery and haste)
-9. **Spurious damage rows** (execute riders, shield absorb as Physical)
+10. **Spurious damage rows** (execute riders, shield absorb as Physical)
 
 ## Definition guardrails
 
@@ -460,6 +515,7 @@ Apply `.cursor/AGENTS.md` strictly. Common label confusions:
 | Haste vs ATK SPD | Flat `+N Haste` → Haste buff/debuff | Flat `ATK SPD by N` → ATK SPD debuff |
 | Life Drain | Lifedrain buff; magnitude is flat points (`+60 Life Drain`) | Stored as `%` when text only gives points; confused with Direct healing |
 | Marked target | Enemy debuff + focus fire | Ally ATK buff |
+| Self debuff | Almost never — verify every `target: self` debuff row | Self stat **increase** (`increasing her Phys DEF`) → **DEF buff Self** |
 | Invincible / immunity | Self when caster only (`stays`, `reaching the invincible`, `is invincible`) | Ally `Single target` on DPS self-buff windows |
 | Targeting priority | `neither unaffected nor steadfast`, `prioritizes … unaffected` — no immunity row | Spurious Unaffected / Steadfast immunity or skill-card tags |
 | Artifact silence | Merlin silenced at battle start → **Artifact block** special provide | `cc-type: silence` on hero skill |
@@ -478,7 +534,8 @@ Summarize:
 1. **Coverage** — heroes/skills audited, discrepancy rate per pass
 2. **Themes** — top 5 failure patterns (with counts if estimated)
 3. **Critical examples** — 3–5 skills that most affect synergy scoring
-   (include pre-scan hits: false `"buff"` replacements, true+max-HP doubles)
+   (include pre-scan hits: false `"buff"` replacements, true+max-HP doubles,
+   **self-debuff rows that fail text check**)
 4. **Resolved** — what improved vs last validation doc
 5. **Recommended fixes** — ordered pattern groups, not a flat hero list
 
@@ -497,6 +554,10 @@ expect **no** enemy DoT, **no** Healing over time, **no** Direct healing.
 
 **High-level — Lorsan Zephyr's Embrace:** sustained ally restore → expect
 **Healing over time**, not only a Haste buff.
+
+**High-level — Granny Dahnie Glimmerbloom Blessings:** `increasing her Phys
+DEF by 50% and Magic DEF by 50%` → **DEF buff Self**; any **Phys/Magic DEF
+debuff Self** row is spurious (self stat increase, not reduction).
 
 **High-level — Shemira Ghastly Tribute:** `deal true damage to a single enemy
 equal to 24% + 3% of their max HP` → **Max HP-based damage only**; pre-scan
