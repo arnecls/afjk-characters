@@ -447,6 +447,30 @@ class SummaryParsingTests(unittest.TestCase):
         drains = list(_effects(hero, "debuff", "Energy drain"))
         self.assertEqual(drains, [])
 
+    def test_pang_self_buffs_not_listed_as_ally_providers(self):
+        hero = _hero_by_short_name("Pang")
+        ally_buffs = [
+            e
+            for e in hero.effects
+            if e.category == "buff" and e.targeting != "Self"
+        ]
+        labels = {e.label for e in ally_buffs}
+        self.assertIn("ATK buff", labels)
+        self.assertNotIn("DEF Penetration buff", labels)
+        self.assertNotIn("Shield", {e.label for e in ally_buffs if e.tier != "EX+10"})
+        for e in ally_buffs:
+            if e.label == "ATK buff":
+                self.assertEqual(e.targeting, "Multiple targets")
+                self.assertLessEqual(e.numeric or 0, 25.0)
+            if e.label == "Shield":
+                self.assertIn("allied hero", e.qualitative.lower())
+        intro = rs.format_buffs_provided_intro(hero, "Pang")
+        self.assertIsNotNone(intro)
+        assert intro is not None
+        self.assertNotIn("DEF Penetration", intro)
+        self.assertIn("ATK buff (Mythic+)", intro)
+        self.assertIn("Shield (EX+10)", intro)
+
     def test_sinbad_energy_recovery_efficiency_not_energy_drain(self):
         hero = _hero_by_short_name("Sinbad")
         drains = list(_effects(hero, "debuff", "Energy drain"))
@@ -570,6 +594,24 @@ class HeroEffectAggregateTests(unittest.TestCase):
         self.assertTrue(atk)
         self.assertEqual(max(e.numeric for e in atk), 16.0)
         self.assertEqual(atk[0].magnitude, "low")
+
+
+class BenefitStatTests(unittest.TestCase):
+    """Benefit stats for synergy matching — healing need vs healer output."""
+
+    def test_smokey_ally_healer_does_not_seek_healing(self):
+        hero = _hero_by_short_name("Smokey")
+        self.assertNotIn("Healing", hero.benefit_stats)
+        self.assertIn("ATK", hero.benefit_stats)
+
+    def test_brutus_self_life_drain_does_not_seek_life_drain(self):
+        hero = _hero_by_short_name("Brutus")
+        self.assertNotIn("Life Drain", hero.benefit_stats)
+
+    def test_talene_hp_cost_seeks_healing_not_life_drain(self):
+        hero = _hero_by_short_name("Talene")
+        self.assertIn("Healing", hero.benefit_stats)
+        self.assertNotIn("Life Drain", hero.benefit_stats)
 
 
 if __name__ == "__main__":

@@ -478,7 +478,10 @@ DoT, CC, etc.); top picks are then sorted by score for display.
    `HASTE_FOR_ATK_SPD_SCORE_MULT` in `generate-heroes-overview.py`).
    **Healing need:** heroes who **consume or lose their own max HP** during
    skills (e.g. Talene's Ultimate channel) get **Healing** in benefit stats
-   and match ally healers.
+   and match ally healers and **Lifedrain buff** providers. Ally healers do
+   **not** get **Healing** in benefit stats — they provide sustain, they do
+   not seek it. **Life Drain** is not a separate benefit stat; treat it as
+   sustain for the same HP-cost heroes via the **Healing** matcher.
    **Wide magic for Bonnie:** providers with **Magic**
    damage and battlefield-wide patterns (`center of the battlefield`, `all
    enemies`, etc.) score higher for Bonnie's *Magic damage from allies*
@@ -553,8 +556,10 @@ over time" (HoT) phrasing like "over 2s" it counts as "Healing over time".
 Listed in each hero summary for synergy matching. Derived from self-buffs
 and explicit self-scaling in skill text (`refine_benefit_stats` in
 `rewrite-summaries.py`). Omitted as noise: **ATK** from `(ATK-based)` damage
-only, companion-only **Max HP** / **Life Drain**, **Healing** that only
-restores a summon, and one-off **Initial Energy** lines.
+only, companion-only **Max HP**, **Healing** that only
+restores a summon, ally-healer kits that output healing (they do not seek
+**Healing** partners), standalone **Life Drain** (folded into **Healing**
+need for HP-cost heroes only), and one-off **Initial Energy** lines.
 
 ## Stats
 

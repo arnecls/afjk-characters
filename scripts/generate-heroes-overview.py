@@ -47,10 +47,10 @@ STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
         DIRECT_HEALING_LABEL,
         HEALING_OVER_TIME_LABEL,
         "Healing stat buff",
+        "Lifedrain buff",
     ],
     "Energy": ["Energy recovery"],
     "DEF Penetration": ["DEF Penetration buff"],
-    "Life Drain": ["Lifedrain buff"],
     "Physical DEF": ["DEF buff"],
     "Magic DEF": ["DEF buff"],
 }
@@ -289,6 +289,11 @@ def short_name(title: str) -> str:
     if title == _TWINS_FULL_TITLE:
         return "Twins"
     return title.split(" - ", 1)[0].strip()
+
+
+def _is_same_hero(provider: _rs.Hero, receiver: _rs.Hero) -> bool:
+    """True when provider and receiver are the same roster hero."""
+    return short_name(provider.title) == short_name(receiver.title)
 
 
 def receiver_stats(hero: _rs.Hero) -> list[str]:
@@ -598,8 +603,11 @@ def _effect_is_battle_start_ally_energy(effect: _rs.Effect) -> bool:
 
 def score_early_battle_energy_synergy(
     provider: _rs.Hero,
+    receiver: _rs.Hero,
     receiver_behavior: _rs.HeroBehavior,
 ) -> tuple[float, list[str]]:
+    if _is_same_hero(provider, receiver):
+        return 0.0, []
     if not receiver_wants_early_battle_energy(receiver_behavior):
         return 0.0, []
 
@@ -1217,7 +1225,7 @@ def score_enabler_synergy(
     enabler_matchers: dict[str, callable],
     receiver_movement: str = "",
 ) -> tuple[float, list[str]]:
-    if provider.title == receiver.title:
+    if _is_same_hero(provider, receiver):
         return 0.0, []
 
     reasons: list[str] = []
@@ -1396,7 +1404,7 @@ def score_synergy(
     signature_speed: str = "average",
     receiver_behavior: _rs.HeroBehavior | None = None,
 ) -> tuple[float, list[str]]:
-    if provider.title == receiver.title:
+    if _is_same_hero(provider, receiver):
         return 0.0, []
 
     reasons: list[str] = []
@@ -1489,7 +1497,7 @@ def score_summon_synergy(
     provider: _rs.Hero, receiver: _rs.Hero
 ) -> tuple[float, list[str]]:
     """Match summon-only buffs to heroes who field summons."""
-    if provider.title == receiver.title or not receiver_summons(receiver):
+    if _is_same_hero(provider, receiver) or not receiver_summons(receiver):
         return 0.0, []
 
     if not provider.summon_effects:
@@ -1545,6 +1553,8 @@ def score_combined_synergy(
     receiver_movement: str = "",
     signature_speed: str = "average",
 ) -> tuple[float, list[str]]:
+    if _is_same_hero(provider, receiver):
+        return 0.0, []
     buff_score, buff_reasons = score_synergy(
         provider,
         receiver,
@@ -1553,7 +1563,7 @@ def score_combined_synergy(
         receiver_behavior,
     )
     early_score, early_reasons = score_early_battle_energy_synergy(
-        provider, receiver_behavior
+        provider, receiver, receiver_behavior
     )
     summon_score, summon_reasons = score_summon_synergy(provider, receiver)
     en_score, en_reasons = score_enabler_synergy(
@@ -1579,6 +1589,8 @@ def rank_synergy_entries(
     receiver_tiers = tiers.get(receiver.title, {})
     ranked: list[tuple[float, list[str], str]] = []
     for provider in heroes:
+        if _is_same_hero(provider, receiver):
+            continue
         score, reasons = score_combined_synergy(
             provider,
             receiver,

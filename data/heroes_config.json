@@ -42,7 +42,7 @@
   },
   "display_limits": {
     "max_synergies": 6,
-    "max_beneficiaries_display": 10,
+    "max_beneficiaries_display": 6,
     "fallback_beneficiaries_display": 3,
     "obvious_provider_threshold": 20
   },

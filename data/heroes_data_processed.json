@@ -393,15 +393,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 10.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -671,7 +664,6 @@
       },
       "benefit_stats": [
         "atk",
-        "healing",
         "def_penetration"
       ],
       "behavior": {
@@ -1225,15 +1217,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -1311,8 +1296,7 @@
         "max_hp": "high"
       },
       "benefit_stats": [
-        "max_hp",
-        "healing"
+        "max_hp"
       ],
       "behavior": {
         "movement": "moving",
@@ -1469,23 +1453,6 @@
               "name": "Movement speed debuff",
               "label": "debuff_stat",
               "duration": 2.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 300.0
-                }
-              ],
-              "duration": 7.0
             },
             {
               "tier": "base",
@@ -2077,7 +2044,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 25.0
+                  "value": 0.0
                 }
               ],
               "duration": 5.0
@@ -2340,7 +2307,6 @@
       "benefit_stats": [
         "max_hp",
         "shield",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -3255,7 +3221,6 @@
       },
       "benefit_stats": [
         "haste",
-        "healing",
         "physical_def"
       ],
       "behavior": {
@@ -3853,8 +3818,7 @@
       "benefit_stats": [
         "max_hp",
         "crit",
-        "execution",
-        "healing"
+        "execution"
       ],
       "behavior": {
         "movement": "high movement",
@@ -4477,22 +4441,6 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 360.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
               "targeting_label": "Arc",
               "is_max_known": true,
               "target": "enemy",
@@ -4931,8 +4879,7 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "shield",
-        "healing"
+        "shield"
       ],
       "behavior": {
         "movement": "moving",
@@ -5456,9 +5403,7 @@
       "damage_magnitudes": {
         "max_hp": "average"
       },
-      "benefit_stats": [
-        "healing"
-      ],
+      "benefit_stats": [],
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
@@ -6479,9 +6424,7 @@
       "damage_magnitudes": {
         "max_hp": "average"
       },
-      "benefit_stats": [
-        "life_drain"
-      ],
+      "benefit_stats": [],
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
@@ -6957,7 +6900,6 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "haste",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -7061,38 +7003,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 200.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 100.0
-                }
-              ]
-            },
             {
               "type": "immunity",
               "tier": "base",
@@ -7355,22 +7265,6 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 600.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -7422,8 +7316,7 @@
         "max_hp": "low"
       },
       "benefit_stats": [
-        "shield",
-        "healing"
+        "shield"
       ],
       "behavior": {
         "movement": "moving",
@@ -9388,7 +9281,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 300.0
+                  "value": 200.0
                 }
               ]
             },
@@ -9423,7 +9316,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 300.0
+                  "value": 30.0
                 }
               ],
               "label": "buff_offensive"
@@ -9921,7 +9814,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 3000.0
+                  "value": 0.0
                 }
               ]
             },
@@ -10798,7 +10691,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 50.0
+                  "value": 10.0
                 }
               ],
               "label": "buff_offensive"
@@ -11024,23 +10917,6 @@
                   "value": 28.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 3,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ],
-              "duration": 8.0
             }
           ],
           "initial_energy": 400.0,
@@ -11106,39 +10982,6 @@
                   "value": 20.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 100.0
-                }
-              ],
-              "duration": 8.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 17.0
-                }
-              ]
             }
           ],
           "cooldown": 8.0,
@@ -11182,22 +11025,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 30.0
-                }
-              ]
-            },
             {
               "tier": "base",
               "targeting_label": "Single target",
@@ -11332,23 +11159,6 @@
                   "value": 6.0
                 }
               ]
-            },
-            {
-              "tier": "ex+10",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 100.0
-                }
-              ],
-              "duration": 8.0
             }
           ],
           "tier": "mythic+",
@@ -11861,7 +11671,6 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -12111,17 +11920,10 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "duration": 12.0,
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "duration": 12.0
             }
           ],
           "cooldown": 22.0,
@@ -12282,22 +12084,6 @@
                 }
               ],
               "label": "buff_offensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ]
             }
           ],
           "tier": "supreme+",
@@ -12750,15 +12536,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 4.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -13787,7 +13566,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 180.0
+                  "value": 0.0
                 }
               ],
               "duration": 4.4
@@ -14013,15 +13792,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -14081,7 +13853,6 @@
       },
       "benefit_stats": [
         "haste",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -14378,7 +14149,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 250.0
+                  "value": 20.0
                 }
               ],
               "label": "buff_offensive"
@@ -14528,7 +14299,6 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "atk",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -14752,7 +14522,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 280.0
+                  "value": 200.0
                 }
               ]
             },
@@ -14831,7 +14601,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 100.0
+                  "value": 12.0
                 }
               ],
               "duration": 10.0,
@@ -15178,7 +14948,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 14.0
+                  "value": 12.0
                 }
               ],
               "duration": 8.0,
@@ -15468,8 +15238,7 @@
       },
       "benefit_stats": [
         "atk",
-        "atk_spd",
-        "healing"
+        "atk_spd"
       ],
       "behavior": {
         "movement": "mostly stationary",
@@ -15850,22 +15619,6 @@
           },
           "effects": [
             {
-              "tier": "mythic+",
-              "targeting_label": "Summons only",
-              "is_max_known": true,
-              "target": "summon",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 280.0
-                }
-              ]
-            },
-            {
               "tier": "ex+10",
               "targeting_label": "Summons only",
               "is_max_known": true,
@@ -16201,17 +15954,10 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 250.0
-                }
-              ],
-              "duration": 5.0,
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "duration": 5.0
             }
           ],
           "skill_range": 7,
@@ -16902,7 +16648,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 600.0
+                  "value": 0.0
                 }
               ],
               "duration": 8.0
@@ -18249,7 +17995,6 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "haste",
-        "healing",
         "energy",
         "physical_def",
         "magic_def"
@@ -18370,7 +18115,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 550.0
+                  "value": 25.0
                 }
               ],
               "label": "buff_offensive"
@@ -18608,7 +18353,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 450.0
+                  "value": 0.0
                 }
               ]
             },
@@ -18624,7 +18369,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 400.0
+                  "value": 0.0
                 }
               ],
               "duration": 6.0
@@ -18860,8 +18605,7 @@
       },
       "benefit_stats": [
         "atk_spd",
-        "shield",
-        "healing"
+        "shield"
       ],
       "behavior": {
         "movement": "stationary",
@@ -19529,7 +19273,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 190.0
+                  "value": 10.0
                 }
               ],
               "duration": 5.0,
@@ -19614,8 +19358,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
-        "atk",
-        "healing"
+        "atk"
       ],
       "behavior": {
         "movement": "mostly stationary",
@@ -20161,9 +19904,7 @@
         "haste",
         "max_hp",
         "crit",
-        "healing",
-        "energy",
-        "life_drain"
+        "energy"
       ],
       "behavior": {
         "movement": "high movement",
@@ -20513,23 +20254,6 @@
               ],
               "duration": 6,
               "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 3,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 160.0
-                }
-              ],
-              "duration": 15.0
             },
             {
               "tier": "base",
@@ -21536,32 +21260,9 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 180.0
-                }
-              ],
               "label": "buff_offensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 180.0
-                }
-              ]
             },
             {
               "tier": "base",
@@ -21709,7 +21410,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 200.0
+                  "value": 12.0
                 }
               ],
               "label": "buff_offensive"
@@ -21807,8 +21508,7 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "max_hp",
-        "healing"
+        "max_hp"
       ],
       "behavior": {
         "movement": "high movement",
@@ -22415,7 +22115,6 @@
       },
       "benefit_stats": [
         "atk",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -22531,17 +22230,10 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 80.0
-                }
-              ],
-              "duration": 10.0,
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "duration": 10.0
             },
             {
               "tier": "base",
@@ -22668,15 +22360,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -22778,7 +22463,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 850.0
+                  "value": 800.0
                 }
               ],
               "duration": 8.0
@@ -23206,10 +22891,7 @@
       "damage_magnitudes": {
         "max_hp": "average"
       },
-      "benefit_stats": [
-        "healing",
-        "life_drain"
-      ],
+      "benefit_stats": [],
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
@@ -23857,17 +23539,10 @@
                   "phase": "conditional"
                 }
               ],
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ],
-              "duration": 6.0,
-              "label": "buff_offensive"
+              "label": "buff_offensive",
+              "duration": 6.0
             },
             {
               "tier": "base",
@@ -24154,15 +23829,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -24267,7 +23935,6 @@
         "atk",
         "atk_spd",
         "haste",
-        "healing",
         "energy",
         "physical_def",
         "magic_def"
@@ -24713,7 +24380,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 350.0
+                  "value": 0.0
                 }
               ],
               "duration": 5.0
@@ -25272,7 +24939,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 500.0
+                  "value": 25.0
                 }
               ],
               "label": "buff_offensive"
@@ -25853,27 +25520,9 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "mythic+",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "duration": 7.0
-            }
-          ],
+          "effects": [],
           "tier": "mythic+",
+          "passive_only": true,
           "skill_card_tags": [
             "Shield"
           ]
@@ -26098,15 +25747,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 36.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -26187,22 +25829,6 @@
                 {
                   "type": "percentage",
                   "value": 500.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 460.0
                 }
               ]
             }
@@ -26489,7 +26115,6 @@
       "benefit_stats": [
         "atk",
         "shield",
-        "healing",
         "def_penetration",
         "physical_def",
         "magic_def"
@@ -27361,23 +26986,6 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 48.0
-                }
-              ],
-              "duration": 15.0
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
               "type": "buff",
               "name": "Lifedrain buff",
               "label": "buff_stat",
@@ -27442,7 +27050,6 @@
       },
       "benefit_stats": [
         "shield",
-        "life_drain",
         "physical_def"
       ],
       "behavior": {
@@ -27843,15 +27450,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 1.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -28267,7 +27867,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 560.0
+                  "value": 20.0
                 }
               ],
               "duration": 8.5,
@@ -28598,7 +28198,6 @@
         "atk_spd",
         "haste",
         "max_hp",
-        "healing",
         "energy",
         "physical_def",
         "magic_def"
@@ -29059,7 +28658,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 70.0
+                  "value": 20.0
                 }
               ],
               "label": "buff_offensive"
@@ -30201,8 +29800,7 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "atk",
-        "haste",
-        "healing"
+        "haste"
       ],
       "behavior": {
         "movement": "stationary",
@@ -30414,23 +30012,6 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 400.0
-                }
-              ],
-              "duration": 8.0
-            },
-            {
-              "tier": "base",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
@@ -30613,25 +30194,9 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "mythic+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 260.0
-                }
-              ]
-            }
-          ],
+          "effects": [],
           "tier": "mythic+",
+          "passive_only": true,
           "skill_card_tags": [
             "Shield — Self"
           ]
@@ -30709,7 +30274,6 @@
       "benefit_stats": [
         "max_hp",
         "shield",
-        "healing",
         "physical_def",
         "magic_def"
       ],
@@ -30835,7 +30399,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 520.0
+                  "value": 470.0
                 }
               ],
               "duration": 10.0
@@ -30921,7 +30485,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 320.0
+                  "value": 300.0
                 }
               ],
               "duration": 8.0
@@ -30979,22 +30543,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 80.0
-                }
-              ]
-            },
             {
               "tier": "base",
               "targeting_label": "Self",
@@ -31130,23 +30678,6 @@
                   "value": 90.0
                 }
               ]
-            },
-            {
-              "tier": "ex+5",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 12.0
-                }
-              ],
-              "duration": 4.0
             }
           ],
           "tier": "mythic+",
@@ -31632,7 +31163,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 550.0
+                  "value": 450.0
                 }
               ]
             }
@@ -32172,9 +31703,7 @@
       "damage_magnitudes": {
         "max_hp": "average"
       },
-      "benefit_stats": [
-        "healing"
-      ],
+      "benefit_stats": [],
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
@@ -32387,7 +31916,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 450.0
+                  "value": 50.0
                 }
               ],
               "duration": 12.0
@@ -32692,8 +32221,7 @@
       },
       "benefit_stats": [
         "haste",
-        "shield",
-        "healing"
+        "shield"
       ],
       "behavior": {
         "movement": "high movement",
@@ -33753,7 +33281,6 @@
       "benefit_stats": [
         "atk_spd",
         "haste",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -34002,7 +33529,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 25.0
+                  "value": 17.0
                 }
               ],
               "label": "buff_offensive"
@@ -34132,7 +33659,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 5.0
                 }
               ],
               "label": "buff_offensive"
@@ -34162,15 +33689,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 8.5
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -34747,9 +34267,7 @@
       },
       "benefit_stats": [
         "haste",
-        "max_hp",
-        "healing",
-        "life_drain"
+        "max_hp"
       ],
       "behavior": {
         "movement": "moving",
@@ -34946,7 +34464,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 20.0
+                  "value": 14.0
                 }
               ],
               "label": "buff_offensive"
@@ -35179,7 +34697,6 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "healing",
         "physical_def",
         "magic_def"
       ],
@@ -36009,7 +35526,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 15.0
+                  "value": 14.0
                 }
               ],
               "label": "buff_offensive"
@@ -36570,15 +36087,8 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 30.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -38300,7 +37810,6 @@
         "hp_loss": "low"
       },
       "benefit_stats": [
-        "healing",
         "physical_def",
         "magic_def"
       ],
@@ -39466,7 +38975,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 150.0
+                  "value": 25.0
                 }
               ],
               "label": "buff_offensive"
@@ -39511,24 +39020,6 @@
               "name": "Energy recovery debuff",
               "label": "debuff_stat",
               "duration": 5.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 470.0
-                }
-              ],
-              "label": "buff_offensive"
             },
             {
               "type": "immunity",
@@ -39670,9 +39161,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "shield",
@@ -39736,7 +39227,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Physical",
-            "Shield",
+            "Shield — Self",
             "Unaffected — Self"
           ]
         },
@@ -39827,25 +39318,28 @@
           },
           "effects": [
             {
-              "tier": "ex+10",
-              "targeting_label": "Single target",
+              "tier": "mythic+",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
+              "target_count": 3,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK buff",
               "value": [
                 {
                   "type": "percentage",
                   "value": 19.0
                 }
-              ]
+              ],
+              "label": "buff_offensive"
             }
           ],
           "tier": "mythic+",
           "skill_range": 1,
           "skill_card_tags": [
+            "ATK buff",
             "Shield"
           ]
         },
@@ -39861,9 +39355,9 @@
           "effects": [
             {
               "tier": "supreme+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -39873,8 +39367,8 @@
           ],
           "tier": "supreme+",
           "skill_card_tags": [
-            "DEF Penetration buff",
-            "Shield"
+            "DEF Penetration buff — Self",
+            "Shield — Self"
           ]
         }
       },
@@ -39905,6 +39399,7 @@
       "benefit_stats": [
         "atk",
         "haste",
+        "shield",
         "energy",
         "def_penetration"
       ],
@@ -40597,7 +40092,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 40.0
+                  "value": 14.5
                 }
               ],
               "label": "buff_offensive"
@@ -41029,23 +40524,6 @@
                   "value": 300.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 280.0
-                }
-              ],
-              "duration": 6.0
             }
           ],
           "cooldown": 14.0,
@@ -41306,25 +40784,9 @@
               "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield equal to 570% of their ATK when a battle starts, lasting up to 12s."
             ]
           },
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 570.0
-                }
-              ]
-            }
-          ],
+          "effects": [],
           "tier": "supreme+",
+          "passive_only": true,
           "skill_card_tags": [
             "Shield — Self"
           ]
@@ -42141,7 +41603,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 200.0
+                  "value": 12.0
                 }
               ],
               "duration": 30.0,
@@ -42457,7 +41919,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 200.0
+                  "value": 25.0
                 }
               ],
               "label": "buff_offensive"
@@ -42479,29 +41941,6 @@
                 }
               ],
               "label": "buff_offensive"
-            },
-            {
-              "tier": "ex+10",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "once_per_battle"
-                }
-              ],
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 200.0
-                }
-              ],
-              "duration": 5.0
             },
             {
               "tier": "ex+10",
@@ -43011,15 +42450,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 12.0
-                }
-              ],
               "label": "buff_offensive"
             },
             {
@@ -43152,9 +42584,7 @@
         ]
       ],
       "damage_magnitudes": {},
-      "benefit_stats": [
-        "healing"
-      ],
+      "benefit_stats": [],
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
@@ -44133,7 +43563,6 @@
       "benefit_stats": [
         "haste",
         "max_hp",
-        "healing",
         "energy",
         "physical_def",
         "magic_def"
@@ -44402,7 +43831,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 3000.0
+                  "value": 0.0
                 }
               ]
             },
@@ -44804,8 +44233,7 @@
         "max_hp": "high"
       },
       "benefit_stats": [
-        "max_hp",
-        "healing"
+        "max_hp"
       ],
       "behavior": {
         "movement": "high movement",
@@ -45222,28 +44650,6 @@
                   "value": 150.0
                 }
               ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 1500.0
-                }
-              ]
             }
           ],
           "tier": "supreme+",
@@ -45268,9 +44674,7 @@
       },
       "benefit_stats": [
         "max_hp",
-        "shield",
-        "healing",
-        "life_drain"
+        "shield"
       ],
       "behavior": {
         "movement": "moving",
@@ -45743,8 +45147,7 @@
         "max_hp": "low"
       },
       "benefit_stats": [
-        "max_hp",
-        "life_drain"
+        "max_hp"
       ],
       "behavior": {
         "movement": "moving",
@@ -46070,23 +45473,6 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 135.0
-                }
-              ],
-              "duration": 3.0
-            },
-            {
-              "tier": "base",
               "targeting_label": "Arc",
               "is_max_known": true,
               "target": "enemy",
@@ -46236,23 +45622,6 @@
               "type": "buff",
               "name": "DEF buff",
               "label": "buff_defensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 75.0
-                }
-              ],
-              "duration": 10.0
             }
           ],
           "tier": "supreme+",
@@ -46827,9 +46196,7 @@
         "atk",
         "haste",
         "crit",
-        "healing",
         "energy",
-        "life_drain",
         "physical_def",
         "magic_def"
       ],
@@ -47299,22 +46666,6 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 30.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
               "type": "buff",
               "name": "Lifedrain buff",
               "label": "buff_stat",
@@ -47396,8 +46747,7 @@
       "benefit_stats": [
         "atk",
         "shield",
-        "energy",
-        "life_drain"
+        "energy"
       ],
       "behavior": {
         "movement": "moving",
@@ -48198,7 +47548,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 300.0
+                  "value": 0.0
                 }
               ],
               "duration": 5.0
@@ -48273,7 +47623,6 @@
       },
       "benefit_stats": [
         "shield",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -49101,7 +48450,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 600.0
+                  "value": 0.0
                 }
               ]
             },
@@ -50014,7 +49363,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 6.0
                 }
               ],
               "label": "buff_offensive"
@@ -50128,7 +49477,6 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "atk",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -50415,13 +49763,7 @@
               "target_count": 1,
               "type": "buff",
               "name": "ATK buff",
-              "label": "buff_summon_offensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ]
+              "label": "buff_summon_offensive"
             },
             {
               "type": "immunity",
@@ -50554,7 +49896,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 250.0
+                  "value": 0.0
                 }
               ]
             }
@@ -50880,7 +50222,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 16.0
+                  "value": 10.0
                 }
               ],
               "label": "buff_offensive"
@@ -51673,7 +51015,6 @@
       "benefit_stats": [
         "haste",
         "max_hp",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -51808,7 +51149,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 400.0
+                  "value": 50.0
                 }
               ],
               "label": "buff_offensive"
@@ -52333,9 +51674,7 @@
       },
       "benefit_stats": [
         "atk",
-        "haste",
-        "healing",
-        "life_drain"
+        "haste"
       ],
       "behavior": {
         "movement": "moving",
@@ -52690,15 +52029,8 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -52756,8 +52088,7 @@
       "benefit_stats": [
         "atk",
         "max_hp",
-        "healing",
-        "life_drain"
+        "healing"
       ],
       "behavior": {
         "movement": "moving",
@@ -53301,8 +52632,7 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "max_hp",
-        "healing"
+        "max_hp"
       ],
       "behavior": {
         "movement": "stationary",
@@ -53787,22 +53117,6 @@
             },
             {
               "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 600.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "enemy",
@@ -53861,7 +53175,6 @@
         "atk",
         "atk_spd",
         "shield",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -54061,7 +53374,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 380.0
+                  "value": 0.0
                 }
               ],
               "duration": 8.0
@@ -54367,8 +53680,7 @@
       "benefit_stats": [
         "max_hp",
         "shield",
-        "crit",
-        "healing"
+        "crit"
       ],
       "behavior": {
         "movement": "moving",
@@ -54784,7 +54096,6 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "max_hp",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -54895,22 +54206,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 80.0
-                }
-              ]
-            },
             {
               "tier": "base",
               "targeting_label": "Self",
@@ -55254,8 +54549,7 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "max_hp",
-        "shield",
-        "healing"
+        "shield"
       ],
       "behavior": {
         "movement": "high movement",
@@ -55480,7 +54774,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 160.0
+                  "value": 0.0
                 }
               ]
             },
@@ -55778,9 +55072,7 @@
       "benefit_stats": [
         "max_hp",
         "shield",
-        "healing",
-        "energy",
-        "life_drain"
+        "energy"
       ],
       "behavior": {
         "movement": "moving",
@@ -56388,7 +55680,6 @@
       "benefit_stats": [
         "atk",
         "haste",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -56547,7 +55838,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 90.0
+                  "value": 20.0
                 }
               ],
               "duration": 12.0,
@@ -56751,15 +56042,8 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK buff",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 13.0
-                }
-              ],
               "label": "buff_offensive"
             }
           ],
@@ -57184,22 +56468,6 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 50.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
               "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "ally",
@@ -57377,28 +56645,6 @@
               "type": "buff",
               "name": "Haste buff",
               "label": "buff_offensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 30.0
-                }
-              ]
             }
           ],
           "tier": "supreme+",
@@ -57429,7 +56675,6 @@
         "atk_spd",
         "haste",
         "shield",
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -57873,23 +57118,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "mythic+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 600.0
-                }
-              ],
-              "duration": 8.0
-            },
             {
               "tier": "mythic+",
               "targeting_label": "Single target",
@@ -58410,8 +57638,7 @@
         "max_hp": "average"
       },
       "benefit_stats": [
-        "haste",
-        "healing"
+        "haste"
       ],
       "behavior": {
         "movement": "mostly stationary",
@@ -58915,28 +58142,6 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "type": "shield",
-              "name": "Shield",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
               "type": "buff",
               "name": "Crit buff",
               "label": "buff_offensive"
@@ -58988,8 +58193,7 @@
         "max_hp",
         "shield",
         "crit",
-        "crit_dmg_boost",
-        "life_drain"
+        "crit_dmg_boost"
       ],
       "behavior": {
         "movement": "moving",
@@ -59400,9 +58604,7 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "haste",
-        "max_hp",
-        "healing",
-        "life_drain"
+        "max_hp"
       ],
       "behavior": {
         "movement": "moving",
@@ -59518,7 +58720,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 35.0
+                  "value": 20.0
                 }
               ],
               "duration": 10.0,
@@ -59815,7 +59017,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 60.0
+                  "value": 40.0
                 }
               ],
               "label": "buff_offensive"
@@ -60590,9 +59792,7 @@
         "atk",
         "haste",
         "max_hp",
-        "healing",
-        "energy",
-        "life_drain"
+        "energy"
       ],
       "behavior": {
         "movement": "moving",

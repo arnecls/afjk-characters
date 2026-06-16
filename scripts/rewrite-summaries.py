@@ -182,6 +182,10 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
         t,
     ) and re.search(r"\b(?:the |an |that |designated )?ally\b|\ballies\b", t):
         return True
+    if re.search(r"\bincreas\w+ the atk of any unit shielded by\b", t):
+        return True
+    if re.search(r"\bgrants? them a chi barrier\b", t):
+        return True
     return False
 
 
@@ -423,6 +427,25 @@ def _resolve_buff_targeting(
     if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
         return "Self"
     if label == "Invincible" and _invincibility_targets_self(t):
+        return "Self"
+    if label == "Shield":
+        if re.search(
+            r"\bgrants? (?:them|an allied hero|allies?) .{0,30}"
+            r"(?:chi barrier|shield)\b",
+            t,
+        ):
+            pass
+        elif re.search(
+            r"\b(?:gaining|gains?|immediately gains?) (?:a |an )?"
+            r"(?:\d+%[^.]{0,40})?(?:chi barrier|shield)\b",
+            t,
+        ) or re.search(r"\bchannels (?:his|her|their) chi, gaining\b", t):
+            return "Self"
+    if label == "ATK buff" and re.search(r"\batk bonus granted by\b", t):
+        return "Self"
+    if label == "DEF Penetration buff" and re.search(
+        r"\b(?:he|she|they) gains? \d+(?:\.\d+)? def penetration\b", t
+    ):
         return "Self"
     if effect_targets_self_only(t, label, "buff"):
         return "Self"
@@ -1244,6 +1267,26 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         ) and not re.search(r"\breduc\w+ .{0,40}damage dealt\b", t):
             return True
 
+    if label == "Shield":
+        if re.search(
+            r"\bgrants? (?:them|an allied hero|allies?) .{0,30}"
+            r"(?:chi barrier|shield)\b",
+            t,
+        ):
+            return False
+        if re.search(
+            r"\b(?:gaining|gains?|immediately gains?) (?:a |an )?"
+            r"(?:\d+%[^.]{0,40})?(?:chi barrier|shield)\b",
+            t,
+        ) or re.search(r"\bchannels (?:his|her|their) chi, gaining\b", t):
+            return True
+    if label == "DEF Penetration buff" and re.search(
+        r"\b(?:he|she|they) gains? \d+(?:\.\d+)? def penetration\b", t
+    ):
+        return True
+    if label == "ATK buff" and re.search(r"\batk bonus granted by\b", t):
+        return True
+
     if label in ("Shield", *HP_RECOVERY_LABELS):
         if is_hp_recovery_label(label) and _healing_targets_self(t):
             return True
@@ -1500,13 +1543,16 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     if label == "Shield":
         # Self-cast shield before generic ally checks
         if re.search(
-            r"gaining .{0,20}shield|gains? .{0,40}shield|"
-            r"grant(?:ing)? .{0,20}(?:her|him|itself|herself|himself).{0,30}shield|"
-            r"shield that can absorb",
+            r"gaining .{0,30}(?:shield|chi barrier)|"
+            r"gains? .{0,40}(?:shield|chi barrier)|"
+            r"grant(?:ing)? .{0,20}(?:her|him|itself|herself|himself).{0,30}"
+            r"(?:shield|chi barrier)|"
+            r"(?:shield|chi barrier) that can absorb",
             t,
         ) and not re.search(
-            r"(?:allies?|allied heroes?).{0,50}shield|"
-            r"shield.{0,50}(?:for |to )(?:allies?|allied)",
+            r"(?:allies?|allied heroes?).{0,50}(?:shield|chi barrier)|"
+            r"(?:shield|chi barrier).{0,50}(?:for |to )(?:allies?|allied)|"
+            r"\bgrants? them a (?:chi barrier|shield)\b",
             t,
         ):
             return "Self"
@@ -1536,6 +1582,10 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     ) and not re.search(r"\ball allies'? haste\b", t):
         return "Self" if re.search(r"\b(?:his|her) haste\b", t) else "Multiple targets"
     # Single-ally heal / shield / energy before global "all allies" heuristics
+    if category == "buff" and label == "ATK buff" and re.search(
+        r"\bincreas(?:e|es|ing) the atk of any unit shielded by\b", t
+    ):
+        return "Multiple targets"
     if category == "buff" and label in ("ATK buff", "Energy recovery") and re.search(
         r"\bincreas(?:e|es|ing) their (?:atk|haste)\b", t
     ):
@@ -1704,9 +1754,11 @@ _STAT_LABELS_NO_GENERIC = frozenset(
         "Energy drain",
         "Haste buff",
         "Crit buff",
+        "ATK buff",
         "Damage taken reduction",
         "Healing over time",
         "DEF buff",
+        "Shield",
     }
 )
 
@@ -1913,14 +1965,20 @@ def extract_number(text: str, label: str = "") -> float | None:
         return None
     if label == "ATK buff":
         for pat in (
+            r"increas(?:e|es|ing) (?:her |his |their )?atk by (\d+(?:\.\d+)?)\s*%",
+            r"and atk by (\d+(?:\.\d+)?)\s*%",
             r"atk increase of (\d+(?:\.\d+)?)\s*%",
             r"gain an atk increase of (\d+(?:\.\d+)?)\s*%",
             r"increas(?:e|es|ing) (?:their|allies?) atk by (\d+(?:\.\d+)?)",
+            r"increas(?:e|es|ing) the atk of any unit shielded by .{0,60}by "
+            r"(\d+(?:\.\d+)?)",
+            r"atk bonus granted by .{0,80}?to (\d+(?:\.\d+)?)\s*%",
             r"atk (?:is |are )?increased by (\d+(?:\.\d+)?)",
             r"normal attacks? deal (\d+(?:\.\d+)?)% more damage",
         ):
             if m := re.search(pat, t, re.I):
                 return float(m.group(1))
+        return None
     if label == "ATK SPD buff":
         amounts = _all_amounts(
             text,
@@ -1936,10 +1994,13 @@ def extract_number(text: str, label: str = "") -> float | None:
         amounts = _all_amounts(
             text,
             [
+                r"(?:chi barrier|shield).{0,30}(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+                r"gaining a (\d+(?:\.\d+)?)\s*%\s*\(atk-based\).{0,40}chi barrier",
                 r"shield (?:that can absorb|equal to|value|that blocks) "
                 r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
-                r"increases? the shield value to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
-                r"gains? a shield that (?:can )?absorb(?:s)? "
+                r"increases? the (?:chi barrier'?s? )?shield value to "
+                r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+                r"gains? a (?:chi barrier|shield) that (?:can )?absorb(?:s)? "
                 r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
                 r"crafts? a cogshield .{0,40}block "
                 r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
@@ -2700,6 +2761,10 @@ BUFF_RULES = [
     # Passive plural ally ATK: "Allies … have their ATK increased by N%"
     (
         r"allies.{0,50}atk (?:is |are )?increased by",
+        "ATK buff",
+    ),
+    (
+        r"increas(?:e|es|ing) the atk of (?:any unit|any .{0,20}) shielded by",
         "ATK buff",
     ),
     (
@@ -4818,6 +4883,8 @@ def _is_damage_scalar_upgrade_chunk(text: str) -> bool:
         return True
     if re.search(r"\bcast(?:s|ing)?\b|\bsummon(?:s|ing)?\b", t):
         return False
+    if re.search(r"increases? the chi burst damage to \d+", t):
+        return True
     return bool(
         re.search(
         r"increases? (?:the )?(?:skill |impact |extra |counterattack |"
@@ -4927,12 +4994,58 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
     return ordered
 
 
+def _text_has_self_hp_cost(text: str) -> bool:
+    """True when the hero loses or sacrifices their own HP during combat."""
+    t = text.lower()
+    if re.search(
+        r"whenever\s+(?:she|he|\w+)\s+loses?\s+\d+(?:\.\d+)?(?:\s*%\s*)?"
+        r"of\s+(?:her|his|their)\s+max\s+hp\b",
+        t,
+    ):
+        return True
+    if re.search(
+        r"\b(?:she|he)\s+(?:consumes?|loses?|sacrifices?)\s+"
+        r"\d+(?:\.\d+)?(?:\s*%\s*)?(?:of\s+)?(?:her|his|their)\s+(?:max\s+)?hp\b",
+        t,
+    ):
+        return True
+    for match in _SELF_HP_COST_RE.finditer(text):
+        start = max(0, match.start() - 60)
+        end = min(len(text), match.end() + 40)
+        window = text[start:end].lower()
+        if re.search(r"\benem(?:y|ies)|\bfoes?\b", window):
+            continue
+        if re.search(r"\b(?:her|his|she|he|(?:herself|himself))\b", window):
+            return True
+    return False
+
+
 def _hero_needs_external_healing(hero: Hero) -> bool:
     """Self HP drain / sacrifice during skills → benefits from ally healing."""
     for _tier, text, _section in hero.skill_chunks:
         if _chunk_is_companion_focused(text):
             continue
-        if _SELF_HP_COST_RE.search(text):
+        if _text_has_self_hp_cost(text):
+            return True
+    return False
+
+
+def _hero_provides_ally_healing(hero: Hero) -> bool:
+    """True when the hero's kit primarily restores ally HP."""
+    sustain_labels = {
+        DIRECT_HEALING_LABEL,
+        HEALING_OVER_TIME_LABEL,
+        LEGACY_DIRECT_HEALING_LABEL,
+    }
+    ally_targetings = {
+        "Single target",
+        "Multiple targets",
+        "Arc",
+        "Area",
+        "All units",
+    }
+    for effect in hero.effects:
+        if effect.label in sustain_labels and effect.targeting in ally_targetings:
             return True
     return False
 
@@ -5415,6 +5528,12 @@ def analyze_text(
         for scope in _buff_match_scopes(text, label, pat):
             if label == "ATK buff" and _buff_match_is_ally_atk_penalty(scope):
                 continue
+            if (
+                label == "ATK buff"
+                and _is_damage_scalar_upgrade_chunk(text)
+                and re.search(r"\batk bonus granted by\b", scope.lower())
+            ):
+                continue
             if label == DIRECT_HEALING_LABEL and _scope_is_hot_healing(scope):
                 continue
             if (
@@ -5636,7 +5755,6 @@ def analyze_text(
             r"grants? \d+ energy|energy recovery increases",
         ),
         ("DEF Penetration", r"penetration"),
-        ("Life Drain", r"life drain"),
         # Physical/Magic DEF only when the unit gains them (not when reducing enemy DEF)
         (
             "Physical DEF",
@@ -5677,6 +5795,10 @@ def _upgrade_chunk_relates_to_buff(text: str, label: str) -> bool:
         )
     if label in (*HP_RECOVERY_LABELS, LEGACY_DIRECT_HEALING_LABEL):
         return bool(re.search(r"\b(?:recover|restore|heal|healing)\b", t))
+    if label == "Shield":
+        return bool(re.search(r"\b(?:shield|chi barrier)\b", t))
+    if label == "ATK buff" and re.search(r"\batk bonus granted by\b", t):
+        return bool(re.search(r"\b(?:atk|atk bonus)\b", t))
     return True
 
 
@@ -5788,6 +5910,10 @@ def _apply_scalar_upgrades(
         amt = extract_number(text, buff_label)
         if amt is not None:
             bump("buff", buff_label, amt)
+    for m in re.finditer(
+        r"(?:the )?atk bonus granted by .{0,80}?to (\d+(?:\.\d+)?)\s*%", t
+    ):
+        bump("buff", "ATK buff", float(m.group(1)))
 
 
 BENEFIT_STAT_ORDER = (
@@ -5818,13 +5944,8 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     "Crit buff": ("Crit",),
     "Execution buff": ("Execution",),
     "Resilience buff": ("Resilience",),
-    DIRECT_HEALING_LABEL: ("Healing",),
-    HEALING_OVER_TIME_LABEL: ("Healing",),
-    LEGACY_DIRECT_HEALING_LABEL: ("Healing",),
-    HEALING_STAT_BUFF_LABEL: ("Healing",),
     "Energy recovery": ("Energy",),
     "DEF Penetration buff": ("DEF Penetration",),
-    "Lifedrain buff": ("Life Drain",),
     "Shield": ("Shield",),
     "DEF buff": ("Physical DEF", "Magic DEF"),
     "Phys DEF buff": ("Physical DEF",),
@@ -5834,7 +5955,6 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     "Damage dealt buff": ("ATK",),
     "Ranged DEF buff": ("Physical DEF",),
     "Crit DMG boost": ("Crit DMG Boost",),
-    "Vitality buff": ("Healing",),
 }
 
 
@@ -5935,13 +6055,6 @@ def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
                 t,
             ) and not re.search(r"\binitial energy\b", t):
                 return True
-        elif stat == "Life Drain":
-            if re.search(r"\blife drain\b", t) and re.search(
-                r"\b(?:her|him|she|he|their) and\b|"
-                r"\bincreases? (?:her |his )",
-                t,
-            ):
-                return True
         elif stat in ("Physical DEF", "Magic DEF"):
             if re.search(
                 r"\b(?:absorb|steal)(?:s|ing)? .{0,40}"
@@ -5978,7 +6091,7 @@ def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
                 t,
             ):
                 return True
-            if _SELF_HP_COST_RE.search(text):
+            if _text_has_self_hp_cost(text):
                 return True
     return False
 
@@ -5992,8 +6105,12 @@ def refine_benefit_stats(hero: Hero) -> None:
         if _text_supports_benefit_stat(hero, s)
     }
     merged = from_buffs | from_text
-    if _hero_needs_external_healing(hero):
+    merged.discard("Life Drain")
+    needs_healing = _hero_needs_external_healing(hero)
+    if needs_healing:
         merged.add("Healing")
+    elif _hero_provides_ally_healing(hero):
+        merged.discard("Healing")
     hero.benefit_stats = [s for s in BENEFIT_STAT_ORDER if s in merged]
 
 
@@ -6106,23 +6223,6 @@ def analyze_hero(hero: Hero):
     ):
         hero.damage_entries.append((dt, ", ".join(sorted(tgts))))
     _accumulate_true_damage_scores(hero, primary_dmg)
-    # Healing stat matters only when the hero heals or scales their own Healing.
-    healing_labels = {*HP_RECOVERY_LABELS, HEALING_STAT_BUFF_LABEL, LEGACY_DIRECT_HEALING_LABEL}
-    if (
-        any(
-            e.label in healing_labels
-            and (
-                e.targeting == "Self"
-                or _effect_buffs_caster(e)
-                or effect_targets_self_only(
-                    e.qualitative.lower(), e.label, e.category
-                )
-            )
-            for e in hero.effects
-        )
-        and "Healing" not in hero.benefit_stats
-    ):
-        hero.benefit_stats.append("Healing")
     refine_benefit_stats(hero)
     for e in hero.effects:
         if e.targeting == "Single target" and effect_targets_self_only(

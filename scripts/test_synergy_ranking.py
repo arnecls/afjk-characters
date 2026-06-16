@@ -314,5 +314,21 @@ class SynergyStatBuffReachTests(unittest.TestCase):
         self.assertEqual(area_shield, single_shield)
 
 
+class SynergySelfFilterTests(unittest.TestCase):
+    def test_hero_not_listed_as_own_synergy_partner(self) -> None:
+        from test_beneficiaries import _full_roster
+
+        heroes, matchers, behavior = _full_roster()
+        lyca = next(h for h in heroes if gen.short_name(h.title) == "Lyca")
+        entries = gen.rank_synergy_entries(lyca, heroes, matchers, behavior)
+        providers = {gen.short_name(title) for _score, _reasons, title in entries}
+        self.assertNotIn("Lyca", providers)
+        score, reasons = gen.score_combined_synergy(
+            lyca, lyca, matchers, behavior[lyca.title]
+        )
+        self.assertEqual(score, 0.0)
+        self.assertEqual(reasons, [])
+
+
 if __name__ == "__main__":
     unittest.main()

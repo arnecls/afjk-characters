@@ -428,13 +428,11 @@
   "Saida": [
     "ally-shielder",
     "cheat-death",
-    "high-initial-energy",
-    "life-drain"
+    "high-initial-energy"
   ],
   "Salazer": [
     "execute",
-    "interrupt",
-    "life-drain"
+    "interrupt"
   ],
   "Satrana": [
     "dot-specialist",
@@ -461,8 +459,7 @@
   ],
   "Shemira": [
     "high-damage-ult",
-    "hp-scaling",
-    "life-drain"
+    "hp-scaling"
   ],
   "Silven": [
     "high-initial-energy",
@@ -491,8 +488,7 @@
   ],
   "Sonja": [
     "ally-buffer",
-    "aoe-damage",
-    "life-drain"
+    "aoe-damage"
   ],
   "Soren": [
     "counterattack",
@@ -570,13 +566,11 @@
   ],
   "Viperian": [
     "aoe-damage",
-    "dot-specialist",
-    "life-drain"
+    "dot-specialist"
   ],
   "Walker": [
     "aoe-damage",
     "battle-start-burst",
-    "life-drain",
     "mark-target",
     "mass-cc"
   ],
