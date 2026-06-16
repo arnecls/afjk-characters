@@ -3014,7 +3014,28 @@
           return parseSkillOverviewMetricEntry(segment.trim()) !== null;
         });
       if (allMetrics) {
-        const pills = segments.map(function (segment) {
+        const parsedSegments = segments.map(function (segment) {
+          return parseSkillOverviewMetricEntry(segment.trim());
+        });
+        const speedEntry = parsedSegments.find(function (entry) {
+          return (
+            entry &&
+            entry.label.trim().toLowerCase() === "speed"
+          );
+        });
+        const filteredSegments = segments.filter(function (segment) {
+          const entry = parseSkillOverviewMetricEntry(segment.trim());
+          if (
+            entry &&
+            entry.label.trim().toLowerCase() === "first cast speed" &&
+            speedEntry &&
+            entry.value.toLowerCase() === speedEntry.value.toLowerCase()
+          ) {
+            return false;
+          }
+          return true;
+        });
+        const pills = filteredSegments.map(function (segment) {
           return renderSkillOverviewMetric(segment);
         });
         return formatSkillOverviewRow(
