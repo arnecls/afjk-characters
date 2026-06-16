@@ -537,14 +537,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -596,6 +588,13 @@
         },
         {
           "provider": "Nara",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Rowan",
           "reasons": [
             "Healing via Direct healing (area, low)"
           ],
@@ -1188,15 +1187,6 @@
           "score": 19.0125
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 17.572000000000003
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "Shield via Shield (multiple targets, high)",
@@ -1227,6 +1217,14 @@
             "Healing via Direct healing (single target, low)"
           ],
           "score": 13.5
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 13.072000000000001
         },
         {
           "provider": "Zanie",
@@ -1533,7 +1531,7 @@
       "replacements": {
         "buff": [
           {
-            "name": "Kordan",
+            "name": "Twins",
             "score": 1.0,
             "matches": [
               "Magic DEF",
@@ -1541,7 +1539,7 @@
             ]
           },
           {
-            "name": "Mikola",
+            "name": "Tilaya",
             "score": 1.0,
             "matches": [
               "Magic DEF",
@@ -1549,7 +1547,7 @@
             ]
           },
           {
-            "name": "Rowan",
+            "name": "Scarlita",
             "score": 1.0,
             "matches": [
               "Magic DEF",
@@ -1677,9 +1675,10 @@
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.649,
+            "name": "Scarlita",
+            "score": 0.624,
             "matches": [
+              "Buffs on allies",
               "Crowd Control",
               "Damage"
             ]
@@ -1998,16 +1997,6 @@
     "Atalanta": {
       "synergies": [
         {
-          "provider": "Mikola",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Healing via Healing over time (all units, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 25.25
-        },
-        {
           "provider": "Twins",
           "reasons": [
             "Haste via Haste buff (all units, average) `signature fuel`",
@@ -2035,13 +2024,13 @@
           "score": 16.875
         },
         {
-          "provider": "Fay",
+          "provider": "Mikola",
           "reasons": [
-            "Healing via Direct healing (arc, average)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+            "Haste via Haste buff (multiple targets, average) `signature fuel`",
+            "Healing via Healing over time (all units, low)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
-          "score": 16.62
+          "score": 16.25
         },
         {
           "provider": "Smokey & Meerky",
@@ -2084,30 +2073,20 @@
           "score": 13.437499999999998
         },
         {
-          "provider": "Hepler",
-          "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`",
-            "Healing via Healing over time (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
-          ],
-          "score": 13.3125
-        },
-        {
-          "provider": "Lucca",
+          "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF buff (area, high)"
           ],
           "score": 12.0
         },
         {
-          "provider": "Rowan",
+          "provider": "Hepler",
           "reasons": [
-            "Healing via Direct healing (area, low)",
-            "Physical DEF via DEF buff (single target, average)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`",
+            "Healing via Healing over time (multiple targets, high)",
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 11.0824
+          "score": 11.8125
         },
         {
           "provider": "Koko",
@@ -2131,6 +2110,14 @@
           "score": 9.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 8.0824
+        },
+        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -2138,11 +2125,19 @@
           "score": 8.0
         },
         {
-          "provider": "Tilaya",
+          "provider": "Lucca",
           "reasons": [
             "Physical DEF via DEF buff (area, average)"
           ],
           "score": 8.0
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "Healing via Direct healing (arc, average)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 7.62
         },
         {
           "provider": "Zandrok",
@@ -2161,13 +2156,6 @@
           "score": 6.3
         },
         {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Galahad",
           "reasons": [
             "Haste via Haste buff (single target, average) `signature fuel`",
@@ -2184,30 +2172,9 @@
           "score": 5.625
         },
         {
-          "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Evie",
           "reasons": [
             "Healing via Direct healing (single target, high)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)"
           ],
           "score": 4.5
         },
@@ -2269,6 +2236,13 @@
           "score": 3.0
         },
         {
+          "provider": "Sonja",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Mehira",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -2298,16 +2272,16 @@
           "score": 1.5
         },
         {
-          "provider": "Kruger",
+          "provider": "Rhys",
           "reasons": [
-            "Physical DEF via DEF buff (single target, low)"
+            "Healing via Direct healing (single target, low)"
           ],
           "score": 1.5
         },
         {
-          "provider": "Rhys",
+          "provider": "Scarlita",
           "reasons": [
-            "Healing via Direct healing (single target, low)"
+            "Physical DEF via DEF buff (single target, low)"
           ],
           "score": 1.5
         },
@@ -2339,13 +2313,6 @@
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 11.25
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)"
-          ],
-          "score": 4.5
         },
         {
           "provider": "Hammie",
@@ -2615,14 +2582,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -2680,6 +2639,13 @@
           "score": 4.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
           "provider": "Hammie",
           "reasons": [
             "Healing via Direct healing (single target, low)"
@@ -2690,13 +2656,6 @@
           "provider": "Rhys",
           "reasons": [
             "Healing via Direct healing (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
           ],
           "score": 1.5
         }
@@ -2941,6 +2900,10 @@
         }
       ],
       "beneficiaries": [
+        {
+          "score": 14.25,
+          "name": "Cecia"
+        },
         {
           "score": 14.25,
           "name": "Dunlingr"
@@ -4248,15 +4211,6 @@
           "score": 13.25
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Enables Debuff on target via Phys DEF debuff (multiple targets)",
-            "Enables Magic damage from allies via Magic damage (area)"
-          ],
-          "score": 12.5
-        },
-        {
           "provider": "Alsa",
           "reasons": [
             "Enables Debuff on target via Movement speed debuff (area)",
@@ -4442,6 +4396,14 @@
             "Enables Magic damage from allies via Magic damage + all enemies (all units)"
           ],
           "score": 8.25
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "Enables Magic damage from allies via Magic damage (area)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Kafra",
@@ -6272,14 +6234,6 @@
           "score": 5.4
         },
         {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)",
-            "Enables CC on enemies via Bind (single target, low)"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Gunnar",
           "reasons": [
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
@@ -6368,6 +6322,13 @@
           "provider": "Rhys",
           "reasons": [
             "Enables CC on enemies via Knock back (single target, low)"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Seth",
+          "reasons": [
+            "Enables CC on enemies via Bind (single target, low)"
           ],
           "score": 3.0
         },
@@ -6941,30 +6902,12 @@
     "Cecia": {
       "synergies": [
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 27.0
-        },
-        {
-          "provider": "Lucca",
+          "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF buff (area, high)",
             "Magic DEF via DEF buff (area, high)"
           ],
           "score": 24.0
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 21.6
         },
         {
           "provider": "Twins",
@@ -6985,7 +6928,7 @@
           "score": 17.25
         },
         {
-          "provider": "Tilaya",
+          "provider": "Lucca",
           "reasons": [
             "Physical DEF via DEF buff (area, average)",
             "Magic DEF via DEF buff (area, average)"
@@ -7017,23 +6960,6 @@
           "score": 12.0
         },
         {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 10.0824
-        },
-        {
           "provider": "Aliceth",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (multiple targets, high)"
@@ -7041,26 +6967,9 @@
           "score": 9.0
         },
         {
-          "provider": "Eironn",
+          "provider": "Mikola",
           "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 9.0
         },
@@ -7095,13 +7004,12 @@
           "score": 6.0
         },
         {
-          "provider": "Hepler",
+          "provider": "Sonja",
           "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
           ],
-          "score": 5.25
+          "score": 6.0
         },
         {
           "provider": "Zandrok",
@@ -7125,11 +7033,25 @@
           "score": 4.5
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 4.082400000000001
+        },
+        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 4.082400000000001
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 3.5999999999999996
         },
         {
           "provider": "Valka",
@@ -7139,7 +7061,7 @@
           "score": 3.5999999999999996
         },
         {
-          "provider": "Kruger",
+          "provider": "Scarlita",
           "reasons": [
             "Physical DEF via DEF buff (single target, low)",
             "Magic DEF via DEF buff (single target, low)"
@@ -7152,6 +7074,13 @@
             "DEF Penetration via DEF Penetration buff (single target, average)"
           ],
           "score": 3.0
+        },
+        {
+          "provider": "Hepler",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 2.25
         },
         {
           "provider": "Mehira",
@@ -7213,14 +7142,6 @@
           "provider": "Kazim",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
           ],
           "score": 9.0
         },
@@ -8549,13 +8470,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 2.25
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
-          ],
-          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -8607,6 +8521,14 @@
             ]
           },
           {
+            "name": "Temesia",
+            "score": 0.9381,
+            "matches": [
+              "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
             "name": "Frieren",
             "score": 0.9305,
             "matches": [
@@ -8614,14 +8536,6 @@
               "Magic",
               "True damage",
               "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Faramor",
-            "score": 0.836,
-            "matches": [
-              "DoT",
-              "True damage"
             ]
           }
         ],
@@ -9389,15 +9303,6 @@
           "score": 71.7636
         },
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK via ATK buff (all units, average)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Grants 6 distinct stat buffs to Dionel"
-          ],
-          "score": 64.0
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
@@ -9408,6 +9313,15 @@
           "score": 60.0
         },
         {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 5 distinct stat buffs to Dionel"
+          ],
+          "score": 55.0
+        },
+        {
           "provider": "Himmel",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -9415,15 +9329,6 @@
             "Grants 4 distinct stat buffs to Dionel (start of battle)"
           ],
           "score": 43.5
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`",
-            "Grants 4 distinct stat buffs to Dionel"
-          ],
-          "score": 39.3544
         },
         {
           "provider": "Smokey & Meerky",
@@ -9470,6 +9375,15 @@
           "score": 32.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 31.8544
+        },
+        {
           "provider": "Gunnar",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -9504,6 +9418,13 @@
           "score": 20.8
         },
         {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 20.0
+        },
+        {
           "provider": "Solise",
           "reasons": [
             "Grants 2 distinct stat buffs to Dionel"
@@ -9525,13 +9446,6 @@
             "Grants 4 distinct stat buffs to Dionel"
           ],
           "score": 18.0
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 16.0
         },
         {
           "provider": "Daimon",
@@ -9567,14 +9481,6 @@
           "score": 13.5
         },
         {
-          "provider": "Scarlita",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 10.5
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
@@ -9583,18 +9489,19 @@
           "score": 9.3
         },
         {
-          "provider": "Eironn",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Marcille",
           "reasons": [
             "Grants 1 distinct stat buff to Dionel"
           ],
           "score": 9.0
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 7.5
         },
         {
           "provider": "Thador",
@@ -9621,6 +9528,13 @@
           "score": 5.7636
         },
         {
+          "provider": "Eironn",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 4.5
+        },
+        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
@@ -9641,13 +9555,6 @@
             "Grants 1 distinct stat buff to Dionel"
           ],
           "score": 3.0
-        },
-        {
-          "provider": "Kruger",
-          "reasons": [
-            "Grants 1 distinct stat buff to Dionel"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Kulu",
@@ -9671,15 +9578,6 @@
           "score": 1.5
         },
         {
-          "provider": "Hepler",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Shield via Shield (multiple targets, high)",
-            "Grants 4 distinct stat buffs to Dionel"
-          ],
-          "score": 33.0
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
@@ -9689,13 +9587,13 @@
           "score": 32.60714285714286
         },
         {
-          "provider": "Fay",
+          "provider": "Hepler",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Grants 5 distinct stat buffs to Dionel"
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Shield via Shield (multiple targets, high)",
+            "Grants 3 distinct stat buffs to Dionel"
           ],
-          "score": 30.3
+          "score": 31.5
         },
         {
           "provider": "Kazim",
@@ -9712,6 +9610,15 @@
             "Grants 3 distinct stat buffs to Dionel"
           ],
           "score": 22.5
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Grants 4 distinct stat buffs to Dionel"
+          ],
+          "score": 21.3
         },
         {
           "provider": "Cassadee",
@@ -9744,26 +9651,19 @@
           "score": 14.0
         },
         {
-          "provider": "Lucy",
-          "reasons": [
-            "Shield via Shield (single target, high)",
-            "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Grants 1 distinct stat buff to Dionel"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Cecia",
           "reasons": [
             "Grants 3 distinct stat buffs to Dionel"
           ],
           "score": 10.0
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Shield via Shield (single target, high)",
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 9.0
         },
         {
           "provider": "Salazer",
@@ -9780,6 +9680,13 @@
             "Grants 1 distinct stat buff to Dionel"
           ],
           "score": 8.100000000000001
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Lucius",
@@ -9836,13 +9743,6 @@
         },
         {
           "provider": "Rhys",
-          "reasons": [
-            "Grants 1 distinct stat buff to Dionel"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Seth",
           "reasons": [
             "Grants 1 distinct stat buff to Dionel"
           ],
@@ -10227,14 +10127,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -10279,6 +10171,13 @@
         },
         {
           "provider": "Nara",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Rowan",
           "reasons": [
             "Healing via Direct healing (area, low)"
           ],
@@ -10365,8 +10264,8 @@
           "name": "Bonnie"
         },
         {
-          "score": 19.3,
-          "name": "Seth"
+          "score": 13.0,
+          "name": "Harak"
         },
         {
           "score": 13.0,
@@ -10549,19 +10448,10 @@
           "reasons": [
             "Shield via Shield (single target, low)",
             "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`",
             "ATK SPD via Haste buff (all units, average) `signature fuel`"
           ],
-          "score": 12.2706
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
+          "score": 10.7706
         },
         {
           "provider": "Saida",
@@ -10649,83 +10539,26 @@
           "score": 0.5103000000000001
         },
         {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF buff (area, high)",
-            "Magic DEF via DEF buff (area, high)"
-          ],
-          "score": 24.0
-        },
-        {
-          "provider": "Mikola",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 22.05
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 19.62
-        },
-        {
           "provider": "Tilaya",
           "reasons": [
-            "Physical DEF via DEF buff (area, average)",
-            "Magic DEF via DEF buff (area, average)"
+            "Physical DEF via DEF buff (area, high)"
           ],
-          "score": 16.0
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Shield via Shield (single target, high)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 13.5
+          "score": 12.0
         },
         {
           "provider": "Hepler",
           "reasons": [
             "Shield via Shield (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)",
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 13.0125
+          "score": 10.0125
         },
         {
-          "provider": "Scarlita",
+          "provider": "Lucca",
           "reasons": [
-            "Shield via Shield (single target, average)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
+            "Physical DEF via DEF buff (area, average)"
           ],
-          "score": 12.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 10.0824
+          "score": 8.0
         },
         {
           "provider": "Shakir",
@@ -10735,27 +10568,26 @@
           "score": 6.075
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, low)",
-            "Magic DEF via DEF buff (multiple targets, low)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Shield via Shield (all units, low)"
           ],
           "score": 5.0
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Shield via Shield (single target, high)"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Physical DEF via DEF buff (single target, low)"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Lyca",
@@ -10766,6 +10598,13 @@
           "score": 4.401
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 4.082400000000001
+        },
+        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`"
@@ -10774,6 +10613,13 @@
         },
         {
           "provider": "Kazim",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+          ],
+          "score": 4.05
+        },
+        {
+          "provider": "Mikola",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
@@ -10808,6 +10654,13 @@
           "score": 3.0375
         },
         {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Korin",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -10815,10 +10668,9 @@
           "score": 3.0
         },
         {
-          "provider": "Kruger",
+          "provider": "Lumont",
           "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
+            "Physical DEF via DEF buff (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -10826,6 +10678,13 @@
           "provider": "Pang",
           "reasons": [
             "Shield via Shield (single target, average)"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -10849,6 +10708,13 @@
             "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.72125
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 1.6199999999999999
         },
         {
           "provider": "Valka",
@@ -11262,12 +11128,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 77.66,
-          "name": "Silven"
-        },
-        {
           "score": 76.7706,
           "name": "Lily May"
+        },
+        {
+          "score": 76.16,
+          "name": "Silven"
         },
         {
           "score": 75.5206,
@@ -11294,8 +11160,12 @@
           "name": "Tasi"
         },
         {
-          "score": 43.808,
+          "score": 46.808,
           "name": "Laios"
+        },
+        {
+          "score": 41.2636,
+          "name": "Mikola"
         },
         {
           "score": 40.308,
@@ -11319,11 +11189,11 @@
         },
         {
           "score": 38.2636,
-          "name": "Mikola"
+          "name": "Sylphira"
         },
         {
-          "score": 38.2636,
-          "name": "Sylphira"
+          "score": 36.018,
+          "name": "Seth"
         },
         {
           "score": 36.0,
@@ -11336,10 +11206,6 @@
         {
           "score": 33.2636,
           "name": "Fay"
-        },
-        {
-          "score": 33.018,
-          "name": "Seth"
         },
         {
           "score": 30.808,
@@ -11376,6 +11242,10 @@
         {
           "score": 27.7636,
           "name": "Alsa"
+        },
+        {
+          "score": 27.16,
+          "name": "Rowan"
         },
         {
           "score": 26.7636,
@@ -11518,6 +11388,10 @@
           "name": "Walker"
         },
         {
+          "score": 18.16,
+          "name": "Granny Dahnie"
+        },
+        {
           "score": 17.66,
           "name": "Marcille"
         },
@@ -11544,10 +11418,6 @@
         {
           "score": 15.66,
           "name": "Ulmus"
-        },
-        {
-          "score": 15.16,
-          "name": "Rowan"
         },
         {
           "score": 14.66,
@@ -11594,10 +11464,6 @@
           "name": "Odie"
         },
         {
-          "score": 12.2706,
-          "name": "Eironn"
-        },
-        {
           "score": 12.16,
           "name": "Hugin"
         },
@@ -11620,6 +11486,10 @@
         {
           "score": 11.16,
           "name": "Scarlita"
+        },
+        {
+          "score": 10.7706,
+          "name": "Eironn"
         },
         {
           "score": 10.7706,
@@ -11666,7 +11536,7 @@
         "buff": [
           {
             "name": "Himmel",
-            "score": 0.7217,
+            "score": 0.7274,
             "matches": [
               "ATK",
               "Shield",
@@ -11675,7 +11545,7 @@
           },
           {
             "name": "Hugin",
-            "score": 0.596,
+            "score": 0.6008,
             "matches": [
               "ATK",
               "Haste",
@@ -11684,7 +11554,7 @@
           },
           {
             "name": "Contess",
-            "score": 0.5709,
+            "score": 0.5754,
             "matches": [
               "ATK",
               "Shield"
@@ -11798,26 +11668,25 @@
         "overall": [
           {
             "name": "Contess",
-            "score": 0.6064,
+            "score": 0.6078,
             "matches": [
               "Healing"
             ]
           },
           {
             "name": "Smokey & Meerky",
-            "score": 0.6,
+            "score": 0.6003,
             "matches": [
               "Healing",
               "Energy provider"
             ]
           },
           {
-            "name": "Rowan",
-            "score": 0.5889,
+            "name": "Pandora",
+            "score": 0.5614,
             "matches": [
-              "Energy provider",
               "Healing",
-              "Similar Skills"
+              "Energy provider"
             ]
           }
         ]
@@ -12246,9 +12115,9 @@
           "reasons": [
             "ATK via ATK buff (all units, average)",
             "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Grants 6 distinct stat buffs to Faramor"
+            "Grants 5 distinct stat buffs to Faramor"
           ],
-          "score": 58.0
+          "score": 49.0
         },
         {
           "provider": "Koko",
@@ -12263,9 +12132,9 @@
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
             "Shield via Shield (multiple targets, high)",
-            "Grants 4 distinct stat buffs to Faramor"
+            "Grants 3 distinct stat buffs to Faramor"
           ],
-          "score": 31.5
+          "score": 30.0
         },
         {
           "provider": "Dunlingr",
@@ -12283,13 +12152,6 @@
             "Grants 3 distinct stat buffs to Faramor"
           ],
           "score": 25.5
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Grants 4 distinct stat buffs to Faramor"
-          ],
-          "score": 23.5
         },
         {
           "provider": "Hewynn",
@@ -12315,6 +12177,13 @@
           "score": 21.0
         },
         {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 20.0
+        },
+        {
           "provider": "Zanie",
           "reasons": [
             "Shield via Shield (single target, average)",
@@ -12331,7 +12200,7 @@
           "score": 17.4
         },
         {
-          "provider": "Tilaya",
+          "provider": "Rowan",
           "reasons": [
             "Grants 2 distinct stat buffs to Faramor"
           ],
@@ -12383,26 +12252,11 @@
           "score": 14.0
         },
         {
-          "provider": "Lucy",
-          "reasons": [
-            "Shield via Shield (single target, high)",
-            "Grants 2 distinct stat buffs to Faramor"
-          ],
-          "score": 13.5
-        },
-        {
           "provider": "Ludovic",
           "reasons": [
             "Grants 2 distinct stat buffs to Faramor"
           ],
           "score": 13.5
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Isabella",
@@ -12414,14 +12268,6 @@
           "score": 11.55
         },
         {
-          "provider": "Scarlita",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "Grants 2 distinct stat buffs to Faramor"
-          ],
-          "score": 10.5
-        },
-        {
           "provider": "Cecia",
           "reasons": [
             "Grants 3 distinct stat buffs to Faramor"
@@ -12429,9 +12275,10 @@
           "score": 10.0
         },
         {
-          "provider": "Eironn",
+          "provider": "Lucy",
           "reasons": [
-            "Grants 2 distinct stat buffs to Faramor"
+            "Shield via Shield (single target, high)",
+            "Grants 1 distinct stat buff to Faramor"
           ],
           "score": 9.0
         },
@@ -12451,6 +12298,13 @@
           "score": 8.325
         },
         {
+          "provider": "Lucca",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Shield via Shield (area, low)",
@@ -12460,6 +12314,14 @@
         },
         {
           "provider": "Pang",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
             "Grants 2 distinct stat buffs to Faramor"
@@ -12481,6 +12343,13 @@
             "Grants 1 distinct stat buff to Faramor"
           ],
           "score": 5.55
+        },
+        {
+          "provider": "Eironn",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Thoran",
@@ -12547,13 +12416,6 @@
           "score": 2.0999999999999996
         },
         {
-          "provider": "Kruger",
-          "reasons": [
-            "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Kulu",
           "reasons": [
             "Grants 1 distinct stat buff to Faramor"
@@ -12569,13 +12431,6 @@
         },
         {
           "provider": "Rhys",
-          "reasons": [
-            "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Seth",
           "reasons": [
             "Grants 1 distinct stat buff to Faramor"
           ],
@@ -13020,28 +12875,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 27.0,
-          "name": "Hepler"
+          "score": 24.87,
+          "name": "Lily May"
         },
         {
-          "score": 24.0,
-          "name": "Granny Dahnie"
+          "score": 23.25,
+          "name": "Silven"
         },
         {
-          "score": 24.0,
-          "name": "Lucca"
-        },
-        {
-          "score": 21.6,
-          "name": "Cecia"
-        },
-        {
-          "score": 21.0,
-          "name": "Natsu"
-        },
-        {
-          "score": 16.62,
-          "name": "Atalanta"
+          "score": 21.3,
+          "name": "Dionel"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -13050,30 +12893,28 @@
       "replacements": {
         "buff": [
           {
-            "name": "Lucca",
-            "score": 1.0,
+            "name": "Gunnar",
+            "score": 0.7805,
             "matches": [
-              "Magic DEF",
-              "Physical DEF"
-            ]
-          },
-          {
-            "name": "Mikola",
-            "score": 0.974,
-            "matches": [
-              "Magic DEF",
-              "Physical DEF",
               "ATK",
+              "ATK SPD",
               "Vitality buff"
             ]
           },
           {
-            "name": "Kordan",
-            "score": 0.9252,
+            "name": "Dunlingr",
+            "score": 0.7805,
             "matches": [
-              "Magic DEF",
-              "Physical DEF",
+              "ATK SPD",
               "ATK"
+            ]
+          },
+          {
+            "name": "Twins",
+            "score": 0.6732,
+            "matches": [
+              "ATK",
+              "Vitality buff"
             ]
           }
         ],
@@ -13156,48 +12997,22 @@
             ]
           }
         ],
-        "debuff": [
-          {
-            "name": "Sinbad",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF debuff",
-              "Phys DEF debuff"
-            ]
-          },
-          {
-            "name": "Laios",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF debuff",
-              "Phys DEF debuff"
-            ]
-          },
-          {
-            "name": "Velara",
-            "score": 0.87,
-            "matches": [
-              "Magic DEF debuff",
-              "Phys DEF debuff"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": [],
         "overall": [
           {
-            "name": "Evie",
-            "score": 0.571,
-            "matches": [
-              "Healing",
-              "Debuffs on enemies"
-            ]
-          },
-          {
             "name": "Smokey & Meerky",
-            "score": 0.5682,
+            "score": 0.6799,
             "matches": [
               "Healing",
               "Similar Skills"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.6498,
+            "matches": [
+              "Healing"
             ]
           },
           {
@@ -13887,6 +13702,10 @@
           "name": "Velara"
         },
         {
+          "score": 5.025,
+          "name": "Eironn"
+        },
+        {
           "score": 4.5,
           "name": "Gwyneth"
         },
@@ -14300,26 +14119,7 @@
     "Granny Dahnie": {
       "synergies": [
         {
-          "provider": "Mikola",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Healing via Healing over time (all units, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 29.0
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "Healing via Direct healing (arc, average)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 24.0
-        },
-        {
-          "provider": "Lucca",
+          "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF buff (area, high)",
             "Magic DEF via DEF buff (area, high)"
@@ -14335,16 +14135,6 @@
           "score": 20.64
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)"
-          ],
-          "score": 18.64
-        },
-        {
           "provider": "Twins",
           "reasons": [
             "Haste via Haste buff (all units, average) `signature fuel`",
@@ -14356,7 +14146,7 @@
           "score": 18.16
         },
         {
-          "provider": "Tilaya",
+          "provider": "Lucca",
           "reasons": [
             "Physical DEF via DEF buff (area, average)",
             "Magic DEF via DEF buff (area, average)"
@@ -14378,22 +14168,28 @@
           "score": 15.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 12.64
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, average) `signature fuel`",
+            "Healing via Healing over time (all units, low)"
+          ],
+          "score": 11.0
+        },
+        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
-            "Healing via Healing over time (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
+            "Healing via Healing over time (multiple targets, high)"
           ],
-          "score": 13.5
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 12.0
+          "score": 10.5
         },
         {
           "provider": "Koko",
@@ -14419,25 +14215,9 @@
           "score": 9.1
         },
         {
-          "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "Haste via Haste buff (multiple targets, high) `signature fuel`"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
           ],
           "score": 9.0
         },
@@ -14452,14 +14232,6 @@
           "provider": "Marcille",
           "reasons": [
             "Healing via Direct healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
           ],
           "score": 9.0
         },
@@ -14482,6 +14254,21 @@
           "reasons": [
             "Physical DEF via DEF buff (single target, average)",
             "Magic DEF via DEF buff (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "Healing via Direct healing (arc, average)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
           ],
           "score": 6.0
         },
@@ -14563,17 +14350,17 @@
           "score": 3.0
         },
         {
-          "provider": "Kruger",
+          "provider": "Pandora",
           "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
+            "Healing via Direct healing (single target, average)"
           ],
           "score": 3.0
         },
         {
-          "provider": "Pandora",
+          "provider": "Scarlita",
           "reasons": [
-            "Healing via Direct healing (single target, average)"
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 3.0
         },
@@ -14611,14 +14398,6 @@
             "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
           "score": 1.08
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Kazim",
@@ -15991,15 +15770,6 @@
           "score": 20.64
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 17.14
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Healing via Direct healing (all units, average)",
@@ -16030,6 +15800,14 @@
             "Life Drain via Lifedrain buff (area, low, conditional (frequent))"
           ],
           "score": 12.8
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 12.64
         },
         {
           "provider": "Mikola",
@@ -16271,13 +16049,6 @@
             "Healing via Direct healing (single target, low)"
           ],
           "score": 1.5
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
-          ],
-          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -16432,17 +16203,6 @@
     "Hepler": {
       "synergies": [
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK via ATK buff (all units, average)",
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Healing via Healing over time (all units, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 39.0
-        },
-        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -16455,23 +16215,22 @@
           "score": 34.0
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Healing via Direct healing (arc, average)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 27.0
-        },
-        {
           "provider": "Tilaya",
           "reasons": [
             "Max HP via Max HP buff (area, average)",
-            "Physical DEF via DEF buff (area, average)",
-            "Magic DEF via DEF buff (area, average)"
+            "Physical DEF via DEF buff (area, high)",
+            "Magic DEF via DEF buff (area, high)"
           ],
-          "score": 24.0
+          "score": 32.0
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "Haste via Haste buff (multiple targets, average) `signature fuel`",
+            "Healing via Healing over time (all units, low)"
+          ],
+          "score": 21.0
         },
         {
           "provider": "Himmel",
@@ -16481,24 +16240,6 @@
             "Healing via Direct healing (single target, low)"
           ],
           "score": 19.5
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 18.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, average)",
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 18.0
         },
         {
           "provider": "Hugin",
@@ -16524,22 +16265,21 @@
           "score": 15.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)"
-          ],
-          "score": 14.5
-        },
-        {
           "provider": "Evie",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
             "Healing via Direct healing (single target, high)"
           ],
           "score": 13.5
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Koko",
@@ -16565,10 +16305,10 @@
           "score": 9.1
         },
         {
-          "provider": "Eironn",
+          "provider": "Fay",
           "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
+            "ATK via ATK buff (multiple targets, low)",
+            "Healing via Direct healing (arc, average)"
           ],
           "score": 9.0
         },
@@ -16583,14 +16323,6 @@
           "provider": "Marcille",
           "reasons": [
             "Healing via Direct healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
           ],
           "score": 9.0
         },
@@ -16650,6 +16382,13 @@
           "score": 5.55
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
           "provider": "Velara",
           "reasons": [
             "Healing via Direct healing (area, low)"
@@ -16664,7 +16403,7 @@
           "score": 3.0
         },
         {
-          "provider": "Kruger",
+          "provider": "Scarlita",
           "reasons": [
             "Physical DEF via DEF buff (single target, low)",
             "Magic DEF via DEF buff (single target, low)"
@@ -16681,10 +16420,10 @@
         {
           "provider": "Lucca",
           "reasons": [
-            "Physical DEF via DEF buff (area, high)",
-            "Magic DEF via DEF buff (area, high)"
+            "Physical DEF via DEF buff (area, average)",
+            "Magic DEF via DEF buff (area, average)"
           ],
-          "score": 24.0
+          "score": 16.0
         },
         {
           "provider": "Hewynn",
@@ -16716,14 +16455,6 @@
             "Healing via Direct healing (all units, low)"
           ],
           "score": 9.5
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Gerda",
@@ -16776,10 +16507,6 @@
           "name": "Carolina"
         },
         {
-          "score": 21.0,
-          "name": "Lucca"
-        },
-        {
           "score": 20.8125,
           "name": "Lumont"
         },
@@ -16798,6 +16525,10 @@
         {
           "score": 19.0125,
           "name": "Antandra"
+        },
+        {
+          "score": 18.0,
+          "name": "Lucca"
         },
         {
           "score": 18.0,
@@ -16827,7 +16558,7 @@
         "buff": [
           {
             "name": "Hugin",
-            "score": 0.9963,
+            "score": 1.0,
             "matches": [
               "Shield",
               "Haste"
@@ -16835,14 +16566,14 @@
           },
           {
             "name": "Saida",
-            "score": 0.9901,
+            "score": 0.9938,
             "matches": [
               "Shield"
             ]
           },
           {
             "name": "Salazer",
-            "score": 0.9282,
+            "score": 0.9317,
             "matches": [
               "Shield"
             ]
@@ -16938,8 +16669,7 @@
             "name": "Velara",
             "score": 1.0,
             "matches": [
-              "Haste debuff",
-              "Magic DEF debuff"
+              "Haste debuff"
             ]
           },
           {
@@ -17159,6 +16889,10 @@
         },
         {
           "score": 15.0,
+          "name": "Granny Dahnie"
+        },
+        {
+          "score": 15.0,
           "name": "Gunnar"
         },
         {
@@ -17214,7 +16948,7 @@
           },
           {
             "name": "Smokey & Meerky",
-            "score": 0.7666,
+            "score": 0.7717,
             "matches": [
               "Direct healing",
               "Healing"
@@ -17222,7 +16956,7 @@
           },
           {
             "name": "Hepler",
-            "score": 0.6601,
+            "score": 0.67,
             "matches": [
               "Healing over time",
               "Healing"
@@ -17453,15 +17187,6 @@
           "score": 14.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Enables Party composition via Support (party slot)"
-          ],
-          "score": 13.5
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)",
@@ -17520,6 +17245,14 @@
             "Max HP via Max HP buff (multiple targets, average)"
           ],
           "score": 9.4
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Enables Party composition via Support (party slot)"
+          ],
+          "score": 9.0
         },
         {
           "provider": "Shakir",
@@ -17858,6 +17591,10 @@
         {
           "score": 10.5,
           "name": "Mehira"
+        },
+        {
+          "score": 10.5,
+          "name": "Rowan"
         },
         {
           "score": 10.5,
@@ -18570,10 +18307,6 @@
           "name": "Fay"
         },
         {
-          "score": 24.0,
-          "name": "Laios"
-        },
-        {
           "score": 23.1,
           "name": "Cryonaia"
         },
@@ -18647,6 +18380,10 @@
         },
         {
           "score": 17.25,
+          "name": "Isabella"
+        },
+        {
+          "score": 17.25,
           "name": "Kulu"
         },
         {
@@ -18700,6 +18437,14 @@
         {
           "score": 15.0,
           "name": "Galahad"
+        },
+        {
+          "score": 15.0,
+          "name": "Hepler"
+        },
+        {
+          "score": 15.0,
+          "name": "Natsu"
         },
         {
           "score": 15.0,
@@ -19341,16 +19086,6 @@
           "score": 20.4
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Enables Multiple debuffs on target via 2 debuff types",
-            "Enables Debuff on target via Phys DEF debuff (multiple targets)"
-          ],
-          "score": 19.5
-        },
-        {
           "provider": "Pandora",
           "reasons": [
             "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
@@ -19401,14 +19136,6 @@
           "score": 14.0
         },
         {
-          "provider": "Kafra",
-          "reasons": [
-            "Enables Multiple debuffs on target via 4 debuff types",
-            "Enables Debuff on target via Phys DEF debuff (single target)"
-          ],
-          "score": 13.95
-        },
-        {
           "provider": "Himmel",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -19445,6 +19172,14 @@
           "score": 12.149999999999999
         },
         {
+          "provider": "Kafra",
+          "reasons": [
+            "Enables Multiple debuffs on target via 3 debuff types",
+            "Enables Debuff on target via Phys DEF debuff (single target)"
+          ],
+          "score": 12.149999999999999
+        },
+        {
           "provider": "Satrana",
           "reasons": [
             "Enables Multiple debuffs on target via 2 debuff types",
@@ -19476,15 +19211,6 @@
             "Enables Debuff on target via Max HP debuff (single target)"
           ],
           "score": 11.25
-        },
-        {
-          "provider": "Hepler",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables Multiple debuffs on target via 2 debuff types",
-            "Enables Debuff on target via Haste debuff (single target)"
-          ],
-          "score": 11.1
         },
         {
           "provider": "Antandra",
@@ -19532,6 +19258,15 @@
             "Enables Debuff on target via Marked target (focus fire) (single target)"
           ],
           "score": 9.899999999999999
+        },
+        {
+          "provider": "Hepler",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Enables Multiple debuffs on target via Haste debuff",
+            "Enables Debuff on target via Haste debuff (single target)"
+          ],
+          "score": 9.5
         },
         {
           "provider": "Valka",
@@ -19637,6 +19372,14 @@
             "Enables Debuff on target via ATK debuff (area)"
           ],
           "score": 8.0
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 7.800000000000001
         },
         {
           "provider": "Cecia",
@@ -19951,7 +19694,7 @@
             ]
           },
           {
-            "name": "Fay",
+            "name": "Laios",
             "score": 0.619,
             "matches": [
               "Phys DEF debuff",
@@ -19959,11 +19702,11 @@
             ]
           },
           {
-            "name": "Laios",
-            "score": 0.619,
+            "name": "Kruger",
+            "score": 0.5714,
             "matches": [
               "Phys DEF debuff",
-              "Magic DEF debuff"
+              "Damage taken debuff"
             ]
           }
         ],
@@ -20022,17 +19765,6 @@
     "Isabella": {
       "synergies": [
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK via ATK buff (all units, average)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Healing via Healing over time (all units, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 40.5
-        },
-        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -20045,6 +19777,14 @@
           "score": 29.66
         },
         {
+          "provider": "Tilaya",
+          "reasons": [
+            "Physical DEF via DEF buff (area, high)",
+            "Magic DEF via DEF buff (area, high)"
+          ],
+          "score": 24.0
+        },
+        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -20054,23 +19794,13 @@
           "score": 23.64
         },
         {
-          "provider": "Rowan",
+          "provider": "Mikola",
           "reasons": [
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)"
+            "ATK via ATK buff (all units, average)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Healing via Healing over time (all units, low)"
           ],
-          "score": 18.64
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, average)",
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 18.0
+          "score": 22.5
         },
         {
           "provider": "Hugin",
@@ -20079,14 +19809,6 @@
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
           ],
           "score": 17.25
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Physical DEF via DEF buff (area, average)",
-            "Magic DEF via DEF buff (area, average)"
-          ],
-          "score": 16.0
         },
         {
           "provider": "Solise",
@@ -20110,6 +19832,23 @@
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
           "score": 13.32
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 12.64
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Dunlingr",
@@ -20136,22 +19875,6 @@
           "score": 10.0
         },
         {
-          "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Ludovic",
           "reasons": [
             "Healing via Direct healing (multiple targets, high)"
@@ -20162,14 +19885,6 @@
           "provider": "Marcille",
           "reasons": [
             "Healing via Direct healing (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
           ],
           "score": 9.0
         },
@@ -20218,17 +19933,17 @@
           "score": 3.75
         },
         {
-          "provider": "Kruger",
+          "provider": "Pandora",
           "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
+            "Healing via Direct healing (single target, average)"
           ],
           "score": 3.0
         },
         {
-          "provider": "Pandora",
+          "provider": "Scarlita",
           "reasons": [
-            "Healing via Direct healing (single target, average)"
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 3.0
         },
@@ -20261,23 +19976,12 @@
           "score": 1.08
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Healing via Direct healing (arc, average)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 30.0
-        },
-        {
           "provider": "Lucca",
           "reasons": [
-            "Physical DEF via DEF buff (area, high)",
-            "Magic DEF via DEF buff (area, high)"
+            "Physical DEF via DEF buff (area, average)",
+            "Magic DEF via DEF buff (area, average)"
           ],
-          "score": 24.0
+          "score": 16.0
         },
         {
           "provider": "Hewynn",
@@ -20287,14 +19991,13 @@
           "score": 15.0
         },
         {
-          "provider": "Hepler",
+          "provider": "Fay",
           "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Healing via Healing over time (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Healing via Direct healing (arc, average)"
           ],
-          "score": 13.875
+          "score": 12.0
         },
         {
           "provider": "Kazim",
@@ -20303,6 +20006,14 @@
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 12.0
+        },
+        {
+          "provider": "Hepler",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Healing via Healing over time (multiple targets, high)"
+          ],
+          "score": 10.875
         },
         {
           "provider": "Lorsan",
@@ -20327,14 +20038,6 @@
             "Healing via Healing over time (area, low)"
           ],
           "score": 10.375
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Lyca",
@@ -20768,7 +20471,7 @@
           "name": "Shadewing"
         },
         {
-          "score": 13.95,
+          "score": 12.149999999999999,
           "name": "Indris"
         },
         {
@@ -20839,24 +20542,23 @@
         "debuff": [
           {
             "name": "Eironn",
-            "score": 0.9179,
+            "score": 0.9722,
             "matches": [
               "Haste debuff"
             ]
           },
           {
             "name": "Lorsan",
-            "score": 0.9179,
+            "score": 0.9722,
             "matches": [
               "Haste debuff"
             ]
           },
           {
             "name": "Bonnie",
-            "score": 0.8319,
+            "score": 0.8101,
             "matches": [
-              "Haste debuff",
-              "ATK debuff"
+              "Haste debuff"
             ]
           }
         ],
@@ -21636,11 +21338,19 @@
         },
         {
           "score": 15.0,
+          "name": "Antandra"
+        },
+        {
+          "score": 15.0,
           "name": "Callan"
         },
         {
           "score": 15.0,
           "name": "Gunnar"
+        },
+        {
+          "score": 15.0,
+          "name": "Lucca"
         },
         {
           "score": 15.0,
@@ -21664,7 +21374,7 @@
         },
         {
           "score": 10.0,
-          "name": "Rowan"
+          "name": "Niru"
         },
         {
           "score": 6.0,
@@ -21990,40 +21700,7 @@
           "score": 1.35
         },
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK via ATK buff (all units, average)",
-            "Healing via Healing over time (all units, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 38.4
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Healing via Direct healing (arc, average)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 29.16
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Healing via Direct healing (area, low)",
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
-          ],
-          "score": 25.8544
-        },
-        {
-          "provider": "Lucca",
+          "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF buff (area, high)",
             "Magic DEF via DEF buff (area, high)"
@@ -22031,15 +21708,13 @@
           "score": 24.0
         },
         {
-          "provider": "Hepler",
+          "provider": "Mikola",
           "reasons": [
-            "Shield via Shield (multiple targets, high)",
-            "Healing via Healing over time (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "ATK via ATK buff (all units, average)",
+            "Healing via Healing over time (all units, low)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
-          "score": 22.35
+          "score": 20.4
         },
         {
           "provider": "Smokey & Meerky",
@@ -22051,16 +21726,25 @@
           "score": 20.0544
         },
         {
-          "provider": "Sonja",
+          "provider": "Rowan",
           "reasons": [
-            "ATK via ATK buff (multiple targets, average)",
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
           ],
-          "score": 18.0
+          "score": 19.8544
         },
         {
-          "provider": "Tilaya",
+          "provider": "Hepler",
+          "reasons": [
+            "Shield via Shield (multiple targets, high)",
+            "Healing via Healing over time (multiple targets, high)",
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 19.35
+        },
+        {
+          "provider": "Lucca",
           "reasons": [
             "Physical DEF via DEF buff (area, average)",
             "Magic DEF via DEF buff (area, average)"
@@ -22099,22 +21783,22 @@
           "score": 13.5
         },
         {
-          "provider": "Lucy",
+          "provider": "Sonja",
           "reasons": [
-            "Shield via Shield (single target, high)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
+            "ATK via ATK buff (multiple targets, average)",
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
           ],
           "score": 12.0
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "Healing via Direct healing (arc, average)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 11.16
         },
         {
           "provider": "Pandora",
@@ -22147,14 +21831,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 9.05
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Ludovic",
@@ -22224,12 +21900,28 @@
           "score": 6.0
         },
         {
+          "provider": "Scarlita",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK buff (multiple targets, low, conditional (frequent))",
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
           "score": 5.25
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Shield via Shield (single target, high)"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Pang",
@@ -22278,14 +21970,6 @@
           "provider": "Korin",
           "reasons": [
             "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kruger",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 3.0
         },
@@ -22356,14 +22040,6 @@
           "name": "Nerion"
         },
         {
-          "score": 18.0,
-          "name": "Natsu"
-        },
-        {
-          "score": 9.0,
-          "name": "Eironn"
-        },
-        {
           "score": 3.0,
           "name": "Brutus"
         },
@@ -22378,28 +22054,10 @@
       "replacements": {
         "buff": [
           {
-            "name": "Mikola",
-            "score": 0.8039,
+            "name": "Dunlingr",
+            "score": 0.6087,
             "matches": [
-              "Magic DEF",
-              "Physical DEF",
-              "ATK"
-            ]
-          },
-          {
-            "name": "Lucca",
-            "score": 0.7767,
-            "matches": [
-              "Magic DEF",
-              "Physical DEF"
-            ]
-          },
-          {
-            "name": "Fay",
-            "score": 0.7206,
-            "matches": [
-              "Magic DEF",
-              "Physical DEF",
+              "Life Drain",
               "ATK"
             ]
           }
@@ -22535,14 +22193,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 8.5824
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
@@ -22577,6 +22227,13 @@
             "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 4.082400000000001
         },
         {
           "provider": "Smokey & Meerky",
@@ -22792,6 +22449,13 @@
     "Kruger": {
       "synergies": [
         {
+          "provider": "Tilaya",
+          "reasons": [
+            "Physical DEF via DEF buff (area, high)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Koko",
           "reasons": [
             "Shield via Shield (all units, low)",
@@ -22822,47 +22486,11 @@
           "score": 9.0
         },
         {
-          "provider": "Mikola",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Saida",
           "reasons": [
             "Shield via Shield (multiple targets, high)"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Physical DEF via DEF buff (area, average)"
-          ],
-          "score": 8.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Life Drain via Lifedrain buff (multiple targets, low)",
-            "Physical DEF via DEF buff (single target, high)"
-          ],
-          "score": 7.5
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)"
-          ],
-          "score": 4.5
         },
         {
           "provider": "Zandrok",
@@ -22901,9 +22529,16 @@
           "score": 3.0
         },
         {
-          "provider": "Rowan",
+          "provider": "Kordan",
           "reasons": [
-            "Physical DEF via DEF buff (single target, average)"
+            "Life Drain via Lifedrain buff (multiple targets, low)"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -22929,42 +22564,33 @@
           "score": 1.5
         },
         {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF buff (area, high)"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Hepler",
           "reasons": [
-            "Shield via Shield (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)"
-          ],
-          "score": 10.5
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, high)"
+            "Shield via Shield (multiple targets, high)"
           ],
           "score": 9.0
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Physical DEF via DEF buff (area, average)"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Lucy",
           "reasons": [
-            "Shield via Shield (single target, high)",
-            "Physical DEF via DEF buff (single target, high)"
+            "Shield via Shield (single target, high)"
           ],
-          "score": 9.0
+          "score": 4.5
         },
         {
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF buff (single target, high)"
+            "Physical DEF via DEF buff (single target, low)"
           ],
-          "score": 7.5
+          "score": 4.5
         },
         {
           "provider": "Cecia",
@@ -23048,32 +22674,7 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Twins",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF",
-              "Physical DEF"
-            ]
-          },
-          {
-            "name": "Eironn",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF",
-              "Physical DEF"
-            ]
-          },
-          {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF",
-              "Physical DEF"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -23170,16 +22771,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Kordan",
-            "score": 0.533,
-            "matches": [
-              "Buffs on allies",
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Kulu": {
@@ -23488,9 +23080,20 @@
             "ATK SPD via Haste buff (all units, average) `signature fuel`",
             "Max HP via Max HP buff (multiple targets, high)",
             "Healing via Direct healing (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, low) `signature fuel`"
+            "Energy via Energy recovery (multiple targets, low) `signature fuel`",
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
           ],
-          "score": 43.808
+          "score": 46.808
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Max HP via Max HP buff (area, average)",
+            "Physical DEF via DEF buff (area, high)",
+            "Magic DEF via DEF buff (area, high)"
+          ],
+          "score": 32.0
         },
         {
           "provider": "Mikola",
@@ -23498,6 +23101,16 @@
             "ATK via ATK buff (all units, average)",
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
             "Healing via Healing over time (all units, low)"
+          ],
+          "score": 27.0
+        },
+        {
+          "provider": "Solise",
+          "reasons": [
+            "Healing via Direct healing (all units, high)",
+            "ATK via ATK buff (summons only, average)",
+            "Physical DEF via DEF buff (summons only, low)",
+            "Magic DEF via DEF buff (summons only, low)"
           ],
           "score": 27.0
         },
@@ -23517,23 +23130,6 @@
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
           ],
           "score": 24.0
-        },
-        {
-          "provider": "Solise",
-          "reasons": [
-            "Healing via Direct healing (all units, high)",
-            "ATK via ATK buff (summons only, average)"
-          ],
-          "score": 21.0
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 19.732
         },
         {
           "provider": "Himmel",
@@ -23560,6 +23156,14 @@
           "score": 17.25
         },
         {
+          "provider": "Lucca",
+          "reasons": [
+            "Physical DEF via DEF buff (area, average)",
+            "Magic DEF via DEF buff (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, average)",
@@ -23567,6 +23171,14 @@
             "Haste via Haste buff (single target, average) `signature fuel`"
           ],
           "score": 15.8
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 15.232000000000001
         },
         {
           "provider": "Ravion",
@@ -23630,6 +23242,15 @@
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
             "Healing via Healing over time (multiple targets, high)"
+          ],
+          "score": 12.0
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
           ],
           "score": 12.0
         },
@@ -23702,6 +23323,14 @@
           "score": 6.0
         },
         {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, average)",
+            "Magic DEF via DEF buff (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Galahad",
           "reasons": [
             "ATK SPD via Haste buff (single target, average) `signature fuel`"
@@ -23741,6 +23370,14 @@
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 3.0
         },
@@ -23788,6 +23425,14 @@
             "Healing via Direct healing (single target, low)"
           ],
           "score": 10.5
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Atalanta",
@@ -23913,15 +23558,6 @@
           "score": 37.5
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
-          ],
-          "score": 26.532
-        },
-        {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK buff (all units, average)",
@@ -23937,6 +23573,14 @@
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
           ],
           "score": 22.5
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+          ],
+          "score": 22.032
         },
         {
           "provider": "Ravion",
@@ -24199,13 +23843,6 @@
           "score": 3.0
         },
         {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Soren",
           "reasons": [
             "Shield via Shield (single target, low)"
@@ -24340,15 +23977,6 @@
     "Lily May": {
       "synergies": [
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK via ATK buff (all units, average)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Grants 6 distinct stat buffs to Lily May"
-          ],
-          "score": 77.05
-        },
-        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -24357,6 +23985,15 @@
             "Grants 8 distinct stat buffs to Lily May"
           ],
           "score": 76.7706
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 5 distinct stat buffs to Lily May"
+          ],
+          "score": 63.55
         },
         {
           "provider": "Hugin",
@@ -24393,23 +24030,6 @@
           "score": 41.25
         },
         {
-          "provider": "Kordan",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)",
-            "Grants 4 distinct stat buffs to Lily May"
-          ],
-          "score": 41.25
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Grants 4 distinct stat buffs to Lily May"
-          ],
-          "score": 39.3324
-        },
-        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, average)",
@@ -24417,6 +24037,15 @@
             "Grants 4 distinct stat buffs to Lily May"
           ],
           "score": 37.2
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "DEF Penetration via DEF Penetration buff (multiple targets, low)",
+            "Grants 3 distinct stat buffs to Lily May"
+          ],
+          "score": 34.5
         },
         {
           "provider": "Gunnar",
@@ -24450,6 +24079,14 @@
             "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 29.25
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 28.0824
         },
         {
           "provider": "Zanie",
@@ -24489,13 +24126,6 @@
           "score": 13.5
         },
         {
-          "provider": "Eironn",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Lily May"
-          ],
-          "score": 13.5
-        },
-        {
           "provider": "Marcille",
           "reasons": [
             "Grants 1 distinct stat buff to Lily May"
@@ -24524,6 +24154,13 @@
             "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 7.7706
+        },
+        {
+          "provider": "Eironn",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.75
         },
         {
           "provider": "Velara",
@@ -24572,15 +24209,6 @@
           "score": 3.2625
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Grants 5 distinct stat buffs to Lily May"
-          ],
-          "score": 38.37
-        },
-        {
           "provider": "Hewynn",
           "reasons": [
             "Grants 3 distinct stat buffs to Lily May"
@@ -24588,19 +24216,26 @@
           "score": 33.75
         },
         {
-          "provider": "Hepler",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Grants 4 distinct stat buffs to Lily May"
-          ],
-          "score": 32.5125
-        },
-        {
           "provider": "Cassadee",
           "reasons": [
             "Grants 1 distinct stat buff to Lily May (start of battle)"
           ],
           "score": 31.5
+        },
+        {
+          "provider": "Hepler",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Grants 3 distinct stat buffs to Lily May"
+          ],
+          "score": 30.2625
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 30.0
         },
         {
           "provider": "Lyca",
@@ -24612,6 +24247,15 @@
           "score": 25.401
         },
         {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Grants 4 distinct stat buffs to Lily May"
+          ],
+          "score": 24.87
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -24619,13 +24263,6 @@
             "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 24.3
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Lily May"
-          ],
-          "score": 24.0
         },
         {
           "provider": "Gerda",
@@ -24641,13 +24278,6 @@
             "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 18.4425
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Grants 1 distinct stat buff to Lily May"
-          ],
-          "score": 18.0
         },
         {
           "provider": "Lorsan",
@@ -24675,18 +24305,11 @@
           "score": 13.575
         },
         {
-          "provider": "Lucy",
+          "provider": "Lucca",
           "reasons": [
-            "Grants 2 distinct stat buffs to Lily May"
+            "Grants 1 distinct stat buff to Lily May"
           ],
-          "score": 13.5
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Lily May"
-          ],
-          "score": 11.25
+          "score": 12.0
         },
         {
           "provider": "Valka",
@@ -24705,9 +24328,23 @@
           "score": 8.25
         },
         {
+          "provider": "Lucy",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.75
+        },
+        {
           "provider": "Salazer",
           "reasons": [
             "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.75
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 6.75
         },
@@ -24762,21 +24399,7 @@
           "score": 4.5
         },
         {
-          "provider": "Kruger",
-          "reasons": [
-            "Grants 1 distinct stat buff to Lily May"
-          ],
-          "score": 2.25
-        },
-        {
           "provider": "Rhys",
-          "reasons": [
-            "Grants 1 distinct stat buff to Lily May"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Seth",
           "reasons": [
             "Grants 1 distinct stat buff to Lily May"
           ],
@@ -25408,41 +25031,21 @@
     "Lucca": {
       "synergies": [
         {
-          "provider": "Fay",
-          "reasons": [
-            "Healing via Direct healing (arc, average)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 24.0
-        },
-        {
           "provider": "Tilaya",
           "reasons": [
             "Max HP via Max HP buff (area, average)",
-            "Physical DEF via DEF buff (area, average)",
-            "Magic DEF via DEF buff (area, average)"
+            "Physical DEF via DEF buff (area, high)",
+            "Magic DEF via DEF buff (area, high)"
           ],
-          "score": 24.0
-        },
-        {
-          "provider": "Mikola",
-          "reasons": [
-            "Healing via Healing over time (all units, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 23.0
+          "score": 32.0
         },
         {
           "provider": "Hepler",
           "reasons": [
             "Shield via Shield (multiple targets, high)",
-            "Healing via Healing over time (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
+            "Healing via Healing over time (multiple targets, high)"
           ],
-          "score": 21.0
+          "score": 18.0
         },
         {
           "provider": "Twins",
@@ -25471,16 +25074,6 @@
           "score": 15.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)"
-          ],
-          "score": 14.5
-        },
-        {
           "provider": "Himmel",
           "reasons": [
             "Max HP via Max HP buff (multiple targets, high)",
@@ -25490,26 +25083,9 @@
           "score": 13.5
         },
         {
-          "provider": "Scarlita",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Healing via Direct healing (area, high)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
           ],
           "score": 12.0
         },
@@ -25523,25 +25099,9 @@
           "score": 12.0
         },
         {
-          "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "Shield via Shield (multiple targets, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
           ],
           "score": 9.0
         },
@@ -25597,12 +25157,43 @@
           "score": 6.0
         },
         {
+          "provider": "Fay",
+          "reasons": [
+            "Healing via Direct healing (arc, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Pandora",
           "reasons": [
             "Max HP via Max HP buff (single target, average)",
             "Healing via Direct healing (single target, average)"
           ],
           "score": 6.0
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "Healing via Healing over time (all units, low)"
+          ],
+          "score": 5.0
         },
         {
           "provider": "Evie",
@@ -25633,6 +25224,13 @@
           "score": 4.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
           "provider": "Velara",
           "reasons": [
             "Healing via Direct healing (area, low)"
@@ -25647,28 +25245,11 @@
           "score": 3.0
         },
         {
-          "provider": "Kruger",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Hewynn",
           "reasons": [
             "Healing via Healing over time (all units, high)"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Shield via Shield (single target, high)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 13.5
         },
         {
           "provider": "Lumont",
@@ -25684,6 +25265,13 @@
             "Healing via Direct healing (all units, low)"
           ],
           "score": 5.0
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Shield via Shield (single target, high)"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Salazer",
@@ -25730,15 +25318,15 @@
       ],
       "beneficiaries": [
         {
-          "score": 24.0,
+          "score": 16.0,
           "name": "Cecia"
         },
         {
-          "score": 24.0,
+          "score": 16.0,
           "name": "Granny Dahnie"
         },
         {
-          "score": 24.0,
+          "score": 16.0,
           "name": "Natsu"
         }
       ],
@@ -25746,7 +25334,32 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [],
+        "buff": [
+          {
+            "name": "Tilaya",
+            "score": 1.0,
+            "matches": [
+              "Magic DEF",
+              "Physical DEF"
+            ]
+          },
+          {
+            "name": "Sonja",
+            "score": 1.0,
+            "matches": [
+              "Magic DEF",
+              "Physical DEF"
+            ]
+          },
+          {
+            "name": "Lumont",
+            "score": 0.9,
+            "matches": [
+              "Magic DEF",
+              "Physical DEF"
+            ]
+          }
+        ],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -25826,7 +25439,24 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Antandra",
+            "score": 0.5835,
+            "matches": [
+              "Crowd Control",
+              "Damage"
+            ]
+          },
+          {
+            "name": "Lumont",
+            "score": 0.5059,
+            "matches": [
+              "Buffs on allies",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Lucius": {
@@ -26485,16 +26115,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 22.5,
-          "name": "Silven"
+          "score": 10.5,
+          "name": "Nerion"
         },
         {
-          "score": 13.5,
+          "score": 9.0,
           "name": "Dionel"
         },
         {
-          "score": 13.5,
-          "name": "Eironn"
+          "score": 9.0,
+          "name": "Faramor"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -26503,25 +26133,22 @@
       "replacements": {
         "buff": [
           {
-            "name": "Kordan",
-            "score": 0.5236,
+            "name": "Daimon",
+            "score": 1.0,
             "matches": [
-              "Magic DEF",
-              "Physical DEF"
+              "Shield"
             ]
           },
           {
             "name": "Hepler",
-            "score": 0.5065,
+            "score": 1.0,
             "matches": [
-              "Shield",
-              "Magic DEF",
-              "Physical DEF"
+              "Shield"
             ]
           },
           {
-            "name": "Daimon",
-            "score": 0.5,
+            "name": "Hugin",
+            "score": 1.0,
             "matches": [
               "Shield"
             ]
@@ -26606,7 +26233,17 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Hepler",
+            "score": 0.5076,
+            "matches": [
+              "Buffs on allies",
+              "Crowd Control",
+              "Damage"
+            ]
+          }
+        ]
       }
     },
     "Ludovic": {
@@ -26882,6 +26519,10 @@
         {
           "score": 9.0,
           "name": "Evie"
+        },
+        {
+          "score": 9.0,
+          "name": "Niru"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -27367,12 +27008,12 @@
           "name": "Shadewing"
         },
         {
-          "score": 10.5,
-          "name": "Silven"
+          "score": 8.0,
+          "name": "Carolina"
         },
         {
           "score": 8.0,
-          "name": "Carolina"
+          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -27381,7 +27022,7 @@
       "replacements": {
         "buff": [
           {
-            "name": "Kordan",
+            "name": "Tilaya",
             "score": 1.0,
             "matches": [
               "Magic DEF",
@@ -27389,7 +27030,7 @@
             ]
           },
           {
-            "name": "Mikola",
+            "name": "Sonja",
             "score": 1.0,
             "matches": [
               "Magic DEF",
@@ -27397,7 +27038,7 @@
             ]
           },
           {
-            "name": "Rowan",
+            "name": "Lucca",
             "score": 1.0,
             "matches": [
               "Magic DEF",
@@ -27492,18 +27133,18 @@
         ],
         "overall": [
           {
-            "name": "Antandra",
-            "score": 0.7206,
-            "matches": [
-              "Buffs on allies"
-            ]
-          },
-          {
             "name": "Hepler",
-            "score": 0.7014,
+            "score": 0.6622,
             "matches": [
               "Crowd Control",
               "Damage"
+            ]
+          },
+          {
+            "name": "Antandra",
+            "score": 0.5478,
+            "matches": [
+              "Buffs on allies"
             ]
           }
         ]
@@ -27812,10 +27453,9 @@
           },
           {
             "name": "Kafra",
-            "score": 0.6789,
+            "score": 0.5554,
             "matches": [
-              "Phys DEF debuff",
-              "ATK debuff"
+              "Phys DEF debuff"
             ]
           },
           {
@@ -28426,13 +28066,6 @@
             "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 3.8249999999999997
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
-          ],
-          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -28641,16 +28274,6 @@
           "score": 26.25
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
-          ],
-          "score": 24.3544
-        },
-        {
           "provider": "Shakir",
           "reasons": [
             "Haste via Haste buff (multiple targets, high) `signature fuel`",
@@ -28667,6 +28290,15 @@
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 20.0
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+          ],
+          "score": 19.8544
         },
         {
           "provider": "Dunlingr",
@@ -29066,10 +28698,12 @@
             "ATK via ATK buff (multiple targets, high)",
             "Haste via Haste buff (all units, average) `signature fuel`",
             "Healing via Direct healing (multiple targets, low)",
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`",
             "ATK SPD via Haste buff (all units, average) `signature fuel`"
           ],
-          "score": 38.2636
+          "score": 41.2636
         },
         {
           "provider": "Hugin",
@@ -29252,6 +28886,14 @@
           "score": 1.2636
         },
         {
+          "provider": "Tilaya",
+          "reasons": [
+            "Physical DEF via DEF buff (area, high)",
+            "Magic DEF via DEF buff (area, high)"
+          ],
+          "score": 24.0
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -29279,6 +28921,14 @@
           "score": 16.25
         },
         {
+          "provider": "Lucca",
+          "reasons": [
+            "Physical DEF via DEF buff (area, average)",
+            "Magic DEF via DEF buff (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Hewynn",
           "reasons": [
             "Healing via Healing over time (all units, high)"
@@ -29301,6 +28951,15 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 12.75
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Fay",
@@ -29344,11 +29003,35 @@
           "score": 6.375
         },
         {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, average)",
+            "Magic DEF via DEF buff (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Nara",
           "reasons": [
             "Healing via Direct healing (area, low)"
           ],
           "score": 4.0
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
+          ],
+          "score": 3.0
         },
         {
           "provider": "Valka",
@@ -29367,28 +29050,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 77.05,
+          "score": 63.55,
           "name": "Lily May"
         },
         {
-          "score": 64.0,
+          "score": 55.0,
           "name": "Dionel"
         },
         {
-          "score": 61.0,
+          "score": 52.0,
           "name": "Perseus"
-        },
-        {
-          "score": 40.5,
-          "name": "Isabella"
-        },
-        {
-          "score": 39.0,
-          "name": "Hepler"
-        },
-        {
-          "score": 34.0,
-          "name": "Natsu"
         },
         {
           "score": 30.0,
@@ -29403,14 +29074,6 @@
           "name": "Vala"
         },
         {
-          "score": 29.0,
-          "name": "Granny Dahnie"
-        },
-        {
-          "score": 27.0,
-          "name": "Cecia"
-        },
-        {
           "score": 27.0,
           "name": "Fay"
         },
@@ -29423,20 +29086,12 @@
           "name": "Seth"
         },
         {
-          "score": 25.25,
-          "name": "Atalanta"
-        },
-        {
           "score": 25.0,
           "name": "Lenya"
         },
         {
-          "score": 23.0,
-          "name": "Lucca"
-        },
-        {
-          "score": 23.0,
-          "name": "Niru"
+          "score": 22.5,
+          "name": "Isabella"
         },
         {
           "score": 22.5,
@@ -29453,6 +29108,10 @@
         {
           "score": 21.0,
           "name": "Damian"
+        },
+        {
+          "score": 21.0,
+          "name": "Hepler"
         },
         {
           "score": 20.0,
@@ -29476,6 +29135,10 @@
         },
         {
           "score": 16.25,
+          "name": "Atalanta"
+        },
+        {
+          "score": 16.25,
           "name": "Lumont"
         },
         {
@@ -29485,6 +29148,10 @@
         {
           "score": 16.0,
           "name": "Galahad"
+        },
+        {
+          "score": 16.0,
+          "name": "Natsu"
         },
         {
           "score": 16.0,
@@ -29552,10 +29219,6 @@
         },
         {
           "score": 9.0,
-          "name": "Kruger"
-        },
-        {
-          "score": 9.0,
           "name": "Mirael"
         },
         {
@@ -29577,33 +29240,26 @@
       "replacements": {
         "buff": [
           {
-            "name": "Kordan",
-            "score": 0.6088,
+            "name": "Twins",
+            "score": 0.8526,
             "matches": [
-              "Magic DEF",
-              "Physical DEF",
-              "ATK"
-            ]
-          },
-          {
-            "name": "Fay",
-            "score": 0.5745,
-            "matches": [
-              "Magic DEF",
-              "Physical DEF",
               "ATK",
+              "Haste",
               "Vitality buff"
             ]
           },
           {
-            "name": "Twins",
-            "score": 0.5029,
+            "name": "Contess",
+            "score": 0.6316,
             "matches": [
-              "ATK",
-              "Haste",
-              "Vitality buff",
-              "Magic DEF",
-              "Physical DEF"
+              "ATK"
+            ]
+          },
+          {
+            "name": "Himmel",
+            "score": 0.6316,
+            "matches": [
+              "ATK"
             ]
           }
         ],
@@ -29663,17 +29319,27 @@
         "cc": [],
         "overall": [
           {
-            "name": "Fay",
-            "score": 0.5775,
+            "name": "Twins",
+            "score": 0.6384,
             "matches": [
-              "Healing"
+              "Healing",
+              "Buffs on allies"
             ]
           },
           {
-            "name": "Twins",
-            "score": 0.5309,
+            "name": "Contess",
+            "score": 0.5335,
             "matches": [
-              "Healing"
+              "Healing",
+              "Buffs on allies"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.5335,
+            "matches": [
+              "Healing",
+              "Buffs on allies"
             ]
           }
         ]
@@ -30153,17 +29819,7 @@
     "Natsu": {
       "synergies": [
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK via ATK buff (all units, average)",
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 34.0
-        },
-        {
-          "provider": "Lucca",
+          "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF buff (area, high)",
             "Magic DEF via DEF buff (area, high)"
@@ -30181,37 +29837,18 @@
           "score": 22.0
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 21.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 18.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, average)",
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 18.0
-        },
-        {
-          "provider": "Tilaya",
+          "provider": "Lucca",
           "reasons": [
             "Physical DEF via DEF buff (area, average)",
             "Magic DEF via DEF buff (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 16.0
         },
@@ -30224,20 +29861,13 @@
           "score": 15.0
         },
         {
-          "provider": "Eironn",
+          "provider": "Sonja",
           "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
+            "ATK via ATK buff (multiple targets, average)",
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
           ],
-          "score": 9.0
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
+          "score": 12.0
         },
         {
           "provider": "Shakir",
@@ -30263,14 +29893,6 @@
           "score": 6.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK buff (multiple targets, low, conditional (frequent))",
@@ -30284,15 +29906,6 @@
             "Haste via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`"
           ],
           "score": 5.1
-        },
-        {
-          "provider": "Hepler",
-          "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
-          ],
-          "score": 4.5
         },
         {
           "provider": "Lorsan",
@@ -30316,7 +29929,7 @@
           "score": 3.0
         },
         {
-          "provider": "Kruger",
+          "provider": "Scarlita",
           "reasons": [
             "Physical DEF via DEF buff (single target, low)",
             "Magic DEF via DEF buff (single target, low)"
@@ -30324,16 +29937,16 @@
           "score": 3.0
         },
         {
-          "provider": "Mehira",
+          "provider": "Hepler",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 1.5
         },
         {
-          "provider": "Seth",
+          "provider": "Mehira",
           "reasons": [
-            "Crit via Crit buff (single target, low)"
+            "Haste via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -30344,14 +29957,6 @@
             "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 10.5
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Lumont",
@@ -30524,15 +30129,7 @@
       }
     },
     "Nazrik": {
-      "synergies": [
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
-          ],
-          "score": 1.5
-        }
-      ],
+      "synergies": [],
       "beneficiaries": [
         {
           "score": 11.25,
@@ -31505,13 +31102,12 @@
     "Niru": {
       "synergies": [
         {
-          "provider": "Mikola",
+          "provider": "Tilaya",
           "reasons": [
-            "Healing via Healing over time (all units, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
+            "Physical DEF via DEF buff (area, high)",
+            "Magic DEF via DEF buff (area, high)"
           ],
-          "score": 23.0
+          "score": 24.0
         },
         {
           "provider": "Solise",
@@ -31522,25 +31118,9 @@
           "score": 19.0
         },
         {
-          "provider": "Tilaya",
-          "reasons": [
-            "Physical DEF via DEF buff (area, average)",
-            "Magic DEF via DEF buff (area, average)"
-          ],
-          "score": 16.0
-        },
-        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Healing via Direct healing (area, high)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
           ],
           "score": 12.0
         },
@@ -31550,31 +31130,6 @@
             "Healing via Direct healing (all units, average)"
           ],
           "score": 10.0
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Healing via Direct healing (area, low)",
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)"
-          ],
-          "score": 10.0
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
         },
         {
           "provider": "Ludovic",
@@ -31600,6 +31155,14 @@
           "score": 6.0
         },
         {
+          "provider": "Sonja",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Aliceth",
           "reasons": [
             "Enables Enemy defeat via Instant defeat"
@@ -31610,6 +31173,13 @@
           "provider": "Cryonaia",
           "reasons": [
             "Enables Enemy defeat via Instant defeat"
+          ],
+          "score": 5.0
+        },
+        {
+          "provider": "Mikola",
+          "reasons": [
+            "Healing via Healing over time (all units, low)"
           ],
           "score": 5.0
         },
@@ -31635,6 +31205,13 @@
           "score": 4.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
           "provider": "Velara",
           "reasons": [
             "Healing via Direct healing (area, low)"
@@ -31645,14 +31222,6 @@
           "provider": "Contess",
           "reasons": [
             "Healing via Direct healing (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kruger",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 3.0
         },
@@ -31671,21 +31240,12 @@
           "score": 1.5
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "Healing via Direct healing (arc, average)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 24.0
-        },
-        {
           "provider": "Lucca",
           "reasons": [
-            "Physical DEF via DEF buff (area, high)",
-            "Magic DEF via DEF buff (area, high)"
+            "Physical DEF via DEF buff (area, average)",
+            "Magic DEF via DEF buff (area, average)"
           ],
-          "score": 24.0
+          "score": 16.0
         },
         {
           "provider": "Hewynn",
@@ -31697,25 +31257,7 @@
         {
           "provider": "Hepler",
           "reasons": [
-            "Healing via Healing over time (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
+            "Healing via Healing over time (multiple targets, high)"
           ],
           "score": 9.0
         },
@@ -31731,6 +31273,13 @@
           "reasons": [
             "Physical DEF via DEF buff (single target, average)",
             "Magic DEF via DEF buff (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "Healing via Direct healing (arc, average)"
           ],
           "score": 6.0
         },
@@ -31811,6 +31360,14 @@
             "Enables Enemy defeat via Marked target (focus fire)"
           ],
           "score": 3.5
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
+          ],
+          "score": 3.0
         },
         {
           "provider": "Hammie",
@@ -33017,15 +32574,6 @@
           "score": 75.5206
         },
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK via ATK buff (all units, average)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Grants 6 distinct stat buffs to Perseus"
-          ],
-          "score": 61.0
-        },
-        {
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
@@ -33046,6 +32594,15 @@
           "score": 52.5
         },
         {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, average)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Grants 5 distinct stat buffs to Perseus"
+          ],
+          "score": 52.0
+        },
+        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -33061,15 +32618,6 @@
             "Grants 5 distinct stat buffs to Perseus"
           ],
           "score": 32.5
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Grants 4 distinct stat buffs to Perseus"
-          ],
-          "score": 32.0824
         },
         {
           "provider": "Dunlingr",
@@ -33143,6 +32691,14 @@
           "score": 22.5
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Grants 2 distinct stat buffs to Perseus"
+          ],
+          "score": 20.0824
+        },
+        {
           "provider": "Solise",
           "reasons": [
             "Grants 2 distinct stat buffs to Perseus"
@@ -33191,21 +32747,6 @@
           "score": 13.05
         },
         {
-          "provider": "Scarlita",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "Grants 2 distinct stat buffs to Perseus"
-          ],
-          "score": 10.5
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Perseus"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Marcille",
           "reasons": [
             "Grants 1 distinct stat buff to Perseus"
@@ -33221,12 +32762,27 @@
           "score": 8.1
         },
         {
+          "provider": "Scarlita",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Grants 2 distinct stat buffs to Perseus"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Thoran",
           "reasons": [
             "Energy via Energy recovery (single target, average) `signature fuel`",
             "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 5.5206
+        },
+        {
+          "provider": "Eironn",
+          "reasons": [
+            "Grants 1 distinct stat buff to Perseus"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Velara",
@@ -33259,13 +32815,6 @@
           "score": 2.6102999999999996
         },
         {
-          "provider": "Kruger",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Kulu",
           "reasons": [
             "Grants 1 distinct stat buff to Perseus"
@@ -33291,18 +32840,9 @@
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
             "Shield via Shield (multiple targets, high)",
-            "Grants 4 distinct stat buffs to Perseus"
+            "Grants 3 distinct stat buffs to Perseus"
           ],
-          "score": 32.25
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Grants 5 distinct stat buffs to Perseus"
-          ],
-          "score": 29.1
+          "score": 30.75
         },
         {
           "provider": "Kazim",
@@ -33337,6 +32877,15 @@
           "score": 21.0
         },
         {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Grants 4 distinct stat buffs to Perseus"
+          ],
+          "score": 20.1
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average, conditional (frequent)) `signature fuel`",
@@ -33363,16 +32912,9 @@
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, high)",
-            "Grants 2 distinct stat buffs to Perseus"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
             "Grants 1 distinct stat buff to Perseus"
           ],
-          "score": 12.0
+          "score": 9.0
         },
         {
           "provider": "Salazer",
@@ -33381,6 +32923,13 @@
             "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 8.325
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Grants 1 distinct stat buff to Perseus"
+          ],
+          "score": 8.0
         },
         {
           "provider": "Lucius",
@@ -33445,13 +32994,6 @@
         },
         {
           "provider": "Rhys",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Seth",
           "reasons": [
             "Grants 1 distinct stat buff to Perseus"
           ],
@@ -33657,14 +33199,6 @@
           "score": 9.0
         },
         {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Saida",
           "reasons": [
             "Shield via Shield (multiple targets, high)"
@@ -33731,40 +33265,12 @@
           "score": 1.08
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "Healing via Direct healing (arc, average)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 24.0
-        },
-        {
-          "provider": "Lucca",
+          "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF buff (area, high)",
             "Magic DEF via DEF buff (area, high)"
           ],
           "score": 24.0
-        },
-        {
-          "provider": "Mikola",
-          "reasons": [
-            "Healing via Healing over time (all units, low)",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)"
-          ],
-          "score": 23.0
-        },
-        {
-          "provider": "Hepler",
-          "reasons": [
-            "Shield via Shield (multiple targets, high)",
-            "Healing via Healing over time (multiple targets, high)",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
-          ],
-          "score": 21.0
         },
         {
           "provider": "Smokey & Meerky",
@@ -33775,17 +33281,15 @@
           "score": 20.64
         },
         {
-          "provider": "Rowan",
+          "provider": "Hepler",
           "reasons": [
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)"
+            "Shield via Shield (multiple targets, high)",
+            "Healing via Healing over time (multiple targets, high)"
           ],
-          "score": 18.64
+          "score": 18.0
         },
         {
-          "provider": "Tilaya",
+          "provider": "Lucca",
           "reasons": [
             "Physical DEF via DEF buff (area, average)",
             "Magic DEF via DEF buff (area, average)"
@@ -33808,38 +33312,12 @@
           "score": 15.0
         },
         {
-          "provider": "Lucy",
+          "provider": "Rowan",
           "reasons": [
-            "Shield via Shield (single target, high)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
           ],
-          "score": 13.5
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)"
-          ],
-          "score": 9.0
+          "score": 12.64
         },
         {
           "provider": "Ludovic",
@@ -33878,7 +33356,31 @@
           "score": 6.0
         },
         {
+          "provider": "Fay",
+          "reasons": [
+            "Healing via Direct healing (arc, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Sonja",
           "reasons": [
             "Physical DEF via DEF buff (multiple targets, low)",
             "Magic DEF via DEF buff (multiple targets, low)"
@@ -33893,9 +33395,23 @@
           "score": 5.0
         },
         {
+          "provider": "Mikola",
+          "reasons": [
+            "Healing via Healing over time (all units, low)"
+          ],
+          "score": 5.0
+        },
+        {
           "provider": "Evie",
           "reasons": [
             "Healing via Direct healing (single target, high)"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Shield via Shield (single target, high)"
           ],
           "score": 4.5
         },
@@ -33938,14 +33454,6 @@
           "provider": "Korin",
           "reasons": [
             "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kruger",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 3.0
         },
@@ -35211,13 +34719,6 @@
           "score": 2.4000000000000004
         },
         {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Thoran",
           "reasons": [
             "Energy via Energy recovery (single target, average) `signature fuel`"
@@ -35392,21 +34893,24 @@
     "Rowan": {
       "synergies": [
         {
+          "provider": "Twins",
+          "reasons": [
+            "Haste via Haste buff (all units, average) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, high)",
+            "Healing via Direct healing (multiple targets, low)",
+            "Energy via Energy recovery (multiple targets, low) `signature fuel`",
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
+          ],
+          "score": 27.16
+        },
+        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Healing via Direct healing (area, high)",
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 20.64
-        },
-        {
-          "provider": "Twins",
-          "reasons": [
-            "Haste via Haste buff (all units, average) `signature fuel`",
-            "Healing via Direct healing (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, low) `signature fuel`"
-          ],
-          "score": 15.16
         },
         {
           "provider": "Solise",
@@ -35424,11 +34928,27 @@
           "score": 11.0
         },
         {
+          "provider": "Himmel",
+          "reasons": [
+            "Max HP via Max HP buff (multiple targets, high)",
+            "Healing via Direct healing (single target, low)"
+          ],
+          "score": 10.5
+        },
+        {
           "provider": "Koko",
           "reasons": [
             "Healing via Direct healing (all units, average)"
           ],
           "score": 10.0
+        },
+        {
+          "provider": "Zandrok",
+          "reasons": [
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
+            "Max HP via Max HP buff (multiple targets, average)"
+          ],
+          "score": 9.4
         },
         {
           "provider": "Hugin",
@@ -35452,14 +34972,23 @@
           "score": 9.0
         },
         {
-          "provider": "Evie",
+          "provider": "Zanie",
           "reasons": [
+            "Max HP via Max HP buff (single target, high)",
             "Healing via Direct healing (single target, high)"
           ],
-          "score": 4.5
+          "score": 9.0
         },
         {
-          "provider": "Zanie",
+          "provider": "Pandora",
+          "reasons": [
+            "Max HP via Max HP buff (single target, average)",
+            "Healing via Direct healing (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Evie",
           "reasons": [
             "Healing via Direct healing (single target, high)"
           ],
@@ -35478,13 +35007,6 @@
             "Healing via Direct healing (area, low)"
           ],
           "score": 4.0
-        },
-        {
-          "provider": "Zandrok",
-          "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 3.4
         },
         {
           "provider": "Contess",
@@ -35508,25 +35030,11 @@
           "score": 3.0
         },
         {
-          "provider": "Pandora",
-          "reasons": [
-            "Healing via Direct healing (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Thoran",
           "reasons": [
             "Energy via Energy recovery (single target, average) `signature fuel`"
           ],
           "score": 2.16
-        },
-        {
-          "provider": "Himmel",
-          "reasons": [
-            "Healing via Direct healing (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Mehira",
@@ -35541,6 +35049,23 @@
             "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
           "score": 1.08
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Max HP via Max HP buff (area, average)",
+            "Physical DEF via DEF buff (area, high)",
+            "Magic DEF via DEF buff (area, high)"
+          ],
+          "score": 32.0
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Physical DEF via DEF buff (area, average)",
+            "Magic DEF via DEF buff (area, average)"
+          ],
+          "score": 16.0
         },
         {
           "provider": "Hewynn",
@@ -35581,6 +35106,14 @@
           "score": 8.0
         },
         {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, average)",
+            "Magic DEF via DEF buff (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Fay",
           "reasons": [
             "Healing via Direct healing (arc, average)"
@@ -35591,6 +35124,22 @@
           "provider": "Kazim",
           "reasons": [
             "Haste via Haste buff (multiple targets, average) `signature fuel`"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
           ],
           "score": 6.0
         },
@@ -35612,6 +35161,14 @@
           "provider": "Isabella",
           "reasons": [
             "Haste via Haste buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Scarlita",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 3.0
         },
@@ -35639,28 +35196,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 39.3544,
-          "name": "Dionel"
-        },
-        {
-          "score": 31.732,
+          "score": 27.232,
           "name": "Zorya"
         },
         {
-          "score": 30.531999999999996,
+          "score": 26.032,
           "name": "Soren"
-        },
-        {
-          "score": 26.532,
-          "name": "Lenya"
         },
         {
           "score": 26.032,
           "name": "Vala"
-        },
-        {
-          "score": 24.3544,
-          "name": "Tasi"
         },
         {
           "score": 22.032,
@@ -35669,6 +35214,10 @@
         {
           "score": 22.032,
           "name": "Koko"
+        },
+        {
+          "score": 22.032,
+          "name": "Lenya"
         },
         {
           "score": 22.032,
@@ -35695,24 +35244,8 @@
           "name": "Mikola"
         },
         {
-          "score": 18.64,
-          "name": "Granny Dahnie"
-        },
-        {
-          "score": 18.64,
-          "name": "Isabella"
-        },
-        {
-          "score": 17.572000000000003,
-          "name": "Antandra"
-        },
-        {
-          "score": 17.14,
-          "name": "Harak"
-        },
-        {
-          "score": 17.14,
-          "name": "Ulmus"
+          "score": 19.8544,
+          "name": "Tasi"
         },
         {
           "score": 15.854399999999998,
@@ -35877,7 +35410,7 @@
         "overall": [
           {
             "name": "Pandora",
-            "score": 0.553,
+            "score": 0.5484,
             "matches": [
               "Healing",
               "Energy provider"
@@ -35885,7 +35418,7 @@
           },
           {
             "name": "Fay",
-            "score": 0.5368,
+            "score": 0.5169,
             "matches": [
               "Healing"
             ]
@@ -35983,14 +35516,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -36042,6 +35567,13 @@
         },
         {
           "provider": "Nara",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Rowan",
           "reasons": [
             "Healing via Direct healing (area, low)"
           ],
@@ -36328,14 +35860,6 @@
           "score": 8.5
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -36402,6 +35926,13 @@
         },
         {
           "provider": "Nara",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
+          "provider": "Rowan",
           "reasons": [
             "Healing via Direct healing (area, low)"
           ],
@@ -36878,16 +36409,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 20.25,
-          "name": "Silven"
-        },
-        {
           "score": 19.0,
           "name": "Nerion"
         },
         {
           "score": 16.0,
           "name": "Carolina"
+        },
+        {
+          "score": 10.0,
+          "name": "Kazim"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -36897,25 +36428,23 @@
         "buff": [
           {
             "name": "Zanie",
-            "score": 0.96,
+            "score": 1.0,
             "matches": [
               "Shield"
             ]
           },
           {
             "name": "Korin",
-            "score": 0.96,
+            "score": 1.0,
             "matches": [
               "Shield"
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.816,
+            "name": "Contess",
+            "score": 0.9677,
             "matches": [
-              "Shield",
-              "Magic DEF",
-              "Physical DEF"
+              "Shield"
             ]
           }
         ],
@@ -37004,7 +36533,7 @@
         "overall": [
           {
             "name": "Korin",
-            "score": 0.5516,
+            "score": 0.5861,
             "matches": [
               "Similar Skills",
               "Buffs on allies"
@@ -37022,9 +36551,11 @@
             "Haste via Haste buff (all units, average) `signature fuel`",
             "Healing via Direct healing (multiple targets, low)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`",
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)",
             "ATK SPD via Haste buff (all units, average) `signature fuel`"
           ],
-          "score": 33.018
+          "score": 36.018
         },
         {
           "provider": "Mikola",
@@ -37044,6 +36575,14 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 24.072000000000003
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Physical DEF via DEF buff (area, high)",
+            "Magic DEF via DEF buff (area, high)"
+          ],
+          "score": 24.0
         },
         {
           "provider": "Hugin",
@@ -37069,6 +36608,14 @@
           "reasons": [
             "Healing via Direct healing (all units, average)",
             "Life Drain via Lifedrain buff (multiple targets, average)"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Physical DEF via DEF buff (area, average)",
+            "Magic DEF via DEF buff (area, average)"
           ],
           "score": 16.0
         },
@@ -37127,6 +36674,15 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 13.072000000000001
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 12.0
         },
         {
           "provider": "Hepler",
@@ -37210,6 +36766,14 @@
           "score": 6.48
         },
         {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, average)",
+            "Magic DEF via DEF buff (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Galahad",
           "reasons": [
             "Haste via Haste buff (single target, average) `signature fuel`",
@@ -37284,6 +36848,14 @@
           "score": 3.0
         },
         {
+          "provider": "Scarlita",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, low)",
+            "Magic DEF via DEF buff (single target, low)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Mehira",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -37330,6 +36902,14 @@
           "score": 10.5
         },
         {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Magic DEF via DEF buff (multiple targets, low)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Atalanta",
           "reasons": [
             "Haste via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`",
@@ -37340,8 +36920,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 1.5,
-          "name": "Nazrik"
+          "score": 4.25,
+          "name": "Indris"
+        },
+        {
+          "score": 3.0,
+          "name": "Carolina"
+        },
+        {
+          "score": 3.0,
+          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -37762,15 +37350,6 @@
           "score": 16.5
         },
         {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Enables Debuff on target via Phys DEF debuff (multiple targets)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 15.0
-        },
-        {
           "provider": "Bonnie",
           "reasons": [
             "Enables Debuff on target via Haste debuff (single target)",
@@ -37932,6 +37511,14 @@
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 11.25
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 10.5
         },
         {
           "provider": "Lucius",
@@ -39067,10 +38654,9 @@
             "ATK SPD via Haste buff (all units, average) `signature fuel`",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`",
             "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)",
             "Grants 8 distinct stat buffs to Silven"
           ],
-          "score": 77.66
+          "score": 76.16
         },
         {
           "provider": "Hugin",
@@ -39135,31 +38721,9 @@
           "provider": "Mikola",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)",
-            "Grants 6 distinct stat buffs to Silven"
-          ],
-          "score": 88.5
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Physical DEF via DEF buff (multiple targets, high)",
-            "Magic DEF via DEF buff (multiple targets, high)",
             "Grants 5 distinct stat buffs to Silven"
           ],
-          "score": 54.75
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)",
-            "Grants 4 distinct stat buffs to Silven"
-          ],
-          "score": 49.89
+          "score": 57.0
         },
         {
           "provider": "Smokey & Meerky",
@@ -39170,11 +38734,10 @@
           "score": 49.14
         },
         {
-          "provider": "Lucca",
+          "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF buff (area, high)",
-            "Magic DEF via DEF buff (area, high)",
-            "Grants 1 distinct stat buff to Silven"
+            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 42.0
         },
@@ -39194,33 +38757,6 @@
           "score": 40.5
         },
         {
-          "provider": "Tilaya",
-          "reasons": [
-            "Physical DEF via DEF buff (area, average)",
-            "Magic DEF via DEF buff (area, average)",
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 40.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)",
-            "Grants 4 distinct stat buffs to Silven"
-          ],
-          "score": 38.25
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, average)",
-            "Magic DEF via DEF buff (multiple targets, average)",
-            "Grants 2 distinct stat buffs to Silven (start of battle)"
-          ],
-          "score": 37.199999999999996
-        },
-        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
@@ -39229,21 +38765,19 @@
           "score": 36.5
         },
         {
-          "provider": "Hepler",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)",
-            "Grants 4 distinct stat buffs to Silven"
-          ],
-          "score": 36.375
-        },
-        {
           "provider": "Hewynn",
           "reasons": [
             "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 33.75
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Grants 2 distinct stat buffs to Silven"
+          ],
+          "score": 32.64
         },
         {
           "provider": "Alna",
@@ -39258,6 +38792,14 @@
             "Grants 1 distinct stat buff to Silven (start of battle)"
           ],
           "score": 31.5
+        },
+        {
+          "provider": "Hepler",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Grants 3 distinct stat buffs to Silven"
+          ],
+          "score": 31.125
         },
         {
           "provider": "Lyca",
@@ -39300,6 +38842,14 @@
           "score": 24.75
         },
         {
+          "provider": "Fay",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
+            "Grants 4 distinct stat buffs to Silven"
+          ],
+          "score": 23.25
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
@@ -39308,20 +38858,9 @@
           "score": 23.25
         },
         {
-          "provider": "Eironn",
+          "provider": "Kordan",
           "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)",
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 22.5
-        },
-        {
-          "provider": "Lucy",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)",
-            "Grants 2 distinct stat buffs to Silven"
+            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 22.5
         },
@@ -39331,6 +38870,14 @@
             "Grants 3 distinct stat buffs to Silven (start of battle)"
           ],
           "score": 22.049999999999997
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Grants 2 distinct stat buffs to Silven (start of battle)"
+          ],
+          "score": 21.9
         },
         {
           "provider": "Damian",
@@ -39362,13 +38909,12 @@
           "score": 20.25
         },
         {
-          "provider": "Scarlita",
+          "provider": "Lucca",
           "reasons": [
-            "Physical DEF via DEF buff (single target, high)",
-            "Magic DEF via DEF buff (single target, high)",
-            "Grants 2 distinct stat buffs to Silven"
+            "Physical DEF via DEF buff (area, average)",
+            "Grants 1 distinct stat buff to Silven"
           ],
-          "score": 20.25
+          "score": 20.0
         },
         {
           "provider": "Lorsan",
@@ -39423,24 +38969,6 @@
           "score": 12.75
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, average)",
-            "Magic DEF via DEF buff (single target, average)",
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 10.5
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF buff (multiple targets, low)",
-            "Magic DEF via DEF buff (multiple targets, low)",
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 10.5
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
@@ -39472,12 +39000,50 @@
           "score": 8.25
         },
         {
+          "provider": "Scarlita",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, low)",
+            "Grants 2 distinct stat buffs to Silven"
+          ],
+          "score": 8.25
+        },
+        {
           "provider": "Atalanta",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`",
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 7.6875
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via DEF buff (single target, average)",
+            "Grants 1 distinct stat buff to Silven"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via DEF buff (multiple targets, low)",
+            "Grants 1 distinct stat buff to Silven"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Eironn",
+          "reasons": [
+            "Grants 1 distinct stat buff to Silven"
+          ],
+          "score": 6.75
+        },
+        {
+          "provider": "Lucy",
+          "reasons": [
+            "Grants 1 distinct stat buff to Silven"
+          ],
+          "score": 6.75
         },
         {
           "provider": "Salazer",
@@ -39499,15 +39065,6 @@
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 6.0
-        },
-        {
-          "provider": "Kruger",
-          "reasons": [
-            "Physical DEF via DEF buff (single target, low)",
-            "Magic DEF via DEF buff (single target, low)",
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 5.25
         },
         {
           "provider": "Korin",
@@ -39578,13 +39135,6 @@
         },
         {
           "provider": "Rhys",
-          "reasons": [
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Seth",
           "reasons": [
             "Grants 1 distinct stat buff to Silven"
           ],
@@ -39835,13 +39385,6 @@
           "provider": "Twins",
           "reasons": [
             "Shield via Shield (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
           ],
           "score": 1.5
         },
@@ -40248,7 +39791,7 @@
         "overall": [
           {
             "name": "Kafra",
-            "score": 0.54,
+            "score": 0.5314,
             "matches": [
               "Similar Skills",
               "Damage"
@@ -40462,6 +40005,10 @@
           "name": "Zorya"
         },
         {
+          "score": 35.0544,
+          "name": "Dionel"
+        },
+        {
           "score": 34.0824,
           "name": "Perseus"
         },
@@ -40571,6 +40118,10 @@
         },
         {
           "score": 16.0824,
+          "name": "Atalanta"
+        },
+        {
+          "score": 16.0824,
           "name": "Lumont"
         },
         {
@@ -40671,7 +40222,7 @@
           },
           {
             "name": "Hewynn",
-            "score": 0.8869,
+            "score": 0.8798,
             "matches": [
               "Direct healing",
               "Healing"
@@ -40766,6 +40317,10 @@
           "name": "Dunlingr"
         },
         {
+          "score": 27.0,
+          "name": "Laios"
+        },
+        {
           "score": 21.0,
           "name": "Berial"
         },
@@ -40780,10 +40335,6 @@
         {
           "score": 21.0,
           "name": "Hodgkin"
-        },
-        {
-          "score": 21.0,
-          "name": "Laios"
         },
         {
           "score": 21.0,
@@ -40847,6 +40398,10 @@
         },
         {
           "score": 15.0,
+          "name": "Lucca"
+        },
+        {
+          "score": 15.0,
           "name": "Ludovic"
         },
         {
@@ -40892,6 +40447,10 @@
         {
           "score": 15.0,
           "name": "Tilaya"
+        },
+        {
+          "score": 15.0,
+          "name": "Ulmus"
         },
         {
           "score": 15.0,
@@ -41100,12 +40659,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 18.0,
-          "name": "Isabella"
+          "score": 21.9,
+          "name": "Silven"
         },
         {
           "score": 12.0,
-          "name": "Niru"
+          "name": "Hepler"
+        },
+        {
+          "score": 12.0,
+          "name": "Isabella"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -41114,8 +40677,8 @@
       "replacements": {
         "buff": [
           {
-            "name": "Kordan",
-            "score": 1.0,
+            "name": "Twins",
+            "score": 0.7645,
             "matches": [
               "ATK",
               "Magic DEF",
@@ -41123,20 +40686,16 @@
             ]
           },
           {
-            "name": "Mikola",
-            "score": 1.0,
+            "name": "Hugin",
+            "score": 0.7432,
             "matches": [
-              "ATK",
-              "Magic DEF",
-              "Physical DEF"
+              "ATK"
             ]
           },
           {
-            "name": "Fay",
-            "score": 0.9825,
+            "name": "Evie",
+            "score": 0.7432,
             "matches": [
-              "Magic DEF",
-              "Physical DEF",
               "ATK"
             ]
           }
@@ -41219,7 +40778,7 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.5908,
+            "score": 0.5979,
             "matches": [
               "Buffs on allies",
               "Crowd Control",
@@ -41245,12 +40804,11 @@
         {
           "provider": "Rowan",
           "reasons": [
-            "Max HP via Max HP buff (single target, high)",
             "Healing via Direct healing (area, low)",
             "Energy via Energy recovery (area, high) `signature fuel`",
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
           ],
-          "score": 30.531999999999996
+          "score": 26.032
         },
         {
           "provider": "Smokey & Meerky",
@@ -42264,14 +41822,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Contess",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -42294,6 +41844,13 @@
             "Healing via Direct healing (single target, average)"
           ],
           "score": 6.0
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
         },
         {
           "provider": "Velara",
@@ -42562,16 +42119,6 @@
           "score": 28.5
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
-          ],
-          "score": 24.3544
-        },
-        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -42579,6 +42126,15 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 20.0544
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`",
+            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+          ],
+          "score": 19.8544
         },
         {
           "provider": "Himmel",
@@ -43372,27 +42928,30 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "True damage"
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage"
+              "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Nazrik",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage",
+              "True damage"
             ]
           }
         ],
@@ -43557,14 +43116,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -43643,6 +43194,13 @@
           "score": 4.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
+        },
+        {
           "provider": "Salazer",
           "reasons": [
             "Shield via Shield (single target, high, conditional (frequent))"
@@ -43681,13 +43239,6 @@
           "provider": "Rhys",
           "reasons": [
             "Healing via Direct healing (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
           ],
           "score": 1.5
         },
@@ -43906,20 +43457,19 @@
           "score": 20.64
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 17.14
-        },
-        {
           "provider": "Hewynn",
           "reasons": [
             "Healing via Healing over time (all units, high)"
           ],
           "score": 15.0
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 12.64
         },
         {
           "provider": "Koko",
@@ -44240,14 +43790,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Contess",
           "reasons": [
             "Shield via Shield (single target, average)",
@@ -44283,6 +43825,13 @@
             "Healing via Direct healing (single target, high)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
         },
         {
           "provider": "Velara",
@@ -44414,16 +43963,44 @@
       ],
       "beneficiaries": [
         {
-          "score": 24.0,
+          "score": 32.0,
           "name": "Hepler"
         },
         {
-          "score": 24.0,
+          "score": 32.0,
+          "name": "Laios"
+        },
+        {
+          "score": 32.0,
           "name": "Lucca"
         },
         {
-          "score": 16.0,
+          "score": 24.0,
+          "name": "Cecia"
+        },
+        {
+          "score": 24.0,
+          "name": "Granny Dahnie"
+        },
+        {
+          "score": 24.0,
+          "name": "Isabella"
+        },
+        {
+          "score": 24.0,
+          "name": "Natsu"
+        },
+        {
+          "score": 24.0,
           "name": "Niru"
+        },
+        {
+          "score": 24.0,
+          "name": "Seth"
+        },
+        {
+          "score": 12.0,
+          "name": "Kruger"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -44433,22 +44010,21 @@
         "buff": [
           {
             "name": "Alna",
-            "score": 0.6,
+            "score": 0.6857,
             "matches": [
               "Max HP"
             ]
           },
           {
-            "name": "Lucca",
-            "score": 0.6,
+            "name": "Himmel",
+            "score": 0.5714,
             "matches": [
-              "Magic DEF",
-              "Physical DEF"
+              "Max HP"
             ]
           },
           {
-            "name": "Himmel",
-            "score": 0.5,
+            "name": "Cecia",
+            "score": 0.5714,
             "matches": [
               "Max HP"
             ]
@@ -44535,15 +44111,6 @@
           "score": 18.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 17.14
-        },
-        {
           "provider": "Twins",
           "reasons": [
             "Max HP via Max HP buff (multiple targets, high)",
@@ -44568,6 +44135,14 @@
             "Healing via Direct healing (single target, low)"
           ],
           "score": 13.5
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)",
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 12.64
         },
         {
           "provider": "Zanie",
@@ -47197,14 +46772,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 8.5824
-        },
-        {
           "provider": "Cecia",
           "reasons": [
             "Max HP via Max HP buff (single target, high)",
@@ -47243,6 +46810,13 @@
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
           "score": 4.401
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy recovery (area, high) `signature fuel`"
+          ],
+          "score": 4.082400000000001
         },
         {
           "provider": "Smokey & Meerky",
@@ -47364,13 +46938,6 @@
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
           ],
           "score": 1.6199999999999999
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Crit via Crit buff (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Soren",
@@ -47619,14 +47186,6 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Max HP via Max HP buff (single target, high)",
-            "Healing via Direct healing (area, low)"
-          ],
-          "score": 8.5
-        },
-        {
           "provider": "Pandora",
           "reasons": [
             "Max HP via Max HP buff (single target, average)",
@@ -47640,6 +47199,13 @@
             "Healing via Direct healing (single target, high)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (area, low)"
+          ],
+          "score": 4.0
         },
         {
           "provider": "Velara",
@@ -48193,8 +47759,8 @@
             ]
           },
           {
-            "name": "Kafra",
-            "score": 0.96,
+            "name": "Sinbad",
+            "score": 0.864,
             "matches": [
               "Phys DEF debuff",
               "ATK debuff"
@@ -48256,12 +47822,11 @@
         {
           "provider": "Rowan",
           "reasons": [
-            "Max HP via Max HP buff (single target, high)",
             "Healing via Direct healing (area, low)",
             "Energy via Energy recovery (area, high) `signature fuel`",
             "Enables Ally Ultimate casts via Energy recovery (Ultimate pace)"
           ],
-          "score": 31.732
+          "score": 27.232
         },
         {
           "provider": "Shakir",

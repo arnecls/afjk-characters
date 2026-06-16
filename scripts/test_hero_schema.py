@@ -476,12 +476,35 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertEqual(debuff_key, "haste debuff")
         self.assertNotEqual(buff_key, debuff_key)
 
+    def test_skill_card_chip_key_damage_dealt_debuff_distinct_from_damage_taken(
+        self,
+    ):
+        debuff_key = rs._canonical_skill_card_chip_key("Damage dealt debuff")
+        taken_key = rs._canonical_skill_card_chip_key("Damage taken reduction")
+        self.assertEqual(debuff_key, "damage dealt debuff")
+        self.assertEqual(taken_key, "damage taken reduction")
+        self.assertNotEqual(debuff_key, taken_key)
+
     def test_skill_card_chip_key_energy_recovery_debuff_distinct(self):
         buff_key = rs._canonical_skill_card_chip_key("Energy recovery")
         debuff_key = rs._canonical_skill_card_chip_key("Energy recovery debuff")
         self.assertEqual(buff_key, "energy recovery")
         self.assertEqual(debuff_key, "energy recovery debuff")
         self.assertNotEqual(buff_key, debuff_key)
+
+    def test_skill_card_chip_key_ranged_def_buff_not_ranged_damage(self):
+        key = rs._canonical_skill_card_chip_key("Ranged DEF buff — Self")
+        self.assertEqual(key, "ranged def")
+        self.assertNotEqual(key, "ranged")
+
+    def test_eironn_legendary_skill_card_ranged_def_tags(self):
+        hero = self._hero_analyzed("Eironn")
+        tags = rs.format_skill_card_tags(hero, "skill3")
+        self.assertEqual(tags, ["Ranged DEF buff — Self"])
+        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        self.assertIn("ranged def", keys)
+        self.assertNotIn("ranged", keys)
+        self.assertNotIn("def buff", keys)
 
     def test_contess_skill2_skill_card_energy_recovery_debuff(self):
         hero = self._hero_analyzed("Contess")

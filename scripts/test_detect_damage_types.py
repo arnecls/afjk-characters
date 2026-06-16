@@ -1199,6 +1199,187 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
             [],
         )
 
+    def test_granny_glimmerbloom_self_def_is_buff_not_debuff(self):
+        text = (
+            "When Granny Dahnie's HP ratio is lower than 50%, the Glimmerbloom "
+            "Shield grows bigger, increasing her Phys DEF by 50% and Magic DEF "
+            "by 50% and recovering 100% (ATK-based) HP every second."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "mythic+", text, "Physical")
+        buffs = [e for e in effects if e.category == "buff"]
+        debuffs = [e for e in effects if e.category == "debuff"]
+        self.assertIn(
+            "DEF buff",
+            [e.label for e in buffs],
+        )
+        self.assertEqual(
+            [e.label for e in debuffs if "def" in e.label.lower()],
+            [],
+        )
+        def_buff = next(e for e in buffs if e.label == "DEF buff")
+        self.assertEqual(def_buff.targeting, "Self")
+        self.assertEqual(def_buff.numeric, 50.0)
+
+    def test_granny_glimmerbloom_hot_upgrade_does_not_bump_def_buff(self):
+        import heroes_io as io
+
+        record = next(
+            r
+            for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Granny Dahnie"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        sl = hero.skill_slices["Ex. Skill"]
+        def_buff = next(e for e in sl.effects if e.label == "DEF buff")
+        self.assertEqual(def_buff.targeting, "Self")
+        self.assertEqual(def_buff.numeric, 50.0)
+        unaffected = next(
+            i for i in sl.cc_immunities if i.immunity_type == "Unaffected"
+        )
+        self.assertEqual(unaffected.targeting, "Self")
+
+    def test_kafra_sylvan_banishment_haste_debuff_not_buff(self):
+        text = (
+            "When a marked enemy receives healing from other enemies, Kafra jumps "
+            "to the healer and attacks them, dealing 250% (ATK-based) damage "
+            "and reducing their Haste by 40 for 5s."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "mythic+", text, "Physical")
+        labels = [(e.category, e.label) for e in effects]
+        self.assertIn(("debuff", "Haste debuff"), labels)
+        self.assertNotIn(("buff", "Haste buff"), labels)
+        self.assertNotIn(("debuff", "ATK debuff"), labels)
+        haste = next(e for e in effects if e.label == "Haste debuff")
+        self.assertEqual(haste.numeric, 40.0)
+
+        import heroes_io as io
+
+        record = next(
+            r for r in io.load_heroes_data()["heroes"] if r.get("name") == "Kafra"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill4")
+        self.assertIn("Haste debuff", tags)
+        self.assertNotIn("Haste buff", tags)
+        self.assertNotIn("Haste buff — Self", tags)
+
+    def test_seth_hunter_instinct_def_and_crit_self_buffs(self):
+        text = (
+            "Seth gains stacks of Bloodlust when the HP of a non-summoned enemy "
+            "first falls below 33%, up to 3 stacks. "
+            "Each stack permanently increases his Haste by 10 + 1.5 and Life Drain "
+            "by 7 + 1. "
+            "Seth gains 25% Phys and Magic DEF when he first triggers Bloodlust."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        buffs = [e for e in effects if e.category == "buff"]
+        self.assertIn("DEF buff", [e.label for e in buffs])
+        def_buff = next(e for e in buffs if e.label == "DEF buff")
+        self.assertEqual(def_buff.targeting, "Self")
+        self.assertEqual(def_buff.numeric, 25.0)
+
+        crit_text = "Gains 25 Crit when he first triggers Bloodlust."
+        crit_effects: list[rs.Effect] = []
+        rs.analyze_text(crit_effects, [], {}, [], "base", crit_text, "Physical")
+        crit = next(e for e in crit_effects if e.label == "Crit buff")
+        self.assertEqual(crit.targeting, "Self")
+        self.assertEqual(crit.numeric, 25.0)
+
+        import heroes_io as io
+
+        record = next(
+            r for r in io.load_heroes_data()["heroes"] if r.get("name") == "Seth"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill2")
+        self.assertIn("DEF buff — Self", tags)
+        self.assertIn("Crit buff — Self", tags)
+
+    def test_seth_enhance_force_phys_def_debuff_not_buff(self):
+        text = (
+            "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack "
+            "of Bloodlust if he already carries Bloodlust when casting "
+            "Predator's Lunge."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "supreme+", text, "Physical")
+        labels = [(e.category, e.label) for e in effects]
+        self.assertIn(("debuff", "Phys DEF debuff"), labels)
+        self.assertNotIn(("buff", "DEF buff"), labels)
+        self.assertNotIn(("buff", "Phys DEF buff"), labels)
+
+        import heroes_io as io
+
+        record = next(
+            r for r in io.load_heroes_data()["heroes"] if r.get("name") == "Seth"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill5")
+        self.assertIn("Phys DEF debuff", tags)
+        self.assertNotIn("DEF buff", tags)
+        self.assertNotIn("Phys DEF buff", tags)
+
+
+    def test_temesia_iron_heel_damage_dealt_debuff_not_buff(self):
+        text = (
+            "Temesia commands her mount Down to kick an enemy while changing "
+            "the charge direction, dealing 150% (ATK-based) + 15% damage and "
+            "inflicting an interruption effect. Reduces the enemy's damage "
+            "dealt by 15% (ATK-based) for 5s."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        labels = [(e.category, e.label) for e in effects]
+        self.assertIn(("debuff", "Damage dealt debuff"), labels)
+        self.assertNotIn(("buff", "Damage taken reduction"), labels)
+        self.assertNotIn(("buff", "Damage taken"), labels)
+
+        import heroes_io as io
+
+        record = next(
+            r
+            for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Temesia"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        self.assertIn("Damage dealt debuff", tags)
+        debuff_key = rs._canonical_skill_card_chip_key("Damage dealt debuff")
+        taken_key = rs._canonical_skill_card_chip_key("Damage taken reduction")
+        self.assertEqual(debuff_key, "damage dealt debuff")
+        self.assertNotEqual(debuff_key, taken_key)
+
+    def test_temesia_invincible_fury_true_damage_on_mythic_plus(self):
+        text = (
+            "Temesia permanently becomes Unaffected after casting Knight's "
+            "Heart 2 times, turning the charge damage into true damage."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "mythic+", text, "Physical")
+        damage_labels = [e.label for e in effects if e.category == "damage"]
+        self.assertIn("True damage", damage_labels)
+
+        import heroes_io as io
+
+        record = next(
+            r
+            for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Temesia"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill4")
+        self.assertIn("True damage", tags)
+        self.assertIn("Unaffected — Self", tags)
+
 
 if __name__ == "__main__":
     unittest.main()

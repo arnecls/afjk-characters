@@ -505,6 +505,7 @@ def _dot_duration_from_text(text: str) -> int:
         r"every second for (\d+(?:\.\d+)?)\s*s",
         r"inflicts? .{0,40}for (\d+(?:\.\d+)?)\s*s\b",
         r"lasts for (\d+(?:\.\d+)?)\s*s\b",
+        r"(?:the )?skill lasts (\d+(?:\.\d+)?)\s*s\b",
         r"while .{0,40}active.{0,40}for (\d+(?:\.\d+)?)\s*s\b",
     ):
         if m := re.search(pat, t):
@@ -737,7 +738,11 @@ def effect_to_schema(
                 out, _resolve_effect_numeric(effect, effect.label), effect.label
             )
             if out["type"] == "dot":
-                out["duration"] = _dot_duration_from_text(effect.qualitative)
+                dur = _effect_duration(effect, effect.label)
+                if dur is not None:
+                    out["duration"] = max(1, int(float(dur)))
+                else:
+                    out["duration"] = _dot_duration_from_text(effect.qualitative)
                 out["tick"] = _dot_tick_from_text(effect.qualitative)
                 if "value" not in out:
                     out["type"] = "heal"

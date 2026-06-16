@@ -88,6 +88,7 @@ DEBUFF_TYPES: list[str] = [
     "Blind HP loss debuff",
     "DoT debuff",
     "Damage taken debuff",
+    "Damage dealt debuff",
     "Magic damage amplification",
     "Energy drain",
     "Execution debuff",
@@ -534,9 +535,10 @@ def parse_hero_block(
                     add_cell(row, buff_label, value)
             elif kind == "debuffs":
                 debuff_label = base_label(label)
-                column = (
-                    "DoT debuff" if debuff_label == "DoT" else debuff_label
-                )
+                column = {
+                    "DoT": "DoT debuff",
+                    "Damage dealt": "Damage dealt debuff",
+                }.get(debuff_label, debuff_label)
                 if column in DEBUFF_COLUMN_SET:
                     add_cell(row, column, value)
             elif kind == "cc":
