@@ -158,7 +158,6 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `summoner` | **Persistent** companions on the battlefield (targetable, can be destroyed) | Brief ult animations (flying blades, swords); **spell-form** summons (Mehira voidlings, Shemira ghosts) that cannot be targeted or destroyed |
 | `dot-specialist` | Recurring tick damage as a **primary** pattern | Stat debuffs without DoT; bind damage alone |
 | `life-drain` | HP sustain tied to **dealing damage** | Stat steal, shield regen, heal-on-shield |
-| `fire-attack` | Burning or scorched-ground damage | Cannon/artillery theming without burn |
 | `revive` | Brings **defeated allies** back | Self-survival (`cheat-death` instead) |
 | `cheat-death` | Self-survival at fatal blow or **critical HP threshold** via recovery/form | Ally revive (`revive` instead); form swap alone without a survival trigger |
 | `aoe-damage` | Substantial multi-target damage **regularly** | Occasional summon detonation |
@@ -166,7 +165,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `assassin` | Picks isolated/backline with burst | General focus-fire marksmen |
 | `self-repositioner` | **Regularly** jumps/dashes/teleports self | One incidental leap |
 | `hp-scaling` | Scales on **HP values** | Shield-value scaling |
-| `invincibility` | Meaningful immunity windows | Brief immunity already covered by `transformation`; do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
+| `invincibility` | Meaningful immunity windows | Do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
 | `battle-start-burst` | Deals damage in the **first ~2–3s** of battle | Buff/shield/debuff/energy/summon setup at battle start without immediate damage; delayed openers (Frieren 15s); terrain bombs without a damage clause (Kulu debris); sequential battle-start cycles where damage is not the first effect (Cyran Mythic+) |
 | `high-initial-energy` | **Effective IE ≥ 500** on the ultimate when fully built (meta + max ascension bonus) | IE below 500; free/guaranteed early ult without IE fill (`battle-start-ult` instead, e.g. Eironn, Niru) |
 
@@ -185,10 +184,9 @@ Do not regenerate `heroes-overview.md` or the site unless the user asks.
 ## Examples
 
 **Bonnie** — debuff-spread mage with opening hit: `enemy-debuffer`,
-`transformation`, `aoe-damage`, `battle-start-burst` (Aging deals damage at
-battle start). Not `mass-cc` (ult stun only on debuffed targets),
-`dot-specialist` (debuff stacking ≠ DoT), or `invincibility` when mist form is
-already `transformation`.
+`aoe-damage`, `battle-start-burst` (Aging deals damage at battle start). Not
+`mass-cc` (ult stun only on debuffed targets) or `dot-specialist` (debuff
+stacking ≠ DoT).
 
 **Perseus** — terrain tile buffs: `ally-buffer`, `aoe-damage`. Not
 `battlefield-modification` (buff zones do not count).
@@ -204,10 +202,9 @@ not burst), `ally-buffer` / `ally-shielder`.
 battlefield companions: keep `aoe-damage`, `life-drain`, etc. Not `summoner`
 (cannot be targeted or destroyed; exist only briefly).
 
-**Tasi** — `aoe-damage`, `cheat-death`, `mass-cc`, `self-repositioner`,
-`transformation`. `cheat-death` from Fluttering Dream: butterfly form at 50% HP
-loss with invincibility and self-heal (up to twice per battle). Keep
-`transformation` for the form swap; both tags apply. Not `revive` (self-only).
+**Tasi** — `aoe-damage`, `cheat-death`, `mass-cc`, `self-repositioner`.
+`cheat-death` from Fluttering Dream: butterfly form at 50% HP loss with
+invincibility and self-heal (up to twice per battle). Not `revive` (self-only).
 
 **Cyran** — `high-initial-energy` (400 base IE + 200 Supreme bonus = 600).
 Not `battle-start-burst` (Mythic+ battle-start cycle leads with self-buff before

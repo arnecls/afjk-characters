@@ -552,7 +552,7 @@ class SimilarSkillsReplacementTests(unittest.TestCase):
 
     def test_more_shared_tags_increase_jaccard_score(self) -> None:
         tags_g = frozenset(
-            {"ally-shielder", "aoe-damage", "fire-attack", "static-tile-buffer"}
+            {"ally-shielder", "aoe-damage", "dot-specialist", "static-tile-buffer"}
         )
         tags_h = frozenset({"ally-shielder", "energy-provider", "static-tile-buffer"})
         tags_t = frozenset({"ally-healer", "ally-shielder", "energy-provider"})

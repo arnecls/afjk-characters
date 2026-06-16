@@ -14,8 +14,7 @@
   ],
   "Alsa": [
     "battlefield-modification",
-    "self-repositioner",
-    "transformation"
+    "self-repositioner"
   ],
   "Antandra": [
     "ally-shielder",
@@ -35,8 +34,7 @@
   ],
   "Athalia": [
     "hp-scaling",
-    "self-repositioner",
-    "transformation"
+    "self-repositioner"
   ],
   "Aurora": [
     "invincibility",
@@ -44,20 +42,17 @@
     "summoner"
   ],
   "Baelran": [
-    "hp-scaling",
-    "transformation"
+    "hp-scaling"
   ],
   "Berial": [
     "assassin",
     "cheat-death",
-    "clone",
     "stealth"
   ],
   "Bonnie": [
     "aoe-damage",
     "battle-start-burst",
-    "enemy-debuffer",
-    "transformation"
+    "enemy-debuffer"
   ],
   "Brutus": [
     "aoe-damage",
@@ -167,8 +162,7 @@
   ],
   "Galahad": [
     "ally-shielder",
-    "aoe-damage",
-    "clone"
+    "aoe-damage"
   ],
   "Gerda": [
     "ally-healer",
@@ -185,12 +179,10 @@
   "Gunnar": [
     "ally-shielder",
     "aoe-damage",
-    "fire-attack",
     "static-tile-buffer"
   ],
   "Gwyneth": [
     "dot-specialist",
-    "fire-attack",
     "mass-cc"
   ],
   "Hammie": [
@@ -205,8 +197,7 @@
   "Hepler": [
     "ally-healer",
     "ally-shielder",
-    "high-initial-energy",
-    "transformation"
+    "high-initial-energy"
   ],
   "Hewynn": [
     "ally-healer",
@@ -296,7 +287,6 @@
     "hp-scaling",
     "invincibility",
     "self-repositioner",
-    "transformation",
     "ultimate-cancel"
   ],
   "Lorsan": [
@@ -355,8 +345,7 @@
     "aoe-healing"
   ],
   "Mirael": [
-    "dot-specialist",
-    "fire-attack"
+    "dot-specialist"
   ],
   "Nara": [
     "ally-healer",
@@ -367,11 +356,9 @@
   "Natsu": [
     "aoe-damage",
     "dot-specialist",
-    "fire-attack",
     "high-damage-ult",
     "high-initial-energy",
-    "mass-cc",
-    "transformation"
+    "mass-cc"
   ],
   "Nazrik": [
     "hp-scaling",
@@ -398,8 +385,7 @@
   ],
   "Pang": [
     "ally-shielder",
-    "high-initial-energy",
-    "transformation"
+    "high-initial-energy"
   ],
   "Parisa": [
     "ally-buffer",
@@ -414,7 +400,6 @@
     "ally-buffer",
     "ally-shielder",
     "aoe-damage",
-    "clone",
     "energy-provider",
     "summoner"
   ],
@@ -433,7 +418,6 @@
   ],
   "Rhys": [
     "aoe-damage",
-    "fire-attack",
     "self-repositioner"
   ],
   "Rowan": [
@@ -453,7 +437,6 @@
   ],
   "Satrana": [
     "dot-specialist",
-    "fire-attack",
     "hp-scaling",
     "invincibility",
     "life-drain"
@@ -473,8 +456,7 @@
     "enemy-debuffer"
   ],
   "Shakir": [
-    "life-drain",
-    "transformation"
+    "life-drain"
   ],
   "Shemira": [
     "high-damage-ult",
@@ -519,22 +501,18 @@
     "disabler",
     "high-initial-energy",
     "life-drain",
-    "mass-cc",
-    "transformation"
+    "mass-cc"
   ],
   "Talene": [
     "ally-healer",
     "aoe-damage",
-    "cheat-death",
-    "fire-attack",
-    "transformation"
+    "cheat-death"
   ],
   "Tasi": [
     "aoe-damage",
     "cheat-death",
     "mass-cc",
-    "self-repositioner",
-    "transformation"
+    "self-repositioner"
   ],
   "Temesia": [
     "aoe-damage",
@@ -565,21 +543,18 @@
   "Ulmus": [
     "ally-shielder",
     "aoe-damage",
-    "cheat-death",
-    "transformation"
+    "cheat-death"
   ],
   "Vala": [
     "hp-scaling",
     "mark-target",
     "self-repositioner",
     "stealth",
-    "transformation",
     "untargetable"
   ],
   "Valen": [
     "aoe-damage",
-    "mass-cc",
-    "transformation"
+    "mass-cc"
   ],
   "Valka": [
     "ally-buffer",
@@ -610,7 +585,6 @@
     "hp-scaling"
   ],
   "Zanie": [
-    "fire-attack",
     "summoner"
   ],
   "Zorya": [

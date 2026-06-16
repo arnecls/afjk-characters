@@ -353,7 +353,6 @@ skill effect.
 - cheat-death: Survives a would-be defeat or critical HP threshold via
   self-recovery (delayed resurrect, drain-seed revival, low-HP retreat/root,
   etc.).
-- clone: Creates copy units or illusions that fight alongside the hero.
 - counterattack: Punishes enemies for attacking the hero with reactive damage or effects.
 - disabler: Applies hard shutdown effects such as Silence or Interrupt beyond routine CC.
 - dot-specialist: Relies on damage over time or recurring tick damage as a primary pattern.
@@ -361,7 +360,6 @@ skill effect.
 - enemy-grouping: Pulls, pushes, or clusters enemies to set up follow-up damage or CC.
 - energy-provider: Grants Energy to allies or routinely accelerates ally ultimates.
 - execute: Finishes low-HP enemies or scales damage strongly on wounded targets.
-- fire-attack: Applies burning or scorched-ground fire damage as a significant part of the kit.
 - high-damage-ult: Ultimate is the main damage spike and a large share of total output.
 - high-initial-energy: Ultimate starts with **≥ 500 effective Initial Energy**
   when fully built (Ultimate `Initial Energy` meta plus the highest ascension
@@ -380,7 +378,6 @@ skill effect.
 - stealth: Enters hidden or untargetable states to avoid focus or enable picks.
 - summoner: Fields persistent summons or companions that contribute in combat.
 - taunt: Forces enemies to attack the hero or redirects enemy focus onto them.
-- transformation: Swaps between forms or stances that materially change kit behavior.
 - ultimate-cancel: Cancels or interrupts enemy ultimates when they begin casting.
 - untargetable: Routinely becomes untargetable by enemy skills during normal gameplay.
 

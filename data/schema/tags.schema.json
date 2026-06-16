@@ -28,7 +28,6 @@
         "battlefield-modification",
         "cc-immunity",
         "cheat-death",
-        "clone",
         "counterattack",
         "disabler",
         "dot-specialist",
@@ -36,7 +35,6 @@
         "enemy-grouping",
         "energy-provider",
         "execute",
-        "fire-attack",
         "high-damage-ult",
         "high-initial-energy",
         "hp-scaling",
@@ -50,7 +48,6 @@
         "stealth",
         "summoner",
         "taunt",
-        "transformation",
         "ultimate-cancel",
         "untargetable"
       ],
