@@ -8256,7 +8256,7 @@
         "similar_skills": [
           {
             "name": "Solise",
-            "score": 0.48,
+            "score": 0.4,
             "matches": [
               "ally-healer",
               "ally-shielder"
@@ -8264,7 +8264,7 @@
           },
           {
             "name": "Velara",
-            "score": 0.48,
+            "score": 0.4,
             "matches": [
               "ally-healer",
               "ally-shielder"
@@ -8272,7 +8272,7 @@
           },
           {
             "name": "Twins",
-            "score": 0.4,
+            "score": 0.3429,
             "matches": [
               "ally-healer",
               "ally-shielder"
@@ -12763,7 +12763,7 @@
         "similar_skills": [
           {
             "name": "Contess",
-            "score": 0.48,
+            "score": 0.4,
             "matches": [
               "ally-healer",
               "stealth"
@@ -16069,7 +16069,7 @@
           },
           {
             "name": "Contess",
-            "score": 0.512,
+            "score": 0.5082,
             "matches": [
               "Crowd Control",
               "Buffs on allies"
@@ -16863,7 +16863,7 @@
           },
           {
             "name": "Contess",
-            "score": 0.7754,
+            "score": 0.7692,
             "matches": [
               "Buffs on allies",
               "Healing"
@@ -22876,7 +22876,7 @@
         "overall": [
           {
             "name": "Contess",
-            "score": 0.7293,
+            "score": 0.7232,
             "matches": [
               "Healing",
               "Buffs on allies",
@@ -27591,6 +27591,15 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Contess",
+            "score": 0.5,
+            "matches": [
+              "ally-healer",
+              "ally-shielder",
+              "enemy-debuffer"
+            ]
+          },
+          {
             "name": "Galahad",
             "score": 0.5,
             "matches": [
@@ -27604,14 +27613,6 @@
             "matches": [
               "ally-shielder",
               "aoe-damage"
-            ]
-          },
-          {
-            "name": "Thador",
-            "score": 0.48,
-            "matches": [
-              "ally-shielder",
-              "enemy-debuffer"
             ]
           }
         ],
@@ -43654,7 +43655,7 @@
             ]
           },
           {
-            "name": "Contess",
+            "name": "Twins",
             "score": 0.48,
             "matches": [
               "ally-healer",

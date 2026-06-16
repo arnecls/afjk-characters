@@ -2174,7 +2174,7 @@ rare chance for massive single normal attack damage
 
 - **Signature skill**: Detention Pass (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `ally-healer` `ally-shielder` `stealth` `untargetable`
+- **Behavior tags**: `ally-healer` `ally-shielder` `enemy-debuffer` `stealth` `untargetable`
 - **Damage types**: Magic `low`, HP loss `low`
 
 #### Play overview
@@ -2257,9 +2257,9 @@ These are the **10** strongest pairings:
 
 **Similar Skills**
 
-- Solise (48% `ally-healer` `ally-shielder`)
-- Velara (48% `ally-healer` `ally-shielder`)
-- Twins (40% `ally-healer` `ally-shielder`)
+- Solise (40% `ally-healer` `ally-shielder`)
+- Velara (40% `ally-healer` `ally-shielder`)
+- Twins (34% `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -3248,7 +3248,7 @@ Evie provides ATK buff to multiple targets `high` and Direct healing to single t
 
 **Similar Skills**
 
-- Contess (48% `ally-healer` `stealth`)
+- Contess (40% `ally-healer` `stealth`)
 - Vala (40% `self-repositioner` `stealth`)
 - Rowan (36% `ally-healer`)
 
@@ -4207,7 +4207,7 @@ Gunnar provides ATK SPD buff to single targets `low`, ATK buff to single targets
 **Best overall replacement**
 
 - Perseus (54% `Crowd Control` `Damage`)
-- Contess (51% `Crowd Control` `Buffs on allies`)
+- Contess (50% `Crowd Control` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -4434,7 +4434,7 @@ Hammie provides ATK buff to multiple targets `high`.
 **Best overall replacement**
 
 - Evie (94% `Buffs on allies` `Healing`)
-- Contess (77% `Buffs on allies` `Healing`)
+- Contess (76% `Buffs on allies` `Healing`)
 - Mikola (62% `Healing` `Buffs on allies`)
 
 **Buffs on allies**
@@ -7069,9 +7069,9 @@ Lucius provides Shield in an area `high`.
 
 **Similar Skills**
 
+- Contess (50% `ally-healer` `ally-shielder` `enemy-debuffer`)
 - Galahad (50% `ally-shielder` `aoe-damage`)
 - Gunnar (48% `ally-shielder` `aoe-damage`)
-- Thador (48% `ally-shielder` `enemy-debuffer`)
 
 **Damage**
 
@@ -11571,7 +11571,7 @@ These are the **10** strongest pairings:
 
 - Velara (100% `ally-healer` `ally-shielder` `aoe-healing`)
 - Smokey & Meerky (80% `ally-healer` `aoe-healing`)
-- Contess (48% `ally-healer` `ally-shielder`)
+- Twins (48% `ally-healer` `ally-shielder`)
 
 **Damage**
 

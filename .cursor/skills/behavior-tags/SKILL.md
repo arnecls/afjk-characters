@@ -70,6 +70,13 @@ For each hero, read play overview + summaries + `description_lite` and ask:
 
 Assign tags that describe **playstyle identity**, not every skill effect.
 
+When a hero has **ally** tags, still scan enemy-facing skills for
+`enemy-debuffer`, `mass-cc`, `execute`, etc. Support kits often debuff
+enemies through punishments, rule violations, or stat penalties — not only
+direct casts. Check `heroes_data_skill_summary.json` and the processed
+`debuffs` line in skill overview; do not skip debuff identity because the
+hero also heals or shields allies.
+
 **`high-initial-energy` (≥ 500 effective IE):** read Ultimate `Initial Energy`
 from skill `meta`, then add the largest ascension bonus matching
 `Gains extra N initial Energy` / `extra N initial Energy` in upgrade text.
@@ -154,6 +161,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `mass-cc` | Reliable CC on **multiple** enemies or wide areas | Single-target stun/bind/knock |
 | `ally-buffer` / `ally-healer` / `ally-shielder` | Meaningful effect on **allies** | Self-only, or buffs/shields on summons/turrets |
 | `energy-provider` | Grants Energy to **allies** or accelerates ally ulimates | Self energy recovery only |
+| `enemy-debuffer` | Meaningful **enemy** stat or combat debuffs as a core pattern | Self debuffs; ally-only kits with no enemy penalties; one minor stat shave |
 | `battlefield-modification` | Physical obstacles or map layout changes | Buff/debuff/terrain **zones** alone |
 | `summoner` | **Persistent** companions on the battlefield (targetable, can be destroyed) | Brief ult animations (flying blades, swords); **spell-form** summons (Mehira voidlings, Shemira ghosts) that cannot be targeted or destroyed |
 | `dot-specialist` | Recurring tick damage as a **primary** pattern | Stat debuffs without DoT; bind damage alone |
@@ -193,6 +201,13 @@ stacking ≠ DoT).
 
 **Cecia** — `summoner`, `mass-cc` (area entangle on summon), `enemy-debuffer`
 (stat steal). Not `life-drain` (stat absorb ≠ lifesteal).
+
+**Contess** — `ally-healer`, `ally-shielder`, `enemy-debuffer`, `stealth`,
+`untargetable`. Enemy debuffs are the kit's other half: ATK and energy
+recovery penalties, permanent silence, and violation stacking — not just
+ally protection. Do not tag support-only and skip `enemy-debuffer` when
+debuffs appear across multiple skills or the skill overview lists
+`debuffs`.
 
 **Florabelle** — buffs/shields **summons**, not allies: `summoner`,
 `aoe-damage`. Not `battle-start-burst` (battle-start Spiny summon is setup,

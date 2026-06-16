@@ -59,6 +59,19 @@ Nerion drowning DoT while controlled.
 **Does not count:** Bonnie haste-reduction debuff stacking, enemy ATK
 reduction without ticks.
 
+## `enemy-debuffer` on support / hybrid kits
+
+**Counts:** punishment or rule-based enemy penalties as a defining pattern
+(Contess: ATK and energy recovery cuts, permanent silence, violation
+stacking); direct stat steals (Cecia); spread debuffs (Bonnie).
+
+**Does not count:** a single minor enemy stat reduction on one skill when
+the hero is otherwise pure buffer/healer with no recurring enemy penalties.
+
+When ally tags are present, still read enemy-facing skill summaries. A hero
+can legitimately carry both `ally-healer` / `ally-shielder` and
+`enemy-debuffer`.
+
 ## `battle-start-burst` vs setup openers
 
 **Counts:** explicit battle-start damage (Gerda Skill 1, Bonnie Aging, Silvina
