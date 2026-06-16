@@ -312,15 +312,15 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Pandora**
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
+- **Dunlingr**
+  - Haste buff (single target, average) `signature fuel`
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Alsa
 
@@ -681,15 +681,15 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - Haste buff (single target, average) `signature fuel`
   - ATK SPD via Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - Haste buff (multiple targets, average) `signature fuel`
+  - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Atalanta
 
@@ -906,9 +906,6 @@ high energy during sleep expands transformation field radius
 Look for units providing: `ATK` `Haste`  
 Common buffers are **Twins**, **Galahad**, or **Mikola**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Kazim**
   - ATK buff (single target, high)
   - Haste buff (multiple targets, average) `signature fuel`
@@ -919,8 +916,10 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Hepler**
+  - Haste buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Aurora
 
@@ -932,12 +931,12 @@ Aurora provides Haste buff to summons `high` and Summon damage buff (Mythic+) to
 
 These are the **6** strongest pairings: 
 
+- Berial (5.0 / 5)
+- Bryon (5.0 / 5)
+- Cecia (5.0 / 5)
+- Damian (5.0 / 5)
 - Florabelle (5.0 / 5)
-- Berial (4.3 / 5)
-- Bryon (4.3 / 5)
-- Cecia (4.3 / 5)
-- Damian (4.3 / 5)
-- Dunlingr (2.8 / 5)
+- Dunlingr (4.9 / 5)
 
 ### Units that can act as a replacement for Aurora
 
@@ -1158,9 +1157,6 @@ extend stealth duration after own defeat
 
 ### Units improving Berial
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -1173,6 +1169,8 @@ extend stealth duration after own defeat
 - **Thador**
   - Energy recovery (lieutenant, start of battle) `signature fuel`
 - **Lorsan**
+  - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 
 ### Units benefitting most from Berial
@@ -1512,9 +1510,6 @@ casting projectile skill also spawns leaves near companion
 Look for units providing: `Haste` `Energy`  
 Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -1524,12 +1519,15 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Dunlingr**
+  - Haste buff (single target, average) `signature fuel`
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - Haste buff (multiple targets, average) `signature fuel`
+  - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Bryon
 
@@ -1881,9 +1879,6 @@ Cassadee also requires a unit **to bless**
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
@@ -1893,6 +1888,8 @@ Cassadee also requires a unit **to bless**
 - **Kazim**
   - Haste buff (multiple targets, average) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Solise**
+  - Enables Ally blessing active via Ally blessing
 
 ### Units benefitting most from Cassadee
 
@@ -1998,9 +1995,6 @@ reduce normal attacks needed to trigger enhanced attack
 Look for units providing: `ATK SPD / Haste` `DEF Penetration` `Physical DEF` `Magic DEF`  
 Common buffers are **Twins**, **Hugin**, or **Galahad**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -2015,6 +2009,9 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Antandra**
+  - DEF buff (single target, average)
+  - DEF buff (single target, average)
 
 ### Units benefitting most from Cecia
 
@@ -2114,14 +2111,14 @@ rare chance for massive single normal attack damage
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Kazim**
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Smokey & Meerky**
+  - Energy recovery (area, high) `signature fuel`
 
 ### Units benefitting most from Chippy
 
@@ -2213,7 +2210,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 Contess provides ATK buff to single targets `high`, Direct healing to multiple targets `high`, Exemption buff to single targets `high`, and Shield to single targets `high`.
 
-**31** units include this provider among their top 6 synergy partners. Why the match is common:
+**32** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -2449,13 +2446,14 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Gunnar**
+  - ATK buff (single target, average)
+  - ATK SPD buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Cyran
 
@@ -2677,9 +2675,6 @@ blind extends while summon health is above half
 Look for units providing: `ATK` `Haste` `Energy`  
 Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -2693,17 +2688,25 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
+- **Smokey & Meerky**
+  - Energy recovery (area, high) `signature fuel`
 
 ### Units benefitting most from Damian
 
 Damian provides Haste buff (Mythic+) to multiple targets `average` — conditional (frequent).
 
+**15** units include this provider among their top 6 synergy partners. Why the match is common:
+
+- **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
+
+These are the **6** strongest pairings: 
+
 - Carolina (5.0 / 5)
-- Odie (4.4 / 5)
-- Pippa (4.4 / 5)
+- Viperian (4.2 / 5)
 - Cassadee (4.2 / 5)
-- Chippy (3.9 / 5)
-- Sinbad (3.9 / 5)
+- Atalanta (3.7 / 5)
+- Bryon (3.7 / 5)
+- Lumont (3.4 / 5)
 
 ### Units that can act as a replacement for Damian
 
@@ -2948,11 +2951,6 @@ rule start grants allies ATK speed or life drain
 Look for units providing: `ATK SPD / Haste` `Max HP` `Shield` `Healing`  
 Common buffers are **Twins**, **Contess**, or **Galahad**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
-  - Shield (summons only, average)
-  - Lifedrain buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -2971,20 +2969,23 @@ Common buffers are **Twins**, **Contess**, or **Galahad**.
 - **Lorsan**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
   - Direct healing (all units, low)
+- **Marcille**
+  - ATK SPD via Haste buff (single target, low) `signature fuel`
+  - Direct healing (multiple targets, high)
 
 ### Units benefitting most from Dunlingr
 
 Dunlingr provides ATK buff (EX+5) to single targets `low`, Haste buff (EX+15) to single targets `average`, ATK SPD buff (Supreme+) to all units `low`, and Lifedrain buff (Supreme+) to all units `average`.
 
-**14** units include this provider among their top 6 synergy partners. Why the match is common:
+**18** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
 These are the **6** strongest pairings: 
 
 - Indris (5.0 / 5)
+- Cassadee (3.5 / 5)
 - Kulu (3.4 / 5)
-- Frieren (3.4 / 5)
 - Cyran (3.3 / 5)
 - Marilee (3.3 / 5)
 - Mikola (3.0 / 5)
@@ -3464,11 +3465,11 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Pandora**
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Fay
 
@@ -3578,25 +3579,12 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Florabelle
 
-Florabelle provides Haste buff to summons `high`, Lifedrain buff to summons `high`, and Summon damage buff (Supreme+) to summons `average`.
-
-**11** units include this provider among their top 6 synergy partners. Why the match is common:
-
-- ally buffs or enablers that match many receivers' benefit stats or Requires labels
-
-These are the **6** strongest pairings: 
-
-- Aurora (5.0 / 5)
-- Berial (5.0 / 5)
-- Bryon (5.0 / 5)
-- Cecia (5.0 / 5)
-- Dunlingr (5.0 / 5)
-- Phraesto (5.0 / 5)
+- Kazim (5.0 / 5)
 
 ### Units that can act as a replacement for Florabelle
 
@@ -3700,10 +3688,10 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Hepler**
+  - Haste buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Frieren
 
@@ -3823,10 +3811,10 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Smokey & Meerky**
+  - Energy recovery (area, high) `signature fuel`
 
 ### Units benefitting most from Galahad
 
@@ -4182,8 +4170,6 @@ Common buffers are **Hugin**, **Twins**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
   - Shield (multiple targets, average)
@@ -4191,6 +4177,8 @@ Common buffers are **Hugin**, **Twins**, or **Galahad**.
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Lucius**
   - Shield (area, high)
+- **Lucy**
+  - Shield (single target, high)
 
 ### Units benefitting most from Gunnar
 
@@ -4312,14 +4300,15 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Kazim**
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Lyca**
+  - ATK SPD buff (all units, low) `signature fuel`
+  - Energy recovery (all units, low) `signature fuel`
 
 ### Units benefitting most from Gwyneth
 
@@ -4426,8 +4415,8 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Hammie
 
@@ -4531,14 +4520,14 @@ Common buffers are **Twins**, **Rowan**, or **Galahad**.
   - Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
 - **Zandrok**
   - Haste buff (area, low, conditional (frequent)) `signature fuel`
   - Max HP buff (multiple targets, average)
 - **Pandora**
   - Max HP buff (single target, average)
   - Energy recovery (single target, low) `signature fuel`
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Harak
 
@@ -5045,9 +5034,6 @@ cannon hits reduce target Phys DEF
 Look for units providing: `ATK` `Energy`  
 Common buffers are **Twins**, **Ravion**, or **Rowan**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -5059,6 +5045,8 @@ Common buffers are **Twins**, **Ravion**, or **Rowan**.
   - Energy recovery (single target, average) `signature fuel`
 - **Lyca**
   - Energy recovery (all units, low) `signature fuel`
+- **Pandora**
+  - Energy recovery (single target, low) `signature fuel`
 
 ### Units benefitting most from Hodgkin
 
@@ -5159,20 +5147,20 @@ Common buffers are **Twins**, **Galahad**, or **Rowan**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Smokey & Meerky**
   - Energy recovery (area, high) `signature fuel`
 - **Dunlingr**
   - Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Hugin
 
 Hugin provides ATK buff to multiple targets `low`, Haste buff to multiple targets `high`, Shield to multiple targets `high`, and Damage taken (Supreme+) to single targets `low`.
 
-**30** units include this provider among their top 6 synergy partners. Why the match is common:
+**31** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -5181,8 +5169,8 @@ These are the **6** strongest pairings:
 - Alsa (5.0 / 5)
 - Koko (5.0 / 5)
 - Lorsan (4.4 / 5)
+- Bryon (4.2 / 5)
 - Tasi (3.6 / 5)
-- Bryon (3.6 / 5)
 - Silven (3.6 / 5)
 
 ### Units that can act as a replacement for Hugin
@@ -5712,6 +5700,7 @@ Kazim also requires units **providing knock up**
 
 Kazim provides Haste buff to multiple targets `high` and ATK buff (Mythic+) to single targets `high`.
 
+- Aurora (5.0 / 5)
 - Frieren (5.0 / 5)
 - Hammie (5.0 / 5)
 - Galahad (4.5 / 5)
@@ -5827,15 +5816,15 @@ Common buffers are **Hugin**, **Twins**, or **Rowan**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Pandora**
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
+- **Dunlingr**
+  - Haste buff (single target, average) `signature fuel`
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Koko
 
@@ -6071,13 +6060,13 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Zandrok**
   - ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`
   - Max HP buff (multiple targets, average)
+- **Dunlingr**
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Korin
 
@@ -6301,11 +6290,11 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD via Haste buff (single target, average) `signature fuel`
+- **Damian**
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Kulu
 
@@ -6418,9 +6407,6 @@ max HP permanently grows with each ingredient collected
 Look for units providing: `ATK` `ATK SPD / Haste` `Max HP` `Energy`  
 Common buffers are **Twins**, **Mikola**, or **Galahad**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -6435,6 +6421,10 @@ Common buffers are **Twins**, **Mikola**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Shakir**
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
+- **Solise**
+  - ATK buff (summons only, low)
+  - DEF buff (summons only, low)
+  - DEF buff (summons only, low)
 
 ### Units benefitting most from Laios
 
@@ -6789,9 +6779,6 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
@@ -6799,6 +6786,9 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
   - ATK buff (single target, low)
   - Haste buff (single target, average) `signature fuel`
   - ATK SPD via Haste buff (single target, average) `signature fuel`
+- **Pandora**
+  - Energy recovery (single target, low) `signature fuel`
+  - Energy recovery (1000 at battle start, single target) `signature fuel`
 
 ### Units benefitting most from Lorsan
 
@@ -7179,12 +7169,12 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Lucy
 
@@ -7288,14 +7278,14 @@ enemies entering field take damage and are stunned
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Kazim**
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Smokey & Meerky**
+  - Energy recovery (area, high) `signature fuel`
 
 ### Units benefitting most from Ludovic
 
@@ -7402,9 +7392,6 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
@@ -7415,6 +7402,9 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
 - **Dunlingr**
   - Haste buff (single target, average) `signature fuel`
   - ATK SPD via Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - Haste buff (multiple targets, average) `signature fuel`
+  - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Lumont
 
@@ -7530,8 +7520,6 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Pandora**
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
@@ -7539,6 +7527,8 @@ Common buffers are **Rowan**, **Twins**, or **Hugin**.
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Lyca
 
@@ -7660,14 +7650,14 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Kazim**
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Smokey & Meerky**
+  - Energy recovery (area, high) `signature fuel`
 
 ### Units benefitting most from Marcille
 
@@ -7788,13 +7778,14 @@ Common buffers are **Twins**, **Mikola**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Fay**
+  - ATK buff (multiple targets, low)
+  - ATK SPD buff (multiple targets, low) `signature fuel`
 
 ### Units benefitting most from Marilee
 
@@ -7900,9 +7891,6 @@ charmed or bewitched enemies take increased damage
 Look for units providing: `Haste` `Max HP`  
 Common buffers are **Twins**, **Galahad**, or **Rowan**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -7918,6 +7906,10 @@ Common buffers are **Twins**, **Galahad**, or **Rowan**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Pandora**
+  - Max HP buff (single target, average)
+  - Energy recovery (single target, low) `signature fuel`
+  - Energy recovery (1000 at battle start, single target) `signature fuel`
 
 ### Units benefitting most from Mehira
 
@@ -7932,9 +7924,9 @@ These are the **6** strongest pairings:
 - Niru (2.8 / 5)
 - Gwyneth (2.2 / 5)
 - Sylphira (2.0 / 5)
-- Zanie (1.4 / 5)
+- Aurora (1.8 / 5)
+- Zanie (1.5 / 5)
 - Florabelle (1.4 / 5)
-- Aurora (1.3 / 5)
 
 ### Units that can act as a replacement for Mehira
 
@@ -8057,9 +8049,9 @@ Common buffers are **Twins**, **Rowan**, or **Ravion**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Mikola
 
@@ -8159,14 +8151,15 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Kazim**
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Lyca**
+  - ATK SPD buff (all units, low) `signature fuel`
+  - Energy recovery (all units, low) `signature fuel`
 
 ### Units benefitting most from Mirael
 
@@ -8860,14 +8853,14 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Kazim**
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Hepler**
+  - ATK SPD via Haste buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Odie
 
@@ -8977,7 +8970,7 @@ Common buffers are **Rowan**, **Ravion**, or **Twins**.
 
 Pandora provides Direct healing to single targets `high`, Energy recovery to single targets `low`, Invincible to single targets `high`, and Max HP buff (Legendary+) to single targets `average`.
 
-**12** units include this provider among their top 6 synergy partners. Why the match is common:
+**13** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -9107,13 +9100,13 @@ Common buffers are **Twins**, **Mikola**, or **Contess**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Zanie**
   - ATK buff (single target, low)
   - Shield (single target, average)
   - DEF Penetration buff (single target, average)
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Pang
 
@@ -9236,13 +9229,14 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Dunlingr**
   - ATK buff (single target, low)
   - ATK SPD via Haste buff (single target, average) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Gunnar**
+  - ATK buff (single target, average)
+  - ATK SPD buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Parisa
 
@@ -9449,11 +9443,6 @@ both in same row gain initial shield at battle start
 Look for units providing: `Shield` `Healing` `Energy` `Physical DEF` `Magic DEF`  
 Common buffers are **Contess**, **Twins**, or **Galahad**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
-  - Shield (summons only, average)
-  - Lifedrain buff (summons only, high)
 - **Solise**
   - Direct healing (all units, high)
   - ATK buff (summons only, low)
@@ -9472,6 +9461,9 @@ Common buffers are **Contess**, **Twins**, or **Galahad**.
 - **Hepler**
   - Shield (multiple targets, average)
   - Healing over time (multiple targets, high)
+- **Zanie**
+  - Shield (single target, average)
+  - Direct healing (single target, high)
 
 ### Units benefitting most from Phraesto
 
@@ -9588,14 +9580,14 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - Haste buff (single target, average) `signature fuel`
 - **Kazim**
   - Haste buff (multiple targets, average) `signature fuel`
+- **Hepler**
+  - Haste buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Pippa
 
@@ -9716,8 +9708,8 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Ravion
 
@@ -9959,13 +9951,13 @@ Common buffers are **Rowan**, **Twins**, or **Ravion**.
   - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Pandora**
   - Energy recovery (single target, low) `signature fuel`
   - Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Dunlingr**
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Rhys
 
@@ -10081,14 +10073,15 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
+- **Zandrok**
+  - Haste buff (area, low, conditional (frequent)) `signature fuel`
+  - Max HP buff (multiple targets, average)
 
 ### Units benefitting most from Rowan
 
 Rowan provides Direct healing in an area `low` and Energy recovery in an area `high`.
 
-**26** units include this provider among their top 6 synergy partners. Why the match is common:
+**27** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -10662,12 +10655,13 @@ Common buffers are **Twins**, **Mikola**, or **Galahad**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Dunlingr**
+  - ATK buff (single target, low)
+  - Haste buff (single target, average) `signature fuel`
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Seth
 
@@ -10904,8 +10898,6 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - Haste buff (single target, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
 - **Zandrok**
   - Haste buff (area, low, conditional (frequent)) `signature fuel`
   - Max HP buff (multiple targets, average)
@@ -10913,12 +10905,14 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Shakir
 
 Shakir provides Damage taken to multiple targets `average` and Haste buff to multiple targets `average`.
 
-**8** units include this provider among their top 6 synergy partners. Why the match is common:
+**9** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -10928,8 +10922,8 @@ These are the **6** strongest pairings:
 - Sinbad (4.4 / 5)
 - Atalanta (4.2 / 5)
 - Mikola (3.5 / 5)
-- Valka (3.3 / 5)
 - Korin (3.3 / 5)
+- Laios (2.7 / 5)
 
 ### Units that can act as a replacement for Shakir
 
@@ -11377,12 +11371,12 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - ATK SPD via Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Sinbad
 
@@ -11499,6 +11493,7 @@ Smokey & Meerky provides Direct healing in an area `average` and Energy recovery
 - Scarlita (4.2 / 5)
 - Zorya (3.2 / 5)
 - Rowan (2.0 / 5)
+- Hodgkin (1.9 / 5)
 
 ### Units that can act as a replacement for Smokey & Meerky
 
@@ -11595,11 +11590,11 @@ _No synergy partners matched stat buffs or enablers._
 
 Solise provides ATK buff to summons `low`, Direct healing to all units `average`, Healing over time to single targets `high`, Shield to summons `low`, and DEF buff (Mythic+) to summons `low`.
 
-- Phraesto (3.4 / 5)
+- Phraesto (5.0 / 5)
+- Dunlingr (4.7 / 5)
+- Cecia (3.5 / 5)
 - Bonnie (3.4 / 5)
-- Cecia (3.1 / 5)
 - Niru (2.8 / 5)
-- Dunlingr (2.7 / 5)
 - Silven (2.4 / 5)
 
 ### Units that can act as a replacement for Solise
@@ -11814,9 +11809,9 @@ Common buffers are **Twins**, **Rowan**, or **Ravion**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Soren
 
@@ -11929,9 +11924,9 @@ Common buffers are **Twins**, **Ravion**, or **Galahad**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Damian**
+  - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+  - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 
 ### Units benefitting most from Sylphira
 
@@ -12176,9 +12171,6 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Lorsan**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Pandora**
   - Max HP buff (single target, average)
   - Energy recovery (single target, low) `signature fuel`
@@ -12186,6 +12178,10 @@ Common buffers are **Twins**, **Hugin**, or **Rowan**.
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Dunlingr**
+  - ATK buff (single target, low)
+  - Haste buff (single target, average) `signature fuel`
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Tasi
 
@@ -12200,9 +12196,9 @@ These are the **6** strongest pairings:
 - Viperian (4.8 / 5)
 - Cassadee (4.8 / 5)
 - Atalanta (4.2 / 5)
+- Bryon (4.2 / 5)
 - Lyca (3.8 / 5)
 - Rhys (3.8 / 5)
-- Bryon (3.6 / 5)
 
 ### Units that can act as a replacement for Tasi
 
@@ -12310,8 +12306,9 @@ Common buffers are **Twins**, **Contess**, or **Mikola**.
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Dunlingr**
+  - ATK buff (single target, low)
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Temesia
 
@@ -12687,8 +12684,8 @@ These are the **6** strongest pairings:
 - Lucca (5.0 / 5)
 - Hepler (4.2 / 5)
 - Isabella (3.8 / 5)
+- Cecia (3.5 / 5)
 - Laios (3.3 / 5)
-- Cecia (3.1 / 5)
 
 ### Units that can act as a replacement for Tilaya
 
@@ -12775,9 +12772,6 @@ Common buffers are **Hugin**, **Galahad**, or **Mikola**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
@@ -12787,6 +12781,8 @@ Common buffers are **Hugin**, **Galahad**, or **Mikola**.
 - **Kazim**
   - Haste buff (multiple targets, average) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Smokey & Meerky**
+  - Energy recovery (area, high) `signature fuel`
 
 ### Units benefitting most from Twins
 
@@ -13050,20 +13046,9 @@ Vala also requires enemies **to be defeated**
 
 ### Units benefitting most from Vala
 
-Vala provides Haste buff (Mythic+) to single targets `high`.
-
-**11** units include this provider among their top 6 synergy partners. Why the match is common:
-
-- **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
-
-These are the **6** strongest pairings: 
-
-- Twins (5.0 / 5)
-- Viperian (4.8 / 5)
-- Cassadee (4.8 / 5)
-- Atalanta (4.2 / 5)
-- Lumont (3.8 / 5)
-- Korin (3.3 / 5)
+- Carolina (1.9 / 5)
+- Indris (1.8 / 5)
+- Nerion (1.8 / 5)
 
 ### Units that can act as a replacement for Vala
 
@@ -13072,12 +13057,6 @@ These are the **6** strongest pairings:
 - Athalia (57% `Damage`)
 - Nazrik (56% `Damage` `Crowd Control`)
 - Silvina (50% `Crowd Control` `Debuffs on enemies`)
-
-**Buffs on allies**
-
-- Twins (100% `Haste`)
-- Hugin (100% `Haste`)
-- Shakir (100% `Haste`)
 
 **Similar Skills**
 
@@ -13314,13 +13293,13 @@ Common buffers are **Twins**, **Galahad**, or **Contess**.
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Hepler**
   - ATK SPD via Haste buff (single target, low) `signature fuel`
   - Shield (multiple targets, average)
 - **Damian**
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
+- **Lucius**
+  - Shield (area, high)
 
 ### Units benefitting most from Valka
 
@@ -13461,9 +13440,9 @@ These are the **6** strongest pairings:
 - Himmel (2.5 / 5)
 - Gwyneth (2.2 / 5)
 - Mehira (1.9 / 5)
+- Aurora (1.8 / 5)
 - Baelran (1.6 / 5)
-- Zanie (1.4 / 5)
-- Aurora (1.3 / 5)
+- Zanie (1.5 / 5)
 
 ### Units that can act as a replacement for Velara
 
@@ -13581,9 +13560,6 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
-  - ATK SPD via Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
@@ -13593,6 +13569,9 @@ Common buffers are **Twins**, **Hugin**, or **Galahad**.
 - **Kazim**
   - Haste buff (multiple targets, average) `signature fuel`
   - ATK SPD via Haste buff (multiple targets, average) `signature fuel`
+- **Hepler**
+  - Haste buff (single target, low) `signature fuel`
+  - ATK SPD via Haste buff (single target, low) `signature fuel`
 
 ### Units benefitting most from Viperian
 
@@ -13812,12 +13791,12 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - Haste buff (single target, high) `signature fuel`
-- **Vala**
-  - Haste buff (single target, high) `signature fuel`
 - **Damian**
   - Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`
 - **Dunlingr**
   - Haste buff (single target, average) `signature fuel`
+- **Kazim**
+  - Haste buff (multiple targets, average) `signature fuel`
 
 ### Units benefitting most from Zandrok
 
@@ -13904,9 +13883,6 @@ laser turret attacks apply burn to enemies hit
 Look for units providing: `ATK` `ATK SPD / Haste`  
 Common buffers are **Twins**, **Galahad**, or **Mikola**.
 
-- **Florabelle**
-  - Summon damage buff (summons only, average)
-  - ATK SPD via Haste buff (summons only, high)
 - **Aurora**
   - Summon damage buff (summons only, low)
   - ATK SPD via Haste buff (summons only, high)
@@ -13919,23 +13895,26 @@ Common buffers are **Twins**, **Galahad**, or **Mikola**.
   - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 - **Tasi**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
+- **Dunlingr**
+  - ATK buff (single target, low)
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Zanie
 
 Zanie provides Direct healing to single targets `high`, Shield to single targets `high`, DEF Penetration buff (Legendary+) to single targets `average`, ATK buff (Mythic+) to single targets `high`, and Max HP buff (Mythic+) to single targets `high`.
 
-**18** units include this provider among their top 6 synergy partners. Why the match is common:
+**19** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **6** strongest pairings: 
 
 - Talene (5.0 / 5)
+- Dunlingr (4.3 / 5)
 - Lily May (4.1 / 5)
 - Perseus (3.6 / 5)
 - Dionel (3.3 / 5)
 - Shadewing (3.1 / 5)
-- Dunlingr (2.5 / 5)
 
 ### Units that can act as a replacement for Zanie
 

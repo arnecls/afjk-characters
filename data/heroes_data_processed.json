@@ -15403,31 +15403,32 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "summon",
+              "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "buff",
+              "type": "stat_mod",
+              "stat": "haste",
               "name": "Haste buff",
-              "label": "buff_summon_offensive",
               "value": [
                 {
                   "type": "flat",
                   "value": 66.0
                 }
-              ]
+              ],
+              "label": "buff_offensive"
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "summon",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain buff",
-              "label": "buff_summon_stat",
+              "label": "buff_stat",
               "value": [
                 {
                   "type": "flat",
@@ -15438,8 +15439,8 @@
           ],
           "cooldown": 12.0,
           "skill_card_tags": [
-            "Haste buff",
-            "Lifedrain buff"
+            "Haste buff — Self",
+            "Lifedrain buff — Self"
           ]
         },
         "Tiny Sharpshooter": {
@@ -15608,38 +15609,39 @@
           "effects": [
             {
               "tier": "ex+10",
-              "targeting_label": "Summons only",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "summon",
+              "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "buff",
+              "type": "stat_mod",
+              "stat": "haste",
               "name": "Haste buff",
-              "label": "buff_summon_offensive",
               "value": [
                 {
                   "type": "flat",
                   "value": 27.0
                 }
-              ]
+              ],
+              "label": "buff_offensive"
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Summons only",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "summon",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain buff",
-              "label": "buff_summon_stat"
+              "label": "buff_stat"
             }
           ],
           "tier": "mythic+",
           "skill_card_tags": [
             "Shield",
-            "Haste buff",
-            "Lifedrain buff"
+            "Haste buff — Self",
+            "Lifedrain buff — Self"
           ]
         },
         "Enhance Force": {
@@ -15663,14 +15665,14 @@
           "effects": [
             {
               "tier": "supreme+",
-              "targeting_label": "Summons only",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "summon",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
               "name": "Summon damage buff",
-              "label": "buff_summon_stat",
+              "label": "buff_stat",
               "value": [
                 {
                   "type": "percentage",
@@ -15691,7 +15693,7 @@
           ],
           "tier": "supreme+",
           "skill_card_tags": [
-            "Summon damage buff",
+            "Summon damage buff — Self",
             "Immune — Self"
           ]
         }
@@ -55515,25 +55517,6 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste buff",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 80.0
-                }
-              ],
-              "duration": 10.0,
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "ex+5",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -55548,6 +55531,7 @@
                   "value": 120.0
                 }
               ],
+              "duration": 10.0,
               "label": "buff_offensive"
             },
             {
@@ -55583,7 +55567,7 @@
           "skill_range": 3,
           "skill_card_tags": [
             "Direct healing — Self",
-            "Haste buff",
+            "Haste buff — Self",
             "Movement speed buff — Self",
             "Untargetable"
           ]
@@ -58377,18 +58361,6 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Lifedrain buff",
-              "label": "buff_stat",
-              "duration": 8.0
-            },
-            {
-              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "ally",
@@ -58409,7 +58381,7 @@
           ],
           "skill_card_tags": [
             "Haste buff",
-            "Lifedrain buff — Self",
+            "Lifedrain buff",
             "Max HP buff"
           ]
         },

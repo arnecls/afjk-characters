@@ -339,6 +339,10 @@ def _lifedrain_buff_is_self_only(clause: str) -> bool:
         r"\b(?:grant|granting).{0,80}life drain\b", t
     ):
         return False
+    if re.search(r"\bincreasing their life drain\b", t):
+        return False
+    if re.search(r"\bthey also increase their life drain\b", t):
+        return False
     self_patterns = (
         rf"\bgain(?:s|ing)? (?:an extra )?{_LD_AMOUNT}\s*life drain\b",
         rf"\bgaining {_LD_AMOUNT}\s*life drain\b",
@@ -346,7 +350,7 @@ def _lifedrain_buff_is_self_only(clause: str) -> bool:
         rf"\bgratns? \w+ {_LD_AMOUNT}\s*life drain\b",
         rf"\bgrants? \w+ {_LD_AMOUNT}\s*life drain\b",
         rf"\bgranting {_LD_AMOUNT}\s*life drain to\b",
-        rf"\bincreas(?:e|es|ing)(?: (?:her |his |their |own))?\s*life drain(?: by)?\b",
+        rf"\bincreas(?:e|es|ing)(?: (?:her |his |own))?\s*life drain(?: by)?\b",
         r"\bincreases? own\b.{0,80}life drain by\b",
         r"\bgrants? it \d+(?:\.\d+)?\s*life drain\b",
         r"\b(?:enhanced )?normal attacks gain \d+\s*life drain\b",
@@ -443,6 +447,10 @@ def _resolve_buff_targeting(
         r"\b(?:she|he|they) gains? an extra \d+(?:\.\d+)? haste\b", t
     ):
         return "Self"
+    if label == "Haste buff" and re.search(
+        r"\b(?:her|his) movement speed increases\b", t
+    ) and not _has_explicit_ally_buff(t, label):
+        return "Self"
     if label == "ATK buff" and re.search(
         r"\b(?:increas(?:e|es|ing)|gain(?:s|ing)?) (?:her |his |their )atk\b", t
     ) and not _has_explicit_ally_buff(t, label):
@@ -456,6 +464,8 @@ def _resolve_buff_targeting(
     ):
         return "Self"
     if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
+        return "Self"
+    if label in SUMMON_SELF_BUFF_LABELS and _summon_buff_is_self_only(t, label):
         return "Self"
     if label == "Invincible" and _invincibility_targets_self(t):
         return "Self"
@@ -795,6 +805,48 @@ def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool
     return False
 
 
+def _summon_buff_is_self_only(clause: str, label: str) -> bool:
+    """Own-summon buffs (e.g. Florabelle Bulbsprites), not party summons."""
+    if label not in SUMMON_SELF_BUFF_LABELS:
+        return False
+    t = clause.lower()
+    if re.search(r"\ball (?:inspired )?(?:allied )?summons?\b", t):
+        return False
+    if re.search(r"\bboosting the damage of all allied summons\b", t):
+        return False
+    if re.search(r"\bincrease all allied summons'? damage\b", t):
+        return False
+    if re.search(r"\b(?:giant )?bulbsprites?\b", t):
+        return True
+    if re.search(r"\bfeeds? (?:a |the )?(?:allied )?bulbsprite\b", t):
+        return True
+    if re.search(r"\bfeeds? the allied summon\b", t):
+        return True
+    if re.search(r"\btransforms? (?:the |that )?summon\b", t):
+        return True
+    if re.search(r"\ballied summons in their giant form\b", t):
+        return True
+    if re.search(r"\b(?:life drain|haste) in giant form\b", t):
+        return True
+    if re.search(
+        r"\bincreasing their (?:haste|life drain)\b", t
+    ) and re.search(r"\btransforms? (?:the |that )?summon\b", t):
+        return True
+    return False
+
+
+def _summon_buff_match_scopes(text: str, label: str, pattern: str) -> list[str]:
+    """Clause scopes for summon-only buff matches."""
+    t = text.lower()
+    scopes: list[str] = []
+    for m in re.finditer(pattern, t):
+        if _buff_match_is_summon_only(t, label, m) and not _buff_match_is_enemy_stat(
+            t, label, m
+        ):
+            scopes.append(_clause_around(t, m.start()))
+    return scopes
+
+
 def _buff_match_is_shield_modifier(t: str, label: str, match: re.Match[str]) -> bool:
     """Shield value tweaks on self, not a new ally shield grant."""
     if label != "Shield":
@@ -879,7 +931,10 @@ def _should_add_buff(text: str, label: str, pattern: str) -> bool:
     return bool(_buff_match_scopes(text, label, pattern))
 
 
-SUMMON_ONLY_BUFF_LABELS = frozenset({"Summon damage buff"})
+SUMMON_ONLY_BUFF_LABELS = frozenset()
+SUMMON_SELF_BUFF_LABELS = frozenset(
+    {"Haste buff", "Lifedrain buff", "Summon damage buff"}
+)
 SUMMON_BUFF_TARGETING = "Summons only"
 
 
@@ -1282,6 +1337,12 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         if label == "ATK SPD buff" and _caster_gains_label_stat(t, label):
             return True
         if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
+            return True
+        if label in SUMMON_SELF_BUFF_LABELS and _summon_buff_is_self_only(t, label):
+            return True
+        if label == "Haste buff" and re.search(
+            r"\b(?:her|his) movement speed increases\b", t
+        ) and not _has_explicit_ally_buff(t, label):
             return True
         if label == "Crit buff" and re.search(
             r"\bgains? \d+(?:\s*\+\s*\d+)? crit when (?:he|she|they)\b", t
@@ -1742,7 +1803,11 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         r"marked enemy|host)\b",
         t,
     ):
-        if re.search(r"\btheir\b", t) and label in ("Max HP buff", "Haste buff"):
+        if re.search(r"\btheir\b", t) and label in (
+            "Max HP buff",
+            "Haste buff",
+            "Lifedrain buff",
+        ):
             return "Multiple targets"
         return "Self"
     # Conjunctive self+other: "her and X's" or "his and X's" → Multiple targets
@@ -5618,7 +5683,28 @@ def analyze_text(
                 source_section=source_section,
             )
         if _matching_summon_buff_match(text, label, pat):
-            add_summon_buff_effect(summon_effects, label, tier, text)
+            if label in SUMMON_SELF_BUFF_LABELS:
+                scopes = _summon_buff_match_scopes(text, label, pat)
+                self_scopes = [
+                    s for s in scopes if _summon_buff_is_self_only(s, label)
+                ]
+                for scope in self_scopes:
+                    add_effect(
+                        effects,
+                        "buff",
+                        label,
+                        tier,
+                        text,
+                        scope=scope,
+                        source_section=source_section,
+                    )
+                has_party = not scopes or any(
+                    not _summon_buff_is_self_only(s, label) for s in scopes
+                )
+                if has_party:
+                    add_summon_buff_effect(summon_effects, label, tier, text)
+            else:
+                add_summon_buff_effect(summon_effects, label, tier, text)
     for pat, label in DEBUFF_RULES_COMPILED:
         if label == "DoT" and _text_has_dot_damage(text):
             continue

@@ -174,6 +174,7 @@ class FlorabelleOvergrowthTests(unittest.TestCase):
             if "lifedrain" in e.label.lower() or "life drain" in e.label.lower()
         ]
         self.assertTrue(lifedrain)
+        self.assertEqual(lifedrain[0].targeting, "Self")
         schema = hs.effect_to_schema(
             lifedrain[0], summon=lifedrain[0].targeting == rs.SUMMON_BUFF_TARGETING
         )

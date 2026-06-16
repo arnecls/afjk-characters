@@ -264,6 +264,55 @@ class SummaryParsingTests(unittest.TestCase):
             ]
             self.assertEqual(ally_life, [], name)
 
+    def test_vala_mythic_haste_buff_is_self(self):
+        hero = _hero_by_short_name("Vala")
+        ally_haste = [
+            e
+            for e in _effects(hero, "buff", "Haste buff")
+            if e.targeting != "Self"
+        ]
+        self.assertEqual(ally_haste, [])
+
+    def test_florabelle_haste_lifedrain_are_self_buffs(self):
+        hero = _hero_by_short_name("Florabelle")
+        for label in ("Haste buff", "Lifedrain buff", "Summon damage buff"):
+            buffs = [e for e in _effects(hero, "buff", label)]
+            self.assertTrue(buffs, label)
+            self.assertTrue(
+                all(e.targeting == "Self" for e in buffs),
+                f"{label}: {[e.targeting for e in buffs]}",
+            )
+        summon_haste = [
+            e for e in hero.summon_effects if e.label == "Haste buff"
+        ]
+        summon_life = [
+            e for e in hero.summon_effects if e.label == "Lifedrain buff"
+        ]
+        summon_dmg = [
+            e for e in hero.summon_effects if e.label == "Summon damage buff"
+        ]
+        self.assertEqual(summon_haste, [])
+        self.assertEqual(summon_life, [])
+        self.assertEqual(summon_dmg, [])
+
+    def test_aurora_summon_damage_stays_summons_only(self):
+        hero = _hero_by_short_name("Aurora")
+        summon_dmg = [
+            e for e in hero.summon_effects if e.label == "Summon damage buff"
+        ]
+        self.assertTrue(summon_dmg)
+        self.assertTrue(
+            all(e.targeting == rs.SUMMON_BUFF_TARGETING for e in summon_dmg)
+        )
+
+    def test_aurora_haste_stays_summons_only(self):
+        hero = _hero_by_short_name("Aurora")
+        haste = [e for e in hero.summon_effects if e.label == "Haste buff"]
+        self.assertTrue(haste)
+        self.assertTrue(
+            all(e.targeting == rs.SUMMON_BUFF_TARGETING for e in haste)
+        )
+
     def test_solise_ally_healing_targeting(self):
         hero = _hero_by_short_name("Solise")
         healing = next(e for e in _effects(hero, "buff", DIRECT_HEALING_LABEL))
@@ -295,6 +344,24 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertEqual(len(ally_max_hp), 1)
         self.assertEqual(ally_max_hp[0].targeting, "Multiple targets")
         self.assertGreaterEqual(ally_max_hp[0].numeric or 0, 20.0)
+
+    def test_zandrok_lifedrain_is_ally_buff_not_self(self):
+        hero = _hero_by_short_name("Zandrok")
+        self_life = [
+            e
+            for e in _effects(hero, "buff", "Lifedrain buff")
+            if e.targeting == "Self"
+        ]
+        self.assertEqual(self_life, [])
+        ally_life = [
+            e
+            for e in _effects(hero, "buff", "Lifedrain buff")
+            if e.targeting != "Self"
+        ]
+        self.assertTrue(ally_life)
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        self.assertIn("Lifedrain buff", tags)
+        self.assertNotIn("Lifedrain buff — Self", tags)
 
     def test_bonnie_self_form_not_enemy_require(self):
         hero = _hero_by_short_name("Bonnie")

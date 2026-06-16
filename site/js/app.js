@@ -766,6 +766,7 @@
     "ATK SPD / Haste": { emoji: "⚡", cls: "chip-stat" },
     Haste: { emoji: "💨", cls: "chip-stat" },
     Healing: { emoji: "💚", cls: "chip-heal" },
+    "Healing stat": { emoji: "💚", cls: "chip-stat" },
     "Direct healing": { emoji: "💚", cls: "chip-heal" },
     HoT: { emoji: "💚", cls: "chip-heal" },
     "Healing over time": { emoji: "💚", cls: "chip-heal" },
@@ -1357,6 +1358,21 @@
       }
     }
 
+    for (let i = 0; i < STAT_KEYS.length; i++) {
+      const stat = STAT_KEYS[i];
+      const statLower = stat.toLowerCase();
+      if (labelLower === statLower || labelLower.startsWith(statLower + " ")) {
+        const def = TAG_DEFINITIONS[stat];
+        return {
+          emoji: def.emoji,
+          text: stat,
+          cls: def.cls,
+          isCc: isCcChipClass(def.cls),
+          remainder: trimmed.slice(stat.length),
+        };
+      }
+    }
+
     for (let i = 0; i < HEAL_CHIP_KEYS.length; i++) {
       const heal = HEAL_CHIP_KEYS[i];
       const healLower = heal.toLowerCase();
@@ -1368,21 +1384,6 @@
           cls: def.cls,
           isCc: false,
           remainder: trimmed.slice(heal.length),
-        };
-      }
-    }
-
-    for (let i = 0; i < STAT_KEYS.length; i++) {
-      const stat = STAT_KEYS[i];
-      const statLower = stat.toLowerCase();
-      if (labelLower === statLower || labelLower.startsWith(statLower + " ")) {
-        const def = TAG_DEFINITIONS[stat];
-        return {
-          emoji: def.emoji,
-          text: stat,
-          cls: def.cls,
-          isCc: false,
-          remainder: trimmed.slice(stat.length),
         };
       }
     }
