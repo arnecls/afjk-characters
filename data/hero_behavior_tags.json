@@ -126,7 +126,7 @@
     "ally-buffer",
     "aoe-damage",
     "battle-start-burst",
-    "disabler"
+    "interrupt"
   ],
   "Eironn": [
     "aoe-damage",
@@ -227,8 +227,8 @@
     "untargetable"
   ],
   "Indris": [
-    "disabler",
-    "enemy-debuffer"
+    "enemy-debuffer",
+    "interrupt"
   ],
   "Isabella": [
     "ally-buffer",
@@ -295,8 +295,8 @@
   ],
   "Lucca": [
     "ally-shielder",
-    "disabler",
-    "high-initial-energy"
+    "high-initial-energy",
+    "interrupt"
   ],
   "Lucius": [
     "ally-healer",
@@ -413,8 +413,8 @@
     "self-repositioner"
   ],
   "Reinier": [
-    "disabler",
-    "enemy-grouping"
+    "enemy-grouping",
+    "interrupt"
   ],
   "Rhys": [
     "aoe-damage",
@@ -431,8 +431,8 @@
     "life-drain"
   ],
   "Salazer": [
-    "disabler",
     "execute",
+    "interrupt",
     "life-drain"
   ],
   "Satrana": [
@@ -471,7 +471,7 @@
   "Silvina": [
     "assassin",
     "battle-start-burst",
-    "disabler",
+    "interrupt",
     "mark-target"
   ],
   "Sinbad": [
@@ -498,8 +498,8 @@
     "self-repositioner"
   ],
   "Sylphira": [
-    "disabler",
     "high-initial-energy",
+    "interrupt",
     "life-drain",
     "mass-cc"
   ],
@@ -516,8 +516,8 @@
   ],
   "Temesia": [
     "aoe-damage",
-    "disabler",
     "enemy-debuffer",
+    "interrupt",
     "mass-cc",
     "self-repositioner"
   ],

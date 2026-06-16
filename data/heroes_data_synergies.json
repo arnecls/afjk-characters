@@ -20812,8 +20812,8 @@
             "name": "Temesia",
             "score": 0.4,
             "matches": [
-              "disabler",
-              "enemy-debuffer"
+              "enemy-debuffer",
+              "interrupt"
             ]
           },
           {
@@ -20827,7 +20827,7 @@
             "name": "Reinier",
             "score": 0.3333,
             "matches": [
-              "disabler"
+              "interrupt"
             ]
           }
         ],
@@ -37152,14 +37152,14 @@
             "name": "Indris",
             "score": 0.3333,
             "matches": [
-              "disabler"
+              "interrupt"
             ]
           },
           {
             "name": "Lucca",
             "score": 0.25,
             "matches": [
-              "disabler"
+              "interrupt"
             ]
           }
         ],
@@ -38906,7 +38906,7 @@
             "name": "Sylphira",
             "score": 0.48,
             "matches": [
-              "disabler",
+              "interrupt",
               "life-drain"
             ]
           },
@@ -42624,7 +42624,7 @@
             "score": 0.3333,
             "matches": [
               "battle-start-burst",
-              "disabler"
+              "interrupt"
             ]
           },
           {
@@ -44848,8 +44848,8 @@
             "name": "Lucca",
             "score": 0.4,
             "matches": [
-              "disabler",
-              "high-initial-energy"
+              "high-initial-energy",
+              "interrupt"
             ]
           },
           {

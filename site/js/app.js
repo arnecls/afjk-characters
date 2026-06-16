@@ -832,7 +832,7 @@
     "cc-immunity": { emoji: "🔰", cls: "chip-anti-cc" },
     "cheat-death": { emoji: "♻️", cls: "chip-role" },
     "counterattack": { emoji: "↩️", cls: "chip-role" },
-    "disabler": { emoji: "🚫", cls: "chip-role" },
+    interrupt: { emoji: "⛔", cls: "chip-role" },
     "dot-specialist": { emoji: "🔥", cls: "chip-role" },
     "enemy-debuffer": { emoji: "🥀", cls: "chip-role" },
     "enemy-grouping": { emoji: "🧲", cls: "chip-role" },
@@ -868,6 +868,74 @@
     Cleanse: { emoji: "💧", cls: "chip-anti-cc" },
     "Max HP damage": { emoji: "💔", cls: "chip-damage" },
     "Max HP-based damage": { emoji: "💔", cls: "chip-damage" },
+  };
+
+  const BEHAVIOR_TAG_TOOLTIPS = {
+    "ally-buffer":
+      "Grants meaningful offensive or defensive stat buffs to allies.",
+    "ally-healer":
+      "Restores ally HP directly or via healing over time as a core role.",
+    "ally-shielder":
+      "Grants shields to allies as a significant part of the kit.",
+    "aoe-damage":
+      "Deals substantial multi-target or area damage on a regular basis.",
+    "aoe-healing":
+      "Heals multiple allies or wide ally groups, not only single-target.",
+    assassin:
+      "Built to pick off isolated or backline targets with burst damage.",
+    "battle-start-burst":
+      "Deals damage to one or more units in the first ~2–3s of battle.",
+    "battle-start-ult":
+      "Casts ultimate or reaches full energy unusually early in the fight.",
+    "battlefield-modification":
+      "Adds physical obstacles or transforms the map layout.",
+    "cc-immunity":
+      "Grants self or allies immunity to crowd control as a defining mechanic.",
+    "cheat-death":
+      "Survives a would-be defeat or critical HP threshold via self-recovery.",
+    counterattack:
+      "Punishes enemies for attacking with reactive damage or effects.",
+    interrupt:
+      "Applies hard shutdown effects such as Silence or Interrupt.",
+    "dot-specialist":
+      "Relies on damage over time or recurring tick damage as a primary pattern.",
+    "enemy-debuffer":
+      "Applies meaningful stat or combat debuffs to enemies as a core output.",
+    "enemy-grouping":
+      "Pulls, pushes, or clusters enemies to set up follow-up damage or CC.",
+    "energy-provider":
+      "Grants Energy to allies or routinely accelerates ally ultimates.",
+    execute:
+      "Finishes low-HP enemies or scales damage strongly on wounded targets.",
+    "high-damage-ult":
+      "Ultimate is the main damage spike and a large share of total output.",
+    "high-initial-energy":
+      "Ultimate starts with high Initial Energy when fully built (~fast fill).",
+    "hp-scaling":
+      "Damage, survivability, or effects scale strongly with HP values.",
+    invincibility:
+      "Grants damage and/or control immunity windows to self or allies.",
+    "life-drain":
+      "Sustains through lifesteal or HP recovery tied to dealing damage.",
+    "mark-target":
+      "Marks or designates units so allies or self can focus amplified damage.",
+    "mass-cc":
+      "Applies crowd control to multiple enemies or wide areas reliably.",
+    revive: "Brings defeated allies back to the fight; not self-survival.",
+    "self-repositioner":
+      "Regularly moves self across the grid via jumps, dashes, or teleports.",
+    "static-tile-buffer":
+      "Buffs an ally only while they remain on a specific placement tile.",
+    stealth:
+      "Enters hidden or untargetable states to avoid focus or enable picks.",
+    summoner:
+      "Fields persistent summons or companions that contribute in combat.",
+    taunt:
+      "Forces enemies to attack the hero or redirects enemy focus onto them.",
+    "ultimate-cancel":
+      "Cancels or interrupts enemy ultimates when they begin casting.",
+    untargetable:
+      "Routinely becomes untargetable by enemy skills during normal gameplay.",
   };
 
   const STAT_KEYS = Object.keys(TAG_DEFINITIONS)
@@ -1077,6 +1145,23 @@
     );
   }
 
+  function behaviorTagTooltip(tag) {
+    const text = (tag || "").trim();
+    if (!text) {
+      return "";
+    }
+    const lower = text.toLowerCase();
+    if (BEHAVIOR_TAG_TOOLTIPS[text]) {
+      return BEHAVIOR_TAG_TOOLTIPS[text];
+    }
+    for (const key of Object.keys(BEHAVIOR_TAG_TOOLTIPS)) {
+      if (key.toLowerCase() === lower) {
+        return BEHAVIOR_TAG_TOOLTIPS[key];
+      }
+    }
+    return "";
+  }
+
   function behaviorTagDefinition(tag) {
     const text = (tag || "").trim();
     if (!text) {
@@ -1094,10 +1179,11 @@
     return null;
   }
 
-  function behaviorTagChip(tag) {
+  function behaviorTagChip(tag, withTooltip) {
     const def = behaviorTagDefinition(tag);
     const emoji = def ? def.emoji : "🏷️";
-    return chipSpan(emoji, tag.trim(), "chip-behavior-tag");
+    const tooltip = withTooltip ? behaviorTagTooltip(tag) : "";
+    return chipSpan(emoji, tag.trim(), "chip-behavior-tag", tooltip);
   }
 
   function isSpeedMetricLabel(label) {
@@ -2871,7 +2957,7 @@
     }
     const chips = tags
       .map(function (raw) {
-        return behaviorTagChip(raw.slice(1, -1));
+        return behaviorTagChip(raw.slice(1, -1), true);
       })
       .join(" ");
     return formatSkillOverviewRow(

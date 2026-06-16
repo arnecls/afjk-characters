@@ -2924,7 +2924,7 @@ Dionel provides ATK buff to single targets `average`.
 
 - **Signature skill**: Echo of Silence (ultimate)
 - **Movement**: moving (melee class)
-- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `disabler`
+- **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `interrupt`
 - **Damage types**: Magic `average`, DoT `average`, HP loss `low`, Max HP-based damage `average`
 
 #### Play overview
@@ -5300,7 +5300,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 - **Signature skill**: Spellbane Shot (ultimate)
 - **Movement**: stationary (no finite attack range)
-- **Behavior tags**: `disabler` `enemy-debuffer`
+- **Behavior tags**: `enemy-debuffer` `interrupt`
 - **Damage types**: Physical `low`, True damage `average`
 
 #### Play overview
@@ -5382,9 +5382,9 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 **Similar Skills**
 
-- Temesia (40% `disabler` `enemy-debuffer`)
+- Temesia (40% `enemy-debuffer` `interrupt`)
 - Shadewing (33% `enemy-debuffer`)
-- Reinier (33% `disabler`)
+- Reinier (33% `interrupt`)
 
 **Damage**
 
@@ -6866,7 +6866,7 @@ Lorsan provides Haste buff to single targets `high`.
 
 - **Signature skill**: Quake Slam (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `ally-shielder` `disabler` `high-initial-energy`
+- **Behavior tags**: `ally-shielder` `high-initial-energy` `interrupt`
 - **Ally composition**: place adjacent allies behind at battle prep (DEF buff)
 - **Ally composition**: place allies on adjacent tiles behind at battle start (shields and ATK boost)
 - **Damage types**: Physical `high`
@@ -9712,7 +9712,7 @@ These are the **10** strongest pairings:
 
 - **Signature skill**: Dynamic Balance (Skill 1)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `disabler` `enemy-grouping`
+- **Behavior tags**: `enemy-grouping` `interrupt`
 - **Ally composition**: symmetrical ally-enemy tile pairs at battle start for Dynamic Balance swaps
 - **Damage types**: Magic `average`
 
@@ -9789,8 +9789,8 @@ Reinier provides ATK buff (Legendary+) to single targets `low`.
 **Similar Skills**
 
 - Pippa (33% `enemy-grouping`)
-- Indris (33% `disabler`)
-- Lucca (25% `disabler`)
+- Indris (33% `interrupt`)
+- Lucca (25% `interrupt`)
 
 **Damage**
 
@@ -10207,7 +10207,7 @@ Saida provides Shield to multiple targets `high`.
 
 - **Signature skill**: Spirit Shackles (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `disabler` `execute` `life-drain`
+- **Behavior tags**: `execute` `interrupt` `life-drain`
 - **Damage types**: Physical `high`
 
 #### Play overview
@@ -10290,7 +10290,7 @@ Salazer provides Lifedrain buff to single targets `average` and Shield (Supreme+
 **Similar Skills**
 
 - Harak (60% `execute` `life-drain`)
-- Sylphira (48% `disabler` `life-drain`)
+- Sylphira (48% `interrupt` `life-drain`)
 - Shakir (33% `life-drain`)
 
 **Damage**
@@ -11147,7 +11147,7 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 - **Signature skill**: First Strike (Skill 1)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `assassin` `battle-start-burst` `disabler` `mark-target`
+- **Behavior tags**: `assassin` `battle-start-burst` `interrupt` `mark-target`
 - **Damage types**: Physical `average`, Max HP-based damage `high`
 
 #### Play overview
@@ -11217,7 +11217,7 @@ Common buffers are **Hugin** or **Twins**.
 **Similar Skills**
 
 - Sinbad (40% `assassin` `mark-target`)
-- Dunlingr (33% `battle-start-burst` `disabler`)
+- Dunlingr (33% `battle-start-burst` `interrupt`)
 - Kafra (33% `assassin` `mark-target`)
 
 **Damage**
@@ -11831,7 +11831,7 @@ Soren provides Damage taken to single targets `low`, Haste buff (Legendary+) to 
 
 - **Signature skill**: Grand Finale (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles)
-- **Behavior tags**: `disabler` `high-initial-energy` `life-drain` `mass-cc`
+- **Behavior tags**: `high-initial-energy` `interrupt` `life-drain` `mass-cc`
 - **Damage types**: Magic `high`, Max HP-based damage `high`, True damage `low`
 
 #### Play overview
@@ -11905,7 +11905,7 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 
 **Similar Skills**
 
-- Lucca (40% `disabler` `high-initial-energy`)
+- Lucca (40% `high-initial-energy` `interrupt`)
 - Saida (40% `high-initial-energy` `life-drain`)
 - Natsu (34% `high-initial-energy` `mass-cc`)
 
@@ -12199,7 +12199,7 @@ Tasi provides Haste buff (EX+5) to single targets `high`.
 
 - **Signature skill**: Knight's Heart (ultimate)
 - **Movement**: high movement (repositioning skills)
-- **Behavior tags**: `aoe-damage` `disabler` `enemy-debuffer` `mass-cc` `self-repositioner`
+- **Behavior tags**: `aoe-damage` `enemy-debuffer` `interrupt` `mass-cc` `self-repositioner`
 - **Damage types**: Physical `high`, Max HP-based damage `low`, True damage `low`
 
 #### Play overview

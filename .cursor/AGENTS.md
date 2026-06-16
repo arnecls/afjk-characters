@@ -354,7 +354,7 @@ skill effect.
   self-recovery (delayed resurrect, drain-seed revival, low-HP retreat/root,
   etc.).
 - counterattack: Punishes enemies for attacking the hero with reactive damage or effects.
-- disabler: Applies hard shutdown effects such as Silence or Interrupt beyond routine CC.
+- interrupt: Applies hard shutdown effects such as Silence or Interrupt beyond routine CC.
 - dot-specialist: Relies on damage over time or recurring tick damage as a primary pattern.
 - enemy-debuffer: Applies meaningful stat or combat debuffs to enemies as a core output.
 - enemy-grouping: Pulls, pushes, or clusters enemies to set up follow-up damage or CC.
