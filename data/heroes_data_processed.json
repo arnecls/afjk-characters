@@ -366,6 +366,24 @@
           "effects": [
             {
               "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 16.0
+                }
+              ],
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "legendary+",
               "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "ally",
@@ -377,7 +395,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 16.0
+                  "value": 10.0
                 }
               ],
               "label": "buff_offensive"
@@ -462,7 +480,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 40.0
+                  "value": 30.0
                 }
               ],
               "duration": 1.5
@@ -484,6 +502,40 @@
                 }
               ],
               "duration": 1.5
+            },
+            {
+              "tier": "ex+5",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 35.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ]
             },
             {
               "tier": "ex+15",
@@ -3031,11 +3083,11 @@
           "effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "stat_mod",
               "stat": "haste",
               "name": "Haste buff",
@@ -3817,7 +3869,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "average",
               "HP loss": "high"
             }
           },
@@ -3829,7 +3881,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "high",
+              "True damage": "average",
               "HP loss": "high"
             }
           },
@@ -6263,6 +6315,17 @@
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain buff",
+              "label": "buff_stat"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain buff",
               "label": "buff_stat",
               "value": [
                 {
@@ -7001,6 +7064,22 @@
                 {
                   "type": "percentage",
                   "value": 200.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
                 }
               ]
             },
@@ -8155,7 +8234,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 18.0
+                  "value": 15.0
                 }
               ]
             }
@@ -9271,9 +9350,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -9352,7 +9431,7 @@
           "initial_energy": 300.0,
           "skill_card_tags": [
             "HP loss",
-            "Direct healing — Self",
+            "Direct healing",
             "ATK buff",
             "Energy recovery — Self",
             "Exemption buff",
@@ -9422,7 +9501,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 240.0
+                  "value": 150.0
                 }
               ],
               "duration": 6.0
@@ -9701,7 +9780,6 @@
         "hp_loss": "low"
       },
       "benefit_stats": [
-        "healing",
         "energy"
       ],
       "behavior": {
@@ -11011,6 +11089,23 @@
             },
             {
               "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
+                }
+              ],
+              "duration": 8.0
+            },
+            {
+              "tier": "base",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -11021,10 +11116,9 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 250.0
+                  "value": 17.0
                 }
-              ],
-              "duration": 8.0
+              ]
             }
           ],
           "cooldown": 8.0,
@@ -12003,7 +12097,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 25.0
+                  "value": 20.0
                 }
               ],
               "duration": 12.0,
@@ -12228,7 +12322,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "high"
+        "true": "average"
       },
       "benefit_stats": [
         "atk",
@@ -12540,7 +12634,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 160.0
+                  "value": 130.0
                 }
               ]
             }
@@ -12639,7 +12733,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 20.0
+                  "value": 4.0
                 }
               ],
               "label": "buff_offensive"
@@ -13130,7 +13224,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 320.0
+                  "value": 280.0
                 }
               ],
               "duration": 10.0
@@ -13517,7 +13611,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 130.0
+                  "value": 25.0
                 }
               ],
               "label": "buff_offensive"
@@ -13546,6 +13640,57 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 110.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -13730,11 +13875,11 @@
           "effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "stat_mod",
               "stat": "haste",
               "name": "Haste buff",
@@ -13745,12 +13890,23 @@
                 }
               ],
               "label": "buff_offensive"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "buff",
+              "name": "Haste buff",
+              "label": "buff_offensive"
             }
           ],
           "tier": "legendary+",
           "skill_range": 1,
           "skill_card_tags": [
-            "Haste buff"
+            "Haste buff — Self"
           ]
         },
         "Starbound Harmony": {
@@ -13800,7 +13956,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 15.0
+                  "value": 14.0
                 }
               ],
               "label": "buff_defensive"
@@ -14456,11 +14612,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
-              "area": "single",
-              "target_count": 1,
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
               "type": "damage",
               "damage_type": "true",
               "name": "True damage",
@@ -14862,7 +15019,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "average",
+        "true": "high",
         "hp_loss": "high"
       },
       "benefit_stats": [
@@ -14897,7 +15054,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "HP loss": "high",
               "DoT": "high",
               "Physical": "average"
@@ -14911,7 +15068,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "HP loss": "high",
               "DoT": "high",
               "Physical": "average"
@@ -17441,7 +17598,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 450.0
+                  "value": 300.0
                 }
               ]
             }
@@ -17764,7 +17921,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 170.0
+                  "value": 140.0
                 }
               ],
               "duration": 3.0
@@ -17779,6 +17936,57 @@
               "type": "crowd_control",
               "cc-type": "taunt",
               "duration": 3.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 160.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 170.0
+                }
+              ]
             }
           ],
           "cooldown": 10.0,
@@ -17885,7 +18093,26 @@
               ]
             },
             {
-              "tier": "mythic+",
+              "tier": "ex+5",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 105.0
+                }
+              ],
+              "duration": 12,
+              "tick": 1.0
+            },
+            {
+              "tier": "ex+15",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -18350,7 +18577,23 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 600.0
+                  "value": 450.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 400.0
                 }
               ],
               "duration": 6.0
@@ -19665,6 +19908,17 @@
               "label": "debuff_offensive"
             },
             {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Crit buff",
+              "label": "buff_offensive"
+            },
+            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -19715,6 +19969,17 @@
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain buff",
+              "label": "buff_stat"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -20201,18 +20466,18 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 160.0
+                  "value": 130.0
                 }
               ],
               "duration": 6,
@@ -20234,6 +20499,82 @@
                 }
               ],
               "duration": 15.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 130.0
+                }
+              ],
+              "duration": 6,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 140.0
+                }
+              ],
+              "duration": 6,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150.0
+                }
+              ],
+              "duration": 6,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 160.0
+                }
+              ],
+              "duration": 6,
+              "tick": 1.0
             }
           ],
           "cooldown": 12.0,
@@ -20422,7 +20763,6 @@
         "atk",
         "haste",
         "max_hp",
-        "healing",
         "physical_def",
         "magic_def"
       ],
@@ -20540,6 +20880,82 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 95.0
+                }
+              ],
+              "duration": 9,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
+                }
+              ],
+              "duration": 9,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 105.0
+                }
+              ],
+              "duration": 9,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 110.0
+                }
+              ],
+              "duration": 9,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",
@@ -20919,6 +21335,25 @@
               "target_count": -1,
               "area_count": -1,
               "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
               "label": "damage_max_hp",
@@ -20934,6 +21369,7 @@
           "initial_energy": 300.0,
           "skill_card_tags": [
             "Max HP-based damage",
+            "True damage",
             "Physical"
           ]
         },
@@ -21213,11 +21649,11 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "stat_mod",
               "stat": "max_hp",
               "name": "Max HP buff",
@@ -21231,11 +21667,11 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "stat_mod",
               "stat": "atk",
               "name": "ATK buff",
@@ -21252,8 +21688,8 @@
           "skill_range": 10,
           "skill_card_tags": [
             "Direct healing — Self",
-            "ATK buff",
-            "Max HP buff"
+            "ATK buff — Self",
+            "Max HP buff — Self"
           ]
         },
         "Enhance Force": {
@@ -21327,9 +21763,14 @@
         [
           "max_hp",
           "All units, Multiple targets, Single target"
+        ],
+        [
+          "true",
+          "All units"
         ]
       ],
       "damage_magnitudes": {
+        "true": "high",
         "max_hp": "high"
       },
       "benefit_stats": [
@@ -21377,6 +21818,7 @@
             "debuffs": "none",
             "damage_types": {
               "Physical": "high",
+              "True damage": "high",
               "Max HP-based damage": "high"
             }
           },
@@ -21522,6 +21964,63 @@
             ]
           },
           "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 70.0
+                }
+              ],
+              "duration": 8,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ],
+              "duration": 8,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 90.0
+                }
+              ],
+              "duration": 8,
+              "tick": 1.0
+            },
             {
               "tier": "base",
               "targeting_label": "Self",
@@ -22245,7 +22744,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 900.0
+                  "value": 850.0
                 }
               ],
               "duration": 8.0
@@ -23622,11 +24121,11 @@
           "effects": [
             {
               "tier": "supreme+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "stat_mod",
               "stat": "atk",
               "name": "ATK buff",
@@ -23651,11 +24150,11 @@
             },
             {
               "tier": "supreme+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "buff",
               "name": "Haste buff",
               "label": "buff_offensive"
@@ -23693,9 +24192,9 @@
           "tier": "supreme+",
           "skill_card_tags": [
             "ATK SPD buff — Self",
-            "ATK buff",
+            "ATK buff — Self",
             "DEF buff — Self",
-            "Haste buff",
+            "Haste buff — Self",
             "Vitality buff — Self"
           ]
         }
@@ -25066,6 +25565,24 @@
           "effects": [
             {
               "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 350.0
+                }
+              ],
+              "duration": 5.0
+            },
+            {
+              "tier": "base",
               "targeting_label": "All units",
               "is_max_known": true,
               "target": "ally",
@@ -25078,10 +25595,45 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 350.0
+                  "value": 240.0
                 }
-              ],
-              "duration": 5.0
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 260.0
+                }
+              ]
             }
           ],
           "cooldown": 10.0,
@@ -27238,6 +27790,24 @@
                 }
               ],
               "label": "buff_offensive"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ],
+              "label": "buff_offensive"
             }
           ],
           "tier": "legendary+",
@@ -28744,6 +29314,23 @@
               ]
             },
             {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage dealt buff",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 240.0
+                }
+              ]
+            },
+            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -28757,6 +29344,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Magic",
+            "Damage dealt buff — Self",
             "Energy drain",
             "Interrupt",
             "Unaffected — Self"
@@ -29095,9 +29683,9 @@
           "signature": {
             "speed": "average",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "average",
             "damage_types": {
               "Magic": "low"
@@ -29106,9 +29694,9 @@
           "ultimate": {
             "speed": "average",
             "first_cast_speed": "fast",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "average",
             "damage_types": {
               "Magic": "low"
@@ -32853,6 +33441,17 @@
                 }
               ],
               "label": "buff_offensive"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste buff",
+              "label": "buff_offensive"
             }
           ],
           "tier": "legendary+",
@@ -32900,18 +33499,18 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 500.0
+                  "value": 400.0
                 }
               ],
               "duration": 3.0
@@ -32927,6 +33526,23 @@
               "cc-type": "interrupt"
             },
             {
+              "tier": "ex+5",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 450.0
+                }
+              ]
+            },
+            {
               "tier": "ex+10",
               "targeting_label": "All units",
               "is_max_known": true,
@@ -32938,6 +33554,23 @@
               "damage_type": "magic",
               "name": "Magic",
               "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 500.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -33422,6 +34055,24 @@
                   "value": 1.0
                 }
               ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 8.5
+                }
+              ],
+              "label": "buff_offensive"
             }
           ],
           "tier": "mythic+",
@@ -35259,7 +35910,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 20.0
+                  "value": 15.0
                 }
               ],
               "label": "buff_offensive"
@@ -35332,6 +35983,40 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 2,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 8.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+5",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -38643,7 +39328,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 470.0
+                  "value": 150.0
                 }
               ],
               "label": "buff_offensive"
@@ -38688,6 +39373,24 @@
               "name": "Energy recovery debuff",
               "label": "debuff_stat",
               "duration": 5.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK buff",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 470.0
+                }
+              ],
+              "label": "buff_offensive"
             },
             {
               "type": "immunity",
@@ -41955,6 +42658,57 @@
               "value": [
                 {
                   "type": "percentage",
+                  "value": 45.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 46.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 48.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
                   "value": 50.0
                 }
               ]
@@ -43568,6 +44322,23 @@
           "effects": [
             {
               "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -43579,7 +44350,41 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 3.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 3.5
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 4.0
                 }
               ]
             }
@@ -45370,7 +46175,7 @@
       "faction": "mauler",
       "class": "rogue",
       "role_category": "damage_dealer",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "is_melee": true,
       "is_dual_range": false,
       "skills": {
@@ -45757,6 +46562,23 @@
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy recovery",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 200.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -46851,7 +47673,8 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
-        "haste"
+        "haste",
+        "max_hp"
       ],
       "behavior": {
         "movement": "moving",
@@ -49013,11 +49836,11 @@
           "effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "stat_mod",
               "stat": "atk",
               "name": "ATK buff",
@@ -49033,7 +49856,7 @@
           "tier": "legendary+",
           "skill_range": 1,
           "skill_card_tags": [
-            "ATK buff"
+            "ATK buff — Self"
           ]
         },
         "Withering Potion": {
@@ -49249,7 +50072,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 220.0
+                  "value": 140.0
                 }
               ]
             },
@@ -49269,6 +50092,74 @@
                 {
                   "type": "percentage",
                   "value": 242.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 160.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 180.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 220.0
                 }
               ]
             },
@@ -49423,6 +50314,57 @@
               "target": "ally",
               "area": "single",
               "target_count": 2,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 210.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 230.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -50325,6 +51267,17 @@
               "type": "buff",
               "name": "Damage taken reduction",
               "label": "buff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken reduction",
+              "label": "buff_stat"
             }
           ],
           "skill_range": 1,
@@ -50362,6 +51315,24 @@
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "haste",
+              "name": "Haste buff",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 16.0
+                }
+              ],
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "stat_mod",
@@ -50433,6 +51404,17 @@
                 }
               ],
               "duration": 12.0,
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste buff",
               "label": "buff_offensive"
             }
           ],
@@ -52058,7 +53040,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 130.0
+                  "value": 70.0
                 }
               ],
               "duration": 5.0,
@@ -52075,6 +53057,24 @@
               "name": "Damage taken reduction",
               "label": "buff_stat",
               "duration": 5.0
+            },
+            {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "haste",
+              "name": "Haste buff",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 130.0
+                }
+              ],
+              "label": "buff_offensive"
             }
           ],
           "tier": "mythic+",
@@ -52291,12 +53291,30 @@
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage dealt buff",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 160.0
+                }
+              ]
             }
           ],
           "skill_range": 1,
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
+            "Damage dealt buff — Self",
             "Energy recovery — Self",
             "Knock down"
           ]
@@ -55061,6 +56079,25 @@
           "effects": [
             {
               "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "haste",
+              "name": "Haste buff",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 80.0
+                }
+              ],
+              "duration": 10.0,
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "ex+5",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -55075,7 +56112,6 @@
                   "value": 120.0
                 }
               ],
-              "duration": 10.0,
               "label": "buff_offensive"
             },
             {
@@ -56349,7 +57385,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 70.0
+                  "value": 40.0
                 }
               ]
             },
@@ -56368,6 +57404,57 @@
                 {
                   "type": "flat",
                   "value": 45.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 70.0
                 }
               ]
             }
@@ -57938,6 +59025,18 @@
             },
             {
               "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain buff",
+              "label": "buff_stat",
+              "duration": 8.0
+            },
+            {
+              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "ally",
@@ -59122,11 +60221,30 @@
               }
             ]
           },
-          "effects": [],
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage dealt buff",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            }
+          ],
           "tier": "legendary+",
           "skill_range": 1,
-          "passive_only": true,
-          "skill_card_tags": []
+          "skill_card_tags": [
+            "Damage dealt buff — Self"
+          ]
         },
         "Intimidating Field": {
           "category": "skill4",
@@ -59216,6 +60334,17 @@
               ]
             },
             {
+              "tier": "ex+5",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste buff",
+              "label": "buff_offensive"
+            },
+            {
               "type": "immunity",
               "tier": "ex+10",
               "immunity_type": "unaffected",
@@ -59287,6 +60416,7 @@
         "hp_loss": "high"
       },
       "benefit_stats": [
+        "atk",
         "haste",
         "max_hp",
         "healing",

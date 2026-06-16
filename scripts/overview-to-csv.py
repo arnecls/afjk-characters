@@ -65,6 +65,7 @@ BUFF_TYPES: list[str] = [
     "DEF Penetration buff",
     "DEF buff",
     "Damage taken reduction",
+    "Damage dealt buff",
     "Magic damage reduction",
     "Energy recovery",
     "Execution buff",

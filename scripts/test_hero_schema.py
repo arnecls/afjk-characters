@@ -481,9 +481,27 @@ class SkillOverviewTests(unittest.TestCase):
     ):
         debuff_key = rs._canonical_skill_card_chip_key("Damage dealt debuff")
         taken_key = rs._canonical_skill_card_chip_key("Damage taken reduction")
+        buff_key = rs._canonical_skill_card_chip_key("Damage dealt buff — Self")
         self.assertEqual(debuff_key, "damage dealt debuff")
         self.assertEqual(taken_key, "damage taken reduction")
+        self.assertEqual(buff_key, "damage dealt buff")
         self.assertNotEqual(debuff_key, taken_key)
+        self.assertNotEqual(buff_key, debuff_key)
+
+    def test_skill_card_self_tag_implies_self_target(self):
+        import hero_schema as hs
+
+        hero = self._hero_analyzed("Aliceth")
+        section = rs.CATEGORY_TO_SECTION["skill3"]
+        tags = rs.format_skill_card_tags(hero, "skill3")
+        self.assertIn("ATK buff — Self", tags)
+        for effect in hero.skill_slices[section].effects:
+            if effect.label == "ATK buff" and effect.targeting == "Self":
+                schema = hs.effect_to_schema(effect)
+                self.assertEqual(schema.get("target"), "self")
+                break
+        else:
+            self.fail("expected Self ATK buff on Aliceth Hero Focus")
 
     def test_skill_card_chip_key_energy_recovery_debuff_distinct(self):
         buff_key = rs._canonical_skill_card_chip_key("Energy recovery")

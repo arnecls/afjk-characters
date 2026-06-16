@@ -766,6 +766,93 @@ class CommonFailurePatternTests(unittest.TestCase):
         max_hp = next(e for e in self._effects(text) if e.label == "Max HP-based damage")
         self.assertEqual(max_hp.numeric, 17.0)
 
+    def test_himmel_heroic_slash_true_damage_rider_on_sweep(self):
+        text = (
+            "He then follows up with a massive sweep that deals 220% "
+            "(ATK-based) + 30% damage to all enemies in front of him, plus "
+            "extra true damage equal to 15% + 2% of the target's max HP."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("True damage", labels)
+        self.assertIn("Physical", labels)
+        self.assertIn("Max HP-based damage", labels)
+
+    def test_aliceth_hero_focus_self_and_ally_atk_buffs(self):
+        text = (
+            "Aliceth increases her ATK by 16% in battle. After the first enemy "
+            "affected by her Mark of Judgement is defeated or becomes "
+            "untargetable, Aliceth and allies with Brightfeather gain an "
+            "extra 10% ATK."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "legendary+", text, "Physical")
+        atk = [e for e in effects if e.label == "ATK buff"]
+        self.assertEqual(len(atk), 2)
+        targets = {e.targeting for e in atk}
+        self.assertIn("Self", targets)
+        self.assertTrue(targets & {"Multiple targets", "Single target"})
+        self_buff = next(e for e in atk if e.targeting == "Self")
+        ally_buff = next(e for e in atk if e.targeting != "Self")
+        self.assertEqual(self_buff.numeric, 16.0)
+        self.assertEqual(ally_buff.numeric, 10.0)
+
+    def test_atalanta_hero_focus_haste_self(self):
+        text = (
+            "Atalanta increases her Haste by 18 during battle. She gains an "
+            "extra 6 Haste after dealing damage to 3 different enemies "
+            "within 3s."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "legendary+", text, "Physical")
+        haste = [e for e in effects if e.label == "Haste buff"]
+        self.assertTrue(haste)
+        self.assertTrue(all(e.targeting == "Self" for e in haste))
+        self.assertEqual(max(e.numeric for e in haste if e.numeric), 18.0)
+
+    def test_twins_hero_focus_self_and_ally_haste(self):
+        text = (
+            "Elijah and Lailah increase their Haste by 10 during battle. "
+            "Allies linked by Stellar Bond permanently gain 5 Haste."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "legendary+", text, "Physical")
+        haste = [e for e in effects if e.label == "Haste buff"]
+        self.assertEqual(len(haste), 2)
+        self_row = next(e for e in haste if e.targeting == "Self")
+        ally_row = next(e for e in haste if e.targeting != "Self")
+        self.assertEqual(self_row.numeric, 10.0)
+        self.assertEqual(ally_row.numeric, 5.0)
+
+    def test_zorya_hero_focus_damage_dealt_buff(self):
+        text = (
+            "Increases damage dealt by 15% during battle. If there are 2 or "
+            "more enemies within 2 tiles, increases damage dealt by an extra "
+            "5%."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "legendary+", text, "Physical")
+        buffs = [e for e in effects if e.label == "Damage dealt buff"]
+        self.assertTrue(buffs)
+        self.assertTrue(all(e.targeting == "Self" for e in buffs))
+        self.assertEqual(max(e.numeric for e in buffs if e.numeric), 15.0)
+        damage_labels = [e.label for e in effects if e.category == "damage"]
+        self.assertNotIn("Physical", damage_labels)
+
+    def test_contess_detention_pass_heal_targets_ally(self):
+        text = (
+            "Contess restores 666% (ATK-based) + 66% HP to a target ally and "
+            "grants them Exemption."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        heal = next(e for e in effects if e.label == rs.DIRECT_HEALING_LABEL)
+        self.assertEqual(heal.targeting, "Single target")
+
+        import hero_schema as hs
+
+        schema = hs.effect_to_schema(heal)
+        self.assertEqual(schema.get("target"), "ally")
+
     def test_himmel_heroic_dash_knock_down(self):
         text = "knocking each enemy down for 2s"
         labels = [e.label for e in self._effects(text)]

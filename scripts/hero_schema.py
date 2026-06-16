@@ -542,8 +542,19 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
 
     merged: list[Any] = []
     for eff in effects:
-        key = (eff.category, eff.label)
-        existing = [e for e in merged if (e.category, e.label) == key]
+        key = rs._effect_dedupe_key(
+            eff.category, eff.label, getattr(eff, "source_section", None),
+            targeting=eff.targeting,
+        )
+        existing = [
+            e
+            for e in merged
+            if rs._effect_dedupe_key(
+                e.category, e.label, getattr(e, "source_section", None),
+                targeting=e.targeting,
+            )
+            == key
+        ]
         if not existing:
             merged.append(
                 type(eff)(

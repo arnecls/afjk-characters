@@ -167,15 +167,20 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
         return True
     if re.search(r"\band allies gain\b", t):
         return True
+    if re.search(r"\band allies with \w+ gain\b", t):
+        return True
+    if re.search(r"\ballies\b.{0,80}\bgain(?:s|ing)?\b", t):
+        return True
     if re.search(r"\bfor all allies within\b", t):
         return True
     if re.search(r"\ballies they pass through\b", t):
         return True
     if re.search(r"\breduces? the allies'", t):
         return True
-    if re.search(r"\bincreas\w+ their .{0,60}(?:atk|haste|crit|life drain)\b", t):
-        return True
-    if re.search(r"\bincreas(?:e|es|ing) their (?:atk|haste|crit)\b", t):
+    if re.search(
+        r"\bincreas\w+ their .{0,60}(?:atk|haste|crit|life drain)\b",
+        t,
+    ) and re.search(r"\b(?:the |an |that |designated )?ally\b|\ballies\b", t):
         return True
     return False
 
@@ -242,7 +247,7 @@ def _allies_receive_healing(clause: str) -> bool:
     if re.search(
         r"\b(?:to|for) (?:all )?(?:allies|an ally|the ally|affected allies|"
         r"weakest ally|weakest \d+ allies|frontal allies|target ally|"
-        r"guarded ally|2 weakest allies)\b",
+        r"guarded ally|2 weakest allies|a target ally)\b",
         t,
     ):
         return True
@@ -398,6 +403,18 @@ def _resolve_buff_targeting(
     if label == "Haste buff" and re.search(
         r"\b(?:her|his|\w+)'s haste\b", t
     ) and not re.search(r"\b(?:allies?|ally)\b", t):
+        return "Self"
+    if label == "Haste buff" and re.search(
+        r"\b(?:she|he|they) gains? an extra \d+(?:\.\d+)? haste\b", t
+    ):
+        return "Self"
+    if label == "ATK buff" and re.search(
+        r"\b(?:increas(?:e|es|ing)|gain(?:s|ing)?) (?:her |his |their )atk\b", t
+    ) and not _has_explicit_ally_buff(t, label):
+        return "Self"
+    if label in ("Haste buff", "ATK buff") and re.search(
+        r"\bincreas(?:e|es|ing) their (?:atk|haste)\b", t
+    ) and not re.search(r"\ballies\b", t):
         return "Self"
     if label in ("Dodge chance buff", "Crit buff") and re.search(
         r"\b(?:she|he|they) gains? \d+", t
@@ -1182,6 +1199,7 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         "Vitality buff",
         "Dodge chance buff",
         "Movement speed buff",
+        "Damage dealt buff",
     )
     if label in buff_labels:
         if _has_explicit_ally_buff(t, label):
@@ -1210,6 +1228,10 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             r"(?:phys(?:ical)? and magic|magic and phys(?:ical)?) def\b",
             t,
         ):
+            return True
+        if label == "Damage dealt buff" and re.search(
+            r"\bincreas(?:e|es|ing)(?: an extra)? damage dealt by\b", t
+        ) and not re.search(r"\breduc\w+ .{0,40}damage dealt\b", t):
             return True
 
     if label in ("Shield", *HP_RECOVERY_LABELS):
@@ -1765,6 +1787,17 @@ def extract_number(text: str, label: str = "") -> float | None:
         )
         if amounts:
             return max(amounts)
+    if label == "Damage dealt buff":
+        amounts = _all_amounts(
+            text,
+            [
+                r"increas(?:e|es|ing) damage dealt by (\d+(?:\.\d+)?)\s*%",
+                r"increas(?:e|es|ing) damage dealt by an extra "
+                r"(\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
     if label == "Magic damage reduction":
         amounts = _all_amounts(
             text,
@@ -2302,12 +2335,27 @@ def _scope_is_hot_healing(scope: str) -> bool:
     )
 
 
+def _buff_dedupe_targeting_bucket(targeting: str | None) -> str | None:
+    """Keep Self and ally buff rows separate when they share a label."""
+    if not targeting:
+        return None
+    return "self" if targeting == "Self" else "ally"
+
+
 def _effect_dedupe_key(
-    category: str, label: str, source_section: str | None
+    category: str,
+    label: str,
+    source_section: str | None,
+    *,
+    targeting: str | None = None,
 ) -> tuple:
     """HP recovery effects stay separate per skill section."""
     if category == "buff" and label in _HP_RECOVERY_EFFECT_LABELS:
         return (category, label, source_section or "")
+    if category == "buff":
+        bucket = _buff_dedupe_targeting_bucket(targeting)
+        if bucket:
+            return (category, label, bucket)
     return (category, label)
 
 
@@ -2382,11 +2430,16 @@ def _merge_effects_from_list(effects: list[Effect]) -> list[Effect]:
     """Merge per-skill effects into one roster-wide list."""
     merged: list[Effect] = []
     for src in effects:
-        key = _effect_dedupe_key(src.category, src.label, src.source_section)
+        key = _effect_dedupe_key(
+            src.category, src.label, src.source_section, targeting=src.targeting
+        )
         existing = [
             e
             for e in merged
-            if _effect_dedupe_key(e.category, e.label, e.source_section) == key
+            if _effect_dedupe_key(
+                e.category, e.label, e.source_section, targeting=e.targeting
+            )
+            == key
         ]
         if not existing:
             merged.append(_copy_effect(src))
@@ -2462,13 +2515,26 @@ def add_effect(
     scope: str | None = None,
     source_section: str | None = None,
 ):
-    key = _effect_dedupe_key(category, label, source_section)
+    cond_text = scope if scope is not None else text
+    new_buff_tgt = (
+        _resolve_buff_targeting(text, label, scope=scope)
+        if category == "buff"
+        else None
+    )
+    key = _effect_dedupe_key(
+        category,
+        label,
+        source_section,
+        targeting=new_buff_tgt if category == "buff" else None,
+    )
     existing = [
         e
         for e in effects
-        if _effect_dedupe_key(e.category, e.label, e.source_section) == key
+        if _effect_dedupe_key(
+            e.category, e.label, e.source_section, targeting=e.targeting
+        )
+        == key
     ]
-    cond_text = scope if scope is not None else text
     n = (
         extract_cc_duration(cond_text, label)
         if category == "cc"
@@ -2486,11 +2552,6 @@ def add_effect(
     )
     count_text = cond_text if category == "buff" else text
     parsed_count = parse_target_count(count_text) or parse_target_count(text)
-    new_buff_tgt = (
-        _resolve_buff_targeting(text, label, scope=scope)
-        if category == "buff"
-        else None
-    )
     if existing:
         cur = existing[0]
         order = TIER_ORDER.get(tier, 99)
@@ -2798,6 +2859,10 @@ BUFF_RULES = [
     ),
     # Abbreviated form used in some skill descriptions (e.g. Koko, Phraesto).
     (r"\bdmg reduction\b", "Damage taken reduction"),
+    (
+        r"increas(?:e|es|ing)(?: an extra)? damage dealt by",
+        "Damage dealt buff",
+    ),
     (
         r"magic damage taken.{0,50}(?:is |are )?reduc\w+|"
         r"reduc(?:e|es|ing) .{0,40}magic damage taken|"
@@ -3944,6 +4009,15 @@ _TRUE_DAMAGE_MAX_HP_RE = re.compile(
 )
 
 
+def _true_damage_is_composite_atk_rider(text: str) -> bool:
+    """ATK-based hit with an explicit plus-extra-true-damage rider."""
+    t = text.lower()
+    return bool(
+        re.search(r"\(atk-based\)", text, re.I)
+        and re.search(r"plus extra true damage", t)
+    )
+
+
 def _true_damage_primary_scales_on_max_hp(text: str) -> bool:
     """True when true damage scales on target max HP."""
     return bool(_TRUE_DAMAGE_MAX_HP_RE.search(text))
@@ -3968,6 +4042,8 @@ def _apply_true_damage_hierarchy(types: list[str], text: str) -> list[str]:
     if "True damage" not in types:
         return types
     out = list(types)
+    if _true_damage_is_composite_atk_rider(text):
+        return out
     if _true_damage_prefers_max_hp_label(text):
         out = [d for d in out if d != "True damage"]
         if "Max HP-based damage" not in out:
@@ -4562,6 +4638,7 @@ def _is_non_dealt_damage_context(text: str) -> bool:
         r"(?:magic|physical|ranged) damage taken|"
         r"damage taken is increased|"
         r"reduc(?:e|es|ing) .{0,40}damage dealt by|"
+        r"increas(?:e|es|ing)(?: an extra)? damage dealt by|"
         r"reduc(?:e|es|ing) .{0,40}(?:the )?(?:enemy'?s?|target'?s?) hp below|"
         r"hp below \d+(?:\.\d+)?%\s*\(atk-based\)|"
         r"instantly defeat.{0,120}hp below|"
@@ -5513,6 +5590,21 @@ def _upgrade_chunk_relates_to_buff(text: str, label: str) -> bool:
     return True
 
 
+def _scalar_upgrade_targets_effect(upgrade_text: str, effect: Effect) -> bool:
+    """True when a tier-upgrade chunk applies to this effect row."""
+    qual = (effect.qualitative or "").strip().lower()
+    if not qual:
+        return True
+    ut = upgrade_text.lower()
+    if qual in ut or ut in qual:
+        return True
+    for frag in re.split(r"(?<!\d)\.\s+", qual):
+        frag = frag.strip()
+        if len(frag) > 12 and frag in ut:
+            return True
+    return False
+
+
 def _apply_scalar_upgrades(
     effects: list,
     text: str,
@@ -5528,12 +5620,26 @@ def _apply_scalar_upgrades(
     def bump(category: str, label: str, val: float) -> None:
         if category == "buff" and not _upgrade_chunk_relates_to_buff(text, label):
             return
-        for e in effects:
-            if e.category == category and e.label == label:
+        matches = [e for e in effects if e.category == category and e.label == label]
+        if category == "buff" and len(matches) > 1:
+            for e in matches:
+                if not _scalar_upgrade_targets_effect(text, e):
+                    continue
+                scoped = (
+                    extract_number(e.qualitative, label) if e.qualitative else None
+                )
+                if scoped is None:
+                    scoped = val
                 if is_scalar_upgrade and label == "Max HP-based damage":
-                    e.numeric = val
-                elif e.numeric is None or val > e.numeric:
-                    e.numeric = val
+                    e.numeric = scoped
+                elif e.numeric is None or scoped > e.numeric:
+                    e.numeric = scoped
+            return
+        for e in matches:
+            if is_scalar_upgrade and label == "Max HP-based damage":
+                e.numeric = val
+            elif e.numeric is None or val > e.numeric:
+                e.numeric = val
 
     def bump_cc(labels: tuple[str, ...], val: float) -> None:
         for e in effects:
@@ -5633,6 +5739,7 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     "DEF buff": ("Physical DEF", "Magic DEF"),
     # Tanks that self-stack damage reduction want sustain (Max HP buffs).
     "Damage taken reduction": ("Max HP",),
+    "Damage dealt buff": ("ATK",),
     "Ranged DEF buff": ("Physical DEF",),
     "Crit DMG boost": ("Crit DMG Boost",),
     "Vitality buff": ("Healing",),
