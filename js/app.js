@@ -778,6 +778,7 @@
     "Physical DEF": { emoji: "🛡️", cls: "chip-stat" },
     "Phys DEF": { emoji: "🛡️", cls: "chip-stat" },
     "Magic DEF": { emoji: "🔮", cls: "chip-stat" },
+    "Ranged DEF": { emoji: "🛡️", cls: "chip-stat" },
     "Energy recovery": { emoji: "🔋", cls: "chip-stat" },
     Vitality: { emoji: "🌿", cls: "chip-generic" },
     "Vitality buff": { emoji: "🌿", cls: "chip-generic" },
@@ -798,6 +799,8 @@
     "DoT debuff": { emoji: "🔥", cls: "chip-debuff" },
     "Damage taken debuff": { emoji: "🥀", cls: "chip-debuff" },
     "Damage taken": { emoji: "🥀", cls: "chip-debuff" },
+    "Damage dealt debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Damage dealt": { emoji: "🥀", cls: "chip-debuff" },
     "Magic damage amplification": { emoji: "🪄", cls: "chip-debuff" },
     "Magic damage reduction": { emoji: "🪄", cls: "chip-stat" },
     "Energy drain": { emoji: "🔋", cls: "chip-debuff" },
@@ -1212,6 +1215,23 @@
         isCc: false,
         remainder: "",
       };
+    }
+
+    if (polarity === "debuff") {
+      const debuffLabel = /\bdebuff$/i.test(trimmed)
+        ? trimmed
+        : trimmed + " debuff";
+      const debuffKey = exactTagDefinitionKey(debuffLabel);
+      if (debuffKey && TAG_DEFINITIONS[debuffKey]) {
+        const def = TAG_DEFINITIONS[debuffKey];
+        return {
+          emoji: def.emoji,
+          text: debuffKey,
+          cls: def.cls,
+          isCc: isCcChipClass(def.cls),
+          remainder: "",
+        };
+      }
     }
 
     const exactKey = exactTagDefinitionKey(trimmed);
@@ -2185,6 +2205,16 @@
     return { tag: tag, targeting: targeting };
   }
 
+  function skillCardEffectLabel(base, polarity) {
+    if (polarity === "debuff") {
+      return parseDebuffEffectLabel(base).base;
+    }
+    if (/\b(?:Ranged|Magic|Physical|Phys) DEF buff$/i.test(base)) {
+      return parseBuffEffectLabel(base).base;
+    }
+    return base;
+  }
+
   function chipifySkillCardTag(raw) {
     const split = parseSkillCardTag(raw);
     let tag = split.tag;
@@ -2192,8 +2222,16 @@
       return "";
     }
     const parsed = parseEffectLabelParts(tag);
-    tag = parsed.base;
-    const polarity = / debuff$/i.test(tag) ? "debuff" : "buff";
+    const polarity = / debuff$/i.test(parsed.base) ? "debuff" : "buff";
+
+    if (polarity === "debuff") {
+      const debuffChip = tryChipify(parsed.base);
+      if (debuffChip) {
+        return injectTierIntoChipHtml(debuffChip, parsed.tier);
+      }
+    }
+
+    tag = skillCardEffectLabel(parsed.base, polarity);
 
     if (split.targeting === "Self") {
       const merged = mergeEffectWithTargeting(
@@ -2222,7 +2260,9 @@
       return injectTierIntoChipHtml(statChip, parsed.tier);
     }
 
-    const effectChip = extractChipHtml(renderStandaloneEffectChip(tag, parsed.tier));
+    const effectChip = extractChipHtml(
+      renderStandaloneEffectChip(tag, parsed.tier, polarity)
+    );
     if (effectChip) {
       return effectChip;
     }
@@ -2271,8 +2311,17 @@
     if (tag.endsWith(" debuff")) {
       return tag.replace(/\s*\([^)]*\)/g, "").trim();
     }
+    if (tag.endsWith(" buff")) {
+      tag = tag.replace(/\s+buff\s*$/, "").trim();
+    }
 
     let i;
+    for (i = 0; i < STAT_KEYS.length; i++) {
+      const stat = STAT_KEYS[i].toLowerCase();
+      if (tag === stat || tag.indexOf(stat + " ") === 0) {
+        return stat;
+      }
+    }
     for (i = 0; i < SKILL_CARD_DAMAGE_KEYS.length; i++) {
       const dt = SKILL_CARD_DAMAGE_KEYS[i].toLowerCase();
       if (tag === dt || tag.indexOf(dt + " ") === 0) {
@@ -2283,12 +2332,6 @@
       const cc = SKILL_CARD_CC_KEYS[i].toLowerCase();
       if (tag === cc || tag.indexOf(cc + " ") === 0) {
         return cc;
-      }
-    }
-    for (i = 0; i < STAT_KEYS.length; i++) {
-      const stat = STAT_KEYS[i].toLowerCase();
-      if (tag === stat || tag.indexOf(stat + " ") === 0) {
-        return stat;
       }
     }
     if (tag === "hot" || tag === "healing over time" || tag.indexOf("healing over time") === 0) {
