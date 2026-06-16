@@ -1,6 +1,6 @@
 # AFK Journey Hero Reference
 
-**Start here: [Web-view]([heroes-overview.md](https://arnecls.github.io/afjk-characters))** — per-hero synergies, combat
+**Start here: [Web-view](https://arnecls.github.io/afjk-characters)** — per-hero synergies, combat
 behavior, structured skill summaries, and replacement suggestions for the full
 roster.
 
