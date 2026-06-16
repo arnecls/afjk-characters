@@ -2351,7 +2351,7 @@
       "faction": "wilder",
       "class": "mage",
       "role_category": "damage_dealer",
-      "is_energy_provider": true,
+      "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
       "skills": {
@@ -2552,9 +2552,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -2569,7 +2569,7 @@
             }
           ],
           "skill_card_tags": [
-            "Energy recovery"
+            "Energy recovery — Self"
           ]
         },
         "Hero Focus": {
@@ -6861,10 +6861,23 @@
               }
             ]
           },
-          "effects": [],
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste buff",
+              "label": "buff_offensive"
+            }
+          ],
           "tier": "supreme+",
-          "passive_only": true,
-          "skill_card_tags": []
+          "skill_card_tags": [
+            "Haste buff — Self"
+          ]
         }
       },
       "synergy_profile": {
@@ -6874,6 +6887,12 @@
             "tier": "base",
             "targeting": "Single target",
             "description": "When a battle starts, Bryon gains 1000 Energy and summons his falcon Elona."
+          },
+          {
+            "label": "Cheat death",
+            "tier": "ex+5",
+            "targeting": "Self",
+            "description": "When Bryon takes a fatal blow for the first time, Elona consumes all the Energy to block the fatal damage and restores 200% (ATK-based) HP for Bryon."
           },
           {
             "label": "Counterattack",
@@ -10520,26 +10539,6 @@
                   "value": 190.0
                 }
               ]
-            },
-            {
-              "type": "immunity",
-              "tier": "base",
-              "immunity_type": "unaffected",
-              "timing": "conditional",
-              "targeting_label": "Single target",
-              "target": "ally",
-              "area": "single",
-              "target_count": 1
-            },
-            {
-              "type": "immunity",
-              "tier": "base",
-              "immunity_type": "steadfast",
-              "timing": "conditional",
-              "targeting_label": "Single target",
-              "target": "ally",
-              "area": "single",
-              "target_count": 1
             }
           ],
           "cooldown": 15.0,
@@ -10549,9 +10548,7 @@
             "Magic",
             "Bind",
             "Displace",
-            "Knock down",
-            "Steadfast",
-            "Unaffected"
+            "Knock down"
           ]
         },
         "Hero Focus": {
@@ -10721,17 +10718,6 @@
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "silence",
-              "duration": 8.0
-            },
-            {
-              "tier": "ex+10",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -10767,7 +10753,6 @@
             "ATK buff — Self",
             "ATK SPD debuff",
             "Bind",
-            "Silence",
             "Unaffected — Self"
           ]
         },
@@ -11698,11 +11683,11 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "conditions": [
                 {
                   "type": "battle_phase",
@@ -11726,7 +11711,7 @@
           "skill_range": 3,
           "skill_card_tags": [
             "HoT",
-            "Haste buff — Self"
+            "Haste buff"
           ]
         },
         "Enhance Force": {
@@ -13813,7 +13798,7 @@
           "tier": "legendary+",
           "skill_range": 1,
           "skill_card_tags": [
-            "Haste buff — Self"
+            "Haste buff"
           ]
         },
         "Starbound Harmony": {
@@ -18086,9 +18071,9 @@
             },
             {
               "tier": "supreme+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -18099,7 +18084,7 @@
           "tier": "supreme+",
           "skill_card_tags": [
             "Direct healing — Self",
-            "Haste buff"
+            "Haste buff — Self"
           ]
         }
       },
@@ -18119,6 +18104,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
+        "haste",
         "healing",
         "energy",
         "physical_def",
@@ -21350,11 +21336,11 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "stat_mod",
               "stat": "max_hp",
               "name": "Max HP buff",
@@ -21390,7 +21376,7 @@
           "skill_card_tags": [
             "Direct healing — Self",
             "ATK buff",
-            "Max HP buff — Self"
+            "Max HP buff"
           ]
         },
         "Enhance Force": {
@@ -22149,11 +22135,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "stat_mod",
               "stat": "haste",
               "name": "Haste buff",
@@ -22172,7 +22158,7 @@
           "initial_energy": 600.0,
           "skill_card_tags": [
             "ATK buff",
-            "Haste buff — Self"
+            "Haste buff"
           ]
         },
         "Titan's Aegis": {
@@ -54357,7 +54343,7 @@
       "faction": "wilder",
       "class": "tank",
       "role_category": "specialist",
-      "is_energy_provider": true,
+      "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
       "skills": {
@@ -54610,9 +54596,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -54628,7 +54614,7 @@
           ],
           "skill_card_tags": [
             "HoT — Self",
-            "Energy recovery"
+            "Energy recovery — Self"
           ]
         },
         "Hero Focus": {

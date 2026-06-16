@@ -121,6 +121,7 @@ _SELF_STAT_NOUN = (
     r"energy|shield|life drain|vitality|execution|resilience|healing|"
     r"ranged def|dodge chance|movement speed)"
 )
+_ENERGY_AMOUNT_RE = r"\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?"
 
 
 def _has_explicit_ally_buff(t: str, label: str) -> bool:
@@ -160,7 +161,9 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
         return True
     if re.search(r"\binspir(?:e|es) .{0,20}(?:herself and )?all allies\b", t):
         return True
-    if re.search(r"\binspir\w+ allies\b", t):
+    if re.search(r"\binspir\w+ .{0,40}allies\b", t):
+        return True
+    if re.search(r"\bgrants? them \d+ haste\b", t):
         return True
     if re.search(r"\band allies gain\b", t):
         return True
@@ -207,26 +210,28 @@ def _energy_recovery_targets_self(t: str) -> bool:
         return True
     if _has_explicit_ally_buff(t, "Energy recovery"):
         return False
-    if re.search(r"\bthe ally\b", t) and re.search(
-        r"(?:recover|restore)\w* \d+ energy", t
-    ):
+    energy_recover = (
+        rf"(?:recover|restore)\w* (?:himself|herself|itself )?"
+        rf"{_ENERGY_AMOUNT_RE}\s+energy"
+    )
+    if re.search(r"\bthe ally\b", t) and re.search(energy_recover, t):
         return False
     if re.search(
-        r"(?:recover|restore)\w* (?:himself|herself|itself) \d+ energy", t
+        rf"(?:recover|restore)\w* (?:himself|herself|itself) "
+        rf"{_ENERGY_AMOUNT_RE}\s+energy",
+        t,
     ):
         return True
     if re.search(
-        r"\b(?:he|she|it)\b.{0,40}(?:immediately )?(?:recover|restore)\w* "
-        r"\d+ energy",
+        rf"\b(?:he|she|it)\b.{{0,40}}(?:immediately )?(?:recover|restore)\w* "
+        rf"{_ENERGY_AMOUNT_RE}\s+energy",
         t,
         re.I,
     ):
         return True
-    if re.search(r"\b(?:she|he|it)\b", t) and re.search(
-        r"(?:recover|restore)\w* \d+ energy", t
-    ):
+    if re.search(r"\b(?:she|he|it)\b", t) and re.search(energy_recover, t):
         return not re.search(r"\b(?:allies?|ally)\b", t)
-    if re.search(r"(?:recover|restore)\w* \d+ energy", t):
+    if re.search(energy_recover, t):
         return not re.search(r"\b(?:allies?|ally|the ally)\b", t)
     return False
 
@@ -353,6 +358,8 @@ def _resolve_buff_targeting(
         ):
             return detect_targeting(snippet, label, "buff")
         return "Self"
+    if _has_explicit_ally_buff(t, label):
+        return detect_targeting(snippet, label, "buff")
     if label in ("Haste buff", "Crit buff", "Max HP buff", "DEF Penetration buff"):
         self_pat = (
             r"\b(?:increas(?:e|es|ing)|boosts?|grants?) (?:her |his |their )"
@@ -360,6 +367,10 @@ def _resolve_buff_targeting(
         )
         if re.search(self_pat, t) or re.search(self_pat, full):
             return "Self"
+    if label == "Haste buff" and re.search(
+        r"\b(?:her|his|\w+)'s haste\b", t
+    ) and not re.search(r"\b(?:allies?|ally)\b", t):
+        return "Self"
     if label in ("Dodge chance buff", "Crit buff") and re.search(
         r"\b(?:she|he|they) gains? \d+", t
     ):
@@ -368,8 +379,6 @@ def _resolve_buff_targeting(
         return "Self"
     if label == "Invincible" and _invincibility_targets_self(t):
         return "Self"
-    if _has_explicit_ally_buff(t, label):
-        return detect_targeting(snippet, label, "buff")
     if effect_targets_self_only(t, label, "buff"):
         return "Self"
     return detect_targeting(snippet, label, "buff")
@@ -1288,6 +1297,12 @@ def _is_enemy_untargetable_context(text: str) -> bool:
 
 def grants_cc_immunity(text: str, imm_type: str) -> bool:
     t = text.lower()
+    if re.search(
+        r"\bneither unaffected nor steadfast\b|"
+        r"\bprioritiz\w+ target\w*.{0,60}(?:unaffected|steadfast)\b",
+        t,
+    ):
+        return False
     if imm_type == "Unaffected":
         if re.search(
             r"(?:who are|if they are|enemies who are|unaffected enemies|"
@@ -1303,6 +1318,11 @@ def grants_cc_immunity(text: str, imm_type: str) -> bool:
             )
         )
     if imm_type == "Steadfast":
+        if re.search(
+            r"(?:who are|if they are|enemies who are) steadfast",
+            t,
+        ):
+            return False
         return bool(re.search(r"(?:becomes?|is|grants?|granted).{0,40}steadfast", t))
     if imm_type == "Immune":
         return bool(
@@ -1447,7 +1467,7 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     ):
         return "Multiple targets"
     if category == "buff" and label == "Energy recovery" and re.search(
-        r"\bthe ally recovers? \d+ energy\b", t
+        rf"\bthe ally recovers? {_ENERGY_AMOUNT_RE}\s+energy\b", t
     ):
         return "Multiple targets"
     if category == "buff" and label in (
@@ -2588,6 +2608,7 @@ BUFF_RULES = [
     (r"increas(?:e|es|ing) .{0,60}?haste\b", "Haste buff"),
     (r"gain(?:s|ing)? an extra \d+(?:\s*\+\s*\d+)? haste\b", "Haste buff"),
     (r"haste increased by \d+", "Haste buff"),
+    (r"haste permanently increases by \d+", "Haste buff"),
     (
         r"grants? (?:himself|herself|themselves|(?:her|his|their)self) \d+ haste",
         "Haste buff",
@@ -3194,6 +3215,11 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     (r"instantly (?:freezes and )?defeat", "Instant defeat"),
     # Self-survival after defeat or critical HP (behavior tag: cheat-death)
     (r"hp ratio drops below.{0,150}takes root", "Cheat death"),
+    (
+        r"takes a fatal blow.{0,120}block(?:s|ing)? the fatal damage|"
+        r"block(?:s|ing)? the fatal damage",
+        "Cheat death",
+    ),
     (
         r"when (?:\w+'?s? )?(?:she|he|it|\w+) is defeated.{0,120}reviv",
         "Cheat death",
@@ -5064,6 +5090,15 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
         ):
             return True
     if label == "Silence" and re.search(r"\bsilencing arrow\b", t):
+        return True
+    if label == "Silence" and re.search(
+        r"after silence ends|"
+        r"merlin is silenced|preventing merlin from casting|"
+        r"present on the enemy side.{0,80}silenced",
+        full,
+    ):
+        return True
+    if label == "Silence" and re.search(r"after silence ends", t):
         return True
     if label == "Stun" and re.search(
         r"cannot move or act|unable to move or act", t
