@@ -255,6 +255,10 @@ PLACEMENT_ENABLER_REQUIRES = frozenset(
     }
 )
 
+# Units improving one hero: ally-buff reach (multi vs single ally) does not
+# change value for that receiver. Replacements use full TARGETING_WEIGHT.
+SYNERGY_STAT_BUFF_REACH_WEIGHT = TARGETING_WEIGHT["Single target"]
+
 # Maps receiver Requires label -> provider matcher name (see score_enabler_match).
 ENABLER_REQUIRE_HANDLERS = (
     "Knock up from allies",
@@ -289,6 +293,14 @@ def short_name(title: str) -> str:
 
 def receiver_stats(hero: _rs.Hero) -> list[str]:
     return [s for s in hero.benefit_stats if s != "Primary damage type (unit)"]
+
+
+def stat_buff_targeting_weight(
+    receiver: _rs.Hero, stat: str, targeting: str
+) -> float:
+    """Flat reach weight for Units improving one receiver (see replacements)."""
+    del receiver, stat, targeting
+    return SYNERGY_STAT_BUFF_REACH_WEIGHT
 
 
 def _direct_buff_labels_for_stat(stat: str) -> list[str]:
@@ -1383,7 +1395,7 @@ def score_synergy(
                 )
             ):
                 continue
-            tw = TARGETING_WEIGHT.get(effect.targeting, 1.0)
+            tw = stat_buff_targeting_weight(receiver, stat, effect.targeting)
             mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
             pts = tw * mw * mult_by_label[effect.label]
             if effect.conditional == "frequent":

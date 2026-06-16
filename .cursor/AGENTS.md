@@ -331,7 +331,9 @@ Prydwen tier breaks ties only. For tier comparison, `dream_realm` and
 `dream_realm_endless` are merged to the **max** of both (three modes:
 afk_stages, dream_realm, pvp). Candidates **without any Prydwen tiers** are
 excluded; candidates **2+ tiers below the source on every overlapping mode**
-are excluded. Synergy ranking is unchanged.
+are excluded. Synergy ranking is unchanged. **Buff/debuff/CC replacement
+profiles keep full targeting weights** (area, all units, etc.) so substitutes
+compare on maximum kit reach; synergy stat-buff scoring does not.
 Assign a small set
 (typically three to five) that describe how the hero is played, not every minor
 skill effect.
@@ -461,13 +463,17 @@ include this unit in their top five. Display (`render_overview.py` /
 DoT, CC, etc.); top picks are then sorted by score for display.
 
 1. **Stat buffs** — provider buffs match the hero's **Stats the unit benefits
-   from** (magnitude, targeting, conditional weighting). Omitted when that is
-   the only value: ATK-only buffs, Max HP buff-only, Shield-only (unless the
-   hero benefits from shields). Shields extend survivability but do not affect
-   Max HP scaling. Rare conditional buffs score lower.
+   from** (magnitude, conditional weighting). Ally-buff **reach** (single vs
+   multiple allies, area, etc.) does **not** change synergy score — Units
+   improving scores one specific receiver. **Replacements** still use full
+   targeting weights for maximum kit strength (see behavior-tags section).
+   Omitted when that is the only value: ATK-only buffs, Max HP buff-only,
+   Shield-only (unless the hero benefits from shields). Shields extend
+   survivability but do not affect Max HP scaling. Rare conditional buffs
+   score lower.
    **Haste vs ATK SPD:** Haste also increases attack speed. For heroes that
    benefit from **ATK SPD**, ally **Haste buff** counts toward that need and
-   is scored above **ATK SPD buff** at equal reach/magnitude (see
+   is scored above **ATK SPD buff** at equal magnitude (see
    `HASTE_FOR_ATK_SPD_SCORE_MULT` in `generate-heroes-overview.py`).
    **Healing need:** heroes who **consume or lose their own max HP** during
    skills (e.g. Talene's Ultimate channel) get **Healing** in benefit stats

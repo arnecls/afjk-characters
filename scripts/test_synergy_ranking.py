@@ -253,5 +253,66 @@ class ObviousStatBufferDisplayTests(unittest.TestCase):
         )
 
 
+class SynergyStatBuffReachTests(unittest.TestCase):
+    def _receiver(self) -> SimpleNamespace:
+        return SimpleNamespace(
+            title="Carry - Hero",
+            benefit_stats=["ATK"],
+            effects=[],
+            summon_effects=[],
+            special_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+
+    def _buff_provider(self, label: str, targeting: str) -> SimpleNamespace:
+        return SimpleNamespace(
+            title="Buffer - Hero",
+            benefit_stats=[],
+            effects=[
+                SimpleNamespace(
+                    category="buff",
+                    label=label,
+                    targeting=targeting,
+                    magnitude="high",
+                    conditional=None,
+                )
+            ],
+            summon_effects=[],
+            special_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+
+    def test_synergy_stat_buff_reach_is_flat_for_all_receivers(self) -> None:
+        receiver = self._receiver()
+        multi, _ = gen.score_synergy(
+            self._buff_provider("ATK buff", "Multiple targets"), receiver
+        )
+        single, _ = gen.score_synergy(
+            self._buff_provider("ATK buff", "Single target"), receiver
+        )
+        receiver_shield = SimpleNamespace(
+            title="Tank - Hero",
+            benefit_stats=["Shield"],
+            effects=[],
+            summon_effects=[],
+            special_effects=[],
+            positional_tile_buff_labels=frozenset(),
+            proximity_aura_buff_labels=frozenset(),
+            proximity_aura_radius=None,
+        )
+        area_shield, _ = gen.score_synergy(
+            self._buff_provider("Shield", "Area"), receiver_shield
+        )
+        single_shield, _ = gen.score_synergy(
+            self._buff_provider("Shield", "Single target"), receiver_shield
+        )
+        self.assertEqual(multi, single)
+        self.assertEqual(area_shield, single_shield)
+
+
 if __name__ == "__main__":
     unittest.main()

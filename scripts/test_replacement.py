@@ -811,6 +811,29 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         w_strong = gen._replacement_effect_weight(strong, hero, None)
         self.assertGreater(w_strong, w_weak)
 
+    def test_replacement_wider_targeting_scores_higher(self) -> None:
+        hero = self._make_hero()
+        single = rs.Effect(
+            category="buff",
+            label="ATK buff",
+            tier="Skill1",
+            targeting="Single target",
+            numeric=20.0,
+            magnitude="high",
+        )
+        wide = rs.Effect(
+            category="buff",
+            label="ATK buff",
+            tier="Skill1",
+            targeting="All units",
+            numeric=20.0,
+            magnitude="high",
+        )
+        self.assertGreater(
+            gen._replacement_effect_weight(wide, hero, None),
+            gen._replacement_effect_weight(single, hero, None),
+        )
+
     def test_inflated_per_role_label_does_not_inflate_coverage(self) -> None:
         """Higher raw numeric beats per-role 'high' when profiles use global weights."""
         hero_support = self._make_hero("Support Hero")
