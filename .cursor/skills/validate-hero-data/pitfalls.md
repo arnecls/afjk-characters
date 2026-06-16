@@ -210,10 +210,22 @@ Himmel Heroic Slash (should be **3**).
 
 ### Self vs ally mis-targeting
 
-Dodge, Crit, heals, DEF buffs, **Invincible**, and immunity on wrong `target`.
-Ally mis-tags on **damage dealers** are high impact: they pollute
-`heroes_data_synergies.json` replacement `"buff"` lists even when the label
-is otherwise correct.
+Dodge, Crit, heals, DEF buffs, **Invincible**, **Energy recovery**, and
+immunity on wrong `target`. Ally mis-tags on **damage dealers** are high
+impact: they pollute `heroes_data_synergies.json` replacement `"buff"` lists
+even when the label is otherwise correct.
+
+**Self energy recovery tagged ally (June 2026):** `{name} recovers N + M
+Energy` on the caster was stored as `ally` / `Single target` because (1) the
+self-detection regex only matched `recovers N energy` without `+ M`, and (2)
+`enemy` in the trigger clause (`whenever … enemy is controlled`) pushed
+single-target enemy heuristics. Resolved: Arden Nature's Resilience → **Self**.
+
+**Ally haste tagged Self (reverse mis-tag):** `inspiring … allies …
+increasing their Haste` was stored as **Self** because possessive `their
+Haste` matched before explicit ally-buff checks, and `inspiring non-summoned
+allies` missed `\binspir\w+ allies\b` (words between verb and `allies`).
+Resolved: Damian Inventor's Will → **Multiple targets** / `ally`.
 
 **Invincible / immunity — read the clause, not the skill title:**
 
@@ -244,6 +256,58 @@ profile (which uses standard ally targetings only).
 
 Other examples: Eironn Tempest Guard (Dodge → Self), Hewynn Healing Wave
 (weakest ally), Marcille Hero Focus (Haste → Self).
+
+### Targeting priority vs immunity (spurious Unaffected / Steadfast)
+
+`unaffected` and `steadfast` name **CC-immune enemy types** in target-priority
+lines, not buffs on the caster or allies.
+
+| Skill | Text cue | Wrong | Correct |
+|-------|----------|-------|---------|
+| Cyran Cursed Grasp | `prioritizes … neither unaffected nor steadfast` | immunity rows + skill-card tags | no immunity; CC/damage only |
+
+**Audit:** if the only `unaffected` / `steadfast` mention is who to **target**
+(`who are`, `neither … nor`, `prioritizes targeting`), expect **no**
+`type: immunity` effect and no Steadfast/Unaffected skill-card chips.
+
+### Artifact silence vs Silence CC
+
+Silencing **enemy Merlin** (artifact) at battle start is **Artifact block** on
+`synergy_profile.provides`, not hero-applied **Silence** CC.
+
+| Skill | Text cue | Wrong | Correct |
+|-------|----------|-------|---------|
+| Cyran Mystic Recollection (EX+10) | `Merlin is silenced … preventing Merlin from casting` | `cc-type: silence` | Artifact block only |
+
+**Chunk-split pitfall:** upgrade text split across sentences can false-match
+`after silence ends` as Silence CC even when the primary clause is artifact
+block. Grep skill-card tags for `Silence` when description mentions Merlin.
+
+### Cheat death vs self-heal only
+
+Fatal-blow survival (`takes a fatal blow … block the fatal damage`) should
+emit **Cheat death** on `synergy_profile.provides` and behavior tag
+`cheat-death`, not only Direct healing on the same skill.
+
+Resolved: Bryon Tacit Strike (EX+5).
+
+### Haste word-order and Supreme+ upgrades
+
+`{name}'s Haste permanently increases by N` does not match `increases …
+haste` buff rules. Supreme+ / EX upgrade chunks often hold the only mention.
+
+Resolved: Bryon Enhance Force (Supreme+) → Haste buff Self.
+
+Watch: any `haste permanently increases` or `{possessive}'s haste` on caster.
+
+### Scaled `N + M` stat amounts
+
+Parser gaps recur when skill text uses `12 + 3 Energy` or similar split
+values instead of a single number. Affects self-detection regexes and
+magnitude merge — audit energy recovery and flat stat buffs when text uses
+`+` between two numbers.
+
+Resolved: Arden Nature's Resilience (energy recovery Self).
 
 ### Upgrade-tier magnitudes not merged
 
@@ -291,6 +355,12 @@ Use these to calibrate both passes:
 | Harak Vicious Bite | No DoT/HoT | Healing debuff from lock |
 | Harak Tidal Assault | Invincible Self | Not ally buff; no replacement buff match |
 | Aurora Starlit Slumber | Invincible Self; Haste on summons | Self sleep immunity ≠ ally buffer |
+| Arden Nature's Resilience | Energy recovery Self | `12 + 3 Energy`; enemy in trigger ≠ ally buff |
+| Damian Inventor's Will | Haste buff ally (Multiple targets) | `their Haste` in ally-inspire clause |
+| Bryon Tacit Strike (EX+5) | Cheat death provide | Not heal-only |
+| Bryon Enhance Force (Supreme+) | Haste buff Self | `haste permanently increases` |
+| Cyran Cursed Grasp | No immunity rows | Targeting priority only |
+| Cyran Mystic Recollection (EX+10) | Artifact block; no Silence CC | Merlin ≠ enemy hero Silence |
 | Shemira Ghastly Tribute | Max HP-based damage only | Not True + Max HP double label |
 | Valka Phantom Slasher | Max HP-based damage on slashes | Heal in same clause must not block dedup |
 | Faramor Sanctified Circle | True + DoT; no Physical | area_count 1; 0.5s tick |
@@ -334,8 +404,10 @@ Prior passes added tests in:
   Daimon)
 - `scripts/test_skill_descriptions.py`
 - `scripts/test_detailed_validation.py`
-- `scripts/test_summary_parsing.py` — self Invincible (Evie, Harak, Aurora)
+- `scripts/test_summary_parsing.py` — self Invincible (Evie, Harak, Aurora);
+  extend for ally-haste Self mis-tags, energy recovery Self, artifact silence
 
 Add a **minimal** case per new pattern; run `just validate` before closing
 the validation task. When detection rules change, bump
-`scripts/roster_analysis.py` `CACHE_VERSION` before `just analyze`.
+`scripts/roster_analysis.py` `CACHE_VERSION` before `just analyze` (stale
+disk cache otherwise reuses pre-fix targeting).

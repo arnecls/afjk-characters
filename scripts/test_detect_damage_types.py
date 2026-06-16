@@ -352,10 +352,14 @@ class CommonFailurePatternTests(unittest.TestCase):
         text = "dealing 50% (ATK-based) damage every 1s"
         self.assertEqual(rs.detect_damage_types(text, "Magic"), ["DoT"])
 
-    def test_bewitching_is_charm(self):
-        text = "bewitching all enemies and making them rush mindlessly"
+    def test_bewitching_rush_toward_is_displace(self):
+        text = (
+            "bewitching all enemies and making them rush mindlessly "
+            "toward the illusion for 2.2 + 0.1s"
+        )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Charm", labels)
+        self.assertIn("Displace", labels)
+        self.assertNotIn("Charm", labels)
 
     def test_put_to_sleep_also_bind_when_immobilized(self):
         text = "Enemies affected are put to sleep for 1s and cannot move or act"

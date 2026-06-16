@@ -5831,14 +5831,6 @@
           "score": 22.05
         },
         {
-          "provider": "Mehira",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables CC on enemies via Charm (all units, average)"
-          ],
-          "score": 21.35
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
@@ -6178,6 +6170,14 @@
             "Enables CC on enemies via Knock down (single target, low)"
           ],
           "score": 7.725
+        },
+        {
+          "provider": "Mehira",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Enables CC on enemies via Charm (single target, average)"
+          ],
+          "score": 7.35
         },
         {
           "provider": "Dunlingr",
@@ -29032,7 +29032,29 @@
             ]
           }
         ],
-        "cc": [],
+        "cc": [
+          {
+            "name": "Satrana",
+            "score": 0.517,
+            "matches": [
+              "Charm"
+            ]
+          },
+          {
+            "name": "Cyran",
+            "score": 0.5106,
+            "matches": [
+              "Displace"
+            ]
+          },
+          {
+            "name": "Eironn",
+            "score": 0.5106,
+            "matches": [
+              "Displace"
+            ]
+          }
+        ],
         "overall": []
       }
     },
@@ -30671,14 +30693,6 @@
           "score": 24.0
         },
         {
-          "provider": "Mehira",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables CC on enemies via Charm (all units, average)"
-          ],
-          "score": 23.0
-        },
-        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
@@ -30823,6 +30837,14 @@
           "reasons": [
             "Shield via Shield (single target, average)",
             "Enables CC on enemies via Knock down (multiple targets, low)"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Mehira",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`",
+            "Enables CC on enemies via Charm (single target, average)"
           ],
           "score": 9.0
         },
@@ -34707,11 +34729,10 @@
             ]
           },
           {
-            "name": "Reinier",
-            "score": 0.8182,
+            "name": "Mehira",
+            "score": 0.8727,
             "matches": [
-              "Displace",
-              "Knock down"
+              "Displace"
             ]
           }
         ],

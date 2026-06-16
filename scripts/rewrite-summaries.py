@@ -3176,6 +3176,12 @@ CC_RULES = [
     (r"(?<! of )silenc(?:e|es|ed|ing)", "Silence"),
     # Dunlingr Spellbind order: all non-boss units unable to cast ultimates.
     (r"spellbind.{0,60}unable to cast", "Silence"),
+    # Forced movement toward a lure/illusion (Mehira Alluring Mirage) — not Charm.
+    (
+        r"bewitch(?:ing|ed|es)? .{0,80}(?:rush|rushing) .{0,40}toward|"
+        r"making them rush .{0,40}toward",
+        "Displace",
+    ),
     (r"bewitch(?:ing|ed|es)?(?: all enemies)?", "Charm"),
     (r"charm(?:ed|s|ing)?", "Charm"),
     (
@@ -5056,6 +5062,12 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
         return True
     if label == "Charm" and re.search(
         r"charmed with .{0,60}(?:or bewitched|damage taken)", t
+    ):
+        return True
+    if label == "Charm" and re.search(
+        r"bewitch(?:ing|ed|es)? .{0,80}(?:rush|rush mindlessly).{0,40}toward|"
+        r"making them rush .{0,40}toward",
+        t,
     ):
         return True
     if label == "Knock down" and re.search(

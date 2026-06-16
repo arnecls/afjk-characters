@@ -33976,14 +33976,14 @@
               "target_count": -1,
               "area_count": -1,
               "type": "crowd_control",
-              "cc-type": "charm"
+              "cc-type": "displace"
             }
           ],
           "cooldown": 15.0,
           "initial_cooldown": 15.0,
           "skill_range": 3,
           "skill_card_tags": [
-            "Charm"
+            "Displace"
           ]
         },
         "Hero Focus": {

@@ -40,7 +40,7 @@ Run **high-level** first, then **detailed**. Do not mix scopes in one report.
 ```
 Task progress:
 - [ ] 1. Baseline — read latest docs/validation-*.md; note resolved items
-- [ ] 2. Pre-scan — run ally-target and true/max-HP triage; note counts
+- [ ] 2. Pre-scan — ally-target, reverse ally-buff, immunity/silence, true/max-HP triage; note counts
 - [ ] 3. Inventory — hero/skill counts; pick batch boundaries (~25–35 heroes)
 - [ ] 4. High-level pass — labels only (damage, healing, CC, buffs, debuffs)
 - [ ] 5. Write docs/validation-high-level-YYYY-MM-DD.md
@@ -130,14 +130,39 @@ should be `Self`.
 
 | Effect family | Self-only phrasing in text | Wrong stored target |
 |---------------|---------------------------|---------------------|
+| Energy recovery | `{name} recovers N (+ M) Energy` (caster gains energy; trigger may mention enemies) | `ally` + `Single target` |
 | Invincible | `stays invincible`, `reaching the invincible`, `{name} is invincible` (no ally in clause) | `ally` + `Single target` |
 | Unaffected / Immune | `while casting, {name} remains unaffected`, `{name} is unaffected` | `ally` |
-| Crit / Haste / Dodge | `{name} enters feast mode, increasing Crit…`, `gains N Dodge` on caster | `ally` |
+| Crit / Haste / Dodge | `{name} enters feast mode, increasing Crit…`, `gains N Dodge` on caster, `{name}'s Haste permanently increases` | `ally` |
 | Shield / heal | `gains a shield`, `restores HP` with her/his/self, no ally grant | `ally` |
+
+**Reverse mis-tag (ally buff stored as Self):** when text grants haste/ATK to
+allies, `increasing their Haste` or `inspiring … allies` must not collapse to
+`Self` because `their` matched a possessive self heuristic. Confirm ally rows
+are `target: ally` with `Multiple targets` or `Area`, not `Self`.
+
+| Effect family | Ally-buff phrasing in text | Wrong stored target |
+|---------------|---------------------------|---------------------|
+| Haste buff | `inspiring … allies … increasing their Haste`, `grants them N Haste` | `self` + `Self` |
 
 **Summon-only is not ally:** `target: summon` / `Summons only` (Aurora Haste,
 Florabelle shields) must not be treated as ally buffs during validation — but
 also must not be mis-tagged as `target: ally`.
+
+**Targeting priority is not immunity:** `unaffected` / `steadfast` in target-
+selection lines (`prioritizes … neither unaffected nor steadfast`, `enemies
+who are unaffected`) describe **who can be picked**, not buffs or immunities
+on the caster or allies. Expect **no** `immunity_type: unaffected` /
+`steadfast` rows or skill-card tags on that skill.
+
+**Artifact silence is not CC:** silencing **Merlin** (enemy artifact) at battle
+start is an **Artifact block** special provide, not `cc-type: silence`. Watch
+follow-up clauses (`after silence ends`) that can false-match Silence CC when
+skill text is split into chunks.
+
+**Cheat death vs heal:** blocking a fatal blow (`takes a fatal blow … block the
+fatal damage`) is **Cheat death** on `synergy_profile.provides` and behavior
+tag `cheat-death`, not only Direct healing on the same skill.
 
 **Downstream spot-check:** when an ally-targeted defensive buff looks wrong on
 a **damage dealer**, grep replacements in
@@ -166,10 +191,17 @@ SELF_PATS = [
     r"\b(?:she|he|it) (?:is|stays|remains) invincible\b",
     r"\benters feast mode,?\s+increasing (?:crit|haste)\b",
     r"\b(?:increases?|boosts?|grants?) (?:her|his|their) (?:crit|haste|dodge)\b",
+    r"\b\w+ recovers? \d+(?:\s*\+\s*\d+)?\s+energy\b",  # self energy; may mention enemies in trigger
+]
+ALLY_SELF_PATS = [
+    r"\binspir\w+ .{0,40}allies\b",
+    r"\bgrants? them \d+ haste\b",
+    r"\bincreas\w+ their haste\b",
 ]
 ALLY_EFFECT = re.compile(
     r'"target":\s*"ally".*?"name":\s*"(Invincible|Unaffected|Immune|'
-    r'Haste buff|Crit buff|Dodge chance buff|Shield|Direct healing)"',
+    r'Haste buff|Crit buff|Dodge chance buff|Shield|Direct healing|'
+    r'Energy recovery)"',
     re.S,
 )
 
@@ -195,18 +227,82 @@ for hero, data in sorted(processed["heroes"].items()):
             if name in (
                 "Invincible", "Unaffected", "Immune",
                 "Haste buff", "Crit buff", "Dodge chance buff",
-                "Shield", "Direct healing",
+                "Shield", "Direct healing", "Energy recovery",
             ):
                 hits.append(f"{hero} / {skill}: {name} -> likely Self ({role})")
 
 print(f"Ally-target candidates: {len(hits)}")
 for line in hits:
     print(" ", line)
+
+# Ally buff mis-tagged Self (reverse of above)
+reverse = []
+for hero, data in sorted(processed["heroes"].items()):
+    for skill, sk in data.get("skills", {}).items():
+        raw = sk.get("description", {})
+        text = raw.get("raw", "") if isinstance(raw, dict) else str(raw)
+        tl = text.lower()
+        if not any(re.search(p, tl) for p in ALLY_SELF_PATS):
+            continue
+        for eff in sk.get("effects", []):
+            if eff.get("target") != "self":
+                continue
+            if eff.get("name") in ("Haste buff", "ATK buff", "ATK SPD buff"):
+                reverse.append(f"{hero} / {skill}: {eff['name']} -> likely ally buff")
+
+print(f"Self-target ally-buff candidates: {len(reverse)}")
+for line in reverse:
+    print(" ", line)
 PY
 ```
 
-Report the candidate count in the validation doc header. After fixes, re-run;
+Report both candidate counts in the validation doc header. After fixes, re-run;
 closed rows go under **Resolved since {date}**.
+
+### Pre-scan — spurious immunity / artifact-silence triage
+
+Run during **pass 1** (label scope). Surfaces immunity rows and Silence CC
+that come from targeting-priority or artifact-block phrasing, not real buffs.
+
+```bash
+python3 - <<'PY'
+import json, re
+from pathlib import Path
+
+processed = json.loads(Path("data/heroes_data_processed.json").read_text())
+TARGET_PRIORITY = re.compile(
+    r"\bneither unaffected nor steadfast\b|"
+    r"\bprioritiz\w+ target\w*.{0,60}(?:unaffected|steadfast)\b|"
+    r"\benemies who are unaffected\b"
+)
+ARTIFACT_SILENCE = re.compile(
+    r"merlin is silenced|preventing merlin from casting|after silence ends"
+)
+
+imm_hits, silence_hits = [], []
+for hero, data in sorted(processed["heroes"].items()):
+    for skill, sk in data.get("skills", {}).items():
+        raw = sk.get("description", {})
+        text = raw.get("raw", "") if isinstance(raw, dict) else str(raw)
+        tl = text.lower()
+        for eff in sk.get("effects", []):
+            if eff.get("type") == "immunity" and TARGET_PRIORITY.search(tl):
+                imm_hits.append(
+                    f"{hero} / {skill}: {eff.get('immunity_type')} -> targeting priority, not immunity"
+                )
+            if eff.get("cc-type") == "silence" and ARTIFACT_SILENCE.search(tl):
+                silence_hits.append(
+                    f"{hero} / {skill}: Silence CC -> Artifact block only"
+                )
+
+print(f"Spurious immunity candidates: {len(imm_hits)}")
+for line in imm_hits:
+    print(" ", line)
+print(f"Artifact-silence CC candidates: {len(silence_hits)}")
+for line in silence_hits:
+    print(" ", line)
+PY
+```
 
 ### Pre-scan — true / max-HP double-label triage
 
@@ -304,8 +400,8 @@ Save under `docs/` with today's date.
 **Detailed** (`validation-detailed-YYYY-MM-DD.md`):
 
 - Scope + link to high-level baseline
-- **Pre-scan results** — ally-target and true/max-HP candidate counts at
-  start/end of run
+- **Pre-scan results** — ally-target, reverse ally-buff, immunity/silence,
+  and true/max-HP candidate counts at start/end of run
 - Same roster stats and **Common failure patterns** (detailed-specific)
 - **Findings** by batch with `found -> expected`
 - **Spot-checked confirmations**
@@ -337,11 +433,16 @@ Highest impact on magnitude bands and synergy scoring:
 2. **True + Max HP double-label** on max-HP-scaled true strikes — skews
    damage-type profiles and magnitude bands
 3. **Self-only effects tagged `target: ally`** (Invincible, Unaffected, self
-   stat buffs) — distorts replacement **Buffs on allies** lists
-4. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
-5. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
-6. **Upgrade-tier magnitudes** not merged to max tier
-7. **Spurious damage rows** (execute riders, shield absorb as Physical)
+   stat buffs, **self Energy recovery**) — distorts replacement **Buffs on
+   allies** lists and beneficiary lines
+4. **Ally buffs tagged `target: self`** (`inspiring allies`, `their Haste`) —
+   removes provider from synergy buff matching
+5. **Wrong targeting on ally buffs** (Self vs weakest ally, etc.)
+6. **Spurious immunity / Silence CC** (targeting priority, artifact Merlin block)
+7. **DoT tick/duration** defaults (`tick: 1`, collapsed intervals)
+8. **Upgrade-tier magnitudes** not merged to max tier (incl. `N + M` scaled
+   amounts on energy recovery and haste)
+9. **Spurious damage rows** (execute riders, shield absorb as Physical)
 
 ## Definition guardrails
 
@@ -360,6 +461,10 @@ Apply `.cursor/AGENTS.md` strictly. Common label confusions:
 | Life Drain | Lifedrain buff; magnitude is flat points (`+60 Life Drain`) | Stored as `%` when text only gives points; confused with Direct healing |
 | Marked target | Enemy debuff + focus fire | Ally ATK buff |
 | Invincible / immunity | Self when caster only (`stays`, `reaching the invincible`, `is invincible`) | Ally `Single target` on DPS self-buff windows |
+| Targeting priority | `neither unaffected nor steadfast`, `prioritizes … unaffected` — no immunity row | Spurious Unaffected / Steadfast immunity or skill-card tags |
+| Artifact silence | Merlin silenced at battle start → **Artifact block** special provide | `cc-type: silence` on hero skill |
+| Energy recovery | `{name} recovers N (+ M) Energy` on caster → **Self** | `ally` + `Single target` (enemy in trigger clause is not the buff target) |
+| Cheat death | `block the fatal damage`, fatal-blow survival → special provide + `cheat-death` tag | Only Direct healing, no Cheat death provide |
 | Summon buffs | `target: summon` / Summons only | `target: ally` (counts in wrong replacement bucket) |
 | Damage dealt vs taken | Match phrase direction | Berial Hero Focus-style swaps |
 | Enhance Force | Parse EX/Supreme+ lines in same skill | Upgrade-only effects missing |
@@ -415,6 +520,28 @@ must not appear in any hero's replacement `"buff"` list.
 **Detailed — Aurora Starlit Slumber:** `While asleep, Aurora stays invincible`
 → Invincible row is **Self**. Her real ally support is Haste / summon damage
 (`target: summon`), not self invincibility.
+
+**Detailed — Arden Nature's Resilience:** `Arden recovers 12 + 3 Energy
+whenever … enemy is controlled` → **Energy recovery Self**; scaled `N + M`
+amounts and enemy trigger text must not yield `ally` / `Single target`.
+
+**Detailed — Damian Inventor's Will:** `inspiring non-summoned allies …
+increasing their Haste` → **Haste buff** on allies (`Multiple targets`), not
+`Self` from possessive `their`.
+
+**Detailed — Bryon Tacit Strike (EX+5):** `block the fatal damage` → **Cheat
+death** on provides + `cheat-death` behavior tag; may also list self heal.
+
+**Detailed — Bryon Enhance Force (Supreme+):** `Bryon's Haste permanently
+increases by 15` → **Haste buff Self** (word order `haste … increases`, not
+only `increases … haste`).
+
+**Detailed — Cyran Cursed Grasp:** `prioritizes … neither unaffected nor
+steadfast` → **no** immunity rows; CC (Bind, Displace, Knock down) only.
+
+**Detailed — Cyran Mystic Recollection (EX+10):** Merlin silenced → **Artifact
+block** special provide only; **no** Silence CC (watch `after silence ends`
+chunk).
 
 **Synergy cross-check — Aurora replacements:** before fix, `"buff"` listed
 Harak via overlapping mis-tagged Invincible; after fix `"buff": []` is expected
