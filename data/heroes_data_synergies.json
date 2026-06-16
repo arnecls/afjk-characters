@@ -1114,8 +1114,8 @@
             ]
           },
           {
-            "name": "Tasi",
-            "score": 0.4,
+            "name": "Lily May",
+            "score": 0.3429,
             "matches": [
               "self-repositioner",
               "transformation"
@@ -4943,7 +4943,7 @@
             ]
           },
           {
-            "name": "Tasi",
+            "name": "Ulmus",
             "score": 0.4,
             "matches": [
               "aoe-damage",
@@ -11563,11 +11563,11 @@
             ]
           },
           {
-            "name": "Tasi",
-            "score": 0.4114,
+            "name": "Cyran",
+            "score": 0.4,
             "matches": [
               "aoe-damage",
-              "mass-cc"
+              "enemy-grouping"
             ]
           }
         ],
@@ -19986,12 +19986,12 @@
             ]
           },
           {
-            "name": "Brutus",
-            "score": 0.4286,
+            "name": "Tasi",
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "cheat-death",
-              "life-drain"
+              "self-repositioner"
             ]
           }
         ],
@@ -44824,19 +44824,19 @@
             ]
           },
           {
-            "name": "Tasi",
-            "score": 0.3333,
+            "name": "Natsu",
+            "score": 0.3,
             "matches": [
               "mass-cc",
               "transformation"
             ]
           },
           {
-            "name": "Natsu",
-            "score": 0.3,
+            "name": "Mehira",
+            "score": 0.2857,
             "matches": [
-              "mass-cc",
-              "transformation"
+              "life-drain",
+              "mass-cc"
             ]
           }
         ],
@@ -45254,19 +45254,20 @@
             ]
           },
           {
+            "name": "Tasi",
+            "score": 0.5143,
+            "matches": [
+              "aoe-damage",
+              "cheat-death",
+              "transformation"
+            ]
+          },
+          {
             "name": "Natsu",
             "score": 0.375,
             "matches": [
               "aoe-damage",
               "fire-attack",
-              "transformation"
-            ]
-          },
-          {
-            "name": "Bonnie",
-            "score": 0.3429,
-            "matches": [
-              "aoe-damage",
               "transformation"
             ]
           }
@@ -45706,8 +45707,17 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Ulmus",
+            "score": 0.72,
+            "matches": [
+              "aoe-damage",
+              "cheat-death",
+              "transformation"
+            ]
+          },
+          {
             "name": "Valen",
-            "score": 0.75,
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "mass-cc",
@@ -45715,20 +45725,12 @@
             ]
           },
           {
-            "name": "Temesia",
-            "score": 0.6,
+            "name": "Talene",
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
-              "mass-cc",
-              "self-repositioner"
-            ]
-          },
-          {
-            "name": "Arden",
-            "score": 0.48,
-            "matches": [
-              "aoe-damage",
-              "mass-cc"
+              "cheat-death",
+              "transformation"
             ]
           }
         ],
@@ -46217,7 +46219,7 @@
         "similar_skills": [
           {
             "name": "Tasi",
-            "score": 0.6,
+            "score": 0.5143,
             "matches": [
               "aoe-damage",
               "mass-cc",
@@ -47887,6 +47889,15 @@
         "healing": [],
         "similar_skills": [
           {
+            "name": "Tasi",
+            "score": 0.72,
+            "matches": [
+              "aoe-damage",
+              "cheat-death",
+              "transformation"
+            ]
+          },
+          {
             "name": "Talene",
             "score": 0.6,
             "matches": [
@@ -47901,14 +47912,6 @@
             "matches": [
               "ally-shielder",
               "transformation"
-            ]
-          },
-          {
-            "name": "Scarlita",
-            "score": 0.48,
-            "matches": [
-              "ally-shielder",
-              "aoe-damage"
             ]
           }
         ],
@@ -48812,7 +48815,7 @@
         "similar_skills": [
           {
             "name": "Tasi",
-            "score": 0.75,
+            "score": 0.6,
             "matches": [
               "aoe-damage",
               "mass-cc",

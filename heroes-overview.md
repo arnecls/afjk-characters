@@ -340,7 +340,7 @@ Common buffers are **Twins**, **Hugin**, or **Damian**.
 
 - Kulu (66% `battlefield-modification` `self-repositioner`)
 - Athalia (60% `self-repositioner` `transformation`)
-- Tasi (40% `self-repositioner` `transformation`)
+- Lily May (34% `self-repositioner` `transformation`)
 
 **Damage**
 
@@ -1319,7 +1319,7 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 
 - Nerion (57% `battle-start-burst` `enemy-debuffer`)
 - Cassadee (48% `aoe-damage` `enemy-debuffer`)
-- Tasi (40% `aoe-damage` `transformation`)
+- Ulmus (40% `aoe-damage` `transformation`)
 
 **Damage**
 
@@ -3130,7 +3130,7 @@ Eironn provides Dodge chance buff to single targets `high`.
 
 - Mehira (51% `aoe-damage` `enemy-grouping` `mass-cc`)
 - Walker (51% `aoe-damage` `battle-start-burst` `mass-cc`)
-- Tasi (41% `aoe-damage` `mass-cc`)
+- Cyran (40% `aoe-damage` `enemy-grouping`)
 
 **Damage**
 
@@ -5267,7 +5267,7 @@ Common buffers are **Solise**, **Smokey & Meerky**, or **Mikola**.
 
 - Dionel (60% `aoe-damage` `self-repositioner` `untargetable`)
 - Mehira (51% `aoe-damage` `life-drain` `untargetable`)
-- Brutus (42% `aoe-damage` `cheat-death` `life-drain`)
+- Tasi (51% `aoe-damage` `cheat-death` `self-repositioner`)
 
 **Damage**
 
@@ -11902,8 +11902,8 @@ Common buffers are **Twins**, **Hugin**, or **Ravion**.
 **Similar Skills**
 
 - Shakir (50% `life-drain` `transformation`)
-- Tasi (33% `mass-cc` `transformation`)
 - Natsu (30% `mass-cc` `transformation`)
+- Mehira (28% `life-drain` `mass-cc`)
 
 **Damage**
 
@@ -12035,8 +12035,8 @@ Talene provides ATK buff (EX+5) in an area `high`.
 **Similar Skills**
 
 - Ulmus (60% `aoe-damage` `cheat-death` `transformation`)
+- Tasi (51% `aoe-damage` `cheat-death` `transformation`)
 - Natsu (37% `aoe-damage` `fire-attack` `transformation`)
-- Bonnie (34% `aoe-damage` `transformation`)
 
 **Damage**
 
@@ -12074,7 +12074,7 @@ Talene provides ATK buff (EX+5) in an area `high`.
 
 - **Signature skill**: Eternal Dreamscape (ultimate)
 - **Movement**: stationary (avg attack range 10.0 tiles)
-- **Behavior tags**: `aoe-damage` `mass-cc` `self-repositioner` `transformation`
+- **Behavior tags**: `aoe-damage` `cheat-death` `mass-cc` `self-repositioner` `transformation`
 - **Damage types**: Magic `average`, DoT `average`
 
 #### Play overview
@@ -12152,9 +12152,9 @@ Tasi provides Haste buff (EX+5) to single targets `high`.
 
 **Similar Skills**
 
-- Valen (75% `aoe-damage` `mass-cc` `transformation`)
-- Temesia (60% `aoe-damage` `mass-cc` `self-repositioner`)
-- Arden (48% `aoe-damage` `mass-cc`)
+- Ulmus (72% `aoe-damage` `cheat-death` `transformation`)
+- Valen (60% `aoe-damage` `mass-cc` `transformation`)
+- Talene (51% `aoe-damage` `cheat-death` `transformation`)
 
 **Damage**
 
@@ -12263,7 +12263,7 @@ Common buffers are **Twins**, **Mikola**, or **Hugin**.
 
 **Similar Skills**
 
-- Tasi (60% `aoe-damage` `mass-cc` `self-repositioner`)
+- Tasi (51% `aoe-damage` `mass-cc` `self-repositioner`)
 - Cassadee (48% `aoe-damage` `enemy-debuffer`)
 - Indris (40% `disabler` `enemy-debuffer`)
 
@@ -12880,9 +12880,9 @@ Common buffers are **Smokey & Meerky**, **Twins**, or **Solise**.
 
 **Similar Skills**
 
+- Tasi (72% `aoe-damage` `cheat-death` `transformation`)
 - Talene (60% `aoe-damage` `cheat-death` `transformation`)
 - Pang (60% `ally-shielder` `transformation`)
-- Scarlita (48% `ally-shielder` `aoe-damage`)
 
 **Damage**
 
@@ -13141,7 +13141,7 @@ Valen provides ATK buff (Mythic+) to single targets `low`.
 
 **Similar Skills**
 
-- Tasi (75% `aoe-damage` `mass-cc` `transformation`)
+- Tasi (60% `aoe-damage` `mass-cc` `transformation`)
 - Arden (60% `aoe-damage` `mass-cc`)
 - Natsu (60% `aoe-damage` `mass-cc` `transformation`)
 
