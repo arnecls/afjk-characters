@@ -15,6 +15,7 @@
   let sortColumn = 0;
   let sortDir = 1;
   let csvColumnFilters = {};
+  let csvColumnFilterCombine = {};
   let csvColumnFilterOptions = [];
   let openColumnFilter = -1;
   let csvColumnWidths = [];
@@ -154,7 +155,10 @@
 
   function updateHeaderNav(inDetail) {
     if (filtersPanel) {
-      filtersPanel.classList.toggle("hidden", inDetail);
+      filtersPanel.classList.toggle(
+        "hidden",
+        inDetail || viewMode === "list"
+      );
     }
     if (headerBack) {
       headerBack.classList.toggle("hidden", !inDetail);
@@ -837,6 +841,7 @@
     "execute": { emoji: "☠️", cls: "chip-role" },
     "fire-attack": { emoji: "🔥", cls: "chip-role" },
     "high-damage-ult": { emoji: "💣", cls: "chip-role" },
+    "high-initial-energy": { emoji: "🔋", cls: "chip-role" },
     "hp-scaling": { emoji: "❤️", cls: "chip-role" },
     invincibility: { emoji: "👑", cls: "chip-role" },
     "life-drain": { emoji: "🩸", cls: "chip-role" },
@@ -1844,6 +1849,7 @@
   });
 
   const TIER_RANK_ORDER = ["C", "B", "A", "A+", "S", "S+"];
+  const TIER_FILTER_ORDER = ["?", "C", "B", "A", "A+", "S", "S+"];
 
   function isUnrankedPrydwenTier(tier) {
     const value = tier != null ? String(tier).trim() : "";
@@ -3468,10 +3474,26 @@
     });
   }
 
-  function sortFilterOptionValues(values) {
+  function sortFilterOptionValues(values, column) {
+    if (column && TIER_CSV_HEADERS[column]) {
+      return values.slice().sort(function (a, b) {
+        const rankA = tierFilterSortRank(a);
+        const rankB = tierFilterSortRank(b);
+        if (rankA !== rankB) {
+          return rankA - rankB;
+        }
+        return a.localeCompare(b);
+      });
+    }
     return values.slice().sort(function (a, b) {
       return a.toLowerCase().localeCompare(b.toLowerCase());
     });
+  }
+
+  function tierFilterSortRank(value) {
+    const display = prydwenTierDisplay(value);
+    const idx = TIER_FILTER_ORDER.indexOf(display);
+    return idx >= 0 ? idx : TIER_FILTER_ORDER.length;
   }
 
   function buildEffectColumnFilterGroups(col, idx) {
@@ -3503,6 +3525,18 @@
     return groups.some(function (group) {
       return group.values.length;
     });
+  }
+
+  function columnFilterCombineMode(colIdx) {
+    return csvColumnFilterCombine[colIdx] === "and" ? "and" : "or";
+  }
+
+  function toggleColumnFilterCombine(colIdx) {
+    if (columnFilterCombineMode(colIdx) === "and") {
+      delete csvColumnFilterCombine[colIdx];
+    } else {
+      csvColumnFilterCombine[colIdx] = "and";
+    }
   }
 
   function atomsFromEffectEntry(entry) {
@@ -3613,13 +3647,13 @@
         {
           id: "value",
           label: "",
-          values: sortFilterOptionValues(Array.from(values)),
+          values: sortFilterOptionValues(Array.from(values), col),
         },
       ];
     });
   }
 
-  function cellMatchesColumnFilter(column, cellValue, selected) {
+  function cellMatchesColumnFilter(column, cellValue, selected, combineMode) {
     if (!selected || !selected.size) {
       return true;
     }
@@ -3635,6 +3669,16 @@
       });
     }
     const atoms = extractCellFilterAtoms(column, cellValue);
+    const mode = combineMode === "and" ? "and" : "or";
+    if (mode === "and") {
+      let allMatched = true;
+      selected.forEach(function (value) {
+        if (!atoms.has(value)) {
+          allMatched = false;
+        }
+      });
+      return allMatched;
+    }
     let matched = false;
     selected.forEach(function (value) {
       if (atoms.has(value)) {
@@ -3655,7 +3699,8 @@
         continue;
       }
       const cellValue = getListCellRawValue(row, colIdx, col);
-      if (!cellMatchesColumnFilter(col, cellValue, selected)) {
+      const combineMode = columnFilterCombineMode(colIdx);
+      if (!cellMatchesColumnFilter(col, cellValue, selected, combineMode)) {
         return false;
       }
     }
@@ -3848,6 +3893,31 @@
     }
     html += "</div>";
     return html;
+  }
+
+  function renderColumnFilterCombineToggle(colIdx, column) {
+    if (column !== "Behavior tags") {
+      return "";
+    }
+    const mode = columnFilterCombineMode(colIdx);
+    const combineTitle =
+      mode === "and"
+        ? "Match all selected tags (and). Click to match any (or)."
+        : "Match any selected tag (or). Click to match all (and).";
+    return (
+      '<button type="button" class="col-filter-combine-toggle" data-col="' +
+      colIdx +
+      '" aria-label="Combine filter selections" title="' +
+      escapeHtml(combineTitle) +
+      '">' +
+      '<span class="col-filter-combine-seg' +
+      (mode === "or" ? " active" : "") +
+      '">or</span>' +
+      '<span class="col-filter-combine-seg' +
+      (mode === "and" ? " active" : "") +
+      '">and</span>' +
+      "</button>"
+    );
   }
 
   function renderBadgeChip(label, kind) {
@@ -4303,6 +4373,9 @@
         const countHtml = hasFilter
           ? '<span class="col-filter-count">(' + activeCount + ")</span>"
           : "";
+        const combineToggleHtml = renderColumnFilterCombineToggle(idx, col);
+        filterRowHtml += '<div class="col-filter-row">';
+        filterRowHtml += combineToggleHtml;
         filterRowHtml +=
           '<details class="' +
           filterCls +
@@ -4322,6 +4395,7 @@
           "</summary>" +
           renderColumnFilterPanel(idx, col, optionGroups) +
           "</details>";
+        filterRowHtml += "</div>";
       }
       filterRowHtml += "</th>";
     });
@@ -5264,6 +5338,12 @@
   }
 
   if (heroesTableHead) {
+    heroesTableHead.addEventListener("mousedown", function (e) {
+      if (e.target.closest(".col-filter-combine-toggle")) {
+        e.stopPropagation();
+      }
+    });
+
     heroesTableHead.addEventListener("click", function (e) {
       const clearBtn = e.target.closest(".col-filter-clear");
       if (clearBtn) {
@@ -5272,6 +5352,15 @@
         const col = parseInt(clearBtn.dataset.col, 10);
         openColumnFilter = col;
         delete csvColumnFilters[col];
+        renderList();
+        return;
+      }
+      const combineToggle = e.target.closest(".col-filter-combine-toggle");
+      if (combineToggle) {
+        e.preventDefault();
+        e.stopPropagation();
+        const col = parseInt(combineToggle.dataset.col, 10);
+        toggleColumnFilterCombine(col);
         renderList();
         return;
       }
@@ -5810,6 +5899,7 @@
 
   viewMode = readStoredViewMode();
   syncViewToggleButtons();
+  updateHeaderNav(false);
   initWelcomeWarning();
   initFiltersCollapse();
   redirectLegacyHeroPath();
