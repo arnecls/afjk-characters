@@ -673,9 +673,36 @@ class SkillOverviewTests(unittest.TestCase):
         _, behavior = self._hero_by_display("Niru")
         sig_metrics = behavior.skill_overview["signature"]
         self.assertEqual(sig_metrics.speed, "fast")
-        self.assertEqual(sig_metrics.first_cast_speed, "fast")
+        self.assertEqual(sig_metrics.first_cast_speed, "none")
         text = "\n".join(rs.format_behavior_section("Niru", behavior))
-        self.assertIn("first cast speed `fast`", text)
+        self.assertNotIn("first cast speed", text)
+
+    def test_high_initial_energy_ultimate_first_cast_speed(self):
+        for display in ("Kordan", "Cyran", "Pang", "Lucy"):
+            _, behavior = self._hero_by_display(display)
+            overview = behavior.skill_overview
+            row = (
+                overview["signature"]
+                if behavior.signature_skill_is_ult
+                else overview["ultimate"]
+            )
+            self.assertEqual(
+                row.first_cast_speed,
+                "fast",
+                msg=display,
+            )
+
+    def test_aurora_ultimate_first_cast_not_fast_from_passive_setup(self):
+        _, behavior = self._hero_by_display("Aurora")
+        self.assertTrue(behavior.signature_skill_is_ult)
+        sig_metrics = behavior.skill_overview["signature"]
+        self.assertNotEqual(sig_metrics.first_cast_speed, "fast")
+
+    def test_velara_ultimate_first_cast_not_fast_without_high_ie(self):
+        _, behavior = self._hero_by_display("Velara")
+        self.assertTrue(behavior.signature_skill_is_ult)
+        sig_metrics = behavior.skill_overview["signature"]
+        self.assertNotEqual(sig_metrics.first_cast_speed, "fast")
 
     def test_include_skill_summaries_false_omits_subsections(self):
         _, behavior = self._hero_by_display("Aliceth")

@@ -227,7 +227,11 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   `damage` (damage last; `high` / `average` / `low`; speed `slow` / `average`
   / `fast`). **First cast speed** is shown when the opener applies at battle
   start or battle preparation while recurring cast speed is slower (e.g.
-  Cassadee's Tidal Strength blesses at battle start).
+  Cassadee's Tidal Strength blesses at battle start). For **Ultimates**,
+  `fast` first cast speed aligns with `high-initial-energy` (effective IE ≥
+  500 at full build and first cast within ~5s) or a free/guaranteed early
+  ultimate cast (`battle-start-ult`); passive battle-start setup alone does
+  not count.
   When any tier deals **HP loss**, **Max HP-based damage**, or **True
   damage**, a final `- **True damage**: {type} \`{mag}\`, …` line lists types
   (peak per type across tiers; p75 for non-ultimate).

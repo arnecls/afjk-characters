@@ -29,7 +29,7 @@ Aliceth **bonds one ally at battle start**, empowering their strikes so follow-u
 #### Skill overview
 
 - **Signature skill (ult)**: speed `average`, buffs `average`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -156,9 +156,9 @@ Before battle, Alna **requires a Winter Warrior in her row**, chosen during prep
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
-- **Ultimate**: speed `slow`, first cast speed `fast`, heal `average`, debuffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
+- **Signature skill**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
+- **Ultimate**: speed `slow`, heal `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -400,7 +400,7 @@ Antandra guards one ally with **shields and damage reduction**, then rushes to t
 #### Skill overview
 
 - **Signature skill (ult)**: speed `average`, heal `average`, buffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -641,7 +641,7 @@ Atalanta opens with **rapid chained casts** of her knockback and explosive shots
 #### Skill overview
 
 - **Signature skill (ult)**: speed `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, damage `average`
+- **Non-ultimate**: speed `fast`, damage `average`
 
 ##### Ultimate
 
@@ -877,7 +877,7 @@ Aurora summons a companion that **attacks and detonates for AoE damage**, then f
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -998,7 +998,7 @@ Baelran leans on a **massive HP pool** and passive regeneration, then transforms
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, heal `average`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -1249,9 +1249,9 @@ Bonnie opens by placing an **Aging debuff** on the rearmost enemy, slowing haste
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, debuffs `average`, damage `low`
+- **Signature skill**: speed `fast`, debuffs `average`, damage `low`
 - **Ultimate**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -1498,7 +1498,7 @@ Bryon opens with a **battle-start companion summon** that fights beside him and 
 #### Skill overview
 
 - **Signature skill**: speed `slow`, debuffs `average`
-- **Ultimate**: speed `fast`, first cast speed `fast`, debuffs `average`, damage `high`
+- **Ultimate**: speed `fast`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -1624,7 +1624,7 @@ Callan grants **shields at battle start and on ultimate cast**, absorbing damage
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Signature skill (ult)**: speed `fast`, buffs `average`
 - **Non-ultimate**: speed `fast`, damage `average`
 
 ##### Ultimate
@@ -1868,7 +1868,7 @@ Cassadee blesses one ally so their attacks **deal bonus magic damage** to struck
 
 - **Signature skill**: speed `average`, first cast speed `fast`, buffs `average`, damage `low`
 - **Ultimate**: speed `slow`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -2183,7 +2183,7 @@ Contess starts **hidden while recovering energy**, then emerges to heal an ally,
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
+- **Signature skill (ult)**: speed `fast`, heal `average`, buffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`
 
 ##### Ultimate
@@ -2429,8 +2429,8 @@ Cyran opens with **sequential battle-start spells** and a large initial energy b
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, first cast speed `fast`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -2545,9 +2545,9 @@ Daimon fights with an **untargetable companion** named Stitchy that frightens ne
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Signature skill**: speed `fast`, buffs `average`
 - **Ultimate**: speed `slow`, buffs `average`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -2657,7 +2657,7 @@ Damian summons toys that **heal weakest allies, restore energy, stun distant foe
 #### Skill overview
 
 - **Signature skill**: speed `fast`, heal `average`, buffs `average`
-- **Ultimate**: speed `average`, first cast speed `fast`, buffs `average`, damage `high`
+- **Ultimate**: speed `average`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -2933,7 +2933,7 @@ Before battle, Dunlingr **chooses a field rule** that blocks all healing or all 
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, heal `average`, damage `average`
+- **Signature skill (ult)**: speed `slow`, heal `average`, damage `average`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -3072,7 +3072,7 @@ Eironn can **cast his ultimate on any tile at battle start**, pulling nearby ene
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, first cast speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -3184,8 +3184,8 @@ Evie begins **concealed on the enemy side**, gathering intel on nearby foes to r
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `average`, first cast speed `fast`, buffs `average`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `average`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -3308,7 +3308,7 @@ Faramor drops a **circular zone that blocks healing** and deals sustained true d
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -3434,7 +3434,7 @@ Fay heals and buffs **allies within ultimate range**, with steady single-target 
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, heal `average`, buffs `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -3545,7 +3545,7 @@ Florabelle opens with a **battle-start tank summon**, then smashes adjacent tile
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `average`, first cast speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `average`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -3663,7 +3663,7 @@ Frieren begins **concealed and low-priority**, then needs about 15 seconds to **
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -3783,9 +3783,9 @@ Galahad needs her **circular zone to fill** with energy before clones and enhanc
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`
+- **Signature skill**: speed `fast`
 - **Ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -3916,9 +3916,9 @@ Gerda opens with a **battle-start leap** that interrupts nearby enemies and drop
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, heal `average`, damage `high`
+- **Signature skill**: speed `fast`, heal `average`, damage `high`
 - **Ultimate**: speed `average`, heal `average`, damage `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -4139,7 +4139,7 @@ Gunnar anchors a **rear ally on a passive field** that empowers their range and 
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `slow`, buffs `average`, debuffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -4484,9 +4484,9 @@ Harak enters an **enhanced battle-start state** that extends with assists and de
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`
+- **Signature skill**: speed `fast`, buffs `average`, debuffs `average`
 - **Ultimate**: speed `slow`, debuffs `average`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -4618,7 +4618,7 @@ Hepler toggles between **true-form offense** and an alternate **taunt form** tha
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -4869,7 +4869,7 @@ Himmel opens with a **battle-start formation** beside allies, granting petals th
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, heal `average`, buffs `average`, damage `average`
 - **Ultimate**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -5115,9 +5115,9 @@ Hugin shields the **weakest ally** with large barriers, then boosts the **highes
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Signature skill**: speed `fast`, buffs `average`
 - **Ultimate**: speed `average`, first cast speed `fast`, buffs `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Non-ultimate**: speed `fast`, buffs `average`
 
 ##### Ultimate
 
@@ -5212,7 +5212,7 @@ Igor places **battle-start markers** and leaps to them for **AoE explosions**, w
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, damage `average`
+- **Signature skill (ult)**: speed `fast`, damage `average`
 - **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
@@ -5440,7 +5440,7 @@ Isabella bonds the **frontmost ally as companion**, buffing them heavily wheneve
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`
+- **Signature skill (ult)**: speed `slow`, buffs `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`
 
 ##### Ultimate
@@ -5668,9 +5668,9 @@ Kazim opens **invincible in Soaring**, diving at airborne enemies to **mark prey
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Signature skill**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 - **Ultimate**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -5935,7 +5935,7 @@ Kordan drops a **hunting zone** that cuts damage taken and outside healing while
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, buffs `average`, damage `average`
+- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`, damage `average`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -6155,7 +6155,7 @@ Kruger shreds **Phys DEF** on single-target hits, then slashes to knock down foe
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, debuffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -6271,7 +6271,7 @@ Kulu opens by **blocking enemy lanes with debris**, then uses skills that **spla
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, buffs `average`, damage `low`
 - **Ultimate**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -6396,7 +6396,7 @@ Laios summons a **self-regenerating armor construct** on ultimate and confuses e
 
 - **Signature skill**: speed `slow`, heal `average`, buffs `average`
 - **Ultimate**: speed `fast`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`
 
 ##### Ultimate
 
@@ -6615,7 +6615,7 @@ Lily May enters a **defensive ultimate** that interrupts the enemy's cast, drain
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `average`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
+- **Signature skill (ult)**: speed `average`, buffs `average`, debuffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
@@ -6751,7 +6751,7 @@ Lorsan links the **nearest and farthest enemy** at battle start, forcing shared 
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, debuffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -6878,7 +6878,7 @@ Lucca gains a shield, then **interrupts and disarms** an enemy while cleansing h
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -7477,7 +7477,7 @@ Lyca opens by **buffing all allies' attack speed** and fueling the first cast wi
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, damage `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -7599,7 +7599,7 @@ Marcille must **channel every skill**, trading instant casts for heavy payoff on
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, buffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, damage `high`
 
 ##### Ultimate
 
@@ -7840,7 +7840,7 @@ Mehira charms an area with **multi-hit AoE**, then whips a frontal arc that **co
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -7969,7 +7969,7 @@ Mikola generates a **Courage Sphere** that buffs nearby allies and **heals every
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, heal `average`, buffs `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -8182,7 +8182,7 @@ Nara strikes a hero for **scaling damage against low HP ratios**, then yanks out
 #### Skill overview
 
 - **Signature skill**: speed `average`, damage `low`
-- **Ultimate**: speed `fast`, first cast speed `fast`, damage `high`
+- **Ultimate**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, damage `low`
 
 ##### Ultimate
@@ -8307,7 +8307,7 @@ Natsu chooses modes between **stun-heavy frontal AoE** or **greater raw damage**
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, damage `high`
+- **Signature skill (ult)**: speed `fast`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -8545,7 +8545,7 @@ Nerion applies **drowning DoT to controlled enemies**, then bounces attacks betw
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -8665,8 +8665,8 @@ Niru stores an ally soul at battle start so they **keep fighting in spirit form*
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, heal `average`
+- **Non-ultimate**: speed `fast`, heal `average`, damage `high`
 
 ##### Ultimate
 
@@ -8875,9 +8875,9 @@ Pandora's ultimate **CCs every unit except herself**, freezing the entire field 
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Signature skill**: speed `fast`, buffs `average`
 - **Ultimate**: speed `slow`, debuffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`
 
 ##### Ultimate
 
@@ -8996,7 +8996,7 @@ Pang channels then **bursts AoE**, entering a stance with ATK and haste where st
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `average`, buffs `average`, debuffs `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -9127,7 +9127,7 @@ Parisa marks with flowers for **AoE ultimate damage**, then boosts **attack spee
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -9342,7 +9342,7 @@ Phraesto sacrifices max HP to **summon an Illusion that casts all his skills**, 
 
 - **Signature skill**: speed `slow`, first cast speed `fast`, buffs `average`, damage `low`
 - **Ultimate**: speed `average`, damage `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -9588,7 +9588,7 @@ Ravion assigns **objectives to allies**; completing them grants energy, ATK, and
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -9722,9 +9722,9 @@ Reinier swaps **symmetrical ally-enemy positions at battle start**, disrupting e
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, heal `average`
+- **Signature skill**: speed `fast`, heal `average`
 - **Ultimate**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -9960,7 +9960,7 @@ Rowan restores **energy to surrounding allies** on ultimate and places **consuma
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, buffs `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -10218,7 +10218,7 @@ Salazer summons **flying swords** on ultimate while arc strikes **add bonus hits
 
 - **Signature skill**: speed `fast`, damage `average`
 - **Ultimate**: speed `average`, buffs `average`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -10333,7 +10333,7 @@ Satrana goes **invincible during ultimate** while dealing continuous AoE, then a
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, buffs `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -10447,7 +10447,7 @@ Scarlita slashes the ground to **send a wave that knocks foes to the edge**, the
 
 - **Signature skill**: speed `fast`
 - **Ultimate**: speed `average`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -10694,9 +10694,9 @@ Shadewing applies **sustained DoT scaling on target lost HP** with his ultimate,
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`
+- **Signature skill**: speed `fast`, buffs `average`, debuffs `average`
 - **Ultimate**: speed `slow`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -11042,7 +11042,7 @@ Silven builds damage around **flying blade summons** and marks that detonate whe
 
 - **Signature skill**: speed `fast`, damage `high`
 - **Ultimate**: speed `fast`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -11156,9 +11156,9 @@ Silvina opens by **dashing to the closest symmetrical enemy**, landing burst dam
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, damage `average`
+- **Signature skill**: speed `fast`, damage `average`
 - **Ultimate**: speed `fast`, debuffs `average`, damage `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -11508,7 +11508,7 @@ Solise attaches **healing companions** to each non-summoned ally, then blooms th
 #### Skill overview
 
 - **Signature skill (ult)**: speed `fast`, heal `average`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -11611,9 +11611,9 @@ Sonja forms a **pact with left and right allies at battle start**, continuously 
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Signature skill**: speed `fast`, buffs `average`
 - **Ultimate**: speed `fast`, damage `high`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -11840,7 +11840,7 @@ Sylphira builds an **active score** that raises ATK and Haste, then unleashes a 
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, buffs `average`, debuffs `average`, damage `high`
+- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -12329,9 +12329,9 @@ Thador designates a **rear ally bond** that grants crit, then shields both partn
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Signature skill**: speed `fast`, buffs `average`
 - **Ultimate**: speed `slow`, damage `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `high`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -12566,7 +12566,7 @@ Tilaya fights behind an **auto-regenerating shield** that fuels both defense and
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
+- **Signature skill (ult)**: speed `fast`, heal `average`, buffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -12675,7 +12675,7 @@ The Twins inspire allied **haste through a linked duo performance**, and linked 
 #### Skill overview
 
 - **Signature skill (ult)**: speed `average`, buffs `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `low`
 
 ##### Ultimate
 
@@ -12936,7 +12936,7 @@ Vala **marks an enemy** and prioritizes them, **absorbing their energy** on each
 #### Skill overview
 
 - **Signature skill (ult)**: speed `slow`, damage `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -13205,8 +13205,8 @@ Valka applies **Panic stacks through normal attacks**, then slashes panicked tar
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `fast`, first cast speed `fast`, heal `average`, debuffs `average`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `fast`, heal `average`, debuffs `average`, damage `low`
+- **Non-ultimate**: speed `fast`, buffs `average`, damage `high`
 
 ##### Ultimate
 
@@ -13330,8 +13330,8 @@ Velara summons **magic circles** that awaken to affect nearby units, extending t
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, heal `average`, debuffs `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Signature skill (ult)**: speed `slow`, heal `average`, debuffs `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -13474,7 +13474,7 @@ Viperian **spends HP to send possessing summons** onto all enemies, spreading pr
 #### Skill overview
 
 - **Signature skill**: speed `slow`, damage `average`
-- **Ultimate**: speed `fast`, first cast speed `fast`, heal `average`, damage `average`
+- **Ultimate**: speed `fast`, heal `average`, damage `average`
 - **Non-ultimate**: speed `average`, heal `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
@@ -13588,7 +13588,7 @@ Walker fires **sequential frontal shots** that stun each target hit, and his nor
 #### Skill overview
 
 - **Signature skill (ult)**: speed `average`, damage `low`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `average`
+- **Non-ultimate**: speed `fast`, buffs `average`, debuffs `average`, damage `average`
 
 ##### Ultimate
 
@@ -13702,9 +13702,9 @@ At battle start, Zandrok sends **illusions charging forward** that **destroy obs
 
 #### Skill overview
 
-- **Signature skill**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Signature skill**: speed `fast`, buffs `average`
 - **Ultimate**: speed `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, buffs `average`
+- **Non-ultimate**: speed `fast`, buffs `average`
 
 ##### Ultimate
 
@@ -13806,8 +13806,8 @@ Zanie **deploys laser turrets at reduced max HP**, then boosts **ATK and ATK spe
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`
-- **Non-ultimate**: speed `fast`, first cast speed `fast`, heal `average`, buffs `average`
+- **Signature skill (ult)**: speed `slow`, buffs `average`
+- **Non-ultimate**: speed `fast`, heal `average`, buffs `average`
 
 ##### Ultimate
 
@@ -13929,7 +13929,7 @@ Zorya cycles **dormant and awake states**, jumping to nearby enemies for **AoE d
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `average`, first cast speed `fast`, buffs `average`, damage `high`
+- **Signature skill (ult)**: speed `average`, buffs `average`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, debuffs `average`, damage `high`
 
 ##### Ultimate

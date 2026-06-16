@@ -6616,6 +6616,8 @@ SUMMONER_STATIONARY_TAG = "summoner"
 # Energy assumed to fill at this rate (energy/second).
 ENERGY_FILL_RATE: float = 100.0
 ULT_ENERGY_CAPACITY: float = 1000.0
+# Matches `high-initial-energy` behavior tag (effective IE at full build).
+HIGH_INITIAL_ENERGY_THRESHOLD: float = 500.0
 
 # Weight applied to initial_cd of non-ult skills (first-use delay
 # matters less than sustained cooldown).
@@ -8231,6 +8233,61 @@ _BATTLE_START_ULTIMATE_CAST_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"when a battle starts.{0,120}casts? ultimate\b", re.I),
 )
 
+_EXTRA_INITIAL_ENERGY_RE = re.compile(
+    r"(?:Gains extra|extra)\s+(\d+)\s+initial\s+Energy", re.I
+)
+
+_FREE_FIRST_ULTIMATE_CAST_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(
+        r"for the first time in each battle without consuming energy", re.I
+    ),
+    re.compile(
+        r"casts? ultimate\b.{0,120}without consuming energy", re.I
+    ),
+    re.compile(
+        r"without consuming energy.{0,120}casts? ultimate\b", re.I
+    ),
+)
+
+
+def _extra_initial_energy_from_text(text: str) -> float:
+    return max(
+        (float(m.group(1)) for m in _EXTRA_INITIAL_ENERGY_RE.finditer(text)),
+        default=0.0,
+    )
+
+
+def _hero_effective_ultimate_initial_energy(
+    all_skills: list[SkillMeta] | None,
+) -> float:
+    """Ultimate meta IE plus the largest ascension bonus anywhere in the kit."""
+    if not all_skills:
+        return 0.0
+    ult = _skill_by_section(all_skills, "Ultimate")
+    base = (
+        ult.initial_energy
+        if ult and ult.initial_energy is not None
+        else 0.0
+    )
+    extra = 0.0
+    for skill in all_skills:
+        if skill.text:
+            extra = max(extra, _extra_initial_energy_from_text(skill.text))
+    return base + extra
+
+
+def _ultimate_first_cast_seconds(
+    skill: SkillMeta | None,
+    all_skills: list[SkillMeta] | None = None,
+) -> float:
+    """Seconds until the ultimate can begin casting (energy fill + initial CD)."""
+    if skill is None:
+        return float("inf")
+    eff_ie = _hero_effective_ultimate_initial_energy(all_skills)
+    icd = skill.initial_cd or 0.0
+    fill = max(0.0, (ULT_ENERGY_CAPACITY - eff_ie) / ENERGY_FILL_RATE)
+    return icd + fill
+
 
 def _section_has_fast_first_cast(
     text: str,
@@ -8238,27 +8295,48 @@ def _section_has_fast_first_cast(
     skill: SkillMeta | None,
     all_skills: list[SkillMeta] | None = None,
 ) -> bool:
-    """True when the skill's opener applies at battle start, not on cooldown."""
+    """True when the skill's first use is unusually quick."""
+    if section == "Ultimate" and skill:
+        eff_ie = _hero_effective_ultimate_initial_energy(all_skills)
+        first_cast = _ultimate_first_cast_seconds(skill, all_skills)
+        if (
+            eff_ie >= HIGH_INITIAL_ENERGY_THRESHOLD
+            and first_cast <= CASTING_SPEED_FAST_THRESHOLD
+        ):
+            return True
+        if all_skills:
+            combined = " ".join(s.text for s in all_skills if s.text)
+            if any(
+                p.search(combined) for p in _BATTLE_START_ULTIMATE_CAST_RES
+            ):
+                return True
+            if any(
+                p.search(combined) for p in _FREE_FIRST_ULTIMATE_CAST_RES
+            ):
+                return True
+        return False
+
     if text.strip():
         if text_has_start_of_battle_ultimate(text, section):
             return True
-        if section == "Ultimate" and re.search(
-            r"passive\.\s*when a battle starts", text, re.I
-        ):
-            return True
         if any(p.search(text) for p in _BATTLE_START_OPENER_RES):
             return True
-    if section == "Ultimate" and all_skills:
-        combined = " ".join(s.text for s in all_skills if s.text)
-        if any(p.search(combined) for p in _BATTLE_START_ULTIMATE_CAST_RES):
-            return True
-    if skill and section == "Ultimate":
-        ie = skill.initial_energy if skill.initial_energy is not None else 0.0
-        icd = skill.initial_cd or 0.0
-        ch = skill.channel_duration or 0.0
-        if ie >= ULT_ENERGY_CAPACITY and icd + ch <= CASTING_SPEED_FAST_THRESHOLD:
-            return True
     return False
+
+
+def _normalize_first_cast_speed(speed: str, first_cast_speed: str) -> str:
+    if first_cast_speed == "none" or first_cast_speed == speed:
+        return "none"
+    return first_cast_speed
+
+
+def _normalize_skill_overview_metrics(
+    metrics: SkillOverviewMetrics,
+) -> SkillOverviewMetrics:
+    metrics.first_cast_speed = _normalize_first_cast_speed(
+        metrics.speed, metrics.first_cast_speed
+    )
+    return metrics
 
 
 def _section_first_cast_speed_label(
@@ -8315,22 +8393,24 @@ def compute_section_skill_metrics(
         return _empty_skill_overview_metrics()
     primary = hero.damage_type or "Physical"
     heal, buffs, debuffs = _section_effect_metrics(hero, section)
-    return SkillOverviewMetrics(
-        speed=_section_speed_label(speeds, section, True),
-        first_cast_speed=_section_first_cast_speed_label(
-            speeds, section, skills, True
-        ),
-        damage=_damage_score_to_magnitude(
-            _section_damage_score(hero, section, primary, skills),
-            damage_thresholds,
-        ),
-        heal=heal,
-        buffs=buffs,
-        debuffs=debuffs,
-        damage_types=_damage_type_scores_to_magnitudes(
-            _section_damage_type_scores(hero, section, primary, skills),
-            damage_type_thresholds,
-        ),
+    return _normalize_skill_overview_metrics(
+        SkillOverviewMetrics(
+            speed=_section_speed_label(speeds, section, True),
+            first_cast_speed=_section_first_cast_speed_label(
+                speeds, section, skills, True
+            ),
+            damage=_damage_score_to_magnitude(
+                _section_damage_score(hero, section, primary, skills),
+                damage_thresholds,
+            ),
+            heal=heal,
+            buffs=buffs,
+            debuffs=debuffs,
+            damage_types=_damage_type_scores_to_magnitudes(
+                _section_damage_type_scores(hero, section, primary, skills),
+                damage_type_thresholds,
+            ),
+        )
     )
 
 
@@ -8377,26 +8457,28 @@ def compute_skill_overview(
     non_ult_first_cast = [
         m.first_cast_speed for m in non_ult_metrics if m.first_cast_speed != "none"
     ]
-    non_ultimate = SkillOverviewMetrics(
-        speed=_p75_label(
-            [m.speed for m in non_ult_metrics], _SPEED_SCORE, _SCORE_TO_SPEED
-        ),
-        first_cast_speed="fast" if "fast" in non_ult_first_cast else "none",
-        damage=_p75_label(
-            [m.damage for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
-        ),
-        heal=_p75_label(
-            [m.heal for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
-        ),
-        buffs=_p75_label(
-            [m.buffs for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
-        ),
-        debuffs=_p75_label(
-            [m.debuffs for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
-        ),
-        damage_types=_aggregate_damage_types_p75(
-            [m.damage_types for m in non_ult_metrics]
-        ),
+    non_ultimate = _normalize_skill_overview_metrics(
+        SkillOverviewMetrics(
+            speed=_p75_label(
+                [m.speed for m in non_ult_metrics], _SPEED_SCORE, _SCORE_TO_SPEED
+            ),
+            first_cast_speed="fast" if "fast" in non_ult_first_cast else "none",
+            damage=_p75_label(
+                [m.damage for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
+            ),
+            heal=_p75_label(
+                [m.heal for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
+            ),
+            buffs=_p75_label(
+                [m.buffs for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
+            ),
+            debuffs=_p75_label(
+                [m.debuffs for m in non_ult_metrics], _MAG_SCORE, _SCORE_TO_MAG
+            ),
+            damage_types=_aggregate_damage_types_p75(
+                [m.damage_types for m in non_ult_metrics]
+            ),
+        )
     )
     return {
         "signature": signature,
@@ -8546,16 +8628,18 @@ def _skill_overview_metrics(
     if isinstance(raw, SkillOverviewMetrics):
         return raw
     if isinstance(raw, dict) and raw:
-        return SkillOverviewMetrics(
-            speed=raw.get("speed", "none"),
-            first_cast_speed=raw.get("first_cast_speed", "none"),
-            damage=raw.get("damage", "none"),
-            heal=raw.get("heal", "none"),
-            buffs=raw.get("buffs", "none"),
-            debuffs=raw.get("debuffs", "none"),
-            damage_types=dict(
-                raw.get("damage_types") or raw.get("true_damage", {})
-            ),
+        return _normalize_skill_overview_metrics(
+            SkillOverviewMetrics(
+                speed=raw.get("speed", "none"),
+                first_cast_speed=raw.get("first_cast_speed", "none"),
+                damage=raw.get("damage", "none"),
+                heal=raw.get("heal", "none"),
+                buffs=raw.get("buffs", "none"),
+                debuffs=raw.get("debuffs", "none"),
+                damage_types=dict(
+                    raw.get("damage_types") or raw.get("true_damage", {})
+                ),
+            )
         )
     return _empty_skill_overview_metrics()
 

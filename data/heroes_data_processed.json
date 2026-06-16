@@ -719,7 +719,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -1335,7 +1335,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "average",
@@ -1347,7 +1347,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "none",
@@ -1360,7 +1360,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -2386,7 +2386,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -3298,7 +3298,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
@@ -4384,7 +4384,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -4395,7 +4395,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -4950,7 +4950,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -4962,7 +4962,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -6002,7 +6002,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "none",
@@ -6026,7 +6026,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -6997,7 +6997,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -7453,7 +7453,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -7462,7 +7462,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -8448,7 +8448,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -9830,7 +9830,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "average",
@@ -9841,7 +9841,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "average",
@@ -10908,7 +10908,7 @@
         "skill_overview": {
           "signature": {
             "speed": "average",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -10920,7 +10920,7 @@
           },
           "ultimate": {
             "speed": "average",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -10932,7 +10932,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -11427,7 +11427,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -11448,7 +11448,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -11901,7 +11901,7 @@
           },
           "ultimate": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -12974,7 +12974,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "none",
@@ -12987,7 +12987,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "none",
@@ -13453,7 +13453,7 @@
         "skill_overview": {
           "signature": {
             "speed": "average",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -13465,7 +13465,7 @@
           },
           "ultimate": {
             "speed": "average",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -14135,7 +14135,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "average",
@@ -14564,7 +14564,7 @@
         "skill_overview": {
           "signature": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -14575,7 +14575,7 @@
           },
           "ultimate": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -14586,7 +14586,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "average",
@@ -15116,7 +15116,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -15517,7 +15517,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "average",
@@ -16011,7 +16011,7 @@
         "skill_overview": {
           "signature": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -16022,7 +16022,7 @@
           },
           "ultimate": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -16608,7 +16608,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -17144,7 +17144,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "none",
@@ -17165,7 +17165,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -17684,7 +17684,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "none",
@@ -17708,7 +17708,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -18896,7 +18896,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -18909,7 +18909,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -20193,7 +20193,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -20214,7 +20214,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "average",
@@ -20854,7 +20854,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -21867,7 +21867,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -22863,7 +22863,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -22881,7 +22881,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -23238,7 +23238,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
@@ -23250,7 +23250,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
@@ -24311,7 +24311,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -24320,7 +24320,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -25468,7 +25468,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -25492,7 +25492,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -26528,7 +26528,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -26539,7 +26539,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -27503,7 +27503,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -28049,7 +28049,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -28655,7 +28655,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "average",
@@ -29795,7 +29795,7 @@
         "skill_overview": {
           "signature": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -29806,7 +29806,7 @@
           },
           "ultimate": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -30262,7 +30262,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "average",
@@ -30780,7 +30780,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -33219,7 +33219,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -33819,7 +33819,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "none",
@@ -34809,7 +34809,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "average",
@@ -35235,7 +35235,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "average",
@@ -36296,7 +36296,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -36901,7 +36901,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -36913,7 +36913,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "none",
@@ -37941,7 +37941,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -38343,7 +38343,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "none",
@@ -38352,7 +38352,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "none",
@@ -38361,7 +38361,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "none",
@@ -39346,7 +39346,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -39367,7 +39367,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "average",
@@ -39942,7 +39942,7 @@
         "skill_overview": {
           "signature": {
             "speed": "average",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -39954,7 +39954,7 @@
           },
           "ultimate": {
             "speed": "average",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -40344,7 +40344,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -41427,7 +41427,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -42682,7 +42682,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -43194,7 +43194,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "none",
@@ -43214,7 +43214,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "none",
@@ -44190,7 +44190,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "average",
             "buffs": "average",
@@ -45328,7 +45328,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -45820,7 +45820,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -46355,7 +46355,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -47446,7 +47446,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -47468,7 +47468,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -48816,7 +48816,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -49228,7 +49228,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "none",
@@ -49252,7 +49252,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -50775,7 +50775,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "average",
@@ -51173,7 +51173,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -51193,7 +51193,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
             "buffs": "average",
@@ -52384,7 +52384,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -52396,7 +52396,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "first_cast_speed": "none",
+            "first_cast_speed": "fast",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -54422,7 +54422,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -54443,7 +54443,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -55304,7 +55304,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "average",
@@ -55315,7 +55315,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "average",
@@ -56466,7 +56466,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "average",
@@ -57479,7 +57479,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "none",
@@ -57490,7 +57490,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "low",
             "heal": "average",
             "buffs": "none",
@@ -57501,7 +57501,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -57999,7 +57999,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "none",
@@ -58008,7 +58008,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "none",
@@ -58017,7 +58017,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -58471,7 +58471,7 @@
           },
           "ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "average",
             "buffs": "none",
@@ -59062,7 +59062,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
             "buffs": "average",
@@ -59451,7 +59451,7 @@
         "skill_overview": {
           "signature": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -59469,7 +59469,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -59988,7 +59988,7 @@
         "skill_overview": {
           "signature": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -59997,7 +59997,7 @@
           },
           "ultimate": {
             "speed": "slow",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "none",
             "buffs": "average",
@@ -60006,7 +60006,7 @@
           },
           "non_ultimate": {
             "speed": "fast",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
             "buffs": "average",
@@ -60641,7 +60641,7 @@
         "skill_overview": {
           "signature": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
@@ -60653,7 +60653,7 @@
           },
           "ultimate": {
             "speed": "average",
-            "first_cast_speed": "fast",
+            "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
             "buffs": "average",
