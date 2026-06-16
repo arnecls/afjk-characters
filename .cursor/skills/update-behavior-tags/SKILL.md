@@ -128,7 +128,7 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `assassin` | Picks isolated/backline with burst | General focus-fire marksmen |
 | `self-repositioner` | **Regularly** jumps/dashes/teleports self | One incidental leap |
 | `hp-scaling` | Scales on **HP values** | Shield-value scaling |
-| `invincibility` | Meaningful immunity windows | Brief immunity already covered by `transformation` |
+| `invincibility` | Meaningful immunity windows | Brief immunity already covered by `transformation`; do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
 
 ## Reporting
 

@@ -62,6 +62,10 @@ reduction without ticks.
 - `cheat-death` — self survives fatal blow (Brutus, Thoran, Berial)
 - `revive` — ally returns after defeat (Marcille skill 4)
 
+Brutus Indomitable is **both**: `cheat-death` for the fatal-blow save, then
+`invincibility` for the follow-up window ("immune to all damage and becomes
+unaffected"). Read prose immunity phrasing even when not labeled Invincible.
+
 ## Undertagged kits
 
 Some identities lack a precise enum tag. Prefer an honest small set over
