@@ -673,7 +673,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "avg attack range 8.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Radiant Rain",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "average",
@@ -3837,7 +3837,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "high",
+        "true": "average",
         "hp_loss": "high",
         "max_hp": "high"
       },
@@ -7903,7 +7903,7 @@
             "debuffs": "average",
             "damage_types": {
               "Magic": "high",
-              "Max HP-based damage": "average"
+              "Max HP-based damage": "low"
             }
           }
         }
@@ -13412,7 +13412,7 @@
         "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
-        "non_ult_speed": "average",
+        "non_ult_speed": "slow",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -16529,10 +16529,10 @@
         "casting_speed": "fast",
         "signature_skill_name": "Zoltraak",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 7.0,
         "placement_constraints": [
@@ -16543,7 +16543,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -16555,7 +16555,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -24747,7 +24747,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "high"
+        "max_hp": "average"
       },
       "benefit_stats": [
         "atk",
@@ -24809,7 +24809,7 @@
       "long_name": "Kazim - Falcon's Vow",
       "faction": "mauler",
       "class": "marksman",
-      "role_category": "damage_dealer",
+      "role_category": "specialist",
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
@@ -25430,7 +25430,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Max HP-based damage": "average",
+              "Max HP-based damage": "high",
               "Physical": "average"
             }
           },
@@ -26490,7 +26490,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "low"
             }
           },
           "ultimate": {
@@ -26501,7 +26501,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "average"
+              "Physical": "low"
             }
           },
           "non_ultimate": {
@@ -26935,7 +26935,7 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "average",
-              "Max HP-based damage": "average",
+              "Max HP-based damage": "low",
               "Physical": "low"
             }
           }
@@ -36227,8 +36227,8 @@
         "casting_speed": "fast",
         "signature_skill_name": "Phantom Chains",
         "signature_skill_is_ult": false,
-        "signature_skill_speed": "fast",
-        "synergy_signature_speed": "fast",
+        "signature_skill_speed": "average",
+        "synergy_signature_speed": "average",
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
         "non_ult_speed": "average",
@@ -36236,7 +36236,7 @@
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "fast",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -37336,7 +37336,7 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
-        "non_ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": 10.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -41868,7 +41868,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "average",
+        "max_hp": "high",
         "true": "low"
       },
       "benefit_stats": [
@@ -45240,7 +45240,7 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 1.0 tiles",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Spirit Shackles",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
@@ -46308,7 +46308,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Physical": "high",
+              "Physical": "average",
               "Max HP-based damage": "average"
             }
           }
@@ -51646,7 +51646,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "average"
+        "max_hp": "low"
       },
       "benefit_stats": [
         "haste",
@@ -52307,7 +52307,7 @@
       ],
       "damage_magnitudes": {
         "max_hp": "average",
-        "true": "average"
+        "true": "low"
       },
       "benefit_stats": [
         "atk",
@@ -52740,7 +52740,7 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "avg attack range 3.0 tiles",
-        "casting_speed": "fast",
+        "casting_speed": "average",
         "signature_skill_name": "Divine Conflagration",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
@@ -53887,7 +53887,7 @@
             "debuffs": "average",
             "damage_types": {
               "Physical": "low",
-              "Max HP-based damage": "average",
+              "Max HP-based damage": "low",
               "True damage": "low"
             }
           }

@@ -643,10 +643,6 @@
         {
           "score": 24.0,
           "name": "Shadewing"
-        },
-        {
-          "score": 6.0,
-          "name": "Sonja"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -1394,6 +1390,13 @@
           "score": 6.48
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 6.075
+        },
+        {
           "provider": "Galahad",
           "reasons": [
             "Shield via Shield (single target, average)",
@@ -1438,13 +1441,6 @@
             "Shield via Shield (single target, average)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 4.05
         },
         {
           "provider": "Nara",
@@ -2173,6 +2169,14 @@
           "score": 16.875
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 16.875
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "Haste via Haste buff (multiple targets, average) `signature fuel`",
@@ -2236,14 +2240,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 11.8125
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 11.25
         },
         {
           "provider": "Koko",
@@ -3420,6 +3416,13 @@
           "score": 9.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Zanie",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -3449,13 +3452,6 @@
             "Shield via Shield (single target, average)"
           ],
           "score": 7.5
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Dunlingr",
@@ -9779,6 +9775,10 @@
         },
         {
           "score": 7.6499999999999995,
+          "name": "Frieren"
+        },
+        {
+          "score": 7.6499999999999995,
           "name": "Pippa"
         },
         {
@@ -9972,6 +9972,14 @@
           "score": 60.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Dionel"
+          ],
+          "score": 34.5
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -10024,14 +10032,6 @@
             "Grants 4 distinct stat buffs to Dionel"
           ],
           "score": 29.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Grants 3 distinct stat buffs to Dionel"
-          ],
-          "score": 25.5
         },
         {
           "provider": "Pandora",
@@ -11038,10 +11038,6 @@
           "name": "Satrana"
         },
         {
-          "score": 9.6,
-          "name": "Korin"
-        },
-        {
           "score": 8.0,
           "name": "Lucy"
         },
@@ -11317,6 +11313,13 @@
           "score": 8.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 6.075
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -11376,13 +11379,6 @@
         },
         {
           "provider": "Mikola",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 4.05
-        },
-        {
-          "provider": "Shakir",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
@@ -12055,10 +12051,6 @@
           "name": "Pang"
         },
         {
-          "score": 35.1456,
-          "name": "Frieren"
-        },
-        {
           "score": 33.6456,
           "name": "Atalanta"
         },
@@ -12223,6 +12215,10 @@
           "name": "Florabelle"
         },
         {
+          "score": 21.0,
+          "name": "Frieren"
+        },
+        {
           "score": 20.91,
           "name": "Kazim"
         },
@@ -12265,6 +12261,10 @@
         {
           "score": 18.6456,
           "name": "Kafra"
+        },
+        {
+          "score": 18.393,
+          "name": "Nara"
         },
         {
           "score": 18.0,
@@ -12345,10 +12345,6 @@
         {
           "score": 9.66,
           "name": "Phraesto"
-        },
-        {
-          "score": 8.16,
-          "name": "Nara"
         },
         {
           "score": 8.16,
@@ -12979,6 +12975,14 @@
           "score": 30.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Faramor"
+          ],
+          "score": 25.5
+        },
+        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -13033,14 +13037,6 @@
             "Grants 2 distinct stat buffs to Faramor"
           ],
           "score": 20.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Grants 3 distinct stat buffs to Faramor"
-          ],
-          "score": 19.5
         },
         {
           "provider": "Zandrok",
@@ -14231,227 +14227,128 @@
     "Frieren": {
       "synergies": [
         {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK via ATK buff (single target, high)",
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 5.31
-        },
-        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
-            "Haste via Haste buff (all units, high) `signature fuel`",
-            "Energy via Energy recovery (multiple targets, low) `signature fuel`",
-            "ATK SPD via Haste buff (all units, high) `signature fuel`"
+            "Haste via Haste buff (all units, high) `signature fuel`"
           ],
-          "score": 35.1456
+          "score": 21.0
         },
         {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK buff (all units, high)",
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+            "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
-          "score": 26.25
+          "score": 21.0
         },
         {
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
-            "Haste via Haste buff (multiple targets, high) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
           ],
-          "score": 22.874999999999996
+          "score": 15.0
         },
         {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK buff (single target, high)",
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+            "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
-          "score": 15.75
+          "score": 10.5
         },
         {
           "provider": "Damian",
           "reasons": [
-            "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
+            "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
-          "score": 14.34375
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 11.0412
-        },
-        {
-          "provider": "Lorsan",
-          "reasons": [
-            "Haste via Haste buff (single target, high) `signature fuel`",
-            "ATK SPD via Haste buff (single target, high) `signature fuel`"
-          ],
-          "score": 8.4375
-        },
-        {
-          "provider": "Tasi",
-          "reasons": [
-            "Haste via Haste buff (single target, high) `signature fuel`",
-            "ATK SPD via Haste buff (single target, high) `signature fuel`"
-          ],
-          "score": 8.4375
-        },
-        {
-          "provider": "Vala",
-          "reasons": [
-            "Haste via Haste buff (single target, high) `signature fuel`",
-            "ATK SPD via Haste buff (single target, high) `signature fuel`"
-          ],
-          "score": 8.4375
+          "score": 7.6499999999999995
         },
         {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, low)",
-            "Haste via Haste buff (single target, average) `signature fuel`",
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
+            "Haste via Haste buff (single target, average) `signature fuel`"
           ],
-          "score": 7.8
+          "score": 4.5
+        },
+        {
+          "provider": "Lorsan",
+          "reasons": [
+            "Haste via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Tasi",
+          "reasons": [
+            "Haste via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Vala",
+          "reasons": [
+            "Haste via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Zandrok",
           "reasons": [
-            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+            "Haste via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
-          "score": 6.375
+          "score": 3.4
         },
         {
           "provider": "Galahad",
           "reasons": [
-            "Haste via Haste buff (single target, average) `signature fuel`",
-            "ATK SPD via Haste buff (single target, average) `signature fuel`"
+            "Haste via Haste buff (single target, average) `signature fuel`"
           ],
-          "score": 5.625
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 4.62
-        },
-        {
-          "provider": "Lyca",
-          "reasons": [
-            "Energy via Energy recovery (all units, low) `signature fuel`",
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
-          ],
-          "score": 4.401
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 4.082400000000001
-        },
-        {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy recovery (area, high) `signature fuel`"
-          ],
-          "score": 4.082400000000001
+          "score": 3.0
         },
         {
           "provider": "Hepler",
           "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 2.8125
+          "score": 1.5
         },
         {
           "provider": "Marcille",
           "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 2.8125
+          "score": 1.5
         },
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 2.8125
+          "score": 1.5
         },
         {
           "provider": "Soren",
           "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 2.8125
+          "score": 1.5
         },
         {
           "provider": "Velara",
           "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 2.8125
+          "score": 1.5
         },
         {
           "provider": "Zorya",
           "reasons": [
-            "Haste via Haste buff (single target, low) `signature fuel`",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+            "Haste via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 2.8125
-        },
-        {
-          "provider": "Valka",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 1.6199999999999999
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Energy via Energy recovery (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
-          "provider": "Thoran",
-          "reasons": [
-            "Energy via Energy recovery (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
-          "provider": "Pandora",
-          "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 0.5103000000000001
-        },
-        {
-          "provider": "Thador",
-          "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`"
-          ],
-          "score": 0.5103000000000001
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -15337,6 +15234,13 @@
           "score": 9.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -15355,13 +15259,6 @@
           "provider": "Fay",
           "reasons": [
             "Healing via Direct healing (arc, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 6.0
         },
@@ -16030,10 +15927,6 @@
           "name": "Silven"
         },
         {
-          "score": 33.0,
-          "name": "Dionel"
-        },
-        {
           "score": 32.4,
           "name": "Perseus"
         },
@@ -16056,10 +15949,6 @@
         {
           "score": 6.0,
           "name": "Zanie"
-        },
-        {
-          "score": 5.31,
-          "name": "Frieren"
         },
         {
           "score": 3.81,
@@ -17074,6 +16963,14 @@
           "score": 10.5
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "Life Drain via Lifedrain buff (single target, low)"
+          ],
+          "score": 10.5
+        },
+        {
           "provider": "Hugin",
           "reasons": [
             "Haste via Haste buff (multiple targets, high) `signature fuel`"
@@ -17094,14 +16991,6 @@
             "Healing via Direct healing (single target, high)"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Life Drain via Lifedrain buff (single target, low)"
-          ],
-          "score": 7.5
         },
         {
           "provider": "Pandora",
@@ -17556,6 +17445,13 @@
           "score": 9.4
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -17567,13 +17463,6 @@
           "reasons": [
             "ATK via ATK buff (single target, low)",
             "Max HP via Max HP buff (single target, high)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 6.0
         },
@@ -18500,6 +18389,13 @@
           "score": 9.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Mehira",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -18530,13 +18426,6 @@
             "Enables Party composition via Support (party slot)"
           ],
           "score": 6.275
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Alsa",
@@ -19561,10 +19450,6 @@
         },
         {
           "score": 22.874999999999996,
-          "name": "Frieren"
-        },
-        {
-          "score": 22.874999999999996,
           "name": "Pang"
         },
         {
@@ -19677,6 +19562,10 @@
         },
         {
           "score": 15.0,
+          "name": "Frieren"
+        },
+        {
+          "score": 15.0,
           "name": "Galahad"
         },
         {
@@ -19710,6 +19599,10 @@
         {
           "score": 12.075,
           "name": "Aliceth"
+        },
+        {
+          "score": 12.075,
+          "name": "Nara"
         },
         {
           "score": 11.25,
@@ -21607,6 +21500,13 @@
           "score": 7.5
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 6.075
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -21673,13 +21573,6 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 4.082400000000001
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 4.05
         },
         {
           "provider": "Salazer",
@@ -22283,12 +22176,8 @@
       ],
       "beneficiaries": [
         {
-          "score": 15.75,
+          "score": 10.5,
           "name": "Frieren"
-        },
-        {
-          "score": 7.5,
-          "name": "Lucy"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -22297,13 +22186,6 @@
       "replacements": {
         "buff": [
           {
-            "name": "Pang",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
             "name": "Evie",
             "score": 0.8929,
             "matches": [
@@ -22311,8 +22193,15 @@
             ]
           },
           {
-            "name": "Contess",
-            "score": 0.7653,
+            "name": "Ravion",
+            "score": 0.8571,
+            "matches": [
+              "ATK"
+            ]
+          },
+          {
+            "name": "Pang",
+            "score": 0.8393,
             "matches": [
               "ATK"
             ]
@@ -22323,7 +22212,7 @@
         "similar_skills": [
           {
             "name": "Walker",
-            "score": 0.5714,
+            "score": 0.6857,
             "matches": [
               "aoe-damage",
               "battle-start-burst",
@@ -22333,7 +22222,7 @@
           },
           {
             "name": "Parisa",
-            "score": 0.5,
+            "score": 0.6,
             "matches": [
               "ally-buffer",
               "aoe-damage",
@@ -22352,7 +22241,7 @@
         ],
         "damage": [
           {
-            "name": "Athalia",
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -22360,14 +22249,15 @@
             ]
           },
           {
-            "name": "Galahad",
+            "name": "Kruger",
             "score": 1.0,
             "matches": [
+              "Physical",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Kruger",
+            "name": "Nara",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -22424,33 +22314,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Aliceth",
-            "score": 0.6755,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies"
-            ]
-          },
-          {
-            "name": "Vala",
-            "score": 0.6605,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies",
-              "Crowd Control"
-            ]
-          },
-          {
-            "name": "Perseus",
-            "score": 0.6037,
-            "matches": [
-              "Damage",
-              "Crowd Control"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Koko": {
@@ -23340,6 +23204,13 @@
           "score": 9.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 8.1
+        },
+        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -23385,13 +23256,6 @@
             "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 6.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Dunlingr",
@@ -23666,6 +23530,13 @@
           "score": 13.5
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 13.5
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -23690,13 +23561,6 @@
         },
         {
           "provider": "Mikola",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Shakir",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
@@ -24767,6 +24631,13 @@
           "score": 19.3
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 18.0
+        },
+        {
           "provider": "Florabelle",
           "reasons": [
             "ATK via Summon damage buff (summons only, average)",
@@ -24861,13 +24732,6 @@
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
             "Healing via Direct healing (multiple targets, high)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 12.0
         },
@@ -25226,6 +25090,14 @@
           "score": 30.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 22.5
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
@@ -25249,14 +25121,6 @@
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 19.125
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Zandrok",
@@ -25794,6 +25658,14 @@
           "score": 33.45
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Lily May"
+          ],
+          "score": 30.825
+        },
+        {
           "provider": "Solise",
           "reasons": [
             "Grants 2 distinct stat buffs to Lily May"
@@ -25824,14 +25696,6 @@
             "Grants 4 distinct stat buffs to Lily May (start of battle)"
           ],
           "score": 25.710299999999997
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Grants 3 distinct stat buffs to Lily May"
-          ],
-          "score": 24.3
         },
         {
           "provider": "Zandrok",
@@ -27447,6 +27311,13 @@
           "score": 8.16
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 8.1
+        },
+        {
           "provider": "Gerda",
           "reasons": [
             "Healing via Healing over time (area, average)"
@@ -27484,13 +27355,6 @@
             "ATK SPD via Haste buff (single target, average) `signature fuel`"
           ],
           "score": 5.7
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Velara",
@@ -27885,6 +27749,13 @@
           "score": 11.25
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 11.25
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -27908,13 +27779,6 @@
         },
         {
           "provider": "Mikola",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 7.5
-        },
-        {
-          "provider": "Shakir",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
@@ -29373,10 +29237,6 @@
         {
           "score": 3.5999999999999996,
           "name": "Contess"
-        },
-        {
-          "score": 3.5999999999999996,
-          "name": "Nara"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -30424,6 +30284,15 @@
           "score": 26.25
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "Life Drain via Lifedrain buff (single target, low)",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 24.0
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`",
@@ -30476,15 +30345,6 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 17.0544
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Life Drain via Lifedrain buff (single target, low)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 16.5
         },
         {
           "provider": "Lorsan",
@@ -30912,6 +30772,14 @@
           "score": 28.5
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 22.5
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Healing via Direct healing (area, low)",
@@ -30936,14 +30804,6 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 17.0544
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Solise",
@@ -31336,10 +31196,6 @@
         },
         {
           "score": 26.25,
-          "name": "Frieren"
-        },
-        {
-          "score": 26.25,
           "name": "Pang"
         },
         {
@@ -31357,6 +31213,10 @@
         {
           "score": 22.5,
           "name": "Parisa"
+        },
+        {
+          "score": 21.0,
+          "name": "Frieren"
         },
         {
           "score": 21.0,
@@ -31409,6 +31269,10 @@
         {
           "score": 19.05,
           "name": "Kafra"
+        },
+        {
+          "score": 19.05,
+          "name": "Nara"
         },
         {
           "score": 16.25,
@@ -31867,69 +31731,217 @@
     "Nara": {
       "synergies": [
         {
+          "provider": "Mikola",
+          "reasons": [
+            "ATK via ATK buff (all units, high)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+          ],
+          "score": 19.05
+        },
+        {
+          "provider": "Twins",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste buff (all units, high) `signature fuel`"
+          ],
+          "score": 18.393
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
-          "score": 13.32
+          "score": 13.536000000000001
+        },
+        {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 12.075
         },
         {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
-          "score": 8.64
+          "score": 9.072000000000001
         },
         {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
-          "score": 8.64
-        },
-        {
-          "provider": "Twins",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, average)",
-            "Energy via Energy recovery (multiple targets, low) `signature fuel`"
-          ],
-          "score": 8.16
+          "score": 9.072000000000001
         },
         {
           "provider": "Lyca",
           "reasons": [
-            "Energy via Energy recovery (all units, low) `signature fuel`"
+            "Energy via Energy recovery (all units, low) `signature fuel`",
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
-          "score": 3.5999999999999996
+          "score": 6.48
+        },
+        {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 6.075
+        },
+        {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 5.31
+        },
+        {
+          "provider": "Damian",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 5.16375
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 4.62
+        },
+        {
+          "provider": "Dunlingr",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
+          ],
+          "score": 4.2
+        },
+        {
+          "provider": "Tasi",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 3.0375
+        },
+        {
+          "provider": "Vala",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 3.0375
+        },
+        {
+          "provider": "Zandrok",
+          "reasons": [
+            "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 2.295
         },
         {
           "provider": "Thoran",
           "reasons": [
             "Energy via Energy recovery (single target, average) `signature fuel`"
           ],
-          "score": 2.16
+          "score": 2.2680000000000002
+        },
+        {
+          "provider": "Galahad",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, average) `signature fuel`"
+          ],
+          "score": 2.025
+        },
+        {
+          "provider": "Valka",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 1.6199999999999999
         },
         {
           "provider": "Pandora",
           "reasons": [
             "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
-          "score": 1.08
+          "score": 1.1340000000000001
         },
         {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
-          "score": 1.08
+          "score": 1.1340000000000001
+        },
+        {
+          "provider": "Hepler",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 1.0125
+        },
+        {
+          "provider": "Marcille",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 1.0125
+        },
+        {
+          "provider": "Mehira",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 1.0125
+        },
+        {
+          "provider": "Velara",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 1.0125
+        },
+        {
+          "provider": "Zorya",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 1.0125
+        },
+        {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
+          ],
+          "score": 8.55
+        },
+        {
+          "provider": "Lorsan",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, high) `signature fuel`"
+          ],
+          "score": 3.0375
         },
         {
           "provider": "Seth",
           "reasons": [
             "Energy via Energy recovery (single target, average) `signature fuel`"
           ],
-          "score": 2.16
+          "score": 2.2680000000000002
+        },
+        {
+          "provider": "Soren",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 1.0125
         }
       ],
       "beneficiaries": [
@@ -32141,6 +32153,13 @@
           "score": 12.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -32152,13 +32171,6 @@
           "reasons": [
             "Physical DEF via DEF buff (single target, average)",
             "Magic DEF via DEF buff (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 6.0
         },
@@ -34350,6 +34362,14 @@
           "score": 22.874999999999996
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 16.875
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`",
@@ -34380,14 +34400,6 @@
             "DEF Penetration via DEF Penetration buff (multiple targets, low)"
           ],
           "score": 12.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 11.25
         },
         {
           "provider": "Rowan",
@@ -35106,6 +35118,14 @@
           "score": 32.4
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
+            "Grants 3 distinct stat buffs to Perseus"
+          ],
+          "score": 30.0
+        },
+        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
@@ -35167,14 +35187,6 @@
             "Grants 4 distinct stat buffs to Perseus"
           ],
           "score": 24.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Grants 3 distinct stat buffs to Perseus"
-          ],
-          "score": 22.5
         },
         {
           "provider": "Pandora",
@@ -35571,16 +35583,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 27.0,
+          "score": 31.5,
           "name": "Silven"
+        },
+        {
+          "score": 16.5,
+          "name": "Shadewing"
         },
         {
           "score": 16.0,
           "name": "Carolina"
-        },
-        {
-          "score": 16.0,
-          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -36566,6 +36578,13 @@
           "score": 10.5
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`"
@@ -36585,13 +36604,6 @@
             "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 7.6499999999999995
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Dunlingr",
@@ -36701,10 +36713,6 @@
         },
         {
           "score": 21.558857142857143,
-          "name": "Lenya"
-        },
-        {
-          "score": 21.558857142857143,
           "name": "Valen"
         },
         {
@@ -36729,7 +36737,7 @@
         },
         {
           "score": 13.536000000000001,
-          "name": "Pang"
+          "name": "Nara"
         },
         {
           "score": 13.32,
@@ -36738,10 +36746,6 @@
         {
           "score": 13.32,
           "name": "Galahad"
-        },
-        {
-          "score": 13.32,
-          "name": "Nara"
         },
         {
           "score": 13.32,
@@ -38021,16 +38025,16 @@
           "name": "Smokey & Meerky"
         },
         {
+          "score": 9.072000000000001,
+          "name": "Nara"
+        },
+        {
           "score": 8.64,
           "name": "Contess"
         },
         {
           "score": 8.64,
           "name": "Hugin"
-        },
-        {
-          "score": 8.64,
-          "name": "Nara"
         },
         {
           "score": 8.64,
@@ -40252,6 +40256,14 @@
           "score": 16.5
         },
         {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, high)",
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 16.5
+        },
+        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
@@ -40322,14 +40334,6 @@
           "reasons": [
             "Shield via Shield (multiple targets, low)",
             "Life Drain via Lifedrain buff (single target, average)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Perseus",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, average)",
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 13.5
@@ -41003,16 +41007,40 @@
       ],
       "beneficiaries": [
         {
-          "score": 25.5,
+          "score": 34.5,
           "name": "Dionel"
         },
         {
-          "score": 24.3,
-          "name": "Lily May"
+          "score": 22.5,
+          "name": "Lenya"
         },
         {
           "score": 22.5,
-          "name": "Perseus"
+          "name": "Mikola"
+        },
+        {
+          "score": 16.875,
+          "name": "Atalanta"
+        },
+        {
+          "score": 16.875,
+          "name": "Pang"
+        },
+        {
+          "score": 13.5,
+          "name": "Korin"
+        },
+        {
+          "score": 11.25,
+          "name": "Lucy"
+        },
+        {
+          "score": 11.25,
+          "name": "Sinbad"
+        },
+        {
+          "score": 9.0,
+          "name": "Sonja"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -41782,6 +41810,13 @@
           "score": 31.5
         },
         {
+          "provider": "Perseus",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Silven"
+          ],
+          "score": 31.5
+        },
+        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
@@ -41815,13 +41850,6 @@
           "score": 27.75
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "Grants 3 distinct stat buffs to Silven"
-          ],
-          "score": 27.0
-        },
-        {
           "provider": "Ravion",
           "reasons": [
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
@@ -41844,6 +41872,13 @@
             "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 25.25
+        },
+        {
+          "provider": "Shakir",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Silven"
+          ],
+          "score": 24.75
         },
         {
           "provider": "Fay",
@@ -41894,13 +41929,6 @@
           "provider": "Ludovic",
           "reasons": [
             "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 20.25
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 20.25
         },
@@ -42695,6 +42723,13 @@
           "score": 11.25
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 11.25
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -42725,13 +42760,6 @@
         },
         {
           "provider": "Mikola",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 7.5
-        },
-        {
-          "provider": "Shakir",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
@@ -43252,15 +43280,7 @@
         },
         {
           "score": 17.0544,
-          "name": "Mikola"
-        },
-        {
-          "score": 17.0544,
           "name": "Viperian"
-        },
-        {
-          "score": 16.0824,
-          "name": "Atalanta"
         },
         {
           "score": 16.0824,
@@ -43296,19 +43316,11 @@
         },
         {
           "score": 8.64,
-          "name": "Nara"
-        },
-        {
-          "score": 8.64,
           "name": "Pandora"
         },
         {
           "score": 8.64,
           "name": "Scarlita"
-        },
-        {
-          "score": 8.64,
-          "name": "Sinbad"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -43696,17 +43708,17 @@
           "score": 9.4
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Alna",
           "reasons": [
             "ATK via ATK buff (single target, low)",
             "Max HP via Max HP buff (single target, high)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 6.0
         },
@@ -43983,6 +43995,14 @@
           "score": 22.5
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 22.5
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "Haste via Haste buff (multiple targets, average) `signature fuel`",
@@ -43999,14 +44019,6 @@
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 16.25
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 15.000000000000002
         },
         {
           "provider": "Hewynn",
@@ -44504,6 +44516,15 @@
           "score": 35.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "Life Drain via Lifedrain buff (single target, low)",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 24.0
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`",
@@ -44547,15 +44568,6 @@
             "Energy via Energy recovery (area, high) `signature fuel`"
           ],
           "score": 17.0544
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Life Drain via Lifedrain buff (single target, low)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 16.5
         },
         {
           "provider": "Lorsan",
@@ -45909,6 +45921,13 @@
           "score": 12.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 11.25
+        },
+        {
           "provider": "Marcille",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
@@ -45992,13 +46011,6 @@
           "reasons": [
             "ATK via ATK buff (single target, high)",
             "Shield via Shield (single target, average)"
-          ],
-          "score": 7.5
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 7.5
         },
@@ -48607,6 +48619,13 @@
           "score": 8.925428571428572
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 8.1
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -48620,13 +48639,6 @@
             "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
           "score": 5.58
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 5.4
         },
         {
           "provider": "Fay",
@@ -49000,6 +49012,13 @@
           "score": 12.5
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 11.25
+        },
+        {
           "provider": "Marcille",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
@@ -49034,13 +49053,6 @@
           "reasons": [
             "Shield via Shield (single target, average)",
             "Healing via Direct healing (single target, high)"
-          ],
-          "score": 7.5
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 7.5
         },
@@ -50521,6 +50533,14 @@
           "score": 8.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Life Drain via Lifedrain buff (single target, low)",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 7.575
+        },
+        {
           "provider": "Zanie",
           "reasons": [
             "Max HP via Max HP buff (single target, high)",
@@ -50543,14 +50563,6 @@
             "Life Drain via Lifedrain buff (single target, average)"
           ],
           "score": 6.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Life Drain via Lifedrain buff (single target, low)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 5.55
         },
         {
           "provider": "Damian",
@@ -50988,6 +51000,14 @@
           "score": 10.5
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "Life Drain via Lifedrain buff (single target, low)"
+          ],
+          "score": 10.5
+        },
+        {
           "provider": "Hugin",
           "reasons": [
             "Haste via Haste buff (multiple targets, high) `signature fuel`"
@@ -51008,14 +51028,6 @@
             "Healing via Direct healing (single target, high)"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Life Drain via Lifedrain buff (single target, low)"
-          ],
-          "score": 7.5
         },
         {
           "provider": "Pandora",
@@ -51431,18 +51443,18 @@
           "score": 12.0
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 11.25
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 9.5625
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 7.5
         },
         {
           "provider": "Dunlingr",
@@ -51748,6 +51760,15 @@
           "score": 27.232
         },
         {
+          "provider": "Shakir",
+          "reasons": [
+            "Haste via Haste buff (multiple targets, high) `signature fuel`",
+            "Life Drain via Lifedrain buff (single target, low)",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
+          ],
+          "score": 24.0
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
@@ -51793,15 +51814,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 17.900000000000002
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Haste via Haste buff (multiple targets, average) `signature fuel`",
-            "Life Drain via Lifedrain buff (single target, low)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 16.5
         },
         {
           "provider": "Koko",
