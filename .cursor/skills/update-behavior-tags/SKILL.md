@@ -20,13 +20,16 @@ replacement scoring (Jaccard overlap in `scripts/generate-heroes-overview.py`).
 3. `data/hero_behavior_tags.json` — current assignments
 4. `data/heroes_data.json` — `description`, `description_lite`, skill text
 5. `data/heroes_data_skill_summary.json` — mechanic summaries per skill slot
+6. `data/hero_play_overviews.json` — curated playstyle blurbs (good first pass
+   for identity; cross-check against skill text before changing tags)
 
 Optional context: `docs/ai-generated-data.md` section 2, `docs/replacement-algorithm.md`.
 
 ## Audit prompt
 
-Compare `data/hero_behavior_tags.json` against the skill descriptions in
-`data/heroes_data.json`.
+Compare `data/hero_behavior_tags.json` against skill descriptions in
+`data/heroes_data.json`, using `heroes_data_skill_summary.json` and
+`hero_play_overviews.json` to spot identity mismatches quickly.
 Are there any characters where the tags do not describe the character's skills
 sufficiently?
 Look for misleading tags, missing tags or tags that are wrongly attributed.
@@ -57,7 +60,7 @@ Task progress:
 
 ### 2. Per-hero review
 
-For each hero, read summaries + `description_lite` and ask:
+For each hero, read play overview + summaries + `description_lite` and ask:
 
 1. **Missing** — defining mechanic with no matching tag?
 2. **Misleading** — tag present but mechanic is minor, wrong target, or wrong
@@ -141,10 +144,11 @@ Do not regenerate `heroes-overview.md` or the site unless the user asks.
 
 ## Examples
 
-**Bonnie** — debuff-spread mage, not DoT: `battle-start-burst`,
-`enemy-debuffer`, `transformation`, `aoe-damage`, `mass-cc`. Drop
-`dot-specialist` (debuff stacking ≠ DoT) and `invincibility` when mist form
-is already `transformation`.
+**Bonnie** — debuff-spread mage, not DoT: `enemy-debuffer`, `transformation`,
+`aoe-damage`. Drop `battle-start-burst` (Aging opener is debuff setup, not
+burst damage), `mass-cc` (ult stun only on debuffed targets), `dot-specialist`
+(debuff stacking ≠ DoT), and `invincibility` when mist form is already
+`transformation`.
 
 **Perseus** — terrain tile buffs: `ally-buffer`, `aoe-damage`. Not
 `battlefield-modification` (buff zones do not count).
@@ -153,6 +157,7 @@ is already `transformation`.
 (stat steal). Not `life-drain` (stat absorb ≠ lifesteal).
 
 **Florabelle** — buffs/shields **summons**, not allies: `summoner`,
-`aoe-damage`, `battle-start-burst`. Not `ally-buffer` / `ally-shielder`.
+`aoe-damage`. Not `battle-start-burst` (battle-start Spiny summon is setup,
+not burst), `ally-buffer` / `ally-shielder`.
 
 For more edge cases, see [pitfalls.md](pitfalls.md).
