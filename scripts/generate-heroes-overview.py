@@ -647,7 +647,126 @@ def match_knock_up_from_allies(provider: _rs.Hero) -> tuple[float, str] | None:
     return pts, f"{' + '.join(tags)} ({tgt.lower()})"
 
 
+def _ally_grant_detail(provider: _rs.Hero, fallback: str) -> str:
+    for se in provider.special_effects:
+        if se.kind == "provides" and se.label.startswith("Ally grant ("):
+            return se.label
+    if provider_has_special(provider, "Ally blessing"):
+        return "Ally blessing"
+    text = provider_skill_text(provider)
+    name = _rs._extract_ally_grant_name(text)
+    if name:
+        return f"Ally grant ({name})"
+    if re.search(
+        r"bless(?:es|ing)? (?:an ally|allies|the nearest ally)|"
+        r"grants?\s+temporary blessings|Tidal Strength",
+        text,
+        re.I,
+    ):
+        return "Ally blessing"
+    return fallback
+
+
+_ALLY_HIT_MAGIC_DAMAGE_RE = re.compile(
+    r"(?:extra \d+(?:\.\d+)?(?:\s*%\s*)?(?:\(atk-based\)\s*)?magic damage.{0,100}"
+    r"when (?:the )?(?:blessed )?ally hits|"
+    r"when (?:the )?(?:blessed )?ally hits.{0,100}magic damage)",
+    re.I,
+)
+
+_ALLY_GRANT_DAMAGE_TO_ENEMY_RE = re.compile(
+    r"(?:satrana or )?allies?\s+with\s+\w+.{0,160}deal(?:s|ing)? damage",
+    re.I,
+)
+
+_BURN_OR_MAGIC_ENEMY_EFFECT_RE = re.compile(
+    r"\b(?:burn(?:ed|s)?|ignit(?:e|ed|es)?|magic damage)\b",
+    re.I,
+)
+
+
+def _provider_grants_ally_combat_effect(provider: _rs.Hero, text: str) -> bool:
+    if any(
+        se.kind == "provides"
+        and (
+            se.label.startswith("Ally grant (")
+            or se.label in ("Ally combat grant", "Ally blessing")
+        )
+        for se in provider.special_effects
+    ):
+        return True
+    if _ALLY_HIT_MAGIC_DAMAGE_RE.search(text):
+        return True
+    if re.search(
+        r"bless(?:es|ing)? (?:an ally|allies|the nearest ally)|"
+        r"grants?\s+temporary blessings",
+        text,
+        re.I,
+    ):
+        return True
+    return bool(_rs._is_ally_grant_phrase(text.lower()))
+
+
+def _provider_allies_apply_magic_via_hits(text: str) -> bool:
+    if _ALLY_HIT_MAGIC_DAMAGE_RE.search(text):
+        return True
+    if not _ALLY_GRANT_DAMAGE_TO_ENEMY_RE.search(text):
+        return False
+    return bool(
+        _BURN_OR_MAGIC_ENEMY_EFFECT_RE.search(text)
+        or _rs._text_has_dot_damage(text)
+        or re.search(r"taking damage equal to .{0,80}every \d+\.?\d*\s*s\b", text, re.I)
+    )
+
+
+def match_ally_enabled_magic_damage(
+    provider: _rs.Hero,
+) -> tuple[float, str] | None:
+    """Allied hits count as magic damage (grants, blessings, ignite procs)."""
+    text = provider_skill_text(provider)
+    if not _provider_allies_apply_magic_via_hits(text):
+        return None
+    if not _provider_grants_ally_combat_effect(provider, text):
+        return None
+
+    grant = _ally_grant_detail(provider, "Ally grant")
+    pts = 9.5
+    range_match = re.search(
+        r"allies within (\d+) tiles when a battle starts", text, re.I
+    )
+    if range_match:
+        pts = 10.5
+        detail = (
+            f"{grant}; allies within {range_match.group(1)} tiles "
+            "deal magic damage via hits"
+        )
+    elif _ALLY_HIT_MAGIC_DAMAGE_RE.search(text):
+        detail = f"{grant}; allied hits deal magic damage"
+        pts = 8.5
+    else:
+        detail = f"{grant}; allied hits enable magic damage on enemies"
+
+    tags: list[str] = []
+    if re.search(r"when a battle starts|at battle start", text, re.I):
+        pts *= 1.2
+        tags.append("battle start")
+    if re.search(
+        r"center of the battlefield|across the battlefield|"
+        r"all enemy heroes|all enemies within|whole battlefield|"
+        r"most enemies|area with the most enemies|enemies within range",
+        text,
+    ):
+        pts *= 1.15
+        tags.append("wide area")
+    if tags:
+        detail = f"{detail} + {' + '.join(tags)}"
+    return pts, detail
+
+
 def match_magic_damage_allies(provider: _rs.Hero) -> tuple[float, str] | None:
+    ally_match = match_ally_enabled_magic_damage(provider)
+    if ally_match:
+        return ally_match
     if "Magic" not in provider_damage_types(provider):
         return None
     text = provider_skill_text(provider)
@@ -670,13 +789,6 @@ def match_magic_damage_allies(provider: _rs.Hero) -> tuple[float, str] | None:
         pts *= 1.2
         tags.append("all enemies")
     return pts, f"{' + '.join(tags)} ({tgt})"
-
-
-def _ally_grant_detail(provider: _rs.Hero, fallback: str) -> str:
-    for se in provider.special_effects:
-        if se.kind == "provides" and se.label.startswith("Ally grant ("):
-            return se.label
-    return fallback
 
 
 def match_ally_dot_on_enemies(provider: _rs.Hero) -> tuple[float, str] | None:
@@ -1126,6 +1238,69 @@ def should_exclude_synergy(reasons: list[str], receiver: _rs.Hero) -> bool:
             return not receiver_benefits_from_shields(receiver)
 
     return False
+
+
+def synergy_pick_has_enabler_reason(pick: dict) -> bool:
+    return any(r.startswith("Enables ") for r in pick.get("reasons", ()))
+
+
+def synergy_pick_has_stat_buff_reason(pick: dict) -> bool:
+    return bool(_stat_synergy_reasons(pick.get("reasons", ())))
+
+
+def should_filter_obvious_stat_buffer_pick(
+    pick: dict,
+    provider_beneficiary_count: dict[str, int],
+    threshold: int,
+) -> bool:
+    """Hide roster-wide stat buffers from top picks; keep enabler matches."""
+    provider = pick.get("provider", "")
+    if provider_beneficiary_count.get(provider, 0) <= threshold:
+        return False
+    if synergy_pick_has_enabler_reason(pick):
+        return False
+    return synergy_pick_has_stat_buff_reason(pick)
+
+
+def common_stat_buffer_names(
+    picks: list[dict],
+    provider_beneficiary_count: dict[str, int],
+    threshold: int,
+    *,
+    limit: int = 3,
+) -> list[str]:
+    """Providers that buff many heroes and match this receiver's stat needs."""
+    names: list[str] = []
+    for pick in picks:
+        provider = pick.get("provider", "")
+        if provider_beneficiary_count.get(provider, 0) <= threshold:
+            continue
+        if not synergy_pick_has_stat_buff_reason(pick):
+            continue
+        names.append(short_name(provider))
+        if len(names) >= limit:
+            break
+    return names
+
+
+def filter_synergy_picks_for_display(
+    picks: list[dict],
+    provider_beneficiary_count: dict[str, int],
+    threshold: int,
+    max_syn: int,
+) -> list[dict]:
+    """Drop obvious generic buffers; rank remaining partners by score."""
+    kept = [
+        pick
+        for pick in picks
+        if not should_filter_obvious_stat_buffer_pick(
+            pick, provider_beneficiary_count, threshold
+        )
+    ]
+    kept.sort(
+        key=lambda pick: (-pick.get("score", 0), pick.get("provider", ""))
+    )
+    return kept[:max_syn]
 
 
 def _stats_for_synergy_scoring(

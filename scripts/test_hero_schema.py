@@ -875,6 +875,44 @@ class PlacementConstraintTests(unittest.TestCase):
         texts = [c.text for c in constraints if c.kind == "ally_placement"]
         self.assertTrue(any("symmetrical" in t for t in texts), texts)
 
+    def _hero_by_short_name(self, display_name: str):
+        text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
+        for block in re.split(r"\n(?=## )", text):
+            if not block.startswith("## "):
+                continue
+            title = block.splitlines()[0].replace("## ", "").strip()
+            if title.split(" - ", 1)[0].strip() == display_name:
+                return rs.parse_hero_block(block)
+        self.fail(f"hero block not found: {display_name}")
+
+    def test_satrana_sparks_ally_placement(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Satrana"), "Satrana"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        self.assertTrue(
+            any("within 2 tiles" in t and "Sparks" in t for t in texts),
+            texts,
+        )
+
+    def test_satrana_enables_bonnie_magic_damage_via_sparks(self):
+        satrana = self._hero_by_short_name("Satrana")
+        match = gen.match_ally_enabled_magic_damage(satrana)
+        self.assertIsNotNone(match)
+        pts, detail = match
+        self.assertGreater(pts, 7.25)
+        self.assertIn("sparks", detail.lower())
+        self.assertIn("within 2 tiles", detail)
+
+    def test_cassadee_enables_ally_magic_damage_on_hit(self):
+        cassadee = self._hero_by_short_name("Cassadee")
+        match = gen.match_ally_enabled_magic_damage(cassadee)
+        self.assertIsNotNone(match)
+        _pts, detail = match
+        self.assertIn("Ally blessing", detail)
+
     def test_himmel_hero_party_placement(self):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Himmel"), "Himmel"

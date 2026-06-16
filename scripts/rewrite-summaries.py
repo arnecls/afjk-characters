@@ -543,6 +543,14 @@ def _text_has_dot_damage(text: str) -> bool:
     ):
         return True
     if re.search(
+        r"(?:target is )?(?:burned|ignited).{0,40}"
+        r"taking damage equal to .{0,80}every \d",
+        t,
+    ):
+        return True
+    if re.search(r"taking damage equal to .{0,80}every \d+\.?\d*\s*s\b", t):
+        return True
+    if re.search(
         r"(?:deal(?:s|ing)?|dealing|takes?) damage.{0,80}per second|"
         r"damage equal to .{0,80}per second|"
         r"damage per second|"
@@ -3849,7 +3857,7 @@ def _ally_enabled_enemy_effect_labels(text: str) -> list[str]:
     if not _allies_affect_enemies_in_text(t):
         return []
     labels: list[str] = []
-    if _text_has_dot_damage(text) or re.search(r"\bignit", t):
+    if _text_has_dot_damage(text) or re.search(r"\b(?:ignit|burned)\b", t):
         labels.append("Ally DoT on enemies")
     if re.search(r"reducing their vitality|reduces? their vitality", t):
         labels.append("Ally Vitality debuff on enemies")
@@ -7687,6 +7695,23 @@ def detect_placement_constraints(
 
     found: list[PlacementConstraint] = []
     seen: set[tuple[str, str]] = set()
+
+    grant_range = re.search(
+        r"grants?\s+([\w][\w\s'-]{0,24}?)\s+to allies within (\d+) tiles "
+        r"when a battle starts",
+        combined,
+        re.I,
+    )
+    if grant_range:
+        grant_name = grant_range.group(1).strip()
+        tiles = grant_range.group(2)
+        _add_constraint(
+            found,
+            seen,
+            "ally_placement",
+            f"place allies within {tiles} tiles at battle start "
+            f"({grant_name} grant)",
+        )
 
     rules: list[tuple[re.Pattern[str], str, str]] = [
         (

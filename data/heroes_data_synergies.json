@@ -4337,12 +4337,26 @@
           "score": 19.25
         },
         {
+          "provider": "Satrana",
+          "reasons": [
+            "Enables Magic damage from allies via Ally grant (Sparks); allies within 2 tiles deal magic damage via hits + battle start + wide area"
+          ],
+          "score": 14.489999999999998
+        },
+        {
           "provider": "Hammie",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
             "Enables Magic damage from allies via Magic damage (single target)"
           ],
           "score": 14.0
+        },
+        {
+          "provider": "Cassadee",
+          "reasons": [
+            "Enables Magic damage from allies via Ally blessing; allied hits deal magic damage + battle start"
+          ],
+          "score": 10.2
         },
         {
           "provider": "Cryonaia",
@@ -4409,13 +4423,6 @@
           "score": 7.25
         },
         {
-          "provider": "Satrana",
-          "reasons": [
-            "Enables Magic damage from allies via Magic damage + wide area (area)"
-          ],
-          "score": 7.25
-        },
-        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Enables Magic damage from allies via Magic damage + wide area (single target)"
@@ -4446,13 +4453,6 @@
         },
         {
           "provider": "Callan",
-          "reasons": [
-            "Enables Magic damage from allies via Magic damage + all enemies (all units)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Cassadee",
           "reasons": [
             "Enables Magic damage from allies via Magic damage + all enemies (all units)"
           ],
@@ -6869,16 +6869,16 @@
       ],
       "beneficiaries": [
         {
+          "score": 10.2,
+          "name": "Bonnie"
+        },
+        {
           "score": 10.0,
           "name": "Carolina"
         },
         {
           "score": 10.0,
           "name": "Nerion"
-        },
-        {
-          "score": 7.5,
-          "name": "Lily May"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -19964,13 +19964,6 @@
           "score": 7.199999999999999
         },
         {
-          "provider": "Satrana",
-          "reasons": [
-            "Enables Multiple debuffs on target via 2 debuff types"
-          ],
-          "score": 7.199999999999999
-        },
-        {
           "provider": "Shakir",
           "reasons": [
             "Enables Multiple debuffs on target via 2 debuff types"
@@ -20336,6 +20329,13 @@
           "provider": "Pippa",
           "reasons": [
             "Enables Multiple debuffs on target via Energy drain"
+          ],
+          "score": 2.0
+        },
+        {
+          "provider": "Satrana",
+          "reasons": [
+            "Enables Multiple debuffs on target via Vitality debuff"
           ],
           "score": 2.0
         },
@@ -38682,16 +38682,16 @@
       ],
       "beneficiaries": [
         {
+          "score": 14.489999999999998,
+          "name": "Bonnie"
+        },
+        {
           "score": 12.0,
           "name": "Shadewing"
         },
         {
-          "score": 7.25,
-          "name": "Bonnie"
-        },
-        {
-          "score": 7.199999999999999,
-          "name": "Indris"
+          "score": 6.75,
+          "name": "Lily May"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -38755,23 +38755,22 @@
         ],
         "debuff": [
           {
-            "name": "Sinbad",
-            "score": 0.7317,
-            "matches": [
-              "Vitality debuff"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 0.6951,
-            "matches": [
-              "DoT",
-              "Vitality debuff"
-            ]
-          },
-          {
             "name": "Alna",
-            "score": 0.6098,
+            "score": 1.0,
+            "matches": [
+              "Vitality debuff"
+            ]
+          },
+          {
+            "name": "Dunlingr",
+            "score": 1.0,
+            "matches": [
+              "Vitality debuff"
+            ]
+          },
+          {
+            "name": "Pandora",
+            "score": 1.0,
             "matches": [
               "Vitality debuff"
             ]
@@ -40047,7 +40046,7 @@
           "provider": "Satrana",
           "reasons": [
             "Enables Debuff on target via Vitality debuff (multiple targets)",
-            "Enables Continuous damage on enemies via Burn"
+            "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 12.0
         },

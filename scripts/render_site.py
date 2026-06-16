@@ -117,12 +117,11 @@ def _build_synergy_sections(
         stat_tags = " ".join(
             f"`{tag}`" for tag in _format_benefit_stat_tags(benefit_stats)
         )
-        excluded = [
-            gen.short_name(pick["provider"])
-            for pick in p["synergies"]
-            if provider_beneficiary_count.get(pick["provider"], 0)
-            > obvious_threshold
-        ][:3]
+        excluded = gen.common_stat_buffer_names(
+            p["synergies"],
+            provider_beneficiary_count,
+            obvious_threshold,
+        )
         intro_lines.append(f"Look for units providing: {stat_tags}")
         if excluded:
             intro_lines.append(f"Common buffers are {_join_names(excluded)}.")
@@ -130,12 +129,13 @@ def _build_synergy_sections(
                 _hero_ref(n, slug_by_name) for n in excluded if n in slug_by_name
             ]
 
-    filtered = [
-        pick
-        for pick in p["synergies"]
-        if provider_beneficiary_count.get(pick["provider"], 0) <= obvious_threshold
-    ]
-    picks = filtered[:max_syn]
+    filtered = gen.filter_synergy_picks_for_display(
+        p["synergies"],
+        provider_beneficiary_count,
+        obvious_threshold,
+        max_syn,
+    )
+    picks = filtered
     receiver_synergies = _receiver_synergies(short, synergies)
     partners: list[dict] = []
     if picks:

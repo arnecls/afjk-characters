@@ -183,5 +183,75 @@ class SynergyTierRankingTests(unittest.TestCase):
         self.assertEqual(ranked[1][2], "Worse - Provider")
 
 
+class ObviousStatBufferDisplayTests(unittest.TestCase):
+    def test_enabler_only_pick_not_filtered_as_obvious_buffer(self) -> None:
+        counts = {"Satrana": 99, "Twins": 104}
+        satrana = {
+            "provider": "Satrana",
+            "score": 14.5,
+            "reasons": [
+                "Enables Magic damage from allies via Ally grant (Sparks)"
+            ],
+        }
+        self.assertFalse(
+            gen.should_filter_obvious_stat_buffer_pick(satrana, counts, 20)
+        )
+
+    def test_stat_buff_only_pick_filtered_when_roster_wide(self) -> None:
+        counts = {"Twins": 104}
+        twins = {
+            "provider": "Twins",
+            "score": 11.0,
+            "reasons": ["ATK via ATK buff (multiple targets, average)"],
+        }
+        self.assertTrue(
+            gen.should_filter_obvious_stat_buffer_pick(twins, counts, 20)
+        )
+
+    def test_hybrid_pick_kept_when_it_also_enables(self) -> None:
+        counts = {"Twins": 104}
+        twins = {
+            "provider": "Twins",
+            "score": 11.0,
+            "reasons": [
+                "ATK via ATK buff (multiple targets, average)",
+                "Enables Magic damage from allies via Magic damage (area)",
+            ],
+        }
+        self.assertFalse(
+            gen.should_filter_obvious_stat_buffer_pick(twins, counts, 20)
+        )
+
+    def test_display_picks_sorted_by_score_after_filter(self) -> None:
+        counts = {"Twins": 104, "Satrana": 3, "Evie": 3}
+        picks = [
+            {
+                "provider": "Evie",
+                "score": 14.0,
+                "reasons": [
+                    "ATK via ATK buff (multiple targets, high)",
+                    "Enables Magic damage from allies via Magic damage",
+                ],
+            },
+            {
+                "provider": "Twins",
+                "score": 11.0,
+                "reasons": ["ATK via ATK buff (multiple targets, average)"],
+            },
+            {
+                "provider": "Satrana",
+                "score": 14.5,
+                "reasons": [
+                    "Enables Magic damage from allies via Ally grant (Sparks)"
+                ],
+            },
+        ]
+        shown = gen.filter_synergy_picks_for_display(picks, counts, 20, 2)
+        self.assertEqual(
+            [p["provider"] for p in shown],
+            ["Satrana", "Evie"],
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

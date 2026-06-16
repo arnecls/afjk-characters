@@ -126,6 +126,18 @@ class RenderSiteTests(unittest.TestCase):
         )
         self.assertNotIn("Requires", bonnie["sections"]["summary"])
 
+    def test_bonnie_shows_satrana_magic_enabler(self) -> None:
+        payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
+        bonnie = next(h for h in payload["heroes"] if h["name"] == "Bonnie")
+        partners = bonnie["sections"]["benefits_from"]["partners"]
+        names = [p["name"] for p in partners]
+        self.assertIn("Satrana", names)
+        satrana = next(p for p in partners if p["name"] == "Satrana")
+        self.assertTrue(
+            any("Sparks" in r for r in satrana["reasons"]),
+            satrana["reasons"],
+        )
+
     def test_kazim_synergy_requires(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
         kazim = next(h for h in payload["heroes"] if h["name"] == "Kazim")

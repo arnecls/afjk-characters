@@ -45570,28 +45570,10 @@
               "type": "debuff",
               "name": "Vitality debuff",
               "label": "debuff_defensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "debuff",
-              "name": "DoT",
-              "label": "dot",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 0.8
-                }
-              ]
             }
           ],
           "skill_range": 1,
           "skill_card_tags": [
-            "DoT",
             "Vitality debuff"
           ]
         },
@@ -45776,7 +45758,12 @@
         "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.4800000000000002,
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place allies within 2 tiles at battle start (Sparks grant)"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "fast",
