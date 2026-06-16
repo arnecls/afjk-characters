@@ -2210,7 +2210,7 @@
     if (polarity === "debuff") {
       return parseDebuffEffectLabel(base).base;
     }
-    if (/\b(?:Ranged|Magic|Physical|Phys) DEF buff$/i.test(base)) {
+    if (/\bbuff$/i.test(base)) {
       return parseBuffEffectLabel(base).base;
     }
     return base;
@@ -2491,6 +2491,19 @@
     let out = escapeHtml(text);
     out = out.replace(/\(ATK-based\)/g, "{{ATK_BASED}}");
     out = out.replace(/\(HP-based\)/g, "{{HP_BASED}}");
+    out = replaceOutsideChips(
+      out,
+      /\bphys(?:ical)?\s*&\s*magic\s+def\b/gi,
+      function () {
+        const physDef = TAG_DEFINITIONS["Phys DEF"];
+        const magicDef = TAG_DEFINITIONS["Magic DEF"];
+        return (
+          chipSpan(physDef.emoji, "Phys DEF", physDef.cls) +
+          " &amp; " +
+          chipSpan(magicDef.emoji, "Magic DEF", magicDef.cls)
+        );
+      }
+    );
     SKILL_CHIP_KEYS.forEach(function (key) {
       const def = TAG_DEFINITIONS[key];
       const re = new RegExp(
