@@ -19,7 +19,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Signature skill**: Radiant Rain (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles)
 - **Behavior tags**: `ally-buffer` `execute` `hp-scaling` `invincibility` `mark-target`
-- **Ally composition**: nearest ally in same row receives Brightfeather at battle start
+- **Ally composition**: grants Brightfeather to nearest ally in her row
 - **Damage types**: Physical `high`, HP loss `low`, Max HP-based damage `high`
 
 #### Play overview
@@ -60,24 +60,19 @@ bonded ally feather threshold enhances ultimate with additional arrow volleys
 Look for units providing: `ATK` `Healing` `DEF Penetration`  
 Common buffers are **Twins**, **Solise**, or **Smokey & Meerky**.
 
-Aliceth also requires units **putting debuffs** on enemies
-
-- **Velara**
-  - Direct healing (area, low)
-  - Enables Debuff on target via Haste debuff (area)
-- **Galahad**
-  - ATK SPD via Haste buff (single target, average) `signature fuel`
-  - Enables Debuff on target via Movement speed debuff (area)
 - **Himmel**
   - ATK buff (multiple targets, high)
   - Direct healing (single target, low)
-  - Enables Debuff on target via Damage taken debuff (single target)
 - **Contess**
   - ATK buff (single target, high)
   - Direct healing (multiple targets, low)
-  - Enables Debuff on target via ATK debuff (multiple targets)
-- **Frieren**
-  - Enables Debuff on target via DoT (area)
+- **Gunnar**
+  - ATK buff (single target, high)
+  - ATK SPD buff (single target, low) `signature fuel`
+- **Velara**
+  - Direct healing (area, low)
+- **Galahad**
+  - ATK SPD via Haste buff (single target, average) `signature fuel`
 
 ### Units benefitting most from Aliceth
 
@@ -331,7 +326,7 @@ Common buffers are **Twins**, **Rowan**, or **Mikola**.
 ### Units benefitting most from Alsa
 
 - Bonnie (2.6 / 5)
-- Aliceth (1.9 / 5)
+- Carolina (1.9 / 5)
 - Indris (1.6 / 5)
 
 ### Units that can act as a replacement for Alsa
@@ -1324,8 +1319,8 @@ Bonnie also requires units **dealing magic damage** and/or units **putting debuf
 ### Units benefitting most from Bonnie
 
 - Shadewing (2.3 / 5)
-- Aliceth (2.0 / 5)
 - Indris (1.9 / 5)
+- Carolina (1.9 / 5)
 
 ### Units that can act as a replacement for Bonnie
 
@@ -1437,7 +1432,7 @@ Common buffers are **Koko**.
 ### Units benefitting most from Brutus
 
 - Shadewing (2.8 / 5)
-- Aliceth (2.7 / 5)
+- Bonnie (2.6 / 5)
 - Indris (2.1 / 5)
 
 ### Units that can act as a replacement for Brutus
@@ -1618,7 +1613,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, or **Solise**.
 `AFK Stages [A+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Restless Guardian (ultimate)
-- **Movement**: moving (avg attack range 1.7 tiles)
+- **Movement**: moving (inactive while ultimate is running)
 - **Behavior tags**: `ally-shielder` `battle-start-burst` `cc-immunity`
 - **Damage types**: Magic `high`
 
@@ -2222,13 +2217,14 @@ Common buffers are **Smokey & Meerky**, **Solise**, or **Rowan**.
 
 Contess provides ATK buff to single targets `high`, Direct healing to multiple targets `high`, Exemption buff to single targets `high`, and Shield to single targets `average`.
 
-**12** units include this provider among their top 5 synergy partners. Why the match is common:
+**13** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **10** strongest pairings: 
 
 - Baelran (2.8 / 5)
+- Aliceth (2.5 / 5)
 - Faramor (2.5 / 5)
 - Himmel (2.4 / 5)
 - Daimon (2.1 / 5)
@@ -2237,7 +2233,6 @@ These are the **10** strongest pairings:
 - Alna (1.8 / 5)
 - Athalia (1.8 / 5)
 - Reinier (1.8 / 5)
-- Saida (1.8 / 5)
 
 ### Units that can act as a replacement for Contess
 
@@ -2818,7 +2813,7 @@ Dionel also requires units **buffing them**
 Dionel provides ATK buff to single targets `average`.
 
 - Kazim (2.4 / 5)
-- Aliceth (1.5 / 5)
+- Bonnie (1.5 / 5)
 - Indris (1.4 / 5)
 
 ### Units that can act as a replacement for Dionel
@@ -3806,14 +3801,13 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 Galahad provides Haste buff to single targets `average` and Shield to single targets `average`.
 
-**15** units include this provider among their top 5 synergy partners. Why the match is common:
+**14** units include this provider among their top 5 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **10** strongest pairings: 
 
 - Bonnie (3.7 / 5)
-- Aliceth (3.0 / 5)
 - Velara (2.8 / 5)
 - Cassadee (2.1 / 5)
 - Gwyneth (2.1 / 5)
@@ -3822,6 +3816,7 @@ These are the **10** strongest pairings:
 - Cyran (1.7 / 5)
 - Kulu (1.7 / 5)
 - Zanie (1.7 / 5)
+- Aurora (1.6 / 5)
 
 ### Units that can act as a replacement for Galahad
 
@@ -4188,6 +4183,7 @@ Gunnar provides ATK SPD buff to single targets `low`, ATK buff to single targets
 - Silven (2.3 / 5)
 - Kulu (2.1 / 5)
 - Zanie (2.1 / 5)
+- Aliceth (2.1 / 5)
 - Himmel (2.1 / 5)
 - Cyran (2.0 / 5)
 - Frieren (1.7 / 5)
@@ -4373,7 +4369,7 @@ Common buffers are **Twins**, **Ravion**, or **Mikola**.
 
 #### Play overview
 
-Hammie **heals the weakest ally** and buffs them, then sustains himself with a simple self-heal skill. His ultimate is a **single-target fireball** for modest burst damage. He is an **early support** who keeps fragile allies alive with light healing and buffs. His numbers stay **modest compared to top healers**, and he brings little beyond sustain. Fights that need **strong shields, damage reduction, or teamwide healing** leave him underwhelming.
+Hammie **heals the weakest ally** and buffs them, then sustains herself with a simple self-heal skill. Her ultimate is a **single-target fireball** for modest burst damage. She is an **early support** who keeps fragile allies alive with light healing and buffs. Her numbers stay **modest compared to top healers**, and she brings little beyond sustain. Fights that need **strong shields, damage reduction, or teamwide healing** leave her underwhelming.
 
 #### Skill overview
 
@@ -4848,6 +4844,7 @@ Hewynn provides Direct healing to single targets `high`, Healing over time to al
 - **Signature skill**: Hero Party (Skill 2)
 - **Movement**: high movement (repositioning skills)
 - **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `battle-start-burst` `self-repositioner`
+- **Ally composition**: place Mage, Tank, and Support within 1 tile at battle start (Hero Party)
 - **Damage types**: Physical `high`, Max HP-based damage `high`
 
 #### Play overview
@@ -4913,7 +4910,7 @@ Himmel provides ATK buff to multiple targets `high` and Shield to single targets
 
 - Kafra (3.6 / 5)
 - Baelran (3.3 / 5)
-- Aliceth (2.8 / 5)
+- Aliceth (3.1 / 5)
 - Evie (2.8 / 5)
 - Faramor (2.7 / 5)
 - Kordan (2.4 / 5)
@@ -5047,8 +5044,8 @@ Common buffers are **Smokey & Meerky**, **Solise**, or **Mikola**.
 ### Units benefitting most from Hodgkin
 
 - Indris (1.7 / 5)
-- Aliceth (1.6 / 5)
 - Bonnie (1.6 / 5)
+- Shadewing (1.4 / 5)
 
 ### Units that can act as a replacement for Hodgkin
 
@@ -5251,7 +5248,7 @@ Common buffers are **Koko**, **Solise**, or **Smokey & Meerky**.
 
 - Shadewing (1.9 / 5)
 - Indris (1.3 / 5)
-- Aliceth (1.3 / 5)
+- Bonnie (1.3 / 5)
 
 ### Units that can act as a replacement for Igor
 
@@ -5360,7 +5357,7 @@ Indris also requires units **putting debuffs** on enemies and/or units **putting
 
 - Carolina (2.4 / 5)
 - Nerion (1.9 / 5)
-- Aliceth (1.6 / 5)
+- Bonnie (1.6 / 5)
 
 ### Units that can act as a replacement for Indris
 
@@ -5590,7 +5587,7 @@ Common buffers are **Twins**, **Mikola**, or **Ravion**.
 
 - Shadewing (2.3 / 5)
 - Indris (2.1 / 5)
-- Aliceth (2.0 / 5)
+- Bonnie (1.9 / 5)
 
 ### Units that can act as a replacement for Kafra
 
@@ -6219,8 +6216,8 @@ Common buffers are **Koko**, **Mikola**, or **Twins**.
 Kruger provides DEF buff (Legendary+) to single targets `low`.
 
 - Indris (2.5 / 5)
-- Aliceth (1.9 / 5)
 - Bonnie (1.8 / 5)
+- Shadewing (1.6 / 5)
 
 ### Units that can act as a replacement for Kruger
 
@@ -6699,8 +6696,8 @@ Lily May also requires units **buffing them**
 Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 - Bonnie (2.5 / 5)
-- Aliceth (2.2 / 5)
 - Indris (1.7 / 5)
+- Shadewing (1.6 / 5)
 
 ### Units that can act as a replacement for Lily May
 
@@ -8230,9 +8227,9 @@ Common buffers are **Ravion**, **Smokey & Meerky**, or **Twins**.
 
 Nara provides Direct healing (Mythic+) in an area `low`.
 
-- Aliceth (2.2 / 5)
 - Carolina (1.9 / 5)
 - Indris (1.6 / 5)
+- Lily May (1.3 / 5)
 
 ### Units that can act as a replacement for Nara
 
@@ -9706,6 +9703,7 @@ These are the **10** strongest pairings:
 - **Signature skill**: Dynamic Balance (Skill 1)
 - **Movement**: high movement (repositioning skills)
 - **Behavior tags**: `battle-start-burst` `disabler`
+- **Ally composition**: symmetrical ally-enemy tile pairs at battle start for Dynamic Balance swaps
 - **Damage types**: Magic `average`
 
 #### Play overview
@@ -10732,7 +10730,6 @@ Shadewing also requires units **dealing continuous damage** to enemies and/or un
 ### Units benefitting most from Shadewing
 
 - Bonnie (2.2 / 5)
-- Aliceth (1.6 / 5)
 - Indris (1.6 / 5)
 
 ### Units that can act as a replacement for Shadewing
@@ -11303,8 +11300,8 @@ Common buffers are **Twins**, **Rowan**, or **Smokey & Meerky**.
 ### Units benefitting most from Sinbad
 
 - Indris (3.6 / 5)
-- Aliceth (2.3 / 5)
 - Bonnie (2.2 / 5)
+- Shadewing (1.8 / 5)
 
 ### Units that can act as a replacement for Sinbad
 
@@ -12621,6 +12618,7 @@ Tilaya provides DEF buff (EX+10) in an area `average` and Max HP buff (EX+10) in
 - **Signature skill**: Starlight Waltz (ultimate)
 - **Movement**: moving / stationary (two units)
 - **Behavior tags**: `ally-buffer` `ally-healer` `ally-shielder` `energy-provider`
+- **Ally composition**: place allies on the Stellar Bond line between Elijah and Lailah
 - **Damage types**: Magic `low`, Max HP-based damage `low`
 
 #### Play overview
@@ -12660,8 +12658,6 @@ linked allies borrow best stats from each other
 
 Look for units providing: `Haste` `Healing` `Energy`  
 Common buffers are **Smokey & Meerky**, **Mikola**, or **Solise**.
-
-Twins also requires units **positioned on their link**
 
 - **Contess**
   - Direct healing (multiple targets, low)
@@ -13317,7 +13313,6 @@ Common buffers are **Twins**, **Rowan**, or **Smokey & Meerky**.
 
 Velara provides Direct healing in an area `low`.
 
-- Aliceth (3.3 / 5)
 - Alna (2.1 / 5)
 - Athalia (2.1 / 5)
 - Reinier (2.1 / 5)
@@ -13910,8 +13905,8 @@ Zorya also requires allies **casting ultimates**
 ### Units benefitting most from Zorya
 
 - Bonnie (4.3 / 5)
-- Aliceth (3.6 / 5)
 - Indris (3.1 / 5)
+- Shadewing (2.7 / 5)
 
 ### Units that can act as a replacement for Zorya
 

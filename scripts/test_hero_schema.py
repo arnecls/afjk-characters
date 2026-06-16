@@ -750,7 +750,7 @@ class PlacementConstraintTests(unittest.TestCase):
         texts = [c.text for c in constraints if c.kind == "ally_placement"]
         self.assertTrue(any("Doomfield" in t for t in texts), texts)
 
-    def test_aliceth_ally_composition(self):
+    def test_aliceth_brightfeather_ally_composition(self):
         constraints = rs.detect_placement_constraints(
             self._hero_skills("Aliceth"), "Aliceth"
         )
@@ -758,9 +758,51 @@ class PlacementConstraintTests(unittest.TestCase):
         self.assertIn("ally_composition", kinds)
         texts = [c.text for c in constraints if c.kind == "ally_composition"]
         self.assertTrue(
-            any("nearest ally in same row" in t for t in texts),
+            any("Brightfeather" in t and "row" in t for t in texts),
             texts,
         )
+
+    def test_aliceth_hero_focus_not_debuff_require(self):
+        text = (
+            "After the first enemy affected by her Mark of Judgement is "
+            "defeated, Aliceth and allies with Brightfeather gain an extra "
+            "6% ATK."
+        )
+        effects: list[rs.SpecialEffect] = []
+        rs.detect_special_effects(effects, "legendary+", text)
+        requires = [e for e in effects if e.kind == "requires"]
+        self.assertEqual(
+            [e.label for e in requires],
+            [],
+            requires,
+        )
+
+    def test_twins_stellar_bond_placement(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Elijah & Lailah"), "Twins"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        self.assertTrue(any("Stellar Bond" in t for t in texts), texts)
+
+    def test_reinier_symmetrical_placement(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Reinier"), "Reinier"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        self.assertTrue(any("symmetrical" in t for t in texts), texts)
+
+    def test_himmel_hero_party_placement(self):
+        constraints = rs.detect_placement_constraints(
+            self._hero_skills("Himmel"), "Himmel"
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("ally_placement", kinds)
+        texts = [c.text for c in constraints if c.kind == "ally_placement"]
+        self.assertTrue(any("Hero Party" in t for t in texts), texts)
 
 
 @unittest.skipUnless(hs.jsonschema is not None, "jsonschema not installed")
@@ -808,6 +850,14 @@ class MovementDetectionTests(unittest.TestCase):
     def test_florabelle_stays_stationary(self):
         behavior = self._behavior("Florabelle")
         self.assertEqual(behavior.movement, "stationary")
+
+    def test_callan_inactive_while_ultimate(self):
+        behavior = self._behavior("Callan")
+        self.assertIn("inactive while ultimate is running", behavior.movement_note)
+
+    def test_zorya_inactive_while_dormant(self):
+        behavior = self._behavior("Zorya")
+        self.assertIn("inactive while dormant", behavior.movement_note)
 
 
 class SchemaValidationTests(unittest.TestCase):

@@ -593,14 +593,7 @@
             "description": "The first time Aliceth or an ally with Brightfeather takes a fatal blow, Aliceth prevents their defeat."
           }
         ],
-        "requires": [
-          {
-            "label": "Debuff on target",
-            "tier": "legendary+",
-            "targeting": "Enemies",
-            "description": "After the first enemy affected by her Mark of Judgement is defeated, Aliceth and allies with Brightfeather gain an extra 6% ATK."
-          }
-        ]
+        "requires": []
       },
       "damage_entries": [
         [
@@ -640,7 +633,7 @@
         "placement_constraints": [
           {
             "kind": "ally_composition",
-            "text": "nearest ally in same row receives Brightfeather at battle start"
+            "text": "grants Brightfeather to nearest ally in her row"
           }
         ],
         "skill_overview": {
@@ -7354,7 +7347,7 @@
       ],
       "behavior": {
         "movement": "moving",
-        "movement_note": "avg attack range 1.7 tiles",
+        "movement_note": "inactive while ultimate is running",
         "casting_speed": "fast",
         "signature_skill_name": "Restless Guardian",
         "signature_skill_is_ult": true,
@@ -13988,7 +13981,12 @@
         "ult_speed": "average",
         "non_ult_speed": "slow",
         "avg_attack_range": null,
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place allies on the Stellar Bond line between Elijah and Lailah"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "average",
@@ -21489,7 +21487,12 @@
         "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 2.894736842105263,
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "place Mage, Tank, and Support within 1 tile at battle start (Hero Party)"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "slow",
@@ -42483,7 +42486,12 @@
         "ult_speed": "slow",
         "non_ult_speed": "fast",
         "avg_attack_range": null,
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "ally_placement",
+            "text": "symmetrical ally-enemy tile pairs at battle start for Dynamic Balance swaps"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "fast",

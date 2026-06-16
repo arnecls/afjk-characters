@@ -13,14 +13,6 @@
           "score": 19.7706
         },
         {
-          "provider": "Velara",
-          "reasons": [
-            "Healing via Direct healing (area, low)",
-            "Enables Debuff on target via Haste debuff (area)"
-          ],
-          "score": 16.0
-        },
-        {
           "provider": "Solise",
           "reasons": [
             "Healing via Direct healing (all units, high)"
@@ -28,103 +20,42 @@
           "score": 15.0
         },
         {
-          "provider": "Galahad",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, average) `signature fuel`",
-            "Enables Debuff on target via Movement speed debuff (area)"
-          ],
-          "score": 14.025
-        },
-        {
           "provider": "Himmel",
           "reasons": [
             "ATK via ATK buff (multiple targets, high)",
-            "Healing via Direct healing (single target, low)",
-            "Enables Debuff on target via Damage taken debuff (single target)"
+            "Healing via Direct healing (single target, low)"
           ],
-          "score": 12.75
+          "score": 10.5
         },
         {
           "provider": "Contess",
           "reasons": [
             "ATK via ATK buff (single target, high)",
-            "Healing via Direct healing (multiple targets, low)",
-            "Enables Debuff on target via ATK debuff (multiple targets)"
+            "Healing via Direct healing (multiple targets, low)"
           ],
-          "score": 12.0
-        },
-        {
-          "provider": "Frieren",
-          "reasons": [
-            "Enables Debuff on target via DoT (area)"
-          ],
-          "score": 12.0
+          "score": 7.5
         },
         {
           "provider": "Gunnar",
           "reasons": [
             "ATK via ATK buff (single target, high)",
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "Enables Debuff on target via Healing debuff (area)"
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
-          "score": 11.309999999999999
+          "score": 5.31
         },
         {
-          "provider": "Saida",
+          "provider": "Velara",
           "reasons": [
-            "Enables Debuff on target via Energy drain (single target)"
+            "Healing via Direct healing (area, low)"
           ],
-          "score": 6.75
+          "score": 4.0
         },
         {
-          "provider": "Aurora",
+          "provider": "Galahad",
           "reasons": [
-            "Enables Debuff on target via Haste debuff (single target)"
+            "ATK SPD via Haste buff (single target, average) `signature fuel`"
           ],
-          "score": 4.5
-        },
-        {
-          "provider": "Mehira",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 3.2625
-        },
-        {
-          "provider": "Baelran",
-          "reasons": [
-            "Enables Debuff on target via Max HP debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Faramor",
-          "reasons": [
-            "Enables Debuff on target via Vitality debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Gwyneth",
-          "reasons": [
-            "Enables Debuff on target via Vitality debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Shemira",
-          "reasons": [
-            "Enables Debuff on target via Max HP debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Sylphira",
-          "reasons": [
-            "Enables Debuff on target via Max HP debuff (single target)"
-          ],
-          "score": 2.25
+          "score": 2.025
         },
         {
           "provider": "Silven",
@@ -134,55 +65,11 @@
           "score": 1.5
         },
         {
-          "provider": "Dunlingr",
+          "provider": "Mehira",
           "reasons": [
-            "ATK via ATK buff (single target, average)",
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
-            "Enables Debuff on target via Haste debuff (all units)"
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 28.2
-        },
-        {
-          "provider": "Lyca",
-          "reasons": [
-            "Energy via Energy recovery (all units, low) `signature fuel`",
-            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
-            "Enables Debuff on target via ATK debuff (all units)"
-          ],
-          "score": 26.901
-        },
-        {
-          "provider": "Lorsan",
-          "reasons": [
-            "Healing via Direct healing (all units, low)",
-            "ATK SPD via Haste buff (single target, high) `signature fuel`",
-            "Enables Debuff on target via Haste debuff (area)"
-          ],
-          "score": 26.0375
-        },
-        {
-          "provider": "Kulu",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables Debuff on target via Damage taken debuff (all units)"
-          ],
-          "score": 24.0
-        },
-        {
-          "provider": "Cyran",
-          "reasons": [
-            "Enables Debuff on target via ATK SPD debuff (all units)"
-          ],
-          "score": 22.5
-        },
-        {
-          "provider": "Evie",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "Healing via Direct healing (single target, high)",
-            "Enables Debuff on target via Magic DEF debuff (all units)"
-          ],
-          "score": 21.0
+          "score": 1.0125
         },
         {
           "provider": "Smokey & Meerky",
@@ -203,40 +90,6 @@
           "score": 19.05
         },
         {
-          "provider": "Zorya",
-          "reasons": [
-            "Enables Debuff on target via Movement speed debuff (area)"
-          ],
-          "score": 18.0
-        },
-        {
-          "provider": "Alna",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via Haste debuff (all units)"
-          ],
-          "score": 16.5
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, high)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Enables Debuff on target via Phys DEF debuff (single target)"
-          ],
-          "score": 15.5412
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Healing via Direct healing (arc, average)",
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Enables Debuff on target via Phys DEF debuff (multiple targets)"
-          ],
-          "score": 15.12
-        },
-        {
           "provider": "Hewynn",
           "reasons": [
             "Healing via Healing over time (all units, high)"
@@ -244,62 +97,29 @@
           "score": 15.0
         },
         {
-          "provider": "Hepler",
+          "provider": "Evie",
           "reasons": [
-            "Healing via Healing over time (multiple targets, high)",
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables Debuff on target via Haste debuff (single target)"
+            "ATK via ATK buff (multiple targets, high)",
+            "Healing via Direct healing (single target, high)"
           ],
-          "score": 14.5125
+          "score": 13.5
         },
         {
-          "provider": "Kazim",
+          "provider": "Ravion",
           "reasons": [
-            "ATK via ATK buff (single target, high)",
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Enables Debuff on target via Marked target (focus fire) (single target)"
+            "ATK via ATK buff (multiple targets, high)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
-          "score": 13.05
+          "score": 11.0412
         },
         {
-          "provider": "Rowan",
+          "provider": "Fay",
           "reasons": [
-            "Healing via Direct healing (area, low)",
-            "Energy via Energy recovery (area, high) `signature fuel`",
-            "Enables Debuff on target via Energy drain (single target)"
+            "ATK via ATK buff (multiple targets, low)",
+            "Healing via Direct healing (arc, average)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
           ],
-          "score": 12.5824
-        },
-        {
-          "provider": "Koko",
-          "reasons": [
-            "Healing via Direct healing (all units, average)",
-            "Enables Debuff on target via Damage taken debuff (single target)"
-          ],
-          "score": 12.25
-        },
-        {
-          "provider": "Brutus",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF debuff (area)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Laios",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF debuff (area)"
-          ],
-          "score": 12.0
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "Healing via Direct healing (single target, high)",
-            "DEF Penetration via DEF Penetration buff (single target, average)",
-            "Enables Debuff on target via ATK debuff (single target)"
-          ],
-          "score": 12.0
+          "score": 10.62
         },
         {
           "provider": "Hammie",
@@ -310,18 +130,19 @@
           "score": 10.5
         },
         {
-          "provider": "Antandra",
+          "provider": "Hepler",
           "reasons": [
-            "Enables Debuff on target via ATK debuff (arc)"
+            "Healing via Healing over time (multiple targets, high)",
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
-          "score": 9.0
+          "score": 10.0125
         },
         {
-          "provider": "Eironn",
+          "provider": "Koko",
           "reasons": [
-            "Enables Debuff on target via Haste debuff (arc)"
+            "Healing via Direct healing (all units, average)"
           ],
-          "score": 9.0
+          "score": 10.0
         },
         {
           "provider": "Ludovic",
@@ -338,27 +159,28 @@
           "score": 9.0
         },
         {
-          "provider": "Sinbad",
+          "provider": "Kazim",
           "reasons": [
-            "Enables Debuff on target via Magic DEF debuff (multiple targets)"
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
-          "score": 9.0
+          "score": 8.55
         },
         {
-          "provider": "Nara",
+          "provider": "Rowan",
           "reasons": [
             "Healing via Direct healing (area, low)",
-            "Enables Debuff on target via Max HP debuff (single target)"
+            "Energy via Energy recovery (area, high) `signature fuel`"
           ],
-          "score": 8.5
+          "score": 8.0824
         },
         {
-          "provider": "Lily May",
+          "provider": "Lorsan",
           "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables Debuff on target via Energy drain (single target)"
+            "Healing via Direct healing (all units, low)",
+            "ATK SPD via Haste buff (single target, high) `signature fuel`"
           ],
-          "score": 8.25
+          "score": 8.0375
         },
         {
           "provider": "Gerda",
@@ -368,185 +190,36 @@
           "score": 8.0
         },
         {
-          "provider": "Pandora",
+          "provider": "Zanie",
           "reasons": [
-            "Healing via Direct healing (single target, average)",
-            "Enables Debuff on target via Vitality debuff (single target)"
+            "Healing via Direct healing (single target, high)",
+            "DEF Penetration via DEF Penetration buff (single target, average)"
           ],
           "score": 7.5
+        },
+        {
+          "provider": "Dunlingr",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
+          ],
+          "score": 5.7
         },
         {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK buff (multiple targets, low, conditional (frequent))",
-            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`",
-            "Enables Debuff on target via ATK debuff (single target)"
+            "ATK SPD via Haste buff (multiple targets, low) `signature fuel`"
           ],
-          "score": 6.824999999999999
+          "score": 4.574999999999999
         },
         {
-          "provider": "Bonnie",
+          "provider": "Lyca",
           "reasons": [
-            "Enables Debuff on target via Haste debuff (single target)"
+            "Energy via Energy recovery (all units, low) `signature fuel`",
+            "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
-          "score": 6.75
-        },
-        {
-          "provider": "Kafra",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF debuff (single target)"
-          ],
-          "score": 6.75
-        },
-        {
-          "provider": "Atalanta",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`",
-            "Enables Debuff on target via Phys DEF debuff (single target)"
-          ],
-          "score": 6.2212499999999995
-        },
-        {
-          "provider": "Alsa",
-          "reasons": [
-            "Enables Debuff on target via Movement speed debuff (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Bryon",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Carolina",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Kruger",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF debuff (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Lucius",
-          "reasons": [
-            "Enables Debuff on target via ATK debuff (area)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Granny Dahnie",
-          "reasons": [
-            "ATK SPD via Haste buff (single target, low) `signature fuel`",
-            "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 5.5125
-        },
-        {
-          "provider": "Thador",
-          "reasons": [
-            "Energy via Energy recovery (single target, low) `signature fuel`",
-            "Enables Debuff on target via Magic DEF debuff (single target)"
-          ],
-          "score": 5.0103
-        },
-        {
-          "provider": "Berial",
-          "reasons": [
-            "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Hodgkin",
-          "reasons": [
-            "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Indris",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF debuff (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Enables Debuff on target via ATK debuff (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Natsu",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Odie",
-          "reasons": [
-            "Enables Debuff on target via DoT (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Satrana",
-          "reasons": [
-            "Enables Debuff on target via Vitality debuff (multiple targets)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Shadewing",
-          "reasons": [
-            "Enables Debuff on target via Magic DEF debuff (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Shakir",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (multiple targets)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Silvina",
-          "reasons": [
-            "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Vala",
-          "reasons": [
-            "Enables Debuff on target via Marked target (focus fire) (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Valen",
-          "reasons": [
-            "Enables Debuff on target via Haste debuff (single target)"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Viperian",
-          "reasons": [
-            "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 4.5
+          "score": 4.401
         },
         {
           "provider": "Damian",
@@ -556,44 +229,18 @@
           "score": 4.0
         },
         {
-          "provider": "Valka",
+          "provider": "Nara",
           "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`",
-            "Enables Debuff on target via Haste debuff (single target)"
+            "Healing via Direct healing (area, low)"
           ],
-          "score": 3.87
+          "score": 4.0
         },
         {
-          "provider": "Cecia",
+          "provider": "Pandora",
           "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables Debuff on target via Phys DEF debuff (single target)"
+            "Healing via Direct healing (single target, average)"
           ],
-          "score": 3.75
-        },
-        {
-          "provider": "Dionel",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via Vitality debuff (single target)"
-          ],
-          "score": 3.75
-        },
-        {
-          "provider": "Pang",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables Debuff on target via Energy recovery debuff (single target)"
-          ],
-          "score": 3.75
-        },
-        {
-          "provider": "Reinier",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via ATK debuff (single target)"
-          ],
-          "score": 3.75
+          "score": 3.0
         },
         {
           "provider": "Zandrok",
@@ -603,88 +250,46 @@
           "score": 2.295
         },
         {
-          "provider": "Cassadee",
+          "provider": "Atalanta",
           "reasons": [
-            "Enables Debuff on target via Magic DEF debuff (single target)"
+            "ATK SPD via Haste buff (multiple targets, low, conditional (frequent)) `signature fuel`"
           ],
-          "score": 2.25
+          "score": 1.72125
         },
         {
-          "provider": "Cryonaia",
+          "provider": "Valka",
           "reasons": [
-            "Enables Debuff on target via Damage taken debuff (single target)"
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
           ],
-          "score": 2.25
+          "score": 1.6199999999999999
         },
         {
-          "provider": "Harak",
+          "provider": "Cecia",
           "reasons": [
-            "Enables Debuff on target via Healing debuff (single target)"
+            "DEF Penetration via DEF Penetration buff (single target, low)"
           ],
-          "score": 2.25
+          "score": 1.5
         },
         {
-          "provider": "Igor",
+          "provider": "Kulu",
           "reasons": [
-            "Enables Debuff on target via Healing debuff (single target)"
+            "DEF Penetration via DEF Penetration buff (single target, low)"
           ],
-          "score": 2.25
+          "score": 1.5
         },
         {
-          "provider": "Nazrik",
+          "provider": "Lily May",
           "reasons": [
-            "Enables Debuff on target via Max HP debuff (single target)"
+            "DEF Penetration via DEF Penetration buff (single target, low)"
           ],
-          "score": 2.25
+          "score": 1.5
         },
         {
-          "provider": "Nerion",
+          "provider": "Pang",
           "reasons": [
-            "Enables Debuff on target via ATK debuff (single target)"
+            "DEF Penetration via DEF Penetration buff (single target, low)"
           ],
-          "score": 2.25
-        },
-        {
-          "provider": "Niru",
-          "reasons": [
-            "Enables Debuff on target via Healing debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Phraesto",
-          "reasons": [
-            "Enables Debuff on target via Vitality debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Pippa",
-          "reasons": [
-            "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Seth",
-          "reasons": [
-            "Enables Debuff on target via Phys DEF debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Temesia",
-          "reasons": [
-            "Enables Debuff on target via Damage dealt debuff (single target)"
-          ],
-          "score": 2.25
-        },
-        {
-          "provider": "Walker",
-          "reasons": [
-            "Enables Debuff on target via Crit Resist debuff (single target)"
-          ],
-          "score": 2.25
+          "score": 1.5
         },
         {
           "provider": "Rhys",
@@ -701,7 +306,21 @@
           "score": 1.0206000000000002
         },
         {
+          "provider": "Granny Dahnie",
+          "reasons": [
+            "ATK SPD via Haste buff (single target, low) `signature fuel`"
+          ],
+          "score": 1.0125
+        },
+        {
           "provider": "Arden",
+          "reasons": [
+            "Energy via Energy recovery (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
+        },
+        {
+          "provider": "Thador",
           "reasons": [
             "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
@@ -1428,7 +1047,7 @@
         },
         {
           "score": 6.0,
-          "name": "Aliceth"
+          "name": "Carolina"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -5155,8 +4774,8 @@
           "name": "Indris"
         },
         {
-          "score": 6.75,
-          "name": "Aliceth"
+          "score": 6.0,
+          "name": "Carolina"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -5333,7 +4952,7 @@
         },
         {
           "score": 12.0,
-          "name": "Aliceth"
+          "name": "Bonnie"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -8352,6 +7971,10 @@
           "name": "Baelran"
         },
         {
+          "score": 7.5,
+          "name": "Aliceth"
+        },
+        {
           "score": 6.0,
           "name": "Shemira"
         },
@@ -10347,7 +9970,7 @@
         },
         {
           "score": 3.75,
-          "name": "Aliceth"
+          "name": "Bonnie"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -14476,10 +14099,6 @@
           "name": "Bonnie"
         },
         {
-          "score": 14.025,
-          "name": "Aliceth"
-        },
-        {
           "score": 7.500000000000001,
           "name": "Mehira"
         },
@@ -15705,6 +15324,10 @@
         {
           "score": 6.0,
           "name": "Zanie"
+        },
+        {
+          "score": 5.31,
+          "name": "Aliceth"
         },
         {
           "score": 5.31,
@@ -18452,12 +18075,12 @@
           "name": "Kordan"
         },
         {
-          "score": 12.75,
-          "name": "Aliceth"
-        },
-        {
           "score": 12.0,
           "name": "Kafra"
+        },
+        {
+          "score": 10.5,
+          "name": "Aliceth"
         },
         {
           "score": 10.5,
@@ -18901,11 +18524,11 @@
         },
         {
           "score": 4.5,
-          "name": "Aliceth"
+          "name": "Bonnie"
         },
         {
           "score": 4.5,
-          "name": "Bonnie"
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -19485,7 +19108,7 @@
         },
         {
           "score": 2.25,
-          "name": "Aliceth"
+          "name": "Bonnie"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -20301,7 +19924,7 @@
         },
         {
           "score": 4.5,
-          "name": "Aliceth"
+          "name": "Bonnie"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -21221,7 +20844,7 @@
         },
         {
           "score": 6.75,
-          "name": "Aliceth"
+          "name": "Bonnie"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -23548,11 +23171,11 @@
         },
         {
           "score": 6.0,
-          "name": "Aliceth"
+          "name": "Bonnie"
         },
         {
           "score": 6.0,
-          "name": "Bonnie"
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -25341,8 +24964,8 @@
           "name": "Indris"
         },
         {
-          "score": 8.25,
-          "name": "Aliceth"
+          "score": 6.75,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -30704,16 +30327,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 8.5,
-          "name": "Aliceth"
-        },
-        {
           "score": 8.1,
           "name": "Indris"
         },
         {
           "score": 6.0,
           "name": "Carolina"
+        },
+        {
+          "score": 6.0,
+          "name": "Lily May"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -39112,10 +38735,6 @@
         {
           "score": 8.1,
           "name": "Indris"
-        },
-        {
-          "score": 4.5,
-          "name": "Aliceth"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -41087,11 +40706,11 @@
         },
         {
           "score": 9.0,
-          "name": "Aliceth"
+          "name": "Bonnie"
         },
         {
           "score": 9.0,
-          "name": "Bonnie"
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -47618,10 +47237,6 @@
       ],
       "beneficiaries": [
         {
-          "score": 16.0,
-          "name": "Aliceth"
-        },
-        {
           "score": 9.0,
           "name": "Himmel"
         },
@@ -49726,7 +49341,7 @@
         },
         {
           "score": 18.0,
-          "name": "Aliceth"
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [

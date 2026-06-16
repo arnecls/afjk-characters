@@ -247,6 +247,14 @@ SKIP_ENABLER_REQUIRES = frozenset(
     }
 )
 
+# Grid placement belongs in behavior, not Units improving "also requires".
+PLACEMENT_ENABLER_REQUIRES = frozenset(
+    {
+        "Ally on positioning link",
+        "Adjacent allies",
+    }
+)
+
 # Maps receiver Requires label -> provider matcher name (see score_enabler_match).
 ENABLER_REQUIRE_HANDLERS = (
     "Knock up from allies",
@@ -1014,6 +1022,7 @@ def partner_synergy_require_fragments(hero: _rs.Hero) -> list[str]:
         req.label
         for req in receiver_requires(hero)
         if req.label not in SKIP_ENABLER_REQUIRES
+        and req.label not in PLACEMENT_ENABLER_REQUIRES
         and req.label in ENABLER_REQUIRE_HANDLERS
     }
     fragments: list[str] = []

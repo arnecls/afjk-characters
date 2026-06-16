@@ -3383,7 +3383,7 @@ SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
     (r"afflicted by aging", "Debuff on target (Aging)"),
     # Target state
     (
-        r"afflicted by|affected by .{0,35}(?:venom|curse|burn|mark)",
+        r"afflicted by|affected by .{0,35}(?:venom|curse|burn)",
         "Debuff on target",
     ),
     (r"control immunity status", "Enemy not CC-immune"),
@@ -3761,6 +3761,12 @@ def detect_special_effects(
         if label == "Form or stance active" and _form_or_stance_is_caster_owned(text):
             continue
         if label == "CC on enemies" and _is_displacement_reaction_clause(text):
+            continue
+        if label == "Debuff on target" and re.search(
+            r"affected by (?:her|his|their) mark\b",
+            text,
+            re.I,
+        ):
             continue
         add_special_effect(effects, "requires", label, tier, text)
     detect_ally_grant_effects(effects, tier, text)
@@ -6211,6 +6217,17 @@ DORMANT_INACTIVE_RES: tuple[re.Pattern[str], ...] = (
     re.compile(r"\breturns? to (?:her |his |their )?dormant state\b", re.I),
 )
 
+INACTIVE_WHILE_ULTIMATE_RES: tuple[re.Pattern[str], ...] = (
+    re.compile(
+        r"while the shield is active.{0,80}cannot move or act",
+        re.I,
+    ),
+    re.compile(
+        r"maintains the shield for up to \d+",
+        re.I,
+    ),
+)
+
 EXPLICIT_HERO_MOVE_RE = re.compile(
     r"\b(?:moves?|walks?|steps?) up to \d+ tile", re.I
 )
@@ -6543,6 +6560,8 @@ def _conditional_stationary_note(text: str) -> str | None:
         return "stationary when rooted"
     if any(p.search(text) for p in DORMANT_INACTIVE_RES):
         return "inactive while dormant"
+    if any(p.search(text) for p in INACTIVE_WHILE_ULTIMATE_RES):
+        return "inactive while ultimate is running"
     return None
 
 
@@ -7504,7 +7523,7 @@ def detect_placement_constraints(
                 re.I,
             ),
             "ally_composition",
-            "nearest ally in same row receives Brightfeather at battle start",
+            "grants Brightfeather to nearest ally in her row",
         ),
         (
             re.compile(
@@ -7514,6 +7533,34 @@ def detect_placement_constraints(
             ),
             "ally_placement",
             "place ally in same row at battle prep (Winter Warrior buffs)",
+        ),
+        (
+            re.compile(
+                r"allied heroes placed in a straight path between the twins",
+                re.I,
+            ),
+            "ally_placement",
+            "place allies on the Stellar Bond line between Elijah and Lailah",
+        ),
+        (
+            re.compile(
+                r"when a battle starts.{0,80}switches an adjacent ally's "
+                r"position with an enemy if they're in symmetrical positions",
+                re.I,
+            ),
+            "ally_placement",
+            "symmetrical ally-enemy tile pairs at battle start "
+            "for Dynamic Balance swaps",
+        ),
+        (
+            re.compile(
+                r"at least 1 Mage, 1 Tank, and 1 Support ally are within "
+                r"1 tile of Himmel",
+                re.I,
+            ),
+            "ally_placement",
+            "place Mage, Tank, and Support within 1 tile at battle start "
+            "(Hero Party)",
         ),
     ]
 
