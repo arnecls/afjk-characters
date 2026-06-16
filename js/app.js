@@ -814,6 +814,7 @@
     "Crit Resist debuff": { emoji: "💥", cls: "chip-debuff" },
     "Vulnerable debuff": { emoji: "🎯", cls: "chip-debuff" },
     "Damage taken reduction": { emoji: "🛡️", cls: "chip-stat" },
+    "Damage dealt buff": { emoji: "⚔️", cls: "chip-stat" },
     "DoT": { emoji: "🔥", cls: "chip-debuff" },
     "ally-buffer": { emoji: "📈", cls: "chip-role" },
     "ally-healer": { emoji: "💚", cls: "chip-role" },
