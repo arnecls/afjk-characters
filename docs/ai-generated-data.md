@@ -92,11 +92,11 @@ The @data/heroes_data.json contains a field "description_lite", which provides a
 
 ### Content
 
-Maps each hero's display name to a short playstyle summary (3–5 sentences, up to ~900 characters).
+Maps each hero's display name to a short playstyle summary (4–6 sentences, up to ~900 characters).
 
 ### Purpose
 
-Shown at the bottom of each hero's **behavior** section (before Skill overview) in `heroes-overview.md` and the site viewer. Summarizes how the hero is played: special setup requirements, when they shine, and when they underperform.
+Shown in the behavior section as **Play overview** (before **Skill overview**) in `heroes-overview.md` and the site viewer. Summarizes how the hero is played: special setup requirements, when they shine, and when they underperform.
 
 ### Prompt to Update
 

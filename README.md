@@ -13,16 +13,19 @@ This repository collects and analyzes hero skill data for [AFK Journey](https://
 | **[heroes-overview.md](heroes-overview.md)** | Main reference: synergy partners, behavior, and parsed summaries per hero |
 | **[heroes-overview.csv](heroes-overview.csv)** | Same roster data in spreadsheet form (damage, CC, buffs, movement, etc.) |
 | **[Heroes.md](Heroes.md)** | Raw skill descriptions only — no summaries |
-| **`data/`** | Canonical JSON (`heroes_data.json`) plus processed analysis and JSON schemas |
-| **`scripts/`** | Python pipeline: download, analyze, validate, and render views |
+| **[`data/`](data/)** | Canonical JSON (`heroes_data.json`), processed analysis, curated metadata, and schemas — see [data/README.md](data/README.md) |
+| **[`scripts/`](scripts/)** | Python pipeline: download, analyze, validate, and render views |
 | **[`site/`](site/)** | Static web viewer (GitHub Pages) — hero grid with synergy details |
+| **[`docs/`](docs/)** | Pipeline overview, algorithm write-ups, and validation snapshots — see [docs/README.md](docs/README.md) |
 | **[`.cursor/AGENTS.md`](.cursor/AGENTS.md)** | Detailed rules for parsing skills, scoring synergies, and editing summaries |
 
 ### What each hero entry contains
 
 Each section in [heroes-overview.md](heroes-overview.md) includes:
 
-- **Behavior** — movement pattern, signature skill, casting speed, placement constraints
+- **Behavior** — Prydwen meta tiers, movement pattern, signature skill, behavior tags, placement constraints, damage-type overview
+- **Play overview** — short playstyle blurb (setup, strengths, weaknesses) from `data/hero_play_overviews.json`
+- **Skill overview** — signature / ultimate / non-ultimate metrics plus per-skill mechanic summaries
 - **Units improving X** — up to five ranked synergy partners (stat buffs, enablers, summon support)
 - **Units benefitting most from X** — reverse index of heroes who synergize with this unit
 - **Replacements** — similar heroes grouped by role (damage, crowd control, buffs, etc.)
@@ -66,7 +69,7 @@ cd site && python3 -m http.server
 
 Then open `http://localhost:8000/` in your browser.
 
-Enable GitHub Pages once in the repository settings: source **Deploy from a branch**, branch **`gh-pages`**, folder **`/` (root)**. Pushes to `main` or `webview` trigger [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
+Enable GitHub Pages once in the repository settings: source **Deploy from a branch**, branch **`gh-pages`**, folder **`/` (root)**. Pushes to `main` or `webview` trigger [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml), which rebuilds site data from committed JSON and publishes `site/`.
 
 ### Regenerate the views
 
@@ -102,6 +105,12 @@ just validate
 
 Run `just` (or `just --list`) to see all available recipes.
 
+**Tests** (after `just setup`):
+
+```bash
+PYTHONPATH=scripts .venv/bin/python -m unittest discover -s scripts -p 'test_*.py'
+```
+
 ### Pipeline overview
 
 ```
@@ -114,9 +123,16 @@ render    →  Heroes.md
              site/data/heroes.json  (skillCards read from processed skill_card_tags)
 ```
 
-Configuration for synergy scoring and display limits lives in `data/heroes_config.json`. Curated metadata (signature skills, behavior tags, placement overrides) is in other files under `data/`.
+| Step | Script(s) | Role |
+| --- | --- | --- |
+| Download | `scripts/download_heroes.py` | Merge Fandom, Yaphalla, and Prydwen into `heroes_data.json` |
+| Analyze (pass 1) | `scripts/process_heroes.py` | Skill parsing, behavior, magnitudes → `heroes_data_processed.json` |
+| Analyze (pass 2) | `scripts/process_synergies.py` | Synergy and replacement scoring → `heroes_data_synergies.json` |
+| Render | `scripts/render_heroes.py`, `render_overview.py`, `render_site.py` | Markdown, CSV, and site JSON from committed analysis |
+| Core library | `scripts/rewrite-summaries.py` | Detection, behavior, summaries (used by analyze) |
+| Scoring library | `scripts/generate-heroes-overview.py` | Synergy/replacement matchers (imported by analyze and render) |
 
-Core parsing and synergy logic is in `scripts/rewrite-summaries.py` and `scripts/generate-heroes-overview.py`.
+Configuration for synergy scoring and display limits lives in `data/heroes_config.json`. Curated metadata — signature skills, behavior tags, skill summaries, play overviews — and manual overrides (placement, movement, melee) are in other files under `data/`; see [data/README.md](data/README.md) and [docs/ai-generated-data.md](docs/ai-generated-data.md).
 
 ## Requirements
 

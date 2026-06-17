@@ -16,6 +16,7 @@ JSON inputs and outputs for the hero pipeline (`just download` → `just analyze
 | [hero_play_overviews.json](hero_play_overviews.json) | **AI-generated** | Short playstyle summary per hero (4–6 sentences, ~900 chars max). Focuses on setup requirements, strengths, and weaknesses; uses **bold** for key phrases. Shown in the behavior section before Skill overview. |
 | [placement_constraint_overrides.json](placement_constraint_overrides.json) | **Manual configuration** | Optional overrides when placement/composition rules cannot be parsed from skill text. |
 | [movement_overrides.json](movement_overrides.json) | **Manual configuration** | Optional per-hero movement labels when automatic detection is wrong. |
+| [melee_overrides.json](melee_overrides.json) | **Manual configuration** | Optional `is_melee` / `is_dual_range` flags when melee-floor or range weighting is wrong. |
 | [heroes_config.json](heroes_config.json) | **Manual configuration** | Tunables: synergy weights, display limits, casting-speed thresholds, replacement scoring, proximity-aura reach (`proximity_synergy`). |
 | [schema/](schema/) | **Manual configuration** | JSON Schema definitions used to validate processed data and tag enums. |
 
@@ -54,6 +55,10 @@ Edit these when tuning scoring, fixing edge cases, or extending validation:
   receiver/provider overrides for local aura buff matching.
 - **`placement_constraint_overrides.json`** — map display name → list of
   `{kind, text}` placement constraints; bypasses text detection for that hero.
+- **`movement_overrides.json`** — map display name → `{movement, note}` when
+  automatic movement detection is wrong.
+- **`melee_overrides.json`** — map display name → `{is_melee}` and/or
+  `{is_dual_range}` for melee-floor and weighted-range edge cases.
 - **`schema/`** — contract for processed JSON and allowed behavior-tag values.
   Update when adding new effect labels, tags, or processed fields.
 
@@ -65,11 +70,16 @@ heroes_data.json
     + signature_skills.json
     + hero_behavior_tags.json
     + placement_constraint_overrides.json
-        ↓  just analyze
+    + movement_overrides.json
+    + melee_overrides.json
+        ↓  just analyze  (process_heroes.py → process_synergies.py)
 heroes_data_processed.json
 heroes_data_synergies.json
-        ↓  just render
+        ↓  just render  (render_heroes.py · render_overview.py · render_site.py)
     + heroes_data_skill_summary.json
     + hero_play_overviews.json
-Heroes.md · heroes-overview.md · heroes-overview.csv
+Heroes.md · heroes-overview.md · heroes-overview.csv · site/data/heroes.json
 ```
+
+Ephemeral caches (gitignored): `prydwen_reviews_cache.json` (Prydwen review text for
+`scripts/generate_play_overviews.py`), `.roster_analysis_cache.pkl` (speeds re-analysis).

@@ -55,9 +55,12 @@ The melee floor is skipped if the hero has specific behavior tags that imply the
 - `summoner`: The hero is a tank/warrior who summons units to fight for them while they hang back.
 
 ### 4. Manual Overrides
-If all automated detections fail or produce an inaccurate result due to a unique game mechanic, the system relies on a manual override file: `data/movement_overrides.json`.
+If all automated detections fail or produce an inaccurate result due to a unique game mechanic, the system relies on manual override files:
 
-For example, Nara's skills might mathematically suggest she needs to move, but her core mechanic is pulling enemies to her. The override ensures she is correctly categorized:
+- **`data/movement_overrides.json`** — force a movement label and note (e.g. Nara pulling enemies to her).
+- **`data/melee_overrides.json`** — set `is_melee` or `is_dual_range` when the melee class floor or weighted range math is wrong.
+
+Example movement override:
 
 ```json
 {

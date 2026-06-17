@@ -28,8 +28,8 @@ The pipeline begins by scraping the latest character data from community sources
 
 All of this raw text is merged and saved into a single source of truth: [`data/heroes_data.json`](../data/heroes_data.json).
 
-### Stage 2: Skill Processing (Analyze)
-This is the core engine of the project, primarily handled by [`scripts/rewrite-summaries.py`](../scripts/rewrite-summaries.py). The script reads the raw English text of every skill and translates it into structured data.
+### Stage 2: Skill Processing (Analyze — pass 1)
+The core engine lives in [`scripts/rewrite-summaries.py`](../scripts/rewrite-summaries.py). [`scripts/process_heroes.py`](../scripts/process_heroes.py) reconstructs hero markdown from `heroes_data.json`, runs per-hero analysis, and writes structured output.
 
 It scans for:
 - **Damage Types**: Physical, Magic, True Damage, HP-loss.
@@ -50,15 +50,17 @@ It scans for:
 }
 ```
 
-This processed data is saved to [`data/heroes_data_processed.json`](../data/heroes_data_processed.json).
+This processed data is saved to [`data/heroes_data_processed.json`](../data/heroes_data_processed.json). Curated inputs (`signature_skills.json`, `hero_behavior_tags.json`, placement/movement/melee overrides) are read during this step but not overwritten.
 
-### Stage 3: Synergy & Replacement Scoring
-Once the skills are translated into structured data, [`scripts/generate-heroes-overview.py`](../scripts/generate-heroes-overview.py) evaluates every possible pair of heroes.
+### Stage 3: Synergy & Replacement Scoring (Analyze — pass 2)
+[`scripts/process_synergies.py`](../scripts/process_synergies.py) evaluates every possible pair of heroes using matchers from [`scripts/generate-heroes-overview.py`](../scripts/generate-heroes-overview.py) (shared scoring library, not a separate render step).
 
 It looks at what a hero **provides** (e.g., Haste buffs, Magic damage) and matches it against what another hero **requires** (e.g., a slow Ultimate that needs Haste, or a passive that triggers on allied Magic damage). The results are saved to [`data/heroes_data_synergies.json`](../data/heroes_data_synergies.json).
 
 ### Stage 4: Rendering (Views)
-Finally, the structured data and synergy scores are converted into human-readable formats. The pipeline generates the `heroes-overview.md` file and exports the data needed for the interactive Web Viewer.
+[`scripts/render_overview.py`](../scripts/render_overview.py) and [`scripts/render_site.py`](../scripts/render_site.py) read the committed JSON and produce `heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json`. [`scripts/render_heroes.py`](../scripts/render_heroes.py) regenerates `Heroes.md` from `heroes_data.json`. Rendering does not re-run skill-text detection — run `just analyze` first when processed data changes.
+
+See also [synergy algorithm](synergy-algorithm.md), [replacement algorithm](replacement-algorithm.md), and [AI-generated data](ai-generated-data.md) for curated metadata used during analyze/render.
 
 ---
 
@@ -94,4 +96,4 @@ Because of these natural language processing challenges, the pipeline is never t
 2. **Broken Patterns**: A new skill description uses a sentence structure that breaks the existing regular expressions (regex).
 3. **Spurious Data**: A skill is misclassified (e.g., an execute threshold is accidentally parsed as physical damage).
 
-To combat this, the project relies on rigorous validation checks (like the ones documented in `validation-high-level-2026-06-11.md`) and manual AI-generated overrides (like `signature_skills.json`) to catch and correct the script when the raw text is too ambiguous to parse perfectly.
+To combat this, the project relies on `just validate`, validation snapshots under `docs/validation-*.md`, and manual or AI-generated overrides (`signature_skills.json`, behavior tags, movement/melee overrides) to catch and correct the script when the raw text is too ambiguous to parse perfectly.
