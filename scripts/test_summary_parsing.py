@@ -345,6 +345,23 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertEqual(ally_max_hp[0].targeting, "Multiple targets")
         self.assertGreaterEqual(ally_max_hp[0].numeric or 0, 20.0)
 
+    def test_shakir_haste_buff_in_summary_not_debuff(self):
+        hero = _hero_by_short_name("Shakir")
+        haste_debuff = [
+            e for e in hero.effects if e.category == "debuff" and e.label == "Haste debuff"
+        ]
+        self.assertEqual(haste_debuff, [])
+        haste_buff = [
+            e for e in _effects(hero, "buff", "Haste buff")
+            if e.targeting != "Self"
+        ]
+        self.assertTrue(haste_buff)
+        summary = rs.format_summary(hero, "Shakir")
+        self.assertIn("#### Buffs provided by Shakir", summary)
+        self.assertIn("Haste buff", summary)
+        self.assertNotIn("- Haste —", summary)
+        self.assertIn("Vitality", summary)
+
     def test_zandrok_lifedrain_is_ally_buff_not_self(self):
         hero = _hero_by_short_name("Zandrok")
         self_life = [

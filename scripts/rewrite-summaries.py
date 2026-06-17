@@ -5370,6 +5370,20 @@ def _debuff_dot_is_skill_damage(clause: str) -> bool:
     )
 
 
+def _debuff_match_is_ally_stat_gain(clause: str, label: str) -> bool:
+    """Skip debuff hits on ally aura buff clauses (e.g. Shakir Lupine Aura)."""
+    t = clause.lower()
+    if label == "Haste debuff" and re.search(
+        r"\bincreas(?:e|es|ing) (?:their |allies'? )?haste\b", t
+    ):
+        return True
+    if label == "Haste debuff" and re.search(r"\ballies\b", t) and re.search(
+        r"\bincreas(?:e|es|ing).{0,60}haste\b", t
+    ):
+        return True
+    return False
+
+
 def _debuff_match_is_caster_energy_cost(clause: str) -> bool:
     """True when energy loss is a self upkeep cost, not an enemy debuff."""
     t = clause.lower()
@@ -5732,6 +5746,8 @@ def analyze_text(
             if label == "Energy drain" and _debuff_match_is_caster_energy_cost(
                 scope
             ):
+                continue
+            if _debuff_match_is_ally_stat_gain(scope, label):
                 continue
             debuff_label = label
             if label == "ATK SPD debuff" and re.search(
@@ -6489,6 +6505,15 @@ def collect_hero_buff_effects(hero: Hero) -> list[Effect]:
     return sorted(items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label))
 
 
+def collect_summary_buff_effects(hero: Hero) -> list[Effect]:
+    """Ally buffs for per-hero summary cards (excludes summon-only party buffs)."""
+    return [
+        e
+        for e in collect_hero_buff_effects(hero)
+        if e.targeting != SUMMON_BUFF_TARGETING
+    ]
+
+
 def _format_buff_targeting_phrase(targeting: str) -> str:
     lower = targeting.strip().lower()
     if lower == "summons only":
@@ -6714,6 +6739,20 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
                 out.append(f"- {dt} — {tgt} — `{mag}`")
             else:
                 out.append(f"- {dt} — {tgt}")
+        out.append("")
+
+    buff_items = collect_summary_buff_effects(hero)
+    if buff_items:
+        out.append(f"#### Buffs provided by {name}")
+        out.append("")
+        for e in sorted(
+            buff_items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)
+        ):
+            out.append(
+                f"- {_summary_buff_display_label(e.label)}"
+                f"{format_tier_suffix(e.tier)} — {e.targeting} — "
+                f"{format_effect_magnitude(e)}"
+            )
         out.append("")
 
     for cat, heading in [("debuff", "Debuffs")]:

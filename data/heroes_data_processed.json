@@ -4,7 +4,7 @@
       "long_name": "Aliceth - Radiant Wings",
       "faction": "celestial",
       "class": "marksman",
-      "role_category": "damage_dealer",
+      "role_category": "specialist",
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
@@ -660,7 +660,7 @@
       ],
       "damage_magnitudes": {
         "hp_loss": "low",
-        "max_hp": "average"
+        "max_hp": "high"
       },
       "benefit_stats": [
         "atk",
@@ -669,14 +669,14 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "avg attack range 8.0 tiles",
-        "casting_speed": "fast",
+        "casting_speed": "average",
         "signature_skill_name": "Radiant Rain",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
-        "non_ult_speed": "fast",
+        "ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 8.0,
         "placement_constraints": [
           {
@@ -686,7 +686,7 @@
         ],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -698,7 +698,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -1826,7 +1826,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -2733,7 +2733,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": null,
         "placement_constraints": [],
         "skill_overview": {
@@ -3226,7 +3226,7 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Wild Sniper",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "average",
@@ -3264,7 +3264,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
@@ -3812,7 +3812,7 @@
       ],
       "damage_magnitudes": {
         "true": "average",
-        "hp_loss": "high",
+        "hp_loss": "average",
         "max_hp": "high"
       },
       "benefit_stats": [
@@ -3843,7 +3843,7 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "average",
-              "HP loss": "high"
+              "HP loss": "average"
             }
           },
           "ultimate": {
@@ -3855,7 +3855,7 @@
             "debuffs": "none",
             "damage_types": {
               "True damage": "average",
-              "HP loss": "high"
+              "HP loss": "average"
             }
           },
           "non_ultimate": {
@@ -4387,7 +4387,7 @@
       "long_name": "Baelran - Dawnblade",
       "faction": "celestial",
       "class": "warrior",
-      "role_category": "tank",
+      "role_category": "specialist",
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
@@ -4873,7 +4873,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "average",
+        "true": "high",
         "max_hp": "high"
       },
       "benefit_stats": [
@@ -4903,7 +4903,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "Physical": "average"
             }
           },
@@ -4915,7 +4915,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "Physical": "average"
             }
           },
@@ -4927,7 +4927,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "low",
+              "True damage": "average",
               "Physical": "high",
               "Max HP-based damage": "high"
             }
@@ -6440,12 +6440,12 @@
           "ultimate": {
             "speed": "slow",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "low",
             "heal": "none",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "low",
+              "Max HP-based damage": "average",
               "DoT": "average",
               "Physical": "low"
             }
@@ -7795,7 +7795,7 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "high",
+              "Magic": "average",
               "Max HP-based damage": "low"
             }
           }
@@ -8856,7 +8856,7 @@
           "signature": {
             "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -8868,7 +8868,7 @@
           "ultimate": {
             "speed": "average",
             "first_cast_speed": "none",
-            "damage": "average",
+            "damage": "high",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -9107,7 +9107,7 @@
         "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -11195,7 +11195,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "fast",
+        "casting_speed": "average",
         "signature_skill_name": "Buddy Barrier",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
@@ -13202,7 +13202,7 @@
         "synergy_signature_speed": "average",
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
-        "non_ult_speed": "slow",
+        "non_ult_speed": "average",
         "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -18624,7 +18624,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Max HP-based damage": "average",
+              "Max HP-based damage": "high",
               "Physical": "average",
               "DoT": "low"
             }
@@ -18637,7 +18637,7 @@
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Max HP-based damage": "average",
+              "Max HP-based damage": "high",
               "Physical": "average",
               "DoT": "low"
             }
@@ -26142,7 +26142,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "high",
+              "Max HP-based damage": "average",
               "Physical": "high",
               "HP loss": "high"
             }
@@ -26511,7 +26511,7 @@
       ],
       "damage_magnitudes": {
         "max_hp": "low",
-        "true": "high"
+        "true": "average"
       },
       "benefit_stats": [
         "atk_spd",
@@ -26524,16 +26524,16 @@
         "casting_speed": "average",
         "signature_skill_name": "Demonseal Spear",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "slow",
+        "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "average",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -26545,7 +26545,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -28886,7 +28886,7 @@
       "long_name": "Lily May - Twilight Tracker",
       "faction": "wilder",
       "class": "rogue",
-      "role_category": "damage_dealer",
+      "role_category": "specialist",
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
@@ -29342,37 +29342,37 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "average",
+        "casting_speed": "slow",
         "signature_skill_name": "Tempest Shot",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 3.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "average",
             "damage_types": {
-              "Magic": "low"
+              "Magic": "average"
             }
           },
           "non_ultimate": {
@@ -32196,7 +32196,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "average"
+        "max_hp": "high"
       },
       "benefit_stats": [
         "haste",
@@ -32241,7 +32241,7 @@
             }
           },
           "non_ultimate": {
-            "speed": "fast",
+            "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -35152,7 +35152,7 @@
             "debuffs": "none",
             "damage_types": {
               "Max HP-based damage": "high",
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "ultimate": {
@@ -35164,7 +35164,7 @@
             "debuffs": "none",
             "damage_types": {
               "Max HP-based damage": "high",
-              "Magic": "average"
+              "Magic": "high"
             }
           },
           "non_ultimate": {
@@ -35753,8 +35753,8 @@
         "casting_speed": "fast",
         "signature_skill_name": "Phantom Chains",
         "signature_skill_is_ult": false,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
         "non_ult_speed": "average",
@@ -35762,7 +35762,7 @@
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "low",
             "heal": "none",
@@ -35788,7 +35788,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "low",
+            "damage": "average",
             "heal": "average",
             "buffs": "none",
             "debuffs": "none",
@@ -37396,7 +37396,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "low"
             }
           },
           "ultimate": {
@@ -37407,7 +37407,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "Magic": "average"
+              "Magic": "low"
             }
           },
           "non_ultimate": {
@@ -37419,8 +37419,8 @@
             "debuffs": "average",
             "damage_types": {
               "Max HP-based damage": "high",
-              "Magic": "high",
-              "DoT": "average"
+              "Magic": "average",
+              "DoT": "high"
             }
           }
         }
@@ -39428,7 +39428,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "Max HP-based damage": "average",
+              "Max HP-based damage": "high",
               "Physical": "high"
             }
           }
@@ -39801,7 +39801,7 @@
           "non_ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "none",
             "buffs": "average",
             "debuffs": "none",
@@ -42027,7 +42027,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "hp_loss": "low",
+        "hp_loss": "average",
         "max_hp": "average"
       },
       "benefit_stats": [
@@ -42062,7 +42062,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "HP loss": "low",
+              "HP loss": "average",
               "Physical": "low",
               "Max HP-based damage": "low"
             }
@@ -42075,7 +42075,7 @@
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
-              "HP loss": "low",
+              "HP loss": "average",
               "Physical": "low",
               "Max HP-based damage": "low"
             }
@@ -43597,7 +43597,7 @@
       "long_name": "Saida - Vampiric Vine",
       "faction": "hypogean",
       "class": "rogue",
-      "role_category": "damage_dealer",
+      "role_category": "specialist",
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
@@ -44262,7 +44262,7 @@
             "damage_types": {
               "Max HP-based damage": "high",
               "Magic": "high",
-              "DoT": "low"
+              "DoT": "average"
             }
           }
         }
@@ -46885,17 +46885,6 @@
               ]
             },
             {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 3,
-              "type": "debuff",
-              "name": "Haste debuff",
-              "label": "debuff_offensive"
-            },
-            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -46911,7 +46900,6 @@
             "Physical",
             "Damage taken reduction",
             "Haste buff",
-            "Haste debuff",
             "Unaffected — Self"
           ]
         },
@@ -47192,7 +47180,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "average",
+            "debuffs": "none",
             "damage_types": {
               "Physical": "high"
             }
@@ -47203,7 +47191,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "average",
+            "debuffs": "none",
             "damage_types": {
               "Physical": "high"
             }
@@ -48544,7 +48532,7 @@
             "debuffs": "average",
             "damage_types": {
               "Max HP-based damage": "high",
-              "Physical": "average"
+              "Physical": "high"
             }
           },
           "non_ultimate": {
@@ -49075,7 +49063,7 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Physical": "high"
+              "Physical": "average"
             }
           }
         }
@@ -54533,7 +54521,7 @@
       "behavior": {
         "movement": "high movement",
         "movement_note": "repositioning skills",
-        "casting_speed": "fast",
+        "casting_speed": "average",
         "signature_skill_name": "Wrath of the Wilds",
         "signature_skill_is_ult": true,
         "signature_skill_speed": "fast",
@@ -55084,7 +55072,7 @@
           "ultimate": {
             "speed": "fast",
             "first_cast_speed": "none",
-            "damage": "high",
+            "damage": "average",
             "heal": "average",
             "buffs": "none",
             "debuffs": "none",
@@ -55636,7 +55624,7 @@
       "damage_magnitudes": {
         "max_hp": "low",
         "true": "average",
-        "hp_loss": "average"
+        "hp_loss": "low"
       },
       "benefit_stats": [
         "atk",
@@ -55668,7 +55656,7 @@
               "Max HP-based damage": "average",
               "Physical": "average",
               "True damage": "average",
-              "HP loss": "average"
+              "HP loss": "low"
             }
           },
           "ultimate": {
@@ -55682,7 +55670,7 @@
               "Max HP-based damage": "average",
               "Physical": "average",
               "True damage": "average",
-              "HP loss": "average"
+              "HP loss": "low"
             }
           },
           "non_ultimate": {
@@ -56660,7 +56648,7 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Max HP-based damage": "high"
+              "Max HP-based damage": "average"
             }
           },
           "ultimate": {
@@ -56671,7 +56659,7 @@
             "buffs": "none",
             "debuffs": "average",
             "damage_types": {
-              "Max HP-based damage": "high"
+              "Max HP-based damage": "average"
             }
           },
           "non_ultimate": {
@@ -59734,7 +59722,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "high",
+        "max_hp": "average",
         "hp_loss": "high"
       },
       "benefit_stats": [
@@ -59746,19 +59734,19 @@
       "behavior": {
         "movement": "moving",
         "movement_note": "inactive while dormant",
-        "casting_speed": "slow",
+        "casting_speed": "average",
         "signature_skill_name": "Guardian's Ring",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
+        "signature_skill_speed": "slow",
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": false,
-        "ult_speed": "average",
+        "ult_speed": "slow",
         "non_ult_speed": "slow",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -59770,7 +59758,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "slow",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
