@@ -1855,6 +1855,9 @@
     if (/^Debuffs provided by /i.test(title)) {
       return "debuff";
     }
+    if (/^Buffs provided by /i.test(title)) {
+      return "buff";
+    }
     return null;
   }
 
@@ -2366,10 +2369,6 @@
         }
         const cardTitle = line.slice(5).trim();
         if (/ Requires$/i.test(cardTitle)) {
-          current = null;
-          return;
-        }
-        if (/^Buffs provided by /i.test(cardTitle)) {
           current = null;
           return;
         }
