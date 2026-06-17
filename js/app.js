@@ -974,6 +974,18 @@
     "summons only": { emoji: "👻", cls: "chip-target" },
   };
 
+  const TARGETING_RANK = {
+    "all units": 70,
+    global: 65,
+    area: 60,
+    arc: 50,
+    "multiple targets": 40,
+    allies: 35,
+    enemies: 35,
+    "single target": 30,
+    self: 20,
+  };
+
   const MOVEMENT_DEFINITIONS = {
     stationary: { emoji: "📍", cls: "chip-movement" },
     moving: { emoji: "🏃", cls: "chip-movement" },
@@ -1108,15 +1120,106 @@
     return out;
   }
 
+  function targetingTokenMeta(token) {
+    const text = normalizeToken(token);
+    if (!text) {
+      return null;
+    }
+    const lower = text.toLowerCase();
+    const def = TARGETING_DEFINITIONS[lower];
+    if (!def) {
+      return null;
+    }
+    return {
+      emoji: def.emoji,
+      text: text,
+      cls: def.cls,
+      rank: TARGETING_RANK[lower] || 0,
+    };
+  }
+
+  function renderStackedTargetingTipHtml(metas) {
+    return (
+      '<div class="chip-stacked-tip">' +
+      metas
+        .map(function (meta) {
+          return (
+            '<span class="chip ' +
+            meta.cls +
+            '">' +
+            meta.emoji +
+            " " +
+            escapeHtml(chipDisplayLabel(meta.text)) +
+            "</span>"
+          );
+        })
+        .join("") +
+      "</div>"
+    );
+  }
+
+  function renderStackedTargetingPill(tokens) {
+    const metas = tokens
+      .map(function (token) {
+        return targetingTokenMeta(token);
+      })
+      .filter(Boolean)
+      .sort(function (a, b) {
+        return b.rank - a.rank;
+      });
+    if (!metas.length) {
+      return "";
+    }
+    if (metas.length === 1) {
+      const only = metas[0];
+      return chipSpan(only.emoji, only.text, only.cls);
+    }
+
+    const segmentsHtml = metas
+      .map(function (meta, index) {
+        const isFirst = index === 0;
+        const content = isFirst
+          ? meta.emoji + " " + escapeHtml(chipDisplayLabel(meta.text))
+          : meta.emoji;
+        return (
+          '<span class="chip-stacked-seg ' +
+          meta.cls +
+          (isFirst ? " chip-stacked-first" : " chip-stacked-icon") +
+          '">' +
+          content +
+          "</span>"
+        );
+      })
+      .join("");
+
+    return (
+      '<span class="chip chip-stacked chip-has-tip" data-tip-html="' +
+      escapeHtml(renderStackedTargetingTipHtml(metas)) +
+      '" tabindex="0" role="button" aria-describedby="chip-tooltip">' +
+      segmentsHtml +
+      "</span>"
+    );
+  }
+
   function chipifyTargetingSegment(segment) {
     const normalized = unwrapBackticks(segment.trim());
     if (!normalized) {
       return "";
     }
-    return normalized
+    const parts = normalized
       .split(/\s*,\s*/)
       .map(function (part) {
-        return tokenToHtml(normalizeToken(part));
+        return normalizeToken(part);
+      })
+      .filter(Boolean);
+    if (parts.length > 1 && parts.every(function (part) {
+      return targetingTokenMeta(part);
+    })) {
+      return renderStackedTargetingPill(parts);
+    }
+    return parts
+      .map(function (part) {
+        return tokenToHtml(part);
       })
       .join(" ");
   }
@@ -1725,17 +1828,17 @@
     return escapeHtml(base) + formatMergedTierSuffix(tier);
   }
 
-  function renderSummaryEffectChip(base, tier, quality) {
+  function renderSummaryEffectChip(base, tier, quality, polarity) {
     if (quality) {
       const merged =
-        mergeEffectWithQuality(base, quality, tier) ||
-        mergeLabelWithIndicator(base, quality, tier);
+        mergeEffectWithQuality(base, quality, tier, polarity) ||
+        mergeLabelWithIndicator(base, quality, tier, polarity);
       if (merged) {
         return merged;
       }
       const qMeta = qualityIndicatorMeta(
         quality,
-        resolveLeadingChip(base).isCc
+        resolveLeadingChip(base, polarity).isCc
       );
       if (qMeta) {
         return formatMergedIndicator(
@@ -1745,10 +1848,17 @@
         );
       }
     }
-    return renderStandaloneEffectChip(base, tier);
+    return renderStandaloneEffectChip(base, tier, polarity);
   }
 
-  function renderEmDashLine(text) {
+  function summaryCardPolarity(title) {
+    if (/^Debuffs provided by /i.test(title)) {
+      return "debuff";
+    }
+    return null;
+  }
+
+  function renderEmDashLine(text, polarity) {
     const segments = splitSummarySegments(text);
 
     const trailingParts = [];
@@ -1797,17 +1907,25 @@
       firstHtml = renderSummaryEffectChip(
         parsed.base,
         parsed.tier,
-        trailingQuality
+        trailingQuality,
+        polarity
       );
     } else {
-      firstHtml = renderSummaryEffectChip(parsed.base, parsed.tier, "");
+      firstHtml = renderSummaryEffectChip(parsed.base, parsed.tier, "", polarity);
     }
 
-    const targetingHtml = segments
-      .map(function (seg) {
-        return chipifyTargetingSegment(seg);
-      })
-      .join(" ");
+    const targetingTokens = [];
+    segments.forEach(function (seg) {
+      unwrapBackticks(seg.trim())
+        .split(/\s*,\s*/)
+        .forEach(function (part) {
+          const normalized = normalizeToken(part);
+          if (normalized && targetingTokenMeta(normalized)) {
+            targetingTokens.push(normalized);
+          }
+        });
+    });
+    const targetingHtml = renderStackedTargetingPill(targetingTokens);
 
     return enhancePlainTargetingInHtml(
       [firstHtml, targetingHtml, trailingParts.join(" ")]
@@ -1816,16 +1934,16 @@
     );
   }
 
-  function renderRichLine(raw) {
+  function renderRichLine(raw, polarity) {
     const text = normalizeSummaryText(raw);
 
     if (/\s*(?:—|–)\s*/.test(text)) {
-      return renderEmDashLine(text);
+      return renderEmDashLine(text, polarity);
     }
 
     const parenMatch = text.match(/^(.+?)\s*\(([^)]+)\)\s*(.*)$/);
     if (parenMatch && !/^Primary damage type/i.test(text)) {
-      const prefixHtml = chipifyEffectName(parenMatch[1].trim());
+      const prefixHtml = chipifyEffectName(parenMatch[1].trim(), polarity);
       const innerParts = parenMatch[2]
         .split(/\s*,\s*/)
         .map(function (s) {
@@ -2277,8 +2395,9 @@
       html += "<h4>" + renderInline(card.title) + "</h4>";
       if (card.items.length) {
         html += "<ul>";
+        const polarity = summaryCardPolarity(card.title);
         card.items.forEach(function (item) {
-          html += "<li>" + renderRichLine(item) + "</li>";
+          html += "<li>" + renderRichLine(item, polarity) + "</li>";
         });
         html += "</ul>";
       }
@@ -4201,18 +4320,6 @@
     "Untargetable",
     "Cleanse",
   ];
-
-  const TARGETING_RANK = {
-    "all units": 70,
-    global: 65,
-    area: 60,
-    arc: 50,
-    "multiple targets": 40,
-    allies: 35,
-    enemies: 35,
-    "single target": 30,
-    self: 20,
-  };
 
   const TIMING_RANK = {
     permanent: 50,
