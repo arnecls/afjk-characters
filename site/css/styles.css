@@ -1449,6 +1449,14 @@ a:hover {
   overflow: visible;
 }
 
+.chip.chip-stacked.chip-tip-active {
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
 .chip-merged-right.chip-has-tip.chip-tip-active {
   position: relative;
   z-index: 1;
@@ -1898,6 +1906,48 @@ html.welcome-warning-pending .welcome-warning,
   background: transparent;
   overflow: hidden;
   vertical-align: baseline;
+}
+
+.chip.chip-stacked {
+  display: inline-flex;
+  align-items: stretch;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  vertical-align: baseline;
+}
+
+.chip-stacked-seg {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.42rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  border-left: 1px solid rgba(30, 50, 90, 0.18);
+}
+
+.chip-stacked-seg.chip-stacked-icon {
+  padding: 0.12rem 0.35rem;
+}
+
+.chip-stacked-seg:first-child {
+  border-left: none;
+  border-radius: 999px 0 0 999px;
+}
+
+.chip-stacked-seg:last-child {
+  border-radius: 0 999px 999px 0;
+}
+
+.chip-stacked-tip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.chip-stacked-tip .chip {
+  display: inline-flex;
+  width: fit-content;
 }
 
 .chip-merged-left,
