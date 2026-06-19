@@ -24,6 +24,7 @@ def _load_rs():
 
 
 rs = _load_rs()
+import heroes_io as io
 
 
 class HpLossDetectionTests(unittest.TestCase):
@@ -1676,6 +1677,210 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         self.assertEqual(heals[0].targeting, "Single target")
         self.assertEqual(len(energy), 1)
         self.assertEqual(energy[0].targeting, "Self")
+
+
+class TestIsabellaParsing(unittest.TestCase):
+    def _hero(self):
+        record = next(
+            r for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Isabella"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        return hero
+
+    def test_grimoire_pact_companion_buffs(self):
+        hero = self._hero()
+        sl = hero.skill_slices["Ultimate"]
+        labels = {e.label for e in sl.effects if e.category == "buff"}
+        self.assertIn("ATK buff", labels)
+        self.assertIn("Phys DEF buff", labels)
+        self.assertIn("Magic DEF buff", labels)
+        self.assertIn("ATK SPD buff", labels)
+        self.assertIn("Haste buff", labels)
+        self.assertIn("Vitality buff", labels)
+        self.assertNotIn("DEF buff", labels)
+        for e in sl.effects:
+            if e.category == "buff":
+                self.assertEqual(e.targeting, "Single target")
+
+    def test_enhance_force_emits_no_buffs(self):
+        hero = self._hero()
+        sl = hero.skill_slices["Unlocks at Supreme+"]
+        self.assertEqual(sl.effects, [])
+
+    def test_retributive_echo_spell_note_debuffs(self):
+        hero = self._hero()
+        sl = hero.skill_slices["Ex. Skill"]
+        debuffs = {
+            e.label for e in sl.effects if e.category == "debuff"
+        }
+        self.assertIn("ATK debuff", debuffs)
+        self.assertIn("Phys DEF debuff", debuffs)
+        self.assertIn("Magic DEF debuff", debuffs)
+        self.assertIn("ATK SPD debuff", debuffs)
+        self.assertIn("Haste debuff", debuffs)
+        self.assertIn("Vitality debuff", debuffs)
+
+    def test_hexward_companion_unaffected_and_no_spurious_damage(self):
+        hero = self._hero()
+        sl = hero.skill_slices["Skill2"]
+        self.assertFalse(
+            any(e.category == "damage" for e in sl.effects)
+        )
+        imm = sl.cc_immunities[0]
+        self.assertEqual(imm.immunity_type, "Unaffected")
+        self.assertEqual(imm.targeting, "Single target")
+        self.assertEqual(imm.timing, "Conditional")
+
+    def test_lingering_grace_companion_heal_and_damage(self):
+        hero = self._hero()
+        sl = hero.skill_slices["Skill1"]
+        heals = [e for e in sl.effects if e.label == "Direct healing"]
+        dmg = [e for e in sl.effects if e.category == "damage"]
+        self.assertEqual(len(heals), 1)
+        self.assertEqual(heals[0].targeting, "Single target")
+        self.assertEqual(len(dmg), 1)
+        self.assertEqual(dmg[0].numeric, 150.0)
+
+
+class TestOdieExecution(unittest.TestCase):
+    def test_heart_crusher_immediately_defeats_poisoned_enemies(self):
+        text = (
+            "Odie immediately defeats poisoned enemies when their HP drops below "
+            "a threshold equal to 5.2 times the base damage dealt by Dart Poison "
+            "per second."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "Mythic+", text, "Magic")
+        labels = {e.label for e in effects if e.category == "debuff"}
+        self.assertIn("Execution debuff", labels)
+        self.assertNotIn("Poison debuff", labels)
+        self.assertNotIn("DoT", labels)
+        exec_row = next(e for e in effects if e.label == "Execution debuff")
+        self.assertEqual(exec_row.targeting, "Single target")
+
+    def test_heart_crusher_hero_integration(self):
+        record = next(
+            r for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Odie"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        sl = hero.skill_slices["Ex. Skill"]
+        labels = {e.label for e in sl.effects if e.category == "debuff"}
+        self.assertIn("Execution debuff", labels)
+        tags = rs.format_skill_card_tags(hero, "skill4")
+        self.assertIn("Execution debuff", tags)
+
+
+class TestParisaParsing(unittest.TestCase):
+    def test_floral_inspiration_self_and_ally_buffs(self):
+        text = (
+            "Parisa increases ATK SPD by 22 + 3 and normal attack damage by 22% "
+            "for 10s for herself and 1 nearest ally."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        atk_spd = [e for e in effects if e.label == "ATK SPD buff"]
+        atk = [e for e in effects if e.label == "ATK buff"]
+        self.assertTrue(atk_spd)
+        self.assertTrue(atk)
+        self.assertEqual(atk_spd[0].targeting, "Multiple targets")
+        self.assertEqual(atk[0].targeting, "Multiple targets")
+        self.assertEqual(atk_spd[0].numeric, 22.0)
+        self.assertEqual(atk[0].numeric, 22.0)
+
+    def test_flower_power_energy_recovery_self(self):
+        text = (
+            "Each enemy hit by flowers restores herself an extra 70 Energy."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        energy = [e for e in effects if e.label == "Energy recovery"]
+        self.assertTrue(energy)
+        self.assertEqual(energy[0].targeting, "Self")
+        self.assertEqual(energy[0].numeric, 70.0)
+
+    def test_falling_blossom_symmetrical_placement(self):
+        constraints = rs.detect_placement_constraints(
+            [
+                rs.SkillMeta(
+                    "Ex. Skill",
+                    None,
+                    False,
+                    None,
+                    None,
+                    None,
+                    None,
+                    (
+                        "Parisa marks the nearest enemy in a symmetrical position "
+                        "with a flower when a battle starts."
+                    ),
+                )
+            ],
+            "Parisa",
+        )
+        kinds = {c.kind for c in constraints}
+        self.assertIn("self_placement", kinds)
+        texts = [c.text for c in constraints if c.kind == "self_placement"]
+        self.assertTrue(any("symmetrical" in t for t in texts), texts)
+
+    def test_parisa_hero_integration(self):
+        record = next(
+            r for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Parisa"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        sl = hero.skill_slices["Skill1"]
+        labels = {e.label for e in sl.effects if e.category == "buff"}
+        self.assertIn("ATK SPD buff", labels)
+        self.assertIn("ATK buff", labels)
+        targets = {
+            e.label: e.targeting
+            for e in sl.effects
+            if e.category == "buff"
+        }
+        self.assertEqual(targets["ATK SPD buff"], "Multiple targets")
+        self.assertEqual(targets["ATK buff"], "Multiple targets")
+        numerics = {
+            e.label: e.numeric
+            for e in sl.effects
+            if e.category == "buff"
+        }
+        self.assertEqual(numerics["ATK SPD buff"], 30.0)
+        self.assertEqual(numerics["ATK buff"], 30.0)
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        self.assertIn("ATK SPD buff", tags)
+        self.assertIn("ATK buff", tags)
+        self.assertNotIn("ATK SPD buff — Self", tags)
+        sl2 = hero.skill_slices["Skill2"]
+        energy = [e for e in sl2.effects if e.label == "Energy recovery"]
+        self.assertTrue(energy)
+        self.assertEqual(energy[0].targeting, "Self")
+        skills = [
+            rs.SkillMeta(
+                sec,
+                None,
+                False,
+                None,
+                None,
+                None,
+                None,
+                " ".join(
+                    t for tier, t, s in hero.skill_chunks if s == sec
+                ),
+            )
+            for sec in {s for _, _, s in hero.skill_chunks}
+        ]
+        placement = rs.detect_placement_constraints(skills, "Parisa")
+        self.assertTrue(
+            any(
+                c.kind == "self_placement" and "symmetrical" in c.text.lower()
+                for c in placement
+            )
+        )
 
 
 if __name__ == "__main__":

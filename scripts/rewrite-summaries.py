@@ -233,6 +233,16 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
     if re.search(r"\bfor (?:herself|himself) and all allies\b", t):
         return True
     if re.search(
+        r"\bfor (?:herself|himself) and(?: \d+ (?:nearest |weakest )?)?"
+        r"(?:an |the |\d+ )?(?:nearest |weakest )?all(?:y|ies)\b",
+        t,
+    ):
+        return True
+    if re.search(r"\bgrants? (?:herself|himself) and\b", t) and re.search(
+        r"\ball(?:y|ies)\b", t
+    ):
+        return True
+    if re.search(
         r"\bbless(?:es)? (?:an )?(?:adjacent )?allied\b(?! summons?\b)", t
     ):
         return True
@@ -280,6 +290,10 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
     if re.search(r"\ban ally with\b", t) and re.search(
         r"\b(?:grant|granting|shield|life drain)\b", t
     ):
+        return True
+    if re.search(r"\b(?:increases?|increas\w+) (?:her |his )?companion'?s?\b", t):
+        return True
+    if re.search(r"\btargets only (?:her |his )?companion\b", t):
         return True
     return False
 
@@ -420,7 +434,207 @@ def _allies_receive_healing(clause: str) -> bool:
         r"\b(?:heal|restor|recover)\w*\b", t
     ):
         return True
+    if re.search(r"\btargets only (?:her |his )?companion\b", t):
+        return True
+    if re.search(r"\bhealing them\b", t) and re.search(r"\bcompanion\b", t):
+        return True
     return False
+
+
+def _text_targets_companion(clause: str) -> bool:
+    """True when an effect applies to the hero's designated companion ally."""
+    t = clause.lower()
+    return bool(
+        re.search(r"\btargets only (?:her |his )?companion\b", t)
+        or re.search(r"\b(?:her |his )companion(?:'s)?\b", t)
+        or (
+            re.search(r"\bmake them unaffected\b", t)
+            and re.search(r"\bcompanion\b", t)
+        )
+        or (
+            re.search(r"\bhealing them\b", t)
+            and re.search(r"\bcompanion\b", t)
+        )
+    )
+
+
+def _is_spell_note_stack_trigger(clause: str) -> bool:
+    """Spell-note stack gain — not a direct combat buff/debuff grant."""
+    t = clause.lower()
+    if re.search(
+        r"gains? (?:an extra |a permanent )?stack of "
+        r"(?:the corresponding )?spell note",
+        t,
+    ):
+        return True
+    return bool(
+        re.search(
+            r"receives a buff that increases their .{0,120}spell note",
+            t,
+        )
+    )
+
+
+def _is_companion_buff_threshold_trigger(clause: str) -> bool:
+    """Stat threshold that triggers spell notes, not a buff grant."""
+    t = clause.lower()
+    return bool(
+        re.search(r"receives a buff that increases their\b", t)
+        or re.search(r"stat boosts to atk\b", t)
+        and re.search(r"gains? (?:a permanent )?stack of spell note", t)
+    )
+
+
+def _is_enemy_damage_threshold_trigger(text: str) -> bool:
+    """Enemy damage dealt to companion as trigger, not a skill hit."""
+    t = text.lower()
+    return bool(
+        re.search(
+            r"when (?:an )?enemy(?: hero)? deals? "
+            r"\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?% "
+            r"\(atk-based\) damage to (?:her |his )?"
+            r"(?:companion|guarded ally)\b",
+            t,
+        )
+    )
+
+
+_STAT_TOKEN_TO_BUFF: dict[str, str] = {
+    "atk": "ATK buff",
+    "phys def": "Phys DEF buff",
+    "physical def": "Phys DEF buff",
+    "magic def": "Magic DEF buff",
+    "atk spd": "ATK SPD buff",
+    "haste": "Haste buff",
+    "vitality": "Vitality buff",
+}
+
+_SPELL_NOTE_MIRROR_DEBUFFS = (
+    "ATK debuff",
+    "Phys DEF debuff",
+    "Magic DEF debuff",
+    "ATK SPD debuff",
+    "Haste debuff",
+    "Vitality debuff",
+)
+
+
+def _split_stat_list(list_text: str) -> list[str]:
+    normalized = re.sub(r"\s+and\s+", ", ", list_text.lower())
+    return [part.strip() for part in normalized.split(",") if part.strip()]
+
+
+def _consolidate_companion_buff_effects(effects: list) -> None:
+    """Drop generic DEF buff when Phys/Magic DEF buffs are present."""
+    labels = {e.label for e in effects if e.category == "buff"}
+    if {"Phys DEF buff", "Magic DEF buff"} <= labels and "DEF buff" in labels:
+        effects[:] = [
+            e
+            for e in effects
+            if not (e.category == "buff" and e.label == "DEF buff")
+        ]
+
+
+def _apply_spell_note_companion_buffs(
+    effects: list,
+    tier: str,
+    text: str,
+    *,
+    source_section: str | None = None,
+) -> None:
+    """Companion buffs from Isabella-style spell note stat lines."""
+    if _is_spell_note_stack_trigger(text):
+        return
+    if re.search(r"\bdebuff(?:s|ing)?\b", text, re.I) and re.search(
+        r"\benemy\b", text, re.I
+    ):
+        return
+    t = text.lower()
+    percent = re.search(
+        r"((?:atk|phys(?:ical)? def|magic def)"
+        r"(?:,\s*(?:phys(?:ical)? def|magic def|atk))*"
+        r"(?:\s+and\s+(?:magic def|phys(?:ical)? def|atk))?)"
+        r"\s*:\s*\+(\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?)%",
+        t,
+    )
+    flat = re.search(
+        r"((?:atk spd|haste|vitality)"
+        r"(?:,\s*(?:atk spd|haste|vitality))*"
+        r"(?:\s+and\s+(?:atk spd|haste|vitality))?)"
+        r"\s*:\s*\+(\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?)\b",
+        t,
+    )
+    has_companion_cast = re.search(
+        r"\bincreases? (?:her |his )?companion'?s? atk by "
+        r"\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?%",
+        t,
+    )
+    if not (percent or flat or has_companion_cast):
+        return
+    if has_companion_cast:
+        add_effect(
+            effects,
+            "buff",
+            "ATK buff",
+            tier,
+            text,
+            scope=text,
+            source_section=source_section,
+        )
+    if percent:
+        for token in _split_stat_list(percent.group(1)):
+            label = _STAT_TOKEN_TO_BUFF.get(token)
+            if label:
+                add_effect(
+                    effects,
+                    "buff",
+                    label,
+                    tier,
+                    text,
+                    scope=text,
+                    source_section=source_section,
+                )
+    if flat:
+        for token in _split_stat_list(flat.group(1)):
+            label = _STAT_TOKEN_TO_BUFF.get(token)
+            if label:
+                add_effect(
+                    effects,
+                    "buff",
+                    label,
+                    tier,
+                    text,
+                    scope=text,
+                    source_section=source_section,
+                )
+    _consolidate_companion_buff_effects(effects)
+
+
+def _apply_spell_note_mirror_debuffs(
+    effects: list,
+    tier: str,
+    text: str,
+    *,
+    source_section: str | None = None,
+) -> None:
+    """Enemy debuffs mirroring active spell-note stack stats."""
+    t = text.lower()
+    if not re.search(
+        r"reducing the stats linked to active spell note stacks|"
+        r"debuff(?:s|ing)? the enemy hero who has dealt the most damage",
+        t,
+    ):
+        return
+    for label in _SPELL_NOTE_MIRROR_DEBUFFS:
+        add_effect(
+            effects,
+            "debuff",
+            label,
+            tier,
+            text,
+            scope=text,
+            source_section=source_section,
+        )
 
 
 def _ally_sources_caster_healing(clause: str) -> bool:
@@ -568,6 +782,25 @@ def _resolve_buff_targeting(
     snippet = scope if scope is not None else text
     t = snippet.lower()
     full = text.lower()
+    if _text_targets_companion(snippet) or _text_targets_companion(full):
+        return "Single target"
+    if label in (
+        "ATK buff",
+        "ATK SPD buff",
+        "Haste buff",
+        "Crit buff",
+        "Max HP buff",
+        "DEF buff",
+        "Phys DEF buff",
+        "Magic DEF buff",
+        "Shield",
+    ) and re.search(r"\bfor (?:herself|himself) and\b", full) and re.search(
+        r"\ball(?:y|ies)\b", full
+    ):
+        if not re.search(
+            r"\b(?:laser turrets|summons?|bulbsprites?|non-summoned)\b", full
+        ):
+            return "Multiple targets"
     if label == "Haste buff" and re.search(
         r"\b(?:wind field covers|covers) the entire battlefield\b", full
     ) and re.search(r"\ballies\b", full):
@@ -1621,7 +1854,9 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             t,
         ):
             return True
-        if re.search(r"\bmakes? \w+ unaffected\b", t):
+        if re.search(r"\bmake them unaffected\b", t):
+            return False
+        if re.search(r"\bmakes? (?!them\b)\w+ unaffected\b", t):
             return True
         if re.search(r"\bcannot be targeted by enemies\b", t):
             return True
@@ -1807,6 +2042,8 @@ def detect_immunity_timing(text: str) -> str:
     t = text.lower()
     if re.search(r"when a battle starts|at the start of (?:a )?battle", t):
         return "Start of battle"
+    if re.search(r"\bafter ", t):
+        return "Conditional"
     if re.search(
         r"permanent(?:ly)?|for the rest of (?:the )?battle|until the battle ends",
         t,
@@ -1887,7 +2124,9 @@ def grants_cc_immunity(text: str, imm_type: str) -> bool:
             return False
         return bool(
             re.search(
-                r"(?:becomes?|is|remain|making|grants?|granted|linked).{0,60}unaffected|"
+                r"(?:becomes?|is|remain|making|grants?|granted|linked|"
+                r"make(?:s)? them).{0,60}unaffected|"
+                r"\bmake(?:s)? them unaffected\b|"
                 r"unaffected (?:while|when|for|during)",
                 t,
             )
@@ -1926,7 +2165,11 @@ def add_cc_immunity(hero: Hero, imm_type: str, tier: str, text: str):
     if not grants_cc_immunity(text, imm_type):
         return
     targeting = detect_targeting(text, f"{imm_type} immunity", "cc_immunity")
-    if targeting != "Self" and effect_targets_self_only(
+    if re.search(r"\bmake them unaffected\b", text.lower()) and re.search(
+        r"\bcompanion\b", text.lower()
+    ):
+        targeting = "Single target"
+    elif targeting != "Self" and effect_targets_self_only(
         text.lower(), f"{imm_type} immunity", "cc_immunity"
     ):
         targeting = "Self"
@@ -1998,6 +2241,14 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         return "Single target"
     if label in ("Invincible",) and _invincibility_targets_self(t):
         return "Self"
+    if category == "cc_immunity" and (
+        _text_targets_companion(t)
+        or (
+            re.search(r"\bmake them unaffected\b", t)
+            and re.search(r"\bcompanion\b", t)
+        )
+    ):
+        return "Single target"
     if label == "Shield":
         # Self-cast shield before generic ally checks
         if re.search(
@@ -2068,6 +2319,13 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         ):
             return "Single target"
     # Single-ally heal / shield / energy before global "all allies" heuristics
+    if category == "buff" and re.search(
+        r"\bfor (?:herself|himself) and\b", t
+    ) and re.search(r"\ball(?:y|ies)\b", t):
+        if not re.search(
+            r"\b(?:enemies|enemy|laser turrets|summons?|bulbsprites?)\b", t
+        ):
+            return "Multiple targets"
     if category == "buff" and label == "ATK buff" and re.search(
         r"\bincreas(?:e|es|ing) the atk of any unit shielded by\b", t
     ):
@@ -2526,6 +2784,8 @@ def extract_number(text: str, label: str = "") -> float | None:
             r"to increase (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*atk\b",
             r"increased to (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*atk\b",
             r"normal attacks? deal (\d+(?:\.\d+)?)% more damage",
+            r"normal attack damage by (\d+(?:\.\d+)?)%",
+            r"the normal attack damage by (\d+(?:\.\d+)?)%",
         ):
             if m := re.search(pat, t, re.I):
                 if m.lastindex and m.lastindex >= 2:
@@ -3383,6 +3643,7 @@ BUFF_RULES = [
         "ATK SPD buff",
     ),
     (r"normal attacks? deal \d+(?:\.\d+)?% more damage", "ATK buff"),
+    (r"normal attack damage by \d+(?:\.\d+)?%", "ATK buff"),
     # Haste buff: must be gaining Haste, not reducing it
     (r"increas(?:e|es|ing) .{0,60}?haste\b", "Haste buff"),
     (r"gain(?:s|ing)? an extra \d+(?:\s*\+\s*\d+)? haste\b", "Haste buff"),
@@ -3954,7 +4215,7 @@ DEBUFF_RULES = [
         "Damage taken debuff",
     ),
     # Misc
-    (r"instantly defeat", "Execution debuff"),
+    (r"(?:instantly|immediately) defeat(?:s|ed)?", "Execution debuff"),
     (
         r"burn(?:s|ing|ed)?.{0,80}(?:damage|hp).{0,60}(?:every|per second)|"
         r"burning.{0,50}(?:for \d|area)|burns? the (?:target|enemy|area)|"
@@ -4690,7 +4951,9 @@ def detect_special_effects(
             or grants_cc_immunity(text, "Untargetable")
         ):
             continue
-        if label == "HP threshold strike" and re.search(r"instantly defeat", t):
+        if label == "HP threshold strike" and re.search(
+            r"(?:instantly|immediately) defeat(?:s|ed)?", t
+        ):
             continue
         add_special_effect(effects, "provides", label, tier, text)
     for pat, label in SPECIAL_REQUIRES_RULES:
@@ -5068,6 +5331,17 @@ def _has_instant_atk_damage(text: str) -> bool:
 
 def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
     text = _normalize_effect_text(text)
+    if dmg_type in ("Physical", "Magic", "Ranged"):
+        deal_m = re.search(
+            r"(?:deal(?:ing|s|t)?|deals?) (\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?)% "
+            r"\(atk-based\) damage",
+            text,
+            re.I,
+        )
+        if deal_m:
+            parts = re.findall(r"\d+(?:\.\d+)?", deal_m.group(1))
+            if parts:
+                return sum(float(p) for p in parts)
     if dmg_type == "Max HP-based damage":
         patterns = [
             r"true damage equal to\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
@@ -5487,6 +5761,33 @@ def _primary_damage_is_true_scored(text: str) -> bool:
     )
 
 
+def _is_buff_scalar_upgrade_chunk(text: str) -> bool:
+    """Tier-upgrade line that only bumps buff numbers, not new grants."""
+    t = _normalize_effect_text(text).lower().strip()
+    if _chunk_deals_enemy_damage(text):
+        return False
+    if re.search(
+        r"\b(?:grant|grants|bless|for (?:herself|himself|all)|"
+        r"selects? an ally|all allies)\b",
+        t,
+    ):
+        return False
+    if re.search(r"\bwhen actively used\b", t):
+        return True
+    if re.search(
+        r"^increases? (?:the )?(?:atk spd|normal attack damage|atk|haste|"
+        r"crit|max hp|shield value|hp recovery|healing|energy recovery)",
+        t,
+    ):
+        return True
+    if re.search(
+        r"^increases? atk spd by .+normal attack damage by",
+        t,
+    ):
+        return True
+    return False
+
+
 def _is_damage_scalar_upgrade_chunk(text: str) -> bool:
     """Tier-upgrade line that only bumps damage numbers, not a new hit."""
     t = _normalize_effect_text(text).lower().strip()
@@ -5775,6 +6076,8 @@ def detect_damage_targeting(text: str) -> str:
 
 def _chunk_deals_enemy_damage(text: str, primary_dmg: str = "Physical") -> bool:
     """True when a skill chunk describes damage dealt to enemies."""
+    if _is_enemy_damage_threshold_trigger(text):
+        return False
     if _is_damage_trigger_only(text):
         return False
     if _skill_chunk_has_ally_only_damage(text):
@@ -5856,6 +6159,22 @@ def _chunk_deals_enemy_damage(text: str, primary_dmg: str = "Physical") -> bool:
     ):
         return True
     return False
+
+
+def _debuff_match_is_poison_mechanic_reference(clause: str) -> bool:
+    """Poison named only as execute threshold context, not a new application."""
+    t = clause.lower()
+    if re.search(r"(?:immediately|instantly) defeat(?:s|ed)?", t) and re.search(
+        r"\bdart poison\b", t
+    ):
+        return True
+    return bool(
+        re.search(
+            r"\b(?:threshold|times) .{0,80}dart poison per second\b|"
+            r"base damage dealt by dart poison per second",
+            t,
+        )
+    )
 
 
 def _debuff_match_is_per_hit_damage_falloff(clause: str) -> bool:
@@ -6179,7 +6498,10 @@ def analyze_text(
     source_section: str | None = None,
 ):
     t = text.lower()
+    skip_new_buffs = _is_buff_scalar_upgrade_chunk(text)
     for pat, label in BUFF_RULES_COMPILED:
+        if skip_new_buffs:
+            break
         for scope in _buff_match_scopes(text, label, pat):
             if label == "ATK buff" and _buff_match_is_ally_atk_penalty(scope):
                 continue
@@ -6232,6 +6554,13 @@ def analyze_text(
                 r"\breduc\w+ .{0,40}haste\b", scope.lower()
             ):
                 continue
+            if (
+                _is_spell_note_stack_trigger(text)
+                or _is_spell_note_stack_trigger(scope)
+                or _is_companion_buff_threshold_trigger(scope)
+                or re.search(r"\bspell note stack", scope.lower())
+            ):
+                continue
             add_effect(
                 effects,
                 "buff",
@@ -6250,6 +6579,10 @@ def analyze_text(
             continue
         for scope in _effect_match_scopes(text, pat):
             if label == "DoT" and _debuff_dot_is_skill_damage(scope):
+                continue
+            if label in ("DoT", "Poison debuff") and (
+                _debuff_match_is_poison_mechanic_reference(scope)
+            ):
                 continue
             # Skip ATK debuff matches that reduce an ally's own bonus stat
             # rather than debuffing an enemy (e.g. Elijah & Lailah bond penalty).
@@ -6443,12 +6776,38 @@ def analyze_text(
                 continue
             benefits.append(stat)
 
+    _apply_spell_note_companion_buffs(
+        effects, tier, text, source_section=source_section
+    )
+    _apply_spell_note_mirror_debuffs(
+        effects, tier, text, source_section=source_section
+    )
+    _consolidate_companion_buff_effects(effects)
     _apply_scalar_upgrades(effects, text, primary_dmg)
+
+
+def _upgrade_chunk_relates_to_damage(text: str) -> bool:
+    """True when an upgrade chunk adjusts damage, not only healing."""
+    t = _normalize_effect_text(text).lower()
+    if re.search(
+        r"\bdirect healing\b|\bamount of direct healing\b|\bhealing amount\b",
+        t,
+    ) and not re.search(r"\bdamage\b", t):
+        return False
+    return True
 
 
 def _upgrade_chunk_relates_to_buff(text: str, label: str) -> bool:
     """True when a tier-upgrade chunk can adjust this buff label."""
     t = _normalize_effect_text(text).lower()
+    if re.search(
+        r"\b(?:the )?buff(?:s)? (?:she|he) grants? to (?:her |his )?companion "
+        r"lasts?\b",
+        t,
+    ):
+        return False
+    if re.search(r"\blast(?:s|ing)? \d+(?:\.\d+)?s when\b", t):
+        return False
     if label == "DEF buff":
         return bool(
             re.search(
@@ -6553,6 +6912,8 @@ def _apply_scalar_upgrades(
     for dmg_label in {
         e.label for e in effects if e.category == "damage"
     }:
+        if not _upgrade_chunk_relates_to_damage(text):
+            continue
         amt = _extract_damage_amount(text, dmg_label)
         if amt is not None:
             bump("damage", dmg_label, amt)
@@ -8779,6 +9140,17 @@ def detect_placement_constraints(
             "ally_placement",
             "symmetrical ally-enemy tile pairs at battle start "
             "for Dynamic Balance swaps",
+        ),
+        (
+            re.compile(
+                r"(?:marks?|targets?|attacks?|prioritiz(?:es|ing)|"
+                r"flash(?:es)? next to).{0,80}(?:nearest|closest) enem(?:y|ies)"
+                r".{0,60}symmetrical position",
+                re.I,
+            ),
+            "self_placement",
+            "nearest symmetrical enemy at battle start "
+            "(Falling Blossom / First Strike openers)",
         ),
         (
             re.compile(

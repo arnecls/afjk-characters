@@ -1584,31 +1584,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 18.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Don of Terra": {
           "category": "skill4",
@@ -2530,31 +2510,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Spring Thunderstorm": {
           "category": "skill4",
@@ -3518,24 +3478,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Crit",
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Crit buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Divine Verdict": {
           "category": "skill4",
@@ -5542,31 +5489,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Blight Surge": {
           "category": "skill4",
@@ -8235,24 +8162,6 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 55.0
-                }
-              ],
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
               "label": "buff_stat",
@@ -8287,7 +8196,6 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Physical",
-            "ATK SPD buff — Self",
             "Lifedrain buff — Self"
           ]
         },
@@ -10042,12 +9950,24 @@
               "area_count": -1,
               "type": "crowd_control",
               "cc-type": "displace"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Execution",
+              "label": "debuff_offensive"
             }
           ],
           "initial_energy": 400.0,
           "skill_card_tags": [
             "Magic",
             "DoT",
+            "Execution debuff",
             "Displace"
           ]
         },
@@ -10487,7 +10407,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Magic": "high",
               "DoT": "high"
@@ -10499,7 +10419,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Magic": "high",
               "DoT": "high"
@@ -11228,31 +11148,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Inventor's Will": {
           "category": "skill4",
@@ -13919,24 +13819,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Healing stat",
-              "label": "buff_healing"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Healing stat buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Tactical Briefing": {
           "category": "skill4",
@@ -14430,31 +14317,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Bitter Requiem": {
           "category": "skill4",
@@ -14734,24 +14601,12 @@
                 }
               ],
               "duration": 8.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 3,
-              "type": "buff",
-              "name": "ATK SPD",
-              "label": "buff_offensive"
             }
           ],
           "skill_range": 3,
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Direct healing",
-            "ATK SPD buff",
             "ATK buff"
           ]
         },
@@ -18381,6 +18236,24 @@
               "tier": "base",
               "targeting_label": "Single target",
               "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 0.1
+                }
+              ],
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
               "target": "enemy",
               "area": "single",
               "target_count": 1,
@@ -18392,6 +18265,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
+            "ATK buff",
             "Bind"
           ]
         },
@@ -18593,7 +18467,7 @@
               "value": [
                 {
                   "type": "flat",
-                  "value": 25.0
+                  "value": 20.0
                 }
               ],
               "duration": 3.0,
@@ -18646,6 +18520,24 @@
               "tier": "mythic+",
               "targeting_label": "Single target",
               "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ],
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
               "target": "enemy",
               "area": "single",
               "target_count": 1,
@@ -18676,6 +18568,7 @@
           "skill_range": 8,
           "skill_card_tags": [
             "Max HP-based damage",
+            "ATK buff",
             "Phys DEF debuff"
           ]
         },
@@ -18737,7 +18630,7 @@
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "none",
             "damage_types": {
               "Physical": "average"
@@ -18748,7 +18641,7 @@
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "none",
             "damage_types": {
               "Physical": "average"
@@ -18759,7 +18652,7 @@
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "average",
             "damage_types": {
               "Physical": "high",
@@ -19297,17 +19190,6 @@
               "type": "debuff",
               "name": "Execution",
               "label": "debuff_offensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Crit",
-              "label": "buff_offensive"
             },
             {
               "type": "immunity",
@@ -20856,31 +20738,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Blue-Moon Blessings": {
           "category": "skill4",
@@ -21934,31 +21796,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Steelbound Kinship": {
           "category": "skill4",
@@ -23122,15 +22964,77 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "type": "stat_mod",
+              "stat": "physical_def",
+              "name": "Phys DEF",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "magic_def",
+              "name": "Magic DEF",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
               "type": "buff",
-              "name": "DEF",
+              "name": "ATK SPD",
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Vitality",
               "label": "buff_defensive"
             }
           ],
           "initial_energy": 0.0,
           "skill_card_tags": [
+            "ATK SPD buff",
             "ATK buff",
-            "DEF buff"
+            "Haste buff",
+            "Magic DEF buff",
+            "Phys DEF buff",
+            "Vitality buff"
           ]
         },
         "Lingering Grace": {
@@ -23168,9 +23072,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -23198,7 +23102,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 440.0
+                  "value": 150.0
                 }
               ]
             }
@@ -23207,7 +23111,7 @@
           "initial_cooldown": 3.0,
           "skill_card_tags": [
             "Magic",
-            "Direct healing — Self"
+            "Direct healing"
           ]
         },
         "Hexward": {
@@ -23252,24 +23156,6 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 350.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
               "type": "debuff",
               "name": "ATK",
               "label": "debuff_offensive"
@@ -23278,17 +23164,16 @@
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
-              "timing": "on_skill",
-              "targeting_label": "Self",
-              "target": "self",
+              "timing": "conditional",
+              "targeting_label": "Single target",
+              "target": "ally",
               "area": "single",
               "target_count": 1
             }
           ],
           "skill_card_tags": [
-            "Magic",
             "ATK debuff",
-            "Unaffected — Self"
+            "Unaffected"
           ]
         },
         "Hero Focus": {
@@ -23356,6 +23241,72 @@
           },
           "effects": [
             {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "ATK",
+              "label": "debuff_offensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Magic DEF",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "ATK SPD",
+              "label": "debuff_offensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Haste",
+              "label": "debuff_offensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Vitality",
+              "label": "debuff_defensive"
+            },
+            {
               "tier": "ex+10",
               "targeting_label": "Self",
               "is_max_known": true,
@@ -23381,7 +23332,13 @@
           ],
           "tier": "mythic+",
           "skill_card_tags": [
-            "Energy recovery — Self"
+            "Energy recovery — Self",
+            "ATK SPD debuff",
+            "ATK debuff",
+            "Haste debuff",
+            "Magic DEF debuff",
+            "Phys DEF debuff",
+            "Vitality debuff"
           ]
         },
         "Enhance Force": {
@@ -23392,97 +23349,10 @@
               "Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note."
             ]
           },
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK SPD",
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "DEF",
-              "label": "buff_defensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "magic_def",
-              "name": "Magic DEF",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ],
-              "label": "buff_defensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "vitality",
-              "name": "Vitality",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 15.0
-                }
-              ],
-              "label": "buff_defensive"
-            }
-          ],
+          "effects": [],
           "tier": "supreme+",
-          "skill_card_tags": [
-            "ATK SPD buff — Self",
-            "ATK buff — Self",
-            "DEF buff — Self",
-            "Haste buff — Self",
-            "Magic DEF buff — Self",
-            "Vitality buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         }
       },
       "synergy_profile": {
@@ -23498,7 +23368,7 @@
       "damage_entries": [
         [
           "magic",
-          "Area, Single target"
+          "Area"
         ]
       ],
       "damage_magnitudes": {},
@@ -23506,9 +23376,7 @@
         "atk",
         "atk_spd",
         "haste",
-        "energy",
-        "physical_def",
-        "magic_def"
+        "energy"
       ],
       "behavior": {
         "movement": "stationary",
@@ -23820,31 +23688,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Sylvan Banishment": {
           "category": "skill4",
@@ -24361,31 +24209,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 33.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK SPD buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Raptor's Vigil": {
           "category": "skill4",
@@ -24434,7 +24262,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 25.0
+                  "value": 35.0
                 }
               ],
               "label": "buff_offensive"
@@ -24959,31 +24787,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Fluffy Shield": {
           "category": "skill4",
@@ -25410,31 +25218,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Rage Unleashed": {
           "category": "skill4",
@@ -25865,31 +25653,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Vine Arms": {
           "category": "skill4",
@@ -25941,30 +25709,11 @@
                   "value": 2.0
                 }
               ]
-            },
-            {
-              "tier": "ex+5",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 60.0
-                }
-              ],
-              "label": "buff_offensive"
             }
           ],
           "tier": "mythic+",
           "skill_card_tags": [
-            "Max HP-based damage",
-            "ATK SPD buff — Self"
+            "Max HP-based damage"
           ]
         },
         "Enhance Force": {
@@ -26850,9 +26599,9 @@
           "effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "stat_mod",
@@ -26861,26 +26610,15 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 10.0
+                  "value": 8.0
                 }
               ],
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK",
               "label": "buff_offensive"
             }
           ],
           "tier": "legendary+",
           "skill_card_tags": [
-            "ATK buff — Self"
+            "ATK buff"
           ]
         },
         "Bombs Away!": {
@@ -27340,29 +27078,6 @@
                   "phase": "once_per_battle"
                 }
               ],
-              "type": "buff",
-              "name": "DEF",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 40.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "once_per_battle"
-                }
-              ],
               "type": "stat_mod",
               "stat": "physical_def",
               "name": "Phys DEF",
@@ -27448,7 +27163,6 @@
             "Direct healing",
             "HoT — Self",
             "ATK buff",
-            "DEF buff — Self",
             "Energy recovery — Self",
             "Haste buff — Self",
             "Magic DEF buff — Self",
@@ -28001,31 +27715,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Winning Resolve": {
           "category": "skill4",
@@ -29440,17 +29134,6 @@
                   "value": 165.0
                 }
               ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "DEF",
-              "label": "buff_defensive"
             }
           ],
           "cooldown": 8.0,
@@ -29458,7 +29141,6 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Physical",
-            "DEF buff",
             "Shield — Self",
             "Interrupt"
           ]
@@ -29538,31 +29220,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "max_hp",
-              "name": "Max HP",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 29.0
-                }
-              ],
-              "label": "buff_stat"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Max HP buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Unshakeable Ties": {
           "category": "skill4",
@@ -29989,24 +29651,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Healing stat",
-              "label": "buff_healing"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Healing stat buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Sacred Beam": {
           "category": "skill4",
@@ -30454,31 +30103,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Water Barrier": {
           "category": "skill4",
@@ -31868,31 +31497,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 33.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK SPD buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Meteor Catastrophe": {
           "category": "skill4",
@@ -32831,36 +32440,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Crit",
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Crit DMG boost",
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Crit DMG boost — Self",
-            "Crit buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Battlefield Learning": {
           "category": "skill4",
@@ -32997,8 +32581,7 @@
       "benefit_stats": [
         "atk",
         "atk_spd",
-        "crit",
-        "crit_dmg_boost"
+        "crit"
       ],
       "behavior": {
         "movement": "high movement",
@@ -33747,11 +33330,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 2,
               "type": "buff",
               "name": "DEF",
               "label": "buff_defensive",
@@ -33765,11 +33348,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 2,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -33786,7 +33369,7 @@
           "initial_cooldown": 1.0,
           "skill_card_tags": [
             "Direct healing",
-            "DEF buff — Self"
+            "DEF buff"
           ]
         },
         "Hero Focus": {
@@ -34200,31 +33783,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 33.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK SPD buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Dance of Flames": {
           "category": "skill4",
@@ -36296,31 +35859,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 33.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK SPD buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Abyssal Embrace": {
           "category": "skill4",
@@ -37272,31 +36815,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 33.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK SPD buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Heart Crusher": {
           "category": "skill4",
@@ -37339,25 +36862,13 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
-              "name": "DoT",
-              "label": "dot"
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Poison",
-              "label": "debuff_stat"
+              "name": "Execution",
+              "label": "debuff_offensive"
             }
           ],
           "tier": "mythic+",
           "skill_card_tags": [
-            "DoT",
-            "Poison debuff"
+            "Execution debuff"
           ]
         },
         "Enhance Force": {
@@ -38634,11 +38145,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "stat_mod",
               "stat": "atk_spd",
               "name": "ATK SPD",
@@ -38650,13 +38161,33 @@
               ],
               "duration": 10.0,
               "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ],
+              "duration": 10.0,
+              "label": "buff_offensive"
             }
           ],
           "cooldown": 10.0,
           "initial_cooldown": 3.0,
           "skill_range": 5,
           "skill_card_tags": [
-            "ATK SPD buff — Self"
+            "ATK SPD buff",
+            "ATK buff"
           ]
         },
         "Flower Power": {
@@ -38760,31 +38291,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Falling Blossom": {
           "category": "skill4",
@@ -38882,7 +38393,12 @@
         "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 5.0,
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "self_placement",
+            "text": "nearest symmetrical enemy at battle start (Falling Blossom / First Strike openers)"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "fast",
@@ -40215,31 +39731,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 15.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Mage's Bloom": {
           "category": "skill4",
@@ -40896,11 +40392,11 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "stat_mod",
               "stat": "atk",
               "name": "ATK",
@@ -40914,11 +40410,11 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "stat_mod",
               "stat": "haste",
               "name": "Haste",
@@ -40958,8 +40454,8 @@
           "tier": "mythic+",
           "skill_range": 1,
           "skill_card_tags": [
-            "ATK buff — Self",
-            "Haste buff — Self",
+            "ATK buff",
+            "Haste buff",
             "Lifedrain buff",
             "Shield"
           ]
@@ -44587,7 +44083,7 @@
       "faction": "mauler",
       "class": "rogue",
       "role_category": "damage_dealer",
-      "is_energy_provider": true,
+      "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
       "skills": {
@@ -44911,31 +44407,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Hunting Spree": {
           "category": "skill4",
@@ -44974,23 +44450,6 @@
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Energy recovery",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 200.0
-                }
-              ]
-            },
-            {
-              "tier": "ex+10",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -45439,31 +44898,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Curse Feast": {
           "category": "skill4",
@@ -46768,31 +46207,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 33.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK SPD buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Oath of Fealty": {
           "category": "skill4",
@@ -47200,24 +46619,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Crit",
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Crit buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Shield of Light": {
           "category": "skill4",
@@ -47355,7 +46761,12 @@
         "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 1.0,
-        "placement_constraints": [],
+        "placement_constraints": [
+          {
+            "kind": "self_placement",
+            "text": "nearest symmetrical enemy at battle start (Falling Blossom / First Strike openers)"
+          }
+        ],
         "skill_overview": {
           "signature": {
             "speed": "fast",
@@ -47637,31 +47048,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 33.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK SPD buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Adaptive Prowess": {
           "category": "skill4",
@@ -48394,7 +47785,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 140.0
+                  "value": 220.0
                 }
               ]
             },
@@ -48414,74 +47805,6 @@
                 {
                   "type": "percentage",
                   "value": 242.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 160.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 180.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 200.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 220.0
                 }
               ]
             },
@@ -48642,57 +47965,6 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 210.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 230.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 250.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
               "targeting_label": "Owned summons",
               "is_max_known": true,
               "target": "own_summons",
@@ -48742,31 +48014,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 14.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Resonant Bloom": {
           "category": "skill4",
@@ -49592,24 +48844,6 @@
           "effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 16.0
-                }
-              ],
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "legendary+",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
@@ -49630,7 +48864,7 @@
           "tier": "legendary+",
           "skill_range": 1,
           "skill_card_tags": [
-            "Haste buff — Self"
+            "Haste buff"
           ]
         },
         "Dusk Rejuvenation": {
@@ -51794,7 +51028,7 @@
               "type": "immunity",
               "tier": "mythic+",
               "immunity_type": "unaffected",
-              "timing": "permanent",
+              "timing": "conditional",
               "targeting_label": "Self",
               "target": "self",
               "area": "single",
@@ -52427,7 +51661,7 @@
       "faction": "graveborn",
       "class": "tank",
       "role_category": "tank",
-      "is_energy_provider": true,
+      "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
       "skills": {
@@ -52661,30 +51895,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Energy recovery",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 40.0
-                }
-              ]
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Energy recovery"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Soul Pact": {
           "category": "skill4",
@@ -53588,31 +52803,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "max_hp",
-              "name": "Max HP",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 29.0
-                }
-              ],
-              "label": "buff_stat"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Max HP buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Prowling Roots": {
           "category": "skill4",
@@ -53754,7 +52949,6 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
-        "max_hp",
         "shield",
         "energy"
       ],
@@ -54591,31 +53785,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Eternal Thunder": {
           "category": "skill4",
@@ -55131,31 +54305,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk_spd",
-              "name": "ATK SPD",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 30.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "ATK SPD buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Soulshock Riposte": {
           "category": "skill4",
@@ -55590,23 +54744,11 @@
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 5.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive"
             }
           ],
           "cooldown": 12.0,
           "initial_cooldown": 5.0,
           "skill_card_tags": [
-            "Haste buff",
             "Haste debuff",
             "Magic DEF debuff",
             "Phys DEF debuff",
@@ -56115,31 +55257,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "haste",
-              "name": "Haste",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 20.0
-                }
-              ],
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Haste buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Crimson Waltz": {
           "category": "skill4",
@@ -56600,36 +55722,11 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Crit",
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Crit DMG boost",
-              "label": "buff_offensive"
-            }
-          ],
+          "effects": [],
           "tier": "legendary+",
           "skill_range": 1,
-          "skill_card_tags": [
-            "Crit DMG boost — Self",
-            "Crit buff — Self"
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Aerial Thunder": {
           "category": "skill4",
@@ -56792,8 +55889,7 @@
       "benefit_stats": [
         "max_hp",
         "shield",
-        "crit",
-        "crit_dmg_boost"
+        "crit"
       ],
       "behavior": {
         "movement": "moving",
@@ -57320,12 +56416,6 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "once_per_battle"
-                }
-              ],
               "type": "stat_mod",
               "stat": "atk_spd",
               "name": "ATK SPD",
@@ -58285,17 +57375,6 @@
                   "value": 60.0
                 }
               ]
-            },
-            {
-              "tier": "ex+5",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive"
             },
             {
               "type": "immunity",
