@@ -342,8 +342,8 @@ def _direct_buff_labels_for_stat(stat: str) -> list[str]:
     if stat == "Shield":
         return ["Shield"]
     labels = list(STAT_TO_BUFF_LABELS.get(stat, []))
-    if stat == "ATK" and "Summon damage buff" not in labels:
-        labels.append("Summon damage buff")
+    if stat == "ATK" and "Damage dealt buff" not in labels:
+        labels.append("Damage dealt buff")
     return labels
 
 
@@ -351,7 +351,7 @@ def summon_buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
     """Buff labels on allied summons that satisfy a benefit stat."""
     prefs = list(buff_labels_for_stat(stat))
     if stat == "ATK":
-        prefs.append(("Summon damage buff", 1.0))
+        prefs.append(("Damage dealt buff", 1.0))
     return prefs
 
 

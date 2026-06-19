@@ -752,8 +752,8 @@ must assert True is **absent**, not merely present.
 and self-heal in one sentence → still **Max HP-based damage only** (heal must
 not block dedup).
 
-**Detailed — Kazim Gale Barrage:** max-HP tier uses upgrade scalar **+40%**,
-not base-line **+140%** bleed-through.
+**Detailed — Kazim Gale Barrage:** `320% (ATK-based) + 140% damage` is
+Physical only — no Max HP-based damage unless text says `of max HP`.
 
 **Detailed — Faramor Sanctified Circle:** `area_count` **1** (1-tile circle);
 DoT **55% true per 0.5s** at max tier, not 250% tick 1s.

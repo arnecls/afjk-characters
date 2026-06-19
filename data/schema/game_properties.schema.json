@@ -101,7 +101,8 @@
         "permanent",
         "once",
         "form",
-        "conditional"
+        "conditional",
+        "on_blind"
       ],
       "description": "When a conditional effect or immunity is active."
     },

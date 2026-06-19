@@ -273,32 +273,19 @@ class SummaryParsingTests(unittest.TestCase):
         ]
         self.assertEqual(ally_haste, [])
 
-    def test_florabelle_haste_lifedrain_are_self_buffs(self):
+    def test_florabelle_overgrowth_buffs_target_summons(self):
         hero = _hero_by_short_name("Florabelle")
-        for label in ("Haste buff", "Lifedrain buff", "Summon damage buff"):
-            buffs = [e for e in _effects(hero, "buff", label)]
+        skill1 = hero.skill_slices.get("Skill1")
+        self.assertIsNotNone(skill1)
+        for label in ("Haste buff", "Lifedrain buff"):
+            buffs = [e for e in skill1.summon_effects if e.label == label]
             self.assertTrue(buffs, label)
-            self.assertTrue(
-                all(e.targeting == "Self" for e in buffs),
-                f"{label}: {[e.targeting for e in buffs]}",
-            )
-        summon_haste = [
-            e for e in hero.summon_effects if e.label == "Haste buff"
-        ]
-        summon_life = [
-            e for e in hero.summon_effects if e.label == "Lifedrain buff"
-        ]
-        summon_dmg = [
-            e for e in hero.summon_effects if e.label == "Summon damage buff"
-        ]
-        self.assertEqual(summon_haste, [])
-        self.assertEqual(summon_life, [])
-        self.assertEqual(summon_dmg, [])
+            self.assertEqual(buffs[0].targeting, rs.SUMMON_BUFF_TARGETING)
 
     def test_aurora_summon_damage_stays_summons_only(self):
         hero = _hero_by_short_name("Aurora")
         summon_dmg = [
-            e for e in hero.summon_effects if e.label == "Summon damage buff"
+            e for e in hero.summon_effects if e.label == "Damage dealt buff"
         ]
         self.assertTrue(summon_dmg)
         self.assertTrue(
@@ -673,6 +660,31 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertEqual(len(ally_buff_requires), 1)
         self.assertIn("ATK", hero.benefit_stats)
 
+    def test_dionel_nectar_feast_self_buffs_not_ally_providers(self):
+        hero = _hero_by_short_name("Dionel")
+        ally_atk = [
+            e
+            for e in _effects(hero, "buff", "ATK buff")
+            if e.targeting != "Self"
+        ]
+        ally_spd = [
+            e
+            for e in _effects(hero, "buff", "ATK SPD buff")
+            if e.targeting != "Self"
+        ]
+        self.assertEqual(ally_atk, [])
+        self.assertEqual(ally_spd, [])
+        self_atk = list(_effects(hero, "buff", "ATK buff"))
+        self_spd = list(_effects(hero, "buff", "ATK SPD buff"))
+        self.assertTrue(self_atk)
+        self.assertTrue(self_spd)
+        tags = rs.format_skill_card_tags(hero, "skill2")
+        self.assertIn("ATK buff — Self", tags)
+        self.assertIn("ATK SPD buff — Self", tags)
+        self.assertIsNone(rs.format_buffs_provided_intro(hero, "Dionel"))
+        summary = rs.format_summary(hero, "Dionel")
+        self.assertNotIn("#### Buffs provided by Dionel", summary)
+
     def test_ulmus_displacement_not_knock_up_require(self):
         hero = _hero_by_short_name("Ulmus")
         knock_requires = [
@@ -696,7 +708,7 @@ class HeroEffectAggregateTests(unittest.TestCase):
         return max(vals) if vals else 0.0
 
     def test_roster_atk_buff_matches_per_skill_slices(self):
-        for short in ("Aliceth", "Gunnar", "Dionel", "Hugin"):
+        for short in ("Aliceth", "Gunnar", "Hugin"):
             hero = _hero_by_short_name(short)
             slice_max = self._max_slice_numeric(hero, "ATK buff")
             live_vals = [

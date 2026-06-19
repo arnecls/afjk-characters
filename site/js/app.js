@@ -785,9 +785,28 @@
     "Magic DEF": { emoji: "🔮", cls: "chip-stat" },
     "Ranged DEF": { emoji: "🛡️", cls: "chip-stat" },
     "Energy recovery": { emoji: "🔋", cls: "chip-stat" },
-    Vitality: { emoji: "🌿", cls: "chip-generic" },
-    "Vitality buff": { emoji: "🌿", cls: "chip-generic" },
+    Vitality: { emoji: "🌿", cls: "chip-stat" },
+    "Vitality buff": { emoji: "🌿", cls: "chip-stat" },
     "Vitality debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "ATK buff": { emoji: "💪", cls: "chip-stat" },
+    "ATK SPD buff": { emoji: "⚡", cls: "chip-stat" },
+    "Haste buff": { emoji: "💨", cls: "chip-stat" },
+    "Crit buff": { emoji: "💥", cls: "chip-stat" },
+    "DEF Penetration buff": { emoji: "🎯", cls: "chip-stat" },
+    "DEF buff": { emoji: "🛡️", cls: "chip-stat" },
+    "Phys DEF buff": { emoji: "🛡️", cls: "chip-stat" },
+    "Magic DEF buff": { emoji: "🔮", cls: "chip-stat" },
+    "Ranged DEF buff": { emoji: "🛡️", cls: "chip-stat" },
+    "Max HP buff": { emoji: "❤️", cls: "chip-stat" },
+    "Lifedrain buff": { emoji: "🩸", cls: "chip-stat" },
+    "Execution buff": { emoji: "🗡️", cls: "chip-stat" },
+    "Healing stat buff": { emoji: "💚", cls: "chip-stat" },
+    "Attack range buff": { emoji: "📏", cls: "chip-stat" },
+    "Dodge chance buff": { emoji: "🛡️", cls: "chip-stat" },
+    "Movement speed buff": { emoji: "💨", cls: "chip-stat" },
+    "Crit DMG boost": { emoji: "💥", cls: "chip-stat" },
+    "Ally empower buff": { emoji: "💪", cls: "chip-stat" },
+    "Fatal blow immunity": { emoji: "♻️", cls: "chip-stat" },
     Blind: { emoji: "👁️", cls: "chip-cc" },
     Stun: { emoji: "💫", cls: "chip-cc" },
     "Knock back": { emoji: "↩️", cls: "chip-cc" },
@@ -800,14 +819,10 @@
     Frighten: { emoji: "😱", cls: "chip-cc" },
     "Haste debuff": { emoji: "🐌", cls: "chip-debuff" },
     "ATK debuff": { emoji: "🥀", cls: "chip-debuff" },
-    "Blind HP loss debuff": { emoji: "👁️", cls: "chip-debuff" },
     "DoT debuff": { emoji: "🔥", cls: "chip-debuff" },
     "Damage taken debuff": { emoji: "🥀", cls: "chip-debuff" },
-    "Damage taken": { emoji: "🥀", cls: "chip-debuff" },
     "Damage dealt debuff": { emoji: "🥀", cls: "chip-debuff" },
-    "Damage dealt": { emoji: "🥀", cls: "chip-debuff" },
     "Magic damage amplification": { emoji: "🪄", cls: "chip-debuff" },
-    "Magic damage reduction": { emoji: "🪄", cls: "chip-stat" },
     "Energy drain": { emoji: "🔋", cls: "chip-debuff" },
     "Energy recovery debuff": { emoji: "🔋", cls: "chip-debuff" },
     "Execution debuff": { emoji: "☠️", cls: "chip-debuff" },
@@ -820,6 +835,7 @@
     "Vulnerable debuff": { emoji: "🎯", cls: "chip-debuff" },
     "Damage taken reduction": { emoji: "🛡️", cls: "chip-stat" },
     "Damage dealt buff": { emoji: "⚔️", cls: "chip-stat" },
+    "Magic damage reduction": { emoji: "🪄", cls: "chip-stat" },
     "DoT": { emoji: "🔥", cls: "chip-debuff" },
     "ally-buffer": { emoji: "📈", cls: "chip-role" },
     "ally-healer": { emoji: "💚", cls: "chip-role" },
@@ -855,10 +871,7 @@
     "ultimate-cancel": { emoji: "🚫", cls: "chip-cc" },
     untargetable: { emoji: "👻", cls: "chip-role" },
     Invincible: { emoji: "👑", cls: "chip-role" },
-    "Dmg and CC immunity": { emoji: "🔰", cls: "chip-anti-cc" },
-    "Dmg and CC immunity (ally)": { emoji: "🔰", cls: "chip-anti-cc" },
-    "Damage and control immunity": { emoji: "🔰", cls: "chip-anti-cc" },
-    "Damage and control immunity (ally)": { emoji: "🔰", cls: "chip-anti-cc" },
+    "DMG+CC immunity": { emoji: "🔰", cls: "chip-anti-cc" },
     "Knock up": { emoji: "⬆️", cls: "chip-cc" },
     Interrupt: { emoji: "🚫", cls: "chip-cc" },
     Displace: { emoji: "↔️", cls: "chip-cc" },
@@ -971,7 +984,7 @@
     enemies: { emoji: "☠️", cls: "chip-target" },
     global: { emoji: "🌍", cls: "chip-target" },
     "on skill": { emoji: "⏱️", cls: "chip-target" },
-    "summons only": { emoji: "👻", cls: "chip-target" },
+    "summons only": { emoji: "🐾", cls: "chip-target" },
   };
 
   const TARGETING_RANK = {
@@ -1225,10 +1238,34 @@
   }
 
   function chipDisplayLabel(text) {
-    if (text === "Max HP-based damage") {
+    const trimmed = (text || "").trim();
+    if (!trimmed) {
+      return trimmed;
+    }
+    if (trimmed === "Max HP-based damage") {
       return "Max HP damage";
     }
-    return text;
+    const statModifierDisplay = {
+      "Damage taken reduction": "DMG taken",
+      "Damage taken debuff": "DMG taken",
+      "Magic damage reduction": "Magic DMG",
+      "Magic damage amplification": "Magic DMG",
+      "Damage dealt buff": "DMG dealt",
+      "Damage dealt debuff": "DMG dealt",
+      "Energy recovery": "Energy",
+      "Energy drain": "Energy",
+      "Energy recovery debuff": "Energy",
+    };
+    if (Object.prototype.hasOwnProperty.call(statModifierDisplay, trimmed)) {
+      return statModifierDisplay[trimmed];
+    }
+    if (/\sbuff$/i.test(trimmed)) {
+      return trimmed.replace(/\s+buff$/i, "").trim();
+    }
+    if (/\sdebuff$/i.test(trimmed)) {
+      return trimmed.replace(/\s+debuff$/i, "").trim();
+    }
+    return trimmed;
   }
 
   function chipSpan(emoji, text, cls, tooltip) {
@@ -1309,16 +1346,25 @@
 
   function targetingIndicatorMeta(targeting) {
     const lower = (targeting || "").trim().toLowerCase();
-    if (lower !== "self") {
-      return null;
+    if (lower === "self") {
+      const def = TARGETING_DEFINITIONS.self;
+      return {
+        cls: def.cls,
+        label: "Self",
+        tooltip: "",
+        emoji: def.emoji,
+      };
     }
-    const def = TARGETING_DEFINITIONS.self;
-    return {
-      cls: def.cls,
-      label: "Self",
-      tooltip: "",
-      emoji: def.emoji,
-    };
+    if (lower === "summon" || lower === "summons only") {
+      const def = TARGETING_DEFINITIONS["summons only"];
+      return {
+        cls: def.cls,
+        label: "Summon",
+        tooltip: "",
+        emoji: def.emoji,
+      };
+    }
+    return null;
   }
 
   function resolveIndicatorMeta(label, indicator, isCc) {
@@ -1388,10 +1434,61 @@
     return null;
   }
 
-  const BUFF_DISPLAY_EFFECT_CHIPS = {
-    "Damage taken": { emoji: "🛡️", cls: "chip-stat" },
-    "Magic damage amplification": { emoji: "🪄", cls: "chip-stat" },
+  const STAT_MODIFIER_POLARITY = {
+    "Damage taken reduction": "buff",
+    "Damage taken debuff": "debuff",
+    "Magic damage reduction": "buff",
+    "Magic damage amplification": "debuff",
+    "Damage dealt buff": "buff",
+    "Damage dealt debuff": "debuff",
+    "Energy recovery": "buff",
+    "Energy drain": "debuff",
   };
+
+  function isStatModifierLabel(label) {
+    const t = (label || "").trim();
+    return Object.prototype.hasOwnProperty.call(STAT_MODIFIER_POLARITY, t);
+  }
+
+  function effectLabelPolarity(label) {
+    const t = (label || "").trim();
+    if (Object.prototype.hasOwnProperty.call(STAT_MODIFIER_POLARITY, t)) {
+      return STAT_MODIFIER_POLARITY[t];
+    }
+    if (/\bdebuff$/i.test(t)) {
+      return "debuff";
+    }
+    if (/\bbuff$/i.test(t)) {
+      return "buff";
+    }
+    return null;
+  }
+
+  const BUFF_DISPLAY_EFFECT_CHIPS = {
+    "Damage taken reduction": { emoji: "🛡️", cls: "chip-stat" },
+    "Magic damage reduction": { emoji: "🪄", cls: "chip-stat" },
+    "Damage dealt buff": { emoji: "⚔️", cls: "chip-stat" },
+  };
+
+  function effectChipClassForPolarity(polarity, fallbackCls) {
+    if (polarity === "debuff") {
+      return "chip-debuff";
+    }
+    if (polarity === "buff") {
+      if (fallbackCls && fallbackCls.indexOf("chip-debuff") !== -1) {
+        return "chip-stat";
+      }
+      if (
+        !fallbackCls ||
+        fallbackCls === "chip-generic" ||
+        fallbackCls.indexOf("chip-stat") !== -1
+      ) {
+        return "chip-stat";
+      }
+      return fallbackCls;
+    }
+    return fallbackCls || "chip-generic";
+  }
 
   function resolveLeadingChip(label, polarity) {
     const trimmed = label.trim();
@@ -1404,7 +1501,7 @@
       return {
         emoji: buff.emoji,
         text: trimmed,
-        cls: buff.cls,
+        cls: effectChipClassForPolarity("buff", buff.cls),
         isCc: false,
         remainder: "",
       };
@@ -1420,7 +1517,7 @@
         return {
           emoji: def.emoji,
           text: debuffKey,
-          cls: def.cls,
+          cls: effectChipClassForPolarity("debuff", def.cls),
           isCc: isCcChipClass(def.cls),
           remainder: "",
         };
@@ -1430,10 +1527,11 @@
     const exactKey = exactTagDefinitionKey(trimmed);
     if (exactKey) {
       const def = TAG_DEFINITIONS[exactKey];
+      const resolvedPolarity = polarity || effectLabelPolarity(exactKey);
       return {
         emoji: def.emoji,
         text: exactKey,
-        cls: def.cls,
+        cls: effectChipClassForPolarity(resolvedPolarity, def.cls),
         isCc: isCcChipClass(def.cls),
         remainder: "",
       };
@@ -1469,7 +1567,7 @@
         return {
           emoji: def.emoji,
           text: stat,
-          cls: def.cls,
+          cls: effectChipClassForPolarity(polarity, def.cls),
           isCc: isCcChipClass(def.cls),
           remainder: trimmed.slice(stat.length),
         };
@@ -1502,13 +1600,69 @@
     return remainder || "";
   }
 
+  const ASCENSION_TIER_SHORT = {
+    "legendary+": "L+",
+    "mythic+": "M+",
+    "supreme+": "S+",
+  };
+
+  function shortAscensionTierName(tierName) {
+    const raw = (tierName || "").trim();
+    if (!raw) {
+      return "";
+    }
+    const key = raw.toLowerCase();
+    if (Object.prototype.hasOwnProperty.call(ASCENSION_TIER_SHORT, key)) {
+      return ASCENSION_TIER_SHORT[key];
+    }
+    const exMatch = key.match(/^ex\+(\d+)$/);
+    if (exMatch) {
+      return "ex" + exMatch[1];
+    }
+    const rMatch = key.match(/^r(\d+)$/);
+    if (rMatch) {
+      return "r" + rMatch[1];
+    }
+    const paragonMatch = key.match(/^paragon\s*(\d+)$/);
+    if (paragonMatch) {
+      return "p" + paragonMatch[1];
+    }
+    const plusMatch = key.match(/^([a-z]+)\+$/);
+    if (plusMatch) {
+      return plusMatch[1].charAt(0).toUpperCase() + "+";
+    }
+    const wordNumMatch = key.match(/^([a-z]+)\s+(\d+)$/);
+    if (wordNumMatch) {
+      return wordNumMatch[1].charAt(0).toLowerCase() + wordNumMatch[2];
+    }
+    if (/^[a-z]+$/i.test(key) && key.length > 1) {
+      return key.charAt(0).toUpperCase() + key.slice(1);
+    }
+    return raw;
+  }
+
+  function formatAscensionTierDisplay(tierSuffix) {
+    let text = (tierSuffix || "").trim();
+    if (!text) {
+      return "";
+    }
+    if (text.charAt(0) === "(" && text.charAt(text.length - 1) === ")") {
+      text = text.slice(1, -1).trim();
+    }
+    if (!text) {
+      return "";
+    }
+    return "(" + shortAscensionTierName(text) + ")";
+  }
+
   function formatMergedTierSuffix(tierSuffix) {
-    if (!tierSuffix) {
+    const display = formatAscensionTierDisplay(tierSuffix);
+    if (!display) {
       return "";
     }
     return (
       ' <span class="chip-merged-tier">' +
-      escapeHtml(tierSuffix) +
+      escapeHtml(display) +
       "</span>"
     );
   }
@@ -1798,6 +1952,14 @@
     );
   }
 
+  function applyEffectPolarityToChipHtml(html, polarity) {
+    if (!html || !polarity) {
+      return html;
+    }
+    const cls = effectChipClassForPolarity(polarity, "chip-stat");
+    return html.replace(/\bchip-(?:stat|debuff|generic|heal)\b/, cls);
+  }
+
   function renderStandaloneEffectChip(base, tier, polarity) {
     const leading = resolveLeadingChip(base, polarity);
     if (leading.emoji) {
@@ -1809,13 +1971,16 @@
         " " +
         escapeHtml(chipDisplayLabel(leading.text)) +
         formatMergedTierSuffix(tier) +
-        escapeHtml(leading.remainder || "") +
+        escapeHtml(effectChipRemainder(leading.remainder) || "") +
         "</span>"
       );
     }
     const direct = tryChipify(base);
     if (direct) {
-      return injectTierIntoChipHtml(direct, tier);
+      return injectTierIntoChipHtml(
+        applyEffectPolarityToChipHtml(direct, polarity),
+        tier
+      );
     }
     const ccChip = extractChipHtml(chipifyLeadingCcType(base));
     if (ccChip) {
@@ -1823,9 +1988,19 @@
     }
     const statChip = extractChipHtml(chipifyLeadingStat(base));
     if (statChip) {
-      return injectTierIntoChipHtml(statChip, tier);
+      return injectTierIntoChipHtml(
+        applyEffectPolarityToChipHtml(statChip, polarity),
+        tier
+      );
     }
-    return escapeHtml(base) + formatMergedTierSuffix(tier);
+    return (
+      '<span class="chip ' +
+      effectChipClassForPolarity(polarity, "chip-generic") +
+      '">' +
+      escapeHtml(chipDisplayLabel(base)) +
+      formatMergedTierSuffix(tier) +
+      "</span>"
+    );
   }
 
   function renderSummaryEffectChip(base, tier, quality, polarity) {
@@ -2422,6 +2597,12 @@
   function parseSkillCardTag(raw) {
     let tag = raw.trim();
     let targeting = "";
+    const summonMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Summon\s*$/i);
+    if (summonMatch) {
+      tag = summonMatch[1].trim();
+      targeting = "Summon";
+      return { tag: tag, targeting: targeting };
+    }
     const selfMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Self\s*$/i);
     if (selfMatch) {
       tag = selfMatch[1].trim();
@@ -2431,12 +2612,6 @@
   }
 
   function skillCardEffectLabel(base, polarity) {
-    if (polarity === "debuff") {
-      return parseDebuffEffectLabel(base).base;
-    }
-    if (/\bbuff$/i.test(base)) {
-      return parseBuffEffectLabel(base).base;
-    }
     return base;
   }
 
@@ -2447,18 +2622,21 @@
       return "";
     }
     const parsed = parseEffectLabelParts(tag);
-    const polarity = / debuff$/i.test(parsed.base) ? "debuff" : "buff";
+    const polarity = effectLabelPolarity(parsed.base) || "buff";
 
     if (polarity === "debuff") {
       const debuffChip = tryChipify(parsed.base);
       if (debuffChip) {
-        return injectTierIntoChipHtml(debuffChip, parsed.tier);
+        return injectTierIntoChipHtml(
+          applyEffectPolarityToChipHtml(debuffChip, polarity),
+          parsed.tier
+        );
       }
     }
 
     tag = skillCardEffectLabel(parsed.base, polarity);
 
-    if (split.targeting === "Self") {
+    if (split.targeting === "Self" || split.targeting === "Summon") {
       const merged = mergeEffectWithTargeting(
         tag,
         split.targeting,
@@ -2472,7 +2650,10 @@
 
     const direct = tryChipify(tag);
     if (direct) {
-      return injectTierIntoChipHtml(direct, parsed.tier);
+      return injectTierIntoChipHtml(
+        applyEffectPolarityToChipHtml(direct, polarity),
+        parsed.tier
+      );
     }
 
     const ccChip = extractChipHtml(chipifyLeadingCcType(tag));
@@ -2482,7 +2663,10 @@
 
     const statChip = extractChipHtml(chipifyLeadingStat(tag));
     if (statChip) {
-      return injectTierIntoChipHtml(statChip, parsed.tier);
+      return injectTierIntoChipHtml(
+        applyEffectPolarityToChipHtml(statChip, polarity),
+        parsed.tier
+      );
     }
 
     const effectChip = extractChipHtml(
@@ -2497,7 +2681,11 @@
       return "";
     }
     return injectTierIntoChipHtml(
-      chipSpan("🏷️", label, "chip-generic"),
+      chipSpan(
+        "🏷️",
+        label,
+        effectChipClassForPolarity(polarity, "chip-generic")
+      ),
       parsed.tier
     );
   }
@@ -2525,13 +2713,17 @@
     if (!tag) {
       return "";
     }
-    tag = tag.replace(/\s*(?:—|–)\s*self\s*$/, "").trim();
+    tag = tag.replace(/\s*(?:—|–)\s*(?:self|summon)\s*$/, "").trim();
     tag = tag
       .replace(
         /\s*\((?:legendary\+|mythic\+|supreme\+|ex\+\d+)\)/gi,
         ""
       )
       .trim();
+
+    if (isStatModifierLabel(tag)) {
+      return tag.toLowerCase();
+    }
 
     if (tag.endsWith(" debuff")) {
       return tag.replace(/\s*\([^)]*\)/g, "").trim();
@@ -3477,6 +3669,14 @@
   }
 
   function parseEffectColumnLabel(column) {
+    const modifierPolarity = effectLabelPolarity(column);
+    if (modifierPolarity) {
+      return {
+        base: column,
+        polarity: modifierPolarity,
+        tier: "",
+      };
+    }
     if (column.endsWith(" DMG")) {
       const short = column.slice(0, -4);
       return {
@@ -3486,7 +3686,7 @@
       };
     }
     if (column.endsWith(" buff")) {
-      const parsed = parseBuffEffectLabel(column);
+      const parsed = parseEffectLabelParts(column);
       return {
         base: parsed.base,
         polarity: "buff",
@@ -3494,7 +3694,7 @@
       };
     }
     if (column.endsWith(" debuff")) {
-      const parsed = parseDebuffEffectLabel(column);
+      const parsed = parseEffectLabelParts(column);
       return {
         base: parsed.base,
         polarity: "debuff",
@@ -4352,7 +4552,7 @@
     if (column === "Healing" || column === "Shields") {
       return true;
     }
-    if (column.endsWith(" buff") || column.endsWith(" debuff")) {
+    if (column.endsWith(" buff") || column.endsWith(" debuff") || isStatModifierLabel(column)) {
       return true;
     }
     if (EFFECT_CC_COLUMNS.indexOf(column) !== -1) {
@@ -4793,7 +4993,7 @@
     }
 
     const detail = splitSynergyReasonDetail(text);
-    const parsed = parseBuffEffectLabel(detail.label);
+    const parsed = parseEffectLabelParts(detail.label);
     return {
       type: "effect",
       base: parsed.base,
@@ -4824,16 +5024,18 @@
 
   function chipifySynergyEnableDetail(text) {
     const detail = splitSynergyReasonDetail(text);
-    const parsed = parseBuffEffectLabel(detail.label);
+    const parsed = parseEffectLabelParts(detail.label);
     const parts = parsed.base.split(/\s+\+\s+/);
 
     function renderPart(part, applyQuality) {
-      const partParsed = parseBuffEffectLabel(part.trim());
+      const partParsed = parseEffectLabelParts(part.trim());
+      const polarity = effectLabelPolarity(partParsed.base) || "buff";
       return renderMergedEffectPill(
         partParsed.base,
         applyQuality ? detail.quality : "",
         applyQuality ? parsed.tier || partParsed.tier : partParsed.tier,
-        applyQuality ? detail.conditional : ""
+        applyQuality ? detail.conditional : "",
+        polarity
       );
     }
 
@@ -5153,13 +5355,15 @@
   }
 
   function renderMergedEffectPill(baseLabel, quality, tier, conditional, polarity) {
+    const resolvedPolarity =
+      polarity || effectLabelPolarity(baseLabel) || "buff";
     const qMeta = qualityIndicatorMeta(
       quality,
-      resolveLeadingChip(baseLabel, polarity).isCc
+      resolveLeadingChip(baseLabel, resolvedPolarity).isCc
     );
     let merged =
-      mergeEffectWithQuality(baseLabel, quality, tier, polarity) ||
-      mergeLabelWithIndicator(baseLabel, quality, tier, polarity);
+      mergeEffectWithQuality(baseLabel, quality, tier, resolvedPolarity) ||
+      mergeLabelWithIndicator(baseLabel, quality, tier, resolvedPolarity);
     if (!merged && qMeta) {
       merged = formatMergedIndicator(
         { textOnly: baseLabel, tierSuffix: tier || "" },
@@ -5169,7 +5373,7 @@
     }
     if (!merged) {
       merged =
-        chipifyEffectName(baseLabel, polarity) +
+        chipifyEffectName(baseLabel, resolvedPolarity) +
         formatMergedTierSuffix(tier) +
         (quality ? " " + formatTag(quality) : "");
     }
@@ -5185,14 +5389,15 @@
   }
 
   function renderBuffProvidedEntry(buff) {
-    const parsed = parseBuffEffectLabel(buff.label || "");
+    const parsed = parseEffectLabelParts(buff.label || "");
     const quality = buff.quality || "";
+    const polarity = effectLabelPolarity(parsed.base) || "buff";
     let html = renderMergedEffectPill(
       parsed.base,
       quality,
       parsed.tier,
       buff.conditional,
-      "buff"
+      polarity
     );
     const targetingHtml = renderBuffTargetingChip(
       buff.targetingType || buff.targeting

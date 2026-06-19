@@ -396,6 +396,10 @@ def _conditional_to_conditions(conditional: str | None) -> list[dict[str, Any]]:
         return []
     if conditional == "rare":
         return [{"type": "battle_phase", "phase": "once_per_battle"}]
+    if conditional == "on blind":
+        return [{"type": "battle_phase", "phase": "on_blind"}]
+    if conditional == "frequent":
+        return [{"type": "battle_phase", "phase": "conditional"}]
     return [{"type": "battle_phase", "phase": "conditional"}]
 
 
@@ -407,6 +411,8 @@ def _conditions_to_conditional(conditions: list[dict[str, Any]] | None) -> str |
             phase = cond.get("phase")
             if phase == "once_per_battle":
                 return "rare"
+            if phase == "on_blind":
+                return "on blind"
             if phase == "conditional":
                 return "frequent"
     return None
@@ -630,8 +636,8 @@ def _merge_special_effects(items: list[Any]) -> list[Any]:
 
     merged: list[Any] = []
     for se in items:
-        key = (se.kind, se.label)
-        existing = [s for s in merged if (s.kind, s.label) == key]
+        key = (se.kind, se.label, se.targeting)
+        existing = [s for s in merged if (s.kind, s.label, s.targeting) == key]
         if not existing:
             merged.append(
                 type(se)(
@@ -646,8 +652,6 @@ def _merge_special_effects(items: list[Any]) -> list[Any]:
         cur = existing[0]
         if rs.TIER_ORDER.get(se.tier, 99) < rs.TIER_ORDER.get(cur.tier, 99):
             cur.tier = se.tier
-        if se.targeting != "—":
-            cur.targeting = rs._prefer_targeting(se.targeting, cur.targeting)
         if se.qualitative and not cur.qualitative:
             cur.qualitative = se.qualitative
     return merged
@@ -724,7 +728,7 @@ def effect_to_schema(
         ):
             out["type"] = "stat_mod"
             out["stat"] = stat
-            out["name"] = effect.label
+            out["name"] = _rs().canonical_effect_name(effect.label, "buff")
             _apply_schema_value(
                 out, _resolve_effect_numeric(effect, effect.label), effect.label
             )
@@ -762,7 +766,7 @@ def effect_to_schema(
                 _apply_effect_duration(out, effect, effect.label)
             return out
         out["type"] = "buff"
-        out["name"] = effect.label
+        out["name"] = _rs().canonical_effect_name(effect.label, "buff")
         out["label"] = _label_to_effect_label(category, effect.label, summon=summon)
         _apply_schema_value(
             out, _resolve_effect_numeric(effect, effect.label), effect.label
@@ -772,7 +776,7 @@ def effect_to_schema(
 
     if category == "debuff":
         out["type"] = "debuff"
-        out["name"] = effect.label
+        out["name"] = _rs().canonical_effect_name(effect.label, "debuff")
         out["label"] = _label_to_effect_label(category, effect.label)
         _apply_schema_value(
             out, _resolve_effect_numeric(effect, effect.label), effect.label
@@ -874,7 +878,8 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         )
 
     if etype in ("buff", "stat_mod", "shield", "heal"):
-        name = normalize_healing_label(effect.get("name", "Buff"))
+        raw_name = normalize_healing_label(effect.get("name", "Buff"))
+        name = rs.display_effect_name(raw_name, "buff")
         return rs.Effect(
             category="buff",
             label=name,
@@ -887,7 +892,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         )
 
     if etype == "debuff":
-        name = effect.get("name", "Debuff")
+        name = rs.display_effect_name(effect.get("name", "Debuff"), "debuff")
         return rs.Effect(
             category="debuff",
             label=name,

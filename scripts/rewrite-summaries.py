@@ -26,6 +26,93 @@ from healing_types import (
 )
 
 ROOT = Path(__file__).resolve().parent.parent
+
+DMG_CC_IMMUNITY_LABEL = "DMG+CC immunity"
+
+# Labels that never use a buff/debuff suffix (storage or display).
+_NON_SUFFIX_BUFF_LABELS = frozenset(
+    {
+        "Damage taken reduction",
+        "Magic damage reduction",
+        "Energy recovery",
+        "Shield",
+        "Invincible",
+        "Fatal blow immunity",
+        "Crit DMG boost",
+        DMG_CC_IMMUNITY_LABEL,
+        DIRECT_HEALING_LABEL,
+        HEALING_OVER_TIME_LABEL,
+        LEGACY_DIRECT_HEALING_LABEL,
+    }
+)
+
+_NON_SUFFIX_DEBUFF_LABELS = frozenset(
+    {
+        "Energy drain",
+        "Magic damage amplification",
+    }
+)
+
+_BUFF_SUFFIX_STEMS: frozenset[str] | None = None
+_DEBUFF_SUFFIX_STEMS: frozenset[str] | None = None
+
+
+def canonical_effect_name(label: str, category: str) -> str:
+    """Drop redundant buff/debuff suffix when polarity is in ``type``."""
+    text = (label or "").strip()
+    if not text:
+        return text
+    if category == "buff" and text.casefold().endswith(" buff"):
+        return text[: -len(" buff")].rstrip()
+    if category == "debuff" and text.casefold().endswith(" debuff"):
+        return text[: -len(" debuff")].rstrip()
+    return text
+
+
+def _effect_suffix_stems(category: str) -> frozenset[str]:
+    """Short names that use the redundant buff/debuff suffix convention."""
+    global _BUFF_SUFFIX_STEMS, _DEBUFF_SUFFIX_STEMS
+    if category == "buff":
+        if _BUFF_SUFFIX_STEMS is None:
+            _BUFF_SUFFIX_STEMS = frozenset(
+                canonical_effect_name(label, "buff")
+                for _, label in BUFF_RULES
+                if label.casefold().endswith(" buff")
+            )
+        return _BUFF_SUFFIX_STEMS
+    if _DEBUFF_SUFFIX_STEMS is None:
+        _DEBUFF_SUFFIX_STEMS = frozenset(
+            canonical_effect_name(label, "debuff")
+            for _, label in DEBUFF_RULES
+            if label.casefold().endswith(" debuff")
+        )
+    return _DEBUFF_SUFFIX_STEMS
+
+
+def display_effect_name(name: str, category: str) -> str:
+    """Restore buff/debuff suffix for markdown and internal round-trip labels."""
+    text = (name or "").strip()
+    if not text:
+        return text
+    if category == "buff":
+        if text.casefold().endswith(" buff"):
+            return text
+        if text in _NON_SUFFIX_BUFF_LABELS:
+            return text
+        if text in _effect_suffix_stems("buff"):
+            return f"{text} buff"
+        return text
+    if category == "debuff":
+        if text.casefold().endswith(" debuff"):
+            return text
+        if text in _NON_SUFFIX_DEBUFF_LABELS:
+            return text
+        if text in _effect_suffix_stems("debuff"):
+            return f"{text} debuff"
+        return text
+    return text
+
+
 HEROES_MD = ROOT / "Heroes.md"
 HEROES2_MD = ROOT / "heroes2.md"
 SIGNATURE_SKILLS_FILE = ROOT / "data" / "signature_skills.json"
@@ -365,6 +452,43 @@ def _lifedrain_buff_is_self_only(clause: str) -> bool:
     return any(re.search(pat, t) for pat in self_patterns)
 
 
+def _buff_is_self_stat_gain(clause: str, label: str) -> bool:
+    """Self ATK/ATK SPD from impersonal phrasing (Dionel Nectar Feast)."""
+    if label not in ("ATK buff", "ATK SPD buff"):
+        return False
+    t = clause.lower()
+    if _has_explicit_ally_buff(t, label):
+        return False
+    if re.search(
+        r"\bgains? a stack of .{0,50}when receiving .{0,50}from an ally",
+        t,
+    ):
+        return True
+    if re.search(
+        r"\bdrinks? (?:the )?(?:divine )?nectar to increase "
+        r"\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?%",
+        t,
+    ):
+        return True
+    if re.search(r"\bfor each intoxication stack\b", t):
+        return True
+    if re.search(r"\bbonuses from active casting are increased\b", t):
+        return True
+    if re.search(
+        r"\bincreasing \d+(?:\.\d+)?% atk and \d+(?:\.\d+)?(?:\s*\+\s*\d+)? atk spd\b",
+        t,
+    ):
+        return True
+    if re.search(r"\b(?:his |her )atk and atk spd are increased by\b", t):
+        return True
+    if re.search(
+        r"\bto increase \d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?%.*?atk\b",
+        t,
+    ):
+        return True
+    return False
+
+
 def _invincibility_targets_self(clause: str) -> bool:
     """True when invincibility applies only to the caster in this clause."""
     t = clause.lower()
@@ -455,6 +579,10 @@ def _resolve_buff_targeting(
         r"\b(?:increas(?:e|es|ing)|gain(?:s|ing)?) (?:her |his |their )atk\b", t
     ) and not _has_explicit_ally_buff(t, label):
         return "Self"
+    if label in ("ATK buff", "ATK SPD buff") and re.search(
+        r"\b(?:his |her )atk and atk spd are increased\b", t
+    ):
+        return "Self"
     if label in ("Haste buff", "ATK buff") and re.search(
         r"\bincreas(?:e|es|ing) their (?:atk|haste)\b", t
     ) and not re.search(r"\ballies\b", t):
@@ -465,7 +593,7 @@ def _resolve_buff_targeting(
         return "Self"
     if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
         return "Self"
-    if label in SUMMON_SELF_BUFF_LABELS and _summon_buff_is_self_only(t, label):
+    if _buff_is_self_stat_gain(t, label):
         return "Self"
     if label == "Invincible" and _invincibility_targets_self(t):
         return "Self"
@@ -589,6 +717,18 @@ def _dot_is_channeled_skill_damage(text: str) -> bool:
     )
 
 
+def _text_has_blind_enemy_hp_dot(text: str) -> bool:
+    """Enemy HP drain while blinded — DoT gated on Blind, not a separate debuff."""
+    return bool(
+        re.search(
+            r"blinded enemies lose \d+(?:\.\d+)?(?:\s*%\s*)?"
+            r"(?:\([^)]*\)\s*)?hp per second",
+            text,
+            re.I,
+        )
+    )
+
+
 def _text_has_dot_damage(text: str) -> bool:
     """True when skill text describes damage-over-time, not proc cooldowns."""
     t = text.lower()
@@ -598,6 +738,8 @@ def _text_has_dot_damage(text: str) -> bool:
         return False
     if _dot_is_channeled_skill_damage(text):
         return False
+    if _text_has_blind_enemy_hp_dot(text):
+        return True
     if re.search(r"damage per volley", t):
         return False
     if re.search(
@@ -708,37 +850,6 @@ def _text_has_ongoing_max_hp_loss(text: str) -> bool:
     )
 
 
-def _atk_flat_max_hp_amounts(text: str) -> list[float]:
-    """Max-HP % from ATK+X% damage; prefer tier-upgrade increases-to values."""
-    text = _normalize_effect_text(text)
-    t = text.lower()
-    upgrade_pat = (
-        r"increases?(?: the)?(?: .{0,50})?damage(?: dealt)? to "
-        r"\d+(?:\.\d+)?%\s*\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%"
-    )
-    upgrade_vals = [float(m.group(1)) for m in re.finditer(upgrade_pat, t)]
-    if upgrade_vals:
-        return upgrade_vals
-    deal_pat = (
-        r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\)\s*\+\s*"
-        r"(\d+(?:\.\d+)?)\s*%\s+damage\b"
-    )
-    found: list[float] = []
-    for m in re.finditer(deal_pat, t):
-        if _is_damage_cap_context(t, m.start()):
-            continue
-        after = t[m.end() : m.end() + 30]
-        if re.match(r"\s+each time", after):
-            continue
-        found.append(float(m.group(1)))
-    return found
-
-
-def _text_has_atk_plus_flat_damage(text: str) -> bool:
-    """True for AFKJ convention: X% (ATK-based) + Y% damage (Y = max HP)."""
-    return bool(_atk_flat_max_hp_amounts(text))
-
-
 def _text_has_primary_true_damage(text: str) -> bool:
     """True when true damage is the primary hit, not a conditional rider."""
     t = text.lower()
@@ -803,48 +914,6 @@ def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool
     ) or re.search(r"\bshield granted by this skill\b", clause):
         return True
     return False
-
-
-def _summon_buff_is_self_only(clause: str, label: str) -> bool:
-    """Own-summon buffs (e.g. Florabelle Bulbsprites), not party summons."""
-    if label not in SUMMON_SELF_BUFF_LABELS:
-        return False
-    t = clause.lower()
-    if re.search(r"\ball (?:inspired )?(?:allied )?summons?\b", t):
-        return False
-    if re.search(r"\bboosting the damage of all allied summons\b", t):
-        return False
-    if re.search(r"\bincrease all allied summons'? damage\b", t):
-        return False
-    if re.search(r"\b(?:giant )?bulbsprites?\b", t):
-        return True
-    if re.search(r"\bfeeds? (?:a |the )?(?:allied )?bulbsprite\b", t):
-        return True
-    if re.search(r"\bfeeds? the allied summon\b", t):
-        return True
-    if re.search(r"\btransforms? (?:the |that )?summon\b", t):
-        return True
-    if re.search(r"\ballied summons in their giant form\b", t):
-        return True
-    if re.search(r"\b(?:life drain|haste) in giant form\b", t):
-        return True
-    if re.search(
-        r"\bincreasing their (?:haste|life drain)\b", t
-    ) and re.search(r"\btransforms? (?:the |that )?summon\b", t):
-        return True
-    return False
-
-
-def _summon_buff_match_scopes(text: str, label: str, pattern: str) -> list[str]:
-    """Clause scopes for summon-only buff matches."""
-    t = text.lower()
-    scopes: list[str] = []
-    for m in re.finditer(pattern, t):
-        if _buff_match_is_summon_only(t, label, m) and not _buff_match_is_enemy_stat(
-            t, label, m
-        ):
-            scopes.append(_clause_around(t, m.start()))
-    return scopes
 
 
 def _buff_match_is_shield_modifier(t: str, label: str, match: re.Match[str]) -> bool:
@@ -932,9 +1001,6 @@ def _should_add_buff(text: str, label: str, pattern: str) -> bool:
 
 
 SUMMON_ONLY_BUFF_LABELS = frozenset()
-SUMMON_SELF_BUFF_LABELS = frozenset(
-    {"Haste buff", "Lifedrain buff", "Summon damage buff"}
-)
 SUMMON_BUFF_TARGETING = "Summons only"
 
 
@@ -1077,6 +1143,21 @@ def parse_level_tier(line: str, section: str) -> str:
     return SECTION_TIERS.get(section, "base")
 
 
+def _split_passive_active_chunk(text: str) -> list[str]:
+    """Split merged Passive./Active. prose from Heroes.md skill buffers."""
+    if not re.search(r"\bActive\.\s+", text, re.I):
+        return [text]
+    parts = re.split(r"\bActive\.\s+", text, maxsplit=1, flags=re.I)
+    out: list[str] = []
+    head = parts[0].strip()
+    head = re.sub(r"\bPassive\.\s*$", "", head, flags=re.I).strip()
+    if head:
+        out.append(head)
+    if len(parts) > 1 and parts[1].strip():
+        out.append(parts[1].strip())
+    return out or [text]
+
+
 def parse_hero_block(block: str) -> Hero:
     lines = block.splitlines()
     title = lines[0].replace("## ", "").strip()
@@ -1096,9 +1177,9 @@ def parse_hero_block(block: str) -> Hero:
                 from heroes_io import normalize_skill_text
 
                 text = normalize_skill_text(text)
-                hero.skill_chunks.append(
-                    (SECTION_TIERS.get(current_section, "base"), text, current_section)
-                )
+                tier = SECTION_TIERS.get(current_section, "base")
+                for chunk in _split_passive_active_chunk(text):
+                    hero.skill_chunks.append((tier, chunk, current_section))
         buffer = []
 
     for ln in lines[1:]:
@@ -1338,7 +1419,7 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             return True
         if label == "Lifedrain buff" and _lifedrain_buff_is_self_only(t):
             return True
-        if label in SUMMON_SELF_BUFF_LABELS and _summon_buff_is_self_only(t, label):
+        if _buff_is_self_stat_gain(t, label):
             return True
         if label == "Haste buff" and re.search(
             r"\b(?:her|his) movement speed increases\b", t
@@ -1833,7 +1914,6 @@ _NON_PERCENT_DEBUFF_LABELS = frozenset(
         "Marked target (focus fire)",
         "Vulnerable debuff",
         "Damage taken debuff",
-        "Blind HP loss debuff",
     }
 )
 
@@ -1887,6 +1967,8 @@ def extract_number(text: str, label: str = "") -> float | None:
         amounts = _all_amounts(
             text,
             [
+                r"steals? (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*energy",
+                r"energy stolen to (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
                 r"drain(?:s|ing)? (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*energy",
                 r"absorb(?:s|ing)? (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*energy",
                 r"reduc(?:e|es|ing) .{0,40}energy by (\d+(?:\.\d+)?)"
@@ -2070,9 +2152,16 @@ def extract_number(text: str, label: str = "") -> float | None:
             r"(\d+(?:\.\d+)?)",
             r"atk bonus granted by .{0,80}?to (\d+(?:\.\d+)?)\s*%",
             r"atk (?:is |are )?increased by (\d+(?:\.\d+)?)",
+            r"(?:his |her )atk and atk spd are increased by (\d+(?:\.\d+)?)%",
+            r"the atk bonus is increased to (\d+(?:\.\d+)?)\s*%",
+            r"increasing (\d+(?:\.\d+)?)\s*%\s*atk\b",
+            r"to increase (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*atk\b",
+            r"increased to (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*atk\b",
             r"normal attacks? deal (\d+(?:\.\d+)?)% more damage",
         ):
             if m := re.search(pat, t, re.I):
+                if m.lastindex and m.lastindex >= 2:
+                    return float(m.group(1)) + float(m.group(2))
                 return float(m.group(1))
         return None
     if label == "ATK SPD buff":
@@ -2081,6 +2170,13 @@ def extract_number(text: str, label: str = "") -> float | None:
             [
                 r"increases atk spd by (\d+(?:\.\d+)?)",
                 r"(?:permanently )?gains? (\d+(?:\.\d+)?)\s+atk spd\b",
+                r"and (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*atk spd\b",
+                r"and (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*atk spd for",
+                r"and (\d+(?:\.\d+)?)\s*atk spd\b",
+                r"the atk spd bonus is increased to (\d+(?:\.\d+)?)\b",
+                r"increasing \d+(?:\.\d+)?%\s*atk and (\d+(?:\.\d+)?)\s*atk spd\b",
+                r"(?:his |her )atk and atk spd are increased by "
+                r"\d+(?:\.\d+)?% and (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
             ],
         )
         if amounts:
@@ -2467,8 +2563,14 @@ def _merge_conditional(current: str | None, new: str | None) -> str | None:
     return current if rank[current] <= rank[new] else new
 
 
-def _buff_condition(category: str, text: str) -> str | None:
+def _effect_condition(category: str, text: str) -> str | None:
+    if category == "damage" and _text_has_blind_enemy_hp_dot(text):
+        return "on blind"
     return classify_buff_condition(text) if category == "buff" else None
+
+
+def _buff_condition(category: str, text: str) -> str | None:
+    return _effect_condition(category, text)
 
 
 _HP_RECOVERY_EFFECT_LABELS = HP_RECOVERY_LABELS
@@ -2636,9 +2738,9 @@ def _merge_cc_immunity_records(records: list[CcImmunity]) -> list[CcImmunity]:
 def _merge_special_effect_records(
     records: list[SpecialEffect],
 ) -> list[SpecialEffect]:
-    merged: dict[tuple[str, str], SpecialEffect] = {}
+    merged: dict[tuple[str, str, str], SpecialEffect] = {}
     for se in records:
-        key = (se.kind, se.label)
+        key = (se.kind, se.label, se.targeting)
         cur = merged.get(key)
         if cur is None:
             merged[key] = SpecialEffect(
@@ -2711,7 +2813,7 @@ def add_effect(
         if category == "damage"
         else extract_number(cond_text, label)
     )
-    cond = _buff_condition(category, cond_text)
+    cond = _effect_condition(category, cond_text)
     timed_dur = (
         extract_timed_duration(cond_text, label)
         if category in ("buff", "debuff")
@@ -2826,7 +2928,7 @@ BUFF_RULES = [
     (
         r"grants?.{0,40}(?:the )?winter warrior.{0,40}same immunity|"
         r"grants?.{0,50}same (?:damage and control |immunity )?immunity effects",
-        "Dmg and CC immunity",
+        DMG_CC_IMMUNITY_LABEL,
     ),
     # ATK buff: match increase/increases/increasing + optional pronoun + "atk by"
     (r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s )?atk by", "ATK buff"),
@@ -2868,6 +2970,22 @@ BUFF_RULES = [
         "ATK buff",
     ),
     (r"allies with \w+.{0,30}gain(?:s|ing)? (?:an )?extra \d+% atk", "ATK buff"),
+    # Combined ATK + ATK SPD self/impersonal lines (Dionel Nectar Feast)
+    (
+        r"increas(?:e|es|ing) .{0,80}\batk\b.{0,40}\batk spd\b",
+        "ATK SPD buff",
+    ),
+    # Passive combined self ATK + ATK SPD (Nerion ultimate empowerment)
+    (
+        r"(?:his |her )atk and atk spd are increased by \d+(?:\.\d+)?%",
+        "ATK buff",
+    ),
+    (
+        r"(?:his |her )atk and atk spd are increased by "
+        r"\d+(?:\.\d+)?% and \d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?",
+        "ATK SPD buff",
+    ),
+    (r"\batk spd bonus is increased\b", "ATK SPD buff"),
     # Ally ATK SPD (before generic self Hero Focus lines)
     (r"grants? all allies \d+ atk spd", "ATK SPD buff"),
     (r"increas(?:e|es|ing) all allies'? atk spd", "ATK SPD buff"),
@@ -2916,10 +3034,10 @@ BUFF_RULES = [
     (
         r"boosting the damage of all allied summons|"
         r"increase all allied summons'? damage|"
-        r"allied summons'? damage dealt by|"
-        r"allied summons in their .{0,20}gain extra atk",
-        "Summon damage buff",
+        r"allied summons'? damage dealt by",
+        "Damage dealt buff",
     ),
+    (r"allied summons in their .{0,20}gain extra atk", "ATK buff"),
     # Max HP buff: handle both "increases max HP" and passive "max HP is increased"
     (r"increas(?:e|es|ing) (?:the )?(?:\w+ ){0,4}max hp", "Max HP buff"),
     (r"max hp.{0,30}(?:is |permanently )?increas", "Max HP buff"),
@@ -3356,6 +3474,14 @@ DEBUFF_RULES = [
     (r"reduc(?:e|es|ing|tion) .{0,30}phys(?:ical)? def", "Phys DEF debuff"),
     # Energy drain (enemy only — not own summon/armor "loses energy")
     (
+        r"steals? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy(?:\s+from)?",
+        "Energy drain",
+    ),
+    (
+        r"energy stolen to \d+(?:\s*\+\s*\d+(?:\.\d+)?)?",
+        "Energy drain",
+    ),
+    (
         r"drain(?:s|ing)? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy"
         r"(?:\s+from|\b)",
         "Energy drain",
@@ -3438,7 +3564,6 @@ DEBUFF_RULES = [
     ),
     # Misc
     (r"instantly defeat", "Execution debuff"),
-    (r"blinded enemies lose", "Blind HP loss debuff"),
     (
         r"burn(?:s|ing|ed)?.{0,80}(?:damage|hp).{0,60}(?:every|per second)|"
         r"burning.{0,50}(?:for \d|area)|burns? the (?:target|enemy|area)|"
@@ -3597,13 +3722,11 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     ),
     (r"prevents their defeat", "Fatal blow save"),
     (r"\binvincible\b", "Invincibility"),
-    (r"immune to damage and control", "Dmg and CC immunity"),
-    # Ally granted same immunity: distinct label so it doesn't collapse into
-    # the self-immunity entry and loses its Single-target targeting.
+    (r"immune to damage and control", DMG_CC_IMMUNITY_LABEL),
     (
         r"grants?.{0,40}(?:the )?winter warrior.{0,40}same immunity|"
         r"grants?.{0,50}same (?:damage and control |immunity )?immunity effects",
-        "Dmg and CC immunity (ally)",
+        DMG_CC_IMMUNITY_LABEL,
     ),
     (
         r"drains? \d+% of .{0,30}current hp",
@@ -4122,9 +4245,9 @@ def detect_special_targeting(text: str, kind: str, label: str) -> str:
 def add_special_effect(
     effects: list[SpecialEffect], kind: str, label: str, tier: str, text: str
 ):
-    key = (kind, label)
-    existing = [e for e in effects if (e.kind, e.label) == key]
     targeting = detect_special_targeting(text, kind, label)
+    key = (kind, label, targeting)
+    existing = [e for e in effects if (e.kind, e.label, e.targeting) == key]
     if existing:
         cur = existing[0]
         order = TIER_ORDER.get(tier, 99)
@@ -4574,6 +4697,8 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"(\d+(?:\.\d+)?)\s*%\s+of (?:the )?target's max hp",
             r"true damage equal to (\d+(?:\.\d+)?)\s*%\s*\+\s*"
             r"(\d+(?:\.\d+)?)\s*%\s+of (?:the )?target's max hp",
+            r"(?:extra )?true damage equal to (\d+(?:\.\d+)?)\s*%\s+of "
+            r".{0,60}max\s+hp",
         ]
     elif dmg_type == "HP loss":
         patterns = [
@@ -4682,8 +4807,6 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
         return None
 
     amounts = _all_amounts(text, patterns)
-    if dmg_type == "Max HP-based damage":
-        amounts.extend(_atk_flat_max_hp_amounts(text))
     if amounts:
         return max(amounts)
 
@@ -5031,8 +5154,6 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
         types.append("HP loss")
     if _text_has_max_hp_damage(text) and "Max HP-based damage" not in types:
         types.append("Max HP-based damage")
-    if _text_has_atk_plus_flat_damage(text) and "Max HP-based damage" not in types:
-        types.append("Max HP-based damage")
     non_dealt = _is_non_dealt_damage_context(text)
     hp_loss_hit = _text_has_direct_hp_loss_hit(text)
     if re.search(r"\(atk-based\)", text, re.I) and not non_dealt:
@@ -5069,18 +5190,6 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
         types.append(primary_dmg)
     if "True damage" in types and _primary_damage_is_true_scored(text):
         types = [dt for dt in types if dt not in (primary_dmg, "Physical", "Magic")]
-    if (
-        "Max HP-based damage" in types
-        and primary_dmg in types
-        and re.search(
-            r"\d+(?:\.\d+)?%\s*\(atk-based\)\s*\+\s*\d+(?:\.\d+)?%\s+damage\b",
-            t,
-        )
-        and not _text_has_max_hp_damage(text)
-    ):
-        amounts = _atk_flat_max_hp_amounts(text)
-        if not amounts or max(amounts) < 30:
-            types = [dt for dt in types if dt != "Max HP-based damage"]
     seen: set[str] = set()
     ordered: list[str] = []
     for dt in types:
@@ -5697,28 +5806,7 @@ def analyze_text(
                 source_section=source_section,
             )
         if _matching_summon_buff_match(text, label, pat):
-            if label in SUMMON_SELF_BUFF_LABELS:
-                scopes = _summon_buff_match_scopes(text, label, pat)
-                self_scopes = [
-                    s for s in scopes if _summon_buff_is_self_only(s, label)
-                ]
-                for scope in self_scopes:
-                    add_effect(
-                        effects,
-                        "buff",
-                        label,
-                        tier,
-                        text,
-                        scope=scope,
-                        source_section=source_section,
-                    )
-                has_party = not scopes or any(
-                    not _summon_buff_is_self_only(s, label) for s in scopes
-                )
-                if has_party:
-                    add_summon_buff_effect(summon_effects, label, tier, text)
-            else:
-                add_summon_buff_effect(summon_effects, label, tier, text)
+            add_summon_buff_effect(summon_effects, label, tier, text)
     for pat, label in DEBUFF_RULES_COMPILED:
         if label == "DoT" and _text_has_dot_damage(text):
             continue
@@ -6372,7 +6460,7 @@ def analyze_hero(hero: Hero):
 # Buff labels where the effect is inherently high-value, regardless of any
 # incidental number extracted from the surrounding text.
 _ALWAYS_HIGH_BUFFS = frozenset(
-    {"Invincible", "Fatal blow immunity", "Dmg and CC immunity"}
+    {"Invincible", "Fatal blow immunity", DMG_CC_IMMUNITY_LABEL}
 )
 _ALWAYS_MEDIUM_DEBUFFS = frozenset({"Marked target (focus fire)"})
 
@@ -6474,17 +6562,26 @@ def format_tier_suffix(tier: str) -> str:
 
 
 def _summary_debuff_display_label(label: str) -> str:
-    if label.lower().endswith(" debuff"):
-        return label[: -len(" debuff")]
     return label
 
 
 def _summary_buff_display_label(label: str) -> str:
-    if label == "Damage taken reduction":
-        return "Damage taken"
-    if label == "Magic damage reduction":
-        return "Magic damage amplification"
     return label
+
+
+def _damage_type_summary_suffix(hero: Hero, dmg_type: str) -> str:
+    conditionals = sorted(
+        {
+            e.conditional
+            for e in hero.effects
+            if e.category == "damage"
+            and e.label == dmg_type
+            and e.conditional
+        }
+    )
+    if not conditionals:
+        return ""
+    return "".join(f" — conditional ({c})" for c in conditionals)
 
 
 def format_effect_magnitude(effect: Effect) -> str:
@@ -6506,12 +6603,8 @@ def collect_hero_buff_effects(hero: Hero) -> list[Effect]:
 
 
 def collect_summary_buff_effects(hero: Hero) -> list[Effect]:
-    """Ally buffs for per-hero summary cards (excludes summon-only party buffs)."""
-    return [
-        e
-        for e in collect_hero_buff_effects(hero)
-        if e.targeting != SUMMON_BUFF_TARGETING
-    ]
+    """Ally and summon-targeted buffs for per-hero summary cards."""
+    return list(collect_hero_buff_effects(hero))
 
 
 def _format_buff_targeting_phrase(targeting: str) -> str:
@@ -6735,10 +6828,11 @@ def format_summary(hero: Hero, display_name: str | None = None) -> str:
         out.append("")
         for dt, tgt in hero.damage_entries:
             mag = hero.damage_magnitudes.get(dt, "")
+            cond_suffix = _damage_type_summary_suffix(hero, dt)
             if mag and dt in TRUE_DAMAGE_TYPES:
-                out.append(f"- {dt} — {tgt} — `{mag}`")
+                out.append(f"- {dt} — {tgt} — `{mag}`{cond_suffix}")
             else:
-                out.append(f"- {dt} — {tgt}")
+                out.append(f"- {dt} — {tgt}{cond_suffix}")
         out.append("")
 
     buff_items = collect_summary_buff_effects(hero)
@@ -9054,16 +9148,18 @@ def _skill_card_tag_label(label: str) -> str:
 
 
 def _skill_card_tag_for_effect(label: str, targeting: str) -> str:
-    """Skill-card chip text; self-targeted effects include a targeting suffix."""
+    """Skill-card chip text; self/summon targeting uses a merged pill suffix."""
     text = _skill_card_tag_label(label)
     if targeting == "Self":
         return f"{text} — Self"
+    if targeting == SUMMON_BUFF_TARGETING:
+        return f"{text} — Summon"
     return text
 
 
 def _canonical_skill_card_chip_key(tag: str) -> str:
     text = re.sub(
-        r"\s*(?:—|–)\s*self\s*$",
+        r"\s*(?:—|–)\s*(?:self|summon)\s*$",
         "",
         tag.strip(),
         flags=re.I,
@@ -9123,42 +9219,13 @@ def signature_skill_category(
     return SECTION_TO_SKILL_CATEGORY.get(section)
 
 
-def _skill_section_text(hero: Hero, section: str) -> str:
-    """Concatenate all analyzed chunks for one skill section."""
-    parts: list[str] = []
-    for _tier, text, sec in hero.skill_chunks:
-        if sec == section:
-            parts.append(text)
-    return " ".join(parts)
-
-
-def _apply_skill_card_damage_display_policy(
-    labels: list[str],
-    hero: Hero,
-    section: str,
-) -> list[str]:
-    """Skill-card display rules; detection lives in skill_slices effects."""
-    text = _skill_section_text(hero, section)
-    if not text.strip():
-        return labels
-    out = list(labels)
-    if (
-        "Max HP-based damage" in out
-        and _text_has_atk_plus_flat_damage(text)
-        and not _text_has_max_hp_damage(text)
-    ):
-        out = [label for label in out if label != "Max HP-based damage"]
-    return out
-
-
 def _skill_card_damage_labels(hero: Hero, slice_: SkillSlice) -> list[str]:
     """Damage chip labels from analyzed effects (not raw text re-parse)."""
     damage_order = {label: idx for idx, label in enumerate(_SKILL_CARD_DAMAGE_KEYS)}
-    labels = sorted(
+    return sorted(
         {e.label for e in slice_.effects if e.category == "damage"},
         key=lambda label: damage_order.get(label, len(_SKILL_CARD_DAMAGE_KEYS)),
     )
-    return _apply_skill_card_damage_display_policy(labels, hero, slice_.section)
 
 
 def format_skill_card_tags(

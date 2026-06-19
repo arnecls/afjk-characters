@@ -153,7 +153,7 @@ class RoundTripTests(unittest.TestCase):
         pen = next(
             e
             for e in sealed["effects"]
-            if e.get("name") == "DEF Penetration buff"
+            if e.get("name") == "DEF Penetration"
         )
         self.assertEqual(pen["value"][0]["value"], 55.0)
         marked = [
@@ -165,7 +165,7 @@ class RoundTripTests(unittest.TestCase):
             not marked or hs._numeric_from_value(marked[0].get("value")) is None
         )
         focus = hero["skills"]["Hero Focus"]
-        atk = next(e for e in focus["effects"] if e.get("name") == "ATK buff")
+        atk = next(e for e in focus["effects"] if e.get("name") == "ATK")
         self.assertEqual(atk["value"][0]["value"], 16.0)
 
     def test_targeting_label_round_trip(self):
@@ -484,7 +484,7 @@ class SkillOverviewTests(unittest.TestCase):
         buff_key = rs._canonical_skill_card_chip_key("Damage dealt buff — Self")
         self.assertEqual(debuff_key, "damage dealt debuff")
         self.assertEqual(taken_key, "damage taken reduction")
-        self.assertEqual(buff_key, "damage dealt buff")
+        self.assertEqual(buff_key, "damage dealt")
         self.assertNotEqual(debuff_key, taken_key)
         self.assertNotEqual(buff_key, debuff_key)
 

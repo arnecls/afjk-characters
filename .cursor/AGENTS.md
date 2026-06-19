@@ -257,9 +257,6 @@ in `site/data/heroes.json` → `sections.skillCards`. Tags are computed during
 - **Damage chips** — labels from `skill_slices[section].effects` (category
   `damage`), not a second pass over raw skill text.
 - **Buff / debuff / CC / immunity chips** — same `skill_slices` effects.
-- **Display policy** — `_apply_skill_card_damage_display_policy()` may hide
-  labels that detection still records (e.g. implicit max-HP from
-  `ATK + X%` convention on cards only; processed JSON keeps them).
 
 Stored on each skill as `skill_card_tags` in `heroes_data_processed.json`.
 `render_site.py` reads those tags (does not re-derive). After changing

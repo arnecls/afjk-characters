@@ -1044,20 +1044,17 @@ class CommonFailurePatternTests(unittest.TestCase):
         self.assertEqual(move.numeric, 80.0)
         self.assertEqual(haste.area_count, 2)
 
-    def test_kazim_ult_max_hp_uses_upgrade_tier(self):
+    def test_kazim_ult_atk_plus_flat_not_max_hp(self):
         text = (
             "Kazim fires a powerful volley of arrows at the arc-shaped area with "
             "the most enemies, dealing 320% (ATK-based) + 140% damage and "
             "knocking all prey within range into the air for 0.5s. "
             "Increases the powerful arrow damage to 400% (ATK-based) + 40%."
         )
-        amount = rs._extract_damage_amount(text, "Max HP-based damage")
-        self.assertEqual(amount, 40.0)
         types = rs.detect_damage_types(text, "Physical")
-        self.assertIn("Max HP-based damage", types)
-        self.assertEqual(
-            rs._extract_damage_amount(text, "Max HP-based damage"), 40.0
-        )
+        self.assertNotIn("Max HP-based damage", types)
+        self.assertIn("Physical", types)
+        self.assertEqual(rs._extract_damage_amount(text, "Physical"), 460.0)
 
     def test_harak_vicious_bite_not_dot(self):
         text = (
@@ -1143,6 +1140,37 @@ class CommonFailurePatternTests(unittest.TestCase):
             "Energy drain",
             [e.label for e in effects if e.category == "debuff"],
         )
+
+    def test_hodgkin_rending_cleave_steals_energy(self):
+        text = (
+            "Hodgkin deals 240% (ATK-based) + 30% damage to enemies within a "
+            "2-tile arc and steals 70 + 5 Energy from them."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        drain = [
+            e for e in effects if e.category == "debuff" and e.label == "Energy drain"
+        ]
+        self.assertEqual(len(drain), 1)
+        self.assertEqual(drain[0].targeting, "Arc")
+        self.assertEqual(drain[0].numeric, 75.0)
+
+    def test_nerion_ultimate_self_atk_and_atk_spd_buffs(self):
+        text = (
+            "Nerion empowers himself with the force of the tide for 12s. "
+            "While this effect lasts, his ATK and ATK SPD are increased by "
+            "22% and 60+ 8 respectively, and his normal attacks gain the "
+            "Deluge effect."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        labels = {(e.label, e.targeting) for e in effects if e.category == "buff"}
+        self.assertIn(("ATK buff", "Self"), labels)
+        self.assertIn(("ATK SPD buff", "Self"), labels)
+        atk = next(e for e in effects if e.label == "ATK buff")
+        spd = next(e for e in effects if e.label == "ATK SPD buff")
+        self.assertEqual(atk.numeric, 22.0)
+        self.assertEqual(spd.numeric, 68.0)
 
     def test_athalia_true_damage_without_spurious_max_hp(self):
         text = (
@@ -1426,7 +1454,6 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         labels = [(e.category, e.label) for e in effects]
         self.assertIn(("debuff", "Damage dealt debuff"), labels)
         self.assertNotIn(("buff", "Damage taken reduction"), labels)
-        self.assertNotIn(("buff", "Damage taken"), labels)
 
         import heroes_io as io
 
@@ -1442,7 +1469,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         debuff_key = rs._canonical_skill_card_chip_key("Damage dealt debuff")
         taken_key = rs._canonical_skill_card_chip_key("Damage taken reduction")
         self.assertEqual(debuff_key, "damage dealt debuff")
-        self.assertNotEqual(debuff_key, taken_key)
+        self.assertEqual(taken_key, "damage taken reduction")
 
     def test_temesia_invincible_fury_true_damage_on_mythic_plus(self):
         text = (

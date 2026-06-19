@@ -113,7 +113,7 @@ class RenderSiteTests(unittest.TestCase):
         )
         self.assertTrue(zanie["reasons"])
         self.assertTrue(
-            any("Summon damage buff" in r for r in zanie["reasons"]),
+            any("Damage dealt buff" in r for r in zanie["reasons"]),
         )
 
     def test_bonnie_synergy_requires(self) -> None:

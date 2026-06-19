@@ -46,7 +46,7 @@
           "name": "Lily May"
         },
         {
-          "score": 20.5,
+          "score": 22.0,
           "name": "Nerion"
         },
         {
@@ -105,7 +105,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
               "HP loss"
             ]
           },
@@ -114,16 +113,16 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
               "HP loss"
             ]
           },
           {
-            "name": "Baelran",
-            "score": 0.9042,
+            "name": "Faramor",
+            "score": 0.9363,
             "matches": [
               "Physical",
-              "Max HP-based damage"
+              "DoT",
+              "HP loss"
             ]
           }
         ],
@@ -220,29 +219,27 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage",
-              "DoT"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Thador",
             "score": 1.0,
             "matches": [
               "DoT",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "DoT",
+              "Physical"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 0.8764,
+            "matches": [
+              "DoT",
+              "Physical"
             ]
           }
         ],
@@ -650,24 +647,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -1228,21 +1222,21 @@
           "score": 15.011999999999999
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+          ],
+          "score": 12.750857142857143
+        },
+        {
           "provider": "Lyca",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
           ],
           "score": 11.687142857142858
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 11.250857142857143
         },
         {
           "provider": "Pandora",
@@ -1856,24 +1850,21 @@
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Alna",
+            "name": "Aliceth",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -1936,17 +1927,17 @@
           },
           {
             "name": "Gwyneth",
-            "score": 0.6703,
+            "score": 0.6714,
             "matches": [
               "Damage"
             ]
           },
           {
-            "name": "Rhys",
-            "score": 0.6418,
+            "name": "Kafra",
+            "score": 0.6154,
             "matches": [
               "Damage",
-              "Similar Skills"
+              "Debuffs on enemies"
             ]
           }
         ]
@@ -2024,31 +2015,30 @@
         ],
         "damage": [
           {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "True damage",
+              "Physical",
+              "HP loss"
+            ]
+          },
+          {
             "name": "Nara",
             "score": 1.0,
             "matches": [
               "Physical",
               "True damage",
-              "Max HP-based damage",
               "HP loss"
             ]
           },
           {
-            "name": "Faramor",
-            "score": 0.9867,
+            "name": "Vala",
+            "score": 0.909,
             "matches": [
               "True damage",
               "Physical",
               "HP loss"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 0.9417,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
             ]
           }
         ],
@@ -2079,7 +2069,7 @@
         "overall": [
           {
             "name": "Baelran",
-            "score": 0.7499,
+            "score": 0.6894,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -2088,18 +2078,17 @@
           },
           {
             "name": "Nara",
-            "score": 0.6266,
+            "score": 0.6252,
             "matches": [
               "Damage",
               "Crowd Control"
             ]
           },
           {
-            "name": "Himmel",
-            "score": 0.5954,
+            "name": "Faramor",
+            "score": 0.5762,
             "matches": [
-              "Damage",
-              "Crowd Control"
+              "Damage"
             ]
           }
         ]
@@ -2135,6 +2124,14 @@
             "Haste via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
         },
         {
           "provider": "Kazim",
@@ -2298,24 +2295,21 @@
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Twins",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cyran",
+            "score": 1.0,
+            "matches": [
+              "Magic"
             ]
           }
         ],
@@ -2643,8 +2637,15 @@
             "score": 1.0,
             "matches": [
               "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "True damage",
+              "Physical"
             ]
           },
           {
@@ -2652,16 +2653,7 @@
             "score": 1.0,
             "matches": [
               "True damage",
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Sylphira",
-            "score": 0.9869,
-            "matches": [
-              "Max HP-based damage",
-              "True damage"
+              "Physical"
             ]
           }
         ],
@@ -2714,7 +2706,7 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.5199,
+            "score": 0.516,
             "matches": [
               "Debuffs on enemies",
               "Crowd Control",
@@ -2729,7 +2721,15 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -2972,26 +2972,23 @@
             "score": 1.0,
             "matches": [
               "DoT",
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
-            "name": "Mehira",
+            "name": "Cyran",
             "score": 1.0,
             "matches": [
               "DoT",
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
-            "name": "Saida",
+            "name": "Cryonaia",
             "score": 1.0,
             "matches": [
-              "Magic",
               "DoT",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -3030,27 +3027,17 @@
         ],
         "overall": [
           {
-            "name": "Silvina",
-            "score": 0.7718,
+            "name": "Cryonaia",
+            "score": 0.5649,
             "matches": [
-              "Damage",
-              "Debuffs on enemies",
-              "Crowd Control"
+              "Damage"
             ]
           },
           {
             "name": "Saida",
-            "score": 0.7375,
+            "score": 0.5507,
             "matches": [
-              "Damage",
               "Debuffs on enemies"
-            ]
-          },
-          {
-            "name": "Cryonaia",
-            "score": 0.5586,
-            "matches": [
-              "Damage"
             ]
           }
         ]
@@ -3492,24 +3479,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -3610,12 +3594,12 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
-              "DoT"
+              "DoT",
+              "Max HP-based damage"
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -3623,7 +3607,7 @@
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Valka",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -3680,18 +3664,16 @@
         "overall": [
           {
             "name": "Lumont",
-            "score": 0.7107,
+            "score": 0.5558,
             "matches": [
-              "Crowd Control",
-              "Damage"
+              "Crowd Control"
             ]
           },
           {
             "name": "Hepler",
-            "score": 0.6723,
+            "score": 0.5174,
             "matches": [
-              "Crowd Control",
-              "Damage"
+              "Crowd Control"
             ]
           }
         ]
@@ -3702,7 +3684,15 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -4219,24 +4209,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -5036,24 +5023,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -5107,7 +5091,7 @@
         "overall": [
           {
             "name": "Shadewing",
-            "score": 0.5492,
+            "score": 0.5531,
             "matches": [
               "Similar Skills"
             ]
@@ -5390,27 +5374,24 @@
         ],
         "damage": [
           {
+            "name": "Frieren",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Silven",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -5472,7 +5453,15 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -6277,10 +6266,6 @@
         },
         {
           "score": 9.0,
-          "name": "Dunlingr"
-        },
-        {
-          "score": 9.0,
           "name": "Kafra"
         },
         {
@@ -6483,6 +6468,15 @@
           "score": 12.6954
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+          ],
+          "score": 11.206457142857143
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
@@ -6500,15 +6494,6 @@
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
           ],
           "score": 10.05
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 9.706457142857143
         },
         {
           "provider": "Contess",
@@ -6827,29 +6812,26 @@
         "damage": [
           {
             "name": "Frieren",
-            "score": 1.0,
+            "score": 0.8489,
             "matches": [
               "DoT",
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
+            ]
+          },
+          {
+            "name": "Cyran",
+            "score": 0.7242,
+            "matches": [
+              "DoT",
+              "Magic"
             ]
           },
           {
             "name": "Saida",
-            "score": 1.0,
+            "score": 0.6498,
             "matches": [
               "Magic",
-              "DoT",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Berial",
-            "score": 1.0,
-            "matches": [
-              "DoT",
-              "Magic",
-              "Max HP-based damage"
+              "DoT"
             ]
           }
         ],
@@ -6877,24 +6859,7 @@
           }
         ],
         "cc": [],
-        "overall": [
-          {
-            "name": "Berial",
-            "score": 0.6618,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies"
-            ]
-          },
-          {
-            "name": "Mehira",
-            "score": 0.5035,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Cyran": {
@@ -6942,10 +6907,10 @@
         {
           "provider": "Ravion",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
+            "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
           ],
-          "score": 2.5206
+          "score": 4.0206
         },
         {
           "provider": "Mehira",
@@ -7170,28 +7135,25 @@
         "damage": [
           {
             "name": "Korin",
-            "score": 0.9714,
+            "score": 0.9697,
             "matches": [
-              "True damage",
-              "Max HP-based damage"
+              "True damage"
             ]
           },
           {
             "name": "Temesia",
-            "score": 0.9381,
+            "score": 0.9363,
             "matches": [
-              "Max HP-based damage",
               "True damage"
             ]
           },
           {
             "name": "Frieren",
-            "score": 0.9305,
+            "score": 0.9303,
             "matches": [
               "DoT",
               "Magic",
-              "True damage",
-              "Max HP-based damage"
+              "True damage"
             ]
           }
         ],
@@ -7449,14 +7411,14 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Frieren",
+            "name": "Shemira",
             "score": 1.0,
             "matches": [
               "Max HP-based damage",
@@ -7464,9 +7426,10 @@
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Ludovic",
             "score": 1.0,
             "matches": [
+              "Magic",
               "Max HP-based damage"
             ]
           }
@@ -7495,16 +7458,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Silvina",
-            "score": 0.5471,
-            "matches": [
-              "Crowd Control",
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Damian": {
@@ -7512,7 +7466,15 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -7543,6 +7505,14 @@
           "score": 6.0
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -7556,14 +7526,6 @@
             "Haste via Haste buff (single target, high) `signature fuel`"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Rowan",
@@ -7690,10 +7652,6 @@
         {
           "score": 27.4425,
           "name": "Carolina"
-        },
-        {
-          "score": 9.5625,
-          "name": "Bryon"
         },
         {
           "score": 9.5625,
@@ -7830,24 +7788,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -7956,6 +7911,16 @@
           "score": 18.6954
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 17.206457142857143
+        },
+        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -7988,16 +7953,6 @@
             "Grants 5 distinct stat buffs to Dionel"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
-            "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 14.206457142857143
         },
         {
           "provider": "Himmel",
@@ -8379,41 +8334,19 @@
           "name": "Kazim"
         },
         {
-          "score": 3.75,
-          "name": "Shadewing"
+          "score": 3.0,
+          "name": "Carolina"
         },
         {
-          "score": 3.5,
-          "name": "Indris"
+          "score": 3.0,
+          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Contess",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -8517,12 +8450,11 @@
         "overall": [
           {
             "name": "Frieren",
-            "score": 0.9229,
+            "score": 0.8306,
             "matches": [
               "Damage",
               "Debuffs on enemies",
-              "Crowd Control",
-              "Buffs on allies"
+              "Crowd Control"
             ]
           },
           {
@@ -8547,6 +8479,16 @@
     "Dunlingr": {
       "synergies": [
         {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)",
+            "Shield via Shield (summons only, average)",
+            "Healing via Lifedrain buff (summons only, high)"
+          ],
+          "score": 29.25
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK SPD via Haste buff (all units, high) `signature fuel`",
@@ -8559,7 +8501,7 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -8603,13 +8545,6 @@
           "reasons": [
             "Shield via Shield (multiple targets, average)",
             "Healing via Lifedrain buff (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "Shield via Shield (summons only, average)"
           ],
           "score": 6.0
         },
@@ -8908,10 +8843,6 @@
         },
         {
           "score": 4.5,
-          "name": "Damian"
-        },
-        {
-          "score": 4.5,
           "name": "Frieren"
         },
         {
@@ -8995,7 +8926,6 @@
             "matches": [
               "DoT",
               "Magic",
-              "Max HP-based damage",
               "HP loss"
             ]
           },
@@ -9004,15 +8934,14 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
               "HP loss"
             ]
           },
           {
-            "name": "Athalia",
-            "score": 0.9671,
+            "name": "Faramor",
+            "score": 0.9677,
             "matches": [
-              "Max HP-based damage",
+              "DoT",
               "HP loss"
             ]
           }
@@ -9030,6 +8959,14 @@
             "score": 0.8824,
             "matches": [
               "Energy drain"
+            ]
+          },
+          {
+            "name": "Hodgkin",
+            "score": 0.7235,
+            "matches": [
+              "Energy drain",
+              "Vitality debuff"
             ]
           }
         ],
@@ -9056,16 +8993,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Sylphira",
-            "score": 0.5373,
-            "matches": [
-              "Crowd Control",
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Eironn": {
@@ -9451,24 +9379,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -9737,12 +9662,12 @@
           "name": "Dionel"
         },
         {
-          "score": 31.5,
-          "name": "Faramor"
+          "score": 32.403999999999996,
+          "name": "Nerion"
         },
         {
-          "score": 29.404,
-          "name": "Nerion"
+          "score": 31.5,
+          "name": "Faramor"
         },
         {
           "score": 29.154,
@@ -10182,24 +10107,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
-            "name": "Mehira",
+            "name": "Solise",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -10260,20 +10182,20 @@
     "Evie": {
       "synergies": [
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`"
           ],
           "score": 4.08
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Thoran",
@@ -11080,6 +11002,15 @@
           "score": 12.6318
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+          ],
+          "score": 11.206457142857143
+        },
+        {
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -11094,15 +11025,6 @@
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 10.5
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 9.706457142857143
         },
         {
           "provider": "Tasi",
@@ -11359,24 +11281,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -11414,7 +11333,7 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -11539,8 +11458,48 @@
       ],
       "beneficiaries": [
         {
+          "score": 29.25,
+          "name": "Dunlingr"
+        },
+        {
+          "score": 29.25,
+          "name": "Phraesto"
+        },
+        {
           "score": 14.5,
           "name": "Kazim"
+        },
+        {
+          "score": 14.25,
+          "name": "Aurora"
+        },
+        {
+          "score": 14.25,
+          "name": "Berial"
+        },
+        {
+          "score": 14.25,
+          "name": "Bryon"
+        },
+        {
+          "score": 14.25,
+          "name": "Cecia"
+        },
+        {
+          "score": 14.25,
+          "name": "Damian"
+        },
+        {
+          "score": 14.25,
+          "name": "Hodgkin"
+        },
+        {
+          "score": 14.25,
+          "name": "Laios"
+        },
+        {
+          "score": 14.25,
+          "name": "Mehira"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -11576,27 +11535,24 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "Physical"
             ]
           }
         ],
@@ -11640,11 +11596,11 @@
             ]
           },
           {
-            "name": "Hodgkin",
-            "score": 0.6263,
+            "name": "Lucca",
+            "score": 0.6077,
             "matches": [
               "Damage",
-              "Similar Skills"
+              "Crowd Control"
             ]
           }
         ]
@@ -11837,27 +11793,24 @@
         ],
         "damage": [
           {
-            "name": "Himmel",
-            "score": 0.7987,
+            "name": "Faramor",
+            "score": 0.8262,
             "matches": [
               "True damage",
-              "Max HP-based damage"
+              "DoT"
+            ]
+          },
+          {
+            "name": "Himmel",
+            "score": 0.7977,
+            "matches": [
+              "True damage"
             ]
           },
           {
             "name": "Athalia",
-            "score": 0.7927,
+            "score": 0.7917,
             "matches": [
-              "True damage",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Sylphira",
-            "score": 0.7896,
-            "matches": [
-              "Magic",
-              "Max HP-based damage",
               "True damage"
             ]
           }
@@ -11892,7 +11845,7 @@
         "overall": [
           {
             "name": "Himmel",
-            "score": 0.6158,
+            "score": 0.6154,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -11945,6 +11898,14 @@
           "score": 6.0
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -11972,14 +11933,6 @@
             "Haste via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 3.8249999999999997
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Rowan",
@@ -12261,27 +12214,24 @@
         ],
         "damage": [
           {
+            "name": "Saida",
+            "score": 1.0,
+            "matches": [
+              "Magic"
+            ]
+          },
+          {
             "name": "Cryonaia",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Marcille",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Saida",
-            "score": 0.974,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -12321,15 +12271,7 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.599,
-            "matches": [
-              "Damage",
-              "Crowd Control"
-            ]
-          },
-          {
-            "name": "Alna",
-            "score": 0.5231,
+            "score": 0.609,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -12558,24 +12500,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -13193,10 +13132,6 @@
           "name": "Cyran"
         },
         {
-          "score": 3.81,
-          "name": "Hammie"
-        },
-        {
           "score": 3.0,
           "name": "Velara"
         },
@@ -13248,14 +13183,6 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
@@ -13264,11 +13191,19 @@
             ]
           },
           {
-            "name": "Saida",
+            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage",
-              "DoT"
+              "Physical",
+              "DoT",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Shemira",
+            "score": 0.6546,
+            "matches": [
+              "Max HP-based damage"
             ]
           }
         ],
@@ -13296,25 +13231,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Aliceth",
-            "score": 0.5681,
-            "matches": [
-              "Crowd Control",
-              "Buffs on allies",
-              "Damage"
-            ]
-          },
-          {
-            "name": "Perseus",
-            "score": 0.5261,
-            "matches": [
-              "Crowd Control",
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Gwyneth": {
@@ -13559,24 +13476,22 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
-            "score": 1.0,
+            "name": "Silven",
+            "score": 0.9361,
             "matches": [
-              "DoT",
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.9779,
+            "name": "Temesia",
+            "score": 0.8129,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Atalanta",
-            "score": 0.9779,
+            "name": "Walker",
+            "score": 0.7942,
             "matches": [
               "Physical",
               "Max HP-based damage"
@@ -13635,33 +13550,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Atalanta",
-            "score": 0.624,
-            "matches": [
-              "Damage",
-              "Crowd Control",
-              "Debuffs on enemies"
-            ]
-          },
-          {
-            "name": "Frieren",
-            "score": 0.6098,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies"
-            ]
-          },
-          {
-            "name": "Mirael",
-            "score": 0.5289,
-            "matches": [
-              "Damage",
-              "Similar Skills"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Hammie": {
@@ -13700,6 +13589,14 @@
           "score": 4.5375
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 4.0206
+        },
+        {
           "provider": "Gunnar",
           "reasons": [
             "ATK via ATK buff (single target, average)",
@@ -13735,14 +13632,6 @@
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
           ],
           "score": 2.581875
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 2.5206
         },
         {
           "provider": "Fay",
@@ -14262,24 +14151,23 @@
         ],
         "damage": [
           {
-            "name": "Mehira",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
             "name": "Aliceth",
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
               "HP loss"
             ]
           },
           {
             "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -14642,27 +14530,24 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Physical"
             ]
           }
         ],
@@ -14699,16 +14584,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Soren",
-            "score": 0.5163,
-            "matches": [
-              "Buffs on allies",
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Hewynn": {
@@ -14732,11 +14608,11 @@
         {
           "provider": "Ravion",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
+            "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
-          "score": 9.706457142857143
+          "score": 11.206457142857143
         },
         {
           "provider": "Pandora",
@@ -15620,29 +15496,26 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
-            "score": 1.0,
+            "name": "Sylphira",
+            "score": 0.7908,
             "matches": [
-              "True damage",
-              "Max HP-based damage"
+              "True damage"
             ]
           },
           {
-            "name": "Baelran",
-            "score": 1.0,
+            "name": "Faramor",
+            "score": 0.7285,
             "matches": [
               "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Athalia",
-            "score": 1.0,
+            "score": 0.7114,
             "matches": [
               "Physical",
-              "True damage",
-              "Max HP-based damage"
+              "True damage"
             ]
           }
         ],
@@ -15726,10 +15599,26 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
+        },
+        {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
         },
         {
           "provider": "Twins",
@@ -15738,14 +15627,6 @@
             "Energy via Energy recovery (multiple targets, low) `signature fuel`"
           ],
           "score": 4.08
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Rowan",
@@ -15799,11 +15680,11 @@
       ],
       "beneficiaries": [
         {
-          "score": 5.3999999999999995,
+          "score": 10.799999999999999,
           "name": "Indris"
         },
         {
-          "score": 4.5,
+          "score": 9.0,
           "name": "Shadewing"
         }
       ],
@@ -15850,7 +15731,7 @@
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -15858,7 +15739,7 @@
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Brutus",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -15882,8 +15763,8 @@
             ]
           },
           {
-            "name": "Silvina",
-            "score": 1.0,
+            "name": "Dunlingr",
+            "score": 0.9762,
             "matches": [
               "Energy drain",
               "Vitality debuff"
@@ -16130,10 +16011,6 @@
         },
         {
           "score": 6.75,
-          "name": "Cecia"
-        },
-        {
-          "score": 6.75,
           "name": "Gwyneth"
         },
         {
@@ -16277,8 +16154,7 @@
             "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
@@ -16292,8 +16168,7 @@
             "name": "Kruger",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -16410,6 +16285,16 @@
           "score": 15.0
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
+            "Enables Multiple debuffs on target via 2 debuff types"
+          ],
+          "score": 14.806457142857143
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
@@ -16434,16 +16319,6 @@
           "score": 13.5
         },
         {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
-            "Enables Multiple debuffs on target via 2 debuff types"
-          ],
-          "score": 13.306457142857143
-        },
-        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
@@ -16461,20 +16336,19 @@
           "score": 12.6
         },
         {
-          "provider": "Aliceth",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Enables Multiple debuffs on target via 3 debuff types"
-          ],
-          "score": 12.299999999999999
-        },
-        {
           "provider": "Frieren",
           "reasons": [
             "ATK via ATK buff (single target, low)",
             "Enables Multiple debuffs on target via 2 debuff types"
           ],
           "score": 11.1
+        },
+        {
+          "provider": "Hodgkin",
+          "reasons": [
+            "Enables Multiple debuffs on target via 3 debuff types"
+          ],
+          "score": 10.799999999999999
         },
         {
           "provider": "Hugin",
@@ -16528,6 +16402,14 @@
           "score": 9.0
         },
         {
+          "provider": "Aliceth",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "Enables Multiple debuffs on target via 2 debuff types"
+          ],
+          "score": 8.7
+        },
+        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`",
@@ -16573,13 +16455,6 @@
         },
         {
           "provider": "Cecia",
-          "reasons": [
-            "Enables Multiple debuffs on target via 3 debuff types"
-          ],
-          "score": 5.3999999999999995
-        },
-        {
-          "provider": "Hodgkin",
           "reasons": [
             "Enables Multiple debuffs on target via 3 debuff types"
           ],
@@ -16757,14 +16632,6 @@
           "score": 3.5999999999999996
         },
         {
-          "provider": "Dionel",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Multiple debuffs on target via Vitality debuff"
-          ],
-          "score": 3.5
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK buff (single target, low, conditional (frequent))",
@@ -16861,6 +16728,13 @@
           "provider": "Cyran",
           "reasons": [
             "Enables Multiple debuffs on target via ATK SPD debuff"
+          ],
+          "score": 2.0
+        },
+        {
+          "provider": "Dionel",
+          "reasons": [
+            "Enables Multiple debuffs on target via Vitality debuff"
           ],
           "score": 2.0
         },
@@ -17033,15 +16907,6 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "True damage",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
@@ -17051,11 +16916,21 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Nara",
             "score": 1.0,
             "matches": [
               "Physical",
-              "True damage"
+              "True damage",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Korin",
+            "score": 0.9882,
+            "matches": [
+              "Physical",
+              "True damage",
+              "Max HP-based damage"
             ]
           }
         ],
@@ -17113,15 +16988,8 @@
         ],
         "overall": [
           {
-            "name": "Faramor",
-            "score": 0.5413,
-            "matches": [
-              "Damage"
-            ]
-          },
-          {
             "name": "Korin",
-            "score": 0.5385,
+            "score": 0.5339,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -17129,7 +16997,7 @@
           },
           {
             "name": "Pippa",
-            "score": 0.5195,
+            "score": 0.5069,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -17193,6 +17061,14 @@
           "score": 5.25
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Gunnar",
           "reasons": [
             "ATK via ATK buff (single target, average)",
@@ -17206,14 +17082,6 @@
             "ATK SPD via Haste buff (single target, average) `signature fuel`"
           ],
           "score": 3.75
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Rowan",
@@ -17567,6 +17435,14 @@
           "score": 4.5
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 4.0206
+        },
+        {
           "provider": "Hepler",
           "reasons": [
             "Shield via Shield (multiple targets, average)",
@@ -17658,14 +17534,6 @@
             "Shield via Shield (single target, average, conditional (frequent))"
           ],
           "score": 2.55
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 2.5206
         },
         {
           "provider": "Soren",
@@ -17841,27 +17709,24 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Physical"
             ]
           }
         ],
@@ -17914,16 +17779,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Lenya",
-            "score": 0.5264,
-            "matches": [
-              "Crowd Control",
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Kazim": {
@@ -18208,10 +18064,6 @@
       "beneficiaries": [
         {
           "score": 7.5,
-          "name": "Aurora"
-        },
-        {
-          "score": 7.5,
           "name": "Frieren"
         },
         {
@@ -18286,15 +18138,7 @@
         ],
         "damage": [
           {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Kruger",
+            "name": "Hodgkin",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -18303,6 +18147,14 @@
           },
           {
             "name": "Nara",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Valka",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -18759,24 +18611,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -18870,11 +18719,11 @@
         {
           "provider": "Ravion",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
+            "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
-          "score": 9.706457142857143
+          "score": 11.206457142857143
         },
         {
           "provider": "Contess",
@@ -19310,27 +19159,25 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
+              "Physical"
+            ]
+          },
+          {
+            "name": "Aliceth",
+            "score": 1.0,
+            "matches": [
               "Physical",
-              "Max HP-based damage"
+              "HP loss"
             ]
           }
         ],
@@ -19633,15 +19480,6 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
@@ -19651,11 +19489,20 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Nara",
             "score": 1.0,
             "matches": [
               "True damage",
-              "Physical"
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Temesia",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "True damage"
             ]
           }
         ],
@@ -19904,32 +19751,7 @@
             ]
           }
         ],
-        "damage": [
-          {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Brutus",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          }
-        ],
+        "damage": [],
         "debuff": [
           {
             "name": "Brutus",
@@ -20290,7 +20112,15 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -20399,6 +20229,14 @@
           "score": 6.0
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.808
+        },
+        {
           "provider": "Zandrok",
           "reasons": [
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
@@ -20413,14 +20251,6 @@
             "Energy via Energy recovery (single target, low) `signature fuel`"
           ],
           "score": 4.404
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 4.308
         },
         {
           "provider": "Isabella",
@@ -20670,6 +20500,15 @@
           "score": 15.011999999999999
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+          ],
+          "score": 12.750857142857143
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK buff (all units, high)",
@@ -20694,15 +20533,6 @@
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
           ],
           "score": 11.687142857142858
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 11.250857142857143
         },
         {
           "provider": "Shakir",
@@ -21047,24 +20877,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -21098,7 +20925,7 @@
         "overall": [
           {
             "name": "Soren",
-            "score": 0.8227,
+            "score": 0.8308,
             "matches": [
               "Damage",
               "Similar Skills",
@@ -21564,7 +21391,7 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
+            "name": "Shemira",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -21572,15 +21399,14 @@
             ]
           },
           {
-            "name": "Galahad",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
-            "name": "Mehira",
+            "name": "Ludovic",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -21627,17 +21453,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Saida",
-            "score": 0.5486,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies",
-              "Crowd Control"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Lorsan": {
@@ -21697,11 +21513,11 @@
         {
           "provider": "Ravion",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
+            "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
-          "score": 9.706457142857143
+          "score": 11.206457142857143
         },
         {
           "provider": "Damian",
@@ -22333,24 +22149,21 @@
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Alna",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -22385,7 +22198,7 @@
         "overall": [
           {
             "name": "Antandra",
-            "score": 0.5771,
+            "score": 0.5856,
             "matches": [
               "Crowd Control",
               "Damage"
@@ -23159,24 +22972,21 @@
             "name": "Marcille",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Natsu",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -23210,7 +23020,7 @@
         "overall": [
           {
             "name": "Saida",
-            "score": 0.615,
+            "score": 0.6171,
             "matches": [
               "Buffs on allies",
               "Similar Skills",
@@ -23489,24 +23299,24 @@
         ],
         "damage": [
           {
-            "name": "Galahad",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Saida",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Shemira",
             "score": 1.0,
+            "matches": [
+              "Magic",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Natsu",
+            "score": 1.0,
+            "matches": [
+              "Magic",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Silven",
+            "score": 0.8818,
             "matches": [
               "Magic",
               "Max HP-based damage"
@@ -23917,27 +23727,24 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
+            "name": "Athalia",
+            "score": 1.0,
+            "matches": [
+              "Physical"
             ]
           }
         ],
@@ -23977,18 +23784,27 @@
         ],
         "overall": [
           {
+            "name": "Antandra",
+            "score": 0.6892,
+            "matches": [
+              "Damage",
+              "Buffs on allies"
+            ]
+          },
+          {
             "name": "Hepler",
-            "score": 0.6622,
+            "score": 0.6487,
             "matches": [
               "Crowd Control",
               "Damage"
             ]
           },
           {
-            "name": "Antandra",
-            "score": 0.5478,
+            "name": "Lucca",
+            "score": 0.5605,
             "matches": [
-              "Buffs on allies"
+              "Buffs on allies",
+              "Damage"
             ]
           }
         ]
@@ -24229,10 +24045,6 @@
         },
         {
           "score": 11.687142857142858,
-          "name": "Lenya"
-        },
-        {
-          "score": 11.687142857142858,
           "name": "Lorsan"
         },
         {
@@ -24317,24 +24129,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -24671,27 +24480,24 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
+            "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
+            ]
+          },
+          {
+            "name": "Natsu",
+            "score": 1.0,
+            "matches": [
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
-            "score": 1.0,
+            "score": 0.8509,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Cryonaia",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -24722,17 +24528,9 @@
         "overall": [
           {
             "name": "Natsu",
-            "score": 0.6272,
+            "score": 0.6277,
             "matches": [
               "Damage"
-            ]
-          },
-          {
-            "name": "Galahad",
-            "score": 0.5481,
-            "matches": [
-              "Damage",
-              "Buffs on allies"
             ]
           }
         ]
@@ -24787,20 +24585,20 @@
           "score": 4.5
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 4.0206
+        },
+        {
           "provider": "Fay",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
           ],
           "score": 3.3
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 2.5206
         },
         {
           "provider": "Lyca",
@@ -24947,12 +24745,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 3.0,
-          "name": "Carolina"
+          "score": 4.5,
+          "name": "Nerion"
         },
         {
           "score": 3.0,
-          "name": "Nerion"
+          "name": "Carolina"
         },
         {
           "score": 2.25,
@@ -25019,7 +24817,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
               "True damage"
             ]
           },
@@ -25028,7 +24825,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
               "True damage"
             ]
           },
@@ -25108,7 +24904,7 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -25128,6 +24924,14 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
         },
         {
           "provider": "Rowan",
@@ -25399,12 +25203,20 @@
         ],
         "damage": [
           {
-            "name": "Saida",
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "DoT",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Shadewing",
             "score": 1.0,
             "matches": [
               "Magic",
               "DoT",
-              "Max HP-based damage"
+              "HP loss"
             ]
           },
           {
@@ -25413,16 +25225,6 @@
             "matches": [
               "DoT",
               "Magic",
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Zorya",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage",
               "HP loss"
             ]
           }
@@ -25509,11 +25311,11 @@
         {
           "provider": "Ravion",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
+            "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
-          "score": 9.706457142857143
+          "score": 11.206457142857143
         },
         {
           "provider": "Dunlingr",
@@ -25770,10 +25572,6 @@
         {
           "score": 12.0,
           "name": "Vala"
-        },
-        {
-          "score": 10.5,
-          "name": "Fay"
         },
         {
           "score": 10.5,
@@ -26170,7 +25968,6 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
               "DoT"
             ]
           },
@@ -26178,8 +25975,7 @@
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
@@ -26187,7 +25983,6 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
               "DoT"
             ]
           }
@@ -26196,23 +25991,15 @@
         "cc": [],
         "overall": [
           {
-            "name": "Gwyneth",
-            "score": 0.5513,
-            "matches": [
-              "Damage",
-              "Similar Skills"
-            ]
-          },
-          {
-            "name": "Silven",
-            "score": 0.5382,
+            "name": "Frieren",
+            "score": 0.5308,
             "matches": [
               "Damage"
             ]
           },
           {
-            "name": "Frieren",
-            "score": 0.5308,
+            "name": "Silven",
+            "score": 0.5043,
             "matches": [
               "Damage"
             ]
@@ -26223,20 +26010,20 @@
     "Nara": {
       "synergies": [
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`"
           ],
           "score": 4.08
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Rowan",
@@ -26362,18 +26149,8 @@
         ],
         "damage": [
           {
-            "name": "Athalia",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "True damage",
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
             "name": "Faramor",
-            "score": 0.8421,
+            "score": 0.862,
             "matches": [
               "True damage",
               "Physical",
@@ -26381,12 +26158,21 @@
             ]
           },
           {
-            "name": "Baelran",
-            "score": 0.8266,
+            "name": "Himmel",
+            "score": 0.8111,
             "matches": [
               "True damage",
               "Physical",
               "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Athalia",
+            "score": 0.7507,
+            "matches": [
+              "Physical",
+              "True damage",
+              "HP loss"
             ]
           }
         ],
@@ -26704,24 +26490,22 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
-              "Magic",
+              "Magic"
+            ]
+          },
+          {
+            "name": "Himmel",
+            "score": 0.9534,
+            "matches": [
               "Max HP-based damage"
             ]
           },
           {
-            "name": "Galahad",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Saida",
-            "score": 1.0,
+            "name": "Silven",
+            "score": 0.8799,
             "matches": [
               "Magic",
               "Max HP-based damage"
@@ -26781,29 +26565,18 @@
         ],
         "overall": [
           {
-            "name": "Perseus",
-            "score": 0.7021,
+            "name": "Sylphira",
+            "score": 0.569,
             "matches": [
-              "Damage",
-              "Crowd Control",
-              "Buffs on allies"
+              "Damage"
             ]
           },
           {
-            "name": "Frieren",
-            "score": 0.6413,
+            "name": "Walker",
+            "score": 0.5219,
             "matches": [
               "Damage",
-              "Similar Skills"
-            ]
-          },
-          {
-            "name": "Zorya",
-            "score": 0.6167,
-            "matches": [
-              "Damage",
-              "Crowd Control",
-              "Debuffs on enemies"
+              "Crowd Control"
             ]
           }
         ]
@@ -26884,8 +26657,7 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "True damage",
-              "Max HP-based damage"
+              "True damage"
             ]
           },
           {
@@ -26893,17 +26665,15 @@
             "score": 1.0,
             "matches": [
               "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Athalia",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "True damage",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -26934,15 +26704,22 @@
         "overall": [
           {
             "name": "Vala",
-            "score": 0.6568,
+            "score": 0.6549,
             "matches": [
               "Damage",
               "Crowd Control"
             ]
           },
           {
+            "name": "Faramor",
+            "score": 0.616,
+            "matches": [
+              "Damage"
+            ]
+          },
+          {
             "name": "Athalia",
-            "score": 0.5485,
+            "score": 0.5484,
             "matches": [
               "Damage"
             ]
@@ -26955,12 +26732,13 @@
         {
           "provider": "Twins",
           "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
             "ATK SPD via Haste buff (all units, high) `signature fuel`",
             "Shield via Shield (single target, average)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`",
             "Enables CC on enemies via Blind (area, average)"
           ],
-          "score": 29.404
+          "score": 32.403999999999996
         },
         {
           "provider": "Eironn",
@@ -26979,10 +26757,11 @@
         {
           "provider": "Aliceth",
           "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
             "DEF Penetration via DEF Penetration buff (multiple targets, high)",
             "Enables CC on enemies via Blind (area, average)"
           ],
-          "score": 20.5
+          "score": 22.0
         },
         {
           "provider": "Callan",
@@ -27009,11 +26788,21 @@
           "score": 18.925428571428572
         },
         {
+          "provider": "Contess",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "Shield via Shield (single target, high)",
+            "Enables CC on enemies via Silence (single target, high)"
+          ],
+          "score": 18.0
+        },
+        {
           "provider": "Alna",
           "reasons": [
+            "ATK via ATK buff (single target, low)",
             "Enables CC on enemies via Bind (area, average)"
           ],
-          "score": 16.0
+          "score": 17.5
         },
         {
           "provider": "Baelran",
@@ -27028,6 +26817,16 @@
             "Enables CC on enemies via Knock down (area, average)"
           ],
           "score": 16.0
+        },
+        {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
+            "Enables CC on enemies via Knock down (single target, low)"
+          ],
+          "score": 15.750857142857143
         },
         {
           "provider": "Rowan",
@@ -27047,6 +26846,15 @@
           "score": 15.0
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
+            "Shield via Shield (multiple targets, high)"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Saida",
           "reasons": [
             "Shield via Shield (multiple targets, high)",
@@ -27055,29 +26863,12 @@
           "score": 14.5
         },
         {
-          "provider": "Contess",
+          "provider": "Evie",
           "reasons": [
-            "Shield via Shield (single target, high)",
-            "Enables CC on enemies via Silence (single target, high)"
+            "ATK via ATK buff (multiple targets, high)",
+            "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 13.5
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, high) `signature fuel`",
-            "Shield via Shield (multiple targets, high)"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`",
-            "Enables CC on enemies via Knock down (single target, low)"
-          ],
-          "score": 12.750857142857143
         },
         {
           "provider": "Phraesto",
@@ -27089,12 +26880,31 @@
           "score": 12.375
         },
         {
+          "provider": "Himmel",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "Shield via Shield (single target, average)",
+            "Enables CC on enemies via Knock down (multiple targets, low)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Velara",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
             "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 12.0
+        },
+        {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
+            "Shield via Shield (single target, average)",
+            "Enables CC on enemies via Stun (single target, low)"
+          ],
+          "score": 11.4
         },
         {
           "provider": "Daimon",
@@ -27115,25 +26925,37 @@
         {
           "provider": "Dunlingr",
           "reasons": [
+            "ATK via ATK buff (single target, low)",
             "ATK SPD via Haste buff (single target, average) `signature fuel`",
             "Enables CC on enemies via Silence (single target, low)"
           ],
-          "score": 9.0
+          "score": 10.5
         },
         {
-          "provider": "Evie",
+          "provider": "Mikola",
           "reasons": [
-            "Enables CC on enemies via Bind (single target, high)"
+            "ATK via ATK buff (all units, high)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
-          "score": 9.0
+          "score": 10.5
         },
         {
-          "provider": "Himmel",
+          "provider": "Zanie",
           "reasons": [
+            "ATK via ATK buff (single target, low)",
             "Shield via Shield (single target, average)",
-            "Enables CC on enemies via Knock down (multiple targets, low)"
+            "DEF Penetration via DEF Penetration buff (single target, average)",
+            "Enables CC on enemies via Stun (single target, low)"
           ],
-          "score": 9.0
+          "score": 10.5
+        },
+        {
+          "provider": "Talene",
+          "reasons": [
+            "ATK via ATK buff (area, low)",
+            "Enables CC on enemies via Knock back (area, low)"
+          ],
+          "score": 9.5
         },
         {
           "provider": "Marcille",
@@ -27150,24 +26972,6 @@
             "Enables CC on enemies via Charm (single target, average)"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "DEF Penetration via DEF Penetration buff (single target, average)",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "Shield via Shield (single target, average)",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 8.4
         },
         {
           "provider": "Aurora",
@@ -27205,19 +27009,20 @@
           "score": 8.0
         },
         {
-          "provider": "Talene",
-          "reasons": [
-            "Enables CC on enemies via Knock back (area, low)"
-          ],
-          "score": 8.0
-        },
-        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`",
             "Enables CC on enemies via Knock down (single target, low)"
           ],
           "score": 7.725
+        },
+        {
+          "provider": "Frieren",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables CC on enemies via Knock down (single target, average)"
+          ],
+          "score": 7.5
         },
         {
           "provider": "Silven",
@@ -27243,9 +27048,11 @@
           "score": 6.0
         },
         {
-          "provider": "Frieren",
+          "provider": "Kulu",
           "reasons": [
-            "Enables CC on enemies via Knock down (single target, average)"
+            "ATK via ATK buff (single target, low)",
+            "DEF Penetration via DEF Penetration buff (single target, low)",
+            "Enables CC on enemies via Knock back (single target, low)"
           ],
           "score": 6.0
         },
@@ -27257,13 +27064,6 @@
           "score": 6.0
         },
         {
-          "provider": "Mikola",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Nazrik",
           "reasons": [
             "Enables CC on enemies via Stun (single target, average)"
@@ -27271,10 +27071,18 @@
           "score": 6.0
         },
         {
-          "provider": "Kulu",
+          "provider": "Sonja",
           "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables CC on enemies via Knock back (single target, low)"
+            "ATK via ATK buff (multiple targets, average)",
+            "Enables CC on enemies via Stun (single target, low)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Reinier",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables CC on enemies via Knock up (single target, low)"
           ],
           "score": 4.5
         },
@@ -27289,20 +27097,6 @@
           "provider": "Kruger",
           "reasons": [
             "Enables CC on enemies via Knock down (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Reinier",
-          "reasons": [
-            "Enables CC on enemies via Knock up (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, low)"
           ],
           "score": 3.0
         },
@@ -27394,10 +27188,27 @@
           "score": 19.0
         },
         {
+          "provider": "Kazim",
+          "reasons": [
+            "ATK via ATK buff (single target, high)",
+            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
+            "Enables CC on enemies via Knock up (area, low)"
+          ],
+          "score": 18.5
+        },
+        {
           "provider": "Cecia",
           "reasons": [
             "DEF Penetration via DEF Penetration buff (single target, low)",
             "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 17.5
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "Enables CC on enemies via Stun (area, average)"
           ],
           "score": 17.5
         },
@@ -27446,13 +27257,6 @@
           "score": 16.0
         },
         {
-          "provider": "Perseus",
-          "reasons": [
-            "Enables CC on enemies via Stun (area, average)"
-          ],
-          "score": 16.0
-        },
-        {
           "provider": "Pippa",
           "reasons": [
             "Enables CC on enemies via Bind (area, average)"
@@ -27465,14 +27269,6 @@
             "Enables CC on enemies via Frighten (area, average)"
           ],
           "score": 16.0
-        },
-        {
-          "provider": "Kazim",
-          "reasons": [
-            "ATK SPD via Haste buff (multiple targets, average) `signature fuel`",
-            "Enables CC on enemies via Knock up (area, low)"
-          ],
-          "score": 14.0
         },
         {
           "provider": "Walker",
@@ -27571,6 +27367,23 @@
           "score": 7.5
         },
         {
+          "provider": "Pang",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Shield via Shield (single target, low)",
+            "Enables CC on enemies via Stun (single target, low)"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Valen",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables CC on enemies via Stun (single target, average)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Alsa",
           "reasons": [
             "Enables CC on enemies via Stun (single target, average)"
@@ -27613,13 +27426,6 @@
           "score": 6.0
         },
         {
-          "provider": "Valen",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Seth",
           "reasons": [
             "Energy via Energy recovery (single target, average) `signature fuel`",
@@ -27628,12 +27434,20 @@
           "score": 5.808
         },
         {
-          "provider": "Pang",
+          "provider": "Marilee",
           "reasons": [
-            "Shield via Shield (single target, low)",
+            "ATK via ATK buff (single target, low)",
             "Enables CC on enemies via Stun (single target, low)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Fay",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 3.9000000000000004
         },
         {
           "provider": "Bryon",
@@ -27664,25 +27478,11 @@
           "score": 3.0
         },
         {
-          "provider": "Marilee",
-          "reasons": [
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Rhys",
           "reasons": [
             "Enables CC on enemies via Knock back (single target, low)"
           ],
           "score": 3.0
-        },
-        {
-          "provider": "Fay",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
-          ],
-          "score": 2.4000000000000004
         }
       ],
       "beneficiaries": [
@@ -27730,25 +27530,23 @@
             "score": 1.0,
             "matches": [
               "DoT",
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
-            "name": "Zorya",
+            "name": "Cyran",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "DoT",
+              "Magic"
             ]
           },
           {
             "name": "Cryonaia",
-            "score": 0.9858,
+            "score": 1.0,
             "matches": [
               "DoT",
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -27804,7 +27602,7 @@
         "overall": [
           {
             "name": "Bonnie",
-            "score": 0.5122,
+            "score": 0.5349,
             "matches": [
               "Similar Skills",
               "Debuffs on enemies"
@@ -28247,16 +28045,14 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "DoT",
-              "Max HP-based damage"
+              "DoT"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
@@ -28264,8 +28060,7 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "DoT",
-              "Max HP-based damage"
+              "DoT"
             ]
           }
         ],
@@ -28297,8 +28092,8 @@
             ]
           },
           {
-            "name": "Cryonaia",
-            "score": 0.5151,
+            "name": "Arden",
+            "score": 0.5308,
             "matches": [
               "Damage"
             ]
@@ -28397,10 +28192,6 @@
         {
           "score": 8.925428571428572,
           "name": "Valen"
-        },
-        {
-          "score": 8.153228571428572,
-          "name": "Berial"
         },
         {
           "score": 8.153228571428572,
@@ -28672,6 +28463,14 @@
           "score": 5.8125
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.268000000000001
+        },
+        {
           "provider": "Lucius",
           "reasons": [
             "Shield via Shield (area, high)"
@@ -28693,14 +28492,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 4.3125
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.7680000000000002
         },
         {
           "provider": "Rowan",
@@ -28983,27 +28774,24 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
+            ]
+          },
+          {
+            "name": "Alna",
+            "score": 1.0,
+            "matches": [
+              "Physical"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "Physical"
             ]
           }
         ],
@@ -29049,7 +28837,7 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.827,
+            "score": 0.8423,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -29057,8 +28845,8 @@
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.8231,
+            "name": "Lucca",
+            "score": 0.7923,
             "matches": [
               "Damage",
               "Similar Skills",
@@ -29066,10 +28854,11 @@
             ]
           },
           {
-            "name": "Lenya",
-            "score": 0.7628,
+            "name": "Hepler",
+            "score": 0.7779,
             "matches": [
               "Damage",
+              "Similar Skills",
               "Crowd Control"
             ]
           }
@@ -29126,6 +28915,14 @@
           "score": 5.25
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Damian",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high, conditional (frequent)) `signature fuel`"
@@ -29146,14 +28943,6 @@
             "ATK SPD via Haste buff (single target, average) `signature fuel`"
           ],
           "score": 3.75
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Rowan",
@@ -29483,6 +29272,15 @@
           "score": 10.5
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Perseus"
+          ],
+          "score": 10.0206
+        },
+        {
           "provider": "Daimon",
           "reasons": [
             "Shield via Shield (multiple targets, average)",
@@ -29535,15 +29333,6 @@
             "Grants 2 distinct stat buffs to Perseus"
           ],
           "score": 7.5
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Grants 2 distinct stat buffs to Perseus"
-          ],
-          "score": 7.0206
         },
         {
           "provider": "Velara",
@@ -29827,12 +29616,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 16.0,
-          "name": "Carolina"
+          "score": 17.5,
+          "name": "Nerion"
         },
         {
           "score": 16.0,
-          "name": "Nerion"
+          "name": "Carolina"
         },
         {
           "score": 11.25,
@@ -29874,27 +29663,24 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Alna",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
+            ]
+          },
+          {
+            "name": "Kulu",
+            "score": 1.0,
+            "matches": [
+              "Physical"
             ]
           }
         ],
@@ -29927,24 +29713,23 @@
         ],
         "overall": [
           {
-            "name": "Atalanta",
-            "score": 0.7269,
-            "matches": [
-              "Damage",
-              "Crowd Control"
-            ]
-          },
-          {
             "name": "Himmel",
-            "score": 0.6499,
+            "score": 0.6474,
             "matches": [
               "Damage",
               "Similar Skills"
             ]
           },
           {
+            "name": "Sonja",
+            "score": 0.6236,
+            "matches": [
+              "Similar Skills"
+            ]
+          },
+          {
             "name": "Florabelle",
-            "score": 0.6322,
+            "score": 0.6031,
             "matches": [
               "Damage"
             ]
@@ -29954,6 +29739,16 @@
     },
     "Phraesto": {
       "synergies": [
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)",
+            "Shield via Shield (summons only, average)",
+            "Healing via Lifedrain buff (summons only, high)"
+          ],
+          "score": 29.25
+        },
         {
           "provider": "Solise",
           "reasons": [
@@ -29968,7 +29763,7 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -29999,13 +29794,6 @@
             "Healing via Direct healing (single target, high)"
           ],
           "score": 7.5
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "Shield via Shield (summons only, average)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Himmel",
@@ -30415,24 +30203,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -30641,28 +30426,25 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage",
-              "True damage"
-            ]
-          },
-          {
             "name": "Sylphira",
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
               "True damage"
             ]
           },
           {
-            "name": "Athalia",
-            "score": 0.8419,
+            "name": "Indris",
+            "score": 0.9391,
             "matches": [
-              "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 0.81,
+            "matches": [
+              "Magic",
               "True damage"
             ]
           }
@@ -30717,18 +30499,9 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.5842,
+            "score": 0.5843,
             "matches": [
               "Damage"
-            ]
-          },
-          {
-            "name": "Saida",
-            "score": 0.5327,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies",
-              "Crowd Control"
             ]
           }
         ]
@@ -30905,44 +30678,56 @@
       ],
       "beneficiaries": [
         {
-          "score": 13.308,
+          "score": 17.16,
+          "name": "Shadewing"
+        },
+        {
+          "score": 14.808,
           "name": "Zorya"
         },
         {
-          "score": 11.250857142857143,
+          "score": 12.750857142857143,
           "name": "Arden"
         },
         {
-          "score": 11.250857142857143,
+          "score": 12.750857142857143,
+          "name": "Lenya"
+        },
+        {
+          "score": 12.750857142857143,
           "name": "Vala"
         },
         {
-          "score": 11.250857142857143,
+          "score": 12.750857142857143,
           "name": "Valen"
+        },
+        {
+          "score": 11.206457142857143,
+          "name": "Cryonaia"
+        },
+        {
+          "score": 11.206457142857143,
+          "name": "Fay"
+        },
+        {
+          "score": 11.206457142857143,
+          "name": "Hewynn"
+        },
+        {
+          "score": 11.206457142857143,
+          "name": "Kordan"
+        },
+        {
+          "score": 11.206457142857143,
+          "name": "Mikola"
+        },
+        {
+          "score": 11.206457142857143,
+          "name": "Sylphira"
         },
         {
           "score": 9.750857142857143,
           "name": "Koko"
-        },
-        {
-          "score": 9.706457142857143,
-          "name": "Cryonaia"
-        },
-        {
-          "score": 9.706457142857143,
-          "name": "Hewynn"
-        },
-        {
-          "score": 9.706457142857143,
-          "name": "Kordan"
-        },
-        {
-          "score": 9.706457142857143,
-          "name": "Mikola"
-        },
-        {
-          "score": 9.706457142857143,
-          "name": "Sylphira"
         },
         {
           "score": 8.206457142857142,
@@ -30953,24 +30738,28 @@
           "name": "Lyca"
         },
         {
-          "score": 3.66,
+          "score": 5.16,
           "name": "Evie"
         },
         {
-          "score": 3.66,
+          "score": 5.16,
           "name": "Hodgkin"
         },
         {
-          "score": 3.66,
+          "score": 5.16,
           "name": "Nara"
         },
         {
-          "score": 3.66,
+          "score": 5.16,
           "name": "Scarlita"
         },
         {
-          "score": 3.66,
+          "score": 5.16,
           "name": "Smokey & Meerky"
+        },
+        {
+          "score": 4.0206,
+          "name": "Hammie"
         },
         {
           "score": 2.16,
@@ -31047,19 +30836,18 @@
         ],
         "damage": [
           {
-            "name": "Mehira",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
             "name": "Aliceth",
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "Physical",
               "HP loss"
             ]
           },
@@ -31068,7 +30856,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
               "HP loss"
             ]
           }
@@ -31563,26 +31350,24 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
+            "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Galahad",
+            "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -31613,7 +31398,7 @@
         "overall": [
           {
             "name": "Atalanta",
-            "score": 0.8282,
+            "score": 0.8308,
             "matches": [
               "Damage",
               "Similar Skills",
@@ -31622,7 +31407,7 @@
           },
           {
             "name": "Perseus",
-            "score": 0.7359,
+            "score": 0.7385,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -31630,7 +31415,7 @@
           },
           {
             "name": "Soren",
-            "score": 0.7192,
+            "score": 0.7385,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -31926,10 +31711,6 @@
         },
         {
           "score": 12.6954,
-          "name": "Mehira"
-        },
-        {
-          "score": 12.6954,
           "name": "Mikola"
         },
         {
@@ -32039,24 +31820,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -32193,29 +31971,25 @@
         ],
         "damage": [
           {
-            "name": "Mehira",
-            "score": 1.0,
+            "name": "Marcille",
+            "score": 0.7345,
             "matches": [
-              "Magic",
-              "DoT",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Zorya",
-            "score": 1.0,
-            "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Cryonaia",
-            "score": 0.9825,
+            "score": 0.6024,
             "matches": [
               "Magic",
-              "DoT",
-              "Max HP-based damage"
+              "DoT"
+            ]
+          },
+          {
+            "name": "Galahad",
+            "score": 0.5208,
+            "matches": [
+              "Magic"
             ]
           }
         ],
@@ -32453,24 +32227,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -32501,7 +32272,7 @@
         "overall": [
           {
             "name": "Cecia",
-            "score": 0.752,
+            "score": 0.7754,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -32576,7 +32347,7 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
+            "name": "Shemira",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -32584,15 +32355,14 @@
             ]
           },
           {
-            "name": "Galahad",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
-            "name": "Mehira",
+            "name": "Lily May",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -32638,20 +32408,20 @@
     "Scarlita": {
       "synergies": [
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`"
           ],
           "score": 4.08
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Rowan",
@@ -32771,24 +32541,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -32820,7 +32587,16 @@
             ]
           }
         ],
-        "overall": []
+        "overall": [
+          {
+            "name": "Ulmus",
+            "score": 0.5072,
+            "matches": [
+              "Damage",
+              "Buffs on allies"
+            ]
+          }
+        ]
       }
     },
     "Seth": {
@@ -32921,6 +32697,14 @@
           "score": 5.625
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.268000000000001
+        },
+        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK buff (single target, low, conditional (frequent))",
@@ -32928,14 +32712,6 @@
             "Magic DEF via DEF buff (single target, low)"
           ],
           "score": 4.275
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.7680000000000002
         },
         {
           "provider": "Rowan",
@@ -33171,8 +32947,7 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "HP loss",
-              "Max HP-based damage"
+              "HP loss"
             ]
           },
           {
@@ -33180,7 +32955,6 @@
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
               "HP loss"
             ]
           }
@@ -33234,7 +33008,7 @@
         "overall": [
           {
             "name": "Ravion",
-            "score": 0.7445,
+            "score": 0.7419,
             "matches": [
               "Damage",
               "Debuffs on enemies",
@@ -33244,14 +33018,14 @@
           },
           {
             "name": "Harak",
-            "score": 0.6896,
+            "score": 0.6867,
             "matches": [
               "Damage",
               "Similar Skills"
             ]
           },
           {
-            "name": "Athalia",
+            "name": "Faramor",
             "score": 0.5538,
             "matches": [
               "Damage"
@@ -33285,9 +33059,19 @@
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
             "Enables Debuff on target via Marked target (focus fire) (multiple targets)",
-            "Enables Continuous damage on enemies via tick damage"
+            "Enables Continuous damage on enemies via DoT"
           ],
           "score": 18.0
+        },
+        {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Enables Debuff on target via Phys DEF debuff (single target)",
+            "Enables Continuous damage on enemies via tick damage"
+          ],
+          "score": 17.16
         },
         {
           "provider": "Saida",
@@ -33307,16 +33091,6 @@
             "Enables Continuous damage on enemies via DoT"
           ],
           "score": 16.5
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Enables Debuff on target via Phys DEF debuff (single target)",
-            "Enables Continuous damage on enemies via tick damage"
-          ],
-          "score": 15.66
         },
         {
           "provider": "Galahad",
@@ -33746,6 +33520,13 @@
           "score": 9.0
         },
         {
+          "provider": "Hodgkin",
+          "reasons": [
+            "Enables Debuff on target via Energy drain (arc)"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -33874,13 +33655,6 @@
           "score": 5.25
         },
         {
-          "provider": "Hodgkin",
-          "reasons": [
-            "Enables Debuff on target via Energy drain (single target)"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Indris",
           "reasons": [
             "Enables Debuff on target via Phys DEF debuff (single target)"
@@ -33915,14 +33689,6 @@
             "Enables Debuff on target via Phys DEF debuff (single target)"
           ],
           "score": 4.41
-        },
-        {
-          "provider": "Dionel",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "Enables Debuff on target via Vitality debuff (single target)"
-          ],
-          "score": 3.75
         },
         {
           "provider": "Reinier",
@@ -33972,6 +33738,13 @@
           "provider": "Cassadee",
           "reasons": [
             "Enables Debuff on target via Magic DEF debuff (single target)"
+          ],
+          "score": 2.25
+        },
+        {
+          "provider": "Dionel",
+          "reasons": [
+            "Enables Debuff on target via Vitality debuff (single target)"
           ],
           "score": 2.25
         },
@@ -34230,10 +34003,6 @@
         {
           "score": 11.25,
           "name": "Mikola"
-        },
-        {
-          "score": 9.0,
-          "name": "Laios"
         },
         {
           "score": 8.4375,
@@ -34711,7 +34480,7 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
+            "name": "Silven",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -34719,15 +34488,14 @@
             ]
           },
           {
-            "name": "Galahad",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
-            "name": "Saida",
+            "name": "Ludovic",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -34762,27 +34530,17 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.6431,
+            "score": 0.629,
             "matches": [
               "Damage",
               "Debuffs on enemies"
             ]
           },
           {
-            "name": "Nazrik",
-            "score": 0.585,
+            "name": "Silven",
+            "score": 0.514,
             "matches": [
-              "Damage",
-              "Debuffs on enemies"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 0.5385,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies",
-              "Similar Skills"
+              "Damage"
             ]
           }
         ]
@@ -35036,6 +34794,14 @@
           "score": 11.25
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Grants 2 distinct stat buffs to Silven"
+          ],
+          "score": 11.16
+        },
+        {
           "provider": "Sonja",
           "reasons": [
             "Physical DEF via DEF buff (multiple targets, low)",
@@ -35094,14 +34860,6 @@
             "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 8.91
         },
         {
           "provider": "Lyca",
@@ -35302,13 +35060,6 @@
           "score": 2.25
         },
         {
-          "provider": "Dionel",
-          "reasons": [
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 2.25
-        },
-        {
           "provider": "Harak",
           "reasons": [
             "Grants 1 distinct stat buff to Silven"
@@ -35421,7 +35172,7 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
+            "name": "Shemira",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -35429,15 +35180,14 @@
             ]
           },
           {
-            "name": "Galahad",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
-            "name": "Saida",
+            "name": "Ludovic",
             "score": 1.0,
             "matches": [
               "Magic",
@@ -35472,26 +35222,17 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.6768,
+            "score": 0.682,
             "matches": [
               "Damage",
               "Crowd Control"
             ]
           },
           {
-            "name": "Frieren",
-            "score": 0.5724,
+            "name": "Shemira",
+            "score": 0.5124,
             "matches": [
-              "Damage",
-              "Crowd Control"
-            ]
-          },
-          {
-            "name": "Zorya",
-            "score": 0.5663,
-            "matches": [
-              "Damage",
-              "Crowd Control"
+              "Damage"
             ]
           }
         ]
@@ -35699,24 +35440,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -35731,7 +35469,7 @@
           },
           {
             "name": "Hodgkin",
-            "score": 0.9692,
+            "score": 1.0,
             "matches": [
               "Energy drain",
               "Vitality debuff"
@@ -35757,19 +35495,17 @@
         "overall": [
           {
             "name": "Hodgkin",
-            "score": 0.7328,
+            "score": 0.7754,
             "matches": [
               "Damage",
               "Debuffs on enemies"
             ]
           },
           {
-            "name": "Berial",
-            "score": 0.7244,
+            "name": "Salazer",
+            "score": 0.7444,
             "matches": [
-              "Damage",
-              "Debuffs on enemies",
-              "Crowd Control"
+              "Damage"
             ]
           },
           {
@@ -36048,20 +35784,20 @@
     "Smokey & Meerky": {
       "synergies": [
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, low) `signature fuel`"
           ],
           "score": 4.08
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Rowan",
@@ -36114,10 +35850,6 @@
         {
           "score": 3.2399999999999998,
           "name": "Contess"
-        },
-        {
-          "score": 3.2399999999999998,
-          "name": "Hodgkin"
         },
         {
           "score": 3.2399999999999998,
@@ -36900,24 +36632,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -36965,11 +36694,11 @@
         {
           "provider": "Ravion",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
+            "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
             "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
           ],
-          "score": 9.706457142857143
+          "score": 11.206457142857143
         },
         {
           "provider": "Galahad",
@@ -37218,27 +36947,24 @@
         ],
         "damage": [
           {
-            "name": "Frieren",
+            "name": "Pippa",
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
               "True damage"
             ]
           },
           {
-            "name": "Baelran",
-            "score": 1.0,
+            "name": "Natsu",
+            "score": 0.9252,
             "matches": [
-              "Max HP-based damage",
-              "True damage"
+              "Magic"
             ]
           },
           {
-            "name": "Athalia",
-            "score": 1.0,
+            "name": "Himmel",
+            "score": 0.819,
             "matches": [
-              "Max HP-based damage",
               "True damage"
             ]
           }
@@ -37286,25 +37012,17 @@
         "overall": [
           {
             "name": "Pippa",
-            "score": 0.6212,
+            "score": 0.6167,
             "matches": [
               "Damage",
               "Debuffs on enemies"
             ]
           },
           {
-            "name": "Baelran",
-            "score": 0.5659,
+            "name": "Natsu",
+            "score": 0.513,
             "matches": [
-              "Damage",
-              "Crowd Control"
-            ]
-          },
-          {
-            "name": "Dunlingr",
-            "score": 0.5547,
-            "matches": [
-              "Debuffs on enemies"
+              "Damage"
             ]
           }
         ]
@@ -37526,16 +37244,16 @@
       ],
       "beneficiaries": [
         {
+          "score": 9.5,
+          "name": "Nerion"
+        },
+        {
           "score": 9.0,
           "name": "Shadewing"
         },
         {
           "score": 8.75,
           "name": "Bonnie"
-        },
-        {
-          "score": 8.0,
-          "name": "Carolina"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -37598,24 +37316,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -37694,6 +37409,15 @@
           "score": 11.687142857142858
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+          ],
+          "score": 11.206457142857143
+        },
+        {
           "provider": "Pandora",
           "reasons": [
             "Max HP via Max HP buff (single target, average)",
@@ -37701,15 +37425,6 @@
             "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
           ],
           "score": 11.153228571428572
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 9.706457142857143
         },
         {
           "provider": "Damian",
@@ -38152,6 +37867,14 @@
           "score": 5.25
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
+          ],
+          "score": 5.16
+        },
+        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`",
@@ -38195,14 +37918,6 @@
             "Shield via Shield (single target, average)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.66
         },
         {
           "provider": "Soren",
@@ -38427,29 +38142,26 @@
         ],
         "damage": [
           {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage",
-              "True damage"
-            ]
-          },
-          {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
               "True damage"
             ]
           },
           {
-            "name": "Athalia",
+            "name": "Nara",
             "score": 1.0,
             "matches": [
               "Physical",
-              "Max HP-based damage",
+              "True damage"
+            ]
+          },
+          {
+            "name": "Korin",
+            "score": 1.0,
+            "matches": [
+              "Physical",
               "True damage"
             ]
           }
@@ -38727,29 +38439,27 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage",
-              "DoT"
-            ]
-          },
-          {
             "name": "Alna",
             "score": 1.0,
             "matches": [
               "DoT",
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
-            "name": "Ravion",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "DoT",
+              "Physical"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 1.0,
+            "matches": [
+              "DoT",
+              "Physical"
             ]
           }
         ],
@@ -38780,11 +38490,10 @@
         "overall": [
           {
             "name": "Ravion",
-            "score": 0.7764,
+            "score": 0.6671,
             "matches": [
               "Buffs on allies",
               "Crowd Control",
-              "Damage",
               "Similar Skills"
             ]
           }
@@ -39592,6 +39301,15 @@
           "score": 15.011999999999999
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+          ],
+          "score": 12.750857142857143
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK buff (all units, high)",
@@ -39607,15 +39325,6 @@
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
           ],
           "score": 11.687142857142858
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 11.250857142857143
         },
         {
           "provider": "Tasi",
@@ -39882,12 +39591,20 @@
         ],
         "damage": [
           {
+            "name": "Faramor",
+            "score": 1.0,
+            "matches": [
+              "True damage",
+              "Physical",
+              "HP loss"
+            ]
+          },
+          {
             "name": "Athalia",
             "score": 1.0,
             "matches": [
               "True damage",
               "Physical",
-              "Max HP-based damage",
               "HP loss"
             ]
           },
@@ -39897,17 +39614,7 @@
             "matches": [
               "True damage",
               "Physical",
-              "Max HP-based damage",
               "HP loss"
-            ]
-          },
-          {
-            "name": "Nazrik",
-            "score": 0.9339,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
             ]
           }
         ],
@@ -39967,19 +39674,18 @@
             ]
           },
           {
-            "name": "Nazrik",
-            "score": 0.5623,
+            "name": "Faramor",
+            "score": 0.5372,
             "matches": [
-              "Damage",
-              "Crowd Control"
+              "Damage"
             ]
           },
           {
-            "name": "Silvina",
-            "score": 0.5065,
+            "name": "Nazrik",
+            "score": 0.5121,
             "matches": [
-              "Crowd Control",
-              "Debuffs on enemies"
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -39996,21 +39702,21 @@
           "score": 15.011999999999999
         },
         {
+          "provider": "Ravion",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, average)",
+            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
+            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
+          ],
+          "score": 12.750857142857143
+        },
+        {
           "provider": "Lyca",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`",
             "Energy via Energy recovery (120 at battle start, all units) `signature fuel`"
           ],
           "score": 11.687142857142858
-        },
-        {
-          "provider": "Ravion",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "Energy via Energy recovery (multiple targets, average) `signature fuel`",
-            "Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`"
-          ],
-          "score": 11.250857142857143
         },
         {
           "provider": "Pandora",
@@ -40190,12 +39896,12 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.0,
-          "name": "Carolina"
+          "score": 7.5,
+          "name": "Nerion"
         },
         {
           "score": 6.0,
-          "name": "Nerion"
+          "name": "Carolina"
         },
         {
           "score": 6.0,
@@ -40261,24 +39967,21 @@
             "name": "Gunnar",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Baelran",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           },
           {
             "name": "Himmel",
             "score": 1.0,
             "matches": [
-              "Physical",
-              "Max HP-based damage"
+              "Physical"
             ]
           }
         ],
@@ -40342,7 +40045,7 @@
           },
           {
             "name": "Sonja",
-            "score": 0.8654,
+            "score": 0.8935,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -40713,23 +40416,23 @@
         ],
         "damage": [
           {
-            "name": "Gunnar",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
-            "name": "Baelran",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Himmel",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Brutus",
+            "score": 1.0,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Nara",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -40786,34 +40489,7 @@
             ]
           }
         ],
-        "overall": [
-          {
-            "name": "Zorya",
-            "score": 0.659,
-            "matches": [
-              "Debuffs on enemies",
-              "Crowd Control",
-              "Damage"
-            ]
-          },
-          {
-            "name": "Hepler",
-            "score": 0.5285,
-            "matches": [
-              "Debuffs on enemies",
-              "Damage"
-            ]
-          },
-          {
-            "name": "Dunlingr",
-            "score": 0.5055,
-            "matches": [
-              "Buffs on allies",
-              "Debuffs on enemies",
-              "Damage"
-            ]
-          }
-        ]
+        "overall": []
       }
     },
     "Velara": {
@@ -41570,24 +41246,21 @@
             "name": "Frieren",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Galahad",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           },
           {
             "name": "Saida",
             "score": 1.0,
             "matches": [
-              "Magic",
-              "Max HP-based damage"
+              "Magic"
             ]
           }
         ],
@@ -42020,7 +41693,7 @@
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -42028,7 +41701,7 @@
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Gwyneth",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -42288,7 +41961,7 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Summon damage buff (summons only, low)",
+            "ATK via Damage dealt buff (summons only, low)",
             "ATK SPD via Haste buff (summons only, high)"
           ],
           "score": 14.25
@@ -42321,6 +41994,14 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 1.875
+        },
+        {
+          "provider": "Florabelle",
+          "reasons": [
+            "ATK via ATK buff (summons only, low)",
+            "ATK SPD via Haste buff (summons only, high)"
+          ],
+          "score": 14.25
         },
         {
           "provider": "Kazim",
@@ -42446,10 +42127,6 @@
           "name": "Dionel"
         },
         {
-          "score": 16.5,
-          "name": "Shadewing"
-        },
-        {
           "score": 12.0,
           "name": "Dunlingr"
         },
@@ -42476,10 +42153,6 @@
         {
           "score": 7.5,
           "name": "Lucca"
-        },
-        {
-          "score": 7.5,
-          "name": "Phraesto"
         },
         {
           "score": 7.5,
@@ -42690,11 +42363,11 @@
         {
           "provider": "Ravion",
           "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
+            "ATK via ATK buff (multiple targets, average)",
             "Energy via Energy recovery (multiple targets, average) `signature fuel`",
             "Enables Ally Ultimate casts via Energy recovery (Ultimate pace)"
           ],
-          "score": 13.308
+          "score": 14.808
         },
         {
           "provider": "Mikola",
@@ -42957,7 +42630,14 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
+              "HP loss"
+            ]
+          },
+          {
+            "name": "Shadewing",
+            "score": 1.0,
+            "matches": [
+              "Magic",
               "HP loss"
             ]
           },
@@ -42966,15 +42646,6 @@
             "score": 1.0,
             "matches": [
               "Magic",
-              "Max HP-based damage",
-              "HP loss"
-            ]
-          },
-          {
-            "name": "Nara",
-            "score": 1.0,
-            "matches": [
-              "Max HP-based damage",
               "HP loss"
             ]
           }

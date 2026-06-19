@@ -72,7 +72,6 @@ BUFF_TYPES: list[str] = [
     "Invincible",
     "Lifedrain buff",
     "Max HP buff",
-    "Summon damage buff",
     "Ally empower buff",
     "Attack range buff",
     "Healing stat buff",
@@ -85,7 +84,6 @@ BUFF_TYPES: list[str] = [
 
 DEBUFF_TYPES: list[str] = [
     "ATK debuff",
-    "Blind HP loss debuff",
     "DoT debuff",
     "Damage taken debuff",
     "Damage dealt debuff",

@@ -245,13 +245,13 @@ Niru Spirit Devour, Sylphira Harmonic Refrain, Talene Radiant Resurgence.
 Examples: Alna Winter Anthem, Berial shadow phase, Cryonaia storms, Cyran
 black hole, Faramor circle, Gwyneth burn, Lorsan storm.
 
-### Flat `+ X%` as max-HP magnitude
+### Flat `+ X%` on ATK-based hits
 
-Additive rider duplicated or mis-split from main ATK-based hit (marksmen,
-Aliceth Radiant Rain, Athalia).
+`X% (ATK-based) + Y% damage` without explicit max-HP wording is **not**
+Max HP-based damage — score as Physical/Magic only. Do not infer max-HP
+scaling from the flat rider alone.
 
-**Correct split:** main hit in physical/magic; **only** the `+Y%` max-HP
-clause in `max_hp`.
+Examples: Kazim Gale Barrage, marksmen ult lines, Aliceth Radiant Rain.
 
 ### Targeting collapsed to `single`
 
@@ -429,7 +429,7 @@ Use these to calibrate both passes:
 
 | Skill | High-level expectation | Detailed nuance |
 |-------|------------------------|-----------------|
-| Kazim Gale Barrage | Max HP-based damage | **+40%** max tier, not +140% base |
+| Kazim Gale Barrage | Physical only | No Max HP chip without explicit max-HP text |
 | Harak Vicious Bite | No DoT/HoT | Healing debuff from lock |
 | Harak Tidal Assault | Invincible Self | Not ally buff; no replacement buff match |
 | Aurora Starlit Slumber | Invincible Self; Haste on summons | Self sleep immunity ≠ ally buffer |

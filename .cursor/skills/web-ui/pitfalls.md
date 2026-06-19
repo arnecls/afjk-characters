@@ -15,9 +15,6 @@ and `heroes.json` could drift.
 `skill_card_tags` per skill; `render_site.py` reads stored tags. Test:
 `test_processed_skill_card_tags_match_live_analysis`.
 
-**Display policy:** `_apply_skill_card_damage_display_policy()` may hide
-implicit max-HP chips on cards while detection still records them.
-
 ### Eironn Legendary+ showed Ranged instead of Ranged DEF (c7e477b3)
 
 **Symptom:** `Ranged DEF buff — Self` rendered as damage-type Ranged (🏹).
