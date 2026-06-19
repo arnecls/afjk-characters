@@ -11097,9 +11097,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -11111,11 +11111,29 @@
                   "value": 150.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy recovery",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 300.0
+                }
+              ]
             }
           ],
           "cooldown": 7.0,
           "skill_card_tags": [
-            "Direct healing — Self"
+            "Direct healing",
+            "Energy recovery — Self"
           ]
         },
         "It's a Plane!": {
@@ -12379,28 +12397,16 @@
       "synergy_profile": {
         "provides": [
           {
-            "label": "Summoning",
-            "tier": "base",
-            "targeting": "Single target",
-            "description": "Dunlingr designates the Bell of Order as either Spellbind or Curelock before a battle starts, setting the stage for the battle's order."
-          },
-          {
             "label": "Ultimate lock (Spellbind)",
             "tier": "base",
-            "targeting": "Single target",
+            "targeting": "All units",
             "description": "Spellbind: Unable to cast Ultimate."
           },
           {
-            "label": "Summoning",
+            "label": "Heal lock (Curelock)",
             "tier": "base",
             "targeting": "All units",
-            "description": "Dunlingr summons the Bell of Order, declaring an order that all non-boss units on both sides must obey unconditionally for 6 + 0.25s."
-          },
-          {
-            "label": "Summoning",
-            "tier": "base",
-            "targeting": "Self",
-            "description": "If the Bell of Order is set to Curelock, Dunlingr gains a shield that absorbs 130% (ATK-based) + 20% damage each time he loses 20% of his max HP, lasting until the battle ends."
+            "description": "Curelock: Unable to recover HP for others."
           }
         ],
         "requires": []
@@ -13965,10 +13971,47 @@
               }
             ]
           },
-          "effects": [],
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Damage dealt",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 35.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "debuff",
+              "name": "Debuff duration",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ]
+            }
+          ],
           "tier": "mythic+",
-          "passive_only": true,
-          "skill_card_tags": []
+          "skill_card_tags": [
+            "Damage dealt debuff",
+            "Debuff duration debuff"
+          ]
         },
         "Enhance Force": {
           "category": "skill5",
@@ -14806,11 +14849,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -16585,11 +16628,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -16716,12 +16759,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
+              "area": "single",
+              "target_count": 1,
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",
@@ -19781,11 +19823,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",
@@ -20144,12 +20186,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",
@@ -21651,7 +21692,7 @@
       "faction": "lightbearer",
       "class": "support",
       "role_category": "support",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "is_melee": false,
       "is_dual_range": false,
       "skills": {
@@ -21839,10 +21880,34 @@
               "type": "buff",
               "name": "ATK",
               "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "buff",
+              "name": "Energy recovery",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 75.0
+                }
+              ]
             }
           ],
           "skill_card_tags": [
-            "ATK buff"
+            "ATK buff",
+            "Energy recovery"
           ]
         },
         "Hero Focus Hugin": {
@@ -24729,12 +24794,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -24747,12 +24811,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -24765,12 +24828,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -27016,7 +27078,7 @@
       "faction": "dimensional",
       "class": "warrior",
       "role_category": "tank",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "is_melee": true,
       "is_dual_range": false,
       "skills": {
@@ -27360,13 +27422,30 @@
               ],
               "duration": 8,
               "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy recovery",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 300.0
+                }
+              ]
             }
           ],
           "cooldown": 12.0,
           "initial_cooldown": 3.0,
           "skill_range": 1,
           "skill_card_tags": [
-            "Direct healing — Self",
+            "Direct healing",
             "HoT — Self",
             "ATK buff",
             "DEF buff — Self",
@@ -28641,22 +28720,11 @@
                   "value": 1000.0
                 }
               ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "interrupt"
             }
           ],
           "tier": "supreme+",
           "skill_card_tags": [
-            "Energy drain",
-            "Interrupt"
+            "Energy drain"
           ]
         }
       },
@@ -30620,12 +30688,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -32351,11 +32418,11 @@
             },
             {
               "tier": "ex+5",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -32387,11 +32454,11 @@
             },
             {
               "tier": "ex+15",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -33564,11 +33631,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -33698,9 +33765,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -33718,7 +33785,7 @@
           "cooldown": 12.0,
           "initial_cooldown": 1.0,
           "skill_card_tags": [
-            "Direct healing — Self",
+            "Direct healing",
             "DEF buff — Self"
           ]
         },
@@ -34664,12 +34731,11 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -36678,7 +36744,7 @@
           "initial_cooldown": 3.0,
           "skill_card_tags": [
             "Magic",
-            "Direct healing — Self"
+            "Direct healing"
           ]
         },
         "Hero Focus": {
@@ -38645,11 +38711,29 @@
                   "value": 235.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy recovery",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 70.0
+                }
+              ]
             }
           ],
           "skill_range": 5,
           "skill_card_tags": [
-            "Magic"
+            "Magic",
+            "Energy recovery — Self"
           ]
         },
         "Hero Focus": {
@@ -41836,20 +41920,13 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "movement_speed",
+              "type": "buff",
               "name": "Movement speed",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 240.0
-                }
-              ],
               "label": "buff_stat"
             },
             {
@@ -41875,7 +41952,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Physical",
-            "Movement speed buff"
+            "Movement speed buff — Self"
           ]
         },
         "Enhance Force": {
@@ -41924,31 +42001,12 @@
                   "value": 60.0
                 }
               ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "movement_speed",
-              "name": "Movement speed",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 60.0
-                }
-              ],
-              "label": "buff_stat"
             }
           ],
           "tier": "supreme+",
           "skill_card_tags": [
             "Crit DMG boost — Self",
-            "Crit buff — Self",
-            "Movement speed buff — Self"
+            "Crit buff — Self"
           ]
         }
       },
@@ -42068,12 +42126,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
+              "area": "single",
+              "target_count": 1,
               "type": "buff",
               "name": "Energy recovery",
               "label": "buff_stat",
@@ -42130,12 +42187,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -44015,7 +44071,7 @@
       "faction": "celestial",
       "class": "warrior",
       "role_category": "specialist",
-      "is_energy_provider": false,
+      "is_energy_provider": true,
       "is_melee": true,
       "is_dual_range": false,
       "skills": {
@@ -44230,6 +44286,23 @@
                 {
                   "type": "percentage",
                   "value": 240.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy recovery",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 150.0
                 }
               ]
             }
@@ -47893,12 +47966,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "buff",
               "name": "Energy recovery",
               "label": "buff_stat",
@@ -47921,12 +47993,11 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -48038,11 +48109,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -48312,12 +48383,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "All units",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -51541,6 +51611,12 @@
               "type": "debuff",
               "name": "Damage dealt",
               "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
               "duration": 5.0
             }
           ],
@@ -54128,24 +54204,6 @@
               "label": "buff_offensive"
             },
             {
-              "tier": "ex+5",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "movement_speed",
-              "name": "Movement speed",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 120.0
-                }
-              ],
-              "label": "buff_stat"
-            },
-            {
               "type": "immunity",
               "tier": "mythic+",
               "immunity_type": "untargetable",
@@ -54161,7 +54219,6 @@
           "skill_card_tags": [
             "Direct healing — Self",
             "Haste buff — Self",
-            "Movement speed buff — Self",
             "Untargetable"
           ]
         },
@@ -55351,12 +55408,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Area",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2,
+              "area": "single",
+              "target_count": 1,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",

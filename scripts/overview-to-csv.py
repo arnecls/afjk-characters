@@ -87,6 +87,7 @@ DEBUFF_TYPES: list[str] = [
     "DoT debuff",
     "Damage taken debuff",
     "Damage dealt debuff",
+    "Debuff duration debuff",
     "Magic damage amplification",
     "Energy drain",
     "Execution debuff",

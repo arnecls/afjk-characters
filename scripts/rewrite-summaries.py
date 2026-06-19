@@ -298,6 +298,7 @@ def _named_caster_gains_stat(t: str, label: str) -> bool:
         "DEF buff": r"(?:phys(?:ical)? and magic|magic and phys(?:ical)? )?def",
         "DEF Penetration buff": r"(?:def )?penetration",
         "Ranged DEF buff": r"ranged def",
+        "Movement speed buff": r"(?:bonus )?movement speed",
     }
     stat = stat_pats.get(label)
     if not stat:
@@ -322,6 +323,10 @@ def _named_caster_gains_stat(t: str, label: str) -> bool:
     ):
         return True
     if re.search(r"\bgains? control immunity\b", t, re.I):
+        return True
+    if label == "Movement speed buff" and re.search(
+        rf"\b[\w &'-]+ gains? (?:bonus )?movement speed\b", t, re.I
+    ):
         return True
     return False
 
@@ -388,11 +393,14 @@ def _allies_receive_healing(clause: str) -> bool:
     """True when restore/heal language targets one or more allies."""
     t = clause.lower()
     if re.search(
-        r"\b(?:to|for) (?:all )?(?:allies|an ally|the ally|affected allies|"
-        r"weakest ally|weakest \d+ allies|frontal allies|target ally|"
-        r"guarded ally|2 weakest allies|a target ally)\b",
+        r"\b(?:to|for) (?:all )?(?:allies|an ally|(?:the |this )?ally|"
+        r"affected allies|(?:the |this )?weakest ally|weakest \d+ allies|"
+        r"frontal allies|target ally|guarded ally|2 weakest allies|"
+        r"a target ally)\b",
         t,
     ):
+        return True
+    if re.search(r"\bto this ally\b", t):
         return True
     if re.search(r"\bheals? \d+ weakest all(?:y|ies)\b", t):
         return True
@@ -634,6 +642,11 @@ def _resolve_buff_targeting(
         return "Self"
     if label == "Haste buff" and re.search(
         r"\b(?:her|his) movement speed increases\b", t
+    ) and not _has_explicit_ally_buff(t, label):
+        return "Self"
+    if label == "Movement speed buff" and re.search(
+        r"\bgains? bonus movement speed\b|\b(?:her|his) movement speed increases\b",
+        t,
     ) and not _has_explicit_ally_buff(t, label):
         return "Self"
     if label == "ATK buff" and re.search(
@@ -1671,6 +1684,11 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             r"\b(?:her|his) movement speed increases\b", t
         ) and not _has_explicit_ally_buff(t, label):
             return True
+        if label == "Movement speed buff" and re.search(
+            r"\bgains? bonus movement speed\b|\b(?:her|his) movement speed increases\b",
+            t,
+        ) and not _has_explicit_ally_buff(t, label):
+            return True
         if label == "Crit buff" and re.search(
             r"\bgains? \d+(?:\s*\+\s*\d+)? crit when (?:he|she|they)\b", t
         ):
@@ -1731,11 +1749,14 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             t,
         ) and re.search(r"\b(?:her|his|she|he) (?:gains?|recover|restore)", t):
             return True
+        if _allies_receive_healing(t):
+            return False
         if re.search(r"\b(?:herself|himself|itself)\b", t):
             return True
 
     if re.search(
-        r"\b(?:to|for) (?:all )?(?:allies|an ally|the ally|enemies|an enemy|the enemy)\b",
+        r"\b(?:to|for) (?:all )?(?:allies|an ally|(?:the |this )?ally|enemies|"
+        r"an enemy|the enemy)\b",
         t,
     ) and not re.search(r"\b(?:to|for) (?:herself|himself|itself)\b", t):
         return False
@@ -2067,13 +2088,16 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         "Healing over time",
         "Energy recovery",
         "Shield",
+        *HP_RECOVERY_LABELS,
+        LEGACY_DIRECT_HEALING_LABEL,
     ):
         if re.search(r"\beach ally along (?:the |its )?path\b", t):
             return "Multiple targets"
         if re.search(r"\bweakest \d+ allies\b", t):
             return "Multiple targets"
         if re.search(
-            r"\b(?:to|for) (?:a |the )?(?:target |weakest |marked |rearmost )?ally\b",
+            r"\b(?:to|for) (?:a |the |this )?"
+            r"(?:target |weakest |marked |rearmost )?ally\b",
             t,
         ) and not re.search(r"\b(?:to|for) all allies\b", t):
             return "Single target"
@@ -2082,6 +2106,10 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         if re.search(
             r"\b(?:recover(?:ing|s)?|restore|restoring|heal(?:s|ing)?)\b", t
         ) and not re.search(r"\b(?:to|for) (?:all )?(?:enemies|an enemy)\b", t):
+            if _allies_receive_healing(t):
+                if re.search(r"\bweakest \d+ allies\b", t):
+                    return "Multiple targets"
+                return "Single target"
             if re.search(r"\b(?:herself|himself) and\b", t):
                 return "Multiple targets"
             if re.search(r"\bguarded ally\b", t):
@@ -2250,7 +2278,8 @@ def extract_number(text: str, label: str = "") -> float | None:
         amounts = _all_amounts(
             text,
             [
-                r"(?:recover(?:s|ing|ed)?|restor(?:e|es|ing|ed)?) "
+                r"(?:recover(?:s|ing|ed)?|restor(?:e|es|ing|ed))"
+                r"(?: (?:himself|herself|itself))?(?: an extra)? "
                 r"(\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?\s*energy",
                 r"energy recovered .{0,60}to (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
                 r"energy recovered by .{0,40}to (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
@@ -2414,6 +2443,43 @@ def extract_number(text: str, label: str = "") -> float | None:
                 r"and (\d+(?:\.\d+)?)\s*%\s*movement speed",
                 r"reduc(?:e|es|ing) .{0,50}(\d+(?:\.\d+)?)\s*%\s*movement speed",
                 r"max reduction of \d+ haste and (\d+(?:\.\d+)?)\s*%\s*movement speed",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
+    if label == "Movement speed buff":
+        amounts = _all_amounts(
+            text,
+            [
+                r"movement speed by (\d+(?:\.\d+)?)\s*%",
+                r"increases (?:her |his )?movement speed by (\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
+    if label == "Damage dealt debuff":
+        amounts = _all_amounts(
+            text,
+            [
+                r"deal (\d+(?:\.\d+)?)% less damage",
+                r"reduction to (?:enemy )?damage dealt to (\d+(?:\.\d+)?)%",
+                r"reduc(?:e|es|ing) .{0,40}(?:enemy'?s?|their) damage dealt by "
+                r"(\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
+    if label == "Debuff duration debuff":
+        amounts = _all_amounts(
+            text,
+            [
+                r"debuff durations.{0,40}reduced by (\d+(?:\.\d+)?)%",
+                r"reduction to their debuff durations to (\d+(?:\.\d+)?)%",
+                r"duration of dispellable debuffs.{0,80}reduced by "
+                r"(\d+(?:\.\d+)?)%",
             ],
         )
         if amounts:
@@ -3493,7 +3559,9 @@ BUFF_RULES = [
         r"grants? .{0,60}lieutenant.{0,60}energy when a battle starts",
         "Energy recovery",
     ),
-    (r"(?:recover(?:s|ing|ed)?|restor(?:e|es|ing|ed)?) \d+(?:\s*\+\s*\d+)? energy", "Energy recovery"),
+    (r"(?:recover(?:s|ing|ed)?|restor(?:e|es|ing|ed))"
+     r"(?: (?:himself|herself|itself))?(?: an extra)? \d+(?:\s*\+\s*\d+)? energy",
+     "Energy recovery"),
     (
         r"gains? \d+(?:\.\d+)? atk spd and \d+(?:\.\d+)? energy",
         "Energy recovery",
@@ -3532,7 +3600,8 @@ BUFF_RULES = [
     ),
     # Movement speed buff
     (
-        r"(?:gain\w*|increas\w+) .{0,30}movement speed",
+        r"(?:gain\w*|increas\w+) (?:bonus )?movement speed|"
+        r"gains? bonus movement speed",
         "Movement speed buff",
     ),
     (
@@ -3850,6 +3919,21 @@ DEBUFF_RULES = [
         r"damage dealt\b",
         "Damage dealt debuff",
     ),
+    (
+        r"(?:enem(?:y|ies)|these enemies|marked enem(?:y|ies)) "
+        r"deal \d+(?:\.\d+)?% less damage(?: for the rest of the battle)?",
+        "Damage dealt debuff",
+    ),
+    (
+        r"reduction to (?:enemy )?damage dealt to \d+(?:\.\d+)?%",
+        "Damage dealt debuff",
+    ),
+    (
+        r"debuff durations.{0,40}reduced by \d+(?:\.\d+)?%|"
+        r"duration of dispellable debuffs.{0,80}reduced by \d+(?:\.\d+)?%|"
+        r"reduction to their debuff durations to \d+(?:\.\d+)?%",
+        "Debuff duration debuff",
+    ),
     # Damage taken debuff (enemies take more damage; not magic-specific)
     (
         r"increas(?:e|es|ing|ed) .{0,30}(?<!magic )damage taken|"
@@ -4086,7 +4170,10 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     ),
     (r"freezes time itself|stop the battle time", "Battle time pause"),
     (r"unable to cast ultimate", "Ultimate lock (Spellbind)"),
-    (r"unable to restore hp for others", "Heal lock (Curelock)"),
+    (
+        r"unable to (?:restore|recover) hp for others",
+        "Heal lock (Curelock)",
+    ),
     (r"\buntargetable\b", "Untargetable"),
     # Execute / threshold
     (
@@ -4284,7 +4371,6 @@ _COMPANION_UNIT_PATTERNS: tuple[str, ...] = (
     r"falcon elona|\belona\b",
     r"living armor",
     r"mr\. carlyle",
-    r"bell of order",
     r"smashy|swifty|spiny",
     r"\bsonny\b",
     r"magical bunny",
@@ -4299,7 +4385,7 @@ _SUMMON_EFFECT_OBJECT = re.compile(
     r"flying blades?|walls? of |light spear|ice storms?|blizzards?|vines?|"
     r"domains? of|quills?|sky fish|parasitic grass|doomfields?|"
     r"swirling snowstorms?|magical plants?|mount dawn|tombstones?|"
-    r"lightning|leaves to attack|doomfield at)",
+    r"lightning|leaves to attack|doomfield at|bells? of order)",
     re.I,
 )
 
@@ -4550,6 +4636,8 @@ def detect_special_targeting(text: str, kind: str, label: str) -> str:
         return "—"
     if label == "Artifact block":
         return "Single target"
+    if label in ("Ultimate lock (Spellbind)", "Heal lock (Curelock)"):
+        return "All units"
     if label in ("Transformation", "Dream sleep (transformation)", "Cheat death"):
         return "Self"
     return detect_targeting(text, label, "special")
@@ -5770,6 +5858,19 @@ def _chunk_deals_enemy_damage(text: str, primary_dmg: str = "Physical") -> bool:
     return False
 
 
+def _debuff_match_is_per_hit_damage_falloff(clause: str) -> bool:
+    """Per-hit damage falloff, not an enemy stat debuff."""
+    t = clause.lower()
+    return bool(
+        re.search(
+            r"subsequent hits.{0,40}deal \d+(?:\.\d+)?% less damage|"
+            r"second and third arrows deal \d+(?:\.\d+)?% less damage|"
+            r"same target deal \d+(?:\.\d+)?% less damage",
+            t,
+        )
+    )
+
+
 def _debuff_match_is_stat_reference(clause: str) -> bool:
     """Skip debuff regex hits that only describe a referenced stat effect."""
     return bool(
@@ -5978,6 +6079,10 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
         t,
     ):
         return True
+    if label == "Interrupt" and re.search(
+        r"\buses? .{0,100} to interrupt\b", t
+    ):
+        return True
     if label == "Bind" and re.search(r"\bbinds the (?:target|enemy|them)\b", t):
         return False
     if label == "Bind" and re.search(r"immobilized target if", t):
@@ -6170,6 +6275,11 @@ def analyze_text(
                 continue
             if _debuff_match_is_ally_stat_gain(scope, label):
                 continue
+            if (
+                label == "Damage dealt debuff"
+                and _debuff_match_is_per_hit_damage_falloff(scope)
+            ):
+                continue
             debuff_label = label
             if label == "ATK SPD debuff" and re.search(
                 r"atk spd by an extra \d+(?:\.\d+)?(?:\s+for|\s+until)",
@@ -6353,6 +6463,8 @@ def _upgrade_chunk_relates_to_buff(text: str, label: str) -> bool:
         return bool(re.search(r"\b(?:shield|chi barrier)\b", t))
     if label == "ATK buff" and re.search(r"\batk bonus granted by\b", t):
         return bool(re.search(r"\b(?:atk|atk bonus)\b", t))
+    if label == "Movement speed buff":
+        return bool(re.search(r"\bmovement speed\b", t))
     return True
 
 

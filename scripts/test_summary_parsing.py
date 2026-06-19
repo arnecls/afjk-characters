@@ -364,6 +364,50 @@ class SummaryParsingTests(unittest.TestCase):
             all(e.targeting == rs.ALL_SUMMON_BUFF_TARGETING for e in haste)
         )
 
+    def test_dunlingr_bell_is_not_summoning(self):
+        hero = _hero_by_short_name("Dunlingr")
+        self.assertFalse(rs.hero_fields_summon_units(hero))
+        summoning = [
+            e for e in hero.special_effects if e.label == "Summoning"
+        ]
+        self.assertEqual(summoning, [])
+
+    def test_dunlingr_bell_provides_both_modes(self):
+        hero = _hero_by_short_name("Dunlingr")
+        provides = [
+            e.label
+            for e in hero.special_effects
+            if e.kind == "provides"
+        ]
+        self.assertIn("Ultimate lock (Spellbind)", provides)
+        self.assertIn("Heal lock (Curelock)", provides)
+        spellbind = next(
+            e
+            for e in hero.special_effects
+            if e.label == "Ultimate lock (Spellbind)"
+        )
+        curelock = next(
+            e for e in hero.special_effects if e.label == "Heal lock (Curelock)"
+        )
+        self.assertEqual(spellbind.targeting, "All units")
+        self.assertEqual(curelock.targeting, "All units")
+
+    def test_lily_may_supreme_energy_drain_not_interrupt(self):
+        hero = _hero_by_short_name("Lily May")
+        supreme = hero.skill_slices.get("Unlocks at Supreme+")
+        self.assertIsNotNone(supreme)
+        cc = [e for e in supreme.effects if e.category == "cc"]
+        self.assertEqual(cc, [])
+        drains = [e for e in supreme.effects if e.label == "Energy drain"]
+        self.assertTrue(drains)
+        tags = rs.format_skill_card_tags(hero, "skill5")
+        self.assertIn("Energy drain", tags)
+        self.assertNotIn("Interrupt", tags)
+        ult = hero.skill_slices.get("Ultimate")
+        self.assertIsNotNone(ult)
+        ult_cc = [e for e in ult.effects if e.label == "Interrupt"]
+        self.assertTrue(ult_cc)
+
     def test_solise_ally_healing_targeting(self):
         hero = _hero_by_short_name("Solise")
         healing = next(e for e in _effects(hero, "buff", DIRECT_HEALING_LABEL))

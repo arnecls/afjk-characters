@@ -1612,6 +1612,71 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         self.assertIn("True damage", tags)
         self.assertIn("Unaffected — Self", tags)
 
+    def test_rhys_fury_rush_bonus_movement_speed_is_self(self):
+        text = (
+            "Rhys gains bonus movement speed when moving on the battlefield."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "mythic+", text, "Physical")
+        move = [e for e in effects if e.label == "Movement speed buff"]
+        self.assertEqual(len(move), 1)
+        self.assertEqual(move[0].targeting, "Self")
+        self.assertIsNone(move[0].numeric)
+
+    def test_evie_tactical_briefing_enemy_debuffs(self):
+        text = (
+            "With their weaknesses exposed, these enemies deal 25% less damage "
+            "for the rest of the battle. In non-boss battles, the duration of "
+            "dispellable debuffs inflicted on allies by these enemies is also "
+            "reduced by 30%."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "mythic+", text, "Magic")
+        labels = [e.label for e in effects if e.category == "debuff"]
+        self.assertIn("Damage dealt debuff", labels)
+        self.assertIn("Debuff duration debuff", labels)
+        dmg = next(e for e in effects if e.label == "Damage dealt debuff")
+        dur = next(e for e in effects if e.label == "Debuff duration debuff")
+        self.assertEqual(dmg.numeric, 25.0)
+        self.assertEqual(dur.numeric, 30.0)
+
+    def test_damage_dealt_debuff_skips_per_hit_falloff(self):
+        text = (
+            "For each wave of arrows, subsequent hits on the same target deal "
+            "80% less damage."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        labels = [e.label for e in effects if e.category == "debuff"]
+        self.assertNotIn("Damage dealt debuff", labels)
+
+    def test_damian_emergency_support_self_energy(self):
+        text = (
+            "If there is no toy chariot, Damian restores himself 300 Energy."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        energy = [e for e in effects if e.label == "Energy recovery"]
+        self.assertEqual(len(energy), 1)
+        self.assertEqual(energy[0].targeting, "Self")
+        self.assertEqual(energy[0].numeric, 300.0)
+
+    def test_damian_emergency_support_ally_heal_not_self(self):
+        text = (
+            "If a toy chariot is present on the battlefield, Damian controls it "
+            "to play music for the weakest ally within 3 tiles, recovering "
+            "120% (ATK-based) + 10% HP to this ally 4 times. If there is no toy "
+            "chariot, Damian restores himself 300 Energy."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        heals = [e for e in effects if e.label == "Direct healing"]
+        energy = [e for e in effects if e.label == "Energy recovery"]
+        self.assertEqual(len(heals), 1)
+        self.assertEqual(heals[0].targeting, "Single target")
+        self.assertEqual(len(energy), 1)
+        self.assertEqual(energy[0].targeting, "Self")
+
 
 if __name__ == "__main__":
     unittest.main()
