@@ -219,6 +219,26 @@ class RoundTripTests(unittest.TestCase):
         self.assertTrue(dodge)
         self.assertEqual(dodge[0].targeting, "Self")
 
+    def test_marcille_hero_focus_chant_haste_self(self):
+        text = (
+            "While chanting to cast her Ultimate, she increases Haste "
+            "by an additional 6."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "legendary+", text, "Magic")
+        haste = [e for e in effects if e.label == "Haste buff"]
+        self.assertTrue(haste)
+        self.assertEqual(haste[0].targeting, "Self")
+
+    def test_cassadee_hero_focus_no_spurious_tidal_strength(self):
+        hero, _data = self._hero_by_title_prefix("Cassadee")
+        section = rs.CATEGORY_TO_SECTION["skill3"]
+        labels = {e.label for e in hero.skill_slices[section].effects}
+        self.assertNotIn("Tidal Strength buff", labels)
+        haste = [e for e in hero.skill_slices[section].effects if e.label == "Haste buff"]
+        self.assertTrue(haste)
+        self.assertTrue(all(e.targeting == "Self" for e in haste))
+
     def test_aliceth_aegis_wings_blind_cc(self):
         processed = io.load_processed()
         wings = processed["heroes"]["Aliceth"]["skills"][

@@ -613,6 +613,15 @@ def _resolve_buff_targeting(
         r"\b(?:she|he|they) gains? an extra \d+(?:\.\d+)? haste\b", t
     ):
         return "Self"
+    if label in ("Haste buff", "ATK buff", "Crit buff", "ATK SPD buff") and re.search(
+        r"\b(?:she|he) increases (?:her |his )?(?:haste|atk(?: spd)?|crit)\b", t
+    ):
+        return "Self"
+    if label in ("Haste buff", "ATK buff", "Crit buff", "ATK SPD buff") and re.search(
+        r"\b(?:she|he) gains? an extra \d+(?:\.\d+)? (?:haste|atk(?: spd)?|crit)\b",
+        t,
+    ) and not re.search(r"\ballies\b.{0,40}\bgain(?:s|ing)?\b", t):
+        return "Self"
     if label == "Haste buff" and re.search(
         r"\b(?:her|his) movement speed increases\b", t
     ) and not _has_explicit_ally_buff(t, label):
@@ -971,6 +980,27 @@ def _buff_match_is_shield_modifier(t: str, label: str, match: re.Match[str]) -> 
     )
 
 
+def _buff_match_is_trigger_reference(
+    t: str, label: str, match: re.Match[str]
+) -> bool:
+    """Skip buff-name mentions that only appear in a trigger condition."""
+    if label != "Tidal Strength buff":
+        return False
+    window = _clause_around(t, match.start())
+    if re.search(
+        r"\b(?:grant|grants|granting|bless(?:es)?)\b.{0,40}tidal strength\b",
+        window,
+    ):
+        return False
+    return bool(
+        re.search(
+            r"\b(?:when|while|if|after|until|once)\b.{0,100}"
+            r"(?:tidal strength|blessed by tidal strength)\b",
+            window,
+        )
+    )
+
+
 def _buff_match_is_negative_context(t: str, label: str, match: re.Match[str]) -> bool:
     """Skip buff regex hits inside denial phrasing (cannot heal/gain)."""
     window = t[max(0, match.start() - 30) : match.start()]
@@ -1027,6 +1057,8 @@ def _buff_match_scopes(text: str, label: str, pattern: str) -> list[str]:
         if _buff_match_is_shield_modifier(t, label, m):
             continue
         if _buff_match_is_negative_context(t, label, m):
+            continue
+        if _buff_match_is_trigger_reference(t, label, m):
             continue
         if _buff_match_is_enemy_stat(t, label, m):
             continue
@@ -1478,6 +1510,16 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         if label == "Crit buff" and re.search(
             r"\bgains? \d+(?:\s*\+\s*\d+)? crit when (?:he|she|they)\b", t
         ):
+            return True
+        if label in ("Haste buff", "ATK buff", "Crit buff", "ATK SPD buff") and re.search(
+            r"\b(?:she|he) increases (?:her |his )?(?:haste|atk(?: spd)?|crit)\b", t
+        ):
+            return True
+        if label in ("Haste buff", "ATK buff", "Crit buff", "ATK SPD buff") and re.search(
+            r"\b(?:she|he) gains? an extra \d+(?:\.\d+)? "
+            r"(?:haste|atk(?: spd)?|crit)\b",
+            t,
+        ) and not _has_explicit_ally_buff(t, label):
             return True
         if _named_caster_gains_stat(t, label):
             return True
@@ -2215,6 +2257,7 @@ def extract_number(text: str, label: str = "") -> float | None:
             r"(?:his |her )atk and atk spd are increased by (\d+(?:\.\d+)?)%",
             r"the atk bonus is increased to (\d+(?:\.\d+)?)\s*%",
             r"increasing (\d+(?:\.\d+)?)\s*%\s*atk\b",
+            r"gain an extra (\d+(?:\.\d+)?)\s*%\s*atk\b",
             r"to increase (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*atk\b",
             r"increased to (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%\s*atk\b",
             r"normal attacks? deal (\d+(?:\.\d+)?)% more damage",
