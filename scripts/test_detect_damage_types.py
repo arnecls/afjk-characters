@@ -1126,6 +1126,65 @@ class CommonFailurePatternTests(unittest.TestCase):
         self.assertIn("Damage dealt debuff", labels)
         self.assertIn("Damage taken debuff", labels)
 
+    def test_aurora_plushification_no_spurious_unaffected(self):
+        text = (
+            "While Aurora is dreaming, reality within 2 tiles around her slowly "
+            "gets overtaken by her dream. If an enemy stays in that area for 12s, "
+            "they will be transformed into a unicorn plushie, leaving them unable "
+            "to move or attack for 1 + 0.125s. This effect does not apply to "
+            "unaffected enemies."
+        )
+        chunk = rs.Hero(title="Aurora", damage_type="Magic")
+        for imm_type in rs.IMMUNITY_TYPES:
+            rs.add_cc_immunity(chunk, imm_type, "base", text)
+        imms = [i.immunity_type for i in chunk.cc_immunities]
+        self.assertNotIn("Unaffected", imms)
+
+    def test_evie_intel_chase_self_teleport_not_displace(self):
+        text = (
+            "Evie teleports to the symmetrical tile on the opposite side of the "
+            "battlefield and launches an interrogation at the enemy there, "
+            "immobilizing them and silencing them."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertNotIn("Displace", labels)
+        self.assertIn("Bind", labels)
+        self.assertIn("Silence", labels)
+
+    def test_valen_enhance_force_no_cross_skill_debuffs(self):
+        text = (
+            "Valen inflicts a 3s stun with his Fury Thunder Strike."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Stun", labels)
+        self.assertNotIn("Haste debuff", labels)
+        self.assertNotIn("Movement speed debuff", labels)
+
+    def test_hepler_remedial_class_haste_debuff_not_buff(self):
+        text = (
+            "Hepler switches to True Form, reducing the target's Haste by 30% "
+            "for 8s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Haste debuff", labels)
+        self.assertNotIn("Haste buff", labels)
+
+    def test_sinbad_adaptive_prowess_no_cross_skill_debuffs(self):
+        text = (
+            "Sinbad strengthens the conditional ATK SPD, Energy recovery, "
+            "Vitality, and Phys and Magic DEF debuffs from Tracker's Instincts."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertNotIn("ATK debuff", labels)
+        self.assertNotIn("Damage taken debuff", labels)
+        text = (
+            "Hepler switches to True Form, reducing the target's Haste by 30% "
+            "for 8s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Haste debuff", labels)
+        self.assertNotIn("Haste buff", labels)
+
     def test_evie_intel_chase_channeled_not_dot(self):
         text = (
             "During the interrogation, she deals 180% (ATK-based) + 18% damage "

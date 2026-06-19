@@ -980,6 +980,17 @@ def _buff_match_is_shield_modifier(t: str, label: str, match: re.Match[str]) -> 
     )
 
 
+def _buff_match_is_reduction_clause(
+    t: str, label: str, match: re.Match[str]
+) -> bool:
+    """Skip stat buff regex hits inside enemy reduction phrasing."""
+    if label not in ("Haste buff", "ATK buff"):
+        return False
+    window = _clause_around(t, match.start())
+    stat = "haste" if label == "Haste buff" else "atk"
+    return bool(re.search(rf"\breduc(?:e|es|ing) .{{0,50}}{stat}\b", window))
+
+
 def _buff_match_is_trigger_reference(
     t: str, label: str, match: re.Match[str]
 ) -> bool:
@@ -1059,6 +1070,8 @@ def _buff_match_scopes(text: str, label: str, pattern: str) -> list[str]:
         if _buff_match_is_negative_context(t, label, m):
             continue
         if _buff_match_is_trigger_reference(t, label, m):
+            continue
+        if _buff_match_is_reduction_clause(t, label, m):
             continue
         if _buff_match_is_enemy_stat(t, label, m):
             continue
@@ -5776,6 +5789,32 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
     if label == "Charm" and re.search(
         r"charmed with .{0,60}(?:or bewitched|damage taken)", t
     ):
+        return True
+    if label == "Displace" and re.search(
+        r"\b(?:evie|\w+) teleports? to (?:the )?(?:symmetrical|selected|target) tile\b",
+        t,
+    ):
+        return True
+    if label == "Displace" and re.search(
+        r"\b(?:she|he|it|\w+) teleports? to\b", t
+    ) and not re.search(r"\b(?:enemy|enemies|them|target)\b.{0,40}teleports?\b", t):
+        return True
+    if label in ("Haste debuff", "Movement speed debuff", "Haste buff") and re.search(
+        r"inflicts? a \d+s stun with (?:his|her|their) \w+ (?:thunder|strike)\b", t
+    ):
+        return True
+    if label in ("ATK debuff", "Damage taken debuff") and re.search(
+        r"strengthens? the conditional (?:atk spd|energy|vitality|phys|magic)\b",
+        t,
+    ):
+        return True
+    if label == "Haste buff" and re.search(
+        r"\breduc(?:e|es|ing) the target'?s? haste\b", t
+    ) and not re.search(r"\bgain(?:s|ing)? \d+ haste\b", t):
+        return True
+    if label == "Max HP debuff" and re.search(
+        r"\b(?:shield|absorb).{0,80}max hp\b", t
+    ) and not re.search(r"\breduc(?:e|es|ing).{0,40}max hp\b", t):
         return True
     if label == "Knock down" and re.search(
         r"assigns an objective|objective to each|sets her shield up and taunt", t
