@@ -375,8 +375,15 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
-              "type": "buff",
+              "type": "stat_mod",
+              "stat": "atk",
               "name": "ATK",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ],
               "label": "buff_offensive"
             }
           ],
@@ -1888,11 +1895,10 @@
               "tier": "base",
               "immunity_type": "unaffected",
               "timing": "on_skill",
-              "targeting_label": "Area",
-              "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
             }
           ],
           "cooldown": 1.25,
@@ -1905,7 +1911,7 @@
             "Knock down",
             "Stun",
             "Taunt",
-            "Unaffected"
+            "Unaffected — Self"
           ]
         },
         "Shield Formation": {
@@ -3981,22 +3987,11 @@
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 1.125
-            },
-            {
-              "type": "immunity",
-              "tier": "base",
-              "immunity_type": "unaffected",
-              "timing": "on_skill",
-              "targeting_label": "Single target",
-              "target": "ally",
-              "area": "single",
-              "target_count": 1
             }
           ],
           "skill_range": 3,
           "skill_card_tags": [
-            "Bind",
-            "Unaffected"
+            "Bind"
           ]
         },
         "Hero Focus": {
@@ -7857,30 +7852,12 @@
                 }
               ],
               "label": "buff_offensive"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Tidal Strength",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ]
             }
           ],
           "tier": "legendary+",
           "skill_range": 1,
           "skill_card_tags": [
-            "Haste buff — Self",
-            "Tidal Strength buff"
+            "Haste buff — Self"
           ]
         },
         "Tidal Blessing": {
@@ -9063,8 +9040,8 @@
               "tier": "base",
               "immunity_type": "untargetable",
               "timing": "on_skill",
-              "targeting_label": "Single target",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
               "target_count": 1
             }
@@ -9077,7 +9054,7 @@
             "Energy recovery — Self",
             "Exemption buff",
             "Shield",
-            "Untargetable"
+            "Untargetable — Self"
           ]
         },
         "Mandatory Civility": {
@@ -11519,11 +11496,10 @@
               "tier": "base",
               "immunity_type": "untargetable",
               "timing": "on_skill",
-              "targeting_label": "Area",
-              "target": "ally",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 2
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
             }
           ],
           "cooldown": 1.25,
@@ -11532,7 +11508,7 @@
           "skill_card_tags": [
             "Physical",
             "Knock up",
-            "Untargetable"
+            "Untargetable — Self"
           ]
         },
         "Starry Void": {
@@ -12758,9 +12734,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -12772,6 +12748,23 @@
                   "value": 320.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Dodge chance",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
             }
           ],
           "cooldown": 10.0,
@@ -12779,7 +12772,7 @@
           "skill_range": 1,
           "initial_energy": 1.0,
           "skill_card_tags": [
-            "Dodge chance buff",
+            "Dodge chance buff — Self",
             "Shield — Self"
           ]
         },
@@ -13338,8 +13331,8 @@
               "tier": "base",
               "immunity_type": "unaffected",
               "timing": "on_skill",
-              "targeting_label": "Single target",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
               "target_count": 1
             }
@@ -13351,7 +13344,7 @@
             "Shield",
             "Blind",
             "Knock back",
-            "Unaffected"
+            "Unaffected — Self"
           ]
         },
         "Hero Focus": {
@@ -13689,16 +13682,6 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "displace"
-            },
-            {
-              "tier": "base",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -13713,6 +13696,16 @@
                   "value": 180.0
                 }
               ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "displace"
             },
             {
               "tier": "base",
@@ -13857,11 +13850,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "stat_mod",
               "stat": "atk",
               "name": "ATK",
@@ -14662,11 +14655,12 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Arc",
               "is_max_known": true,
               "target": "ally",
-              "area": "single",
-              "target_count": 3,
+              "area": "arc",
+              "target_count": -1,
+              "area_direction": "front",
               "type": "stat_mod",
               "stat": "atk",
               "name": "ATK",
@@ -16104,9 +16098,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "stat_mod",
@@ -16160,7 +16154,7 @@
           "initial_energy": 400.0,
           "skill_card_tags": [
             "Magic",
-            "Haste buff",
+            "Haste buff — Self",
             "Haste debuff",
             "Movement speed debuff"
           ]
@@ -18843,11 +18837,11 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 3,
+              "target_count": 1,
               "type": "stat_mod",
               "stat": "atk",
               "name": "ATK",
@@ -20433,11 +20427,12 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Multiple targets",
+              "targeting_label": "All units",
               "is_max_known": true,
               "target": "ally",
-              "area": "single",
-              "target_count": 3,
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
               "type": "buff",
               "name": "Damage taken reduction",
               "label": "buff_stat"
@@ -22480,6 +22475,16 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "silence"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -22545,7 +22550,8 @@
             "Max HP-based damage",
             "Physical",
             "Magic DEF debuff",
-            "Phys DEF debuff"
+            "Phys DEF debuff",
+            "Silence"
           ]
         },
         "True Sight": {
@@ -23208,8 +23214,8 @@
               "tier": "base",
               "immunity_type": "unaffected",
               "timing": "on_skill",
-              "targeting_label": "Single target",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
               "target_count": 1
             }
@@ -23217,7 +23223,7 @@
           "skill_card_tags": [
             "Magic",
             "ATK debuff",
-            "Unaffected"
+            "Unaffected — Self"
           ]
         },
         "Hero Focus": {
@@ -26624,16 +26630,6 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "displace"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -26674,7 +26670,6 @@
           "skill_card_tags": [
             "Physical",
             "Invincible — Self",
-            "Displace",
             "Knock back",
             "Knock up"
           ]
@@ -27793,8 +27788,8 @@
               "tier": "base",
               "immunity_type": "unaffected",
               "timing": "once",
-              "targeting_label": "Single target",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
               "target_count": 1
             }
@@ -27805,7 +27800,7 @@
           "skill_card_tags": [
             "Physical",
             "Stun",
-            "Unaffected"
+            "Unaffected — Self"
           ]
         },
         "Flurry Kicks": {
@@ -31071,6 +31066,16 @@
           "effects": [
             {
               "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_back"
+            },
+            {
+              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
@@ -31115,6 +31120,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
+            "Knock back",
             "Taunt",
             "Unaffected — Self"
           ]
@@ -32249,17 +32255,6 @@
                 }
               ],
               "label": "buff_offensive"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive"
             }
           ],
           "tier": "legendary+",
@@ -33180,12 +33175,24 @@
               "area_count": -1,
               "type": "crowd_control",
               "cc-type": "displace"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "charm"
             }
           ],
           "cooldown": 15.0,
           "initial_cooldown": 15.0,
           "skill_range": 3,
           "skill_card_tags": [
+            "Charm",
             "Displace"
           ]
         },
@@ -36270,6 +36277,24 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
+              "name": "Haste",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 40.0
+                }
+              ],
+              "duration": 0.5
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
               "name": "ATK",
               "label": "debuff_offensive",
               "duration": 0.5
@@ -36335,7 +36360,8 @@
             "Magic",
             "DoT",
             "Shield — Self",
-            "ATK debuff"
+            "ATK debuff",
+            "Haste debuff"
           ]
         },
         "Enhance Force": {
@@ -37520,9 +37546,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -37531,7 +37557,7 @@
             }
           ],
           "skill_card_tags": [
-            "Energy recovery",
+            "Energy recovery — Self",
             "Invincible"
           ]
         },
@@ -37611,6 +37637,23 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
+              "name": "Energy recovery",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 45.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
               "name": "Vitality",
               "label": "debuff_defensive",
               "value": [
@@ -37643,6 +37686,7 @@
           "skill_card_tags": [
             "Direct healing",
             "Damage taken debuff",
+            "Energy recovery debuff",
             "Haste debuff",
             "Vitality debuff"
           ]
@@ -41271,17 +41315,6 @@
               "tier": "legendary+",
               "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "legendary+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
               "target": "enemy",
               "area": "single",
               "target_count": 1,
@@ -41299,7 +41332,6 @@
           "tier": "legendary+",
           "skill_range": 1,
           "skill_card_tags": [
-            "ATK buff",
             "ATK debuff"
           ]
         },
@@ -41577,9 +41609,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "stat_mod",
@@ -41598,8 +41630,8 @@
               "tier": "base",
               "immunity_type": "immune",
               "timing": "conditional",
-              "targeting_label": "Single target",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
               "target_count": 1
             }
@@ -41607,8 +41639,8 @@
           "cooldown": 12.0,
           "skill_card_tags": [
             "Direct healing",
-            "Crit buff",
-            "Immune"
+            "Crit buff — Self",
+            "Immune — Self"
           ]
         },
         "Concussive Strike": {
@@ -52806,8 +52838,8 @@
               "tier": "base",
               "immunity_type": "unaffected",
               "timing": "on_skill",
-              "targeting_label": "Single target",
-              "target": "ally",
+              "targeting_label": "Self",
+              "target": "self",
               "area": "single",
               "target_count": 1
             }
@@ -52819,7 +52851,7 @@
             "HoT — Self",
             "Damage taken reduction — Self",
             "Shield — Self",
-            "Unaffected"
+            "Unaffected — Self"
           ]
         },
         "Mighty Slash": {
@@ -54528,6 +54560,17 @@
           "effects": [
             {
               "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "ex+5",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
@@ -54540,7 +54583,7 @@
           ],
           "tier": "mythic+",
           "skill_card_tags": [
-            "ATK buff"
+            "ATK buff — Self"
           ]
         },
         "Enhance Force": {
@@ -56401,9 +56444,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "stat_mod",
@@ -56438,7 +56481,7 @@
           ],
           "skill_card_tags": [
             "Physical",
-            "Crit buff",
+            "Crit buff — Self",
             "Damage taken reduction — Self"
           ]
         },
