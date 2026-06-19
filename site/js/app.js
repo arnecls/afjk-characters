@@ -6265,7 +6265,53 @@
       };
     }
 
+    function isPhoneViewport() {
+      return viewportMetrics().width <= 480;
+    }
+
+    function clearPopoverLayout() {
+      popover.classList.remove(
+        "skill-card-popover--fullscreen",
+        "skill-card-popover--below"
+      );
+      backdrop.classList.remove("skill-card-popover-backdrop--dimmed");
+      document.body.classList.remove("skill-popover-open");
+      popover.style.top = "";
+      popover.style.left = "";
+      popover.style.width = "";
+      popover.style.height = "";
+      popover.style.maxHeight = "";
+      popover.style.visibility = "";
+    }
+
+    function applyPhoneFullscreenLayout() {
+      const view = viewportMetrics();
+      popover.classList.add("skill-card-popover--fullscreen");
+      popover.classList.remove("skill-card-popover--below");
+      backdrop.classList.add("skill-card-popover-backdrop--dimmed");
+      document.body.classList.add("skill-popover-open");
+      popover.style.top = view.top + "px";
+      popover.style.left = view.left + "px";
+      popover.style.width = view.width + "px";
+      popover.style.height = view.height + "px";
+      popover.style.maxHeight = "none";
+      popover.style.visibility = "";
+      const scrollEl = popover.querySelector(".skill-popover-scroll");
+      if (scrollEl) {
+        scrollEl.scrollTop = 0;
+      }
+    }
+
     function positionSkillPopover(card) {
+      if (isPhoneViewport()) {
+        applyPhoneFullscreenLayout();
+        return;
+      }
+
+      popover.classList.remove("skill-card-popover--fullscreen");
+      backdrop.classList.remove("skill-card-popover-backdrop--dimmed");
+      document.body.classList.remove("skill-popover-open");
+
       const rect = card.getBoundingClientRect();
       const margin = 12;
       const arrowSize = 10;
@@ -6344,6 +6390,7 @@
       popover.hidden = true;
       backdrop.hidden = true;
       anchorCard = null;
+      clearPopoverLayout();
     }
 
     function showSkillPopover(card, cardData) {
@@ -6401,13 +6448,17 @@
       if (
         anchorCard &&
         !popover.contains(e.target) &&
-        !anchorCard.contains(e.target)
+        !anchorCard.contains(e.target) &&
+        !isPhoneViewport()
       ) {
         hideSkillPopover();
       }
     });
 
     backdrop.addEventListener("click", function () {
+      if (isPhoneViewport()) {
+        return;
+      }
       hideSkillPopover();
     });
 
@@ -6422,7 +6473,7 @@
         openFromCard(card);
         return;
       }
-      if (e.key === "Escape" && anchorCard) {
+      if (e.key === "Escape" && anchorCard && !isPhoneViewport()) {
         hideSkillPopover();
         anchorCard.focus();
       }
