@@ -1636,6 +1636,10 @@ html.welcome-warning-pending .welcome-warning,
   background: transparent;
 }
 
+.skill-card-popover-backdrop--dimmed {
+  background: rgba(30, 50, 90, 0.4);
+}
+
 .skill-card-popover-backdrop[hidden] {
   display: none !important;
 }
@@ -1813,6 +1817,35 @@ html.welcome-warning-pending .welcome-warning,
   font-size: 0.68rem;
   padding: 0.08rem 0.32rem;
   vertical-align: baseline;
+}
+
+/* Phones only: full-screen skill overlay (see app.js isPhoneViewport). */
+@media (max-width: 480px) {
+  body.skill-popover-open {
+    overflow: hidden;
+  }
+
+  .skill-card-popover--fullscreen {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: none;
+  }
+
+  .skill-card-popover--fullscreen::after {
+    display: none;
+  }
+
+  .skill-card-popover--fullscreen .skill-popover-header {
+    padding-top: calc(0.85rem + env(safe-area-inset-top, 0px));
+  }
+
+  .skill-card-popover--fullscreen .skill-popover-close {
+    top: calc(0.45rem + env(safe-area-inset-top, 0px));
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.35rem;
+  }
 }
 
 .chip-quality.chip-q-high,
