@@ -984,6 +984,8 @@
     enemies: { emoji: "☠️", cls: "chip-target" },
     global: { emoji: "🌍", cls: "chip-target" },
     "on skill": { emoji: "⏱️", cls: "chip-target" },
+    "all summons": { emoji: "🐾", cls: "chip-target" },
+    "owned summons": { emoji: "🐾", cls: "chip-target" },
     "summons only": { emoji: "🐾", cls: "chip-target" },
   };
 
@@ -1018,7 +1020,9 @@
     { re: /\bEnemies\b/gi, key: "enemies" },
     { re: /\bGlobal\b/gi, key: "global" },
     { re: /\bOn Skill\b/gi, key: "on skill" },
-    { re: /\bSummons only\b/gi, key: "summons only" },
+    { re: /\bAll summons\b/gi, key: "all summons" },
+    { re: /\bOwned summons\b/gi, key: "owned summons" },
+    { re: /\bSummons only\b/gi, key: "owned summons" },
     { re: /\bArea\b/g, key: "area" },
     { re: /\bArc\b/g, key: "arc" },
     { re: /\bSelf\b/g, key: "self" },
@@ -1355,13 +1359,25 @@
         emoji: def.emoji,
       };
     }
-    if (lower === "summon" || lower === "summons only") {
-      const def = TARGETING_DEFINITIONS["summons only"];
+    if (lower === "all summons") {
       return {
-        cls: def.cls,
-        label: "Summon",
+        cls: "chip-target",
+        label: "summons",
         tooltip: "",
-        emoji: def.emoji,
+        emoji: "🐾",
+      };
+    }
+    if (
+      lower === "owned summons" ||
+      lower === "own summons" ||
+      lower === "summon" ||
+      lower === "summons only"
+    ) {
+      return {
+        cls: "chip-target",
+        label: "owned",
+        tooltip: "",
+        emoji: "🐾",
       };
     }
     return null;
@@ -2597,10 +2613,22 @@
   function parseSkillCardTag(raw) {
     let tag = raw.trim();
     let targeting = "";
-    const summonMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Summon\s*$/i);
-    if (summonMatch) {
-      tag = summonMatch[1].trim();
-      targeting = "Summon";
+    const allSummonMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Summons\s*$/i);
+    if (allSummonMatch) {
+      tag = allSummonMatch[1].trim();
+      targeting = "All summons";
+      return { tag: tag, targeting: targeting };
+    }
+    const ownSummonMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Owned\s*$/i);
+    if (ownSummonMatch) {
+      tag = ownSummonMatch[1].trim();
+      targeting = "Owned summons";
+      return { tag: tag, targeting: targeting };
+    }
+    const legacySummonMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Summon\s*$/i);
+    if (legacySummonMatch) {
+      tag = legacySummonMatch[1].trim();
+      targeting = "Owned summons";
       return { tag: tag, targeting: targeting };
     }
     const selfMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Self\s*$/i);
@@ -2636,7 +2664,11 @@
 
     tag = skillCardEffectLabel(parsed.base, polarity);
 
-    if (split.targeting === "Self" || split.targeting === "Summon") {
+    if (
+      split.targeting === "Self" ||
+      split.targeting === "All summons" ||
+      split.targeting === "Owned summons"
+    ) {
       const merged = mergeEffectWithTargeting(
         tag,
         split.targeting,
@@ -2713,7 +2745,7 @@
     if (!tag) {
       return "";
     }
-    tag = tag.replace(/\s*(?:—|–)\s*(?:self|summon)\s*$/, "").trim();
+    tag = tag.replace(/\s*(?:—|–)\s*(?:self|owned|summons?)\s*$/, "").trim();
     tag = tag
       .replace(
         /\s*\((?:legendary\+|mythic\+|supreme\+|ex\+\d+)\)/gi,
@@ -4910,6 +4942,8 @@
     allies: true,
     enemies: true,
     "on skill": true,
+    "all summons": true,
+    "owned summons": true,
     "summons only": true,
   };
 
