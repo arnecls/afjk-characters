@@ -489,14 +489,33 @@ class CommonFailurePatternTests(unittest.TestCase):
         self.assertIn("ATK SPD debuff", labels)
         self.assertNotIn("ATK debuff", labels)
 
-    def test_indris_silencing_arrow_not_cc_from_skill_name(self):
+    def test_indris_silencing_arrow_silence_cc(self):
         text = (
             "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) "
             "+ 20% damage. The shot disables the enemy's stat buffs for 8s."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertNotIn("Silence", labels)
+        self.assertIn("Silence", labels)
         self.assertIn("Physical", labels)
+
+    def test_mehira_alluring_mirage_charm_and_displace(self):
+        text = (
+            "Mehira summons an illusion of herself on the tile closest to the "
+            "enemy lineup, bewitching all enemies and making them rush "
+            "mindlessly toward the illusion for 2.2 + 0.1s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Charm", labels)
+        self.assertIn("Displace", labels)
+
+    def test_lumont_charge_path_knock_back(self):
+        text = (
+            "Lumont charges toward the selected tile, knocking enemies in his "
+            "path back toward the selected tile and taunting them for 3s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Knock back", labels)
+        self.assertIn("Taunt", labels)
 
     def test_mehira_whip_hp_loss(self):
         text = (

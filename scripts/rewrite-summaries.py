@@ -3727,6 +3727,7 @@ CC_RULES = [
         r"(?:\d+ tiles? )?back",
         "Knock back",
     ),
+    (r"knock(?:ing|s)? .{0,50}in (?:his|her|their) path back", "Knock back"),
     (r"frighten(?:ing|ed|s)?", "Frighten"),
     (r"flee in fright|fright effect", "Frighten"),
     # "(?<! of )" prevents skill-name references like "Echo of Silence" from
@@ -5776,12 +5777,6 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
         r"charmed with .{0,60}(?:or bewitched|damage taken)", t
     ):
         return True
-    if label == "Charm" and re.search(
-        r"bewitch(?:ing|ed|es)? .{0,80}(?:rush|rush mindlessly).{0,40}toward|"
-        r"making them rush .{0,40}toward",
-        t,
-    ):
-        return True
     if label == "Knock down" and re.search(
         r"assigns an objective|objective to each|sets her shield up and taunt", t
     ):
@@ -5813,8 +5808,6 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
             full,
         ):
             return True
-    if label == "Silence" and re.search(r"\bsilencing arrow\b", t):
-        return True
     if label == "Silence" and re.search(
         r"after silence ends|"
         r"merlin is silenced|preventing merlin from casting|"
