@@ -1671,7 +1671,9 @@ html.welcome-warning-pending .welcome-warning,
   overflow-y: auto;
   flex: 1;
   min-height: 0;
-  padding: 0.65rem 0.95rem 0.9rem;
+  padding: 0.65rem 0.95rem calc(0.9rem + env(safe-area-inset-bottom, 0px));
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .skill-card-popover::after {
