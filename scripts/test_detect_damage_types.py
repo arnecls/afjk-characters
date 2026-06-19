@@ -1177,6 +1177,46 @@ class CommonFailurePatternTests(unittest.TestCase):
         labels = [e.label for e in self._effects(text)]
         self.assertNotIn("ATK debuff", labels)
         self.assertNotIn("Damage taken debuff", labels)
+
+    def test_nerion_abyssal_embrace_atk_and_haste_debuffs(self):
+        text = (
+            "Drowning enemies have their ATK and Haste reduced by 20% and 40 "
+            "respectively, and take 50% (ATK-based) damage every time they "
+            "have been under control effects for 0.5s."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("ATK debuff", labels)
+        self.assertIn("Haste debuff", labels)
+
+    def test_pandora_tainted_tribute_energy_recovery_debuff(self):
+        text = (
+            "These debuffs may include: reducing Haste by 45, reducing "
+            "Energy recovery by 45%, reducing Vitality by 45."
+        )
+        labels = [e.label for e in self._effects(text)]
+        self.assertIn("Energy recovery debuff", labels)
+
+    def test_hammie_weakest_ally_atk_single_target(self):
+        text = (
+            "Hammie heals the weakest ally for 200% (ATK-based) HP and "
+            "increases their ATK by 20% for 8s."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        atk = [e for e in effects if e.label == "ATK buff"]
+        self.assertTrue(atk)
+        self.assertEqual(atk[0].targeting, "Single target")
+
+    def test_kazim_stormy_dominion_all_allies_haste(self):
+        text = (
+            "The wind field covers the entire battlefield. Allies within the "
+            "wind field gain 30 Haste."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        haste = [e for e in effects if e.label == "Haste buff"]
+        self.assertTrue(haste)
+        self.assertEqual(haste[0].targeting, "All units")
         text = (
             "Hepler switches to True Form, reducing the target's Haste by 30% "
             "for 8s."

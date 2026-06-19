@@ -558,6 +558,14 @@ def _resolve_buff_targeting(
     snippet = scope if scope is not None else text
     t = snippet.lower()
     full = text.lower()
+    if label == "Haste buff" and re.search(
+        r"\b(?:wind field covers|covers) the entire battlefield\b", full
+    ) and re.search(r"\ballies\b", full):
+        return "All units"
+    if label == "Damage taken reduction" and re.search(
+        r"\ball allies take \d+(?:\.\d+)?(?:\s*%\s*)? less\b", full
+    ):
+        return "All units"
     if label in (*HP_RECOVERY_LABELS, "Energy recovery") and re.search(
         r"\beach ally along (?:the |its )?path\b", full
     ):
@@ -1867,6 +1875,34 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         r"\b(?:their|his|her) haste\b", t
     ) and not re.search(r"\ball allies'? haste\b", t):
         return "Self" if re.search(r"\b(?:his|her) haste\b", t) else "Multiple targets"
+    if category == "buff" and re.search(
+        r"\bfrontal allies within a \d+-tile arc\b", t
+    ):
+        return "Arc"
+    if category == "buff" and re.search(
+        r"\ball allies take \d+(?:\.\d+)?(?:\s*%\s*)? less (?:damage|magic damage)\b",
+        t,
+    ):
+        return "All units"
+    if category == "buff" and re.search(
+        r"\b(?:wind field covers|covers) the entire battlefield\b", t
+    ) and re.search(r"\ballies\b", t):
+        return "All units"
+    if category == "buff" and label in (
+        "Healing over time",
+        "Energy recovery",
+        "Shield",
+        "ATK buff",
+        "Damage taken reduction",
+    ):
+        if re.search(r"\b(?:the )?weakest ally\b", t):
+            return "Single target"
+        if re.search(
+            r"\b(?:the )?ally.{0,60}(?:dealing|with) the (?:most|highest) "
+            r"cumulative damage\b",
+            t,
+        ):
+            return "Single target"
     # Single-ally heal / shield / energy before global "all allies" heuristics
     if category == "buff" and label == "ATK buff" and re.search(
         r"\bincreas(?:e|es|ing) the atk of any unit shielded by\b", t
@@ -1875,6 +1911,10 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
     if category == "buff" and label in ("ATK buff", "Energy recovery") and re.search(
         r"\bincreas(?:e|es|ing) their (?:atk|haste)\b", t
     ):
+        if re.search(
+            r"\b(?:weakest ally|highest cumulative damage)\b", t
+        ):
+            return "Single target"
         return "Multiple targets"
     if category == "buff" and label == "Energy recovery" and re.search(
         rf"\bthe ally recovers? {_ENERGY_AMOUNT_RE}\s+energy\b", t
@@ -2212,6 +2252,8 @@ def extract_number(text: str, label: str = "") -> float | None:
                 r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s+haste reduction",
                 r"reduc(?:e|es|ing) .{0,40}haste by (\d+(?:\.\d+)?)"
                 r"(?:\s+for|\s+until|\b)",
+                r"atk and haste reduc(?:e|ed|es|ing) by \d+(?:\.\d+)?% and "
+                r"(\d+(?:\.\d+)?)",
                 r"los(?:e|es|ing) (\d+(?:\.\d+)?)\s+haste\b",
                 r"and (\d+(?:\.\d+)?)\s+haste\b",
                 r"max reduction of (\d+(?:\.\d+)?)\s+haste\b",
@@ -3545,6 +3587,10 @@ DEBUFF_RULES = [
         "ATK debuff",
     ),
     (r"reduc(?:e|es|ing) .{0,5}atk(?! spd) by", "ATK debuff"),
+    (
+        r"(?:their|the )?atk and haste reduc(?:e|ed|es|ing) by",
+        "Haste debuff",
+    ),
     (r"\batk(?! spd)\b.{0,20}reduc(?:e|ed|es|ing|tion)", "ATK debuff"),
     (
         r"absorb(?:s|ing)? \d+(?:\.\d+)?% of phys(?:ical)? def.{0,40}from the target",
@@ -3616,6 +3662,7 @@ DEBUFF_RULES = [
         "Energy drain",
     ),
     (r"reduc(?:e|es|ing) .{0,40}energy\b(?! recov)", "Energy drain"),
+    (r"reduc(?:e|es|ing) energy recovery by", "Energy recovery debuff"),
     (
         r"reduc(?:e|es|ing) .{0,50}energy recovery efficiency",
         "Energy recovery debuff",
