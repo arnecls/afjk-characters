@@ -273,14 +273,24 @@ class SummaryParsingTests(unittest.TestCase):
         ]
         self.assertEqual(ally_haste, [])
 
-    def test_florabelle_overgrowth_buffs_target_summons(self):
+    def test_florabelle_overgrowth_buffs_target_own_summons(self):
         hero = _hero_by_short_name("Florabelle")
         skill1 = hero.skill_slices.get("Skill1")
         self.assertIsNotNone(skill1)
         for label in ("Haste buff", "Lifedrain buff"):
             buffs = [e for e in skill1.summon_effects if e.label == label]
             self.assertTrue(buffs, label)
-            self.assertEqual(buffs[0].targeting, rs.SUMMON_BUFF_TARGETING)
+            self.assertEqual(buffs[0].targeting, rs.OWN_SUMMON_BUFF_TARGETING)
+
+    def test_aurora_dream_veil_buffs_target_all_summons(self):
+        hero = _hero_by_short_name("Aurora")
+        skill4 = hero.skill_slices.get("Ex. Skill")
+        self.assertIsNotNone(skill4)
+        dmg = [
+            e for e in skill4.summon_effects if e.label == "Damage dealt buff"
+        ]
+        self.assertTrue(dmg)
+        self.assertEqual(dmg[0].targeting, rs.ALL_SUMMON_BUFF_TARGETING)
 
     def test_kulu_blast_mania_penetration_is_self(self):
         hero = _hero_by_short_name("Kulu")
@@ -293,7 +303,7 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertEqual(pen[0].targeting, "Self")
         self.assertEqual(pen[0].numeric, 35.0)
 
-    def test_zanie_turret_buffs_target_summons(self):
+    def test_zanie_turret_buffs_target_own_summons(self):
         hero = _hero_by_short_name("Zanie")
         ultimate = hero.skill_slices.get("Ultimate")
         self.assertIsNotNone(ultimate)
@@ -306,7 +316,7 @@ class SummaryParsingTests(unittest.TestCase):
             e for e in ultimate.summon_effects if e.label == "ATK buff"
         ]
         self.assertTrue(summon_atk)
-        self.assertEqual(summon_atk[0].targeting, rs.SUMMON_BUFF_TARGETING)
+        self.assertEqual(summon_atk[0].targeting, rs.OWN_SUMMON_BUFF_TARGETING)
         repairs = hero.skill_slices.get("Skill2")
         self.assertIsNotNone(repairs)
         ally_shields = [
@@ -318,7 +328,7 @@ class SummaryParsingTests(unittest.TestCase):
         ]
         self.assertTrue(summon_shields)
         self.assertEqual(
-            summon_shields[0].targeting, rs.SUMMON_BUFF_TARGETING
+            summon_shields[0].targeting, rs.OWN_SUMMON_BUFF_TARGETING
         )
         focus = hero.skill_slices.get("Unlocks at Legendary+")
         self.assertIsNotNone(focus)
@@ -334,24 +344,24 @@ class SummaryParsingTests(unittest.TestCase):
             e for e in overload.summon_effects if e.label == "ATK buff"
         ]
         self.assertTrue(summon_atk)
-        self.assertEqual(summon_atk[0].targeting, rs.SUMMON_BUFF_TARGETING)
+        self.assertEqual(summon_atk[0].targeting, rs.OWN_SUMMON_BUFF_TARGETING)
 
-    def test_aurora_summon_damage_stays_summons_only(self):
+    def test_aurora_summon_damage_stays_all_summons(self):
         hero = _hero_by_short_name("Aurora")
         summon_dmg = [
             e for e in hero.summon_effects if e.label == "Damage dealt buff"
         ]
         self.assertTrue(summon_dmg)
         self.assertTrue(
-            all(e.targeting == rs.SUMMON_BUFF_TARGETING for e in summon_dmg)
+            all(e.targeting == rs.ALL_SUMMON_BUFF_TARGETING for e in summon_dmg)
         )
 
-    def test_aurora_haste_stays_summons_only(self):
+    def test_aurora_haste_stays_all_summons(self):
         hero = _hero_by_short_name("Aurora")
         haste = [e for e in hero.summon_effects if e.label == "Haste buff"]
         self.assertTrue(haste)
         self.assertTrue(
-            all(e.targeting == rs.SUMMON_BUFF_TARGETING for e in haste)
+            all(e.targeting == rs.ALL_SUMMON_BUFF_TARGETING for e in haste)
         )
 
     def test_solise_ally_healing_targeting(self):

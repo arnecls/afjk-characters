@@ -219,7 +219,8 @@
         "self",
         "ally",
         "enemy",
-        "summon",
+        "own_summons",
+        "all_summons",
         "anchor"
       ],
       "description": "Which faction receives the effect, or anchor when the effect is tied to a battlefield point rather than a unit selection. Mixed-faction zones use separate effects per faction. Use target_count for how many units."
@@ -570,7 +571,8 @@
             "Arc",
             "Area",
             "All units",
-            "Summons only"
+            "All summons",
+            "Owned summons"
           ],
           "description": "Legacy targeting label preserved for round-trip parity."
         },

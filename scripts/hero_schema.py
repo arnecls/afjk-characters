@@ -325,6 +325,15 @@ def _stat_from_label(label: str) -> str | None:
     return None
 
 
+def _schema_target_from_buff_targeting(targeting: str) -> str | None:
+    rs = _rs()
+    if rs.is_all_summon_buff_targeting(targeting):
+        return "all_summons"
+    if rs.is_own_summon_buff_targeting(targeting):
+        return "own_summons"
+    return None
+
+
 def _targeting_to_schema(
     targeting: str,
     category: str,
@@ -335,8 +344,10 @@ def _targeting_to_schema(
 ) -> dict[str, Any]:
     if targeting == "Self":
         return {"target": "self", "area": "single", "target_count": 1}
-    if summon:
-        return {"target": "summon", "area": "single", "target_count": 1}
+    summon_target = _schema_target_from_buff_targeting(targeting)
+    if summon or summon_target is not None:
+        target = summon_target or "own_summons"
+        return {"target": target, "area": "single", "target_count": 1}
     ally_cats = {"buff"}
     is_ally = category in ally_cats and targeting != "Single target"
     is_ally = is_ally or (
@@ -377,8 +388,10 @@ def _schema_to_targeting(
     area = effect.get("area", "single")
     if target == "self":
         return "Self"
-    if target == "summon":
-        return rs.SUMMON_BUFF_TARGETING
+    if target in ("summon", "own_summons"):
+        return rs.OWN_SUMMON_BUFF_TARGETING
+    if target == "all_summons":
+        return rs.ALL_SUMMON_BUFF_TARGETING
     if area == "arc":
         return "Arc"
     if area in ("radius", "rectangle", "line"):
@@ -693,6 +706,8 @@ def effect_to_schema(
 ) -> dict[str, Any]:
     """Convert legacy Effect to skills.schema.json effect."""
     category = effect.category
+    summon_scope = _schema_target_from_buff_targeting(effect.targeting)
+    is_summon_buff = summon or summon_scope is not None
     out: dict[str, Any] = {
         "tier": to_schema_tier(effect.tier),
         "targeting_label": effect.targeting,
@@ -702,7 +717,7 @@ def effect_to_schema(
         _targeting_to_schema(
             effect.targeting,
             category,
-            summon=summon,
+            summon=is_summon_buff,
             area_count=getattr(effect, "area_count", None),
             target_count=getattr(effect, "target_count", None),
         )
@@ -724,7 +739,7 @@ def effect_to_schema(
             stat
             and "buff" in effect.label.lower()
             and effect.numeric is not None
-            and not summon
+            and not is_summon_buff
         ):
             out["type"] = "stat_mod"
             out["stat"] = stat
@@ -733,7 +748,9 @@ def effect_to_schema(
                 out, _resolve_effect_numeric(effect, effect.label), effect.label
             )
             _apply_effect_duration(out, effect, effect.label)
-            out["label"] = _label_to_effect_label(category, effect.label, summon=summon)
+            out["label"] = _label_to_effect_label(
+                category, effect.label, summon=is_summon_buff
+            )
             return out
         if "shield" in effect.label.lower():
             out["type"] = "shield"
@@ -767,7 +784,9 @@ def effect_to_schema(
             return out
         out["type"] = "buff"
         out["name"] = _rs().canonical_effect_name(effect.label, "buff")
-        out["label"] = _label_to_effect_label(category, effect.label, summon=summon)
+        out["label"] = _label_to_effect_label(
+            category, effect.label, summon=is_summon_buff
+        )
         _apply_schema_value(
             out, _resolve_effect_numeric(effect, effect.label), effect.label
         )
@@ -1050,7 +1069,7 @@ def _build_skill_record(
                 effects.append(schema_eff)
         for eff in _merge_effects(slice_.summon_effects):
             schema_eff = effect_to_schema(
-                eff, summon=True, is_max_known=not has_scaled
+                eff, is_max_known=not has_scaled
             )
             if _schema_effect_is_complete(schema_eff):
                 effects.append(schema_eff)
@@ -1188,7 +1207,7 @@ def deserialize_hero(title: str, processed: dict[str, Any], damage_type: str) ->
             converted = schema_effect_to_effect(effect)
             if isinstance(converted, rs.CcImmunity):
                 raw_immunities.append(converted)
-            elif effect.get("target") == "summon":
+            elif effect.get("target") in ("summon", "own_summons", "all_summons"):
                 raw_summon.append(converted)
             else:
                 raw_effects.append(converted)

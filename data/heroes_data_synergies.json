@@ -1189,6 +1189,14 @@
           "score": 4.2
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 4.08
+        },
+        {
           "provider": "Tasi",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
@@ -1258,13 +1266,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.1475000000000002
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 1.0800000000000003
         },
         {
           "provider": "Valka",
@@ -1962,22 +1963,6 @@
           "score": 1.5
         },
         {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)"
-          ],
-          "score": 12.0
-        },
-        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -2528,16 +2513,8 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
         },
@@ -2548,14 +2525,6 @@
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
           ],
           "score": 12.6954
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Lyca",
@@ -3483,16 +3452,8 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
         },
@@ -3504,14 +3465,6 @@
             "ATK SPD via Haste buff (all units, high) `signature fuel`"
           ],
           "score": 12.654
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Hugin",
@@ -3552,14 +3505,6 @@
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 7.500000000000001
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "ATK via ATK buff (summons only, average)"
-          ],
-          "score": 7.08
         },
         {
           "provider": "Rowan",
@@ -3648,6 +3593,13 @@
           "provider": "Fay",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 1.0800000000000003
+        },
+        {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
         },
@@ -5214,26 +5166,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Twins",
@@ -5246,29 +5182,12 @@
           "score": 10.2603
         },
         {
-          "provider": "Solise",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "Physical DEF via DEF buff (summons only, low)",
-            "Magic DEF via DEF buff (summons only, low)"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF buff (area, high)",
             "Magic DEF via DEF buff (area, high)"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "ATK via ATK buff (summons only, average)"
-          ],
-          "score": 7.8
         },
         {
           "provider": "Hugin",
@@ -5399,6 +5318,13 @@
           "provider": "Fay",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
+          ],
+          "score": 1.7999999999999998
+        },
+        {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
           ],
           "score": 1.7999999999999998
         },
@@ -5967,6 +5893,10 @@
         },
         {
           "score": 9.0,
+          "name": "Dunlingr"
+        },
+        {
+          "score": 9.0,
           "name": "Kafra"
         },
         {
@@ -6224,6 +6154,15 @@
           "score": 7.2
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "Shield via Shield (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 7.08
+        },
+        {
           "provider": "Phraesto",
           "reasons": [
             "Shield via Shield (single target, average)",
@@ -6260,14 +6199,6 @@
             "ATK SPD via Haste buff (single target, average) `signature fuel`"
           ],
           "score": 4.2
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 4.08
         },
         {
           "provider": "Galahad",
@@ -6563,6 +6494,14 @@
           "score": 6.0
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 4.8
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -6583,13 +6522,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 2.25
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 1.7999999999999998
         },
         {
           "provider": "Thoran",
@@ -7083,26 +7015,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Twins",
@@ -7256,6 +7172,10 @@
         {
           "score": 27.4425,
           "name": "Carolina"
+        },
+        {
+          "score": 9.5625,
+          "name": "Bryon"
         },
         {
           "score": 9.5625,
@@ -8044,42 +7964,12 @@
     "Dunlingr": {
       "synergies": [
         {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)",
-            "Max HP via Max HP buff (summons only, average)",
-            "Shield via Shield (summons only, high)",
-            "Healing via Direct healing (summons only, high)"
-          ],
-          "score": 36.0
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)",
-            "Shield via Shield (summons only, average)",
-            "Healing via Lifedrain buff (summons only, high)"
-          ],
-          "score": 29.25
-        },
-        {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
-        },
-        {
-          "provider": "Solise",
-          "reasons": [
-            "Healing via Direct healing (all units, high)",
-            "ATK via ATK buff (summons only, low)",
-            "Shield via Shield (summons only, average)"
-          ],
-          "score": 13.5
         },
         {
           "provider": "Twins",
@@ -8099,9 +7989,9 @@
           "score": 9.0
         },
         {
-          "provider": "Shemira",
+          "provider": "Florabelle",
           "reasons": [
-            "Shield via Shield (summons only, average)"
+            "Shield via Shield (all summons, average)"
           ],
           "score": 6.0
         },
@@ -8139,6 +8029,13 @@
           "provider": "Saida",
           "reasons": [
             "Shield via Shield (multiple targets, high)"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Solise",
+          "reasons": [
+            "Healing via Direct healing (all units, high)"
           ],
           "score": 4.5
         },
@@ -8201,13 +8098,6 @@
           "reasons": [
             "Max HP via Max HP buff (single target, average)",
             "Healing via Direct healing (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Talene",
-          "reasons": [
-            "Healing via Lifedrain buff (summons only, average)"
           ],
           "score": 6.0
         },
@@ -8416,6 +8306,10 @@
         },
         {
           "score": 4.5,
+          "name": "Damian"
+        },
+        {
+          "score": 4.5,
           "name": "Frieren"
         },
         {
@@ -8437,10 +8331,6 @@
         {
           "score": 3.75,
           "name": "Valka"
-        },
-        {
-          "score": 3.525,
-          "name": "Hammie"
         },
         {
           "score": 3.0,
@@ -9480,6 +9370,10 @@
           "name": "Mirael"
         },
         {
+          "score": 7.08,
+          "name": "Phraesto"
+        },
+        {
           "score": 6.705,
           "name": "Marcille"
         },
@@ -9711,6 +9605,10 @@
         {
           "score": 9.0,
           "name": "Talene"
+        },
+        {
+          "score": 4.5,
+          "name": "Dunlingr"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -10471,6 +10369,14 @@
           "score": 7.5
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 5.4
+        },
+        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`"
@@ -10518,13 +10424,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 2.5500000000000003
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 2.4000000000000004
         },
         {
           "provider": "Valka",
@@ -10597,6 +10496,15 @@
       "replacements": {
         "buff": [
           {
+            "name": "Gunnar",
+            "score": 0.6923,
+            "matches": [
+              "ATK",
+              "ATK SPD",
+              "Vitality buff"
+            ]
+          },
+          {
             "name": "Dunlingr",
             "score": 0.6923,
             "matches": [
@@ -10606,14 +10514,6 @@
           },
           {
             "name": "Twins",
-            "score": 0.6462,
-            "matches": [
-              "ATK",
-              "Vitality buff"
-            ]
-          },
-          {
-            "name": "Mikola",
             "score": 0.6462,
             "matches": [
               "ATK",
@@ -10731,18 +10631,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Twins",
@@ -10850,48 +10742,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 29.25,
-          "name": "Dunlingr"
-        },
-        {
-          "score": 29.25,
-          "name": "Phraesto"
-        },
-        {
           "score": 14.5,
           "name": "Kazim"
         },
         {
-          "score": 14.25,
-          "name": "Aurora"
+          "score": 6.0,
+          "name": "Dunlingr"
         },
         {
-          "score": 14.25,
-          "name": "Berial"
-        },
-        {
-          "score": 14.25,
-          "name": "Bryon"
-        },
-        {
-          "score": 14.25,
-          "name": "Cecia"
-        },
-        {
-          "score": 14.25,
-          "name": "Damian"
-        },
-        {
-          "score": 14.25,
-          "name": "Hodgkin"
-        },
-        {
-          "score": 14.25,
-          "name": "Laios"
-        },
-        {
-          "score": 14.25,
-          "name": "Mehira"
+          "score": 6.0,
+          "name": "Phraesto"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -11120,6 +10980,13 @@
       "replacements": {
         "buff": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "ATK"
+            ]
+          },
+          {
             "name": "Contess",
             "score": 1.0,
             "matches": [
@@ -11128,13 +10995,6 @@
           },
           {
             "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Twins",
             "score": 1.0,
             "matches": [
               "ATK"
@@ -12327,12 +12187,20 @@
       ],
       "beneficiaries": [
         {
-          "score": 12.75,
+          "score": 33.0,
           "name": "Silven"
+        },
+        {
+          "score": 4.8,
+          "name": "Cyran"
         },
         {
           "score": 4.08,
           "name": "Shemira"
+        },
+        {
+          "score": 3.81,
+          "name": "Hammie"
         },
         {
           "score": 3.0,
@@ -12353,11 +12221,11 @@
       "replacements": {
         "buff": [
           {
-            "name": "Twins",
-            "score": 0.5,
+            "name": "Aliceth",
+            "score": 0.8519,
             "matches": [
-              "Shield",
-              "Vitality buff"
+              "Attack range buff",
+              "ATK"
             ]
           }
         ],
@@ -12785,6 +12653,14 @@
           "score": 4.5375
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 3.81
+        },
+        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK buff (single target, low)",
@@ -12906,13 +12782,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 0.860625
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 0.8099999999999999
         },
         {
           "provider": "Valka",
@@ -13773,6 +13642,14 @@
           "score": 4.2
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 4.08
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "ATK SPD via Haste buff (single target, high) `signature fuel`"
@@ -13870,13 +13747,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.1475000000000002
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 1.0800000000000003
         },
         {
           "provider": "Valka",
@@ -14504,6 +14374,10 @@
           "name": "Temesia"
         },
         {
+          "score": 4.5,
+          "name": "Phraesto"
+        },
+        {
           "score": 3.0,
           "name": "Callan"
         },
@@ -14526,6 +14400,14 @@
       "replacements": {
         "buff": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "ATK",
+              "Shield"
+            ]
+          },
+          {
             "name": "Contess",
             "score": 1.0,
             "matches": [
@@ -14535,14 +14417,6 @@
           },
           {
             "name": "Twins",
-            "score": 1.0,
-            "matches": [
-              "ATK",
-              "Shield"
-            ]
-          },
-          {
-            "name": "Hugin",
             "score": 1.0,
             "matches": [
               "ATK",
@@ -14708,26 +14582,10 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Twins",
@@ -15100,11 +14958,19 @@
         },
         {
           "score": 6.75,
+          "name": "Cecia"
+        },
+        {
+          "score": 6.75,
           "name": "Gwyneth"
         },
         {
           "score": 6.75,
           "name": "Mirael"
+        },
+        {
+          "score": 6.0,
+          "name": "Damian"
         },
         {
           "score": 6.0,
@@ -15352,6 +15218,15 @@
           "score": 16.521428571428572
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
+            "Enables Multiple debuffs on target via 2 debuff types"
+          ],
+          "score": 15.0
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
@@ -15401,14 +15276,6 @@
             "Enables Multiple debuffs on target via 2 debuff types"
           ],
           "score": 12.6
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "Enables Multiple debuffs on target via 2 debuff types"
-          ],
-          "score": 12.0
         },
         {
           "provider": "Frieren",
@@ -16126,6 +15993,14 @@
           "score": 5.25
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 4.5
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -16182,13 +16057,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.59375
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Valka",
@@ -17047,6 +16915,10 @@
         }
       ],
       "beneficiaries": [
+        {
+          "score": 7.5,
+          "name": "Aurora"
+        },
         {
           "score": 7.5,
           "name": "Frieren"
@@ -18769,6 +18641,13 @@
       "replacements": {
         "buff": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "ATK"
+            ]
+          },
+          {
             "name": "Contess",
             "score": 1.0,
             "matches": [
@@ -18777,13 +18656,6 @@
           },
           {
             "name": "Frieren",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "ATK"
@@ -18892,27 +18764,10 @@
           "score": 20.904
         },
         {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)",
-            "Max HP via Max HP buff (summons only, average)"
-          ],
-          "score": 18.0
-        },
-        {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
         },
@@ -18937,15 +18792,6 @@
           "provider": "Shakir",
           "reasons": [
             "ATK SPD via Haste buff (multiple targets, high) `signature fuel`"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Solise",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "Physical DEF via DEF buff (summons only, low)",
-            "Magic DEF via DEF buff (summons only, low)"
           ],
           "score": 9.0
         },
@@ -20209,6 +20055,14 @@
           "score": 4.725
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 4.08
+        },
+        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -20291,13 +20145,6 @@
             "Energy via Energy recovery (single target, average) `signature fuel`"
           ],
           "score": 1.2636
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 1.0800000000000003
         },
         {
           "provider": "Valka",
@@ -22566,6 +22413,10 @@
         },
         {
           "score": 11.687142857142858,
+          "name": "Mehira"
+        },
+        {
+          "score": 11.687142857142858,
           "name": "Soren"
         },
         {
@@ -23205,6 +23056,13 @@
       "replacements": {
         "buff": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "ATK"
+            ]
+          },
+          {
             "name": "Contess",
             "score": 1.0,
             "matches": [
@@ -23213,13 +23071,6 @@
           },
           {
             "name": "Frieren",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "ATK"
@@ -23346,8 +23197,8 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
         },
@@ -23358,23 +23209,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
-        },
-        {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)",
-            "Max HP via Max HP buff (summons only, average)"
-          ],
-          "score": 18.0
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
         },
         {
           "provider": "Rowan",
@@ -23560,10 +23394,6 @@
         {
           "score": 3.7500000000000004,
           "name": "Sylphira"
-        },
-        {
-          "score": 2.25,
-          "name": "Cyran"
         },
         {
           "score": 2.25,
@@ -23993,6 +23823,10 @@
           "name": "Fay"
         },
         {
+          "score": 10.5,
+          "name": "Laios"
+        },
+        {
           "score": 10.125,
           "name": "Pang"
         },
@@ -24015,6 +23849,10 @@
         {
           "score": 8.25,
           "name": "Temesia"
+        },
+        {
+          "score": 7.5,
+          "name": "Aurora"
         },
         {
           "score": 7.5,
@@ -25222,6 +25060,16 @@
           "score": 12.0
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
+            "Shield via Shield (single target, average)",
+            "Enables CC on enemies via Stun (single target, low)"
+          ],
+          "score": 11.4
+        },
+        {
           "provider": "Zandrok",
           "reasons": [
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`",
@@ -25261,15 +25109,6 @@
             "Enables CC on enemies via Bind (single target, average)"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "Shield via Shield (single target, average)",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 8.4
         },
         {
           "provider": "Aurora",
@@ -26479,6 +26318,10 @@
         },
         {
           "score": 7.521428571428572,
+          "name": "Berial"
+        },
+        {
+          "score": 7.521428571428572,
           "name": "Hewynn"
         },
         {
@@ -27123,6 +26966,14 @@
           "score": 4.78125
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 4.5
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -27215,13 +27066,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.59375
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Valka",
@@ -27868,41 +27712,10 @@
     "Phraesto": {
       "synergies": [
         {
-          "provider": "Zanie",
-          "reasons": [
-            "ATK via ATK buff (summons only, high)",
-            "ATK SPD via ATK SPD buff (summons only, low)",
-            "Shield via Shield (summons only, high)",
-            "Healing via Direct healing (summons only, high)"
-          ],
-          "score": 30.0
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)",
-            "Shield via Shield (summons only, average)",
-            "Healing via Lifedrain buff (summons only, high)"
-          ],
-          "score": 29.25
-        },
-        {
-          "provider": "Solise",
-          "reasons": [
-            "Healing via Direct healing (all units, high)",
-            "ATK via ATK buff (summons only, low)",
-            "Shield via Shield (summons only, average)",
-            "Physical DEF via DEF buff (summons only, low)",
-            "Magic DEF via DEF buff (summons only, low)"
-          ],
-          "score": 19.5
-        },
-        {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
         },
@@ -27925,9 +27738,9 @@
           "score": 7.08
         },
         {
-          "provider": "Shemira",
+          "provider": "Florabelle",
           "reasons": [
-            "Shield via Shield (summons only, average)"
+            "Shield via Shield (all summons, average)"
           ],
           "score": 6.0
         },
@@ -27943,6 +27756,13 @@
           "provider": "Saida",
           "reasons": [
             "Shield via Shield (multiple targets, high)"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Solise",
+          "reasons": [
+            "Healing via Direct healing (all units, high)"
           ],
           "score": 4.5
         },
@@ -28034,13 +27854,6 @@
             "Shield via Shield (single target, average)",
             "Physical DEF via DEF buff (single target, low)",
             "Magic DEF via DEF buff (single target, low)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Talene",
-          "reasons": [
-            "Healing via Lifedrain buff (summons only, average)"
           ],
           "score": 6.0
         },
@@ -28830,6 +28643,10 @@
         {
           "score": 9.706457142857143,
           "name": "Sylphira"
+        },
+        {
+          "score": 8.206457142857142,
+          "name": "Berial"
         },
         {
           "score": 8.206457142857142,
@@ -29734,6 +29551,10 @@
         },
         {
           "score": 12.6954,
+          "name": "Mehira"
+        },
+        {
+          "score": 12.6954,
           "name": "Mikola"
         },
         {
@@ -29755,6 +29576,10 @@
         {
           "score": 3.2399999999999998,
           "name": "Harak"
+        },
+        {
+          "score": 3.2399999999999998,
+          "name": "Hodgkin"
         },
         {
           "score": 3.2399999999999998,
@@ -31962,6 +31787,10 @@
           "name": "Soren"
         },
         {
+          "score": 9.0,
+          "name": "Laios"
+        },
+        {
           "score": 8.4375,
           "name": "Atalanta"
         },
@@ -32375,12 +32204,12 @@
           "name": "Shadewing"
         },
         {
-          "score": 6.0,
-          "name": "Dunlingr"
+          "score": 5.0,
+          "name": "Bonnie"
         },
         {
-          "score": 6.0,
-          "name": "Phraesto"
+          "score": 5.0,
+          "name": "Himmel"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -32494,6 +32323,14 @@
           "score": 37.455
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
+            "Grants 6 distinct stat buffs to Silven (start of battle)"
+          ],
+          "score": 33.0
+        },
+        {
           "provider": "Contess",
           "reasons": [
             "Grants 4 distinct stat buffs to Silven"
@@ -32514,14 +32351,6 @@
             "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 13.5
-        },
-        {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`",
-            "Grants 4 distinct stat buffs to Silven"
-          ],
-          "score": 12.75
         },
         {
           "provider": "Himmel",
@@ -33677,6 +33506,10 @@
         },
         {
           "score": 3.2399999999999998,
+          "name": "Hodgkin"
+        },
+        {
+          "score": 3.2399999999999998,
           "name": "Nara"
         },
         {
@@ -33818,20 +33651,8 @@
       "synergies": [],
       "beneficiaries": [
         {
-          "score": 19.5,
-          "name": "Phraesto"
-        },
-        {
-          "score": 13.5,
-          "name": "Dunlingr"
-        },
-        {
           "score": 13.5,
           "name": "Silven"
-        },
-        {
-          "score": 9.0,
-          "name": "Cecia"
         },
         {
           "score": 9.0,
@@ -35234,6 +35055,14 @@
           "score": 4.725
         },
         {
+          "provider": "Gunnar",
+          "reasons": [
+            "ATK via ATK buff (single target, average)",
+            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
+          ],
+          "score": 4.08
+        },
+        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -35288,13 +35117,6 @@
           "score": 1.2636
         },
         {
-          "provider": "Gunnar",
-          "reasons": [
-            "ATK SPD via ATK SPD buff (single target, low) `signature fuel`"
-          ],
-          "score": 1.0800000000000003
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD buff (multiple targets, low) `signature fuel`"
@@ -35337,6 +35159,10 @@
       "beneficiaries": [
         {
           "score": 11.25,
+          "name": "Bryon"
+        },
+        {
+          "score": 11.25,
           "name": "Viperian"
         },
         {
@@ -35366,6 +35192,10 @@
         {
           "score": 8.4375,
           "name": "Twins"
+        },
+        {
+          "score": 6.75,
+          "name": "Cecia"
         },
         {
           "score": 6.75,
@@ -36489,6 +36319,10 @@
         },
         {
           "score": 9.0,
+          "name": "Cecia"
+        },
+        {
+          "score": 9.0,
           "name": "Granny Dahnie"
         },
         {
@@ -37482,6 +37316,13 @@
       "replacements": {
         "buff": [
           {
+            "name": "Gunnar",
+            "score": 1.0,
+            "matches": [
+              "ATK"
+            ]
+          },
+          {
             "name": "Contess",
             "score": 1.0,
             "matches": [
@@ -37490,13 +37331,6 @@
           },
           {
             "name": "Frieren",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Himmel",
             "score": 1.0,
             "matches": [
               "ATK"
@@ -38295,6 +38129,10 @@
         {
           "score": 1.5,
           "name": "Baelran"
+        },
+        {
+          "score": 1.5,
+          "name": "Florabelle"
         },
         {
           "score": 1.5,
@@ -39373,8 +39211,8 @@
         {
           "provider": "Aurora",
           "reasons": [
-            "ATK via Damage dealt buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
+            "ATK via Damage dealt buff (all summons, low)",
+            "ATK SPD via Haste buff (all summons, high)"
           ],
           "score": 14.25
         },
@@ -39407,14 +39245,6 @@
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
           ],
           "score": 1.875
-        },
-        {
-          "provider": "Florabelle",
-          "reasons": [
-            "ATK via ATK buff (summons only, low)",
-            "ATK SPD via Haste buff (summons only, high)"
-          ],
-          "score": 14.25
         },
         {
           "provider": "Kazim",
@@ -39529,48 +39359,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 36.0,
-          "name": "Dunlingr"
-        },
-        {
-          "score": 30.0,
-          "name": "Phraesto"
-        },
-        {
-          "score": 18.0,
-          "name": "Laios"
-        },
-        {
-          "score": 18.0,
-          "name": "Mehira"
-        },
-        {
           "score": 12.0,
-          "name": "Aurora"
+          "name": "Shadewing"
         },
         {
-          "score": 12.0,
-          "name": "Berial"
+          "score": 3.5999999999999996,
+          "name": "Indris"
         },
         {
-          "score": 12.0,
-          "name": "Bryon"
-        },
-        {
-          "score": 12.0,
-          "name": "Cecia"
-        },
-        {
-          "score": 12.0,
-          "name": "Damian"
-        },
-        {
-          "score": 12.0,
-          "name": "Florabelle"
-        },
-        {
-          "score": 12.0,
-          "name": "Hodgkin"
+          "score": 3.0,
+          "name": "Carolina"
         }
       ],
       "beneficiary_overflow_reasons": [

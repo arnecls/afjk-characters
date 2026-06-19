@@ -1519,6 +1519,8 @@ def score_summon_synergy(
         for effect in provider.summon_effects:
             if effect.category != "buff" or effect.label not in allowed:
                 continue
+            if _rs.is_own_summon_buff_targeting(effect.targeting):
+                continue
             if effect.conditional == "rare":
                 continue
             mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
@@ -1530,7 +1532,7 @@ def score_summon_synergy(
                 if effect.conditional
                 else ""
             )
-            detail = f"{effect.label} (summons only, {effect.magnitude}{cond})"
+            detail = f"{effect.label} (all summons, {effect.magnitude}{cond})"
             if best_for_stat is None or pts > best_for_stat[0]:
                 best_for_stat = (pts, detail, effect.label)
 

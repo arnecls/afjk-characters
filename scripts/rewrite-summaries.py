@@ -945,12 +945,51 @@ _RESTORE_BUFF_LABELS = frozenset(
 )
 
 
-def _clause_targets_summon_units(clause: str) -> bool:
-    """True when a clause buffs/heals/shields allied summons or turrets."""
+def _clause_targets_all_summons(clause: str) -> bool:
+    """True when a clause buffs any allied summon, not only the caster's."""
     t = clause.lower()
+    if re.search(r"\ball (?:inspired )?allied summons?\b", t):
+        return True
+    if re.search(r"\bboosting the damage of all allied summons\b", t):
+        return True
     if re.search(
-        r"\b(?:allied |all )?summons?\b", t
-    ) or re.search(r"\b(?:giant )?bulbsprites?\b", t):
+        r"\b(?:increase all allied summons'? damage|"
+        r"allied summons'? damage dealt by)\b",
+        t,
+    ):
+        return True
+    if re.search(
+        r"grants?.{0,45}(?:natural )?blessing.{0,45}(?:to |for )"
+        r"(?:allied )?summons?\b",
+        t,
+    ):
+        return True
+    if re.search(
+        r"\b(?:allied )?summons? upon their entrance to the battlefield\b", t
+    ):
+        return True
+    if re.search(
+        r"\b(?:allied )?summons? (?:gain|gains|receive|get |inherit)\b", t
+    ) and not re.search(
+        r"\b(?:giant )?bulbsprites?\b|"
+        r"\b(?:her|his|their) (?:\d+ )?(?:laser |gun )?turrets?\b|"
+        r"\ballied summons? in their giant form\b|"
+        r"\bfeeds? the allied summon\b|"
+        r"\btransforms? (?:the |that )?summon\b",
+        t,
+    ):
+        return True
+    return False
+
+
+def _clause_targets_own_summon_units(clause: str) -> bool:
+    """True when a clause buffs/heals/shields the caster's summons only."""
+    t = clause.lower()
+    if _clause_targets_all_summons(clause):
+        return False
+    if re.search(r"\b(?:giant )?bulbsprites?\b", t):
+        return True
+    if re.search(r"\b(?:her|his|their) summons?\b", t):
         return True
     if re.search(
         r"\b(?:her|his|their|one of (?:her|his|their)) "
@@ -974,7 +1013,22 @@ def _clause_targets_summon_units(clause: str) -> bool:
         r"\bturret\b", t
     ):
         return True
+    if re.search(r"\ballied summons? in their giant form\b", t):
+        return True
+    if re.search(r"\bfeeds? the allied summon\b", t):
+        return True
+    if re.search(r"\btransforms? (?:the |that )?summon\b", t):
+        return True
+    if re.search(r"\b(?:life drain|haste) in giant form\b", t):
+        return True
     return False
+
+
+def _clause_targets_summon_units(clause: str) -> bool:
+    """True when a clause applies to any summon target (own or all)."""
+    return _clause_targets_all_summons(clause) or _clause_targets_own_summon_units(
+        clause
+    )
 
 
 def _clause_also_targets_caster(clause: str) -> bool:
@@ -994,15 +1048,6 @@ def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool
         return not _clause_also_targets_caster(clause)
     if re.search(r"\bnon-summoned allies\b", clause):
         return False
-    if re.search(
-        r"\b(?:allied |all )?summons? (?:gain|gains|receive|get |inherit)\b",
-        clause,
-    ):
-        return True
-    if re.search(r"\ballied summons?\b", clause) and not _has_explicit_ally_buff(
-        clause, label
-    ):
-        return True
     if re.search(r"\b(?:giant )?bulbsprites?\b", clause):
         return True
     if re.search(r"\bfeeds? the allied summon\b", clause):
@@ -1014,8 +1059,6 @@ def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool
     if re.search(r"\btransforms? (?:the |that )?summon\b", clause):
         return True
     if re.search(r"\b(?:life drain|haste) in giant form\b", clause):
-        return True
-    if re.search(r"\bboosting the damage of all allied summons\b", clause):
         return True
     if re.search(
         r"\bshield granted by this skill\b", window
@@ -1145,37 +1188,85 @@ def _should_add_buff(text: str, label: str, pattern: str) -> bool:
 
 
 SUMMON_ONLY_BUFF_LABELS = frozenset()
-SUMMON_BUFF_TARGETING = "Summons only"
+OWN_SUMMON_BUFF_TARGETING = "Owned summons"
+ALL_SUMMON_BUFF_TARGETING = "All summons"
+# Legacy alias for tests migrating from the single summon bucket.
+SUMMON_BUFF_TARGETING = OWN_SUMMON_BUFF_TARGETING
+
+
+def is_own_summon_buff_targeting(targeting: str) -> bool:
+    lower = targeting.strip().lower()
+    return lower in ("owned summons", "summons only", "own summons")
+
+
+def is_all_summon_buff_targeting(targeting: str) -> bool:
+    return targeting.strip().lower() == "all summons"
+
+
+def is_summon_buff_targeting(targeting: str) -> bool:
+    return is_own_summon_buff_targeting(targeting) or is_all_summon_buff_targeting(
+        targeting
+    )
+
+
+def _summon_buff_targeting_for_match(
+    t: str, label: str, match: re.Match[str]
+) -> str | None:
+    if _buff_match_is_enemy_stat(t, label, match):
+        return None
+    clause = _clause_around(t, match.start())
+    if _buff_match_is_summon_only(t, label, match):
+        if _clause_targets_all_summons(clause):
+            return ALL_SUMMON_BUFF_TARGETING
+        return OWN_SUMMON_BUFF_TARGETING
+    if _clause_also_targets_caster(clause):
+        if _clause_targets_own_summon_units(clause):
+            return OWN_SUMMON_BUFF_TARGETING
+        if _clause_targets_all_summons(clause):
+            return ALL_SUMMON_BUFF_TARGETING
+    return None
+
+
+def _resolve_summon_buff_targeting_from_text(
+    text: str, label: str, pattern: str
+) -> str | None:
+    """Pick own vs all summon targeting from the best matching clause."""
+    t = text.lower()
+    if not re.search(pattern, t):
+        return None
+    saw_all = False
+    saw_own = False
+    for m in re.finditer(pattern, t):
+        scope = _summon_buff_targeting_for_match(t, label, m)
+        if scope == ALL_SUMMON_BUFF_TARGETING:
+            saw_all = True
+        elif scope == OWN_SUMMON_BUFF_TARGETING:
+            saw_own = True
+    if saw_all and not saw_own:
+        return ALL_SUMMON_BUFF_TARGETING
+    if saw_own:
+        return OWN_SUMMON_BUFF_TARGETING
+    if saw_all:
+        return ALL_SUMMON_BUFF_TARGETING
+    return None
 
 
 def _matching_summon_buff_match(text: str, label: str, pattern: str) -> bool:
     """True when a buff pattern matches but only for allied summons."""
-    t = text.lower()
-    if not re.search(pattern, t):
-        return False
-    if label in SUMMON_ONLY_BUFF_LABELS:
-        return bool(
-            re.search(
-                r"\b(?:allied |all )?summons?|summons? in their\b", t
-            )
-        )
-    for m in re.finditer(pattern, t):
-        if _buff_match_is_enemy_stat(t, label, m):
-            continue
-        clause = _clause_around(t, m.start())
-        if _buff_match_is_summon_only(t, label, m):
-            return True
-        if _clause_targets_summon_units(clause):
-            return True
-    return False
+    return _resolve_summon_buff_targeting_from_text(text, label, pattern) is not None
 
 
 def add_summon_buff_effect(
-    effects: list[Effect], label: str, tier: str, text: str
+    effects: list[Effect],
+    label: str,
+    tier: str,
+    text: str,
+    *,
+    targeting: str = OWN_SUMMON_BUFF_TARGETING,
 ) -> None:
     """Record a buff that applies to allied summons, not the whole team."""
-    key = ("buff", label)
-    existing = [e for e in effects if (e.category, e.label) == key]
+    key = ("buff", label, targeting)
+    existing = [e for e in effects if (e.category, e.label, e.targeting) == key]
     n = extract_number(text, label)
     cond = _buff_condition("buff", text)
     if existing:
@@ -1196,7 +1287,7 @@ def add_summon_buff_effect(
             category="buff",
             label=label,
             tier=tier,
-            targeting=SUMMON_BUFF_TARGETING,
+            targeting=targeting,
             numeric=n,
             qualitative=text,
             conditional=cond,
@@ -6045,8 +6136,10 @@ def analyze_text(
                 scope=scope,
                 source_section=source_section,
             )
-        if _matching_summon_buff_match(text, label, pat):
-            add_summon_buff_effect(summon_effects, label, tier, text)
+        if scope := _resolve_summon_buff_targeting_from_text(text, label, pat):
+            add_summon_buff_effect(
+                summon_effects, label, tier, text, targeting=scope
+            )
     for pat, label in DEBUFF_RULES_COMPILED:
         if label == "DoT" and _text_has_dot_damage(text):
             continue
@@ -6832,12 +6925,18 @@ def format_effect_magnitude(effect: Effect) -> str:
 
 def collect_hero_buff_effects(hero: Hero) -> list[Effect]:
     items = [
-        e for e in hero.effects
-        if e.category == "buff" and e.targeting != "Self"
+        e
+        for e in hero.effects
+        if e.category == "buff"
+        and e.targeting != "Self"
+        and not is_own_summon_buff_targeting(e.targeting)
     ]
     items.extend(
-        e for e in hero.summon_effects
-        if e.category == "buff" and e.targeting != "Self"
+        e
+        for e in hero.summon_effects
+        if e.category == "buff"
+        and e.targeting != "Self"
+        and not is_own_summon_buff_targeting(e.targeting)
     )
     return sorted(items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label))
 
@@ -6849,8 +6948,10 @@ def collect_summary_buff_effects(hero: Hero) -> list[Effect]:
 
 def _format_buff_targeting_phrase(targeting: str) -> str:
     lower = targeting.strip().lower()
-    if lower == "summons only":
-        return "to summons"
+    if lower == "all summons":
+        return "to all summons"
+    if lower in ("owned summons", "summons only", "own summons"):
+        return "to owned summons"
     if lower == "single target":
         return "to single targets"
     if lower == "multiple targets":
@@ -9392,14 +9493,16 @@ def _skill_card_tag_for_effect(label: str, targeting: str) -> str:
     text = _skill_card_tag_label(label)
     if targeting == "Self":
         return f"{text} — Self"
-    if targeting == SUMMON_BUFF_TARGETING:
-        return f"{text} — Summon"
+    if is_all_summon_buff_targeting(targeting):
+        return f"{text} — Summons"
+    if is_own_summon_buff_targeting(targeting):
+        return f"{text} — Owned"
     return text
 
 
 def _canonical_skill_card_chip_key(tag: str) -> str:
     text = re.sub(
-        r"\s*(?:—|–)\s*(?:self|summon)\s*$",
+        r"\s*(?:—|–)\s*(?:self|owned|summons?)\s*$",
         "",
         tag.strip(),
         flags=re.I,

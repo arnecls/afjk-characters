@@ -103,7 +103,7 @@ class RenderSiteTests(unittest.TestCase):
         self.assertIn("Haste buff", labels)
         self.assertIn("Invincible", labels)
         haste = next(item for item in buffs["buffs"] if item["label"] == "Haste buff")
-        self.assertEqual(haste["targetingType"], "Summons only")
+        self.assertEqual(haste["targetingType"], "All summons")
         self.assertIn(haste["quality"], ("low", "average", "high"))
         self.assertNotIn("Buffs provided by Aurora", aurora["sections"]["summary"])
         zanie = next(

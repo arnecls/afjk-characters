@@ -3857,9 +3857,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "All summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "all_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -3875,7 +3875,7 @@
           ],
           "skill_card_tags": [
             "Magic",
-            "Haste buff — Summon",
+            "Haste buff — Summons",
             "Invincible — Self",
             "Haste debuff"
           ]
@@ -4084,9 +4084,9 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Summons only",
+              "targeting_label": "All summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "all_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -4113,7 +4113,7 @@
           "tier": "mythic+",
           "skill_range": 3,
           "skill_card_tags": [
-            "Damage dealt buff — Summon",
+            "Damage dealt buff — Summons",
             "Unaffected — Self"
           ]
         },
@@ -15131,9 +15131,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -15148,9 +15148,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -15166,8 +15166,8 @@
           ],
           "cooldown": 12.0,
           "skill_card_tags": [
-            "Haste buff — Summon",
-            "Lifedrain buff — Summon"
+            "Haste buff — Owned",
+            "Lifedrain buff — Owned"
           ]
         },
         "Tiny Sharpshooter": {
@@ -15318,9 +15318,9 @@
           "effects": [
             {
               "tier": "ex+10",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -15335,9 +15335,9 @@
             },
             {
               "tier": "ex+10",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -15347,9 +15347,9 @@
           ],
           "tier": "mythic+",
           "skill_card_tags": [
-            "Shield — Summon",
-            "Haste buff — Summon",
-            "Lifedrain buff — Summon"
+            "Shield — Summons",
+            "Haste buff — Owned",
+            "Lifedrain buff — Owned"
           ]
         },
         "Enhance Force": {
@@ -15373,9 +15373,9 @@
           "effects": [
             {
               "tier": "supreme+",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -15395,7 +15395,7 @@
           ],
           "tier": "supreme+",
           "skill_card_tags": [
-            "ATK buff — Summon",
+            "ATK buff — Owned",
             "Immune — Self"
           ]
         }
@@ -17720,6 +17720,41 @@
           "effects": [
             {
               "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "stat_mod",
+              "stat": "atk",
+              "name": "ATK",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Attack range",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 550.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
@@ -17767,48 +17802,14 @@
               ],
               "duration": 15,
               "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Summons only",
-              "is_max_known": true,
-              "target": "summon",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_summon_offensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 25.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Summons only",
-              "is_max_known": true,
-              "target": "summon",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Attack range",
-              "label": "buff_summon_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 25.0
-                }
-              ]
             }
           ],
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
             "DoT",
-            "ATK buff — Summon",
-            "Attack range buff — Summon",
+            "ATK buff",
+            "Attack range buff",
             "Vitality debuff"
           ]
         },
@@ -46233,8 +46234,7 @@
           "cooldown": 8.0,
           "initial_cooldown": 4.0,
           "skill_card_tags": [
-            "Max HP-based damage",
-            "Shield — Summon"
+            "Max HP-based damage"
           ]
         },
         "Hero Focus": {
@@ -48493,9 +48493,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -48515,7 +48515,7 @@
           ],
           "skill_card_tags": [
             "HoT",
-            "ATK buff — Summon",
+            "ATK buff — Owned",
             "Unaffected — Self"
           ]
         },
@@ -48623,9 +48623,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "shield",
@@ -48642,7 +48642,7 @@
           "initial_cooldown": 3.0,
           "skill_card_tags": [
             "Direct healing",
-            "Shield — Summon"
+            "Shield — Owned"
           ]
         },
         "Hero Focus": {
@@ -48734,9 +48734,9 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -48746,7 +48746,7 @@
           ],
           "tier": "mythic+",
           "skill_card_tags": [
-            "DEF buff — Summon"
+            "DEF buff — Owned"
           ]
         },
         "Enhance Force": {
@@ -50492,14 +50492,14 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "summon",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_summon_stat",
+              "label": "buff_stat",
               "value": [
                 {
                   "type": "flat",
@@ -50512,7 +50512,7 @@
           "skill_card_tags": [
             "Magic",
             "Direct healing — Self",
-            "Lifedrain buff — Summon"
+            "Lifedrain buff — Self"
           ]
         },
         "Blazing Ascension": {
@@ -57284,9 +57284,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -57302,9 +57302,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -57448,9 +57448,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "shield",
@@ -57464,9 +57464,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -57483,8 +57483,8 @@
           "cooldown": 12.0,
           "initial_cooldown": 6.0,
           "skill_card_tags": [
-            "Direct healing — Summon",
-            "Shield — Summon"
+            "Direct healing — Owned",
+            "Shield — Owned"
           ]
         },
         "Hero Focus": {
@@ -57573,9 +57573,9 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -57590,9 +57590,9 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Summons only",
+              "targeting_label": "Owned summons",
               "is_max_known": true,
-              "target": "summon",
+              "target": "own_summons",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -57610,8 +57610,8 @@
           "cooldown": 12.0,
           "initial_cooldown": 15.0,
           "skill_card_tags": [
-            "ATK buff — Summon",
-            "Max HP buff — Summon"
+            "ATK buff — Owned",
+            "Max HP buff — Owned"
           ]
         },
         "Enhance Force": {
