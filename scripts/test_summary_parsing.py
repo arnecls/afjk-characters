@@ -282,6 +282,17 @@ class SummaryParsingTests(unittest.TestCase):
             self.assertTrue(buffs, label)
             self.assertEqual(buffs[0].targeting, rs.SUMMON_BUFF_TARGETING)
 
+    def test_kulu_blast_mania_penetration_is_self(self):
+        hero = _hero_by_short_name("Kulu")
+        ex = hero.skill_slices.get("Ex. Skill")
+        self.assertIsNotNone(ex)
+        pen = [
+            e for e in ex.effects if e.label == "DEF Penetration buff"
+        ]
+        self.assertTrue(pen)
+        self.assertEqual(pen[0].targeting, "Self")
+        self.assertEqual(pen[0].numeric, 35.0)
+
     def test_zanie_turret_buffs_target_summons(self):
         hero = _hero_by_short_name("Zanie")
         ultimate = hero.skill_slices.get("Ultimate")

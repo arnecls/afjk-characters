@@ -8327,9 +8327,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -8358,7 +8358,7 @@
           "skill_range": 5,
           "skill_card_tags": [
             "Physical",
-            "DEF Penetration buff"
+            "DEF Penetration buff — Self"
           ]
         },
         "Hero Focus": {
@@ -25477,8 +25477,15 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
-              "type": "buff",
+              "type": "stat_mod",
+              "stat": "def_penetration",
               "name": "DEF Penetration",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 50.0
+                }
+              ],
               "label": "buff_defensive"
             }
           ],
@@ -26883,20 +26890,27 @@
             },
             {
               "tier": "ex+15",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "buff",
+              "type": "stat_mod",
+              "stat": "def_penetration",
               "name": "DEF Penetration",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 35.0
+                }
+              ],
               "label": "buff_defensive"
             }
           ],
           "tier": "mythic+",
           "skill_card_tags": [
             "Physical",
-            "DEF Penetration buff",
+            "DEF Penetration buff — Self",
             "Damage taken debuff"
           ]
         },
@@ -28540,20 +28554,27 @@
           "effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "buff",
+              "type": "stat_mod",
+              "stat": "def_penetration",
               "name": "DEF Penetration",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 16.0
+                }
+              ],
               "label": "buff_defensive"
             }
           ],
           "tier": "legendary+",
           "skill_range": 1,
           "skill_card_tags": [
-            "DEF Penetration buff"
+            "DEF Penetration buff — Self"
           ]
         },
         "Rainfall Bliss": {
@@ -38343,8 +38364,15 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "buff",
+              "type": "stat_mod",
+              "stat": "def_penetration",
               "name": "DEF Penetration",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ],
               "label": "buff_defensive"
             }
           ],
@@ -46729,13 +46757,20 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "buff",
+              "type": "stat_mod",
+              "stat": "def_penetration",
               "name": "DEF Penetration",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 4.0
+                }
+              ],
               "label": "buff_defensive"
             },
             {
@@ -46771,7 +46806,7 @@
           "skill_range": 10,
           "skill_card_tags": [
             "ATK SPD buff — Self",
-            "DEF Penetration buff",
+            "DEF Penetration buff — Self",
             "Energy recovery — Self"
           ]
         },

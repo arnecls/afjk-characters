@@ -296,6 +296,8 @@ def _named_caster_gains_stat(t: str, label: str) -> bool:
         "Lifedrain buff": r"life drain",
         "Vitality buff": r"vitality",
         "DEF buff": r"(?:phys(?:ical)? and magic|magic and phys(?:ical)? )?def",
+        "DEF Penetration buff": r"(?:def )?penetration",
+        "Ranged DEF buff": r"ranged def",
     }
     stat = stat_pats.get(label)
     if not stat:
@@ -672,7 +674,7 @@ def _resolve_buff_targeting(
     if label == "ATK buff" and re.search(r"\batk bonus granted by\b", t):
         return "Self"
     if label == "DEF Penetration buff" and re.search(
-        r"\b(?:he|she|they) gains? \d+(?:\.\d+)? def penetration\b", t
+        r"\b(?:he|she|they) gains? \d+(?:\.\d+)? (?:def )?penetration\b", t
     ):
         return "Self"
     if label == "DEF Penetration buff" and re.search(
@@ -1619,7 +1621,7 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         ) or re.search(r"\bchannels (?:his|her|their) chi, gaining\b", t):
             return True
     if label == "DEF Penetration buff" and re.search(
-        r"\b(?:he|she|they) gains? \d+(?:\.\d+)? def penetration\b", t
+        r"\b(?:he|she|they) gains? \d+(?:\.\d+)? (?:def )?penetration\b", t
     ):
         return True
     if label == "ATK buff" and re.search(r"\batk bonus granted by\b", t):
@@ -2188,6 +2190,7 @@ def extract_number(text: str, label: str = "") -> float | None:
         amounts = _all_amounts(
             text,
             [
+                r"gains? (\d+(?:\.\d+)?)\s+(?:def )?penetration\b",
                 r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*penetration",
                 r"extra penetration .{0,120}by (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)",
                 r"penetration applied .{0,120}(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)",

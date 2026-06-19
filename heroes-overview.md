@@ -59,15 +59,7 @@ bonded ally feather threshold enhances ultimate with additional arrow volleys
 
 Look for units providing: `ATK` `DEF Penetration`
 
-- **Kulu**
-  - ATK buff (single target, low)
-  - DEF Penetration buff (single target, low)
-- **Cecia**
-  - DEF Penetration buff (single target, low)
-- **Lily May**
-  - DEF Penetration buff (single target, low)
-- **Silven**
-  - DEF Penetration buff (single target, low)
+_No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Aliceth
 
@@ -2036,22 +2028,24 @@ Common buffers are **Twins**, **Hugin**, or **Mikola**.
 
 ### Units benefitting most from Cecia
 
-Cecia provides DEF Penetration buff to single targets `low` and Max HP buff to single targets `high`.
+Cecia provides Max HP buff to single targets `high`.
 
-- Aliceth (3.0 / 5)
+- Carolina (3.3 / 5)
+- Nerion (3.0 / 5)
+- Shadewing (2.2 / 5)
 
 ### Units that can act as a replacement for Cecia
 
 **Best overall replacement**
 
 - Gwyneth (69% `Damage` `Debuffs on enemies`)
-- Alna (58% `Damage` `Crowd Control` `Buffs on allies`)
+- Alna (58% `Damage` `Buffs on allies` `Crowd Control`)
 - Faramor (52% `Damage`)
 
 **Buffs on allies**
 
-- Alna (96% `Max HP`)
-- Tilaya (67% `Max HP`)
+- Alna (100% `Max HP`)
+- Tilaya (69% `Max HP`)
 
 **Similar Skills**
 
@@ -2086,7 +2080,6 @@ Cecia provides DEF Penetration buff to single targets `low` and Max HP buff to s
 
 #### Buffs provided by Cecia
 
-- DEF Penetration buff — Single target — `low`
 - Max HP buff — Single target — `high`
 
 #### Debuffs provided by Cecia
@@ -6055,17 +6048,17 @@ Common buffers are **Twins**, **Ravion**, or **Contess**.
 
 ### Units benefitting most from Kordan
 
-Kordan provides ATK buff to multiple targets `low`, Lifedrain buff to multiple targets `average`, and DEF Penetration buff (Supreme+) to multiple targets `low`.
+Kordan provides ATK buff to multiple targets `low`, Lifedrain buff to multiple targets `average`, and DEF Penetration buff (Supreme+) to multiple targets `high`.
 
 - Carolina (4.5 / 5)
 - Nerion (4.0 / 5)
+- Lily May (3.4 / 5)
 
 ### Units that can act as a replacement for Kordan
 
 **Buffs on allies**
 
-- Dunlingr (66% `Healing` `ATK`)
-- Aliceth (53% `ATK` `DEF Penetration`)
+- Aliceth (84% `DEF Penetration` `ATK`)
 
 **Similar Skills**
 
@@ -6095,7 +6088,7 @@ Kordan provides ATK buff to multiple targets `low`, Lifedrain buff to multiple t
 
 - ATK buff — Multiple targets — `low`
 - Lifedrain buff — Multiple targets — `average`
-- DEF Penetration buff (Supreme+) — Multiple targets — `low`
+- DEF Penetration buff (Supreme+) — Multiple targets — `high`
 
 #### Crowd Control provided by Kordan
 
@@ -6396,17 +6389,19 @@ Common buffers are **Twins** or **Mikola**.
 
 ### Units benefitting most from Kulu
 
-Kulu provides ATK buff (Legendary+) to single targets `low` and DEF Penetration buff (EX+15) to single targets `low`.
+Kulu provides ATK buff (Legendary+) to single targets `low`.
 
-- Aliceth (5.0 / 5)
+- Shadewing (4.0 / 5)
+- Indris (3.1 / 5)
+- Kazim (2.5 / 5)
 
 ### Units that can act as a replacement for Kulu
 
 **Buffs on allies**
 
-- Aliceth (100% `ATK` `DEF Penetration`)
-- Kordan (100% `ATK` `DEF Penetration`)
-- Contess (60% `ATK`)
+- Contess (100% `ATK`)
+- Frieren (100% `ATK`)
+- Himmel (100% `ATK`)
 
 **Similar Skills**
 
@@ -6444,7 +6439,6 @@ Kulu provides ATK buff (Legendary+) to single targets `low` and DEF Penetration 
 #### Buffs provided by Kulu
 
 - ATK buff (Legendary+) — Single target — `low`
-- DEF Penetration buff (EX+15) — Single target — `low`
 
 #### Debuffs provided by Kulu
 
@@ -6741,28 +6735,24 @@ Lily May also requires units **buffing them**
   - Grants 4 distinct stat buffs to Lily May
 - **Pandora**
   - Grants 3 distinct stat buffs to Lily May (start of battle)
+- **Kordan**
+  - ATK buff (multiple targets, low)
+  - DEF Penetration buff (multiple targets, high)
+  - Grants 3 distinct stat buffs to Lily May
 - **Hepler**
   - Grants 3 distinct stat buffs to Lily May
 - **Ludovic**
   - Grants 2 distinct stat buffs to Lily May
 - **Smokey & Meerky**
   - Grants 2 distinct stat buffs to Lily May
-- **Solise**
-  - Grants 2 distinct stat buffs to Lily May
 
 ### Units benefitting most from Lily May
 
-Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
-
-- Aliceth (3.0 / 5)
+- Bonnie (2.4 / 5)
+- Shadewing (1.6 / 5)
+- Indris (1.3 / 5)
 
 ### Units that can act as a replacement for Lily May
-
-**Buffs on allies**
-
-- Aliceth (100% `DEF Penetration`)
-- Silven (100% `DEF Penetration`)
-- Kordan (100% `DEF Penetration`)
 
 **Similar Skills**
 
@@ -6797,10 +6787,6 @@ Lily May provides DEF Penetration buff (Legendary+) to single targets `low`.
 
 - Magic — Single target
 - Max HP-based damage — Single target — `average`
-
-#### Buffs provided by Lily May
-
-- DEF Penetration buff (Legendary+) — Single target — `low`
 
 #### Debuffs provided by Lily May
 
@@ -11299,9 +11285,9 @@ Silven also requires units **buffing them**
 
 ### Units benefitting most from Silven
 
-Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
-
-- Aliceth (3.0 / 5)
+- Bonnie (2.4 / 5)
+- Carolina (1.9 / 5)
+- Nerion (1.7 / 5)
 
 ### Units that can act as a replacement for Silven
 
@@ -11309,12 +11295,6 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 - Sylphira (68% `Damage` `Crowd Control`)
 - Shemira (51% `Damage`)
-
-**Buffs on allies**
-
-- Aliceth (100% `DEF Penetration`)
-- Kordan (100% `DEF Penetration`)
-- Kulu (100% `DEF Penetration`)
 
 **Similar Skills**
 
@@ -11340,10 +11320,6 @@ Silven provides DEF Penetration buff (Mythic+) to single targets `low`.
 
 - Magic — Single target
 - Max HP-based damage — Single target — `low`
-
-#### Buffs provided by Silven
-
-- DEF Penetration buff (Mythic+) — Single target — `low`
 
 #### Crowd Control provided by Silven
 
@@ -11752,7 +11728,7 @@ _No synergy partners matched stat buffs or enablers._
 
 Solise provides ATK buff to summons `low`, Direct healing to all units `average`, Healing over time to single targets `high`, Shield to summons `low`, and DEF buff (Mythic+) to summons `low`.
 
-**8** units include this provider among their top 6 synergy partners. Why the match is common:
+**7** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -11760,7 +11736,7 @@ These are the **6** strongest pairings:
 
 - Phraesto (3.6 / 5)
 - Cecia (3.5 / 5)
-- Lily May (2.9 / 5)
+- Bonnie (3.4 / 5)
 - Dunlingr (2.5 / 5)
 - Silven (2.4 / 5)
 - Faramor (2.2 / 5)
@@ -14105,10 +14081,11 @@ Common buffers are **Twins** or **Mikola**.
 - **Aliceth**
   - ATK buff (multiple targets, low)
   - DEF Penetration buff (multiple targets, high)
+- **Kordan**
+  - ATK buff (multiple targets, low)
+  - DEF Penetration buff (multiple targets, high)
 - **Lorsan**
   - ATK SPD via Haste buff (single target, high) `signature fuel`
-- **Shakir**
-  - ATK SPD via Haste buff (multiple targets, high) `signature fuel`
 
 ### Units benefitting most from Zanie
 

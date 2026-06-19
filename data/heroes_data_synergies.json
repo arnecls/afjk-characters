@@ -1,37 +1,7 @@
 {
   "heroes": {
     "Aliceth": {
-      "synergies": [
-        {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Kulu",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Cecia",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Lily May",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        }
-      ],
+      "synergies": [],
       "beneficiaries": [
         {
           "score": 28.5,
@@ -5454,27 +5424,6 @@
           "score": 1.5309
         },
         {
-          "provider": "Kulu",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Lily May",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Ravion",
           "reasons": [
             "Energy via Energy recovery (multiple targets, average) `signature fuel`"
@@ -5534,8 +5483,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 1.5,
-          "name": "Aliceth"
+          "score": 16.0,
+          "name": "Carolina"
+        },
+        {
+          "score": 16.0,
+          "name": "Nerion"
+        },
+        {
+          "score": 9.75,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -5545,14 +5502,14 @@
         "buff": [
           {
             "name": "Alna",
-            "score": 0.9686,
+            "score": 1.0,
             "matches": [
               "Max HP"
             ]
           },
           {
             "name": "Tilaya",
-            "score": 0.6702,
+            "score": 0.6919,
             "matches": [
               "Max HP"
             ]
@@ -5672,11 +5629,11 @@
           },
           {
             "name": "Alna",
-            "score": 0.5873,
+            "score": 0.5897,
             "matches": [
               "Damage",
-              "Crowd Control",
-              "Buffs on allies"
+              "Buffs on allies",
+              "Crowd Control"
             ]
           },
           {
@@ -7739,20 +7696,6 @@
           "score": 1.5
         },
         {
-          "provider": "Lily May",
-          "reasons": [
-            "Grants 1 distinct stat buff to Dionel"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Silven",
-          "reasons": [
-            "Grants 1 distinct stat buff to Dionel"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -7839,13 +7782,6 @@
           "score": 9.0
         },
         {
-          "provider": "Cecia",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Grants 2 distinct stat buffs to Dionel"
@@ -7904,6 +7840,13 @@
             "Grants 1 distinct stat buff to Dionel"
           ],
           "score": 5.55
+        },
+        {
+          "provider": "Cecia",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Zorya",
@@ -9963,13 +9906,6 @@
           "score": 3.0
         },
         {
-          "provider": "Silven",
-          "reasons": [
-            "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK buff (all units, high)",
@@ -10116,13 +10052,6 @@
           "score": 7.275
         },
         {
-          "provider": "Cecia",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Faramor"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Gerda",
           "reasons": [
             "Grants 2 distinct stat buffs to Faramor"
@@ -10195,6 +10124,13 @@
             "Grants 1 distinct stat buff to Faramor"
           ],
           "score": 5.55
+        },
+        {
+          "provider": "Cecia",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Eironn",
@@ -10283,13 +10219,6 @@
         },
         {
           "provider": "Harak",
-          "reasons": [
-            "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Lily May",
           "reasons": [
             "Grants 1 distinct stat buff to Faramor"
           ],
@@ -17763,13 +17692,6 @@
           "score": 3.0
         },
         {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
@@ -17948,14 +17870,6 @@
           "score": 3.0
         },
         {
-          "provider": "Kulu",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -18008,20 +17922,6 @@
           "score": 1.8954
         },
         {
-          "provider": "Cecia",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Lily May",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Zorya",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
@@ -18065,6 +17965,10 @@
         {
           "score": 24.0,
           "name": "Nerion"
+        },
+        {
+          "score": 17.25,
+          "name": "Lily May"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -18073,19 +17977,11 @@
       "replacements": {
         "buff": [
           {
-            "name": "Dunlingr",
-            "score": 0.6667,
-            "matches": [
-              "Healing",
-              "ATK"
-            ]
-          },
-          {
             "name": "Aliceth",
-            "score": 0.5333,
+            "score": 0.8471,
             "matches": [
-              "ATK",
-              "DEF Penetration"
+              "DEF Penetration",
+              "ATK"
             ]
           }
         ],
@@ -18766,13 +18662,6 @@
           "score": 1.875
         },
         {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK buff (single target, high)",
@@ -18846,20 +18735,6 @@
           "score": 1.59375
         },
         {
-          "provider": "Cecia",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Lily May",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
@@ -18876,8 +18751,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 3.0,
-          "name": "Aliceth"
+          "score": 24.0,
+          "name": "Shadewing"
+        },
+        {
+          "score": 13.5,
+          "name": "Indris"
+        },
+        {
+          "score": 5.4375,
+          "name": "Kazim"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -18886,24 +18769,22 @@
       "replacements": {
         "buff": [
           {
-            "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "ATK",
-              "DEF Penetration"
-            ]
-          },
-          {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "ATK",
-              "DEF Penetration"
-            ]
-          },
-          {
             "name": "Contess",
-            "score": 0.6,
+            "score": 1.0,
+            "matches": [
+              "ATK"
+            ]
+          },
+          {
+            "name": "Frieren",
+            "score": 1.0,
+            "matches": [
+              "ATK"
+            ]
+          },
+          {
+            "name": "Himmel",
+            "score": 1.0,
             "matches": [
               "ATK"
             ]
@@ -19802,6 +19683,15 @@
           "score": 22.049999999999997
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "DEF Penetration via DEF Penetration buff (multiple targets, high)",
+            "Grants 3 distinct stat buffs to Lily May"
+          ],
+          "score": 17.25
+        },
+        {
           "provider": "Ludovic",
           "reasons": [
             "Grants 2 distinct stat buffs to Lily May"
@@ -19830,15 +19720,6 @@
           "score": 11.25
         },
         {
-          "provider": "Kordan",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)",
-            "Grants 3 distinct stat buffs to Lily May"
-          ],
-          "score": 9.75
-        },
-        {
           "provider": "Koko",
           "reasons": [
             "Grants 3 distinct stat buffs to Lily May"
@@ -19865,15 +19746,6 @@
             "Grants 3 distinct stat buffs to Lily May"
           ],
           "score": 9.0
-        },
-        {
-          "provider": "Kulu",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Grants 2 distinct stat buffs to Lily May"
-          ],
-          "score": 7.5
         },
         {
           "provider": "Eironn",
@@ -19925,14 +19797,6 @@
           "score": 4.5
         },
         {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Grants 1 distinct stat buff to Lily May"
-          ],
-          "score": 3.75
-        },
-        {
           "provider": "Thador",
           "reasons": [
             "Grants 1 distinct stat buff to Lily May (start of battle)"
@@ -19959,14 +19823,6 @@
             "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 11.25
-        },
-        {
-          "provider": "Cecia",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Grants 2 distinct stat buffs to Lily May"
-          ],
-          "score": 10.5
         },
         {
           "provider": "Damian",
@@ -20009,6 +19865,13 @@
             "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 9.0
+        },
+        {
+          "provider": "Cecia",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 6.75
         },
         {
           "provider": "Lucius",
@@ -20139,37 +20002,23 @@
       ],
       "beneficiaries": [
         {
-          "score": 1.5,
-          "name": "Aliceth"
+          "score": 5.0,
+          "name": "Bonnie"
+        },
+        {
+          "score": 4.5,
+          "name": "Shadewing"
+        },
+        {
+          "score": 2.0,
+          "name": "Indris"
         }
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          },
-          {
-            "name": "Silven",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          },
-          {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -25481,14 +25330,6 @@
           "score": 7.5
         },
         {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables CC on enemies via Knock down (single target, average)"
-          ],
-          "score": 7.5
-        },
-        {
           "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy recovery (area, high) `signature fuel`",
@@ -25500,15 +25341,6 @@
           "provider": "Bonnie",
           "reasons": [
             "Enables CC on enemies via Stun (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Kulu",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables CC on enemies via Knock back (single target, low)"
           ],
           "score": 6.0
         },
@@ -25534,12 +25366,27 @@
           "score": 6.0
         },
         {
+          "provider": "Silven",
+          "reasons": [
+            "Enables CC on enemies via Knock down (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Sonja",
           "reasons": [
             "ATK via ATK buff (multiple targets, average)",
             "Enables CC on enemies via Stun (single target, low)"
           ],
           "score": 6.0
+        },
+        {
+          "provider": "Kulu",
+          "reasons": [
+            "ATK via ATK buff (single target, low)",
+            "Enables CC on enemies via Knock back (single target, low)"
+          ],
+          "score": 4.5
         },
         {
           "provider": "Athalia",
@@ -25575,13 +25422,6 @@
             "Energy via Energy recovery (single target, average) `signature fuel`"
           ],
           "score": 2.8080000000000003
-        },
-        {
-          "provider": "Lily May",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Damian",
@@ -25666,14 +25506,6 @@
           "score": 18.5
         },
         {
-          "provider": "Cecia",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Enables CC on enemies via Bind (area, average)"
-          ],
-          "score": 17.5
-        },
-        {
           "provider": "Perseus",
           "reasons": [
             "ATK via ATK buff (multiple targets, low)",
@@ -25708,6 +25540,13 @@
           "provider": "Berial",
           "reasons": [
             "Enables CC on enemies via Frighten (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Cecia",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, average)"
           ],
           "score": 16.0
         },
@@ -26860,6 +26699,14 @@
           "score": 6.0
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "DEF Penetration via DEF Penetration buff (multiple targets, high)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste buff (single target, low) `signature fuel`",
@@ -26917,22 +26764,6 @@
           "provider": "Galahad",
           "reasons": [
             "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kulu",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "DEF Penetration via DEF Penetration buff (single target, low)"
           ],
           "score": 3.0
         },
@@ -27018,27 +26849,6 @@
             "ATK SPD via ATK SPD buff (all units, low) `signature fuel`"
           ],
           "score": 1.944
-        },
-        {
-          "provider": "Cecia",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Lily May",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Thador",
@@ -27736,20 +27546,6 @@
         },
         {
           "provider": "Harak",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Lily May",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Silven",
           "reasons": [
             "Grants 1 distinct stat buff to Perseus"
           ],
@@ -32888,6 +32684,13 @@
           "score": 12.24
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Silven"
+          ],
+          "score": 11.25
+        },
+        {
           "provider": "Perseus",
           "reasons": [
             "Grants 3 distinct stat buffs to Silven"
@@ -32916,14 +32719,6 @@
             "Grants 3 distinct stat buffs to Silven"
           ],
           "score": 10.59375
-        },
-        {
-          "provider": "Cecia",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 10.5
         },
         {
           "provider": "Gerda",
@@ -33017,16 +32812,16 @@
           "score": 7.5
         },
         {
-          "provider": "Eironn",
+          "provider": "Cecia",
           "reasons": [
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 6.75
         },
         {
-          "provider": "Kordan",
+          "provider": "Eironn",
           "reasons": [
-            "Grants 3 distinct stat buffs to Silven"
+            "Grants 1 distinct stat buff to Silven"
           ],
           "score": 6.75
         },
@@ -33078,14 +32873,6 @@
           "provider": "Isabella",
           "reasons": [
             "Physical DEF via DEF buff (single target, low)",
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Kulu",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
             "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 6.0
@@ -33157,14 +32944,6 @@
           "score": 4.125
         },
         {
-          "provider": "Lily May",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)",
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 3.75
-        },
-        {
           "provider": "Lumont",
           "reasons": [
             "Physical DEF via DEF buff (multiple targets, low)",
@@ -33195,6 +32974,13 @@
           "score": 2.25
         },
         {
+          "provider": "Kulu",
+          "reasons": [
+            "Grants 1 distinct stat buff to Silven"
+          ],
+          "score": 2.25
+        },
+        {
           "provider": "Marilee",
           "reasons": [
             "Grants 1 distinct stat buff to Silven"
@@ -33218,37 +33004,23 @@
       ],
       "beneficiaries": [
         {
-          "score": 1.5,
-          "name": "Aliceth"
+          "score": 6.0,
+          "name": "Carolina"
+        },
+        {
+          "score": 6.0,
+          "name": "Nerion"
+        },
+        {
+          "score": 5.0,
+          "name": "Bonnie"
         }
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Aliceth",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          },
-          {
-            "name": "Kordan",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          },
-          {
-            "name": "Kulu",
-            "score": 1.0,
-            "matches": [
-              "DEF Penetration"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -34052,10 +33824,6 @@
         {
           "score": 13.5,
           "name": "Dunlingr"
-        },
-        {
-          "score": 13.5,
-          "name": "Lily May"
         },
         {
           "score": 13.5,
@@ -39641,13 +39409,6 @@
           "score": 1.875
         },
         {
-          "provider": "Silven",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Florabelle",
           "reasons": [
             "ATK via ATK buff (summons only, low)",
@@ -39670,6 +39431,14 @@
             "ATK SPD via Haste buff (multiple targets, average) `signature fuel`"
           ],
           "score": 8.25
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK buff (multiple targets, low)",
+            "DEF Penetration via DEF Penetration buff (multiple targets, high)"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Lorsan",
@@ -39716,22 +39485,6 @@
           "score": 3.0
         },
         {
-          "provider": "Kordan",
-          "reasons": [
-            "ATK via ATK buff (multiple targets, low)",
-            "DEF Penetration via DEF Penetration buff (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Kulu",
-          "reasons": [
-            "ATK via ATK buff (single target, low)",
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste buff (single target, low) `signature fuel`"
@@ -39758,20 +39511,6 @@
             "ATK SPD via Haste buff (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.59375
-        },
-        {
-          "provider": "Cecia",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Lily May",
-          "reasons": [
-            "DEF Penetration via DEF Penetration buff (single target, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Lyca",

@@ -6247,29 +6247,85 @@
       card.classList.toggle("skill-card-active", expanded);
     }
 
+    function viewportMetrics() {
+      const viewport = window.visualViewport;
+      if (!viewport) {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      }
+      return {
+        top: viewport.offsetTop,
+        left: viewport.offsetLeft,
+        width: viewport.width,
+        height: viewport.height,
+      };
+    }
+
     function positionSkillPopover(card) {
       const rect = card.getBoundingClientRect();
       const margin = 12;
       const arrowSize = 10;
-      const maxHeight = Math.min(window.innerHeight * 0.6, 420);
+      const view = viewportMetrics();
+      const isNarrow = view.width <= 600;
+      const heightCap = Math.min(view.height * (isNarrow ? 0.82 : 0.6), 420);
 
-      popover.style.maxHeight = maxHeight + "px";
+      popover.style.maxHeight = heightCap + "px";
       popover.style.visibility = "hidden";
       popover.hidden = false;
 
-      const popH = popover.offsetHeight;
       const popW = popover.offsetWidth;
+      const naturalHeight = popover.offsetHeight;
 
-      let placeBelow = false;
-      let top = rect.top - popH - margin - arrowSize;
-      if (top < margin) {
+      const spaceAbove = rect.top - view.top - margin - arrowSize;
+      const spaceBelow =
+        view.top + view.height - rect.bottom - margin - arrowSize;
+      let placeBelow = spaceBelow >= spaceAbove;
+      if (naturalHeight > spaceAbove && spaceBelow > spaceAbove) {
         placeBelow = true;
-        top = rect.bottom + margin + arrowSize;
+      } else if (naturalHeight > spaceBelow && spaceAbove >= spaceBelow) {
+        placeBelow = false;
+      }
+
+      let maxHeight = Math.max(
+        120,
+        Math.min(heightCap, placeBelow ? spaceBelow : spaceAbove)
+      );
+      popover.style.maxHeight = maxHeight + "px";
+
+      let popH = popover.offsetHeight;
+      let top = placeBelow
+        ? rect.bottom + margin + arrowSize
+        : rect.top - popH - margin - arrowSize;
+
+      if (!placeBelow && top < view.top + margin) {
+        top = view.top + margin;
+        maxHeight = Math.max(
+          120,
+          Math.min(heightCap, rect.top - margin - arrowSize - top)
+        );
+        popover.style.maxHeight = maxHeight + "px";
+        popH = popover.offsetHeight;
+      }
+
+      const bottomLimit = view.top + view.height - margin;
+      if (top + popH > bottomLimit) {
+        maxHeight = Math.max(120, bottomLimit - top);
+        popover.style.maxHeight = maxHeight + "px";
+        popH = popover.offsetHeight;
+      }
+
+      if (!placeBelow) {
+        top = rect.top - popH - margin - arrowSize;
+        top = Math.max(view.top + margin, top);
       }
 
       let left = rect.left + rect.width / 2 - popW / 2;
-      const maxLeft = window.innerWidth - popW - margin;
-      left = Math.max(margin, Math.min(left, maxLeft));
+      const maxLeft = view.left + view.width - popW - margin;
+      left = Math.max(view.left + margin, Math.min(left, maxLeft));
 
       const cardCenter = rect.left + rect.width / 2;
       const arrowLeft = Math.max(18, Math.min(cardCenter - left, popW - 18));
@@ -6387,6 +6443,19 @@
         positionSkillPopover(anchorCard);
       }
     });
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", function () {
+        if (anchorCard && !popover.hidden) {
+          positionSkillPopover(anchorCard);
+        }
+      });
+      window.visualViewport.addEventListener("scroll", function () {
+        if (anchorCard && !popover.hidden) {
+          positionSkillPopover(anchorCard);
+        }
+      });
+    }
   })();
 
   viewMode = readStoredViewMode();
