@@ -282,6 +282,49 @@ class SummaryParsingTests(unittest.TestCase):
             self.assertTrue(buffs, label)
             self.assertEqual(buffs[0].targeting, rs.SUMMON_BUFF_TARGETING)
 
+    def test_zanie_turret_buffs_target_summons(self):
+        hero = _hero_by_short_name("Zanie")
+        ultimate = hero.skill_slices.get("Ultimate")
+        self.assertIsNotNone(ultimate)
+        self_atk = [
+            e for e in ultimate.effects if e.label == "ATK buff"
+        ]
+        self.assertTrue(self_atk)
+        self.assertEqual(self_atk[0].targeting, "Self")
+        summon_atk = [
+            e for e in ultimate.summon_effects if e.label == "ATK buff"
+        ]
+        self.assertTrue(summon_atk)
+        self.assertEqual(summon_atk[0].targeting, rs.SUMMON_BUFF_TARGETING)
+        repairs = hero.skill_slices.get("Skill2")
+        self.assertIsNotNone(repairs)
+        ally_shields = [
+            e for e in repairs.effects if e.label == "Shield"
+        ]
+        self.assertEqual(ally_shields, [])
+        summon_shields = [
+            e for e in repairs.summon_effects if e.label == "Shield"
+        ]
+        self.assertTrue(summon_shields)
+        self.assertEqual(
+            summon_shields[0].targeting, rs.SUMMON_BUFF_TARGETING
+        )
+        focus = hero.skill_slices.get("Unlocks at Legendary+")
+        self.assertIsNotNone(focus)
+        pen = next(
+            e for e in focus.effects if e.label == "DEF Penetration buff"
+        )
+        self.assertEqual(pen.targeting, "Self")
+        overload = hero.skill_slices.get("Ex. Skill")
+        self.assertIsNotNone(overload)
+        ally_atk = [e for e in overload.effects if e.label == "ATK buff"]
+        self.assertEqual(ally_atk, [])
+        summon_atk = [
+            e for e in overload.summon_effects if e.label == "ATK buff"
+        ]
+        self.assertTrue(summon_atk)
+        self.assertEqual(summon_atk[0].targeting, rs.SUMMON_BUFF_TARGETING)
+
     def test_aurora_summon_damage_stays_summons_only(self):
         hero = _hero_by_short_name("Aurora")
         summon_dmg = [

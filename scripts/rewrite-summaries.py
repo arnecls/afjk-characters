@@ -206,7 +206,7 @@ _SELF_STAT_VERB = (
 _SELF_STAT_NOUN = (
     r"(?:atk(?: spd)?|haste|crit(?:\s+dmg\s+boost)?|max hp|damage taken|"
     r"energy|shield|life drain|vitality|execution|resilience|healing|"
-    r"ranged def|dodge chance|movement speed)"
+    r"ranged def|dodge chance|movement speed|(?:def )?penetration)"
 )
 _ENERGY_AMOUNT_RE = r"\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?"
 
@@ -675,6 +675,10 @@ def _resolve_buff_targeting(
         r"\b(?:he|she|they) gains? \d+(?:\.\d+)? def penetration\b", t
     ):
         return "Self"
+    if label == "DEF Penetration buff" and re.search(
+        r"\bincreas(?:e|es|ing) (?:def )?penetration by \d", t
+    ):
+        return "Self"
     if effect_targets_self_only(t, label, "buff"):
         return "Self"
     return detect_targeting(snippet, label, "buff")
@@ -939,10 +943,53 @@ _RESTORE_BUFF_LABELS = frozenset(
 )
 
 
+def _clause_targets_summon_units(clause: str) -> bool:
+    """True when a clause buffs/heals/shields allied summons or turrets."""
+    t = clause.lower()
+    if re.search(
+        r"\b(?:allied |all )?summons?\b", t
+    ) or re.search(r"\b(?:giant )?bulbsprites?\b", t):
+        return True
+    if re.search(
+        r"\b(?:her|his|their|one of (?:her|his|their)) "
+        r"(?:\d+ )?(?:laser |gun )?turrets?\b",
+        t,
+    ):
+        return True
+    if re.search(r"\b(?:laser |gun )?turrets?\b", t) and re.search(
+        r"\b(?:upgrad(?:e|es|ing)|repair(?:s|ing)?|inherit(?:s|ing)?|"
+        r"grant(?:s|ing)? (?:it|them)|restor(?:e|es|ing))\b",
+        t,
+    ):
+        return True
+    if re.search(r"\bupgraded turrets\b", t):
+        return True
+    if re.search(r"\b(?:increasing|increases?) its\b", t) and re.search(
+        r"\bturret\b", t
+    ):
+        return True
+    if re.search(r"\bgrant(?:s|ing)? it a shield\b", t) and re.search(
+        r"\bturret\b", t
+    ):
+        return True
+    return False
+
+
+def _clause_also_targets_caster(clause: str) -> bool:
+    """True when the caster shares the same buff/heal/shield in the clause."""
+    t = clause.lower()
+    return bool(
+        re.search(r"\b(?:herself|himself|itself)\b", t)
+        or re.search(r"\bfor (?:herself|himself) and\b", t)
+    )
+
+
 def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool:
     """Buff applies to summons only, not general allies."""
     clause = _clause_around(t, match.start())
     window = t[max(0, match.start() - 40) : min(len(t), match.end() + 40)]
+    if _clause_targets_summon_units(clause):
+        return not _clause_also_targets_caster(clause)
     if re.search(r"\bnon-summoned allies\b", clause):
         return False
     if re.search(
@@ -1111,9 +1158,12 @@ def _matching_summon_buff_match(text: str, label: str, pattern: str) -> bool:
             )
         )
     for m in re.finditer(pattern, t):
-        if _buff_match_is_summon_only(t, label, m) and not _buff_match_is_enemy_stat(
-            t, label, m
-        ):
+        if _buff_match_is_enemy_stat(t, label, m):
+            continue
+        clause = _clause_around(t, m.start())
+        if _buff_match_is_summon_only(t, label, m):
+            return True
+        if _clause_targets_summon_units(clause):
             return True
     return False
 
@@ -4211,6 +4261,11 @@ def text_has_summon_unit(t: str) -> bool:
     if re.search(
         r"\b(?:builds?|summons?) (?:a |an |the |\d+ )?.{0,50}"
         r"\b(?:that )?inherits?\s+\d+%",
+        tl,
+    ):
+        return True
+    if re.search(
+        r"\b(?:builds?|deploys?) (?:\d+ )?(?:\w+ )*(?:laser |gun )?turrets?\b",
         tl,
     ):
         return True

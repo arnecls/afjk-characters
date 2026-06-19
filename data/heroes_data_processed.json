@@ -17720,41 +17720,6 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
-              "name": "ATK",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 25.0
-                }
-              ],
-              "label": "buff_offensive"
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Attack range",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 550.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "enemy",
@@ -17802,14 +17767,48 @@
               ],
               "duration": 15,
               "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Summons only",
+              "is_max_known": true,
+              "target": "summon",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Summons only",
+              "is_max_known": true,
+              "target": "summon",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Attack range",
+              "label": "buff_summon_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ]
             }
           ],
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
             "DoT",
-            "ATK buff",
-            "Attack range buff",
+            "ATK buff — Summon",
+            "Attack range buff — Summon",
             "Vitality debuff"
           ]
         },
@@ -46206,7 +46205,8 @@
           "cooldown": 8.0,
           "initial_cooldown": 4.0,
           "skill_card_tags": [
-            "Max HP-based damage"
+            "Max HP-based damage",
+            "Shield — Summon"
           ]
         },
         "Hero Focus": {
@@ -50457,14 +50457,14 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Self",
+              "targeting_label": "Summons only",
               "is_max_known": true,
-              "target": "self",
+              "target": "summon",
               "area": "single",
               "target_count": 1,
               "type": "buff",
               "name": "Lifedrain",
-              "label": "buff_stat",
+              "label": "buff_summon_stat",
               "value": [
                 {
                   "type": "flat",
@@ -50477,7 +50477,7 @@
           "skill_card_tags": [
             "Magic",
             "Direct healing — Self",
-            "Lifedrain buff — Self"
+            "Lifedrain buff — Summon"
           ]
         },
         "Blazing Ascension": {
@@ -57246,6 +57246,42 @@
               ],
               "duration": 10.0,
               "label": "buff_offensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Summons only",
+              "is_max_known": true,
+              "target": "summon",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ],
+              "duration": 10.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Summons only",
+              "is_max_known": true,
+              "target": "summon",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 15.0
+                }
+              ],
+              "duration": 10.0
             }
           ],
           "initial_energy": 9.0,
@@ -57377,9 +57413,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Summons only",
               "is_max_known": true,
-              "target": "ally",
+              "target": "summon",
               "area": "single",
               "target_count": 1,
               "type": "shield",
@@ -57393,9 +57429,9 @@
             },
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Summons only",
               "is_max_known": true,
-              "target": "ally",
+              "target": "summon",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -57412,8 +57448,8 @@
           "cooldown": 12.0,
           "initial_cooldown": 6.0,
           "skill_card_tags": [
-            "Direct healing",
-            "Shield"
+            "Direct healing — Summon",
+            "Shield — Summon"
           ]
         },
         "Hero Focus": {
@@ -57443,9 +57479,9 @@
           "effects": [
             {
               "tier": "legendary+",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "stat_mod",
@@ -57463,7 +57499,7 @@
           "tier": "legendary+",
           "skill_range": 1,
           "skill_card_tags": [
-            "DEF Penetration buff"
+            "DEF Penetration buff — Self"
           ]
         },
         "Precision Overload": {
@@ -57502,47 +57538,45 @@
           "effects": [
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "Summons only",
               "is_max_known": true,
-              "target": "ally",
+              "target": "summon",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "atk",
+              "type": "buff",
               "name": "ATK",
+              "label": "buff_summon_offensive",
               "value": [
                 {
                   "type": "percentage",
                   "value": 40.0
                 }
-              ],
-              "label": "buff_offensive"
+              ]
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
+              "targeting_label": "Summons only",
               "is_max_known": true,
-              "target": "ally",
+              "target": "summon",
               "area": "single",
               "target_count": 1,
-              "type": "stat_mod",
-              "stat": "max_hp",
+              "type": "buff",
               "name": "Max HP",
+              "label": "buff_summon_stat",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 60.0
+                  "value": 40.0
                 }
-              ],
-              "label": "buff_stat"
+              ]
             }
           ],
           "tier": "mythic+",
           "cooldown": 12.0,
           "initial_cooldown": 15.0,
           "skill_card_tags": [
-            "ATK buff",
-            "Max HP buff"
+            "ATK buff — Summon",
+            "Max HP buff — Summon"
           ]
         },
         "Enhance Force": {
@@ -57621,7 +57655,20 @@
         }
       },
       "synergy_profile": {
-        "provides": [],
+        "provides": [
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "When a battle starts, she deploys 2 laser turrets, that inherit 140% of her max HP and 80% of her ATK."
+          },
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "When a battle starts, Zanie builds a gun turret in front of her."
+          }
+        ],
         "requires": []
       },
       "damage_entries": [
@@ -57637,7 +57684,8 @@
       "damage_magnitudes": {},
       "benefit_stats": [
         "atk",
-        "atk_spd"
+        "atk_spd",
+        "def_penetration"
       ],
       "behavior": {
         "movement": "moving",
