@@ -821,6 +821,7 @@
     "ATK debuff": { emoji: "🥀", cls: "chip-debuff" },
     "DoT debuff": { emoji: "🔥", cls: "chip-debuff" },
     "Damage taken debuff": { emoji: "🥀", cls: "chip-debuff" },
+    "Debuff duration debuff": { emoji: "⏱️", cls: "chip-debuff" },
     "Damage dealt debuff": { emoji: "🥀", cls: "chip-debuff" },
     "Magic damage amplification": { emoji: "🪄", cls: "chip-debuff" },
     "Energy drain": { emoji: "🔋", cls: "chip-debuff" },
