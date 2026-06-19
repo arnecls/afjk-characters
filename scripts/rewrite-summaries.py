@@ -284,8 +284,50 @@ def _has_explicit_ally_buff(t: str, label: str) -> bool:
     return False
 
 
+def _named_caster_gains_stat(t: str, label: str) -> bool:
+    """True when the hero name or pronoun gains a combat stat (Rhys, Eironn)."""
+    stat_pats = {
+        "Crit buff": r"crit(?:\s+dmg\s+boost)?",
+        "Dodge chance buff": r"dodge(?:\s+rate)?",
+        "Haste buff": r"haste",
+        "ATK buff": r"atk(?! spd)",
+        "ATK SPD buff": r"atk spd",
+        "Energy recovery": r"energy(?:\s+recover(?:y|ies))?",
+        "Lifedrain buff": r"life drain",
+        "Vitality buff": r"vitality",
+        "DEF buff": r"(?:phys(?:ical)? and magic|magic and phys(?:ical)? )?def",
+    }
+    stat = stat_pats.get(label)
+    if not stat:
+        return False
+    amount = r"\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?%?"
+    if re.search(
+        rf"\b[\w &'-]+ gains? {amount}\s*(?:{stat})\b",
+        t,
+        re.I,
+    ):
+        return True
+    if re.search(
+        rf"\b(?:he|she) gains? {amount}\s*(?:{stat})\b",
+        t,
+        re.I,
+    ):
+        return True
+    if re.search(
+        rf"\b(?:he|she) increases (?:her |his )?(?:{stat})\b",
+        t,
+        re.I,
+    ):
+        return True
+    if re.search(r"\bgains? control immunity\b", t, re.I):
+        return True
+    return False
+
+
 def _caster_gains_label_stat(t: str, label: str) -> bool:
     """True when he/she/it gains the stat for label (trigger context ok)."""
+    if _named_caster_gains_stat(t, label):
+        return True
     if not re.search(r"\b(?:he|she|it)\b", t, re.I):
         return False
     if re.search(
@@ -1335,14 +1377,16 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         return True
 
     # Label-specific: match the effect phrase even if the chunk also mentions allies
-    if imm in ("Unaffected", "Immune", "Steadfast") or label in (
+    if imm in ("Unaffected", "Immune", "Steadfast", "Untargetable") or label in (
         "Unaffected",
         "Immune",
         "Invincible",
+        "Untargetable",
     ):
         for m in re.finditer(
-            r"\b(?:becomes?|is|remains?|stays) (?:unaffected|immune(?: to control)?|"
-            r"steadfast|invincible)\b",
+            r"\b(?:becomes?|is|remains?|stays|becoming) "
+            r"(?:unaffected|immune(?: to control)?|"
+            r"steadfast|invincible|untargetable)\b",
             t,
         ):
             window = t[max(0, m.start() - 50) : m.start()]
@@ -1364,9 +1408,15 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
             return True
         if re.search(
             r"\b(?:she|he|it) (?:is |becomes |become |remains |remain )?"
-            r"(?:unaffected|immune|invincible|steadfast)\b",
+            r"(?:unaffected|immune|invincible|steadfast|untargetable)\b",
             t,
         ):
+            return True
+        if re.search(r"\bmakes? \w+ unaffected\b", t):
+            return True
+        if re.search(r"\bcannot be targeted by enemies\b", t):
+            return True
+        if re.search(r"\bgains? control immunity\b", t):
             return True
 
     stat_self = (
@@ -1428,6 +1478,8 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         if label == "Crit buff" and re.search(
             r"\bgains? \d+(?:\s*\+\s*\d+)? crit when (?:he|she|they)\b", t
         ):
+            return True
+        if _named_caster_gains_stat(t, label):
             return True
         if label == "DEF buff" and re.search(
             r"\b(?:increas(?:e|es|ing)|gain(?:s|ing)?) .{0,80}"
@@ -1595,6 +1647,12 @@ def grants_cc_immunity(text: str, imm_type: str) -> bool:
         return False
     if imm_type == "Unaffected":
         if re.search(
+            r"(?:does not apply to|not apply to|ineffective against) "
+            r"(?:unaffected )?(?:enemies|targets)",
+            t,
+        ):
+            return False
+        if re.search(
             r"(?:who are|if they are|enemies who are|unaffected enemies|"
             r"ineffective against) unaffected",
             t,
@@ -1641,7 +1699,7 @@ def add_cc_immunity(hero: Hero, imm_type: str, tier: str, text: str):
     if not grants_cc_immunity(text, imm_type):
         return
     targeting = detect_targeting(text, f"{imm_type} immunity", "cc_immunity")
-    if targeting == "Single target" and effect_targets_self_only(
+    if targeting != "Self" and effect_targets_self_only(
         text.lower(), f"{imm_type} immunity", "cc_immunity"
     ):
         targeting = "Self"
@@ -1858,7 +1916,9 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         if re.search(r"\b(?:enemies|enemy)\b", t):
             return "All units"
     if re.search(r"\b(?:area|within \d+ tiles?|surrounding|in (?:its|the) path)\b", t):
-        if category == "buff" and effect_targets_self_only(t, label, category):
+        if category in ("buff", "cc_immunity") and effect_targets_self_only(
+            t, label, category
+        ):
             return "Self"
         return "Area"
     # Multiple discrete enemies (e.g. "2 closest enemies", "3 enemies")
@@ -6446,7 +6506,7 @@ def analyze_hero(hero: Hero):
     _accumulate_true_damage_scores(hero, primary_dmg)
     refine_benefit_stats(hero)
     for e in hero.effects:
-        if e.targeting == "Single target" and effect_targets_self_only(
+        if e.targeting != "Self" and effect_targets_self_only(
             e.qualitative.lower(), e.label, e.category
         ):
             e.targeting = "Self"

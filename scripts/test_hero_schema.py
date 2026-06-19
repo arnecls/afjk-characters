@@ -182,16 +182,42 @@ class RoundTripTests(unittest.TestCase):
                     )
 
     def test_dionel_untargetable_immunity(self):
-        processed = io.load_processed()
-        skill = processed["heroes"]["Dionel"]["skills"][
-            "Dawn Light"
+        hero, _data = self._hero_by_title_prefix("Dionel")
+        section = rs.CATEGORY_TO_SECTION["ultimate"]
+        imms = [
+            (i.immunity_type, i.targeting)
+            for i in hero.skill_slices[section].cc_immunities
         ]
-        imm_types = {
-            e.get("immunity_type")
-            for e in skill.get("effects", [])
-            if e.get("type") == "immunity"
-        }
-        self.assertIn("untargetable", imm_types)
+        self.assertIn(("Untargetable", "Self"), imms)
+
+    def test_antandra_shield_assault_unaffected_self(self):
+        hero, _data = self._hero_by_title_prefix("Antandra")
+        section = rs.CATEGORY_TO_SECTION["ultimate"]
+        imms = [
+            (i.immunity_type, i.targeting)
+            for i in hero.skill_slices[section].cc_immunities
+        ]
+        self.assertIn(("Unaffected", "Self"), imms)
+
+    def test_rhys_defensive_stance_self_buffs(self):
+        hero, _data = self._hero_by_title_prefix("Rhys")
+        section = rs.CATEGORY_TO_SECTION["skill1"]
+        sl = hero.skill_slices[section]
+        crit = [e for e in sl.effects if e.label == "Crit buff"]
+        self.assertTrue(crit)
+        self.assertEqual(crit[0].targeting, "Self")
+        imms = [(i.immunity_type, i.targeting) for i in sl.cc_immunities]
+        self.assertIn(("Immune", "Self"), imms)
+
+    def test_eironn_tempest_guard_dodge_self(self):
+        hero, _data = self._hero_by_title_prefix("Eironn")
+        section = rs.CATEGORY_TO_SECTION["skill2"]
+        dodge = [
+            e for e in hero.skill_slices[section].effects
+            if e.label == "Dodge chance buff"
+        ]
+        self.assertTrue(dodge)
+        self.assertEqual(dodge[0].targeting, "Self")
 
     def test_aliceth_aegis_wings_blind_cc(self):
         processed = io.load_processed()
