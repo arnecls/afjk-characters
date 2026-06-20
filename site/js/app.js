@@ -599,6 +599,72 @@
     return "assets/icons/" + kind + "/" + fname + ".png";
   }
 
+  function combatIconPath(hero) {
+    if (!hero || !hero.name) {
+      return null;
+    }
+    return "assets/combat-icons/" + hero.name + ".png";
+  }
+
+  function factionDataKey(faction) {
+    if (!faction) {
+      return "";
+    }
+    return faction.toLowerCase().replace(/\s+/g, "");
+  }
+
+  function renderHeroPortrait(hero, extraClass) {
+    const factionKey = factionDataKey(hero.faction);
+    const combatIcon = combatIconPath(hero);
+    const combatSrc = assetUrl(combatIcon || hero.portrait);
+    const portraitFallback = assetUrl(hero.portrait);
+    return (
+      '<div class="hero-card-portrait hero-card-portrait--' +
+      escapeHtml(factionKey) +
+      (extraClass ? " " + extraClass : "") +
+      '">' +
+      '<div class="hero-card-portrait-frame">' +
+      '<img class="hero-card-combat-icon" src="' +
+      escapeHtml(combatSrc) +
+      '" alt="" loading="lazy" onerror="this.onerror=null;this.src=' +
+      JSON.stringify(portraitFallback) +
+      '">' +
+      "</div></div>"
+    );
+  }
+
+  function renderGridCardFactionIcon(hero) {
+    if (!hero.faction) {
+      return "";
+    }
+    const icon = iconPath("factions", hero.faction);
+    if (!icon) {
+      return "";
+    }
+    return (
+      '<img class="hero-card-faction-icon" src="' +
+      assetUrl(icon) +
+      '" alt="' +
+      escapeHtml(hero.faction) +
+      '" loading="lazy">'
+    );
+  }
+
+  function renderGridCardClassBadge(hero) {
+    if (!hero.class) {
+      return "";
+    }
+    const icon = iconPath("class", hero.class);
+    return (
+      '<span class="hero-card-class-badge">' +
+      (icon
+        ? '<img src="' + assetUrl(icon) + '" alt="" loading="lazy">'
+        : "") +
+      escapeHtml(hero.class) +
+      "</span>"
+    );
+  }
+
   function factionClass(faction) {
     if (!faction) return "";
     return "badge-faction-" + faction.toLowerCase().replace(/\s+/g, "");
@@ -2595,7 +2661,6 @@
       html += "</div>";
     });
     html += "</div>";
-    html += renderAlgorithmDisclaimer();
     html += "</div>";
     return html;
   }
@@ -4887,26 +4952,131 @@
     listEmptyState.classList.toggle("hidden", rows.length > 0);
   }
 
+  function buildReferenceWavePath(options) {
+    const leftX = options.leftX;
+    const rightX = options.rightX;
+    const curveRightX = options.curveRightX != null ? options.curveRightX : rightX;
+    const peakX = options.peakX;
+    const troughX = options.troughX;
+    const peakY = options.peakY;
+    const troughY = options.troughY;
+    const leftY = options.leftY;
+    const endY = options.endY;
+    const xShift = options.xShift || 0;
+    const xScale = options.xScale || 1;
+    const xAnchor = options.xAnchor != null ? options.xAnchor : 50;
+    const step = 1.5;
+
+    function mapX(x) {
+      const shifted = x + xShift;
+      if (xScale === 1) {
+        return shifted;
+      }
+      return xAnchor + (shifted - xAnchor) * xScale;
+    }
+
+    function edgeY(x) {
+      if (x <= peakX) {
+        const t = (x - leftX) / (peakX - leftX);
+        return leftY + (peakY - leftY) * (1 - Math.cos(Math.PI * t)) / 2;
+      }
+      if (x <= troughX) {
+        const t = (x - peakX) / (troughX - peakX);
+        return peakY + (troughY - peakY) * (1 - Math.cos(Math.PI * t)) / 2;
+      }
+      if (x >= curveRightX) {
+        return endY;
+      }
+      const t = (x - troughX) / (curveRightX - troughX);
+      return troughY - (troughY - endY) * (1 - Math.cos(Math.PI * t)) / 2;
+    }
+
+    function fmt(n) {
+      return (Math.round(n * 100) / 100).toString();
+    }
+
+    let d = "M" + fmt(mapX(leftX)) + " " + fmt(edgeY(leftX));
+    for (let x = leftX + step; x < rightX; x += step) {
+      d += " L" + fmt(mapX(x)) + " " + fmt(edgeY(x));
+    }
+    d += " L" + fmt(mapX(rightX)) + " " + fmt(edgeY(rightX));
+    d += " L" + fmt(mapX(rightX)) + " 100 L" + fmt(mapX(leftX)) + " 100 Z";
+    return d;
+  }
+
+  function renderHeroCardWave(patternId) {
+    const panelPeakX = 27;
+    const panelTroughX = panelPeakX + (78 - panelPeakX) * 1.3;
+    const panelPath = buildReferenceWavePath({
+      leftX: -15,
+      rightX: 115,
+      peakX: panelPeakX,
+      troughX: panelTroughX,
+      peakY: 10,
+      troughY: 28,
+      leftY: 23,
+      endY: 25,
+    });
+    const accentPath = buildReferenceWavePath({
+      leftX: -22,
+      rightX: 125,
+      curveRightX: 130,
+      peakX: 40,
+      troughX: 95,
+      peakY: 1,
+      troughY: 19,
+      leftY: 9,
+      endY: 11,
+      xShift: -20,
+    });
+    const hatchId = "hero-panel-hatch-" + patternId;
+    return (
+      '<div class="hero-card-wave" aria-hidden="true">' +
+      '<svg class="hero-card-wave-svg" viewBox="0 0 100 100" preserveAspectRatio="none">' +
+      "<defs>" +
+      '<pattern id="' +
+      hatchId +
+      '" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">' +
+      '<rect width="3" height="0.4" y="2.4" fill="var(--fc-hatch)"></rect>' +
+      "</pattern></defs>" +
+      '<path class="hero-card-wave-accent" d="' +
+      accentPath +
+      '"></path>' +
+      '<path class="hero-card-wave-panel" d="' +
+      panelPath +
+      '"></path>' +
+      '<path class="hero-card-wave-panel-hatch" d="' +
+      panelPath +
+      '" fill="url(#' +
+      hatchId +
+      ')"></path></svg></div>'
+    );
+  }
+
   function renderGrid() {
     const list = filteredHeroes();
     heroGrid.innerHTML = list
       .map(function (h) {
+        const factionKey = factionDataKey(h.faction);
         return (
-          '<article class="hero-card" data-slug="' +
+          '<article class="hero-card afkj-box afkj-box-sm" data-slug="' +
           escapeHtml(h.slug) +
+          '" data-faction="' +
+          escapeHtml(factionKey) +
           '" tabindex="0" role="link" aria-label="' +
           escapeHtml(h.name) +
           '">' +
-          '<img src="' +
-          assetUrl(h.portrait) +
-          '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
-          '<div class="card-body">' +
-          "<h2>" +
+          renderHeroPortrait(h) +
+          renderHeroCardWave(h.slug) +
+          '<div class="hero-card-info">' +
+          '<div class="hero-card-name"><h2>' +
           escapeHtml(h.name) +
-          "</h2>" +
-          '<div class="badges">' +
-          renderBadges(h) +
-          "</div></div></article>"
+          "</h2></div>" +
+          '<div class="hero-card-meta">' +
+          renderGridCardClassBadge(h) +
+          "</div></div>" +
+          renderGridCardFactionIcon(h) +
+          "</article>"
         );
       })
       .join("");
@@ -5602,11 +5772,12 @@
     listView.classList.add("hidden");
     detailView.classList.remove("hidden");
 
-    let html = '<div class="detail-header">';
+    let html = '<div class="detail-panel afkj-box afkj-box-lg">';
+    html += '<div class="detail-header">';
     html +=
-      '<img class="detail-portrait" src="' +
-      assetUrl(hero.portrait) +
-      '" alt="" onerror="this.style.opacity=0.3">';
+      '<div class="detail-portrait-wrap afkj-box afkj-box-sm">' +
+      renderHeroPortrait(hero, "detail-portrait") +
+      "</div>";
     html += '<div class="detail-title">';
     html += "<h1>" + escapeHtml(hero.name) + "</h1>";
     if (hero.title && hero.title !== hero.name) {
@@ -5667,8 +5838,20 @@
       html += renderSummaryCards(hero.sections.summary);
     }
 
-    html += renderSynergies(hero.sections, hero.name);
-    html += renderReplacements(hero.sections, hero);
+    html += "</div>";
+    html += renderAlgorithmDisclaimer();
+    const synergyHtml = renderSynergies(hero.sections, hero.name);
+    if (synergyHtml) {
+      html += '<div class="detail-panel afkj-box afkj-box-lg">';
+      html += synergyHtml;
+      html += "</div>";
+    }
+    const replacementHtml = renderReplacements(hero.sections, hero);
+    if (replacementHtml) {
+      html += '<div class="detail-panel afkj-box afkj-box-lg">';
+      html += replacementHtml;
+      html += "</div>";
+    }
 
     heroDetail.innerHTML = html;
     document.title = hero.name + " — AFK Journey Heroes";
