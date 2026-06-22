@@ -1638,7 +1638,7 @@ a:hover {
   font-size: 1.15rem;
   margin: 0 0 0.75rem;
   color: #6b87bd;
-  border-bottom: 3px solid var(--accent-soft);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.35rem;
 }
 
