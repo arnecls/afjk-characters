@@ -1277,11 +1277,63 @@ a:hover {
 }
 
 .detail-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: 100%;
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
   padding: 1.5rem;
+}
+
+.hero-detail .detail-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.1;
+  filter: grayscale(90%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-detail .detail-panel>* {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-detail[data-faction="lightbearer"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/lightbearer.jpg");
+}
+
+.hero-detail[data-faction="mauler"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/mauler.jpg");
+}
+
+.hero-detail[data-faction="wilder"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/wilder.jpg");
+  opacity: 0.2;
+}
+
+.hero-detail[data-faction="graveborn"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/graveborn.jpg");
+}
+
+.hero-detail[data-faction="celestial"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/celestial.jpg");
+}
+
+.hero-detail[data-faction="hypogean"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/hypogean.jpg");
+  opacity: 0.05;
+}
+
+.hero-detail[data-faction="dimensional"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/dimensional.jpg");
 }
 
 .detail-panel>.detail-section:last-child {

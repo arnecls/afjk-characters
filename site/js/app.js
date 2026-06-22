@@ -5265,6 +5265,7 @@
   function showIndexView() {
     closeSkillCardPopover();
     detailHero = null;
+    heroDetail.removeAttribute("data-faction");
     detailView.classList.add("hidden");
     gridView.classList.toggle("hidden", viewMode !== "grid");
     listView.classList.toggle("hidden", viewMode !== "list");
@@ -6024,6 +6025,10 @@
     }
 
     heroDetail.innerHTML = html;
+    heroDetail.setAttribute(
+      "data-faction",
+      factionDataKey(hero.faction) || ""
+    );
     document.title = hero.name + " — AFK Journey Heroes";
     updateHeaderNav(true);
     window.scrollTo(0, 0);
