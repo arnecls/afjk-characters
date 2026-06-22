@@ -3241,16 +3241,26 @@
 
   function renderHeroCompactCard(slug, name, bodyHtml, footerHtml) {
     const hero = heroBySlug[slug];
-    const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
+    let portraitHtml = "";
+    if (hero) {
+      portraitHtml = renderHeroPortrait(hero, "compact-portrait");
+    } else {
+      const portrait = "assets/portraits/" + name + ".png";
+      portraitHtml =
+        '<img class="hero-compact-portrait-fallback" src="' +
+        assetUrl(portrait) +
+        '" alt="" loading="lazy" onerror="this.style.opacity=0.3">';
+    }
     return (
-      '<article class="hero-compact-card" data-slug="' +
+      '<article class="hero-compact-card afkj-box afkj-box-sm" data-slug="' +
       escapeHtml(slug) +
       '" tabindex="0" role="link" aria-label="' +
       escapeHtml(name) +
       '">' +
-      '<img src="' +
-      assetUrl(portrait) +
-      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
+      '<div class="hero-compact-portrait-wrap">' +
+      portraitHtml +
+      renderCompactCardWave(slug) +
+      "</div>" +
       '<div class="hero-compact-body">' +
       '<div class="hero-compact-name">' +
       linkifyHero(name, slug) +
@@ -5004,31 +5014,37 @@
     return d;
   }
 
-  function renderHeroCardWave(patternId) {
+  function heroCardWavePaths() {
     const panelPeakX = 27;
     const panelTroughX = panelPeakX + (78 - panelPeakX) * 1.3;
-    const panelPath = buildReferenceWavePath({
-      leftX: -15,
-      rightX: 115,
-      peakX: panelPeakX,
-      troughX: panelTroughX,
-      peakY: 10,
-      troughY: 28,
-      leftY: 23,
-      endY: 25,
-    });
-    const accentPath = buildReferenceWavePath({
-      leftX: -22,
-      rightX: 125,
-      curveRightX: 130,
-      peakX: 40,
-      troughX: 95,
-      peakY: 1,
-      troughY: 19,
-      leftY: 9,
-      endY: 11,
-      xShift: -20,
-    });
+    return {
+      panelPath: buildReferenceWavePath({
+        leftX: -15,
+        rightX: 115,
+        peakX: panelPeakX,
+        troughX: panelTroughX,
+        peakY: 10,
+        troughY: 28,
+        leftY: 23,
+        endY: 25,
+      }),
+      accentPath: buildReferenceWavePath({
+        leftX: -22,
+        rightX: 125,
+        curveRightX: 130,
+        peakX: 40,
+        troughX: 95,
+        peakY: 1,
+        troughY: 19,
+        leftY: 9,
+        endY: 11,
+        xShift: -20,
+      }),
+    };
+  }
+
+  function renderHeroCardWave(patternId) {
+    const paths = heroCardWavePaths();
     const hatchId = "hero-panel-hatch-" + patternId;
     return (
       '<div class="hero-card-wave" aria-hidden="true">' +
@@ -5040,16 +5056,43 @@
       '<rect width="3" height="0.4" y="2.4" fill="var(--fc-hatch)"></rect>' +
       "</pattern></defs>" +
       '<path class="hero-card-wave-accent" d="' +
-      accentPath +
+      paths.accentPath +
       '"></path>' +
       '<path class="hero-card-wave-panel" d="' +
-      panelPath +
+      paths.panelPath +
       '"></path>' +
       '<path class="hero-card-wave-panel-hatch" d="' +
-      panelPath +
+      paths.panelPath +
       '" fill="url(#' +
       hatchId +
       ')"></path></svg></div>'
+    );
+  }
+
+  function renderCompactCardWave(patternId) {
+    const paths = heroCardWavePaths();
+    const hatchId = "hero-compact-hatch-" + patternId;
+    return (
+      '<div class="hero-compact-wave" aria-hidden="true">' +
+      '<svg class="hero-compact-wave-svg" viewBox="0 0 100 100" preserveAspectRatio="none">' +
+      "<defs>" +
+      '<pattern id="' +
+      hatchId +
+      '" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">' +
+      '<rect width="3" height="0.4" y="2.4" fill="var(--compact-wave-hatch)"></rect>' +
+      "</pattern></defs>" +
+      '<g transform="translate(40 100) scale(2 1) rotate(-90)">' +
+      '<path class="hero-compact-wave-accent" d="' +
+      paths.accentPath +
+      '"></path>' +
+      '<path class="hero-compact-wave-panel" d="' +
+      paths.panelPath +
+      '"></path>' +
+      '<path class="hero-compact-wave-panel-hatch" d="' +
+      paths.panelPath +
+      '" fill="url(#' +
+      hatchId +
+      ')"></path></g></svg></div>'
     );
   }
 
@@ -5637,7 +5680,7 @@
       return "";
     }
 
-    let html = '<div class="detail-section">';
+    let html = '<div class="detail-section synergy-benefited-by-section">';
     html +=
       "<h2>Units benefitting most from " + escapeHtml(heroName) + "</h2>";
 

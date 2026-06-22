@@ -13,6 +13,10 @@
   --afkj-radius-tr: 6px;
   --afkj-radius-br: 40px;
   --afkj-radius-bl: 6px;
+  --afkj-radius-feature-tl: 22px;
+  --afkj-radius-feature-tr: 2px;
+  --afkj-radius-feature-br: 16px;
+  --afkj-radius-feature-bl: 2px;
   --radius: 12px;
   --faction-celestial: #d99a3d;
   --faction-hypogean: #4b4282;
@@ -82,10 +86,12 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(246, 241, 234, 0.9), transparent 70%),
+    url("../assets/site-bg-wave.svg"),
     linear-gradient(180deg, #d8cfc2 0%, var(--bg) 40%, #d0c8bc 100%);
+  background-repeat: repeat, no-repeat;
+  background-size: 256px 256px, 100% 100%;
   color: var(--text);
   line-height: 1.5;
   min-height: 100vh;
@@ -1270,8 +1276,10 @@ a:hover {
   overflow: hidden;
   background: transparent;
   box-shadow: none;
-  --afkj-radius-tl: 22px;
-  --afkj-radius-br: 16px;
+  --afkj-radius-tl: var(--afkj-radius-feature-tl);
+  --afkj-radius-tr: var(--afkj-radius-feature-tr);
+  --afkj-radius-br: var(--afkj-radius-feature-br);
+  --afkj-radius-bl: var(--afkj-radius-feature-bl);
 }
 
 .detail-portrait.hero-card-portrait {
@@ -1538,6 +1546,11 @@ a:hover {
 
 .detail-section {
   margin-bottom: 1.75rem;
+  --compact-portrait-width: 87px;
+}
+
+.detail-section.synergy-benefited-by-section {
+  --compact-portrait-width: 104px;
 }
 
 .detail-section h2 {
@@ -1663,6 +1676,7 @@ a:hover {
   background: none;
   border: none;
   isolation: isolate;
+  --compact-portrait-width: 95px;
 }
 
 .replacement-category::before {
@@ -2459,16 +2473,16 @@ html.welcome-warning-pending .welcome-warning,
 .hero-compact-card {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  gap: 0.65rem;
-  background: var(--surface);
+  align-items: stretch;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 0.6rem;
+  padding: 0;
+  overflow: hidden;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   min-width: 0;
+  --compact-wave-panel: var(--surface);
+  --compact-wave-accent: color-mix(in srgb, var(--surface) 68%, var(--text-muted));
+  --compact-wave-hatch: rgba(113, 101, 97, 0.06);
 }
 
 .hero-compact-card:hover {
@@ -2477,18 +2491,67 @@ html.welcome-warning-pending .welcome-warning,
   border-color: var(--accent-soft);
 }
 
-.hero-compact-card img {
-  width: 56px;
-  height: 62px;
-  border-radius: 10px;
-  object-fit: contain;
-  flex-shrink: 0;
-  background: linear-gradient(135deg, #f0e8dc, #e8dfd4);
+.hero-compact-portrait-wrap {
+  position: relative;
+  flex: 0 0 var(--compact-portrait-width, 79px);
+  min-height: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-compact-wave {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 38%;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-compact-wave-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-compact-wave-accent {
+  fill: var(--compact-wave-accent);
+  opacity: 0.75;
+}
+
+.hero-compact-wave-panel {
+  fill: var(--compact-wave-panel);
+}
+
+.hero-compact-wave-panel-hatch {
+  pointer-events: none;
+}
+
+.compact-portrait.hero-card-portrait {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  aspect-ratio: unset;
+  border-radius: 0;
+}
+
+.hero-compact-portrait-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .hero-compact-body {
   flex: 1;
   min-width: 0;
+  padding: 0.6rem 0.6rem 0.6rem 0.65rem;
+  background: var(--surface);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-compact-name {
@@ -2629,38 +2692,40 @@ html.welcome-warning-pending .welcome-warning,
   font-size: 0.75rem;
 }
 
-.skill-overview-section .skill-card-grid {
+.skill-card-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
 }
 
-.skill-overview-section .skill-card {
+.skill-card {
   display: flex;
   flex-direction: column;
-  flex: 1 1 8.5rem;
-  min-width: min(100%, 8.5rem);
-  max-width: 100%;
   background: #f7f8fa;
   border: 1px solid #e2e6eb;
-  border-radius: calc(var(--radius) - 2px);
-  padding: 0.45rem 0.5rem;
-  box-shadow: 0 1px 3px rgba(30, 50, 90, 0.04);
+  border-radius:
+    var(--afkj-radius-feature-tl) var(--afkj-radius-feature-tr) var(--afkj-radius-feature-br) var(--afkj-radius-feature-bl);
+  box-shadow: none;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  transition: transform 0.15s, border-color 0.15s;
 }
 
-.skill-overview-section .skill-card:hover {
+.skill-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(30, 50, 90, 0.1);
+  box-shadow: none;
   border-color: var(--accent-soft);
 }
 
-.skill-overview-section .skill-card.skill-card-active {
+.skill-card.skill-card-active {
   border-color: var(--accent);
-  box-shadow:
-    0 0 0 2px rgba(79, 124, 255, 0.2),
-    0 2px 8px rgba(30, 50, 90, 0.08);
+  box-shadow: none;
+}
+
+.skill-overview-section .skill-card {
+  flex: 1 1 8.5rem;
+  min-width: min(100%, 8.5rem);
+  max-width: 100%;
+  padding: 0.45rem 0.5rem;
 }
 
 .skill-overview-section .skill-card h4 {
@@ -2724,15 +2789,13 @@ html.welcome-warning-pending .welcome-warning,
   100% {
     background-color: #f7f8fa;
     border-color: #e2e6eb;
-    box-shadow: 0 1px 3px rgba(30, 50, 90, 0.04);
+    box-shadow: none;
   }
 
   50% {
     background-color: #fff3bf;
     border-color: #e6b800;
-    box-shadow:
-      0 0 0 2px rgba(230, 184, 0, 0.35),
-      0 0 12px rgba(230, 184, 0, 0.28);
+    box-shadow: none;
   }
 }
 
@@ -2841,6 +2904,22 @@ html.welcome-warning-pending .welcome-warning,
   .hero-row-list.hero-compact-grid-4,
   .hero-row-list.hero-compact-grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .detail-section {
+    --compact-portrait-width: 84px;
+  }
+
+  .detail-section.synergy-benefited-by-section {
+    --compact-portrait-width: 84px;
+  }
+
+  .replacement-category {
+    --compact-portrait-width: 84px;
+  }
+
+  .hero-compact-portrait-wrap {
+    flex: 0 0 var(--compact-portrait-width, 84px);
   }
 
   .hero-row-card img {
