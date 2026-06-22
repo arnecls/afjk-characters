@@ -3262,8 +3262,8 @@
     const icon = skillCardHexIcon(category);
     const iconHtml = icon
       ? '<span class="skill-card-hex-icon" aria-hidden="true">' +
-        escapeHtml(icon) +
-        "</span>"
+      escapeHtml(icon) +
+      "</span>"
       : "";
     return (
       '<div class="skill-card-hex" aria-hidden="true">' +
@@ -6669,15 +6669,8 @@
 
     function positionSkillPopover(card) {
       const cardRect = card.getBoundingClientRect();
-      const content = card.querySelector(".skill-card-content");
-      const contentRect = content
-        ? content.getBoundingClientRect()
-        : cardRect;
-      const headline = card.querySelector(".skill-card-headline");
-      const headlineRect = headline
-        ? headline.getBoundingClientRect()
-        : cardRect;
-      const margin = 0;
+      const offset = 30;
+      const viewMargin = 8;
       const view = viewportMetrics();
       const isNarrow = view.width <= 600;
       const heightCap = Math.min(view.height * (isNarrow ? 0.82 : 0.6), 420);
@@ -6687,18 +6680,25 @@
       popover.hidden = false;
 
       const popW = popover.offsetWidth;
+      const popH = popover.offsetHeight;
       const viewCenter = view.left + view.width / 2;
       const cardCenter = cardRect.left + cardRect.width / 2;
       const alignRight = cardCenter >= viewCenter;
 
-      const popH = popover.offsetHeight;
-      const top = headlineRect.top - popH - margin;
+      let left;
+      let top = cardRect.bottom - offset - popH;
+      if (alignRight) {
+        left = cardRect.right - offset - popW;
+      } else {
+        left = cardRect.left + offset;
+      }
 
-      let left = alignRight
-        ? contentRect.right - popW //+ cardRect.width * 0.10
-        : contentRect.left;
-      const maxLeft = view.left + view.width - popW - margin;
-      left = Math.max(view.left + margin, Math.min(left, maxLeft));
+      const maxLeft = view.left + view.width - popW - viewMargin;
+      left = Math.max(view.left + viewMargin, Math.min(left, maxLeft));
+      top = Math.max(
+        view.top + viewMargin,
+        Math.min(top, view.top + view.height - popH - viewMargin)
+      );
 
       popover.style.top = top + "px";
       popover.style.left = left + "px";

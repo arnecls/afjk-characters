@@ -2093,7 +2093,7 @@ html.welcome-warning-pending .welcome-warning,
   width: min(28rem, calc(100vw - 1.5rem));
   max-width: 28rem;
   --skill-card-panel: #161c26;
-  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 55%, transparent);
+  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 70%, transparent);
   --skill-card-panel-stripe: color-mix(in srgb,
       color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
       transparent);
@@ -2759,7 +2759,7 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .skill-overview-section .skill-overview-metrics {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .skill-overview-section .skill-overview-list {
@@ -2842,7 +2842,7 @@ html.welcome-warning-pending .welcome-warning,
   --skill-card-text: #e4eaf2;
   --skill-card-text-inset: 7%;
   --skill-card-panel: #161c26;
-  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 55%, transparent);
+  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 60%, transparent);
   --skill-card-panel-stripe: color-mix(in srgb,
       color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
       transparent);
