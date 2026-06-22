@@ -1,16 +1,16 @@
 :root {
-  --bg: #ddd4c8;
-  --surface: #f6f1ea;
-  --surface-panel: oklch(from color-mix(in srgb, var(--surface) 90%, white) l calc(c * 0.65) h);
+  --bg: #e8eaef;
+  --surface: #fafbfd;
+  --surface-panel: oklch(from color-mix(in srgb, var(--surface) 78%, white) l calc(c * 0.35) h);
   --bg-stripe: color-mix(in srgb, var(--bg) 90%, black);
-  --text: #413332;
-  --text-muted: #716561;
-  --border: #ccc;
-  --accent: #716561;
-  --accent-soft: #e8dfd4;
-  --shadow: 0 0 55px 7px rgba(4, 5, 5, 0.1), 6px 10px rgba(18, 23, 20, 0.07);
-  --shadow-sm: 0 0 12px 2px rgba(4, 5, 5, 0.08), 3px 5px rgba(18, 23, 20, 0.07);
-  --shadow-md: 0 0 28px 4px rgba(4, 5, 5, 0.09), 4px 7px rgba(18, 23, 20, 0.07);
+  --text: #2a3340;
+  --text-muted: #5a6778;
+  --border: #bcc6d4;
+  --accent: #4777a8;
+  --accent-soft: #d4dde8;
+  --shadow: 0 0 55px 7px rgba(25, 40, 65, 0.1), 6px 10px rgba(25, 40, 65, 0.07);
+  --shadow-sm: 0 0 12px 2px rgba(25, 40, 65, 0.08), 3px 5px rgba(25, 40, 65, 0.07);
+  --shadow-md: 0 0 28px 4px rgba(25, 40, 65, 0.09), 4px 7px rgba(25, 40, 65, 0.07);
   --afkj-radius-tl: 80px;
   --afkj-radius-tr: 6px;
   --afkj-radius-br: 40px;
@@ -50,8 +50,8 @@
   --faction-dimensional-c3: #4080d8;
   --list-sticky-top: 0px;
   --chip-border: rgba(30, 50, 90, 0.1);
-  --chip-damage-bg: #f3ece3;
-  --chip-damage-fg: #6b5848;
+  --chip-damage-bg: #e6eaef;
+  --chip-damage-fg: #4a5568;
   --chip-stat-bg: #d8e3f6;
   --chip-stat-fg: #304060;
   --chip-heal-bg: #c8e6d4;
@@ -66,9 +66,9 @@
   --chip-target-fg: #1a5a80;
   --chip-role-bg: #dceee0;
   --chip-role-fg: #305030;
-  --chip-behavior-tag-bg: #f3ece3;
-  --chip-behavior-tag-fg: #6b5848;
-  --replacement-similar-tint: #f5e8b8;
+  --chip-behavior-tag-bg: #e6eaef;
+  --chip-behavior-tag-fg: #4a5568;
+  --replacement-similar-tint: #dce4f0;
   --chip-generic-bg: #e4eaf2;
   --chip-generic-fg: #405070;
   --chip-quality-high-bg: #d4f5dc;
@@ -95,7 +95,7 @@ body {
       transparent 3px,
       var(--bg-stripe) 3px,
       var(--bg-stripe) 3.5px),
-    linear-gradient(180deg, #d8cfc2 0%, var(--bg) 40%, #d0c8bc 100%);
+    linear-gradient(180deg, #e2e5eb 0%, var(--bg) 40%, #dee2e9 100%);
   background-repeat: repeat, no-repeat;
   background-size: auto, 100% 100%;
   color: var(--text);
@@ -502,7 +502,7 @@ a:hover {
   height: 36px;
   object-fit: cover;
   border-radius: 6px;
-  background: linear-gradient(135deg, #f0e8dc, #e8dfd4);
+  background: linear-gradient(135deg, #e4e9f0, #d8dfe8);
 }
 
 .heroes-table th.sortable {
@@ -932,9 +932,9 @@ a:hover {
 .hero-card:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 0 18px 3px rgba(4, 5, 5, 0.12),
-    5px 8px rgba(18, 23, 20, 0.1);
-  border-color: rgba(113, 101, 97, 0.25);
+    0 0 18px 3px rgba(25, 40, 65, 0.12),
+    5px 8px rgba(25, 40, 65, 0.1);
+  border-color: rgba(90, 110, 140, 0.25);
 }
 
 .hero-card-portrait {
@@ -2092,7 +2092,7 @@ html.welcome-warning-pending .welcome-warning,
   flex-direction: column;
   width: min(28rem, calc(100vw - 1.5rem));
   max-width: 28rem;
-  --skill-card-panel: #1a1410;
+  --skill-card-panel: #161c26;
   --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 55%, transparent);
   --skill-card-panel-stripe: color-mix(in srgb,
       color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
@@ -2104,7 +2104,7 @@ html.welcome-warning-pending .welcome-warning,
       var(--skill-card-panel-stripe) 3px,
       var(--skill-card-panel-stripe) 3.5px),
     var(--skill-card-panel-bg);
-  --skill-card-text: #f2ece4;
+  --skill-card-text: #e4eaf2;
   --skill-card-hex-highlight: #d4a84b;
   --skill-card-active-ring: color-mix(in srgb, var(--skill-card-hex-highlight) 55%, white);
   border: none;
@@ -2119,8 +2119,8 @@ html.welcome-warning-pending .welcome-warning,
   overflow: hidden;
   box-shadow:
     0 0 0 2px var(--skill-card-active-ring),
-    0 8px 24px rgba(20, 14, 10, 0.28),
-    0 2px 8px rgba(20, 14, 10, 0.14);
+    0 8px 24px rgba(15, 25, 40, 0.28),
+    0 2px 8px rgba(15, 25, 40, 0.14);
 }
 
 .skill-popover-header {
@@ -2497,7 +2497,7 @@ html.welcome-warning-pending .welcome-warning,
   border-radius: 10px;
   object-fit: contain;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #f0e8dc, #e8dfd4);
+  background: linear-gradient(135deg, #e4e9f0, #d8dfe8);
 }
 
 .hero-row-body {
@@ -2573,7 +2573,7 @@ html.welcome-warning-pending .welcome-warning,
   background: var(--surface-panel);
   --compact-wave-panel: var(--surface-panel);
   --compact-wave-accent: color-mix(in srgb, var(--surface-panel) 68%, var(--text-muted));
-  --compact-wave-hatch: rgba(113, 101, 97, 0.06);
+  --compact-wave-hatch: rgba(70, 90, 120, 0.06);
 }
 
 .hero-compact-card:hover {
@@ -2839,9 +2839,9 @@ html.welcome-warning-pending .welcome-warning,
   cursor: pointer;
   padding: 0;
   transition: opacity 0.25s ease;
-  --skill-card-text: #f2ece4;
+  --skill-card-text: #e4eaf2;
   --skill-card-text-inset: 7%;
-  --skill-card-panel: #1a1410;
+  --skill-card-panel: #161c26;
   --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 55%, transparent);
   --skill-card-panel-stripe: color-mix(in srgb,
       color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
@@ -2859,8 +2859,8 @@ html.welcome-warning-pending .welcome-warning,
   --skill-card-hex-highlight-inner: color-mix(in srgb, var(--skill-card-hex-highlight) 40%, black);
   --skill-card-active-ring: color-mix(in srgb, var(--skill-card-hex-highlight) 55%, white);
   --skill-card-active-elevation:
-    0 8px 24px rgba(20, 14, 10, 0.28),
-    0 2px 8px rgba(20, 14, 10, 0.14);
+    0 8px 24px rgba(15, 25, 40, 0.28),
+    0 2px 8px rgba(15, 25, 40, 0.14);
 }
 
 .skill-card-headline {
@@ -2941,7 +2941,7 @@ html.welcome-warning-pending .welcome-warning,
   flex-direction: column;
   flex: 1;
   min-height: 0;
-  padding: 0.8rem 0.5rem 0.45rem var(--skill-card-text-inset);
+  padding: 0.8rem 0.5rem 0.85rem var(--skill-card-text-inset);
   background: var(--skill-card-panel-bg-striped);
   border: none;
   border-radius:
