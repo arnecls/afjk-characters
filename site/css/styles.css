@@ -1546,11 +1546,6 @@ a:hover {
 
 .detail-section {
   margin-bottom: 1.75rem;
-  --compact-portrait-width: 87px;
-}
-
-.detail-section.synergy-benefited-by-section {
-  --compact-portrait-width: 104px;
 }
 
 .detail-section h2 {
@@ -1676,7 +1671,6 @@ a:hover {
   background: none;
   border: none;
   isolation: isolate;
-  --compact-portrait-width: 95px;
 }
 
 .replacement-category::before {
@@ -2491,6 +2485,16 @@ html.welcome-warning-pending .welcome-warning,
   border-color: var(--accent-soft);
 }
 
+/* Synergy compact cards: portrait column = 25% of card width */
+.synergy-section .hero-compact-card {
+  --compact-portrait-width: 15%;
+}
+
+/* Replacement compact cards: portrait column = 20% of card width */
+.replacement-category .hero-compact-card {
+  --compact-portrait-width: 30%;
+}
+
 .hero-compact-portrait-wrap {
   position: relative;
   flex: 0 0 var(--compact-portrait-width, 79px);
@@ -2904,22 +2908,6 @@ html.welcome-warning-pending .welcome-warning,
   .hero-row-list.hero-compact-grid-4,
   .hero-row-list.hero-compact-grid-2 {
     grid-template-columns: 1fr;
-  }
-
-  .detail-section {
-    --compact-portrait-width: 84px;
-  }
-
-  .detail-section.synergy-benefited-by-section {
-    --compact-portrait-width: 84px;
-  }
-
-  .replacement-category {
-    --compact-portrait-width: 84px;
-  }
-
-  .hero-compact-portrait-wrap {
-    flex: 0 0 var(--compact-portrait-width, 84px);
   }
 
   .hero-row-card img {

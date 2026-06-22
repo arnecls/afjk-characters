@@ -5517,7 +5517,7 @@
     const syn = sections.benefits_from;
     if (!syn) return "";
 
-    let html = '<div class="detail-section">';
+    let html = '<div class="detail-section synergy-section">';
     html +=
       "<h2>Units improving " + escapeHtml(heroName) + "</h2>";
 
@@ -5680,7 +5680,7 @@
       return "";
     }
 
-    let html = '<div class="detail-section synergy-benefited-by-section">';
+    let html = '<div class="detail-section synergy-section synergy-benefited-by-section">';
     html +=
       "<h2>Units benefitting most from " + escapeHtml(heroName) + "</h2>";
 
