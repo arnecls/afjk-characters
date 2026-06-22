@@ -1167,6 +1167,30 @@
     return isInsideSpanClass(html, index, "skill-inline-time");
   }
 
+  function isInsideSkillInlineNum(html, index) {
+    return isInsideStrong(html, index) || isInsideSpanClass(html, index, "skill-inline-num");
+  }
+
+  function isInsideStrong(html, index) {
+    const before = html.slice(0, index);
+    const openPos = before.lastIndexOf("<strong");
+    if (openPos === -1) {
+      return false;
+    }
+    const closePos = before.indexOf("</strong>", openPos);
+    return closePos === -1 || closePos >= index;
+  }
+
+  function boldSkillNumericTokens(html) {
+    return replaceOutsideChips(
+      html,
+      /(?:[×x*]\s*)?[+\-−]?\d+(?:\.\d+)?(?:%|s\b)?(?:\s*[×x*÷/]\s*(?:[×x*]\s*)?[+\-−]?\d+(?:\.\d+)?(?:%|s\b)?)*/g,
+      function (match) {
+        return '<strong class="skill-inline-num">' + match + "</strong>";
+      }
+    );
+  }
+
   function replaceOutsideChips(text, re, replacer) {
     return text.replace(re, function () {
       const args = Array.prototype.slice.call(arguments);
@@ -1176,7 +1200,8 @@
         isInsideHtmlTag(text, offset) ||
         isInsideChipSpan(text, offset) ||
         isInsideSkillInlineStat(text, offset) ||
-        isInsideSkillInlineTime(text, offset)
+        isInsideSkillInlineTime(text, offset) ||
+        isInsideSkillInlineNum(text, offset)
       ) {
         return match;
       }
@@ -2998,7 +3023,8 @@
     { re: /\bdispel(?:s|led|ling)\b/gi, tag: "Cleanse" },
   ];
 
-  function enrichSkillInline(text) {
+  function enrichSkillInline(text, opts) {
+    opts = opts || {};
     if (!text) {
       return "";
     }
@@ -3051,6 +3077,9 @@
         );
       });
     });
+    if (opts.boldNumbers) {
+      out = boldSkillNumericTokens(out);
+    }
     return out;
   }
 
@@ -3123,18 +3152,18 @@
           scrollHtml +=
             '<p class="skill-popover-phase">' +
             '<span class="skill-popover-phase-label">📖 <strong>Passive</strong></span> ' +
-            enrichSkillInline(phase.body) +
+            enrichSkillInline(phase.body, { boldNumbers: true }) +
             "</p>";
         } else if (phase.label === "active") {
           scrollHtml +=
             '<p class="skill-popover-phase">' +
             '<span class="skill-popover-phase-label">⚡ <strong>Active</strong></span> ' +
-            enrichSkillInline(phase.body) +
+            enrichSkillInline(phase.body, { boldNumbers: true }) +
             "</p>";
         } else {
           scrollHtml +=
             '<p class="skill-popover-phase">' +
-            enrichSkillInline(phase.body) +
+            enrichSkillInline(phase.body, { boldNumbers: true }) +
             "</p>";
         }
       });
@@ -3152,7 +3181,7 @@
           "<li><span class=\"skill-popover-level-label\">🔼 " +
           escapeHtml(levelLabel) +
           ":</span> " +
-          enrichSkillInline(level.text || "") +
+          enrichSkillInline(level.text || "", { boldNumbers: true }) +
           "</li>";
       });
       scrollHtml += "</ul>";
@@ -3175,10 +3204,64 @@
     return null;
   }
 
-  function renderSkillCards(cards) {
+  function skillCardHexPoints(scale) {
+    const cx = 50;
+    const cy = 57.5;
+    const outer = [
+      [50, 3],
+      [97, 29.75],
+      [97, 85.25],
+      [50, 112],
+      [3, 85.25],
+      [3, 29.75],
+    ];
+    return outer
+      .map(function (point) {
+        const x = cx + (point[0] - cx) * scale;
+        const y = cy + (point[1] - cy) * scale;
+        return x + "," + y;
+      })
+      .join(" ");
+  }
+
+  function renderSkillCardHex(category) {
+    const patternId = "skill-hex-stripe-" + category;
+    const outerPoints = skillCardHexPoints(1);
+    const innerPoints = skillCardHexPoints(0.84);
+    return (
+      '<div class="skill-card-hex" aria-hidden="true">' +
+      '<svg class="skill-card-hex-svg" viewBox="-6 -6 112 127" preserveAspectRatio="xMidYMid meet">' +
+      "<defs>" +
+      '<pattern id="' +
+      patternId +
+      '" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
+      '<rect width="5" height="5" fill="var(--skill-card-hex-fill)"></rect>' +
+      '<rect width="2.5" height="5" fill="var(--skill-card-hex-stripe)"></rect>' +
+      "</pattern></defs>" +
+      '<polygon class="skill-card-hex-fill" points="' +
+      outerPoints +
+      '" fill="url(#' +
+      patternId +
+      ')"></polygon>' +
+      '<polygon class="skill-card-hex-border-outer" points="' +
+      outerPoints +
+      '"></polygon>' +
+      '<polygon class="skill-card-hex-border-inner" points="' +
+      innerPoints +
+      '"></polygon>' +
+      "</svg></div>"
+    );
+  }
+
+  function renderSkillCards(cards, hero) {
     if (!cards || !cards.length) {
       return "";
     }
+
+    const factionKey = hero ? factionDataKey(hero.faction) : "";
+    const factionAttr = factionKey
+      ? ' data-faction="' + escapeHtml(factionKey) + '"'
+      : "";
 
     let html = '<div class="skill-card-grid">';
     cards.forEach(function (card) {
@@ -3186,9 +3269,16 @@
       html +=
         '<div class="skill-card" data-skill-category="' +
         escapeHtml(card.category) +
-        '" role="button" tabindex="0" aria-expanded="false" ' +
+        '"' +
+        factionAttr +
+        ' role="button" tabindex="0" aria-expanded="false" ' +
         'aria-haspopup="dialog">';
-      html += "<h4>" + escapeHtml(card.label) + "</h4>";
+      html += '<div class="skill-card-headline">';
+      html +=
+        '<h4 class="skill-card-title">' + escapeHtml(card.label) + "</h4>";
+      html += renderSkillCardHex(card.category);
+      html += "</div>";
+      html += '<div class="skill-card-content">';
       if (card.summary) {
         html +=
           '<p class="skill-card-summary">' +
@@ -3201,7 +3291,7 @@
           renderSkillCardTags(tags) +
           "</div>";
       }
-      html += "</div>";
+      html += "</div></div>";
     });
     html += "</div>";
     return html;
@@ -5871,7 +5961,7 @@
             '<div class="skill-overview-metrics">' + metricsHtml + "</div>";
         }
         if (hero.sections.skillCards && hero.sections.skillCards.length) {
-          html += renderSkillCards(hero.sections.skillCards);
+          html += renderSkillCards(hero.sections.skillCards, hero);
         }
         html += "</div>";
       }
@@ -6526,17 +6616,7 @@
       };
     }
 
-    function isPhoneViewport() {
-      return viewportMetrics().width <= 480;
-    }
-
     function clearPopoverLayout() {
-      popover.classList.remove(
-        "skill-card-popover--fullscreen",
-        "skill-card-popover--below"
-      );
-      backdrop.classList.remove("skill-card-popover-backdrop--dimmed");
-      document.body.classList.remove("skill-popover-open");
       popover.style.top = "";
       popover.style.left = "";
       popover.style.width = "";
@@ -6545,37 +6625,17 @@
       popover.style.visibility = "";
     }
 
-    function applyPhoneFullscreenLayout() {
-      const view = viewportMetrics();
-      popover.classList.add("skill-card-popover--fullscreen");
-      popover.classList.remove("skill-card-popover--below");
-      backdrop.classList.add("skill-card-popover-backdrop--dimmed");
-      document.body.classList.add("skill-popover-open");
-      popover.style.top = view.top + "px";
-      popover.style.left = view.left + "px";
-      popover.style.width = view.width + "px";
-      popover.style.height = view.height + "px";
-      popover.style.maxHeight = "none";
-      popover.style.visibility = "";
-      const scrollEl = popover.querySelector(".skill-popover-scroll");
-      if (scrollEl) {
-        scrollEl.scrollTop = 0;
-      }
-    }
-
     function positionSkillPopover(card) {
-      if (isPhoneViewport()) {
-        applyPhoneFullscreenLayout();
-        return;
-      }
-
-      popover.classList.remove("skill-card-popover--fullscreen");
-      backdrop.classList.remove("skill-card-popover-backdrop--dimmed");
-      document.body.classList.remove("skill-popover-open");
-
-      const rect = card.getBoundingClientRect();
-      const margin = 12;
-      const arrowSize = 10;
+      const cardRect = card.getBoundingClientRect();
+      const content = card.querySelector(".skill-card-content");
+      const contentRect = content
+        ? content.getBoundingClientRect()
+        : cardRect;
+      const headline = card.querySelector(".skill-card-headline");
+      const headlineRect = headline
+        ? headline.getBoundingClientRect()
+        : cardRect;
+      const margin = 0;
       const view = viewportMetrics();
       const isNarrow = view.width <= 600;
       const heightCap = Math.min(view.height * (isNarrow ? 0.82 : 0.6), 420);
@@ -6585,62 +6645,35 @@
       popover.hidden = false;
 
       const popW = popover.offsetWidth;
-      const naturalHeight = popover.offsetHeight;
+      const viewCenter = view.left + view.width / 2;
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const alignRight = cardCenter >= viewCenter;
 
-      const spaceAbove = rect.top - view.top - margin - arrowSize;
-      const spaceBelow =
-        view.top + view.height - rect.bottom - margin - arrowSize;
-      let placeBelow = spaceBelow >= spaceAbove;
-      if (naturalHeight > spaceAbove && spaceBelow > spaceAbove) {
-        placeBelow = true;
-      } else if (naturalHeight > spaceBelow && spaceAbove >= spaceBelow) {
-        placeBelow = false;
-      }
-
-      let maxHeight = Math.max(
-        120,
-        Math.min(heightCap, placeBelow ? spaceBelow : spaceAbove)
-      );
+      const spaceAbove =
+        headlineRect.top - view.top - margin;
+      let maxHeight = Math.max(120, Math.min(heightCap, spaceAbove));
       popover.style.maxHeight = maxHeight + "px";
 
-      let popH = popover.offsetHeight;
-      let top = placeBelow
-        ? rect.bottom + margin + arrowSize
-        : rect.top - popH - margin - arrowSize;
+      const popH = popover.offsetHeight;
+      let top = headlineRect.top - popH - margin;
+      top = Math.max(view.top + margin, top);
 
-      if (!placeBelow && top < view.top + margin) {
-        top = view.top + margin;
+      if (top + popH > headlineRect.top - margin) {
         maxHeight = Math.max(
           120,
-          Math.min(heightCap, rect.top - margin - arrowSize - top)
+          headlineRect.top - margin - top
         );
         popover.style.maxHeight = maxHeight + "px";
-        popH = popover.offsetHeight;
       }
 
-      const bottomLimit = view.top + view.height - margin;
-      if (top + popH > bottomLimit) {
-        maxHeight = Math.max(120, bottomLimit - top);
-        popover.style.maxHeight = maxHeight + "px";
-        popH = popover.offsetHeight;
-      }
-
-      if (!placeBelow) {
-        top = rect.top - popH - margin - arrowSize;
-        top = Math.max(view.top + margin, top);
-      }
-
-      let left = rect.left + rect.width / 2 - popW / 2;
+      let left = alignRight
+        ? contentRect.right - popW //+ cardRect.width * 0.10
+        : contentRect.left;
       const maxLeft = view.left + view.width - popW - margin;
       left = Math.max(view.left + margin, Math.min(left, maxLeft));
 
-      const cardCenter = rect.left + rect.width / 2;
-      const arrowLeft = Math.max(18, Math.min(cardCenter - left, popW - 18));
-
       popover.style.top = top + "px";
       popover.style.left = left + "px";
-      popover.style.setProperty("--arrow-left", arrowLeft + "px");
-      popover.classList.toggle("skill-card-popover--below", placeBelow);
       popover.style.visibility = "";
     }
 
@@ -6709,17 +6742,13 @@
       if (
         anchorCard &&
         !popover.contains(e.target) &&
-        !anchorCard.contains(e.target) &&
-        !isPhoneViewport()
+        !anchorCard.contains(e.target)
       ) {
         hideSkillPopover();
       }
     });
 
     backdrop.addEventListener("click", function () {
-      if (isPhoneViewport()) {
-        return;
-      }
       hideSkillPopover();
     });
 
@@ -6734,7 +6763,7 @@
         openFromCard(card);
         return;
       }
-      if (e.key === "Escape" && anchorCard && !isPhoneViewport()) {
+      if (e.key === "Escape" && anchorCard) {
         hideSkillPopover();
         anchorCard.focus();
       }
