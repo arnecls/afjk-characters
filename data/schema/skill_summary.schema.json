@@ -12,12 +12,12 @@
     "heroSkillSummaries": {
       "type": "object",
       "minProperties": 1,
-      "additionalProperties": {
-        "$ref": "#/$defs/summaryText"
+      "patternProperties": {
+        "^(ultimate|skill[1-5])$": {
+          "$ref": "#/$defs/summaryText"
+        }
       },
-      "propertyNames": {
-        "$ref": "skills.schema.json#/$defs/skillCategory"
-      }
+      "additionalProperties": false
     },
     "summaryText": {
       "type": "string",

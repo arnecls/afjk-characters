@@ -3224,10 +3224,29 @@
       .join(" ");
   }
 
+  const SKILL_CARD_HEX_ICONS = {
+    ultimate: "🌟",
+    skill1: "💫",
+    skill2: "💫",
+    skill3: "🗡️",
+    skill4: "⚔️",
+    skill5: "✨",
+  };
+
+  function skillCardHexIcon(category) {
+    return SKILL_CARD_HEX_ICONS[category] || "";
+  }
+
   function renderSkillCardHex(category) {
     const patternId = "skill-hex-stripe-" + category;
     const outerPoints = skillCardHexPoints(1);
     const innerPoints = skillCardHexPoints(0.84);
+    const icon = skillCardHexIcon(category);
+    const iconHtml = icon
+      ? '<span class="skill-card-hex-icon" aria-hidden="true">' +
+        escapeHtml(icon) +
+        "</span>"
+      : "";
     return (
       '<div class="skill-card-hex" aria-hidden="true">' +
       '<svg class="skill-card-hex-svg" viewBox="-6 -6 112 127" preserveAspectRatio="xMidYMid meet">' +
@@ -3249,7 +3268,9 @@
       '<polygon class="skill-card-hex-border-inner" points="' +
       innerPoints +
       '"></polygon>' +
-      "</svg></div>"
+      "</svg>" +
+      iconHtml +
+      "</div>"
     );
   }
 
