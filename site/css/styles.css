@@ -1,6 +1,8 @@
 :root {
   --bg: #ddd4c8;
   --surface: #f6f1ea;
+  --surface-panel: oklch(from color-mix(in srgb, var(--surface) 90%, white) l calc(c * 0.65) h);
+  --bg-stripe: color-mix(in srgb, var(--bg) 90%, black);
   --text: #413332;
   --text-muted: #716561;
   --border: #ccc;
@@ -88,10 +90,14 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg);
   background-image:
-    url("../assets/site-bg-wave.svg"),
+    repeating-linear-gradient(-60deg,
+      transparent 0,
+      transparent 3px,
+      var(--bg-stripe) 3px,
+      var(--bg-stripe) 3.5px),
     linear-gradient(180deg, #d8cfc2 0%, var(--bg) 40%, #d0c8bc 100%);
   background-repeat: repeat, no-repeat;
-  background-size: 256px 256px, 100% 100%;
+  background-size: auto, 100% 100%;
   color: var(--text);
   line-height: 1.5;
   min-height: 100vh;
@@ -1026,17 +1032,41 @@ a:hover {
   z-index: 1;
 }
 
-.hero-card-faction-icon {
+.hero-card-faction-stack {
   position: absolute;
-  left: 0.15rem;
-  bottom: 0.15rem;
-  width: 22%;
-  max-width: 2.15rem;
+  left: 0.35rem;
+  bottom: 0.35rem;
+  width: 24.2%;
+  max-width: 2.365rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-card-faction-icon {
+  display: block;
+  width: 100%;
   height: auto;
   object-fit: contain;
-  z-index: 5;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
-  pointer-events: none;
+}
+
+.hero-card-faction-stack .hero-card-class-badge {
+  position: absolute;
+  right: -0.2rem;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  line-height: 0;
+}
+
+.hero-card-faction-stack .hero-card-class-badge img {
+  width: 100%;
+  min-width: 0.65rem;
+  max-width: 1rem;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.28));
 }
 
 .hero-card-info {
@@ -1053,7 +1083,7 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 38%;
+  height: 35%;
   z-index: 2;
   overflow: hidden;
   pointer-events: none;
@@ -1084,7 +1114,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   min-height: 0;
-  padding: 0.08rem 0.3rem 0.04rem 28%;
+  padding: 0.08rem 0.7rem 0.04rem 25%;
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -1095,10 +1125,10 @@ a:hover {
   width: 100%;
   font-family: "Noto Sans", system-ui, sans-serif;
   font-weight: 500;
-  font-size: clamp(0.8rem, 14cqi, 1.4rem);
-  line-height: 0.95;
+  font-size: clamp(0.8rem, 13cqi, 1.4rem);
+  line-height: 0.85;
   color: var(--fc-name);
-  text-align: center;
+  text-align: right;
   text-wrap: balance;
 }
 
@@ -1116,16 +1146,7 @@ a:hover {
 .hero-card-class-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
-  font-size: clamp(0.55rem, 6.5cqi, 0.7rem);
-  font-weight: 500;
-  padding: 0.12rem 0.34rem;
-  color: var(--fc-name);
-}
-
-.hero-card-class-badge img {
-  width: clamp(11px, 9cqi, 14px);
-  height: clamp(11px, 9cqi, 14px);
+  justify-content: center;
 }
 
 .badges {
@@ -1564,7 +1585,7 @@ a:hover {
 .detail-section h2 {
   font-size: 1.15rem;
   margin: 0 0 0.75rem;
-  color: var(--text);
+  color: #6b87bd;
   border-bottom: 3px solid var(--accent-soft);
   padding-bottom: 0.35rem;
 }
@@ -2004,7 +2025,7 @@ html.welcome-warning-pending .welcome-warning,
 .skill-card-popover-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  z-index: 8;
   background: transparent;
 }
 
@@ -2014,20 +2035,22 @@ html.welcome-warning-pending .welcome-warning,
 
 .skill-card-popover {
   position: fixed;
-  z-index: 10001;
+  z-index: 9;
   display: flex;
   flex-direction: column;
   width: min(28rem, calc(100vw - 1.5rem));
   max-width: 28rem;
   --skill-card-panel: #1a1410;
   --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 55%, transparent);
-  --skill-card-panel-stripe: color-mix(in srgb, var(--skill-card-panel) 72%, black);
+  --skill-card-panel-stripe: color-mix(in srgb,
+      color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
+      transparent);
   --skill-card-panel-bg-striped:
     repeating-linear-gradient(-60deg,
       transparent 0,
       transparent 3px,
-      color-mix(in srgb, var(--skill-card-panel-stripe) 22%, transparent) 3px,
-      color-mix(in srgb, var(--skill-card-panel-stripe) 22%, transparent) 3.5px),
+      var(--skill-card-panel-stripe) 3px,
+      var(--skill-card-panel-stripe) 3.5px),
     var(--skill-card-panel-bg);
   --skill-card-text: #f2ece4;
   --skill-card-hex-highlight: #d4a84b;
@@ -2495,8 +2518,9 @@ html.welcome-warning-pending .welcome-warning,
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   min-width: 0;
-  --compact-wave-panel: var(--surface);
-  --compact-wave-accent: color-mix(in srgb, var(--surface) 68%, var(--text-muted));
+  background: var(--surface-panel);
+  --compact-wave-panel: var(--surface-panel);
+  --compact-wave-accent: color-mix(in srgb, var(--surface-panel) 68%, var(--text-muted));
   --compact-wave-hatch: rgba(113, 101, 97, 0.06);
 }
 
@@ -2574,7 +2598,7 @@ html.welcome-warning-pending .welcome-warning,
   flex: 1;
   min-width: 0;
   padding: 0.6rem 0.6rem 0.6rem 0.65rem;
-  background: var(--surface);
+  background: var(--surface-panel);
   position: relative;
   z-index: 1;
 }
@@ -2624,7 +2648,7 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .summary-card {
-  background: var(--surface);
+  background: var(--surface-panel);
   border: 1px solid var(--border);
   border-radius: 16px 3px 10px 3px;
   padding: 0.85rem 1rem;
@@ -2767,13 +2791,15 @@ html.welcome-warning-pending .welcome-warning,
   --skill-card-text-inset: 7%;
   --skill-card-panel: #1a1410;
   --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 55%, transparent);
-  --skill-card-panel-stripe: color-mix(in srgb, var(--skill-card-panel) 72%, black);
+  --skill-card-panel-stripe: color-mix(in srgb,
+      color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
+      transparent);
   --skill-card-panel-bg-striped:
     repeating-linear-gradient(-60deg,
       transparent 0,
       transparent 3px,
-      color-mix(in srgb, var(--skill-card-panel-stripe) 22%, transparent) 3px,
-      color-mix(in srgb, var(--skill-card-panel-stripe) 22%, transparent) 3.5px),
+      var(--skill-card-panel-stripe) 3px,
+      var(--skill-card-panel-stripe) 3.5px),
     var(--skill-card-panel-bg);
   --skill-card-hex-fill: #5a3f22;
   --skill-card-hex-stripe: #7a5530;

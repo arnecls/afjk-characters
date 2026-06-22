@@ -650,18 +650,36 @@
     );
   }
 
-  function renderGridCardClassBadge(hero) {
+  function renderGridCardClassIcon(hero) {
     if (!hero.class) {
       return "";
     }
     const icon = iconPath("class", hero.class);
+    if (!icon) {
+      return "";
+    }
     return (
       '<span class="hero-card-class-badge">' +
-      (icon
-        ? '<img src="' + assetUrl(icon) + '" alt="" loading="lazy">'
-        : "") +
+      '<img src="' +
+      assetUrl(icon) +
+      '" alt="' +
       escapeHtml(hero.class) +
+      '" loading="lazy">' +
       "</span>"
+    );
+  }
+
+  function renderGridCardFactionStack(hero) {
+    const factionIcon = renderGridCardFactionIcon(hero);
+    const classIcon = renderGridCardClassIcon(hero);
+    if (!factionIcon && !classIcon) {
+      return "";
+    }
+    return (
+      '<div class="hero-card-faction-stack">' +
+      factionIcon +
+      classIcon +
+      "</div>"
     );
   }
 
@@ -5226,10 +5244,8 @@
           '<div class="hero-card-name"><h2>' +
           escapeHtml(h.name) +
           "</h2></div>" +
-          '<div class="hero-card-meta">' +
-          renderGridCardClassBadge(h) +
-          "</div></div>" +
-          renderGridCardFactionIcon(h) +
+          '<div class="hero-card-meta"></div></div>' +
+          renderGridCardFactionStack(h) +
           "</article>"
         );
       })
@@ -6670,22 +6686,8 @@
       const cardCenter = cardRect.left + cardRect.width / 2;
       const alignRight = cardCenter >= viewCenter;
 
-      const spaceAbove =
-        headlineRect.top - view.top - margin;
-      let maxHeight = Math.max(120, Math.min(heightCap, spaceAbove));
-      popover.style.maxHeight = maxHeight + "px";
-
       const popH = popover.offsetHeight;
-      let top = headlineRect.top - popH - margin;
-      top = Math.max(view.top + margin, top);
-
-      if (top + popH > headlineRect.top - margin) {
-        maxHeight = Math.max(
-          120,
-          headlineRect.top - margin - top
-        );
-        popover.style.maxHeight = maxHeight + "px";
-      }
+      const top = headlineRect.top - popH - margin;
 
       let left = alignRight
         ? contentRect.right - popW //+ cardRect.width * 0.10
