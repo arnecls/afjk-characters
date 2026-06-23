@@ -1,24 +1,57 @@
 :root {
-  --bg: #f4f6fb;
-  --surface: #ffffff;
-  --text: #1a2332;
-  --text-muted: #5a6578;
-  --border: #e2e8f0;
-  --accent: #4f7cff;
-  --accent-soft: #e8efff;
-  --shadow: 0 2px 12px rgba(30, 50, 90, 0.08);
+  --bg: #e8eaef;
+  --surface: #fafbfd;
+  --surface-panel: oklch(from color-mix(in srgb, var(--surface) 78%, white) l calc(c * 0.35) h);
+  --bg-stripe: color-mix(in srgb, var(--bg) 90%, black);
+  --text: #2a3340;
+  --text-muted: #5a6778;
+  --border: #bcc6d4;
+  --accent: #4777a8;
+  --accent-soft: #d4dde8;
+  --shadow: 0 0 55px 7px rgba(25, 40, 65, 0.1), 6px 10px rgba(25, 40, 65, 0.07);
+  --shadow-sm: 0 0 12px 2px rgba(25, 40, 65, 0.08), 3px 5px rgba(25, 40, 65, 0.07);
+  --shadow-md: 0 0 28px 4px rgba(25, 40, 65, 0.09), 4px 7px rgba(25, 40, 65, 0.07);
+  --afkj-radius-tl: 80px;
+  --afkj-radius-tr: 6px;
+  --afkj-radius-br: 40px;
+  --afkj-radius-bl: 6px;
+  --afkj-radius-feature-tl: 22px;
+  --afkj-radius-feature-tr: 2px;
+  --afkj-radius-feature-br: 16px;
+  --afkj-radius-feature-bl: 2px;
   --radius: 12px;
-  --faction-celestial: #f0c040;
-  --faction-hypogean: #b060ff;
-  --faction-lightbearer: #ffd966;
-  --faction-mauler: #e06050;
-  --faction-graveborn: #8090a8;
-  --faction-wilder: #50c878;
-  --faction-dimensional: #50b0ff;
+  --faction-celestial: #d99a3d;
+  --faction-hypogean: #4b4282;
+  --faction-lightbearer: #4a6b8a;
+  --faction-mauler: #a06637;
+  --faction-graveborn: #2f4238;
+  --faction-wilder: #4a8860;
+  --faction-dimensional: #5090e8;
+  --faction-celestial-c1: #ffea48;
+  --faction-celestial-c2: #d99a3d;
+  --faction-celestial-c3: #a86a20;
+  --faction-hypogean-c1: #e848a8;
+  --faction-hypogean-c2: #4b4282;
+  --faction-hypogean-c3: #2a2248;
+  --faction-lightbearer-c1: #90bce0;
+  --faction-lightbearer-c2: #4a6b8a;
+  --faction-lightbearer-c3: #2e4560;
+  --faction-mauler-c1: #f08840;
+  --faction-mauler-c2: #a06637;
+  --faction-mauler-c3: #6b4420;
+  --faction-graveborn-c1: #a5c24c;
+  --faction-graveborn-c2: #2f4238;
+  --faction-graveborn-c3: #1a2620;
+  --faction-wilder-c1: #88d898;
+  --faction-wilder-c2: #4a8860;
+  --faction-wilder-c3: #2e6840;
+  --faction-dimensional-c1: #181838;
+  --faction-dimensional-c2: #5090e8;
+  --faction-dimensional-c3: #4080d8;
   --list-sticky-top: 0px;
   --chip-border: rgba(30, 50, 90, 0.1);
-  --chip-damage-bg: #f3ece3;
-  --chip-damage-fg: #6b5848;
+  --chip-damage-bg: #e6eaef;
+  --chip-damage-fg: #4a5568;
   --chip-stat-bg: #d8e3f6;
   --chip-stat-fg: #304060;
   --chip-heal-bg: #c8e6d4;
@@ -33,9 +66,9 @@
   --chip-target-fg: #1a5a80;
   --chip-role-bg: #dceee0;
   --chip-role-fg: #305030;
-  --chip-behavior-tag-bg: #f3ece3;
-  --chip-behavior-tag-fg: #6b5848;
-  --replacement-similar-tint: #f5e8b8;
+  --chip-behavior-tag-bg: #e6eaef;
+  --chip-behavior-tag-fg: #4a5568;
+  --replacement-similar-tint: #dce4f0;
   --chip-generic-bg: #e4eaf2;
   --chip-generic-fg: #405070;
   --chip-quality-high-bg: #d4f5dc;
@@ -44,6 +77,18 @@
   --chip-quality-medium-fg: #8a6200;
   --chip-quality-low-bg: #fddede;
   --chip-quality-low-fg: #9b2c2c;
+  --class-color-warrior: #d43c40;
+  --class-color-tank: #b86040;
+  --class-color-rogue: #488040;
+  --class-color-mage: #a848c8;
+  --class-shape-warrior: #fbf2d3;
+  --class-shape-tank: #fdfcec;
+  --class-shape-rogue: #dcfcd5;
+  --class-shape-mage: #f7e6f7;
+  --class-border-warrior: #fff5e8;
+  --class-border-tank: #fffaf2;
+  --class-border-rogue: #f4fff0;
+  --class-border-mage: #faf0fc;
 }
 
 *,
@@ -55,10 +100,49 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    repeating-linear-gradient(-60deg,
+      transparent 0,
+      transparent 3px,
+      var(--bg-stripe) 3px,
+      var(--bg-stripe) 3.5px),
+    linear-gradient(180deg, #e2e5eb 0%, var(--bg) 40%, #dee2e9 100%);
+  background-repeat: repeat, no-repeat;
+  background-size: auto, 100% 100%;
   color: var(--text);
   line-height: 1.5;
   min-height: 100vh;
+}
+
+.afkj-box {
+  border-radius:
+    var(--afkj-radius-tl) var(--afkj-radius-tr) var(--afkj-radius-br) var(--afkj-radius-bl);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.afkj-box-sm {
+  --afkj-radius-tl: 14px;
+  --afkj-radius-tr: 2px;
+  --afkj-radius-br: 8px;
+  --afkj-radius-bl: 2px;
+  box-shadow: var(--shadow-sm);
+}
+
+.afkj-box-md {
+  --afkj-radius-tl: 28px;
+  --afkj-radius-tr: 4px;
+  --afkj-radius-br: 16px;
+  --afkj-radius-bl: 4px;
+  box-shadow: var(--shadow-md);
+}
+
+.afkj-box-lg {
+  --afkj-radius-tl: 48px;
+  --afkj-radius-tr: 5px;
+  --afkj-radius-br: 28px;
+  --afkj-radius-bl: 5px;
 }
 
 a {
@@ -80,7 +164,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
 }
 
 .header-shell {
@@ -116,10 +200,20 @@ a:hover {
 .header-shell>.filters-panel {
   grid-column: 1 / -1;
   grid-row: 2;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+}
+
+.header-shell>.filters-panel:not(.filters-collapsed) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
   gap: 0.5rem;
+  align-items: end;
+}
+
+.header-shell>.filters-panel.filters-collapsed {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header-shell>.filters-panel.filters-collapsed {
@@ -146,7 +240,8 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 0.95rem;
-  background: var(--bg);
+  background: #fff;
+  color: var(--text);
 }
 
 .search:focus {
@@ -170,17 +265,46 @@ a:hover {
   display: none;
 }
 
-.filters {
+.filters-panel:not(.filters-collapsed) .filters {
+  display: contents;
+}
+
+.filter-row-faction {
+  grid-column: 1 / -1;
+  grid-row: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  flex: 1 1 auto;
+  align-items: center;
+}
+
+.filter-row-secondary {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  min-width: 0;
+}
+
+.filter-secondary-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.filter-group-class,
+.filter-group-role {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .filters-toggle {
   position: relative;
   flex: 0 0 auto;
-  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,6 +319,12 @@ a:hover {
   color: var(--text-muted);
   background: var(--bg);
   transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.filters-panel:not(.filters-collapsed) .filters-toggle {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: end;
 }
 
 .filters-toggle:hover {
@@ -252,6 +382,39 @@ a:hover {
   color: var(--text-muted);
   margin-right: 0.15rem;
   align-self: center;
+  display: inline-block;
+  width: 5.5ch;
+  flex: 0 0 5.5ch;
+}
+
+.filter-group-class {
+  margin-right: 1.4em;
+}
+
+@media (max-width: 768px) {
+  .header-shell>.filters-panel:not(.filters-collapsed) {
+    grid-template-rows: auto auto auto;
+  }
+
+  .filter-row-secondary,
+  .filter-secondary-groups {
+    display: contents;
+  }
+
+  .filter-group-class {
+    grid-column: 1;
+    grid-row: 2;
+    margin-right: 0;
+  }
+
+  .filter-group-role {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .filters-panel:not(.filters-collapsed) .filters-toggle {
+    grid-row: 3;
+  }
 }
 
 .header-actions {
@@ -322,8 +485,8 @@ a:hover {
   overflow: auto;
   max-height: calc(100vh - var(--list-sticky-top) - 2.5rem);
   background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: 28px 4px 16px 4px;
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--border);
 }
 
@@ -429,7 +592,7 @@ a:hover {
   height: 36px;
   object-fit: cover;
   border-radius: 6px;
-  background: linear-gradient(135deg, #e8efff, #f0e8ff);
+  background: linear-gradient(135deg, #e4e9f0, #d8dfe8);
 }
 
 .heroes-table th.sortable {
@@ -782,38 +945,310 @@ a:hover {
 }
 
 .hero-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  container-type: inline-size;
+  position: relative;
+  display: grid;
+  grid-template-rows: 18fr 6fr;
+  aspect-ratio: 3 / 4.2;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s;
   border: 2px solid transparent;
   text-align: center;
+  padding: 0;
+  --fc-panel: #4a8860;
+  --fc-panel-deep: #3a7048;
+  --fc-wave-accent: #78d088;
+  --fc-name: #ffffff;
+  --fc-hatch: rgba(25, 60, 35, 0.07);
+}
+
+.hero-card[data-faction="lightbearer"] {
+  --fc-panel: #4a6b8a;
+  --fc-panel-deep: #3d5a72;
+  --fc-wave-accent: #90bce0;
+  --fc-name: #ffffff;
+  --fc-hatch: rgba(25, 45, 70, 0.07);
+}
+
+.hero-card[data-faction="wilder"] {
+  --fc-panel: #4a8860;
+  --fc-panel-deep: #3a7048;
+  --fc-wave-accent: #78d088;
+  --fc-name: #ffffff;
+  --fc-hatch: rgba(25, 60, 35, 0.07);
+}
+
+.hero-card[data-faction="mauler"] {
+  --fc-panel: #a06637;
+  --fc-panel-deep: #7a5028;
+  --fc-wave-accent: #f08840;
+  --fc-name: #ffffff;
+  --fc-hatch: rgba(55, 30, 10, 0.07);
+}
+
+.hero-card[data-faction="graveborn"] {
+  --fc-panel: #2f4238;
+  --fc-panel-deep: #1a2620;
+  --fc-wave-accent: #a5c24c;
+  --fc-name: #ffffff;
+  --fc-hatch: rgba(255, 255, 255, 0.025);
+}
+
+.hero-card[data-faction="celestial"] {
+  --fc-panel: #d99a3d;
+  --fc-panel-deep: #b07828;
+  --fc-wave-accent: #ffea48;
+  --fc-name: #ffffff;
+  --fc-hatch: rgba(120, 55, 5, 0.07);
+}
+
+.hero-card[data-faction="hypogean"] {
+  --fc-panel: #4b4282;
+  --fc-panel-deep: #322a58;
+  --fc-wave-accent: #e848a8;
+  --fc-name: #ffffff;
+  --fc-hatch: rgba(20, 12, 45, 0.08);
+}
+
+.hero-card[data-faction="dimensional"] {
+  --fc-panel: #5090e8;
+  --fc-panel-deep: #4080d8;
+  --fc-wave-accent: #181838;
+  --fc-name: #ffffff;
+  --fc-hatch: rgba(20, 30, 60, 0.06);
 }
 
 .hero-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(30, 50, 90, 0.12);
-  border-color: var(--accent-soft);
+  box-shadow:
+    0 0 18px 3px rgba(25, 40, 65, 0.12),
+    5px 8px rgba(25, 40, 65, 0.1);
+  border-color: rgba(90, 110, 140, 0.25);
 }
 
-.hero-card img {
+.hero-card-portrait {
+  position: relative;
   width: 100%;
-  aspect-ratio: 180 / 199;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-card-portrait-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-card-portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+}
+
+.hero-card-portrait--lightbearer {
+  background-color: #4a6b8a;
+}
+
+.hero-card-portrait--lightbearer .hero-card-portrait-frame::before {
+  background-image: url("../assets/faction-backgrounds/lightbearer.jpg");
+}
+
+.hero-card-portrait--mauler {
+  background-color: #a06637;
+}
+
+.hero-card-portrait--mauler .hero-card-portrait-frame::before {
+  background-image: url("../assets/faction-backgrounds/mauler.jpg");
+}
+
+.hero-card-portrait--wilder {
+  background-color: #4a8860;
+}
+
+.hero-card-portrait--wilder .hero-card-portrait-frame::before {
+  background-image: url("../assets/faction-backgrounds/wilder.jpg");
+}
+
+.hero-card-portrait--graveborn {
+  background-color: #2f4238;
+}
+
+.hero-card-portrait--graveborn .hero-card-portrait-frame::before {
+  background-image: url("../assets/faction-backgrounds/graveborn.jpg");
+}
+
+.hero-card-portrait--celestial {
+  background-color: #d99a3d;
+}
+
+.hero-card-portrait--celestial .hero-card-portrait-frame::before {
+  background-image: url("../assets/faction-backgrounds/celestial.jpg");
+}
+
+.hero-card-portrait--hypogean {
+  background-color: #4b4282;
+}
+
+.hero-card-portrait--hypogean .hero-card-portrait-frame::before {
+  background-image: url("../assets/faction-backgrounds/hypogean.jpg");
+}
+
+.hero-card-portrait--dimensional {
+  background-color: #5090e8;
+}
+
+.hero-card-portrait--dimensional .hero-card-portrait-frame::before {
+  background-image: url("../assets/faction-backgrounds/dimensional.jpg");
+}
+
+.hero-card-combat-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%) scale(1.32);
+  object-fit: cover;
+  object-position: center center;
+  z-index: 1;
+}
+
+.hero-card-faction-stack {
+  position: absolute;
+  left: 0.35rem;
+  bottom: 0.35rem;
+  width: 24.2%;
+  max-width: 2.365rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-card-faction-icon {
+  display: block;
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  background: linear-gradient(135deg, #e8efff, #f0e8ff);
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
 }
 
-.hero-card .card-body {
-  padding: 0.6rem 0.5rem 0.75rem;
+.hero-card-faction-stack .hero-card-class-badge {
+  position: absolute;
+  right: -0.8rem;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  line-height: 0;
 }
 
-.hero-card h2 {
-  margin: 0 0 0.35rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
+.hero-card-faction-stack .hero-card-class-badge img {
+  width: 100%;
+  min-width: 0.8125rem;
+  max-width: 1.25rem;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.28));
+}
+
+.hero-card-info {
+  position: relative;
+  display: grid;
+  grid-template-rows: 3fr 1.35fr;
+  min-height: 0;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.hero-card-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 35%;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-card-wave-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-card-wave-accent {
+  fill: var(--fc-wave-accent);
+  opacity: 0.75;
+}
+
+.hero-card-wave-panel {
+  fill: var(--fc-panel);
+}
+
+.hero-card-wave-panel-hatch {
+  pointer-events: none;
+}
+
+.hero-card-name {
+  display: flex;
+  align-items: center;
+  min-height: 0;
+  padding: 0.2rem 0.7rem 0.04rem calc(0.35rem + min(24.2cqi, 2.365rem) + 0.95rem);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-card-name h2 {
+  margin: 0;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  font-family: "Noto Sans", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 13.5cqi;
+  line-height: 0.85;
+  color: var(--fc-name);
+  text-align: right;
+  text-wrap: balance;
+}
+
+.hero-card-meta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 0;
+  padding: 0.1rem 0.7rem 0.28rem 28%;
+  position: relative;
+  z-index: 2;
+  background: var(--fc-panel-deep);
+}
+
+.hero-card-role {
+  font-family: "Noto Sans", system-ui, sans-serif;
+  font-size: 6cqi;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--fc-name);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.hero-card-class-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .badges {
@@ -850,38 +1285,38 @@ a:hover {
 }
 
 .badge-faction-celestial {
-  background: #fff8e0;
-  color: #8a6800;
+  background: #fff0c8;
+  color: #8a6200;
 }
 
 .badge-faction-hypogean {
-  background: #f3e8ff;
-  color: #6a20a0;
+  background: #ece4f8;
+  color: #4b4282;
 }
 
 .badge-faction-lightbearer {
-  background: #fffbe6;
-  color: #8a7200;
+  background: #dce8f4;
+  color: #2e4560;
 }
 
 .badge-faction-mauler {
-  background: #ffe8e6;
-  color: #a03020;
+  background: #f0dcc8;
+  color: #6b4420;
 }
 
 .badge-faction-graveborn {
-  background: #eef1f5;
-  color: #506070;
+  background: #d4e0d8;
+  color: #1a2620;
 }
 
 .badge-faction-wilder {
-  background: #e8f8ee;
-  color: #207040;
+  background: #dceade;
+  color: #3d6044;
 }
 
 .badge-faction-dimensional {
-  background: #e6f4ff;
-  color: #2060a0;
+  background: #dce8fc;
+  color: #181838;
 }
 
 .badge-emoji {
@@ -890,23 +1325,75 @@ a:hover {
 }
 
 .badge-role-damage-dealer {
-  background: #fde8ea;
-  color: #b82832;
+  --role-icon-circle: var(--class-color-warrior);
+  --role-icon-shape: var(--class-shape-warrior);
+  --role-icon-border: var(--class-border-warrior);
 }
 
 .badge-role-specialist {
-  background: #f5e6fc;
-  color: #8a40b0;
+  --role-icon-circle: var(--class-color-mage);
+  --role-icon-shape: var(--class-shape-mage);
+  --role-icon-border: var(--class-border-mage);
 }
 
 .badge-role-support {
-  background: #e8fbeb;
-  color: #2a8048;
+  --role-icon-circle: var(--class-color-rogue);
+  --role-icon-shape: var(--class-shape-rogue);
+  --role-icon-border: var(--class-border-rogue);
 }
 
 .badge-role-tank {
-  background: #fff8e0;
+  --role-icon-circle: var(--class-color-tank);
+  --role-icon-shape: var(--class-shape-tank);
+  --role-icon-border: var(--class-border-tank);
+}
+
+.badge.badge-role-damage-dealer {
+  background: #f3d6da;
+  color: #b82832;
+}
+
+.badge.badge-role-specialist {
+  background: #e9d8f4;
+  color: #8a40b0;
+}
+
+.badge.badge-role-support {
+  background: #d9e9de;
+  color: #2a8048;
+}
+
+.badge.badge-role-tank {
+  background: #e6d8a8;
   color: #a07000;
+}
+
+.badge-role-with-icon {
+  gap: 0.35rem;
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.role-category-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.role-category-icon-svg {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.role-category-icon-bg {
+  fill: var(--role-icon-circle);
+  stroke: var(--role-icon-border);
+  stroke-width: 1;
+}
+
+.role-category-icon-shape {
+  fill: var(--role-icon-shape);
 }
 
 .empty-state {
@@ -925,11 +1412,86 @@ a:hover {
   font-weight: 500;
 }
 
+.detail-view {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
 .hero-detail {
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.detail-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   padding: 1.5rem;
+}
+
+.hero-detail .detail-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.15;
+  filter: grayscale(80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-detail .detail-panel>* {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-detail[data-faction="lightbearer"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/lightbearer.jpg");
+}
+
+.hero-detail[data-faction="mauler"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/mauler.jpg");
+}
+
+.hero-detail[data-faction="wilder"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/wilder.jpg");
+  opacity: 0.25;
+}
+
+.hero-detail[data-faction="graveborn"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/graveborn.jpg");
+}
+
+.hero-detail[data-faction="celestial"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/celestial.jpg");
+}
+
+.hero-detail[data-faction="hypogean"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/hypogean.jpg");
+  opacity: 0.05;
+}
+
+.hero-detail[data-faction="dimensional"] .detail-panel::before {
+  background-image: url("../assets/faction-backgrounds/dimensional.jpg");
+}
+
+.detail-panel>.detail-section:last-child {
+  margin-bottom: 0;
 }
 
 .detail-header {
@@ -947,13 +1509,24 @@ a:hover {
   min-width: 0;
 }
 
-.detail-portrait {
-  width: 120px;
-  height: auto;
-  border-radius: var(--radius);
-  object-fit: contain;
-  background: linear-gradient(135deg, #e8efff, #f0e8ff);
+.detail-portrait-wrap {
   flex-shrink: 0;
+  width: 120px;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  --afkj-radius-tl: var(--afkj-radius-feature-tl);
+  --afkj-radius-tr: var(--afkj-radius-feature-tr);
+  --afkj-radius-br: var(--afkj-radius-feature-br);
+  --afkj-radius-bl: var(--afkj-radius-feature-bl);
+}
+
+.detail-portrait.hero-card-portrait {
+  width: 100%;
+  aspect-ratio: 20 / 21;
+  border-radius: 0;
+  overflow: hidden;
 }
 
 .detail-title h1 {
@@ -977,12 +1550,13 @@ a:hover {
   display: flex;
   gap: 0.65rem;
   align-items: flex-start;
-  margin: 1.1rem 0 0;
+  margin: 0;
   padding: 0.75rem 0.9rem;
   max-width: 100%;
-  border: 1px solid #e8c878;
-  border-radius: 8px;
+  border: 2px solid #d8b860;
+  border-radius: 12px 3px 8px 3px;
   background: #fff8e6;
+  box-shadow: var(--shadow-sm);
   color: #5c4a1e;
   font-size: 0.95rem;
   line-height: 1.45;
@@ -1053,7 +1627,7 @@ a:hover {
 
 .tier-a {
   background: #a8b82a;
-  color: #1a2332;
+  color: var(--text);
 }
 
 .tier-a .tier-grade {
@@ -1217,8 +1791,8 @@ a:hover {
 .detail-section h2 {
   font-size: 1.15rem;
   margin: 0 0 0.75rem;
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent-soft);
+  color: #6b87bd;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.35rem;
 }
 
@@ -1233,13 +1807,26 @@ a:hover {
   color: var(--text-muted);
 }
 
-.detail-section ul {
+.detail-section>ul {
   margin: 0.25rem 0 0.75rem;
-  padding-left: 1.25rem;
+  padding-left: 0;
+  list-style: none;
 }
 
-.detail-section li {
+.detail-section>ul>li {
+  position: relative;
   margin-bottom: 0.25rem;
+  padding-left: 1.05rem;
+}
+
+.detail-section>ul>li::before {
+  content: "⚬";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  line-height: inherit;
+  pointer-events: none;
 }
 
 .synergy-partner {
@@ -1561,13 +2148,11 @@ html.welcome-warning-pending .welcome-warning,
   z-index: 1;
   width: min(28rem, 100%);
   padding: 1.5rem 1.5rem 1.25rem;
-  border: 4px solid #f0b030;
-  border-radius: calc(var(--radius) + 2px);
-  background: #fff;
+  border: 3px solid #d8b860;
+  border-radius: 28px 4px 16px 4px;
+  background: var(--surface);
   color: var(--text);
-  box-shadow:
-    0 12px 40px rgba(30, 50, 90, 0.2),
-    0 2px 8px rgba(30, 50, 90, 0.08);
+  box-shadow: var(--shadow);
 }
 
 .welcome-warning-header {
@@ -1632,12 +2217,8 @@ html.welcome-warning-pending .welcome-warning,
 .skill-card-popover-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  z-index: 8;
   background: transparent;
-}
-
-.skill-card-popover-backdrop--dimmed {
-  background: rgba(30, 50, 90, 0.4);
 }
 
 .skill-card-popover-backdrop[hidden] {
@@ -1646,29 +2227,48 @@ html.welcome-warning-pending .welcome-warning,
 
 .skill-card-popover {
   position: fixed;
-  z-index: 10001;
+  z-index: 9;
   display: flex;
   flex-direction: column;
   width: min(28rem, calc(100vw - 1.5rem));
   max-width: 28rem;
-  border: 1px solid #d8dee8;
-  border-radius: calc(var(--radius) + 2px);
-  background: #fff;
-  color: var(--text);
+  --skill-card-panel: #161c26;
+  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 75%, transparent);
+  --skill-card-panel-stripe: color-mix(in srgb,
+      color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
+      transparent);
+  --skill-card-panel-bg-striped:
+    repeating-linear-gradient(-60deg,
+      transparent 0,
+      transparent 3px,
+      var(--skill-card-panel-stripe) 3px,
+      var(--skill-card-panel-stripe) 3.5px),
+    var(--skill-card-panel-bg);
+  --skill-card-text: #e4eaf2;
+  --skill-card-hex-highlight: #d4a84b;
+  --skill-card-active-ring: color-mix(in srgb, var(--skill-card-hex-highlight) 55%, white);
+  border: none;
+  border-radius:
+    var(--afkj-radius-feature-tl) var(--afkj-radius-feature-tr) var(--afkj-radius-feature-br) var(--afkj-radius-feature-bl);
+  background: var(--skill-card-panel-bg-striped);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--skill-card-text);
   font-size: 0.8rem;
   line-height: 1.45;
   overflow: hidden;
   box-shadow:
-    0 8px 28px rgba(30, 50, 90, 0.18),
-    0 2px 8px rgba(30, 50, 90, 0.08);
+    0 0 0 2px var(--skill-card-active-ring),
+    0 8px 24px rgba(15, 25, 40, 0.28),
+    0 2px 8px rgba(15, 25, 40, 0.14);
 }
 
 .skill-popover-header {
   position: relative;
   flex-shrink: 0;
   padding: 0.85rem 0.95rem 0.6rem;
-  border-bottom: 1px solid #e8ecf2;
-  background: #fff;
+  border-bottom: 1px solid color-mix(in srgb, var(--skill-card-active-ring) 32%, transparent);
+  background: transparent;
 }
 
 .skill-popover-scroll {
@@ -1678,28 +2278,6 @@ html.welcome-warning-pending .welcome-warning,
   padding: 0.65rem 0.95rem calc(0.9rem + env(safe-area-inset-bottom, 0px));
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-}
-
-.skill-card-popover::after {
-  content: "";
-  position: absolute;
-  left: var(--arrow-left, 50%);
-  width: 0;
-  height: 0;
-  margin-left: -8px;
-  border: 8px solid transparent;
-}
-
-.skill-card-popover:not(.skill-card-popover--below)::after {
-  top: 100%;
-  border-top-color: #fff;
-  filter: drop-shadow(0 2px 1px rgba(30, 50, 90, 0.08));
-}
-
-.skill-card-popover--below::after {
-  bottom: 100%;
-  border-bottom-color: #fff;
-  filter: drop-shadow(0 -2px 1px rgba(30, 50, 90, 0.08));
 }
 
 .skill-card-popover[hidden] {
@@ -1714,28 +2292,28 @@ html.welcome-warning-pending .welcome-warning,
   height: 1.6rem;
   border: none;
   border-radius: 999px;
-  background: #eef1f6;
-  color: #4a5568;
+  background: color-mix(in srgb, var(--skill-card-text) 12%, transparent);
+  color: color-mix(in srgb, var(--skill-card-text) 88%, white);
   font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;
 }
 
 .skill-popover-close:hover {
-  background: #e2e8f0;
-  color: #1a202c;
+  background: color-mix(in srgb, var(--skill-card-text) 20%, transparent);
+  color: #fff;
 }
 
 .skill-popover-title {
   margin: 0 2rem 0.25rem 0;
   font-size: 0.95rem;
-  color: #1a202c;
+  color: color-mix(in srgb, var(--skill-card-text) 95%, white);
 }
 
 .skill-popover-unlock {
   margin: 0;
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: color-mix(in srgb, var(--skill-card-text) 72%, transparent);
 }
 
 .skill-popover-header .skill-popover-meta {
@@ -1751,9 +2329,10 @@ html.welcome-warning-pending .welcome-warning,
 .skill-popover-meta-item {
   display: inline-block;
   padding: 0.15rem 0.45rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid color-mix(in srgb, var(--skill-card-text) 18%, transparent);
   border-radius: 999px;
-  background: #f7f8fa;
+  background: color-mix(in srgb, var(--skill-card-panel) 70%, transparent);
+  color: color-mix(in srgb, var(--skill-card-text) 90%, white);
   font-size: 0.68rem;
   white-space: nowrap;
 }
@@ -1776,7 +2355,7 @@ html.welcome-warning-pending .welcome-warning,
   margin: 0.35rem 0 0;
   padding-left: 1.1rem;
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: color-mix(in srgb, var(--skill-card-text) 92%, white);
 }
 
 .skill-popover-levels li {
@@ -1785,7 +2364,7 @@ html.welcome-warning-pending .welcome-warning,
 
 .skill-popover-level-label {
   font-weight: 600;
-  color: #4a5568;
+  color: color-mix(in srgb, var(--skill-card-text) 82%, white);
 }
 
 .skill-inline-stat {
@@ -1819,33 +2398,22 @@ html.welcome-warning-pending .welcome-warning,
   vertical-align: baseline;
 }
 
-/* Phones only: full-screen skill overlay (see app.js isPhoneViewport). */
-@media (max-width: 480px) {
-  body.skill-popover-open {
-    overflow: hidden;
-  }
+.skill-card-popover .skill-inline-stat {
+  border-color: color-mix(in srgb, var(--skill-card-text) 22%, transparent);
+  background: color-mix(in srgb, var(--skill-card-panel) 75%, transparent);
+  color: color-mix(in srgb, var(--skill-card-text) 95%, white);
+}
 
-  .skill-card-popover--fullscreen {
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    max-width: none;
-  }
+.skill-card-popover .skill-inline-time {
+  border-color: color-mix(in srgb, #6ecf8a 35%, transparent);
+  background: color-mix(in srgb, #1f4a2c 55%, transparent);
+  color: #b8f0c8;
+}
 
-  .skill-card-popover--fullscreen::after {
-    display: none;
-  }
-
-  .skill-card-popover--fullscreen .skill-popover-header {
-    padding-top: calc(0.85rem + env(safe-area-inset-top, 0px));
-  }
-
-  .skill-card-popover--fullscreen .skill-popover-close {
-    top: calc(0.45rem + env(safe-area-inset-top, 0px));
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.35rem;
-  }
+.skill-card-popover strong,
+.skill-card-popover .skill-inline-num {
+  font-weight: 700;
+  color: #fff;
 }
 
 .chip-quality.chip-q-high,
@@ -2069,7 +2637,7 @@ html.welcome-warning-pending .welcome-warning,
   border-radius: 10px;
   object-fit: contain;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #e8efff, #f0e8ff);
+  background: linear-gradient(135deg, #e4e9f0, #d8dfe8);
 }
 
 .hero-row-body {
@@ -2135,16 +2703,17 @@ html.welcome-warning-pending .welcome-warning,
 .hero-compact-card {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  gap: 0.65rem;
-  background: var(--surface);
+  align-items: stretch;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 0.6rem;
+  padding: 0;
+  overflow: hidden;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   min-width: 0;
+  background: var(--surface-panel);
+  --compact-wave-panel: var(--surface-panel);
+  --compact-wave-accent: color-mix(in srgb, var(--surface-panel) 68%, var(--text-muted));
+  --compact-wave-hatch: rgba(70, 90, 120, 0.06);
 }
 
 .hero-compact-card:hover {
@@ -2153,18 +2722,77 @@ html.welcome-warning-pending .welcome-warning,
   border-color: var(--accent-soft);
 }
 
-.hero-compact-card img {
-  width: 56px;
-  height: 62px;
-  border-radius: 10px;
-  object-fit: contain;
-  flex-shrink: 0;
-  background: linear-gradient(135deg, #e8efff, #f0e8ff);
+/* Synergy compact cards: portrait column = 25% of card width */
+.synergy-section .hero-compact-card {
+  --compact-portrait-width: 15%;
+}
+
+/* Replacement compact cards: portrait column = 20% of card width */
+.replacement-category .hero-compact-card {
+  --compact-portrait-width: 30%;
+}
+
+.hero-compact-portrait-wrap {
+  position: relative;
+  flex: 0 0 var(--compact-portrait-width, 79px);
+  min-height: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-compact-wave {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 38%;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-compact-wave-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-compact-wave-accent {
+  fill: var(--compact-wave-accent);
+  opacity: 0.75;
+}
+
+.hero-compact-wave-panel {
+  fill: var(--compact-wave-panel);
+}
+
+.hero-compact-wave-panel-hatch {
+  pointer-events: none;
+}
+
+.compact-portrait.hero-card-portrait {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  aspect-ratio: unset;
+  border-radius: 0;
+}
+
+.hero-compact-portrait-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .hero-compact-body {
   flex: 1;
   min-width: 0;
+  padding: 0.6rem 0.6rem 0.6rem 0.65rem;
+  background: var(--surface-panel);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-compact-name {
@@ -2212,30 +2840,43 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .summary-card {
-  background: var(--bg);
+  background: var(--surface-panel);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 16px 3px 10px 3px;
   padding: 0.85rem 1rem;
-  box-shadow: 0 1px 4px rgba(30, 50, 90, 0.04);
+  box-shadow: var(--shadow-sm);
 }
 
 .summary-card h4 {
   margin: 0 0 0.5rem;
   font-size: 0.9rem;
-  color: var(--accent);
-  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  border-bottom: 2px solid var(--accent-soft);
   padding-bottom: 0.35rem;
 }
 
 .summary-card ul {
   margin: 0;
-  padding-left: 1rem;
+  padding-left: 0;
   font-size: 0.85rem;
+  list-style: none;
 }
 
 .summary-card li {
+  position: relative;
   margin-bottom: 0.3rem;
+  padding-left: 1.05rem;
   line-height: 1.55;
+}
+
+.summary-card li::before {
+  content: "⚬";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  color: var(--accent);
+  line-height: inherit;
+  pointer-events: none;
 }
 
 .summary-card li .chip {
@@ -2244,7 +2885,7 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .skill-overview-section .skill-overview-metrics {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .skill-overview-section .skill-overview-list {
@@ -2305,55 +2946,179 @@ html.welcome-warning-pending .welcome-warning,
   font-size: 0.75rem;
 }
 
-.skill-overview-section .skill-card-grid {
+.skill-card-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.55rem;
+}
+
+.skill-card-grid:has(.skill-card-active) .skill-card:not(.skill-card-active) {
+  opacity: 0.5;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.25s ease;
+  --skill-card-text: #e4eaf2;
+  --skill-card-text-inset: 7%;
+  --skill-card-panel: #161c26;
+  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 65%, transparent);
+  --skill-card-panel-stripe: color-mix(in srgb,
+      color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
+      transparent);
+  --skill-card-panel-bg-striped:
+    repeating-linear-gradient(-60deg,
+      transparent 0,
+      transparent 3px,
+      var(--skill-card-panel-stripe) 3px,
+      var(--skill-card-panel-stripe) 3.5px),
+    var(--skill-card-panel-bg);
+  --skill-card-hex-fill: #5a3f22;
+  --skill-card-hex-stripe: #7a5530;
+  --skill-card-hex-highlight: #d4a84b;
+  --skill-card-hex-highlight-inner: color-mix(in srgb, var(--skill-card-hex-highlight) 40%, black);
+  --skill-card-active-ring: color-mix(in srgb, var(--skill-card-hex-highlight) 55%, white);
+  --skill-card-active-elevation:
+    0 8px 24px rgba(15, 25, 40, 0.28),
+    0 2px 8px rgba(15, 25, 40, 0.14);
+}
+
+.skill-card-headline {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.35rem;
+  margin: 0 0 -0.5rem;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card-hex {
+  position: relative;
+  flex: 0 0 2rem;
+  width: 2rem;
+  height: 2.28rem;
+  transform: translateY(7%) translateX(-10%);
+  transition: transform 0.15s;
+}
+
+.skill-card-hex-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.skill-card-hex-icon {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  z-index: 1;
+  font-size: 0.88rem;
+  line-height: 1;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.75;
+  filter: sepia(1) saturate(1.5) hue-rotate(354deg) brightness(1.1) contrast(1.2);
+}
+
+.skill-card-hex-fill {
+  stroke: none;
+}
+
+.skill-card-hex-border-outer,
+.skill-card-hex-border-inner {
+  fill: none;
+  stroke-linejoin: round;
+}
+
+.skill-card-hex-border-outer {
+  stroke: var(--skill-card-hex-highlight);
+  stroke-width: 10.5;
+}
+
+.skill-card-hex-border-inner {
+  stroke: var(--skill-card-hex-highlight-inner);
+  stroke-width: 5.25;
+}
+
+.skill-card-title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0 var(--skill-card-text-inset) 0.35rem var(--skill-card-text-inset);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--text);
+  overflow-wrap: break-word;
+  transition: color 0.25s ease;
+}
+
+.skill-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 0.8rem 0.5rem 0.85rem var(--skill-card-text-inset);
+  background: var(--skill-card-panel-bg-striped);
+  border: none;
+  border-radius:
+    var(--afkj-radius-feature-tl) var(--afkj-radius-feature-tr) var(--afkj-radius-feature-br) var(--afkj-radius-feature-bl);
+  transition: transform 0.15s, box-shadow 0.15s, background-color 0.25s ease;
+}
+
+.skill-card:hover:not(.skill-card-active) .skill-card-content {
+  transform: translateY(-2px);
+}
+
+.skill-card:hover:not(.skill-card-active) .skill-card-hex {
+  transform: translateY(calc(7% - 2px)) translateX(-10%);
+}
+
+.skill-card.skill-card-active .skill-card-content {
+  position: relative;
+  z-index: 1;
+  transform: none;
+  box-shadow:
+    0 0 0 2px var(--skill-card-active-ring),
+    var(--skill-card-active-elevation);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.skill-card.skill-card-active {
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+
+.skill-card.skill-card-active .skill-card-headline {
+  z-index: 2;
+}
+
+.skill-card.skill-card-active .skill-card-hex {
+  z-index: 1;
 }
 
 .skill-overview-section .skill-card {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 8.5rem;
-  min-width: min(100%, 8.5rem);
-  max-width: 100%;
-  background: #f7f8fa;
-  border: 1px solid #e2e6eb;
-  border-radius: calc(var(--radius) - 2px);
-  padding: 0.45rem 0.5rem;
-  box-shadow: 0 1px 3px rgba(30, 50, 90, 0.04);
-  cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
-}
-
-.skill-overview-section .skill-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(30, 50, 90, 0.1);
-  border-color: var(--accent-soft);
-}
-
-.skill-overview-section .skill-card.skill-card-active {
-  border-color: var(--accent);
-  box-shadow:
-    0 0 0 2px rgba(79, 124, 255, 0.2),
-    0 2px 8px rgba(30, 50, 90, 0.08);
-}
-
-.skill-overview-section .skill-card h4 {
-  margin: 0 0 0.3rem;
-  font-size: 0.72rem;
-  color: #4a5568;
-  border-bottom: 1px solid #e2e6eb;
-  padding-bottom: 0.25rem;
-  overflow-wrap: break-word;
-  transition: color 0.25s ease, border-bottom-color 0.25s ease;
+  flex: 0 0 11.10rem;
+  width: 11.10rem;
+  max-width: 11.10rem;
 }
 
 .skill-card-summary {
   margin: 0 0 0.4rem;
   font-size: 0.68rem;
   line-height: 1.4;
-  color: var(--text-muted);
+  color: var(--skill-card-text);
   flex: 1;
   overflow-wrap: break-word;
 }
@@ -2398,27 +3163,22 @@ html.welcome-warning-pending .welcome-warning,
 
   0%,
   100% {
-    background-color: #f7f8fa;
-    border-color: #e2e6eb;
-    box-shadow: 0 1px 3px rgba(30, 50, 90, 0.04);
+    background-color: var(--skill-card-panel-bg);
+    box-shadow: none;
   }
 
   50% {
-    background-color: #fff3bf;
-    border-color: #e6b800;
-    box-shadow:
-      0 0 0 2px rgba(230, 184, 0, 0.35),
-      0 0 12px rgba(230, 184, 0, 0.28);
+    background-color: color-mix(in srgb, var(--skill-card-hex-highlight) 28%, var(--skill-card-panel-bg));
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--skill-card-hex-highlight) 70%, white);
   }
 }
 
-.skill-card.skill-card-highlight {
+.skill-card.skill-card-highlight .skill-card-content {
   animation: skill-card-glow 0.75s ease-in-out 2;
 }
 
-.skill-card.skill-card-highlight h4 {
-  color: #8a6d00;
-  border-bottom-color: #e6b800;
+.skill-card.skill-card-highlight .skill-card-title {
+  color: color-mix(in srgb, var(--skill-card-hex-highlight) 45%, var(--text));
 }
 
 .hero-link {
@@ -2448,7 +3208,17 @@ html.welcome-warning-pending .welcome-warning,
   opacity: 0.55;
 }
 
+@media (max-width: 1240px) {
+  #app:has(#detail-view:not(.hidden)) {
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 @media (max-width: 900px) {
+
   .hero-row-list.hero-compact-grid-4,
   .hero-row-list.hero-compact-grid-2 {
     grid-template-columns: repeat(2, 1fr);
@@ -2493,6 +3263,10 @@ html.welcome-warning-pending .welcome-warning,
   }
 
   .hero-detail {
+    padding: 0;
+  }
+
+  .detail-panel {
     padding: 1rem;
   }
 
@@ -2500,9 +3274,8 @@ html.welcome-warning-pending .welcome-warning,
     flex-wrap: wrap;
   }
 
-  .detail-portrait {
+  .detail-portrait-wrap {
     width: 96px;
-    height: auto;
   }
 
   .summary-grid {

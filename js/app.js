@@ -599,6 +599,104 @@
     return "assets/icons/" + kind + "/" + fname + ".png";
   }
 
+  function combatIconPath(hero) {
+    if (!hero || !hero.name) {
+      return null;
+    }
+    return "assets/combat-icons/" + hero.name + ".png";
+  }
+
+  function factionDataKey(faction) {
+    if (!faction) {
+      return "";
+    }
+    return faction.toLowerCase().replace(/\s+/g, "");
+  }
+
+  function renderHeroPortrait(hero, extraClass) {
+    const factionKey = factionDataKey(hero.faction);
+    const combatIcon = combatIconPath(hero);
+    const combatSrc = assetUrl(combatIcon || hero.portrait);
+    const portraitFallback = assetUrl(hero.portrait);
+    return (
+      '<div class="hero-card-portrait hero-card-portrait--' +
+      escapeHtml(factionKey) +
+      (extraClass ? " " + extraClass : "") +
+      '">' +
+      '<div class="hero-card-portrait-frame">' +
+      '<img class="hero-card-combat-icon" src="' +
+      escapeHtml(combatSrc) +
+      '" alt="" loading="lazy" onerror="this.onerror=null;this.src=' +
+      JSON.stringify(portraitFallback) +
+      '">' +
+      "</div></div>"
+    );
+  }
+
+  function renderGridCardFactionIcon(hero) {
+    if (!hero.faction) {
+      return "";
+    }
+    const icon = iconPath("factions", hero.faction);
+    if (!icon) {
+      return "";
+    }
+    return (
+      '<img class="hero-card-faction-icon" src="' +
+      assetUrl(icon) +
+      '" alt="' +
+      escapeHtml(hero.faction) +
+      '" loading="lazy">'
+    );
+  }
+
+  function renderGridCardClassIcon(hero) {
+    if (!hero.class) {
+      return "";
+    }
+    const icon = iconPath("class", hero.class);
+    if (!icon) {
+      return "";
+    }
+    return (
+      '<span class="hero-card-class-badge">' +
+      '<img src="' +
+      assetUrl(icon) +
+      '" alt="' +
+      escapeHtml(hero.class) +
+      '" loading="lazy">' +
+      "</span>"
+    );
+  }
+
+  function renderGridCardFactionStack(hero) {
+    const factionIcon = renderGridCardFactionIcon(hero);
+    const classIcon = renderGridCardClassIcon(hero);
+    if (!factionIcon && !classIcon) {
+      return "";
+    }
+    return (
+      '<div class="hero-card-faction-stack">' +
+      factionIcon +
+      classIcon +
+      "</div>"
+    );
+  }
+
+  function renderGridCardRole(hero) {
+    const meta = roleCategoryMeta(hero.roleCategory);
+    if (!meta) {
+      return "";
+    }
+    return (
+      '<span class="hero-card-role ' +
+      meta.className +
+      '">' +
+      escapeHtml(meta.label) +
+      "</span>"
+    );
+  }
+
   function factionClass(faction) {
     if (!faction) return "";
     return "badge-faction-" + faction.toLowerCase().replace(/\s+/g, "");
@@ -1101,6 +1199,30 @@
     return isInsideSpanClass(html, index, "skill-inline-time");
   }
 
+  function isInsideSkillInlineNum(html, index) {
+    return isInsideStrong(html, index) || isInsideSpanClass(html, index, "skill-inline-num");
+  }
+
+  function isInsideStrong(html, index) {
+    const before = html.slice(0, index);
+    const openPos = before.lastIndexOf("<strong");
+    if (openPos === -1) {
+      return false;
+    }
+    const closePos = before.indexOf("</strong>", openPos);
+    return closePos === -1 || closePos >= index;
+  }
+
+  function boldSkillNumericTokens(html) {
+    return replaceOutsideChips(
+      html,
+      /(?:[×x*]\s*)?[+\-−]?\d+(?:\.\d+)?(?:%|s\b)?(?:\s*[×x*÷/]\s*(?:[×x*]\s*)?[+\-−]?\d+(?:\.\d+)?(?:%|s\b)?)*/g,
+      function (match) {
+        return '<strong class="skill-inline-num">' + match + "</strong>";
+      }
+    );
+  }
+
   function replaceOutsideChips(text, re, replacer) {
     return text.replace(re, function () {
       const args = Array.prototype.slice.call(arguments);
@@ -1110,7 +1232,8 @@
         isInsideHtmlTag(text, offset) ||
         isInsideChipSpan(text, offset) ||
         isInsideSkillInlineStat(text, offset) ||
-        isInsideSkillInlineTime(text, offset)
+        isInsideSkillInlineTime(text, offset) ||
+        isInsideSkillInlineNum(text, offset)
       ) {
         return match;
       }
@@ -2595,7 +2718,6 @@
       html += "</div>";
     });
     html += "</div>";
-    html += renderAlgorithmDisclaimer();
     html += "</div>";
     return html;
   }
@@ -2933,7 +3055,8 @@
     { re: /\bdispel(?:s|led|ling)\b/gi, tag: "Cleanse" },
   ];
 
-  function enrichSkillInline(text) {
+  function enrichSkillInline(text, opts) {
+    opts = opts || {};
     if (!text) {
       return "";
     }
@@ -2986,6 +3109,9 @@
         );
       });
     });
+    if (opts.boldNumbers) {
+      out = boldSkillNumericTokens(out);
+    }
     return out;
   }
 
@@ -3058,18 +3184,18 @@
           scrollHtml +=
             '<p class="skill-popover-phase">' +
             '<span class="skill-popover-phase-label">📖 <strong>Passive</strong></span> ' +
-            enrichSkillInline(phase.body) +
+            enrichSkillInline(phase.body, { boldNumbers: true }) +
             "</p>";
         } else if (phase.label === "active") {
           scrollHtml +=
             '<p class="skill-popover-phase">' +
             '<span class="skill-popover-phase-label">⚡ <strong>Active</strong></span> ' +
-            enrichSkillInline(phase.body) +
+            enrichSkillInline(phase.body, { boldNumbers: true }) +
             "</p>";
         } else {
           scrollHtml +=
             '<p class="skill-popover-phase">' +
-            enrichSkillInline(phase.body) +
+            enrichSkillInline(phase.body, { boldNumbers: true }) +
             "</p>";
         }
       });
@@ -3087,7 +3213,7 @@
           "<li><span class=\"skill-popover-level-label\">🔼 " +
           escapeHtml(levelLabel) +
           ":</span> " +
-          enrichSkillInline(level.text || "") +
+          enrichSkillInline(level.text || "", { boldNumbers: true }) +
           "</li>";
       });
       scrollHtml += "</ul>";
@@ -3110,10 +3236,85 @@
     return null;
   }
 
-  function renderSkillCards(cards) {
+  function skillCardHexPoints(scale) {
+    const cx = 50;
+    const cy = 57.5;
+    const outer = [
+      [50, 3],
+      [97, 29.75],
+      [97, 85.25],
+      [50, 112],
+      [3, 85.25],
+      [3, 29.75],
+    ];
+    return outer
+      .map(function (point) {
+        const x = cx + (point[0] - cx) * scale;
+        const y = cy + (point[1] - cy) * scale;
+        return x + "," + y;
+      })
+      .join(" ");
+  }
+
+  const SKILL_CARD_HEX_ICONS = {
+    ultimate: "🌟",
+    skill1: "💫",
+    skill2: "💫",
+    skill3: "🗡️",
+    skill4: "⚔️",
+    skill5: "✨",
+  };
+
+  function skillCardHexIcon(category) {
+    return SKILL_CARD_HEX_ICONS[category] || "";
+  }
+
+  function renderSkillCardHex(category) {
+    const patternId = "skill-hex-stripe-" + category;
+    const outerPoints = skillCardHexPoints(1);
+    const innerPoints = skillCardHexPoints(0.84);
+    const icon = skillCardHexIcon(category);
+    const iconHtml = icon
+      ? '<span class="skill-card-hex-icon" aria-hidden="true">' +
+      escapeHtml(icon) +
+      "</span>"
+      : "";
+    return (
+      '<div class="skill-card-hex" aria-hidden="true">' +
+      '<svg class="skill-card-hex-svg" viewBox="-6 -6 112 127" preserveAspectRatio="xMidYMid meet">' +
+      "<defs>" +
+      '<pattern id="' +
+      patternId +
+      '" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
+      '<rect width="5" height="5" fill="var(--skill-card-hex-fill)"></rect>' +
+      '<rect width="2.5" height="5" fill="var(--skill-card-hex-stripe)"></rect>' +
+      "</pattern></defs>" +
+      '<polygon class="skill-card-hex-fill" points="' +
+      outerPoints +
+      '" fill="url(#' +
+      patternId +
+      ')"></polygon>' +
+      '<polygon class="skill-card-hex-border-outer" points="' +
+      outerPoints +
+      '"></polygon>' +
+      '<polygon class="skill-card-hex-border-inner" points="' +
+      innerPoints +
+      '"></polygon>' +
+      "</svg>" +
+      iconHtml +
+      "</div>"
+    );
+  }
+
+  function renderSkillCards(cards, hero) {
     if (!cards || !cards.length) {
       return "";
     }
+
+    const factionKey = hero ? factionDataKey(hero.faction) : "";
+    const factionAttr = factionKey
+      ? ' data-faction="' + escapeHtml(factionKey) + '"'
+      : "";
 
     let html = '<div class="skill-card-grid">';
     cards.forEach(function (card) {
@@ -3121,9 +3322,16 @@
       html +=
         '<div class="skill-card" data-skill-category="' +
         escapeHtml(card.category) +
-        '" role="button" tabindex="0" aria-expanded="false" ' +
+        '"' +
+        factionAttr +
+        ' role="button" tabindex="0" aria-expanded="false" ' +
         'aria-haspopup="dialog">';
-      html += "<h4>" + escapeHtml(card.label) + "</h4>";
+      html += '<div class="skill-card-headline">';
+      html +=
+        '<h4 class="skill-card-title">' + escapeHtml(card.label) + "</h4>";
+      html += renderSkillCardHex(card.category);
+      html += "</div>";
+      html += '<div class="skill-card-content">';
       if (card.summary) {
         html +=
           '<p class="skill-card-summary">' +
@@ -3136,7 +3344,7 @@
           renderSkillCardTags(tags) +
           "</div>";
       }
-      html += "</div>";
+      html += "</div></div>";
     });
     html += "</div>";
     return html;
@@ -3176,16 +3384,26 @@
 
   function renderHeroCompactCard(slug, name, bodyHtml, footerHtml) {
     const hero = heroBySlug[slug];
-    const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
+    let portraitHtml = "";
+    if (hero) {
+      portraitHtml = renderHeroPortrait(hero, "compact-portrait");
+    } else {
+      const portrait = "assets/portraits/" + name + ".png";
+      portraitHtml =
+        '<img class="hero-compact-portrait-fallback" src="' +
+        assetUrl(portrait) +
+        '" alt="" loading="lazy" onerror="this.style.opacity=0.3">';
+    }
     return (
-      '<article class="hero-compact-card" data-slug="' +
+      '<article class="hero-compact-card afkj-box afkj-box-sm" data-slug="' +
       escapeHtml(slug) +
       '" tabindex="0" role="link" aria-label="' +
       escapeHtml(name) +
       '">' +
-      '<img src="' +
-      assetUrl(portrait) +
-      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
+      '<div class="hero-compact-portrait-wrap">' +
+      portraitHtml +
+      renderCompactCardWave(slug) +
+      "</div>" +
       '<div class="hero-compact-body">' +
       '<div class="hero-compact-name">' +
       linkifyHero(name, slug) +
@@ -3514,6 +3732,30 @@
     },
   };
 
+  // Prydwen tier-list role icons (Font Awesome paths).
+  const ROLE_CATEGORY_ICONS = {
+    damage_dealer: {
+      viewBox: "0 0 448 512",
+      path:
+        "M192 0c17.7 0 32 14.3 32 32l0 112-64 0 0-112c0-17.7 14.3-32 32-32zM64 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 80-64 0 0-80zm192 0c0-17.7 14.3-32 32-32s32 14.3 32 32l0 96c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-96zm96 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 64c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64zm-96 88l0-.6c9.4 5.4 20.3 8.6 32 8.6c13.2 0 25.4-4 35.6-10.8c8.7 24.9 32.5 42.8 60.4 42.8c11.7 0 22.6-3.1 32-8.6l0 8.6c0 52.3-25.1 98.8-64 128l0 96c0 17.7-14.3 32-32 32l-160 0c-17.7 0-32-14.3-32-32l0-78.4c-17.3-7.9-33.2-18.8-46.9-32.5L69.5 357.5C45.5 333.5 32 300.9 32 267l0-27c0-35.3 28.7-64 64-64l88 0c22.1 0 40 17.9 40 40s-17.9 40-40 40l-56 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l56 0c39.8 0 72-32.2 72-72z",
+    },
+    specialist: {
+      viewBox: "0 0 512 512",
+      path:
+        "M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 11.5c0 49.9-60.3 74.9-95.6 39.6L120.2 75C107.7 62.5 87.5 62.5 75 75s-12.5 32.8 0 45.3l8.2 8.2C118.4 163.7 93.4 224 43.5 224L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l11.5 0c49.9 0 74.9 60.3 39.6 95.6L75 391.8c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l8.2-8.2c35.3-35.3 95.6-10.3 95.6 39.6l0 11.5c0 17.7 14.3 32 32 32s32-14.3 32-32l0-11.5c0-49.9 60.3-74.9 95.6-39.6l8.2 8.2c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-8.2-8.2c-35.3-35.3-10.3-95.6 39.6-95.6l11.5 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-11.5 0c-49.9 0-74.9-60.3-39.6-95.6l8.2-8.2c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-8.2 8.2C348.3 118.4 288 93.4 288 43.5L288 32zM176 224a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm128 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z",
+    },
+    support: {
+      viewBox: "0 0 512 512",
+      path:
+        "M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zm96 152c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 48 48 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-48 0 0 48c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-48-48 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l48 0 0-48z",
+    },
+    tank: {
+      viewBox: "0 0 512 512",
+      path:
+        "M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z",
+    },
+  };
+
   const ROLE_FILTER_ORDER = [
     "damage_dealer",
     "specialist",
@@ -3525,7 +3767,34 @@
     return ROLE_CATEGORY_META[roleCategory] || null;
   }
 
-  function renderRoleCategoryBadge(heroOrCategory) {
+  function renderRoleCategoryIcon(roleCategory) {
+    const icon = ROLE_CATEGORY_ICONS[roleCategory];
+    if (!icon) {
+      return "";
+    }
+    const parts = icon.viewBox.split(/\s+/).map(Number);
+    const iconCx = parts[0] + parts[2] / 2;
+    const iconCy = parts[1] + parts[3] / 2;
+    const iconScale = 13.5 / Math.max(parts[2], parts[3]);
+    return (
+      '<span class="role-category-icon" aria-hidden="true">' +
+      '<svg class="role-category-icon-svg" viewBox="0 0 24 24" focusable="false">' +
+      '<circle class="role-category-icon-bg" cx="12" cy="12" r="10.5"/>' +
+      '<g transform="translate(12 12) scale(' +
+      iconScale +
+      ") translate(" +
+      -iconCx +
+      " " +
+      -iconCy +
+      ')">' +
+      '<path class="role-category-icon-shape" d="' +
+      icon.path +
+      '"/>' +
+      "</g></svg></span>"
+    );
+  }
+
+  function renderRoleCategoryBadge(heroOrCategory, options) {
     const key =
       typeof heroOrCategory === "string"
         ? heroOrCategory
@@ -3534,12 +3803,19 @@
     if (!meta) {
       return "";
     }
+    const useSheetIcon = options && options.sheetIcon === true;
+    const iconHtml = useSheetIcon
+      ? renderRoleCategoryIcon(key)
+      : '<span class="badge-emoji" aria-hidden="true">' +
+      meta.emoji +
+      "</span>";
+    const badgeClass =
+      meta.className + (useSheetIcon ? " badge-role-with-icon" : "");
     return (
       '<span class="badge ' +
-      meta.className +
-      '"><span class="badge-emoji" aria-hidden="true">' +
-      meta.emoji +
-      "</span>" +
+      badgeClass +
+      '">' +
+      iconHtml +
       escapeHtml(meta.label) +
       "</span>"
     );
@@ -3574,14 +3850,22 @@
       );
     }
     if (includeRoleCategory) {
-      const roleBadge = renderRoleCategoryBadge(hero);
+      const roleBadge = renderRoleCategoryBadge(hero, { sheetIcon: true });
       if (roleBadge) {
         badges.push(roleBadge);
       }
     }
     if (hero.damage_type) {
+      const dmgDef = TAG_DEFINITIONS[hero.damage_type];
       badges.push(
-        '<span class="badge">' + escapeHtml(hero.damage_type) + "</span>"
+        '<span class="badge">' +
+        (dmgDef
+          ? '<span class="badge-emoji" aria-hidden="true">' +
+          dmgDef.emoji +
+          "</span>"
+          : "") +
+        escapeHtml(hero.damage_type) +
+        "</span>"
       );
     }
     return badges.join("");
@@ -4887,31 +5171,275 @@
     listEmptyState.classList.toggle("hidden", rows.length > 0);
   }
 
+  function buildReferenceWavePath(options) {
+    const leftX = options.leftX;
+    const rightX = options.rightX;
+    const curveRightX = options.curveRightX != null ? options.curveRightX : rightX;
+    const peakX = options.peakX;
+    const troughX = options.troughX;
+    const peakY = options.peakY;
+    const troughY = options.troughY;
+    const leftY = options.leftY;
+    const endY = options.endY;
+    const xShift = options.xShift || 0;
+    const xScale = options.xScale || 1;
+    const xAnchor = options.xAnchor != null ? options.xAnchor : 50;
+    const step = 1.5;
+
+    function mapX(x) {
+      const shifted = x + xShift;
+      if (xScale === 1) {
+        return shifted;
+      }
+      return xAnchor + (shifted - xAnchor) * xScale;
+    }
+
+    function edgeY(x) {
+      if (x <= peakX) {
+        const t = (x - leftX) / (peakX - leftX);
+        return leftY + (peakY - leftY) * (1 - Math.cos(Math.PI * t)) / 2;
+      }
+      if (x <= troughX) {
+        const t = (x - peakX) / (troughX - peakX);
+        return peakY + (troughY - peakY) * (1 - Math.cos(Math.PI * t)) / 2;
+      }
+      if (x >= curveRightX) {
+        return endY;
+      }
+      const t = (x - troughX) / (curveRightX - troughX);
+      return troughY - (troughY - endY) * (1 - Math.cos(Math.PI * t)) / 2;
+    }
+
+    function fmt(n) {
+      return (Math.round(n * 100) / 100).toString();
+    }
+
+    let d = "M" + fmt(mapX(leftX)) + " " + fmt(edgeY(leftX));
+    for (let x = leftX + step; x < rightX; x += step) {
+      d += " L" + fmt(mapX(x)) + " " + fmt(edgeY(x));
+    }
+    d += " L" + fmt(mapX(rightX)) + " " + fmt(edgeY(rightX));
+    d += " L" + fmt(mapX(rightX)) + " 100 L" + fmt(mapX(leftX)) + " 100 Z";
+    return d;
+  }
+
+  function heroCardWavePaths() {
+    const panelPeakX = 27;
+    const panelTroughX = panelPeakX + (78 - panelPeakX) * 1.3;
+    return {
+      panelPath: buildReferenceWavePath({
+        leftX: -15,
+        rightX: 115,
+        peakX: panelPeakX,
+        troughX: panelTroughX,
+        peakY: 10,
+        troughY: 28,
+        leftY: 23,
+        endY: 25,
+      }),
+      accentPath: buildReferenceWavePath({
+        leftX: -22,
+        rightX: 125,
+        curveRightX: 130,
+        peakX: 40,
+        troughX: 95,
+        peakY: 1,
+        troughY: 19,
+        leftY: 9,
+        endY: 11,
+        xShift: -20,
+      }),
+    };
+  }
+
+  function renderHeroCardWave(patternId) {
+    const paths = heroCardWavePaths();
+    const hatchId = "hero-panel-hatch-" + patternId;
+    return (
+      '<div class="hero-card-wave" aria-hidden="true">' +
+      '<svg class="hero-card-wave-svg" viewBox="0 0 100 100" preserveAspectRatio="none">' +
+      "<defs>" +
+      '<pattern id="' +
+      hatchId +
+      '" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">' +
+      '<rect width="3" height="0.4" y="2.4" fill="var(--fc-hatch)"></rect>' +
+      "</pattern></defs>" +
+      '<path class="hero-card-wave-accent" d="' +
+      paths.accentPath +
+      '"></path>' +
+      '<path class="hero-card-wave-panel" d="' +
+      paths.panelPath +
+      '"></path>' +
+      '<path class="hero-card-wave-panel-hatch" d="' +
+      paths.panelPath +
+      '" fill="url(#' +
+      hatchId +
+      ')"></path></svg></div>'
+    );
+  }
+
+  function renderCompactCardWave(patternId) {
+    const paths = heroCardWavePaths();
+    const hatchId = "hero-compact-hatch-" + patternId;
+    return (
+      '<div class="hero-compact-wave" aria-hidden="true">' +
+      '<svg class="hero-compact-wave-svg" viewBox="0 0 100 100" preserveAspectRatio="none">' +
+      "<defs>" +
+      '<pattern id="' +
+      hatchId +
+      '" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">' +
+      '<rect width="3" height="0.4" y="2.4" fill="var(--compact-wave-hatch)"></rect>' +
+      "</pattern></defs>" +
+      '<g transform="translate(40 100) scale(2 1) rotate(-90)">' +
+      '<path class="hero-compact-wave-accent" d="' +
+      paths.accentPath +
+      '"></path>' +
+      '<path class="hero-compact-wave-panel" d="' +
+      paths.panelPath +
+      '"></path>' +
+      '<path class="hero-compact-wave-panel-hatch" d="' +
+      paths.panelPath +
+      '" fill="url(#' +
+      hatchId +
+      ')"></path></g></svg></div>'
+    );
+  }
+
+  let heroCardNameMeasurer = null;
+
+  function getHeroCardNameMeasurer() {
+    if (!heroCardNameMeasurer) {
+      heroCardNameMeasurer = document.createElement("h2");
+      heroCardNameMeasurer.setAttribute("aria-hidden", "true");
+      heroCardNameMeasurer.style.position = "absolute";
+      heroCardNameMeasurer.style.left = "-9999px";
+      heroCardNameMeasurer.style.top = "0";
+      heroCardNameMeasurer.style.visibility = "hidden";
+      heroCardNameMeasurer.style.pointerEvents = "none";
+      heroCardNameMeasurer.style.margin = "0";
+      heroCardNameMeasurer.style.padding = "0";
+      heroCardNameMeasurer.style.border = "0";
+      document.body.appendChild(heroCardNameMeasurer);
+    }
+    return heroCardNameMeasurer;
+  }
+
+  function heroCardNameContentBox(box) {
+    const style = getComputedStyle(box);
+    const padLeft = parseFloat(style.paddingLeft) || 0;
+    const padRight = parseFloat(style.paddingRight) || 0;
+    const padTop = parseFloat(style.paddingTop) || 0;
+    const padBottom = parseFloat(style.paddingBottom) || 0;
+    return {
+      width: Math.max(0, box.clientWidth - padLeft - padRight),
+      height: Math.max(0, box.clientHeight - padTop - padBottom),
+    };
+  }
+
+  function heroCardNameLineHeightPx(sizePx, h2Style) {
+    const baseFontPx = parseFloat(h2Style.fontSize) || sizePx;
+    const baseLinePx = parseFloat(h2Style.lineHeight) || baseFontPx * 0.85;
+    return (baseLinePx / baseFontPx) * sizePx;
+  }
+
+  function heroCardNameFitsAtSize(text, sizePx, limits, h2Style) {
+    const measurer = getHeroCardNameMeasurer();
+    measurer.style.width = limits.width + "px";
+    measurer.style.maxWidth = limits.width + "px";
+    measurer.style.fontFamily = h2Style.fontFamily;
+    measurer.style.fontWeight = h2Style.fontWeight;
+    measurer.style.fontSize = sizePx + "px";
+    measurer.style.lineHeight =
+      heroCardNameLineHeightPx(sizePx, h2Style) + "px";
+    measurer.style.textAlign = "right";
+    measurer.style.textWrap = "balance";
+    measurer.textContent = text;
+    const maxHeight = limits.height || Number.POSITIVE_INFINITY;
+    return (
+      measurer.scrollWidth <= limits.width + 1 &&
+      measurer.scrollHeight <= maxHeight + 1
+    );
+  }
+
+  function fitHeroCardName(h2) {
+    const box = h2.closest(".hero-card-name");
+    const card = h2.closest(".hero-card");
+    if (!box || !card) {
+      return;
+    }
+    h2.style.fontSize = "";
+    const cardWidth = card.clientWidth;
+    if (!cardWidth) {
+      return;
+    }
+    const limits = heroCardNameContentBox(box);
+    if (!limits.width) {
+      return;
+    }
+    const h2Style = getComputedStyle(h2);
+    const text = h2.textContent || "";
+    const maxPx = cardWidth * 0.135;
+    const minPx = Math.max(8, cardWidth * 0.07);
+    let sizePx = maxPx;
+    while (
+      sizePx > minPx &&
+      !heroCardNameFitsAtSize(text, sizePx, limits, h2Style)
+    ) {
+      sizePx -= 0.5;
+    }
+    h2.style.fontSize = sizePx + "px";
+  }
+
+  function fitHeroCardNames() {
+    if (viewMode !== "grid" || !heroGrid) {
+      return;
+    }
+    heroGrid.querySelectorAll(".hero-card-name h2").forEach(fitHeroCardName);
+  }
+
+  function scheduleFitHeroCardNames() {
+    const run = function () {
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(fitHeroCardNames);
+      });
+    };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(run).catch(run);
+    } else {
+      run();
+    }
+  }
+
   function renderGrid() {
     const list = filteredHeroes();
     heroGrid.innerHTML = list
       .map(function (h) {
+        const factionKey = factionDataKey(h.faction);
         return (
-          '<article class="hero-card" data-slug="' +
+          '<article class="hero-card afkj-box afkj-box-sm" data-slug="' +
           escapeHtml(h.slug) +
+          '" data-faction="' +
+          escapeHtml(factionKey) +
           '" tabindex="0" role="link" aria-label="' +
           escapeHtml(h.name) +
           '">' +
-          '<img src="' +
-          assetUrl(h.portrait) +
-          '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
-          '<div class="card-body">' +
-          "<h2>" +
+          renderHeroPortrait(h) +
+          renderHeroCardWave(h.slug) +
+          '<div class="hero-card-info">' +
+          '<div class="hero-card-name"><h2>' +
           escapeHtml(h.name) +
-          "</h2>" +
-          '<div class="badges">' +
-          renderBadges(h) +
-          "</div></div></article>"
+          "</h2></div>" +
+          '<div class="hero-card-meta">' +
+          renderGridCardRole(h) +
+          "</div></div>" +
+          renderGridCardFactionStack(h) +
+          "</article>"
         );
       })
       .join("");
 
     emptyState.classList.toggle("hidden", list.length > 0);
+    scheduleFitHeroCardNames();
   }
 
   function renderCurrentView() {
@@ -4925,6 +5453,7 @@
   function showIndexView() {
     closeSkillCardPopover();
     detailHero = null;
+    heroDetail.removeAttribute("data-faction");
     detailView.classList.add("hidden");
     gridView.classList.toggle("hidden", viewMode !== "grid");
     listView.classList.toggle("hidden", viewMode !== "list");
@@ -5304,7 +5833,7 @@
     const syn = sections.benefits_from;
     if (!syn) return "";
 
-    let html = '<div class="detail-section">';
+    let html = '<div class="detail-section synergy-section">';
     html +=
       "<h2>Units improving " + escapeHtml(heroName) + "</h2>";
 
@@ -5467,7 +5996,7 @@
       return "";
     }
 
-    let html = '<div class="detail-section">';
+    let html = '<div class="detail-section synergy-section synergy-benefited-by-section">';
     html +=
       "<h2>Units benefitting most from " + escapeHtml(heroName) + "</h2>";
 
@@ -5602,11 +6131,12 @@
     listView.classList.add("hidden");
     detailView.classList.remove("hidden");
 
-    let html = '<div class="detail-header">';
+    let html = '<div class="detail-panel afkj-box afkj-box-lg">';
+    html += '<div class="detail-header">';
     html +=
-      '<img class="detail-portrait" src="' +
-      assetUrl(hero.portrait) +
-      '" alt="" onerror="this.style.opacity=0.3">';
+      '<div class="detail-portrait-wrap afkj-box afkj-box-sm">' +
+      renderHeroPortrait(hero, "detail-portrait") +
+      "</div>";
     html += '<div class="detail-title">';
     html += "<h1>" + escapeHtml(hero.name) + "</h1>";
     if (hero.title && hero.title !== hero.name) {
@@ -5657,7 +6187,7 @@
             '<div class="skill-overview-metrics">' + metricsHtml + "</div>";
         }
         if (hero.sections.skillCards && hero.sections.skillCards.length) {
-          html += renderSkillCards(hero.sections.skillCards);
+          html += renderSkillCards(hero.sections.skillCards, hero);
         }
         html += "</div>";
       }
@@ -5667,10 +6197,26 @@
       html += renderSummaryCards(hero.sections.summary);
     }
 
-    html += renderSynergies(hero.sections, hero.name);
-    html += renderReplacements(hero.sections, hero);
+    html += "</div>";
+    html += renderAlgorithmDisclaimer();
+    const synergyHtml = renderSynergies(hero.sections, hero.name);
+    if (synergyHtml) {
+      html += '<div class="detail-panel afkj-box afkj-box-lg">';
+      html += synergyHtml;
+      html += "</div>";
+    }
+    const replacementHtml = renderReplacements(hero.sections, hero);
+    if (replacementHtml) {
+      html += '<div class="detail-panel afkj-box afkj-box-lg">';
+      html += replacementHtml;
+      html += "</div>";
+    }
 
     heroDetail.innerHTML = html;
+    heroDetail.setAttribute(
+      "data-faction",
+      factionDataKey(hero.faction) || ""
+    );
     document.title = hero.name + " — AFK Journey Heroes";
     updateHeaderNav(true);
     window.scrollTo(0, 0);
@@ -5759,8 +6305,8 @@
     classes.sort();
 
     let html =
-      '<span class="filter-label">Faction</span>';
-    html +=
+      '<div class="filter-row filter-row-faction">' +
+      '<span class="filter-label">Faction</span>' +
       '<button type="button" class="filter-btn filter-btn-all" data-filter="all">All</button>';
     factions.forEach(function (f) {
       html +=
@@ -5770,6 +6316,10 @@
         escapeHtml(f) +
         "</button>";
     });
+    html += "</div>";
+    html += '<div class="filter-row filter-row-secondary">';
+    html += '<div class="filter-secondary-groups">';
+    html += '<div class="filter-group filter-group-class">';
     html += '<span class="filter-label">Class</span>';
     classes.forEach(function (c) {
       html +=
@@ -5779,7 +6329,9 @@
         escapeHtml(c) +
         "</button>";
     });
-    html += '<span class="filter-label">Role</span>';
+    html += "</div>";
+    html += '<div class="filter-group filter-group-role">';
+    html += '<span class="filter-label filter-label-role">Role</span>';
     ROLE_FILTER_ORDER.forEach(function (roleKey) {
       if (!seenRoles[roleKey]) {
         return;
@@ -5792,6 +6344,7 @@
         escapeHtml(meta.label) +
         "</button>";
     });
+    html += "</div></div></div>";
     filtersEl.innerHTML = html;
     updateFilterActiveStates();
     updateListStickyOffset();
@@ -6083,8 +6636,12 @@
 
   updateListStickyOffset();
   window.addEventListener("resize", updateListStickyOffset);
+  window.addEventListener("resize", scheduleFitHeroCardNames);
   if (siteHeader && typeof ResizeObserver !== "undefined") {
     new ResizeObserver(updateListStickyOffset).observe(siteHeader);
+  }
+  if (heroGrid && typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(scheduleFitHeroCardNames).observe(heroGrid);
   }
 
   (function initChipTooltips() {
@@ -6300,17 +6857,7 @@
       };
     }
 
-    function isPhoneViewport() {
-      return viewportMetrics().width <= 480;
-    }
-
     function clearPopoverLayout() {
-      popover.classList.remove(
-        "skill-card-popover--fullscreen",
-        "skill-card-popover--below"
-      );
-      backdrop.classList.remove("skill-card-popover-backdrop--dimmed");
-      document.body.classList.remove("skill-popover-open");
       popover.style.top = "";
       popover.style.left = "";
       popover.style.width = "";
@@ -6319,37 +6866,10 @@
       popover.style.visibility = "";
     }
 
-    function applyPhoneFullscreenLayout() {
-      const view = viewportMetrics();
-      popover.classList.add("skill-card-popover--fullscreen");
-      popover.classList.remove("skill-card-popover--below");
-      backdrop.classList.add("skill-card-popover-backdrop--dimmed");
-      document.body.classList.add("skill-popover-open");
-      popover.style.top = view.top + "px";
-      popover.style.left = view.left + "px";
-      popover.style.width = view.width + "px";
-      popover.style.height = view.height + "px";
-      popover.style.maxHeight = "none";
-      popover.style.visibility = "";
-      const scrollEl = popover.querySelector(".skill-popover-scroll");
-      if (scrollEl) {
-        scrollEl.scrollTop = 0;
-      }
-    }
-
     function positionSkillPopover(card) {
-      if (isPhoneViewport()) {
-        applyPhoneFullscreenLayout();
-        return;
-      }
-
-      popover.classList.remove("skill-card-popover--fullscreen");
-      backdrop.classList.remove("skill-card-popover-backdrop--dimmed");
-      document.body.classList.remove("skill-popover-open");
-
-      const rect = card.getBoundingClientRect();
-      const margin = 12;
-      const arrowSize = 10;
+      const cardRect = card.getBoundingClientRect();
+      const offset = 20;
+      const viewMargin = 8;
       const view = viewportMetrics();
       const isNarrow = view.width <= 600;
       const heightCap = Math.min(view.height * (isNarrow ? 0.82 : 0.6), 420);
@@ -6359,62 +6879,28 @@
       popover.hidden = false;
 
       const popW = popover.offsetWidth;
-      const naturalHeight = popover.offsetHeight;
+      const popH = popover.offsetHeight;
+      const viewCenter = view.left + view.width / 2;
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const alignRight = cardCenter >= viewCenter;
 
-      const spaceAbove = rect.top - view.top - margin - arrowSize;
-      const spaceBelow =
-        view.top + view.height - rect.bottom - margin - arrowSize;
-      let placeBelow = spaceBelow >= spaceAbove;
-      if (naturalHeight > spaceAbove && spaceBelow > spaceAbove) {
-        placeBelow = true;
-      } else if (naturalHeight > spaceBelow && spaceAbove >= spaceBelow) {
-        placeBelow = false;
+      let left;
+      let top = cardRect.bottom - offset - popH;
+      if (alignRight) {
+        left = cardRect.right - offset - popW;
+      } else {
+        left = cardRect.left + offset;
       }
 
-      let maxHeight = Math.max(
-        120,
-        Math.min(heightCap, placeBelow ? spaceBelow : spaceAbove)
+      const maxLeft = view.left + view.width - popW - viewMargin;
+      left = Math.max(view.left + viewMargin, Math.min(left, maxLeft));
+      top = Math.max(
+        view.top + viewMargin,
+        Math.min(top, view.top + view.height - popH - viewMargin)
       );
-      popover.style.maxHeight = maxHeight + "px";
-
-      let popH = popover.offsetHeight;
-      let top = placeBelow
-        ? rect.bottom + margin + arrowSize
-        : rect.top - popH - margin - arrowSize;
-
-      if (!placeBelow && top < view.top + margin) {
-        top = view.top + margin;
-        maxHeight = Math.max(
-          120,
-          Math.min(heightCap, rect.top - margin - arrowSize - top)
-        );
-        popover.style.maxHeight = maxHeight + "px";
-        popH = popover.offsetHeight;
-      }
-
-      const bottomLimit = view.top + view.height - margin;
-      if (top + popH > bottomLimit) {
-        maxHeight = Math.max(120, bottomLimit - top);
-        popover.style.maxHeight = maxHeight + "px";
-        popH = popover.offsetHeight;
-      }
-
-      if (!placeBelow) {
-        top = rect.top - popH - margin - arrowSize;
-        top = Math.max(view.top + margin, top);
-      }
-
-      let left = rect.left + rect.width / 2 - popW / 2;
-      const maxLeft = view.left + view.width - popW - margin;
-      left = Math.max(view.left + margin, Math.min(left, maxLeft));
-
-      const cardCenter = rect.left + rect.width / 2;
-      const arrowLeft = Math.max(18, Math.min(cardCenter - left, popW - 18));
 
       popover.style.top = top + "px";
       popover.style.left = left + "px";
-      popover.style.setProperty("--arrow-left", arrowLeft + "px");
-      popover.classList.toggle("skill-card-popover--below", placeBelow);
       popover.style.visibility = "";
     }
 
@@ -6483,17 +6969,13 @@
       if (
         anchorCard &&
         !popover.contains(e.target) &&
-        !anchorCard.contains(e.target) &&
-        !isPhoneViewport()
+        !anchorCard.contains(e.target)
       ) {
         hideSkillPopover();
       }
     });
 
     backdrop.addEventListener("click", function () {
-      if (isPhoneViewport()) {
-        return;
-      }
       hideSkillPopover();
     });
 
@@ -6508,7 +6990,7 @@
         openFromCard(card);
         return;
       }
-      if (e.key === "Escape" && anchorCard && !isPhoneViewport()) {
+      if (e.key === "Escape" && anchorCard) {
         hideSkillPopover();
         anchorCard.focus();
       }

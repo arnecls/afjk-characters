@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+  <!-- One wavy pinstripe per row; skew adds diagonal flow like the reference. -->
+    <pattern id="wave" width="256" height="2.8" patternUnits="userSpaceOnUse"
+      patternTransform="skewY(-6)">
+      <path d="M-40,1.4 C32,-0.2 96,2.8 160,1.4 S288,-0.2 296,1.4"
+        fill="none" stroke="#b0a69a" stroke-width="0.36" opacity="0.34"
+        stroke-linecap="round" />
+    </pattern>
+  </defs>
+  <rect width="256" height="256" fill="url(#wave)" />
+</svg>
