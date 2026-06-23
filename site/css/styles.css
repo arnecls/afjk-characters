@@ -870,7 +870,7 @@ a:hover {
   container-type: inline-size;
   position: relative;
   display: grid;
-  grid-template-rows: 18fr 6fr;
+  grid-template-rows: 17.5fr 6.5fr;
   aspect-ratio: 3 / 4.2;
   overflow: hidden;
   cursor: pointer;
@@ -1084,7 +1084,7 @@ a:hover {
 .hero-card-info {
   position: relative;
   display: grid;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 3fr 1.35fr;
   min-height: 0;
   z-index: 3;
   overflow: hidden;
@@ -1125,7 +1125,7 @@ a:hover {
   display: flex;
   align-items: center;
   min-height: 0;
-  padding: 0.08rem 0.7rem 0.04rem calc(0.35rem + min(24.2cqi, 2.365rem) + 0.95rem);
+  padding: 0.2rem 0.7rem 0.04rem calc(0.35rem + min(24.2cqi, 2.365rem) + 0.95rem);
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -1147,13 +1147,24 @@ a:hover {
 
 .hero-card-meta {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   min-height: 0;
-  padding: 0.1rem 0.35rem 0.28rem 28%;
+  padding: 0.1rem 0.7rem 0.28rem 28%;
   position: relative;
   z-index: 2;
   background: var(--fc-panel-deep);
+}
+
+.hero-card-role {
+  font-family: "Noto Sans", system-ui, sans-serif;
+  font-size: 6cqi;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--fc-name);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .hero-card-class-badge {

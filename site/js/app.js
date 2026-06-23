@@ -683,6 +683,20 @@
     );
   }
 
+  function renderGridCardRole(hero) {
+    const meta = roleCategoryMeta(hero.roleCategory);
+    if (!meta) {
+      return "";
+    }
+    return (
+      '<span class="hero-card-role ' +
+      meta.className +
+      '">' +
+      escapeHtml(meta.label) +
+      "</span>"
+    );
+  }
+
   function factionClass(faction) {
     if (!faction) return "";
     return "badge-faction-" + faction.toLowerCase().replace(/\s+/g, "");
@@ -5407,7 +5421,9 @@
           '<div class="hero-card-name"><h2>' +
           escapeHtml(h.name) +
           "</h2></div>" +
-          '<div class="hero-card-meta"></div></div>' +
+          '<div class="hero-card-meta">' +
+          renderGridCardRole(h) +
+          "</div></div>" +
           renderGridCardFactionStack(h) +
           "</article>"
         );
