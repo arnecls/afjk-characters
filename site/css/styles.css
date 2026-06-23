@@ -200,10 +200,20 @@ a:hover {
 .header-shell>.filters-panel {
   grid-column: 1 / -1;
   grid-row: 2;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+}
+
+.header-shell>.filters-panel:not(.filters-collapsed) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
   gap: 0.5rem;
+  align-items: end;
+}
+
+.header-shell>.filters-panel.filters-collapsed {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header-shell>.filters-panel.filters-collapsed {
@@ -255,17 +265,46 @@ a:hover {
   display: none;
 }
 
-.filters {
+.filters-panel:not(.filters-collapsed) .filters {
+  display: contents;
+}
+
+.filter-row-faction {
+  grid-column: 1 / -1;
+  grid-row: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  flex: 1 1 auto;
+  align-items: center;
+}
+
+.filter-row-secondary {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  min-width: 0;
+}
+
+.filter-secondary-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.filter-group-class,
+.filter-group-role {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .filters-toggle {
   position: relative;
   flex: 0 0 auto;
-  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,6 +319,12 @@ a:hover {
   color: var(--text-muted);
   background: var(--bg);
   transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.filters-panel:not(.filters-collapsed) .filters-toggle {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: end;
 }
 
 .filters-toggle:hover {
@@ -337,6 +382,39 @@ a:hover {
   color: var(--text-muted);
   margin-right: 0.15rem;
   align-self: center;
+  display: inline-block;
+  width: 5.5ch;
+  flex: 0 0 5.5ch;
+}
+
+.filter-group-class {
+  margin-right: 1.4em;
+}
+
+@media (max-width: 768px) {
+  .header-shell>.filters-panel:not(.filters-collapsed) {
+    grid-template-rows: auto auto auto;
+  }
+
+  .filter-row-secondary,
+  .filter-secondary-groups {
+    display: contents;
+  }
+
+  .filter-group-class {
+    grid-column: 1;
+    grid-row: 2;
+    margin-right: 0;
+  }
+
+  .filter-group-role {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .filters-panel:not(.filters-collapsed) .filters-toggle {
+    grid-row: 3;
+  }
 }
 
 .header-actions {
@@ -870,7 +948,7 @@ a:hover {
   container-type: inline-size;
   position: relative;
   display: grid;
-  grid-template-rows: 17.5fr 6.5fr;
+  grid-template-rows: 18fr 6fr;
   aspect-ratio: 3 / 4.2;
   overflow: hidden;
   cursor: pointer;
@@ -1371,8 +1449,8 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  opacity: 0.1;
-  filter: grayscale(90%);
+  opacity: 0.15;
+  filter: grayscale(80%);
   pointer-events: none;
   z-index: 0;
 }
@@ -1392,7 +1470,7 @@ a:hover {
 
 .hero-detail[data-faction="wilder"] .detail-panel::before {
   background-image: url("../assets/faction-backgrounds/wilder.jpg");
-  opacity: 0.2;
+  opacity: 0.25;
 }
 
 .hero-detail[data-faction="graveborn"] .detail-panel::before {
@@ -1741,28 +1819,14 @@ a:hover {
   padding-left: 1.05rem;
 }
 
-.detail-section>ul>li::before,
-.detail-section>ul>li::after {
-  position: absolute;
-  left: 0.34rem;
-  top: calc(0.72em + 0.1rem);
-  box-sizing: border-box;
-  pointer-events: none;
-  content: "";
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
 .detail-section>ul>li::before {
-  width: 0.42em;
-  height: 0.42em;
-  border: 1px solid color-mix(in srgb, var(--accent) 80%, transparent);
-  background: transparent;
-}
-
-.detail-section>ul>li::after {
-  width: 0.18em;
-  height: 0.18em;
-  background: var(--accent);
+  content: "⚬";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  line-height: inherit;
+  pointer-events: none;
 }
 
 .synergy-partner {
@@ -2169,7 +2233,7 @@ html.welcome-warning-pending .welcome-warning,
   width: min(28rem, calc(100vw - 1.5rem));
   max-width: 28rem;
   --skill-card-panel: #161c26;
-  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 70%, transparent);
+  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 75%, transparent);
   --skill-card-panel-stripe: color-mix(in srgb,
       color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
       transparent);
@@ -2805,28 +2869,14 @@ html.welcome-warning-pending .welcome-warning,
   line-height: 1.55;
 }
 
-.summary-card li::before,
-.summary-card li::after {
-  position: absolute;
-  left: 0.34rem;
-  top: calc(0.72em + 0.15rem);
-  box-sizing: border-box;
-  pointer-events: none;
-  content: "";
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
 .summary-card li::before {
-  width: 0.42em;
-  height: 0.42em;
-  border: 1px solid color-mix(in srgb, var(--accent) 80%, transparent);
-  background: transparent;
-}
-
-.summary-card li::after {
-  width: 0.18em;
-  height: 0.18em;
-  background: var(--accent);
+  content: "⚬";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  color: var(--accent);
+  line-height: inherit;
+  pointer-events: none;
 }
 
 .summary-card li .chip {
@@ -2918,7 +2968,7 @@ html.welcome-warning-pending .welcome-warning,
   --skill-card-text: #e4eaf2;
   --skill-card-text-inset: 7%;
   --skill-card-panel: #161c26;
-  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 60%, transparent);
+  --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 65%, transparent);
   --skill-card-panel-stripe: color-mix(in srgb,
       color-mix(in srgb, var(--skill-card-panel) 90%, black) 20%,
       transparent);

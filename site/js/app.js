@@ -3807,8 +3807,8 @@
     const iconHtml = useSheetIcon
       ? renderRoleCategoryIcon(key)
       : '<span class="badge-emoji" aria-hidden="true">' +
-        meta.emoji +
-        "</span>";
+      meta.emoji +
+      "</span>";
     const badgeClass =
       meta.className + (useSheetIcon ? " badge-role-with-icon" : "");
     return (
@@ -3856,8 +3856,16 @@
       }
     }
     if (hero.damage_type) {
+      const dmgDef = TAG_DEFINITIONS[hero.damage_type];
       badges.push(
-        '<span class="badge">' + escapeHtml(hero.damage_type) + "</span>"
+        '<span class="badge">' +
+        (dmgDef
+          ? '<span class="badge-emoji" aria-hidden="true">' +
+          dmgDef.emoji +
+          "</span>"
+          : "") +
+        escapeHtml(hero.damage_type) +
+        "</span>"
       );
     }
     return badges.join("");
@@ -6297,8 +6305,8 @@
     classes.sort();
 
     let html =
-      '<span class="filter-label">Faction</span>';
-    html +=
+      '<div class="filter-row filter-row-faction">' +
+      '<span class="filter-label">Faction</span>' +
       '<button type="button" class="filter-btn filter-btn-all" data-filter="all">All</button>';
     factions.forEach(function (f) {
       html +=
@@ -6308,6 +6316,10 @@
         escapeHtml(f) +
         "</button>";
     });
+    html += "</div>";
+    html += '<div class="filter-row filter-row-secondary">';
+    html += '<div class="filter-secondary-groups">';
+    html += '<div class="filter-group filter-group-class">';
     html += '<span class="filter-label">Class</span>';
     classes.forEach(function (c) {
       html +=
@@ -6317,7 +6329,9 @@
         escapeHtml(c) +
         "</button>";
     });
-    html += '<span class="filter-label">Role</span>';
+    html += "</div>";
+    html += '<div class="filter-group filter-group-role">';
+    html += '<span class="filter-label filter-label-role">Role</span>';
     ROLE_FILTER_ORDER.forEach(function (roleKey) {
       if (!seenRoles[roleKey]) {
         return;
@@ -6330,6 +6344,7 @@
         escapeHtml(meta.label) +
         "</button>";
     });
+    html += "</div></div></div>";
     filtersEl.innerHTML = html;
     updateFilterActiveStates();
     updateListStickyOffset();
@@ -6853,7 +6868,7 @@
 
     function positionSkillPopover(card) {
       const cardRect = card.getBoundingClientRect();
-      const offset = 30;
+      const offset = 20;
       const viewMargin = 8;
       const view = viewportMetrics();
       const isNarrow = view.width <= 600;
