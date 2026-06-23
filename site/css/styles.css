@@ -77,6 +77,18 @@
   --chip-quality-medium-fg: #8a6200;
   --chip-quality-low-bg: #fddede;
   --chip-quality-low-fg: #9b2c2c;
+  --class-color-warrior: #d43c40;
+  --class-color-tank: #b86040;
+  --class-color-rogue: #488040;
+  --class-color-mage: #a848c8;
+  --class-shape-warrior: #fbf2d3;
+  --class-shape-tank: #fdfcec;
+  --class-shape-rogue: #dcfcd5;
+  --class-shape-mage: #f7e6f7;
+  --class-border-warrior: #fff5e8;
+  --class-border-tank: #fffaf2;
+  --class-border-rogue: #f4fff0;
+  --class-border-mage: #faf0fc;
 }
 
 *,
@@ -1052,7 +1064,7 @@ a:hover {
 
 .hero-card-faction-stack .hero-card-class-badge {
   position: absolute;
-  right: -0.2rem;
+  right: -0.6rem;
   bottom: 0;
   display: flex;
   align-items: flex-end;
@@ -1062,8 +1074,8 @@ a:hover {
 
 .hero-card-faction-stack .hero-card-class-badge img {
   width: 100%;
-  min-width: 0.65rem;
-  max-width: 1rem;
+  min-width: 0.8125rem;
+  max-width: 1.25rem;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.28));
@@ -1223,23 +1235,75 @@ a:hover {
 }
 
 .badge-role-damage-dealer {
-  background: #fde8ea;
-  color: #b82832;
+  --role-icon-circle: var(--class-color-warrior);
+  --role-icon-shape: var(--class-shape-warrior);
+  --role-icon-border: var(--class-border-warrior);
 }
 
 .badge-role-specialist {
-  background: #f5e6fc;
-  color: #8a40b0;
+  --role-icon-circle: var(--class-color-mage);
+  --role-icon-shape: var(--class-shape-mage);
+  --role-icon-border: var(--class-border-mage);
 }
 
 .badge-role-support {
-  background: #e8fbeb;
-  color: #2a8048;
+  --role-icon-circle: var(--class-color-rogue);
+  --role-icon-shape: var(--class-shape-rogue);
+  --role-icon-border: var(--class-border-rogue);
 }
 
 .badge-role-tank {
-  background: #fff8e0;
+  --role-icon-circle: var(--class-color-tank);
+  --role-icon-shape: var(--class-shape-tank);
+  --role-icon-border: var(--class-border-tank);
+}
+
+.badge.badge-role-damage-dealer {
+  background: #f3d6da;
+  color: #b82832;
+}
+
+.badge.badge-role-specialist {
+  background: #e9d8f4;
+  color: #8a40b0;
+}
+
+.badge.badge-role-support {
+  background: #d9e9de;
+  color: #2a8048;
+}
+
+.badge.badge-role-tank {
+  background: #e6d8a8;
   color: #a07000;
+}
+
+.badge-role-with-icon {
+  gap: 0.35rem;
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.role-category-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.role-category-icon-svg {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.role-category-icon-bg {
+  fill: var(--role-icon-circle);
+  stroke: var(--role-icon-border);
+  stroke-width: 1;
+}
+
+.role-category-icon-shape {
+  fill: var(--role-icon-shape);
 }
 
 .empty-state {

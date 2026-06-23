@@ -3718,6 +3718,30 @@
     },
   };
 
+  // Prydwen tier-list role icons (Font Awesome paths).
+  const ROLE_CATEGORY_ICONS = {
+    damage_dealer: {
+      viewBox: "0 0 448 512",
+      path:
+        "M192 0c17.7 0 32 14.3 32 32l0 112-64 0 0-112c0-17.7 14.3-32 32-32zM64 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 80-64 0 0-80zm192 0c0-17.7 14.3-32 32-32s32 14.3 32 32l0 96c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-96zm96 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 64c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64zm-96 88l0-.6c9.4 5.4 20.3 8.6 32 8.6c13.2 0 25.4-4 35.6-10.8c8.7 24.9 32.5 42.8 60.4 42.8c11.7 0 22.6-3.1 32-8.6l0 8.6c0 52.3-25.1 98.8-64 128l0 96c0 17.7-14.3 32-32 32l-160 0c-17.7 0-32-14.3-32-32l0-78.4c-17.3-7.9-33.2-18.8-46.9-32.5L69.5 357.5C45.5 333.5 32 300.9 32 267l0-27c0-35.3 28.7-64 64-64l88 0c22.1 0 40 17.9 40 40s-17.9 40-40 40l-56 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l56 0c39.8 0 72-32.2 72-72z",
+    },
+    specialist: {
+      viewBox: "0 0 512 512",
+      path:
+        "M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 11.5c0 49.9-60.3 74.9-95.6 39.6L120.2 75C107.7 62.5 87.5 62.5 75 75s-12.5 32.8 0 45.3l8.2 8.2C118.4 163.7 93.4 224 43.5 224L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l11.5 0c49.9 0 74.9 60.3 39.6 95.6L75 391.8c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l8.2-8.2c35.3-35.3 95.6-10.3 95.6 39.6l0 11.5c0 17.7 14.3 32 32 32s32-14.3 32-32l0-11.5c0-49.9 60.3-74.9 95.6-39.6l8.2 8.2c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-8.2-8.2c-35.3-35.3-10.3-95.6 39.6-95.6l11.5 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-11.5 0c-49.9 0-74.9-60.3-39.6-95.6l8.2-8.2c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-8.2 8.2C348.3 118.4 288 93.4 288 43.5L288 32zM176 224a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm128 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z",
+    },
+    support: {
+      viewBox: "0 0 512 512",
+      path:
+        "M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zm96 152c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 48 48 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-48 0 0 48c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-48-48 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l48 0 0-48z",
+    },
+    tank: {
+      viewBox: "0 0 512 512",
+      path:
+        "M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z",
+    },
+  };
+
   const ROLE_FILTER_ORDER = [
     "damage_dealer",
     "specialist",
@@ -3729,7 +3753,34 @@
     return ROLE_CATEGORY_META[roleCategory] || null;
   }
 
-  function renderRoleCategoryBadge(heroOrCategory) {
+  function renderRoleCategoryIcon(roleCategory) {
+    const icon = ROLE_CATEGORY_ICONS[roleCategory];
+    if (!icon) {
+      return "";
+    }
+    const parts = icon.viewBox.split(/\s+/).map(Number);
+    const iconCx = parts[0] + parts[2] / 2;
+    const iconCy = parts[1] + parts[3] / 2;
+    const iconScale = 13.5 / Math.max(parts[2], parts[3]);
+    return (
+      '<span class="role-category-icon" aria-hidden="true">' +
+      '<svg class="role-category-icon-svg" viewBox="0 0 24 24" focusable="false">' +
+      '<circle class="role-category-icon-bg" cx="12" cy="12" r="10.5"/>' +
+      '<g transform="translate(12 12) scale(' +
+      iconScale +
+      ") translate(" +
+      -iconCx +
+      " " +
+      -iconCy +
+      ')">' +
+      '<path class="role-category-icon-shape" d="' +
+      icon.path +
+      '"/>' +
+      "</g></svg></span>"
+    );
+  }
+
+  function renderRoleCategoryBadge(heroOrCategory, options) {
     const key =
       typeof heroOrCategory === "string"
         ? heroOrCategory
@@ -3738,12 +3789,19 @@
     if (!meta) {
       return "";
     }
+    const useSheetIcon = options && options.sheetIcon === true;
+    const iconHtml = useSheetIcon
+      ? renderRoleCategoryIcon(key)
+      : '<span class="badge-emoji" aria-hidden="true">' +
+        meta.emoji +
+        "</span>";
+    const badgeClass =
+      meta.className + (useSheetIcon ? " badge-role-with-icon" : "");
     return (
       '<span class="badge ' +
-      meta.className +
-      '"><span class="badge-emoji" aria-hidden="true">' +
-      meta.emoji +
-      "</span>" +
+      badgeClass +
+      '">' +
+      iconHtml +
       escapeHtml(meta.label) +
       "</span>"
     );
@@ -3778,7 +3836,7 @@
       );
     }
     if (includeRoleCategory) {
-      const roleBadge = renderRoleCategoryBadge(hero);
+      const roleBadge = renderRoleCategoryBadge(hero, { sheetIcon: true });
       if (roleBadge) {
         badges.push(roleBadge);
       }
