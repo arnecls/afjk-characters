@@ -1064,7 +1064,7 @@ a:hover {
 
 .hero-card-faction-stack .hero-card-class-badge {
   position: absolute;
-  right: -0.6rem;
+  right: -0.8rem;
   bottom: 0;
   display: flex;
   align-items: flex-end;
@@ -1124,9 +1124,8 @@ a:hover {
 .hero-card-name {
   display: flex;
   align-items: center;
-  justify-content: center;
   min-height: 0;
-  padding: 0.08rem 0.7rem 0.04rem 25%;
+  padding: 0.08rem 0.7rem 0.04rem calc(0.35rem + min(24.2cqi, 2.365rem) + 0.95rem);
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -1134,10 +1133,12 @@ a:hover {
 
 .hero-card-name h2 {
   margin: 0;
+  flex: 1 1 auto;
   width: 100%;
+  min-width: 0;
   font-family: "Noto Sans", system-ui, sans-serif;
   font-weight: 500;
-  font-size: clamp(0.8rem, 13cqi, 1.4rem);
+  font-size: 13.5cqi;
   line-height: 0.85;
   color: var(--fc-name);
   text-align: right;

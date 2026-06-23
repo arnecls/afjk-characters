@@ -5283,6 +5283,111 @@
     );
   }
 
+  let heroCardNameMeasurer = null;
+
+  function getHeroCardNameMeasurer() {
+    if (!heroCardNameMeasurer) {
+      heroCardNameMeasurer = document.createElement("h2");
+      heroCardNameMeasurer.setAttribute("aria-hidden", "true");
+      heroCardNameMeasurer.style.position = "absolute";
+      heroCardNameMeasurer.style.left = "-9999px";
+      heroCardNameMeasurer.style.top = "0";
+      heroCardNameMeasurer.style.visibility = "hidden";
+      heroCardNameMeasurer.style.pointerEvents = "none";
+      heroCardNameMeasurer.style.margin = "0";
+      heroCardNameMeasurer.style.padding = "0";
+      heroCardNameMeasurer.style.border = "0";
+      document.body.appendChild(heroCardNameMeasurer);
+    }
+    return heroCardNameMeasurer;
+  }
+
+  function heroCardNameContentBox(box) {
+    const style = getComputedStyle(box);
+    const padLeft = parseFloat(style.paddingLeft) || 0;
+    const padRight = parseFloat(style.paddingRight) || 0;
+    const padTop = parseFloat(style.paddingTop) || 0;
+    const padBottom = parseFloat(style.paddingBottom) || 0;
+    return {
+      width: Math.max(0, box.clientWidth - padLeft - padRight),
+      height: Math.max(0, box.clientHeight - padTop - padBottom),
+    };
+  }
+
+  function heroCardNameLineHeightPx(sizePx, h2Style) {
+    const baseFontPx = parseFloat(h2Style.fontSize) || sizePx;
+    const baseLinePx = parseFloat(h2Style.lineHeight) || baseFontPx * 0.85;
+    return (baseLinePx / baseFontPx) * sizePx;
+  }
+
+  function heroCardNameFitsAtSize(text, sizePx, limits, h2Style) {
+    const measurer = getHeroCardNameMeasurer();
+    measurer.style.width = limits.width + "px";
+    measurer.style.maxWidth = limits.width + "px";
+    measurer.style.fontFamily = h2Style.fontFamily;
+    measurer.style.fontWeight = h2Style.fontWeight;
+    measurer.style.fontSize = sizePx + "px";
+    measurer.style.lineHeight =
+      heroCardNameLineHeightPx(sizePx, h2Style) + "px";
+    measurer.style.textAlign = "right";
+    measurer.style.textWrap = "balance";
+    measurer.textContent = text;
+    const maxHeight = limits.height || Number.POSITIVE_INFINITY;
+    return (
+      measurer.scrollWidth <= limits.width + 1 &&
+      measurer.scrollHeight <= maxHeight + 1
+    );
+  }
+
+  function fitHeroCardName(h2) {
+    const box = h2.closest(".hero-card-name");
+    const card = h2.closest(".hero-card");
+    if (!box || !card) {
+      return;
+    }
+    h2.style.fontSize = "";
+    const cardWidth = card.clientWidth;
+    if (!cardWidth) {
+      return;
+    }
+    const limits = heroCardNameContentBox(box);
+    if (!limits.width) {
+      return;
+    }
+    const h2Style = getComputedStyle(h2);
+    const text = h2.textContent || "";
+    const maxPx = cardWidth * 0.135;
+    const minPx = Math.max(8, cardWidth * 0.07);
+    let sizePx = maxPx;
+    while (
+      sizePx > minPx &&
+      !heroCardNameFitsAtSize(text, sizePx, limits, h2Style)
+    ) {
+      sizePx -= 0.5;
+    }
+    h2.style.fontSize = sizePx + "px";
+  }
+
+  function fitHeroCardNames() {
+    if (viewMode !== "grid" || !heroGrid) {
+      return;
+    }
+    heroGrid.querySelectorAll(".hero-card-name h2").forEach(fitHeroCardName);
+  }
+
+  function scheduleFitHeroCardNames() {
+    const run = function () {
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(fitHeroCardNames);
+      });
+    };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(run).catch(run);
+    } else {
+      run();
+    }
+  }
+
   function renderGrid() {
     const list = filteredHeroes();
     heroGrid.innerHTML = list
@@ -5310,6 +5415,7 @@
       .join("");
 
     emptyState.classList.toggle("hidden", list.length > 0);
+    scheduleFitHeroCardNames();
   }
 
   function renderCurrentView() {
@@ -6499,8 +6605,12 @@
 
   updateListStickyOffset();
   window.addEventListener("resize", updateListStickyOffset);
+  window.addEventListener("resize", scheduleFitHeroCardNames);
   if (siteHeader && typeof ResizeObserver !== "undefined") {
     new ResizeObserver(updateListStickyOffset).observe(siteHeader);
+  }
+  if (heroGrid && typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(scheduleFitHeroCardNames).observe(heroGrid);
   }
 
   (function initChipTooltips() {
