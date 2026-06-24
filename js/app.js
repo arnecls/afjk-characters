@@ -2385,6 +2385,8 @@
   });
 
   const TIER_RANK_ORDER = ["C", "B", "A", "A+", "S", "S+"];
+  const REFERENCE_TIER_WEIGHT = 7;
+  const REFERENCE_TIER_POINTS_PER_STEP = 100;
   const TIER_FILTER_ORDER = ["?", "C", "B", "A", "A+", "S", "S+"];
 
   function isUnrankedPrydwenTier(tier) {
@@ -5549,7 +5551,7 @@
           factionBonus: 3.0,
           focusTags: {},
           ccTargetingWeight: {},
-          roleProminenceTierWeight: 100,
+          roleProminenceTierWeight: 7,
           markSynergyMultiplier: 2.0,
         };
         mixRoleProminence = { bySlug: {} };
@@ -5967,8 +5969,10 @@
     const weight =
       mixConfig && mixConfig.roleProminenceTierWeight != null
         ? mixConfig.roleProminenceTierWeight
-        : 100;
-    return (tierRank + 1) * weight;
+        : REFERENCE_TIER_WEIGHT;
+    const pointsPerStep =
+      weight * (REFERENCE_TIER_POINTS_PER_STEP / REFERENCE_TIER_WEIGHT);
+    return (tierRank + 1) * pointsPerStep;
   }
 
   function mixCombinedRoleProminenceRaw(hero, roleKey) {
