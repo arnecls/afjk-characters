@@ -112,7 +112,7 @@
     "passive_reference_cycle_seconds": 10.0
   },
   "mix_mode": {
-    "faction_bonus": 50.0,
+    "faction_bonus": 10.0,
     "mark_synergy_multiplier": 5.0,
     "role_prominence_tier_weight": 100,
     "focus_tags": {
