@@ -1027,6 +1027,15 @@ a:hover {
   border-color: rgba(90, 110, 140, 0.25);
 }
 
+.hero-card.afkj-box-sm .hero-card-portrait {
+  border-radius: var(--afkj-radius-tl) var(--afkj-radius-tr) 0 0;
+}
+
+.hero-card.afkj-box-sm .hero-card-portrait-frame,
+.hero-card.afkj-box-sm .hero-card-portrait-frame::before {
+  border-radius: inherit;
+}
+
 .hero-card-portrait {
   position: relative;
   width: 100%;
@@ -3227,6 +3236,20 @@ html.welcome-warning-pending .welcome-warning,
   .hero-row-list.hero-compact-grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .mix-view:not(.hidden) {
+    min-height: 50vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mix-view:not(.hidden) .mix-view-content {
+    display: none;
+  }
+
+  .mix-view:not(.hidden) .mix-screen-warning {
+    display: flex;
+  }
 }
 
 @media (max-width: 600px) {
@@ -3292,4 +3315,409 @@ html.welcome-warning-pending .welcome-warning,
     width: 56px;
     height: 62px;
   }
+}
+
+/* Mix mode — team builder */
+.mix-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mix-screen-warning {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border: 2px solid #d8b860;
+  border-radius: 12px 3px 8px 3px;
+  background: #fff8e6;
+  box-shadow: var(--shadow-sm);
+  color: #5c4a1e;
+}
+
+.mix-screen-warning-text {
+  margin: 0;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.mix-screen-warning-icon {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.mix-sticky-toolbar {
+  position: sticky;
+  top: var(--list-sticky-top);
+  z-index: 30;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+  isolation: isolate;
+}
+
+.mix-grid-scroll {
+  position: relative;
+  z-index: 1;
+  border-top: 2px solid color-mix(in srgb, var(--border) 60%, transparent);
+  padding-top: 1rem;
+}
+
+.mix-toolbar-row {
+  --mix-slot-width: 105px;
+  --mix-slot-gap: 0.65rem;
+  --mix-slots-width: calc(
+    var(--mix-slot-width) * 5 + var(--mix-slot-gap) * 4
+  );
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.mix-drop-zone {
+  display: flex;
+  gap: var(--mix-slot-gap);
+  flex-wrap: nowrap;
+}
+
+.mix-slot {
+  width: var(--mix-slot-width);
+  flex-shrink: 0;
+}
+
+.mix-slot--empty {
+  aspect-ratio: 3 / 4.2;
+  border-radius: var(--afkj-radius-feature-tl) var(--afkj-radius-feature-tr) var(--afkj-radius-feature-br) var(--afkj-radius-feature-bl);
+  border: 2px dashed color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--bg) 70%, var(--surface));
+  box-shadow: inset 0 2px 8px rgba(25, 40, 65, 0.08);
+}
+
+.mix-slot .hero-card {
+  width: 100%;
+  cursor: grab;
+}
+
+.mix-slot .hero-card:active {
+  cursor: grabbing;
+}
+
+.mix-zone-actions {
+  position: absolute;
+  top: 0;
+  left: calc(50% + var(--mix-slots-width) / 2 + 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.mix-action-btn {
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mix-action-btn--remove {
+  background: #fde8e8;
+  border-color: #e8a0a0;
+  color: #8b2020;
+}
+
+.mix-action-btn--remove:hover {
+  background: #fcd4d4;
+}
+
+.mix-action-btn--clear {
+  background: #fff8dc;
+  border-color: #e8d090;
+  color: #7a6200;
+}
+
+.mix-action-btn--clear:hover {
+  background: #fff3c4;
+}
+
+.mix-selector-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+.mix-focus-selector,
+.mix-mode-selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.mix-focus-selector {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.mix-focus-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+}
+
+.mix-focus-btn {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mix-focus-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.mix-focus-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.mix-mode-btn {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mix-mode-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.mix-mode-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.mix-hero-grid {
+  grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+  gap: 0.75rem;
+}
+
+.mix-hero-grid .hero-card {
+  cursor: grab;
+}
+
+.mix-hero-grid .hero-card:active {
+  cursor: grabbing;
+}
+
+.mix-slot .hero-card,
+.mix-hero-grid .hero-card {
+  overflow: hidden;
+}
+
+.mix-hero-card-shell {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  transition: transform 0.15s;
+}
+
+.mix-hero-card-shell:hover {
+  transform: translateY(-3px);
+}
+
+.mix-hero-card-shell .hero-card:hover {
+  transform: none;
+}
+
+.mix-hero-card-shell:hover .hero-card {
+  box-shadow:
+    0 0 18px 3px rgba(25, 40, 65, 0.12),
+    5px 8px rgba(25, 40, 65, 0.1);
+  border-color: rgba(90, 110, 140, 0.25);
+}
+
+.mix-hero-card-chrome {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.mix-hero-card-chrome .hero-card-crown {
+  position: absolute;
+  top: -0.3em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mix-hero-card-chrome .mix-highlight-icons {
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  align-items: flex-end;
+}
+
+.hero-card--mix-marked {
+  border-color: #d4a017 !important;
+  box-shadow:
+    0 0 0 2px rgba(212, 160, 23, 0.5),
+    0 0 16px 5px rgba(212, 160, 23, 0.45),
+    var(--shadow-sm);
+}
+
+.hero-card-crown {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+.hero-card--mix-highlight {
+  border-color: #c62828 !important;
+  box-shadow:
+    0 0 0 2px rgba(198, 40, 40, 0.55),
+    0 0 18px 7px rgba(220, 50, 50, 0.5),
+    var(--shadow-sm);
+}
+
+.mix-hero-card-shell:has(.hero-card--mix-highlight) {
+  z-index: 0;
+}
+
+.mix-highlight-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  pointer-events: none;
+}
+
+.mix-highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  line-height: 1;
+  background: var(--surface);
+  border: 2px solid #c62828;
+  box-shadow: 0 0 8px rgba(198, 40, 40, 0.45);
+}
+
+.mix-sort-anim {
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
+}
+
+.mix-context-menu {
+  position: fixed;
+  z-index: 100;
+  min-width: 11rem;
+  padding: 0.35rem 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+}
+
+.mix-context-menu[hidden] {
+  display: none !important;
+}
+
+.mix-context-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.45rem 0.85rem;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.82rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mix-context-menu-item:hover {
+  background: var(--accent-soft);
+}
+
+.mix-context-menu-item--disabled,
+.mix-context-menu-item:disabled {
+  color: var(--text-muted);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mix-context-menu-item--disabled:hover,
+.mix-context-menu-item:disabled:hover {
+  background: transparent;
+}
+
+.mix-context-menu-icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.mix-context-menu-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mix-drop-zone.mix-drag-over {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent-soft) 35%, transparent);
+}
+
+.mix-hero-grid.mix-drag-over {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }

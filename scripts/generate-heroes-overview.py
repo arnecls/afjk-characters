@@ -1878,6 +1878,148 @@ def _healing_effect_weight(
     return targeting * 1.0
 
 
+TANK_SUSTAIN_BUFF_LABELS = frozenset(
+    {
+        "Shield",
+        "Max HP buff",
+        "DEF buff",
+        "Physical DEF buff",
+        "Magic DEF buff",
+        "Ranged DEF buff",
+    }
+)
+
+SELF_OR_ALLY_TARGETINGS = ALLY_TARGETINGS | frozenset({"Self"})
+
+ROLE_PROMINENCE_KEYS = (
+    "damage_dealer",
+    "tank",
+    "support",
+    "specialist",
+)
+
+
+def _prominence_max_label(
+    weights: dict[str, float], label: str, weight: float
+) -> None:
+    weights[label] = max(weights.get(label, 0.0), weight)
+
+
+def _prominence_sum(weights: dict[str, float]) -> float:
+    return sum(weights.values())
+
+
+def _hero_all_prominence_effects(hero: _rs.Hero) -> list[_rs.Effect]:
+    return list(hero.effects) + list(hero.summon_effects)
+
+
+def hero_damage_dealer_prominence(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> float:
+    """Outgoing damage weighted by throughput and targeting reach."""
+    weights: dict[str, float] = {}
+    for effect in _hero_all_prominence_effects(hero):
+        if effect.category != "damage":
+            continue
+        if effect.targeting == "Self":
+            continue
+        weight = _replacement_effect_weight(effect, hero, skills_by_title)
+        _prominence_max_label(weights, effect.label, weight)
+    return _prominence_sum(weights)
+
+
+def hero_tank_prominence(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> float:
+    """Shields, HP buffs, and sustain on self or allies."""
+    weights: dict[str, float] = {}
+    for effect in _hero_all_prominence_effects(hero):
+        if effect.conditional == "rare":
+            continue
+        if effect.targeting not in SELF_OR_ALLY_TARGETINGS:
+            continue
+        if effect.category == "buff" and effect.label in TANK_SUSTAIN_BUFF_LABELS:
+            weight = _replacement_effect_weight(effect, hero, skills_by_title)
+            _prominence_max_label(weights, effect.label, weight)
+        elif is_hp_recovery_label(effect.label):
+            if effect.category != "buff":
+                continue
+            weight = _healing_effect_weight(effect, hero, skills_by_title)
+            _prominence_max_label(weights, effect.label, weight)
+    return _prominence_sum(weights)
+
+
+def hero_support_prominence(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> float:
+    """Ally healing and ally buffs."""
+    weights: dict[str, float] = {}
+    for effect in _hero_all_prominence_effects(hero):
+        if effect.conditional == "rare":
+            continue
+        if _healing_effect_is_ally_provider(effect):
+            weight = _healing_effect_weight(effect, hero, skills_by_title)
+            _prominence_max_label(weights, f"heal:{effect.label}", weight)
+        elif effect.category == "buff" and effect.targeting in ALLY_TARGETINGS:
+            weight = _replacement_effect_weight(effect, hero, skills_by_title)
+            _prominence_max_label(weights, effect.label, weight)
+    return _prominence_sum(weights)
+
+
+def hero_specialist_prominence(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> float:
+    """Enemy debuffs/CC plus ally buffs."""
+    weights: dict[str, float] = {}
+    for effect in _hero_all_prominence_effects(hero):
+        if effect.conditional == "rare":
+            continue
+        if effect.category in ("debuff", "cc"):
+            if effect.targeting == "Self":
+                continue
+            weight = _replacement_effect_weight(effect, hero, skills_by_title)
+            key = f"{effect.category}:{effect.label}"
+            _prominence_max_label(weights, key, weight)
+        elif effect.category == "buff" and effect.targeting in ALLY_TARGETINGS:
+            weight = _replacement_effect_weight(effect, hero, skills_by_title)
+            _prominence_max_label(weights, effect.label, weight)
+    return _prominence_sum(weights)
+
+
+def hero_role_prominence_scores(
+    hero: _rs.Hero,
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,
+) -> dict[str, float]:
+    """Raw mix-mode prominence per role formula."""
+    return {
+        "damage_dealer": hero_damage_dealer_prominence(hero, skills_by_title),
+        "tank": hero_tank_prominence(hero, skills_by_title),
+        "support": hero_support_prominence(hero, skills_by_title),
+        "specialist": hero_specialist_prominence(hero, skills_by_title),
+    }
+
+
+def build_mix_role_prominence_index(
+    summary_heroes: dict[str, _rs.Hero],
+    skills_by_title: dict[str, list[_rs.SkillMeta]] | None,
+    slug_by_name: dict[str, str],
+) -> dict:
+    """Slug-keyed raw role prominence for mix-mode pool ranking."""
+    by_short = {short_name(title): hero for title, hero in summary_heroes.items()}
+    by_slug: dict[str, dict[str, float]] = {}
+    for short, slug in slug_by_name.items():
+        hero = by_short.get(short)
+        if hero is None:
+            continue
+        raw = hero_role_prominence_scores(hero, skills_by_title)
+        by_slug[slug] = {key: round(raw[key], 4) for key in ROLE_PROMINENCE_KEYS}
+    return {"bySlug": by_slug}
+
+
 def _hero_healing_profile(
     hero: _rs.Hero,
     skills_by_title: dict[str, list[_rs.SkillMeta]] | None = None,

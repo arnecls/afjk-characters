@@ -110,5 +110,55 @@
   "magnitude_throughput": {
     "min_cycle_seconds": 3.0,
     "passive_reference_cycle_seconds": 10.0
+  },
+  "mix_mode": {
+    "faction_bonus": 50.0,
+    "mark_synergy_multiplier": 5.0,
+    "role_prominence_tier_weight": 100,
+    "focus_tags": {
+      "boss": {
+        "Max HP damage": 7.0,
+        "True damage": 7.0,
+        "Max HP buff": 4.5
+      },
+      "endless_boss": {
+        "HP loss": 7.0,
+        "Max HP damage": 5.5
+      },
+      "cc": {
+        "Stun": 6.0,
+        "Bind": 6.0,
+        "Silence": 6.0,
+        "Knock up": 6.0,
+        "Knock back": 4.5,
+        "Fear": 4.5,
+        "Charm": 4.5,
+        "Petrify": 6.0,
+        "Sleep": 6.0
+      },
+      "sustain": {
+        "Shield": 6.0,
+        "Direct healing": 6.0,
+        "HoT": 6.0,
+        "Max HP buff": 5.0,
+        "Physical DEF buff": 4.5,
+        "Magic DEF buff": 4.5,
+        "Ranged DEF buff": 4.5,
+        "DEF buff": 4.5,
+        "Lifedrain buff": 4.5,
+        "revive": 8.0
+      },
+      "speed": {
+        "signature_fast": 7.0,
+        "non_ultimate_fast": 2.0
+      }
+    },
+    "cc_targeting_weight": {
+      "All units": 2.5,
+      "Area": 2.0,
+      "Arc": 1.6,
+      "Multiple targets": 1.6,
+      "Single target": 1.0
+    }
   }
 }

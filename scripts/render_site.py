@@ -32,6 +32,9 @@ from render_overview import (
 
 SITE_DIR = io.ROOT / "site"
 SITE_DATA = SITE_DIR / "data" / "heroes.json"
+MIX_SYNERGY_INDEX = SITE_DIR / "data" / "mix-synergy-index.json"
+MIX_CONFIG = SITE_DIR / "data" / "mix-config.json"
+MIX_ROLE_PROMINENCE = SITE_DIR / "data" / "mix-role-prominence.json"
 OVERVIEW_CSV = io.ROOT / "heroes-overview.csv"
 SITE_CSV = SITE_DIR / "data" / "heroes-overview.csv"
 
@@ -273,6 +276,39 @@ def _build_replacements(
     return out
 
 
+def build_mix_synergy_index(
+    synergies: dict, slug_by_name: dict[str, str]
+) -> dict:
+    """Provider scores keyed by receiver slug then provider slug."""
+    by_receiver: dict[str, dict[str, float]] = {}
+    for receiver_short, hero_data in synergies["heroes"].items():
+        receiver_slug = slug_by_name.get(receiver_short, hero_slug(receiver_short))
+        providers: dict[str, float] = {}
+        for pick in hero_data.get("synergies", []):
+            provider_name = gen.short_name(pick["provider"])
+            provider_slug = slug_by_name.get(provider_name, hero_slug(provider_name))
+            providers[provider_slug] = round(float(pick["score"]), 4)
+        if providers:
+            by_receiver[receiver_slug] = providers
+    return {"byReceiver": by_receiver}
+
+
+def build_mix_config(config: dict) -> dict:
+    """Subset of heroes_config.json for mix-mode scoring in the browser."""
+    mix = config.get("mix_mode", {})
+    synergy = config.get("synergy_weights", {})
+    return {
+        "factionBonus": mix.get("faction_bonus", 3.0),
+        "focusTags": mix.get("focus_tags", {}),
+        "ccTargetingWeight": mix.get(
+            "cc_targeting_weight",
+            synergy.get("targeting_weight", {}),
+        ),
+        "roleProminenceTierWeight": mix.get("role_prominence_tier_weight", 100),
+        "markSynergyMultiplier": mix.get("mark_synergy_multiplier", 2.0),
+    }
+
+
 def build_site_data(
     data: dict, processed: dict, synergies: dict, config: dict
 ) -> dict:
@@ -402,7 +438,19 @@ def main() -> None:
     synergies = io.load_synergies()
     config = io.load_config()
 
+    slug_by_name: dict[str, str] = {}
+    for short in sorted(processed["heroes"]):
+        slug_by_name[short] = hero_slug(short)
+
+    summary_heroes, skills_by_title = load_summary_heroes(data, processed)
+    mix_role_prominence = gen.build_mix_role_prominence_index(
+        summary_heroes, skills_by_title, slug_by_name
+    )
+
     payload = build_site_data(data, processed, synergies, config)
+    mix_index = build_mix_synergy_index(synergies, slug_by_name)
+    mix_config = build_mix_config(config)
+
     encoded = json.dumps(payload, ensure_ascii=False)
     SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
     SITE_DATA.write_text(encoded + "\n", encoding="utf-8")
@@ -410,6 +458,24 @@ def main() -> None:
         f"Wrote {SITE_DATA.relative_to(io.ROOT)} "
         f"({payload['meta']['hero_count']} heroes)"
     )
+
+    MIX_SYNERGY_INDEX.write_text(
+        json.dumps(mix_index, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {MIX_SYNERGY_INDEX.relative_to(io.ROOT)}")
+
+    MIX_CONFIG.write_text(
+        json.dumps(mix_config, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {MIX_CONFIG.relative_to(io.ROOT)}")
+
+    MIX_ROLE_PROMINENCE.write_text(
+        json.dumps(mix_role_prominence, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {MIX_ROLE_PROMINENCE.relative_to(io.ROOT)}")
 
     if OVERVIEW_CSV.is_file():
         csv_text = OVERVIEW_CSV.read_text(encoding="utf-8")

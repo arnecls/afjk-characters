@@ -25,8 +25,14 @@
 
   const gridView = document.getElementById("grid-view");
   const listView = document.getElementById("list-view");
+  const mixView = document.getElementById("mix-view");
   const detailView = document.getElementById("detail-view");
   const heroGrid = document.getElementById("hero-grid");
+  const mixHeroGrid = document.getElementById("mix-hero-grid");
+  const mixDropZone = document.getElementById("mix-drop-zone");
+  const mixEmptyState = document.getElementById("mix-empty-state");
+  const mixRemoveAllBtn = document.getElementById("mix-remove-all");
+  const mixClearMarkersBtn = document.getElementById("mix-clear-markers");
   const heroDetail = document.getElementById("hero-detail");
   const emptyState = document.getElementById("empty-state");
   const listEmptyState = document.getElementById("list-empty-state");
@@ -48,7 +54,7 @@
   function readStoredViewMode() {
     try {
       const stored = localStorage.getItem(VIEW_MODE_KEY);
-      if (stored === "grid" || stored === "list") {
+      if (stored === "grid" || stored === "list" || stored === "mix") {
         return stored;
       }
     } catch (e) {
@@ -611,6 +617,16 @@
       return "";
     }
     return faction.toLowerCase().replace(/\s+/g, "");
+  }
+
+  const CELESTIAL_HYPOGEAN_BONUS_KEY = "celestialhypogean";
+
+  function factionBonusGroupKey(faction) {
+    const key = factionDataKey(faction);
+    if (key === "celestial" || key === "hypogean") {
+      return CELESTIAL_HYPOGEAN_BONUS_KEY;
+    }
+    return key;
   }
 
   function renderHeroPortrait(hero, extraClass) {
@@ -5391,10 +5407,22 @@
   }
 
   function fitHeroCardNames() {
-    if (viewMode !== "grid" || !heroGrid) {
+    if (viewMode === "mix") {
+      const roots = [];
+      if (mixHeroGrid) {
+        roots.push(mixHeroGrid);
+      }
+      if (mixDropZone) {
+        roots.push(mixDropZone);
+      }
+      roots.forEach(function (root) {
+        root.querySelectorAll(".hero-card-name h2").forEach(fitHeroCardName);
+      });
       return;
     }
-    heroGrid.querySelectorAll(".hero-card-name h2").forEach(fitHeroCardName);
+    if (viewMode === "grid" && heroGrid) {
+      heroGrid.querySelectorAll(".hero-card-name h2").forEach(fitHeroCardName);
+    }
   }
 
   function scheduleFitHeroCardNames() {
@@ -5408,6 +5436,1354 @@
     } else {
       run();
     }
+  }
+
+  const MIX_SLOT_COUNT = 5;
+  let mixSlots = [null, null, null, null, null];
+  const mixMarked = new Set();
+  let mixHighlightSource = null;
+  let mixHighlightMap = {};
+  const mixFocus = {
+    boss: false,
+    endlessBoss: false,
+    cc: false,
+    sustain: false,
+    speed: false,
+  };
+  let mixMode = null;
+  let mixSynergyIndex = null;
+  let mixConfig = null;
+  let mixRoleProminence = null;
+  let mixDataPromise = null;
+  let mixGridOrder = [];
+  let mixDragDidMove = false;
+  let mixGridPointer = null;
+  let mixContextMenuEl = null;
+  let mixContextSlotIndex = -1;
+  let mixContextGridSlug = null;
+  let mixSlotLastTap = null;
+  const MIX_SLOT_DOUBLE_TAP_MS = 400;
+  const MIX_TOUCH_DEVICE = window.matchMedia(
+    "(hover: none) and (pointer: coarse)"
+  );
+
+  // Crown body: three rounded peaks (center taller), flat bottom.
+  // Crown band: separate rounded-rectangle strip below.
+  const MIX_CROWN_BODY =
+    "M3.5 17.5 L2 10.5 Q1.5 7.5 3.5 10 Q6.5 13.5 9 11" +
+    " Q12 4 15 11 Q17.5 13.5 20.5 10 Q22.5 7.5 22 10.5 L20.5 17.5Z";
+  const MIX_CROWN_BAND = 'x="3.5" y="19" width="17" height="3" rx="1.2"';
+
+  const MIX_CROWN_SVG =
+    '<svg class="hero-card-crown" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<path fill="#d4a017" d="' + MIX_CROWN_BODY + '"/>' +
+    '<rect fill="#d4a017" ' + MIX_CROWN_BAND + '/>' +
+    '</svg>';
+
+  const MIX_CONTEXT_ICONS = {
+    mark:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="1.8"><path d="' + MIX_CROWN_BODY + '"/>' +
+      '<rect ' + MIX_CROWN_BAND + '/></svg>',
+    unmark:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="1.8"><path d="' + MIX_CROWN_BODY + '"/>' +
+      '<rect ' + MIX_CROWN_BAND + '/>' +
+      '<path d="M4 4l16 16"/></svg>',
+    highlight:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2"><path d="M12 3l2.4 7.4H22l-6 4.6 2.3 7L12 17.4 ' +
+      '5.7 22l2.3-7-6-4.6h7.6z"/></svg>',
+    replace:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2"><path d="M16 3h5v5M4 21 20.5 4.5M21 16v5h-5' +
+      'M4 21 3 16"/></svg>',
+    remove:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>',
+    view:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>' +
+      '<circle cx="12" cy="12" r="3"/></svg>',
+    add:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>',
+  };
+
+  function loadMixData() {
+    if (mixDataPromise) {
+      return mixDataPromise;
+    }
+    if (location.protocol === "file:") {
+      mixDataPromise = Promise.resolve();
+      return mixDataPromise;
+    }
+    mixDataPromise = Promise.all([
+      fetch(assetUrl("data/mix-synergy-index.json")).then(function (r) {
+        if (!r.ok) {
+          throw new Error("mix synergy index");
+        }
+        return r.json();
+      }),
+      fetch(assetUrl("data/mix-config.json")).then(function (r) {
+        if (!r.ok) {
+          throw new Error("mix config");
+        }
+        return r.json();
+      }),
+      fetch(assetUrl("data/mix-role-prominence.json")).then(function (r) {
+        if (!r.ok) {
+          throw new Error("mix role prominence");
+        }
+        return r.json();
+      }),
+    ])
+      .then(function (results) {
+        mixSynergyIndex = results[0];
+        mixConfig = results[1];
+        mixRoleProminence = results[2];
+      })
+      .catch(function () {
+        mixSynergyIndex = { byReceiver: {} };
+        mixConfig = {
+          factionBonus: 3.0,
+          focusTags: {},
+          ccTargetingWeight: {},
+          roleProminenceTierWeight: 100,
+          markSynergyMultiplier: 2.0,
+        };
+        mixRoleProminence = { bySlug: {} };
+      });
+    return mixDataPromise;
+  }
+
+  function mixSlottedSlugSet() {
+    const set = {};
+    mixSlots.forEach(function (slug) {
+      if (slug) {
+        set[slug] = true;
+      }
+    });
+    return set;
+  }
+
+  function compactMixSlots() {
+    const filled = mixSlots.filter(Boolean);
+    mixSlots = filled.concat(
+      Array(Math.max(0, MIX_SLOT_COUNT - filled.length)).fill(null)
+    );
+  }
+
+  function mixFirstFreeSlotIndex() {
+    for (let i = 0; i < MIX_SLOT_COUNT; i++) {
+      if (!mixSlots[i]) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  function removeSlugFromMixSlots(slug) {
+    for (let i = 0; i < MIX_SLOT_COUNT; i++) {
+      if (mixSlots[i] === slug) {
+        mixSlots[i] = null;
+      }
+    }
+    compactMixSlots();
+    mixMarked.delete(slug);
+    if (mixHighlightSource === slug) {
+      mixHighlightSource = null;
+      mixHighlightMap = {};
+    }
+  }
+
+  function clearMixAlternativeHighlights() {
+    mixHighlightSource = null;
+    mixHighlightMap = {};
+  }
+
+  function mixSlotIndexForSlug(slug) {
+    for (let i = 0; i < MIX_SLOT_COUNT; i++) {
+      if (mixSlots[i] === slug) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  function tryReplaceHighlightedAlternative(slug) {
+    if (!mixHighlightSource || !mixHighlightMap[slug]) {
+      return false;
+    }
+    if (mixSlottedSlugSet()[slug]) {
+      return false;
+    }
+    const slotIndex = mixSlotIndexForSlug(mixHighlightSource);
+    if (slotIndex < 0) {
+      clearMixAlternativeHighlights();
+      return false;
+    }
+    mixMarked.delete(mixHighlightSource);
+    mixSlots[slotIndex] = slug;
+    compactMixSlots();
+    clearMixAlternativeHighlights();
+    renderMix();
+    return true;
+  }
+
+  function addHeroToMixZone(slug) {
+    if (!slug || mixSlottedSlugSet()[slug]) {
+      return false;
+    }
+    compactMixSlots();
+    const slot = mixFirstFreeSlotIndex();
+    if (slot < 0) {
+      return false;
+    }
+    mixSlots[slot] = slug;
+    clearMixAlternativeHighlights();
+    renderMix();
+    return true;
+  }
+
+  function placeHeroInMixZone(slug, source) {
+    if (!slug) {
+      return false;
+    }
+    const fromSlot = source && source.indexOf("slot-") === 0;
+    if (fromSlot) {
+      const fromIndex = parseInt(source.split("-")[1], 10);
+      if (!isNaN(fromIndex) && mixSlots[fromIndex] === slug) {
+        mixSlots[fromIndex] = null;
+      }
+    } else {
+      removeSlugFromMixSlots(slug);
+    }
+    compactMixSlots();
+    if (mixSlottedSlugSet()[slug]) {
+      renderMix();
+      return true;
+    }
+    const slot = mixFirstFreeSlotIndex();
+    if (slot < 0) {
+      renderMix();
+      return false;
+    }
+    mixSlots[slot] = slug;
+    compactMixSlots();
+    if (!fromSlot) {
+      clearMixAlternativeHighlights();
+    }
+    renderMix();
+    return true;
+  }
+
+  function synergyScoreForPair(providerSlug, receiverSlug) {
+    const byReceiver = mixSynergyIndex && mixSynergyIndex.byReceiver;
+    if (!byReceiver || !byReceiver[receiverSlug]) {
+      return 0;
+    }
+    return byReceiver[receiverSlug][providerSlug] || 0;
+  }
+
+  function getQualifyingMixFactions() {
+    const counts = {};
+    mixSlots.forEach(function (slug) {
+      if (!slug) {
+        return;
+      }
+      const hero = heroBySlug[slug];
+      if (!hero || !hero.faction) {
+        return;
+      }
+      const key = factionBonusGroupKey(hero.faction);
+      counts[key] = (counts[key] || 0) + 1;
+    });
+    const qualifying = {};
+    Object.keys(counts).forEach(function (key) {
+      if (counts[key] === 2) {
+        qualifying[key] = true;
+      }
+    });
+    return qualifying;
+  }
+
+  function mixHeroSkillTags(hero) {
+    const tags = [];
+    const cards = hero.sections && hero.sections.skillCards;
+    if (!cards) {
+      return tags;
+    }
+    cards.forEach(function (card) {
+      (card.tags || []).forEach(function (tag) {
+        tags.push(tag);
+      });
+    });
+    return tags;
+  }
+
+  function mixHeroBehaviorTags(hero) {
+    const behavior = hero.sections && hero.sections.behavior;
+    if (!behavior) {
+      return [];
+    }
+    const match = behavior.match(/\*\*Behavior tags\*\*:\s*([^\n]+)/);
+    if (!match) {
+      return [];
+    }
+    const found = [];
+    const re = /`([^`]+)`/g;
+    let m;
+    while ((m = re.exec(match[1])) !== null) {
+      found.push(m[1]);
+    }
+    return found;
+  }
+
+  function mixTagBaseLabel(tag) {
+    const parts = tag.split(/\s+[—–-]\s+/);
+    return parts[0].trim();
+  }
+
+  function mixTagTargetingWeight(tag) {
+    const weights =
+      (mixConfig && mixConfig.ccTargetingWeight) || {};
+    const lower = tag.toLowerCase();
+    if (lower.indexOf("all units") !== -1) {
+      return weights["All units"] || 2.0;
+    }
+    if (lower.indexOf("area") !== -1) {
+      return weights.Area || 1.6;
+    }
+    if (lower.indexOf("arc") !== -1) {
+      return weights.Arc || 1.3;
+    }
+    if (lower.indexOf("multiple targets") !== -1) {
+      return weights["Multiple targets"] || 1.3;
+    }
+    return weights["Single target"] || 1.0;
+  }
+
+  function mixHeroSkillOverviewSpeeds(hero) {
+    const behavior = hero.sections && hero.sections.behavior;
+    if (!behavior) {
+      return { signature: "", nonUltimate: "" };
+    }
+    const sigMatch = behavior.match(
+      /\*\*Signature skill(?: \(ult\))?\*\*:\s*speed\s+`([^`]+)`/i
+    );
+    const nonMatch = behavior.match(
+      /\*\*Non-ultimate\*\*:\s*speed\s+`([^`]+)`/i
+    );
+    return {
+      signature: sigMatch ? sigMatch[1].toLowerCase() : "",
+      nonUltimate: nonMatch ? nonMatch[1].toLowerCase() : "",
+    };
+  }
+
+  function computeMixSpeedBonus(hero) {
+    const weights =
+      mixConfig && mixConfig.focusTags && mixConfig.focusTags.speed;
+    if (!weights) {
+      return 0;
+    }
+    const speeds = mixHeroSkillOverviewSpeeds(hero);
+    let bonus = 0;
+    if (speeds.signature === "fast") {
+      bonus += weights.signature_fast || 0;
+      if (speeds.nonUltimate === "fast") {
+        bonus += weights.non_ultimate_fast || 0;
+      }
+    }
+    return bonus;
+  }
+
+  function mixHasActiveFocus() {
+    return (
+      mixFocus.boss ||
+      mixFocus.endlessBoss ||
+      mixFocus.cc ||
+      mixFocus.sustain ||
+      mixFocus.speed
+    );
+  }
+
+  function computeMixFocusBonus(hero) {
+    if (!mixConfig || !mixConfig.focusTags) {
+      return 0;
+    }
+    const tags = mixHeroSkillTags(hero);
+    const behaviorTags = mixHeroBehaviorTags(hero);
+    const focusTags = mixConfig.focusTags;
+    let bonus = 0;
+
+    function addFromMap(map) {
+      if (!map) {
+        return;
+      }
+      tags.forEach(function (tag) {
+        const base = mixTagBaseLabel(tag);
+        if (map[base]) {
+          let mult = 1;
+          if (mixFocus.cc) {
+            mult = mixTagTargetingWeight(tag);
+          }
+          bonus += map[base] * mult;
+        }
+      });
+      behaviorTags.forEach(function (bt) {
+        if (map[bt]) {
+          bonus += map[bt];
+        }
+      });
+    }
+
+    if (mixFocus.boss) {
+      addFromMap(focusTags.boss);
+    }
+    if (mixFocus.endlessBoss) {
+      addFromMap(focusTags.endless_boss);
+    }
+    if (mixFocus.cc) {
+      addFromMap(focusTags.cc);
+    }
+    if (mixFocus.sustain) {
+      addFromMap(focusTags.sustain);
+    }
+    if (mixFocus.speed) {
+      bonus += computeMixSpeedBonus(hero);
+    }
+    return bonus;
+  }
+
+  function computeMixScore(slug) {
+    const team = mixSlots.filter(Boolean);
+    const hero = heroBySlug[slug];
+    if (!team.length) {
+      if (!mixHasActiveFocus() || !hero) {
+        return 0;
+      }
+      return computeMixFocusBonus(hero);
+    }
+    let total = 0;
+    const markMult =
+      mixConfig && mixConfig.markSynergyMultiplier != null
+        ? mixConfig.markSynergyMultiplier
+        : 2.0;
+    team.forEach(function (receiverSlug) {
+      const score = synergyScoreForPair(slug, receiverSlug);
+      const mult = mixMarked.has(receiverSlug) ? markMult : 1.0;
+      total += score * mult;
+    });
+    if (hero) {
+      total += computeMixFocusBonus(hero);
+      const qualifying = getQualifyingMixFactions();
+      if (
+        hero.faction &&
+        qualifying[factionBonusGroupKey(hero.faction)]
+      ) {
+        const factionBonus =
+          mixConfig && mixConfig.factionBonus != null
+            ? mixConfig.factionBonus
+            : 3.0;
+        total += factionBonus;
+      }
+    }
+    return total;
+  }
+
+  function mixRawRoleProminence(slug, roleKey) {
+    const bySlug =
+      mixRoleProminence && mixRoleProminence.bySlug
+        ? mixRoleProminence.bySlug
+        : null;
+    if (!bySlug || !roleKey) {
+      return 0;
+    }
+    const row = bySlug[slug];
+    if (!row || row[roleKey] == null) {
+      return 0;
+    }
+    return row[roleKey];
+  }
+
+  const ROLE_PROMINENCE_TIER_MODES = [
+    "afk_stages",
+    "dream_realm",
+    "pvp",
+  ];
+
+  function normalizePrydwenTiersForRoleProminence(tiers) {
+    const raw = Object.assign({}, tiers || {});
+    const dr = prydwenTierRank(raw.dream_realm);
+    const dre = prydwenTierRank(raw.dream_realm_endless);
+    if (dr >= 0 || dre >= 0) {
+      raw.dream_realm = TIER_RANK_ORDER[Math.max(dr, dre)];
+    }
+    delete raw.dream_realm_endless;
+    return raw;
+  }
+
+  function averagePrydwenTierRankFromTiers(tiers) {
+    let sum = 0;
+    let count = 0;
+    ROLE_PROMINENCE_TIER_MODES.forEach(function (mode) {
+      const rank = prydwenTierRank(tiers[mode]);
+      if (rank >= 0) {
+        sum += rank;
+        count += 1;
+      }
+    });
+    if (!count) {
+      return -1;
+    }
+    return sum / count;
+  }
+
+  function resolvePrydwenTierRank(hero) {
+    const tiers = normalizePrydwenTiersForRoleProminence(
+      hero && hero.prydwenTiers
+    );
+    if (!mixMode) {
+      return averagePrydwenTierRankFromTiers(tiers);
+    }
+    if (mixMode === "afk") {
+      return prydwenTierRank(tiers.afk_stages);
+    }
+    if (mixMode === "pvp") {
+      return prydwenTierRank(tiers.pvp);
+    }
+    if (mixMode === "boss") {
+      return prydwenTierRank(tiers.dream_realm);
+    }
+    return -1;
+  }
+
+  function roleProminenceTierPoints(hero) {
+    const tierRank = resolvePrydwenTierRank(hero);
+    if (tierRank < 0) {
+      return 0;
+    }
+    const weight =
+      mixConfig && mixConfig.roleProminenceTierWeight != null
+        ? mixConfig.roleProminenceTierWeight
+        : 100;
+    return (tierRank + 1) * weight;
+  }
+
+  function mixCombinedRoleProminenceRaw(hero, roleKey) {
+    return (
+      mixRawRoleProminence(hero.slug, roleKey) + roleProminenceTierPoints(hero)
+    );
+  }
+
+  function computeNormalizedRoleBonuses(pool, roleKey) {
+    const bonuses = {};
+    if (!roleKey || !pool.length) {
+      return bonuses;
+    }
+    let min = Infinity;
+    let max = -Infinity;
+    pool.forEach(function (h) {
+      const raw = mixCombinedRoleProminenceRaw(h, roleKey);
+      if (raw < min) {
+        min = raw;
+      }
+      if (raw > max) {
+        max = raw;
+      }
+    });
+    if (!isFinite(min) || !isFinite(max) || min === max) {
+      pool.forEach(function (h) {
+        bonuses[h.slug] = 0;
+      });
+      return bonuses;
+    }
+    const range = max - min;
+    pool.forEach(function (h) {
+      const raw = mixCombinedRoleProminenceRaw(h, roleKey);
+      bonuses[h.slug] = ((raw - min) / range) * 10;
+    });
+    return bonuses;
+  }
+
+  function computeNormalizedTierBonuses(pool) {
+    const bonuses = {};
+    if (!pool.length) {
+      return bonuses;
+    }
+    let min = Infinity;
+    let max = -Infinity;
+    pool.forEach(function (h) {
+      const raw = roleProminenceTierPoints(h);
+      if (raw < min) {
+        min = raw;
+      }
+      if (raw > max) {
+        max = raw;
+      }
+    });
+    if (!isFinite(min) || !isFinite(max) || min === max) {
+      pool.forEach(function (h) {
+        bonuses[h.slug] = 0;
+      });
+      return bonuses;
+    }
+    const range = max - min;
+    pool.forEach(function (h) {
+      const raw = roleProminenceTierPoints(h);
+      bonuses[h.slug] = ((raw - min) / range) * 10;
+    });
+    return bonuses;
+  }
+
+  function mixPoolHeroes() {
+    const slotted = mixSlottedSlugSet();
+    return filteredHeroes().filter(function (h) {
+      return !slotted[h.slug];
+    });
+  }
+
+  function mixSortedPoolHeroes() {
+    const pool = mixPoolHeroes();
+    const prominenceBonuses = activeRole
+      ? computeNormalizedRoleBonuses(pool, activeRole)
+      : computeNormalizedTierBonuses(pool);
+    return pool
+      .map(function (h) {
+        return {
+          hero: h,
+          score:
+            computeMixScore(h.slug) + (prominenceBonuses[h.slug] || 0),
+        };
+      })
+      .sort(function (a, b) {
+        if (b.score !== a.score) {
+          return b.score - a.score;
+        }
+        return a.hero.name.localeCompare(b.hero.name);
+      })
+      .map(function (row) {
+        return row.hero;
+      });
+  }
+
+  function renderMixHighlightIcons(categories) {
+    if (!categories || !categories.length) {
+      return "";
+    }
+    let html = '<div class="mix-highlight-icons">';
+    categories.forEach(function (label) {
+      const icon = replacementCategoryIcon(label);
+      html +=
+        '<span class="mix-highlight-icon" title="' +
+        escapeHtml(label) +
+        '">' +
+        escapeHtml(icon) +
+        "</span>";
+    });
+    html += "</div>";
+    return html;
+  }
+
+  function renderMixHeroCard(h, opts) {
+    opts = opts || {};
+    const factionKey = factionDataKey(h.faction);
+    let extraClass = "";
+    if (opts.marked) {
+      extraClass += " hero-card--mix-marked";
+    }
+    let highlightCats = [];
+    if (!opts.inSlot && mixHighlightMap[h.slug]) {
+      highlightCats = mixHighlightMap[h.slug];
+      extraClass += " hero-card--mix-highlight";
+    }
+    const draggable = opts.draggable !== false;
+    const chromeHtml =
+      (opts.marked ? MIX_CROWN_SVG : "") +
+      (highlightCats.length && !opts.inSlot
+        ? renderMixHighlightIcons(highlightCats)
+        : "");
+    const cardHtml =
+      '<article class="hero-card afkj-box afkj-box-sm' +
+      extraClass +
+      '" data-slug="' +
+      escapeHtml(h.slug) +
+      '" data-faction="' +
+      escapeHtml(factionKey) +
+      '"' +
+      (draggable ? ' draggable="true"' : "") +
+      (opts.mixSource
+        ? ' data-mix-source="' + escapeHtml(opts.mixSource) + '"'
+        : "") +
+      ' tabindex="0" aria-label="' +
+      escapeHtml(h.name) +
+      '">' +
+      renderHeroPortrait(h) +
+      renderHeroCardWave(h.slug) +
+      '<div class="hero-card-info">' +
+      '<div class="hero-card-name"><h2>' +
+      escapeHtml(h.name) +
+      "</h2></div>" +
+      '<div class="hero-card-meta">' +
+      renderGridCardRole(h) +
+      "</div></div>" +
+      renderGridCardFactionStack(h) +
+      "</article>";
+    if (!chromeHtml) {
+      return '<div class="mix-hero-card-shell">' + cardHtml + "</div>";
+    }
+    return (
+      '<div class="mix-hero-card-shell">' +
+      cardHtml +
+      '<div class="mix-hero-card-chrome" aria-hidden="true">' +
+      chromeHtml +
+      "</div></div>"
+    );
+  }
+
+  function renderMixSlots() {
+    if (!mixDropZone) {
+      return;
+    }
+    compactMixSlots();
+    let html = "";
+    for (let i = 0; i < MIX_SLOT_COUNT; i++) {
+      const slug = mixSlots[i];
+      html += '<div class="mix-slot" data-slot="' + i + '">';
+      if (slug && heroBySlug[slug]) {
+        html += renderMixHeroCard(heroBySlug[slug], {
+          inSlot: true,
+          marked: mixMarked.has(slug),
+          mixSource: "slot-" + i,
+        });
+      } else {
+        html += '<div class="mix-slot--empty" aria-label="Empty slot"></div>';
+      }
+      html += "</div>";
+    }
+    mixDropZone.innerHTML = html;
+  }
+
+  function animateMixGridReorder(prevRects) {
+    if (!mixHeroGrid) {
+      return;
+    }
+    const cards = mixHeroGrid.querySelectorAll(".hero-card");
+    cards.forEach(function (el) {
+      const slug = el.dataset.slug;
+      const prev = prevRects.get(slug);
+      const next = el.getBoundingClientRect();
+      if (!prev) {
+        el.style.opacity = "0";
+        return;
+      }
+      const dx = prev.left - next.left;
+      const dy = prev.top - next.top;
+      if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
+        el.style.transform = "translate(" + dx + "px, " + dy + "px)";
+        el.style.opacity = "0";
+      }
+    });
+    requestAnimationFrame(function () {
+      cards.forEach(function (el) {
+        el.classList.add("mix-sort-anim");
+        el.style.transform = "";
+        el.style.opacity = "1";
+      });
+      setTimeout(function () {
+        cards.forEach(function (el) {
+          el.classList.remove("mix-sort-anim");
+          el.style.transform = "";
+          el.style.opacity = "";
+        });
+      }, 1000);
+    });
+  }
+
+  function renderMixGrid() {
+    if (!mixHeroGrid) {
+      return;
+    }
+    const list = mixSortedPoolHeroes();
+    const newOrder = list.map(function (h) {
+      return h.slug;
+    });
+    const orderChanged = mixGridOrder.join(",") !== newOrder.join(",");
+    const prevRects = new Map();
+    if (orderChanged) {
+      mixHeroGrid.querySelectorAll(".hero-card").forEach(function (el) {
+        prevRects.set(el.dataset.slug, el.getBoundingClientRect());
+      });
+    }
+    mixGridOrder = newOrder;
+    mixHeroGrid.innerHTML = list
+      .map(function (h) {
+        return renderMixHeroCard(h, { mixSource: "grid" });
+      })
+      .join("");
+    if (mixEmptyState) {
+      mixEmptyState.classList.toggle("hidden", list.length > 0);
+    }
+    if (orderChanged && prevRects.size) {
+      animateMixGridReorder(prevRects);
+    }
+    scheduleFitHeroCardNames();
+  }
+
+  function renderMix() {
+    renderMixSlots();
+    renderMixGrid();
+    syncMixFocusButtons();
+    syncMixModeButtons();
+  }
+
+  function syncMixFocusButtons() {
+    if (!mixView) {
+      return;
+    }
+    mixView.querySelectorAll(".mix-focus-btn").forEach(function (btn) {
+      const key = btn.dataset.focus;
+      btn.classList.toggle("active", !!mixFocus[key]);
+    });
+  }
+
+  function syncMixModeButtons() {
+    if (!mixView) {
+      return;
+    }
+    mixView.querySelectorAll(".mix-mode-btn").forEach(function (btn) {
+      const mode = btn.dataset.mode;
+      btn.classList.toggle("active", mixMode === mode);
+    });
+  }
+
+  function buildMixHighlightMap(sourceSlug) {
+    const hero = heroBySlug[sourceSlug];
+    const map = {};
+    if (!hero || !hero.sections || !hero.sections.replacements) {
+      return map;
+    }
+    hero.sections.replacements.forEach(function (cat) {
+      (cat.entries || []).forEach(function (entry) {
+        if (!entry.slug) {
+          return;
+        }
+        if (!map[entry.slug]) {
+          map[entry.slug] = [];
+        }
+        if (map[entry.slug].indexOf(cat.category) === -1) {
+          map[entry.slug].push(cat.category);
+        }
+      });
+    });
+    return map;
+  }
+
+  function getMixOverallReplacement(sourceSlug) {
+    const hero = heroBySlug[sourceSlug];
+    if (!hero || !hero.sections || !hero.sections.replacements) {
+      return null;
+    }
+    const overall = hero.sections.replacements.find(function (cat) {
+      return cat.category === "Best overall replacement";
+    });
+    if (!overall || !overall.entries || !overall.entries.length) {
+      return null;
+    }
+    return overall.entries[0];
+  }
+
+  function ensureMixContextMenu() {
+    if (mixContextMenuEl) {
+      return mixContextMenuEl;
+    }
+    mixContextMenuEl = document.createElement("div");
+    mixContextMenuEl.className = "mix-context-menu";
+    mixContextMenuEl.hidden = true;
+    mixContextMenuEl.setAttribute("role", "menu");
+    document.body.appendChild(mixContextMenuEl);
+    mixContextMenuEl.addEventListener("click", function (e) {
+      const menuBtn = e.target.closest(".mix-context-menu-item");
+      if (!menuBtn || menuBtn.disabled) {
+        return;
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      if (mixContextGridSlug) {
+        handleMixGridContextAction(menuBtn.dataset.action);
+      } else {
+        handleMixContextAction(menuBtn.dataset.action);
+      }
+    });
+    document.addEventListener("click", function (e) {
+      if (
+        mixContextMenuEl &&
+        !mixContextMenuEl.hidden &&
+        !mixContextMenuEl.contains(e.target)
+      ) {
+        closeMixContextMenu();
+      }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeMixContextMenu();
+      }
+    });
+    return mixContextMenuEl;
+  }
+
+  function closeMixContextMenu() {
+    if (mixContextMenuEl) {
+      mixContextMenuEl.hidden = true;
+    }
+    mixContextSlotIndex = -1;
+    mixContextGridSlug = null;
+  }
+
+  function positionMixContextMenu(menu, clientX, clientY) {
+    menu.hidden = false;
+    menu.style.left = clientX + "px";
+    menu.style.top = clientY + "px";
+    const rect = menu.getBoundingClientRect();
+    if (rect.right > window.innerWidth - 8) {
+      menu.style.left = Math.max(8, clientX - rect.width) + "px";
+    }
+    if (rect.bottom > window.innerHeight - 8) {
+      menu.style.top = Math.max(8, clientY - rect.height) + "px";
+    }
+  }
+
+  function mixContextMenuItem(label, iconKey, action, disabled) {
+    const isDisabled = !!disabled;
+    return (
+      '<button type="button" class="mix-context-menu-item' +
+      (isDisabled ? " mix-context-menu-item--disabled" : "") +
+      '" data-action="' +
+      escapeHtml(action) +
+      '"' +
+      (isDisabled ? " disabled" : "") +
+      ">" +
+      '<span class="mix-context-menu-icon">' +
+      (MIX_CONTEXT_ICONS[iconKey] || "") +
+      "</span>" +
+      escapeHtml(label) +
+      "</button>"
+    );
+  }
+
+  function openMixContextMenu(slotIndex, clientX, clientY) {
+    const slug = mixSlots[slotIndex];
+    if (!slug) {
+      return;
+    }
+    const menu = ensureMixContextMenu();
+    mixContextSlotIndex = slotIndex;
+    mixContextGridSlug = null;
+    let html = "";
+    if (mixMarked.has(slug)) {
+      html += mixContextMenuItem("Unmark", "unmark", "unmark");
+    } else {
+      html += mixContextMenuItem("Mark", "mark", "mark");
+    }
+    html += mixContextMenuItem(
+      mixHighlightSource === slug
+        ? "Unmark alternatives"
+        : "Highlight alternatives",
+      "highlight",
+      "highlight"
+    );
+    if (getMixOverallReplacement(slug)) {
+      html += mixContextMenuItem("Replace", "replace", "replace");
+    }
+    html += mixContextMenuItem("Remove", "remove", "remove");
+    menu.innerHTML = html;
+    positionMixContextMenu(menu, clientX, clientY);
+  }
+
+  function openMixGridContextMenu(slug, clientX, clientY) {
+    if (!slug || mixSlottedSlugSet()[slug]) {
+      return;
+    }
+    const menu = ensureMixContextMenu();
+    mixContextSlotIndex = -1;
+    mixContextGridSlug = slug;
+    const isReplacement =
+      mixHighlightSource && mixHighlightMap[slug];
+    const zoneFull = mixFirstFreeSlotIndex() < 0;
+    const addDisabled = !isReplacement && zoneFull;
+    let html = mixContextMenuItem("View character", "view", "grid-view");
+    html += mixContextMenuItem(
+      isReplacement ? "Replace" : "Add",
+      isReplacement ? "replace" : "add",
+      isReplacement ? "grid-replace" : "grid-add",
+      addDisabled
+    );
+    menu.innerHTML = html;
+    positionMixContextMenu(menu, clientX, clientY);
+  }
+
+  function removeHeroFromMixSlot(slotIndex) {
+    const slug = mixSlots[slotIndex];
+    if (!slug) {
+      return;
+    }
+    mixSlots[slotIndex] = null;
+    mixMarked.delete(slug);
+    if (mixHighlightSource === slug) {
+      clearMixAlternativeHighlights();
+    }
+    compactMixSlots();
+    renderMix();
+  }
+
+  function handleMixGridContextAction(action) {
+    const slug = mixContextGridSlug;
+    closeMixContextMenu();
+    if (!slug) {
+      return;
+    }
+    if (action === "grid-view") {
+      navigateTo(heroUrl(slug));
+      return;
+    }
+    if (action === "grid-replace") {
+      tryReplaceHighlightedAlternative(slug);
+      return;
+    }
+    if (action === "grid-add") {
+      addHeroToMixZone(slug);
+    }
+  }
+
+  function handleMixContextAction(action) {
+    const slotIndex = mixContextSlotIndex;
+    const slug = slotIndex >= 0 ? mixSlots[slotIndex] : null;
+    closeMixContextMenu();
+    if (!slug) {
+      return;
+    }
+    if (action === "mark") {
+      mixMarked.add(slug);
+      renderMix();
+      return;
+    }
+    if (action === "unmark") {
+      mixMarked.delete(slug);
+      renderMix();
+      return;
+    }
+    if (action === "highlight") {
+      if (mixHighlightSource === slug) {
+        mixHighlightSource = null;
+        mixHighlightMap = {};
+      } else {
+        mixHighlightSource = slug;
+        mixHighlightMap = buildMixHighlightMap(slug);
+      }
+      renderMix();
+      return;
+    }
+    if (action === "replace") {
+      const rep = getMixOverallReplacement(slug);
+      if (!rep || !rep.slug) {
+        return;
+      }
+      mixSlots[slotIndex] = rep.slug;
+      mixMarked.delete(slug);
+      if (mixHighlightSource === slug) {
+        mixHighlightSource = null;
+        mixHighlightMap = {};
+      }
+      compactMixSlots();
+      renderMix();
+      return;
+    }
+    if (action === "remove") {
+      removeHeroFromMixSlot(slotIndex);
+    }
+  }
+
+  function mixDragSlugFromEvent(e) {
+    const card = e.target.closest(".hero-card[data-slug]");
+    return card ? card.dataset.slug : "";
+  }
+
+  function mixDragSourceFromEvent(e) {
+    const card = e.target.closest(".hero-card[data-mix-source]");
+    return card ? card.dataset.mixSource : "";
+  }
+
+  function initMixInteractions() {
+    if (!mixView) {
+      return;
+    }
+
+    mixView.querySelector(".mix-focus-selector").addEventListener(
+      "click",
+      function (e) {
+        const btn = e.target.closest(".mix-focus-btn");
+        if (!btn) {
+          return;
+        }
+        const key = btn.dataset.focus;
+        if (key === "boss") {
+          mixFocus.boss = !mixFocus.boss;
+          if (mixFocus.boss) {
+            mixFocus.endlessBoss = false;
+          }
+        } else if (key === "endlessBoss") {
+          mixFocus.endlessBoss = !mixFocus.endlessBoss;
+          if (mixFocus.endlessBoss) {
+            mixFocus.boss = false;
+          }
+        } else if (key === "cc") {
+          mixFocus.cc = !mixFocus.cc;
+        } else if (key === "sustain") {
+          mixFocus.sustain = !mixFocus.sustain;
+        } else if (key === "speed") {
+          mixFocus.speed = !mixFocus.speed;
+        }
+        renderMix();
+      }
+    );
+
+    mixView.querySelector(".mix-mode-selector").addEventListener(
+      "click",
+      function (e) {
+        const btn = e.target.closest(".mix-mode-btn");
+        if (!btn) {
+          return;
+        }
+        const mode = btn.dataset.mode;
+        mixMode = mixMode === mode ? null : mode;
+        renderMix();
+      }
+    );
+
+    if (mixRemoveAllBtn) {
+      mixRemoveAllBtn.addEventListener("click", function () {
+        mixSlots = [null, null, null, null, null];
+        mixMarked.clear();
+        mixHighlightSource = null;
+        mixHighlightMap = {};
+        renderMix();
+      });
+    }
+
+    if (mixClearMarkersBtn) {
+      mixClearMarkersBtn.addEventListener("click", function () {
+        mixMarked.clear();
+        mixHighlightSource = null;
+        mixHighlightMap = {};
+        renderMix();
+      });
+    }
+
+    mixView.addEventListener("dragstart", function (e) {
+      if (viewMode !== "mix") {
+        return;
+      }
+      const slug = mixDragSlugFromEvent(e);
+      if (!slug) {
+        return;
+      }
+      mixDragDidMove = false;
+      e.dataTransfer.setData("text/plain", slug);
+      e.dataTransfer.setData(
+        "application/x-afkj-mix-source",
+        mixDragSourceFromEvent(e) || "grid"
+      );
+      e.dataTransfer.effectAllowed = "move";
+    });
+
+    mixView.addEventListener("drag", function () {
+      mixDragDidMove = true;
+    });
+
+    mixView.addEventListener("dragend", function () {
+      setTimeout(function () {
+        mixDragDidMove = false;
+      }, 0);
+    });
+
+    mixView.addEventListener("dragover", function (e) {
+      if (viewMode !== "mix") {
+        return;
+      }
+      const grid = e.target.closest(".mix-hero-grid");
+      const zone = e.target.closest(".mix-drop-zone");
+      if (zone || grid) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "move";
+      }
+      mixView.querySelectorAll(".mix-drag-over").forEach(function (el) {
+        el.classList.remove("mix-drag-over");
+      });
+      if (zone) {
+        zone.classList.add("mix-drag-over");
+      } else if (grid) {
+        grid.classList.add("mix-drag-over");
+      }
+    });
+
+    mixView.addEventListener("dragleave", function (e) {
+      const related = e.relatedTarget;
+      if (related && mixView.contains(related)) {
+        return;
+      }
+      mixView.querySelectorAll(".mix-drag-over").forEach(function (el) {
+        el.classList.remove("mix-drag-over");
+      });
+    });
+
+    mixView.addEventListener("drop", function (e) {
+      if (viewMode !== "mix") {
+        return;
+      }
+      e.preventDefault();
+      mixView.querySelectorAll(".mix-drag-over").forEach(function (el) {
+        el.classList.remove("mix-drag-over");
+      });
+      const slug = e.dataTransfer.getData("text/plain");
+      const source = e.dataTransfer.getData("application/x-afkj-mix-source");
+      if (!slug) {
+        return;
+      }
+      const slotEl = e.target.closest(".mix-slot");
+      const gridEl = e.target.closest(".mix-hero-grid");
+      const zoneEl = e.target.closest(".mix-drop-zone");
+
+      if (gridEl && source.indexOf("slot-") === 0) {
+        removeSlugFromMixSlots(slug);
+        renderMix();
+        return;
+      }
+
+      if (slotEl || zoneEl) {
+        placeHeroInMixZone(slug, source);
+      }
+    });
+
+    mixView.addEventListener("pointerdown", function (e) {
+      if (viewMode !== "mix" || e.button !== 0) {
+        return;
+      }
+      const card = e.target.closest("#mix-hero-grid .hero-card");
+      if (!card) {
+        mixGridPointer = null;
+        return;
+      }
+      mixGridPointer = {
+        slug: card.dataset.slug,
+        x: e.clientX,
+        y: e.clientY,
+      };
+    });
+
+    mixView.addEventListener("pointerup", function (e) {
+      if (viewMode !== "mix" || !mixGridPointer) {
+        return;
+      }
+      const card = e.target.closest("#mix-hero-grid .hero-card");
+      const pointer = mixGridPointer;
+      mixGridPointer = null;
+      if (!card || card.dataset.slug !== pointer.slug) {
+        return;
+      }
+      const dx = e.clientX - pointer.x;
+      const dy = e.clientY - pointer.y;
+      if (dx * dx + dy * dy > 36) {
+        return;
+      }
+      e.preventDefault();
+      if (!tryReplaceHighlightedAlternative(pointer.slug)) {
+        addHeroToMixZone(pointer.slug);
+      }
+    });
+
+    mixView.addEventListener("click", function (e) {
+      if (viewMode !== "mix") {
+        return;
+      }
+      const slotCard = e.target.closest(".mix-slot .hero-card");
+      if (slotCard) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (MIX_TOUCH_DEVICE.matches) {
+          return;
+        }
+        const slot = slotCard.closest(".mix-slot");
+        const index = slot ? parseInt(slot.dataset.slot, 10) : -1;
+        if (index >= 0) {
+          removeHeroFromMixSlot(index);
+        }
+        return;
+      }
+    });
+
+    mixView.addEventListener("touchend", function (e) {
+      if (viewMode !== "mix") {
+        return;
+      }
+      const slotCard = e.target.closest(".mix-slot .hero-card");
+      if (!slotCard) {
+        return;
+      }
+      const slot = slotCard.closest(".mix-slot");
+      const index = slot ? parseInt(slot.dataset.slot, 10) : -1;
+      if (index < 0) {
+        return;
+      }
+      const touch = e.changedTouches[0];
+      if (!touch) {
+        return;
+      }
+      const tapKey = index + "|" + slotCard.dataset.slug;
+      const now = Date.now();
+      if (
+        mixSlotLastTap &&
+        mixSlotLastTap.key === tapKey &&
+        now - mixSlotLastTap.time < MIX_SLOT_DOUBLE_TAP_MS
+      ) {
+        e.preventDefault();
+        mixSlotLastTap = null;
+        openMixContextMenu(index, touch.clientX, touch.clientY);
+        return;
+      }
+      mixSlotLastTap = { key: tapKey, time: now };
+    });
+
+    mixView.addEventListener("contextmenu", function (e) {
+      if (viewMode !== "mix") {
+        return;
+      }
+      const slotCard = e.target.closest(".mix-slot .hero-card");
+      if (slotCard) {
+        e.preventDefault();
+        e.stopPropagation();
+        const slot = slotCard.closest(".mix-slot");
+        const index = slot ? parseInt(slot.dataset.slot, 10) : -1;
+        if (index >= 0) {
+          openMixContextMenu(index, e.clientX, e.clientY);
+        }
+        return;
+      }
+      const gridCard = e.target.closest("#mix-hero-grid .hero-card");
+      if (gridCard && gridCard.dataset.slug) {
+        e.preventDefault();
+        e.stopPropagation();
+        openMixGridContextMenu(gridCard.dataset.slug, e.clientX, e.clientY);
+      }
+    });
+
+    ensureMixContextMenu();
+  }
+
+  function renderMixView() {
+    loadMixData().then(function () {
+      renderMix();
+    });
   }
 
   function renderGrid() {
@@ -5445,6 +6821,8 @@
   function renderCurrentView() {
     if (viewMode === "list") {
       renderList();
+    } else if (viewMode === "mix") {
+      renderMixView();
     } else {
       renderGrid();
     }
@@ -5457,6 +6835,9 @@
     detailView.classList.add("hidden");
     gridView.classList.toggle("hidden", viewMode !== "grid");
     listView.classList.toggle("hidden", viewMode !== "list");
+    if (mixView) {
+      mixView.classList.toggle("hidden", viewMode !== "mix");
+    }
     updateHeaderNav(false);
     renderCurrentView();
   }
@@ -6129,6 +7510,9 @@
     detailHero = hero;
     gridView.classList.add("hidden");
     listView.classList.add("hidden");
+    if (mixView) {
+      mixView.classList.add("hidden");
+    }
     detailView.classList.remove("hidden");
 
     let html = '<div class="detail-panel afkj-box afkj-box-lg">';
@@ -6524,6 +7908,12 @@
 
     const card = e.target.closest(".hero-card, .hero-row-card, .hero-compact-card");
     if (card && card.dataset.slug) {
+      if (
+        card.closest("#mix-hero-grid") ||
+        card.closest(".mix-slot")
+      ) {
+        return;
+      }
       e.preventDefault();
       navigateTo(heroUrl(card.dataset.slug));
       return;
@@ -6544,8 +7934,27 @@
   });
 
   document.addEventListener("keydown", function (e) {
+    const mixGridCard = e.target.closest("#mix-hero-grid .hero-card");
+    if (
+      mixGridCard &&
+      viewMode === "mix" &&
+      (e.key === "Enter" || e.key === " ")
+    ) {
+      e.preventDefault();
+      const slug = mixGridCard.dataset.slug;
+      if (!tryReplaceHighlightedAlternative(slug)) {
+        addHeroToMixZone(slug);
+      }
+      return;
+    }
     const card = e.target.closest(".hero-card, .hero-row-card, .hero-compact-card");
     if (card && (e.key === "Enter" || e.key === " ")) {
+      if (
+        card.closest("#mix-hero-grid") ||
+        card.closest(".mix-slot")
+      ) {
+        return;
+      }
       e.preventDefault();
       navigateTo(heroUrl(card.dataset.slug));
     }
@@ -6643,6 +8052,14 @@
   if (heroGrid && typeof ResizeObserver !== "undefined") {
     new ResizeObserver(scheduleFitHeroCardNames).observe(heroGrid);
   }
+  if (mixHeroGrid && typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(scheduleFitHeroCardNames).observe(mixHeroGrid);
+  }
+  if (mixDropZone && typeof ResizeObserver !== "undefined") {
+    new ResizeObserver(scheduleFitHeroCardNames).observe(mixDropZone);
+  }
+
+  initMixInteractions();
 
   (function initChipTooltips() {
     const TIP_CHIP_SELECTOR =

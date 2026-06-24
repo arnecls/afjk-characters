@@ -9,6 +9,11 @@
 - Celestials
 - Hypogeans
 
+**Celestial–Hypogean pairing** — for faction-bonus counting, Celestial
+and Hypogean heroes are treated as one faction (in-game dimensional
+bonus). Does not merge the separate **Dimensional** roster tag used
+for crossover units.
+
 ## Classes
 
 - Tank
