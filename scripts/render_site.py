@@ -304,7 +304,7 @@ def build_mix_config(config: dict) -> dict:
             "cc_targeting_weight",
             synergy.get("targeting_weight", {}),
         ),
-        "roleProminenceTierWeight": mix.get("role_prominence_tier_weight", 100),
+        "roleProminenceTierWeight": mix.get("role_prominence_tier_weight", 7),
         "markSynergyMultiplier": mix.get("mark_synergy_multiplier", 2.0),
     }
 

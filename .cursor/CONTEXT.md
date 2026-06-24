@@ -24,7 +24,9 @@ active. Without a role filter, tier alone drives the bonus; with a
 role filter, role-relevant effects are combined with tier before
 normalization. The Mode selector picks which tier column to use;
 otherwise the average of AFK Stages, Dream Realm (Endless merged in),
-and PVP applies. Additive to synergy and focus scoring.
+and PVP applies. Tier influence is configurable in
+`mix_mode.role_prominence_tier_weight` (default 7, same scale as
+focus weights). Additive to synergy and focus scoring.
 
 ## Mode selector
 
