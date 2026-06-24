@@ -30,6 +30,7 @@
         <div class="view-toggle" role="group" aria-label="View mode">
           <button type="button" class="view-btn active" data-view="grid" aria-pressed="true">Grid</button>
           <button type="button" class="view-btn" data-view="list" aria-pressed="false">List</button>
+          <button type="button" class="view-btn" data-view="mix" aria-pressed="false">Mix</button>
         </div>
         <a
           class="submit-issue-btn"
@@ -119,6 +120,46 @@
         </table>
       </div>
       <p id="list-empty-state" class="empty-state hidden">No heroes match your filters.</p>
+    </section>
+
+    <section id="mix-view" class="mix-view hidden">
+      <div class="mix-screen-warning" role="note">
+        <p class="mix-screen-warning-text">
+          <span class="mix-screen-warning-icon" aria-hidden="true">⚠️</span>
+          This mode requires a bigger screen to work properly.
+        </p>
+      </div>
+      <div class="mix-view-content">
+      <div class="mix-sticky-toolbar">
+        <div class="mix-toolbar-row">
+          <div class="mix-drop-zone" id="mix-drop-zone" aria-label="Team slots"></div>
+          <div class="mix-zone-actions">
+            <button type="button" class="mix-action-btn mix-action-btn--remove" id="mix-remove-all">Remove all</button>
+            <button type="button" class="mix-action-btn mix-action-btn--clear" id="mix-clear-markers">Clear markers</button>
+          </div>
+        </div>
+        <div class="mix-selector-row">
+          <div class="mix-focus-selector" role="group" aria-label="Focus modifiers">
+            <span class="mix-focus-label">Focus</span>
+            <button type="button" class="mix-focus-btn" data-focus="boss">Boss</button>
+            <button type="button" class="mix-focus-btn" data-focus="endlessBoss">Endless boss</button>
+            <button type="button" class="mix-focus-btn" data-focus="cc">Crowd Control</button>
+            <button type="button" class="mix-focus-btn" data-focus="sustain">Sustain</button>
+            <button type="button" class="mix-focus-btn" data-focus="speed">Speed</button>
+          </div>
+          <div class="mix-mode-selector" role="group" aria-label="Tier mode">
+            <span class="mix-focus-label">Mode</span>
+            <button type="button" class="mix-mode-btn" data-mode="pvp">PVP</button>
+            <button type="button" class="mix-mode-btn" data-mode="afk">AFK</button>
+            <button type="button" class="mix-mode-btn" data-mode="boss">Boss</button>
+          </div>
+        </div>
+      </div>
+      <div class="mix-grid-scroll">
+        <div id="mix-hero-grid" class="mix-hero-grid hero-grid"></div>
+        <p id="mix-empty-state" class="empty-state hidden">No heroes match your filters.</p>
+      </div>
+      </div>
     </section>
 
     <section id="detail-view" class="detail-view hidden">
