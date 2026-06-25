@@ -589,6 +589,7 @@
             "Direct healing — Self",
             "Fatal blow immunity",
             "Invincible — Self",
+            "Blind — Area",
             "Blind"
           ]
         },
@@ -1204,7 +1205,7 @@
           "skill_card_tags": [
             "ATK buff",
             "Vitality debuff",
-            "Bind"
+            "Bind — Area"
           ]
         }
       },
@@ -1888,9 +1889,9 @@
             "Physical",
             "Direct healing — Self",
             "Damage taken reduction — Self",
-            "Knock down",
-            "Stun",
-            "Taunt",
+            "Knock down — Area",
+            "Stun — Area",
+            "Taunt — Area",
             "Unaffected — Self"
           ]
         },
@@ -2428,7 +2429,7 @@
           "initial_cooldown": 1.25,
           "skill_card_tags": [
             "DoT",
-            "Bind"
+            "Bind — Multiple targets"
           ]
         },
         "Nature's Resilience": {
@@ -2563,6 +2564,7 @@
           ],
           "tier": "mythic+",
           "skill_card_tags": [
+            "Bind — All units",
             "Bind"
           ]
         },
@@ -2737,7 +2739,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
-            "Stun"
+            "Stun — Area"
           ]
         },
         "Sweet Encounter": {
@@ -3938,7 +3940,7 @@
           ],
           "skill_range": 3,
           "skill_card_tags": [
-            "Bind"
+            "Bind — Area"
           ]
         },
         "Hero Focus": {
@@ -4443,7 +4445,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Physical",
-            "Knock down",
+            "Knock down — Area",
             "Knock up"
           ]
         },
@@ -4846,7 +4848,7 @@
             "DoT",
             "Invincible — Self",
             "Energy drain",
-            "Frighten"
+            "Frighten — Area"
           ]
         },
         "Shadow Trick": {
@@ -5843,7 +5845,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Phys DEF debuff",
-            "Taunt"
+            "Taunt — Area"
           ]
         },
         "Indomitable": {
@@ -6766,7 +6768,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Magic",
-            "Knock down"
+            "Knock down — All units"
           ]
         },
         "Eternal Watch": {
@@ -6911,6 +6913,7 @@
           ],
           "tier": "mythic+",
           "skill_card_tags": [
+            "Stun — All units",
             "Stun",
             "Unaffected — Self"
           ]
@@ -7572,7 +7575,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Magic",
-            "Knock back"
+            "Knock back — All units"
           ]
         },
         "Undercurrent": {
@@ -8118,6 +8121,7 @@
             "Physical",
             "DoT",
             "Max HP buff",
+            "Bind — Area",
             "Bind"
           ]
         },
@@ -9968,7 +9972,7 @@
             "Magic",
             "DoT",
             "Execution debuff",
-            "Displace"
+            "Displace — All units"
           ]
         },
         "Arcane Barrage": {
@@ -10123,9 +10127,9 @@
           "skill_range": 6,
           "skill_card_tags": [
             "Magic",
-            "Bind",
-            "Displace",
-            "Knock down"
+            "Bind — Area",
+            "Displace — Area",
+            "Knock down — Area"
           ]
         },
         "Hero Focus": {
@@ -10778,6 +10782,7 @@
           "skill_card_tags": [
             "Max HP-based damage",
             "Shield",
+            "Frighten — Area",
             "Frighten"
           ]
         },
@@ -10979,7 +10984,7 @@
           "skill_card_tags": [
             "Magic",
             "Energy recovery — Self",
-            "Blind"
+            "Blind — Area"
           ]
         },
         "Emergency Support!": {
@@ -12485,8 +12490,8 @@
           "initial_energy": 200.0,
           "skill_card_tags": [
             "Magic",
-            "Bind",
-            "Displace"
+            "Bind — Area",
+            "Displace — Area"
           ]
         },
         "Ice Spike": {
@@ -13248,8 +13253,8 @@
           "skill_card_tags": [
             "Magic",
             "Shield",
-            "Blind",
-            "Knock back",
+            "Blind — Area",
+            "Knock back — Area",
             "Unaffected — Self"
           ]
         },
@@ -14290,7 +14295,7 @@
           "skill_card_tags": [
             "Physical",
             "ATK buff — Self",
-            "Stun"
+            "Stun — Area"
           ]
         },
         "Hero Focus": {
@@ -14990,7 +14995,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
-            "Knock up"
+            "Knock up — Area"
           ]
         },
         "Overgrowth": {
@@ -16645,7 +16650,7 @@
           "skill_card_tags": [
             "Physical",
             "HoT",
-            "Interrupt",
+            "Interrupt — Area",
             "Unaffected — Self"
           ]
         },
@@ -18349,8 +18354,8 @@
           "skill_range": 8,
           "skill_card_tags": [
             "Physical",
-            "Silence",
-            "Stun"
+            "Silence — Area",
+            "Stun — Area"
           ]
         },
         "Flare Arrow": {
@@ -19541,8 +19546,8 @@
           "initial_energy": 600.0,
           "skill_card_tags": [
             "Physical",
-            "Blind",
-            "Taunt"
+            "Blind — Area",
+            "Taunt — Area"
           ]
         },
         "Remedial Class": {
@@ -19648,7 +19653,7 @@
             "Physical",
             "Haste buff",
             "Haste debuff",
-            "Stun"
+            "Stun — Area"
           ]
         },
         "Extra Credit": {
@@ -20635,7 +20640,7 @@
           "initial_cooldown": 3.0,
           "skill_card_tags": [
             "Physical",
-            "Knock down"
+            "Knock down — Multiple targets"
           ]
         },
         "Hero Party": {
@@ -22631,7 +22636,7 @@
           "skill_card_tags": [
             "Physical",
             "Bind",
-            "Knock back"
+            "Knock back — Area"
           ]
         },
         "Hero Focus": {
@@ -23987,7 +23992,7 @@
           "initial_energy": 600.0,
           "skill_card_tags": [
             "Physical",
-            "Knock up"
+            "Knock up — Area"
           ]
         },
         "Soaring Falcon": {
@@ -24182,7 +24187,7 @@
           "skill_card_tags": [
             "Physical",
             "Haste buff",
-            "Knock up"
+            "Knock up — Area"
           ]
         },
         "Hero Focus": {
@@ -24760,7 +24765,7 @@
           "skill_card_tags": [
             "Physical",
             "Damage taken debuff",
-            "Stun"
+            "Stun — Area"
           ]
         },
         "Hero Focus": {
@@ -25059,8 +25064,8 @@
             "Physical",
             "ATK buff",
             "Lifedrain buff",
-            "Bind",
-            "Knock back"
+            "Bind — Area",
+            "Knock back — Area"
           ]
         },
         "Fury Slash": {
@@ -25513,8 +25518,9 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
+            "Bind — Area",
             "Bind",
-            "Knock back"
+            "Knock back — Area"
           ]
         },
         "Defiance Charge": {
@@ -26954,7 +26960,7 @@
           "skill_card_tags": [
             "Magic DEF debuff",
             "Phys DEF debuff",
-            "Bind"
+            "Bind — Area"
           ]
         },
         "Dungeon Gourmet": {
@@ -27518,7 +27524,7 @@
           "initial_energy": 300.0,
           "skill_card_tags": [
             "Physical",
-            "Knock back",
+            "Knock back — Area",
             "Stun",
             "Unaffected — Self"
           ]
@@ -28825,7 +28831,7 @@
           "tier": "mythic+",
           "skill_card_tags": [
             "Direct healing",
-            "Stun"
+            "Stun — Multiple targets"
           ]
         },
         "Enhance Force": {
@@ -29068,9 +29074,9 @@
           "initial_energy": 600.0,
           "skill_card_tags": [
             "Physical",
-            "Knock down",
-            "Knock up",
-            "Stun",
+            "Knock down — Area",
+            "Knock up — Area",
+            "Stun — Area",
             "Immune — Self"
           ]
         },
@@ -30838,6 +30844,7 @@
           "skill_card_tags": [
             "Physical",
             "Knock back",
+            "Taunt — Area",
             "Taunt",
             "Unaffected — Self"
           ]
@@ -30982,7 +30989,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Physical",
-            "Stun"
+            "Stun — Area"
           ]
         },
         "Hero Focus": {
@@ -32863,8 +32870,8 @@
           "initial_cooldown": 15.0,
           "skill_range": 3,
           "skill_card_tags": [
-            "Charm",
-            "Displace"
+            "Charm — All units",
+            "Displace — All units"
           ]
         },
         "Hero Focus": {
@@ -34724,7 +34731,7 @@
             "Max HP-based damage",
             "Magic",
             "Haste debuff",
-            "Knock down"
+            "Knock down — Area"
           ]
         },
         "Fiery Ties": {
@@ -35832,7 +35839,7 @@
           "skill_range": 10,
           "skill_card_tags": [
             "Magic",
-            "Knock up"
+            "Knock up — Area"
           ]
         },
         "Hero Focus": {
@@ -37088,6 +37095,7 @@
             "HP loss",
             "DoT",
             "ATK debuff",
+            "Frighten — All units",
             "Frighten"
           ]
         },
@@ -38544,8 +38552,8 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
-            "Knock back",
-            "Stun",
+            "Knock back — Area",
+            "Stun — Area",
             "Unaffected — Self"
           ]
         },
@@ -39807,7 +39815,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "True damage",
-            "Bind"
+            "Bind — Area"
           ]
         },
         "Enhance Force": {
@@ -40301,7 +40309,7 @@
           "skill_range": 4,
           "skill_card_tags": [
             "Physical",
-            "Displace",
+            "Displace — Area",
             "Unaffected — Self"
           ]
         },
@@ -40701,6 +40709,7 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Magic",
+            "Displace — Multiple targets",
             "Displace",
             "Steadfast",
             "Unaffected"
@@ -42530,7 +42539,7 @@
             "Magic",
             "DoT",
             "Damage dealt debuff",
-            "Bind",
+            "Bind — All units",
             "Unaffected — Self"
           ]
         },
@@ -43669,7 +43678,8 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
-            "Knock back",
+            "Knock back — All units",
+            "Stun — Arc",
             "Stun",
             "Unaffected — Self"
           ]
@@ -43807,8 +43817,8 @@
             "Physical",
             "Energy recovery — Self",
             "Invincible — Self",
-            "Knock up",
-            "Stun"
+            "Knock up — Area",
+            "Stun — Area"
           ]
         },
         "Valkyrie Spirit": {
@@ -43882,7 +43892,7 @@
           "skill_card_tags": [
             "Physical",
             "Shield",
-            "Knock down"
+            "Knock down — Arc"
           ]
         },
         "Hero Focus": {
@@ -46690,7 +46700,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Shield — Self",
-            "Frighten"
+            "Frighten — Area"
           ]
         },
         "Enhance Force": {
@@ -48670,7 +48680,8 @@
           "initial_energy": 0.0,
           "skill_card_tags": [
             "Physical",
-            "Knock back",
+            "Knock back — Area",
+            "Stun — Multiple targets",
             "Stun"
           ]
         },
@@ -48753,6 +48764,7 @@
           "skill_card_tags": [
             "Physical",
             "Knock back",
+            "Stun — Multiple targets",
             "Stun"
           ]
         },
@@ -49388,7 +49400,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             "Magic",
-            "Knock down",
+            "Knock down — Area",
             "Immune — Self"
           ]
         },
@@ -49887,7 +49899,7 @@
           "skill_range": 3,
           "skill_card_tags": [
             "Magic",
-            "Knock back"
+            "Knock back — Area"
           ]
         },
         "Hero Focus": {
@@ -50194,7 +50206,7 @@
           "skill_card_tags": [
             "DoT",
             "Bind",
-            "Sleep"
+            "Sleep — All units"
           ]
         },
         "Dream Dance": {
@@ -50269,7 +50281,7 @@
           "skill_range": 10,
           "skill_card_tags": [
             "Magic",
-            "Stun"
+            "Stun — Area"
           ]
         },
         "Fluttering Dream": {
@@ -50771,7 +50783,7 @@
             "Physical",
             "Damage dealt buff — Self",
             "Energy recovery — Self",
-            "Knock down"
+            "Knock down — Area"
           ]
         },
         "Iron Heel": {
@@ -52623,7 +52635,7 @@
           "skill_card_tags": [
             "Physical",
             "Direct healing — Self",
-            "Knock up",
+            "Knock up — Area",
             "Unaffected — Self"
           ]
         },
@@ -52919,7 +52931,7 @@
           ],
           "tier": "supreme+",
           "skill_card_tags": [
-            "Knock back"
+            "Knock back — Area"
           ]
         }
       },
@@ -54227,7 +54239,7 @@
           "skill_card_tags": [
             "Physical",
             "Shield — Self",
-            "Knock down"
+            "Knock down — Area"
           ]
         },
         "Spectral Bulwark": {
@@ -55809,7 +55821,7 @@
           "skill_card_tags": [
             "Physical",
             "Crit Resist debuff",
-            "Stun"
+            "Stun — Arc"
           ]
         },
         "Enhance Force": {
@@ -56007,7 +56019,7 @@
           "skill_range": 1,
           "initial_energy": 0.0,
           "skill_card_tags": [
-            "Knock up"
+            "Knock up — Area"
           ]
         },
         "Rallying Roar": {
@@ -56168,7 +56180,7 @@
           "initial_cooldown": 2.0,
           "skill_range": 1,
           "skill_card_tags": [
-            "Stun"
+            "Stun — Area"
           ]
         },
         "Hero Focus": {
@@ -57049,7 +57061,7 @@
             "Magic",
             "Energy recovery — Self",
             "Invincible — Self",
-            "Stun",
+            "Stun — Area",
             "Steadfast — Self"
           ]
         },
@@ -57138,7 +57150,7 @@
           "skill_card_tags": [
             "Magic",
             "Damage taken reduction — Self",
-            "Knock down"
+            "Knock down — Arc"
           ]
         },
         "Devouring Strike": {

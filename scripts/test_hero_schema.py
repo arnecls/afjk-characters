@@ -610,6 +610,32 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("energy recovery", keys)
         self.assertIn("atk spd", keys)
 
+    def test_tasi_ultimate_cc_tags_include_targeting(self):
+        hero = self._hero_analyzed("Tasi")
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        self.assertIn("Sleep — All units", tags)
+        self.assertIn("Bind", tags)
+        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        self.assertIn("sleep:all units", keys)
+        self.assertIn("bind", keys)
+        self.assertEqual(len(keys), len(set(keys)))
+
+    def test_tasi_skill1_cc_tag_includes_area_targeting(self):
+        hero = self._hero_analyzed("Tasi")
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        self.assertIn("Stun — Area", tags)
+        self.assertEqual(
+            rs._canonical_skill_card_chip_key("Stun — Area"),
+            "stun:area",
+        )
+
+    def test_cc_chip_keys_dedupe_by_targeting(self):
+        area_key = rs._canonical_skill_card_chip_key("Bind — Area")
+        single_key = rs._canonical_skill_card_chip_key("Bind")
+        self.assertEqual(area_key, "bind:area")
+        self.assertEqual(single_key, "bind")
+        self.assertNotEqual(area_key, single_key)
+
     def test_kazim_skill_cards_omit_implicit_max_hp_damage(self):
         hero = self._hero_analyzed("Kazim")
         for category in ("ultimate", "skill1", "skill2"):

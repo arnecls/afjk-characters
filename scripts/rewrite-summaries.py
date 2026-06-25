@@ -9972,8 +9972,16 @@ def _skill_card_tag_label(label: str) -> str:
     return label.strip()
 
 
-def _skill_card_tag_for_effect(label: str, targeting: str) -> str:
-    """Skill-card chip text; self/summon targeting uses a merged pill suffix."""
+_SKILL_CARD_CC_TARGETING_SUFFIX = re.compile(
+    r"\s*(?:—|–)\s*(All units|Area|Arc|Multiple targets|Single target)\s*$",
+    re.I,
+)
+
+
+def _skill_card_tag_for_effect(
+    label: str, targeting: str, *, is_cc: bool = False
+) -> str:
+    """Skill-card chip text; targeting suffix for self, summons, and CC."""
     text = _skill_card_tag_label(label)
     if targeting == "Self":
         return f"{text} — Self"
@@ -9981,14 +9989,24 @@ def _skill_card_tag_for_effect(label: str, targeting: str) -> str:
         return f"{text} — Summons"
     if is_own_summon_buff_targeting(targeting):
         return f"{text} — Owned"
+    if is_cc and targeting and targeting != "Single target":
+        return f"{text} — {targeting}"
     return text
 
 
 def _canonical_skill_card_chip_key(tag: str) -> str:
+    stripped = tag.strip()
+    cc_targeting = _SKILL_CARD_CC_TARGETING_SUFFIX.search(stripped)
+    if cc_targeting:
+        base = stripped[: cc_targeting.start()].strip().lower()
+        tgt = cc_targeting.group(1).strip().lower()
+        for cc in _SKILL_CARD_CC_KEYS:
+            if base == cc.lower():
+                return f"{cc.lower()}:{tgt}"
     text = re.sub(
         r"\s*(?:—|–)\s*(?:self|owned|summons?)\s*$",
         "",
-        tag.strip(),
+        stripped,
         flags=re.I,
     )
     text = re.sub(
@@ -10060,7 +10078,7 @@ def format_skill_card_tags(
     category: str,
     skills: list[SkillMeta] | None = None,
 ) -> list[str]:
-    """Deduped chip labels for one skill card (Self targeting only; no magnitude)."""
+    """Deduped chip labels for one skill card (no magnitude tiers)."""
     section = CATEGORY_TO_SECTION.get(category)
     if not section:
         return []
@@ -10088,11 +10106,15 @@ def format_skill_card_tags(
     debuffs = [e for e in sl.effects if e.category == "debuff"]
     cc_items = [e for e in sl.effects if e.category == "cc"]
 
-    for group in (healing, buffs, debuffs, cc_items):
+    for group in (healing, buffs, debuffs):
         for e in sorted(
             group, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)
         ):
             add(_skill_card_tag_for_effect(e.label, e.targeting))
+    for e in sorted(
+        cc_items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)
+    ):
+        add(_skill_card_tag_for_effect(e.label, e.targeting, is_cc=True))
     for imm in sorted(
         sl.cc_immunities,
         key=lambda x: (TIER_ORDER.get(x.tier, 9), x.immunity_type),
