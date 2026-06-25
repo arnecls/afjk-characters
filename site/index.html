@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,81 +22,39 @@
     })();
   </script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="header-shell">
       <a href="#" class="logo" data-nav-home>AFK Journey Heroes</a>
-      <input type="search" id="search" class="search" placeholder="Search name, faction, class, role…" autocomplete="off">
+      <input type="search" id="search" class="search" placeholder="Search name, faction, class, role…"
+        autocomplete="off">
       <div class="header-actions">
         <div class="view-toggle" role="group" aria-label="View mode">
           <button type="button" class="view-btn active" data-view="grid" aria-pressed="true">Grid</button>
           <button type="button" class="view-btn" data-view="list" aria-pressed="false">List</button>
           <button type="button" class="view-btn" data-view="mix" aria-pressed="false">Mix</button>
         </div>
-        <a
-          class="submit-issue-btn"
-          href="https://github.com/arnecls/afjk-characters/issues"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Submit issue</a>
+        <a class="submit-issue-btn" href="https://github.com/arnecls/afjk-characters/issues" target="_blank"
+          rel="noopener noreferrer">Submit issue</a>
       </div>
       <div class="filters-panel" id="filters-panel">
         <div class="filters" id="filters"></div>
-        <button
-          type="button"
-          class="filters-toggle"
-          id="filters-toggle"
-          aria-expanded="true"
-          aria-controls="filters"
-          title="Hide filters"
-        >
-          <svg
-            class="filters-toggle-icon filters-toggle-icon-up"
-            viewBox="0 0 18 18"
-            width="15"
-            height="15"
-            aria-hidden="true"
-          >
-            <path
-              d="M4 8 9 3l5 5"
-              stroke="currentColor"
-              stroke-width="2.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <path
-              d="M4 15 9 10l5 5"
-              stroke="currentColor"
-              stroke-width="2.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
+        <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="true" aria-controls="filters"
+          title="Hide filters">
+          <svg class="filters-toggle-icon filters-toggle-icon-up" viewBox="0 0 18 18" width="15" height="15"
+            aria-hidden="true">
+            <path d="M4 8 9 3l5 5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+            <path d="M4 15 9 10l5 5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
           </svg>
-          <svg
-            class="filters-toggle-icon filters-toggle-icon-down"
-            viewBox="0 0 18 18"
-            width="15"
-            height="15"
-            aria-hidden="true"
-          >
-            <path
-              d="M4 3 9 8l5-5"
-              stroke="currentColor"
-              stroke-width="2.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <path
-              d="M4 10 9 15l5-5"
-              stroke="currentColor"
-              stroke-width="2.25"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
+          <svg class="filters-toggle-icon filters-toggle-icon-down" viewBox="0 0 18 18" width="15" height="15"
+            aria-hidden="true">
+            <path d="M4 3 9 8l5-5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
+            <path d="M4 10 9 15l5-5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"
+              stroke-linejoin="round" fill="none" />
           </svg>
           <span class="visually-hidden" id="filters-toggle-label">Hide filters</span>
         </button>
@@ -130,35 +89,38 @@
         </p>
       </div>
       <div class="mix-view-content">
-      <div class="mix-sticky-toolbar">
-        <div class="mix-toolbar-row">
-          <div class="mix-drop-zone" id="mix-drop-zone" aria-label="Team slots"></div>
-          <div class="mix-zone-actions">
-            <button type="button" class="mix-action-btn mix-action-btn--remove" id="mix-remove-all">Remove all</button>
-            <button type="button" class="mix-action-btn mix-action-btn--clear" id="mix-clear-markers">Clear markers</button>
+        <div class="mix-sticky-toolbar">
+          <div class="mix-toolbar-row">
+            <div class="mix-drop-zone" id="mix-drop-zone" aria-label="Team slots"></div>
+            <div class="mix-zone-actions">
+              <button type="button" class="mix-action-btn mix-action-btn--remove mix-action-btn--icon"
+                id="mix-remove-all" aria-label="Remove all" title="Remove all">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="mix-selector-row">
+            <div class="mix-focus-selector" role="group" aria-label="Focus modifiers">
+              <span class="mix-focus-label">Focus</span>
+              <button type="button" class="mix-focus-btn" data-focus="cc">Crowd Control</button>
+              <button type="button" class="mix-focus-btn" data-focus="ccImmunity">Immunity</button>
+              <button type="button" class="mix-focus-btn" data-focus="sustain">Sustain</button>
+              <button type="button" class="mix-focus-btn" data-focus="speed">Speed</button>
+            </div>
+            <div class="mix-mode-selector" role="group" aria-label="Tier mode">
+              <span class="mix-focus-label">Mode</span>
+              <button type="button" class="mix-mode-btn" data-mode="pvp">PVP</button>
+              <button type="button" class="mix-mode-btn" data-mode="afk">AFK</button>
+              <button type="button" class="mix-mode-btn" data-mode="boss">Boss</button>
+            </div>
           </div>
         </div>
-        <div class="mix-selector-row">
-          <div class="mix-focus-selector" role="group" aria-label="Focus modifiers">
-            <span class="mix-focus-label">Focus</span>
-            <button type="button" class="mix-focus-btn" data-focus="boss">Boss</button>
-            <button type="button" class="mix-focus-btn" data-focus="endlessBoss">Endless boss</button>
-            <button type="button" class="mix-focus-btn" data-focus="cc">Crowd Control</button>
-            <button type="button" class="mix-focus-btn" data-focus="sustain">Sustain</button>
-            <button type="button" class="mix-focus-btn" data-focus="speed">Speed</button>
-          </div>
-          <div class="mix-mode-selector" role="group" aria-label="Tier mode">
-            <span class="mix-focus-label">Mode</span>
-            <button type="button" class="mix-mode-btn" data-mode="pvp">PVP</button>
-            <button type="button" class="mix-mode-btn" data-mode="afk">AFK</button>
-            <button type="button" class="mix-mode-btn" data-mode="boss">Boss</button>
-          </div>
+        <div class="mix-grid-scroll">
+          <div id="mix-hero-grid" class="mix-hero-grid hero-grid"></div>
+          <p id="mix-empty-state" class="empty-state hidden">No heroes match your filters.</p>
         </div>
-      </div>
-      <div class="mix-grid-scroll">
-        <div id="mix-hero-grid" class="mix-hero-grid hero-grid"></div>
-        <p id="mix-empty-state" class="empty-state hidden">No heroes match your filters.</p>
-      </div>
       </div>
     </section>
 
@@ -170,11 +132,13 @@
   <footer class="site-footer">
     <p>Hero data derived from skill analysis. Not affiliated with Lilith Games.</p>
     <p class="site-footer-attribution">
-      Main dataset from <a href="https://afk-journey.fandom.com/wiki/Hero/List">AFK Journey Fandom wiki</a> and <a href="https://www.yaphalla.com/heroes">Yaphalla</a>
+      Main dataset from <a href="https://afk-journey.fandom.com/wiki/Hero/List">AFK Journey Fandom wiki</a> and <a
+        href="https://www.yaphalla.com/heroes">Yaphalla</a>
       <span class="site-footer-sep" aria-hidden="true">·</span>
       Combat icons from <a href="https://afk-journey.fandom.com/wiki/Hero/List">AFK Journey Fandom wiki</a>
       <span class="site-footer-sep" aria-hidden="true">·</span>
-      Faction card backgrounds from <a href="https://frugalkubal.tumblr.com/post/776328370280628224">frugalkubal on Tumblr</a>
+      Faction card backgrounds from <a href="https://frugalkubal.tumblr.com/post/776328370280628224">frugalkubal on
+        Tumblr</a>
       <span class="site-footer-sep" aria-hidden="true">·</span>
       Hero portraits and faction/class icons from <a href="https://www.yaphalla.com/heroes">Yaphalla</a>
       <span class="site-footer-sep" aria-hidden="true">·</span>
@@ -184,13 +148,8 @@
 
   <div id="welcome-warning" class="welcome-warning">
     <div class="welcome-warning-scrim" aria-hidden="true"></div>
-    <div
-      class="welcome-warning-dialog"
-      role="alertdialog"
-      aria-modal="true"
-      aria-labelledby="welcome-warning-title"
-      aria-describedby="welcome-warning-body"
-    >
+    <div class="welcome-warning-dialog" role="alertdialog" aria-modal="true" aria-labelledby="welcome-warning-title"
+      aria-describedby="welcome-warning-body">
       <div class="welcome-warning-header">
         <span class="welcome-warning-icon" aria-hidden="true">⚠️</span>
         <h2 id="welcome-warning-title" class="welcome-warning-title">Early preview</h2>
@@ -202,11 +161,8 @@
         </p>
         <p>
           If you spot incorrect data, please
-          <a
-            href="https://github.com/arnecls/afjk-characters/issues"
-            target="_blank"
-            rel="noopener noreferrer"
-          >open a GitHub issue</a>
+          <a href="https://github.com/arnecls/afjk-characters/issues" target="_blank" rel="noopener noreferrer">open a
+            GitHub issue</a>
           so we can fix it.
         </p>
       </div>
@@ -218,4 +174,5 @@
 
   <script src="js/app.js"></script>
 </body>
+
 </html>

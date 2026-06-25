@@ -50,9 +50,8 @@ configurable in `mix_mode.faction_bonus` (default 3.0).
 
 Controls in mix mode that add tag-based scoring bonuses to the ranked
 pool. They rank the pool even when the drop zone is empty; synergy and
-Faction bonus still require teammates in the zone. Boss and Endless
-boss are mutually exclusive; Crowd Control and Sustain can combine with
-either.
+Faction bonus still require teammates in the zone. Toggles include CC
+immunity, Crowd Control, Sustain, and Speed.
 
 ## Mark
 
