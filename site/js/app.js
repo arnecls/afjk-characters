@@ -977,6 +977,7 @@
     "life-drain": { emoji: "🩸", cls: "chip-role" },
     "mark-target": { emoji: "🎯", cls: "chip-role" },
     "mass-cc": { emoji: "💫", cls: "chip-role" },
+    "non-ult-utility": { emoji: "🛠️", cls: "chip-role" },
     revive: { emoji: "🌱", cls: "chip-role" },
     "self-repositioner": { emoji: "💨", cls: "chip-role" },
     "static-tile-buffer": { emoji: "📍", cls: "chip-role" },
@@ -1050,6 +1051,8 @@
       "Marks or designates units so allies or self can focus amplified damage.",
     "mass-cc":
       "Applies crowd control to multiple enemies or wide areas reliably.",
+    "non-ult-utility":
+      "Strong combat value from non-ultimate skills without relying on the ultimate.",
     revive: "Brings defeated allies back to the fight; not self-survival.",
     "self-repositioner":
       "Regularly moves self across the grid via jumps, dashes, or teleports.",
@@ -5408,6 +5411,7 @@
     cc: false,
     sustain: false,
     speed: false,
+    noUltimate: false,
   };
   let mixMode = null;
   let mixSynergyIndex = null;
@@ -5794,7 +5798,8 @@
       mixFocus.ccImmunity ||
       mixFocus.cc ||
       mixFocus.sustain ||
-      mixFocus.speed
+      mixFocus.speed ||
+      mixFocus.noUltimate
     );
   }
 
@@ -5839,6 +5844,9 @@
     }
     if (mixFocus.speed) {
       bonus += computeMixSpeedBonus(hero);
+    }
+    if (mixFocus.noUltimate) {
+      addFromMap(focusTags.no_ultimate);
     }
     return bonus;
   }
@@ -6565,6 +6573,8 @@
           mixFocus.sustain = !mixFocus.sustain;
         } else if (key === "speed") {
           mixFocus.speed = !mixFocus.speed;
+        } else if (key === "noUltimate") {
+          mixFocus.noUltimate = !mixFocus.noUltimate;
         }
         syncMixFocusButtons();
         loadMixData().then(renderMix);

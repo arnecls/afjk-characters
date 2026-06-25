@@ -151,6 +151,9 @@
       "speed": {
         "signature_fast": 7.0,
         "non_ultimate_fast": 2.0
+      },
+      "no_ultimate": {
+        "non-ult-utility": 7.0
       }
     },
     "cc_targeting_weight": {

@@ -176,6 +176,39 @@ Apply `.cursor/AGENTS.md` definitions strictly. Common mistakes:
 | `invincibility` | Meaningful immunity windows | Do not drop when a skill grants a **post-trigger damage + control immunity window** (e.g. Brutus Indomitable after fatal blow) |
 | `battle-start-burst` | Deals damage in the **first ~2–3s** of battle | Buff/shield/debuff/energy/summon setup at battle start without immediate damage; delayed openers (Frieren 15s); terrain bombs without a damage clause (Kulu debris); sequential battle-start cycles where damage is not the first effect (Cyran Mythic+) |
 | `high-initial-energy` | **Effective IE ≥ 500** on the ultimate when fully built (meta + max ascension bonus) | IE below 500; free/guaranteed early ult without IE fill (`battle-start-ult` instead, e.g. Eironn, Niru) |
+| `non-ult-utility` | Meaningful combat value from non-ultimate skills via **Path A** (≥ 2 `high` fields across qualifying Skill1/Skill2/Ex sections) or **Path B** (strong non-ult attacks, opening burst mages, or hp-scaling shield damage — see audit script) | `high-damage-ult` or `battle-start-ult` present; Ultimate text triggers at battle start; non-ult value is mostly ultimate-support; aggregated non-ultimate overview alone (use per-section audit) |
+
+**`non-ult-utility` audit** — per-section skill overview, skipping ultimate-support
+sections (skills that primarily buff/enhance the ultimate). Re-audit when skill
+summaries or magnitude thresholds change:
+
+```bash
+python3 scripts/audit_non_ult_utility.py
+```
+
+Ultimate-support heuristic: section summary or skill text mentions
+`ultimate` / `ult` / `signature skill` together with buff/enhance/stack/volley
+or "on ultimate cast". Omit that section's metrics from scoring.
+
+**Exclusions:** skip heroes with `high-damage-ult` or `battle-start-ult`, or
+whose Ultimate text matches `text_has_start_of_battle_ultimate()` (e.g. Alna).
+
+**Utility points** per section: `high`=2, `average`=1, `low`/`none`=0. For
+damage, use the higher of overview tier and peak damage-effect magnitude from
+skill slices (fixes under-scored multi-hit kits like Lily May).
+
+**Path A:** ≥ 2 `high` fields across qualifying sections.
+
+**Path B_attack** (e.g. Lily May): utility total ≥ 4, ≥ 2 sections with ≥ 2
+utility pts and ≥ 1 damage pt, ≥ 2 sections with strong-attack summary text;
+not `summoner`.
+
+**Path B_burst** (e.g. Bonnie): utility total ≥ 5, ≥ 2 sections with ≥ 2
+utility pts, ≥ 2 sections with damage utility, ≥ 2 sections with average/high
+slice damage; has `battle-start-burst` and (`aoe-damage` or `enemy-debuffer`).
+
+**Path B_hp_shield** (e.g. Daimon): same utility/damage thresholds as B_burst;
+has `hp-scaling`, buff utility pts ≥ 3, total damage pts ≥ 2.
 
 ## Reporting
 

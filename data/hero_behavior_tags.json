@@ -4,7 +4,8 @@
     "cheat-death",
     "execute",
     "hp-scaling",
-    "mark-target"
+    "mark-target",
+    "non-ult-utility"
   ],
   "Alna": [
     "ally-buffer",
@@ -34,6 +35,7 @@
   ],
   "Athalia": [
     "hp-scaling",
+    "non-ult-utility",
     "self-repositioner"
   ],
   "Aurora": [
@@ -52,7 +54,8 @@
   "Bonnie": [
     "aoe-damage",
     "battle-start-burst",
-    "enemy-debuffer"
+    "enemy-debuffer",
+    "non-ult-utility"
   ],
   "Brutus": [
     "aoe-damage",
@@ -111,7 +114,8 @@
   "Daimon": [
     "ally-shielder",
     "hp-scaling",
-    "summoner"
+    "summoner",
+    "non-ult-utility"
   ],
   "Damian": [
     "ally-buffer",
@@ -184,7 +188,8 @@
   ],
   "Gwyneth": [
     "dot-specialist",
-    "mass-cc"
+    "mass-cc",
+    "non-ult-utility"
   ],
   "Hammie": [
     "ally-buffer",
@@ -242,12 +247,14 @@
     "high-initial-energy",
     "invincibility",
     "mark-target",
-    "mass-cc"
+    "mass-cc",
+    "non-ult-utility"
   ],
   "Kafra": [
     "assassin",
     "enemy-debuffer",
     "mark-target",
+    "non-ult-utility",
     "self-repositioner"
   ],
   "Koko": [
@@ -288,7 +295,8 @@
     "hp-scaling",
     "invincibility",
     "self-repositioner",
-    "ultimate-cancel"
+    "ultimate-cancel",
+    "non-ult-utility"
   ],
   "Lorsan": [
     "aoe-damage",
@@ -316,6 +324,7 @@
   ],
   "Lumont": [
     "enemy-debuffer",
+    "non-ult-utility",
     "taunt"
   ],
   "Lyca": [
@@ -444,7 +453,8 @@
     "ally-shielder",
     "aoe-damage",
     "execute",
-    "hp-scaling"
+    "hp-scaling",
+    "non-ult-utility"
   ],
   "Seth": [
     "assassin",
@@ -572,7 +582,8 @@
     "aoe-damage",
     "battle-start-burst",
     "mark-target",
-    "mass-cc"
+    "mass-cc",
+    "non-ult-utility"
   ],
   "Zandrok": [
     "aoe-damage",

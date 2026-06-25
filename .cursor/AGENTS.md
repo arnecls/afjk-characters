@@ -379,6 +379,14 @@ skill effect.
 - life-drain: Sustains through lifesteal or HP recovery tied to dealing damage.
 - mark-target: Marks or designates units so allies or self can focus amplified damage.
 - mass-cc: Applies crowd control to multiple enemies or wide areas reliably.
+- non-ult-utility: Delivers meaningful combat value from non-ultimate skills
+  without relying on the ultimate. Path A: at least two `high` effect
+  categories across qualifying Skill1/Skill2/Ex sections. Path B (when Path A
+  misses): strong non-ult attacks (Lily May), opening burst mages with debuff
+  focus (Bonnie), or hp-scaling shield damage (Daimon) — see
+  `scripts/audit_non_ult_utility.py`. Not `high-damage-ult` or
+  `battle-start-ult`; not start-of-battle ultimate text (e.g. Alna); exclude
+  ultimate-support sections from scoring.
 - revive: Brings defeated allies back to the fight (e.g. Marcille); not
   self-survival.
 - self-repositioner: Regularly moves self across the grid via jumps, dashes, or teleports.
