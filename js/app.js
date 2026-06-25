@@ -1493,15 +1493,6 @@
 
   function targetingIndicatorMeta(targeting) {
     const lower = (targeting || "").trim().toLowerCase();
-    if (lower === "self") {
-      const def = TARGETING_DEFINITIONS.self;
-      return {
-        cls: def.cls,
-        label: "Self",
-        tooltip: "",
-        emoji: def.emoji,
-      };
-    }
     if (lower === "all summons") {
       return {
         cls: "chip-target",
@@ -1521,6 +1512,25 @@
         label: "owned",
         tooltip: "",
         emoji: "🐾",
+      };
+    }
+    const def = TARGETING_DEFINITIONS[lower];
+    if (def) {
+      const label =
+        lower === "self"
+          ? "Self"
+          : lower === "all units"
+            ? "All units"
+            : lower === "multiple targets"
+              ? "Multiple targets"
+              : lower === "single target"
+                ? "Single target"
+                : targeting.trim();
+      return {
+        cls: def.cls,
+        label: label,
+        tooltip: "",
+        emoji: def.emoji,
       };
     }
     return null;
@@ -2775,6 +2785,14 @@
       targeting = "Owned summons";
       return { tag: tag, targeting: targeting };
     }
+    const enemyTargetingMatch = tag.match(
+      /^(.+?)\s*(?:—|–)\s*(All units|Area|Arc|Multiple targets|Single target)\s*$/i
+    );
+    if (enemyTargetingMatch) {
+      tag = enemyTargetingMatch[1].trim();
+      targeting = enemyTargetingMatch[2].trim();
+      return { tag: tag, targeting: targeting };
+    }
     const selfMatch = tag.match(/^(.+?)\s*(?:—|–)\s*Self\s*$/i);
     if (selfMatch) {
       tag = selfMatch[1].trim();
@@ -2808,11 +2826,7 @@
 
     tag = skillCardEffectLabel(parsed.base, polarity);
 
-    if (
-      split.targeting === "Self" ||
-      split.targeting === "All summons" ||
-      split.targeting === "Owned summons"
-    ) {
+    if (split.targeting && targetingIndicatorMeta(split.targeting)) {
       const merged = mergeEffectWithTargeting(
         tag,
         split.targeting,
