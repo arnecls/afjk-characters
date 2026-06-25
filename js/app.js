@@ -4,6 +4,7 @@
   const BASE = resolveBase();
 
   let heroes = [];
+  let heroesMeta = {};
   let heroBySlug = {};
   let heroByName = {};
   let activeFaction = "";
@@ -32,7 +33,6 @@
   const mixDropZone = document.getElementById("mix-drop-zone");
   const mixEmptyState = document.getElementById("mix-empty-state");
   const mixRemoveAllBtn = document.getElementById("mix-remove-all");
-  const mixClearMarkersBtn = document.getElementById("mix-clear-markers");
   const heroDetail = document.getElementById("hero-detail");
   const emptyState = document.getElementById("empty-state");
   const listEmptyState = document.getElementById("list-empty-state");
@@ -5323,89 +5323,51 @@
     );
   }
 
-  let heroCardNameMeasurer = null;
+  const HERO_CARD_NAME_BASE_CQI = 13.5;
+  const HERO_CARD_NAME_NARROW_CHARS = {
+    i: 0.3,
+    l: 0.3,
+    I: 0.3,
+    j: 0.5,
+    t: 0.5,
+  };
 
-  function getHeroCardNameMeasurer() {
-    if (!heroCardNameMeasurer) {
-      heroCardNameMeasurer = document.createElement("h2");
-      heroCardNameMeasurer.setAttribute("aria-hidden", "true");
-      heroCardNameMeasurer.style.position = "absolute";
-      heroCardNameMeasurer.style.left = "-9999px";
-      heroCardNameMeasurer.style.top = "0";
-      heroCardNameMeasurer.style.visibility = "hidden";
-      heroCardNameMeasurer.style.pointerEvents = "none";
-      heroCardNameMeasurer.style.margin = "0";
-      heroCardNameMeasurer.style.padding = "0";
-      heroCardNameMeasurer.style.border = "0";
-      document.body.appendChild(heroCardNameMeasurer);
+  function heroCardNameWordVisibleLength(word) {
+    let visible = 0;
+    for (let i = 0; i < word.length; i++) {
+      visible += HERO_CARD_NAME_NARROW_CHARS[word[i]] ?? 1;
     }
-    return heroCardNameMeasurer;
+    return visible;
   }
 
-  function heroCardNameContentBox(box) {
-    const style = getComputedStyle(box);
-    const padLeft = parseFloat(style.paddingLeft) || 0;
-    const padRight = parseFloat(style.paddingRight) || 0;
-    const padTop = parseFloat(style.paddingTop) || 0;
-    const padBottom = parseFloat(style.paddingBottom) || 0;
-    return {
-      width: Math.max(0, box.clientWidth - padLeft - padRight),
-      height: Math.max(0, box.clientHeight - padTop - padBottom),
-    };
-  }
-
-  function heroCardNameLineHeightPx(sizePx, h2Style) {
-    const baseFontPx = parseFloat(h2Style.fontSize) || sizePx;
-    const baseLinePx = parseFloat(h2Style.lineHeight) || baseFontPx * 0.85;
-    return (baseLinePx / baseFontPx) * sizePx;
-  }
-
-  function heroCardNameFitsAtSize(text, sizePx, limits, h2Style) {
-    const measurer = getHeroCardNameMeasurer();
-    measurer.style.width = limits.width + "px";
-    measurer.style.maxWidth = limits.width + "px";
-    measurer.style.fontFamily = h2Style.fontFamily;
-    measurer.style.fontWeight = h2Style.fontWeight;
-    measurer.style.fontSize = sizePx + "px";
-    measurer.style.lineHeight =
-      heroCardNameLineHeightPx(sizePx, h2Style) + "px";
-    measurer.style.textAlign = "right";
-    measurer.style.textWrap = "balance";
-    measurer.textContent = text;
-    const maxHeight = limits.height || Number.POSITIVE_INFINITY;
-    return (
-      measurer.scrollWidth <= limits.width + 1 &&
-      measurer.scrollHeight <= maxHeight + 1
-    );
+  function heroCardNameVisibleLength(text) {
+    const words = text.trim().split(/\s+/).filter(Boolean);
+    if (!words.length) {
+      return 0;
+    }
+    const visibleLengths = words.map(heroCardNameWordVisibleLength);
+    visibleLengths.forEach(function (_, index) {
+      if (words[index].length === 1 && index > 0) {
+        visibleLengths[index] += visibleLengths[index - 1] + 1;
+      }
+    });
+    return Math.max.apply(null, visibleLengths);
   }
 
   function fitHeroCardName(h2) {
-    const box = h2.closest(".hero-card-name");
-    const card = h2.closest(".hero-card");
-    if (!box || !card) {
-      return;
-    }
-    h2.style.fontSize = "";
-    const cardWidth = card.clientWidth;
-    if (!cardWidth) {
-      return;
-    }
-    const limits = heroCardNameContentBox(box);
-    if (!limits.width) {
-      return;
-    }
-    const h2Style = getComputedStyle(h2);
     const text = h2.textContent || "";
-    const maxPx = cardWidth * 0.135;
-    const minPx = Math.max(8, cardWidth * 0.07);
-    let sizePx = maxPx;
-    while (
-      sizePx > minPx &&
-      !heroCardNameFitsAtSize(text, sizePx, limits, h2Style)
-    ) {
-      sizePx -= 0.5;
+    if (text.length < 7) {
+      h2.style.fontSize = "";
+      return;
     }
-    h2.style.fontSize = sizePx + "px";
+    const visibleLength = heroCardNameVisibleLength(text);
+    if (visibleLength < 7) {
+      h2.style.fontSize = "";
+      return;
+    }
+    const reduction = (visibleLength - 7) * 1.7;
+    h2.style.fontSize =
+      "calc(" + HERO_CARD_NAME_BASE_CQI + "cqi - " + reduction + "cqi)";
   }
 
   function fitHeroCardNames() {
@@ -5428,11 +5390,7 @@
   }
 
   function scheduleFitHeroCardNames() {
-    const run = function () {
-      window.requestAnimationFrame(function () {
-        window.requestAnimationFrame(fitHeroCardNames);
-      });
-    };
+    const run = fitHeroCardNames;
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(run).catch(run);
     } else {
@@ -5446,8 +5404,7 @@
   let mixHighlightSource = null;
   let mixHighlightMap = {};
   const mixFocus = {
-    boss: false,
-    endlessBoss: false,
+    ccImmunity: false,
     cc: false,
     sustain: false,
     speed: false,
@@ -5459,6 +5416,7 @@
   let mixDataPromise = null;
   let mixGridOrder = [];
   let mixDragDidMove = false;
+  let mixDragGhostEl = null;
   let mixGridPointer = null;
   let mixContextMenuEl = null;
   let mixContextSlotIndex = -1;
@@ -5468,6 +5426,37 @@
   const MIX_TOUCH_DEVICE = window.matchMedia(
     "(hover: none) and (pointer: coarse)"
   );
+
+  const MIX_FOCUS_TAG_DEFAULTS = {
+    cc_immunity: {
+      "cc-immunity": 7.0,
+      "DMG+CC immunity": 6.0,
+      Immune: 5.0,
+      Unaffected: 5.0,
+    },
+  };
+
+  function mixDataUrl(path) {
+    const bust =
+      heroesMeta && heroesMeta.generated
+        ? "?v=" + encodeURIComponent(heroesMeta.generated)
+        : "";
+    return assetUrl(path) + bust;
+  }
+
+  function normalizeMixConfig(raw) {
+    const config = Object.assign({}, raw || {});
+    const focusTags = Object.assign({}, config.focusTags || {});
+    Object.keys(MIX_FOCUS_TAG_DEFAULTS).forEach(function (key) {
+      focusTags[key] = Object.assign(
+        {},
+        MIX_FOCUS_TAG_DEFAULTS[key],
+        focusTags[key] || {}
+      );
+    });
+    config.focusTags = focusTags;
+    return config;
+  }
 
   // Crown body: three rounded peaks (center taller), flat bottom.
   // Crown band: separate rounded-rectangle strip below.
@@ -5521,19 +5510,19 @@
       return mixDataPromise;
     }
     mixDataPromise = Promise.all([
-      fetch(assetUrl("data/mix-synergy-index.json")).then(function (r) {
+      fetch(mixDataUrl("data/mix-synergy-index.json")).then(function (r) {
         if (!r.ok) {
           throw new Error("mix synergy index");
         }
         return r.json();
       }),
-      fetch(assetUrl("data/mix-config.json")).then(function (r) {
+      fetch(mixDataUrl("data/mix-config.json")).then(function (r) {
         if (!r.ok) {
           throw new Error("mix config");
         }
         return r.json();
       }),
-      fetch(assetUrl("data/mix-role-prominence.json")).then(function (r) {
+      fetch(mixDataUrl("data/mix-role-prominence.json")).then(function (r) {
         if (!r.ok) {
           throw new Error("mix role prominence");
         }
@@ -5542,18 +5531,18 @@
     ])
       .then(function (results) {
         mixSynergyIndex = results[0];
-        mixConfig = results[1];
+        mixConfig = normalizeMixConfig(results[1]);
         mixRoleProminence = results[2];
       })
       .catch(function () {
         mixSynergyIndex = { byReceiver: {} };
-        mixConfig = {
+        mixConfig = normalizeMixConfig({
           factionBonus: 3.0,
           focusTags: {},
           ccTargetingWeight: {},
           roleProminenceTierWeight: 7,
           markSynergyMultiplier: 2.0,
-        };
+        });
         mixRoleProminence = { bySlug: {} };
       });
     return mixDataPromise;
@@ -5802,8 +5791,7 @@
 
   function mixHasActiveFocus() {
     return (
-      mixFocus.boss ||
-      mixFocus.endlessBoss ||
+      mixFocus.ccImmunity ||
       mixFocus.cc ||
       mixFocus.sustain ||
       mixFocus.speed
@@ -5840,11 +5828,8 @@
       });
     }
 
-    if (mixFocus.boss) {
-      addFromMap(focusTags.boss);
-    }
-    if (mixFocus.endlessBoss) {
-      addFromMap(focusTags.endless_boss);
+    if (mixFocus.ccImmunity) {
+      addFromMap(focusTags.cc_immunity);
     }
     if (mixFocus.cc) {
       addFromMap(focusTags.cc);
@@ -6400,6 +6385,7 @@
     if (getMixOverallReplacement(slug)) {
       html += mixContextMenuItem("Replace", "replace", "replace");
     }
+    html += mixContextMenuItem("View character", "view", "view");
     html += mixContextMenuItem("Remove", "remove", "remove");
     menu.innerHTML = html;
     positionMixContextMenu(menu, clientX, clientY);
@@ -6467,6 +6453,10 @@
     if (!slug) {
       return;
     }
+    if (action === "view") {
+      navigateTo(heroUrl(slug));
+      return;
+    }
     if (action === "mark") {
       mixMarked.add(slug);
       renderMix();
@@ -6508,6 +6498,42 @@
     }
   }
 
+  function clearMixDragGhost() {
+    if (mixDragGhostEl && mixDragGhostEl.parentNode) {
+      mixDragGhostEl.parentNode.removeChild(mixDragGhostEl);
+    }
+    mixDragGhostEl = null;
+  }
+
+  function setMixDragImage(e, card) {
+    clearMixDragGhost();
+    const rect = card.getBoundingClientRect();
+    const clone = card.cloneNode(true);
+    clone.classList.add("mix-drag-ghost");
+    clone.setAttribute("aria-hidden", "true");
+    clone.style.position = "fixed";
+    clone.style.top = "-10000px";
+    clone.style.left = "0";
+    clone.style.width = rect.width + "px";
+    clone.style.height = rect.height + "px";
+    clone.style.margin = "0";
+    clone.style.pointerEvents = "none";
+    clone.style.transform = "none";
+    clone.style.opacity = "1";
+    const nameH2 = card.querySelector(".hero-card-name h2");
+    const cloneH2 = clone.querySelector(".hero-card-name h2");
+    if (nameH2 && cloneH2 && nameH2.style.fontSize) {
+      cloneH2.style.fontSize = nameH2.style.fontSize;
+    }
+    document.body.appendChild(clone);
+    mixDragGhostEl = clone;
+    e.dataTransfer.setDragImage(
+      clone,
+      e.clientX - rect.left,
+      e.clientY - rect.top
+    );
+  }
+
   function mixDragSlugFromEvent(e) {
     const card = e.target.closest(".hero-card[data-slug]");
     return card ? card.dataset.slug : "";
@@ -6523,24 +6549,16 @@
       return;
     }
 
-    mixView.querySelector(".mix-focus-selector").addEventListener(
-      "click",
-      function (e) {
+    const mixFocusSelector = mixView.querySelector(".mix-focus-selector");
+    if (mixFocusSelector) {
+      mixFocusSelector.addEventListener("click", function (e) {
         const btn = e.target.closest(".mix-focus-btn");
         if (!btn) {
           return;
         }
         const key = btn.dataset.focus;
-        if (key === "boss") {
-          mixFocus.boss = !mixFocus.boss;
-          if (mixFocus.boss) {
-            mixFocus.endlessBoss = false;
-          }
-        } else if (key === "endlessBoss") {
-          mixFocus.endlessBoss = !mixFocus.endlessBoss;
-          if (mixFocus.endlessBoss) {
-            mixFocus.boss = false;
-          }
+        if (key === "ccImmunity") {
+          mixFocus.ccImmunity = !mixFocus.ccImmunity;
         } else if (key === "cc") {
           mixFocus.cc = !mixFocus.cc;
         } else if (key === "sustain") {
@@ -6548,9 +6566,10 @@
         } else if (key === "speed") {
           mixFocus.speed = !mixFocus.speed;
         }
-        renderMix();
-      }
-    );
+        syncMixFocusButtons();
+        loadMixData().then(renderMix);
+      });
+    }
 
     mixView.querySelector(".mix-mode-selector").addEventListener(
       "click",
@@ -6575,20 +6594,12 @@
       });
     }
 
-    if (mixClearMarkersBtn) {
-      mixClearMarkersBtn.addEventListener("click", function () {
-        mixMarked.clear();
-        mixHighlightSource = null;
-        mixHighlightMap = {};
-        renderMix();
-      });
-    }
-
     mixView.addEventListener("dragstart", function (e) {
       if (viewMode !== "mix") {
         return;
       }
-      const slug = mixDragSlugFromEvent(e);
+      const card = e.target.closest(".hero-card[data-slug]");
+      const slug = card ? card.dataset.slug : "";
       if (!slug) {
         return;
       }
@@ -6599,6 +6610,7 @@
         mixDragSourceFromEvent(e) || "grid"
       );
       e.dataTransfer.effectAllowed = "move";
+      setMixDragImage(e, card);
     });
 
     mixView.addEventListener("drag", function () {
@@ -6606,6 +6618,7 @@
     });
 
     mixView.addEventListener("dragend", function () {
+      clearMixDragGhost();
       setTimeout(function () {
         mixDragDidMove = false;
       }, 0);
@@ -7988,6 +8001,8 @@
 
   function initHeroes(data) {
     heroes = data.heroes || [];
+    heroesMeta = data.meta || {};
+    mixDataPromise = null;
     heroBySlug = {};
     heroByName = {};
     heroes.forEach(function (h) {
@@ -8049,18 +8064,8 @@
 
   updateListStickyOffset();
   window.addEventListener("resize", updateListStickyOffset);
-  window.addEventListener("resize", scheduleFitHeroCardNames);
   if (siteHeader && typeof ResizeObserver !== "undefined") {
     new ResizeObserver(updateListStickyOffset).observe(siteHeader);
-  }
-  if (heroGrid && typeof ResizeObserver !== "undefined") {
-    new ResizeObserver(scheduleFitHeroCardNames).observe(heroGrid);
-  }
-  if (mixHeroGrid && typeof ResizeObserver !== "undefined") {
-    new ResizeObserver(scheduleFitHeroCardNames).observe(mixHeroGrid);
-  }
-  if (mixDropZone && typeof ResizeObserver !== "undefined") {
-    new ResizeObserver(scheduleFitHeroCardNames).observe(mixDropZone);
   }
 
   initMixInteractions();

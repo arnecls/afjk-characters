@@ -939,8 +939,9 @@ a:hover {
 }
 
 .hero-grid {
+  --hero-card-col-min: 140px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--hero-card-col-min), 1fr));
   gap: 1rem;
 }
 
@@ -1212,7 +1213,7 @@ a:hover {
   display: flex;
   align-items: center;
   min-height: 0;
-  padding: 0.2rem 0.7rem 0.04rem calc(0.35rem + min(24.2cqi, 2.365rem) + 0.95rem);
+  padding: 0.2rem 0.7rem 0.04rem calc(0.15rem + min(24.2cqi, 2.365rem) + 0.95rem);
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -3319,6 +3320,10 @@ html.welcome-warning-pending .welcome-warning,
 
 /* Mix mode — team builder */
 .mix-view {
+  --hero-card-col-min: 140px;
+  --mix-card-scale: 0.75;
+  --mix-card-visual-width: calc(var(--hero-card-col-min) * var(--mix-card-scale));
+  --mix-grid-col-min: calc(var(--mix-card-visual-width) * 9 / 8);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -3374,11 +3379,9 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .mix-toolbar-row {
-  --mix-slot-width: 105px;
-  --mix-slot-gap: 0.65rem;
-  --mix-slots-width: calc(
-    var(--mix-slot-width) * 5 + var(--mix-slot-gap) * 4
-  );
+  --mix-slot-width: var(--mix-grid-col-min);
+  --mix-slot-gap: calc(0.65rem * 0.5);
+  --mix-slots-width: calc(var(--mix-slot-width) * 5 + var(--mix-slot-gap) * 4);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -3389,14 +3392,21 @@ html.welcome-warning-pending .welcome-warning,
   display: flex;
   gap: var(--mix-slot-gap);
   flex-wrap: nowrap;
+  overflow: visible;
 }
 
 .mix-slot {
   width: var(--mix-slot-width);
   flex-shrink: 0;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  min-height: calc(var(--mix-card-visual-width) * 4.2 / 3);
 }
 
 .mix-slot--empty {
+  width: var(--mix-card-visual-width);
+  flex-shrink: 0;
   aspect-ratio: 3 / 4.2;
   border-radius: var(--afkj-radius-feature-tl) var(--afkj-radius-feature-tr) var(--afkj-radius-feature-br) var(--afkj-radius-feature-bl);
   border: 2px dashed color-mix(in srgb, var(--border) 80%, transparent);
@@ -3406,6 +3416,8 @@ html.welcome-warning-pending .welcome-warning,
 
 .mix-slot .hero-card {
   width: 100%;
+  min-width: 0;
+  flex-shrink: 0;
   cursor: grab;
 }
 
@@ -3415,11 +3427,12 @@ html.welcome-warning-pending .welcome-warning,
 
 .mix-zone-actions {
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: calc(50% + var(--mix-slots-width) / 2 + 1rem);
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
@@ -3443,14 +3456,19 @@ html.welcome-warning-pending .welcome-warning,
   background: #fcd4d4;
 }
 
-.mix-action-btn--clear {
-  background: #fff8dc;
-  border-color: #e8d090;
-  color: #7a6200;
+.mix-action-btn--icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.mix-action-btn--clear:hover {
-  background: #fff3c4;
+.mix-action-btn--icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .mix-selector-row {
@@ -3531,8 +3549,25 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .mix-hero-grid {
-  grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, var(--mix-grid-col-min));
+  justify-content: center;
+  gap: calc(1rem * var(--mix-card-scale));
+}
+
+.mix-hero-grid>.mix-hero-card-shell,
+.mix-slot .mix-hero-card-shell {
+  width: var(--hero-card-col-min);
+  margin-bottom: calc((1 - var(--mix-card-scale)) * var(--hero-card-col-min) * 4.2 / 3 * -1);
+}
+
+.mix-hero-grid>.mix-hero-card-shell {
+  justify-self: center;
+}
+
+.mix-slot .mix-hero-card-shell {
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mix-hero-grid .hero-card {
@@ -3548,22 +3583,23 @@ html.welcome-warning-pending .welcome-warning,
   overflow: hidden;
 }
 
-.mix-hero-card-shell {
+.mix-view .mix-hero-card-shell {
   position: relative;
-  width: 100%;
   overflow: visible;
+  transform: scale(var(--mix-card-scale));
+  transform-origin: top center;
   transition: transform 0.15s;
 }
 
-.mix-hero-card-shell:hover {
-  transform: translateY(-3px);
+.mix-view .mix-hero-card-shell:hover {
+  transform: scale(var(--mix-card-scale)) translateY(calc(-3px / var(--mix-card-scale)));
 }
 
-.mix-hero-card-shell .hero-card:hover {
+.mix-view .mix-hero-card-shell .hero-card:hover {
   transform: none;
 }
 
-.mix-hero-card-shell:hover .hero-card {
+.mix-view .mix-hero-card-shell:hover .hero-card {
   box-shadow:
     0 0 18px 3px rgba(25, 40, 65, 0.12),
     5px 8px rgba(25, 40, 65, 0.1);
@@ -3711,10 +3747,15 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .mix-drop-zone.mix-drag-over {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-  border-radius: 12px;
+  border-radius:
+    var(--afkj-radius-feature-tl) var(--afkj-radius-feature-tr) var(--afkj-radius-feature-br) var(--afkj-radius-feature-bl);
+  box-shadow: 0 0 0 2px var(--accent);
   background: color-mix(in srgb, var(--accent-soft) 35%, transparent);
+}
+
+.mix-drag-ghost {
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .mix-hero-grid.mix-drag-over {
