@@ -124,14 +124,16 @@
       },
       "cc": {
         "Stun": 6.0,
-        "Bind": 6.0,
-        "Silence": 6.0,
-        "Knock up": 6.0,
-        "Knock back": 4.5,
-        "Fear": 4.5,
-        "Charm": 4.5,
-        "Petrify": 6.0,
-        "Sleep": 6.0
+        "Bind": 4.0,
+        "Silence": 7.0,
+        "Knock up": 5.0,
+        "Knock back": 5.0,
+        "Knock down": 5.0,
+        "Displace": 8.0,
+        "Frighten": 6.0,
+        "Charm": 7.0,
+        "Blind": 2.0,
+        "Sleep": 7.0
       },
       "sustain": {
         "Shield": 4.0,
