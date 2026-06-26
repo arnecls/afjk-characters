@@ -21,6 +21,7 @@
   --afkj-radius-feature-bl: 2px;
   --radius: 12px;
   --list-sticky-top: 0px;
+  --table-head-label-height: 1.75rem;
   --chip-border: rgba(30, 50, 90, 0.1);
   --chip-damage-bg: #e6eaef;
   --chip-damage-fg: #4a5568;
@@ -878,9 +879,9 @@ a:hover {
 
 .heroes-table td .chip.chip-merged {
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  max-width: 100%;
+  max-width: none;
   box-sizing: border-box;
 }
 
@@ -1175,7 +1176,7 @@ a:hover {
   display: flex;
   align-items: center;
   min-height: 0;
-  padding: 0.2rem 0.7rem 0.04rem calc(0.15rem + min(24.2cqi, 2.365rem) + 0.95rem);
+  padding: 0.2rem 0.7rem 0.04rem calc(min(24.2cqi, 2.365rem));
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -1189,10 +1190,13 @@ a:hover {
   font-family: "Noto Sans", system-ui, sans-serif;
   font-weight: 500;
   font-size: 13.5cqi;
-  line-height: 0.85;
+  line-height: 1.1;
   color: var(--fc-name);
   text-align: right;
   text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .hero-card-meta {
@@ -1729,6 +1733,7 @@ a:hover {
 .heroes-table-filter-row th.col-effect-stack,
 .heroes-table td.col-effect-stack {
   vertical-align: top;
+  min-width: 5rem;
 }
 
 .effect-cell-stack {
@@ -1749,6 +1754,36 @@ a:hover {
   white-space: nowrap;
   min-width: 2.75rem;
   max-width: 4.5rem;
+}
+
+.heroes-table-label-row th.col-faction,
+.heroes-table-filter-row th.col-faction,
+.heroes-table td.col-faction {
+  min-width: 5.5rem;
+}
+
+.heroes-table-label-row th.col-class,
+.heroes-table-filter-row th.col-class,
+.heroes-table td.col-class {
+  min-width: 5rem;
+}
+
+.heroes-table-label-row th.col-movement,
+.heroes-table-filter-row th.col-movement,
+.heroes-table td.col-movement {
+  min-width: 6.5rem;
+}
+
+.heroes-table-label-row th.col-behavior-tags,
+.heroes-table-filter-row th.col-behavior-tags,
+.heroes-table td.col-behavior-tags {
+  min-width: 14rem;
+}
+
+.heroes-table-label-row th.col-general,
+.heroes-table-filter-row th.col-general,
+.heroes-table td.col-general {
+  min-width: 5.5rem;
 }
 
 .detail-section {
@@ -3547,10 +3582,12 @@ html.welcome-warning-pending .welcome-warning,
   box-shadow: 0 0 8px rgba(198, 40, 40, 0.45);
 }
 
-.mix-sort-anim {
-  transition:
-    transform 1s ease,
-    opacity 1s ease;
+.mix-view .mix-hero-card-shell.mix-sort-anim {
+  transition: opacity 0.35s ease;
+}
+
+.mix-view .mix-hero-card-shell.mix-sort-anim .hero-card {
+  transition: box-shadow 0.15s, border-color 0.15s;
 }
 
 .mix-context-menu {

@@ -257,15 +257,15 @@ window.AFKJ = window.AFKJ || {};
   function fitHeroCardName(h2) {
     const text = h2.textContent || "";
     if (text.length < 7) {
-      h2.style.fontSize = "";
+      //h2.style.fontSize = "";
       return;
     }
     const visibleLength = heroCardNameVisibleLength(text);
     if (visibleLength < 7) {
-      h2.style.fontSize = "";
+      //h2.style.fontSize = "";
       return;
     }
-    const reduction = (visibleLength - 7) * 1.7;
+    const reduction = (visibleLength - 7) * 2.2;
     h2.style.fontSize =
       "calc(" + HERO_CARD_NAME_BASE_CQI + "cqi - " + reduction + "cqi)";
   }
@@ -373,10 +373,8 @@ window.AFKJ = window.AFKJ || {};
     renderGridCardRole: renderGridCardRole,
     renderHeroCardWave: renderHeroCardWave,
     renderCompactCardWave: renderCompactCardWave,
-    fitHeroCardName: fitHeroCardName,
-    fitHeroCardNames: fitHeroCardNames,
-    scheduleFitHeroCardNames: scheduleFitHeroCardNames,
     buildHeroCardHtml: buildHeroCardHtml,
+    scheduleFitHeroCardNames: scheduleFitHeroCardNames,
     renderGrid: renderGrid,
   };
 })();

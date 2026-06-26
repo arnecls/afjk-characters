@@ -942,6 +942,35 @@ window.AFKJ = window.AFKJ || {};
     return false;
   }
 
+  function listColumnClass(col) {
+    const tiers = window.AFKJ.tiers;
+    if (col === "Name") {
+      return "col-name";
+    }
+    if (col === "Faction") {
+      return "col-faction";
+    }
+    if (col === "Class") {
+      return "col-class";
+    }
+    if (col === "Role") {
+      return "col-role";
+    }
+    if (tiers.TIER_CSV_HEADERS[col]) {
+      return "col-tier";
+    }
+    if (col === "Movement") {
+      return "col-movement";
+    }
+    if (col === "Behavior tags") {
+      return "col-behavior-tags";
+    }
+    if (isEffectSortColumn(col)) {
+      return "col-effect-stack";
+    }
+    return "col-general";
+  }
+
   function targetingRank(text) {
     const trimmed = text.trim();
     if (!trimmed) {
@@ -1066,21 +1095,6 @@ window.AFKJ = window.AFKJ || {};
       return (numA - numB) * state.sortDir;
     }
     return sA.localeCompare(sB) * state.sortDir;
-  }
-
-  function updateTableHeadStickyOffsets() {
-    const state = window.AFKJ.state;
-    if (!state.dom.heroesTableHead) {
-      return;
-    }
-    const labelRow = state.dom.heroesTableHead.querySelector(".heroes-table-label-row");
-    if (!labelRow) {
-      return;
-    }
-    document.documentElement.style.setProperty(
-      "--table-head-label-height",
-      labelRow.getBoundingClientRect().height + "px"
-    );
   }
 
   function getTableScrollEl() {
@@ -1322,14 +1336,9 @@ window.AFKJ = window.AFKJ || {};
           inner = renderTableCell(col, getListCellRawValue(row, idx, col));
         }
         let tdCls = "";
-        if (col === "Name") {
-          tdCls = ' class="col-name"';
-        } else if (tiers.TIER_CSV_HEADERS[col]) {
-          tdCls = ' class="col-tier"';
-        } else if (col === "Role") {
-          tdCls = ' class="col-role"';
-        } else if (isEffectSortColumn(col)) {
-          tdCls = ' class="col-effect-stack"';
+        const colCls = listColumnClass(col);
+        if (colCls) {
+          tdCls = ' class="' + colCls + '"';
         }
         bodyHtml += "<td" + tdCls + ">" + inner + "</td>";
       });
@@ -1369,22 +1378,7 @@ window.AFKJ = window.AFKJ || {};
     let labelRowHtml = '<tr class="heroes-table-label-row">';
     let filterRowHtml = '<tr class="heroes-table-filter-row">';
     state.csvHeaders.forEach(function (col, idx) {
-      let cls = "sortable";
-      if (col === "Name") {
-        cls += " col-name";
-      }
-      if (tiers.TIER_CSV_HEADERS[col]) {
-        cls += " col-tier";
-      }
-      if (col === "Role") {
-        cls += " col-role";
-      }
-      if (col === "Behavior tags") {
-        cls += " col-behavior-tags";
-      }
-      if (isEffectSortColumn(col)) {
-        cls += " col-effect-stack";
-      }
+      let cls = "sortable " + listColumnClass(col);
       const optionGroups = state.csvColumnFilterOptions[idx] || [];
       const selected = state.csvColumnFilters[idx] || [];
       const activeCount = selected.length;
@@ -1421,16 +1415,7 @@ window.AFKJ = window.AFKJ || {};
       if (col === "Name") {
         return;
       }
-      let filterCellCls = "col-filter-cell";
-      if (tiers.TIER_CSV_HEADERS[col]) {
-        filterCellCls += " col-tier";
-      }
-      if (col === "Role") {
-        filterCellCls += " col-role";
-      }
-      if (isEffectSortColumn(col)) {
-        filterCellCls += " col-effect-stack";
-      }
+      let filterCellCls = "col-filter-cell " + listColumnClass(col);
       filterRowHtml +=
         '<th class="' +
         filterCellCls +
@@ -1470,14 +1455,17 @@ window.AFKJ = window.AFKJ || {};
     labelRowHtml += "</tr>";
     filterRowHtml += "</tr>";
     dom.heroesTableHead.innerHTML = labelRowHtml + filterRowHtml;
-    updateTableHeadStickyOffsets();
     requestAnimationFrame(positionOpenColumnFilter);
 
     const allRows = state.csvRows.filter(function (row) {
       return allowed[row[0]];
     });
+    const tableScroll = getTableScrollEl();
 
     if (!state.columnWidthsLocked && allRows.length) {
+      if (tableScroll) {
+        tableScroll.style.visibility = "hidden";
+      }
       dom.heroesTableBody.innerHTML = buildListBodyHtml(allRows);
       dom.listEmptyState.classList.toggle("hidden", rows.length > 0);
       requestAnimationFrame(function () {
@@ -1486,6 +1474,9 @@ window.AFKJ = window.AFKJ || {};
         updateTableColgroup();
         dom.heroesTableBody.innerHTML = buildListBodyHtml(rows);
         dom.listEmptyState.classList.toggle("hidden", rows.length > 0);
+        if (tableScroll) {
+          tableScroll.style.visibility = "";
+        }
       });
       return;
     }
@@ -1510,7 +1501,6 @@ window.AFKJ = window.AFKJ || {};
     renderColumnFilterPanel: renderColumnFilterPanel,
     renderTableCell: renderTableCell,
     compareCsvRows: compareCsvRows,
-    updateTableHeadStickyOffsets: updateTableHeadStickyOffsets,
     getTableScrollEl: getTableScrollEl,
     clearColumnFilterPanelPosition: clearColumnFilterPanelPosition,
     positionOpenColumnFilter: positionOpenColumnFilter,
