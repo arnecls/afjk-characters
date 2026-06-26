@@ -56,6 +56,7 @@ window.AFKJ = window.AFKJ || {};
   let mixHighlightMap = {};
   let mixHighlightSource = null;
   let mixGridOrder = [];
+  let mixGridFadeTimer = null;
   let mixDragDidMove = false;
   let mixDragGhostEl = null;
   let mixGridPointer = null;
@@ -784,40 +785,56 @@ window.AFKJ = window.AFKJ || {};
     dom.mixDropZone.innerHTML = html;
   }
 
-  function animateMixGridReorder(prevRects) {
-    const state = window.AFKJ.state;
-    if (!state.dom.mixHeroGrid) {
+  const MIX_GRID_FADE_MS = 200;
+
+  function animateMixGridFadeIn() {
+    const grid = window.AFKJ.state.dom.mixHeroGrid;
+    if (!grid) {
       return;
     }
-    const cards = state.dom.mixHeroGrid.querySelectorAll(".hero-card");
-    cards.forEach(function (el) {
-      const slug = el.dataset.slug;
-      const prev = prevRects.get(slug);
-      const next = el.getBoundingClientRect();
-      if (!prev) {
-        el.style.opacity = "0";
-        return;
-      }
-      const dx = prev.left - next.left;
-      const dy = prev.top - next.top;
-      if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
-        el.style.transform = "translate(" + dx + "px, " + dy + "px)";
-        el.style.opacity = "0";
-      }
+    requestAnimationFrame(function () {
+      const shells = grid.querySelectorAll(".mix-hero-card-shell");
+      shells.forEach(function (shell) {
+        shell.style.opacity = "0";
+      });
+      requestAnimationFrame(function () {
+        shells.forEach(function (shell) {
+          shell.classList.add("mix-sort-anim");
+          shell.style.opacity = "1";
+        });
+        setTimeout(function () {
+          shells.forEach(function (shell) {
+            shell.classList.remove("mix-sort-anim");
+            shell.style.opacity = "";
+          });
+        }, MIX_GRID_FADE_MS);
+      });
+    });
+  }
+
+  function fadeOutMixGridThen(run) {
+    const grid = window.AFKJ.state.dom.mixHeroGrid;
+    if (!grid) {
+      run();
+      return;
+    }
+    const shells = grid.querySelectorAll(".mix-hero-card-shell");
+    if (!shells.length) {
+      run();
+      return;
+    }
+    shells.forEach(function (shell) {
+      shell.classList.add("mix-sort-anim");
     });
     requestAnimationFrame(function () {
-      cards.forEach(function (el) {
-        el.classList.add("mix-sort-anim");
-        el.style.transform = "";
-        el.style.opacity = "1";
+      shells.forEach(function (shell) {
+        shell.style.opacity = "0";
       });
-      setTimeout(function () {
-        cards.forEach(function (el) {
-          el.classList.remove("mix-sort-anim");
-          el.style.transform = "";
-          el.style.opacity = "";
-        });
-      }, 1000);
+      clearTimeout(mixGridFadeTimer);
+      mixGridFadeTimer = setTimeout(function () {
+        mixGridFadeTimer = null;
+        run();
+      }, MIX_GRID_FADE_MS);
     });
   }
 
@@ -832,25 +849,34 @@ window.AFKJ = window.AFKJ || {};
       return h.slug;
     });
     const orderChanged = mixGridOrder.join(",") !== newOrder.join(",");
-    const prevRects = new Map();
-    if (orderChanged) {
-      dom.mixHeroGrid.querySelectorAll(".hero-card").forEach(function (el) {
-        prevRects.set(el.dataset.slug, el.getBoundingClientRect());
+    const hadShells =
+      dom.mixHeroGrid.querySelectorAll(".mix-hero-card-shell").length > 0;
+
+    function applyMixGrid(fadeIn) {
+      mixGridOrder = newOrder;
+      dom.mixHeroGrid.innerHTML = list
+        .map(function (h) {
+          return renderMixHeroCard(h, { mixSource: "grid" });
+        })
+        .join("");
+      if (dom.mixEmptyState) {
+        dom.mixEmptyState.classList.toggle("hidden", list.length > 0);
+      }
+      if (fadeIn) {
+        animateMixGridFadeIn();
+      }
+      gridView.scheduleFitHeroCardNames();
+    }
+
+    if (orderChanged && hadShells) {
+      clearTimeout(mixGridFadeTimer);
+      fadeOutMixGridThen(function () {
+        applyMixGrid(true);
       });
+      return;
     }
-    mixGridOrder = newOrder;
-    dom.mixHeroGrid.innerHTML = list
-      .map(function (h) {
-        return renderMixHeroCard(h, { mixSource: "grid" });
-      })
-      .join("");
-    if (dom.mixEmptyState) {
-      dom.mixEmptyState.classList.toggle("hidden", list.length > 0);
-    }
-    if (orderChanged && prevRects.size) {
-      animateMixGridReorder(prevRects);
-    }
-    gridView.scheduleFitHeroCardNames();
+
+    applyMixGrid(false);
   }
 
   function renderMix() {
@@ -1464,7 +1490,6 @@ window.AFKJ = window.AFKJ || {};
     mixSortedPoolHeroes: mixSortedPoolHeroes,
     renderMixHeroCard: renderMixHeroCard,
     renderMixSlots: renderMixSlots,
-    animateMixGridReorder: animateMixGridReorder,
     renderMixGrid: renderMixGrid,
     renderMix: renderMix,
     syncMixFocusButtons: syncMixFocusButtons,

@@ -68,8 +68,7 @@ window.AFKJ = window.AFKJ || {};
 
     let html =
       '<div class="filter-row filter-row-faction">' +
-      '<span class="filter-label">Faction</span>' +
-      '<button type="button" class="filter-btn filter-btn-all" data-filter="all">All</button>';
+      '<span class="filter-label">Faction</span>';
     factions.forEach(function (f) {
       html +=
         '<button type="button" class="filter-btn" data-filter="faction" data-value="' +
@@ -116,12 +115,7 @@ window.AFKJ = window.AFKJ || {};
     const dom = state.dom;
     dom.filtersEl.querySelectorAll(".filter-btn").forEach(function (b) {
       const f = b.dataset.filter;
-      if (f === "all") {
-        b.classList.toggle(
-          "active",
-          !state.activeFaction && !state.activeClass && !state.activeRole
-        );
-      } else if (f === "faction") {
+      if (f === "faction") {
         b.classList.toggle("active", b.dataset.value === state.activeFaction);
       } else if (f === "class") {
         b.classList.toggle("active", b.dataset.value === state.activeClass);
@@ -300,11 +294,7 @@ window.AFKJ = window.AFKJ || {};
       if (!btn) {
         return;
       }
-      if (btn.dataset.filter === "all") {
-        state.activeFaction = "";
-        state.activeClass = "";
-        state.activeRole = "";
-      } else if (btn.dataset.filter === "faction") {
+      if (btn.dataset.filter === "faction") {
         const v = btn.dataset.value;
         state.activeFaction = state.activeFaction === v ? "" : v;
       } else if (btn.dataset.filter === "class") {

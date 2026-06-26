@@ -20,7 +20,6 @@ window.AFKJ = window.AFKJ || {};
     if (dom.listView) {
       dom.listView.style.setProperty("--list-sticky-offset", offset + "px");
     }
-    window.AFKJ.views.list.updateTableHeadStickyOffsets();
   }
 
   function updateHeaderNav(inDetail) {
