@@ -411,6 +411,7 @@ def build_site_data(
                 "defaultRange": p.get("default_range"),
                 "releaseDate": p.get("release_date"),
                 "season": p.get("season"),
+                "seasonNumber": p.get("season_number"),
                 "description": meta.get("description", ""),
                 "portrait": f"assets/portraits/{short}.png",
                 "signatureSkill": signature_skill,

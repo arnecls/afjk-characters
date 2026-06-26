@@ -31,6 +31,7 @@
         "default_range",
         "release_date",
         "season",
+        "season_number",
         "skills",
         "synergy_profile",
         "damage_entries",
@@ -77,6 +78,10 @@
         "season": {
           "type": ["string", "null"],
           "description": "AFK Journey season when the hero was released."
+        },
+        "season_number": {
+          "type": ["integer", "null"],
+          "description": "Zero-based season index (Starter Story = 0)."
         },
         "skills": {
           "$ref": "skills.schema.json#/$defs/heroSkills"

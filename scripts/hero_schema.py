@@ -1146,18 +1146,20 @@ def role_category_by_title_from_processed(
 def map_date_to_season(
     release_date: str | None,
     seasons: list[dict],
-) -> str | None:
-    """Map a hero release date (YYYY-MM-DD) to the active season name."""
+) -> tuple[str | None, int | None]:
+    """Map a hero release date (YYYY-MM-DD) to season name and index (S0, S1, …)."""
     if not release_date or not seasons:
-        return None
+        return None, None
     ordered = sorted(seasons, key=lambda s: s["start_date"])
     matched = ordered[0]["name"]
-    for season in ordered:
+    matched_number = 0
+    for index, season in enumerate(ordered):
         if release_date >= season["start_date"]:
             matched = season["name"]
+            matched_number = index
         else:
             break
-    return matched
+    return matched, matched_number
 
 
 def serialize_processed_hero(
@@ -1169,6 +1171,7 @@ def serialize_processed_hero(
     is_dual_range: bool,
     behavior: dict[str, Any],
     season: str | None = None,
+    season_number: int | None = None,
 ) -> dict[str, Any]:
     provides = [
         special_to_synergy_mechanic(se)
@@ -1218,6 +1221,7 @@ def serialize_processed_hero(
         "default_range": default_range,
         "release_date": hero_record.get("release_date"),
         "season": season,
+        "season_number": season_number,
         "skills": skills,
         "synergy_profile": {"provides": provides, "requires": requires},
         "damage_entries": damage_entries,

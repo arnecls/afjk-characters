@@ -1191,25 +1191,22 @@ class SeasonMappingTests(unittest.TestCase):
         cls.seasons = io.load_seasons()
 
     def test_starter_story_launch(self) -> None:
-        self.assertEqual(
-            hs.map_date_to_season("2024-03-27", self.seasons),
-            "Starter Story",
-        )
+        name, number = hs.map_date_to_season("2024-03-27", self.seasons)
+        self.assertEqual(name, "Starter Story")
+        self.assertEqual(number, 0)
 
     def test_song_of_strife_start(self) -> None:
-        self.assertEqual(
-            hs.map_date_to_season("2024-05-10", self.seasons),
-            "Song of Strife",
-        )
+        name, number = hs.map_date_to_season("2024-05-10", self.seasons)
+        self.assertEqual(name, "Song of Strife")
+        self.assertEqual(number, 1)
 
     def test_galahad_release_season(self) -> None:
-        self.assertEqual(
-            hs.map_date_to_season("2025-12-18", self.seasons),
-            "Thorns of Devotion",
-        )
+        name, number = hs.map_date_to_season("2025-12-18", self.seasons)
+        self.assertEqual(name, "Thorns of Devotion")
+        self.assertEqual(number, 5)
 
     def test_missing_release_date(self) -> None:
-        self.assertIsNone(hs.map_date_to_season(None, self.seasons))
+        self.assertEqual(hs.map_date_to_season(None, self.seasons), (None, None))
 
 
 class SchemaValidationTests(unittest.TestCase):

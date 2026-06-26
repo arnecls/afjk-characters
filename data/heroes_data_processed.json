@@ -11,6 +11,7 @@
       "default_range": 8,
       "release_date": "2025-09-26",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Radiant Rain": {
           "category": "ultimate",
@@ -779,6 +780,7 @@
       "default_range": 1,
       "release_date": "2026-01-08",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Winter Anthem": {
           "category": "ultimate",
@@ -1410,6 +1412,7 @@
       "default_range": 6,
       "release_date": "2024-05-10",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Twirling Rocks": {
           "category": "ultimate",
@@ -1881,6 +1884,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Shield Assault": {
           "category": "ultimate",
@@ -2460,6 +2464,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Force of Nature": {
           "category": "ultimate",
@@ -2883,6 +2888,7 @@
       "default_range": 4,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Wild Sniper": {
           "category": "ultimate",
@@ -3395,6 +3401,7 @@
       "default_range": 1,
       "release_date": "2025-03-27",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Unbroken Retribution": {
           "category": "ultimate",
@@ -4012,6 +4019,7 @@
       "default_range": 5,
       "release_date": "2026-01-30",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Starlit Slumber": {
           "category": "ultimate",
@@ -4516,6 +4524,7 @@
       "default_range": 1,
       "release_date": "2025-06-26",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Celestial Rise": {
           "category": "ultimate",
@@ -5086,6 +5095,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Scared Swamp": {
           "category": "ultimate",
@@ -5608,6 +5618,7 @@
       "default_range": 7,
       "release_date": "2024-12-31",
       "season": "Waves of Intrigue",
+      "season_number": 2,
       "skills": {
         "Deathmark Arrow": {
           "category": "ultimate",
@@ -6147,6 +6158,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Whirlwind Wrath": {
           "category": "ultimate",
@@ -6649,6 +6661,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Falcon Raid": {
           "category": "ultimate",
@@ -7158,6 +7171,7 @@
       "default_range": 1,
       "release_date": "2025-02-13",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Restless Guardian": {
           "category": "ultimate",
@@ -7614,6 +7628,7 @@
       "default_range": 4,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Frozen Grave": {
           "category": "ultimate",
@@ -8090,6 +8105,7 @@
       "default_range": 3,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Running Tide": {
           "category": "ultimate",
@@ -8615,6 +8631,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Queen's Summons": {
           "category": "ultimate",
@@ -9198,6 +9215,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Brothers-in-arms": {
           "category": "ultimate",
@@ -9462,6 +9480,7 @@
       "default_range": 6,
       "release_date": "2026-04-09",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Detention Pass": {
           "category": "ultimate",
@@ -10116,6 +10135,7 @@
       "default_range": 5,
       "release_date": "2025-02-19",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Frostveil Domain": {
           "category": "ultimate",
@@ -10621,6 +10641,7 @@
       "default_range": 6,
       "release_date": "2025-02-26",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Gravitic Requiem": {
           "category": "ultimate",
@@ -11256,6 +11277,7 @@
       "default_range": 3,
       "release_date": "2025-06-05",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Dolly Defender": {
           "category": "ultimate",
@@ -11721,6 +11743,7 @@
       "default_range": 20,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Explode, my chariot!": {
           "category": "ultimate",
@@ -12221,6 +12244,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Dawn Light": {
           "category": "ultimate",
@@ -12748,6 +12772,7 @@
       "default_range": 1,
       "release_date": "2024-09-09",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Echo of Silence": {
           "category": "ultimate",
@@ -13358,6 +13383,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Verdant Cyclone": {
           "category": "ultimate",
@@ -13888,6 +13914,7 @@
       "default_range": 6,
       "release_date": "2025-01-22",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Starlight Waltz": {
           "category": "ultimate",
@@ -14552,6 +14579,7 @@
       "default_range": 20,
       "release_date": "2026-05-07",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Intel Chase": {
           "category": "ultimate",
@@ -15059,6 +15087,7 @@
       "default_range": 1,
       "release_date": "2025-04-02",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Sanctified Circle": {
           "category": "ultimate",
@@ -15595,6 +15624,7 @@
       "default_range": 3,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Vibrant Dance": {
           "category": "ultimate",
@@ -16000,6 +16030,7 @@
       "default_range": 5,
       "release_date": "2024-04-16",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Pounding Blow": {
           "category": "ultimate",
@@ -16506,6 +16537,7 @@
       "default_range": 7,
       "release_date": "2026-05-01",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Zoltraak": {
           "category": "ultimate",
@@ -17079,6 +17111,7 @@
       "default_range": 10,
       "release_date": "2025-12-18",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Temporal Field": {
           "category": "ultimate",
@@ -17619,6 +17652,7 @@
       "default_range": 1,
       "release_date": "2025-03-13",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Splashing Fun": {
           "category": "ultimate",
@@ -18203,6 +18237,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Threshold of Jade": {
           "category": "ultimate",
@@ -18799,6 +18834,7 @@
       "default_range": 20,
       "release_date": "2026-03-05",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Annihilation Directive": {
           "category": "ultimate",
@@ -19440,6 +19476,7 @@
       "default_range": 8,
       "release_date": "2026-05-29",
       "season": "Crown of Ashes",
+      "season_number": 7,
       "skills": {
         "Hailing Arrows": {
           "category": "ultimate",
@@ -19973,6 +20010,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Pretty Fireball": {
           "category": "ultimate",
@@ -20248,6 +20286,7 @@
       "default_range": 1,
       "release_date": "2024-11-19",
       "season": "Waves of Intrigue",
+      "season_number": 2,
       "skills": {
         "Vicious Bite": {
           "category": "ultimate",
@@ -20813,6 +20852,7 @@
       "default_range": 1,
       "release_date": "2026-04-09",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Form Shift": {
           "category": "ultimate",
@@ -21364,6 +21404,7 @@
       "default_range": 4,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Rain Prayer": {
           "category": "ultimate",
@@ -21737,6 +21778,7 @@
       "default_range": 1,
       "release_date": "2026-05-01",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Heroic Slash": {
           "category": "ultimate",
@@ -22262,6 +22304,7 @@
       "default_range": 1,
       "release_date": "2024-11-11",
       "season": "Waves of Intrigue",
+      "season_number": 2,
       "skills": {
         "Cannon Fire": {
           "category": "ultimate",
@@ -22824,6 +22867,7 @@
       "default_range": 20,
       "release_date": "2024-12-17",
       "season": "Waves of Intrigue",
+      "season_number": 2,
       "skills": {
         "Unstoppable!": {
           "category": "ultimate",
@@ -23251,6 +23295,7 @@
       "default_range": 10,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Funereal Ring": {
           "category": "ultimate",
@@ -23657,6 +23702,7 @@
       "default_range": 15,
       "release_date": "2025-05-23",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Spellbane Shot": {
           "category": "ultimate",
@@ -24243,6 +24289,7 @@
       "default_range": 5,
       "release_date": "2025-10-10",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Grimoire Pact": {
           "category": "ultimate",
@@ -24824,6 +24871,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Gale Thrust": {
           "category": "ultimate",
@@ -25330,6 +25378,7 @@
       "default_range": 7,
       "release_date": "2026-06-12",
       "season": "Crown of Ashes",
+      "season_number": 7,
       "skills": {
         "Gale Barrage": {
           "category": "ultimate",
@@ -25948,6 +25997,7 @@
       "default_range": 4,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Full Energy": {
           "category": "ultimate",
@@ -26368,6 +26418,7 @@
       "default_range": 1,
       "release_date": "2026-01-15",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Dominance Ring": {
           "category": "ultimate",
@@ -26920,6 +26971,7 @@
       "default_range": 2,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Demonseal Spear": {
           "category": "ultimate",
@@ -27347,6 +27399,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Devastating Axe": {
           "category": "ultimate",
@@ -27855,6 +27908,7 @@
       "default_range": 6,
       "release_date": "2025-05-26",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Blast Mayhem": {
           "category": "ultimate",
@@ -28419,6 +28473,7 @@
       "default_range": 1,
       "release_date": "2025-11-28",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Living Armor - Kensuke": {
           "category": "ultimate",
@@ -29068,6 +29123,7 @@
       "default_range": 1,
       "release_date": "2024-09-03",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Wild Duel": {
           "category": "ultimate",
@@ -29713,6 +29769,7 @@
       "default_range": 3,
       "release_date": "2024-08-08",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Tempest Shot": {
           "category": "ultimate",
@@ -30246,6 +30303,7 @@
       "default_range": 5,
       "release_date": "2025-01-17",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Whispering Tempest": {
           "category": "ultimate",
@@ -30712,6 +30770,7 @@
       "default_range": 1,
       "release_date": "2024-10-29",
       "season": "Waves of Intrigue",
+      "season_number": 2,
       "skills": {
         "Quake Slam": {
           "category": "ultimate",
@@ -31194,6 +31253,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Divine Light Aegis": {
           "category": "ultimate",
@@ -31637,6 +31697,7 @@
       "default_range": 3,
       "release_date": "2025-05-01",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Celestial Spirit Summon": {
           "category": "ultimate",
@@ -32092,6 +32153,7 @@
       "default_range": 6,
       "release_date": "2024-07-11",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Eternal Serenity": {
           "category": "ultimate",
@@ -32611,6 +32673,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Lumont's Charge": {
           "category": "ultimate",
@@ -33157,6 +33220,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Comet Archery": {
           "category": "ultimate",
@@ -33624,6 +33688,7 @@
       "default_range": 6,
       "release_date": "2025-11-28",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Silver-White Wings that Streak Across the Skies": {
           "category": "ultimate",
@@ -34148,6 +34213,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Mid-Air Shot": {
           "category": "ultimate",
@@ -34600,6 +34666,7 @@
       "default_range": 3,
       "release_date": "2025-10-30",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Euphoric Rush": {
           "category": "ultimate",
@@ -35141,6 +35208,7 @@
       "default_range": 1,
       "release_date": "2024-08-19",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Dauntless Hymn": {
           "category": "ultimate",
@@ -35603,6 +35671,7 @@
       "default_range": 3,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Winged Flame": {
           "category": "ultimate",
@@ -35990,6 +36059,7 @@
       "default_range": 1,
       "release_date": "2024-09-09",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Crimson Vengeance": {
           "category": "ultimate",
@@ -36571,6 +36641,7 @@
       "default_range": 1,
       "release_date": "2025-05-01",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Lightning Fire Dragon's Roar/Fire Dragon King's Roar": {
           "category": "ultimate",
@@ -37188,6 +37259,7 @@
       "default_range": 7,
       "release_date": "2025-10-30",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Rend Rupture": {
           "category": "ultimate",
@@ -37690,6 +37762,7 @@
       "default_range": 7,
       "release_date": "2026-05-15",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Drowning Doom": {
           "category": "ultimate",
@@ -38242,6 +38315,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Soul Shepherd": {
           "category": "ultimate",
@@ -38700,6 +38774,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Corrosive Dart": {
           "category": "ultimate",
@@ -39181,6 +39256,7 @@
       "default_range": 5,
       "release_date": "2025-08-01",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Panic Projection": {
           "category": "ultimate",
@@ -39759,6 +39835,7 @@
       "default_range": 1,
       "release_date": "2025-08-01",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Sky Splitter": {
           "category": "ultimate",
@@ -40337,6 +40414,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Floral Splendor": {
           "category": "ultimate",
@@ -40751,6 +40829,7 @@
       "default_range": 1,
       "release_date": "2025-09-26",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Divine Rend": {
           "category": "ultimate",
@@ -41285,6 +41364,7 @@
       "default_range": 1,
       "release_date": "2024-06-06",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Futile Echo": {
           "category": "ultimate",
@@ -41820,6 +41900,7 @@
       "default_range": 5,
       "release_date": "2026-03-20",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Wild Shift": {
           "category": "ultimate",
@@ -42351,6 +42432,7 @@
       "default_range": 4,
       "release_date": "2025-09-19",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Killer Flush": {
           "category": "ultimate",
@@ -43048,6 +43130,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Mutual Reflection": {
           "category": "ultimate",
@@ -43554,6 +43637,7 @@
       "default_range": 6,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Flame Barrage": {
           "category": "ultimate",
@@ -44057,6 +44141,7 @@
       "default_range": 3,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Fatal Greed": {
           "category": "ultimate",
@@ -44538,6 +44623,7 @@
       "default_range": 1,
       "release_date": "2025-08-01",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Seed Siphon": {
           "category": "ultimate",
@@ -45161,6 +45247,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Rain of Blades": {
           "category": "ultimate",
@@ -45643,6 +45730,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Fiery Dance": {
           "category": "ultimate",
@@ -46150,6 +46238,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Divine Quake": {
           "category": "ultimate",
@@ -46723,6 +46812,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Shadow Strike": {
           "category": "ultimate",
@@ -47267,6 +47357,7 @@
       "default_range": 1,
       "release_date": "2025-11-13",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Crimson Venom": {
           "category": "ultimate",
@@ -47826,6 +47917,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Ravaging Claws": {
           "category": "ultimate",
@@ -48276,6 +48368,7 @@
       "default_range": 4,
       "release_date": "2025-04-24",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Phantom Procession": {
           "category": "ultimate",
@@ -48710,6 +48803,7 @@
       "default_range": 7,
       "release_date": "2026-02-13",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Aloft Edge": {
           "category": "ultimate",
@@ -49170,6 +49264,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Shadow Slayer": {
           "category": "ultimate",
@@ -49597,6 +49692,7 @@
       "default_range": 1,
       "release_date": "2024-10-02",
       "season": "Waves of Intrigue",
+      "season_number": 2,
       "skills": {
         "Whizzing Edge": {
           "category": "ultimate",
@@ -50121,6 +50217,7 @@
       "default_range": 8,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Special Aroma": {
           "category": "ultimate",
@@ -50578,6 +50675,7 @@
       "default_range": 6,
       "release_date": "2026-01-30",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Life's Embrace": {
           "category": "ultimate",
@@ -51053,6 +51151,7 @@
       "default_range": 1,
       "release_date": "2024-11-27",
       "season": "Waves of Intrigue",
+      "season_number": 2,
       "skills": {
         "Tempest Thrusts": {
           "category": "ultimate",
@@ -51490,6 +51589,7 @@
       "default_range": 1,
       "release_date": "2024-05-31",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Whirlwind Swing": {
           "category": "ultimate",
@@ -52025,6 +52125,7 @@
       "default_range": 1,
       "release_date": "2026-05-29",
       "season": "Crown of Ashes",
+      "season_number": 7,
       "skills": {
         "Grand Finale": {
           "category": "ultimate",
@@ -52696,6 +52797,7 @@
       "default_range": 3,
       "release_date": "2024-07-03",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Divine Conflagration": {
           "category": "ultimate",
@@ -53129,6 +53231,7 @@
       "default_range": 4,
       "release_date": "2024-10-17",
       "season": "Waves of Intrigue",
+      "season_number": 2,
       "skills": {
         "Eternal Dreamscape": {
           "category": "ultimate",
@@ -53703,6 +53806,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Knight's Heart": {
           "category": "ultimate",
@@ -54292,6 +54396,7 @@
       "default_range": 1,
       "release_date": "2025-07-10",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Moonveil Manifest": {
           "category": "ultimate",
@@ -54787,6 +54892,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Soul Retaliation": {
           "category": "ultimate",
@@ -55196,6 +55302,7 @@
       "default_range": 1,
       "release_date": "2026-01-08",
       "season": "Thorns of Devotion",
+      "season_number": 5,
       "skills": {
         "Wrath of the Wilds": {
           "category": "ultimate",
@@ -55706,6 +55813,7 @@
       "default_range": 1,
       "release_date": "2024-06-20",
       "season": "Song of Strife",
+      "season_number": 1,
       "skills": {
         "Ancient Tenacity": {
           "category": "ultimate",
@@ -56252,6 +56360,7 @@
       "default_range": 7,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Swift Shift": {
           "category": "ultimate",
@@ -56828,6 +56937,7 @@
       "default_range": 1,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Thunder Swordwork": {
           "category": "ultimate",
@@ -57298,6 +57408,7 @@
       "default_range": 1,
       "release_date": "2025-01-30",
       "season": "Chains of Eternity",
+      "season_number": 3,
       "skills": {
         "Phantom Slasher": {
           "category": "ultimate",
@@ -57847,6 +57958,7 @@
       "default_range": 5,
       "release_date": "2025-06-26",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Ruthless Rite": {
           "category": "ultimate",
@@ -58323,6 +58435,7 @@
       "default_range": 5,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Spiritual Viper": {
           "category": "ultimate",
@@ -58806,6 +58919,7 @@
       "default_range": 2,
       "release_date": "2024-03-27",
       "season": "Starter Story",
+      "season_number": 0,
       "skills": {
         "Six-Shot": {
           "category": "ultimate",
@@ -59353,6 +59467,7 @@
       "default_range": 1,
       "release_date": "2025-08-21",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Savage Slash": {
           "category": "ultimate",
@@ -59762,6 +59877,7 @@
       "default_range": 20,
       "release_date": "2025-08-28",
       "season": "Echoes of Dissent",
+      "season_number": 4,
       "skills": {
         "Vein Pulse": {
           "category": "ultimate",
@@ -60376,6 +60492,7 @@
       "default_range": 2,
       "release_date": "2026-03-05",
       "season": "Tower of Memory",
+      "season_number": 6,
       "skills": {
         "Guardian's Ring": {
           "category": "ultimate",

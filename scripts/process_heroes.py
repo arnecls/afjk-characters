@@ -69,7 +69,9 @@ def build_processed(data: dict) -> dict:
         default_range = hero_record.get("range")
         if default_range is not None:
             default_range = int(default_range)
-        season = hs.map_date_to_season(hero_record.get("release_date"), seasons)
+        season, season_number = hs.map_date_to_season(
+            hero_record.get("release_date"), seasons
+        )
         processed_heroes[short] = hs.serialize_processed_hero(
             hero,
             hero_record,
@@ -85,6 +87,7 @@ def build_processed(data: dict) -> dict:
             ),
             behavior=behavior_dict,
             season=season,
+            season_number=season_number,
         )
 
     result = {"heroes": processed_heroes}
