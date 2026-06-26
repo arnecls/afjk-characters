@@ -1206,7 +1206,10 @@ card.classList.remove("skill-card-highlight");card.removeEventListener("animatio
 card.addEventListener("animationend",onHighlightEnd);card.classList.add("skill-card-highlight");}
 function showDetail(hero){const state=window.AFKJ.state;state.closeSkillCardPopover();state.detailHero=hero;state.dom.gridView.classList.add("hidden");state.dom.listView.classList.add("hidden");if(state.dom.mixView){state.dom.mixView.classList.add("hidden");}
 state.dom.detailView.classList.remove("hidden");let html='<div class="detail-panel afkj-box afkj-box-lg">';html+='<div class="detail-header">';html+='<div class="detail-portrait-wrap afkj-box afkj-box-sm">'+
-gridView.renderHeroPortrait(hero,"detail-portrait")+"</div>";html+='<div class="detail-title">';html+="<h1>"+escapeHtml(hero.name)+"</h1>";if(hero.title&&hero.title!==hero.name){html+='<p class="detail-subtitle">'+escapeHtml(hero.title)+"</p>";}
+gridView.renderHeroPortrait(hero,"detail-portrait")+"</div>";html+='<div class="detail-title">';html+="<h1>"+escapeHtml(hero.name)+"</h1>";if(hero.season!=null&&hero.seasonNumber!=null){html+='<p class="detail-subtitle"><b>Season:</b> '+
+escapeHtml(hero.season)+" (S"+
+hero.seasonNumber+")</p>";}else if(hero.season){html+='<p class="detail-subtitle"><b>Season:</b> '+
+escapeHtml(hero.season)+"</p>";}
 html+='<div class="badges badges-left">'+
 renderBadges(hero,{includeRoleCategory:true})+"</div>";if(hero.description){html+='<p class="detail-desc">'+escapeHtml(hero.description)+"</p>";}
 html+="</div></div>";if(hero.sections.behavior){const parts=splitBehavior(hero.sections.behavior);if(parts.behavior){html+='<div class="detail-section summary-section skill-overview-section">';html+=tiers.renderPrydwenTierBoxes(tiers.getHeroPrydwenTiers(hero));const behaviorMd=tiers.stripPrydwenTierLine(parts.behavior);const behaviorParts=splitBehaviorHeading(behaviorMd);if(behaviorParts.title){html+="<h2>"+escapeHtml(behaviorParts.title)+"</h2>";}

@@ -1202,9 +1202,18 @@ window.AFKJ = window.AFKJ || {};
       "</div>";
     html += '<div class="detail-title">';
     html += "<h1>" + escapeHtml(hero.name) + "</h1>";
-    if (hero.title && hero.title !== hero.name) {
+    if (hero.season != null && hero.seasonNumber != null) {
       html +=
-        '<p class="detail-subtitle">' + escapeHtml(hero.title) + "</p>";
+        '<p class="detail-subtitle"><b>Season:</b> ' +
+        escapeHtml(hero.season) +
+        " (S" +
+        hero.seasonNumber +
+        ")</p>";
+    } else if (hero.season) {
+      html +=
+        '<p class="detail-subtitle"><b>Season:</b> ' +
+        escapeHtml(hero.season) +
+        "</p>";
     }
     html +=
       '<div class="badges badges-left">' +
