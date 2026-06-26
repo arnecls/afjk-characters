@@ -19,10 +19,13 @@ from healing_types import (
     normalize_healing_label,
 )
 
+from effect_labels import BUFF_EFFECT_TYPES, DEBUFF_EFFECT_TYPES, build_list_columns
+
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = Path(__file__).resolve().parent
 DEFAULT_INPUT = ROOT / "heroes-overview.md"
 DEFAULT_OUTPUT = ROOT / "heroes-overview.csv"
+LIST_COLUMNS_OUTPUT = ROOT / "site" / "data" / "list-columns.json"
 
 DAMAGE_TYPES: list[tuple[str, str]] = [
     ("Magic", "Magic DMG"),
@@ -56,57 +59,24 @@ ANTI_CC_TYPES: list[str] = [
     "Cleanse",
 ]
 
-BUFF_TYPES: list[str] = [
-    "ATK buff",
-    "ATK SPD buff",
-    "Haste buff",
-    "Crit buff",
-    "DEF Penetration buff",
-    "DEF buff",
-    "Damage taken reduction",
-    "Damage dealt buff",
-    "Magic damage reduction",
-    "Energy recovery",
-    "Execution buff",
-    "Fatal blow immunity",
-    "Invincible",
-    "Lifedrain buff",
-    "Max HP buff",
-    "Ally empower buff",
-    "Attack range buff",
-    "Healing stat buff",
-    "Ranged DEF buff",
-    "Crit DMG boost",
-    "Vitality buff",
-    "Dodge chance buff",
-    "Movement speed buff",
-]
+LIST_COLUMNS = build_list_columns()
+BUFF_COLUMN_BY_LABEL = {
+    col["label"]: col["id"] for col in LIST_COLUMNS if col["group"] == "buff"
+}
+DEBUFF_COLUMN_BY_LABEL = {
+    col["label"]: col["id"] for col in LIST_COLUMNS if col["group"] == "debuff"
+}
 
+BUFF_TYPES: list[str] = [col["id"] for col in LIST_COLUMNS if col["group"] == "buff"]
 DEBUFF_TYPES: list[str] = [
-    "ATK debuff",
-    "DoT debuff",
-    "Damage taken debuff",
-    "Damage dealt debuff",
-    "Debuff duration debuff",
-    "Magic damage amplification",
-    "Energy drain",
-    "Execution debuff",
-    "Haste debuff",
-    "Magic DEF debuff",
-    "Max HP debuff",
-    "Movement speed debuff",
-    "Phys DEF debuff",
-    "Vitality debuff",
-    "Healing debuff",
-    "Crit Resist debuff",
-    "Vulnerable debuff",
+    col["id"] for col in LIST_COLUMNS if col["group"] == "debuff"
 ]
 
 DAMAGE_LABEL_TO_COLUMN = {label: col for label, col in DAMAGE_TYPES}
 CC_COLUMN_SET = frozenset(CC_TYPES)
 ANTI_CC_COLUMN_SET = frozenset(ANTI_CC_TYPES)
-BUFF_COLUMN_SET = frozenset(BUFF_TYPES)
-DEBUFF_COLUMN_SET = frozenset(DEBUFF_TYPES)
+BUFF_COLUMN_SET = frozenset(BUFF_COLUMN_BY_LABEL)
+DEBUFF_COLUMN_SET = frozenset(DEBUFF_COLUMN_BY_LABEL)
 
 ROLE_CATEGORY_LABELS: dict[str, str] = {
     "damage_dealer": "Damage dealer",
@@ -259,7 +229,7 @@ def apply_buff_effect_to_row(row: HeroRow, effect) -> None:
     elif buff_label == "Shield":
         add_cell(row, "Shields", value)
     elif buff_label in BUFF_COLUMN_SET:
-        add_cell(row, buff_label, value)
+        add_cell(row, BUFF_COLUMN_BY_LABEL[buff_label], value)
 
 
 def _load_rewrite_summaries():
@@ -531,14 +501,11 @@ def parse_hero_block(
                 elif buff_label == "Shield":
                     add_cell(row, "Shields", value)
                 elif buff_label in BUFF_COLUMN_SET:
-                    add_cell(row, buff_label, value)
+                    add_cell(row, BUFF_COLUMN_BY_LABEL[buff_label], value)
             elif kind == "debuffs":
                 debuff_label = base_label(label)
-                column = {
-                    "DoT": "DoT debuff",
-                    "Damage dealt": "Damage dealt debuff",
-                }.get(debuff_label, debuff_label)
-                if column in DEBUFF_COLUMN_SET:
+                column = DEBUFF_COLUMN_BY_LABEL.get(debuff_label)
+                if column:
                     add_cell(row, column, value)
             elif kind == "cc":
                 column = cc_column_name(label)
@@ -676,7 +643,14 @@ def main() -> None:
         writer.writerow(COLUMNS)
         writer.writerows(data)
 
+    LIST_COLUMNS_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    LIST_COLUMNS_OUTPUT.write_text(
+        json.dumps(LIST_COLUMNS, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     print(f"Wrote {len(data)} heroes × {len(COLUMNS)} columns to {args.output}")
+    print(f"Wrote list column registry to {LIST_COLUMNS_OUTPUT}")
 
 
 if __name__ == "__main__":

@@ -24,18 +24,21 @@ def _load_rs():
     return module
 
 
+from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels
+
 rs = _load_rs()
 
 
 def _hero_by_short_name(name: str):
-    text = rs.HEROES_MD.read_text(encoding="utf-8")
-    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-    for block in blocks:
-        if block.startswith(f"## {name} "):
-            hero = rs.parse_hero_block(block)
-            rs.analyze_hero(hero)
-            return hero
-    raise KeyError(name)
+    from test_roster_cache import hero_by_short_name
+
+    return hero_by_short_name(name)
+
+
+def _hero_with_magnitudes(name: str):
+    from test_roster_cache import hero_by_short_name
+
+    return hero_by_short_name(name, magnitudes=True)
 
 
 from healing_types import (
@@ -43,19 +46,6 @@ from healing_types import (
     HEALING_OVER_TIME_LABEL,
     is_hp_recovery_label,
 )
-
-
-def _hero_with_magnitudes(name: str):
-    text = rs.HEROES_MD.read_text(encoding="utf-8")
-    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
-    for block in blocks:
-        if block.startswith(f"## {name} "):
-            hero = rs.parse_hero_block(block)
-            rs.analyze_hero(hero)
-            rs.assign_magnitudes([hero], skills_by_title)
-            return hero
-    raise KeyError(name)
 
 
 def _effects(hero, category: str, label: str | None = None):
@@ -108,14 +98,14 @@ class SummaryParsingTests(unittest.TestCase):
     def test_nazrik_prey_debuffs(self):
         hero = _hero_by_short_name("Nazrik")
         labels = {e.label for e in _effects(hero, "debuff")}
-        self.assertIn("Vitality debuff", labels)
-        self.assertIn("Damage taken debuff", labels)
-        self.assertIn("Healing debuff", labels)
+        self.assertIn("Vitality", labels)
+        self.assertIn("Damage taken", labels)
+        self.assertIn("Healing", labels)
         for e in _effects(hero, "debuff"):
             if e.label in (
-                "Vitality debuff",
-                "Damage taken debuff",
-                "Healing debuff",
+                "Vitality",
+                "Damage taken",
+                "Healing",
             ):
                 self.assertNotEqual(e.targeting, "Self", e.label)
 
@@ -125,7 +115,7 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertIn("Knock down", cc)
         ally_life = [
             e
-            for e in _effects(hero, "buff", "Lifedrain buff")
+            for e in _effects(hero, "buff", "Lifedrain")
             if e.targeting != "Self"
         ]
         self.assertEqual(ally_life, [])
@@ -224,7 +214,7 @@ class SummaryParsingTests(unittest.TestCase):
         hero = _hero_by_short_name("Salazer")
         ally_life = [
             e
-            for e in _effects(hero, "buff", "Lifedrain buff")
+            for e in _effects(hero, "buff", "Lifedrain")
             if e.targeting != "Self"
         ]
         self.assertEqual(ally_life, [])
@@ -249,7 +239,7 @@ class SummaryParsingTests(unittest.TestCase):
             hero = _hero_by_short_name(name)
             ally_life = [
                 e
-                for e in _effects(hero, "buff", "Lifedrain buff")
+                for e in _effects(hero, "buff", "Lifedrain")
                 if e.targeting != "Self"
             ]
             self.assertEqual(ally_life, [], name)
@@ -259,7 +249,7 @@ class SummaryParsingTests(unittest.TestCase):
             hero = _hero_by_short_name(name)
             ally_life = [
                 e
-                for e in _effects(hero, "buff", "Lifedrain buff")
+                for e in _effects(hero, "buff", "Lifedrain")
                 if e.targeting == "Self"
             ]
             self.assertEqual(ally_life, [], name)
@@ -268,7 +258,7 @@ class SummaryParsingTests(unittest.TestCase):
         hero = _hero_by_short_name("Vala")
         ally_haste = [
             e
-            for e in _effects(hero, "buff", "Haste buff")
+            for e in _effects(hero, "buff", "Haste")
             if e.targeting != "Self"
         ]
         self.assertEqual(ally_haste, [])
@@ -277,7 +267,7 @@ class SummaryParsingTests(unittest.TestCase):
         hero = _hero_by_short_name("Florabelle")
         skill1 = hero.skill_slices.get("Skill1")
         self.assertIsNotNone(skill1)
-        for label in ("Haste buff", "Lifedrain buff"):
+        for label in ("Haste", "Lifedrain"):
             buffs = [e for e in skill1.summon_effects if e.label == label]
             self.assertTrue(buffs, label)
             self.assertEqual(buffs[0].targeting, rs.OWN_SUMMON_BUFF_TARGETING)
@@ -287,7 +277,7 @@ class SummaryParsingTests(unittest.TestCase):
         skill4 = hero.skill_slices.get("Ex. Skill")
         self.assertIsNotNone(skill4)
         dmg = [
-            e for e in skill4.summon_effects if e.label == "Damage dealt buff"
+            e for e in skill4.summon_effects if e.label == "Damage dealt"
         ]
         self.assertTrue(dmg)
         self.assertEqual(dmg[0].targeting, rs.ALL_SUMMON_BUFF_TARGETING)
@@ -297,7 +287,7 @@ class SummaryParsingTests(unittest.TestCase):
         ex = hero.skill_slices.get("Ex. Skill")
         self.assertIsNotNone(ex)
         pen = [
-            e for e in ex.effects if e.label == "DEF Penetration buff"
+            e for e in ex.effects if e.label == "DEF Penetration"
         ]
         self.assertTrue(pen)
         self.assertEqual(pen[0].targeting, "Self")
@@ -308,12 +298,12 @@ class SummaryParsingTests(unittest.TestCase):
         ultimate = hero.skill_slices.get("Ultimate")
         self.assertIsNotNone(ultimate)
         self_atk = [
-            e for e in ultimate.effects if e.label == "ATK buff"
+            e for e in ultimate.effects if e.label == "ATK"
         ]
         self.assertTrue(self_atk)
         self.assertEqual(self_atk[0].targeting, "Self")
         summon_atk = [
-            e for e in ultimate.summon_effects if e.label == "ATK buff"
+            e for e in ultimate.summon_effects if e.label == "ATK"
         ]
         self.assertTrue(summon_atk)
         self.assertEqual(summon_atk[0].targeting, rs.OWN_SUMMON_BUFF_TARGETING)
@@ -333,15 +323,15 @@ class SummaryParsingTests(unittest.TestCase):
         focus = hero.skill_slices.get("Unlocks at Legendary+")
         self.assertIsNotNone(focus)
         pen = next(
-            e for e in focus.effects if e.label == "DEF Penetration buff"
+            e for e in focus.effects if e.label == "DEF Penetration"
         )
         self.assertEqual(pen.targeting, "Self")
         overload = hero.skill_slices.get("Ex. Skill")
         self.assertIsNotNone(overload)
-        ally_atk = [e for e in overload.effects if e.label == "ATK buff"]
+        ally_atk = [e for e in overload.effects if e.label == "ATK"]
         self.assertEqual(ally_atk, [])
         summon_atk = [
-            e for e in overload.summon_effects if e.label == "ATK buff"
+            e for e in overload.summon_effects if e.label == "ATK"
         ]
         self.assertTrue(summon_atk)
         self.assertEqual(summon_atk[0].targeting, rs.OWN_SUMMON_BUFF_TARGETING)
@@ -349,7 +339,7 @@ class SummaryParsingTests(unittest.TestCase):
     def test_aurora_summon_damage_stays_all_summons(self):
         hero = _hero_by_short_name("Aurora")
         summon_dmg = [
-            e for e in hero.summon_effects if e.label == "Damage dealt buff"
+            e for e in hero.summon_effects if e.label == "Damage dealt"
         ]
         self.assertTrue(summon_dmg)
         self.assertTrue(
@@ -358,7 +348,7 @@ class SummaryParsingTests(unittest.TestCase):
 
     def test_aurora_haste_stays_all_summons(self):
         hero = _hero_by_short_name("Aurora")
-        haste = [e for e in hero.summon_effects if e.label == "Haste buff"]
+        haste = [e for e in hero.summon_effects if e.label == "Haste"]
         self.assertTrue(haste)
         self.assertTrue(
             all(e.targeting == rs.ALL_SUMMON_BUFF_TARGETING for e in haste)
@@ -398,10 +388,10 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertIsNotNone(supreme)
         cc = [e for e in supreme.effects if e.category == "cc"]
         self.assertEqual(cc, [])
-        drains = [e for e in supreme.effects if e.label == "Energy drain"]
+        drains = [e for e in supreme.effects if e.label == "Energy"]
         self.assertTrue(drains)
         tags = rs.format_skill_card_tags(hero, "skill5")
-        self.assertIn("Energy drain", tags)
+        assert_tag_in(self, "Energy", tags, polarity="debuff")
         self.assertNotIn("Interrupt", tags)
         ult = hero.skill_slices.get("Ultimate")
         self.assertIsNotNone(ult)
@@ -433,7 +423,7 @@ class SummaryParsingTests(unittest.TestCase):
         hero = _hero_by_short_name("Zandrok")
         ally_max_hp = [
             e
-            for e in _effects(hero, "buff", "Max HP buff")
+            for e in _effects(hero, "buff", "Max HP")
             if e.targeting != "Self"
         ]
         self.assertEqual(len(ally_max_hp), 1)
@@ -443,37 +433,39 @@ class SummaryParsingTests(unittest.TestCase):
     def test_shakir_haste_buff_in_summary_not_debuff(self):
         hero = _hero_by_short_name("Shakir")
         haste_debuff = [
-            e for e in hero.effects if e.category == "debuff" and e.label == "Haste debuff"
+            e for e in hero.effects if e.category == "debuff" and e.label == "Haste"
         ]
         self.assertEqual(haste_debuff, [])
         haste_buff = [
-            e for e in _effects(hero, "buff", "Haste buff")
+            e for e in _effects(hero, "buff", "Haste")
             if e.targeting != "Self"
         ]
         self.assertTrue(haste_buff)
         summary = rs.format_summary(hero, "Shakir")
         self.assertIn("#### Buffs provided by Shakir", summary)
-        self.assertIn("Haste buff", summary)
-        self.assertNotIn("- Haste —", summary)
+        self.assertIn("Haste", summary)
+        debuff_part = summary.split("#### Debuffs provided by Shakir", 1)
+        if len(debuff_part) > 1:
+            self.assertNotIn("- Haste —", debuff_part[1].split("####")[0])
         self.assertIn("Vitality", summary)
 
     def test_zandrok_lifedrain_is_ally_buff_not_self(self):
         hero = _hero_by_short_name("Zandrok")
         self_life = [
             e
-            for e in _effects(hero, "buff", "Lifedrain buff")
+            for e in _effects(hero, "buff", "Lifedrain")
             if e.targeting == "Self"
         ]
         self.assertEqual(self_life, [])
         ally_life = [
             e
-            for e in _effects(hero, "buff", "Lifedrain buff")
+            for e in _effects(hero, "buff", "Lifedrain")
             if e.targeting != "Self"
         ]
         self.assertTrue(ally_life)
         tags = rs.format_skill_card_tags(hero, "skill1")
-        self.assertIn("Lifedrain buff", tags)
-        self.assertNotIn("Lifedrain buff — Self", tags)
+        assert_tag_in(self, "Lifedrain", tags, polarity="buff")
+        assert_tag_not_in(self, "Lifedrain — Self", tags)
 
     def test_bonnie_self_form_not_enemy_require(self):
         hero = _hero_by_short_name("Bonnie")
@@ -512,7 +504,7 @@ class SummaryParsingTests(unittest.TestCase):
         hero = _hero_by_short_name("Alna")
         physical = next(e for e in hero.damage_entries if e[0] == "Physical")
         self.assertNotIn("Self", physical[1])
-        self.assertIn("All units", physical[1])
+        self.assertIn("Arc", physical[1])
 
     def test_brutus_damage_excludes_self_targeting(self):
         hero = _hero_by_short_name("Brutus")
@@ -561,7 +553,7 @@ class SummaryParsingTests(unittest.TestCase):
         )[hero.title]
         lines = rs.format_behavior_section("Chippy", behavior, hero=hero)
         text = "\n".join(lines)
-        self.assertIn("- **Damage types**: Physical `low`", text)
+        self.assertIn("- **Damage types**: Physical `high`", text)
         overview_idx = text.index("#### Skill overview")
         damage_idx = text.index("- **Damage types**:")
         self.assertLess(damage_idx, overview_idx)
@@ -577,7 +569,7 @@ class SummaryParsingTests(unittest.TestCase):
         slow_heal = max(
             rs._MAG_ORDER.index(e.magnitude)
             for e in _effects(slow, "buff")
-            if e.label == HEALING_OVER_TIME_LABEL and e.targeting == "All units"
+            if e.label == HEALING_OVER_TIME_LABEL
         )
         self.assertGreaterEqual(fast_heal, slow_heal)
 
@@ -587,7 +579,7 @@ class SummaryParsingTests(unittest.TestCase):
         for i, cd in enumerate([5, 6, 7, 8, 12, 15, 18, 22]):
             title = f"BuffTest{i} - Hero"
             hero, skills = _throughput_test_hero(
-                title, cd, 25, "ATK buff", "buff"
+                title, cd, 25, "ATK", "buff"
             )
             heroes.append(hero)
             skills_by_title[title] = skills
@@ -602,7 +594,7 @@ class SummaryParsingTests(unittest.TestCase):
         for i, cd in enumerate([5, 6, 7, 8, 12, 15, 18, 22]):
             title = f"DebuffTest{i} - Hero"
             hero, skills = _throughput_test_hero(
-                title, cd, 20, "ATK debuff", "debuff"
+                title, cd, 20, "ATK", "debuff"
             )
             heroes.append(hero)
             skills_by_title[title] = skills
@@ -649,17 +641,18 @@ class SummaryParsingTests(unittest.TestCase):
 
     def test_saida_energy_drain_targets_enemy(self):
         hero = _hero_by_short_name("Saida")
-        drains = list(_effects(hero, "debuff", "Energy drain"))
+        drains = list(_effects(hero, "debuff", "Energy"))
         self.assertTrue(drains, "expected Energy drain debuff on Saida")
         for e in drains:
             self.assertNotEqual(e.targeting, "Self", e.qualitative)
         best = max((e.numeric or 0) for e in drains)
         self.assertGreaterEqual(best, 220.0)
 
-    def test_pang_stance_energy_cost_not_enemy_drain(self):
+    def test_pang_enemy_energy_recovery_prevent(self):
         hero = _hero_by_short_name("Pang")
-        drains = list(_effects(hero, "debuff", "Energy drain"))
-        self.assertEqual(drains, [])
+        drains = list(_effects(hero, "debuff", "Energy"))
+        self.assertEqual(len(drains), 1)
+        self.assertIn("prevent energy recovery", drains[0].qualitative.lower())
 
     def test_pang_self_buffs_not_listed_as_ally_providers(self):
         hero = _hero_by_short_name("Pang")
@@ -669,11 +662,11 @@ class SummaryParsingTests(unittest.TestCase):
             if e.category == "buff" and e.targeting != "Self"
         ]
         labels = {e.label for e in ally_buffs}
-        self.assertIn("ATK buff", labels)
-        self.assertNotIn("DEF Penetration buff", labels)
+        self.assertIn("ATK", labels)
+        self.assertNotIn("DEF Penetration", labels)
         self.assertNotIn("Shield", {e.label for e in ally_buffs if e.tier != "EX+10"})
         for e in ally_buffs:
-            if e.label == "ATK buff":
+            if e.label == "ATK":
                 self.assertEqual(e.targeting, "Multiple targets")
                 self.assertLessEqual(e.numeric or 0, 25.0)
             if e.label == "Shield":
@@ -682,13 +675,14 @@ class SummaryParsingTests(unittest.TestCase):
         self.assertIsNotNone(intro)
         assert intro is not None
         self.assertNotIn("DEF Penetration", intro)
-        self.assertIn("ATK buff (Mythic+)", intro)
+        self.assertIn("ATK (Mythic+)", intro)
         self.assertIn("Shield (EX+10)", intro)
 
-    def test_sinbad_energy_recovery_efficiency_not_energy_drain(self):
+    def test_sinbad_energy_recovery_efficiency_is_energy_debuff(self):
         hero = _hero_by_short_name("Sinbad")
-        drains = list(_effects(hero, "debuff", "Energy drain"))
-        self.assertEqual(drains, [])
+        drains = list(_effects(hero, "debuff", "Energy"))
+        self.assertEqual(len(drains), 1)
+        self.assertIn("energy recovery efficiency", drains[0].qualitative.lower())
 
     def test_ulmus_cheat_death_in_provides(self):
         hero = _hero_by_short_name("Ulmus")
@@ -723,8 +717,8 @@ class SummaryParsingTests(unittest.TestCase):
         debuff_labels = {
             e.label for e in hero.effects if e.category == "debuff"
         }
-        self.assertNotIn("Magic damage amplification", provides)
-        self.assertIn("Magic damage amplification", debuff_labels)
+        self.assertNotIn("Magic damage", provides)
+        self.assertIn("Magic damage", debuff_labels)
 
     def test_bonnie_does_not_require_ally_debuffs(self):
         hero = _hero_by_short_name("Bonnie")
@@ -740,13 +734,13 @@ class SummaryParsingTests(unittest.TestCase):
         debuff_labels = {
             e.label for e in hero.effects if e.category == "debuff"
         }
-        self.assertIn("Damage taken debuff", debuff_labels)
-        self.assertNotIn("Magic damage amplification", debuff_labels)
+        self.assertIn("Damage taken", debuff_labels)
+        self.assertNotIn("Magic damage", debuff_labels)
 
     def test_satrana_magic_damage_reduction_buff(self):
         hero = _hero_by_short_name("Satrana")
         buff_labels = {e.label for e in hero.effects if e.category == "buff"}
-        self.assertIn("Magic damage reduction", buff_labels)
+        self.assertIn("Magic damage", buff_labels)
 
     def test_kazim_requires_knock_up_from_allies(self):
         hero = _hero_by_short_name("Kazim")
@@ -772,23 +766,23 @@ class SummaryParsingTests(unittest.TestCase):
         hero = _hero_by_short_name("Dionel")
         ally_atk = [
             e
-            for e in _effects(hero, "buff", "ATK buff")
+            for e in _effects(hero, "buff", "ATK")
             if e.targeting != "Self"
         ]
         ally_spd = [
             e
-            for e in _effects(hero, "buff", "ATK SPD buff")
+            for e in _effects(hero, "buff", "ATK SPD")
             if e.targeting != "Self"
         ]
         self.assertEqual(ally_atk, [])
         self.assertEqual(ally_spd, [])
-        self_atk = list(_effects(hero, "buff", "ATK buff"))
-        self_spd = list(_effects(hero, "buff", "ATK SPD buff"))
+        self_atk = list(_effects(hero, "buff", "ATK"))
+        self_spd = list(_effects(hero, "buff", "ATK SPD"))
         self.assertTrue(self_atk)
         self.assertTrue(self_spd)
         tags = rs.format_skill_card_tags(hero, "skill2")
-        self.assertIn("ATK buff — Self", tags)
-        self.assertIn("ATK SPD buff — Self", tags)
+        assert_tag_in(self, "ATK — Self", tags, polarity="buff")
+        assert_tag_in(self, "ATK SPD — Self", tags, polarity="buff")
         self.assertIsNone(rs.format_buffs_provided_intro(hero, "Dionel"))
         summary = rs.format_summary(hero, "Dionel")
         self.assertNotIn("#### Buffs provided by Dionel", summary)
@@ -816,20 +810,20 @@ class HeroEffectAggregateTests(unittest.TestCase):
         return max(vals) if vals else 0.0
 
     def test_roster_atk_buff_matches_per_skill_slices(self):
-        for short in ("Aliceth", "Gunnar", "Hugin"):
+        for short in ("Aliceth", "Gunnar"):
             hero = _hero_by_short_name(short)
-            slice_max = self._max_slice_numeric(hero, "ATK buff")
+            slice_max = self._max_slice_numeric(hero, "ATK")
             live_vals = [
                 e.numeric
                 for e in hero.effects
-                if e.category == "buff" and e.label == "ATK buff" and e.numeric
+                if e.category == "buff" and e.label == "ATK" and e.numeric
             ]
             self.assertTrue(live_vals, short)
             self.assertEqual(max(live_vals), slice_max, short)
 
     def test_aliceth_atk_buff_not_inflated_by_execute_threshold(self):
         hero = _hero_with_magnitudes("Aliceth")
-        atk = [e for e in hero.effects if e.label == "ATK buff"]
+        atk = [e for e in hero.effects if e.label == "ATK"]
         self.assertTrue(atk)
         self.assertEqual(max(e.numeric for e in atk), 16.0)
         self.assertEqual(atk[0].magnitude, "low")

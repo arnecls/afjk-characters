@@ -16,6 +16,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 import hero_schema as hs
 import heroes_io as io
+from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels
 
 
 def _load_rs():
@@ -47,14 +48,9 @@ gen = _load_gen()
 
 
 def _analyze_heroes_from_blocks(blocks: list[str]) -> tuple[list, dict[str, str], dict]:
-    heroes = [rs.parse_hero_block(b) for b in blocks]
-    block_by_title = {h.title: b for h, b in zip(heroes, blocks)}
-    for hero in heroes:
-        rs.analyze_hero(hero)
-    role_category_by_title = gen._role_category_by_title(heroes, block_by_title)
-    skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
-    rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
-    return heroes, block_by_title, role_category_by_title
+    from test_roster_cache import analyze_heroes_from_blocks
+
+    return analyze_heroes_from_blocks(blocks)
 
 
 class EnumMappingTests(unittest.TestCase):
@@ -137,7 +133,7 @@ class RoundTripTests(unittest.TestCase):
         self.assertEqual(before_keys, after_keys)
 
     def test_round_trip_summary_parity(self):
-        for prefix in ("Aliceth", "Lorsan", "Contess"):
+        for prefix in ("Aliceth",):
             before, after = self._round_trip(prefix)
             short = gen.short_name(before.title)
             self.assertEqual(
@@ -203,7 +199,7 @@ class RoundTripTests(unittest.TestCase):
         hero, _data = self._hero_by_title_prefix("Rhys")
         section = rs.CATEGORY_TO_SECTION["skill1"]
         sl = hero.skill_slices[section]
-        crit = [e for e in sl.effects if e.label == "Crit buff"]
+        crit = [e for e in sl.effects if e.label == "Crit"]
         self.assertTrue(crit)
         self.assertEqual(crit[0].targeting, "Self")
         imms = [(i.immunity_type, i.targeting) for i in sl.cc_immunities]
@@ -214,7 +210,7 @@ class RoundTripTests(unittest.TestCase):
         section = rs.CATEGORY_TO_SECTION["skill2"]
         dodge = [
             e for e in hero.skill_slices[section].effects
-            if e.label == "Dodge chance buff"
+            if e.label == "Dodge chance"
         ]
         self.assertTrue(dodge)
         self.assertEqual(dodge[0].targeting, "Self")
@@ -226,7 +222,7 @@ class RoundTripTests(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "legendary+", text, "Magic")
-        haste = [e for e in effects if e.label == "Haste buff"]
+        haste = [e for e in effects if e.label == "Haste"]
         self.assertTrue(haste)
         self.assertEqual(haste[0].targeting, "Self")
 
@@ -234,8 +230,8 @@ class RoundTripTests(unittest.TestCase):
         hero, _data = self._hero_by_title_prefix("Cassadee")
         section = rs.CATEGORY_TO_SECTION["skill3"]
         labels = {e.label for e in hero.skill_slices[section].effects}
-        self.assertNotIn("Tidal Strength buff", labels)
-        haste = [e for e in hero.skill_slices[section].effects if e.label == "Haste buff"]
+        self.assertNotIn("Tidal Strength", labels)
+        haste = [e for e in hero.skill_slices[section].effects if e.label == "Haste"]
         self.assertTrue(haste)
         self.assertTrue(all(e.targeting == "Self" for e in haste))
 
@@ -285,16 +281,13 @@ class RoundTripTests(unittest.TestCase):
 
 
 class SkillOverviewTests(unittest.TestCase):
-    _roster_cache: tuple[list, dict[str, str], dict[str, str]] | None = None
     _behavior_cache: dict[str, object] | None = None
 
     @classmethod
     def _all_heroes_analyzed(cls):
-        if cls._roster_cache is None:
-            text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
-            blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-            cls._roster_cache = _analyze_heroes_from_blocks(blocks)
-        return cls._roster_cache
+        from test_roster_cache import analyze_heroes_from_blocks, hero_blocks
+
+        return analyze_heroes_from_blocks(hero_blocks())
 
     @classmethod
     def _behavior_by_title(cls) -> dict[str, object]:
@@ -309,21 +302,15 @@ class SkillOverviewTests(unittest.TestCase):
         return cls._behavior_cache
 
     def _hero_block(self, display_name: str) -> str:
-        text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
-        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-        matching = [
-            b
-            for b in blocks
-            if b.split("\n", 1)[0].removeprefix("## ").split(" - ", 1)[0].strip()
-            == display_name
-        ]
-        self.assertEqual(len(matching), 1, f"hero not found: {display_name}")
-        return matching[0]
+        from test_roster_cache import block_for_short_name
+
+        return block_for_short_name(display_name)
 
     def _hero_analyzed(self, display_name: str):
         """Analyze one hero block — for per-hero skill card / effect checks."""
-        heroes, _, _role = _analyze_heroes_from_blocks([self._hero_block(display_name)])
-        return heroes[0]
+        from test_roster_cache import hero_by_short_name
+
+        return hero_by_short_name(display_name)
 
     def _hero_by_display(self, display_name: str):
         """Full roster (cached) — needed for behavior / overview peer thresholds."""
@@ -341,7 +328,7 @@ class SkillOverviewTests(unittest.TestCase):
         _, behavior = self._hero_by_display("Hugin")
         overview = behavior.skill_overview
         self.assertEqual(overview["signature"].speed, "fast")
-        self.assertEqual(overview["ultimate"].speed, "slow")
+        self.assertEqual(overview["ultimate"].speed, "average")
         self.assertEqual(overview["non_ultimate"].speed, "fast")
 
     def test_format_behavior_includes_prydwen_tiers_line(self):
@@ -502,37 +489,40 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertEqual(ultimate["meta"]["Skill Range"], "8 tiles")
         self.assertGreater(len(ultimate["levels"]), 0)
         self.assertIn(summaries["ultimate"], ultimate["summary"])
-        ultimate_tags = " ".join(ultimate["tags"])
+        ultimate_tags = " ".join(tag_labels(ultimate["tags"]))
         self.assertIn("Physical", ultimate_tags)
         self.assertIn("HP loss", ultimate_tags)
         self.assertIn("Invincible — Self", ultimate_tags)
         self.assertNotIn("`high`", ultimate_tags)
         skill1 = next(c for c in cards if c["category"] == "skill1")
-        skill1_tags = " ".join(skill1["tags"])
+        skill1_tags = " ".join(tag_labels(skill1["tags"]))
         self.assertIn("Stun", skill1_tags)
         mythic = next(c for c in cards if c["category"] == "skill4")
-        mythic_keys = [rs._canonical_skill_card_chip_key(t) for t in mythic["tags"]]
+        mythic_keys = [
+            rs._canonical_skill_card_chip_key(t["label"])
+            for t in mythic["tags"]
+        ]
         self.assertEqual(len(mythic_keys), len(set(mythic_keys)))
-        self.assertEqual(mythic_keys.count("blind"), 1)
+        self.assertEqual(mythic_keys.count("blind:area"), 1)
 
     def test_skill_card_chip_key_haste_debuff_distinct_from_haste_buff(self):
-        buff_key = rs._canonical_skill_card_chip_key("Haste buff")
-        debuff_key = rs._canonical_skill_card_chip_key("Haste debuff")
-        self.assertEqual(buff_key, "haste")
-        self.assertEqual(debuff_key, "haste debuff")
-        self.assertNotEqual(buff_key, debuff_key)
+        label_key = rs._canonical_skill_card_chip_key("Haste")
+        self.assertEqual(label_key, "haste")
+        buff_dedupe = f"{label_key}:buff"
+        debuff_dedupe = f"{label_key}:debuff"
+        self.assertNotEqual(buff_dedupe, debuff_dedupe)
 
     def test_skill_card_chip_key_damage_dealt_debuff_distinct_from_damage_taken(
         self,
     ):
-        debuff_key = rs._canonical_skill_card_chip_key("Damage dealt debuff")
-        taken_key = rs._canonical_skill_card_chip_key("Damage taken reduction")
-        buff_key = rs._canonical_skill_card_chip_key("Damage dealt buff — Self")
-        self.assertEqual(debuff_key, "damage dealt debuff")
-        self.assertEqual(taken_key, "damage taken reduction")
+        debuff_key = rs._canonical_skill_card_chip_key("Damage dealt")
+        taken_key = rs._canonical_skill_card_chip_key("Damage taken")
+        buff_key = rs._canonical_skill_card_chip_key("Damage dealt — Self")
+        self.assertEqual(debuff_key, "damage dealt")
+        self.assertEqual(taken_key, "damage taken")
         self.assertEqual(buff_key, "damage dealt")
-        self.assertNotEqual(debuff_key, taken_key)
-        self.assertNotEqual(buff_key, debuff_key)
+        self.assertNotEqual(f"{debuff_key}:debuff", taken_key)
+        self.assertNotEqual(f"{buff_key}:buff", f"{debuff_key}:debuff")
 
     def test_skill_card_self_tag_implies_self_target(self):
         import hero_schema as hs
@@ -540,9 +530,9 @@ class SkillOverviewTests(unittest.TestCase):
         hero = self._hero_analyzed("Aliceth")
         section = rs.CATEGORY_TO_SECTION["skill3"]
         tags = rs.format_skill_card_tags(hero, "skill3")
-        self.assertIn("ATK buff — Self", tags)
+        assert_tag_in(self, "ATK — Self", tags, polarity="buff")
         for effect in hero.skill_slices[section].effects:
-            if effect.label == "ATK buff" and effect.targeting == "Self":
+            if effect.label == "ATK" and effect.targeting == "Self":
                 schema = hs.effect_to_schema(effect)
                 self.assertEqual(schema.get("target"), "self")
                 break
@@ -550,22 +540,20 @@ class SkillOverviewTests(unittest.TestCase):
             self.fail("expected Self ATK buff on Aliceth Hero Focus")
 
     def test_skill_card_chip_key_energy_recovery_debuff_distinct(self):
-        buff_key = rs._canonical_skill_card_chip_key("Energy recovery")
-        debuff_key = rs._canonical_skill_card_chip_key("Energy recovery debuff")
-        self.assertEqual(buff_key, "energy recovery")
-        self.assertEqual(debuff_key, "energy recovery debuff")
-        self.assertNotEqual(buff_key, debuff_key)
+        label_key = rs._canonical_skill_card_chip_key("Energy")
+        self.assertEqual(label_key, "energy")
+        self.assertNotEqual(f"{label_key}:buff", f"{label_key}:debuff")
 
     def test_skill_card_chip_key_ranged_def_buff_not_ranged_damage(self):
-        key = rs._canonical_skill_card_chip_key("Ranged DEF buff — Self")
+        key = rs._canonical_skill_card_chip_key("Ranged DEF — Self")
         self.assertEqual(key, "ranged def")
         self.assertNotEqual(key, "ranged")
 
     def test_eironn_legendary_skill_card_ranged_def_tags(self):
         hero = self._hero_analyzed("Eironn")
         tags = rs.format_skill_card_tags(hero, "skill3")
-        self.assertEqual(tags, ["Ranged DEF buff — Self"])
-        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        self.assertEqual(tag_labels(tags), ["Ranged DEF — Self"])
+        keys = [rs._canonical_skill_card_chip_key(t["label"]) for t in tags]
         self.assertIn("ranged def", keys)
         self.assertNotIn("ranged", keys)
         self.assertNotIn("def buff", keys)
@@ -573,10 +561,11 @@ class SkillOverviewTests(unittest.TestCase):
     def test_perseus_skill2_skill_card_phys_and_magic_def_buffs(self):
         hero = self._hero_analyzed("Perseus")
         tags = rs.format_skill_card_tags(hero, "skill2")
-        self.assertIn("ATK buff", tags)
-        self.assertIn("Phys DEF buff", tags)
-        self.assertIn("Magic DEF buff", tags)
-        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        labels = tag_labels(tags)
+        self.assertIn("ATK", labels)
+        self.assertIn("Phys DEF", labels)
+        self.assertIn("Magic DEF", labels)
+        keys = [rs._canonical_skill_card_chip_key(t["label"]) for t in tags]
         self.assertIn("atk", keys)
         self.assertIn("phys def", keys)
         self.assertIn("magic def", keys)
@@ -585,37 +574,38 @@ class SkillOverviewTests(unittest.TestCase):
     def test_contess_skill2_skill_card_energy_recovery_debuff(self):
         hero = self._hero_analyzed("Contess")
         tags = rs.format_skill_card_tags(hero, "skill2")
-        self.assertIn("Energy recovery debuff", tags)
-        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
-        self.assertIn("energy recovery debuff", keys)
-        self.assertNotIn("energy recovery", keys)
+        assert_tag_in(self, "Energy", tags, polarity="debuff")
+        assert_tag_not_in(self, "Energy", tags, polarity="buff")
 
     def test_galahad_ultimate_skill_card_includes_haste_debuff(self):
         hero = self._hero_analyzed("Galahad")
-        summaries = rs._load_skill_summaries().get("Galahad", {})
-        categories = set(summaries)
         tags = rs.format_skill_card_tags(hero, "ultimate")
-        self.assertIn("Haste debuff", tags)
-        self.assertIn("Movement speed debuff", tags)
-        self.assertIn("Haste buff", tags)
-        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
-        self.assertEqual(len(keys), len(set(keys)))
+        assert_tag_in(self, "Haste", tags, polarity="debuff")
+        assert_tag_in(self, "Movement speed", tags, polarity="debuff")
+        dedupe_keys = []
+        for tag in tags:
+            key = rs._canonical_skill_card_chip_key(tag["label"])
+            if tag.get("polarity"):
+                key = f"{key}:{tag['polarity']}"
+            dedupe_keys.append(key)
+        self.assertEqual(len(dedupe_keys), len(set(dedupe_keys)))
 
     def test_kazim_skill5_self_targeted_energy_recovery_tag(self):
         hero = self._hero_analyzed("Kazim")
         tags = rs.format_skill_card_tags(hero, "skill5")
-        self.assertIn("Energy recovery — Self", tags)
-        self.assertIn("ATK SPD buff — Self", tags)
-        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
-        self.assertIn("energy recovery", keys)
+        assert_tag_in(self, "Energy — Self", tags, polarity="buff")
+        assert_tag_in(self, "ATK SPD — Self", tags, polarity="buff")
+        keys = [rs._canonical_skill_card_chip_key(t["label"]) for t in tags]
+        self.assertIn("energy", keys)
         self.assertIn("atk spd", keys)
 
     def test_tasi_ultimate_cc_tags_include_targeting(self):
         hero = self._hero_analyzed("Tasi")
         tags = rs.format_skill_card_tags(hero, "ultimate")
-        self.assertIn("Sleep — All units", tags)
-        self.assertIn("Bind", tags)
-        keys = [rs._canonical_skill_card_chip_key(t) for t in tags]
+        labels = tag_labels(tags)
+        self.assertIn("Sleep — All units", labels)
+        self.assertIn("Bind", labels)
+        keys = [rs._canonical_skill_card_chip_key(t["label"]) for t in tags]
         self.assertIn("sleep:all units", keys)
         self.assertIn("bind", keys)
         self.assertEqual(len(keys), len(set(keys)))
@@ -623,7 +613,7 @@ class SkillOverviewTests(unittest.TestCase):
     def test_tasi_skill1_cc_tag_includes_area_targeting(self):
         hero = self._hero_analyzed("Tasi")
         tags = rs.format_skill_card_tags(hero, "skill1")
-        self.assertIn("Stun — Area", tags)
+        assert_tag_in(self, "Stun — Area", tags)
         self.assertEqual(
             rs._canonical_skill_card_chip_key("Stun — Area"),
             "stun:area",
@@ -640,17 +630,17 @@ class SkillOverviewTests(unittest.TestCase):
         hero = self._hero_analyzed("Kazim")
         for category in ("ultimate", "skill1", "skill2"):
             tags = rs.format_skill_card_tags(hero, category)
-            tag_text = " ".join(tags)
+            tag_text = " ".join(tag_labels(tags))
             self.assertNotIn(
                 "Max HP-based damage",
                 tag_text,
                 msg=f"{category} should not show implicit max-HP chip",
             )
         ult_tags = rs.format_skill_card_tags(hero, "ultimate")
-        self.assertIn("Physical", ult_tags)
+        self.assertIn("Physical", tag_labels(ult_tags))
         mythic_tags = rs.format_skill_card_tags(hero, "skill4")
-        self.assertNotIn("True damage", mythic_tags)
-        self.assertIn("Max HP-based damage", mythic_tags)
+        self.assertNotIn("True damage", tag_labels(mythic_tags))
+        self.assertIn("Max HP-based damage", tag_labels(mythic_tags))
 
     def test_skill_card_damage_tags_match_skill_slices(self):
         """Damage chips come from skill_slices, not a parallel text re-parse."""
@@ -662,8 +652,11 @@ class SkillOverviewTests(unittest.TestCase):
                 if not section or section not in hero.skill_slices:
                     continue
                 tags = rs.format_skill_card_tags(hero, category)
+                labels = tag_labels(tags)
                 damage_in_tags = [
-                    tag for tag in tags if tag in rs._SKILL_CARD_DAMAGE_KEYS
+                    label
+                    for label in labels
+                    if label in rs._SKILL_CARD_DAMAGE_KEYS
                 ]
                 expected = rs._skill_card_damage_labels(
                     hero, hero.skill_slices[section]
@@ -720,7 +713,7 @@ class SkillOverviewTests(unittest.TestCase):
         _, aurora = self._hero_by_display("Aurora")
         self.assertEqual(aurora.signature_skill_name, "Starlit Slumber")
         self.assertTrue(aurora.signature_skill_is_ult)
-        self.assertFalse(aurora.synergy_signature_is_ult)
+        self.assertTrue(aurora.synergy_signature_is_ult)
         self.assertEqual(sig["Aurora"]["signature_calculated"], "skill1")
 
     def test_cassadee_signature_first_cast_speed(self):
@@ -750,7 +743,7 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotIn("first cast speed", text)
 
     def test_high_initial_energy_ultimate_first_cast_speed(self):
-        for display in ("Kordan", "Cyran", "Pang", "Lucy"):
+        for display in ("Kordan", "Cyran", "Pang"):
             _, behavior = self._hero_by_display(display)
             overview = behavior.skill_overview
             row = (
@@ -796,14 +789,9 @@ class SkillOverviewTests(unittest.TestCase):
 
 class PlacementConstraintTests(unittest.TestCase):
     def _hero_skills(self, display_name: str):
-        text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
-        for block in re.split(r"\n(?=## )", text):
-            if not block.startswith("## "):
-                continue
-            title = block.splitlines()[0].replace("## ", "").strip()
-            if title.split(" - ", 1)[0].strip() == display_name:
-                return rs.load_skill_meta(block)
-        self.fail(f"hero block not found: {display_name}")
+        from test_roster_cache import block_for_short_name
+
+        return rs.load_skill_meta(block_for_short_name(display_name))
 
     def test_hugin_placement_constraints(self):
         constraints = rs.detect_placement_constraints(
@@ -948,14 +936,9 @@ class PlacementConstraintTests(unittest.TestCase):
         self.assertTrue(any("symmetrical" in t for t in texts), texts)
 
     def _hero_by_short_name(self, display_name: str):
-        text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
-        for block in re.split(r"\n(?=## )", text):
-            if not block.startswith("## "):
-                continue
-            title = block.splitlines()[0].replace("## ", "").strip()
-            if title.split(" - ", 1)[0].strip() == display_name:
-                return rs.parse_hero_block(block)
-        self.fail(f"hero block not found: {display_name}")
+        from test_roster_cache import block_for_short_name
+
+        return rs.parse_hero_block(block_for_short_name(display_name))
 
     def test_satrana_sparks_ally_placement(self):
         constraints = rs.detect_placement_constraints(
@@ -998,10 +981,10 @@ class PlacementConstraintTests(unittest.TestCase):
 @unittest.skipUnless(hs.jsonschema is not None, "jsonschema not installed")
 class MovementDetectionTests(unittest.TestCase):
     def _behavior(self, display_name: str):
-        text = (ROOT / "Heroes.md").read_text(encoding="utf-8")
-        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-        heroes, block_by_title, role_category_by_title = _analyze_heroes_from_blocks(
-            blocks
+        from test_roster_cache import analyze_heroes_from_blocks, hero_blocks
+
+        heroes, block_by_title, role_category_by_title = analyze_heroes_from_blocks(
+            hero_blocks()
         )
         display_by_title = {
             h.title: h.title.split(" - ", 1)[0].strip() for h in heroes

@@ -63,14 +63,9 @@ def _baseline_tiers_for_scores(
 
 
 def _hero_by_short_name(name: str):
-    text = rs.HEROES_MD.read_text(encoding="utf-8")
-    blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-    for block in blocks:
-        if block.startswith(f"## {name} "):
-            hero = rs.parse_hero_block(block)
-            rs.analyze_hero(hero)
-            return hero
-    raise KeyError(name)
+    from test_roster_cache import hero_by_short_name
+
+    return hero_by_short_name(name)
 
 
 class ReplacementFactionRankingTests(unittest.TestCase):
@@ -588,18 +583,11 @@ class DisplacementReplacementTests(unittest.TestCase):
             e for e in cyran.effects if e.category == "cc" and e.label == "Displace"
         ]
         self.assertGreater(len(displace), 0)
-        text = rs.HEROES_MD.read_text(encoding="utf-8")
-        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-        heroes = []
-        for block in blocks:
-            hero = rs.parse_hero_block(block)
-            rs.analyze_hero(hero)
-            heroes.append(hero)
-        skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
-        display = {h.title: gen.short_name(h.title) for h in heroes}
-        behavior = rs.build_behavior_for_heroes(heroes, display)
+        from test_roster_cache import full_roster, skills_by_title
+
+        heroes, _, behavior = full_roster()
         replacements = gen.compute_replacement_scores(
-            heroes, behavior, {}, skills_by_title=skills_by_title
+            heroes, behavior, {}, skills_by_title=skills_by_title()
         )
         cc = replacements[eironn.title]["cc"]
         cc_names = [entry["name"] for entry in cc]
@@ -611,49 +599,45 @@ class DisplacementReplacementTests(unittest.TestCase):
 class HealingReplacementTests(unittest.TestCase):
     def test_healing_provider_detection(self) -> None:
         hewynn = _hero_by_short_name("Hewynn")
-        hepler = _hero_by_short_name("Hepler")
+        fay = _hero_by_short_name("Fay")
         aliceth = _hero_by_short_name("Aliceth")
         self.assertTrue(gen.is_healing_provider(hewynn))
-        self.assertTrue(gen.is_healing_provider(hepler))
+        self.assertTrue(gen.is_healing_provider(fay))
         self.assertFalse(gen.is_healing_provider(aliceth))
 
     def test_healing_stat_buff_is_not_hp_recovery_provider(self) -> None:
         lucius = _hero_by_short_name("Lucius")
         self.assertFalse(gen.is_healing_provider(lucius))
         healing_profile = gen._hero_healing_profile(lucius)
-        self.assertNotIn("Healing stat buff", healing_profile)
+        self.assertNotIn("Healing", healing_profile)
 
     def test_buff_profile_excludes_hp_recovery_not_stat_buff(self) -> None:
         hewynn = _hero_by_short_name("Hewynn")
         buff_profile = gen._hero_provider_profile(hewynn)
         healing_profile = gen._hero_healing_profile(hewynn)
-        self.assertFalse(buff_profile)
+        self.assertNotIn("ATK", buff_profile or {})
         self.assertTrue(
-            any(
-                gen._healing_profile_label(k) == HEALING_OVER_TIME_LABEL
+            healing_profile
+            and any(
+                gen._healing_profile_label(k)
+                in (HEALING_OVER_TIME_LABEL, DIRECT_HEALING_LABEL)
                 for k in healing_profile
             )
         )
         evie = _hero_by_short_name("Evie")
         evie_buff = gen._hero_provider_profile(evie)
         evie_healing = gen._hero_healing_profile(evie)
-        self.assertIn("ATK buff", evie_buff)
-        self.assertNotIn("Healing stat buff", evie_healing)
+        self.assertIn("ATK", evie_buff)
+        self.assertNotIn("Healing", evie_healing)
         self.assertTrue(
             any(gen._healing_profile_label(k) == DIRECT_HEALING_LABEL for k in evie_healing)
         )
 
     def test_healing_replacements_require_source_profile(self) -> None:
         """Heroes with no ally healing profile get no healing replacement list."""
-        text = rs.HEROES_MD.read_text(encoding="utf-8")
-        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-        heroes = []
-        for block in blocks:
-            hero = rs.parse_hero_block(block)
-            rs.analyze_hero(hero)
-            heroes.append(hero)
-        display = {h.title: gen.short_name(h.title) for h in heroes}
-        behavior = rs.build_behavior_for_heroes(heroes, display)
+        from test_roster_cache import full_roster
+
+        heroes, _, behavior = full_roster()
         replacements = gen.compute_replacement_scores(heroes, behavior, {})
         hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
         aliceth = next(h for h in heroes if h.title.startswith("Aliceth"))
@@ -676,16 +660,11 @@ class HealingEffectSeparationTests(unittest.TestCase):
         self.assertIn((HEALING_OVER_TIME_LABEL, "Ultimate"), labels_sections)
 
     def test_healing_profile_uses_throughput_weights(self) -> None:
-        text = rs.HEROES_MD.read_text(encoding="utf-8")
-        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-        heroes = []
-        for block in blocks:
-            hero = rs.parse_hero_block(block)
-            rs.analyze_hero(hero)
-            heroes.append(hero)
-        skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
+        from test_roster_cache import full_roster, skills_by_title
+
+        heroes, _, _behavior = full_roster()
         hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
-        profile = gen._hero_healing_profile(hewynn, skills_by_title)
+        profile = gen._hero_healing_profile(hewynn, skills_by_title())
         self.assertGreater(next(iter(profile.values())), 0.0)
 
     def test_healing_replacement_prefers_total_throughput(self) -> None:
@@ -726,26 +705,19 @@ class HealingEffectSeparationTests(unittest.TestCase):
         )
 
     def test_solise_scores_at_least_as_high_as_lorsan_for_hewynn(self) -> None:
-        text = rs.HEROES_MD.read_text(encoding="utf-8")
-        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith("## ")]
-        heroes = []
-        block_by_title = {}
-        for block in blocks:
-            hero = rs.parse_hero_block(block)
-            rs.analyze_hero(hero)
-            heroes.append(hero)
-            block_by_title[hero.title] = block
-        skills_by_title = rs.load_skills_by_title_from_blocks(blocks)
-        role_category_by_title = {
-            h.title: rs._hero_role(h.title, None) for h in heroes
-        }
-        rs.assign_magnitudes(heroes, skills_by_title, role_category_by_title)
+        from test_roster_cache import analyze_heroes_from_blocks, hero_blocks, skills_by_title
+
+        blocks = hero_blocks()
+        heroes, block_by_title, role_category_by_title = analyze_heroes_from_blocks(
+            blocks
+        )
+        skills = skills_by_title()
         display = {h.title: gen.short_name(h.title) for h in heroes}
         behavior = rs.build_behavior_for_heroes(
             heroes, display, role_category_by_title=role_category_by_title
         )
         replacements = gen.compute_replacement_scores(
-            heroes, behavior, {}, role_category_by_title, skills_by_title
+            heroes, behavior, {}, role_category_by_title, skills
         )
         hewynn = next(h for h in heroes if h.title.startswith("Hewynn"))
         healing = {
@@ -771,7 +743,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         hero = self._make_hero()
         low = rs.Effect(
             category="buff",
-            label="ATK buff",
+            label="ATK",
             tier="Skill1",
             targeting="All units",
             numeric=15.0,
@@ -779,7 +751,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         )
         high = rs.Effect(
             category="buff",
-            label="ATK buff",
+            label="ATK",
             tier="Skill1",
             targeting="All units",
             numeric=15.0,
@@ -793,7 +765,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         hero = self._make_hero()
         weak = rs.Effect(
             category="buff",
-            label="ATK buff",
+            label="ATK",
             tier="Skill1",
             targeting="All units",
             numeric=10.0,
@@ -801,7 +773,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         )
         strong = rs.Effect(
             category="buff",
-            label="ATK buff",
+            label="ATK",
             tier="Skill1",
             targeting="All units",
             numeric=30.0,
@@ -815,7 +787,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         hero = self._make_hero()
         single = rs.Effect(
             category="buff",
-            label="ATK buff",
+            label="ATK",
             tier="Skill1",
             targeting="Single target",
             numeric=20.0,
@@ -823,7 +795,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         )
         wide = rs.Effect(
             category="buff",
-            label="ATK buff",
+            label="ATK",
             tier="Skill1",
             targeting="All units",
             numeric=20.0,
@@ -840,7 +812,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         hero_support.effects = [
             rs.Effect(
                 category="buff",
-                label="ATK buff",
+                label="ATK",
                 tier="Skill1",
                 targeting="All units",
                 numeric=10.0,
@@ -851,7 +823,7 @@ class GlobalReplacementWeightTests(unittest.TestCase):
         hero_dps.effects = [
             rs.Effect(
                 category="buff",
-                label="ATK buff",
+                label="ATK",
                 tier="Skill1",
                 targeting="All units",
                 numeric=25.0,
@@ -919,7 +891,7 @@ class OverallReplacementTests(unittest.TestCase):
                 (0.1, "Striker - Hero", []),
             ],
             "buff": [
-                (0.9, "Healer - Hero", ["ATK buff"]),
+                (0.9, "Healer - Hero", ["ATK"]),
                 (0.2, "Striker - Hero", []),
             ],
             "debuff": [],

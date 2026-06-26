@@ -31,6 +31,17 @@ download:
 validate: ensure-venv
     .venv/bin/python scripts/validate_processed.py
 
+# Parallel pytest (~2–3 min after caching). Uses -n auto when peak RSS ≤ 1.5 GB.
+test: ensure-venv
+    #!/usr/bin/env bash
+    set -euo pipefail
+    workers="$(.venv/bin/python scripts/test_parallel_workers.py)"
+    .venv/bin/python -m pytest scripts/ -n "$workers"
+
+# Stream one line per test (serial, ~4–5 min with cache). For debugging failures.
+test-serial: ensure-venv
+    .venv/bin/python -m unittest discover -s scripts -p 'test_*.py' -v
+
 # Analyse data/heroes_data.json -> processed + synergies JSON.
 analyze: ensure-venv
     .venv/bin/python scripts/process_heroes.py
@@ -48,10 +59,12 @@ render-heroes:
 render-overview:
     python3 scripts/render_overview.py
 
-# Build site/data from overview views and cache missing portraits.
+# Build site/data from overview views and cache missing portraits, and bundle JS assets.
 render-site: render-overview
     python3 scripts/render_site.py
     python3 scripts/download_hero_images.py
+    python3 scripts/bundle_js.py
+
 
 # Render all view files.
 render: render-heroes render-site

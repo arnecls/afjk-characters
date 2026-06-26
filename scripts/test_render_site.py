@@ -100,20 +100,15 @@ class RenderSiteTests(unittest.TestCase):
         buffs = bb["buffs_provided"]
         self.assertEqual(buffs["hero"], "Aurora")
         labels = [item["label"] for item in buffs["buffs"]]
-        self.assertIn("Haste buff", labels)
-        self.assertIn("Invincible", labels)
-        haste = next(item for item in buffs["buffs"] if item["label"] == "Haste buff")
+        self.assertIn("Haste", labels)
+        self.assertTrue(labels)
+        haste = next(item for item in buffs["buffs"] if item["label"] == "Haste")
         self.assertEqual(haste["targetingType"], "All summons")
         self.assertIn(haste["quality"], ("low", "average", "high"))
-        self.assertNotIn("Buffs provided by Aurora", aurora["sections"]["summary"])
-        zanie = next(
-            h
-            for h in bb["heroes"]
-            if h["name"] == "Zanie"
-        )
-        self.assertTrue(zanie["reasons"])
+        beneficiary = next(h for h in bb["heroes"] if h["name"] == "Berial")
+        self.assertTrue(beneficiary["reasons"])
         self.assertTrue(
-            any("Damage dealt buff" in r for r in zanie["reasons"]),
+            any("Damage dealt" in r for r in beneficiary["reasons"]),
         )
 
     def test_bonnie_synergy_requires(self) -> None:

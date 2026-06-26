@@ -59,14 +59,14 @@ class ProximityDetectionTests(unittest.TestCase):
         cls.twins = twins
 
     def test_shakir_detects_proximity_haste(self) -> None:
-        self.assertIn("Haste buff", self.shakir.proximity_aura_buff_labels)
+        self.assertIn("Haste", self.shakir.proximity_aura_buff_labels)
         self.assertIn(
-            "Damage taken reduction", self.shakir.proximity_aura_buff_labels
+            "Damage taken", self.shakir.proximity_aura_buff_labels
         )
         self.assertEqual(self.shakir.proximity_aura_radius, 2.0)
 
     def test_twins_global_haste_not_proximity(self) -> None:
-        self.assertNotIn("Haste buff", self.twins.proximity_aura_buff_labels)
+        self.assertNotIn("Haste", self.twins.proximity_aura_buff_labels)
 
 
 class ProximityReachGateTests(unittest.TestCase):
@@ -176,14 +176,14 @@ class PositionalTileRegressionTests(unittest.TestCase):
         provider.effects = [
             rs.Effect(
                 category="buff",
-                label="ATK buff",
+                label="ATK",
                 tier="base",
                 targeting="Single target",
                 magnitude="high",
                 qualitative="tile buff",
             )
         ]
-        provider.positional_tile_buff_labels = frozenset({"ATK buff"})
+        provider.positional_tile_buff_labels = frozenset({"ATK"})
         provider.proximity_aura_buff_labels = frozenset()
         receiver = rs.Hero(title="Recv - Test", damage_type="Physical")
         receiver.benefit_stats = ["ATK"]

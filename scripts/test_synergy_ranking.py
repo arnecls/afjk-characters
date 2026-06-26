@@ -202,7 +202,7 @@ class ObviousStatBufferDisplayTests(unittest.TestCase):
         twins = {
             "provider": "Twins",
             "score": 11.0,
-            "reasons": ["ATK via ATK buff (multiple targets, average)"],
+            "reasons": ["ATK via ATK (multiple targets, average)"],
         }
         self.assertTrue(
             gen.should_filter_obvious_stat_buffer_pick(twins, counts, 20)
@@ -214,7 +214,7 @@ class ObviousStatBufferDisplayTests(unittest.TestCase):
             "provider": "Twins",
             "score": 11.0,
             "reasons": [
-                "ATK via ATK buff (multiple targets, average)",
+                "ATK via ATK (multiple targets, average)",
                 "Enables Magic damage from allies via Magic damage (area)",
             ],
         }
@@ -229,14 +229,14 @@ class ObviousStatBufferDisplayTests(unittest.TestCase):
                 "provider": "Evie",
                 "score": 14.0,
                 "reasons": [
-                    "ATK via ATK buff (multiple targets, high)",
+                    "ATK via ATK (multiple targets, high)",
                     "Enables Magic damage from allies via Magic damage",
                 ],
             },
             {
                 "provider": "Twins",
                 "score": 11.0,
-                "reasons": ["ATK via ATK buff (multiple targets, average)"],
+                "reasons": ["ATK via ATK (multiple targets, average)"],
             },
             {
                 "provider": "Satrana",
@@ -289,10 +289,10 @@ class SynergyStatBuffReachTests(unittest.TestCase):
     def test_synergy_stat_buff_reach_is_flat_for_all_receivers(self) -> None:
         receiver = self._receiver()
         multi, _ = gen.score_synergy(
-            self._buff_provider("ATK buff", "Multiple targets"), receiver
+            self._buff_provider("ATK", "Multiple targets"), receiver
         )
         single, _ = gen.score_synergy(
-            self._buff_provider("ATK buff", "Single target"), receiver
+            self._buff_provider("ATK", "Single target"), receiver
         )
         receiver_shield = SimpleNamespace(
             title="Tank - Hero",
@@ -316,9 +316,9 @@ class SynergyStatBuffReachTests(unittest.TestCase):
 
 class SynergySelfFilterTests(unittest.TestCase):
     def test_hero_not_listed_as_own_synergy_partner(self) -> None:
-        from test_beneficiaries import _full_roster
+        from test_roster_cache import full_roster
 
-        heroes, matchers, behavior = _full_roster()
+        heroes, matchers, behavior = full_roster()
         lyca = next(h for h in heroes if gen.short_name(h.title) == "Lyca")
         entries = gen.rank_synergy_entries(lyca, heroes, matchers, behavior)
         providers = {gen.short_name(title) for _score, _reasons, title in entries}

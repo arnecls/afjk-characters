@@ -433,20 +433,15 @@ def _conditions_to_conditional(conditions: list[dict[str, Any]] | None) -> str |
 
 _FLAT_VALUE_LABELS = frozenset(
     {
-        "Haste buff",
-        "Haste debuff",
-        "Energy recovery",
-        "Energy drain",
-        "Crit buff",
+        "Haste",
+        "Energy",
+        "Crit",
         "Crit DMG boost",
-        "DEF Penetration buff",
-        "ATK SPD buff",
-        "ATK SPD debuff",
-        "Movement speed debuff",
-        "Movement speed buff",
-        "Lifedrain buff",
-        "Vitality buff",
-        "Vitality debuff",
+        "DEF Penetration",
+        "ATK SPD",
+        "Movement speed",
+        "Lifedrain",
+        "Vitality",
     }
 )
 
@@ -471,7 +466,7 @@ def _resolve_effect_numeric(effect: Any, label: str) -> float | None:
         amounts = rs._healing_amounts(text)
         if amounts:
             return max(amounts)
-    return rs.extract_number(text, label)
+    return rs.extract_number(text, label, category=effect.category)
 
 
 def _apply_schema_value(
@@ -897,8 +892,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         )
 
     if etype in ("buff", "stat_mod", "shield", "heal"):
-        raw_name = normalize_healing_label(effect.get("name", "Buff"))
-        name = rs.display_effect_name(raw_name, "buff")
+        name = normalize_healing_label(effect.get("name", "Buff"))
         return rs.Effect(
             category="buff",
             label=name,
@@ -911,7 +905,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         )
 
     if etype == "debuff":
-        name = rs.display_effect_name(effect.get("name", "Debuff"), "debuff")
+        name = (effect.get("name", "Debuff") or "Debuff").strip()
         return rs.Effect(
             category="debuff",
             label=name,

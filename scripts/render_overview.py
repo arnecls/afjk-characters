@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import csv
 import importlib.util
+import json
 import sys
 from pathlib import Path
 
@@ -340,6 +341,11 @@ def write_csv(
         writer = csv.writer(fh)
         writer.writerow(csv_mod.COLUMNS)
         writer.writerows(rows)
+    csv_mod.LIST_COLUMNS_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    csv_mod.LIST_COLUMNS_OUTPUT.write_text(
+        json.dumps(csv_mod.LIST_COLUMNS, indent=2) + "\n",
+        encoding="utf-8",
+    )
     return len(rows)
 
 

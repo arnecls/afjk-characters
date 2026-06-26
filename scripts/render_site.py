@@ -481,6 +481,14 @@ def main() -> None:
         csv_text = OVERVIEW_CSV.read_text(encoding="utf-8")
         SITE_CSV.write_text(csv_text, encoding="utf-8")
         print(f"Wrote {SITE_CSV.relative_to(io.ROOT)}")
+        list_columns_src = io.ROOT / "site" / "data" / "list-columns.json"
+        list_columns_dst = SITE_DIR / "data" / "list-columns.json"
+        if list_columns_src.is_file():
+            list_columns_dst.write_text(
+                list_columns_src.read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            print(f"Wrote {list_columns_dst.relative_to(io.ROOT)}")
     else:
         print(
             f"Warning: {OVERVIEW_CSV.name} missing; "

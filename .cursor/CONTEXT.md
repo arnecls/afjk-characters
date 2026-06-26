@@ -53,6 +53,13 @@ pool. They rank the pool even when the drop zone is empty; synergy and
 Faction bonus still require teammates in the zone. Toggles include CC
 immunity, Crowd Control, Sustain, Speed, and No ultimate.
 
+- **Effect name** — canonical combat-effect label stored in processed JSON,
+  skill tags, and list columns (e.g. **ATK**, **Damage taken**, **Energy**).
+  Polarity is not encoded in the name.
+- **Polarity** — buff or debuff; carried by effect `type` / category, skill-tag
+  metadata, or list-view column group — not by a ` buff` / ` debuff` suffix on
+  the label text.
+
 ## Mark
 
 A crown indicator on a drop-zone hero. Marked heroes scale their

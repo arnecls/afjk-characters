@@ -88,7 +88,7 @@ class LorsanWhisperingTempestTests(unittest.TestCase):
 
     def test_haste_debuff_flat_value(self):
         effects, _ = _analyze(self.TEXT, primary="Magic")
-        debuffs = [e for e in effects if e.label == "Haste debuff"]
+        debuffs = [e for e in effects if e.label == "Haste"]
         self.assertEqual(len(debuffs), 1)
         schema = hs.effect_to_schema(debuffs[0])
         self.assertEqual(schema["type"], "debuff")
@@ -191,7 +191,7 @@ class MarcilleHeroFocusTests(unittest.TestCase):
 
     def test_haste_buff_targets_self(self):
         effects, _ = _analyze(self.TEXT)
-        buffs = [e for e in effects if e.label == "Haste buff"]
+        buffs = [e for e in effects if e.label == "Haste"]
         self.assertTrue(buffs)
         self.assertEqual(buffs[0].targeting, "Self")
         schema = hs.effect_to_schema(buffs[0])

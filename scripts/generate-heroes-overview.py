@@ -34,25 +34,25 @@ assert _SPEC.loader is not None
 _SPEC.loader.exec_module(_rs)
 
 STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
-    "ATK": ["ATK buff"],
-    "ATK SPD": ["ATK SPD buff"],
-    "Haste": ["Haste buff"],
-    "Max HP": ["Max HP buff"],
+    "ATK": ["ATK"],
+    "ATK SPD": ["ATK SPD"],
+    "Haste": ["Haste"],
+    "Max HP": ["Max HP"],
     "Shield": ["Shield"],
-    "Crit": ["Crit buff"],
+    "Crit": ["Crit"],
     "Crit DMG Boost": ["Crit DMG boost"],
-    "Execution": ["Execution buff"],
-    "Resilience": ["Resilience buff"],
+    "Execution": ["Execution"],
+    "Resilience": ["Resilience"],
     "Healing": [
         DIRECT_HEALING_LABEL,
         HEALING_OVER_TIME_LABEL,
-        "Healing stat buff",
-        "Lifedrain buff",
+        "Healing",
+        "Lifedrain",
     ],
-    "Energy": ["Energy recovery"],
-    "DEF Penetration": ["DEF Penetration buff"],
-    "Physical DEF": ["DEF buff"],
-    "Magic DEF": ["DEF buff"],
+    "Energy": ["Energy"],
+    "DEF Penetration": ["DEF Penetration"],
+    "Physical DEF": ["DEF", "Phys DEF"],
+    "Magic DEF": ["DEF", "Magic DEF"],
 }
 
 _BUFF_LABEL_TO_STATS: dict[str, list[str]] = {}
@@ -103,9 +103,7 @@ SIGNATURE_FUEL_ENERGY_MULT = {"slow": 1.3, "average": 1.05, "fast": 1.0}
 ENERGY_SYNERGY_SCORE_MULT = 0.72
 
 # Fuel buff labels that accelerate skill casting / energy gain.
-SIGNATURE_FUEL_LABELS = frozenset(
-    {"Energy recovery", "Haste buff", "ATK SPD buff"}
-)
+SIGNATURE_FUEL_LABELS = frozenset({"Energy", "Haste", "ATK SPD"})
 
 # Shown on synergy lines boosted for the receiver's signature skill speed.
 SIGNATURE_FUEL_MARKER = " `signature fuel`"
@@ -336,14 +334,14 @@ def ally_buff_applies_to_receiver(
 def _direct_buff_labels_for_stat(stat: str) -> list[str]:
     """Buff labels that duplicate the stat name in synergy text (omit 'Stat via')."""
     if stat == "ATK SPD":
-        return ["ATK SPD buff"]
+        return ["ATK SPD"]
     if stat == "Max HP":
-        return ["Max HP buff"]
+        return ["Max HP"]
     if stat == "Shield":
         return ["Shield"]
     labels = list(STAT_TO_BUFF_LABELS.get(stat, []))
-    if stat == "ATK" and "Damage dealt buff" not in labels:
-        labels.append("Damage dealt buff")
+    if stat == "ATK" and "Damage dealt" not in labels:
+        labels.append("Damage dealt")
     return labels
 
 
@@ -351,7 +349,7 @@ def summon_buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
     """Buff labels on allied summons that satisfy a benefit stat."""
     prefs = list(buff_labels_for_stat(stat))
     if stat == "ATK":
-        prefs.append(("Damage dealt buff", 1.0))
+        prefs.append(("Damage dealt", 1.0))
     return prefs
 
 
@@ -380,7 +378,7 @@ SUMMON_TARGETING_WEIGHT = 3.0
 
 
 def format_reason_for_display(reason: str) -> str:
-    """Drop redundant 'ATK via ATK buff'; keep 'ATK SPD via Haste buff'."""
+    """Drop redundant 'ATK via ATK'; keep 'ATK SPD via Haste'."""
     if reason.startswith("Enables ") or " via " not in reason:
         return reason
     stat, detail = reason.split(" via ", 1)
@@ -394,8 +392,8 @@ def buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
     """Buff labels that satisfy a benefit stat, (label, score multiplier), best first."""
     if stat == "ATK SPD":
         return [
-            ("Haste buff", HASTE_FOR_ATK_SPD_SCORE_MULT),
-            ("ATK SPD buff", 1.0),
+            ("Haste", HASTE_FOR_ATK_SPD_SCORE_MULT),
+            ("ATK SPD", 1.0),
         ]
     return [(label, 1.0) for label in STAT_TO_BUFF_LABELS.get(stat, [])]
 
@@ -543,7 +541,7 @@ def is_energy_provider(provider: _rs.Hero) -> bool:
         return True
     return any(
         e.category == "buff"
-        and e.label == "Energy recovery"
+        and e.label == "Energy"
         and e.targeting in ALLY_TARGETINGS
         and e.conditional != "rare"
         and not _rs._energy_recovery_targets_self(e.qualitative)
@@ -580,7 +578,7 @@ def receiver_wants_early_battle_energy(behavior: _rs.HeroBehavior) -> bool:
 
 def _effect_is_battle_start_ally_energy(effect: _rs.Effect) -> bool:
     """True when Energy recovery is already scored via early-battle path."""
-    if effect.label != "Energy recovery":
+    if effect.label != "Energy":
         return False
     text = effect.qualitative
     t = text.lower()
@@ -994,7 +992,7 @@ def match_ally_ultimate_casts(provider: _rs.Hero) -> tuple[float, str] | None:
         e
         for e in provider.effects
         if e.category == "buff"
-        and e.label == "Energy recovery"
+        and e.label == "Energy"
         and e.targeting in ALLY_TARGETINGS
     ]
     if energy_buffs:
@@ -1414,7 +1412,7 @@ def score_synergy(
     fuel_mult = SIGNATURE_FUEL_SPEED_MULT.get(signature_speed, 1.0)
 
     for stat, is_implicit in _stats_for_synergy_scoring(receiver, signature_speed):
-        if stat == "Haste" and "Haste buff" in credited_buffs:
+        if stat == "Haste" and "Haste" in credited_buffs:
             continue
         label_prefs = buff_labels_for_stat(stat)
         allowed = {label for label, _ in label_prefs}
@@ -1450,7 +1448,7 @@ def score_synergy(
             pts = tw * mw * mult_by_label[effect.label]
             if effect.conditional == "frequent":
                 pts *= FREQUENT_CONDITIONAL_SCORE
-            if effect.label == "Energy recovery":
+            if effect.label == "Energy":
                 if (
                     receiver_behavior
                     and receiver_wants_early_battle_energy(receiver_behavior)
@@ -1487,8 +1485,8 @@ def score_synergy(
             if stat not in seen_stats:
                 seen_stats.add(stat)
                 reasons.append(f"{stat} via {best_for_stat[1]}")
-            if stat == "ATK SPD" and best_for_stat[2] == "Haste buff":
-                credited_buffs.add("Haste buff")
+            if stat == "ATK SPD" and best_for_stat[2] == "Haste":
+                credited_buffs.add("Haste")
 
     return total, reasons
 
@@ -1509,7 +1507,7 @@ def score_summon_synergy(
     credited_buffs: set[str] = set()
 
     for stat in receiver_summon_synergy_stats(receiver):
-        if stat == "Haste" and "Haste buff" in credited_buffs:
+        if stat == "Haste" and "Haste" in credited_buffs:
             continue
         label_prefs = summon_buff_labels_for_stat(stat)
         allowed = {label for label, _ in label_prefs}
@@ -1541,8 +1539,8 @@ def score_summon_synergy(
             if stat not in seen_stats:
                 seen_stats.add(stat)
                 reasons.append(f"{stat} via {best_for_stat[1]}")
-            if stat == "ATK SPD" and best_for_stat[2] == "Haste buff":
-                credited_buffs.add("Haste buff")
+            if stat == "ATK SPD" and best_for_stat[2] == "Haste":
+                credited_buffs.add("Haste")
 
     return total, reasons
 
@@ -1685,7 +1683,7 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
     labels = {e.label for e in ally_buffs}
     targetings = {e.targeting for e in ally_buffs}
 
-    if "Haste buff" in labels or "ATK SPD buff" in labels:
+    if "Haste" in labels or "ATK SPD" in labels:
         scope = (
             "all allies"
             if "All units" in targetings
@@ -1695,7 +1693,7 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
             f"**Haste** / **ATK SPD** buffs on {scope} fuel slow signature "
             "skills via the signature-fuel weight"
         )
-    if "Energy recovery" in labels:
+    if "Energy" in labels:
         reasons.append(
             "**Energy recovery** helps slow-ultimate units reach their first "
             "Ultimate sooner"
@@ -1881,11 +1879,11 @@ def _healing_effect_weight(
 TANK_SUSTAIN_BUFF_LABELS = frozenset(
     {
         "Shield",
-        "Max HP buff",
-        "DEF buff",
-        "Physical DEF buff",
-        "Magic DEF buff",
-        "Ranged DEF buff",
+        "Max HP",
+        "DEF",
+        "Phys DEF",
+        "Magic DEF",
+        "Ranged DEF",
     }
 )
 
@@ -2131,7 +2129,7 @@ def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
             )
 
     for effect in hero.effects:
-        if effect.category != "buff" or effect.label != "Energy recovery":
+        if effect.category != "buff" or effect.label != "Energy":
             continue
         if effect.targeting not in ALLY_TARGETINGS:
             continue

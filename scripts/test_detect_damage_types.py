@@ -11,6 +11,8 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPTS))
 
+from test_helpers import assert_tag_in, assert_tag_not_in, tag_labels
+
 
 def _load_rs():
     spec = importlib.util.spec_from_file_location(
@@ -172,7 +174,7 @@ class ExtractionFixTests(unittest.TestCase):
             "dealing 90% (ATK-based) damage to all enemies within and "
             "reducing their ATK by 12% for 4s."
         )
-        val = rs.extract_number(text, "ATK debuff")
+        val = rs.extract_number(text, "ATK")
         self.assertEqual(val, 12.0)
 
     def test_penetration_flat_sum(self):
@@ -180,7 +182,7 @@ class ExtractionFixTests(unittest.TestCase):
             "their attacks against that enemy gain an extra 35 + 5 Penetration. "
             "Increases the extra Penetration by 50 + 5."
         )
-        val = rs.extract_number(text, "DEF Penetration buff")
+        val = rs.extract_number(text, "DEF Penetration")
         self.assertEqual(val, 55.0)
 
     def test_energy_recovery_max_tier(self):
@@ -188,12 +190,12 @@ class ExtractionFixTests(unittest.TestCase):
             "restoring 30 + 4 Energy for each ally. "
             "Increases the Energy recovered to 45 + 4."
         )
-        val = rs.extract_number(text, "Energy recovery")
+        val = rs.extract_number(text, "Energy")
         self.assertEqual(val, 49.0)
 
     def test_haste_buff_flat(self):
         text = "Gains 130 Haste after casting Eternal Dreamscape."
-        val = rs.extract_number(text, "Haste buff")
+        val = rs.extract_number(text, "Haste")
         self.assertEqual(val, 130.0)
 
     def test_starry_void_percent_damage(self):
@@ -346,7 +348,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         self.assertEqual(rs.detect_damage_types(text, "Physical"), [])
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Execution debuff", labels)
+        self.assertIn("Execution", labels)
         self.assertNotIn("Physical", labels)
 
     def test_dot_every_1s_without_primary_hit(self):
@@ -360,7 +362,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         labels = [e.label for e in self._effects(text)]
         self.assertIn("Displace", labels)
-        self.assertNotIn("Charm", labels)
+        self.assertIn("Charm", labels)
 
     def test_put_to_sleep_also_bind_when_immobilized(self):
         text = "Enemies affected are put to sleep for 1s and cannot move or act"
@@ -374,9 +376,9 @@ class CommonFailurePatternTests(unittest.TestCase):
             "Increases the Phy DEF and Magic DEF reduction to 50% + 5%."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Phys DEF debuff", labels)
-        self.assertIn("Magic DEF debuff", labels)
-        self.assertNotIn("DEF buff", labels)
+        self.assertIn("Phys DEF", labels)
+        self.assertIn("Magic DEF", labels)
+        self.assertNotIn("DEF", labels)
 
     def test_mark_reference_not_marked_debuff(self):
         text = "After the first enemy affected by her Mark of Judgement is defeated"
@@ -386,7 +388,7 @@ class CommonFailurePatternTests(unittest.TestCase):
     def test_poison_debuff_on_venom(self):
         text = "poisoned enemies take 80% (ATK-based) + 8% damage every second"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Poison debuff", labels)
+        self.assertIn("Poison", labels)
         self.assertIn("DoT", rs.detect_damage_types(text, "Physical"))
 
     def test_on_hit_true_damage(self):
@@ -453,12 +455,12 @@ class CommonFailurePatternTests(unittest.TestCase):
             "enemies on the battlefield, with her ATK reduced by 35%."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertNotIn("ATK debuff", labels)
+        self.assertNotIn("ATK", labels)
 
     def test_alsa_energy_cost_not_drain(self):
         text = "Reduces the Energy cost to 400 when the Vigorous Slam buff is stacked"
         labels = [e.label for e in self._effects(text)]
-        self.assertNotIn("Energy drain", labels)
+        self.assertNotIn("Energy", labels)
 
     def test_pandora_flee_in_fright(self):
         text = "causing all units on the battlefield to flee in fright toward their own side"
@@ -468,35 +470,35 @@ class CommonFailurePatternTests(unittest.TestCase):
     def test_antandra_targets_atk_debuff(self):
         text = "reduces the targets' ATK by 20% for 6s"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK debuff", labels)
+        self.assertIn("ATK", labels)
 
     def test_cecia_absorb_def_debuff(self):
         text = (
             "Cecia absorbs 1.5% of Phys DEF and Magic DEF from the target every second."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Phys DEF debuff", labels)
-        self.assertIn("Magic DEF debuff", labels)
+        self.assertIn("Phys DEF", labels)
+        self.assertIn("Magic DEF", labels)
 
     def test_gunnar_cannot_heal_not_shield_buff(self):
         text = "enemies within the scorched area cannot heal or gain shields"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Healing debuff", labels)
+        self.assertIn("Healing", labels)
         self.assertNotIn("Shield", labels)
 
     def test_cyran_atk_spd_not_atk_debuff(self):
         text = "reduces their ATK SPD by 30% for 8s"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK SPD debuff", labels)
-        self.assertNotIn("ATK debuff", labels)
+        self.assertIn("ATK SPD", labels)
+        self.assertNotIn("ATK", labels)
 
-    def test_indris_silencing_arrow_silence_cc(self):
+    def test_indris_silencing_arrow_not_silence_from_skill_name(self):
         text = (
             "Indris fires a silencing arrow at an enemy, dealing 240% (ATK-based) "
             "+ 20% damage. The shot disables the enemy's stat buffs for 8s."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Silence", labels)
+        self.assertNotIn("Silence", labels)
         self.assertIn("Physical", labels)
 
     def test_mehira_alluring_mirage_charm_and_displace(self):
@@ -577,17 +579,17 @@ class CommonFailurePatternTests(unittest.TestCase):
     def test_carolina_frostbite_haste_debuff(self):
         text = "inflicts a Frostbite stack"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Haste debuff", labels)
+        self.assertIn("Haste", labels)
 
     def test_pandora_atk_debuff_after_fright(self):
         text = "When the fright effect wears off, their ATK is reduced by 10% for 8s."
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK debuff", labels)
+        self.assertIn("ATK", labels)
 
     def test_natsu_def_buff(self):
         text = "Natsu increases his ATK and DEF by 27% + 3%"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("DEF buff", labels)
+        self.assertIn("DEF", labels)
 
     def test_pandora_hp_loss_dot_in_chunk(self):
         text = (
@@ -616,7 +618,7 @@ class CommonFailurePatternTests(unittest.TestCase):
     def test_contess_quiet_period_energy_recovery_debuff(self):
         text = "Contess reduces Energy recovery efficiency by 14% + 2%"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Energy recovery debuff", labels)
+        self.assertIn("Energy", labels)
 
     def test_contess_exemption_hp_loss(self):
         text = "they lose 2.5% of their max HP every second, converting"
@@ -639,7 +641,7 @@ class CommonFailurePatternTests(unittest.TestCase):
     def test_harak_healing_debuff(self):
         text = "prevents the enemy from recovering HP for 6s"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Healing debuff", labels)
+        self.assertIn("Healing", labels)
 
     def test_frieren_knock_up(self):
         text = (
@@ -652,12 +654,12 @@ class CommonFailurePatternTests(unittest.TestCase):
     def test_gunnar_vitality_debuff(self):
         text = "take 80% (ATK-based) + 8% damage every second and lose 40 Vitality"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Vitality debuff", labels)
+        self.assertIn("Vitality", labels)
 
     def test_mandatory_civility_atk_debuff(self):
         text = "reduces the ATK of the 2 enemies with the most cumulative damage"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK debuff", labels)
+        self.assertIn("ATK", labels)
 
     def test_pippa_standalone_extra_true(self):
         text = (
@@ -682,9 +684,9 @@ class CommonFailurePatternTests(unittest.TestCase):
             "their Vitality by 50 for 8s."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Energy drain", labels)
-        self.assertIn("Haste debuff", labels)
-        self.assertIn("Vitality debuff", labels)
+        self.assertIn("Energy", labels)
+        self.assertIn("Haste", labels)
+        self.assertIn("Vitality", labels)
         damage = [e.label for e in self._effects(text) if e.category == "damage"]
         self.assertEqual(damage, [])
 
@@ -694,7 +696,7 @@ class CommonFailurePatternTests(unittest.TestCase):
             "them a shared permanent shield"
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK buff", labels)
+        self.assertIn("ATK", labels)
 
     def test_himmel_hero_party_healing(self):
         text = "converts 30% + 2% of the damage dealt into healing for all party members"
@@ -707,34 +709,34 @@ class CommonFailurePatternTests(unittest.TestCase):
             "seed inflicts on enemies is further increased by 70%"
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Haste buff", labels)
-        self.assertNotIn("ATK debuff", labels)
+        self.assertIn("Haste", labels)
+        self.assertNotIn("ATK", labels)
 
     def test_marilee_hyperfocus_atk_spd(self):
         text = "Marilee increases ATK by 4% + 1% and ATK SPD by 25"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK buff", labels)
-        self.assertIn("ATK SPD buff", labels)
+        self.assertIn("ATK", labels)
+        self.assertIn("ATK SPD", labels)
 
     def test_gwyneth_burn_vitality_debuff(self):
         text = "While burned, the target has their Vitality reduced by 40"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Vitality debuff", labels)
+        self.assertIn("Vitality", labels)
 
     def test_cyran_grants_haste(self):
         text = "Grants himself 30 Haste for 8s, during which he is unaffected"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Haste buff", labels)
+        self.assertIn("Haste", labels)
 
     def test_himmel_enhance_force_hp_loss_amp(self):
         text = "cause 12% more HP loss on boss targets"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Damage taken debuff", labels)
+        self.assertIn("Damage taken", labels)
 
     def test_contess_expulsion_hp_loss_amp(self):
         text = "Expelled units are permanently silenced and take 18% more HP loss"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Damage taken debuff", labels)
+        self.assertIn("Damage taken", labels)
 
     def test_granny_threshold_damage(self):
         text = (
@@ -742,7 +744,7 @@ class CommonFailurePatternTests(unittest.TestCase):
             "25 + 5 Energy and at least 60% (ATK-based) HP."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Energy drain", labels)
+        self.assertIn("Energy", labels)
         self.assertIn("Bind", labels)
         self.assertIn("DoT", labels)
 
@@ -760,13 +762,13 @@ class CommonFailurePatternTests(unittest.TestCase):
             "max HP reduction equal to 20% of the target's max HP."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Vitality debuff", labels)
-        self.assertIn("Max HP debuff", labels)
+        self.assertIn("Vitality", labels)
+        self.assertIn("Max HP", labels)
 
     def test_pang_sky_splitter_energy_recovery_debuff(self):
         text = "the final strike also prevent Energy recovery for 5s"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Energy recovery debuff", labels)
+        self.assertIn("Energy", labels)
 
     def test_pippa_enhance_force_max_hp_damage(self):
         text = (
@@ -806,7 +808,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "legendary+", text, "Physical")
-        atk = [e for e in effects if e.label == "ATK buff"]
+        atk = [e for e in effects if e.label == "ATK"]
         self.assertEqual(len(atk), 2)
         targets = {e.targeting for e in atk}
         self.assertIn("Self", targets)
@@ -824,7 +826,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "legendary+", text, "Physical")
-        haste = [e for e in effects if e.label == "Haste buff"]
+        haste = [e for e in effects if e.label == "Haste"]
         self.assertTrue(haste)
         self.assertTrue(all(e.targeting == "Self" for e in haste))
         self.assertEqual(max(e.numeric for e in haste if e.numeric), 18.0)
@@ -836,7 +838,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "legendary+", text, "Physical")
-        haste = [e for e in effects if e.label == "Haste buff"]
+        haste = [e for e in effects if e.label == "Haste"]
         self.assertEqual(len(haste), 2)
         self_row = next(e for e in haste if e.targeting == "Self")
         ally_row = next(e for e in haste if e.targeting != "Self")
@@ -851,7 +853,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "legendary+", text, "Physical")
-        buffs = [e for e in effects if e.label == "Damage dealt buff"]
+        buffs = [e for e in effects if e.label == "Damage dealt"]
         self.assertTrue(buffs)
         self.assertTrue(all(e.targeting == "Self" for e in buffs))
         self.assertEqual(max(e.numeric for e in buffs if e.numeric), 15.0)
@@ -889,8 +891,8 @@ class CommonFailurePatternTests(unittest.TestCase):
     def test_dunlingr_grand_resonance_haste_debuff(self):
         text = "reduces the enemies' ATK SPD by an extra 60 for 4s"
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Haste debuff", labels)
-        self.assertNotIn("ATK SPD debuff", labels)
+        self.assertIn("Haste", labels)
+        self.assertNotIn("ATK SPD", labels)
 
     def test_contess_expulsion_hp_loss_damage(self):
         text = "take 18% more HP loss"
@@ -936,18 +938,18 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         effects = self._effects(text)
         labels = [e.label for e in effects]
-        self.assertIn("Haste debuff", labels)
-        self.assertIn("Movement speed debuff", labels)
+        self.assertIn("Haste", labels)
+        self.assertIn("Movement speed", labels)
         debuffs = [e for e in effects if e.category == "debuff"]
         self.assertEqual(
             {e.label: e.targeting for e in debuffs},
             {
-                "Haste debuff": "Area",
-                "Movement speed debuff": "Area",
+                "Haste": "Area",
+                "Movement speed": "Area",
             },
         )
-        haste = next(e for e in debuffs if e.label == "Haste debuff")
-        move = next(e for e in debuffs if e.label == "Movement speed debuff")
+        haste = next(e for e in debuffs if e.label == "Haste")
+        move = next(e for e in debuffs if e.label == "Movement speed")
         self.assertEqual(haste.numeric, 50.0)
         self.assertEqual(move.numeric, 80.0)
         self.assertEqual(haste.area_count, 2)
@@ -990,7 +992,7 @@ class CommonFailurePatternTests(unittest.TestCase):
             "gaining double the Haste bonus for 15s."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Haste buff", labels)
+        self.assertIn("Haste", labels)
 
     def test_kazim_normal_attack_damage_buff(self):
         text = (
@@ -998,8 +1000,8 @@ class CommonFailurePatternTests(unittest.TestCase):
             "enemies marked as prey."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK buff", labels)
-        atk = next(e for e in self._effects(text) if e.label == "ATK buff")
+        self.assertIn("ATK", labels)
+        atk = next(e for e in self._effects(text) if e.label == "ATK")
         self.assertEqual(atk.numeric, 25.0)
 
     def test_kazim_ex_true_damage_max_hp(self):
@@ -1021,11 +1023,11 @@ class CommonFailurePatternTests(unittest.TestCase):
             "he permanently gains 20 ATK SPD and 200 Energy."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK SPD buff", labels)
-        self.assertIn("Energy recovery", labels)
-        atk = next(e for e in self._effects(text) if e.label == "ATK SPD buff")
+        self.assertIn("ATK SPD", labels)
+        self.assertIn("Energy", labels)
+        atk = next(e for e in self._effects(text) if e.label == "ATK SPD")
         energy = next(
-            e for e in self._effects(text) if e.label == "Energy recovery"
+            e for e in self._effects(text) if e.label == "Energy"
         )
         self.assertEqual(atk.numeric, 20.0)
         self.assertEqual(energy.numeric, 200.0)
@@ -1048,18 +1050,18 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         effects = self._effects(text)
         labels = [e.label for e in effects]
-        self.assertIn("Haste debuff", labels)
-        self.assertIn("Movement speed debuff", labels)
+        self.assertIn("Haste", labels)
+        self.assertIn("Movement speed", labels)
         debuffs = [e for e in effects if e.category == "debuff"]
         self.assertEqual(
             {e.label: e.targeting for e in debuffs},
             {
-                "Haste debuff": "Area",
-                "Movement speed debuff": "Area",
+                "Haste": "Area",
+                "Movement speed": "Area",
             },
         )
-        haste = next(e for e in debuffs if e.label == "Haste debuff")
-        move = next(e for e in debuffs if e.label == "Movement speed debuff")
+        haste = next(e for e in debuffs if e.label == "Haste")
+        move = next(e for e in debuffs if e.label == "Movement speed")
         self.assertEqual(haste.numeric, 60.0)
         self.assertEqual(move.numeric, 80.0)
         self.assertEqual(haste.area_count, 2)
@@ -1124,8 +1126,8 @@ class CommonFailurePatternTests(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
         labels = [e.label for e in effects if e.category == "debuff"]
-        self.assertIn("Damage dealt debuff", labels)
-        self.assertIn("Damage taken debuff", labels)
+        self.assertIn("Damage dealt", labels)
+        self.assertIn("Damage taken", labels)
 
     def test_aurora_plushification_no_spurious_unaffected(self):
         text = (
@@ -1158,8 +1160,8 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         labels = [e.label for e in self._effects(text)]
         self.assertIn("Stun", labels)
-        self.assertNotIn("Haste debuff", labels)
-        self.assertNotIn("Movement speed debuff", labels)
+        self.assertNotIn("Haste", labels)
+        self.assertNotIn("Movement speed", labels)
 
     def test_hepler_remedial_class_haste_debuff_not_buff(self):
         text = (
@@ -1167,8 +1169,9 @@ class CommonFailurePatternTests(unittest.TestCase):
             "for 8s."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Haste debuff", labels)
-        self.assertNotIn("Haste buff", labels)
+        self.assertIn("Haste", labels)
+        buff_labels = [e.label for e in self._effects(text) if e.category == "buff"]
+        self.assertNotIn("Haste", buff_labels)
 
     def test_sinbad_adaptive_prowess_no_cross_skill_debuffs(self):
         text = (
@@ -1176,8 +1179,8 @@ class CommonFailurePatternTests(unittest.TestCase):
             "Vitality, and Phys and Magic DEF debuffs from Tracker's Instincts."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertNotIn("ATK debuff", labels)
-        self.assertNotIn("Damage taken debuff", labels)
+        self.assertNotIn("ATK", labels)
+        self.assertNotIn("Damage taken", labels)
 
     def test_nerion_abyssal_embrace_atk_and_haste_debuffs(self):
         text = (
@@ -1186,8 +1189,8 @@ class CommonFailurePatternTests(unittest.TestCase):
             "have been under control effects for 0.5s."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK debuff", labels)
-        self.assertIn("Haste debuff", labels)
+        self.assertIn("ATK", labels)
+        self.assertIn("Haste", labels)
 
     def test_pandora_tainted_tribute_energy_recovery_debuff(self):
         text = (
@@ -1195,7 +1198,7 @@ class CommonFailurePatternTests(unittest.TestCase):
             "Energy recovery by 45%, reducing Vitality by 45."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Energy recovery debuff", labels)
+        self.assertIn("Energy", labels)
 
     def test_hammie_weakest_ally_atk_single_target(self):
         text = (
@@ -1204,7 +1207,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
-        atk = [e for e in effects if e.label == "ATK buff"]
+        atk = [e for e in effects if e.label == "ATK"]
         self.assertTrue(atk)
         self.assertEqual(atk[0].targeting, "Single target")
 
@@ -1215,7 +1218,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
-        haste = [e for e in effects if e.label == "Haste buff"]
+        haste = [e for e in effects if e.label == "Haste"]
         self.assertTrue(haste)
         self.assertEqual(haste[0].targeting, "All units")
         text = (
@@ -1223,8 +1226,9 @@ class CommonFailurePatternTests(unittest.TestCase):
             "for 8s."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("Haste debuff", labels)
-        self.assertNotIn("Haste buff", labels)
+        self.assertIn("Haste", labels)
+        buff_labels = [e.label for e in self._effects(text) if e.category == "buff"]
+        self.assertNotIn("Haste", buff_labels)
 
     def test_evie_intel_chase_channeled_not_dot(self):
         text = (
@@ -1244,7 +1248,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
         self.assertIn(
-            "Magic DEF debuff",
+            "Magic DEF",
             [e.label for e in effects if e.category == "debuff"],
         )
 
@@ -1256,7 +1260,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
         self.assertIn(
-            "Energy drain",
+            "Energy",
             [e.label for e in effects if e.category == "debuff"],
         )
 
@@ -1268,7 +1272,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
         drain = [
-            e for e in effects if e.category == "debuff" and e.label == "Energy drain"
+            e for e in effects if e.category == "debuff" and e.label == "Energy"
         ]
         self.assertEqual(len(drain), 1)
         self.assertEqual(drain[0].targeting, "Arc")
@@ -1284,10 +1288,10 @@ class CommonFailurePatternTests(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
         labels = {(e.label, e.targeting) for e in effects if e.category == "buff"}
-        self.assertIn(("ATK buff", "Self"), labels)
-        self.assertIn(("ATK SPD buff", "Self"), labels)
-        atk = next(e for e in effects if e.label == "ATK buff")
-        spd = next(e for e in effects if e.label == "ATK SPD buff")
+        self.assertIn(("ATK", "Self"), labels)
+        self.assertIn(("ATK SPD", "Self"), labels)
+        atk = next(e for e in effects if e.label == "ATK")
+        spd = next(e for e in effects if e.label == "ATK SPD")
         self.assertEqual(atk.numeric, 22.0)
         self.assertEqual(spd.numeric, 68.0)
 
@@ -1309,7 +1313,7 @@ class CommonFailurePatternTests(unittest.TestCase):
         effects: list[rs.SpecialEffect] = []
         rs.detect_special_effects(effects, "ex+10", text)
         labels = [e.label for e in effects if e.kind == "provides"]
-        self.assertIn("Artifact buff", labels)
+        self.assertIn("Artifact", labels)
 
 
 class TestBatchThreeDetectionFixes(unittest.TestCase):
@@ -1322,7 +1326,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
         debuffs = [e.label for e in effects if e.category == "debuff"]
-        self.assertIn("Haste debuff", debuffs)
+        self.assertIn("Haste", debuffs)
         damage = [e.label for e in effects if e.category == "damage"]
         self.assertIn("DoT", damage)
         self.assertNotIn("Magic", damage)
@@ -1338,7 +1342,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "ex+5", text, "Physical")
         self.assertIn(
-            "Vitality debuff",
+            "Vitality",
             [e.label for e in effects if e.category == "debuff"],
         )
 
@@ -1350,7 +1354,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
         self.assertIn(
-            "Phys DEF debuff",
+            "Phys DEF",
             [e.label for e in effects if e.category == "debuff"],
         )
 
@@ -1363,8 +1367,8 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "mythic+", text, "Magic")
         debuffs = [e.label for e in effects if e.category == "debuff"]
-        self.assertIn("ATK SPD debuff", debuffs)
-        self.assertNotIn("Haste debuff", debuffs)
+        self.assertIn("ATK SPD", debuffs)
+        self.assertNotIn("Haste", debuffs)
 
     def test_hugin_enhance_force_damage_taken_reduction(self):
         text = (
@@ -1374,7 +1378,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "supreme+", text, "Physical")
         self.assertIn(
-            "Damage taken reduction",
+            "Damage taken",
             [e.label for e in effects if e.category == "buff"],
         )
 
@@ -1402,7 +1406,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
         buffs = [e.label for e in effects if e.category == "buff"]
-        self.assertIn("Haste buff", buffs)
+        self.assertIn("Haste", buffs)
 
     def test_kruger_ruthless_vanguard_lifedrain(self):
         text = (
@@ -1412,7 +1416,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "mythic+", text, "Physical")
         self.assertIn(
-            "Lifedrain buff",
+            "Lifedrain",
             [e.label for e in effects if e.category == "buff"],
         )
 
@@ -1444,14 +1448,14 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         buffs = [e for e in effects if e.category == "buff"]
         debuffs = [e for e in effects if e.category == "debuff"]
         self.assertIn(
-            "DEF buff",
+            "DEF",
             [e.label for e in buffs],
         )
         self.assertEqual(
             [e.label for e in debuffs if "def" in e.label.lower()],
             [],
         )
-        def_buff = next(e for e in buffs if e.label == "DEF buff")
+        def_buff = next(e for e in buffs if e.label == "DEF")
         self.assertEqual(def_buff.targeting, "Self")
         self.assertEqual(def_buff.numeric, 50.0)
 
@@ -1466,7 +1470,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         sl = hero.skill_slices["Ex. Skill"]
-        def_buff = next(e for e in sl.effects if e.label == "DEF buff")
+        def_buff = next(e for e in sl.effects if e.label == "DEF")
         self.assertEqual(def_buff.targeting, "Self")
         self.assertEqual(def_buff.numeric, 50.0)
         unaffected = next(
@@ -1483,10 +1487,10 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "mythic+", text, "Physical")
         labels = [(e.category, e.label) for e in effects]
-        self.assertIn(("debuff", "Haste debuff"), labels)
-        self.assertNotIn(("buff", "Haste buff"), labels)
-        self.assertNotIn(("debuff", "ATK debuff"), labels)
-        haste = next(e for e in effects if e.label == "Haste debuff")
+        self.assertIn(("debuff", "Haste"), labels)
+        self.assertNotIn(("buff", "Haste"), labels)
+        self.assertNotIn(("debuff", "ATK"), labels)
+        haste = next(e for e in effects if e.label == "Haste")
         self.assertEqual(haste.numeric, 40.0)
 
         import heroes_io as io
@@ -1497,9 +1501,9 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         tags = rs.format_skill_card_tags(hero, "skill4")
-        self.assertIn("Haste debuff", tags)
-        self.assertNotIn("Haste buff", tags)
-        self.assertNotIn("Haste buff — Self", tags)
+        assert_tag_in(self, "Haste", tags, polarity="debuff")
+        assert_tag_not_in(self, "Haste", tags, polarity="buff")
+        assert_tag_not_in(self, "Haste — Self", tags)
 
     def test_seth_hunter_instinct_def_and_crit_self_buffs(self):
         text = (
@@ -1512,15 +1516,15 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
         buffs = [e for e in effects if e.category == "buff"]
-        self.assertIn("DEF buff", [e.label for e in buffs])
-        def_buff = next(e for e in buffs if e.label == "DEF buff")
+        self.assertIn("DEF", [e.label for e in buffs])
+        def_buff = next(e for e in buffs if e.label == "DEF")
         self.assertEqual(def_buff.targeting, "Self")
         self.assertEqual(def_buff.numeric, 25.0)
 
         crit_text = "Gains 25 Crit when he first triggers Bloodlust."
         crit_effects: list[rs.Effect] = []
         rs.analyze_text(crit_effects, [], {}, [], "base", crit_text, "Physical")
-        crit = next(e for e in crit_effects if e.label == "Crit buff")
+        crit = next(e for e in crit_effects if e.label == "Crit")
         self.assertEqual(crit.targeting, "Self")
         self.assertEqual(crit.numeric, 25.0)
 
@@ -1532,8 +1536,8 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         tags = rs.format_skill_card_tags(hero, "skill2")
-        self.assertIn("DEF buff — Self", tags)
-        self.assertIn("Crit buff — Self", tags)
+        assert_tag_in(self, "DEF — Self", tags, polarity="buff")
+        assert_tag_in(self, "Crit — Self", tags, polarity="buff")
 
     def test_seth_enhance_force_phys_def_debuff_not_buff(self):
         text = (
@@ -1544,9 +1548,9 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "supreme+", text, "Physical")
         labels = [(e.category, e.label) for e in effects]
-        self.assertIn(("debuff", "Phys DEF debuff"), labels)
-        self.assertNotIn(("buff", "DEF buff"), labels)
-        self.assertNotIn(("buff", "Phys DEF buff"), labels)
+        self.assertIn(("debuff", "Phys DEF"), labels)
+        self.assertNotIn(("buff", "DEF"), labels)
+        self.assertNotIn(("buff", "Phys DEF"), labels)
 
         import heroes_io as io
 
@@ -1556,9 +1560,9 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         tags = rs.format_skill_card_tags(hero, "skill5")
-        self.assertIn("Phys DEF debuff", tags)
-        self.assertNotIn("DEF buff", tags)
-        self.assertNotIn("Phys DEF buff", tags)
+        assert_tag_in(self, "Phys DEF", tags, polarity="debuff")
+        assert_tag_not_in(self, "DEF", tags)
+        assert_tag_not_in(self, "Phys DEF", tags, polarity="buff")
 
 
     def test_temesia_iron_heel_damage_dealt_debuff_not_buff(self):
@@ -1571,8 +1575,8 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
         labels = [(e.category, e.label) for e in effects]
-        self.assertIn(("debuff", "Damage dealt debuff"), labels)
-        self.assertNotIn(("buff", "Damage taken reduction"), labels)
+        self.assertIn(("debuff", "Damage dealt"), labels)
+        self.assertNotIn(("buff", "Damage taken"), labels)
 
         import heroes_io as io
 
@@ -1584,11 +1588,11 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         tags = rs.format_skill_card_tags(hero, "skill1")
-        self.assertIn("Damage dealt debuff", tags)
-        debuff_key = rs._canonical_skill_card_chip_key("Damage dealt debuff")
-        taken_key = rs._canonical_skill_card_chip_key("Damage taken reduction")
-        self.assertEqual(debuff_key, "damage dealt debuff")
-        self.assertEqual(taken_key, "damage taken reduction")
+        assert_tag_in(self, "Damage dealt", tags, polarity="debuff")
+        debuff_key = rs._canonical_skill_card_chip_key("Damage dealt")
+        taken_key = rs._canonical_skill_card_chip_key("Damage taken")
+        self.assertEqual(debuff_key, "damage dealt")
+        self.assertEqual(taken_key, "damage taken")
 
     def test_temesia_invincible_fury_true_damage_on_mythic_plus(self):
         text = (
@@ -1610,8 +1614,8 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         tags = rs.format_skill_card_tags(hero, "skill4")
-        self.assertIn("True damage", tags)
-        self.assertIn("Unaffected — Self", tags)
+        self.assertIn("True damage", tag_labels(tags))
+        assert_tag_in(self, "Unaffected — Self", tags)
 
     def test_rhys_fury_rush_bonus_movement_speed_is_self(self):
         text = (
@@ -1619,7 +1623,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "mythic+", text, "Physical")
-        move = [e for e in effects if e.label == "Movement speed buff"]
+        move = [e for e in effects if e.label == "Movement speed"]
         self.assertEqual(len(move), 1)
         self.assertEqual(move[0].targeting, "Self")
         self.assertIsNone(move[0].numeric)
@@ -1634,10 +1638,10 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "mythic+", text, "Magic")
         labels = [e.label for e in effects if e.category == "debuff"]
-        self.assertIn("Damage dealt debuff", labels)
-        self.assertIn("Debuff duration debuff", labels)
-        dmg = next(e for e in effects if e.label == "Damage dealt debuff")
-        dur = next(e for e in effects if e.label == "Debuff duration debuff")
+        self.assertIn("Damage dealt", labels)
+        self.assertIn("Debuff duration", labels)
+        dmg = next(e for e in effects if e.label == "Damage dealt")
+        dur = next(e for e in effects if e.label == "Debuff duration")
         self.assertEqual(dmg.numeric, 25.0)
         self.assertEqual(dur.numeric, 30.0)
 
@@ -1649,7 +1653,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
         labels = [e.label for e in effects if e.category == "debuff"]
-        self.assertNotIn("Damage dealt debuff", labels)
+        self.assertNotIn("Damage dealt", labels)
 
     def test_damian_emergency_support_self_energy(self):
         text = (
@@ -1657,7 +1661,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
-        energy = [e for e in effects if e.label == "Energy recovery"]
+        energy = [e for e in effects if e.label == "Energy"]
         self.assertEqual(len(energy), 1)
         self.assertEqual(energy[0].targeting, "Self")
         self.assertEqual(energy[0].numeric, 300.0)
@@ -1672,7 +1676,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
         heals = [e for e in effects if e.label == "Direct healing"]
-        energy = [e for e in effects if e.label == "Energy recovery"]
+        energy = [e for e in effects if e.label == "Energy"]
         self.assertEqual(len(heals), 1)
         self.assertEqual(heals[0].targeting, "Single target")
         self.assertEqual(len(energy), 1)
@@ -1693,13 +1697,13 @@ class TestIsabellaParsing(unittest.TestCase):
         hero = self._hero()
         sl = hero.skill_slices["Ultimate"]
         labels = {e.label for e in sl.effects if e.category == "buff"}
-        self.assertIn("ATK buff", labels)
-        self.assertIn("Phys DEF buff", labels)
-        self.assertIn("Magic DEF buff", labels)
-        self.assertIn("ATK SPD buff", labels)
-        self.assertIn("Haste buff", labels)
-        self.assertIn("Vitality buff", labels)
-        self.assertNotIn("DEF buff", labels)
+        self.assertIn("ATK", labels)
+        self.assertIn("Phys DEF", labels)
+        self.assertIn("Magic DEF", labels)
+        self.assertIn("ATK SPD", labels)
+        self.assertIn("Haste", labels)
+        self.assertIn("Vitality", labels)
+        self.assertNotIn("DEF", labels)
         for e in sl.effects:
             if e.category == "buff":
                 self.assertEqual(e.targeting, "Single target")
@@ -1715,12 +1719,12 @@ class TestIsabellaParsing(unittest.TestCase):
         debuffs = {
             e.label for e in sl.effects if e.category == "debuff"
         }
-        self.assertIn("ATK debuff", debuffs)
-        self.assertIn("Phys DEF debuff", debuffs)
-        self.assertIn("Magic DEF debuff", debuffs)
-        self.assertIn("ATK SPD debuff", debuffs)
-        self.assertIn("Haste debuff", debuffs)
-        self.assertIn("Vitality debuff", debuffs)
+        self.assertIn("ATK", debuffs)
+        self.assertIn("Phys DEF", debuffs)
+        self.assertIn("Magic DEF", debuffs)
+        self.assertIn("ATK SPD", debuffs)
+        self.assertIn("Haste", debuffs)
+        self.assertIn("Vitality", debuffs)
 
     def test_hexward_companion_unaffected_and_no_spurious_damage(self):
         hero = self._hero()
@@ -1754,10 +1758,10 @@ class TestOdieExecution(unittest.TestCase):
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "Mythic+", text, "Magic")
         labels = {e.label for e in effects if e.category == "debuff"}
-        self.assertIn("Execution debuff", labels)
-        self.assertNotIn("Poison debuff", labels)
+        self.assertIn("Execution", labels)
+        self.assertNotIn("Poison", labels)
         self.assertNotIn("DoT", labels)
-        exec_row = next(e for e in effects if e.label == "Execution debuff")
+        exec_row = next(e for e in effects if e.label == "Execution")
         self.assertEqual(exec_row.targeting, "Single target")
 
     def test_heart_crusher_hero_integration(self):
@@ -1769,9 +1773,9 @@ class TestOdieExecution(unittest.TestCase):
         rs.analyze_hero(hero)
         sl = hero.skill_slices["Ex. Skill"]
         labels = {e.label for e in sl.effects if e.category == "debuff"}
-        self.assertIn("Execution debuff", labels)
+        self.assertIn("Execution", labels)
         tags = rs.format_skill_card_tags(hero, "skill4")
-        self.assertIn("Execution debuff", tags)
+        assert_tag_in(self, "Execution", tags, polarity="debuff")
 
 
 class TestParisaParsing(unittest.TestCase):
@@ -1782,8 +1786,8 @@ class TestParisaParsing(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
-        atk_spd = [e for e in effects if e.label == "ATK SPD buff"]
-        atk = [e for e in effects if e.label == "ATK buff"]
+        atk_spd = [e for e in effects if e.label == "ATK SPD"]
+        atk = [e for e in effects if e.label == "ATK"]
         self.assertTrue(atk_spd)
         self.assertTrue(atk)
         self.assertEqual(atk_spd[0].targeting, "Multiple targets")
@@ -1797,7 +1801,7 @@ class TestParisaParsing(unittest.TestCase):
         )
         effects: list[rs.Effect] = []
         rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
-        energy = [e for e in effects if e.label == "Energy recovery"]
+        energy = [e for e in effects if e.label == "Energy"]
         self.assertTrue(energy)
         self.assertEqual(energy[0].targeting, "Self")
         self.assertEqual(energy[0].numeric, 70.0)
@@ -1835,28 +1839,29 @@ class TestParisaParsing(unittest.TestCase):
         rs.analyze_hero(hero)
         sl = hero.skill_slices["Skill1"]
         labels = {e.label for e in sl.effects if e.category == "buff"}
-        self.assertIn("ATK SPD buff", labels)
-        self.assertIn("ATK buff", labels)
+        self.assertIn("ATK SPD", labels)
+        self.assertIn("ATK", labels)
         targets = {
             e.label: e.targeting
             for e in sl.effects
             if e.category == "buff"
         }
-        self.assertEqual(targets["ATK SPD buff"], "Multiple targets")
-        self.assertEqual(targets["ATK buff"], "Multiple targets")
+        self.assertEqual(targets["ATK SPD"], "Multiple targets")
+        self.assertEqual(targets["ATK"], "Multiple targets")
         numerics = {
             e.label: e.numeric
             for e in sl.effects
             if e.category == "buff"
         }
-        self.assertEqual(numerics["ATK SPD buff"], 30.0)
-        self.assertEqual(numerics["ATK buff"], 30.0)
+        self.assertEqual(numerics["ATK SPD"], 30.0)
+        self.assertEqual(numerics["ATK"], 30.0)
         tags = rs.format_skill_card_tags(hero, "skill1")
-        self.assertIn("ATK SPD buff", tags)
-        self.assertIn("ATK buff", tags)
-        self.assertNotIn("ATK SPD buff — Self", tags)
+        labels = tag_labels(tags)
+        self.assertIn("ATK SPD", labels)
+        self.assertIn("ATK", labels)
+        assert_tag_not_in(self, "ATK SPD — Self", tags)
         sl2 = hero.skill_slices["Skill2"]
-        energy = [e for e in sl2.effects if e.label == "Energy recovery"]
+        energy = [e for e in sl2.effects if e.label == "Energy"]
         self.assertTrue(energy)
         self.assertEqual(energy[0].targeting, "Self")
         skills = [

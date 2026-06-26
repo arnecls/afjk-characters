@@ -80,7 +80,7 @@ class RoleProminenceTests(unittest.TestCase):
             ),
             rs.Effect(
                 category="debuff",
-                label="ATK debuff",
+                label="ATK",
                 tier="Skill1",
                 targeting="Area",
                 numeric=20.0,
@@ -103,7 +103,7 @@ class RoleProminenceTests(unittest.TestCase):
             ),
             rs.Effect(
                 category="buff",
-                label="ATK buff",
+                label="ATK",
                 tier="Skill2",
                 targeting="Single target",
                 numeric=15.0,

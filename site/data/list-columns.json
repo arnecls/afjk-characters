@@ -1,0 +1,260 @@
+[
+  {
+    "id": "atk_buff",
+    "label": "ATK",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "atk_spd_buff",
+    "label": "ATK SPD",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "haste_buff",
+    "label": "Haste",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "crit_buff",
+    "label": "Crit",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "def_penetration_buff",
+    "label": "DEF Penetration",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "def_buff",
+    "label": "DEF",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "damage_taken_buff",
+    "label": "Damage taken",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "damage_dealt_buff",
+    "label": "Damage dealt",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "magic_damage_buff",
+    "label": "Magic damage",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "energy_buff",
+    "label": "Energy",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "execution_buff",
+    "label": "Execution",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "fatal_blow_immunity_buff",
+    "label": "Fatal blow immunity",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "invincible_buff",
+    "label": "Invincible",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "lifedrain_buff",
+    "label": "Lifedrain",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "max_hp_buff",
+    "label": "Max HP",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "ally_empower_buff",
+    "label": "Ally empower",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "attack_range_buff",
+    "label": "Attack range",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "healing_buff",
+    "label": "Healing",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "ranged_def_buff",
+    "label": "Ranged DEF",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "crit_dmg_boost_buff",
+    "label": "Crit DMG boost",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "vitality_buff",
+    "label": "Vitality",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "dodge_chance_buff",
+    "label": "Dodge chance",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "movement_speed_buff",
+    "label": "Movement speed",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "exemption_buff",
+    "label": "Exemption",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "tidal_strength_buff",
+    "label": "Tidal Strength",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "atk_debuff",
+    "label": "ATK",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "dot_debuff",
+    "label": "DoT",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "damage_taken_debuff",
+    "label": "Damage taken",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "damage_dealt_debuff",
+    "label": "Damage dealt",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "debuff_duration_debuff",
+    "label": "Debuff duration",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "magic_damage_debuff",
+    "label": "Magic damage",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "energy_debuff",
+    "label": "Energy",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "execution_debuff",
+    "label": "Execution",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "haste_debuff",
+    "label": "Haste",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "magic_def_debuff",
+    "label": "Magic DEF",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "max_hp_debuff",
+    "label": "Max HP",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "movement_speed_debuff",
+    "label": "Movement speed",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "phys_def_debuff",
+    "label": "Phys DEF",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "vitality_debuff",
+    "label": "Vitality",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "healing_debuff",
+    "label": "Healing",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "crit_resist_debuff",
+    "label": "Crit Resist",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "vulnerable_debuff",
+    "label": "Vulnerable",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "atk_spd_debuff",
+    "label": "ATK SPD",
+    "polarity": "debuff",
+    "group": "debuff"
+  }
+]

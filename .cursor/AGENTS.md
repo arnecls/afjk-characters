@@ -314,6 +314,10 @@ processed JSON and the site stay aligned.
   - **Lists:** Oxford commas for stat/effect lists (`HP drain, haste
     reduction, and vitality reduction`).
 - Validate with `just validate` (`skill_summary` check group).
+- Run tests with `just test` (parallel pytest via pytest-xdist; ~2–3 min with
+  roster cache). Use `just test-serial` for serial unittest output when
+  debugging a failure (~4–5 min). Avoid piping `pytest -q` to `tail` — output
+  is block-buffered and looks hung in agents.
 
 Regenerate: `python3 scripts/generate-heroes-overview.py` (or `just overview`).
 
@@ -633,14 +637,13 @@ hero summaries unless skill text names them explicitly.
 Do not list these as hero stat types; detect them as buffs, debuffs, or special
 effects instead.
 
-- **Damage taken** — combat modifier (e.g. damage taken reduction, damage taken
-  debuff), not a character-sheet stat. Summaries display **Damage taken** in
-  both buff and debuff sections; parse as `Damage taken reduction` (buff) or
-  `Damage taken debuff` (debuff).
-- **Magic damage taken** — parse increased enemy magic damage taken as debuff
-  `Magic damage amplification`; reduced self/ally magic damage taken as buff
-  `Magic damage reduction`. Both display as **Magic damage amplification** in
-  summaries (buff = mitigation, debuff = vulnerability).
+- **Damage taken** — combat modifier, not a character-sheet stat. Store and
+  parse as **Damage taken** with `type` buff (reduction) or debuff
+  (vulnerability). List view uses separate column ids (`damage_taken_buff`,
+  `damage_taken_debuff`) with the same display label.
+- **Magic damage** — store and parse as **Magic damage** with `type` buff
+  (reduction / mitigation) or debuff (amplification / vulnerability). Same
+  display label in summaries; polarity from section or metadata.
 - **Max HP** — scaling phrase in skills (`max HP`, `% of max HP`); not a
   separate wiki stat column (use **HP** for the health pool).
 - **Dodge chance** — skill-granted avoidance (e.g. Eironn's shield), not a base
