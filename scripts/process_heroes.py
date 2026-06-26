@@ -52,6 +52,7 @@ def build_processed(data: dict) -> dict:
     heroes = analysis.heroes
     behavior_by_title = analysis.behavior_by_title
     display_by_title = analysis.display_by_title
+    seasons = io.load_seasons()
 
     energy_provider_titles = {
         hero.title for hero in heroes if gen.is_energy_provider(hero)
@@ -65,17 +66,25 @@ def build_processed(data: dict) -> dict:
         short = display_by_title[hero.title]
         hero_class = analysis.hero_class_by_title[hero.title]
         skills = analysis.skills_by_title[hero.title]
+        default_range = hero_record.get("range")
+        if default_range is not None:
+            default_range = int(default_range)
+        season = hs.map_date_to_season(hero_record.get("release_date"), seasons)
         processed_heroes[short] = hs.serialize_processed_hero(
             hero,
             hero_record,
             is_energy_provider=hero.title in energy_provider_titles,
             is_melee=rs.compute_is_melee(
-                skills, hero_class=hero_class, display_name=short
+                skills,
+                hero_class=hero_class,
+                display_name=short,
+                default_range=default_range,
             ),
             is_dual_range=rs.compute_is_dual_range(
                 skills, display_name=short
             ),
             behavior=behavior_dict,
+            season=season,
         )
 
     result = {"heroes": processed_heroes}

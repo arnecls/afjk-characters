@@ -34,6 +34,7 @@ HEROES_DATA = DATA / "heroes_data.json"
 HEROES_DATA_PROCESSED = DATA / "heroes_data_processed.json"
 HEROES_DATA_SYNERGIES = DATA / "heroes_data_synergies.json"
 HEROES_CONFIG = DATA / "heroes_config.json"
+SEASONS_JSON = DATA / "seasons.json"
 
 # Section headings, in the order they appear in a hero block.
 SECTION_ORDER = [
@@ -367,6 +368,12 @@ def load_synergies() -> dict:
 
 def load_config() -> dict:
     return load_json(HEROES_CONFIG)
+
+
+def load_seasons() -> list[dict]:
+    """Return season name/start_date records from data/seasons.json."""
+    payload = load_json(SEASONS_JSON)
+    return list(payload.get("seasons", []))
 
 
 # ---------------------------------------------------------------------------

@@ -44,7 +44,10 @@ class MeleeDetectionTests(unittest.TestCase):
         hero_class = self.analysis.hero_class_by_title[hero.title]
         short = self.analysis.display_by_title[hero.title]
         return self.rs.compute_is_melee(
-            skills, hero_class=hero_class, display_name=short
+            skills,
+            hero_class=hero_class,
+            display_name=short,
+            default_range=hero.default_range,
         )
 
     def _is_dual_range(self, title_prefix: str) -> bool:
@@ -74,11 +77,11 @@ class MeleeDetectionTests(unittest.TestCase):
             "Lumont": True,
             "Dionel": False,
             "Atalanta": False,
-            "Lucy": True,
-            "Mehira": True,
+            "Lucy": False,
+            "Mehira": False,
             "Mikola": True,
             "Satrana": True,
-            "Zanie": True,
+            "Zanie": False,
             "Rhys": False,
             "Nerion": False,
         }
@@ -90,6 +93,25 @@ class MeleeDetectionTests(unittest.TestCase):
         self.assertTrue(self._is_dual_range("Talene"))
         self.assertTrue(self._is_dual_range("Vala"))
         self.assertFalse(self._is_dual_range("Aliceth"))
+
+    def test_default_range_overrides_melee_class(self) -> None:
+        skills: list = []
+        self.assertFalse(
+            self.rs.compute_is_melee(
+                skills, hero_class="Warrior", default_range=10
+            )
+        )
+        self.assertTrue(
+            self.rs.compute_is_melee(
+                skills, hero_class="Warrior", default_range=1
+            )
+        )
+
+    def test_weighted_attack_range_falls_back_to_default(self) -> None:
+        self.assertEqual(
+            self.rs._weighted_attack_range([], default_range=10),
+            10.0,
+        )
 
 
 if __name__ == "__main__":

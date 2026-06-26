@@ -543,7 +543,7 @@ def is_energy_provider(provider: _rs.Hero) -> bool:
         e.category == "buff"
         and e.label == "Energy"
         and e.targeting in ALLY_TARGETINGS
-        and e.conditional != "rare"
+        and not _rs.effect_synergy_excluded(e)
         and not _rs._energy_recovery_targets_self(e.qualitative)
         for e in provider.effects
     )
@@ -557,7 +557,7 @@ def _healing_effect_is_ally_provider(effect: _rs.Effect) -> bool:
         return False
     if effect.targeting not in ALLY_TARGETINGS:
         return False
-    if effect.conditional == "rare":
+    if _rs.effect_synergy_excluded(effect):
         return False
     return True
 
@@ -1054,7 +1054,7 @@ def _ally_stat_buff_synergy(
         for e in provider.effects
         if e.category == "buff"
         and e.targeting in ALLY_TARGETINGS
-        and e.conditional != "rare"
+        and not _rs.effect_synergy_excluded(e)
     ]
     if not ally_buffs:
         return None
@@ -1065,6 +1065,9 @@ def _ally_stat_buff_synergy(
         score = SYNERGY_STAT_BUFF_REACH_WEIGHT * MAG_WEIGHT.get(
             effect.magnitude, 1.0
         )
+        score *= _rs.effect_synergy_multiplier(effect)
+        if score <= 0:
+            continue
         if effect.label not in best_by_label or score > best_by_label[effect.label]:
             best_by_label[effect.label] = score
     if not best_by_label:
@@ -1424,7 +1427,7 @@ def score_synergy(
                 continue
             if effect.targeting not in ALLY_TARGETINGS:
                 continue
-            if effect.conditional == "rare":
+            if _rs.effect_synergy_excluded(effect):
                 continue
             if not ally_buff_applies_to_receiver(
                 provider, effect, receiver_movement
@@ -1446,8 +1449,9 @@ def score_synergy(
             tw = stat_buff_targeting_weight(receiver, stat, effect.targeting)
             mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
             pts = tw * mw * mult_by_label[effect.label]
-            if effect.conditional == "frequent":
-                pts *= FREQUENT_CONDITIONAL_SCORE
+            pts *= _rs.effect_synergy_multiplier(effect)
+            if pts <= 0:
+                continue
             if effect.label == "Energy":
                 if (
                     receiver_behavior
@@ -1519,12 +1523,13 @@ def score_summon_synergy(
                 continue
             if _rs.is_own_summon_buff_targeting(effect.targeting):
                 continue
-            if effect.conditional == "rare":
+            if _rs.effect_synergy_excluded(effect):
                 continue
             mw = MAG_WEIGHT.get(effect.magnitude, 1.0)
             pts = SUMMON_TARGETING_WEIGHT * mw * mult_by_label[effect.label]
-            if effect.conditional == "frequent":
-                pts *= FREQUENT_CONDITIONAL_SCORE
+            pts *= _rs.effect_synergy_multiplier(effect)
+            if pts <= 0:
+                continue
             cond = (
                 f", conditional ({effect.conditional})"
                 if effect.conditional
@@ -1678,7 +1683,7 @@ def _beneficiary_overflow_reasons(provider: _rs.Hero) -> list[str]:
         for e in provider.effects
         if e.category == "buff"
         and e.targeting in ALLY_TARGETINGS
-        and e.conditional != "rare"
+        and not _rs.effect_synergy_excluded(e)
     ]
     labels = {e.label for e in ally_buffs}
     targetings = {e.targeting for e in ally_buffs}
@@ -1719,7 +1724,7 @@ def _hero_support_score(hero: _rs.Hero) -> float:
             continue
         if effect.targeting not in ALLY_TARGETINGS:
             continue
-        if effect.conditional == "rare":
+        if _rs.effect_synergy_excluded(effect):
             continue
         total += TARGETING_WEIGHT.get(effect.targeting, 1.0) * MAG_WEIGHT.get(
             effect.magnitude, 1.0
@@ -1784,8 +1789,9 @@ def _replacement_effect_weight(
         if duration and duration > 0:
             return targeting * duration
         return targeting * 1.0
+    gate_mult = _rs.effect_throughput_gate_multiplier(effect)
     if effect.numeric is not None and effect.numeric > 0:
-        return targeting * effect.numeric
+        return targeting * effect.numeric * gate_mult
     return targeting * 1.0
 
 
@@ -1802,7 +1808,7 @@ def _hero_provider_profile(
             continue
         if effect.targeting not in ALLY_TARGETINGS:
             continue
-        if effect.conditional == "rare":
+        if _rs.effect_synergy_excluded(effect):
             continue
         weight = _replacement_effect_weight(effect, hero, skills_by_title)
         profile[effect.label] = max(profile.get(effect.label, 0.0), weight)
@@ -1934,7 +1940,7 @@ def hero_tank_prominence(
     """Shields, HP buffs, and sustain on self or allies."""
     weights: dict[str, float] = {}
     for effect in _hero_all_prominence_effects(hero):
-        if effect.conditional == "rare":
+        if _rs.effect_synergy_excluded(effect):
             continue
         if effect.targeting not in SELF_OR_ALLY_TARGETINGS:
             continue
@@ -1956,7 +1962,7 @@ def hero_support_prominence(
     """Ally healing and ally buffs."""
     weights: dict[str, float] = {}
     for effect in _hero_all_prominence_effects(hero):
-        if effect.conditional == "rare":
+        if _rs.effect_synergy_excluded(effect):
             continue
         if _healing_effect_is_ally_provider(effect):
             weight = _healing_effect_weight(effect, hero, skills_by_title)
@@ -1974,7 +1980,7 @@ def hero_specialist_prominence(
     """Enemy debuffs/CC plus ally buffs."""
     weights: dict[str, float] = {}
     for effect in _hero_all_prominence_effects(hero):
-        if effect.conditional == "rare":
+        if _rs.effect_synergy_excluded(effect):
             continue
         if effect.category in ("debuff", "cc"):
             if effect.targeting == "Self":
@@ -2133,7 +2139,7 @@ def _hero_effective_ally_energy_provided(hero: _rs.Hero) -> float:
             continue
         if effect.targeting not in ALLY_TARGETINGS:
             continue
-        if effect.conditional == "rare":
+        if _rs.effect_synergy_excluded(effect):
             continue
         if _rs._energy_recovery_targets_self(effect.qualitative):
             continue

@@ -1033,6 +1033,185 @@ class MovementDetectionTests(unittest.TestCase):
         self.assertIn("inactive while dormant", behavior.movement_note)
 
 
+class ConditionParsingTests(unittest.TestCase):
+    def test_hp_threshold_below(self):
+        conds = rs.parse_conditions_from_text(
+            "when their HP ratio drops below 50% for the first time",
+            "buff",
+        )
+        self.assertIn(
+            {
+                "type": "hp_threshold",
+                "hp_ratio": 0.5,
+                "comparison": "below",
+            },
+            conds,
+        )
+        self.assertIn(
+            {"type": "duration_gate", "gate": "first_time"},
+            conds,
+        )
+
+    def test_duration_gate_cooldown(self):
+        conds = rs.parse_conditions_from_text(
+            "This effect can trigger once per enemy every 2s.",
+            "buff",
+        )
+        self.assertIn(
+            {
+                "type": "duration_gate",
+                "gate": "once_per_enemy",
+                "interval": 2.0,
+            },
+            conds,
+        )
+
+    def test_duration_gate_once_per_battle(self):
+        conds = rs.parse_conditions_from_text(
+            "This skill can be used once per battle.",
+            "buff",
+        )
+        self.assertIn(
+            {"type": "duration_gate", "gate": "once_per_battle"},
+            conds,
+        )
+
+    def test_stack_count_up_to(self):
+        conds = rs.parse_conditions_from_text(
+            "Each enemy hit increases Phys DEF, up to 6 stacks.",
+            "buff",
+        )
+        self.assertIn(
+            {
+                "type": "stack_count",
+                "stacks": 6,
+                "stack_comparison": "up_to",
+            },
+            conds,
+        )
+
+    def test_stack_count_at_max(self):
+        conds = rs.parse_conditions_from_text(
+            "When Aging reaches its maximum stack on an enemy",
+            "debuff",
+        )
+        self.assertIn(
+            {"type": "stack_count", "stack_comparison": "at_max"},
+            conds,
+        )
+
+    def test_hp_threshold_above(self):
+        conds = rs.parse_conditions_from_text(
+            "while the ally's HP ratio is above 40%",
+            "buff",
+        )
+        self.assertEqual(
+            conds[0],
+            {
+                "type": "hp_threshold",
+                "hp_ratio": 0.4,
+                "comparison": "above",
+            },
+        )
+
+    def test_status_controlled_enemies(self):
+        conds = rs.parse_conditions_from_text(
+            "strike controlled enemies below with lightning",
+            "damage",
+        )
+        self.assertIn(
+            {"type": "status_condition", "status": "controlled"},
+            conds,
+        )
+
+    def test_unit_type_non_summoned(self):
+        conds = rs.parse_conditions_from_text(
+            "whenever a non-summoned enemy is controlled",
+            "buff",
+        )
+        self.assertIn(
+            {"type": "unit_type", "unit_type": "non_summoned"},
+            conds,
+        )
+
+    def test_resolve_effect_conditions_merges_battle_phase(self):
+        conds = rs._resolve_effect_conditions(
+            "buff",
+            "can only be used once for each guarded ally per battle",
+        )
+        self.assertIn(
+            {"type": "battle_phase", "phase": "once_per_battle"},
+            conds,
+        )
+
+    def test_effect_to_schema_serializes_structured_conditions(self):
+        effect = rs.Effect(
+            category="buff",
+            label="Damage taken",
+            tier="base",
+            targeting="Self",
+            conditions=[
+                {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.5,
+                    "comparison": "below",
+                }
+            ],
+        )
+        schema = hs.effect_to_schema(effect)
+        self.assertEqual(
+            schema["conditions"],
+            [
+                {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.5,
+                    "comparison": "below",
+                }
+            ],
+        )
+
+    def test_arden_natures_resilience_unit_type_condition(self):
+        record = next(
+            r
+            for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Arden"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        sl = hero.skill_slices["Skill2"]
+        merged = hs._merge_effects(sl.effects)
+        schema = hs.effect_to_schema(merged[0])
+        types = {c.get("type") for c in schema.get("conditions") or []}
+        self.assertIn("unit_type", types)
+
+
+class SeasonMappingTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.seasons = io.load_seasons()
+
+    def test_starter_story_launch(self) -> None:
+        self.assertEqual(
+            hs.map_date_to_season("2024-03-27", self.seasons),
+            "Starter Story",
+        )
+
+    def test_song_of_strife_start(self) -> None:
+        self.assertEqual(
+            hs.map_date_to_season("2024-05-10", self.seasons),
+            "Song of Strife",
+        )
+
+    def test_galahad_release_season(self) -> None:
+        self.assertEqual(
+            hs.map_date_to_season("2025-12-18", self.seasons),
+            "Thorns of Devotion",
+        )
+
+    def test_missing_release_date(self) -> None:
+        self.assertIsNone(hs.map_date_to_season(None, self.seasons))
+
+
 class SchemaValidationTests(unittest.TestCase):
     def test_processed_json_validates(self):
         processed = io.load_processed()

@@ -2459,6 +2459,15 @@ html.welcome-warning-pending .welcome-warning,
   max-width: 14rem;
 }
 
+.chip .chip-tier-badge {
+  margin-left: 0.2em;
+  font-size: 0.72em;
+  font-weight: 600;
+  color: rgba(30, 50, 90, 0.62);
+  line-height: 0;
+  vertical-align: super;
+}
+
 .chip.chip-merged {
   display: inline-flex;
   align-items: stretch;

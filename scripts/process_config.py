@@ -99,3 +99,14 @@ def apply_config(config: dict) -> None:
         _rs.MIN_CYCLE_SECONDS = mt["min_cycle_seconds"]
     if "passive_reference_cycle_seconds" in mt:
         _rs.PASSIVE_REFERENCE_CYCLE_SECONDS = mt["passive_reference_cycle_seconds"]
+
+    cs = config.get("condition_strength", {})
+    if "frequent_score" in cs:
+        _rs.CONDITION_FREQUENT_SCORE = cs["frequent_score"]
+        _gen.FREQUENT_CONDITIONAL_SCORE = cs["frequent_score"]
+    if "cooldown_reference_seconds" in cs:
+        _rs.CONDITION_COOLDOWN_REFERENCE_SECONDS = cs["cooldown_reference_seconds"]
+    if "cooldown_floor_mult" in cs:
+        _rs.CONDITION_COOLDOWN_FLOOR_MULT = cs["cooldown_floor_mult"]
+    if "rare_downgrade_steps" in cs:
+        _rs.CONDITION_RARE_DOWNGRADE_STEPS = cs["rare_downgrade_steps"]

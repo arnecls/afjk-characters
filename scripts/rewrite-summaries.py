@@ -14,6 +14,7 @@ import statistics
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 
 from healing_types import (
     DIRECT_HEALING_LABEL,
@@ -1443,6 +1444,7 @@ def add_summon_buff_effect(
     existing = [e for e in effects if (e.category, e.label, e.targeting) == key]
     n = extract_number(text, label)
     cond = _buff_condition("buff", text)
+    parsed_conditions = _resolve_effect_conditions("buff", text)
     if existing:
         cur = existing[0]
         order = TIER_ORDER.get(tier, 99)
@@ -1450,6 +1452,9 @@ def add_summon_buff_effect(
         if order < cur_order:
             cur.tier = tier
         cur.conditional = _merge_conditional(cur.conditional, cond)
+        cur.conditions = _merge_conditions_lists(
+            cur.conditions, parsed_conditions
+        )
         if n is not None and (cur.numeric is None or n > cur.numeric):
             cur.numeric = n
             cur.qualitative = text
@@ -1465,6 +1470,7 @@ def add_summon_buff_effect(
             numeric=n,
             qualitative=text,
             conditional=cond,
+            conditions=parsed_conditions,
         )
     )
 
@@ -1490,6 +1496,8 @@ class Effect:
     # Buffs only: None = always relevant; frequent = often (>~50% of fights);
     # rare = situational (not every battle / kill-gated / limited procs).
     conditional: str | None = None
+    # Structured schema conditions (hp_threshold, status_condition, unit_type).
+    conditions: list[dict[str, Any]] = field(default_factory=list)
     source_section: str | None = None
 
 
@@ -1538,6 +1546,7 @@ class Hero:
     damage_scores: dict[str, float] = field(default_factory=dict)
     damage_magnitudes: dict[str, str] = field(default_factory=dict)
     benefit_stats: list[str] = field(default_factory=list)
+    default_range: int | None = None
     # Buff labels tied to a specific tile; lost if the ally moves off it.
     positional_tile_buff_labels: frozenset[str] = field(default_factory=frozenset)
     # Buff labels from a provider-attached aura/circle; melee reach only.
@@ -1702,6 +1711,9 @@ def hero_from_record(hero_record: dict) -> Hero:
         if len(parts) >= 3:
             dmg = parts[2]
     hero = Hero(title=title, damage_type=dmg or "")
+    raw_range = hero_record.get("range")
+    if raw_range is not None:
+        hero.default_range = int(raw_range)
     for skill in hero_record.get("skills", []):
         normalize_skill_description(skill)
         name = (skill.get("name") or "").strip()
@@ -3160,6 +3172,342 @@ def _effect_condition(category: str, text: str) -> str | None:
     return classify_buff_condition(text) if category == "buff" else None
 
 
+_HP_RATIO_BELOW_RE = re.compile(
+    r"hp(?:\s+ratio)?\s+(?:drops?|falls?)\s+below\s+(\d+(?:\.\d+)?)\s*%",
+    re.I,
+)
+_HP_RATIO_ABOVE_RE = re.compile(
+    r"hp(?:\s+ratio)?\s+is\s+above\s+(\d+(?:\.\d+)?)\s*%",
+    re.I,
+)
+_HP_RATIO_LOWER_THAN_RE = re.compile(
+    r"hp\s+ratio\s+is\s+(?:lower|less)\s+than\s+(\d+(?:\.\d+)?)\s*%",
+    re.I,
+)
+
+_STATUS_CONDITION_PATTERNS: tuple[tuple[str, str], ...] = (
+    (r"controlled enem(?:y|ies)", "controlled"),
+    (r"enem(?:y|ies) (?:who are |that are )?controlled", "controlled"),
+    (r"while (?:the )?blizzard is active", "active_blizzard"),
+    (r"while (?:the )?frost shield is active", "active_shield"),
+    (r"while (?:the )?.{0,30}shield is active", "active_shield"),
+    (r"while (?:casting|channeling)", "active_state"),
+    (r"when attacked", "active_state"),
+    (r"blinded enem(?:y|ies)", "blinded"),
+    (r"poisoned enem(?:y|ies)", "debuffed"),
+    (r"debuffed enem(?:y|ies)", "debuffed"),
+)
+
+_UNIT_TYPE_PATTERNS: tuple[tuple[str, str], ...] = (
+    (r"non-summoned enem(?:y|ies)", "non_summoned"),
+    (r"non-summoned ally", "non_summoned"),
+    (r"non-boss enem(?:y|ies)", "non_boss"),
+    (r"boss enem(?:y|ies)", "boss"),
+    (r"ranged unit", "ranged"),
+    (r"melee unit", "melee"),
+)
+
+_DURATION_ONCE_PER_ENEMY_EVERY_RE = re.compile(
+    r"once per enem(?:y|ies) every (\d+(?:\.\d+)?)\s*s",
+    re.I,
+)
+_DURATION_ONCE_EVERY_RE = re.compile(
+    r"once every (\d+(?:\.\d+)?)\s*s",
+    re.I,
+)
+
+_DURATION_GATE_PATTERNS: tuple[tuple[str, str], ...] = (
+    (r"for the first time", "first_time"),
+    (r"the first time", "first_time"),
+    (
+        r"once (?:for each|per) (?:guarded )?ally per battle",
+        "once_per_ally",
+    ),
+    (r"once per hero", "once_per_hero"),
+    (r"once per target", "once_per_target"),
+    (
+        r"can only be triggered once per battle",
+        "once_per_battle",
+    ),
+    (r"can be used once per battle", "once_per_battle"),
+    (r"once per battle", "once_per_battle"),
+    (r"once per enemy(?!\s+every)", "once_per_enemy"),
+    (
+        r"can only be triggered once each time this skill is used",
+        "once_per_skill",
+    ),
+)
+
+_STACK_UP_TO_RE = re.compile(
+    r"(?:stacking|stack) up to (\d+) times?",
+    re.I,
+)
+_STACK_UP_TO_STACKS_RE = re.compile(
+    r"up to (\d+) stacks?",
+    re.I,
+)
+_STACK_AT_MAX_RE = re.compile(
+    r"(?:reaches?|reach(?:es)?) (?:its |their |the )?maximum stack",
+    re.I,
+)
+
+
+def _parse_duration_gates(text: str) -> list[dict[str, Any]]:
+    t = text.lower()
+    out: list[dict[str, Any]] = []
+    seen_gates: set[str] = set()
+
+    m = _DURATION_ONCE_PER_ENEMY_EVERY_RE.search(t)
+    if m:
+        out.append(
+            {
+                "type": "duration_gate",
+                "gate": "once_per_enemy",
+                "interval": float(m.group(1)),
+            }
+        )
+        seen_gates.add("once_per_enemy")
+    else:
+        m = _DURATION_ONCE_EVERY_RE.search(t)
+        if m:
+            out.append(
+                {
+                    "type": "duration_gate",
+                    "gate": "cooldown",
+                    "interval": float(m.group(1)),
+                }
+            )
+            seen_gates.add("cooldown")
+
+    for pat, gate in _DURATION_GATE_PATTERNS:
+        if gate in seen_gates:
+            continue
+        if re.search(pat, t, re.I):
+            out.append({"type": "duration_gate", "gate": gate})
+            seen_gates.add(gate)
+
+    return out
+
+
+def _parse_stack_counts(text: str) -> list[dict[str, Any]]:
+    t = text.lower()
+    out: list[dict[str, Any]] = []
+
+    m = _STACK_UP_TO_RE.search(t)
+    if m:
+        out.append(
+            {
+                "type": "stack_count",
+                "stacks": int(m.group(1)),
+                "stack_comparison": "up_to",
+            }
+        )
+    else:
+        m = _STACK_UP_TO_STACKS_RE.search(t)
+        if m:
+            out.append(
+                {
+                    "type": "stack_count",
+                    "stacks": int(m.group(1)),
+                    "stack_comparison": "up_to",
+                }
+            )
+
+    if _STACK_AT_MAX_RE.search(t):
+        out.append(
+            {
+                "type": "stack_count",
+                "stack_comparison": "at_max",
+            }
+        )
+
+    return out
+
+
+def _condition_key(cond: dict[str, Any]) -> tuple[Any, ...]:
+    return tuple(sorted(cond.items()))
+
+
+def _merge_conditions_lists(
+    *lists: list[dict[str, Any]] | None,
+) -> list[dict[str, Any]]:
+    merged: list[dict[str, Any]] = []
+    seen: set[tuple[Any, ...]] = set()
+    for conds in lists:
+        if not conds:
+            continue
+        for cond in conds:
+            key = _condition_key(cond)
+            if key in seen:
+                continue
+            seen.add(key)
+            merged.append(cond)
+    return merged
+
+
+def parse_conditions_from_text(text: str, category: str) -> list[dict[str, Any]]:
+    """Extract structured schema conditions from skill clause text."""
+    del category  # reserved for category-specific rules later
+    t = text.lower()
+    out: list[dict[str, Any]] = []
+
+    for pat, comparison_re in (
+        (_HP_RATIO_BELOW_RE, "below"),
+        (_HP_RATIO_ABOVE_RE, "above"),
+        (_HP_RATIO_LOWER_THAN_RE, "below"),
+    ):
+        m = pat.search(t)
+        if m:
+            pct = float(m.group(1))
+            out.append(
+                {
+                    "type": "hp_threshold",
+                    "hp_ratio": round(pct / 100.0, 4),
+                    "comparison": comparison_re,
+                }
+            )
+            break
+
+    for pat, status in _STATUS_CONDITION_PATTERNS:
+        if re.search(pat, t, re.I):
+            out.append({"type": "status_condition", "status": status})
+
+    for pat, unit_type in _UNIT_TYPE_PATTERNS:
+        if re.search(pat, t, re.I):
+            out.append({"type": "unit_type", "unit_type": unit_type})
+
+    out.extend(_parse_duration_gates(text))
+    out.extend(_parse_stack_counts(text))
+
+    return out
+
+
+def _resolve_effect_conditions(
+    category: str, text: str
+) -> list[dict[str, Any]]:
+    structured = parse_conditions_from_text(text, category)
+    legacy = _conditional_to_conditions(_effect_condition(category, text))
+    return _merge_conditions_lists(structured, legacy)
+
+
+def _conditional_to_conditions(conditional: str | None) -> list[dict[str, Any]]:
+    if not conditional:
+        return []
+    if conditional == "rare":
+        return [{"type": "battle_phase", "phase": "once_per_battle"}]
+    if conditional == "on blind":
+        return [{"type": "battle_phase", "phase": "on_blind"}]
+    if conditional == "frequent":
+        return [{"type": "battle_phase", "phase": "conditional"}]
+    return [{"type": "battle_phase", "phase": "conditional"}]
+
+
+CONDITION_FREQUENT_SCORE = 0.85
+CONDITION_COOLDOWN_REFERENCE_SECONDS = 10.0
+CONDITION_COOLDOWN_FLOOR_MULT = 0.2
+CONDITION_RARE_DOWNGRADE_STEPS = 2
+
+_SYNERGY_EXCLUDE_DURATION_GATES = frozenset(
+    {
+        "once_per_battle",
+        "once_per_hero",
+        "once_per_enemy",
+        "once_per_target",
+        "once_per_ally",
+        "once_per_skill",
+    }
+)
+
+
+def _resolved_effect_conditions(effect: Effect) -> list[dict[str, Any]]:
+    conditions = list(getattr(effect, "conditions", None) or [])
+    if conditions:
+        return conditions
+    return _conditional_to_conditions(effect.conditional)
+
+
+def _effect_condition_profile(effect: Effect) -> dict[str, Any]:
+    """Synergy/magnitude flags from structured conditions and legacy strings."""
+    excluded = False
+    frequent_like = False
+    cooldown_interval: float | None = None
+
+    conditions = _resolved_effect_conditions(effect)
+    if not conditions and effect.conditional == "rare":
+        excluded = True
+    elif not conditions and effect.conditional in ("frequent", "on blind"):
+        frequent_like = True
+
+    for cond in conditions:
+        ctype = cond.get("type")
+        if ctype == "battle_phase":
+            phase = cond.get("phase")
+            if phase == "once_per_battle":
+                excluded = True
+            elif phase in ("conditional", "on_blind"):
+                frequent_like = True
+        elif ctype == "duration_gate":
+            gate = cond.get("gate")
+            if gate in _SYNERGY_EXCLUDE_DURATION_GATES:
+                excluded = True
+            elif gate == "first_time":
+                frequent_like = True
+            interval = cond.get("interval")
+            if interval is not None and float(interval) > 0:
+                cooldown_interval = float(interval)
+
+    return {
+        "excluded": excluded,
+        "frequent_like": frequent_like,
+        "cooldown_interval": cooldown_interval,
+    }
+
+
+def effect_synergy_excluded(effect: Effect) -> bool:
+    """True when effect should not count for synergy (rare / once-per-battle)."""
+    return bool(_effect_condition_profile(effect)["excluded"])
+
+
+def effect_synergy_multiplier(effect: Effect) -> float:
+    """1.0 default; frequent-like penalty; 0.0 when excluded."""
+    profile = _effect_condition_profile(effect)
+    if profile["excluded"]:
+        return 0.0
+    mult = 1.0
+    if profile["frequent_like"]:
+        mult *= CONDITION_FREQUENT_SCORE
+    interval = profile["cooldown_interval"]
+    if interval and interval > 0:
+        mult *= max(
+            CONDITION_COOLDOWN_FLOOR_MULT,
+            CONDITION_COOLDOWN_REFERENCE_SECONDS / interval,
+        )
+    return mult
+
+
+def effect_magnitude_downgrade_steps(effect: Effect) -> int:
+    """Downgrade steps for assign_magnitudes (rare / once-per-battle)."""
+    if _effect_condition_profile(effect)["excluded"]:
+        return CONDITION_RARE_DOWNGRADE_STEPS
+    return 0
+
+
+def effect_throughput_gate_multiplier(effect: Effect) -> float:
+    """Cooldown scaling from structured conditions; 1.0 when unconditional."""
+    interval = _effect_condition_profile(effect)["cooldown_interval"]
+    if interval and interval > 0:
+        return max(
+            CONDITION_COOLDOWN_FLOOR_MULT,
+            CONDITION_COOLDOWN_REFERENCE_SECONDS / interval,
+        )
+    return 1.0
+
+
+def effect_has_structured_cooldown(effect: Effect) -> bool:
+    interval = _effect_condition_profile(effect)["cooldown_interval"]
+    return interval is not None and interval > 0
+
+
 def _buff_condition(category: str, text: str) -> str | None:
     return _effect_condition(category, text)
 
@@ -3234,6 +3582,7 @@ def _copy_effect(effect: Effect) -> Effect:
         target_count=effect.target_count,
         duration=effect.duration,
         conditional=effect.conditional,
+        conditions=list(effect.conditions),
         source_section=effect.source_section,
     )
 
@@ -3243,6 +3592,7 @@ def _merge_effect_records(into: Effect, src: Effect) -> None:
     if TIER_ORDER.get(src.tier, 99) < TIER_ORDER.get(into.tier, 99):
         into.tier = src.tier
     into.conditional = _merge_conditional(into.conditional, src.conditional)
+    into.conditions = _merge_conditions_lists(into.conditions, src.conditions)
     if src.category == "buff":
         into.targeting = _prefer_buff_targeting(src.targeting, into.targeting)
     elif src.category != "buff":
@@ -3406,6 +3756,7 @@ def add_effect(
         else extract_number(cond_text, label, category=category)
     )
     cond = _effect_condition(category, cond_text)
+    parsed_conditions = _resolve_effect_conditions(category, cond_text)
     timed_dur = (
         extract_timed_duration(cond_text, label)
         if category in ("buff", "debuff")
@@ -3423,6 +3774,9 @@ def add_effect(
         if order < cur_order:
             cur.tier = tier
         cur.conditional = _merge_conditional(cur.conditional, cond)
+        cur.conditions = _merge_conditions_lists(
+            cur.conditions, parsed_conditions
+        )
         if category == "buff" and new_buff_tgt is not None:
             cur.targeting = _prefer_buff_targeting(new_buff_tgt, cur.targeting)
         # Strongest value for cross-hero magnitude comparison.
@@ -3503,6 +3857,7 @@ def add_effect(
             numeric=n,
             qualitative=cond_text,
             conditional=cond,
+            conditions=parsed_conditions,
             area_count=area_count,
             target_count=parsed_count,
             duration=timed_dur,
@@ -5574,7 +5929,10 @@ def _effect_throughput_score(
     section = effect.source_section or ""
     skill = _skill_by_section(skills, section) if section else None
     text = _section_skill_text(hero, skills, section)
-    burst = base * _effect_frequency_multiplier(text)
+    if effect_has_structured_cooldown(effect):
+        burst = base * effect_throughput_gate_multiplier(effect)
+    else:
+        burst = base * _effect_frequency_multiplier(text)
     cycle = _effect_cycle_time(section, skill, skills)
     return burst / cycle
 
@@ -7361,12 +7719,13 @@ def downgrade_magnitude(mag: str, steps: int) -> str:
 
 
 def apply_conditional_magnitude(effect: Effect) -> None:
-    if effect.category != "buff" or not effect.conditional:
+    if effect.category != "buff":
         return
     if effect.label in _ALWAYS_HIGH_BUFFS:
         return
-    if effect.conditional == "rare":
-        effect.magnitude = downgrade_magnitude(effect.magnitude, 2)
+    steps = effect_magnitude_downgrade_steps(effect)
+    if steps > 0:
+        effect.magnitude = downgrade_magnitude(effect.magnitude, steps)
 
 
 def format_tier_suffix(tier: str) -> str:
@@ -8249,10 +8608,14 @@ def _effective_movement_range(skill: SkillMeta) -> float:
     return skill.range_tiles
 
 
-def _weighted_attack_range(skills: list[SkillMeta]) -> float | None:
+def _weighted_attack_range(
+    skills: list[SkillMeta],
+    *,
+    default_range: int | None = None,
+) -> float | None:
     candidates = _movement_range_candidates(skills)
     if not candidates:
-        return None
+        return float(default_range) if default_range is not None else None
 
     max_freq = _NO_CD_FREQUENCY_WEIGHT
     for skill in candidates:
@@ -8277,16 +8640,16 @@ def compute_is_melee(
     *,
     hero_class: str,
     display_name: str = "",
+    default_range: int | None = None,
     melee_max_range: float | None = None,
     non_melee_melee_max_range: float | None = None,
 ) -> bool:
     """True when the hero primarily fights at melee range.
 
-    Tank, rogue, and warrior default to melee. When offensive skills list
-    finite attack ranges, the minimum positive range overrides class for
-    those melee classes. Non-melee classes use the maximum positive range
-    instead, so an occasional close-range skill does not override a
-    primarily ranged kit.
+    Tank, rogue, and warrior default to melee. When the wiki lists a default
+    attack range, that value overrides class defaults and skill-derived
+    ranges. Otherwise offensive skill ranges apply: minimum for melee classes,
+    maximum for non-melee classes.
     """
     melee_threshold = (
         MELEE_MAX_RANGE if melee_max_range is None else melee_max_range
@@ -8297,18 +8660,24 @@ def compute_is_melee(
         else non_melee_melee_max_range
     )
     class_default = hero_class.lower() in MELEE_HERO_CLASSES
-    min_range = _min_positive_offensive_range(skills)
-    max_range = _max_offensive_attack_range(skills)
 
-    if class_default:
-        if min_range is not None:
-            detected = min_range <= melee_threshold
+    if default_range is not None:
+        if class_default:
+            detected = default_range <= melee_threshold
         else:
-            detected = True
-    elif max_range is not None:
-        detected = max_range <= non_melee_threshold
+            detected = default_range <= non_melee_threshold
     else:
-        detected = False
+        min_range = _min_positive_offensive_range(skills)
+        max_range = _max_offensive_attack_range(skills)
+        if class_default:
+            if min_range is not None:
+                detected = min_range <= melee_threshold
+            else:
+                detected = True
+        elif max_range is not None:
+            detected = max_range <= non_melee_threshold
+        else:
+            detected = False
 
     curated = curated_display_name(display_name) if display_name else ""
     if curated:
@@ -9810,7 +10179,7 @@ def build_behavior_for_heroes(
     for hero in heroes:
         skills = skills_by_title[hero.title]
         movement, note = compute_movement(skills)
-        avg_range = _weighted_attack_range(skills)
+        avg_range = _weighted_attack_range(skills, default_range=hero.default_range)
         display = display_names.get(hero.title, hero.title.split(" - ", 1)[0])
         curated = curated_display_name(display)
         hero_class = class_by_title.get(hero.title, "").lower()

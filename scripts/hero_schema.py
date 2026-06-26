@@ -583,6 +583,8 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
                     target_count=getattr(eff, "target_count", None),
                     duration=getattr(eff, "duration", None),
                     conditional=eff.conditional,
+                    conditions=list(getattr(eff, "conditions", None) or []),
+                    source_section=getattr(eff, "source_section", None),
                 )
             )
             continue
@@ -590,6 +592,10 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
         if rs.TIER_ORDER.get(eff.tier, 99) < rs.TIER_ORDER.get(cur.tier, 99):
             cur.tier = eff.tier
         cur.conditional = rs._merge_conditional(cur.conditional, eff.conditional)
+        cur.conditions = rs._merge_conditions_lists(
+            getattr(cur, "conditions", None),
+            getattr(eff, "conditions", None),
+        )
         if eff.category == "buff":
             cur.targeting = rs._prefer_buff_targeting(eff.targeting, cur.targeting)
         else:
@@ -717,7 +723,15 @@ def effect_to_schema(
             target_count=getattr(effect, "target_count", None),
         )
     )
-    conditions = _conditional_to_conditions(effect.conditional)
+    conditions = list(getattr(effect, "conditions", None) or [])
+    legacy = _conditional_to_conditions(effect.conditional)
+    if legacy:
+        seen = {tuple(sorted(c.items())) for c in conditions}
+        for cond in legacy:
+            key = tuple(sorted(cond.items()))
+            if key not in seen:
+                conditions.append(cond)
+                seen.add(key)
     if conditions:
         out["conditions"] = conditions
 
@@ -847,6 +861,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
     targeting = _schema_to_targeting(effect, "buff")
     numeric = _numeric_from_value(effect.get("value"))
     conditional = _conditions_to_conditional(effect.get("conditions"))
+    schema_conditions = list(effect.get("conditions") or [])
     area_count = (
         effect.get("area_count")
         if effect.get("area") == "radius"
@@ -866,6 +881,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            conditions=schema_conditions,
             area_count=area_count,
         )
 
@@ -888,6 +904,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            conditions=schema_conditions,
             area_count=area_count,
         )
 
@@ -901,6 +918,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            conditions=schema_conditions,
             area_count=area_count,
         )
 
@@ -914,6 +932,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            conditions=schema_conditions,
             area_count=area_count,
         )
 
@@ -927,6 +946,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            conditions=schema_conditions,
             area_count=area_count,
         )
 
@@ -939,6 +959,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             numeric=numeric,
             qualitative="",
             conditional=conditional,
+            conditions=schema_conditions,
             area_count=area_count,
         )
 
@@ -951,6 +972,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         numeric=numeric,
         qualitative="",
         conditional=conditional,
+        conditions=schema_conditions,
         area_count=area_count,
     )
 
@@ -1121,6 +1143,23 @@ def role_category_by_title_from_processed(
     return out
 
 
+def map_date_to_season(
+    release_date: str | None,
+    seasons: list[dict],
+) -> str | None:
+    """Map a hero release date (YYYY-MM-DD) to the active season name."""
+    if not release_date or not seasons:
+        return None
+    ordered = sorted(seasons, key=lambda s: s["start_date"])
+    matched = ordered[0]["name"]
+    for season in ordered:
+        if release_date >= season["start_date"]:
+            matched = season["name"]
+        else:
+            break
+    return matched
+
+
 def serialize_processed_hero(
     hero: Any,
     hero_record: dict[str, Any],
@@ -1129,6 +1168,7 @@ def serialize_processed_hero(
     is_melee: bool,
     is_dual_range: bool,
     behavior: dict[str, Any],
+    season: str | None = None,
 ) -> dict[str, Any]:
     provides = [
         special_to_synergy_mechanic(se)
@@ -1164,6 +1204,8 @@ def serialize_processed_hero(
         for dt, mag in hero.damage_magnitudes.items()
     }
     benefit_stats = [to_schema_stat(s) for s in hero.benefit_stats]
+    raw_range = hero_record.get("range")
+    default_range = int(raw_range) if raw_range is not None else None
 
     return {
         "long_name": hero_record.get("title") or hero.title,
@@ -1173,6 +1215,9 @@ def serialize_processed_hero(
         "is_energy_provider": is_energy_provider,
         "is_melee": is_melee,
         "is_dual_range": is_dual_range,
+        "default_range": default_range,
+        "release_date": hero_record.get("release_date"),
+        "season": season,
         "skills": skills,
         "synergy_profile": {"provides": provides, "requires": requires},
         "damage_entries": damage_entries,

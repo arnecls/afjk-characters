@@ -28,6 +28,9 @@
         "is_energy_provider",
         "is_melee",
         "is_dual_range",
+        "default_range",
+        "release_date",
+        "season",
         "skills",
         "synergy_profile",
         "damage_entries",
@@ -62,6 +65,18 @@
         "is_dual_range": {
           "type": "boolean",
           "description": "True when the hero alternates between ranged and melee combat."
+        },
+        "default_range": {
+          "type": ["integer", "null"],
+          "description": "Default attack range in tiles from the wiki infobox."
+        },
+        "release_date": {
+          "type": ["string", "null"],
+          "description": "Hero release date (YYYY-MM-DD) from the wiki infobox."
+        },
+        "season": {
+          "type": ["string", "null"],
+          "description": "AFK Journey season when the hero was released."
         },
         "skills": {
           "$ref": "skills.schema.json#/$defs/heroSkills"

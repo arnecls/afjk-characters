@@ -69,6 +69,47 @@ class FandomParseTests(unittest.TestCase):
             "A Marksman who transforms her wings into a mighty bow.",
         )
 
+    def test_infobox_range_and_release_date(self) -> None:
+        wikitext = """\
+{{Character Infobox
+|name         = Galahad
+|title        = Daughter of Dawn
+|faction      = Mauler
+|class        = Mage
+|damage       = Magic
+|range        = 10
+|release_date = 2025-12-18 00:00:00
+|description  = A Mage who controls time.
+}}
+"""
+        hero = sources_web._parse_fandom_hero(wikitext, "Galahad")
+        self.assertEqual(hero["range"], 10)
+        self.assertEqual(hero["release_date"], "2025-12-18")
+
+    def test_inline_release_date_pipe_split(self) -> None:
+        wikitext = """\
+{{Character Infobox
+|name         = Harak
+|title        = Deepsea Ravager
+|class        = Warrior
+|range        = 1
+|enemies=* Foo|release_date = 2024-11-19
+}}
+"""
+        hero = sources_web._parse_fandom_hero(wikitext, "Harak")
+        self.assertEqual(hero["range"], 1)
+        self.assertEqual(hero["release_date"], "2024-11-19")
+
+    def test_normalize_natural_release_date(self) -> None:
+        self.assertEqual(
+            sources_web._normalize_release_date("January 15, 2026"),
+            "2026-01-15",
+        )
+        self.assertEqual(
+            sources_web._normalize_release_date("026-05-29 00:00:00"),
+            "2026-05-29",
+        )
+
 
 _ALICETH_PRYDWEN_HTML = """\
 <h5>General Ratings</h5><div class="detailed-ratings general">

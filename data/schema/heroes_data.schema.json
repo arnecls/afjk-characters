@@ -26,6 +26,8 @@
         "class": { "type": ["string", "null"] },
         "damage_type": { "type": ["string", "null"] },
         "description": { "type": "string" },
+        "range": { "type": ["integer", "null"] },
+        "release_date": { "type": ["string", "null"] },
         "role_category": { "type": "string" },
         "prydwen_tiers": {
           "type": "object",

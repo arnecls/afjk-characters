@@ -111,6 +111,12 @@
     "min_cycle_seconds": 3.0,
     "passive_reference_cycle_seconds": 10.0
   },
+  "condition_strength": {
+    "frequent_score": 0.85,
+    "cooldown_reference_seconds": 10.0,
+    "cooldown_floor_mult": 0.2,
+    "rare_downgrade_steps": 2
+  },
   "mix_mode": {
     "faction_bonus": 10.0,
     "mark_synergy_multiplier": 5.0,

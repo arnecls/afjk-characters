@@ -348,7 +348,12 @@
             "affects",
             "trigger_condition",
             "count",
-            "battle_phase"
+            "battle_phase",
+            "hp_threshold",
+            "status_condition",
+            "unit_type",
+            "duration_gate",
+            "stack_count"
           ]
         },
         "ally": {
@@ -413,6 +418,77 @@
         },
         "phase": {
           "$ref": "#/$defs/battlePhase"
+        },
+        "hp_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "HP ratio threshold (0–1) for hp_threshold conditions."
+        },
+        "comparison": {
+          "type": "string",
+          "enum": [
+            "below",
+            "above"
+          ],
+          "description": "Whether HP must be below or above the threshold."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "controlled",
+            "debuffed",
+            "blinded",
+            "shielded",
+            "active_blizzard",
+            "active_shield",
+            "active_state"
+          ],
+          "description": "Required status or active state for status_condition."
+        },
+        "unit_type": {
+          "type": "string",
+          "enum": [
+            "ranged",
+            "melee",
+            "non_summoned",
+            "non_boss",
+            "summon",
+            "boss"
+          ],
+          "description": "Unit category filter for unit_type conditions."
+        },
+        "gate": {
+          "type": "string",
+          "enum": [
+            "first_time",
+            "cooldown",
+            "once_per_battle",
+            "once_per_hero",
+            "once_per_enemy",
+            "once_per_target",
+            "once_per_ally",
+            "once_per_skill"
+          ],
+          "description": "Proc limit for duration_gate conditions."
+        },
+        "interval": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Cooldown interval in seconds for duration_gate."
+        },
+        "stacks": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Stack cap for stack_count conditions."
+        },
+        "stack_comparison": {
+          "type": "string",
+          "enum": [
+            "up_to",
+            "at_max"
+          ],
+          "description": "Whether stacks are capped below a max or at maximum."
         }
       },
       "allOf": [
@@ -464,6 +540,92 @@
           "then": {
             "required": [
               "phase"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hp_threshold"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "hp_ratio",
+              "comparison"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "status_condition"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "status"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "unit_type"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "unit_type"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "duration_gate"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "gate"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "stack_count"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "stack_comparison"
             ]
           }
         }

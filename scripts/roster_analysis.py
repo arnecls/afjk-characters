@@ -23,7 +23,7 @@ sys.path.insert(0, str(SCRIPTS))
 import heroes_io as io
 
 CACHE_PATH = io.DATA / ".roster_analysis_cache.pkl"
-CACHE_VERSION = 34
+CACHE_VERSION = 37
 
 _rs: Any = None
 _gen: Any = None

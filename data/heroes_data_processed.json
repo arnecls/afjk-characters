@@ -8,6 +8,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 8,
+      "release_date": "2025-09-26",
+      "season": "Thorns of Devotion",
       "skills": {
         "Radiant Rain": {
           "category": "ultimate",
@@ -183,6 +186,12 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "ranged"
+                }
+              ],
               "type": "buff",
               "name": "Attack range",
               "label": "buff_stat",
@@ -467,6 +476,10 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "once_per_battle"
                 }
@@ -494,7 +507,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 30.0
+                  "value": 40.0
                 }
               ],
               "duration": 1.5
@@ -518,40 +531,6 @@
               "duration": 1.5
             },
             {
-              "tier": "ex+5",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 35.0
-                }
-              ]
-            },
-            {
-              "tier": "ex+10",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 40.0
-                }
-              ]
-            },
-            {
               "tier": "ex+15",
               "targeting_label": "Area",
               "is_max_known": true,
@@ -559,6 +538,12 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "blinded"
+                }
+              ],
               "type": "crowd_control",
               "cc-type": "blind",
               "duration": 3.0
@@ -590,6 +575,10 @@
               "area": "single",
               "target_count": 1,
               "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "blinded"
+                },
                 {
                   "type": "battle_phase",
                   "phase": "on_blind"
@@ -787,6 +776,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2026-01-08",
+      "season": "Thorns of Devotion",
       "skills": {
         "Winter Anthem": {
           "category": "ultimate",
@@ -877,6 +869,12 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_blizzard"
+                }
+              ],
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -1218,6 +1216,12 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
               "type": "debuff",
               "name": "Vitality",
               "label": "debuff_defensive",
@@ -1231,6 +1235,12 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 2.0
@@ -1397,6 +1407,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2024-05-10",
+      "season": "Song of Strife",
       "skills": {
         "Twirling Rocks": {
           "category": "ultimate",
@@ -1451,6 +1464,12 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -1481,6 +1500,12 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
               "type": "debuff",
               "name": "Movement speed",
               "label": "debuff_stat",
@@ -1853,6 +1878,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Shield Assault": {
           "category": "ultimate",
@@ -1987,6 +2015,13 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 6,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "Phys DEF",
               "label": "buff_defensive"
@@ -2273,6 +2308,15 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.5,
+                  "comparison": "below"
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -2413,6 +2457,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Force of Nature": {
           "category": "ultimate",
@@ -2482,6 +2529,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "controlled"
+                }
+              ],
               "type": "dot",
               "damage_type": "dot",
               "name": "DoT",
@@ -2624,6 +2677,12 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "buff",
               "name": "Energy",
               "label": "buff_stat",
@@ -2771,7 +2830,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -2821,6 +2880,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Wild Sniper": {
           "category": "ultimate",
@@ -2990,6 +3052,10 @@
               "area": "single",
               "target_count": 1,
               "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
                 {
                   "type": "battle_phase",
                   "phase": "conditional"
@@ -3326,6 +3392,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-03-27",
+      "season": "Chains of Eternity",
       "skills": {
         "Unbroken Retribution": {
           "category": "ultimate",
@@ -3419,6 +3488,10 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -3441,6 +3514,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
               "type": "crowd_control",
               "cc-type": "knock_down",
               "duration": 0.5
@@ -3622,6 +3701,10 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -3644,6 +3727,10 @@
               "area": "single",
               "target_count": 1,
               "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
                 {
                   "type": "battle_phase",
                   "phase": "conditional"
@@ -3922,6 +4009,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2026-01-30",
+      "season": "Tower of Memory",
       "skills": {
         "Starlit Slumber": {
           "category": "ultimate",
@@ -4376,7 +4466,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "average",
-        "avg_attack_range": null,
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -4423,6 +4513,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-06-26",
+      "season": "Echoes of Dissent",
       "skills": {
         "Celestial Rise": {
           "category": "ultimate",
@@ -4863,6 +4956,16 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_boss"
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "boss"
+                }
+              ],
               "type": "debuff",
               "name": "Max HP",
               "label": "debuff_stat"
@@ -4980,6 +5083,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Scared Swamp": {
           "category": "ultimate",
@@ -5358,6 +5464,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "debuff",
               "name": "Energy",
               "label": "debuff_stat",
@@ -5493,6 +5605,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2024-12-31",
+      "season": "Waves of Intrigue",
       "skills": {
         "Deathmark Arrow": {
           "category": "ultimate",
@@ -5653,6 +5768,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stack_comparison": "at_max"
+                }
+              ],
               "type": "debuff",
               "name": "ATK",
               "label": "debuff_offensive",
@@ -5670,6 +5791,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stack_comparison": "at_max"
+                }
+              ],
               "type": "dot",
               "damage_type": "dot",
               "name": "DoT",
@@ -5853,6 +5980,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stack_comparison": "at_max"
+                }
+              ],
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -5889,6 +6022,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stack_comparison": "at_max"
+                }
+              ],
               "type": "debuff",
               "name": "Magic damage",
               "label": "debuff_stat",
@@ -6005,6 +6144,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Whirlwind Wrath": {
           "category": "ultimate",
@@ -6504,6 +6646,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Falcon Raid": {
           "category": "ultimate",
@@ -7010,6 +7155,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-02-13",
+      "season": "Chains of Eternity",
       "skills": {
         "Restless Guardian": {
           "category": "ultimate",
@@ -7281,6 +7429,17 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.3,
+                  "comparison": "below"
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.0
@@ -7452,6 +7611,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Frozen Grave": {
           "category": "ultimate",
@@ -7530,6 +7692,13 @@
               "area": "radius",
               "target_count": -1,
               "area_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "debuff",
               "name": "Haste",
               "label": "debuff_offensive",
@@ -7918,6 +8087,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 3,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Running Tide": {
           "category": "ultimate",
@@ -8440,6 +8612,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Queen's Summons": {
           "category": "ultimate",
@@ -9020,6 +9195,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Brothers-in-arms": {
           "category": "ultimate",
@@ -9281,6 +9459,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2026-04-09",
+      "season": "Tower of Memory",
       "skills": {
         "Detention Pass": {
           "category": "ultimate",
@@ -9390,6 +9571,13 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.4,
+                  "comparison": "above"
+                }
+              ],
               "type": "shield",
               "name": "Shield",
               "value": [
@@ -9406,6 +9594,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.4,
+                  "comparison": "above"
+                }
+              ],
               "type": "damage",
               "damage_type": "hp_loss",
               "name": "HP loss",
@@ -9424,6 +9619,12 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
               "type": "buff",
               "name": "ATK",
               "label": "buff_offensive",
@@ -9867,7 +10068,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "slow",
-        "avg_attack_range": null,
+        "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -9912,6 +10113,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2025-02-19",
+      "season": "Chains of Eternity",
       "skills": {
         "Frostveil Domain": {
           "category": "ultimate",
@@ -10414,6 +10618,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2025-02-26",
+      "season": "Chains of Eternity",
       "skills": {
         "Gravitic Requiem": {
           "category": "ultimate",
@@ -10515,6 +10722,16 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_boss"
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "boss"
+                }
+              ],
               "type": "debuff",
               "name": "Execution",
               "label": "debuff_offensive"
@@ -11036,6 +11253,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 3,
+      "release_date": "2025-06-05",
+      "season": "Echoes of Dissent",
       "skills": {
         "Dolly Defender": {
           "category": "ultimate",
@@ -11447,7 +11667,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 3.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -11498,6 +11718,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 20,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Explode, my chariot!": {
           "category": "ultimate",
@@ -11832,6 +12055,10 @@
               "target_count": 3,
               "conditions": [
                 {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -11888,6 +12115,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.5,
+                  "comparison": "above"
+                }
+              ],
               "type": "crowd_control",
               "cc-type": "blind",
               "duration": 7.0
@@ -11939,7 +12173,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "average",
         "non_ult_speed": "slow",
-        "avg_attack_range": null,
+        "avg_attack_range": 20.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -11984,6 +12218,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Dawn Light": {
           "category": "ultimate",
@@ -12181,6 +12418,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "ATK",
               "label": "buff_offensive",
@@ -12199,6 +12443,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "ATK SPD",
               "label": "buff_offensive",
@@ -12494,6 +12745,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-09-09",
+      "season": "Song of Strife",
       "skills": {
         "Echo of Silence": {
           "category": "ultimate",
@@ -13101,6 +13355,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Verdant Cyclone": {
           "category": "ultimate",
@@ -13347,6 +13604,12 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
               "type": "shield",
               "name": "Shield",
               "value": [
@@ -13364,6 +13627,12 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
               "type": "buff",
               "name": "Dodge chance",
               "label": "buff_stat",
@@ -13616,6 +13885,9 @@
       "is_energy_provider": true,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2025-01-22",
+      "season": "Chains of Eternity",
       "skills": {
         "Starlight Waltz": {
           "category": "ultimate",
@@ -13809,57 +14081,6 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 100.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 110.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 120.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
                   "value": 130.0
                 }
               ]
@@ -13926,6 +14147,12 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
               "type": "shield",
               "name": "Shield",
               "value": [
@@ -14062,6 +14289,13 @@
               "target": "ally",
               "area": "single",
               "target_count": 3,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "Haste",
               "label": "buff_offensive"
@@ -14267,7 +14501,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
         "non_ult_speed": "slow",
-        "avg_attack_range": null,
+        "avg_attack_range": 6.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -14315,6 +14549,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 20,
+      "release_date": "2026-05-07",
+      "season": "Tower of Memory",
       "skills": {
         "Intel Chase": {
           "category": "ultimate",
@@ -14767,7 +15004,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
         "non_ult_speed": "average",
-        "avg_attack_range": null,
+        "avg_attack_range": 20.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -14819,6 +15056,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-04-02",
+      "season": "Chains of Eternity",
       "skills": {
         "Sanctified Circle": {
           "category": "ultimate",
@@ -15352,6 +15592,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 3,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Vibrant Dance": {
           "category": "ultimate",
@@ -15752,8 +15995,11 @@
       "class": "warrior",
       "role_category": "damage_dealer",
       "is_energy_provider": false,
-      "is_melee": true,
+      "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-04-16",
+      "season": "Starter Story",
       "skills": {
         "Pounding Blow": {
           "category": "ultimate",
@@ -16210,7 +16456,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
         "non_ult_speed": "slow",
-        "avg_attack_range": null,
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -16257,6 +16503,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2026-05-01",
+      "season": "Tower of Memory",
       "skills": {
         "Zoltraak": {
           "category": "ultimate",
@@ -16827,6 +17076,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 10,
+      "release_date": "2025-12-18",
+      "season": "Thorns of Devotion",
       "skills": {
         "Temporal Field": {
           "category": "ultimate",
@@ -17364,6 +17616,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-03-13",
+      "season": "Chains of Eternity",
       "skills": {
         "Splashing Fun": {
           "category": "ultimate",
@@ -17408,9 +17663,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -17839,6 +18094,10 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -17941,6 +18200,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Threshold of Jade": {
           "category": "ultimate",
@@ -18190,7 +18452,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 140.0
+                  "value": 170.0
                 }
               ],
               "duration": 3.0
@@ -18205,57 +18467,6 @@
               "type": "crowd_control",
               "cc-type": "taunt",
               "duration": 3.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 150.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 160.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 170.0
-                }
-              ]
             }
           ],
           "cooldown": 10.0,
@@ -18359,6 +18570,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.5,
+                  "comparison": "below"
+                }
+              ],
               "type": "buff",
               "name": "Phys DEF",
               "label": "buff_defensive"
@@ -18370,36 +18588,31 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.5,
+                  "comparison": "below"
+                }
+              ],
               "type": "buff",
               "name": "Magic DEF",
               "label": "buff_defensive"
             },
             {
-              "tier": "ex+5",
+              "tier": "mythic+",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
               "area": "single",
               "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
+              "conditions": [
                 {
-                  "type": "percentage",
-                  "value": 105.0
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.5,
+                  "comparison": "below"
                 }
               ],
-              "duration": 12,
-              "tick": 1.0
-            },
-            {
-              "tier": "ex+15",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
               "type": "dot",
               "healing_type": "over_time",
               "name": "Healing over time",
@@ -18581,8 +18794,11 @@
       "class": "tank",
       "role_category": "tank",
       "is_energy_provider": false,
-      "is_melee": true,
+      "is_melee": false,
       "is_dual_range": false,
+      "default_range": 20,
+      "release_date": "2026-03-05",
+      "season": "Tower of Memory",
       "skills": {
         "Annihilation Directive": {
           "category": "ultimate",
@@ -19166,7 +19382,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "slow",
-        "avg_attack_range": null,
+        "avg_attack_range": 20.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -19221,6 +19437,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 8,
+      "release_date": "2026-05-29",
+      "season": "Crown of Ashes",
       "skills": {
         "Hailing Arrows": {
           "category": "ultimate",
@@ -19751,6 +19970,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Pretty Fireball": {
           "category": "ultimate",
@@ -19924,6 +20146,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "below"
+                }
+              ],
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -20016,6 +20245,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-11-19",
+      "season": "Waves of Intrigue",
       "skills": {
         "Vicious Bite": {
           "category": "ultimate",
@@ -20113,6 +20345,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
               "type": "debuff",
               "name": "Healing",
               "label": "healing",
@@ -20572,6 +20810,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2026-04-09",
+      "season": "Tower of Memory",
       "skills": {
         "Form Shift": {
           "category": "ultimate",
@@ -20835,82 +21076,6 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 130.0
-                }
-              ],
-              "duration": 6,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 130.0
-                }
-              ],
-              "duration": 6,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 140.0
-                }
-              ],
-              "duration": 6,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 150.0
-                }
-              ],
-              "duration": 6,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
                   "value": 160.0
                 }
               ],
@@ -21059,6 +21224,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 10,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "DEF",
               "label": "buff_defensive",
@@ -21076,6 +21248,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 10,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "Damage taken",
               "label": "buff_stat"
@@ -21182,6 +21361,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Rain Prayer": {
           "category": "ultimate",
@@ -21222,82 +21404,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 95.0
-                }
-              ],
-              "duration": 9,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 100.0
-                }
-              ],
-              "duration": 9,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 105.0
-                }
-              ],
-              "duration": 9,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 110.0
-                }
-              ],
-              "duration": 9,
-              "tick": 1.0
-            },
             {
               "tier": "base",
               "targeting_label": "Self",
@@ -21587,7 +21693,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 4.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -21628,6 +21734,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2026-05-01",
+      "season": "Tower of Memory",
       "skills": {
         "Heroic Slash": {
           "category": "ultimate",
@@ -22150,6 +22259,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-11-11",
+      "season": "Waves of Intrigue",
       "skills": {
         "Cannon Fire": {
           "category": "ultimate",
@@ -22255,63 +22367,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 70.0
-                }
-              ],
-              "duration": 8,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 80.0
-                }
-              ],
-              "duration": 8,
-              "tick": 1.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "dot",
-              "healing_type": "over_time",
-              "name": "Healing over time",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 90.0
-                }
-              ],
-              "duration": 8,
-              "tick": 1.0
-            },
             {
               "tier": "base",
               "targeting_label": "Self",
@@ -22613,6 +22668,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 2,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "debuff",
               "name": "Phys DEF",
               "label": "debuff_defensive",
@@ -22759,6 +22821,9 @@
       "is_energy_provider": true,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 20,
+      "release_date": "2024-12-17",
+      "season": "Waves of Intrigue",
       "skills": {
         "Unstoppable!": {
           "category": "ultimate",
@@ -23092,6 +23157,12 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
               "type": "buff",
               "name": "Damage taken",
               "label": "buff_stat"
@@ -23127,7 +23198,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "average",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 20.0,
         "placement_constraints": [
           {
             "kind": "self_placement",
@@ -23177,6 +23248,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 10,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Funereal Ring": {
           "category": "ultimate",
@@ -23409,6 +23483,10 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -23466,6 +23544,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "above"
+                }
+              ],
               "type": "debuff",
               "name": "Healing",
               "label": "healing",
@@ -23569,6 +23654,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 15,
+      "release_date": "2025-05-23",
+      "season": "Echoes of Dissent",
       "skills": {
         "Spellbane Shot": {
           "category": "ultimate",
@@ -24102,7 +24190,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "average",
-        "avg_attack_range": null,
+        "avg_attack_range": 15.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -24152,6 +24240,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2025-10-10",
+      "season": "Thorns of Devotion",
       "skills": {
         "Grimoire Pact": {
           "category": "ultimate",
@@ -24684,7 +24775,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "average",
-        "avg_attack_range": null,
+        "avg_attack_range": 5.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -24730,6 +24821,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Gale Thrust": {
           "category": "ultimate",
@@ -25084,6 +25178,10 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -25229,6 +25327,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2026-06-12",
+      "season": "Crown of Ashes",
       "skills": {
         "Gale Barrage": {
           "category": "ultimate",
@@ -25248,7 +25349,7 @@
                 "level": "2",
                 "unlock": "Unlocks at Level 51",
                 "text": [
-                  "Increases the powerful arrow damage to 340% (ATK-based) + 40%."
+                  "{Increases the powerful arrow damage to 340% (ATK-based) + 40%."
                 ]
               },
               {
@@ -25796,7 +25897,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 7.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -25844,6 +25945,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Full Energy": {
           "category": "ultimate",
@@ -25980,57 +26084,6 @@
                 }
               ],
               "duration": 5.0
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 240.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 250.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 260.0
-                }
-              ]
             }
           ],
           "cooldown": 10.0,
@@ -26312,6 +26365,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2026-01-15",
+      "season": "Thorns of Devotion",
       "skills": {
         "Dominance Ring": {
           "category": "ultimate",
@@ -26693,6 +26749,12 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "buff",
               "name": "DEF",
               "label": "buff_defensive"
@@ -26704,6 +26766,12 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "buff",
               "name": "Magic DEF",
               "label": "buff_defensive"
@@ -26849,6 +26917,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 2,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Demonseal Spear": {
           "category": "ultimate",
@@ -27273,6 +27344,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Devastating Axe": {
           "category": "ultimate",
@@ -27321,6 +27395,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 4,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "debuff",
               "name": "Phys DEF",
               "label": "debuff_defensive",
@@ -27771,6 +27852,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2025-05-26",
+      "season": "Echoes of Dissent",
       "skills": {
         "Blast Mayhem": {
           "category": "ultimate",
@@ -27947,6 +28031,10 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -28097,6 +28185,13 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 50,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "ATK",
               "label": "buff_offensive",
@@ -28274,7 +28369,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "fast",
         "non_ult_speed": "slow",
-        "avg_attack_range": null,
+        "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -28321,6 +28416,9 @@
       "is_energy_provider": true,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-11-28",
+      "season": "Thorns of Devotion",
       "skills": {
         "Living Armor - Kensuke": {
           "category": "ultimate",
@@ -28779,6 +28877,11 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "once_per_battle"
                 }
@@ -28795,6 +28898,11 @@
               "area": "single",
               "target_count": 1,
               "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                },
                 {
                   "type": "battle_phase",
                   "phase": "once_per_battle"
@@ -28957,6 +29065,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-09-03",
+      "season": "Song of Strife",
       "skills": {
         "Wild Duel": {
           "category": "ultimate",
@@ -29466,6 +29577,12 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
               "type": "buff",
               "name": "Crit",
               "label": "buff_offensive",
@@ -29593,6 +29710,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 3,
+      "release_date": "2024-08-08",
+      "season": "Song of Strife",
       "skills": {
         "Tempest Shot": {
           "category": "ultimate",
@@ -29668,6 +29788,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "boss"
+                }
+              ],
               "type": "crowd_control",
               "cc-type": "interrupt"
             },
@@ -30117,6 +30243,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2025-01-17",
+      "season": "Chains of Eternity",
       "skills": {
         "Whispering Tempest": {
           "category": "ultimate",
@@ -30533,7 +30662,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "average",
-        "avg_attack_range": null,
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -30580,6 +30709,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-10-29",
+      "season": "Waves of Intrigue",
       "skills": {
         "Quake Slam": {
           "category": "ultimate",
@@ -31059,6 +31191,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Divine Light Aegis": {
           "category": "ultimate",
@@ -31497,8 +31632,11 @@
       "class": "mage",
       "role_category": "specialist",
       "is_energy_provider": false,
-      "is_melee": true,
+      "is_melee": false,
       "is_dual_range": false,
+      "default_range": 3,
+      "release_date": "2025-05-01",
+      "season": "Chains of Eternity",
       "skills": {
         "Celestial Spirit Summon": {
           "category": "ultimate",
@@ -31951,6 +32089,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2024-07-11",
+      "season": "Song of Strife",
       "skills": {
         "Eternal Serenity": {
           "category": "ultimate",
@@ -32099,6 +32240,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
@@ -32117,6 +32264,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -32180,6 +32333,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -32405,7 +32564,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
         "non_ult_speed": "slow",
-        "avg_attack_range": null,
+        "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -32449,6 +32608,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Lumont's Charge": {
           "category": "ultimate",
@@ -32992,6 +33154,9 @@
       "is_energy_provider": true,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Comet Archery": {
           "category": "ultimate",
@@ -33456,6 +33621,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2025-11-28",
+      "season": "Thorns of Devotion",
       "skills": {
         "Silver-White Wings that Streak Across the Skies": {
           "category": "ultimate",
@@ -33510,6 +33678,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 10,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "Haste",
               "label": "buff_offensive",
@@ -33792,7 +33967,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 400.0
+                  "value": 500.0
                 }
               ],
               "duration": 3.0
@@ -33808,23 +33983,6 @@
               "cc-type": "interrupt"
             },
             {
-              "tier": "ex+5",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 450.0
-                }
-              ]
-            },
-            {
               "tier": "ex+10",
               "targeting_label": "All units",
               "is_max_known": true,
@@ -33836,23 +33994,6 @@
               "damage_type": "magic",
               "name": "Magic",
               "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 500.0
-                }
-              ]
-            },
-            {
-              "tier": "ex+15",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
@@ -33952,7 +34093,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 6.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -34004,6 +34145,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Mid-Air Shot": {
           "category": "ultimate",
@@ -34290,6 +34434,11 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "stack_count",
+                  "stacks": 6,
+                  "stack_comparison": "up_to"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -34446,8 +34595,11 @@
       "class": "mage",
       "role_category": "specialist",
       "is_energy_provider": false,
-      "is_melee": true,
+      "is_melee": false,
       "is_dual_range": false,
+      "default_range": 3,
+      "release_date": "2025-10-30",
+      "season": "Thorns of Devotion",
       "skills": {
         "Euphoric Rush": {
           "category": "ultimate",
@@ -34986,6 +35138,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-08-19",
+      "season": "Song of Strife",
       "skills": {
         "Dauntless Hymn": {
           "category": "ultimate",
@@ -35445,6 +35600,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 3,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Winged Flame": {
           "category": "ultimate",
@@ -35829,6 +35987,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-09-09",
+      "season": "Song of Strife",
       "skills": {
         "Crimson Vengeance": {
           "category": "ultimate",
@@ -36219,40 +36380,6 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 8.0
-                }
-              ]
-            },
-            {
-              "tier": "ex+5",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 10.0
-                }
-              ]
-            },
-            {
-              "tier": "ex+15",
               "targeting_label": "Self",
               "is_max_known": true,
               "target": "self",
@@ -36441,6 +36568,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-05-01",
+      "season": "Chains of Eternity",
       "skills": {
         "Lightning Fire Dragon's Roar/Fire Dragon King's Roar": {
           "category": "ultimate",
@@ -37055,6 +37185,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2025-10-30",
+      "season": "Thorns of Devotion",
       "skills": {
         "Rend Rupture": {
           "category": "ultimate",
@@ -37554,6 +37687,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2026-05-15",
+      "season": "Tower of Memory",
       "skills": {
         "Drowning Doom": {
           "category": "ultimate",
@@ -38101,8 +38237,11 @@
       "class": "support",
       "role_category": "support",
       "is_energy_provider": false,
-      "is_melee": false,
+      "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Soul Shepherd": {
           "category": "ultimate",
@@ -38509,7 +38648,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "slow",
-        "avg_attack_range": null,
+        "avg_attack_range": 1.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -38558,6 +38697,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Corrosive Dart": {
           "category": "ultimate",
@@ -38912,6 +39054,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "debuffed"
+                }
+              ],
               "type": "debuff",
               "name": "Execution",
               "label": "debuff_offensive"
@@ -39030,6 +39178,9 @@
       "is_energy_provider": true,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2025-08-01",
+      "season": "Echoes of Dissent",
       "skills": {
         "Panic Projection": {
           "category": "ultimate",
@@ -39556,7 +39707,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 5.0,
         "placement_constraints": [
           {
             "kind": "ally_composition",
@@ -39605,6 +39756,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-08-01",
+      "season": "Echoes of Dissent",
       "skills": {
         "Sky Splitter": {
           "category": "ultimate",
@@ -39724,6 +39878,16 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_boss"
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "boss"
+                }
+              ],
               "type": "debuff",
               "name": "Energy",
               "label": "debuff_stat",
@@ -40170,6 +40334,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Floral Splendor": {
           "category": "ultimate",
@@ -40581,6 +40748,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-09-26",
+      "season": "Thorns of Devotion",
       "skills": {
         "Divine Rend": {
           "category": "ultimate",
@@ -40839,6 +41009,15 @@
               "area": "single",
               "target_count": 1,
               "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.4,
+                  "comparison": "below"
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
                 {
                   "type": "battle_phase",
                   "phase": "conditional"
@@ -41103,6 +41282,9 @@
       "is_energy_provider": true,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-06-06",
+      "season": "Song of Strife",
       "skills": {
         "Futile Echo": {
           "category": "ultimate",
@@ -41635,6 +41817,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2026-03-20",
+      "season": "Tower of Memory",
       "skills": {
         "Wild Shift": {
           "category": "ultimate",
@@ -42161,8 +42346,11 @@
       "class": "rogue",
       "role_category": "specialist",
       "is_energy_provider": true,
-      "is_melee": true,
+      "is_melee": false,
       "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2025-09-19",
+      "season": "Echoes of Dissent",
       "skills": {
         "Killer Flush": {
           "category": "ultimate",
@@ -42857,6 +43045,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Mutual Reflection": {
           "category": "ultimate",
@@ -42911,6 +43102,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 3,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "crowd_control",
               "cc-type": "displace"
             },
@@ -42921,6 +43118,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 3,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -43008,57 +43211,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 45.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 46.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 48.0
-                }
-              ]
-            },
             {
               "tier": "base",
               "targeting_label": "Self",
@@ -43349,7 +43501,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "slow",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 5.0,
         "placement_constraints": [
           {
             "kind": "ally_placement",
@@ -43399,6 +43551,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Flame Barrage": {
           "category": "ultimate",
@@ -43899,6 +44054,9 @@
       "is_energy_provider": true,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 3,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Fatal Greed": {
           "category": "ultimate",
@@ -44334,7 +44492,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 3.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -44377,6 +44535,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-08-01",
+      "season": "Echoes of Dissent",
       "skills": {
         "Seed Siphon": {
           "category": "ultimate",
@@ -44671,9 +44832,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "heal",
@@ -44683,57 +44844,6 @@
                 {
                   "type": "percentage",
                   "value": 10.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 3.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 3.5
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 4.0
                 }
               ]
             }
@@ -45048,6 +45158,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Rain of Blades": {
           "category": "ultimate",
@@ -45179,6 +45292,13 @@
               "area": "arc",
               "target_count": -1,
               "area_direction": "front",
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "below"
+                }
+              ],
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -45242,6 +45362,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "below"
+                }
+              ],
               "type": "crowd_control",
               "cc-type": "bind",
               "duration": 6.5
@@ -45253,6 +45380,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.7,
+                  "comparison": "below"
+                }
+              ],
               "type": "damage",
               "damage_type": "physical",
               "name": "Physical",
@@ -45506,6 +45640,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Fiery Dance": {
           "category": "ultimate",
@@ -46010,6 +46147,9 @@
       "is_energy_provider": true,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Divine Quake": {
           "category": "ultimate",
@@ -46535,7 +46675,7 @@
         "synergy_signature_is_ult": false,
         "ult_speed": "average",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -46580,6 +46720,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Shadow Strike": {
           "category": "ultimate",
@@ -46986,6 +47129,12 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "buff",
               "name": "Energy",
               "label": "buff_stat",
@@ -47067,7 +47216,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 1.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -47115,6 +47264,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-11-13",
+      "season": "Thorns of Devotion",
       "skills": {
         "Crimson Venom": {
           "category": "ultimate",
@@ -47671,6 +47823,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Ravaging Claws": {
           "category": "ultimate",
@@ -48118,6 +48273,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2025-04-24",
+      "season": "Chains of Eternity",
       "skills": {
         "Phantom Procession": {
           "category": "ultimate",
@@ -48549,6 +48707,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2026-02-13",
+      "season": "Tower of Memory",
       "skills": {
         "Aloft Edge": {
           "category": "ultimate",
@@ -49006,6 +49167,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Shadow Slayer": {
           "category": "ultimate",
@@ -49430,6 +49594,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-10-02",
+      "season": "Waves of Intrigue",
       "skills": {
         "Whizzing Edge": {
           "category": "ultimate",
@@ -49951,6 +50118,9 @@
       "is_energy_provider": true,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 8,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Special Aroma": {
           "category": "ultimate",
@@ -50098,6 +50268,12 @@
               "target": "ally",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_summoned"
+                }
+              ],
               "type": "buff",
               "name": "Energy",
               "label": "buff_stat",
@@ -50271,6 +50447,12 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
               "type": "dot",
               "damage_type": "dot",
               "name": "DoT",
@@ -50352,7 +50534,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "average",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 8.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -50393,6 +50575,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2026-01-30",
+      "season": "Tower of Memory",
       "skills": {
         "Life's Embrace": {
           "category": "ultimate",
@@ -50820,7 +51005,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "fast",
         "non_ult_speed": "fast",
-        "avg_attack_range": null,
+        "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -50865,6 +51050,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-11-27",
+      "season": "Waves of Intrigue",
       "skills": {
         "Tempest Thrusts": {
           "category": "ultimate",
@@ -51125,6 +51313,10 @@
               "target_count": 1,
               "conditions": [
                 {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
                   "type": "battle_phase",
                   "phase": "conditional"
                 }
@@ -51295,6 +51487,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-05-31",
+      "season": "Song of Strife",
       "skills": {
         "Whirlwind Swing": {
           "category": "ultimate",
@@ -51664,6 +51859,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.6,
+                  "comparison": "below"
+                }
+              ],
               "type": "buff",
               "name": "Haste",
               "label": "buff_offensive",
@@ -51820,6 +52022,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2026-05-29",
+      "season": "Crown of Ashes",
       "skills": {
         "Grand Finale": {
           "category": "ultimate",
@@ -52265,6 +52470,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 10,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "Haste",
               "label": "buff_offensive",
@@ -52481,6 +52693,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": true,
+      "default_range": 3,
+      "release_date": "2024-07-03",
+      "season": "Song of Strife",
       "skills": {
         "Divine Conflagration": {
           "category": "ultimate",
@@ -52911,6 +53126,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 4,
+      "release_date": "2024-10-17",
+      "season": "Waves of Intrigue",
       "skills": {
         "Eternal Dreamscape": {
           "category": "ultimate",
@@ -53482,6 +53700,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Knight's Heart": {
           "category": "ultimate",
@@ -53596,6 +53817,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 6,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "debuff",
               "name": "Phys DEF",
               "label": "debuff_defensive",
@@ -54061,6 +54289,9 @@
       "is_energy_provider": true,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-07-10",
+      "season": "Echoes of Dissent",
       "skills": {
         "Moonveil Manifest": {
           "category": "ultimate",
@@ -54553,6 +54784,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Soul Retaliation": {
           "category": "ultimate",
@@ -54959,6 +55193,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2026-01-08",
+      "season": "Thorns of Devotion",
       "skills": {
         "Wrath of the Wilds": {
           "category": "ultimate",
@@ -55035,6 +55272,10 @@
               "area": "single",
               "target_count": 1,
               "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                },
                 {
                   "type": "battle_phase",
                   "phase": "conditional"
@@ -55284,6 +55525,12 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -55456,6 +55703,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-06-20",
+      "season": "Song of Strife",
       "skills": {
         "Ancient Tenacity": {
           "category": "ultimate",
@@ -55510,6 +55760,15 @@
               "area": "single",
               "target_count": 1,
               "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.3,
+                  "comparison": "below"
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
                 {
                   "type": "battle_phase",
                   "phase": "conditional"
@@ -55990,6 +56249,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": true,
+      "default_range": 7,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Swift Shift": {
           "category": "ultimate",
@@ -56563,6 +56825,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Thunder Swordwork": {
           "category": "ultimate",
@@ -56648,6 +56913,13 @@
               "target": "self",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 10,
+                  "stack_comparison": "up_to"
+                }
+              ],
               "type": "buff",
               "name": "ATK",
               "label": "buff_offensive",
@@ -57023,6 +57295,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-01-30",
+      "season": "Chains of Eternity",
       "skills": {
         "Phantom Slasher": {
           "category": "ultimate",
@@ -57569,6 +57844,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2025-06-26",
+      "season": "Echoes of Dissent",
       "skills": {
         "Ruthless Rite": {
           "category": "ultimate",
@@ -57619,18 +57897,18 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "ally",
               "area": "single",
-              "target_count": 1,
+              "target_count": 3,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
               "value": [
                 {
                   "type": "percentage",
-                  "value": 40.0
+                  "value": 70.0
                 }
               ]
             },
@@ -57649,57 +57927,6 @@
                 {
                   "type": "flat",
                   "value": 45.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 3,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 50.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 3,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "Multiple targets",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 3,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 70.0
                 }
               ]
             }
@@ -58050,7 +58277,7 @@
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
         "non_ult_speed": "average",
-        "avg_attack_range": null,
+        "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
@@ -58093,6 +58320,9 @@
       "is_energy_provider": false,
       "is_melee": false,
       "is_dual_range": false,
+      "default_range": 5,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Spiritual Viper": {
           "category": "ultimate",
@@ -58304,6 +58534,13 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "cooldown",
+                  "interval": 3.0
+                }
+              ],
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -58417,6 +58654,13 @@
               "area": "zone",
               "target_count": -1,
               "area_count": -1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.9,
+                  "comparison": "above"
+                }
+              ],
               "type": "damage",
               "damage_type": "magic",
               "name": "Magic",
@@ -58559,6 +58803,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 2,
+      "release_date": "2024-03-27",
+      "season": "Starter Story",
       "skills": {
         "Six-Shot": {
           "category": "ultimate",
@@ -59103,6 +59350,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 1,
+      "release_date": "2025-08-21",
+      "season": "Echoes of Dissent",
       "skills": {
         "Savage Slash": {
           "category": "ultimate",
@@ -59507,8 +59757,11 @@
       "class": "marksman",
       "role_category": "specialist",
       "is_energy_provider": false,
-      "is_melee": true,
+      "is_melee": false,
       "is_dual_range": false,
+      "default_range": 20,
+      "release_date": "2025-08-28",
+      "season": "Echoes of Dissent",
       "skills": {
         "Vein Pulse": {
           "category": "ultimate",
@@ -60120,6 +60373,9 @@
       "is_energy_provider": false,
       "is_melee": true,
       "is_dual_range": false,
+      "default_range": 2,
+      "release_date": "2026-03-05",
+      "season": "Tower of Memory",
       "skills": {
         "Guardian's Ring": {
           "category": "ultimate",

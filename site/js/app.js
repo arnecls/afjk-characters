@@ -136,7 +136,9 @@ if(lower==="supreme+"){return"S+";}
 return core;}
 return trimmed;}
 function formatAscensionTierDisplay(tierSuffix){if(!tierSuffix){return"";}
-const short=shortAscensionTierName(tierSuffix);return'<span class="chip-tier-badge" title="Unlocks at '+escapeHtml(tierSuffix)+'">'+escapeHtml(short)+"</span>";}
+const short=shortAscensionTierName(tierSuffix);return('<sup class="chip-tier-badge" title="Unlocks at '+
+escapeHtml(tierSuffix)+'">'+
+escapeHtml(short)+"</sup>");}
 function formatMergedTierSuffix(tierSuffix){if(!tierSuffix){return"";}
 return formatAscensionTierDisplay(tierSuffix);}
 function formatMergedIndicator(left,indicatorMeta,textOnlyLeft){let leftHtml;if(left.hasIcon){leftHtml='<span class="chip-merged-left '+

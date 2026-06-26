@@ -788,7 +788,13 @@ window.AFKJ = window.AFKJ || {};
       return "";
     }
     const short = shortAscensionTierName(tierSuffix);
-    return '<span class="chip-tier-badge" title="Unlocks at ' + escapeHtml(tierSuffix) + '">' + escapeHtml(short) + "</span>";
+    return (
+      '<sup class="chip-tier-badge" title="Unlocks at ' +
+      escapeHtml(tierSuffix) +
+      '">' +
+      escapeHtml(short) +
+      "</sup>"
+    );
   }
 
   function formatMergedTierSuffix(tierSuffix) {

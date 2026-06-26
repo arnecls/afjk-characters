@@ -201,6 +201,75 @@ def _format_range(rng: str | None) -> str | None:
     return s
 
 
+def _normalize_infobox_inner(inner: str) -> str:
+    """Ensure each pipe-prefixed field starts on its own line."""
+    pipe_field = re.compile(r"(?<=\S)\|(?=[a-zA-Z_][a-zA-Z0-9_]*\s*=)")
+    out_lines: list[str] = []
+    for line in inner.split("\n"):
+        if pipe_field.search(line):
+            segments = pipe_field.split(line)
+            out_lines.append(segments[0])
+            for seg in segments[1:]:
+                out_lines.append(seg if seg.startswith("|") else f"|{seg}")
+        else:
+            out_lines.append(line)
+    return "\n".join(out_lines)
+
+
+_MONTH_BY_NAME = {
+    "january": 1,
+    "february": 2,
+    "march": 3,
+    "april": 4,
+    "may": 5,
+    "june": 6,
+    "july": 7,
+    "august": 8,
+    "september": 9,
+    "october": 10,
+    "november": 11,
+    "december": 12,
+}
+
+
+def _normalize_release_date(raw: str | None) -> str | None:
+    """Return YYYY-MM-DD or None from wiki infobox release_date text."""
+    if not raw:
+        return None
+    text = raw.strip().split("|", 1)[0].strip()
+    text = text.split("\n", 1)[0].strip()
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.S).strip()
+    if not text:
+        return None
+    short_year = re.match(r"^(\d{3})-(\d{2})-(\d{2})", text)
+    if short_year:
+        text = (
+            f"2{short_year.group(1)}-{short_year.group(2)}-{short_year.group(3)}"
+        )
+    iso = re.match(r"^(\d{4}-\d{2}-\d{2})", text)
+    if iso:
+        return iso.group(1)
+    natural = re.match(
+        r"^(January|February|March|April|May|June|July|August|"
+        r"September|October|November|December)\s+(\d{1,2}),?\s+(\d{4})$",
+        text,
+        re.I,
+    )
+    if natural:
+        month = _MONTH_BY_NAME[natural.group(1).lower()]
+        return f"{natural.group(3)}-{month:02d}-{int(natural.group(2)):02d}"
+    return None
+
+
+def _parse_default_range(raw: str | None) -> int | None:
+    """Parse the hero's default attack range (tiles) from infobox range."""
+    if not raw:
+        return None
+    text = raw.strip().split("|", 1)[0].strip()
+    match = re.match(r"^(\d+)", text)
+    return int(match.group(1)) if match else None
+
+
 def _extract_templates(wikitext: str, template_name: str) -> list[str]:
     results: list[str] = []
     open_str = "{{" + template_name + "\n"
@@ -296,7 +365,10 @@ def _parse_level_upgrades(buffs_text: str) -> list[dict]:
 
 def _parse_fandom_hero(wikitext: str, hero_name: str) -> dict:
     infoboxes = _extract_templates(wikitext, "Character Infobox")
-    infobox = _parse_fields(infoboxes[0]) if infoboxes else {}
+    infobox_inner = (
+        _normalize_infobox_inner(infoboxes[0]) if infoboxes else ""
+    )
+    infobox = _parse_fields(infobox_inner) if infobox_inner else {}
 
     name = (infobox.get("name") or hero_name).strip()
     subtitle = (infobox.get("title") or "").strip()
@@ -358,7 +430,9 @@ def _parse_fandom_hero(wikitext: str, hero_name: str) -> dict:
 
     title = f"{name} - {subtitle}" if subtitle else name
     tags = " · ".join([t for t in (faction, hero_class, damage) if t]) or None
-    return {
+    default_range = _parse_default_range(infobox.get("range"))
+    release_date = _normalize_release_date(infobox.get("release_date"))
+    record: dict = {
         "title": title,
         "name": name,
         "tags": tags,
@@ -368,6 +442,11 @@ def _parse_fandom_hero(wikitext: str, hero_name: str) -> dict:
         "description": description,
         "skills": skills,
     }
+    if default_range is not None:
+        record["range"] = default_range
+    if release_date is not None:
+        record["release_date"] = release_date
+    return record
 
 
 def _fetch_fandom_wikitext(hero_name: str) -> str:

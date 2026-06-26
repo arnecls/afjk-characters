@@ -3923,7 +3923,7 @@ A sworn Marksman who excels at hunting enemies knocked into the air.
 
 Passive. When an enemy hero is knocked into the air, Kazim manipulates the air currents to keep them airborne for 1s longer, 100% (ATK-based) + then fires 2 tracking feathers at the target, dealing 10% damage each. Active. Kazim fires a powerful volley of arrows at the arc-shaped area with the most enemies, dealing 320% (ATK-based) + 140% damage and knocking all prey within range into the air for 0.5s. After that. he keeps firing arrows in succession for 3s, dealing 200% (ATK-based) + 20% damage per volley. The number of volleys fired scales with ATK SPD.
 
-- Level 2 — Unlocks at Level 51: Increases the powerful arrow damage to 340% (ATK-based) + 40%.
+- Level 2 — Unlocks at Level 51: {Increases the powerful arrow damage to 340% (ATK-based) + 40%.
 - Level 3 — Unlocks at Level 111: Increases the powerful arrow damage to 360% (ATK-based) + 40%.
 - Level 4 — Unlocks at Level 171: Increases the powerful arrow damage to 380% (ATK-based) + 40%.
 - Level 5 — Unlocks at Level 231: Increases the powerful arrow damage to 400% (ATK-based) + 40%.
