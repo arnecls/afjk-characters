@@ -29,6 +29,12 @@ window.AFKJ = window.AFKJ || {};
     fast: "🚀",
   };
 
+  const QUALITY_EMOJI = {
+    high: "⬆️",
+    average: "➡️",
+    low: "⬇️",
+  };
+
   const CC_DURATION_LABEL = {
     low: "short",
     average: "average",
@@ -1489,6 +1495,7 @@ window.AFKJ = window.AFKJ || {};
     QUALITY_CLASS: QUALITY_CLASS,
     SPEED_CLASS: SPEED_CLASS,
     SPEED_EMOJI: SPEED_EMOJI,
+    QUALITY_EMOJI: QUALITY_EMOJI,
     QUALITY_TOOLTIPS: QUALITY_TOOLTIPS,
     SPEED_TOOLTIPS: SPEED_TOOLTIPS,
     SIGNATURE_FUEL_TOOLTIP: SIGNATURE_FUEL_TOOLTIP,

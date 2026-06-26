@@ -13,6 +13,10 @@ window.AFKJ = window.AFKJ || {};
       return;
     }
     const offset = dom.siteHeader.offsetHeight;
+    document.documentElement.style.setProperty(
+      "--list-sticky-top",
+      offset + "px"
+    );
     if (dom.listView) {
       dom.listView.style.setProperty("--list-sticky-offset", offset + "px");
     }
