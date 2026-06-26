@@ -304,6 +304,9 @@ window.AFKJ = window.AFKJ || {};
     if (chips.QUALITY_CLASS[lower]) {
       return "quality";
     }
+    if (chips.SPEED_CLASS[lower]) {
+      return "quality";
+    }
     if (/conditional/i.test(trimmed)) {
       return "conditional";
     }
@@ -582,6 +585,12 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function filterOptionIconHtml(column, value) {
+    const trimmed = (value || "").trim();
+    if (!trimmed) {
+      return "";
+    }
+    const lower = trimmed.toLowerCase();
+
     if (column === "Faction") {
       const icon = utils.iconPath("factions", value);
       if (icon) {
@@ -604,7 +613,7 @@ window.AFKJ = window.AFKJ || {};
     }
     if (column === "Role") {
       const roleKey = Object.keys(config.ROLE_CATEGORY_META).find(function (key) {
-        return config.ROLE_CATEGORY_META[key].label.toLowerCase() === value.toLowerCase();
+        return config.ROLE_CATEGORY_META[key].label.toLowerCase() === lower;
       });
       if (roleKey) {
         return (
@@ -614,36 +623,50 @@ window.AFKJ = window.AFKJ || {};
         );
       }
     }
-    const kind = classifyFilterAtom(value);
-    if (kind === "quality") {
-      const qualityCls = chips.QUALITY_CLASS[value.toLowerCase()];
-      if (qualityCls) {
+
+    for (let i = 0; i < chips.MOVEMENT_KEYS.length; i++) {
+      const key = chips.MOVEMENT_KEYS[i];
+      if (lower === key.toLowerCase()) {
         return (
-          '<span class="col-filter-opt-badge ' +
-          qualityCls +
-          '">⭐ ' +
-          escapeHtml(value) +
-          "</span>"
-        );
-      }
-      const speedCls = chips.SPEED_CLASS[value.toLowerCase()];
-      if (speedCls) {
-        const emoji = chips.SPEED_EMOJI[value.toLowerCase()] || "⏱️";
-        return (
-          '<span class="col-filter-opt-badge ' +
-          speedCls +
-          '">' +
-          emoji +
-          " " +
-          escapeHtml(value) +
+          '<span class="col-filter-opt-emoji" aria-hidden="true">' +
+          chips.MOVEMENT_DEFINITIONS[key].emoji +
           "</span>"
         );
       }
     }
-    if (kind === "timing") {
+
+    if (chips.SPEED_CLASS[lower]) {
+      const emoji = chips.SPEED_EMOJI[lower] || "⏱️";
+      return (
+        '<span class="col-filter-opt-emoji" aria-hidden="true">' +
+        emoji +
+        "</span>"
+      );
+    }
+
+    if (chips.QUALITY_CLASS[lower]) {
+      const emoji = chips.QUALITY_EMOJI[lower] || "";
+      return (
+        '<span class="col-filter-opt-emoji" aria-hidden="true">' +
+        emoji +
+        "</span>"
+      );
+    }
+
+    const targeting = config.TARGETING_DEFINITIONS[lower];
+    if (targeting) {
+      return (
+        '<span class="col-filter-opt-emoji" aria-hidden="true">' +
+        targeting.emoji +
+        "</span>"
+      );
+    }
+
+    if (isTimingSegment(trimmed)) {
       return '<span class="col-filter-opt-emoji" aria-hidden="true">⏱️</span>';
     }
-    const tagKey = chips.exactTagDefinitionKey(value);
+
+    const tagKey = chips.exactTagDefinitionKey(trimmed);
     if (tagKey) {
       const def = config.TAG_DEFINITIONS[tagKey];
       return (

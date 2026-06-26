@@ -867,16 +867,7 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function replacementCategoryIcon(label) {
-    const icons = {
-      "Buffs on allies": "💪",
-      "Energy provider": "🔋",
-      Healing: "💚",
-      "Similar Skills": "🏷️",
-      Damage: "⚔️",
-      "Debuffs on enemies": "🥀",
-      "Crowd Control": "💫",
-    };
-    return icons[label] || "";
+    return config.REPLACEMENT_CATEGORY_ICONS[label] || "";
   }
 
   function replacementCategoryClass(label) {

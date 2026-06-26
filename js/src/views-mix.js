@@ -275,9 +275,10 @@ window.AFKJ = window.AFKJ || {};
     hero.sections.skillCards.forEach(function (card) {
       const tags = card.tags || card.effects || [];
       tags.forEach(function (t) {
-        const key = window.AFKJ.skills.skillCardChipKey(t);
+        const label = window.AFKJ.skills.skillCardTagLabel(t);
+        const key = window.AFKJ.skills.skillCardChipKey(label);
         if (key) {
-          list.push({ key: key, label: t });
+          list.push({ key: key, label: label });
         }
       });
     });
@@ -285,18 +286,62 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function mixHeroBehaviorTags(hero) {
-    if (!hero) {
+    const behavior = hero && hero.sections && hero.sections.behavior;
+    if (!behavior) {
       return [];
     }
-    const state = window.AFKJ.state;
-    const heroesMeta = state.heroesMeta || {};
-    const roster = heroesMeta.roster || {};
-    const meta = roster[hero.name] || {};
-    return meta.behavior_tags || [];
+    const match = behavior.match(/\*\*Behavior tags\*\*:\s*([^\n]+)/);
+    if (!match) {
+      return [];
+    }
+    const found = [];
+    const re = /`([^`]+)`/g;
+    let m;
+    while ((m = re.exec(match[1])) !== null) {
+      found.push(m[1]);
+    }
+    return found;
   }
 
   function mixTagBaseLabel(tag) {
-    return tag.replace(/\s+buff\s*$/i, "").replace(/\s+debuff\s*$/i, "").trim().toLowerCase();
+    const parts = String(tag).split(/\s+[—–-]\s+/);
+    return parts[0].trim();
+  }
+
+  function mixFocusTagWeight(map, key) {
+    if (!map || !key) {
+      return null;
+    }
+    if (map[key] != null) {
+      return map[key];
+    }
+    const lower = key.toLowerCase();
+    const keys = Object.keys(map);
+    for (let i = 0; i < keys.length; i++) {
+      if (keys[i].toLowerCase() === lower) {
+        return map[keys[i]];
+      }
+    }
+    return null;
+  }
+
+  function mixCcTargetingWeight(tag) {
+    const state = window.AFKJ.state;
+    const weights = (state.mixConfig && state.mixConfig.ccTargetingWeight) || {};
+    const lower = String(tag).toLowerCase();
+    if (lower.indexOf("all units") !== -1) {
+      return weights["All units"] || 2.0;
+    }
+    if (lower.indexOf("area") !== -1) {
+      return weights.Area || 1.6;
+    }
+    if (lower.indexOf("arc") !== -1) {
+      return weights.Arc || 1.3;
+    }
+    if (lower.indexOf("multiple targets") !== -1) {
+      return weights["Multiple targets"] || 1.3;
+    }
+    return weights["Single target"] || 1.0;
   }
 
   function mixTagTargetingWeight(tag) {
@@ -372,7 +417,7 @@ window.AFKJ = window.AFKJ || {};
 
       const providerTags = mixHeroSkillTags(slotHero);
       providerTags.forEach(function (tag) {
-        const base = mixTagBaseLabel(tag.label);
+        const base = mixTagBaseLabel(tag.label).toLowerCase();
         const polarity = chips.effectLabelPolarity(tag.label) || "buff";
         if (polarity !== "buff") return;
         const tw = mixTagTargetingWeight(tag.label);
@@ -396,31 +441,52 @@ window.AFKJ = window.AFKJ || {};
 
   function computeMixFocusBonus(hero) {
     const state = window.AFKJ.state;
-    const focusTags = (state.mixConfig.focusTags) || {};
+    if (!state.mixConfig || !state.mixConfig.focusTags) {
+      return 0;
+    }
+    const focusTags = state.mixConfig.focusTags;
     const heroSkillTags = mixHeroSkillTags(hero);
     const heroBehaviorTags = mixHeroBehaviorTags(hero);
-
+    const focusKeys = config.MIX_FOCUS_CONFIG_KEYS;
     let bonus = 0;
-    Object.keys(state.mixFocus).forEach(function (fKey) {
-      if (!state.mixFocus[fKey]) {
-        return;
+
+    function addFromMap(map, isCc) {
+      if (!map) {
+        return 0;
       }
-      const tagWeights = focusTags[fKey] || {};
       let focusMax = 0;
       heroSkillTags.forEach(function (tag) {
-        const weight = tagWeights[tag.key];
+        const base = mixTagBaseLabel(tag.label);
+        const weight = mixFocusTagWeight(map, base);
+        if (weight != null) {
+          const mult = isCc ? mixCcTargetingWeight(tag.label) : 1;
+          focusMax = Math.max(focusMax, weight * mult);
+        }
+      });
+      heroBehaviorTags.forEach(function (bt) {
+        const weight = mixFocusTagWeight(map, bt);
         if (weight != null) {
           focusMax = Math.max(focusMax, weight);
         }
       });
-      heroBehaviorTags.forEach(function (tag) {
-        const weight = tagWeights[tag];
-        if (weight != null) {
-          focusMax = Math.max(focusMax, weight);
-        }
-      });
-      bonus += focusMax;
-    });
+      return focusMax;
+    }
+
+    if (state.mixFocus.ccImmunity) {
+      bonus += addFromMap(focusTags[focusKeys.ccImmunity], false);
+    }
+    if (state.mixFocus.cc) {
+      bonus += addFromMap(focusTags[focusKeys.cc], true);
+    }
+    if (state.mixFocus.sustain) {
+      bonus += addFromMap(focusTags[focusKeys.sustain], false);
+    }
+    if (state.mixFocus.speed) {
+      bonus += computeMixSpeedBonus(hero);
+    }
+    if (state.mixFocus.noUltimate) {
+      bonus += addFromMap(focusTags[focusKeys.noUltimate], false);
+    }
     return bonus;
   }
 
@@ -613,16 +679,7 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function replacementCategoryIcon(label) {
-    const icons = {
-      "Buffs on allies": "💪",
-      "Energy provider": "🔋",
-      Healing: "💚",
-      "Similar Skills": "🏷️",
-      Damage: "⚔️",
-      "Debuffs on enemies": "🥀",
-      "Crowd Control": "💫",
-    };
-    return icons[label] || "";
+    return config.REPLACEMENT_CATEGORY_ICONS[label] || "";
   }
 
   function renderMixHighlightIcons(categories) {
@@ -647,7 +704,9 @@ window.AFKJ = window.AFKJ || {};
     opts = opts || {};
     const factionKey = utils.factionDataKey(h.faction);
     let extraClass = "";
-    if (opts.marked) {
+    const isHighlightSource =
+      opts.highlightSource || mixHighlightSource === h.slug;
+    if (opts.marked || isHighlightSource) {
       extraClass += " hero-card--mix-marked";
     }
     let highlightCats = [];
@@ -657,7 +716,7 @@ window.AFKJ = window.AFKJ || {};
     }
     const draggable = opts.draggable !== false;
     const chromeHtml =
-      (opts.marked ? MIX_CROWN_SVG : "") +
+      (opts.marked || isHighlightSource ? MIX_CROWN_SVG : "") +
       (highlightCats.length && !opts.inSlot
         ? renderMixHighlightIcons(highlightCats)
         : "");
@@ -714,6 +773,7 @@ window.AFKJ = window.AFKJ || {};
         html += renderMixHeroCard(state.heroBySlug[slug], {
           inSlot: true,
           marked: mixMarked.has(slug),
+          highlightSource: mixHighlightSource === slug,
           mixSource: "slot-" + i,
         });
       } else {
@@ -1140,16 +1200,8 @@ window.AFKJ = window.AFKJ || {};
           return;
         }
         const key = btn.dataset.focus;
-        if (key === "ccImmunity") {
-          state.mixFocus.ccImmunity = !state.mixFocus.ccImmunity;
-        } else if (key === "cc") {
-          state.mixFocus.cc = !state.mixFocus.cc;
-        } else if (key === "sustain") {
-          state.mixFocus.sustain = !state.mixFocus.sustain;
-        } else if (key === "speed") {
-          state.mixFocus.speed = !state.mixFocus.speed;
-        } else if (key === "noUltimate") {
-          state.mixFocus.noUltimate = !state.mixFocus.noUltimate;
+        if (key && Object.prototype.hasOwnProperty.call(state.mixFocus, key)) {
+          state.mixFocus[key] = !state.mixFocus[key];
         }
         syncMixFocusButtons();
         loadMixData().then(renderMix);

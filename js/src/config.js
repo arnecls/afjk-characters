@@ -18,7 +18,7 @@ window.AFKJ.config = {
     "Magic damage from allies": { emoji: "🪄", cls: "chip-role" },
     "Debuff on target": { emoji: "🥀", cls: "chip-debuff" },
     "Multiple debuffs on target": { emoji: "🥀", cls: "chip-debuff" },
-    "CC on enemies": { emoji: "💫", cls: "chip-cc" },
+    "CC on enemies": { emoji: "🫯", cls: "chip-cc" },
     "Ally stat buffs": { emoji: "💪", cls: "chip-role" },
     "Party composition": { emoji: "👥", cls: "chip-role" },
     "Continuous damage on enemies": { emoji: "🔥", cls: "chip-debuff" },
@@ -97,7 +97,7 @@ window.AFKJ.config = {
     invincibility: { emoji: "👑", cls: "chip-role" },
     "life-drain": { emoji: "🩸", cls: "chip-role" },
     "mark-target": { emoji: "🎯", cls: "chip-role" },
-    "mass-cc": { emoji: "💫", cls: "chip-role" },
+    "mass-cc": { emoji: "🫯", cls: "chip-role" },
     "non-ult-utility": { emoji: "🛠️", cls: "chip-role" },
     revive: { emoji: "🌱", cls: "chip-role" },
     "self-repositioner": { emoji: "💨", cls: "chip-role" },
@@ -255,6 +255,25 @@ window.AFKJ.config = {
   },
 
   ROLE_FILTER_ORDER: ["damage_dealer", "specialist", "support", "tank"],
+
+  REPLACEMENT_CATEGORY_ICONS: {
+    "Best overall replacement": "🏆",
+    "Buffs on allies": "🔼",
+    "Energy provider": "🔋",
+    Healing: "💚",
+    "Similar Skills": "♊️",
+    Damage: "⚔️",
+    "Debuffs on enemies": "🥀",
+    "Crowd Control": "⛓️",
+  },
+
+  MIX_FOCUS_CONFIG_KEYS: {
+    cc: "cc",
+    ccImmunity: "cc_immunity",
+    sustain: "sustain",
+    speed: "speed",
+    noUltimate: "no_ultimate",
+  },
 
   MIX_FOCUS_TAG_DEFAULTS: {
     cc_immunity: {

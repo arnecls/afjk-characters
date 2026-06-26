@@ -355,7 +355,11 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function skillCardChipKey(raw) {
-    let tag = raw.trim().toLowerCase();
+    const text = skillCardTagLabel(raw);
+    if (!text) {
+      return "";
+    }
+    let tag = text.trim().toLowerCase();
     if (!tag) {
       return "";
     }
@@ -443,6 +447,7 @@ window.AFKJ = window.AFKJ || {};
     skillCardData: skillCardData,
     renderSkillCards: renderSkillCards,
     skillCardChipKey: skillCardChipKey,
+    skillCardTagLabel: skillCardTagLabel,
     renderSkillCardTags: renderSkillCardTags,
   };
 
