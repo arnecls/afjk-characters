@@ -193,6 +193,34 @@ def _cc_has_real_match(
     return False
 
 
+def _cc_described_on_referenced_skill(
+    text: str,
+    current_skill: str,
+    skill_names: list[str],
+) -> bool:
+    """True when CC in this skill text belongs on another named skill."""
+    if re.search(
+        r"strengthens? the conditional (?:atk spd|energy|vitality|phys|magic)\b",
+        text,
+        re.I,
+    ):
+        return False
+    for name in sorted(skill_names, key=len, reverse=True):
+        if name == current_skill:
+            continue
+        escaped = re.escape(name)
+        patterns = (
+            rf"with (?:his|her|their) {escaped}\b",
+            rf"(?:while|when) casting {escaped}\b",
+            rf"\bif {escaped} knocks?\b",
+            rf"(?:directly )?hit by {escaped}\b",
+            rf"leaves? the {escaped} state\b",
+        )
+        if any(re.search(pat, text, re.I) for pat in patterns):
+            return True
+    return False
+
+
 def _immunity_types(effects: list[dict[str, Any]]) -> set[str]:
     out: set[str] = set()
     for eff in effects:
@@ -237,6 +265,7 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
 
             text = desc_text.lower()
             cc_found = _cc_types(effects)
+            skill_names = list(hero.get("skills", {}).keys())
             if not passive:
                 for cc, pat in _CC_KEYWORDS.items():
                     if cc == "freeze" and _FREEZE_SKIP_RE.search(text):
@@ -250,6 +279,10 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                     if not re.search(pat, text):
                         continue
                     if not _cc_has_real_match(rs, cc, pat, text, desc_text):
+                        continue
+                    if _cc_described_on_referenced_skill(
+                        desc_text, skill_name, skill_names
+                    ):
                         continue
                     mapped = _CC_SCHEMA_MAP.get(cc, cc)
                     if mapped not in cc_found:
@@ -268,6 +301,10 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                 if imm == "untargetable" and _UNTARGETABLE_SKIP_RE.search(text):
                     continue
                 if re.search(pat, text) and imm not in imm_found:
+                    if _cc_described_on_referenced_skill(
+                        desc_text, skill_name, skill_names
+                    ):
+                        continue
                     issues["anti_cc_missing"].append(
                         f"{title} / {skill_name}: {imm}"
                     )

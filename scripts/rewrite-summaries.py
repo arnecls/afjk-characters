@@ -322,6 +322,10 @@ def _energy_recovery_targets_self(t: str) -> bool:
         return True
     if re.search(r"\b(?:she|he|it)\b", t) and re.search(energy_recover, t):
         return not re.search(r"\b(?:allies?|ally)\b", t)
+    if re.search(r"\band all allies\b", t):
+        before_ally = t.split(" and all allies", 1)[0]
+        if re.search(energy_recover, before_ally):
+            return True
     if re.search(energy_recover, t):
         return not re.search(r"\b(?:allies?|ally|the ally)\b", t)
     return False
@@ -1524,6 +1528,7 @@ class Hero:
     damage_type: str
   # (tier, text, section name e.g. "Ultimate", "Skill1")
     skill_chunks: list[tuple[str, str, str]] = field(default_factory=list)
+    skill_name_to_section: dict[str, str] = field(default_factory=dict)
     skill_slices: dict[str, SkillSlice] = field(default_factory=dict)
     effects: list[Effect] = field(default_factory=list)
     summon_effects: list[Effect] = field(default_factory=list)
@@ -1699,6 +1704,10 @@ def hero_from_record(hero_record: dict) -> Hero:
     hero = Hero(title=title, damage_type=dmg or "")
     for skill in hero_record.get("skills", []):
         normalize_skill_description(skill)
+        name = (skill.get("name") or "").strip()
+        section = skill.get("section") or ""
+        if name and section:
+            hero.skill_name_to_section[name] = section
         hero.skill_chunks.extend(skill_chunks_from_skill(skill))
     return hero
 
@@ -2048,7 +2057,7 @@ def grants_cc_immunity(text: str, imm_type: str) -> bool:
             return False
         return bool(
             re.search(
-                r"(?:becomes?|is|remain|making|grants?|granted|linked|"
+                r"(?:becomes?|is|remain|mak(?:es?|ing)|grants?|granted|linked|"
                 r"make(?:s)? them).{0,60}unaffected|"
                 r"\bmake(?:s)? them unaffected\b|"
                 r"unaffected (?:while|when|for|during)",
@@ -3632,9 +3641,14 @@ BUFF_RULES = [
         "DEF",
     ),
     (
-        r"increas(?:e|es|ing) .{0,80}(?:phys(?:ical)?|magic) def"
+        r"increas(?:e|es|ing) .{0,80}phys(?:ical)? def"
         r"(?!.{0,20}reduc)",
-        "DEF",
+        "Phys DEF",
+    ),
+    (
+        r"increas(?:e|es|ing) .{0,80}magic def"
+        r"(?!.{0,20}reduc)",
+        "Magic DEF",
     ),
     (
         r"gain(?:s|ing)? \d+(?:\.\d+)?%? "
@@ -5036,6 +5050,10 @@ def _apply_true_damage_hierarchy(types: list[str], text: str) -> list[str]:
         return types
     out = list(types)
     if _true_damage_is_composite_atk_rider(text):
+        if _true_damage_prefers_max_hp_label(text):
+            out = [d for d in out if d != "True damage"]
+            if "Max HP-based damage" not in out:
+                out.append("Max HP-based damage")
         return out
     if _true_damage_prefers_max_hp_label(text):
         out = [d for d in out if d != "True damage"]
@@ -7098,6 +7116,37 @@ def refine_benefit_stats(hero: Hero) -> None:
     hero.benefit_stats = [s for s in BENEFIT_STAT_ORDER if s in merged]
 
 
+def _cross_skill_reference_target(
+    text: str,
+    default_section: str,
+    skill_name_to_section: dict[str, str],
+) -> str:
+    """Return the skill section that owns effects from a cross-skill clause."""
+    if not skill_name_to_section:
+        return default_section
+    t = text.lower()
+    if re.search(
+        r"strengthens? the conditional (?:atk spd|energy|vitality|phys|magic)\b",
+        t,
+    ):
+        return default_section
+    for name in sorted(skill_name_to_section, key=len, reverse=True):
+        target = skill_name_to_section[name]
+        if target == default_section:
+            continue
+        escaped = re.escape(name)
+        patterns = (
+            rf"with (?:his|her|their) {escaped}\b",
+            rf"(?:while|when) casting {escaped}\b",
+            rf"\bif {escaped} knocks?\b",
+            rf"(?:directly )?hit by {escaped}\b",
+            rf"leaves? the {escaped} state\b",
+        )
+        if any(re.search(pat, text, re.I) for pat in patterns):
+            return target
+    return default_section
+
+
 def _finalize_skill_slice_effects(
     slices: dict[str, SkillSlice], section_texts: dict[str, list[str]]
 ) -> None:
@@ -7148,7 +7197,10 @@ def analyze_hero(hero: Hero):
     section_texts: dict[str, list[str]] = {}
     for tier, text, section in hero.skill_chunks:
         sec = section or ""
-        section_texts.setdefault(sec, []).append(text)
+        target_section = _cross_skill_reference_target(
+            text, sec, hero.skill_name_to_section
+        )
+        section_texts.setdefault(target_section, []).append(text)
         analyze_text(
             hero.effects,
             hero.summon_effects,
@@ -7157,7 +7209,7 @@ def analyze_hero(hero: Hero):
             tier,
             text,
             primary_dmg,
-            source_section=section or None,
+            source_section=target_section or None,
         )
         detect_special_effects(hero.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
@@ -7173,13 +7225,13 @@ def analyze_hero(hero: Hero):
             tier,
             text,
             primary_dmg,
-            source_section=section or None,
+            source_section=target_section or None,
         )
         detect_special_effects(chunk.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
             add_cc_immunity(chunk, imm_type, tier, text)
-        if section in hero.skill_slices:
-            sl = hero.skill_slices[section]
+        if target_section in hero.skill_slices:
+            sl = hero.skill_slices[target_section]
             sl.effects.extend(chunk.effects)
             sl.summon_effects.extend(chunk.summon_effects)
             sl.cc_immunities.extend(chunk.cc_immunities)
@@ -7188,8 +7240,8 @@ def analyze_hero(hero: Hero):
             if TIER_ORDER.get(tier, 99) < TIER_ORDER.get(sl.tier, 99):
                 sl.tier = tier
         else:
-            hero.skill_slices[section] = SkillSlice(
-                section=section,
+            hero.skill_slices[target_section] = SkillSlice(
+                section=target_section,
                 tier=tier,
                 effects=list(chunk.effects),
                 summon_effects=list(chunk.summon_effects),
@@ -7197,7 +7249,7 @@ def analyze_hero(hero: Hero):
                 special_effects=list(chunk.special_effects),
             )
             _apply_scalar_upgrades(
-                hero.skill_slices[section].effects, text, primary_dmg
+                hero.skill_slices[target_section].effects, text, primary_dmg
             )
     _finalize_skill_slice_effects(hero.skill_slices, section_texts)
     _rebuild_hero_aggregates_from_slices(hero)

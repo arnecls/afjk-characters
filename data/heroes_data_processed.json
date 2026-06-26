@@ -1211,6 +1211,31 @@
               ]
             },
             {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Vitality",
+              "label": "debuff_defensive",
+              "duration": 2.0
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 2.0
+            },
+            {
               "type": "immunity",
               "tier": "mythic+",
               "immunity_type": "immune",
@@ -1227,6 +1252,13 @@
             {
               "label": "DMG+CC immunity",
               "polarity": "buff"
+            },
+            {
+              "label": "Vitality",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Bind — Area"
             },
             {
               "label": "Immune — Self"
@@ -1253,31 +1285,6 @@
               "type": "buff",
               "name": "ATK",
               "label": "buff_offensive"
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "debuff",
-              "name": "Vitality",
-              "label": "debuff_defensive",
-              "duration": 2.0
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Area",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "radius",
-              "target_count": -1,
-              "area_count": 1,
-              "type": "crowd_control",
-              "cc-type": "bind",
-              "duration": 2.0
             }
           ],
           "tier": "supreme+",
@@ -1285,13 +1292,6 @@
             {
               "label": "ATK",
               "polarity": "buff"
-            },
-            {
-              "label": "Vitality",
-              "polarity": "debuff"
-            },
-            {
-              "label": "Bind — Area"
             }
           ]
         }
@@ -1981,6 +1981,17 @@
               ]
             },
             {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Phys DEF",
+              "label": "buff_defensive"
+            },
+            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -2004,6 +2015,10 @@
             },
             {
               "label": "Damage taken — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF",
               "polarity": "buff"
             },
             {
@@ -2294,27 +2309,12 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "ally",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "DEF",
-              "label": "buff_defensive"
-            }
-          ],
+          "effects": [],
           "tier": "supreme+",
+          "passive_only": true,
           "skill_card_tags": [
             {
               "label": "Direct healing — Self",
-              "polarity": "buff"
-            },
-            {
-              "label": "DEF",
               "polarity": "buff"
             }
           ]
@@ -2901,6 +2901,10 @@
               "label": "Physical"
             },
             {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            },
+            {
               "label": "Stun — Area"
             }
           ]
@@ -2977,6 +2981,57 @@
                   "value": 165.0
                 }
               ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "conditional"
+                }
+              ],
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ],
+              "duration": 8.0
+            },
+            {
+              "type": "immunity",
+              "tier": "supreme+",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
             }
           ],
           "cooldown": 12.0,
@@ -2986,10 +3041,21 @@
               "label": "Physical"
             },
             {
+              "label": "Haste — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF",
+              "polarity": "debuff"
+            },
+            {
               "label": "Bind"
             },
             {
               "label": "Knock back"
+            },
+            {
+              "label": "Unaffected — Self"
             }
           ]
         },
@@ -3169,64 +3235,9 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "conditions": [
-                {
-                  "type": "battle_phase",
-                  "phase": "conditional"
-                }
-              ],
-              "type": "buff",
-              "name": "Haste",
-              "label": "buff_offensive",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 60.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Phys DEF",
-              "label": "debuff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 40.0
-                }
-              ],
-              "duration": 8.0
-            }
-          ],
-          "tier": "supreme+",
-          "skill_card_tags": [
-            {
-              "label": "Direct healing — Self",
-              "polarity": "buff"
-            },
-            {
-              "label": "Haste — Self",
-              "polarity": "buff"
-            },
-            {
-              "label": "Phys DEF",
-              "polarity": "debuff"
-            }
-          ]
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
         }
       },
       "synergy_profile": {
@@ -3275,7 +3286,7 @@
             "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
-            "heal": "none",
+            "heal": "average",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
@@ -3286,7 +3297,7 @@
             "speed": "average",
             "first_cast_speed": "none",
             "damage": "high",
-            "heal": "none",
+            "heal": "average",
             "buffs": "none",
             "debuffs": "none",
             "damage_types": {
@@ -3298,8 +3309,8 @@
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
-            "buffs": "none",
-            "debuffs": "none",
+            "buffs": "average",
+            "debuffs": "average",
             "damage_types": {
               "Physical": "high"
             }
@@ -3521,6 +3532,17 @@
                   "value": 480.0
                 }
               ]
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Execution",
+              "label": "buff_offensive"
             }
           ],
           "cooldown": 7.0,
@@ -3531,6 +3553,10 @@
             },
             {
               "label": "Invincible — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Execution — Self",
               "polarity": "buff"
             }
           ]
@@ -3744,17 +3770,6 @@
                   "value": 280.0
                 }
               ]
-            },
-            {
-              "tier": "ex+15",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Execution",
-              "label": "buff_offensive"
             }
           ],
           "tier": "mythic+",
@@ -3762,10 +3777,6 @@
           "skill_card_tags": [
             {
               "label": "Physical"
-            },
-            {
-              "label": "Execution — Self",
-              "polarity": "buff"
             }
           ]
         },
@@ -7976,6 +7987,18 @@
                   "value": 370.0
                 }
               ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Magic DEF",
+              "label": "debuff_defensive",
+              "duration": 10.0
             }
           ],
           "cooldown": 1.0,
@@ -7985,6 +8008,10 @@
           "skill_card_tags": [
             {
               "label": "Magic"
+            },
+            {
+              "label": "Magic DEF",
+              "polarity": "debuff"
             },
             {
               "label": "Knock back — All units"
@@ -8293,18 +8320,6 @@
               "tier": "supreme+",
               "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Magic DEF",
-              "label": "debuff_defensive",
-              "duration": 10.0
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
               "target": "ally",
               "area": "single",
               "target_count": 1,
@@ -8318,10 +8333,6 @@
             {
               "label": "Tidal Strength",
               "polarity": "buff"
-            },
-            {
-              "label": "Magic DEF",
-              "polarity": "debuff"
             }
           ]
         }
@@ -8402,7 +8413,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Magic": "high"
             }
@@ -14155,7 +14166,18 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "DEF",
+              "name": "Phys DEF",
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
               "label": "buff_defensive"
             }
           ],
@@ -14166,7 +14188,11 @@
               "polarity": "buff"
             },
             {
-              "label": "DEF",
+              "label": "Magic DEF",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF",
               "polarity": "buff"
             }
           ]
@@ -18334,14 +18360,19 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "DEF",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 50.0
-                }
-              ]
+              "name": "Phys DEF",
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive"
             },
             {
               "tier": "ex+5",
@@ -18400,7 +18431,11 @@
               "polarity": "buff"
             },
             {
-              "label": "DEF — Self",
+              "label": "Magic DEF — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF — Self",
               "polarity": "buff"
             },
             {
@@ -21281,6 +21316,16 @@
               ],
               "duration": 9,
               "tick": 1.0
+            },
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
             }
           ],
           "initial_cooldown": 1.25,
@@ -21289,6 +21334,9 @@
             {
               "label": "HoT",
               "polarity": "buff"
+            },
+            {
+              "label": "Unaffected — Self"
             }
           ]
         },
@@ -21488,16 +21536,6 @@
               "type": "buff",
               "name": "Damage taken",
               "label": "buff_stat"
-            },
-            {
-              "type": "immunity",
-              "tier": "mythic+",
-              "immunity_type": "unaffected",
-              "timing": "on_skill",
-              "targeting_label": "Self",
-              "target": "self",
-              "area": "single",
-              "target_count": 1
             }
           ],
           "tier": "mythic+",
@@ -21505,9 +21543,6 @@
             {
               "label": "Damage taken",
               "polarity": "buff"
-            },
-            {
-              "label": "Unaffected — Self"
             }
           ]
         },
@@ -21663,25 +21698,6 @@
               "target_count": -1,
               "area_count": -1,
               "type": "damage",
-              "damage_type": "true",
-              "name": "True damage",
-              "label": "damage_true",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 300.0
-                }
-              ]
-            },
-            {
-              "tier": "base",
-              "targeting_label": "All units",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "zone",
-              "target_count": -1,
-              "area_count": -1,
-              "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
               "label": "damage_max_hp",
@@ -21698,9 +21714,6 @@
           "skill_card_tags": [
             {
               "label": "Max HP-based damage"
-            },
-            {
-              "label": "True damage"
             },
             {
               "label": "Physical"
@@ -22063,14 +22076,9 @@
         [
           "max_hp",
           "All units"
-        ],
-        [
-          "true",
-          "All units"
         ]
       ],
       "damage_magnitudes": {
-        "true": "high",
         "max_hp": "low"
       },
       "benefit_stats": [
@@ -22117,7 +22125,6 @@
             "debuffs": "none",
             "damage_types": {
               "Physical": "high",
-              "True damage": "high",
               "Max HP-based damage": "low"
             }
           },
@@ -26689,6 +26696,17 @@
               "type": "buff",
               "name": "DEF",
               "label": "buff_defensive"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive"
             }
           ],
           "tier": "mythic+",
@@ -26703,6 +26721,10 @@
             },
             {
               "label": "DEF — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Magic DEF",
               "polarity": "buff"
             },
             {
@@ -28750,9 +28772,9 @@
           "effects": [
             {
               "tier": "ex+10",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "conditions": [
@@ -28762,20 +28784,35 @@
                 }
               ],
               "type": "buff",
-              "name": "DEF",
-              "label": "buff_defensive",
-              "value": [
+              "name": "Phys DEF",
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
                 {
-                  "type": "percentage",
-                  "value": 25.0
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
                 }
-              ]
+              ],
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive"
             }
           ],
           "tier": "mythic+",
           "skill_card_tags": [
             {
-              "label": "DEF — Self",
+              "label": "Magic DEF",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF",
               "polarity": "buff"
             }
           ]
@@ -30791,11 +30828,32 @@
               "type": "buff",
               "name": "Damage taken",
               "label": "buff_stat"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
             }
           ],
           "cooldown": 12.0,
           "initial_cooldown": 6.0,
           "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            },
             {
               "label": "Damage taken — Self",
               "polarity": "buff"
@@ -30897,23 +30955,6 @@
           "effects": [
             {
               "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "heal",
-              "healing_type": "direct",
-              "name": "Direct healing",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
               "targeting_label": "Area",
               "is_max_known": true,
               "target": "ally",
@@ -30921,18 +30962,14 @@
               "target_count": -1,
               "area_count": 1,
               "type": "buff",
-              "name": "DEF",
+              "name": "Magic DEF",
               "label": "buff_defensive"
             }
           ],
           "tier": "supreme+",
           "skill_card_tags": [
             {
-              "label": "Direct healing — Self",
-              "polarity": "buff"
-            },
-            {
-              "label": "DEF",
+              "label": "Magic DEF",
               "polarity": "buff"
             }
           ]
@@ -31004,7 +31041,7 @@
             "speed": "fast",
             "first_cast_speed": "none",
             "damage": "low",
-            "heal": "none",
+            "heal": "average",
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
@@ -32585,7 +32622,7 @@
               "area": "single",
               "target_count": 3,
               "type": "buff",
-              "name": "DEF",
+              "name": "Phys DEF",
               "label": "buff_defensive",
               "duration": 7.0
             }
@@ -32594,7 +32631,7 @@
           "initial_cooldown": 4.0,
           "skill_card_tags": [
             {
-              "label": "DEF",
+              "label": "Phys DEF",
               "polarity": "buff"
             },
             {
@@ -33014,6 +33051,24 @@
                   "value": 290.0
                 }
               ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "duration": 6.0
             }
           ],
           "cooldown": 1.0,
@@ -33023,6 +33078,10 @@
           "skill_card_tags": [
             {
               "label": "Physical"
+            },
+            {
+              "label": "Phys DEF",
+              "polarity": "debuff"
             }
           ]
         },
@@ -33319,33 +33378,10 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Phys DEF",
-              "label": "debuff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 25.0
-                }
-              ],
-              "duration": 6.0
-            }
-          ],
+          "effects": [],
           "tier": "supreme+",
-          "skill_card_tags": [
-            {
-              "label": "Phys DEF",
-              "polarity": "debuff"
-            }
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         }
       },
       "synergy_profile": {
@@ -33382,7 +33418,7 @@
             "damage": "average",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Physical": "average"
             }
@@ -33393,7 +33429,7 @@
             "damage": "average",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Physical": "average"
             }
@@ -34635,12 +34671,27 @@
               "area_count": -1,
               "type": "crowd_control",
               "cc-type": "charm"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Damage taken",
+              "label": "debuff_stat"
             }
           ],
           "cooldown": 15.0,
           "initial_cooldown": 15.0,
           "skill_range": 3,
           "skill_card_tags": [
+            {
+              "label": "Damage taken",
+              "polarity": "debuff"
+            },
             {
               "label": "Charm — All units"
             },
@@ -34831,26 +34882,10 @@
               "This effect does not stack."
             ]
           },
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Damage taken",
-              "label": "debuff_stat"
-            }
-          ],
+          "effects": [],
           "tier": "supreme+",
-          "skill_card_tags": [
-            {
-              "label": "Damage taken",
-              "polarity": "debuff"
-            }
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         }
       },
       "synergy_profile": {
@@ -34933,7 +34968,7 @@
             "damage": "low",
             "heal": "average",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "HP loss": "average",
               "Magic": "low",
@@ -35162,6 +35197,18 @@
               "target": "ally",
               "area": "single",
               "target_count": 2,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive",
+              "duration": 5.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 2,
               "type": "heal",
               "healing_type": "direct",
               "name": "Direct healing",
@@ -35183,6 +35230,10 @@
             },
             {
               "label": "DEF",
+              "polarity": "buff"
+            },
+            {
+              "label": "Magic DEF",
               "polarity": "buff"
             }
           ]
@@ -35930,6 +35981,28 @@
                   "value": 4.0
                 }
               ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Vitality",
+              "label": "debuff_defensive",
+              "duration": 3.0
+            },
+            {
+              "type": "immunity",
+              "tier": "supreme+",
+              "immunity_type": "unaffected",
+              "timing": "permanent",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
             }
           ],
           "cooldown": 4.0,
@@ -35938,7 +36011,14 @@
               "label": "HP loss"
             },
             {
+              "label": "Vitality",
+              "polarity": "debuff"
+            },
+            {
               "label": "Displace"
+            },
+            {
+              "label": "Unaffected — Self"
             }
           ]
         },
@@ -36246,18 +36326,6 @@
               "area": "single",
               "target_count": 1,
               "type": "debuff",
-              "name": "Vitality",
-              "label": "debuff_defensive",
-              "duration": 3.0
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
               "name": "Max HP",
               "label": "debuff_stat",
               "value": [
@@ -36266,16 +36334,6 @@
                   "value": 20.0
                 }
               ]
-            },
-            {
-              "type": "immunity",
-              "tier": "supreme+",
-              "immunity_type": "unaffected",
-              "timing": "permanent",
-              "targeting_label": "Self",
-              "target": "self",
-              "area": "single",
-              "target_count": 1
             }
           ],
           "tier": "supreme+",
@@ -36287,13 +36345,6 @@
             {
               "label": "Max HP",
               "polarity": "debuff"
-            },
-            {
-              "label": "Vitality",
-              "polarity": "debuff"
-            },
-            {
-              "label": "Unaffected — Self"
             }
           ]
         }
@@ -36349,7 +36400,7 @@
             "damage": "low",
             "heal": "none",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "HP loss": "average"
             }
@@ -36372,7 +36423,7 @@
             "damage": "average",
             "heal": "average",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "HP loss": "average",
               "Physical": "low",
@@ -38356,14 +38407,20 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "DEF",
+              "name": "Phys DEF",
               "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 60.0
-                }
-              ],
+              "duration": 8.0
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive",
               "duration": 8.0
             }
           ],
@@ -38374,7 +38431,11 @@
               "polarity": "buff"
             },
             {
-              "label": "DEF — Self",
+              "label": "Magic DEF — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF — Self",
               "polarity": "buff"
             },
             {
@@ -41359,7 +41420,7 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "DEF",
+              "name": "Magic DEF",
               "label": "buff_defensive"
             }
           ],
@@ -41367,7 +41428,7 @@
           "skill_range": 1,
           "skill_card_tags": [
             {
-              "label": "DEF — Self",
+              "label": "Magic DEF — Self",
               "polarity": "buff"
             }
           ]
@@ -41505,7 +41566,6 @@
         "shield",
         "healing",
         "energy",
-        "physical_def",
         "magic_def"
       ],
       "behavior": {
@@ -43015,12 +43075,62 @@
                   "value": 50.0
                 }
               ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Damage taken",
+              "label": "debuff_stat"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_down",
+              "duration": 0.0
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ]
             }
           ],
           "skill_card_tags": [
             {
+              "label": "Magic"
+            },
+            {
               "label": "Direct healing — Self",
               "polarity": "buff"
+            },
+            {
+              "label": "Damage taken",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Knock down"
             }
           ]
         },
@@ -43197,61 +43307,10 @@
               }
             ]
           },
-          "effects": [
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Damage taken",
-              "label": "debuff_stat"
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "knock_down",
-              "duration": 0.0
-            },
-            {
-              "tier": "mythic+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "damage",
-              "damage_type": "magic",
-              "name": "Magic",
-              "label": "damage_normal",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 250.0
-                }
-              ]
-            }
-          ],
+          "effects": [],
           "tier": "mythic+",
-          "skill_card_tags": [
-            {
-              "label": "Magic"
-            },
-            {
-              "label": "Damage taken",
-              "polarity": "debuff"
-            },
-            {
-              "label": "Knock down"
-            }
-          ]
+          "passive_only": true,
+          "skill_card_tags": []
         },
         "Enhance Force": {
           "category": "skill5",
@@ -43304,7 +43363,7 @@
             "damage": "none",
             "heal": "average",
             "buffs": "none",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {}
           },
           "ultimate": {
@@ -44180,20 +44239,25 @@
             },
             {
               "tier": "mythic+",
-              "targeting_label": "Self",
+              "targeting_label": "Single target",
               "is_max_known": true,
-              "target": "self",
+              "target": "ally",
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "DEF",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 40.0
-                }
-              ]
+              "name": "Phys DEF",
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive"
             }
           ],
           "tier": "mythic+",
@@ -44203,11 +44267,15 @@
               "polarity": "buff"
             },
             {
-              "label": "DEF — Self",
+              "label": "Magic DEF",
               "polarity": "buff"
             },
             {
               "label": "Max HP — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF",
               "polarity": "buff"
             }
           ]
@@ -44253,9 +44321,7 @@
       "benefit_stats": [
         "haste",
         "max_hp",
-        "energy",
-        "physical_def",
-        "magic_def"
+        "energy"
       ],
       "behavior": {
         "movement": "moving",
@@ -46401,14 +46467,29 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "DEF",
+              "name": "Phys DEF",
+              "label": "buff_defensive"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
               "label": "buff_defensive"
             }
           ],
           "tier": "supreme+",
           "skill_card_tags": [
             {
-              "label": "DEF",
+              "label": "Magic DEF",
+              "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF",
               "polarity": "buff"
             },
             {
@@ -46691,6 +46772,18 @@
                   "value": 195.0
                 }
               ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive",
+              "duration": 6.0
             }
           ],
           "cooldown": 6.5,
@@ -46701,6 +46794,10 @@
             },
             {
               "label": "Physical"
+            },
+            {
+              "label": "Phys DEF",
+              "polarity": "debuff"
             }
           ]
         },
@@ -46916,27 +47013,9 @@
               "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge."
             ]
           },
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "debuff",
-              "name": "Phys DEF",
-              "label": "debuff_defensive",
-              "duration": 6.0
-            }
-          ],
-          "tier": "supreme+",
-          "skill_card_tags": [
-            {
-              "label": "Phys DEF",
-              "polarity": "debuff"
-            }
-          ]
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
         }
       },
       "synergy_profile": {
@@ -47019,7 +47098,7 @@
             "damage": "average",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "HP loss": "average",
               "Physical": "average"
@@ -49918,9 +49997,9 @@
           "effects": [
             {
               "tier": "base",
-              "targeting_label": "Single target",
+              "targeting_label": "Self",
               "is_max_known": true,
-              "target": "ally",
+              "target": "self",
               "area": "single",
               "target_count": 1,
               "type": "buff",
@@ -49971,7 +50050,7 @@
               "polarity": "buff"
             },
             {
-              "label": "Energy",
+              "label": "Energy — Self",
               "polarity": "buff"
             },
             {
@@ -50669,12 +50748,27 @@
               "type": "buff",
               "name": "DEF",
               "label": "buff_summon_defensive"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_summon_defensive"
             }
           ],
           "tier": "mythic+",
           "skill_card_tags": [
             {
               "label": "DEF — Owned",
+              "polarity": "buff"
+            },
+            {
+              "label": "Magic DEF — Owned",
               "polarity": "buff"
             }
           ]
@@ -50903,14 +50997,8 @@
               "area": "single",
               "target_count": 3,
               "type": "buff",
-              "name": "DEF",
-              "label": "buff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 15.0
-                }
-              ]
+              "name": "Magic DEF",
+              "label": "buff_defensive"
             }
           ],
           "skill_range": 1,
@@ -50920,7 +51008,7 @@
               "polarity": "buff"
             },
             {
-              "label": "DEF",
+              "label": "Magic DEF",
               "polarity": "buff"
             }
           ]
@@ -51289,12 +51377,33 @@
               "type": "crowd_control",
               "cc-type": "stun",
               "duration": 2.5
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 80.0
+                }
+              ]
             }
           ],
           "initial_energy": 0.0,
           "skill_card_tags": [
             {
               "label": "Physical"
+            },
+            {
+              "label": "Energy — Self",
+              "polarity": "buff"
             },
             {
               "label": "Knock back — Area"
@@ -51613,23 +51722,6 @@
           "effects": [
             {
               "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Energy",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "flat",
-                  "value": 80.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
               "targeting_label": "Single target",
               "is_max_known": true,
               "target": "ally",
@@ -51647,10 +51739,6 @@
           ],
           "tier": "supreme+",
           "skill_card_tags": [
-            {
-              "label": "Energy — Self",
-              "polarity": "buff"
-            },
             {
               "label": "Shield",
               "polarity": "buff"
@@ -51693,7 +51781,7 @@
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "none",
             "damage_types": {
               "Physical": "high"
@@ -51704,7 +51792,7 @@
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "none",
             "damage_types": {
               "Physical": "high"
@@ -53500,6 +53588,23 @@
               "type": "buff",
               "name": "Damage dealt",
               "label": "buff_stat"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1.0
+                }
+              ]
             }
           ],
           "skill_range": 1,
@@ -53515,6 +53620,10 @@
             {
               "label": "Energy — Self",
               "polarity": "buff"
+            },
+            {
+              "label": "Phys DEF",
+              "polarity": "debuff"
             },
             {
               "label": "Knock down — Area"
@@ -53834,23 +53943,6 @@
               "target": "enemy",
               "area": "single",
               "target_count": 1,
-              "type": "debuff",
-              "name": "Phys DEF",
-              "label": "debuff_defensive",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 1.0
-                }
-              ]
-            },
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
               "type": "damage",
               "damage_type": "max_hp",
               "name": "Max HP-based damage",
@@ -53871,10 +53963,6 @@
             {
               "label": "Shield — Self",
               "polarity": "buff"
-            },
-            {
-              "label": "Phys DEF",
-              "polarity": "debuff"
             }
           ]
         }
@@ -53934,7 +54022,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Physical": "high"
             }
@@ -53945,7 +54033,7 @@
             "damage": "high",
             "heal": "none",
             "buffs": "average",
-            "debuffs": "none",
+            "debuffs": "average",
             "damage_types": {
               "Physical": "high"
             }
@@ -54547,6 +54635,23 @@
               "cc-type": "interrupt"
             },
             {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            },
+            {
               "type": "immunity",
               "tier": "base",
               "immunity_type": "unaffected",
@@ -54567,6 +54672,10 @@
             },
             {
               "label": "Lifedrain — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "Max HP — Self",
               "polarity": "buff"
             },
             {
@@ -54764,32 +54873,9 @@
               "Thoran drains another 20% of the current HP from all enemies affected by Soul Plunder when casting Soul Retaliation, increasing his max HP by the same amount."
             ]
           },
-          "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "Max HP",
-              "label": "buff_stat",
-              "value": [
-                {
-                  "type": "percentage",
-                  "value": 20.0
-                }
-              ]
-            }
-          ],
-          "tier": "supreme+",
-          "skill_card_tags": [
-            {
-              "label": "Max HP — Self",
-              "polarity": "buff"
-            }
-          ]
+          "effects": [],
+          "passive_only": true,
+          "skill_card_tags": []
         }
       },
       "synergy_profile": {
@@ -55243,6 +55329,18 @@
                   "value": 60.0
                 }
               ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive"
             }
           ],
           "tier": "mythic+",
@@ -55254,6 +55352,10 @@
             },
             {
               "label": "DEF",
+              "polarity": "buff"
+            },
+            {
+              "label": "Magic DEF",
               "polarity": "buff"
             },
             {
@@ -56665,6 +56767,17 @@
                   "value": 240.0
                 }
               ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3.0
             }
           ],
           "cooldown": 11.0,
@@ -56672,6 +56785,9 @@
           "skill_card_tags": [
             {
               "label": "Physical"
+            },
+            {
+              "label": "Stun"
             }
           ]
         },
@@ -56739,17 +56855,6 @@
           },
           "effects": [
             {
-              "tier": "mythic+",
-              "targeting_label": "Self",
-              "is_max_known": true,
-              "target": "self",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
-            },
-            {
               "tier": "ex+5",
               "targeting_label": "Single target",
               "is_max_known": true,
@@ -56764,7 +56869,7 @@
           "tier": "mythic+",
           "skill_card_tags": [
             {
-              "label": "ATK — Self",
+              "label": "ATK",
               "polarity": "buff"
             }
           ]
@@ -56788,17 +56893,6 @@
             ]
           },
           "effects": [
-            {
-              "tier": "supreme+",
-              "targeting_label": "Single target",
-              "is_max_known": true,
-              "target": "enemy",
-              "area": "single",
-              "target_count": 1,
-              "type": "crowd_control",
-              "cc-type": "stun",
-              "duration": 3.0
-            },
             {
               "tier": "supreme+",
               "targeting_label": "Single target",
@@ -56839,9 +56933,6 @@
             {
               "label": "Movement speed",
               "polarity": "debuff"
-            },
-            {
-              "label": "Stun"
             }
           ]
         }
@@ -57906,10 +57997,24 @@
               "Each subsequent cast makes allied units unaffected and increases their damage dealt by 5% for 5s."
             ]
           },
-          "effects": [],
+          "effects": [
+            {
+              "type": "immunity",
+              "tier": "supreme+",
+              "immunity_type": "unaffected",
+              "timing": "on_skill",
+              "targeting_label": "Single target",
+              "target": "ally",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
           "tier": "supreme+",
-          "passive_only": true,
-          "skill_card_tags": []
+          "skill_card_tags": [
+            {
+              "label": "Unaffected"
+            }
+          ]
         }
       },
       "synergy_profile": {

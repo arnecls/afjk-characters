@@ -1888,5 +1888,136 @@ class TestParisaParsing(unittest.TestCase):
         )
 
 
+class TestEffectValidationFixesJune2026(unittest.TestCase):
+    def test_valen_stun_on_fury_thunder_strike_not_enhance_force(self):
+        record = next(
+            r for r in io.load_heroes_data()["heroes"] if r.get("name") == "Valen"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        supreme = hero.skill_slices["Unlocks at Supreme+"]
+        skill2 = hero.skill_slices["Skill2"]
+        self.assertNotIn("Stun", [e.label for e in supreme.effects])
+        self.assertIn("Stun", [e.label for e in skill2.effects if e.category == "cc"])
+        self.assertIn(
+            "Haste",
+            [e.label for e in supreme.effects if e.category == "debuff"],
+        )
+
+    def test_atalanta_cross_skill_effects_on_referenced_skills(self):
+        record = next(
+            r for r in io.load_heroes_data()["heroes"] if r.get("name") == "Atalanta"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        supreme = hero.skill_slices.get("Unlocks at Supreme+")
+        sweet = hero.skill_slices["Skill1"]
+        wild = hero.skill_slices["Ultimate"]
+        supreme_effects = supreme.effects if supreme else []
+        self.assertNotIn(
+            "Phys DEF",
+            [e.label for e in supreme_effects if e.category == "debuff"],
+        )
+        self.assertIn(
+            "Phys DEF",
+            [e.label for e in sweet.effects if e.category == "debuff"],
+        )
+        self.assertIn(
+            "Haste",
+            [e.label for e in sweet.effects if e.category == "buff"],
+        )
+        self.assertIn(
+            "Direct healing",
+            [e.label for e in wild.effects if e.category == "buff"],
+        )
+        unaffected = [
+            i for i in sweet.cc_immunities if i.immunity_type == "Unaffected"
+        ]
+        self.assertTrue(unaffected)
+        self.assertEqual(unaffected[0].targeting, "Self")
+
+    def test_alna_enhance_force_cc_on_chilling_presence(self):
+        record = next(
+            r for r in io.load_heroes_data()["heroes"] if r.get("name") == "Alna"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        supreme = hero.skill_slices["Unlocks at Supreme+"]
+        chilling = hero.skill_slices["Ex. Skill"]
+        self.assertNotIn(
+            "Vitality",
+            [e.label for e in supreme.effects if e.category == "debuff"],
+        )
+        self.assertIn(
+            "Vitality",
+            [e.label for e in chilling.effects if e.category == "debuff"],
+        )
+        self.assertIn(
+            "Bind",
+            [e.label for e in chilling.effects if e.category == "cc"],
+        )
+
+    def test_himmel_heroic_slash_max_hp_only_not_true_double_label(self):
+        record = next(
+            r for r in io.load_heroes_data()["heroes"] if r.get("name") == "Himmel"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        ultimate = hero.skill_slices["Ultimate"]
+        dmg_labels = [e.label for e in ultimate.effects if e.category == "damage"]
+        self.assertIn("Max HP-based damage", dmg_labels)
+        self.assertNotIn("True damage", dmg_labels)
+
+    def test_smokey_special_aroma_self_energy_not_ally(self):
+        record = next(
+            r
+            for r in io.load_heroes_data()["heroes"]
+            if r.get("name") == "Smokey & Meerky"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        aroma = hero.skill_slices["Ultimate"]
+        energy = [e for e in aroma.effects if e.label == "Energy"]
+        self.assertTrue(energy)
+        self.assertEqual(energy[0].targeting, "Self")
+
+    def test_granny_glimmerbloom_phys_magic_def_not_generic_def(self):
+        text = (
+            "When Granny Dahnie's HP ratio is lower than 50%, the Glimmerbloom "
+            "Shield grows bigger, increasing her Phys DEF by 50% and Magic DEF "
+            "by 50% and recovering 100% (ATK-based) HP every second."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Physical")
+        buff_labels = [e.label for e in effects if e.category == "buff"]
+        self.assertIn("Phys DEF", buff_labels)
+        self.assertIn("Magic DEF", buff_labels)
+        self.assertNotIn("DEF", buff_labels)
+
+    def test_temesia_invincible_fury_unaffected_on_ex_skill(self):
+        record = next(
+            r for r in io.load_heroes_data()["heroes"] if r.get("name") == "Temesia"
+        )
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        ex = hero.skill_slices["Ex. Skill"]
+        ultimate = hero.skill_slices["Ultimate"]
+        self.assertIn(
+            "Unaffected",
+            [i.immunity_type for i in ex.cc_immunities],
+        )
+        self.assertNotIn(
+            "Unaffected",
+            [i.immunity_type for i in ultimate.cc_immunities],
+        )
+
+    def test_makes_caster_unaffected_grants_immunity(self):
+        text = (
+            "While casting Sweet Encounter, makes Atalanta unaffected and "
+            "increases her Haste by 60."
+        )
+        self.assertTrue(rs.grants_cc_immunity(text, "Unaffected"))
+
+
 if __name__ == "__main__":
     unittest.main()

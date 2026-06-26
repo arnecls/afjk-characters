@@ -253,10 +253,10 @@
           "reasons": [
             "Haste via Haste (multiple targets, high) `signature fuel`",
             "Shield via Shield (multiple targets, high)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 16.287029999999998
+          "score": 16.82406
         },
         {
           "provider": "Rowan",
@@ -490,18 +490,18 @@
           "score": 1.5
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -780,13 +780,6 @@
           "score": 2.2680000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.2680000000000002
-        },
-        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK SPD via Haste (single target, average) `signature fuel`"
@@ -821,6 +814,13 @@
             "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.72125
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.1340000000000001
         },
         {
           "provider": "Thador",
@@ -910,16 +910,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.0,
-          "name": "Granny Dahnie"
+          "score": 16.5,
+          "name": "Shadewing"
         },
         {
-          "score": 6.0,
-          "name": "Lucca"
+          "score": 16.0,
+          "name": "Carolina"
         },
         {
-          "score": 6.0,
-          "name": "Natsu"
+          "score": 16.0,
+          "name": "Nerion"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -931,23 +931,20 @@
             "name": "Twins",
             "score": 1.0,
             "matches": [
-              "Magic DEF",
               "Physical DEF"
             ]
           },
           {
-            "name": "Tilaya",
+            "name": "Rowan",
             "score": 1.0,
             "matches": [
-              "Magic DEF",
               "Physical DEF"
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
-              "Magic DEF",
               "Physical DEF"
             ]
           }
@@ -1063,18 +1060,18 @@
             ]
           },
           {
-            "name": "Lucca",
-            "score": 0.8,
+            "name": "Hepler",
+            "score": 0.6144,
             "matches": [
-              "Buffs on allies",
               "Crowd Control",
               "Damage"
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.6144,
+            "name": "Scarlita",
+            "score": 0.6057,
             "matches": [
+              "Buffs on allies",
               "Crowd Control",
               "Damage"
             ]
@@ -1118,6 +1115,15 @@
           "score": 8.604
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, high) `signature fuel`"
+          ],
+          "score": 7.9368
+        },
+        {
           "provider": "Pandora",
           "reasons": [
             "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`"
@@ -1131,15 +1137,6 @@
             "ATK SPD via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 7.2
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste (multiple targets, high) `signature fuel`"
-          ],
-          "score": 6.743399999999999
         },
         {
           "provider": "Thador",
@@ -1193,13 +1190,6 @@
           "score": 3.375
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.8080000000000003
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK (single target, low, conditional (frequent))",
@@ -1213,6 +1203,13 @@
             "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
           ],
           "score": 2.2950000000000004
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.4040000000000001
         },
         {
           "provider": "Hepler",
@@ -1417,7 +1414,7 @@
           "provider": "Twins",
           "reasons": [
             "Haste via Haste (all units, average) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
             "Energy via Energy (multiple targets, low) `signature fuel`",
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
@@ -1472,9 +1469,17 @@
           "score": 4.3125
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "Energy via Energy (area, high) `signature fuel`"
+          ],
+          "score": 3.0309
+        },
+        {
           "provider": "Scarlita",
           "reasons": [
-            "Physical DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 3.0309
@@ -1482,7 +1487,7 @@
         {
           "provider": "Antandra",
           "reasons": [
-            "Physical DEF via DEF (single target, average)"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
           "score": 3.0
         },
@@ -1533,23 +1538,9 @@
           "score": 1.5309
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`"
-          ],
-          "score": 1.5309
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Lumont",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -1564,13 +1555,6 @@
           "provider": "Perseus",
           "reasons": [
             "Physical DEF via Phys DEF (multiple targets, low)"
-          ],
-          "score": 1.5
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -1590,18 +1574,18 @@
           "score": 1.0206000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -1691,6 +1675,13 @@
         ],
         "debuff": [
           {
+            "name": "Zanie",
+            "score": 1.0,
+            "matches": [
+              "Phys DEF"
+            ]
+          },
+          {
             "name": "Brutus",
             "score": 1.0,
             "matches": [
@@ -1698,14 +1689,7 @@
             ]
           },
           {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": [
-              "Phys DEF"
-            ]
-          },
-          {
-            "name": "Laios",
+            "name": "Kruger",
             "score": 1.0,
             "matches": [
               "Phys DEF"
@@ -1748,7 +1732,7 @@
           },
           {
             "name": "Gwyneth",
-            "score": 0.6714,
+            "score": 0.6824,
             "matches": [
               "Damage"
             ]
@@ -2365,14 +2349,6 @@
         ],
         "damage": [
           {
-            "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
             "name": "Faramor",
             "score": 1.0,
             "matches": [
@@ -2382,6 +2358,14 @@
           },
           {
             "name": "Athalia",
+            "score": 1.0,
+            "matches": [
+              "True damage",
+              "Physical"
+            ]
+          },
+          {
+            "name": "Dionel",
             "score": 1.0,
             "matches": [
               "True damage",
@@ -2596,13 +2580,6 @@
           "score": 1.35
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Zandrok",
           "reasons": [
             "ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`"
@@ -2615,6 +2592,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -3394,10 +3378,10 @@
           "provider": "Hugin",
           "reasons": [
             "Haste via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 12.4434
+          "score": 13.636800000000001
         },
         {
           "provider": "Tasi",
@@ -3494,19 +3478,19 @@
           "score": 2.8080000000000003
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.8080000000000003
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`",
             "ATK SPD via ATK SPD (all units, low) `signature fuel`"
           ],
           "score": 2.4840000000000004
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.4040000000000001
         },
         {
           "provider": "Thador",
@@ -4399,18 +4383,10 @@
         {
           "provider": "Hugin",
           "reasons": [
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 4.5870299999999995
-        },
-        {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 4.2636
+          "score": 5.12406
         },
         {
           "provider": "Gunnar",
@@ -4419,6 +4395,14 @@
             "Enables CC on enemies via Stun (single target, low)"
           ],
           "score": 4.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`",
+            "Enables CC on enemies via Stun (single target, low)"
+          ],
+          "score": 3.6318
         },
         {
           "provider": "Athalia",
@@ -4493,7 +4477,7 @@
         {
           "provider": "Reinier",
           "reasons": [
-            "Enables CC on enemies via Knock up (single target, low)"
+            "Enables CC on enemies via Knock down (single target, low)"
           ],
           "score": 3.0
         },
@@ -4775,10 +4759,10 @@
           "provider": "Hugin",
           "reasons": [
             "Haste via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 8.871255
+          "score": 9.30501
         },
         {
           "provider": "Tasi",
@@ -4897,13 +4881,6 @@
           "score": 1.0206000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
           "provider": "Gunnar",
           "reasons": [
             "ATK SPD via ATK SPD (single target, low) `signature fuel`"
@@ -4916,6 +4893,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -5101,8 +5085,8 @@
           "provider": "Twins",
           "reasons": [
             "ATK SPD via Haste (all units, average) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
             "Energy via Energy (multiple targets, low) `signature fuel`"
           ],
           "score": 8.0103
@@ -5111,9 +5095,9 @@
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 7.183755
+          "score": 7.61751
         },
         {
           "provider": "Tasi",
@@ -5121,14 +5105,6 @@
             "ATK SPD via Haste (single target, high) `signature fuel`"
           ],
           "score": 6.75
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Isabella",
@@ -5140,10 +5116,19 @@
           "score": 5.25
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
+            "Energy via Energy (area, high) `signature fuel`"
+          ],
+          "score": 4.5309
+        },
+        {
           "provider": "Scarlita",
           "reasons": [
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 4.5309
@@ -5177,10 +5162,9 @@
           "score": 3.8249999999999997
         },
         {
-          "provider": "Lucca",
+          "provider": "Antandra",
           "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
           "score": 3.0
         },
@@ -5189,14 +5173,6 @@
           "reasons": [
             "Physical DEF via Phys DEF (multiple targets, low)",
             "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -5251,11 +5227,25 @@
           "score": 1.5309
         },
         {
-          "provider": "Rowan",
+          "provider": "Kordan",
           "reasons": [
-            "Energy via Energy (area, high) `signature fuel`"
+            "Magic DEF via Magic DEF (single target, low)"
           ],
-          "score": 1.5309
+          "score": 1.5
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         },
         {
           "provider": "Ravion",
@@ -5267,9 +5257,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.0206000000000002
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -5300,14 +5290,6 @@
           "score": 3.5999999999999996
         },
         {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Natsu",
           "reasons": [
             "Physical DEF via Phys DEF (single target, low)",
@@ -5321,6 +5303,13 @@
             "ATK SPD via Haste (single target, low) `signature fuel`"
           ],
           "score": 2.25
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -5585,13 +5574,6 @@
           "score": 1.0206000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -5632,6 +5614,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -5736,11 +5725,11 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
+          "provider": "Hugin",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 2.16
+          "score": 1.8359999999999999
         },
         {
           "provider": "Twins",
@@ -5757,18 +5746,18 @@
           "score": 1.08
         },
         {
-          "provider": "Thador",
+          "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
         {
-          "provider": "Hugin",
+          "provider": "Thador",
           "reasons": [
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 0.9179999999999999
+          "score": 1.08
         }
       ],
       "beneficiaries": [
@@ -6034,6 +6023,16 @@
           "score": 12.6954
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Shield via Shield (multiple targets, high)",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, high) `signature fuel`"
+          ],
+          "score": 11.12406
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK (multiple targets, high)",
@@ -6042,16 +6041,6 @@
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
           "score": 10.831800000000001
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Shield via Shield (multiple targets, high)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
-            "ATK SPD via Haste (multiple targets, high) `signature fuel`"
-          ],
-          "score": 10.587029999999999
         },
         {
           "provider": "Contess",
@@ -6146,18 +6135,18 @@
           "score": 1.35
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Zandrok",
           "reasons": [
             "ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.1475000000000002
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         },
         {
           "provider": "Lyca",
@@ -6401,9 +6390,9 @@
           "reasons": [
             "ATK via ATK (multiple targets, low)",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 8.683755
+          "score": 9.11751
         },
         {
           "provider": "Dunlingr",
@@ -6555,9 +6544,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.0206000000000002
+          "score": 0.5103000000000001
         }
       ],
       "beneficiaries": [
@@ -6929,21 +6918,21 @@
           "score": 8.58
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Haste via Haste (multiple targets, high) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 7.836
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK (all units, high)",
             "Haste via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 7.5
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Haste via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.918
         },
         {
           "provider": "Dunlingr",
@@ -6990,13 +6979,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
@@ -7021,6 +7003,13 @@
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
@@ -7230,9 +7219,9 @@
             "ATK SPD via Haste (all units, average) `signature fuel`",
             "Shield via Shield (single target, average)",
             "Energy via Energy (multiple targets, low) `signature fuel`",
-            "Grants 7 distinct stat buffs to Dionel"
+            "Grants 8 distinct stat buffs to Dionel"
           ],
-          "score": 33.6318
+          "score": 35.1318
         },
         {
           "provider": "Contess",
@@ -7265,9 +7254,9 @@
           "reasons": [
             "Energy via Energy (area, high) `signature fuel`",
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`",
-            "Grants 2 distinct stat buffs to Dionel"
+            "Grants 4 distinct stat buffs to Dionel"
           ],
-          "score": 18.6954
+          "score": 21.6954
         },
         {
           "provider": "Isabella",
@@ -7292,9 +7281,9 @@
           "reasons": [
             "Shield via Shield (single target, average)",
             "Energy via Energy (single target, high) `signature fuel`",
-            "Grants 3 distinct stat buffs to Dionel"
+            "Grants 4 distinct stat buffs to Dionel"
           ],
-          "score": 13.8954
+          "score": 15.3954
         },
         {
           "provider": "Himmel",
@@ -7354,12 +7343,11 @@
           "score": 9.0
         },
         {
-          "provider": "Smokey & Meerky",
+          "provider": "Tilaya",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`",
-            "Grants 2 distinct stat buffs to Dionel"
+            "Grants 3 distinct stat buffs to Dionel"
           ],
-          "score": 8.7636
+          "score": 9.0
         },
         {
           "provider": "Zandrok",
@@ -7370,19 +7358,20 @@
           "score": 8.55
         },
         {
-          "provider": "Tilaya",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 7.5
-        },
-        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy recovery (lieutenant, start of battle) `signature fuel`",
             "Grants 1 distinct stat buff to Dionel (start of battle)"
           ],
           "score": 6.824999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`",
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 6.6318
         },
         {
           "provider": "Galahad",
@@ -7705,7 +7694,7 @@
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "True damage",
@@ -8163,6 +8152,10 @@
         },
         {
           "score": 4.5,
+          "name": "Natsu"
+        },
+        {
+          "score": 4.5,
           "name": "Sonja"
         },
         {
@@ -8330,7 +8323,7 @@
           "provider": "Twins",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
             "Energy via Energy (multiple targets, low) `signature fuel`",
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
@@ -8403,7 +8396,7 @@
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 6.0309
@@ -8445,9 +8438,17 @@
           "score": 3.0375
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "Energy via Energy (area, high) `signature fuel`"
+          ],
+          "score": 3.0309
+        },
+        {
           "provider": "Antandra",
           "reasons": [
-            "Physical DEF via DEF (single target, average)"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
           "score": 3.0
         },
@@ -8538,23 +8539,9 @@
           "score": 1.5309
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`"
-          ],
-          "score": 1.5309
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Lumont",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -8580,26 +8567,12 @@
           "score": 1.5
         },
         {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`",
             "ATK SPD via ATK SPD (all units, low) `signature fuel`"
           ],
           "score": 1.3203
-        },
-        {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
         },
         {
           "provider": "Zandrok",
@@ -8614,6 +8587,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         }
       ],
       "beneficiaries": [
@@ -8747,10 +8727,10 @@
           "provider": "Hugin",
           "reasons": [
             "Haste via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 9.401399999999999
+          "score": 10.3653
         },
         {
           "provider": "Lorsan",
@@ -8869,13 +8849,6 @@
           "score": 2.2680000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.2680000000000002
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`",
@@ -8889,6 +8862,13 @@
             "ATK SPD via ATK SPD (multiple targets, average) `signature fuel`"
           ],
           "score": 1.6199999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.1340000000000001
         },
         {
           "provider": "Thador",
@@ -8907,24 +8887,24 @@
       ],
       "beneficiaries": [
         {
-          "score": 36.5103,
+          "score": 38.0103,
           "name": "Perseus"
         },
         {
-          "score": 35.58,
+          "score": 37.83,
           "name": "Silven"
         },
         {
-          "score": 33.6318,
+          "score": 35.1318,
           "name": "Dionel"
+        },
+        {
+          "score": 31.5,
+          "name": "Faramor"
         },
         {
           "score": 30.904,
           "name": "Nerion"
-        },
-        {
-          "score": 30.0,
-          "name": "Faramor"
         },
         {
           "score": 26.904,
@@ -8997,10 +8977,6 @@
         {
           "score": 11.904,
           "name": "Koko"
-        },
-        {
-          "score": 11.58,
-          "name": "Rowan"
         },
         {
           "score": 11.25,
@@ -9099,6 +9075,10 @@
           "name": "Ravion"
         },
         {
+          "score": 8.58,
+          "name": "Rowan"
+        },
+        {
           "score": 8.25,
           "name": "Kulu"
         },
@@ -9176,10 +9156,6 @@
         },
         {
           "score": 7.08,
-          "name": "Phraesto"
-        },
-        {
-          "score": 7.08,
           "name": "Velara"
         },
         {
@@ -9209,6 +9185,10 @@
         {
           "score": 5.58,
           "name": "Nara"
+        },
+        {
+          "score": 5.58,
+          "name": "Phraesto"
         },
         {
           "score": 5.58,
@@ -9291,7 +9271,7 @@
         "buff": [
           {
             "name": "Hugin",
-            "score": 0.677,
+            "score": 0.6594,
             "matches": [
               "Haste",
               "Energy",
@@ -9426,16 +9406,16 @@
           "score": 3.2399999999999998
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         }
@@ -9563,9 +9543,9 @@
             "ATK via ATK (multiple targets, high)",
             "Haste via Haste (all units, average) `signature fuel`",
             "Shield via Shield (single target, average)",
-            "Grants 7 distinct stat buffs to Faramor"
+            "Grants 8 distinct stat buffs to Faramor"
           ],
-          "score": 30.0
+          "score": 31.5
         },
         {
           "provider": "Contess",
@@ -9670,9 +9650,9 @@
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Grants 3 distinct stat buffs to Faramor"
+            "Grants 4 distinct stat buffs to Faramor"
           ],
-          "score": 12.0
+          "score": 13.5
         },
         {
           "provider": "Lorsan",
@@ -9732,10 +9712,24 @@
           "score": 9.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Grants 4 distinct stat buffs to Faramor"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Tasi",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`",
             "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 9.0
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Faramor"
           ],
           "score": 9.0
         },
@@ -9748,25 +9742,11 @@
           "score": 7.5
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Faramor"
-          ],
-          "score": 7.5
-        },
-        {
           "provider": "Soren",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`",
             "Shield via Shield (single target, low)",
             "Grants 3 distinct stat buffs to Faramor"
-          ],
-          "score": 7.5
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Faramor"
           ],
           "score": 7.5
         },
@@ -9809,7 +9789,7 @@
           "score": 6.0
         },
         {
-          "provider": "Rowan",
+          "provider": "Smokey & Meerky",
           "reasons": [
             "Grants 2 distinct stat buffs to Faramor"
           ],
@@ -10120,6 +10100,15 @@
           "score": 12.6954
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "ATK SPD via Haste (multiple targets, high) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 11.57406
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK (multiple targets, high)",
@@ -10127,15 +10116,6 @@
             "Energy via Energy (multiple targets, low) `signature fuel`"
           ],
           "score": 11.1318
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 11.03703
         },
         {
           "provider": "Mikola",
@@ -10250,9 +10230,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.2636
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -10839,16 +10819,17 @@
             ]
           },
           {
-            "name": "Himmel",
-            "score": 0.7977,
+            "name": "Athalia",
+            "score": 0.7917,
             "matches": [
               "True damage"
             ]
           },
           {
-            "name": "Athalia",
-            "score": 0.7917,
+            "name": "Sylphira",
+            "score": 0.7885,
             "matches": [
+              "Magic",
               "True damage"
             ]
           }
@@ -10882,15 +10863,6 @@
         ],
         "overall": [
           {
-            "name": "Himmel",
-            "score": 0.6154,
-            "matches": [
-              "Damage",
-              "Crowd Control",
-              "Buffs on allies"
-            ]
-          },
-          {
             "name": "Dionel",
             "score": 0.5165,
             "matches": [
@@ -10912,6 +10884,15 @@
           "score": 8.58
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Haste via Haste (multiple targets, high) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 7.836
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "ATK via ATK (single target, high)",
@@ -10926,15 +10907,6 @@
             "Haste via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 7.5
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Haste via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 6.918
         },
         {
           "provider": "Dunlingr",
@@ -11002,13 +10974,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
@@ -11040,6 +11005,13 @@
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
@@ -11457,27 +11429,28 @@
           "reasons": [
             "Haste via Haste (all units, average) `signature fuel`",
             "Energy via Energy (multiple targets, low) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 7.08
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 6.24
         },
         {
           "provider": "Scarlita",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 6.24
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Isabella",
@@ -11510,24 +11483,16 @@
           "score": 3.2399999999999998
         },
         {
-          "provider": "Rowan",
+          "provider": "Antandra",
           "reasons": [
-            "Energy via Energy (area, high) `signature fuel`"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
-          "score": 3.2399999999999998
+          "score": 3.0
         },
         {
           "provider": "Dunlingr",
           "reasons": [
             "Haste via Haste (single target, average) `signature fuel`"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
           ],
           "score": 3.0
         },
@@ -11562,14 +11527,6 @@
           "score": 3.0
         },
         {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Damian",
           "reasons": [
             "Haste via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
@@ -11584,13 +11541,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
@@ -11598,9 +11548,30 @@
           "score": 1.5
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
+          ],
+          "score": 1.5
+        },
+        {
           "provider": "Mehira",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Magic DEF via Magic DEF (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -11626,6 +11597,13 @@
           "score": 1.08
         },
         {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy (single target, low) `signature fuel`"
@@ -11642,10 +11620,9 @@
         {
           "provider": "Lumont",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (multiple targets, low)"
           ],
-          "score": 3.0
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -12106,9 +12083,9 @@
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 7.183755
+          "score": 7.61751
         },
         {
           "provider": "Twins",
@@ -12262,9 +12239,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.0206000000000002
+          "score": 0.5103000000000001
         }
       ],
       "beneficiaries": [
@@ -12453,10 +12430,10 @@
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK (multiple targets, low)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 4.971255
+          "score": 5.405010000000001
         },
         {
           "provider": "Gunnar",
@@ -12540,13 +12517,6 @@
           "score": 1.0206000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -12580,6 +12550,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -12799,13 +12776,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
@@ -12818,6 +12788,13 @@
             "Haste via Haste (single target, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -13037,8 +13014,8 @@
             "ATK via ATK (multiple targets, high)",
             "Haste via Haste (all units, average) `signature fuel`",
             "Max HP via Max HP (multiple targets, high)",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 15.0
         },
@@ -13064,15 +13041,6 @@
           "reasons": [
             "ATK via ATK (single target, low)",
             "Max HP via Max HP (single target, high)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
           ],
           "score": 6.0
         },
@@ -13104,6 +13072,14 @@
           "score": 4.5
         },
         {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK (multiple targets, average)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 4.5
+        },
+        {
           "provider": "Tasi",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -13119,10 +13095,26 @@
           "score": 4.275
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Scarlita",
           "reasons": [
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
         },
@@ -13156,14 +13148,6 @@
           "score": 7.5
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -13171,18 +13155,9 @@
           "score": 4.5
         },
         {
-          "provider": "Lucca",
+          "provider": "Antandra",
           "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
           "score": 3.0
         },
@@ -13193,6 +13168,20 @@
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         },
         {
           "provider": "Soren",
@@ -13395,10 +13384,10 @@
           "provider": "Hugin",
           "reasons": [
             "ATK via ATK (multiple targets, low)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 6.08703
+          "score": 6.62406
         },
         {
           "provider": "Thador",
@@ -13495,13 +13484,6 @@
           "score": 1.35
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Zandrok",
           "reasons": [
             "ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`"
@@ -13514,6 +13496,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -14233,26 +14222,27 @@
         ],
         "damage": [
           {
-            "name": "Sylphira",
-            "score": 0.7908,
-            "matches": [
-              "True damage"
-            ]
-          },
-          {
-            "name": "Faramor",
-            "score": 0.7285,
-            "matches": [
-              "True damage",
-              "Physical"
-            ]
-          },
-          {
-            "name": "Athalia",
-            "score": 0.7114,
+            "name": "Brutus",
+            "score": 1.0,
             "matches": [
               "Physical",
-              "True damage"
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Gunnar",
+            "score": 0.9748,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Gwyneth",
+            "score": 0.8319,
+            "matches": [
+              "Physical",
+              "Max HP-based damage"
             ]
           }
         ],
@@ -14378,16 +14368,16 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
@@ -14577,13 +14567,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
@@ -14626,6 +14609,13 @@
           "score": 1.08
         },
         {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
           "provider": "Thador",
           "reasons": [
             "Energy via Energy (single target, low) `signature fuel`"
@@ -14635,95 +14625,99 @@
       ],
       "beneficiaries": [
         {
-          "score": 29.043,
+          "score": 32.211,
           "name": "Silven"
         },
         {
-          "score": 16.9434,
+          "score": 18.1368,
           "name": "Koko"
         },
         {
-          "score": 16.287029999999998,
+          "score": 16.82406,
           "name": "Alsa"
         },
         {
-          "score": 13.287029999999998,
+          "score": 13.82406,
           "name": "Lorsan"
         },
         {
-          "score": 13.287029999999998,
+          "score": 13.82406,
           "name": "Tasi"
         },
         {
-          "score": 12.4434,
+          "score": 13.636800000000001,
           "name": "Bryon"
         },
         {
-          "score": 11.78703,
+          "score": 12.32406,
           "name": "Viperian"
         },
         {
-          "score": 11.03703,
+          "score": 11.57406,
           "name": "Fay"
         },
         {
-          "score": 10.587029999999999,
+          "score": 11.12406,
           "name": "Cryonaia"
+        },
+        {
+          "score": 10.9368,
+          "name": "Shemira"
+        },
+        {
+          "score": 10.3653,
+          "name": "Twins"
         },
         {
           "score": 10.125,
           "name": "Gunnar"
         },
         {
-          "score": 9.743400000000001,
-          "name": "Shemira"
-        },
-        {
-          "score": 9.53703,
+          "score": 10.07406,
           "name": "Lyca"
         },
         {
-          "score": 9.401399999999999,
-          "name": "Twins"
-        },
-        {
-          "score": 8.871255,
+          "score": 9.30501,
           "name": "Cassadee"
         },
         {
-          "score": 8.683755,
+          "score": 9.11751,
           "name": "Cyran"
         },
         {
-          "score": 8.043,
+          "score": 8.961,
           "name": "Isabella"
         },
         {
-          "score": 8.043,
+          "score": 8.961,
           "name": "Parisa"
         },
         {
-          "score": 7.183755,
-          "name": "Cecia"
+          "score": 7.9368,
+          "name": "Arden"
         },
         {
-          "score": 7.183755,
-          "name": "Gwyneth"
-        },
-        {
-          "score": 7.183755,
-          "name": "Mirael"
-        },
-        {
-          "score": 6.918,
+          "score": 7.836,
           "name": "Damian"
         },
         {
-          "score": 6.918,
+          "score": 7.836,
           "name": "Galahad"
         },
         {
-          "score": 6.543,
+          "score": 7.61751,
+          "name": "Cecia"
+        },
+        {
+          "score": 7.61751,
+          "name": "Gwyneth"
+        },
+        {
+          "score": 7.61751,
+          "name": "Mirael"
+        },
+        {
+          "score": 7.461,
           "name": "Marcille"
         },
         {
@@ -14739,7 +14733,7 @@
           "name": "Odie"
         },
         {
-          "score": 4.971255,
+          "score": 5.405010000000001,
           "name": "Hammie"
         },
         {
@@ -14747,16 +14741,24 @@
           "name": "Daimon"
         },
         {
-          "score": 3.471255,
+          "score": 3.90501,
           "name": "Ludovic"
         },
         {
-          "score": 2.418,
+          "score": 3.336,
           "name": "Nara"
         },
         {
-          "score": 2.418,
+          "score": 3.336,
           "name": "Smokey & Meerky"
+        },
+        {
+          "score": 1.8359999999999999,
+          "name": "Contess"
+        },
+        {
+          "score": 1.8359999999999999,
+          "name": "Pandora"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -15038,6 +15040,15 @@
           "score": 11.806457142857141
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "ATK SPD via Haste (multiple targets, high) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 11.57406
+        },
+        {
           "provider": "Laios",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`",
@@ -15061,15 +15072,6 @@
             "Enables Multiple debuffs on target via 2 debuff types"
           ],
           "score": 11.1
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 11.03703
         },
         {
           "provider": "Hodgkin",
@@ -15541,9 +15543,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.2636
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -15602,15 +15604,6 @@
         ],
         "damage": [
           {
-            "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "True damage",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Nara",
             "score": 1.0,
             "matches": [
@@ -15626,6 +15619,13 @@
               "Physical",
               "True damage",
               "Max HP-based damage"
+            ]
+          },
+          {
+            "name": "Pippa",
+            "score": 0.9423,
+            "matches": [
+              "True damage"
             ]
           }
         ],
@@ -15713,21 +15713,21 @@
           "score": 9.33
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "ATK SPD via Haste (multiple targets, high) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 8.961
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK (all units, high)",
             "ATK SPD via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 8.25
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.043
         },
         {
           "provider": "Dunlingr",
@@ -15767,13 +15767,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -15793,6 +15786,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -15874,6 +15874,14 @@
           "name": "Perseus"
         },
         {
+          "score": 5.775,
+          "name": "Hepler"
+        },
+        {
+          "score": 5.775,
+          "name": "Natsu"
+        },
+        {
           "score": 4.5,
           "name": "Granny Dahnie"
         }
@@ -15885,10 +15893,12 @@
         "buff": [
           {
             "name": "Twins",
-            "score": 0.6,
+            "score": 1.0,
             "matches": [
               "ATK",
               "Haste",
+              "Magic DEF",
+              "Physical DEF",
               "Vitality"
             ]
           },
@@ -16214,13 +16224,6 @@
           "score": 1.0206000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -16240,6 +16243,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -16583,13 +16593,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -16623,6 +16626,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -16825,10 +16835,10 @@
           "reasons": [
             "Haste via Haste (multiple targets, high) `signature fuel`",
             "Shield via Shield (multiple targets, high)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 16.9434
+          "score": 18.1368
         },
         {
           "provider": "Rowan",
@@ -16949,9 +16959,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 2.8080000000000003
+          "score": 1.4040000000000001
         },
         {
           "provider": "Lyca",
@@ -17225,8 +17235,8 @@
           "reasons": [
             "ATK via ATK (multiple targets, high)",
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
             "Energy via Energy (multiple targets, low) `signature fuel`",
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
@@ -17295,10 +17305,12 @@
         {
           "provider": "Rowan",
           "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
             "Energy via Energy (area, high) `signature fuel`",
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
           ],
-          "score": 12.6954
+          "score": 15.6954
         },
         {
           "provider": "Lyca",
@@ -17320,8 +17332,8 @@
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 7.8954
@@ -17366,23 +17378,6 @@
           "score": 6.375
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK (single target, low, conditional (frequent))",
@@ -17412,6 +17407,14 @@
           "reasons": [
             "ATK via ATK (multiple targets, low)",
             "Physical DEF via Phys DEF (multiple targets, low)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK (multiple targets, average)",
             "Magic DEF via Magic DEF (multiple targets, low)"
           ],
           "score": 4.5
@@ -17447,6 +17450,13 @@
           "score": 4.05
         },
         {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Korin",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -17454,25 +17464,9 @@
           "score": 3.0
         },
         {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -17528,11 +17522,18 @@
           "score": 1.8954
         },
         {
-          "provider": "Smokey & Meerky",
+          "provider": "Lucca",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Magic DEF via Magic DEF (area, low)"
           ],
-          "score": 1.2636
+          "score": 1.5
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         },
         {
           "provider": "Zandrok",
@@ -17547,6 +17548,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         }
       ],
       "beneficiaries": [
@@ -17559,7 +17567,7 @@
           "name": "Nerion"
         },
         {
-          "score": 17.25,
+          "score": 19.5,
           "name": "Lily May"
         }
       ],
@@ -17570,7 +17578,7 @@
         "buff": [
           {
             "name": "Aliceth",
-            "score": 0.8471,
+            "score": 0.8,
             "matches": [
               "DEF Penetration",
               "ATK"
@@ -17824,9 +17832,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.2636
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -17906,15 +17914,6 @@
         ],
         "damage": [
           {
-            "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Nara",
             "score": 1.0,
             "matches": [
@@ -17929,6 +17928,14 @@
             "matches": [
               "Physical",
               "True damage"
+            ]
+          },
+          {
+            "name": "Baelran",
+            "score": 0.9645,
+            "matches": [
+              "True damage",
+              "Physical"
             ]
           }
         ],
@@ -17973,7 +17980,7 @@
           "provider": "Twins",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)"
           ],
           "score": 4.5
         },
@@ -18013,9 +18020,9 @@
           "score": 3.0
         },
         {
-          "provider": "Sonja",
+          "provider": "Rowan",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (single target, low)"
           ],
           "score": 1.5
         },
@@ -18030,14 +18037,14 @@
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)"
           ],
           "score": 4.5
         },
         {
           "provider": "Antandra",
           "reasons": [
-            "Physical DEF via DEF (single target, average)"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
           "score": 3.0
         },
@@ -18084,16 +18091,9 @@
           "score": 1.5
         },
         {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)"
-          ],
-          "score": 1.5
-        },
-        {
           "provider": "Lumont",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -18479,8 +18479,8 @@
             "ATK SPD via Haste (all units, average) `signature fuel`",
             "Max HP via Max HP (multiple targets, high)",
             "Energy via Energy (multiple targets, low) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 19.404
         },
@@ -18535,11 +18535,20 @@
           "score": 7.275
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 7.212
+        },
+        {
           "provider": "Scarlita",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 7.212
         },
@@ -18552,26 +18561,9 @@
           "score": 6.0
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Shakir",
           "reasons": [
             "ATK SPD via Haste (multiple targets, average) `signature fuel`"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
           ],
           "score": 6.0
         },
@@ -18600,11 +18592,12 @@
           "score": 4.5
         },
         {
-          "provider": "Rowan",
+          "provider": "Sonja",
           "reasons": [
-            "Energy via Energy (area, high) `signature fuel`"
+            "ATK via ATK (multiple targets, average)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
           ],
-          "score": 4.212
+          "score": 4.5
         },
         {
           "provider": "Lyca",
@@ -18615,6 +18608,13 @@
           "score": 3.8040000000000003
         },
         {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -18622,10 +18622,10 @@
           "score": 3.0
         },
         {
-          "provider": "Lucca",
+          "provider": "Kordan",
           "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
+            "ATK via ATK (multiple targets, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
         },
@@ -18644,18 +18644,25 @@
           "score": 2.8080000000000003
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.8080000000000003
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 2.4000000000000004
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.4040000000000001
         },
         {
           "provider": "Thador",
@@ -18688,14 +18695,6 @@
           "score": 9.0
         },
         {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Natsu",
           "reasons": [
             "Physical DEF via Phys DEF (single target, low)",
@@ -18709,6 +18708,13 @@
             "ATK SPD via Haste (single target, low) `signature fuel`"
           ],
           "score": 3.0
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -18794,15 +18800,7 @@
           }
         ],
         "damage": [],
-        "debuff": [
-          {
-            "name": "Lyca",
-            "score": 0.5515,
-            "matches": [
-              "Phys DEF"
-            ]
-          }
-        ],
+        "debuff": [],
         "cc": [
           {
             "name": "Eironn",
@@ -19038,9 +19036,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 2.8080000000000003
+          "score": 1.4040000000000001
         },
         {
           "provider": "Valka",
@@ -19257,9 +19255,9 @@
           "reasons": [
             "ATK via ATK (multiple targets, low)",
             "DEF Penetration via DEF Penetration (multiple targets, high)",
-            "Grants 3 distinct stat buffs to Lily May"
+            "Grants 4 distinct stat buffs to Lily May"
           ],
-          "score": 17.25
+          "score": 19.5
         },
         {
           "provider": "Ludovic",
@@ -19269,18 +19267,18 @@
           "score": 13.5
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Grants 4 distinct stat buffs to Lily May"
+          ],
+          "score": 13.5
+        },
+        {
           "provider": "Solise",
           "reasons": [
             "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 13.5
-        },
-        {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Lily May"
-          ],
-          "score": 11.25
         },
         {
           "provider": "Koko",
@@ -19297,7 +19295,7 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
+          "provider": "Smokey & Meerky",
           "reasons": [
             "Grants 2 distinct stat buffs to Lily May"
           ],
@@ -19376,6 +19374,13 @@
         {
           "provider": "Scarlita",
           "reasons": [
+            "Grants 4 distinct stat buffs to Lily May"
+          ],
+          "score": 15.75
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
             "Grants 3 distinct stat buffs to Lily May"
           ],
           "score": 13.5
@@ -19384,13 +19389,6 @@
           "provider": "Damian",
           "reasons": [
             "Grants 3 distinct stat buffs to Lily May"
-          ],
-          "score": 11.25
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 11.25
         },
@@ -19678,10 +19676,10 @@
           "reasons": [
             "ATK via ATK (multiple targets, low)",
             "Haste via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 13.287029999999998
+          "score": 13.82406
         },
         {
           "provider": "Rowan",
@@ -19844,18 +19842,18 @@
           "score": 1.8954
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -20102,25 +20100,17 @@
           "reasons": [
             "Max HP via Max HP (multiple targets, high)",
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 10.5
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 6.0
         },
@@ -20152,6 +20142,13 @@
             "Shield via Shield (multiple targets, high)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)"
+          ],
+          "score": 3.0
         },
         {
           "provider": "Galahad",
@@ -20191,10 +20188,10 @@
           "score": 3.0
         },
         {
-          "provider": "Sonja",
+          "provider": "Rowan",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
         },
@@ -20204,6 +20201,20 @@
             "Shield via Shield (single target, average)"
           ],
           "score": 3.0
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         },
         {
           "provider": "Korin",
@@ -20216,14 +20227,6 @@
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -20241,6 +20244,13 @@
             "Shield via Shield (single target, average, conditional (frequent))"
           ],
           "score": 2.55
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         },
         {
           "provider": "Pang",
@@ -20280,24 +20290,21 @@
             "name": "Tilaya",
             "score": 1.0,
             "matches": [
-              "Magic DEF",
-              "Physical DEF"
+              "Magic DEF"
+            ]
+          },
+          {
+            "name": "Perseus",
+            "score": 0.9,
+            "matches": [
+              "Magic DEF"
             ]
           },
           {
             "name": "Sonja",
-            "score": 1.0,
-            "matches": [
-              "Magic DEF",
-              "Physical DEF"
-            ]
-          },
-          {
-            "name": "Lumont",
             "score": 0.9,
             "matches": [
-              "Magic DEF",
-              "Physical DEF"
+              "Magic DEF"
             ]
           }
         ],
@@ -20382,16 +20389,8 @@
         ],
         "overall": [
           {
-            "name": "Antandra",
-            "score": 0.5856,
-            "matches": [
-              "Crowd Control",
-              "Damage"
-            ]
-          },
-          {
-            "name": "Lumont",
-            "score": 0.5059,
+            "name": "Perseus",
+            "score": 0.5887,
             "matches": [
               "Buffs on allies",
               "Damage"
@@ -20469,14 +20468,6 @@
           "score": 5.85
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Healing via Direct healing (single target, high)",
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 5.7636
-        },
-        {
           "provider": "Dunlingr",
           "reasons": [
             "Healing via Lifedrain (all units, average)",
@@ -20491,6 +20482,14 @@
             "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
           ],
           "score": 5.295
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Healing via Direct healing (single target, high)",
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 5.1318
         },
         {
           "provider": "Scarlita",
@@ -20753,6 +20752,10 @@
         {
           "score": 4.5,
           "name": "Gerda"
+        },
+        {
+          "score": 4.5,
+          "name": "Lucca"
         },
         {
           "score": 4.5,
@@ -21185,10 +21188,10 @@
         {
           "provider": "Hugin",
           "reasons": [
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 3.471255
+          "score": 3.90501
         },
         {
           "provider": "Twins",
@@ -21305,13 +21308,6 @@
           "score": 1.3203
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -21345,6 +21341,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         }
       ],
       "beneficiaries": [
@@ -21687,18 +21690,18 @@
           "score": 1.0206000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -21743,26 +21746,23 @@
       "replacements": {
         "buff": [
           {
-            "name": "Tilaya",
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
-              "Magic DEF",
               "Physical DEF"
             ]
           },
           {
-            "name": "Sonja",
-            "score": 1.0,
+            "name": "Antandra",
+            "score": 0.72,
             "matches": [
-              "Magic DEF",
               "Physical DEF"
             ]
           },
           {
-            "name": "Lucca",
-            "score": 1.0,
+            "name": "Twins",
+            "score": 0.5,
             "matches": [
-              "Magic DEF",
               "Physical DEF"
             ]
           }
@@ -21859,14 +21859,6 @@
               "Crowd Control",
               "Damage"
             ]
-          },
-          {
-            "name": "Lucca",
-            "score": 0.5549,
-            "matches": [
-              "Buffs on allies",
-              "Damage"
-            ]
           }
         ]
       }
@@ -21885,9 +21877,9 @@
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 9.53703
+          "score": 10.07406
         },
         {
           "provider": "Tasi",
@@ -22006,9 +21998,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.2636
+          "score": 0.6318
         },
         {
           "provider": "Lorsan",
@@ -22197,22 +22189,23 @@
         ],
         "debuff": [
           {
-            "name": "Laios",
-            "score": 0.7143,
-            "matches": [
-              "Phys DEF"
-            ]
-          },
-          {
             "name": "Kafra",
-            "score": 0.5554,
+            "score": 0.7586,
             "matches": [
               "Phys DEF"
             ]
           },
           {
             "name": "Zanie",
-            "score": 0.5143,
+            "score": 0.7024,
+            "matches": [
+              "Phys DEF",
+              "ATK"
+            ]
+          },
+          {
+            "name": "Ravion",
+            "score": 0.6743,
             "matches": [
               "Phys DEF",
               "ATK"
@@ -22251,9 +22244,9 @@
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 6.543
+          "score": 7.461
         },
         {
           "provider": "Twins",
@@ -22292,13 +22285,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -22318,6 +22304,13 @@
             "ATK SPD via ATK SPD (single target, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -22633,9 +22626,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.0206000000000002
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -22753,7 +22746,7 @@
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -22761,7 +22754,7 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "Physical",
@@ -22999,18 +22992,18 @@
           "score": 1.8954
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         }
       ],
       "beneficiaries": [
@@ -23182,24 +23175,26 @@
     "Mikola": {
       "synergies": [
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
+            "Energy via Energy (area, high) `signature fuel`",
+            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
+          ],
+          "score": 15.6954
+        },
+        {
           "provider": "Twins",
           "reasons": [
             "ATK via ATK (multiple targets, high)",
             "Haste via Haste (all units, average) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
             "Energy via Energy (multiple targets, low) `signature fuel`",
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
           "score": 15.631800000000002
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
-          ],
-          "score": 12.6954
         },
         {
           "provider": "Dunlingr",
@@ -23264,11 +23259,19 @@
           "score": 3.1875
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.2636
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -23339,27 +23342,10 @@
           "score": 6.375
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 6.0
-        },
-        {
           "provider": "Scarlita",
           "reasons": [
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 4.8954
@@ -23369,6 +23355,14 @@
           "reasons": [
             "ATK via ATK (multiple targets, low)",
             "Physical DEF via Phys DEF (multiple targets, low)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK (multiple targets, average)",
             "Magic DEF via Magic DEF (multiple targets, low)"
           ],
           "score": 4.5
@@ -23390,18 +23384,9 @@
           "score": 3.7500000000000004
         },
         {
-          "provider": "Lucca",
+          "provider": "Antandra",
           "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
           "score": 3.0
         },
@@ -23419,6 +23404,20 @@
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 1.8954
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         },
         {
           "provider": "Valka",
@@ -23654,9 +23653,9 @@
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 7.183755
+          "score": 7.61751
         },
         {
           "provider": "Lorsan",
@@ -23796,9 +23795,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.0206000000000002
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -23915,6 +23914,14 @@
           "score": 5.58
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 3.336
+        },
+        {
           "provider": "Laios",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`"
@@ -23936,14 +23943,6 @@
           "score": 3.2399999999999998
         },
         {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 2.418
-        },
-        {
           "provider": "Ravion",
           "reasons": [
             "Energy via Energy (multiple targets, average) `signature fuel`"
@@ -23951,16 +23950,16 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
@@ -24030,21 +24029,20 @@
             ]
           },
           {
-            "name": "Himmel",
-            "score": 0.8111,
-            "matches": [
-              "True damage",
-              "Physical",
-              "Max HP-based damage"
-            ]
-          },
-          {
             "name": "Athalia",
             "score": 0.7507,
             "matches": [
               "Physical",
               "True damage",
               "HP loss"
+            ]
+          },
+          {
+            "name": "Temesia",
+            "score": 0.7173,
+            "matches": [
+              "Physical",
+              "True damage"
             ]
           }
         ],
@@ -24109,8 +24107,8 @@
           "reasons": [
             "ATK via ATK (multiple targets, high)",
             "Haste via Haste (all units, average) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 10.5
         },
@@ -24129,23 +24127,6 @@
             "Haste via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 7.5
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Isabella",
@@ -24182,6 +24163,14 @@
           "score": 4.5
         },
         {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK (multiple targets, average)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 4.5
+        },
+        {
           "provider": "Tasi",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`"
@@ -24189,18 +24178,33 @@
           "score": 4.5
         },
         {
-          "provider": "Lucca",
+          "provider": "Antandra",
           "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
+            "Physical DEF via Phys DEF (single target, average)"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
         },
         {
           "provider": "Scarlita",
           "reasons": [
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
         },
@@ -24222,6 +24226,13 @@
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
           ],
           "score": 1.5
         },
@@ -24257,10 +24268,9 @@
         {
           "provider": "Lumont",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (multiple targets, low)"
           ],
-          "score": 3.0
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -24283,7 +24293,7 @@
       "replacements": {
         "buff": [
           {
-            "name": "Perseus",
+            "name": "Twins",
             "score": 1.0,
             "matches": [
               "Magic DEF",
@@ -24291,7 +24301,15 @@
             ]
           },
           {
-            "name": "Isabella",
+            "name": "Rowan",
+            "score": 1.0,
+            "matches": [
+              "Magic DEF",
+              "Physical DEF"
+            ]
+          },
+          {
+            "name": "Perseus",
             "score": 1.0,
             "matches": [
               "Magic DEF",
@@ -24480,7 +24498,7 @@
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Faramor",
             "score": 1.0,
             "matches": [
               "True damage",
@@ -24488,7 +24506,7 @@
             ]
           },
           {
-            "name": "Faramor",
+            "name": "Athalia",
             "score": 1.0,
             "matches": [
               "True damage",
@@ -24628,9 +24646,9 @@
             "ATK via ATK (multiple targets, low)",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
             "Shield via Shield (multiple targets, high)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 16.1934
+          "score": 17.3868
         },
         {
           "provider": "Baelran",
@@ -24865,20 +24883,20 @@
           "score": 6.0
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`",
-            "Enables CC on enemies via Stun (single target, low)"
-          ],
-          "score": 5.808
-        },
-        {
           "provider": "Kulu",
           "reasons": [
             "ATK via ATK (single target, low)",
             "Enables CC on enemies via Knock back (single target, low)"
           ],
           "score": 4.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`",
+            "Enables CC on enemies via Stun (single target, low)"
+          ],
+          "score": 4.404
         },
         {
           "provider": "Athalia",
@@ -24897,7 +24915,7 @@
         {
           "provider": "Reinier",
           "reasons": [
-            "Enables CC on enemies via Knock up (single target, low)"
+            "Enables CC on enemies via Knock down (single target, low)"
           ],
           "score": 3.0
         },
@@ -25446,26 +25464,32 @@
         {
           "provider": "Twins",
           "reasons": [
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 3.0
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 1.5
         },
         {
           "provider": "Sonja",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
+            "Magic DEF via Magic DEF (multiple targets, low)"
           ],
-          "score": 3.0
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
+          "score": 1.5
         },
         {
           "provider": "Harak",
@@ -25517,26 +25541,17 @@
           "score": 3.5
         },
         {
+          "provider": "Antandra",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Isabella",
           "reasons": [
             "Physical DEF via Phys DEF (single target, low)",
             "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -25559,10 +25574,24 @@
         {
           "provider": "Scarlita",
           "reasons": [
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -25923,11 +25952,11 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
+          "provider": "Hugin",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 2.16
+          "score": 1.8359999999999999
         },
         {
           "provider": "Twins",
@@ -25937,18 +25966,18 @@
           "score": 1.08
         },
         {
-          "provider": "Thador",
+          "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
         {
-          "provider": "Hugin",
+          "provider": "Thador",
           "reasons": [
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 0.9179999999999999
+          "score": 1.08
         },
         {
           "provider": "Laios",
@@ -25988,10 +26017,6 @@
         {
           "score": 10.521428571428572,
           "name": "Lucius"
-        },
-        {
-          "score": 7.521428571428572,
-          "name": "Arden"
         },
         {
           "score": 7.521428571428572,
@@ -26357,19 +26382,19 @@
           "score": 2.2680000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.2680000000000002
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`",
             "ATK SPD via ATK SPD (all units, low) `signature fuel`"
           ],
           "score": 1.944
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.1340000000000001
         },
         {
           "provider": "Thador",
@@ -26599,21 +26624,21 @@
           "score": 9.33
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "ATK SPD via Haste (multiple targets, high) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 8.961
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "ATK via ATK (all units, high)",
             "ATK SPD via Haste (multiple targets, average) `signature fuel`"
           ],
           "score": 8.25
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 8.043
         },
         {
           "provider": "Lorsan",
@@ -26697,13 +26722,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -26737,6 +26755,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -26854,9 +26879,9 @@
             "Max HP via Max HP (multiple targets, high)",
             "Shield via Shield (single target, average)",
             "Energy via Energy (multiple targets, low) `signature fuel`",
-            "Grants 7 distinct stat buffs to Perseus"
+            "Grants 8 distinct stat buffs to Perseus"
           ],
-          "score": 36.5103
+          "score": 38.0103
         },
         {
           "provider": "Alna",
@@ -26895,6 +26920,15 @@
           "score": 17.025
         },
         {
+          "provider": "Scarlita",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Energy via Energy (single target, high) `signature fuel`",
+            "Grants 4 distinct stat buffs to Perseus"
+          ],
+          "score": 15.030899999999999
+        },
+        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK (single target, low)",
@@ -26902,15 +26936,6 @@
             "Grants 4 distinct stat buffs to Perseus"
           ],
           "score": 15.0
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "Energy via Energy (single target, high) `signature fuel`",
-            "Grants 3 distinct stat buffs to Perseus"
-          ],
-          "score": 13.530899999999999
         },
         {
           "provider": "Himmel",
@@ -26929,6 +26954,14 @@
             "Grants 3 distinct stat buffs to Perseus"
           ],
           "score": 10.9125
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Grants 4 distinct stat buffs to Perseus"
+          ],
+          "score": 10.530899999999999
         },
         {
           "provider": "Phraesto",
@@ -26972,18 +27005,10 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`",
+            "Energy via Energy (single target, low) `signature fuel`",
             "Grants 2 distinct stat buffs to Perseus"
           ],
-          "score": 8.5206
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Grants 2 distinct stat buffs to Perseus"
-          ],
-          "score": 7.5309
+          "score": 6.5103
         },
         {
           "provider": "Galahad",
@@ -27270,22 +27295,25 @@
       "replacements": {
         "buff": [
           {
+            "name": "Sonja",
+            "score": 0.8116,
+            "matches": [
+              "ATK",
+              "Magic DEF"
+            ]
+          },
+          {
+            "name": "Twins",
+            "score": 0.7101,
+            "matches": [
+              "ATK",
+              "Magic DEF",
+              "Physical DEF"
+            ]
+          },
+          {
             "name": "Gwyneth",
             "score": 0.6052,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Evie",
-            "score": 0.5043,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Pang",
-            "score": 0.5043,
             "matches": [
               "ATK"
             ]
@@ -27371,6 +27399,14 @@
         ],
         "overall": [
           {
+            "name": "Sonja",
+            "score": 0.6829,
+            "matches": [
+              "Similar Skills",
+              "Buffs on allies"
+            ]
+          },
+          {
             "name": "Himmel",
             "score": 0.6559,
             "matches": [
@@ -27379,17 +27415,11 @@
             ]
           },
           {
-            "name": "Sonja",
-            "score": 0.6508,
+            "name": "Lucca",
+            "score": 0.6311,
             "matches": [
-              "Similar Skills"
-            ]
-          },
-          {
-            "name": "Florabelle",
-            "score": 0.6031,
-            "matches": [
-              "Damage"
+              "Damage",
+              "Crowd Control"
             ]
           }
         ]
@@ -27414,21 +27444,20 @@
           "score": 9.0
         },
         {
-          "provider": "Twins",
-          "reasons": [
-            "Shield via Shield (single target, average)",
-            "Energy via Energy (multiple targets, low) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
-          ],
-          "score": 7.08
-        },
-        {
           "provider": "Florabelle",
           "reasons": [
             "Shield via Shield (all summons, average)"
           ],
           "score": 6.0
+        },
+        {
+          "provider": "Twins",
+          "reasons": [
+            "Shield via Shield (single target, average)",
+            "Energy via Energy (multiple targets, low) `signature fuel`",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 5.58
         },
         {
           "provider": "Himmel",
@@ -27460,18 +27489,19 @@
           "score": 3.0
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "Healing via Lifedrain (multiple targets, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 3.0
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "Energy via Energy (multiple targets, average) `signature fuel`"
           ],
           "score": 2.16
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Healing via Lifedrain (multiple targets, low)"
-          ],
-          "score": 1.5
         },
         {
           "provider": "Velara",
@@ -27492,51 +27522,34 @@
           "reasons": [
             "Shield via Shield (single target, average)",
             "Energy via Energy (single target, high) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
-          ],
-          "score": 9.24
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Physical DEF via DEF (area, high)",
-            "Magic DEF via DEF (area, high)"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Isabella",
-          "reasons": [
-            "Healing via Direct healing (single target, high)",
-            "Physical DEF via Phys DEF (single target, low)",
             "Magic DEF via Magic DEF (single target, low)"
           ],
-          "score": 7.5
-        },
-        {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Healing via Direct healing (single target, high)",
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 6.66
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
+          "score": 7.74
         },
         {
           "provider": "Rowan",
           "reasons": [
             "Healing via Direct healing (single target, low)",
-            "Energy via Energy (area, high) `signature fuel`"
+            "Energy via Energy (area, high) `signature fuel`",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
-          "score": 4.74
+          "score": 6.24
+        },
+        {
+          "provider": "Isabella",
+          "reasons": [
+            "Healing via Direct healing (single target, high)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 6.0
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Healing via Direct healing (single target, high)",
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 5.58
         },
         {
           "provider": "Evie",
@@ -27563,6 +27576,13 @@
           "provider": "Ludovic",
           "reasons": [
             "Healing via Healing over time (single target, high)"
+          ],
+          "score": 4.5
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Magic DEF via DEF (area, high)"
           ],
           "score": 4.5
         },
@@ -27630,14 +27650,6 @@
           "score": 3.0
         },
         {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Lucy",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -27645,41 +27657,9 @@
           "score": 3.0
         },
         {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Natsu",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Pandora",
           "reasons": [
             "Healing via Direct healing (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Perseus",
-          "reasons": [
-            "Physical DEF via Phys DEF (multiple targets, low)",
-            "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -27712,9 +27692,23 @@
           "score": 1.5
         },
         {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
+          ],
+          "score": 1.5
+        },
+        {
           "provider": "Mikola",
           "reasons": [
             "Healing via Direct healing (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Natsu",
+          "reasons": [
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 1.5
         },
@@ -27733,9 +27727,23 @@
           "score": 1.5
         },
         {
+          "provider": "Perseus",
+          "reasons": [
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 1.5
+        },
+        {
           "provider": "Rhys",
           "reasons": [
             "Healing via Direct healing (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Magic DEF via Magic DEF (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -28239,13 +28247,6 @@
           "score": 2.55
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
@@ -28270,6 +28271,13 @@
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         }
@@ -28779,9 +28787,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 1.2636
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -28946,11 +28954,9 @@
           "reasons": [
             "Haste via Haste (all units, average) `signature fuel`",
             "Max HP via Max HP (multiple targets, high)",
-            "Energy via Energy (multiple targets, low) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Energy via Energy (multiple targets, low) `signature fuel`"
           ],
-          "score": 11.58
+          "score": 8.58
         },
         {
           "provider": "Zandrok",
@@ -28982,13 +28988,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
@@ -28996,46 +28995,18 @@
           "score": 1.5
         },
         {
-          "provider": "Thador",
+          "provider": "Smokey & Meerky",
           "reasons": [
             "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
         {
-          "provider": "Tilaya",
+          "provider": "Thador",
           "reasons": [
-            "Max HP via Max HP (area, average)",
-            "Physical DEF via DEF (area, high)",
-            "Magic DEF via DEF (area, high)"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 12.0
-        },
-        {
-          "provider": "Scarlita",
-          "reasons": [
-            "Energy via Energy (single target, high) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
-          ],
-          "score": 6.24
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Isabella",
-          "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 4.5
+          "score": 1.08
         },
         {
           "provider": "Lorsan",
@@ -29059,49 +29030,16 @@
           "score": 3.2399999999999998
         },
         {
+          "provider": "Scarlita",
+          "reasons": [
+            "Energy via Energy (single target, high) `signature fuel`"
+          ],
+          "score": 3.2399999999999998
+        },
+        {
           "provider": "Kazim",
           "reasons": [
             "Haste via Haste (multiple targets, average) `signature fuel`"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Lumont",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Natsu",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Perseus",
-          "reasons": [
-            "Physical DEF via Phys DEF (multiple targets, low)",
-            "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
           ],
           "score": 3.0
         },
@@ -29114,6 +29052,13 @@
         },
         {
           "provider": "Hepler",
+          "reasons": [
+            "Haste via Haste (single target, low) `signature fuel`"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Isabella",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
           ],
@@ -29136,12 +29081,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 18.6954,
+          "score": 21.6954,
           "name": "Dionel"
         },
         {
           "score": 16.212,
           "name": "Zorya"
+        },
+        {
+          "score": 15.6954,
+          "name": "Mikola"
         },
         {
           "score": 15.011999999999999,
@@ -29170,6 +29119,10 @@
         {
           "score": 14.1954,
           "name": "Lucius"
+        },
+        {
+          "score": 13.5,
+          "name": "Lily May"
         },
         {
           "score": 12.6954,
@@ -29209,10 +29162,6 @@
         },
         {
           "score": 12.6954,
-          "name": "Mikola"
-        },
-        {
-          "score": 12.6954,
           "name": "Rhys"
         },
         {
@@ -29222,6 +29171,10 @@
         {
           "score": 12.6954,
           "name": "Tasi"
+        },
+        {
+          "score": 6.24,
+          "name": "Granny Dahnie"
         },
         {
           "score": 3.2399999999999998,
@@ -29928,9 +29881,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 2.16
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -30011,14 +29964,16 @@
         "buff": [
           {
             "name": "Rowan",
-            "score": 0.9677,
+            "score": 0.9841,
             "matches": [
-              "Energy"
+              "Energy",
+              "Magic DEF",
+              "Physical DEF"
             ]
           },
           {
             "name": "Ravion",
-            "score": 0.5806,
+            "score": 0.5714,
             "matches": [
               "Energy"
             ]
@@ -30116,8 +30071,8 @@
             "ATK via ATK (multiple targets, high)",
             "Haste via Haste (all units, average) `signature fuel`",
             "Energy via Energy (multiple targets, low) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)",
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
           "score": 14.259
@@ -30176,11 +30131,20 @@
           "score": 7.0874999999999995
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 6.401999999999999
+        },
+        {
           "provider": "Scarlita",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Magic DEF via DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 6.401999999999999
         },
@@ -30191,23 +30155,6 @@
             "ATK SPD via ATK SPD (multiple targets, average) `signature fuel`"
           ],
           "score": 6.12
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via DEF (single target, average)",
-            "Magic DEF via DEF (single target, average)"
-          ],
-          "score": 6.0
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "ATK via ATK (multiple targets, average)",
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
-          ],
-          "score": 6.0
         },
         {
           "provider": "Damian",
@@ -30227,6 +30174,14 @@
           "score": 4.5
         },
         {
+          "provider": "Sonja",
+          "reasons": [
+            "ATK via ATK (multiple targets, average)",
+            "Magic DEF via Magic DEF (multiple targets, low)"
+          ],
+          "score": 4.5
+        },
+        {
           "provider": "Laios",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`"
@@ -30234,17 +30189,9 @@
           "score": 3.4019999999999997
         },
         {
-          "provider": "Rowan",
+          "provider": "Antandra",
           "reasons": [
-            "Energy via Energy (area, high) `signature fuel`"
-          ],
-          "score": 3.4019999999999997
-        },
-        {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Magic DEF via DEF (area, low)"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
           "score": 3.0
         },
@@ -30296,19 +30243,33 @@
           "score": 2.2680000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.2680000000000002
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`",
             "ATK SPD via ATK SPD (all units, low) `signature fuel`"
           ],
           "score": 1.944
+        },
+        {
+          "provider": "Kordan",
+          "reasons": [
+            "Magic DEF via Magic DEF (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Magic DEF via Magic DEF (area, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.1340000000000001
         },
         {
           "provider": "Thador",
@@ -30336,10 +30297,9 @@
         {
           "provider": "Lumont",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Magic DEF via DEF (multiple targets, low)"
+            "Physical DEF via Phys DEF (multiple targets, low)"
           ],
-          "score": 3.0
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -30939,14 +30899,6 @@
           "score": 9.75
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`",
-            "Enables Continuous damage on enemies via DoT"
-          ],
-          "score": 9.66
-        },
-        {
           "provider": "Eironn",
           "reasons": [
             "Enables Debuff on target via Haste (arc)"
@@ -31006,6 +30958,14 @@
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 9.0
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`",
+            "Enables Continuous damage on enemies via DoT"
+          ],
+          "score": 8.58
         },
         {
           "provider": "Rowan",
@@ -31191,7 +31151,7 @@
         {
           "provider": "Reinier",
           "reasons": [
-            "Enables Debuff on target via ATK (single target)"
+            "Enables Debuff on target via Damage taken (single target)"
           ],
           "score": 2.25
         },
@@ -31219,7 +31179,7 @@
         {
           "provider": "Temesia",
           "reasons": [
-            "Enables Debuff on target via Damage dealt (single target)"
+            "Enables Debuff on target via Phys DEF (single target)"
           ],
           "score": 2.25
         },
@@ -31537,10 +31497,10 @@
           "provider": "Hugin",
           "reasons": [
             "Shield via Shield (multiple targets, high)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 9.743400000000001
+          "score": 10.9368
         },
         {
           "provider": "Twins",
@@ -31707,13 +31667,6 @@
           "score": 2.85
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.8080000000000003
-        },
-        {
           "provider": "Dunlingr",
           "reasons": [
             "ATK SPD via Haste (single target, average) `signature fuel`"
@@ -31761,6 +31714,13 @@
             "Shield via Shield (single target, low)"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.4040000000000001
         },
         {
           "provider": "Isabella",
@@ -31910,10 +31870,10 @@
           "reasons": [
             "ATK SPD via Haste (all units, average) `signature fuel`",
             "Energy via Energy (multiple targets, low) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Grants 7 distinct stat buffs to Silven"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Grants 8 distinct stat buffs to Silven"
           ],
-          "score": 35.58
+          "score": 37.83
         },
         {
           "provider": "Gunnar",
@@ -31927,10 +31887,10 @@
           "provider": "Hugin",
           "reasons": [
             "ATK SPD via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "Grants 5 distinct stat buffs to Silven"
           ],
-          "score": 29.043
+          "score": 32.211
         },
         {
           "provider": "Contess",
@@ -32024,10 +31984,27 @@
           "provider": "Scarlita",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`",
-            "Physical DEF via DEF (single target, low)",
-            "Grants 3 distinct stat buffs to Silven"
+            "Physical DEF via Phys DEF (single target, low)",
+            "Grants 4 distinct stat buffs to Silven"
+          ],
+          "score": 20.490000000000002
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, low)",
+            "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 18.240000000000002
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Physical DEF via DEF (area, high)",
+            "Grants 3 distinct stat buffs to Silven"
+          ],
+          "score": 18.0
         },
         {
           "provider": "Dunlingr",
@@ -32036,14 +32013,6 @@
             "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 17.25
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Physical DEF via DEF (area, high)",
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 15.75
         },
         {
           "provider": "Kazim",
@@ -32085,19 +32054,18 @@
           "score": 13.5
         },
         {
+          "provider": "Kordan",
+          "reasons": [
+            "Grants 4 distinct stat buffs to Silven"
+          ],
+          "score": 13.5
+        },
+        {
           "provider": "Ludovic",
           "reasons": [
             "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 13.5
-        },
-        {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`",
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 13.41
         },
         {
           "provider": "Tasi",
@@ -32108,29 +32076,6 @@
           "score": 12.375
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Grants 2 distinct stat buffs to Silven"
-          ],
-          "score": 12.24
-        },
-        {
-          "provider": "Kordan",
-          "reasons": [
-            "Grants 3 distinct stat buffs to Silven"
-          ],
-          "score": 11.25
-        },
-        {
-          "provider": "Sonja",
-          "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
-            "Grants 2 distinct stat buffs to Silven (start of battle)"
-          ],
-          "score": 10.95
-        },
-        {
           "provider": "Zandrok",
           "reasons": [
             "ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`",
@@ -32139,12 +32084,27 @@
           "score": 10.59375
         },
         {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`",
+            "Grants 2 distinct stat buffs to Silven"
+          ],
+          "score": 10.08
+        },
+        {
           "provider": "Laios",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`",
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 9.99
+        },
+        {
+          "provider": "Sonja",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Silven (start of battle)"
+          ],
+          "score": 9.45
         },
         {
           "provider": "Fay",
@@ -32210,7 +32170,7 @@
         {
           "provider": "Antandra",
           "reasons": [
-            "Physical DEF via DEF (single target, average)",
+            "Physical DEF via Phys DEF (single target, average)",
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 7.5
@@ -32288,14 +32248,6 @@
           "score": 6.0
         },
         {
-          "provider": "Lucca",
-          "reasons": [
-            "Physical DEF via DEF (area, low)",
-            "Grants 1 distinct stat buff to Silven (start of battle)"
-          ],
-          "score": 4.6499999999999995
-        },
-        {
           "provider": "Daimon",
           "reasons": [
             "Grants 1 distinct stat buff to Silven"
@@ -32356,7 +32308,7 @@
         {
           "provider": "Lumont",
           "reasons": [
-            "Physical DEF via DEF (multiple targets, low)",
+            "Physical DEF via Phys DEF (multiple targets, low)",
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 3.75
@@ -32368,6 +32320,13 @@
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 3.75
+        },
+        {
+          "provider": "Lucca",
+          "reasons": [
+            "Grants 1 distinct stat buff to Silven (start of battle)"
+          ],
+          "score": 3.1499999999999995
         },
         {
           "provider": "Niru",
@@ -32846,13 +32805,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -32886,6 +32838,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -33025,19 +32984,19 @@
           "score": 5.58
         },
         {
+          "provider": "Hugin",
+          "reasons": [
+            "ATK via ATK (multiple targets, low)",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
+          ],
+          "score": 3.336
+        },
+        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy (area, high) `signature fuel`"
           ],
           "score": 3.2399999999999998
-        },
-        {
-          "provider": "Hugin",
-          "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
-          ],
-          "score": 2.418
         },
         {
           "provider": "Ravion",
@@ -33077,15 +33036,11 @@
       ],
       "beneficiaries": [
         {
-          "score": 2.16,
-          "name": "Contess"
-        },
-        {
-          "score": 2.16,
+          "score": 1.08,
           "name": "Pandora"
         },
         {
-          "score": 2.16,
+          "score": 1.08,
           "name": "Scarlita"
         }
       ],
@@ -33095,21 +33050,21 @@
       "replacements": {
         "buff": [
           {
-            "name": "Ravion",
+            "name": "Twins",
             "score": 1.0,
             "matches": [
               "Energy"
             ]
           },
           {
-            "name": "Rowan",
+            "name": "Hugin",
             "score": 1.0,
             "matches": [
               "Energy"
             ]
           },
           {
-            "name": "Scarlita",
+            "name": "Thador",
             "score": 1.0,
             "matches": [
               "Energy"
@@ -33211,6 +33166,14 @@
               "Healing",
               "Similar Skills"
             ]
+          },
+          {
+            "name": "Twins",
+            "score": 0.555,
+            "matches": [
+              "Buffs on allies",
+              "Energy provider"
+            ]
           }
         ]
       }
@@ -33218,10 +33181,6 @@
     "Solise": {
       "synergies": [],
       "beneficiaries": [
-        {
-          "score": 13.5,
-          "name": "Lily May"
-        },
         {
           "score": 13.5,
           "name": "Silven"
@@ -33429,12 +33388,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.0,
-          "name": "Hepler"
+          "score": 9.45,
+          "name": "Silven"
         },
         {
           "score": 6.0,
-          "name": "Natsu"
+          "name": "Nerion"
+        },
+        {
+          "score": 4.5,
+          "name": "Hepler"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -33443,25 +33406,24 @@
       "replacements": {
         "buff": [
           {
-            "name": "Twins",
-            "score": 0.66,
+            "name": "Perseus",
+            "score": 1.0,
             "matches": [
               "ATK",
-              "Magic DEF",
-              "Physical DEF"
+              "Magic DEF"
             ]
           },
           {
-            "name": "Tilaya",
-            "score": 0.6,
+            "name": "Twins",
+            "score": 0.9429,
             "matches": [
-              "Magic DEF",
-              "Physical DEF"
+              "ATK",
+              "Magic DEF"
             ]
           },
           {
             "name": "Evie",
-            "score": 0.576,
+            "score": 0.8229,
             "matches": [
               "ATK"
             ]
@@ -33545,8 +33507,9 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.6203,
+            "score": 0.8862,
             "matches": [
+              "Buffs on allies",
               "Similar Skills",
               "Crowd Control"
             ]
@@ -33709,18 +33672,18 @@
           "score": 3.7500000000000004
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.8080000000000003
-        },
-        {
           "provider": "Parisa",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, average) `signature fuel`"
           ],
           "score": 2.1600000000000006
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.4040000000000001
         },
         {
           "provider": "Valka",
@@ -34039,18 +34002,18 @@
           "score": 1.8954
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         }
       ],
       "beneficiaries": [
@@ -34117,7 +34080,7 @@
             ]
           },
           {
-            "name": "Himmel",
+            "name": "Nara",
             "score": 0.819,
             "matches": [
               "True damage"
@@ -34518,10 +34481,10 @@
           "reasons": [
             "ATK via ATK (multiple targets, low)",
             "Haste via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 13.287029999999998
+          "score": 13.82406
         },
         {
           "provider": "Rowan",
@@ -34654,18 +34617,18 @@
           "score": 1.8954
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Valka",
           "reasons": [
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         },
         {
           "provider": "Kazim",
@@ -35113,13 +35076,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Mehira",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -35139,6 +35095,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -35227,14 +35190,6 @@
         ],
         "damage": [
           {
-            "name": "Himmel",
-            "score": 1.0,
-            "matches": [
-              "Physical",
-              "True damage"
-            ]
-          },
-          {
             "name": "Nara",
             "score": 1.0,
             "matches": [
@@ -35248,6 +35203,13 @@
             "matches": [
               "Physical",
               "True damage"
+            ]
+          },
+          {
+            "name": "Valka",
+            "score": 0.9711,
+            "matches": [
+              "Physical"
             ]
           }
         ],
@@ -35420,10 +35382,6 @@
         {
           "score": 1.08,
           "name": "Evie"
-        },
-        {
-          "score": 1.08,
-          "name": "Pandora"
         },
         {
           "score": 1.08,
@@ -35615,16 +35573,16 @@
           "score": 3.2399999999999998
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         }
@@ -35889,14 +35847,14 @@
         "buff": [
           {
             "name": "Alna",
-            "score": 0.6857,
+            "score": 0.64,
             "matches": [
               "Max HP"
             ]
           },
           {
             "name": "Cecia",
-            "score": 0.5714,
+            "score": 0.5333,
             "matches": [
               "Max HP"
             ]
@@ -36030,16 +35988,16 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
@@ -36413,9 +36371,9 @@
         {
           "provider": "Smokey & Meerky",
           "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
-          "score": 2.8080000000000003
+          "score": 1.4040000000000001
         },
         {
           "provider": "Valka",
@@ -36731,13 +36689,6 @@
           "score": 3.375
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.8080000000000003
-        },
-        {
           "provider": "Shakir",
           "reasons": [
             "ATK SPD via Haste (multiple targets, average) `signature fuel`"
@@ -36758,6 +36709,13 @@
             "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`"
           ],
           "score": 2.2950000000000004
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.4040000000000001
         },
         {
           "provider": "Hepler",
@@ -37062,13 +37020,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -37088,6 +37039,13 @@
             "ATK SPD via Haste (area, low, conditional (frequent)) `signature fuel`"
           ],
           "score": 1.59375
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 1.08
         },
         {
           "provider": "Thador",
@@ -37396,9 +37354,9 @@
           "reasons": [
             "Haste via Haste (multiple targets, high) `signature fuel`",
             "Shield via Shield (multiple targets, high)",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`"
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`"
           ],
-          "score": 9.918
+          "score": 10.836
         },
         {
           "provider": "Scarlita",
@@ -37537,13 +37495,6 @@
           "score": 2.16
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 2.16
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "Haste via Haste (single target, low) `signature fuel`"
@@ -37575,6 +37526,13 @@
           "provider": "Lyca",
           "reasons": [
             "Energy via Energy (all units, low) `signature fuel`"
+          ],
+          "score": 1.08
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
           ],
           "score": 1.08
         },
@@ -37755,10 +37713,10 @@
           "provider": "Hugin",
           "reasons": [
             "Haste via Haste (multiple targets, high) `signature fuel`",
-            "Energy via Energy (single target, low, conditional (frequent)) `signature fuel`",
+            "Energy via Energy (single target, average, conditional (frequent)) `signature fuel`",
             "ATK SPD via Haste (multiple targets, high) `signature fuel`"
           ],
-          "score": 11.78703
+          "score": 12.32406
         },
         {
           "provider": "Lorsan",
@@ -37893,13 +37851,6 @@
           "score": 1.2636
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.2636
-        },
-        {
           "provider": "Gunnar",
           "reasons": [
             "ATK SPD via ATK SPD (single target, low) `signature fuel`"
@@ -37912,6 +37863,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0800000000000003
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.6318
         },
         {
           "provider": "Thador",
@@ -38245,13 +38203,6 @@
           "score": 1.0206000000000002
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`"
-          ],
-          "score": 1.0206000000000002
-        },
-        {
           "provider": "Isabella",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -38271,6 +38222,13 @@
             "ATK SPD via ATK SPD (multiple targets, low) `signature fuel`"
           ],
           "score": 0.8099999999999999
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`"
+          ],
+          "score": 0.5103000000000001
         },
         {
           "provider": "Thador",
@@ -38926,14 +38884,6 @@
           "score": 7.500000000000001
         },
         {
-          "provider": "Smokey & Meerky",
-          "reasons": [
-            "Energy via Energy (single target, average) `signature fuel`",
-            "Enables Ally Ultimate casts via Energy recovery (Ultimate pace)"
-          ],
-          "score": 7.308
-        },
-        {
           "provider": "Niru",
           "reasons": [
             "Enables Ally Ultimate casts via Start-of-battle Ultimate"
@@ -38964,6 +38914,14 @@
             "Max HP via Max HP (single target, high)"
           ],
           "score": 6.0
+        },
+        {
+          "provider": "Smokey & Meerky",
+          "reasons": [
+            "Energy via Energy (single target, low) `signature fuel`",
+            "Enables Ally Ultimate casts via Energy recovery (Ultimate pace)"
+          ],
+          "score": 5.904
         },
         {
           "provider": "Thador",
