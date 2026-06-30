@@ -50,19 +50,20 @@
             ]
           },
           {
+            "name": "Silven",
+            "score": 0.4286,
+            "matches": [
+              "hp-scaling",
+              "mark-target",
+              "non-ult-utility"
+            ]
+          },
+          {
             "name": "Athalia",
             "score": 0.3429,
             "matches": [
               "hp-scaling",
               "non-ult-utility"
-            ]
-          },
-          {
-            "name": "Parisa",
-            "score": 0.3429,
-            "matches": [
-              "ally-buffer",
-              "mark-target"
             ]
           }
         ],
@@ -127,16 +128,12 @@
       "synergies": [],
       "beneficiaries": [
         {
-          "score": 27.0,
+          "score": 33.3,
           "name": "Perseus"
         },
         {
           "score": 24.0,
           "name": "Shadewing"
-        },
-        {
-          "score": 19.5,
-          "name": "Indris"
         },
         {
           "score": 6.0,
@@ -213,10 +210,9 @@
         "debuff": [
           {
             "name": "Lorsan",
-            "score": 0.9573,
+            "score": 0.7262,
             "matches": [
-              "Haste",
-              "Max HP"
+              "Haste"
             ]
           }
         ],
@@ -428,8 +424,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -673,15 +669,33 @@
             "Max HP via Max HP (multiple targets, high)",
             "Shield via Shield (single target, average)",
             "Energy via Energy (multiple targets, low) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, low)",
             "ATK SPD via Haste (all units, average) `signature fuel`"
           ],
-          "score": 10.659
+          "score": 12.159
         },
         {
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
-            "Energy via Energy (single target, high) `signature fuel`"
+            "Energy via Energy (single target, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, low)"
+          ],
+          "score": 7.901999999999999
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Max HP via Max HP (area, average)",
+            "Physical DEF via DEF (area, high)"
+          ],
+          "score": 7.5
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, average)"
           ],
           "score": 6.401999999999999
         },
@@ -738,13 +752,6 @@
           "score": 3.4019999999999997
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`"
-          ],
-          "score": 3.4019999999999997
-        },
-        {
           "provider": "Tasi",
           "reasons": [
             "ATK SPD via Haste (single target, high) `signature fuel`"
@@ -778,6 +785,14 @@
             "Shield via Shield (single target, average)"
           ],
           "score": 3.0
+        },
+        {
+          "provider": "Isabella",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)",
+            "ATK SPD via Haste (single target, low) `signature fuel`"
+          ],
+          "score": 2.5125
         },
         {
           "provider": "Ravion",
@@ -837,9 +852,23 @@
           "score": 1.6199999999999999
         },
         {
+          "provider": "Natsu",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
           "provider": "Pang",
           "reasons": [
             "Shield via Shield (single target, low)"
+          ],
+          "score": 1.5
+        },
+        {
+          "provider": "Perseus",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
           ],
           "score": 1.5
         },
@@ -858,16 +887,9 @@
           "score": 1.1340000000000001
         },
         {
-          "provider": "Isabella",
-          "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
-          ],
-          "score": 1.0125
-        },
-        {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0125
         },
@@ -906,6 +928,13 @@
             "ATK SPD via Haste (single target, low) `signature fuel`"
           ],
           "score": 2.5125
+        },
+        {
+          "provider": "Lumont",
+          "reasons": [
+            "Physical DEF via Phys DEF (multiple targets, low)"
+          ],
+          "score": 1.5
         }
       ],
       "beneficiaries": [
@@ -928,24 +957,24 @@
       "replacements": {
         "buff": [
           {
-            "name": "Twins",
+            "name": "Hugin",
             "score": 1.0,
             "matches": [
-              "Physical DEF"
+              "Damage taken"
             ]
           },
           {
-            "name": "Rowan",
+            "name": "Phraesto",
             "score": 1.0,
             "matches": [
-              "Physical DEF"
+              "Damage taken"
             ]
           },
           {
-            "name": "Isabella",
+            "name": "Koko",
             "score": 1.0,
             "matches": [
-              "Physical DEF"
+              "Damage taken"
             ]
           }
         ],
@@ -1052,9 +1081,8 @@
         "overall": [
           {
             "name": "Lumont",
-            "score": 1.0,
+            "score": 0.7104,
             "matches": [
-              "Buffs on allies",
               "Damage",
               "Debuffs on enemies"
             ]
@@ -1068,11 +1096,10 @@
             ]
           },
           {
-            "name": "Scarlita",
-            "score": 0.6057,
+            "name": "Soren",
+            "score": 0.6132,
             "matches": [
               "Buffs on allies",
-              "Crowd Control",
               "Damage"
             ]
           }
@@ -1237,7 +1264,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.35
         },
@@ -1272,11 +1299,11 @@
       ],
       "beneficiaries": [
         {
-          "score": 20.0,
+          "score": 12.0,
           "name": "Carolina"
         },
         {
-          "score": 20.0,
+          "score": 12.0,
           "name": "Nerion"
         },
         {
@@ -1345,21 +1372,21 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Evie",
+            "name": "Alna",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Kordan",
+            "name": "Galahad",
             "score": 1.0,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Eironn",
+            "name": "Velara",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -1367,6 +1394,15 @@
           }
         ],
         "overall": [
+          {
+            "name": "Gwyneth",
+            "score": 0.6116,
+            "matches": [
+              "Damage",
+              "Similar Skills",
+              "Crowd Control"
+            ]
+          },
           {
             "name": "Frieren",
             "score": 0.5723,
@@ -1379,14 +1415,6 @@
             "score": 0.553,
             "matches": [
               "Damage"
-            ]
-          },
-          {
-            "name": "Lorsan",
-            "score": 0.5526,
-            "matches": [
-              "Damage",
-              "Similar Skills"
             ]
           }
         ]
@@ -1461,6 +1489,14 @@
           "score": 4.78125
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)",
+            "Energy via Energy (area, high) `signature fuel`"
+          ],
+          "score": 4.5309
+        },
+        {
           "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF (area, high)"
@@ -1477,27 +1513,12 @@
           "score": 4.3125
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Energy via Energy (area, high) `signature fuel`"
-          ],
-          "score": 3.0309
-        },
-        {
           "provider": "Scarlita",
           "reasons": [
             "Physical DEF via Phys DEF (single target, low)",
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 3.0309
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Hepler",
@@ -1510,8 +1531,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.8125
         },
@@ -1689,7 +1710,7 @@
             ]
           },
           {
-            "name": "Kruger",
+            "name": "Laios",
             "score": 1.0,
             "matches": [
               "Phys DEF"
@@ -1790,11 +1811,11 @@
             ]
           },
           {
-            "name": "Kordan",
-            "score": 0.4,
+            "name": "Silven",
+            "score": 0.48,
             "matches": [
               "hp-scaling",
-              "self-repositioner"
+              "non-ult-utility"
             ]
           }
         ],
@@ -1891,7 +1912,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -2158,7 +2179,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -2375,13 +2396,6 @@
         ],
         "debuff": [
           {
-            "name": "Alna",
-            "score": 1.0,
-            "matches": [
-              "Max HP"
-            ]
-          },
-          {
             "name": "Sylphira",
             "score": 1.0,
             "matches": [
@@ -2575,7 +2589,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.35
         },
@@ -3303,13 +3317,6 @@
         ],
         "debuff": [
           {
-            "name": "Lyca",
-            "score": 1.0,
-            "matches": [
-              "Phys DEF"
-            ]
-          },
-          {
             "name": "Laios",
             "score": 1.0,
             "matches": [
@@ -3319,6 +3326,13 @@
           {
             "name": "Kafra",
             "score": 0.8789,
+            "matches": [
+              "Phys DEF"
+            ]
+          },
+          {
+            "name": "Atalanta",
+            "score": 0.651,
             "matches": [
               "Phys DEF"
             ]
@@ -3450,8 +3464,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -3812,10 +3826,6 @@
         {
           "score": 20.0,
           "name": "Nerion"
-        },
-        {
-          "score": 6.0,
-          "name": "Bonnie"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -3913,27 +3923,12 @@
     "Carolina": {
       "synergies": [
         {
-          "provider": "Damian",
-          "reasons": [
-            "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
-            "Enables CC on enemies via Blind (area, high)"
-          ],
-          "score": 26.295
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`",
             "Enables CC on enemies via Blind (area, high)"
           ],
           "score": 25.35
-        },
-        {
-          "provider": "Eironn",
-          "reasons": [
-            "Enables CC on enemies via Bind (area, high)"
-          ],
-          "score": 24.0
         },
         {
           "provider": "Kordan",
@@ -3951,21 +3946,6 @@
           "score": 22.05
         },
         {
-          "provider": "Mehira",
-          "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`",
-            "Enables CC on enemies via Charm (all units, average)"
-          ],
-          "score": 21.35
-        },
-        {
-          "provider": "Arden",
-          "reasons": [
-            "Enables CC on enemies via Bind (all units, average)"
-          ],
-          "score": 20.0
-        },
-        {
           "provider": "Callan",
           "reasons": [
             "Enables CC on enemies via Stun (all units, average)"
@@ -3980,6 +3960,14 @@
             "Enables CC on enemies via Blind (area, average)"
           ],
           "score": 19.3318
+        },
+        {
+          "provider": "Damian",
+          "reasons": [
+            "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
+            "Enables CC on enemies via Blind (area, average)"
+          ],
+          "score": 18.295
         },
         {
           "provider": "Laios",
@@ -4051,6 +4039,13 @@
         },
         {
           "provider": "Cecia",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
+          "provider": "Eironn",
           "reasons": [
             "Enables CC on enemies via Bind (area, average)"
           ],
@@ -4130,6 +4125,21 @@
           "score": 12.6954
         },
         {
+          "provider": "Arden",
+          "reasons": [
+            "Enables CC on enemies via Bind (multiple targets, average)"
+          ],
+          "score": 12.0
+        },
+        {
+          "provider": "Mehira",
+          "reasons": [
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`",
+            "Enables CC on enemies via Charm (all units, low)"
+          ],
+          "score": 11.35
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "Energy via Energy (multiple targets, average) `signature fuel`",
@@ -4145,13 +4155,6 @@
             "Enables CC on enemies via Knock up (area, low)"
           ],
           "score": 10.7
-        },
-        {
-          "provider": "Cassadee",
-          "reasons": [
-            "Enables CC on enemies via Knock back (all units, low)"
-          ],
-          "score": 10.0
         },
         {
           "provider": "Saida",
@@ -4216,6 +4219,13 @@
           "provider": "Aurora",
           "reasons": [
             "Enables CC on enemies via Bind (area, low)"
+          ],
+          "score": 8.0
+        },
+        {
+          "provider": "Cassadee",
+          "reasons": [
+            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 8.0
         },
@@ -4584,7 +4594,7 @@
         {
           "provider": "Lumont",
           "reasons": [
-            "Enables CC on enemies via Stun (area, low)"
+            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 8.0
         },
@@ -4840,8 +4850,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.8125
         },
@@ -4947,11 +4957,11 @@
           "name": "Bonnie"
         },
         {
-          "score": 10.0,
+          "score": 8.0,
           "name": "Carolina"
         },
         {
-          "score": 10.0,
+          "score": 8.0,
           "name": "Nerion"
         }
       ],
@@ -4959,7 +4969,15 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [],
+        "buff": [
+          {
+            "name": "Satrana",
+            "score": 0.99,
+            "matches": [
+              "Magic damage"
+            ]
+          }
+        ],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -5036,28 +5054,28 @@
         ],
         "cc": [
           {
-            "name": "Perseus",
-            "score": 1.0,
-            "matches": [
-              "Knock back",
-              "Stun"
-            ]
-          },
-          {
             "name": "Scarlita",
             "score": 1.0,
             "matches": [
-              "Knock back",
               "Stun",
+              "Knock back",
               "Knock up"
             ]
           },
           {
-            "name": "Soren",
-            "score": 1.0,
+            "name": "Lucca",
+            "score": 0.8308,
             "matches": [
-              "Knock back",
+              "Knock up",
               "Stun"
+            ]
+          },
+          {
+            "name": "Zandrok",
+            "score": 0.7846,
+            "matches": [
+              "Stun",
+              "Knock up"
             ]
           }
         ],
@@ -5101,6 +5119,15 @@
           "score": 7.61751
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)",
+            "Energy via Energy (area, high) `signature fuel`"
+          ],
+          "score": 7.5309
+        },
+        {
           "provider": "Tasi",
           "reasons": [
             "ATK SPD via Haste (single target, high) `signature fuel`"
@@ -5115,15 +5142,6 @@
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 5.25
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)",
-            "Energy via Energy (area, high) `signature fuel`"
-          ],
-          "score": 4.5309
         },
         {
           "provider": "Scarlita",
@@ -5177,13 +5195,6 @@
           "score": 3.5999999999999996
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Natsu",
           "reasons": [
             "Physical DEF via Phys DEF (single target, low)",
@@ -5217,7 +5228,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.25
         },
@@ -5454,7 +5465,7 @@
         "overall": [
           {
             "name": "Gwyneth",
-            "score": 0.6765,
+            "score": 0.6938,
             "matches": [
               "Damage",
               "Debuffs on enemies"
@@ -5462,11 +5473,11 @@
           },
           {
             "name": "Alna",
-            "score": 0.5897,
+            "score": 0.6154,
             "matches": [
               "Damage",
-              "Buffs on allies",
-              "Crowd Control"
+              "Crowd Control",
+              "Buffs on allies"
             ]
           },
           {
@@ -5591,7 +5602,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0125
         },
@@ -5781,6 +5792,10 @@
         {
           "score": 18.9,
           "name": "Indris"
+        },
+        {
+          "score": 18.0,
+          "name": "Nerion"
         },
         {
           "score": 9.5,
@@ -5979,24 +5994,10 @@
         "debuff": [
           {
             "name": "Reinier",
-            "score": 0.6205,
+            "score": 0.5892,
             "matches": [
-              "Damage taken",
-              "ATK"
-            ]
-          },
-          {
-            "name": "Saida",
-            "score": 0.5746,
-            "matches": [
-              "Energy"
-            ]
-          },
-          {
-            "name": "Rowan",
-            "score": 0.5746,
-            "matches": [
-              "Energy"
+              "ATK",
+              "Damage taken"
             ]
           }
         ],
@@ -6139,7 +6140,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.35
         },
@@ -6434,7 +6435,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.25
         },
@@ -6646,27 +6647,19 @@
         "cc": [
           {
             "name": "Eironn",
-            "score": 0.8229,
+            "score": 0.7742,
             "matches": [
-              "Bind",
-              "Displace"
+              "Displace",
+              "Bind"
             ]
           },
           {
             "name": "Pippa",
-            "score": 0.6,
+            "score": 0.5484,
             "matches": [
               "Bind",
               "Displace",
               "Knock down"
-            ]
-          },
-          {
-            "name": "Saida",
-            "score": 0.5657,
-            "matches": [
-              "Bind",
-              "Displace"
             ]
           }
         ],
@@ -7024,7 +7017,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -7073,8 +7066,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 26.295,
+          "score": 21.1,
+          "name": "Nerion"
+        },
+        {
+          "score": 18.295,
           "name": "Carolina"
+        },
+        {
+          "score": 13.7625,
+          "name": "Silven"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -7193,8 +7194,16 @@
             ]
           },
           {
+            "name": "Aliceth",
+            "score": 0.8077,
+            "matches": [
+              "Blind",
+              "Stun"
+            ]
+          },
+          {
             "name": "Twins",
-            "score": 0.5949,
+            "score": 0.7385,
             "matches": [
               "Blind"
             ]
@@ -7211,9 +7220,10 @@
           },
           {
             "name": "Twins",
-            "score": 0.5346,
+            "score": 0.5567,
             "matches": [
-              "Buffs on allies"
+              "Buffs on allies",
+              "Crowd Control"
             ]
           },
           {
@@ -7259,21 +7269,21 @@
           "score": 25.5
         },
         {
-          "provider": "Pandora",
-          "reasons": [
-            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
-            "Grants 3 distinct stat buffs to Dionel (start of battle)"
-          ],
-          "score": 22.22142857142857
-        },
-        {
           "provider": "Rowan",
           "reasons": [
             "Energy via Energy (area, high) `signature fuel`",
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`",
             "Grants 4 distinct stat buffs to Dionel"
           ],
-          "score": 21.6954
+          "score": 24.6954
+        },
+        {
+          "provider": "Pandora",
+          "reasons": [
+            "Energy via Energy recovery (1000 at battle start, single target) `signature fuel`",
+            "Grants 3 distinct stat buffs to Dionel (start of battle)"
+          ],
+          "score": 22.22142857142857
         },
         {
           "provider": "Isabella",
@@ -7338,6 +7348,13 @@
           "score": 12.375
         },
         {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Dionel"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Ravion",
           "reasons": [
             "Energy via Energy (multiple targets, average) `signature fuel`",
@@ -7382,13 +7399,6 @@
           "provider": "Solise",
           "reasons": [
             "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Grants 3 distinct stat buffs to Dionel"
           ],
           "score": 9.0
         },
@@ -7449,7 +7459,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`",
             "Grants 1 distinct stat buff to Dionel"
           ],
           "score": 4.5
@@ -7559,6 +7569,13 @@
           "score": 6.3954
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Dionel"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Hewynn",
           "reasons": [
             "Grants 2 distinct stat buffs to Dionel"
@@ -7597,20 +7614,6 @@
           "score": 4.5
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Dionel"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Grants 1 distinct stat buff to Dionel"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Natsu",
           "reasons": [
             "Grants 2 distinct stat buffs to Dionel"
@@ -7644,6 +7647,13 @@
             "Grants 1 distinct stat buff to Dionel"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Grants 1 distinct stat buff to Dionel"
+          ],
+          "score": 1.275
         }
       ],
       "beneficiaries": [
@@ -7874,7 +7884,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -7995,7 +8005,7 @@
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing over time (single target, average)"
+            "Healing via Direct healing (area, average)"
           ],
           "score": 3.0
         },
@@ -8281,14 +8291,6 @@
             "matches": [
               "Energy"
             ]
-          },
-          {
-            "name": "Hodgkin",
-            "score": 0.7235,
-            "matches": [
-              "Energy",
-              "Vitality"
-            ]
           }
         ],
         "cc": [
@@ -8381,7 +8383,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0125
         },
@@ -8400,6 +8402,14 @@
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 6.0309
+        },
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)",
+            "Energy via Energy (area, high) `signature fuel`"
+          ],
+          "score": 4.5309
         },
         {
           "provider": "Lucius",
@@ -8436,21 +8446,6 @@
             "ATK SPD via Haste (single target, high) `signature fuel`"
           ],
           "score": 3.0375
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Energy via Energy (area, high) `signature fuel`"
-          ],
-          "score": 3.0309
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Korin",
@@ -8598,12 +8593,16 @@
       ],
       "beneficiaries": [
         {
-          "score": 24.0,
+          "score": 16.0,
           "name": "Carolina"
         },
         {
-          "score": 24.0,
+          "score": 16.0,
           "name": "Nerion"
+        },
+        {
+          "score": 9.0,
+          "name": "Shadewing"
         }
       ],
       "beneficiary_overflow_reasons": [
@@ -8691,23 +8690,24 @@
         "cc": [
           {
             "name": "Kordan",
-            "score": 0.96,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
-            "name": "Korin",
-            "score": 0.96,
+            "score": 0.9,
             "matches": [
               "Bind"
             ]
           },
           {
             "name": "Carolina",
-            "score": 0.72,
+            "score": 0.9,
             "matches": [
               "Bind"
+            ]
+          },
+          {
+            "name": "Evie",
+            "score": 0.8438,
+            "matches": [
+              "Bind",
+              "Displace"
             ]
           }
         ],
@@ -8820,8 +8820,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.8125
         },
@@ -8919,6 +8919,10 @@
           "name": "Laios"
         },
         {
+          "score": 19.3318,
+          "name": "Carolina"
+        },
+        {
           "score": 17.131800000000002,
           "name": "Tasi"
         },
@@ -8971,6 +8975,10 @@
           "name": "Temesia"
         },
         {
+          "score": 12.159,
+          "name": "Antandra"
+        },
+        {
           "score": 12.0,
           "name": "Sonja"
         },
@@ -8993,10 +9001,6 @@
         {
           "score": 10.831800000000001,
           "name": "Cryonaia"
-        },
-        {
-          "score": 10.659,
-          "name": "Antandra"
         },
         {
           "score": 10.5,
@@ -9244,10 +9248,6 @@
         },
         {
           "score": 3.0,
-          "name": "Niru"
-        },
-        {
-          "score": 3.0,
           "name": "Pippa"
         },
         {
@@ -9275,7 +9275,7 @@
         "buff": [
           {
             "name": "Hugin",
-            "score": 0.6594,
+            "score": 0.6606,
             "matches": [
               "Haste",
               "Energy",
@@ -9419,6 +9419,14 @@
       ],
       "beneficiaries": [
         {
+          "score": 27.0,
+          "name": "Shadewing"
+        },
+        {
+          "score": 22.5,
+          "name": "Indris"
+        },
+        {
           "score": 9.5,
           "name": "Bonnie"
         },
@@ -9518,13 +9526,6 @@
         "debuff": [],
         "cc": [
           {
-            "name": "Korin",
-            "score": 0.5647,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
             "name": "Eironn",
             "score": 0.5294,
             "matches": [
@@ -9592,7 +9593,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
+            "Haste via Haste (multiple targets, low) `signature fuel`",
             "Grants 1 distinct stat buff to Faramor"
           ],
           "score": 3.0
@@ -9656,6 +9657,20 @@
           "score": 13.5
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Grants 4 distinct stat buffs to Faramor"
+          ],
+          "score": 12.0
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Faramor"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Lorsan",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`",
@@ -9713,24 +9728,10 @@
           "score": 9.0
         },
         {
-          "provider": "Rowan",
-          "reasons": [
-            "Grants 4 distinct stat buffs to Faramor"
-          ],
-          "score": 9.0
-        },
-        {
           "provider": "Tasi",
           "reasons": [
             "Haste via Haste (single target, high) `signature fuel`",
             "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 9.0
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Grants 3 distinct stat buffs to Faramor"
           ],
           "score": 9.0
         },
@@ -9758,6 +9759,13 @@
             "Grants 3 distinct stat buffs to Faramor"
           ],
           "score": 6.824999999999999
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Faramor"
+          ],
+          "score": 6.0
         },
         {
           "provider": "Hewynn",
@@ -9827,13 +9835,6 @@
           "score": 4.5
         },
         {
-          "provider": "Gerda",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Faramor"
-          ],
-          "score": 4.5
-        },
-        {
           "provider": "Laios",
           "reasons": [
             "Grants 1 distinct stat buff to Faramor"
@@ -9853,13 +9854,6 @@
             "Grants 2 distinct stat buffs to Faramor (start of battle)"
           ],
           "score": 4.199999999999999
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Grants 1 distinct stat buff to Faramor"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Daimon",
@@ -9930,6 +9924,13 @@
             "Grants 1 distinct stat buff to Faramor"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Grants 1 distinct stat buff to Faramor"
+          ],
+          "score": 1.275
         }
       ],
       "beneficiaries": [
@@ -10196,7 +10197,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.0
         },
@@ -10452,7 +10453,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -10612,8 +10613,8 @@
             ]
           },
           {
-            "name": "Zandrok",
-            "score": 0.6667,
+            "name": "Cassadee",
+            "score": 0.75,
             "matches": [
               "Knock up"
             ]
@@ -10726,7 +10727,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -10746,10 +10747,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 15.0,
-          "name": "Shadewing"
-        },
         {
           "score": 6.5,
           "name": "Himmel"
@@ -10886,7 +10883,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -11138,13 +11135,6 @@
         ],
         "cc": [
           {
-            "name": "Saida",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
-          {
             "name": "Alna",
             "score": 1.0,
             "matches": [
@@ -11157,12 +11147,19 @@
             "matches": [
               "Bind"
             ]
+          },
+          {
+            "name": "Evie",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
           }
         ],
         "overall": [
           {
             "name": "Saida",
-            "score": 0.6731,
+            "score": 0.6474,
             "matches": [
               "Damage",
               "Crowd Control",
@@ -11299,11 +11296,11 @@
       ],
       "beneficiaries": [
         {
-          "score": 6.75,
+          "score": 9.0,
           "name": "Lily May"
         },
         {
-          "score": 6.75,
+          "score": 9.0,
           "name": "Silven"
         },
         {
@@ -11322,8 +11319,8 @@
             "name": "Solise",
             "score": 1.0,
             "matches": [
-              "Healing over time",
               "Direct healing",
+              "Healing over time",
               "Healing"
             ]
           },
@@ -11331,16 +11328,15 @@
             "name": "Ludovic",
             "score": 1.0,
             "matches": [
-              "Healing over time",
               "Direct healing",
+              "Healing over time",
               "Healing"
             ]
           },
           {
-            "name": "Mikola",
+            "name": "Smokey & Meerky",
             "score": 1.0,
             "matches": [
-              "Healing over time",
               "Direct healing",
               "Healing"
             ]
@@ -11405,6 +11401,15 @@
     "Granny Dahnie": {
       "synergies": [
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)"
+          ],
+          "score": 9.24
+        },
+        {
           "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF (area, high)",
@@ -11421,15 +11426,6 @@
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 7.08
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 6.24
         },
         {
           "provider": "Scarlita",
@@ -11469,13 +11465,6 @@
             "Energy via Energy (single target, high) `signature fuel`"
           ],
           "score": 3.2399999999999998
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Dunlingr",
@@ -11559,7 +11548,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -11904,7 +11893,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -12160,7 +12149,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.25
         },
@@ -12507,7 +12496,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0125
         },
@@ -12766,7 +12755,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -13026,6 +13015,14 @@
           "score": 6.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK (single target, low, conditional (frequent))",
@@ -13062,15 +13059,7 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
+            "ATK via ATK (area, low)",
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
@@ -13085,7 +13074,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -13119,13 +13108,6 @@
             "Haste via Haste (single target, high) `signature fuel`"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Natsu",
@@ -13298,16 +13280,7 @@
             ]
           }
         ],
-        "cc": [
-          {
-            "name": "Lumont",
-            "score": 0.5705,
-            "matches": [
-              "Taunt",
-              "Stun"
-            ]
-          }
-        ],
+        "cc": [],
         "overall": []
       }
     },
@@ -13469,7 +13442,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.35
         },
@@ -13781,7 +13754,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
+            "Haste via Haste (multiple targets, low) `signature fuel`",
             "Enables Party composition via Mage (party slot)"
           ],
           "score": 6.5
@@ -14458,8 +14431,8 @@
             ]
           },
           {
-            "name": "Dunlingr",
-            "score": 0.9762,
+            "name": "Silvina",
+            "score": 1.0,
             "matches": [
               "Energy",
               "Vitality"
@@ -14567,7 +14540,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -14757,7 +14730,7 @@
         "buff": [
           {
             "name": "Saida",
-            "score": 0.8832,
+            "score": 0.8678,
             "matches": [
               "Shield"
             ]
@@ -14923,12 +14896,12 @@
           "score": 25.00714285714286
         },
         {
-          "provider": "Alna",
+          "provider": "Evie",
           "reasons": [
-            "ATK via ATK (single target, low)",
+            "ATK via ATK (single target, high)",
             "Enables Multiple debuffs on target via 3 debuff types"
           ],
-          "score": 19.5
+          "score": 22.5
         },
         {
           "provider": "Contess",
@@ -14953,14 +14926,6 @@
             "Enables Multiple debuffs on target via 5 debuff types"
           ],
           "score": 16.521428571428572
-        },
-        {
-          "provider": "Evie",
-          "reasons": [
-            "ATK via ATK (single target, high)",
-            "Enables Multiple debuffs on target via 3 debuff types"
-          ],
-          "score": 15.299999999999999
         },
         {
           "provider": "Isabella",
@@ -15002,6 +14967,14 @@
             "Enables Multiple debuffs on target via 3 debuff types"
           ],
           "score": 14.399999999999999
+        },
+        {
+          "provider": "Alna",
+          "reasons": [
+            "ATK via ATK (single target, low)",
+            "Enables Multiple debuffs on target via 2 debuff types"
+          ],
+          "score": 13.5
         },
         {
           "provider": "Kulu",
@@ -15228,7 +15201,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`",
             "Enables Multiple debuffs on target via Damage taken"
           ],
           "score": 5.0
@@ -15662,7 +15635,7 @@
             ]
           },
           {
-            "name": "Arden",
+            "name": "Pippa",
             "score": 0.9391,
             "matches": [
               "Bind"
@@ -15757,7 +15730,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -15860,14 +15833,6 @@
         {
           "score": 16.8,
           "name": "Perseus"
-        },
-        {
-          "score": 5.775,
-          "name": "Hepler"
-        },
-        {
-          "score": 5.775,
-          "name": "Natsu"
         },
         {
           "score": 4.5,
@@ -16229,7 +16194,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0125
         },
@@ -16432,6 +16397,13 @@
           "score": 10.0
         },
         {
+          "provider": "Cassadee",
+          "reasons": [
+            "Enables Knock up from allies via Knock up (multiple targets)"
+          ],
+          "score": 7.5
+        },
+        {
           "provider": "Tasi",
           "reasons": [
             "ATK SPD via Haste (single target, high) `signature fuel`"
@@ -16487,13 +16459,6 @@
             "Energy via Energy (multiple targets, low) `signature fuel`"
           ],
           "score": 4.83
-        },
-        {
-          "provider": "Cassadee",
-          "reasons": [
-            "Enables Knock up from allies via Knock up (single target)"
-          ],
-          "score": 3.75
         },
         {
           "provider": "Dunlingr",
@@ -16583,7 +16548,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -16969,8 +16934,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -17170,9 +17135,23 @@
         "buff": [
           {
             "name": "Hewynn",
-            "score": 0.6005,
+            "score": 0.6322,
             "matches": [
               "Damage taken"
+            ]
+          },
+          {
+            "name": "Kordan",
+            "score": 0.5172,
+            "matches": [
+              "Healing"
+            ]
+          },
+          {
+            "name": "Zandrok",
+            "score": 0.5057,
+            "matches": [
+              "Healing"
             ]
           }
         ],
@@ -17346,19 +17325,19 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.35
         },
         {
           "provider": "Rowan",
           "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)",
             "Energy via Energy (area, high) `signature fuel`",
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
           ],
-          "score": 15.6954
+          "score": 18.6954
         },
         {
           "provider": "Lyca",
@@ -17498,13 +17477,6 @@
           "score": 4.05
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Korin",
           "reasons": [
             "Shield via Shield (single target, average)"
@@ -17630,7 +17602,7 @@
         "buff": [
           {
             "name": "Aliceth",
-            "score": 0.8,
+            "score": 0.6592,
             "matches": [
               "DEF Penetration",
               "ATK"
@@ -17657,11 +17629,11 @@
             ]
           },
           {
-            "name": "Silven",
+            "name": "Athalia",
             "score": 0.4,
             "matches": [
-              "high-initial-energy",
-              "hp-scaling"
+              "hp-scaling",
+              "self-repositioner"
             ]
           }
         ],
@@ -17693,7 +17665,7 @@
         "cc": [
           {
             "name": "Eironn",
-            "score": 0.7385,
+            "score": 0.5538,
             "matches": [
               "Bind"
             ]
@@ -17848,7 +17820,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.0
         },
@@ -17994,15 +17966,15 @@
             ]
           },
           {
-            "name": "Eironn",
-            "score": 0.96,
+            "name": "Evie",
+            "score": 0.8,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Evie",
-            "score": 0.72,
+            "name": "Eironn",
+            "score": 0.8,
             "matches": [
               "Bind"
             ]
@@ -18059,9 +18031,9 @@
         {
           "provider": "Rowan",
           "reasons": [
-            "Physical DEF via Phys DEF (single target, low)"
+            "Physical DEF via Phys DEF (single target, average)"
           ],
-          "score": 1.5
+          "score": 3.0
         },
         {
           "provider": "Lucius",
@@ -18084,13 +18056,6 @@
             "Physical DEF via DEF (area, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Hepler",
@@ -18225,22 +18190,23 @@
         ],
         "debuff": [
           {
-            "name": "Brutus",
-            "score": 0.5908,
+            "name": "Sinbad",
+            "score": 0.5684,
+            "matches": [
+              "Phys DEF",
+              "Damage taken"
+            ]
+          },
+          {
+            "name": "Ravion",
+            "score": 0.5053,
             "matches": [
               "Phys DEF"
             ]
           },
           {
-            "name": "Lyca",
-            "score": 0.5908,
-            "matches": [
-              "Phys DEF"
-            ]
-          },
-          {
-            "name": "Kafra",
-            "score": 0.5908,
+            "name": "Zanie",
+            "score": 0.5053,
             "matches": [
               "Phys DEF"
             ]
@@ -18293,7 +18259,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -18562,6 +18528,15 @@
           "score": 10.5
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)"
+          ],
+          "score": 10.212
+        },
+        {
           "provider": "Parisa",
           "reasons": [
             "ATK via ATK (multiple targets, high)",
@@ -18593,15 +18568,6 @@
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 7.275
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 7.212
         },
         {
           "provider": "Scarlita",
@@ -18668,13 +18634,6 @@
           "score": 3.8040000000000003
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Hepler",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`"
@@ -18684,7 +18643,7 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
+            "ATK via ATK (area, low)",
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
@@ -18692,7 +18651,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.0
         },
@@ -19083,8 +19042,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -19239,8 +19198,8 @@
             ]
           },
           {
-            "name": "Scarlita",
-            "score": 0.9048,
+            "name": "Lumont",
+            "score": 1.0,
             "matches": [
               "Knock back",
               "Stun"
@@ -19297,23 +19256,23 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "DEF Penetration via DEF Penetration (multiple targets, high)",
+            "ATK via ATK (area, low)",
+            "DEF Penetration via DEF Penetration (area, high)",
             "Grants 4 distinct stat buffs to Lily May"
           ],
           "score": 19.5
         },
         {
-          "provider": "Ludovic",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Lily May"
-          ],
-          "score": 13.5
-        },
-        {
           "provider": "Rowan",
           "reasons": [
             "Grants 4 distinct stat buffs to Lily May"
+          ],
+          "score": 18.0
+        },
+        {
+          "provider": "Ludovic",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 13.5
         },
@@ -19423,6 +19382,13 @@
           "score": 2.25
         },
         {
+          "provider": "Tilaya",
+          "reasons": [
+            "Grants 3 distinct stat buffs to Lily May"
+          ],
+          "score": 18.0
+        },
+        {
           "provider": "Scarlita",
           "reasons": [
             "Grants 4 distinct stat buffs to Lily May"
@@ -19430,18 +19396,18 @@
           "score": 15.75
         },
         {
-          "provider": "Tilaya",
-          "reasons": [
-            "Grants 3 distinct stat buffs to Lily May"
-          ],
-          "score": 13.5
-        },
-        {
           "provider": "Damian",
           "reasons": [
             "Grants 3 distinct stat buffs to Lily May"
           ],
           "score": 10.575
+        },
+        {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Lily May"
+          ],
+          "score": 9.0
         },
         {
           "provider": "Hewynn",
@@ -19461,13 +19427,6 @@
           "provider": "Cecia",
           "reasons": [
             "Grants 1 distinct stat buff to Lily May"
-          ],
-          "score": 6.75
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Lily May"
           ],
           "score": 6.75
         },
@@ -19519,13 +19478,6 @@
             "Grants 2 distinct stat buffs to Lily May (start of battle)"
           ],
           "score": 6.299999999999999
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Grants 1 distinct stat buff to Lily May"
-          ],
-          "score": 4.5
         },
         {
           "provider": "Korin",
@@ -19596,6 +19548,13 @@
             "Grants 1 distinct stat buff to Lily May"
           ],
           "score": 2.25
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Grants 1 distinct stat buff to Lily May"
+          ],
+          "score": 1.9124999999999999
         }
       ],
       "beneficiaries": [
@@ -19852,8 +19811,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -19948,10 +19907,6 @@
         },
         {
           "score": 8.4375,
-          "name": "Seth"
-        },
-        {
-          "score": 8.4375,
           "name": "Twins"
         },
         {
@@ -19994,7 +19949,7 @@
         "buff": [
           {
             "name": "Tasi",
-            "score": 1.0,
+            "score": 0.9455,
             "matches": [
               "Haste"
             ]
@@ -20095,10 +20050,9 @@
         "debuff": [
           {
             "name": "Alna",
-            "score": 0.6647,
+            "score": 0.9778,
             "matches": [
-              "Haste",
-              "Max HP"
+              "Haste"
             ]
           }
         ],
@@ -20150,6 +20104,14 @@
           "score": 10.5
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
@@ -20186,13 +20148,6 @@
             "Shield via Shield (multiple targets, high)"
           ],
           "score": 4.5
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Galahad",
@@ -20243,14 +20198,6 @@
           "reasons": [
             "Physical DEF via Phys DEF (multiple targets, low)",
             "Magic DEF via Magic DEF (multiple targets, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
         },
@@ -20331,7 +20278,7 @@
       "replacements": {
         "buff": [
           {
-            "name": "Tilaya",
+            "name": "Rowan",
             "score": 1.0,
             "matches": [
               "Magic DEF"
@@ -20339,14 +20286,14 @@
           },
           {
             "name": "Sonja",
-            "score": 0.9,
+            "score": 1.0,
             "matches": [
               "Magic DEF"
             ]
           },
           {
-            "name": "Perseus",
-            "score": 0.9,
+            "name": "Tilaya",
+            "score": 1.0,
             "matches": [
               "Magic DEF"
             ]
@@ -20633,7 +20580,7 @@
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing over time (single target, average)"
+            "Healing via Direct healing (area, average)"
           ],
           "score": 3.0
         },
@@ -20697,7 +20644,7 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "Healing via Lifedrain (multiple targets, low)"
+            "Healing via Lifedrain (area, low)"
           ],
           "score": 1.5
         },
@@ -20725,7 +20672,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.35
         },
@@ -20791,15 +20738,7 @@
       "beneficiaries": [
         {
           "score": 4.5,
-          "name": "Antandra"
-        },
-        {
-          "score": 4.5,
           "name": "Gerda"
-        },
-        {
-          "score": 4.5,
-          "name": "Lucca"
         },
         {
           "score": 4.5,
@@ -20895,6 +20834,13 @@
         ],
         "debuff": [
           {
+            "name": "Contess",
+            "score": 1.0,
+            "matches": [
+              "ATK"
+            ]
+          },
+          {
             "name": "Zanie",
             "score": 1.0,
             "matches": [
@@ -20903,13 +20849,6 @@
           },
           {
             "name": "Bonnie",
-            "score": 1.0,
-            "matches": [
-              "ATK"
-            ]
-          },
-          {
-            "name": "Lyca",
             "score": 1.0,
             "matches": [
               "ATK"
@@ -21047,7 +20986,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -21198,7 +21137,7 @@
             ]
           },
           {
-            "name": "Kazim",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -21254,7 +21193,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0125
         },
@@ -21677,8 +21616,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.8125
         },
@@ -21782,15 +21721,15 @@
       "replacements": {
         "buff": [
           {
-            "name": "Perseus",
+            "name": "Rowan",
             "score": 1.0,
             "matches": [
               "Physical DEF"
             ]
           },
           {
-            "name": "Antandra",
-            "score": 0.72,
+            "name": "Perseus",
+            "score": 1.0,
             "matches": [
               "Physical DEF"
             ]
@@ -21877,22 +21816,37 @@
               "Taunt",
               "Stun"
             ]
+          },
+          {
+            "name": "Antandra",
+            "score": 0.5193,
+            "matches": [
+              "Taunt",
+              "Stun"
+            ]
           }
         ],
         "overall": [
           {
-            "name": "Antandra",
-            "score": 0.6701,
+            "name": "Hepler",
+            "score": 0.5581,
             "matches": [
-              "Damage",
-              "Buffs on allies"
+              "Crowd Control",
+              "Damage"
             ]
           },
           {
-            "name": "Hepler",
-            "score": 0.6186,
+            "name": "Perseus",
+            "score": 0.5154,
             "matches": [
-              "Crowd Control",
+              "Buffs on allies",
+              "Damage"
+            ]
+          },
+          {
+            "name": "Antandra",
+            "score": 0.5088,
+            "matches": [
               "Damage"
             ]
           }
@@ -21992,7 +21946,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.0
         },
@@ -22225,15 +22179,8 @@
         ],
         "debuff": [
           {
-            "name": "Kafra",
-            "score": 0.7586,
-            "matches": [
-              "Phys DEF"
-            ]
-          },
-          {
             "name": "Zanie",
-            "score": 0.7024,
+            "score": 0.922,
             "matches": [
               "Phys DEF",
               "ATK"
@@ -22241,10 +22188,17 @@
           },
           {
             "name": "Ravion",
-            "score": 0.6743,
+            "score": 0.8851,
             "matches": [
               "Phys DEF",
               "ATK"
+            ]
+          },
+          {
+            "name": "Kafra",
+            "score": 0.7024,
+            "matches": [
+              "Phys DEF"
             ]
           }
         ],
@@ -22316,7 +22270,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -22629,7 +22583,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.25
         },
@@ -23044,10 +22998,6 @@
       ],
       "beneficiaries": [
         {
-          "score": 23.0,
-          "name": "Nerion"
-        },
-        {
           "score": 4.0,
           "name": "Niru"
         },
@@ -23116,7 +23066,7 @@
             ]
           },
           {
-            "name": "Dunlingr",
+            "name": "Zandrok",
             "score": 1.0,
             "matches": [
               "Haste"
@@ -23212,12 +23162,12 @@
         {
           "provider": "Rowan",
           "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)",
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)",
             "Energy via Energy (area, high) `signature fuel`",
             "Energy via Energy recovery (energy potion, start of battle) `signature fuel`"
           ],
-          "score": 15.6954
+          "score": 18.6954
         },
         {
           "provider": "Twins",
@@ -23281,8 +23231,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -23304,7 +23254,7 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
+            "ATK via ATK (area, low)",
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
@@ -23417,13 +23367,6 @@
             "ATK SPD via Haste (single target, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Natsu",
@@ -23758,7 +23701,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.25
         },
@@ -24074,7 +24017,7 @@
             ]
           },
           {
-            "name": "Alna",
+            "name": "Nazrik",
             "score": 0.6667,
             "matches": [
               "Max HP",
@@ -24082,11 +24025,10 @@
             ]
           },
           {
-            "name": "Nazrik",
+            "name": "Natsu",
             "score": 0.6667,
             "matches": [
-              "Max HP",
-              "Vitality"
+              "Max HP"
             ]
           }
         ],
@@ -24156,6 +24098,14 @@
           "score": 7.5
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Isabella",
           "reasons": [
             "ATK via ATK (single target, low, conditional (frequent))",
@@ -24198,24 +24148,9 @@
           "score": 4.5
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
+            "ATK via ATK (area, low)",
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
@@ -24259,7 +24194,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -24407,11 +24342,10 @@
             ]
           },
           {
-            "name": "Alna",
-            "score": 0.6339,
+            "name": "Pandora",
+            "score": 0.6178,
             "matches": [
-              "Haste",
-              "Max HP"
+              "Haste"
             ]
           }
         ],
@@ -24486,7 +24420,7 @@
         "similar_skills": [
           {
             "name": "Silven",
-            "score": 0.8,
+            "score": 0.6,
             "matches": [
               "hp-scaling",
               "mark-target"
@@ -24597,26 +24531,11 @@
           "score": 30.904
         },
         {
-          "provider": "Eironn",
-          "reasons": [
-            "Enables CC on enemies via Bind (area, high)"
-          ],
-          "score": 24.0
-        },
-        {
           "provider": "Kordan",
           "reasons": [
             "Enables CC on enemies via Bind (area, high)"
           ],
           "score": 24.0
-        },
-        {
-          "provider": "Mehira",
-          "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`",
-            "Enables CC on enemies via Charm (all units, average)"
-          ],
-          "score": 23.0
         },
         {
           "provider": "Aliceth",
@@ -24677,6 +24596,13 @@
           "score": 16.0
         },
         {
+          "provider": "Eironn",
+          "reasons": [
+            "Enables CC on enemies via Bind (area, average)"
+          ],
+          "score": 16.0
+        },
+        {
           "provider": "Koko",
           "reasons": [
             "Enables CC on enemies via Stun (area, average)"
@@ -24713,6 +24639,14 @@
             "Enables CC on enemies via Bind (single target, high)"
           ],
           "score": 13.5
+        },
+        {
+          "provider": "Mehira",
+          "reasons": [
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`",
+            "Enables CC on enemies via Charm (all units, low)"
+          ],
+          "score": 13.0
         },
         {
           "provider": "Ravion",
@@ -24955,14 +24889,6 @@
           "score": 30.0
         },
         {
-          "provider": "Damian",
-          "reasons": [
-            "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
-            "Enables CC on enemies via Blind (area, high)"
-          ],
-          "score": 29.1
-        },
-        {
           "provider": "Lorsan",
           "reasons": [
             "ATK SPD via Haste (single target, high) `signature fuel`",
@@ -24980,19 +24906,20 @@
           "score": 23.212
         },
         {
+          "provider": "Damian",
+          "reasons": [
+            "ATK SPD via Haste (multiple targets, average, conditional (frequent)) `signature fuel`",
+            "Enables CC on enemies via Blind (area, average)"
+          ],
+          "score": 21.1
+        },
+        {
           "provider": "Laios",
           "reasons": [
             "Energy via Energy (single target, high) `signature fuel`",
             "Enables CC on enemies via Bind (area, average)"
           ],
           "score": 20.212
-        },
-        {
-          "provider": "Arden",
-          "reasons": [
-            "Enables CC on enemies via Bind (all units, average)"
-          ],
-          "score": 20.0
         },
         {
           "provider": "Lyca",
@@ -25102,6 +25029,13 @@
           "score": 16.0
         },
         {
+          "provider": "Arden",
+          "reasons": [
+            "Enables CC on enemies via Bind (multiple targets, average)"
+          ],
+          "score": 12.0
+        },
+        {
           "provider": "Walker",
           "reasons": [
             "Enables CC on enemies via Stun (arc, average)"
@@ -25131,13 +25065,6 @@
             "Enables CC on enemies via Knock down (area, low)"
           ],
           "score": 10.4
-        },
-        {
-          "provider": "Cassadee",
-          "reasons": [
-            "Enables CC on enemies via Knock back (all units, low)"
-          ],
-          "score": 10.0
         },
         {
           "provider": "Parisa",
@@ -25170,6 +25097,13 @@
           "score": 9.0
         },
         {
+          "provider": "Cassadee",
+          "reasons": [
+            "Enables CC on enemies via Knock back (area, low)"
+          ],
+          "score": 8.0
+        },
+        {
           "provider": "Lenya",
           "reasons": [
             "Enables CC on enemies via Knock back (area, low)"
@@ -25179,7 +25113,7 @@
         {
           "provider": "Lumont",
           "reasons": [
-            "Enables CC on enemies via Stun (area, low)"
+            "Enables CC on enemies via Knock back (area, low)"
           ],
           "score": 8.0
         },
@@ -25431,7 +25365,7 @@
             ]
           },
           {
-            "name": "Kazim",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Knock up",
@@ -25444,6 +25378,14 @@
     },
     "Niru": {
       "synergies": [
+        {
+          "provider": "Rowan",
+          "reasons": [
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)"
+          ],
+          "score": 6.0
+        },
         {
           "provider": "Aliceth",
           "reasons": [
@@ -25474,14 +25416,6 @@
         },
         {
           "provider": "Twins",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 3.0
-        },
-        {
-          "provider": "Rowan",
           "reasons": [
             "Physical DEF via Phys DEF (single target, low)",
             "Magic DEF via Magic DEF (single target, low)"
@@ -25558,13 +25492,6 @@
             "Enables Enemy defeat via Marked target (focus fire)"
           ],
           "score": 3.5
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Isabella",
@@ -25782,7 +25709,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -26281,8 +26208,8 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "DEF Penetration via DEF Penetration (multiple targets, high)"
+            "ATK via ATK (area, low)",
+            "DEF Penetration via DEF Penetration (area, high)"
           ],
           "score": 6.0
         },
@@ -26379,8 +26306,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.8125
         },
@@ -26751,7 +26678,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -26911,9 +26838,9 @@
           "reasons": [
             "ATK via ATK (single target, low)",
             "Max HP via Max HP (single target, high)",
-            "Grants 4 distinct stat buffs to Perseus (start of battle)"
+            "Grants 5 distinct stat buffs to Perseus (start of battle)"
           ],
-          "score": 27.0
+          "score": 33.3
         },
         {
           "provider": "Contess",
@@ -26961,6 +26888,14 @@
           "score": 15.0
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Grants 4 distinct stat buffs to Perseus"
+          ],
+          "score": 13.530899999999999
+        },
+        {
           "provider": "Himmel",
           "reasons": [
             "ATK via ATK (single target, average)",
@@ -26976,14 +26911,6 @@
             "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 11.25
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Grants 4 distinct stat buffs to Perseus"
-          ],
-          "score": 10.530899999999999
         },
         {
           "provider": "Phraesto",
@@ -27107,7 +27034,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`",
             "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 3.75
@@ -27218,6 +27145,13 @@
           "score": 6.0309
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Perseus"
+          ],
+          "score": 6.0
+        },
+        {
           "provider": "Hewynn",
           "reasons": [
             "Grants 2 distinct stat buffs to Perseus"
@@ -27247,20 +27181,6 @@
             "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 5.1
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Perseus"
-          ],
-          "score": 4.5
-        },
-        {
-          "provider": "Antandra",
-          "reasons": [
-            "Grants 1 distinct stat buff to Perseus"
-          ],
-          "score": 3.0
         },
         {
           "provider": "Natsu",
@@ -27296,6 +27216,13 @@
             "Grants 1 distinct stat buff to Perseus"
           ],
           "score": 1.5
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Grants 1 distinct stat buff to Perseus"
+          ],
+          "score": 1.275
         }
       ],
       "beneficiaries": [
@@ -27335,10 +27262,11 @@
             ]
           },
           {
-            "name": "Gwyneth",
-            "score": 0.6052,
+            "name": "Rowan",
+            "score": 0.6957,
             "matches": [
-              "ATK"
+              "Magic DEF",
+              "Physical DEF"
             ]
           }
         ],
@@ -27521,7 +27449,7 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "Healing via Lifedrain (multiple targets, low)",
+            "Healing via Lifedrain (area, low)",
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
@@ -27548,6 +27476,15 @@
           "score": 1.08
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Healing via Direct healing (single target, low)",
+            "Energy via Energy (area, high) `signature fuel`",
+            "Magic DEF via Magic DEF (single target, average)"
+          ],
+          "score": 7.74
+        },
+        {
           "provider": "Scarlita",
           "reasons": [
             "Shield via Shield (single target, average)",
@@ -27555,15 +27492,6 @@
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 7.74
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Healing via Direct healing (single target, low)",
-            "Energy via Energy (area, high) `signature fuel`",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 6.24
         },
         {
           "provider": "Isabella",
@@ -27647,7 +27575,7 @@
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing over time (single target, average)"
+            "Healing via Direct healing (area, average)"
           ],
           "score": 3.0
         },
@@ -27793,10 +27721,6 @@
         }
       ],
       "beneficiaries": [
-        {
-          "score": 4.5,
-          "name": "Antandra"
-        },
         {
           "score": 4.5,
           "name": "Daimon"
@@ -28017,7 +27941,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -28138,17 +28062,18 @@
             ]
           },
           {
-            "name": "Arden",
-            "score": 0.9216,
+            "name": "Indris",
+            "score": 0.864,
             "matches": [
               "Bind"
             ]
           },
           {
-            "name": "Indris",
-            "score": 0.864,
+            "name": "Evie",
+            "score": 0.82,
             "matches": [
-              "Bind"
+              "Bind",
+              "Displace"
             ]
           }
         ],
@@ -28177,7 +28102,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -28496,7 +28421,7 @@
           },
           {
             "name": "Kruger",
-            "score": 0.9,
+            "score": 0.8,
             "matches": [
               "Phys DEF"
             ]
@@ -28603,8 +28528,8 @@
             "name": "Contess",
             "score": 1.0,
             "matches": [
-              "Damage taken",
-              "ATK"
+              "ATK",
+              "Damage taken"
             ]
           },
           {
@@ -28775,7 +28700,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.0
         },
@@ -29013,7 +28938,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -29111,16 +29036,20 @@
       ],
       "beneficiaries": [
         {
-          "score": 21.6954,
+          "score": 24.6954,
           "name": "Dionel"
+        },
+        {
+          "score": 18.6954,
+          "name": "Mikola"
+        },
+        {
+          "score": 18.0,
+          "name": "Lily May"
         },
         {
           "score": 16.212,
           "name": "Zorya"
-        },
-        {
-          "score": 15.6954,
-          "name": "Mikola"
         },
         {
           "score": 15.011999999999999,
@@ -29149,10 +29078,6 @@
         {
           "score": 14.1954,
           "name": "Lucius"
-        },
-        {
-          "score": 13.5,
-          "name": "Lily May"
         },
         {
           "score": 12.6954,
@@ -29203,8 +29128,36 @@
           "name": "Tasi"
         },
         {
-          "score": 6.24,
+          "score": 9.402,
+          "name": "Seth"
+        },
+        {
+          "score": 9.24,
           "name": "Granny Dahnie"
+        },
+        {
+          "score": 7.5309,
+          "name": "Cecia"
+        },
+        {
+          "score": 6.401999999999999,
+          "name": "Antandra"
+        },
+        {
+          "score": 6.0,
+          "name": "Hepler"
+        },
+        {
+          "score": 6.0,
+          "name": "Lucca"
+        },
+        {
+          "score": 6.0,
+          "name": "Natsu"
+        },
+        {
+          "score": 6.0,
+          "name": "Niru"
         },
         {
           "score": 3.2399999999999998,
@@ -29507,7 +29460,7 @@
         "cc": [
           {
             "name": "Eironn",
-            "score": 1.0,
+            "score": 0.9943,
             "matches": [
               "Bind",
               "Displace"
@@ -29515,7 +29468,7 @@
           },
           {
             "name": "Cyran",
-            "score": 0.88,
+            "score": 0.8571,
             "matches": [
               "Bind",
               "Displace"
@@ -29523,7 +29476,7 @@
           },
           {
             "name": "Evie",
-            "score": 0.8667,
+            "score": 0.8286,
             "matches": [
               "Bind",
               "Displace"
@@ -29752,7 +29705,7 @@
         "overall": [
           {
             "name": "Cecia",
-            "score": 0.7754,
+            "score": 0.7356,
             "matches": [
               "Damage",
               "Crowd Control"
@@ -29797,7 +29750,15 @@
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [],
+        "buff": [
+          {
+            "name": "Cassadee",
+            "score": 0.825,
+            "matches": [
+              "Magic damage"
+            ]
+          }
+        ],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -29944,7 +29905,7 @@
           "name": "Kazim"
         },
         {
-          "score": 6.401999999999999,
+          "score": 7.901999999999999,
           "name": "Antandra"
         },
         {
@@ -30115,6 +30076,15 @@
           "score": 10.125
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, average)",
+            "Magic DEF via Magic DEF (single target, average)"
+          ],
+          "score": 9.402
+        },
+        {
           "provider": "Tilaya",
           "reasons": [
             "Physical DEF via DEF (area, high)",
@@ -30157,15 +30127,6 @@
             "ATK SPD via Haste (single target, low) `signature fuel`"
           ],
           "score": 7.0874999999999995
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Physical DEF via Phys DEF (single target, low)",
-            "Magic DEF via Magic DEF (single target, low)"
-          ],
-          "score": 6.401999999999999
         },
         {
           "provider": "Scarlita",
@@ -30225,16 +30186,9 @@
           "score": 3.4019999999999997
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)"
-          ],
-          "score": 3.0
-        },
-        {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
+            "ATK via ATK (area, low)",
             "Magic DEF via Magic DEF (single target, low)"
           ],
           "score": 3.0
@@ -30258,8 +30212,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 2.8125
         },
@@ -30476,6 +30430,14 @@
     "Shadewing": {
       "synergies": [
         {
+          "provider": "Evie",
+          "reasons": [
+            "ATK via ATK (single target, high)",
+            "Enables Debuff on target via Magic DEF (all units)"
+          ],
+          "score": 27.0
+        },
+        {
           "provider": "Alna",
           "reasons": [
             "ATK via ATK (single target, low)",
@@ -30551,14 +30513,6 @@
             "ATK via ATK (single target, high)",
             "Shield via Shield (single target, high)",
             "Enables Debuff on target via ATK (multiple targets)"
-          ],
-          "score": 13.5
-        },
-        {
-          "provider": "Evie",
-          "reasons": [
-            "ATK via ATK (single target, high)",
-            "Enables Debuff on target via Debuff duration (multiple targets)"
           ],
           "score": 13.5
         },
@@ -30684,7 +30638,7 @@
           "provider": "Dunlingr",
           "reasons": [
             "ATK via ATK (single target, low)",
-            "Enables Debuff on target via Haste (all units)",
+            "Enables Debuff on target via Energy (all units)",
             "Enables Continuous damage on enemies via DoT"
           ],
           "score": 31.5
@@ -30721,6 +30675,14 @@
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 22.74
+        },
+        {
+          "provider": "Lucius",
+          "reasons": [
+            "Shield via Shield (area, high)",
+            "Enables Debuff on target via ATK (area)"
+          ],
+          "score": 22.5
         },
         {
           "provider": "Brutus",
@@ -30881,14 +30843,6 @@
             "Enables Continuous damage on enemies via tick damage"
           ],
           "score": 12.0
-        },
-        {
-          "provider": "Lucius",
-          "reasons": [
-            "Shield via Shield (area, high)",
-            "Enables Debuff on target via ATK (area)"
-          ],
-          "score": 10.5
         },
         {
           "provider": "Salazer",
@@ -31344,7 +31298,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -31592,7 +31546,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.35
         },
@@ -31856,14 +31810,14 @@
             ]
           },
           {
-            "name": "Alna",
+            "name": "Sylphira",
             "score": 1.0,
             "matches": [
               "Max HP"
             ]
           },
           {
-            "name": "Sylphira",
+            "name": "Nazrik",
             "score": 1.0,
             "matches": [
               "Max HP"
@@ -31890,7 +31844,7 @@
           },
           {
             "name": "Silven",
-            "score": 0.514,
+            "score": 0.5002,
             "matches": [
               "Damage"
             ]
@@ -31972,9 +31926,9 @@
         {
           "provider": "Alna",
           "reasons": [
-            "Grants 4 distinct stat buffs to Silven (start of battle)"
+            "Grants 5 distinct stat buffs to Silven (start of battle)"
           ],
-          "score": 31.5
+          "score": 40.949999999999996
         },
         {
           "provider": "Aliceth",
@@ -31993,6 +31947,15 @@
           "score": 26.25
         },
         {
+          "provider": "Rowan",
+          "reasons": [
+            "Energy via Energy (area, high) `signature fuel`",
+            "Physical DEF via Phys DEF (single target, average)",
+            "Grants 4 distinct stat buffs to Silven"
+          ],
+          "score": 24.240000000000002
+        },
+        {
           "provider": "Isabella",
           "reasons": [
             "ATK SPD via Haste (single target, low) `signature fuel`",
@@ -32000,6 +31963,14 @@
             "Grants 7 distinct stat buffs to Silven"
           ],
           "score": 23.2875
+        },
+        {
+          "provider": "Tilaya",
+          "reasons": [
+            "Physical DEF via DEF (area, high)",
+            "Grants 3 distinct stat buffs to Silven"
+          ],
+          "score": 22.5
         },
         {
           "provider": "Pandora",
@@ -32016,23 +31987,6 @@
             "Grants 4 distinct stat buffs to Silven"
           ],
           "score": 20.490000000000002
-        },
-        {
-          "provider": "Rowan",
-          "reasons": [
-            "Energy via Energy (area, high) `signature fuel`",
-            "Physical DEF via Phys DEF (single target, low)",
-            "Grants 4 distinct stat buffs to Silven"
-          ],
-          "score": 18.240000000000002
-        },
-        {
-          "provider": "Tilaya",
-          "reasons": [
-            "Physical DEF via DEF (area, high)",
-            "Grants 3 distinct stat buffs to Silven"
-          ],
-          "score": 18.0
         },
         {
           "provider": "Dunlingr",
@@ -32142,6 +32096,13 @@
           "score": 9.0
         },
         {
+          "provider": "Gerda",
+          "reasons": [
+            "Grants 2 distinct stat buffs to Silven"
+          ],
+          "score": 9.0
+        },
+        {
           "provider": "Hewynn",
           "reasons": [
             "Grants 2 distinct stat buffs to Silven"
@@ -32196,14 +32157,6 @@
           "score": 8.25
         },
         {
-          "provider": "Antandra",
-          "reasons": [
-            "Physical DEF via Phys DEF (single target, average)",
-            "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 7.5
-        },
-        {
           "provider": "Cecia",
           "reasons": [
             "Grants 1 distinct stat buff to Silven"
@@ -32214,13 +32167,6 @@
           "provider": "Eironn",
           "reasons": [
             "Grants 1 distinct stat buff to Silven"
-          ],
-          "score": 6.75
-        },
-        {
-          "provider": "Gerda",
-          "reasons": [
-            "Grants 2 distinct stat buffs to Silven"
           ],
           "score": 6.75
         },
@@ -32328,7 +32274,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`",
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 4.125
@@ -32411,6 +32357,13 @@
             "Grants 1 distinct stat buff to Silven"
           ],
           "score": 2.25
+        },
+        {
+          "provider": "Antandra",
+          "reasons": [
+            "Grants 1 distinct stat buff to Silven"
+          ],
+          "score": 1.9124999999999999
         }
       ],
       "beneficiaries": [
@@ -32436,24 +32389,27 @@
         "healing": [],
         "similar_skills": [
           {
-            "name": "Kordan",
-            "score": 0.4,
+            "name": "Athalia",
+            "score": 0.48,
             "matches": [
-              "high-initial-energy",
-              "hp-scaling"
+              "hp-scaling",
+              "non-ult-utility"
             ]
           },
           {
-            "name": "Baelran",
+            "name": "Aliceth",
+            "score": 0.4286,
+            "matches": [
+              "hp-scaling",
+              "mark-target",
+              "non-ult-utility"
+            ]
+          },
+          {
+            "name": "Kordan",
             "score": 0.3333,
             "matches": [
-              "hp-scaling"
-            ]
-          },
-          {
-            "name": "Shemira",
-            "score": 0.3,
-            "matches": [
+              "high-initial-energy",
               "hp-scaling"
             ]
           }
@@ -32510,17 +32466,10 @@
         "overall": [
           {
             "name": "Sylphira",
-            "score": 0.682,
+            "score": 0.6754,
             "matches": [
               "Damage",
               "Crowd Control"
-            ]
-          },
-          {
-            "name": "Shemira",
-            "score": 0.5124,
-            "matches": [
-              "Damage"
             ]
           }
         ]
@@ -32714,7 +32663,7 @@
           },
           {
             "name": "Hodgkin",
-            "score": 1.0,
+            "score": 0.9692,
             "matches": [
               "Energy",
               "Vitality"
@@ -32739,18 +32688,18 @@
         ],
         "overall": [
           {
-            "name": "Hodgkin",
-            "score": 0.7754,
-            "matches": [
-              "Damage",
-              "Debuffs on enemies"
-            ]
-          },
-          {
             "name": "Salazer",
             "score": 0.7444,
             "matches": [
               "Damage"
+            ]
+          },
+          {
+            "name": "Hodgkin",
+            "score": 0.7328,
+            "matches": [
+              "Damage",
+              "Debuffs on enemies"
             ]
           },
           {
@@ -32875,7 +32824,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -33186,7 +33135,7 @@
         "overall": [
           {
             "name": "Rowan",
-            "score": 0.5939,
+            "score": 0.5941,
             "matches": [
               "Buffs on allies",
               "Energy provider"
@@ -33363,7 +33312,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -33439,8 +33388,15 @@
       "replacements": {
         "buff": [
           {
+            "name": "Rowan",
+            "score": 0.864,
+            "matches": [
+              "Magic DEF"
+            ]
+          },
+          {
             "name": "Perseus",
-            "score": 1.0,
+            "score": 0.84,
             "matches": [
               "ATK",
               "Magic DEF"
@@ -33448,17 +33404,10 @@
           },
           {
             "name": "Twins",
-            "score": 0.9429,
+            "score": 0.66,
             "matches": [
               "ATK",
               "Magic DEF"
-            ]
-          },
-          {
-            "name": "Evie",
-            "score": 0.8229,
-            "matches": [
-              "ATK"
             ]
           }
         ],
@@ -33540,7 +33489,7 @@
         "overall": [
           {
             "name": "Perseus",
-            "score": 0.8862,
+            "score": 0.7532,
             "matches": [
               "Buffs on allies",
               "Similar Skills",
@@ -33707,8 +33656,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -33877,8 +33826,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -34291,8 +34240,8 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "Healing via Lifedrain (multiple targets, low)"
+            "ATK via ATK (area, low)",
+            "Healing via Lifedrain (area, low)"
           ],
           "score": 3.0
         },
@@ -34350,7 +34299,7 @@
         {
           "provider": "Gerda",
           "reasons": [
-            "Healing via Healing over time (single target, average)"
+            "Healing via Direct healing (area, average)"
           ],
           "score": 3.0
         },
@@ -34629,8 +34578,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -34751,10 +34700,6 @@
         },
         {
           "score": 6.75,
-          "name": "Cecia"
-        },
-        {
-          "score": 6.75,
           "name": "Gwyneth"
         },
         {
@@ -34807,15 +34752,15 @@
             ]
           },
           {
-            "name": "Lorsan",
+            "name": "Hugin",
             "score": 1.0,
             "matches": [
               "Haste"
             ]
           },
           {
-            "name": "Hugin",
-            "score": 0.8205,
+            "name": "Shakir",
+            "score": 1.0,
             "matches": [
               "Haste"
             ]
@@ -35110,7 +35055,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -35835,28 +35780,17 @@
         {
           "score": 9.0,
           "name": "Seth"
+        },
+        {
+          "score": 7.5,
+          "name": "Antandra"
         }
       ],
       "beneficiary_overflow_reasons": [
         "ally buffs or enablers that match many receivers' benefit stats or Requires labels"
       ],
       "replacements": {
-        "buff": [
-          {
-            "name": "Alna",
-            "score": 0.64,
-            "matches": [
-              "Max HP"
-            ]
-          },
-          {
-            "name": "Cecia",
-            "score": 0.5333,
-            "matches": [
-              "Max HP"
-            ]
-          }
-        ],
+        "buff": [],
         "energy": [],
         "healing": [],
         "similar_skills": [
@@ -36150,19 +36084,19 @@
             ]
           },
           {
+            "name": "Cassadee",
+            "score": 1.0,
+            "matches": [
+              "Knock back",
+              "Knock up"
+            ]
+          },
+          {
             "name": "Kordan",
             "score": 0.8842,
             "matches": [
               "Knock back",
               "Bind",
-              "Knock up"
-            ]
-          },
-          {
-            "name": "Cassadee",
-            "score": 0.6947,
-            "matches": [
-              "Knock back",
               "Knock up"
             ]
           }
@@ -36279,8 +36213,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`",
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`",
             "Enables Enemy defeat via HP threshold strike"
           ],
           "score": 7.75
@@ -36467,7 +36401,7 @@
           },
           {
             "name": "Silven",
-            "score": 0.48,
+            "score": 0.4114,
             "matches": [
               "hp-scaling",
               "mark-target"
@@ -36731,7 +36665,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.35
         },
@@ -37025,7 +36959,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -37500,7 +37434,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -37647,7 +37581,7 @@
           },
           {
             "name": "Carolina",
-            "score": 0.9248,
+            "score": 0.8972,
             "matches": [
               "Haste",
               "Magic DEF"
@@ -37655,7 +37589,7 @@
           },
           {
             "name": "Kafra",
-            "score": 0.92,
+            "score": 0.8172,
             "matches": [
               "Haste",
               "Phys DEF"
@@ -37663,13 +37597,6 @@
           }
         ],
         "cc": [
-          {
-            "name": "Saida",
-            "score": 1.0,
-            "matches": [
-              "Bind"
-            ]
-          },
           {
             "name": "Alna",
             "score": 1.0,
@@ -37679,6 +37606,13 @@
           },
           {
             "name": "Evie",
+            "score": 1.0,
+            "matches": [
+              "Bind"
+            ]
+          },
+          {
+            "name": "Kordan",
             "score": 1.0,
             "matches": [
               "Bind"
@@ -37696,7 +37630,7 @@
           },
           {
             "name": "Evie",
-            "score": 0.6123,
+            "score": 0.6202,
             "matches": [
               "Healing",
               "Crowd Control"
@@ -37800,8 +37734,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },
@@ -38232,7 +38166,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.0125
         },
@@ -38371,7 +38305,7 @@
         "overall": [
           {
             "name": "Kazim",
-            "score": 0.5026,
+            "score": 0.5143,
             "matches": [
               "Similar Skills",
               "Damage",
@@ -38408,7 +38342,7 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.5
         },
@@ -38558,7 +38492,7 @@
             ]
           },
           {
-            "name": "Kazim",
+            "name": "Cassadee",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -38566,7 +38500,7 @@
             ]
           },
           {
-            "name": "Lucca",
+            "name": "Kazim",
             "score": 1.0,
             "matches": [
               "Stun",
@@ -38606,15 +38540,15 @@
         {
           "provider": "Kordan",
           "reasons": [
-            "ATK via ATK (multiple targets, low)",
-            "DEF Penetration via DEF Penetration (multiple targets, high)"
+            "ATK via ATK (area, low)",
+            "DEF Penetration via DEF Penetration (area, high)"
           ],
           "score": 6.0
         },
         {
           "provider": "Mehira",
           "reasons": [
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 1.875
         },
@@ -38970,8 +38904,8 @@
         {
           "provider": "Mehira",
           "reasons": [
-            "Haste via Haste (single target, low) `signature fuel`",
-            "ATK SPD via Haste (single target, low) `signature fuel`"
+            "Haste via Haste (multiple targets, low) `signature fuel`",
+            "ATK SPD via Haste (multiple targets, low) `signature fuel`"
           ],
           "score": 3.7500000000000004
         },

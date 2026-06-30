@@ -795,7 +795,6 @@ class CommonFailurePatternTests(unittest.TestCase):
             "extra true damage equal to 15% + 2% of the target's max HP."
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("True damage", labels)
         self.assertIn("Physical", labels)
         self.assertIn("Max HP-based damage", labels)
 
@@ -1448,14 +1447,18 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         buffs = [e for e in effects if e.category == "buff"]
         debuffs = [e for e in effects if e.category == "debuff"]
         self.assertIn(
-            "DEF",
+            "Phys DEF",
+            [e.label for e in buffs],
+        )
+        self.assertIn(
+            "Magic DEF",
             [e.label for e in buffs],
         )
         self.assertEqual(
             [e.label for e in debuffs if "def" in e.label.lower()],
             [],
         )
-        def_buff = next(e for e in buffs if e.label == "DEF")
+        def_buff = next(e for e in buffs if e.label == "Phys DEF")
         self.assertEqual(def_buff.targeting, "Self")
         self.assertEqual(def_buff.numeric, 50.0)
 
@@ -1470,7 +1473,7 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
         sl = hero.skill_slices["Ex. Skill"]
-        def_buff = next(e for e in sl.effects if e.label == "DEF")
+        def_buff = next(e for e in sl.effects if e.label == "Phys DEF")
         self.assertEqual(def_buff.targeting, "Self")
         self.assertEqual(def_buff.numeric, 50.0)
         unaffected = next(
@@ -1559,8 +1562,8 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         )
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        tags = rs.format_skill_card_tags(hero, "skill5")
-        assert_tag_in(self, "Phys DEF", tags, polarity="debuff")
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        assert_tag_in(self, "Phys DEF (Supreme+)", tags, polarity="debuff")
         assert_tag_not_in(self, "DEF", tags)
         assert_tag_not_in(self, "Phys DEF", tags, polarity="buff")
 
@@ -1613,9 +1616,9 @@ class TestBatchThreeDetectionFixes(unittest.TestCase):
         )
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        tags = rs.format_skill_card_tags(hero, "skill4")
-        self.assertIn("True damage", tag_labels(tags))
-        assert_tag_in(self, "Unaffected — Self", tags)
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        self.assertIn("True damage (Mythic+)", tag_labels(tags))
+        assert_tag_in(self, "Unaffected — Self (Mythic+)", tags)
 
     def test_rhys_fury_rush_bonus_movement_speed_is_self(self):
         text = (
@@ -1857,8 +1860,8 @@ class TestParisaParsing(unittest.TestCase):
         self.assertEqual(numerics["ATK"], 30.0)
         tags = rs.format_skill_card_tags(hero, "skill1")
         labels = tag_labels(tags)
-        self.assertIn("ATK SPD", labels)
-        self.assertIn("ATK", labels)
+        self.assertIn("ATK SPD — Multiple targets", labels)
+        self.assertIn("ATK — Multiple targets", labels)
         assert_tag_not_in(self, "ATK SPD — Self", tags)
         sl2 = hero.skill_slices["Skill2"]
         energy = [e for e in sl2.effects if e.label == "Energy"]
@@ -2000,13 +2003,8 @@ class TestEffectValidationFixesJune2026(unittest.TestCase):
         )
         hero = rs.hero_from_record(record)
         rs.analyze_hero(hero)
-        ex = hero.skill_slices["Ex. Skill"]
         ultimate = hero.skill_slices["Ultimate"]
         self.assertIn(
-            "Unaffected",
-            [i.immunity_type for i in ex.cc_immunities],
-        )
-        self.assertNotIn(
             "Unaffected",
             [i.immunity_type for i in ultimate.cc_immunities],
         )

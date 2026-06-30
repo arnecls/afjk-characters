@@ -738,6 +738,12 @@ def _resolve_buff_targeting(
         r"\ball allies take \d+(?:\.\d+)?(?:\s*%\s*)? less\b", full
     ):
         return "All units"
+    if label == "Damage taken" and re.search(
+        r"\breduc\w+ their damage taken\b", t
+    ) and re.search(
+        r"\b(?:guarded ally|an ally|the ally|that ally)\b", t
+    ):
+        return "Single target"
     if label in (*HP_RECOVERY_LABELS, "Energy") and re.search(
         r"\beach ally along (?:the |its )?path\b", full
     ):
@@ -779,6 +785,10 @@ def _resolve_buff_targeting(
         r"\bgain(?:s|ing)? .{0,60}(?:phys(?:ical)?|magic) def\b"
         r".*\bwhen (?:he|she|they)\b",
         t,
+    ):
+        return "Self"
+    if label in ("Phys DEF", "Magic DEF", "DEF") and re.search(
+        r"\bincreas(?:e|es|ing) \d+% of \w+'s (?:phys|magic) def\b", t
     ):
         return "Self"
     if label == "Crit" and re.search(
@@ -845,6 +855,10 @@ def _resolve_buff_targeting(
             r"(?:\d+%[^.]{0,40})?(?:chi barrier|shield)\b",
             t,
         ) or re.search(r"\bchannels (?:his|her|their) chi, gaining\b", t):
+            return "Self"
+        elif re.search(
+            r"\bconverted into a (?:chi barrier|shield) for\b", t
+        ) and not re.search(r"\b(?:allies?|allied heroes?)\b", t):
             return "Self"
     if label == "ATK" and re.search(r"\batk bonus granted by\b", t):
         return "Self"
@@ -1498,6 +1512,9 @@ class Effect:
     conditional: str | None = None
     # Structured schema conditions (hp_threshold, status_condition, unit_type).
     conditions: list[dict[str, Any]] = field(default_factory=list)
+    # Explicit schema area shape when targeting alone is ambiguous (e.g. path).
+    area: str | None = None
+    area_direction: str | None = None
     source_section: str | None = None
 
 
@@ -1612,6 +1629,16 @@ def parse_hero_block(block: str) -> Hero:
             flush_buffer()
             sec = ln[4:].strip()
             current_section = sec if sec in SECTION_TIERS else None
+            continue
+        if (
+            current_section
+            and ln.startswith("**")
+            and ln.endswith("**")
+            and ln.count("**") == 2
+        ):
+            skill_name = ln.strip("*").strip()
+            if skill_name:
+                hero.skill_name_to_section[skill_name] = current_section
             continue
         if not current_section:
             continue
@@ -1844,6 +1871,12 @@ def effect_targets_self_only(t: str, label: str, category: str) -> bool:
         if _has_explicit_ally_buff(t, label):
             return False
         if re.search(r"\bincreas\w+ all allies", t):
+            return False
+        if label == "Damage taken" and re.search(
+            r"\breduc\w+ their damage taken\b", t
+        ) and re.search(
+            r"\b(?:guarded ally|an ally|the ally|that ally)\b", t
+        ):
             return False
         if re.search(stat_self, t) or re.search(stat_self_impersonal, t):
             return True
@@ -2210,6 +2243,10 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
             t,
         ):
             return "Self"
+        if re.search(
+            r"\bconverted into a (?:chi barrier|shield) for\b", t
+        ) and not re.search(r"\b(?:allies?|allied heroes?)\b", t):
+            return "Self"
     imm_type = label.replace(" immunity", "") if label.endswith(" immunity") else ""
     # Self-only anti-CC / invulnerability before global "all" checks
     if category in ("buff", "cc_immunity") and (
@@ -2312,6 +2349,14 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
             if _allies_receive_healing(t):
                 if re.search(r"\bweakest \d+ allies\b", t):
                     return "Multiple targets"
+                if re.search(
+                    r"\bwithin (?:a |the )?(?:\d+[-\s]*tile )?"
+                    r"(?:radius|circle|field|zone|arc)\b",
+                    t,
+                ) or re.search(
+                    r"\ballied units?\b.{0,80}\bwithin\b", t
+                ):
+                    return "Area"
                 return "Single target"
             if re.search(r"\b(?:herself|himself) and\b", t):
                 return "Multiple targets"
@@ -2384,7 +2429,12 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
                 return "All units"
         if re.search(r"\b(?:enemies|enemy)\b", t):
             return "All units"
-    if re.search(r"\b(?:area|within \d+ tiles?|surrounding|in (?:its|the) path)\b", t):
+    if re.search(
+        r"\b(?:area|within \d+ tiles?|within (?:a |the )?\d+[-\s]*tile[-\s]*(?:radius|wide)|"
+        r"within (?:the )?(?:circle|hunting circle|forcefield|field|zone)|"
+        r"surrounding|in (?:its|the) path)\b",
+        t,
+    ):
         if category in ("buff", "cc_immunity") and effect_targets_self_only(
             t, label, category
         ):
@@ -2427,7 +2477,7 @@ def detect_targeting(text: str, label: str = "", category: str = "") -> str:
         return "Multiple targets"
     # Plural allies → Multiple targets; singular "an ally" / "the ally" falls
     # through to Single target (a skill targeting one specific ally is single).
-    if re.search(r"\ballies\b", t):
+    if re.search(r"\b(?:allies|allied units?)\b", t):
         return "Multiple targets"
     if re.search(r"\b(?:an enemy|the enemy|target|marked enemy|isolated)\b", t):
         if effect_targets_self_only(t, label, category):
@@ -2475,6 +2525,21 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
     if label == "Execution":
         return None
     is_debuff = category == "debuff"
+    if label in ("Phys DEF", "Magic DEF") and not is_debuff:
+        amounts = _all_amounts(
+            text,
+            [
+                r"gain(?:s|ing)? (\d+(?:\.\d+)?)%? "
+                r"(?:phys(?:ical)? and magic|magic and phys(?:ical)?) def\b",
+                r"increas(?:e|es|ing) .{0,80}phys(?:ical)? def by "
+                r"(\d+(?:\.\d+)?)\s*%",
+                r"increas(?:e|es|ing) .{0,80}magic def by (\d+(?:\.\d+)?)\s*%",
+                r"increas(?:e|es|ing) .{0,40}\bdef by (\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if not category and label in (
         "ATK",
         "ATK SPD",
@@ -3566,6 +3631,8 @@ def _effect_dedupe_key(
         bucket = _buff_dedupe_targeting_bucket(targeting)
         if bucket:
             return (category, label, bucket)
+    if category in ("cc", "debuff") and targeting:
+        return (category, label, targeting)
     return (category, label)
 
 
@@ -3583,6 +3650,8 @@ def _copy_effect(effect: Effect) -> Effect:
         duration=effect.duration,
         conditional=effect.conditional,
         conditions=list(effect.conditions),
+        area=effect.area,
+        area_direction=effect.area_direction,
         source_section=effect.source_section,
     )
 
@@ -3636,6 +3705,10 @@ def _merge_effect_records(into: Effect, src: Effect) -> None:
         into.duration = src.duration
     if src.source_section and not into.source_section:
         into.source_section = src.source_section
+    if src.area is not None:
+        into.area = src.area
+    if src.area_direction is not None:
+        into.area_direction = src.area_direction
 
 
 def _merge_effects_from_list(effects: list[Effect]) -> list[Effect]:
@@ -3869,6 +3942,7 @@ def add_effect(
 BUFF_RULES = [
     (r"grants? an ally brightfeather", "Ally empower"),
     (r"grants? them exemption\b", "Exemption"),
+    (r"immune to .{0,80}haste reduction effect", "Exemption"),
     # Winter Warrior style: hero designates one ally for a named role
     (r"selects? an ally.{0,80}to become", "Ally empower"),
     # Immunity granted to the empowered ally
@@ -4294,13 +4368,13 @@ def parse_area_tile_count(text: str) -> int | None:
     t = text.lower()
     if re.search(r"\b1[-\s]*tile(?:\s+magic)?\s+circle\b", t):
         return 1
+    if re.search(r"\d+[-\s]*tile[-\s]*wide\s+wedge", t):
+        return None
     if m := re.search(r"(\d+)[-\s]*tile[-\s]*wide", t):
         return max(1, int(m.group(1)))
     if m := re.search(r"(\d+)\s*[×x]\s*(\d+)", t):
         return max(int(m.group(1)), int(m.group(2)))
     if re.search(r"\badjacent\b", t):
-        return 1
-    if re.search(r"\bsurrounding\b", t):
         return 1
     for m in re.finditer(r"within (\d+(?:\.\d+)?) tiles?", t):
         before = t[max(0, m.start() - 70) : m.start()]
@@ -4311,6 +4385,8 @@ def parse_area_tile_count(text: str) -> int | None:
         ):
             continue
         return max(1, int(float(m.group(1))))
+    if re.search(r"\bsurrounding\b", t):
+        return 1
     for pat in (
         r"range of (\d+(?:\.\d+)?)[-\s]*tile",
         r"within a (\d+(?:\.\d+)?)[-\s]*tile radius",
@@ -4320,6 +4396,67 @@ def parse_area_tile_count(text: str) -> int | None:
         if m := re.search(pat, t):
             return max(1, int(float(m.group(1))))
     return None
+
+
+def parse_path_area_cue(text: str) -> tuple[int, str] | None:
+    """Path width and facing when text describes a directed charge or line."""
+    t = text.lower()
+    if m := re.search(r"(\d+)[-\s]*tile[-\s]*wide\s+wedge", t):
+        return max(1, int(m.group(1))), "front"
+    if re.search(r"charge forward", t) and re.search(
+        r"in (?:its|their|his|her|the) path|destroying all obstacles in (?:its|their|his|her|the) path", t
+    ):
+        width = 1
+        if m := re.search(r"(\d+)[-\s]*tile[-\s]*wide", t):
+            width = max(1, int(m.group(1)))
+        return width, "front"
+    if re.search(
+        r"along the path|1[-\s]*tile[-\s]*wide path|penetrating line|"
+        r"all enemies along|enemies along the path|"
+        r"enemies in (?:its|their|his|her|the) path|enemies caught in (?:its|their|his|her|the) path",
+        t,
+    ):
+        width = 1
+        if m := re.search(r"(\d+)[-\s]*tile[-\s]*wide", t):
+            width = max(1, int(m.group(1)))
+        return width, "selected_target"
+    return None
+
+
+def _effect_from_clause(effect: Effect, clause: str) -> bool:
+    """True when an effect was parsed from this clause text."""
+    qual = (effect.qualitative or "").strip()
+    if not qual:
+        return True
+    clause_l = clause.lower()
+    qual_l = qual.lower()
+    if qual_l in clause_l or clause_l in qual_l:
+        return True
+    for frag in re.split(r"(?<!\d)\.\s+", qual_l):
+        frag = frag.strip()
+        if len(frag) > 12 and frag in clause_l:
+            return True
+    return False
+
+
+def _apply_path_area_to_clause_effects(
+    effects: list[Effect], text: str
+) -> None:
+    """Set path spatial fields on clause-scoped enemy effects."""
+    cue = parse_path_area_cue(text)
+    if not cue:
+        return
+    width, direction = cue
+    for effect in effects:
+        if not _effect_from_clause(effect, text):
+            continue
+        if effect.category == "buff":
+            continue
+        if effect.category in ("damage", "cc", "debuff"):
+            effect.targeting = "Area"
+        effect.area = "path"
+        effect.area_count = width
+        effect.area_direction = direction
 
 
 def _resolve_area_count(text: str, targeting: str) -> int | None:
@@ -5670,6 +5807,16 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             parts = re.findall(r"\d+(?:\.\d+)?", deal_m.group(1))
             if parts:
                 return sum(float(p) for p in parts)
+        deal_hp_m = re.search(
+            r"(?:deal(?:ing|s|t)?|deals?) (\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?)% "
+            r"\(hp-based\) damage",
+            text,
+            re.I,
+        )
+        if deal_hp_m:
+            parts = re.findall(r"\d+(?:\.\d+)?", deal_hp_m.group(1))
+            if parts:
+                return sum(float(p) for p in parts)
     if dmg_type == "Max HP-based damage":
         patterns = [
             r"true damage equal to\s+(\d+(?:\.\d+)?)\s*%\s*\+\s*"
@@ -6552,6 +6699,14 @@ def _debuff_match_is_ally_stat_gain(clause: str, label: str) -> bool:
         return True
     if label == "Haste" and re.search(r"\ballies\b", t) and re.search(
         r"\bincreas(?:e|es|ing).{0,60}haste\b", t
+    ):
+        return True
+    if label == "Max HP" and re.search(r"\bmax hp is permanently increased\b", t):
+        return True
+    if label == "Max HP" and re.search(
+        r"\bpermanently increased by\b", t
+    ) and re.search(r"\bmax hp\b", t) and re.search(
+        r"\b(?:ally|their|that ally)\b", t
     ):
         return True
     return False
@@ -7488,17 +7643,39 @@ def _cross_skill_reference_target(
         t,
     ):
         return default_section
+    if re.search(
+        r"\b(?:each enemy )?hit by .{0,60}increases? \d+% of \w+'s "
+        r"(?:phys|magic) def\b",
+        t,
+    ):
+        return default_section
     for name in sorted(skill_name_to_section, key=len, reverse=True):
         target = skill_name_to_section[name]
         if target == default_section:
             continue
         escaped = re.escape(name)
         patterns = (
-            rf"with (?:his|her|their) {escaped}\b",
-            rf"(?:while|when) casting {escaped}\b",
+            rf"with (?:his|her|their)?\s*{escaped}\b",
+            rf"(?:while|when|after|upon|before) casting {escaped}\b",
             rf"\bif {escaped} knocks?\b",
             rf"(?:directly )?hit by {escaped}\b",
             rf"leaves? the {escaped} state\b",
+            rf"\bcasts? {escaped}\b",
+            rf"\b(?:range|duration|damage|cooldown|shield|interval|level|blessing|effect|cooldowns) of {escaped}\b",
+            rf"\b(?:while|if|when) {escaped} is active\b",
+            rf"\bmarked by {escaped}\b",
+            rf"\buse {escaped}\b",
+            rf"\busing {escaped}\b",
+            rf"\bresponds? to {escaped}\b",
+            rf"\blinked through {escaped}\b",
+            rf"\b{escaped} skill\b",
+            rf"\bgranted by {escaped}\b",
+            rf"\bdescribed in {escaped}\b",
+            rf"\binspired by {escaped}\b",
+            rf"\bto trigger {escaped}\b",
+            rf"\bwithin the duration of {escaped}\b",
+            rf"\b{escaped} is enhanced\b",
+            rf"\benhances? {escaped}\b",
         )
         if any(re.search(pat, text, re.I) for pat in patterns):
             return target
@@ -7531,12 +7708,183 @@ def _finalize_skill_slice_effects(
                 ):
                     eff.duration = hot_dur
         area_count = parse_area_tile_count(combined)
-        if area_count is not None:
-            for eff in sl.effects:
+        for eff in sl.effects:
+            if eff.area == "path":
+                continue
+            qual_count = parse_area_tile_count(eff.qualitative or "")
+            if qual_count is not None:
+                if eff.targeting == "Area":
+                    eff.area_count = qual_count
+                continue
+            if area_count is not None:
                 if eff.targeting == "Area" and (
                     eff.area_count is None or eff.area_count == 2
                 ):
                     eff.area_count = area_count
+        _prune_redundant_narrow_targeting(sl)
+
+
+_WIDER_THAN_SINGLE = frozenset(
+    {
+        "Self",
+        "Arc",
+        "Area",
+        "path",
+        "Multiple targets",
+        "All units",
+        "Owned summons",
+        "All summons",
+    }
+)
+
+
+def _prune_redundant_narrow_targeting(sl: SkillSlice) -> None:
+    """Drop same-tier Single-target chips when a wider targeting exists."""
+    groups: dict[tuple[str, str, str], list[Effect]] = {}
+    for effect in sl.effects:
+        if effect.category not in ("buff", "debuff", "cc"):
+            continue
+        key = (effect.category, effect.label, effect.tier)
+        groups.setdefault(key, []).append(effect)
+    drop_effects: set[Effect] = set()
+    for (category, label, tier), effs in groups.items():
+        targetings = {e.targeting for e in effs}
+        if "Single target" not in targetings:
+            continue
+        if not targetings & _WIDER_THAN_SINGLE:
+            continue
+        single_effs = [e for e in effs if e.targeting == "Single target"]
+        wider_effs = [e for e in effs if e.targeting in _WIDER_THAN_SINGLE]
+        for se in single_effs:
+            for we in wider_effs:
+                se_qual = (se.qualitative or "").strip().lower()
+                we_qual = (we.qualitative or "").strip().lower()
+                if se_qual == we_qual:
+                    drop_effects.add(se)
+                    break
+    if not drop_effects:
+        return
+    sl.effects = [e for e in sl.effects if e not in drop_effects]
+
+
+def _apply_cassadee_skill_fixes(hero: Hero) -> None:
+    """Normalize Cassadee path targeting and Tidal Strength representation."""
+    short = hero.title.split(" - ", 1)[0].strip()
+    if short != "Cassadee":
+        return
+
+    for sl in hero.skill_slices.values():
+        for effect in sl.effects:
+            if effect.label == "Tidal Strength":
+                effect.label = "Magic damage"
+
+    ultimate = hero.skill_slices.get("Ultimate")
+    if ultimate:
+        for effect in ultimate.effects:
+            if effect.category in ("cc", "damage"):
+                effect.targeting = "Area"
+                effect.area = "path"
+                effect.area_direction = "selected_target"
+                effect.area_count = 3
+
+    skill2 = hero.skill_slices.get("Skill2")
+    if skill2:
+        blessed_trigger = [
+            {
+                "type": "trigger_condition",
+                "trigger": "normal_attack",
+                "ally": True,
+            }
+        ]
+        for effect in skill2.effects:
+            if effect.category == "buff" and effect.label == "Magic damage":
+                if effect.tier == "base" and effect.targeting == "Self":
+                    effect.conditions = _merge_conditions_lists(
+                        effect.conditions, blessed_trigger
+                    )
+        has_mythic_path = any(
+            effect.category == "buff"
+            and effect.label == "Magic damage"
+            and effect.tier == "Mythic+"
+            and effect.area == "path"
+            for effect in skill2.effects
+        )
+        if not has_mythic_path:
+            mythic_effects = [
+                e for e in skill2.effects
+                if e.category == "buff" and e.label == "Magic damage" and e.tier == "Mythic+"
+            ]
+            if mythic_effects:
+                for effect in mythic_effects:
+                    effect.targeting = "Area"
+                    effect.area = "path"
+                    effect.area_direction = "selected_target"
+            else:
+                skill2.effects.append(
+                    Effect(
+                        category="buff",
+                        label="Magic damage",
+                        tier="Mythic+",
+                        targeting="Area",
+                        area="path",
+                        area_direction="selected_target",
+                    )
+                )
+        for effect in skill2.effects:
+            if (
+                effect.category == "buff"
+                and effect.label == "Magic damage"
+                and effect.tier == "Mythic+"
+            ):
+                effect.targeting = "Area"
+                effect.area = "path"
+                effect.area_direction = "selected_target"
+
+    skill4 = hero.skill_slices.get("Ex. Skill")
+    if skill4:
+        skill4.effects = [
+            effect
+            for effect in skill4.effects
+            if not (
+                effect.category == "buff"
+                and effect.label == "Magic damage"
+            )
+        ]
+
+    skill1 = hero.skill_slices.get("Skill1")
+    if skill1:
+        skill1.effects = [
+            effect
+            for effect in skill1.effects
+            if not (
+                effect.category == "buff" and effect.label == "Magic damage"
+            )
+        ]
+        for label in ("Stun", "Knock up"):
+            if not any(
+                effect.category == "cc"
+                and effect.label == label
+                and effect.tier == "EX+10"
+                for effect in skill1.effects
+            ):
+                skill1.effects.append(
+                    Effect(
+                        category="cc",
+                        label=label,
+                        tier="EX+10",
+                        targeting="Multiple targets",
+                    )
+                )
+
+    supreme = hero.skill_slices.get("Unlocks at Supreme+")
+    if supreme:
+        supreme.effects = [
+            effect
+            for effect in supreme.effects
+            if not (
+                effect.category == "buff" and effect.label == "Magic damage"
+            )
+        ]
 
 
 def analyze_hero(hero: Hero):
@@ -7588,6 +7936,7 @@ def analyze_hero(hero: Hero):
         detect_special_effects(chunk.special_effects, tier, text, section)
         for imm_type in IMMUNITY_TYPES:
             add_cc_immunity(chunk, imm_type, tier, text)
+        _apply_path_area_to_clause_effects(chunk.effects, text)
         if target_section in hero.skill_slices:
             sl = hero.skill_slices[target_section]
             sl.effects.extend(chunk.effects)
@@ -7610,6 +7959,7 @@ def analyze_hero(hero: Hero):
                 hero.skill_slices[target_section].effects, text, primary_dmg
             )
     _finalize_skill_slice_effects(hero.skill_slices, section_texts)
+    _apply_cassadee_skill_fixes(hero)
     _rebuild_hero_aggregates_from_slices(hero)
     for dt, tgts in sorted(
         damage_map.items(),
@@ -7733,6 +8083,15 @@ def format_tier_suffix(tier: str) -> str:
     if tier == "base":
         return ""
     return f" ({tier})"
+
+
+def _skill_card_tier_suffix(tier: str, category: str) -> str:
+    """Omit tier suffix when effect tier matches the card's native unlock."""
+    section = CATEGORY_TO_SECTION.get(category, "")
+    native = SECTION_TIERS.get(section, "base")
+    if tier == native:
+        return ""
+    return format_tier_suffix(tier)
 
 
 def _summary_debuff_display_label(label: str) -> str:
@@ -9087,6 +9446,7 @@ _SKILL_CARD_STAT_KEYS: tuple[str, ...] = tuple(
             "Ranged DEF",
             "Energy",
             "Life Drain",
+            "Lifedrain",
             "Healing",
             "Max HP",
             "Haste",
@@ -10356,8 +10716,72 @@ _SKILL_CARD_CC_TARGETING_SUFFIX = re.compile(
 )
 
 
+def _skill_card_targeting_label(effect: Effect) -> str:
+    """Skill-card targeting suffix; path area maps to ``path`` not ``Area``."""
+    if getattr(effect, "area", None) == "path":
+        return "path"
+    return effect.targeting or "Single target"
+
+
+def _skill_card_disambiguate_keys(
+    sl: SkillSlice,
+) -> tuple[set[tuple[str, str]], set[str]]:
+    """Group keys and display labels needing explicit targeting suffixes."""
+    from collections import defaultdict
+
+    groups: dict[tuple[str, str], set[str]] = defaultdict(set)
+    labels: dict[str, set[str]] = defaultdict(set)
+    for effect in sl.effects:
+        if effect.category == "debuff":
+            tgt = _skill_card_targeting_label(effect)
+            groups[("debuff", effect.label)].add(tgt)
+            labels[_skill_card_tag_label(effect.label)].add(tgt)
+        elif effect.category == "buff":
+            tgt = _skill_card_targeting_label(effect)
+            groups[("buff", effect.label)].add(tgt)
+            labels[_skill_card_tag_label(effect.label)].add(tgt)
+        elif effect.category == "cc":
+            tgt = _skill_card_targeting_label(effect)
+            groups[("cc", effect.label)].add(tgt)
+            labels[_skill_card_tag_label(effect.label)].add(tgt)
+    for effect in sl.summon_effects:
+        if effect.category == "buff":
+            tgt = _skill_card_targeting_label(effect)
+            groups[("buff", effect.label)].add(tgt)
+            labels[_skill_card_tag_label(effect.label)].add(tgt)
+    for imm in sl.cc_immunities:
+        tgt = imm.targeting or "Single target"
+        groups[("immunity", imm.immunity_type)].add(tgt)
+        labels[_skill_card_tag_label(imm.immunity_type)].add(tgt)
+    group_keys = {key for key, targetings in groups.items() if len(targetings) > 1}
+    label_keys = {key for key, targetings in labels.items() if len(targetings) > 1}
+    return group_keys, label_keys
+
+
+def _skill_card_use_explicit_targeting(
+    effect: Effect | CcImmunity,
+    *,
+    category: str,
+    group_keys: set[tuple[str, str]],
+    label_keys: set[str],
+) -> bool:
+    immunity_type = getattr(effect, "immunity_type", None)
+    if immunity_type is not None:
+        return (
+            ("immunity", immunity_type) in group_keys
+            or _skill_card_tag_label(immunity_type) in label_keys
+        )
+    return (effect.category, effect.label) in group_keys or (
+        _skill_card_tag_label(effect.label) in label_keys
+    )
+
+
 def _skill_card_tag_for_effect(
-    label: str, targeting: str, *, is_cc: bool = False
+    label: str,
+    targeting: str,
+    *,
+    is_cc: bool = False,
+    explicit_targeting: bool = False,
 ) -> str:
     """Skill-card chip text; targeting suffix for self, summons, and CC."""
     text = _skill_card_tag_label(label)
@@ -10367,48 +10791,81 @@ def _skill_card_tag_for_effect(
         return f"{text} — Summons"
     if is_own_summon_buff_targeting(targeting):
         return f"{text} — Owned"
+    if targeting == "path":
+        return f"{text} — path"
+    if explicit_targeting and targeting:
+        return f"{text} — {targeting}"
     if is_cc and targeting and targeting != "Single target":
+        return f"{text} — {targeting}"
+    if targeting and targeting not in ("Single target",):
         return f"{text} — {targeting}"
     return text
 
 
 def _canonical_skill_card_chip_key(tag: str) -> str:
     stripped = tag.strip()
-    cc_targeting = _SKILL_CARD_CC_TARGETING_SUFFIX.search(stripped)
-    if cc_targeting:
-        base = stripped[: cc_targeting.start()].strip().lower()
-        tgt = cc_targeting.group(1).strip().lower()
-        for cc in _SKILL_CARD_CC_KEYS:
-            if base == cc.lower():
-                return f"{cc.lower()}:{tgt}"
-    text = re.sub(
-        r"\s*(?:—|–)\s*(?:self|owned|summons?)\s*$",
-        "",
+    tier_match = re.search(
+        r"\s*\((Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)\s*$",
         stripped,
         flags=re.I,
     )
-    text = re.sub(
-        r"\s*\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)",
-        "",
-        text.strip(),
+    tier_key = ""
+    work = stripped
+    if tier_match:
+        tier_key = f":{tier_match.group(1).lower()}"
+        work = stripped[: tier_match.start()].strip()
+    cc_targeting = _SKILL_CARD_CC_TARGETING_SUFFIX.search(work)
+    if cc_targeting:
+        base = work[: cc_targeting.start()].strip().lower()
+        tgt = cc_targeting.group(1).strip().lower()
+        for cc in _SKILL_CARD_CC_KEYS:
+            if base == cc.lower():
+                return f"{cc.lower()}:{tgt}{tier_key}"
+    self_key = ""
+    self_match = re.search(r"\s*(?:—|–)\s*Self\s*$", work, flags=re.I)
+    if self_match:
+        self_key = ":self"
+        work = work[: self_match.start()].strip()
+    single_key = ""
+    single_match = re.search(
+        r"\s*(?:—|–)\s*Single target\s*$", work, flags=re.I
+    )
+    if single_match:
+        single_key = ":single target"
+        work = work[: single_match.start()].strip()
+    area_targeting = re.search(
+        r"\s*(?:—|–)\s*(Area|Arc|All units|Multiple targets|path)\s*$",
+        work,
         flags=re.I,
-    ).strip()
+    )
+    area_key = ""
+    if area_targeting:
+        area_key = f":{area_targeting.group(1).strip().lower()}"
+        work = work[: area_targeting.start()].strip()
+    text = work.strip()
     low = text.lower()
+    targeting_key = self_key or area_key or single_key
     for stat in _SKILL_CARD_STAT_KEYS:
         if low == stat.lower() or low.startswith(stat.lower() + " "):
-            return stat.lower()
+            return (
+                f"{stat.lower()}"
+                f"{targeting_key}{tier_key}"
+            )
     for dt in _SKILL_CARD_DAMAGE_KEYS:
         if low == dt.lower() or low.startswith(dt.lower() + " "):
-            return dt.lower()
+            return f"{dt.lower()}{tier_key}"
     for cc in _SKILL_CARD_CC_KEYS:
         if low == cc.lower() or low.startswith(cc.lower() + " "):
             return cc.lower()
     norm_label = normalize_healing_label(text)
     if low == "hot" or norm_label == HEALING_OVER_TIME_LABEL:
-        return "hot"
+        return f"hot{targeting_key}{tier_key}"
     if norm_label == DIRECT_HEALING_LABEL:
-        return "direct healing"
-    return re.sub(r"\s*\([^)]*\)", "", low).strip()
+        return f"direct healing{targeting_key}{tier_key}"
+    base = re.sub(r"\s*\([^)]*\)", "", low).strip()
+    if targeting_key:
+        return f"{base}{targeting_key}{tier_key}"
+    return base
 
 
 def _format_signature_skill_body(
@@ -10438,12 +10895,40 @@ def signature_skill_category(
     return SECTION_TO_SKILL_CATEGORY.get(section)
 
 
-def _skill_card_damage_labels(hero: Hero, slice_: SkillSlice) -> list[str]:
+def _skill_card_tag_with_tier(
+    label: str,
+    targeting: str,
+    tier: str,
+    category: str,
+    *,
+    is_cc: bool = False,
+    explicit_targeting: bool = False,
+) -> str:
+    """Skill-card chip text with ascension tier suffix when not base."""
+    tag = _skill_card_tag_for_effect(
+        label,
+        targeting,
+        is_cc=is_cc,
+        explicit_targeting=explicit_targeting,
+    )
+    return f"{tag}{_skill_card_tier_suffix(tier, category)}"
+
+
+def _skill_card_damage_labels(
+    hero: Hero, slice_: SkillSlice, category: str
+) -> list[str]:
     """Damage chip labels from analyzed effects (not raw text re-parse)."""
     damage_order = {label: idx for idx, label in enumerate(_SKILL_CARD_DAMAGE_KEYS)}
     return sorted(
-        {e.label for e in slice_.effects if e.category == "damage"},
-        key=lambda label: damage_order.get(label, len(_SKILL_CARD_DAMAGE_KEYS)),
+        {
+            f"{e.label}{_skill_card_tier_suffix(e.tier, category)}"
+            for e in slice_.effects
+            if e.category == "damage"
+        },
+        key=lambda label: damage_order.get(
+            label.split(" (")[0],
+            len(_SKILL_CARD_DAMAGE_KEYS),
+        ),
     )
 
 
@@ -10474,8 +10959,13 @@ def format_skill_card_tags(
     if not sl:
         return tags
 
-    for label in _skill_card_damage_labels(hero, sl):
-        add(label)
+    disambiguate_groups, disambiguate_labels = _skill_card_disambiguate_keys(sl)
+
+    for e in sorted(
+        [e for e in sl.effects if e.category == "damage"],
+        key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
+    ):
+        add(f"{e.label}{_skill_card_tier_suffix(e.tier, category)}")
 
     all_buffs = [
         e for e in sl.effects + sl.summon_effects if e.category == "buff"
@@ -10493,16 +10983,57 @@ def format_skill_card_tags(
         for e in sorted(
             group, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)
         ):
-            add(_skill_card_tag_for_effect(e.label, e.targeting), polarity)
+            add(
+                _skill_card_tag_with_tier(
+                    e.label,
+                    _skill_card_targeting_label(e),
+                    e.tier,
+                    category,
+                    explicit_targeting=_skill_card_use_explicit_targeting(
+                        e,
+                        category=e.category,
+                        group_keys=disambiguate_groups,
+                        label_keys=disambiguate_labels,
+                    ),
+                ),
+                polarity,
+            )
     for e in sorted(
         cc_items, key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label)
     ):
-        add(_skill_card_tag_for_effect(e.label, e.targeting, is_cc=True))
+        add(
+            _skill_card_tag_with_tier(
+                e.label,
+                _skill_card_targeting_label(e),
+                e.tier,
+                category,
+                is_cc=True,
+                explicit_targeting=_skill_card_use_explicit_targeting(
+                    e,
+                    category="cc",
+                    group_keys=disambiguate_groups,
+                    label_keys=disambiguate_labels,
+                ),
+            )
+        )
     for imm in sorted(
         sl.cc_immunities,
         key=lambda x: (TIER_ORDER.get(x.tier, 9), x.immunity_type),
     ):
-        add(_skill_card_tag_for_effect(imm.immunity_type, imm.targeting))
+        add(
+            _skill_card_tag_with_tier(
+                imm.immunity_type,
+                imm.targeting,
+                imm.tier,
+                category,
+                explicit_targeting=_skill_card_use_explicit_targeting(
+                    imm,
+                    category="immunity",
+                    group_keys=disambiguate_groups,
+                    label_keys=disambiguate_labels,
+                ),
+            )
+        )
     return tags
 
 

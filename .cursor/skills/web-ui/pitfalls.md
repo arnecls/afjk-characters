@@ -42,6 +42,41 @@ and `heroes.json` could drift.
 `parseSkillCardTag` + `mergeEffectWithTargeting` in JS; `effectChipRemainder`
 hides trailing `buff`/`debuff` after stat match.
 
+### Tier suffix after targeting (skill-card pills)
+
+**Symptom:** Ascended-tier tags like `ATK — Self (EX+10)` or
+`Blind — Area (EX+15)` rendered without the targeting segment.
+
+**Cause:** `chipifySkillCardTag` called `parseSkillCardTag` on the full
+label; the parser anchors targeting at end-of-string, so a trailing
+`(EX+10)` tier blocked extraction. `skillCardChipKey` already stripped tier
+first.
+
+**Fix:** Strip `ASCENSION_TIER_SUFFIX_RE` from the raw label before
+`parseSkillCardTag`; pass the stripped tier into `injectTierIntoChipHtml`.
+
+### Debuff pills dropped Area / Multiple (Brutus Phys DEF)
+
+**Symptom:** `Phys DEF — Area` stored correctly but pill showed only
+`Phys DEF`.
+
+**Cause:** `chipifySkillCardTag` returned early on `tryChipify` for debuffs
+before `mergeEffectWithTargeting`.
+
+**Fix:** Run targeting merge before the debuff-only fallback.
+
+### Canonical chip keys collapsed targeting (Lifedrain, Direct healing)
+
+**Symptom:** `Lifedrain — Multiple targets` dropped when
+`Lifedrain — Single target` was also present (Kordan ult).
+
+**Cause:** `_canonical_skill_card_chip_key` / `skillCardChipKey` only
+appended `:area` / `:self` for stat keys; `Lifedrain` and healing labels
+deduped to one key.
+
+**Fix:** Append targeting suffix on all canonical-key return paths when a
+`— Targeting` segment is present.
+
 ### Contess energy recovery shown as buff (87cdaf8e)
 
 **Symptom:** Debuff rendered with buff styling.

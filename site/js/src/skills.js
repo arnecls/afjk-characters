@@ -359,33 +359,56 @@ window.AFKJ = window.AFKJ || {};
     if (!text) {
       return "";
     }
-    let tag = text.trim().toLowerCase();
+    let tag = text.trim();
     if (!tag) {
       return "";
     }
-    tag = tag.replace(/\s*(?:—|–)\s*(?:self|owned|summons?)\s*$/, "").trim();
-    tag = tag
-      .replace(
-        /\s*\((?:legendary\+|mythic\+|supreme\+|ex\+\d+)\)/gi,
-        ""
-      )
-      .trim();
+    const tierMatch = tag.match(
+      /\s*\((legendary\+|mythic\+|supreme\+|ex\+\d+)\)\s*$/i
+    );
+    let tierKey = "";
+    if (tierMatch) {
+      tierKey = ":" + tierMatch[1].toLowerCase();
+      tag = tag.slice(0, tierMatch.index).trim();
+    }
+    const singleMatch = tag.match(/\s*(?:—|–)\s*single target\s*$/i);
+    let singleKey = "";
+    if (singleMatch) {
+      singleKey = ":single target";
+      tag = tag.slice(0, singleMatch.index).trim();
+    }
+    const areaMatch = tag.match(
+      /\s*(?:—|–)\s*(area|arc|all units|multiple targets|path)\s*$/i
+    );
+    let areaKey = "";
+    if (areaMatch) {
+      areaKey = ":" + areaMatch[1].trim().toLowerCase();
+      tag = tag.slice(0, areaMatch.index).trim();
+    }
+    let selfKey = "";
+    if (/\s*(?:—|–)\s*self\s*$/i.test(tag)) {
+      selfKey = ":self";
+      tag = tag.replace(/\s*(?:—|–)\s*self\s*$/i, "").trim();
+    }
+    tag = tag.replace(/\s*(?:—|–)\s*(?:owned|summons?)\s*$/i, "").trim();
+    tag = tag.toLowerCase();
+    const targetingKey = selfKey || areaKey || singleKey;
 
     if (chips.isStatModifierLabel(tag)) {
-      return tag.toLowerCase();
+      return tag + targetingKey + tierKey;
     }
 
     let i;
     for (i = 0; i < chips.STAT_KEYS.length; i++) {
       const stat = chips.STAT_KEYS[i].toLowerCase();
       if (tag === stat || tag.indexOf(stat + " ") === 0) {
-        return stat;
+        return stat + targetingKey + tierKey;
       }
     }
     for (i = 0; i < SKILL_CARD_DAMAGE_KEYS.length; i++) {
       const dt = SKILL_CARD_DAMAGE_KEYS[i].toLowerCase();
       if (tag === dt || tag.indexOf(dt + " ") === 0) {
-        return dt;
+        return dt + tierKey;
       }
     }
     for (i = 0; i < SKILL_CARD_CC_KEYS.length; i++) {
@@ -395,18 +418,19 @@ window.AFKJ = window.AFKJ || {};
       }
     }
     if (tag === "hot" || tag === "healing over time" || tag.indexOf("healing over time") === 0) {
-      return "hot";
+      return "hot" + targetingKey + tierKey;
     }
     if (tag === "direct healing" || tag.indexOf("direct healing") === 0) {
-      return "direct healing";
+      return "direct healing" + targetingKey + tierKey;
     }
     if (tag.indexOf("healing") !== -1 && tag.indexOf("over time") === -1) {
-      return "direct healing";
+      return "direct healing" + targetingKey + tierKey;
     }
     if (tag.indexOf("healing") !== -1 && tag.indexOf("over time") !== -1) {
-      return "hot";
+      return "hot" + targetingKey + tierKey;
     }
-    return tag.replace(/\s*\([^)]*\)/g, "").trim();
+    const base = tag.replace(/\s*\([^)]*\)/g, "").trim();
+    return base + targetingKey + tierKey;
   }
 
   function skillCardTagLabel(tag) {

@@ -262,12 +262,12 @@
       "enum": [
         "single",
         "radius",
-        "line",
+        "path",
         "rectangle",
         "arc",
         "zone"
       ],
-      "description": "Spatial spread from the anchor. single hits only the selected unit(s). radius covers hex tiles within area_count steps of the anchor (1 equals adjacent). line is a directed path. arc is a directed wedge (use area_direction). zone is a placed field; area_count -1 covers the whole map."
+      "description": "Spatial spread from the anchor. single hits only the selected unit(s). radius covers hex tiles within area_count steps of the anchor (1 equals adjacent). path is a directed path. arc is a directed wedge (use area_direction). zone is a placed field; area_count -1 covers the whole map."
     },
     "areaDirection": {
       "type": "string",
@@ -278,13 +278,14 @@
         "right",
         "row",
         "column",
-        "center"
+        "center",
+        "selected_target"
       ],
-      "description": "Facing of a directed area shape (arc, line, rectangle) relative to the anchor. Omit for symmetric shapes such as radius and zone. Distinct from conditions.position, which selects which unit is picked."
+      "description": "Facing of a directed area shape (arc, path, rectangle) relative to the anchor. selected_target orients the shape toward a picked unit. Omit for symmetric shapes such as radius and zone. Distinct from conditions.position, which selects which unit is picked."
     },
     "areaCount": {
       "type": "integer",
-      "description": "Size of the area in tiles: hex radius, line length, arc span, rectangle depth, or zone radius. -1 means the whole map."
+      "description": "Size of the area in tiles: hex radius, path length, arc span, rectangle depth, or zone radius. -1 means the whole map."
     },
     "damageType": {
       "$ref": "game_properties.schema.json#/$defs/damageType"

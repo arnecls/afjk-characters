@@ -1406,7 +1406,7 @@ window.AFKJ = window.AFKJ || {};
       return { tag: tag, targeting: targeting };
     }
     const enemyTargetingMatch = tag.match(
-      /^(.+?)\s*(?:—|–)\s*(All units|Area|Arc|Multiple targets|Single target)\s*$/i
+      /^(.+?)\s*(?:—|–)\s*(All units|Area|Arc|Multiple targets|Single target|path)\s*$/i
     );
     if (enemyTargetingMatch) {
       tag = enemyTargetingMatch[1].trim();
@@ -1422,7 +1422,17 @@ window.AFKJ = window.AFKJ || {};
   }
 
   function chipifySkillCardTag(raw, explicitPolarity) {
-    const split = parseSkillCardTag(raw);
+    let work = raw.trim();
+    if (!work) {
+      return "";
+    }
+    let tier = "";
+    const tierMatch = work.match(ASCENSION_TIER_SUFFIX_RE);
+    if (tierMatch) {
+      tier = tierMatch[1];
+      work = work.slice(0, tierMatch.index).trim();
+    }
+    const split = parseSkillCardTag(work);
     let tag = split.tag;
     if (!tag) {
       return "";
@@ -1430,23 +1440,14 @@ window.AFKJ = window.AFKJ || {};
     const parsed = parseEffectLabelParts(tag);
     const polarity = explicitPolarity || effectLabelPolarity(parsed.base) || "buff";
 
-    if (polarity === "debuff") {
-      const debuffChip = tryChipify(parsed.base);
-      if (debuffChip) {
-        return injectTierIntoChipHtml(
-          applyEffectPolarityToChipHtml(debuffChip, polarity),
-          parsed.tier
-        );
-      }
-    }
-
     tag = parsed.base;
+    const tierSuffix = tier || parsed.tier;
 
     if (split.targeting && targetingIndicatorMeta(split.targeting)) {
       const merged = mergeEffectWithTargeting(
         tag,
         split.targeting,
-        parsed.tier,
+        tierSuffix,
         polarity
       );
       if (merged) {
@@ -1454,29 +1455,39 @@ window.AFKJ = window.AFKJ || {};
       }
     }
 
+    if (polarity === "debuff") {
+      const debuffChip = tryChipify(tag);
+      if (debuffChip) {
+        return injectTierIntoChipHtml(
+          applyEffectPolarityToChipHtml(debuffChip, polarity),
+          tierSuffix
+        );
+      }
+    }
+
     const direct = tryChipify(tag);
     if (direct) {
       return injectTierIntoChipHtml(
         applyEffectPolarityToChipHtml(direct, polarity),
-        parsed.tier
+        tierSuffix
       );
     }
 
     const ccChip = extractChipHtml(chipifyLeadingCcType(tag));
     if (ccChip) {
-      return injectTierIntoChipHtml(ccChip, parsed.tier);
+      return injectTierIntoChipHtml(ccChip, tierSuffix);
     }
 
     const statChip = extractChipHtml(chipifyLeadingStat(tag));
     if (statChip) {
       return injectTierIntoChipHtml(
         applyEffectPolarityToChipHtml(statChip, polarity),
-        parsed.tier
+        tierSuffix
       );
     }
 
     const effectChip = extractChipHtml(
-      renderStandaloneEffectChip(tag, parsed.tier, polarity)
+      renderStandaloneEffectChip(tag, tierSuffix, polarity)
     );
     if (effectChip) {
       return effectChip;
@@ -1492,7 +1503,7 @@ window.AFKJ = window.AFKJ || {};
         label,
         effectChipClassForPolarity(polarity, "chip-generic")
       ),
-      parsed.tier
+      tierSuffix
     );
   }
 

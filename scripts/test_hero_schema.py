@@ -195,6 +195,36 @@ class RoundTripTests(unittest.TestCase):
         ]
         self.assertIn(("Unaffected", "Self"), imms)
 
+    def test_alna_shared_resolve_ally_buffs_no_spurious_max_hp_debuff(self):
+        hero, _data = self._hero_by_title_prefix("Alna")
+        section = rs.CATEGORY_TO_SECTION["skill1"]
+        sl = hero.skill_slices[section]
+        labels = {(e.category, e.label, e.targeting) for e in sl.effects}
+        self.assertIn(("buff", "Ally empower", "Single target"), labels)
+        self.assertIn(("buff", "Exemption", "Single target"), labels)
+        self.assertIn(("buff", "Max HP", "Single target"), labels)
+        self.assertNotIn(("debuff", "Max HP", "Single target"), labels)
+
+    def test_antandra_gale_barrier_damage_taken_ally(self):
+        hero, _data = self._hero_by_title_prefix("Antandra")
+        section = rs.CATEGORY_TO_SECTION["skill4"]
+        dmg_taken = [
+            e for e in hero.skill_slices[section].effects
+            if e.label == "Damage taken"
+        ]
+        self.assertTrue(dmg_taken)
+        self.assertEqual(dmg_taken[0].targeting, "Single target")
+
+    def test_antandra_enhance_force_phys_def_self(self):
+        hero, _data = self._hero_by_title_prefix("Antandra")
+        section = rs.CATEGORY_TO_SECTION["skill5"]
+        phys_def = [
+            e for e in hero.skill_slices[section].effects
+            if e.label == "Phys DEF"
+        ]
+        self.assertTrue(phys_def)
+        self.assertEqual(phys_def[0].targeting, "Self")
+
     def test_rhys_defensive_stance_self_buffs(self):
         hero, _data = self._hero_by_title_prefix("Rhys")
         section = rs.CATEGORY_TO_SECTION["skill1"]
@@ -234,6 +264,255 @@ class RoundTripTests(unittest.TestCase):
         haste = [e for e in hero.skill_slices[section].effects if e.label == "Haste"]
         self.assertTrue(haste)
         self.assertTrue(all(e.targeting == "Self" for e in haste))
+
+    def test_cassadee_running_tide_path_knockback_and_supreme_magic_def(self):
+        hero, _data = self._hero_by_title_prefix("Cassadee")
+        ult = hero.skill_slices["Ultimate"]
+        knockback = [e for e in ult.effects if e.category == "cc"]
+        self.assertTrue(knockback)
+        self.assertEqual(knockback[0].targeting, "Area")
+        self.assertEqual(knockback[0].area, "path")
+        self.assertEqual(knockback[0].area_direction, "selected_target")
+        magic_def = [
+            e for e in ult.effects if e.category == "debuff" and e.label == "Magic DEF"
+        ]
+        self.assertTrue(magic_def)
+        self.assertEqual(magic_def[0].tier, "Supreme+")
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        labels = tag_labels(tags)
+        self.assertIn("Magic DEF (Supreme+)", labels)
+        self.assertIn("Knock back — path", labels)
+
+    def test_cassadee_tidal_strength_magic_damage_blessed_ally(self):
+        hero, _data = self._hero_by_title_prefix("Cassadee")
+        skill2 = hero.skill_slices["Skill2"]
+        buffs = [
+            e
+            for e in skill2.effects
+            if e.category == "buff" and e.label == "Magic damage"
+        ]
+        self.assertTrue(buffs)
+        self.assertNotIn(
+            "Tidal Strength",
+            {e.label for e in skill2.effects},
+        )
+        base = [e for e in buffs if e.tier == "base"]
+        self.assertTrue(base)
+        self.assertEqual(base[0].targeting, "Self")
+        triggers = [
+            c
+            for c in base[0].conditions
+            if c.get("type") == "trigger_condition"
+            and c.get("trigger") == "normal_attack"
+        ]
+        self.assertTrue(triggers)
+        mythic_path = [
+            e
+            for e in skill2.effects
+            if e.category == "buff"
+            and e.label == "Magic damage"
+            and e.tier == "Mythic+"
+            and e.area == "path"
+        ]
+        self.assertTrue(mythic_path)
+        skill2_tags = rs.format_skill_card_tags(hero, "skill2")
+        skill2_labels = tag_labels(skill2_tags)
+        self.assertIn("Magic damage — Self", skill2_labels)
+        self.assertIn("Magic damage — path (Mythic+)", skill2_labels)
+        self.assertNotIn("Magic damage — Area (Mythic+)", skill2_labels)
+        skill4_tags = rs.format_skill_card_tags(hero, "skill4")
+        skill4_labels = tag_labels(skill4_tags)
+        self.assertNotIn("Magic damage — path", skill4_labels)
+
+    def test_cassadee_skill1_cc_targeting_with_ex10(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Cassadee")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        labels = tag_labels(tags)
+        self.assertIn("Stun — Single target", labels)
+        self.assertIn("Stun — Multiple targets (EX+10)", labels)
+        self.assertIn("Knock up — Single target", labels)
+        self.assertIn("Knock up — Multiple targets (EX+10)", labels)
+
+    def test_cassadee_processed_skill1_effects_preserve_targeting_variants(self):
+        hero, _data = self._hero_by_title_prefix("Cassadee")
+        skill1 = hero.skill_slices["Skill1"]
+        effects = hs._merge_effects(skill1.effects)
+
+        base_stun = [
+            e
+            for e in effects
+            if e.category == "cc" and e.label == "Stun" and e.tier == "base"
+        ]
+        self.assertTrue(base_stun)
+        self.assertEqual(base_stun[0].targeting, "Single target")
+
+        base_knockup = [
+            e
+            for e in effects
+            if e.category == "cc" and e.label == "Knock up" and e.tier == "base"
+        ]
+        self.assertTrue(base_knockup)
+        self.assertEqual(base_knockup[0].targeting, "Single target")
+
+        ex10_stun = [
+            e
+            for e in effects
+            if e.category == "cc" and e.label == "Stun" and e.tier == "EX+10"
+        ]
+        self.assertTrue(ex10_stun)
+        self.assertEqual(ex10_stun[0].targeting, "Multiple targets")
+
+        ex10_knockup = [
+            e
+            for e in effects
+            if e.category == "cc" and e.label == "Knock up" and e.tier == "EX+10"
+        ]
+        self.assertTrue(ex10_knockup)
+        self.assertEqual(ex10_knockup[0].targeting, "Multiple targets")
+
+    def test_cross_skill_enhancement_tags_include_ascension_tier(self):
+        hero, _data = self._hero_by_title_prefix("Cassadee")
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        labels = tag_labels(tags)
+        self.assertIn("Magic DEF (Supreme+)", labels)
+        reinier, _ = self._hero_by_title_prefix("Reinier")
+        skill1_tags = rs.format_skill_card_tags(reinier, "skill1")
+        skill1_labels = tag_labels(skill1_tags)
+        self.assertTrue(
+            any("(Mythic+)" in label for label in skill1_labels),
+            skill1_labels,
+        )
+
+    def test_zandrok_rallying_roar_wedge_path_damage(self):
+        hero, _data = self._hero_by_title_prefix("Zandrok")
+        skill1 = hero.skill_slices["Skill1"]
+        path_damage = [
+            e
+            for e in skill1.effects
+            if e.category == "damage" and e.area == "path"
+        ]
+        self.assertEqual(len(path_damage), 1)
+        self.assertEqual(path_damage[0].label, "Physical")
+        self.assertEqual(path_damage[0].area_count, 5)
+        self.assertEqual(path_damage[0].area_direction, "front")
+        active_area = [
+            e
+            for e in skill1.effects
+            if e.category == "buff"
+            and e.label in ("Haste", "Lifedrain")
+            and e.targeting == "Area"
+        ]
+        self.assertTrue(active_area)
+        self.assertTrue(all(e.area_count == 2 for e in active_area))
+
+    def test_zandrok_skill5_no_native_supreme_suffix(self):
+        hero, _data = self._hero_by_title_prefix("Zandrok")
+        tags = rs.format_skill_card_tags(hero, "skill5")
+        labels = tag_labels(tags)
+        self.assertIn("Direct healing — Self", labels)
+        self.assertFalse(any("(Supreme+)" in label for label in labels))
+
+    def test_ascension_cards_omit_native_tier_suffix(self):
+        native_by_category = {
+            "skill3": "Legendary+",
+            "skill4": "Mythic+",
+            "skill5": "Supreme+",
+        }
+        for record in io.load_heroes_data()["heroes"]:
+            hero = rs.hero_from_record(record)
+            rs.analyze_hero(hero)
+            for category, native in native_by_category.items():
+                for tag in rs.format_skill_card_tags(hero, category):
+                    self.assertNotIn(
+                        f"({native})",
+                        tag["label"],
+                        f"{record.get('name')}/{category}: {tag['label']}",
+                    )
+
+    def test_brutus_skill1_phys_def_has_area_targeting(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Brutus")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        labels = tag_labels(tags)
+        self.assertIn("Phys DEF — Area", labels)
+        self.assertIn("Taunt — Area", labels)
+        phys = next(
+            e
+            for e in hero.skill_slices["Skill1"].effects
+            if e.category == "debuff" and e.label == "Phys DEF"
+        )
+        self.assertEqual(phys.targeting, "Area")
+        self.assertEqual(phys.area_count, 2)
+
+    def test_canonical_chip_key_preserves_targeting_for_lifedrain_and_healing(
+        self,
+    ):
+        lifedrain_single = rs._canonical_skill_card_chip_key(
+            "Lifedrain — Single target"
+        )
+        lifedrain_multi = rs._canonical_skill_card_chip_key(
+            "Lifedrain — Multiple targets"
+        )
+        healing_self = rs._canonical_skill_card_chip_key(
+            "Direct healing — Self (EX+5)"
+        )
+        hot_area = rs._canonical_skill_card_chip_key("HoT — Area")
+        self.assertEqual(lifedrain_single, "lifedrain:single target")
+        self.assertEqual(lifedrain_multi, "lifedrain:multiple targets")
+        self.assertEqual(healing_self, "direct healing:self:ex+5")
+        self.assertEqual(hot_area, "hot:area")
+        self.assertNotEqual(lifedrain_single, lifedrain_multi)
+
+    def test_kordan_ultimate_lifedrain_shows_area_targeting(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if "Kordan" in r.get("title", ""))
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "ultimate")
+        labels = tag_labels(tags)
+        self.assertIn("Lifedrain — Area", labels)
+        self.assertNotIn("Lifedrain — Single target", labels)
+
+    def test_daimon_skill1_shield_is_self_not_single_target(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("title", "").startswith("Daimon"))
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        labels = tag_labels(tags)
+        self.assertIn("Shield — Self", labels)
+        self.assertNotIn("Shield — Single target", labels)
+
+    def test_skill_card_chip_rendering_includes_targeting(self):
+        script = SCRIPTS / "test_skill_card_chips.js"
+        result = subprocess.run(
+            ["node", str(script)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(
+            result.returncode,
+            0,
+            msg=result.stdout + result.stderr,
+        )
+
+    def test_evie_skill1_magic_def_shows_both_targetings(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Evie")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        tags = rs.format_skill_card_tags(hero, "skill1")
+        labels = tag_labels(tags)
+        self.assertIn("Magic DEF — Single target", labels)
+        self.assertIn("Magic DEF — All units", labels)
+        keys = [rs._canonical_skill_card_chip_key(label) for label in labels]
+        self.assertEqual(len(keys), len(set(keys)))
 
     def test_aliceth_aegis_wings_blind_cc(self):
         processed = io.load_processed()
@@ -503,7 +782,9 @@ class SkillOverviewTests(unittest.TestCase):
             for t in mythic["tags"]
         ]
         self.assertEqual(len(mythic_keys), len(set(mythic_keys)))
-        self.assertEqual(mythic_keys.count("blind:area"), 1)
+        blind_keys = [k for k in mythic_keys if k.startswith("blind:")]
+        self.assertGreaterEqual(len(blind_keys), 1)
+        self.assertEqual(len(blind_keys), len(set(blind_keys)))
 
     def test_skill_card_chip_key_haste_debuff_distinct_from_haste_buff(self):
         label_key = rs._canonical_skill_card_chip_key("Haste")
@@ -520,7 +801,7 @@ class SkillOverviewTests(unittest.TestCase):
         buff_key = rs._canonical_skill_card_chip_key("Damage dealt — Self")
         self.assertEqual(debuff_key, "damage dealt")
         self.assertEqual(taken_key, "damage taken")
-        self.assertEqual(buff_key, "damage dealt")
+        self.assertEqual(buff_key, "damage dealt:self")
         self.assertNotEqual(f"{debuff_key}:debuff", taken_key)
         self.assertNotEqual(f"{buff_key}:buff", f"{debuff_key}:debuff")
 
@@ -546,7 +827,7 @@ class SkillOverviewTests(unittest.TestCase):
 
     def test_skill_card_chip_key_ranged_def_buff_not_ranged_damage(self):
         key = rs._canonical_skill_card_chip_key("Ranged DEF — Self")
-        self.assertEqual(key, "ranged def")
+        self.assertEqual(key, "ranged def:self")
         self.assertNotEqual(key, "ranged")
 
     def test_eironn_legendary_skill_card_ranged_def_tags(self):
@@ -554,7 +835,7 @@ class SkillOverviewTests(unittest.TestCase):
         tags = rs.format_skill_card_tags(hero, "skill3")
         self.assertEqual(tag_labels(tags), ["Ranged DEF — Self"])
         keys = [rs._canonical_skill_card_chip_key(t["label"]) for t in tags]
-        self.assertIn("ranged def", keys)
+        self.assertIn("ranged def:self", keys)
         self.assertNotIn("ranged", keys)
         self.assertNotIn("def buff", keys)
 
@@ -562,26 +843,26 @@ class SkillOverviewTests(unittest.TestCase):
         hero = self._hero_analyzed("Perseus")
         tags = rs.format_skill_card_tags(hero, "skill2")
         labels = tag_labels(tags)
-        self.assertIn("ATK", labels)
-        self.assertIn("Phys DEF", labels)
-        self.assertIn("Magic DEF", labels)
+        self.assertIn("ATK — Multiple targets", labels)
+        self.assertIn("Phys DEF — Multiple targets", labels)
+        self.assertIn("Magic DEF — Multiple targets", labels)
         keys = [rs._canonical_skill_card_chip_key(t["label"]) for t in tags]
-        self.assertIn("atk", keys)
-        self.assertIn("phys def", keys)
-        self.assertIn("magic def", keys)
+        self.assertIn("atk:multiple targets", keys)
+        self.assertIn("phys def:multiple targets", keys)
+        self.assertIn("magic def:multiple targets", keys)
         self.assertEqual(len(keys), len(set(keys)))
 
     def test_contess_skill2_skill_card_energy_recovery_debuff(self):
         hero = self._hero_analyzed("Contess")
         tags = rs.format_skill_card_tags(hero, "skill2")
-        assert_tag_in(self, "Energy", tags, polarity="debuff")
+        assert_tag_in(self, "Energy — Multiple targets", tags, polarity="debuff")
         assert_tag_not_in(self, "Energy", tags, polarity="buff")
 
     def test_galahad_ultimate_skill_card_includes_haste_debuff(self):
         hero = self._hero_analyzed("Galahad")
         tags = rs.format_skill_card_tags(hero, "ultimate")
-        assert_tag_in(self, "Haste", tags, polarity="debuff")
-        assert_tag_in(self, "Movement speed", tags, polarity="debuff")
+        assert_tag_in(self, "Haste — Area", tags, polarity="debuff")
+        assert_tag_in(self, "Movement speed — Area", tags, polarity="debuff")
         dedupe_keys = []
         for tag in tags:
             key = rs._canonical_skill_card_chip_key(tag["label"])
@@ -596,8 +877,8 @@ class SkillOverviewTests(unittest.TestCase):
         assert_tag_in(self, "Energy — Self", tags, polarity="buff")
         assert_tag_in(self, "ATK SPD — Self", tags, polarity="buff")
         keys = [rs._canonical_skill_card_chip_key(t["label"]) for t in tags]
-        self.assertIn("energy", keys)
-        self.assertIn("atk spd", keys)
+        self.assertIn("energy:self", keys)
+        self.assertIn("atk spd:self", keys)
 
     def test_tasi_ultimate_cc_tags_include_targeting(self):
         hero = self._hero_analyzed("Tasi")
@@ -640,7 +921,11 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("Physical", tag_labels(ult_tags))
         mythic_tags = rs.format_skill_card_tags(hero, "skill4")
         self.assertNotIn("True damage", tag_labels(mythic_tags))
-        self.assertIn("Max HP-based damage", tag_labels(mythic_tags))
+        mythic_labels = tag_labels(mythic_tags)
+        self.assertTrue(
+            any(label.startswith("Max HP-based damage") for label in mythic_labels),
+            mythic_labels,
+        )
 
     def test_skill_card_damage_tags_match_skill_slices(self):
         """Damage chips come from skill_slices, not a parallel text re-parse."""
@@ -656,10 +941,10 @@ class SkillOverviewTests(unittest.TestCase):
                 damage_in_tags = [
                     label
                     for label in labels
-                    if label in rs._SKILL_CARD_DAMAGE_KEYS
+                    if label.split(" (")[0] in rs._SKILL_CARD_DAMAGE_KEYS
                 ]
                 expected = rs._skill_card_damage_labels(
-                    hero, hero.skill_slices[section]
+                    hero, hero.skill_slices[section], category
                 )
                 self.assertEqual(
                     damage_in_tags,

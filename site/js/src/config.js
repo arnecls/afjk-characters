@@ -196,6 +196,7 @@ window.AFKJ.config = {
     "multiple targets": { emoji: "👥", cls: "chip-target" },
     "all units": { emoji: "🌐", cls: "chip-target" },
     area: { emoji: "⭕", cls: "chip-target" },
+    path: { emoji: "〰️", cls: "chip-target" },
     arc: { emoji: "📐", cls: "chip-target" },
     self: { emoji: "🪞", cls: "chip-target" },
     allies: { emoji: "🤝", cls: "chip-target" },

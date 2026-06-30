@@ -341,6 +341,8 @@ def _targeting_to_schema(
     summon: bool = False,
     area_count: int | None = None,
     target_count: int | None = None,
+    area: str | None = None,
+    area_direction: str | None = None,
 ) -> dict[str, Any]:
     if targeting == "Self":
         return {"target": "self", "area": "single", "target_count": 1}
@@ -374,7 +376,16 @@ def _targeting_to_schema(
         }
     if targeting == "All units":
         return {"target": base, "area": "zone", "target_count": -1, "area_count": -1}
-    return {"target": base, "area": "single", "target_count": 1}
+    result = {"target": base, "area": "single", "target_count": 1}
+    if area:
+        result["area"] = area
+        if area_count is not None:
+            result["area_count"] = area_count
+        if area_direction:
+            result["area_direction"] = area_direction
+        if area in ("arc", "radius", "path", "rectangle", "zone"):
+            result["target_count"] = -1
+    return result
 
 
 def _schema_to_targeting(
@@ -394,7 +405,7 @@ def _schema_to_targeting(
         return rs.ALL_SUMMON_BUFF_TARGETING
     if area == "arc":
         return "Arc"
-    if area in ("radius", "rectangle", "line"):
+    if area in ("radius", "rectangle", "path"):
         return "Area"
     if area == "zone" and effect.get("area_count") == -1:
         return "All units"
@@ -584,6 +595,8 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
                     duration=getattr(eff, "duration", None),
                     conditional=eff.conditional,
                     conditions=list(getattr(eff, "conditions", None) or []),
+                    area=getattr(eff, "area", None),
+                    area_direction=getattr(eff, "area_direction", None),
                     source_section=getattr(eff, "source_section", None),
                 )
             )
@@ -612,6 +625,12 @@ def _merge_effects(effects: list[Any]) -> list[Any]:
             cur.duration is None or eff_duration > cur.duration
         ):
             cur.duration = eff_duration
+        eff_area = getattr(eff, "area", None)
+        if eff_area is not None:
+            cur.area = eff_area
+        eff_area_dir = getattr(eff, "area_direction", None)
+        if eff_area_dir is not None:
+            cur.area_direction = eff_area_dir
         if eff.numeric is not None and (
             cur.numeric is None or eff.numeric > cur.numeric
         ):
@@ -699,6 +718,55 @@ def _schema_effect_is_complete(effect: dict[str, Any]) -> bool:
     return True
 
 
+def _spatial_from_effect(
+    effect: Any,
+    category: str,
+    *,
+    summon: bool = False,
+) -> dict[str, Any]:
+    """Map legacy targeting plus optional area overrides to schema spatial fields."""
+    spatial = _targeting_to_schema(
+        effect.targeting,
+        category,
+        summon=summon,
+        area_count=getattr(effect, "area_count", None),
+        target_count=getattr(effect, "target_count", None),
+        area=getattr(effect, "area", None),
+        area_direction=getattr(effect, "area_direction", None),
+    )
+    effect_area = getattr(effect, "area", None)
+    effect_area_dir = getattr(effect, "area_direction", None)
+    if effect_area:
+        spatial["area"] = effect_area
+    if effect_area_dir:
+        spatial["area_direction"] = effect_area_dir
+    area_count = getattr(effect, "area_count", None)
+    if area_count is not None and spatial.get("area") in (
+        "radius",
+        "path",
+        "rectangle",
+        "arc",
+        "zone",
+    ):
+        spatial["area_count"] = area_count
+    return spatial
+
+
+def _legacy_spatial_from_schema(effect: dict[str, Any]) -> dict[str, Any]:
+    """Extract area fields for round-trip into legacy Effect objects."""
+    area = effect.get("area")
+    fields: dict[str, Any] = {}
+    if area:
+        fields["area"] = area
+    area_direction = effect.get("area_direction")
+    if area_direction:
+        fields["area_direction"] = area_direction
+    area_count = effect.get("area_count")
+    if area_count is not None and area in ("radius", "path", "rectangle", "arc"):
+        fields["area_count"] = area_count
+    return fields
+
+
 def effect_to_schema(
     effect: Any,
     *,
@@ -715,12 +783,10 @@ def effect_to_schema(
         "is_max_known": is_max_known,
     }
     out.update(
-        _targeting_to_schema(
-            effect.targeting,
+        _spatial_from_effect(
+            effect,
             category,
             summon=is_summon_buff,
-            area_count=getattr(effect, "area_count", None),
-            target_count=getattr(effect, "target_count", None),
         )
     )
     conditions = list(getattr(effect, "conditions", None) or [])
@@ -862,11 +928,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
     numeric = _numeric_from_value(effect.get("value"))
     conditional = _conditions_to_conditional(effect.get("conditions"))
     schema_conditions = list(effect.get("conditions") or [])
-    area_count = (
-        effect.get("area_count")
-        if effect.get("area") == "radius"
-        else None
-    )
+    spatial = _legacy_spatial_from_schema(effect)
 
     if etype == "crowd_control":
         label = to_display_cc(effect.get("cc-type", "stun"))
@@ -882,7 +944,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
-            area_count=area_count,
+            **spatial,
         )
 
     if etype == "immunity":
@@ -905,7 +967,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
-            area_count=area_count,
+            **spatial,
         )
 
     if etype in ("buff", "stat_mod", "shield", "heal"):
@@ -919,7 +981,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
-            area_count=area_count,
+            **spatial,
         )
 
     if etype == "debuff":
@@ -933,7 +995,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
-            area_count=area_count,
+            **spatial,
         )
 
     if etype == "damage":
@@ -947,7 +1009,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
-            area_count=area_count,
+            **spatial,
         )
 
     if etype == "dot" and effect.get("damage_type"):
@@ -960,7 +1022,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
             qualitative="",
             conditional=conditional,
             conditions=schema_conditions,
-            area_count=area_count,
+            **spatial,
         )
 
     name = effect.get("name", etype.replace("_", " ").title())
@@ -973,7 +1035,7 @@ def schema_effect_to_effect(effect: dict[str, Any], *, summon: bool = False) -> 
         qualitative="",
         conditional=conditional,
         conditions=schema_conditions,
-        area_count=area_count,
+        **spatial,
     )
 
 
