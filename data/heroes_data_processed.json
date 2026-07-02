@@ -1338,14 +1338,20 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
+              "name": "Basic stats",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
             }
           ],
           "tier": "supreme+",
           "skill_card_tags": [
             {
-              "label": "ATK",
+              "label": "Basic stats",
               "polarity": "buff"
             }
           ]
@@ -2888,7 +2894,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "fast",
+        "non_ult_speed": "average",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -4006,7 +4012,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "true": "average",
+        "true": "high",
         "hp_loss": "average"
       },
       "benefit_stats": [
@@ -4036,7 +4042,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "HP loss": "average"
             }
           },
@@ -4048,7 +4054,7 @@
             "buffs": "average",
             "debuffs": "none",
             "damage_types": {
-              "True damage": "average",
+              "True damage": "high",
               "HP loss": "average"
             }
           },
@@ -12398,7 +12404,7 @@
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": false,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 20.0,
         "placement_constraints": [],
@@ -12413,7 +12419,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "high",
             "heal": "none",
@@ -16665,17 +16671,6 @@
           },
           "effects": [
             {
-              "tier": "supreme+",
-              "targeting_label": "Owned summons",
-              "is_max_known": true,
-              "target": "own_summons",
-              "area": "single",
-              "target_count": 1,
-              "type": "buff",
-              "name": "ATK",
-              "label": "buff_summon_offensive"
-            },
-            {
               "type": "immunity",
               "tier": "supreme+",
               "immunity_type": "immune",
@@ -16688,10 +16683,6 @@
           ],
           "tier": "supreme+",
           "skill_card_tags": [
-            {
-              "label": "ATK — Owned",
-              "polarity": "buff"
-            },
             {
               "label": "Immune — Self"
             }
@@ -20519,16 +20510,16 @@
         "casting_speed": "fast",
         "signature_skill_name": "Pretty Fireball",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "average",
         "avg_attack_range": 5.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -20539,7 +20530,7 @@
             }
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "average",
             "heal": "none",
@@ -22296,8 +22287,14 @@
               "area": "single",
               "target_count": 1,
               "type": "buff",
-              "name": "ATK",
-              "label": "buff_offensive"
+              "name": "Basic stats",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 13.0
+                }
+              ]
             },
             {
               "tier": "base",
@@ -22330,7 +22327,7 @@
               "polarity": "buff"
             },
             {
-              "label": "ATK",
+              "label": "Basic stats",
               "polarity": "buff"
             },
             {
@@ -23591,7 +23588,7 @@
       "behavior": {
         "movement": "stationary",
         "movement_note": "no finite attack range",
-        "casting_speed": "average",
+        "casting_speed": "fast",
         "signature_skill_name": "Mechanized Bond",
         "signature_skill_is_ult": false,
         "signature_skill_speed": "fast",
@@ -24594,7 +24591,7 @@
         ]
       ],
       "damage_magnitudes": {
-        "max_hp": "average",
+        "max_hp": "low",
         "true": "average"
       },
       "benefit_stats": [
@@ -25197,7 +25194,7 @@
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": 5.0,
         "placement_constraints": [
           {
@@ -29559,6 +29556,625 @@
         }
       }
     },
+    "Lamentis": {
+      "long_name": "Lamentis - Cosmic Hellion",
+      "faction": "hypogean",
+      "class": "marksman",
+      "role_category": "damage_dealer",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 7,
+      "release_date": "2026-07-02",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Malevolent Gaze": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies. Lamentis then deals 600% (ATK-based) + 60% damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP. After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s.",
+            "active": [
+              "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies.",
+              "Lamentis then deals 600% (ATK-based) + 60% damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP.",
+              "After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage dealt to 640% (ATK-based) + 60%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage dealt to 680% (ATK-based) + 60%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage dealt to 720% (ATK-based) + 60%."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage dealt to 760% (ATK-based) + 60%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3.5
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "debuff",
+              "name": "Max HP",
+              "label": "debuff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "crowd_control",
+              "cc-type": "stun"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 820.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ],
+              "duration": 10.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ],
+              "duration": 10.0
+            }
+          ],
+          "skill_range": 0,
+          "initial_energy": 600.0,
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "ATK SPD — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK SPD — Owned",
+              "polarity": "buff"
+            },
+            {
+              "label": "Max HP — All units",
+              "polarity": "debuff"
+            },
+            {
+              "label": "Stun — Single target"
+            },
+            {
+              "label": "Stun — All units"
+            }
+          ]
+        },
+        "Starcrusher": {
+          "category": "skill1",
+          "description": {
+            "raw": "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% damage plus extra damage equal to 20% + 2% of the target's max HP. The extra damage cannot exceed 240% (ATK-based) + 30%.",
+            "active": [
+              "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% damage plus extra damage equal to 20% + 2% of the target's max HP.",
+              "The extra damage cannot exceed 240% (ATK-based) + 30%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases base damage to 220% (ATK-based) + 30%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases base damage to 230% (ATK-based) + 30%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases base damage to 240% (ATK-based) + 30%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 22.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 270.0
+                }
+              ]
+            }
+          ],
+          "skill_card_tags": [
+            {
+              "label": "Magic"
+            },
+            {
+              "label": "Max HP-based damage"
+            }
+          ]
+        },
+        "Astral Fission": {
+          "category": "skill2",
+          "description": {
+            "raw": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles. The apostles last 12s and inherit 45% + 6% of Lamentis' ATK and 80% + 8% of his HP. They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target. Up to 6 apostles can exist on the battlefield at the same time. If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active.",
+            "active": [
+              "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles.",
+              "The apostles last 12s and inherit 45% + 6% of Lamentis' ATK and 80% + 8% of his HP.",
+              "They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target.",
+              "Up to 6 apostles can exist on the battlefield at the same time.",
+              "If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 50% + 6%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 55% + 6%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 60% + 6%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 10.0,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Lamentis and his apostles gain 20 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD.",
+            "active": [
+              "Lamentis and his apostles gain 20 ATK SPD.",
+              "For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Lamentis and his apostles gain 25 ATK SPD.",
+                  "For each of his apostles present on the battlefield, they gain an extra 4 ATK SPD."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Lamentis and his apostles gain 30 ATK SPD.",
+                  "For each of his apostles present on the battlefield, they gain an extra 5 ATK SPD."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ]
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_summon_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ]
+            }
+          ],
+          "tier": "legendary+",
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "ATK SPD — Self",
+              "polarity": "buff"
+            },
+            {
+              "label": "ATK SPD — Owned",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Omnisight": {
+          "category": "skill4",
+          "description": {
+            "raw": "Every time an apostle uses a normal attack, it gains 1 stack of Growth. Each stack of Growth increases basic stats by 4%. When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth. Lamentis can have up to 20 stacks of Growth.",
+            "active": [
+              "Every time an apostle uses a normal attack, it gains 1 stack of Growth.",
+              "Each stack of Growth increases basic stats by 4%.",
+              "When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth.",
+              "Lamentis can have up to 20 stacks of Growth."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the basic stats granted by each stack of Growth to 5%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Increases the basic stats granted by each stack of Growth to 6%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "When Lamentis reaches the maximum Growth stacks gained from this skill, he opens his Six Eyes and unlocks his full potential, allowing him to create apostles every 3s at no cost until the apostle limit is reached.",
+                  "While Lamentis' Six Eyes are active, Starcrusher cast by him and his apostles deals 240% (ATK-based) extra true damage, and the apostles no longer expire.",
+                  "Lamentis also recovers HP equal to 80% of the actual damage dealt by his apostles and gains 20% of the Energy they gain."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Basic stats",
+              "label": "buff_summon_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 6.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 240.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+15",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 20.0
+                }
+              ]
+            }
+          ],
+          "tier": "mythic+",
+          "skill_card_tags": [
+            {
+              "label": "True damage (EX+15)"
+            },
+            {
+              "label": "Direct healing — Self (EX+15)",
+              "polarity": "buff"
+            },
+            {
+              "label": "Basic stats — Owned",
+              "polarity": "buff"
+            },
+            {
+              "label": "Energy — Self (EX+15)",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs.",
+            "active": [
+              "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs."
+            ]
+          },
+          "effects": [],
+          "tier": "supreme+",
+          "passive_only": true,
+          "skill_card_tags": []
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Self",
+            "description": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles."
+          },
+          {
+            "label": "Stacking",
+            "tier": "mythic+",
+            "targeting": "Single target",
+            "description": "Lamentis can have up to 20 stacks of Growth."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "magic",
+          "All units, Single target"
+        ],
+        [
+          "max_hp",
+          "Single target"
+        ],
+        [
+          "true",
+          "Single target"
+        ]
+      ],
+      "damage_magnitudes": {
+        "max_hp": "high",
+        "true": "average"
+      },
+      "benefit_stats": [
+        "atk_spd",
+        "healing",
+        "energy"
+      ],
+      "behavior": {
+        "movement": "moving",
+        "movement_note": "avg attack range 0.0 tiles",
+        "casting_speed": "average",
+        "signature_skill_name": "Omnisight",
+        "signature_skill_is_ult": false,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": false,
+        "ult_speed": "slow",
+        "non_ult_speed": "fast",
+        "avg_attack_range": 0.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "True damage": "average"
+            }
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "fast",
+            "damage": "high",
+            "heal": "none",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Magic": "high"
+            }
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "average",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {
+              "Max HP-based damage": "average",
+              "Magic": "low",
+              "True damage": "average"
+            }
+          }
+        }
+      }
+    },
     "Lenya": {
       "long_name": "Lenya - Wild Cyclone",
       "faction": "wilder",
@@ -33058,16 +33674,16 @@
         "casting_speed": "average",
         "signature_skill_name": "Eternal Serenity",
         "signature_skill_is_ult": true,
-        "signature_skill_speed": "average",
-        "synergy_signature_speed": "average",
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "slow",
         "avg_attack_range": 6.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -33076,7 +33692,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -33512,7 +34128,7 @@
               "value": [
                 {
                   "type": "percentage",
-                  "value": 210.0
+                  "value": 500.0
                 }
               ]
             },
@@ -33525,6 +34141,45 @@
               "target_count": 1,
               "type": "crowd_control",
               "cc-type": "knock_up"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 500.0
+                }
+              ]
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 1.0
             },
             {
               "type": "immunity",
@@ -33545,11 +34200,18 @@
               "label": "Physical"
             },
             {
+              "label": "Shield — Self (Supreme+)",
+              "polarity": "buff"
+            },
+            {
               "label": "ATK",
               "polarity": "debuff"
             },
             {
               "label": "Knock up"
+            },
+            {
+              "label": "Stun (Supreme+)"
             },
             {
               "label": "Unaffected — Self"
@@ -33562,6 +34224,15 @@
             "raw": "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.",
             "active": [
               "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with ): The first time Lumont casts Totem Slam, he gains a Totem Ward shield equal to 500% (ATK-based) and permanently enhances War Stomp, increasing its stun duration by 1s."
+                ]
+              }
             ]
           },
           "effects": [
@@ -36130,7 +36801,7 @@
         "synergy_signature_speed": "slow",
         "synergy_signature_is_ult": true,
         "ult_speed": "slow",
-        "non_ult_speed": "average",
+        "non_ult_speed": "fast",
         "avg_attack_range": 2.0,
         "placement_constraints": [],
         "skill_overview": {
@@ -41926,6 +42597,557 @@
         }
       }
     },
+    "Peggy": {
+      "long_name": "Peggy - Empire's Jewel",
+      "faction": "lightbearer",
+      "class": "support",
+      "role_category": "support",
+      "is_energy_provider": false,
+      "is_melee": false,
+      "is_dual_range": false,
+      "default_range": 6,
+      "release_date": "2026-07-02",
+      "season": "Crown of Ashes",
+      "season_number": 7,
+      "skills": {
+        "Princess Rally": {
+          "category": "ultimate",
+          "description": {
+            "raw": "Passive. When a battle starts, Peggy summons 2 royal guards to join the fray. The royal guards inherit 120% + 16% of Peggy's HP and 50% + 7% of her ATK. If Peggy is defeated, all royal guards immediately leave the battlefield. Active. Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP. If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield. Peggy then orders these royal guards to protect all allies for 12s. During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.",
+            "passive": [
+              "When a battle starts, Peggy summons 2 royal guards to join the fray.",
+              "The royal guards inherit 120% + 16% of Peggy's HP and 50% + 7% of her ATK.",
+              "If Peggy is defeated, all royal guards immediately leave the battlefield."
+            ],
+            "active": [
+              "Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP.",
+              "If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield.",
+              "Peggy then orders these royal guards to protect all allies for 12s.",
+              "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "The roval quards inherit 130% + 16% of Peggy's HP and 55% + 7% of her ATK."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "The roval quards inherit 140% + 16% of Peggy's HP and 60% + 7% of her ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "The roval quards inherit 150% + 16% of Peggy's HP and 65% + 7% of her ATK."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "The roval quards inherit 160% + 16% of Peggy's HP and 70% + 7% of her ATK."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_summon_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 75.0
+                }
+              ]
+            }
+          ],
+          "initial_energy": 600.0,
+          "skill_card_tags": [
+            {
+              "label": "Direct healing — Owned",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage taken — Owned",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Royal Scroll": {
+          "category": "skill1",
+          "description": {
+            "raw": "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% HP per second for 8s.",
+            "active": [
+              "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% HP per second for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the HP restored per second to 160% (ATK-based) + 18%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the HP restored per second to 170% (ATK-based) + 18%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the HP restored per second to 180% (ATK-based) + 18%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 150.0
+                }
+              ],
+              "duration": 8,
+              "tick": 1.0
+            }
+          ],
+          "cooldown": 8.0,
+          "initial_cooldown": 2.0,
+          "skill_card_tags": [
+            {
+              "label": "HoT — Owned",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Royal Barrage": {
+          "category": "skill2",
+          "description": {
+            "raw": "Peggy summons a royal marksman in the backline to assist in battle. The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% damage to 2 frontmost enemies. Enemies hit by the armor-piercing arrows take 22% + 3% more ranged damage for the next 5s. During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2%.",
+            "active": [
+              "Peggy summons a royal marksman in the backline to assist in battle.",
+              "The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% damage to 2 frontmost enemies.",
+              "Enemies hit by the armor-piercing arrows take 22% + 3% more ranged damage for the next 5s.",
+              "During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 23% + 3%.",
+                  "For allied summons, their additional ranged damage against these enemies is increased to 16% + 2%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 24% + 3%.",
+                  "For allied summons, their additional ranged damage against these enemies is increased to 18% + 2%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 25% + 3%.",
+                  "For allied summons, their additional ranged damage against these enemies is increased to 20% + 2%."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 220.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Ranged damage",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 22.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All summons",
+              "is_max_known": true,
+              "target": "all_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Ranged damage",
+              "label": "buff_summon_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 16.0
+                }
+              ]
+            }
+          ],
+          "cooldown": 12.0,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Ranged damage — Summons",
+              "polarity": "buff"
+            },
+            {
+              "label": "Ranged damage — Single target",
+              "polarity": "debuff"
+            }
+          ]
+        },
+        "Hero Focus": {
+          "category": "skill3",
+          "description": {
+            "raw": "Increases Haste by 10. If 2 royal guards are on the battlefield, further increases Haste by 5.",
+            "active": [
+              "Increases Haste by 10.",
+              "If 2 royal guards are on the battlefield, further increases Haste by 5."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases Haste by 12.",
+                  "If 2 royal guards are on the battlefield, further increases Haste by 8."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases Haste by 15.",
+                  "If 2 royal guards are on the battlefield, further increases Haste by 10."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 12.0
+                }
+              ]
+            }
+          ],
+          "tier": "legendary+",
+          "skill_range": 1,
+          "skill_card_tags": [
+            {
+              "label": "Haste — Self",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Royal Protection": {
+          "category": "skill4",
+          "description": {
+            "raw": "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt.",
+            "active": [
+              "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the damage dealt by royal sword moves to 240% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "The royal guards gain a 1-tile glory aura.",
+                  "All other allies within the aura deal 30% more melee damage; this melee damage bonus is increased by an extra 25% for allied summons."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the damage dealt by royal sword moves to 280% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 280.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "type": "buff",
+              "name": "Damage dealt",
+              "label": "buff_stat"
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            }
+          ],
+          "tier": "mythic+",
+          "skill_range": 10,
+          "skill_card_tags": [
+            {
+              "label": "Physical"
+            },
+            {
+              "label": "Shield — Owned",
+              "polarity": "buff"
+            },
+            {
+              "label": "Damage dealt — Multiple targets (EX+10)",
+              "polarity": "buff"
+            }
+          ]
+        },
+        "Enhance Force": {
+          "category": "skill5",
+          "description": {
+            "raw": "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF.",
+            "active": [
+              "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF."
+            ]
+          },
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "All summons",
+              "is_max_known": true,
+              "target": "all_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_summon_offensive"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "All summons",
+              "is_max_known": true,
+              "target": "all_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "DEF",
+              "label": "buff_summon_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ]
+            }
+          ],
+          "tier": "supreme+",
+          "skill_card_tags": [
+            {
+              "label": "ATK — Summons",
+              "polarity": "buff"
+            },
+            {
+              "label": "DEF — Summons",
+              "polarity": "buff"
+            }
+          ]
+        }
+      },
+      "synergy_profile": {
+        "provides": [
+          {
+            "label": "Summoning",
+            "tier": "base",
+            "targeting": "Single target",
+            "description": "When a battle starts, Peggy summons 2 royal guards to join the fray."
+          },
+          {
+            "label": "Damage absorption (allies)",
+            "tier": "base",
+            "targeting": "All units",
+            "description": "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%."
+          }
+        ],
+        "requires": []
+      },
+      "damage_entries": [
+        [
+          "physical",
+          "Area, Single target"
+        ]
+      ],
+      "damage_magnitudes": {},
+      "benefit_stats": [
+        "atk",
+        "haste",
+        "shield"
+      ],
+      "behavior": {
+        "movement": "stationary",
+        "movement_note": "no finite attack range",
+        "casting_speed": "slow",
+        "signature_skill_name": "Princess Rally",
+        "signature_skill_is_ult": true,
+        "signature_skill_speed": "fast",
+        "synergy_signature_speed": "fast",
+        "synergy_signature_is_ult": true,
+        "ult_speed": "slow",
+        "non_ult_speed": "slow",
+        "avg_attack_range": 6.0,
+        "placement_constraints": [],
+        "skill_overview": {
+          "signature": {
+            "speed": "slow",
+            "first_cast_speed": "fast",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "ultimate": {
+            "speed": "slow",
+            "first_cast_speed": "fast",
+            "damage": "none",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "none",
+            "damage_types": {}
+          },
+          "non_ultimate": {
+            "speed": "fast",
+            "first_cast_speed": "none",
+            "damage": "high",
+            "heal": "average",
+            "buffs": "average",
+            "debuffs": "average",
+            "damage_types": {
+              "Physical": "average"
+            }
+          }
+        }
+      }
+    },
     "Phraesto": {
       "long_name": "Phraesto - Misty Scorpion",
       "faction": "hypogean",
@@ -45152,11 +46374,46 @@
             "raw": "Rowan places 1 more health potion when a battle starts using Smart Stall.",
             "active": [
               "Rowan places 1 more health potion when a battle starts using Smart Stall."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with ): Rowan upgrades his Energy potion into a super Energy potion.",
+                  "It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s.",
+                  "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her."
+                ]
+              }
             ]
           },
-          "effects": [],
-          "passive_only": true,
-          "skill_card_tags": []
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ],
+              "duration": 6.0
+            }
+          ],
+          "tier": "supreme+",
+          "skill_card_tags": [
+            {
+              "label": "ATK — Self",
+              "polarity": "buff"
+            }
+          ]
         }
       },
       "synergy_profile": {
@@ -45184,6 +46441,7 @@
       ],
       "damage_magnitudes": {},
       "benefit_stats": [
+        "atk",
         "haste",
         "max_hp",
         "energy"
@@ -51301,13 +52559,13 @@
         "signature_skill_speed": "fast",
         "synergy_signature_speed": "fast",
         "synergy_signature_is_ult": true,
-        "ult_speed": "average",
+        "ult_speed": "fast",
         "non_ult_speed": "fast",
         "avg_attack_range": 8.0,
         "placement_constraints": [],
         "skill_overview": {
           "signature": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -51316,7 +52574,7 @@
             "damage_types": {}
           },
           "ultimate": {
-            "speed": "average",
+            "speed": "fast",
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
@@ -51702,7 +52960,13 @@
               "target_count": 1,
               "type": "buff",
               "name": "DEF",
-              "label": "buff_summon_defensive"
+              "label": "buff_summon_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 8.0
+                }
+              ]
             },
             {
               "tier": "mythic+",
@@ -58807,6 +60071,44 @@
             },
             {
               "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "buff",
+              "name": "Basic stats",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 33.0
+                }
+              ],
+              "duration": 10.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "debuff",
+              "name": "Basic stats",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 33.0
+                }
+              ],
+              "duration": 10.0
+            },
+            {
+              "tier": "base",
               "targeting_label": "Multiple targets",
               "is_max_known": true,
               "target": "enemy",
@@ -58832,6 +60134,14 @@
             {
               "label": "Direct healing — Multiple targets",
               "polarity": "buff"
+            },
+            {
+              "label": "Basic stats — All units",
+              "polarity": "buff"
+            },
+            {
+              "label": "Basic stats — All units",
+              "polarity": "debuff"
             },
             {
               "label": "Haste — Area",
@@ -59185,7 +60495,7 @@
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "average",
             "damage_types": {}
           },
@@ -59194,7 +60504,7 @@
             "first_cast_speed": "none",
             "damage": "none",
             "heal": "average",
-            "buffs": "none",
+            "buffs": "average",
             "debuffs": "average",
             "damage_types": {}
           },

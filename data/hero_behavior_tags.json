@@ -285,6 +285,13 @@
     "high-initial-energy",
     "summoner"
   ],
+  "Lamentis": [
+    "aoe-damage",
+    "high-initial-energy",
+    "hp-scaling",
+    "mass-cc",
+    "summoner"
+  ],
   "Lenya": [
     "assassin",
     "counterattack",
@@ -405,6 +412,13 @@
   "Perseus": [
     "ally-buffer",
     "aoe-damage"
+  ],
+  "Peggy": [
+    "ally-buffer",
+    "ally-healer",
+    "ally-shielder",
+    "high-initial-energy",
+    "summoner"
   ],
   "Phraesto": [
     "ally-buffer",

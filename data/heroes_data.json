@@ -13147,6 +13147,239 @@
       "role_category": "tank"
     },
     {
+      "title": "Lamentis - Cosmic Hellion",
+      "name": "Lamentis",
+      "tags": "Hypogean · Marksman · Magic",
+      "faction": "Hypogean",
+      "class": "Marksman",
+      "damage_type": "Magic",
+      "description": "A trigger-happy Marksman who calls on apostles to help him tear through the enemy.",
+      "skills": [
+        {
+          "section": "Ultimate",
+          "name": "Malevolent Gaze",
+          "unlock": "Unlocks at Level 1",
+          "meta": {
+            "Skill Range": "0 tiles",
+            "Initial Energy": "600"
+          },
+          "description": {
+            "raw": "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies. Lamentis then deals 600% (ATK-based) + 60% damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP. After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s.",
+            "active": [
+              "Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies.",
+              "Lamentis then deals 600% (ATK-based) + 60% damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP.",
+              "After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "Increases the damage dealt to 640% (ATK-based) + 60%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "Increases the damage dealt to 680% (ATK-based) + 60%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "Increases the damage dealt to 720% (ATK-based) + 60%."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "Increases the damage dealt to 760% (ATK-based) + 60%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Lamentis commands his apostles to control enemies, then deals heavy damage to all enemies."
+        },
+        {
+          "section": "Skill1",
+          "name": "Starcrusher",
+          "unlock": "Unlocks at Level 11",
+          "meta": {
+            "Skill Range": "Global"
+          },
+          "description": {
+            "raw": "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% damage plus extra damage equal to 20% + 2% of the target's max HP. The extra damage cannot exceed 240% (ATK-based) + 30%.",
+            "active": [
+              "Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% damage plus extra damage equal to 20% + 2% of the target's max HP.",
+              "The extra damage cannot exceed 240% (ATK-based) + 30%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases base damage to 220% (ATK-based) + 30%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases base damage to 230% (ATK-based) + 30%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases base damage to 240% (ATK-based) + 30%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Every third normal attack, Lamentis deals heavy extra damage."
+        },
+        {
+          "section": "Skill2",
+          "name": "Astral Fission",
+          "unlock": "Unlocks at Level 31",
+          "meta": {
+            "Cooldown": "10\nicd     = 1",
+            "Skill Range": "Global"
+          },
+          "description": {
+            "raw": "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles. The apostles last 12s and inherit 45% + 6% of Lamentis' ATK and 80% + 8% of his HP. They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target. Up to 6 apostles can exist on the battlefield at the same time. If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active.",
+            "active": [
+              "Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles.",
+              "The apostles last 12s and inherit 45% + 6% of Lamentis' ATK and 80% + 8% of his HP.",
+              "They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target.",
+              "Up to 6 apostles can exist on the battlefield at the same time.",
+              "If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 50% + 6%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 55% + 6%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "Increases the ATK percentage inherited by the apostles to 60% + 6%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Lamentis sacrifices HP to summon apostles to fight alongside him."
+        },
+        {
+          "section": "Unlocks at Legendary+",
+          "name": "Hero Focus",
+          "unlock": "Unlocks at Legendary+",
+          "meta": {
+            "Skill Range": "1 tile"
+          },
+          "description": {
+            "raw": "Lamentis and his apostles gain 20 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD.",
+            "active": [
+              "Lamentis and his apostles gain 20 ATK SPD.",
+              "For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Lamentis and his apostles gain 25 ATK SPD.",
+                  "For each of his apostles present on the battlefield, they gain an extra 4 ATK SPD."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Lamentis and his apostles gain 30 ATK SPD.",
+                  "For each of his apostles present on the battlefield, they gain an extra 5 ATK SPD."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Increases ATK SPD during battle."
+        },
+        {
+          "section": "Ex. Skill",
+          "name": "Omnisight",
+          "unlock": "Unlocks at Mythic+",
+          "meta": {
+            "Skill Range": "Global"
+          },
+          "description": {
+            "raw": "Every time an apostle uses a normal attack, it gains 1 stack of Growth. Each stack of Growth increases basic stats by 4%. When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth. Lamentis can have up to 20 stacks of Growth.",
+            "active": [
+              "Every time an apostle uses a normal attack, it gains 1 stack of Growth.",
+              "Each stack of Growth increases basic stats by 4%.",
+              "When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth.",
+              "Lamentis can have up to 20 stacks of Growth."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the basic stats granted by each stack of Growth to 5%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "Increases the basic stats granted by each stack of Growth to 6%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "When Lamentis reaches the maximum Growth stacks gained from this skill, he opens his Six Eyes and unlocks his full potential, allowing him to create apostles every 3s at no cost until the apostle limit is reached.",
+                  "While Lamentis' Six Eyes are active, Starcrusher cast by him and his apostles deals 240% (ATK-based) extra true damage, and the apostles no longer expire.",
+                  "Lamentis also recovers HP equal to 80% of the actual damage dealt by his apostles and gains 20% of the Energy they gain."
+                ]
+              }
+            ]
+          },
+          "description_lite": "The apostles gain basic stat buffs when using normal attacks, and pass those buffs on to Lamentis when they merge back into him."
+        },
+        {
+          "section": "Unlocks at Supreme+",
+          "name": "Enhance Force",
+          "unlock": "Unlocks at Supreme+",
+          "meta": {},
+          "description": {
+            "raw": "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs.",
+            "active": [
+              "When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs."
+            ]
+          },
+          "description_lite": "Lamentis gains part of the buffs applied to his apostles."
+        }
+      ],
+      "range": 7,
+      "release_date": "2026-07-02"
+    },
+    {
       "title": "Lenya - Wild Cyclone",
       "name": "Lenya",
       "tags": "Wilder · Rogue · Physical",
@@ -15070,6 +15303,15 @@
             "raw": "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.",
             "active": [
               "Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with ): The first time Lumont casts Totem Slam, he gains a Totem Ward shield equal to 500% (ATK-based) and permanently enhances War Stomp, increasing its stun duration by 1s."
+                ]
+              }
             ]
           },
           "description_lite": "Lumont recovers HP per second while shielded by Totem Ward."
@@ -18939,6 +19181,244 @@
       "role_category": "damage_dealer"
     },
     {
+      "title": "Peggy - Empire's Jewel",
+      "name": "Peggy",
+      "tags": "Lightbearer · Support · Physical",
+      "faction": "Lightbearer",
+      "class": "Support",
+      "damage_type": "Physical",
+      "description": "The precious princess of the Lightbearer Empire, guarded by the royal guard as she heals her friends with her magic conch.",
+      "skills": [
+        {
+          "section": "Ultimate",
+          "name": "Princess Rally",
+          "unlock": "Unlocks at Level 1",
+          "meta": {
+            "Skill Range": "Global",
+            "Initial Energy": "600"
+          },
+          "description": {
+            "raw": "Passive. When a battle starts, Peggy summons 2 royal guards to join the fray. The royal guards inherit 120% + 16% of Peggy's HP and 50% + 7% of her ATK. If Peggy is defeated, all royal guards immediately leave the battlefield. Active. Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP. If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield. Peggy then orders these royal guards to protect all allies for 12s. During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.",
+            "passive": [
+              "When a battle starts, Peggy summons 2 royal guards to join the fray.",
+              "The royal guards inherit 120% + 16% of Peggy's HP and 50% + 7% of her ATK.",
+              "If Peggy is defeated, all royal guards immediately leave the battlefield."
+            ],
+            "active": [
+              "Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP.",
+              "If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield.",
+              "Peggy then orders these royal guards to protect all allies for 12s.",
+              "During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 51",
+                "text": [
+                  "The roval quards inherit 130% + 16% of Peggy's HP and 55% + 7% of her ATK."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 111",
+                "text": [
+                  "The roval quards inherit 140% + 16% of Peggy's HP and 60% + 7% of her ATK."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 171",
+                "text": [
+                  "The roval quards inherit 150% + 16% of Peggy's HP and 65% + 7% of her ATK."
+                ]
+              },
+              {
+                "level": "5",
+                "unlock": "Unlocks at Level 231",
+                "text": [
+                  "The roval quards inherit 160% + 16% of Peggy's HP and 70% + 7% of her ATK."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Peggy summons royal guards and has them take damage for allies."
+        },
+        {
+          "section": "Skill1",
+          "name": "Royal Scroll",
+          "unlock": "Unlocks at Level 11",
+          "meta": {
+            "Cooldown": "8s",
+            "Initial Cooldown": "2s",
+            "Skill Range": "Global"
+          },
+          "description": {
+            "raw": "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% HP per second for 8s.",
+            "active": [
+              "Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% HP per second for 8s."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 71",
+                "text": [
+                  "Increases the HP restored per second to 160% (ATK-based) + 18%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 131",
+                "text": [
+                  "Increases the HP restored per second to 170% (ATK-based) + 18%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 191",
+                "text": [
+                  "Increases the HP restored per second to 180% (ATK-based) + 18%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Peggy restores HP to royal guards and allies."
+        },
+        {
+          "section": "Skill2",
+          "name": "Royal Barrage",
+          "unlock": "Unlocks at Level 31",
+          "meta": {
+            "Cooldown": "12s",
+            "Skill Range": "Global"
+          },
+          "description": {
+            "raw": "Peggy summons a royal marksman in the backline to assist in battle. The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% damage to 2 frontmost enemies. Enemies hit by the armor-piercing arrows take 22% + 3% more ranged damage for the next 5s. During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2%.",
+            "active": [
+              "Peggy summons a royal marksman in the backline to assist in battle.",
+              "The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% damage to 2 frontmost enemies.",
+              "Enemies hit by the armor-piercing arrows take 22% + 3% more ranged damage for the next 5s.",
+              "During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2%."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at Level 91",
+                "text": [
+                  "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 23% + 3%.",
+                  "For allied summons, their additional ranged damage against these enemies is increased to 16% + 2%."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at Level 151",
+                "text": [
+                  "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 24% + 3%.",
+                  "For allied summons, their additional ranged damage against these enemies is increased to 18% + 2%."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at Level 211",
+                "text": [
+                  "The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 25% + 3%.",
+                  "For allied summons, their additional ranged damage against these enemies is increased to 20% + 2%."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Peggy summons a royal marksman to fire armor-piercing arrows, increasing the ranged damage taken by the affected enemies."
+        },
+        {
+          "section": "Unlocks at Legendary+",
+          "name": "Hero Focus",
+          "unlock": "Unlocks at Legendary+",
+          "meta": {
+            "Skill Range": "1 tile"
+          },
+          "description": {
+            "raw": "Increases Haste by 10. If 2 royal guards are on the battlefield, further increases Haste by 5.",
+            "active": [
+              "Increases Haste by 10.",
+              "If 2 royal guards are on the battlefield, further increases Haste by 5."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Increases Haste by 12.",
+                  "If 2 royal guards are on the battlefield, further increases Haste by 8."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": null,
+                "text": [
+                  "Increases Haste by 15.",
+                  "If 2 royal guards are on the battlefield, further increases Haste by 10."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Increases Haste during battle."
+        },
+        {
+          "section": "Ex. Skill",
+          "name": "Royal Protection",
+          "unlock": "Unlocks at Mythic+",
+          "meta": {
+            "Skill Range": "10 tiles"
+          },
+          "description": {
+            "raw": "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt.",
+            "active": [
+              "The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": "Unlocks at EX. +5",
+                "text": [
+                  "Increases the damage dealt by royal sword moves to 240% (ATK-based)."
+                ]
+              },
+              {
+                "level": "3",
+                "unlock": "Unlocks at EX. +10",
+                "text": [
+                  "The royal guards gain a 1-tile glory aura.",
+                  "All other allies within the aura deal 30% more melee damage; this melee damage bonus is increased by an extra 25% for allied summons."
+                ]
+              },
+              {
+                "level": "4",
+                "unlock": "Unlocks at EX. +15",
+                "text": [
+                  "Increases the damage dealt by royal sword moves to 280% (ATK-based)."
+                ]
+              }
+            ]
+          },
+          "description_lite": "Royal guards are enhanced while Princess' Rally is active."
+        },
+        {
+          "section": "Unlocks at Supreme+",
+          "name": "Enhance Force",
+          "unlock": "Unlocks at Supreme+",
+          "meta": {},
+          "description": {
+            "raw": "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF.",
+            "active": [
+              "When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF."
+            ]
+          },
+          "description_lite": "Peggy increases all allied summons' ATK and Phys & Magic DEF when multiple allied summons are on the battlefield."
+        }
+      ],
+      "range": 6,
+      "release_date": "2026-07-02"
+    },
+    {
       "title": "Phraesto - Misty Scorpion",
       "name": "Phraesto",
       "tags": "Hypogean · Tank · Magic",
@@ -20380,6 +20860,17 @@
             "raw": "Rowan places 1 more health potion when a battle starts using Smart Stall.",
             "active": [
               "Rowan places 1 more health potion when a battle starts using Smart Stall."
+            ],
+            "upgrades": [
+              {
+                "level": "2",
+                "unlock": null,
+                "text": [
+                  "Level 2 (Unlocks with ): Rowan upgrades his Energy potion into a super Energy potion.",
+                  "It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s.",
+                  "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her."
+                ]
+              }
             ]
           },
           "description_lite": "Rowan places 1 more health potion using Smart Stall."

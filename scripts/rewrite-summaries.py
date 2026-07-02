@@ -298,6 +298,8 @@ def _caster_gains_label_stat(t: str, label: str) -> bool:
 
 def _energy_recovery_targets_self(t: str) -> bool:
     """True when Energy recovery applies to the caster, not an ally."""
+    if re.search(r"gains? \d+(?:\.\d+)?% of the energy (?:they|the apostles?) gain", t):
+        return True
     if _caster_gains_label_stat(t, "Energy"):
         return True
     if _has_explicit_ally_buff(t, "Energy"):
@@ -366,6 +368,22 @@ def _allies_receive_healing(clause: str) -> bool:
     if re.search(r"\btargets only (?:her |his )?companion\b", t):
         return True
     if re.search(r"\bhealing them\b", t) and re.search(r"\bcompanion\b", t):
+        return True
+    return False
+
+
+def _summons_receive_healing(clause: str) -> bool:
+    """True when HP restore targets the caster's summons, not allies or self."""
+    t = clause.lower()
+    if re.search(r"\bheal(?:ing|s)? (?:him|her|himself|herself)\b", t):
+        return False
+    if re.search(r"\b(?:recovers?|restores?) (?:him|her|himself|herself)\b", t):
+        return False
+    if re.search(r"\bheal(?:ing|s)? .{0,80}(?:royal )?guards?\b", t):
+        return True
+    if re.search(
+        r"\bheal(?:ing|s)? .{0,80}\b(?:remaining )?(?:royal )?guards?\b", t
+    ):
         return True
     return False
 
@@ -581,6 +599,8 @@ def _ally_sources_caster_healing(clause: str) -> bool:
 def _healing_targets_self(clause: str) -> bool:
     """True when HP restore applies to the caster, not an ally."""
     t = clause.lower()
+    if _summons_receive_healing(t):
+        return False
     if _allies_receive_healing(t):
         return False
     if _ally_sources_caster_healing(t):
@@ -720,6 +740,7 @@ def _resolve_buff_targeting(
         "Crit",
         "Max HP",
         "DEF",
+        "Basic stats",
         "Phys DEF",
         "Magic DEF",
         "Shield",
@@ -735,6 +756,10 @@ def _resolve_buff_targeting(
     ) and re.search(r"\ballies\b", full):
         return "All units"
     if label == "Damage taken" and re.search(
+        r"(?:their |the guards'? )?hp loss is reduced by", t
+    ) and re.search(r"\b(?:royal )?guards?\b", t):
+        return OWN_SUMMON_BUFF_TARGETING
+    if label == "Damage taken" and re.search(
         r"\ball allies take \d+(?:\.\d+)?(?:\s*%\s*)? less\b", full
     ):
         return "All units"
@@ -749,6 +774,8 @@ def _resolve_buff_targeting(
     ):
         return "Multiple targets"
     if is_hp_recovery_label(label) and _healing_targets_self(t):
+        if _summons_receive_healing(t):
+            return OWN_SUMMON_BUFF_TARGETING
         if re.search(
             r"\b(?:to|for) (?:the )?(?:weakest |marked |rearmost )?ally\b", t
         ):
@@ -843,7 +870,13 @@ def _resolve_buff_targeting(
         return "Self"
     if label == "Invincible" and _invincibility_targets_self(t):
         return "Self"
+    if label == "Energy" and _energy_recovery_targets_self(t):
+        return "Self"
     if label == "Shield":
+        if _clause_targets_own_summon_units(t) and not _clause_also_targets_caster(
+            t
+        ):
+            return OWN_SUMMON_BUFF_TARGETING
         if re.search(
             r"\bgrants? (?:them|an allied hero|allies?) .{0,30}"
             r"(?:chi barrier|shield)\b",
@@ -855,6 +888,8 @@ def _resolve_buff_targeting(
             r"(?:\d+%[^.]{0,40})?(?:chi barrier|shield)\b",
             t,
         ) or re.search(r"\bchannels (?:his|her|their) chi, gaining\b", t):
+            if re.search(r"\b(?:royal )?guards?\b", t):
+                return OWN_SUMMON_BUFF_TARGETING
             return "Self"
         elif re.search(
             r"\bconverted into a (?:chi barrier|shield) for\b", t
@@ -870,6 +905,18 @@ def _resolve_buff_targeting(
         r"\bincreas(?:e|es|ing) (?:def )?penetration by \d", t
     ):
         return "Self"
+    if label == "Basic stats" and re.search(
+        r"distributing them among all allied", t
+    ):
+        return "All units"
+    if label == "Basic stats" and re.search(
+        r"increas(?:e|es|ing) (?:each stack of )?(?:\w+ )?basic stats by", t
+    ) and re.search(r"\bgrowth\b", t):
+        return OWN_SUMMON_BUFF_TARGETING
+    if label == "Basic stats" and re.search(
+        r"increas(?:e|es|ing) (?:each stack of )?(?:\w+ )?basic stats by", t
+    ) and re.search(r"\bapostles?\b", full):
+        return OWN_SUMMON_BUFF_TARGETING
     if effect_targets_self_only(t, label, "buff"):
         return "Self"
     return detect_targeting(snippet, label, "buff")
@@ -1121,6 +1168,11 @@ def _text_has_primary_true_damage(text: str) -> bool:
         t,
     ):
         return True
+    if re.search(
+        r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\)\s*extra true damage",
+        t,
+    ):
+        return True
     return bool(
         re.search(r"sacrifices? .{0,40}deal true damage", t)
         or re.search(r"normal attacks? deal true damage", t)
@@ -1146,6 +1198,8 @@ def _clause_targets_all_summons(clause: str) -> bool:
         r"allied summons'? damage dealt by)\b",
         t,
     ):
+        return True
+    if re.search(r"\ballied summons'? ranged damage\b", t):
         return True
     if re.search(
         r"grants?.{0,45}(?:natural )?blessing.{0,45}(?:to |for )"
@@ -1179,6 +1233,15 @@ def _clause_targets_own_summon_units(clause: str) -> bool:
     if re.search(r"\b(?:giant )?bulbsprites?\b", t):
         return True
     if re.search(r"\b(?:her|his|their) summons?\b", t):
+        return True
+    if re.search(r"\b(?:royal )?guards?\b", t) and re.search(
+        r"\b(?:heal|restor|recover|shield|gain|inherit|hp loss|protect)\w*\b", t
+    ):
+        return True
+    if re.search(r"\bapostles?\b", t) and re.search(
+        r"\b(?:heal|restor|recover|shield|gain|inherit|atk spd|basic stats)\w*\b",
+        t,
+    ):
         return True
     if re.search(
         r"\b(?:her|his|their|one of (?:her|his|their)) "
@@ -1226,6 +1289,10 @@ def _clause_also_targets_caster(clause: str) -> bool:
     return bool(
         re.search(r"\b(?:herself|himself|itself)\b", t)
         or re.search(r"\bfor (?:herself|himself) and\b", t)
+        or re.search(
+            r"\band (?:his|her) (?:apostles|royal guards)\b", t
+        )
+        or re.search(r"\b\w+ and (?:his|her) apostles\b", t)
     )
 
 
@@ -1233,6 +1300,18 @@ def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool
     """Buff applies to summons only, not general allies."""
     clause = _clause_around(t, match.start())
     window = t[max(0, match.start() - 40) : min(len(t), match.end() + 40)]
+    if re.search(r"\bheal(?:ing|s)? (?:him|her|himself|herself)\b", clause):
+        return False
+    if re.search(r"\b(?:recovers?|restores?) (?:him|her|himself|herself)\b", clause):
+        return False
+    if label == "Energy" and _energy_recovery_targets_self(clause):
+        return False
+    if (
+        label in _RESTORE_BUFF_LABELS
+        and _healing_targets_self(clause)
+        and not _summons_receive_healing(clause)
+    ):
+        return False
     if _clause_targets_summon_units(clause):
         return not _clause_also_targets_caster(clause)
     if re.search(r"\bnon-summoned allies\b", clause):
@@ -1404,6 +1483,8 @@ def _summon_buff_targeting_for_match(
     if _buff_match_is_enemy_stat(t, label, match):
         return None
     clause = _clause_around(t, match.start())
+    if label == "Energy" and _energy_recovery_targets_self(clause):
+        return None
     if _buff_match_is_summon_only(t, label, match):
         if _clause_targets_all_summons(clause):
             return ALL_SUMMON_BUFF_TARGETING
@@ -1456,7 +1537,7 @@ def add_summon_buff_effect(
     """Record a buff that applies to allied summons, not the whole team."""
     key = ("buff", label, targeting)
     existing = [e for e in effects if (e.category, e.label, e.targeting) == key]
-    n = extract_number(text, label)
+    n = extract_number(text, label, category="buff")
     cond = _buff_condition("buff", text)
     parsed_conditions = _resolve_effect_conditions("buff", text)
     if existing:
@@ -2510,6 +2591,7 @@ _STAT_LABELS_NO_GENERIC = frozenset(
         "Damage taken",
         "Healing over time",
         "DEF",
+        "Basic stats",
         "Shield",
     }
 )
@@ -2520,6 +2602,22 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
     if "(scaled)" in text.lower() or "<hp>" in text.lower():
         return None
     t = text.lower()
+    if label == "Damage taken" and category == "buff":
+        amounts = _all_amounts(
+            text,
+            [
+                r"reduc(?:e|es|ing) (?:his |her |their )?damage taken by "
+                r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+                r"reduce(?:s|d)? .{0,40}damage taken .{0,20}by "
+                r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+                r"(?:their |the guards'? )?hp loss is reduced by "
+                r"(\d+(?:\.\d+)?)\s*%",
+                r"guards'? own hp loss is reduced by (\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if label in _NON_PERCENT_DEBUFF_LABELS:
         return None
     if label == "Execution":
@@ -2584,10 +2682,30 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
                 r"energy recovery to (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
                 r"increases energy recovery to (\d+(?:\.\d+)?)(?:\s*\+\s*(\d+(?:\.\d+)?))?",
                 r"gains? \d+(?:\.\d+)? atk spd and (\d+(?:\.\d+)?)\s+energy",
+                r"gains? (\d+(?:\.\d+)?)% of the energy (?:they|the apostles?) gain",
             ],
         )
         if amounts:
             return max(amounts)
+        pct = re.search(
+            r"gains? (\d+(?:\.\d+)?)% of the energy (?:they|the apostles?) gain",
+            t,
+        )
+        if pct:
+            return float(pct.group(1))
+    if label == "Ranged damage" and not is_debuff:
+        amounts = _all_amounts(
+            text,
+            [
+                r"increas(?:e|ed|ing) by an extra (\d+(?:\.\d+)?)\s*%\s*\+\s*"
+                r"(\d+(?:\.\d+)?)\s*%",
+                r"additional ranged damage against these enemies is increased to "
+                r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if label == "DEF Penetration":
         amounts = _all_amounts(
             text,
@@ -2645,6 +2763,9 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
                 r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
                 r"reduce(?:s|d)? .{0,40}damage taken .{0,20}by "
                 r"(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%",
+                r"(?:their |the guards'? )?hp loss is reduced by "
+                r"(\d+(?:\.\d+)?)\s*%",
+                r"guards'? own hp loss is reduced by (\d+(?:\.\d+)?)\s*%",
             ],
         )
         if amounts:
@@ -2783,6 +2904,17 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
         if amounts:
             return max(amounts)
         return None
+    if label == "Basic stats" and is_debuff:
+        amounts = _all_amounts(
+            text,
+            [
+                r"transfers? (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*% "
+                r"of basic stats from",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if label == "Max HP" and is_debuff:
         for pat in (
             r"max hp reduction equal to (\d+(?:\.\d+)?)\s*%",
@@ -2791,12 +2923,32 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
             if m := re.search(pat, t, re.I):
                 return float(m.group(1))
         return None
+    if label == "Basic stats":
+        amounts = _all_amounts(
+            text,
+            [
+                r"gain a (\d+(?:\.\d+)?)% increase to (?:their|his|her) "
+                r"(?:basic|base) stats",
+                r"increas(?:e|es|ing) (?:their|his|her|each stack of )?"
+                r"(?:\w+ )?basic stats by (\d+(?:\.\d+)?)\s*%\s*"
+                r"(?:\(atk-based\)\s*\+\s*(\d+(?:\.\d+)?)\s*%)?",
+                r"transfers? (\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*% "
+                r"of basic stats from",
+                r"increases the basic stats granted by each stack of growth to "
+                r"(\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     if label == "DEF":
         amounts = _all_amounts(
             text,
             [
                 r"gain(?:s|ing)? (\d+(?:\.\d+)?)%? "
                 r"(?:phys(?:ical)? and magic|magic and phys(?:ical)?) def\b",
+                r"(?:phys(?:ical)? & magic def|magic & phys(?:ical)? def)"
+                r".{0,30}equal to (\d+(?:\.\d+)?)\s*%",
                 r"increas(?:e|es|ing) .{0,80}phys(?:ical)? def by "
                 r"(\d+(?:\.\d+)?)\s*%",
                 r"increas(?:e|es|ing) .{0,80}magic def by (\d+(?:\.\d+)?)\s*%",
@@ -2864,6 +3016,7 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
                 r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
                 r"crafts? a cogshield .{0,40}block "
                 r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",
+                r"shield equal to (\d+(?:\.\d+)?)\s*%\s*of (?:the )?actual damage",
             ],
         )
         if amounts:
@@ -3965,12 +4118,21 @@ BUFF_RULES = [
     ),
     # Enhance Force style: "gain a N% increase to their basic stats"
     (
-        r"gain.{0,20}\d+% increase to (?:their|his|her) (?:basic|base) stats",
-        "ATK",
+        r"gain a (\d+(?:\.\d+)?)% increase to (?:their|his|her) (?:basic|base) stats",
+        "Basic stats",
     ),
     (
         r"increas(?:e|es|ing) (?:their|his|her) basic stats by",
-        "ATK",
+        "Basic stats",
+    ),
+    (
+        r"increas(?:e|es|ing) (?:each stack of )?(?:\w+ )?basic stats by",
+        "Basic stats",
+    ),
+    (
+        r"transfers? .{0,80}basic stats from all enemies.{0,120}"
+        r"distributing them among all allied",
+        "Basic stats",
     ),
     # Passive ally ATK: "the ally's ATK is increased by N%" (Contess Exemption)
     (
@@ -4059,7 +4221,23 @@ BUFF_RULES = [
         r"allied summons'? damage dealt by",
         "Damage dealt",
     ),
-    (r"allied summons in their .{0,20}gain extra atk", "ATK"),
+    (
+        r"all allied summons gain atk equal to",
+        "ATK",
+    ),
+    (
+        r"(?:phys(?:ical)? & magic def|magic & phys(?:ical)? def)"
+        r".{0,30}equal to",
+        "DEF",
+    ),
+    (
+        r"allied summons'? ranged damage .{0,80}increas(?:e|ed|ing) by an extra",
+        "Ranged damage",
+    ),
+    (
+        r"deal \d+(?:\.\d+)?% more melee damage",
+        "Damage dealt",
+    ),
     # Max HP buff: handle both "increases max HP" and passive "max HP is increased"
     (r"increas(?:e|es|ing) (?:the )?(?:\w+ ){0,4}max hp", "Max HP"),
     (r"max hp.{0,30}(?:is |permanently )?increas", "Max HP"),
@@ -4154,8 +4332,16 @@ BUFF_RULES = [
         HEALING_OVER_TIME_LABEL,
     ),
     (
-        r"heal(?:s|ing)? .{0,80}(?:per second|every \d+\.?\d* s(?:ec)?)",
+        r"heal(?:s|ing)? .{0,120}(?:hp )?(?:per second|every \d+\.?\d* s(?:ec)?)",
         HEALING_OVER_TIME_LABEL,
+    ),
+    (
+        r"heal(?:s|ing)? .{0,80}(?:for )?an amount equal to their max hp",
+        DIRECT_HEALING_LABEL,
+    ),
+    (
+        r"heal(?:s|ing)? .{0,60}equal to their max hp",
+        DIRECT_HEALING_LABEL,
     ),
     # Direct healing: exclude texts where "per second" or "over the next Xs"
     # follows within 60 chars of the HP or percentage reference (those are HoT).
@@ -4188,6 +4374,18 @@ BUFF_RULES = [
     (r"life drain", "Lifedrain"),
     (r"reduc(?:e|es|ing) (?:her |his |their |the .{0,20})?damage taken", "Damage taken"),
     (r"(?:all )?allies take \d+(?:\.\d+)?% less damage", "Damage taken"),
+    (
+        r"(?:\d+(?:\.\d+)?% of )?the damage taken by all allies is shared",
+        "Damage taken",
+    ),
+    (
+        r"(?:their |the guards'? )?hp loss is reduced by",
+        "Damage taken",
+    ),
+    (
+        r"guards'? own hp loss is reduced by",
+        "Damage taken",
+    ),
     (
         r"(?:protected )?all(?:y|ies) (?:also )?take(?:s)? "
         r"\d+(?:\.\d+)?% less damage",
@@ -4223,6 +4421,10 @@ BUFF_RULES = [
      "Energy"),
     (
         r"gains? \d+(?:\.\d+)? atk spd and \d+(?:\.\d+)? energy",
+        "Energy",
+    ),
+    (
+        r"gains? \d+(?:\.\d+)?% of the energy (?:they|the apostles?) gain",
         "Energy",
     ),
     (r"increases the energy recovered .{0,80}to \d+(?:\s*\+\s*\d+)?", "Energy"),
@@ -4656,6 +4858,14 @@ DEBUFF_RULES = [
         r"reduction to their debuff durations to \d+(?:\.\d+)?%",
         "Debuff duration",
     ),
+    (
+        r"take \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?%? more ranged damage",
+        "Ranged damage",
+    ),
+    (
+        r"transfers? \d+(?:\.\d+)?%\s*\+\s*\d+(?:\.\d+)?%\s*of basic stats from",
+        "Basic stats",
+    ),
     # Damage taken debuff (enemies take more damage; not magic-specific)
     (
         r"increas(?:e|es|ing|ed) .{0,30}(?<!magic )damage taken|"
@@ -4852,7 +5062,8 @@ SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
     # Damage absorption / release
     (
         r"absorb(?:s|ing)? \d+% .{0,40}(?:physical|magic) damage taken by allies|"
-        r"shield.{0,60}absorb(?:s|ing)? \d+% .{0,40}damage taken by allies",
+        r"shield.{0,60}absorb(?:s|ing)? \d+% .{0,40}damage taken by allies|"
+        r"damage taken by all allies is shared",
         "Damage absorption (allies)",
     ),
     (
@@ -5158,6 +5369,11 @@ def text_has_summon_unit(t: str) -> bool:
         return True
     if re.search(
         r"\b(?:her|his|their) summons (?:are|is) on the battlefield\b", tl
+    ):
+        return True
+    if re.search(
+        r"\b(?:builds?|summons?|creates?) \d+ (?:royal )?(?:guards?|apostles?|marksman)\b",
+        tl,
     ):
         return True
     if re.search(
@@ -5691,6 +5907,17 @@ def _healing_amounts(text: str) -> list[float]:
         r"the affected hero recovers? (\d+(?:\.\d+)?)\s*%\s*\(hp-based\)",
         r"recover(?:s|y|ing)? (\d+(?:\.\d+)?)\s*%\s*\(hp-based\)",
         r"restor(?:e|es|ing) (\d+(?:\.\d+)?)\s*%\s*\(hp-based\)",
+        r"restor(?:e|es|ing) hp equal to (\d+(?:\.\d+)?)\s*%\s*of",
+        r"recovers? hp equal to (\d+(?:\.\d+)?)\s*%\s*of",
+        r"restores? hp equal to (\d+(?:\.\d+)?)\s*%\s*of",
+        r"equal to (\d+(?:\.\d+)?)\s*%\s*of (?:the )?damage dealt",
+        r"(?:heal(?:ing|s)?|recover(?:s|ing)?) .{0,80}hp equal to "
+        r"(\d+(?:\.\d+)?)\s*%\s*of (?:the )?actual damage",
+        r"(\d+(?:\.\d+)?)\s*%\s*of (?:the )?actual damage (?:the apostle )?"
+        r"dealt",
+        r"(\d+(?:\.\d+)?)\s*%\s*of (?:the )?defeated (?:unit'?s?|target'?s?) "
+        r"max hp",
+        r"equal to their max hp",
     ]
     atk_patterns = [
         r"increases the healing amount of each healing wave to "
@@ -5727,14 +5954,14 @@ def _healing_amounts(text: str) -> list[float]:
         r"restores? hp equal to (\d+(?:\.\d+)?)\s*%\s*of",
         r"recovers? (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*hp\b",
         r"restoring (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*hp\b",
-        r"equal to (\d+(?:\.\d+)?)\s*%\s*of (?:the )?damage dealt",
-        r"(\d+(?:\.\d+)?)\s*%\s*of (?:the )?defeated (?:unit'?s?|target'?s?) "
-        r"max hp",
     ]
     found: list[float] = []
     for pat in hp_patterns:
         for m in re.finditer(pat, t):
-            found.append(_healing_hp_amount(m))
+            if pat == r"equal to their max hp":
+                found.append(100.0)
+            else:
+                found.append(_healing_hp_amount(m))
     for pat in atk_patterns:
         for m in re.finditer(pat, t):
             found.append(_healing_atk_amount(m))
@@ -6568,6 +6795,11 @@ def _chunk_deals_enemy_damage(text: str, primary_dmg: str = "Physical") -> bool:
         return False
     t = text.lower()
     if re.search(r"turn(?:ing)? .{0,80}(?:charge )?damage into true damage", t):
+        return True
+    if re.search(
+        r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\)\s*extra true damage",
+        t,
+    ):
         return True
     if _skill_chunk_has_enemy_damage(text):
         return True
@@ -7465,6 +7697,7 @@ BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
     "DEF": ("Physical DEF", "Magic DEF"),
     "Phys DEF": ("Physical DEF",),
     "Magic DEF": ("Magic DEF",),
+    "Basic stats": ("ATK", "Max HP", "Physical DEF", "Magic DEF"),
     # Tanks that self-stack damage reduction want sustain (Max HP buffs).
     "Damage taken": ("Max HP",),
     "Damage dealt": ("ATK",),

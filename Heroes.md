@@ -4481,6 +4481,87 @@ When a battle starts, if there are monsters among the enemies, Laios takes out h
 
 Laios permanently increases his max HP by 20% each time he collects a different ingredient using Dungeon Gourmet. This effect can be triggered up to 3 times.
 
+## Lamentis - Cosmic Hellion
+
+*Hypogean · Marksman · Magic*
+
+A trigger-happy Marksman who calls on apostles to help him tear through the enemy.
+
+### Ultimate
+
+**Malevolent Gaze**
+*Unlocks at Level 1*
+
+- Skill Range: 0 tiles
+- Initial Energy: 600
+
+Each of Lamentis' apostles targets an enemy and stuns them for 3.5s, prioritizing different frontmost enemies. Lamentis then deals 600% (ATK-based) + 60% damage to all enemies, while the apostles reduce the max HP of the stunned enemies by 20% of Lamentis' initial max HP. After casting this skill, Lamentis and his apostles gain 60 ATK SPD for 10s.
+
+- Level 2 — Unlocks at Level 51: Increases the damage dealt to 640% (ATK-based) + 60%.
+- Level 3 — Unlocks at Level 111: Increases the damage dealt to 680% (ATK-based) + 60%.
+- Level 4 — Unlocks at Level 171: Increases the damage dealt to 720% (ATK-based) + 60%.
+- Level 5 — Unlocks at Level 231: Increases the damage dealt to 760% (ATK-based) + 60%.
+
+### Skill1
+
+**Starcrusher**
+*Unlocks at Level 11*
+
+- Skill Range: Global
+
+Every third normal attack, Lamentis throws an enchanted fork, dealing 210% (ATK-based) + 30% damage plus extra damage equal to 20% + 2% of the target's max HP. The extra damage cannot exceed 240% (ATK-based) + 30%.
+
+- Level 2 — Unlocks at Level 71: Increases base damage to 220% (ATK-based) + 30%.
+- Level 3 — Unlocks at Level 131: Increases base damage to 230% (ATK-based) + 30%.
+- Level 4 — Unlocks at Level 191: Increases base damage to 240% (ATK-based) + 30%.
+
+### Skill2
+
+**Astral Fission**
+*Unlocks at Level 31*
+
+- Cooldown: 10
+icd     = 1
+- Skill Range: Global
+
+Lamentis sacrifices 5% of his max HP to create 2 apostles from nebulae and particles. The apostles last 12s and inherit 45% + 6% of Lamentis' ATK and 80% + 8% of his HP. They can use normal attacks and Starcrusher, and prioritize attacking Lamentis' current target. Up to 6 apostles can exist on the battlefield at the same time. If an apostle survives until its duration ends, it will merge back into Lamentis, healing him for HP equal to 80% of the actual damage the apostle dealt while it was active.
+
+- Level 2 — Unlocks at Level 91: Increases the ATK percentage inherited by the apostles to 50% + 6%.
+- Level 3 — Unlocks at Level 151: Increases the ATK percentage inherited by the apostles to 55% + 6%.
+- Level 4 — Unlocks at Level 211: Increases the ATK percentage inherited by the apostles to 60% + 6%.
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Lamentis and his apostles gain 20 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 3 ATK SPD.
+
+- Level 2: Lamentis and his apostles gain 25 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 4 ATK SPD.
+- Level 3: Lamentis and his apostles gain 30 ATK SPD. For each of his apostles present on the battlefield, they gain an extra 5 ATK SPD.
+
+### Ex. Skill
+
+**Omnisight**
+*Unlocks at Mythic+*
+
+- Skill Range: Global
+
+Every time an apostle uses a normal attack, it gains 1 stack of Growth. Each stack of Growth increases basic stats by 4%. When an apostle's power merges back into Lamentis, Lamentis gains that apostle's Growth. Lamentis can have up to 20 stacks of Growth.
+
+- Level 2 — Unlocks at EX. +5: Increases the basic stats granted by each stack of Growth to 5%.
+- Level 3 — Unlocks at EX. +10: Increases the basic stats granted by each stack of Growth to 6%.
+- Level 4 — Unlocks at EX. +15: When Lamentis reaches the maximum Growth stacks gained from this skill, he opens his Six Eyes and unlocks his full potential, allowing him to create apostles every 3s at no cost until the apostle limit is reached. While Lamentis' Six Eyes are active, Starcrusher cast by him and his apostles deals 240% (ATK-based) extra true damage, and the apostles no longer expire. Lamentis also recovers HP equal to 80% of the actual damage dealt by his apostles and gains 20% of the Energy they gain.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+When an apostle is affected by stat buffs from allies, Lamentis also receives 10% of those same buffs.
+
 ## Lenya - Wild Cyclone
 
 *Wilder · Rogue · Physical*
@@ -5151,6 +5232,8 @@ Lumont slams the ground with totem 3 times after receiving damage equal to 40% o
 *Unlocks at Supreme+*
 
 Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.
+
+- Level 2: Level 2 (Unlocks with ): The first time Lumont casts Totem Slam, he gains a Totem Ward shield equal to 500% (ATK-based) and permanently enhances War Stomp, increasing its stun duration by 1s.
 
 ## Lyca - Keeper of Glades
 
@@ -6474,6 +6557,88 @@ Perseus is blessed by Bountiful Grace. When he gains a temporary stat buffs, its
 
 Expands the range of fertile ground by 1 tiles.
 
+## Peggy - Empire's Jewel
+
+*Lightbearer · Support · Physical*
+
+The precious princess of the Lightbearer Empire, guarded by the royal guard as she heals her friends with her magic conch.
+
+### Ultimate
+
+**Princess Rally**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 600
+
+Passive. When a battle starts, Peggy summons 2 royal guards to join the fray. The royal guards inherit 120% + 16% of Peggy's HP and 50% + 7% of her ATK. If Peggy is defeated, all royal guards immediately leave the battlefield. Active. Peggy blows her horn, instantly healing all remaining royal guards for an amount equal to their max HP. If there are fewer than 2 guards remaining, she summons a new royal guard to the battlefield. Peggy then orders these royal guards to protect all allies for 12s. During this time, 70% of the damage taken by all allies is shared evenly among the guards, while the guards' own HP loss is reduced by 75%.
+
+- Level 2 — Unlocks at Level 51: The roval quards inherit 130% + 16% of Peggy's HP and 55% + 7% of her ATK.
+- Level 3 — Unlocks at Level 111: The roval quards inherit 140% + 16% of Peggy's HP and 60% + 7% of her ATK.
+- Level 4 — Unlocks at Level 171: The roval quards inherit 150% + 16% of Peggy's HP and 65% + 7% of her ATK.
+- Level 5 — Unlocks at Level 231: The roval quards inherit 160% + 16% of Peggy's HP and 70% + 7% of her ATK.
+
+### Skill1
+
+**Royal Scroll**
+*Unlocks at Level 11*
+
+- Cooldown: 8s
+- Initial Cooldown: 2s
+- Skill Range: Global
+
+Peggy opens a magic scroll, healing all remaining royal guards and 2 other weakest allies for Peggy's 150% (ATK-based) + 18% HP per second for 8s.
+
+- Level 2 — Unlocks at Level 71: Increases the HP restored per second to 160% (ATK-based) + 18%.
+- Level 3 — Unlocks at Level 131: Increases the HP restored per second to 170% (ATK-based) + 18%.
+- Level 4 — Unlocks at Level 191: Increases the HP restored per second to 180% (ATK-based) + 18%.
+
+### Skill2
+
+**Royal Barrage**
+*Unlocks at Level 31*
+
+- Cooldown: 12s
+- Skill Range: Global
+
+Peggy summons a royal marksman in the backline to assist in battle. The marksman inherits of Peggy's ATK and fires 3 volleys of armor-piercing arrows, dealing 200% (ATK-based) + 20% damage to 2 frontmost enemies. Enemies hit by the armor-piercing arrows take 22% + 3% more ranged damage for the next 5s. During this time, allied summons' ranged damage against the affected enemies is increased by an extra 14% + 2%.
+
+- Level 2 — Unlocks at Level 91: The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 23% + 3%. For allied summons, their additional ranged damage against these enemies is increased to 16% + 2%.
+- Level 3 — Unlocks at Level 151: The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 24% + 3%. For allied summons, their additional ranged damage against these enemies is increased to 18% + 2%.
+- Level 4 — Unlocks at Level 211: The extra ranged damage dealt to enemies hit by armor-piercing arrows is increased to 25% + 3%. For allied summons, their additional ranged damage against these enemies is increased to 20% + 2%.
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Increases Haste by 10. If 2 royal guards are on the battlefield, further increases Haste by 5.
+
+- Level 2: Increases Haste by 12. If 2 royal guards are on the battlefield, further increases Haste by 8.
+- Level 3: Increases Haste by 15. If 2 royal guards are on the battlefield, further increases Haste by 10.
+
+### Ex. Skill
+
+**Royal Protection**
+*Unlocks at Mythic+*
+
+- Skill Range: 10 tiles
+
+The royal guards can alternate between normal attacks and royal sword moves while Princess' Rally is active, dealing 200% (ATK-based) damage to all enemies within 1 tiles and gaining a permanent shield equal to 80% of the actual damage dealt.
+
+- Level 2 — Unlocks at EX. +5: Increases the damage dealt by royal sword moves to 240% (ATK-based).
+- Level 3 — Unlocks at EX. +10: The royal guards gain a 1-tile glory aura. All other allies within the aura deal 30% more melee damage; this melee damage bonus is increased by an extra 25% for allied summons.
+- Level 4 — Unlocks at EX. +15: Increases the damage dealt by royal sword moves to 280% (ATK-based).
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+When 3 or more allied summons from different allies are alive at the same time, all allied summons gain ATK equal to 30% of Peggy's initial ATK, and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF.
+
 ## Phraesto - Misty Scorpion
 
 *Hypogean · Tank · Magic*
@@ -6969,6 +7134,8 @@ After selling 3 health potions, Rowan places a super health potion that recovers
 *Unlocks at Supreme+*
 
 Rowan places 1 more health potion when a battle starts using Smart Stall.
+
+- Level 2: Level 2 (Unlocks with ): Rowan upgrades his Energy potion into a super Energy potion. It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s. If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.
 
 ## Saida - Vampiric Vine
 

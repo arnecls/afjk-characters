@@ -19,6 +19,8 @@ _LEGACY_TO_CANONICAL: dict[str, str] = {
     "Healing debuff": "Healing",
     "Ally empower buff": "Ally empower",
     "Exemption buff": "Exemption",
+    "Basic stats buff": "Basic stats",
+    "Basic stats debuff": "Basic stats",
     "ATK buff": "ATK",
     "ATK debuff": "ATK",
     "ATK SPD buff": "ATK SPD",
@@ -57,6 +59,7 @@ _LEGACY_TO_CANONICAL: dict[str, str] = {
 
 BUFF_EFFECT_TYPES: list[str] = [
     "ATK",
+    "Basic stats",
     "ATK SPD",
     "Haste",
     "Crit",
@@ -64,6 +67,7 @@ BUFF_EFFECT_TYPES: list[str] = [
     "DEF",
     "Damage taken",
     "Damage dealt",
+    "Ranged damage",
     "Magic damage",
     "Energy",
     "Execution",
@@ -85,6 +89,7 @@ BUFF_EFFECT_TYPES: list[str] = [
 
 DEBUFF_EFFECT_TYPES: list[str] = [
     "ATK",
+    "Basic stats",
     "DoT",
     "Damage taken",
     "Damage dealt",

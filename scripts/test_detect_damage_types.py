@@ -696,7 +696,8 @@ class CommonFailurePatternTests(unittest.TestCase):
             "them a shared permanent shield"
         )
         labels = [e.label for e in self._effects(text)]
-        self.assertIn("ATK", labels)
+        self.assertIn("Basic stats", labels)
+        self.assertNotIn("ATK", labels)
 
     def test_himmel_hero_party_healing(self):
         text = "converts 30% + 2% of the damage dealt into healing for all party members"
@@ -2016,6 +2017,120 @@ class TestEffectValidationFixesJune2026(unittest.TestCase):
         )
         self.assertTrue(rs.grants_cc_immunity(text, "Unaffected"))
 
+    def test_alna_enhance_force_basic_stats_not_atk_proxy(self):
+        text = (
+            "Alna and her Winter Warrior gain a 15% increase to their basic stats "
+            "until one of them is defeated."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        labels = [e.label for e in effects]
+        self.assertIn("Basic stats", labels)
+        self.assertNotIn("ATK", labels)
+
+    def test_lamentis_omnisight_basic_stats_growth(self):
+        text = "Each stack of Growth increases basic stats by 4%."
+        effects: list[rs.Effect] = []
+        summon: list[rs.Effect] = []
+        rs.analyze_text(effects, summon, {}, [], "base", text, "Magic")
+        buffs = effects + summon
+        labels = [e.label for e in buffs]
+        self.assertIn("Basic stats", labels)
+        self.assertNotIn("ATK", labels)
+        growth = next(e for e in buffs if e.label == "Basic stats")
+        self.assertEqual(growth.targeting, rs.OWN_SUMMON_BUFF_TARGETING)
+
+    def test_lamentis_six_eyes_extra_true_damage(self):
+        text = (
+            "While Lamentis' Six Eyes are active, Starcrusher cast by him and his "
+            "apostles deals 240% (ATK-based) extra true damage, and the apostles "
+            "no longer expire."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "ex+15", text, "Magic")
+        damage_labels = [e.label for e in effects if e.category == "damage"]
+        self.assertIn("True damage", damage_labels)
+
+    def test_lamentis_astral_fission_merge_heal(self):
+        text = (
+            "If an apostle survives until its duration ends, it will merge back "
+            "into Lamentis, healing him for HP equal to 80% of the actual damage "
+            "the apostle dealt while it was active."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        heals = [e for e in effects if e.label == rs.DIRECT_HEALING_LABEL]
+        self.assertEqual(len(heals), 1)
+        self.assertEqual(heals[0].targeting, "Self")
+        self.assertEqual(heals[0].numeric, 80.0)
+
+    def test_lamentis_apostles_atk_spd_dual_target(self):
+        text = (
+            "After casting this skill, Lamentis and his apostles gain 60 ATK SPD "
+            "for 10s."
+        )
+        effects: list[rs.Effect] = []
+        summon: list[rs.Effect] = []
+        rs.analyze_text(effects, summon, {}, [], "base", text, "Magic")
+        rows = [e for e in effects + summon if e.label == "ATK SPD"]
+        targetings = {e.targeting for e in rows}
+        self.assertIn("Self", targetings)
+        self.assertIn(rs.OWN_SUMMON_BUFF_TARGETING, targetings)
+
+    def test_velara_ruthless_rite_basic_stats_steal(self):
+        text = (
+            "transfers 30% + 3% of basic stats from all enemies, then evenly "
+            "distributing them among all allied units, lasting for 10s."
+        )
+        effects: list[rs.Effect] = []
+        rs.analyze_text(effects, [], {}, [], "base", text, "Magic")
+        buffs = [e for e in effects if e.category == "buff"]
+        debuffs = [e for e in effects if e.category == "debuff"]
+        self.assertTrue(any(e.label == "Basic stats" for e in buffs))
+        self.assertTrue(any(e.label == "Basic stats" for e in debuffs))
+
+    def test_peggy_princess_rally_guard_heal_and_damage_taken(self):
+        text = (
+            "Peggy blows her horn, instantly healing all remaining royal guards "
+            "for an amount equal to their max HP. Peggy then orders these royal "
+            "guards to protect all allies for 12s. During this time, 70% of the "
+            "damage taken by all allies is shared evenly among the guards, while "
+            "the guards' own HP loss is reduced by 75%."
+        )
+        effects: list[rs.Effect] = []
+        summon: list[rs.Effect] = []
+        rs.analyze_text(effects, summon, {}, [], "base", text, "Magic")
+        rows = effects + summon
+        heal = next(e for e in rows if e.label == rs.DIRECT_HEALING_LABEL)
+        self.assertEqual(heal.targeting, rs.OWN_SUMMON_BUFF_TARGETING)
+        dt = next(e for e in rows if e.label == "Damage taken")
+        self.assertEqual(dt.targeting, rs.OWN_SUMMON_BUFF_TARGETING)
+        self.assertEqual(dt.numeric, 75.0)
+
+    def test_peggy_enhance_force_summon_def(self):
+        text = (
+            "all allied summons gain ATK equal to 30% of Peggy's initial ATK, "
+            "and Phys & Magic DEF equal to 40% of Peggy's initial Phys & Magic DEF."
+        )
+        effects: list[rs.Effect] = []
+        summon: list[rs.Effect] = []
+        rs.analyze_text(effects, summon, {}, [], "base", text, "Magic")
+        rows = effects + summon
+        labels = [e.label for e in rows if e.category == "buff"]
+        self.assertIn("ATK", labels)
+        self.assertIn("DEF", labels)
+
+    def test_peggy_royal_barrage_summon_ranged_buff(self):
+        text = (
+            "allied summons' ranged damage against the affected enemies is "
+            "increased by an extra 14% + 2%."
+        )
+        effects: list[rs.Effect] = []
+        summon: list[rs.Effect] = []
+        rs.analyze_text(effects, summon, {}, [], "base", text, "Magic")
+        rows = [e for e in effects + summon if e.label == "Ranged damage"]
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0].targeting, rs.ALL_SUMMON_BUFF_TARGETING)
 
 if __name__ == "__main__":
     unittest.main()

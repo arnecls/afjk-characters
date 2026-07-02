@@ -197,6 +197,10 @@
   "Laios": {
     "signature_calculated": "skill2"
   },
+  "Lamentis": {
+    "signature_calculated": "ultimate",
+    "signature_override": "skill4"
+  },
   "Lenya": {
     "signature_calculated": "ultimate"
   },
@@ -271,6 +275,10 @@
   },
   "Perseus": {
     "signature_calculated": "ultimate"
+  },
+  "Peggy": {
+    "signature_calculated": "ultimate",
+    "speed_override": "fast"
   },
   "Phraesto": {
     "signature_calculated": "ultimate",

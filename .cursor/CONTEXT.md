@@ -71,3 +71,18 @@ configurable in `mix_mode.mark_synergy_multiplier` (default 2.0).
 A visual emphasis on heroes listed in a selected drop-zone hero's
 replacement options. Shown as category-colored glows and stacked
 category icons on pool cards.
+
+## Character portrait
+
+When the project owner asks for a hero's **character portrait**, they
+mean **both** site image assets:
+
+- **Portrait** — hex unit icon from
+  [Yaphalla](https://www.yaphalla.com/heroes), at
+  `site/assets/portraits/<DisplayName>.png` (downloaded by
+  `just render-site`).
+- **Combat icon** — in-battle character art from the AFK Journey Fandom
+  wiki, at `site/assets/combat-icons/<DisplayName>.png`.
+
+Portraits and combat icons are separate files used in different UI
+contexts (e.g. list name column vs grid/detail card frames).

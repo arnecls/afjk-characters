@@ -623,6 +623,8 @@ window.AFKJ = window.AFKJ || {};
     "Damage taken": { emoji: "🛡️", cls: "chip-stat" },
     "Magic damage": { emoji: "🪄", cls: "chip-stat" },
     "Damage dealt": { emoji: "⚔️", cls: "chip-stat" },
+    "Ranged damage": { emoji: "🏹", cls: "chip-stat" },
+    "Basic stats": { emoji: "📈", cls: "chip-stat" },
   };
 
   function effectChipClassForPolarity(polarity, fallbackCls) {

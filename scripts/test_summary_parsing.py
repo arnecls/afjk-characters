@@ -846,6 +846,38 @@ class BenefitStatTests(unittest.TestCase):
         self.assertIn("Healing", hero.benefit_stats)
         self.assertNotIn("Life Drain", hero.benefit_stats)
 
+    def test_peggy_royal_scroll_hot(self):
+        text = (
+            "Peggy opens a magic scroll, healing all remaining royal guards and "
+            "2 other weakest allies for Peggy's 150% (ATK-based) + 18% HP per "
+            "second for 8s."
+        )
+        effects, cc, sp, req = [], [], {}, []
+        rs.analyze_text(effects, cc, sp, req, "base", text, "Physical")
+        labels = [e.label for e in effects if e.category == "buff"]
+        self.assertIn(HEALING_OVER_TIME_LABEL, labels)
+
+    def test_peggy_ultimate_damage_absorption(self):
+        text = (
+            "During this time, 70% of the damage taken by all allies is shared "
+            "evenly among the guards, while the guards' own HP loss is reduced "
+            "by 75%."
+        )
+        effects, cc, sp, req = [], [], {}, []
+        rs.analyze_text(effects, cc, sp, req, "base", text, "Physical")
+        buff_labels = [e.label for e in effects if e.category == "buff"]
+        self.assertIn("Damage taken", buff_labels)
+        self.assertTrue(rs.text_has_summon_unit(
+            "When a battle starts, Peggy summons 2 royal guards to join the fray."
+        ))
+
+    def test_lamentis_apostle_summon(self):
+        text = (
+            "Lamentis sacrifices 5% of his max HP to create 2 apostles from "
+            "nebulae and particles."
+        )
+        self.assertTrue(rs.text_has_summon_unit(text))
+
 
 if __name__ == "__main__":
     unittest.main()

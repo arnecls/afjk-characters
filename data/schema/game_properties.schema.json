@@ -9,6 +9,7 @@
       "enum": [
         "atk",
         "atk_spd",
+        "basic_stats",
         "assistance",
         "crit",
         "crit_dmg_boost",

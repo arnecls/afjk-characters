@@ -433,6 +433,14 @@
     "skill4": "battle-start analysis makes enemies drop more ingredients on defeat",
     "skill5": "max HP permanently grows with each ingredient collected"
   },
+  "Lamentis": {
+    "ultimate": "apostles stun front enemies, then AoE magic damage and max HP reduction on stunned foes; gain ATK SPD",
+    "skill1": "every third normal attack deals bonus max-HP-scaling magic damage",
+    "skill2": "sacrifice max HP to create apostles that inherit stats and copy enhanced normals; merge heals caster",
+    "skill3": "ATK SPD for self and apostles scales with apostle count on field",
+    "skill4": "apostle attacks stack Growth on merge; max stacks unlock Six Eyes, free apostles, and enhanced true damage",
+    "skill5": "caster receives a portion of ally buffs applied to apostles"
+  },
   "Lenya": {
     "ultimate": "isolate top attacker in one-on-one combat",
     "skill1": "dodge normal attacks, then counter with an AoE kick",
@@ -624,6 +632,14 @@
     "skill3": "ATK boost grows with temporary ally buffs active",
     "skill4": "amplify effects of all temporary stat buffs received",
     "skill5": "expand ally terrain buff area by one tile"
+  },
+  "Peggy": {
+    "ultimate": "Passive: battle-start summon guards; Active: heal guards, refill guard, then guards absorb ally damage",
+    "skill1": "healing over time on guards and two weakest allies",
+    "skill2": "summon ranged marksman; armor-piercing shots increase ranged damage taken and amplify allied summon ranged damage",
+    "skill3": "haste bonus rises when two guards remain on field",
+    "skill4": "during ultimate, guards alternate AoE slashes that grant shield; aura boosts nearby melee damage, extra for summons",
+    "skill5": "when enough allied summons from different allies are alive, buff all summons ATK and Phys and Magic DEF"
   },
   "Phraesto": {
     "ultimate": "Passive: sacrifice max HP to summon an Illusion that uses all skills; Active: AoE damage nearby, recovering HP per hit",
