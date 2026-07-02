@@ -6,6 +6,12 @@
     "group": "buff"
   },
   {
+    "id": "basic_stats_buff",
+    "label": "Basic stats",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
     "id": "atk_spd_buff",
     "label": "ATK SPD",
     "polarity": "buff",
@@ -44,6 +50,12 @@
   {
     "id": "damage_dealt_buff",
     "label": "Damage dealt",
+    "polarity": "buff",
+    "group": "buff"
+  },
+  {
+    "id": "ranged_damage_buff",
+    "label": "Ranged damage",
     "polarity": "buff",
     "group": "buff"
   },
@@ -152,6 +164,12 @@
   {
     "id": "atk_debuff",
     "label": "ATK",
+    "polarity": "debuff",
+    "group": "debuff"
+  },
+  {
+    "id": "basic_stats_debuff",
+    "label": "Basic stats",
     "polarity": "debuff",
     "group": "debuff"
   },
