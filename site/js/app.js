@@ -1253,16 +1253,27 @@ return"grid";}
 function storeViewMode(mode){try{localStorage.setItem(config.VIEW_MODE_KEY,mode);}catch(e){}}
 function syncViewToggleButtons(){const dom=state.dom;if(!dom.viewToggle){return;}
 dom.viewToggle.querySelectorAll(".view-btn").forEach(function(b){const active=b.dataset.view===state.viewMode;b.classList.toggle("active",active);b.setAttribute("aria-pressed",active?"true":"false");});}
+function filterContextClass(filterType,value){if(filterType==="faction"){return"filter-btn-faction-"+utils.factionDataKey(value);}
+if(filterType==="class"){return"filter-btn-class-"+value.toLowerCase().replace(/\s+/g,"");}
+if(filterType==="role"){return"filter-btn-role-"+value.replace(/_/g,"-");}
+return"";}
+function renderFilterFactionIcon(faction){const icon=utils.iconPath("factions",faction);if(!icon){return"";}
+return('<span class="filter-btn-icon filter-btn-icon-img" aria-hidden="true">'+'<img src="'+
+utils.assetUrl(icon)+'" alt="">'+"</span>");}
+function renderFilterClassIcon(className){const icon=utils.iconPath("class",className);if(!icon){return"";}
+return('<span class="filter-btn-icon filter-btn-icon-img" aria-hidden="true">'+'<img src="'+
+utils.assetUrl(icon)+'" alt="">'+"</span>");}
+function renderFilterBtn(filterType,value,label){let iconHtml="";if(filterType==="faction"){iconHtml=renderFilterFactionIcon(value);}else if(filterType==="class"){iconHtml=renderFilterClassIcon(value);}else if(filterType==="role"){iconHtml=window.AFKJ.views.detail.renderRoleCategoryIcon(value);if(iconHtml){iconHtml=iconHtml.replace('class="role-category-icon"','class="filter-btn-icon filter-btn-icon-role role-category-icon"');}}
+const ctxClass=filterContextClass(filterType,value);return('<button type="button" class="filter-btn '+
+ctxClass+'" data-filter="'+
+escapeHtml(filterType)+'" data-value="'+
+escapeHtml(value)+'">'+
+iconHtml+'<span class="filter-btn-label">'+
+escapeHtml(label)+"</span></button>");}
 function buildFilters(){const dom=state.dom;const factions=[];const classes=[];const seenF={};const seenC={};const seenRoles={};state.heroes.forEach(function(h){if(h.faction&&!seenF[h.faction]){seenF[h.faction]=true;factions.push(h.faction);}
 if(h.class&&!seenC[h.class]){seenC[h.class]=true;classes.push(h.class);}
-if(h.roleCategory&&!seenRoles[h.roleCategory]){seenRoles[h.roleCategory]=true;}});factions.sort();classes.sort();let html='<div class="filter-row filter-row-faction">'+'<span class="filter-label">Faction</span>';factions.forEach(function(f){html+='<button type="button" class="filter-btn" data-filter="faction" data-value="'+
-escapeHtml(f)+'">'+
-escapeHtml(f)+"</button>";});html+="</div>";html+='<div class="filter-row filter-row-secondary">';html+='<div class="filter-secondary-groups">';html+='<div class="filter-group filter-group-class">';html+='<span class="filter-label">Class</span>';classes.forEach(function(c){html+='<button type="button" class="filter-btn" data-filter="class" data-value="'+
-escapeHtml(c)+'">'+
-escapeHtml(c)+"</button>";});html+="</div>";html+='<div class="filter-group filter-group-role">';html+='<span class="filter-label filter-label-role">Role</span>';config.ROLE_FILTER_ORDER.forEach(function(roleKey){if(!seenRoles[roleKey]){return;}
-const meta=config.ROLE_CATEGORY_META[roleKey];html+='<button type="button" class="filter-btn" data-filter="role" data-value="'+
-escapeHtml(roleKey)+'">'+
-escapeHtml(meta.label)+"</button>";});html+="</div></div></div>";dom.filtersEl.innerHTML=html;updateFilterActiveStates();window.AFKJ.ui.updateListStickyOffset();}
+if(h.roleCategory&&!seenRoles[h.roleCategory]){seenRoles[h.roleCategory]=true;}});factions.sort();classes.sort();let html='<div class="filter-row filter-row-faction">'+'<span class="filter-label">Faction</span>';factions.forEach(function(f){html+=renderFilterBtn("faction",f,f);});html+="</div>";html+='<div class="filter-row filter-row-secondary">';html+='<div class="filter-secondary-groups">';html+='<div class="filter-group filter-group-class">';html+='<span class="filter-label">Class</span>';classes.forEach(function(c){html+=renderFilterBtn("class",c,c);});html+="</div>";html+='<div class="filter-group filter-group-role">';html+='<span class="filter-label filter-label-role">Role</span>';config.ROLE_FILTER_ORDER.forEach(function(roleKey){if(!seenRoles[roleKey]){return;}
+const meta=config.ROLE_CATEGORY_META[roleKey];html+=renderFilterBtn("role",roleKey,meta.label);});html+="</div></div></div>";dom.filtersEl.innerHTML=html;updateFilterActiveStates();window.AFKJ.ui.updateListStickyOffset();}
 function updateFilterActiveStates(){const dom=state.dom;dom.filtersEl.querySelectorAll(".filter-btn").forEach(function(b){const f=b.dataset.filter;if(f==="faction"){b.classList.toggle("active",b.dataset.value===state.activeFaction);}else if(f==="class"){b.classList.toggle("active",b.dataset.value===state.activeClass);}else if(f==="role"){b.classList.toggle("active",b.dataset.value===state.activeRole);}});window.AFKJ.ui.updateFiltersToggleLabel();}
 function initCsv(text){const dom=state.dom;const parsed=list.parseCsv(text);if(!parsed.length){state.csvHeaders=[];state.csvRows=[];return;}
 state.csvHeaders=parsed[0];state.csvRows=parsed.slice(1);state.csvColumnWidths=[];state.columnWidthsLocked=false;window.AFKJ.tiers.augmentCsvWithTiers();list.buildColumnFilterOptions();if(!dom.detailView.classList.contains("hidden")){return;}
