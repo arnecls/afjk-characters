@@ -23,64 +23,50 @@ window.AFKJ = window.AFKJ || {};
       BENEFIT_MIN_STARS,
       Math.min(BENEFIT_MAX_STARS, rating)
     );
-    const roundedStars = Math.max(
+    const fullStars = Math.max(
       BENEFIT_MIN_STARS,
-      Math.min(BENEFIT_MAX_STARS, Math.round(clamped))
+      Math.min(BENEFIT_MAX_STARS, Math.floor(clamped))
     );
-    return BENEFIT_STAR.repeat(roundedStars);
+    return BENEFIT_STAR.repeat(fullStars) + " (" + clamped.toFixed(1) + ")";
   }
 
-  function beneficiaryScoreTooltip(scoreRating) {
-    const rating = Number(scoreRating);
-    if (!isFinite(rating)) {
-      return "Benefit rating out of 5";
-    }
-    const clamped = Math.max(
-      BENEFIT_MIN_STARS,
-      Math.min(BENEFIT_MAX_STARS, rating)
-    );
-    return "Benefit rating: " + clamped.toFixed(1) + " out of 5";
-  }
-
-  function renderBeneficiaryScore(scoreRating) {
-    const text = formatBeneficiaryRatingDisplay(scoreRating);
+  function renderBeneficiaryScore(scoreRating, scoreDisplay) {
+    const text = scoreDisplay || formatBeneficiaryRatingDisplay(scoreRating);
     if (!text) {
       return "";
     }
     return (
-      '<div class="hero-compact-score" title="' +
-      escapeHtml(beneficiaryScoreTooltip(scoreRating)) +
-      '">' +
+      '<div class="hero-compact-score" title="Benefit rating out of 5">' +
       escapeHtml(text) +
       "</div>"
     );
   }
 
-  function renderHeroCompactCard(slug, name, bodyHtml, footerHtml, headerHtml) {
+  function renderHeroCompactCard(slug, name, bodyHtml, footerHtml) {
     const hero = window.AFKJ.state.heroBySlug[slug];
-    const factionKey = hero ? utils.factionDataKey(hero.faction) : "";
-    const portraitHero = hero || { name: name, faction: "" };
-    const portraitHtml = gridView.renderHeroPortrait(
-      portraitHero,
-      "compact-portrait"
-    );
+    let portraitHtml = "";
+    if (hero) {
+      portraitHtml = gridView.renderHeroPortrait(hero, "compact-portrait");
+    } else {
+      const portrait = "assets/portraits/" + name + ".png";
+      portraitHtml =
+        '<img class="hero-compact-portrait-fallback" src="' +
+        utils.assetUrl(portrait) +
+        '" alt="" loading="lazy" onerror="this.style.opacity=0.3">';
+    }
     return (
       '<article class="hero-compact-card afkj-box afkj-box-sm" data-slug="' +
       escapeHtml(slug) +
-      '" data-faction="' +
-      escapeHtml(factionKey) +
       '" tabindex="0" role="link" aria-label="' +
       escapeHtml(name) +
       '">' +
       '<div class="hero-compact-portrait-wrap">' +
       portraitHtml +
+      gridView.renderCompactCardWave(slug) +
       "</div>" +
       '<div class="hero-compact-body">' +
-      '<div class="hero-compact-header">' +
       '<div class="hero-compact-name">' +
       utils.linkifyHero(name, slug) +
-      "</div>" +
-      (headerHtml || "") +
       "</div>" +
       (bodyHtml || "") +
       (footerHtml || "") +
@@ -90,9 +76,7 @@ window.AFKJ = window.AFKJ || {};
 
   function renderHeroRowCard(slug, name, bodyHtml) {
     const hero = window.AFKJ.state.heroBySlug[slug];
-    const combatSrc = utils.assetUrl(
-      utils.combatIconPath(hero || { name: name })
-    );
+    const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
     return (
       '<article class="hero-row-card" data-slug="' +
       escapeHtml(slug) +
@@ -100,7 +84,7 @@ window.AFKJ = window.AFKJ || {};
       escapeHtml(name) +
       '">' +
       '<img src="' +
-      escapeHtml(combatSrc) +
+      utils.assetUrl(portrait) +
       '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
       '<div class="hero-row-body">' +
       '<div class="hero-row-name">' +
@@ -630,14 +614,13 @@ window.AFKJ = window.AFKJ || {};
 
   function renderSynergyHeroCard(ref, bodyHtml) {
     const scoreHtml = renderBeneficiaryScore(
-      ref.scoreRating != null ? ref.scoreRating : ref.score_rating
+      ref.scoreRating != null ? ref.scoreRating : ref.score_rating,
+      ref.scoreDisplay || ref.score_display
     );
     return renderHeroCompactCard(
       ref.slug,
       ref.name,
-      bodyHtml || "",
-      "",
-      scoreHtml
+      scoreHtml + (bodyHtml || "")
     );
   }
 
@@ -655,20 +638,11 @@ window.AFKJ = window.AFKJ || {};
 
   function renderInlineHeroPortrait(slug, name) {
     const hero = window.AFKJ.state.heroBySlug[slug];
-    const factionKey = hero ? utils.factionDataKey(hero.faction) : "";
-    const combatSrc = utils.assetUrl(
-      utils.combatIconPath(hero || { name: name })
-    );
+    const portrait = hero ? hero.portrait : "assets/portraits/" + name + ".png";
     return (
-      '<span class="inline-hero-hex" data-faction="' +
-      escapeHtml(factionKey) +
-      '" aria-hidden="true">' +
-      '<span class="inline-hero-hex-wrap">' +
-      '<span class="inline-hero-hex-inner">' +
-      '<img class="inline-hero-hex-icon" src="' +
-      escapeHtml(combatSrc) +
-      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">' +
-      "</span></span></span>"
+      '<img class="inline-hero-portrait" src="' +
+      utils.assetUrl(portrait) +
+      '" alt="" loading="lazy" onerror="this.style.opacity=0.3">'
     );
   }
 
