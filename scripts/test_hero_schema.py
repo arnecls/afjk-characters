@@ -200,8 +200,12 @@ class RoundTripTests(unittest.TestCase):
         section = rs.CATEGORY_TO_SECTION["skill1"]
         sl = hero.skill_slices[section]
         labels = {(e.category, e.label, e.targeting) for e in sl.effects}
-        self.assertIn(("buff", "Ally empower", "Single target"), labels)
-        self.assertIn(("buff", "Exemption", "Single target"), labels)
+        empower = [
+            se
+            for se in sl.special_effects
+            if se.kind == "provides" and se.label == "Ally empower"
+        ]
+        self.assertTrue(empower)
         self.assertIn(("buff", "Max HP", "Single target"), labels)
         self.assertNotIn(("debuff", "Max HP", "Single target"), labels)
 
@@ -246,13 +250,13 @@ class RoundTripTests(unittest.TestCase):
         self.assertEqual(dodge[0].targeting, "Self")
 
     def test_marcille_hero_focus_chant_haste_self(self):
-        text = (
-            "While chanting to cast her Ultimate, she increases Haste "
-            "by an additional 6."
-        )
-        effects: list[rs.Effect] = []
-        rs.analyze_text(effects, [], {}, [], "legendary+", text, "Magic")
-        haste = [e for e in effects if e.label == "Haste"]
+        hero, _data = self._hero_by_title_prefix("Marcille")
+        section = rs.CATEGORY_TO_SECTION["ultimate"]
+        haste = [
+            e
+            for e in hero.skill_slices[section].effects
+            if e.label == "Haste"
+        ]
         self.assertTrue(haste)
         self.assertEqual(haste[0].targeting, "Self")
 
@@ -268,37 +272,38 @@ class RoundTripTests(unittest.TestCase):
     def test_cassadee_running_tide_path_knockback_and_supreme_magic_def(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
         ult = hero.skill_slices["Ultimate"]
+        supreme = hero.skill_slices["Unlocks at Supreme+"]
         knockback = [e for e in ult.effects if e.category == "cc"]
         self.assertTrue(knockback)
         self.assertEqual(knockback[0].targeting, "Area")
         self.assertEqual(knockback[0].area, "path")
         self.assertEqual(knockback[0].area_direction, "selected_target")
         magic_def = [
-            e for e in ult.effects if e.category == "debuff" and e.label == "Magic DEF"
+            e for e in supreme.effects if e.category == "debuff" and e.label == "Magic DEF"
         ]
         self.assertTrue(magic_def)
         self.assertEqual(magic_def[0].tier, "Supreme+")
         tags = rs.format_skill_card_tags(hero, "ultimate")
         labels = tag_labels(tags)
-        self.assertIn("Magic DEF (Supreme+)", labels)
+        self.assertIn("Magic DEF — path (Supreme+)", labels)
         self.assertIn("Knock back — path", labels)
 
     def test_cassadee_tidal_strength_magic_damage_blessed_ally(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
         skill2 = hero.skill_slices["Skill2"]
-        buffs = [
+        damage = [
             e
             for e in skill2.effects
-            if e.category == "buff" and e.label == "Magic damage"
+            if e.category == "damage" and e.label == "Magic"
         ]
-        self.assertTrue(buffs)
+        self.assertTrue(damage)
         self.assertNotIn(
             "Tidal Strength",
             {e.label for e in skill2.effects},
         )
-        base = [e for e in buffs if e.tier == "base"]
+        base = [e for e in damage if e.tier == "base"]
         self.assertTrue(base)
-        self.assertEqual(base[0].targeting, "Self")
+        self.assertEqual(base[0].targeting, "Single target")
         triggers = [
             c
             for c in base[0].conditions
@@ -306,23 +311,20 @@ class RoundTripTests(unittest.TestCase):
             and c.get("trigger") == "normal_attack"
         ]
         self.assertTrue(triggers)
-        mythic_path = [
-            e
-            for e in skill2.effects
-            if e.category == "buff"
-            and e.label == "Magic damage"
-            and e.tier == "Mythic+"
-            and e.area == "path"
+        bless = [
+            se
+            for se in hero.skill_slices["Ex. Skill"].special_effects
+            if se.kind == "provides"
+            and se.label == "Ally blessing"
+            and se.targeting == "All units"
         ]
-        self.assertTrue(mythic_path)
+        self.assertTrue(bless)
         skill2_tags = rs.format_skill_card_tags(hero, "skill2")
         skill2_labels = tag_labels(skill2_tags)
-        self.assertIn("Magic damage — Self", skill2_labels)
-        self.assertIn("Magic damage — path (Mythic+)", skill2_labels)
-        self.assertNotIn("Magic damage — Area (Mythic+)", skill2_labels)
+        self.assertIn("Magic", skill2_labels)
         skill4_tags = rs.format_skill_card_tags(hero, "skill4")
         skill4_labels = tag_labels(skill4_tags)
-        self.assertNotIn("Magic damage — path", skill4_labels)
+        self.assertNotIn("Magic — path", skill4_labels)
 
     def test_cassadee_skill1_cc_targeting_with_ex10(self):
         data = io.load_heroes_data()
@@ -377,14 +379,11 @@ class RoundTripTests(unittest.TestCase):
         hero, _data = self._hero_by_title_prefix("Cassadee")
         tags = rs.format_skill_card_tags(hero, "ultimate")
         labels = tag_labels(tags)
-        self.assertIn("Magic DEF (Supreme+)", labels)
+        self.assertIn("Magic DEF — path (Supreme+)", labels)
         reinier, _ = self._hero_by_title_prefix("Reinier")
-        skill1_tags = rs.format_skill_card_tags(reinier, "skill1")
-        skill1_labels = tag_labels(skill1_tags)
-        self.assertTrue(
-            any("(Mythic+)" in label for label in skill1_labels),
-            skill1_labels,
-        )
+        skill4_tags = rs.format_skill_card_tags(reinier, "skill4")
+        skill4_labels = tag_labels(skill4_tags)
+        self.assertIn("Damage taken (EX+10)", skill4_labels)
 
     def test_zandrok_rallying_roar_wedge_path_damage(self):
         hero, _data = self._hero_by_title_prefix("Zandrok")
@@ -412,7 +411,12 @@ class RoundTripTests(unittest.TestCase):
         hero, _data = self._hero_by_title_prefix("Zandrok")
         tags = rs.format_skill_card_tags(hero, "skill5")
         labels = tag_labels(tags)
-        self.assertIn("Direct healing — Self", labels)
+        stacking = [
+            se
+            for se in hero.skill_slices["Unlocks at Supreme+"].special_effects
+            if se.kind == "provides" and se.label == "Stacking"
+        ]
+        self.assertTrue(stacking)
         self.assertFalse(any("(Supreme+)" in label for label in labels))
 
     def test_ascension_cards_omit_native_tier_suffix(self):
@@ -513,6 +517,222 @@ class RoundTripTests(unittest.TestCase):
         self.assertIn("Magic DEF — All units", labels)
         keys = [rs._canonical_skill_card_chip_key(label) for label in labels]
         self.assertEqual(len(keys), len(set(keys)))
+
+    def test_arden_dark_cloud_bind_is_area(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Arden")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        skill1 = hero.skill_slices["Skill1"]
+        binds = [
+            e
+            for e in skill1.effects
+            if e.category == "cc"
+            and e.label == "Bind"
+            and e.tier in ("Mythic+", "EX+10")
+        ]
+        self.assertEqual({e.tier for e in binds}, {"Mythic+", "EX+10"})
+        self.assertTrue(all(e.targeting == "Area" for e in binds), binds)
+        self.assertTrue(all(e.area_count == 2 for e in binds), binds)
+
+    def test_aliceth_aegis_wings_invincible_targets_ally(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Aliceth")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        aegis = hero.skill_slices["Ex. Skill"]
+        invincible = next(
+            se
+            for se in aegis.special_effects
+            if se.kind == "provides"
+            and se.label == "Invincibility"
+            and se.tier == "Mythic+"
+        )
+        self.assertEqual(invincible.targeting, "Single target")
+
+    def test_contess_hp_loss_vulnerability_is_debuff(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Contess")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        expulsion = hero.skill_slices["Ex. Skill"]
+        hp_loss = next(
+            e
+            for e in expulsion.effects
+            if e.category == "debuff" and e.label == "HP loss"
+        )
+        self.assertEqual(hp_loss.targeting, "Single target")
+        self.assertTrue(
+            any(c.get("type") == "count" for c in hp_loss.conditions),
+            hp_loss.conditions,
+        )
+        tags = rs.format_skill_card_tags(hero, "skill4")
+        self.assertIn(
+            {"label": "HP loss", "polarity": "debuff"},
+            tags,
+        )
+
+    def test_contess_quiet_period_energy_is_ultimate_cast_based(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Contess")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        quiet = hero.skill_slices["Skill2"]
+        energy = next(
+            e
+            for e in quiet.effects
+            if e.category == "debuff" and e.label == "Energy"
+        )
+        self.assertIn(
+            {
+                "type": "trigger_condition",
+                "trigger": "cast",
+                "skill_type": "ultimate",
+            },
+            energy.conditions,
+        )
+
+    def test_thoran_cheat_death_on_skill2_not_ultimate(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Thoran")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        ult = hero.skill_slices["Ultimate"]
+        res = hero.skill_slices["Skill2"]
+        ult_cheat = [
+            se.label
+            for se in ult.special_effects
+            if se.kind == "provides" and se.label == "Cheat death"
+        ]
+        res_cheat = [
+            se.label
+            for se in res.special_effects
+            if se.kind == "provides" and se.label == "Cheat death"
+        ]
+        self.assertEqual(ult_cheat, [])
+        self.assertEqual(len(res_cheat), 1)
+        ult_interrupt = [
+            e for e in ult.effects if e.category == "cc" and e.label == "Interrupt"
+        ]
+        self.assertEqual(ult_interrupt, [])
+
+    def test_zorya_ex_skill_owns_ally_ultimate_require(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Zorya")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        ult = hero.skill_slices["Ultimate"]
+        ex = hero.skill_slices["Ex. Skill"]
+        ult_req = [
+            se.label
+            for se in ult.special_effects
+            if se.kind == "requires" and "Ultimate" in se.label
+        ]
+        ex_req = [
+            se.label
+            for se in ex.special_effects
+            if se.kind == "requires" and "Ultimate" in se.label
+        ]
+        self.assertEqual(ult_req, [])
+        self.assertTrue(ex_req)
+
+    def test_contess_supreme_rule_triggers(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Contess")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        supreme = hero.skill_slices["Unlocks at Supreme+"]
+        stun = next(
+            e
+            for e in supreme.effects
+            if e.category == "cc" and e.label.lower() == "stun"
+        )
+        silence = next(
+            e
+            for e in supreme.effects
+            if e.category == "cc" and e.label.lower() == "silence"
+        )
+        self.assertIn(
+            {
+                "type": "trigger_condition",
+                "trigger": "rule_violation",
+                "rule": "be_civil",
+            },
+            stun.conditions,
+        )
+        self.assertIn(
+            {
+                "type": "trigger_condition",
+                "trigger": "rule_violation",
+                "rule": "be_quiet",
+            },
+            silence.conditions,
+        )
+
+    def test_natsu_ultimate_mode_branches(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Natsu")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        ult = hero.skill_slices["Ultimate"]
+        modes = {
+            tuple(
+                c["mode"]
+                for c in e.conditions
+                if c.get("type") == "skill_mode"
+            )
+            for e in ult.effects
+            if e.conditions
+        }
+        self.assertIn(("lightning_fire_dragon",), modes)
+        self.assertIn(("fire_dragon_king",), modes)
+
+    def test_vala_checkmate_mode_branches(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Vala")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        skill = hero.skill_slices["Skill2"]
+        modes = {
+            tuple(
+                c["mode"]
+                for c in e.conditions
+                if c.get("type") == "skill_mode"
+            )
+            for e in skill.effects
+            if e.conditions
+        }
+        self.assertIn(("skyblaster",), modes)
+        self.assertIn(("sword",), modes)
+
+    def test_marilee_battlefield_learning_true_damage_conversion(self):
+        data = io.load_heroes_data()
+        record = next(r for r in data["heroes"] if r.get("name") == "Marilee")
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        ex = hero.skill_slices["Ex. Skill"]
+        true_hit = next(
+            e for e in ex.effects if e.category == "damage" and e.label == "True damage"
+        )
+        self.assertIn(
+            {
+                "type": "stack_count",
+                "stacks": 6,
+                "stack_comparison": "at_max",
+            },
+            true_hit.conditions,
+        )
+        self.assertIn(
+            {"type": "trigger_condition", "trigger": "normal_attack"},
+            true_hit.conditions,
+        )
+        provides = [
+            se for se in ex.special_effects if se.kind == "provides"
+        ]
+        self.assertTrue(
+            any(se.label == "DoT conversion" for se in provides),
+            provides,
+        )
 
     def test_aliceth_aegis_wings_blind_cc(self):
         processed = io.load_processed()
@@ -771,7 +991,7 @@ class SkillOverviewTests(unittest.TestCase):
         ultimate_tags = " ".join(tag_labels(ultimate["tags"]))
         self.assertIn("Physical", ultimate_tags)
         self.assertIn("HP loss", ultimate_tags)
-        self.assertIn("Invincible — Self", ultimate_tags)
+        self.assertIn("Unaffected — Self", ultimate_tags)
         self.assertNotIn("`high`", ultimate_tags)
         skill1 = next(c for c in cards if c["category"] == "skill1")
         skill1_tags = " ".join(tag_labels(skill1["tags"]))
@@ -885,10 +1105,10 @@ class SkillOverviewTests(unittest.TestCase):
         tags = rs.format_skill_card_tags(hero, "ultimate")
         labels = tag_labels(tags)
         self.assertIn("Sleep — All units", labels)
-        self.assertIn("Bind", labels)
+        self.assertNotIn("Bind", labels)
         keys = [rs._canonical_skill_card_chip_key(t["label"]) for t in tags]
         self.assertIn("sleep:all units", keys)
-        self.assertIn("bind", keys)
+        self.assertNotIn("bind", keys)
         self.assertEqual(len(keys), len(set(keys)))
 
     def test_tasi_skill1_cc_tag_includes_area_targeting(self):
@@ -1073,6 +1293,14 @@ class SkillOverviewTests(unittest.TestCase):
 
 
 class PlacementConstraintTests(unittest.TestCase):
+    def _hero_by_title_prefix(self, prefix: str):
+        data = io.load_heroes_data()
+        text = io.reconstruct_heroes_md(data)
+        blocks = [b for b in re.split(r"\n(?=## )", text) if b.startswith(f"## {prefix}")]
+        self.assertTrue(blocks, f"hero not found: {prefix}")
+        heroes, _blocks, _role = _analyze_heroes_from_blocks(blocks)
+        return heroes[0], data
+
     def _hero_skills(self, display_name: str):
         from test_roster_cache import block_for_short_name
 
@@ -1188,19 +1416,14 @@ class PlacementConstraintTests(unittest.TestCase):
         )
 
     def test_aliceth_hero_focus_not_debuff_require(self):
-        text = (
-            "After the first enemy affected by her Mark of Judgement is "
-            "defeated, Aliceth and allies with Brightfeather gain an extra "
-            "6% ATK."
-        )
-        effects: list[rs.SpecialEffect] = []
-        rs.detect_special_effects(effects, "legendary+", text)
-        requires = [e for e in effects if e.kind == "requires"]
-        self.assertEqual(
-            [e.label for e in requires],
-            [],
-            requires,
-        )
+        hero, _data = self._hero_by_title_prefix("Aliceth")
+        requires = [e for e in hero.special_effects if e.kind == "requires"]
+        debuff_requires = [
+            e
+            for e in requires
+            if e.label in ("Debuff on target", "Debuff on target (Aging)")
+        ]
+        self.assertEqual([e.label for e in debuff_requires], [], debuff_requires)
 
     def test_twins_stellar_bond_placement(self):
         constraints = rs.detect_placement_constraints(
@@ -1223,7 +1446,9 @@ class PlacementConstraintTests(unittest.TestCase):
     def _hero_by_short_name(self, display_name: str):
         from test_roster_cache import block_for_short_name
 
-        return rs.parse_hero_block(block_for_short_name(display_name))
+        hero = rs.parse_hero_block(block_for_short_name(display_name))
+        rs.analyze_hero(hero)
+        return hero
 
     def test_satrana_sparks_ally_placement(self):
         constraints = rs.detect_placement_constraints(

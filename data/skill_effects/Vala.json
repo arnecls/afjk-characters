@@ -1,0 +1,366 @@
+{
+  "title": "Vala - Phantom of Oakenfell",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "854f9c3d0cb3f5cfc7907cf8ead095e861809a0c03a22e48b52ed838c19deaab",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "skyblaster"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 4.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "skyblaster"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 450.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "sword"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 420.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Marked target (focus fire)",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "She prioritizes shooting the marked enemy."
+            },
+            {
+              "label": "Form or stance active",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Switches between Skyblaster mode and Sword mode when casting Swift Shift."
+            },
+            {
+              "label": "Marked target (focus fire)",
+              "tier": "mythic+",
+              "targeting": "Self",
+              "description": "Vala blends into the darkness when the marked enemy is defeated, making her untargetable until all other allies are defeated."
+            },
+            {
+              "label": "Marked target (focus fire)",
+              "tier": "ex+10",
+              "targeting": "Self",
+              "description": "Recovers 40% of her max HP when the marked enemy is defeated."
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Enemy defeat",
+              "tier": "legendary+",
+              "targeting": "Enemies",
+              "description": "She also gains an extra 5% ATK every time a non-summoned enemy is defeated."
+            }
+          ]
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "88a3ced2f0ba79185573fc90fb512b9fc9d49a73a4636df14a54b9f6e16caff5",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Marked target (focus fire)",
+              "label": "debuff_stat"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Energy",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 120.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "640a3f5d0e6f2be4e1da57ac6ec50c2a4123cadd684eee5ddeebe39b6763e8e3",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "skyblaster"
+                }
+              ],
+              "type": "debuff",
+              "name": "Haste",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 60.0
+                }
+              ],
+              "duration": 8.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "skyblaster"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 260.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "sword"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 115.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "sword"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 1.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "872600a1beb4b4b964abeac9803208c9ce4fade08a38f07098c01b22db6292d6",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "a35e818836f00f3c1956b9fc72496385a72c88e33a01fadd0e2e96b95c07480b",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 120.0
+                }
+              ],
+              "duration": 10.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "untargetable",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "57a0245a69b9d1ade3210379d2ac740913b570661fcb1af85f6797c2027860b1",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Damage dealt",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

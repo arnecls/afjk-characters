@@ -1,0 +1,230 @@
+{
+  "title": "Talene - Resurging Flame",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "532aae63e8b86c3b6f979165086fb4c7d8ecacf0314e94f795511726b51fdcf1",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Cheat death",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Talene transforms into a ball of flame whenever she is defeated."
+            },
+            {
+              "label": "Transformation",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Talene transforms into a ball of flame whenever she is defeated."
+            },
+            {
+              "label": "Stacking",
+              "tier": "mythic+",
+              "targeting": "Single target",
+              "description": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "115ab5f408ca615cd039ac05e42a17e23084a56efa7b683d916d5aed85b26cbe",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 40.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "3238ee3fe0d4549117f95d6f6a5a07d57c21380357d647ffa076c280a72a18c6",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "crowd_control",
+              "cc-type": "knock_back"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 160.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "53de8cd122f50d184d3e7a87339f823fd12fd7d41c0d3abdfa6d14a088b6fa1d",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "02784a6160031f45fbf009f2e6c4cb0335c3f9161b49f5dee1a047ce6ccf2753",
+      "is_max_known": true,
+      "tiers": {
+        "ex+5": {
+          "effects": [
+            {
+              "tier": "ex+5",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "93ce0778e1ba0e53b0467b515bae52de5203c9cd1c61f6af2042521d79246f8d",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "tick": 1.0,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "on_defeat"
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

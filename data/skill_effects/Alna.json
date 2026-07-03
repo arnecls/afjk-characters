@@ -1,0 +1,368 @@
+{
+  "title": "Alna - Frozen Mother",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "186ae89f84b6130412ce6559614309ec067f6c4ddd7159fb803485a8d37daf22",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "debuff",
+              "name": "Haste",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 40.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "zone",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ],
+              "duration": 8,
+              "tick": 0.5
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_blizzard"
+                }
+              ],
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 55.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "eccaf4417f20851128014e2a68701743f0522ee2905315296cb6c304e3494176",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 16.5
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 400.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 110.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 110.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Ally empower",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "During battle preparation, Alna selects an ally placed in the same row as herself to become the Winter Warrior."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "8c7620ba33c5ad39a2bb77bd13606bc276ca6cd3591ab8565d3a8e43c1d1c274",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "front",
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 290.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Haste",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 50.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "0a68829fbbaaa87bc73148650a8a164446bb5944fa8009d2ccf6c414e8f5334f",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "36c09cd34795911814b2664762236030eab0cfb8726007ee2d6e59168e484e69",
+      "is_max_known": true,
+      "tiers": {
+        "ex+15": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "DMG+CC immunity",
+              "tier": "ex+15",
+              "targeting": "Single target",
+              "description": "After casting Chilling Presence, Alna also grants the Winter Warrior the same immunity effects."
+            }
+          ],
+          "special_requires": []
+        },
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
+              "type": "debuff",
+              "name": "Vitality",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 2.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "mythic+": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "mythic+",
+              "immunity_type": "immune",
+              "timing": "start_of_battle",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "DMG+CC immunity",
+              "tier": "mythic+",
+              "targeting": "Self",
+              "description": "When a battle starts and every 20s thereafter, Alna envelops herself in icy winds, becoming immune to damage and control effects for 4s."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "e231eb71e692a04d3fed9248697d088dbcf5fe00cf8ac82891ca0984688487ce",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Basic stats",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

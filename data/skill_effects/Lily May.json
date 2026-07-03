@@ -1,0 +1,286 @@
+{
+  "title": "Lily May - Twilight Tracker",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "035bfb7a62e1a3e3d05cd59cb7936624c3939f4175def5c839b00afc83df4ffe",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Energy",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 700.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "boss"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "interrupt"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 260.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage dealt",
+              "label": "buff_stat"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "Invincibility",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "She remains Invincible during these attacks and returns to her original tile afterward."
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Ally stat buffs",
+              "tier": "mythic+",
+              "targeting": "Allies",
+              "description": "Lily May grows once upon receiving a non-permanent stats boost from an ally."
+            }
+          ]
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "4c617fdc9f0c245cbd6fab771bcb54909e7d62e8fdaa1e695d9f384e01f4b6f9",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 88.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Invincible",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "DEF Penetration",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 16.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "220196911196564e6e9ccbc062ade59638f18af12da04f453e7ae1f6028113ed",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 6.6
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "ba1d60d0856d44487a504b00fba942db9ec2d490ae50c450a0260da70d317870",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "0b80c6a1dc5258f82a2c5cdc210f2eb1ab9a59b571263740ad97245ca3bbf3a0",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "84134976a6532be21aa868a2cb1943ceeaf7839830072861ba25cc94dd3895a1",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Energy",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 1000.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

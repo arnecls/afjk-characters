@@ -1,0 +1,276 @@
+{
+  "title": "Dionel - Venus of Dawn",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "26c3932099a94a849b5f159bf14e97baa1b17adba93119277e8830d347e4246e",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "untargetable",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "Stacking",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally."
+            },
+            {
+              "label": "Execution scaling",
+              "tier": "supreme+",
+              "targeting": "Single target",
+              "description": "When he reaches max Intoxication stacks, his Execution increases by 25 further."
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Ally stat buffs",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "Dionel gains a stack of Intoxication when receiving the non-permanent stats boost from an ally, increasing 15% ATK and 15 ATK SPD up to 3 stacks, triggered once only by each ally."
+            }
+          ]
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "f4087d1454300c1f1d213da2662b79745820f7ce9a92db52a3e8c85e2e67a944",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 1,
+              "area_direction": "selected_target",
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 170.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "914ae6ddbe2e82adbfc1cf771a6c24f89f700aeee2cfaf6d6b633ea2742cc075",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                }
+              ],
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 18.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                }
+              ],
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 23.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Execution",
+              "label": "buff_offensive"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "e6b549de0ce6396ebfc153240ec47e76e90d1aefed94ba4aa8da3250a438c279",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK SPD",
+              "label": "buff_offensive"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "be1e9d53c5dac0e7f067da87f221e61b66200f3dac5fb7108060f801f293d86a",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "All units",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": -1,
+              "area_count": -1,
+              "type": "damage",
+              "damage_type": "true",
+              "name": "True damage",
+              "label": "damage_true",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 220.0
+                }
+              ]
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Vitality",
+              "label": "debuff_defensive"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "4716ea47ad49a1dc904cc1bf749b8dfc7941218c7169f2fbeea1ff9506c36795",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

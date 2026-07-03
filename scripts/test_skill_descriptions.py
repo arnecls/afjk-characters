@@ -147,10 +147,14 @@ class NormalizeSkillDescriptionTests(unittest.TestCase):
         chunks = rs.skill_chunks_from_skill(skill)
         chunk_text = " ".join(text for _tier, text, _sec in chunks)
         self.assertIn("places her Mark of Judgement", chunk_text)
-        effects: list[rs.Effect] = []
-        for tier, text, _section in chunks:
-            rs.analyze_text(effects, [], {}, [], tier, text, "Physical")
-        labels = [e.label for e in effects if e.category == "debuff"]
+        hero = rs.hero_from_record(aliceth)
+        rs.analyze_hero(hero)
+        section = skill["section"]
+        labels = [
+            e.label
+            for e in hero.skill_slices[section].effects
+            if e.category == "debuff"
+        ]
         self.assertIn("Marked target (focus fire)", labels)
 
 

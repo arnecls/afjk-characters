@@ -1,0 +1,269 @@
+{
+  "title": "Florabelle - Blooming Maiden",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "e1f700c71645448edbb75780dc9afbd56b234dad0d0ab1d2a2adefb25f89c0ee",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 3,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 3,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 400.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Florabelle summons Spiny when a battle starts."
+            },
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Area",
+              "description": "Active: Florabelle selects a tile to summon Smashy to smash the ground, dealing 300% (ATK-based) damage to all adjacent enemies and knocking them into the air."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "0b656d8c8f33e01101991f5b52dfc49b18be4ba7c972f183d1f82e7c33de6d83",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 66.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 100.0
+                }
+              ]
+            }
+          ],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "13f450e1e75b117e989c506c9e239dca89651eefeb15e76f5dea68b8feae0900",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 8,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 88.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "e0c0d11c620010343ed547b7dfd8437020f03619f555728097c0c3c3de825451",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 18.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "4c3b0f19b9fb731420150d5c50086093e2e59b9434d5571a890e5acec2899145",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [],
+          "summon_effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "All summons",
+              "is_max_known": true,
+              "target": "all_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 350.0
+                }
+              ]
+            }
+          ],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "ex+10": {
+          "effects": [],
+          "summon_effects": [
+            {
+              "tier": "ex+10",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 27.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Owned summons",
+              "is_max_known": true,
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Lifedrain",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 32.0
+                }
+              ]
+            }
+          ],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "add46da1f8042ebde29a5f82e7fec2390a067f192ad0b89842f98342f9c3b7aa",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "supreme+",
+              "immunity_type": "immune",
+              "timing": "form",
+              "targeting_label": "Owned summons",
+              "target": "own_summons",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

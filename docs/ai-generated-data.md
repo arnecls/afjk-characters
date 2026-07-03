@@ -6,6 +6,30 @@ This document summarizes the content and purpose of each AI-generated file, and 
 
 ---
 
+## 5. `skill_effects/<short_name>.json`
+
+### Content
+
+Per-hero AI-extracted combat effects keyed by skill section and ascension tier.
+Each skill stores a `source_hash` of its `heroes_data.json` description for
+staleness checks.
+
+### Purpose
+
+**Source of truth** for effect detection (buffs, debuffs, CC, damage, healing,
+shields, energy, immunities, special provides/requires). The pipeline loads
+these files in `analyze_hero()` instead of regex parsing.
+
+### Prompt to Update
+
+Use the [extract-skill-effects](../.cursor/skills/extract-skill-effects/SKILL.md)
+skill workflow: read skill text, emit schema-valid JSON, validate, show diff,
+get approval, save, run `just views` and `just validate`.
+
+Do not patch regex rule tables in `rewrite-summaries.py` for effect fixes.
+
+---
+
 ## 1. `signature_skills.json`
 
 ### Content

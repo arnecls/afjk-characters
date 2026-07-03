@@ -1,0 +1,284 @@
+{
+  "title": "Cassadee - Azure Prodigy",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "bef7abece9f915ff45fe326ba6d539800dbd4707114b57e68e226a4c9ab34246",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 3,
+              "area_direction": "selected_target",
+              "type": "crowd_control",
+              "cc-type": "knock_back",
+              "duration": 2.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 3,
+              "area_direction": "selected_target",
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 370.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "8ec622d49511e80f3a6d1d32608c2b5e148109cb6cc2adaaca4a95c546e669e9",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 1.7
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "ex+10": {
+          "effects": [
+            {
+              "tier": "ex+10",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "crowd_control",
+              "cc-type": "stun"
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 3,
+              "type": "crowd_control",
+              "cc-type": "knock_up"
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "c893d5cc76aa6d3c95259f92163a9499a55e2d99140e93be2c59c795b7e8600d",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "normal_attack",
+                  "ally": true
+                }
+              ],
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Ally blessing",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Cassadee selects the nearest ally when a battle starts (prioritizing the ally behind herself), granting them the blessing of Tidal Strength."
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Ally blessing active",
+              "tier": "base",
+              "targeting": "Allies",
+              "description": "She deals extra 60% (ATK-based) magic damage to the enemy once when the blessed ally hits them with normal attacks."
+            }
+          ]
+        },
+        "mythic+": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Ally blessing",
+              "tier": "mythic+",
+              "targeting": "Single target",
+              "description": "Blesses the nearest ally after the previous one is defeated, with the blessing cooldown reduced to 5 - 1s."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "c4d134cdd083fed83af224e28298e5c660e3fc248e33ca8db1e9ff72e81083bb",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 18.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "5203bcf81f33aa965f1ca6fc6a89af9053e60c2c4914e51d91a07370779c2b55",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Ally blessing",
+              "tier": "base",
+              "targeting": "All units",
+              "description": "Cassadee grants temporary blessings to all allies in the path of Running Tide, enhancing their next 6 normal attacks with the effect of Tidal Strength."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "6e1722b823e3e8586b00483989fda4a969efa937626d6855b0aa543ee1a49204",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "path",
+              "target_count": -1,
+              "area_count": 3,
+              "area_direction": "selected_target",
+              "type": "debuff",
+              "name": "Magic DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

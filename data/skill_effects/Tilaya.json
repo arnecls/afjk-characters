@@ -1,0 +1,389 @@
+{
+  "title": "Tilaya - Wild Blade",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "1b1ccc1cb19b148dd2fb9884adf77c36c6344dbf1181064198e3635443a07c03",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "start_of_battle"
+                }
+              ],
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "heal",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "label": "hot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 10.0
+                }
+              ],
+              "duration": -1,
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
+              "type": "buff",
+              "name": "Damage taken",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 70.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_count": 2,
+              "area_direction": "front",
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "unaffected",
+              "timing": "conditional",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "Form or stance active",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "Vine Ward shields Tilaya at battle start and recovers shield value every second while active."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "34fd62a6b84d58644d31dfd1edbe9d4035179a2d4a82c368acbf773274972f11",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "damage",
+              "damage_type": "physical",
+              "name": "Physical",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 160.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Damage absorption (allies)",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "If Vine Ward is active, Mighty Slash restores shield value equal to 160% of damage dealt."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "7d2f44714a7ebf422a6627ca6960d8b532866f97894d99912fe5deea7456948f",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Damage dealt",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 9.0
+                }
+              ],
+              "duration": 10.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "35df671d8f1daf6832abf58c057ff836a54682e665903e199abd4e9a66cf8c72",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "Vitality",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 19.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "113f6d68996f921cb2a26fcf2e17e19ddc4cdd30880200fb42eadb54b0f98dd0",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "duration_gate",
+                  "gate": "first_time"
+                },
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 120.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "ex+10": {
+          "effects": [
+            {
+              "tier": "ex+10",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 2,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "buff",
+              "name": "DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 60.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "b81b06bfa5e9ab29a4d6043d09db6478870932ea7437a4a12ad797b8fab5f9d2",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_state"
+                }
+              ],
+              "type": "heal",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "label": "hot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 15.0
+                }
+              ],
+              "tick": 1.0,
+              "duration": -1
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

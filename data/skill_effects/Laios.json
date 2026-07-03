@@ -1,0 +1,403 @@
+{
+  "title": "Laios - Dungeon Adventurer",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "52c6bfc79f167a57b2f4f88cb349addaf92f85fff9d21a6f7703eba83193eea3",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Summoning",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "This Living Armor starts with 1,000 Energy and deals damage equal to 300% + 30% of Laios' ATK."
+            },
+            {
+              "label": "Stacking",
+              "tier": "ex+10",
+              "targeting": "Single target",
+              "description": "Permenantly increases Laios' Phys DEF and Magic DEf by 25% for each ingredient collected from monsters, up to 3 stacks."
+            }
+          ],
+          "special_requires": [
+            {
+              "label": "Monster ingredients",
+              "tier": "base",
+              "targeting": "Enemies",
+              "description": "Whenever an enemy monster is defeated, Laios collects an ingredient from it and instantly recovers 250 Energy and 500% (ATK-based) HP."
+            },
+            {
+              "label": "Monster ingredients",
+              "tier": "base",
+              "description": "Laios uses the collected ingredients and cooks on the spot, recovering 500% (ATK-based) HP for allies within 2 tiles and increasing their ATK by 20%| + 5% for 8 + 0.5s."
+            },
+            {
+              "label": "Stacked resource",
+              "tier": "base",
+              "description": "When activly used, for each ingredient Laios has collected, the cooked meal randomly grants one of the following extra buffs: Increases Phys DEF and Magic DEF by 40%, increases Haste by 30, or recovers 100% (ATK-based) HP per second."
+            }
+          ]
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "b98fcf586adc7ef824ebf1bb344bb16aec7d57b916798eefc17d54e6b9efd17f",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Phys DEF",
+              "label": "debuff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 49.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "debuff",
+              "name": "Magic DEF",
+              "label": "debuff_defensive"
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Area",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "radius",
+              "target_count": -1,
+              "area_count": 1,
+              "type": "crowd_control",
+              "cc-type": "bind",
+              "duration": 3.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "e511c951911ad97467abca6caeab5f780d2a30c634ebf9c8db6062397feeb968",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 250.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 3,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 30.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Phys DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 40.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "dot",
+              "healing_type": "over_time",
+              "name": "Healing over time",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 100.0
+                }
+              ],
+              "duration": 8,
+              "tick": 1.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Max HP",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "c722ff8f06ee59afb9401d80127dc0b7921e522f9caf89916f0291f3baf31af8",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "58d1c28c5db7c8627a27869501cc373f9dfa025424e07f0bfb4250b4daeff07b",
+      "is_max_known": true,
+      "tiers": {
+        "ex+10": {
+          "effects": [
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                },
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Phys DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ]
+            },
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "stack_count",
+                  "stacks": 3,
+                  "stack_comparison": "up_to"
+                },
+                {
+                  "type": "battle_phase",
+                  "phase": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Magic DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "bf0aed9a5ba7c7364acbd4f92169b8ba33c57220d0b928a395c7c7048beec6cb",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

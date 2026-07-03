@@ -484,16 +484,12 @@ Note ambiguity instead of forcing a single expected value:
 
 Prior passes added tests in:
 
-- `scripts/test_detect_damage_types.py` — true/max-HP dedup (Shemira, Valka,
-  Daimon); single-hero regressions (Seth, Kafra, Temesia, Granny Dahnie)
+- `scripts/test_skill_descriptions.py` — sidecar-backed effect regressions
 - `scripts/test_hero_schema.py` — skill-card chip keys (debuff distinct from
   buff stat, e.g. `damage dealt debuff` vs `damage taken reduction`)
-- `scripts/test_skill_descriptions.py`
 - `scripts/test_detailed_validation.py`
-- `scripts/test_summary_parsing.py` — self Invincible (Evie, Harak, Aurora);
-  extend for ally-haste Self mis-tags, energy recovery Self, artifact silence
 
 Add a **minimal** case per new pattern; run `just validate` before closing
-the task. When detection rules change, bump
+the task. When post-process rules change, bump
 `scripts/roster_analysis.py` `CACHE_VERSION` before `just analyze` or
 `just views` (stale disk cache otherwise reuses pre-fix targeting).

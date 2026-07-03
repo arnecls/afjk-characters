@@ -45,13 +45,13 @@ Task progress (single hero):
 - [ ] 2. Read skill text — heroes_data.json or processed description (active + max-tier upgrades)
 - [ ] 3. Read detected output — effects[], skill_card_tags, benefit_stats (if relevant)
 - [ ] 4. Cross-check display — site/data/heroes.json skillCards; chip polarity in site/js/app.js if tags look right in JSON but wrong on site
-- [ ] 5. Reproduce — hero_from_record + analyze_hero, or analyze_text on the clause (see debug snippet below)
+- [ ] 5. Reproduce — hero_from_record + analyze_hero (see debug snippet below)
 - [ ] 6. Classify — missing label / spurious label / wrong label / wrong target / wrong magnitude / display-only
-- [ ] 7. Fix — rewrite-summaries.py (primary), hero_schema.py, site/js/app.js (chip defs), overview-to-csv.py (column maps) as needed
-- [ ] 8. Regression test — scripts/test_detect_damage_types.py or test_hero_schema.py; minimal hero integration test when useful
-- [ ] 9. Bump CACHE_VERSION in scripts/roster_analysis.py when detection rules change
-- [ ] 10. Regenerate — just views (or just analyze && render-site); re-read that hero in processed JSON + site
-- [ ] 11. just validate
+- [ ] 7. Fix — update `data/skill_effects/<short_name>.json` via
+  [extract-skill-effects](../extract-skill-effects/SKILL.md); hero_schema.py,
+  site/js/app.js (chip defs), overview-to-csv.py (column maps) as needed
+- [ ] 8. Regenerate — just views; re-read that hero in processed JSON + site
+- [ ] 9. just validate
 ```
 
 ### Single-hero debug snippet
@@ -85,7 +85,8 @@ for sec, sl in sorted(hero.skill_slices.items()):
 PY
 ```
 
-For one clause in isolation, use `rs.analyze_text(effects, [], {}, [], tier, text, primary_dmg)` and inspect `effects`.
+For one clause in isolation, edit the matching tier in
+`data/skill_effects/<short_name>.json`, then re-run `rs.analyze_hero(hero)`.
 
 ### Detection vs display
 
@@ -108,17 +109,17 @@ Recent targeted fixes — use as checklists when similar text appears:
 
 | Symptom | Text cue | Expected | Fix area |
 |---------|----------|----------|----------|
-| Missing DEF buff Self | `gains N% Phys and Magic DEF` (not `increases … def by`) | DEF buff Self | BUFF_RULES + self targeting |
-| Crit buff on ally | Upgrade: `Gains N Crit when he/she…` (impersonal) | Crit buff Self | `_resolve_buff_targeting`, `effect_targets_self_only` |
-| Self DEF as debuff | `increasing her Phys DEF` | DEF buff Self, not Phys DEF debuff | debuff skip guards, self-debuff pre-scan |
-| Haste debuff as buff | `reducing their Haste` | Haste debuff | debuff rules; skip Haste buff on reduc+haste |
-| ATK debuff spurious | `(ATK-based) damage and reducing their Haste` | Haste debuff only | skip ATK debuff on atk-based haste line |
-| Damage dealt as buff chip | `Reduces the enemy's damage dealt` | Damage dealt debuff (debuff chip) | detection often OK; TAG_DEFINITIONS + CSV column |
-| True damage missing on mythic+ | `turning … damage into true damage` (no hit in chunk) | True damage on skill card | `_chunk_deals_enemy_damage` for conversion phrasing |
-| HoT scalar on DEF buff | Upgrade HoT % in same skill as DEF buff | DEF magnitude from DEF clause only | `_upgrade_chunk_relates_to_buff`, scalar guards |
+| Missing DEF buff Self | `gains N% Phys and Magic DEF` (not `increases … def by`) | DEF buff Self | sidecar tier + self target |
+| Crit buff on ally | Upgrade: `Gains N Crit when he/she…` (impersonal) | Crit buff Self | sidecar; post-process targeting if needed |
+| Self DEF as debuff | `increasing her Phys DEF` | DEF buff Self, not Phys DEF debuff | sidecar polarity; remove spurious debuff row |
+| Haste debuff as buff | `reducing their Haste` | Haste debuff | sidecar debuff row |
+| ATK debuff spurious | `(ATK-based) damage and reducing their Haste` | Haste debuff only | sidecar — omit ATK debuff |
+| Damage dealt as buff chip | `Reduces the enemy's damage dealt` | Damage dealt debuff (debuff chip) | sidecar often OK; TAG_DEFINITIONS + CSV column |
+| True damage missing on mythic+ | `turning … damage into true damage` (no hit in chunk) | True damage on skill card | sidecar damage row on correct tier |
+| HoT scalar on DEF buff | Upgrade HoT % in same skill as DEF buff | DEF magnitude from DEF clause only | sidecar numerics; post-process scalar guards |
 
-After any detection change: bump `CACHE_VERSION`, run `just views`, verify the
-named hero's `skill_card_tags` and `effects` before closing.
+After any sidecar change: run `just views`, verify the named hero's
+`skill_card_tags` and `effects` before closing.
 
 ## Full roster validation
 
@@ -137,8 +138,9 @@ Two-pass plan for auditing the whole roster. Do not mix scopes in one report.
 6. Prior reports in `docs/validation-*.md` — baselines and resolved items
 
 Optional: `docs/skill-analysis-pipeline.md` (why NLP is hard),
-`scripts/rewrite-summaries.py` (detection rules), `scripts/heroes_io.py`
-(chunk parsing).
+`data/skill_effects/` (effect sidecars),
+`scripts/rewrite-summaries.py` (post-process, behavior, magnitudes),
+`scripts/heroes_io.py` (chunk parsing).
 
 ### Roster task checklist
 
@@ -627,11 +629,13 @@ Save under `docs/` with today's date.
 Applies to **single-hero** and **roster** fixes.
 
 1. Group roster findings by **failure pattern**, not hero (single-hero: one pattern).
-2. Fix `scripts/rewrite-summaries.py`, `scripts/heroes_io.py`, or
-   `scripts/hero_schema.py` with **regression tests** in matching
-   `scripts/test_*.py`. Fix `site/js/app.js` / `overview-to-csv.py` when
-   the issue is display or CSV columns, not detection.
-3. Bump `CACHE_VERSION` in `scripts/roster_analysis.py` when detection rules
+2. Fix `data/skill_effects/<short_name>.json` via
+   [extract-skill-effects](../extract-skill-effects/SKILL.md), or
+   `scripts/rewrite-summaries.py` / `scripts/heroes_io.py` / `scripts/hero_schema.py`
+   for post-process, chunking, or schema issues. Add **regression tests** in
+   matching `scripts/test_*.py`. Fix `site/js/app.js` / `overview-to-csv.py` when
+   the issue is display or CSV columns, not extraction.
+3. Bump `CACHE_VERSION` in `scripts/roster_analysis.py` when post-process rules
    change (otherwise `just analyze` may reuse stale parsed heroes).
 4. Run `just views` (or `just analyze` then `render-site` / `render_overview`
    as needed) to regenerate processed JSON, synergies, overview, and site.

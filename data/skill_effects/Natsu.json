@@ -1,0 +1,505 @@
+{
+  "title": "Natsu - Fire Dragon Slayer Mage",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "67468e58f96ea14b4a395ec1dc6d190966d698a5a41a8b1ecbc2f74db1ae2046",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_count": 3,
+              "area_direction": "front",
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "lightning_fire_dragon"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 3.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_count": 3,
+              "area_direction": "front",
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "lightning_fire_dragon"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 1600.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Arc",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "arc",
+              "target_count": -1,
+              "area_count": 3,
+              "area_direction": "front",
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "fire_dragon_king"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 2800.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Form or stance active",
+              "tier": "base",
+              "targeting": "Self",
+              "description": "During battle preparation, choose Lightning Fire Dragon mode or Fire Dragon King mode."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "7b2f74ccee069cce39edf46a7c6e8e712c956937a43a04152d22a0b88f704acb",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "lightning_fire_dragon"
+                }
+              ],
+              "type": "debuff",
+              "name": "Haste",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 80.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "lightning_fire_dragon"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "magic",
+              "name": "Magic",
+              "label": "damage_normal",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 560.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "fire_dragon_king"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "knock_down",
+              "duration": 0.5
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "fire_dragon_king"
+                }
+              ],
+              "type": "damage",
+              "damage_type": "max_hp",
+              "name": "Max HP-based damage",
+              "label": "damage_max_hp",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "a3da81219f3479d8252870fcb2f05e54ba158e46878cb5ce76d15c81fda94fba",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "defeat",
+                  "ally": true
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "defeat",
+                  "ally": true
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "DEF",
+              "label": "buff_defensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "defeat",
+                  "ally": true
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Crit",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 5.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "defeat",
+                  "ally": true
+                },
+                {
+                  "type": "duration_gate",
+                  "gate": "once_per_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Crit DMG boost",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 5.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "601b3daa11f4a238d4d9000feae6bda592a0532f035d8cfb668cadfdbf874f97",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "lightning_fire_dragon"
+                }
+              ],
+              "type": "buff",
+              "name": "Haste",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 15.0
+                }
+              ]
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "skill_mode",
+                  "mode": "fire_dragon_king"
+                }
+              ],
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "62059ae649c59b4d9b7a551c63865bcf984db3e33f88e3c3f5690d7b54985f43",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "damage"
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_boss"
+                }
+              ],
+              "type": "debuff",
+              "name": "Max HP",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 50.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "ex+10": {
+          "effects": [
+            {
+              "tier": "ex+10",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "debuffed"
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_boss"
+                }
+              ],
+              "type": "dot",
+              "damage_type": "hp_loss",
+              "name": "HP loss",
+              "label": "damage_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ],
+              "tick": 0.5,
+              "duration": -1
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "3a22340acc79008cef0922ef706987178d72363df2465ec35b524a0c4b0689f7",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "damage",
+                  "self": true
+                }
+              ],
+              "type": "dot",
+              "damage_type": "dot",
+              "name": "DoT",
+              "label": "dot",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 80.0
+                }
+              ],
+              "duration": 5,
+              "tick": 0.5
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

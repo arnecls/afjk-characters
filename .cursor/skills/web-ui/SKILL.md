@@ -32,7 +32,7 @@ Task progress:
 
 | Symptom | Likely layer | Where to fix |
 | --- | --- | --- |
-| Wrong effect **missing or extra** on skill card | Detection | `scripts/rewrite-summaries.py` → `just views` |
+| Wrong effect **missing or extra** on skill card | Sidecar extraction | `data/skill_effects/<hero>.json` → `just views` |
 | Tag string correct in JSON but **wrong chip** on screen | Display | `site/js/app.js` (`TAG_DEFINITIONS`, chip helpers) |
 | Synergy/summary **wording** wrong in markdown and web | Generation | `scripts/generate-heroes-overview.py` / `rewrite-summaries.py` → `just render-site` |
 | **Layout, color, filter, column** behavior | CSS / JS view code | `site/css/styles.css`, `site/js/app.js` |
@@ -43,8 +43,8 @@ Task progress:
 `scripts/render_site.py` copies them into `site/data/heroes.json` →
 `sections.skillCards[].tags`. It does **not** re-derive tags.
 
-After changing detection in `rewrite-summaries.py`, run **`just views`**
-(analyze + render), not `just analyze` alone.
+After changing skill effects in `data/skill_effects/<hero>.json`, run
+**`just views`** (analyze + render), not `just analyze` alone.
 
 Display-only chip fixes need **no** data regen — reload the page after
 editing `app.js`.

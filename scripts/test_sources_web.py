@@ -111,6 +111,84 @@ class FandomParseTests(unittest.TestCase):
         )
 
 
+class ProcessWikitextTests(unittest.TestCase):
+    def test_color_buzz_highlight_becomes_plain_value(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext("after {{Color|buzz|8}}s into a battle"),
+            "after 8s into a battle",
+        )
+
+    def test_pwr_skill_context_becomes_sp_based(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext("deals {{ATK|90%}} + {{PWR|10%|skill}} damage"),
+            "deals 90% (ATK-based) + 10% (SP-based) damage",
+        )
+
+    def test_pwr_ult_context_becomes_sp_based(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext(
+                "Each arrow deals {{ATK|100%}} + {{PWR|10%|ult}} damage"
+            ),
+            "Each arrow deals 100% (ATK-based) + 10% (SP-based) damage",
+        )
+
+    def test_pwr_empty_context_becomes_sp_based(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext(
+                "deals {{ATK|40%}} + {{PWR|6%}} damage to each enemy"
+            ),
+            "deals 40% (ATK-based) + 6% (SP-based) damage to each enemy",
+        )
+
+    def test_pwr_odd_context_becomes_sp_based(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext(
+                "deals {{ATK|105%}} + {{PWR|10%|ult||}} damage"
+            ),
+            "deals 105% (ATK-based) + 10% (SP-based) damage",
+        )
+
+    def test_pwr_energy_cost_context_becomes_sp_based(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext(
+                "consumes {{Color|buzz|300}} - {{PWR|80|ult}} Energy"
+            ),
+            "consumes 300 - 80 (SP-based) Energy",
+        )
+
+    def test_skill_description_attack_icon_after_value(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext(
+                "deals 100% [[File:Skill_Description_Attack.png]] damage"
+            ),
+            "deals 100% (ATK-based) damage",
+        )
+
+    def test_skill_description_icon_with_alt_text(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext(
+                "restores [[File:Skill_Description_HP.png|30%]] HP"
+            ),
+            "restores 30% (HP-based) HP",
+        )
+
+    def test_skill_description_power_icon_becomes_sp_based(self) -> None:
+        self.assertEqual(
+            sources_web.process_wikitext(
+                "deals 90% (ATK-based) + 10% [[File:Skill_Description_Power.png]] damage"
+            ),
+            "deals 90% (ATK-based) + 10% (SP-based) damage",
+        )
+
+    def test_unknown_skill_description_icon_raises(self) -> None:
+        with self.assertRaisesRegex(
+            ValueError, "Unknown skill description icons: MysteryStat"
+        ):
+            sources_web.process_wikitext(
+                "deals 50% [[File:Skill_Description_MysteryStat.png]] damage"
+            )
+
+
 _ALICETH_PRYDWEN_HTML = """\
 <h5>General Ratings</h5><div class="detailed-ratings general">
 <div class="rating-box-container "><span><div class="rating-box reverse reverse B">B</div></span><p>AFK Stages</p></div>
@@ -133,9 +211,10 @@ _ALICETH_REVIEW_TEXT = (
 
 
 _PRYDWEN_TIER_LIST_SNIPPET = (
-    '\\"name\\":\\"Aliceth\\",\\"slug\\":\\"aliceth\\",\\"tierListCategory\\":\\"DPS\\"'
-    '\\"name\\":\\"Aurora\\",\\"slug\\":\\"aurora\\",\\"tierListCategory\\":\\"Support\\"'
-    '\\"name\\":\\"Elijah and Lailah\\",\\"slug\\":\\"elijah-and-lailah\\",'
+    '\\"slug\\":\\"aliceth\\",\\"tierListCategory\\":\\"Specialist\\"'
+    '\\"slug\\":\\"aurora\\",\\"tierListCategory\\":\\"Support\\"'
+    '\\"slug\\":\\"elijah-and-lailah\\",\\"tierListCategory\\":\\"Support\\"'
+    '\\"slug\\":\\"smokey-and-meerky\\",\\"name\\":\\"Smokey \\u0026 Meerky\\",'
     '\\"tierListCategory\\":\\"Support\\"'
 )
 
@@ -148,21 +227,19 @@ class PrydwenParseTests(unittest.TestCase):
         self.assertEqual(
             categories,
             {
-                "Aliceth": "damage_dealer",
+                "Aliceth": "specialist",
                 "Aurora": "support",
-                "Elijah and Lailah": "support",
+                "Elijah & Lailah": "support",
+                "Smokey & Meerky": "support",
             },
         )
 
     def test_fetch_role_categories_maps_roster_aliases(self) -> None:
-        html = _PRYDWEN_TIER_LIST_SNIPPET
-        by_prydwen = sources_web._parse_prydwen_role_categories(html)
-        alias_targets = {v: k for k, v in sources_web.PRYDWEN_NAME_ALIASES.items()}
-        mapped = {
-            alias_targets.get(name, name): category
-            for name, category in by_prydwen.items()
-        }
-        self.assertEqual(mapped["Elijah & Lailah"], "support")
+        categories = sources_web._parse_prydwen_role_categories(
+            _PRYDWEN_TIER_LIST_SNIPPET
+        )
+        self.assertEqual(categories["Elijah & Lailah"], "support")
+        self.assertEqual(categories["Smokey & Meerky"], "support")
 
     def test_parse_ratings_normalizes_tiers(self) -> None:
         ratings = sources_web._parse_prydwen_ratings(_ALICETH_PRYDWEN_HTML)

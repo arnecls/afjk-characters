@@ -1,0 +1,516 @@
+{
+  "title": "Contess - Abyssal Rulekeeper",
+  "skills": {
+    "Ultimate": {
+      "source_hash": "1d61a266dcf7e1e5f3242267f07029900279b91e3de0ff5356391e0b7c3dea22",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Self",
+              "is_max_known": true,
+              "target": "self",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "battle_phase",
+                  "phase": "start_of_battle"
+                }
+              ],
+              "type": "buff",
+              "name": "Energy",
+              "label": "buff_stat",
+              "value": [
+                {
+                  "type": "flat",
+                  "value": 66.0
+                }
+              ],
+              "tick": 1.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 666.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.4,
+                  "comparison": "above"
+                }
+              ],
+              "type": "dot",
+              "damage_type": "hp_loss",
+              "name": "HP loss",
+              "label": "damage_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 2.5
+                }
+              ],
+              "tick": 1.0,
+              "duration": -1
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "hp_threshold",
+                  "hp_ratio": 0.4,
+                  "comparison": "above"
+                }
+              ],
+              "type": "shield",
+              "name": "Shield",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 300.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "status_condition",
+                  "status": "active_shield"
+                }
+              ],
+              "type": "buff",
+              "name": "ATK",
+              "label": "buff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [
+            {
+              "type": "immunity",
+              "tier": "base",
+              "immunity_type": "untargetable",
+              "timing": "on_skill",
+              "targeting_label": "Self",
+              "target": "self",
+              "area": "single",
+              "target_count": 1
+            }
+          ],
+          "special_provides": [
+            {
+              "label": "Ally empower",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "Grants Exemption, preventing allied Contess from punishing the target for rule violations."
+            },
+            {
+              "label": "Damage absorption (allies)",
+              "tier": "base",
+              "targeting": "Single target",
+              "description": "While HP is above 40%, Exemption converts up to 300% of lost HP per second into a shield capped at 100% max HP."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill1": {
+      "source_hash": "9b09cc14b8747076ddb38a8d77b082d297df8f7431772850e933d6c7fa5c4acd",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "type": "debuff",
+              "name": "Max HP",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 6.6
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 2,
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 240.0
+                }
+              ]
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 2,
+              "type": "debuff",
+              "name": "ATK",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 25.0
+                }
+              ],
+              "duration": 6.0
+            },
+            {
+              "tier": "base",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "ally",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "rule_violation",
+                  "rule": "be_civil",
+                  "ally": true
+                }
+              ],
+              "type": "heal",
+              "healing_type": "direct",
+              "name": "Direct healing",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 200.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Debuff application",
+              "tier": "base",
+              "targeting": "Enemies",
+              "description": "Code of Conduct - Be Civil punishes enemies who deal excessive damage to allies."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Skill2": {
+      "source_hash": "a2c78c67b695467eeb40602575d3b08b6661f121a08cb4a4213678cf129882b5",
+      "is_max_known": true,
+      "tiers": {
+        "base": {
+          "effects": [
+            {
+              "tier": "base",
+              "targeting_label": "Multiple targets",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 2,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "cast",
+                  "skill_type": "ultimate"
+                }
+              ],
+              "type": "debuff",
+              "name": "Energy",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 20.0
+                }
+              ],
+              "duration": 6.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "Debuff application",
+              "tier": "base",
+              "targeting": "Enemies",
+              "description": "Code of Conduct - Be Quiet punishes enemies who cast their Ultimate."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Legendary+": {
+      "source_hash": "06d11a93bcbeadb9a00babae2c2bd10299f97fcbceac966563d1eea41b7111f8",
+      "is_max_known": true,
+      "tiers": {
+        "legendary+": {
+          "effects": [
+            {
+              "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "rule_violation"
+                }
+              ],
+              "type": "debuff",
+              "name": "ATK",
+              "label": "debuff_offensive",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 4.0
+                }
+              ]
+            },
+            {
+              "tier": "legendary+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "rule_violation"
+                }
+              ],
+              "type": "debuff",
+              "name": "Energy",
+              "label": "debuff_stat",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 3.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    },
+    "Ex. Skill": {
+      "source_hash": "54deca6cdce8e07788bd61b697a1d5698ad9d2c9b5969add0e8f14f5725089a1",
+      "is_max_known": true,
+      "tiers": {
+        "mythic+": {
+          "effects": [
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "count",
+                  "trigger": "debuff",
+                  "count": 6
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_boss"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "silence",
+              "duration": -1.0
+            },
+            {
+              "tier": "mythic+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "count",
+                  "trigger": "debuff",
+                  "count": 6
+                },
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_boss"
+                }
+              ],
+              "type": "debuff",
+              "name": "HP loss",
+              "label": "debuff_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 22.0
+                }
+              ]
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        },
+        "ex+15": {
+          "effects": [
+            {
+              "tier": "ex+15",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "unit_type",
+                  "unit_type": "non_boss"
+                }
+              ],
+              "type": "dot",
+              "damage_type": "hp_loss",
+              "name": "HP loss",
+              "label": "damage_hp_loss",
+              "value": [
+                {
+                  "type": "percentage",
+                  "value": 30.0
+                }
+              ],
+              "tick": 1.0,
+              "duration": -1
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [
+            {
+              "label": "DoT conversion",
+              "tier": "ex+15",
+              "targeting": "Allies",
+              "description": "40% of expelled enemies' HP loss is converted into healing for Contess and Exemption allies."
+            }
+          ],
+          "special_requires": []
+        }
+      }
+    },
+    "Unlocks at Supreme+": {
+      "source_hash": "455bbbfdd21b37de3da697eb9b890620bc7ca4db0705c0daeb06d7b3670218e2",
+      "is_max_known": true,
+      "tiers": {
+        "supreme+": {
+          "effects": [
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "rule_violation",
+                  "rule": "be_civil"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "stun",
+              "duration": 2.0
+            },
+            {
+              "tier": "supreme+",
+              "targeting_label": "Single target",
+              "is_max_known": true,
+              "target": "enemy",
+              "area": "single",
+              "target_count": 1,
+              "conditions": [
+                {
+                  "type": "trigger_condition",
+                  "trigger": "rule_violation",
+                  "rule": "be_quiet"
+                }
+              ],
+              "type": "crowd_control",
+              "cc-type": "silence",
+              "duration": 6.0
+            }
+          ],
+          "summon_effects": [],
+          "immunities": [],
+          "special_provides": [],
+          "special_requires": []
+        }
+      }
+    }
+  }
+}

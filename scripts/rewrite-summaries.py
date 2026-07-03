@@ -405,23 +405,6 @@ def _text_targets_companion(clause: str) -> bool:
     )
 
 
-def _is_spell_note_stack_trigger(clause: str) -> bool:
-    """Spell-note stack gain — not a direct combat buff/debuff grant."""
-    t = clause.lower()
-    if re.search(
-        r"gains? (?:an extra |a permanent )?stack of "
-        r"(?:the corresponding )?spell note",
-        t,
-    ):
-        return True
-    return bool(
-        re.search(
-            r"receives a buff that increases their .{0,120}spell note",
-            t,
-        )
-    )
-
-
 def _is_companion_buff_threshold_trigger(clause: str) -> bool:
     """Stat threshold that triggers spell notes, not a buff grant."""
     t = clause.lower()
@@ -444,144 +427,6 @@ def _is_enemy_damage_threshold_trigger(text: str) -> bool:
             t,
         )
     )
-
-
-_STAT_TOKEN_TO_BUFF: dict[str, str] = {
-    "atk": "ATK",
-    "phys def": "Phys DEF",
-    "physical def": "Phys DEF",
-    "magic def": "Magic DEF",
-    "atk spd": "ATK SPD",
-    "haste": "Haste",
-    "vitality": "Vitality",
-}
-
-_SPELL_NOTE_MIRROR_DEBUFFS = (
-    "ATK",
-    "Phys DEF",
-    "Magic DEF",
-    "ATK SPD",
-    "Haste",
-    "Vitality",
-)
-
-
-def _split_stat_list(list_text: str) -> list[str]:
-    normalized = re.sub(r"\s+and\s+", ", ", list_text.lower())
-    return [part.strip() for part in normalized.split(",") if part.strip()]
-
-
-def _consolidate_companion_buff_effects(effects: list) -> None:
-    """Drop generic DEF buff when Phys/Magic DEF buffs are present."""
-    labels = {e.label for e in effects if e.category == "buff"}
-    if {"Phys DEF", "Magic DEF"} <= labels and "DEF" in labels:
-        effects[:] = [
-            e
-            for e in effects
-            if not (e.category == "buff" and e.label == "DEF")
-        ]
-
-
-def _apply_spell_note_companion_buffs(
-    effects: list,
-    tier: str,
-    text: str,
-    *,
-    source_section: str | None = None,
-) -> None:
-    """Companion buffs from Isabella-style spell note stat lines."""
-    if _is_spell_note_stack_trigger(text):
-        return
-    if re.search(r"\bdebuff(?:s|ing)?\b", text, re.I) and re.search(
-        r"\benemy\b", text, re.I
-    ):
-        return
-    t = text.lower()
-    percent = re.search(
-        r"((?:atk|phys(?:ical)? def|magic def)"
-        r"(?:,\s*(?:phys(?:ical)? def|magic def|atk))*"
-        r"(?:\s+and\s+(?:magic def|phys(?:ical)? def|atk))?)"
-        r"\s*:\s*\+(\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?)%",
-        t,
-    )
-    flat = re.search(
-        r"((?:atk spd|haste|vitality)"
-        r"(?:,\s*(?:atk spd|haste|vitality))*"
-        r"(?:\s+and\s+(?:atk spd|haste|vitality))?)"
-        r"\s*:\s*\+(\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?)\b",
-        t,
-    )
-    has_companion_cast = re.search(
-        r"\bincreases? (?:her |his )?companion'?s? atk by "
-        r"\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?%",
-        t,
-    )
-    if not (percent or flat or has_companion_cast):
-        return
-    if has_companion_cast:
-        add_effect(
-            effects,
-            "buff",
-            "ATK",
-            tier,
-            text,
-            scope=text,
-            source_section=source_section,
-        )
-    if percent:
-        for token in _split_stat_list(percent.group(1)):
-            label = _STAT_TOKEN_TO_BUFF.get(token)
-            if label:
-                add_effect(
-                    effects,
-                    "buff",
-                    label,
-                    tier,
-                    text,
-                    scope=text,
-                    source_section=source_section,
-                )
-    if flat:
-        for token in _split_stat_list(flat.group(1)):
-            label = _STAT_TOKEN_TO_BUFF.get(token)
-            if label:
-                add_effect(
-                    effects,
-                    "buff",
-                    label,
-                    tier,
-                    text,
-                    scope=text,
-                    source_section=source_section,
-                )
-    _consolidate_companion_buff_effects(effects)
-
-
-def _apply_spell_note_mirror_debuffs(
-    effects: list,
-    tier: str,
-    text: str,
-    *,
-    source_section: str | None = None,
-) -> None:
-    """Enemy debuffs mirroring active spell-note stack stats."""
-    t = text.lower()
-    if not re.search(
-        r"reducing the stats linked to active spell note stacks|"
-        r"debuff(?:s|ing)? the enemy hero who has dealt the most damage",
-        t,
-    ):
-        return
-    for label in _SPELL_NOTE_MIRROR_DEBUFFS:
-        add_effect(
-            effects,
-            "debuff",
-            label,
-            tier,
-            text,
-            scope=text,
-            source_section=source_section,
-        )
 
 
 def _ally_sources_caster_healing(clause: str) -> bool:
@@ -1276,13 +1121,6 @@ def _clause_targets_own_summon_units(clause: str) -> bool:
     return False
 
 
-def _clause_targets_summon_units(clause: str) -> bool:
-    """True when a clause applies to any summon target (own or all)."""
-    return _clause_targets_all_summons(clause) or _clause_targets_own_summon_units(
-        clause
-    )
-
-
 def _clause_also_targets_caster(clause: str) -> bool:
     """True when the caster shares the same buff/heal/shield in the clause."""
     t = clause.lower()
@@ -1296,166 +1134,6 @@ def _clause_also_targets_caster(clause: str) -> bool:
     )
 
 
-def _buff_match_is_summon_only(t: str, label: str, match: re.Match[str]) -> bool:
-    """Buff applies to summons only, not general allies."""
-    clause = _clause_around(t, match.start())
-    window = t[max(0, match.start() - 40) : min(len(t), match.end() + 40)]
-    if re.search(r"\bheal(?:ing|s)? (?:him|her|himself|herself)\b", clause):
-        return False
-    if re.search(r"\b(?:recovers?|restores?) (?:him|her|himself|herself)\b", clause):
-        return False
-    if label == "Energy" and _energy_recovery_targets_self(clause):
-        return False
-    if (
-        label in _RESTORE_BUFF_LABELS
-        and _healing_targets_self(clause)
-        and not _summons_receive_healing(clause)
-    ):
-        return False
-    if _clause_targets_summon_units(clause):
-        return not _clause_also_targets_caster(clause)
-    if re.search(r"\bnon-summoned allies\b", clause):
-        return False
-    if re.search(r"\b(?:giant )?bulbsprites?\b", clause):
-        return True
-    if re.search(r"\bfeeds? the allied summon\b", clause):
-        return True
-    if re.search(
-        r"\ballied summons? in their giant form\b", clause
-    ) or re.search(r"\ballied summons? in their giant form\b", window):
-        return True
-    if re.search(r"\btransforms? (?:the |that )?summon\b", clause):
-        return True
-    if re.search(r"\b(?:life drain|haste) in giant form\b", clause):
-        return True
-    if re.search(
-        r"\bshield granted by this skill\b", window
-    ) or re.search(r"\bshield granted by this skill\b", clause):
-        return True
-    return False
-
-
-def _buff_match_is_shield_modifier(t: str, label: str, match: re.Match[str]) -> bool:
-    """Shield value tweaks on self, not a new ally shield grant."""
-    if label != "Shield":
-        return False
-    window = t[match.start() : min(len(t), match.end() + 40)]
-    if re.search(r"grants? .{0,80}shields? that block", window):
-        return False
-    return bool(
-        re.search(r"\bincreas(?:e|es|ing) the shield value\b", window)
-        or re.search(r"\bshield value\b", window)
-    )
-
-
-def _buff_match_is_reduction_clause(
-    t: str, label: str, match: re.Match[str]
-) -> bool:
-    """Skip stat buff regex hits inside enemy reduction phrasing."""
-    if label not in ("Haste", "ATK"):
-        return False
-    window = _clause_around(t, match.start())
-    stat = "haste" if label == "Haste" else "atk"
-    return bool(re.search(rf"\breduc(?:e|es|ing) .{{0,50}}{stat}\b", window))
-
-
-def _buff_match_is_trigger_reference(
-    t: str, label: str, match: re.Match[str]
-) -> bool:
-    """Skip buff-name mentions that only appear in a trigger condition."""
-    if label != "Tidal Strength":
-        return False
-    window = _clause_around(t, match.start())
-    if re.search(
-        r"\b(?:grant|grants|granting|bless(?:es)?)\b.{0,40}tidal strength\b",
-        window,
-    ):
-        return False
-    return bool(
-        re.search(
-            r"\b(?:when|while|if|after|until|once)\b.{0,100}"
-            r"(?:tidal strength|blessed by tidal strength)\b",
-            window,
-        )
-    )
-
-
-def _buff_match_is_negative_context(t: str, label: str, match: re.Match[str]) -> bool:
-    """Skip buff regex hits inside denial phrasing (cannot heal/gain)."""
-    window = t[max(0, match.start() - 30) : match.start()]
-    return bool(re.search(r"\bcannot\b", window))
-
-
-def _blessing_is_summon_only(t: str) -> bool:
-    """Blessing applies to allied summons, not general allies."""
-    return bool(
-        re.search(
-            r"grants?.{0,45}blessing.{0,45}(?:to |for )(?:allied )?summons?\b", t
-        )
-        or re.search(r"natural blessing.{0,40}allied summons", t)
-    )
-
-
-def _buff_match_is_enemy_stat(t: str, label: str, match: re.Match[str]) -> bool:
-    """Stat gain on enemies misread as an ally buff (e.g. Nightmare mark)."""
-    if label not in ("ATK", "Haste", "ATK SPD"):
-        return False
-    clause = _clause_around(t, match.start())
-    if re.search(
-        r"\b(?:he|she|it|himself|herself) (?:permanently )?gains?\s+\d+",
-        clause,
-    ):
-        return False
-    if re.search(
-        r"\b(?:an ally|allies|that ally|the ally|allied units|allied heroes|"
-        r"non-summoned allies|frontal allies|party members|weakest ally|"
-        r"rearmost ally|linked through)\b",
-        clause,
-    ) and not re.search(r"\benemy hero\b", clause):
-        return False
-    if re.search(
-        r"\b(?:enemy hero|marked as (?:the )?nightmare|nightmare|the enemy with|"
-        r"frontmost enemy|rearmost enemy|isolated enemy)\b",
-        clause,
-    ):
-        return True
-    if re.search(r"\bthe mark\b", clause) and re.search(
-        r"\breduc\w+ their (?:atk|haste)\b", clause
-    ):
-        return True
-    return False
-
-
-def _buff_match_scopes(text: str, label: str, pattern: str) -> list[str]:
-    """Clause scopes for each valid buff pattern match (not summon/enemy misreads)."""
-    t = text.lower()
-    scopes: list[str] = []
-    for m in re.finditer(pattern, t):
-        if _buff_match_is_summon_only(t, label, m):
-            continue
-        if _buff_match_is_shield_modifier(t, label, m):
-            continue
-        if _buff_match_is_negative_context(t, label, m):
-            continue
-        if _buff_match_is_trigger_reference(t, label, m):
-            continue
-        if _buff_match_is_reduction_clause(t, label, m):
-            continue
-        if _buff_match_is_enemy_stat(t, label, m):
-            continue
-        if label == "Invincible" and re.search(
-            r"no longer |not \w+ invincible", t[max(0, m.start() - 12) : m.start()]
-        ):
-            continue
-        scopes.append(_clause_around(t, m.start()))
-    return scopes
-
-
-def _should_add_buff(text: str, label: str, pattern: str) -> bool:
-    return bool(_buff_match_scopes(text, label, pattern))
-
-
-SUMMON_ONLY_BUFF_LABELS = frozenset()
 OWN_SUMMON_BUFF_TARGETING = "Owned summons"
 ALL_SUMMON_BUFF_TARGETING = "All summons"
 # Legacy alias for tests migrating from the single summon bucket.
@@ -1476,98 +1154,6 @@ def is_summon_buff_targeting(targeting: str) -> bool:
         targeting
     )
 
-
-def _summon_buff_targeting_for_match(
-    t: str, label: str, match: re.Match[str]
-) -> str | None:
-    if _buff_match_is_enemy_stat(t, label, match):
-        return None
-    clause = _clause_around(t, match.start())
-    if label == "Energy" and _energy_recovery_targets_self(clause):
-        return None
-    if _buff_match_is_summon_only(t, label, match):
-        if _clause_targets_all_summons(clause):
-            return ALL_SUMMON_BUFF_TARGETING
-        return OWN_SUMMON_BUFF_TARGETING
-    if _clause_also_targets_caster(clause):
-        if _clause_targets_own_summon_units(clause):
-            return OWN_SUMMON_BUFF_TARGETING
-        if _clause_targets_all_summons(clause):
-            return ALL_SUMMON_BUFF_TARGETING
-    return None
-
-
-def _resolve_summon_buff_targeting_from_text(
-    text: str, label: str, pattern: str
-) -> str | None:
-    """Pick own vs all summon targeting from the best matching clause."""
-    t = text.lower()
-    if not re.search(pattern, t):
-        return None
-    saw_all = False
-    saw_own = False
-    for m in re.finditer(pattern, t):
-        scope = _summon_buff_targeting_for_match(t, label, m)
-        if scope == ALL_SUMMON_BUFF_TARGETING:
-            saw_all = True
-        elif scope == OWN_SUMMON_BUFF_TARGETING:
-            saw_own = True
-    if saw_all and not saw_own:
-        return ALL_SUMMON_BUFF_TARGETING
-    if saw_own:
-        return OWN_SUMMON_BUFF_TARGETING
-    if saw_all:
-        return ALL_SUMMON_BUFF_TARGETING
-    return None
-
-
-def _matching_summon_buff_match(text: str, label: str, pattern: str) -> bool:
-    """True when a buff pattern matches but only for allied summons."""
-    return _resolve_summon_buff_targeting_from_text(text, label, pattern) is not None
-
-
-def add_summon_buff_effect(
-    effects: list[Effect],
-    label: str,
-    tier: str,
-    text: str,
-    *,
-    targeting: str = OWN_SUMMON_BUFF_TARGETING,
-) -> None:
-    """Record a buff that applies to allied summons, not the whole team."""
-    key = ("buff", label, targeting)
-    existing = [e for e in effects if (e.category, e.label, e.targeting) == key]
-    n = extract_number(text, label, category="buff")
-    cond = _buff_condition("buff", text)
-    parsed_conditions = _resolve_effect_conditions("buff", text)
-    if existing:
-        cur = existing[0]
-        order = TIER_ORDER.get(tier, 99)
-        cur_order = TIER_ORDER.get(cur.tier, 99)
-        if order < cur_order:
-            cur.tier = tier
-        cur.conditional = _merge_conditional(cur.conditional, cond)
-        cur.conditions = _merge_conditions_lists(
-            cur.conditions, parsed_conditions
-        )
-        if n is not None and (cur.numeric is None or n > cur.numeric):
-            cur.numeric = n
-            cur.qualitative = text
-        elif cond and not cur.qualitative:
-            cur.qualitative = text
-        return
-    effects.append(
-        Effect(
-            category="buff",
-            label=label,
-            tier=tier,
-            targeting=targeting,
-            numeric=n,
-            qualitative=text,
-            conditional=cond,
-            conditions=parsed_conditions,
-        )
-    )
 
 EX_TIER_RE = re.compile(r"Unlocks at EX\.?\s*:?\s*\+(\d+)", re.I)
 LEVEL_RE = re.compile(r"^- Level (\d+)")
@@ -1842,23 +1428,6 @@ def load_skills_by_title_from_records(
         block = render_hero_block(hero)
         skills_by_title[hero["title"]] = load_skill_meta(block)
     return skills_by_title
-
-
-def text_applies_effect(text: str, label: str) -> bool:
-    """True when text grants the effect, not only references it."""
-    t = text.lower()
-    if label == "Shield":
-        return bool(
-            re.search(
-                r"gain(?:s|ing)? .{0,40}shield|grant(?:s|ing)? .{0,60}shield|"
-                r"provid(?:e|es|ing) .{0,40}shield|"
-                r"(?:converting|convert).{0,40}into a shield|"
-                r"shield (?:that can absorb|equal to|value|that blocks)|"
-                r"permanent shield",
-                t,
-            )
-        )
-    return True
 
 
 def effect_targets_self_only(t: str, label: str, category: str) -> bool:
@@ -2158,89 +1727,6 @@ def _is_enemy_untargetable_context(text: str) -> bool:
     if re.search(r"(?:stitchy|shadow).{0,40}cannot be targeted", t):
         return True
     return False
-
-
-def grants_cc_immunity(text: str, imm_type: str) -> bool:
-    t = text.lower()
-    if re.search(
-        r"\bneither unaffected nor steadfast\b|"
-        r"\bprioritiz\w+ target\w*.{0,60}(?:unaffected|steadfast)\b",
-        t,
-    ):
-        return False
-    if imm_type == "Unaffected":
-        if re.search(
-            r"(?:does not apply to|not apply to|ineffective against) "
-            r"(?:unaffected )?(?:enemies|targets)",
-            t,
-        ):
-            return False
-        if re.search(
-            r"(?:who are|if they are|enemies who are|unaffected enemies|"
-            r"ineffective against) unaffected",
-            t,
-        ):
-            return False
-        return bool(
-            re.search(
-                r"(?:becomes?|is|remain|mak(?:es?|ing)|grants?|granted|linked|"
-                r"make(?:s)? them).{0,60}unaffected|"
-                r"\bmake(?:s)? them unaffected\b|"
-                r"unaffected (?:while|when|for|during)",
-                t,
-            )
-        )
-    if imm_type == "Steadfast":
-        if re.search(
-            r"(?:who are|if they are|enemies who are) steadfast",
-            t,
-        ):
-            return False
-        return bool(re.search(r"(?:becomes?|is|grants?|granted).{0,40}steadfast", t))
-    if imm_type == "Immune":
-        return bool(
-            re.search(
-                r"\bimmune to (?:damage and )?control\b|"
-                r"\bgains? control immunity\b",
-                t,
-            )
-        )
-    if imm_type == "Cleanse":
-        return bool(re.search(r"removes? all dispellable debuffs", t))
-    if imm_type == "Untargetable":
-        if _is_enemy_untargetable_context(t):
-            return False
-        return bool(
-            re.search(
-                r"(?:becomes?|is|making|grants?|granted).{0,60}untargetable|"
-                r"cannot be targeted by enemies",
-                t,
-            )
-        )
-    return False
-
-
-def add_cc_immunity(hero: Hero, imm_type: str, tier: str, text: str):
-    if not grants_cc_immunity(text, imm_type):
-        return
-    targeting = detect_targeting(text, f"{imm_type} immunity", "cc_immunity")
-    if re.search(r"\bmake them unaffected\b", text.lower()) and re.search(
-        r"\bcompanion\b", text.lower()
-    ):
-        targeting = "Single target"
-    elif targeting != "Self" and effect_targets_self_only(
-        text.lower(), f"{imm_type} immunity", "cc_immunity"
-    ):
-        targeting = "Self"
-    timing = detect_immunity_timing(text)
-    for cur in hero.cc_immunities:
-        if cur.immunity_type == imm_type:
-            if TIER_ORDER.get(tier, 99) < TIER_ORDER.get(cur.tier, 99):
-                cur.tier = tier
-            cur.targeting = _prefer_targeting(targeting, cur.targeting)
-            cur.timing = _prefer_timing(timing, cur.timing)
-            return
-    hero.cc_immunities.append(CcImmunity(imm_type, tier, targeting, timing))
 
 
 def _dot_is_discrete_proc(text: str) -> bool:
@@ -3351,7 +2837,7 @@ PROXIMITY_AURA_EXCLUDE_PATTERNS: tuple[str, ...] = (
     r"rainbow aura",
 )
 
-# Ally buff labels inferable from positional chunks when BUFF_RULES miss
+# Ally buff labels inferable from positional skill chunks
 # (e.g. "ATK bonus" vs "increases ATK by").
 POSITIONAL_CHUNK_BUFF_HINTS: tuple[tuple[str, str], ...] = (
     (r"\batk bonus\b", "ATK"),
@@ -3361,6 +2847,12 @@ POSITIONAL_CHUNK_BUFF_HINTS: tuple[tuple[str, str], ...] = (
     (r"\bhaste\b", "Haste"),
     (r"extra \d+ energy", "Energy"),
     (r"\bshield\b", "Shield"),
+    (
+        r"damage taken within lupine aura|"
+        r"reduce.{0,40}(?:allies'? )?damage taken|"
+        r"taken damage within",
+        "Damage taken",
+    ),
 )
 
 
@@ -3924,9 +3416,8 @@ def _merge_special_effect_records(
 def _rebuild_hero_aggregates_from_slices(hero: Hero) -> None:
     """Rebuild roster effects from finalized per-skill slices.
 
-    Cross-chunk ``analyze_text`` on ``hero.effects`` can inflate buff numerics
-    when unrelated damage/threshold clauses share a label (e.g. ATK buff vs
-    300% execute threshold). Per-skill slices stay scoped correctly.
+    Per-skill slices stay scoped correctly; merging unrelated clauses can
+    inflate buff numerics when damage thresholds share a label (e.g. ATK).
     """
     effects: list[Effect] = []
     summon: list[Effect] = []
@@ -3943,535 +3434,6 @@ def _rebuild_hero_aggregates_from_slices(hero: Hero) -> None:
     hero.special_effects = _merge_special_effect_records(special)
 
 
-def add_effect(
-    effects: list[Effect],
-    category: str,
-    label: str,
-    tier: str,
-    text: str,
-    *,
-    scope: str | None = None,
-    source_section: str | None = None,
-):
-    label = canonical_effect_label(label, category)
-    cond_text = scope if scope is not None else text
-    new_buff_tgt = (
-        _resolve_buff_targeting(text, label, scope=scope)
-        if category == "buff"
-        else None
-    )
-    key = _effect_dedupe_key(
-        category,
-        label,
-        source_section,
-        targeting=new_buff_tgt if category == "buff" else None,
-    )
-    existing = [
-        e
-        for e in effects
-        if _effect_dedupe_key(
-            e.category, e.label, e.source_section, targeting=e.targeting
-        )
-        == key
-    ]
-    n = (
-        extract_cc_duration(cond_text, label)
-        if category == "cc"
-        else _extract_damage_amount(cond_text, label)
-        if category == "damage"
-        else extract_number(cond_text, label, category=category)
-    )
-    cond = _effect_condition(category, cond_text)
-    parsed_conditions = _resolve_effect_conditions(category, cond_text)
-    timed_dur = (
-        extract_timed_duration(cond_text, label)
-        if category in ("buff", "debuff")
-        else extract_timed_duration(text, label)
-        if category == "damage" and label == "DoT"
-        else None
-    )
-    count_text = cond_text if category == "buff" else text
-    parsed_count = parse_target_count(count_text) or parse_target_count(text)
-    if existing:
-        cur = existing[0]
-        order = TIER_ORDER.get(tier, 99)
-        cur_order = TIER_ORDER.get(cur.tier, 99)
-        # Earliest unlock tier for display
-        if order < cur_order:
-            cur.tier = tier
-        cur.conditional = _merge_conditional(cur.conditional, cond)
-        cur.conditions = _merge_conditions_lists(
-            cur.conditions, parsed_conditions
-        )
-        if category == "buff" and new_buff_tgt is not None:
-            cur.targeting = _prefer_buff_targeting(new_buff_tgt, cur.targeting)
-        # Strongest value for cross-hero magnitude comparison.
-        # Synergy assumes a fully ascended roster (all skills / levels).
-        ally_keeps_primary = (
-            category == "buff"
-            and new_buff_tgt == "Self"
-            and cur.targeting != "Self"
-            and label
-            not in (
-                *HP_RECOVERY_LABELS,
-                LEGACY_DIRECT_HEALING_LABEL,
-                "Energy",
-            )
-        )
-        if (
-            n is not None
-            and (cur.numeric is None or n > cur.numeric)
-            and not ally_keeps_primary
-        ):
-            cur.numeric = n
-            cur.qualitative = cond_text
-            if source_section:
-                cur.source_section = source_section
-            if category == "buff" and new_buff_tgt is not None:
-                cur.targeting = _prefer_buff_targeting(
-                    new_buff_tgt, cur.targeting
-                )
-            elif category == "damage" and _text_has_targeting_cue(text):
-                cur.targeting = _prefer_wider_targeting(
-                    detect_damage_targeting(text), cur.targeting
-                )
-            elif text_applies_effect(cond_text, label) and _text_has_targeting_cue(
-                cond_text
-            ):
-                cur.targeting = _prefer_wider_targeting(
-                    detect_targeting(cond_text, label, category), cur.targeting
-                )
-        elif cond and not cur.qualitative:
-            cur.qualitative = cond_text
-        cur.area_count = _merge_area_count(
-            cur.area_count,
-            cond_text,
-            cur.targeting,
-            from_cue=_text_has_targeting_cue(cond_text),
-        )
-        if parsed_count is not None:
-            cur.target_count = parsed_count
-        if timed_dur is not None and (
-            cur.duration is None or timed_dur > cur.duration
-        ):
-            cur.duration = timed_dur
-        if source_section and not cur.source_section:
-            cur.source_section = source_section
-        return
-    targeting_text = scope if scope is not None else text
-    if category == "buff":
-        buff_tgt = _resolve_buff_targeting(text, label, scope=scope)
-    elif category == "damage":
-        buff_tgt = detect_damage_targeting(targeting_text)
-    else:
-        buff_tgt = detect_targeting(targeting_text, label, category)
-        if category == "debuff" and label == "Energy" and buff_tgt == "Self":
-            buff_tgt = _detect_targeting_enemy_override(targeting_text)
-    area_count = _resolve_area_count(
-        targeting_text if category != "buff" else cond_text, buff_tgt
-    )
-    if buff_tgt == "Area" and area_count == 2:
-        full_count = parse_area_tile_count(text)
-        if full_count is not None:
-            area_count = full_count
-    effects.append(
-        Effect(
-            category=category,
-            label=label,
-            tier=tier,
-            targeting=buff_tgt,
-            numeric=n,
-            qualitative=cond_text,
-            conditional=cond,
-            conditions=parsed_conditions,
-            area_count=area_count,
-            target_count=parsed_count,
-            duration=timed_dur,
-            source_section=source_section,
-        )
-    )
-
-
-BUFF_RULES = [
-    (r"grants? an ally brightfeather", "Ally empower"),
-    (r"grants? them exemption\b", "Exemption"),
-    (r"immune to .{0,80}haste reduction effect", "Exemption"),
-    # Winter Warrior style: hero designates one ally for a named role
-    (r"selects? an ally.{0,80}to become", "Ally empower"),
-    # Immunity granted to the empowered ally
-    (
-        r"grants?.{0,40}(?:the )?winter warrior.{0,40}same immunity|"
-        r"grants?.{0,50}same (?:damage and control |immunity )?immunity effects",
-        DMG_CC_IMMUNITY_LABEL,
-    ),
-    # ATK buff: match increase/increases/increasing + optional pronoun + "atk by"
-    (r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s )?atk by", "ATK"),
-    (r"\b(?:permanent )?atk bonus\b", "ATK"),
-    (r"gain an atk increase of \d+", "ATK"),
-    (
-        r"increas(?:e|es|ing) .{0,80}\batk\b(?:,|\s+and|\s+phys|\s+by|\s+during)",
-        "ATK",
-    ),
-    (
-        r"in .{0,50} mode.{0,40}increas(?:e|es|ing) (?:her |his |their )?atk\b",
-        "ATK",
-    ),
-    # Enhance Force style: "gain a N% increase to their basic stats"
-    (
-        r"gain a (\d+(?:\.\d+)?)% increase to (?:their|his|her) (?:basic|base) stats",
-        "Basic stats",
-    ),
-    (
-        r"increas(?:e|es|ing) (?:their|his|her) basic stats by",
-        "Basic stats",
-    ),
-    (
-        r"increas(?:e|es|ing) (?:each stack of )?(?:\w+ )?basic stats by",
-        "Basic stats",
-    ),
-    (
-        r"transfers? .{0,80}basic stats from all enemies.{0,120}"
-        r"distributing them among all allied",
-        "Basic stats",
-    ),
-    # Passive ally ATK: "the ally's ATK is increased by N%" (Contess Exemption)
-    (
-        r"(?:the |an |that )?ally'?s? atk is increased by",
-        "ATK",
-    ),
-    # Passive plural ally ATK: "Allies … have their ATK increased by N%"
-    (
-        r"allies.{0,50}atk (?:is |are )?increased by",
-        "ATK",
-    ),
-    (
-        r"increas(?:e|es|ing) the atk of (?:any unit|any .{0,20}) shielded by",
-        "ATK",
-    ),
-    (
-        r"(?:and )?allies with \w+ gain(?:s|ing)? (?:an )?extra \d+% atk",
-        "ATK",
-    ),
-    (r"allies with \w+.{0,30}gain(?:s|ing)? (?:an )?extra \d+% atk", "ATK"),
-    # Combined ATK + ATK SPD self/impersonal lines (Dionel Nectar Feast)
-    (
-        r"increas(?:e|es|ing) .{0,80}\batk\b.{0,40}\batk spd\b",
-        "ATK SPD",
-    ),
-    # Passive combined self ATK + ATK SPD (Nerion ultimate empowerment)
-    (
-        r"(?:his |her )atk and atk spd are increased by \d+(?:\.\d+)?%",
-        "ATK",
-    ),
-    (
-        r"(?:his |her )atk and atk spd are increased by "
-        r"\d+(?:\.\d+)?% and \d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?",
-        "ATK SPD",
-    ),
-    (r"\batk spd bonus is increased\b", "ATK SPD"),
-    # Ally ATK SPD (before generic self Hero Focus lines)
-    (r"grants? all allies \d+ atk spd", "ATK SPD"),
-    (r"increas(?:e|es|ing) all allies'? atk spd", "ATK SPD"),
-    (
-        r"increas(?:e|es|ing) the atk spd of (?:these |all )?allies",
-        "ATK SPD",
-    ),
-    (
-        r"increas(?:e|es|ing) the atk spd of (?:the )?ally",
-        "ATK SPD",
-    ),
-    (
-        r"increas(?:e|es|ing) the atk spd of both .{0,40} and (?:that )?ally",
-        "ATK SPD",
-    ),
-    # ATK SPD buff — also match "increase her and X's ATK SPD" (conjunctive)
-    (
-        r"increas(?:e|es|ing) (?:her |his |their |the .{0,30}?'s |"
-        r"(?:her|his) and .{0,40}'s )?atk spd",
-        "ATK SPD",
-    ),
-    (r"increas(?:e|es|ing) atk spd", "ATK SPD"),
-    (r"increas(?:e|es|ing) .{0,50}and atk spd by \d+", "ATK SPD"),
-    (r"(?:permanently )?gains? \d+(?:\.\d+)? atk spd\b", "ATK SPD"),
-    (
-        r"gains? \d+(?:\.\d+)? atk spd and \d+(?:\.\d+)? energy",
-        "ATK SPD",
-    ),
-    (r"normal attacks? deal \d+(?:\.\d+)?% more damage", "ATK"),
-    (r"normal attack damage by \d+(?:\.\d+)?%", "ATK"),
-    # Haste buff: must be gaining Haste, not reducing it
-    (r"increas(?:e|es|ing) .{0,60}?haste\b", "Haste"),
-    (r"gain(?:s|ing)? an extra \d+(?:\s*\+\s*\d+)? haste\b", "Haste"),
-    (r"haste increased by \d+", "Haste"),
-    (r"haste permanently increases by \d+", "Haste"),
-    (
-        r"grants? (?:himself|herself|themselves|(?:her|his|their)self) \d+ haste",
-        "Haste",
-    ),
-    (
-        r"in .{0,50} mode.{0,40}increas(?:e|es|ing) (?:her |his |their )?haste\b",
-        "Haste",
-    ),
-    (r"gains? \d+ haste|gain(?:s|ing)? extra \d+ haste", "Haste"),
-    (r"gains? \d+(?:\s*\+\s*\d+)? haste\b", "Haste"),
-    (r",\s*\d+(?:\s*\+\s*\d+)? haste\b", "Haste"),
-    (
-        r"boosting the damage of all allied summons|"
-        r"increase all allied summons'? damage|"
-        r"allied summons'? damage dealt by",
-        "Damage dealt",
-    ),
-    (
-        r"all allied summons gain atk equal to",
-        "ATK",
-    ),
-    (
-        r"(?:phys(?:ical)? & magic def|magic & phys(?:ical)? def)"
-        r".{0,30}equal to",
-        "DEF",
-    ),
-    (
-        r"allied summons'? ranged damage .{0,80}increas(?:e|ed|ing) by an extra",
-        "Ranged damage",
-    ),
-    (
-        r"deal \d+(?:\.\d+)?% more melee damage",
-        "Damage dealt",
-    ),
-    # Max HP buff: handle both "increases max HP" and passive "max HP is increased"
-    (r"increas(?:e|es|ing) (?:the )?(?:\w+ ){0,4}max hp", "Max HP"),
-    (r"max hp.{0,30}(?:is |permanently )?increas", "Max HP"),
-    (r"extra max hp", "Max HP"),
-    # DEF buff: only when the unit or allies gain DEF (not when enemies lose it)
-    (
-        r"increas(?:e|es|ing) .{0,40}(?<!ranged )\bdef by",
-        "DEF",
-    ),
-    (
-        r"increas(?:e|es|ing) .{0,80}phys(?:ical)? def"
-        r"(?!.{0,20}reduc)",
-        "Phys DEF",
-    ),
-    (
-        r"increas(?:e|es|ing) .{0,80}magic def"
-        r"(?!.{0,20}reduc)",
-        "Magic DEF",
-    ),
-    (
-        r"gain(?:s|ing)? \d+(?:\.\d+)?%? "
-        r"(?:phys(?:ical)? and magic|magic and phys(?:ical)?) def\b",
-        "DEF",
-    ),
-    (
-        r"gain(?:s|ing)? .{0,50}(?:phys(?:ical)? and magic|magic and phys(?:ical)?) "
-        r"def\b",
-        "DEF",
-    ),
-    (
-        r"(?:phys(?:ical)? & magic def|both phys(?:ical)? def and magic def)"
-        r".{0,30}increas",
-        "Phys DEF",
-    ),
-    (
-        r"(?:phys(?:ical)? & magic def|both phys(?:ical)? def and magic def)"
-        r".{0,30}increas",
-        "Magic DEF",
-    ),
-    (
-        r"phys(?:ical)? def.{0,30}increas(?!.{0,20}reduc)",
-        "Phys DEF",
-    ),
-    (
-        r"magic def.{0,30}increas(?!.{0,20}reduc)",
-        "Magic DEF",
-    ),
-    # Shield: gains/granting/providing/converting into a shield
-    (
-        r"(?:crafts?|gains?|grants?).{0,40}(?:cogshield|chi barrier)",
-        "Shield",
-    ),
-    (
-        r"blocks? \d+(?:\.\d+)?%\s*\(atk-based\).{0,40}damage for \d+s",
-        "Shield",
-    ),
-    (
-        r"grant(?:s|ing)? .{0,80}shields? that block",
-        "Shield",
-    ),
-    (r"gain(?:s|ing)? .{0,40}shield", "Shield"),
-    (r"grant(?:s|ing)? .{0,60}shield", "Shield"),
-    (r"provid(?:e|es|ing) .{0,40}shield", "Shield"),
-    (
-        r"(?:converting|convert).{0,40}into a shield|"
-        r"shield (?:that can absorb|equal to|value|that blocks)|permanent shield",
-        "Shield",
-    ),
-    # Healing over time (HoT): HP restore with "per second", "per 0.Xs",
-    # "every second" etc.  Must come BEFORE direct-healing rules.
-    (
-        r"(?:provide|provides|providing).{0,50}healing to (?:their )?host every",
-        HEALING_OVER_TIME_LABEL,
-    ),
-    (
-        r"(?:recover|restore)(?:s|ing)? .{0,60}hp.{0,30}"
-        r"(?:per second|per 0\.\d|every second|every \d+\.?\d* s)",
-        HEALING_OVER_TIME_LABEL,
-    ),
-    (
-        r"(?:recover|restore)(?:s|ing)? \d+%.{0,50}"
-        r"(?:per second|per 0\.\d|every second|every \d+\.?\d* s)",
-        HEALING_OVER_TIME_LABEL,
-    ),
-    # HoT: gradual recovery "over the next Xs" / "over Xs" phrasing.
-    (
-        r"(?:recover|restore)(?:s|ing)? .{0,80}hp.{0,60}over the next \d+\.?\d* s",
-        HEALING_OVER_TIME_LABEL,
-    ),
-    (
-        r"(?:recover|restore)(?:s|ing)? \d+%.{0,80}over the next \d+\.?\d* s",
-        HEALING_OVER_TIME_LABEL,
-    ),
-    (
-        r"heal(?:s|ing)? .{0,120}(?:hp )?(?:per second|every \d+\.?\d* s(?:ec)?)",
-        HEALING_OVER_TIME_LABEL,
-    ),
-    (
-        r"heal(?:s|ing)? .{0,80}(?:for )?an amount equal to their max hp",
-        DIRECT_HEALING_LABEL,
-    ),
-    (
-        r"heal(?:s|ing)? .{0,60}equal to their max hp",
-        DIRECT_HEALING_LABEL,
-    ),
-    # Direct healing: exclude texts where "per second" or "over the next Xs"
-    # follows within 60 chars of the HP or percentage reference (those are HoT).
-    (
-        r"(?:recover|restore)(?:s|ing)? \d+%"
-        r"(?!.{0,60}(?:per second|per 0\.\d|every second|every \d|over the next \d))",
-        DIRECT_HEALING_LABEL,
-    ),
-    (
-        r"(?:recover|restore)(?:s|ing)? (?!(?:his|her|their|its) )"
-        r".{0,30}hp"
-        r"(?!.{0,60}(?:per second|per 0\.\d|every second|every \d))",
-        DIRECT_HEALING_LABEL,
-    ),
-    (r"heals? .{0,30} for \d+%", DIRECT_HEALING_LABEL),
-    (r"heal(?:s|ing)? .{0,40}(?:for \d+%|\bhp\b|by \d+%)", DIRECT_HEALING_LABEL),
-    (r"heal(?:s|ing)? all allies", DIRECT_HEALING_LABEL),
-    (r"restor(?:e|es|ing) \d+% .{0,20}hp", DIRECT_HEALING_LABEL),
-    (
-        r"converts? .{0,60}(?:of )?(?:the )?damage dealt into healing",
-        DIRECT_HEALING_LABEL,
-    ),
-    (r"increas(?:e|es|ing) healing to \d+%", DIRECT_HEALING_LABEL),
-    # Healing stat buff: "Increases Healing by X" — the Healing stat itself
-    (
-        r"increas(?:e|es|ing) (?:her |his |their )?healing\b (?:by|during)\b",
-        HEALING_STAT_BUFF_LABEL,
-    ),
-    (r"blessing of tidal strength|(?:permanent )?tidal strength", "Tidal Strength"),
-    (r"life drain", "Lifedrain"),
-    (r"reduc(?:e|es|ing) (?:her |his |their |the .{0,20})?damage taken", "Damage taken"),
-    (r"(?:all )?allies take \d+(?:\.\d+)?% less damage", "Damage taken"),
-    (
-        r"(?:\d+(?:\.\d+)?% of )?the damage taken by all allies is shared",
-        "Damage taken",
-    ),
-    (
-        r"(?:their |the guards'? )?hp loss is reduced by",
-        "Damage taken",
-    ),
-    (
-        r"guards'? own hp loss is reduced by",
-        "Damage taken",
-    ),
-    (
-        r"(?:protected )?all(?:y|ies) (?:also )?take(?:s)? "
-        r"\d+(?:\.\d+)?% less damage",
-        "Damage taken",
-    ),
-    # Abbreviated form used in some skill descriptions (e.g. Koko, Phraesto).
-    (r"\bdmg reduction\b", "Damage taken"),
-    (
-        r"increas(?:e|es|ing)(?: an extra)? damage dealt by",
-        "Damage dealt",
-    ),
-    (
-        r"magic damage taken.{0,50}(?:is |are )?reduc\w+|"
-        r"reduc(?:e|es|ing) .{0,40}magic damage taken|"
-        r"magic dmg reduction|magic damage reduction",
-        "Magic damage",
-    ),
-    (r"invincible", "Invincible"),
-    (
-        r"extra \d+ \+ \d+ penetration|"
-        r"gain(?:s|ing)? \d+(?:\s*\+\s*\d+)? (?:def )?penetration\b|"
-        r"increas(?:e|es|ing) (?:her |his |their )?penetration by",
-        "DEF Penetration",
-    ),
-    (r"(?:the )?ally gains? \d+(?:\s*\+\s*\d+)? energy", "Energy"),
-    (r"grants? all allies \d+(?:\s*\+\s*\d+)? energy", "Energy"),
-    (
-        r"grants? .{0,60}lieutenant.{0,60}energy when a battle starts",
-        "Energy",
-    ),
-    (r"(?:recover(?:s|ing|ed)?|restor(?:e|es|ing|ed))"
-     r"(?: (?:himself|herself|itself))?(?: an extra)? \d+(?:\s*\+\s*\d+)? energy",
-     "Energy"),
-    (
-        r"gains? \d+(?:\.\d+)? atk spd and \d+(?:\.\d+)? energy",
-        "Energy",
-    ),
-    (
-        r"gains? \d+(?:\.\d+)?% of the energy (?:they|the apostles?) gain",
-        "Energy",
-    ),
-    (r"increases the energy recovered .{0,80}to \d+(?:\s*\+\s*\d+)?", "Energy"),
-    (r"increases energy recovery to \d+(?:\s*\+\s*\d+)?", "Energy"),
-    (r"increases the hp recovered .{0,120}to \d+(?:\.\d+)?% \(atk-based\) \+ \d+(?:\.\d+)?%", DIRECT_HEALING_LABEL),
-    (r"hp recovered .{0,120}to \d+(?:\.\d+)?% \(atk-based\) \+ \d+(?:\.\d+)?%", DIRECT_HEALING_LABEL),
-    (r"normal attack range is increased", "Attack range"),
-    (
-        r"(?:increasing|increases?) .{0,40}normal attack range by \d+",
-        "Attack range",
-    ),
-    (r"prevents their defeat", "Fatal blow immunity"),
-    # Crit buff
-    (r"increas(?:e|es|ing) (?:her |his |their )?crit\b", "Crit"),
-    (r"gains? \d+(?:\s*\+\s*\d+)? crit\b", "Crit"),
-    # Execution buff
-    (r"increas(?:e|es|ing) (?:her |his |their )?execution\b", "Execution"),
-    # Resilience buff
-    (r"increas(?:e|es|ing) (?:her |his |their )?resilience\b", "Resilience"),
-    # Ranged DEF buff
-    (
-        r"increas(?:e|es|ing) (?:her |his |their |allies'? )?ranged def",
-        "Ranged DEF",
-    ),
-    # Crit DMG boost
-    (r"increas(?:e|es|ing) .{0,30}crit dmg boost", "Crit DMG boost"),
-    # Vitality buff
-    (r"increas(?:e|es|ing) .{0,30}vitality\b", "Vitality"),
-    # Dodge chance buff
-    (
-        r"gains? \d+(?:\.\d+)?%?\s+dodge rate|dodge rate to \d+|"
-        r"gains? \d+%? dodge chance|dodge chance .{0,20}\d+",
-        "Dodge chance",
-    ),
-    # Movement speed buff
-    (
-        r"(?:gain\w*|increas\w+) (?:bonus )?movement speed|"
-        r"gains? bonus movement speed",
-        "Movement speed",
-    ),
-    (
-        r"gaining double the haste|absorbs? .{0,40}haste bonus",
-        "Haste",
-    ),
-]
-
-
 def _chunk_has_positional_tile_buff(text: str) -> bool:
     t = text.lower()
     return any(re.search(pat, t) for pat in POSITIONAL_TILE_PATTERNS)
@@ -4482,9 +3444,6 @@ def detect_positional_tile_buff_labels(hero: Hero) -> frozenset[str]:
     for _tier, text, _section in hero.skill_chunks:
         if not _chunk_has_positional_tile_buff(text):
             continue
-        for pat, label in BUFF_RULES_COMPILED:
-            for _scope in _buff_match_scopes(text, label, pat):
-                labels.add(label)
         t = text.lower()
         for hint_pat, label in POSITIONAL_CHUNK_BUFF_HINTS:
             if re.search(hint_pat, t):
@@ -4703,9 +3662,6 @@ def detect_proximity_aura_buff_labels(hero: Hero) -> tuple[frozenset[str], float
             continue
         radius = parse_proximity_aura_radius(text)
         max_radius = radius if max_radius is None else max(max_radius, radius)
-        for pat, label in BUFF_RULES_COMPILED:
-            for _scope in _buff_match_scopes(text, label, pat):
-                labels.add(label)
         t = text.lower()
         for hint_pat, label in POSITIONAL_CHUNK_BUFF_HINTS:
             if re.search(hint_pat, t):
@@ -4713,539 +3669,6 @@ def detect_proximity_aura_buff_labels(hero: Hero) -> tuple[frozenset[str], float
     return frozenset(labels), max_radius
 
 
-DEBUFF_RULES = [
-    # ATK SPD debuff before generic ATK (Cyran Mystic Recollection).
-    (r"reduc(?:e|es|ing|tion) .{0,30}atk spd", "ATK SPD"),
-    (r"shatter armor", "Phys DEF"),
-    # ATK debuff (verb form: "reduces their ATK" / noun form: "reduction in their ATK")
-    (
-        r"reduc(?:e|es|ing|tion) (?:in )?(?:the )?"
-        r"(?:target'?s?|targets'?|their|enemy'?s?|enemies') .{0,10}atk(?! spd)\b",
-        "ATK",
-    ),
-    (r"reduc(?:e|es|ing) .{0,5}atk(?! spd) by", "ATK"),
-    (
-        r"(?:their|the )?atk and haste reduc(?:e|ed|es|ing) by",
-        "Haste",
-    ),
-    (r"\batk(?! spd)\b.{0,20}reduc(?:e|ed|es|ing|tion)", "ATK"),
-    (
-        r"absorb(?:s|ing)? \d+(?:\.\d+)?% of phys(?:ical)? def.{0,40}from the target",
-        "Phys DEF",
-    ),
-    (
-        r"absorb(?:s|ing)? \d+(?:\.\d+)?% of phys(?:ical)? def and magic def"
-        r".{0,40}from the target",
-        "Magic DEF",
-    ),
-    (r"inflict(?:s|ing)? (?:a )?frostbite", "Haste"),
-    (r"cannot heal or gain shields?", "Healing"),
-    # DEF debuffs: "reducing their/the target's/enemies' Phys/Magic DEF"
-    (
-        r"reduc(?:e|es|ing|tion) .{0,50}(?:phys(?:ical)? & magic def|"
-        r"both phys(?:ical)? def and magic def)",
-        "Phys DEF",
-    ),
-    (
-        r"reduc(?:e|es|ing|tion) .{0,50}(?:phys(?:ical)? & magic def|"
-        r"both phys(?:ical)? def and magic def)",
-        "Magic DEF",
-    ),
-    (
-        r"reduc(?:e|es|ing|tion) in (?:both )?phys(?:ical)? def",
-        "Phys DEF",
-    ),
-    (
-        r"reduc(?:e|es|ing|tion) in (?:both )?magic def",
-        "Magic DEF",
-    ),
-    (
-        r"magic def.{0,40}(?:is |are )?(?:permanently )?"
-        r"reduc(?:e|ed|es|ing|tion)",
-        "Magic DEF",
-    ),
-    (
-        r"phys(?:ical)? def.{0,40}(?:is |are )?(?:permanently )?"
-        r"reduc(?:e|ed|es|ing|tion)",
-        "Phys DEF",
-    ),
-    (r"reduc(?:e|es|ing|tion) .{0,30}magic def", "Magic DEF"),
-    (r"reduc(?:e|es|ing|tion) .{0,30}phys(?:ical)? def", "Phys DEF"),
-    # Energy drain (enemy only — not own summon/armor "loses energy")
-    (
-        r"steals? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy(?:\s+from)?",
-        "Energy",
-    ),
-    (
-        r"energy stolen to \d+(?:\s*\+\s*\d+(?:\.\d+)?)?",
-        "Energy",
-    ),
-    (
-        r"drain(?:s|ing)? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy"
-        r"(?:\s+from|\b)",
-        "Energy",
-    ),
-    (
-        r"absorb(?:s|ing)? (?:targets'?|target'?s?|enemies'?|the target'?s?) "
-        r"energy\b",
-        "Energy",
-    ),
-    (r"absorb(?:s|ing)? \d+(?:\s*\+\s*\d+(?:\.\d+)?)? energy", "Energy"),
-    (
-        r"(?:enemy|enemies|target|their|them|host)\b.{0,50}los(?:e|es) \d+ energy|"
-        r"los(?:e|es) \d+ energy.{0,50}(?:enemy|enemies|the target|their|them|host)|"
-        r"los(?:e|es|ing) \d+(?:\s*\+\s*\d+)? energy\b.{0,40}(?:and|,)?.{0,40}"
-        r"(?:hp|atk-based|\d+%)",
-        "Energy",
-    ),
-    (r"reduc(?:e|es|ing) .{0,40}energy\b(?! recov)", "Energy"),
-    (r"reduc(?:e|es|ing) energy recovery by", "Energy"),
-    (
-        r"reduc(?:e|es|ing) .{0,50}energy recovery efficiency",
-        "Energy",
-    ),
-    (
-        r"reduc(?:e|es|ing) .{0,30}enemies'? energy recovery efficiency",
-        "Energy",
-    ),
-    (r"prevent(?:s|ing)? energy recovery", "Energy"),
-    (r"reduc(?:e|es|ing) .{0,20}atk of .{0,30}enem", "ATK"),
-    (
-        r"prevent(?:s|ing)? (?:the )?(?:enemy|enemies|them) from recover(?:ing|s)? hp",
-        "Healing",
-    ),
-    (r"los(?:e|es|ing) \d+ vitality\b", "Vitality"),
-    # Vitality debuff
-    (
-        r"absorb(?:s|ing)? \d+ of the target'?s vitality",
-        "Vitality",
-    ),
-    (r"reduc(?:e|es|ing) .{0,20}vitality", "Vitality"),
-    # Healing debuff (enemy Healing stat reduction)
-    (
-        r"reduc(?:e|es|ing) (?:their|the target'?s?) healing\b",
-        "Healing",
-    ),
-    # Magic damage taken debuff (before generic damage taken debuff)
-    (
-        r"magic damage taken is increased|"
-        r"increased? .{0,30}magic damage taken|"
-        r"take more magic damage",
-        "Magic damage",
-    ),
-    # Damage dealt debuff (enemy deals less damage)
-    (
-        r"reduces? the damage dealt by .{0,80}enem",
-        "Damage dealt",
-    ),
-    (
-        r"reduc(?:e|es|ing) .{0,40}(?:the )?(?:enemy'?s?|target'?s?|their) "
-        r"damage dealt\b",
-        "Damage dealt",
-    ),
-    (
-        r"(?:enem(?:y|ies)|these enemies|marked enem(?:y|ies)) "
-        r"deal \d+(?:\.\d+)?% less damage(?: for the rest of the battle)?",
-        "Damage dealt",
-    ),
-    (
-        r"reduction to (?:enemy )?damage dealt to \d+(?:\.\d+)?%",
-        "Damage dealt",
-    ),
-    (
-        r"debuff durations.{0,40}reduced by \d+(?:\.\d+)?%|"
-        r"duration of dispellable debuffs.{0,80}reduced by \d+(?:\.\d+)?%|"
-        r"reduction to their debuff durations to \d+(?:\.\d+)?%",
-        "Debuff duration",
-    ),
-    (
-        r"take \d+(?:\.\d+)?(?:\s*%\s*\+\s*\d+(?:\.\d+)?)?%? more ranged damage",
-        "Ranged damage",
-    ),
-    (
-        r"transfers? \d+(?:\.\d+)?%\s*\+\s*\d+(?:\.\d+)?%\s*of basic stats from",
-        "Basic stats",
-    ),
-    # Damage taken debuff (enemies take more damage; not magic-specific)
-    (
-        r"increas(?:e|es|ing|ed) .{0,30}(?<!magic )damage taken|"
-        r"(?<!magic )damage taken.{0,20}(?:is |are )?increas\w+",
-        "Damage taken",
-    ),
-    # Movement / Haste debuff
-    (r"\d+(?:\s*\+\s*\d+)? haste reduction", "Haste"),
-    (r"los(?:e|es|ing) .{0,40}movement speed", "Movement speed"),
-    (r"los(?:e|es|ing) .{0,40}haste\b", "Haste"),
-    (r"reduc(?:e|es|ing|tion) .{0,40}haste\b", "Haste"),
-    (r"reduc(?:e|es|ing) .{0,50}movement speed", "Movement speed"),
-    (r"reduc(?:e|es|ing) .{0,100}haste by \d+", "Haste"),
-    (r"reduc(?:e|es|ing) .{0,100}vitality by \d+", "Vitality"),
-    (r"vitality reduc(?:e|ed|es|ing) by \d+", "Vitality"),
-    (
-        r"(?:take|cause(?:s|ing)?) \d+(?:\.\d+)?(?:\s*%\s*)? more hp loss",
-        "Damage taken",
-    ),
-    # Misc
-    (r"(?:instantly|immediately) defeat(?:s|ed)?", "Execution"),
-    (
-        r"burn(?:s|ing|ed)?.{0,80}(?:damage|hp).{0,60}(?:every|per second)|"
-        r"burning.{0,50}(?:for \d|area)|burns? the (?:target|enemy|area)|"
-        r"dart poison|poison\w*(?:ed)? .{0,50}(?:damage|every|per second)|"
-        r"deals? .{0,30}(?:atk-based\)|atk\b).{0,30}(?:damage|hp).{0,30}every second|"
-        r"takes? damage every second",
-        "DoT",
-    ),
-    (
-        r"(?:poison(?:ed|s)? enemies|inflict(?:s|ing)? (?:a )?poison|"
-        r"venom(?:ous)? (?:dart|surge|debuff)|dart poison)",
-        "Poison",
-    ),
-    (r"reduc(?:e|es|ing|tion) .{0,20}max hp\b", "Max HP"),
-    (r"inflict(?:s|ing)? max hp reduction", "Max HP"),
-    (r"max hp reduction equal to \d+", "Max HP"),
-    # Crit Resist debuff
-    (r"reduc(?:e|es|ing) .{0,20}crit resist", "Crit Resist"),
-    # Vulnerable debuff – only the application, not "not affected by Vulnerable"
-    (r"inflict(?:s|ing)? (?:a )?vulnerable\b", "Vulnerable"),
-    # Exposed Weakness: enemies with weakness exposed take extra damage
-    (
-        r"weakness is exposed|(?:enemies|enemy) with exposed weakness",
-        "Damage taken",
-    ),
-    # Marked target: mark placed on an enemy is a debuff from the
-    # enemy's perspective (focus fire, reduced effective defence, etc.)
-    (
-        r"places? .{0,50}mark(?: of \w+)? on|forest mark|"
-        r"notice to mark|noticed enemy|"
-        r"prioritiz(?:e|es|ing) attacking the .{0,30}marked|"
-        r"marking them as prey",
-        "Marked target (focus fire)",
-    ),
-]
-
-BUFF_RULES_COMPILED = [(re.compile(pat, re.I), label) for pat, label in BUFF_RULES]
-DEBUFF_RULES_COMPILED = [
-    (re.compile(pat, re.I), label) for pat, label in DEBUFF_RULES
-]
-
-CC_RULES = [
-    (r"\bstun(?:s|ned|ning)?\b|\bstunn(?:ed|ing|s)?\b", "Stun"),
-    (
-        r"knock(?:s|ing|ed)? .{0,120}?(?:in(?:to)?) the air\b",
-        "Knock up",
-    ),
-    (
-        r"knock(?:s|ing)? (?:the enemy|an enemy|each enemy|them|the target) down|"
-        r"knock(?:s|ing)? each enemy down|"
-        r"knock down an enemy|knocked down|slam(?:s|ming)? them down|"
-        r"into the air and down|and down for",
-        "Knock down",
-    ),
-    (
-        r"knocking them (?:\d+ tiles? )?back|"
-        r"knock(?:ing|s)? (?:them |enemies |the enemy )?"
-        r"(?:\d+ tiles? )?back",
-        "Knock back",
-    ),
-    (r"knock(?:ing|s)? .{0,50}in (?:his|her|their) path back", "Knock back"),
-    (r"frighten(?:ing|ed|s)?", "Frighten"),
-    (r"flee in fright|fright effect", "Frighten"),
-    # "(?<! of )" prevents skill-name references like "Echo of Silence" from
-    # being falsely flagged as a Silence CC applied to a target.
-    (r"(?<! of )silenc(?:e|es|ed|ing)", "Silence"),
-    # Dunlingr Spellbind order: all non-boss units unable to cast ultimates.
-    (r"spellbind.{0,60}unable to cast", "Silence"),
-    # Forced movement toward a lure/illusion (Mehira Alluring Mirage) — not Charm.
-    (
-        r"bewitch(?:ing|ed|es)? .{0,80}(?:rush|rushing) .{0,40}toward|"
-        r"making them rush .{0,40}toward",
-        "Displace",
-    ),
-    (r"bewitch(?:ing|ed|es)?(?: all enemies)?", "Charm"),
-    (r"charm(?:ed|s|ing)?", "Charm"),
-    (
-        r"\basleep\b|hypnotiz|put(?:ting)? .{0,40}to sleep|"
-        r"(?:^|[^\w])sleep(?:s|ing)? for \d",
-        "Sleep",
-    ),
-    (
-        r"freez(?:e|es|ing|ed) (?!time itself)(?!and defeats)",
-        "Bind",
-    ),
-    (r"immobiliz", "Bind"),
-    # Exclude self-restrictions ("she/he cannot move or act") – only enemy CC.
-    # Python lookbehind must be fixed-width, so list each pronoun separately.
-    (
-        r"(?<!she )(?<!he )(?<!it )cannot move or (?:act|attack)|"
-        r"unable to move or (?:act|attack)|"
-        r"preventing them from moving or act(?:ing)?",
-        "Bind",
-    ),
-    (r"entangl|imprison(?:ing|s)\b", "Bind"),
-    (r"\bblind(?:ing|s|ed)?\b", "Blind"),
-    (r"\bbind(?:ing|s)?\b", "Bind"),
-    (
-        r"pull(?:ing|s|ed)? (?:in |them |the )|"
-        r"pull(?:ed|ing|s)? .{0,40}toward|"
-        r"hurl(?:s|ing|ed)? .{0,30}into|"
-        r"teleport",
-        "Displace",
-    ),
-    (r"taunt", "Taunt"),
-    (r"interrupt", "Interrupt"),
-]
-
-SPECIAL_PROVIDES_RULES: tuple[tuple[str, str], ...] = (
-    # Core mechanics
-    (r"instantly (?:freezes and )?defeat", "Instant defeat"),
-    # Self-survival after defeat or critical HP (behavior tag: cheat-death)
-    (r"hp ratio drops below.{0,150}takes root", "Cheat death"),
-    (
-        r"takes a fatal blow.{0,120}block(?:s|ing)? the fatal damage|"
-        r"block(?:s|ing)? the fatal damage",
-        "Cheat death",
-    ),
-    (
-        r"when (?:\w+'?s? )?(?:she|he|it|\w+) is defeated.{0,120}reviv",
-        "Cheat death",
-    ),
-    (
-        r"will resurrect|revive (?:him|her)?self|"
-        r"revive from the vanquished enemy",
-        "Cheat death",
-    ),
-    (
-        r"transforms? into a ball of flame whenever .{0,60}is defeated",
-        "Cheat death",
-    ),
-    (
-        r"reviv(?:e|es|ing) (?:an allied hero|a fallen allied hero|"
-        r"him one additional time)",
-        "Revive ally",
-    ),
-    # Ally empower: hero designates one specific ally with a named role/bond
-    (r"selects? an ally.{0,80}to become", "Ally empower"),
-    (r"(?:transform|morph)s? into", "Transformation"),
-    (
-        r"(?:drifts? into|falls?|enters?) (?:a )?(?:deep(?:er)? )?sleep|"
-        r"immediately falls asleep",
-        "Dream sleep (transformation)",
-    ),
-    (
-        r"mark of |places .{0,40} mark on|forest mark|"
-        r"notice to mark|marked enemy|noticed enemy|"
-        r"prioritizes attacking the .{0,30}marked",
-        "Marked target (focus fire)",
-    ),
-    (r"converts? any continuous damage", "DoT conversion"),
-    (
-        r"dispels? all debuffs|"
-        r"removes? all dispellable debuffs|"
-        r"dispels? .{0,25}debuffs on",
-        "Dispel debuffs",
-    ),
-    (r"prevents their defeat", "Fatal blow save"),
-    (r"\binvincible\b", "Invincibility"),
-    (r"immune to damage and control", DMG_CC_IMMUNITY_LABEL),
-    (
-        r"grants?.{0,40}(?:the )?winter warrior.{0,40}same immunity|"
-        r"grants?.{0,50}same (?:damage and control |immunity )?immunity effects",
-        DMG_CC_IMMUNITY_LABEL,
-    ),
-    (
-        r"drains? \d+% of .{0,30}current hp",
-        "Damage leech from allies",
-    ),
-    (r"spirit form", "Spirit form protection"),
-    (r"inflicts? .{0,40}(?:venom|curse|aging)", "Debuff application"),
-    (r"hypnotiz", "Sleep (area)"),
-    # Damage absorption / release
-    (
-        r"absorb(?:s|ing)? \d+% .{0,40}(?:physical|magic) damage taken by allies|"
-        r"shield.{0,60}absorb(?:s|ing)? \d+% .{0,40}damage taken by allies|"
-        r"damage taken by all allies is shared",
-        "Damage absorption (allies)",
-    ),
-    (
-        r"converts? \d+% .{0,30}damage absorbed|"
-        r"stored golem's might|unleashes? the stored",
-        "Stored damage release",
-    ),
-    # Stat steal / absorb
-    (
-        r"steals? .{0,45}(?:atk|phys(?:ical)?|magic) def",
-        "Stat steal",
-    ),
-    (
-        r"absorb(?:s|ing)? \d+% of (?:phys|magic) def",
-        "Stat absorb",
-    ),
-    (r"permanently absorbs? .{0,35}base stats", "Permanent stat absorb"),
-    # Energy
-    (
-        r"absorb(?:s|ing)? \d+ energy|"
-        r"absorb(?:s|ing)? targets'? \d+ energy",
-        "Energy steal",
-    ),
-    # Ally link / blessing
-    (r"stellar bond|linked through stellar bond", "Ally positioning link"),
-    (r"share the same hp and energy", "Shared HP and Energy"),
-    (
-        r"blessing of tidal|blesses the nearest ally|tidal blessing|"
-        r"grants? .{0,35}blessing",
-        "Ally blessing",
-    ),
-    # Battlefield control
-    (
-        r"trapping .{0,50}domain|"
-        r"cutting them off from the rest of the battlefield",
-        "Enemy isolation (domain)",
-    ),
-    (r"freezes time itself|stop the battle time", "Battle time pause"),
-    (r"unable to cast ultimate", "Ultimate lock (Spellbind)"),
-    (
-        r"unable to (?:restore|recover) hp for others",
-        "Heal lock (Curelock)",
-    ),
-    (r"\buntargetable\b", "Untargetable"),
-    # Execute / threshold
-    (
-        r"reduces? .{0,30}hp below \d+%(?!.*instantly defeat)",
-        "HP threshold strike",
-    ),
-    (r"execution increases", "Execution scaling"),
-    # Position
-    (r"knock(?:ing|s)? (?:them )?back \d+ tiles", "Reposition enemies"),
-    (r"swap(?:s|ping)? (?:places|position)", "Position swap"),
-    # Artifact interactions (block / mimic / buff)
-    # Gala EX+10: stronger artifact buffs; shadow Merlin echoes artifact skills
-    (
-        r"magister merlin'?s? skills? grant stat buffs|"
-        r"merlin'?s? skills? grant.{0,30}stat buffs?.{0,30}stronger|"
-        r"(?:a )?shadow (?:of )?merlin appears?.{0,60}casts? the same skill",
-        "Artifact",
-    ),
-    # Cyran Ex. Skill base: mimics artifact spell sequence at battle start
-    (
-        r"mimics? some of merlin'?s? (?:impressive )?spells?",
-        "Artifact mimic",
-    ),
-    # Cyran EX+10: silences enemy artifact at battle start
-    (
-        r"present on the enemy side.{0,80}silenced.{0,60}when a battle starts",
-        "Artifact block",
-    ),
-    # Enhanced / empowered combat form (Baelran, Nerion, …)
-    (
-        r"enters? (?:an )?enhanced .{0,20}(?:form|celestial)|"
-        r"permanently empowered|enters? (?:blast mania|combat stance)\b",
-        "Enhanced form",
-    ),
-    # Counterattack (Elona, Lorsan, …)
-    (r"counterattack", "Counterattack"),
-    # Stacking buff – note that this hero has a mechanic that stacks up to N
-    (r"up to \d+ stacks?", "Stacking"),
-)
-
-SPECIAL_REQUIRES_RULES: tuple[tuple[str, str], ...] = (
-    (
-        r"whenever an allied hero deals magic damage|"
-        r"allied hero deals magic damage",
-        "Magic damage from allies",
-    ),
-    (
-        r"(?:when|whenever) an enemy hero is knocked into the air",
-        "Knock up from allies",
-    ),
-    (
-        r"converts? any continuous damage|"
-        r"continuous damage they take",
-        "Continuous damage on enemies",
-    ),
-    (
-        r"requires?.{0,40}damage over time|"
-        r"damage over time.{0,40}required",
-        "Damage over time",
-    ),
-    (r"if there are any monsters", "Enemy monsters present"),
-    (r"ingredient", "Monster ingredients"),
-    (
-        r"(?:that ally|allied hero|ally with .{0,40}) deals ranged damage|"
-        r"after (?:the |that )?ally deals ranged damage",
-        "Ranged damage from allies",
-    ),
-    (
-        r"at least \d+ different stat reduction debuffs",
-        "Multiple debuffs on target",
-    ),
-    (
-        r"whenever an allied hero casts their ultimate.{0,80}"
-        r"(?:increases|gains|grants|permanently)",
-        "Ally Ultimate casts",
-    ),
-    (
-        r"every time a non-summoned enemy is defeated|"
-        r"for every non-summoned enemy defeated",
-        "Enemy defeat",
-    ),
-    (
-        r"if an ally is within \d+ tile|"
-        r"for each additional ally in this range",
-        "Adjacent allies",
-    ),
-    (r"afflicted by aging", "Debuff on target (Aging)"),
-    # Target state — partner must apply; self marks/debuffs filtered later.
-    (
-        r"affected by .{0,35}(?:venom|curse|burn)\b",
-        "Debuff on target",
-    ),
-    (r"control immunity status", "Enemy not CC-immune"),
-    (
-        r"(?:an |the )?enemy.{0,60}under control effects|"
-        r"has been under control effects for|"
-        r"targets? under control effects|"
-        r"while (?:they are |enemies are )?under control effects",
-        "CC on enemies",
-    ),
-    (r"in boss fights|against boss enemies", "Boss encounter"),
-    # Party / link
-    (
-        r"if at least \d+ (?:mage|tank|support)",
-        "Party composition",
-    ),
-    (r"linked through stellar bond", "Ally on positioning link"),
-    (r"blessed ally|first ally blessed", "Ally blessing active"),
-    (
-        r"temporary (?:stat )?buffs? from (?:a |an )?(?:different )?all(?:y|ies)|"
-        r"temporary stat buffs? from allies|"
-        r"receives? a temporary stat buff from an ally|"
-        r"non-permanent stat(?:s)? boost from (?:an )?"
-        r"(?:his |her |their )?all(?:y|ies)|"
-        r"receiving the non-permanent stats boost from an ally",
-        "Ally stat buffs",
-    ),
-    # Resources / thresholds
-    (r"for each ingredient|each time .{0,35}collect", "Stacked resource"),
-    (r"when .{0,30}energy exceeds", "Energy threshold"),
-    (
-        r"stored .{0,25}might exceeds|golem's might exceeds|"
-        r"only be used when the amount of stored",
-        "Stored resource threshold",
-    ),
-    # Form / stance
-    (
-        r"while in .{0,35}(?:wolf form|black mist|aquarius|celestial form|"
-        r"altered form|true form|combat stance)|in combat stance",
-        "Form or stance active",
-    ),
-    # Proc limits
-    (r"can only (?:cast|trigger|be used) once", "Once per battle"),
-    (r"can trigger once every", "Passive with internal cooldown"),
-    # Gala Supreme+: Energy recovery and Steadfast only trigger while under
-    # artifact buffs
-    (r"affected by merlin'?s? buffs", "Artifact buffs active"),
-    (r"(?:on |target\w* )?vulnerable enemies|rush to vulnerable", "Vulnerable enemy"),
-)
 
 _SELF_APPLIED_AGING_RE = re.compile(
     r"when a battle starts.{0,160}casts the aging", re.I
@@ -5423,243 +3846,7 @@ def hero_fields_summon_units(hero: Hero) -> bool:
 
 def _is_ally_grant_phrase(t: str) -> bool:
     """Skill text grants a token, buff, or effect to one or more allies."""
-    return bool(
-        re.search(r"grants?\s+[\w][\w\s'-]{0,48}?\s+to\s+allies\b", t)
-        or re.search(r"grants?\s+an ally\s+\w+", t)
-        or re.search(r"grants?\s+allies\s+(?:on|within|in|with|protected)\b", t)
-    )
 
-
-_GRANT_NAME_SKIP = re.compile(
-    r"\b(?:immunity|shield|control|damage reduction|haste|atk|def|"
-    r"extra|temporary|blessing)\b",
-    re.I,
-)
-
-
-def _extract_ally_grant_name(text: str) -> str | None:
-    m = re.search(
-        r"grants?\s+([\w][\w\s'-]{0,48}?)\s+to\s+allies\b",
-        text,
-        re.I,
-    )
-    if m:
-        name = m.group(1).strip()
-        # Named tokens (Sparks, Brightfeather), not stat/immunity phrases.
-        if _GRANT_NAME_SKIP.search(name) or len(name.split()) > 4:
-            return None
-        return name
-    m = re.search(
-        r"grants?\s+an ally\s+([\w][\w\s'-]+?)(?:,|\s+priorit|\s+when|\s+after|\.)",
-        text,
-        re.I,
-    )
-    if m:
-        return m.group(1).strip()
-    return None
-
-
-def _allies_affect_enemies_in_text(t: str) -> bool:
-    return bool(
-        re.search(
-            r"(?:satrana or )?allies?\s+with\s+\w+.{0,120}"
-            r"(?:deal|inflict|ignit|reduc\w+ their)",
-            t,
-        )
-        or re.search(r"that ally deals", t)
-        or re.search(
-            r"an ally with\s+\w+.{0,80}(?:deal|unleash|inflict)",
-            t,
-        )
-    )
-
-
-def _ally_enabled_enemy_effect_labels(text: str) -> list[str]:
-    """Enemy-facing effects allies can apply via a grant in this skill chunk."""
-    t = text.lower()
-    if not _allies_affect_enemies_in_text(t):
-        return []
-    labels: list[str] = []
-    if _text_has_dot_damage(text) or re.search(r"\b(?:ignit|burned)\b", t):
-        labels.append("Ally DoT on enemies")
-    if re.search(r"reducing their vitality|reduces? their vitality", t):
-        labels.append("Ally Vitality debuff on enemies")
-    elif re.search(
-        r"allies?\s+with\s+\w+.{0,80}deal.{0,80}(?:inflict|appl|reduc)",
-        t,
-    ):
-        labels.append("Ally debuff on enemies")
-    return labels
-
-
-def detect_ally_grant_effects(
-    effects: list[SpecialEffect], tier: str, text: str
-) -> None:
-    t = text.lower()
-    if not _is_ally_grant_phrase(t):
-        return
-    name = _extract_ally_grant_name(text)
-    enemy_labels = _ally_enabled_enemy_effect_labels(text)
-    if name:
-        add_special_effect(effects, "provides", f"Ally grant ({name})", tier, text)
-    elif enemy_labels:
-        add_special_effect(effects, "provides", "Ally combat grant", tier, text)
-    for label in enemy_labels:
-        add_special_effect(effects, "provides", label, tier, text)
-
-
-_FORM_OR_STANCE_REQUIRE_RE = re.compile(
-    r"while in .{0,35}(?:wolf form|black mist|aquarius|celestial form|"
-    r"altered form|true form|combat stance)|in combat stance",
-    re.I,
-)
-
-
-def _form_or_stance_is_caster_owned(text: str) -> bool:
-    """True when a form/stance require match belongs to the skill owner."""
-    t = text.lower()
-    m = _FORM_OR_STANCE_REQUIRE_RE.search(t)
-    if not m:
-        return False
-    clause = _clause_around(t, m.start())
-    if re.search(
-        r"while (?:[\w'-]+ ){0,4}in "
-        r"(?:wolf form|black mist|celestial form|altered form|true form|"
-        r"combat stance)",
-        clause,
-    ):
-        return True
-    after = t[m.end() :]
-    sent = re.split(r"[.;]", after, maxsplit=1)[0]
-    if re.search(
-        r"\b(?:she|he|they|himself|herself|themselves|this skill|"
-        r"his |her |their )\b",
-        sent[:100],
-    ):
-        return True
-    if re.search(
-        r"^\s*,?\s*[\w'-]+(?:'s)?\s+"
-        r"(?:is|are|unleash|consum|strikes?|deals?|gains?|prioritiz)",
-        sent,
-    ):
-        return True
-    return False
-
-
-def _is_enemy_untargetable_clause(clause: str) -> bool:
-    """True when untargetable refers to an enemy, not the caster."""
-    t = clause.lower()
-    if re.search(
-        r"\b(?:enemy|enemies|marked enemy|that enemy|the target)\b"
-        r".{0,50}becomes?\s+untargetable",
-        t,
-    ):
-        return True
-    if re.search(r"becomes?\s+untargetable.{0,30}\b(?:enemy|marked)\b", t):
-        return True
-    return False
-
-
-def detect_special_targeting(text: str, kind: str, label: str) -> str:
-    t = text.lower()
-    if label == "Invincibility" and _invincibility_targets_self(t):
-        return "Self"
-    if kind == "requires":
-        if label == "Artifact buffs active":
-            return "Self"
-        if "allied" in t or "ally" in t:
-            return "Allies"
-        if re.search(r"\benem(?:y|ies)\b", t):
-            return "Enemies"
-        return "—"
-    if label == "Artifact block":
-        return "Single target"
-    if label in ("Ultimate lock (Spellbind)", "Heal lock (Curelock)"):
-        return "All units"
-    if label in ("Transformation", "Dream sleep (transformation)", "Cheat death"):
-        return "Self"
-    return detect_targeting(text, label, "special")
-
-
-def add_special_effect(
-    effects: list[SpecialEffect], kind: str, label: str, tier: str, text: str
-):
-    targeting = detect_special_targeting(text, kind, label)
-    key = (kind, label, targeting)
-    existing = [e for e in effects if (e.kind, e.label, e.targeting) == key]
-    if existing:
-        cur = existing[0]
-        order = TIER_ORDER.get(tier, 99)
-        cur_order = TIER_ORDER.get(cur.tier, 99)
-        # Requires: keep highest tier (Ex/Supreme+ defining skills).
-        if kind == "requires":
-            if order > cur_order:
-                cur.tier = tier
-        elif order < cur_order:
-            cur.tier = tier
-        cur.targeting = _prefer_targeting(targeting, cur.targeting)
-        if kind == "provides" and text.strip() and text.strip() not in cur.qualitative:
-            if len(text) > len(cur.qualitative):
-                cur.qualitative = text
-        return
-    effects.append(
-        SpecialEffect(
-            kind=kind, label=label, tier=tier, targeting=targeting, qualitative=text
-        )
-    )
-
-
-def detect_special_effects(
-    effects: list[SpecialEffect], tier: str, text: str, section: str = ""
-):
-    t = text.lower()
-    if text_has_summon_unit(t):
-        add_special_effect(effects, "provides", "Summoning", tier, text)
-    if text_has_start_of_battle_ultimate(t, section):
-        add_special_effect(effects, "provides", "Start-of-battle cast", tier, text)
-    for pat, label in SPECIAL_PROVIDES_RULES:
-        m = re.search(pat, t)
-        if not m:
-            continue
-        if label == "Ally blessing" and _blessing_is_summon_only(t):
-            continue
-        if label == "Untargetable" and (
-            _is_enemy_untargetable_clause(_clause_around(t, m.start()))
-            or grants_cc_immunity(text, "Untargetable")
-        ):
-            continue
-        if label == "HP threshold strike" and re.search(
-            r"(?:instantly|immediately) defeat(?:s|ed)?", t
-        ):
-            continue
-        add_special_effect(effects, "provides", label, tier, text)
-    for pat, label in SPECIAL_REQUIRES_RULES:
-        if not re.search(pat, t):
-            continue
-        if label == "Form or stance active" and _form_or_stance_is_caster_owned(text):
-            continue
-        if label == "CC on enemies" and _is_displacement_reaction_clause(text):
-            continue
-        if label == "Debuff on target" and re.search(
-            r"affected by (?:her|his|their) mark\b",
-            text,
-            re.I,
-        ):
-            continue
-        if label == "Debuff on target" and re.search(
-            r"afflicted by aging\b", text, re.I
-        ):
-            continue
-        if label == "Debuff on target" and _debuff_state_self_applied_in_text(
-            text
-        ):
-            continue
-        add_special_effect(effects, "requires", label, tier, text)
-    detect_ally_grant_effects(effects, tier, text)
-
-
-# Damage that scales on a target's max HP (not self (HP-based) scaling or
-# max-HP buff/heal/shield/reduction text in the same clause).
 _TARGET_MAX_HP_DAMAGE_RES = [
     re.compile(p, re.I)
     for p in (
@@ -7207,303 +5394,275 @@ def _cc_match_is_spurious(scope: str, label: str, text: str) -> bool:
     return False
 
 
-def analyze_text(
-    effects,
-    summon_effects,
-    damage_map,
-    benefits,
-    tier: str,
-    text: str,
-    primary_dmg: str = "Physical",
-    source_section: str | None = None,
-):
+
+
+
+BENEFIT_STAT_ORDER = (
+    "ATK",
+    "ATK SPD",
+    "Haste",
+    "Max HP",
+    "Shield",
+    "Crit",
+    "Crit DMG Boost",
+    "Execution",
+    "Resilience",
+    "Healing",
+    "Energy",
+    "DEF Penetration",
+    "Life Drain",
+    "Physical DEF",
+    "Magic DEF",
+)
+
+# Buff labels on the caster → benefit stats for synergy matching.
+# Self-buffs are strong indicators of which ally buffs a hero wants.
+BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
+    "ATK": ("ATK",),
+    "ATK SPD": ("ATK SPD",),
+    "Haste": ("Haste",),
+    "Max HP": ("Max HP",),
+    "Crit": ("Crit",),
+    "Execution": ("Execution",),
+    "Resilience": ("Resilience",),
+    "Energy": ("Energy",),
+    "DEF Penetration": ("DEF Penetration",),
+    "Shield": ("Shield",),
+    "DEF": ("Physical DEF", "Magic DEF"),
+    "Phys DEF": ("Physical DEF",),
+    "Magic DEF": ("Magic DEF",),
+    "Basic stats": ("ATK", "Max HP", "Physical DEF", "Magic DEF"),
+    # Tanks that self-stack damage reduction want sustain (Max HP buffs).
+    "Damage taken": ("Max HP",),
+    "Damage dealt": ("ATK",),
+    "Ranged DEF": ("Physical DEF",),
+    "Crit DMG boost": ("Crit DMG Boost",),
+}
+
+def _hero_skill_text(hero: Hero) -> str:
+    return " ".join(t for _, t, _ in hero.skill_chunks).lower()
+
+
+def _chunk_is_companion_focused(text: str) -> bool:
+    """True when the chunk describes the companion, not the hero's own scaling."""
     t = text.lower()
-    skip_new_buffs = _is_buff_scalar_upgrade_chunk(text)
-    for pat, label in BUFF_RULES_COMPILED:
-        if skip_new_buffs:
-            break
-        for scope in _buff_match_scopes(text, label, pat):
-            if label == "ATK" and _buff_match_is_ally_atk_penalty(scope):
-                continue
-            if (
-                label == "ATK"
-                and _is_damage_scalar_upgrade_chunk(text)
-                and re.search(r"\batk bonus granted by\b", scope.lower())
-            ):
-                continue
-            if label == DIRECT_HEALING_LABEL and _scope_is_hot_healing(scope):
-                continue
-            if (
-                label == HEALING_OVER_TIME_LABEL
-                and (
-                    _scope_is_hp_loss_not_healing(scope)
-                    or _dot_is_healing_lock_hp_drain(scope)
-                    or re.search(r"max hp per second", scope.lower())
-                )
-            ):
-                continue
-            if is_hp_recovery_label(label) and _is_ally_hp_threshold_context(
-                scope
-            ):
-                continue
-            if label == "DEF Penetration" and re.search(
-                r"penetration applied to .{0,60}attacks against",
-                scope.lower(),
-            ) and not re.search(
-                r"(?:gain(?:s|ing)? (?:an )?extra|increases? .{0,50}by) "
-                r"\d+",
-                scope.lower(),
-            ):
-                continue
-            if label == "DEF Penetration" and re.search(
-                r"attacks against .{0,60}penetration",
-                scope.lower(),
-            ) and not re.search(
-                r"gain(?:s|ing)? (?:an )?extra \d+.*penetration", scope.lower()
-            ):
-                continue
-            if label == "DEF" and re.search(
-                r"\branged def\b", scope, re.I
-            ):
-                continue
-            if label in ("DEF", "Phys DEF", "Magic DEF") and re.search(
-                r"\breduc\w+ .{0,40}(?:phys(?:ical)?|magic) def\b", scope.lower()
-            ):
-                continue
-            if label == "Haste" and re.search(
-                r"\breduc\w+ .{0,40}haste\b", scope.lower()
-            ):
-                continue
-            if (
-                _is_spell_note_stack_trigger(text)
-                or _is_spell_note_stack_trigger(scope)
-                or _is_companion_buff_threshold_trigger(scope)
-                or re.search(r"\bspell note stack", scope.lower())
-            ):
-                continue
-            add_effect(
-                effects,
-                "buff",
-                label,
-                tier,
-                text,
-                scope=scope,
-                source_section=source_section,
-            )
-        if scope := _resolve_summon_buff_targeting_from_text(text, label, pat):
-            add_summon_buff_effect(
-                summon_effects, label, tier, text, targeting=scope
-            )
-    for pat, label in DEBUFF_RULES_COMPILED:
-        if label == "DoT" and _text_has_dot_damage(text):
-            continue
-        for scope in _effect_match_scopes(text, pat):
-            if label == "DoT" and _debuff_dot_is_skill_damage(scope):
-                continue
-            if label in ("DoT", "Poison") and (
-                _debuff_match_is_poison_mechanic_reference(scope)
-            ):
-                continue
-            # Skip ATK debuff matches that reduce an ally's own bonus stat
-            # rather than debuffing an enemy (e.g. Elijah & Lailah bond penalty).
-            if label in ("Phys DEF", "Magic DEF") and (
-                _debuff_match_is_self_def_buff(scope)
-            ):
-                continue
-            if label == "ATK" and (
-                _debuff_match_is_ally_atk_penalty(scope)
-                or _debuff_match_is_self_atk_penalty(scope)
-                or _debuff_match_is_stat_reference(scope)
-            ):
-                continue
-            if label == "ATK" and re.search(r"\batk spd\b", scope.lower()):
-                continue
-            if label == "ATK" and _debuff_match_is_atk_based_haste_reduction(
-                scope
-            ):
-                continue
-            if label == "Energy" and _debuff_match_is_caster_energy_cost(
-                scope
-            ):
-                continue
-            if _debuff_match_is_ally_stat_gain(scope, label):
-                continue
-            if (
-                label == "Damage dealt"
-                and _debuff_match_is_per_hit_damage_falloff(scope)
-            ):
-                continue
-            debuff_label = label
-            if label == "ATK SPD" and re.search(
-                r"atk spd by an extra \d+(?:\.\d+)?(?:\s+for|\s+until)",
-                scope.lower(),
-            ):
-                debuff_label = "Haste"
-            add_effect(
-                effects,
-                "debuff",
-                debuff_label,
-                tier,
-                text,
-                scope=scope,
-                source_section=source_section,
-            )
-    for pat, label in CC_RULES:
-        for scope in _effect_match_scopes(text, pat):
-            # Skip CC matches that target an ally rather than an enemy
-            # (e.g. Pandora pulling an ally into her box).
-            if _cc_match_is_ally_targeted(scope, label):
-                continue
-            if _cc_match_is_spurious(scope, label, text):
-                continue
-            if label == "Sleep" and _cc_sleep_is_caster_owned(scope):
-                continue
-            if label == "Sleep" and re.search(
-                r"target(?:ing|s)? (?:the )?(?:farthest )?hypnotized enem", scope.lower()
-            ) and not re.search(r"hypnotiz(?:ing|es)? (?:all )?enem", scope.lower()):
-                continue
-            if label == "Stun":
-                if _cc_bind_scope_covers_cannot_move(scope):
-                    continue
-                if not _cc_cannot_move_targets_enemy(scope):
-                    continue
-                if re.search(r"hypnotiz|asleep|\bsleep\b", scope.lower()):
-                    continue
-            if label == "Bind" and re.search(
-                r"cannot move or (?:act|attack)|unable to move or (?:act|attack)",
-                scope.lower(),
-            ):
-                if not _cc_cannot_move_targets_enemy(scope):
-                    continue
-            add_effect(
-                effects,
-                "cc",
-                label,
-                tier,
-                text,
-                scope=scope,
-                source_section=source_section,
-            )
-
-    if _chunk_deals_enemy_damage(text, primary_dmg) and not _is_ally_hp_threshold_context(
-        text
+    if not re.search(
+        r"\b(?:mr\. carlyle|falcon elona|silhouette|companion|summoned unit|"
+        r"inherits all of)\b",
+        t,
     ):
-        if _is_damage_scalar_upgrade_chunk(text):
-            _apply_scalar_upgrades(effects, text, primary_dmg)
-        else:
-            tgt = detect_damage_targeting(text)
-            dmg_types = detect_damage_types(text, primary_dmg)
-            dmg_types = _apply_true_damage_hierarchy(dmg_types, text)
-            for d in dmg_types:
-                if d == "DoT" and _dot_is_discrete_proc(text):
-                    continue
-                amt = _extract_damage_amount(text, d)
-                if amt is None:
-                    if d == "True damage" and re.search(
-                        r"\btrue damage\b", text, re.I
-                    ):
-                        pass
-                    elif d == "DoT" and _extract_damage_amount(text, "DoT") is not None:
-                        pass
-                    else:
-                        continue
-                damage_map.setdefault(d, set()).add(tgt)
-                add_effect(
-                    effects,
-                    "damage",
-                    d,
-                    tier,
-                    text,
-                    source_section=source_section,
-                )
-
+        return False
     if re.search(
-        r"(?:take|cause(?:s|ing)?) \d+(?:\.\d+)?(?:\s*%\s*)? more hp loss", t
+        r"\b(?:she|he) (?:absorb|entangle|gain|increases?|casts?|summons?|deals?)\b|"
+        r"\b\w+ (?:absorb|entangle|steal|gain)s?\b|"
+        r"\b\w+ and mr\. carlyle gain\b",
+        t,
     ):
-        if (
-            not any(e.category == "damage" and e.label == "HP loss" for e in effects)
-            and _extract_damage_amount(text, "HP loss") is not None
-        ):
-            add_effect(
-                effects,
-                "damage",
-                "HP loss",
-                tier,
-                text,
-                source_section=source_section,
-            )
+        return False
+    return not re.search(
+        r"\b(?:her|him|herself|himself|she|he) and\b|"
+        r"\bincreases? (?:her |his )",
+        t,
+    )
 
-    for stat, pat in [
-        # ATK: scaling gains only — not every (ATK-based) damage line.
-        (
-            "ATK",
-            r"\b(?:increases?|increasing|gains?) (?:her |his |their )?"
-            r"atk(?! spd)\b|"
-            r"\b(?:increases?|increasing) \d+(?:\.\d+)?% atk(?! spd)\b",
-        ),
-        ("ATK SPD", r"atk spd"),
-        # Haste only when the unit gains/increases it (not when reducing enemy Haste)
-        (
-            "Haste",
-            r"increas(?:e|es|ing) .{0,30}haste|gains? .{0,20}haste|haste.{0,20}increas",
-        ),
-        (
-            "Max HP",
-            r"\b(?:increases?|gains?|bonus).{0,40}max hp\b|"
-            r"\b(?:her |his )max hp\b",
-        ),
-        (
-            "Shield",
-            r"\b(?:gain(?:s|ing)?|grants? (?:her|him|herself|himself))"
-            r".{0,40}shield\b",
-        ),
-        ("Crit", r"increas(?:e|es|ing) .{0,20}crit\b|gains? .{0,20}crit\b"),
-        ("Execution", r"increas(?:e|es|ing) .{0,20}execution\b"),
-        ("Resilience", r"increas(?:e|es|ing) .{0,20}resilience\b"),
-        # Healing stat: only explicit stat increases like "Increases Healing by 11"
-        (
-            "Healing",
-            r"increas(?:e|es|ing) (?:her |his |their )?healing\b (?:by|during)\b",
-        ),
-        (
-            "Energy",
-            r"(?:gain|recover|restore|generat)\w*\b.{0,25}energ|"
-            r"energ\w*\b.{0,15}(?:gain|recover|restore)|"
-            r"grants? \d+ energy|energy recovery increases",
-        ),
-        ("DEF Penetration", r"penetration"),
-        # Physical/Magic DEF only when the unit gains them (not when reducing enemy DEF)
-        (
-            "Physical DEF",
-            # Match gain/increase of Phys DEF, but exclude "for all allies" context
-            # (allies-only buff does not benefit the hero directly).
-            r"(?:increas(?:e|es|ing)|gain(?:s|ing)?|absorb(?:s|ing)?|steal(?:s|ing)?)"
-            r".{0,40}phys(?:ical)? def(?!.{0,60}for all allies)",
-        ),
-        (
-            "Magic DEF",
-            # Match gain/increase of Magic DEF, but exclude "for all allies" context.
-            r"(?:increas(?:e|es|ing)|gain(?:s|ing)?|absorb(?:s|ing)?|steal(?:s|ing)?)"
-            r".{0,40}magic def(?!.{0,60}for all allies)",
-        ),
-    ]:
-        if re.search(pat, t) and stat not in benefits:
+
+def _effect_buffs_caster(effect: Effect) -> bool:
+    t = effect.qualitative.lower()
+    if re.search(r"\bmr\. carlyle\b", t) and not re.search(
+        r"\b(?:her|him|herself|himself|she|he) and\b", t
+    ):
+        return False
+    if effect.targeting == "Self":
+        return True
+    if effect.targeting not in ("Multiple targets", "Single target"):
+        return False
+    return bool(
+        re.search(r"\b(?:her|him|herself|himself|she|he) and\b", t)
+        or re.search(r"\b\w+ and mr\. carlyle gain\b", t)
+        or re.search(r"\bincreases? (?:her |his )", t)
+        or effect_targets_self_only(t, effect.label, effect.category)
+    )
+
+
+def _stats_from_self_buffs(hero: Hero) -> set[str]:
+    stats: set[str] = set()
+    for effect in hero.effects:
+        if effect.category != "buff":
+            continue
+        if not _effect_buffs_caster(effect):
+            continue
+        for stat in BUFF_LABEL_TO_BENEFIT_STATS.get(effect.label, ()):
+            stats.add(stat)
+    return stats
+
+
+_BENEFIT_STAT_TEXT_PATTERNS: tuple[tuple[str, str], ...] = (
+    (
+        "ATK",
+        r"\b(?:increases?|increasing|gains?) (?:her |his |their )?"
+        r"atk(?! spd)\b|"
+        r"\b(?:increases?|increasing) \d+(?:\.\d+)?% atk(?! spd)\b",
+    ),
+    ("ATK SPD", r"atk spd"),
+    (
+        "Haste",
+        r"increas(?:e|es|ing) .{0,30}haste|gains? .{0,20}haste|haste.{0,20}increas",
+    ),
+    (
+        "Max HP",
+        r"\b(?:increases?|gains?|bonus).{0,40}max hp\b|"
+        r"\b(?:her |his )max hp\b",
+    ),
+    (
+        "Shield",
+        r"\b(?:gain(?:s|ing)?|grants? (?:her|him|herself|himself))"
+        r".{0,40}shield\b",
+    ),
+    ("Crit", r"increas(?:e|es|ing) .{0,20}crit\b|gains? .{0,20}crit\b"),
+    ("Execution", r"increas(?:e|es|ing) .{0,20}execution\b"),
+    ("Resilience", r"increas(?:e|es|ing) .{0,20}resilience\b"),
+    (
+        "Healing",
+        r"increas(?:e|es|ing) (?:her |his |their )?healing\b (?:by|during)\b",
+    ),
+    (
+        "Energy",
+        r"(?:gain|recover|restore|generat)\w*\b.{0,25}energ|"
+        r"energ\w*\b.{0,15}(?:gain|recover|restore)|"
+        r"grants? \d+ energy|energy recovery increases",
+    ),
+    ("DEF Penetration", r"penetration"),
+    (
+        "Physical DEF",
+        r"(?:increas(?:e|es|ing)|gain(?:s|ing)?|absorb(?:s|ing)?|steal(?:s|ing)?)"
+        r".{0,40}phys(?:ical)? def(?!.{0,60}for all allies)",
+    ),
+    (
+        "Magic DEF",
+        r"(?:increas(?:e|es|ing)|gain(?:s|ing)?|absorb(?:s|ing)?|steal(?:s|ing)?)"
+        r".{0,40}magic def(?!.{0,60}for all allies)",
+    ),
+)
+
+
+def _seed_benefit_stats_from_text(hero: Hero) -> None:
+    """Infer benefit stats from skill text before sidecar-only refinement."""
+    seeded: list[str] = []
+    for _tier, text, _section in hero.skill_chunks:
+        if _chunk_is_companion_focused(text):
+            continue
+        t = text.lower()
+        for stat, pat in _BENEFIT_STAT_TEXT_PATTERNS:
+            if stat in seeded or not re.search(pat, t):
+                continue
             if stat == "DEF Penetration" and re.search(
                 r"penetration applied to .{0,60}attacks against|"
                 r"attacks against .{0,60}penetration",
                 t,
             ):
                 continue
-            benefits.append(stat)
+            seeded.append(stat)
+    hero.benefit_stats = seeded
 
-    _apply_spell_note_companion_buffs(
-        effects, tier, text, source_section=source_section
-    )
-    _apply_spell_note_mirror_debuffs(
-        effects, tier, text, source_section=source_section
-    )
-    _consolidate_companion_buff_effects(effects)
-    _apply_scalar_upgrades(effects, text, primary_dmg)
+
+def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
+    """Keep text-inferred stats only when self-relevant, not companion noise."""
+    for tier, text, _section in hero.skill_chunks:
+        if _chunk_is_companion_focused(text):
+            continue
+        t = text.lower()
+        if stat == "ATK":
+            if re.search(
+                r"\b(?:increases?|increasing|gains?) (?:her |his |their )?"
+                r"atk(?! spd)\b|"
+                r"\b(?:increases?|increasing) \d+(?:\.\d+)?% atk(?! spd)\b",
+                t,
+            ):
+                return True
+        elif stat == "Max HP":
+            if re.search(
+                r"\b(?:increases?|gains?|bonus).{0,40}(?:her |his |their )max hp\b|"
+                r"\bincreases? (?:her |his )max hp\b",
+                t,
+            ):
+                return True
+            if re.search(
+                r"\b(?:increases?|gains?) (?:her |his |their )hp\b", t
+            ):
+                return True
+        elif stat == "Shield":
+            if re.search(
+                r"\b(?:gain(?:s|ing)?|grants? (?:her|him|herself|himself))"
+                r".{0,40}shield\b",
+                t,
+            ):
+                return True
+        elif stat == "Energy":
+            if re.search(
+                r"(?:gain|recover|restore|generat)\w*\b.{0,25}energ|"
+                r"energ\w*\b.{0,15}(?:gain|recover|restore)|"
+                r"energy recovery increases",
+                t,
+            ) and not re.search(r"\binitial energy\b", t):
+                return True
+        elif stat in ("Physical DEF", "Magic DEF"):
+            if re.search(
+                r"\b(?:absorb|steal)(?:s|ing)? .{0,40}"
+                r"(?:phys(?:ical)?|magic) def",
+                t,
+            ):
+                return True
+        elif stat == "DEF Penetration":
+            if re.search(r"\b(?:gain|gains?) .{0,30}penetration\b", t):
+                return True
+        elif stat in ("ATK SPD", "Haste", "Crit", "Execution", "Resilience"):
+            if stat == "ATK SPD" and re.search(r"\batk spd\b", t):
+                return True
+            if stat == "Haste" and re.search(
+                r"increas(?:e|es|ing) .{0,30}haste|gains? .{0,20}haste",
+                t,
+            ):
+                return True
+            if stat == "Crit" and re.search(
+                r"increas(?:e|es|ing) .{0,20}crit\b|gains? .{0,20}crit\b", t
+            ):
+                return True
+            if stat == "Execution" and re.search(
+                r"increas(?:e|es|ing) .{0,20}execution\b", t
+            ):
+                return True
+            if stat == "Resilience" and re.search(
+                r"increas(?:e|es|ing) .{0,20}resilience\b", t
+            ):
+                return True
+        elif stat == "Healing":
+            if re.search(
+                r"increas(?:e|es|ing) (?:her |his |their )?healing\b (?:by|during)\b",
+                t,
+            ):
+                return True
+            if _text_has_self_hp_cost(text):
+                return True
+    return False
+
+
+def refine_benefit_stats(hero: Hero) -> None:
+    """Drop incidental pattern matches; keep stats the hero actually scales with."""
+    from_buffs = _stats_from_self_buffs(hero)
+    from_text = {
+        s
+        for s in hero.benefit_stats
+        if _text_supports_benefit_stat(hero, s)
+    }
+    merged = from_buffs | from_text
+    merged.discard("Life Drain")
+    needs_healing = _hero_needs_external_healing(hero)
+    if needs_healing:
+        merged.add("Healing")
+    elif _hero_provides_ally_healing(hero):
+        merged.discard("Healing")
+    hero.benefit_stats = [s for s in BENEFIT_STAT_ORDER if s in merged]
+
 
 
 def _upgrade_chunk_relates_to_damage(text: str) -> bool:
@@ -7663,205 +5822,6 @@ def _apply_scalar_upgrades(
         bump("buff", "ATK", float(m.group(1)))
 
 
-BENEFIT_STAT_ORDER = (
-    "ATK",
-    "ATK SPD",
-    "Haste",
-    "Max HP",
-    "Shield",
-    "Crit",
-    "Crit DMG Boost",
-    "Execution",
-    "Resilience",
-    "Healing",
-    "Energy",
-    "DEF Penetration",
-    "Life Drain",
-    "Physical DEF",
-    "Magic DEF",
-)
-
-# Buff labels on the caster → benefit stats for synergy matching.
-# Self-buffs are strong indicators of which ally buffs a hero wants.
-BUFF_LABEL_TO_BENEFIT_STATS: dict[str, tuple[str, ...]] = {
-    "ATK": ("ATK",),
-    "ATK SPD": ("ATK SPD",),
-    "Haste": ("Haste",),
-    "Max HP": ("Max HP",),
-    "Crit": ("Crit",),
-    "Execution": ("Execution",),
-    "Resilience": ("Resilience",),
-    "Energy": ("Energy",),
-    "DEF Penetration": ("DEF Penetration",),
-    "Shield": ("Shield",),
-    "DEF": ("Physical DEF", "Magic DEF"),
-    "Phys DEF": ("Physical DEF",),
-    "Magic DEF": ("Magic DEF",),
-    "Basic stats": ("ATK", "Max HP", "Physical DEF", "Magic DEF"),
-    # Tanks that self-stack damage reduction want sustain (Max HP buffs).
-    "Damage taken": ("Max HP",),
-    "Damage dealt": ("ATK",),
-    "Ranged DEF": ("Physical DEF",),
-    "Crit DMG boost": ("Crit DMG Boost",),
-}
-
-
-def _hero_skill_text(hero: Hero) -> str:
-    return " ".join(t for _, t, _ in hero.skill_chunks).lower()
-
-
-def _chunk_is_companion_focused(text: str) -> bool:
-    """True when the chunk describes the companion, not the hero's own scaling."""
-    t = text.lower()
-    if not re.search(
-        r"\b(?:mr\. carlyle|falcon elona|silhouette|companion|summoned unit|"
-        r"inherits all of)\b",
-        t,
-    ):
-        return False
-    if re.search(
-        r"\b(?:she|he) (?:absorb|entangle|gain|increases?|casts?|summons?|deals?)\b|"
-        r"\b\w+ (?:absorb|entangle|steal|gain)s?\b|"
-        r"\b\w+ and mr\. carlyle gain\b",
-        t,
-    ):
-        return False
-    return not re.search(
-        r"\b(?:her|him|herself|himself|she|he) and\b|"
-        r"\bincreases? (?:her |his )",
-        t,
-    )
-
-
-def _effect_buffs_caster(effect: Effect) -> bool:
-    t = effect.qualitative.lower()
-    if re.search(r"\bmr\. carlyle\b", t) and not re.search(
-        r"\b(?:her|him|herself|himself|she|he) and\b", t
-    ):
-        return False
-    if effect.targeting == "Self":
-        return True
-    if effect.targeting not in ("Multiple targets", "Single target"):
-        return False
-    return bool(
-        re.search(r"\b(?:her|him|herself|himself|she|he) and\b", t)
-        or re.search(r"\b\w+ and mr\. carlyle gain\b", t)
-        or re.search(r"\bincreases? (?:her |his )", t)
-        or effect_targets_self_only(t, effect.label, effect.category)
-    )
-
-
-def _stats_from_self_buffs(hero: Hero) -> set[str]:
-    stats: set[str] = set()
-    for effect in hero.effects:
-        if effect.category != "buff":
-            continue
-        if not _effect_buffs_caster(effect):
-            continue
-        for stat in BUFF_LABEL_TO_BENEFIT_STATS.get(effect.label, ()):
-            stats.add(stat)
-    return stats
-
-
-def _text_supports_benefit_stat(hero: Hero, stat: str) -> bool:
-    """Keep text-inferred stats only when self-relevant, not companion noise."""
-    for tier, text, _section in hero.skill_chunks:
-        if _chunk_is_companion_focused(text):
-            continue
-        t = text.lower()
-        if stat == "ATK":
-            if re.search(
-                r"\b(?:increases?|increasing|gains?) (?:her |his |their )?"
-                r"atk(?! spd)\b|"
-                r"\b(?:increases?|increasing) \d+(?:\.\d+)?% atk(?! spd)\b",
-                t,
-            ):
-                return True
-        elif stat == "Max HP":
-            if re.search(
-                r"\b(?:increases?|gains?|bonus).{0,40}(?:her |his |their )max hp\b|"
-                r"\bincreases? (?:her |his )max hp\b",
-                t,
-            ):
-                return True
-            if re.search(
-                r"\b(?:increases?|gains?) (?:her |his |their )hp\b", t
-            ):
-                return True
-        elif stat == "Shield":
-            if re.search(
-                r"\b(?:gain(?:s|ing)?|grants? (?:her|him|herself|himself))"
-                r".{0,40}shield\b",
-                t,
-            ):
-                return True
-        elif stat == "Energy":
-            if re.search(
-                r"(?:gain|recover|restore|generat)\w*\b.{0,25}energ|"
-                r"energ\w*\b.{0,15}(?:gain|recover|restore)|"
-                r"energy recovery increases",
-                t,
-            ) and not re.search(r"\binitial energy\b", t):
-                return True
-        elif stat in ("Physical DEF", "Magic DEF"):
-            if re.search(
-                r"\b(?:absorb|steal)(?:s|ing)? .{0,40}"
-                r"(?:phys(?:ical)?|magic) def",
-                t,
-            ):
-                return True
-        elif stat == "DEF Penetration":
-            if re.search(r"\b(?:gain|gains?) .{0,30}penetration\b", t):
-                return True
-        elif stat in ("ATK SPD", "Haste", "Crit", "Execution", "Resilience"):
-            if stat == "ATK SPD" and re.search(r"\batk spd\b", t):
-                return True
-            if stat == "Haste" and re.search(
-                r"increas(?:e|es|ing) .{0,30}haste|gains? .{0,20}haste",
-                t,
-            ):
-                return True
-            if stat == "Crit" and re.search(
-                r"increas(?:e|es|ing) .{0,20}crit\b|gains? .{0,20}crit\b", t
-            ):
-                return True
-            if stat == "Execution" and re.search(
-                r"increas(?:e|es|ing) .{0,20}execution\b", t
-            ):
-                return True
-            if stat == "Resilience" and re.search(
-                r"increas(?:e|es|ing) .{0,20}resilience\b", t
-            ):
-                return True
-        elif stat == "Healing":
-            if re.search(
-                r"increas(?:e|es|ing) (?:her |his |their )?healing\b (?:by|during)\b",
-                t,
-            ):
-                return True
-            if _text_has_self_hp_cost(text):
-                return True
-    return False
-
-
-def refine_benefit_stats(hero: Hero) -> None:
-    """Drop incidental pattern matches; keep stats the hero actually scales with."""
-    from_buffs = _stats_from_self_buffs(hero)
-    from_text = {
-        s
-        for s in hero.benefit_stats
-        if _text_supports_benefit_stat(hero, s)
-    }
-    merged = from_buffs | from_text
-    merged.discard("Life Drain")
-    needs_healing = _hero_needs_external_healing(hero)
-    if needs_healing:
-        merged.add("Healing")
-    elif _hero_provides_ally_healing(hero):
-        merged.discard("Healing")
-    hero.benefit_stats = [s for s in BENEFIT_STAT_ORDER if s in merged]
-
-
 def _cross_skill_reference_target(
     text: str,
     default_section: str,
@@ -7979,7 +5939,7 @@ def _prune_redundant_narrow_targeting(sl: SkillSlice) -> None:
             continue
         key = (effect.category, effect.label, effect.tier)
         groups.setdefault(key, []).append(effect)
-    drop_effects: set[Effect] = set()
+    drop_ids: set[int] = set()
     for (category, label, tier), effs in groups.items():
         targetings = {e.targeting for e in effs}
         if "Single target" not in targetings:
@@ -7993,15 +5953,21 @@ def _prune_redundant_narrow_targeting(sl: SkillSlice) -> None:
                 se_qual = (se.qualitative or "").strip().lower()
                 we_qual = (we.qualitative or "").strip().lower()
                 if se_qual == we_qual:
-                    drop_effects.add(se)
+                    if (
+                        se.numeric is not None
+                        and we.numeric is not None
+                        and se.numeric != we.numeric
+                    ):
+                        continue
+                    drop_ids.add(id(se))
                     break
-    if not drop_effects:
+    if not drop_ids:
         return
-    sl.effects = [e for e in sl.effects if e not in drop_effects]
+    sl.effects = [e for e in sl.effects if id(e) not in drop_ids]
 
 
 def _apply_cassadee_skill_fixes(hero: Hero) -> None:
-    """Normalize Cassadee path targeting and Tidal Strength representation."""
+    """Normalize Cassadee path targeting and supreme+ ultimate chip tags."""
     short = hero.title.split(" - ", 1)[0].strip()
     if short != "Cassadee":
         return
@@ -8020,96 +5986,44 @@ def _apply_cassadee_skill_fixes(hero: Hero) -> None:
                 effect.area_direction = "selected_target"
                 effect.area_count = 3
 
-    skill2 = hero.skill_slices.get("Skill2")
-    if skill2:
-        blessed_trigger = [
-            {
-                "type": "trigger_condition",
-                "trigger": "normal_attack",
-                "ally": True,
-            }
-        ]
-        for effect in skill2.effects:
-            if effect.category == "buff" and effect.label == "Magic damage":
-                if effect.tier == "base" and effect.targeting == "Self":
-                    effect.conditions = _merge_conditions_lists(
-                        effect.conditions, blessed_trigger
-                    )
-        has_mythic_path = any(
-            effect.category == "buff"
-            and effect.label == "Magic damage"
-            and effect.tier == "Mythic+"
-            and effect.area == "path"
-            for effect in skill2.effects
-        )
-        if not has_mythic_path:
-            mythic_effects = [
-                e for e in skill2.effects
-                if e.category == "buff" and e.label == "Magic damage" and e.tier == "Mythic+"
-            ]
-            if mythic_effects:
-                for effect in mythic_effects:
-                    effect.targeting = "Area"
-                    effect.area = "path"
-                    effect.area_direction = "selected_target"
-            else:
-                skill2.effects.append(
-                    Effect(
-                        category="buff",
-                        label="Magic damage",
-                        tier="Mythic+",
-                        targeting="Area",
-                        area="path",
-                        area_direction="selected_target",
-                    )
-                )
-        for effect in skill2.effects:
-            if (
-                effect.category == "buff"
-                and effect.label == "Magic damage"
-                and effect.tier == "Mythic+"
+    supreme = hero.skill_slices.get("Unlocks at Supreme+")
+    if ultimate and supreme:
+        for effect in supreme.effects:
+            if effect.category != "debuff":
+                continue
+            if any(
+                e.category == effect.category
+                and e.label == effect.label
+                and e.tier == effect.tier
+                for e in ultimate.effects
             ):
-                effect.targeting = "Area"
-                effect.area = "path"
-                effect.area_direction = "selected_target"
-
-    skill4 = hero.skill_slices.get("Ex. Skill")
-    if skill4:
-        skill4.effects = [
-            effect
-            for effect in skill4.effects
-            if not (
-                effect.category == "buff"
-                and effect.label == "Magic damage"
+                continue
+            ultimate.effects.append(
+                Effect(
+                    category=effect.category,
+                    label=effect.label,
+                    tier=effect.tier,
+                    targeting=effect.targeting,
+                    area=effect.area,
+                    area_direction=effect.area_direction,
+                    area_count=effect.area_count,
+                    numeric=effect.numeric,
+                    conditions=list(effect.conditions),
+                )
             )
-        ]
 
-    skill1 = hero.skill_slices.get("Skill1")
-    if skill1:
-        skill1.effects = [
+    for section in ("Skill1", "Ex. Skill"):
+        sl = hero.skill_slices.get(section)
+        if not sl:
+            continue
+        sl.effects = [
             effect
-            for effect in skill1.effects
+            for effect in sl.effects
             if not (
                 effect.category == "buff" and effect.label == "Magic damage"
             )
         ]
-        for label in ("Stun", "Knock up"):
-            if not any(
-                effect.category == "cc"
-                and effect.label == label
-                and effect.tier == "EX+10"
-                for effect in skill1.effects
-            ):
-                skill1.effects.append(
-                    Effect(
-                        category="cc",
-                        label=label,
-                        tier="EX+10",
-                        targeting="Multiple targets",
-                    )
-                )
 
-    supreme = hero.skill_slices.get("Unlocks at Supreme+")
     if supreme:
         supreme.effects = [
             effect
@@ -8120,7 +6034,10 @@ def _apply_cassadee_skill_fixes(hero: Hero) -> None:
         ]
 
 
-def analyze_hero(hero: Hero):
+def analyze_hero(hero: Hero) -> None:
+    """Populate hero analysis from data/skill_effects/<short_name>.json."""
+    import skill_effects_store as ses
+
     hero.effects.clear()
     hero.summon_effects.clear()
     hero.cc_immunities.clear()
@@ -8130,76 +6047,73 @@ def analyze_hero(hero: Hero):
     hero.damage_scores.clear()
     hero.damage_magnitudes.clear()
     hero.benefit_stats.clear()
-    damage_map: dict[str, set[str]] = {}
-    # Use the hero's own damage type so (ATK-based) doesn't always emit "Physical"
+
+    sidecar = ses.load_sidecar(hero.title)
+    if sidecar is None:
+        raise SkillEffectsNotFoundError(
+            f"Missing skill effects sidecar for {ses.short_name(hero.title)} "
+            f"({ses.sidecar_path(hero.title)})"
+        )
+    ses.apply_sidecar_to_hero(hero, sidecar)
+
     primary_dmg = hero.damage_type if hero.damage_type else "Physical"
+    _postprocess_analyzed_hero(hero, primary_dmg)
+
+
+class SkillEffectsNotFoundError(FileNotFoundError):
+    """Raised when a hero has no AI-extracted skill effects sidecar."""
+
+
+def _section_texts_from_chunks(hero: Hero) -> dict[str, list[str]]:
     section_texts: dict[str, list[str]] = {}
-    for tier, text, section in hero.skill_chunks:
+    for _tier, text, section in hero.skill_chunks:
         sec = section or ""
         target_section = _cross_skill_reference_target(
             text, sec, hero.skill_name_to_section
         )
         section_texts.setdefault(target_section, []).append(text)
-        analyze_text(
-            hero.effects,
-            hero.summon_effects,
-            damage_map,
-            hero.benefit_stats,
-            tier,
-            text,
-            primary_dmg,
-            source_section=target_section or None,
-        )
-        detect_special_effects(hero.special_effects, tier, text, section)
-        for imm_type in IMMUNITY_TYPES:
-            add_cc_immunity(hero, imm_type, tier, text)
+    return section_texts
 
-        chunk = Hero(title=hero.title, damage_type=primary_dmg)
-        slice_damage: dict[str, set[str]] = {}
-        analyze_text(
-            chunk.effects,
-            chunk.summon_effects,
-            slice_damage,
-            [],
-            tier,
-            text,
-            primary_dmg,
-            source_section=target_section or None,
+
+def _damage_map_from_slices(slices: dict[str, SkillSlice]) -> dict[str, set[str]]:
+    damage_map: dict[str, set[str]] = {}
+    for sl in slices.values():
+        for eff in sl.effects:
+            if eff.category != "damage":
+                continue
+            damage_map.setdefault(eff.label, set()).add(eff.targeting or "Unknown")
+    return damage_map
+
+
+def _apply_text_upgrades_to_slices(hero: Hero, primary_dmg: str) -> None:
+    """Apply numeric/path tweaks from upgrade sentences to loaded sidecar effects."""
+    for _tier, text, section in hero.skill_chunks:
+        sec = section or ""
+        target_section = _cross_skill_reference_target(
+            text, sec, hero.skill_name_to_section
         )
-        detect_special_effects(chunk.special_effects, tier, text, section)
-        for imm_type in IMMUNITY_TYPES:
-            add_cc_immunity(chunk, imm_type, tier, text)
-        _apply_path_area_to_clause_effects(chunk.effects, text)
-        if target_section in hero.skill_slices:
-            sl = hero.skill_slices[target_section]
-            sl.effects.extend(chunk.effects)
-            sl.summon_effects.extend(chunk.summon_effects)
-            sl.cc_immunities.extend(chunk.cc_immunities)
-            sl.special_effects.extend(chunk.special_effects)
-            _apply_scalar_upgrades(sl.effects, text, primary_dmg)
-            if TIER_ORDER.get(tier, 99) < TIER_ORDER.get(sl.tier, 99):
-                sl.tier = tier
-        else:
-            hero.skill_slices[target_section] = SkillSlice(
-                section=target_section,
-                tier=tier,
-                effects=list(chunk.effects),
-                summon_effects=list(chunk.summon_effects),
-                cc_immunities=list(chunk.cc_immunities),
-                special_effects=list(chunk.special_effects),
-            )
-            _apply_scalar_upgrades(
-                hero.skill_slices[target_section].effects, text, primary_dmg
-            )
+        sl = hero.skill_slices.get(target_section)
+        if not sl:
+            continue
+        _apply_path_area_to_clause_effects(sl.effects, text)
+        _apply_scalar_upgrades(sl.effects, text, primary_dmg)
+
+
+def _postprocess_analyzed_hero(hero: Hero, primary_dmg: str) -> None:
+    """Shared finalize steps after skill_slices are populated."""
+    _apply_text_upgrades_to_slices(hero, primary_dmg)
+    section_texts = _section_texts_from_chunks(hero)
     _finalize_skill_slice_effects(hero.skill_slices, section_texts)
     _apply_cassadee_skill_fixes(hero)
     _rebuild_hero_aggregates_from_slices(hero)
+    damage_map = _damage_map_from_slices(hero.skill_slices)
     for dt, tgts in sorted(
         damage_map.items(),
         key=lambda x: (DAMAGE_TYPE_SORT_KEY.get(x[0], 99), x[0]),
     ):
         hero.damage_entries.append((dt, ", ".join(sorted(tgts))))
     _accumulate_true_damage_scores(hero, primary_dmg)
+    _seed_benefit_stats_from_text(hero)
     refine_benefit_stats(hero)
     for e in hero.effects:
         if e.targeting != "Self" and effect_targets_self_only(
@@ -11151,18 +9065,16 @@ def _skill_card_damage_labels(
     hero: Hero, slice_: SkillSlice, category: str
 ) -> list[str]:
     """Damage chip labels from analyzed effects (not raw text re-parse)."""
-    damage_order = {label: idx for idx, label in enumerate(_SKILL_CARD_DAMAGE_KEYS)}
-    return sorted(
-        {
-            f"{e.label}{_skill_card_tier_suffix(e.tier, category)}"
-            for e in slice_.effects
-            if e.category == "damage"
-        },
-        key=lambda label: damage_order.get(
-            label.split(" (")[0],
-            len(_SKILL_CARD_DAMAGE_KEYS),
-        ),
-    )
+    labels: list[str] = []
+    seen: set[str] = set()
+    for e in slice_.effects:
+        if e.category != "damage":
+            continue
+        label = f"{e.label}{_skill_card_tier_suffix(e.tier, category)}"
+        if label not in seen:
+            seen.add(label)
+            labels.append(label)
+    return labels
 
 
 def format_skill_card_tags(
@@ -11194,10 +9106,7 @@ def format_skill_card_tags(
 
     disambiguate_groups, disambiguate_labels = _skill_card_disambiguate_keys(sl)
 
-    for e in sorted(
-        [e for e in sl.effects if e.category == "damage"],
-        key=lambda x: (TIER_ORDER.get(x.tier, 9), x.label),
-    ):
+    for e in [e for e in sl.effects if e.category == "damage"]:
         add(f"{e.label}{_skill_card_tier_suffix(e.tier, category)}")
 
     all_buffs = [

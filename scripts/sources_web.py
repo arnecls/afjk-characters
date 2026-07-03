@@ -63,9 +63,10 @@ PRYDWEN_ROLE_CATEGORY_TO_SCHEMA: dict[str, str] = {
     "Tank": "tank",
 }
 
-_PRYDWEN_ROLE_CATEGORY_RE = re.compile(
-    r'\\"name\\":\\"([^\\"]+)\\"[^}]{0,500}?'
+_PRYDWEN_ROLE_BY_SLUG_RE = re.compile(
+    r'\\"slug\\":\\"([^\\"]+)\\".{0,500}?'
     r'\\"tierListCategory\\":\\"([^\\"]+)\\"',
+    re.S,
 )
 
 _PRYDWEN_RATING_RE = re.compile(
@@ -163,22 +164,150 @@ def _map_pool(items, fn):
 # Fandom (MediaWiki wikitext)
 # ---------------------------------------------------------------------------
 
+# Skill-description stat icons from the AFK Journey wiki.
+_SKILL_DESC_ICON_SUFFIXES: dict[str, str] = {
+    "attack": "(ATK-based)",
+    "hp": "(HP-based)",
+    "power": "(SP-based)",
+    "atkspd": "(ATK SPD)",
+    "atk spd": "(ATK SPD)",
+    "crit": "(Crit)",
+    "crit resist": "(Crit Resist)",
+    "defpen": "(DEF Pen)",
+    "def pen": "(DEF Pen)",
+    "haste": "(Haste)",
+    "magic def": "(Magic DEF)",
+    "phys def": "(Phys DEF)",
+    "ranged def": "(Ranged DEF)",
+    "vitality": "(Vitality)",
+}
+
+_SKILL_DESC_FILE_RE = re.compile(
+    r"\[\[(?:File|Image):Skill[_ ]Description[_ ]([^\]|]+)(?:\|([^\]]*))?\]\]",
+    re.I,
+)
+_SKILL_DESC_VALUE_BEFORE_ICON_RE = re.compile(
+    r"(?P<value>[\d,.]+\s*%?)\s*\[\[(?:File|Image):Skill[_ ]Description[_ ]"
+    r"[^\]]+\]\]",
+    re.I,
+)
+
+
+def _normalize_skill_desc_icon_key(filename: str) -> str:
+    """Normalize a Skill_Description_* filename stem to a lookup key."""
+    stem = filename.strip()
+    if "." in stem:
+        stem = stem.rsplit(".", 1)[0]
+    stem = stem.replace("_", " ").strip().lower()
+    if stem.startswith("skill description "):
+        stem = stem[len("skill description ") :]
+    return stem
+
+
+def _skill_desc_icon_suffix(filename: str) -> str | None:
+    """Return compact suffix for a known skill-description icon filename."""
+    key = _normalize_skill_desc_icon_key(filename)
+    return _SKILL_DESC_ICON_SUFFIXES.get(key)
+
+
+def _is_skill_desc_file_link(link_target: str) -> bool:
+    target = link_target.strip().lower().replace("_", " ")
+    return target.startswith("skill description ")
+
+
+def _convert_pwr_template(match: re.Match[str]) -> str:
+    value = match.group(1).strip()
+    return f"{value} (SP-based)"
+
+
+def _skill_desc_icon_from_target(target: str) -> str | None:
+    """Return icon filename stem when target is a Skill_Description file link."""
+    if not _is_skill_desc_file_link(target):
+        return None
+    name = target.strip()
+    if "|" in name:
+        name = name.split("|", 1)[0]
+    return re.sub(r"(?i)^skill[_ ]description[_ ]", "", name).strip()
+
+
+def _convert_skill_desc_file_links(
+    text: str, unknown_icons: list[str]
+) -> str:
+    """Convert value + Skill_Description icon links to compact stat suffixes."""
+
+    def _replace_value_before_icon(match: re.Match[str]) -> str:
+        file_match = _SKILL_DESC_FILE_RE.search(match.group(0))
+        if not file_match:
+            return match.group(0)
+        icon_name = file_match.group(1)
+        suffix = _skill_desc_icon_suffix(icon_name)
+        if suffix is None:
+            unknown_icons.append(icon_name)
+            return match.group(0)
+        return f"{match.group('value').strip()} {suffix}"
+
+    def _replace_file_link(match: re.Match[str]) -> str:
+        icon_name = match.group(1)
+        alt_text = (match.group(2) or "").strip()
+        suffix = _skill_desc_icon_suffix(icon_name)
+        if suffix is None:
+            unknown_icons.append(icon_name)
+            return match.group(0)
+        if alt_text:
+            return f"{alt_text} {suffix}"
+        return ""
+
+    text = _SKILL_DESC_VALUE_BEFORE_ICON_RE.sub(_replace_value_before_icon, text)
+    return _SKILL_DESC_FILE_RE.sub(_replace_file_link, text)
+
+
+def _convert_stat_templates(text: str) -> str:
+    """Convert wiki stat/highlight templates before generic stripping."""
+    text = re.sub(r"\{\{b\|([^}]+)\}\}", r"\1", text)
+    text = re.sub(
+        r"\{\{[Cc]olor\|[^|}]+\|([^}]+)\}\}", r"\1", text
+    )
+    text = re.sub(r"\{\{ATK\|([^}]+)\}\}", r"\1 (ATK-based)", text)
+    text = re.sub(r"\{\{HP\|([^}]+)\}\}", r"\1 (HP-based)", text)
+    text = re.sub(
+        r"\{\{PWR\|([^|}]+)(?:\|([^}]+))?\}\}",
+        _convert_pwr_template,
+        text,
+    )
+    text = re.sub(r"\{\{e\|([^}]+)\}\}", r"\1", text)
+    text = re.sub(r"\{\{([A-Z][A-Za-z0-9-]+)\}\}", r"\1", text)
+    return text
+
 
 def process_wikitext(text: str) -> str:
     if not text:
         return ""
+    unknown_icons: list[str] = []
     text = re.sub(r"'''([^']+)'''", r"\1", text)
     text = re.sub(r"''([^']+)''", r"\1", text)
-    text = re.sub(r"\{\{b\|([^}]+)\}\}", r"\1", text)
-    text = re.sub(r"\{\{ATK\|([^}]+)\}\}", r"\1 (ATK-based)", text)
-    text = re.sub(r"\{\{HP\|([^}]+)\}\}", r"\1 (HP-based)", text)
-    text = re.sub(r"\{\{PWR\|([^|}]+)(?:\|[^}]*)?\}\}", r"\1", text)
-    text = re.sub(r"\{\{e\|([^}]+)\}\}", r"\1", text)
-    text = re.sub(r"\{\{([A-Z][A-Za-z0-9-]+)\}\}", r"\1", text)
+    text = _convert_stat_templates(text)
+    text = _convert_skill_desc_file_links(text, unknown_icons)
     text = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", text)
     text = re.sub(r"\[\[([^\]]+)\]\]", r"\1", text)
-    text = re.sub(r"\[\[(?:File|Image):[^\]]+\]\]", "", text)
+
+    def _strip_or_fail_file_link(match: re.Match[str]) -> str:
+        target = match.group(1)
+        icon_name = _skill_desc_icon_from_target(target)
+        if icon_name is None:
+            return ""
+        if _skill_desc_icon_suffix(icon_name) is None:
+            unknown_icons.append(icon_name)
+        return ""
+
+    text = re.sub(
+        r"\[\[(?:File|Image):([^\]]+)\]\]",
+        _strip_or_fail_file_link,
+        text,
+    )
     text = re.sub(r"\{\{[^}]+\}\}", "", text)
+    if unknown_icons:
+        labels = ", ".join(sorted({name.strip() for name in unknown_icons if name}))
+        raise ValueError(f"Unknown skill description icons: {labels}")
     text = re.sub(r"<br\s*/?>", " ", text, flags=re.I)
     text = re.sub(r"<[^>]+>", "", text)
     text = re.sub(r"[ \t]+", " ", text)
@@ -699,26 +828,26 @@ def _normalize_prydwen_role_category(raw: str) -> str | None:
     return PRYDWEN_ROLE_CATEGORY_TO_SCHEMA.get(raw.strip())
 
 
+def _prydwen_slug_to_roster_name() -> dict[str, str]:
+    return {_prydwen_slug(name): name for name in HERO_NAMES}
+
+
 def _parse_prydwen_role_categories(html: str) -> dict[str, str]:
-    """Parse tier-list role categories keyed by Prydwen display name."""
+    """Parse tier-list role categories keyed by Fandom roster display name."""
+    slug_to_roster = _prydwen_slug_to_roster_name()
     categories: dict[str, str] = {}
-    for display_name, raw in _PRYDWEN_ROLE_CATEGORY_RE.findall(html):
+    for slug, raw in _PRYDWEN_ROLE_BY_SLUG_RE.findall(html):
         schema_value = _normalize_prydwen_role_category(raw)
-        if schema_value:
-            categories[display_name] = schema_value
+        roster_name = slug_to_roster.get(slug)
+        if schema_value and roster_name:
+            categories[roster_name] = schema_value
     return categories
 
 
 def fetch_prydwen_role_categories() -> dict[str, str]:
     """Return role categories keyed by Fandom roster display name."""
     html = _http_get(PRYDWEN_TIER_LIST_URL, PRYDWEN_USER_AGENT, retries=4)
-    by_prydwen_name = _parse_prydwen_role_categories(html)
-    by_roster_name: dict[str, str] = {}
-    alias_targets = {v: k for k, v in PRYDWEN_NAME_ALIASES.items()}
-    for prydwen_name, category in by_prydwen_name.items():
-        roster_name = alias_targets.get(prydwen_name, prydwen_name)
-        by_roster_name[roster_name] = category
-    return by_roster_name
+    return _parse_prydwen_role_categories(html)
 
 
 def _prydwen_html_to_text(fragment: str) -> str:

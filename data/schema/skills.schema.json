@@ -210,6 +210,7 @@
         "debuff_offensive",
         "debuff_defensive",
         "debuff_healing",
+        "debuff_hp_loss",
         "debuff_stat",
         "dot",
         "hot",
@@ -354,8 +355,22 @@
             "status_condition",
             "unit_type",
             "duration_gate",
-            "stack_count"
+            "stack_count",
+            "skill_mode"
           ]
+        },
+        "mode": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Named combat mode for skill_mode conditions."
+        },
+        "rule": {
+          "type": "string",
+          "enum": [
+            "be_civil",
+            "be_quiet"
+          ],
+          "description": "School rule for Contess rule_violation triggers."
         },
         "ally": {
           "type": "boolean"
@@ -402,9 +417,18 @@
             "debuff",
             "buff",
             "fatal_blow",
-            "energy_full"
+            "energy_full",
+            "rule_violation"
           ],
           "description": "Event that must occur before the effect fires."
+        },
+        "skill_type": {
+          "type": "string",
+          "enum": [
+            "ultimate",
+            "non_ultimate"
+          ],
+          "description": "Optional cast subtype for trigger_condition."
         },
         "damage_type": {
           "$ref": "#/$defs/damageType"
@@ -627,6 +651,23 @@
           "then": {
             "required": [
               "stack_comparison"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "skill_mode"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "mode"
             ]
           }
         }

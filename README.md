@@ -59,7 +59,7 @@ just render-site
 
 This refreshes `heroes-overview.md` / `heroes-overview.csv`, copies the CSV into `site/data/`, writes `site/data/heroes.json`, and downloads any missing portrait images from Yaphalla into `site/assets/`. Running `just views` also refreshes the site data.
 
-Skill-card chip tags on the character sheet come from the same analysis pass as `heroes_data_processed.json` (`skill_card_tags` per skill). After changing detection logic in `scripts/rewrite-summaries.py`, run `just views` (not `just analyze` alone) so both processed JSON and `site/data/heroes.json` update together.
+Skill-card chip tags on the character sheet come from the same analysis pass as `heroes_data_processed.json` (`skill_card_tags` per skill). After changing skill effects in `data/skill_effects/<hero>.json`, run `just views` (not `just analyze` alone) so both processed JSON and `site/data/heroes.json` update together.
 
 Preview locally (required — the site loads data via `fetch`):
 
@@ -87,7 +87,10 @@ just setup
 just views
 ```
 
-This runs analysis (`data/heroes_data_processed.json`, `data/heroes_data_synergies.json`) and renders `Heroes.md`, `heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json` + `site/data/heroes-overview.csv`.
+This runs analysis (merges `data/skill_effects/*.json` sidecars into
+`data/heroes_data_processed.json`, `data/heroes_data_synergies.json`) and
+renders `Heroes.md`, `heroes-overview.md`, `heroes-overview.csv`, and
+`site/data/heroes.json` + `site/data/heroes-overview.csv`.
 
 **Full refresh from live sources (requires network):**
 
@@ -115,7 +118,8 @@ PYTHONPATH=scripts .venv/bin/python -m unittest discover -s scripts -p 'test_*.p
 
 ```
 download  →  data/heroes_data.json
-analyze   →  data/heroes_data_processed.json  (includes skill_card_tags per skill)
+analyze   →  data/heroes_data_processed.json  (sidecars + post-process;
+             includes skill_card_tags per skill)
              data/heroes_data_synergies.json
 render    →  Heroes.md
              heroes-overview.md
@@ -126,10 +130,11 @@ render    →  Heroes.md
 | Step | Script(s) | Role |
 | --- | --- | --- |
 | Download | `scripts/download_heroes.py` | Merge Fandom, Yaphalla, and Prydwen into `heroes_data.json` |
-| Analyze (pass 1) | `scripts/process_heroes.py` | Skill parsing, behavior, magnitudes → `heroes_data_processed.json` |
+| Analyze (pass 1) | `scripts/process_heroes.py` | Load sidecars, post-process, behavior, magnitudes → `heroes_data_processed.json` |
 | Analyze (pass 2) | `scripts/process_synergies.py` | Synergy and replacement scoring → `heroes_data_synergies.json` |
 | Render | `scripts/render_heroes.py`, `render_overview.py`, `render_site.py` | Markdown, CSV, and site JSON from committed analysis |
-| Core library | `scripts/rewrite-summaries.py` | Detection, behavior, summaries (used by analyze) |
+| Sidecar I/O | `scripts/skill_effects_store.py` | Load, validate, and apply `data/skill_effects/*.json` |
+| Core library | `scripts/rewrite-summaries.py` | Post-process, behavior, summaries (used by analyze) |
 | Scoring library | `scripts/generate-heroes-overview.py` | Synergy/replacement matchers (imported by analyze and render) |
 
 Configuration for synergy scoring and display limits lives in `data/heroes_config.json`. Curated metadata — signature skills, behavior tags, skill summaries, play overviews — and manual overrides (placement, movement, melee) are in other files under `data/`; see [data/README.md](data/README.md) and [docs/ai-generated-data.md](docs/ai-generated-data.md).

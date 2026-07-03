@@ -46,11 +46,14 @@ def build_from_web() -> dict:
     print(f"  Attached tiers for {len(tiers)} hero(es)")
     print("Fetching Prydwen role categories...")
     categories = sources_web.fetch_prydwen_role_categories()
-    missing_categories = io.apply_prydwen_role_categories(data["heroes"], categories)
-    if missing_categories:
+    without_prydwen_categories = io.apply_prydwen_role_categories(
+        data["heroes"], categories
+    )
+    if without_prydwen_categories:
         print(
-            f"  Warning: no Prydwen role category for {len(missing_categories)} "
-            f"hero(es): {', '.join(missing_categories)}"
+            f"  Note: no Prydwen tier-list role category for "
+            f"{len(without_prydwen_categories)} hero(es), used class fallback: "
+            f"{', '.join(without_prydwen_categories)}"
         )
     print(f"  Attached role categories for {len(categories)} hero(es)")
     return data
