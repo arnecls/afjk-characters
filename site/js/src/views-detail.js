@@ -23,27 +23,42 @@ window.AFKJ = window.AFKJ || {};
       BENEFIT_MIN_STARS,
       Math.min(BENEFIT_MAX_STARS, rating)
     );
-    const fullStars = Math.max(
+    const roundedStars = Math.max(
       BENEFIT_MIN_STARS,
-      Math.min(BENEFIT_MAX_STARS, Math.floor(clamped))
+      Math.min(BENEFIT_MAX_STARS, Math.round(clamped))
     );
-    return BENEFIT_STAR.repeat(fullStars) + " (" + clamped.toFixed(1) + ")";
+    return BENEFIT_STAR.repeat(roundedStars);
   }
 
-  function renderBeneficiaryScore(scoreRating, scoreDisplay) {
-    const text = scoreDisplay || formatBeneficiaryRatingDisplay(scoreRating);
+  function beneficiaryScoreTooltip(scoreRating) {
+    const rating = Number(scoreRating);
+    if (!isFinite(rating)) {
+      return "Benefit rating out of 5";
+    }
+    const clamped = Math.max(
+      BENEFIT_MIN_STARS,
+      Math.min(BENEFIT_MAX_STARS, rating)
+    );
+    return "Benefit rating: " + clamped.toFixed(1) + " out of 5";
+  }
+
+  function renderBeneficiaryScore(scoreRating) {
+    const text = formatBeneficiaryRatingDisplay(scoreRating);
     if (!text) {
       return "";
     }
     return (
-      '<div class="hero-compact-score" title="Benefit rating out of 5">' +
+      '<div class="hero-compact-score" title="' +
+      escapeHtml(beneficiaryScoreTooltip(scoreRating)) +
+      '">' +
       escapeHtml(text) +
       "</div>"
     );
   }
 
-  function renderHeroCompactCard(slug, name, bodyHtml, footerHtml) {
+  function renderHeroCompactCard(slug, name, bodyHtml, footerHtml, headerHtml) {
     const hero = window.AFKJ.state.heroBySlug[slug];
+    const factionKey = hero ? utils.factionDataKey(hero.faction) : "";
     let portraitHtml = "";
     if (hero) {
       portraitHtml = gridView.renderHeroPortrait(hero, "compact-portrait");
@@ -57,16 +72,20 @@ window.AFKJ = window.AFKJ || {};
     return (
       '<article class="hero-compact-card afkj-box afkj-box-sm" data-slug="' +
       escapeHtml(slug) +
+      '" data-faction="' +
+      escapeHtml(factionKey) +
       '" tabindex="0" role="link" aria-label="' +
       escapeHtml(name) +
       '">' +
       '<div class="hero-compact-portrait-wrap">' +
       portraitHtml +
-      gridView.renderCompactCardWave(slug) +
       "</div>" +
       '<div class="hero-compact-body">' +
+      '<div class="hero-compact-header">' +
       '<div class="hero-compact-name">' +
       utils.linkifyHero(name, slug) +
+      "</div>" +
+      (headerHtml || "") +
       "</div>" +
       (bodyHtml || "") +
       (footerHtml || "") +
@@ -614,13 +633,14 @@ window.AFKJ = window.AFKJ || {};
 
   function renderSynergyHeroCard(ref, bodyHtml) {
     const scoreHtml = renderBeneficiaryScore(
-      ref.scoreRating != null ? ref.scoreRating : ref.score_rating,
-      ref.scoreDisplay || ref.score_display
+      ref.scoreRating != null ? ref.scoreRating : ref.score_rating
     );
     return renderHeroCompactCard(
       ref.slug,
       ref.name,
-      scoreHtml + (bodyHtml || "")
+      bodyHtml || "",
+      "",
+      scoreHtml
     );
   }
 

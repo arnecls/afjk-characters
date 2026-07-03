@@ -27,6 +27,12 @@
   --chip-damage-fg: #4a5568;
   --chip-stat-bg: #d8e3f6;
   --chip-stat-fg: #304060;
+  --chip-tooltip-bg: #1f2937;
+  --chip-scaling-mod-bg: color-mix(in srgb, var(--chip-tooltip-bg) 80%, white);
+  --chip-scaling-mod-fg: #f3f4f6;
+  --chip-scaling-mod-border: color-mix(in srgb,
+      var(--chip-scaling-mod-bg) 55%,
+      white);
   --chip-heal-bg: #c8e6d4;
   --chip-heal-fg: #1f4d36;
   --chip-debuff-bg: #f5d4d4;
@@ -2040,7 +2046,7 @@ a:hover {
   max-width: 16rem;
   padding: 0.45rem 0.6rem;
   border-radius: 0.35rem;
-  background: #1f2937;
+  background: var(--chip-tooltip-bg);
   color: #f9fafb;
   font-size: 0.75rem;
   font-weight: 400;
@@ -2087,7 +2093,7 @@ a:hover {
   left: 50%;
   margin-left: -5px;
   border: 5px solid transparent;
-  border-top-color: #1f2937;
+  border-top-color: var(--chip-tooltip-bg);
 }
 
 html.welcome-warning-pending body,
@@ -2196,8 +2202,8 @@ html.welcome-warning-pending .welcome-warning,
   z-index: 9;
   display: flex;
   flex-direction: column;
-  width: min(28rem, calc(100vw - 1.5rem));
-  max-width: 28rem;
+  width: min(32rem, calc(100vw - 1.5rem));
+  max-width: 32rem;
   --skill-card-panel: #161c26;
   --skill-card-panel-bg: color-mix(in srgb, var(--skill-card-panel) 75%, transparent);
   --skill-card-panel-stripe: color-mix(in srgb,
@@ -2421,6 +2427,12 @@ html.welcome-warning-pending .welcome-warning,
   color: var(--chip-stat-fg);
 }
 
+.chip-scaling-mod {
+  background: var(--chip-scaling-mod-bg);
+  color: var(--chip-scaling-mod-fg);
+  border-color: var(--chip-scaling-mod-border);
+}
+
 .chip-heal {
   background: var(--chip-heal-bg);
   color: var(--chip-heal-fg);
@@ -2632,19 +2644,52 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .hero-compact-card {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
+  position: relative;
+  display: block;
   border: 1px solid var(--border);
-  padding: 0;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   min-width: 0;
-  background: var(--surface-panel);
-  --compact-wave-panel: var(--surface-panel);
-  --compact-wave-accent: color-mix(in srgb, var(--surface-panel) 68%, var(--text-muted));
-  --compact-wave-hatch: rgba(70, 90, 120, 0.06);
+  --compact-hex-size: 86px;
+  --compact-hex-border-width: 4px;
+  --compact-hex-offset-left: -1.1rem;
+  --compact-hex-gap: 0.65rem;
+  --compact-hex-border: var(--border);
+  --compact-hex-rotate: 10deg;
+  background: linear-gradient(calc(110deg + var(--compact-hex-rotate)),
+      var(--compact-hex-border) 0.5rem,
+      var(--surface-panel) 7rem);
+  padding: 0.55rem 0.6rem 0.6rem calc(var(--compact-hex-size) + var(--compact-hex-offset-left) + var(--compact-hex-gap));
+  min-height: calc(1.15rem + 0.9rem * 1.3 + 0.2rem + 0.2rem + (0.75rem * 1.35 + 0.24rem) * 2 + 0.35rem);
+}
+
+.hero-compact-card[data-faction="lightbearer"] {
+  --compact-hex-border: #4a6b8a;
+}
+
+.hero-compact-card[data-faction="wilder"] {
+  --compact-hex-border: #4a8860;
+}
+
+.hero-compact-card[data-faction="mauler"] {
+  --compact-hex-border: #a06637;
+}
+
+.hero-compact-card[data-faction="graveborn"] {
+  --compact-hex-border: #2f4238;
+}
+
+.hero-compact-card[data-faction="celestial"] {
+  --compact-hex-border: #d99a3d;
+}
+
+.hero-compact-card[data-faction="hypogean"] {
+  --compact-hex-border: #4b4282;
+}
+
+.hero-compact-card[data-faction="dimensional"] {
+  --compact-hex-border: #5090e8;
 }
 
 .hero-compact-card:hover {
@@ -2653,80 +2698,89 @@ html.welcome-warning-pending .welcome-warning,
   border-color: var(--accent-soft);
 }
 
-/* Synergy compact cards: portrait column = 25% of card width */
-.synergy-section .hero-compact-card {
-  --compact-portrait-width: 15%;
-}
-
-/* Replacement compact cards: portrait column = 20% of card width */
-.replacement-category .hero-compact-card {
-  --compact-portrait-width: 30%;
-}
-
 .hero-compact-portrait-wrap {
-  position: relative;
-  flex: 0 0 var(--compact-portrait-width, 79px);
-  min-height: 0;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.hero-compact-wave {
+  --compact-hex-clip: polygon(50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%);
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 38%;
+  top: -0.8rem;
+  left: var(--compact-hex-offset-left);
+  width: var(--compact-hex-size);
+  height: calc(var(--compact-hex-size) * 1.1547);
+  margin-right: var(--compact-hex-gap);
+  transform: rotate(var(--compact-hex-rotate));
+  transform-origin: center center;
   z-index: 2;
-  overflow: hidden;
   pointer-events: none;
 }
 
-.hero-compact-wave-svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.hero-compact-wave-accent {
-  fill: var(--compact-wave-accent);
-  opacity: 0.75;
-}
-
-.hero-compact-wave-panel {
-  fill: var(--compact-wave-panel);
-}
-
-.hero-compact-wave-panel-hatch {
-  pointer-events: none;
+.hero-compact-portrait-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--compact-hex-border);
+  clip-path: var(--compact-hex-clip);
+  z-index: 0;
 }
 
 .compact-portrait.hero-card-portrait {
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
+  position: absolute;
+  inset: var(--compact-hex-border-width);
+  width: auto;
+  height: auto;
+  min-height: 0;
   aspect-ratio: unset;
   border-radius: 0;
+  clip-path: var(--compact-hex-clip);
+  z-index: 1;
+}
+
+.compact-portrait.hero-card-portrait .hero-card-portrait-frame {
+  clip-path: inherit;
+}
+
+/* Counter-rotate the image content so only the hex frame appears rotated.
+   Slight scale-up hides corners uncovered by the counter-rotation. */
+.compact-portrait.hero-card-portrait .hero-card-portrait-frame::before {
+  transform: rotate(calc(-1 * var(--compact-hex-rotate, 0deg))) scale(1.15);
+}
+
+.compact-portrait.hero-card-portrait .hero-card-combat-icon {
+  transform: translate(-50%, -50%) rotate(calc(-1 * var(--compact-hex-rotate, 0deg))) scale(1.45);
 }
 
 .hero-compact-portrait-fallback {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: var(--compact-hex-border-width);
+  width: auto;
+  height: auto;
   object-fit: cover;
   object-position: center center;
+  clip-path: var(--compact-hex-clip);
+  z-index: 1;
 }
 
 .hero-compact-body {
-  flex: 1;
   min-width: 0;
-  padding: 0.6rem 0.6rem 0.6rem 0.65rem;
-  background: var(--surface-panel);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
 
+.hero-compact-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.45rem;
+  margin-bottom: 0.2rem;
+}
+
 .hero-compact-name {
+  flex: 1 1 auto;
+  min-width: 0;
   font-weight: 600;
   font-size: 0.9rem;
   line-height: 1.3;
@@ -2737,12 +2791,14 @@ html.welcome-warning-pending .welcome-warning,
 }
 
 .hero-compact-score {
-  font-size: 0.82rem;
+  flex: 0 0 auto;
+  font-size: 0.72rem;
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
   color: var(--accent);
-  margin-top: 0.15rem;
-  line-height: 1.2;
+  margin-top: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
 }
 
 .hero-compact-detail {
